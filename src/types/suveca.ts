@@ -160,6 +160,16 @@ export interface StudyPreferences {
   updatedAt: string;
 }
 
+export interface PomodoroSession {
+  id: string;
+  topic: string;
+  moduleId?: string;
+  mode: 'foco' | 'pausa_curta' | 'pausa_longa';
+  durationMinutes: number;
+  completedAt: string;
+  note?: string;
+}
+
 export interface TopicAttemptStats {
   total: number;
   correct: number;
