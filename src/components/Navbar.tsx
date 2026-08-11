@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   BookOpen,
   Cpu,
@@ -71,7 +71,10 @@ export const Navbar: React.FC<NavbarProps> = ({
   isSyncing,
 }) => {
   const [isMobileMoreOpen, setIsMobileMoreOpen] = useState(false);
+  const [isDesktopMoreOpen, setIsDesktopMoreOpen] = useState(false);
   const mobileDrawerCloseRef = useRef<HTMLButtonElement>(null);
+  const desktopMoreButtonRef = useRef<HTMLButtonElement>(null);
+  const desktopMoreMenuRef = useRef<HTMLDivElement>(null);
   const mobileDrawerRef = useModalFocus(
     isMobileMoreOpen,
     () => setIsMobileMoreOpen(false),
@@ -104,6 +107,51 @@ export const Navbar: React.FC<NavbarProps> = ({
   ];
 
   const allTabs: NavItem[] = [...primaryTabs, ...secondaryTabs];
+  const desktopPrimaryIds = new Set<TabType>(['modules', 'analyzer', 'simulado', 'errors', 'flashcards', 'agenda']);
+  const desktopPrimaryTabs = allTabs.filter((item) => desktopPrimaryIds.has(item.id));
+  const desktopMoreTabs = allTabs.filter((item) => !desktopPrimaryIds.has(item.id));
+  const isDesktopMoreActive = desktopMoreTabs.some((item) => item.id === activeTab);
+
+  useEffect(() => {
+    if (!isDesktopMoreOpen) return undefined;
+    const focusFrame = window.requestAnimationFrame(() => {
+      desktopMoreMenuRef.current?.querySelector<HTMLButtonElement>('button')?.focus();
+    });
+    const closeOnPointerDown = (event: PointerEvent) => {
+      const target = event.target as Node;
+      if (!desktopMoreMenuRef.current?.contains(target) && !desktopMoreButtonRef.current?.contains(target)) {
+        setIsDesktopMoreOpen(false);
+      }
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      setIsDesktopMoreOpen(false);
+      desktopMoreButtonRef.current?.focus();
+    };
+    document.addEventListener('pointerdown', closeOnPointerDown);
+    document.addEventListener('keydown', closeOnEscape);
+    return () => {
+      window.cancelAnimationFrame(focusFrame);
+      document.removeEventListener('pointerdown', closeOnPointerDown);
+      document.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [isDesktopMoreOpen]);
+
+  const handleDesktopMenuKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (!['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) return;
+    const buttons = [...(desktopMoreMenuRef.current?.querySelectorAll<HTMLButtonElement>('button') || [])];
+    if (!buttons.length) return;
+    event.preventDefault();
+    const currentIndex = Math.max(0, buttons.indexOf(document.activeElement as HTMLButtonElement));
+    const targetIndex = event.key === 'Home'
+      ? 0
+      : event.key === 'End'
+        ? buttons.length - 1
+        : event.key === 'ArrowDown'
+          ? (currentIndex + 1) % buttons.length
+          : (currentIndex - 1 + buttons.length) % buttons.length;
+    buttons[targetIndex]?.focus();
+  };
 
   return (
     <>
@@ -200,8 +248,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Row 2: Desktop Tabs */}
-          <nav className="hidden lg:flex items-center space-x-1 py-2 overflow-x-auto" aria-label="Navegação principal">
-            {allTabs.map((item) => {
+          <nav className="relative hidden min-w-0 items-center gap-1 py-2 lg:flex" aria-label="Navegação principal">
+            {desktopPrimaryTabs.map((item) => {
               const Icon = item.icon;
               const isActive = activeTab === item.id;
               return (
@@ -210,7 +258,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   type="button"
                   onClick={() => setActiveTab(item.id)}
                   aria-current={isActive ? 'page' : undefined}
-                  className={`flex items-center space-x-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition cursor-pointer ${
+                  className={`flex min-h-[44px] shrink-0 items-center space-x-2 whitespace-nowrap rounded-xl px-3 py-2 text-sm font-semibold transition cursor-pointer ${
                     isActive
                       ? 'bg-teal-50 text-teal-800 border border-teal-200/80 shadow-2xs font-bold'
                       : 'text-[var(--text-muted)] hover:text-[var(--text-strong)] hover:bg-slate-100/70'
@@ -238,6 +286,64 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </button>
               );
             })}
+            <div className="relative ml-auto shrink-0">
+              <button
+                ref={desktopMoreButtonRef}
+                type="button"
+                onClick={() => setIsDesktopMoreOpen((open) => !open)}
+                aria-expanded={isDesktopMoreOpen}
+                aria-haspopup="menu"
+                aria-controls="desktop-more-menu"
+                className={`flex min-h-[44px] items-center gap-2 whitespace-nowrap rounded-xl px-3 py-2 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-700 focus-visible:ring-offset-2 ${
+                  isDesktopMoreActive
+                    ? 'border border-teal-200/80 bg-teal-50 font-bold text-teal-800 shadow-2xs'
+                    : 'text-[var(--text-muted)] hover:bg-slate-100/70 hover:text-[var(--text-strong)]'
+                }`}
+              >
+                <MoreHorizontal className="h-4 w-4" />
+                <span>Mais</span>
+              </button>
+              {isDesktopMoreOpen && (
+                <div
+                  ref={desktopMoreMenuRef}
+                  id="desktop-more-menu"
+                  role="menu"
+                  aria-label="Outras ferramentas"
+                  onKeyDown={handleDesktopMenuKeyDown}
+                  className="absolute right-0 top-[calc(100%+0.5rem)] z-50 grid w-[min(34rem,calc(100vw-2rem))] grid-cols-2 gap-2 rounded-2xl border border-slate-200 bg-white p-3 shadow-2xl xl:grid-cols-3"
+                >
+                  {desktopMoreTabs.map((item) => {
+                    const Icon = item.icon;
+                    const isActive = activeTab === item.id;
+                    return (
+                      <button
+                        key={item.id}
+                        type="button"
+                        role="menuitem"
+                        aria-current={isActive ? 'page' : undefined}
+                        onClick={() => {
+                          setActiveTab(item.id);
+                          setIsDesktopMoreOpen(false);
+                          desktopMoreButtonRef.current?.focus();
+                        }}
+                        className={`flex min-h-[48px] items-center gap-3 rounded-xl border p-3 text-left text-xs font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-700 ${
+                          isActive
+                            ? 'border-teal-200 bg-teal-50 font-bold text-teal-800'
+                            : 'border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100'
+                        }`}
+                      >
+                        <Icon className="h-5 w-5 shrink-0 text-teal-700" />
+                        <span className="min-w-0 flex-1">
+                          <span className="block leading-4">{item.label}</span>
+                          {item.countBadge !== undefined && <span className="mt-0.5 block text-[10px] font-bold text-rose-600">{item.countBadge} pendentes</span>}
+                        </span>
+                        {item.isIa && <Sparkles className="h-3.5 w-3.5 shrink-0 text-amber-600" aria-label="Recurso de inteligência artificial" />}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
           </nav>
         </div>
       </header>

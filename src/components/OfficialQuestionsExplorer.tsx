@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { BookMarked, ChevronLeft, ChevronRight, ExternalLink, Loader2, Search, ShieldCheck, X } from 'lucide-react';
+import { BookMarked, ChevronLeft, ChevronRight, ExternalLink, Loader2, RefreshCw, Search, ShieldCheck, X } from 'lucide-react';
 import {
   fetchOfficialQuestion,
   fetchOfficialQuestionSample,
@@ -107,7 +107,8 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
           <div>
             <h1 id="official-questions-title" className="text-xl font-extrabold text-slate-950 sm:text-2xl">Banco de questões oficiais</h1>
             <p className="mt-1 max-w-3xl text-sm leading-6 text-slate-600">
-              372 questões preservadas integralmente. Tópicos, alternativas, gabaritos, soluções, estatísticas e metadados permanecem oficiais; os vínculos com módulos são uma camada derivada SuVeCA.
+              {buildId ? `${total} questões oficiais disponíveis. ` : 'Corpus editorial esperado: 372 questões. '}
+              Tópicos, alternativas, gabaritos, soluções, estatísticas e metadados permanecem oficiais; os vínculos com módulos são uma camada derivada SuVeCA.
             </p>
             {buildId && <p className="mt-2 font-mono text-[11px] text-teal-800">KB build {buildId}</p>}
             {onStartSimulado && <button type="button" onClick={() => void startOfficialSimulado()} disabled={isBuildingSample || total === 0} className="button-primary mt-4 min-h-[44px] disabled:opacity-50">{isBuildingSample ? <Loader2 className="h-4 w-4 animate-spin" /> : <BookMarked className="h-4 w-4" />} Simulado oficial com 10 questões filtradas</button>}
@@ -139,12 +140,17 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
         </div>
       </form>
 
-      <div className="flex items-center justify-between text-sm text-slate-600">
+      {!isLoading && !error && <div className="flex items-center justify-between text-sm text-slate-600" aria-live="polite">
         <span><strong className="text-slate-900">{total}</strong> questões encontradas</span>
         <span>Exibindo {total ? offset + 1 : 0}–{Math.min(offset + PAGE_SIZE, total)}</span>
-      </div>
+      </div>}
 
-      {error && <div role="alert" className="rounded-xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-800">{error}</div>}
+      {error && <div role="alert" className="flex flex-col gap-3 rounded-xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-800 sm:flex-row sm:items-center sm:justify-between">
+        <span>{error}</span>
+        <button type="button" onClick={() => void load()} className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-rose-300 bg-white px-4 font-bold text-rose-800 hover:bg-rose-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-700">
+          <RefreshCw className="h-4 w-4" /> Tentar novamente
+        </button>
+      </div>}
       {isLoading ? (
         <div role="status" className="flex min-h-48 items-center justify-center gap-2 text-sm font-semibold text-slate-500"><Loader2 className="h-5 w-5 animate-spin" /> Carregando corpus oficial…</div>
       ) : (

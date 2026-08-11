@@ -11,6 +11,7 @@ import {
 import {
   formatOfficialQuestionContext,
   getOfficialQuestion,
+  getOfficialQuestionStoreHealth,
   queryOfficialQuestions,
   sampleOfficialQuestions,
 } from "./src/lib/officialQuestions.server";
@@ -46,8 +47,17 @@ app.get("/api/health", (_req, res) => {
   res.json({ status: "ok", app: "SuVeCA Concursos 2.0", knowledgeBase: KNOWLEDGE_BUILD });
 });
 
-app.get("/api/knowledge/health", (_req, res) => {
-  res.json({ status: "ok", ...KNOWLEDGE_BUILD });
+app.get("/api/knowledge/health", async (_req, res) => {
+  try {
+    const officialQuestions = await getOfficialQuestionStoreHealth();
+    return res.json({ status: "ok", ...KNOWLEDGE_BUILD, officialQuestions });
+  } catch (error: any) {
+    return res.status(503).json({
+      status: "error",
+      component: "official-question-store",
+      message: error.message,
+    });
+  }
 });
 
 const queryValue = (value: unknown) => typeof value === "string" ? value.trim() : undefined;

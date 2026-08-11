@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { DECISION_TREES, DecisionTreeSet } from '../data/decisionTrees';
 import {
   GitMerge,
@@ -8,11 +8,55 @@ import {
   HelpCircle,
   Lightbulb,
   BookOpen,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 
 export const DecisionTreeViewer: React.FC = () => {
   const [selectedTreeKey, setSelectedTreeKey] = useState<string>('crase');
+  const tabsRef = useRef<HTMLDivElement>(null);
+  const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
   const treeSet: DecisionTreeSet = DECISION_TREES[selectedTreeKey];
+
+  const treeEntries = Object.entries(DECISION_TREES);
+
+  const updateScrollIndicators = () => {
+    const tabs = tabsRef.current;
+    if (!tabs) return;
+    const maxScroll = Math.max(0, tabs.scrollWidth - tabs.clientWidth);
+    setCanScrollLeft(tabs.scrollLeft > 2);
+    setCanScrollRight(tabs.scrollLeft < maxScroll - 2);
+  };
+
+  useEffect(() => {
+    const tabs = tabsRef.current;
+    if (!tabs) return;
+
+    updateScrollIndicators();
+    const observer =
+      typeof ResizeObserver === 'undefined'
+        ? null
+        : new ResizeObserver(updateScrollIndicators);
+    observer?.observe(tabs);
+    window.addEventListener('resize', updateScrollIndicators);
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener('resize', updateScrollIndicators);
+    };
+  }, []);
+
+  useEffect(() => {
+    tabRefs.current[selectedTreeKey]?.scrollIntoView({
+      behavior: window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+        ? 'auto'
+        : 'smooth',
+      block: 'nearest',
+      inline: 'center',
+    });
+    window.setTimeout(updateScrollIndicators, 0);
+  }, [selectedTreeKey]);
 
   const [currentNodeId, setCurrentNodeId] = useState<string>(treeSet.startNodeId);
   const [history, setHistory] = useState<
@@ -30,6 +74,34 @@ export const DecisionTreeViewer: React.FC = () => {
     setCurrentNodeId(newTree.startNodeId);
     setHistory([]);
     setFinalResult(null);
+  };
+
+  const scrollTabs = (direction: -1 | 1) => {
+    tabsRef.current?.scrollBy({
+      left: direction * Math.max(220, tabsRef.current.clientWidth * 0.7),
+      behavior: window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+        ? 'auto'
+        : 'smooth',
+    });
+  };
+
+  const handleTabKeyDown = (
+    event: React.KeyboardEvent<HTMLButtonElement>,
+    index: number,
+  ) => {
+    let nextIndex: number | null = null;
+    if (event.key === 'ArrowRight') nextIndex = (index + 1) % treeEntries.length;
+    if (event.key === 'ArrowLeft') {
+      nextIndex = (index - 1 + treeEntries.length) % treeEntries.length;
+    }
+    if (event.key === 'Home') nextIndex = 0;
+    if (event.key === 'End') nextIndex = treeEntries.length - 1;
+    if (nextIndex === null) return;
+
+    event.preventDefault();
+    const [nextKey] = treeEntries[nextIndex];
+    handleSelectTree(nextKey);
+    tabRefs.current[nextKey]?.focus();
   };
 
   const currentNode = treeSet.nodes[currentNodeId];
@@ -74,24 +146,77 @@ export const DecisionTreeViewer: React.FC = () => {
       </header>
 
       {/* Selector Tabs */}
-      <div className="flex items-center space-x-2 overflow-x-auto bg-slate-100 p-1.5 rounded-2xl border border-slate-200 text-xs font-medium">
-        {Object.entries(DECISION_TREES).map(([key, tree]) => (
-          <button
-            key={key}
-            onClick={() => handleSelectTree(key)}
-            className={`px-4 py-2 rounded-xl font-bold transition whitespace-nowrap cursor-pointer ${
-              selectedTreeKey === key
-                ? 'bg-white text-slate-900 shadow-2xs font-bold'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/50'
-            }`}
-          >
-            {tree.title}
-          </button>
-        ))}
+      <div className="relative flex min-w-0 items-center rounded-2xl border border-slate-200 bg-slate-100 p-1.5 text-xs font-medium">
+        <button
+          type="button"
+          onClick={() => scrollTabs(-1)}
+          disabled={!canScrollLeft}
+          aria-label="Ver matrizes anteriores"
+          className="z-10 flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 shadow-xs transition hover:border-teal-500 hover:text-teal-800 disabled:cursor-not-allowed disabled:opacity-35"
+        >
+          <ChevronLeft className="h-5 w-5" aria-hidden="true" />
+        </button>
+        {canScrollLeft && (
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute bottom-1.5 left-[50px] top-1.5 z-[1] w-8 bg-gradient-to-r from-slate-100 to-transparent"
+          />
+        )}
+        <div
+          ref={tabsRef}
+          role="tablist"
+          aria-label="Matrizes de decisão sintática"
+          onScroll={updateScrollIndicators}
+          className="scrollbar-thin flex min-w-0 flex-1 items-center gap-2 overflow-x-auto px-2"
+        >
+          {treeEntries.map(([key, tree], index) => (
+            <button
+              key={key}
+              ref={(element) => {
+                tabRefs.current[key] = element;
+              }}
+              type="button"
+              role="tab"
+              id={`decision-tab-${key}`}
+              aria-controls="decision-tree-panel"
+              aria-selected={selectedTreeKey === key}
+              tabIndex={selectedTreeKey === key ? 0 : -1}
+              onKeyDown={(event) => handleTabKeyDown(event, index)}
+              onClick={() => handleSelectTree(key)}
+              className={`min-h-11 shrink-0 cursor-pointer whitespace-nowrap rounded-xl px-4 py-2 font-bold transition ${
+                selectedTreeKey === key
+                  ? 'bg-white text-slate-900 shadow-2xs'
+                  : 'text-slate-600 hover:bg-slate-200/50 hover:text-slate-900'
+              }`}
+            >
+              {tree.title}
+            </button>
+          ))}
+        </div>
+        {canScrollRight && (
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute bottom-1.5 right-[50px] top-1.5 z-[1] w-8 bg-gradient-to-l from-slate-100 to-transparent"
+          />
+        )}
+        <button
+          type="button"
+          onClick={() => scrollTabs(1)}
+          disabled={!canScrollRight}
+          aria-label="Ver próximas matrizes"
+          className="z-10 flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 shadow-xs transition hover:border-teal-500 hover:text-teal-800 disabled:cursor-not-allowed disabled:opacity-35"
+        >
+          <ChevronRight className="h-5 w-5" aria-hidden="true" />
+        </button>
       </div>
 
       {/* Decision Wizard Card */}
-      <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-6">
+      <div
+        id="decision-tree-panel"
+        role="tabpanel"
+        aria-labelledby={`decision-tab-${selectedTreeKey}`}
+        className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-6"
+      >
         <div className="flex items-center justify-between border-b border-slate-100 pb-4">
           <div>
             <h2 className="text-lg font-bold text-slate-900">{treeSet.title}</h2>
