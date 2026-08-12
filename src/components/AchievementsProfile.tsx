@@ -217,14 +217,14 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
                     className={`rounded-2xl p-5 border flex items-start gap-4 ${
                       unlockedAt
                         ? 'bg-amber-50/70 border-amber-200'
-                        : 'bg-slate-50 border-slate-200 opacity-75'
+                        : 'bg-slate-50 border-slate-200'
                     }`}
                   >
                     <div
                       className={`w-11 h-11 rounded-xl shrink-0 flex items-center justify-center border ${
                         unlockedAt
                           ? 'bg-white text-amber-700 border-amber-200'
-                          : 'bg-slate-100 text-slate-400 border-slate-200'
+                          : 'bg-slate-100 text-slate-600 border-slate-200'
                       }`}
                     >
                       <Icon className="w-5 h-5" />
@@ -235,7 +235,7 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
                         {unlockedAt && <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" />}
                       </div>
                       <p className="text-sm text-slate-600 mt-1">{achievement.description}</p>
-                      <p className={`text-xs font-semibold mt-3 ${unlockedAt ? 'text-emerald-700' : 'text-slate-500'}`}>
+                      <p className={`text-xs font-semibold mt-3 ${unlockedAt ? 'text-emerald-700' : 'text-slate-700'}`}>
                         {unlockedAt ? formatUnlockedDate(unlockedAt) : 'Ainda não desbloqueada'}
                       </p>
                     </div>

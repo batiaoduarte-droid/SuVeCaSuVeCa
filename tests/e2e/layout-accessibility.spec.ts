@@ -1,7 +1,7 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, expectNoDocumentOverflow, openApp, openTab, test } from './fixtures';
 
-const auditedTabs = ['Apostila', 'Analisador', 'Simulado', 'Matrizes'];
+const auditedTabs = ['Apostila', 'Analisador', 'Simulado', 'Cronômetro Foco', 'Matrizes', 'Questões oficiais'];
 
 test.describe('layout responsivo', () => {
   for (const tab of auditedTabs) {
@@ -32,9 +32,36 @@ test.describe('layout responsivo', () => {
 
     expect(undersized).toEqual([]);
   });
+
+  test('reflow equivalente a zoom de 200% não cria rolagem horizontal', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop-1440', 'Amostra de reflow executada uma vez.');
+    await page.setViewportSize({ width: 720, height: 900 });
+    await openApp(page);
+    await expectNoDocumentOverflow(page);
+  });
 });
 
 test.describe('teclado e leitores de tela', () => {
+  test('Cronômetro Foco renderiza a experiência, sem aba vazia', async ({ page }) => {
+    await openApp(page);
+    await openTab(page, 'Cronômetro Foco');
+    await expect(page.getByRole('heading', { name: /cronômetro de foco/i })).toBeVisible();
+  });
+
+  test('questão oficial prende o foco, fecha com Escape e devolve o foco', async ({ page }) => {
+    await openApp(page);
+    await openTab(page, 'Questões oficiais');
+    const opener = page.getByRole('button', { name: 'Abrir questão completa' }).first();
+    await expect(opener).toBeVisible();
+    await opener.click();
+    const dialog = page.getByRole('dialog', { name: /questão oficial/i });
+    await expect(dialog).toBeVisible();
+    await expect(dialog.getByRole('button', { name: 'Fechar questão' })).toBeFocused();
+    await page.keyboard.press('Escape');
+    await expect(dialog).toBeHidden();
+    await expect(opener).toBeFocused();
+  });
+
   test('atalho de busca abre modal e Escape devolve o foco', async ({ page }) => {
     await openApp(page);
     const searchButton = page.getByRole('button', { name: 'Abrir pesquisa' });

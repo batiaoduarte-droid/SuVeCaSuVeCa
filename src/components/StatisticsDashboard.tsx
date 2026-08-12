@@ -21,6 +21,7 @@ import {
   TrendingUp,
 } from 'lucide-react';
 import type { CadernoErroItem } from '../types/suveca';
+import { ProgressBar } from './ui/ProgressBar';
 
 export interface LearningAttempt {
   id: string;
@@ -34,7 +35,7 @@ export interface LearningAttempt {
   percentage?: number;
   byTopic?: unknown;
   answerMap?: Record<string, string>;
-  questionSetVersion?: 'official-simulado-v1';
+  questionSetVersion?: 'official-simulado-v1' | 'official-corpus-v1' | 'ai-generated-v1';
 }
 
 interface StatisticsDashboardProps {
@@ -42,6 +43,10 @@ interface StatisticsDashboardProps {
   errors: CadernoErroItem[];
   visitedModules: number;
   totalModules: number;
+  readSections?: number;
+  totalSections?: number;
+  practiceAnswered?: number;
+  practiceCorrect?: number;
   userName?: string | null;
   onOpenSimulado?: () => void;
 }
@@ -122,6 +127,10 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
   errors,
   visitedModules,
   totalModules,
+  readSections = 0,
+  totalSections = 0,
+  practiceAnswered = 0,
+  practiceCorrect = 0,
   userName,
   onOpenSimulado,
 }) => {
@@ -173,24 +182,24 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
   const allCorrect = attempts.reduce((sum, attempt) => sum + getAttemptCorrect(attempt), 0);
   const overallAccuracy = percent(allCorrect, allAnswered);
   const masteredErrors = errors.filter((error) => error.status === 'dominado').length;
-  const reviewedErrors = errors.filter((error) => error.status !== 'dia0').length;
+  const reviewedErrors = errors.filter((error) => Boolean(error.lastReviewedAt)).length;
 
   const methodData = useMemo(
     () => [
       {
         stage: 'Compreender',
-        progress: percent(visitedModules, Math.max(totalModules, 1)),
-        detail: `${visitedModules}/${totalModules} módulos explorados`,
+        progress: percent(readSections, Math.max(totalSections, 1)),
+        detail: `${readSections}/${totalSections} seções estudadas · ${visitedModules}/${totalModules} módulos abertos`,
       },
       {
         stage: 'Aplicar',
-        progress: Math.min(100, percent(allAnswered, 20)),
-        detail: `${allAnswered} questões respondidas`,
+        progress: Math.min(100, percent(allAnswered + practiceAnswered, 40)),
+        detail: `${allAnswered + practiceAnswered} questões · ${practiceCorrect} acertos nos módulos`,
       },
       {
         stage: 'Registrar',
-        progress: errors.length ? 100 : 0,
-        detail: errors.length ? `${errors.length} regras no Caderno` : 'Registre seu primeiro erro',
+        progress: Math.min(100, errors.length * 20),
+        detail: errors.length ? `${errors.length}/5 regras registradas para formar um ciclo` : 'Registre seu primeiro erro real',
       },
       {
         stage: 'Revisar',
@@ -203,7 +212,7 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
         detail: errors.length ? `${masteredErrors}/${errors.length} regras dominadas` : 'Sem regras dominadas',
       },
     ],
-    [allAnswered, errors.length, masteredErrors, reviewedErrors, totalModules, visitedModules]
+    [allAnswered, errors.length, masteredErrors, practiceAnswered, practiceCorrect, readSections, reviewedErrors, totalModules, totalSections, visitedModules]
   );
 
   const needsPractice = attempts.length === 0;
@@ -278,14 +287,8 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
                   <span className="font-bold text-slate-800">{item.stage}</span>
                   <span className="font-semibold text-teal-800">{item.progress}%</span>
                 </div>
-                <div className="h-2 overflow-hidden rounded-full bg-slate-100">
-                  <div
-                    className="h-full rounded-full bg-linear-to-r from-teal-600 to-emerald-500 transition-all duration-500"
-                    style={{ width: `${item.progress}%` }}
-                    aria-label={`${item.stage}: ${item.progress}%`}
-                  />
-                </div>
-                <p className="mt-1 text-[11px] text-slate-500">{item.detail}</p>
+                <ProgressBar value={item.progress} showPercent={false} size="sm" ariaLabel={`${item.stage}: ${item.progress}%`} />
+                <p className="mt-1 text-xs text-slate-600">{item.detail}</p>
               </div>
             ))}
           </div>
@@ -304,7 +307,7 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
           {needsPractice ? (
             <EmptyChart onAction={onOpenSimulado} />
           ) : (
-            <div className="h-[250px]" aria-label="Gráfico de evolução dos simulados">
+            <div className="h-[250px]" role="img" aria-label="Gráfico de evolução dos simulados; os valores também estão disponíveis na tabela logo após o gráfico">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={attemptHistory} margin={{ top: 12, right: 12, left: -18, bottom: 0 }}>
                   <CartesianGrid stroke="#e2e8f0" strokeDasharray="3 3" vertical={false} />
@@ -320,6 +323,7 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
               </ResponsiveContainer>
             </div>
           )}
+          {!needsPractice && <table className="sr-only"><caption>Evolução dos simulados</caption><thead><tr><th>Tentativa</th><th>Taxa de acertos</th></tr></thead><tbody>{attemptHistory.map((attempt) => <tr key={`${attempt.label}-${attempt.accuracy}`}><td>{attempt.label}</td><td>{attempt.accuracy}%</td></tr>)}</tbody></table>}
         </article>
       </section>
 
@@ -335,7 +339,7 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
             <span className="text-xs font-semibold text-slate-500">{allAnswered} questões registradas</span>
           )}
         </div>
-        <div className="h-[330px]" aria-label="Gráfico de taxa de acertos por tópico">
+        <div className="h-[330px]" role="img" aria-label="Gráfico de taxa de acertos por tópico; os valores também estão disponíveis na tabela logo após o gráfico">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={topicData} layout="vertical" margin={{ top: 4, right: 28, left: 26, bottom: 4 }}>
               <CartesianGrid stroke="#e2e8f0" strokeDasharray="3 3" horizontal={false} />
@@ -357,6 +361,7 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
             </BarChart>
           </ResponsiveContainer>
         </div>
+        <table className="sr-only"><caption>Taxa de acertos por tópico</caption><thead><tr><th>Tópico</th><th>Acertos</th><th>Total</th><th>Taxa</th></tr></thead><tbody>{topicData.map((topic) => <tr key={topic.topic}><td>{topic.topic}</td><td>{topic.correct}</td><td>{topic.total}</td><td>{topic.accuracy}%</td></tr>)}</tbody></table>
         {needsPractice && (
           <p className="mt-2 rounded-xl border border-dashed border-slate-200 bg-slate-50 px-3 py-2 text-center text-xs text-slate-500">
             Ainda não há respostas registradas. As barras serão preenchidas após o primeiro simulado concluído.

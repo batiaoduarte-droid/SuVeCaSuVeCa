@@ -26,9 +26,14 @@ service cloud.firestore {
           'submittedAtClient'
         ])
         && request.resource.data.schemaVersion == 1
-        && request.resource.data.questionSetVersion == 'official-simulado-v1'
         && request.resource.data.answerMap is map
-        && request.resource.data.answerMap.size() <= 20
+        && (
+          (request.resource.data.questionSetVersion == 'official-simulado-v1'
+            && request.resource.data.answerMap.size() == 20)
+          ||
+          (request.resource.data.questionSetVersion == 'official-corpus-v1'
+            && request.resource.data.answerMap.size() == 10)
+        )
         && request.resource.data.clientCompletedAt is string
         && request.resource.data.submittedAtClient is string;
     }

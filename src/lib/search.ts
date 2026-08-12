@@ -138,7 +138,14 @@ export const moduleMatchesSearch = (module: ModuleData, query: string) => {
     module.title,
     module.subtitle,
     module.description,
-    ...module.sections.flatMap((section) => [section.title, section.contentMarkdown]),
+    ...module.sections.flatMap((section) => [
+      section.title,
+      section.contentMarkdown,
+      ...(section.sourceConceptIds || []),
+      ...(section.limitsAndExceptions || []),
+      ...(section.contrasts || []),
+      ...(section.examTraps || []),
+    ]),
   ];
   return searchableText.some((text) => hasSearchMatch(text, query));
 };

@@ -43,7 +43,7 @@ export async function openTab(page: Page, name: string) {
   const desktopNavigation = page.getByRole('navigation', { name: 'Navegação principal' });
   if (await desktopNavigation.isVisible()) {
     const directTab = desktopNavigation.getByRole('button').filter({ hasText: name }).first();
-    if (await directTab.count()) {
+    if (await directTab.count() && await directTab.isVisible()) {
       await directTab.click();
     } else {
       await desktopNavigation.getByRole('button', { name: 'Mais', exact: true }).click();
@@ -52,7 +52,7 @@ export async function openTab(page: Page, name: string) {
   } else {
     const mobileNavigation = page.getByRole('navigation', { name: 'Navegação móvel' });
     const directTab = mobileNavigation.getByRole('button').filter({ hasText: name }).first();
-    if (await directTab.count()) {
+    if (await directTab.count() && await directTab.isVisible()) {
       await directTab.click();
     } else {
       await mobileNavigation.getByRole('button', { name: 'Ver mais abas de navegação' }).click();

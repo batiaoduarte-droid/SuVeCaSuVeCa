@@ -19,7 +19,11 @@ import {
 interface CadernoDeErrosProps {
   errors: CadernoErroItem[];
   onAddError: (item: CadernoErroItem) => void;
-  onUpdateErrorStatus: (id: string, status: CadernoErroItem['status']) => void;
+  onUpdateErrorStatus: (
+    id: string,
+    status: CadernoErroItem['status'],
+    review?: Pick<CadernoErroItem, 'lastReviewedAt' | 'nextReviewAt'>
+  ) => void;
   onDeleteError: (id: string) => void;
   userId?: string;
 }
@@ -71,6 +75,7 @@ export const CadernoDeErros: React.FC<CadernoDeErrosProps> = ({
       regraDecisiva,
       novoExemplo: novoExemplo || 'Criar exemplo prático de aplicação.',
       status: 'dia0',
+      origin: 'manual',
     };
 
     onAddError(newItem);
@@ -117,6 +122,7 @@ export const CadernoDeErros: React.FC<CadernoDeErrosProps> = ({
             <h2>Erro cometido</h2><p>${escapeHtml(item.erroCometido)}</p>
             <h2>Regra decisiva</h2><p>${escapeHtml(item.regraDecisiva)}</p>
             <h2>Exemplo de fixação</h2><p>${escapeHtml(item.novoExemplo)}</p>
+            ${item.questionId ? `<h2>Proveniência</h2><p>${escapeHtml(`${item.bank || 'Questão'} · ID ${item.questionId}${item.year ? ` · ${item.year}` : ''}`)}</p>` : ''}
           </article>`
       )
       .join('');
@@ -269,7 +275,12 @@ export const CadernoDeErros: React.FC<CadernoDeErrosProps> = ({
                     <span className="text-xs font-bold text-teal-800 bg-teal-50 px-2.5 py-1 rounded-lg border border-teal-200">
                       {item.conteudo}
                     </span>
-                    <span className="text-xs text-slate-400">{item.date}</span>
+                    <span className="text-xs text-slate-600">{item.date}</span>
+                    {item.origin && item.origin !== 'manual' && (
+                      <span className="rounded-md border border-violet-200 bg-violet-50 px-2 py-1 text-[11px] font-bold text-violet-800">
+                        {item.origin === 'official_question' ? 'Questão oficial' : item.origin === 'module_question' ? 'Questão do módulo' : item.origin === 'ai_generated' ? 'Questão gerada por IA' : 'Simulado'}
+                      </span>
+                    )}
                   </div>
 
                   <div className="flex items-center space-x-2">
@@ -287,6 +298,15 @@ export const CadernoDeErros: React.FC<CadernoDeErrosProps> = ({
                     </button>
                   </div>
                 </div>
+
+                {item.questionId && (
+                  <div className="rounded-xl border border-violet-200 bg-violet-50/60 p-3 text-xs leading-relaxed text-violet-950">
+                    <strong>Origem:</strong> {item.bank || 'Banco de questões'} · ID {item.questionId}
+                    {item.year ? ` · ${item.year}` : ''}
+                    {item.questionText && <p className="mt-1 line-clamp-3">{item.questionText}</p>}
+                    {item.conceptIds?.length ? <p className="mt-1 font-mono text-[11px]">Conceitos: {item.conceptIds.join(', ')}</p> : null}
+                  </div>
+                )}
 
                 {/* 3 Columns Grid for Detail */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -318,29 +338,9 @@ export const CadernoDeErros: React.FC<CadernoDeErrosProps> = ({
                   </div>
                 </div>
 
-                {/* Advancement Status Controller */}
-                <div className="flex items-center justify-between pt-2 text-xs border-t border-slate-100 flex-wrap gap-2">
-                  <span className="text-slate-500 font-medium">
-                    Avançar ciclo de revisão:
-                  </span>
-                  <div className="flex flex-wrap gap-1.5">
-                    {(['dia0', 'dia1', 'dia7', 'dia30', 'dominado'] as const).map(
-                      (st) => (
-                        <button
-                          key={st}
-                          onClick={() => onUpdateErrorStatus(item.id, st)}
-                          className={`text-xs px-2.5 py-1 rounded-md font-bold transition border cursor-pointer ${
-                            item.status === st
-                              ? 'bg-teal-800 text-white border-teal-800'
-                              : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'
-                          }`}
-                        >
-                          {st.toUpperCase()}
-                        </button>
-                      )
-                    )}
-                  </div>
-                </div>
+                <p className="border-t border-slate-100 pt-3 text-xs text-slate-600">
+                  O ciclo é atualizado pelas revisões dos flashcards; cada cartão mantém seu próprio intervalo.
+                </p>
               </div>
             );
           })}

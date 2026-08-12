@@ -430,12 +430,12 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
             <Timer className="h-5 w-5" />
           </div>
           <div>
-            <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+            <h1 className="text-lg font-bold text-slate-900 flex flex-wrap items-center gap-2">
               Cronômetro de Foco Pomodoro
               <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-800">
                 Técnica SuVeCA
               </span>
-            </h2>
+            </h1>
             <p className="text-xs text-slate-500">
               Gerencie sessões de estudo focadas em tópicos gramaticais e descanse a mente em intervalos programados.
             </p>
@@ -479,7 +479,7 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
           }}
           className={`flex items-center justify-center gap-2 rounded-lg py-2.5 px-3 text-xs sm:text-sm font-semibold transition-all ${
             mode === 'foco'
-              ? 'bg-amber-600 text-white shadow-xs'
+              ? 'bg-amber-700 text-white shadow-xs'
               : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
           }`}
         >
@@ -495,7 +495,7 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
           }}
           className={`flex items-center justify-center gap-2 rounded-lg py-2.5 px-3 text-xs sm:text-sm font-semibold transition-all ${
             mode === 'pausa_curta'
-              ? 'bg-teal-600 text-white shadow-xs'
+              ? 'bg-teal-700 text-white shadow-xs'
               : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
           }`}
         >
@@ -511,7 +511,7 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
           }}
           className={`flex items-center justify-center gap-2 rounded-lg py-2.5 px-3 text-xs sm:text-sm font-semibold transition-all ${
             mode === 'pausa_longa'
-              ? 'bg-sky-600 text-white shadow-xs'
+              ? 'bg-sky-700 text-white shadow-xs'
               : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
           }`}
         >
@@ -602,10 +602,10 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
                 isRunning
                   ? 'bg-slate-800 hover:bg-slate-900'
                   : mode === 'foco'
-                  ? 'bg-amber-600 hover:bg-amber-700'
+                  ? 'bg-amber-700 hover:bg-amber-800'
                   : mode === 'pausa_curta'
-                  ? 'bg-teal-600 hover:bg-teal-700'
-                  : 'bg-sky-600 hover:bg-sky-700'
+                  ? 'bg-teal-700 hover:bg-teal-800'
+                  : 'bg-sky-700 hover:bg-sky-800'
               }`}
             >
               {isRunning ? (
@@ -644,6 +644,7 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
             {!useCustomTopic ? (
               <div className="space-y-2">
                 <select
+                  aria-label="Tópico em estudo"
                   value={selectedTopicModuleId}
                   onChange={(e) => setSelectedTopicModuleId(e.target.value)}
                   className="w-full rounded-lg border border-slate-300 bg-white p-2.5 text-sm font-medium text-slate-800 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
@@ -811,7 +812,7 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
               <button
                 type="button"
                 onClick={handleSaveCompletion}
-                className="w-full rounded-xl bg-amber-600 py-2.5 text-sm font-bold text-white shadow-xs hover:bg-amber-700 transition-colors"
+                className="w-full rounded-xl bg-amber-700 py-2.5 text-sm font-bold text-white shadow-xs hover:bg-amber-800 transition-colors"
               >
                 Salvar Sessão e Ir para Pausa
               </button>

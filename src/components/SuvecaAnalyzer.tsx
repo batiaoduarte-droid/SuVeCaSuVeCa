@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { SuvecaAnalysisResult, SuvecaBlock } from '../types/suveca';
+import { authenticatedFetch } from '../lib/authenticatedFetch';
 import {
   Sparkles,
   AlertTriangle,
@@ -212,7 +213,7 @@ export const SuvecaAnalyzer: React.FC<SuvecaAnalyzerProps> = ({
     setSelectedBlock(null);
 
     try {
-      const response = await fetch('/api/suveca/analyze', {
+      const response = await authenticatedFetch('/api/suveca/analyze', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ sentence: inputText }),

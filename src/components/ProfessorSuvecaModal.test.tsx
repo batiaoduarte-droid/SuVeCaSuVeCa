@@ -3,6 +3,10 @@ import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ProfessorSuvecaModal } from './ProfessorSuvecaModal';
 
+vi.mock('../lib/authenticatedFetch', () => ({
+  authenticatedFetch: (input: string, init?: RequestInit) => fetch(input, init),
+}));
+
 describe('ProfessorSuvecaModal', () => {
   beforeEach(() => {
     vi.stubGlobal('fetch', vi.fn(async () => ({
@@ -23,6 +27,7 @@ describe('ProfessorSuvecaModal', () => {
 
     expect(await screen.findByText('Objeto direto')).toHaveProperty('tagName', 'STRONG');
     expect(screen.getByRole('table')).toBeInTheDocument();
+    expect(screen.getByText('Esta resposta ajudou?')).toBeInTheDocument();
     expect(screen.queryByText(/PASSAGE:|QUESTION:|KB:/i)).not.toBeInTheDocument();
   });
 

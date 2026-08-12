@@ -6,6 +6,8 @@ import { Navbar, TabType } from './components/Navbar';
 import { DailyTipCard } from './components/DailyTipCard';
 import { DailyMotivationCard } from './components/DailyMotivationCard';
 import { DailyReviewReminder } from './components/DailyReviewReminder';
+import { ContinueLearningCard } from './components/ContinueLearningCard';
+import { fetchOfficialQuestionSample, officialDetailToQuizQuestion } from './lib/officialQuestions';
 import { useLearningMetrics } from './hooks/useLearningMetrics';
 import { useAchievements } from './hooks/useAchievements';
 import {
@@ -68,33 +70,15 @@ const AchievementsProfile = lazy(() =>
 const OfficialQuestionsExplorer = lazy(() =>
   import('./components/OfficialQuestionsExplorer').then((module) => ({ default: module.OfficialQuestionsExplorer }))
 );
+const PomodoroTimer = lazy(() =>
+  import('./components/PomodoroTimer').then((module) => ({ default: module.PomodoroTimer }))
+);
 
 const ToolLoading = () => (
   <div className="mx-auto flex min-h-48 max-w-5xl items-center justify-center rounded-2xl border border-slate-200 bg-white p-8 text-sm font-semibold text-slate-700 shadow-xs" role="status">
     Carregando ferramenta de estudo…
   </div>
 );
-
-const INITIAL_SAMPLE_ERRORS: CadernoErroItem[] = [
-  {
-    id: 'err_sample_1',
-    date: '08/08/2026',
-    conteudo: 'Concordância com o verbo haver',
-    erroCometido: 'Fiz o verbo concordar no plural com o termo posterior ("Houveram muitas dúvidas").',
-    regraDecisiva: 'Haver no sentido de existir é impessoal e fica estritamente no singular ("Houve muitas dúvidas").',
-    novoExemplo: 'Deve haver mudanças significativas na publicação do próximo edital.',
-    status: 'dia0',
-  },
-  {
-    id: 'err_sample_2',
-    date: '08/08/2026',
-    conteudo: 'Regência do verbo aspirar',
-    erroCometido: 'Usei sem preposição no sentido de almejar ("Aspirava o cargo de diretor").',
-    regraDecisiva: 'No sentido de desejar/almejar, aspirar é transitivo indireto e exige a preposição "a" ("Aspirava ao cargo").',
-    novoExemplo: 'O candidato aspirava a uma vaga de auditor fiscal.',
-    status: 'dia1',
-  },
-];
 
 const LEGACY_CADERNO_STORAGE_KEY = 'suveca_caderno_erros';
 const cadernoStorageKeyFor = (userId?: string | null) =>
@@ -116,6 +100,9 @@ const readStoredErrors = (userId?: string | null): CadernoErroItem[] | null => {
   }
 };
 
+const lastModuleStorageKey = (userId?: string | null) =>
+  `suveca_last_module_${userId || 'guest'}`;
+
 export default function App() {
   const [activeTab, setActiveTab] = useState<TabType>('modules');
   const [selectedModuleId, setSelectedModuleId] = useState<string>('mod0');
@@ -130,7 +117,7 @@ export default function App() {
   const [isSyncing, setIsSyncing] = useState<boolean>(false);
   const [cadernoReadyFor, setCadernoReadyFor] = useState<string | null>('guest');
   const authHydrationId = useRef(0);
-  const { metrics, markModuleVisited, addAttempt } = useLearningMetrics(user);
+  const { metrics, markModuleVisited, addAttempt, markSectionRead, recordModulePractice } = useLearningMetrics(user);
   const {
     progress: achievementProgress,
     isLoading: isLoadingAchievements,
@@ -141,7 +128,7 @@ export default function App() {
 
   // Caderno de Erros state
   const [cadernoErrors, setCadernoErrors] = useState<CadernoErroItem[]>(
-    () => readStoredErrors() || INITIAL_SAMPLE_ERRORS
+    () => readStoredErrors() || []
   );
 
   // Track auth changes and load Firestore data
@@ -154,15 +141,19 @@ export default function App() {
       // while this account's private document is still being fetched.
       setCadernoReadyFor(null);
       setUser(currentUser);
+      const savedModule = localStorage.getItem(lastModuleStorageKey(currentUserId));
+      if (savedModule && MODULES_DATA.some((module) => module.id === savedModule)) {
+        setSelectedModuleId(savedModule);
+      }
 
       if (!currentUser || !currentUserId) {
-        setCadernoErrors(readStoredErrors() || INITIAL_SAMPLE_ERRORS);
+        setCadernoErrors(readStoredErrors() || []);
         setCadernoReadyFor('guest');
         setIsSyncing(false);
         return;
       }
 
-      const localErrors = readStoredErrors(currentUserId) || INITIAL_SAMPLE_ERRORS;
+      const localErrors = readStoredErrors(currentUserId) || [];
       setCadernoErrors(localErrors);
       setIsSyncing(true);
 
@@ -282,7 +273,8 @@ export default function App() {
   const handleAddErrorDirect = (
     conteudo: string,
     erroCometido: string,
-    regraDecisiva: string
+    regraDecisiva: string,
+    metadata: Partial<CadernoErroItem> = {}
   ) => {
     const newItem: CadernoErroItem = {
       id: `err_${Date.now()}_${Math.random().toString(36).substring(2, 5)}`,
@@ -292,16 +284,19 @@ export default function App() {
       regraDecisiva,
       novoExemplo: 'Aplicar a regra decisiva em nova bateria de questões.',
       status: 'dia0',
+      origin: 'manual',
+      ...metadata,
     };
     setCadernoErrors((prev) => [newItem, ...prev]);
   };
 
   const handleUpdateErrorStatus = (
     id: string,
-    status: CadernoErroItem['status']
+    status: CadernoErroItem['status'],
+    review?: Pick<CadernoErroItem, 'lastReviewedAt' | 'nextReviewAt'>
   ) => {
     setCadernoErrors((prev) =>
-      prev.map((item) => (item.id === id ? { ...item, status } : item))
+      prev.map((item) => (item.id === id ? { ...item, status, ...review } : item))
     );
   };
 
@@ -314,15 +309,39 @@ export default function App() {
     setIsTutorOpen(true);
   };
 
-  const handleSelectModule = (id: string) => {
-    setSelectedModuleId(id);
-    markModuleVisited(id);
+  const handlePracticeConcept = async (conceptIds: string[], moduleId: string) => {
+    const module = MODULES_DATA.find((item) => item.id === moduleId);
+    const authorialFallback = () => (module?.questions || []).map((question) => ({
+      ...question,
+      origin: 'authorial' as const,
+      moduleId,
+      conceptIds,
+    }));
+    let selectedQuestions: QuizQuestion[] = [];
+    try {
+      const sample = await fetchOfficialQuestionSample(
+        { conceptId: conceptIds[0], moduleId },
+        5
+      );
+      selectedQuestions = sample.questions.length
+        ? sample.questions.map(officialDetailToQuizQuestion)
+        : authorialFallback();
+    } catch {
+      selectedQuestions = authorialFallback();
+    }
+    if (!selectedQuestions.length) {
+      setActiveTab('questions');
+      return;
+    }
+    setOfficialSimuladoQuestions(selectedQuestions);
+    setActiveTab('simulado');
   };
 
-  // The default module also counts as an explored study unit.
-  useEffect(() => {
-    markModuleVisited(selectedModuleId);
-  }, [markModuleVisited, selectedModuleId]);
+  const handleSelectModule = (id: string) => {
+    setSelectedModuleId(id);
+    localStorage.setItem(lastModuleStorageKey(user?.uid), id);
+    markModuleVisited(id);
+  };
 
   // Find simulado questions
   const simuladoModule = MODULES_DATA.find((m) => m.id === 'simulado');
@@ -331,6 +350,13 @@ export default function App() {
   const visitedCoreModules = metrics.visitedModuleIds.filter((id) =>
     coreModules.some((module) => module.id === id)
   ).length;
+  const totalCoreSections = coreModules.reduce((total, module) => total + module.sections.length, 0);
+  const corePractice = Object.entries(metrics.modulePractice).reduce(
+    (summary, [moduleId, practice]) => coreModules.some((module) => module.id === moduleId)
+      ? { answered: summary.answered + practice.answered, correct: summary.correct + practice.correct }
+      : summary,
+    { answered: 0, correct: 0 }
+  );
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--text)] font-sans flex flex-col relative overflow-x-hidden">
@@ -373,6 +399,12 @@ export default function App() {
               <div className="space-y-6">
                 {!isImmersiveFocus && (
                   <>
+                    <ContinueLearningCard
+                      module={MODULES_DATA.find((module) => module.id === selectedModuleId) || MODULES_DATA[0]}
+                      pendingErrors={cadernoErrors.filter((error) => error.status !== 'dominado')}
+                      onContinueModule={() => markModuleVisited(selectedModuleId)}
+                      onReview={() => setActiveTab('agenda')}
+                    />
                     <DailyTipCard
                       onOpenModule={(id) => {
                         handleSelectModule(id);
@@ -391,6 +423,10 @@ export default function App() {
                   user={user}
                   onNoteSaved={recordNote}
                   onAnswerResult={recordAnswer}
+                  onSectionRead={markSectionRead}
+                  readSectionIds={metrics.readSectionIds}
+                  onPracticeResult={recordModulePractice}
+                  onPracticeConcept={handlePracticeConcept}
                   onCompleteModule={() => recordStudyActivity()}
                   errors={cadernoErrors}
                   userId={user?.uid}
@@ -412,7 +448,7 @@ export default function App() {
               <div className="space-y-3">
                 {officialSimuladoQuestions && (
                   <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-teal-200 bg-teal-50 p-3 text-sm text-teal-900">
-                    <span><strong>Simulado oficial:</strong> {officialSimuladoQuestions.length} questões preservadas por question_id.</span>
+                    <span><strong>{officialSimuladoQuestions.every((question) => question.origin === 'official') ? 'Prática oficial' : 'Prática autoral de apoio'}:</strong> {officialSimuladoQuestions.length} questões {officialSimuladoQuestions.every((question) => question.origin === 'official') ? 'preservadas por question_id' : 'identificadas claramente como autorais'}.</span>
                     <button type="button" className="button-secondary min-h-[44px]" onClick={() => setOfficialSimuladoQuestions(null)}>Voltar ao simulado autoral</button>
                   </div>
                 )}
@@ -447,6 +483,15 @@ export default function App() {
               />
             )}
 
+            {activeTab === 'pomodoro' && (
+              <PomodoroTimer
+                selectedModuleId={selectedModuleId}
+                user={user}
+                onAskTutor={handleOpenTutorWithContext}
+                onCompleteSession={() => recordStudyActivity()}
+              />
+            )}
+
             {activeTab === 'agenda' && (
               <DailyReviewDashboard
                 errors={cadernoErrors}
@@ -478,6 +523,10 @@ export default function App() {
                 errors={cadernoErrors}
                 visitedModules={visitedCoreModules}
                 totalModules={coreModules.length}
+                readSections={metrics.readSectionIds.filter((id) => coreModules.some((module) => id.startsWith(`${module.id}:`))).length}
+                totalSections={totalCoreSections}
+                practiceAnswered={corePractice.answered}
+                practiceCorrect={corePractice.correct}
                 userName={user?.displayName}
                 onOpenSimulado={() => setActiveTab('simulado')}
               />
@@ -518,6 +567,9 @@ export default function App() {
               handleSelectModule(id);
               setActiveTab('modules');
             }}
+            errors={cadernoErrors}
+            userId={user?.uid}
+            onOpenOfficialQuestions={() => setActiveTab('questions')}
           />
         </Suspense>
       )}
@@ -528,6 +580,14 @@ export default function App() {
             isOpen={isTutorOpen}
             onClose={() => setIsTutorOpen(false)}
             initialContext={tutorContext}
+            onSaveRule={(rule, context) => handleAddErrorDirect(
+              context || 'Regra explicada pelo Professor SuVeCA',
+              'Dúvida identificada durante a tutoria contextual.',
+              rule,
+              { origin: 'manual', sourceRefs: [] }
+            )}
+            onOpenFlashcards={() => { setIsTutorOpen(false); setActiveTab('flashcards'); }}
+            onOpenPractice={() => { setIsTutorOpen(false); setActiveTab('questions'); }}
           />
         </Suspense>
       )}

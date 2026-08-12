@@ -15,6 +15,20 @@ export interface QuizQuestion {
   options?: QuizOption[];
   correctAnswer: string; // 'C', 'E', or 'A', 'B', 'C', 'D', 'E'
   commentary: string;
+  /** Origem pedagógica; conteúdo oficial nunca deve ser reescrito pelo app. */
+  origin?: 'official' | 'authorial' | 'ai_generated';
+  officialQuestionId?: string;
+  moduleId?: string;
+  conceptIds?: string[];
+  sourceRefs?: string[];
+  resolution?: {
+    decisiveRule?: string;
+    mentalTest?: string;
+    whyCorrect?: string;
+    distractors?: Array<{ option: string; explanation: string }>;
+    contrastOrException?: string;
+    nextConceptId?: string;
+  };
 }
 
 export interface ModuleSection {
@@ -125,7 +139,22 @@ export interface CadernoErroItem {
   novoExemplo: string;
   status: 'dia0' | 'dia1' | 'dia7' | 'dia30' | 'dominado';
   moduleRef?: string;
+  origin?: 'manual' | 'module_question' | 'official_question' | 'simulado' | 'ai_generated';
+  questionId?: string;
+  questionText?: string;
+  selectedAnswer?: string;
+  correctAnswer?: string;
+  bank?: string;
+  year?: number;
+  difficulty?: string;
+  topic?: string;
+  conceptIds?: string[];
+  sourceRefs?: string[];
+  lastReviewedAt?: string;
+  nextReviewAt?: string;
 }
+
+export type FlashcardRating = 'again' | 'hard' | 'good' | 'easy';
 
 export interface ErrorFlashcard {
   id: string;
@@ -145,6 +174,13 @@ export interface ErrorFlashcard {
   nextReviewAt?: string;
   correctCount: number;
   incorrectCount: number;
+  /** Campos individuais do agendamento SM-2 simplificado. */
+  repetitions?: number;
+  intervalDays?: number;
+  easeFactor?: number;
+  lapseCount?: number;
+  lastRating?: FlashcardRating;
+  masteryScore?: number;
 }
 
 export interface StudyPreferences {
@@ -196,7 +232,7 @@ export interface SimuladoAttempt {
   byTopic: Record<string, TopicAttemptStats>;
   /** Respostas brutas enviadas para validação do placar no backend. */
   answerMap?: Record<string, string>;
-  questionSetVersion?: 'official-simulado-v1';
+  questionSetVersion?: 'official-simulado-v1' | 'official-corpus-v1' | 'ai-generated-v1';
 }
 
 export interface ChecklistItem {

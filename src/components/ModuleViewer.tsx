@@ -38,21 +38,33 @@ interface ModuleViewerProps {
   onRecordError?: (
     conteudo: string,
     erroCometido: string,
-    regraDecisiva: string
+    regraDecisiva: string,
+    metadata?: Partial<CadernoErroItem>
   ) => void;
   user?: User | null;
   onNoteSaved?: () => void;
   onAnswerResult?: (isCorrect: boolean) => void;
+  onSectionRead?: (moduleId: string, sectionIndex: number) => void;
+  readSectionIds?: string[];
+  onPracticeResult?: (moduleId: string, correct: boolean, completed: boolean) => void;
+  onPracticeConcept?: (conceptIds: string[], moduleId: string) => void;
   /** Called once when every practice question in the selected module is answered. */
   onCompleteModule?: (moduleId: string) => void;
   errors?: CadernoErroItem[];
   userId?: string;
-  onUpdateErrorStatus?: (id: string, status: CadernoErroItem['status']) => void;
+  onUpdateErrorStatus?: (
+    id: string,
+    status: CadernoErroItem['status'],
+    review?: Pick<CadernoErroItem, 'lastReviewedAt' | 'nextReviewAt'>
+  ) => void;
   isFocusMode?: boolean;
   onToggleFocusMode?: () => void;
 }
 
 type ModuleNotes = Record<string, string>;
+
+const sectionConceptIds = (sections: ModuleData['sections']) =>
+  [...new Set(sections.flatMap((section) => section.sourceConceptIds || []))];
 
 const notesStorageKey = (moduleId: string, userId?: string) =>
   userId
@@ -121,6 +133,10 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   user,
   onNoteSaved,
   onAnswerResult,
+  onSectionRead,
+  readSectionIds = [],
+  onPracticeResult,
+  onPracticeConcept,
   onCompleteModule,
   errors,
   userId,
@@ -273,12 +289,28 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
     setSelectedAnswers((prev) => ({ ...prev, [qId]: answer }));
     setShowFeedback((prev) => ({ ...prev, [qId]: true }));
     if (isFirstAnswer && question) {
-      onAnswerResult?.(answer === question.correctAnswer);
+      const isCorrect = answer === question.correctAnswer;
+      onAnswerResult?.(isCorrect);
       const questionCount = moduleData.questions?.length || 0;
-      if (questionCount > 0 && Object.keys(selectedAnswers).length + 1 >= questionCount) {
+      const nextAnswers = { ...selectedAnswers, [qId]: answer };
+      const allAnswered = questionCount > 0 && Object.keys(nextAnswers).length >= questionCount;
+      const allCorrect = allAnswered && (moduleData.questions || []).every(
+        (item) => nextAnswers[item.id] === item.correctAnswer
+      );
+      onPracticeResult?.(moduleData.id, isCorrect, allCorrect);
+      if (allCorrect) {
         onCompleteModule?.(moduleData.id);
       }
     }
+  };
+
+  const askTutorAboutSection = (section: ModuleData['sections'][number]) => {
+    const selectedExcerpt = window.getSelection()?.toString().trim().slice(0, 600);
+    onAskTutor(
+      `Módulo ${moduleData.num}: ${moduleData.title}. Seção: ${section.title}. ` +
+      `Conceitos: ${(section.sourceConceptIds || []).join(', ') || 'não informados'}.` +
+      (selectedExcerpt ? ` Trecho selecionado pelo aluno: “${selectedExcerpt}”.` : '')
+    );
   };
 
   const currentIndex = modules.findIndex((m) => m.id === moduleData.id);
@@ -702,6 +734,28 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                   </p>
                 )}
               </div>
+
+              {!isFocusMode && onSectionRead && (
+                <div className="flex flex-wrap gap-2">
+                <button
+                  type="button"
+                  onClick={() => onSectionRead(moduleData.id, idx)}
+                  disabled={readSectionIds.includes(`${moduleData.id}:section-${idx}`)}
+                  className="button-secondary min-h-[44px] text-xs disabled:cursor-default disabled:bg-emerald-50 disabled:text-emerald-800 disabled:opacity-100"
+                >
+                  <CheckCircle className="h-4 w-4" />
+                  {readSectionIds.includes(`${moduleData.id}:section-${idx}`) ? 'Seção concluída' : 'Marcar seção como estudada'}
+                </button>
+                <button type="button" onClick={() => askTutorAboutSection(section)} className="button-secondary min-h-[44px] text-xs">
+                  <Bot className="h-4 w-4 text-teal-700" /> Perguntar sobre esta seção
+                </button>
+                {section.sourceConceptIds?.length && onPracticeConcept ? (
+                  <button type="button" onClick={() => onPracticeConcept(section.sourceConceptIds || [], moduleData.id)} className="button-primary min-h-[44px] text-xs">
+                    <CheckCircle className="h-4 w-4" /> Pratique este conceito
+                  </button>
+                ) : null}
+                </div>
+              )}
             </section>
           ))}
         </div>
@@ -818,7 +872,38 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                           </span>
                         </div>
 
-                        <p className="leading-relaxed">{q.commentary}</p>
+                        <div className="space-y-3 leading-relaxed">
+                          <div>
+                            <strong className="block text-xs uppercase tracking-wide">Regra decisiva e por que o gabarito está correto</strong>
+                            <p className="mt-1">{q.resolution?.whyCorrect || q.resolution?.decisiveRule || q.commentary}</p>
+                          </div>
+                          <div className="rounded-xl border border-current/15 bg-white/60 p-3">
+                            <strong className="block text-xs uppercase tracking-wide">Teste mental para repetir na prova</strong>
+                            <p className="mt-1">{q.resolution?.mentalTest || (q.type === 'CERTO_ERRADO'
+                              ? 'Isole a afirmação do item, localize o trecho decisivo e teste se ela preserva integralmente a regra e o sentido do texto, sem absolutizações.'
+                              : 'Aplique a regra decisiva a cada alternativa, elimine as que falham no mesmo critério e só então marque a opção restante.')}</p>
+                          </div>
+                          {q.options?.length ? (
+                            <div>
+                              <strong className="block text-xs uppercase tracking-wide">Contraste entre alternativas</strong>
+                              <ul className="mt-1 space-y-1.5">
+                                {q.options.map((option) => {
+                                  const authored = q.resolution?.distractors?.find((item) => item.option === option.letter)?.explanation;
+                                  return <li key={option.letter}><b>{option.letter}.</b> {option.letter === q.correctAnswer ? 'É o gabarito; confira a justificativa acima.' : authored || 'Não satisfaz o critério decisivo; confronte-a diretamente com a regra acima.'}</li>;
+                                })}
+                              </ul>
+                            </div>
+                          ) : null}
+                          {q.resolution?.contrastOrException && <p><strong>Contraste ou exceção:</strong> {q.resolution.contrastOrException}</p>}
+                          <p className="rounded-xl border border-current/15 bg-white/60 p-3">
+                            <strong>Próximo conceito recomendado:</strong>{' '}
+                            {isCorrect
+                              ? nextModule
+                                ? `avance para “${nextModule.title}” e compare a nova regra com a que acabou de aplicar.`
+                                : `refaça uma questão de “${q.topic || moduleData.title}” sem consultar a explicação.`
+                              : `revise “${q.topic || moduleData.title}” e aplique novamente o teste mental acima antes de avançar.`}
+                          </p>
+                        </div>
 
                         {!isCorrect && onRecordError && (
                           <div className="pt-2 border-t border-rose-200/60 flex flex-wrap gap-2">
@@ -827,7 +912,19 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                                 onRecordError(
                                   q.topic || moduleData.title,
                                   `Errei a questão: "${q.questionText.substring(0, 80)}..."`,
-                                  q.commentary
+                                  q.commentary,
+                                  {
+                                    origin: q.origin === 'official' ? 'official_question' : 'module_question',
+                                    questionId: q.officialQuestionId || q.id,
+                                    questionText: q.questionText,
+                                    selectedAnswer: selected,
+                                    correctAnswer: q.correctAnswer,
+                                    bank: q.bank,
+                                    topic: q.topic,
+                                    moduleRef: moduleData.id,
+                                    conceptIds: q.conceptIds || sectionConceptIds(moduleData.sections),
+                                    sourceRefs: q.sourceRefs,
+                                  }
                                 )
                               }
                               className="bg-white hover:bg-rose-100 text-rose-800 font-bold px-3 py-1.5 rounded-lg border border-rose-300 text-xs flex items-center gap-1.5 transition cursor-pointer"

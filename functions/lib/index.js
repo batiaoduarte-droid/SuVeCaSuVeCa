@@ -9,13 +9,14 @@ const params_1 = require("firebase-functions/params");
 const firestore_2 = require("firebase-functions/v2/firestore");
 const scheduler_1 = require("firebase-functions/v2/scheduler");
 const officialQuestions_js_1 = require("./officialQuestions.js");
+const officialCorpus_generated_js_1 = require("./officialCorpus.generated.js");
 const duelQuestions_js_1 = require("./duelQuestions.js");
 var pushNotifications_js_1 = require("./pushNotifications.js");
 Object.defineProperty(exports, "sendDailyReviewPushes", { enumerable: true, get: function () { return pushNotifications_js_1.sendDailyReviewPushes; } });
 (0, app_1.initializeApp)();
 const firestore = (0, firestore_1.getFirestore)();
 const resendApiKey = (0, params_1.defineSecret)('RESEND_API_KEY');
-const OFFICIAL_QUESTION_IDS = Object.keys(officialQuestions_js_1.OFFICIAL_SIMULADO_ANSWER_KEY);
+const OFFICIAL_SIMULADO_IDS = Object.keys(officialQuestions_js_1.OFFICIAL_SIMULADO_ANSWER_KEY);
 const ANSWER_VALUES = new Set(['A', 'B', 'C', 'D', 'E']);
 const monthKeyFor = (date) => {
     const parts = new Intl.DateTimeFormat('en-US', {
@@ -39,10 +40,11 @@ const getFirstName = (displayName) => {
 const getPublicAlias = (displayName, shareFirstName) => shareFirstName === true && getFirstName(displayName)
     ? getFirstName(displayName)
     : 'Estudante SuVeCA';
-const isValidAnswerMap = (value) => {
+const isValidAnswerMap = (value, answerKey, requiredSize) => {
     if (!value || typeof value !== 'object' || Array.isArray(value))
         return false;
-    return Object.entries(value).every(([questionId, answer]) => OFFICIAL_QUESTION_IDS.includes(questionId) &&
+    const entries = Object.entries(value);
+    return entries.length === requiredSize && entries.every(([questionId, answer]) => Object.prototype.hasOwnProperty.call(answerKey, questionId) &&
         typeof answer === 'string' &&
         ANSWER_VALUES.has(answer));
 };
@@ -70,10 +72,15 @@ const isValidDuelAnswerLog = (value) => Array.isArray(value) &&
 exports.verifyOfficialSimulado = (0, firestore_2.onDocumentCreated)('users/{userId}/attempt_submissions/{attemptId}', async (event) => {
     const submission = event.data?.data();
     const { userId, attemptId } = event.params;
-    if (!submission ||
-        submission.schemaVersion !== 1 ||
-        submission.questionSetVersion !== officialQuestions_js_1.OFFICIAL_SIMULADO_VERSION ||
-        !isValidAnswerMap(submission.answerMap)) {
+    const isCanonicalSimulado = submission?.questionSetVersion === officialQuestions_js_1.OFFICIAL_SIMULADO_VERSION;
+    const isOfficialCorpusSample = submission?.questionSetVersion === officialCorpus_generated_js_1.OFFICIAL_CORPUS_VERSION;
+    const answerKey = isCanonicalSimulado
+        ? officialQuestions_js_1.OFFICIAL_SIMULADO_ANSWER_KEY
+        : isOfficialCorpusSample
+            ? officialCorpus_generated_js_1.OFFICIAL_CORPUS_ANSWER_KEY
+            : null;
+    const requiredSize = isCanonicalSimulado ? OFFICIAL_SIMULADO_IDS.length : officialCorpus_generated_js_1.OFFICIAL_CORPUS_SAMPLE_SIZE;
+    if (!submission || submission.schemaVersion !== 1 || !answerKey || !isValidAnswerMap(submission.answerMap, answerKey, requiredSize)) {
         firebase_functions_1.logger.warn('Tentativa oficial rejeitada por formato inválido.', {
             userId,
             attemptId,
@@ -81,11 +88,12 @@ exports.verifyOfficialSimulado = (0, firestore_2.onDocumentCreated)('users/{user
         return;
     }
     const answerMap = submission.answerMap;
-    const correctCount = OFFICIAL_QUESTION_IDS.reduce((total, questionId) => total +
-        (answerMap[questionId] === officialQuestions_js_1.OFFICIAL_SIMULADO_ANSWER_KEY[questionId]
+    const submittedQuestionIds = Object.keys(answerMap);
+    const correctCount = submittedQuestionIds.reduce((total, questionId) => total +
+        (answerMap[questionId] === answerKey[questionId]
             ? 1
             : 0), 0);
-    const totalQuestions = OFFICIAL_QUESTION_IDS.length;
+    const totalQuestions = submittedQuestionIds.length;
     const now = new Date();
     const monthKey = monthKeyFor(now);
     const verifiedAttemptRef = firestore.doc(`users/${userId}/verified_attempts/${attemptId}`);
@@ -106,7 +114,7 @@ exports.verifyOfficialSimulado = (0, firestore_2.onDocumentCreated)('users/{user
         transaction.create(verifiedAttemptRef, {
             schemaVersion: 1,
             sourceAttemptId: attemptId,
-            questionSetVersion: officialQuestions_js_1.OFFICIAL_SIMULADO_VERSION,
+            questionSetVersion: submission.questionSetVersion,
             correctCount,
             totalQuestions,
             percentage: Math.round((correctCount / totalQuestions) * 100),

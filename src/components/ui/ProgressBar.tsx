@@ -3,6 +3,7 @@ import React from 'react';
 interface ProgressBarProps {
   value: number; // 0 to 100
   label?: string;
+  ariaLabel?: string;
   showPercent?: boolean;
   size?: 'sm' | 'md' | 'lg';
   color?: 'teal' | 'amber' | 'emerald';
@@ -11,6 +12,7 @@ interface ProgressBarProps {
 export const ProgressBar: React.FC<ProgressBarProps> = ({
   value,
   label,
+  ariaLabel,
   showPercent = true,
   size = 'md',
   color = 'teal',
@@ -47,6 +49,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
         aria-valuenow={percentage}
         aria-valuemin={0}
         aria-valuemax={100}
+        aria-label={ariaLabel || label || `Progresso: ${Math.round(percentage)}%`}
       >
         <div
           className={`h-full transition-all duration-300 ease-out ${barColorClasses}`}

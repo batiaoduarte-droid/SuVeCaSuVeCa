@@ -3,6 +3,7 @@ import { QuizQuestion, SimuladoAttempt, TopicAttemptStats } from '../types/suvec
 import { auth, db, onAuthStateChanged } from '../lib/firebase';
 import { deleteDoc, doc, getDoc, setDoc } from 'firebase/firestore';
 import { useModalFocus } from '../hooks/useModalFocus';
+import { authenticatedFetch } from '../lib/authenticatedFetch';
 import {
   GraduationCap,
   Clock,
@@ -45,7 +46,8 @@ interface SimuladoEngineProps {
   onAddErrorToNotebook: (
     conteudo: string,
     erroCometido: string,
-    regraDecisiva: string
+    regraDecisiva: string,
+    metadata?: Partial<import('../types/suveca').CadernoErroItem>
   ) => void;
   onAnswerResult?: (correct: boolean) => void;
   onCompleteAttempt?: (attempt: SimuladoAttempt) => void;
@@ -92,6 +94,7 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
   const [genCount, setGenCount] = useState(3);
   const [genQuestions, setGenQuestions] = useState<QuizQuestion[]>([]);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [generationError, setGenerationError] = useState<string | null>(null);
   const [genUserAnswers, setGenUserAnswers] = useState<Record<string, string>>({});
 
   const questionSignature = useMemo(
@@ -347,7 +350,19 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
           onAddErrorToNotebook(
             q.topic || 'Simulado Final SuVeCA',
             `Errei a questão ${q.id}: marquei ${userAnswers[q.id]} e o gabarito era ${q.correctAnswer}`,
-            q.commentary
+            q.commentary,
+            {
+              origin: q.origin === 'official' ? 'official_question' : q.origin === 'ai_generated' ? 'ai_generated' : 'simulado',
+              questionId: q.officialQuestionId || q.id,
+              questionText: q.questionText,
+              selectedAnswer: userAnswers[q.id],
+              correctAnswer: q.correctAnswer,
+              bank: q.bank,
+              topic: q.topic,
+              moduleRef: q.moduleId,
+              conceptIds: q.conceptIds,
+              sourceRefs: q.sourceRefs,
+            }
           );
           setAddedErrors((prev) => ({ ...prev, [q.id]: true }));
         }
@@ -357,9 +372,10 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
 
   const handleGenerateQuestions = async () => {
     setIsGenerating(true);
+    setGenerationError(null);
     setGenUserAnswers({});
     try {
-      const response = await fetch('/api/gemini/generate-questions', {
+      const response = await authenticatedFetch('/api/gemini/generate-questions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -370,11 +386,14 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
       });
 
       const data = await response.json();
-      if (data.questions) {
+      if (!response.ok) {
+        setGenerationError(data.error || 'Não foi possível gerar questões agora.');
+      } else if (data.questions) {
         setGenQuestions(data.questions);
       }
     } catch (err) {
       console.error(err);
+      setGenerationError('Falha de conexão ao gerar questões.');
     } finally {
       setIsGenerating(false);
     }
@@ -426,7 +445,13 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
       timeRemainingSeconds: isTimerEnabled ? secondsLeft : undefined,
       byTopic,
       answerMap: { ...userAnswers },
-      questionSetVersion: 'official-simulado-v1',
+      questionSetVersion: isRankedCanonicalQuestionSet
+        ? 'official-simulado-v1'
+        : isOfficialQuestionSet
+        ? 'official-corpus-v1'
+        : questions.some((question) => question.origin === 'ai_generated')
+        ? 'ai-generated-v1'
+        : undefined,
     });
   };
 
@@ -438,6 +463,9 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
   const currentQ = questions[currentQIndex];
   const isOfficialQuestion = /^\d+$/.test(currentQ?.id || '');
   const isOfficialQuestionSet = questions.length > 0 && questions.every((question) => /^\d+$/.test(question.id));
+  const isRankedCanonicalQuestionSet = questions.length === 20 && questions.every(
+    (question, index) => question.id === `sim-${index + 1}`
+  );
 
   return (
     <div className="space-y-8 pb-16 max-w-5xl mx-auto">
@@ -729,7 +757,7 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
                 <span className="text-xs font-bold text-teal-800 bg-teal-50 border border-teal-200 px-3 py-1 rounded-full">
                   Questão {currentQIndex + 1} de {questions.length}
                 </span>
-                <span className="text-xs text-slate-500 font-medium">
+                <span className="text-xs text-slate-700 font-medium">
                   {currentQ.type === 'CERTO_ERRADO' ? 'Certo ou Errado' : 'Múltipla Escolha'}
                 </span>
               </div>
@@ -815,7 +843,19 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
                           onAddErrorToNotebook(
                             currentQ.topic || 'Simulado Final',
                             `Errei a questão ${currentQ.id}: marquei ${userAnswers[currentQ.id] || 'sem resposta'} e o gabarito era ${currentQ.correctAnswer}`,
-                            currentQ.commentary
+                            currentQ.commentary,
+                            {
+                              origin: currentQ.origin === 'official' ? 'official_question' : currentQ.origin === 'ai_generated' ? 'ai_generated' : 'simulado',
+                              questionId: currentQ.officialQuestionId || currentQ.id,
+                              questionText: currentQ.questionText,
+                              selectedAnswer: userAnswers[currentQ.id],
+                              correctAnswer: currentQ.correctAnswer,
+                              bank: currentQ.bank,
+                              topic: currentQ.topic,
+                              moduleRef: currentQ.moduleId,
+                              conceptIds: currentQ.conceptIds,
+                              sourceRefs: currentQ.sourceRefs,
+                            }
                           )
                         }
                         className="bg-white hover:bg-rose-50 text-rose-800 font-bold px-3 py-1 rounded-md border border-rose-300 text-xs transition cursor-pointer"
@@ -1003,6 +1043,7 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
                 </>
               )}
             </button>
+            {generationError && <p role="alert" className="rounded-xl border border-rose-200 bg-rose-50 p-3 text-sm text-rose-800">{generationError}</p>}
           </div>
 
           {/* Generated Questions List */}

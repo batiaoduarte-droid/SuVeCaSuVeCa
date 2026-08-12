@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { CadernoErroItem, ErrorFlashcard } from '../types/suveca';
+import { CadernoErroItem, ErrorFlashcard, FlashcardRating } from '../types/suveca';
 import { auth, db, onAuthStateChanged } from '../lib/firebase';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import {
@@ -15,35 +15,12 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { toLearnerFacingContent } from '../lib/learnerContent';
+import { deriveErrorReviewStatus, scheduleFlashcard } from '../lib/spacedRepetition';
+import { authenticatedFetch } from '../lib/authenticatedFetch';
 
 const FLASHCARDS_STORAGE_PREFIX = 'suveca_flashcards';
 const flashcardsStorageKey = (userId?: string) =>
   `${FLASHCARDS_STORAGE_PREFIX}_${userId || 'guest'}`;
-const HOUR_MS = 60 * 60 * 1000;
-
-const getErrorReviewDelay = (status: CadernoErroItem['status'], correct: boolean) => {
-  if (!correct) return 4 * HOUR_MS;
-  switch (status) {
-    case 'dia0':
-      return 24 * HOUR_MS;
-    case 'dia1':
-      return 6 * 24 * HOUR_MS;
-    case 'dia7':
-      return 23 * 24 * HOUR_MS;
-    case 'dia30':
-      return 30 * 24 * HOUR_MS;
-    case 'dominado':
-      return 45 * 24 * HOUR_MS;
-  }
-};
-
-const getStandaloneReviewDelay = (correctCount: number, correct: boolean) => {
-  if (!correct) return 4 * HOUR_MS;
-  if (correctCount >= 3) return 30 * 24 * HOUR_MS;
-  if (correctCount >= 2) return 7 * 24 * HOUR_MS;
-  return 24 * HOUR_MS;
-};
-
 const isCardDue = (card: ErrorFlashcard, now: number) =>
   !card.nextReviewAt || Number.isNaN(Date.parse(card.nextReviewAt)) || Date.parse(card.nextReviewAt) <= now;
 
@@ -118,14 +95,13 @@ const SUVECA_STRUCTURE_CARDS: ErrorFlashcard[] = [
 
 interface FlashcardPracticeProps {
   errors: CadernoErroItem[];
-  onUpdateErrorStatus: (id: string, status: CadernoErroItem['status']) => void;
+  onUpdateErrorStatus: (
+    id: string,
+    status: CadernoErroItem['status'],
+    review?: Pick<CadernoErroItem, 'lastReviewedAt' | 'nextReviewAt'>
+  ) => void;
   userId?: string;
 }
-
-const nextReviewStatus = (status: CadernoErroItem['status']): CadernoErroItem['status'] => {
-  const statusOrder: CadernoErroItem['status'][] = ['dia0', 'dia1', 'dia7', 'dia30', 'dominado'];
-  return statusOrder[Math.min(statusOrder.indexOf(status) + 1, statusOrder.length - 1)];
-};
 
 const isFlashcard = (value: unknown): value is ErrorFlashcard => {
   if (!value || typeof value !== 'object') return false;
@@ -332,7 +308,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
     setIsGeneratingFor(error.id);
     setGenerationMessage(null);
     try {
-      const response = await fetch('/api/gemini/generate-error-flashcards', {
+      const response = await authenticatedFetch('/api/gemini/generate-error-flashcards', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ error, count: 2 }),
@@ -397,7 +373,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
     let nextCards = flashcards;
     for (const error of errorsWithoutCards) {
       try {
-        const response = await fetch('/api/gemini/generate-error-flashcards', {
+        const response = await authenticatedFetch('/api/gemini/generate-error-flashcards', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ error, count: 2 }),
@@ -451,7 +427,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
     );
   };
 
-  const handleReview = (correct: boolean) => {
+  const handleReview = (rating: FlashcardRating) => {
     if (!activeCard || reviewResult) return;
     const now = new Date();
     if (!isCardDue(activeCard, now.getTime())) return;
@@ -460,50 +436,34 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
       activeCard.source === 'caderno' && activeCard.errorId
         ? errors.find((error) => error.id === activeCard.errorId)
         : undefined;
-    const delay = relatedError
-      ? getErrorReviewDelay(relatedError.status, correct)
-      : getStandaloneReviewDelay(activeCard.correctCount + (correct ? 1 : 0), correct);
-    const nextReviewAt = new Date(now.getTime() + delay).toISOString();
-
-    const nextCards = flashcards.map((card) => {
-      const sharesErrorSchedule =
-        activeCard.source === 'caderno' &&
-        activeCard.errorId &&
-        card.source === 'caderno' &&
-        card.errorId === activeCard.errorId;
-
-      if (card.id === activeCard.id) {
-        return {
-          ...card,
-          correctCount: card.correctCount + (correct ? 1 : 0),
-          incorrectCount: card.incorrectCount + (correct ? 0 : 1),
-          hintUsedCount: (card.hintUsedCount || 0) + (isHintVisible ? 1 : 0),
-          lastReviewUsedHint: isHintVisible,
-          lastReviewedAt: now.toISOString(),
-          nextReviewAt,
-        };
-      }
-
-      return sharesErrorSchedule ? { ...card, nextReviewAt } : card;
-    });
+    const scheduledCard = scheduleFlashcard(activeCard, rating, isHintVisible, now);
+    const nextCards = flashcards.map((card) => card.id === activeCard.id ? scheduledCard : card);
     setFlashcards(nextCards);
     void persistFlashcards(nextCards);
-    setReviewResult(correct ? 'correct' : 'incorrect');
+    setReviewResult(scheduledCard.lastRating === 'again' ? 'incorrect' : 'correct');
     setReviewClock(now.getTime());
 
     if (relatedError) {
-      if (correct && relatedError.status !== 'dominado') {
-        onUpdateErrorStatus(relatedError.id, nextReviewStatus(relatedError.status));
-        setReviewFeedback('Ótimo! O ciclo avançou e os cards voltam na próxima revisão programada.');
-      } else if (!correct) {
-        if (relatedError.status !== 'dia0') onUpdateErrorStatus(relatedError.id, 'dia0');
-        setReviewFeedback('Sem problema: o conteúdo retornou ao Dia 0 e ficará disponível novamente em breve.');
-      } else {
-        setReviewFeedback('Resposta registrada. Este conteúdo já está marcado como dominado.');
-      }
+      const relatedCards = nextCards.filter((card) => card.errorId === relatedError.id);
+      const nextStatus = deriveErrorReviewStatus(relatedCards);
+      const nextRuleReview = relatedCards
+        .map((card) => card.nextReviewAt)
+        .filter((date): date is string => Boolean(date))
+        .sort()[0];
+      onUpdateErrorStatus(relatedError.id, nextStatus, {
+        lastReviewedAt: now.toISOString(),
+        nextReviewAt: nextRuleReview,
+      });
+      setReviewFeedback(
+        nextStatus === 'dominado'
+          ? 'Todos os cartões desta regra demonstraram domínio sem ajuda. Regra dominada!'
+          : scheduledCard.lastRating === 'again'
+          ? 'Este cartão volta em cerca de 4 horas; os demais mantêm seus próprios intervalos.'
+          : `Cartão agendado individualmente para ${Math.max(1, Math.round((scheduledCard.intervalDays || 0) * 24))} hora(s). A regra avança pelo cartão mais frágil.`
+      );
     } else {
       setReviewFeedback(
-        correct
+        scheduledCard.lastRating !== 'again'
           ? 'Ótimo! Esta oração entrou no seu próximo ciclo de revisão.'
           : 'Sem problema: esta oração voltará em um intervalo curto para reforço.'
       );
@@ -519,7 +479,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
               <Brain className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="text-base font-bold text-slate-900">Revisão ativa com Flashcards</h2>
+              <h1 className="text-lg font-bold text-slate-900">Revisão ativa com Flashcards</h1>
               <p className="text-xs text-slate-600 mt-1">
                 Gere cards com a Regra Decisiva do seu Caderno ou treine a identificação de Su + Ve + C + A em orações aleatórias.
               </p>
@@ -707,20 +667,26 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
                   </button>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-2" aria-label="Avalie a qualidade da recordação">
                   <button
                     type="button"
-                    onClick={() => handleReview(false)}
-                    className="min-h-[48px] bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 rounded-xl py-3 px-4 text-sm font-bold transition flex items-center justify-center gap-2"
+                    onClick={() => handleReview('again')}
+                    className="min-h-[48px] bg-rose-50 hover:bg-rose-100 text-rose-900 border border-rose-200 rounded-xl py-3 px-3 text-sm font-bold transition flex items-center justify-center gap-2"
                   >
-                    <AlertCircle className="w-4 h-4" /> Preciso revisar
+                    <AlertCircle className="w-4 h-4" /> Errei
                   </button>
                   <button
                     type="button"
-                    onClick={() => handleReview(true)}
-                    className="min-h-[48px] bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl py-3 px-4 text-sm font-bold transition flex items-center justify-center gap-2"
+                    onClick={() => handleReview('hard')}
+                    className="min-h-[48px] bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 rounded-xl py-3 px-3 text-sm font-bold transition"
                   >
-                    <CheckCircle2 className="w-4 h-4" /> Acertei
+                    Difícil
+                  </button>
+                  <button type="button" onClick={() => handleReview('good')} className="min-h-[48px] bg-teal-50 hover:bg-teal-100 text-teal-900 border border-teal-200 rounded-xl py-3 px-3 text-sm font-bold transition">
+                    Bom
+                  </button>
+                  <button type="button" onClick={() => handleReview('easy')} className="min-h-[48px] bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl py-3 px-3 text-sm font-bold transition flex items-center justify-center gap-2">
+                    <CheckCircle2 className="w-4 h-4" /> Fácil
                   </button>
                 </div>
               )}

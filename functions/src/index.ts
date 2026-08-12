@@ -9,6 +9,11 @@ import {
   OFFICIAL_SIMULADO_ANSWER_KEY,
   OFFICIAL_SIMULADO_VERSION,
 } from './officialQuestions.js';
+import {
+  OFFICIAL_CORPUS_ANSWER_KEY,
+  OFFICIAL_CORPUS_SAMPLE_SIZE,
+  OFFICIAL_CORPUS_VERSION,
+} from './officialCorpus.generated.js';
 import { DUEL_ANSWER_KEY, DUEL_QUESTION_SET_VERSION } from './duelQuestions.js';
 
 export { sendDailyReviewPushes } from './pushNotifications.js';
@@ -17,7 +22,7 @@ initializeApp();
 
 const firestore = getFirestore();
 const resendApiKey = defineSecret('RESEND_API_KEY');
-const OFFICIAL_QUESTION_IDS = Object.keys(OFFICIAL_SIMULADO_ANSWER_KEY);
+const OFFICIAL_SIMULADO_IDS = Object.keys(OFFICIAL_SIMULADO_ANSWER_KEY);
 const ANSWER_VALUES = new Set(['A', 'B', 'C', 'D', 'E']);
 
 type AnswerMap = Record<string, string>;
@@ -48,12 +53,16 @@ const getPublicAlias = (displayName: unknown, shareFirstName: unknown) =>
     ? getFirstName(displayName)
     : 'Estudante SuVeCA';
 
-const isValidAnswerMap = (value: unknown): value is AnswerMap => {
+const isValidAnswerMap = (
+  value: unknown,
+  answerKey: Record<string, string>,
+  requiredSize: number
+): value is AnswerMap => {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return false;
-
-  return Object.entries(value).every(
+  const entries = Object.entries(value);
+  return entries.length === requiredSize && entries.every(
     ([questionId, answer]) =>
-      OFFICIAL_QUESTION_IDS.includes(questionId) &&
+      Object.prototype.hasOwnProperty.call(answerKey, questionId) &&
       typeof answer === 'string' &&
       ANSWER_VALUES.has(answer)
   );
@@ -89,12 +98,16 @@ export const verifyOfficialSimulado = onDocumentCreated(
     const submission = event.data?.data();
     const { userId, attemptId } = event.params;
 
-    if (
-      !submission ||
-      submission.schemaVersion !== 1 ||
-      submission.questionSetVersion !== OFFICIAL_SIMULADO_VERSION ||
-      !isValidAnswerMap(submission.answerMap)
-    ) {
+    const isCanonicalSimulado = submission?.questionSetVersion === OFFICIAL_SIMULADO_VERSION;
+    const isOfficialCorpusSample = submission?.questionSetVersion === OFFICIAL_CORPUS_VERSION;
+    const answerKey: Record<string, string> | null = isCanonicalSimulado
+      ? OFFICIAL_SIMULADO_ANSWER_KEY
+      : isOfficialCorpusSample
+        ? OFFICIAL_CORPUS_ANSWER_KEY
+        : null;
+    const requiredSize = isCanonicalSimulado ? OFFICIAL_SIMULADO_IDS.length : OFFICIAL_CORPUS_SAMPLE_SIZE;
+
+    if (!submission || submission.schemaVersion !== 1 || !answerKey || !isValidAnswerMap(submission.answerMap, answerKey, requiredSize)) {
       logger.warn('Tentativa oficial rejeitada por formato inválido.', {
         userId,
         attemptId,
@@ -103,15 +116,16 @@ export const verifyOfficialSimulado = onDocumentCreated(
     }
 
     const answerMap = submission.answerMap;
-    const correctCount = OFFICIAL_QUESTION_IDS.reduce(
+    const submittedQuestionIds = Object.keys(answerMap);
+    const correctCount = submittedQuestionIds.reduce(
       (total, questionId) =>
         total +
-        (answerMap[questionId] === OFFICIAL_SIMULADO_ANSWER_KEY[questionId as keyof typeof OFFICIAL_SIMULADO_ANSWER_KEY]
+        (answerMap[questionId] === answerKey[questionId]
           ? 1
           : 0),
       0
     );
-    const totalQuestions = OFFICIAL_QUESTION_IDS.length;
+    const totalQuestions = submittedQuestionIds.length;
     const now = new Date();
     const monthKey = monthKeyFor(now);
     const verifiedAttemptRef = firestore.doc(
@@ -144,7 +158,7 @@ export const verifyOfficialSimulado = onDocumentCreated(
       transaction.create(verifiedAttemptRef, {
         schemaVersion: 1,
         sourceAttemptId: attemptId,
-        questionSetVersion: OFFICIAL_SIMULADO_VERSION,
+        questionSetVersion: submission.questionSetVersion,
         correctCount,
         totalQuestions,
         percentage: Math.round((correctCount / totalQuestions) * 100),

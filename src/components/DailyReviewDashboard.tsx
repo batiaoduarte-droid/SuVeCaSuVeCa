@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import type { CadernoErroItem, ErrorFlashcard } from '../types/suveca';
 import { db } from '../lib/firebase';
+import { ProgressBar } from './ui/ProgressBar';
 
 const FLASHCARDS_STORAGE_PREFIX = 'suveca_flashcards';
 const AGENDA_STORAGE_PREFIX = 'suveca_daily_review_agenda';
@@ -253,18 +254,12 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
         )[0]?.nextReviewAt,
     [cards, now]
   );
-  const goalPercent = Math.min(100, Math.round((progress.completedCount / progress.goal) * 100));
-
-  const completeReviewUnit = useCallback(() => {
-    setProgress((current) => {
-      const normalized = normalizeProgress(current);
-      return {
-        ...normalized,
-        completedCount: normalized.completedCount + 1,
-        updatedAt: new Date().toISOString(),
-      };
-    });
-  }, []);
+  const currentDay = dayKey(new Date(reviewNow));
+  const completedToday = useMemo(
+    () => cards.filter((card) => card.lastReviewedAt?.slice(0, 10) === currentDay).length,
+    [cards, currentDay]
+  );
+  const goalPercent = Math.min(100, Math.round((completedToday / progress.goal) * 100));
 
   const setGoal = useCallback((goal: number) => {
     setProgress((current) => ({
@@ -301,8 +296,8 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
             <div>
               <div className="text-xs font-bold uppercase tracking-wide text-slate-500">Meta de revisão</div>
               <div className="text-2xl font-black text-slate-900 mt-1">
-                {progress.completedCount}<span className="text-base text-slate-500">/{progress.goal}</span>
-                <span className="text-sm font-semibold text-slate-600 ml-2">blocos concluídos</span>
+                {completedToday}<span className="text-base text-slate-500">/{progress.goal}</span>
+                <span className="text-sm font-semibold text-slate-600 ml-2">cards revisados</span>
               </div>
             </div>
             <div className="flex items-center gap-2" aria-label="Escolher meta diária">
@@ -323,19 +318,15 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
               ))}
             </div>
           </div>
-          <div className="mt-3 h-2.5 bg-slate-200 rounded-full overflow-hidden" aria-label={`${goalPercent}% da meta concluída`}>
-            <div className="h-full rounded-full bg-teal-700 transition-all duration-300" style={{ width: `${goalPercent}%` }} />
+          <div className="mt-3">
+            <ProgressBar value={goalPercent} showPercent={false} ariaLabel={`${goalPercent}% da meta diária concluída`} />
           </div>
-          <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
+          <div className="mt-3">
             <p className="text-xs text-slate-600">
               {goalPercent >= 100
-                ? 'Meta diária concluída. Se quiser, avance para a próxima regra.'
-                : 'Após cada bloco revisado, registre o avanço aqui.'}
+                ? 'Meta diária concluída pelas revisões registradas nos flashcards.'
+                : 'A meta avança automaticamente a cada cartão efetivamente revisado.'}
             </p>
-            <button onClick={completeReviewUnit} className="button-secondary text-xs min-h-10 px-3">
-              <CheckCircle2 className="w-4 h-4 text-teal-700" />
-              Concluir 1 bloco
-            </button>
           </div>
         </div>
       </header>

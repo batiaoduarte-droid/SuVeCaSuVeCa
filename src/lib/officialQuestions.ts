@@ -115,5 +115,10 @@ export function officialDetailToQuizQuestion(detail: OfficialQuestionDetail): Qu
       || raw.solution?.sanitized_complete
       || 'Solução textual não disponível no corpus.'
     ),
+    origin: 'official',
+    officialQuestionId: detail.questionId,
+    moduleId: detail.suvecaDerived.moduleIds[0],
+    conceptIds: detail.suvecaDerived.conceptIds,
+    sourceRefs: [`QUESTION:${detail.questionId}`],
   };
 }

@@ -6,11 +6,13 @@ import type { LearningAttempt } from '../components/StatisticsDashboard';
 export interface LearningMetrics {
   attempts: LearningAttempt[];
   visitedModuleIds: string[];
+  readSectionIds: string[];
+  modulePractice: Record<string, { answered: number; correct: number; completed: boolean }>;
   updatedAt?: string;
 }
 
 const LEGACY_STORAGE_KEY = 'suveca_learning_metrics';
-const EMPTY_METRICS: LearningMetrics = { attempts: [], visitedModuleIds: [] };
+const EMPTY_METRICS: LearningMetrics = { attempts: [], visitedModuleIds: [], readSectionIds: [], modulePractice: {} };
 
 const storageKeyFor = (userId?: string | null) =>
   userId ? `suveca_learning_metrics_${userId}` : 'suveca_learning_metrics_guest';
@@ -27,6 +29,8 @@ const readLocalMetrics = (userId?: string | null): LearningMetrics => {
     return {
       attempts: Array.isArray(parsed.attempts) ? parsed.attempts : [],
       visitedModuleIds: Array.isArray(parsed.visitedModuleIds) ? parsed.visitedModuleIds : [],
+      readSectionIds: Array.isArray(parsed.readSectionIds) ? parsed.readSectionIds : [],
+      modulePractice: parsed.modulePractice && typeof parsed.modulePractice === 'object' ? parsed.modulePractice : {},
       updatedAt: parsed.updatedAt,
     };
   } catch (error) {
@@ -41,6 +45,8 @@ const normalizeMetrics = (value: unknown): LearningMetrics => {
   return {
     attempts: Array.isArray(data.attempts) ? data.attempts : [],
     visitedModuleIds: Array.isArray(data.visitedModuleIds) ? data.visitedModuleIds : [],
+    readSectionIds: Array.isArray(data.readSectionIds) ? data.readSectionIds : [],
+    modulePractice: data.modulePractice && typeof data.modulePractice === 'object' ? data.modulePractice : {},
     updatedAt: typeof data.updatedAt === 'string' ? data.updatedAt : undefined,
   };
 };
@@ -62,6 +68,8 @@ const mergeMetrics = (local: LearningMetrics, cloud: LearningMetrics): LearningM
   return {
     attempts,
     visitedModuleIds: [...new Set([...local.visitedModuleIds, ...cloud.visitedModuleIds])],
+    readSectionIds: [...new Set([...local.readSectionIds, ...cloud.readSectionIds])],
+    modulePractice: { ...local.modulePractice, ...cloud.modulePractice },
     updatedAt: cloud.updatedAt || local.updatedAt,
   };
 };
@@ -186,7 +194,7 @@ export const useLearningMetrics = (user: User | null) => {
     // used by the public leaderboard and never accepts this client's totals.
     if (
       currentUserId &&
-      questionSetVersion === 'official-simulado-v1' &&
+      (questionSetVersion === 'official-simulado-v1' || questionSetVersion === 'official-corpus-v1') &&
       answerMap &&
       Object.keys(answerMap).length > 0
     ) {
@@ -205,11 +213,44 @@ export const useLearningMetrics = (user: User | null) => {
     }
   }, [activeStorageUserId, currentUserId, recordActivity]);
 
+  const markSectionRead = useCallback((moduleId: string, sectionIndex: number) => {
+    if (activeStorageUserId !== currentUserId) return;
+    const sectionId = `${moduleId}:section-${sectionIndex}`;
+    recordActivity();
+    setMetrics((current) => current.readSectionIds.includes(sectionId) ? current : ({
+      ...current,
+      readSectionIds: [...current.readSectionIds, sectionId],
+      updatedAt: new Date().toISOString(),
+    }));
+  }, [activeStorageUserId, currentUserId, recordActivity]);
+
+  const recordModulePractice = useCallback((moduleId: string, correct: boolean, completed: boolean) => {
+    if (activeStorageUserId !== currentUserId) return;
+    recordActivity();
+    setMetrics((current) => {
+      const previous = current.modulePractice[moduleId] || { answered: 0, correct: 0, completed: false };
+      return {
+        ...current,
+        modulePractice: {
+          ...current.modulePractice,
+          [moduleId]: {
+            answered: previous.answered + 1,
+            correct: previous.correct + (correct ? 1 : 0),
+            completed: previous.completed || completed,
+          },
+        },
+        updatedAt: new Date().toISOString(),
+      };
+    });
+  }, [activeStorageUserId, currentUserId, recordActivity]);
+
   return {
     metrics,
     isLoadingMetrics,
     markModuleVisited,
     addAttempt,
+    markSectionRead,
+    recordModulePractice,
     recordActivity,
   };
 };

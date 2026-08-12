@@ -46,12 +46,17 @@ const auditOfficialQuestions = async () => {
 
   const indexPayload = await readJson(base, 'official-question-index.json');
   const indexIds = indexPayload.items.map((item) => String(item.questionId));
+  const generatedKeySource = await readFile(resolve('functions', 'src', 'officialCorpus.generated.ts'), 'utf8');
+  const generatedKeyMatch = /export const OFFICIAL_CORPUS_ANSWER_KEY = ([\s\S]*?) as const;/.exec(generatedKeySource);
+  const generatedKey = generatedKeyMatch ? JSON.parse(generatedKeyMatch[1]) : {};
+  const expectedKey = Object.fromEntries(indexPayload.items.map((item) => [String(item.questionId), item.officialProjection.correctAnswer]));
   check(raw.length === 372, `Corpus bruto particionado: ${raw.length}/372.`);
   check(normalized.length === 372, `Corpus normalizado particionado: ${normalized.length}/372.`);
   check(indexIds.length === 372, `Índice oficial: ${indexIds.length}/372.`);
   check(new Set(manifestIds).size === 372, `IDs únicos particionados: ${new Set(manifestIds).size}/372.`);
   check(JSON.stringify(raw.map(getId)) === JSON.stringify(normalized.map(getId)), 'Ordem entre bruto e normalizado divergente.');
   check(indexIds.every((id) => manifestIds.includes(id)), 'O índice contém IDs ausentes das partições.');
+  check(JSON.stringify(generatedKey) === JSON.stringify(expectedKey), 'Gabarito server-side do corpus oficial diverge do índice preservado.');
   check(manifest.totals.shards === manifest.shards.length, 'Quantidade de shards divergente no manifesto.');
 
   const rawSourcePath = resolve(base, manifest.sources.raw.file);
@@ -65,7 +70,7 @@ const auditOfficialQuestions = async () => {
   } catch (error) {
     if (error?.code !== 'ENOENT') throw error;
   }
-  return { raw: raw.length, normalized: normalized.length, indexed: indexIds.length, uniqueIds: new Set(manifestIds).size, shards: manifest.shards.length };
+  return { raw: raw.length, normalized: normalized.length, indexed: indexIds.length, uniqueIds: new Set(manifestIds).size, serverAnswerKey: Object.keys(generatedKey).length, shards: manifest.shards.length };
 };
 
 const auditSemanticProfiles = async () => {

@@ -58,6 +58,7 @@ interface NavItem {
   icon: React.ElementType;
   isIa?: boolean;
   countBadge?: number;
+  group?: 'Estudar' | 'Praticar' | 'Revisar' | 'Acompanhar';
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -93,17 +94,18 @@ export const Navbar: React.FC<NavbarProps> = ({
       label: 'Caderno de erros',
       icon: FileSpreadsheet,
       countBadge: errorCount > 0 ? errorCount : undefined,
+      group: 'Revisar',
     },
-    { id: 'flashcards', label: 'Flashcards', icon: Brain, isIa: true },
-    { id: 'pomodoro', label: 'Cronômetro Foco', icon: Timer },
-    { id: 'agenda', label: 'Review diário', icon: CalendarDays },
-    { id: 'decision', label: 'Matrizes', icon: GitMerge },
-    { id: 'planner', label: 'Planejamento', icon: CalendarCheck },
-    { id: 'duel', label: 'Duelo', icon: Swords },
-    { id: 'questions', label: 'Questões oficiais', icon: BookMarked },
-    { id: 'stats', label: 'Estatísticas', icon: BarChart3 },
-    { id: 'profile', label: 'Perfil', icon: UserIcon },
-    { id: 'tutor', label: 'Professor IA', icon: Bot, isIa: true },
+    { id: 'flashcards', label: 'Flashcards', icon: Brain, isIa: true, group: 'Revisar' },
+    { id: 'pomodoro', label: 'Cronômetro Foco', icon: Timer, group: 'Estudar' },
+    { id: 'agenda', label: 'Review diário', icon: CalendarDays, group: 'Revisar' },
+    { id: 'decision', label: 'Matrizes', icon: GitMerge, group: 'Estudar' },
+    { id: 'planner', label: 'Planejamento', icon: CalendarCheck, group: 'Acompanhar' },
+    { id: 'duel', label: 'Duelo', icon: Swords, group: 'Praticar' },
+    { id: 'questions', label: 'Questões oficiais', icon: BookMarked, group: 'Praticar' },
+    { id: 'stats', label: 'Estatísticas', icon: BarChart3, group: 'Acompanhar' },
+    { id: 'profile', label: 'Perfil', icon: UserIcon, group: 'Acompanhar' },
+    { id: 'tutor', label: 'Professor IA', icon: Bot, isIa: true, group: 'Estudar' },
   ];
 
   const allTabs: NavItem[] = [...primaryTabs, ...secondaryTabs];
@@ -111,6 +113,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const desktopPrimaryTabs = allTabs.filter((item) => desktopPrimaryIds.has(item.id));
   const desktopMoreTabs = allTabs.filter((item) => !desktopPrimaryIds.has(item.id));
   const isDesktopMoreActive = desktopMoreTabs.some((item) => item.id === activeTab);
+  const navigationGroups = ['Estudar', 'Praticar', 'Revisar', 'Acompanhar'] as const;
 
   useEffect(() => {
     if (!isDesktopMoreOpen) return undefined;
@@ -191,11 +194,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                 type="button"
                 onClick={onOpenSearch}
                 className="input-field min-h-[44px] py-1.5 px-3 flex items-center space-x-2 text-xs text-[var(--text-muted)] hover:text-[var(--text-strong)] hover:border-slate-300 transition cursor-pointer"
-                title="Pesquisar na Apostila (Ctrl+K)"
+                title="Pesquisar em todo o app (Ctrl+K)"
                 aria-label="Abrir pesquisa"
               >
                 <Search className="w-4 h-4 text-slate-400" />
-                <span className="hidden sm:inline">Buscar na apostila...</span>
+                <span className="hidden sm:inline">Buscar no app...</span>
                 <kbd className="hidden xl:inline text-[10px] bg-slate-100 text-slate-700 border border-slate-200 px-1.5 py-0.5 rounded">
                   Ctrl+K
                 </kbd>
@@ -312,7 +315,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onKeyDown={handleDesktopMenuKeyDown}
                   className="absolute right-0 top-[calc(100%+0.5rem)] z-50 grid w-[min(34rem,calc(100vw-2rem))] grid-cols-2 gap-2 rounded-2xl border border-slate-200 bg-white p-3 shadow-2xl xl:grid-cols-3"
                 >
-                  {desktopMoreTabs.map((item) => {
+                  {navigationGroups.flatMap((group) => [
+                    <h3 key={`${group}-heading`} className="col-span-2 px-1 pt-1 text-[11px] font-extrabold uppercase tracking-wide text-slate-500 xl:col-span-3">{group}</h3>,
+                    ...desktopMoreTabs.filter((item) => item.group === group).map((item) => {
                     const Icon = item.icon;
                     const isActive = activeTab === item.id;
                     return (
@@ -340,7 +345,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                         {item.isIa && <Sparkles className="h-3.5 w-3.5 shrink-0 text-amber-600" aria-label="Recurso de inteligência artificial" />}
                       </button>
                     );
-                  })}
+                  })])}
                 </div>
               )}
             </div>
@@ -430,8 +435,11 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
             </div>
 
-            <div className="grid grid-cols-2 gap-2 pt-1">
-              {secondaryTabs.map((item) => {
+            <div className="space-y-3 pt-1">
+              {navigationGroups.map((group) => <section key={group} aria-labelledby={`mobile-nav-${group}`}>
+                <h4 id={`mobile-nav-${group}`} className="mb-2 text-[11px] font-extrabold uppercase tracking-wide text-slate-500">{group}</h4>
+                <div className="grid grid-cols-2 gap-2">
+              {secondaryTabs.filter((item) => item.group === group).map((item) => {
                 const Icon = item.icon;
                 const isActive = activeTab === item.id;
                 return (
@@ -460,6 +468,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </button>
                 );
               })}
+                </div>
+              </section>)}
             </div>
           </div>
         </div>

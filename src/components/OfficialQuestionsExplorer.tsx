@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { BookMarked, ChevronLeft, ChevronRight, ExternalLink, Loader2, RefreshCw, Search, ShieldCheck, X } from 'lucide-react';
 import {
   fetchOfficialQuestion,
@@ -11,6 +11,7 @@ import {
 } from '../lib/officialQuestions';
 import type { QuizQuestion } from '../types/suveca';
 import { formatOfficialContent } from '../lib/officialContent';
+import { useModalFocus } from '../hooks/useModalFocus';
 
 const PAGE_SIZE = 12;
 const moduleOptions = [
@@ -50,6 +51,17 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
   const [detail, setDetail] = useState<OfficialQuestionDetail | null>(null);
   const [isLoadingDetail, setIsLoadingDetail] = useState(false);
   const [isBuildingSample, setIsBuildingSample] = useState(false);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const isDetailOpen = Boolean(detail || isLoadingDetail);
+  const closeDetail = useCallback(() => {
+    setDetail(null);
+    setIsLoadingDetail(false);
+  }, []);
+  const detailDialogRef = useModalFocus(isDetailOpen, closeDetail, closeButtonRef);
+
+  useEffect(() => {
+    if (detail) closeButtonRef.current?.focus();
+  }, [detail]);
 
   const load = useCallback(async () => {
     setIsLoading(true);
@@ -174,14 +186,14 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
         <button type="button" disabled={offset + PAGE_SIZE >= total} onClick={() => setOffset(offset + PAGE_SIZE)} className="button-secondary min-h-[44px] disabled:opacity-40">Próxima <ChevronRight className="h-4 w-4" /></button>
       </nav>
 
-      {(detail || isLoadingDetail) && (
-        <div className="fixed inset-0 z-[80] flex items-end justify-center bg-slate-950/55 p-0 sm:items-center sm:p-4" role="dialog" aria-modal="true" aria-label="Questão oficial completa">
-          <div className="max-h-[92dvh] w-full max-w-4xl overflow-y-auto rounded-t-2xl bg-white p-5 shadow-2xl sm:rounded-2xl sm:p-7">
+      {isDetailOpen && (
+        <div className="fixed inset-0 z-[80] flex items-end justify-center bg-slate-950/55 p-0 sm:items-center sm:p-4">
+          <div ref={detailDialogRef} tabIndex={-1} className="max-h-[92dvh] w-full max-w-4xl overflow-y-auto rounded-t-2xl bg-white p-5 shadow-2xl outline-none sm:rounded-2xl sm:p-7" role="dialog" aria-modal="true" aria-label="Questão oficial completa">
             {isLoadingDetail || !detail ? <div role="status" className="flex min-h-48 items-center justify-center"><Loader2 className="h-6 w-6 animate-spin text-teal-700" /></div> : (() => {
               const raw = detail.official.raw as { statement?: string; statement_text?: string; alternatives?: Array<Record<string, unknown>>; solution?: Record<string, unknown>; has_video_solution?: boolean; solution_video_url?: string };
               const solution = raw.solution || {};
               return <>
-                <div className="flex items-start justify-between gap-3"><div><p className="text-xs font-bold text-teal-800">Questão oficial</p><p className="mt-1 flex items-center gap-1 text-xs text-slate-500"><ShieldCheck className="h-3.5 w-3.5" /> Conteúdo oficial preservado</p></div><button type="button" onClick={() => setDetail(null)} className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl hover:bg-slate-100" aria-label="Fechar questão"><X className="h-5 w-5" /></button></div>
+                <div className="flex items-start justify-between gap-3"><div><p className="text-xs font-bold text-teal-800">Questão oficial</p><p className="mt-1 flex items-center gap-1 text-xs text-slate-700"><ShieldCheck className="h-3.5 w-3.5" /> Conteúdo oficial preservado</p></div><button ref={closeButtonRef} type="button" onClick={closeDetail} className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl hover:bg-slate-100" aria-label="Fechar questão"><X className="h-5 w-5" /></button></div>
                 <p className="mt-5 whitespace-pre-wrap text-sm leading-7 text-slate-800">{formatOfficialContent(raw.statement || raw.statement_text)}</p>
                 <ol className="mt-5 space-y-2">{(raw.alternatives || []).map((alternative, index) => <li key={String(alternative.id || index)} className={`rounded-xl border p-3 text-sm leading-6 ${alternative.correct ? 'border-emerald-300 bg-emerald-50' : 'border-slate-200'}`}><strong>{String.fromCharCode(65 + index)}.</strong> {formatOfficialContent(alternative.body || alternative.sanitized_body)}</li>)}</ol>
                 <div className="mt-5 rounded-xl border border-amber-200 bg-amber-50 p-4"><h3 className="font-bold text-amber-950">Solução oficial</h3><p className="mt-2 whitespace-pre-wrap text-sm leading-7 text-amber-950">{formatOfficialContent(solution.complete_html || solution.complete || solution.sanitized_complete) || 'Esta questão não possui solução textual no corpus.'}</p></div>

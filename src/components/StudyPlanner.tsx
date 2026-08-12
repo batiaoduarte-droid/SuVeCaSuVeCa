@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ChecklistItem } from '../types/suveca';
 import {
   CalendarCheck,
@@ -9,7 +9,10 @@ import {
   Award,
   Layers,
   Sparkles,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
+import { ProgressBar } from './ui/ProgressBar';
 
 const INITIAL_CHECKLIST: ChecklistItem[] = [
   { id: 'chk_1', topic: 'Compreensão e interpretação de textos de diferentes gêneros', moduleNum: 1, status: 'nao_iniciado' },
@@ -37,6 +40,21 @@ const INITIAL_CHECKLIST: ChecklistItem[] = [
 export const StudyPlanner: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'checklist' | 'weeks' | 'essay'>('checklist');
   const [checklist, setChecklist] = useState<ChecklistItem[]>(INITIAL_CHECKLIST);
+  const tabListRef = useRef<HTMLDivElement>(null);
+  const [tabScroll, setTabScroll] = useState({ left: false, right: true });
+
+  const updateTabScroll = useCallback(() => {
+    const element = tabListRef.current;
+    if (!element) return;
+    setTabScroll({
+      left: element.scrollLeft > 4,
+      right: element.scrollLeft + element.clientWidth < element.scrollWidth - 4,
+    });
+  }, []);
+
+  const scrollTabs = (direction: -1 | 1) => {
+    tabListRef.current?.scrollBy({ left: direction * 220, behavior: 'smooth' });
+  };
 
   useEffect(() => {
     const saved = localStorage.getItem('suveca_checklist_data');
@@ -48,6 +66,12 @@ export const StudyPlanner: React.FC = () => {
       }
     }
   }, []);
+
+  useEffect(() => {
+    updateTabScroll();
+    window.addEventListener('resize', updateTabScroll);
+    return () => window.removeEventListener('resize', updateTabScroll);
+  }, [updateTabScroll]);
 
   const handleUpdateChecklistStatus = (
     id: string,
@@ -85,16 +109,13 @@ export const StudyPlanner: React.FC = () => {
         </p>
 
         {/* Progress Bar */}
-        <div className="w-full bg-slate-100 h-3 rounded-full overflow-hidden border border-slate-200">
-          <div
-            className="bg-teal-700 h-full transition-all duration-500 rounded-full"
-            style={{ width: `${progressPct}%` }}
-          />
-        </div>
+        <ProgressBar value={progressPct} showPercent={false} size="md" ariaLabel={`${progressPct}% dos tópicos do edital dominados`} />
       </header>
 
       {/* Tabs */}
-      <div className="flex items-center space-x-2 overflow-x-auto bg-slate-100 p-1.5 rounded-2xl border border-slate-200 text-xs font-medium">
+      <div className="relative flex items-center rounded-2xl border border-slate-200 bg-slate-100 p-1.5 text-xs font-medium">
+        <button type="button" onClick={() => scrollTabs(-1)} disabled={!tabScroll.left} className="mr-1 flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 shadow-xs disabled:opacity-30" aria-label="Ver abas anteriores"><ChevronLeft className="h-4 w-4" /></button>
+        <div ref={tabListRef} onScroll={updateTabScroll} className="flex min-w-0 flex-1 items-center space-x-2 overflow-x-auto scroll-smooth" role="tablist" aria-label="Seções do planejamento">
         <button
           onClick={() => setActiveTab('checklist')}
           className={`px-4 py-2.5 rounded-xl font-bold transition whitespace-nowrap cursor-pointer ${
@@ -125,6 +146,8 @@ export const StudyPlanner: React.FC = () => {
         >
           Guia Discursiva / Redação
         </button>
+        </div>
+        <button type="button" onClick={() => scrollTabs(1)} disabled={!tabScroll.right} className="ml-1 flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 shadow-xs disabled:opacity-30" aria-label="Ver próximas abas"><ChevronRight className="h-4 w-4" /></button>
       </div>
 
       {activeTab === 'checklist' && (

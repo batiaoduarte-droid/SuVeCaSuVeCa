@@ -16,6 +16,8 @@ import {
   sampleOfficialQuestions,
 } from "./src/lib/officialQuestions.server";
 import { toLearnerFacingContent } from "./src/lib/learnerContent";
+import { applicationDefault, getApps as getAdminApps, initializeApp as initializeAdminApp } from "firebase-admin/app";
+import { getAuth as getAdminAuth } from "firebase-admin/auth";
 
 // Local development follows the README and keeps the Gemini key in .env.local.
 // Load it first, then use .env only as a fallback for values not already set.
@@ -25,7 +27,74 @@ dotenv.config();
 const app = express();
 const PORT = 3000;
 
-app.use(express.json());
+app.use(express.json({ limit: "32kb" }));
+
+const APPROVED_GEMINI_MODELS = new Set(["gemini-3.1-flash-lite", "gemini-2.5-flash"]);
+const resolveModel = (value: unknown) =>
+  typeof value === "string" && APPROVED_GEMINI_MODELS.has(value)
+    ? value
+    : "gemini-3.1-flash-lite";
+
+const adminApp = getAdminApps()[0] || initializeAdminApp({ credential: applicationDefault() });
+const aiRateLimits = new Map<string, { windowStartedAt: number; count: number }>();
+const requireFirebaseUser: express.RequestHandler = async (req, res, next) => {
+  const authorization = req.header("authorization") || "";
+  const token = authorization.startsWith("Bearer ") ? authorization.slice(7).trim() : "";
+  if (!token) return res.status(401).json({ error: "Entre na sua conta para usar os recursos de IA." });
+  try {
+    const decoded = await getAdminAuth(adminApp).verifyIdToken(token, true);
+    res.locals.userId = decoded.uid;
+    return next();
+  } catch {
+    return res.status(401).json({ error: "Sua sessão expirou. Entre novamente para continuar." });
+  }
+};
+
+const limitAiRequests: express.RequestHandler = (req, res, next) => {
+  const key = String(res.locals.userId || req.ip || "anonymous");
+  const now = Date.now();
+  const previous = aiRateLimits.get(key);
+  const bucket = !previous || now - previous.windowStartedAt >= 60_000
+    ? { windowStartedAt: now, count: 0 }
+    : previous;
+  bucket.count += 1;
+  aiRateLimits.set(key, bucket);
+  if (bucket.count > 12) return res.status(429).json({ error: "Limite temporário de IA atingido. Aguarde um minuto." });
+  return next();
+};
+
+app.use(
+  ["/api/suveca/analyze", "/api/gemini/explain", "/api/gemini/generate-questions", "/api/gemini/generate-error-flashcards"],
+  requireFirebaseUser,
+  limitAiRequests,
+);
+
+const withAiTimeout = async <T,>(operation: Promise<T>, timeoutMs = 30_000): Promise<T> => {
+  let timer: NodeJS.Timeout | undefined;
+  try {
+    return await Promise.race([
+      operation,
+      new Promise<T>((_, reject) => {
+        timer = setTimeout(() => reject(new Error("AI_TIMEOUT")), timeoutMs);
+      }),
+    ]);
+  } finally {
+    if (timer) clearTimeout(timer);
+  }
+};
+
+const allowedRefsFor = (records: ReturnType<typeof retrieveKnowledge>, extraContext = "") => {
+  const allowed = new Set(records.flatMap((record) =>
+    record.canonicalProfile.evidenceRefs.map((reference) => `PASSAGE:${reference}`)
+  ));
+  for (const match of extraContext.matchAll(/\[(QUESTION:[^\]]+)\]/gi)) allowed.add(match[1]);
+  return allowed;
+};
+
+const keepAllowedRefs = (value: unknown, allowed: Set<string>) =>
+  Array.isArray(value)
+    ? [...new Set(value.filter((reference): reference is string => typeof reference === "string" && allowed.has(reference)))]
+    : [];
 
 // Lazy GoogleGenAI initialization helper
 function getGenAIClient() {
@@ -114,21 +183,21 @@ app.post("/api/suveca/analyze", async (req, res) => {
       return res.status(400).json({ error: "Frase inválida para análise." });
     }
 
+    const safeSentence = sentence.trim().slice(0, 800);
     const ai = getGenAIClient();
-    const knowledgeContext = formatKnowledgeContext(
-      retrieveKnowledge(`${sentence} sujeito verbo complemento sintaxe oração`, 3)
-    );
+    const knowledgeRecords = retrieveKnowledge(`${safeSentence} sujeito verbo complemento sintaxe oração`, 3);
+    const knowledgeContext = formatKnowledgeContext(knowledgeRecords);
     const prompt = `Analise a seguinte oração em português do Brasil aplicando rigorosamente o Método SuVeCA (Sujeito, Verbo, Complemento, Adjunto e Predicativo):
 
-Frase: "${sentence}"
+Frase: "${safeSentence}"
 
 ${knowledgeContext}
 
 Forneça um JSON estruturado com os blocos sintáticos, classe gramatical de cada termo, ordem (direta ou inversa), voz verbal, explicação pedagógica para concursos públicos e os IDs das fontes efetivamente usadas. Não atribua a uma fonte a interpretação editorial própria do método.`;
 
-    const selectedModel = model || "gemini-3.1-flash-lite";
+    const selectedModel = resolveModel(model);
 
-    const response = await ai.models.generateContent({
+    const response = await withAiTimeout(ai.models.generateContent({
       model: selectedModel,
       contents: prompt,
       config: {
@@ -174,10 +243,21 @@ Forneça um JSON estruturado com os blocos sintáticos, classe gramatical de cad
           required: ["sentence", "order", "verbalVoice", "blocks", "summaryExplanation"],
         },
       },
-    });
+    }));
 
     const jsonStr = response.text || "{}";
     const data = JSON.parse(jsonStr);
+    const allowedKnowledgeSources = new Set(
+      knowledgeRecords.flatMap((record) =>
+        (record.sourceFacts as unknown as ReadonlyArray<{ id?: string }>).flatMap((source) => source.id ? [`KB:${source.id}`] : [])
+      )
+    );
+    data.knowledgeSources = Array.isArray(data.knowledgeSources)
+      ? data.knowledgeSources.filter((reference: unknown): reference is string => typeof reference === "string" && allowedKnowledgeSources.has(reference))
+      : [];
+    if (!data.knowledgeSources.length) {
+      return res.status(422).json({ error: "A análise não retornou proveniência válida da Base Canônica. Tente reformular a oração." });
+    }
     return res.json(data);
   } catch (error: any) {
     console.error("Erro na análise SuVeCA:", error);
@@ -212,9 +292,8 @@ app.post("/api/gemini/explain", async (req, res) => {
       : "Sem mensagens anteriores relevantes.";
 
     const ai = getGenAIClient();
-    const knowledgeContext = formatKnowledgeContext(
-      retrieveKnowledge(`${safeContext} ${safeQuestion}`, 3)
-    );
+    const knowledgeRecords = retrieveKnowledge(`${safeContext} ${safeQuestion}`, 3);
+    const knowledgeContext = formatKnowledgeContext(knowledgeRecords);
     const officialQuestionContext = await formatOfficialQuestionContext(`${safeContext} ${safeQuestion}`, 2);
     const prompt = `Contexto/Módulo: ${safeContext}
 
@@ -245,9 +324,9 @@ REGRAS PARA sourceRefs:
 - As referências são metadados internos e nunca devem ser explicadas dentro de answerMarkdown.
 - Preserve o conteúdo oficial citado; não o corrija, reescreva nem atribua à SuVeCA.`;
 
-    const selectedModel = model || "gemini-3.1-flash-lite";
+    const selectedModel = resolveModel(model);
 
-    const response = await ai.models.generateContent({
+    const response = await withAiTimeout(ai.models.generateContent({
       model: selectedModel,
       contents: prompt,
       config: {
@@ -270,14 +349,15 @@ REGRAS PARA sourceRefs:
           required: ["answerMarkdown", "sourceRefs"],
         },
       },
-    });
+    }));
 
     const data = JSON.parse(response.text || "{}");
     const answerMarkdown = toLearnerFacingContent(data.answerMarkdown);
     if (!answerMarkdown) throw new Error("O Professor não retornou conteúdo pedagógico válido.");
-    const sourceRefs = Array.isArray(data.sourceRefs)
-      ? data.sourceRefs.filter((reference: unknown) => typeof reference === "string" && /^(?:PASSAGE|QUESTION):/i.test(reference))
-      : [];
+    const sourceRefs = keepAllowedRefs(data.sourceRefs, allowedRefsFor(knowledgeRecords, officialQuestionContext));
+    if (!sourceRefs.length) {
+      return res.status(422).json({ error: "A base recuperada não sustentou uma resposta com proveniência verificável. Reformule a dúvida." });
+    }
     return res.json({ answerMarkdown, sourceRefs });
   } catch (error: any) {
     console.error("Erro no Professor SuVeCA:", error);
@@ -292,13 +372,15 @@ REGRAS PARA sourceRefs:
 app.post("/api/gemini/generate-questions", async (req, res) => {
   try {
     const { topic, bank, count, model } = req.body;
+    const safeTopic = typeof topic === "string" ? topic.trim().slice(0, 240) : "Concordância e SuVeCA";
+    const safeBank = typeof bank === "string" ? bank.trim().slice(0, 80) : "CEBRASPE / FGV";
+    const safeCount = Math.min(5, Math.max(1, Number(count) || 3));
     const ai = getGenAIClient();
-    const knowledgeContext = formatKnowledgeContext(
-      retrieveKnowledge(`${topic || ''} ${bank || ''}`, 3)
-    );
-    const officialQuestionContext = await formatOfficialQuestionContext(`${topic || ''} ${bank || ''}`, 2);
+    const knowledgeRecords = retrieveKnowledge(`${safeTopic} ${safeBank}`, 3);
+    const knowledgeContext = formatKnowledgeContext(knowledgeRecords);
+    const officialQuestionContext = await formatOfficialQuestionContext(`${safeTopic} ${safeBank}`, 2);
 
-    const prompt = `Gere ${count || 3} questões inéditas no estilo da banca ${bank || "CEBRASPE / FGV"} sobre o tema: "${topic || "Concordância e SuVeCA"}".
+    const prompt = `Gere ${safeCount} questões inéditas no estilo da banca ${safeBank} sobre o tema: "${safeTopic}".
 
 ${knowledgeContext}
 
@@ -306,9 +388,9 @@ ${officialQuestionContext}
 
 As questões oficiais acima servem apenas como referência de incidência e formato. Não copie, corrija nem reescreva seus enunciados ou soluções. Forneça questões novas com enunciado, alternativas/opções ou julgamento Certo/Errado, resposta correta, comentário gramatical detalhado e sourceRefs separados. O comentário é conteúdo do aluno e não pode conter PASSAGE, QUESTION, KB ou IDs técnicos; as referências internas ficam exclusivamente em sourceRefs.`;
 
-    const selectedModel = model || "gemini-3.1-flash-lite";
+    const selectedModel = resolveModel(model);
 
-    const response = await ai.models.generateContent({
+    const response = await withAiTimeout(ai.models.generateContent({
       model: selectedModel,
       contents: prompt,
       config: {
@@ -353,7 +435,7 @@ As questões oficiais acima servem apenas como referência de incidência e form
           required: ["questions"],
         },
       },
-    });
+    }));
 
     const jsonStr = response.text || "{}";
     const data = JSON.parse(jsonStr);
@@ -366,11 +448,13 @@ As questões oficiais acima servem apenas como referência de incidência e form
           options: Array.isArray(question.options)
             ? question.options.map((option: any) => ({ ...option, text: toLearnerFacingContent(option.text) }))
             : question.options,
-          sourceRefs: Array.isArray(question.sourceRefs)
-            ? question.sourceRefs.filter((reference: unknown) => typeof reference === "string" && /^PASSAGE:/i.test(reference))
-            : [],
-        }))
+          origin: "ai_generated",
+          sourceRefs: keepAllowedRefs(question.sourceRefs, allowedRefsFor(knowledgeRecords, officialQuestionContext)),
+        })).filter((question: any) => question.questionText && question.commentary && question.sourceRefs.length)
       : [];
+    if (!questions.length) {
+      return res.status(422).json({ error: "A base não sustentou questões inéditas com proveniência verificável para este pedido." });
+    }
     return res.json({ questions });
   } catch (error: any) {
     console.error("Erro ao gerar questões:", error);
@@ -399,9 +483,8 @@ app.post("/api/gemini/generate-error-flashcards", async (req, res) => {
     const cardCount = Math.min(Math.max(Number(count) || 2, 1), 4);
     const truncate = (value: string) => value.trim().slice(0, 2400);
     const ai = getGenAIClient();
-    const knowledgeContext = formatKnowledgeContext(
-      retrieveKnowledge(`${error.conteudo} ${error.regraDecisiva}`, 2)
-    );
+    const knowledgeRecords = retrieveKnowledge(`${error.conteudo} ${error.regraDecisiva}`, 2);
+    const knowledgeContext = formatKnowledgeContext(knowledgeRecords);
     const prompt = `Transforme o seguinte registro do Caderno de Erros em ${cardCount} flashcards curtos de revisão ativa.
 
 Tópico: ${truncate(error.conteudo)}
@@ -420,8 +503,8 @@ Para cada flashcard produza:
 
 A explicação não deve apenas repetir o verso. Não invente regras que não estejam apoiadas no perfil adjudicado. Nenhum texto de front, back, hint ou explanation pode conter PASSAGE, QUESTION, KB, IDs ou referências técnicas; mantenha-os exclusivamente em sourceRefs.`;
 
-    const response = await ai.models.generateContent({
-      model: model || "gemini-3.1-flash-lite",
+    const response = await withAiTimeout(ai.models.generateContent({
+      model: resolveModel(model),
       contents: prompt,
       config: {
         systemInstruction:
@@ -464,7 +547,7 @@ A explicação não deve apenas repetir o verso. Não invente regras que não es
           required: ["flashcards"],
         },
       },
-    });
+    }));
 
     const data = JSON.parse(response.text || "{}");
     const flashcards = Array.isArray(data.flashcards)
@@ -473,11 +556,12 @@ A explicação não deve apenas repetir o verso. Não invente regras que não es
           back: toLearnerFacingContent(card.back),
           hint: toLearnerFacingContent(card.hint) || undefined,
           explanation: toLearnerFacingContent(card.explanation),
-          sourceRefs: Array.isArray(card.sourceRefs)
-            ? card.sourceRefs.filter((reference: unknown) => typeof reference === "string" && /^PASSAGE:/i.test(reference))
-            : [],
-        })).filter((card: any) => card.front && card.back && card.explanation)
+          sourceRefs: keepAllowedRefs(card.sourceRefs, allowedRefsFor(knowledgeRecords)),
+        })).filter((card: any) => card.front && card.back && card.explanation && card.sourceRefs.length)
       : [];
+    if (!flashcards.length) {
+      return res.status(422).json({ error: "A base não sustentou flashcards com proveniência verificável para esta regra." });
+    }
     return res.json({ flashcards });
   } catch (error: any) {
     console.error("Erro ao gerar flashcards:", error);

@@ -59,13 +59,62 @@ interface RichNoteEditorProps {
 }
 
 const toolbarActions = [
-  { command: 'bold', value: undefined, label: 'Negrito', icon: Bold },
-  { command: 'italic', value: undefined, label: 'Itálico', icon: Italic },
-  { command: 'underline', value: undefined, label: 'Sublinhado', icon: Underline },
-  { command: 'insertUnorderedList', value: undefined, label: 'Lista com marcadores', icon: List },
-  { command: 'insertOrderedList', value: undefined, label: 'Lista numerada', icon: ListOrdered },
-  { command: 'formatBlock', value: 'blockquote', label: 'Citação', icon: Quote },
+  { action: 'strong', label: 'Negrito', icon: Bold },
+  { action: 'em', label: 'Itálico', icon: Italic },
+  { action: 'u', label: 'Sublinhado', icon: Underline },
+  { action: 'ul', label: 'Lista com marcadores', icon: List },
+  { action: 'ol', label: 'Lista numerada', icon: ListOrdered },
+  { action: 'blockquote', label: 'Citação', icon: Quote },
 ] as const;
+
+type EditorAction = (typeof toolbarActions)[number]['action'];
+
+const applyRangeFormat = (editor: HTMLElement, action: EditorAction) => {
+  const selection = window.getSelection();
+  if (!selection?.rangeCount) return false;
+  const range = selection.getRangeAt(0);
+  if (range.collapsed || !editor.contains(range.commonAncestorContainer)) return false;
+
+  const fragment = range.extractContents();
+  let formattedNode: HTMLElement;
+
+  if (action === 'ul' || action === 'ol') {
+    const list = document.createElement(action);
+    const sourceNodes = Array.from(fragment.childNodes);
+    const meaningfulNodes = sourceNodes.filter((node) => node.textContent?.trim() || node.nodeType === Node.ELEMENT_NODE);
+    for (const node of meaningfulNodes) {
+      if (node instanceof HTMLLIElement) {
+        list.append(node);
+        continue;
+      }
+      const item = document.createElement('li');
+      if (node.nodeType === Node.TEXT_NODE) {
+        const lines = (node.textContent || '').split(/\r?\n/).filter((line) => line.trim());
+        if (lines.length > 1) {
+          lines.forEach((line) => {
+            const lineItem = document.createElement('li');
+            lineItem.textContent = line.trim();
+            list.append(lineItem);
+          });
+          continue;
+        }
+      }
+      item.append(node);
+      list.append(item);
+    }
+    formattedNode = list;
+  } else {
+    formattedNode = document.createElement(action);
+    formattedNode.append(fragment);
+  }
+
+  range.insertNode(formattedNode);
+  const nextRange = document.createRange();
+  nextRange.selectNodeContents(formattedNode);
+  selection.removeAllRanges();
+  selection.addRange(nextRange);
+  return true;
+};
 
 export const RichNoteEditor: React.FC<RichNoteEditorProps> = ({
   value,
@@ -92,22 +141,23 @@ export const RichNoteEditor: React.FC<RichNoteEditorProps> = ({
     onChange(sanitizeRichNoteHtml(editor.innerHTML));
   };
 
-  const applyFormat = (command: string, commandValue?: string) => {
+  const applyFormat = (action: EditorAction) => {
     if (disabled) return;
-    editorRef.current?.focus();
-    document.execCommand(command, false, commandValue);
-    emitValue();
+    const editor = editorRef.current;
+    if (!editor) return;
+    if (applyRangeFormat(editor, action)) emitValue();
+    editor.focus();
   };
 
   return (
     <div className="rounded-xl border border-slate-200 overflow-hidden bg-white focus-within:border-teal-600 focus-within:ring-3 focus-within:ring-teal-700/15">
       <div className="flex flex-wrap items-center gap-1 p-2 bg-slate-50 border-b border-slate-200">
-        {toolbarActions.map(({ command, value: commandValue, label, icon: Icon }) => (
+        {toolbarActions.map(({ action, label, icon: Icon }) => (
           <button
-            key={command}
+            key={action}
             type="button"
             onMouseDown={(event) => event.preventDefault()}
-            onClick={() => applyFormat(command, commandValue)}
+            onClick={() => applyFormat(action)}
             disabled={disabled}
             aria-label={label}
             title={label}
@@ -116,7 +166,7 @@ export const RichNoteEditor: React.FC<RichNoteEditorProps> = ({
             <Icon className="w-4 h-4" />
           </button>
         ))}
-        <span className="ml-auto text-[10px] font-medium text-slate-700 pr-1">
+        <span className="ml-auto text-xs font-medium text-slate-700 pr-1">
           Formatação rápida
         </span>
       </div>

@@ -1,13 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Bot, Send, Sparkles, X, User } from 'lucide-react';
+import { Bot, BookOpenCheck, BookmarkPlus, Brain, Send, Sparkles, X, User } from 'lucide-react';
 import { useModalFocus } from '../hooks/useModalFocus';
 import { toLearnerFacingContent } from '../lib/learnerContent';
 import { MarkdownContent } from './ui/MarkdownContent';
+import { authenticatedFetch } from '../lib/authenticatedFetch';
 
 interface ProfessorSuvecaModalProps {
   isOpen: boolean;
   onClose: () => void;
   initialContext?: string;
+  onSaveRule?: (rule: string, context: string) => void;
+  onOpenPractice?: () => void;
+  onOpenFlashcards?: () => void;
 }
 
 interface Message {
@@ -20,6 +24,9 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
   isOpen,
   onClose,
   initialContext = '',
+  onSaveRule,
+  onOpenPractice,
+  onOpenFlashcards,
 }) => {
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -31,6 +38,7 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
   ]);
   const [inputQuery, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [messageFeedback, setMessageFeedback] = useState<Record<number, 'yes' | 'no'>>({});
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const dialogRef = useModalFocus(isOpen, onClose, inputRef);
@@ -70,7 +78,7 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/gemini/explain', {
+      const response = await authenticatedFetch('/api/gemini/explain', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -98,7 +106,7 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
           ...prev,
           {
             sender: 'bot',
-            text: 'Desculpe, tive um problema ao consultar a resposta. Tente novamente em instantes.',
+            text: data.error || 'Desculpe, tive um problema ao consultar a resposta. Tente novamente em instantes.',
           },
         ]);
       }
@@ -186,10 +194,32 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
                 }`}
               >
                 {msg.sender === 'bot' ? (
-                  <MarkdownContent
-                    content={toLearnerFacingContent(msg.text)}
-                    className="text-xs sm:text-sm [&_h1]:text-lg [&_h2]:text-base [&_h3]:text-sm [&_p]:leading-6"
-                  />
+                  <>
+                    <MarkdownContent
+                      content={toLearnerFacingContent(msg.text)}
+                      className="text-xs sm:text-sm [&_h1]:text-lg [&_h2]:text-base [&_h3]:text-sm [&_p]:leading-6"
+                    />
+                    {idx > 0 && Boolean(msg.sourceRefs?.length) && (
+                      <div className="mt-3 border-t border-slate-100 pt-3">
+                        {(onSaveRule || onOpenPractice || onOpenFlashcards) && (
+                          <div className="flex flex-wrap gap-2">
+                            {onSaveRule && <button type="button" onClick={() => onSaveRule(msg.text, initialContext)} className="button-secondary min-h-[44px] px-3 text-xs"><BookmarkPlus className="h-4 w-4 text-teal-700" /> Salvar regra</button>}
+                            {onOpenFlashcards && <button type="button" onClick={onOpenFlashcards} className="button-secondary min-h-[44px] px-3 text-xs"><Brain className="h-4 w-4 text-violet-700" /> Criar/revisar flashcard</button>}
+                            {onOpenPractice && <button type="button" onClick={onOpenPractice} className="button-secondary min-h-[44px] px-3 text-xs"><BookOpenCheck className="h-4 w-4 text-teal-700" /> Praticar questões</button>}
+                          </div>
+                        )}
+                        <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-slate-600">
+                          <span>{messageFeedback[idx] ? 'Obrigado pelo retorno.' : 'Esta resposta ajudou?'}</span>
+                          {!messageFeedback[idx] && (
+                            <>
+                              <button type="button" onClick={() => setMessageFeedback((current) => ({ ...current, [idx]: 'yes' }))} className="min-h-[44px] rounded-lg border border-slate-200 px-3 font-semibold hover:border-teal-500 hover:text-teal-800">Sim</button>
+                              <button type="button" onClick={() => setMessageFeedback((current) => ({ ...current, [idx]: 'no' }))} className="min-h-[44px] rounded-lg border border-slate-200 px-3 font-semibold hover:border-amber-500 hover:text-amber-800">Ainda não</button>
+                            </>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </>
                 ) : (
                   msg.text
                 )}
