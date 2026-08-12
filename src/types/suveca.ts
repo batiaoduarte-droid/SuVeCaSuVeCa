@@ -135,6 +135,11 @@ export interface ErrorFlashcard {
   front: string;
   back: string;
   hint?: string;
+  explanation?: string;
+  /** Internal provenance for audit; never render in learner-facing content. */
+  sourceRefs?: string[];
+  hintUsedCount?: number;
+  lastReviewUsedHint?: boolean;
   createdAt: string;
   lastReviewedAt?: string;
   nextReviewAt?: string;

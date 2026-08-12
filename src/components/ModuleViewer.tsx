@@ -496,7 +496,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                   {editorialStatusLabel(moduleData.knowledge.editorialStatus)}
                 </p>
                 <p className="leading-relaxed text-slate-600">
-                  Proveniência do build <code className="rounded bg-white px-1.5 py-0.5 text-[11px]">{moduleData.knowledge.buildId}</code>. As fontes sustentam a auditoria; a interpretação SuVeCA permanece identificada como elaboração editorial do método.
+                  As fontes sustentam a auditoria editorial; a interpretação SuVeCA permanece identificada como elaboração do método. A versão técnica do conteúdo é registrada internamente.
                 </p>
                 {moduleData.knowledge.reviewVersion && (
                   <p className="rounded-lg border border-violet-200 bg-white/80 px-2.5 py-2 leading-relaxed text-violet-900">
@@ -507,7 +507,6 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                 <ul className="space-y-1.5" aria-label="Principais fontes deste módulo">
                   {moduleData.knowledge.sources.map((source) => (
                     <li key={source.id} className="flex items-start gap-2 rounded-lg bg-white/80 px-2.5 py-2">
-                      <span className="mt-0.5 shrink-0 font-mono text-[10px] text-violet-700">KB:{source.id.slice(0, 8)}</span>
                       {source.url ? (
                         <a
                           href={source.url}

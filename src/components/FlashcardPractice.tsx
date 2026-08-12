@@ -7,10 +7,14 @@ import {
   BookOpen,
   Brain,
   CheckCircle2,
+  ChevronDown,
   ChevronRight,
+  ChevronUp,
+  Lightbulb,
   RefreshCw,
   Sparkles,
 } from 'lucide-react';
+import { toLearnerFacingContent } from '../lib/learnerContent';
 
 const FLASHCARDS_STORAGE_PREFIX = 'suveca_flashcards';
 const flashcardsStorageKey = (userId?: string) =>
@@ -170,6 +174,8 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
   const [mode, setMode] = useState<'caderno' | 'suveca'>('caderno');
   const [activeCardId, setActiveCardId] = useState<string | null>(null);
   const [isAnswerVisible, setIsAnswerVisible] = useState(false);
+  const [isHintVisible, setIsHintVisible] = useState(false);
+  const [isExplanationVisible, setIsExplanationVisible] = useState(false);
   const [reviewResult, setReviewResult] = useState<'correct' | 'incorrect' | null>(null);
   const [reviewFeedback, setReviewFeedback] = useState<string | null>(null);
   const [isGeneratingFor, setIsGeneratingFor] = useState<string | null>(null);
@@ -196,6 +202,8 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
     setFlashcards(SUVECA_STRUCTURE_CARDS);
     setActiveCardId(null);
     setIsAnswerVisible(false);
+    setIsHintVisible(false);
+    setIsExplanationVisible(false);
     setReviewResult(null);
     setReviewFeedback(null);
 
@@ -291,6 +299,8 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
       : null;
     setActiveCardId(next?.id || null);
     setIsAnswerVisible(false);
+    setIsHintVisible(false);
+    setIsExplanationVisible(false);
     setReviewResult(null);
     setReviewFeedback(null);
   }, [activeCardId, activeCards, reviewResult]);
@@ -299,6 +309,8 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
     setMode(nextMode);
     setActiveCardId(null);
     setIsAnswerVisible(false);
+    setIsHintVisible(false);
+    setIsExplanationVisible(false);
     setReviewResult(null);
     setReviewFeedback(null);
   };
@@ -310,6 +322,8 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
     const next = pool[Math.floor(Math.random() * pool.length)];
     setActiveCardId(next.id);
     setIsAnswerVisible(false);
+    setIsHintVisible(false);
+    setIsExplanationVisible(false);
     setReviewResult(null);
     setReviewFeedback(null);
   };
@@ -332,17 +346,21 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
       const generatedCards: ErrorFlashcard[] = data.flashcards
         .filter((card: unknown) => {
           if (!card || typeof card !== 'object') return false;
-          const candidate = card as { front?: unknown; back?: unknown; hint?: unknown };
+          const candidate = card as { front?: unknown; back?: unknown; hint?: unknown; explanation?: unknown };
           return typeof candidate.front === 'string' && typeof candidate.back === 'string';
         })
-        .map((card: { front: string; back: string; hint?: string }, index: number) => ({
+        .map((card: { front: string; back: string; hint?: string; explanation?: string; sourceRefs?: unknown }, index: number) => ({
           id: `flash_${error.id}_${Date.now()}_${index}`,
           errorId: error.id,
           source: 'caderno',
           topic: error.conteudo,
-          front: card.front,
-          back: card.back,
-          hint: card.hint,
+          front: toLearnerFacingContent(card.front),
+          back: toLearnerFacingContent(card.back),
+          hint: toLearnerFacingContent(card.hint) || undefined,
+          explanation: toLearnerFacingContent(card.explanation) || undefined,
+          sourceRefs: Array.isArray(card.sourceRefs)
+            ? card.sourceRefs.filter((reference): reference is string => typeof reference === 'string')
+            : undefined,
           createdAt: now,
           correctCount: 0,
           incorrectCount: 0,
@@ -356,6 +374,8 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
       setMode('caderno');
       setActiveCardId(generatedCards[0].id);
       setIsAnswerVisible(false);
+      setIsHintVisible(false);
+      setIsExplanationVisible(false);
       setReviewResult(null);
       setGenerationMessage(`Criamos ${generatedCards.length} flashcards para “${error.conteudo}”.`);
     } catch (error) {
@@ -392,14 +412,18 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
             const candidate = card as { front?: unknown; back?: unknown };
             return typeof candidate.front === 'string' && typeof candidate.back === 'string';
           })
-          .map((card: { front: string; back: string; hint?: string }, index: number) => ({
+          .map((card: { front: string; back: string; hint?: string; explanation?: string; sourceRefs?: unknown }, index: number) => ({
             id: `flash_${error.id}_${Date.now()}_${index}`,
             errorId: error.id,
             source: 'caderno',
             topic: error.conteudo,
-            front: card.front,
-            back: card.back,
-            hint: card.hint,
+            front: toLearnerFacingContent(card.front),
+            back: toLearnerFacingContent(card.back),
+            hint: toLearnerFacingContent(card.hint) || undefined,
+            explanation: toLearnerFacingContent(card.explanation) || undefined,
+            sourceRefs: Array.isArray(card.sourceRefs)
+              ? card.sourceRefs.filter((reference): reference is string => typeof reference === 'string')
+              : undefined,
             createdAt: now,
             correctCount: 0,
             incorrectCount: 0,
@@ -453,6 +477,8 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
           ...card,
           correctCount: card.correctCount + (correct ? 1 : 0),
           incorrectCount: card.incorrectCount + (correct ? 0 : 1),
+          hintUsedCount: (card.hintUsedCount || 0) + (isHintVisible ? 1 : 0),
+          lastReviewUsedHint: isHintVisible,
           lastReviewedAt: now.toISOString(),
           nextReviewAt,
         };
@@ -603,11 +629,28 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
 
           <div className="min-h-40 flex flex-col justify-center rounded-2xl bg-slate-50 border border-slate-200 p-5 sm:p-7">
             <span className="text-xs font-bold uppercase tracking-wide text-slate-500 mb-3">Pergunta</span>
-            <p className="text-base sm:text-lg font-bold text-slate-900 leading-relaxed">{activeCard.front}</p>
+            <p className="text-base sm:text-lg font-bold text-slate-900 leading-relaxed">{toLearnerFacingContent(activeCard.front)}</p>
             {activeCard.hint && !isAnswerVisible && (
-              <p className="text-xs text-violet-800 mt-4 bg-violet-50 border border-violet-100 rounded-lg px-3 py-2">
-                Dica: {activeCard.hint}
-              </p>
+              <div className="mt-4">
+                {!isHintVisible ? (
+                  <button
+                    type="button"
+                    onClick={() => setIsHintVisible(true)}
+                    aria-expanded="false"
+                    className="inline-flex min-h-[44px] items-center gap-2 rounded-xl border border-violet-200 bg-white px-3 py-2 text-xs font-bold text-violet-800 transition hover:bg-violet-50"
+                  >
+                    <Lightbulb className="h-4 w-4" aria-hidden="true" />
+                    Ver dica
+                  </button>
+                ) : (
+                  <div className="rounded-xl border border-violet-200 bg-violet-50 px-4 py-3 text-xs text-violet-950" role="note">
+                    <strong className="mb-1 flex items-center gap-2 text-violet-900">
+                      <Lightbulb className="h-4 w-4" aria-hidden="true" /> Dica
+                    </strong>
+                    <p>{toLearnerFacingContent(activeCard.hint)}</p>
+                  </div>
+                )}
+              </div>
             )}
           </div>
 
@@ -619,8 +662,33 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
             <>
               <div className="rounded-2xl bg-emerald-50 border border-emerald-200 p-5 tab-content-enter">
                 <span className="text-xs font-bold uppercase tracking-wide text-emerald-800 block mb-2">Resposta</span>
-                <p className="text-sm text-emerald-950 leading-relaxed font-medium">{activeCard.back}</p>
+                <p className="text-sm text-emerald-950 leading-relaxed font-medium">{toLearnerFacingContent(activeCard.back)}</p>
               </div>
+
+              {activeCard.explanation && (
+                <div className="space-y-3">
+                  <button
+                    type="button"
+                    onClick={() => setIsExplanationVisible((visible) => !visible)}
+                    aria-expanded={isExplanationVisible}
+                    aria-controls={`flashcard-explanation-${activeCard.id}`}
+                    className="mx-auto flex min-h-[44px] items-center gap-2 rounded-xl px-3 py-2 text-xs font-bold text-teal-800 transition hover:bg-teal-50"
+                  >
+                    <BookOpen className="h-4 w-4" aria-hidden="true" />
+                    {isExplanationVisible ? 'Ocultar explicação' : 'Ver explicação'}
+                    {isExplanationVisible ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                  </button>
+                  {isExplanationVisible && (
+                    <div
+                      id={`flashcard-explanation-${activeCard.id}`}
+                      className="rounded-2xl border border-teal-200 bg-teal-50/60 p-5 text-sm leading-relaxed text-slate-800 tab-content-enter"
+                    >
+                      <strong className="mb-2 block text-teal-950">Por que isso acontece?</strong>
+                      <p className="whitespace-pre-wrap">{toLearnerFacingContent(activeCard.explanation)}</p>
+                    </div>
+                  )}
+                </div>
+              )}
 
               {reviewResult ? (
                 <div className={`rounded-xl p-3 border text-xs font-semibold flex items-center justify-between gap-3 ${

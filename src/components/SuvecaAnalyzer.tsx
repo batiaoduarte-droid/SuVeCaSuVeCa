@@ -533,13 +533,11 @@ export const SuvecaAnalyzer: React.FC<SuvecaAnalyzerProps> = ({
                 <Database className="h-4 w-4 text-violet-700" />
                 Fontes recuperadas da Base Canônica
               </div>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {currentAnalysis.knowledgeSources.map((sourceId) => (
-                  <code key={sourceId} className="rounded-lg border border-violet-200 bg-white px-2.5 py-1 text-[11px]">
-                    {sourceId}
-                  </code>
-                ))}
-              </div>
+              <p className="mt-2 text-violet-900">
+                A análise foi conferida com {currentAnalysis.knowledgeSources.length}{' '}
+                {currentAnalysis.knowledgeSources.length === 1 ? 'fonte editorial' : 'fontes editoriais'} da base.
+                As referências técnicas permanecem registradas internamente.
+              </p>
             </div>
           )}
         </section>

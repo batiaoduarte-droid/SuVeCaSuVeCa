@@ -15,6 +15,7 @@ import {
   queryOfficialQuestions,
   sampleOfficialQuestions,
 } from "./src/lib/officialQuestions.server";
+import { toLearnerFacingContent } from "./src/lib/learnerContent";
 
 // Local development follows the README and keeps the Gemini key in .env.local.
 // Load it first, then use .env only as a fallback for values not already set.
@@ -190,24 +191,59 @@ Forneça um JSON estruturado com os blocos sintáticos, classe gramatical de cad
 // API: Ask Professor SuVeCA (AI Grammar Tutor)
 app.post("/api/gemini/explain", async (req, res) => {
   try {
-    const { question, context, model } = req.body;
-    if (!question) {
+    const { question, context, history, model } = req.body || {};
+    if (typeof question !== "string" || !question.trim()) {
       return res.status(400).json({ error: "Pergunta não informada." });
     }
 
+    const safeQuestion = question.trim().slice(0, 4000);
+    const safeContext = typeof context === "string"
+      ? context.trim().slice(0, 800)
+      : "Geral de Português para Concursos";
+    const safeHistory = Array.isArray(history)
+      ? history
+          .slice(-6)
+          .filter((message) => message && (message.role === "user" || message.role === "assistant") && typeof message.text === "string")
+          .map((message) => ({ role: message.role as "user" | "assistant", text: message.text.trim().slice(0, 4000) }))
+          .filter((message) => message.text)
+      : [];
+    const conversationContext = safeHistory.length
+      ? safeHistory.map((message) => `${message.role === "user" ? "Aluno" : "Professor"}: ${message.text}`).join("\n\n")
+      : "Sem mensagens anteriores relevantes.";
+
     const ai = getGenAIClient();
     const knowledgeContext = formatKnowledgeContext(
-      retrieveKnowledge(`${context || ''} ${question}`, 3)
+      retrieveKnowledge(`${safeContext} ${safeQuestion}`, 3)
     );
-    const officialQuestionContext = await formatOfficialQuestionContext(`${context || ''} ${question}`, 2);
-    const prompt = `Contexto/Módulo: ${context || "Geral de Português para Concursos"}
-Dúvida do Aluno: "${question}"
+    const officialQuestionContext = await formatOfficialQuestionContext(`${safeContext} ${safeQuestion}`, 2);
+    const prompt = `Contexto/Módulo: ${safeContext}
+
+HISTÓRICO RECENTE:
+${conversationContext}
+
+DÚVIDA ATUAL DO ALUNO:
+${safeQuestion}
 
 ${knowledgeContext}
 
 ${officialQuestionContext}
 
-Responda de forma didática, direta e focada em concursos. Use a metodologia SuVeCA (Sujeito + Verbo + Complemento + Adjunto), mostre exemplos práticos de 'Certo vs Errado' e destaque a regra decisiva. Priorize as AFIRMAÇÕES ADJUDICADAS e seus LIMITES; cite-as com [PASSAGE:source:id#início-fim]. Títulos de fontes servem apenas como proveniência e não devem ser promovidos a regra. Quando houver divergência entre tradição, análise valencial, uso e convenção de banca, rotule o perfil em vez de inventar consenso. Quando usar uma questão oficial, cite [QUESTION:id] e preserve seu conteúdo; não a corrija, reescreva nem atribua à SuVeCA. Se a base não sustentar uma afirmação específica, diga isso claramente.`;
+Produza answerMarkdown e sourceRefs separadamente.
+
+REGRAS PARA answerMarkdown:
+- Responda diretamente à dúvida atual levando em conta o histórico; não se apresente novamente.
+- Explique o porquê, o teste mental repetível na prova e a regra decisiva.
+- Quando útil, dê um exemplo positivo e um contrastivo e destaque a pegadinha típica.
+- Diferencie eixos classificatórios distintos (por exemplo, impessoalidade e transitividade).
+- Faça uma verificação de coerência: não apresente a mesma construção como certa e errada sob as mesmas condições.
+- Use Markdown com títulos curtos, negrito, listas ou tabelas somente quando melhorarem a compreensão.
+- Não inclua PASSAGE, QUESTION, KB, IDs, hashes ou referências técnicas no texto pedagógico.
+- Se a base não sustentar uma afirmação específica, diga isso claramente em linguagem natural.
+
+REGRAS PARA sourceRefs:
+- Liste apenas os identificadores PASSAGE e QUESTION efetivamente usados.
+- As referências são metadados internos e nunca devem ser explicadas dentro de answerMarkdown.
+- Preserve o conteúdo oficial citado; não o corrija, reescreva nem atribua à SuVeCA.`;
 
     const selectedModel = model || "gemini-3.1-flash-lite";
 
@@ -216,11 +252,33 @@ Responda de forma didática, direta e focada em concursos. Use a metodologia SuV
       contents: prompt,
       config: {
         systemInstruction:
-          "Você é o Professor SuVeCA, tutor ancorado na Base Canônica SuVeCA v3. Preserve rigorosamente a separação entre sourceFacts, afirmações editoriais adjudicadas e interpretação SuVeCA; aplique limites e exceções, identifique divergências e nunca fabrique citações.",
+          "Você é o Professor SuVeCA, tutor ancorado na Base Canônica SuVeCA v3. Preserve a separação entre conhecimento validado e interpretação SuVeCA, aplique limites e exceções, responda com rigor pedagógico e mantenha toda proveniência exclusivamente em sourceRefs.",
+        responseMimeType: "application/json",
+        responseSchema: {
+          type: Type.OBJECT,
+          properties: {
+            answerMarkdown: {
+              type: Type.STRING,
+              description: "Resposta pedagógica em Markdown sem identificadores técnicos de fontes.",
+            },
+            sourceRefs: {
+              type: Type.ARRAY,
+              items: { type: Type.STRING },
+              description: "Referências internas PASSAGE e QUESTION efetivamente utilizadas.",
+            },
+          },
+          required: ["answerMarkdown", "sourceRefs"],
+        },
       },
     });
 
-    return res.json({ answer: response.text });
+    const data = JSON.parse(response.text || "{}");
+    const answerMarkdown = toLearnerFacingContent(data.answerMarkdown);
+    if (!answerMarkdown) throw new Error("O Professor não retornou conteúdo pedagógico válido.");
+    const sourceRefs = Array.isArray(data.sourceRefs)
+      ? data.sourceRefs.filter((reference: unknown) => typeof reference === "string" && /^(?:PASSAGE|QUESTION):/i.test(reference))
+      : [];
+    return res.json({ answerMarkdown, sourceRefs });
   } catch (error: any) {
     console.error("Erro no Professor SuVeCA:", error);
     return res.status(500).json({
@@ -246,7 +304,7 @@ ${knowledgeContext}
 
 ${officialQuestionContext}
 
-As questões oficiais acima servem apenas como referência de incidência e formato. Não copie, corrija nem reescreva seus enunciados ou soluções. Forneça um JSON com questões novas, enunciado, alternativas/opções ou julgamento Certo/Errado, resposta correta e comentário gramatical detalhado citando a regra decisiva e ao menos uma referência [PASSAGE:source:id#início-fim] do perfil adjudicado.`;
+As questões oficiais acima servem apenas como referência de incidência e formato. Não copie, corrija nem reescreva seus enunciados ou soluções. Forneça questões novas com enunciado, alternativas/opções ou julgamento Certo/Errado, resposta correta, comentário gramatical detalhado e sourceRefs separados. O comentário é conteúdo do aluno e não pode conter PASSAGE, QUESTION, KB ou IDs técnicos; as referências internas ficam exclusivamente em sourceRefs.`;
 
     const selectedModel = model || "gemini-3.1-flash-lite";
 
@@ -282,8 +340,13 @@ As questões oficiais acima servem apenas como referência de incidência e form
                   },
                   correctAnswer: { type: Type.STRING, description: "C ou E se for Certo/Errado, ou A, B, C, D, E" },
                   commentary: { type: Type.STRING, description: "Comentário pedagógico completo com a regra decisiva" },
+                  sourceRefs: {
+                    type: Type.ARRAY,
+                    items: { type: Type.STRING },
+                    description: "Referências internas PASSAGE utilizadas na elaboração.",
+                  },
                 },
-                required: ["id", "type", "questionText", "correctAnswer", "commentary"],
+                required: ["id", "type", "questionText", "correctAnswer", "commentary", "sourceRefs"],
               },
             },
           },
@@ -294,7 +357,21 @@ As questões oficiais acima servem apenas como referência de incidência e form
 
     const jsonStr = response.text || "{}";
     const data = JSON.parse(jsonStr);
-    return res.json(data);
+    const questions = Array.isArray(data.questions)
+      ? data.questions.map((question: any) => ({
+          ...question,
+          supportText: toLearnerFacingContent(question.supportText) || undefined,
+          questionText: toLearnerFacingContent(question.questionText),
+          commentary: toLearnerFacingContent(question.commentary),
+          options: Array.isArray(question.options)
+            ? question.options.map((option: any) => ({ ...option, text: toLearnerFacingContent(option.text) }))
+            : question.options,
+          sourceRefs: Array.isArray(question.sourceRefs)
+            ? question.sourceRefs.filter((reference: unknown) => typeof reference === "string" && /^PASSAGE:/i.test(reference))
+            : [],
+        }))
+      : [];
+    return res.json({ questions });
   } catch (error: any) {
     console.error("Erro ao gerar questões:", error);
     return res.status(500).json({
@@ -334,7 +411,14 @@ Exemplo de fixação: ${typeof error.novoExemplo === "string" ? truncate(error.n
 
 ${knowledgeContext}
 
-Cada frente deve exigir recuperação ativa (pergunta, julgamento Certo/Errado ou completar uma regra), e o verso deve explicar a resposta com precisão para concursos. Não invente regras que não estejam apoiadas no perfil adjudicado; cite [PASSAGE:source:id#início-fim] no verso.`;
+Para cada flashcard produza:
+- front: pergunta curta de recuperação ativa;
+- back: resposta objetiva para conferência rápida;
+- hint: dica opcional que conduz ao raciocínio sem entregar a resposta;
+- explanation: explicação detalhada com o porquê, teste mental, ao menos um exemplo, contraste quando útil e pegadinha de concurso;
+- sourceRefs: referências PASSAGE efetivamente usadas, como metadados internos.
+
+A explicação não deve apenas repetir o verso. Não invente regras que não estejam apoiadas no perfil adjudicado. Nenhum texto de front, back, hint ou explanation pode conter PASSAGE, QUESTION, KB, IDs ou referências técnicas; mantenha-os exclusivamente em sourceRefs.`;
 
     const response = await ai.models.generateContent({
       model: model || "gemini-3.1-flash-lite",
@@ -363,8 +447,17 @@ Cada frente deve exigir recuperação ativa (pergunta, julgamento Certo/Errado o
                     type: Type.STRING,
                     description: "Dica curta opcional, sem entregar a resposta inteira.",
                   },
+                  explanation: {
+                    type: Type.STRING,
+                    description: "Aprofundamento pedagógico com raciocínio, exemplo, contraste e pegadinha, sem IDs técnicos.",
+                  },
+                  sourceRefs: {
+                    type: Type.ARRAY,
+                    items: { type: Type.STRING },
+                    description: "Referências internas PASSAGE efetivamente utilizadas.",
+                  },
                 },
-                required: ["front", "back"],
+                required: ["front", "back", "explanation", "sourceRefs"],
               },
             },
           },
@@ -374,7 +467,18 @@ Cada frente deve exigir recuperação ativa (pergunta, julgamento Certo/Errado o
     });
 
     const data = JSON.parse(response.text || "{}");
-    return res.json(data);
+    const flashcards = Array.isArray(data.flashcards)
+      ? data.flashcards.map((card: any) => ({
+          front: toLearnerFacingContent(card.front),
+          back: toLearnerFacingContent(card.back),
+          hint: toLearnerFacingContent(card.hint) || undefined,
+          explanation: toLearnerFacingContent(card.explanation),
+          sourceRefs: Array.isArray(card.sourceRefs)
+            ? card.sourceRefs.filter((reference: unknown) => typeof reference === "string" && /^PASSAGE:/i.test(reference))
+            : [],
+        })).filter((card: any) => card.front && card.back && card.explanation)
+      : [];
+    return res.json({ flashcards });
   } catch (error: any) {
     console.error("Erro ao gerar flashcards:", error);
     return res.status(500).json({

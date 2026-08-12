@@ -158,7 +158,7 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
           {items.map((item) => (
             <article key={item.questionId} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs">
               <div className="flex items-start justify-between gap-3">
-                <div><p className="font-mono text-xs font-bold text-teal-800">QUESTION:{item.questionId}</p><h2 className="mt-1 font-bold text-slate-900">{item.officialProjection.topicNames[0] || 'Língua Portuguesa'}</h2></div>
+                <div><p className="text-xs font-bold text-teal-800">Questão oficial</p><h2 className="mt-1 font-bold text-slate-900">{item.officialProjection.topicNames[0] || 'Língua Portuguesa'}</h2></div>
                 <span className="rounded-full bg-slate-100 px-2 py-1 text-[10px] font-bold text-slate-600">{item.officialProjection.difficulty === 'EASY' ? 'FÁCIL' : 'MÉDIA'}</span>
               </div>
               <p className="mt-3 line-clamp-2 text-sm text-slate-600">{item.officialProjection.banks.join(', ') || 'Banca não identificada'} · {item.officialProjection.years.join(', ')}</p>
@@ -181,7 +181,7 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
               const raw = detail.official.raw as { statement?: string; statement_text?: string; alternatives?: Array<Record<string, unknown>>; solution?: Record<string, unknown>; has_video_solution?: boolean; solution_video_url?: string };
               const solution = raw.solution || {};
               return <>
-                <div className="flex items-start justify-between gap-3"><div><p className="font-mono text-xs font-bold text-teal-800">QUESTION:{detail.questionId}</p><p className="mt-1 flex items-center gap-1 text-xs text-slate-500"><ShieldCheck className="h-3.5 w-3.5" /> Payload oficial imutável</p></div><button type="button" onClick={() => setDetail(null)} className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl hover:bg-slate-100" aria-label="Fechar questão"><X className="h-5 w-5" /></button></div>
+                <div className="flex items-start justify-between gap-3"><div><p className="text-xs font-bold text-teal-800">Questão oficial</p><p className="mt-1 flex items-center gap-1 text-xs text-slate-500"><ShieldCheck className="h-3.5 w-3.5" /> Conteúdo oficial preservado</p></div><button type="button" onClick={() => setDetail(null)} className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl hover:bg-slate-100" aria-label="Fechar questão"><X className="h-5 w-5" /></button></div>
                 <p className="mt-5 whitespace-pre-wrap text-sm leading-7 text-slate-800">{formatOfficialContent(raw.statement || raw.statement_text)}</p>
                 <ol className="mt-5 space-y-2">{(raw.alternatives || []).map((alternative, index) => <li key={String(alternative.id || index)} className={`rounded-xl border p-3 text-sm leading-6 ${alternative.correct ? 'border-emerald-300 bg-emerald-50' : 'border-slate-200'}`}><strong>{String.fromCharCode(65 + index)}.</strong> {formatOfficialContent(alternative.body || alternative.sanitized_body)}</li>)}</ol>
                 <div className="mt-5 rounded-xl border border-amber-200 bg-amber-50 p-4"><h3 className="font-bold text-amber-950">Solução oficial</h3><p className="mt-2 whitespace-pre-wrap text-sm leading-7 text-amber-950">{formatOfficialContent(solution.complete_html || solution.complete || solution.sanitized_complete) || 'Esta questão não possui solução textual no corpus.'}</p></div>

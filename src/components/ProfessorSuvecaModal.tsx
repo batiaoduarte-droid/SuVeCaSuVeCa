@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Bot, Send, Sparkles, X, User, BookOpen } from 'lucide-react';
+import { Bot, Send, Sparkles, X, User } from 'lucide-react';
 import { useModalFocus } from '../hooks/useModalFocus';
+import { toLearnerFacingContent } from '../lib/learnerContent';
+import { MarkdownContent } from './ui/MarkdownContent';
 
 interface ProfessorSuvecaModalProps {
   isOpen: boolean;
@@ -11,6 +13,7 @@ interface ProfessorSuvecaModalProps {
 interface Message {
   sender: 'user' | 'bot';
   text: string;
+  sourceRefs?: string[];
 }
 
 export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
@@ -58,6 +61,10 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
     if (!inputQuery.trim() || isLoading) return;
 
     const userText = inputQuery.trim();
+    const recentHistory = messages.slice(-6).map((message) => ({
+      role: message.sender === 'bot' ? 'assistant' : 'user',
+      text: message.text,
+    }));
     setInputText('');
     setMessages((prev) => [...prev, { sender: 'user', text: userText }]);
     setIsLoading(true);
@@ -69,12 +76,23 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
         body: JSON.stringify({
           question: userText,
           context: initialContext || 'Geral de Português para Concursos',
+          history: recentHistory,
         }),
       });
 
       const data = await response.json();
-      if (data.answer) {
-        setMessages((prev) => [...prev, { sender: 'bot', text: data.answer }]);
+      const answerMarkdown = toLearnerFacingContent(data.answerMarkdown || data.answer);
+      if (response.ok && answerMarkdown) {
+        setMessages((prev) => [
+          ...prev,
+          {
+            sender: 'bot',
+            text: answerMarkdown,
+            sourceRefs: Array.isArray(data.sourceRefs)
+              ? data.sourceRefs.filter((reference: unknown) => typeof reference === 'string')
+              : undefined,
+          },
+        ]);
       } else {
         setMessages((prev) => [
           ...prev,
@@ -142,7 +160,7 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
         </div>
 
         {/* Messages List - Independent Scrolling */}
-        <div className="flex-1 p-4 sm:p-5 overflow-y-auto space-y-4 bg-slate-50/50" aria-live="polite" aria-relevant="additions">
+        <div className="flex-1 p-4 sm:p-5 overflow-y-auto space-y-4 bg-slate-50/50" aria-live="polite" aria-relevant="additions" aria-busy={isLoading}>
           {messages.map((msg, idx) => (
             <div
               key={idx}
@@ -161,13 +179,20 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
               </div>
 
               <div
-                className={`p-3.5 sm:p-4 rounded-2xl text-xs sm:text-sm max-w-[85%] sm:max-w-[80%] leading-relaxed whitespace-pre-line shadow-2xs ${
+                className={`min-w-0 p-3.5 sm:p-4 rounded-2xl text-xs sm:text-sm shadow-2xs ${
                   msg.sender === 'user'
-                    ? 'bg-teal-700 text-white font-medium'
-                    : 'bg-white text-slate-800 border border-slate-200'
+                    ? 'max-w-[85%] bg-teal-700 text-white font-medium whitespace-pre-wrap leading-relaxed'
+                    : 'max-w-[92%] sm:max-w-[94%] bg-white text-slate-800 border border-slate-200'
                 }`}
               >
-                {msg.text}
+                {msg.sender === 'bot' ? (
+                  <MarkdownContent
+                    content={toLearnerFacingContent(msg.text)}
+                    className="text-xs sm:text-sm [&_h1]:text-lg [&_h2]:text-base [&_h3]:text-sm [&_p]:leading-6"
+                  />
+                ) : (
+                  msg.text
+                )}
               </div>
             </div>
           ))}
