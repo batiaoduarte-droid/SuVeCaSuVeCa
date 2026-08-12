@@ -388,7 +388,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
               <BookOpen className="w-4 h-4 text-teal-700" />
               <h2 className="font-bold text-slate-900 text-sm">Sumário da Apostila</h2>
             </div>
-            <span className="text-[11px] font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full">
+            <span className="text-[11px] font-medium text-slate-700 bg-slate-100 px-2 py-0.5 rounded-full">
               {modules.length} Módulos
             </span>
           </div>
@@ -411,7 +411,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                       className={`text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0 ${
                         isSelected
                           ? 'bg-teal-100 text-teal-800'
-                          : 'bg-slate-100 text-slate-500 group-hover:bg-slate-200'
+                          : 'bg-slate-100 text-slate-700 group-hover:bg-slate-200'
                       }`}
                     >
                       M{m.num}
@@ -551,7 +551,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                 <h2 className="min-w-0 break-words text-lg sm:text-xl font-bold text-slate-900 tracking-tight">
                   {section.title}
                 </h2>
-                <span className="shrink-0 pt-1 text-xs font-semibold text-slate-400">
+                <span className="shrink-0 pt-1 text-xs font-semibold text-slate-700">
                   {idx + 1}.{moduleData.sections.length}
                 </span>
               </div>

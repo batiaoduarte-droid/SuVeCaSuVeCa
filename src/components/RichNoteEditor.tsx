@@ -116,7 +116,7 @@ export const RichNoteEditor: React.FC<RichNoteEditorProps> = ({
             <Icon className="w-4 h-4" />
           </button>
         ))}
-        <span className="ml-auto text-[10px] font-medium text-slate-400 pr-1">
+        <span className="ml-auto text-[10px] font-medium text-slate-700 pr-1">
           Formatação rápida
         </span>
       </div>

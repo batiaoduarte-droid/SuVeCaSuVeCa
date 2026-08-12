@@ -70,7 +70,7 @@ const OfficialQuestionsExplorer = lazy(() =>
 );
 
 const ToolLoading = () => (
-  <div className="mx-auto flex min-h-48 max-w-5xl items-center justify-center rounded-2xl border border-slate-200 bg-white p-8 text-sm font-semibold text-slate-500 shadow-xs" role="status">
+  <div className="mx-auto flex min-h-48 max-w-5xl items-center justify-center rounded-2xl border border-slate-200 bg-white p-8 text-sm font-semibold text-slate-700 shadow-xs" role="status">
     Carregando ferramenta de estudo…
   </div>
 );

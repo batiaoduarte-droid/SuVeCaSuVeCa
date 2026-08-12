@@ -169,7 +169,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <div className="w-10 h-10 rounded-xl bg-teal-700 text-white font-bold text-lg flex items-center justify-center shadow-xs">
                 S
               </div>
-              <div>
+              <div className="hidden min-[360px]:block">
                 <div className="flex items-center gap-2">
                   <span className="font-extrabold text-lg text-[var(--text-strong)] tracking-tight">
                     SuVeCA
@@ -196,7 +196,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               >
                 <Search className="w-4 h-4 text-slate-400" />
                 <span className="hidden sm:inline">Buscar na apostila...</span>
-                <kbd className="hidden xl:inline text-[10px] bg-slate-100 text-slate-500 border border-slate-200 px-1.5 py-0.5 rounded">
+                <kbd className="hidden xl:inline text-[10px] bg-slate-100 text-slate-700 border border-slate-200 px-1.5 py-0.5 rounded">
                   Ctrl+K
                 </kbd>
               </button>
