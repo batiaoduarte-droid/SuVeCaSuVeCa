@@ -515,3 +515,21 @@ Ao concluir este grupo temático, o estudante possui o domínio integral das seg
 4. **Execução Operacional Rápida:** Aplicar o *Método dos 3 Passos* (separar sílabas $\rightarrow$ achar a tônica $\rightarrow$ aplicar a regra) para julgar assertivas de concursos de bancas exigentes (como CEBRASPE) sem hesitação.
 
 ---
+
+---
+
+## Conexão com o método SuVeCA
+
+**SuVeCA = Sujeito + Verbo + Complemento + Adjunto + Predicativo.**
+
+A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e não um molde obrigatório. Em concursos, as frases frequentemente aparecem em ordem inversa, com termos omitidos ou sem sujeito.
+
+**Apoio indireto:** A acentuação é regida por tonicidade e estrutura silábica. A SuVeCA auxilia apenas em casos contextuais, como formas verbais ligadas a pronomes enclíticos.
+
+### Como aplicar neste tema
+
+1. Resolva o fenômeno pela regra própria da matéria.
+2. Se houver uma oração relevante, use a SuVeCA apenas para localizar a forma ou o efeito no contexto.
+3. Mantenha separadas a justificativa principal e a observação sintática auxiliar.
+
+> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe.

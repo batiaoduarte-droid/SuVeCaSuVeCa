@@ -18,12 +18,14 @@ check(fs.existsSync(curriculumPath), 'Currículo pedagógico canônico ausente.'
 if (!errors.length) {
   const manifest = readJson(manifestPath);
   const curriculum = readJson(curriculumPath);
+  const methodPath = path.join(ROOT, 'public', 'knowledge', 'pedagogical', 'suveca-method.json');
+  const method = readJson(methodPath);
   const coreModules = curriculum.modules.filter((module) => /^mod\d+$/.test(module.id));
   const simulado = curriculum.modules.find((module) => module.id === 'simulado');
   const studySections = coreModules.flatMap((module) => module.sections);
   const expectedCoreIds = Array.from({ length: 15 }, (_, index) => `mod${index}`);
 
-  check(curriculum.schemaVersion === '4.0.0', `Schema curricular inesperado: ${curriculum.schemaVersion}.`);
+  check(curriculum.schemaVersion === '4.1.0', `Schema curricular inesperado: ${curriculum.schemaVersion}.`);
   check(curriculum.buildId === manifest.buildId, 'Build ID diverge entre currículo e manifesto.');
   check(JSON.stringify(coreModules.map((module) => module.id)) === JSON.stringify(expectedCoreIds), 'Módulos curriculares não correspondem às aulas 00–14.');
   check(studySections.length === 115, `Unidades de estudo: ${studySections.length}/115.`);
@@ -45,7 +47,49 @@ if (!errors.length) {
     'Simulado editorial não está versionado pelo build.',
   );
   check(curriculum.totals?.mediaDependencies === 0, 'Currículo declara dependência audiovisual.');
-  check(curriculum.policy?.includes('não é mesclado'), 'Política de substituição editorial não está declarada.');
+  check(curriculum.policy?.includes('substituem o conteúdo curricular legado'), 'Política de substituição editorial não está declarada.');
+  check(
+    curriculum.methodology?.equation === 'Sujeito + Verbo + Complemento + Adjunto + Predicativo',
+    'Equação do método SuVeCA ausente ou divergente.',
+  );
+  check(
+    curriculum.methodology?.definition?.includes('mapa de análise para reconstruir as relações sintáticas'),
+    'Natureza relacional do método SuVeCA não está declarada.',
+  );
+  check(coreModules.every((module) => module.suvecaMethod?.methodId === 'suveca-analysis-map-v1'), 'Há aula sem conexão metodológica SuVeCA.');
+  check(coreModules.every((module) => module.suvecaMethod?.methodId === method.methodId), 'Há panorama de aula sem método SuVeCA válido.');
+
+  const integratedSections = studySections.filter((section) => section.lessonId !== 'A14');
+  const expectedGroupKeys = integratedSections.map((section) => `${section.lessonId}/${section.groupId}`).sort();
+  const methodGroupKeys = Object.keys(method.groupConnections || {}).sort();
+  const validGroupLevels = new Set(['central', 'strong', 'support', 'indirect', 'outside_core']);
+  check(methodGroupKeys.length === 102, `Conexões temáticas SuVeCA: ${methodGroupKeys.length}/102.`);
+  check(JSON.stringify(methodGroupKeys) === JSON.stringify(expectedGroupKeys), 'Conexões SuVeCA não correspondem exatamente aos grupos curriculares.');
+  check(Object.values(method.groupConnections || {}).every((connection) => validGroupLevels.has(connection.level)), 'Há nível temático SuVeCA inválido.');
+  check(integratedSections.every((section) => section.suvecaMethod?.methodId === method.methodId), 'Há grupo sem conexão SuVeCA materializada.');
+  check(integratedSections.every((section) => {
+    const source = method.groupConnections?.[`${section.lessonId}/${section.groupId}`];
+    return source && section.suvecaMethod?.level === source.level && section.suvecaMethod?.summary === source.summary;
+  }), 'A conexão SuVeCA publicada em uma unidade diverge da fonte editorial do grupo.');
+  check(studySections.filter((section) => section.lessonId === 'A14').every((section) => section.suvecaMethod?.level === 'review'), 'Revisão A14 sem nível transversal SuVeCA.');
+  check(!integratedSections.some((section) => ['core', 'contextual'].includes(section.suvecaMethod?.level)), 'Currículo ainda expõe níveis SuVeCA legados.');
+
+  const expectedRepresentativeLevels = {
+    'A00/G01': 'outside_core',
+    'A00/G07': 'strong',
+    'A01/G03': 'strong',
+    'A04/G01': 'central',
+    'A04/G05': 'indirect',
+    'A06/G02': 'central',
+    'A08/G05': 'support',
+    'A10/G06': 'central',
+    'A12/G02': 'indirect',
+    'A12/G04': 'strong',
+    'A13/G07': 'indirect',
+  };
+  for (const [key, level] of Object.entries(expectedRepresentativeLevels)) {
+    check(method.groupConnections?.[key]?.level === level, `${key}: nível SuVeCA deveria ser ${level}.`);
+  }
 
   for (const descriptor of manifest.artifacts || []) {
     const file = path.resolve(ROOT, ...descriptor.path.split('/'));
@@ -76,7 +120,23 @@ if (!errors.length) {
     check(!forbiddenTechnicalId.test(markdown), `${path.relative(ROOT, file)}: ID técnico exposto ao aluno.`);
     check(!forbiddenEditorialResidue.test(markdown), `${path.relative(ROOT, file)}: resíduo técnico/editorial exposto ao aluno.`);
     check(!/\bmaterial de origem\b/i.test(markdown), `${path.relative(ROOT, file)}: linguagem de processamento exposta.`);
+    check(markdown.includes('## Conexão com o método SuVeCA'), `${path.relative(ROOT, file)}: conexão SuVeCA ausente.`);
+    const section = studySections.find((item) => path.join(ROOT, 'public', item.contentUrl?.replace(/^\//, '') || '__missing__') === file);
+    if (section?.suvecaMethod?.level === 'outside_core') {
+      check(
+        markdown.indexOf('## Conexão com o método SuVeCA') > markdown.indexOf('## Pré-requisitos e modelo mental'),
+        `${path.relative(ROOT, file)}: SuVeCA foi anteposta à regra própria de um tema fora do núcleo.`,
+      );
+    }
   }
+
+  check(method.buildId === curriculum.buildId, 'Método SuVeCA público diverge do build curricular.');
+  check(method.methodId === 'suveca-analysis-map-v1', 'Método SuVeCA público possui identidade inválida.');
+  check(Object.keys(method.lessonConnections || {}).length === 15, 'Método SuVeCA não cobre as quinze aulas.');
+  check(Object.keys(method.groupTaxonomy || {}).length === 6, 'Taxonomia SuVeCA pública incompleta.');
+  check(manifest.totals?.methodologyLessonOverviews === 15, 'Manifesto não registra os panoramas SuVeCA das aulas.');
+  check(manifest.totals?.methodologyGroupConnections === 102, 'Manifesto não registra as conexões SuVeCA dos grupos.');
+  check(manifest.totals?.methodologyStudyConnections === 115, 'Manifesto não registra todas as conexões SuVeCA de estudo.');
 
   const flashcardPath = path.join(ROOT, 'src', 'data', 'editorialFlashcards.generated.ts');
   const flashcardSource = fs.readFileSync(flashcardPath, 'utf8');
@@ -102,6 +162,12 @@ if (!errors.length) {
   check(records.length === 115, `Índice do Professor SuVeCA: ${records.length}/115.`);
   check(new Set(records.map((record) => record.unitId)).size === records.length, 'Índice pedagógico contém unitId duplicado.');
   check(records.every((record) => record.sections?.length && record.routingTerms?.length), 'Índice pedagógico contém registro sem contexto ou roteamento.');
+  check(records.every((record) => record.methodology?.level && record.methodology?.label && record.methodology?.limits?.length), 'Índice pedagógico contém metodologia incompleta.');
+  check(records.every((record) => {
+    if (record.lessonId === 'A14') return record.methodology.level === 'review';
+    const source = method.groupConnections?.[`${record.lessonId}/${record.groupId}`];
+    return source && source.level === record.methodology.level && source.summary === record.methodology.summary;
+  }), 'Índice do Professor não preserva a conexão SuVeCA exata do grupo.');
   check(records.every((record) => !forbiddenEditorialResidue.test(`${record.title} ${record.objective} ${record.sections.map((section) => section.content).join(' ')}`)), 'Índice do Professor contém resíduo técnico/editorial.');
 
   const duelSource = fs.readFileSync(path.join(ROOT, 'src', 'data', 'editorialDuelQuestions.generated.ts'), 'utf8');
@@ -163,6 +229,10 @@ if (!errors.length) {
 
   const sourceManifest = readJson(path.join(ROOT, 'knowledge', 'canonical', 'pedagogical-source-manifest.json'));
   check(sourceManifest.sourceDigest === manifest.sourceDigest, 'Manifesto canônico diverge do manifesto público.');
+  check(
+    sourceManifest.sourceFiles.some((source) => source.path === 'knowledge/editorial/suveca-method.json'),
+    'Definição do método SuVeCA não participa do digest editorial.',
+  );
   const questionSourceFiles = sourceManifest.sourceFiles.filter((source) => /corpus_apostila\/(?:questions|answers)\.jsonl$/.test(source.path));
   check(questionSourceFiles.length === 28, `Digest editorial cobre ${questionSourceFiles.length}/28 arquivos de questões e respostas.`);
 }

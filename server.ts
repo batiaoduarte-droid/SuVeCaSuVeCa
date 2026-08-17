@@ -16,6 +16,7 @@ import {
   sampleOfficialQuestions,
 } from "./src/lib/officialQuestions.server";
 import { toLearnerFacingContent } from "./src/lib/learnerContent";
+import { formatSuvecaMethodContext } from "./src/lib/suvecaMethod";
 import { applicationDefault, getApps as getAdminApps, initializeApp as initializeAdminApp } from "firebase-admin/app";
 import { getAuth as getAdminAuth } from "firebase-admin/auth";
 
@@ -198,13 +199,23 @@ app.post("/api/suveca/analyze", async (req, res) => {
     const ai = getGenAIClient();
     const knowledgeRecords = retrieveKnowledge(`${safeSentence} sujeito verbo complemento sintaxe oração`, 3);
     const knowledgeContext = formatKnowledgeContext(knowledgeRecords);
-    const prompt = `Analise a seguinte oração em português do Brasil aplicando rigorosamente o Método SuVeCA (Sujeito, Verbo, Complemento, Adjunto e Predicativo):
+    const methodContext = formatSuvecaMethodContext();
+    const prompt = `Analise a seguinte oração em português do Brasil aplicando rigorosamente o Método SuVeCA:
 
 Frase: "${safeSentence}"
 
+${methodContext}
+
 ${knowledgeContext}
 
-Forneça um JSON estruturado com os blocos sintáticos, classe gramatical de cada termo, ordem (direta ou inversa), voz verbal, explicação pedagógica para concursos públicos e os identificadores das fontes efetivamente usadas. Trate o corpus_apostila como autoridade normativa e a Integracao_Pedagogica como sua expansão didática; não atribua à fonte normativa uma interpretação editorial própria do método.`;
+REGRAS DE SAÍDA:
+- Mantenha os blocos na ordem superficial em que aparecem na frase; não reordene a frase para fazê-la caber em Su–Ve–C–A–Pred.
+- Em surfacePattern, registre a sequência realmente encontrada, como "A + Ve + Su".
+- Em relationalMap, explique os vínculos reconstruídos entre verbo, sujeito, complementos, adjuntos e predicativos.
+- Registre em implicitElements os sujeitos ocultos, termos elípticos, sujeitos indeterminados e a inexistência de sujeito. Não invente um bloco textual que não aparece na frase.
+- Em período composto, delimite cada oração e deixe clara a relação entre elas.
+
+Forneça um JSON estruturado com os blocos sintáticos, classe gramatical de cada termo, ordem (direta ou inversa), voz verbal, explicação pedagógica para concursos públicos e os identificadores das fontes efetivamente usadas. Trate o corpus_apostila como autoridade normativa e a Integracao_Pedagogica como sua expansão didática; a SuVeCA é a camada metodológica do aplicativo. Não atribua à fonte normativa uma interpretação editorial própria do método.`;
 
     const selectedModel = resolveModel(model);
 
@@ -213,7 +224,7 @@ Forneça um JSON estruturado com os blocos sintáticos, classe gramatical de cad
       contents: prompt,
       config: {
         systemInstruction:
-          "Você é um especialista em Sintaxe da Língua Portuguesa para concursos públicos e tutor do método SuVeCA. Use prioritariamente a Base Editorial SuVeCA: o corpus_apostila fornece a autoridade normativa e a Integracao_Pedagogica fornece a organização e a expansão didática. Aplique limites, exceções, contrastes e testes decisórios, preserve essa hierarquia entre as camadas e não invente proveniência.",
+          "Você é um especialista em Sintaxe da Língua Portuguesa para concursos públicos e tutor do método SuVeCA. SuVeCA é um mapa para reconstruir relações sintáticas, nunca um molde de ordem linear: preserve inversões, elipses, sujeitos pospostos, ocultos, indeterminados e orações sem sujeito. Use prioritariamente a Base Editorial SuVeCA: o corpus_apostila fornece a autoridade normativa, a Integracao_Pedagogica fornece a organização e a expansão didática, e a SuVeCA fornece somente a camada metodológica de aplicação. Aplique limites, exceções, contrastes e testes decisórios, preserve essa hierarquia entre as camadas e não invente proveniência.",
         responseMimeType: "application/json",
         responseSchema: {
           type: Type.OBJECT,
@@ -221,6 +232,13 @@ Forneça um JSON estruturado com os blocos sintáticos, classe gramatical de cad
             sentence: { type: Type.STRING },
             order: { type: Type.STRING, description: "Direta ou Inversa" },
             verbalVoice: { type: Type.STRING, description: "Ativa, Passiva Analítica, Passiva Sintética, Reflexiva" },
+            surfacePattern: { type: Type.STRING, description: "Sequência dos blocos na ordem real, por exemplo A + Ve + Su" },
+            relationalMap: { type: Type.STRING, description: "Relações reconstruídas sem impor ordem direta" },
+            implicitElements: {
+              type: Type.ARRAY,
+              items: { type: Type.STRING },
+              description: "Elementos ocultos, elípticos, indeterminados ou inexistentes; lista vazia quando não houver",
+            },
             blocks: {
               type: Type.ARRAY,
               items: {
@@ -251,7 +269,7 @@ Forneça um JSON estruturado com os blocos sintáticos, classe gramatical de cad
               description: "Referências EDITORIAL e CORPUS efetivamente usadas.",
             },
           },
-          required: ["sentence", "order", "verbalVoice", "blocks", "summaryExplanation"],
+          required: ["sentence", "order", "verbalVoice", "surfacePattern", "relationalMap", "implicitElements", "blocks", "summaryExplanation"],
         },
       },
     }));
@@ -329,7 +347,8 @@ REGRAS PARA answerMarkdown:
 REGRAS PARA sourceRefs:
 - Liste apenas os identificadores EDITORIAL, CORPUS e QUESTION efetivamente usados.
 - As referências são metadados internos e nunca devem ser explicadas dentro de answerMarkdown.
- - Trate o corpus_apostila como autoridade normativa e a Integracao_Pedagogica como expansão didática. Preserve também o conteúdo das questões editoriais citado; não o corrija, reescreva nem atribua à SuVeCA.`;
+ - Trate o corpus_apostila como autoridade normativa e a Integracao_Pedagogica como expansão didática. Preserve também o conteúdo das questões editoriais citado; não o corrija, reescreva nem atribua à SuVeCA.
+- Quando relações sintáticas forem decisivas, aplique a SuVeCA como mapa relacional, preservando ordem inversa, omissões e orações sem sujeito. Não force a metodologia em questões puramente gráficas, lexicais ou discursivas.`;
 
     const selectedModel = resolveModel(model);
 
@@ -338,7 +357,7 @@ REGRAS PARA sourceRefs:
       contents: prompt,
       config: {
         systemInstruction:
-          "Você é o Professor SuVeCA, tutor ancorado na Base Editorial SuVeCA. O corpus_apostila é a autoridade normativa; a Integracao_Pedagogica organiza e expande o conteúdo para o ensino. Preserve a separação e a hierarquia entre essas camadas, aplique limites, exceções, contrastes e testes decisórios, responda com rigor pedagógico e mantenha toda proveniência exclusivamente em sourceRefs.",
+          "Você é o Professor SuVeCA, tutor ancorado na Base Editorial SuVeCA. O corpus_apostila é a autoridade normativa; a Integracao_Pedagogica organiza e expande o conteúdo para o ensino; a SuVeCA é o mapa metodológico que reconstrói relações sintáticas sem impor ordem linear. Use o mapa quando ele ajudar a decisão e explicite seus limites quando a questão pertencer à forma, ao léxico, ao texto ou ao discurso. Preserve a separação e a hierarquia entre essas camadas, aplique limites, exceções, contrastes e testes decisórios, responda com rigor pedagógico e mantenha toda proveniência exclusivamente em sourceRefs.",
         responseMimeType: "application/json",
         responseSchema: {
           type: Type.OBJECT,
@@ -393,7 +412,7 @@ ${knowledgeContext}
 
 ${officialQuestionContext}
 
-Use a Base Editorial como sustentação conceitual: o corpus_apostila é a autoridade normativa e a Integracao_Pedagogica fornece a expansão didática. As questões editoriais acima servem apenas como referência de incidência e formato. Não copie, corrija nem reescreva seus enunciados ou soluções. Forneça questões novas com enunciado, alternativas/opções ou julgamento Certo/Errado, resposta correta, comentário gramatical detalhado e sourceRefs separados. O comentário é conteúdo do aluno e não pode conter EDITORIAL, CORPUS, QUESTION, PASSAGE, KB ou IDs técnicos; as referências internas ficam exclusivamente em sourceRefs.`;
+Use a Base Editorial como sustentação conceitual: o corpus_apostila é a autoridade normativa e a Integracao_Pedagogica fornece a expansão didática. Quando a resolução depender de relações sintáticas, use a SuVeCA como mapa — não como ordem obrigatória — e respeite termos omitidos e orações sem sujeito; não a force em fenômenos de outra camada. As questões editoriais acima servem apenas como referência de incidência e formato. Não copie, corrija nem reescreva seus enunciados ou soluções. Forneça questões novas com enunciado, alternativas/opções ou julgamento Certo/Errado, resposta correta, comentário gramatical detalhado e sourceRefs separados. O comentário é conteúdo do aluno e não pode conter EDITORIAL, CORPUS, QUESTION, PASSAGE, KB ou IDs técnicos; as referências internas ficam exclusivamente em sourceRefs.`;
 
     const selectedModel = resolveModel(model);
 
@@ -401,7 +420,7 @@ Use a Base Editorial como sustentação conceitual: o corpus_apostila é a autor
       model: selectedModel,
       contents: prompt,
       config: {
-        systemInstruction: "Você é um elaborador de questões de Língua Portuguesa para concursos públicos ancorado na Base Editorial SuVeCA. Preserve a autoridade normativa do corpus_apostila e use a Integracao_Pedagogica para clareza, gradação e qualidade didática, sem inventar proveniência.",
+        systemInstruction: "Você é um elaborador de questões de Língua Portuguesa para concursos públicos ancorado na Base Editorial SuVeCA. Preserve a autoridade normativa do corpus_apostila, use a Integracao_Pedagogica para clareza, gradação e qualidade didática e aplique a SuVeCA apenas como mapa de relações sintáticas quando ela for pertinente, nunca como molde linear, sem inventar proveniência.",
         responseMimeType: "application/json",
         responseSchema: {
           type: Type.OBJECT,
@@ -515,7 +534,7 @@ A explicação não deve apenas repetir o verso. Não invente regras sem apoio n
       contents: prompt,
       config: {
         systemInstruction:
-          "Você é um professor de Língua Portuguesa para concursos ancorado na Base Editorial SuVeCA. Crie flashcards claros, autocontidos e focados em revisar a regra decisiva; preserve a autoridade normativa do corpus_apostila e use a Integracao_Pedagogica para aprofundamento didático.",
+          "Você é um professor de Língua Portuguesa para concursos ancorado na Base Editorial SuVeCA. Crie flashcards claros, autocontidos e focados em revisar a regra decisiva; preserve a autoridade normativa do corpus_apostila, use a Integracao_Pedagogica para aprofundamento didático e aplique a SuVeCA, quando pertinente, como mapa de relações sintáticas que admite inversões, omissões e ausência de sujeito.",
         responseMimeType: "application/json",
         responseSchema: {
           type: Type.OBJECT,

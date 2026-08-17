@@ -3,6 +3,7 @@ import { expect, openApp, openTab, test } from './fixtures';
 test.describe('regressão visual das experiências principais', () => {
   test('apostila e navegação', async ({ page }) => {
     await openApp(page);
+    await expect(page.getByRole('heading', { name: 'SuVeCA = Sujeito + Verbo + Complemento + Adjunto + Predicativo' })).toBeVisible();
     await expect(page).toHaveScreenshot('apostila.png', { fullPage: false });
   });
 
@@ -10,6 +11,8 @@ test.describe('regressão visual das experiências principais', () => {
     await openApp(page);
     await openTab(page, 'Analisador');
     await expect(page.getByRole('heading', { name: /Desmontagem de Orações/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'SuVeCA = Sujeito + Verbo + Complemento + Adjunto + Predicativo' })).toBeVisible();
+    await expect(page.getByText(/mapa de análise para reconstruir as relações sintáticas/i)).toBeVisible();
     await expect(page).toHaveScreenshot('analisador.png', { fullPage: false });
   });
 

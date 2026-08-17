@@ -756,3 +756,21 @@ Ao concluir o grupo temático `esta unidade`, o estudante deve dominar as seguin
  - Resolver questões do **Modelo II (Valor Semântico)** através da análise da oração subsequente, identificando nuances de realce, chamamento, desejo/esperança (*oxalá* = *tomara que*), surpresa, apelo e alerta.
 
 ---
+
+---
+
+## Conexão com o método SuVeCA
+
+**SuVeCA = Sujeito + Verbo + Complemento + Adjunto + Predicativo.**
+
+A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e não um molde obrigatório. Em concursos, as frases frequentemente aparecem em ordem inversa, com termos omitidos ou sem sujeito.
+
+**Apoio indireto:** Numerais podem integrar núcleos e modificadores do mapa, enquanto interjeições normalmente permanecem fora da oração; o contraste entre integração e autonomia é o ganho da SuVeCA.
+
+### Como aplicar neste tema
+
+1. Resolva o fenômeno pela regra própria da matéria.
+2. Se houver uma oração relevante, use a SuVeCA apenas para localizar a forma ou o efeito no contexto.
+3. Mantenha separadas a justificativa principal e a observação sintática auxiliar.
+
+> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe.

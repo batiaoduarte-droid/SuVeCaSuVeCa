@@ -1211,5 +1211,5 @@ export const OFFICIAL_CORPUS_ANSWER_KEY = {
   "A13:aula13.q0221": "E"
 } as const;
 
-export const OFFICIAL_CORPUS_VERSION = 'editorial-corpus-9092964920887c52';
+export const OFFICIAL_CORPUS_VERSION = 'editorial-corpus-88ae8bc080baf574';
 export const OFFICIAL_CORPUS_SAMPLE_SIZE = 10;

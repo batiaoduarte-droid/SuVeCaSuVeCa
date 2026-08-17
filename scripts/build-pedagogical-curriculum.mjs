@@ -3,8 +3,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const ROOT = process.cwd();
-const SCHEMA_VERSION = '4.0.0';
-const COMPILER_VERSION = '1.2.1';
+const SCHEMA_VERSION = '4.1.0';
+const COMPILER_VERSION = '1.4.0';
 const EXPECTED_INTEGRATED_LESSONS = Array.from({ length: 14 }, (_, index) => String(index).padStart(2, '0'));
 const EXPECTED_INTEGRATED_UNITS = 102;
 const A14_SECTION_IDS = Array.from({ length: 13 }, (_, index) => `aula14.sec${String(index + 1).padStart(2, '0')}`);
@@ -38,6 +38,8 @@ const resolvePortugueseRoot = () => {
 const PORTUGUESE_ROOT = resolvePortugueseRoot();
 const PUBLIC_ROOT = path.join(ROOT, 'public', 'knowledge', 'pedagogical');
 const UNIT_OUTPUT_ROOT = path.join(PUBLIC_ROOT, 'units');
+const SUVECA_METHOD_PATH = path.join(ROOT, 'knowledge', 'editorial', 'suveca-method.json');
+const SUVECA_GROUP_CONNECTIONS_PATH = path.join(ROOT, 'knowledge', 'editorial', 'suveca-group-connections.json');
 
 const assert = (condition, message) => {
   if (!condition) throw new Error(message);
@@ -67,6 +69,28 @@ const write = (file, content) => {
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, content, 'utf8');
 };
+
+assert(fs.existsSync(SUVECA_METHOD_PATH), 'Definição editorial do método SuVeCA ausente.');
+assert(fs.existsSync(SUVECA_GROUP_CONNECTIONS_PATH), 'Conexões temáticas do método SuVeCA ausentes.');
+const suvecaMethod = readJson(SUVECA_METHOD_PATH);
+const suvecaGroupConnections = readJson(SUVECA_GROUP_CONNECTIONS_PATH);
+assert(suvecaMethod.methodId === 'suveca-analysis-map-v1', 'Identidade do método SuVeCA inválida.');
+assert(suvecaGroupConnections.methodId === suvecaMethod.methodId, 'Conexões temáticas pertencem a outro método.');
+assert(
+  suvecaMethod.equation === 'Sujeito + Verbo + Complemento + Adjunto + Predicativo',
+  'Equação pedagógica da SuVeCA inválida.',
+);
+assert(Array.isArray(suvecaMethod.workflow) && suvecaMethod.workflow.length >= 7, 'Fluxo SuVeCA incompleto.');
+assert(
+  Array.from({ length: 15 }, (_, index) => `A${String(index).padStart(2, '0')}`)
+    .every((lessonId) => suvecaMethod.lessonConnections?.[lessonId]),
+  'Conexões SuVeCA não cobrem as aulas A00–A14.',
+);
+const SUVECA_GROUP_LEVELS = ['central', 'strong', 'support', 'indirect', 'outside_core'];
+assert(
+  SUVECA_GROUP_LEVELS.every((level) => suvecaGroupConnections.taxonomy?.[level]),
+  'Taxonomia temática SuVeCA incompleta.',
+);
 
 const relative = (file) => path.relative(ROOT, file).replaceAll(path.sep, '/');
 const compactWhitespace = (value) => String(value || '').replace(/\s+/g, ' ').trim();
@@ -240,19 +264,54 @@ const fieldDefinitions = [
   ['pedagogical_synthesis', 'Síntese para recuperação ativa'],
 ];
 
-const buildUnitMarkdown = (unit) => {
+const materializeSuvecaConnection = (connection) => {
+  assert(connection, 'Conexão SuVeCA ausente.');
+  const profile = suvecaGroupConnections.taxonomy?.[connection.level];
+  const steps = connection.steps || profile?.steps;
+  const limits = connection.limits || profile?.limits;
+  assert(connection.label || profile?.label, `Rótulo SuVeCA ausente para ${connection.level}.`);
+  assert(connection.summary, `Resumo SuVeCA ausente para ${connection.level}.`);
+  assert(Array.isArray(steps) && steps.length > 0, `Procedimento SuVeCA ausente para ${connection.level}.`);
+  assert(Array.isArray(limits) && limits.length > 0, `Limite SuVeCA ausente para ${connection.level}.`);
+  return {
+    level: connection.level,
+    label: connection.label || profile.label,
+    summary: connection.summary,
+    steps,
+    limits,
+  };
+};
+const suvecaConnectionForLesson = (lessonId) => materializeSuvecaConnection(suvecaMethod.lessonConnections[lessonId]);
+const suvecaConnectionForUnit = (lessonId, groupId) => materializeSuvecaConnection(
+  suvecaGroupConnections.connections[`${lessonId}/${groupId}`],
+);
+const buildSuvecaConnectionMarkdown = (connection) => [
+  '## Conexão com o método SuVeCA',
+  `**SuVeCA = ${suvecaMethod.equation}.**`,
+  suvecaMethod.definition,
+  `**${connection.label}:** ${connection.summary}`,
+  `### Como aplicar neste tema\n\n${connection.steps.map((step, index) => `${index + 1}. ${step}`).join('\n')}`,
+  connection.limits.length
+    ? `> **Limite do método:** ${connection.limits.join(' ')}`
+    : '',
+].filter(Boolean).join('\n\n');
+
+const buildUnitMarkdown = (unit, methodConnection) => {
   const objective = (unit.learning_objectives || []).map((item) => cleanLearnerMarkdown(item).trim()).filter(Boolean);
   const sections = fieldDefinitions.flatMap(([key, heading]) => {
     const content = cleanLearnerMarkdown(unit.pedagogical_sections?.[key]);
     return content ? [`## ${heading}\n\n${content.trim()}`] : [];
   });
+  const methodBeforeContent = !['indirect', 'outside_core'].includes(methodConnection.level);
   return [
     `# ${unit.title}`,
     objective.length
       ? `> **Objetivo de aprendizagem**\n>\n> ${objective.join(' ')}`
       : '',
     'Esta unidade foi preparada para estudo autônomo: avance do modelo mental para as regras, aplique o procedimento e finalize recuperando a síntese sem consulta.',
+    methodBeforeContent ? buildSuvecaConnectionMarkdown(methodConnection) : '',
     ...sections,
+    methodBeforeContent ? '' : buildSuvecaConnectionMarkdown(methodConnection),
   ].filter(Boolean).join('\n\n---\n\n').replace(/\n{3,}/g, '\n\n').trim() + '\n';
 };
 
@@ -310,6 +369,26 @@ for (const number of EXPECTED_INTEGRATED_LESSONS) {
 assert(units.length === EXPECTED_INTEGRATED_UNITS, `Unidades pedagógicas: ${units.length}/${EXPECTED_INTEGRATED_UNITS}.`);
 assert(new Set(units.map((unit) => unit.unit_id)).size === units.length, 'Há unit_id pedagógico duplicado.');
 assert(units.every((unit) => unit.media_independent === true), 'Há unidade dependente de mídia.');
+const expectedSuvecaGroupKeys = units.map((unit) => `${unit.lesson_id}/${unit.group_id}`).sort();
+const actualSuvecaGroupKeys = Object.keys(suvecaGroupConnections.connections || {}).sort();
+assert(actualSuvecaGroupKeys.length === EXPECTED_INTEGRATED_UNITS, `Conexões SuVeCA: ${actualSuvecaGroupKeys.length}/${EXPECTED_INTEGRATED_UNITS}.`);
+assert(
+  JSON.stringify(actualSuvecaGroupKeys) === JSON.stringify(expectedSuvecaGroupKeys),
+  'As conexões SuVeCA não correspondem exatamente aos 102 grupos integrados.',
+);
+for (const [key, connection] of Object.entries(suvecaGroupConnections.connections)) {
+  assert(SUVECA_GROUP_LEVELS.includes(connection.level), `${key}: nível SuVeCA inválido (${connection.level}).`);
+  materializeSuvecaConnection(connection);
+}
+const publishedSuvecaMethod = {
+  ...suvecaMethod,
+  groupTaxonomy: suvecaGroupConnections.taxonomy,
+  groupConnections: suvecaGroupConnections.connections,
+};
+const methodologyGroupDistribution = Object.values(suvecaGroupConnections.connections).reduce((counts, connection) => ({
+  ...counts,
+  [connection.level]: (counts[connection.level] || 0) + 1,
+}), {});
 
 const a14Directory = lessonDirectory('14');
 const a14Corpus = path.join(a14Directory, 'corpus_apostila');
@@ -329,6 +408,8 @@ assert(a14Manifest.validation_summary?.schema_errors === 0, 'A14 possui erros de
 assert(a14Manifest.validation_summary?.broken_references === 0, 'A14 possui referências quebradas no corpus.');
 
 const sourceFiles = [
+  SUVECA_METHOD_PATH,
+  SUVECA_GROUP_CONNECTIONS_PATH,
   globalManifestPath,
   ...lessonSources.flatMap((lesson) => lesson.files),
   a14ManifestPath,
@@ -356,15 +437,18 @@ const knowledgeRecords = [];
 
 for (const unit of units.sort((a, b) => a.unit_id.localeCompare(b.unit_id))) {
   const lessonNumber = unit.lesson_id.slice(1);
+  const methodConnection = suvecaConnectionForUnit(unit.lesson_id, unit.group_id);
   lessonTitles.set(unit.lesson_id, unit.lesson_identity.replace(/^Aula \d{2}\s+[—–-]\s*/, '').trim());
   const fileName = `${unit.lesson_id}-${unit.group_id}-${slug(unit.title)}.md`;
   const outputFile = path.join(UNIT_OUTPUT_ROOT, fileName);
-  const markdown = buildUnitMarkdown(unit);
+  const markdown = buildUnitMarkdown(unit, methodConnection);
   write(outputFile, markdown);
   const objective = cleanLearnerMarkdown((unit.learning_objectives || []).join(' ')).trim();
   const searchable = routingTerms(
     unit.title,
     objective,
+    methodConnection.summary,
+    methodConnection.steps.join(' '),
     unit.pedagogical_sections?.semantic_index,
     unit.pedagogical_sections?.retrieval_essentials,
     unit.pedagogical_sections?.canonical_rules,
@@ -385,6 +469,13 @@ for (const unit of units.sort((a, b) => a.unit_id.localeCompare(b.unit_id))) {
     estimatedMinutes: Math.max(20, Math.min(120, Math.ceil(wordCount / 170))),
     searchTerms: searchable,
     sourceConceptIds,
+    suvecaMethod: {
+      methodId: suvecaMethod.methodId,
+      equation: suvecaMethod.equation,
+      definition: suvecaMethod.definition,
+      authorityNote: suvecaMethod.authorityNote,
+      ...methodConnection,
+    },
     editorial: {
       reviewVersion: `integracao-pedagogica-${globalManifest.content_version}`,
       changeType: 'replace_from_pedagogical_source',
@@ -416,6 +507,12 @@ for (const unit of units.sort((a, b) => a.unit_id.localeCompare(b.unit_id))) {
     }),
     sourceRefs: [`EDITORIAL:${unit.unit_id}`, `CORPUS:${unit.lesson_id}`],
     authority: unit.authority,
+    methodology: {
+      methodId: suvecaMethod.methodId,
+      equation: suvecaMethod.equation,
+      definition: suvecaMethod.definition,
+      ...methodConnection,
+    },
   });
 }
 
@@ -475,6 +572,7 @@ for (const [index, section] of a14TopSections.entries()) {
   const markdown = [
     `# Revisão cumulativa · ${section.title}`,
     '> **Objetivo de revisão**\n>\n> Recuperar as decisões centrais do tema, localizar rapidamente lacunas e voltar ao aprofundamento correspondente sempre que a justificativa não puder ser reconstruída de memória.',
+    buildSuvecaConnectionMarkdown(suvecaConnectionForLesson('A14')),
     conceptLabels.length ? `## Mapa de conceitos\n\n${conceptLabels.map((label) => `- ${label}`).join('\n')}` : '',
     `## Regras priorizadas\n\n${rulesMarkdown}`,
     chunkMarkdown ? `## Síntese estruturada\n\n${chunkMarkdown}` : '',
@@ -484,7 +582,13 @@ for (const [index, section] of a14TopSections.entries()) {
   const fileName = `A14-S${sequence}-${slug(section.title)}.md`;
   write(path.join(UNIT_OUTPUT_ROOT, fileName), markdown);
   const canonicalTopicId = `pt:a14:revisao:${slug(section.title)}`;
-  const searchable = routingTerms(section.title, conceptLabels.join(' '), rulesMarkdown, chunkMarkdown);
+  const searchable = routingTerms(
+    section.title,
+    conceptLabels.join(' '),
+    rulesMarkdown,
+    chunkMarkdown,
+    suvecaConnectionForLesson('A14').summary,
+  );
   const unitId = `IP-A14-S${sequence}`;
   runtimeSections.push({
     title: section.title,
@@ -497,6 +601,13 @@ for (const [index, section] of a14TopSections.entries()) {
     estimatedMinutes: Math.max(15, Math.min(80, Math.ceil(plainText(markdown).split(/\s+/).length / 180))),
     searchTerms: searchable,
     sourceConceptIds: [canonicalTopicId, ...concepts.map((item) => item.concept_id).slice(0, 24)],
+    suvecaMethod: {
+      methodId: suvecaMethod.methodId,
+      equation: suvecaMethod.equation,
+      definition: suvecaMethod.definition,
+      authorityNote: suvecaMethod.authorityNote,
+      ...suvecaConnectionForLesson('A14'),
+    },
     editorial: {
       reviewVersion: 'corpus-apostila-a14-expert-highlights',
       changeType: 'replace_from_pedagogical_source',
@@ -522,6 +633,12 @@ for (const [index, section] of a14TopSections.entries()) {
     ],
     sourceRefs: [`EDITORIAL:${unitId}`, `CORPUS:A14:${sectionId}`],
     authority: { normative: 'corpus_apostila', editorial: 'Aula 14 — revisão cumulativa' },
+    methodology: {
+      methodId: suvecaMethod.methodId,
+      equation: suvecaMethod.equation,
+      definition: suvecaMethod.definition,
+      ...suvecaConnectionForLesson('A14'),
+    },
   });
 }
 
@@ -569,6 +686,7 @@ const modules = Array.from({ length: 15 }, (_, index) => {
   const title = lessonId === 'A14'
     ? 'Revisão Geral de Língua Portuguesa'
     : lessonTitleOverrides[lessonId] || lessonTitles.get(lessonId);
+  const methodConnection = suvecaConnectionForLesson(lessonId);
   return {
     id: `mod${index}`,
     num: index,
@@ -578,6 +696,13 @@ const modules = Array.from({ length: 15 }, (_, index) => {
     estimatedMinutes: sections.reduce((total, section) => total + section.estimatedMinutes, 0),
     sections,
     questions: [],
+    suvecaMethod: {
+      methodId: suvecaMethod.methodId,
+      equation: suvecaMethod.equation,
+      definition: suvecaMethod.definition,
+      authorityNote: suvecaMethod.authorityNote,
+      ...methodConnection,
+    },
     knowledge: {
       kbVersion: globalManifest.content_version,
       buildId,
@@ -1059,10 +1184,11 @@ const curriculumArtifact = {
   buildId,
   contentVersion: globalManifest.content_version,
   compilerVersion: COMPILER_VERSION,
-  policy: 'As aulas 00–14 são a fonte editorial autoritativa das matérias; conteúdo pedagógico legado não é mesclado.',
+  policy: 'As aulas 00–14 substituem o conteúdo curricular legado. O método SuVeCA permanece como camada transversal de aplicação e não altera a autoridade normativa das fontes.',
   authority: {
     normative: 'corpus_apostila',
     didactic: 'Integracao_Pedagogica',
+    methodology: 'Método SuVeCA — mapa relacional do aplicativo',
     cumulativeReview: 'Aula 14 — corpus e grifos especializados',
   },
   totals: {
@@ -1077,8 +1203,14 @@ const curriculumArtifact = {
     editorialQuestionEligibleOccurrences: eligibleOccurrences.length,
     editorialQuestionQuarantined: quarantinedQuestionIds.size,
     duelQuestions: duelQuestions.length,
+    methodologyConnections: runtimeSections.length,
+    methodologyLessonOverviews: Object.keys(suvecaMethod.lessonConnections).length,
+    methodologyGroupConnections: Object.keys(suvecaGroupConnections.connections).length,
+    methodologyStudyConnections: runtimeSections.length,
+    methodologyGroupDistribution,
     mediaDependencies: 0,
   },
+  methodology: publishedSuvecaMethod,
   modules,
 };
 
@@ -1092,6 +1224,7 @@ const knowledgeSource = `/* AUTO-GENERATED by scripts/build-pedagogical-curricul
   semanticStatus: 'passed',
   mediaDependencies: 0,
 }, null, 2)} as const;\n\nexport const PEDAGOGICAL_KNOWLEDGE_INDEX = ${JSON.stringify(knowledgeRecords, null, 2)} as const;\n`;
+const suvecaMethodSource = `/* AUTO-GENERATED by scripts/build-pedagogical-curriculum.mjs. */\nexport const SUVECA_METHOD = ${JSON.stringify(publishedSuvecaMethod, null, 2)} as const;\n`;
 const flashcardSource = `/* AUTO-GENERATED by scripts/build-pedagogical-curriculum.mjs. */\nexport const EDITORIAL_FLASHCARDS = ${JSON.stringify(selectedFlashcards, null, 2)} as const;\n`;
 const dailyTipsSource = `/* AUTO-GENERATED by scripts/build-pedagogical-curriculum.mjs. */\nimport type { DailyTip } from './dailyTips';\n\nexport const EDITORIAL_DAILY_TIPS = ${JSON.stringify(dailyTips, null, 2)} as DailyTip[];\n`;
 const duelSource = `/* AUTO-GENERATED by scripts/build-pedagogical-curriculum.mjs. */\nexport const EDITORIAL_DUEL_QUESTIONS = ${JSON.stringify(duelQuestions, null, 2)} as const;\nexport const EDITORIAL_DUEL_QUESTION_SET_VERSION = 'editorial-duel-${buildId}';\n`;
@@ -1178,6 +1311,7 @@ const generatedFiles = [
   })],
   [path.join(ROOT, 'src', 'data', 'modules.generated.ts'), modulesSource],
   [path.join(ROOT, 'src', 'data', 'pedagogicalKnowledge.generated.ts'), knowledgeSource],
+  [path.join(ROOT, 'src', 'data', 'suvecaMethod.generated.ts'), suvecaMethodSource],
   [path.join(ROOT, 'src', 'data', 'editorialFlashcards.generated.ts'), flashcardSource],
   [path.join(ROOT, 'src', 'data', 'editorialDailyTips.generated.ts'), dailyTipsSource],
   [path.join(ROOT, 'src', 'data', 'editorialDuelQuestions.generated.ts'), duelSource],
@@ -1188,6 +1322,7 @@ const generatedFiles = [
   [path.join(ROOT, 'public', 'knowledge', 'official-question-index.json'), stableJson(editorialQuestionIndex)],
   [path.join(ROOT, 'public', 'knowledge', 'official-question-summary.json'), stableJson(editorialQuestionSummary)],
   [path.join(ROOT, 'public', 'knowledge', 'editorial-question-quality.json'), stableJson(editorialQuestionQuality)],
+  [path.join(PUBLIC_ROOT, 'suveca-method.json'), stableJson({ ...publishedSuvecaMethod, buildId })],
   [path.join(PUBLIC_ROOT, 'decision-procedures.json'), stableJson({
     schemaVersion: SCHEMA_VERSION,
     buildId,
@@ -1221,7 +1356,9 @@ const publicManifest = {
     sha256: sha256File(file),
   })),
   sourceFiles: sourceFiles.map((file) => ({
-    path: path.relative(PORTUGUESE_ROOT, file).replaceAll(path.sep, '/'),
+    path: file.startsWith(path.resolve(PORTUGUESE_ROOT) + path.sep)
+      ? path.relative(PORTUGUESE_ROOT, file).replaceAll(path.sep, '/')
+      : relative(file),
     bytes: fs.statSync(file).size,
     sha256: sha256File(file),
   })),

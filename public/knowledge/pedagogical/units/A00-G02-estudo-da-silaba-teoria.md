@@ -438,3 +438,21 @@ Ao concluir esta unidade (Estudo da Sílaba - Teoria)**, o estudante domina com 
 8. O cálculo matemático exato de **Letras vs. Fonemas**, computando subtrações por dígrafos/H e acréscimos pelo dífono $X = /ks/$.
 
 ---
+
+---
+
+## Conexão com o método SuVeCA
+
+**SuVeCA = Sujeito + Verbo + Complemento + Adjunto + Predicativo.**
+
+A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e não um molde obrigatório. Em concursos, as frases frequentemente aparecem em ordem inversa, com termos omitidos ou sem sujeito.
+
+**Camada própria, fora do núcleo SuVeCA:** Divisão, estrutura e classificação silábicas obedecem a critérios fonológicos próprios, independentemente das funções Su, Ve, C, A e Pred.
+
+### Como aplicar neste tema
+
+1. Aplique diretamente a regra fonológica, ortográfica, lexical ou discursiva pertinente.
+2. Use frases completas como contexto de aplicação, sem obrigar sua decomposição sintática.
+3. Recorra à SuVeCA apenas se uma questão específica introduzir uma dependência funcional real.
+
+> **Limite do método:** A SuVeCA não é fonte da regra deste grupo e sua ausência na resolução pode ser pedagogicamente correta.

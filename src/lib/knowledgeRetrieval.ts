@@ -31,6 +31,14 @@ const recordSearchFields = (record: KnowledgeRecord) => ({
   title: normalize(record.title),
   routing: normalize(record.routingTerms.join(' ')),
   objective: normalize(record.objective),
+  methodology: normalize([
+    record.methodology.equation,
+    record.methodology.level,
+    record.methodology.label,
+    record.methodology.summary,
+    ...record.methodology.steps,
+    ...record.methodology.limits,
+  ].join(' ')),
   sections: normalize(
     record.sections.map((section) => `${section.title} ${section.content}`).join(' '),
   ),
@@ -57,6 +65,7 @@ export const retrieveKnowledge = (query: string, limit = 3): KnowledgeRecord[] =
       if (fields.title.includes(token)) score += 12;
       if (fields.routing.includes(token)) score += 9;
       if (fields.objective.includes(token)) score += 5;
+      if (fields.methodology.includes(token)) score += 4;
       if (fields.sections.includes(token)) score += 2;
     }
 
@@ -89,11 +98,23 @@ export const formatKnowledgeContext = (records: readonly KnowledgeRecord[]) => {
       .slice(0, 8)
       .map((reference) => `- [${reference}]`)
       .join('\n');
+    const methodologyDirective = record.methodology.level === 'outside_core'
+      ? '- Diretriz: este conteúdo possui método próprio. Não force uma decomposição SuVeCA nem a apresente como fonte da regra.'
+      : record.methodology.level === 'indirect'
+        ? '- Diretriz: use a SuVeCA somente como observação auxiliar depois de aplicar a regra própria do tema.'
+        : '- Diretriz: aplique a SuVeCA na intensidade indicada, em conjunto com as demais camadas mencionadas.';
 
     return [
       `UNIDADE EDITORIAL — ${record.title}`,
       `Aula: ${record.lessonId}; grupo: ${record.groupId}; módulo do app: ${record.moduleId}.`,
       `Objetivo didático: ${compact(record.objective, 900)}`,
+      'CAMADA METODOLÓGICA DO APLICATIVO (não atribua esta formulação à fonte normativa):',
+      `- SuVeCA = ${record.methodology.equation}.`,
+      `- ${compact(record.methodology.definition, 500)}`,
+      `- Grau de integração neste grupo: ${record.methodology.level} — ${record.methodology.label}.`,
+      `- Aplicação neste grupo: ${compact(record.methodology.summary, 700)}`,
+      `- Limite: ${compact(record.methodology.limits.join(' '), 500)}`,
+      methodologyDirective,
       'CONTEÚDO PEDAGÓGICO VALIDADO:',
       sections,
       'AUTORIDADE: corpus_apostila para a base normativa; Integracao_Pedagogica para explicação, progressão cognitiva e aplicação.',

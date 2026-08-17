@@ -6,6 +6,24 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 
 ---
 
+## Conexão com o método SuVeCA
+
+**SuVeCA = Sujeito + Verbo + Complemento + Adjunto + Predicativo.**
+
+A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e não um molde obrigatório. Em concursos, as frases frequentemente aparecem em ordem inversa, com termos omitidos ou sem sujeito.
+
+**Apoio estrutural:** Elipse, zeugma, anacoluto, silepse, hipérbato e pleonasmo dialogam com a estrutura; metáfora, metonímia e outras figuras exigem também leitura semântica e discursiva.
+
+### Como aplicar neste tema
+
+1. Identifique primeiro a camada linguística efetivamente cobrada.
+2. Use o mapa SuVeCA somente nos trechos em que função, referente, escopo ou encaixe sejam relevantes.
+3. Conclua pela regra própria do tema e explicite o limite da análise sintática.
+
+> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual.
+
+---
+
 ## Pré-requisitos e modelo mental
 
 ### Pré-requisitos Fundamentais

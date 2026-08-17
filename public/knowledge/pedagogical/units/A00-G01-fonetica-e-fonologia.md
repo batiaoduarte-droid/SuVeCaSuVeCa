@@ -475,3 +475,21 @@ Ao concluir este grupo temático (esta unidade), o estudante adquire pleno domí
 5. **Aplicação Algorítmica Rápida:** Aplica o **Mantra do Dígrafo** e a regra universal de contagem ($F = L - \text{Dígrafos/H} + \text{Dífonos}$), resolvendo com rapidez e segurança questões de contagem de qualquer banca examinadora.
 
 ---
+
+---
+
+## Conexão com o método SuVeCA
+
+**SuVeCA = Sujeito + Verbo + Complemento + Adjunto + Predicativo.**
+
+A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e não um molde obrigatório. Em concursos, as frases frequentemente aparecem em ordem inversa, com termos omitidos ou sem sujeito.
+
+**Camada própria, fora do núcleo SuVeCA:** Fonemas, grafemas, dígrafos e encontros vocálicos são decididos pela camada fonético-fonológica; a estrutura SuVeCA não produz essas classificações.
+
+### Como aplicar neste tema
+
+1. Aplique diretamente a regra fonológica, ortográfica, lexical ou discursiva pertinente.
+2. Use frases completas como contexto de aplicação, sem obrigar sua decomposição sintática.
+3. Recorra à SuVeCA apenas se uma questão específica introduzir uma dependência funcional real.
+
+> **Limite do método:** A SuVeCA não é fonte da regra deste grupo e sua ausência na resolução pode ser pedagogicamente correta.

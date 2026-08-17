@@ -8,6 +8,24 @@
 
 ---
 
+## Conexão com o método SuVeCA
+
+**SuVeCA = Sujeito + Verbo + Complemento + Adjunto + Predicativo.**
+
+A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e não um molde obrigatório. Em concursos, as frases frequentemente aparecem em ordem inversa, com termos omitidos ou sem sujeito.
+
+**Revisão transversal:** Use o mapa SuVeCA como protocolo de recuperação: identifique em cada questão se a decisão pertence à forma, à classe, à oração, ao período ou ao texto.
+
+### Como aplicar neste tema
+
+1. Nomeie a camada linguística cobrada.
+2. Quando houver estrutura sintática, reconstrua Su–Ve–C–A–Pred sem impor ordem.
+3. Aplique a regra específica e justifique a decisão.
+
+> **Limite do método:** Nem toda questão de língua portuguesa é resolvida apenas pela análise sintática.
+
+---
+
 ## Mapa de conceitos
 
 - Advérbios e adjuntos adverbiais

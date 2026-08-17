@@ -1,6 +1,8 @@
 # Base editorial e implantação
 
-O conteúdo curricular ativo da SuVeCA é compilado das aulas 00–14 do workspace editorial. Para as aulas 00–13, `corpus_apostila` é a autoridade normativa e `Integracao_Pedagogica` fornece a expansão didática, cognitiva e aplicada. A Aula 14 organiza a revisão cumulativa. O compilador não mescla o antigo conteúdo pedagógico da aplicação.
+O conteúdo curricular ativo da SuVeCA é compilado das aulas 00–14 do workspace editorial. Para as aulas 00–13, `corpus_apostila` é a autoridade normativa e `Integracao_Pedagogica` fornece a expansão didática, cognitiva e aplicada. A Aula 14 organiza a revisão cumulativa. O conteúdo curricular antigo não é mesclado.
+
+O método que dá identidade ao aplicativo permanece como uma camada distinta: **SuVeCA = Sujeito + Verbo + Complemento + Adjunto + Predicativo**. Ele é um mapa para reconstruir relações sintáticas, não um molde de ordem linear. `knowledge/editorial/suveca-method.json` define o método e o panorama de cada aula; `knowledge/editorial/suveca-group-connections.json` classifica explicitamente os 102 grupos como aplicação central, conexão forte, apoio estrutural, apoio indireto ou camada fora do núcleo. Assim, fonologia e hífen não são artificialmente reduzidos à sintaxe, enquanto pronomes, verbos, termos da oração, período composto, pontuação, concordância e regência preservam a SuVeCA como eixo efetivo de aprendizagem. Essa camada organiza o uso do conteúdo, mas não cria regras nem substitui a autoridade do corpus.
 
 ## Compilação editorial
 
@@ -15,6 +17,7 @@ npm run kb:shard:audit
 
 - `knowledge/canonical/pedagogical-curriculum.json`: currículo completo usado pelo app;
 - `public/knowledge/pedagogical/units/`: 115 unidades de estudo independentes de vídeo;
+- `public/knowledge/pedagogical/suveca-method.json`: método, panoramas A00–A14, taxonomia e as 102 conexões temáticas;
 - `public/knowledge/pedagogical/decision-procedures.json`: roteiros decisórios;
 - `src/data/editorialFlashcards.generated.ts` e `editorialDailyTips.generated.ts`: revisão ativa;
 - `public/knowledge/official-questions.*.json`: banco de questões editoriais das aulas 00–13;

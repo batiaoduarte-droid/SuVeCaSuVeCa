@@ -21,4 +21,4 @@ export const OFFICIAL_SIMULADO_ANSWER_KEY = {
   "editorial-sim-19": "E",
   "editorial-sim-20": "D"
 } as const;
-export const OFFICIAL_SIMULADO_VERSION = 'editorial-simulado-9092964920887c52';
+export const OFFICIAL_SIMULADO_VERSION = 'editorial-simulado-88ae8bc080baf574';

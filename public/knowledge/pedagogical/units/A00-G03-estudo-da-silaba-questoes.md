@@ -742,3 +742,21 @@ Ao concluir o estudo deste grupo temático consolidado (**esta unidade**), o est
 6. **Integração Fonético-Argumentativa (FCC):** Capacidade de resolver questões multidisciplinares que articulam divisão silábica, operadores argumentativos (*até mesmo* como argumento de máxima força; *também* aditivo vs. expletivo) e aspecto verbal.
 
 ---
+
+---
+
+## Conexão com o método SuVeCA
+
+**SuVeCA = Sujeito + Verbo + Complemento + Adjunto + Predicativo.**
+
+A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e não um molde obrigatório. Em concursos, as frases frequentemente aparecem em ordem inversa, com termos omitidos ou sem sujeito.
+
+**Camada própria, fora do núcleo SuVeCA:** As questões de sílaba devem ser resolvidas pelos testes fonológicos do tema; uma oração pode fornecer contexto, mas não o critério decisivo.
+
+### Como aplicar neste tema
+
+1. Aplique diretamente a regra fonológica, ortográfica, lexical ou discursiva pertinente.
+2. Use frases completas como contexto de aplicação, sem obrigar sua decomposição sintática.
+3. Recorra à SuVeCA apenas se uma questão específica introduzir uma dependência funcional real.
+
+> **Limite do método:** A SuVeCA não é fonte da regra deste grupo e sua ausência na resolução pode ser pedagogicamente correta.

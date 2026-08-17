@@ -67,6 +67,8 @@ export interface ModuleSection {
     }>;
   };
   sourceConceptIds?: string[];
+  /** Relação pedagógica exata deste grupo com a SuVeCA; não herda automaticamente o nível da aula. */
+  suvecaMethod?: SuvecaMethodConnection;
   limitsAndExceptions?: string[];
   contrasts?: string[];
   examTraps?: string[];
@@ -112,6 +114,18 @@ export interface ModuleKnowledgeMeta {
   sources: KnowledgeSourceRef[];
 }
 
+export interface SuvecaMethodConnection {
+  methodId: string;
+  equation: string;
+  definition: string;
+  authorityNote: string;
+  level: 'central' | 'strong' | 'support' | 'indirect' | 'outside_core' | 'review';
+  label: string;
+  summary: string;
+  steps: string[];
+  limits: string[];
+}
+
 export interface ModuleData {
   id: string; // 'mod0' ... 'mod14' ou 'simulado'
   num: number | string;
@@ -121,6 +135,8 @@ export interface ModuleData {
   estimatedMinutes?: number;
   sections: ModuleSection[];
   questions?: QuizQuestion[];
+  /** Aplicação da metodologia SuVeCA ao conteúdo desta aula, sem alterar a autoridade normativa. */
+  suvecaMethod?: SuvecaMethodConnection;
   /** Proveniência da fonte editorial das aulas 00–14. */
   knowledge?: ModuleKnowledgeMeta;
 }
@@ -138,6 +154,11 @@ export interface SuvecaAnalysisResult {
   sentence: string;
   order: string;
   verbalVoice: string;
+  /** Sequência dos blocos tal como aparecem na frase, por exemplo A + Ve + Su. */
+  surfacePattern?: string;
+  /** Relações reconstruídas pelo mapa, sem impor a ordem direta à frase original. */
+  relationalMap?: string;
+  implicitElements?: string[];
   blocks: SuvecaBlock[];
   summaryExplanation: string;
   contestTips?: string[];

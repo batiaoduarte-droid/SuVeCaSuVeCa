@@ -11,6 +11,7 @@ import {
   PEDAGOGICAL_KNOWLEDGE_BUILD,
   PEDAGOGICAL_KNOWLEDGE_INDEX,
 } from './pedagogicalKnowledge.generated';
+import { SUVECA_METHOD } from './suvecaMethod.generated';
 import { formatKnowledgeContext, retrieveKnowledge } from '../lib/knowledgeRetrieval';
 
 describe('currículo editorial das aulas 00–14', () => {
@@ -28,6 +29,29 @@ describe('currículo editorial das aulas 00–14', () => {
     expect(coreModules.find((module) => module.id === 'mod13')?.title).toBe(
       'Compreensão, Interpretação e Tipologia Textual',
     );
+  });
+
+  it('preserva a SuVeCA como mapa metodológico transversal, sem transformá-la em molde', () => {
+    expect(SUVECA_METHOD.equation).toBe(
+      'Sujeito + Verbo + Complemento + Adjunto + Predicativo',
+    );
+    expect(SUVECA_METHOD.definition).toContain(
+      'mapa de análise para reconstruir as relações sintáticas',
+    );
+    expect(SUVECA_METHOD.definition).toContain('não um molde obrigatório');
+    expect(Object.keys(SUVECA_METHOD.lessonConnections)).toHaveLength(15);
+    expect(Object.keys(SUVECA_METHOD.groupConnections)).toHaveLength(102);
+    expect(coreModules.every((module) => module.suvecaMethod?.methodId === SUVECA_METHOD.methodId)).toBe(true);
+    expect(sections.every((section) => section.suvecaMethod?.methodId === SUVECA_METHOD.methodId)).toBe(true);
+    expect(SUVECA_METHOD.groupConnections['A00/G01'].level).toBe('outside_core');
+    expect(SUVECA_METHOD.groupConnections['A00/G07'].level).toBe('strong');
+    expect(SUVECA_METHOD.groupConnections['A04/G01'].level).toBe('central');
+    expect(SUVECA_METHOD.groupConnections['A04/G05'].level).toBe('indirect');
+    expect(SUVECA_METHOD.groupConnections['A08/G05'].level).toBe('support');
+    expect(SUVECA_METHOD.groupConnections['A10/G06'].level).toBe('central');
+    expect(SUVECA_METHOD.groupConnections['A12/G04'].level).toBe('strong');
+    expect(SUVECA_METHOD.groupConnections['A13/G07'].level).toBe('indirect');
+    expect(sections.filter((section) => section.lessonId === 'A14').every((section) => section.suvecaMethod?.level === 'review')).toBe(true);
   });
 
   it('publica somente conteúdos de estudo independentes de mídia e IDs internos', () => {
@@ -67,6 +91,22 @@ describe('currículo editorial das aulas 00–14', () => {
     expect(context).toContain('BASE EDITORIAL SuVeCa');
     expect(context).toContain('corpus_apostila');
     expect(context).toContain('Integracao_Pedagogica');
+    expect(context).toContain('CAMADA METODOLÓGICA DO APLICATIVO');
+    expect(context).toContain('Grau de integração neste grupo');
+    expect(context).toContain('não atribua esta formulação à fonte normativa');
     expect(context).not.toContain('PERFIL CANÔNICO V3');
+  });
+
+  it('não força a SuVeCA em fonologia e a usa fortemente nos porquês', () => {
+    const phonetics = retrieveKnowledge('fonemas grafemas dígrafos', 1);
+    expect(phonetics[0]?.lessonId).toBe('A00');
+    expect(phonetics[0]?.groupId).toBe('G01');
+    expect(phonetics[0]?.methodology.level).toBe('outside_core');
+    expect(formatKnowledgeContext(phonetics)).toContain('Não force uma decomposição SuVeCA');
+
+    const porques = retrieveKnowledge('emprego dos porquês', 1);
+    expect(porques[0]?.lessonId).toBe('A00');
+    expect(porques[0]?.groupId).toBe('G07');
+    expect(porques[0]?.methodology.level).toBe('strong');
   });
 });

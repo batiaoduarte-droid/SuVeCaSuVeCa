@@ -599,3 +599,21 @@ Ao concluir o grupo temático `esta unidade`, o estudante deve dominar os seguin
 4. **O Sistema dos 5 Casos:** Saber enquadrar qualquer vocábulo em um dos 5 Casos fundamentais (1. Prefixos gerais; 2. Hiper/Inter/Super; 3. Independentes e MAL; 4. Pré/Pró/Pós; 5. Nomes compostos e locuções), permitindo resolver com rapidez e segurança qualquer item de concurso público.
 
 ---
+
+---
+
+## Conexão com o método SuVeCA
+
+**SuVeCA = Sujeito + Verbo + Complemento + Adjunto + Predicativo.**
+
+A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e não um molde obrigatório. Em concursos, as frases frequentemente aparecem em ordem inversa, com termos omitidos ou sem sujeito.
+
+**Camada própria, fora do núcleo SuVeCA:** O emprego do hífen depende de regras ortográficas, prefixos e constituintes morfológicos; não deve ser deduzido do mapa sintático.
+
+### Como aplicar neste tema
+
+1. Aplique diretamente a regra fonológica, ortográfica, lexical ou discursiva pertinente.
+2. Use frases completas como contexto de aplicação, sem obrigar sua decomposição sintática.
+3. Recorra à SuVeCA apenas se uma questão específica introduzir uma dependência funcional real.
+
+> **Limite do método:** A SuVeCA não é fonte da regra deste grupo e sua ausência na resolução pode ser pedagogicamente correta.

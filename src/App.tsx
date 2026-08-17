@@ -347,6 +347,7 @@ export default function App() {
   const simuladoModule = MODULES_DATA.find((m) => m.id === 'simulado');
   const simuladoQuestions = simuladoModule?.questions || [];
   const coreModules = MODULES_DATA.filter((module) => /^mod\d+$/.test(module.id));
+  const selectedCurriculumModule = coreModules.find((module) => module.id === selectedModuleId) || coreModules[0];
   const visitedCoreModules = metrics.visitedModuleIds.filter((id) =>
     coreModules.some((module) => module.id === id)
   ).length;
@@ -399,8 +400,36 @@ export default function App() {
               <div className="space-y-6">
                 {!isImmersiveFocus && (
                   <>
+                    {selectedCurriculumModule?.suvecaMethod && (
+                      <section className="rounded-2xl border border-teal-200 bg-gradient-to-br from-teal-950 to-teal-800 p-5 text-white shadow-sm sm:p-6" aria-labelledby="suveca-home-title">
+                        <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+                          <div className="max-w-4xl space-y-2">
+                            <span className="inline-flex rounded-full border border-teal-300/40 bg-white/10 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wider text-teal-50">
+                              Mapa de análise do aplicativo
+                            </span>
+                            <h1 id="suveca-home-title" className="text-xl font-extrabold leading-tight sm:text-2xl">
+                              SuVeCA = {selectedCurriculumModule.suvecaMethod.equation}
+                            </h1>
+                            <p className="text-sm font-medium leading-relaxed text-teal-50">
+                              {selectedCurriculumModule.suvecaMethod.definition}
+                            </p>
+                            <p className="text-xs leading-relaxed text-teal-100">
+                              <strong>{selectedCurriculumModule.suvecaMethod.label} nesta aula:</strong>{' '}
+                              {selectedCurriculumModule.suvecaMethod.summary}
+                            </p>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => setActiveTab('analyzer')}
+                            className="min-h-[44px] shrink-0 rounded-xl border border-white/30 bg-white px-4 py-2.5 text-sm font-bold text-teal-950 transition hover:bg-teal-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                          >
+                            Aplicar no analisador
+                          </button>
+                        </div>
+                      </section>
+                    )}
                     <ContinueLearningCard
-                      module={MODULES_DATA.find((module) => module.id === selectedModuleId) || MODULES_DATA[0]}
+                      module={selectedCurriculumModule}
                       pendingErrors={cadernoErrors.filter((error) => error.status !== 'dominado')}
                       onContinueModule={() => markModuleVisited(selectedModuleId)}
                       onReview={() => setActiveTab('agenda')}

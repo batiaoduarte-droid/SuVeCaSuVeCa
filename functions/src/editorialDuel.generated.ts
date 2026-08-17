@@ -13,4 +13,4 @@ export const EDITORIAL_DUEL_ANSWER_KEY = {
   "editorial-duel-11": "E",
   "editorial-duel-12": "C"
 } as const;
-export const EDITORIAL_DUEL_QUESTION_SET_VERSION = 'editorial-duel-9092964920887c52';
+export const EDITORIAL_DUEL_QUESTION_SET_VERSION = 'editorial-duel-88ae8bc080baf574';

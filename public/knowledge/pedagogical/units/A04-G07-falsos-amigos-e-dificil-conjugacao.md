@@ -601,3 +601,21 @@ Ao concluir este grupo temático, o estudante deve compreender que a irregularid
 4. **Resolução de Armadilhas Clássicas de Bancas:** Conhece o contraste crítico do verbo *IR* (*nós vamos* idêntico nos dois modos; *vós ides* no indicativo vs. *vós vades* no subjuntivo); sabe que *APRAZER* é defectivo (*apraz / aprouve*); maneja a "Colinha Temporal" da FGV (*Ontem / Hoje / Amanhã* na 1ª p. sing. de *haver*: *houve / hei / haverei*); e resolve reescritas que exigem conjugação combinada com regência e crase (*adiro ao...*, *sobrepõe-se às artes*).
 
 ---
+
+---
+
+## Conexão com o método SuVeCA
+
+**SuVeCA = Sujeito + Verbo + Complemento + Adjunto + Predicativo.**
+
+A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e não um molde obrigatório. Em concursos, as frases frequentemente aparecem em ordem inversa, com termos omitidos ou sem sujeito.
+
+**Apoio indireto:** Falsos amigos e verbos de difícil conjugação pertencem principalmente à morfologia verbal; o mapa impede apenas que contexto sintático e forma flexionada sejam confundidos.
+
+### Como aplicar neste tema
+
+1. Resolva o fenômeno pela regra própria da matéria.
+2. Se houver uma oração relevante, use a SuVeCA apenas para localizar a forma ou o efeito no contexto.
+3. Mantenha separadas a justificativa principal e a observação sintática auxiliar.
+
+> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe.

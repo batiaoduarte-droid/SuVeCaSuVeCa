@@ -571,3 +571,21 @@ Ao concluir o estudo desta unidade, o estudante deve ter internalizado que o dom
  - Tratar o hífen em adjetivos compostos (*ético-jurídicos*) como estritamente obrigatório.
 
 ---
+
+---
+
+## Conexão com o método SuVeCA
+
+**SuVeCA = Sujeito + Verbo + Complemento + Adjunto + Predicativo.**
+
+A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e não um molde obrigatório. Em concursos, as frases frequentemente aparecem em ordem inversa, com termos omitidos ou sem sujeito.
+
+**Camada própria, fora do núcleo SuVeCA:** As questões de hífen exigem reconhecer a formação da palavra e aplicar a norma ortográfica, sem converter o procedimento em análise oracional.
+
+### Como aplicar neste tema
+
+1. Aplique diretamente a regra fonológica, ortográfica, lexical ou discursiva pertinente.
+2. Use frases completas como contexto de aplicação, sem obrigar sua decomposição sintática.
+3. Recorra à SuVeCA apenas se uma questão específica introduzir uma dependência funcional real.
+
+> **Limite do método:** A SuVeCA não é fonte da regra deste grupo e sua ausência na resolução pode ser pedagogicamente correta.

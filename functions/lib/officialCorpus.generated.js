@@ -1213,5 +1213,5 @@ exports.OFFICIAL_CORPUS_ANSWER_KEY = {
     "A13:aula13.q0220": "E",
     "A13:aula13.q0221": "E"
 };
-exports.OFFICIAL_CORPUS_VERSION = 'editorial-corpus-9092964920887c52';
+exports.OFFICIAL_CORPUS_VERSION = 'editorial-corpus-88ae8bc080baf574';
 exports.OFFICIAL_CORPUS_SAMPLE_SIZE = 10;

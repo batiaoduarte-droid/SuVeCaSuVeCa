@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { SuvecaAnalysisResult, SuvecaBlock } from '../types/suveca';
 import { authenticatedFetch } from '../lib/authenticatedFetch';
+import { SUVECA_METHOD } from '../lib/suvecaMethod';
 import {
   Sparkles,
   AlertTriangle,
@@ -27,8 +28,11 @@ const CATEGORY_STYLES: Record<string, { bg: string; text: string; border: string
   VERBO: { bg: 'bg-emerald-50/90', text: 'text-emerald-950', border: 'border-emerald-200', badge: 'bg-emerald-100 text-emerald-900 border-emerald-300' },
   COMPLEMENTO: { bg: 'bg-amber-50/90', text: 'text-amber-950', border: 'border-amber-200', badge: 'bg-amber-100 text-amber-900 border-amber-300' },
   ADJUNTO_ADVERBIAL: { bg: 'bg-purple-50/90', text: 'text-purple-950', border: 'border-purple-200', badge: 'bg-purple-100 text-purple-900 border-purple-300' },
+  ADJUNTO_ADNOMINAL: { bg: 'bg-violet-50/90', text: 'text-violet-950', border: 'border-violet-200', badge: 'bg-violet-100 text-violet-900 border-violet-300' },
   PREDICATIVO: { bg: 'bg-pink-50/90', text: 'text-pink-950', border: 'border-pink-200', badge: 'bg-pink-100 text-pink-900 border-pink-300' },
   CONECTOR: { bg: 'bg-teal-50/90', text: 'text-teal-950', border: 'border-teal-200', badge: 'bg-teal-100 text-teal-900 border-teal-300' },
+  VOCATIVO: { bg: 'bg-rose-50/90', text: 'text-rose-950', border: 'border-rose-200', badge: 'bg-rose-100 text-rose-900 border-rose-300' },
+  APOSTO: { bg: 'bg-cyan-50/90', text: 'text-cyan-950', border: 'border-cyan-200', badge: 'bg-cyan-100 text-cyan-900 border-cyan-300' },
 };
 
 interface SuvecaAnalyzerProps {
@@ -129,6 +133,30 @@ export const SuvecaAnalyzer: React.FC<SuvecaAnalyzerProps> = ({
           </div>
         </header>
       )}
+
+      <section className="rounded-2xl border border-teal-200 bg-teal-50/70 p-5 sm:p-6" aria-labelledby="suveca-map-title">
+        <div className="flex items-start gap-3">
+          <Layers className="mt-0.5 h-5 w-5 shrink-0 text-teal-800" aria-hidden="true" />
+          <div className="min-w-0 space-y-2">
+            <h2 id="suveca-map-title" className="text-base font-extrabold text-teal-950 sm:text-lg">
+              SuVeCA = {SUVECA_METHOD.equation}
+            </h2>
+            <p className="text-sm font-medium leading-relaxed text-teal-950">
+              {SUVECA_METHOD.definition}
+            </p>
+            <p className="text-xs leading-relaxed text-slate-600">
+              A análise mantém os blocos na ordem real da frase e reconstrói os vínculos entre eles. Um bloco pode estar posposto, implícito ou ausente.
+            </p>
+            <div className="flex flex-wrap gap-2 pt-1" aria-label="Exemplos de padrões SuVeCA">
+              {SUVECA_METHOD.patterns.slice(0, 5).map((pattern) => (
+                <span key={pattern.name} className="rounded-lg border border-teal-200 bg-white px-2.5 py-1 text-[11px] font-bold text-teal-900" title={pattern.example}>
+                  {pattern.surface}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Input Box & Presets */}
       <section className={`bg-white rounded-2xl border border-slate-200 shadow-xs space-y-5 ${isFocusMode ? 'p-5 sm:p-8 lg:p-10' : 'p-6 sm:p-8'}`}>
@@ -258,6 +286,31 @@ export const SuvecaAnalyzer: React.FC<SuvecaAnalyzerProps> = ({
                 </span>
               </div>
             </div>
+
+            {(currentAnalysis.surfacePattern || currentAnalysis.relationalMap || currentAnalysis.implicitElements?.length) && (
+              <div className="grid gap-3 rounded-2xl border border-teal-200 bg-teal-50/60 p-4 md:grid-cols-2">
+                {currentAnalysis.surfacePattern && (
+                  <div className="rounded-xl border border-teal-200 bg-white p-3">
+                    <span className="text-[10px] font-extrabold uppercase tracking-wide text-teal-700">Ordem encontrada</span>
+                    <p className="mt-1 font-mono text-sm font-bold text-teal-950">{currentAnalysis.surfacePattern}</p>
+                  </div>
+                )}
+                {currentAnalysis.relationalMap && (
+                  <div className="rounded-xl border border-teal-200 bg-white p-3">
+                    <span className="text-[10px] font-extrabold uppercase tracking-wide text-teal-700">Mapa relacional</span>
+                    <p className="mt-1 text-sm leading-relaxed text-slate-700">{currentAnalysis.relationalMap}</p>
+                  </div>
+                )}
+                {currentAnalysis.implicitElements?.length ? (
+                  <div className="rounded-xl border border-amber-200 bg-amber-50 p-3 md:col-span-2">
+                    <span className="text-[10px] font-extrabold uppercase tracking-wide text-amber-800">Elementos implícitos ou ausentes</span>
+                    <ul className="mt-1 list-disc space-y-1 pl-5 text-sm text-amber-950">
+                      {currentAnalysis.implicitElements.map((item) => <li key={item}>{item}</li>)}
+                    </ul>
+                  </div>
+                ) : null}
+              </div>
+            )}
 
             {/* Visual Color-Coded SuVeCA Blocks */}
             <div className="space-y-3">
