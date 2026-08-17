@@ -1,7 +1,7 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, expectNoDocumentOverflow, openApp, openTab, test } from './fixtures';
 
-const auditedTabs = ['Apostila', 'Analisador', 'Simulado', 'Cronômetro Foco', 'Matrizes', 'Questões oficiais'];
+const auditedTabs = ['Apostila', 'Analisador', 'Simulado', 'Cronômetro Foco', 'Roteiros', 'Questões editoriais'];
 
 test.describe('layout responsivo', () => {
   for (const tab of auditedTabs) {
@@ -48,13 +48,13 @@ test.describe('teclado e leitores de tela', () => {
     await expect(page.getByRole('heading', { name: /cronômetro de foco/i })).toBeVisible();
   });
 
-  test('questão oficial prende o foco, fecha com Escape e devolve o foco', async ({ page }) => {
+  test('questão editorial prende o foco, fecha com Escape e devolve o foco', async ({ page }) => {
     await openApp(page);
-    await openTab(page, 'Questões oficiais');
-    const opener = page.getByRole('button', { name: 'Abrir questão completa' }).first();
+    await openTab(page, 'Questões editoriais');
+    const opener = page.getByRole('button', { name: 'Estudar questão' }).first();
     await expect(opener).toBeVisible();
     await opener.click();
-    const dialog = page.getByRole('dialog', { name: /questão oficial/i });
+    const dialog = page.getByRole('dialog', { name: /questão editorial/i });
     await expect(dialog).toBeVisible();
     await expect(dialog.getByRole('button', { name: 'Fechar questão' })).toBeFocused();
     await page.keyboard.press('Escape');

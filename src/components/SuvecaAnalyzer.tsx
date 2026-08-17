@@ -16,160 +16,11 @@ import {
   Database,
 } from 'lucide-react';
 
-const PRESET_SENTENCES: SuvecaAnalysisResult[] = [
-  {
-    sentence: 'Ontem, os novos servidores entregaram cuidadosamente os relatórios ao diretor.',
-    order: 'Inversa (Adjunto Adverbial no início)',
-    verbalVoice: 'Voz Ativa',
-    summaryExplanation:
-      'O período inicia com o Adjunto Adverbial de Tempo "Ontem" deslocado. Segue-se o Sujeito "os novos servidores", o Verbo Transitivo Direto e Indireto "entregaram", o Adjunto Adverbial de Modo "cuidadosamente", o Objeto Direto "os relatórios" e o Objeto Indireto "ao diretor".',
-    contestTips: [
-      'A vírgula após "Ontem" é facultativa por ser um adjunto adverbial de tempo curto no início.',
-      'A ordem direta completa seria: "Os novos servidores entregaram os relatórios ao diretor cuidadosamente ontem."',
-      'O verbo entregar é VTDI (exige OD "os relatórios" e OI "ao diretor").',
-    ],
-    blocks: [
-      {
-        text: 'Ontem,',
-        category: 'ADJUNTO_ADVERBIAL',
-        shortLabel: 'Adj. Adv. (Tempo)',
-        colorTag: 'purple',
-        morphology: 'Advérbio de tempo',
-        explanation: 'Indica a circunstância de tempo do processo verbal de entregar.',
-      },
-      {
-        text: 'os novos servidores',
-        category: 'SUJEITO',
-        shortLabel: 'Sujeito Simples',
-        colorTag: 'blue',
-        morphology: 'Artigo (os) + Adjetivo (novos) + Substantivo (servidores - núcleo)',
-        explanation: 'Núcleo do sujeito "servidores". Comanda a concordância verbal na 3ª pessoa do plural.',
-      },
-      {
-        text: 'entregaram',
-        category: 'VERBO',
-        shortLabel: 'Verbo VTDI',
-        colorTag: 'emerald',
-        morphology: 'Verbo entregar no pretérito perfeito do indicativo (3ª pessoa plural)',
-        explanation: 'Verbo transitivo direto e indireto. Exige dois complementos: o que foi entregue e a quem.',
-      },
-      {
-        text: 'cuidadosamente',
-        category: 'ADJUNTO_ADVERBIAL',
-        shortLabel: 'Adj. Adv. (Modo)',
-        colorTag: 'purple',
-        morphology: 'Advérbio de modo terminado em -mente',
-        explanation: 'Modifica o verbo "entregaram" expressando a maneira de realização da ação.',
-      },
-      {
-        text: 'os relatórios',
-        category: 'COMPLEMENTO',
-        shortLabel: 'Objeto Direto',
-        colorTag: 'amber',
-        morphology: 'Artigo (os) + Substantivo (relatórios)',
-        explanation: 'Complemento sem preposição exigida pelo verbo.',
-      },
-      {
-        text: 'ao diretor.',
-        category: 'COMPLEMENTO',
-        shortLabel: 'Objeto Indireto',
-        colorTag: 'amber',
-        morphology: 'Preposição "a" + Artigo "o" (ao) + Substantivo (diretor)',
-        explanation: 'Complemento regido pela preposição "a" exigida pela transitividade de entregar.',
-      },
-    ],
-  },
-  {
-    sentence: 'Precisa-se de novos fiscais para o departamento de tributos.',
-    order: 'Direta com Sujeito Indeterminado',
-    verbalVoice: 'Ativa com Sujeito Indeterminado',
-    summaryExplanation:
-      'Trata-se de oração com verbo transitivo indireto (precisar de) acompanhado da partícula SE. O SE atua como Índice de Indeterminação do Sujeito, mantendo o verbo obrigatoriamente na 3ª pessoa do singular.',
-    contestTips: [
-      'Bancas como Cebraspe tentam forçar o verbo ao plural ("Precisam-se de fiscais"), o que é um ERRO GRAVE.',
-      'O termo "de novos fiscais" é Objeto Indireto e NUNCA pode ser sujeito.',
-    ],
-    blocks: [
-      {
-        text: 'Precisa-se',
-        category: 'VERBO',
-        shortLabel: 'Verbo VTI + IIS',
-        colorTag: 'emerald',
-        morphology: 'Verbo precisar na 3ª p. singular + Pronome SE (Índice de Indeterminação)',
-        explanation: 'Verbo no singular obrigatório porque o SE indetermina o sujeito.',
-      },
-      {
-        text: 'de novos fiscais',
-        category: 'COMPLEMENTO',
-        shortLabel: 'Objeto Indireto',
-        colorTag: 'amber',
-        morphology: 'Preposição (de) + Adjetivo (novos) + Substantivo (fiscais)',
-        explanation: 'Objeto indireto regido pela preposição "de".',
-      },
-      {
-        text: 'para o departamento de tributos.',
-        category: 'ADJUNTO_ADVERBIAL',
-        shortLabel: 'Adj. Adv. (Finalidade)',
-        colorTag: 'purple',
-        morphology: 'Locução prepositiva + Grupo nominal',
-        explanation: 'Expressa o destino / finalidade dos novos fiscais.',
-      },
-    ],
-  },
-  {
-    sentence: 'Embora o prazo fosse curto, os candidatos concluíram a prova tranquilos.',
-    order: 'Inversa com Oração Subordinada Adverbial Concessiva anteposta',
-    verbalVoice: 'Voz Ativa com Predicativo do Sujeito',
-    summaryExplanation:
-      'Período composto iniciado por oração subordinada adverbial concessiva ("Embora... curto"). Na oração principal, temos o sujeito "os candidatos", o verbo "concluíram", o complemento "a prova" e o predicativo do sujeito "tranquilos".',
-    contestTips: [
-      'A vírgula separando a oração adverbial anteposta é OBRIGATÓRIA.',
-      '"Tranquilos" é Predicativo do Sujeito (característica atribuída pelo predicado durante a ação), e não adjunto adverbial.',
-    ],
-    blocks: [
-      {
-        text: 'Embora o prazo fosse curto,',
-        category: 'CONECTOR',
-        shortLabel: 'Oração Adv. Concessiva',
-        colorTag: 'cyan',
-        morphology: 'Conjunção subordinativa concessiva (Embora) + Oração',
-        explanation: 'Expressa obstáculo que não impede o fato da oração principal.',
-      },
-      {
-        text: 'os candidatos',
-        category: 'SUJEITO',
-        shortLabel: 'Sujeito Simples',
-        colorTag: 'blue',
-        morphology: 'Artigo (os) + Substantivo (candidatos)',
-        explanation: 'Sujeito da oração principal.',
-      },
-      {
-        text: 'concluíram',
-        category: 'VERBO',
-        shortLabel: 'Verbo VTD',
-        colorTag: 'emerald',
-        morphology: 'Verbo concluir no pretérito perfeito do indicativo',
-        explanation: 'Verbo transitivo direto.',
-      },
-      {
-        text: 'a prova',
-        category: 'COMPLEMENTO',
-        shortLabel: 'Objeto Direto',
-        colorTag: 'amber',
-        morphology: 'Artigo (a) + Substantivo (prova)',
-        explanation: 'Objeto direto do verbo concluir.',
-      },
-      {
-        text: 'tranquilos.',
-        category: 'PREDICATIVO',
-        shortLabel: 'Predicativo do Sujeito',
-        colorTag: 'rose',
-        morphology: 'Adjetivo no masculino plural',
-        explanation: 'Atribui um estado ao sujeito "candidatos" durante a realização da prova.',
-      },
-    ],
-  },
-];
+const PRESET_SENTENCES = [
+  'Ontem, os novos servidores entregaram cuidadosamente os relatórios ao diretor.',
+  'Precisa-se de novos fiscais para o departamento de tributos.',
+  'Embora o prazo fosse curto, os candidatos concluíram a prova tranquilos.',
+] as const;
 
 const CATEGORY_STYLES: Record<string, { bg: string; text: string; border: string; badge: string }> = {
   SUJEITO: { bg: 'bg-blue-50/90', text: 'text-blue-950', border: 'border-blue-200', badge: 'bg-blue-100 text-blue-900 border-blue-300' },
@@ -190,19 +41,15 @@ export const SuvecaAnalyzer: React.FC<SuvecaAnalyzerProps> = ({
   onToggleFocusMode,
 }) => {
   const [inputText, setInputText] = useState('');
-  const [currentAnalysis, setCurrentAnalysis] = useState<SuvecaAnalysisResult>(
-    PRESET_SENTENCES[0]
-  );
-  const [selectedBlock, setSelectedBlock] = useState<SuvecaBlock | null>(
-    PRESET_SENTENCES[0].blocks[0]
-  );
+  const [currentAnalysis, setCurrentAnalysis] = useState<SuvecaAnalysisResult | null>(null);
+  const [selectedBlock, setSelectedBlock] = useState<SuvecaBlock | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-  const handleSelectPreset = (preset: SuvecaAnalysisResult) => {
-    setCurrentAnalysis(preset);
-    setInputText(preset.sentence);
-    setSelectedBlock(preset.blocks[0] || null);
+  const handleSelectPreset = (sentence: string) => {
+    setInputText(sentence);
+    setCurrentAnalysis(null);
+    setSelectedBlock(null);
     setErrorMsg(null);
   };
 
@@ -210,6 +57,7 @@ export const SuvecaAnalyzer: React.FC<SuvecaAnalyzerProps> = ({
     if (!inputText.trim()) return;
     setIsLoading(true);
     setErrorMsg(null);
+    setCurrentAnalysis(null);
     setSelectedBlock(null);
 
     try {
@@ -292,7 +140,12 @@ export const SuvecaAnalyzer: React.FC<SuvecaAnalyzerProps> = ({
             <div className="relative flex-1">
               <textarea
                 value={inputText}
-                onChange={(e) => setInputText(e.target.value)}
+                onChange={(e) => {
+                  setInputText(e.target.value);
+                  setCurrentAnalysis(null);
+                  setSelectedBlock(null);
+                  setErrorMsg(null);
+                }}
                 placeholder="Ex: Ontem, os fiscais entregaram o relatório ao diretor..."
                 rows={isFocusMode ? 7 : 2}
                 className={`input-field w-full resize-y p-3.5 pr-11 text-sm sm:text-base font-medium ${
@@ -311,7 +164,13 @@ export const SuvecaAnalyzer: React.FC<SuvecaAnalyzerProps> = ({
               />
               {inputText && (
                 <button
-                  onClick={() => setInputText('')}
+                  type="button"
+                  onClick={() => {
+                    setInputText('');
+                    setCurrentAnalysis(null);
+                    setSelectedBlock(null);
+                    setErrorMsg(null);
+                  }}
                   className="absolute right-3 top-3 text-slate-400 hover:text-slate-600 text-xs min-w-[32px] min-h-[32px] flex items-center justify-center cursor-pointer"
                   aria-label="Limpar campo de texto"
                 >
@@ -350,15 +209,19 @@ export const SuvecaAnalyzer: React.FC<SuvecaAnalyzerProps> = ({
           <div className="flex flex-wrap gap-2">
             {PRESET_SENTENCES.map((preset, index) => (
               <button
-                key={index}
+                key={preset}
+                type="button"
                 onClick={() => handleSelectPreset(preset)}
+                aria-label={`Usar frase de exemplo ${index + 1}: ${preset}`}
+                aria-pressed={inputText === preset}
+                title={preset}
                 className={`text-xs px-3 py-1.5 rounded-lg text-left transition border font-medium cursor-pointer ${
-                  currentAnalysis.sentence === preset.sentence
+                  inputText === preset
                     ? 'bg-teal-50 text-teal-900 border-teal-300 font-bold'
                     : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'
                 }`}
               >
-                "{preset.sentence.substring(0, 48)}..."
+                "{preset.substring(0, 48)}..."
               </button>
             ))}
           </div>
@@ -532,7 +395,7 @@ export const SuvecaAnalyzer: React.FC<SuvecaAnalyzerProps> = ({
             <div className="rounded-2xl border border-violet-200 bg-violet-50/70 p-4 text-xs text-violet-950">
               <div className="flex items-center gap-2 font-bold">
                 <Database className="h-4 w-4 text-violet-700" />
-                Fontes recuperadas da Base Canônica
+                Fontes recuperadas da Base Editorial
               </div>
               <p className="mt-2 text-violet-900">
                 A análise foi conferida com {currentAnalysis.knowledgeSources.length}{' '}

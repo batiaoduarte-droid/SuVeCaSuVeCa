@@ -99,10 +99,10 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'flashcards', label: 'Flashcards', icon: Brain, isIa: true, group: 'Revisar' },
     { id: 'pomodoro', label: 'Cronômetro Foco', icon: Timer, group: 'Estudar' },
     { id: 'agenda', label: 'Review diário', icon: CalendarDays, group: 'Revisar' },
-    { id: 'decision', label: 'Matrizes', icon: GitMerge, group: 'Estudar' },
+    { id: 'decision', label: 'Roteiros', icon: GitMerge, group: 'Estudar' },
     { id: 'planner', label: 'Planejamento', icon: CalendarCheck, group: 'Acompanhar' },
     { id: 'duel', label: 'Duelo', icon: Swords, group: 'Praticar' },
-    { id: 'questions', label: 'Questões oficiais', icon: BookMarked, group: 'Praticar' },
+    { id: 'questions', label: 'Questões editoriais', icon: BookMarked, group: 'Praticar' },
     { id: 'stats', label: 'Estatísticas', icon: BarChart3, group: 'Acompanhar' },
     { id: 'profile', label: 'Perfil', icon: UserIcon, group: 'Acompanhar' },
     { id: 'tutor', label: 'Professor IA', icon: Bot, isIa: true, group: 'Estudar' },
@@ -117,9 +117,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   useEffect(() => {
     if (!isDesktopMoreOpen) return undefined;
-    const focusFrame = window.requestAnimationFrame(() => {
-      desktopMoreMenuRef.current?.querySelector<HTMLButtonElement>('button')?.focus();
-    });
+    desktopMoreMenuRef.current?.querySelector<HTMLButtonElement>('button')?.focus();
     const closeOnPointerDown = (event: PointerEvent) => {
       const target = event.target as Node;
       if (!desktopMoreMenuRef.current?.contains(target) && !desktopMoreButtonRef.current?.contains(target)) {
@@ -134,7 +132,6 @@ export const Navbar: React.FC<NavbarProps> = ({
     document.addEventListener('pointerdown', closeOnPointerDown);
     document.addEventListener('keydown', closeOnEscape);
     return () => {
-      window.cancelAnimationFrame(focusFrame);
       document.removeEventListener('pointerdown', closeOnPointerDown);
       document.removeEventListener('keydown', closeOnEscape);
     };

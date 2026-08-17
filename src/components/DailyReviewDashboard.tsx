@@ -12,17 +12,25 @@ import {
 import type { CadernoErroItem, ErrorFlashcard } from '../types/suveca';
 import { db } from '../lib/firebase';
 import { ProgressBar } from './ui/ProgressBar';
+import { EDITORIAL_FLASHCARDS } from '../data/editorialFlashcards.generated';
+import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
 
 const FLASHCARDS_STORAGE_PREFIX = 'suveca_flashcards';
 const AGENDA_STORAGE_PREFIX = 'suveca_daily_review_agenda';
+const CURRICULUM_BUILD_ID = PEDAGOGICAL_KNOWLEDGE_BUILD.buildId;
+const flashcardsDocumentId = `flashcards_caderno_${CURRICULUM_BUILD_ID}`;
+const agendaDocumentId = `daily_review_agenda_${CURRICULUM_BUILD_ID}`;
 
 const storageScope = (userId?: string) => userId || 'guest';
 const flashcardsStorageKey = (userId?: string) =>
+  `${FLASHCARDS_STORAGE_PREFIX}_${CURRICULUM_BUILD_ID}_${storageScope(userId)}`;
+const legacyFlashcardsStorageKey = (userId?: string) =>
   `${FLASHCARDS_STORAGE_PREFIX}_${storageScope(userId)}`;
 const agendaStorageKey = (userId?: string) =>
-  `${AGENDA_STORAGE_PREFIX}_${storageScope(userId)}`;
+  `${AGENDA_STORAGE_PREFIX}_${CURRICULUM_BUILD_ID}_${storageScope(userId)}`;
 
 interface DailyReviewProgress {
+  curriculumBuildId: string;
   day: string;
   completedCount: number;
   goal: number;
@@ -41,6 +49,7 @@ const dayKey = (date = new Date()) =>
   ).padStart(2, '0')}`;
 
 const emptyProgress = (): DailyReviewProgress => ({
+  curriculumBuildId: CURRICULUM_BUILD_ID,
   day: dayKey(),
   completedCount: 0,
   goal: 10,
@@ -51,6 +60,7 @@ const normalizeProgress = (value: unknown): DailyReviewProgress => {
   if (!value || typeof value !== 'object') return fallback;
 
   const candidate = value as Partial<DailyReviewProgress>;
+  if (candidate.curriculumBuildId !== CURRICULUM_BUILD_ID) return fallback;
   const validGoal =
     typeof candidate.goal === 'number' && [5, 10, 15, 20].includes(candidate.goal)
       ? candidate.goal
@@ -58,6 +68,7 @@ const normalizeProgress = (value: unknown): DailyReviewProgress => {
   const isCurrentDay = candidate.day === fallback.day;
 
   return {
+    curriculumBuildId: CURRICULUM_BUILD_ID,
     day: fallback.day,
     completedCount:
       isCurrentDay && typeof candidate.completedCount === 'number'
@@ -88,15 +99,73 @@ const isFlashcard = (value: unknown): value is ErrorFlashcard => {
   );
 };
 
-const normalizeCards = (value: unknown) =>
-  Array.isArray(value) ? value.filter(isFlashcard) : [];
+const EDITORIAL_CARDS: ErrorFlashcard[] = EDITORIAL_FLASHCARDS.map((card) => ({
+  id: card.id,
+  source: 'suveca',
+  topic: card.topic,
+  front: card.front,
+  back: card.back,
+  hint: card.hint,
+  explanation: card.explanation,
+  sourceRefs: [...card.sourceRefs],
+  createdAt: card.createdAt,
+  correctCount: card.correctCount,
+  incorrectCount: card.incorrectCount,
+}));
+const EDITORIAL_CARD_IDS = new Set(EDITORIAL_CARDS.map((card) => card.id));
+
+const normalizeCards = (value: unknown): ErrorFlashcard[] => {
+  const saved = Array.isArray(value)
+    ? value
+        .filter(isFlashcard)
+        .filter((card) => card.source === 'caderno' || EDITORIAL_CARD_IDS.has(card.id))
+    : [];
+  const savedById = new Map(saved.map((card) => [card.id, card]));
+  const editorial = EDITORIAL_CARDS.map((card) => {
+    const progress = savedById.get(card.id);
+    return {
+      ...card,
+      hintUsedCount: progress?.hintUsedCount,
+      lastReviewUsedHint: progress?.lastReviewUsedHint,
+      lastReviewedAt: progress?.lastReviewedAt,
+      nextReviewAt: progress?.nextReviewAt,
+      correctCount: progress?.correctCount ?? card.correctCount,
+      incorrectCount: progress?.incorrectCount ?? card.incorrectCount,
+      repetitions: progress?.repetitions,
+      intervalDays: progress?.intervalDays,
+      easeFactor: progress?.easeFactor,
+      lapseCount: progress?.lapseCount,
+      lastRating: progress?.lastRating,
+      masteryScore: progress?.masteryScore,
+    };
+  });
+  const caderno = Array.from(
+    new Map(
+      saved
+        .filter((card) => card.source === 'caderno')
+        .map((card) => [card.id, card] as const)
+    ).values()
+  );
+  return [...editorial, ...caderno];
+};
 
 const readLocalCards = (userId?: string) => {
   try {
     const saved = localStorage.getItem(flashcardsStorageKey(userId));
-    return saved ? normalizeCards(JSON.parse(saved)) : [];
+    if (saved) {
+      const parsed = JSON.parse(saved) as { curriculumBuildId?: unknown; items?: unknown };
+      if (parsed?.curriculumBuildId === CURRICULUM_BUILD_ID) return normalizeCards(parsed.items);
+    }
+    const legacy = localStorage.getItem(legacyFlashcardsStorageKey(userId));
+    const parsedLegacy = legacy ? (JSON.parse(legacy) as unknown) : [];
+    const legacyItems = Array.isArray(parsedLegacy)
+      ? parsedLegacy
+      : parsedLegacy && typeof parsedLegacy === 'object' && Array.isArray((parsedLegacy as { items?: unknown }).items)
+      ? (parsedLegacy as { items: unknown[] }).items
+      : [];
+    return normalizeCards(legacyItems.filter(isFlashcard).filter((card) => card.source === 'caderno'));
   } catch {
-    return [];
+    return EDITORIAL_CARDS;
   }
 };
 
@@ -167,7 +236,13 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
     setProgress((current) =>
       current.day === currentDay
         ? current
-        : { day: currentDay, completedCount: 0, goal: current.goal, updatedAt: new Date().toISOString() }
+        : {
+            curriculumBuildId: CURRICULUM_BUILD_ID,
+            day: currentDay,
+            completedCount: 0,
+            goal: current.goal,
+            updatedAt: new Date().toISOString(),
+          }
     );
   }, [reviewNow]);
 
@@ -189,18 +264,45 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
     setIsLoadingCards(true);
     const loadAgenda = async () => {
       try {
-        const [cardsSnapshot, progressSnapshot] = await Promise.all([
+        const [cardsSnapshot, progressSnapshot, legacyCardsSnapshot] = await Promise.all([
+          getDoc(doc(db, 'users', userId, 'data', flashcardsDocumentId)),
+          getDoc(doc(db, 'users', userId, 'data', agendaDocumentId)),
           getDoc(doc(db, 'users', userId, 'data', 'flashcards_caderno')),
-          getDoc(doc(db, 'users', userId, 'data', 'daily_review_agenda')),
         ]);
         if (cancelled) return;
 
-        if (cardsSnapshot.exists()) {
-          // FlashcardPractice owns this document and persists the array as
-          // `items`; keep the agenda read-only and aligned with that schema.
+        if (
+          cardsSnapshot.exists() &&
+          cardsSnapshot.data()?.curriculumBuildId === CURRICULUM_BUILD_ID
+        ) {
           setCards(normalizeCards(cardsSnapshot.data()?.items));
+        } else {
+          const legacyItems = legacyCardsSnapshot.data()?.items;
+          const migratedCards = normalizeCards(
+            Array.isArray(legacyItems)
+              ? legacyItems.filter(isFlashcard).filter((card) => card.source === 'caderno')
+              : localCards.filter((card) => card.source === 'caderno')
+          );
+          setCards(migratedCards);
+          const updatedAt = new Date().toISOString();
+          await Promise.all([
+            setDoc(doc(db, 'users', userId, 'data', flashcardsDocumentId), {
+              curriculumBuildId: CURRICULUM_BUILD_ID,
+              items: migratedCards,
+              updatedAt,
+            }),
+            setDoc(doc(db, 'users', userId, 'data', 'flashcards_caderno'), {
+              schemaVersion: 2,
+              contentKind: 'personal_caderno_cards',
+              items: migratedCards.filter((card) => card.source === 'caderno'),
+              updatedAt,
+            }),
+          ]);
         }
-        if (progressSnapshot.exists()) {
+        if (
+          progressSnapshot.exists() &&
+          progressSnapshot.data()?.curriculumBuildId === CURRICULUM_BUILD_ID
+        ) {
           setProgress(normalizeProgress(progressSnapshot.data()));
         }
       } catch (error) {
@@ -221,13 +323,33 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
 
   useEffect(() => {
     if (readyScope !== scope) return;
+    localStorage.setItem(
+      flashcardsStorageKey(userId),
+      JSON.stringify({ curriculumBuildId: CURRICULUM_BUILD_ID, items: cards })
+    );
+    localStorage.setItem(
+      legacyFlashcardsStorageKey(userId),
+      JSON.stringify({
+        schemaVersion: 2,
+        contentKind: 'personal_caderno_cards',
+        items: cards.filter((card) => card.source === 'caderno'),
+      })
+    );
+  }, [cards, readyScope, scope, userId]);
+
+  useEffect(() => {
+    if (readyScope !== scope) return;
     localStorage.setItem(agendaStorageKey(userId), JSON.stringify(progress));
     if (!userId) return;
 
     const timeout = window.setTimeout(() => {
       void setDoc(
-        doc(db, 'users', userId, 'data', 'daily_review_agenda'),
-        { ...progress, updatedAt: new Date().toISOString() },
+        doc(db, 'users', userId, 'data', agendaDocumentId),
+        {
+          ...progress,
+          curriculumBuildId: CURRICULUM_BUILD_ID,
+          updatedAt: new Date().toISOString(),
+        },
         { merge: true }
       ).catch((error) => console.error('Não foi possível salvar a meta diária:', error));
     }, 350);

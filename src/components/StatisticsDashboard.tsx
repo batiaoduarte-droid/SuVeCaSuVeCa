@@ -35,7 +35,7 @@ export interface LearningAttempt {
   percentage?: number;
   byTopic?: unknown;
   answerMap?: Record<string, string>;
-  questionSetVersion?: 'official-simulado-v1' | 'official-corpus-v1' | 'ai-generated-v1';
+  questionSetVersion?: string;
 }
 
 interface StatisticsDashboardProps {
@@ -57,17 +57,6 @@ type TopicSummary = {
   total: number;
   accuracy: number;
 };
-
-const TOPIC_ORDER = [
-  'Interpretação e coesão',
-  'Concordância verbal',
-  'Sintaxe e SuVeCA',
-  'Regência e crase',
-  'Pronomes e colocação',
-  'Pontuação',
-  'Período composto',
-  'Morfologia',
-];
 
 const TOPIC_COLORS = ['#0f766e', '#0e7490', '#7c3aed', '#b45309', '#be185d', '#15803d', '#2563eb', '#64748b'];
 
@@ -136,7 +125,6 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
 }) => {
   const topicData = useMemo<TopicSummary[]>(() => {
     const totals = new Map<string, { correct: number; total: number }>();
-    TOPIC_ORDER.forEach((topic) => totals.set(topic, { correct: 0, total: 0 }));
 
     attempts.forEach((attempt) => {
       normalizeTopics(attempt.byTopic).forEach((result) => {
@@ -189,12 +177,12 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
       {
         stage: 'Compreender',
         progress: percent(readSections, Math.max(totalSections, 1)),
-        detail: `${readSections}/${totalSections} seções estudadas · ${visitedModules}/${totalModules} módulos abertos`,
+        detail: `${readSections}/${totalSections} seções estudadas · ${visitedModules}/${totalModules} aulas abertas`,
       },
       {
         stage: 'Aplicar',
         progress: Math.min(100, percent(allAnswered + practiceAnswered, 40)),
-        detail: `${allAnswered + practiceAnswered} questões · ${practiceCorrect} acertos nos módulos`,
+        detail: `${allAnswered + practiceAnswered} questões · ${practiceCorrect} acertos nas aulas`,
       },
       {
         stage: 'Registrar',
@@ -277,7 +265,7 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
           <div className="mb-5">
             <h2 className="font-bold text-slate-900">Ciclo de aprendizagem SuVeCA</h2>
             <p className="mt-1 text-xs leading-relaxed text-slate-500">
-              Indicadores calculados a partir dos módulos explorados, simulados e revisões do Caderno.
+              Indicadores calculados a partir das aulas exploradas, simulados e revisões do Caderno.
             </p>
           </div>
           <div className="space-y-4">

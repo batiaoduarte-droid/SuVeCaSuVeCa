@@ -20,12 +20,12 @@ test.describe('regressão visual das experiências principais', () => {
     await expect(page).toHaveScreenshot('simulado.png', { fullPage: false });
   });
 
-  test('matrizes e indicação de rolagem', async ({ page }) => {
+  test('roteiros editoriais de resolução', async ({ page }) => {
     await openApp(page);
-    await openTab(page, 'Matrizes');
-    await expect(page.getByRole('heading', { name: /Algoritmos e Fluxogramas/i })).toBeVisible();
-    await expect(page.getByRole('button', { name: 'Ver próximas matrizes' })).toBeVisible();
-    await expect(page).toHaveScreenshot('matrizes.png', { fullPage: false });
+    await openTab(page, 'Roteiros');
+    await expect(page.getByRole('heading', { name: /Roteiros de resolução/i })).toBeVisible();
+    await expect(page.getByLabel(/Buscar nos roteiros/i)).toBeVisible();
+    await expect(page).toHaveScreenshot('roteiros.png', { fullPage: false });
   });
 
   test('menu de ferramentas secundárias', async ({ page }) => {

@@ -15,9 +15,10 @@ export interface QuizQuestion {
   options?: QuizOption[];
   correctAnswer: string; // 'C', 'E', or 'A', 'B', 'C', 'D', 'E'
   commentary: string;
-  /** Origem pedagógica; conteúdo oficial nunca deve ser reescrito pelo app. */
+  /** Origem pedagógica; conteúdo da fonte editorial nunca deve ser reescrito pelo app. */
   origin?: 'official' | 'authorial' | 'ai_generated';
   officialQuestionId?: string;
+  questionSetVersion?: string;
   moduleId?: string;
   conceptIds?: string[];
   sourceRefs?: string[];
@@ -34,6 +35,14 @@ export interface QuizQuestion {
 export interface ModuleSection {
   title: string;
   contentMarkdown: string;
+  /** Conteúdo aprofundado publicado separadamente e carregado apenas quando o aluno o abre. */
+  contentUrl?: string;
+  summary?: string;
+  lessonId?: string;
+  groupId?: string;
+  canonicalTopicId?: string;
+  estimatedMinutes?: number;
+  searchTerms?: string[];
   /** Rastreabilidade editorial da revisão integral do corpus. */
   editorial?: {
     reviewVersion: string;
@@ -42,7 +51,11 @@ export interface ModuleSection {
       | 'new_module_after_architecture_gap'
       | 'correct'
       | 'expand'
-      | 'new_section';
+      | 'new_section'
+      | 'replace_from_pedagogical_source';
+    integrationUnitId?: string;
+    authority?: Record<string, unknown>;
+    sourceProvider?: string;
     evidenceRefs: Array<{
       sourceId: string;
       sourceTitle: string;
@@ -100,14 +113,15 @@ export interface ModuleKnowledgeMeta {
 }
 
 export interface ModuleData {
-  id: string; // e.g., 'mod0', 'mod1', ..., 'mod15', 'simulado', 'apendice-a'
+  id: string; // 'mod0' ... 'mod14' ou 'simulado'
   num: number | string;
   title: string;
   subtitle: string;
   description: string;
+  estimatedMinutes?: number;
   sections: ModuleSection[];
   questions?: QuizQuestion[];
-  /** Proveniência gerada pela Base Canônica SuVeCA 2.0. */
+  /** Proveniência da fonte editorial das aulas 00–14. */
   knowledge?: ModuleKnowledgeMeta;
 }
 
@@ -232,7 +246,7 @@ export interface SimuladoAttempt {
   byTopic: Record<string, TopicAttemptStats>;
   /** Respostas brutas enviadas para validação do placar no backend. */
   answerMap?: Record<string, string>;
-  questionSetVersion?: 'official-simulado-v1' | 'official-corpus-v1' | 'ai-generated-v1';
+  questionSetVersion?: string;
 }
 
 export interface ChecklistItem {

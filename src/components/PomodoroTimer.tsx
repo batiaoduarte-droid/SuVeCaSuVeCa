@@ -649,7 +649,7 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
                   onChange={(e) => setSelectedTopicModuleId(e.target.value)}
                   className="w-full rounded-lg border border-slate-300 bg-white p-2.5 text-sm font-medium text-slate-800 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                 >
-                  {MODULES_DATA.map((module) => (
+                  {MODULES_DATA.filter((module) => /^mod\d+$/.test(module.id)).map((module) => (
                     <option key={module.id} value={module.id}>
                       {module.title}
                     </option>
@@ -678,7 +678,7 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
                   onClick={() => setUseCustomTopic(false)}
                   className="text-xs font-semibold text-slate-600 hover:text-slate-800 hover:underline"
                 >
-                  ← Selecionar dos módulos da apostila
+                  ← Selecionar das aulas da apostila
                 </button>
               </div>
             )}

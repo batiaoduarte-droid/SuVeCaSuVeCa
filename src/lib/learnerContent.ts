@@ -1,7 +1,6 @@
 const technicalReferencePatterns = [
-  /\[(?:PASSAGE|QUESTION):[^\]]+\]/gi,
-  /\bKB:[a-z0-9._:#/-]+\b/gi,
-  /\b(?:PASSAGE|QUESTION):[a-z0-9._:#/-]+\b/gi,
+  /\[(?:PASSAGE|QUESTION|KB|EDITORIAL|CORPUS):[^\]]+\]/gi,
+  /\b(?:PASSAGE|QUESTION|KB|EDITORIAL|CORPUS):[a-z0-9._:#/-]+\b/gi,
 ];
 
 /**
@@ -23,6 +22,6 @@ export const toLearnerFacingContent = (value: unknown) => {
 };
 
 export const containsTechnicalReference = (value: unknown) =>
-  /\[(?:PASSAGE|QUESTION):|\b(?:PASSAGE|QUESTION|KB):/i.test(
+  /\[(?:PASSAGE|QUESTION|KB|EDITORIAL|CORPUS):|\b(?:PASSAGE|QUESTION|KB|EDITORIAL|CORPUS):/i.test(
     typeof value === 'string' ? value : '',
   );

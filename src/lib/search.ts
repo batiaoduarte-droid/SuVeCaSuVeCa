@@ -141,6 +141,7 @@ export const moduleMatchesSearch = (module: ModuleData, query: string) => {
     ...module.sections.flatMap((section) => [
       section.title,
       section.contentMarkdown,
+      ...(section.searchTerms || []),
       ...(section.sourceConceptIds || []),
       ...(section.limitsAndExceptions || []),
       ...(section.contrasts || []),
@@ -158,7 +159,12 @@ export const getModuleSearchSnippet = (
   const candidates = [
     module.subtitle,
     module.description,
-    ...module.sections.flatMap((section) => [section.title, toPlainText(section.contentMarkdown)]),
+    ...module.sections.flatMap((section) => [
+      section.title,
+      section.summary || '',
+      toPlainText(section.contentMarkdown),
+      ...(section.searchTerms || []),
+    ]),
   ];
   const matchingCandidate = candidates.find((candidate) => hasSearchMatch(candidate, query));
 

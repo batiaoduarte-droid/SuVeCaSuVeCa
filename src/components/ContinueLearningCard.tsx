@@ -31,7 +31,7 @@ export function ContinueLearningCard({
           <p className="mt-1 text-sm leading-6 text-slate-700">
             {dueCount > 0
               ? `${dueCount} revisão${dueCount === 1 ? '' : 'ões'} vencida${dueCount === 1 ? '' : 's'} antes do próximo bloco.`
-              : 'Retome o módulo atual e conclua uma prática para consolidar o aprendizado.'}
+              : 'Retome a aula atual e conclua uma prática para consolidar o aprendizado.'}
           </p>
         </div>
         <div className="flex flex-col gap-2 sm:min-w-56">
@@ -41,7 +41,7 @@ export function ContinueLearningCard({
             </button>
           )}
           <button type="button" onClick={onContinueModule} className="button-secondary min-h-[44px] justify-center">
-            <BookOpen className="h-4 w-4 text-teal-700" /> Continuar módulo <ChevronRight className="h-4 w-4" />
+            <BookOpen className="h-4 w-4 text-teal-700" /> Continuar aula <ChevronRight className="h-4 w-4" />
           </button>
         </div>
       </div>

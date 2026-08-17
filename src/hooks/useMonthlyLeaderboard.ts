@@ -10,6 +10,7 @@ import {
   setDoc,
 } from 'firebase/firestore';
 import { db, type User } from '../lib/firebase';
+import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
 
 export interface LeaderboardAttempt {
   completedAt?: string;
@@ -26,6 +27,8 @@ export interface MonthlyLeaderboardEntry {
 }
 
 const LEADERBOARD_LIMIT = 10;
+const CURRICULUM_BUILD_ID = PEDAGOGICAL_KNOWLEDGE_BUILD.buildId;
+const leaderboardDocumentKey = (monthKey: string) => `${monthKey}_${CURRICULUM_BUILD_ID}`;
 
 const asNonNegativeInteger = (value: unknown): number => {
   const numericValue = typeof value === 'number' ? value : Number(value);
@@ -78,6 +81,7 @@ export const useMonthlyLeaderboard = ({
 }: UseMonthlyLeaderboardOptions) => {
   const userId = user?.uid || null;
   const monthKey = useMemo(() => getLeaderboardMonthKey(), []);
+  const leaderboardKey = useMemo(() => leaderboardDocumentKey(monthKey), [monthKey]);
   const [entries, setEntries] = useState<MonthlyLeaderboardEntry[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -123,7 +127,7 @@ export const useMonthlyLeaderboard = ({
     setIsLoading(true);
     setError(null);
     const leaderboardQuery = query(
-      collection(db, 'leaderboards', monthKey, 'entries'),
+      collection(db, 'leaderboards', leaderboardKey, 'entries'),
       orderBy('correctAnswers', 'desc'),
       limit(entryLimit)
     );
@@ -153,7 +157,7 @@ export const useMonthlyLeaderboard = ({
         setIsLoading(false);
       }
     );
-  }, [entryLimit, monthKey, userId]);
+  }, [entryLimit, leaderboardKey, userId]);
 
   useEffect(() => {
     if (!userId) {
@@ -164,7 +168,7 @@ export const useMonthlyLeaderboard = ({
     // This record is written by the backend only after it recalculates the
     // attempt from the answer map sent by the client.
     return onSnapshot(
-      doc(db, 'leaderboards', monthKey, 'entries', userId),
+      doc(db, 'leaderboards', leaderboardKey, 'entries', userId),
       (snapshot) => {
         setCorrectAnswers(
           snapshot.exists()
@@ -177,7 +181,7 @@ export const useMonthlyLeaderboard = ({
         setError('Não foi possível carregar sua pontuação validada agora.');
       }
     );
-  }, [monthKey, userId]);
+  }, [leaderboardKey, userId]);
 
   const updateShareFirstName = useCallback(
     (shouldShare: boolean) => {

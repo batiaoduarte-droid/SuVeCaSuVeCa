@@ -445,10 +445,8 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
       timeRemainingSeconds: isTimerEnabled ? secondsLeft : undefined,
       byTopic,
       answerMap: { ...userAnswers },
-      questionSetVersion: isRankedCanonicalQuestionSet
-        ? 'official-simulado-v1'
-        : isOfficialQuestionSet
-        ? 'official-corpus-v1'
+      questionSetVersion: isOfficialQuestionSet && sharedQuestionSetVersion
+        ? sharedQuestionSetVersion
         : questions.some((question) => question.origin === 'ai_generated')
         ? 'ai-generated-v1'
         : undefined,
@@ -461,12 +459,12 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
   }, [secondsLeft, isSubmitted, isTimerEnabled, isTimerRunning]);
 
   const currentQ = questions[currentQIndex];
-  const isOfficialQuestion = /^\d+$/.test(currentQ?.id || '');
-  const isOfficialQuestionSet = questions.length > 0 && questions.every((question) => /^\d+$/.test(question.id));
-  const isRankedCanonicalQuestionSet = questions.length === 20 && questions.every(
-    (question, index) => question.id === `sim-${index + 1}`
-  );
-
+  const isOfficialQuestion = currentQ?.origin === 'official';
+  const isOfficialQuestionSet = questions.length > 0 && questions.every((question) => question.origin === 'official');
+  const questionSetVersions = new Set(questions.map((question) => question.questionSetVersion).filter(Boolean));
+  const sharedQuestionSetVersion = questionSetVersions.size === 1 && questions.every((question) => question.questionSetVersion)
+    ? [...questionSetVersions][0]
+    : undefined;
   return (
     <div className="space-y-8 pb-16 max-w-5xl mx-auto">
       {/* Top Mode Header */}
@@ -494,7 +492,7 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
-            {isOfficialQuestionSet ? 'Simulado oficial' : 'Simulado autoral'} ({questions.length} Questões)
+            {isOfficialQuestionSet ? 'Simulado editorial' : 'Simulado autoral'} ({questions.length} Questões)
           </button>
           <button
             onClick={() => setActiveTab('generator')}
@@ -698,7 +696,7 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
                 <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 text-center space-y-1">
                   <span className="text-xs text-slate-500 font-medium">Diagnóstico</span>
                   <div className="text-xs font-bold text-slate-900 mt-1">
-                    {percentage >= 80 ? 'Excelente (Zona de Aprovado)' : percentage >= 60 ? 'Bom (Necessita revisão pontual)' : 'Atenção aos Módulos Básicos'}
+                    {percentage >= 80 ? 'Excelente (Zona de Aprovado)' : percentage >= 60 ? 'Bom (Necessita revisão pontual)' : 'Atenção às aulas fundamentais'}
                   </div>
                 </div>
               </div>
@@ -835,7 +833,7 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
                 <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 text-xs sm:text-sm">
                   <div className="flex items-center justify-between border-b border-slate-200 pb-2">
                     <span className="font-bold text-slate-900">
-                      {isOfficialQuestion ? 'Solução oficial preservada:' : 'Gabarito comentado autoral:'}
+                      {isOfficialQuestion ? 'Comentário editorial preservado:' : 'Gabarito comentado autoral:'}
                     </span>
                     {userAnswers[currentQ.id] !== currentQ.correctAnswer && (
                       <button

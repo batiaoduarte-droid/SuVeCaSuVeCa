@@ -1,13 +1,9 @@
-import { KNOWLEDGE_BUILD, KNOWLEDGE_INDEX } from '../data/knowledgeIndex.generated';
+import {
+  PEDAGOGICAL_KNOWLEDGE_BUILD,
+  PEDAGOGICAL_KNOWLEDGE_INDEX,
+} from '../data/pedagogicalKnowledge.generated';
 
-export type KnowledgeRecord = (typeof KNOWLEDGE_INDEX)[number];
-
-export interface KnowledgeSourceFact {
-  id?: string;
-  title?: string;
-  keywords?: string[];
-  sourceFact?: string;
-}
+export type KnowledgeRecord = (typeof PEDAGOGICAL_KNOWLEDGE_INDEX)[number];
 
 const normalize = (value: string) =>
   value
@@ -21,55 +17,60 @@ const normalize = (value: string) =>
 const STOP_WORDS = new Set([
   'a', 'ao', 'aos', 'as', 'com', 'como', 'da', 'das', 'de', 'do', 'dos', 'e',
   'em', 'na', 'nas', 'no', 'nos', 'o', 'os', 'ou', 'para', 'por', 'que', 'se',
-  'um', 'uma', 'uma', 'isso', 'essa', 'esse', 'esta', 'este',
+  'um', 'uma', 'isso', 'essa', 'esse', 'esta', 'este', 'qual', 'quais',
 ]);
 
 const tokens = (value: string) =>
-  [...new Set(normalize(value).split(' ').filter((token) => token.length > 2 && !STOP_WORDS.has(token)))];
+  [...new Set(
+    normalize(value)
+      .split(' ')
+      .filter((token) => token.length > 2 && !STOP_WORDS.has(token)),
+  )];
 
 const recordSearchFields = (record: KnowledgeRecord) => ({
   title: normalize(record.title),
   routing: normalize(record.routingTerms.join(' ')),
-  normalizedRule: normalize(
-    `${record.normalizedRule.description} ${record.normalizedRule.sections
-      .map((section) => `${section.title} ${section.content}`)
-      .join(' ')}`
-  ),
-  canonicalProfile: normalize([
-    ...record.canonicalProfile.normalizedClaims,
-    ...record.canonicalProfile.limitsAndExceptions,
-    ...record.canonicalProfile.examTraps,
-  ].join(' ')),
-  sources: normalize(
-    (record.sourceFacts as unknown as KnowledgeSourceFact[])
-      .map((source) => `${source.title || ''} ${(source.keywords || []).join(' ')}`)
-      .join(' ')
+  objective: normalize(record.objective),
+  sections: normalize(
+    record.sections.map((section) => `${section.title} ${section.content}`).join(' '),
   ),
 });
 
+/**
+ * Recupera unidades da fonte editorial nova. A busca privilegia o tópico e os
+ * termos de roteamento; o corpo didático funciona como recall complementar.
+ */
 export const retrieveKnowledge = (query: string, limit = 3): KnowledgeRecord[] => {
   const normalizedQuery = normalize(query);
   const queryTokens = tokens(query);
-  const ranked = KNOWLEDGE_INDEX.map((record) => {
+  const safeLimit = Math.max(1, limit);
+
+  const ranked = PEDAGOGICAL_KNOWLEDGE_INDEX.map((record) => {
     const fields = recordSearchFields(record);
     let score = 0;
 
-    if (normalizedQuery.length > 3 && fields.title.includes(normalizedQuery)) score += 40;
-    if (normalizedQuery.length > 3 && fields.routing.includes(normalizedQuery)) score += 32;
-    for (const token of queryTokens) {
-      if (fields.title.includes(token)) score += 9;
-      if (fields.routing.includes(token)) score += 7;
-      if (fields.canonicalProfile.includes(token)) score += 6;
-      if (fields.normalizedRule.includes(token)) score += 3;
-      if (fields.sources.includes(token)) score += 2;
-    }
-    return { record, score };
-  }).sort((first, second) => second.score - first.score);
+    if (normalizedQuery.length > 3 && fields.title.includes(normalizedQuery)) score += 48;
+    if (normalizedQuery.length > 3 && fields.routing.includes(normalizedQuery)) score += 36;
+    if (normalizedQuery.length > 3 && fields.objective.includes(normalizedQuery)) score += 18;
 
-  const matches = ranked.filter((item) => item.score > 0).slice(0, Math.max(1, limit));
+    for (const token of queryTokens) {
+      if (fields.title.includes(token)) score += 12;
+      if (fields.routing.includes(token)) score += 9;
+      if (fields.objective.includes(token)) score += 5;
+      if (fields.sections.includes(token)) score += 2;
+    }
+
+    return { record, score };
+  }).sort((first, second) => second.score - first.score || first.record.id.localeCompare(second.record.id));
+
+  const matches = ranked.filter((item) => item.score > 0).slice(0, safeLimit);
   if (matches.length) return matches.map((item) => item.record);
 
-  return KNOWLEDGE_INDEX.filter((record) => ['mod0', 'mod7', 'mod8'].includes(record.moduleId)).slice(0, limit);
+  // Revisão cumulativa é a melhor porta de entrada quando a pergunta não contém
+  // termos suficientes para apontar um subtópico específico.
+  return PEDAGOGICAL_KNOWLEDGE_INDEX
+    .filter((record) => record.lessonId === 'A14')
+    .slice(0, safeLimit);
 };
 
 const compact = (value: string, maxLength: number) => {
@@ -77,55 +78,31 @@ const compact = (value: string, maxLength: number) => {
   return text.length <= maxLength ? text : `${text.slice(0, maxLength).trim()}…`;
 };
 
-/** Produces a bounded, provenance-aware context for Gemini/RAG prompts. */
+/** Produz contexto limitado, didático e com proveniência para Professor/RAG. */
 export const formatKnowledgeContext = (records: readonly KnowledgeRecord[]) => {
   const body = records.map((record) => {
-    const normalizedRules = record.normalizedRule.sections
-      .slice(0, 3)
-      .map((section) => `- ${section.title}: ${compact(section.content, 900)}`)
-      .join('\n');
-    const provenance = (record.sourceFacts as unknown as KnowledgeSourceFact[])
-      .slice(0, 4)
-      .map((source) => `- [KB:${source.id || ''}] ${source.title || ''}`)
-      .join('\n');
-    const canonicalClaims = record.canonicalProfile.normalizedClaims
-      .slice(0, 8)
-      .map((claim) => `- ${compact(claim, 520)}`)
-      .join('\n');
-    const limits = record.canonicalProfile.limitsAndExceptions
-      .slice(0, 6)
-      .map((limit) => `- ${compact(limit, 420)}`)
-      .join('\n');
-    const traps = record.canonicalProfile.examTraps
+    const sections = record.sections
       .slice(0, 5)
-      .map((trap) => `- ${compact(trap, 320)}`)
+      .map((section) => `- ${section.title}: ${compact(section.content, 1_050)}`)
       .join('\n');
-    const evidenceRefs = record.canonicalProfile.evidenceRefs
+    const sourceRefs = record.sourceRefs
       .slice(0, 8)
-      .map((ref) => `- [PASSAGE:${ref}]`)
+      .map((reference) => `- [${reference}]`)
       .join('\n');
 
     return [
-      `REGISTRO ${record.id} — ${record.title}`,
-      `Estado editorial: ${record.audit.editorialStatus}; suporte: ${record.audit.structuralStatus}.`,
-      'REGRA NORMALIZADA:',
-      normalizedRules,
-      'PERFIL CANÔNICO V3 — AFIRMAÇÕES ADJUDICADAS:',
-      canonicalClaims || '- Sem afirmação específica; use apenas a regra normalizada da seção.',
-      'LIMITES E EXCEÇÕES V3:',
-      limits || '- Nenhum limite específico recuperado.',
-      'PEGADINHAS DE PROVA V3:',
-      traps || '- Nenhuma pegadinha específica recuperada.',
-      'INTERPRETAÇÃO SuVeCA:',
-      record.suvecaInterpretation.subtitle,
-      'PROVENIÊNCIA (títulos de fontes; não usar como regra sem o perfil adjudicado):',
-      provenance,
-      'PASSAGENS AUDITADAS:',
-      evidenceRefs,
+      `UNIDADE EDITORIAL — ${record.title}`,
+      `Aula: ${record.lessonId}; grupo: ${record.groupId}; módulo do app: ${record.moduleId}.`,
+      `Objetivo didático: ${compact(record.objective, 900)}`,
+      'CONTEÚDO PEDAGÓGICO VALIDADO:',
+      sections,
+      'AUTORIDADE: corpus_apostila para a base normativa; Integracao_Pedagogica para explicação, progressão cognitiva e aplicação.',
+      'REFERÊNCIAS INTERNAS (cite somente no campo técnico sourceRefs; não mostre ao estudante):',
+      sourceRefs,
     ].join('\n');
   }).join('\n\n');
 
-  return `BASE CANÔNICA SuVeCA ${KNOWLEDGE_BUILD.schemaVersion} (build ${KNOWLEDGE_BUILD.buildId})\n${body}`;
+  return `BASE EDITORIAL SuVeCa ${PEDAGOGICAL_KNOWLEDGE_BUILD.schemaVersion} (build ${PEDAGOGICAL_KNOWLEDGE_BUILD.buildId})\n${body}`;
 };
 
-export { KNOWLEDGE_BUILD };
+export const KNOWLEDGE_BUILD = PEDAGOGICAL_KNOWLEDGE_BUILD;

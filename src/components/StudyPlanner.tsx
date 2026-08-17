@@ -13,29 +13,18 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import { ProgressBar } from './ui/ProgressBar';
+import { MODULES_DATA } from '../data/modulesData';
+import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
 
-const INITIAL_CHECKLIST: ChecklistItem[] = [
-  { id: 'chk_1', topic: 'Compreensão e interpretação de textos de diferentes gêneros', moduleNum: 1, status: 'nao_iniciado' },
-  { id: 'chk_2', topic: 'Reconhecimento de tipos e gêneros textuais', moduleNum: 1, status: 'nao_iniciado' },
-  { id: 'chk_3', topic: 'Dominío da coesão e coerência textual (Anáfora, Catáfora, Elipse)', moduleNum: 2, status: 'nao_iniciado' },
-  { id: 'chk_4', topic: 'Relações de sentido, homônimos e parônimos (Ratificar x Retificar)', moduleNum: 2, status: 'nao_iniciado' },
-  { id: 'chk_5', topic: 'Domínio da ortografia oficial e regras do Novo Acordo Ortográfico', moduleNum: 3, status: 'nao_iniciado' },
-  { id: 'chk_6', topic: 'Acentuação gráfica (oxítonas, paroxítonas, proparoxítonas e hiatos)', moduleNum: 3, status: 'nao_iniciado' },
-  { id: 'chk_7', topic: 'Emprego das classes de palavras e flexão nominal e verbal', moduleNum: 4, status: 'nao_iniciado' },
-  { id: 'chk_8', topic: 'Emprego de pronomes pessoais e do pronome relativo CUJO/ONDE', moduleNum: 5, status: 'nao_iniciado' },
-  { id: 'chk_9', topic: 'Emprego de tempos e modos verbais e correlação verbal', moduleNum: 6, status: 'nao_iniciado' },
-  { id: 'chk_10', topic: 'Sintaxe da oração simples e identificação do Sujeito (Método SuVeCA)', moduleNum: 7, status: 'nao_iniciado' },
-  { id: 'chk_11', topic: 'Distinção entre Complemento Nominal e Adjunto Adnominal', moduleNum: 8, status: 'nao_iniciado' },
-  { id: 'chk_12', topic: 'Concordância verbal e nominal (Verbos impessoais, partitivos, porcentagem)', moduleNum: 9, status: 'nao_iniciado' },
-  { id: 'chk_13', topic: 'Regência verbal e nominal (Assistir, aspirar, visar, preferir)', moduleNum: 10, status: 'nao_iniciado' },
-  { id: 'chk_14', topic: 'Emprego do sinal indicativo de crase (Algoritmo da Crase)', moduleNum: 10, status: 'nao_iniciado' },
-  { id: 'chk_15', topic: 'Sintaxe do período composto (Orações coordenadas e subordinadas)', moduleNum: 11, status: 'nao_iniciado' },
-  { id: 'chk_16', topic: 'Domínio da pontuação e proibição de vírgula entre Sujeito e Verbo', moduleNum: 12, status: 'nao_iniciado' },
-  { id: 'chk_17', topic: 'Colocação pronominal (Próclise, ênclise e mesóclise)', moduleNum: 13, status: 'nao_iniciado' },
-  { id: 'chk_18', topic: 'Funções sintático-semânticas das palavras SE e QUE', moduleNum: 13, status: 'nao_iniciado' },
-  { id: 'chk_19', topic: 'Reescrita e equivalência de frases e parágrafos', moduleNum: 14, status: 'nao_iniciado' },
-  { id: 'chk_20', topic: 'Técnicas para prova discursiva e redação técnica com Método SuVeCA', moduleNum: 15, status: 'nao_iniciado' },
-];
+const CHECKLIST_STORAGE_KEY = `suveca_checklist_editorial_${PEDAGOGICAL_KNOWLEDGE_BUILD.buildId}`;
+const INITIAL_CHECKLIST: ChecklistItem[] = MODULES_DATA
+  .filter((module) => /^mod\d+$/.test(module.id))
+  .map((module) => ({
+    id: `editorial-${module.id}`,
+    topic: module.title,
+    moduleNum: Number(module.num),
+    status: 'nao_iniciado' as const,
+  }));
 
 export const StudyPlanner: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'checklist' | 'weeks' | 'essay'>('checklist');
@@ -57,7 +46,7 @@ export const StudyPlanner: React.FC = () => {
   };
 
   useEffect(() => {
-    const saved = localStorage.getItem('suveca_checklist_data');
+    const saved = localStorage.getItem(CHECKLIST_STORAGE_KEY);
     if (saved) {
       try {
         setChecklist(JSON.parse(saved));
@@ -81,7 +70,7 @@ export const StudyPlanner: React.FC = () => {
       item.id === id ? { ...item, status } : item
     );
     setChecklist(updated);
-    localStorage.setItem('suveca_checklist_data', JSON.stringify(updated));
+    localStorage.setItem(CHECKLIST_STORAGE_KEY, JSON.stringify(updated));
   };
 
   const masteredCount = checklist.filter((c) => c.status === 'dominado').length;
@@ -144,7 +133,7 @@ export const StudyPlanner: React.FC = () => {
               : 'text-slate-600 hover:text-slate-900'
           }`}
         >
-          Guia Discursiva / Redação
+          Ciclo de revisão
         </button>
         </div>
         <button type="button" onClick={() => scrollTabs(1)} disabled={!tabScroll.right} className="ml-1 flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 shadow-xs disabled:opacity-30" aria-label="Ver próximas abas"><ChevronRight className="h-4 w-4" /></button>
@@ -165,7 +154,7 @@ export const StudyPlanner: React.FC = () => {
               >
                 <div className="flex items-start sm:items-center space-x-3 flex-1 min-w-0">
                   <span className="text-[10px] font-bold text-teal-800 bg-teal-50 px-2 py-0.5 rounded border border-teal-200 shrink-0">
-                    M{item.moduleNum}
+                    Aula {String(item.moduleNum).padStart(2, '0')}
                   </span>
                   <span className="font-semibold text-slate-800 leading-snug">{item.topic}</span>
                 </div>
@@ -201,14 +190,14 @@ export const StudyPlanner: React.FC = () => {
       {activeTab === 'weeks' && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[
-            { sem: 1, mods: 'Módulos 0, 1 e 2', f: 'Interpretação e Semântica', tasks: ['Diagnóstico inicial', '30 questões de interpretação', 'Treino de anáfora e catáfora'] },
-            { sem: 2, mods: 'Módulos 3 e 4', f: 'Ortografia, Acentuação e Morfologia', tasks: ['Mapa do Novo Acordo', 'Regra do Hífen', 'Classes em contexto'] },
-            { sem: 3, mods: 'Módulos 5 e 6', f: 'Pronomes e Verbos', tasks: ['Regra de CUJO e ONDE', 'Correlação verbal no Subjuntivo', '30 questões de verbos'] },
-            { sem: 4, mods: 'Módulos 7 e 8', f: 'Sintaxe SuVeCA e CN x AA', tasks: ['Desmontagem de 30 orações SuVeCA', 'Duelo Complemento Nominal vs Adjunto'] },
-            { sem: 5, mods: 'Módulo 9', f: 'Concordância Verbal e Nominal', tasks: ['Verbos impessoais (haver/fazer)', 'Concordância com SE', 'Porcentagens e partitivos'] },
-            { sem: 6, mods: 'Módulo 10', f: 'Regência e Crase', tasks: ['Algoritmo da Crase em 3 passos', 'Regência dos verbos chave'] },
-            { sem: 7, mods: 'Módulos 11, 12 e 13', f: 'Período, Pontuação e Colocação', tasks: ['Regras de Próclise/Ênclise', 'Proibição da vírgula entre Sujeito e Verbo'] },
-            { sem: 8, mods: 'Módulos 14 e 15 + Simulado', f: 'Reescrita, Simulado e Discursiva', tasks: ['Simulado Final de 20 questões', 'Revisão do Caderno de Erros', 'Treino de Redação SuVeCA'] },
+            { sem: 1, mods: 'Aulas 00 e 01', f: 'Ortografia e Classes de Palavras I', tasks: ['Diagnóstico de ortografia', 'Acentuação, hífen e porquês', 'Classes variáveis em contexto'] },
+            { sem: 2, mods: 'Aulas 02 e 03', f: 'Conectores e Pronomes', tasks: ['Relações das preposições e conjunções', 'Referenciação pronominal', 'Colocação pronominal em contexto'] },
+            { sem: 3, mods: 'Aulas 04 e 05', f: 'Sistema Verbal', tasks: ['Tempos, modos e formas nominais', 'Correlação e vozes verbais', 'Transitividade e funções da partícula se'] },
+            { sem: 4, mods: 'Aulas 06 e 07', f: 'Sintaxe da Oração e do Período', tasks: ['Reconstrução da ordem direta', 'Termos da oração', 'Coordenação e subordinação'] },
+            { sem: 5, mods: 'Aulas 08 e 09', f: 'Pontuação e Concordância', tasks: ['Pontuação guiada pela estrutura sintática', 'Concordância verbal', 'Concordância nominal e casos especiais'] },
+            { sem: 6, mods: 'Aula 10', f: 'Regência e Crase', tasks: ['Regência por acepção e estrutura', 'Procedimento decisório da crase', 'Questões cumulativas da aula'] },
+            { sem: 7, mods: 'Aulas 11, 12 e 13', f: 'Texto, Sentido e Interpretação', tasks: ['Coesão, coerência e reescrita', 'Relações semânticas e figuras', 'Recorrência, inferência e tipologia'] },
+            { sem: 8, mods: 'Aula 14 + Simulado', f: 'Revisão Cumulativa', tasks: ['Revisão ativa pelos temas prioritários', 'Simulado editorial de 20 questões', 'Revisão do Caderno de Erros'] },
           ].map((w) => (
             <div
               key={w.sem}
@@ -240,35 +229,35 @@ export const StudyPlanner: React.FC = () => {
         <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-6">
           <div className="space-y-2 border-b border-slate-100 pb-4">
             <span className="text-xs font-bold text-teal-800 bg-teal-50 px-2.5 py-0.5 rounded-full border border-teal-200">
-              Guia da Prova Discursiva / Redação
+              Integração pedagógica das aulas 00–14
             </span>
             <h2 className="text-xl font-bold text-slate-900 tracking-tight">
-              Como construir parágrafos com o Método SuVeCA
+              Como transformar estudo em domínio recuperável
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Em provas discursivas de concursos, o avaliador desconta pontos por erros de concordância, pontuação (como vírgula separando sujeito) e imprecisão de conectores.
+              Use a apostila como percurso principal e combine cada aula com suas expansões didáticas, roteiros de decisão, questões editoriais, flashcards e registros do Caderno de Erros.
             </p>
           </div>
 
           <div className="space-y-4 text-xs sm:text-sm text-slate-700 leading-relaxed">
             <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
               <h3 className="font-bold text-teal-900 text-sm">
-                Fórmula Tática de 4 Etapas do Parágrafo SuVeCA:
+                Ciclo de aprendizagem em quatro movimentos
               </h3>
               <p className="text-slate-800 font-semibold text-xs bg-white p-3 rounded-lg border border-slate-200 leading-relaxed">
-                TÓPICO FRASAL (Ideia Central) → EXPLICAÇÃO FUNDAMENTADA → EVIDÊNCIA OU EXEMPLO → CONEXÃO CONCLUSIVA
+                COMPREENDER A REGRA → APLICAR O PROCEDIMENTO → RECUPERAR SEM CONSULTA → CORRIGIR E REVISAR
               </p>
             </div>
 
             <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
               <h3 className="font-bold text-emerald-900 text-sm">
-                Checklist de Revisão Rápida Antes de Entregar a Folha:
+                Checklist para encerrar uma sessão
               </h3>
               <ul className="list-disc list-inside space-y-1.5 text-slate-700 font-medium">
-                <li>Verifique se nenhum sujeito está separado do verbo por vírgula simples.</li>
-                <li>Confirme a concordância em orações com verbo haver ou fazer.</li>
-                <li>Confirme a regência dos relativos ("a norma a que obedecemos").</li>
-                <li>Verifique a crase antes de horas e palavras femininas.</li>
+                <li>Explique com suas palavras a regra decisiva estudada.</li>
+                <li>Resolva ao menos uma questão sem consultar o gabarito.</li>
+                <li>Registre o erro pelo motivo, não apenas pela resposta correta.</li>
+                <li>Agende a recuperação ativa por flashcard ou roteiro de decisão.</li>
               </ul>
             </div>
           </div>

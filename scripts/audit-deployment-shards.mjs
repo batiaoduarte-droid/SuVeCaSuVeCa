@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 
@@ -7,136 +8,105 @@ const ROOT = process.cwd();
 const resolve = (...segments) => path.resolve(ROOT, ...segments);
 const sha256 = (value) => createHash('sha256').update(value).digest('hex');
 const readJson = async (...segments) => JSON.parse(await readFile(resolve(...segments), 'utf8'));
+const getId = (record) => String(record?.id ?? record?.question_id ?? '');
 const errors = [];
-
 const check = (condition, message) => {
   if (!condition) errors.push(message);
 };
 
-const getId = (record) => String(record?.id ?? record?.question_id ?? '');
-
 const auditFile = async (baseDirectory, descriptor) => {
-  const buffer = await readFile(resolve(baseDirectory, descriptor.file));
+  const file = resolve(baseDirectory, descriptor.file);
+  const base = resolve(baseDirectory);
+  check(file.startsWith(`${base}${path.sep}`), `${descriptor.file}: caminho fora da base.`);
+  const buffer = await readFile(file);
   check(buffer.length === descriptor.bytes, `${descriptor.file}: bytes divergentes.`);
   check(sha256(buffer) === descriptor.sha256, `${descriptor.file}: SHA-256 divergente.`);
   return buffer;
 };
 
-const auditOfficialQuestions = async () => {
-  const base = path.join('public', 'knowledge');
-  const manifest = await readJson(base, 'official-questions.manifest.json');
-  const raw = [];
-  const normalized = [];
-  const manifestIds = [];
-  for (const shard of manifest.shards) {
-    const [rawBuffer, normalizedBuffer] = await Promise.all([
-      auditFile(base, shard.raw),
-      auditFile(base, shard.normalized),
-    ]);
-    const rawItems = JSON.parse(rawBuffer.toString('utf8'));
-    const normalizedItems = JSON.parse(normalizedBuffer.toString('utf8'));
-    check(rawItems.length === shard.count, `Shard ${shard.part}: contagem bruta divergente.`);
-    check(normalizedItems.length === shard.count, `Shard ${shard.part}: contagem normalizada divergente.`);
-    check(JSON.stringify(rawItems.map(getId)) === JSON.stringify(shard.questionIds), `Shard ${shard.part}: IDs brutos divergentes.`);
-    check(JSON.stringify(normalizedItems.map(getId)) === JSON.stringify(shard.questionIds), `Shard ${shard.part}: IDs normalizados divergentes.`);
-    raw.push(...rawItems);
-    normalized.push(...normalizedItems);
-    manifestIds.push(...shard.questionIds);
-  }
+const base = path.join('public', 'knowledge');
+const manifest = await readJson(base, 'official-questions.manifest.json');
+const indexPayload = await readJson(base, 'official-question-index.json');
+const expectedTotal = Number(indexPayload.expectedTotal);
+const raw = [];
+const normalized = [];
+const manifestIds = [];
 
-  const indexPayload = await readJson(base, 'official-question-index.json');
-  const indexIds = indexPayload.items.map((item) => String(item.questionId));
-  const generatedKeySource = await readFile(resolve('functions', 'src', 'officialCorpus.generated.ts'), 'utf8');
-  const generatedKeyMatch = /export const OFFICIAL_CORPUS_ANSWER_KEY = ([\s\S]*?) as const;/.exec(generatedKeySource);
-  const generatedKey = generatedKeyMatch ? JSON.parse(generatedKeyMatch[1]) : {};
-  const expectedKey = Object.fromEntries(indexPayload.items.map((item) => [String(item.questionId), item.officialProjection.correctAnswer]));
-  check(raw.length === 372, `Corpus bruto particionado: ${raw.length}/372.`);
-  check(normalized.length === 372, `Corpus normalizado particionado: ${normalized.length}/372.`);
-  check(indexIds.length === 372, `Índice oficial: ${indexIds.length}/372.`);
-  check(new Set(manifestIds).size === 372, `IDs únicos particionados: ${new Set(manifestIds).size}/372.`);
-  check(JSON.stringify(raw.map(getId)) === JSON.stringify(normalized.map(getId)), 'Ordem entre bruto e normalizado divergente.');
-  check(indexIds.every((id) => manifestIds.includes(id)), 'O índice contém IDs ausentes das partições.');
-  check(JSON.stringify(generatedKey) === JSON.stringify(expectedKey), 'Gabarito server-side do corpus oficial diverge do índice preservado.');
-  check(manifest.totals.shards === manifest.shards.length, 'Quantidade de shards divergente no manifesto.');
+check(Number.isInteger(expectedTotal) && expectedTotal >= 1000, `Total editorial inválido: ${expectedTotal}.`);
+check(manifest.kind === 'suveca-editorial-question-shards', `Tipo de manifesto inesperado: ${manifest.kind}.`);
+check(manifest.expectedTotal === expectedTotal, 'Total esperado diverge entre índice e manifesto.');
+check(manifest.buildId === indexPayload.buildId, 'Build diverge entre índice e manifesto.');
+check(manifest.questionSetVersion === indexPayload.questionSetVersion, 'Versão diverge entre índice e manifesto.');
+check(indexPayload.questionSetVersion === `editorial-corpus-${indexPayload.buildId}`, 'Versão editorial não deriva do build.');
+check(Array.isArray(manifest.shards) && manifest.shards.length === manifest.totals?.shards, 'Quantidade de shards divergente no manifesto.');
 
-  const rawSourcePath = resolve(base, manifest.sources.raw.file);
-  const normalizedSourcePath = resolve(base, manifest.sources.normalized.file);
-  try {
-    const [rawSource, normalizedSource] = await Promise.all([readFile(rawSourcePath), readFile(normalizedSourcePath)]);
-    check(sha256(rawSource) === manifest.sources.raw.sha256, 'Hash do monólito bruto divergente.');
-    check(sha256(normalizedSource) === manifest.sources.normalized.sha256, 'Hash do monólito normalizado divergente.');
-    check(JSON.stringify(JSON.parse(rawSource.toString('utf8'))) === JSON.stringify(raw), 'As partições brutas não são equivalentes ao monólito.');
-    check(JSON.stringify(JSON.parse(normalizedSource.toString('utf8'))) === JSON.stringify(normalized), 'As partições normalizadas não são equivalentes ao monólito.');
-  } catch (error) {
-    if (error?.code !== 'ENOENT') throw error;
-  }
-  return { raw: raw.length, normalized: normalized.length, indexed: indexIds.length, uniqueIds: new Set(manifestIds).size, serverAnswerKey: Object.keys(generatedKey).length, shards: manifest.shards.length };
-};
+for (const shard of manifest.shards || []) {
+  const [rawBuffer, normalizedBuffer] = await Promise.all([
+    auditFile(base, shard.raw),
+    auditFile(base, shard.normalized),
+  ]);
+  const rawItems = JSON.parse(rawBuffer.toString('utf8'));
+  const normalizedItems = JSON.parse(normalizedBuffer.toString('utf8'));
+  check(rawItems.length === shard.count, `Shard ${shard.part}: contagem bruta divergente.`);
+  check(normalizedItems.length === shard.count, `Shard ${shard.part}: contagem normalizada divergente.`);
+  check(JSON.stringify(rawItems.map(getId)) === JSON.stringify(shard.questionIds), `Shard ${shard.part}: IDs brutos divergentes.`);
+  check(JSON.stringify(normalizedItems.map(getId)) === JSON.stringify(shard.questionIds), `Shard ${shard.part}: IDs normalizados divergentes.`);
+  raw.push(...rawItems);
+  normalized.push(...normalizedItems);
+  manifestIds.push(...shard.questionIds);
+}
 
-const auditSemanticProfiles = async () => {
-  const base = path.join('public', 'knowledge');
-  const manifest = await readJson(base, 'semantic-profiles-v3.manifest.json');
-  const decodedParts = [];
-  for (const part of manifest.parts) {
-    const fileBuffer = await auditFile(base, part);
-    const payload = JSON.parse(fileBuffer.toString('utf8'));
-    const decoded = Buffer.from(payload.data, 'base64');
-    check(payload.sequence === part.sequence, `${part.file}: sequência divergente.`);
-    check(decoded.length === part.decodedBytes, `${part.file}: tamanho decodificado divergente.`);
-    check(sha256(decoded) === part.decodedSha256, `${part.file}: hash decodificado divergente.`);
-    decodedParts.push(decoded);
-  }
-  const reconstructed = Buffer.concat(decodedParts);
-  check(reconstructed.length === manifest.source.bytes, 'Tamanho reconstruído dos perfis V3 divergente.');
-  check(sha256(reconstructed) === manifest.source.sha256, 'Hash reconstruído dos perfis V3 divergente.');
-  const profiles = JSON.parse(reconstructed.toString('utf8'));
-  check(profiles.metrics.sources === 284, 'Perfis V3: fontes divergentes.');
-  check(profiles.metrics.dispositions === 924, 'Perfis V3: disposições divergentes.');
-  check(profiles.conceptProfiles.length === 129, 'Perfis V3: perfis conceituais divergentes.');
-  try {
-    const source = await readFile(resolve(manifest.source.file));
-    check(source.equals(reconstructed), 'Reconstrução dos perfis V3 não é byte a byte idêntica ao original.');
-  } catch (error) {
-    if (error?.code !== 'ENOENT') throw error;
-  }
-  return { sources: profiles.metrics.sources, dispositions: profiles.metrics.dispositions, conceptProfiles: profiles.conceptProfiles.length, parts: manifest.parts.length };
-};
+const indexIds = (indexPayload.items || []).map((item) => String(item.questionId));
+check(raw.length === expectedTotal, `Banco bruto particionado: ${raw.length}/${expectedTotal}.`);
+check(normalized.length === expectedTotal, `Banco normalizado particionado: ${normalized.length}/${expectedTotal}.`);
+check(indexIds.length === expectedTotal, `Índice editorial: ${indexIds.length}/${expectedTotal}.`);
+check(new Set(manifestIds).size === expectedTotal, `IDs únicos particionados: ${new Set(manifestIds).size}/${expectedTotal}.`);
+check(manifestIds.every((id) => /^A(?:0\d|1[0-3]):/.test(id)), 'Partições contêm ID fora do namespace A00–A13.');
+check(JSON.stringify(raw.map(getId)) === JSON.stringify(normalized.map(getId)), 'Ordem entre bruto e normalizado divergente.');
+check(JSON.stringify(indexIds) === JSON.stringify(manifestIds), 'A ordem do índice diverge das partições editoriais.');
 
-const parseConstLiteral = (source, exportName) => {
-  const expression = new RegExp(`export const ${exportName} = ([\\s\\S]*?) as const;`).exec(source)?.[1];
-  if (!expression) throw new Error(`Export ${exportName} ausente.`);
-  return JSON.parse(expression);
-};
-
-const auditKnowledgeIndex = async () => {
-  const base = path.join('src', 'data', 'knowledge-index');
-  const manifest = await readJson(base, 'manifest.json');
-  const records = [];
-  for (const part of manifest.parts) {
-    const buffer = await auditFile(base, part);
-    const parsed = parseConstLiteral(buffer.toString('utf8'), part.exportName);
-    check(parsed.length === part.count, `${part.file}: contagem de registros divergente.`);
-    records.push(...parsed);
-  }
-  check(records.length === manifest.expectedRecords, `Índice semântico: ${records.length}/${manifest.expectedRecords}.`);
-  const recordKeys = records.map((record) => `${record.id}::${record.moduleId}::${record.sectionIndex}`);
-  check(new Set(recordKeys).size === records.length, 'Índice semântico contém registros estruturalmente duplicados.');
-  check(new Set(records.map((record) => record.id)).size === manifest.uniqueCanonicalIds, 'Quantidade de IDs canônicos únicos divergente.');
-  check(sha256(Buffer.from(JSON.stringify(records), 'utf8')) === manifest.recordsSha256, 'Hash lógico do índice semântico divergente.');
-  check(manifest.build.sourceCount === 284, 'KNOWLEDGE_BUILD não registra 284 fontes.');
-  check(manifest.build.officialQuestionCount === 372, 'KNOWLEDGE_BUILD não registra 372 questões oficiais.');
-  return { records: records.length, parts: manifest.parts.length, buildId: manifest.build.buildId };
-};
-
-const [officialQuestions, semanticProfiles, knowledgeIndex] = await Promise.all([
-  auditOfficialQuestions(),
-  auditSemanticProfiles(),
-  auditKnowledgeIndex(),
+for (const source of [manifest.sources.raw, manifest.sources.normalized, manifest.sources.index]) {
+  await auditFile(base, source);
+}
+const [rawSource, normalizedSource] = await Promise.all([
+  readFile(resolve(base, manifest.sources.raw.file)),
+  readFile(resolve(base, manifest.sources.normalized.file)),
 ]);
+check(JSON.stringify(JSON.parse(rawSource.toString('utf8'))) === JSON.stringify(raw), 'As partições brutas não equivalem ao monólito.');
+check(JSON.stringify(JSON.parse(normalizedSource.toString('utf8'))) === JSON.stringify(normalized), 'As partições normalizadas não equivalem ao monólito.');
+
+const generatedKeySource = await readFile(resolve('functions', 'src', 'officialCorpus.generated.ts'), 'utf8');
+const generatedKey = JSON.parse(/export const OFFICIAL_CORPUS_ANSWER_KEY = ([\s\S]*?) as const;/.exec(generatedKeySource)?.[1] || '{}');
+const generatedVersion = /export const OFFICIAL_CORPUS_VERSION = '([^']+)';/.exec(generatedKeySource)?.[1];
+const expectedKey = Object.fromEntries(indexPayload.items.map((item) => [String(item.questionId), item.editorialProjection.correctAnswer]));
+check(JSON.stringify(generatedKey) === JSON.stringify(expectedKey), 'Gabarito server-side do banco editorial diverge do índice.');
+check(generatedVersion === indexPayload.questionSetVersion, 'Versão server-side do banco editorial diverge do índice.');
+
+for (const stalePath of [
+  ['public', 'knowledge', 'semantic-profiles-v3.json'],
+  ['public', 'knowledge', 'semantic-profiles-v3.manifest.json'],
+  ['public', 'knowledge', 'semantic-profile-parts'],
+  ['src', 'data', 'knowledgeIndex.generated.ts'],
+  ['src', 'data', 'knowledge-index'],
+  ['src', 'data', 'decisionTrees.generated.ts'],
+  ['src', 'data', 'decisionTrees.ts'],
+]) {
+  check(!existsSync(resolve(...stalePath)), `${stalePath.join('/')}: projeção curricular legada ainda presente.`);
+}
 
 if (errors.length) {
   console.error(JSON.stringify({ status: 'error', errors }, null, 2));
   process.exitCode = 1;
 } else {
-  console.log(JSON.stringify({ status: 'ok', officialQuestions, semanticProfiles, knowledgeIndex }, null, 2));
+  console.log(JSON.stringify({
+    status: 'ok',
+    editorialQuestions: {
+      raw: raw.length,
+      normalized: normalized.length,
+      indexed: indexIds.length,
+      uniqueIds: new Set(manifestIds).size,
+      serverAnswerKey: Object.keys(generatedKey).length,
+      shards: manifest.shards.length,
+    },
+  }, null, 2));
 }

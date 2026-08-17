@@ -32,30 +32,42 @@ afterEach(async () => {
 });
 
 describe('official question shard store', () => {
-  it('loads all 372 immutable questions from verified shards', async () => {
+  it('loads the complete editorial bank from verified shards', async () => {
+    const manifest = JSON.parse(
+      await readFile(path.join(temporaryKnowledgeDirectory, 'official-questions.manifest.json'), 'utf8')
+    );
     const health = await getOfficialQuestionStoreHealth();
     expect(health).toMatchObject({
-      expected: 372,
-      raw: 372,
-      normalized: 372,
-      indexed: 372,
-      uniqueIds: 372,
+      expected: manifest.expectedTotal,
+      raw: manifest.expectedTotal,
+      normalized: manifest.expectedTotal,
+      indexed: manifest.expectedTotal,
+      uniqueIds: manifest.expectedTotal,
+      buildId: manifest.buildId,
+      questionSetVersion: manifest.questionSetVersion,
       source: 'sharded',
       location: 'configured/knowledge',
     });
+    expect(manifest.expectedTotal).toBeGreaterThan(1000);
 
     const page = await queryOfficialQuestions({}, { limit: 1 });
-    expect(page.total).toBe(372);
+    expect(page.total).toBe(manifest.expectedTotal);
     expect(page.items).toHaveLength(1);
     const detail = await getOfficialQuestion(page.items[0].questionId);
     expect(detail?.questionId).toBe(page.items[0].questionId);
-    expect(detail?.provenance.officialPayloadPolicy).toBe('immutable');
+    expect(detail?.provenance).toMatchObject({
+      kind: 'editorial_question',
+      payloadPolicy: 'source_preserved',
+      buildId: manifest.buildId,
+      questionSetVersion: manifest.questionSetVersion,
+    });
   });
 
   it('samples unique question ids', async () => {
     const sample = (await sampleOfficialQuestions({}, 10)).filter(Boolean);
     expect(sample).toHaveLength(10);
     expect(new Set(sample.map((item) => item?.questionId)).size).toBe(10);
+    expect(sample.every((item) => /^A(?:0\d|1[0-3]):/.test(item!.questionId))).toBe(true);
   });
 
   it('rejects a corrupted shard and can retry after it is restored', async () => {

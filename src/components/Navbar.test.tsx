@@ -29,8 +29,8 @@ describe('Navbar', () => {
     const more = within(desktopNav).getByRole('button', { name: /mais/i });
     await user.click(more);
     const menu = screen.getByRole('menu', { name: /outras ferramentas/i });
-    expect(within(menu).getByRole('menuitem', { name: /matrizes/i })).toBeInTheDocument();
-    expect(within(menu).getByRole('menuitem', { name: /questões oficiais/i })).toBeInTheDocument();
+    expect(within(menu).getByRole('menuitem', { name: /roteiros/i })).toBeInTheDocument();
+    expect(within(menu).getByRole('menuitem', { name: /questões editoriais/i })).toBeInTheDocument();
     expect(within(menu).getByRole('menuitem', { name: /perfil/i })).toBeInTheDocument();
   });
 

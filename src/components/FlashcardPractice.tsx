@@ -17,81 +17,32 @@ import {
 import { toLearnerFacingContent } from '../lib/learnerContent';
 import { deriveErrorReviewStatus, scheduleFlashcard } from '../lib/spacedRepetition';
 import { authenticatedFetch } from '../lib/authenticatedFetch';
+import { EDITORIAL_FLASHCARDS } from '../data/editorialFlashcards.generated';
+import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
 
 const FLASHCARDS_STORAGE_PREFIX = 'suveca_flashcards';
+const CURRICULUM_BUILD_ID = PEDAGOGICAL_KNOWLEDGE_BUILD.buildId;
 const flashcardsStorageKey = (userId?: string) =>
+  `${FLASHCARDS_STORAGE_PREFIX}_${CURRICULUM_BUILD_ID}_${userId || 'guest'}`;
+const legacyFlashcardsStorageKey = (userId?: string) =>
   `${FLASHCARDS_STORAGE_PREFIX}_${userId || 'guest'}`;
+const flashcardsDocumentId = `flashcards_caderno_${CURRICULUM_BUILD_ID}`;
 const isCardDue = (card: ErrorFlashcard, now: number) =>
   !card.nextReviewAt || Number.isNaN(Date.parse(card.nextReviewAt)) || Date.parse(card.nextReviewAt) <= now;
 
-const SUVECA_STRUCTURE_CARDS: ErrorFlashcard[] = [
-  {
-    id: 'suveca_structure_1',
-    source: 'suveca',
-    topic: 'Sujeito, verbo, complemento e adjunto',
-    front: 'Na oração “Os candidatos entregaram os documentos ontem”, identifique Su, Ve, C e A.',
-    back: 'Su: Os candidatos. Ve: entregaram. C (objeto direto): os documentos. Aadv: ontem.',
-    hint: 'Encontre primeiro o verbo e pergunte quem praticou a ação.',
-    createdAt: '2026-01-01T00:00:00.000Z',
-    correctCount: 0,
-    incorrectCount: 0,
-  },
-  {
-    id: 'suveca_structure_2',
-    source: 'suveca',
-    topic: 'Complementos verbais',
-    front: 'Na oração “A professora explicou a regra aos alunos com exemplos claros”, identifique Su, Ve, C e A.',
-    back: 'Su: A professora. Ve: explicou. C (OD): a regra. C (OI): aos alunos. Aadv: com exemplos claros.',
-    hint: 'O verbo explicar pode ter algo explicado e alguém a quem se explica.',
-    createdAt: '2026-01-01T00:00:00.000Z',
-    correctCount: 0,
-    incorrectCount: 0,
-  },
-  {
-    id: 'suveca_structure_3',
-    source: 'suveca',
-    topic: 'Verbo impessoal',
-    front: 'Na oração “Havia muitas dúvidas na reunião”, identifique Su, Ve, C e A.',
-    back: 'Su: inexistente (haver com sentido de existir é impessoal). Ve: havia. C (OD): muitas dúvidas. Aadv: na reunião.',
-    hint: 'Com sentido de existir, “haver” fica no singular e não tem sujeito.',
-    createdAt: '2026-01-01T00:00:00.000Z',
-    correctCount: 0,
-    incorrectCount: 0,
-  },
-  {
-    id: 'suveca_structure_4',
-    source: 'suveca',
-    topic: 'Ordem inversa',
-    front: 'Na oração “Chegaram cedo os novos analistas”, identifique Su, Ve, C e A.',
-    back: 'Su: os novos analistas (posposto). Ve: chegaram. C: não há. Aadv: cedo.',
-    hint: 'A posição depois do verbo não impede que o termo seja sujeito.',
-    createdAt: '2026-01-01T00:00:00.000Z',
-    correctCount: 0,
-    incorrectCount: 0,
-  },
-  {
-    id: 'suveca_structure_5',
-    source: 'suveca',
-    topic: 'Regência verbal',
-    front: 'Na oração “Os servidores precisam de orientação imediata”, identifique Su, Ve, C e A.',
-    back: 'Su: Os servidores. Ve: precisam. C (OI): de orientação imediata. A: “imediata” é adjunto adnominal de orientação.',
-    hint: 'Quem precisa, precisa de algo.',
-    createdAt: '2026-01-01T00:00:00.000Z',
-    correctCount: 0,
-    incorrectCount: 0,
-  },
-  {
-    id: 'suveca_structure_6',
-    source: 'suveca',
-    topic: 'Voz passiva',
-    front: 'Na oração “No fim da tarde, o edital foi publicado pelo órgão”, identifique Su, Ve, C e A.',
-    back: 'Aadv: No fim da tarde. Su paciente: o edital. Ve: foi publicado. C: não há. “pelo órgão” é agente da passiva.',
-    hint: 'Na passiva analítica, localize a locução “ser + particípio”.',
-    createdAt: '2026-01-01T00:00:00.000Z',
-    correctCount: 0,
-    incorrectCount: 0,
-  },
-];
+const EDITORIAL_CARDS: ErrorFlashcard[] = EDITORIAL_FLASHCARDS.map((card) => ({
+  id: card.id,
+  source: 'suveca',
+  topic: card.topic,
+  front: card.front,
+  back: card.back,
+  hint: card.hint,
+  explanation: card.explanation,
+  sourceRefs: [...card.sourceRefs],
+  createdAt: card.createdAt,
+  correctCount: card.correctCount,
+  incorrectCount: card.incorrectCount,
+}));
 
 interface FlashcardPracticeProps {
   errors: CadernoErroItem[];
@@ -115,15 +66,67 @@ const isFlashcard = (value: unknown): value is ErrorFlashcard => {
   );
 };
 
-const mergeStructureCards = (savedCards: ErrorFlashcard[]): ErrorFlashcard[] => {
+const mergeEditorialCards = (savedCards: ErrorFlashcard[]): ErrorFlashcard[] => {
   const savedById = new Map(savedCards.map((card) => [card.id, card]));
-  const structureCards = SUVECA_STRUCTURE_CARDS.map((card) => ({
-    ...card,
-    ...savedById.get(card.id),
-    source: 'suveca' as const,
-  }));
-  const cadernoCards = savedCards.filter((card) => card.source === 'caderno');
-  return [...structureCards, ...cadernoCards];
+  const editorialCards = EDITORIAL_CARDS.map((card) => {
+    const saved = savedById.get(card.id);
+    if (!saved) return card;
+    return {
+      ...card,
+      hintUsedCount: saved.hintUsedCount,
+      lastReviewUsedHint: saved.lastReviewUsedHint,
+      lastReviewedAt: saved.lastReviewedAt,
+      nextReviewAt: saved.nextReviewAt,
+      correctCount: saved.correctCount,
+      incorrectCount: saved.incorrectCount,
+      repetitions: saved.repetitions,
+      intervalDays: saved.intervalDays,
+      easeFactor: saved.easeFactor,
+      lapseCount: saved.lapseCount,
+      lastRating: saved.lastRating,
+      masteryScore: saved.masteryScore,
+    };
+  });
+  const cadernoCards = Array.from(
+    new Map(
+      savedCards
+        .filter((card) => card.source === 'caderno')
+        .map((card) => [card.id, card] as const)
+    ).values()
+  );
+  return [...editorialCards, ...cadernoCards];
+};
+
+const parseCurrentCards = (value: string | null): ErrorFlashcard[] | null => {
+  if (!value) return null;
+  try {
+    const parsed = JSON.parse(value) as { curriculumBuildId?: unknown; items?: unknown };
+    if (
+      parsed?.curriculumBuildId === CURRICULUM_BUILD_ID &&
+      Array.isArray(parsed.items) &&
+      parsed.items.every(isFlashcard)
+    ) {
+      return mergeEditorialCards(parsed.items);
+    }
+  } catch {
+    // O chamador aplica o fallback seguro.
+  }
+  return null;
+};
+
+const parseLegacyCadernoCards = (value: string | null): ErrorFlashcard[] => {
+  if (!value) return [];
+  try {
+    const parsed = JSON.parse(value) as unknown;
+    const items = Array.isArray(parsed)
+      ? parsed
+      : parsed && typeof parsed === 'object' && Array.isArray((parsed as { items?: unknown }).items)
+      ? (parsed as { items: unknown[] }).items
+      : [];
+    return items.filter(isFlashcard).filter((card) => card.source === 'caderno');
+  } catch {
+    return [];
+  }
 };
 
 export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
@@ -136,16 +139,11 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
   const storageKey = flashcardsStorageKey(resolvedUserId);
   const flashcardScopeRef = useRef(storageKey);
   const [flashcards, setFlashcards] = useState<ErrorFlashcard[]>(() => {
-    try {
-      const stored = localStorage.getItem(storageKey);
-      if (stored) {
-        const parsed = JSON.parse(stored);
-        if (Array.isArray(parsed) && parsed.every(isFlashcard)) return mergeStructureCards(parsed);
-      }
-    } catch (error) {
-      console.error('Não foi possível ler os flashcards locais:', error);
-    }
-    return SUVECA_STRUCTURE_CARDS;
+    const current = parseCurrentCards(localStorage.getItem(storageKey));
+    if (current) return current;
+    return mergeEditorialCards(
+      parseLegacyCadernoCards(localStorage.getItem(legacyFlashcardsStorageKey(resolvedUserId)))
+    );
   });
   const [mode, setMode] = useState<'caderno' | 'suveca'>('caderno');
   const [activeCardId, setActiveCardId] = useState<string | null>(null);
@@ -158,7 +156,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
   const [generationMessage, setGenerationMessage] = useState<string | null>(null);
   const [reviewClock, setReviewClock] = useState(() => Date.now());
   const visibleFlashcards =
-    flashcardScopeRef.current === storageKey ? flashcards : SUVECA_STRUCTURE_CARDS;
+    flashcardScopeRef.current === storageKey ? flashcards : EDITORIAL_CARDS;
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -175,7 +173,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
   useEffect(() => {
     let active = true;
     flashcardScopeRef.current = storageKey;
-    setFlashcards(SUVECA_STRUCTURE_CARDS);
+    setFlashcards(EDITORIAL_CARDS);
     setActiveCardId(null);
     setIsAnswerVisible(false);
     setIsHintVisible(false);
@@ -184,33 +182,66 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
     setReviewFeedback(null);
 
     const loadFlashcards = async () => {
-      let localCards = SUVECA_STRUCTURE_CARDS;
+      let localCards = EDITORIAL_CARDS;
       try {
-        const stored = localStorage.getItem(storageKey);
-        if (stored) {
-          const parsed = JSON.parse(stored);
-          if (Array.isArray(parsed) && parsed.every(isFlashcard)) {
-            localCards = mergeStructureCards(parsed);
-          }
-        }
+        localCards =
+          parseCurrentCards(localStorage.getItem(storageKey)) ??
+          mergeEditorialCards(
+            parseLegacyCadernoCards(localStorage.getItem(legacyFlashcardsStorageKey(resolvedUserId)))
+          );
       } catch (error) {
         console.error('Não foi possível carregar os flashcards locais:', error);
       }
 
       if (!resolvedUserId) {
+        localStorage.setItem(
+          storageKey,
+          JSON.stringify({ curriculumBuildId: CURRICULUM_BUILD_ID, items: localCards })
+        );
+        localStorage.setItem(
+          legacyFlashcardsStorageKey(),
+          JSON.stringify({
+            schemaVersion: 2,
+            contentKind: 'personal_caderno_cards',
+            items: localCards.filter((card) => card.source === 'caderno'),
+          })
+        );
         if (active) setFlashcards(localCards);
         return;
       }
 
       try {
-        const ref = doc(db, 'users', resolvedUserId, 'data', 'flashcards_caderno');
+        const ref = doc(db, 'users', resolvedUserId, 'data', flashcardsDocumentId);
         const snapshot = await getDoc(ref);
-        const cloudCards = snapshot.data()?.items;
-        if (snapshot.exists() && Array.isArray(cloudCards) && cloudCards.every(isFlashcard)) {
-          if (active) setFlashcards(mergeStructureCards(cloudCards));
+        const cloudData = snapshot.data();
+        const cloudCards = cloudData?.items;
+        if (
+          snapshot.exists() &&
+          cloudData?.curriculumBuildId === CURRICULUM_BUILD_ID &&
+          Array.isArray(cloudCards) &&
+          cloudCards.every(isFlashcard)
+        ) {
+          if (active) setFlashcards(mergeEditorialCards(cloudCards));
         } else {
-          const initialCards = mergeStructureCards(localCards);
-          await setDoc(ref, { items: initialCards, updatedAt: new Date().toISOString() });
+          const legacySnapshot = await getDoc(
+            doc(db, 'users', resolvedUserId, 'data', 'flashcards_caderno')
+          );
+          const legacyItems = legacySnapshot.data()?.items;
+          const legacyCards = Array.isArray(legacyItems)
+            ? legacyItems.filter(isFlashcard).filter((card) => card.source === 'caderno')
+            : [];
+          const initialCards = mergeEditorialCards([...localCards, ...legacyCards]);
+          await setDoc(ref, {
+            curriculumBuildId: CURRICULUM_BUILD_ID,
+            items: initialCards,
+            updatedAt: new Date().toISOString(),
+          });
+          await setDoc(doc(db, 'users', resolvedUserId, 'data', 'flashcards_caderno'), {
+            schemaVersion: 2,
+            contentKind: 'personal_caderno_cards',
+            items: initialCards.filter((card) => card.source === 'caderno'),
+            updatedAt: new Date().toISOString(),
+          });
           if (active) setFlashcards(initialCards);
         }
       } catch (error) {
@@ -226,14 +257,35 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
   }, [resolvedUserId, storageKey]);
 
   const persistFlashcards = async (nextCards: ErrorFlashcard[]) => {
-    localStorage.setItem(storageKey, JSON.stringify(nextCards));
+    localStorage.setItem(
+      storageKey,
+      JSON.stringify({ curriculumBuildId: CURRICULUM_BUILD_ID, items: nextCards })
+    );
+    localStorage.setItem(
+      legacyFlashcardsStorageKey(resolvedUserId),
+      JSON.stringify({
+        schemaVersion: 2,
+        contentKind: 'personal_caderno_cards',
+        items: nextCards.filter((card) => card.source === 'caderno'),
+      })
+    );
     if (!resolvedUserId) return;
 
     try {
-      await setDoc(doc(db, 'users', resolvedUserId, 'data', 'flashcards_caderno'), {
-        items: nextCards,
-        updatedAt: new Date().toISOString(),
-      });
+      const updatedAt = new Date().toISOString();
+      await Promise.all([
+        setDoc(doc(db, 'users', resolvedUserId, 'data', flashcardsDocumentId), {
+          curriculumBuildId: CURRICULUM_BUILD_ID,
+          items: nextCards,
+          updatedAt,
+        }),
+        setDoc(doc(db, 'users', resolvedUserId, 'data', 'flashcards_caderno'), {
+          schemaVersion: 2,
+          contentKind: 'personal_caderno_cards',
+          items: nextCards.filter((card) => card.source === 'caderno'),
+          updatedAt,
+        }),
+      ]);
     } catch (error) {
       console.error('Não foi possível salvar os flashcards:', error);
     }
@@ -464,8 +516,8 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
     } else {
       setReviewFeedback(
         scheduledCard.lastRating !== 'again'
-          ? 'Ótimo! Esta oração entrou no seu próximo ciclo de revisão.'
-          : 'Sem problema: esta oração voltará em um intervalo curto para reforço.'
+          ? 'Ótimo! Este conteúdo entrou no seu próximo ciclo de revisão.'
+          : 'Sem problema: este conteúdo voltará em um intervalo curto para reforço.'
       );
     }
   };
@@ -481,7 +533,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
             <div>
               <h1 className="text-lg font-bold text-slate-900">Revisão ativa com Flashcards</h1>
               <p className="text-xs text-slate-600 mt-1">
-                Gere cards com a Regra Decisiva do seu Caderno ou treine a identificação de Su + Ve + C + A em orações aleatórias.
+                Gere cards com a Regra Decisiva do seu Caderno ou revise os conteúdos editoriais das aulas 00–14.
               </p>
             </div>
           </div>
@@ -556,7 +608,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
             mode === 'suveca' ? 'bg-white text-slate-900 shadow-2xs' : 'text-slate-600 hover:text-slate-900'
           }`}
         >
-          Orações Su+Ve+C+A ({dueSuvecaCards.length}/{suvecaCards.length})
+          Base editorial ({dueSuvecaCards.length}/{suvecaCards.length})
         </button>
       </div>
 
@@ -567,13 +619,13 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
             {mode === 'caderno' && cadernoCards.length
               ? 'Nenhum card do Caderno está devido agora'
               : mode === 'suveca' && suvecaCards.length
-              ? 'Nenhuma oração está devida agora'
+              ? 'Nenhum conteúdo editorial está devido agora'
               : 'Ainda não há cards para esta revisão'}
           </h3>
           <p className="text-xs text-slate-500 max-w-md mx-auto">
             {mode === 'caderno' && cadernoCards.length
-              ? 'O intervalo de repetição espaçada está ativo. Volte no horário programado ou pratique as orações Su+Ve+C+A.'
-              : 'Gere cards com IA para algum erro acima ou pratique as orações na aba ao lado enquanto registra novos erros.'}
+              ? 'O intervalo de repetição espaçada está ativo. Volte no horário programado ou revise a base editorial.'
+              : 'Gere cards com IA para algum erro acima ou pratique a base editorial na aba ao lado enquanto registra novos erros.'}
           </p>
         </div>
       ) : (

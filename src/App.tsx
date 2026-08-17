@@ -448,8 +448,8 @@ export default function App() {
               <div className="space-y-3">
                 {officialSimuladoQuestions && (
                   <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-teal-200 bg-teal-50 p-3 text-sm text-teal-900">
-                    <span><strong>{officialSimuladoQuestions.every((question) => question.origin === 'official') ? 'Prática oficial' : 'Prática autoral de apoio'}:</strong> {officialSimuladoQuestions.length} questões {officialSimuladoQuestions.every((question) => question.origin === 'official') ? 'preservadas por question_id' : 'identificadas claramente como autorais'}.</span>
-                    <button type="button" className="button-secondary min-h-[44px]" onClick={() => setOfficialSimuladoQuestions(null)}>Voltar ao simulado autoral</button>
+                    <span><strong>{officialSimuladoQuestions.every((question) => question.origin === 'official') ? 'Prática editorial' : 'Prática autoral de apoio'}:</strong> {officialSimuladoQuestions.length} questões {officialSimuladoQuestions.every((question) => question.origin === 'official') ? 'selecionadas da nova fonte das aulas 00–13' : 'identificadas claramente como autorais'}.</span>
+                    <button type="button" className="button-secondary min-h-[44px]" onClick={() => setOfficialSimuladoQuestions(null)}>Voltar ao simulado editorial</button>
                   </div>
                 )}
                 <SimuladoEngine

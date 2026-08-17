@@ -3,18 +3,20 @@ import { formatOfficialContent } from './officialContent';
 
 export interface OfficialQuestionIndexItem {
   questionId: string;
-  officialHashSha256: string;
-  officialProjection: {
-    difficulty: string;
-    answerType: string;
+  editorialHashSha256: string;
+  editorialProjection: {
+    primaryLessonId: string;
+    lessonIds: string[];
+    difficulty: 'UNSPECIFIED';
+    answerType: 'CERTO_ERRADO' | 'MULTIPLA_ESCOLHA';
     correctAnswer: string;
-    topicIds: string[];
     topicNames: string[];
     banks: string[];
+    organizations: string[];
     years: number[];
-    examIds: string[];
-    hasTextSolution: boolean;
-    hasVideoSolution: boolean;
+    hasCommentary: boolean;
+    extractionConfidence: number;
+    answerConfidence: number;
   };
   suvecaDerived: {
     moduleIds: string[];
@@ -25,15 +27,17 @@ export interface OfficialQuestionIndexItem {
 export interface OfficialQuestionDetail {
   questionId: string;
   provenance: {
-    kind: 'official_question';
-    officialPayloadPolicy: 'immutable';
+    kind: 'editorial_question';
+    payloadPolicy: 'source_preserved';
     buildId: string;
-    officialHashSha256: string;
+    questionSetVersion: string;
+    editorialHashSha256: string;
   };
-  official: {
+  editorial: {
     raw: Record<string, unknown>;
     normalized: Record<string, unknown>;
   };
+  editorialProjection: OfficialQuestionIndexItem['editorialProjection'];
   suvecaDerived: {
     moduleIds: string[];
     conceptIds: string[];
@@ -63,9 +67,10 @@ export async function fetchOfficialQuestions(
   options: { offset?: number; limit?: number } = {},
 ) {
   const response = await fetch(`/api/knowledge/questions?${queryString({ ...filters, ...options })}`);
-  if (!response.ok) throw new Error('Falha ao consultar as questões oficiais.');
+  if (!response.ok) throw new Error('Falha ao consultar as questões editoriais.');
   return response.json() as Promise<{
     buildId: string;
+    questionSetVersion: string;
     total: number;
     offset: number;
     limit: number;
@@ -75,7 +80,7 @@ export async function fetchOfficialQuestions(
 
 export async function fetchOfficialQuestion(questionId: string) {
   const response = await fetch(`/api/knowledge/questions/${encodeURIComponent(questionId)}`);
-  if (!response.ok) throw new Error('Falha ao carregar a questão oficial.');
+  if (!response.ok) throw new Error('Falha ao carregar a questão editorial.');
   return response.json() as Promise<OfficialQuestionDetail>;
 }
 
@@ -85,40 +90,49 @@ export async function fetchOfficialQuestionSample(filters: OfficialQuestionFilte
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ ...filters, count }),
   });
-  if (!response.ok) throw new Error('Falha ao montar a amostra de questões oficiais.');
-  return response.json() as Promise<{ count: number; questions: OfficialQuestionDetail[] }>;
+  if (!response.ok) throw new Error('Falha ao montar a amostra de questões editoriais.');
+  return response.json() as Promise<{
+    count: number;
+    questionSetVersion: string;
+    questions: OfficialQuestionDetail[];
+  }>;
 }
 
 export function officialDetailToQuizQuestion(detail: OfficialQuestionDetail): QuizQuestion {
-  const raw = detail.official.raw as {
-    statement?: string;
-    statement_text?: string;
-    alternatives?: Array<{ id?: string; sanitized_body?: string; body?: string; position?: string }>;
-    topics?: Array<{ name?: string }>;
-    solution?: { sanitized_complete?: string; complete?: string; complete_html?: string };
+  const normalized = detail.editorial.normalized as {
+    primaryLessonId?: string;
+    questionType?: 'CERTO_ERRADO' | 'MULTIPLA_ESCOLHA';
+    supportText?: string;
+    prompt?: string;
+    options?: Array<{ letter?: string; label?: string; text?: string }>;
+    correctAnswer?: string;
+    commentary?: string;
+    bank?: string | null;
+    sourceLabel?: string | null;
+    conceptIds?: string[];
+    sourceRefs?: string[];
   };
-  const normalized = detail.official.normalized as { correct_answer?: string };
+  const multipleChoice = normalized.questionType === 'MULTIPLA_ESCOLHA';
   return {
     id: detail.questionId,
-    type: 'MULTIPLA_ESCOLHA',
-    bank: 'Questão oficial',
-    topic: raw.topics?.[0]?.name || 'Língua Portuguesa',
-    questionText: formatOfficialContent(raw.statement || raw.statement_text),
-    options: (raw.alternatives || []).map((alternative, index) => ({
-      letter: String.fromCharCode(65 + Number(alternative.position ?? index)),
-      text: formatOfficialContent(alternative.body || alternative.sanitized_body),
-    })),
-    correctAnswer: String(normalized.correct_answer || ''),
-    commentary: formatOfficialContent(
-      raw.solution?.complete_html
-      || raw.solution?.complete
-      || raw.solution?.sanitized_complete
-      || 'Solução textual não disponível no corpus.'
-    ),
+    type: multipleChoice ? 'MULTIPLA_ESCOLHA' : 'CERTO_ERRADO',
+    bank: formatOfficialContent(normalized.bank || normalized.sourceLabel || 'Fonte editorial da apostila'),
+    topic: detail.editorialProjection.topicNames[0] || normalized.primaryLessonId || 'Língua Portuguesa',
+    supportText: formatOfficialContent(normalized.supportText) || undefined,
+    questionText: formatOfficialContent(normalized.prompt),
+    options: multipleChoice
+      ? (normalized.options || []).map((option, index) => ({
+          letter: String(option.letter || option.label || String.fromCharCode(65 + index)).toUpperCase(),
+          text: formatOfficialContent(option.text),
+        }))
+      : undefined,
+    correctAnswer: String(normalized.correctAnswer || detail.editorialProjection.correctAnswer),
+    commentary: formatOfficialContent(normalized.commentary || 'Comentário não disponível na fonte editorial.'),
     origin: 'official',
     officialQuestionId: detail.questionId,
+    questionSetVersion: detail.provenance.questionSetVersion,
     moduleId: detail.suvecaDerived.moduleIds[0],
-    conceptIds: detail.suvecaDerived.conceptIds,
-    sourceRefs: [`QUESTION:${detail.questionId}`],
+    conceptIds: normalized.conceptIds || detail.suvecaDerived.conceptIds,
+    sourceRefs: [`QUESTION:${detail.questionId}`, ...(normalized.sourceRefs || [])],
   };
 }

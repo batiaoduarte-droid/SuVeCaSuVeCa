@@ -51,7 +51,7 @@ export const MonthlyLeaderboard: React.FC<MonthlyLeaderboardProps> = ({
           </div>
           <h2 className="mt-2 text-xl font-bold text-slate-900">Mais acertos em {monthLabel(monthKey)}</h2>
           <p className="text-sm text-slate-500 mt-1">
-            Acertos de simulados oficiais validados no servidor neste mês.
+            Acertos de práticas editoriais validados no servidor neste mês.
           </p>
         </div>
         {user && (

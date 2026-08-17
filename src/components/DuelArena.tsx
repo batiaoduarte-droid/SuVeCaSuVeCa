@@ -24,6 +24,10 @@ import {
   XCircle,
 } from 'lucide-react';
 import { db, type User } from '../lib/firebase';
+import {
+  EDITORIAL_DUEL_QUESTIONS,
+  EDITORIAL_DUEL_QUESTION_SET_VERSION,
+} from '../data/editorialDuelQuestions.generated';
 
 const ROUND_DURATION_SECONDS = 60;
 const LEADERBOARD_LIMIT = 10;
@@ -74,155 +78,19 @@ interface DuelArenaProps {
   onRoundComplete?: () => void;
 }
 
-const DUEL_QUESTIONS: DuelQuestion[] = [
-  {
-    id: 'duel-1',
-    prompt: 'Na oração “Os fiscais analisaram os relatórios ontem”, qual termo é o sujeito?',
-    options: [
-      { id: 'A', text: 'Os fiscais' },
-      { id: 'B', text: 'analisaram' },
-      { id: 'C', text: 'os relatórios' },
-      { id: 'D', text: 'ontem' },
-    ],
-    correctOptionId: 'A',
-    explanation: '“Os fiscais” é quem pratica a ação expressa pelo verbo “analisaram”.',
-  },
-  {
-    id: 'duel-2',
-    prompt: 'Em “Chegaram cedo os novos analistas”, qual é o sujeito?',
-    options: [
-      { id: 'A', text: 'Chegaram' },
-      { id: 'B', text: 'cedo' },
-      { id: 'C', text: 'os novos analistas' },
-      { id: 'D', text: 'Não há sujeito' },
-    ],
-    correctOptionId: 'C',
-    explanation: 'O sujeito está posposto ao verbo: “os novos analistas”.',
-  },
-  {
-    id: 'duel-3',
-    prompt: 'Na oração “A comissão enviou o ofício ao tribunal”, qual termo é o objeto direto?',
-    options: [
-      { id: 'A', text: 'A comissão' },
-      { id: 'B', text: 'enviou' },
-      { id: 'C', text: 'o ofício' },
-      { id: 'D', text: 'ao tribunal' },
-    ],
-    correctOptionId: 'C',
-    explanation: 'Quem envia, envia algo: “o ofício” é o objeto direto.',
-  },
-  {
-    id: 'duel-4',
-    prompt: 'Em “Os candidatos precisam de orientação”, qual é o complemento verbal?',
-    options: [
-      { id: 'A', text: 'Os candidatos' },
-      { id: 'B', text: 'precisam' },
-      { id: 'C', text: 'de orientação' },
-      { id: 'D', text: 'Não há complemento' },
-    ],
-    correctOptionId: 'C',
-    explanation: 'O verbo “precisar”, nesse sentido, exige a preposição “de”.',
-  },
-  {
-    id: 'duel-5',
-    prompt: 'Na oração “Havia muitas dúvidas na reunião”, a classificação correta é:',
-    options: [
-      { id: 'A', text: '“muitas dúvidas” é sujeito' },
-      { id: 'B', text: '“havia” é verbo impessoal' },
-      { id: 'C', text: '“na reunião” é objeto direto' },
-      { id: 'D', text: 'há dois sujeitos' },
-    ],
-    correctOptionId: 'B',
-    explanation: 'Com sentido de existir, “haver” é impessoal: não possui sujeito.',
-  },
-  {
-    id: 'duel-6',
-    prompt: 'Em “Hoje, o edital será publicado pelo órgão”, qual expressão é adjunto adverbial?',
-    options: [
-      { id: 'A', text: 'Hoje' },
-      { id: 'B', text: 'o edital' },
-      { id: 'C', text: 'será publicado' },
-      { id: 'D', text: 'pelo órgão' },
-    ],
-    correctOptionId: 'A',
-    explanation: '“Hoje” indica a circunstância de tempo da ação.',
-  },
-  {
-    id: 'duel-7',
-    prompt: 'Na oração “Foi aprovada a nova norma”, o termo “a nova norma” é:',
-    options: [
-      { id: 'A', text: 'objeto direto' },
-      { id: 'B', text: 'sujeito paciente' },
-      { id: 'C', text: 'adjunto adverbial' },
-      { id: 'D', text: 'vocativo' },
-    ],
-    correctOptionId: 'B',
-    explanation: 'Na voz passiva analítica, “a nova norma” recebe a ação e funciona como sujeito paciente.',
-  },
-  {
-    id: 'duel-8',
-    prompt: 'Em “Os servidores entregaram os documentos com rapidez”, “com rapidez” é:',
-    options: [
-      { id: 'A', text: 'sujeito' },
-      { id: 'B', text: 'objeto direto' },
-      { id: 'C', text: 'adjunto adverbial' },
-      { id: 'D', text: 'predicativo do sujeito' },
-    ],
-    correctOptionId: 'C',
-    explanation: 'A expressão indica o modo como os documentos foram entregues.',
-  },
-  {
-    id: 'duel-9',
-    prompt: 'Na oração “Convém que todos estudem”, a oração iniciada por “que” exerce função de:',
-    options: [
-      { id: 'A', text: 'sujeito oracional' },
-      { id: 'B', text: 'objeto direto' },
-      { id: 'C', text: 'adjunto adnominal' },
-      { id: 'D', text: 'aposto' },
-    ],
-    correctOptionId: 'A',
-    explanation: 'O que convém? “Que todos estudem”; a oração é sujeito do verbo “convém”.',
-  },
-  {
-    id: 'duel-10',
-    prompt: 'Em “Entregaram-se os recursos no prazo”, qual análise está correta?',
-    options: [
-      { id: 'A', text: '“os recursos” é sujeito paciente' },
-      { id: 'B', text: '“se” indetermina o sujeito' },
-      { id: 'C', text: '“no prazo” é objeto indireto' },
-      { id: 'D', text: 'não há verbo' },
-    ],
-    correctOptionId: 'A',
-    explanation: 'A flexão plural concorda com “os recursos”, sujeito paciente da passiva sintética.',
-  },
-  {
-    id: 'duel-11',
-    prompt: 'Em “A professora explicou a regra aos alunos”, “aos alunos” é:',
-    options: [
-      { id: 'A', text: 'objeto direto' },
-      { id: 'B', text: 'objeto indireto' },
-      { id: 'C', text: 'sujeito' },
-      { id: 'D', text: 'adjunto adnominal' },
-    ],
-    correctOptionId: 'B',
-    explanation: 'Quem explica, explica algo a alguém. “Aos alunos” é objeto indireto.',
-  },
-  {
-    id: 'duel-12',
-    prompt: 'Em “No fim da tarde, os resultados chegaram”, qual é o verbo?',
-    options: [
-      { id: 'A', text: 'No fim da tarde' },
-      { id: 'B', text: 'os resultados' },
-      { id: 'C', text: 'chegaram' },
-      { id: 'D', text: 'não há verbo' },
-    ],
-    correctOptionId: 'C',
-    explanation: '“Chegaram” é o núcleo verbal; “os resultados” é o sujeito.',
-  },
-];
+const DUEL_QUESTION_SET_VERSION = EDITORIAL_DUEL_QUESTION_SET_VERSION;
+const DUEL_BUILD_ID = DUEL_QUESTION_SET_VERSION.replace(/^editorial-duel-/, '');
+
+const DUEL_QUESTIONS: DuelQuestion[] = EDITORIAL_DUEL_QUESTIONS.map((question) => ({
+  id: question.id,
+  prompt: question.prompt,
+  options: question.options.map((option) => ({ ...option })),
+  correctOptionId: question.correctOptionId,
+  explanation: question.explanation,
+}));
 
 const localHistoryKey = (userId?: string) =>
-  `${LOCAL_HISTORY_PREFIX}_${userId || 'guest'}`;
+  `${LOCAL_HISTORY_PREFIX}_${DUEL_BUILD_ID}_${userId || 'guest'}`;
 
 const getMonthKey = (date = new Date()) => {
   const parts = new Intl.DateTimeFormat('en-US', {
@@ -288,6 +156,7 @@ const readLocalHistory = (userId?: string): DuelRoundResult[] => {
 export const DuelArena: React.FC<DuelArenaProps> = ({ user, onRoundComplete }) => {
   const userId = user?.uid;
   const monthKey = useMemo(() => getMonthKey(), []);
+  const leaderboardKey = useMemo(() => `${monthKey}_${DUEL_BUILD_ID}`, [monthKey]);
   const [phase, setPhase] = useState<'idle' | 'playing' | 'finished'>('idle');
   const [roundQuestions, setRoundQuestions] = useState<DuelQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -356,7 +225,7 @@ export const DuelArena: React.FC<DuelArenaProps> = ({ user, onRoundComplete }) =
     setIsLoadingLeaderboard(true);
     setLeaderboardError(null);
     const leaderboardQuery = query(
-      collection(db, 'duel_leaderboards', monthKey, 'entries'),
+      collection(db, 'duel_leaderboards', leaderboardKey, 'entries'),
       orderBy('bestScore', 'desc'),
       limit(LEADERBOARD_LIMIT)
     );
@@ -395,7 +264,7 @@ export const DuelArena: React.FC<DuelArenaProps> = ({ user, onRoundComplete }) =
         setIsLoadingLeaderboard(false);
       }
     );
-  }, [monthKey, userId]);
+  }, [leaderboardKey, userId]);
 
   const persistRound = useCallback(
     async (result: DuelRoundResult) => {
@@ -412,7 +281,7 @@ export const DuelArena: React.FC<DuelArenaProps> = ({ user, onRoundComplete }) =
         // server receives a compact transcript and derives the public score.
         await setDoc(doc(db, 'users', userId, 'duel_submissions', result.id), {
           schemaVersion: 1,
-          questionSetVersion: 'duel-v1',
+          questionSetVersion: DUEL_QUESTION_SET_VERSION,
           answerLog: result.answerLog,
           clientFinishedAt: result.playedAt,
         });
@@ -587,7 +456,7 @@ export const DuelArena: React.FC<DuelArenaProps> = ({ user, onRoundComplete }) =
             </div>
             <h1 className="mt-3 text-2xl sm:text-3xl font-extrabold tracking-tight">Duelo SuVeCA</h1>
             <p className="mt-2 text-sm text-slate-300 max-w-xl leading-relaxed">
-              Identifique a estrutura das orações antes do relógio zerar. Acerto e velocidade formam sua pontuação.
+              Resolva itens da base editorial antes do relógio zerar. Acerto e velocidade formam sua pontuação.
             </p>
           </div>
           <div className="rounded-2xl bg-white/10 border border-white/15 px-5 py-3 text-center shrink-0">
@@ -603,7 +472,7 @@ export const DuelArena: React.FC<DuelArenaProps> = ({ user, onRoundComplete }) =
             <div className="w-14 h-14 rounded-2xl bg-teal-50 border border-teal-200 text-teal-800 mx-auto flex items-center justify-center">
               <Timer className="w-7 h-7" />
             </div>
-            <h2 className="mt-4 text-xl font-bold text-slate-900">60 segundos para desmontar orações</h2>
+            <h2 className="mt-4 text-xl font-bold text-slate-900">60 segundos de revisão editorial</h2>
             <p className="mt-2 text-sm text-slate-600 leading-relaxed">
               Cada acerto vale 100 pontos, mais um bônus de até 100 pela resposta rápida. Você pode usar as teclas 1–4 para responder.
             </p>

@@ -24,6 +24,14 @@ const firestore = getFirestore();
 const resendApiKey = defineSecret('RESEND_API_KEY');
 const OFFICIAL_SIMULADO_IDS = Object.keys(OFFICIAL_SIMULADO_ANSWER_KEY);
 const ANSWER_VALUES = new Set(['A', 'B', 'C', 'D', 'E']);
+const CURRENT_EDITORIAL_BUILD_ID = OFFICIAL_SIMULADO_VERSION.slice(-16);
+const CURRENT_DUEL_BUILD_ID = DUEL_QUESTION_SET_VERSION.slice(-16);
+if (
+  OFFICIAL_CORPUS_VERSION.slice(-16) !== CURRENT_EDITORIAL_BUILD_ID
+  || CURRENT_DUEL_BUILD_ID !== CURRENT_EDITORIAL_BUILD_ID
+) {
+  throw new Error('Os gabaritos confiáveis pertencem a builds editoriais diferentes.');
+}
 
 type AnswerMap = Record<string, string>;
 type DuelAnswer = { questionId: string; optionId: string; responseMs: number };
@@ -128,6 +136,8 @@ export const verifyOfficialSimulado = onDocumentCreated(
     const totalQuestions = submittedQuestionIds.length;
     const now = new Date();
     const monthKey = monthKeyFor(now);
+    const attemptBuildId = submission.questionSetVersion.slice(-16);
+    const leaderboardKey = `${monthKey}_${attemptBuildId}`;
     const verifiedAttemptRef = firestore.doc(
       `users/${userId}/verified_attempts/${attemptId}`
     );
@@ -136,7 +146,7 @@ export const verifyOfficialSimulado = onDocumentCreated(
       `users/${userId}/data/leaderboard_preferences`
     );
     const leaderboardRef = firestore.doc(
-      `leaderboards/${monthKey}/entries/${userId}`
+      `leaderboards/${leaderboardKey}/entries/${userId}`
     );
 
     await firestore.runTransaction(async (transaction) => {
@@ -169,6 +179,7 @@ export const verifyOfficialSimulado = onDocumentCreated(
         {
           schemaVersion: 2,
           month: monthKey,
+          curriculumBuildId: attemptBuildId,
           alias,
           correctAnswers: FieldValue.increment(correctCount),
           verifiedAttemptCount: FieldValue.increment(1),
@@ -188,8 +199,9 @@ export const syncLeaderboardAlias = onDocumentWritten(
 
     const { userId } = event.params;
     const monthKey = monthKeyFor(new Date());
+    const leaderboardKey = `${monthKey}_${CURRENT_EDITORIAL_BUILD_ID}`;
     const leaderboardRef = firestore.doc(
-      `leaderboards/${monthKey}/entries/${userId}`
+      `leaderboards/${leaderboardKey}/entries/${userId}`
     );
     const [leaderboardSnapshot, userSnapshot] = await Promise.all([
       leaderboardRef.get(),
@@ -255,6 +267,7 @@ export const verifyDuelRound = onDocumentCreated(
       ? Math.min(...normalizedAnswers.map((answer) => answer.responseMs))
       : 0;
     const monthKey = monthKeyFor(new Date());
+    const leaderboardKey = `${monthKey}_${CURRENT_DUEL_BUILD_ID}`;
     const verifiedRoundRef = firestore.doc(
       `users/${userId}/verified_duel_rounds/${roundId}`
     );
@@ -263,7 +276,7 @@ export const verifyDuelRound = onDocumentCreated(
       `users/${userId}/data/leaderboard_preferences`
     );
     const leaderboardRef = firestore.doc(
-      `duel_leaderboards/${monthKey}/entries/${userId}`
+      `duel_leaderboards/${leaderboardKey}/entries/${userId}`
     );
 
     await firestore.runTransaction(async (transaction) => {
@@ -308,6 +321,7 @@ export const verifyDuelRound = onDocumentCreated(
         {
           schemaVersion: 2,
           month: monthKey,
+          curriculumBuildId: CURRENT_DUEL_BUILD_ID,
           alias,
           bestScore: isNewBest ? score : currentBestScore,
           bestCorrectAnswers: isNewBest

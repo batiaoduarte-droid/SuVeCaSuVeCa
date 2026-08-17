@@ -2,8 +2,10 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore';
 import { db, type User } from '../lib/firebase';
 import type { LearningAttempt } from '../components/StatisticsDashboard';
+import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
 
 export interface LearningMetrics {
+  curriculumBuildId: string;
   attempts: LearningAttempt[];
   visitedModuleIds: string[];
   readSectionIds: string[];
@@ -11,22 +13,28 @@ export interface LearningMetrics {
   updatedAt?: string;
 }
 
-const LEGACY_STORAGE_KEY = 'suveca_learning_metrics';
-const EMPTY_METRICS: LearningMetrics = { attempts: [], visitedModuleIds: [], readSectionIds: [], modulePractice: {} };
+const CURRICULUM_BUILD_ID = PEDAGOGICAL_KNOWLEDGE_BUILD.buildId;
+const EMPTY_METRICS: LearningMetrics = {
+  curriculumBuildId: CURRICULUM_BUILD_ID,
+  attempts: [],
+  visitedModuleIds: [],
+  readSectionIds: [],
+  modulePractice: {},
+};
 
 const storageKeyFor = (userId?: string | null) =>
-  userId ? `suveca_learning_metrics_${userId}` : 'suveca_learning_metrics_guest';
+  userId
+    ? `suveca_learning_metrics_${CURRICULUM_BUILD_ID}_${userId}`
+    : `suveca_learning_metrics_${CURRICULUM_BUILD_ID}_guest`;
 
 const readLocalMetrics = (userId?: string | null): LearningMetrics => {
   try {
-    // A legacy shared cache is available only to the guest profile; it must
-    // never seed a different signed-in user's private document.
-    const stored =
-      localStorage.getItem(storageKeyFor(userId)) ||
-      (!userId ? localStorage.getItem(LEGACY_STORAGE_KEY) : null);
+    const stored = localStorage.getItem(storageKeyFor(userId));
     if (!stored) return EMPTY_METRICS;
     const parsed = JSON.parse(stored) as Partial<LearningMetrics>;
+    if (parsed.curriculumBuildId !== CURRICULUM_BUILD_ID) return EMPTY_METRICS;
     return {
+      curriculumBuildId: CURRICULUM_BUILD_ID,
       attempts: Array.isArray(parsed.attempts) ? parsed.attempts : [],
       visitedModuleIds: Array.isArray(parsed.visitedModuleIds) ? parsed.visitedModuleIds : [],
       readSectionIds: Array.isArray(parsed.readSectionIds) ? parsed.readSectionIds : [],
@@ -42,7 +50,9 @@ const readLocalMetrics = (userId?: string | null): LearningMetrics => {
 const normalizeMetrics = (value: unknown): LearningMetrics => {
   if (!value || typeof value !== 'object') return EMPTY_METRICS;
   const data = value as Partial<LearningMetrics>;
+  if (data.curriculumBuildId !== CURRICULUM_BUILD_ID) return EMPTY_METRICS;
   return {
+    curriculumBuildId: CURRICULUM_BUILD_ID,
     attempts: Array.isArray(data.attempts) ? data.attempts : [],
     visitedModuleIds: Array.isArray(data.visitedModuleIds) ? data.visitedModuleIds : [],
     readSectionIds: Array.isArray(data.readSectionIds) ? data.readSectionIds : [],
@@ -66,6 +76,7 @@ const mergeMetrics = (local: LearningMetrics, cloud: LearningMetrics): LearningM
     .slice(-50);
 
   return {
+    curriculumBuildId: CURRICULUM_BUILD_ID,
     attempts,
     visitedModuleIds: [...new Set([...local.visitedModuleIds, ...cloud.visitedModuleIds])],
     readSectionIds: [...new Set([...local.readSectionIds, ...cloud.readSectionIds])],
@@ -97,7 +108,7 @@ export const useLearningMetrics = (user: User | null) => {
     setIsLoadingMetrics(true);
     const loadCloudMetrics = async () => {
       try {
-        const metricsRef = doc(db, 'users', user.uid, 'data', 'learning_metrics');
+        const metricsRef = doc(db, 'users', user.uid, 'data', `learning_metrics_${CURRICULUM_BUILD_ID}`);
         const snapshot = await getDoc(metricsRef);
         if (currentHydration !== hydrationId.current) return;
 
@@ -127,8 +138,8 @@ export const useLearningMetrics = (user: User | null) => {
 
     const timeout = window.setTimeout(() => {
       void setDoc(
-        doc(db, 'users', currentUserId, 'data', 'learning_metrics'),
-        { ...metrics, updatedAt: new Date().toISOString() },
+        doc(db, 'users', currentUserId, 'data', `learning_metrics_${CURRICULUM_BUILD_ID}`),
+        { ...metrics, curriculumBuildId: CURRICULUM_BUILD_ID, updatedAt: new Date().toISOString() },
         { merge: true }
       ).catch((error) => console.error('Erro ao salvar métricas de aprendizagem:', error));
     }, 450);
@@ -180,7 +191,7 @@ export const useLearningMetrics = (user: User | null) => {
     if (activeStorageUserId !== currentUserId) return;
     recordActivity();
 
-    const { answerMap, questionSetVersion, ...attemptSummary } = attempt;
+    const { answerMap, ...attemptSummary } = attempt;
     setMetrics((current) => ({
       ...current,
       attempts: [
@@ -194,7 +205,8 @@ export const useLearningMetrics = (user: User | null) => {
     // used by the public leaderboard and never accepts this client's totals.
     if (
       currentUserId &&
-      (questionSetVersion === 'official-simulado-v1' || questionSetVersion === 'official-corpus-v1') &&
+      typeof attempt.questionSetVersion === 'string' &&
+      /^editorial-(?:simulado|corpus)-[0-9a-f]{16}$/.test(attempt.questionSetVersion) &&
       answerMap &&
       Object.keys(answerMap).length > 0
     ) {
@@ -202,7 +214,7 @@ export const useLearningMetrics = (user: User | null) => {
         doc(db, 'users', currentUserId, 'attempt_submissions', attempt.id),
         {
           schemaVersion: 1,
-          questionSetVersion,
+          questionSetVersion: attempt.questionSetVersion,
           answerMap,
           clientCompletedAt: attempt.completedAt || new Date().toISOString(),
           submittedAtClient: new Date().toISOString(),

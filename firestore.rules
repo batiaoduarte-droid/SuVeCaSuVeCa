@@ -26,12 +26,13 @@ service cloud.firestore {
           'submittedAtClient'
         ])
         && request.resource.data.schemaVersion == 1
+        && request.resource.data.questionSetVersion is string
         && request.resource.data.answerMap is map
         && (
-          (request.resource.data.questionSetVersion == 'official-simulado-v1'
+          (request.resource.data.questionSetVersion.matches('^editorial-simulado-[0-9a-f]{16}$')
             && request.resource.data.answerMap.size() == 20)
           ||
-          (request.resource.data.questionSetVersion == 'official-corpus-v1'
+          (request.resource.data.questionSetVersion.matches('^editorial-corpus-[0-9a-f]{16}$')
             && request.resource.data.answerMap.size() == 10)
         )
         && request.resource.data.clientCompletedAt is string
@@ -52,7 +53,8 @@ service cloud.firestore {
           'clientFinishedAt'
         ])
         && request.resource.data.schemaVersion == 1
-        && request.resource.data.questionSetVersion == 'duel-v1'
+        && request.resource.data.questionSetVersion is string
+        && request.resource.data.questionSetVersion.matches('^editorial-duel-[0-9a-f]{16}$')
         && request.resource.data.answerLog is list
         && request.resource.data.answerLog.size() <= 12
         && request.resource.data.clientFinishedAt is string;

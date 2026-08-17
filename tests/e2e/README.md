@@ -13,7 +13,7 @@ O servidor de desenvolvimento é iniciado automaticamente em `127.0.0.1:3000`. A
 
 ## O que é validado
 
-- capturas da Apostila, Analisador, Simulado, Matrizes e menu `Mais`;
+- capturas da Apostila, Analisador, Simulado, Roteiros e menu `Mais`;
 - ausência de overflow horizontal no documento;
 - alvos de navegação com pelo menos 44 px;
 - abertura e fechamento da pesquisa por teclado, com retorno de foco;

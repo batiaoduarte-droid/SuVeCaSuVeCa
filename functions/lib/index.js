@@ -18,6 +18,12 @@ const firestore = (0, firestore_1.getFirestore)();
 const resendApiKey = (0, params_1.defineSecret)('RESEND_API_KEY');
 const OFFICIAL_SIMULADO_IDS = Object.keys(officialQuestions_js_1.OFFICIAL_SIMULADO_ANSWER_KEY);
 const ANSWER_VALUES = new Set(['A', 'B', 'C', 'D', 'E']);
+const CURRENT_EDITORIAL_BUILD_ID = officialQuestions_js_1.OFFICIAL_SIMULADO_VERSION.slice(-16);
+const CURRENT_DUEL_BUILD_ID = duelQuestions_js_1.DUEL_QUESTION_SET_VERSION.slice(-16);
+if (officialCorpus_generated_js_1.OFFICIAL_CORPUS_VERSION.slice(-16) !== CURRENT_EDITORIAL_BUILD_ID
+    || CURRENT_DUEL_BUILD_ID !== CURRENT_EDITORIAL_BUILD_ID) {
+    throw new Error('Os gabaritos confiáveis pertencem a builds editoriais diferentes.');
+}
 const monthKeyFor = (date) => {
     const parts = new Intl.DateTimeFormat('en-US', {
         timeZone: 'America/Sao_Paulo',
@@ -96,10 +102,12 @@ exports.verifyOfficialSimulado = (0, firestore_2.onDocumentCreated)('users/{user
     const totalQuestions = submittedQuestionIds.length;
     const now = new Date();
     const monthKey = monthKeyFor(now);
+    const attemptBuildId = submission.questionSetVersion.slice(-16);
+    const leaderboardKey = `${monthKey}_${attemptBuildId}`;
     const verifiedAttemptRef = firestore.doc(`users/${userId}/verified_attempts/${attemptId}`);
     const userRef = firestore.doc(`users/${userId}`);
     const preferencesRef = firestore.doc(`users/${userId}/data/leaderboard_preferences`);
-    const leaderboardRef = firestore.doc(`leaderboards/${monthKey}/entries/${userId}`);
+    const leaderboardRef = firestore.doc(`leaderboards/${leaderboardKey}/entries/${userId}`);
     await firestore.runTransaction(async (transaction) => {
         const [verifiedAttempt, userSnapshot, preferenceSnapshot] = await Promise.all([
             transaction.get(verifiedAttemptRef),
@@ -123,6 +131,7 @@ exports.verifyOfficialSimulado = (0, firestore_2.onDocumentCreated)('users/{user
         transaction.set(leaderboardRef, {
             schemaVersion: 2,
             month: monthKey,
+            curriculumBuildId: attemptBuildId,
             alias,
             correctAnswers: firestore_1.FieldValue.increment(correctCount),
             verifiedAttemptCount: firestore_1.FieldValue.increment(1),
@@ -136,7 +145,8 @@ exports.syncLeaderboardAlias = (0, firestore_2.onDocumentWritten)('users/{userId
         return;
     const { userId } = event.params;
     const monthKey = monthKeyFor(new Date());
-    const leaderboardRef = firestore.doc(`leaderboards/${monthKey}/entries/${userId}`);
+    const leaderboardKey = `${monthKey}_${CURRENT_EDITORIAL_BUILD_ID}`;
+    const leaderboardRef = firestore.doc(`leaderboards/${leaderboardKey}/entries/${userId}`);
     const [leaderboardSnapshot, userSnapshot] = await Promise.all([
         leaderboardRef.get(),
         firestore.doc(`users/${userId}`).get(),
@@ -178,10 +188,11 @@ exports.verifyDuelRound = (0, firestore_2.onDocumentCreated)('users/{userId}/due
         ? Math.min(...normalizedAnswers.map((answer) => answer.responseMs))
         : 0;
     const monthKey = monthKeyFor(new Date());
+    const leaderboardKey = `${monthKey}_${CURRENT_DUEL_BUILD_ID}`;
     const verifiedRoundRef = firestore.doc(`users/${userId}/verified_duel_rounds/${roundId}`);
     const userRef = firestore.doc(`users/${userId}`);
     const preferencesRef = firestore.doc(`users/${userId}/data/leaderboard_preferences`);
-    const leaderboardRef = firestore.doc(`duel_leaderboards/${monthKey}/entries/${userId}`);
+    const leaderboardRef = firestore.doc(`duel_leaderboards/${leaderboardKey}/entries/${userId}`);
     await firestore.runTransaction(async (transaction) => {
         const [verifiedRound, currentEntry, userSnapshot, preferenceSnapshot] = await Promise.all([
             transaction.get(verifiedRoundRef),
@@ -216,6 +227,7 @@ exports.verifyDuelRound = (0, firestore_2.onDocumentCreated)('users/{userId}/due
         transaction.set(leaderboardRef, {
             schemaVersion: 2,
             month: monthKey,
+            curriculumBuildId: CURRENT_DUEL_BUILD_ID,
             alias,
             bestScore: isNewBest ? score : currentBestScore,
             bestCorrectAnswers: isNewBest

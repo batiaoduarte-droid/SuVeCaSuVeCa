@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useId, useRef, useState } from 'react';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
-import { CadernoErroItem, ModuleData } from '../types/suveca';
+import { CadernoErroItem, ModuleData, ModuleSection } from '../types/suveca';
 import { db, type User } from '../lib/firebase';
 import { MarkdownContent } from './ui/MarkdownContent';
 import {
@@ -10,6 +10,7 @@ import {
 } from './RichNoteEditor';
 import { FlashcardPractice } from './FlashcardPractice';
 import { useModalFocus } from '../hooks/useModalFocus';
+import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
 import {
   BookOpen,
   CheckCircle,
@@ -17,6 +18,7 @@ import {
   BookmarkPlus,
   ChevronRight,
   ChevronLeft,
+  ChevronDown,
   Bot,
   List,
   FileText,
@@ -28,6 +30,7 @@ import {
   Database,
   ExternalLink,
   ShieldCheck,
+  LoaderCircle,
 } from 'lucide-react';
 
 interface ModuleViewerProps {
@@ -62,14 +65,15 @@ interface ModuleViewerProps {
 }
 
 type ModuleNotes = Record<string, string>;
+const CURRICULUM_BUILD_ID = PEDAGOGICAL_KNOWLEDGE_BUILD.buildId;
 
 const sectionConceptIds = (sections: ModuleData['sections']) =>
   [...new Set(sections.flatMap((section) => section.sourceConceptIds || []))];
 
 const notesStorageKey = (moduleId: string, userId?: string) =>
   userId
-    ? `suveca_module_notes_${userId}_${moduleId}`
-    : `suveca_module_notes_guest_${moduleId}`;
+    ? `suveca_module_notes_${CURRICULUM_BUILD_ID}_${userId}_${moduleId}`
+    : `suveca_module_notes_${CURRICULUM_BUILD_ID}_guest_${moduleId}`;
 
 const normalizeNotes = (value: unknown): ModuleNotes => {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
@@ -85,13 +89,7 @@ const normalizeNotes = (value: unknown): ModuleNotes => {
 const readLocalNotes = (moduleId: string, userId?: string): ModuleNotes => {
   try {
     const savedNotes = localStorage.getItem(notesStorageKey(moduleId, userId));
-    if (savedNotes) return normalizeNotes(JSON.parse(savedNotes));
-
-    // Legacy notes have no account identity, so they can only be recovered by
-    // the guest profile. They are never copied into a newly signed-in account.
-    if (userId) return {};
-    const legacyNote = localStorage.getItem(`suveca_note_${moduleId}`);
-    return legacyNote ? { 'section-0': sanitizeRichNoteHtml(legacyNote) } : {};
+    return savedNotes ? normalizeNotes(JSON.parse(savedNotes)) : {};
   } catch {
     return {};
   }
@@ -101,12 +99,84 @@ const saveLocalNotes = (moduleId: string, notes: ModuleNotes, userId?: string) =
   localStorage.setItem(notesStorageKey(moduleId, userId), JSON.stringify(notes));
 };
 
+const deepDiveCache = new Map<string, string>();
+
+const PedagogicalDeepDive: React.FC<{ section: ModuleSection }> = ({ section }) => {
+  const panelId = useId();
+  const [isOpen, setIsOpen] = useState(false);
+  const [content, setContent] = useState<string | null>(() =>
+    section.contentUrl ? deepDiveCache.get(section.contentUrl) || null : null
+  );
+  const [state, setState] = useState<'idle' | 'loading' | 'loaded' | 'error'>(
+    content ? 'loaded' : 'idle'
+  );
+
+  useEffect(() => {
+    if (!isOpen || !section.contentUrl || content || state === 'loading') return;
+    const controller = new AbortController();
+    setState('loading');
+    fetch(section.contentUrl, { signal: controller.signal, headers: { Accept: 'text/markdown' } })
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.text();
+      })
+      .then((markdown) => {
+        deepDiveCache.set(section.contentUrl!, markdown);
+        setContent(markdown);
+        setState('loaded');
+      })
+      .catch((error: unknown) => {
+        if (error instanceof DOMException && error.name === 'AbortError') return;
+        setState('error');
+      });
+    return () => controller.abort();
+  }, [content, isOpen, section.contentUrl, state]);
+
+  if (!section.contentUrl) return null;
+
+  return (
+    <div className="overflow-hidden rounded-2xl border border-teal-200 bg-teal-50/40">
+      <button
+        type="button"
+        onClick={() => setIsOpen((current) => !current)}
+        aria-expanded={isOpen}
+        aria-controls={panelId}
+        className="flex min-h-[52px] w-full items-center justify-between gap-3 px-4 py-3 text-left text-sm font-bold text-teal-950 transition hover:bg-teal-50"
+      >
+        <span className="flex min-w-0 items-center gap-2">
+          <BookOpen className="h-4 w-4 shrink-0 text-teal-700" />
+          <span>{isOpen ? 'Fechar aprofundamento' : 'Abrir unidade pedagógica completa'}</span>
+        </span>
+        <span className="flex shrink-0 items-center gap-2 text-xs font-semibold text-teal-800">
+          {section.estimatedMinutes ? `${section.estimatedMinutes} min` : null}
+          <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+        </span>
+      </button>
+      {isOpen && (
+        <div id={panelId} className="border-t border-teal-200 bg-white p-4 sm:p-6">
+          {state === 'loading' && (
+            <div className="flex min-h-28 items-center justify-center gap-2 text-sm font-semibold text-teal-800" role="status">
+              <LoaderCircle className="h-4 w-4 animate-spin" /> Carregando aprofundamento…
+            </div>
+          )}
+          {state === 'error' && (
+            <div className="rounded-xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-900" role="alert">
+              Não foi possível carregar esta unidade. Verifique a conexão e tente abri-la novamente.
+            </div>
+          )}
+          {content && <MarkdownContent content={content} />}
+        </div>
+      )}
+    </div>
+  );
+};
+
 const editorialStatusLabel = (
   status: NonNullable<ModuleData['knowledge']>['editorialStatus']
 ) => {
     switch (status) {
       case 'approved_ai_reviewed':
-        return 'Aprovado por revisão editorial de IA';
+        return 'Integrado após revisão pedagógica de IA';
       case 'needs_revision':
         return 'Revisão editorial necessária';
       case 'insufficient_evidence':
@@ -165,8 +235,8 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   );
   const currentNotesOwnerId = user?.uid || 'guest';
 
-  // Load this module's notes. Logged-out study remains available locally and is
-  // migrated to the authenticated user's Firestore document on their next save.
+  // Notes are namespaced by the editorial build so content from a previous
+  // curriculum cannot appear under reused module/section identifiers.
   useEffect(() => {
     let cancelled = false;
     const moduleId = moduleData.id;
@@ -192,11 +262,11 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
 
     const loadCloudNotes = async () => {
       try {
-        const noteRef = doc(db, 'users', user.uid, 'module_notes', moduleId);
+        const noteRef = doc(db, 'users', user.uid, 'module_notes', `${CURRICULUM_BUILD_ID}_${moduleId}`);
         const snapshot = await getDoc(noteRef);
         if (cancelled) return;
 
-        if (snapshot.exists()) {
+        if (snapshot.exists() && snapshot.data().curriculumBuildId === CURRICULUM_BUILD_ID) {
           const cloudNotes = normalizeNotes(snapshot.data().notes);
           setSectionNotes(cloudNotes);
           saveLocalNotes(moduleId, cloudNotes, user.uid);
@@ -209,6 +279,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
         if (Object.keys(localNotes).length > 0) {
           await setDoc(noteRef, {
             moduleId,
+            curriculumBuildId: CURRICULUM_BUILD_ID,
             notes: localNotes,
             updatedAt: new Date().toISOString(),
           });
@@ -243,9 +314,10 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
 
     try {
       await setDoc(
-        doc(db, 'users', userId, 'module_notes', moduleId),
+        doc(db, 'users', userId, 'module_notes', `${CURRICULUM_BUILD_ID}_${moduleId}`),
         {
           moduleId,
+          curriculumBuildId: CURRICULUM_BUILD_ID,
           notes,
           updatedAt: new Date().toISOString(),
         },
@@ -307,8 +379,8 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   const askTutorAboutSection = (section: ModuleData['sections'][number]) => {
     const selectedExcerpt = window.getSelection()?.toString().trim().slice(0, 600);
     onAskTutor(
-      `Módulo ${moduleData.num}: ${moduleData.title}. Seção: ${section.title}. ` +
-      `Conceitos: ${(section.sourceConceptIds || []).join(', ') || 'não informados'}.` +
+      `Aula ${String(moduleData.num).padStart(2, '0')}: ${moduleData.title}. Seção: ${section.title}. ` +
+      (section.summary ? `Objetivo de estudo: ${section.summary.slice(0, 360)}.` : '') +
       (selectedExcerpt ? ` Trecho selecionado pelo aluno: “${selectedExcerpt}”.` : '')
     );
   };
@@ -316,6 +388,8 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   const currentIndex = modules.findIndex((m) => m.id === moduleData.id);
   const prevModule = currentIndex > 0 ? modules[currentIndex - 1] : null;
   const nextModule = currentIndex < modules.length - 1 ? modules[currentIndex + 1] : null;
+  const coreModuleCount = modules.filter((module) => /^mod\d+$/.test(module.id)).length;
+  const hasSimulado = modules.some((module) => module.id === 'simulado');
 
   return (
     <div
@@ -329,14 +403,14 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
           type="button"
           onClick={() => setIsMobileDrawerOpen(true)}
           className="w-full min-h-[52px] bg-white border border-slate-200 rounded-xl p-3.5 flex items-center justify-between shadow-2xs text-left"
-          aria-label="Abrir menu de módulos"
+          aria-label="Abrir menu de aulas"
           aria-expanded={isMobileDrawerOpen}
           aria-controls="module-mobile-drawer"
           aria-haspopup="dialog"
         >
           <div className="flex items-center space-x-3 min-w-0">
             <span className="text-xs font-bold bg-teal-50 text-teal-800 px-2.5 py-1 rounded-md border border-teal-200 shrink-0">
-              Módulo {moduleData.num}
+              Aula {String(moduleData.num).padStart(2, '0')}
             </span>
             <span className="text-sm font-bold text-slate-900 truncate">
               {moduleData.title}
@@ -421,7 +495,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
               <h2 className="font-bold text-slate-900 text-sm">Sumário da Apostila</h2>
             </div>
             <span className="text-[11px] font-medium text-slate-700 bg-slate-100 px-2 py-0.5 rounded-full">
-              {modules.length} Módulos
+              {coreModuleCount} aulas{hasSimulado ? ' + simulado' : ''}
             </span>
           </div>
 
@@ -487,12 +561,12 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
           <div className="flex flex-wrap items-center justify-between gap-3">
             <span className="text-xs font-bold text-teal-800 bg-teal-50 border border-teal-200 px-3 py-1 rounded-full flex items-center gap-1.5">
               <BookOpen className="w-3.5 h-3.5 text-teal-700" />
-              Módulo {moduleData.num} de {modules.length - 1}
+              Aula {String(moduleData.num).padStart(2, '0')} de {coreModuleCount - 1}
             </span>
 
             <div className="flex items-center space-x-2 text-xs text-slate-500 font-medium">
               <Clock className="w-3.5 h-3.5 text-slate-400" />
-              <span>Tempo estimado: 25 min</span>
+              <span>Tempo estimado: {moduleData.estimatedMinutes || 25} min</span>
             </div>
           </div>
 
@@ -528,15 +602,15 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                   {editorialStatusLabel(moduleData.knowledge.editorialStatus)}
                 </p>
                 <p className="leading-relaxed text-slate-600">
-                  As fontes sustentam a auditoria editorial; a interpretação SuVeCA permanece identificada como elaboração do método. A versão técnica do conteúdo é registrada internamente.
+                  A apostila canônica sustenta as regras; a integração pedagógica organiza explicações, procedimentos, exemplos, contrastes e revisão ativa para uso na SuVeCa. A proveniência técnica permanece separada do texto de estudo.
                 </p>
                 {moduleData.knowledge.reviewVersion && (
                   <p className="rounded-lg border border-violet-200 bg-white/80 px-2.5 py-2 leading-relaxed text-violet-900">
-                    Parecer <strong>{moduleData.knowledge.reviewVersion}</strong>, emitido por {moduleData.knowledge.reviewerType === 'ai' ? 'IA' : 'revisor'} em {moduleData.knowledge.reviewedAt || 'data não informada'}
-                    {typeof moduleData.knowledge.reviewConfidence === 'number' ? ` · confiança ${(moduleData.knowledge.reviewConfidence * 100).toFixed(0)}%` : ''}. Não equivale a aprovação humana.
+                    Compilação <strong>{moduleData.knowledge.reviewVersion}</strong>, realizada por {moduleData.knowledge.reviewerType === 'ai' ? 'IA' : 'revisor'} em {moduleData.knowledge.reviewedAt || 'data não informada'}
+                    {typeof moduleData.knowledge.reviewConfidence === 'number' ? ` · confiança ${(moduleData.knowledge.reviewConfidence * 100).toFixed(0)}%` : ''}. A autoria didática da IA não substitui a autoridade normativa do corpus.
                   </p>
                 )}
-                <ul className="space-y-1.5" aria-label="Principais fontes deste módulo">
+                <ul className="space-y-1.5" aria-label="Principais fontes desta aula">
                   {moduleData.knowledge.sources.map((source) => (
                     <li key={source.id} className="flex items-start gap-2 rounded-lg bg-white/80 px-2.5 py-2">
                       {source.url ? (
@@ -560,7 +634,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
 
           <div className="pt-2 flex flex-wrap gap-2">
             <button
-              onClick={() => onAskTutor(`Dúvidas no Módulo ${moduleData.num}: ${moduleData.title}`)}
+              onClick={() => onAskTutor(`Dúvidas na Aula ${String(moduleData.num).padStart(2, '0')}: ${moduleData.title}`)}
               className="button-secondary text-xs"
             >
               <Bot className="w-4 h-4 text-teal-700" />
@@ -592,6 +666,8 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
               <div className="text-slate-800 text-base leading-relaxed">
                 <MarkdownContent content={section.contentMarkdown} />
               </div>
+
+              <PedagogicalDeepDive section={section} />
 
               {(section.limitsAndExceptions?.length || section.contrasts?.length || section.examTraps?.length) ? (
                 <div className="grid min-w-0 gap-3 lg:grid-cols-3">
@@ -778,7 +854,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                   <span>Fixação Prática e Bateria de Questões</span>
                 </h2>
                 <p className="text-xs text-slate-500 mt-0.5">
-                  Responda para testar a retenção das regras deste módulo.
+                  Responda para testar a retenção das regras desta aula.
                 </p>
               </div>
               <span className="text-xs font-bold text-teal-800 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-200">
@@ -868,7 +944,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                           <span>
                             {isCorrect
                               ? '✓ Resposta Correta!'
-                              : `✕ Incorreto. Gabarito oficial: ${q.correctAnswer}`}
+                              : `✕ Incorreto. Gabarito: ${q.correctAnswer}`}
                           </span>
                         </div>
 
@@ -946,7 +1022,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
         {/* Prev / Next Navigation */}
         {!isFocusMode && <nav
           className="flex items-center justify-between pt-4 border-t border-slate-200"
-          aria-label="Navegação entre módulos"
+          aria-label="Navegação entre aulas"
         >
           {prevModule ? (
             <button

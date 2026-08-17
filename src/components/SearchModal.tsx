@@ -7,6 +7,7 @@ import { Database, FilePenLine } from 'lucide-react';
 import type { CadernoErroItem } from '../types/suveca';
 import { fetchOfficialQuestions, type OfficialQuestionIndexItem } from '../lib/officialQuestions';
 import { hasSearchMatch } from '../lib/search';
+import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -86,7 +87,9 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   )).slice(0, 6) : [];
   const noteResults = query ? MODULES_DATA.flatMap((module) => {
     try {
-      const key = userId ? `suveca_module_notes_${userId}_${module.id}` : `suveca_module_notes_guest_${module.id}`;
+      const key = userId
+        ? `suveca_module_notes_${PEDAGOGICAL_KNOWLEDGE_BUILD.buildId}_${userId}_${module.id}`
+        : `suveca_module_notes_${PEDAGOGICAL_KNOWLEDGE_BUILD.buildId}_guest_${module.id}`;
       const stored = localStorage.getItem(key);
       if (!stored) return [];
       const notes = Object.values(JSON.parse(stored) as Record<string, string>)
@@ -99,7 +102,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   }).slice(0, 5) : [];
   const resultSummary = query
     ? `${results.length + errorResults.length + noteResults.length + officialResults.length} resultados encontrados para ${query}.`
-    : `${results.length} módulos disponíveis. Digite um termo para filtrar.`;
+    : `${results.length} aulas e práticas disponíveis. Digite um termo para filtrar.`;
 
   return (
     <div
@@ -115,7 +118,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
         aria-labelledby="search-modal-title"
         tabIndex={-1}
       >
-        <h2 id="search-modal-title" className="sr-only">Buscar em módulos, anotações, erros e questões oficiais</h2>
+        <h2 id="search-modal-title" className="sr-only">Buscar em aulas, anotações, erros e questões editoriais</h2>
 
         <div className="p-4 sm:p-5 border-b border-slate-200 bg-slate-50 flex items-center space-x-3 shrink-0">
           <form
@@ -124,7 +127,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
             onSubmit={(event) => event.preventDefault()}
           >
             <Search className="w-4 h-4 text-teal-700 shrink-0" aria-hidden="true" />
-            <label htmlFor="module-search" className="sr-only">Pesquisar módulos e conteúdos</label>
+            <label htmlFor="module-search" className="sr-only">Pesquisar aulas e conteúdos</label>
             <input
               ref={searchInputRef}
               id="module-search"
@@ -168,7 +171,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
             <div className="text-center py-12 space-y-2">
               <BookOpen className="w-8 h-8 text-slate-300 mx-auto" aria-hidden="true" />
               <p className="text-sm font-semibold text-slate-700">
-                Nenhum módulo encontrado para “{searchTerm}”
+                Nenhum conteúdo encontrado para “{searchTerm}”
               </p>
               <p className="text-xs text-slate-500">
                 Tente pesquisar termos como “crase”, “sujeito”, “concordância” ou “vírgula”.
@@ -191,7 +194,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                   <div className="min-w-0 pr-3">
                     <div className="flex items-center space-x-2">
                       <span className="text-xs font-bold text-teal-800 bg-teal-100 px-2 py-0.5 rounded-md border border-teal-200 shrink-0">
-                        Módulo {module.num}
+                        {/^mod\d+$/.test(module.id) ? `Aula ${String(module.num).padStart(2, '0')}` : module.title}
                       </span>
                       <span className="text-sm font-bold text-slate-900 group-hover:text-teal-900 truncate">
                         <HighlightedText text={module.title} query={query} />
@@ -219,12 +222,12 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                 <p className="mt-1 line-clamp-2 text-xs leading-5 text-slate-700"><HighlightedText text={notes} query={query} /></p>
               </button>
             ))}
-            {(officialResults.length > 0 || isLoadingOfficial) && <h3 className="px-1 pt-4 text-xs font-extrabold uppercase tracking-wide text-slate-700">Questões oficiais</h3>}
-            {isLoadingOfficial && <p role="status" className="p-3 text-xs text-slate-600">Consultando as 372 questões oficiais…</p>}
+            {(officialResults.length > 0 || isLoadingOfficial) && <h3 className="px-1 pt-4 text-xs font-extrabold uppercase tracking-wide text-slate-700">Questões editoriais</h3>}
+            {isLoadingOfficial && <p role="status" className="p-3 text-xs text-slate-600">Consultando o banco editorial…</p>}
             {officialResults.map((question) => (
               <button key={question.questionId} type="button" onClick={() => { onOpenOfficialQuestions?.(); onClose(); }} className="w-full rounded-xl border border-violet-200 bg-violet-50/60 p-4 text-left">
                 <div className="flex items-center gap-2 text-sm font-bold text-violet-950"><Database className="h-4 w-4" /> Questão {question.questionId}</div>
-                <p className="mt-1 text-xs leading-5 text-slate-700">{question.officialProjection.topicNames.join(', ') || 'Língua Portuguesa'} · {question.officialProjection.banks.join(', ') || 'Banca não identificada'}</p>
+                <p className="mt-1 text-xs leading-5 text-slate-700">{question.editorialProjection.topicNames.join(', ') || 'Língua Portuguesa'} · {question.editorialProjection.banks.join(', ') || 'Fonte da apostila'}</p>
               </button>
             ))}
             </>

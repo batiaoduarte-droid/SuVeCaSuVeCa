@@ -7,18 +7,20 @@ type JsonRecord = Record<string, unknown>;
 
 export interface OfficialQuestionIndexItem {
   questionId: string;
-  officialHashSha256: string;
-  officialProjection: {
-    difficulty: string;
-    answerType: string;
+  editorialHashSha256: string;
+  editorialProjection: {
+    primaryLessonId: string;
+    lessonIds: string[];
+    difficulty: 'UNSPECIFIED';
+    answerType: 'CERTO_ERRADO' | 'MULTIPLA_ESCOLHA';
     correctAnswer: string;
-    topicIds: string[];
     topicNames: string[];
     banks: string[];
+    organizations: string[];
     years: number[];
-    examIds: string[];
-    hasTextSolution: boolean;
-    hasVideoSolution: boolean;
+    hasCommentary: boolean;
+    extractionConfidence: number;
+    answerConfidence: number;
   };
   suvecaDerived: {
     moduleIds: string[];
@@ -36,16 +38,23 @@ export interface OfficialQuestionFilters {
   query?: string;
 }
 
+interface QuestionIndexPayload {
+  buildId: string;
+  questionSetVersion: string;
+  expectedTotal: number;
+  items: OfficialQuestionIndexItem[];
+}
+
 interface QuestionStore {
   rawById: Map<string, JsonRecord>;
   normalizedById: Map<string, JsonRecord>;
   index: OfficialQuestionIndexItem[];
   indexById: Map<string, OfficialQuestionIndexItem>;
   buildId: string;
+  questionSetVersion: string;
+  expectedTotal: number;
   source: 'monolithic' | 'sharded';
   sourceLocation: string;
-  rawTotal: number;
-  normalizedTotal: number;
   ensureQuestionLoaded: (questionId: string) => Promise<void>;
   ensureAllLoaded: () => Promise<void>;
 }
@@ -60,6 +69,7 @@ interface ShardDescriptor {
 
 interface OfficialQuestionManifest {
   buildId: string;
+  questionSetVersion: string;
   expectedTotal: number;
   totals: { raw: number; normalized: number; indexed: number; uniqueQuestionIds: number; shards: number };
   shards: ShardDescriptor[];
@@ -103,20 +113,22 @@ const resolveKnowledgeSource = async () => {
   for (const candidate of knowledgeCandidates()) {
     checked.push(candidate.label);
     if (!await fileExists(path.join(candidate.directory, 'official-question-index.json'))) continue;
-    const [rawExists, normalizedExists, manifestExists] = await Promise.all([
+    const [manifestExists, rawExists, normalizedExists] = await Promise.all([
+      fileExists(path.join(candidate.directory, 'official-questions.manifest.json')),
       fileExists(path.join(candidate.directory, 'official-questions.raw.json')),
       fileExists(path.join(candidate.directory, 'official-questions.normalized.json')),
-      fileExists(path.join(candidate.directory, 'official-questions.manifest.json')),
     ]);
-    if (rawExists && normalizedExists) return { ...candidate, mode: 'monolithic' as const };
     if (manifestExists) return { ...candidate, mode: 'sharded' as const };
+    if (rawExists && normalizedExists) return { ...candidate, mode: 'monolithic' as const };
   }
-  throw new Error(`Artefatos oficiais indisponíveis. Locais verificados: ${checked.join(', ')}.`);
+  throw new Error(`Banco editorial indisponível. Locais verificados: ${checked.join(', ')}.`);
 };
 
 const safeShardPath = (directory: string, relativeFile: string) => {
   const resolved = path.resolve(directory, relativeFile);
-  if (!resolved.startsWith(`${path.resolve(directory)}${path.sep}`)) throw new Error(`Caminho de shard inválido: ${relativeFile}`);
+  if (!resolved.startsWith(`${path.resolve(directory)}${path.sep}`)) {
+    throw new Error(`Caminho de shard inválido: ${relativeFile}`);
+  }
   return resolved;
 };
 
@@ -129,65 +141,86 @@ const readVerifiedShard = async (directory: string, descriptor: { file: string; 
   return parsed;
 };
 
+const validateIndex = (payload: QuestionIndexPayload) => {
+  const expected = Number(payload.expectedTotal);
+  if (!Number.isInteger(expected) || expected < 1000) throw new Error(`Total editorial inválido: ${payload.expectedTotal}.`);
+  if (!payload.buildId || payload.questionSetVersion !== `editorial-corpus-${payload.buildId}`) {
+    throw new Error('Versão do banco editorial incompatível com o build.');
+  }
+  if (!Array.isArray(payload.items) || payload.items.length !== expected) {
+    throw new Error(`Índice editorial incompleto: ${payload.items?.length || 0}/${expected}.`);
+  }
+  const ids = payload.items.map((item) => String(item.questionId || ''));
+  if (ids.some((id) => !/^A(?:0\d|1[0-3]):/.test(id)) || new Set(ids).size !== expected) {
+    throw new Error('Índice editorial contém IDs inválidos ou duplicados.');
+  }
+  return expected;
+};
+
 const validateMonolithicInputs = (
   raw: JsonRecord[],
   normalized: JsonRecord[],
-  indexPayload: { buildId: string; items: OfficialQuestionIndexItem[] },
+  indexPayload: QuestionIndexPayload,
 ) => {
-  if (!Array.isArray(raw) || raw.length !== 372) throw new Error(`Corpus bruto incompleto: ${raw?.length || 0}/372.`);
-  if (!Array.isArray(normalized) || normalized.length !== 372) throw new Error(`Corpus normalizado incompleto: ${normalized?.length || 0}/372.`);
-  if (!Array.isArray(indexPayload.items) || indexPayload.items.length !== 372) throw new Error(`Índice oficial incompleto: ${indexPayload.items?.length || 0}/372.`);
+  const expected = validateIndex(indexPayload);
+  if (!Array.isArray(raw) || raw.length !== expected) throw new Error(`Corpus bruto incompleto: ${raw?.length || 0}/${expected}.`);
+  if (!Array.isArray(normalized) || normalized.length !== expected) throw new Error(`Corpus normalizado incompleto: ${normalized?.length || 0}/${expected}.`);
   const rawIds = raw.map((question) => String(question.id || ''));
   const normalizedIds = normalized.map((question) => String(question.id || ''));
-  const indexIds = indexPayload.items.map((item) => String(item.questionId || ''));
-  for (const [label, ids] of [['bruto', rawIds], ['normalizado', normalizedIds], ['índice', indexIds]] as const) {
-    if (ids.some((id) => !id)) throw new Error(`O conjunto ${label} contém ID vazio.`);
-    if (new Set(ids).size !== 372) throw new Error(`O conjunto ${label} não possui 372 IDs únicos.`);
+  const indexIds = indexPayload.items.map((item) => item.questionId);
+  if (JSON.stringify(rawIds) !== JSON.stringify(normalizedIds) || JSON.stringify(rawIds) !== JSON.stringify(indexIds)) {
+    throw new Error('A ordem dos IDs bruto, normalizado e índice diverge.');
   }
-  if (JSON.stringify(rawIds) !== JSON.stringify(normalizedIds)) throw new Error('A ordem dos IDs brutos e normalizados diverge.');
-  if (indexIds.some((id) => !rawIds.includes(id))) throw new Error('O índice referencia questões ausentes do payload oficial.');
 };
 
 let storePromise: Promise<QuestionStore> | null = null;
 export const resetOfficialQuestionStoreForTests = () => {
   storePromise = null;
 };
+
 const loadStore = async (): Promise<QuestionStore> => {
   if (storePromise) return storePromise;
   storePromise = (async () => {
     const source = await resolveKnowledgeSource();
-    const indexText = await readFile(path.join(source.directory, 'official-question-index.json'), 'utf8');
-    const indexPayload = JSON.parse(indexText) as { buildId: string; items: OfficialQuestionIndexItem[] };
-    let raw: JsonRecord[] = [];
-    let normalized: JsonRecord[] = [];
-    if (source.mode === 'monolithic') {
-      const [rawText, normalizedText] = await Promise.all([
-        readFile(path.join(source.directory, 'official-questions.raw.json'), 'utf8'),
-        readFile(path.join(source.directory, 'official-questions.normalized.json'), 'utf8'),
-      ]);
-      raw = JSON.parse(rawText) as JsonRecord[];
-      normalized = JSON.parse(normalizedText) as JsonRecord[];
-    }
+    const indexPayload = JSON.parse(
+      await readFile(path.join(source.directory, 'official-question-index.json'), 'utf8'),
+    ) as QuestionIndexPayload;
+    const expectedTotal = validateIndex(indexPayload);
     const rawById = new Map<string, JsonRecord>();
     const normalizedById = new Map<string, JsonRecord>();
     let ensureQuestionLoaded: (questionId: string) => Promise<void>;
     let ensureAllLoaded: () => Promise<void>;
 
     if (source.mode === 'monolithic') {
+      const [raw, normalized] = await Promise.all([
+        readFile(path.join(source.directory, 'official-questions.raw.json'), 'utf8').then((value) => JSON.parse(value) as JsonRecord[]),
+        readFile(path.join(source.directory, 'official-questions.normalized.json'), 'utf8').then((value) => JSON.parse(value) as JsonRecord[]),
+      ]);
       validateMonolithicInputs(raw, normalized, indexPayload);
       raw.forEach((question) => rawById.set(String(question.id), question));
       normalized.forEach((question) => normalizedById.set(String(question.id), question));
       ensureQuestionLoaded = async () => undefined;
       ensureAllLoaded = async () => undefined;
     } else {
-      const manifest = JSON.parse(await readFile(path.join(source.directory, 'official-questions.manifest.json'), 'utf8')) as OfficialQuestionManifest;
-      if (manifest.expectedTotal !== 372 || manifest.buildId !== indexPayload.buildId) throw new Error('Manifesto oficial incompativel com o indice versionado.');
-      if (!Array.isArray(manifest.shards) || manifest.shards.length !== manifest.totals.shards) throw new Error('Manifesto oficial possui shards inconsistentes.');
-      if (manifest.totals.raw !== 372 || manifest.totals.normalized !== 372 || manifest.totals.indexed !== 372 || manifest.totals.uniqueQuestionIds !== 372) {
-        throw new Error('Manifesto oficial nao declara 372 registros integros.');
+      const manifest = JSON.parse(
+        await readFile(path.join(source.directory, 'official-questions.manifest.json'), 'utf8'),
+      ) as OfficialQuestionManifest;
+      const declaredTotals = [
+        manifest.totals?.raw,
+        manifest.totals?.normalized,
+        manifest.totals?.indexed,
+        manifest.totals?.uniqueQuestionIds,
+      ];
+      if (
+        manifest.buildId !== indexPayload.buildId
+        || manifest.questionSetVersion !== indexPayload.questionSetVersion
+        || manifest.expectedTotal !== expectedTotal
+        || declaredTotals.some((total) => total !== expectedTotal)
+      ) {
+        throw new Error('Manifesto editorial incompatível com o índice versionado.');
       }
-      if (!Array.isArray(indexPayload.items) || indexPayload.items.length !== 372 || new Set(indexPayload.items.map((item) => item.questionId)).size !== 372) {
-        throw new Error('Indice oficial incompleto ou duplicado.');
+      if (!Array.isArray(manifest.shards) || manifest.shards.length !== manifest.totals.shards) {
+        throw new Error('Manifesto editorial possui shards inconsistentes.');
       }
 
       const questionToShard = new Map<string, ShardDescriptor>();
@@ -198,8 +231,11 @@ const loadStore = async (): Promise<QuestionStore> => {
           questionToShard.set(questionId, shard);
         }
       }
-      if (questionToShard.size !== 372 || indexPayload.items.some((item) => !questionToShard.has(item.questionId))) {
-        throw new Error('Manifesto e indice oficial possuem conjuntos de IDs divergentes.');
+      if (
+        questionToShard.size !== expectedTotal
+        || indexPayload.items.some((item) => !questionToShard.has(item.questionId))
+      ) {
+        throw new Error('Manifesto e índice editorial possuem conjuntos de IDs divergentes.');
       }
 
       const shardPromises = new Map<number, Promise<void>>();
@@ -210,9 +246,15 @@ const loadStore = async (): Promise<QuestionStore> => {
           readVerifiedShard(source.directory, shard.raw),
           readVerifiedShard(source.directory, shard.normalized),
         ]).then(([rawPart, normalizedPart]) => {
-          if (rawPart.length !== shard.count || normalizedPart.length !== shard.count) throw new Error(`Contagem divergente no shard ${shard.part}.`);
-          if (JSON.stringify(rawPart.map((item) => String(item.id))) !== JSON.stringify(shard.questionIds)) throw new Error(`IDs brutos divergentes no shard ${shard.part}.`);
-          if (JSON.stringify(normalizedPart.map((item) => String(item.id))) !== JSON.stringify(shard.questionIds)) throw new Error(`IDs normalizados divergentes no shard ${shard.part}.`);
+          if (rawPart.length !== shard.count || normalizedPart.length !== shard.count) {
+            throw new Error(`Contagem divergente no shard ${shard.part}.`);
+          }
+          if (JSON.stringify(rawPart.map((item) => String(item.id))) !== JSON.stringify(shard.questionIds)) {
+            throw new Error(`IDs brutos divergentes no shard ${shard.part}.`);
+          }
+          if (JSON.stringify(normalizedPart.map((item) => String(item.id))) !== JSON.stringify(shard.questionIds)) {
+            throw new Error(`IDs normalizados divergentes no shard ${shard.part}.`);
+          }
           rawPart.forEach((question) => rawById.set(String(question.id), question));
           normalizedPart.forEach((question) => normalizedById.set(String(question.id), question));
         }).catch((error) => {
@@ -238,10 +280,10 @@ const loadStore = async (): Promise<QuestionStore> => {
       index: indexPayload.items,
       indexById: new Map(indexPayload.items.map((item) => [item.questionId, item])),
       buildId: indexPayload.buildId,
+      questionSetVersion: indexPayload.questionSetVersion,
+      expectedTotal,
       source: source.mode,
       sourceLocation: source.label,
-      rawTotal: source.mode === 'monolithic' ? raw.length : 372,
-      normalizedTotal: source.mode === 'monolithic' ? normalized.length : 372,
       ensureQuestionLoaded,
       ensureAllLoaded,
     };
@@ -255,42 +297,60 @@ const loadStore = async (): Promise<QuestionStore> => {
 export async function getOfficialQuestionStoreHealth() {
   const store = await loadStore();
   return {
-    expected: 372,
-    raw: store.rawTotal,
-    normalized: store.normalizedTotal,
+    expected: store.expectedTotal,
+    raw: store.expectedTotal,
+    normalized: store.expectedTotal,
     indexed: store.index.length,
     uniqueIds: store.indexById.size,
     buildId: store.buildId,
+    questionSetVersion: store.questionSetVersion,
     source: store.source,
     location: store.sourceLocation,
   };
 }
 
 const matchesFilters = (item: OfficialQuestionIndexItem, filters: OfficialQuestionFilters) => {
+  const projection = item.editorialProjection;
   if (filters.moduleId && !item.suvecaDerived.moduleIds.includes(filters.moduleId)) return false;
   if (filters.conceptId && !item.suvecaDerived.conceptIds.includes(filters.conceptId)) return false;
-  if (filters.year && !item.officialProjection.years.includes(filters.year)) return false;
-  if (filters.difficulty && normalize(item.officialProjection.difficulty) !== normalize(filters.difficulty)) return false;
+  if (filters.year && !projection.years.includes(filters.year)) return false;
+  if (filters.difficulty && normalize(projection.difficulty) !== normalize(filters.difficulty)) return false;
+  if (filters.topic && !projection.topicNames.some((topic) => normalize(topic).includes(normalize(filters.topic)))) return false;
   if (
-    filters.topic
-    && !item.officialProjection.topicNames.some((topic) => normalize(topic).includes(normalize(filters.topic)))
-    && !item.officialProjection.topicIds.includes(filters.topic)
+    filters.bank
+    && ![...projection.banks, ...projection.organizations].some((bank) => normalize(bank).includes(normalize(filters.bank)))
   ) return false;
-  if (filters.bank && !item.officialProjection.banks.some((bank) => normalize(bank).includes(normalize(filters.bank)))) return false;
   return true;
 };
 
-const textualScore = (raw: JsonRecord | undefined, item: OfficialQuestionIndexItem, query = '') => {
+const textualScore = (normalizedQuestion: JsonRecord | undefined, item: OfficialQuestionIndexItem, query = '') => {
   const terms = normalize(query).split(/\s+/).filter((term) => term.length > 2);
   if (!terms.length) return 0;
-  const solution = raw?.solution as JsonRecord | undefined;
+  const options = Array.isArray(normalizedQuestion?.options)
+    ? (normalizedQuestion.options as JsonRecord[]).map((option) => option.text)
+    : [];
   const haystack = normalize([
-    raw?.statement_text,
-    ...item.officialProjection.topicNames,
-    ...item.officialProjection.banks,
-    solution?.sanitized_complete,
+    normalizedQuestion?.supportText,
+    normalizedQuestion?.prompt,
+    normalizedQuestion?.commentary,
+    ...options,
+    ...item.editorialProjection.topicNames,
+    ...item.editorialProjection.banks,
+    ...item.editorialProjection.organizations,
   ].join(' '));
   return terms.reduce((score, term) => score + (haystack.includes(term) ? 1 : 0), 0);
+};
+
+const filteredIndex = async (store: QuestionStore, filters: OfficialQuestionFilters) => {
+  if (filters.query) await store.ensureAllLoaded();
+  return store.index
+    .filter((item) => matchesFilters(item, filters))
+    .map((item) => ({
+      item,
+      score: filters.query ? textualScore(store.normalizedById.get(item.questionId), item, filters.query) : 0,
+    }))
+    .filter(({ score }) => !filters.query || score > 0)
+    .sort((left, right) => right.score - left.score || left.item.questionId.localeCompare(right.item.questionId, 'en'));
 };
 
 export async function queryOfficialQuestions(
@@ -298,16 +358,12 @@ export async function queryOfficialQuestions(
   options: { offset?: number; limit?: number } = {},
 ) {
   const store = await loadStore();
-  if (filters.query) await store.ensureAllLoaded();
   const offset = Math.max(0, options.offset || 0);
   const limit = Math.min(100, Math.max(1, options.limit || 20));
-  const filtered = store.index
-    .filter((item) => matchesFilters(item, filters))
-    .map((item) => ({ item, score: filters.query ? textualScore(store.rawById.get(item.questionId), item, filters.query) : 0 }))
-    .filter(({ score }) => !filters.query || score > 0)
-    .sort((left, right) => right.score - left.score || left.item.questionId.localeCompare(right.item.questionId));
+  const filtered = await filteredIndex(store, filters);
   return {
     buildId: store.buildId,
+    questionSetVersion: store.questionSetVersion,
     total: filtered.length,
     offset,
     limit,
@@ -326,19 +382,22 @@ export async function getOfficialQuestion(questionId: string) {
   return {
     questionId: id,
     provenance: {
-      kind: 'official_question',
-      officialPayloadPolicy: 'immutable',
+      kind: 'editorial_question' as const,
+      payloadPolicy: 'source_preserved' as const,
       buildId: store.buildId,
-      officialHashSha256: index.officialHashSha256,
+      questionSetVersion: store.questionSetVersion,
+      editorialHashSha256: index.editorialHashSha256,
     },
-    official: { raw, normalized },
+    editorial: { raw, normalized },
+    editorialProjection: index.editorialProjection,
     suvecaDerived: index.suvecaDerived,
   };
 }
 
 export async function sampleOfficialQuestions(filters: OfficialQuestionFilters, count = 10) {
-  const result = await queryOfficialQuestions(filters, { limit: 100 });
-  const pool = [...result.items];
+  const store = await loadStore();
+  const filtered = await filteredIndex(store, filters);
+  const pool = filtered.map(({ item }) => item);
   for (let index = pool.length - 1; index > 0; index -= 1) {
     const swapIndex = Math.floor(Math.random() * (index + 1));
     [pool[index], pool[swapIndex]] = [pool[swapIndex], pool[index]];
@@ -350,19 +409,22 @@ export async function sampleOfficialQuestions(filters: OfficialQuestionFilters, 
 export async function formatOfficialQuestionContext(query: string, limit = 2) {
   const store = await loadStore();
   const result = await queryOfficialQuestions({ query }, { limit });
-  const blocks = result.items.map((item) => {
-    const raw = store.rawById.get(item.questionId);
-    const solution = raw?.solution as JsonRecord | undefined;
-    const statement = formatOfficialContent(raw?.statement || raw?.statement_text);
-    const commentary = formatOfficialContent(solution?.complete_html || solution?.complete || solution?.sanitized_complete);
+  const blocks = await Promise.all(result.items.map(async (item) => {
+    await store.ensureQuestionLoaded(item.questionId);
+    const question = store.normalizedById.get(item.questionId);
+    const statement = formatOfficialContent([
+      question?.supportText,
+      question?.prompt,
+    ].filter(Boolean).join('\n\n'));
+    const commentary = formatOfficialContent(question?.commentary);
     return [
       `[QUESTION:${item.questionId}]`,
-      `Tópicos oficiais: ${item.officialProjection.topicNames.join(' > ')}`,
-      `Banca/ano: ${item.officialProjection.banks.join(', ') || 'não identificado'} / ${item.officialProjection.years.join(', ') || 'não identificado'}`,
-      `Enunciado — trecho literal: ${statement.slice(0, 1400)}${statement.length > 1400 ? ' […]' : ''}`,
-      `Solução — trecho literal: ${commentary.slice(0, 1800)}${commentary.length > 1800 ? ' […]' : ''}`,
+      `Aulas/temas: ${item.editorialProjection.topicNames.join(' > ')}`,
+      `Banca/ano: ${item.editorialProjection.banks.join(', ') || 'não identificado'} / ${item.editorialProjection.years.join(', ') || 'não identificado'}`,
+      `Enunciado — trecho preservado: ${statement.slice(0, 1400)}${statement.length > 1400 ? ' […]' : ''}`,
+      `Comentário — trecho preservado: ${commentary.slice(0, 1800)}${commentary.length > 1800 ? ' […]' : ''}`,
     ].join('\n');
-  });
+  }));
   if (!blocks.length) return '';
-  return `QUESTÕES OFICIAIS RELACIONADAS (conteúdo literal, imutável; não corrigir nem atribuir à SuVeCA):\n\n${blocks.join('\n\n')}`;
+  return `QUESTÕES EDITORIAIS RELACIONADAS DA APOSTILA (conteúdo preservado; não corrigir nem atribuir à SuVeCA):\n\n${blocks.join('\n\n')}`;
 }
