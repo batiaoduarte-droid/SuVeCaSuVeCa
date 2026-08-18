@@ -32,6 +32,7 @@ const isCardDue = (card: ErrorFlashcard, now: number) =>
 
 const EDITORIAL_CARDS: ErrorFlashcard[] = EDITORIAL_FLASHCARDS.map((card) => ({
   id: card.id,
+  moduleId: card.moduleId,
   source: 'suveca',
   topic: card.topic,
   front: card.front,
@@ -52,6 +53,8 @@ interface FlashcardPracticeProps {
     review?: Pick<CadernoErroItem, 'lastReviewedAt' | 'nextReviewAt'>
   ) => void;
   userId?: string;
+  /** Quando informado pelo ModuleViewer, limita a base editorial à aula atual. */
+  editorialModuleId?: string;
 }
 
 const isFlashcard = (value: unknown): value is ErrorFlashcard => {
@@ -133,6 +136,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
   errors,
   onUpdateErrorStatus,
   userId,
+  editorialModuleId,
 }) => {
   const [authUserId, setAuthUserId] = useState<string | undefined>(() => auth.currentUser?.uid);
   const resolvedUserId = userId ?? authUserId;
@@ -299,8 +303,10 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
     [errors, visibleFlashcards]
   );
   const suvecaCards = useMemo(
-    () => visibleFlashcards.filter((card) => card.source === 'suveca'),
-    [visibleFlashcards]
+    () => visibleFlashcards.filter(
+      (card) => card.source === 'suveca' && (!editorialModuleId || card.moduleId === editorialModuleId)
+    ),
+    [editorialModuleId, visibleFlashcards]
   );
   const dueCadernoCards = useMemo(
     () => cadernoCards.filter((card) => isCardDue(card, reviewClock)),
@@ -533,7 +539,9 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
             <div>
               <h1 className="text-lg font-bold text-slate-900">Revisão ativa com Flashcards</h1>
               <p className="text-xs text-slate-600 mt-1">
-                Gere cards com a Regra Decisiva do seu Caderno ou revise os conteúdos editoriais das aulas 00–14.
+                {editorialModuleId
+                  ? 'Gere cards com a Regra Decisiva do seu Caderno ou revise os conteúdos editoriais desta aula.'
+                  : 'Gere cards com a Regra Decisiva do seu Caderno ou revise os conteúdos editoriais das aulas 00–14.'}
               </p>
             </div>
           </div>
@@ -608,7 +616,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
             mode === 'suveca' ? 'bg-white text-slate-900 shadow-2xs' : 'text-slate-600 hover:text-slate-900'
           }`}
         >
-          Base editorial ({dueSuvecaCards.length}/{suvecaCards.length})
+          {editorialModuleId ? 'Base desta aula' : 'Base editorial'} ({dueSuvecaCards.length}/{suvecaCards.length})
         </button>
       </div>
 
@@ -620,6 +628,8 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
               ? 'Nenhum card do Caderno está devido agora'
               : mode === 'suveca' && suvecaCards.length
               ? 'Nenhum conteúdo editorial está devido agora'
+              : mode === 'suveca' && editorialModuleId
+              ? 'Esta aula ainda não possui cards editoriais'
               : 'Ainda não há cards para esta revisão'}
           </h3>
           <p className="text-xs text-slate-500 max-w-md mx-auto">

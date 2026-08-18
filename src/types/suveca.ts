@@ -194,6 +194,8 @@ export type FlashcardRating = 'again' | 'hard' | 'good' | 'easy';
 export interface ErrorFlashcard {
   id: string;
   errorId?: string;
+  /** Módulo editorial ao qual o cartão pertence; usado no recorte contextual da apostila. */
+  moduleId?: string;
   source: 'caderno' | 'suveca';
   topic: string;
   front: string;

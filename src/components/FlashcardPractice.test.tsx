@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { FlashcardPractice } from './FlashcardPractice';
+import { EDITORIAL_FLASHCARDS } from '../data/editorialFlashcards.generated';
 
 vi.mock('../lib/firebase', () => ({
   auth: { currentUser: null },
@@ -61,5 +62,28 @@ describe('FlashcardPractice', () => {
     await user.click(screen.getByRole('button', { name: /ver explicação/i }));
     expect(screen.getByText('Não há sujeito.')).toBeInTheDocument();
     expect(screen.queryByText(/PASSAGE:|QUESTION:|KB:/i)).not.toBeInTheDocument();
+  });
+
+  it('filtra a base editorial pela aula quando usado dentro do módulo', async () => {
+    const user = userEvent.setup();
+    const moduleId = 'mod0';
+    const expectedCards = EDITORIAL_FLASHCARDS.filter((card) => card.moduleId === moduleId).length;
+
+    render(
+      <FlashcardPractice
+        errors={[]}
+        onUpdateErrorStatus={vi.fn()}
+        editorialModuleId={moduleId}
+      />,
+    );
+
+    const moduleBaseButton = screen.getByRole('button', {
+      name: new RegExp(`Base desta aula \\(${expectedCards}/${expectedCards}\\)`, 'i'),
+    });
+    expect(moduleBaseButton).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /Base editorial \(209\/209\)/i })).not.toBeInTheDocument();
+
+    await user.click(moduleBaseButton);
+    expect(await screen.findByRole('button', { name: /mostrar resposta/i })).toBeVisible();
   });
 });

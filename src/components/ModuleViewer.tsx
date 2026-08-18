@@ -908,6 +908,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
             errors={errors}
             onUpdateErrorStatus={onUpdateErrorStatus}
             userId={userId}
+            editorialModuleId={moduleData.id}
           />
         )}
 
