@@ -3,6 +3,8 @@ import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { CadernoErroItem, ModuleData, ModuleSection, SuvecaMethodConnection } from '../types/suveca';
 import { db, type User } from '../lib/firebase';
 import { MarkdownContent } from './ui/MarkdownContent';
+import { PedagogicalUnitRenderer } from './pedagogical/PedagogicalUnitRenderer';
+import type { PedagogicalUnitView } from '../types/pedagogicalView';
 import {
   isRichNoteEmpty,
   RichNoteEditor,
@@ -98,8 +100,8 @@ const normalizeNotes = (value: unknown): ModuleNotes => {
 
 const readLocalNotes = (moduleId: string, userId?: string): ModuleNotes => {
   try {
-    const savedNotes = localStorage.getItem(notesStorageKey(moduleId, userId));
-    return savedNotes ? normalizeNotes(JSON.parse(savedNotes)) : {};
+    const raw = localStorage.getItem(notesStorageKey(moduleId, userId));
+    return raw ? normalizeNotes(JSON.parse(raw)) : {};
   } catch {
     return {};
   }
@@ -109,45 +111,83 @@ const saveLocalNotes = (moduleId: string, notes: ModuleNotes, userId?: string) =
   localStorage.setItem(notesStorageKey(moduleId, userId), JSON.stringify(notes));
 };
 
-const deepDiveCache = new Map<string, string>();
+const deepDiveMarkdownCache = new Map<string, string>();
+const deepDiveViewCache = new Map<string, PedagogicalUnitView>();
 
 export const PedagogicalDeepDive: React.FC<{ section: ModuleSection }> = ({ section }) => {
   const panelId = useId();
   const [isOpen, setIsOpen] = useState(false);
+  const integrationUnitId = section.editorial?.integrationUnitId;
+  const viewUrl = integrationUnitId ? `/knowledge/pedagogical/views/${integrationUnitId}.json` : null;
+
+  const [viewModel, setViewModel] = useState<PedagogicalUnitView | null>(() =>
+    viewUrl ? deepDiveViewCache.get(viewUrl) || null : null
+  );
   const [content, setContent] = useState<string | null>(() =>
-    section.contentUrl ? deepDiveCache.get(section.contentUrl) || null : null
+    section.contentUrl ? deepDiveMarkdownCache.get(section.contentUrl) || null : null
   );
   const [state, setState] = useState<'idle' | 'loading' | 'loaded' | 'error'>(
-    content ? 'loaded' : 'idle'
+    viewModel || content ? 'loaded' : 'idle'
   );
 
   useEffect(() => {
-    if (!isOpen || !section.contentUrl || content) return;
+    if (!isOpen || (!viewUrl && !section.contentUrl) || viewModel || content) return;
     const controller = new AbortController();
     let active = true;
     setState('loading');
-    fetch(section.contentUrl, { signal: controller.signal, headers: { Accept: 'text/markdown' } })
-      .then((response) => {
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        return response.text();
-      })
-      .then((markdown) => {
-        if (!active) return;
-        deepDiveCache.set(section.contentUrl!, markdown);
-        setContent(markdown);
-        setState('loaded');
-      })
-      .catch((error: unknown) => {
-        if (!active || (error instanceof DOMException && error.name === 'AbortError')) return;
-        setState('error');
-      });
+
+    const loadContent = async () => {
+      // Prioridade 1: Tentar carregar View Model JSON Canônico V1
+      if (viewUrl) {
+        try {
+          const res = await fetch(viewUrl, {
+            signal: controller.signal,
+            headers: { Accept: 'application/json' },
+          });
+          if (res.ok) {
+            const data: PedagogicalUnitView = await res.json();
+            if (active && data.viewSchemaVersion === '1.0.0') {
+              deepDiveViewCache.set(viewUrl, data);
+              setViewModel(data);
+              setState('loaded');
+              return;
+            }
+          }
+        } catch {
+          // Fallback para markdown se o fetch JSON falhar
+        }
+      }
+
+      // Prioridade 2 (Fallback): Carregar Markdown legado / A14
+      if (section.contentUrl) {
+        try {
+          const res = await fetch(section.contentUrl, {
+            signal: controller.signal,
+            headers: { Accept: 'text/markdown' },
+          });
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const md = await res.text();
+          if (active) {
+            deepDiveMarkdownCache.set(section.contentUrl, md);
+            setContent(md);
+            setState('loaded');
+          }
+        } catch (err: unknown) {
+          if (!active || (err instanceof DOMException && err.name === 'AbortError')) return;
+          setState('error');
+        }
+      }
+    };
+
+    loadContent();
+
     return () => {
       active = false;
       controller.abort();
     };
-  }, [content, isOpen, section.contentUrl]);
+  }, [content, isOpen, section.contentUrl, viewModel, viewUrl]);
 
-  if (!section.contentUrl) return null;
+  if (!viewUrl && !section.contentUrl) return null;
 
   return (
     <div className="overflow-hidden rounded-2xl border border-teal-200 bg-teal-50/40">
@@ -156,7 +196,7 @@ export const PedagogicalDeepDive: React.FC<{ section: ModuleSection }> = ({ sect
         onClick={() => setIsOpen((current) => !current)}
         aria-expanded={isOpen}
         aria-controls={panelId}
-        className="flex min-h-[52px] w-full items-center justify-between gap-3 px-4 py-3 text-left text-sm font-bold text-teal-950 transition hover:bg-teal-50"
+        className="flex min-h-[52px] w-full items-center justify-between gap-3 px-4 py-3 text-left text-sm font-bold text-teal-950 transition hover:bg-teal-50 cursor-pointer"
       >
         <span className="flex min-w-0 items-center gap-2">
           <BookOpen className="h-4 w-4 shrink-0 text-teal-700" />
@@ -179,7 +219,8 @@ export const PedagogicalDeepDive: React.FC<{ section: ModuleSection }> = ({ sect
               Não foi possível carregar esta unidade. Verifique a conexão e tente abri-la novamente.
             </div>
           )}
-          {content && <MarkdownContent content={content} pedagogical />}
+          {viewModel && <PedagogicalUnitRenderer view={viewModel} />}
+          {!viewModel && content && <MarkdownContent content={content} pedagogical />}
         </div>
       )}
     </div>
