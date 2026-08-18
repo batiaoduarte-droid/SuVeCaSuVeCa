@@ -8,6 +8,9 @@ import 'katex/dist/katex.min.css';
 import { ResponsiveTable } from './ResponsiveTable';
 import { ConnectionMap, looksLikeConnectionMap } from './ConnectionMap';
 import { QuestionBlock, type QuestionBlockModel } from './QuestionBlock';
+import { PedagogicalCallout } from './PedagogicalCallout';
+import { ActiveRecallChecklist } from './ActiveRecallChecklist';
+import { GlossaryGrid, type GlossaryItem } from './GlossaryGrid';
 
 interface MarkdownContentProps {
   content: string;
@@ -162,10 +165,27 @@ const splitQuestionSegments = (markdown: string): ContentSegment[] => {
   return segments;
 };
 
-const extractCodeSource = (children: ReactNode) => {
-  const child = React.Children.toArray(children)[0];
-  if (!isValidElement<{ children?: ReactNode }>(child)) return null;
-  return String(child.props.children || '').replace(/\n$/, '');
+const extractCodeSource = (children: ReactNode): string | null => {
+  if (typeof children === 'string') return children;
+  if (Array.isArray(children)) {
+    const collected = children.map(extractCodeSource);
+    return collected.every((item) => item !== null) ? collected.join('') : null;
+  }
+  if (isValidElement(children)) {
+    const childProps = children.props as { children?: ReactNode };
+    return extractCodeSource(childProps?.children);
+  }
+  return null;
+};
+
+const parseTextContent = (children: ReactNode): string => {
+  if (typeof children === 'string') return children;
+  if (Array.isArray(children)) return children.map(parseTextContent).join('');
+  if (isValidElement(children)) {
+    const childProps = children.props as { children?: ReactNode };
+    return parseTextContent(childProps?.children);
+  }
+  return '';
 };
 
 const MarkdownRenderer: React.FC<{ content: string }> = ({ content }) => {
@@ -193,9 +213,23 @@ const MarkdownRenderer: React.FC<{ content: string }> = ({ content }) => {
         code: ({ children, className: codeClassName }) => (
           <code className={`font-mono text-xs text-teal-800 ${codeClassName || ''}`}>{children}</code>
         ),
-        blockquote: ({ children }) => (
-          <blockquote className="my-3 rounded-r-lg border-l-4 border-teal-600 bg-teal-50/60 p-3 italic text-slate-800">{children}</blockquote>
-        ),
+        blockquote: ({ children }) => {
+          const text = parseTextContent(children);
+          if (text.includes('Objetivo de aprendizagem') || text.includes('Objetivo:')) {
+            return <PedagogicalCallout type="objective">{children}</PedagogicalCallout>;
+          }
+          if (text.includes('SuVeCA') || text.includes('Limite do Método')) {
+            return <PedagogicalCallout type="method_limit">{children}</PedagogicalCallout>;
+          }
+          if (text.includes('Insight') || text.includes('Dica')) {
+            return <PedagogicalCallout type="insight">{children}</PedagogicalCallout>;
+          }
+          return (
+            <blockquote className="my-3 rounded-r-lg border-l-4 border-teal-600 bg-teal-50/60 p-3 italic text-slate-800">
+              {children}
+            </blockquote>
+          );
+        },
       }}
     >
       {markdown}
@@ -207,6 +241,41 @@ const MarkdownRenderer: React.FC<{ content: string }> = ({ content }) => {
   ) : (
     <React.Fragment key={index}>{renderPlainMarkdown(segment.content)}</React.Fragment>
   ))}</>;
+};
+
+const renderSectionBody = (section: DocumentSection) => {
+  const titleLower = section.title.toLowerCase();
+
+  // 1. Síntese para recuperação ativa / Checklist
+  if (titleLower.includes('recuperação ativa') || titleLower.includes('síntese')) {
+    const lines = section.body.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+    const checklistItems = lines
+      .filter((l) => /^(?:\d+\.|\*|-)\s+/.test(l))
+      .map((l) => l.replace(/^(?:\d+\.|\*|-)\s+/, '').trim());
+    if (checklistItems.length >= 2) {
+      return <ActiveRecallChecklist items={checklistItems} unitTitle={section.title} />;
+    }
+  }
+
+  // 2. Glossário Operacional / Conceitos
+  if (titleLower.includes('glossário') || (titleLower.includes('conceitos') && !section.body.includes('```'))) {
+    const lines = section.body.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+    const glossaryItems: GlossaryItem[] = [];
+    for (const line of lines) {
+      const match = line.match(/^[-*]\s+\*\*([^*:]+):\*\*\s*(.+)/);
+      if (match) {
+        glossaryItems.push({
+          term: match[1].trim(),
+          definition: match[2].trim(),
+        });
+      }
+    }
+    if (glossaryItems.length >= 2) {
+      return <GlossaryGrid items={glossaryItems} title={section.title} />;
+    }
+  }
+
+  return <MarkdownRenderer content={section.body} />;
 };
 
 const PedagogicalDocument: React.FC<{ content: string }> = ({ content }) => {
@@ -257,7 +326,9 @@ const PedagogicalDocument: React.FC<{ content: string }> = ({ content }) => {
               <span><span className="mr-2 text-teal-700">{index + 1}.</span>{section.title}</span>
               <ChevronDown className="h-5 w-5 shrink-0 text-teal-700 transition-transform group-open:rotate-180" />
             </summary>
-            <div className="border-t border-slate-200 px-4 py-4 sm:px-5 sm:py-5"><MarkdownRenderer content={section.body} /></div>
+            <div className="border-t border-slate-200 px-4 py-4 sm:px-5 sm:py-5">
+              {renderSectionBody(section)}
+            </div>
           </details>
         ))}
       </div>
