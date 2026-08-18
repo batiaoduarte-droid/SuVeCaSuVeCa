@@ -44,9 +44,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Noção elementar da distinção entre relatar fatos cronológicos (narração), qualificar cenários/seres (descrição) e discutir ideias (dissertação).
 - Leitura crítica desprovida de juízos de valor pessoais (princípio da alteridade na interpretação textual).
 
-MODOS DE ORGANIZAÇÃO DISCURSIVA
-- ➔ NARRAÇÃO DESCRIÇÃO DISSERTAÇÃO (Acontecimentos no tempo) (Atributos e estados) (Discussão de um assunto)
-➔ DISSERTAÇÃO EXPOSITIVA / INFORMATIVA DISSERTAÇÃO ARGUMENTATIVA Intenção: Transmitir / explicar saberes Intenção: Persuadir / convencer o leitor Objeto: Conceitos, teorias, fatos da ciência Objeto: Tese controversa / tomada de posição Relação com Dados: Dado é o próprio conteúdo Relação com Dados: Dado fundamenta a tese Tolerância a Modalizadores: Pontuais (não alteram tipo) Recursos: Argumentos lógicos, refutações Fatos Normativos: Trata ideais legais como fatos da ordem Fecho Textual: Arremate conclusivo persuasivo Fecho Textual: Conclusão didática/explicativa ("O Final Matador")
+```text
+MODOS DE ORGANIZAÇÃO DISCURSIVA │ ┌───────────────────────────────────────┼───────────────────────────────────────┐ ▼ ▼ ▼ NARRAÇÃO DESCRIÇÃO DISSERTAÇÃO (Acontecimentos no tempo) (Atributos e estados) (Discussão de um assunto) │ ┌──────────────────────────────────────────────────┴───────────────────────┐ ▼ ▼ DISSERTAÇÃO EXPOSITIVA / INFORMATIVA DISSERTAÇÃO ARGUMENTATIVA ├─ Intenção: Transmitir / explicar saberes ├─ Intenção: Persuadir / convencer o leitor ├─ Objeto: Conceitos, teorias, fatos da ciência ├─ Objeto: Tese controversa / tomada de posição ├─ Relação com Dados: Dado é o próprio conteúdo ├─ Relação com Dados: Dado fundamenta a tese ├─ Tolerância a Modalizadores: Pontuais (não alteram tipo) ├─ Recursos: Argumentos lógicos, refutações ├─ Fatos Normativos: Trata ideais legais como fatos da ordem └─ Fecho Textual: Arremate conclusivo persuasivo └─ Fecho Textual: Conclusão didática/explicativa ("O Final Matador")
+```
 
 ---
 
@@ -139,11 +139,9 @@ A menção a princípios jurídicos, ideais humanistas e preceitos constituciona
 
 Identificar com 100% de segurança se um texto dissertativo proposto em itens de concurso é predominantemente expositivo ou argumentativo, neutralizando pegadinhas de dados, modalizadores e adjetivos axiológicos.
 
-1. Mapear os Extremos e a Fonte Bibliográfica Ler título, introdução, conclusão e referência da fonte (livro didático, jornal, doutrina).
-2. Aplicar a Pergunta-Guia de Intencionalidade Autoral "O autor quer me convencer de sua tese OU veio expor/explicar um conhecimento?"
-3. Rastrear Presença de Tese Explícita vs. Explicação Conceitual Há tomada de posição em debate polêmico (ex.: dever, proibição, crítica a correntes)? SIM: Candidato a Argumentativo. NÃO (apenas definições, histórico, funcionamento teórico): Candidato a Expositivo.
-4. Avaliar Elementos Ambíguos (Dados e Modalizadores) Dados estatísticos presentes? -> Verificar se são conteúdo puro (Expositivo) ou suporte probatório (Argumentativo). Modalizadores presentes? -> Verificar se são avaliação didática pontual (Expositivo) ou defesa de tese (Argumentativo).
-5. A Inspeção Decisória do Parágrafo Conclusivo ("O Final Matador") Fecho arremata argumentos com tom persuasivo/conclusivo de tese? -> DISSERTATIVO-ARGUMENTATIVO. Fecho encerra a exposição de conceitos sem exigir adesão do leitor? -> DISSERTATIVO-EXPOSITIVO.
+```text
+[Início: Texto Dissertativo em Prova] │ ├─► PASSO 1: Mapear os Extremos e a Fonte Bibliográfica │ └─ Ler título, introdução, conclusão e referência da fonte (livro didático, jornal, doutrina). │ ├─► PASSO 2: Aplicar a Pergunta-Guia de Intencionalidade Autoral │ └─ "O autor quer me convencer de sua tese OU veio expor/explicar um conhecimento?" │ ├─► PASSO 3: Rastrear Presença de Tese Explícita vs. Explicação Conceitual │ ├─ Há tomada de posição em debate polêmico (ex.: dever, proibição, crítica a correntes)? │ │ └─ SIM: Candidato a Argumentativo. │ └─ NÃO (apenas definições, histórico, funcionamento teórico): Candidato a Expositivo. │ ├─► PASSO 4: Avaliar Elementos Ambíguos (Dados e Modalizadores) │ ├─ Dados estatísticos presentes? -> Verificar se são conteúdo puro (Expositivo) ou suporte probatório (Argumentativo). │ └─ Modalizadores presentes? -> Verificar se são avaliação didática pontual (Expositivo) ou defesa de tese (Argumentativo). │ └─► PASSO 5: A Inspeção Decisória do Parágrafo Conclusivo ("O Final Matador") ├─ Fecho arremata argumentos com tom persuasivo/conclusivo de tese? -> DISSERTATIVO-ARGUMENTATIVO. └─ Fecho encerra a exposição de conceitos sem exigir adesão do leitor? -> DISSERTATIVO-EXPOSITIVO.
+```
 
 Julgamento correto e fundamentado da assertiva da banca, sem indução a erro por elementos superficiais isolados.
 
@@ -155,11 +153,9 @@ Identificar com 100% de segurança se um texto dissertativo proposto em itens de
 
 #### Sequência Operacional de Passos
 
-1. Mapear os Extremos e a Fonte Bibliográfica Ler título, introdução, conclusão e referência da fonte (livro didático, jornal, doutrina).
-2. Aplicar a Pergunta-Guia de Intencionalidade Autoral "O autor quer me convencer de sua tese OU veio expor/explicar um conhecimento?"
-3. Rastrear Presença de Tese Explícita vs. Explicação Conceitual Há tomada de posição em debate polêmico (ex.: dever, proibição, crítica a correntes)? SIM: Candidato a Argumentativo. NÃO (apenas definições, histórico, funcionamento teórico): Candidato a Expositivo.
-4. Avaliar Elementos Ambíguos (Dados e Modalizadores) Dados estatísticos presentes? -> Verificar se são conteúdo puro (Expositivo) ou suporte probatório (Argumentativo). Modalizadores presentes? -> Verificar se são avaliação didática pontual (Expositivo) ou defesa de tese (Argumentativo).
-5. A Inspeção Decisória do Parágrafo Conclusivo ("O Final Matador") Fecho arremata argumentos com tom persuasivo/conclusivo de tese? -> DISSERTATIVO-ARGUMENTATIVO. Fecho encerra a exposição de conceitos sem exigir adesão do leitor? -> DISSERTATIVO-EXPOSITIVO.
+```text
+[Início: Texto Dissertativo em Prova] │ ├─► PASSO 1: Mapear os Extremos e a Fonte Bibliográfica │ └─ Ler título, introdução, conclusão e referência da fonte (livro didático, jornal, doutrina). │ ├─► PASSO 2: Aplicar a Pergunta-Guia de Intencionalidade Autoral │ └─ "O autor quer me convencer de sua tese OU veio expor/explicar um conhecimento?" │ ├─► PASSO 3: Rastrear Presença de Tese Explícita vs. Explicação Conceitual │ ├─ Há tomada de posição em debate polêmico (ex.: dever, proibição, crítica a correntes)? │ │ └─ SIM: Candidato a Argumentativo. │ └─ NÃO (apenas definições, histórico, funcionamento teórico): Candidato a Expositivo. │ ├─► PASSO 4: Avaliar Elementos Ambíguos (Dados e Modalizadores) │ ├─ Dados estatísticos presentes? -> Verificar se são conteúdo puro (Expositivo) ou suporte probatório (Argumentativo). │ └─ Modalizadores presentes? -> Verificar se são avaliação didática pontual (Expositivo) ou defesa de tese (Argumentativo). │ └─► PASSO 5: A Inspeção Decisória do Parágrafo Conclusivo ("O Final Matador") ├─ Fecho arremata argumentos com tom persuasivo/conclusivo de tese? -> DISSERTATIVO-ARGUMENTATIVO. └─ Fecho encerra a exposição de conceitos sem exigir adesão do leitor? -> DISSERTATIVO-EXPOSITIVO.
+```
 
 #### Resultado Esperado
 

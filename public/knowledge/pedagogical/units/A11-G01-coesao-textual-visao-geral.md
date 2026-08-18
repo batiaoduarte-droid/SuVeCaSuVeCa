@@ -43,19 +43,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Morfossintaxe Básica: Conhecimento elementar sobre classes de palavras (especialmente substantivos, pronomes pessoais, conjunções e preposições).
 - Sintaxe do Período Composto: Noção preliminar de articulação interoracional (coordenação, subordinação e estruturas oracionais reduzidas).
 
-text COESÃO TEXTUAL []
-- (Definição canônica: Ligação / Conexão gramatical e estrutural)
-➔ I. COESÃO SEQUENCIAL []
-- ➔ Finalidade: Estabelecer relações lógico-semânticas e progressão no fluxo textual
-➔ Mecanismos Operadores:
-- ➔ Conjunções [] (ex.: "mas" → Oposição/Adversidade)
-➔ Preposições [, ] (ex.: "por" → Causa)
-- ➔ Alerta Pedagógico: Preposição também atua como conector []
-➔ II. COESÃO REFERENCIAL [] ➔ Finalidade: Retomada ou antecipação de termos para evitar repetições desnecessárias ➔ Direcionalidade Vetorial:
-- ➔ Coesão Anafórica: Remete a termo antecedente (olha para trás)
-➔ Coesão Catafórica: Aponta para termo subsequente (olha para a frente) ➔ Polos da Relação []:
-- ➔ Termo Coesivo: Elemento substituto vicário (lança a seta / ex.: pronome "Ela")
-➔ Referente: Elemento textual nuclear (recebe a seta / "termo setado" / ex.: substantivo "Maria") ➔ Método Operacional: "Setas salvam!" [, ]
+```text
+text COESÃO TEXTUAL [] │ (Definição canônica: Ligação / Conexão gramatical e estrutural) │ ├── I. COESÃO SEQUENCIAL [] │ ├── Finalidade: Estabelecer relações lógico-semânticas e progressão no fluxo textual │ ├── Mecanismos Operadores: │ │ ├── Conjunções [] (ex.: "mas" → Oposição/Adversidade) │ │ └── Preposições [, ] (ex.: "por" → Causa) │ └── Alerta Pedagógico: Preposição também atua como conector [] │ └── II. COESÃO REFERENCIAL [] ├── Finalidade: Retomada ou antecipação de termos para evitar repetições desnecessárias ├── Direcionalidade Vetorial: │ ├── Coesão Anafórica: Remete a termo antecedente (olha para trás) │ └── Coesão Catafórica: Aponta para termo subsequente (olha para a frente) ├── Polos da Relação []: │ ├── Termo Coesivo: Elemento substituto vicário (lança a seta / ex.: pronome "Ela") │ └── Referente: Elemento textual nuclear (recebe a seta / "termo setado" / ex.: substantivo "Maria") └── Método Operacional: "Setas salvam!" [, ]
+```
 
 ---
 
@@ -167,14 +157,9 @@ Procedimento: Diagnóstico e resolução de questões de coesão referencial
 
 Identificar sem equívocos as relações referenciais presentes no texto da prova, determinando a direcionalidade (anáfora ou catáfora) e discriminando com precisão o termo coesivo do seu respectivo referente substantivo.
 
-**text [**
-
-1. Localizar o Termo Substitutivo] Identificar o pronome ou palavra vicária na oração (ex.: "Ela"). [
-2. Rotular o "Termo Coesivo"] Definir o pronome como o elemento que "manda a seta". [
-3. Rastrear o Contexto Textual] Perguntar ao verbo/oração a quem o termo coesivo se reporta faticamente. [
-4. Traçar a Seta de Referência] Desenhar fisicamente uma seta que parte do Termo Coesivo em direção ao termo substantivo. [
-5. Rotular o "Referente"] Identificar o termo que recebeu a ponta da seta como o Referente ("termo setado"). [
-6. Determinar a Direção da Coesão] Seta aponta para trás (texto antecedente) ➔ COESÃO ANAFÓRICA (Retomada) Seta aponta para frente (texto subsequente) ➔ COESÃO CATAFÓRICA (Antecipação)
+```text
+text [Passo 1: Localizar o Termo Substitutivo] │ Identificar o pronome ou palavra vicária na oração (ex.: "Ela"). ▼ [Passo 2: Rotular o "Termo Coesivo"] │ Definir o pronome como o elemento que "manda a seta". ▼ [Passo 3: Rastrear o Contexto Textual] │ Perguntar ao verbo/oração a quem o termo coesivo se reporta faticamente. ▼ [Passo 4: Traçar a Seta de Referência] │ Desenhar fisicamente uma seta que parte do Termo Coesivo em direção ao termo substantivo. ▼ [Passo 5: Rotular o "Referente"] │ Identificar o termo que recebeu a ponta da seta como o Referente ("termo setado"). ▼ [Passo 6: Determinar a Direção da Coesão] ├── Seta aponta para trás (texto antecedente) ──► COESÃO ANAFÓRICA (Retomada) └── Seta aponta para frente (texto subsequente) ──► COESÃO CATAFÓRICA (Antecipação)
+```
 
 Substituir mentalmente o termo coesivo pelo referente identificado na frase. Se o período mantiver a coerência semântica e a correção gramatical plena, o referente foi mapeado com precisão.
 
@@ -188,14 +173,9 @@ Identificar sem equívocos as relações referenciais presentes no texto da prov
 
 #### Roteiro de aplicação passo a passo
 
-**text [**
-
-1. Localizar o Termo Substitutivo] Identificar o pronome ou palavra vicária na oração (ex.: "Ela"). [
-2. Rotular o "Termo Coesivo"] Definir o pronome como o elemento que "manda a seta". [
-3. Rastrear o Contexto Textual] Perguntar ao verbo/oração a quem o termo coesivo se reporta faticamente. [
-4. Traçar a Seta de Referência] Desenhar fisicamente uma seta que parte do Termo Coesivo em direção ao termo substantivo. [
-5. Rotular o "Referente"] Identificar o termo que recebeu a ponta da seta como o Referente ("termo setado"). [
-6. Determinar a Direção da Coesão] Seta aponta para trás (texto antecedente) ➔ COESÃO ANAFÓRICA (Retomada) Seta aponta para frente (texto subsequente) ➔ COESÃO CATAFÓRICA (Antecipação)
+```text
+text [Passo 1: Localizar o Termo Substitutivo] │ Identificar o pronome ou palavra vicária na oração (ex.: "Ela"). ▼ [Passo 2: Rotular o "Termo Coesivo"] │ Definir o pronome como o elemento que "manda a seta". ▼ [Passo 3: Rastrear o Contexto Textual] │ Perguntar ao verbo/oração a quem o termo coesivo se reporta faticamente. ▼ [Passo 4: Traçar a Seta de Referência] │ Desenhar fisicamente uma seta que parte do Termo Coesivo em direção ao termo substantivo. ▼ [Passo 5: Rotular o "Referente"] │ Identificar o termo que recebeu a ponta da seta como o Referente ("termo setado"). ▼ [Passo 6: Determinar a Direção da Coesão] ├── Seta aponta para trás (texto antecedente) ──► COESÃO ANAFÓRICA (Retomada) └── Seta aponta para frente (texto subsequente) ──► COESÃO CATAFÓRICA (Antecipação)
+```
 
 #### Validação do resultado
 

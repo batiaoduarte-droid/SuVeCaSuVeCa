@@ -44,47 +44,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Compreensão das funções sintáticas de adjunto adnominal, predicativo do sujeito e objeto direto/indireto.
 - Identificação da ordem direta da oração (Sujeito + Verbo + Predicativo/Complementos) para desfazer inversões sintáticas e construções em voz passiva.
 
-CONCORDÂNCIA NOMINAL AVANÇADA (esta unidade)
-- ➔ 1. Invariabilidade Estrita (Nunca flexionam)
-➔ "Menos" (pronome indefinido / advérbio — "menas" inexiste na norma culta)
-- ➔ "Em alerta" (locução adverbial)
-➔ "Em anexo" (locução adverbial)
-- ➔ "Junto a" / "Junto com" (locuções prepositivas)
-➔ 2. Palavras de Flexão Nominal Obrigatória (Classes Adjetivas / Pronominais)
-- ➔ "Anexo" / "Incluso" (adjetivos: concordam com a coisa anexada/inclusa)
-➔ "Quite" (adjetivo: "eu estou quite", "nós estamos quites" = quitados)
-- ➔ "Obrigado" (adjetivo: homem diz "obrigado", mulher diz "obrigada", grupo diz "obrigados/as")
-➔ "Junto" (adjetivo isolado: "estão juntos")
-- ➔ "Próprio" / "Mesmo" (pronomes de reforço: "elas próprias / mesmas")
-➔ 3. Palavras de Dupla ou Tripla Classificação (Dependência Sintática — Método da Seta)
-- ➔ "Alerta" ➔ Junto ao substantivo = Adjetivo (soldados alertas)
-Após o verbo = Advérbio de modo invariável (estavam alerta)
-- ➔ "Só" ➔ = "sozinho(s)" -> Adjetivo variável (ficaram sós)
-= "somente/apenas" -> Advérbio / Denotativa invariável (só eles)
-- ➔ "Meio" ➔ = "metade" -> Numeral fracionário variável (meia caneca)
-= "um pouco" -> Advérbio de intensidade invariável (meio cansada)
-- ➔ "Bastante" ➔ Antes de substantivo -> Pronome indefinido variável (= muitos/as)
-Depois de substantivo -> Adjetivo variável (= suficientes)
-- Modifica verbo/adj/adv -> Advérbio invariável (= muito)
-➔ "Conforme" ➔ = "adequado/ajustado" -> Adjetivo variável (atos conformes — FGV)
-- = "como/segundo" -> Conjunção conformativa invariável
-➔ "Mesmo" ➔ = "próprio" -> Pronome demonstrativo de reforço variável
-- = "inclusive/até" -> Palavra denotativa de inclusão invariável
-➔ "Caro" / "Barato" ➔ Com verbo de ligação -> Adjetivo predicativo variável (são caras)
-- Com verbos de transação -> Advérbio de preço invariável (custam caro)
-➔ 4. Estruturas Especiais e Sintaxe Oracional
-- ➔ "É proibido / É necessário / É bom / É desnecessário"
-➔ Sem determinante anteposto -> Masculino singular genérico (Entrada é proibido)
-- ➔ Com determinante anteposto -> Flexão obrigatória (A entrada é proibida)
-➔ Expressão Superlativa com "Possível"
-- ➔ Artigo plural -> Flexão obrigatória ("as mais complicadas possíveis")
-➔ Artigo no masculino singular -> Expressão invariável ("o mais complicadas possível")
-- ➔ Predicativo do Sujeito Anteposto ao Sujeito Composto
-➔ Segue a flexão do verbo: se o verbo concorda no plural, predicativo vai para o masculino plural;
-
-➔ Adjetivos Compostos
-- ➔ Regra Geral: apenas o último elemento varia em gênero e número ("franco-brasileiros").
-➔ Sujeito Oracional (Verbo no Infinitivo)
+```text
+CONCORDÂNCIA NOMINAL AVANÇADA (esta unidade) │ ├── 1. Invariabilidade Estrita (Nunca flexionam) │ ├── "Menos" (pronome indefinido / advérbio — "menas" inexiste na norma culta) │ ├── "Em alerta" (locução adverbial) │ ├── "Em anexo" (locução adverbial) │ └── "Junto a" / "Junto com" (locuções prepositivas) │ ├── 2. Palavras de Flexão Nominal Obrigatória (Classes Adjetivas / Pronominais) │ ├── "Anexo" / "Incluso" (adjetivos: concordam com a coisa anexada/inclusa) │ ├── "Quite" (adjetivo: "eu estou quite", "nós estamos quites" = quitados) │ ├── "Obrigado" (adjetivo: homem diz "obrigado", mulher diz "obrigada", grupo diz "obrigados/as") │ ├── "Junto" (adjetivo isolado: "estão juntos") │ └── "Próprio" / "Mesmo" (pronomes de reforço: "elas próprias / mesmas") │ ├── 3. Palavras de Dupla ou Tripla Classificação (Dependência Sintática — Método da Seta) │ ├── "Alerta" ───────────► Junto ao substantivo = Adjetivo (soldados alertas) │ │ Após o verbo = Advérbio de modo invariável (estavam alerta) │ ├── "Só" ───────────────► = "sozinho(s)" -> Adjetivo variável (ficaram sós) │ │ = "somente/apenas" -> Advérbio / Denotativa invariável (só eles) │ ├── "Meio" ─────────────► = "metade" -> Numeral fracionário variável (meia caneca) │ │ = "um pouco" -> Advérbio de intensidade invariável (meio cansada) │ ├── "Bastante" ─────────► Antes de substantivo -> Pronome indefinido variável (= muitos/as) │ │ Depois de substantivo -> Adjetivo variável (= suficientes) │ │ Modifica verbo/adj/adv -> Advérbio invariável (= muito) │ ├── "Conforme" ─────────► = "adequado/ajustado" -> Adjetivo variável (atos conformes — FGV) │ │ = "como/segundo" -> Conjunção conformativa invariável │ ├── "Mesmo" ────────────► = "próprio" -> Pronome demonstrativo de reforço variável │ │ = "inclusive/até" -> Palavra denotativa de inclusão invariável │ └── "Caro" / "Barato" ──► Com verbo de ligação -> Adjetivo predicativo variável (são caras) │ Com verbos de transação -> Advérbio de preço invariável (custam caro) │ ├── 4. Estruturas Especiais e Sintaxe Oracional │ ├── "É proibido / É necessário / É bom / É desnecessário" │ │ ├── Sem determinante anteposto -> Masculino singular genérico (Entrada é proibido) │ │ └── Com determinante anteposto -> Flexão obrigatória (A entrada é proibida) │ ├── Expressão Superlativa com "Possível" │ │ ├── Artigo plural -> Flexão obrigatória ("as mais complicadas possíveis") │ │ └── Artigo no masculino singular -> Expressão invariável ("o mais complicadas possível") │ ├── Predicativo do Sujeito Anteposto ao Sujeito Composto │ │ └── Segue a flexão do verbo: se o verbo concorda no plural, predicativo vai para o masculino plural; │ │ se o verbo concorda no singular com o mais próximo, predicativo concorda com o mais próximo. │ ├── Adjetivos Compostos │ │ └── Regra Geral: apenas o último elemento varia em gênero e número ("franco-brasileiros"). │ └── Sujeito Oracional (Verbo no Infinitivo) │ └── Equivale ao pronome neutro "isso" -> Predicativo no masculino singular ("Dormir é benéfico").
+```
 
 ---
 
@@ -107,7 +69,9 @@ A palavra alerta e a expressão prepositiva em alerta assumem três estruturas g
 
 - Quando a palavra surge após verbos de ligação ou de estado (estar, ficar, permanecer, manter-se, chegar), a gramática normativa estabelece que ela indica o modo como o sujeito se encontra, e não um estado adjetival flexionado. Portanto, não recebe a desinência -s.
 
-ESTRUTURA DA PALAVRA "ALERTA" ➔ 1. Locução "em alerta" ➔ INVARIÁVEL ("estavam em alerta") ➔ 2. Junto ao substantivo (adjunto) ➔ VARIÁVEL como adjetivo ("soldados alertas chegaram") ➔ 3. Posposto ao verbo ➔ INVARIÁVEL como advérbio de modo ("os soldados estavam alerta")
+```text
+ESTRUTURA DA PALAVRA "ALERTA" ├── 1. Locução "em alerta" ──────────────► INVARIÁVEL ("estavam em alerta") ├── 2. Junto ao substantivo (adjunto) ──► VARIÁVEL como adjetivo ("soldados alertas chegaram") └── 3. Posposto ao verbo ────────────────► INVARIÁVEL como advérbio de modo ("os soldados estavam alerta")
+```
 
 - Correto (posposto ao verbo): "Os ecologistas mantêm-se alerta quanto à dizimação..."
 - Correto (junto ao substantivo): "Os soldados alertas vigiavam a base."
@@ -269,10 +233,9 @@ A tabela abaixo sintetiza a matriz canônica de regras e comportamentos morfossi
 ## Roteiros de resolução
 
 Objetivo: Determinar a classe gramatical e a flexão de palavras polifuncionais (só, meio, bastante, conforme, mesmo, caro, barato).
-MÉTODO DA SETA SINTÁTICA
-- ➔ A seta aponta para SUBST./PRON.? A seta aponta para VERBO/ADJ./ADV.?
-NATUREZA NOMINAL NATUREZA ADVERBIAL
-- Flexiona em Gênero e/ou Número Permanece INVARIÁVEL no neutro (Adjetivo, Pronome Adjetivo, Numeral) (Advérbio, Palavra Denotativa)
+```text
+MÉTODO DA SETA SINTÁTICA │ ┌───────────────────┴───────────────────┐ ▼ ▼ A seta aponta para SUBST./PRON.? A seta aponta para VERBO/ADJ./ADV.? │ │ NATUREZA NOMINAL NATUREZA ADVERBIAL │ │ Flexiona em Gênero e/ou Número Permanece INVARIÁVEL no neutro (Adjetivo, Pronome Adjetivo, Numeral) (Advérbio, Palavra Denotativa)
+```
 
 1. Identificar o vocábulo-alvo na oração.
 2. Traçar a seta sintática até o núcleo com o qual ele estabelece relação semântica direta.
@@ -324,10 +287,9 @@ Objetivo: Garantir pontuação em provas de bancas de menor porte com elaborador
 3. Assinale a alternativa blindada para evitar prejuízo, tendo em vista que o Poder Judiciário costuma rejeitar anulações de itens por mérito de correção gramatical.
 
 Objetivo: Determinar a classe gramatical e a flexão de palavras polifuncionais (só, meio, bastante, conforme, mesmo, caro, barato).
-MÉTODO DA SETA SINTÁTICA
-- ➔ A seta aponta para SUBST./PRON.? A seta aponta para VERBO/ADJ./ADV.?
-NATUREZA NOMINAL NATUREZA ADVERBIAL
-- Flexiona em Gênero e/ou Número Permanece INVARIÁVEL no neutro (Adjetivo, Pronome Adjetivo, Numeral) (Advérbio, Palavra Denotativa)
+```text
+MÉTODO DA SETA SINTÁTICA │ ┌───────────────────┴───────────────────┐ ▼ ▼ A seta aponta para SUBST./PRON.? A seta aponta para VERBO/ADJ./ADV.? │ │ NATUREZA NOMINAL NATUREZA ADVERBIAL │ │ Flexiona em Gênero e/ou Número Permanece INVARIÁVEL no neutro (Adjetivo, Pronome Adjetivo, Numeral) (Advérbio, Palavra Denotativa)
+```
 
 ### Passos de execução
 

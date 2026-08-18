@@ -40,28 +40,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ## Pré-requisitos e modelo mental
 
-FUNÇÕES E VALORES DA PALAVRA "SE"
-- ➔ 1. VALORES CONJUNCIONAIS (Conjunções Subordinativas)
-➔ 1.1 Conjunção Integrante (C.I.) ➔ Inicia oração substantiva ➔ [Macete do ISSO / DISSO]
-- ➔ 1.2 Conjunção Condicional ➔ Expressa hipótese/condição ➔ [Troca por CASO + Subjuntivo]
-➔ 1.3 Conjunção Causal ➔ Causa de fato consumado ➔ [Troca por JÁ QUE / Se... então]
-- ➔ 1.4 Conjunção Concessiva ➔ Oposição / Ressalva ➔ [Troca por EMBORA / AINDA QUE]
-➔ 2. VALORES PRONOMINAIS / MORFOLÓGICOS COM VERBOS
-- ➔ 2.1 Parte Integrante do Verbo (PIV)
-➔ Essencialmente Pronominais (arrepender-se, queixar-se, suicidar-se, atrever-se...)
-- ➔ Acidentalmente Pronominais (lembrar-se, enganar-se, tornar-se, sentir-se, render-se...)
-➔ Propriedades: Varia com a pessoa (me/te/se/nos); SEM função sintática; não sai da frase.
-- ➔ 2.2 Pronome Reflexivo ➔ Sujeito age sobre si mesmo ➔ [Macete do MENINO / "a si mesmo"]
-➔ 2.3 Pronome Recíproco ➔ Ação mútua ("um ao outro") ➔ [Verbo OBRIGATORIAMENTE no plural]
-- ➔ 2.4 Pronome Apassivador (PA)
-➔ Verbos VTD ou VTDI + SE
-- ➔ Transposição obrigatória para Passiva Analítica (SER + Particípio)
-➔ Termo subsequente = Sujeito Paciente (sem preposição / verbo concorda)
-- ➔ 2.5 Partícula / Índice Indeterminador do Sujeito (PIS / IIS)
-➔ Verbos NÃO VTD (VTI, VI, VL) + SE
-- ➔ Sentido de agente indeterminado ("alguém", "qualquer um")
-➔ Verbo FIXO na 3ª pessoa do singular (termo preposicionado é complemento)
-- ➔ 3. VALOR ESTILÍSTICO ➔ 3.1 Partícula Expletiva / de Realce ➔ Ênfase expressiva ➔ [Pode ser SUPRIMIDA sem prejuízo]
+```text
+FUNÇÕES E VALORES DA PALAVRA "SE" │ ├── 1. VALORES CONJUNCIONAIS (Conjunções Subordinativas) │ ├── 1.1 Conjunção Integrante (C.I.) ──► Inicia oração substantiva ──► [Macete do ISSO / DISSO] │ ├── 1.2 Conjunção Condicional ───────► Expressa hipótese/condição ─► [Troca por CASO + Subjuntivo] │ ├── 1.3 Conjunção Causal ────────────► Causa de fato consumado ────► [Troca por JÁ QUE / Se... então] │ └── 1.4 Conjunção Concessiva ────────► Oposição / Ressalva ────────► [Troca por EMBORA / AINDA QUE] │ ├── 2. VALORES PRONOMINAIS / MORFOLÓGICOS COM VERBOS │ ├── 2.1 Parte Integrante do Verbo (PIV) │ │ ├── Essencialmente Pronominais (arrepender-se, queixar-se, suicidar-se, atrever-se...) │ │ └── Acidentalmente Pronominais (lembrar-se, enganar-se, tornar-se, sentir-se, render-se...) │ │ └── Propriedades: Varia com a pessoa (me/te/se/nos); SEM função sintática; não sai da frase. │ │ │ ├── 2.2 Pronome Reflexivo ───────────► Sujeito age sobre si mesmo ──► [Macete do MENINO / "a si mesmo"] │ ├── 2.3 Pronome Recíproco ───────────► Ação mútua ("um ao outro") ──► [Verbo OBRIGATORIAMENTE no plural] │ │ │ ├── 2.4 Pronome Apassivador (PA) │ │ ├── Verbos VTD ou VTDI + SE │ │ ├── Transposição obrigatória para Passiva Analítica (SER + Particípio) │ │ └── Termo subsequente = Sujeito Paciente (sem preposição / verbo concorda) │ │ │ └── 2.5 Partícula / Índice Indeterminador do Sujeito (PIS / IIS) │ ├── Verbos NÃO VTD (VTI, VI, VL) + SE │ ├── Sentido de agente indeterminado ("alguém", "qualquer um") │ └── Verbo FIXO na 3ª pessoa do singular (termo preposicionado é complemento) │ └── 3. VALOR ESTILÍSTICO └── 3.1 Partícula Expletiva / de Realce ──► Ênfase expressiva ──► [Pode ser SUPRIMIDA sem prejuízo]
+```
 
 ---
 
@@ -212,10 +193,9 @@ Esta seção fornece uma síntese de consulta rápida com os critérios decisór
 
 Classificar qualquer ocorrência da palavra "SE" em provas de concurso em menos de 30 segundos, eliminando distratores por testes de hipótese.
 
-text [ PALAVRA "SE" ]
-- ➔ [ETAPA 1: TESTE DE CONJUNÇÃO] [ETAPA 2: TESTE DE REALCE] A palavra liga duas orações? Pode retirar o "se" sem qualquer alteração Troca a oração por "ISSO"? ➔ CONJUNÇÃO INTEGRANTE estrutural ou semântica? (ex.: foram-se) Troca por "CASO"? ➔ CONJUNÇÃO CONDICIONAL Sim ➔ PARTÍCULA DE REALCE / EXPLETIVA Troca por "JÁ QUE"? ➔ CONJUNÇÃO CAUSAL Troca por "EMBORA"? ➔ CONJUNÇÃO CONCESSIVA
-(Se não for conjunção nem realce) [ETAPA 3: TESTE PRONOMINAL / SINTÁTICO]
-- ➔ [TESTE DA PASSIVA (PA)] [TESTE DO SUJEITO (PIS)] [TESTE DO MENINO (REFLEX)] [TESTE DA CONJUGAÇÃO (PIV)] Verbo VTD/VTDI + termo sem Verbo VTI/VI/VL + termo com Ação sobre o próprio corpo; Verbo só existe com pronome ou preposição: converte em passiva preposição: verbo fixo no permite transferir a terceiro muda regência; conjuga em analítica (ser + particípio). singular ("alguém..."). ("olhou o menino"). todas as pessoas (me/te/se...). ➔ PRONOME APASSIVADOR ➔ ÍNDICE INDETERMINADOR ➔ PRONOME REFLEXIVO ➔ PARTE INTEGRANTE (PIV) (Se plural mútuo ➔ RECÍPROCO)
+```text
+text [ PALAVRA "SE" ] │ ┌────────────────────────────────┴────────────────────────────────┐ ▼ ▼ [ETAPA 1: TESTE DE CONJUNÇÃO] [ETAPA 2: TESTE DE REALCE] A palavra liga duas orações? Pode retirar o "se" sem qualquer alteração ├─ Troca a oração por "ISSO"? ──► CONJUNÇÃO INTEGRANTE estrutural ou semântica? (ex.: foram-se) ├─ Troca por "CASO"? ───────────► CONJUNÇÃO CONDICIONAL └─ Sim ──► PARTÍCULA DE REALCE / EXPLETIVA ├─ Troca por "JÁ QUE"? ─────────► CONJUNÇÃO CAUSAL └─ Troca por "EMBORA"? ─────────► CONJUNÇÃO CONCESSIVA │ (Se não for conjunção nem realce) ▼ [ETAPA 3: TESTE PRONOMINAL / SINTÁTICO] │ ┌───────────────────────────────────────┬────────────────────────┴──────────────┬────────────────────────────────────────┐ ▼ ▼ ▼ ▼ [TESTE DA PASSIVA (PA)] [TESTE DO SUJEITO (PIS)] [TESTE DO MENINO (REFLEX)] [TESTE DA CONJUGAÇÃO (PIV)] Verbo VTD/VTDI + termo sem Verbo VTI/VI/VL + termo com Ação sobre o próprio corpo; Verbo só existe com pronome ou preposição: converte em passiva preposição: verbo fixo no permite transferir a terceiro muda regência; conjuga em analítica (ser + particípio). singular ("alguém..."). ("olhou o menino"). todas as pessoas (me/te/se...). └─► PRONOME APASSIVADOR └─► ÍNDICE INDETERMINADOR └─► PRONOME REFLEXIVO └─► PARTE INTEGRANTE (PIV) (Se plural mútuo ─► RECÍPROCO)
+```
 
 1. Passo 1 — Predicação do verbo:
 
@@ -244,10 +224,9 @@ Classificar qualquer ocorrência da palavra "SE" em provas de concurso em menos 
 
 #### Fluxograma Operacional
 
-text [ PALAVRA "SE" ]
-- ➔ [ETAPA 1: TESTE DE CONJUNÇÃO] [ETAPA 2: TESTE DE REALCE] A palavra liga duas orações? Pode retirar o "se" sem qualquer alteração Troca a oração por "ISSO"? ➔ CONJUNÇÃO INTEGRANTE estrutural ou semântica? (ex.: foram-se) Troca por "CASO"? ➔ CONJUNÇÃO CONDICIONAL Sim ➔ PARTÍCULA DE REALCE / EXPLETIVA Troca por "JÁ QUE"? ➔ CONJUNÇÃO CAUSAL Troca por "EMBORA"? ➔ CONJUNÇÃO CONCESSIVA
-(Se não for conjunção nem realce) [ETAPA 3: TESTE PRONOMINAL / SINTÁTICO]
-- ➔ [TESTE DA PASSIVA (PA)] [TESTE DO SUJEITO (PIS)] [TESTE DO MENINO (REFLEX)] [TESTE DA CONJUGAÇÃO (PIV)] Verbo VTD/VTDI + termo sem Verbo VTI/VI/VL + termo com Ação sobre o próprio corpo; Verbo só existe com pronome ou preposição: converte em passiva preposição: verbo fixo no permite transferir a terceiro muda regência; conjuga em analítica (ser + particípio). singular ("alguém..."). ("olhou o menino"). todas as pessoas (me/te/se...). ➔ PRONOME APASSIVADOR ➔ ÍNDICE INDETERMINADOR ➔ PRONOME REFLEXIVO ➔ PARTE INTEGRANTE (PIV) (Se plural mútuo ➔ RECÍPROCO)
+```text
+text [ PALAVRA "SE" ] │ ┌────────────────────────────────┴────────────────────────────────┐ ▼ ▼ [ETAPA 1: TESTE DE CONJUNÇÃO] [ETAPA 2: TESTE DE REALCE] A palavra liga duas orações? Pode retirar o "se" sem qualquer alteração ├─ Troca a oração por "ISSO"? ──► CONJUNÇÃO INTEGRANTE estrutural ou semântica? (ex.: foram-se) ├─ Troca por "CASO"? ───────────► CONJUNÇÃO CONDICIONAL └─ Sim ──► PARTÍCULA DE REALCE / EXPLETIVA ├─ Troca por "JÁ QUE"? ─────────► CONJUNÇÃO CAUSAL └─ Troca por "EMBORA"? ─────────► CONJUNÇÃO CONCESSIVA │ (Se não for conjunção nem realce) ▼ [ETAPA 3: TESTE PRONOMINAL / SINTÁTICO] │ ┌───────────────────────────────────────┬────────────────────────┴──────────────┬────────────────────────────────────────┐ ▼ ▼ ▼ ▼ [TESTE DA PASSIVA (PA)] [TESTE DO SUJEITO (PIS)] [TESTE DO MENINO (REFLEX)] [TESTE DA CONJUGAÇÃO (PIV)] Verbo VTD/VTDI + termo sem Verbo VTI/VI/VL + termo com Ação sobre o próprio corpo; Verbo só existe com pronome ou preposição: converte em passiva preposição: verbo fixo no permite transferir a terceiro muda regência; conjuga em analítica (ser + particípio). singular ("alguém..."). ("olhou o menino"). todas as pessoas (me/te/se...). └─► PRONOME APASSIVADOR └─► ÍNDICE INDETERMINADOR └─► PRONOME REFLEXIVO └─► PARTE INTEGRANTE (PIV) (Se plural mútuo ─► RECÍPROCO)
+```
 
 #### Sequência passo a passo
 

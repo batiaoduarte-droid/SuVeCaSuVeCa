@@ -42,43 +42,15 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 - Reconhecimento morfológico de Preposições (a, de, em, com, por) e ocorrência do fenômeno da Crase ($a\ \text{prep.} + a\ \text{art.} = \text{à}$).
 
-REGÊNCIA VERBAL (NORMA CULTA)
-- ➔
+```text
+REGÊNCIA VERBAL (NORMA CULTA) │ ┌─────────────────────────────────┴─────────────────────────────────┐ ▼ ▼
+```
 
 1. VERBOS COM MUDANÇA DE SENTIDO 2. VERBOS SEM MUDANÇA DE SENTIDO
 
-ASPIRAR ATENDER (Pessoa ou Coisa)
-- VTD: Sorver / Inalar
-VTD: Atender o chamado / o cliente
-- VTI (a): Almejar [≠ Almejar/Cobiçar (VTD)]
-VTI (a): Atender ao chamado / ao cliente
-- VISAR SISTEMA COISA (OD) vs. PESSOA/ESTÍMULO (OI)
-VTD: Mirar / Pôr visto
-- RESPONDER: OD (a resposta) / OI em "a" (a quem/a quê)
-VTI (a): Almejar (O.I. Oracional = Prep. Facultativa)
-- PAGAR: OD (a dívida) / OI em "a" (ao credor)
-PERDOAR: OD (o erro) / OI em "a" (ao ofensor) ASSISTIR
-- VTI (a): Ver / Presenciar PEDIR
-VTI (a): Caber / Competir (sujeito posposto)
-- VTDI: Pedir algo (OD) a alguém (OI) [Rejeita "para"]
-VTD (pref.): Dar assistência / Cuidar
-- VI + Prep. EM: Morar / Residir ESQUECER / LEMBRAR
-Padrão Não Pronominal: VTD (Esqueci o fato) IMPLICAR
-- Padrão Pronominal: VTI em "de" (Esqueci-me do fato)
-VTD: Acarretar [Vedado "implicar em"]
-- Clássica / Arcaica: Coisa é SUJEITO + OI ("Esqueceu-me")
-VTI (com): Ter implicância
-- VTI Pronominal (em): Implicar-se (Envolver-se) DEPARAR / DEPARAR-SE
-VTD: Deparar o amigo CHAMAR
-- VTI (com): Deparar com o amigo
-VTD: Convocar
-- VTI Pronominal (com): Deparar-se com o amigo
-VTI (por): Invocar / Clamar
-- "VALE TUDO": Apelidar (VTD/VTI + Predicativo c/ ou s/ "de") REGRA DOS PRONOMINAIS: Em regra, exigem preposição (VTI)
-PROCEDER
-- VI: Ter fundamento / Comportar-se
-VTI (a): Dar início / Executar
-- NÃO PRONOMINAIS: SIMPATIZAR / ANTIPATIZAR VTI (com): Rejeitam pronome reflexivo ("simpatizar-se" = ERRO)
+```text
+│ │ ├─ ASPIRAR ├─ ATENDER (Pessoa ou Coisa) │ ├─ VTD: Sorver / Inalar │ ├─ VTD: Atender o chamado / o cliente │ └─ VTI (a): Almejar [≠ Almejar/Cobiçar (VTD)] │ └─ VTI (a): Atender ao chamado / ao cliente │ │ ├─ VISAR ├─ SISTEMA COISA (OD) vs. PESSOA/ESTÍMULO (OI) │ ├─ VTD: Mirar / Pôr visto │ ├─ RESPONDER: OD (a resposta) / OI em "a" (a quem/a quê) │ └─ VTI (a): Almejar (O.I. Oracional = Prep. Facultativa) │ ├─ PAGAR: OD (a dívida) / OI em "a" (ao credor) │ │ └─ PERDOAR: OD (o erro) / OI em "a" (ao ofensor) ├─ ASSISTIR │ │ ├─ VTI (a): Ver / Presenciar ├─ PEDIR │ ├─ VTI (a): Caber / Competir (sujeito posposto) │ └─ VTDI: Pedir algo (OD) a alguém (OI) [Rejeita "para"] │ ├─ VTD (pref.): Dar assistência / Cuidar │ │ └─ VI + Prep. EM: Morar / Residir ├─ ESQUECER / LEMBRAR │ │ ├─ Padrão Não Pronominal: VTD (Esqueci o fato) ├─ IMPLICAR │ ├─ Padrão Pronominal: VTI em "de" (Esqueci-me do fato) │ ├─ VTD: Acarretar [Vedado "implicar em"] │ └─ Clássica / Arcaica: Coisa é SUJEITO + OI ("Esqueceu-me") │ ├─ VTI (com): Ter implicância │ │ └─ VTI Pronominal (em): Implicar-se (Envolver-se) ├─ DEPARAR / DEPARAR-SE │ │ ├─ VTD: Deparar o amigo ├─ CHAMAR │ ├─ VTI (com): Deparar com o amigo │ ├─ VTD: Convocar │ └─ VTI Pronominal (com): Deparar-se com o amigo │ ├─ VTI (por): Invocar / Clamar │ │ └─ "VALE TUDO": Apelidar (VTD/VTI + Predicativo c/ ou s/ "de") └─ REGRA DOS PRONOMINAIS: Em regra, exigem preposição (VTI) │ ├─ PROCEDER │ ├─ VI: Ter fundamento / Comportar-se │ └─ VTI (a): Dar início / Executar │ └─ NÃO PRONOMINAIS: SIMPATIZAR / ANTIPATIZAR └─ VTI (com): Rejeitam pronome reflexivo ("simpatizar-se" = ERRO)
+```
 
 ---
 

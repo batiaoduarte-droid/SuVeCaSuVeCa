@@ -44,32 +44,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Conceito de período composto por subordinação (orações substantivas, adjetivas e adverbiais desenvolvidas).
 - Reconhecimento morfológico das formas nominais do verbo (infinitivo pessoal e impessoal, gerúndio, particípio regular e irregular).
 
-SINTAXE DAS ORAÇÕES REDUZIDAS ➔ 1. Critérios Constitutivos Obrigatórios
-- ➔ Ausência de Conectivo Subordinativo (sem conjunção integrante, adverbial ou pronome relativo)
-➔ Presença de Preposição Funcional (permitida por regência ou valor adverbial)
-- ➔ Núcleo Verbal em Forma Nominal (Infinitivo, Gerúndio ou Particípio)
-➔ 2. Distribuição Funcional das Formas Nominais
-- ➔ Infinitivo (Totalmente flexível)
-➔ Substantivas (Subjetiva, OD, OI, Predicativa, Compl. Nominal, Apositiva) -> Teste: "isso / disso"
-- ➔ Adjetivas (Restritivas ou Explicativas) -> Teste: "que + verbo"
-➔ Adverbiais (Tempo [ao + inf.], Condição [a + inf.], Causa [por + inf.], Finalidade [para + inf.], etc.)
-- ➔ Gerúndio (Apenas 2 funções; NUNCA substantiva)
-➔ Adjetivas (Junto a substantivo; substituível por pronome relativo)
-- ➔ Adverbiais (Causal, Consecutiva, Temporal, Condicional, Concessiva, Conformativa)
-➔ Particípio (Apenas 2 funções; NUNCA substantiva)
-- ➔ Adjetivas (Valor passivo ligado a nome; "que foi + particípio")
-➔ Adverbiais (Temporal, Condicional, Concessiva, Causal)
-- ➔ 3. Discriminação Semântica e Temporal
-➔ Método da Anterioridade Cronológica
-- ➔ 1º Evento no tempo real -> CAUSA (Teste: "O fato de X...")
-➔ 2º Evento no tempo real -> EFEITO / CONSEQUÊNCIA (Teste: "...fez com que Y")
-- ➔ Distinção Causa vs. Explicação (Preposição "por" + Infinitivo -> Predominância Causal)
-➔ Polissemia do Gerúndio (Tensão entre consequência, finalidade e tempo em textos formais)
-- ➔ 4. Oração Reduzida versus Locução Verbal
-➔ Locução Verbal: Período simples (1 oração); Sujeito comum indissolúvel; NÃO aceita "que"
-- ➔ Oração Reduzida: Período composto (2+ orações); Sujeitos iguais ou distintos; ACEITA desenvolvimento com "que"
-➔ Regra da Locução Reduzida: O verbo AUXILIAR determina o nome da forma nominal da oração
-- ➔ 5. Regras de Reescrita e Pontuação ➔ "Ao + Infinitivo" -> Converte coordenação aditiva em subordinação temporal ➔ Ordem Direta (Principal + Adverbial ao final) -> Pontuação por vírgula é FACULTATIVA
+```text
+SINTAXE DAS ORAÇÕES REDUZIDAS ├── 1. Critérios Constitutivos Obrigatórios │ ├── Ausência de Conectivo Subordinativo (sem conjunção integrante, adverbial ou pronome relativo) │ ├── Presença de Preposição Funcional (permitida por regência ou valor adverbial) │ └── Núcleo Verbal em Forma Nominal (Infinitivo, Gerúndio ou Particípio) │ ├── 2. Distribuição Funcional das Formas Nominais │ ├── Infinitivo (Totalmente flexível) │ │ ├── Substantivas (Subjetiva, OD, OI, Predicativa, Compl. Nominal, Apositiva) -> Teste: "isso / disso" │ │ ├── Adjetivas (Restritivas ou Explicativas) -> Teste: "que + verbo" │ │ └── Adverbiais (Tempo [ao + inf.], Condição [a + inf.], Causa [por + inf.], Finalidade [para + inf.], etc.) │ ├── Gerúndio (Apenas 2 funções; NUNCA substantiva) │ │ ├── Adjetivas (Junto a substantivo; substituível por pronome relativo) │ │ └── Adverbiais (Causal, Consecutiva, Temporal, Condicional, Concessiva, Conformativa) │ └── Particípio (Apenas 2 funções; NUNCA substantiva) │ ├── Adjetivas (Valor passivo ligado a nome; "que foi + particípio") │ └── Adverbiais (Temporal, Condicional, Concessiva, Causal) │ ├── 3. Discriminação Semântica e Temporal │ ├── Método da Anterioridade Cronológica │ │ ├── 1º Evento no tempo real -> CAUSA (Teste: "O fato de X...") │ │ └── 2º Evento no tempo real -> EFEITO / CONSEQUÊNCIA (Teste: "...fez com que Y") │ ├── Distinção Causa vs. Explicação (Preposição "por" + Infinitivo -> Predominância Causal) │ └── Polissemia do Gerúndio (Tensão entre consequência, finalidade e tempo em textos formais) │ ├── 4. Oração Reduzida versus Locução Verbal │ ├── Locução Verbal: Período simples (1 oração); Sujeito comum indissolúvel; NÃO aceita "que" │ ├── Oração Reduzida: Período composto (2+ orações); Sujeitos iguais ou distintos; ACEITA desenvolvimento com "que" │ └── Regra da Locução Reduzida: O verbo AUXILIAR determina o nome da forma nominal da oração │ └── 5. Regras de Reescrita e Pontuação ├── "Ao + Infinitivo" -> Converte coordenação aditiva em subordinação temporal └── Ordem Direta (Principal + Adverbial ao final) -> Pontuação por vírgula é FACULTATIVA
+```
 
 ---
 

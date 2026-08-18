@@ -45,20 +45,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Vozes Verbais: Reconhecimento da voz ativa e da voz passiva analítica (formada pela locução verbo auxiliar ser + verbo principal no particípio).
 - Complementos Verbais: Conceitos prévios de Objeto Direto (OD) e Objeto Indireto (OI).
 
-TERMOS INTEGRANTES DA ORAÇÃO
-- ➔ 1. COMPLEMENTOS VERBAIS (Mandam seta para VERBO)
-➔ Objeto Direto (OD) ➔ > Seta para Verbo | Preposição Não Obrigatória
-- ➔ Objeto Indireto (OI) > Seta para Verbo | Preposição Obrigatória
-➔ 2. COMPLEMENTO NOMINAL (Manda seta para NOME)
-- ➔ Característica Estrutural: Sempre com Preposição Obrigatória
-➔ Natureza do Núcleo: Substantivo ou Pronome Substantivo
-- ➔ Tríade de Referentes (Nomes):
-➔ Substantivo Abstrato (ideia passiva/alvo) ➔ > ex.: "necessidade de alimentos"
-- ➔ Adjetivo (qualificador transitivo) ➔ > ex.: "prejudicial à saúde"
-➔ Advérbio (circunstancial de modo) ➔ > ex.: "contrariamente ao esperado"
-- ➔ 3. AGENTE DA PASSIVA (NÃO manda seta para ninguém: termo autônomo na passiva) ➔ Ambiente Sintático: Voz Passiva Analítica ("SER + PARTICÍPIO") ➔ Preposições Introdutórias:
-➔ Padrão / Mais Frequente: "Por" (e contrações: pelo, pela, pelos, pelas)
-- ➔ Secundária / Menos Frequente: "De" (ex.: "cercado de inimigos") ➔ Validação Inequívoca (Teste da Voz Ativa): ➔ Vira Sujeito Agente na Ativa ➔ > AGENTE DA PASSIVA ("filmado pela TV" -> "A TV filmou") ➔ NÃO vira Sujeito Agente na Ativa: ➔ Indica Causa/Motivo ➔ > ADJUNTO ADVERBIAL DE CAUSA ("elogiado pela inteligência") ➔ Particípio Adjetivado ➔ > COMPLEMENTO NOMINAL ("recebida dos pais")
+```text
+TERMOS INTEGRANTES DA ORAÇÃO │ ├── 1. COMPLEMENTOS VERBAIS (Mandam seta para VERBO) │ ├── Objeto Direto (OD) ──> Seta para Verbo | Preposição Não Obrigatória │ └── Objeto Indireto (OI) ─> Seta para Verbo | Preposição Obrigatória │ ├── 2. COMPLEMENTO NOMINAL (Manda seta para NOME) │ ├── Característica Estrutural: Sempre com Preposição Obrigatória │ ├── Natureza do Núcleo: Substantivo ou Pronome Substantivo │ └── Tríade de Referentes (Nomes): │ ├── Substantivo Abstrato (ideia passiva/alvo) ──> ex.: "necessidade de alimentos" │ ├── Adjetivo (qualificador transitivo) ─────────> ex.: "prejudicial à saúde" │ └── Advérbio (circunstancial de modo) ──────────> ex.: "contrariamente ao esperado" │ └── 3. AGENTE DA PASSIVA (NÃO manda seta para ninguém: termo autônomo na passiva) ├── Ambiente Sintático: Voz Passiva Analítica ("SER + PARTICÍPIO") ├── Preposições Introdutórias: │ ├── Padrão / Mais Frequente: "Por" (e contrações: pelo, pela, pelos, pelas) │ └── Secundária / Menos Frequente: "De" (ex.: "cercado de inimigos") └── Validação Inequívoca (Teste da Voz Ativa): ├── Vira Sujeito Agente na Ativa ──> AGENTE DA PASSIVA ("filmado pela TV" -> "A TV filmou") └── NÃO vira Sujeito Agente na Ativa: ├── Indica Causa/Motivo ─────> ADJUNTO ADVERBIAL DE CAUSA ("elogiado pela inteligência") └── Particípio Adjetivado ────> COMPLEMENTO NOMINAL ("recebida dos pais")
+```
 
 ---
 

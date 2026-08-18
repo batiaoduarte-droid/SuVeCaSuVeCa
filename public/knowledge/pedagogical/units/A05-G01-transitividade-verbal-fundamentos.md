@@ -44,20 +44,13 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 - Compreensão intuitiva da ordem direta da oração em Língua Portuguesa (Sujeito + Verbo + Complementos + Adjuntos).
 
-[ PREDICAÇÃO VERBAL ]
-- ➔ [ VERBOS NOCIONAIS (DE AÇÃO) ] [ VERBOS RELACIONAIS (DE LIGAÇÃO) ] • Têm significado pleno / processo • Não têm noção própria ("verbo sem noção") • Podem ter movimento ou não (dormir) • Ligam o SUJEITO ao PREDICATIVO DO SUJEITO
-• Exprimem Estado: Permanente, Passageiro, ➔ Aparente, Continuativo ou Mudança de Estado
-- [ NÃO TRANSITAM ] [ TRANSITAM ]
-[ MANTRA 6 (Regra de Ouro) ] [ INTRANSITIVOS (VI) ]
-- "Um verbo só é de estado/ligação se • Não exigem objeto
-houver PREDICATIVO DO SUJEITO na frase." • Podem ter Adj. Adv.
-- • Podem ter Predicativo
-do Sujeito (Mantra 7)
-- [ PREDICADO NOMINAL ] ➔ [ TRANSITIVOS DIRETOS (VTD) ] [ TRANSITIVOS INDIRETOS (VTI) ] • Exigem Objeto Direto (OD) • Exigem Objeto Indireto (OI) • Ligação sem prep. obrigatória • Ligação com prep. obrigatória
-➔ [ BITRANSITIVOS (VTDI) ] • Exigem simultaneamente OD + OI
-- [ PREDICADO VERBAL / VERBO-NOMINAL ]
+```text
+[ PREDICAÇÃO VERBAL ] │ ┌─────────────────────────────────┴─────────────────────────────────┐ ▼ ▼ [ VERBOS NOCIONAIS (DE AÇÃO) ] [ VERBOS RELACIONAIS (DE LIGAÇÃO) ] • Têm significado pleno / processo • Não têm noção própria ("verbo sem noção") • Podem ter movimento ou não (dormir) • Ligam o SUJEITO ao PREDICATIVO DO SUJEITO │ • Exprimem Estado: Permanente, Passageiro, ┌───────────┴───────────┐ Aparente, Continuativo ou Mudança de Estado ▼ ▼ │ [ NÃO TRANSITAM ] [ TRANSITAM ] ▼ │ │ [ MANTRA 6 (Regra de Ouro) ] [ INTRANSITIVOS (VI) ] │ "Um verbo só é de estado/ligação se • Não exigem objeto │ houver PREDICATIVO DO SUJEITO na frase." • Podem ter Adj. Adv. │ │ • Podem ter Predicativo │ ▼ do Sujeito (Mantra 7) │ [ PREDICADO NOMINAL ] ├──────────────────────────────────┐ ▼ ▼ [ TRANSITIVOS DIRETOS (VTD) ] [ TRANSITIVOS INDIRETOS (VTI) ] • Exigem Objeto Direto (OD) • Exigem Objeto Indireto (OI) • Ligação sem prep. obrigatória • Ligação com prep. obrigatória │ │ └─────────────────┬────────────────┘ ▼ [ BITRANSITIVOS (VTDI) ] • Exigem simultaneamente OD + OI │ ▼ [ PREDICADO VERBAL / VERBO-NOMINAL ]
+```
 
-[ OS 9 MANTRAS DA ANÁLISE SINTÁTICA ]
+```text
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ [ OS 9 MANTRAS DA ANÁLISE SINTÁTICA ]
+```
 
 1. "Se o verbo não indicar estado, será de ação."
 2. "Ao classificar o verbo, não olhe para ele apenas; a classificação depende do que vem depois dele."
@@ -68,6 +61,10 @@ do Sujeito (Mantra 7)
 7. "Predicativo pode vir com qualquer verbo (de ação ou de ligação)."
 8. "Na locução verbal, quem manda (tem a predicação) é o V. Principal. O auxiliar não tem predicação, só se flexiona."
 9. "Na dúvida, tente flexionar (feminino/plural): se flexionar, será adjetivo (predicativo), não advérbio (modo)."
+
+```text
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+```
 
 ---
 
@@ -196,18 +193,9 @@ Muitos erros em provas decorrem de perguntas automatizadas e descontextualizadas
 
 No sujeito oculto (elíptico/subentendido), o termo executor existe e é perfeitamente identificável (pela terminação verbal ou pelo contexto textual prévio). No sujeito indeterminado, o termo executor existe, mas o enunciador não pode ou não deseja identificá-lo gramaticalmente.
 
-➔ ➔ ┤
-- Verbo na 1ª ou 2ª pessoa (Singular ou Plural)
-SUJEITO OCULTO DESINENCIAL (eu, tu, nós, vós)
-- Verbo na 3ª pessoa do singular isolado
-SUJEITO OCULTO CONTEXTUAL (busca referente no texto)
-- Verbo na 3ª pessoa do plural COM referente textual prévio
-SUJEITO OCULTO ANAFÓRICO / ELÍPTICO
-- Verbo na 3ª pessoa do plural SEM referente textual prévio
-SUJEITO INDETERMINADO ("Chegaram cedo")
-- Verbo na 3ª pessoa do singular + 'SE' (P.I.S. / I.I.S.)
-SUJEITO INDETERMINADO ("Precisa-se de apoio")
-- ➔
+```text
+┌─────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────┐ ├─────────────────────────────────────────────────────────────┼─────────────────────────────────────────────────────────────┤ │ Verbo na 1ª ou 2ª pessoa (Singular ou Plural) │ SUJEITO OCULTO DESINENCIAL (eu, tu, nós, vós) │ │ Verbo na 3ª pessoa do singular isolado │ SUJEITO OCULTO CONTEXTUAL (busca referente no texto) │ │ Verbo na 3ª pessoa do plural COM referente textual prévio │ SUJEITO OCULTO ANAFÓRICO / ELÍPTICO │ │ Verbo na 3ª pessoa do plural SEM referente textual prévio │ SUJEITO INDETERMINADO ("Chegaram cedo") │ │ Verbo na 3ª pessoa do singular + 'SE' (P.I.S. / I.I.S.) │ SUJEITO INDETERMINADO ("Precisa-se de apoio") │ └─────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────┘
+```
 
 Na sequência "Os pais viajaram. Chegaram cedo.", o sujeito do verbo chegaram NÃO é indeterminado. Trata-se de Sujeito Oculto Anafórico, pois o referente nominal ("Os pais") foi explicitado na oração imediatamente anterior.
 

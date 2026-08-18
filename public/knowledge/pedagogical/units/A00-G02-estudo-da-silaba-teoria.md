@@ -14,24 +14,9 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 
 ## Pré-requisitos e modelo mental
 
-ESTUDO DA SÍLABA E FONÉTICA
-- ➔ ESTRUTURA DA SÍLABA ENCONTROS FONÉTICOS REPRESENTAÇÃO GRÁFICA (Vogal como Núcleo)
-vs. FONÊMICA
-- Mantra da Vogal Única: ➔ Grafema (Letra Escrita)
-"Ao menos e somente UMA Fonema (Som Articulado)
-- vogal por sílaba" ENCONTROS VOCÁLICOS ENCONTROS CONSONANTAIS Dígrafo (2L = 1F, subtrai 1)
-(Zero consoantes soltas)
-- (Ambas Consoantes
-Consonantal (CH, RR, QU...)
-- Ditongo soam na palavra)
-Vocálico (AM, EN, IN...) Vogal (V): Pico de força
-- DC (SV + V)
-Dífono (1L = 2F, soma 1)
-- (Letra "A" é sempre V)
-DC = H Perfeito (Grafema X = /ks/)
-- DD (V + SV)
-(blu-sa) Semivogal (SV): Som brando
-- DD ≠ H Imperfeito de /i/ ou /u/ (E, I, O, U) Tritongo (SV+V+SV) (af-ta) Hiato (V + V)
+```text
+ESTUDO DA SÍLABA E FONÉTICA │ ┌──────────────────────────────────────┼──────────────────────────────────────┐ ▼ ▼ ▼ ESTRUTURA DA SÍLABA ENCONTROS FONÉTICOS REPRESENTAÇÃO GRÁFICA (Vogal como Núcleo) │ vs. FONÊMICA │ │ │ ├─ Mantra da Vogal Única: ┌──────────────┴──────────────┐ ├─ Grafema (Letra Escrita) │ "Ao menos e somente UMA ▼ ▼ ├─ Fonema (Som Articulado) │ vogal por sílaba" ENCONTROS VOCÁLICOS ENCONTROS CONSONANTAIS ├─ Dígrafo (2L = 1F, subtrai 1) │ (Zero consoantes soltas) │ (Ambas Consoantes │ ├─ Consonantal (CH, RR, QU...) │ ├─ Ditongo soam na palavra) │ └─ Vocálico (AM, EN, IN...) ├─ Vogal (V): Pico de força │ ├─ DC (SV + V) │ └─ Dífono (1L = 2F, soma 1) │ (Letra "A" é sempre V) │ │ └─ DC = H ├─ Perfeito (Grafema X = /ks/) │ │ └─ DD (V + SV) │ (blu-sa) └─ Semivogal (SV): Som brando │ └─ DD ≠ H └─ Imperfeito de /i/ ou /u/ (E, I, O, U) ├─ Tritongo (SV+V+SV) (af-ta) └─ Hiato (V + V)
+```
 
 ---
 
@@ -170,15 +155,13 @@ $$
 
 ## Roteiros de resolução
 
-ALGORITMO DE ANÁLISE FONÉTICA
-- ➔ [1. Divisão Silábica Fonética] [2. Varredura de Dígrafos] • Falar pausadamente (Abertura de boca) • Dígrafos consonantais (CH, RR, SS, SC...) • Consoante sem vogal recua (af-ta) • Grupos QU/GU (U é mudo?) • Dígrafos separáveis vs. inseparáveis • Dígrafos vocálicos (Vogal + M/N na sílaba)
-➔ [3. Encontros Vocálicos e Consonantais] • Letras mudas consom-se no dígrafo • V + SV = Ditongo Decrescente (DD) • SV + V = Ditongo Crescente (DC) • V | V = Hiato (H) • Consoantes audíveis = Encontro Consonantal (EC)
-- [4. Cálculo de Grafemas vs. Fonemas] F = Letras - (Dígrafos + H inicial) + (X dífono)
+```text
+ALGORITMO DE ANÁLISE FONÉTICA │ ┌────────────────────────────┴────────────────────────────┐ ▼ ▼ [1. Divisão Silábica Fonética] [2. Varredura de Dígrafos] • Falar pausadamente (Abertura de boca) • Dígrafos consonantais (CH, RR, SS, SC...) • Consoante sem vogal recua (af-ta) • Grupos QU/GU (U é mudo?) • Dígrafos separáveis vs. inseparáveis • Dígrafos vocálicos (Vogal + M/N na sílaba) │ │ └────────────────────────────┬────────────────────────────┘ ▼ [3. Encontros Vocálicos e Consonantais] • Letras mudas consom-se no dígrafo • V + SV = Ditongo Decrescente (DD) • SV + V = Ditongo Crescente (DC) • V | V = Hiato (H) • Consoantes audíveis = Encontro Consonantal (EC) │ ▼ [4. Cálculo de Grafemas vs. Fonemas] F = Letras - (Dígrafos + H inicial) + (X dífono)
+```
 
-ALGORITMO DE ANÁLISE FONÉTICA
-- ➔ [1. Divisão Silábica Fonética] [2. Varredura de Dígrafos] • Falar pausadamente (Abertura de boca) • Dígrafos consonantais (CH, RR, SS, SC...) • Consoante sem vogal recua (af-ta) • Grupos QU/GU (U é mudo?) • Dígrafos separáveis vs. inseparáveis • Dígrafos vocálicos (Vogal + M/N na sílaba)
-➔ [3. Encontros Vocálicos e Consonantais] • Letras mudas consom-se no dígrafo • V + SV = Ditongo Decrescente (DD) • SV + V = Ditongo Crescente (DC) • V | V = Hiato (H) • Consoantes audíveis = Encontro Consonantal (EC)
-- [4. Cálculo de Grafemas vs. Fonemas] F = Letras - (Dígrafos + H inicial) + (X dífono)
+```text
+ALGORITMO DE ANÁLISE FONÉTICA │ ┌────────────────────────────┴────────────────────────────┐ ▼ ▼ [1. Divisão Silábica Fonética] [2. Varredura de Dígrafos] • Falar pausadamente (Abertura de boca) • Dígrafos consonantais (CH, RR, SS, SC...) • Consoante sem vogal recua (af-ta) • Grupos QU/GU (U é mudo?) • Dígrafos separáveis vs. inseparáveis • Dígrafos vocálicos (Vogal + M/N na sílaba) │ │ └────────────────────────────┬────────────────────────────┘ ▼ [3. Encontros Vocálicos e Consonantais] • Letras mudas consom-se no dígrafo • V + SV = Ditongo Decrescente (DD) • SV + V = Ditongo Crescente (DC) • V | V = Hiato (H) • Consoantes audíveis = Encontro Consonantal (EC) │ ▼ [4. Cálculo de Grafemas vs. Fonemas] F = Letras - (Dígrafos + H inicial) + (X dífono)
+```
 
 ---
 

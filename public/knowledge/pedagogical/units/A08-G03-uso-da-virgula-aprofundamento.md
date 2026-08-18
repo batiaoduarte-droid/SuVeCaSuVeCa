@@ -44,41 +44,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Noções de sintaxe do período simples: identificação de sujeito, predicado, verbo transitivo direto/indireto, objetos (direto e indireto), adjunto adverbial e aposto.
 - Noções de sintaxe do período composto: diferenciação entre orações coordenadas e orações subordinadas (substantivas, adjetivas e adverbiais).
 
-A08-esta unidade: USO DA VÍRGULA — APROFUNDAMENTO ➔ 1. ESTRUTURA SINTÁTICA FUNDAMENTAL (PROIBIÇÕES DO SVC)
-- ➔ Proibição de vírgula entre Sujeito e Verbo (Simples, Composto em enumeração ou Oracional/Extenso)
-➔ Proibição de vírgula entre Verbo e Complementos (Objeto Direto/Indireto simples ou Oracional) ➔ 2. ORAÇÕES SUBORDINADAS ADJETIVAS
-- ➔ Estruturas Sintáticas
-➔ Desenvolvida Explícita (com pronome relativo visível)
-- ➔ Desenvolvida Implícita (com pronome relativo/verbo subentendido)
-➔ Reduzida (sem pronome relativo; verbo no Gerúndio, Infinitivo ou Particípio)
-- ➔ Semântica da Pontuação
-➔ Restritiva (SEM vírgulas) ➔ Sentido: "SOMENTE" (Pressupõe HÁ MAIS DE UM)
-- ➔ Explicativa (COM vírgulas) ➔ Sentido: "SÓ HÁ UM" (Pressupõe REFERENTE ÚNICO/TOTALIDADE)
-➔ Tipologia de Prova em Concursos
-- ➔ Cenário 1 (~80% dos Casos): Referente Múltiplo / Dupla Leitura Possível
-➔ Vírgulas Opcionais ➔ Supressão/Inserção MANTÉM gramática e ALTERA sentido.
-- ➔ Cenário 2 (~20% dos Casos - Alto Nível): Leitura Única Obrigatória
-➔ Só Pode Ser Explicativa (Referente único no universo: "Homem", "Tejo", "Mãe")
-
-➔ Só Pode Ser Restritiva (Contexto textual fixa multiplicidade prévia)
-- ➔ Inserir vírgula ➔ ERRO GRAMATICAL / INCOERÊNCIA. ➔ 3. TERMOS E EXPRESSÕES DE ISOLAMENTO OBRIGATÓRIO
-➔ Expressões Explicativas e Retificativas (ou seja, isto é, ou melhor, a saber)
-- ➔ Vírgula Vicária (Elipse / Zeugma de forma verbal anterior)
-➔ Distinção do Aposto: Vírgula vicária precede predicativo/adjetivo; Aposto EXIGE substantivo.
-- ➔ Aposto Explicativo (Núcleo Substantivo)
-➔ Pontuação intercambiável: Vírgulas , Travessões ( ➔ ) ou Parênteses
-- ➔ Vírgula Sobrecarregada (Dupla Função): Fecha aposto e oração adverbial concorrente. ➔ 4. TERMOS E ORAÇÕES ADVERBIAIS (MNEMÔNICO 6C + FTP)
-➔ Ordem Direta (Posicionadas ao final do período) ➔ Vírgula FACULTATIVA
-- ➔ Ordem Inversa / Deslocada (Antecipadas ou Intercaladas)
-➔ Orações Adverbiais Deslocadas ➔ Vírgula OBRIGATÓRIA (qualquer extensão)
-- ➔ Adjuntos Adverbiais Deslocados
-➔ Curta extensão (até 2 palavras) ➔ Vírgula FACULTATIVA
-- ➔ Longa extensão (3 ou mais palavras) ➔ Vírgula OBRIGATÓRIA ➔ 5. CASUÍSTICA DA CONJUNÇÃO ADITIVA "E" (5 CASOS)
-➔ 1. Enumeração simples de termos ➔ PROIBIDA
-- ➔ 2. Orações com sujeitos idênticos ➔ PROIBIDA
-➔ 3. Orações com sujeitos diferentes ➔ FACULTATIVA (Nunca obrigatória)
-- ➔ 4. Conjunção "e" com valor adversativo/conclusivo ➔ FACULTATIVA
-➔ 5. Polissíndeto (repetição estilística e enfática) ➔ OBRIGATÓRIA ➔ 6. MATRIZ CONSOLIDADA DE VÍRGULA FACULTATIVA (QUESTÕES DE SUPRESSÃO) ➔ Caso 1: Termos e orações adverbiais na ordem direta (ao final do período) ➔ Caso 2: Adjunto adverbial curto deslocado (até 2 palavras) ➔ Caso 3: Conjunção "e" entre sujeitos diferentes ou com valor adversativo/conclusivo ➔ Caso 4: Orações adjetivas explicativas em contextos de referente múltiplo (altera sentido)
+```text
+A08-esta unidade: USO DA VÍRGULA — APROFUNDAMENTO ├── 1. ESTRUTURA SINTÁTICA FUNDAMENTAL (PROIBIÇÕES DO SVC) │ ├── Proibição de vírgula entre Sujeito e Verbo (Simples, Composto em enumeração ou Oracional/Extenso) │ └── Proibição de vírgula entre Verbo e Complementos (Objeto Direto/Indireto simples ou Oracional) ├── 2. ORAÇÕES SUBORDINADAS ADJETIVAS │ ├── Estruturas Sintáticas │ │ ├── Desenvolvida Explícita (com pronome relativo visível) │ │ ├── Desenvolvida Implícita (com pronome relativo/verbo subentendido) │ │ └── Reduzida (sem pronome relativo; verbo no Gerúndio, Infinitivo ou Particípio) │ ├── Semântica da Pontuação │ │ ├── Restritiva (SEM vírgulas) ──► Sentido: "SOMENTE" (Pressupõe HÁ MAIS DE UM) │ │ └── Explicativa (COM vírgulas) ──► Sentido: "SÓ HÁ UM" (Pressupõe REFERENTE ÚNICO/TOTALIDADE) │ └── Tipologia de Prova em Concursos │ ├── Cenário 1 (~80% dos Casos): Referente Múltiplo / Dupla Leitura Possível │ │ └── Vírgulas Opcionais ──► Supressão/Inserção MANTÉM gramática e ALTERA sentido. │ └── Cenário 2 (~20% dos Casos - Alto Nível): Leitura Única Obrigatória │ ├── Só Pode Ser Explicativa (Referente único no universo: "Homem", "Tejo", "Mãe") │ │ └── Retirar vírgula ──► ERRO GRAMATICAL / INCOERÊNCIA. │ └── Só Pode Ser Restritiva (Contexto textual fixa multiplicidade prévia) │ └── Inserir vírgula ──► ERRO GRAMATICAL / INCOERÊNCIA. ├── 3. TERMOS E EXPRESSÕES DE ISOLAMENTO OBRIGATÓRIO │ ├── Expressões Explicativas e Retificativas (ou seja, isto é, ou melhor, a saber) │ ├── Vírgula Vicária (Elipse / Zeugma de forma verbal anterior) │ │ └── Distinção do Aposto: Vírgula vicária precede predicativo/adjetivo; Aposto EXIGE substantivo. │ └── Aposto Explicativo (Núcleo Substantivo) │ ├── Pontuação intercambiável: Vírgulas , Travessões (──) ou Parênteses  │ └── Vírgula Sobrecarregada (Dupla Função): Fecha aposto e oração adverbial concorrente. ├── 4. TERMOS E ORAÇÕES ADVERBIAIS (MNEMÔNICO 6C + FTP) │ ├── Ordem Direta (Posicionadas ao final do período) ──► Vírgula FACULTATIVA │ └── Ordem Inversa / Deslocada (Antecipadas ou Intercaladas) │ ├── Orações Adverbiais Deslocadas ──► Vírgula OBRIGATÓRIA (qualquer extensão) │ └── Adjuntos Adverbiais Deslocados │ ├── Curta extensão (até 2 palavras) ──► Vírgula FACULTATIVA │ └── Longa extensão (3 ou mais palavras) ──► Vírgula OBRIGATÓRIA ├── 5. CASUÍSTICA DA CONJUNÇÃO ADITIVA "E" (5 CASOS) │ ├── 1. Enumeração simples de termos ──► PROIBIDA │ ├── 2. Orações com sujeitos idênticos ──► PROIBIDA │ ├── 3. Orações com sujeitos diferentes ──► FACULTATIVA (Nunca obrigatória) │ ├── 4. Conjunção "e" com valor adversativo/conclusivo ──► FACULTATIVA │ └── 5. Polissíndeto (repetição estilística e enfática) ──► OBRIGATÓRIA └── 6. MATRIZ CONSOLIDADA DE VÍRGULA FACULTATIVA (QUESTÕES DE SUPRESSÃO) ├── Caso 1: Termos e orações adverbiais na ordem direta (ao final do período) ├── Caso 2: Adjunto adverbial curto deslocado (até 2 palavras) ├── Caso 3: Conjunção "e" entre sujeitos diferentes ou com valor adversativo/conclusivo └── Caso 4: Orações adjetivas explicativas em contextos de referente múltiplo (altera sentido)
+```
 
 ---
 
@@ -314,13 +282,9 @@ Casos em que o antecedente admite multiplicidade fática. A retirada da vírgula
 
 1. Executar a Prova Real na Reduzida: Descompactar a oração inserindo [que + verbo flexionado]. Se a frase mantiver sentido e correção, confirma-se a oração adjetiva reduzida.
 
-[Identificação da Oração Adjetiva]
-- Fazer o Teste de Unicidade do Referente: "No contexto, pode haver mais de um elemento?"
-➔ SIM (Referente Múltiplo) NÃO (Referente Único) [Cenário 1: Duas Leituras] [Cenário 2: Leitura Única]
-- ➔ ➔ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo (Explicativa) (Restritiva) (Homem, Tejo, Mãe) Declarado no Texto
-➔
-- SÓ PODE SER EXPLICATIVA SÓ PODE SER RESTRITIVA (Exige vírgulas) (Proíbe vírgulas) VÍRGULAS SÃO OPCIONAIS
-• Inserir/retirar vírgulas: ✔ MANTÉM a correção gramatical Alterar pontuação: Alterar pontuação: ❌ ALTERA o sentido do texto ❌ GERA ERRO GRAMATICAL ❌ GERA ERRO GRAMATICAL ❌ GERA INCOERÊNCIA ❌ GERA INCOERÊNCIA
+```text
+[Identificação da Oração Adjetiva] │ Fazer o Teste de Unicidade do Referente: "No contexto, pode haver mais de um elemento?" │ ┌───────────────────────┴───────────────────────┐ ▼ ▼ SIM (Referente Múltiplo) NÃO (Referente Único) [Cenário 1: Duas Leituras] [Cenário 2: Leitura Única] │ │ ┌────────────────┴────────────────┐ ┌────────────────┴────────────────┐ ▼ ▼ ▼ ▼ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo (Explicativa) (Restritiva) (Homem, Tejo, Mãe) Declarado no Texto │ │ │ │ └────────────────┬────────────────┘ ▼ ▼ │ SÓ PODE SER EXPLICATIVA SÓ PODE SER RESTRITIVA ▼ (Exige vírgulas) (Proíbe vírgulas) VÍRGULAS SÃO OPCIONAIS │ │ • Inserir/retirar vírgulas: ▼ ▼ ✔ MANTÉM a correção gramatical Alterar pontuação: Alterar pontuação: ❌ ALTERA o sentido do texto ❌ GERA ERRO GRAMATICAL ❌ GERA ERRO GRAMATICAL ❌ GERA INCOERÊNCIA ❌ GERA INCOERÊNCIA
+```
 
 1. Localizar a vírgula suspeita: Identificar uma vírgula isolando termo intercalado ou separando sujeito e predicativo.
 2. Checar a Oração Anterior: Verificar se há forma verbal na oração imediatamente precedente.
@@ -342,16 +306,18 @@ Casos em que o antecedente admite multiplicidade fática. A retirada da vírgula
 
 - Deslocados sem verbo: até 2 palavras (FACULTATIVA) | 3 ou mais palavras (OBRIGATÓRIA).
 
-[Questão de Supressão de Vírgula]
-- Tradução: "A vírgula examinada é FACULTATIVA?"
-➔ SE ENQUADRA EM: NÃO SE ENQUADRA
+```text
+[Questão de Supressão de Vírgula] │ Tradução: "A vírgula examinada é FACULTATIVA?" │ ┌─────────────────────────┴─────────────────────────┐ ▼ ▼ SE ENQUADRA EM: NÃO SE ENQUADRA
+```
 
 1. Adverbial na ordem direta (ao final); (É vírgula obrigatória:
 2. Adjunto adverbial curto deslocado (<= 2 palavras); adverbial deslocada longa,
 3. Conjunção "e" com sujeitos distintos ou adversativo; expressão explicativa,
 4. Adjetiva explicativa em contexto de referente múltiplo. aposto, polissíndeto, etc.)
 
-VÍRGULA É FACULTATIVA VÍRGULA É OBRIGATÓRIA • Supressão NÃO prejudica a correção • Supressão PREJUDICA a correção • Se o item diz "prejudica" -> ERRADO • Se o item diz "prejudica" -> CERTO • Se o item diz "mantém correção" -> CERTO • Se o item diz "mantém correção" -> ERRADO
+```text
+│ │ ▼ ▼ VÍRGULA É FACULTATIVA VÍRGULA É OBRIGATÓRIA • Supressão NÃO prejudica a correção • Supressão PREJUDICA a correção • Se o item diz "prejudica" -> ERRADO • Se o item diz "prejudica" -> CERTO • Se o item diz "mantém correção" -> CERTO • Se o item diz "mantém correção" -> ERRADO
+```
 
 1. Localizar o elemento conector ou verbo na forma nominal: Identificar a presença de que, o qual, cujo, onde ou verbo no gerúndio (-ndo), infinitivo (-ar/-er/-ir) ou particípio (-do/-to).
 2. Executar o Teste da Seta: Traçar mentalmente uma seta da oração em direção ao termo antecedente. Se apontar para um substantivo qualificando-o, confirma-se o caráter Adjetivo.
@@ -359,13 +325,9 @@ VÍRGULA É FACULTATIVA VÍRGULA É OBRIGATÓRIA • Supressão NÃO prejudica a
 
 1. Executar a Prova Real na Reduzida: Descompactar a oração inserindo [que + verbo flexionado]. Se a frase mantiver sentido e correção, confirma-se a oração adjetiva reduzida.
 
-[Identificação da Oração Adjetiva]
-- Fazer o Teste de Unicidade do Referente: "No contexto, pode haver mais de um elemento?"
-➔ SIM (Referente Múltiplo) NÃO (Referente Único) [Cenário 1: Duas Leituras] [Cenário 2: Leitura Única]
-- ➔ ➔ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo (Explicativa) (Restritiva) (Homem, Tejo, Mãe) Declarado no Texto
-➔
-- SÓ PODE SER EXPLICATIVA SÓ PODE SER RESTRITIVA (Exige vírgulas) (Proíbe vírgulas) VÍRGULAS SÃO OPCIONAIS
-• Inserir/retirar vírgulas: ✔ MANTÉM a correção gramatical Alterar pontuação: Alterar pontuação: ❌ ALTERA o sentido do texto ❌ GERA ERRO GRAMATICAL ❌ GERA ERRO GRAMATICAL ❌ GERA INCOERÊNCIA ❌ GERA INCOERÊNCIA
+```text
+[Identificação da Oração Adjetiva] │ Fazer o Teste de Unicidade do Referente: "No contexto, pode haver mais de um elemento?" │ ┌───────────────────────┴───────────────────────┐ ▼ ▼ SIM (Referente Múltiplo) NÃO (Referente Único) [Cenário 1: Duas Leituras] [Cenário 2: Leitura Única] │ │ ┌────────────────┴────────────────┐ ┌────────────────┴────────────────┐ ▼ ▼ ▼ ▼ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo (Explicativa) (Restritiva) (Homem, Tejo, Mãe) Declarado no Texto │ │ │ │ └────────────────┬────────────────┘ ▼ ▼ │ SÓ PODE SER EXPLICATIVA SÓ PODE SER RESTRITIVA ▼ (Exige vírgulas) (Proíbe vírgulas) VÍRGULAS SÃO OPCIONAIS │ │ • Inserir/retirar vírgulas: ▼ ▼ ✔ MANTÉM a correção gramatical Alterar pontuação: Alterar pontuação: ❌ ALTERA o sentido do texto ❌ GERA ERRO GRAMATICAL ❌ GERA ERRO GRAMATICAL ❌ GERA INCOERÊNCIA ❌ GERA INCOERÊNCIA
+```
 
 1. Localizar a vírgula suspeita: Identificar uma vírgula isolando termo intercalado ou separando sujeito e predicativo.
 2. Checar a Oração Anterior: Verificar se há forma verbal na oração imediatamente precedente.
@@ -387,16 +349,18 @@ VÍRGULA É FACULTATIVA VÍRGULA É OBRIGATÓRIA • Supressão NÃO prejudica a
 
 - Deslocados sem verbo: até 2 palavras (FACULTATIVA) | 3 ou mais palavras (OBRIGATÓRIA).
 
-[Questão de Supressão de Vírgula]
-- Tradução: "A vírgula examinada é FACULTATIVA?"
-➔ SE ENQUADRA EM: NÃO SE ENQUADRA
+```text
+[Questão de Supressão de Vírgula] │ Tradução: "A vírgula examinada é FACULTATIVA?" │ ┌─────────────────────────┴─────────────────────────┐ ▼ ▼ SE ENQUADRA EM: NÃO SE ENQUADRA
+```
 
 1. Adverbial na ordem direta (ao final); (É vírgula obrigatória:
 2. Adjunto adverbial curto deslocado (<= 2 palavras); adverbial deslocada longa,
 3. Conjunção "e" com sujeitos distintos ou adversativo; expressão explicativa,
 4. Adjetiva explicativa em contexto de referente múltiplo. aposto, polissíndeto, etc.)
 
-VÍRGULA É FACULTATIVA VÍRGULA É OBRIGATÓRIA • Supressão NÃO prejudica a correção • Supressão PREJUDICA a correção • Se o item diz "prejudica" -> ERRADO • Se o item diz "prejudica" -> CERTO • Se o item diz "mantém correção" -> CERTO • Se o item diz "mantém correção" -> ERRADO
+```text
+│ │ ▼ ▼ VÍRGULA É FACULTATIVA VÍRGULA É OBRIGATÓRIA • Supressão NÃO prejudica a correção • Supressão PREJUDICA a correção • Se o item diz "prejudica" -> ERRADO • Se o item diz "prejudica" -> CERTO • Se o item diz "mantém correção" -> CERTO • Se o item diz "mantém correção" -> ERRADO
+```
 
 ---
 

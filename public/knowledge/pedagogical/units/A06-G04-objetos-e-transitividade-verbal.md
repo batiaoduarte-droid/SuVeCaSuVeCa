@@ -42,36 +42,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 - Reconhecimento dos tipos de sujeito (simples, oculto/desinencial, indeterminado e oração sem sujeito).
 
-TERMOS INTEGRANTES DA ORAÇÃO (COMPLEMENTOS VERBAIS) ➔ 1. Objeto Direto (OD)
-- ➔ Conceito: Completa Verbo Transitivo Direto (VTD) sem preposição obrigatória
-➔ Formas Pronominais:
-- ➔ Exclusivas: o, a, os, as (e variantes lo/la, no/na)
-➔ Coringas: me, te, se, nos, vos (quando ligados a VTD)
-- ➔ Objeto Direto Pleonástico: OD Raiz (substantivo antecipado) + OD Prontome Retomador
-➔ Objeto Direto Preposicionado: VTD + preposição facultativa (estilo literário; proibido em redação)
-- ➔ 2. Objeto Indireto (OI)
-➔ Conceito: Completa Verbo Transitivo Indireto (VTI) com preposição obrigatória da regência
-- ➔ Formas Pronominais:
-➔ Exclusivas: lhe, lhes (sempre OI; jamais completam VTD)
-- ➔ Coringas: me, te, se, nos, vos (quando ligados a VTI)
-➔ Objeto Indireto Pleonástico: OI antecipado + pronome lhe/lhes retomador
-- ➔ Inexistência de "OI Preposicionado": Todo OI já é estruturalmente preposicionado
-➔ 3. Verbos Bitransitivos (VTDI)
-- ➔ Estrutura Obrigatória: 1 Complemento SEM Preposição (OD) + 1 Complemento COM Preposição (OI)
-➔ Restrição Estrutural: Proibição de 2 ODs ou 2 OIs simultâneos
-- ➔ Relatividade Sintática: A transitividade varia conforme o contexto oracional
-➔ 4. Ferramentas de Diagnóstico e Validação
-- ➔ Bizu do Menino: "Verbo + o menino" (VTD/OD) vs. "Verbo + ao menino" (VTI/OI)
-➔ Descarte de Macetes Falhos: Rejeição de "a mim/a nós" e "alguém"
-- ➔ Cheiro de Circunstância: Identifica Adjuntos Adverbiais (tempo, lugar, modo) e isola o VI
-➔ 5. Tópicos Críticos em Provas
-- ➔ Pegadinha do "Lhe Eufônico": Uso errôneo de lhe com VTD por falsa impressão de elegância
-➔ Par Haver vs. Existir:
-- ➔ Haver (existir): Impessoal, sem sujeito, VTD, termo seguinte é OD, fixo na 3ª sing.
-➔ Existir: Pessoal, possui sujeito, VI, flexiona em número com o sujeito
-- ➔ Troca em Provas: Mantém sentido; altera relações sintáticas; exige ajuste de concordância
-➔ Passo Canônico de Análise: Localizar SEMPRE o sujeito antes de classificar complementos
-- ➔ 6. Estrutura do Predicado ➔ Predicado Verbal (PV): Verbo de ação (VI, VTD, VTI, VTDI) sem predicativo ➔ Predicado Nominal (PN): Verbo de ligação + Predicativo do Sujeito ➔ Predicado Verbo-Nominal (PVN): Verbo de ação + Predicativo (do Sujeito ou do Objeto)
+```text
+TERMOS INTEGRANTES DA ORAÇÃO (COMPLEMENTOS VERBAIS) ├── 1. Objeto Direto (OD) │ ├── Conceito: Completa Verbo Transitivo Direto (VTD) sem preposição obrigatória │ ├── Formas Pronominais: │ │ ├── Exclusivas: o, a, os, as (e variantes lo/la, no/na) │ │ └── Coringas: me, te, se, nos, vos (quando ligados a VTD) │ ├── Objeto Direto Pleonástico: OD Raiz (substantivo antecipado) + OD Prontome Retomador │ └── Objeto Direto Preposicionado: VTD + preposição facultativa (estilo literário; proibido em redação) │ ├── 2. Objeto Indireto (OI) │ ├── Conceito: Completa Verbo Transitivo Indireto (VTI) com preposição obrigatória da regência │ ├── Formas Pronominais: │ │ ├── Exclusivas: lhe, lhes (sempre OI; jamais completam VTD) │ │ └── Coringas: me, te, se, nos, vos (quando ligados a VTI) │ ├── Objeto Indireto Pleonástico: OI antecipado + pronome lhe/lhes retomador │ └── Inexistência de "OI Preposicionado": Todo OI já é estruturalmente preposicionado │ ├── 3. Verbos Bitransitivos (VTDI) │ ├── Estrutura Obrigatória: 1 Complemento SEM Preposição (OD) + 1 Complemento COM Preposição (OI) │ ├── Restrição Estrutural: Proibição de 2 ODs ou 2 OIs simultâneos │ └── Relatividade Sintática: A transitividade varia conforme o contexto oracional │ ├── 4. Ferramentas de Diagnóstico e Validação │ ├── Bizu do Menino: "Verbo + o menino" (VTD/OD) vs. "Verbo + ao menino" (VTI/OI) │ ├── Descarte de Macetes Falhos: Rejeição de "a mim/a nós" e "alguém" │ └── Cheiro de Circunstância: Identifica Adjuntos Adverbiais (tempo, lugar, modo) e isola o VI │ ├── 5. Tópicos Críticos em Provas │ ├── Pegadinha do "Lhe Eufônico": Uso errôneo de lhe com VTD por falsa impressão de elegância │ ├── Par Haver vs. Existir: │ │ ├── Haver (existir): Impessoal, sem sujeito, VTD, termo seguinte é OD, fixo na 3ª sing. │ │ └── Existir: Pessoal, possui sujeito, VI, flexiona em número com o sujeito │ │ └── Troca em Provas: Mantém sentido; altera relações sintáticas; exige ajuste de concordância │ └── Passo Canônico de Análise: Localizar SEMPRE o sujeito antes de classificar complementos │ └── 6. Estrutura do Predicado ├── Predicado Verbal (PV): Verbo de ação (VI, VTD, VTI, VTDI) sem predicativo ├── Predicado Nominal (PN): Verbo de ligação + Predicativo do Sujeito └── Predicado Verbo-Nominal (PVN): Verbo de ação + Predicativo (do Sujeito ou do Objeto)
+```
 
 ---
 

@@ -19,19 +19,9 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 - Tempos e Modos Básicos: Reconhecimento do Presente do Indicativo, Presente do Subjuntivo, Pretérito Perfeito, Pretérito Imperfeito do Subjuntivo e Futuro do Subjuntivo.
 - Regra de Formação dos Tempos Derivados: O Presente do Subjuntivo é gerado a partir do radical da 1ª pessoa do singular do Presente do Indicativo (Eu cant-o $\rightarrow$ Que eu cant-e).
 
-CONJUGAÇÃO DE VERBOS ESPECIAIS
-- ➔ VERBOS EM -EAR VERBOS EM -IAR VERBOS DEFECTIVOS (Líder: PASSEAR)
-➔ ➔ DITONGAM (-EI-) REGULARES GRUPO MARIO 3ª CONJUGAÇÃO ADEQUAR nos presentes: (Líder: CRIAR) (Líder: ODIAR) (colorir, falir, (Gramática Moderna: Eu, Tu, Ele, Eles
-- abolir, banir) Não é + defectivo!
-NUNCA ganham Ditongam (-ei-)
-- Conjugação Plena) vogal "e" ou nos presentes: NÃO DITONGAM: ditongo Eu, Tu, Ele, Eles Pres. Ind.: só NÓS/VÓS Nós, Vós e outros
-Pres. Subj.: INEXISTE tempos verbais
-- NÃO DITONGAM:
-Nós e Vós ➔
-- ARREAR (com E) ARRIAR (com I)
-REAVER PRECAVER-SE (= pôr arreios) (= abaixar)
-- (Líder: HAVER) (Líder: BEBER) "ele arreia" "ele arria"
-Pres. Ind.: só NÓS/VÓS Pres. Ind.: só NÓS/VÓS ➔ Pres. Subj.: INEXISTE Pres. Subj.: INEXISTE Outros: igual a HAVER Outros: igual a BEBER (reouve, reouveram) (precavia, precaverem)
+```text
+CONJUGAÇÃO DE VERBOS ESPECIAIS │ ┌─────────────────────────────────┼─────────────────────────────────┐ ▼ ▼ ▼ VERBOS EM -EAR VERBOS EM -IAR VERBOS DEFECTIVOS (Líder: PASSEAR) │ │ │ ┌───────┴───────┐ ├──────────────────────┐ ▼ ▼ ▼ ▼ ▼ DITONGAM (-EI-) REGULARES GRUPO MARIO 3ª CONJUGAÇÃO ADEQUAR nos presentes: (Líder: CRIAR) (Líder: ODIAR) (colorir, falir, (Gramática Moderna: Eu, Tu, Ele, Eles │ │ abolir, banir) Não é + defectivo! │ NUNCA ganham Ditongam (-ei-) │ Conjugação Plena) ▼ vogal "e" ou nos presentes: ▼ NÃO DITONGAM: ditongo Eu, Tu, Ele, Eles Pres. Ind.: só NÓS/VÓS Nós, Vós e outros │ │ Pres. Subj.: INEXISTE tempos verbais │ NÃO DITONGAM: │ │ │ Nós e Vós ├──────────────────────┐ ▼ ▼ │ ▼ ▼ ARREAR (com E) ARRIAR (com I) │ REAVER PRECAVER-SE (= pôr arreios) (= abaixar) │ (Líder: HAVER) (Líder: BEBER) "ele arreia" "ele arria" │ │ │ │ │ │ Pres. Ind.: só NÓS/VÓS Pres. Ind.: só NÓS/VÓS └─────────────────────────┴───────────────┘ Pres. Subj.: INEXISTE Pres. Subj.: INEXISTE Outros: igual a HAVER Outros: igual a BEBER (reouve, reouveram) (precavia, precaverem)
+```
 
 ---
 
@@ -220,13 +210,7 @@ Nas provas de concursos públicos, as questões sobre flexão verbal associam fr
 ## Roteiros de resolução
 
 ```text
-[Início: Questão de Flexão Verbal ou Preenchimento de Lacuna]
-- Identificar a Categoria do Verbo
-➔ Terminado em -EAR Terminado em -IAR Grupo MARIO Defectivo / Especial (ex: recear, frear) (ex: maquiar, premiar)(ex: mediar, ansiar) (reaver, precaver-se)
-- Adotar LÍDER: Adotar LÍDER: Adotar LÍDER: Adotar LÍDER: PASSEAR CRIAR ODIAR HAVER ou BEBER
-➔ Inserir a Palavra-Gatilho de Tempo/Modo: • Presente do Indicativo ➔ "Hoje" • Presente do Subjuntivo ➔ "Que" • Pretérito Perfeito ➔ "Ontem" • Pretérito Imperfeito Subj. ➔ "Se"
-- Conjugar o Verbo Líder na Estrutura Obtida (Exemplo: "Que nós [odiar]" ➔ "Que nós odiemos")
-Transportar a Terminação Exata para o Verbo-Alvo (Resultado: "Que nós mediemos")
+[Início: Questão de Flexão Verbal ou Preenchimento de Lacuna] │ ▼ Identificar a Categoria do Verbo │ ┌────────────────────┼────────────────────┬────────────────────┐ ▼ ▼ ▼ ▼ Terminado em -EAR Terminado em -IAR Grupo MARIO Defectivo / Especial (ex: recear, frear) (ex: maquiar, premiar)(ex: mediar, ansiar) (reaver, precaver-se) │ │ │ │ ▼ ▼ ▼ ▼ Adotar LÍDER: Adotar LÍDER: Adotar LÍDER: Adotar LÍDER: PASSEAR CRIAR ODIAR HAVER ou BEBER │ │ │ │ └────────────────────┴─────────┬──────────┴────────────────────┘ │ ▼ Inserir a Palavra-Gatilho de Tempo/Modo: • Presente do Indicativo ➔ "Hoje" • Presente do Subjuntivo ➔ "Que" • Pretérito Perfeito ➔ "Ontem" • Pretérito Imperfeito Subj. ➔ "Se" │ ▼ Conjugar o Verbo Líder na Estrutura Obtida (Exemplo: "Que nós [odiar]" ➔ "Que nós odiemos") │ ▼ Transportar a Terminação Exata para o Verbo-Alvo (Resultado: "Que nós mediemos")
 ```
 
 Para validar se uma forma verbal que apresenta o ditongo -ei- é legítima:
@@ -253,13 +237,7 @@ Para validar se uma forma verbal que apresenta o ditongo -ei- é legítima:
 - Qualquer alternativa de prova que proponha formas como "que ele reaveja", "que nos precavenhamos", "que ele abula" é incorreta.
 
 ```text
-[Início: Questão de Flexão Verbal ou Preenchimento de Lacuna]
-- Identificar a Categoria do Verbo
-➔ Terminado em -EAR Terminado em -IAR Grupo MARIO Defectivo / Especial (ex: recear, frear) (ex: maquiar, premiar)(ex: mediar, ansiar) (reaver, precaver-se)
-- Adotar LÍDER: Adotar LÍDER: Adotar LÍDER: Adotar LÍDER: PASSEAR CRIAR ODIAR HAVER ou BEBER
-➔ Inserir a Palavra-Gatilho de Tempo/Modo: • Presente do Indicativo ➔ "Hoje" • Presente do Subjuntivo ➔ "Que" • Pretérito Perfeito ➔ "Ontem" • Pretérito Imperfeito Subj. ➔ "Se"
-- Conjugar o Verbo Líder na Estrutura Obtida (Exemplo: "Que nós [odiar]" ➔ "Que nós odiemos")
-Transportar a Terminação Exata para o Verbo-Alvo (Resultado: "Que nós mediemos")
+[Início: Questão de Flexão Verbal ou Preenchimento de Lacuna] │ ▼ Identificar a Categoria do Verbo │ ┌────────────────────┼────────────────────┬────────────────────┐ ▼ ▼ ▼ ▼ Terminado em -EAR Terminado em -IAR Grupo MARIO Defectivo / Especial (ex: recear, frear) (ex: maquiar, premiar)(ex: mediar, ansiar) (reaver, precaver-se) │ │ │ │ ▼ ▼ ▼ ▼ Adotar LÍDER: Adotar LÍDER: Adotar LÍDER: Adotar LÍDER: PASSEAR CRIAR ODIAR HAVER ou BEBER │ │ │ │ └────────────────────┴─────────┬──────────┴────────────────────┘ │ ▼ Inserir a Palavra-Gatilho de Tempo/Modo: • Presente do Indicativo ➔ "Hoje" • Presente do Subjuntivo ➔ "Que" • Pretérito Perfeito ➔ "Ontem" • Pretérito Imperfeito Subj. ➔ "Se" │ ▼ Conjugar o Verbo Líder na Estrutura Obtida (Exemplo: "Que nós [odiar]" ➔ "Que nós odiemos") │ ▼ Transportar a Terminação Exata para o Verbo-Alvo (Resultado: "Que nós mediemos")
 ```
 
 Para validar se uma forma verbal que apresenta o ditongo -ei- é legítima:

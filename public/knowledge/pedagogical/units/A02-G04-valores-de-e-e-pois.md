@@ -43,17 +43,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Conhecimento preliminar dos pronomes oblíquos átonos (me, te, se, nos, vos, o, a, os, as, lhe, lhes) e noções básicas de próclise e ênclise.
 - Diferenciação morfossintática básica entre classes de palavras invariáveis (conjunções) e variáveis (substantivos).
 
-SISTEMA SEMÂNTICO-SINTÁTICO DE "E" E "POIS"
-- ➔ CONJUNÇÃO "E" CONJUNÇÃO "POIS"
-➔ ➔ VALORES SEMÂNTICOS FENÔMENOS CONEXOS POSIÇÃO 1: NO INÍCIO POSIÇÃO 2: DESLOCADO
-- (Antes do verbo da oração) (Pós-verbal / Intercalado) ADIÇÃO (Canônico) SUBSTANTIVAÇÃO
-(Soma / Acúmulo de (Derivação Imprópria:
-- ideias ou atributos) "daquele E" = Apoio) EQUIVALE A "PORQUE" EQUIVALE A "PORTANTO"
-OPOSIÇÃO / ADVERSIDADE PONTO E VÍRGULA (;) VALOR CAUSAL VALOR CONCLUSIVO
-- (Contraste / Expectativa (Exige ajuste de (Fato gerador que produz (= Consequência /
-quebrada = "porém") colocação pronominal: consequência fática consumada) dedução lógica)
-- "; te deixa" = ERRO
-CONCLUSÃO / CONSEQUÊNCIA "; deixa-te" = CORRETO) VALOR EXPLICATIVO OBRIGATORIAMENTE (Resultado fático / (Justificativa / Argumento; entre vírgulas. efeito direto = "logo") acompanha imperativo/conselho) [Atenção ao mito das vírgulas!]
+```text
+SISTEMA SEMÂNTICO-SINTÁTICO DE "E" E "POIS" │ ┌───────────────────────────────────────┴───────────────────────────────────────┐ ▼ ▼ CONJUNÇÃO "E" CONJUNÇÃO "POIS" │ │ ┌─────┴─────────────────────────┐ ┌───────────────────┴───────────────────┐ ▼ ▼ ▼ ▼ VALORES SEMÂNTICOS FENÔMENOS CONEXOS POSIÇÃO 1: NO INÍCIO POSIÇÃO 2: DESLOCADO │ │ (Antes do verbo da oração) (Pós-verbal / Intercalado) ├─ ADIÇÃO (Canônico) ├─ SUBSTANTIVAÇÃO │ │ │ (Soma / Acúmulo de (Derivação Imprópria: ▼ ▼ │ ideias ou atributos) "daquele E" = Apoio) EQUIVALE A "PORQUE" EQUIVALE A "PORTANTO" │ │ │ │ ├─ OPOSIÇÃO / ADVERSIDADE └─ PONTO E VÍRGULA (;) ├─ VALOR CAUSAL └─ VALOR CONCLUSIVO │ (Contraste / Expectativa (Exige ajuste de (Fato gerador que produz (= Consequência / │ quebrada = "porém") colocação pronominal: consequência fática consumada) dedução lógica) │ "; te deixa" = ERRO │ │ └─ CONCLUSÃO / CONSEQUÊNCIA "; deixa-te" = CORRETO) └─ VALOR EXPLICATIVO └─ OBRIGATORIAMENTE (Resultado fático / (Justificativa / Argumento; entre vírgulas. efeito direto = "logo") acompanha imperativo/conselho) [Atenção ao mito das vírgulas!]
+```
 
 ---
 
@@ -98,8 +90,9 @@ Quando o enunciado de uma questão de concurso público solicitar a identificaç
 
 Como o valor padrão e amplamente majoritário da conjunção "E" é o aditivo, a construção de questões de múltipla escolha ou de itens certo/errado que mencionam "valor diferente" apoia-se no contraste entre a adição canônica e os desvios semânticos contextuais (adversidade e conclusão).
 
-➔ "E" COM VALOR ADVERSATIVO (= porém, mas) QUANDO A BANCA PEDE UM "E"
-- COM "VALOR DIFERENTE" ➔ ┤ ➔ "E" COM VALOR CONCLUSIVO/CONSECUTIVO (= logo, por isso)
+```text
+┌──► "E" COM VALOR ADVERSATIVO (= porém, mas) QUANDO A BANCA PEDE UM "E" │ COM "VALOR DIFERENTE" ─────────┤ └──► "E" COM VALOR CONCLUSIVO/CONSECUTIVO (= logo, por isso)
+```
 
 - Evidenciado por:
 - Possui dica associada:
@@ -177,7 +170,9 @@ O erro decorre de uma falsa generalização lógica:
 
 [ILUSÃO VISUAL DE INTERCALAÇÃO DO "POIS" INICIAL]
 
-"...não é fato episódico, mas uma nova tendência, pois, desde 2010, cresce o peso..." ➔ Vírgula da oração ➔ Adjunto Verbo da oração intercalado (O "pois" está ANTES dele!)
+```text
+"...não é fato episódico, mas uma nova tendência, pois, desde 2010, cresce o peso..." ▲ └─────┬─────┘ ▲ Vírgula da oração ────────┘ Adjunto └─ Verbo da oração intercalado (O "pois" está ANTES dele!)
+```
 
 1. A primeira vírgula marca o limite da oração anterior.
 2. A segunda vírgula é a marca de abertura de um adjunto adverbial intercalado (ex.: , desde 2010,, , daqui a pouco,).
@@ -221,11 +216,9 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ## Roteiros de resolução
 
-**[**
-
-1. Localizar a conjunção "E" na oração] [
-2. Isolar o segmento posterior (termo ou oração seguinte)] [
-3. Perguntar a relação lógica estabelecida com o segmento anterior] Representa SOMA de ações/atributos compatíveis? ➔ CLASSIFICAÇÃO: ADITIVO Representa QUEBRA DE EXPECTATIVA / CONTRASTE (= porém)? ➔ CLASSIFICAÇÃO: ADVERSATIVO (Oposição) Representa RESULTADO FÁTICO / CONCLUSÃO LÓGICA (= por isso)? CLASSIFICAÇÃO: CONCLUSIVO / CONSECUTIVO
+```text
+[PASSO 1: Localizar a conjunção "E" na oração] │ ▼ [PASSO 2: Isolar o segmento posterior (termo ou oração seguinte)] │ ▼ [PASSO 3: Perguntar a relação lógica estabelecida com o segmento anterior] │ ├─► Representa SOMA de ações/atributos compatíveis? ─────────────► CLASSIFICAÇÃO: ADITIVO │ ├─► Representa QUEBRA DE EXPECTATIVA / CONTRASTE (= porém)? ─────► CLASSIFICAÇÃO: ADVERSATIVO (Oposição) │ └─► Representa RESULTADO FÁTICO / CONCLUSÃO LÓGICA (= por isso)? ─► CLASSIFICAÇÃO: CONCLUSIVO / CONSECUTIVO
+```
 
 1. Validação Estrutural: Verifique se as orações são coordenadas. O ponto e vírgula é legítimo para ligar orações coordenadas assindéticas.
 2. Inspeção do Primeiro Termo Subsequente ao Ponto e Vírgula:
@@ -234,10 +227,9 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 - Se o enunciado propuser a troca pura da conjunção por ; sem ajustar o verbo para ênclise (ex.: propor ; te deixa em vez de ; deixa-te), marque ERRADO.
 
-**[**
-
-1. RASTREAR A POSIÇÃO DO "POIS" EM RELAÇÃO AO VERBO DA ORAÇÃO] O "pois" está DEPOIS DO VERBO (pós-verbal / intercalado entre vírgulas)? SIM: É CONCLUSIVO (= portanto / consequência). [FIM DO TESTE] O "pois" está ANTES DO VERBO (no início da oração, mesmo com intercalações)? SIM: Equivale a PORQUE. NUNCA é conclusivo! [
-2. AVALIAR O COMANDO DA QUESTÃO DA BANCA] A banca afirma que o "pois" inicial é CONCLUSIVO? ➔ Julgue ERRADO imediatamente! A banca propõe substituir por PORQUANTO / JÁ QUE / PORQUE? ➔ Julgue CERTO (troca válida)! A banca exige diferenciar CAUSA de EXPLICAÇÃO? ➔ Aplique o "Mantra da Causa" .
+```text
+[PASSO 1: RASTREAR A POSIÇÃO DO "POIS" EM RELAÇÃO AO VERBO DA ORAÇÃO] │ ├─► O "pois" está DEPOIS DO VERBO (pós-verbal / intercalado entre vírgulas)? │ │ │ └─► SIM: É CONCLUSIVO (= portanto / consequência). [FIM DO TESTE] │ └─► O "pois" está ANTES DO VERBO (no início da oração, mesmo com intercalações)? │ └─► SIM: Equivale a PORQUE. NUNCA é conclusivo! │ ▼ [PASSO 2: AVALIAR O COMANDO DA QUESTÃO DA BANCA] │ ├─► A banca afirma que o "pois" inicial é CONCLUSIVO? ───────────► Julgue ERRADO imediatamente! │ ├─► A banca propõe substituir por PORQUANTO / JÁ QUE / PORQUE? ──► Julgue CERTO (troca válida)! │ └─► A banca exige diferenciar CAUSA de EXPLICAÇÃO? ──────────────► Aplique o "Mantra da Causa" .
+```
 
 1. Pergunte sempre primeiro se é CAUSA. Nunca comece perguntando se é explicação, pois a mente tende a interpretar qualquer justificativa como explicação genérica.
 2. Aplique o Teste do Fato Gerador e Consequência Fática:
@@ -247,11 +239,9 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 - É um comando imperativo (venha, façam), convite (vamos) ou conselho modal (não se deve)? $\rightarrow$ NÃO $\rightarrow$ EXPLICATIVO.
 
-**[**
-
-1. Localizar a conjunção "E" na oração] [
-2. Isolar o segmento posterior (termo ou oração seguinte)] [
-3. Perguntar a relação lógica estabelecida com o segmento anterior] Representa SOMA de ações/atributos compatíveis? ➔ CLASSIFICAÇÃO: ADITIVO Representa QUEBRA DE EXPECTATIVA / CONTRASTE (= porém)? ➔ CLASSIFICAÇÃO: ADVERSATIVO (Oposição) Representa RESULTADO FÁTICO / CONCLUSÃO LÓGICA (= por isso)? CLASSIFICAÇÃO: CONCLUSIVO / CONSECUTIVO
+```text
+[PASSO 1: Localizar a conjunção "E" na oração] │ ▼ [PASSO 2: Isolar o segmento posterior (termo ou oração seguinte)] │ ▼ [PASSO 3: Perguntar a relação lógica estabelecida com o segmento anterior] │ ├─► Representa SOMA de ações/atributos compatíveis? ─────────────► CLASSIFICAÇÃO: ADITIVO │ ├─► Representa QUEBRA DE EXPECTATIVA / CONTRASTE (= porém)? ─────► CLASSIFICAÇÃO: ADVERSATIVO (Oposição) │ └─► Representa RESULTADO FÁTICO / CONCLUSÃO LÓGICA (= por isso)? ─► CLASSIFICAÇÃO: CONCLUSIVO / CONSECUTIVO
+```
 
 1. Validação Estrutural: Verifique se as orações são coordenadas. O ponto e vírgula é legítimo para ligar orações coordenadas assindéticas.
 2. Inspeção do Primeiro Termo Subsequente ao Ponto e Vírgula:
@@ -260,10 +250,9 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 - Se o enunciado propuser a troca pura da conjunção por ; sem ajustar o verbo para ênclise (ex.: propor ; te deixa em vez de ; deixa-te), marque ERRADO.
 
-**[**
-
-1. RASTREAR A POSIÇÃO DO "POIS" EM RELAÇÃO AO VERBO DA ORAÇÃO] O "pois" está DEPOIS DO VERBO (pós-verbal / intercalado entre vírgulas)? SIM: É CONCLUSIVO (= portanto / consequência). [FIM DO TESTE] O "pois" está ANTES DO VERBO (no início da oração, mesmo com intercalações)? SIM: Equivale a PORQUE. NUNCA é conclusivo! [
-2. AVALIAR O COMANDO DA QUESTÃO DA BANCA] A banca afirma que o "pois" inicial é CONCLUSIVO? ➔ Julgue ERRADO imediatamente! A banca propõe substituir por PORQUANTO / JÁ QUE / PORQUE? ➔ Julgue CERTO (troca válida)! A banca exige diferenciar CAUSA de EXPLICAÇÃO? ➔ Aplique o "Mantra da Causa" .
+```text
+[PASSO 1: RASTREAR A POSIÇÃO DO "POIS" EM RELAÇÃO AO VERBO DA ORAÇÃO] │ ├─► O "pois" está DEPOIS DO VERBO (pós-verbal / intercalado entre vírgulas)? │ │ │ └─► SIM: É CONCLUSIVO (= portanto / consequência). [FIM DO TESTE] │ └─► O "pois" está ANTES DO VERBO (no início da oração, mesmo com intercalações)? │ └─► SIM: Equivale a PORQUE. NUNCA é conclusivo! │ ▼ [PASSO 2: AVALIAR O COMANDO DA QUESTÃO DA BANCA] │ ├─► A banca afirma que o "pois" inicial é CONCLUSIVO? ───────────► Julgue ERRADO imediatamente! │ ├─► A banca propõe substituir por PORQUANTO / JÁ QUE / PORQUE? ──► Julgue CERTO (troca válida)! │ └─► A banca exige diferenciar CAUSA de EXPLICAÇÃO? ──────────────► Aplique o "Mantra da Causa" .
+```
 
 1. Pergunte sempre primeiro se é CAUSA. Nunca comece perguntando se é explicação, pois a mente tende a interpretar qualquer justificativa como explicação genérica.
 2. Aplique o Teste do Fato Gerador e Consequência Fática:

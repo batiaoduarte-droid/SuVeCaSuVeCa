@@ -44,30 +44,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Sintaxe do Período Composto: Compreensão prévia das orações subordinadas substantivas (e do conectivo integrante que/se), subordinadas adjetivas (e do pronome relativo que/o qual) e subordinadas adverbiais (causais, temporais, concessivas, condicionais, finais, consecutivas, etc.).
 - Vozes Verbais e Sintaxe Pronominal: Reconhecimento da voz ativa, voz passiva analítica (ser + particípio), voz passiva sintética (VTD + se apassivador) e diferenciação entre Partícula Apassivadora (PA) e Parte Integrante do Verbo (PIV).
 
-DESENVOLVIMENTO DAS ORAÇÕES REDUZIDAS
-- ➔ 1. Critérios de Reconhecimento e Oposição Estrutural
-➔ Oração Reduzida: Ausência de Conectivo + Verbo em Forma Nominal
-- ➔ Oração Desenvolvida: Presença de Conectivo Explícito + Verbo Conjugado Finito
-➔ 2. Algoritmos de Desenvolvimento
-- ➔ Método dos 6 Passos (Analítico): Verbos → Barra → Natureza → Conectivo → Conjugação → Nome
-➔ Método dos 3 Passos (Sintético): Diagnóstico Funcional → Conector Canônico → Desdobramento Verbal
-- ➔ 3. Regras Determinantes no Desdobramento Verbal
-➔ Eixo Temporal: Correlação Semântica com o "Verbo Amigo" (presente-presente / passado-passado)
-- ➔ Eixo Pessoal: Preservação Inalterada do Sujeito
-➔ Sujeito Determinado (expresso ou elíptico): mantém-se a pessoa correspondente
-- ➔ Sujeito Indeterminado (Infinitivo Impessoal):
-➔ Opção Ativa: 3ª pessoa do plural
-- ➔ Opção Passiva Sintética: VTD + "se" (concordância com sujeito paciente)
-➔ Opção Passiva Analítica: Verbo auxiliar flexionado + particípio
-- ➔ 4. Nuances Sintáticas e Morfossintáticas Críticas
-➔ Transposição Conectiva: Locução Prepositiva ("apesar de") → Locução/Conjunção Conjuntiva ("embora")
-- ➔ Conectivo Polissêmico: "Não obstante" (preposição acidental com infinitivo / conjunção com flexão)
-➔ Colocação Pronominal: Conjunção subordinativa é fator de Próclise obrigatória
-- ➔ Bloqueio de Passivação: Verbo pronominal com PIV não admite passiva analítica
-➔ 5. Tipologia Semântica e Padrões de Bancas ➔ Substantivas: Teste do "ISSO" → Conjunção Integrante ("que", "se") ➔ Adjetivas: Seta no antecedente substantivo → Pronome Relativo ("que") | Fato (indicativo) vs. Hipótese ➔ Adverbiais Temporais:
-- ➔ "Ao + Infinitivo" = Tempo estrito (invariável com "quando")
-➔ Gerúndio Concomitante: simultaneidade no pretérito ("enquanto farejava")
-- ➔ Particípio Imediato: "assim que", "logo que" ➔ Adverbiais Concessivas: Quebra de expectativa / antítese contextual ("embora", "ainda que") ➔ Adverbiais Causais: Ordem cronológica (1º fato = causa) / Causa pretérita com efeito no presente ➔ Adverbiais Consecutivas: Verbos de resultado ("gerar", "acarretar") e aposto resumitivo ("o que deve...")
+```text
+DESENVOLVIMENTO DAS ORAÇÕES REDUZIDAS │ ├── 1. Critérios de Reconhecimento e Oposição Estrutural │ ├── Oração Reduzida: Ausência de Conectivo + Verbo em Forma Nominal │ └── Oração Desenvolvida: Presença de Conectivo Explícito + Verbo Conjugado Finito │ ├── 2. Algoritmos de Desenvolvimento │ ├── Método dos 6 Passos (Analítico): Verbos → Barra → Natureza → Conectivo → Conjugação → Nome │ └── Método dos 3 Passos (Sintético): Diagnóstico Funcional → Conector Canônico → Desdobramento Verbal │ ├── 3. Regras Determinantes no Desdobramento Verbal │ ├── Eixo Temporal: Correlação Semântica com o "Verbo Amigo" (presente-presente / passado-passado) │ └── Eixo Pessoal: Preservação Inalterada do Sujeito │ ├── Sujeito Determinado (expresso ou elíptico): mantém-se a pessoa correspondente │ └── Sujeito Indeterminado (Infinitivo Impessoal): │ ├── Opção Ativa: 3ª pessoa do plural │ ├── Opção Passiva Sintética: VTD + "se" (concordância com sujeito paciente) │ └── Opção Passiva Analítica: Verbo auxiliar flexionado + particípio │ ├── 4. Nuances Sintáticas e Morfossintáticas Críticas │ ├── Transposição Conectiva: Locução Prepositiva ("apesar de") → Locução/Conjunção Conjuntiva ("embora") │ ├── Conectivo Polissêmico: "Não obstante" (preposição acidental com infinitivo / conjunção com flexão) │ ├── Colocação Pronominal: Conjunção subordinativa é fator de Próclise obrigatória │ └── Bloqueio de Passivação: Verbo pronominal com PIV não admite passiva analítica │ └── 5. Tipologia Semântica e Padrões de Bancas ├── Substantivas: Teste do "ISSO" → Conjunção Integrante ("que", "se") ├── Adjetivas: Seta no antecedente substantivo → Pronome Relativo ("que") | Fato (indicativo) vs. Hipótese ├── Adverbiais Temporais: │ ├── "Ao + Infinitivo" = Tempo estrito (invariável com "quando") │ ├── Gerúndio Concomitante: simultaneidade no pretérito ("enquanto farejava") │ └── Particípio Imediato: "assim que", "logo que" ├── Adverbiais Concessivas: Quebra de expectativa / antítese contextual ("embora", "ainda que") ├── Adverbiais Causais: Ordem cronológica (1º fato = causa) / Causa pretérita com efeito no presente └── Adverbiais Consecutivas: Verbos de resultado ("gerar", "acarretar") e aposto resumitivo ("o que deve...")
+```
 
 ---
 

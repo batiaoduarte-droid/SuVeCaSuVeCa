@@ -46,29 +46,9 @@ Para o pleno aproveitamento deste grupo consolidado, o estudante deve possuir co
 - Noções elementares de sintaxe: conceitos de sujeito, predicado e transitividade verbal (verbos transitivos diretos, indiretos e intransitivos).
 - Conceito geral de termos da oração: divisão entre termos essenciais, integrantes e acessórios.
 
-TERMOS ACESSÓRIOS DA ORAÇÃO (esta unidade)
-- ➔ 1. ADJUNTO ADVERBIAL
-➔ Âncora Sintática: Modifica exclusivamente:
-- ➔ Verbo (relação majoritária / estatística marcada com asterisco )
-➔ Adjetivo (atua como intensificador)
-- ➔ Outro Advérbio (atua como intensificador)
-➔ Semântica ("Cheiro de Fofoca"):
-- ➔ Informação acessória / estruturalmente dispensável
-➔ Valores circunstanciais (Mnemônico 6C + FTP + Modo, Lugar, Intensidade, Dúvida, Companhia...)
-- ➔ Morfossintaxe Adverbial:
-➔ 1 Palavra = Advérbio (invariável na morfologia)
-- ➔ 2+ Palavras = Locução Adverbial (expressão preposicionada; pode ter palavras variáveis)
-➔ Contraste com Objeto Indireto:
-- ➔ Adjunto Adverbial: Termo ACESSÓRIO / Preposição Nocional / "Cheiro de Circunstância"
-➔ Objeto Indireto: Termo INTEGRANTE / Preposição Gramatical / Exigência de Regência (VTI)
-- ➔ 2. ADJUNTO ADNOMINAL ➔ Âncora Sintática: Modifica exclusivamente:
-➔ Substantivo (atua delimitando, individuando, determinando e restringindo a generalização) ➔ Distribuição Sintática:
-- ➔ Localização irrestrita dentro de qualquer sintagma que contenha substantivo núcleo ➔ Morfossintaxe Adnominal (As 5 Classes Satélites):
-➔ Artigo (definido / indefinido)
-- ➔ Numeral (cardinal, ordinal, etc.)
-➔ Adjetivo (vocábulo único)
-- ➔ Locução Adjetiva (expressão preposicionada com valor adjetivo)
-➔ Pronome Adjetivo (possessivo, demonstrativo, indefinido, etc.) ➔ Contraste com Predicativos (Sujeito e Objeto): ➔ Adjunto Adnominal: Satélite acessório / Sua retirada preserva o sentido lexical do verbo ➔ Predicativo: Termo necessário à predicação / Sua retirada altera a acepção e transitividade verbal
+```text
+TERMOS ACESSÓRIOS DA ORAÇÃO (esta unidade) │ ├── 1. ADJUNTO ADVERBIAL │ ├── Âncora Sintática: Modifica exclusivamente: │ │ ├── Verbo (relação majoritária / estatística marcada com asterisco ) │ │ ├── Adjetivo (atua como intensificador) │ │ └── Outro Advérbio (atua como intensificador) │ ├── Semântica ("Cheiro de Fofoca"): │ │ ├── Informação acessória / estruturalmente dispensável │ │ └── Valores circunstanciais (Mnemônico 6C + FTP + Modo, Lugar, Intensidade, Dúvida, Companhia...) │ ├── Morfossintaxe Adverbial: │ │ ├── 1 Palavra = Advérbio (invariável na morfologia) │ │ └── 2+ Palavras = Locução Adverbial (expressão preposicionada; pode ter palavras variáveis) │ └── Contraste com Objeto Indireto: │ ├── Adjunto Adverbial: Termo ACESSÓRIO / Preposição Nocional / "Cheiro de Circunstância" │ └── Objeto Indireto: Termo INTEGRANTE / Preposição Gramatical / Exigência de Regência (VTI) │ └── 2. ADJUNTO ADNOMINAL ├── Âncora Sintática: Modifica exclusivamente: │ └── Substantivo (atua delimitando, individuando, determinando e restringindo a generalização) ├── Distribuição Sintática: │ └── Localização irrestrita dentro de qualquer sintagma que contenha substantivo núcleo ├── Morfossintaxe Adnominal (As 5 Classes Satélites): │ ├── Artigo (definido / indefinido) │ ├── Numeral (cardinal, ordinal, etc.) │ ├── Adjetivo (vocábulo único) │ ├── Locução Adjetiva (expressão preposicionada com valor adjetivo) │ └── Pronome Adjetivo (possessivo, demonstrativo, indefinido, etc.) └── Contraste com Predicativos (Sujeito e Objeto): ├── Adjunto Adnominal: Satélite acessório / Sua retirada preserva o sentido lexical do verbo └── Predicativo: Termo necessário à predicação / Sua retirada altera a acepção e transitividade verbal
+```
 
 ---
 
@@ -230,30 +210,21 @@ A linha divisória entre o Adjunto Adnominal e o Predicativo (do Sujeito ou do O
 
 Identificar e classificar com exatidão a função de termos modificadores dependentes, garantindo a correspondência entre a relação sintática e a morfologia receptora.
 
-**Início da Análise do Termo     [**
-
-1. Conversar com a Frase & Lançar a SETA] Interrogar a estrutura da oração para descobrir a qual palavra exata o termo em análise se subordina. Traçar visualmente a seta do termo emissor para o vocábulo receptor. [
-2. Identificar a Classe da Palavra Receptora] Classificar morfologicamente a palavra que recebeu a ponta da seta: Se recebeu seta em VERBO, ADJETIVO ou ADVÉRBIO + denota circunstância → ADJUNTO ADVERBIAL Se recebeu seta em SUBSTANTIVO → ADJUNTO ADNOMINAL (ou Predicativo) [
-3. Dupla Etiquetagem Morfossintática] Definir Função Sintática (nível relacional) + Classe Gramatical (nível morfológico). Fim do Procedimento
+```text
+Início da Análise do Termo │ ▼ [Passo 1: Conversar com a Frase & Lançar a SETA] │ Interrogar a estrutura da oração para descobrir a qual palavra exata o termo em análise se subordina. │ Traçar visualmente a seta do termo emissor para o vocábulo receptor. │ ▼ [Passo 2: Identificar a Classe da Palavra Receptora] │ Classificar morfologicamente a palavra que recebeu a ponta da seta: │ ├── Se recebeu seta em VERBO, ADJETIVO ou ADVÉRBIO + denota circunstância → ADJUNTO ADVERBIAL │ └── Se recebeu seta em SUBSTANTIVO → ADJUNTO ADNOMINAL (ou Predicativo) │ ▼ [Passo 3: Dupla Etiquetagem Morfossintática] │ Definir Função Sintática (nível relacional) + Classe Gramatical (nível morfológico). │ ▼ Fim do Procedimento
+```
 
 Classificar termos preposicionados associados a verbos, evitando a armadilha de rotular qualquer estrutura preposicionada como objeto indireto.
 
-Termo Preposicionado Ligado a Verbo
-
-[Etapa 2] Confirmar que a palavra receptora é um VERBO.
-- [Etapa 3] Teste Semântico: "A expressão tem CHEIRO DE CIRCUNSTÂNCIA?"
-➔ SIM (Preposição é NOCIONAL: indica causa, modo, tempo, lugar, instrumento, etc.)
-
-➔ NÃO (Preposição é GRAMATICAL: completa o verbo sem carga adverbial própria)
+```text
+Termo Preposicionado Ligado a Verbo │ ▼ [Etapa 1] Traçar a seta do termo preposicionado até o verbo regente/referente. │ ▼ [Etapa 2] Confirmar que a palavra receptora é um VERBO. │ ▼ [Etapa 3] Teste Semântico: "A expressão tem CHEIRO DE CIRCUNSTÂNCIA?" │ ├── SIM (Preposição é NOCIONAL: indica causa, modo, tempo, lugar, instrumento, etc.) │ │ │ ▼ │ [Etapa 4A] Classificar como ADJUNTO ADVERBIAL (Termo Acessório / Fofoca). │ └── NÃO (Preposição é GRAMATICAL: completa o verbo sem carga adverbial própria) │ ▼ [Etapa 4B] Classificar como OBJETO INDIRETO (Termo Integrante / Complemento Verbal).
+```
 
 Localizar todos os adjuntos adnominais em qualquer segmento do período com 100% de segurança.
 
-**Varredura do Período     [**
-
-1. Localizar o SUBSTANTIVO NÚCLEO] Varrer o período identificando todos os substantivos que encabeçam funções sintáticas (estejam dentro do sujeito, objetos, predicativos, complementos nominais, etc.). [
-2. Rastrear os TERMOS SATÉLITES] Inspecionar o entorno imediato do substantivo núcleo em busca de modificadores diretos. [
-3. Validar a Classe do Satélite] Verificar se o modificador pertence a uma das 5 classes: [Artigo Numeral Pronome Adjetivo Adjetivo Locução Adjetiva] [
-4. Teste de Acessoriedade] Confirmar que o termo não atua como predicativo indispensável à predicação verbal. Classificação Concluída: ADJUNTO ADNOMINAL
+```text
+Varredura do Período │ ▼ [Passo 1: Localizar o SUBSTANTIVO NÚCLEO] │ Varrer o período identificando todos os substantivos que encabeçam funções sintáticas │ (estejam dentro do sujeito, objetos, predicativos, complementos nominais, etc.). │ ▼ [Passo 2: Rastrear os TERMOS SATÉLITES] │ Inspecionar o entorno imediato do substantivo núcleo em busca de modificadores diretos. │ ▼ [Passo 3: Validar a Classe do Satélite] │ Verificar se o modificador pertence a uma das 5 classes: │ [Artigo | Numeral | Pronome Adjetivo | Adjetivo | Locução Adjetiva] │ ▼ [Passo 4: Teste de Acessoriedade] │ Confirmar que o termo não atua como predicativo indispensável à predicação verbal. │ ▼ Classificação Concluída: ADJUNTO ADNOMINAL
+```
 
 ### Objetivo
 
@@ -261,11 +232,9 @@ Identificar e classificar com exatidão a função de termos modificadores depen
 
 #### Sequência operacional
 
-**Início da Análise do Termo     [**
-
-1. Conversar com a Frase & Lançar a SETA] Interrogar a estrutura da oração para descobrir a qual palavra exata o termo em análise se subordina. Traçar visualmente a seta do termo emissor para o vocábulo receptor. [
-2. Identificar a Classe da Palavra Receptora] Classificar morfologicamente a palavra que recebeu a ponta da seta: Se recebeu seta em VERBO, ADJETIVO ou ADVÉRBIO + denota circunstância → ADJUNTO ADVERBIAL Se recebeu seta em SUBSTANTIVO → ADJUNTO ADNOMINAL (ou Predicativo) [
-3. Dupla Etiquetagem Morfossintática] Definir Função Sintática (nível relacional) + Classe Gramatical (nível morfológico). Fim do Procedimento
+```text
+Início da Análise do Termo │ ▼ [Passo 1: Conversar com a Frase & Lançar a SETA] │ Interrogar a estrutura da oração para descobrir a qual palavra exata o termo em análise se subordina. │ Traçar visualmente a seta do termo emissor para o vocábulo receptor. │ ▼ [Passo 2: Identificar a Classe da Palavra Receptora] │ Classificar morfologicamente a palavra que recebeu a ponta da seta: │ ├── Se recebeu seta em VERBO, ADJETIVO ou ADVÉRBIO + denota circunstância → ADJUNTO ADVERBIAL │ └── Se recebeu seta em SUBSTANTIVO → ADJUNTO ADNOMINAL (ou Predicativo) │ ▼ [Passo 3: Dupla Etiquetagem Morfossintática] │ Definir Função Sintática (nível relacional) + Classe Gramatical (nível morfológico). │ ▼ Fim do Procedimento
+```
 
 #### Objetivo
 
@@ -273,13 +242,9 @@ Classificar termos preposicionados associados a verbos, evitando a armadilha de 
 
 #### Sequência operacional
 
-Termo Preposicionado Ligado a Verbo
-
-[Etapa 2] Confirmar que a palavra receptora é um VERBO.
-- [Etapa 3] Teste Semântico: "A expressão tem CHEIRO DE CIRCUNSTÂNCIA?"
-➔ SIM (Preposição é NOCIONAL: indica causa, modo, tempo, lugar, instrumento, etc.)
-
-➔ NÃO (Preposição é GRAMATICAL: completa o verbo sem carga adverbial própria)
+```text
+Termo Preposicionado Ligado a Verbo │ ▼ [Etapa 1] Traçar a seta do termo preposicionado até o verbo regente/referente. │ ▼ [Etapa 2] Confirmar que a palavra receptora é um VERBO. │ ▼ [Etapa 3] Teste Semântico: "A expressão tem CHEIRO DE CIRCUNSTÂNCIA?" │ ├── SIM (Preposição é NOCIONAL: indica causa, modo, tempo, lugar, instrumento, etc.) │ │ │ ▼ │ [Etapa 4A] Classificar como ADJUNTO ADVERBIAL (Termo Acessório / Fofoca). │ └── NÃO (Preposição é GRAMATICAL: completa o verbo sem carga adverbial própria) │ ▼ [Etapa 4B] Classificar como OBJETO INDIRETO (Termo Integrante / Complemento Verbal).
+```
 
 #### Objetivo
 
@@ -287,12 +252,9 @@ Localizar todos os adjuntos adnominais em qualquer segmento do período com 100%
 
 #### Sequência operacional
 
-**Varredura do Período     [**
-
-1. Localizar o SUBSTANTIVO NÚCLEO] Varrer o período identificando todos os substantivos que encabeçam funções sintáticas (estejam dentro do sujeito, objetos, predicativos, complementos nominais, etc.). [
-2. Rastrear os TERMOS SATÉLITES] Inspecionar o entorno imediato do substantivo núcleo em busca de modificadores diretos. [
-3. Validar a Classe do Satélite] Verificar se o modificador pertence a uma das 5 classes: [Artigo Numeral Pronome Adjetivo Adjetivo Locução Adjetiva] [
-4. Teste de Acessoriedade] Confirmar que o termo não atua como predicativo indispensável à predicação verbal. Classificação Concluída: ADJUNTO ADNOMINAL
+```text
+Varredura do Período │ ▼ [Passo 1: Localizar o SUBSTANTIVO NÚCLEO] │ Varrer o período identificando todos os substantivos que encabeçam funções sintáticas │ (estejam dentro do sujeito, objetos, predicativos, complementos nominais, etc.). │ ▼ [Passo 2: Rastrear os TERMOS SATÉLITES] │ Inspecionar o entorno imediato do substantivo núcleo em busca de modificadores diretos. │ ▼ [Passo 3: Validar a Classe do Satélite] │ Verificar se o modificador pertence a uma das 5 classes: │ [Artigo | Numeral | Pronome Adjetivo | Adjetivo | Locução Adjetiva] │ ▼ [Passo 4: Teste de Acessoriedade] │ Confirmar que o termo não atua como predicativo indispensável à predicação verbal. │ ▼ Classificação Concluída: ADJUNTO ADNOMINAL
+```
 
 ---
 

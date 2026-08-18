@@ -45,30 +45,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Sintaxe de Relações: Noções de termo regente e termo modificado (adjuntos adnominais e adverbiais).
 - Coesão Textual: Conceitos introdutórios de anáfora (retomada) e catáfora (antecipação).
 
-NÚCLEO TEMÁTICO esta unidade: POSSESSIVOS, INDEFINIDOS E INTERROGATIVOS
-- ➔ 1. PRONOMES POSSESSIVOS
-➔ Flexão: 1ª (meu/nosso), 2ª (teu/vosso), 3ª (seu/sua)
-- ➔ Valores Semânticos: Posse Estrita/Aquisição vs. Afeto/Estima/Sentimento
-➔ Mecânica Sintática: Concorda com o substantivo posposto | Refere-se ao possuidor
-- ➔ Posição do Referente: Anafórico (antes), Catafórico (depois), Elíptico (oculto no verbo)
-➔ 2. PRONOMES INDEFINIDOS
-- ➔ Conceito: Sentido vago, impreciso, quantidade indeterminada (3ª pessoa)
-➔ Divisão Funcional: Pronome Adjetivo (acompanha) vs. Pronome Substantivo (substitui)
-- ➔ Locuções Pronominais Indefinidas: cada um, qualquer um, cada qual
-➔ Palavras Especiais:
-- ➔ "TODO": Sem artigo (= qualquer) vs. Com artigo (= inteiro/totalidade)
-➔ "TODO" Advérbio: Exceção única de advérbio variável (toda poderosa)
-- ➔ 3. PRONOMES INTERROGATIVOS
-➔ Relação Lógica: Todo interrogativo é indefinido (em contexto de questionamento)
-- ➔ Formas Canônicas: que, quem, qual, quanto
-➔ Modalidades:
-- ➔ Direta: Encerra-se com ponto de interrogação (?)
-➔ Indireta: Encerra-se com ponto final (.), regida por verbos de dúvida/conjectura
-- ➔ 4. MATRIZ DIFERENCIAL MULTICLASSE (Método das Setas)
-➔ ADJETIVO: Liga-se a Substantivo | Qualifica | Variável | Ex.: "amigos bastantes" (= suficientes)
-- ➔ ADVÉRBIO: Liga-se a Verbo/Adj/Adv | Intensifica/Modifica | Invariável (salvo "todo") | Ex.: "falam bastante"
-➔ PRONOME INDEFINIDO: Liga-se a Substantivo | Quantidade vaga | Variável/Invariável | Ex.: "bastantes amigos"
-- ➔ 5. COMPORTAMENTOS POSICIONAIS E SEMÂNTICOS ➔ Anteposto ao Substantivo = Pronome Indefinido (certo senhor, bastante tempo, vários deputados) ➔ Posposto ao Substantivo = Adjetivo (senhor certo, tempo bastante, deputados vários) ➔ Posição de "Algum": alguma parte (indeterminada) vs. parte alguma (nenhuma / negação) ➔ Vocábulo "Mais" (FGV): ➔ Seta para Verbo/Adjetivo ➔ Morfologia: Advérbio ➔ Semântica: Intensidade ➔ Seta para Substantivo ➔ Morfologia: Pronome Indef. ➔ Semântica: Quantidade
+```text
+NÚCLEO TEMÁTICO esta unidade: POSSESSIVOS, INDEFINIDOS E INTERROGATIVOS │ ├── 1. PRONOMES POSSESSIVOS │ ├── Flexão: 1ª (meu/nosso), 2ª (teu/vosso), 3ª (seu/sua) │ ├── Valores Semânticos: Posse Estrita/Aquisição vs. Afeto/Estima/Sentimento │ ├── Mecânica Sintática: Concorda com o substantivo posposto | Refere-se ao possuidor │ └── Posição do Referente: Anafórico (antes), Catafórico (depois), Elíptico (oculto no verbo) │ ├── 2. PRONOMES INDEFINIDOS │ ├── Conceito: Sentido vago, impreciso, quantidade indeterminada (3ª pessoa) │ ├── Divisão Funcional: Pronome Adjetivo (acompanha) vs. Pronome Substantivo (substitui) │ ├── Locuções Pronominais Indefinidas: cada um, qualquer um, cada qual │ └── Palavras Especiais: │ ├── "TODO": Sem artigo (= qualquer) vs. Com artigo (= inteiro/totalidade) │ └── "TODO" Advérbio: Exceção única de advérbio variável (toda poderosa) │ ├── 3. PRONOMES INTERROGATIVOS │ ├── Relação Lógica: Todo interrogativo é indefinido (em contexto de questionamento) │ ├── Formas Canônicas: que, quem, qual, quanto │ └── Modalidades: │ ├── Direta: Encerra-se com ponto de interrogação (?) │ └── Indireta: Encerra-se com ponto final (.), regida por verbos de dúvida/conjectura │ ├── 4. MATRIZ DIFERENCIAL MULTICLASSE (Método das Setas) │ ├── ADJETIVO: Liga-se a Substantivo | Qualifica | Variável | Ex.: "amigos bastantes" (= suficientes) │ ├── ADVÉRBIO: Liga-se a Verbo/Adj/Adv | Intensifica/Modifica | Invariável (salvo "todo") | Ex.: "falam bastante" │ └── PRONOME INDEFINIDO: Liga-se a Substantivo | Quantidade vaga | Variável/Invariável | Ex.: "bastantes amigos" │ └── 5. COMPORTAMENTOS POSICIONAIS E SEMÂNTICOS ├── Anteposto ao Substantivo = Pronome Indefinido (certo senhor, bastante tempo, vários deputados) ├── Posposto ao Substantivo = Adjetivo (senhor certo, tempo bastante, deputados vários) ├── Posição de "Algum": alguma parte (indeterminada) vs. parte alguma (nenhuma / negação) └── Vocábulo "Mais" (FGV): ├── Seta para Verbo/Adjetivo ──► Morfologia: Advérbio ────────► Semântica: Intensidade └── Seta para Substantivo ────► Morfologia: Pronome Indef. ──► Semântica: Quantidade
+```
 
 ---
 
@@ -99,8 +78,9 @@ Existe uma assimetria funcional absoluta entre o pronome pessoal e o pronome pos
 - Referência Semântica: Aponta para João (Masculino Singular) $\rightarrow$ trata-se da mãe do João.
 - Por que a regra é chamada de "cruel"? Porque as bancas exploram a dissonância morfológica: um pronome possessivo no plural feminino (suas) pode ter perfeitamente como referente um substantivo singular feminino (democracia), pois concordou com o substantivo posposto no plural (relações).
 
-[João] (Masculino Singular ➔ REFERENTE / POSSUIDOR)
-- (aponta para) "sua" (Feminino Singular ➔ CONCORDA COM) ➔ [mãe] (Feminino Singular)
+```text
+[João] (Masculino Singular ── REFERENTE / POSSUIDOR) │ │ (aponta para) ▼ "sua" (Feminino Singular ── CONCORDA COM) ──► [mãe] (Feminino Singular)
+```
 
 O referente (possuidor) ao qual o pronome possessivo remete pode ocupar três posições distintas na arquitetura oracional: antecedente (anáfora), consequente (catáfora) ou implícito na desinência verbal (elipse).
 
@@ -161,10 +141,9 @@ Os pronomes interrogativos são vocábulos empregados na formulação de pergunt
 
 - Nem todo pronome indefinido é interrogativo (só assumirá natureza interrogativa quando inserido em contexto oracional de pergunta).
 
-➔ PRONOMES INDEFINIDOS (Ideia vaga / 3ª pessoa)
-- ➔ PRONOMES INTERROGATIVOS
-(que, quem, qual, quanto em perguntas)
-- ➔ ➔
+```text
+┌────────────────────────────────────────────────────────┐ │ PRONOMES INDEFINIDOS (Ideia vaga / 3ª pessoa) │ │ │ │ ┌──────────────────────────────────────────────┐ │ │ │ PRONOMES INTERROGATIVOS │ │ │ │ (que, quem, qual, quanto em perguntas) │ │ │ └──────────────────────────────────────────────┘ │ └────────────────────────────────────────────────────────┘
+```
 
 - Expande:
 
@@ -194,8 +173,9 @@ A banca Fundação Getulio Vargas (FGV) explora de forma recorrente a correspond
 1. Morfologia: ADVÉRBIO $\longleftrightarrow$ Semântica: INTENSIDADE (quando a seta aponta para verbo, adjetivo ou advérbio).
 2. Morfologia: PRONOME INDEFINIDO $\longleftrightarrow$ Semântica: QUANTIDADE (Indeterminada) (quando a seta aponta para substantivo).
 
-SEMÂNTICA: INTENSIDADE ➔ QUANTIDADE
-- MORFOLOGIA: ADVÉRBIO ➔ PRONOME INDEFINIDO (Seta para Verbo/Adj/Adv) (Seta para Substantivo)
+```text
+SEMÂNTICA: INTENSIDADE ◄─────────────► QUANTIDADE ▲ ▲ │ │ MORFOLOGIA: ADVÉRBIO ◄─────────────► PRONOME INDEFINIDO (Seta para Verbo/Adj/Adv) (Seta para Substantivo)
+```
 
 Na oração "usam muito mais a emoção do que a razão", a presença do artigo definido "a" antes de "emoção" bloqueia a ligação direta de mais com o substantivo. Sintaticamente, a frase expressa "usam mais", fazendo com que mais aponte para o verbo usam, classificando-se como Advérbio de Intensidade.
 
@@ -265,9 +245,9 @@ Identificar com precisão matemática o possuidor real de um pronome possessivo 
 
 Classificar termos mutáveis (mais, menos, bastante, muito, pouco, todo) entre Adjetivo, Advérbio e Pronome Indefinido.
 
-[Palavra em Análise] ➔ Trace a Seta ➔ [Termo-Alvo Modificado]
-- ➔ [VERBO / ADJETIVO / ADVÉRBIO] [SUBSTANTIVO]
-ADVÉRBIO ➔ (Invariável / Intensidade) ADJETIVO PRONOME INDEFINIDO (Qualifica / Suficiente) (Indetermina / Quantidade)
+```text
+[Palavra em Análise] ──► Trace a Seta ──► [Termo-Alvo Modificado] │ ┌────────────────────────────────────────┴────────────────────────────────────────┐ ▼ ▼ [VERBO / ADJETIVO / ADVÉRBIO] [SUBSTANTIVO] │ │ ▼ ▼ ADVÉRBIO ┌──────────────────┴──────────────────┐ (Invariável / Intensidade) ▼ ▼ ADJETIVO PRONOME INDEFINIDO (Qualifica / Suficiente) (Indetermina / Quantidade)
+```
 
 1. Traçar a Seta de Modificação: Pergunte à frase a qual termo a palavra sob análise se refere diretamente.
 2. Classificar o Termo-Alvo:
@@ -323,9 +303,9 @@ Identificar com precisão matemática o possuidor real de um pronome possessivo 
 
 Classificar termos mutáveis (mais, menos, bastante, muito, pouco, todo) entre Adjetivo, Advérbio e Pronome Indefinido.
 
-[Palavra em Análise] ➔ Trace a Seta ➔ [Termo-Alvo Modificado]
-- ➔ [VERBO / ADJETIVO / ADVÉRBIO] [SUBSTANTIVO]
-ADVÉRBIO ➔ (Invariável / Intensidade) ADJETIVO PRONOME INDEFINIDO (Qualifica / Suficiente) (Indetermina / Quantidade)
+```text
+[Palavra em Análise] ──► Trace a Seta ──► [Termo-Alvo Modificado] │ ┌────────────────────────────────────────┴────────────────────────────────────────┐ ▼ ▼ [VERBO / ADJETIVO / ADVÉRBIO] [SUBSTANTIVO] │ │ ▼ ▼ ADVÉRBIO ┌──────────────────┴──────────────────┐ (Invariável / Intensidade) ▼ ▼ ADJETIVO PRONOME INDEFINIDO (Qualifica / Suficiente) (Indetermina / Quantidade)
+```
 
 #### Passos Operacionais
 

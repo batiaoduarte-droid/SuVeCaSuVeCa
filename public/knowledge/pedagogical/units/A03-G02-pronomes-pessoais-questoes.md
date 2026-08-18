@@ -45,26 +45,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Morfologia dos Pronomes: Reconhecimento das pessoas do discurso (1ª, 2ª e 3ª) no quadro dos pronomes retos, oblíquos átonos, oblíquos tônicos e demonstrativos.
 - Noções Preliminares de Colocação Pronominal: Reconhecimento básico de Próclise (pronome antes do verbo) e Ênclise (pronome depois do verbo) impulsionada por palavras atrativas.
 
-SISTEMA DOS PRONOMES PESSOAIS EM CONCURSOS ➔ 1. Regência e Seleção Pronominal de 3ª Pessoa
-- ➔ Objeto Direto (sem preposição) ➔ o, a, os, as
-➔ Ênclise após R, S, Z ➔ lo, la, los, las (elimina R, S, Z)
-- ➔ Ênclise após Som Nasal (m, ã, ão, õe) ➔ no, na, nos, nas (mantém terminação)
-➔ Próclise (palavra atrativa) ➔ o, a, os, as (ALTERAÇÃO FONÉTICA PROIBIDA!)
-- ➔ Objeto Indireto (com preposição A ou PARA) ➔ lhe, lhes
-➔ Restrição Preposicional: Proibido com prep. DE, EM, COM (exige: dele, nele, com ele)
-- ➔ Restrição Eufônica: Verbos refratários (assistir, chegar, visar) ➔ a ele / a ela ➔ 2. Pronomes Coringas (me, te, se, nós, vós)
-➔ Atuam como Objeto Direto (quando o verbo for VTD)
-- ➔ Atuam como Objeto Indireto (quando o verbo for VTI / VTDI) ➔ 3. Pronomes com Valor Possessivo (Função: Adjunto Adnominal)
-➔ Aplicável a: lhe/lhes e pronomes coringas (me, te, se, nós, vós)
-- ➔ Inaplicável a: o, a, os, as
-➔ Teste de Validação: Substituição por possessivo (meu, teu, seu, dele, nossa) ➔ 4. Pronomes Retos vs. Oblíquos Tônicos (ele, ela, eles, elas, nós, vós)
-- ➔ Retos (sem preposição) ➔ Função exclusiva de Sujeito (Proibido: "vi ele")
-➔ Oblíquos Tônicos (com preposição) ➔ Função de Complemento Verbal / Nominal ➔ 5. Inadmissibilidade de Objetos Duplicados Homogêneos (VTDI)
-- ➔ Estrutura Canônica: 1 Verbo VTDI = Exatamente 1 OD + 1 OI
-➔ Já existe OD substantivado? ➔ Novo pronome OBRIGATORIAMENTE é OI (lhe / a ele)
-- (Proibido: OD + OD -> dá-lo ordens / renderam-no obras)
-➔ Já existe OI preposicionado? ➔ Novo pronome OBRIGATORIAMENTE é OD (o, a / me)
-- (Proibido: OI + OI -> reduziu-lhe a artigos) ➔ 6. Restrição de Uso do Demonstrativo "O Mesmo / A Mesma" ➔ Uso Legítimo: Função resumitiva de orações, ideias completas ou fatos ➔ Proibição Absoluta: Substituição anafórica de substantivo simples ou palavra isolada
+```text
+SISTEMA DOS PRONOMES PESSOAIS EM CONCURSOS ├── 1. Regência e Seleção Pronominal de 3ª Pessoa │ ├── Objeto Direto (sem preposição) ──────────────► o, a, os, as │ │ └── Ênclise após R, S, Z ───────────────────► lo, la, los, las (elimina R, S, Z) │ │ └── Ênclise após Som Nasal (m, ã, ão, õe) ──► no, na, nos, nas (mantém terminação) │ │ └── Próclise (palavra atrativa) ────────────► o, a, os, as (ALTERAÇÃO FONÉTICA PROIBIDA!) │ └── Objeto Indireto (com preposição A ou PARA) ──► lhe, lhes │ ├── Restrição Preposicional: Proibido com prep. DE, EM, COM (exige: dele, nele, com ele) │ └── Restrição Eufônica: Verbos refratários (assistir, chegar, visar) ──► a ele / a ela ├── 2. Pronomes Coringas (me, te, se, nós, vós) │ ├── Atuam como Objeto Direto (quando o verbo for VTD) │ └── Atuam como Objeto Indireto (quando o verbo for VTI / VTDI) ├── 3. Pronomes com Valor Possessivo (Função: Adjunto Adnominal) │ ├── Aplicável a: lhe/lhes e pronomes coringas (me, te, se, nós, vós) │ ├── Inaplicável a: o, a, os, as │ └── Teste de Validação: Substituição por possessivo (meu, teu, seu, dele, nossa) ├── 4. Pronomes Retos vs. Oblíquos Tônicos (ele, ela, eles, elas, nós, vós) │ ├── Retos (sem preposição) ─────────────────────► Função exclusiva de Sujeito (Proibido: "vi ele") │ └── Oblíquos Tônicos (com preposição) ──────────► Função de Complemento Verbal / Nominal ├── 5. Inadmissibilidade de Objetos Duplicados Homogêneos (VTDI) │ ├── Estrutura Canônica: 1 Verbo VTDI = Exatamente 1 OD + 1 OI │ ├── Já existe OD substantivado? ────────────────► Novo pronome OBRIGATORIAMENTE é OI (lhe / a ele) │ │ (Proibido: OD + OD -> dá-lo ordens / renderam-no obras) │ └── Já existe OI preposicionado? ───────────────► Novo pronome OBRIGATORIAMENTE é OD (o, a / me) │ (Proibido: OI + OI -> reduziu-lhe a artigos) └── 6. Restrição de Uso do Demonstrativo "O Mesmo / A Mesma" ├── Uso Legítimo: Função resumitiva de orações, ideias completas ou fatos └── Proibição Absoluta: Substituição anafórica de substantivo simples ou palavra isolada
+```
 
 ---
 
@@ -244,8 +227,9 @@ Discernir se o pronome oblíquo (lhe, me, te, etc.) atua como Adjunto Adnominal 
 
 Identificar erros de duplicidade de objetos diretos (OD + OD) ou indiretos (OI + OI) em itens de concurso (especialmente CEBRASPE/CESPE).
 
-1. Isolar o verbo principal e identificar o Sujeito] [
-2. Inventariar os complementos já presentes na frase original] Cenário A: A frase já possui Objeto Direto (OD) substantivado sem preposição? SIM ➔ O novo pronome inserido OBRIGATORIAMENTE deve ser Objeto Indireto (lhe / a ele). Se a banca propôs pronome de OD (o, a, los, las, nos, nas): == MARCAR ITEM COMO ERRADO (Erro: OD + OD). Cenário B: A frase já possui Objeto Indireto (OI) preposicionado (ex.: "a artigos")? SIM ➔ O novo pronome associado OBRIGATORIAMENTE deve ser Objeto Direto (o, a, me). Se a banca propôs trocar o pronome direto por "lhe": == MARCAR ITEM COMO ERRADO (Erro: OI + OI).
+```text
+[Início: Questão de Reescrita Pronominal] │ ▼ [Passo 1: Isolar o verbo principal e identificar o Sujeito] │ ▼ [Passo 2: Inventariar os complementos já presentes na frase original] │ ├── Cenário A: A frase já possui Objeto Direto (OD) substantivado sem preposição? │ │ │ └── SIM ──► O novo pronome inserido OBRIGATORIAMENTE deve ser Objeto Indireto (lhe / a ele). │ └── Se a banca propôs pronome de OD (o, a, los, las, nos, nas): │ ==► MARCAR ITEM COMO ERRADO (Erro: OD + OD). │ └── Cenário B: A frase já possui Objeto Indireto (OI) preposicionado (ex.: "a artigos")? │ └── SIM ──► O novo pronome associado OBRIGATORIAMENTE deve ser Objeto Direto (o, a, me). └── Se a banca propôs trocar o pronome direto por "lhe": ==► MARCAR ITEM COMO ERRADO (Erro: OI + OI).
+```
 
 ### Objetivo
 
@@ -298,8 +282,9 @@ Identificar erros de duplicidade de objetos diretos (OD + OD) ou indiretos (OI +
 
 #### Fluxo Operacional
 
-1. Isolar o verbo principal e identificar o Sujeito] [
-2. Inventariar os complementos já presentes na frase original] Cenário A: A frase já possui Objeto Direto (OD) substantivado sem preposição? SIM ➔ O novo pronome inserido OBRIGATORIAMENTE deve ser Objeto Indireto (lhe / a ele). Se a banca propôs pronome de OD (o, a, los, las, nos, nas): == MARCAR ITEM COMO ERRADO (Erro: OD + OD). Cenário B: A frase já possui Objeto Indireto (OI) preposicionado (ex.: "a artigos")? SIM ➔ O novo pronome associado OBRIGATORIAMENTE deve ser Objeto Direto (o, a, me). Se a banca propôs trocar o pronome direto por "lhe": == MARCAR ITEM COMO ERRADO (Erro: OI + OI).
+```text
+[Início: Questão de Reescrita Pronominal] │ ▼ [Passo 1: Isolar o verbo principal e identificar o Sujeito] │ ▼ [Passo 2: Inventariar os complementos já presentes na frase original] │ ├── Cenário A: A frase já possui Objeto Direto (OD) substantivado sem preposição? │ │ │ └── SIM ──► O novo pronome inserido OBRIGATORIAMENTE deve ser Objeto Indireto (lhe / a ele). │ └── Se a banca propôs pronome de OD (o, a, los, las, nos, nas): │ ==► MARCAR ITEM COMO ERRADO (Erro: OD + OD). │ └── Cenário B: A frase já possui Objeto Indireto (OI) preposicionado (ex.: "a artigos")? │ └── SIM ──► O novo pronome associado OBRIGATORIAMENTE deve ser Objeto Direto (o, a, me). └── Se a banca propôs trocar o pronome direto por "lhe": ==► MARCAR ITEM COMO ERRADO (Erro: OI + OI).
+```
 
 ---
 

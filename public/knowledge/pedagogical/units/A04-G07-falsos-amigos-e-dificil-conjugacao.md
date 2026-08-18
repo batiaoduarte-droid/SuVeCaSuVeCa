@@ -16,17 +16,15 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 
 - Identificação dos modos verbais (Indicativo: certeza; Subjuntivo: dúvida/possibilidade; Imperativo: ordem/pedido).
 
-ESTRUTURA GLOBAL DA CONJUGAÇÃO VERBAL
-- ➔
+```text
+ESTRUTURA GLOBAL DA CONJUGAÇÃO VERBAL │ ┌───────────────────────────────────────────┼───────────────────────────────────────────┐ ▼ ▼ ▼
+```
 
 1. LÍDERES E BONS AMIGOS (60%-70%) 2. FALSOS AMIGOS 3. DIFÍCIL CONJUGAÇÃO
 
-(VER, VIR, PÔR, TER e cognatos)
-- ➔ ➔ PROVER REQUERER CABER CRER HAVER (Pres: VER / (Geral: BEBER / (caibo -> (cri/creu; (Anômalo; Demais: BEBER) Pres: ditongo EI) caiba) crido) houve)
-[vs. PROVIR = VIR] [≠ QUERER] ➔ APRAZER IR / ADERIR (Defectivo; (IR: ides/vades; Líder: HAVER) ADERIR = FERIR)
-- PARADIGMA DE FORMAÇÃO DOS TEMPOS VERBAIS
-➔ PRIMITIVO 1: Pres. Ind. (1ª p. sing. EU) PRIMITIVO 2: Pret. Perf. Ind. (3ª p. pl. ELES)
-- (extrai "-o" + desinência subj.) (extrai "-ram" -> tema matriz) DERIVADO: Presente do Subjuntivo DERIVADOS: (ex: caib-o -> que eu caib-a) Pret. Mais-que-perfeito Ind. (-ra: coube-ra) (ex: adir-o -> que eu adir-a) Pret. Imperfeito Subjuntivo (-sse: coubes-se) Futuro do Subjuntivo (-r: coube-r)
+```text
+(VER, VIR, PÔR, TER e cognatos) │ │ ┌───────────┴───────────┐ ┌───────────┼───────────┐ ▼ ▼ ▼ ▼ ▼ PROVER REQUERER CABER CRER HAVER (Pres: VER / (Geral: BEBER / (caibo -> (cri/creu; (Anômalo; Demais: BEBER) Pres: ditongo EI) caiba) crido) houve) │ │ │ │ │ [vs. PROVIR = VIR] [≠ QUERER] └─────┬─────┴─────┬─────┘ │ │ ▼ ▼ APRAZER IR / ADERIR (Defectivo; (IR: ides/vades; Líder: HAVER) ADERIR = FERIR) │ ▼ PARADIGMA DE FORMAÇÃO DOS TEMPOS VERBAIS │ ┌────────────────────────────────────┴────────────────────────────────────┐ ▼ ▼ PRIMITIVO 1: Pres. Ind. (1ª p. sing. EU) PRIMITIVO 2: Pret. Perf. Ind. (3ª p. pl. ELES) │ │ ▼ (extrai "-o" + desinência subj.) ▼ (extrai "-ram" -> tema matriz) DERIVADO: Presente do Subjuntivo DERIVADOS: (ex: caib-o -> que eu caib-a) ├─ Pret. Mais-que-perfeito Ind. (-ra: coube-ra) (ex: adir-o -> que eu adir-a) ├─ Pret. Imperfeito Subjuntivo (-sse: coubes-se) └─ Futuro do Subjuntivo (-r: coube-r)
+```
 
 ---
 
@@ -47,9 +45,9 @@ Mecânica morfogenética que estabelece que os tempos verbais derivados da líng
 
 O domínio deste paradigma substitui a memorização cega de dezenas de tabelas pelo controle de apenas dois pontos de partida:
 
-PRIMITIVOS E SUAS DERIVAÇÕES OBRIGATÓRIAS
-- ➔ PRIMITIVO 1: Presente do Indicativo PRIMITIVO 2: Pretérito Perfeito do Indicativo (1ª pessoa do singular - "EU") (3ª pessoa do plural - "ELES")
-(Extrai-se a desinência "-o") (Extrai-se a terminação "-ram") OBTÉM-SE: Todo o Presente do Subjuntivo OBTÉM-SE: Tema Matriz do Pretérito (Acrescenta-se "-e" p/ 1ª conj; "-a" p/ 2ª e 3ª conj) (Gera 3 tempos derivados fixos) > Pret. Mais-Que-Perfeito Ind. (Tema + "-ra") > Pret. Imperfeito Subjuntivo (Tema + "-sse") > Futuro do Subjuntivo (Tema + "-r")
+```text
+PRIMITIVOS E SUAS DERIVAÇÕES OBRIGATÓRIAS │ ┌────────────────────────────────────┴────────────────────────────────────┐ ▼ ▼ PRIMITIVO 1: Presente do Indicativo PRIMITIVO 2: Pretérito Perfeito do Indicativo (1ª pessoa do singular - "EU") (3ª pessoa do plural - "ELES") │ │ ▼ (Extrai-se a desinência "-o") ▼ (Extrai-se a terminação "-ram") OBTÉM-SE: Todo o Presente do Subjuntivo OBTÉM-SE: Tema Matriz do Pretérito (Acrescenta-se "-e" p/ 1ª conj; "-a" p/ 2ª e 3ª conj) (Gera 3 tempos derivados fixos) ├─> Pret. Mais-Que-Perfeito Ind. (Tema + "-ra") ├─> Pret. Imperfeito Subjuntivo (Tema + "-sse") └─> Futuro do Subjuntivo (Tema + "-r")
+```
 
 - Verbo CABER:
 - Primitivo 1: Eu caib-o $\rightarrow$ extrai -o + -a $\rightarrow$ que eu caiba, que tu caibas, que ele caiba...

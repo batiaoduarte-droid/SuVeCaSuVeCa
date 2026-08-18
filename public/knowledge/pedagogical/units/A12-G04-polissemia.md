@@ -45,33 +45,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Distinção fundamental entre Denotação (sentido próprio/literal) e Conotação (sentido figurado/metafórico).
 - Noções de Sintaxe de Regência e Conectores Gramaticais (identificação de termos regentes e regidos para valores de preposição).
 
-POLISSEMIA (Mesma forma gráfica + Mesma pronúncia + Mesma raiz etimológica -> Múltiplos sentidos)
-- ➔ ESTRUTURA FORMAL NATUREZA DOS SENTIDOS DINÂMICA DISCURSIVA (O PAPEL DO CONTEXTO) Equivalência Estrutural Puramente Denotativa
-Homonímia Perfeita
-- Banco (fin./móvel) Contexto Delimita o Sentido
-Ex.: cedo/cedo
-- Letra (mús./graf./alf.)
-Sem Ambiguidade / Clareza Plena
-- Vela (cera/barco)
-Neutralização da Polissemia NÃO é Polissemia:
-- Ex.: "amanhã" + "hoje"
-Homófonos Denotativa + Conotativa
-- Repetição Estilística (FGV)
-conserto/concerto Boca (corpo/garrafa)
-- Ex.: "canto" das cigarras
-sela/cela Porco (animal/pessoa)
-- no "canto" da sala
-cesta/sexta Nó (corda/garganta)
-- Homógrafos Casa (imóvel/faixa °C) Contexto NÃO Delimita / Insuficiente
-colher [o]/[ɔ] Ambiguidade Viciosa (Defeito)
-- Parônimos
-Ex.: "o banco está ao lado"
-- emergir/imergir
-Ex.: "o porco do tio"
-- Ambiguidade Intencional (Recurso)
-Trocadilhos Publicitários
-- Emissores (Jornal, Restaurante) ➔ POLISSEMIA DE CONECTORES ("PARA")
-➔ Destino Finalidade Capacidade Proximidade Temporal ("para a Europa") ("para comprar") ("para 50 pessoas") ("estava para sair" / Iminência)
+```text
+POLISSEMIA (Mesma forma gráfica + Mesma pronúncia + Mesma raiz etimológica -> Múltiplos sentidos) │ ┌────────────────────────────────┼────────────────────────────────┐ ▼ ▼ ▼ ESTRUTURA FORMAL NATUREZA DOS SENTIDOS DINÂMICA DISCURSIVA (O PAPEL DO CONTEXTO) ├─ Equivalência Estrutural ├─ Puramente Denotativa │ │ └─ Homonímia Perfeita │ ├─ Banco (fin./móvel) ├─ Contexto Delimita o Sentido │ └─ Ex.: cedo/cedo │ ├─ Letra (mús./graf./alf.) │ ├─ Sem Ambiguidade / Clareza Plena │ │ └─ Vela (cera/barco) │ ├─ Neutralização da Polissemia ├─ NÃO é Polissemia: │ │ │ └─ Ex.: "amanhã" + "hoje" │ ├─ Homófonos └─ Denotativa + Conotativa │ └─ Repetição Estilística (FGV) │ │ └─ conserto/concerto ├─ Boca (corpo/garrafa) │ └─ Ex.: "canto" das cigarras │ │ └─ sela/cela ├─ Porco (animal/pessoa) │ no "canto" da sala │ │ └─ cesta/sexta ├─ Nó (corda/garganta) │ │ ├─ Homógrafos └─ Casa (imóvel/faixa °C) └─ Contexto NÃO Delimita / Insuficiente │ │ └─ colher [o]/[ɔ] ├─ Ambiguidade Viciosa (Defeito) │ └─ Parônimos │ └─ Ex.: "o banco está ao lado" │ └─ emergir/imergir │ └─ Ex.: "o porco do tio" │ └─ Ambiguidade Intencional (Recurso) │ ├─ Trocadilhos Publicitários │ └─ Emissores (Jornal, Restaurante) └────────────────────────────────────┬────────────────────────────────┘ │ POLISSEMIA DE CONECTORES ("PARA") │ ┌───────────────────┬─────────────┴─────┬───────────────────┐ ▼ ▼ ▼ ▼ Destino Finalidade Capacidade Proximidade Temporal ("para a Europa") ("para comprar") ("para 50 pessoas") ("estava para sair" / Iminência)
+```
 
 ---
 
@@ -117,29 +93,9 @@ A polissemia exige identidade formal bilateral (som E grafia). Não constituem p
 
 Para delimitar com precisão o conceito de polissemia, analisa-se o comportamento das relações semânticas concorrentes:
 
-RELAÇÕES FORMAIS VERSUS SIGNIFICADO ➔ Fenômeno
-- Forma (Grafia / Som)
-Significado
-- ➔ ┤
-Polissemia / Hom. Perf.
-- Grafia IGUAL + Som IGUAL
-Significado DIFERENTE
-- Homófonos Heterógrafos
-Grafia DIFERENTE + Som =
-- Significado DIFERENTE
-Homógrafos Heterófonos
-
-Significado DIFERENTE
-- Paronímia
-Grafia/Som PARECIDOS
-- Significado DIFERENTE
-Sinonímia
-- Grafia/Som DIFERENTES
-Significado IGUAL
-- Antonímia
-Grafia/Som DIFERENTES
-- Significado CONTRÁRIO
-➔
+```text
+RELAÇÕES FORMAIS VERSUS SIGNIFICADO ┌─────────────────────────┬──────────────────────────┬────────────────────────┐ │ Fenômeno │ Forma (Grafia / Som) │ Significado │ ├─────────────────────────┼──────────────────────────┼────────────────────────┤ │ Polissemia / Hom. Perf. │ Grafia IGUAL + Som IGUAL │ Significado DIFERENTE │ │ Homófonos Heterógrafos │ Grafia DIFERENTE + Som = │ Significado DIFERENTE │ │ Homógrafos Heterófonos │ Grafia IGUAL + Som DIF. │ Significado DIFERENTE │ │ Paronímia │ Grafia/Som PARECIDOS │ Significado DIFERENTE │ │ Sinonímia │ Grafia/Som DIFERENTES │ Significado IGUAL │ │ Antonímia │ Grafia/Som DIFERENTES │ Significado CONTRÁRIO │ └─────────────────────────┴──────────────────────────┴────────────────────────┘
+```
 
 1. Homófonos heterógrafos (Não são polissemia):
 
@@ -179,9 +135,9 @@ A polissemia é um fato estritamente lexical (propriedade de uma palavra possuir
 
 A abordagem didática sintetiza a relação por meio do mantra pedagógico: "Nem toda polissemia gera ambiguidade".
 
-POLISSEMIA (LÉXICO)
-- ➔ CONTEXTO DELIMITA O SENTIDO CONTEXTO NÃO DELIMITA (INSUFICIENTE)
-POLISSEMIA CLARA / AMBIGUIDADE VICIOSA RECURSO ESTILÍSTICO VÁLIDO OU DUPLO SENTIDO INDESEJADO (Sem dúvida interpretativa para o leitor) (Hesitação e prejuízo à clareza textual)
+```text
+POLISSEMIA (LÉXICO) │ ┌───────────────────────┴───────────────────────┐ ▼ ▼ CONTEXTO DELIMITA O SENTIDO CONTEXTO NÃO DELIMITA (INSUFICIENTE) │ │ ▼ ▼ POLISSEMIA CLARA / AMBIGUIDADE VICIOSA RECURSO ESTILÍSTICO VÁLIDO OU DUPLO SENTIDO INDESEJADO (Sem dúvida interpretativa para o leitor) (Hesitação e prejuízo à clareza textual)
+```
 
 1. Polissemia sem ambiguidade: Ocorre na esmagadora maioria dos enunciados cotidianos e cultos. As palavras vizinhas (cotexto) amarram perfeitamente o sentido pretendido. Exemplo: "Sentia dor na planta dos pés" — a presença de "dos pés" restringe o vocábulo à anatomia humana, eliminando qualquer leitura vegetal.
 2. Polissemia com ambiguidade: Ocorre quando o ambiente frasal é neutro, vago ou insuficiente, permitindo que duas ou mais acepções façam sentido simultâneo sem que se saiba a intenção do emissor. Exemplo: "O banco está aqui ao lado" — o receptor não sabe se o emissor refere-se à agência de crédito ou ao assento de praça.
@@ -236,28 +192,9 @@ A polissemia manifesta-se também em classes gramaticais relacionais (conectores
 
 A preposição para expressa uma ampla gama de relações lógicas na língua portuguesa, com destaque para a cobrança da banca FGV:
 
-INVENTÁRIO DE VALORES SEMÂNTICOS DE "PARA" ➔ Relação Semântica
-- Estrutura Lógica / Combinação
-Exemplo Canônico
-- ➔ ┤
-Destino / Direção
-- para + substantivo de lugar
-"Meu sonho é ir para a Europa"
-- Finalidade
-para + oração com verbo de ação
-- "Saiu para comprar roupas"
-Proximidade Temporal
-- estar para + verbo no infinitivo
-"Estava para sair quando..."
-- (Iminência de ação)
-(prestes a acontecer no tempo)
-- Capacidade / Lotação
-para + quantificador de suporte
-- "Ônibus para 50 passageiros"
-Ponto de Vista / Opinião
-- para + sujeito avaliador
-"Para os pássaros, o canto..."
-- ➔
+```text
+INVENTÁRIO DE VALORES SEMÂNTICOS DE "PARA" ┌──────────────────────────┬─────────────────────────────────┬───────────────────────────────┐ │ Relação Semântica │ Estrutura Lógica / Combinação │ Exemplo Canônico │ ├──────────────────────────┼─────────────────────────────────┼───────────────────────────────┤ │ Destino / Direção │ para + substantivo de lugar │ "Meu sonho é ir para a Europa"│ │ Finalidade │ para + oração com verbo de ação │ "Saiu para comprar roupas" │ │ Proximidade Temporal │ estar para + verbo no infinitivo│ "Estava para sair quando..." │ │ (Iminência de ação) │ (prestes a acontecer no tempo) │ │ │ Capacidade / Lotação │ para + quantificador de suporte │ "Ônibus para 50 passageiros" │ │ Ponto de Vista / Opinião │ para + sujeito avaliador │ "Para os pássaros, o canto..."│ └──────────────────────────┴─────────────────────────────────┴───────────────────────────────┘
+```
 
 Para determinar o valor de para, avalie rigorosamente o termo que vem após a preposição:
 
@@ -272,48 +209,9 @@ Compreender a polissemia desenvolve a flexibilidade interpretativa e desarma o p
 
 As bancas examinadoras de concursos públicos apresentam perfis metodológicos nitidamente diferenciados na abordagem da polissemia, variando entre a sofisticação estilística e o reconhecimento conceitual direto.
 
-PERFIL DAS BANCAS EM POLISSEMIA ➔ Banca Examinadora
-- Nível de Cobrança Predominante
-Estratégia de Resolução
-- ➔ ┤
-FGV
-
-Buscar a coexistência de dois
-- trocadilhos, jogos de palavras e
-sentidos (duas setas); atentar
-
-aos emissores entre parênteses.
-- ➔ ┤
-CEBRASPE (Cespe)
-- Conceitual direto; itens de
-Verificar se o termo reúne mais
-- Certo/Errado avaliando se a
-de um significado na língua; não
-
-superestimar a complexidade.
-- ➔ ┤
-IBADE / CESGRANRIO
-
-Diante de disputa entre
-- desempate conceitual entre
-Polissemia e Homonímia ampla,
-
-marcar sempre Polissemia.
-- ➔ ┤
-Inst. AOCP / Objetiva
-- Classificação mnemônica das
-Usar as fórmulas das relações;
-- relações lexicais e exceções por
-descartar homófonos heterógrafos
-
-(ex.: cesta vs. sexta).
-- ➔ ┤
-Instituto Consulplan
-- Relação entre sentido próprio
-Reconhecer que a conotação é
-- (denotativo) e figurado (conot.)
-uma extensão da polissemia.
-- ➔
+```text
+PERFIL DAS BANCAS EM POLISSEMIA ┌───────────────────────┬──────────────────────────────────┬─────────────────────────────────┐ │ Banca Examinadora │ Nível de Cobrança Predominante │ Estratégia de Resolução │ ├───────────────────────┼──────────────────────────────────┼─────────────────────────────────┤ │ FGV │ Polissemia contextual ativada, │ Buscar a coexistência de dois │ │ │ trocadilhos, jogos de palavras e │ sentidos (duas setas); atentar │ │ │ repetições estilísticas. │ aos emissores entre parênteses. │ ├───────────────────────┼──────────────────────────────────┼─────────────────────────────────┤ │ CEBRASPE (Cespe) │ Conceitual direto; itens de │ Verificar se o termo reúne mais │ │ │ Certo/Errado avaliando se a │ de um significado na língua; não│ │ │ palavra tem múltiplos sentidos. │ superestimar a complexidade. │ ├───────────────────────┼──────────────────────────────────┼─────────────────────────────────┤ │ IBADE / CESGRANRIO │ Semântica aplicada a textos; │ Diante de disputa entre │ │ │ desempate conceitual entre │ Polissemia e Homonímia ampla, │ │ │ Polissemia e Homonímia. │ marcar sempre Polissemia. │ ├───────────────────────┼──────────────────────────────────┼─────────────────────────────────┤ │ Inst. AOCP / Objetiva │ Classificação mnemônica das │ Usar as fórmulas das relações; │ │ │ relações lexicais e exceções por │ descartar homófonos heterógrafos│ │ │ homofonia heterográfica. │ (ex.: cesta vs. sexta). │ ├───────────────────────┼──────────────────────────────────┼─────────────────────────────────┤ │ Instituto Consulplan │ Relação entre sentido próprio │ Reconhecer que a conotação é │ │ │ (denotativo) e figurado (conot.) │ uma extensão da polissemia. │ └───────────────────────┴──────────────────────────────────┴─────────────────────────────────┘
+```
 
 ---
 
@@ -334,11 +232,9 @@ uma extensão da polissemia.
 
 ## Roteiros de resolução
 
-**PROTOCOLO DE DIAGNÓSTICO DE POLISSEMIA   [**
-
-1. ANÁLISE GRÁFICA] As palavras possuem EXATAMENTE as mesmas letras? NÃO > DESCARTAR POLISSEMIA (Homófonos Heterógrafos) (Ex.: conserto/concerto, sela/cela, cesta/sexta) SIM [
-2. ANÁLISE FONÉTICA] A pronúncia e o timbre vocálico são IDÊNTICOS? NÃO > DESCARTAR POLISSEMIA (Homógrafos Heterófonos) (Ex.: colher [/o/] verbo vs. colher [/ɔ/] talher) SIM [
-3. ANÁLISE SEMÂNTICA] Os significados nos contextos são DIVERGENTES? NÃO > MESMA PALAVRA (Repetição Lexical Unívoca) SIM > CONFIRMA-SE POLISSEMIA / HOMONÍMIA PERFEITA
+```text
+PROTOCOLO DE DIAGNÓSTICO DE POLISSEMIA │ [PASSO 1: ANÁLISE GRÁFICA] As palavras possuem EXATAMENTE as mesmas letras? ├── NÃO ──> DESCARTAR POLISSEMIA (Homófonos Heterógrafos) │ (Ex.: conserto/concerto, sela/cela, cesta/sexta) └── SIM │ ▼ [PASSO 2: ANÁLISE FONÉTICA] A pronúncia e o timbre vocálico são IDÊNTICOS? ├── NÃO ──> DESCARTAR POLISSEMIA (Homógrafos Heterófonos) │ (Ex.: colher [/o/] verbo vs. colher [/ɔ/] talher) └── SIM │ ▼ [PASSO 3: ANÁLISE SEMÂNTICA] Os significados nos contextos são DIVERGENTES? ├── NÃO ──> MESMA PALAVRA (Repetição Lexical Unívoca) └── SIM ──> CONFIRMA-SE POLISSEMIA / HOMONÍMIA PERFEITA
+```
 
 1. Identificar a falha de precisão terminológica da banca: O termo amplo "Homonímia" engloba imperfeições formais (homófonos heterógrafos e homógrafos heterófonos).
 2. Aplicar o critério de máxima especificidade: Para vocábulos com identidade total de grafia e pronúncia que compartilham raiz lexical (política, história/História), a classificação mais específica e defensável é Polissemia.
@@ -350,10 +246,9 @@ uma extensão da polissemia.
 - Se houver termos restritores (ex.: "dos pés" para planta; "hoje" para amanhã; "brancas" para pérolas), o contexto neutralizou a polissemia. A frase é clara e isenta de ambiguidade.
 - Se os termos vizinhos forem neutros ou compatíveis com duas acepções (ex.: "está aqui ao lado" para banco; "do tio" para porco), o contexto falhou, gerando ambiguidade viciosa.
 
-TÉCNICA DAS DUAS SETAS
-- [Identificar o Vocábulo-Pivô]
-➔ [PRIMEIRA SETA] [SEGUNDA SETA] Conecta ao Sentido Literal / Conecta ao Sentido Figurado / Atividade do Emissor Institucional Sentido Geral da Expressão (Ex.: Jornal -> notícia QUENTE [recente]) (Ex.: Cafezinho -> QUENTE [temperatura]) (Ex.: Restaurante -> MASSA [culinária]) (Ex.: Atendimento -> MASSA [povo]) (Ex.: Espelho -> REFLETIR [imagem]) (Ex.: Ponderar -> REFLETIR [pensar])
-- ➔ [VALIDAÇÃO: Se ambas as setas forem plenamente coerentes, CONFIRMA-SE O JOGO POLISSÊMICO ATIVADO]
+```text
+TÉCNICA DAS DUAS SETAS │ [Identificar o Vocábulo-Pivô] │ ┌───────────────────────┴───────────────────────┐ ▼ ▼ [PRIMEIRA SETA] [SEGUNDA SETA] Conecta ao Sentido Literal / Conecta ao Sentido Figurado / Atividade do Emissor Institucional Sentido Geral da Expressão (Ex.: Jornal -> notícia QUENTE [recente]) (Ex.: Cafezinho -> QUENTE [temperatura]) (Ex.: Restaurante -> MASSA [culinária]) (Ex.: Atendimento -> MASSA [povo]) (Ex.: Espelho -> REFLETIR [imagem]) (Ex.: Ponderar -> REFLETIR [pensar]) │ │ └───────────────────────┬───────────────────────┘ ▼ [VALIDAÇÃO: Se ambas as setas forem plenamente coerentes, CONFIRMA-SE O JOGO POLISSÊMICO ATIVADO]
+```
 
 1. Isole a preposição para e sublinhe o termo regido imediatamente posterior.
 2. Aplique os testes de substituição:
@@ -364,11 +259,9 @@ TÉCNICA DAS DUAS SETAS
 
 - Se reger entidade julgadora indicando perspectiva avaliativa (na opinião de) $\rightarrow$ Ponto de Vista / Opinião.
 
-**PROTOCOLO DE DIAGNÓSTICO DE POLISSEMIA   [**
-
-1. ANÁLISE GRÁFICA] As palavras possuem EXATAMENTE as mesmas letras? NÃO > DESCARTAR POLISSEMIA (Homófonos Heterógrafos) (Ex.: conserto/concerto, sela/cela, cesta/sexta) SIM [
-2. ANÁLISE FONÉTICA] A pronúncia e o timbre vocálico são IDÊNTICOS? NÃO > DESCARTAR POLISSEMIA (Homógrafos Heterófonos) (Ex.: colher [/o/] verbo vs. colher [/ɔ/] talher) SIM [
-3. ANÁLISE SEMÂNTICA] Os significados nos contextos são DIVERGENTES? NÃO > MESMA PALAVRA (Repetição Lexical Unívoca) SIM > CONFIRMA-SE POLISSEMIA / HOMONÍMIA PERFEITA
+```text
+PROTOCOLO DE DIAGNÓSTICO DE POLISSEMIA │ [PASSO 1: ANÁLISE GRÁFICA] As palavras possuem EXATAMENTE as mesmas letras? ├── NÃO ──> DESCARTAR POLISSEMIA (Homófonos Heterógrafos) │ (Ex.: conserto/concerto, sela/cela, cesta/sexta) └── SIM │ ▼ [PASSO 2: ANÁLISE FONÉTICA] A pronúncia e o timbre vocálico são IDÊNTICOS? ├── NÃO ──> DESCARTAR POLISSEMIA (Homógrafos Heterófonos) │ (Ex.: colher [/o/] verbo vs. colher [/ɔ/] talher) └── SIM │ ▼ [PASSO 3: ANÁLISE SEMÂNTICA] Os significados nos contextos são DIVERGENTES? ├── NÃO ──> MESMA PALAVRA (Repetição Lexical Unívoca) └── SIM ──> CONFIRMA-SE POLISSEMIA / HOMONÍMIA PERFEITA
+```
 
 1. Identificar a falha de precisão terminológica da banca: O termo amplo "Homonímia" engloba imperfeições formais (homófonos heterógrafos e homógrafos heterófonos).
 2. Aplicar o critério de máxima especificidade: Para vocábulos com identidade total de grafia e pronúncia que compartilham raiz lexical (política, história/História), a classificação mais específica e defensável é Polissemia.
@@ -380,10 +273,9 @@ TÉCNICA DAS DUAS SETAS
 - Se houver termos restritores (ex.: "dos pés" para planta; "hoje" para amanhã; "brancas" para pérolas), o contexto neutralizou a polissemia. A frase é clara e isenta de ambiguidade.
 - Se os termos vizinhos forem neutros ou compatíveis com duas acepções (ex.: "está aqui ao lado" para banco; "do tio" para porco), o contexto falhou, gerando ambiguidade viciosa.
 
-TÉCNICA DAS DUAS SETAS
-- [Identificar o Vocábulo-Pivô]
-➔ [PRIMEIRA SETA] [SEGUNDA SETA] Conecta ao Sentido Literal / Conecta ao Sentido Figurado / Atividade do Emissor Institucional Sentido Geral da Expressão (Ex.: Jornal -> notícia QUENTE [recente]) (Ex.: Cafezinho -> QUENTE [temperatura]) (Ex.: Restaurante -> MASSA [culinária]) (Ex.: Atendimento -> MASSA [povo]) (Ex.: Espelho -> REFLETIR [imagem]) (Ex.: Ponderar -> REFLETIR [pensar])
-- ➔ [VALIDAÇÃO: Se ambas as setas forem plenamente coerentes, CONFIRMA-SE O JOGO POLISSÊMICO ATIVADO]
+```text
+TÉCNICA DAS DUAS SETAS │ [Identificar o Vocábulo-Pivô] │ ┌───────────────────────┴───────────────────────┐ ▼ ▼ [PRIMEIRA SETA] [SEGUNDA SETA] Conecta ao Sentido Literal / Conecta ao Sentido Figurado / Atividade do Emissor Institucional Sentido Geral da Expressão (Ex.: Jornal -> notícia QUENTE [recente]) (Ex.: Cafezinho -> QUENTE [temperatura]) (Ex.: Restaurante -> MASSA [culinária]) (Ex.: Atendimento -> MASSA [povo]) (Ex.: Espelho -> REFLETIR [imagem]) (Ex.: Ponderar -> REFLETIR [pensar]) │ │ └───────────────────────┬───────────────────────┘ ▼ [VALIDAÇÃO: Se ambas as setas forem plenamente coerentes, CONFIRMA-SE O JOGO POLISSÊMICO ATIVADO]
+```
 
 1. Isole a preposição para e sublinhe o termo regido imediatamente posterior.
 2. Aplique os testes de substituição:
@@ -408,20 +300,9 @@ TÉCNICA DAS DUAS SETAS
 | Sinonímia | Diferente | Diferente | Equivalente / Igual | Distinta | Casa / Lar |
 | Antonímia | Diferente | Diferente | Contrário / Oposto | Distinta | Presença / Ausência |
 
-➔ POLISSEMIA EM ABSTRATO (DICIONÁRIO)
-- POLISSEMIA ATIVADA NO CONTEXTO FRASAL
-➔ ┤
-
-Efeito discursivo construído na oração.
-
-A frase sustenta dois sentidos ao mesmo tempo
-
-Ocorre em trocadilhos, slogans e metáforas.
-- Ex.: "Não deixe para amanhã o que pode fazer
-Ex.: "Os espelhos fariam bem em refletir um
-
-pouco antes de mostrar imagens" (ativada).
-- ➔
+```text
+┌──────────────────────────────────────────────┬──────────────────────────────────────────────┐ │ POLISSEMIA EM ABSTRATO (DICIONÁRIO) │ POLISSEMIA ATIVADA NO CONTEXTO FRASAL │ ├──────────────────────────────────────────────┼──────────────────────────────────────────────┤ │ Propriedade potencial da palavra no léxico. │ Efeito discursivo construído na oração. │ │ O vocábulo possui múltiplas acepções. │ A frase sustenta dois sentidos ao mesmo tempo│ │ O contexto pode neutralizar a duplicidade. │ Ocorre em trocadilhos, slogans e metáforas. │ │ Ex.: "Não deixe para amanhã o que pode fazer │ Ex.: "Os espelhos fariam bem em refletir um │ │ hoje" (contexto neutralizou a polissemia). │ pouco antes de mostrar imagens" (ativada). │ └──────────────────────────────────────────────┴──────────────────────────────────────────────┘
+```
 
 ---
 

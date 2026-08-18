@@ -8,7 +8,7 @@ export const MODULES_DATA = [
     "title": "Aula 00",
     "subtitle": "Aula 00 · 7 unidades pedagógicas",
     "description": "Forma gráfica, estrutura sonora, sílaba, acentuação, hífen e emprego dos porquês.",
-    "estimatedMinutes": 196,
+    "estimatedMinutes": 178,
     "sections": [
       {
         "title": "Fonética e Fonologia",
@@ -18,7 +18,7 @@ export const MODULES_DATA = [
         "lessonId": "A00",
         "groupId": "G01",
         "canonicalTopicId": "pt:a00:fonetica-e-fonologia",
-        "estimatedMinutes": 22,
+        "estimatedMinutes": 20,
         "searchTerms": [
           "digrafo",
           "digrafos",
@@ -168,7 +168,7 @@ export const MODULES_DATA = [
         "lessonId": "A00",
         "groupId": "G02",
         "canonicalTopicId": "pt:a00:estudo-da-silaba",
-        "estimatedMinutes": 22,
+        "estimatedMinutes": 20,
         "searchTerms": [
           "silaba",
           "vogal",
@@ -318,7 +318,7 @@ export const MODULES_DATA = [
         "lessonId": "A00",
         "groupId": "G03",
         "canonicalTopicId": "pt:a00:estudo-da-silaba",
-        "estimatedMinutes": 33,
+        "estimatedMinutes": 31,
         "searchTerms": [
           "fonemas",
           "digrafo",
@@ -468,7 +468,7 @@ export const MODULES_DATA = [
         "lessonId": "A00",
         "groupId": "G04",
         "canonicalTopicId": "pt:a00:acentuacao-grafica",
-        "estimatedMinutes": 23,
+        "estimatedMinutes": 20,
         "searchTerms": [
           "paroxitonas",
           "silaba",
@@ -618,7 +618,7 @@ export const MODULES_DATA = [
         "lessonId": "A00",
         "groupId": "G05",
         "canonicalTopicId": "pt:a00:emprego-do-hifen",
-        "estimatedMinutes": 27,
+        "estimatedMinutes": 25,
         "searchTerms": [
           "hifen",
           "regra",
@@ -768,7 +768,7 @@ export const MODULES_DATA = [
         "lessonId": "A00",
         "groupId": "G06",
         "canonicalTopicId": "pt:a00:emprego-do-hifen",
-        "estimatedMinutes": 30,
+        "estimatedMinutes": 26,
         "searchTerms": [
           "hifen",
           "ref",
@@ -918,7 +918,7 @@ export const MODULES_DATA = [
         "lessonId": "A00",
         "groupId": "G07",
         "canonicalTopicId": "pt:a00:emprego-dos-porques",
-        "estimatedMinutes": 39,
+        "estimatedMinutes": 36,
         "searchTerms": [
           "porque",
           "conjuncao",
@@ -1080,7 +1080,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "b9eda31b841cfcc7",
+      "buildId": "23090bf61625314a",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -1139,7 +1139,7 @@ export const MODULES_DATA = [
     "title": "Aula 01",
     "subtitle": "Aula 01 · 5 unidades pedagógicas",
     "description": "Classes variáveis e invariáveis analisadas em contexto e em funções sintáticas reais.",
-    "estimatedMinutes": 139,
+    "estimatedMinutes": 133,
     "sections": [
       {
         "title": "Classes Variáveis e Invariáveis",
@@ -1149,7 +1149,7 @@ export const MODULES_DATA = [
         "lessonId": "A01",
         "groupId": "G01",
         "canonicalTopicId": "pt:a01:classes-variaveis-e-invariaveis",
-        "estimatedMinutes": 26,
+        "estimatedMinutes": 25,
         "searchTerms": [
           "locucao",
           "adjetivo",
@@ -1299,7 +1299,7 @@ export const MODULES_DATA = [
         "lessonId": "A01",
         "groupId": "G02",
         "canonicalTopicId": "pt:a01:emprego-das-classes-de-palavras",
-        "estimatedMinutes": 28,
+        "estimatedMinutes": 26,
         "searchTerms": [
           "adjetivo",
           "adverbio",
@@ -1749,7 +1749,7 @@ export const MODULES_DATA = [
         "lessonId": "A01",
         "groupId": "G05",
         "canonicalTopicId": "pt:a01:numerais-e-interjeicoes",
-        "estimatedMinutes": 35,
+        "estimatedMinutes": 32,
         "searchTerms": [
           "numeral",
           "meio",
@@ -1911,7 +1911,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "b9eda31b841cfcc7",
+      "buildId": "23090bf61625314a",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -1963,7 +1963,7 @@ export const MODULES_DATA = [
     "title": "Aula 02",
     "subtitle": "Aula 02 · 5 unidades pedagógicas",
     "description": "Preposições, conjunções e relações lógico-semânticas que organizam orações e textos.",
-    "estimatedMinutes": 158,
+    "estimatedMinutes": 147,
     "sections": [
       {
         "title": "Preposições",
@@ -1973,7 +1973,7 @@ export const MODULES_DATA = [
         "lessonId": "A02",
         "groupId": "G01",
         "canonicalTopicId": "pt:a02:preposicoes",
-        "estimatedMinutes": 35,
+        "estimatedMinutes": 33,
         "searchTerms": [
           "preposicao",
           "locucao",
@@ -2123,7 +2123,7 @@ export const MODULES_DATA = [
         "lessonId": "A02",
         "groupId": "G02",
         "canonicalTopicId": "pt:a02:conjuncoes-coordenativas",
-        "estimatedMinutes": 32,
+        "estimatedMinutes": 29,
         "searchTerms": [
           "nao",
           "conectivos",
@@ -2273,7 +2273,7 @@ export const MODULES_DATA = [
         "lessonId": "A02",
         "groupId": "G03",
         "canonicalTopicId": "pt:a02:conjuncoes-subordinativas-e-desde-que",
-        "estimatedMinutes": 30,
+        "estimatedMinutes": 28,
         "searchTerms": [
           "conjuncoes",
           "subjuntivo",
@@ -2423,7 +2423,7 @@ export const MODULES_DATA = [
         "lessonId": "A02",
         "groupId": "G04",
         "canonicalTopicId": "pt:a02:valores-de-e-e-pois",
-        "estimatedMinutes": 33,
+        "estimatedMinutes": 30,
         "searchTerms": [
           "pois",
           "rightarrow",
@@ -2573,7 +2573,7 @@ export const MODULES_DATA = [
         "lessonId": "A02",
         "groupId": "G05",
         "canonicalTopicId": "pt:a02:valores-de-como-e-miscelaneas",
-        "estimatedMinutes": 28,
+        "estimatedMinutes": 27,
         "searchTerms": [
           "causal",
           "conector",
@@ -2735,7 +2735,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "b9eda31b841cfcc7",
+      "buildId": "23090bf61625314a",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -2787,7 +2787,7 @@ export const MODULES_DATA = [
     "title": "Aula 03",
     "subtitle": "Aula 03 · 8 unidades pedagógicas",
     "description": "Pronomes, referenciação, relativos e colocação pronominal orientados por critérios de prova.",
-    "estimatedMinutes": 307,
+    "estimatedMinutes": 282,
     "sections": [
       {
         "title": "Pronomes Pessoais",
@@ -2797,7 +2797,7 @@ export const MODULES_DATA = [
         "lessonId": "A03",
         "groupId": "G01",
         "canonicalTopicId": "pt:a03:pronomes-pessoais",
-        "estimatedMinutes": 41,
+        "estimatedMinutes": 36,
         "searchTerms": [
           "verbo",
           "pronomes",
@@ -2947,7 +2947,7 @@ export const MODULES_DATA = [
         "lessonId": "A03",
         "groupId": "G02",
         "canonicalTopicId": "pt:a03:pronomes-pessoais",
-        "estimatedMinutes": 42,
+        "estimatedMinutes": 39,
         "searchTerms": [
           "verbo",
           "lhe",
@@ -3097,7 +3097,7 @@ export const MODULES_DATA = [
         "lessonId": "A03",
         "groupId": "G03",
         "canonicalTopicId": "pt:a03:possessivos-indefinidos-e-interrogativos",
-        "estimatedMinutes": 42,
+        "estimatedMinutes": 39,
         "searchTerms": [
           "pronome",
           "substantivo",
@@ -3397,7 +3397,7 @@ export const MODULES_DATA = [
         "lessonId": "A03",
         "groupId": "G05",
         "canonicalTopicId": "pt:a03:emprego-dos-pronomes-relativos",
-        "estimatedMinutes": 47,
+        "estimatedMinutes": 41,
         "searchTerms": [
           "qual",
           "cujo",
@@ -3547,7 +3547,7 @@ export const MODULES_DATA = [
         "lessonId": "A03",
         "groupId": "G06",
         "canonicalTopicId": "pt:a03:pronomes-relativos-regencia-e-reescrita",
-        "estimatedMinutes": 36,
+        "estimatedMinutes": 33,
         "searchTerms": [
           "relativo",
           "preposicao",
@@ -3697,7 +3697,7 @@ export const MODULES_DATA = [
         "lessonId": "A03",
         "groupId": "G07",
         "canonicalTopicId": "pt:a03:colocacao-dos-pronomes-atonos",
-        "estimatedMinutes": 30,
+        "estimatedMinutes": 27,
         "searchTerms": [
           "enclise",
           "proclise",
@@ -3847,7 +3847,7 @@ export const MODULES_DATA = [
         "lessonId": "A03",
         "groupId": "G08",
         "canonicalTopicId": "pt:a03:colocacao-pronominal",
-        "estimatedMinutes": 33,
+        "estimatedMinutes": 31,
         "searchTerms": [
           "proclise",
           "enclise",
@@ -4009,7 +4009,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "b9eda31b841cfcc7",
+      "buildId": "23090bf61625314a",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -4068,7 +4068,7 @@ export const MODULES_DATA = [
     "title": "Aula 04",
     "subtitle": "Aula 04 · 9 unidades pedagógicas",
     "description": "Tempos, modos, formas nominais, conjugação e valores dos verbos.",
-    "estimatedMinutes": 306,
+    "estimatedMinutes": 283,
     "sections": [
       {
         "title": "Tempos e Modos Verbais",
@@ -4078,7 +4078,7 @@ export const MODULES_DATA = [
         "lessonId": "A04",
         "groupId": "G01",
         "canonicalTopicId": "pt:a04:tempos-e-modos-verbais",
-        "estimatedMinutes": 34,
+        "estimatedMinutes": 31,
         "searchTerms": [
           "subjuntivo",
           "voce",
@@ -4228,7 +4228,7 @@ export const MODULES_DATA = [
         "lessonId": "A04",
         "groupId": "G02",
         "canonicalTopicId": "pt:a04:semantica-dos-tempos-e-modos-verbais",
-        "estimatedMinutes": 37,
+        "estimatedMinutes": 35,
         "searchTerms": [
           "preterito",
           "presente",
@@ -4378,7 +4378,7 @@ export const MODULES_DATA = [
         "lessonId": "A04",
         "groupId": "G03",
         "canonicalTopicId": "pt:a04:desinencias-verbais",
-        "estimatedMinutes": 31,
+        "estimatedMinutes": 29,
         "searchTerms": [
           "dmt",
           "text",
@@ -4528,7 +4528,7 @@ export const MODULES_DATA = [
         "lessonId": "A04",
         "groupId": "G04",
         "canonicalTopicId": "pt:a04:formas-nominais-do-verbo",
-        "estimatedMinutes": 37,
+        "estimatedMinutes": 33,
         "searchTerms": [
           "participio",
           "gerundio",
@@ -4678,7 +4678,7 @@ export const MODULES_DATA = [
         "lessonId": "A04",
         "groupId": "G05",
         "canonicalTopicId": "pt:a04:verbos-irregulares-lideres-e-bons-amigos",
-        "estimatedMinutes": 35,
+        "estimatedMinutes": 31,
         "searchTerms": [
           "vir",
           "futuro",
@@ -4828,7 +4828,7 @@ export const MODULES_DATA = [
         "lessonId": "A04",
         "groupId": "G06",
         "canonicalTopicId": "pt:a04:verbos-irregulares",
-        "estimatedMinutes": 30,
+        "estimatedMinutes": 28,
         "searchTerms": [
           "vir",
           "rightarrow",
@@ -4978,7 +4978,7 @@ export const MODULES_DATA = [
         "lessonId": "A04",
         "groupId": "G07",
         "canonicalTopicId": "pt:a04:falsos-amigos-e-dificil-conjugacao",
-        "estimatedMinutes": 33,
+        "estimatedMinutes": 31,
         "searchTerms": [
           "pres",
           "subj",
@@ -5128,7 +5128,7 @@ export const MODULES_DATA = [
         "lessonId": "A04",
         "groupId": "G08",
         "canonicalTopicId": "pt:a04:verbos-em-ear-e-iar-e-defectivos",
-        "estimatedMinutes": 36,
+        "estimatedMinutes": 35,
         "searchTerms": [
           "verbos",
           "verbo",
@@ -5278,7 +5278,7 @@ export const MODULES_DATA = [
         "lessonId": "A04",
         "groupId": "G09",
         "canonicalTopicId": "pt:a04:correlacao-de-tempos-verbais",
-        "estimatedMinutes": 33,
+        "estimatedMinutes": 30,
         "searchTerms": [
           "presente",
           "preterito",
@@ -5440,7 +5440,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "b9eda31b841cfcc7",
+      "buildId": "23090bf61625314a",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -5499,7 +5499,7 @@ export const MODULES_DATA = [
     "title": "Aula 05",
     "subtitle": "Aula 05 · 12 unidades pedagógicas",
     "description": "Transitividade, correlação, vozes verbais, partícula se e estruturas de predicação.",
-    "estimatedMinutes": 415,
+    "estimatedMinutes": 386,
     "sections": [
       {
         "title": "Transitividade Verbal - Fundamentos",
@@ -5509,7 +5509,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G01",
         "canonicalTopicId": "pt:a05:transitividade-verbal",
-        "estimatedMinutes": 42,
+        "estimatedMinutes": 40,
         "searchTerms": [
           "verbo",
           "mantra",
@@ -5659,7 +5659,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G02",
         "canonicalTopicId": "pt:a05:transitividade-verbal",
-        "estimatedMinutes": 24,
+        "estimatedMinutes": 23,
         "searchTerms": [
           "verbo",
           "sujeito",
@@ -5809,7 +5809,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G03",
         "canonicalTopicId": "pt:a05:complementos-e-objetos-pleonasticos",
-        "estimatedMinutes": 29,
+        "estimatedMinutes": 25,
         "searchTerms": [
           "pronome",
           "objeto",
@@ -5959,7 +5959,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G04",
         "canonicalTopicId": "pt:a05:vozes-verbais",
-        "estimatedMinutes": 26,
+        "estimatedMinutes": 24,
         "searchTerms": [
           "passiva",
           "voz",
@@ -6109,7 +6109,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G05",
         "canonicalTopicId": "pt:a05:vozes-verbais",
-        "estimatedMinutes": 53,
+        "estimatedMinutes": 49,
         "searchTerms": [
           "sujeito",
           "passiva",
@@ -6259,7 +6259,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G06",
         "canonicalTopicId": "pt:a05:reescritura-de-vozes",
-        "estimatedMinutes": 36,
+        "estimatedMinutes": 33,
         "searchTerms": [
           "passiva",
           "verbo",
@@ -6409,7 +6409,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G07",
         "canonicalTopicId": "pt:a05:reescritura-de-vozes-e",
-        "estimatedMinutes": 30,
+        "estimatedMinutes": 27,
         "searchTerms": [
           "verbo",
           "sujeito",
@@ -6709,7 +6709,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G09",
         "canonicalTopicId": "pt:a05:reescritura-de-vozes",
-        "estimatedMinutes": 25,
+        "estimatedMinutes": 21,
         "searchTerms": [
           "sujeito",
           "verbo",
@@ -6859,7 +6859,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G10",
         "canonicalTopicId": "pt:a05:verbos-impessoais-e-auxiliares",
-        "estimatedMinutes": 37,
+        "estimatedMinutes": 36,
         "searchTerms": [
           "verbo",
           "sujeito",
@@ -7009,7 +7009,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G11",
         "canonicalTopicId": "pt:a05:verbos-impessoais-e-auxiliares",
-        "estimatedMinutes": 39,
+        "estimatedMinutes": 37,
         "searchTerms": [
           "sujeito",
           "verbo",
@@ -7159,7 +7159,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G12",
         "canonicalTopicId": "pt:a05:verbos-pronominais",
-        "estimatedMinutes": 32,
+        "estimatedMinutes": 29,
         "searchTerms": [
           "pronome",
           "verbo",
@@ -7321,7 +7321,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "b9eda31b841cfcc7",
+      "buildId": "23090bf61625314a",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -7380,7 +7380,7 @@ export const MODULES_DATA = [
     "title": "Aula 06",
     "subtitle": "Aula 06 · 8 unidades pedagógicas",
     "description": "Reconstrução morfossintática e identificação segura dos termos da oração.",
-    "estimatedMinutes": 321,
+    "estimatedMinutes": 303,
     "sections": [
       {
         "title": "Análise Sintática - Conceitos Iniciais",
@@ -7390,7 +7390,7 @@ export const MODULES_DATA = [
         "lessonId": "A06",
         "groupId": "G01",
         "canonicalTopicId": "pt:a06:analise-sintatica-conceitos-iniciais",
-        "estimatedMinutes": 62,
+        "estimatedMinutes": 59,
         "searchTerms": [
           "sujeito",
           "verbo",
@@ -7540,7 +7540,7 @@ export const MODULES_DATA = [
         "lessonId": "A06",
         "groupId": "G02",
         "canonicalTopicId": "pt:a06:tipos-de-sujeito",
-        "estimatedMinutes": 38,
+        "estimatedMinutes": 36,
         "searchTerms": [
           "sujeito",
           "verbo",
@@ -7690,7 +7690,7 @@ export const MODULES_DATA = [
         "lessonId": "A06",
         "groupId": "G03",
         "canonicalTopicId": "pt:a06:predicacao-verbal-e-tipos-de-predicado",
-        "estimatedMinutes": 49,
+        "estimatedMinutes": 45,
         "searchTerms": [
           "verbo",
           "predicado",
@@ -7840,7 +7840,7 @@ export const MODULES_DATA = [
         "lessonId": "A06",
         "groupId": "G04",
         "canonicalTopicId": "pt:a06:objetos-e-transitividade-verbal",
-        "estimatedMinutes": 46,
+        "estimatedMinutes": 44,
         "searchTerms": [
           "verbo",
           "sujeito",
@@ -7990,7 +7990,7 @@ export const MODULES_DATA = [
         "lessonId": "A06",
         "groupId": "G05",
         "canonicalTopicId": "pt:a06:complemento-nominal-e-agente-da-passiva",
-        "estimatedMinutes": 30,
+        "estimatedMinutes": 29,
         "searchTerms": [
           "passiva",
           "agente",
@@ -8140,7 +8140,7 @@ export const MODULES_DATA = [
         "lessonId": "A06",
         "groupId": "G06",
         "canonicalTopicId": "pt:a06:vocativo-e-aposto",
-        "estimatedMinutes": 29,
+        "estimatedMinutes": 28,
         "searchTerms": [
           "aposto",
           "vocativo",
@@ -8290,7 +8290,7 @@ export const MODULES_DATA = [
         "lessonId": "A06",
         "groupId": "G07",
         "canonicalTopicId": "pt:a06:adjuntos-adverbial-e-adnominal",
-        "estimatedMinutes": 36,
+        "estimatedMinutes": 32,
         "searchTerms": [
           "adverbial",
           "adjunto",
@@ -8440,7 +8440,7 @@ export const MODULES_DATA = [
         "lessonId": "A06",
         "groupId": "G08",
         "canonicalTopicId": "pt:a06:predicativos-versus-adjunto-adnominal",
-        "estimatedMinutes": 31,
+        "estimatedMinutes": 30,
         "searchTerms": [
           "predicativo",
           "objeto",
@@ -8602,7 +8602,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "b9eda31b841cfcc7",
+      "buildId": "23090bf61625314a",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -8661,7 +8661,7 @@ export const MODULES_DATA = [
     "title": "Aula 07",
     "subtitle": "Aula 07 · 10 unidades pedagógicas",
     "description": "Coordenação, subordinação, funções de que e se e relações no período composto.",
-    "estimatedMinutes": 378,
+    "estimatedMinutes": 359,
     "sections": [
       {
         "title": "Período Composto - Fundamentos",
@@ -8671,7 +8671,7 @@ export const MODULES_DATA = [
         "lessonId": "A07",
         "groupId": "G01",
         "canonicalTopicId": "pt:a07:periodo-composto",
-        "estimatedMinutes": 48,
+        "estimatedMinutes": 45,
         "searchTerms": [
           "oracao",
           "periodo",
@@ -8821,7 +8821,7 @@ export const MODULES_DATA = [
         "lessonId": "A07",
         "groupId": "G02",
         "canonicalTopicId": "pt:a07:oracoes-coordenadas-sindeticas",
-        "estimatedMinutes": 55,
+        "estimatedMinutes": 50,
         "searchTerms": [
           "oracao",
           "conjuncao",
@@ -8971,7 +8971,7 @@ export const MODULES_DATA = [
         "lessonId": "A07",
         "groupId": "G03",
         "canonicalTopicId": "pt:a07:subordinadas-substantivas-e-adjetivas",
-        "estimatedMinutes": 36,
+        "estimatedMinutes": 34,
         "searchTerms": [
           "oracao",
           "preposicao",
@@ -9121,7 +9121,7 @@ export const MODULES_DATA = [
         "lessonId": "A07",
         "groupId": "G04",
         "canonicalTopicId": "pt:a07:oracoes-subordinadas-adverbiais",
-        "estimatedMinutes": 30,
+        "estimatedMinutes": 29,
         "searchTerms": [
           "oracao",
           "oracoes",
@@ -9271,7 +9271,7 @@ export const MODULES_DATA = [
         "lessonId": "A07",
         "groupId": "G05",
         "canonicalTopicId": "pt:a07:oracoes-reduzidas",
-        "estimatedMinutes": 36,
+        "estimatedMinutes": 34,
         "searchTerms": [
           "oracao",
           "reduzida",
@@ -9421,7 +9421,7 @@ export const MODULES_DATA = [
         "lessonId": "A07",
         "groupId": "G06",
         "canonicalTopicId": "pt:a07:oracoes-reduzidas",
-        "estimatedMinutes": 44,
+        "estimatedMinutes": 43,
         "searchTerms": [
           "infinitivo",
           "verbo",
@@ -9571,7 +9571,7 @@ export const MODULES_DATA = [
         "lessonId": "A07",
         "groupId": "G07",
         "canonicalTopicId": "pt:a07:oracoes-reduzidas-e-reescrita",
-        "estimatedMinutes": 31,
+        "estimatedMinutes": 30,
         "searchTerms": [
           "oracao",
           "reduzida",
@@ -9721,7 +9721,7 @@ export const MODULES_DATA = [
         "lessonId": "A07",
         "groupId": "G08",
         "canonicalTopicId": "pt:a07:desenvolvimento-das-oracoes-reduzidas",
-        "estimatedMinutes": 41,
+        "estimatedMinutes": 39,
         "searchTerms": [
           "oracao",
           "verbo",
@@ -9871,7 +9871,7 @@ export const MODULES_DATA = [
         "lessonId": "A07",
         "groupId": "G09",
         "canonicalTopicId": "pt:a07:palavra-que",
-        "estimatedMinutes": 37,
+        "estimatedMinutes": 35,
         "searchTerms": [
           "pronome",
           "conjuncao",
@@ -10183,7 +10183,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "b9eda31b841cfcc7",
+      "buildId": "23090bf61625314a",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -10242,7 +10242,7 @@ export const MODULES_DATA = [
     "title": "Aula 08",
     "subtitle": "Aula 08 · 6 unidades pedagógicas",
     "description": "Pontuação decidida pela sintaxe, pelo deslocamento, pelo escopo e pelo efeito de sentido.",
-    "estimatedMinutes": 220,
+    "estimatedMinutes": 202,
     "sections": [
       {
         "title": "Sinais de Pontuação - Visão Geral",
@@ -10252,7 +10252,7 @@ export const MODULES_DATA = [
         "lessonId": "A08",
         "groupId": "G01",
         "canonicalTopicId": "pt:a08:sinais-de-pontuacao-visao-geral",
-        "estimatedMinutes": 27,
+        "estimatedMinutes": 25,
         "searchTerms": [
           "aposto",
           "virgula",
@@ -10402,7 +10402,7 @@ export const MODULES_DATA = [
         "lessonId": "A08",
         "groupId": "G02",
         "canonicalTopicId": "pt:a08:uso-da-virgula",
-        "estimatedMinutes": 31,
+        "estimatedMinutes": 28,
         "searchTerms": [
           "virgula",
           "rightarrow",
@@ -10552,7 +10552,7 @@ export const MODULES_DATA = [
         "lessonId": "A08",
         "groupId": "G03",
         "canonicalTopicId": "pt:a08:uso-da-virgula",
-        "estimatedMinutes": 46,
+        "estimatedMinutes": 41,
         "searchTerms": [
           "virgula",
           "obrigatoria",
@@ -10702,7 +10702,7 @@ export const MODULES_DATA = [
         "lessonId": "A08",
         "groupId": "G04",
         "canonicalTopicId": "pt:a08:ponto-e-virgula-dois-pontos-e-aspas",
-        "estimatedMinutes": 39,
+        "estimatedMinutes": 35,
         "searchTerms": [
           "ponto",
           "virgula",
@@ -10852,7 +10852,7 @@ export const MODULES_DATA = [
         "lessonId": "A08",
         "groupId": "G05",
         "canonicalTopicId": "pt:a08:travessao-e-parenteses",
-        "estimatedMinutes": 35,
+        "estimatedMinutes": 33,
         "searchTerms": [
           "travessao",
           "citacao",
@@ -11002,7 +11002,7 @@ export const MODULES_DATA = [
         "lessonId": "A08",
         "groupId": "G06",
         "canonicalTopicId": "pt:a08:pontuacao-e-reescrita",
-        "estimatedMinutes": 42,
+        "estimatedMinutes": 40,
         "searchTerms": [
           "oracao",
           "virgula",
@@ -11164,7 +11164,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "b9eda31b841cfcc7",
+      "buildId": "23090bf61625314a",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -11223,7 +11223,7 @@ export const MODULES_DATA = [
     "title": "Aula 09",
     "subtitle": "Aula 09 · 8 unidades pedagógicas",
     "description": "Concordância verbal e nominal com procedimentos, casos especiais e armadilhas recorrentes.",
-    "estimatedMinutes": 307,
+    "estimatedMinutes": 285,
     "sections": [
       {
         "title": "Concordância Verbal - Fundamentos",
@@ -11233,7 +11233,7 @@ export const MODULES_DATA = [
         "lessonId": "A09",
         "groupId": "G01",
         "canonicalTopicId": "pt:a09:concordancia-verbal",
-        "estimatedMinutes": 35,
+        "estimatedMinutes": 31,
         "searchTerms": [
           "verbo",
           "sujeito",
@@ -11383,7 +11383,7 @@ export const MODULES_DATA = [
         "lessonId": "A09",
         "groupId": "G02",
         "canonicalTopicId": "pt:a09:concordancia-verbal",
-        "estimatedMinutes": 50,
+        "estimatedMinutes": 48,
         "searchTerms": [
           "sujeito",
           "verbo",
@@ -11533,7 +11533,7 @@ export const MODULES_DATA = [
         "lessonId": "A09",
         "groupId": "G03",
         "canonicalTopicId": "pt:a09:concordancia-verbal",
-        "estimatedMinutes": 35,
+        "estimatedMinutes": 32,
         "searchTerms": [
           "verbo",
           "sujeito",
@@ -11683,7 +11683,7 @@ export const MODULES_DATA = [
         "lessonId": "A09",
         "groupId": "G04",
         "canonicalTopicId": "pt:a09:concordancia-verbal-casos-especiais",
-        "estimatedMinutes": 42,
+        "estimatedMinutes": 39,
         "searchTerms": [
           "sujeito",
           "verbo",
@@ -11833,7 +11833,7 @@ export const MODULES_DATA = [
         "lessonId": "A09",
         "groupId": "G05",
         "canonicalTopicId": "pt:a09:concordancia-nominal",
-        "estimatedMinutes": 26,
+        "estimatedMinutes": 24,
         "searchTerms": [
           "concordancia",
           "adjetivo",
@@ -11983,7 +11983,7 @@ export const MODULES_DATA = [
         "lessonId": "A09",
         "groupId": "G06",
         "canonicalTopicId": "pt:a09:concordancia-nominal",
-        "estimatedMinutes": 41,
+        "estimatedMinutes": 39,
         "searchTerms": [
           "concordancia",
           "sujeito",
@@ -12133,7 +12133,7 @@ export const MODULES_DATA = [
         "lessonId": "A09",
         "groupId": "G07",
         "canonicalTopicId": "pt:a09:concordancia-nominal",
-        "estimatedMinutes": 36,
+        "estimatedMinutes": 33,
         "searchTerms": [
           "text",
           "invariavel",
@@ -12283,7 +12283,7 @@ export const MODULES_DATA = [
         "lessonId": "A09",
         "groupId": "G08",
         "canonicalTopicId": "pt:a09:concordancia-nominal-e",
-        "estimatedMinutes": 42,
+        "estimatedMinutes": 39,
         "searchTerms": [
           "adjetivo",
           "invariavel",
@@ -12445,7 +12445,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "b9eda31b841cfcc7",
+      "buildId": "23090bf61625314a",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -12504,7 +12504,7 @@ export const MODULES_DATA = [
     "title": "Aula 10",
     "subtitle": "Aula 10 · 7 unidades pedagógicas",
     "description": "Regência verbal e nominal e crase analisadas por acepção, estrutura e contexto.",
-    "estimatedMinutes": 372,
+    "estimatedMinutes": 355,
     "sections": [
       {
         "title": "Regência Verbal - Fundamentos",
@@ -12514,7 +12514,7 @@ export const MODULES_DATA = [
         "lessonId": "A10",
         "groupId": "G01",
         "canonicalTopicId": "pt:a10:regencia-verbal",
-        "estimatedMinutes": 36,
+        "estimatedMinutes": 35,
         "searchTerms": [
           "vti",
           "vtd",
@@ -12664,7 +12664,7 @@ export const MODULES_DATA = [
         "lessonId": "A10",
         "groupId": "G02",
         "canonicalTopicId": "pt:a10:regencia-verbal",
-        "estimatedMinutes": 47,
+        "estimatedMinutes": 45,
         "searchTerms": [
           "rightarrow",
           "preposicao",
@@ -12814,7 +12814,7 @@ export const MODULES_DATA = [
         "lessonId": "A10",
         "groupId": "G03",
         "canonicalTopicId": "pt:a10:regencia-e-pronomes-relativos",
-        "estimatedMinutes": 37,
+        "estimatedMinutes": 35,
         "searchTerms": [
           "verbo",
           "preposicao",
@@ -12964,7 +12964,7 @@ export const MODULES_DATA = [
         "lessonId": "A10",
         "groupId": "G04",
         "canonicalTopicId": "pt:a10:regencia-e-pronomes-pessoais",
-        "estimatedMinutes": 44,
+        "estimatedMinutes": 41,
         "searchTerms": [
           "lhe",
           "regencia",
@@ -13114,7 +13114,7 @@ export const MODULES_DATA = [
         "lessonId": "A10",
         "groupId": "G05",
         "canonicalTopicId": "pt:a10:regencia-nominal",
-        "estimatedMinutes": 31,
+        "estimatedMinutes": 30,
         "searchTerms": [
           "regencia",
           "nominal",
@@ -13264,7 +13264,7 @@ export const MODULES_DATA = [
         "lessonId": "A10",
         "groupId": "G06",
         "canonicalTopicId": "pt:a10:crase",
-        "estimatedMinutes": 93,
+        "estimatedMinutes": 88,
         "searchTerms": [
           "crase",
           "preposicao",
@@ -13414,7 +13414,7 @@ export const MODULES_DATA = [
         "lessonId": "A10",
         "groupId": "G07",
         "canonicalTopicId": "pt:a10:crase-e",
-        "estimatedMinutes": 84,
+        "estimatedMinutes": 81,
         "searchTerms": [
           "crase",
           "acento",
@@ -13576,7 +13576,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "b9eda31b841cfcc7",
+      "buildId": "23090bf61625314a",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -13635,7 +13635,7 @@ export const MODULES_DATA = [
     "title": "Aula 11",
     "subtitle": "Aula 11 · 3 unidades pedagógicas",
     "description": "Coesão sequencial e referencial, coerência e reescrita com preservação de relações.",
-    "estimatedMinutes": 104,
+    "estimatedMinutes": 102,
     "sections": [
       {
         "title": "Coesão Textual - Visão Geral",
@@ -13945,7 +13945,7 @@ export const MODULES_DATA = [
         "lessonId": "A11",
         "groupId": "G03",
         "canonicalTopicId": "pt:a11:coesao-referencial",
-        "estimatedMinutes": 36,
+        "estimatedMinutes": 34,
         "searchTerms": [
           "coesao",
           "texto",
@@ -14107,7 +14107,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "b9eda31b841cfcc7",
+      "buildId": "23090bf61625314a",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -14145,7 +14145,7 @@ export const MODULES_DATA = [
     "title": "Aula 12",
     "subtitle": "Aula 12 · 7 unidades pedagógicas",
     "description": "Sentido, relações lexicais, ambiguidade, polissemia e figuras de linguagem.",
-    "estimatedMinutes": 276,
+    "estimatedMinutes": 257,
     "sections": [
       {
         "title": "Sentido Próprio e Figurado",
@@ -14155,7 +14155,7 @@ export const MODULES_DATA = [
         "lessonId": "A12",
         "groupId": "G01",
         "canonicalTopicId": "pt:a12:sentido-proprio-e-figurado",
-        "estimatedMinutes": 36,
+        "estimatedMinutes": 34,
         "searchTerms": [
           "sentido",
           "logico",
@@ -14305,7 +14305,7 @@ export const MODULES_DATA = [
         "lessonId": "A12",
         "groupId": "G02",
         "canonicalTopicId": "pt:a12:sinonimos-e-antonimos",
-        "estimatedMinutes": 38,
+        "estimatedMinutes": 35,
         "searchTerms": [
           "text",
           "igual",
@@ -14455,7 +14455,7 @@ export const MODULES_DATA = [
         "lessonId": "A12",
         "groupId": "G03",
         "canonicalTopicId": "pt:a12:hiperonimia-e-hiponimia",
-        "estimatedMinutes": 43,
+        "estimatedMinutes": 40,
         "searchTerms": [
           "hiperonimo",
           "aponta",
@@ -14605,7 +14605,7 @@ export const MODULES_DATA = [
         "lessonId": "A12",
         "groupId": "G04",
         "canonicalTopicId": "pt:a12:polissemia",
-        "estimatedMinutes": 39,
+        "estimatedMinutes": 34,
         "searchTerms": [
           "polissemia",
           "text",
@@ -14755,7 +14755,7 @@ export const MODULES_DATA = [
         "lessonId": "A12",
         "groupId": "G05",
         "canonicalTopicId": "pt:a12:ambiguidade-homonimos-e-paronimos",
-        "estimatedMinutes": 38,
+        "estimatedMinutes": 34,
         "searchTerms": [
           "ambiguidade",
           "igual",
@@ -14905,7 +14905,7 @@ export const MODULES_DATA = [
         "lessonId": "A12",
         "groupId": "G06",
         "canonicalTopicId": "pt:a12:figuras-de-linguagem",
-        "estimatedMinutes": 43,
+        "estimatedMinutes": 41,
         "searchTerms": [
           "figuras",
           "linguagem",
@@ -15217,7 +15217,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "b9eda31b841cfcc7",
+      "buildId": "23090bf61625314a",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -15276,7 +15276,7 @@ export const MODULES_DATA = [
     "title": "Compreensão, Interpretação e Tipologia Textual",
     "subtitle": "Aula 13 · 7 unidades pedagógicas",
     "description": "Recorrência, inferência, tipologias textuais, argumentação e funções da linguagem.",
-    "estimatedMinutes": 204,
+    "estimatedMinutes": 188,
     "sections": [
       {
         "title": "Recorrência",
@@ -15286,7 +15286,7 @@ export const MODULES_DATA = [
         "lessonId": "A13",
         "groupId": "G01",
         "canonicalTopicId": "pt:a13:recorrencia",
-        "estimatedMinutes": 32,
+        "estimatedMinutes": 28,
         "searchTerms": [
           "recorrencia",
           "texto",
@@ -15436,7 +15436,7 @@ export const MODULES_DATA = [
         "lessonId": "A13",
         "groupId": "G02",
         "canonicalTopicId": "pt:a13:inferencia",
-        "estimatedMinutes": 35,
+        "estimatedMinutes": 31,
         "searchTerms": [
           "inferencia",
           "texto",
@@ -15586,7 +15586,7 @@ export const MODULES_DATA = [
         "lessonId": "A13",
         "groupId": "G03",
         "canonicalTopicId": "pt:a13:narracao-e-descricao",
-        "estimatedMinutes": 30,
+        "estimatedMinutes": 28,
         "searchTerms": [
           "presente",
           "descricao",
@@ -15736,7 +15736,7 @@ export const MODULES_DATA = [
         "lessonId": "A13",
         "groupId": "G04",
         "canonicalTopicId": "pt:a13:narracao-e-dissertacao-expositiva",
-        "estimatedMinutes": 23,
+        "estimatedMinutes": 22,
         "searchTerms": [
           "dissertacao",
           "narracao",
@@ -15886,7 +15886,7 @@ export const MODULES_DATA = [
         "lessonId": "A13",
         "groupId": "G05",
         "canonicalTopicId": "pt:a13:dissertacao-expositiva-e-argumentativa",
-        "estimatedMinutes": 22,
+        "estimatedMinutes": 20,
         "searchTerms": [
           "dissertacao",
           "texto",
@@ -16036,7 +16036,7 @@ export const MODULES_DATA = [
         "lessonId": "A13",
         "groupId": "G06",
         "canonicalTopicId": "pt:a13:miscelanea-de-interpretacao",
-        "estimatedMinutes": 23,
+        "estimatedMinutes": 22,
         "searchTerms": [
           "dissertacao",
           "textos",
@@ -16186,7 +16186,7 @@ export const MODULES_DATA = [
         "lessonId": "A13",
         "groupId": "G07",
         "canonicalTopicId": "pt:a13:funcoes-da-linguagem",
-        "estimatedMinutes": 39,
+        "estimatedMinutes": 37,
         "searchTerms": [
           "funcao",
           "rightarrow",
@@ -16348,7 +16348,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "b9eda31b841cfcc7",
+      "buildId": "23090bf61625314a",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -18264,7 +18264,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "b9eda31b841cfcc7",
+      "buildId": "23090bf61625314a",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "corpus-a14-expert-curated",
       "reviewedAt": "2026-08-17",
@@ -18371,7 +18371,7 @@ export const MODULES_DATA = [
         "commentary": "Em Com-pra-va, palavra paroxítona, temos encontro consonantal PR e dígrafo vocálico em OM. O dígrafo tem duas letras e representa só um fonema. Por isso, a palavra tem 8 letras e só 7 fonemas. Gabarito letra C. Dígrafo Nasal X Ditongo Nasal O dígrafo é a união de duas letras que formam um único som (UM SOM). Ocorre com M ou N após uma vogal antes de outra sílaba, em que o M ou N apenas nasaliza a vogal, funcionando exatamente como um til: ẽ - ENtre - O EN representa um único som, o som da vogal nasal ẽ ĩ - IMpor - O IM representa um único som, o som da vogal nasal ĩ ã - AMplo - O AM representa um único som, o som da vogal nasal ã O ditongo tem dois sons vocálicos, de uma vogal (+forte) e uma semivogal (+fraco) Então, o ditongo nasal tem DOIS SONS de vogal. Ocorre no final da palavra: ChegAM: chegÃU Portanto: Dígrafo, um som nasal (UM SOM): ã - AMplo X Ditongo, DOIS SONS: ChegAM: chegÃU DÍGRAFO NASAL DITONGO NASAL Duas letras que representam som vocálico nasal Duas letras (am / em) que representam dois sons, portanto dois fonemas. Ocorrem no final das palavras AM Ampola Falam Batem Cantam Alguém Cem Ninguém Ontem EM Emprego IM Limpeza OM Ombro UM Jejum AN Canto EN Venda IN Mingau ON Ontem UN Mundo",
         "origin": "official",
         "officialQuestionId": "A00:aula00.q0007",
-        "questionSetVersion": "editorial-simulado-b9eda31b841cfcc7",
+        "questionSetVersion": "editorial-simulado-23090bf61625314a",
         "moduleId": "mod0",
         "conceptIds": [
           "pt.phonology.ditongo",
@@ -18396,7 +18396,7 @@ export const MODULES_DATA = [
         "commentary": "O diminutivo, aqui formado pelo sufixo “-inha”, pode ter valor afetivo, subjetivo, carinhoso. Esse uso é\nperfeitamente coerente com a linguagem familiar e cheia de afeto usada pela avó para falar com seu neto\nnuma carta. Questão correta.\n\n\n\n\n\nSINTAGMA: Expressão composta por uma ou mais palavras que funciona como uma unidade sintática\nindivisível, em que existe um núcleo. As palavras não podem ser separadas, são ligadas sintaticamente.\nPodemos ter sintagmas nominais, verbais, adjetivais. O sintagma relevante de fato é o \"nominal\".\n\n\n\n\n\n\n\n\nSINTAGMA NOMINAL: Expressão composta por um núcleo nominal, isto é, estrutura em que a palavra\nprincipal é um nome, normalmente um substantivo. Os exemplos mais clássicos são um núcleo substantivo,\nseguido de determinantes (artigo, pronome, numeral, adjetivo ou locução adjetiva)\n\nEx: [O homem previdente] cuida do futuro.\n\nEx: [Certas pessoas] nunca aprendem.\n\nEx: [Os meus dois amigos mineiros de longa data] chegaram hoje.\n\n\nPapel Sintático do Substantivo\n\nA partir de agora, veremos como a “classe” da palavra e “função sintática” se comunicam. Veremos,\ninclusive, que são indissociáveis.\nPara isso, será necessário fazer referência a algumas funções sintáticas. Se você por acaso não recordar\nem absoluto dessas funções, não se preocupe: aprofundaremos esse ponto em “Sintaxe”. Vejamos...\n\n\nPara identificar o substantivo, devemos saber: quando tivermos uma função sintática nominal (centrada\nem um nome), como sujeito, objeto, adjunto adnominal e complemento nominal, o substantivo será\nnormalmente o núcleo dessa função, o elemento central e principal, e será modificado por termos\n“satélites” (orbitam, ficam “em volta”), como artigos, numerais, adjetivos e pronomes.\nMuito gramatiquês junto?! Vamos ver isso num exemplo:\n\n\n\nOs seus cinco patinhos amarelos nadam na lagoa\nSujeito Adj. Adv.\n\n\nVejamos as classes de cada uma das palavras do exemplo acima:\nOs: artigo, variável, se refere ao substantivo \"patinhos\" e concorda com ele em gênero (masculino) e\nnúmero (plural).\nSeus: pronome possessivo, variável, se refere ao substantivo \"patinhos\" e concorda com ele em gênero\n(masculino) e número (plural).\nCinco: numeral adjetivo, variável, também se refere ao substantivo \"patinhos\".\nPatinhos: substantivo, núcleo da função sintática \"sujeito\" e é responsável pela concordância das\nclasses que se referem a ele.\nAmarelos: adjetivo, variável, se refere ao substantivo \"patinhos\" e concorda com ele em gênero\n(masculino) e número (plural).\nNadam: verbo, variável, se refere ao substantivo \"patinhos\" e concorda com ele em terceira pessoa\n(eles) e número (plural).\nNa lagoa: locução adverbial de lugar. Exprime circunstância e equivale a um advérbio (classe), que é\ninvariável e tem função sintática de adjunto adverbial de lugar.\n\n\n\n\n\n\n\nVejamos agora um segundo exemplo\n\n\n“O1 meu2 violão3 novo4 quebrou”.\n\n\nQual termo dá nome ao objeto? A resposta deverá ser: Violão.\nSe eu perguntar: “o que quebrou?”, a resposta será O1 meu2 violão3 novo4. Dessa expressão inteira, a\npalavra central é “violão”, que é especificada por termos acessórios (o, meu, novo). Por isso, “violão” é\no núcleo do sujeito.\n\n\n\n\n\nO substantivo é classe nominal variável e ocupa sempre o núcleo de qualquer função sintática\nnominal.\n\nNa expressão: “tenho medo de bruxas”, o complemento nominal “de bruxas” tem como núcleo\no substantivo “bruxas” e completa o sentido vago da palavra “medo”.\n\nSe o substantivo é “núcleo”, há classes que são “satélites” e “orbitam” em volta dele e concordam\ncom ele.\nEssas classes que se referem ao substantivo são o artigo, o numeral, o adjetivo e o pronome\n(veremos essas classes adiante).\n\n\nEntão, já podemos perceber que o “substantivo” é o núcleo dos termos sintáticos sublinhados nos\nexemplos abaixo:\n1As meninas ricas do Leblon compraram 2muitos vestidos.\nO muro 3de concreto é resistente.\nEles têm consciência 4de meus defeitos.\n\n\nEm 1, “meninas” é o núcleo do sujeito, que está sublinhado.\nEm 2, “vestidos” é núcleo do objeto de “compraram”, complemento desse verbo (\"Quem compra,\ncompra alguma coisa\". Nesse caso, compra “muitos vestidos”).\nEm 3, o termo “de concreto” qualifica o substantivo “muro” e está “junto” a ele. Então, temos uma\nfunção chamada “adjunto adnominal” e seu núcleo é justamente o substantivo “concreto”.\nEm 4, o termo “de meus defeitos” complementa o nome “consciência”, porque \"quem tem consciência\ntem consciência de alguma coisa\". No caso, consciência “de meus defeitos”. Observe novamente como o\nnúcleo é um substantivo.\n\n\n\n\n\n\n\n\n\nPor outro lado, algumas classes de palavras também podem vir classificadas como “substantivas” (função ou\npapel de substantivo), se puderem substituir um nome, ou seja, se puderem vir no lugar de um substantivo,\ncomo “núcleo”.\n\nVejamos o exemplo abaixo\n\nMinhas mãos estão limpas, lave as suas [mãos].\n\n\nNote que \"suas\" é pronome possessivo substantivo, pois substitui o substantivo “mãos”, que está\nimplícito.\n\n\nTranquilo?! Não se preocupe, aprofundaremos tais funções futuramente. Mas já fica registrada a relação\nbásica entre a classe e a função sintática.\n\n\n\n\n\n\n\n\n\nADJETIVO\n\nO adjetivo é a classe variável que se refere ao substantivo ou termo de valor substantivo (como\npronomes), para atribuir a ele alguma qualificação, condição ou estado, restringindo ou\nespecificando seu sentido.\n\nEx: homem mau, mulher simples, céu azul, casa arruinada.\n\n\nÉ classe variável, que “orbita” em torno do substantivo e concorda com ele em gênero e número.\n\n\n\n\nEx: homens maus, mulheres simples, céus azuis, casas arruinadas.\n\n\nO adjetivo pode também ser substantivado:\n\n“Céu azul” => “O azul do céu”.\n\n\nÉ comum também substituir o adjetivo por “locução” ou “oração” adjetiva:\n\nEx: “Cidadão inglês”x “Cidadão da Inglaterra” x “Cidadão que é nativo da Inglaterra”.\n\n\nClassificação dos adjetivos\n\n\n\nCLASSIFICAÇÃO DEFINIÇÃO EXEMPLOS\n\nSIMPLES Possui apenas um radical. Estilo literário.\n\nCOMPOSTO Possui mais de um radical. Estilo lítero-musical.\n\nForma original, não derivado de outra\nPRIMITIVO Homem bom. palavra.\n\nDERIVADO É formado a partir de outra palavra. Ele é bondoso.\n\nIndica característica inerente e geral do Homem mortal.\nEXPLICATIVO ser.\n\nIndica característica que não é própria\nRESTRITIVO Homem valente. do ser.\n\nGENTÍLICO Relativos a povos e raças. israelita\n\nRelativos a cidades, estados, países e\nPÁTRIO israelense continentes.\n\n\n\n\n\n\n\n\n\nVejamos alguns exemplos de adjetivos pátrios, atenção à formação.\n\nVou destacar as terminações típicas dos adjetivos que indicam origem.\n\n/ês/: português, inglês, francês, camaronês, norueguês\n\n/ano/: goiano, americano, africano, angolano, mexicano\n\n/ense/: estadunidense, fluminense, amazonense\n\n/ão/, /eiro/: afegão, alemão, catalão, brasileiro, mineiro\n\n/ol/, /eta/, /ita/: espanhol, mongol, lisboeta, vietnamita\n\n/ino/, /eu/: argentino londrino, europeu, judeu\n\n/tico/: asiático\n\n/enho/: panamenho, costa-riquenho, porto-riquenho\n\n\nCuidado: esses adjetivos são grafados com letras minúsculas.\n\n\nComo apresentado na tabela, os adjetivos chamados de “uniformes” têm uma só forma para\nmasculino ou feminino e normalmente são os terminados em /a/, /e/, /ar/, /or/, /s/, /z/ ou /m/:\n\nEx: hipócrita, homicida, asteca, agrícola, cosmopolita\n\nárabe, breve, doce, constante, pedinte, cearense\n\nsuperior, exemplar, ímpar\n\nsimples, reles\n\nfeliz, feroz\n\nruim, comum\n\n\nFlexão dos adjetivos compostos\n\nNo plural dos adjetivos compostos, como luso-americanos, afro-brasileiras, obras político-sociais,\na primeira parte do composto é reduzida e somente o segundo item da composição vai para o\nplural.\n\nEssa é a regra para o plural dos adjetivos compostos em geral. Contudo, vejamos algumas\nexceções que são recorrentes em sua prova:\n\n\nAdjetivo composto formado por “adjetivo + substantivo”\n\nSe houver um substantivo na composição do adjetivo composto (adjetivo + substantivo),\nnenhuma das partes vai variar:\n\nEx: amarelo-ouro => camisa amarelo-ouro; camisas amarelo-ouro\n\nverde-oliva => parede verde-oliva; paredes verde-oliva\n\nvermelho-sangue => caneta vermelho-sangue; canetas vermelho-sangue\n\n\n\n\n\n\n\nAdjetivos compostos invariáveis\n\nAlguns adjetivos, no entanto, são sempre invariáveis. Vejamos:\n\nazul-marinho => camisa azul-marinho; camisas azul-marinho\n\nazul-celeste => parede azul-celeste; paredes azul-celeste\n\nfurta-cor => calça furta-cor; calças furta-cor\n\nultravioleta => raio ultravioleta; raios ultravioleta\n\nsem-terra => povo sem-terra; povos sem-terra\n\nverde-musgo => almofada verde-musgo; almofadas verde-musgo\n\ncor-de-rosa => jaqueta cor-de-rosa; jaquetas cor-de-rosa\n\n\n\n\n\nzero-quilômetro => caminhonete zero-quilômetro; caminhonetes zero-quilômetro\n\n\nValor objetivo (fato) x Valor subjetivo (opinião)\n\nOs adjetivos podem ter valor subjetivo, quando expressam opinião; ou podem ter valor objetivo,\nquando atestam qualidade que é fato e não depende de interpretação.\n\nOs adjetivos opinativos, por serem marca de expressão de uma opinião, são acessórios, podem\nser retirados, sem prejuízo gramatical.\n\nVeja:\n\nAdjetivos opinativos X Adjetivos objetivos\n\ncarro bonito carro preto\n\nturista animado turista japonês\n\n\nOs adjetivos chamados “de relação” são objetivos e, por isso, não aceitam variação de grau e\nnão podem ser deslocados livremente, posicionando-se normalmente após o substantivo.\n\nSão derivados de substantivos e estabelecem com o substantivo uma relação de tempo, espaço,\nmatéria, finalidade, propriedade, procedência etc.\n\nTais adjetivos indicam uma categorização “técnica”, “objetiva” e tornam mais preciso o conceito\nexpresso pelo substantivo, restringindo seu significado.\n\nO gramático Celso Cunha dá os seguintes exemplos:\n\nNota mensal => nota relativa ao mês\n\nMovimento estudantil => movimento feito por estudantes\n\nCasa paterna => casa onde habitam os pais\n\nVinho português => vinho proveniente de Portugal\n\n\n\n\n\n\n\n\n\n\nObserve que não podemos escrever “português vinho” nem “vinho muito português”. Ser\n“português” é uma categorização objetiva do vinho, não expressa opinião.\n\n\nEssas características vão nos ajudar em questões sobre a inversão da ordem “substantivo +\nadjetivo”, estudada adiante.",
         "origin": "official",
         "officialQuestionId": "A01:aula01.q0005",
-        "questionSetVersion": "editorial-simulado-b9eda31b841cfcc7",
+        "questionSetVersion": "editorial-simulado-23090bf61625314a",
         "moduleId": "mod1",
         "conceptIds": [
           "pt.grammar.substantivo",
@@ -18421,7 +18421,7 @@ export const MODULES_DATA = [
         "commentary": "Questão diretíssima. “Portanto” é o conectivo conclusivo mais conhecido. Questão correta.",
         "origin": "official",
         "officialQuestionId": "A02:aula02.q.conjunction.commented.075",
-        "questionSetVersion": "editorial-simulado-b9eda31b841cfcc7",
+        "questionSetVersion": "editorial-simulado-23090bf61625314a",
         "moduleId": "mod2",
         "conceptIds": [
           "pt.grammar.conjuncao",
@@ -18449,7 +18449,7 @@ export const MODULES_DATA = [
         "commentary": "Exatamente. As palavras negativas (não, nunca, jamais, nem…) obrigam a próclise, isto é, o pronome oblíquo átono deve ficar antes do verbo. Gabarito: questão correta.",
         "origin": "official",
         "officialQuestionId": "A03:aula03.q0145",
-        "questionSetVersion": "editorial-simulado-b9eda31b841cfcc7",
+        "questionSetVersion": "editorial-simulado-23090bf61625314a",
         "moduleId": "mod3",
         "conceptIds": [
           "pt.grammar.proclise",
@@ -18503,7 +18503,7 @@ export const MODULES_DATA = [
         "commentary": "\"Esquece\" está no presente do indicativo. \"Teve\" está no pretérito perfeito do indicativo. \"Fizessem\" está no pretérito imperfeito do subjuntivo. \"Perderam\" está no pretérito perfeito do indicativo. \"Seria\" está no futuro do pretérito. Gabarito letra B.",
         "origin": "official",
         "officialQuestionId": "A04:aula04.q0098",
-        "questionSetVersion": "editorial-simulado-b9eda31b841cfcc7",
+        "questionSetVersion": "editorial-simulado-23090bf61625314a",
         "moduleId": "mod4",
         "conceptIds": [
           "pt.grammar.tempo_verbal",
@@ -18528,7 +18528,7 @@ export const MODULES_DATA = [
         "commentary": "“Teremos conquistado” é forma de futuro do presente composto e indica que ação estará\nconcluída no momento futuro sugerido.\nTrazendo para um exemplo mais simples, compare:\nÀs 21h, jantarei (começarei a comer).\nÀs 21h, terei jantado (já terei terminado de comer).\nEntão, “teremos conquistados” indica que a ação de conquistar já estará completa,\nperfeitamente concluída. “Conquistaremos” não tem esse sentido, apenas indica a ação como\nalgo que ocorrerá no futuro, sem esse valor de ação “já concluída” naquele momento.\nQuestão incorreta.",
         "origin": "official",
         "officialQuestionId": "A05:aula05.q0030",
-        "questionSetVersion": "editorial-simulado-b9eda31b841cfcc7",
+        "questionSetVersion": "editorial-simulado-23090bf61625314a",
         "moduleId": "mod5",
         "conceptIds": [
           "pt.grammar.correlacao_verbal",
@@ -18554,7 +18554,7 @@ export const MODULES_DATA = [
         "commentary": "Dica simples para reconhecer o sujeito indeterminado: você não sabe quem ele é! Então, se você consegue determinar o sujeito no contexto, ele não pode ser indeterminado. Lendo o texto, é evidente que “acusados” não cometeram os crimes; então, o sujeito é apenas oculto, pois não está expresso na oração, mas pode ser determinado pelo contexto. Questão incorreta.",
         "origin": "official",
         "officialQuestionId": "A06:aula06.q0059.commented",
-        "questionSetVersion": "editorial-simulado-b9eda31b841cfcc7",
+        "questionSetVersion": "editorial-simulado-23090bf61625314a",
         "moduleId": "mod6",
         "conceptIds": [
           "pt.grammar.sujeito",
@@ -18579,7 +18579,7 @@ export const MODULES_DATA = [
         "commentary": "“como” é conjunção comparativa: a galinha não contava consigo da mesma forma que o galo crê na sua crista. Questão incorreta.",
         "origin": "official",
         "officialQuestionId": "A07:aula07.q0061",
-        "questionSetVersion": "editorial-simulado-b9eda31b841cfcc7",
+        "questionSetVersion": "editorial-simulado-23090bf61625314a",
         "moduleId": "mod7",
         "conceptIds": [
           "pt.grammar.palavra_como",
@@ -18625,7 +18625,7 @@ export const MODULES_DATA = [
         "commentary": "Vejamos:\n\na) A vírgula separa uma oração adverbial causal antecipada.\n\nb) As vírgulas são obrigatórias e separam a expressão explicativa “por exemplo”.\n\nc) A vírgula separa expressão adverbial conformativa que está antecipada no período.\n\nd) A vírgula isola o aposto explicativo de “Staphylococcus aureus”. Qual é a temível bactéria? A “Staphylococcus aureus”. Gabarito letra D.",
         "origin": "official",
         "officialQuestionId": "A08:aula08.q.inline.030",
-        "questionSetVersion": "editorial-simulado-b9eda31b841cfcc7",
+        "questionSetVersion": "editorial-simulado-23090bf61625314a",
         "moduleId": "mod8",
         "conceptIds": [
           "pt.punctuation.virgula",
@@ -18650,7 +18650,7 @@ export const MODULES_DATA = [
         "commentary": "Quem/o que parou? Parou “o futebol ininterrupto que jogávamos com bola de borracha\nna porta da fábrica em frente”. Todo esse “monstro” é o sujeito, mas seu núcleo é\napenas “futebol”, por isso o verbo fica no singular.\n\nQuestão incorreta.",
         "origin": "official",
         "officialQuestionId": "A09:aula09.q.commented_simples.057",
-        "questionSetVersion": "editorial-simulado-b9eda31b841cfcc7",
+        "questionSetVersion": "editorial-simulado-23090bf61625314a",
         "moduleId": "mod9",
         "conceptIds": [
           "pt.grammar.concordancia_com_o_sujeito_simples",
@@ -18675,7 +18675,7 @@ export const MODULES_DATA = [
         "commentary": "O verbo reduzir, no caso, é VTDI: Reduzir uma coisa (OD) a outra coisa (OI). Ex.:vou reduzir você a\npó! Assim sendo, sabemos que o pronome oblíquo “o” faz o papel de objeto direto. Portanto,\nnão poderia ser substituído por “lhe”, que só pode ser objeto indireto. Questão incorreta.\n9. Chegar\nEx.: O Natal chegou cedo! (VI)\nO verbo chegar funciona como o verbo ir, é intransitivo. Contudo, por seu sentido de\ndeslocamento, vem acompanhado com uma circunstância de lugar (adjunto adverbial de tempo).\nA FCC, porém, já considerou esse verbo como transitivo indireto, regido pela preposição “a”,\nembasada na obra de Celso Pedro Luft. Veremos essa questão logo abaixo. Então, pode ser\ntambém transitivo indireto, regendo a preposição “a”.\nEx.: Sua paciência chegou ao extremo.\nEx.: A produtividade pode chegar a limites improváveis.\nSaliento que o verbo chegar deve utilizar a preposição “a”, não “em”. Embora soe comum na\ncoloquialidade, estaria errada a expressão “chegou em Brasília”.\n10.Caber\nO verbo caber pede preposição “a”, no sentido de que algo deve ser feito por alguém.\nGeralmente traz um sujeito oracional, representando uma ação.\nEx.: Cabe a nós aproveitar nosso tempo. (VTI: “a”; competir, ser de direito)\nO verbo caber também pode ser intransitivo.\nEx.: No seu caso, não cabe recurso. (VI; convir, ter admissibilidade, cabimento)\n11.Constar\n“Constar” pode ter várias regências; seu sentido geralmente envolve composição ou\nconhecimento.\nEx.: O Código Civil consta de mais de 2045 artigos. (VTI: “de”; conter, consistir em; ser\nconstituído de)\nEx.: “Consta nos autos, consta no mundo”... (VTI: “de” ou “em”; estar incluído; estar\ncontido em)\nEx.: Não constava a ele que tinha outro filho. (VTI: “a”; saber, ter ciência)\nEx.: Consta a mim que o papa ficou preocupado com a crise. (VTI: “a”; ser do\nconhecimento de; ser sabido; ter ciência; geralmente traz sujeito oracional: aquilo que\nconsta tem formato de uma oração)\n12.Referir-se\nEsse verbo é pronominal e tem preposição “a”. A banca gosta de sugerir a troca por um\nsinônimo. Cai bastante!\nEx.: O texto refere-se ao atentado de 11 de setembro. (VTI, “a”; mencionar, aludir a algo)\nPense também no verbo “aludir”, que pede preposição “a”, e em seu sinônimo “mencionar”,\nque não pede.\nEx.: Mencionei a questão/Aludi à questão. (há preposição, por isso há crase)\n13.Contribuir\nEx.: Não vou mais contribuir para a Igreja. (VTI: “para”; ajudar; doar)\nEx.: Não vou mais contribuir com dinheiro. (VTI: “com”; ajudar, doar)\n14.Obedecer e Desobedecer\n(VTI: “a”; (não) seguir ordens, acatar; VTI especial, que aceita voz passiva)\nEx: O brasileiro obedece a leis absurdas.\nEx: O servidor não deve obedecer a ordens ilegais.\nEx: Ele obedecia ao pai e à mãe.\nEx.: Desobedeci ao patrão e à patroa.\nEx.: O decreto foi obedecido pelos cidadãos.\nOBS: Alguns verbos transitivos indiretos admitem voz passiva (obedecer, atender, pagar, perdoar,\napelar, abusar)\nAs leis não são obedecidas.\nOs alunos foram atendidos.\nOs funcionários foram pagos/perdoados pelo patrão.\n15.Lembrar e esquecer\nMUITA ATENÇÃO AQUI!!\nEsses verbos podem ser usados como pronominais, ou seja, com um pronome “colado” nele.\nNesse caso, opera-se em par: OU é VTI pronominal e traz as duas partes –SE + DE ou é só VTD.\nÉ tudo (pronome + preposição) ou nada.\nEx.: Lembrei/Esqueci a fórmula. (VTD; na forma não pronominal)\nEx.: Lembrei-me/Esqueci-me da fórmula. (VTI, na forma pronominal)\nPara esses verbos, opera-se em pares, ou usa pronome + preposição, ou se omitem os dois.\nEsses verbos acima são muito importantes e mostram a lógica dos verbos\npronominais! Ou trazem pronome + preposição ou nada!!",
         "origin": "official",
         "officialQuestionId": "A10:aula10.q0011",
-        "questionSetVersion": "editorial-simulado-b9eda31b841cfcc7",
+        "questionSetVersion": "editorial-simulado-23090bf61625314a",
         "moduleId": "mod10",
         "conceptIds": [
           "pt.grammar.regencia_verbal",
@@ -18700,7 +18700,7 @@ export const MODULES_DATA = [
         "commentary": "Interpretando o início do último parágrafo, compreendemos que desde o início da democracia\nateniense já estavam claras as relações dessa democracia com a argumentação e a retórica. O\npronome SUAS retoma “democracia ateniense”.\n“suas” é pronome possessivo e sugere a pergunta: “relação de quem”? “relação do que com a\nargumentação”?\nAqui temos a relação “da democracia ateniense” com a retórica e a argumentação.\nDesde os alvores da democracia ateniense, são sobejamente conhecidas as suas relações com a\nargumentação e a retórica... Questão correta.",
         "origin": "official",
         "officialQuestionId": "A11:aula11.qc.coesao.037",
-        "questionSetVersion": "editorial-simulado-b9eda31b841cfcc7",
+        "questionSetVersion": "editorial-simulado-23090bf61625314a",
         "moduleId": "mod11",
         "conceptIds": [
           "pt.text.coesao_textual",
@@ -18752,7 +18752,7 @@ export const MODULES_DATA = [
         "commentary": "a) Bastava lembrar-se do famoso “livre-arbítrio”, que é a livre escolha de fazer o que se tem\nvontade. Assim, “arbítrio” e “vontade” são utilizados como sinônimos. Questão correta.\nb) “Inusitado” é incomum, não usual, que causa surpresa. “Corriqueiro” significa comum,\nordinário, usual, trivial. Essas palavras são antônimas. Questão incorreta.\nc) “Comezinha” é sinônimo de usual, corriqueiro. Tem então sentido oposto a “extraordinário”.\nd) “aterrador” é aterrorizante; “atenuador” é aquilo que suaviza algo. Questão incorreta.\ne) Na terminologia técnica da filosofia, “dilema” até tem o sentido de uma decisão entre\npremissas contraditórias. Mas, no texto, “dilema” foi utilizado com sentido de “decisão a ser\ntomada”, “escolha”, “problema”, “dicotomia”. Questão incorreta. Gabarito Letra A.",
         "origin": "official",
         "officialQuestionId": "A12:aula12.q0076",
-        "questionSetVersion": "editorial-simulado-b9eda31b841cfcc7",
+        "questionSetVersion": "editorial-simulado-23090bf61625314a",
         "moduleId": "mod12",
         "conceptIds": [
           "pt.semantics.antonimo",
@@ -18780,7 +18780,7 @@ export const MODULES_DATA = [
         "commentary": "Não se pode afirmar isso. Apenas foi dito que o nome é hispânico. Garcia é um nome hispânico e\nnem todo Garcia é espanhol. Questão incorreta.",
         "origin": "official",
         "officialQuestionId": "A13:aula13.q0171",
-        "questionSetVersion": "editorial-simulado-b9eda31b841cfcc7",
+        "questionSetVersion": "editorial-simulado-23090bf61625314a",
         "moduleId": "mod13",
         "conceptIds": [
           "pt.text.do_texto",
@@ -18808,7 +18808,7 @@ export const MODULES_DATA = [
         "commentary": "Nesse caso, temos “ainda” com mero valor enfático, como em: chegou ainda agora (acabou de chegar),\nestudou mais ainda (mais e mais). Questão incorreta.\n\n\n\n\n\n\n\n\n\n\nEvite usar “o mesmo” retomando pessoas/objetos, como se fosse “ele”, em construções como:\nEx: O suspeito chegou ao local. O mesmo fugiu dos policiais sem que os mesmos\npudessem perceber. (troque por “ele” e “eles”)\nContudo, é correto usar “o mesmo”, invariável, quando significa “a mesma coisa/o mesmo fato”.\nEx: Todos têm dificuldade com essa matéria, o mesmo ocorrerá com você. (a mesma coisa\nocorrerá com você, isso também ocorrerá com você)\n\n\n\n\n\n\n\n\nUSO DE “O MESMO”\n\nA expressão \"o mesmo\" é muitas vezes usada para evitar repetições excessivas em textos formais,\nespecialmente em contextos burocráticos ou administrativos. No entanto, “o mesmo” não é pronome\npessoal e não deve ser usado como tal. Esse uso É INADEQUADO:\n\nEx: \"O aluno entregou o trabalho. O mesmo será corrigido em breve.\"\n\nEx: \"O funcionário foi notificado sobre sua conduta. O mesmo deverá comparecer à reunião para\nesclarecimentos.\"\n\nNos dois casos acima, bastaria usar o pronome pessoal “ele”:\n\nEx: \"O aluno entregou o trabalho. ELE será corrigido em breve.\"\n\nEx: \"O funcionário foi notificado sobre sua conduta. ELE deverá comparecer à reunião para esclarecimentos.\"\n\nPorém, o uso de “o mesmo” para substituir um segmento anterior é correto quando retoma um evento\nocorrido/processo mencionado antes, com sentido de “a mesma coisa/o mesmo fato”.\n\nVárias pessoas foram assaltadas; o mesmo aconteceu comigo. (certo).\n\nVárias pessoas foram assaltadas; o mesmo fato/ a mesma coisa [ser assaltado] aconteceu comigo. (certo).",
         "origin": "official",
         "officialQuestionId": "A01:aula01.q0030",
-        "questionSetVersion": "editorial-simulado-b9eda31b841cfcc7",
+        "questionSetVersion": "editorial-simulado-23090bf61625314a",
         "moduleId": "mod1",
         "conceptIds": [
           "pt.grammar.palavras_especiais",
@@ -18833,7 +18833,7 @@ export const MODULES_DATA = [
         "commentary": "“Não” é palavra negativa e atrai o pronome, então temos caso de próclise obrigatória. Gabarito: questão correta.",
         "origin": "official",
         "officialQuestionId": "A03:aula03.q0149",
-        "questionSetVersion": "editorial-simulado-b9eda31b841cfcc7",
+        "questionSetVersion": "editorial-simulado-23090bf61625314a",
         "moduleId": "mod3",
         "conceptIds": [
           "pt.grammar.proclise",
@@ -18884,7 +18884,7 @@ export const MODULES_DATA = [
         "commentary": "\"como\" indica causa:\nJá que/porque/visto que a ideia não pegou na tropa, Barbier adaptou o método para a leitura\nde cegos\nA causa da adaptação foi a ideia não ter funcionado bem na tropa.\nOBS: Acrescento que a Cesgranrio já cobrou em prova uma variação da oração causal com o\nverbo no pretérito imperfeito do subjuntivo:\nComo chovesse muito pela manhã, resolvi sair à tarde.\nLeia esse \"chovesse\" como \"chovia\". É estranho e formal, mas está correto.\nGabarito: B",
         "origin": "official",
         "officialQuestionId": "A05:aula05.q0003",
-        "questionSetVersion": "editorial-simulado-b9eda31b841cfcc7",
+        "questionSetVersion": "editorial-simulado-23090bf61625314a",
         "moduleId": "mod5",
         "conceptIds": [
           "pt.grammar.correlacao_verbal",
@@ -18930,7 +18930,7 @@ export const MODULES_DATA = [
         "commentary": "No excerto “(...) Jean M. Twenge, professora de psicologia na Universidade Estadual de San Diego, alertou sobre o risco de uma crise mental iminente afetando crianças e adolescentes. (...)”, as vírgulas foram empregadas para isolar um APOSTO EXPLICATIVO, referente a Jean M. Twenge.\n\nAs demais opções são teóricas, corretas e autoexplicativas. Gabarito letra D.",
         "origin": "official",
         "officialQuestionId": "A08:aula08.q.inline.029",
-        "questionSetVersion": "editorial-simulado-b9eda31b841cfcc7",
+        "questionSetVersion": "editorial-simulado-23090bf61625314a",
         "moduleId": "mod8",
         "conceptIds": [
           "pt.punctuation.virgula",
@@ -18955,7 +18955,7 @@ export const MODULES_DATA = [
         "commentary": "Considerando o termo a que se liga a expressão “tendem a”, o emprego do acento grave\nindicativo da crase seria inadequado em termos de correção gramatical. Questão incorreta.",
         "origin": "official",
         "officialQuestionId": "A10:aula10.q0065",
-        "questionSetVersion": "editorial-simulado-b9eda31b841cfcc7",
+        "questionSetVersion": "editorial-simulado-23090bf61625314a",
         "moduleId": "mod10",
         "conceptIds": [
           "pt.grammar.crase",
@@ -19009,7 +19009,7 @@ export const MODULES_DATA = [
         "commentary": "O vocábulo prender foi usado de forma ambígua, para criar humor: pode ser lido, de forma\nfigurada, como \"capturar a atenção\" do leitor; ou pode ser lido literalmente como prender de\nforma física, como aconteceu ao personagem.\nGabarito letra D.",
         "origin": "official",
         "officialQuestionId": "A12:aula12.q0015",
-        "questionSetVersion": "editorial-simulado-b9eda31b841cfcc7",
+        "questionSetVersion": "editorial-simulado-23090bf61625314a",
         "moduleId": "mod12",
         "conceptIds": [
           "pt.semantics.ambiguidade",
@@ -19032,7 +19032,7 @@ export const MODULES_DATA = [
       }
     ],
     "knowledge": {
-      "buildId": "b9eda31b841cfcc7",
+      "buildId": "23090bf61625314a",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "corpus-apostila-questions",
       "reviewedAt": "2026-08-17",

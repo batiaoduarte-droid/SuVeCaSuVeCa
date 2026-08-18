@@ -44,31 +44,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Conceito fundamental de transitividade verbal (intransitivo, transitivo direto, transitivo indireto, transitivo direto e indireto).
 - Noções gerais de colocação pronominal (próclise, mesóclise e ênclise) e fatores de atração gramatical.
 
-Regência e Sintaxe dos Pronomes (esta unidade) ➔ 1. Seleção de Pronomes Pessoais Oblíquos
-- ➔ Sem Preposição ➔ O / A / OS / AS ➔ Objeto Direto (VTD / VTDI)
-➔ Com Preposição ➔ LHE / LHES ➔ O.I. (VTI/VTDI) / C.N. / Adj. Adnominal
-- ➔ Invariância de Gênero ➔ Retoma termos masculinos ou femininos
-➔ Pronomes Coringas ➔ ME / TE / SE / NOS / VOS ➔ O.D. ou O.I. (conforme o regente)
-- ➔ 2. Sintaxe de Verbos Bitransitivos (VTDI)
-➔ Moldura Obrigatória ➔ 1 Objeto Direto + 1 Objeto Indireto
-- ➔ Proibição Normativa ➔ Vedado duplo O.D. ou duplo O.I. (exceção: objeto pleonástico estilístico)
-➔ 3. Sintaxe de Coordenação Verbal
-- ➔ Mesma Regência ➔ Compartilhamento de objeto único VÁLIDO
-➔ Regências Distintas ➔ Compartilhamento INVÁLIDO ➔ Reescrita "Cada um na sua"
-- ➔ 4. Regência de Verbos Notáveis
-➔ IMPLICAR ➔ VTD (acarretar) vs. VTI pronominal "em" (envolver-se) vs. VTI "com" (antipatizar)
-- ➔ ASPIRAR ➔ VTI com "a" (almejar) vs. VTD (inalar)
-➔ ANSIAR ➔ VTI de dupla regência: com "por" ou com "de" (rejeita "com")
-- ➔ ASSISTIR ➔ VTI com "a" (presenciar) vs. VTD/VTI (socorrer)
-➔ OBEDECER ➔ VTI com "a" (exige "lhe/lhes" ou "a ele/ela")
-- ➔ INFORMAR ➔ VTDI simétrico (informar alguém DE algo OU algo A alguém)
-➔ NAMORAR ➔ VTD na norma tradicional (namorar alguém, sem "com")
-- ➔ ENTENDER ➔ VTD (compreender) vs. VTI com "de" (ter domínio/conhecimento)
-➔ 5. Morfossintaxe e Colocação
-- ➔ Alomorfia Enclítica ➔ -r, -s, -z ➔ -lo/-la | Som nasal ➔ -no/-na
-➔ Fator Atrativo ➔ Palavra negativa / Conjunção ➔ Próclise Obrigatória (bloqueia alomorfe)
-- ➔ Intercalação ➔ Vírgula pós-intercalada não impede próclise em sujeito anteposto
-➔ 6. Regência com Pronomes Relativos ➔ Equivalências ➔ em que = no qual | de que = do qual ➔ Restrições ➔ "Aonde" exige verbo de movimento + prep. "a" (incompatível com "investir")
+```text
+Regência e Sintaxe dos Pronomes (esta unidade) ├── 1. Seleção de Pronomes Pessoais Oblíquos │ ├── Sem Preposição ──────► O / A / OS / AS ──────────────► Objeto Direto (VTD / VTDI) │ ├── Com Preposição ──────► LHE / LHES ───────────────────► O.I. (VTI/VTDI) / C.N. / Adj. Adnominal │ │ └── Invariância de Gênero ────► Retoma termos masculinos ou femininos │ └── Pronomes Coringas ───► ME / TE / SE / NOS / VOS ─────► O.D. ou O.I. (conforme o regente) │ ├── 2. Sintaxe de Verbos Bitransitivos (VTDI) │ ├── Moldura Obrigatória ─► 1 Objeto Direto + 1 Objeto Indireto │ └── Proibição Normativa ─► Vedado duplo O.D. ou duplo O.I. (exceção: objeto pleonástico estilístico) │ ├── 3. Sintaxe de Coordenação Verbal │ ├── Mesma Regência ──────► Compartilhamento de objeto único VÁLIDO │ └── Regências Distintas ─► Compartilhamento INVÁLIDO ────► Reescrita "Cada um na sua" │ ├── 4. Regência de Verbos Notáveis │ ├── IMPLICAR ────────────► VTD (acarretar) vs. VTI pronominal "em" (envolver-se) vs. VTI "com" (antipatizar) │ ├── ASPIRAR ─────────────► VTI com "a" (almejar) vs. VTD (inalar) │ ├── ANSIAR ──────────────► VTI de dupla regência: com "por" ou com "de" (rejeita "com") │ ├── ASSISTIR ────────────► VTI com "a" (presenciar) vs. VTD/VTI (socorrer) │ ├── OBEDECER ────────────► VTI com "a" (exige "lhe/lhes" ou "a ele/ela") │ ├── INFORMAR ────────────► VTDI simétrico (informar alguém DE algo OU algo A alguém) │ ├── NAMORAR ─────────────► VTD na norma tradicional (namorar alguém, sem "com") │ └── ENTENDER ────────────► VTD (compreender) vs. VTI com "de" (ter domínio/conhecimento) │ ├── 5. Morfossintaxe e Colocação │ ├── Alomorfia Enclítica ─► -r, -s, -z ➔ -lo/-la | Som nasal ➔ -no/-na │ ├── Fator Atrativo ──────► Palavra negativa / Conjunção ➔ Próclise Obrigatória (bloqueia alomorfe) │ └── Intercalação ────────► Vírgula pós-intercalada não impede próclise em sujeito anteposto │ └── 6. Regência com Pronomes Relativos ├── Equivalências ────────► em que = no qual | de que = do qual └── Restrições ───────────► "Aonde" exige verbo de movimento + prep. "a" (incompatível com "investir")
+```
 
 ---
 
@@ -323,20 +301,9 @@ Identificar se o pronome oblíquo (lhe, me, te, etc.) acoplado a um verbo atua c
 3. Faça a pergunta de regência ao regente posposto ("precisava de quê?", "surge de onde?").
 4. Verifique a afirmativa da banca: se atribuir a preposição ao antecedente, julgue como ERRADO; se atribuir ao regente posposto, julgue como CORRETO.
 
-➔ Verbo Bitransitivo (VTDI) com Pronome
-- ➔ ➔ Qual complemento já está explícito no texto?
-➔ [Objeto Direto] [Objeto Indireto] (sem preposição) (com preposição)
-- ➔ ➔ O pronome inserido
-O pronome inserido
-- DEVE SER INDIRETO
-DEVE SER DIRETO
-- (lhe / lhes / a ele)
-(o / a / os / as)
-- ➔ ➔ ➔ ➔ Proibido inserir:
-Proibido inserir:
-- o / a / os / as
-lhe / lhes
-- ➔ ➔
+```text
+┌──────────────────────────────────────────────┐ │ Verbo Bitransitivo (VTDI) com Pronome │ └──────────────────────┬───────────────────────┘ │ ▼ ┌──────────────────────────────────────────────┐ │ Qual complemento já está explícito no texto? │ └──────┬────────────────────────────────┬──────┘ │ │ [Objeto Direto] [Objeto Indireto] (sem preposição) (com preposição) │ │ ▼ ▼ ┌──────────────────────┐ ┌──────────────────────┐ │ O pronome inserido │ │ O pronome inserido │ │ DEVE SER INDIRETO │ │ DEVE SER DIRETO │ │ (lhe / lhes / a ele) │ │ (o / a / os / as) │ └──────────────────────┘ └──────────────────────┘ │ │ ▼ ▼ ┌──────────────────────┐ ┌──────────────────────┐ │ Proibido inserir: │ │ Proibido inserir: │ │ o / a / os / as │ │ lhe / lhes │ └──────────────────────┘ └──────────────────────┘
+```
 
 ### Finalidade
 
@@ -393,20 +360,9 @@ Identificar se o pronome oblíquo (lhe, me, te, etc.) acoplado a um verbo atua c
 3. Faça a pergunta de regência ao regente posposto ("precisava de quê?", "surge de onde?").
 4. Verifique a afirmativa da banca: se atribuir a preposição ao antecedente, julgue como ERRADO; se atribuir ao regente posposto, julgue como CORRETO.
 
-➔ Verbo Bitransitivo (VTDI) com Pronome
-- ➔ ➔ Qual complemento já está explícito no texto?
-➔ [Objeto Direto] [Objeto Indireto] (sem preposição) (com preposição)
-- ➔ ➔ O pronome inserido
-O pronome inserido
-- DEVE SER INDIRETO
-DEVE SER DIRETO
-- (lhe / lhes / a ele)
-(o / a / os / as)
-- ➔ ➔ ➔ ➔ Proibido inserir:
-Proibido inserir:
-- o / a / os / as
-lhe / lhes
-- ➔ ➔
+```text
+┌──────────────────────────────────────────────┐ │ Verbo Bitransitivo (VTDI) com Pronome │ └──────────────────────┬───────────────────────┘ │ ▼ ┌──────────────────────────────────────────────┐ │ Qual complemento já está explícito no texto? │ └──────┬────────────────────────────────┬──────┘ │ │ [Objeto Direto] [Objeto Indireto] (sem preposição) (com preposição) │ │ ▼ ▼ ┌──────────────────────┐ ┌──────────────────────┐ │ O pronome inserido │ │ O pronome inserido │ │ DEVE SER INDIRETO │ │ DEVE SER DIRETO │ │ (lhe / lhes / a ele) │ │ (o / a / os / as) │ └──────────────────────┘ └──────────────────────┘ │ │ ▼ ▼ ┌──────────────────────┐ ┌──────────────────────┐ │ Proibido inserir: │ │ Proibido inserir: │ │ o / a / os / as │ │ lhe / lhes │ └──────────────────────┘ └──────────────────────┘
+```
 
 ---
 

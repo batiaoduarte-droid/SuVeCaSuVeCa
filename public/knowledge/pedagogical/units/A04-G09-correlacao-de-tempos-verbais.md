@@ -44,26 +44,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Valores Semânticos dos Modos: Noção básica da distinção entre certeza/fato (Modo Indicativo) e dúvida/hipótese/desejo (Modo Subjuntivo).
 - Estrutura Sintática Básica: Noções de período composto por coordenação e subordinação (oração principal e subordinada).
 
-CORRELAÇÃO DE TEMPOS VERBAIS (Articulação / Paralelismo Semântico) ➔ 1. Fundamentos & Bússola Temporal
-- ➔ Nomenclaturas: Correlação (FCC/VUNESP), Articulação (VUNESP), Paralelismo Semântico (FGV)
-➔ Regra do 1º Verbo: O tempo do 1º verbo orienta a linha temporal subsequente ➔ 2. Matrizes Temporais Canônicas
-- ➔ Eixo do PRESENTE / FUTURO
-➔ Presente ↔ Presente (Indicativo ou Subjuntivo)
-- ➔ Presente ↔ Futuro do Presente
-➔ Futuro do Subjuntivo ↔ Futuro do Presente
-- ➔ Eixo do PRETÉRITO (PASSADO)
-➔ Pretérito ↔ Pretérito (Indicativo ou Subjuntivo)
-- ➔ Pretérito Imperfeito do Subjuntivo ↔ Futuro do Pretérito
-➔ Estruturas Compostas: Tivesse + Particípio ↔ Teria + Particípio ➔ 3. Regras Especiais e Comportamentos Sintáticos
-- ➔ Independência Modal: Modos (Ind./Subj.) podem diferir; o Tempo deve ser simétrico
-➔ Dinâmica dos Futuros ("Amigos do Futuro"):
-- ➔ Futuro do Presente: Flexível (harmoniza com Presente e Futuro)
-➔ Futuro do Pretérito: Rígido (amigo exclusivo do Pretérito)
-- ➔ Locuções Verbais: O tempo e o modo são definidos exclusivamente pelo VERBO AUXILIAR
-➔ Gatilhos Atratores do Subjuntivo:
-- ➔ Conjunções Concessivas (mesmo que, embora, ainda que)
-➔ Verbos de Desejo / Expectativa / Hipótese (desejava que, caso, se) ➔ 4. Exceções Semânticas Legítimas
-- ➔ Presente + Pretérito: Válido quando o Presente expressa um estado resultante de fatos passados ➔ 5. Estratégias por Banca Examinadora ➔ Múltipla Escolha (VUNESP / FCC / FGV): Eliminação em bloco por descompasso de eixos ➔ FCC: Cuidado com frases com mesmo tempo/modo, mas desprovidas de nexo lógico ➔ CEBRASPE: Diferenciar "manter a correlação temporal" de "preservar o sentido original"
+```text
+CORRELAÇÃO DE TEMPOS VERBAIS (Articulação / Paralelismo Semântico) ├── 1. Fundamentos & Bússola Temporal │ ├── Nomenclaturas: Correlação (FCC/VUNESP), Articulação (VUNESP), Paralelismo Semântico (FGV) │ └── Regra do 1º Verbo: O tempo do 1º verbo orienta a linha temporal subsequente ├── 2. Matrizes Temporais Canônicas │ ├── Eixo do PRESENTE / FUTURO │ │ ├── Presente ↔ Presente (Indicativo ou Subjuntivo) │ │ ├── Presente ↔ Futuro do Presente │ │ └── Futuro do Subjuntivo ↔ Futuro do Presente │ └── Eixo do PRETÉRITO (PASSADO) │ ├── Pretérito ↔ Pretérito (Indicativo ou Subjuntivo) │ ├── Pretérito Imperfeito do Subjuntivo ↔ Futuro do Pretérito │ └── Estruturas Compostas: Tivesse + Particípio ↔ Teria + Particípio ├── 3. Regras Especiais e Comportamentos Sintáticos │ ├── Independência Modal: Modos (Ind./Subj.) podem diferir; o Tempo deve ser simétrico │ ├── Dinâmica dos Futuros ("Amigos do Futuro"): │ │ ├── Futuro do Presente: Flexível (harmoniza com Presente e Futuro) │ │ └── Futuro do Pretérito: Rígido (amigo exclusivo do Pretérito) │ ├── Locuções Verbais: O tempo e o modo são definidos exclusivamente pelo VERBO AUXILIAR │ └── Gatilhos Atratores do Subjuntivo: │ ├── Conjunções Concessivas (mesmo que, embora, ainda que) │ └── Verbos de Desejo / Expectativa / Hipótese (desejava que, caso, se) ├── 4. Exceções Semânticas Legítimas │ └── Presente + Pretérito: Válido quando o Presente expressa um estado resultante de fatos passados └── 5. Estratégias por Banca Examinadora ├── Múltipla Escolha (VUNESP / FCC / FGV): Eliminação em bloco por descompasso de eixos ├── FCC: Cuidado com frases com mesmo tempo/modo, mas desprovidas de nexo lógico └── CEBRASPE: Diferenciar "manter a correlação temporal" de "preservar o sentido original"
+```
 
 ---
 
@@ -99,7 +82,9 @@ Ao analisar qualquer período composto para julgar sua correspondência verbal:
 
 1. Os verbos subordinados ou subsequentes orbitam ao redor do eixo fixado pela bússola temporal do primeiro verbo.
 
-➔ Eixo do PRESENTE ➔ Exige PRESENTE ou FUTURO DO PRESENTE 1º VERBO (Bússola) ➔ Eixo do PRETÉRITO ➔ Exige PRETÉRITO ou FUTURO DO PRETÉRITO
+```text
+┌──► Eixo do PRESENTE ──► Exige PRESENTE ou FUTURO DO PRESENTE 1º VERBO (Bússola) └──► Eixo do PRETÉRITO ──► Exige PRETÉRITO ou FUTURO DO PRETÉRITO
+```
 
 - Não iniciar a análise pelo meio do período; sempre fixar o tempo de partida da oração principal ou da primeira oração subordinada integrante/adverbial.
 - Havendo inversão sintática (ex.: oração condicional antecipada iniciada por Se ou Caso), o verbo da oração antecipada dita o tempo da oração principal subsequente.
@@ -171,9 +156,13 @@ A regência sintática e o emprego de conjunções subordinativas frequentemente
 
 A didática dos "Amigos do Futuro" estabelece uma distinção comportamental nítida: o Futuro do Presente (e o Futuro do Subjuntivo) possui ampla flexibilidade de combinação sintática, enquanto o Futuro do Pretérito é um tempo rígido, associando-se com exclusividade ao Pretérito.
 
-➔ Amigo do PRESENTE (Indicativo ou Subjuntivo) FUTURO DO PRESENTE ➔ Amigo do FUTURO DO SUBJUNTIVO (Tem muitos amigos) ➔ Amigo do próprio FUTURO DO PRESENTE
+```text
+┌──► Amigo do PRESENTE (Indicativo ou Subjuntivo) FUTURO DO PRESENTE ──┼──► Amigo do FUTURO DO SUBJUNTIVO (Tem muitos amigos) └──► Amigo do próprio FUTURO DO PRESENTE
+```
 
-FUTURO DO PRETÉRITO ➔ Amigo EXCLUSIVO do PRETÉRITO (especialmente Pret. Imp. Subj.) (Só tem 1 amigo)
+```text
+FUTURO DO PRETÉRITO ────► Amigo EXCLUSIVO do PRETÉRITO (especialmente Pret. Imp. Subj.) (Só tem 1 amigo)
+```
 
 1. Flexibilidade do Futuro do Presente:
 
@@ -264,13 +253,9 @@ Se o comando da banca indagar se a troca pode ser feita "sem prejuízo para a co
 
 Resolver questões de correlação verbal de múltipla escolha (VUNESP, FCC, FGV) com rapidez e segurança, descartando alternativas inviáveis em segundos.
 
-**[**
-
-1. Leitura Vertical e Localização do 1º Verbo ] [
-2. Diagnóstico Semântico Rápido ] Ideia de PRESENTE / FUTURO? Ideia de PASSADO / HIPÓTESE? [
-3. Varredura e Eliminação em Bloco ] Descartar misturas grosseiras (Futuro + Pretérito Perfeito, etc.) Reter apenas as 2 ou 3 alternativas com eixos congruentes [
-4. Verificação de Gatilhos Sintáticos e Conectivos ] Presença de Concessiva (mesmo que / embora) -> exige Subjuntivo Presença de Verbo Volitivo (desejava que) -> exige Pret. Imp. Subj. Presença de Condicional irreal (se / caso) -> exige correlação modal [
-5. Teste de Lógica Textual e Marcação ] Confirmar nexo semântico global Marcar gabarito SEM tentar consertar alternativas erradas
+```text
+[ Passo 1: Leitura Vertical e Localização do 1º Verbo ] │ ▼ [ Passo 2: Diagnóstico Semântico Rápido ] ├── Ideia de PRESENTE / FUTURO? └── Ideia de PASSADO / HIPÓTESE? │ ▼ [ Passo 3: Varredura e Eliminação em Bloco ] ├── Descartar misturas grosseiras (Futuro + Pretérito Perfeito, etc.) └── Reter apenas as 2 ou 3 alternativas com eixos congruentes │ ▼ [ Passo 4: Verificação de Gatilhos Sintáticos e Conectivos ] ├── Presença de Concessiva (mesmo que / embora) -> exige Subjuntivo ├── Presença de Verbo Volitivo (desejava que) -> exige Pret. Imp. Subj. └── Presença de Condicional irreal (se / caso) -> exige correlação modal │ ▼ [ Passo 5: Teste de Lógica Textual e Marcação ] ├── Confirmar nexo semântico global └── Marcar gabarito SEM tentar consertar alternativas erradas
+```
 
 1. Diante de uma locução verbal (ex.: vier a se empenhar, haverá de granjear, costumam ocultar), sublinhar imediatamente o primeiro verbo (verbo auxiliar).
 2. Isolar o tempo e modo do verbo auxiliar, ignorando a terminação do verbo principal no particípio/infinitivo.
@@ -282,13 +267,9 @@ Resolver questões de correlação verbal de múltipla escolha (VUNESP, FCC, FGV
 
 #### Fluxograma Operacional
 
-**[**
-
-1. Leitura Vertical e Localização do 1º Verbo ] [
-2. Diagnóstico Semântico Rápido ] Ideia de PRESENTE / FUTURO? Ideia de PASSADO / HIPÓTESE? [
-3. Varredura e Eliminação em Bloco ] Descartar misturas grosseiras (Futuro + Pretérito Perfeito, etc.) Reter apenas as 2 ou 3 alternativas com eixos congruentes [
-4. Verificação de Gatilhos Sintáticos e Conectivos ] Presença de Concessiva (mesmo que / embora) -> exige Subjuntivo Presença de Verbo Volitivo (desejava que) -> exige Pret. Imp. Subj. Presença de Condicional irreal (se / caso) -> exige correlação modal [
-5. Teste de Lógica Textual e Marcação ] Confirmar nexo semântico global Marcar gabarito SEM tentar consertar alternativas erradas
+```text
+[ Passo 1: Leitura Vertical e Localização do 1º Verbo ] │ ▼ [ Passo 2: Diagnóstico Semântico Rápido ] ├── Ideia de PRESENTE / FUTURO? └── Ideia de PASSADO / HIPÓTESE? │ ▼ [ Passo 3: Varredura e Eliminação em Bloco ] ├── Descartar misturas grosseiras (Futuro + Pretérito Perfeito, etc.) └── Reter apenas as 2 ou 3 alternativas com eixos congruentes │ ▼ [ Passo 4: Verificação de Gatilhos Sintáticos e Conectivos ] ├── Presença de Concessiva (mesmo que / embora) -> exige Subjuntivo ├── Presença de Verbo Volitivo (desejava que) -> exige Pret. Imp. Subj. └── Presença de Condicional irreal (se / caso) -> exige correlação modal │ ▼ [ Passo 5: Teste de Lógica Textual e Marcação ] ├── Confirmar nexo semântico global └── Marcar gabarito SEM tentar consertar alternativas erradas
+```
 
 #### Passo a Passo Operacional
 

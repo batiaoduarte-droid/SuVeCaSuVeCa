@@ -40,55 +40,21 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ## Pré-requisitos e modelo mental
 
-EMPREGO DO ACENTO GRAVE INDICATIVO DE CRASE
-- ➔ 1. Natureza do Fenômeno
-➔ Crase: Fenômeno fonético de fusão/contração (a + a = à)
-- ➔ Acento Grave : Sinal gráfico indicativo da ocorrência da crase
-➔ 2. Regra Geral 1: Fenômeno Fonético (FF)
-- ➔ Situação 1 [Código 1]: Preposição "A" + Artigo Definido Feminino "A(S)" (~80% dos casos)
-➔ Passo 1 (Regência): Termo anterior exige preposição "A"?
-- ➔ Ferramenta: Teste do "menino" (se virar "ao menino", pede preposição "A")
-➔ Passo 2 (Artigo): Termo posterior aceita artigo feminino "A(S)"?
-- ➔ Ferramenta Geral: Teste do sujeito ("A [palavra] é...")
-➔ Ferramenta para Lugares: Teste do "Voltar" ("Volta da -> crase no A / Volta de -> crase para quê")
-- ➔ Situação 2 [Código 2]: Preposição "A" + Pronomes Demonstrativos
-➔ Situação 2a [Código 2a]: Preposição "A" + Aquele(s), Aquela(s), Aquilo -> Àquele(s), Àquela(s), Àquilo
-- ➔ Situação 2b [Código 2b]: Preposição "A" + Pronome Demonstrativo "A(S)" (= aquela/as) antes de "que" ou "de"
-➔ Situação 3 [Código 3]: Preposição "A" + Pronome Relativo "A qual / As quais"
-- ➔ "A qual / As quais" possuem artigo inerente -> admitem crase (à qual / às quais)
-➔ "Que", "Quem", "Cujo(a)" não possuem artigo -> nunca admitem crase
-- ➔ 3. Introdução à Crase Proibida ➔ Princípio: "Um 'A' sozinho não faz fenômeno" (ausência de artigo antes de verbos, masculinos, etc.)
+```text
+EMPREGO DO ACENTO GRAVE INDICATIVO DE CRASE │ ├── 1. Natureza do Fenômeno │ ├── Crase: Fenômeno fonético de fusão/contração (a + a = à) │ └── Acento Grave : Sinal gráfico indicativo da ocorrência da crase │ ├── 2. Regra Geral 1: Fenômeno Fonético (FF) │ │ │ ├── Situação 1 [Código 1]: Preposição "A" + Artigo Definido Feminino "A(S)" (~80% dos casos) │ │ ├── Passo 1 (Regência): Termo anterior exige preposição "A"? │ │ │ └── Ferramenta: Teste do "menino" (se virar "ao menino", pede preposição "A") │ │ └── Passo 2 (Artigo): Termo posterior aceita artigo feminino "A(S)"? │ │ ├── Ferramenta Geral: Teste do sujeito ("A [palavra] é...") │ │ └── Ferramenta para Lugares: Teste do "Voltar" ("Volta da -> crase no A / Volta de -> crase para quê") │ │ │ ├── Situação 2 [Código 2]: Preposição "A" + Pronomes Demonstrativos │ │ ├── Situação 2a [Código 2a]: Preposição "A" + Aquele(s), Aquela(s), Aquilo -> Àquele(s), Àquela(s), Àquilo │ │ └── Situação 2b [Código 2b]: Preposição "A" + Pronome Demonstrativo "A(S)" (= aquela/as) antes de "que" ou "de" │ │ │ └── Situação 3 [Código 3]: Preposição "A" + Pronome Relativo "A qual / As quais" │ ├── "A qual / As quais" possuem artigo inerente -> admitem crase (à qual / às quais) │ └── "Que", "Quem", "Cujo(a)" não possuem artigo -> nunca admitem crase │ └── 3. Introdução à Crase Proibida └── Princípio: "Um 'A' sozinho não faz fenômeno" (ausência de artigo antes de verbos, masculinos, etc.)
+```
 
-**CRASE: FENÔMENO FONÉTICO (Preposição 'A' + Artigo 'A' / Pronome 'Aquele'/'A qual')     Axioma Fundamental: "Um 'A' sozinho não faz fenômeno"       CASOS DE CRASE PROIBIDA       GRUPO 1: Proibição por ausência/rejeição do ARTIGO DEFINIDO FEMININO (A = apenas preposição)         1. Antes de palavras masculinas (ex.: "igual a Camões", "a pé")         2. Antes de verbos no infinitivo (ex.: "disposto a lutar")         3. Antes de pronomes indefinidos (ex.: "corresponder a qualquer realidade")         4. Antes de pronomes demonstrativos (este/esta, esse/essa) (ex.: "referiu-se a este livro")         5. Antes de artigo indefinido (ex.: "candidatei-me a um cargo")         7. Nomes de lugar que não admitem artigo (ex.: "fui a São Paulo" -> "voltei de")           Exceção: Topônimo com determinante semântico (ex.: "à Londres dos meus sonhos")         8. Paralelismo no uso do artigo / Palavras repetidas / Expressões simétricas         Palavras repetidas (ex.: "cara a cara", "frente a frente" -> sem artigo)         Expressões temporais/estruturais simétricas (ex.: "de segunda a sexta" vs. "da terça à sexta")           GRUPO 2: Proibição por rejeição da PREPOSIÇÃO 'A' (A = apenas artigo)       6. Após preposição essencial (ex.: "desde as oito horas", "ante a ausência", "para a festa", "após a aula")       Única exceção: Preposição ATÉ (admite preposição 'a' posposta -> crase facultativa)       MÉTODO RESOLUTIVO EM 2 PASSOS (APLICAÇÃO PRÁTICA EM 10 ITENS)**
+```text
+CRASE: FENÔMENO FONÉTICO (Preposição 'A' + Artigo 'A' / Pronome 'Aquele'/'A qual') ├── Axioma Fundamental: "Um 'A' sozinho não faz fenômeno" │ ├── CASOS DE CRASE PROIBIDA │ ├── GRUPO 1: Proibição por ausência/rejeição do ARTIGO DEFINIDO FEMININO (A = apenas preposição) │ │ ├── 1. Antes de palavras masculinas (ex.: "igual a Camões", "a pé") │ │ ├── 2. Antes de verbos no infinitivo (ex.: "disposto a lutar") │ │ ├── 3. Antes de pronomes indefinidos (ex.: "corresponder a qualquer realidade") │ │ ├── 4. Antes de pronomes demonstrativos (este/esta, esse/essa) (ex.: "referiu-se a este livro") │ │ ├── 5. Antes de artigo indefinido (ex.: "candidatei-me a um cargo") │ │ ├── 7. Nomes de lugar que não admitem artigo (ex.: "fui a São Paulo" -> "voltei de") │ │ │ └── Exceção: Topônimo com determinante semântico (ex.: "à Londres dos meus sonhos") │ │ └── 8. Paralelismo no uso do artigo / Palavras repetidas / Expressões simétricas │ │ ├── Palavras repetidas (ex.: "cara a cara", "frente a frente" -> sem artigo) │ │ └── Expressões temporais/estruturais simétricas (ex.: "de segunda a sexta" vs. "da terça à sexta") │ │ │ └── GRUPO 2: Proibição por rejeição da PREPOSIÇÃO 'A' (A = apenas artigo) │ └── 6. Após preposição essencial (ex.: "desde as oito horas", "ante a ausência", "para a festa", "após a aula") │ └── Única exceção: Preposição ATÉ (admite preposição 'a' posposta -> crase facultativa) │ └── MÉTODO RESOLUTIVO EM 2 PASSOS (APLICAÇÃO PRÁTICA EM 10 ITENS) ├── Passo 1: Verificar regência do termo anterior (exige preposição 'a'?) └── Passo 2: Verificar aceitação de artigo definido pelo termo posterior (admite 'a/as'?)
+```
 
-1. Verificar regência do termo anterior (exige preposição 'a'?)
-2. Verificar aceitação de artigo definido pelo termo posterior (admite 'a/as'?)
+```text
+CRASE (Duas Grandes Regras) ├── I. FENÔMENO FONÉTICO (Fusão da Preposição 'a' + 'a' inicial) [Foco deste material] │ ├── 1. Preposição 'A' + Artigo Definido 'A(S)' (~80% dos casos de prova) │ │ ├── Passo 1: Termo Anterior exige Preposição 'A'? │ │ │ └── Teste Prático: Substituir por masculino ("menino" / "clube") -> se der "AO", exige preposição. │ │ └── Passo 2: Termo Posterior aceita Artigo 'A'? │ │ ├── Substantivos Comuns: Iniciar frase com a palavra em função de sujeito (ex.: "A terra é boa"). │ │ └── Nomes de Lugar (Topônimos): Mnemônico do verbo 'voltar' │ │ ├── "Volta DA" -> Tem artigo -> CRASE ("Voltei da Itália" -> "Retornou à Itália") │ │ └── "Volta DE" -> Sem artigo -> SEM CRASE ("Voltei de Brasília" -> "Retornou a Brasília") │ ├── 2. Preposição 'A' + Pronomes Demonstrativos 'aquele(s)', 'aquela(s)', 'aquilo' │ ├── 3. Preposição 'A' + Pronome Relativo 'a qual', 'as quais' │ └── 4. Preposição 'A' + Pronome Demonstrativo 'A' (antes de 'que' e 'de') └── II. LOCUÇÃO FEMININA (Adverbiais, Prepositivas, Conjuntivas) [Anunciada para blocos seguintes]
+```
 
-**CRASE (Duas Grandes Regras)     I. FENÔMENO FONÉTICO (Fusão da Preposição 'a' + 'a' inicial) [Foco deste material]       1. Preposição 'A' + Artigo Definido 'A(S)' (~80% dos casos de prova)**
-
-1. Termo Anterior exige Preposição 'A'? Teste Prático: Substituir por masculino ("menino" / "clube") -> se der "AO", exige preposição.
-2. Termo Posterior aceita Artigo 'A'? Substantivos Comuns: Iniciar frase com a palavra em função de sujeito (ex.: "A terra é boa"). Nomes de Lugar (Topônimos): Mnemônico do verbo 'voltar' "Volta DA" -> Tem artigo -> CRASE ("Voltei da Itália" -> "Retornou à Itália") "Volta DE" -> Sem artigo -> SEM CRASE ("Voltei de Brasília" -> "Retornou a Brasília") 2. Preposição 'A' + Pronomes Demonstrativos 'aquele(s)', 'aquela(s)', 'aquilo' 3. Preposição 'A' + Pronome Relativo 'a qual', 'as quais' 4. Preposição 'A' + Pronome Demonstrativo 'A' (antes de 'que' e 'de') II. LOCUÇÃO FEMININA (Adverbiais, Prepositivas, Conjuntivas) [Anunciada para blocos seguintes]
-
-CRASE DIANTE DE PALAVRAS NO PLURAL
-- ➔ 1. FUNDAMENTAÇÃO TEÓRICA (REGÊNCIA + ARTIGO)
-➔ Exigência de preposição 'a' pelo regente (verbo ou nome)
-- ➔ Presença ou ausência do artigo definido plural 'as' diante do termo regido
-➔ 2. OPÇÕES GRAMATICALMENTE CORRETAS
-- ➔ OPÇÃO A: Preposição 'a' + Artigo 'as' = "às" (Crase no plural)
-➔ Valor semântico: Determinado / Específico ("ordens específicas")
-- ➔ OPÇÃO B: Apenas Preposição 'a' (Sem artigo) = "a" (Sem crase, singular)
-➔ Valor semântico: Indeterminado / Geral ("quaisquer ordens")
-- ➔ 3. OPÇÕES GRAMATICALMENTE INCORRETAS
-➔ ERRO 1: Crase no singular antes de plural ("à ordens")
-- ➔ Mnemônico: "Crase no singular antes do plural, nem a pau!"
-➔ Motivo: Impossibilidade de fundir preposição com artigo inexistente/singular
-- ➔ ERRO 2: Apenas Artigo plural sem acento ("as ordens")
-➔ Motivo: Erro de regência (omissão da preposição 'a' exigida pelo regente)
-- ➔ 4. IMPACTO NAS PROPOSTAS DE REESCRITURA
-➔ Correção Gramatical: MANTÉM (ambas as formas são válidas)
-- ➔ Sentido Semântico: ALTERA (específico vs. geral)
-➔ Coerência Textual (Lógica): MANTÉM (o texto continua fazendo sentido lógico)
-- ➔ 5. CASO ESPECIAL: PRONOMES INDEFINIDOS NO PLURAL (ex: 'várias') ➔ Repelem o artigo definido ➔ Admitem unicamente a preposição simples 'a' (proibido 'à' e 'às')
+```text
+CRASE DIANTE DE PALAVRAS NO PLURAL │ ├── 1. FUNDAMENTAÇÃO TEÓRICA (REGÊNCIA + ARTIGO) │ ├── Exigência de preposição 'a' pelo regente (verbo ou nome) │ └── Presença ou ausência do artigo definido plural 'as' diante do termo regido │ ├── 2. OPÇÕES GRAMATICALMENTE CORRETAS │ ├── OPÇÃO A: Preposição 'a' + Artigo 'as' = "às" (Crase no plural) │ │ └── Valor semântico: Determinado / Específico ("ordens específicas") │ └── OPÇÃO B: Apenas Preposição 'a' (Sem artigo) = "a" (Sem crase, singular) │ └── Valor semântico: Indeterminado / Geral ("quaisquer ordens") │ ├── 3. OPÇÕES GRAMATICALMENTE INCORRETAS │ ├── ERRO 1: Crase no singular antes de plural ("à ordens") │ │ └── Mnemônico: "Crase no singular antes do plural, nem a pau!" │ │ └── Motivo: Impossibilidade de fundir preposição com artigo inexistente/singular │ └── ERRO 2: Apenas Artigo plural sem acento ("as ordens") │ └── Motivo: Erro de regência (omissão da preposição 'a' exigida pelo regente) │ ├── 4. IMPACTO NAS PROPOSTAS DE REESCRITURA │ ├── Correção Gramatical: MANTÉM (ambas as formas são válidas) │ ├── Sentido Semântico: ALTERA (específico vs. geral) │ └── Coerência Textual (Lógica): MANTÉM (o texto continua fazendo sentido lógico) │ └── 5. CASO ESPECIAL: PRONOMES INDEFINIDOS NO PLURAL (ex: 'várias') ├── Repelem o artigo definido └── Admitem unicamente a preposição simples 'a' (proibido 'à' e 'às')
+```
 
 ---
 
@@ -508,8 +474,9 @@ Determinar a presença ou ausência de artigo definido antes de nomes próprios 
 
 Julgar com precisão se a ocorrência de crase ou preposição antes de um substantivo no plural é correta ou incorreta, e justificar seu valor semântico.
 
-1. Verificar a Regência do Termo Anterior (Substituir mentalmente o termo regido por substantivo masculino singular, ex: "ao menino" ou "ao regulamento") Exige Prep. 'A' NÃO Exige Prep. 'A'
-2. Analisar a Grafia Crase Proibida! do 'A' Diante do Plural "às" "a" "à" "as" [A+AS] [A + Ø] [ERRO 1] [ERRO 2] CERTO CERTO ERRADO ERRADO (Sent. (Sent. (Crase singular (Só artigo; Espec.) Geral) antes de plural) faltou prep.)
+```text
+[Início: Frase com termo regente + 'a'/'à'/'às'/'as' + substantivo plural] │ ▼ Passo 1: Verificar a Regência do Termo Anterior (Substituir mentalmente o termo regido por substantivo masculino singular, ex: "ao menino" ou "ao regulamento") │ ┌────────────────┴────────────────┐ ▼ ▼ Exige Prep. 'A' NÃO Exige Prep. 'A' │ │ ▼ ▼ Passo 2: Analisar a Grafia Crase Proibida! do 'A' Diante do Plural │ ┌──────┼────────────────────────┬────────────────────────┐ ▼ ▼ ▼ ▼ "às" "a" "à" "as" │ │ │ │ ▼ ▼ ▼ ▼ [A+AS] [A + Ø] [ERRO 1] [ERRO 2] CERTO CERTO ERRADO ERRADO (Sent. (Sent. (Crase singular (Só artigo; Espec.) Geral) antes de plural) faltou prep.)
+```
 
 1. Passo 1 — Teste de Regência: Examine o termo anterior (verbo ou nome). Troque o complemento por um masculino singular (ex: ao menino). Se exigir ao, o regente pede a preposição a.
 2. Passo 2 — Teste de Artigo e Grafia: Observe a estrutura diante do substantivo plural:
@@ -670,8 +637,9 @@ Julgar com precisão se a ocorrência de crase ou preposição antes de um subst
 
 #### Passo a passo
 
-1. Verificar a Regência do Termo Anterior (Substituir mentalmente o termo regido por substantivo masculino singular, ex: "ao menino" ou "ao regulamento") Exige Prep. 'A' NÃO Exige Prep. 'A'
-2. Analisar a Grafia Crase Proibida! do 'A' Diante do Plural "às" "a" "à" "as" [A+AS] [A + Ø] [ERRO 1] [ERRO 2] CERTO CERTO ERRADO ERRADO (Sent. (Sent. (Crase singular (Só artigo; Espec.) Geral) antes de plural) faltou prep.)
+```text
+[Início: Frase com termo regente + 'a'/'à'/'às'/'as' + substantivo plural] │ ▼ Passo 1: Verificar a Regência do Termo Anterior (Substituir mentalmente o termo regido por substantivo masculino singular, ex: "ao menino" ou "ao regulamento") │ ┌────────────────┴────────────────┐ ▼ ▼ Exige Prep. 'A' NÃO Exige Prep. 'A' │ │ ▼ ▼ Passo 2: Analisar a Grafia Crase Proibida! do 'A' Diante do Plural │ ┌──────┼────────────────────────┬────────────────────────┐ ▼ ▼ ▼ ▼ "às" "a" "à" "as" │ │ │ │ ▼ ▼ ▼ ▼ [A+AS] [A + Ø] [ERRO 1] [ERRO 2] CERTO CERTO ERRADO ERRADO (Sent. (Sent. (Crase singular (Só artigo; Espec.) Geral) antes de plural) faltou prep.)
+```
 
 1. Passo 1 — Teste de Regência: Examine o termo anterior (verbo ou nome). Troque o complemento por um masculino singular (ex: ao menino). Se exigir ao, o regente pede a preposição a.
 2. Passo 2 — Teste de Artigo e Grafia: Observe a estrutura diante do substantivo plural:

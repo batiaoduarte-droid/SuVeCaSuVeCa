@@ -40,15 +40,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ## Pré-requisitos e modelo mental
 
-Emprego da Crase em Palavras no Plural (Padrão Cebraspe) ➔ 1. Regente exige preposição "a" + Palavra feminina no plural
-- ➔ Opção 1: Preposição "a" + Artigo "as" = "às" (Crase obrigatória; sentido determinado)
-➔ Opção 2: Apenas Preposição "a" = "a" (Sem crase; sentido genérico)
-- ➔ Proibições estritas:
-➔ "as" sem acento (Erro de regência: falta da preposição exigida)
-- ➔ "à" no singular antes de plural (Erro crasso: "a" no singular não admite crase diante de plural) ➔ 2. Critérios de Avaliação nas Questões de Concurso
-➔ "O acento é obrigatório em 'às'?" -> Sim, pois não se pode simplesmente remover o acento deixando "as" (artigo puro).
-
-➔ "A substituição de 'a' por 'às' mantém a correção gramatical?" -> Certo, ambas as formas são gramaticalmente válidas. ➔ 3. Supressão de Termos Intervenientes e Regência ➔ "subjacente a todas as relações" -> ao suprimir "a todas", "subjacente" rege diretamente "as relações" -> "subjacente às relações" (crase torna-se obrigatória).
+```text
+Emprego da Crase em Palavras no Plural (Padrão Cebraspe) ├── 1. Regente exige preposição "a" + Palavra feminina no plural │ ├── Opção 1: Preposição "a" + Artigo "as" = "às" (Crase obrigatória; sentido determinado) │ ├── Opção 2: Apenas Preposição "a" = "a" (Sem crase; sentido genérico) │ └── Proibições estritas: │ ├── "as" sem acento (Erro de regência: falta da preposição exigida) │ └── "à" no singular antes de plural (Erro crasso: "a" no singular não admite crase diante de plural) ├── 2. Critérios de Avaliação nas Questões de Concurso │ ├── "O acento é obrigatório em 'às'?" -> Sim, pois não se pode simplesmente remover o acento deixando "as" (artigo puro). │ ├── "A inserção de crase em 'a' singular é facultativa/correta?" -> Errado, é proibida ("nem a pau"). │ └── "A substituição de 'a' por 'às' mantém a correção gramatical?" -> Certo, ambas as formas são gramaticalmente válidas. └── 3. Supressão de Termos Intervenientes e Regência └── "subjacente a todas as relações" -> ao suprimir "a todas", "subjacente" rege diretamente "as relações" -> "subjacente às relações" (crase torna-se obrigatória).
+```
 
 EMPREGO DA CRASE (DUAS REGRAS GERAIS)
 
@@ -112,38 +106,23 @@ EMPREGO DA CRASE (DUAS REGRAS GERAIS)
 2. Não havendo FF, trata-se de locução/expressão?
 3. O núcleo da locução é feminino? (Se feminino -> COM crase; Se masculino -> SEM crase)
 
-ESTUDO DE CRASE
-- ➔ 2 REGRAS 3 CASOS DE CRASE CRASE NO PLURAL CRASE PROIBIDA CRASE E PARALELISMO FUNDAMENTAIS FACULTATIVAS (Regras de Uso) (Vedações do (Simetria Sintática)
-Acento) ➔ FENÔMENO FONÉTICO (FF) LOCUÇÃO FEMININA (LF) (Fusão da Preposição A) (Adverbial, Prepositiva,
-- Conjuntiva) ➔ + A (Artigo Feminino) ➔ + A QUAL / AS QUAIS (Pronomes Relativos) ➔ + AQUILO / AQUELE(A) (Pronomes Demonstrativos) ➔ + A (Pronome Demonstrativo antes de 'QUE' ou 'DE')
+```text
+ESTUDO DE CRASE │ ┌────────────────┬──────────────┴───────────────┬────────────────┬────────────────┐ ▼ ▼ ▼ ▼ ▼ 2 REGRAS 3 CASOS DE CRASE CRASE NO PLURAL CRASE PROIBIDA CRASE E PARALELISMO FUNDAMENTAIS FACULTATIVAS (Regras de Uso) (Vedações do (Simetria Sintática) │ Acento) ├─────────────────────────────┐ ▼ ▼ FENÔMENO FONÉTICO (FF) LOCUÇÃO FEMININA (LF) (Fusão da Preposição A) (Adverbial, Prepositiva, │ Conjuntiva) ├─► + A (Artigo Feminino) ├─► + A QUAL / AS QUAIS (Pronomes Relativos) ├─► + AQUILO / AQUELE(A) (Pronomes Demonstrativos) └─► + A (Pronome Demonstrativo antes de 'QUE' ou 'DE')
+```
 
-EMPREGO DA CRASE (CEBRASPE)
-- ➔
+```text
+EMPREGO DA CRASE (CEBRASPE) │ ┌─────────────────────────────────┴─────────────────────────────────┐ ▼ ▼
+```
 
 1. FENÔMENO FONÉTICO (FF) 2. LOCUÇÕES FEMININAS (LF)
 
-(Preposição 'a' + Artigo/Pronome 'a') (Acento Grave Fixo / Obrigatório)
-- Exigência Sintática (Regência Verbal/Nominal) Locuções Adverbiais Femininas
-Exemplo: "deixar o pão à porta" (deixar + a + a porta)
-- Lugar/Direção: "à direita", "à porta"
-Locuções Temporais Femininas Atenção ao Contexto:
-- Tempo: "à hora da passagem do ano" "Deixar a" (proximidade) vs. "Deixar em" (dentro de) Expressões Cristalizadas Femininas
-"trazer à tona" (em evidência) Contraposição Obrigatória: Núcleo Masculino: "a granel" (SEM crase)
+```text
+(Preposição 'a' + Artigo/Pronome 'a') (Acento Grave Fixo / Obrigatório) │ │ ├─ Exigência Sintática (Regência Verbal/Nominal) ├─ Locuções Adverbiais Femininas │ └─ Exemplo: "deixar o pão à porta" (deixar + a + a porta) │ └─ Lugar/Direção: "à direita", "à porta" │ ├─ Locuções Temporais Femininas └─ Atenção ao Contexto: │ └─ Tempo: "à hora da passagem do ano" └─ "Deixar a" (proximidade) vs. "Deixar em" (dentro de) ├─ Expressões Cristalizadas Femininas │ └─ "trazer à tona" (em evidência) └─ Contraposição Obrigatória: └─ Núcleo Masculino: "a granel" (SEM crase)
+```
 
-CRASE FACULTATIVA ➔ 1. Antes de Nome Próprio Feminino
-- ➔ Motivo: Artigo definido feminino 'a' é facultativo
-➔ Preposição 'a': Obrigatória (exigida por regência)
-- ➔ Exceção (Cuidado): Nomes de figuras ilustres / personagens históricos (sem artigo -> sem crase)
-➔ 2. Antes de Pronome Possessivo Feminino Singular
-- ➔ Motivo: Artigo definido 'a' é facultativo diante de pronome possessivo adjetivo
-➔ Exigência: Deve ser pronome adjetivo (acompanhando substantivo expresso) e no singular
-- ➔ Exceção 1 (Elipse do substantivo): Pronome substantivo exige artigo para marcar a omissão -> Crase Obrigatória
-➔ Exceção 2 (Plural): "a suas" (só preposição -> Crase Proibida) vs. "às suas" (preposição + artigo -> Crase Obrigatória)
-- ➔ 3. Após a Preposição "Até"
-➔ Motivo: A preposição 'a' é facultativa (única preposição que aceita outra preposição após si)
-- ➔ Semântica: "Até" = limite; "Até a" = limite + direção (sem mudança substancial de sentido)
-➔ Exceção (Cuidado): Outras preposições (desde, após, ante, com, etc.) repelem a preposição 'a' -> Crase Proibida
-- ➔ 4. Exercícios de Fixação ➔ Identificação de ocorrências facultativas vs. obrigatórias vs. proibidas ➔ Validação de regência e classes gramaticais
+```text
+CRASE FACULTATIVA ├── 1. Antes de Nome Próprio Feminino │ ├── Motivo: Artigo definido feminino 'a' é facultativo │ ├── Preposição 'a': Obrigatória (exigida por regência) │ └── Exceção (Cuidado): Nomes de figuras ilustres / personagens históricos (sem artigo -> sem crase) │ ├── 2. Antes de Pronome Possessivo Feminino Singular │ ├── Motivo: Artigo definido 'a' é facultativo diante de pronome possessivo adjetivo │ ├── Exigência: Deve ser pronome adjetivo (acompanhando substantivo expresso) e no singular │ ├── Exceção 1 (Elipse do substantivo): Pronome substantivo exige artigo para marcar a omissão -> Crase Obrigatória │ └── Exceção 2 (Plural): "a suas" (só preposição -> Crase Proibida) vs. "às suas" (preposição + artigo -> Crase Obrigatória) │ ├── 3. Após a Preposição "Até" │ ├── Motivo: A preposição 'a' é facultativa (única preposição que aceita outra preposição após si) │ ├── Semântica: "Até" = limite; "Até a" = limite + direção (sem mudança substancial de sentido) │ └── Exceção (Cuidado): Outras preposições (desde, após, ante, com, etc.) repelem a preposição 'a' -> Crase Proibida │ └── 4. Exercícios de Fixação ├── Identificação de ocorrências facultativas vs. obrigatórias vs. proibidas └── Validação de regência e classes gramaticais
+```
 
 ---
 

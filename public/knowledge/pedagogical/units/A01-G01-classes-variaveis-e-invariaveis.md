@@ -40,24 +40,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ## Pré-requisitos e modelo mental
 
-SISTEMA MORFOLÓGICO DA LÍNGUA PORTUGUESA (10 CLASSES)
-- ➔ 1. CLASSES VARIÁVEIS (Admitem flexão de Gênero [M/F] e Número [S/P])
-➔ Substantivo: Núcleo do sistema nominal; nomeia seres/ideias; admite Artigo antecedente.
-- ➔ Artigo: Acompanha e determina/generaliza o substantivo.
-➔ Adjetivo: Palavra simples que caracteriza o substantivo (Flexiona no plural).
-- ➔ [Contraste] Locução Adjetiva: Expressão (Prep + Subst); em regra INVARIÁVEL.
-➔ Pronome: Relação com o nome.
-- ➔ Pronome Substantivo: Ocupa o lugar do nome (isolado na função).
-➔ Pronome Adjetivo: Acompanha o substantivo (manda seta para ele).
-- ➔ Numeral: Quantifica, ordena, multiplica ou fraciona seres.
-➔ Numeral Substantivo: Atua isoladamente como núcleo nominal.
-- ➔ Numeral Adjetivo: Acompanha e determina o substantivo.
-➔ Verbo: Exprime ação, estado, fenômeno; classe de maior flexibilidade morfológica.
-- ➔ 2. CLASSES INVARIÁVEIS (Forma fixa; sem flexão de gênero e número) ➔ Advérbio: Modifica Verbo, Adjetivo ou outro Advérbio; indica circunstância.
-➔ Locução Adverbial: Expressão preposicionada com valor adverbial (invariável).
-- ➔ [Exceção] Advérbio "Todo/Toda": Admite concordância atípica com adjetivo feminino. ➔ Conjunção: Conectivo; liga orações ou termos de mesma função sintática.
-➔ Locução Conjuntiva: Expressão conectiva; TERMINA OBRIGATORIAMENTE EM CONJUNÇÃO. ➔ Preposição: Conectivo; liga termos (palavras) ou orações reduzidas.
-- ➔ Locução Prepositiva: Expressão conectiva; TERMINA OBRIGATORIAMENTE EM PREPOSIÇÃO. ➔ Interjeição: Palavra/expressão invariável que exprime emoções, sentimentos e sensações.
+```text
+SISTEMA MORFOLÓGICO DA LÍNGUA PORTUGUESA (10 CLASSES) │ ├── 1. CLASSES VARIÁVEIS (Admitem flexão de Gênero [M/F] e Número [S/P]) │ ├── Substantivo: Núcleo do sistema nominal; nomeia seres/ideias; admite Artigo antecedente. │ ├── Artigo: Acompanha e determina/generaliza o substantivo. │ ├── Adjetivo: Palavra simples que caracteriza o substantivo (Flexiona no plural). │ │ └── [Contraste] Locução Adjetiva: Expressão (Prep + Subst); em regra INVARIÁVEL. │ ├── Pronome: Relação com o nome. │ │ ├── Pronome Substantivo: Ocupa o lugar do nome (isolado na função). │ │ └── Pronome Adjetivo: Acompanha o substantivo (manda seta para ele). │ ├── Numeral: Quantifica, ordena, multiplica ou fraciona seres. │ │ ├── Numeral Substantivo: Atua isoladamente como núcleo nominal. │ │ └── Numeral Adjetivo: Acompanha e determina o substantivo. │ └── Verbo: Exprime ação, estado, fenômeno; classe de maior flexibilidade morfológica. │ └── 2. CLASSES INVARIÁVEIS (Forma fixa; sem flexão de gênero e número) ├── Advérbio: Modifica Verbo, Adjetivo ou outro Advérbio; indica circunstância. │ ├── Locução Adverbial: Expressão preposicionada com valor adverbial (invariável). │ └── [Exceção] Advérbio "Todo/Toda": Admite concordância atípica com adjetivo feminino. ├── Conjunção: Conectivo; liga orações ou termos de mesma função sintática. │ └── Locução Conjuntiva: Expressão conectiva; TERMINA OBRIGATORIAMENTE EM CONJUNÇÃO. ├── Preposição: Conectivo; liga termos (palavras) ou orações reduzidas. │ └── Locução Prepositiva: Expressão conectiva; TERMINA OBRIGATORIAMENTE EM PREPOSIÇÃO. └── Interjeição: Palavra/expressão invariável que exprime emoções, sentimentos e sensações.
+```
 
 ---
 

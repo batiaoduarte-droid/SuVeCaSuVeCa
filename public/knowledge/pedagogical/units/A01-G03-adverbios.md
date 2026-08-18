@@ -48,9 +48,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Adjunto Adverbial: Função sintática exercida pelo advérbio na análise oracional.
 - Mobilidade Sintática: Capacidade do advérbio de se deslocar na oração sem alterar sua relação sintático-semântica com o termo regente.
 
-CLASSES MODIFICADORAS
-- ➔ LIGA-SE A SUBSTANTIVO LIGA-SE A VERBO / ADJETIVO / ADVÉRBIO
-ADJETIVO ADVÉRBIO (Classe Variável) (Classe Invariável) • Atribui qualidade/estado • Função Sintática: Adjunto Adverbial • Função: Adjunto Adnominal / • Valores Circunstanciais: Predicativo Se ligado a ADJ / ADV ➔ INTENSIDADE (Intensificador) • NÃO expressa circunstância Se ligado a VERBO: Modo (Jeito: "como?") Tempo (Quando? / Frequência) Lugar (Onde?) Afirmação / Negação Intensidade
+```text
+CLASSES MODIFICADORAS │ ┌──────────────────────────┴──────────────────────────┐ ▼ ▼ LIGA-SE A SUBSTANTIVO LIGA-SE A VERBO / ADJETIVO / ADVÉRBIO │ │ ADJETIVO ADVÉRBIO (Classe Variável) (Classe Invariável) • Atribui qualidade/estado • Função Sintática: Adjunto Adverbial • Função: Adjunto Adnominal / • Valores Circunstanciais: Predicativo ├─ Se ligado a ADJ / ADV ──► INTENSIDADE (Intensificador) • NÃO expressa circunstância └─ Se ligado a VERBO: ├─ Modo (Jeito: "como?") ├─ Tempo (Quando? / Frequência) ├─ Lugar (Onde?) ├─ Afirmação / Negação └─ Intensidade
+```
 
 ---
 

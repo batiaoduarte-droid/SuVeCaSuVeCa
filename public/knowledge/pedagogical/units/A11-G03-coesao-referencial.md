@@ -44,16 +44,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Sintaxe Elementar: Reconhecimento de sujeito, predicado, complementos verbais e orações adjetivas/substantivas.
 - Conceito Preliminar de Enunciação: Noção de situação comunicativa, emissor/locutor, receptor/interlocutor, tempo cronológico da fala e espaço físico da emissão.
 
-COESÃO TEXTUAL ("A LIGA")
-- ➔ COESÃO SEQUENCIAL COESÃO REFERENCIAL (Conectores lógico-semânticos: (Mecanismos de substituição causa, oposição, tempo, etc.) e apontamento: "Setas")
-➔ Sem envio de setas ➔ TRÍADE DA REFERENCIAÇÃO ➔ Coesivo (Emissor / Operador) ➔ Referência (A Seta / Processo) ➔ Referente (Receptor / Alvo)
-- ➔ FUNÇÃO ENDOFÓRICA FUNÇÃO EXOFÓRICA (DÊIXIS) (Referente EXPLÍCITO no texto) (Referente FORA do texto / Situação)
-➔ ➔ ANÁFORA CATÁFORA QUEM QUANDO ONDE (Aponta p/ trás / (Aponta p/ frente / (Pessoa / (Tempo / (Espaço / termo antecedente) termo subsequente) Interlocutor) Cronologia) Lugar)
-- ➔ ➔ MECANISMOS E CLASSES CRÍTICAS EXPLICITAÇÃO PROIBIÇÃO EM ➔ Pronomes Pessoais / Relativos TEXTUAL REDAÇÃO
-➔ Concordam com o referente (Converte dêixis (Autonomia ➔ Pronomes Demonstrativos (Isso/Esse) em endófora) do texto)
-- ➔ Função Resumitiva (Todo vs. Parte) ➔ Pronomes Possessivos (Seu/Sua)
-➔ Concorda com: Coisa possuída (posposta)
-- ➔ Refere-se a: Possuidor (antecedente) ➔ Coesão Lexical (FGV) ➔ Substantivo retoma verbo / hiperônimos
+```text
+COESÃO TEXTUAL ("A LIGA") │ ┌───────────────────────┴───────────────────────┐ ▼ ▼ COESÃO SEQUENCIAL COESÃO REFERENCIAL (Conectores lógico-semânticos: (Mecanismos de substituição causa, oposição, tempo, etc.) e apontamento: "Setas") │ │ └──────── Sem envio de setas ──────┐ │ │ ▼ TRÍADE DA REFERENCIAÇÃO ├── Coesivo (Emissor / Operador) ├── Referência (A Seta / Processo) └── Referente (Receptor / Alvo) │ ┌───────────────────────────────┴───────────────────────────────┐ ▼ ▼ FUNÇÃO ENDOFÓRICA FUNÇÃO EXOFÓRICA (DÊIXIS) (Referente EXPLÍCITO no texto) (Referente FORA do texto / Situação) │ │ ┌─────────────┴─────────────┐ ┌─────────────┼─────────────┐ ▼ ▼ ▼ ▼ ▼ ANÁFORA CATÁFORA QUEM QUANDO ONDE (Aponta p/ trás / (Aponta p/ frente / (Pessoa / (Tempo / (Espaço / termo antecedente) termo subsequente) Interlocutor) Cronologia) Lugar) │ │ │ │ │ └─────────────┬─────────────┘ └──────┬──────┴──────┬──────┘ │ │ │ ▼ ▼ ▼ MECANISMOS E CLASSES CRÍTICAS EXPLICITAÇÃO PROIBIÇÃO EM ├── Pronomes Pessoais / Relativos TEXTUAL REDAÇÃO │ └── Concordam com o referente (Converte dêixis (Autonomia ├── Pronomes Demonstrativos (Isso/Esse) em endófora) do texto) │ └── Função Resumitiva (Todo vs. Parte) ├── Pronomes Possessivos (Seu/Sua) │ ├── Concorda com: Coisa possuída (posposta) │ └── Refere-se a: Possuidor (antecedente) └── Coesão Lexical (FGV) └── Substantivo retoma verbo / hiperônimos
+```
 
 ---
 
@@ -90,9 +83,13 @@ A coesão textual ramifica-se em duas modalidades funcionais obrigatórias:
 - Coesão Sequencial (Sem Setas): Marca circunstâncias e valores lógico-semânticos de causa, consequência, tempo, oposição, concessão, condição e conclusão. Na frase "João chegou, mas Maria saiu", a conjunção adversativa "mas" articula uma oposição entre as orações, sem substituir nem apontar para "João" ou "Maria".
 - Coesão Referencial (Com Setas): Permite a reiteração da ideia sem a repetição viciosa da palavra ("Não repita a palavra, repita a ideia"). Na frase "João chegou, todos o viram", o pronome oblíquo "o" remete e substitui diretamente o substantivo "João".
 
-COESÃO SEQUENCIAL: [ Oração 1 ] ➔ ( Conectivo Lógico: MAS / PORQUE / LOGO ) ➔ > [ Oração 2 ] (Sem envio de setas a termos nominais)
+```text
+COESÃO SEQUENCIAL: [ Oração 1 ] ──( Conectivo Lógico: MAS / PORQUE / LOGO )──> [ Oração 2 ] (Sem envio de setas a termos nominais)
+```
 
-COESÃO REFERENCIAL: [ João ] < ➔ ( Seta / Substituição ) ➔ [ o ] (Referente) (Coesivo)
+```text
+COESÃO REFERENCIAL: [ João ] <─────────────( Seta / Substituição )───────────── [ o ] (Referente) (Coesivo)
+```
 
 - Expande para: , ,
 
@@ -122,8 +119,9 @@ A dêixis estrutura-se em três modalidades fundamentais:
 2. Dêixis de Tempo (Quando): Advérbios e expressões temporais que tomam o momento da enunciação como ponto zero (hoje, ontem, amanhã, atualmente, nos dias atuais, agora). Ex.: "Hoje eu escrevi uma carta". O dia exato depende da data física em que o emissor escreveu o texto.
 3. Dêixis de Espaço / Lugar (Onde): Advérbios e demonstrativos de localização espacial relativa (aqui, cá, aí, lá, este, esse). Ex.: "O livro não está aqui". O sentido de "aqui" desloca-se conforme a posição geográfica ou recinto ocupado pelo falante.
 
-SITUAÇÃO COMUNICATIVA CONCRETA (ENUNCIAÇÃO)
-- ➔ QUEM QUANDO ONDE (Pessoa) (Tempo) (Espaço) [eu, tu, meu] [hoje, atualmente] [aqui, cá, lá]
+```text
+SITUAÇÃO COMUNICATIVA CONCRETA (ENUNCIAÇÃO) │ ┌───────────────────────┼───────────────────────┐ ▼ ▼ ▼ QUEM QUANDO ONDE (Pessoa) (Tempo) (Espaço) [eu, tu, meu] [hoje, atualmente] [aqui, cá, lá]
+```
 
 A mecânica da referenciação textual opera rigorosamente sobre três papéis técnicos distintos:
 
@@ -134,7 +132,9 @@ A mecânica da referenciação textual opera rigorosamente sobre três papéis t
 - Diferença entre Classe Gramatical e Função Coesiva: O termo "coesivo" é um conceito funcional da análise textual, e não uma classe morfológica. Pronomes (pessoais, possessivos, demonstrativos, relativos, indefinidos), advérbios ou substantivos podem assumir o papel de coesivo.
 - Armadilha de Concurso: Bancas examinadoras (notadamente o CEBRASPE) frequentemente tentam confundir o candidato afirmando que o pronome indicador é o "referente" ou que o substantivo substantivo principal é o "elemento coesivo".
 
-[ REFERENTE ] < ➔ ( REFERÊNCIA / Seta ) ➔ [ COESIVO ] (Termo Setado / Alvo) (Processo Relacional / Ligação) (Emissor da Seta) Ex: "a caverna" Ex: "ela"
+```text
+[ REFERENTE ] <────────────── ( REFERÊNCIA / Seta ) ────────────── [ COESIVO ] (Termo Setado / Alvo) (Processo Relacional / Ligação) (Emissor da Seta) Ex: "a caverna" Ex: "ela"
+```
 
 Um vocábulo tipicamente dêitico perde o seu caráter exofórico e passa a exercer função endofórica (anafórica ou catafórica) no exato instante em que o seu referente é formalmente explicitado no corpo do próprio texto.
 
@@ -190,9 +190,9 @@ Nos pronomes possessivos de 3ª pessoa (seu, sua, seus, suas), a relação morfo
 - Pronomes Possessivos (seu, sua, seus, suas): Não concordam com o referente antecedente. Podem estar no singular retomando um substantivo no plural e vice-versa.
 - Teste da Paráfrase de Posse: Substitua a construção possessiva por [substantivo] + dele / dela / deles / delas. O termo que responder à locução prepositiva é o referente legítimo.
 
-CONCORDÂNCIA (Morfossintaxe) ➔
-- [ os países ] [ cadeias produtivas ]
-➔ REFERENCIAÇÃO (Semântica / Posse: "cadeias produtivas DELES")
+```text
+CONCORDÂNCIA (Morfossintaxe) ┌─────────────────────────────┐ ▼ │ [ os países ]  [ cadeias produtivas ] ▲ │ └────────────────────┘ REFERENCIAÇÃO (Semântica / Posse: "cadeias produtivas DELES")
+```
 
 1. "A falta de insumos levou os países [masc. pl.] a repensarem suas [fem. pl.] cadeias [fem. pl.] produtivas." $\rightarrow$ suas concorda com cadeias, mas refere-se a países.
 2. "João [masc. sing.] saiu com sua [fem. sing.] irmã [fem. sing.]." $\rightarrow$ sua concorda com irmã, mas refere-se a João (saiu com a irmã dele).
@@ -235,18 +235,17 @@ B), validando-os pelo predicado subsequente.
 
 ## Roteiros de resolução
 
-INÍCIO: Isolar o Elemento Coesivo
-- O referente está explícito dentro da superfície textual?
-➔ SIM NÃO FUNÇÃO ENDOFÓRICA FUNÇÃO EXOFÓRICA (DÊIXIS)
-- ➔ ➔ ANÁFORA CATÁFORA QUEM QUANDO ONDE (Vetor p/ trás) (Vetor p/ frente) (Pessoa) (Tempo) (Espaço)
-Identificar a Classe do Coesivo Anafórico: ➔ Pronome Pessoal / Relativo: Aplicar filtro de concordância com antecedente. ➔ Pronome Demonstrativo (Isso): Testar escopo (retoma o fato global ou um sintagma?). ➔ Pronome Possessivo (Seu/Sua):
+```text
+INÍCIO: Isolar o Elemento Coesivo │ ▼ O referente está explícito dentro da superfície textual? │ ┌────────────────────┴────────────────────┐ ▼ SIM ▼ NÃO FUNÇÃO ENDOFÓRICA FUNÇÃO EXOFÓRICA (DÊIXIS) │ │ ┌────────┴────────┐ ┌────────┼────────┐ ▼ ▼ ▼ ▼ ▼ ANÁFORA CATÁFORA QUEM QUANDO ONDE (Vetor p/ trás) (Vetor p/ frente) (Pessoa) (Tempo) (Espaço) │ ▼ Identificar a Classe do Coesivo Anafórico: ├── Pronome Pessoal / Relativo: Aplicar filtro de concordância com antecedente. ├── Pronome Demonstrativo (Isso): Testar escopo (retoma o fato global ou um sintagma?). └── Pronome Possessivo (Seu/Sua):
+```
 
 1. Isolar substantivo posposto (com que concorda morfologicamente - NÃO É O REFERENTE);
 2. Substituir mentalmente por "dele / deles / dela / delas";
 3. Identificar o possuidor antecedente (este é o REFERENTE).
 
-APLICAÇÃO DO MANTRA DA PROGRESSIVIDADE TEXTUAL: Ler a predicação seguinte ("o que vem depois salva") e confirmar compatibilidade semântica.
-- FIM: Referente Validado com Certeza
+```text
+│ ▼ APLICAÇÃO DO MANTRA DA PROGRESSIVIDADE TEXTUAL: Ler a predicação seguinte ("o que vem depois salva") e confirmar compatibilidade semântica. │ ▼ FIM: Referente Validado com Certeza
+```
 
 1. Passo 1 — Isolar a Proposta da Banca: Identifique o elemento coesivo destacado no texto e anote o substantivo que a assertiva afirma ser o referente (Candidato A).
 2. Passo 2 — Rastreamento Ativo do Segundo Concorrente: Não confie passivamente no Candidato A. Varra o mesmo segmento textual e localize o Candidato B (outro substantivo próximo, gramaticalmente compatível).
@@ -257,18 +256,17 @@ APLICAÇÃO DO MANTRA DA PROGRESSIVIDADE TEXTUAL: Ler a predicação seguinte ("
 - Se o Candidato A (da banca) for o único sustentado pelo predicado posterior $\rightarrow$ Julgue CERTO.
 - Se o Candidato B (o concorrente) for o termo real exigido pela lógica do autor $\rightarrow$ Julgue ERRADO.
 
-INÍCIO: Isolar o Elemento Coesivo
-- O referente está explícito dentro da superfície textual?
-➔ SIM NÃO FUNÇÃO ENDOFÓRICA FUNÇÃO EXOFÓRICA (DÊIXIS)
-- ➔ ➔ ANÁFORA CATÁFORA QUEM QUANDO ONDE (Vetor p/ trás) (Vetor p/ frente) (Pessoa) (Tempo) (Espaço)
-Identificar a Classe do Coesivo Anafórico: ➔ Pronome Pessoal / Relativo: Aplicar filtro de concordância com antecedente. ➔ Pronome Demonstrativo (Isso): Testar escopo (retoma o fato global ou um sintagma?). ➔ Pronome Possessivo (Seu/Sua):
+```text
+INÍCIO: Isolar o Elemento Coesivo │ ▼ O referente está explícito dentro da superfície textual? │ ┌────────────────────┴────────────────────┐ ▼ SIM ▼ NÃO FUNÇÃO ENDOFÓRICA FUNÇÃO EXOFÓRICA (DÊIXIS) │ │ ┌────────┴────────┐ ┌────────┼────────┐ ▼ ▼ ▼ ▼ ▼ ANÁFORA CATÁFORA QUEM QUANDO ONDE (Vetor p/ trás) (Vetor p/ frente) (Pessoa) (Tempo) (Espaço) │ ▼ Identificar a Classe do Coesivo Anafórico: ├── Pronome Pessoal / Relativo: Aplicar filtro de concordância com antecedente. ├── Pronome Demonstrativo (Isso): Testar escopo (retoma o fato global ou um sintagma?). └── Pronome Possessivo (Seu/Sua):
+```
 
 1. Isolar substantivo posposto (com que concorda morfologicamente - NÃO É O REFERENTE);
 2. Substituir mentalmente por "dele / deles / dela / delas";
 3. Identificar o possuidor antecedente (este é o REFERENTE).
 
-APLICAÇÃO DO MANTRA DA PROGRESSIVIDADE TEXTUAL: Ler a predicação seguinte ("o que vem depois salva") e confirmar compatibilidade semântica.
-- FIM: Referente Validado com Certeza
+```text
+│ ▼ APLICAÇÃO DO MANTRA DA PROGRESSIVIDADE TEXTUAL: Ler a predicação seguinte ("o que vem depois salva") e confirmar compatibilidade semântica. │ ▼ FIM: Referente Validado com Certeza
+```
 
 ### Sequência Operacional Passo a Passo
 

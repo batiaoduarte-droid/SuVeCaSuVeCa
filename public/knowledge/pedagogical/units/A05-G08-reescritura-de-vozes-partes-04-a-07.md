@@ -45,15 +45,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 3. Morfologia Verbal: Domínio dos tempos e modos do Indicativo (Presente, Pretérito Perfeito, Pretérito Imperfeito, Futuro do Pretérito) e das formas nominais (Infinitivo, Gerúndio e Particípio).
 4. Sintaxe de Colocação Pronominal: Reconhecimento de fatores de próclise (palavras negativas, advérbios, pronomes relativos, conjunções subordinativas).
 
-SISTEMA DE VOZES VERBAIS
-- ➔ [ VOZ ATIVA ] [ VOZ PASSIVA ] (Sujeito Agente) (Sujeito Paciente)
-➔
-- [ PASSIVA ANALÍTICA ] [ PASSIVA SINTÉTICA ]
-• Locução: SER + Particípio • Morfossintaxe: VTD/VTDI + SE
-- • Agente: Expresso ou Indeterminado • Agente: Indeterminado (não inexistente)
-• Extensão: +1 verbo que a ativa • Economia: Sem auxiliar / Sem agente
-- ➔ Transposição Mútua ➔ (Método 4 Instruções)
-➔ Conversão Mútua ➔ (Atalho: Corta SE + 3ª Plural)
+```text
+SISTEMA DE VOZES VERBAIS │ ┌─────────────────────────┴─────────────────────────┐ ▼ ▼ [ VOZ ATIVA ] [ VOZ PASSIVA ] (Sujeito Agente) (Sujeito Paciente) │ │ │ ┌─────────────────────────┴─────────────────────────┐ │ ▼ ▼ │ [ PASSIVA ANALÍTICA ] [ PASSIVA SINTÉTICA ] │ • Locução: SER + Particípio • Morfossintaxe: VTD/VTDI + SE │ • Agente: Expresso ou Indeterminado • Agente: Indeterminado (não inexistente) │ • Extensão: +1 verbo que a ativa • Economia: Sem auxiliar / Sem agente │ │ │ │ └────────────── Transposição Mútua ─────────────────┘ │ (Método 4 Instruções) │ └──────────────────────────────────────── Conversão Mútua ────────────────────┘ (Atalho: Corta SE + 3ª Plural)
+```
 
 ---
 

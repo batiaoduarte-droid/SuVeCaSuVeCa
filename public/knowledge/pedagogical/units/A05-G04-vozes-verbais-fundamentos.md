@@ -40,33 +40,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ## Pré-requisitos e modelo mental
 
-Vozes Verbais — Fundamentos e Identificação Estrutural
-- ➔ 1. Mapeamento de Questões em Concursos
-➔ Modelo 1: Identificação da Voz Verbal (Ativa, Passiva Analítica/Sintética, Reflexiva)
-- ➔ Modelo 2: Possibilidade de Transposição (Admissibilidade com base em VTD/VTDI)
-➔ Modelo 3: Reescritura / Transposição Efetiva (Ativa ↔ Analítica ↔ Sintética)
-- ➔ 2. Voz Ativa
-➔ Sujeito Agente (executa/pratica a ação verbal)
-- ➔ Aplicação a verbos intransitivos, transitivos e de ligação
-➔ Desconstrução de Armadilhas: Verbo "receber" e sujeitos inanimados ("A cozinha era antiga")
-- ➔ 3. Voz Passiva (Sujeito Paciente / Recebe a Ação Verbal)
-➔ O Mantra Fundamental: "Na voz passiva NÃO existe Objeto Direto, e sim Sujeito Paciente!"
-- ➔ a) Voz Passiva Analítica ("Analítica Aumenta")
-➔ Locução Verbal: Verbo Auxiliar (SER / estar / ficar) + Verbo Principal no PARTICÍPIO
-- ➔ Posicionamento da FGV: Considera rigorosamente apenas o verbo SER como auxiliar
-➔ Agente da Passiva (Termo preposicionado por "por/pelo" ou "de"; SEMPRE existe no plano lógico)
-- ➔ Determinado (Explícito): ex.: "A questão foi compreendida por todos."
-➔ Indeterminado (Implícito/Oculto): ex.: "O alerta foi dado." (Alerta Cebraspe)
-- ➔ b) Voz Passiva Sintética ou Pronominal ("Sintética Diminui / Economiza")
-➔ Estrutura: VTD ou VTDI + Partícula Apassivadora (SE / CPA)
-- ➔ Fatores de Economia: Não possui auxiliar "SER" e não menciona o agente da passiva
-➔ Método das 2 Verificações: (1) Checar VTD/VTDI+SE; (2) Transposição mental para Analítica
-- ➔ Regra de Concordância Verbal: Verbo concorda com o Sujeito Paciente ("Vendem-se terrenos")
-➔ Comportamento do VTDI: Objeto Indireto permanece intocado ("Deu-se às poesias [OI] o nome...")
-- ➔ 4. Voz Reflexiva
-➔ Sujeito Agente e Paciente simultaneamente
-- ➔ Padrão Cebraspe: "Sujeito e Complemento possuem o MESMO REFERENTE" ("Ele se cortou")
-➔ 5. Critérios Rígidos de Diferenciação Estrutural ➔ Agente da Passiva ("pela TV") vs. Adjunto Adverbial de Meio ("via TV" = por meio da TV) ➔ Verbo de Ligação + Adjetivo ("era antiga") vs. Verbo Auxiliar + Particípio ("era reformada")
+```text
+Vozes Verbais — Fundamentos e Identificação Estrutural │ ├── 1. Mapeamento de Questões em Concursos │ ├── Modelo 1: Identificação da Voz Verbal (Ativa, Passiva Analítica/Sintética, Reflexiva) │ ├── Modelo 2: Possibilidade de Transposição (Admissibilidade com base em VTD/VTDI) │ └── Modelo 3: Reescritura / Transposição Efetiva (Ativa ↔ Analítica ↔ Sintética) │ ├── 2. Voz Ativa │ ├── Sujeito Agente (executa/pratica a ação verbal) │ ├── Aplicação a verbos intransitivos, transitivos e de ligação │ └── Desconstrução de Armadilhas: Verbo "receber" e sujeitos inanimados ("A cozinha era antiga") │ ├── 3. Voz Passiva (Sujeito Paciente / Recebe a Ação Verbal) │ ├── O Mantra Fundamental: "Na voz passiva NÃO existe Objeto Direto, e sim Sujeito Paciente!" │ │ │ ├── a) Voz Passiva Analítica ("Analítica Aumenta") │ │ ├── Locução Verbal: Verbo Auxiliar (SER / estar / ficar) + Verbo Principal no PARTICÍPIO │ │ ├── Posicionamento da FGV: Considera rigorosamente apenas o verbo SER como auxiliar │ │ └── Agente da Passiva (Termo preposicionado por "por/pelo" ou "de"; SEMPRE existe no plano lógico) │ │ ├── Determinado (Explícito): ex.: "A questão foi compreendida por todos." │ │ └── Indeterminado (Implícito/Oculto): ex.: "O alerta foi dado." (Alerta Cebraspe) │ │ │ └── b) Voz Passiva Sintética ou Pronominal ("Sintética Diminui / Economiza") │ ├── Estrutura: VTD ou VTDI + Partícula Apassivadora (SE / CPA) │ ├── Fatores de Economia: Não possui auxiliar "SER" e não menciona o agente da passiva │ ├── Método das 2 Verificações: (1) Checar VTD/VTDI+SE; (2) Transposição mental para Analítica │ ├── Regra de Concordância Verbal: Verbo concorda com o Sujeito Paciente ("Vendem-se terrenos") │ └── Comportamento do VTDI: Objeto Indireto permanece intocado ("Deu-se às poesias [OI] o nome...") │ ├── 4. Voz Reflexiva │ ├── Sujeito Agente e Paciente simultaneamente │ └── Padrão Cebraspe: "Sujeito e Complemento possuem o MESMO REFERENTE" ("Ele se cortou") │ └── 5. Critérios Rígidos de Diferenciação Estrutural ├── Agente da Passiva ("pela TV") vs. Adjunto Adverbial de Meio ("via TV" = por meio da TV) └── Verbo de Ligação + Adjetivo ("era antiga") vs. Verbo Auxiliar + Particípio ("era reformada")
+```
 
 ---
 
@@ -234,10 +210,7 @@ Passo 1: Localizar o verbo principal ou locução verbal da oração. Passo 2: I
 Passo 4: Se for Voz Passiva, determinar a modalidade:
 
 ```text
-[Início: Frase contém Verbo + SE]
-- [Etapa 1: Checar Transitividade Verbal] O verbo é Transitivo Direto (VTD) ou Transitivo Direto e Indireto (VTDI)? ➔ NÃO ➔ [NÃO é Passiva Sintética (SE é IIS, PIV, etc.)] ➔ SIM ➔ [Avançar para a Etapa 2]
-[Etapa 2: Teste de Transposição para a Passiva Analítica] A frase aceita conversão natural para "Sujeito + SER + Particípio"? ➔ NÃO ➔ [NÃO é Passiva Sintética] ➔ SIM ➔ [CONFIRMADO: Voz Passiva Sintética / SE = CPA]
-- [Regra de Concordância Obrigatória] O verbo deve concordar em número com o Sujeito Paciente!
+[Início: Frase contém Verbo + SE] │ ▼ [Etapa 1: Checar Transitividade Verbal] O verbo é Transitivo Direto (VTD) ou Transitivo Direto e Indireto (VTDI)? ├── NÃO ──► [NÃO é Passiva Sintética (SE é IIS, PIV, etc.)] └── SIM ──► [Avançar para a Etapa 2] │ ▼ [Etapa 2: Teste de Transposição para a Passiva Analítica] A frase aceita conversão natural para "Sujeito + SER + Particípio"? ├── NÃO ──► [NÃO é Passiva Sintética] └── SIM ──► [CONFIRMADO: Voz Passiva Sintética / SE = CPA] │ ▼ [Regra de Concordância Obrigatória] O verbo deve concordar em número com o Sujeito Paciente!
 ```
 
 1. Inspecione a oração buscando as duas únicas formas passivas:
@@ -258,10 +231,7 @@ Passo 1: Localizar o verbo principal ou locução verbal da oração. Passo 2: I
 Passo 4: Se for Voz Passiva, determinar a modalidade:
 
 ```text
-[Início: Frase contém Verbo + SE]
-- [Etapa 1: Checar Transitividade Verbal] O verbo é Transitivo Direto (VTD) ou Transitivo Direto e Indireto (VTDI)? ➔ NÃO ➔ [NÃO é Passiva Sintética (SE é IIS, PIV, etc.)] ➔ SIM ➔ [Avançar para a Etapa 2]
-[Etapa 2: Teste de Transposição para a Passiva Analítica] A frase aceita conversão natural para "Sujeito + SER + Particípio"? ➔ NÃO ➔ [NÃO é Passiva Sintética] ➔ SIM ➔ [CONFIRMADO: Voz Passiva Sintética / SE = CPA]
-- [Regra de Concordância Obrigatória] O verbo deve concordar em número com o Sujeito Paciente!
+[Início: Frase contém Verbo + SE] │ ▼ [Etapa 1: Checar Transitividade Verbal] O verbo é Transitivo Direto (VTD) ou Transitivo Direto e Indireto (VTDI)? ├── NÃO ──► [NÃO é Passiva Sintética (SE é IIS, PIV, etc.)] └── SIM ──► [Avançar para a Etapa 2] │ ▼ [Etapa 2: Teste de Transposição para a Passiva Analítica] A frase aceita conversão natural para "Sujeito + SER + Particípio"? ├── NÃO ──► [NÃO é Passiva Sintética] └── SIM ──► [CONFIRMADO: Voz Passiva Sintética / SE = CPA] │ ▼ [Regra de Concordância Obrigatória] O verbo deve concordar em número com o Sujeito Paciente!
 ```
 
 1. Inspecione a oração buscando as duas únicas formas passivas:

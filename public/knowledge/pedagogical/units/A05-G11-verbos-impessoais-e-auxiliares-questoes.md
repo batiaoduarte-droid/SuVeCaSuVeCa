@@ -40,40 +40,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ## Pré-requisitos e modelo mental
 
-SINTAXE VERBAL: IMPESSOALIDADE, LOCUÇÕES E PREDICAÇÃO
-- ➔ 1. VERBOS IMPESSOAIS (ORAÇÃO SEM SUJEITO)
-➔ Fenômenos da Natureza (Sentido Denotativo/Próprio: "Ventou muito")
-- ➔ Armadilha: Se houver sujeito expresso, o verbo torna-se pessoal ("A tarde escurece", "O dia vinha amanhecendo")
-➔ Verbo "Haver"
-- ➔ Sentido de Existir/Ocorrer/Acontecer ("não havia nada", "Há dúvidas", "não haja empecilhos")
-➔ Objeto Direto: O termo substantivo que o acompanha é complemento, não sujeito
-- ➔ Contraste: O verbo "Existir" é sempre pessoal ("existia uma ventania", "Existem aves")
-➔ Sentido de Tempo Decorrido/Transcorrido ("Há dias que...", "há três anos", "Houve época", "Há dez anos")
-- ➔ É verbo principal simples e pleno, não verbo auxiliar
-➔ Verbo "Fazer"
-- ➔ Tempo Decorrido ("faz tempo", "fazia dias", "fez uma década") -> Invariável no singular
-➔ Fenômeno Meteorológico/Climático ("Fez muito frio no dia...", "está fazendo muito frio")
-- ➔ Verbo "Passar (de)" Indicando Horas Transcorridas ("Já passava das quatro horas")
-➔ Verbo "Ser" Cronológico ("É tarde", "É meio-dia", "São três horas")
-- ➔ 2. DISTINÇÃO RIGOROSA DE TIPOS DE SUJEITO
-➔ Sujeito Inexistente (Oração Sem Sujeito): Verbos impessoais (fixos na 3ª pessoa do singular)
-- ➔ Sujeito Indeterminado: Verbo na 3ª p. plural sem referente ("Perguntaram a Armandinho") -> Agente existe
-➔ Sujeito Elíptico/Oculto/Desinencial: Contextualizável ("ter saído [ele]", "Embora [ele] houvesse acertado")
-- ➔ Sujeito Simples Posposto/Anteposto ("o prédio", "a bailarina", "o dia", "uma ventania", "muitas aves")
-➔ Sujeito Oracional: Oração subordinada substantiva subjetiva ("É um orgulho [poder contar com você]") -> Verbo pessoal
-- ➔ 3. MORFOSSINTAXE E DINÂMICA DA LOCUÇÃO VERBAL
-➔ Estrutura: [Verbo(s) Auxiliar(es) Flexionado(s)] + [Verbo Principal em Forma Nominal (Infinitivo/Gerúndio/Particípio)]
-- ➔ Posição Canônica: O último verbo é SEMPRE o principal; todos os antecedentes são auxiliares
-➔ Distribuição de Flexões ("Mantra da Professora"):
-- ➔ Verbo Auxiliar: "Carrega tudo nas costas" -> Flexiona-se em Modo, Tempo, Número e Pessoa
-➔ Verbo Principal: "Manda na sintaxe" -> Define a predicação/semântica e permanece em forma nominal
-- ➔ "Haver" como Verbo Auxiliar:
-➔ É verbo PESSOAL -> Concorda com o sujeito da oração ("havia acreditado", "haveria de fracassar", "houvesse acertado")
-- ➔ Transmissão de Impessoalidade:
-➔ Auxiliar + Principal Impessoal -> A locução inteira torna-se impessoal ("está fazendo frio", "deve haver problemas")
-- ➔ Hipérbato e Intercalação Extensa:
-➔ Auxiliar e principal podem estar distanciados por sujeitos e orações ("Possa [o espírito (...)] prevalecer")
-- ➔ 4. METODOLOGIA E ESTRATÉGIA DE ESTUDO ➔ Erro da "Massa": Focar apenas na resolução mecânica de provas anteriores sem base teórica ➔ Método dos Três Círculos ("Elite"): ➔ 1. Base Gramatical Normativa Sólida (estrutural e sequencial) ➔ 2. Revisão Tópica Orientada por Questões (agrupadas por ponto do edital) ➔ 3. Treino Específico da Banca Examinadora na Reta Final (assimilação de enunciados e estilo)
+```text
+SINTAXE VERBAL: IMPESSOALIDADE, LOCUÇÕES E PREDICAÇÃO │ ├── 1. VERBOS IMPESSOAIS (ORAÇÃO SEM SUJEITO) │ ├── Fenômenos da Natureza (Sentido Denotativo/Próprio: "Ventou muito") │ │ └── Armadilha: Se houver sujeito expresso, o verbo torna-se pessoal ("A tarde escurece", "O dia vinha amanhecendo") │ ├── Verbo "Haver" │ │ ├── Sentido de Existir/Ocorrer/Acontecer ("não havia nada", "Há dúvidas", "não haja empecilhos") │ │ │ └── Objeto Direto: O termo substantivo que o acompanha é complemento, não sujeito │ │ │ └── Contraste: O verbo "Existir" é sempre pessoal ("existia uma ventania", "Existem aves") │ │ └── Sentido de Tempo Decorrido/Transcorrido ("Há dias que...", "há três anos", "Houve época", "Há dez anos") │ │ └── É verbo principal simples e pleno, não verbo auxiliar │ ├── Verbo "Fazer" │ │ ├── Tempo Decorrido ("faz tempo", "fazia dias", "fez uma década") -> Invariável no singular │ │ └── Fenômeno Meteorológico/Climático ("Fez muito frio no dia...", "está fazendo muito frio") │ ├── Verbo "Passar (de)" Indicando Horas Transcorridas ("Já passava das quatro horas") │ └── Verbo "Ser" Cronológico ("É tarde", "É meio-dia", "São três horas") │ ├── 2. DISTINÇÃO RIGOROSA DE TIPOS DE SUJEITO │ ├── Sujeito Inexistente (Oração Sem Sujeito): Verbos impessoais (fixos na 3ª pessoa do singular) │ ├── Sujeito Indeterminado: Verbo na 3ª p. plural sem referente ("Perguntaram a Armandinho") -> Agente existe │ ├── Sujeito Elíptico/Oculto/Desinencial: Contextualizável ("ter saído [ele]", "Embora [ele] houvesse acertado") │ ├── Sujeito Simples Posposto/Anteposto ("o prédio", "a bailarina", "o dia", "uma ventania", "muitas aves") │ └── Sujeito Oracional: Oração subordinada substantiva subjetiva ("É um orgulho [poder contar com você]") -> Verbo pessoal │ ├── 3. MORFOSSINTAXE E DINÂMICA DA LOCUÇÃO VERBAL │ ├── Estrutura: [Verbo(s) Auxiliar(es) Flexionado(s)] + [Verbo Principal em Forma Nominal (Infinitivo/Gerúndio/Particípio)] │ ├── Posição Canônica: O último verbo é SEMPRE o principal; todos os antecedentes são auxiliares │ ├── Distribuição de Flexões ("Mantra da Professora"): │ │ ├── Verbo Auxiliar: "Carrega tudo nas costas" -> Flexiona-se em Modo, Tempo, Número e Pessoa │ │ └── Verbo Principal: "Manda na sintaxe" -> Define a predicação/semântica e permanece em forma nominal │ ├── "Haver" como Verbo Auxiliar: │ │ └── É verbo PESSOAL -> Concorda com o sujeito da oração ("havia acreditado", "haveria de fracassar", "houvesse acertado") │ ├── Transmissão de Impessoalidade: │ │ └── Auxiliar + Principal Impessoal -> A locução inteira torna-se impessoal ("está fazendo frio", "deve haver problemas") │ └── Hipérbato e Intercalação Extensa: │ └── Auxiliar e principal podem estar distanciados por sujeitos e orações ("Possa [o espírito (...)] prevalecer") │ └── 4. METODOLOGIA E ESTRATÉGIA DE ESTUDO ├── Erro da "Massa": Focar apenas na resolução mecânica de provas anteriores sem base teórica └── Método dos Três Círculos ("Elite"): ├── 1. Base Gramatical Normativa Sólida (estrutural e sequencial) ├── 2. Revisão Tópica Orientada por Questões (agrupadas por ponto do edital) └── 3. Treino Específico da Banca Examinadora na Reta Final (assimilação de enunciados e estilo)
+```
 
 ---
 

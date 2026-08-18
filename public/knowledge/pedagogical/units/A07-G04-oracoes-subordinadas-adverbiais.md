@@ -44,28 +44,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Morfossintaxe Verbal: Diferenciação básica entre modo indicativo (certeza/fato) e modo subjuntivo (hipótese/dúvida/concessão), bem como formas nominais (infinitivo).
 - Estrutura Básica do Período Composto: Diferença entre oração principal e oração dependente/subordinada.
 
-SINTAXE DO PERÍODO COMPOSTO: ORAÇÕES SUBORDINADAS ADVERBIAIS
-- ➔ 1. Fundamentos e Estrutura
-➔ Função Sintática: Adjunto Adverbial do verbo da oração principal
-- ➔ Desenvolvidas: Introduzidas por conjunção subordinativa + verbo flexionado
-➔ Reduzidas: Sem conectivo + verbo em forma nominal (infinitivo, gerúndio, particípio)
-- ➔ 2. As 9 Subclasses Adverbiais (Mnemônico 6C + FTP)
-➔ 6C (Iniciadas por C):
-- ➔ Causal: Motivo gerador anterior ("porque", "já que", "como" anteposto)
-➔ Consecutiva: Efeito decorrente de intensidade ("tão/tanto/tamanho/tal... que")
-- ➔ Concessiva: Oposição não impeditiva / quebra de lógica ("embora", "mesmo que")
-➔ Condicional: Hipótese necessária / causa potencial ("se", "caso", "desde que" + subjuntivo)
-- ➔ Comparativa: Confronto de igualdade/grau com elipse verbal frequente ("como", "mais... que")
-➔ Conformativa: Acordo, regra ou modelo de referência ("conforme", "segundo", "como")
-- ➔ FTP (Finais, Temporais, Proporcionais):
-➔ Final: Meta, objetivo pretendido ("para que", "a fim de que", "para" + infinitivo)
-- ➔ Temporal: Localização no tempo, com matiz imediato ("quando", "mal", "assim que")
-➔ Proporcional: Variação concomitante e gradual ("à medida que", "quanto mais... mais")
-- ➔ 3. Relações Lógicas Interoracionais Críticas
-➔ Causa vs. Condição: Condição é a causa futura em estado de hipótese
-- ➔ Causa vs. Consequência: "O fato de [Causa] faz com que [Consequência]"
-➔ Concessão Discursiva: "É certo que..." abre concessão para a tese principal em "Mas..."
-- ➔ 4. Polissemia e Casos Especiais de Conectivos ➔ "Assim como": Termos = Aditivo | Orações = Comparativo ➔ "Como": Início = Causal | Meio comparativo = Comparativo | Conformidade = Conformativo ➔ "Desde que": + Subjuntivo = Condicional | + Indicativo = Temporal ➔ "Sem que": Concessivo/Condicional com polaridade negativa (ideia de privação/ausência)
+```text
+SINTAXE DO PERÍODO COMPOSTO: ORAÇÕES SUBORDINADAS ADVERBIAIS │ ├── 1. Fundamentos e Estrutura │ ├── Função Sintática: Adjunto Adverbial do verbo da oração principal │ ├── Desenvolvidas: Introduzidas por conjunção subordinativa + verbo flexionado │ └── Reduzidas: Sem conectivo + verbo em forma nominal (infinitivo, gerúndio, particípio) │ ├── 2. As 9 Subclasses Adverbiais (Mnemônico 6C + FTP) │ ├── 6C (Iniciadas por C): │ │ ├── Causal: Motivo gerador anterior ("porque", "já que", "como" anteposto) │ │ ├── Consecutiva: Efeito decorrente de intensidade ("tão/tanto/tamanho/tal... que") │ │ ├── Concessiva: Oposição não impeditiva / quebra de lógica ("embora", "mesmo que") │ │ ├── Condicional: Hipótese necessária / causa potencial ("se", "caso", "desde que" + subjuntivo) │ │ ├── Comparativa: Confronto de igualdade/grau com elipse verbal frequente ("como", "mais... que") │ │ └── Conformativa: Acordo, regra ou modelo de referência ("conforme", "segundo", "como") │ └── FTP (Finais, Temporais, Proporcionais): │ ├── Final: Meta, objetivo pretendido ("para que", "a fim de que", "para" + infinitivo) │ ├── Temporal: Localização no tempo, com matiz imediato ("quando", "mal", "assim que") │ └── Proporcional: Variação concomitante e gradual ("à medida que", "quanto mais... mais") │ ├── 3. Relações Lógicas Interoracionais Críticas │ ├── Causa vs. Condição: Condição é a causa futura em estado de hipótese │ ├── Causa vs. Consequência: "O fato de [Causa] faz com que [Consequência]" │ └── Concessão Discursiva: "É certo que..." abre concessão para a tese principal em "Mas..." │ └── 4. Polissemia e Casos Especiais de Conectivos ├── "Assim como": Termos = Aditivo | Orações = Comparativo ├── "Como": Início = Causal | Meio comparativo = Comparativo | Conformidade = Conformativo ├── "Desde que": + Subjuntivo = Condicional | + Indicativo = Temporal └── "Sem que": Concessivo/Condicional com polaridade negativa (ideia de privação/ausência)
+```
 
 ---
 

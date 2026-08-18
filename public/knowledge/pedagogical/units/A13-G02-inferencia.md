@@ -44,28 +44,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Mecanismos de Coesão Textual: Identificação de anáforas, catáforas e elos coesivos interparágrafos e intraparágrafos.
 - Noções de Lógica Proposicional: Compreensão da estrutura condicional básica ($p \rightarrow q$) e relações de inclusão/exclusão em teoria dos conjuntos (quantificadores: todo, algum, nenhum, maioria).
 
-INFERÊNCIA TEXTUAL EM CONCURSOS PÚBLICOS ➔ 1. Eixo Epistemológico e Histórico
-- ➔ Matriz NCE/UFRJ & FGV (Transição do Subjetivismo para a Linguística Formal)
-➔ Princípio da Autonomia Textual Estrita (O texto como universo fechado) ➔ 2. Tipologia de Operações Cognitivas de Leitura
-- ➔ Compreensão Textual (Recorrência)
-➔ Foco: Superfície Explícita
-- ➔ Mecanismo: Paráfrase, Equivalência Semântica e Reescritura
-➔ Comandos: "O texto diz que", "De acordo com o texto", "Segundo o autor"
-- ➔ Frequência estatística: ~75% das questões de prova
-➔ Interpretação Textual (Inferência)
-- ➔ Foco: Estrutura Implícita Autorizada
-➔ Mecanismo: Dedução Lógica e Pressuposição Semântica
-- ➔ Comandos Clássicos: "Infere-se", "Deduz-se", "Depreende-se", "Conclui-se"
-➔ Comandos Modernos: "Entende-se do texto que" (Síntese / Parágrafos Finais)
-- ➔ Frequência estatística: ~25% das questões de prova ➔ 3. Mecânica Linguística da Dedução Válida
-➔ Teoria das Pistas Textuais (Operadores Gramaticais: verbos, advérbios, adjetivos)
-- ➔ Mecanismo da Pressuposição (Dados implícitos incontestáveis)
-➔ Raciocínio Lógico Condicional: "Se o texto afirma [Premissa X], então posso deduzir [Conclusão Y]"
-- ➔ Lógica de Quantificadores: Relação "Maioria" ➔ "Não totalidade" ➔ 4. Desvios e Armadilhas Clássicas
-➔ Extrapolação por Falta de Pistas (Dedução além dos limites do texto)
-- ➔ Extrapolação por Conhecimento de Mundo / Repertório Acadêmico Prévio
-➔ Exigência Indevida de Literalidade (Rejeitar o implícito por não estar grafado)
-- ➔ Descompasso Relacional / Pegadinha dos "Termos Verdadeiros Mal Conectados" ➔ 5. Metodologia Operacional de Resolução ➔ Protocolo dos Quatro Passos (Leitura, Equivalência, Resíduo, Teste da Pista) ➔ Gestão da Ansiedade ("Desapego da Literalidade" e Anotação de Ponto de Interrogação ?) ➔ Decomposição em Blocos Semânticos Numerados (1, 2, 3, 4) ➔ Técnica das "Setas Salvam" (Mapeamento de pronomes, antecedentes e direcionalidade lógica)
+```text
+INFERÊNCIA TEXTUAL EM CONCURSOS PÚBLICOS ├── 1. Eixo Epistemológico e Histórico │ ├── Matriz NCE/UFRJ & FGV (Transição do Subjetivismo para a Linguística Formal) │ └── Princípio da Autonomia Textual Estrita (O texto como universo fechado) ├── 2. Tipologia de Operações Cognitivas de Leitura │ ├── Compreensão Textual (Recorrência) │ │ ├── Foco: Superfície Explícita │ │ ├── Mecanismo: Paráfrase, Equivalência Semântica e Reescritura │ │ ├── Comandos: "O texto diz que", "De acordo com o texto", "Segundo o autor" │ │ └── Frequência estatística: ~75% das questões de prova │ └── Interpretação Textual (Inferência) │ ├── Foco: Estrutura Implícita Autorizada │ ├── Mecanismo: Dedução Lógica e Pressuposição Semântica │ ├── Comandos Clássicos: "Infere-se", "Deduz-se", "Depreende-se", "Conclui-se" │ ├── Comandos Modernos: "Entende-se do texto que" (Síntese / Parágrafos Finais) │ └── Frequência estatística: ~25% das questões de prova ├── 3. Mecânica Linguística da Dedução Válida │ ├── Teoria das Pistas Textuais (Operadores Gramaticais: verbos, advérbios, adjetivos) │ ├── Mecanismo da Pressuposição (Dados implícitos incontestáveis) │ ├── Raciocínio Lógico Condicional: "Se o texto afirma [Premissa X], então posso deduzir [Conclusão Y]" │ └── Lógica de Quantificadores: Relação "Maioria" ➔ "Não totalidade" ├── 4. Desvios e Armadilhas Clássicas │ ├── Extrapolação por Falta de Pistas (Dedução além dos limites do texto) │ ├── Extrapolação por Conhecimento de Mundo / Repertório Acadêmico Prévio │ ├── Exigência Indevida de Literalidade (Rejeitar o implícito por não estar grafado) │ └── Descompasso Relacional / Pegadinha dos "Termos Verdadeiros Mal Conectados" └── 5. Metodologia Operacional de Resolução ├── Protocolo dos Quatro Passos (Leitura, Equivalência, Resíduo, Teste da Pista) ├── Gestão da Ansiedade ("Desapego da Literalidade" e Anotação de Ponto de Interrogação ?) ├── Decomposição em Blocos Semânticos Numerados (1, 2, 3, 4) └── Técnica das "Setas Salvam" (Mapeamento de pronomes, antecedentes e direcionalidade lógica)
+```
 
 ---
 
@@ -81,24 +62,9 @@ Historicamente, as avaliações de interpretação de textos em vestibulares e c
 
 A análise textual divide-se categoricamente em dois níveis cognitivos e operacionais distintos: a Compreensão Textual (Recorrência), restrita aos dados explícitos e resolvida por paráfrases diretas, e a Interpretação Textual (Inferência), que opera sobre dados implícitos por meio de deduções lógicas e pressuposições autorizadas por pistas textuais.
 
-➔ OPERAÇÕES COGNITIVAS DE LEITURA
-- ➔ ┤
-COMPREENSÃO (RECORRÊNCIA)
-- INTERPRETAÇÃO (INFERÊNCIA)
-➔ ┤
-- • Objeto: Superfície EXPLÍCITA
-• Objeto: Estrutura IMPLÍCITA
-- • Operação: Localização e Paráfrase
-• Operação: Dedução e Pressuposição
-- • Relação: Equivalência sintática
-• Relação: Consequência lógica
-- • Frequência estatística: ~75% (3/4)
-• Frequência estatística: ~25% (1/4)
-- • Regra: "Está escrito com outras
-• Regra: "Não está escrito, mas é
-- palavras"
-autorizado por pistas do texto"
-- ➔
+```text
+┌─────────────────────────────────────────────────────────────────────────────┐ │ OPERAÇÕES COGNITIVAS DE LEITURA │ ├──────────────────────────────────────┬──────────────────────────────────────┤ │ COMPREENSÃO (RECORRÊNCIA) │ INTERPRETAÇÃO (INFERÊNCIA) │ ├──────────────────────────────────────┼──────────────────────────────────────┤ │ • Objeto: Superfície EXPLÍCITA │ • Objeto: Estrutura IMPLÍCITA │ │ • Operação: Localização e Paráfrase │ • Operação: Dedução e Pressuposição │ │ • Relação: Equivalência sintática │ • Relação: Consequência lógica │ │ • Frequência estatística: ~75% (3/4) │ • Frequência estatística: ~25% (1/4) │ │ • Regra: "Está escrito com outras │ • Regra: "Não está escrito, mas é │ │ palavras" │ autorizado por pistas do texto" │ └──────────────────────────────────────┴──────────────────────────────────────┘
+```
 
 1. Compreensão Textual (Recorrência = Explícito):
 
@@ -135,25 +101,9 @@ Afirmar que uma inferência decorre "a partir do texto" significa que sua fundam
 
 Os enunciados de provas de concurso público determinam o regime cognitivo de resolução aplicável à questão (compreensão vs. inferência) por meio de fórmulas canônicas e verbos de comando específicos.
 
-➔ TIPOLOGIA DE ENUNCIADOS
-- ➔ ┤ ➔ ┤
-Compreensão (Recorrência)
-- • "O texto afirma/diz que..."
-• "De acordo com o texto,..."
-- • "Segundo o autor da passagem,..."
-• "Conforme explicitado no parágrafo X,..."
-- ➔ ┤
-Inferência Clássica
-- • "Infere-se do texto que..."
-• "Deduz-se das ideias do fragmento que..."
-- • "Depreende-se do texto que..."
-• "Conclui-se da leitura do parágrafo X que..."
-- ➔ ┤
-Inferência Moderna
-- • "Entende-se do texto que..."
-(Global / Síntese)
-- • "É possível subentender do raciocínio que..."
-➔
+```text
+┌─────────────────────────────────────────────────────────────────────────────┐ │ TIPOLOGIA DE ENUNCIADOS │ ├───────────────────────────┬─────────────────────────────────────────────────┤ ├───────────────────────────┼─────────────────────────────────────────────────┤ │ Compreensão (Recorrência) │ • "O texto afirma/diz que..." │ │ │ • "De acordo com o texto,..." │ │ │ • "Segundo o autor da passagem,..." │ │ │ • "Conforme explicitado no parágrafo X,..." │ ├───────────────────────────┼─────────────────────────────────────────────────┤ │ Inferência Clássica │ • "Infere-se do texto que..." │ │ │ • "Deduz-se das ideias do fragmento que..." │ │ │ • "Depreende-se do texto que..." │ │ │ • "Conclui-se da leitura do parágrafo X que..." │ ├───────────────────────────┼─────────────────────────────────────────────────┤ │ Inferência Moderna │ • "Entende-se do texto que..." │ │ (Global / Síntese) │ • "É possível subentender do raciocínio que..." │ └───────────────────────────┴─────────────────────────────────────────────────┘
+```
 
 O comando "Entende-se do texto que..." (amplamente difundido pela banca FGV e consolidado no Cebraspe) convida o candidato a uma leitura de síntese global, exigindo dedução autorizada a partir do encadeamento das ideias textuais. Em textos dissertativos, a ancoragem desse comando concentra-se predominantemente nos parágrafos finais (conclusão do autor).
 
@@ -254,10 +204,9 @@ Fragmentar assertivas longas e sintaticamente densas para neutralizar a ansiedad
 
 Evitar o falso positivo em itens cujos termos isolados são todos verdadeiros, mas cuja conexão sintático-semântica foi forjada ou invertida pela banca examinadora.
 
-1. Resolução Sintática Interna na Assertiva] ➔ Desenhar setas conectando pronomes relativos ("que"), adjuntos e orações aos seus antecedentes. [
-2. Identificação do Núcleo Relacional ("O Que Sobrou")] ➔ Isolar verbos de ligação ("são"), conectivos de finalidade/causa ou termos como "respectivamente". [
-3. Mapeamento do Vetor Relacional no Texto-Base] ➔ Localizar no texto o verbo de ação ou o predicado central do Bloco 3. ➔ Traçar a seta do texto: Para onde aponta a ação afirmada pelo autor? [
-4. Confronto de Direcionalidade dos Vetores] A seta da assertiva aponta para o MESMO objeto que a seta do texto? SIM ➔ Item CERTO A seta da assertiva aponta para objeto DIFERENTE (ou inverte a ordem lógica)? NÃO ➔ Item ERRADO (Contradição / Descompasso Relacional)
+```text
+[Início: Assertiva Segmentada em Blocos] │ ▼ [Passo 1: Resolução Sintática Interna na Assertiva] ➔ Desenhar setas conectando pronomes relativos ("que"), adjuntos e orações aos seus antecedentes. │ ▼ [Passo 2: Identificação do Núcleo Relacional ("O Que Sobrou")] ➔ Isolar verbos de ligação ("são"), conectivos de finalidade/causa ou termos como "respectivamente". │ ▼ [Passo 3: Mapeamento do Vetor Relacional no Texto-Base] ➔ Localizar no texto o verbo de ação ou o predicado central do Bloco 3. ➔ Traçar a seta do texto: Para onde aponta a ação afirmada pelo autor? │ ▼ [Passo 4: Confronto de Direcionalidade dos Vetores] ├── A seta da assertiva aponta para o MESMO objeto que a seta do texto? │ └── SIM ➔ Item CERTO └── A seta da assertiva aponta para objeto DIFERENTE (ou inverte a ordem lógica)? └── NÃO ➔ Item ERRADO (Contradição / Descompasso Relacional)
+```
 
 ### Finalidade
 
@@ -313,10 +262,9 @@ Evitar o falso positivo em itens cujos termos isolados são todos verdadeiros, m
 
 #### Diagrama de fluxo operacional
 
-1. Resolução Sintática Interna na Assertiva] ➔ Desenhar setas conectando pronomes relativos ("que"), adjuntos e orações aos seus antecedentes. [
-2. Identificação do Núcleo Relacional ("O Que Sobrou")] ➔ Isolar verbos de ligação ("são"), conectivos de finalidade/causa ou termos como "respectivamente". [
-3. Mapeamento do Vetor Relacional no Texto-Base] ➔ Localizar no texto o verbo de ação ou o predicado central do Bloco 3. ➔ Traçar a seta do texto: Para onde aponta a ação afirmada pelo autor? [
-4. Confronto de Direcionalidade dos Vetores] A seta da assertiva aponta para o MESMO objeto que a seta do texto? SIM ➔ Item CERTO A seta da assertiva aponta para objeto DIFERENTE (ou inverte a ordem lógica)? NÃO ➔ Item ERRADO (Contradição / Descompasso Relacional)
+```text
+[Início: Assertiva Segmentada em Blocos] │ ▼ [Passo 1: Resolução Sintática Interna na Assertiva] ➔ Desenhar setas conectando pronomes relativos ("que"), adjuntos e orações aos seus antecedentes. │ ▼ [Passo 2: Identificação do Núcleo Relacional ("O Que Sobrou")] ➔ Isolar verbos de ligação ("são"), conectivos de finalidade/causa ou termos como "respectivamente". │ ▼ [Passo 3: Mapeamento do Vetor Relacional no Texto-Base] ➔ Localizar no texto o verbo de ação ou o predicado central do Bloco 3. ➔ Traçar a seta do texto: Para onde aponta a ação afirmada pelo autor? │ ▼ [Passo 4: Confronto de Direcionalidade dos Vetores] ├── A seta da assertiva aponta para o MESMO objeto que a seta do texto? │ └── SIM ➔ Item CERTO └── A seta da assertiva aponta para objeto DIFERENTE (ou inverte a ordem lógica)? └── NÃO ➔ Item ERRADO (Contradição / Descompasso Relacional)
+```
 
 ---
 
