@@ -4,7 +4,7 @@
     "unitId": "IP-A09-G08",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:31:54.088Z"
+    "generatedAt": "2026-08-18T23:33:08.263Z"
   },
   "unit": {
     "unitId": "IP-A09-G08",
@@ -14,9 +14,9 @@
     "variant": "development",
     "canonicalTopicId": "pt:a09:concordancia-nominal-e",
     "learningObjectives": [
-      "OBJ-IP-A09-G08-001",
-      "OBJ-IP-A09-G08-002",
-      "OBJ-IP-A09-G08-003"
+      "Fundamentos de Concordância Nominal - Partes 04 e 05",
+      "Aplicação Prática e Decisão em Concordância Nominal - Partes 04 e 05",
+      "Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Partes 04 e 05"
     ]
   },
   "sections": {
@@ -48,7 +48,8 @@
           ]
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "CONCORDÂNCIA NOMINAL AVANÇADA (GRUPO G08) │ ├── 1. Invariabilidade Estrita (Nunca flexionam) │ ├── \"Menos\" (pronome indefinido / advérbio — \"menas\" inexiste na norma culta) │ ├── \"Em alerta\" (locução adverbial) │ ├── \"Em anexo\" (locução adverbial) │ └── \"Junto a\" / \"Junto com\" (locuções prepositivas) │ ├── 2. Palavras de Flexão Nominal Obrigatória (Classes Adjetivas / Pronominais) │ ├── \"Anexo\" / \"Incluso\" (adjetivos: concordam com a coisa anexada/inclusa) │ ├── \"Quite\" (adjetivo: \"eu estou quite\", \"nós estamos quites\" = quitados) │ ├── \"Obrigado\" (adjetivo: homem diz \"obrigado\", mulher diz \"obrigada\", grupo diz \"obrigados/as\") │ ├── \"Junto\" (adjetivo isolado: \"estão juntos\") │ └── \"Próprio\" / \"Mesmo\" (pronomes de reforço: \"elas próprias / mesmas\") │ ├── 3. Palavras de Dupla ou Tripla Classificação (Dependência Sintática — Método da Seta) │ ├── \"Alerta\" ───────────► Junto ao substantivo = Adjetivo (soldados alertas) │ │ Após o verbo = Advérbio de modo invariável (estavam alerta) │ ├── \"Só\" ───────────────► = \"sozinho(s)\" -> Adjetivo variável (ficaram sós) │ │ = \"somente/apenas\" -> Advérbio / Denotativa invariável (só eles) │ ├── \"Meio\" ─────────────► = \"metade\" -> Numeral fracionário variável (meia caneca) │ │ = \"um pouco\" -> Advérbio de intensidade invariável (meio cansada) │ ├── \"Bastante\" ─────────► Antes de substantivo -> Pronome indefinido variável (= muitos/as) │ │ Depois de substantivo -> Adjetivo variável (= suficientes) │ │ Modifica verbo/adj/adv -> Advérbio invariável (= muito) │ ├── \"Conforme\" ─────────► = \"adequado/ajustado\" -> Adjetivo variável (atos conformes — FGV) │ │ = \"como/segundo\" -> Conjunção conformativa invariável │ ├── \"Mesmo\" ────────────► = \"próprio\" -> Pronome demonstrativo de reforço variável │ │ = \"inclusive/até\" -> Palavra denotativa de inclusão invariável │ └── \"Caro\" / \"Barato\" ──► Com verbo de ligação -> Adjetivo predicativo variável (são caras) │ Com verbos de transação -> Advérbio de preço invariável (custam caro) │ ├── 4. Estruturas Especiais e Sintaxe Oracional │ ├── \"É proibido / É necessário / É bom / É desnecessário\" │ │ ├── Sem determinante anteposto -> Masculino singular genérico (Entrada é proibido) │ │ └── Com determinante anteposto -> Flexão obrigatória (A entrada é proibida) │ ├── Expressão Superlativa com \"Possível\" │ │ ├── Artigo plural -> Flexão obrigatória (\"as mais complicadas possíveis\") │ │ └── Artigo no masculino singular -> Expressão invariável (\"o mais complicadas possível\") │ ├── Predicativo do Sujeito Anteposto ao Sujeito Composto │ │ └── Segue a flexão do verbo: se o verbo concorda no plural, predicativo vai para o masculino plural; │ │ se o verbo concorda no singular com o mais próximo, predicativo concorda com o mais próximo. │ ├── Adjetivos Compostos │ │ └── Regra Geral: apenas o último elemento varia em gênero e número (\"franco-brasileiros\"). │ └── Sujeito Oracional (Verbo no Infinitivo) │ └── Equivale ao pronome neutro \"isso\" -> Predicativo no masculino singular (\"Dormir é benéfico\")."
         }
       ],
@@ -129,7 +130,8 @@
           ]
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "ESTRUTURA DA PALAVRA \"ALERTA\" ├── 1. Locução \"em alerta\" ──────────────► INVARIÁVEL (\"estavam em alerta\") ├── 2. Junto ao substantivo (adjunto) ──► VARIÁVEL como adjetivo (\"soldados alertas chegaram\") └── 3. Posposto ao verbo ────────────────► INVARIÁVEL como advérbio de modo (\"os soldados estavam alerta\")"
         },
         {
@@ -493,7 +495,7 @@
           "entityId": "RULE-IP-A09-G08-001",
           "title": "Regras canônicas",
           "statement": "A tabela abaixo sintetiza a matriz canônica de regras e comportamentos morfossintáticos consolidados no Grupo G08:",
-          "scope": "syntax",
+          "scope": "agreement",
           "modality": "mandatory",
           "conditions": [
             "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
@@ -742,31 +744,31 @@
             {
               "order": 1,
               "action": "Identificar o vocábulo-alvo na oração.",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Método da \"Seta Sintática\" de Referenciação.",
               "test": null
             },
             {
               "order": 2,
               "action": "Traçar a seta sintática até o núcleo com o qual ele estabelece relação semântica direta.",
-              "explanation": null,
+              "explanation": "Passo 2 do algoritmo de Método da \"Seta Sintática\" de Referenciação.",
               "test": null
             },
             {
               "order": 3,
               "action": "Avaliar a classe gramatical do núcleo",
-              "explanation": "",
+              "explanation": "Passo 3 do algoritmo de Método da \"Seta Sintática\" de Referenciação.",
               "test": null
             },
             {
               "order": 4,
               "action": "Se for substantivo/pronome $\\to$ flexione o adjetivo/pronome/numeral.",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Método da \"Seta Sintática\" de Referenciação.",
               "test": null
             },
             {
               "order": 5,
               "action": "Se for verbo/adjetivo/advérbio $\\to$ mantenha o advérbio invariável.",
-              "explanation": null,
+              "explanation": "Passo 5 do algoritmo de Método da \"Seta Sintática\" de Referenciação.",
               "test": null
             }
           ],
@@ -831,7 +833,7 @@
             {
               "order": 1,
               "action": "Localizar o verbo e o adjetivo no início da oração",
-              "explanation": "",
+              "explanation": "Passo 1 do algoritmo de Método da Ordem Direta para Orações Invertidas.",
               "test": null
             },
             {
@@ -843,7 +845,7 @@
             {
               "order": 3,
               "action": "Perguntar ao verbo pelo sujeito real",
-              "explanation": "",
+              "explanation": "Passo 3 do algoritmo de Método da Ordem Direta para Orações Invertidas.",
               "test": null
             },
             {
@@ -855,7 +857,7 @@
             {
               "order": 5,
               "action": "Reescrever a oração na ordem canônica (Sujeito + Verbo + Predicativo/Complementos)",
-              "explanation": "",
+              "explanation": "Passo 5 do algoritmo de Método da Ordem Direta para Orações Invertidas.",
               "test": null
             },
             {
@@ -960,25 +962,25 @@
             {
               "order": 1,
               "action": "Substitua mentalmente bastante por muito / muitos",
-              "explanation": "",
+              "explanation": "Passo 1 do algoritmo de Teste de Substituição para a Palavra \"Bastante / Bastantes\".",
               "test": "Substitua mentalmente bastante por muito / muitos:"
             },
             {
               "order": 2,
               "action": "Se couber muitos / muitas $\\to$ use bastantes (\"Há bastantes exemplos\" $\\leftrightarrow$ \"Há muitos exemplos\").",
-              "explanation": null,
+              "explanation": "Passo 2 do algoritmo de Teste de Substituição para a Palavra \"Bastante / Bastantes\".",
               "test": null
             },
             {
               "order": 3,
               "action": "Se couber apenas muito invariável $\\to$ use bastante (\"Eram bastante antigos\" $\\leftrightarrow$ \"Eram muito antigos\").",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Teste de Substituição para a Palavra \"Bastante / Bastantes\".",
               "test": null
             },
             {
               "order": 4,
               "action": "Substitua mentalmente bastante por suficiente / suficientes",
-              "explanation": "",
+              "explanation": "Passo 4 do algoritmo de Teste de Substituição para a Palavra \"Bastante / Bastantes\".",
               "test": "Substitua mentalmente bastante por suficiente / suficientes:"
             },
             {
@@ -1057,13 +1059,13 @@
             {
               "order": 1,
               "action": "Isole o artigo que encabeça a locução superlativa.",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Teste de Simetria para Superlativos com \"Possível\".",
               "test": null
             },
             {
               "order": 2,
               "action": "Regra de Simetria",
-              "explanation": "",
+              "explanation": "Passo 2 do algoritmo de Teste de Simetria para Superlativos com \"Possível\".",
               "test": null
             },
             {
@@ -1081,7 +1083,7 @@
             {
               "order": 5,
               "action": "Se houver divergência entre o número do artigo e o de possível, marque a opção como incorreta.",
-              "explanation": null,
+              "explanation": "Passo 5 do algoritmo de Teste de Simetria para Superlativos com \"Possível\".",
               "test": null
             }
           ],
@@ -1154,7 +1156,7 @@
             {
               "order": 2,
               "action": "Substitua toda a oração sujeito pelo pronome demonstrativo neutro \"isso\".",
-              "explanation": null,
+              "explanation": "Passo 2 do algoritmo de Teste de Substituição por \"Isso\" para Sujeito Oracional.",
               "test": "Substitua toda a oração sujeito pelo pronome demonstrativo neutro \"isso\"."
             },
             {
@@ -1232,7 +1234,7 @@
             {
               "order": 3,
               "action": "Assinale a alternativa blindada para evitar prejuízo, tendo em vista que o Poder Judiciário costuma rejeitar anulações de itens por mérito de correção gramatical.",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Estratégia Tática Diante de Falhas de Bancas Examinadoras Menores.",
               "test": null
             }
           ],

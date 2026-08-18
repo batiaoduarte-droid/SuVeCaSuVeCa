@@ -4,7 +4,7 @@
     "unitId": "IP-A08-G01",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:31:54.063Z"
+    "generatedAt": "2026-08-18T23:33:08.240Z"
   },
   "unit": {
     "unitId": "IP-A08-G01",
@@ -14,7 +14,7 @@
     "variant": "development",
     "canonicalTopicId": "pt:a08:sinais-de-pontuacao-visao-geral",
     "learningObjectives": [
-      "OBJ-IP-A08-G01-01"
+      "Objetivo 1"
     ]
   },
   "sections": {
@@ -46,7 +46,8 @@
           ]
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "PONTUAÇÃO: REGRAS FUNDAMENTAIS DA VÍRGULA │ ├── 1. ESTRUTURA DIRETA (PROIBIÇÃO - REGRA DO SVC) │ ├── Sujeito  Verbo │ └── Verbo  Complemento (OD / OI) │ └── Aplicação: Método \"Diante do Verbo\" │ ├── 2. TERMO EXTERNO INDEPENDENTE (VOCATIVO) │ ├── Definição: Chamamento / Invocação do interlocutor │ ├── Pontuação: Obrigatoriamente ISOLADO por vírgula(s) │ └── Variações: Início (Vrg após), Intercalado (Entre vírgulas), Fim (Vrg antes) │ ├── 3. TERMO EXPLICATIVO SUBSTANTIVO (APOSTO EXPLICATIVO) │ ├── Mantra: \"Aposto é caso de SUBSTANTIVO\" (Substantivo explica Substantivo) │ ├── Pontuação: Obrigatoriamente entre vírgulas, travessões ou parênteses │ ├── Teste de Validação: Inserção de \"[que é]\" mantendo a equivalência (A = B) │ └── Distinções Críticas: │ ├── Adjetivo entre vírgulas = Predicativo do Sujeito Deslocado (NÃO é aposto) │ └── Advérbio / Data entre vírgulas = Adjunto Adverbial (NÃO é aposto) │ └── 4. TERMOS COORDENADOS (ENUMERAÇÃO E DOIS-PONTOS) ├── Enumeração: Separação por vírgulas de termos de mesma função sintática ├── Presença do conectivo \"e\": Marca adição/enumeração, afastando a ideia de aposto └── Sintaxe dos Dois-Pontos (:): ├── Verbo + [: ] + Lista = ✗ INCORRETO (Violação do SVC) └── Verbo + Substantivo Genérico (OD) + [: ] + Lista = ✓ CORRETO (Aposto Enumerativo)"
         }
       ],
@@ -293,7 +294,7 @@
           "entityId": "RULE-IP-A08-G01-001",
           "title": "Regras canônicas",
           "statement": "Regras canônicas",
-          "scope": "syntax",
+          "scope": "punctuation",
           "modality": "mandatory",
           "conditions": [
             "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
@@ -389,7 +390,7 @@
             {
               "order": 3,
               "action": "Todo o segmento da resposta constitui o Sujeito da oração (mesmo que contenha enumeração de vários substantivos).",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Método Analítico \"Diante do Verbo\" para Identificação de Vírgula Proibida.",
               "test": null
             },
             {
@@ -496,25 +497,25 @@
             {
               "order": 2,
               "action": "Inspeção de Classe Gramatical",
-              "explanation": "",
+              "explanation": "Passo 2 do algoritmo de Procedimento Diagnóstico de Validação do Aposto Explicativo.",
               "test": null
             },
             {
               "order": 3,
               "action": "O núcleo do termo é um Adjetivo? $\\rightarrow$ Classifique como Predicativo do Sujeito Deslocado. Não é aposto.",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Procedimento Diagnóstico de Validação do Aposto Explicativo.",
               "test": null
             },
             {
               "order": 4,
               "action": "O termo expressa circunstância de Tempo, Lugar, Modo? $\\rightarrow$ Classifique como Adjunto Adverbial Intercalado. Não é aposto.",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Procedimento Diagnóstico de Validação do Aposto Explicativo.",
               "test": null
             },
             {
               "order": 5,
               "action": "O núcleo do termo é um Substantivo? $\\rightarrow$ Prossiga para o teste de equivalência.",
-              "explanation": null,
+              "explanation": "Passo 5 do algoritmo de Procedimento Diagnóstico de Validação do Aposto Explicativo.",
               "test": "O núcleo do termo é um Substantivo? $\\rightarrow$ Prossiga para o teste de equivalência."
             },
             {
@@ -526,13 +527,13 @@
             {
               "order": 7,
               "action": "A frase manteve coerência semântica e relação de igualdade (Termo A = Termo B)? $\\rightarrow$ Confirma-se Aposto Explicativo.",
-              "explanation": null,
+              "explanation": "Passo 7 do algoritmo de Procedimento Diagnóstico de Validação do Aposto Explicativo.",
               "test": null
             },
             {
               "order": 8,
               "action": "O termo intercalado faz parte de uma sequência com outros núcleos finalizada pela conjunção e? $\\rightarrow$ Confirma-se Enumeração.",
-              "explanation": null,
+              "explanation": "Passo 8 do algoritmo de Procedimento Diagnóstico de Validação do Aposto Explicativo.",
               "test": null
             }
           ],

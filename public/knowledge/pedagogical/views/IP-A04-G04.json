@@ -4,7 +4,7 @@
     "unitId": "IP-A04-G04",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:31:53.977Z"
+    "generatedAt": "2026-08-18T23:33:08.160Z"
   },
   "unit": {
     "unitId": "IP-A04-G04",
@@ -14,7 +14,7 @@
     "variant": "development",
     "canonicalTopicId": "pt:a04:formas-nominais-do-verbo",
     "learningObjectives": [
-      "OBJ-IP-A04-G04-01"
+      "Objetivo 1"
     ]
   },
   "sections": {
@@ -47,7 +47,8 @@
           ]
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "FORMAS NOMINAIS DO VERBO │ ├── 1. CONCEITO DE NOME │ ├── Substantivo (Núcleo sintático) ──> Papel típico do INFINITIVO │ ├── Adjetivo (Qualificador) ─────────> Papel típico do PARTICÍPIO │ └── Advérbio (Circunstância) ────────> Papel típico do GERÚNDIO │ ├── 2. PARTICÍPIO │ ├── Morfologia │ │ ├── Regular: Desinência -DO (ex.: falado, imprimido, entregado) │ │ └── Irregular: Sem -DO (ex.: feito, impresso, entregue, posto, dito) │ ├── Classificação dos Verbos │ │ ├── Verbos Abundantes (duplo particípio: aceitado/aceito, suspendido/suspenso) │ │ └── Verbos Não Abundantes (particípio único) │ │ ├── Apenas Regular: chegar -> chegado; trazer -> trazido │ │ └── Apenas Irregular: dizer -> dito; pôr -> posto; cobrir -> coberto │ ├── Regra Sintática dos Auxiliares │ │ ├── TER / HAVER ──> Exigem PARTICÍPIO REGULAR (-do) [Voz Ativa] │ │ └── SER / ESTAR / FICAR ──> Exigem PARTICÍPIO IRREGULAR [Voz Passiva / Estado] │ └── Regra do \"Vale Tudo\" (Exceções Normativas) │ └── GANHAR, GASTAR, PEGAR, PAGAR ──> Admitem regular ou irregular com qualquer auxiliar │ ├── 3. INFINITIVO (Desinência -R) │ ├── Infinitivo Impessoal (Sem sujeito / Nome do verbo / Vago) │ └── Infinitivo Pessoal (Com sujeito / Conjugável com \"PARA\") │ ├── Flexionado: Apresenta desinência número-pessoal (-es, -mos, -des, -em) │ └── Não Flexionado: Possui sujeito, mas mantém forma invariável │ └── Confronto com Futuro do Subjuntivo (Homografia em Verbos Regulares) │ └── Macete da Substituição: │ ├── Coube FAZER / DIZER ──> INFINITIVO │ └── Coube FIZER / DISSER ──> FUTURO DO SUBJUNTIVO │ └── 4. GERÚNDIO (Desinência -NDO) ├── Aspecto Verbal: Processo contínuo, durativo e imperfeito ├── Adequação Normativa │ ├── Bom Gerúndio: Ação Durativa / Ação Simultânea │ └── Mau Gerúndio: Ação Instantânea (Gerundismo) / Ação Posterior (Sucessão cronológica) ├── Valores Semânticos em Orações Reduzidas │ ├── Tempo (= quando, assim que) │ ├── Causa (= porque, visto que) │ ├── Consequência (= de modo que, de forma que) │ └── Adição / Consequência (= e + verbo conjugado) └── Caso Especial: Verbo VIR └── Forma \"VINDO\" ├── Gerúndio (Ação contínua = chegando / trazendo) └── Particípio Irregular (Estado / Procedência = chegado / trazido / \"vido\" NÃO EXISTE)"
         }
       ],
@@ -645,7 +646,7 @@
           "entityId": "RULE-IP-A04-G04-001",
           "title": "Regras canônicas",
           "statement": "Regras canônicas",
-          "scope": "syntax",
+          "scope": "verbs_conjugation",
           "modality": "mandatory",
           "conditions": [
             "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
@@ -766,19 +767,19 @@
             },
             {
               "order": 2,
-              "action": "│ ├── PASSO 1: O verbo é uma das 4 exceções (GANHAR, GASTAR, PEGAR, PAGAR)? │ ├── SIM ──> \"Regra do Vale Tudo\": Use livremente REGULAR (-do) ou IRREGULAR com qualquer auxiliar",
+              "action": "PASSO 1: O verbo é uma das 4 exceções (GANHAR, GASTAR, PEGAR, PAGAR)? SIM > \"Regra do Vale Tudo\": Use livremente REGULAR (-do) ou IRREGULAR com qualquer auxiliar",
               "explanation": "Procedimento operacional para Algoritmo de Escolha da Forma de Particípio em Locuções.",
               "test": null
             },
             {
               "order": 3,
-              "action": "(FIM) │ └── NÃO ──> Avançar para o PASSO 2",
+              "action": "(FIM) NÃO > Avançar para o PASSO 2",
               "explanation": "Procedimento operacional para Algoritmo de Escolha da Forma de Particípio em Locuções.",
               "test": null
             },
             {
               "order": 4,
-              "action": "│ ├── PASSO 2: O verbo é ABUNDANTE no particípio? │ ├── NÃO ──> Use a ÚNICA forma existente do verbo na norma culta: │ │ • Se for exclusivamente regular: usar em -DO (ex.: \"tinha chegado\", \"foi trazido\")",
+              "action": "PASSO 2: O verbo é ABUNDANTE no particípio? NÃO > Use a ÚNICA forma existente do verbo na norma culta: Se for exclusivamente regular: usar em -DO (ex.: \"tinha chegado\", \"foi trazido\")",
               "explanation": "Procedimento operacional para Algoritmo de Escolha da Forma de Particípio em Locuções.",
               "test": null
             }
@@ -791,7 +792,8 @@
           ],
           "blocks": [
             {
-              "type": "paragraph",
+              "type": "diagram",
+              "diagramType": "tree",
               "text": "INÍCIO: Identificar o verbo principal da oração a ser colocado no particípio. │ ├── PASSO 1: O verbo é uma das 4 exceções (GANHAR, GASTAR, PEGAR, PAGAR)? │ ├── SIM ──> \"Regra do Vale Tudo\": Use livremente REGULAR (-do) ou IRREGULAR com qualquer auxiliar. (FIM) │ └── NÃO ──> Avançar para o PASSO 2. │ ├── PASSO 2: O verbo é ABUNDANTE no particípio? │ ├── NÃO ──> Use a ÚNICA forma existente do verbo na norma culta: │ │ • Se for exclusivamente regular: usar em -DO (ex.: \"tinha chegado\", \"foi trazido\"). │ │ • Se for exclusivamente irregular: usar forma reduzida (ex.: \"tinha dito\", \"foi posto\", \"estava coberto\"). (FIM) │ └── SIM ──> Avançar para o PASSO 3. │ └── PASSO 3: Identificar o VERBO AUXILIAR da locução: ├── Se for TER ou HAVER (Voz Ativa / Tempos Compostos): │ └── Selecionar obrigatoriamente o PARTICÍPIO REGULAR em -DO (ex.: \"havia entregado\", \"tinham imprimido\"). │ └── Se for SER, ESTAR, FICAR (ou voz passiva / estado / oração reduzida): └── Selecionar obrigatoriamente o PARTICÍPIO IRREGULAR (ex.: \"foi entregue\", \"estava impresso\", \"ficou suspenso\"). (FIM)"
             }
           ]
@@ -814,7 +816,7 @@
             {
               "order": 1,
               "action": "Localize a oração reduzida de infinitivo cujo verbo não possui desinência pessoal visível (-es, -mos, -des, -em).",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Identificação Sintática do Infinitivo Não Flexionado.",
               "test": null
             },
             {
@@ -826,19 +828,19 @@
             {
               "order": 3,
               "action": "Inspecione o contexto sintático",
-              "explanation": "",
+              "explanation": "Passo 3 do algoritmo de Identificação Sintática do Infinitivo Não Flexionado.",
               "test": null
             },
             {
               "order": 4,
               "action": "Se o sujeito for indeterminado, genérico ou inexistente (qualquer pessoa, todo mundo) $\\rightarrow$ Classifique como Infinitivo Impessoal.",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Identificação Sintática do Infinitivo Não Flexionado.",
               "test": null
             },
             {
               "order": 5,
               "action": "Se houver um sujeito determinado expresso ou desinencial em outra oração do mesmo período $\\rightarrow$ Classifique como Infinitivo Pessoal Não Flexionado.",
-              "explanation": null,
+              "explanation": "Passo 5 do algoritmo de Identificação Sintática do Infinitivo Não Flexionado.",
               "test": null
             }
           ],
@@ -920,13 +922,13 @@
             {
               "order": 6,
               "action": "Encaixou FAZER / DIZER $\\rightarrow$ A forma original é INFINITIVO.",
-              "explanation": null,
+              "explanation": "Passo 6 do algoritmo de Macete da Substituição (Infinitivo Pessoal vs. Futuro do Subjuntivo).",
               "test": null
             },
             {
               "order": 7,
               "action": "Encaixou FIZER / DISSER $\\rightarrow$ A forma original é FUTURO DO SUBJUNTIVO.",
-              "explanation": null,
+              "explanation": "Passo 7 do algoritmo de Macete da Substituição (Infinitivo Pessoal vs. Futuro do Subjuntivo).",
               "test": null
             },
             {
@@ -1017,31 +1019,31 @@
             {
               "order": 3,
               "action": "Teste de Conectivos Equivalentes",
-              "explanation": "",
+              "explanation": "Passo 3 do algoritmo de Roteiro de Identificação de Valores Semânticos do Gerúndio.",
               "test": "Teste de Conectivos Equivalentes:"
             },
             {
               "order": 4,
               "action": "Troque a oração por \"Quando / Assim que + verbo flexionado\" $\\rightarrow$ Manteve o sentido? Valor de TEMPO.",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Roteiro de Identificação de Valores Semânticos do Gerúndio.",
               "test": null
             },
             {
               "order": 5,
               "action": "Troque a oração por \"Porque / Visto que + verbo flexionado\" $\\rightarrow$ Indica a causa do fato principal? Valor de CAUSA.",
-              "explanation": null,
+              "explanation": "Passo 5 do algoritmo de Roteiro de Identificação de Valores Semânticos do Gerúndio.",
               "test": null
             },
             {
               "order": 6,
               "action": "Troque a oração por \"De modo que / De forma que + verbo flexionado\" $\\rightarrow$ Indica a consequência ou resultado? Valor de CONSEQUÊNCIA.",
-              "explanation": null,
+              "explanation": "Passo 6 do algoritmo de Roteiro de Identificação de Valores Semânticos do Gerúndio.",
               "test": null
             },
             {
               "order": 7,
               "action": "Troque por \"e + verbo no mesmo tempo da oração principal\" $\\rightarrow$ Adiciona um fato consequente? Valor de ADIÇÃO / CONSEQUÊNCIA.",
-              "explanation": null,
+              "explanation": "Passo 7 do algoritmo de Roteiro de Identificação de Valores Semânticos do Gerúndio.",
               "test": "Troque por \"e + verbo no mesmo tempo da oração principal\" $\\rightarrow$ Adiciona um fato consequente? Valor de ADIÇÃO / CONSEQUÊNCIA."
             },
             {
@@ -1114,25 +1116,25 @@
             {
               "order": 2,
               "action": "Substitua mentalmente pelo verbo regular chegar ou trazer",
-              "explanation": "",
+              "explanation": "Passo 2 do algoritmo de Teste do \"Chegando/Chegado\" para a Forma \"VINDO\".",
               "test": "Substitua mentalmente pelo verbo regular chegar ou trazer:"
             },
             {
               "order": 3,
               "action": "Se a frase pedir a forma em -ANDO (chegando / trazendo), a palavra vindo é um GERÚNDIO (ação em andamento).",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Teste do \"Chegando/Chegado\" para a Forma \"VINDO\".",
               "test": null
             },
             {
               "order": 4,
               "action": "Se a frase pedir a forma em -ADO / -IDO (chegado / trazido / procedente), a palavra vindo é um PARTICÍPIO IRREGULAR (origem, estado ou tempo composto).",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Teste do \"Chegando/Chegado\" para a Forma \"VINDO\".",
               "test": null
             },
             {
               "order": 5,
               "action": "Julgue as assertivas da banca examinadora com base nessa classificação categorial.",
-              "explanation": null,
+              "explanation": "Passo 5 do algoritmo de Teste do \"Chegando/Chegado\" para a Forma \"VINDO\".",
               "test": null
             }
           ],
@@ -2252,7 +2254,7 @@
       "questionType": "multiple_choice",
       "examBoard": "SAAE BARRA BONITA-SP",
       "year": 2017,
-      "prompt": "Considere o seguinte trecho: “São grandes as chances de você estar suando em bicas [...]”.\n\nOs verbos destacados estão respectivamente nas formas nominais:\n\na) Gerúndio e Particípio.\n\nb) Infinitivo e Particípio.\n\nc) Infinitivo e Gerúndio.\n\nd) Nenhuma das alternativas.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A04-aula04.q0109.",
       "options": [
         {
           "label": "a",
@@ -2275,6 +2277,7 @@
       "explanation": "O infinitivo é a forma substantiva do verbo, pois é “nome” do verbo: estar. O gerúndio é a forma nominal indicativa de processo contínuo, terminada em NDO: suando. Gabarito letra C. Carga semântica do gerúndio O gerúndio geralmente indica uma ação continuada ou ações que ocorrem simultaneamente. Mas, em questões de concurso, geralmente também são cobrados outros sentidos: Tempo, Condição, Modo e Causa. Ex.: ●​ TEMPO: Chegando ao banco, ele se assustou com a fila (ele se assustou quando chegou ao banco.) ●​ CONDIÇÃO: Lavando a louça, deixo você sair (se lavar a louça, poderá sair.) ●​ MODO: Desenvolveu a memória fazendo exercícios (exercícios foram a maneira que usou para desenvolver a memória.) ●​ CAUSA: Estudando com dedicação por anos, foi aprovada em primeiro lugar (foi aprovada em primeiro lugar porque estudou por anos.) Para expressar continuidade, é possível usar locução de gerúndio (Ele vem buscando a aprovação), ou, alternativamente, locução de infinitivo (Ele está a buscar a aprovação) e particípio (Ele tem buscado a aprovação). O gerúndio também pode funcionar com valor adjetivo. Ex.: BACEN - Língua Portuguesa 37 www.estrategiaconcursos.com.br 154 Tenho um livro ensinando essa questão (um livro que ensina).",
       "questionSha256": "180501fb29964d28b0fd7f72f70762a362258109e1f0128dac86b39cfb82b975",
       "answerSha256": "5b0cefa7f3a01c56cf0847f4e8d721530e2ff6c85d2ebbb71117ce23238324cc",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de SAAE BARRA BONITA-SP; 2. Identificar a regra central de Formas Nominais do Verbo; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": [
@@ -2309,7 +2312,7 @@
       "questionType": "multiple_choice",
       "examBoard": "CORE-PE",
       "year": 2019,
-      "prompt": "... autora do livro Toque, clique e Leia com Michael Levine...\n\nNo título do livro de Lisa Guernsey mencionado no texto, os verbos estão no:\na) Infinitivo pessoal. ​          ​          ​       c) Particípio.\nb) Presente do indicativo. ​​      d) Presente do subjuntivo. ​       e) Imperativo.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A04-aula04.q0107.",
       "options": [
         {
           "label": "a",
@@ -2324,6 +2327,7 @@
       "explanation": "Observem que temos um comando, uma ordem: Toque, clique e leia. O modo responsável por comandos em geral é imperativo e é nesse modo que os verbos estão conjugados. Gabarito letra E.",
       "questionSha256": "3ecc94f4d0c20f010d777d88df65b0a076e8c0eaed19baffd08f381a0c9c3664",
       "answerSha256": "1447481373c8ddf11976781e449bd810ca2e46062e4c7839c683c6f9bdfac459",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CORE-PE; 2. Identificar a regra central de Formas Nominais do Verbo; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": [
@@ -2346,12 +2350,13 @@
       "questionType": "true_false_or_statement",
       "examBoard": "SEDF",
       "year": 2017,
-      "prompt": "O transporte é público, o corpo da mulher não.\n\nAsssédio sexual no ônibus é crime.\n\nSe você for ou vir alguém sendo assediado, ligue 190 e denuncie.\n\nNo terceiro período, “for” e “vir” são formas flexionadas no modo subjuntivo dos verbos de\nmovimento ir e vir, empregadas em um jogo de palavras que aproxima o campo semântico do\nmovimento com o campo semântico do transporte.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A04-aula04.q0105.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "explanation": "Na verdade, “for” e “vir” são formas flexionadas no modo subjuntivo dos verbos de movimento ser e vEr. O modo subjuntivo do verbo “vir” seria “vier”. Questão incorreta.",
       "questionSha256": "47a10eef54dc934b27fc93be860373db984d458eb2759310b0258b0f8f3ca33e",
       "answerSha256": "d78cb7a952d5a3d503d56222e02b0faaf481588fd7c4c242c026212e8cfc5235",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de SEDF; 2. Identificar a regra central de Formas Nominais do Verbo; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -2361,7 +2366,7 @@
       "questionType": "multiple_choice",
       "examBoard": "CORE-SP",
       "year": 2019,
-      "prompt": "Na locução verbal da oração “O número deve crescer ainda mais nos próximos anos”, o verbo\nauxiliar está empregado no:\n\na) Presente do indicativo.\n\nb) Presente do subjuntivo.\n\nc) Infinitivo.\n\nd) Futuro do presente do indicativo.\n\ne) Imperativo.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A04-aula04.q0120.",
       "options": [
         {
           "label": "a",
@@ -2388,6 +2393,7 @@
       "explanation": "“Deve” é o auxiliar da locução “deve crescer” e está no presente do indicativo. Gabarito letra A.",
       "questionSha256": "70e69be6750dd6631762f8207eff07c3601c0c0f7e67a643668e1c2ccde2fb97",
       "answerSha256": "7f5a2e87f57d71b91c9852d2917d7b2cf624e6c3215ef0a5a7252a35e585e7fd",
+      "extractionQuality": "partial",
       "cognitiveDemand": "discriminacao_sintatica",
       "solutionStrategy": "1. Ler atentamente o enunciado de CORE-SP; 2. Identificar a regra central de Formas Nominais do Verbo; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": [
@@ -2429,7 +2435,7 @@
       "examBoard": "FGV",
       "organization": "PREF. ABREU LIMA PE",
       "year": 2024,
-      "prompt": "Assinale a frase em que a forma sublinhada corresponde à de um particípio, sem equivaler a um adjetivo, substantivado ou não.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A04-aula04.q0115.",
       "options": [
         {
           "label": "a",
@@ -2452,9 +2458,11 @@
           "text": "Só conheço três maneiras de existir na sociedade: sendo mendigo, ladrão ou assalariado."
         }
       ],
+      "officialAnswer": "",
       "explanation": "Essa questão é extremamente técnica e específica. Devemos aplicar o diferenciador essencial do particípio: a voz passiva. Em: \"D Um irmão é um amigo dado pela natureza.\", \"pela natureza\" é agente da passiva, \"ser+particípio\" é estrutura de voz passiva: Um irmão é um amigo (que foi) dado pela natureza. Nesse caso, só podemos classificar como particípio. \"desconhecida\" e \"desejado\" são adjetivos originais; em \"um desconhecido\" e \"sendo assalariado\", temos adjetivos substantivados. BACEN - Língua Portuguesa 42 www.estrategiaconcursos.com.br 154",
       "questionSha256": "0fb972c8ca1816a782efcce0f40b84c2d9c9da84d709021ca13865b0213bd0b8",
       "answerSha256": "a8ed384d7dd7207d4a89e65a579d70df9bd8a6a460d6434b693988fe34b45d41",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de FGV; 2. Identificar a regra central de Formas Nominais do Verbo; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": [
@@ -2495,7 +2503,7 @@
       "questionType": "multiple_choice",
       "examBoard": "CS-UFG",
       "year": 2016,
-      "prompt": "No título do texto, “Festejando no precipício”, o uso do verbo no gerúndio\n\na) caracteriza uma forma nominal e neutra.\n\nb) tem a função de indicar uma ação prolongada.\n\nc) reforça a ideia de progressividade no futuro.\n\nd) configura-se como um usual vício de linguagem.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A04-aula04.q0111.",
       "options": [
         {
           "label": "a",
@@ -2518,6 +2526,7 @@
       "explanation": "BACEN - Língua Portuguesa 38 www.estrategiaconcursos.com.br 154 Primariamente, o gerúndio indica ação continuada, prolongada, durativa. Esse é seu principal sentido. O infinitivo caracteriza uma forma nominal e neutra. Gabarito letra B. (DPE-MT / 2015) Adaptada A frase que identifica o primeiro erro – “Usar água da chuva para beber, tomar banho e cozinhar” – emprega a forma verbal do infinitivo. Com isso, o autor do texto consegue um resultado conveniente para esse tipo de texto, que é não personalizar as ações. Comentários: O infinitivo impessoal, não flexionado, não se refere a nenhum sujeito explícito. Por isso, tem o efeito de não personalizar as ações e indicá-las de modo vago. Questão correta. Particípios Abundantes Há verbos que trazem mais de um particípio, um regular, terminado em –do, e um não regular, que pode ter diversas terminações. Isso sempre gera muita dúvida no dia a dia e nas provas. Segue uma pequena lista deles. Infinitivo Particípio Regular Particípio Irregular Aceitar Aceitado Aceito Acender Acendido Aceso Afligir Afligido Aflito Assentar Assentado Assento Corrigir Corrigido Correto Encher Enchido Cheio Entregar Entregado Entregue Expressar Expressado Expresso Extinguir Extinguido Extinto Fixar Fixado Fixo Fritar Fritado Frito Limpar Limpado Limpo Misturar Misturado Misto Morrer Morrido Morto Pagar Pagado Pago Submeter Submetido Submisso Suspender Suspendido Suspenso Tingir Tingido Tinto Vagar Vagado Vago Imprimir Imprimido Impresso Veja o uso dos particípios: BACEN - Língua Portuguesa 39 www.estrategiaconcursos.com.br 154 PARTICÍPIO APLICAÇÃO EXEMPLOS Regular Serão usados na voz ativa, Tenho pagado minhas dívidas em com os verbos TER / HAVER. débito automático. (terminação -do) Eu nunca havia aceitado bem críticas. Irregular Serão usados na voz passiva, O boleto foi pago em dinheiro com os verbos SER / ESTAR. vivo. (com outras terminações) Estive suspenso do trabalho, por desafiar ordens sem sentido. Só não vale misturar! ​ Ex.: Tenho impresso meus cursos em PDF! ​ Ex.: Meu cigarro foi acendido. Um último alerta: “trago” e “chego” não existem (na prova)! Os particípios corretos são “trazido” e “chegado”. O particípio também pode apresentar valores adverbiais. Ex.: ●​ TEMPO: Concluído o curso, começou a procurar emprego (quando concluiu). ●​ CONDIÇÃO: Lavada a louça, eu deixarei você sair, filha! (se lavar). ●​ CAUSA: Preso no trânsito, não conseguiu chegar a tempo (porque ficou preso). ●​ CONCESSÃO: Cercado de policiais, o bandido não se entregou e abriu fogo (mesmo estando cercado).",
       "questionSha256": "4e34933972cd6e2a6de76d6697561dce82aa13eac7511084fe3fb9ffb169c15e",
       "answerSha256": "857aff9f3fa091beb5ebd0b4cef21909a805baaa5821dafb71af070c854a2c2d",
+      "extractionQuality": "partial",
       "cognitiveDemand": "discriminacao_sintatica",
       "solutionStrategy": "1. Ler atentamente o enunciado de CS-UFG; 2. Identificar a regra central de Formas Nominais do Verbo; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": [

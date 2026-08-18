@@ -4,7 +4,7 @@
     "unitId": "IP-A10-G05",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:31:54.098Z"
+    "generatedAt": "2026-08-18T23:33:08.273Z"
   },
   "unit": {
     "unitId": "IP-A10-G05",
@@ -14,9 +14,9 @@
     "variant": "development",
     "canonicalTopicId": "pt:a10:regencia-nominal",
     "learningObjectives": [
-      "OBJ-IP-A10-G05-001",
-      "OBJ-IP-A10-G05-002",
-      "OBJ-IP-A10-G05-003"
+      "Fundamentos de Regência Nominal",
+      "Aplicação Prática e Decisão em Regência Nominal",
+      "Articulação SuVeCA e Armadilhas de Prova em Regência Nominal"
     ]
   },
   "sections": {
@@ -48,8 +48,9 @@
           ]
         },
         {
-          "type": "paragraph",
-          "text": "SINTAXE DE REGÊNCIA ├── Regência Verbal (Verbo -> Complementos Diretos / Indiretos) └── REGÊNCIA NOMINAL (Nome -> Complemento Nominal) │ ├── 1. Natureza e Estrutura │ ├── Termo Regente: NOME (Substantivo, Adjetivo ou Advérbio) │ ├── Termo Regido: COMPLEMENTO NOMINAL (Sintagma ou Oração) │ └── Conector: SEMPRE mediado por PREPOSIÇÃO OBRIGATÓRIA │ ├── 2. Tipos de Regimes Preposicionais │ ├── Regência Simples (exigência de preposição unívoca) │ │ ├── contrário a, capaz de, responsável por, depois de, alusão a, restrito a │ │ └── passível de, sensível a, suscetível a, sujeito a, eficaz em, combate a │ └── Pluralidade / Dupla Regência (preposições alternativas equivalentes) │ ├── acostumado a / com | adaptado a / de / para | capacidade de / para │ ├── querido de / por | satisfeito com / de / em / por │ ├── aversão a / por | propenso a / para | imune a / de │ ├── ávido por / de | desejo de / por | orgulho de / por │ ├── curioso por/para/de| avesso a / em | receoso de / em │ └── relacionada com / a| intenção de / em │ ├── 3. Estruturas Sintáticas Especiais │ ├── Oração Completiva Nominal: Proibição de omissão do \"de\" (ex.: dúvida de que) │ ├── Pronome Relativo Preposicionado: Método da ordem direta (ex.: do qual integrar -> incorreto) │ └── Verbo Preferir (VTDI): [OD sem prep.] + [a + OI] com inversão estilística │ └── 4. Fenômenos de Intersecção ├── Determinação Semântica: Prep. simples (genérico) vs. Prep. + Artigo / Crase (determinado) ├── Pronome Possessivo Feminino: Artigo facultativo (de nossas vs. das nossas) └── Paralelismo Sintático: Recurso de ênfase (FGV) vs. Vício de redação (CEBRASPE)"
+          "type": "diagram",
+          "diagramType": "tree",
+          "text": "SINTAXE DE REGÊNCIA ├── Regência Verbal (Verbo -> Complementos Diretos / Indiretos) └── REGÊNCIA NOMINAL (Nome -> Complemento Nominal) │ ├── 1. Natureza e Estrutura │ ├── Termo Regente: NOME (Substantivo, Adjetivo ou Advérbio) │ ├── Termo Regido: COMPLEMENTO NOMINAL (Sintagma ou Oração) │ └── Conector: SEMPRE mediado por PREPOSIÇÃO OBRIGATÓRIA │ ├── 2. Tipos de Regimes Preposicionais │ ├── Regência Simples (exigência de preposição unívoca) │ │ ├── contrário a, capaz de, responsável por, depois de, alusão a, restrito a │ │ └── passível de, sensível a, suscetível a, sujeito a, eficaz em, combate a │ └── Pluralidade / Dupla Regência (preposições alternativas equivalentes) │ ├── acostumado a / com\nadaptado a / de / para\ncapacidade de / para │ ├── querido de / por\nsatisfeito com / de / em / por │ ├── aversão a / por\npropenso a / para\nimune a / de │ ├── ávido por / de\ndesejo de / por\norgulho de / por │ ├── curioso por/para/de\navesso a / em\nreceoso de / em │ └── relacionada com / a\nintenção de / em │ ├── 3. Estruturas Sintáticas Especiais │ ├── Oração Completiva Nominal: Proibição de omissão do \"de\" (ex.: dúvida de que) │ ├── Pronome Relativo Preposicionado: Método da ordem direta (ex.: do qual integrar -> incorreto) │ └── Verbo Preferir (VTDI): [OD sem prep.] + [a + OI] com inversão estilística │ └── 4. Fenômenos de Intersecção ├── Determinação Semântica: Prep. simples (genérico) vs. Prep. + Artigo / Crase (determinado) ├── Pronome Possessivo Feminino: Artigo facultativo (de nossas vs. das nossas) └── Paralelismo Sintático: Recurso de ênfase (FGV) vs. Vício de redação (CEBRASPE)"
         }
       ],
       "maps": [
@@ -493,7 +494,7 @@
           "entityId": "RULE-IP-A10-G05-001",
           "title": "Regras canônicas",
           "statement": "Regras canônicas",
-          "scope": "syntax",
+          "scope": "regency_crasis",
           "modality": "mandatory",
           "conditions": [
             "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
@@ -595,19 +596,19 @@
             {
               "order": 3,
               "action": "Classificar a Natureza Morfossintática do Regente",
-              "explanation": "",
+              "explanation": "Passo 3 do algoritmo de Roteiro Geral do \"Farejador de Regência\".",
               "test": null
             },
             {
               "order": 4,
               "action": "Se for verbo $\\rightarrow$ verificar transitividade verbal (VTD, VTI, VTDI).",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Roteiro Geral do \"Farejador de Regência\".",
               "test": null
             },
             {
               "order": 5,
               "action": "Se for substantivo, adjetivo ou advérbio $\\rightarrow$ confirmar regência nominal.",
-              "explanation": null,
+              "explanation": "Passo 5 do algoritmo de Roteiro Geral do \"Farejador de Regência\".",
               "test": null
             },
             {
@@ -693,19 +694,19 @@
             {
               "order": 1,
               "action": "Isolar a palavra regente sob dúvida (certeza, necessidade, ampliação, aversão).",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Teste Diagnóstico do Artigo para Reconhecimento de Substantivo.",
               "test": null
             },
             {
               "order": 2,
               "action": "Antepor mentalmente ou por escrito um artigo definido (o, a) ou indefinido (um, uma).",
-              "explanation": null,
+              "explanation": "Passo 2 do algoritmo de Teste Diagnóstico do Artigo para Reconhecimento de Substantivo.",
               "test": null
             },
             {
               "order": 3,
               "action": "Se a inserção mantiver a naturalidade e a correção morfossintática (a certeza, a necessidade, a ampliação), o vocábulo é categoricamente um substantivo.",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Teste Diagnóstico do Artigo para Reconhecimento de Substantivo.",
               "test": null
             }
           ],
@@ -763,31 +764,31 @@
             {
               "order": 1,
               "action": "Identificar o pronome relativo precedido de preposição (do qual, ao qual, em que).",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Validação de Regência com Pronomes Relativos (Método da Ordem Direta).",
               "test": null
             },
             {
               "order": 2,
               "action": "Localizar o substantivo antecedente que o pronome substitui.",
-              "explanation": null,
+              "explanation": "Passo 2 do algoritmo de Validação de Regência com Pronomes Relativos (Método da Ordem Direta).",
               "test": null
             },
             {
               "order": 3,
               "action": "Reorganizar a oração subordinada na ordem direta (Sujeito + Verbo + Complemento), substituindo o pronome pelo substantivo antecedente.",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Validação de Regência com Pronomes Relativos (Método da Ordem Direta).",
               "test": null
             },
             {
               "order": 4,
               "action": "Analisar a exigência sintática do verbo ou nome",
-              "explanation": "",
+              "explanation": "Passo 4 do algoritmo de Validação de Regência com Pronomes Relativos (Método da Ordem Direta).",
               "test": null
             },
             {
               "order": 5,
               "action": "Se o termo exigir preposição $\\rightarrow$ a preposição antes do pronome relativo é obrigatória.",
-              "explanation": null,
+              "explanation": "Passo 5 do algoritmo de Validação de Regência com Pronomes Relativos (Método da Ordem Direta).",
               "test": null
             },
             {
@@ -860,13 +861,13 @@
             {
               "order": 1,
               "action": "Identificar o par de preposições em análise (relacionada com vs. relacionada a; intenção de vs. intenção em).",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Protocolo de Avaliação de Dupla Regência e Crase.",
               "test": null
             },
             {
               "order": 2,
               "action": "Confirmar se o termo integra a lista canônica de dupla regência.",
-              "explanation": null,
+              "explanation": "Passo 2 do algoritmo de Protocolo de Avaliação de Dupla Regência e Crase.",
               "test": null
             },
             {
@@ -878,7 +879,7 @@
             {
               "order": 4,
               "action": "Julgar falsas as assertivas que declarem prejuízo gramatical ou semântico na troca autorizada.",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Protocolo de Avaliação de Dupla Regência e Crase.",
               "test": null
             }
           ],
@@ -1742,12 +1743,13 @@
       "organization": "UNB",
       "year": 2017,
       "role": "TRE TO",
-      "prompt": "No trecho “em uma época anterior à dos dinossauros”, o emprego do sinal indicativo de crase\ndecorre da regência do adjetivo “anterior” e presença do artigo feminino antes do termo elíptico\n“época”.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A10-aula10.q0086.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "explanation": "Questão correta. Temos crase pela fusão entre “anterior A+A (época) dos dinossauros. Esse A foi\nconsiderado artigo diante de substantivo elíptico.",
       "questionSha256": "1575b5a8866e6b44c461f95d582f1bb027363907531afd0d8861629ab53cea4c",
       "answerSha256": "b8fabc241577cc52bb267aab4801752dfff3a206a67b2b329d77b3705ad3baaf",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Regência Nominal; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1759,11 +1761,12 @@
       "organization": "UNB",
       "year": 2017,
       "role": "TRE TO",
-      "prompt": "No trecho “em uma época anterior à dos dinossauros”, o emprego do sinal indicativo de crase\ndecorre da regência do adjetivo “anterior” e presença do artigo feminino antes do termo elíptico\n“época”.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A10-aula10.q0179.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "questionSha256": "11be5446bb8d1de337cb250596398935ff8870825c4ad9bbf064bc6204b1d264",
       "answerSha256": "3d4775444e19d6259d63f27f0150b554e1264e84de7f7acef812eb730b315f6b",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Regência Nominal; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1774,12 +1777,13 @@
       "examBoard": "CEBRASPE",
       "organization": "PF–Escrivão – 2018",
       "year": 2018,
-      "prompt": "A supressão da preposição “de” empregada logo após “ferocidade”, no trecho “acostumando\nos espectadores a uma ferocidade de que todos queriam vê-los afastados”, manteria a correção\ngramatical do texto.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A10-aula10.q0084.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "explanation": "A preposição “DE” é obrigatória pela regência do adjetivo “afastados”: afastados de algo >\nafastado de uma ferocidade. Como foi utilizado o pronome relativo, a preposição obrigatória\naparece normalmente antes desse pronome:\na uma ferocidade de que todos queriam vê-los afastados. Questão incorreta.",
       "questionSha256": "11f5180c91d836f67c253b6352b36ad04030dd29c7f74bcce41f4aa4e34a5071",
       "answerSha256": "91410967df0a2b3bdf723ade1e6ac616523792daef09c609f633d90060cba16c",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Regência Nominal; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1790,11 +1794,12 @@
       "examBoard": "CEBRASPE",
       "organization": "PF–Escrivão – 2018",
       "year": 2018,
-      "prompt": "A supressão da preposição “de” empregada logo após “ferocidade”, no trecho “acostumando\nos espectadores a uma ferocidade de que todos queriam vê-los afastados”, manteria a correção\ngramatical do texto.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A10-aula10.q0177.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "questionSha256": "0d7cc2dabdcd39ef90b58627649f1277f74d16490a95b05315f066789f7437a1",
       "answerSha256": "d5f21c05b4c3e492345a6b9f2542c3284d11dce972a2cdb4ed6229e150432024",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Regência Nominal; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1806,12 +1811,13 @@
       "organization": "MPU",
       "year": 2018,
       "role": "ANALISTA",
-      "prompt": "A substituição de “relacionada com a disciplina” por relacionada à disciplina, embora mantivesse\no sentido do texto, prejudicaria sua correção gramatical.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A10-aula10.q0082.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "explanation": "Aqui, não há prejuízo gramatical algum, pois a troca da preposição “com” por “a” geraria a\nnecessidade do acento grave, como a banca propôs:\n“relacionada com a disciplina”\nrelacionada à disciplina (relacionada A+A disciplina)\nQuestão incorreta.",
       "questionSha256": "819c2d3b502bcfea6c8f6e0a02f7f715e45c479c27139c72bec4426c3b14b254",
       "answerSha256": "194873dc68cc6d4608784623f990df8207fa4eadfc1cc9c2ea9c40b0aee9fba7",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Regência Nominal; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1823,11 +1829,12 @@
       "organization": "MPU",
       "year": 2018,
       "role": "ANALISTA",
-      "prompt": "A substituição de “relacionada com a disciplina” por relacionada à disciplina, embora mantivesse\no sentido do texto, prejudicaria sua correção gramatical.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A10-aula10.q0175.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "questionSha256": "f272ba790afdbb07dee454cc02f34b83cd9fd45372a011bd1ee020ce008a8b5c",
       "answerSha256": "c3ce641bd37952e9093de4c58de2e8f593a37326fe62057375a741904b93f373",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Regência Nominal; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []

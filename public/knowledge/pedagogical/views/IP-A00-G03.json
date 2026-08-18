@@ -4,7 +4,7 @@
     "unitId": "IP-A00-G03",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:31:53.898Z"
+    "generatedAt": "2026-08-18T23:33:08.071Z"
   },
   "unit": {
     "unitId": "IP-A00-G03",
@@ -14,9 +14,9 @@
     "variant": "practice",
     "canonicalTopicId": "pt:a00:estudo-da-silaba",
     "learningObjectives": [
-      "OBJ-IP-A00-G03-001",
-      "OBJ-IP-A00-G03-002",
-      "OBJ-IP-A00-G03-003"
+      "Fundamentos de Estudo da Sílaba - Questões",
+      "Aplicação Prática e Decisão em Estudo da Sílaba - Questões",
+      "Articulação SuVeCA e Armadilhas de Prova em Estudo da Sílaba - Questões"
     ]
   },
   "sections": {
@@ -48,7 +48,8 @@
           ]
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "ESTUDO DA SÍLABA E FONÉTICA CONSOLIDADA (G03) │ ┌──────────────────────────────┬───────────────┴──────────────┬──────────────────────────────┐ ▼ ▼ ▼ ▼ ENCONTROS VOCÁLICOS RELAÇÃO LETRA/FONEMA DIVISÃO SILÁBICA POLIFONIA DO \"X\" │ │ │ │ ├── Hiato (V-V): ├── Letra: grafema visual ├── Consoante Muda Medial: ├── Dífono /ks/ (1L = 2F): │ Separados em sílabas │ │ Aere à vogal anterior │ sexualidade, intoxicação, │ distintas [ma-te-ri-al, ├── Fonema: som emitido │ [at-mos-fe-ra, co-lap-so, │ conexão (+1 fonema) │ po-e-si-a, e-co-no-mi-a] │ │ et-ni-a, felds-pa-to] │ │ ├── Dígrafo (-1 fonema): │ ├── Som /s/ ou /ss/: ├── Ditongo Crescente: │ Consonantal [lh, nh, ss] ├── Consoante Muda Inicial: │ expirar, êxtase, │ SV + V na mesma sílaba │ Vocálico [an, en, on] │ Monossílabo indivisível │ sintaxe (/sin'tasi/) │ [e-mer-gên-cia, │ │ [pneu] │ │ cui-da-do, ma-lí-cia] ├── Grupo QU/GU: │ ├── Som /ch/ (/ʃ/): │ │ Dígrafo se U for mudo ├── Dígrafos Separáveis: │ pixo, lixo └── Ditongo Decrescente: │ Não é dígrafo se U for │ rr, ss, sc, sç, xc │ V + SV na mesma sílaba │ audível [quan-ti-da-de] │ [ter-ra, an-das-se] └── Som /z/: [gra-tui-to, bei-ra, │ │ exame, exaustivamente ve-lei-ros, co-ne-xão] └── Dífono X=/ks/ (+1 fonema): └── Paroxítonas em Ditongo: [co-ne-xão, se-xu-al] Divisão clássica padrão [ma-lí-cia, su-per-fí-cie]"
         }
       ],
@@ -640,7 +641,7 @@
           "entityId": "RULE-IP-A00-G03-001",
           "title": "Tabela Sintética de Regras Canônicas",
           "statement": "Tabela Sintética de Regras Canônicas",
-          "scope": "syntax",
+          "scope": "phonetics_phonology",
           "modality": "mandatory",
           "conditions": [
             "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
@@ -760,19 +761,19 @@
             {
               "order": 1,
               "action": "Contar Grafemas Totais (Nº de Letras)",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Algoritmo Universal de Contagem de Fonemas e Letras.",
               "test": null
             },
             {
               "order": 2,
               "action": "Rastrear Ocorrência de Dígrafos",
-              "explanation": null,
+              "explanation": "Passo 2 do algoritmo de Algoritmo Universal de Contagem de Fonemas e Letras.",
               "test": null
             },
             {
               "order": 3,
               "action": "Rastrear Ocorrência de Dífonos",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Algoritmo Universal de Contagem de Fonemas e Letras.",
               "test": null
             }
           ],
@@ -810,7 +811,8 @@
               ]
             },
             {
-              "type": "paragraph",
+              "type": "diagram",
+              "diagramType": "tree",
               "text": "┌─────────────────────────────┴─────────────────────────────┐ ▼ ▼ [Dígrafos Consonantais] [Dígrafos Vocálicos] (ch, lh, nh, rr, ss, sc, sç, xc, (Vogal + M/N na mesma sílaba: qu/gu com U mudo) an, en, in, on, un, am, em...) │ │ └─────────────────────────────┬─────────────────────────────┘ │ ▼ Subtrair 1 Fonema por Dígrafo │ ▼"
             },
             {
@@ -821,7 +823,8 @@
               ]
             },
             {
-              "type": "paragraph",
+              "type": "diagram",
+              "diagramType": "tree",
               "text": "(Letra X com som de /ks/) │ ┌──────────────────┴──────────────────┐ ▼ ▼ [Existe Dífono?] [Não há Dífono] (Ex: conexão, (X = /s/, /z/, /ʃ/) sexualidade) │ │ ▼ ├─ SIM ──► Somar +1 Fonema Manter Contagem │ └──────────────────┬──────────────────┘ │ ▼ [FÓRMULA FINAL: Fonemas = Letras - Dígrafos + Dífonos]"
             }
           ]
@@ -850,19 +853,19 @@
             {
               "order": 2,
               "action": "Teste da audibilidade do 'U'",
-              "explanation": "",
+              "explanation": "Passo 2 do algoritmo de Procedimento Diagnóstico para o Grupo QU / GU.",
               "test": "Teste da audibilidade do 'U':"
             },
             {
               "order": 3,
               "action": "Pronuncie a palavra atentamente.",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Procedimento Diagnóstico para o Grupo QU / GU.",
               "test": null
             },
             {
               "order": 4,
               "action": "O som $/w/$ (letra u) é pronunciado?",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Procedimento Diagnóstico para o Grupo QU / GU.",
               "test": null
             },
             {
@@ -933,55 +936,55 @@
             {
               "order": 2,
               "action": "Verificar se a consoante é inicial",
-              "explanation": "",
+              "explanation": "Passo 2 do algoritmo de Algoritmo de Divisão Silábica para Consoantes Mudas e Encontros Impróprios.",
               "test": null
             },
             {
               "order": 3,
               "action": "Se estiver no início da palavra sem vogal prévia (pneu, psicose), ela não se separa e integra a sílaba seguinte.",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Algoritmo de Divisão Silábica para Consoantes Mudas e Encontros Impróprios.",
               "test": null
             },
             {
               "order": 4,
               "action": "Verificar se a consoante é medial (muda/imprópria)",
-              "explanation": "",
+              "explanation": "Passo 4 do algoritmo de Algoritmo de Divisão Silábica para Consoantes Mudas e Encontros Impróprios.",
               "test": null
             },
             {
               "order": 5,
               "action": "Se estiver no corpo da palavra e não for acompanhada de vogal imediata, ela é atraída para a sílaba anterior",
-              "explanation": "",
+              "explanation": "Passo 5 do algoritmo de Algoritmo de Divisão Silábica para Consoantes Mudas e Encontros Impróprios.",
               "test": null
             },
             {
               "order": 6,
               "action": "at - mos - fe - ra",
-              "explanation": null,
+              "explanation": "Passo 6 do algoritmo de Algoritmo de Divisão Silábica para Consoantes Mudas e Encontros Impróprios.",
               "test": null
             },
             {
               "order": 7,
               "action": "co - lap - so",
-              "explanation": null,
+              "explanation": "Passo 7 do algoritmo de Algoritmo de Divisão Silábica para Consoantes Mudas e Encontros Impróprios.",
               "test": null
             },
             {
               "order": 8,
               "action": "et - ni - a",
-              "explanation": null,
+              "explanation": "Passo 8 do algoritmo de Algoritmo de Divisão Silábica para Consoantes Mudas e Encontros Impróprios.",
               "test": null
             },
             {
               "order": 9,
               "action": "felds - pa - to",
-              "explanation": null,
+              "explanation": "Passo 9 do algoritmo de Algoritmo de Divisão Silábica para Consoantes Mudas e Encontros Impróprios.",
               "test": null
             },
             {
               "order": 10,
               "action": "Verificar a consoante 'S' em encontros (st, sp)",
-              "explanation": "",
+              "explanation": "Passo 10 do algoritmo de Algoritmo de Divisão Silábica para Consoantes Mudas e Encontros Impróprios.",
               "test": null
             },
             {
@@ -1069,43 +1072,43 @@
             {
               "order": 1,
               "action": "Análise de \"Até mesmo\"",
-              "explanation": "",
+              "explanation": "Passo 1 do algoritmo de Estratégia de Identificação de Operadores Argumentativos (\"Até Mesmo\" e \"Também\").",
               "test": null
             },
             {
               "order": 2,
               "action": "Verifique se a locução introduz um caso improvável, incomum ou extremo no contexto.",
-              "explanation": null,
+              "explanation": "Passo 2 do algoritmo de Estratégia de Identificação de Operadores Argumentativos (\"Até Mesmo\" e \"Também\").",
               "test": "Verifique se a locução introduz um caso improvável, incomum ou extremo no contexto."
             },
             {
               "order": 3,
               "action": "Se introduzir, valide a opção que afirma que o termo atua como o argumento mais forte da tese.",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Estratégia de Identificação de Operadores Argumentativos (\"Até Mesmo\" e \"Também\").",
               "test": null
             },
             {
               "order": 4,
               "action": "Análise de \"Também\"",
-              "explanation": "",
+              "explanation": "Passo 4 do algoritmo de Estratégia de Identificação de Operadores Argumentativos (\"Até Mesmo\" e \"Também\").",
               "test": null
             },
             {
               "order": 5,
               "action": "Realize o teste de supressão",
-              "explanation": "",
+              "explanation": "Passo 5 do algoritmo de Estratégia de Identificação de Operadores Argumentativos (\"Até Mesmo\" e \"Também\").",
               "test": "Realize o teste de supressão:"
             },
             {
               "order": 6,
               "action": "Se a palavra puder ser retirada da frase sem prejuízo sintático ou de informação básica (\"Essa história [também] já é demais!\"), trata-se de partícula expletiva / de realce.",
-              "explanation": null,
+              "explanation": "Passo 6 do algoritmo de Estratégia de Identificação de Operadores Argumentativos (\"Até Mesmo\" e \"Também\").",
               "test": null
             },
             {
               "order": 7,
               "action": "Se a palavra expressar adição de conteúdo e equivaler a \"além disso\" (\"Na verdade, também eles tinham...\"), trata-se de operador aditivo / inclusivo.",
-              "explanation": null,
+              "explanation": "Passo 7 do algoritmo de Estratégia de Identificação de Operadores Argumentativos (\"Até Mesmo\" e \"Também\").",
               "test": null
             }
           ],
@@ -1274,7 +1277,7 @@
           ],
           "result": "Gabarito: E.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-001 — Questão 01: Ocorrência de Hiato (FUNDATEC 2023) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-001 — Questão 01: Ocorrência de Hiato (FUNDATEC 2023).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-001 — Questão 01: Ocorrência de Hiato (FUNDATEC 2023).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-001 — Questão 01: Ocorrência de Hiato (FUNDATEC 2023).",
           "blocks": [
             {
@@ -1306,7 +1309,7 @@
           ],
           "result": "Resolução e Justificativa: A palavra emergência (e-mer-gên-cia) apresenta na sílaba final a sequência semivogal i + vogal a ($SV + V$), caracterizando ditongo crescente.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-006 — Questão 06: Identificação de Ditongo Crescente (FAU) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-006 — Questão 06: Identificação de Ditongo Crescente (FAU).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-006 — Questão 06: Identificação de Ditongo Crescente (FAU).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-006 — Questão 06: Identificação de Ditongo Crescente (FAU).",
           "blocks": [
             {
@@ -1351,7 +1354,7 @@
           ],
           "result": "Gabarito: ERRADO.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-010 — Questão 10: Ditongos Decrescentes vs. Hiatos (CEBRASPE) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-010 — Questão 10: Ditongos Decrescentes vs. Hiatos (CEBRASPE).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-010 — Questão 10: Ditongos Decrescentes vs. Hiatos (CEBRASPE).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-010 — Questão 10: Ditongos Decrescentes vs. Hiatos (CEBRASPE).",
           "blocks": [
             {
@@ -1402,7 +1405,7 @@
           ],
           "result": "Gabarito: B.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-017 — Questão 17: Correlação de Encontros Vocálicos (IDECAN 2024) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-017 — Questão 17: Correlação de Encontros Vocálicos (IDECAN 2024).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-017 — Questão 17: Correlação de Encontros Vocálicos (IDECAN 2024).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-017 — Questão 17: Correlação de Encontros Vocálicos (IDECAN 2024).",
           "blocks": [
             {
@@ -1444,7 +1447,7 @@
           ],
           "result": "Gabarito: B.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-002 — Questão 02: Letras e Fonemas em \"Horas\" (FUNDATEC 2024) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-002 — Questão 02: Letras e Fonemas em \"Horas\" (FUNDATEC 2024).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-002 — Questão 02: Letras e Fonemas em \"Horas\" (FUNDATEC 2024).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-002 — Questão 02: Letras e Fonemas em \"Horas\" (FUNDATEC 2024).",
           "blocks": [
             {
@@ -1471,7 +1474,7 @@
           ],
           "result": "Resolução e Justificativa: A palavra caminhando (ca-mi-nhan-do) apresenta dois dígrafos incontestáveis: o dígrafo consonantal nh e o dígrafo vocálico an.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-003 — Questão 03: Dígrafos em \"Caminhando\" (FUNDATEC) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-003 — Questão 03: Dígrafos em \"Caminhando\" (FUNDATEC).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-003 — Questão 03: Dígrafos em \"Caminhando\" (FUNDATEC).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-003 — Questão 03: Dígrafos em \"Caminhando\" (FUNDATEC).",
           "blocks": [
             {
@@ -1506,7 +1509,7 @@
           ],
           "result": "Gabarito: C.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-004 — Questão 04: Dígrafo vs. Encontro Consonantal (FAU 2023) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-004 — Questão 04: Dígrafo vs. Encontro Consonantal (FAU 2023).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-004 — Questão 04: Dígrafo vs. Encontro Consonantal (FAU 2023).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-004 — Questão 04: Dígrafo vs. Encontro Consonantal (FAU 2023).",
           "blocks": [
             {
@@ -1553,7 +1556,7 @@
           ],
           "result": "Gabarito: C (8 letras e 7 fonemas, 9 letras e 8 fonemas).",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-005 — Questão 05: Contagem em \"Possível\" e \"Esqueleto\" (FAU 2021) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-005 — Questão 05: Contagem em \"Possível\" e \"Esqueleto\" (FAU 2021).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-005 — Questão 05: Contagem em \"Possível\" e \"Esqueleto\" (FAU 2021).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-005 — Questão 05: Contagem em \"Possível\" e \"Esqueleto\" (FAU 2021).",
           "blocks": [
             {
@@ -1592,7 +1595,7 @@
           ],
           "result": "Gabarito: D.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-008 — Questão 08: Conjunto Exclusivo de Dígrafos (Consuplan 2023) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-008 — Questão 08: Conjunto Exclusivo de Dígrafos (Consuplan 2023).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-008 — Questão 08: Conjunto Exclusivo de Dígrafos (Consuplan 2023).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-008 — Questão 08: Conjunto Exclusivo de Dígrafos (Consuplan 2023).",
           "blocks": [
             {
@@ -1639,7 +1642,7 @@
           ],
           "result": "Gabarito: B.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-009 — Questão 09: Análise Fono-Ortográfica em Texto (Consuplan 2022) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-009 — Questão 09: Análise Fono-Ortográfica em Texto (Consuplan 2022).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-009 — Questão 09: Análise Fono-Ortográfica em Texto (Consuplan 2022).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-009 — Questão 09: Análise Fono-Ortográfica em Texto (Consuplan 2022).",
           "blocks": [
             {
@@ -1680,7 +1683,7 @@
           ],
           "result": "Gabarito: CERTO.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-011 — Questão 11: Dígrafos Vocálicos e Consonantais (CEBRASPE 2023) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-011 — Questão 11: Dígrafos Vocálicos e Consonantais (CEBRASPE 2023).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-011 — Questão 11: Dígrafos Vocálicos e Consonantais (CEBRASPE 2023).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-011 — Questão 11: Dígrafos Vocálicos e Consonantais (CEBRASPE 2023).",
           "blocks": [
             {
@@ -1717,7 +1720,7 @@
           ],
           "result": "Gabarito: CERTO.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-012 — Questão 12: Contagem em \"Quantidade\" (CEBRASPE 2023) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-012 — Questão 12: Contagem em \"Quantidade\" (CEBRASPE 2023).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-012 — Questão 12: Contagem em \"Quantidade\" (CEBRASPE 2023).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-012 — Questão 12: Contagem em \"Quantidade\" (CEBRASPE 2023).",
           "blocks": [
             {
@@ -1754,7 +1757,7 @@
           ],
           "result": "Gabarito: E.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-013 — Questão 13: Ortografia do Dígrafo \"SC\" (CESGRANRIO) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-013 — Questão 13: Ortografia do Dígrafo \"SC\" (CESGRANRIO).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-013 — Questão 13: Ortografia do Dígrafo \"SC\" (CESGRANRIO).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-013 — Questão 13: Ortografia do Dígrafo \"SC\" (CESGRANRIO).",
           "blocks": [
             {
@@ -1791,7 +1794,7 @@
           ],
           "result": "Gabarito: B.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-020 — Questão 20: Análise Fonética de \"Conexão\" (IDECAN 2023) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-020 — Questão 20: Análise Fonética de \"Conexão\" (IDECAN 2023).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-020 — Questão 20: Análise Fonética de \"Conexão\" (IDECAN 2023).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-020 — Questão 20: Análise Fonética de \"Conexão\" (IDECAN 2023).",
           "blocks": [
             {
@@ -1838,7 +1841,7 @@
           ],
           "result": "Gabarito: D (Apenas em I e III).",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-021 — Questão 21: Julgamento de Dígrafo, Ditongo e EC Disjunto (IDECAN 2023) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-021 — Questão 21: Julgamento de Dígrafo, Ditongo e EC Disjunto (IDECAN 2023).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-021 — Questão 21: Julgamento de Dígrafo, Ditongo e EC Disjunto (IDECAN 2023).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-021 — Questão 21: Julgamento de Dígrafo, Ditongo e EC Disjunto (IDECAN 2023).",
           "blocks": [
             {
@@ -1878,7 +1881,7 @@
           ],
           "result": "Gabarito: D.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-007 — Questão 07: Paroxítona em Ditongo vs. Paroxítona em \"L\" (Consuplan) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-007 — Questão 07: Paroxítona em Ditongo vs. Paroxítona em \"L\" (Consuplan).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-007 — Questão 07: Paroxítona em Ditongo vs. Paroxítona em \"L\" (Consuplan).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-007 — Questão 07: Paroxítona em Ditongo vs. Paroxítona em \"L\" (Consuplan).",
           "blocks": [
             {
@@ -1925,7 +1928,7 @@
           ],
           "result": "Gabarito: C.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-014 — Questão 14: Divisão Silábica Oficial (CESGRANRIO) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-014 — Questão 14: Divisão Silábica Oficial (CESGRANRIO).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-014 — Questão 14: Divisão Silábica Oficial (CESGRANRIO).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-014 — Questão 14: Divisão Silábica Oficial (CESGRANRIO).",
           "blocks": [
             {
@@ -1976,7 +1979,7 @@
           ],
           "result": "Gabarito: E.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-018 — Questão 18: Contagem de Sílabas e Consoantes Mudas (IDECAN 2024) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-018 — Questão 18: Contagem de Sílabas e Consoantes Mudas (IDECAN 2024).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-018 — Questão 18: Contagem de Sílabas e Consoantes Mudas (IDECAN 2024).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-018 — Questão 18: Contagem de Sílabas e Consoantes Mudas (IDECAN 2024).",
           "blocks": [
             {
@@ -2018,7 +2021,7 @@
           ],
           "result": "Gabarito: D (an.das.se – ma.lí.cia).",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-019 — Questão 19: Separação de \"Andasse\" e \"Malícia\" (IDECAN 2023) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-019 — Questão 19: Separação de \"Andasse\" e \"Malícia\" (IDECAN 2023).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-019 — Questão 19: Separação de \"Andasse\" e \"Malícia\" (IDECAN 2023).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-019 — Questão 19: Separação de \"Andasse\" e \"Malícia\" (IDECAN 2023).",
           "blocks": [
             {
@@ -2055,7 +2058,7 @@
           ],
           "result": "Gabarito: E.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-016 — Questão 16: Sonoridade do \"X\" em \"Sexualidade\" (IDECAN 2024) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-016 — Questão 16: Sonoridade do \"X\" em \"Sexualidade\" (IDECAN 2024).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-016 — Questão 16: Sonoridade do \"X\" em \"Sexualidade\" (IDECAN 2024).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-016 — Questão 16: Sonoridade do \"X\" em \"Sexualidade\" (IDECAN 2024).",
           "blocks": [
             {
@@ -2102,7 +2105,7 @@
           ],
           "result": "Gabarito: C.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-015 — Questão 15: Análise Textual, Divisão Silábica e Argumentação (FCC) sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-015 — Questão 15: Análise Textual, Divisão Silábica e Argumentação (FCC).",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-015 — Questão 15: Análise Textual, Divisão Silábica e Argumentação (FCC).",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G03-ESTUDO-DA-SILABA-QUESTOES-015 — Questão 15: Análise Textual, Divisão Silábica e Argumentação (FCC).",
           "blocks": [
             {
@@ -2442,7 +2445,7 @@
       "examBoard": "CEBRASPE",
       "organization": "SEED-PR",
       "year": 2021,
-      "prompt": "Os vocábulos “países” e “línguas”, presentes no texto 15A2-I, possuem a mesma classificação quanto à tonicidade, porém um difere do outro quanto à regra empregada para a utilização do acento agudo. Assinale a opção que indica a correta classificação desses vocábulos quanto à tonicidade e que explica corretamente as regras de acentuação aplicadas a eles.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0089.",
       "options": [
         {
           "label": "a",
@@ -2469,6 +2472,7 @@
       "explanation": "Vejamos a separação das sílabas e classificação de cada palavra: PA - Í - SES - paroxítona acentuada por apresentar hiato na penúltima sílaba. LÍN - GUAS - paroxítona acentuada por terminar em ditongo crescente (semivogal + vogal). Portanto, as duas palavras são paroxítonas, mas são acentuadas por justificativas diferentes. Gabarito letra A.",
       "questionSha256": "8ce52543f0329d423e413c1e95a76b68f6bfd1bda6adf5e98bbe7cc7d4683dd0",
       "answerSha256": "0926d1e76da41988e4b855d002c98a64a37d4c5ffe9c0d7b50cfe03b9e26257b",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Estudo da Sílaba - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "pedagogicalEvaluation": {
@@ -2519,7 +2523,7 @@
       "examBoard": "CEBRASPE",
       "organization": "SEED-PR",
       "year": 2021,
-      "prompt": "Os vocábulos “países” e “línguas”, presentes no texto 15A2-I, possuem a mesma classificação quanto à tonicidade, porém um difere do outro quanto à regra empregada para a utilização do acento agudo. Assinale a opção que indica a correta classificação desses vocábulos quanto à tonicidade e que explica corretamente as regras de acentuação aplicadas a eles.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0180.",
       "options": [
         {
           "label": "a",
@@ -2545,6 +2549,7 @@
       "officialAnswer": "A",
       "questionSha256": "0124c0f097492a04e98557b1926ff09203fa14af4197c18cb09cd7c744acf981",
       "answerSha256": "f2330364324cfb3b4031b53c665e0d67488053af753e9184f5e1330fb4fd6721",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Estudo da Sílaba - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": [
@@ -2586,7 +2591,7 @@
       "examBoard": "CEBRASPE",
       "organization": "PREFEITURA DE JOINVILLE - SC",
       "year": 2024,
-      "prompt": "Assinale a opção em que as palavras apresentadas são acentuadas graficamente porque são paroxítonas em que a vogal i ou u tônica forma hiato com a vogal da sílaba anterior.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0113.",
       "options": [
         {
           "label": "a",
@@ -2613,6 +2618,7 @@
       "explanation": "“paÍses” e “prejuÍzos”, assim como \"conteúdo\", são acentuadas pela regra do hiato. \"inúmeros\" é acentuado pela regra da proparoxítona. \"heróis\" é acentuada por ser oxítona terminada em ditongo aberto. Gabarito letra B.",
       "questionSha256": "c6799439af661b4e673bfcb693b70782b1b09c6d42b28cf9106693cdb2ea066b",
       "answerSha256": "7733e834513d42829ac6ca8f8c243f098f9b8890dc61e47288358b0288960a82",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Estudo da Sílaba - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "pedagogicalEvaluation": {
@@ -2663,7 +2669,7 @@
       "examBoard": "CEBRASPE",
       "organization": "PREFEITURA DE JOINVILLE - SC",
       "year": 2024,
-      "prompt": "Assinale a opção em que as palavras apresentas são acentuadas graficamente porque são paroxítonas em que a vogal i ou u tônica forma hiato com a vogal da sílaba anterior.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0204.",
       "options": [
         {
           "label": "a",
@@ -2689,6 +2695,7 @@
       "officialAnswer": "B",
       "questionSha256": "1e50450e114e22590c59d50b31bf42b2b43c1f49527bc6ee38d19cf29e779136",
       "answerSha256": "be17e87315f034cd80dce36c86191155349b14372708bddbd7255a8606b472a2",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Estudo da Sílaba - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": [
@@ -2730,7 +2737,7 @@
       "examBoard": "UEPB",
       "organization": "2017",
       "year": 2017,
-      "prompt": "Sobre a palavra comprava, podemos afirmar que",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0007.",
       "options": [
         {
           "label": "a",
@@ -2753,6 +2760,7 @@
       "explanation": "Em Com-pra-va, palavra paroxítona, temos encontro consonantal PR e dígrafo vocálico em OM. O dígrafo tem duas letras e representa só um fonema. Por isso, a palavra tem 8 letras e só 7 fonemas. Gabarito letra C. Dígrafo Nasal X Ditongo Nasal O dígrafo é a união de duas letras que formam um único som (UM SOM). Ocorre com M ou N após uma vogal antes de outra sílaba, em que o M ou N apenas nasaliza a vogal, funcionando exatamente como um til: ẽ - ENtre - O EN representa um único som, o som da vogal nasal ẽ ĩ - IMpor - O IM representa um único som, o som da vogal nasal ĩ ã - AMplo - O AM representa um único som, o som da vogal nasal ã O ditongo tem dois sons vocálicos, de uma vogal (+forte) e uma semivogal (+fraco) Então, o ditongo nasal tem DOIS SONS de vogal. Ocorre no final da palavra: ChegAM: chegÃU Portanto: Dígrafo, um som nasal (UM SOM): ã - AMplo X Ditongo, DOIS SONS: ChegAM: chegÃU DÍGRAFO NASAL DITONGO NASAL Duas letras que representam som vocálico nasal Duas letras (am / em) que representam dois sons, portanto dois fonemas. Ocorrem no final das palavras AM Ampola Falam Batem Cantam Alguém Cem Ninguém Ontem EM Emprego IM Limpeza OM Ombro UM Jejum AN Canto EN Venda IN Mingau ON Ontem UN Mundo",
       "questionSha256": "4bd2aeeab2276e37eb3e02141fe96b2e91795e72048643423c3020674ea3c2bc",
       "answerSha256": "bf2e9b122234b5537f7d29b8a29576e6fbdd0b75975e771a5f75c04943c26cec",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de UEPB; 2. Identificar a regra central de Estudo da Sílaba - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "pedagogicalEvaluation": {
@@ -2797,12 +2805,13 @@
       "examBoard": "CEBRASPE",
       "organization": "INOVERSASUL",
       "year": 2025,
-      "prompt": "A cada edição, o PISA escolhe um tema para fazer um aprofundamento — em 2022, o estudo se dedicou a entender como os alunos lidam com estratégias de aprendizado e quais suas posturas em relação à vida. No último parágrafo, o trecho introduzido pelo travessão permaneceria coerente e correto caso fosse reescrito da seguinte forma: no ano de 2022, estudo focou na compreensão das formas como os estudantes abordam as estratégias de aprendizagem e em como vêem a vida.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0074.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "explanation": "Há erro ortográfico. Hiatos com “ee” e “oo”, como “veem” e “doo”, não são acentuados. Gabarito: Errado.",
       "questionSha256": "35948da9c208f32d12fab2ff610238ea7a916d9a835cf1aaa46abda1c6af2f66",
       "answerSha256": "dd229a082bedb2f57ca7cd18318b63b233bc9e46a6b9774660174eb3ccbd13cc",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Estudo da Sílaba - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "pedagogicalEvaluation": {

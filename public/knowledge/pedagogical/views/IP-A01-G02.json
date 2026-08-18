@@ -4,7 +4,7 @@
     "unitId": "IP-A01-G02",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:31:53.915Z"
+    "generatedAt": "2026-08-18T23:33:08.086Z"
   },
   "unit": {
     "unitId": "IP-A01-G02",
@@ -14,7 +14,7 @@
     "variant": "development",
     "canonicalTopicId": "pt:a01:emprego-das-classes-de-palavras",
     "learningObjectives": [
-      "OBJ-IP-A01-G02-01"
+      "Objetivo 1"
     ]
   },
   "sections": {
@@ -46,7 +46,8 @@
           ]
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "EMPREGO DAS CLASSES DE PALAVRAS (CEBRASPE) ├── 1. TRÍADE MORFOLÓGICA BÁSICA & TÉCNICA DAS SETAS │ ├── SUBSTANTIVO: Núcleo do sintagma; classe variável; nomeia seres; atrai determinantes. │ ├── ADJETIVO: Classe variável; aponta SEMPRE para o Substantivo; testado por \"QUE É\". │ └── ADVÉRBIO: Classe invariável; modifica Verbo, Adjetivo ou outro Advérbio. │ ├── 2. DINÂMICA DO SINTAGMA NOMINAL │ ├── Ordem Direta: [Artigo] + [Substantivo] + [Adjetivo] (ex: \"O menino inteligente\") │ ├── Ordem Invertida / Anteposição: [Artigo] + [Adjetivo Interposto] + [Substantivo] │ │ └── Regra: O artigo pula o adjetivo e conecta-se ao substantivo posterior (ex: \"O inteligente menino\", \"à mágica transformação\") │ └── Caso Especial: Adjetivos invariáveis em gênero (ex: \"notícia monstro\", \"ideia monstro\") │ ├── 3. DERIVAÇÃO IMPRÓPRIA (SUBSTANTIVAÇÃO) │ ├── Determinantes Substantivadores: Artigo, Pronome (Demonstrativo/Possessivo) e Numeral │ ├── Substantivação de Verbos: \"Aquele olhar\", \"Um desesperar\" │ ├── Substantivação de Advérbios: \"O não que levou\", \"O amanhã é imprevisível\" │ ├── Substantivação de Numerais: \"O último dos mortais\" │ └── Substantivação de Conjunções/Letras: \"Daquele E\" │ └── 4. SEMÂNTICA E SINTAXE ADVERBIAL ├── Modificação de Verbo: Exprime circunstâncias diversas (Tempo, Modo, Lugar, etc.) │ ├── Teste de Modo: Responde a \"COMO?\" / \"De que jeito?\" (ex: \"rapidamente\", \"necessariamente\") │ ├── Teste de Tempo: Responde a \"QUANDO?\" (ex: \"amanhã\", \"posteriormente\", \"presentemente\", \"hoje\") │ └── Modificação à Distância: O advérbio pode estar separado do verbo por orações intercaladas (\"Hoje [...] abrange\") └── Modificação de Adjetivo / Advérbio: Atua OBRIGATORIAMENTE como INTENSIFICADOR └── Teste do \"Muito\": \"bem provável\" (= muito provável), \"bem cedo\" (= muito cedo), \"menos estressante\""
         }
       ],
@@ -312,7 +313,7 @@
           "entityId": "RULE-IP-A01-G02-001",
           "title": "Regras canônicas",
           "statement": "Regras canônicas",
-          "scope": "syntax",
+          "scope": "morphology",
           "modality": "mandatory",
           "conditions": [
             "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
@@ -411,19 +412,19 @@
             {
               "order": 3,
               "action": "Se apontar para um Substantivo $\\rightarrow$ o termo é um Adjetivo (ou determinante/artigo).",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Técnica das Setas (Referenciação Sintática).",
               "test": null
             },
             {
               "order": 4,
               "action": "Se apontar para um Verbo $\\rightarrow$ o termo é um Advérbio (circunstância).",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Técnica das Setas (Referenciação Sintática).",
               "test": null
             },
             {
               "order": 5,
               "action": "Se apontar para um Adjetivo ou outro Advérbio $\\rightarrow$ o termo é um Advérbio de Intensidade.",
-              "explanation": null,
+              "explanation": "Passo 5 do algoritmo de Técnica das Setas (Referenciação Sintática).",
               "test": null
             },
             {
@@ -508,13 +509,13 @@
             {
               "order": 2,
               "action": "Tente transformar a estrutura em uma oração adjetiva inserindo o conector \"QUE É\" (no singular) ou \"QUE SÃO\" (no plural).",
-              "explanation": null,
+              "explanation": "Passo 2 do algoritmo de Teste do \"Que é / Que são\" para Validação de Adjetivos.",
               "test": null
             },
             {
               "order": 3,
               "action": "Teste as combinações lógicas",
-              "explanation": "",
+              "explanation": "Passo 3 do algoritmo de Teste do \"Que é / Que são\" para Validação de Adjetivos.",
               "test": "Teste as combinações lógicas:"
             },
             {
@@ -532,7 +533,7 @@
             {
               "order": 6,
               "action": "O termo precedido pelo \"que é / que são\" na oração lógica é conclusivamente o ADJETIVO; o outro é o SUBSTANTIVO.",
-              "explanation": null,
+              "explanation": "Passo 6 do algoritmo de Teste do \"Que é / Que são\" para Validação de Adjetivos.",
               "test": null
             }
           ],
@@ -605,19 +606,19 @@
             {
               "order": 1,
               "action": "Identifique o termo subordinado e confirme que ele se liga a um adjetivo ou advérbio.",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Teste da Substituição por \"MUITO\" para Advérbio Intensificador.",
               "test": null
             },
             {
               "order": 2,
               "action": "Substitua o termo suspeito por \"MUITO\".",
-              "explanation": null,
+              "explanation": "Passo 2 do algoritmo de Teste da Substituição por \"MUITO\" para Advérbio Intensificador.",
               "test": "Substitua o termo suspeito por \"MUITO\"."
             },
             {
               "order": 3,
               "action": "Se a frase mantiver a coerência e expressar gradação semântica (\"bem provável\" $\\rightarrow$ \"muito provável\"; \"bem cedo\" $\\rightarrow$ \"muito cedo\"), ratifica-se a função de Advérbio de Intensidade.",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Teste da Substituição por \"MUITO\" para Advérbio Intensificador.",
               "test": null
             }
           ],
@@ -681,19 +682,19 @@
             {
               "order": 2,
               "action": "Formule as perguntas ao verbo",
-              "explanation": "",
+              "explanation": "Passo 2 do algoritmo de Teste Diagnóstico para Distinção Semântica: Modo (\"Como?\") vs. Tempo (\"Quando?\").",
               "test": null
             },
             {
               "order": 3,
               "action": "Se responder a \"COMO?\" / \"DE QUE JEITO?\" $\\rightarrow$ Classifique como MODO (\"leva necessariamente\" = leva de forma necessária/obrigatória).",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Teste Diagnóstico para Distinção Semântica: Modo (\"Como?\") vs. Tempo (\"Quando?\").",
               "test": null
             },
             {
               "order": 4,
               "action": "Se responder a \"QUANDO?\" $\\rightarrow$ Classifique como TEMPO (\"passou a morar posteriormente\" = quando? no futuro; \"circunstâncias presentemente vividas\" = quando? no presente).",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Teste Diagnóstico para Distinção Semântica: Modo (\"Como?\") vs. Tempo (\"Quando?\").",
               "test": null
             }
           ],
@@ -1952,12 +1953,13 @@
       "organization": "TRE TO",
       "year": 2017,
       "role": "2017",
-      "prompt": "o termo elíptico “época”.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A01-aula01.q0028.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "explanation": "Temos crase pela fusão entre “anterior A+A (época) dos dinossauros. Esse A foi considerado artigo\ndiante de substantivo elíptico. Questão correta.",
       "questionSha256": "1676b0e28a93db691ac5e29252d635064daee32e59d3072ac766abbd248969d2",
       "answerSha256": "6b95c410187ca6fdc4da477187a310929085a437b18cf7fa0d886b4b3bd4ec9b",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CESPE; 2. Identificar a regra central de Emprego das Classes de Palavras; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1969,11 +1971,12 @@
       "organization": "FUB",
       "year": 2018,
       "role": "2018",
-      "prompt": "O emprego do advérbio “precisamente” (ℓ.25) enfatiza o nexo causal entre o avanço da\nqualidade da tradução feita por computadores e a percepção de seus desenvolvedores de que\numa língua não é feita apenas de conjuntos de palavras.\n\n BACEN - Língua Portuguesa 93\n www.estrategiaconcursos.com.br 102",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A01-aula01.q0057.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "questionSha256": "80ff4717fceaec6ad987b2bda5bea2db4442d8f923e3954823129bb360102c62",
       "answerSha256": "4243d7362e05b851ef0dca45d50d0c41ffc355d211102aa0a15713226a775106",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Emprego das Classes de Palavras; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1985,11 +1988,12 @@
       "organization": "SEDF",
       "year": 2017,
       "role": "2017",
-      "prompt": "O emprego do diminutivo no texto está relacionado à expressão de afeto e ao gênero textual:\ncarta familiar. ==2920c1==",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A01-aula01.q0036.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "questionSha256": "fc5eb98afa349dc363759b5b702e50868fd9f78885c61ac5643e3dd5b64b83b1",
       "answerSha256": "caba5a2b07fe2ac4f5c57e19f3d2d06e783a8c8959691ef0e87e29d7292ce4bc",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Emprego das Classes de Palavras; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -2001,11 +2005,12 @@
       "organization": "INOVERSASUL",
       "year": 2025,
       "role": "2025",
-      "prompt": "os vocábulos “uma” e “a” fazem parte da mesma classe\ngramatical de palavras.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A01-aula01.q0064.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "questionSha256": "1784549063681cae4cdec8e376685c5a64495479f5530c26d6acb1cb1007313f",
       "answerSha256": "d0b1ec4a446eceb33e0c7bad57d55be117fbe23f7d96df9ef6f165209efa554c",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Emprego das Classes de Palavras; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -2017,11 +2022,12 @@
       "organization": "SEDF",
       "year": 2017,
       "role": "2017",
-      "prompt": "A palavra “último” foi empregada com valor de substantivo.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A01-aula01.q0034.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "questionSha256": "ee2d0563887d0f066abf2ff189257e6b637b569e58e4f209010361bcd8a0c982",
       "answerSha256": "58735529e5898ee678a5f1906c01cef2aee4c2546272a288485a8604c41c0f2f",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Emprego das Classes de Palavras; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -2032,12 +2038,13 @@
       "examBoard": "SEDF",
       "organization": "2017",
       "year": 2017,
-      "prompt": "a palavra “muito” que as\nacompanha é, do ponto de vista morfossintático, um advérbio.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A01-aula01.q0016.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "explanation": "Observe: “muito prazer”. Aqui “muito” se refere a substantivo, é pronome indefinido, indica\nquantidade vaga,  imprecisa. Já em “muito engraçadinha”, “muito” se  refere ao adjetivo\n“engraçadinha”. O advérbio é a única classe que modifica adjetivo. Portanto, somente nesta\nsegunda ocorrência temos advérbio.\n\nGabarito: questão incorreta.\n\n\n\n\n\n\n\nADVÉRBIO X PRONOME INDEFINIDO\n\n\nÉ extremamente comum que a banca peça para dizer se palavras como \"mais, menos, muito,\npouco, bastante, demais\" são advérbios ou pronomes indefinidos.\n\nComo em quase tudo na vida, para não confundirmos dois conceitos, devemos conhecer muito\nbem cada um, individualmente. Vejamos a essência de cada classe.\n\nO advérbio é classe gramatical invariável (sem feminino, sem plural) que modifica verbo, adjetivo\nou outro advérbio. Quando modifica verbo, detalha o processo verbal, expressando alguma\ncircunstância, alguma condição ou \"ambiente\" na ocorrência do verbo, como tempo, lugar,\nmodo, intensidade, dúvida, afirmação, preço, inclusão, exclusão...\n\nEx: Gil trabalha muito.\n\nEx: As crianças chegaram ontem.\n\nEx: Maria viaja bastante.\n\nEx: Maria não viaja mais.\n\nQuando modifica adjetivo ou outro advérbio, funciona geralmente como um intensificador.\n\nEx: Gil é muito rico.\n\nEx: Gil é menos alto que Gal.\n\nEx: Gil está menos irritado.\n\nEx: A carne custa mais caro.\n\nEx: As crianças chegaram muito cedo.\n\nEx: As crianças chegaram tarde demais.\n\nPor  isso, nesses exemplos, \"mais\", \"menos\", \"muito\", \"pouco\",\"bastante\", \"demais\" são\nadvérbios. Por serem invariáveis, não vão ao plural.\n\nPor outro lado, os vocábulos \"mais\", \"menos\", \"muito\", \"pouco\", \"bastante\", \"demais\" podem\nser pronomes indefinidos, quando modificam substantivo, indicando quantidade vaga, imprecisa.\nComo são pronomes indefinidos, por regra são variáveis e podem ir ao plural para fazerem a\ndevida concordância.\n\n\"mais\", \"menos\", \"demais\" são invariáveis mesmo como pronome indefinidos.\n\nEx: Gil possui muitos/bastantes/poucos/mais/menos carros.\n\nEx: Temos agora mais/menos tempo.\n\nCircunstâncias adverbiais (valor semântico)\n\nQuando uma ação  for praticada, ou melhor, quando um verbo  for conjugado, podemos\nperguntar como, onde, quando, por que aquele verbo foi praticado.\n\nAs respostas serão circunstâncias adverbiais, que podem ser expressas por advérbios, expressões\ncom mais de uma palavra (as locuções adverbiais) e até orações (chamadas por isso de “orações\nadverbiais”).\n\n\n\n\n\n\n\nVeja:\n             Ex:   Estudo sempre (“advérbio” de tempo).\n\n                 Estudo a todo momento. (“locução adverbial” de tempo).\n\n                 Estudo sempre que posso. (“oração adverbial” de tempo).\n\n* Locuções são expressões que possuem mais de uma palavra e equivalem a uma determinada\nclasse. Uma locução prepositiva é expressão com mais de uma palavra que funciona como se\nfosse uma preposição. Por exemplo, “a respeito de” é uma locução prepositiva e equivale à\npreposição “sobre”, com sentido de assunto; “a fim de” é locução prepositiva e equivale à\npreposição “para”, com sentido de finalidade. “Contanto que” é uma locução conjuntiva,\nequivale à conjunção “caso”. Na mesma lógica, as locuções adverbiais são expressões que\npossuem mais de uma palavra e funcionam como um advérbio, com valor circunstancial. Por\nexemplo, em “Estudo sempre”, “sempre” é um mero advérbio. Em “Estudo todo dia”, “todo\ndia” é uma locução adverbial, pois tem valor de um advérbio.\n\nVejamos como essas circunstâncias adicionam “sentidos” ao ato representado pelo verbo:\n\n\n\n\n\nViram como as expressões dão uma circunstância de como a ação é praticada?\n\n\nVejamos mais algumas, muito cobradas:\n\n\n\n\n\n\n\n       Dúvida: talvez, porventura, possivelmente, provavelmente, quiçá, casualmente,\n      mesmo, por certo.\n\n        Intensidade: muito, demais, pouco, tão, bastante, mais, menos, demasiado,\n       quanto,  quão,  tanto,  assaz,  que  (=  quão),  tudo,  nada,  todo,  quase,\n       extremamente, intensamente, grandemente, bem...\n\n       Negação: não, nem, nunca,  jamais, de modo algum, de forma nenhuma,\n       tampouco, de jeito nenhum.\n\n       Afirmação:   sim,  certamente,   realmente,   decerto,   efetivamente,   certo,\n       decididamente, deveras, indubitavelmente, com certeza.\n\n        Lugar: aqui, antes, dentro, ali, adiante, fora, acolá, atrás, além, lá, detrás, aquém,\n        cá, acima, onde, perto, aí, abaixo, aonde, longe, debaixo, algures (em algum\n         lugar), defronte, nenhures (em nenhum lugar), adentro, afora, alhures (em outro\n         lugar), embaixo, externamente, a distância,==2920c1==      à distância de, de longe, de perto,\n     em cima, à direita, à esquerda, ao lado, em volta.\n\n      Tempo: hoje, logo, primeiro, ontem,  tarde, outrora, amanhã, cedo, dantes,\n        depois, ainda, antigamente, antes, doravante, nunca, então, ora, jamais, agora,\n       sempre,  já,  enfim,  afinal, amiúde  (frequentemente), breve, constantemente,\n       entrementes, imediatamente, primeiramente, provisoriamente, sucessivamente,\n        às vezes, à tarde, à noite, de manhã, de repente, de vez em quando, de quando\n     em quando, a qualquer momento, de tempos em tempos, em breve, hoje em\n         dia.\n\n      Modo: bem, mal, assim, adrede (de propósito), melhor, pior, depressa, acinte (de\n        propósito),   debalde   (em    vão),   devagar,   calmamente,   tristemente,\n       propositadamente,      pacientemente,     amorosamente,     docemente,\n       escandalosamente, bondosamente, generosamente.\n\n        às pressas, às claras, às cegas, à toa, à vontade, às escondidas, aos poucos, desse\n          jeito, desse modo, dessa maneira, em geral, frente a frente, lado a lado, a pé, de\n         cor, em vão...\n\n\n\nEssa lista é apenas ilustrativa, mas não há como decorar o valor de cada advérbio, pois só o\ncontexto dirá seu valor semântico.\n\nNa sentença “nunca mais quero ser eliminado”, o advérbio “mais” tem sentido de tempo. Já na\nsentença “cheguei mais rápido”, o advérbio traz ideia de intensidade/comparação.\n\nNão decore, busque o sentido global, no contexto!!!\n\n\n\n\n\n\n\n\n\n\n99% dos advérbios terminados em \"-mente\" são de modo, mas nem todos.\n\n“Atualmente”,  por  exemplo,  é  advérbio  de  “tempo”;  “certamente”  é de  afirmação;\n“possivelmente” é de dúvida...\n\nAnalise sempre o contexto.\n\n\nO advérbio também tem função coesiva, isto é, pode ligar partes do texto, fazendo referência a\ntrechos do texto e ao tempo/espaço.\n                 Ex:   Embora não queira, ainda assim devo estudar.\n\n\n                           Fui à Europa e lá percebi que somos felizes aqui.\n\n\n\n\nA terminação “-mente” é típica dos advérbios de modo, contudo pode ser omitida na primeira\npalavra quando temos dois advérbios modificando o mesmo verbo:\n                Ex: Ele fala rapidamente. Ele fala claramente => Ele fala rápida e claramente.\n\n\nAtenção! O “rápida” continua sendo advérbio. Não é adjetivo, pois não dá qualidade, mas sim\nmodifica um verbo, dando a ele circunstância (de modo rápido).\n\n\nAdvérbio com “aparência” de adjetivo\n\nO adjetivo é classe variável, mas pode aparecer invariável se referindo a um verbo; nesse caso,\ndizemos que ele tem “valor ou função de advérbio”.\n                 Ex:   A cerveja que desce redondo...\n                           Ele fala grosso.\n\n\nPara você ter certeza de que se trata de um advérbio, tente mudar o gênero ou número do\nsubstantivo para ver se atrai alguma concordância...\n                 Ex:   As cervejas que descem redondo...\n                           Elas falam grosso\n\nConfirmado, a palavra em negrito é um advérbio e, portanto, permanece invariável.",
       "questionSha256": "405448efdccb258bf53d3298f75cb98883db9f4f6a05dcec3a0fb067a1b68059",
       "answerSha256": "a4ba1402a32dd1e1c94281b6cc94dc8ee0432b5e8051436f1fff8ad68b29945a",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de SEDF; 2. Identificar a regra central de Emprego das Classes de Palavras; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []

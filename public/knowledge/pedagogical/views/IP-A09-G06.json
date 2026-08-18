@@ -4,7 +4,7 @@
     "unitId": "IP-A09-G06",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:31:54.083Z"
+    "generatedAt": "2026-08-18T23:33:08.259Z"
   },
   "unit": {
     "unitId": "IP-A09-G06",
@@ -14,9 +14,9 @@
     "variant": "development",
     "canonicalTopicId": "pt:a09:concordancia-nominal",
     "learningObjectives": [
-      "OBJ-IP-A09-G06-001",
-      "OBJ-IP-A09-G06-002",
-      "OBJ-IP-A09-G06-003"
+      "Fundamentos de Concordância Nominal - Parte 02",
+      "Aplicação Prática e Decisão em Concordância Nominal - Parte 02",
+      "Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Parte 02"
     ]
   },
   "sections": {
@@ -57,7 +57,8 @@
           "text": "ESTRUTURAS COM PARTICÍPIO │ ┌─────────────────────────┴─────────────────────────┐ ▼ ▼ TEMPOS COMPOSTOS VOZ PASSIVA ANALÍTICA (Auxiliares TER / HAVER) (Auxiliares SER / ESTAR) Particípio = Verbo Principal Puro Particípio = Natureza Adjetiva INVARIÁVEL (Terminação fixa em -o) VARIÁVEL (Concorda com Sujeito Paciente) Ex.: \"Tinham pintado as paredes\" Ex.: \"As paredes foram pintadas\""
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "MATRIZ CEBRASPE DE REESCRITURA │ ┌─────────────────────────┼─────────────────────────┐ ▼ ▼ ▼ CORREÇÃO GRAMATICAL SENTIDO ORIGINAL COERÊNCIA TEXTUAL Conformidade formal com Preservação das ideias e Lógica interna e não a norma-padrão culta. conteúdos originais do texto contradição contextuais. │ │ │ └─────────────────────────┼─────────────────────────┘ ▼ MUDANÇA DE REFERENTE (SETA SINTÁTICA) │ ┌─────────────────────────┴─────────────────────────┐ ▼ ▼ REGRA GERAL EXCEÇÃO CANÔNICA Muda Seta = MUDA SENTIDO Coletivos Partitivos / Quantificadores (Pode manter Correção e Coerência) (A maioria de... / Bilhões de pessoas...) Muda Seta = MANTÉM O SENTIDO"
         }
       ],
@@ -445,7 +446,7 @@
           "entityId": "RULE-IP-A09-G06-001",
           "title": "Regras canônicas",
           "statement": "Concordância Total (Gramatical): Flexão do adjetivo no plural que abrange a totalidade dos núcleos substantivos, aplicando-se a prevalência do masculino plural na presença de gêneros mistos ($M + F \\rightarrow M.Pl.$) — KB-A09-G06-002, KB-A09-G06-004.\nConcordância Atrativa (Parcial): Flexão do adjetivo que espelha estritamente o gênero e o número do núcleo substantivo gramaticalmente mais próximo no espaço oracional — KB-A09-G06-002, KB-A09-G06-004.\nPredicativo do Sujeito: Termo que qualifica o sujeito mediado por um verbo de ligação ou estado. Posposto exige Concordância Total; anteposto \"segue o verbo\" — KB-A09-G06-002.\nPredicativo do Objeto: Termo integrante que qualifica o objeto direto/indireto, sendo indispensável à estrutura semântica do predicado. Admite C.T. ou C.A. em qualquer posição sem alteração de sentido — KB-A09-G06-003.\nParticípio em Tempos Compostos: Verbo principal puro acompanhado dos auxiliares ter ou haver, invariável com terminação em -o — KB-A09-G06-005.\nParticípio em Voz Passiva Analítica: Verbo com função adjetiva acompanhado de auxiliares de estado (ser, estar, ficar), com flexão obrigatória em concordância com o sujeito paciente — KB-A09-G06-005.\nParticípios Abundantes: Bipartição funcional entre particípio regular (-do, com ter/haver) e particípio irregular/curto (incluso, ganho, pago, com ser/estar ou como adjetivo autônomo) — KB-A09-G06-006.\nBloqueio Preposicional: Princípio segundo o qual nenhum substantivo regido por preposição pode atuar como núcleo de sujeito ou governar concordância — KB-A09-G06-007.\nUnidirecionalidade: Princípio que determina que modificadores concordam com substantivos; substantivos nunca concordam com substantivos nem com adjetivos — KB-A09-G06-008.\nTríade do Cebraspe: Diferenciação funcional entre Correção Gramatical (norma), Sentido (ideias) e Coerência (lógica) — KB-A09-G06-010.\nColetivo Partitivo em Concordância Nominal: Expressões quantitativas com especificador plural que autorizam dupla concordância com preservação simultânea de correção e sentido — KB-A09-G06-011.",
-          "scope": "syntax",
+          "scope": "agreement",
           "modality": "prohibited",
           "conditions": [
             "Concordância Total (Gramatical): Flexão do adjetivo no plural que abrange a totalidade dos núcleos substantivos, aplicando-se a prevalência do masculino plural na presença de gêneros mistos ($M + F \\rightarrow M.Pl.$) — KB-A09-G06-002, KB-A09-G06-004.",
@@ -526,7 +527,7 @@
             {
               "order": 6,
               "action": "Identificar a função sintática e a posição relativa",
-              "explanation": "",
+              "explanation": "Passo 6 do algoritmo de Protocolo de Resolução por Setas Sintáticas e Isolamento de Núcleos.",
               "test": null
             },
             {
@@ -637,19 +638,19 @@
             {
               "order": 3,
               "action": "Avaliar a alteração semântica do verbo transitivo",
-              "explanation": "",
+              "explanation": "Passo 3 do algoritmo de Teste de Retirada para Identificação do Predicativo do Objeto.",
               "test": null
             },
             {
               "order": 4,
               "action": "Se a oração mantiver o mesmo significado da ação $\\rightarrow$ O adjetivo era mero Adjunto Adnominal (dispensável).",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Teste de Retirada para Identificação do Predicativo do Objeto.",
               "test": null
             },
             {
               "order": 5,
               "action": "Se a oração desfigurar o sentido contextual (o verbo encontrar deixar de expressar constatação de estado e passar a significar localização física de algo perdido) $\\rightarrow$ O adjetivo é Predicativo do Objeto (termo integrante indispensável).",
-              "explanation": null,
+              "explanation": "Passo 5 do algoritmo de Teste de Retirada para Identificação do Predicativo do Objeto.",
               "test": null
             }
           ],
@@ -717,7 +718,7 @@
             {
               "order": 3,
               "action": "Inspecionar o verbo modal do comando da banca",
-              "explanation": "",
+              "explanation": "Passo 3 do algoritmo de Protocolo de Julgamento de Itens \"Deveria\" vs. \"Poderia\" (Padrão FGV / Cebraspe).",
               "test": null
             },
             {
@@ -797,7 +798,7 @@
             {
               "order": 3,
               "action": "Verificar a plausibilidade semântica no mundo real",
-              "explanation": "",
+              "explanation": "Passo 3 do algoritmo de Teste do \"Ler o que vem Depois\" no Modelo CEBRASPE.",
               "test": null
             },
             {
@@ -870,7 +871,7 @@
             {
               "order": 3,
               "action": "Eliminar as alternativas descartadas pelas lacunas finais unívocas, tornando a escolha da 1ª lacuna direta e imediata.",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Estratégia de Resolução de Lacunas \"De Trás para Frente\" (Padrão VUNESP).",
               "test": null
             }
           ],

@@ -4,7 +4,7 @@
     "unitId": "IP-A13-G06",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:31:54.140Z"
+    "generatedAt": "2026-08-18T23:33:08.314Z"
   },
   "unit": {
     "unitId": "IP-A13-G06",
@@ -14,7 +14,7 @@
     "variant": "development",
     "canonicalTopicId": "pt:a13:miscelanea-de-interpretacao",
     "learningObjectives": [
-      "OBJ-IP-A13-G06-01"
+      "Objetivo 1"
     ]
   },
   "sections": {
@@ -46,7 +46,8 @@
           ]
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "TIPOLOGIA TEXTUAL (MÉTODO SISTEMATIZADO CEBRASPE) │ ├── 1. TRIAGEM ESTRUTURAL MACRO (Passo 1: Início, Final, Título, Fonte) │ ├── Foco em Tema / Conceito / Reflexão ──► ESTRUTURA DISSERTATIVA │ └── Foco em Personagens / Ações / Cenários ──► ESTRUTURA NARRATIVA / DESCRITIVA │ ├── 2. INTENÇÃO DISCURSIVA DO AUTOR (Passo 2: se Dissertativo) │ ├── Expor conhecimento / Informar fatos / Neutralidade ──► DISSERTAÇÃO EXPOSITIVA / INFORMATIVA │ │ └── Nota: Comentários pontuais não descaracterizam a exposição informativa. │ └── Persuadir o leitor / Defender tese / Juízos de valor ──► DISSERTAÇÃO ARGUMENTATIVA │ └── Dados numéricos/estatísticos = Instrumentos a serviço da persuasão. │ └── 3. RELAÇÃO AÇÃO vs. CARACTERIZAÇÃO (Passo 3: se Narrativo/Descritivo) ├── Verbos de ação + Enredo cronológico ──► PREDOMINÂNCIA NARRATIVA └── Detalhamento físico / Pausa temporal ──► ASPECTOS DESCRITIVOS SUBORDINADOS"
         }
       ],
@@ -242,7 +243,7 @@
           "entityId": "RULE-IP-A13-G06-001",
           "title": "Regras canônicas",
           "statement": "Critério das Extremidades e Fonte (Canônico): A determinação inicial da tipologia textual deve ser feita pelo exame conjunto do primeiro parágrafo, último parágrafo, título e fonte bibliográfica (KB-A13-G06-MISCELANEA-INTERPRETACAO-001).\nBifurcação Dissertativa (Canônica): Textos temáticos dividem-se em Expositivos/Informativos (quando o emissor apenas expõe o que domina ou informa novidades) e Argumentativos (quando busca defender uma tese persuasiva) (KB-A13-G06-MISCELANEA-INTERPRETACAO-002).\nRegra de Dominância Narrativa (Canônica): Havendo coexistência de fatos temporais e traços caracterizadores, prevalece a macroestrutura narrativa com aspectos descritivos mesclados (KB-A13-G06-MISCELANEA-INTERPRETACAO-003).\nInstrumentalidade dos Dados (Canônica): Estatísticas e números em textos dissertativos não anulam a argumentação quando inseridos a serviço de um propósito comunicativo persuasivo (KB-A13-G06-MISCELANEA-INTERPRETACAO-004).",
-          "scope": "syntax",
+          "scope": "text_interpretation",
           "modality": "mandatory",
           "conditions": [
             "Critério das Extremidades e Fonte (Canônico): A determinação inicial da tipologia textual deve ser feita pelo exame conjunto do primeiro parágrafo, último parágrafo, título e fonte bibliográfica (KB-A13-G06-MISCELANEA-INTERPRETACAO-001).",
@@ -286,13 +287,13 @@
             {
               "order": 1,
               "action": "Passo 1 — Triagem Estrutural pelas Extremidades",
-              "explanation": "",
+              "explanation": "Passo 1 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
               "test": null
             },
             {
               "order": 2,
               "action": "Efetuar a leitura do primeiro parágrafo, do último parágrafo, do título e da referência da fonte.",
-              "explanation": null,
+              "explanation": "Passo 2 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
               "test": null
             },
             {
@@ -304,19 +305,19 @@
             {
               "order": 4,
               "action": "Caso possua tema definido $\\rightarrow$ Direcionar para o Passo 2 (Ramo Dissertativo).",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
               "test": null
             },
             {
               "order": 5,
               "action": "Caso possua personagens e linha temporal de ações $\\rightarrow$ Direcionar para o Passo 3 (Ramo Narrativo/Descritivo).",
-              "explanation": null,
+              "explanation": "Passo 5 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
               "test": null
             },
             {
               "order": 6,
               "action": "Passo 2 — Análise da Intenção Autoral (Ramo Dissertativo)",
-              "explanation": "",
+              "explanation": "Passo 6 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
               "test": null
             },
             {
@@ -328,49 +329,49 @@
             {
               "order": 8,
               "action": "Se o objetivo for conceituar, detalhar funcionamento, relatar dados técnicos ou noticiar fatos $\\rightarrow$ Classificar como Dissertativo Expositivo / Informativo.",
-              "explanation": null,
+              "explanation": "Passo 8 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
               "test": null
             },
             {
               "order": 9,
               "action": "Se o objetivo for sustentar um posicionamento crítico, conscientizar ou persuadir o leitor mediante tese e valorações $\\rightarrow$ Classificar como Dissertativo Argumentativo.",
-              "explanation": null,
+              "explanation": "Passo 9 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
               "test": null
             },
             {
               "order": 10,
               "action": "Passo 3 — Hierarquização de Ações e Detalhes (Ramo Narrativo/Descritivo)",
-              "explanation": "",
+              "explanation": "Passo 10 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
               "test": null
             },
             {
               "order": 11,
               "action": "Constatar a presença de progressão cronológica balizada por verbos de ação no pretérito.",
-              "explanation": null,
+              "explanation": "Passo 11 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
               "test": null
             },
             {
               "order": 12,
               "action": "Identificar a ocorrência de adjetivações e qualificações de cenários, trajes ou objetos.",
-              "explanation": null,
+              "explanation": "Passo 12 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
               "test": null
             },
             {
               "order": 13,
               "action": "Concluir pela classificação de Predominantemente Narrativo com Sequências Descritivas Mescladas.",
-              "explanation": null,
+              "explanation": "Passo 13 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
               "test": null
             },
             {
               "order": 14,
               "action": "Textos dissertativos mantêm amarração conceitual circular entre o primeiro e o último parágrafo.",
-              "explanation": null,
+              "explanation": "Passo 14 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
               "test": null
             },
             {
               "order": 15,
               "action": "Textos narrativos preservam a continuidade dos agentes e a evolução dos acontecimentos entre a abertura e o desfecho.",
-              "explanation": null,
+              "explanation": "Passo 15 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
               "test": null
             },
             {
@@ -412,7 +413,8 @@
               "text": "Sequência de passos operacionais"
             },
             {
-              "type": "paragraph",
+              "type": "diagram",
+              "diagramType": "tree",
               "text": "┌───────────────────────────────────┐ │ PASSO 1: TRIAGEM DAS EXTREMIDADES │ │ (Início, Final, Título e Fonte) │ └─────────────────┬─────────────────┘ │ ┌────────────────┴────────────────┐ ▼ ▼ O texto tem tema/assunto? O texto tem história/ações? (ESTRUTURA DISSERTATIVA) (NARRATIVO / DESCRITIVO) │ │ ┌──────────────┴──────────────┐ │ ▼ ▼ ▼ PASSO 2: EXPOSITIVO PASSO 2: ARGUMENTATIVO PASSO 3: DOMINÂNCIA • Intenção: expor o • Intenção: convencer e • Ações temporais + que sabe ou informar defender tese central detalhes físicos = • Não busca persuadir • Juízos de valor e dados Predominantemente • Opiniões pontuais usados para persuasão Narrativo com aspectos não alteram o tipo • Propósito comunicativo descritivos mesclados"
             },
             {
@@ -1285,12 +1287,13 @@
       "examBoard": "CEBRASPE",
       "organization": "SEDU-ES",
       "year": 2010,
-      "prompt": "Julgue o item que se segue, relativo à interpretação, produção, tipos e gêneros de textos.\nAnedota, autobiografia e história em quadrinhos são gêneros textuais narrativos.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A13-aula13.q0024.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "explanation": "Outra  questão  conceitual. Todos  esses  gêneros contam  “histórias”, em  sentido  amplo:\ndescrevem ações, com personagens, num fluxo temporal dinâmico. Questão correta.",
       "questionSha256": "c8fcab5bb81d02d6e7ba72e7f75977ffba6b5b5b9592303a1db6816bdf079a6f",
       "answerSha256": "ef645a8ec672147c9ad0a8192635401e73d9fd868e42a371312a132a98fa4982",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Miscelânea de Interpretação; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1301,11 +1304,12 @@
       "examBoard": "CEBRASPE",
       "organization": "SEDU-ES",
       "year": 2010,
-      "prompt": "Julgue o item que se segue, relativo à interpretação, produção, tipos e gêneros de textos.\nAnedota, autobiografia e história em quadrinhos são gêneros textuais narrativos.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A13-aula13.q0052.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "questionSha256": "17cb5cf86969a6c8e991a5ba2a5b4812a110cc273e01894d7852cbcfb2dbc642",
       "answerSha256": "1d608fd2a976702326c35c4366049ee6852ce12e08a82cd6dd6706c1cdaa7982",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Miscelânea de Interpretação; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1316,7 +1320,7 @@
       "examBoard": "CEBRASPE",
       "organization": "APEX BRASIL",
       "year": 2022,
-      "prompt": "Quanto à tipologia textual, o último parágrafo do texto CB2A1-I é predominantemente\nA) descritivo.\nB) injuntivo.\nC) expositivo.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ==2920c1==\nD) dissertativo.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A13-aula13.q0027.",
       "options": [
         {
           "label": "A",
@@ -1339,6 +1343,7 @@
       "explanation": "O texto traz um comando, com verbo no imperativo e sugere seguir um passo a passo, uma lista de\ninstruções. Temos texto injuntivo.\nGabarito letra B.",
       "questionSha256": "a23e16757deb22136ec3e1bc79e3b7509912d9cdb27c078ff8860f9b6a99f3d4",
       "answerSha256": "e89d14fd9d95a46bbb3a06955e21c6a7261ed98f18307a7720bd8bb9e86ceef7",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Miscelânea de Interpretação; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "pedagogicalEvaluation": {
@@ -1383,7 +1388,7 @@
       "examBoard": "CEBRASPE",
       "organization": "APEX BRASIL",
       "year": 2022,
-      "prompt": "Quanto à tipologia textual, o último parágrafo do texto CB2A1-I é predominantemente\nA) descritivo.\nB) injuntivo.\nC) expositivo.\nD) dissertativo.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A13-aula13.q0030.",
       "options": [
         {
           "label": "A",
@@ -1406,6 +1411,7 @@
       "explanation": "O texto traz um comando, com verbo no imperativo e sugere seguir um passo a passo, uma lista\nde instruções. Temos texto injuntivo.\nGabarito letra B.",
       "questionSha256": "d5b0ee7dec0eada32148712503ca54fb416fb204235d42c7b38085e524ec2d07",
       "answerSha256": "3f5c0b9b26941d3219f1f484123d77b6033239eda3562a0de0a2fec10cc5e7e3",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Miscelânea de Interpretação; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "pedagogicalEvaluation": {
@@ -1450,7 +1456,7 @@
       "examBoard": "CEBRASPE",
       "organization": "APEX BRASIL",
       "year": 2022,
-      "prompt": "Quanto à tipologia textual, o último parágrafo do texto CB2A1-I é predominantemente\nA) descritivo.\nB) injuntivo.\nC) expositivo.\nD) dissertativo.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A13-aula13.q0058.",
       "options": [
         {
           "label": "A",
@@ -1472,6 +1478,7 @@
       "officialAnswer": "letter_B",
       "questionSha256": "7d3055d0fdf3debf62837345837992c3c231f3012c5b7cd12c111bf09860c7b4",
       "answerSha256": "ea90404fa9c6bd06d3caa2c4522e55e58a2d8d35d06b65f02f8c72aaa6b56f02",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Miscelânea de Interpretação; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": [
@@ -1507,7 +1514,7 @@
       "examBoard": "CEBRASPE",
       "organization": "APEX BRASIL",
       "year": 2022,
-      "prompt": "Quanto à tipologia textual, o último parágrafo do texto CB2A1-I é predominantemente\nA) descritivo.\nB) injuntivo.\nC) expositivo.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ==2920c1==\nD) dissertativo.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A13-aula13.q0055.",
       "options": [
         {
           "label": "A",
@@ -1529,6 +1536,7 @@
       "officialAnswer": "letter_B",
       "questionSha256": "0162287bf4b10bd7cce13d3575369b62a4fd1e678c8260e075db295b0767c30f",
       "answerSha256": "c61064cd32e68a5c2411a26ec9ba9cdfabee900aa2a1a457011ed86a9104cf48",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Miscelânea de Interpretação; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": [

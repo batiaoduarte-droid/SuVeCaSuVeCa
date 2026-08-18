@@ -4,7 +4,7 @@
     "unitId": "IP-A13-G01",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:31:54.129Z"
+    "generatedAt": "2026-08-18T23:33:08.302Z"
   },
   "unit": {
     "unitId": "IP-A13-G01",
@@ -14,9 +14,9 @@
     "variant": "development",
     "canonicalTopicId": "pt:a13:recorrencia",
     "learningObjectives": [
-      "OBJ-IP-A13-G01-001",
-      "OBJ-IP-A13-G01-002",
-      "OBJ-IP-A13-G01-003"
+      "Fundamentos de Recorrência",
+      "Aplicação Prática e Decisão em Recorrência",
+      "Articulação SuVeCA e Armadilhas de Prova em Recorrência"
     ]
   },
   "sections": {
@@ -48,7 +48,8 @@
           ]
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "COMPREENSÃO TEXTUAL EM CONCURSOS (RECORRÊNCIA) │ ├── 1. Princípios Epistêmicos │ ├── Foco no Explícito (Literalidade Semântica) │ ├── Fechamento Textual (O texto como universo fechado de validade) │ └── \"Verdade do Texto\" vs. \"Verdade da Vida\" (Proibição de conhecimento empírico externo) │ ├── 2. Tipologia de Formulação de Assertivas │ ├── Paráfrase Correta (Equivalência Semântica Integral) │ │ ├── Sinonímia Vocabular e Reestruturação Sintática │ │ ├── Singular Genérico / Categórico (Singular ↔ Plural) │ │ └── Equivalência Temporal de Simultaneidade (\"Paralelo\" ↔ \"Tão antigo quanto\") │ ├── Paráfrase Incorreta por Contradição │ │ └── Inversão da Polaridade Semântica ([+] ↔ [-] / Presença de advérbio desestabilizador) │ └── Paráfrase Incorreta por Extrapolação │ ├── Dedução não autorizada (O falso raciocínio \"Se... então\") │ ├── Conversão de Tempo/Cronologia em Hierarquia/Importância │ ├── Inserção de Termos Modais ou Quantificadores Ausentes (\"a maior parte\", \"difundida\") │ └── Troca de Referentes em Torno de Adversativas (\"Mas\") │ └── 3. Procedimentos e Ferramentas Operacionais ├── Protocolo de Fragmentação da Assertiva (Numeração 1, 2, 3...) ├── Técnica das Setas (\"Setas Salvam\" — Rastreamento de Referentes e Elipses) ├── Matriz de Polarização Semântica ([+] vs. [-]) ├── Técnica do Desapego Provisório (Uso do ponto de interrogação \"?\") └── Manejo Rápido de Enumerações Extensas (Enlace Hiperonímico)"
         }
       ],
@@ -221,7 +222,8 @@
           "text": "A extrapolação textual ocorre quando a assertiva introduz dados quantitativos, qualificadores, relações de causalidade, juízos de prioridade ou noções de mundo real que não possuem âncora textual explícita no fragmento de apoio."
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "MANIFESTAÇÕES DA EXTRAPOLAÇÃO: ├── 1. Falso \"Se... Então\": Dedução psicológica livre não explicitada pelo autor. ├── 2. Eixo Temporal vs. Eixo Axiológico: Converter ordem cronológica (\"de início\") em prioridade (\"priorizar\"). ├── 3. Inserção de Termos Ausentes: Adicionar verbos ou adjetivos inexistentes (ex.: \"difundida\"). └── 4. \"Verdade da Vida\" vs. \"Verdade do Texto\": Validar assertiva com base em fatos empíricos externos não expressos."
         },
         {
@@ -297,7 +299,7 @@
           "entityId": "RULE-IP-A13-G01-001",
           "title": "Equação Canônica da Compreensão Textual",
           "statement": "\\text{Compreensão Textual} \\equiv \\text{Recorrência} \\equiv \\text{Paráfrases} \\equiv \\text{Equivalências} \\equiv \\text{Reescrituras} \\equiv \\text{Explícitos do Texto}\n(Referência: KB-A13-G01-RECORRENCIA-002, VIS-A13-G01-RECORRENCIA-001)",
-          "scope": "syntax",
+          "scope": "text_interpretation",
           "modality": "mandatory",
           "conditions": [
             "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
@@ -319,7 +321,7 @@
           "entityId": "RULE-IP-A13-G01-002",
           "title": "Tabela Sintética das Modalidades de Paráfrase",
           "statement": "|:------------------------------------- |:-------------------------------------------------------------------------------- |:----------------------------------------------------------------------------------------------------------------------------- |:----------------------------: |\n| Paráfrase Correta | Correspondência semântica e sintática integral em todos os blocos frasais. | Preservação perfeita do sentido por sinonímia, singular genérico ou equivalência temporal.$\\rightarrow$ CERTO | KB-A13-G01-RECORRENCIA-003 |\n| Incorreta por Contradição | Inversão da polaridade axiológica ou negação direta de afirmação do texto. | Presença de vocábulo, advérbio ou adjetivo com carga oposta ([+] vs. [-]). $\\rightarrow$ ERRADO | KB-A13-G01-RECORRENCIA-004 |\n| Incorreta por Extrapolação | Introdução de dados, juízos de valor, conclusões ou quantificadores ausentes. | Falso raciocínio \"se... então\", troca de tempo por prioridade ou apelo à \"verdade da vida\".$\\rightarrow$ ERRADO | KB-A13-G01-RECORRENCIA-005 |",
-          "scope": "syntax",
+          "scope": "text_interpretation",
           "modality": "mandatory",
           "conditions": [
             "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
@@ -368,19 +370,19 @@
             },
             {
               "order": 2,
-              "action": "[Passo 1: Identificar o Comando de Prova] │ • Localizar fórmulas: \"De acordo com o texto...\", \"Conforme as ideias...\" │ • Desativar inferência livre; ativar rastreamento estrito de explícitos",
+              "action": "[Passo 1: Identificar o Comando de Prova] Localizar fórmulas: \"De acordo com o texto...\", \"Conforme as ideias...\" Desativar inferência livre; ativar rastreamento estrito de explícitos",
               "explanation": "Procedimento operacional para Protocolo de Resolução de Recorrência e Fatiamento de Assertivas.",
               "test": null
             },
             {
               "order": 3,
-              "action": "▼ [Passo 2: Leitura Global Silenciosa com Técnica das Setas] │ • Ler internamente sem oralizar (\"Um olho no peixe, outro no gato\")",
+              "action": "[Passo 2: Leitura Global Silenciosa com Técnica das Setas] Ler internamente sem oralizar (\"Um olho no peixe, outro no gato\")",
               "explanation": "Procedimento operacional para Protocolo de Resolução de Recorrência e Fatiamento de Assertivas.",
               "test": null
             },
             {
               "order": 4,
-              "action": "│ • Traçar setas ligando pronomes, elipses e adjetivos aos antecedentes",
+              "action": "Traçar setas ligando pronomes, elipses e adjetivos aos antecedentes",
               "explanation": "Procedimento operacional para Protocolo de Resolução de Recorrência e Fatiamento de Assertivas.",
               "test": null
             }
@@ -407,7 +409,8 @@
               "text": "Fluxograma Operacional"
             },
             {
-              "type": "paragraph",
+              "type": "diagram",
+              "diagramType": "tree",
               "text": "[Passo 1: Identificar o Comando de Prova] │ • Localizar fórmulas: \"De acordo com o texto...\", \"Conforme as ideias...\" │ • Desativar inferência livre; ativar rastreamento estrito de explícitos. ▼ [Passo 2: Leitura Global Silenciosa com Técnica das Setas] │ • Ler internamente sem oralizar (\"Um olho no peixe, outro no gato\"). │ • Traçar setas ligando pronomes, elipses e adjetivos aos antecedentes. │ • Mapear conectivos de polaridade e adversativas (\"Mas\"). ▼ [Passo 3: Fragmentação e Numeração Analítica da Assertiva] │ • Dividir a frase da banca em blocos de sentido: [1], [2], [3], [4]... │ • Isolar: Sujeito / Verbo / Complemento / Circunstâncias / Modificadores. ▼ [Passo 4: Confronto Bloco a Bloco com o Texto-Base] │ • Mapear equivalência sinônima para cada número. │ • Validar singular genérico (= plural) e simultaneidade temporal. │ • Aplicar \"Desapego Provisório\" (marcar \"?\" em caso de dúvida temporária). ▼ [Passo 5: Teste de Polarização e Blindagem Epistêmica] │ • Houve inversão de carga semântica ([+] vs. [-])? ──► Erro por Contradição. │ • Há termos ausentes (\"difundida\", \"priorizar\")? ──► Erro por Extrapolação. │ • O dado decorre apenas da \"verdade da vida\"? ──► Erro por Extrapolação. ▼ [Passo 6: Julgamento Conclusivo] ├── Todos os blocos possuem âncora explícita e compatível ──► CERTO └── Qualquer bloco apresenta contradição, extrapolação ou troca de agente ──► ERRADO"
             }
           ]
@@ -492,7 +495,7 @@
             {
               "order": 2,
               "action": "Traçar um enlace curvo envolvendo todo o bloco da enumeração.",
-              "explanation": null,
+              "explanation": "Passo 2 do algoritmo de Protocolo para Manejo de Enumerações Extensas.",
               "test": null
             },
             {
@@ -504,7 +507,7 @@
             {
               "order": 4,
               "action": "Proceder à leitura da assertiva verificando se a banca cobrou a totalidade, um elemento específico ou se formulou uma generalização indevida.",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Protocolo para Manejo de Enumerações Extensas.",
               "test": null
             }
           ],
@@ -1335,12 +1338,13 @@
       "examBoard": "CEBRASPE",
       "organization": "MPU",
       "year": 2018,
-      "prompt": "Utilize o texto da questão anterior\nA cultura é um fator que limita a concepção de mundo dos diferentes povos, levando-os a uma\nvisão estreita das dimensões da vida humana.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A13-aula13.q0185.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "explanation": "Não é a cultura em si, é “limitarmo-nos a ela”, isto é, “limitarmo-nos à nossa própria cultura” e\ndepreciar as demais. Questão incorreta.",
       "questionSha256": "06bf3f52c717f89757710f4c6897a02a152737a1b21513ec2791674ef4b3d622",
       "answerSha256": "3f9178d6ac46785d6d2a5c3b6a8aa99cc7dda0120053a29dc8cbb53317f1fff2",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Recorrência; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1351,11 +1355,12 @@
       "examBoard": "CEBRASPE",
       "organization": "MPU",
       "year": 2018,
-      "prompt": "Utilize o texto da questão anterior\nA cultura é um fator que limita a concepção de mundo dos diferentes povos, levando-os a uma\nvisão estreita das dimensões da vida humana.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A13-aula13.q0331.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "questionSha256": "9066c0c1ae5fc4d8c802fb3dc7fea1f218c81bf7be097fe0e3cadc2e41855fa2",
       "answerSha256": "52d9dee7b40614b2c6104fecc1716186d16b795f02ce7b41d35db282d5260295",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Recorrência; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1366,7 +1371,7 @@
       "examBoard": "CEBRASPE",
       "organization": "APEX BRASIL",
       "year": 2022,
-      "prompt": "Quanto à tipologia textual, o último parágrafo do texto CB2A1-I é predominantemente\nA) descritivo.\nB) injuntivo.\nC) expositivo.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ==2920c1==\nD) dissertativo.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A13-aula13.q0027.",
       "options": [
         {
           "label": "A",
@@ -1389,6 +1394,7 @@
       "explanation": "O texto traz um comando, com verbo no imperativo e sugere seguir um passo a passo, uma lista de\ninstruções. Temos texto injuntivo.\nGabarito letra B.",
       "questionSha256": "a23e16757deb22136ec3e1bc79e3b7509912d9cdb27c078ff8860f9b6a99f3d4",
       "answerSha256": "e89d14fd9d95a46bbb3a06955e21c6a7261ed98f18307a7720bd8bb9e86ceef7",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Recorrência; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": [
@@ -1424,7 +1430,7 @@
       "examBoard": "CEBRASPE",
       "organization": "APEX BRASIL",
       "year": 2022,
-      "prompt": "Quanto à tipologia textual, o último parágrafo do texto CB2A1-I é predominantemente\nA) descritivo.\nB) injuntivo.\nC) expositivo.\nD) dissertativo.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A13-aula13.q0030.",
       "options": [
         {
           "label": "A",
@@ -1447,6 +1453,7 @@
       "explanation": "O texto traz um comando, com verbo no imperativo e sugere seguir um passo a passo, uma lista\nde instruções. Temos texto injuntivo.\nGabarito letra B.",
       "questionSha256": "d5b0ee7dec0eada32148712503ca54fb416fb204235d42c7b38085e524ec2d07",
       "answerSha256": "3f5c0b9b26941d3219f1f484123d77b6033239eda3562a0de0a2fec10cc5e7e3",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Recorrência; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": [
@@ -1482,7 +1489,7 @@
       "examBoard": "CEBRASPE",
       "organization": "APEX BRASIL",
       "year": 2022,
-      "prompt": "Quanto à tipologia textual, o último parágrafo do texto CB2A1-I é predominantemente\nA) descritivo.\nB) injuntivo.\nC) expositivo.\nD) dissertativo.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A13-aula13.q0058.",
       "options": [
         {
           "label": "A",
@@ -1504,6 +1511,7 @@
       "officialAnswer": "letter_B",
       "questionSha256": "7d3055d0fdf3debf62837345837992c3c231f3012c5b7cd12c111bf09860c7b4",
       "answerSha256": "ea90404fa9c6bd06d3caa2c4522e55e58a2d8d35d06b65f02f8c72aaa6b56f02",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Recorrência; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": [
@@ -1539,12 +1547,13 @@
       "examBoard": "CEBRASPE",
       "organization": "PRF",
       "year": 2019,
-      "prompt": "Infere-se que o autor do texto é espanhol.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A13-aula13.q0171.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "explanation": "Não se pode afirmar isso. Apenas foi dito que o nome é hispânico. Garcia é um nome hispânico e\nnem todo Garcia é espanhol. Questão incorreta.",
       "questionSha256": "0cfcac50ab0abc062263022aacaeb1d9d0630254fa35200b8a18e83c6f850c43",
       "answerSha256": "a4ce290ef30e3140ed1698dc91667978b6d10e29b11e1dcc6a0294a55a5964e4",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Recorrência; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []

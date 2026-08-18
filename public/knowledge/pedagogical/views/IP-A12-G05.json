@@ -4,7 +4,7 @@
     "unitId": "IP-A12-G05",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:31:54.122Z"
+    "generatedAt": "2026-08-18T23:33:08.296Z"
   },
   "unit": {
     "unitId": "IP-A12-G05",
@@ -14,7 +14,7 @@
     "variant": "development",
     "canonicalTopicId": "pt:a12:ambiguidade-homonimos-e-paronimos",
     "learningObjectives": [
-      "OBJ-IP-A12-G05-01"
+      "Objetivo 1"
     ]
   },
   "sections": {
@@ -47,7 +47,8 @@
           ]
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "RELAÇÕES SEMÂNTICO-ESTRUTURAIS │ ├── A. FENÔMENOS DE DUPLO SENTIDO (AMBIGUIDADE / ANFIBOLOGIA) │ ├── 1. Ambiguidade Lexical (Vocabular) │ │ └── Palavra polissêmica em cotexto sem restrição semântica │ │ │ └── 2. Ambiguidade Estrutural (Sintática / Posicional) │ ├── Mau uso da coordenação (\"e\"): Adição simples vs. Ação recíproca/conflito │ ├── Mau uso de formas nominais: Gerúndio (-ndo) e Particípio (-do) com duplo sujeito │ ├── Mau uso de pronomes: Relativo \"que\" (duplo antecedente) e Possessivo \"seu\" (2 referentes no texto) │ ├── Má colocação de modificadores: Adjetivo vs. Advérbio / Escopo temporal (\"já\") │ └── Indefinição Agente vs. Paciente: Preposição \"de\" (Adjunto Adnominal vs. Complemento Nominal) │ ├── B. RELAÇÕES FORMAIS E SEMÂNTICAS ENTRE VOCÁBULOS │ ├── 1. Princípio Semântico Invariável: Sentidos SEMPRE diferentes │ ├── 2. Homonímia (\"Homo\" = Pelo menos um elemento 100% IGUAL) │ │ ├── Homônimos Perfeitos: Som = E Grafia = (ex.: manga/manga; feridos subst./adj.) │ │ └── Homônimos Imperfeitos: │ │ ├── Homófonos: Som = / Grafia ≠ (ex.: sessão/seção/cessão, paço/passo, acender/ascender) │ │ └── Homógrafos: Grafia = / Som ≠ (ex.: sede /ê/ vs. sede /é/, colher /ê/ vs. colher /é/) │ │ │ └── 3. Paronímia (\"Paro\" = Apenas PARECIDO; nada é 100% igual) │ └── Semelhança fonética e gráfica parcial (ex.: eminente/iminente, deferir/diferir, emigrar/imigrar) │ └── C. RELAÇÕES HIERÁRQUICAS E DE PROGRESSÃO TEXTUAL ├── Hiperonímia: Termo geral/abrangente (conjunto maior: animal, fruta) └── Hiponímia: Termo específico/subordinado (membro do conjunto: boi, maçã)"
         }
       ],
@@ -233,7 +234,8 @@
           "text": "Esquema mnemônico-operacional criado para guiar a análise imediata de qualquer enunciado ambíguo em provas de concursos, reduzindo a tipologia a três vias lógicas de inspeção."
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "┌── 1. VIA DA PALAVRA (Ambiguidade Lexical) │ └─ Polissemia pura sem ancoragem contextual (ex.: banco, cachorro) │ MÉTODO DAS TRÊS VIAS ───┼── 2. VIA DOS CONECTIVOS ESPECÍFICOS │ ├── Preposição \"DE\": Agente (AA) vs. Paciente (CN) │ └── Conjunção \"E\": Soma Aditiva vs. Ação Recíproca/Oposição │ └── 3. VIA DAS SETAS (Referenciação e Posição) ├── Formas Nominais: Gerúndio (-ndo) e Particípio (-do) ├── Pronomes: Relativo (\"que\") e Possessivo (\"seu\") └── Modificadores Flutuantes: Adjetivo vs. Advérbio (\"rápido\", \"já\")"
         },
         {
@@ -444,7 +446,7 @@
           "entityId": "RULE-IP-A12-G05-001",
           "title": "Quadro Sinótico de Relações Léxico-Semânticas",
           "statement": "Quadro Sinótico de Relações Léxico-Semânticas",
-          "scope": "syntax",
+          "scope": "semantics",
           "modality": "mandatory",
           "conditions": [
             "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
@@ -549,7 +551,7 @@
           "entityId": "RULE-IP-A12-G05-002",
           "title": "Regras Canônicas Invariáveis",
           "statement": "Regra da Distinção: Homônimos e parônimos possuem obrigatoriamente significados diferentes (KB-A12-G05-005).\nRegra de Ouro do Pronome Possessivo: O pronome seu/sua só gera ambiguidade se houver dois ou mais referentes de 3ª pessoa explícitos no próprio texto. O leitor/interlocutor nunca conta como referente textual (WARN-A12-G05-001).\nRegra de Inexistência Vocabular: A forma \"beneficiente\" não existe no vocabulário oficial da língua portuguesa; a única forma padrão é beneficente (WARN-A12-G05-003).\nRegra de Identidade de SC: O dígrafo sc antes de e ou i (/s/) torna acender e ascender rigorosamente homófonos, e não parônimos (WARN-A12-G05-007).",
-          "scope": "syntax",
+          "scope": "semantics",
           "modality": "prohibited",
           "conditions": [
             "Regra da Distinção: Homônimos e parônimos possuem obrigatoriamente significados diferentes (KB-A12-G05-005).",
@@ -588,19 +590,19 @@
           "steps": [
             {
               "order": 1,
-              "action": "[Início da Análise da Sentença] │ ▼ Passo 1: Testar a Via 1 (Palavra Isolada / Polissemia Pura) └─ Há vocábulo polissêmico ou homônimo sem restrição no cotexto? (ex.: \"banco\", \"cachorro\") ├─ SIM ──> Classificar como AMBIGUIDADE LEXICAL / IMPRECISÃO VOCABULAR",
+              "action": "[Início da Análise da Sentença] Passo 1: Testar a Via 1 (Palavra Isolada / Polissemia Pura) Há vocábulo polissêmico ou homônimo sem restrição no cotexto? (ex.: \"banco\", \"cachorro\") SIM > Classificar como AMBIGUIDADE LEXICAL / IMPRECISÃO VOCABULAR",
               "explanation": "Procedimento operacional para Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias.",
               "test": null
             },
             {
               "order": 2,
-              "action": "└─ NÃO ──> Avançar para o Passo 2",
+              "action": "NÃO > Avançar para o Passo 2",
               "explanation": "Procedimento operacional para Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias.",
               "test": null
             },
             {
               "order": 3,
-              "action": "│ ▼ Passo 2: Testar a Via 2 (Conectivos Específicos \"DE\" e \"E\") ├─ Há preposição \"DE\" ligada a substantivo abstrato de ação? │ └─ O termo preposicionado pode ser Agente (Adj",
+              "action": "Passo 2: Testar a Via 2 (Conectivos Específicos \"DE\" e \"E\") Há preposição \"DE\" ligada a substantivo abstrato de ação? O termo preposicionado pode ser Agente (Adj",
               "explanation": "Procedimento operacional para Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias.",
               "test": null
             },
@@ -672,7 +674,7 @@
             {
               "order": 6,
               "action": "Teste da Semelhança (Sem Igualdade)",
-              "explanation": "",
+              "explanation": "Passo 6 do algoritmo de Algoritmo de Identificação e Diferenciação entre Homônimos e Parônimos.",
               "test": "Teste da Semelhança (Sem Igualdade):"
             },
             {
@@ -690,31 +692,31 @@
             {
               "order": 9,
               "action": "Diferir $\\rightarrow$ diferença / divergir.",
-              "explanation": null,
+              "explanation": "Passo 9 do algoritmo de Algoritmo de Identificação e Diferenciação entre Homônimos e Parônimos.",
               "test": null
             },
             {
               "order": 10,
               "action": "Deferir $\\rightarrow$ deferimento / aprovar.",
-              "explanation": null,
+              "explanation": "Passo 10 do algoritmo de Algoritmo de Identificação e Diferenciação entre Homônimos e Parônimos.",
               "test": null
             },
             {
               "order": 11,
               "action": "Cessão $\\rightarrow$ ceder.",
-              "explanation": null,
+              "explanation": "Passo 11 do algoritmo de Algoritmo de Identificação e Diferenciação entre Homônimos e Parônimos.",
               "test": null
             },
             {
               "order": 12,
               "action": "Cerrou $\\rightarrow$ cerrado / fechar.",
-              "explanation": null,
+              "explanation": "Passo 12 do algoritmo de Algoritmo de Identificação e Diferenciação entre Homônimos e Parônimos.",
               "test": null
             },
             {
               "order": 13,
               "action": "Serrou $\\rightarrow$ serra / cortar.",
-              "explanation": null,
+              "explanation": "Passo 13 do algoritmo de Algoritmo de Identificação e Diferenciação entre Homônimos e Parônimos.",
               "test": null
             }
           ],
@@ -810,7 +812,7 @@
             {
               "order": 1,
               "action": "Identifique o termo antecedente (Termo 1) e o termo subsequente que o retoma (Termo 2).",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Identificação do Sentido Coesivo de Hiperônimos e Hipônimos.",
               "test": null
             },
             {
@@ -822,7 +824,7 @@
             {
               "order": 3,
               "action": "Mapeie a direção do fluxo textual",
-              "explanation": "",
+              "explanation": "Passo 3 do algoritmo de Identificação do Sentido Coesivo de Hiperônimos e Hipônimos.",
               "test": null
             },
             {
@@ -1192,7 +1194,7 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G05-002",
           "title": "EX-A12-G05-002 — Bateria de Fixação de Ambiguidade (8 Frases Codificadas)",
-          "prompt": "Tabela de Códigos do Exercício:",
+          "prompt": "Exemplo prático de aplicação de EX-A12-G05-002 — Bateria de Fixação de Ambiguidade (8 Frases Codificadas)",
           "analysisSteps": [
             {
               "order": 1,
@@ -2370,12 +2372,13 @@
       "examBoard": "CEBRASPE",
       "organization": "INSTITUTO RIO BRANCO",
       "year": 2014,
-      "prompt": "No verso “As mulheres fumam feito chaminés sozinhas”, a aposição do adjetivo resulta em\nambiguidade estrutural.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A12-aula12.q0084.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "explanation": "Sim. Há duas leituras:\nQuando estão sozinhas, as mulheres fumam como chaminés (o adjetivo se refere a “mulheres”)\nFumam como chaminés que são sozinhas (o adjetivo se refere a chaminés)\nA ambiguidade é estrutural porque a posição do adjetivo poderia deixar claro o sentido\npretendido:\n“As mulheres sozinhas fumam feito chaminés” Questão correta.",
       "questionSha256": "4f63e05091398d973702f6d8d0b0565de5a901e89637eb14a4ce42dffc29590f",
       "answerSha256": "751bd01be0678a1aaee4622fd6ef37eacf1650f6756785b0b771f1591b6fa741",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Ambiguidade Homônimos e Parônimos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -2386,11 +2389,12 @@
       "examBoard": "CEBRASPE",
       "organization": "INSTITUTO RIO BRANCO",
       "year": 2014,
-      "prompt": "No verso “As mulheres fumam feito chaminés sozinhas”, a aposição do adjetivo resulta em\nambiguidade estrutural.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A12-aula12.q0154.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "questionSha256": "b1d9d681b71469b8492cc71d8e28f57a860268c59bc70b8c8d39692e11bb7895",
       "answerSha256": "3b9a4101bdcd537a859322f3bb6cb2c22245c370e62b83dc9dc5c44ac4ee5ca4",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Ambiguidade Homônimos e Parônimos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -2400,7 +2404,7 @@
       "questionType": "multiple_choice",
       "organization": "PGE-AM",
       "year": 2022,
-      "prompt": "Para obter seu efeito de humor, a tirinha explora a ambiguidade do seguinte termo:",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A12-aula12.q0015.",
       "options": [
         {
           "label": "A",
@@ -2427,6 +2431,7 @@
       "explanation": "O vocábulo prender foi usado de forma ambígua, para criar humor: pode ser lido, de forma\nfigurada, como \"capturar a atenção\" do leitor; ou pode ser lido literalmente como prender de\nforma física, como aconteceu ao personagem.\nGabarito letra D.",
       "questionSha256": "e44f91caaee24532a7c72f573bb5355765c018e5a1041b336668a1a9b8b1b01d",
       "answerSha256": "8dbe9000e7c861fc0af33bd67b02f6f1e5e8eff95fac815372353324104798a0",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Ambiguidade Homônimos e Parônimos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "pedagogicalEvaluation": {
@@ -2476,12 +2481,13 @@
       "questionType": "true_false",
       "organization": "POLÍCIA CIVIL-SP",
       "year": 2018,
-      "prompt": "É correto afirmar que o efeito de sentido da tira decorre da declaração pouco convincente do\ngaroto, diante da resposta do tigre.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A12-aula12.q0014.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "explanation": "Perceba que o efeito de humor está construída em função da palavra “Nó”, que é uma medida\nnáutica (1,852 km/h). No plural, a palavra fica “nós”, que se confunde com o pronome pessoal\n“nós”, o que explica a ambiguidade da tira. Nesse caso, a ambiguidade é um “efeito” da\npolissemia, isto é, o uso de palavras polissêmicas pode gerar ambiguidade. Questão incorreta.",
       "questionSha256": "859ba4494cb10774f2a7b52f805b7559c484d26f9aee1220207e5ba4b3e77984",
       "answerSha256": "bc94e352de9065daed0493ddc5a26222c29208ebb3cbdfa959fed5a69349c282",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Ambiguidade Homônimos e Parônimos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -2491,7 +2497,7 @@
       "questionType": "multiple_choice",
       "organization": "TJ-RS",
       "year": 2020,
-      "prompt": "A frase abaixo em que ocorre ambiguidade é:\n a) Ninguém mais os encontrou de novo;\n b) O cargo de oficial de justiça é importante;\n c) A nomeação do Ministro foi surpreendente;\n d) Tudo foi organizado para o julgamento;\n e) As folhas do caderno despencaram.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A12-aula12.q0017.",
       "options": [
         {
           "label": "A",
@@ -2518,6 +2524,7 @@
       "explanation": "Conforme se aprende na aula de sintaxe, o termo preposicionado “do Ministro” pode ser lido\ncomo “agente” (aí seria um adjunto adnominal) ou “paciente” (aí seria um complemento\nnominal):\n1) O Ministro nomeou alguém e isso foi surpreendente.\n2) O Ministro foi nomeado e isso foi surpreendente.\nNas demais, não há outra leitura possível, além da literal. Gabarito letra C.",
       "questionSha256": "d5bafc20819013740d13c6384e25a407b542ba2a68cd12a9cccf276b5bce2c3c",
       "answerSha256": "41c5801ddcbd492c69120e3f2526f7b7e32744479917a32f3d3b501c40986125",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Ambiguidade Homônimos e Parônimos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "pedagogicalEvaluation": {
@@ -2568,12 +2575,13 @@
       "examBoard": "CEBRASPE",
       "organization": "MPU",
       "role": "ANALISTA",
-      "prompt": "Na linha 1, o segmento \"as quais\" remete a \"situações\" e, por isso, admite a substituição pelo\npronome que; no entanto, nesse contexto, tal substituição provocaria ambiguidade.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A12-aula12.q0088.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "explanation": "Cuidado, cada caso é um caso. Não haveria ambiguidade, porque aqui não há outro referente\npossível para o pronome relativo, a única possibilidade é “situações”, pois ele se defronta com\nsituações, não existe outro substantivo naquela oração. Questão incorreta.",
       "questionSha256": "b5f5058932b0e10bf48ae8e863508710172edaae348e4993a8ae529075559d3b",
       "answerSha256": "4f2ada68119a99e340d2a6a82d3db0a2ee23b4cdb5eef4be732474f35f04188f",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Ambiguidade Homônimos e Parônimos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []

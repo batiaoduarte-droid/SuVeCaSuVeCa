@@ -4,7 +4,7 @@
     "unitId": "IP-A04-G03",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:31:53.975Z"
+    "generatedAt": "2026-08-18T23:33:08.148Z"
   },
   "unit": {
     "unitId": "IP-A04-G03",
@@ -14,9 +14,9 @@
     "variant": "development",
     "canonicalTopicId": "pt:a04:desinencias-verbais",
     "learningObjectives": [
-      "OBJ-IP-A04-G03-001",
-      "OBJ-IP-A04-G03-002",
-      "OBJ-IP-A04-G03-003"
+      "Fundamentos de Desinências Verbais",
+      "Aplicação Prática e Decisão em Desinências Verbais",
+      "Articulação SuVeCA e Armadilhas de Prova em Desinências Verbais"
     ]
   },
   "sections": {
@@ -48,7 +48,8 @@
           ]
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "ESTRUTURA MORFOLÓGICA DO VERBO │ ┌───────────────────────────────────┴───────────────────────────────────┐ ▼ ▼ BASE LEXICAL E TEMÁTICA DESINÊNCIAS FLEXIONAIS │ │ ┌───────┴───────┐ ┌───────────────┴───────────────┐ ▼ ▼ ▼ ▼ RADICAL VOGAL TEMÁTICA (VT) DMT DNP (Significado (Classifica a conjugação: (Modo e Tempo: (Número e Pessoa: Léxico) 1ª: -a-, 2ª: -e-, 3ª: -i-) marca comum a marca particular │ todas as pessoas) que varia p/ pessoa) ▼ │ │ ┌───────────────┐ ├─ Pret. Imp. Ind (1ª): -va- ├─ 1ª Sing: -o / -i / Ø │ TEMA VERBAL │ ├─ Pret. Imp. Ind (2ª/3ª): -ia- ├─ 2ª Sing: -s │ (Radical + VT)│ ├─ Pret. Imp. Subj: -sse- ├─ 3ª Sing: Ø └───────────────┘ ├─ Pres. Subj (1ª): -e- (VT Ø) ├─ 1ª Plural: -mos ├─ Pres. Subj (2ª/3ª): -a- (VT Ø)├─ 2ª Plural: -is / -des └─ Pres. Ind: Ø └─ 3ª Plural: -m / -ão"
         },
         {
@@ -464,7 +465,7 @@
           "entityId": "RULE-IP-A04-G03-001",
           "title": "Regras canônicas",
           "statement": "Conjugações Verbais: 1ª Conjugação (VT = A), 2ª Conjugação (VT = E, inclui pôr < poer), 3ª Conjugação (VT = I). Inexistência de 4ª conjugação (KB-A04-G03-DESINENCIAS-VERBAIS-001).\nTema Verbal: Fórmula canônica $\\text{Tema} = \\text{Radical} + \\text{Vogal Temática}$ (KB-A04-G03-DESINENCIAS-VERBAIS-002).\nDMT (Desinência Modo-Temporal): Morfema fixo e comum que identifica modo e tempo ao longo das pessoas gramaticais (KB-A04-G03-DESINENCIAS-VERBAIS-003).\nDNP (Desinência Número-Pessoal): Morfema variável e particular que individualiza o número e a pessoa gramatical (KB-A04-G03-DESINENCIAS-VERBAIS-004).\nAlomorfe: Realização variante de um morfema em contexto específico (part-e-s, fal-á-ve-is) (KB-A04-G03-DESINENCIAS-VERBAIS-005).\nMorfema Zero ($\\emptyset$): Ausência significativa de afixo em posições paradigmáticas (ex.: DMT no Presente do Indicativo; DNP na 3ª pess. sing.) (KB-A04-G03-DESINENCIAS-VERBAIS-007).\nDMT no Subjuntivo: Substituição da VT pela DMT (-e- para 1ª conj.; -a- para 2ª e 3ª conj.) (KB-A04-G03-DESINENCIAS-VERBAIS-008).\nDMT do Imperfeito (Padrão Bechara): -va-/-ve- (1ª conj.) e -ia-/-ie- (2ª e 3ª conj.) (KB-A04-G03-DESINENCIAS-VERBAIS-009).\nInfinitivo Pessoal: Radical + VT + DMT -r- + DNPs pessoais (KB-A04-G03-DESINENCIAS-VERBAIS-011).\nHomonímia em -aram: Coincidência morfológica entre Pretérito Perfeito e Pretérito Mais-Que-Perfeito na 3ª pessoa do plural (KB-A04-G03-DESINENCIAS-VERBAIS-012).",
-          "scope": "syntax",
+          "scope": "verbs_conjugation",
           "modality": "mandatory",
           "conditions": [
             "Conjugações Verbais: 1ª Conjugação (VT = A), 2ª Conjugação (VT = E, inclui pôr < poer), 3ª Conjugação (VT = I). Inexistência de 4ª conjugação (KB-A04-G03-DESINENCIAS-VERBAIS-001).",
@@ -583,7 +584,7 @@
             {
               "order": 2,
               "action": "Aplicação",
-              "explanation": "",
+              "explanation": "Passo 2 do algoritmo de Método do Infinitivo Impessoal para Identificação da Vogal Temática.",
               "test": null
             },
             {
@@ -595,7 +596,7 @@
             {
               "order": 4,
               "action": "Enuncie o infinitivo não flexionado (poder, falar, amar).",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Método do Infinitivo Impessoal para Identificação da Vogal Temática.",
               "test": null
             },
             {
@@ -607,7 +608,7 @@
             {
               "order": 6,
               "action": "Em possam, o infinitivo é poder (VT = e). Logo, o a em possam é a DMT do Presente do Subjuntivo.",
-              "explanation": null,
+              "explanation": "Passo 6 do algoritmo de Método do Infinitivo Impessoal para Identificação da Vogal Temática.",
               "test": null
             }
           ],
@@ -666,49 +667,49 @@
             {
               "order": 2,
               "action": "Gatilhos Operacionais",
-              "explanation": "",
+              "explanation": "Passo 2 do algoritmo de Método dos Gatilhos Psicológicos / Marcadores Temporais.",
               "test": null
             },
             {
               "order": 3,
               "action": "Encaixa com \"HOJE\" $\\rightarrow$ Presente do Indicativo (Hoje eu conto).",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Método dos Gatilhos Psicológicos / Marcadores Temporais.",
               "test": null
             },
             {
               "order": 4,
               "action": "Encaixa com \"ONTEM\" $\\rightarrow$ Pretérito Perfeito do Indicativo (Ontem ele escreveu).",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Método dos Gatilhos Psicológicos / Marcadores Temporais.",
               "test": null
             },
             {
               "order": 5,
               "action": "Encaixa com \"ANTIGAMENTE\" $\\rightarrow$ Pretérito Imperfeito do Indicativo (Antigamente eu chorava/dormia).",
-              "explanation": null,
+              "explanation": "Passo 5 do algoritmo de Método dos Gatilhos Psicológicos / Marcadores Temporais.",
               "test": null
             },
             {
               "order": 6,
               "action": "Encaixa com \"AMANHÃ\" $\\rightarrow$ Futuro do Presente do Indicativo (Amanhã tu correrás).",
-              "explanation": null,
+              "explanation": "Passo 6 do algoritmo de Método dos Gatilhos Psicológicos / Marcadores Temporais.",
               "test": null
             },
             {
               "order": 7,
               "action": "Encaixa com \"QUE\" $\\rightarrow$ Presente do Subjuntivo (Que eles amem/possam).",
-              "explanation": null,
+              "explanation": "Passo 7 do algoritmo de Método dos Gatilhos Psicológicos / Marcadores Temporais.",
               "test": null
             },
             {
               "order": 8,
               "action": "Encaixa com \"SE\" $\\rightarrow$ Pretérito Imperfeito do Subjuntivo (Se nós corrêssemos).",
-              "explanation": null,
+              "explanation": "Passo 8 do algoritmo de Método dos Gatilhos Psicológicos / Marcadores Temporais.",
               "test": null
             },
             {
               "order": 9,
               "action": "Encaixa com \"QUANDO\" $\\rightarrow$ Futuro do Subjuntivo (Quando vós insistirdes).",
-              "explanation": null,
+              "explanation": "Passo 9 do algoritmo de Método dos Gatilhos Psicológicos / Marcadores Temporais.",
               "test": null
             }
           ],
@@ -770,37 +771,37 @@
             {
               "order": 3,
               "action": "(Para) eu dedicar-Ø",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Macete da Preposição \"PARA\" para o Infinitivo Pessoal.",
               "test": null
             },
             {
               "order": 4,
               "action": "(Para) tu dedicar-es",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Macete da Preposição \"PARA\" para o Infinitivo Pessoal.",
               "test": null
             },
             {
               "order": 5,
               "action": "(Para) ele dedicar-Ø",
-              "explanation": null,
+              "explanation": "Passo 5 do algoritmo de Macete da Preposição \"PARA\" para o Infinitivo Pessoal.",
               "test": null
             },
             {
               "order": 6,
               "action": "(Para) nós dedicar-mos",
-              "explanation": null,
+              "explanation": "Passo 6 do algoritmo de Macete da Preposição \"PARA\" para o Infinitivo Pessoal.",
               "test": null
             },
             {
               "order": 7,
               "action": "(Para) vós dedicar-des",
-              "explanation": null,
+              "explanation": "Passo 7 do algoritmo de Macete da Preposição \"PARA\" para o Infinitivo Pessoal.",
               "test": null
             },
             {
               "order": 8,
               "action": "(Para) eles dedicar-rem",
-              "explanation": null,
+              "explanation": "Passo 8 do algoritmo de Macete da Preposição \"PARA\" para o Infinitivo Pessoal.",
               "test": null
             }
           ],
@@ -1804,12 +1805,13 @@
       "questionType": "true_false_or_statement",
       "examBoard": "AGU",
       "year": 2019,
-      "prompt": "“Ele achava que a sociedade deveria ser harmoniosa e as pessoas deveriam ser encorajadas em\nseu ‘autodesenvolvimento’ para que pudessem aproveitar ao máximo sua posição.”\n\nA respeito do período acima, analise a afirmativa a seguir:\n\nExistem duas locuções verbais no período.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A04-aula04.q0121.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "explanation": "Há três locuções: a sociedade deveria ser harmoniosa e as pessoas deveriam ser encorajadas em seu ‘autodesenvolvimento’ para que pudessem aproveitar. Poder e Dever são verbos auxiliares. Questão incorreta.",
       "questionSha256": "05ce674d43b0efe5e959e521273111d0aa6ddad0bbbedb6b58e51bda0b98b6d3",
       "answerSha256": "d6e5e95b2353a1188418f0b800e2a4cd0cf7d0cac23086b232c404fbc2e30d47",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de AGU; 2. Identificar a regra central de Desinências Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1819,7 +1821,7 @@
       "questionType": "multiple_choice",
       "examBoard": "SEPLAG-RECIFE",
       "year": 2019,
-      "prompt": "Considere os seguintes trechos:\n\n− ao impedir que o infante indefeso fique protegido contra determinada doença...\n\n− a enfermidade continue a se propagar pela população.\n\n− As campanhas de vacinação exigiram esforço hercúleo.\n\nAs expressões verbais estão correta e respectivamente substituídas por verbos flexionados no\nmesmo tempo e modo em:\n\na) se mantém – permaneça – requiseram\n\nb) se mantenha – permaneça – requereram\n\nc) se mantenha – permaneça – requiseram\n\nd) se mantém – permanece – requereram\n\ne) se mantenha – permanece – requereram",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A04-aula04.q0129.",
       "options": [
         {
           "label": "a",
@@ -1846,6 +1848,7 @@
       "explanation": "O pretérito perfeito de “requerer” é “requereram”, não é “requiseram”. Então, seria possível eliminar A e C. “Fique”, “Mantenha”, “Continue” e “Permaneça” estão no presente do subjuntivo. “Mantém” e “Permanece” estão no presente do indicativo. Gabarito letra B. BACEN - Língua Portuguesa 62 www.estrategiaconcursos.com.br 154 Essas conjugações vão aparecer em geral quando o verbo vier conjugado no subjuntivo, em função de conjunções: se/que/quando/caso/embora/ainda que... Grave essas “bases”, pois nelas estarão as questões. Ter- TIVE+DESINÊNCIA: Se tivesse, quando tiver... Pôr- PUSE+DESINÊNCIA: Se puser, quando supuséssemos... Requerer- REQUERE+DESINÊNCIA: Se requeresse, quando requereu... Precaver- PRECAVE+DESINÊNCIA: Se precavesse, quando precaveu... Prover- PROVE+DESINÊNCIA: se provesse, quando proveu... Ver-VI+DESINÊNCIA: Se visse, quando víssemos, se vir... Vir- VIE+DESINÊNCIA: Se viéssemos, quando vier, se vierem... Verbo Aprazer Esse verbo é bastante irregular e compartilha o radical do adjetivo aprazível, com sentido de agradável. Para lidar com ele na hora da prova, lembre-se de algumas terminações do verbo haver em que há “V” e base “ou” na palavra, a saber: Pretérito mais-que-perfeito: Eu aprouvera, tu aprouveras... Pretérito imperfeito do subjuntivo: Se eu aprouvesse; se tu aprouvesses... Futuro do subjuntivo: Quando eu aprouver; quanto tu aprouveres... Acima estão as primeiras pessoas de cada conjugação, basta seguir o padrão. Bechara e o Dicionário Houaiss mencionam que, embora tenha conjugação completa, só é usado normalmente nas terceiras pessoas. Medir, Pedir, Valer e Eleger Os verbos acima trazem variações no radical, anotem estes detalhes: Pedir e Medir trazem Ç antes de O e A: Eu Peço/Meço; que eu Peça/Meça. Valer traz LH antes de O e A: Não valho nada/Valha-me Deus! Eleger traz J antes de O e A: Eu eleJo; Que eu eleJa. Isso vale para os verbos com “G” no radical. BACEN - Língua Portuguesa 63 www.estrategiaconcursos.com.br 154",
       "questionSha256": "68b70d345f81aa3303d014e4da77af3578d7cc1e88b7543d9f8f09e059ef37aa",
       "answerSha256": "88928dd9ba8154c5d44b40631f093c89b05753ce966773d938523ebdb5b13e62",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de SEPLAG-RECIFE; 2. Identificar a regra central de Desinências Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "pedagogicalEvaluation": {
@@ -1895,7 +1898,7 @@
       "questionType": "multiple_choice",
       "examBoard": "PREF. DE RECIFE",
       "year": 2019,
-      "prompt": "Há correta flexão das formas verbais e plena observância das normas para emprego do sinal de\ncrase em:\n\na) É a muito custo que preservaremos uma amizade, sobretudo se não contivermos nossos\nprimeiros impulsos.\n\nb) Ele acabará se desfazendo dos amigos a medida que eles virem a contrariar seus ímpetos\ncaprichosos.\n\nc) Uma amizade resiste à toda prova quando, em qualquer das ocasiões da vida, se manter leal e\nverdadeira.\n\nd) Se aprouviesse a alguém construir uma sólida amizade, teria de renunciar as fraquezas mais\ncomuns.\n\ne) Nada poderei fazer em reparo a fragilidade de uma amizade que não advir de uma leal\nconstrução.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A04-aula04.q0130.",
       "options": [
         {
           "label": "a",
@@ -1922,6 +1925,7 @@
       "explanation": "Estudamos crase separadamente na aula de regência, mas essa questão é essencialmente sobre conjugação dos verbos que temos estudado. Então, vamos focar na conjugação. A letra A está perfeita, observe a conjugação de “conter”, derivado de “ter”: ter-tivermos>conter-contivermos. Vejamos as demais: b) Ele acabará se desfazendo dos amigos à medida que eles vierem a contrariar seus ímpetos caprichosos. (a forma de futuro do subjuntivo do verbo “vir” é “vierem”) c) Uma amizade resiste a toda prova quando, em qualquer das ocasiões da vida, se mantiver leal e verdadeira. (“manter” deriva de “ter”) d) Se aprouvesse a alguém construir uma sólida amizade, teria de renunciar as fraquezas mais comuns. (a forma de “aprazer” vira “aprouvesse”) e) Nada poderei fazer em reparo à fragilidade de uma amizade que não advier de uma leal construção. (“advir” deriva de “vir”) Gabarito letra A. Verbos defectivos São aqueles verbos que têm defeito de conjugação, pois não são conjugados em todas as pessoas, normalmente pela semelhança que a conjugação teria com outro verbo (Falar e Falir: eu falo), ou pelo mau som: “ela computa”... Na maioria dos casos, são conjugados só na primeira e segunda pessoa do plural do modo indicativo, na segunda pessoa do plural do modo imperativo e não possuem flexões no presente do subjuntivo (porque não têm o presente do indicativo). Obs.: O presente do subjuntivo é derivado do radical da primeira pessoa do singular do presente do indicativo, em suma, “eu faço” vira “que eu faça”. Então, quando o verbo não tem a primeira pessoa do singular no indicativo, não terá o presente do subjuntivo. Por consequência, não terá as formas de imperativo que também derivam do subjuntivo. Por não trazerem a primeira pessoa do singular do presente do indicativo, são defectivos os verbos: abolir, banir, brandir, carpir, colorir, computar, delir, explodir, ruir, exaurir, demolir, puir, BACEN - Língua Portuguesa 64 www.estrategiaconcursos.com.br 154 delinquir, fulgir (resplandecer), feder, aturdir, bramir, esculpir, extorquir, retorquir, soer (costumar: ter costume de). Há certa controvérsia entre esses verbos, pois alguns gramáticos e dicionários listam verbos defectivos como regulares. Não podemos entrar nessa discussão, então vamos destacar alguns que já foram cobrados em prova. Verbo Precaver e Reaver No presente do indicativo, só se conjuga com nós (precavemos/reavemos) e vós (precaveis/reaveis). Como o presente do indicativo é a base do presente do subjuntivo, esse verbo não é conjugado neste tempo. Sabendo disso, basta conjugar o verbo precaver seguindo a segunda conjugação, como Beber. No Imperativo, temos: precavei, reavei. Reaver e Precaver não trazem “J” nem “nh” na sua conjugação. Então, estão incorretas formas como “precaveja”, “reaveja”, “reavenha”. Para você não ter que estudar a conjugação dele inteira, siga essa dica: o verbo Reaver só se conjuga naquelas pessoas em que o verbo Haver tem “v” na palavra. Segue a primeira pessoa de cada tempo em que isso ocorre, para você saber o padrão: reouve, reavia, reouvera, reaverei, reaveria. Obs.: Nessa mesma linha estão os verbos “falir” e “adequar”, que também só possuem as pessoas ‘nós’ e ‘vós’ no presente do indicativo. Cuidado: Apesar de “estranhos”, estes verbos não são considerados defectivos: caber, valer, redimir, polir, sortir, rir, escapulir, entupir, sacudir. Verbos vicários São chamados de Verbos Vicários aqueles que fazem as vezes de outros verbos, substituindo-os para evitar repetição. Os mais comuns são os verbos ser e fazer. Normalmente vêm acompanhados de um pronome demonstrativo o, que retoma a ação ou o evento da oração anterior. Ex.: Eu poderia ter fugido, mas não o fiz. (“o fiz” retoma “ter fugido”) Se você não estudou foi porque teve preguiça. (“foi” retoma “não estudou”) Se ela não aceita ir ao cinema é porque não quer. (“é” retoma “aceita”) Observe que há dois verbos e um substitui o outro, quando vicário, o “fazer” não traz seu sentido próprio, pois assume o sentido do outro verbo. As estruturas com esses verbos costumam ser cobradas até em questões de compreensão textual, quando a banca pode perguntar o referente do pronome. BACEN - Língua Portuguesa 65 www.estrategiaconcursos.com.br 154",
       "questionSha256": "4b706c9205409cdb250dde549ae6e6dffc5d82514356dff8af39c42fabfd2150",
       "answerSha256": "d69bec84a699fe1e873732aaf20446d297458afed1a7dc2e39888aec3605c867",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de PREF. DE RECIFE; 2. Identificar a regra central de Desinências Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "pedagogicalEvaluation": {
@@ -1971,7 +1975,7 @@
       "questionType": "multiple_choice",
       "examBoard": "CORE-SP",
       "year": 2019,
-      "prompt": "Na locução verbal da oração “O número deve crescer ainda mais nos próximos anos”, o verbo\nauxiliar está empregado no:\n\na) Presente do indicativo.\n\nb) Presente do subjuntivo.\n\nc) Infinitivo.\n\nd) Futuro do presente do indicativo.\n\ne) Imperativo.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A04-aula04.q0120.",
       "options": [
         {
           "label": "a",
@@ -1998,6 +2002,7 @@
       "explanation": "“Deve” é o auxiliar da locução “deve crescer” e está no presente do indicativo. Gabarito letra A.",
       "questionSha256": "70e69be6750dd6631762f8207eff07c3601c0c0f7e67a643668e1c2ccde2fb97",
       "answerSha256": "7f5a2e87f57d71b91c9852d2917d7b2cf624e6c3215ef0a5a7252a35e585e7fd",
+      "extractionQuality": "partial",
       "cognitiveDemand": "discriminacao_sintatica",
       "solutionStrategy": "1. Ler atentamente o enunciado de CORE-SP; 2. Identificar a regra central de Desinências Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "pedagogicalEvaluation": {
@@ -2047,7 +2052,7 @@
       "questionType": "multiple_choice",
       "examBoard": "UFU-MG",
       "year": 2019,
-      "prompt": "Considere o enunciado a seguir, recortado do texto apresentado:\n\n“A Jules Rimet foi criada em 1928, e o troféu era entregue para a seleção campeã da Copa. A\ncada quatro anos, a relíquia tinha uma nova casa. Mas o primeiro país que conquistasse o\ntricampeonato ficaria com o prêmio definitivamente. Pelé, Jairzinho, Tostão, Carlos Alberto Torres\ne companhia conquistaram o tri em 1970, no México”.\n\nSobre as formas verbais destacadas no trecho acima, é correto afirmar que\n\na) “ficaria” indica a realização de ação no futuro de forma incondicional.\n\nb) “tinha” e “era entregue” indicam um fato não concluído, dando ideia de continuidade.\n\nc) “conquistaram” e “conquistasse” indicam certeza de que a ação foi totalmente concluída no\npassado.\n\nd) “foi criada” e “era entregue” indicam ações concluídas no passado.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A04-aula04.q0104.",
       "options": [
         {
           "label": "a",
@@ -2070,6 +2075,7 @@
       "explanation": "Questão muito ilustrativa sobre o uso dos tempos/modos verbais: a) “ficaria” está no futuro do pretérito, usado para indicar um futuro subordinado a uma condição (conquistar o tricampeonato). b) “tinha” e “era” são formas de pretérito imperfeito, tempo que indica continuidade e repetição no passado; o foco é na duração, não é na conclusão. É o pretérito perfeito que indica ações concluídas. c) “conquistasse” está no pretérito imperfeito do subjuntivo, tempo que indica fato incerto, hipotético no passado. d) vale o mesmo raciocínio da letra b. Gabarito letra B. BACEN - Língua Portuguesa 28 www.estrategiaconcursos.com.br 154 Pretérito Imperfeito do Subjuntivo Levantar Beber Cair Eu se eu levantasse se eu bebesse se eu caísse Tu se tu levantasses se tu bebesses se tu caísses Ele se ele levantasse se ele bebesse se ele caísse Nós se nós levantássemos se nós bebêssemos se nós caíssemos Vós se vós levantásseis se vós bebêsseis se vós caísseis Eles se eles levantassem se eles bebessem se eles caíssem Veja os sentidos que seu uso pode implicar. SENTIDOS DO PRETÉRITO IMPERFEITO EXEMPLOS DO SUBJUNTIVO Denota ação posterior a outro fato na Duvidei que minha avó bebesse tanta tequila. oração principal Pedia que eles se levantassem. Denota, hipóteses, conjectura, condição ou Se eu estudasse todo dia, passaria em qualquer desejo prova. Seria melhor que falassem logo. Temia que fosse um golpe. Obs.: O pretérito mais-que-perfeito do subjuntivo, tempo composto formado por TIVESSE.../HOUVESSE...+PARTICÍPIO, pode indicar uma “ação irreal no passado”, um fato que não se realizou e muito provavelmente não se realizará. Ex.: Se a sorte nos tivesse favorecido, não faltaria dinheiro hoje. Se eu tivesse aplicado tudo, teria obtido sucesso. O pretérito perfeito do subjuntivo é um tempo eminentemente composto, com auxiliar ‘ter ou haver’ no presente do subjuntivo, e expressa: ●​ Fato passado. Ex.: Espero que você tenha entendido a explicação. ●​ Fato futuro já concluído, antes de outro também no futuro. Ex.: Suponho que João já tenha saído quando chegarmos. Observe que o modo subjuntivo como um todo é usado em orações subordinadas ou orações que de modo geral expressam hipóteses/desejos. BACEN - Língua Portuguesa 29 www.estrategiaconcursos.com.br 154 Futuro do Subjuntivo Levantar Beber Cair Eu quando eu levantar quando eu beber quando eu cair Tu quando tu levantares quando tu beberes quando tu caíres Ele quando ele levantar quando ele beber quando ele cair Nós quando nós levantarmos quando nós bebermos quando nós cairmos Vós quando vós levantardes quando vós beberdes quando vós cairdes Eles quando eles levantarem quando eles beberem Quando eles caírem Para ajudar a conjugação, pense: “quando eu______”... ✔​ Denota ação eventual ou hipotética no futuro. Ex.: Quando você me pagar, eu entregarei o produto. “Se eu quiser falar com Deus, tenho que ficar a sós”. Direi adeus àqueles que me traírem. Também pode ocorrer em forma composta, caso em que o “particípio” da locução vai sugerir uma ideia de completude da ação vista como hipotética. Ex.: Quando tudo estiver acabado, pediremos uma pizza. Futuro do Subjuntivo X Infinitivo Cuidado para não confundir o futuro do subjuntivo com o infinitivo, pois, em muitos verbos, a terminação é idêntica. Veja: Quando eu entregar o trabalho, ficarei tranquilo (futuro do subjuntivo). Para entregar o trabalho, faço horas extras (infinitivo). Para distinguir um do outro, deve-se observar o contexto. O futuro do subjuntivo tem ideia de BACEN - Língua Portuguesa 30 www.estrategiaconcursos.com.br 154 possibilidade/hipótese futura e geralmente vem apoiado numa conjunção “quando/se”. O infinitivo geralmente vem após uma preposição. Porém, o macete para fazer essa diferenciação imediatamente é trocar por um verbo que tenha infinitivo diferente do futuro do subjuntivo. Troque pelo verbo fazer. Ex.: Quando eu entregar (fizer) o trabalho, ficarei tranquilo. (futuro do subjuntivo) Para entregar (fazer) o trabalho, faço horas extras. (infinitivo) Propor (Infinitivo) x Propuser (futuro do subjuntivo) Entreter (Infinitivo) x Entretiver (futuro do subjuntivo) Ver (Infinitivo) x Vir (futuro do subjuntivo) Vir (Infinitivo) x Vier (futuro do subjuntivo) Essa diferença vale para os verbo",
       "questionSha256": "933f333717ff5712faae8bc1c36e0b5e8ab742dc42f1f0b5c157af8851f0bf4b",
       "answerSha256": "651f600002caabd91946c7ebd537974fc9a404041d33a42a0800bd1008b683fe",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de UFU-MG; 2. Identificar a regra central de Desinências Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "pedagogicalEvaluation": {
@@ -2113,7 +2119,7 @@
       "questionType": "multiple_choice",
       "examBoard": "IMESF",
       "year": 2019,
-      "prompt": "O verbo “passear”, aparece conjugado no:",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A04-aula04.q0101.",
       "options": [
         {
           "label": "a",
@@ -2140,6 +2146,7 @@
       "explanation": "“PasseiE” é forma do presente do subjuntivo: que maria passeie; que o amor passeiE. A desinência que marca esse tempo A/E: que saiA, que aprendA, que estudE, que passE. Gabarito letra B.",
       "questionSha256": "ae0ba2a8cd5420bc716982658e366ccd829fdbce3ee4e4f85a2465ec4a2cd2fb",
       "answerSha256": "a6ba219133dbd24ec367e054696bd4cc98780b8b30c6397c02eaed1c3f57fc7b",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de IMESF; 2. Identificar a regra central de Desinências Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "pedagogicalEvaluation": {

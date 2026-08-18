@@ -4,7 +4,7 @@
     "unitId": "IP-A00-G05",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:31:53.905Z"
+    "generatedAt": "2026-08-18T23:33:08.076Z"
   },
   "unit": {
     "unitId": "IP-A00-G05",
@@ -14,7 +14,7 @@
     "variant": "foundation",
     "canonicalTopicId": "pt:a00:emprego-do-hifen",
     "learningObjectives": [
-      "OBJ-IP-A00-G05-01"
+      "Objetivo 1"
     ]
   },
   "sections": {
@@ -436,7 +436,7 @@
           "entityId": "RULE-IP-A00-G05-001",
           "title": "Tabela-Resumo das Regras Canônicas de Hifenização",
           "statement": "Tabela-Resumo das Regras Canônicas de Hifenização",
-          "scope": "orthography",
+          "scope": "phonetics_phonology",
           "modality": "mandatory",
           "conditions": [
             "Presença da estrutura-alvo de orthography no segmento oracional analisado.",
@@ -586,16 +586,19 @@
             {
               "order": 1,
               "action": "Localizar e isolar o segmento oracional em que opera Algoritmo Mestre de Decisão Rápida para Hifenização de Prefixos.",
+              "explanation": "Passo 1 do algoritmo de Algoritmo Mestre de Decisão Rápida para Hifenização de Prefixos.",
               "test": "Identificar o termo regente e os elementos subordinados."
             },
             {
               "order": 2,
               "action": "Aplicar os critérios de diferenciação e regras canônicas de Algoritmo Mestre de Decisão Rápida para Hifenização de Prefixos.",
+              "explanation": "Passo 2 do algoritmo de Algoritmo Mestre de Decisão Rápida para Hifenização de Prefixos.",
               "test": "Executar o teste de comutação ou análise categorial."
             },
             {
               "order": 3,
               "action": "Concluir o julgamento sintático-morfológico definitivo.",
+              "explanation": "Passo 3 do algoritmo de Algoritmo Mestre de Decisão Rápida para Hifenização de Prefixos.",
               "test": "Validar a concordância com o padrão culto."
             }
           ],
@@ -607,8 +610,9 @@
           ],
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "PASSO 1: O segundo elemento começa com \"H\"? │ ┌──────────────┴──────────────┐ ▼ ▼ SIM NÃO │ │ ▼ ▼ [ USA HÍFEN (-) ] Vá para o PASSO 2 (\"H é um problema\") │ ▼ PASSO 2: O prefixo é INDEPENDENTE, TÔNICO ou ESPECIAL? (além, ex, recém, sem, vice, grão, pré-, pró-, pós-) │ ├─► É Independente / Tônico? ──► [ USA HÍFEN (-) ] (\"O forte se basta\") ├─► É \"MAL\"? ──────────────────► Vogal/H = HÍFEN | Consoante = JUNTO ├─► É \"CO-\"? ──────────────────► SEMPRE JUNTO (salvo H; dobra S/R) ├─► É \"SUB-\" / \"AD-\"? ─────────► B, D, R = HÍFEN (não dobra R) | Resto = JUNTO └─► Prefixo regular em vogal? ─► Vá para o PASSO 3 │ ▼ PASSO 3: Teste de Colisão / Encontro entre as Letras │ ┌──────────────┼─────────────────────────────┐ ▼ ▼ ▼ LETRAS IGUAIS VOGAIS DIFERENTES VOGAL + R ou S │ │ │ ▼ ▼ ▼ [ USA HÍFEN (-) ] [ GRAFA JUNTO ] [ GRAFA JUNTO E DOBRA ] (\"Iguais se repelem\") (\"Diferentes se atraem\") ( RR ou SS )"
+              "type": "diagram",
+              "diagramType": "tree",
+              "text": "PASSO 1: O segundo elemento começa com \"H\"? │ ┌──────────────┴──────────────┐ ▼ ▼ SIM NÃO │ │ ▼ ▼ [ USA HÍFEN (-) ] Vá para o PASSO 2 (\"H é um problema\") │ ▼ PASSO 2: O prefixo é INDEPENDENTE, TÔNICO ou ESPECIAL? (além, ex, recém, sem, vice, grão, pré-, pró-, pós-) │ ├─► É Independente / Tônico? ──► [ USA HÍFEN (-) ] (\"O forte se basta\") ├─► É \"MAL\"? ──────────────────► Vogal/H = HÍFEN\nConsoante = JUNTO ├─► É \"CO-\"? ──────────────────► SEMPRE JUNTO (salvo H; dobra S/R) ├─► É \"SUB-\" / \"AD-\"? ─────────► B, D, R = HÍFEN (não dobra R)\nResto = JUNTO └─► Prefixo regular em vogal? ─► Vá para o PASSO 3 │ ▼ PASSO 3: Teste de Colisão / Encontro entre as Letras │ ┌──────────────┼─────────────────────────────┐ ▼ ▼ ▼ LETRAS IGUAIS VOGAIS DIFERENTES VOGAL + R ou S │ │ │ ▼ ▼ ▼ [ USA HÍFEN (-) ] [ GRAFA JUNTO ] [ GRAFA JUNTO E DOBRA ] (\"Iguais se repelem\") (\"Diferentes se atraem\") ( RR ou SS )"
             }
           ]
         },
@@ -636,7 +640,7 @@
             {
               "order": 2,
               "action": "Se for o prefixo BEM",
-              "explanation": "",
+              "explanation": "Passo 2 do algoritmo de Algoritmo de Decisão para a Oposição \"Bem\" vs. \"Mal\".",
               "test": null
             },
             {
@@ -654,25 +658,25 @@
             {
               "order": 5,
               "action": "Se for o prefixo MAL",
-              "explanation": "",
+              "explanation": "Passo 5 do algoritmo de Algoritmo de Decisão para a Oposição \"Bem\" vs. \"Mal\".",
               "test": null
             },
             {
               "order": 6,
               "action": "Inspecione a letra seguinte",
-              "explanation": "",
+              "explanation": "Passo 6 do algoritmo de Algoritmo de Decisão para a Oposição \"Bem\" vs. \"Mal\".",
               "test": null
             },
             {
               "order": 7,
               "action": "É Vogal ou H? $\\to$ Usa Hífen (mal-estar, mal-humorado).",
-              "explanation": null,
+              "explanation": "Passo 7 do algoritmo de Algoritmo de Decisão para a Oposição \"Bem\" vs. \"Mal\".",
               "test": null
             },
             {
               "order": 8,
               "action": "É Consoante diferente de H? $\\to$ Grafa Junto Sem Hífen (malcriado, malfeito, malvisto).",
-              "explanation": null,
+              "explanation": "Passo 8 do algoritmo de Algoritmo de Decisão para a Oposição \"Bem\" vs. \"Mal\".",
               "test": null
             }
           ],
@@ -745,31 +749,31 @@
             {
               "order": 2,
               "action": "Avaliar a abertura e força da vogal",
-              "explanation": "",
+              "explanation": "Passo 2 do algoritmo de Teste Prosódico de Decisão para Pré, Pró e Pós.",
               "test": null
             },
             {
               "order": 3,
               "action": "Se pronunciada de forma aberta, destacada e tônica (/prÉ/, /prÓ/, /pÓs/)",
-              "explanation": "",
+              "explanation": "Passo 3 do algoritmo de Teste Prosódico de Decisão para Pré, Pró e Pós.",
               "test": null
             },
             {
               "order": 4,
               "action": "Recebe acento gráfico e separa-se por hífen (\"O forte se separa\" $\\to$ pré-escola, pós-graduação).",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Teste Prosódico de Decisão para Pré, Pró e Pós.",
               "test": null
             },
             {
               "order": 5,
               "action": "Se pronunciada de forma fechada, fraca e átona (/prê/, /prô/, /pôs/)",
-              "explanation": "",
+              "explanation": "Passo 5 do algoritmo de Teste Prosódico de Decisão para Pré, Pró e Pós.",
               "test": null
             },
             {
               "order": 6,
               "action": "Não recebe acento e grafa-se junta sem hífen (\"O fraco se une\" $\\to$ preconceito, preestabelecido, propor).",
-              "explanation": null,
+              "explanation": "Passo 6 do algoritmo de Teste Prosódico de Decisão para Pré, Pró e Pós.",
               "test": null
             }
           ],
@@ -1009,7 +1013,7 @@
           ],
           "result": "Justificativa Pedagógica: O prefixo contra- termina na vogal a e o verbo atacar inicia-se pela mesma vogal a. Por se tratar de vogais idênticas, aplica-se o mantra \"Iguais se repelem\", tornando o hífen obrigatório.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G05-HIFEN-FUNDAMENTOS-001 — Exercício de Fixação: Item a) contraatacar sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G05-HIFEN-FUNDAMENTOS-001 — Exercício de Fixação: Item a) contraatacar.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G05-HIFEN-FUNDAMENTOS-001 — Exercício de Fixação: Item a) contraatacar.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G05-HIFEN-FUNDAMENTOS-001 — Exercício de Fixação: Item a) contraatacar.",
           "blocks": [
             {
@@ -1052,7 +1056,7 @@
           ],
           "result": "Justificativa Pedagógica: O prefixo anti- termina em vogal (i) e a base começa com s. Pelo Acordo Ortográfico, elimina-se o hífen e dobra-se a consoante s (ss) para preservar o som surdo /S/.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G05-HIFEN-FUNDAMENTOS-002 — Exercício de Fixação: Item b) anti-sociável sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G05-HIFEN-FUNDAMENTOS-002 — Exercício de Fixação: Item b) anti-sociável.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G05-HIFEN-FUNDAMENTOS-002 — Exercício de Fixação: Item b) anti-sociável.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G05-HIFEN-FUNDAMENTOS-002 — Exercício de Fixação: Item b) anti-sociável.",
           "blocks": [
             {
@@ -1095,7 +1099,7 @@
           ],
           "result": "Justificativa Pedagógica: O prefixo vice- possui autonomia semântica (Regra 2 — \"O independente se separa\"), exigindo hífen em todas as combinações lexicais.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G05-HIFEN-FUNDAMENTOS-003 — Exercício de Fixação: Item c) viceimperador sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G05-HIFEN-FUNDAMENTOS-003 — Exercício de Fixação: Item c) viceimperador.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G05-HIFEN-FUNDAMENTOS-003 — Exercício de Fixação: Item c) viceimperador.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G05-HIFEN-FUNDAMENTOS-003 — Exercício de Fixação: Item c) viceimperador.",
           "blocks": [
             {
@@ -1138,7 +1142,7 @@
           ],
           "result": "Justificativa Pedagógica: O prefixo sub- termina na consoante b. Diante da consoante r, exige-se hífen. A duplicação para rr é incorreta porque o prefixo não termina em vogal.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G05-HIFEN-FUNDAMENTOS-004 — Exercício de Fixação: Item d) subregião / subrregião sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G05-HIFEN-FUNDAMENTOS-004 — Exercício de Fixação: Item d) subregião / subrregião.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G05-HIFEN-FUNDAMENTOS-004 — Exercício de Fixação: Item d) subregião / subrregião.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G05-HIFEN-FUNDAMENTOS-004 — Exercício de Fixação: Item d) subregião / subrregião.",
           "blocks": [
             {
@@ -1181,7 +1185,7 @@
           ],
           "result": "Justificativa Pedagógica: O prefixo hiper- termina em r e a base realista começa em r. Ocorre colisão de consoantes idênticas ($R+R$), impondo-se o hífen pelo princípio de que \"Iguais se repelem\".",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G05-HIFEN-FUNDAMENTOS-005 — Exercício de Fixação: Item e) hiper-realista sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G05-HIFEN-FUNDAMENTOS-005 — Exercício de Fixação: Item e) hiper-realista.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G05-HIFEN-FUNDAMENTOS-005 — Exercício de Fixação: Item e) hiper-realista.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G05-HIFEN-FUNDAMENTOS-005 — Exercício de Fixação: Item e) hiper-realista.",
           "blocks": [
             {
@@ -1224,7 +1228,7 @@
           ],
           "result": "Justificativa Pedagógica: O prefixo pós- é tônico e acentuado graficamente (\"O forte se separa\"), mantendo obrigatoriamente o hífen.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G05-HIFEN-FUNDAMENTOS-006 — Exercício de Fixação: Item f) pós-colonialismo sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G05-HIFEN-FUNDAMENTOS-006 — Exercício de Fixação: Item f) pós-colonialismo.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G05-HIFEN-FUNDAMENTOS-006 — Exercício de Fixação: Item f) pós-colonialismo.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G05-HIFEN-FUNDAMENTOS-006 — Exercício de Fixação: Item f) pós-colonialismo.",
           "blocks": [
             {
@@ -1267,7 +1271,7 @@
           ],
           "result": "Justificativa Pedagógica: O prefixo co- indica união e aglutina-se sem hífen. Diante de palavra iniciada por s, a consoante deve ser dobrada (ss) pós-vogal.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G05-HIFEN-FUNDAMENTOS-007 — Exercício de Fixação: Item g) co-seno sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G05-HIFEN-FUNDAMENTOS-007 — Exercício de Fixação: Item g) co-seno.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G05-HIFEN-FUNDAMENTOS-007 — Exercício de Fixação: Item g) co-seno.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G05-HIFEN-FUNDAMENTOS-007 — Exercício de Fixação: Item g) co-seno.",
           "blocks": [
             {
@@ -1310,7 +1314,7 @@
           ],
           "result": "Justificativa Pedagógica: O prefixo pre- é átono e inacentuado (\"O fraco se une\"), aglutinando-se diretamente à palavra seguinte, mesmo diante da vogal e.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G05-HIFEN-FUNDAMENTOS-008 — Exercício de Fixação: Item h) preestabelecido sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G05-HIFEN-FUNDAMENTOS-008 — Exercício de Fixação: Item h) preestabelecido.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G05-HIFEN-FUNDAMENTOS-008 — Exercício de Fixação: Item h) preestabelecido.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G05-HIFEN-FUNDAMENTOS-008 — Exercício de Fixação: Item h) preestabelecido.",
           "blocks": [
             {
@@ -1353,7 +1357,7 @@
           ],
           "result": "Justificativa Pedagógica: O prefixo micro- termina em o e o vocábulo análise inicia-se em a. Sendo vogais diferentes, aplica-se o mantra \"Diferentes se atraem\", grafando-se tudo junto.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G05-HIFEN-FUNDAMENTOS-009 — Exercício de Fixação: Item i) micro-análise sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G05-HIFEN-FUNDAMENTOS-009 — Exercício de Fixação: Item i) micro-análise.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G05-HIFEN-FUNDAMENTOS-009 — Exercício de Fixação: Item i) micro-análise.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G05-HIFEN-FUNDAMENTOS-009 — Exercício de Fixação: Item i) micro-análise.",
           "blocks": [
             {
@@ -1396,7 +1400,7 @@
           ],
           "result": "Justificativa Pedagógica: O prefixo infra- termina em a e a base estrutura inicia-se em e. As vogais diferentes atraem-se, eliminando o hífen.",
           "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G05-HIFEN-FUNDAMENTOS-010 — Exercício de Fixação: Item j) infra-estrutura sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G05-HIFEN-FUNDAMENTOS-010 — Exercício de Fixação: Item j) infra-estrutura.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G05-HIFEN-FUNDAMENTOS-010 — Exercício de Fixação: Item j) infra-estrutura.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G05-HIFEN-FUNDAMENTOS-010 — Exercício de Fixação: Item j) infra-estrutura.",
           "blocks": [
             {
@@ -1674,12 +1678,13 @@
       "examBoard": "PC-GO",
       "organization": "2016",
       "year": 2016,
-      "prompt": "Julgue o item. O emprego do hífen no vocábulo “bem-estar” justifica-se pela mesma regra ortográfica que justifica a grafia do antônimo desse vocábulo: mal-estar.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0036.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "explanation": "Os advérbios “bem” e “mal”, se usados como prefixo, pedem hífen quando a próxima palavra é iniciada por vogal (ou H, porque tem som de vogal). Essa é a regra que justifica “bem-estar” e “mal-estar e faz o item estar correto. Porém, acrescento que, no caso de “bem”, não há hífen quando a palavra seguinte for derivada de “querer” ou “fazer”: benquerer, benfeito. No caso de “mal”, não há hífen quando a palavra seguinte for iniciada por consoante: malcriado, malfeito. Gabarito: questão correta.",
       "questionSha256": "3f9979674f5ed206000a091992e3659327632cb6e0aef4c570da3fd118c6e052",
       "answerSha256": "12a3940359861023c3bac696d11f670ab8dab0cb97de66009864547de1fe617d",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de PC-GO; 2. Identificar a regra central de Emprego do Hífen - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1690,12 +1695,13 @@
       "examBoard": "CEBRASPE",
       "organization": "PC-GO",
       "year": 2016,
-      "prompt": "Julgue o item. O emprego do hífen no vocábulo “bem-estar” justifica-se pela mesma regra ortográfica que justifica a grafia do antônimo desse vocábulo: mal-estar.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0133.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "explanation": "Os advérbios “bem” e “mal”, se usados como prefixo, pedem hífen quando a próxima palavra é iniciada por vogal (ou H, porque tem som de vogal). Essa é a regra que justifica “bem-estar” e “mal-estar e faz o item estar correto. Porém, no caso de “bem”, não há hífen quando a palavra seguinte for derivada de “querer” ou “fazer”: benquerer, benfeito. No caso de “mal”, não há hífen quando a palavra seguinte for iniciada por consoante: malcriado, malfeito. Questão correta.",
       "questionSha256": "efc2b0c52aa530119039218784ff4e1ff4a4f5211b1ac09518aa5b56b36d7ce0",
       "answerSha256": "c0ef66c29ab2ec48dada33e37dc8e04e85c2d9d26490309e722b506abbcd3c47",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Emprego do Hífen - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1706,11 +1712,12 @@
       "examBoard": "CEBRASPE",
       "organization": "PC-GO",
       "year": 2016,
-      "prompt": "Julgue o item. O emprego do hífen no vocábulo “bem-estar” justifica-se pela mesma regra ortográfica que justifica a grafia do antônimo desse vocábulo: mal-estar.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0224.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "questionSha256": "1ee00a05e177d5cf789d9d7ec079a056cd978f51f92165b0cc00b9019179c5cb",
       "answerSha256": "1a6ff877829ba00d4e7eb9e5774698e65edb8a78a5af7eb098d9dde246e747f4",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Emprego do Hífen - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1721,12 +1728,13 @@
       "examBoard": "IFN-MG",
       "organization": "2018",
       "year": 2018,
-      "prompt": "Considerando que o Novo Acordo Ortográfico alterou o emprego do hífen em compostos, em locuções e em formações por prefixação, julgue a correção das grafias abaixo: manda-chuva / mão de obra / panafricano.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0041.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "explanation": "Mandachuva se grafa sem hífen, consta expressamente na regra especial das palavras que perderam a noção de composição. Mão de obra não possui hífen mesmo, porque palavras compostas com elemento de ligação são grafadas sem hífen. O prefixo PAN, seguido de Vogal, M ou N, exige hífen: Pan-africano. Gabarito: questão incorreta.",
       "questionSha256": "8f96d2b49fd1567e120187db4472a576922c55aa7e660044979fb5175f9ff216",
       "answerSha256": "14d01d217581b7b90123a1a785e4daeb07276d53cd3de29f53dffb22c260b11d",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de IFN-MG; 2. Identificar a regra central de Emprego do Hífen - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1737,7 +1745,7 @@
       "examBoard": "CEBRASPE",
       "organization": "PREFEITURA DE CAMAÇARI - BA",
       "year": 2024,
-      "prompt": "O emprego do hífen na palavra “bem-estar”, no final do texto CG1A1, justifica-se pela mesma regra que determina o emprego do hífen em",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0126.",
       "options": [
         {
           "label": "a",
@@ -1764,6 +1772,7 @@
       "explanation": "\"bem-estar\" traz como prefixo o \"bem\", que sempre exige hífen. Usado como prefixo, o \"sem\" também pede hífen sempre. Então, a banca entendeu que seria \"uma mesma regra\". \"mal-humorado\" traz hífen porque sempre há hífen na prefixação se houver palavra iniciada por H: anti-herói, anti-higiênico, super-homem, mini-hotel, neo-helênico, co-herdeiro, sobre-humano, pré-história, sub-hepático, auto-hipnose, neo-humanismo, semi-hospitalar... Em \"supeR-Ricos\" e \"autO-Organização\", o hífen separa letras iguais na prefixação. Gabarito letra C.",
       "questionSha256": "31a2ac642ce7661aac28f95e88b4b28aabf12cd8a2ca0b809b8d06bc44a26c8c",
       "answerSha256": "10deabd7c3c8c1a43dfa97200a7568eb55d2fe50f74ef9cf1e77888575dd3d86",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Emprego do Hífen - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": [
@@ -1805,7 +1814,7 @@
       "examBoard": "CEBRASPE",
       "organization": "PREFEITURA DE CAMAÇARI - BA",
       "year": 2024,
-      "prompt": "O emprego do hífen na palavra “bem-estar”, no final do texto CG1A1, justifica-se pela mesma regra que determina o emprego do hífen em",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0217.",
       "options": [
         {
           "label": "a",
@@ -1831,6 +1840,7 @@
       "officialAnswer": "C",
       "questionSha256": "2f6a074b4956b264ad3661659210f7db1171dcf26c78ab229b57d6a7b7b20075",
       "answerSha256": "8e415b2ea1483dbed6ac74448f2b20dcb00201be08d0c8685e80c33535b1c123",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Emprego do Hífen - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": [

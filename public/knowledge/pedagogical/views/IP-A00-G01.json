@@ -4,7 +4,7 @@
     "unitId": "IP-A00-G01",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:31:53.893Z"
+    "generatedAt": "2026-08-18T23:33:08.066Z"
   },
   "unit": {
     "unitId": "IP-A00-G01",
@@ -14,7 +14,7 @@
     "variant": "development",
     "canonicalTopicId": "pt:a00:fonetica-e-fonologia",
     "learningObjectives": [
-      "OBJ-IP-A00-G01-01"
+      "Objetivo 1"
     ]
   },
   "sections": {
@@ -57,7 +57,8 @@
           ]
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "ESTRUTURA DA PALAVRA │ ┌─────────────────────┴─────────────────────┐ ▼ ▼ PLANO GRÁFICO PLANO FONÉTICO Letras / Grafemas Fonemas / Sons │ │ └───────────────┬───────────────────────────┘ │ RELAÇÃO MATEMÁTICA PADRÃO: L = F │ ┌───────────────────┴───────────────────┐ ▼ ▼ CASO 1: REDUÇÃO (-1) CASO 2: AUMENTO (+1) ┌───────────────────────┐ ┌───────────────────────┐ │ Dígrafos Consonantais │ │ Dífono da Letra X │ │ Dígrafos Vocálicos │ │ (som /ks/) │ │ Letra H inicial mudo │ │ Ex.: Táxi, Fixo │ └───────────────────────┘ └───────────────────────┘"
         }
       ],
@@ -137,7 +138,8 @@
           "text": "Dígrafo é o encontro de duas letras consecutivas que representam um único fonema (uma só emissão sonora). Classificam-se estritamente em Dígrafos Consonantais e Dígrafos Vocálicos."
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "┌── CONSONANTAIS: CH, LH, NH, RR, SS, SC, SÇ, XC, XS, GU, QU │ (som resultante = consoante; ex.: chave /x/, guerra /g/) DÍGRAFOS (2L = 1 Som) ──┤ └── VOCÁLICOS: AM, EM, IM, OM, UM / AN, EN, IN, ON, UN (som resultante = vogal nasal; m/n atuam como til)"
         },
         {
@@ -355,7 +357,7 @@
           "entityId": "RULE-IP-A00-G01-001",
           "title": "Definições Canônicas",
           "statement": "Letra / Grafema: Símbolo escrito e visual que representa um som na escrita (KB-A00-G01-FONETICA-FONOLOGIA-002).\nFonema: Unidade acústica mínima com valor distintivo de sentido entre vocábulos (KB-A00-G01-FONETICA-FONOLOGIA-002).\nDígrafo: Grupo de duas letras que representa um único fonema (KB-A00-G01-FONETICA-FONOLOGIA-003).\nDífono: Uma única letra que expressa dois fonemas simultâneos (KB-A00-G01-FONETICA-FONOLOGIA-004).",
-          "scope": "syntax",
+          "scope": "phonetics_phonology",
           "modality": "mandatory",
           "conditions": [
             "Letra / Grafema: Símbolo escrito e visual que representa um som na escrita (KB-A00-G01-FONETICA-FONOLOGIA-002).",
@@ -381,7 +383,7 @@
           "entityId": "RULE-IP-A00-G01-002",
           "title": "Classificações Canônicas de Dígrafos",
           "statement": "Dígrafos Consonantais: CH, LH, NH, RR, SS, SC, SÇ, XC, XS, GU (diante de E/I mudo), QU (diante de E/I mudo) (KB-A00-G01-FONETICA-FONOLOGIA-003).\nDígrafos Vocálicos: Sequência de vogal + M ou N na mesma sílaba (AM, EM, IM, OM, UM / AN, EN, IN, ON, UN), produzindo vogais nasalizadas (KB-A00-G01-FONETICA-FONOLOGIA-003).",
-          "scope": "syntax",
+          "scope": "phonetics_phonology",
           "modality": "mandatory",
           "conditions": [
             "Dígrafos Consonantais: CH, LH, NH, RR, SS, SC, SÇ, XC, XS, GU (diante de E/I mudo), QU (diante de E/I mudo) (KB-A00-G01-FONETICA-FONOLOGIA-003).",
@@ -403,7 +405,7 @@
           "entityId": "RULE-IP-A00-G01-003",
           "title": "Regras Canônicas de Contagem",
           "statement": "Regra Padrão: $F = L$ (em vocábulos regulares sem alterações fonéticas).\nRegra do Dígrafo / H mudo: A cada dígrafo ou $H$ inicial, subtrai-se 1 do total de letras ($F = L - 1$).\nRegra do Dífono (X = /ks/): A cada $X$ com som /ks/, adiciona-se 1 ao total de letras ($F = L + 1$).\nRegra da Imutabilidade: O número de fonemas só difere do número de letras na ocorrência de dígrafo/H mudo ou de $X = \\text{/ks/}$ (KB-A00-G01-FONETICA-FONOLOGIA-005).",
-          "scope": "syntax",
+          "scope": "phonetics_phonology",
           "modality": "mandatory",
           "conditions": [
             "Regra Padrão: $F = L$ (em vocábulos regulares sem alterações fonéticas).",
@@ -453,19 +455,19 @@
             {
               "order": 2,
               "action": "Identificar Elementos Redutores ($-1$ por ocorrência)",
-              "explanation": "",
+              "explanation": "Passo 2 do algoritmo de Algoritmo Sistemático de Contagem de Letras e Fonemas.",
               "test": null
             },
             {
               "order": 3,
               "action": "Verificar $H$ inicial mudo (Hoje, Habilidoso);",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Algoritmo Sistemático de Contagem de Letras e Fonemas.",
               "test": null
             },
             {
               "order": 4,
               "action": "Sublinhar dígrafos consonantais (CH, LH, NH, RR, SS, SC, SÇ, XC, GU/QU mudos);",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Algoritmo Sistemático de Contagem de Letras e Fonemas.",
               "test": null
             },
             {
@@ -477,19 +479,19 @@
             {
               "order": 6,
               "action": "Identificar Elementos Ampliadores ($+1$ por ocorrência)",
-              "explanation": "",
+              "explanation": "Passo 6 do algoritmo de Algoritmo Sistemático de Contagem de Letras e Fonemas.",
               "test": null
             },
             {
               "order": 7,
               "action": "Localizar a letra $X$ e verificar se possui o som duplo de /ks/ (táxi, fixo, nexo).",
-              "explanation": null,
+              "explanation": "Passo 7 do algoritmo de Algoritmo Sistemático de Contagem de Letras e Fonemas.",
               "test": null
             },
             {
               "order": 8,
               "action": "Executar a Equação Aritmética",
-              "explanation": "",
+              "explanation": "Passo 8 do algoritmo de Algoritmo Sistemático de Contagem de Letras e Fonemas.",
               "test": null
             },
             {
@@ -596,7 +598,7 @@
             {
               "order": 1,
               "action": "Localizar o encontro de duas letras.",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Teste Diagnóstico para Classificação de Dígrafos.",
               "test": null
             },
             {
@@ -608,7 +610,7 @@
             {
               "order": 3,
               "action": "Se for CH, LH, NH, RR, SS, SC, SÇ, XC $\\rightarrow$ Dígrafo Consonantal (DC).",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Teste Diagnóstico para Classificação de Dígrafos.",
               "test": null
             },
             {
@@ -620,13 +622,13 @@
             {
               "order": 5,
               "action": "Se o U for mudo (guerra, quilo, quente) $\\rightarrow$ Dígrafo Consonantal (DC).",
-              "explanation": null,
+              "explanation": "Passo 5 do algoritmo de Teste Diagnóstico para Classificação de Dígrafos.",
               "test": null
             },
             {
               "order": 6,
               "action": "Se o U for pronunciado (água, quase, cinquenta) $\\rightarrow$ Não é dígrafo (é encontro consonantal + semivogal/vogal).",
-              "explanation": null,
+              "explanation": "Passo 6 do algoritmo de Teste Diagnóstico para Classificação de Dígrafos.",
               "test": null
             },
             {
@@ -638,7 +640,7 @@
             {
               "order": 8,
               "action": "Se o M ou N apenas nasalizarem a vogal (tampa, campo, vento, tinta) $\\rightarrow$ Dígrafo Vocálico (DV).",
-              "explanation": null,
+              "explanation": "Passo 8 do algoritmo de Teste Diagnóstico para Classificação de Dígrafos.",
               "test": null
             }
           ],
@@ -874,7 +876,7 @@
           ],
           "result": "Cálculo: $5 - 1 = \\mathbf{4\\text{ \\textbf{fonemas}}}$.",
           "decisivePoint": "Aplicação estrita da regra canônica de Análise Vocábulo a Vocábulo sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise Vocábulo a Vocábulo.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de Análise Vocábulo a Vocábulo.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise Vocábulo a Vocábulo.",
           "blocks": [
             {
@@ -976,7 +978,7 @@
           ],
           "result": "Campo: Possui o encontro AM (nasalização da vogal A) $\\rightarrow$ Dígrafo Vocálico (DV).",
           "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e Resolução sobre o segmento analisado.",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e Resolução.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de Enunciado e Resolução.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e Resolução.",
           "blocks": [
             {
@@ -1030,7 +1032,7 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G01-003",
           "title": "Tabela Consolidada de Resolução",
-          "prompt": "Tabela Consolidada de Resolução",
+          "prompt": "Exemplo prático de aplicação de Tabela Consolidada de Resolução",
           "analysisSteps": [
             {
               "order": 1,
@@ -1050,7 +1052,7 @@
           ],
           "result": "Conformidade da estrutura \"Tabela Consolidada de Resolução\" com a norma culta de Tabela Consolidada de Resolução.",
           "decisivePoint": "Critério decisório de Tabela Consolidada de Resolução aplicado a \"Tabela Consolidada de Resolução\".",
-          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Tabela Consolidada de Resolução.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de Tabela Consolidada de Resolução.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Tabela Consolidada de Resolução.",
           "blocks": [
             {
@@ -1358,12 +1360,13 @@
       "examBoard": "CEBRASPE",
       "organization": "INOVERSASUL",
       "year": 2025,
-      "prompt": "O vocábulo “histórico” tem nove letras e oito fonemas.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0066.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "explanation": "O “h” não tem som próprio, então há um fonema a menos que o número de letras. Gabarito: Correto.",
       "questionSha256": "63e389ff8f7f2d25ed6aae93e3a6870ed114001873fa7d0a49300ee9eccd2339",
       "answerSha256": "e83c543a71025c94898c47170e440a64a6ef527b8a007dcbcbbde4fd329212d5",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Fonética e Fonologia; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1374,11 +1377,12 @@
       "examBoard": "CEBRASPE",
       "organization": "INOVERSASUL",
       "year": 2025,
-      "prompt": "O vocábulo “histórico” tem nove letras e oito fonemas.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0157.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "questionSha256": "6ff02bf7b9c316a7359afd780ffaeeb3460958434ed1febc6bdb0d860106d3cf",
       "answerSha256": "c90d3b2f7a85b638fbaef27ceb9b666320a4e522cde31c543428565e85c178a9",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Fonética e Fonologia; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1389,12 +1393,13 @@
       "examBoard": "CEBRASPE",
       "organization": "INOVERSASUL",
       "year": 2025,
-      "prompt": "Em cada um dos seguintes vocábulos, o número de letras coincide com o de fonemas: “manuais”; “falantes”; “cognitivo”.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0065.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "explanation": "Não em “cada um”: em “falantes”, temos dígrafo vocálico: an=ã. Portanto, nessa palavra, temos 8 letras, mas apenas 7 fonemas. Gabarito: Errado.",
       "questionSha256": "b6f5552edd7343fae8c54afda5be90d2d144e7195129fe282094fd9baf7b9e54",
       "answerSha256": "ecaaced97754a4e74f2feaeeb973a1e1cc54914ad66e9dfec28bf81b72994038",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Fonética e Fonologia; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1405,11 +1410,12 @@
       "examBoard": "CEBRASPE",
       "organization": "INOVERSASUL",
       "year": 2025,
-      "prompt": "Em cada um dos seguintes vocábulos, o número de letras coincide com o de fonemas: “manuais”; “falantes”; “cognitivo”.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0156.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "questionSha256": "0f55354f8ad0ecd800ab0639b1bc4f14cfa62f744a46438afea6445d8907f6de",
       "answerSha256": "4587cf2094d9b9084aaa4b75538e2f6344283269a008e0898194a42c1e7ac7a3",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Fonética e Fonologia; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1420,7 +1426,7 @@
       "examBoard": "ALEPI",
       "organization": "2020",
       "year": 2020,
-      "prompt": "Conhecer os sons das letras, a pronúncia dos dígrafos e dífonos, dos encontros vocálicos e dos consonantais, dos tritongos, dos ditongos e dos hiatos faz parte da boa Oratória. A única sequência que apresenta CORREÇÃO quanto a isso é: an",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0002.",
       "options": [
         {
           "label": "a",
@@ -1447,6 +1453,7 @@
       "explanation": "As palavras “distinguir”, “extinguir” e “adquirir” não têm o “u” pronunciado, pois temos dígrafo GU e QU. a) A palavra “subsídio” possui o som de /cê/ no segundo “s”, como em suiCÍdio. b) As palavras “sintaxe” e “inexorável” possuem a letra “x” com som de \"SS\" (*sintaSSE) e \"Z\" (*ineZorável) c) As palavras “gratUito”, “fortUito” e “circuito” têm tonicidade no “U”. e) As palavras como “cruz” e “mas” são pronunciadas com o som /S/. Gabarito letra D.",
       "questionSha256": "aa63c6f5be63f5857d00352e5a656e7d539929d0434aaed512805e1fd9dccad2",
       "answerSha256": "ed2421aacc674a67eaf8cc9d3e361d80d203e11d2646ba477290023325d9029d",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de ALEPI; 2. Identificar a regra central de Fonética e Fonologia; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": [
@@ -1488,12 +1495,13 @@
       "examBoard": "CEBRASPE",
       "organization": "PREF. SÃO CRISTOVÃO",
       "year": 2019,
-      "prompt": "Na palavra “assado”, o segmento “ss” constitui um dígrafo, porque duas letras representam um só fonema.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0067.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "explanation": "Exato. SS é um dígrafo consonantal, pois representa o mesmo som do “s” na palavra “sapo”, por exemplo. Os dígrafos para consoantes são os seguintes, todos inseparáveis, com exceção de rr e ss, sc, sç, xc, xs: CH: chá XS: exsudar (def. transpirar) XC: exceto LH: malha RR: carro SÇ: nasça GU: guerra NH: banha SS: passo SC: nascer QU: quero Questão correta.",
       "questionSha256": "882bbe052414dbdd3ebda04b8ad3eef6798023b1da0ced787c6483e731aec545",
       "answerSha256": "fcc57831b79452892934ab135f80bb8aebf20ac9c8841c8d357f2b722dfd410c",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Fonética e Fonologia; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []

@@ -4,7 +4,7 @@
     "unitId": "IP-A12-G03",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:31:54.116Z"
+    "generatedAt": "2026-08-18T23:33:08.291Z"
   },
   "unit": {
     "unitId": "IP-A12-G03",
@@ -14,7 +14,7 @@
     "variant": "development",
     "canonicalTopicId": "pt:a12:hiperonimia-e-hiponimia",
     "learningObjectives": [
-      "OBJ-IP-A12-G03-01"
+      "Objetivo 1"
     ]
   },
   "sections": {
@@ -46,7 +46,8 @@
           ]
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "ANÁLISE LINGUÍSTICA E RELAÇÕES SEMÂNTICO-COESIVAS ├── 1. Critérios de Análise │ ├── Morfologia (Classe da palavra isolada) │ ├── Semântica (Sentido, valor discursivo e relações de significado) │ └── Sintaxe (Função estrutural/relacional na oração) │ ├── 2. Relações Semânticas Lexicais │ ├── Hiperonímia (Hiperônimo: Geral / Gênero / Superordenado / Ampla Extensão) │ └── Hiponímia (Hipônimo: Específico / Espécie / Subordenado / Restrita Extensão) │ └── Chave de Validação: Teste Lógico-Categorial \"TIPO DE\" │ ├── 3. Fronteiras e Distinções Semânticas Críticas │ ├── Hiperonímia / Hiponímia (Níveis hierárquicos assimétricos: Geral ↔ Específico) │ ├── Sinonímia Contextual (Mesmo nível semântico: Equivalência sem relação \"tipo de\") │ └── Campo Semântico (Mesmo domínio temático sem subordinação taxonômica ou sinonímia) │ ├── 4. Aplicações em Mecanismos Coesivos │ ├── Vetores Direcionais Básicos │ │ ├── Elemento Coesivo (\"Manda a Seta\" / Emissor) │ │ ├── Referente (\"Recebe a Seta\" / Alvo) │ │ ├── Anáfora (Vetor Retrospectivo: Aponta para trás / Antes) │ │ └── Catáfora (Vetor Prospectivo: Aponta para frente / Depois) │ ├── Tipologia Coesiva Lexical │ │ ├── Anáfora por Hiperônimo (Termo Geral retoma Termo Específico antecedente) │ │ ├── Anáfora Especificativa / Especificadora (Hipônimo retoma e particulariza Hiperônimo) │ │ ├── Anáfora Associativa (Retomada por contiguidade temática de Campo Semântico) │ │ └── Sumarização / Encapsulamento (Termo sintético condensa enumeração prévia) │ └── Distinções Funcionais de Coesão │ ├── Coesão por Substituição Real (Termo anafórico ocupa o lugar do referente) │ ├── Coesão Explicativa / Aposição (Termo geral coexiste lado a lado com o nome próprio) │ └── Coesão Pronominal (Morfológica) vs. Coesão Lexical (Semântica) │ └── 5. Aplicações Lexicográficas e em Provas ├── Estrutura de Verbetes: [Entrada] — [Hiperônimo de Abertura] + [Particularizações] ├── Direcionalidade Obrigatória: [Específico -> Geral = Hiponímia] vs. [Geral -> Específico = Hiperonímia] └── Distinção CEBRASPE: Adjetivação Sintagmática (Qualificação) ≠ Coesão Lexical por Hiperonímia"
         }
       ],
@@ -137,7 +138,8 @@
           "text": "A chave de validação consiste na proposição afirmativa: [Termo A] é um TIPO DE [Termo B]. Se a proposição for verdadeira, $A$ é categoricamente o hipônimo e $B$ é o hiperônimo."
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "┌────────────────────────────────────────┐ │ HIPERÔNIMO (Geral) │ │ ex.: Animais, Veículo, Alimento │ └───────────────────┬────────────────────┘ │ engloba / inclui │ ┌───────────────────▼────────────────────┐ │ HIPÔNIMO (Específico) │ ──> Teste: \"Pássaro é um │ ex.: Pássaros, Carro, Gelatina │ TIPO DE animal\" └────────────────────────────────────────┘"
         },
         {
@@ -492,7 +494,7 @@
           "entityId": "RULE-IP-A12-G03-001",
           "title": "Tabela Sintética de Relações e Conceitos Canônicos",
           "statement": "Tabela Sintética de Relações e Conceitos Canônicos",
-          "scope": "syntax",
+          "scope": "semantics",
           "modality": "mandatory",
           "conditions": [
             "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
@@ -601,7 +603,7 @@
             },
             {
               "order": 2,
-              "action": "Início: Identificar Termo 1 (T1) e Termo 2 (T2) │ ▼ ┌───────────────────────────────────────────┐ │ Passo 1: Avaliar Equivalência Semântica │ │ T1 e T2 estão no mesmo patamar │ │ de sentido no contexto da frase? │ └─────────────────────┬─────────────────────┘ │ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────┐ ┌──────────────────┐ │ SINONÍMIA │ │ Ir para Passo 2 │ │ (ex.: ceia/jantar│ └─────────┬────────┘ │ telas/quadros) │ │ └──────────────────┘ ▼ ┌───────────────────────────────────────────┐ │ Passo 2: Aplicar Teste Lógico \"TIPO DE\" │ │ \"T1 é tipo de T2\" OU \"T2 é tipo de T1\"?│ └─────────────────────┬─────────────────────┘ │ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────────────────────┐ ┌──────────────────────────────────┐ │ Passo 2b: Checar Direcionalidade│ │ Passo 3: Avaliar Campo Semântico │ │ - Se T1=Específico e T2=Geral: │ │ T1 e T2 pertencem ao mesmo tema │ │ ──> HIPONÍMIA │ │ sem relação taxonômica de gênero?│ │ - Se T1=Geral e T2=Específico: │ └──────────────────┬───────────────┘ │ ──> HIPERONÍMIA │ │ └──────────────────────────────────┘ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────┐ ┌──────────────────┐ │ CAMPO SEMÂNTICO │ │ Relações Lógicas │ │ Anáfora │ │ Distintas │ │ Associativa │ │ (Antonímia, │ │ (ex.: febre/ │ │ Paronímia, │ │ doença; pista/ │ │ Coordenação) │ │ aeroporto) │ └──────────────────┘ └──────────────────┘",
+              "action": "Início: Identificar Termo 1 (T1) e Termo 2 (T2) Passo 1: Avaliar Equivalência Semântica T1 e T2 estão no mesmo patamar de sentido no contexto da frase? SIM NÃO SINONÍMIA Ir para Passo 2 (ex.: ceia/jantar telas/quadros) Passo 2: Aplicar Teste Lógico \"TIPO DE\" \"T1 é tipo de T2\" OU \"T2 é tipo de T1\"? SIM NÃO Passo 2b: Checar Direcionalidade Passo 3: Avaliar Campo Semântico - Se T1=Específico e T2=Geral: T1 e T2 pertencem ao mesmo tema > HIPONÍMIA sem relação taxonômica de gênero? - Se T1=Geral e T2=Específico: > HIPERONÍMIA SIM NÃO CAMPO SEMÂNTICO Relações Lógicas Anáfora Distintas Associativa (Antonímia, (ex.: febre/ Paronímia, doença; pista/ Coordenação) aeroporto)",
               "explanation": "Procedimento operacional para Algoritmo de Diagnóstico de Relações Semânticas Lexicais em Provas.",
               "test": "Início: Identificar Termo 1 (T1) e Termo 2 (T2) │ ▼ ┌───────────────────────────────────────────┐ │ Passo 1: Avaliar Equivalência Semântica │ │ T1 e T2 estão no mesmo patamar │ │ de sentido no contexto da frase? │ └─────────────────────┬─────────────────────┘ │ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────┐ ┌──────────────────┐ │ SINONÍMIA │ │ Ir para Passo 2 │ │ (ex.: ceia/jantar│ └─────────┬────────┘ │ telas/quadros) │ │ └──────────────────┘ ▼ ┌───────────────────────────────────────────┐ │ Passo 2: Aplicar Teste Lógico \"TIPO DE\" │ │ \"T1 é tipo de T2\" OU \"T2 é tipo de T1\"?│ └─────────────────────┬─────────────────────┘ │ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────────────────────┐ ┌──────────────────────────────────┐ │ Passo 2b: Checar Direcionalidade│ │ Passo 3: Avaliar Campo Semântico │ │ - Se T1=Específico e T2=Geral: │ │ T1 e T2 pertencem ao mesmo tema │ │ ──> HIPONÍMIA │ │ sem relação taxonômica de gênero?│ │ - Se T1=Geral e T2=Específico: │ └──────────────────┬───────────────┘ │ ──> HIPERONÍMIA │ │ └──────────────────────────────────┘ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────┐ ┌──────────────────┐ │ CAMPO SEMÂNTICO │ │ Relações Lógicas │ │ Anáfora │ │ Distintas │ │ Associativa │ │ (Antonímia, │ │ (ex.: febre/ │ │ Paronímia, │ │ doença; pista/ │ │ Coordenação) │ │ aeroporto) │ └──────────────────┘ └──────────────────┘"
             }
@@ -618,7 +620,8 @@
               "text": "Finalidade: Identificar com precisão matemática se uma relação entre dois vocábulos configura Sinonímia, Hiperonímia, Hiponímia ou Campo Semântico (Anáfora Associativa)."
             },
             {
-              "type": "paragraph",
+              "type": "diagram",
+              "diagramType": "tree",
               "text": "Início: Identificar Termo 1 (T1) e Termo 2 (T2) │ ▼ ┌───────────────────────────────────────────┐ │ Passo 1: Avaliar Equivalência Semântica │ │ T1 e T2 estão no mesmo patamar │ │ de sentido no contexto da frase? │ └─────────────────────┬─────────────────────┘ │ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────┐ ┌──────────────────┐ │ SINONÍMIA │ │ Ir para Passo 2 │ │ (ex.: ceia/jantar│ └─────────┬────────┘ │ telas/quadros) │ │ └──────────────────┘ ▼ ┌───────────────────────────────────────────┐ │ Passo 2: Aplicar Teste Lógico \"TIPO DE\" │ │ \"T1 é tipo de T2\" OU \"T2 é tipo de T1\"?│ └─────────────────────┬─────────────────────┘ │ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────────────────────┐ ┌──────────────────────────────────┐ │ Passo 2b: Checar Direcionalidade│ │ Passo 3: Avaliar Campo Semântico │ │ - Se T1=Específico e T2=Geral: │ │ T1 e T2 pertencem ao mesmo tema │ │ ──> HIPONÍMIA │ │ sem relação taxonômica de gênero?│ │ - Se T1=Geral e T2=Específico: │ └──────────────────┬───────────────┘ │ ──> HIPERONÍMIA │ │ └──────────────────────────────────┘ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────┐ ┌──────────────────┐ │ CAMPO SEMÂNTICO │ │ Relações Lógicas │ │ Anáfora │ │ Distintas │ │ Associativa │ │ (Antonímia, │ │ (ex.: febre/ │ │ Paronímia, │ │ doença; pista/ │ │ Coordenação) │ │ aeroporto) │ └──────────────────┘ └──────────────────┘"
             }
           ]
@@ -653,19 +656,19 @@
             {
               "order": 3,
               "action": "Determinar a Direção do Vetor",
-              "explanation": "",
+              "explanation": "Passo 3 do algoritmo de Método \"Manda a Seta / Recebe a Seta\" para Coesão Textual.",
               "test": null
             },
             {
               "order": 4,
-              "action": "Seta apontando para trás (esquerda no texto) $\\rightarrow$ Anáfora ([Referente Anterior] <─── Coesivo).",
-              "explanation": null,
+              "action": "Seta apontando para trás (esquerda no texto) $\\rightarrow$ Anáfora ([Referente Anterior] < Coesivo).",
+              "explanation": "Passo 4 do algoritmo de Método \"Manda a Seta / Recebe a Seta\" para Coesão Textual.",
               "test": null
             },
             {
               "order": 5,
-              "action": "Seta apontando para a frente (direita no texto) $\\rightarrow$ Catáfora (Coesivo ───> [Referente Posterior]).",
-              "explanation": null,
+              "action": "Seta apontando para a frente (direita no texto) $\\rightarrow$ Catáfora (Coesivo > [Referente Posterior]).",
+              "explanation": "Passo 5 do algoritmo de Método \"Manda a Seta / Recebe a Seta\" para Coesão Textual.",
               "test": null
             }
           ],
@@ -727,19 +730,19 @@
             {
               "order": 2,
               "action": "Agrupar Alternativas Espelhadas",
-              "explanation": "",
+              "explanation": "Passo 2 do algoritmo de Método da Equação Lógica da FGV (Eliminação em Bloco de Distratores).",
               "test": null
             },
             {
               "order": 3,
               "action": "Se a Alternativa A for par de sinônimos e a Alternativa B também for par de sinônimos $\\rightarrow A = B$ (anulam-se mutuamente).",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Método da Equação Lógica da FGV (Eliminação em Bloco de Distratores).",
               "test": null
             },
             {
               "order": 4,
               "action": "Se a Alternativa D for par associativo de campo semântico e a Alternativa E também for par associativo $\\rightarrow D = E$ (anulam-se mutuamente).",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Método da Equação Lógica da FGV (Eliminação em Bloco de Distratores).",
               "test": null
             },
             {
@@ -2452,12 +2455,13 @@
       "examBoard": "CEBRASPE",
       "organization": "INOVERSASUL",
       "year": 2025,
-      "prompt": "A cultura é algo que está no corpo, nos gestos, na memória, na forma de andar, no contorno das\nexpressões verbais e não verbais.\nO primeiro período do quarto parágrafo é construído com sentido conotativo.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A12-aula12.q0020.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "explanation": "“cultura” é algo abstrato, é uma construção social. Naturalmente, em sentido literal, não pode\n“estar no corpo”. Isso é expressão metafórica para indicar que nossas ações refletem nossa\ncultura internalizada. Gabarito: Correto.",
       "questionSha256": "f69aa4b4e5968fc99219ed699d6f882d46bc2c2aad94878353dccb6c3ad31bf3",
       "answerSha256": "bfb80a76ddef23adaa9a40bc30daab683f3af62c2caeb7584fd5740f2086007a",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Hiperonímia e Hiponímia; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "pedagogicalEvaluation": {
@@ -2477,11 +2481,12 @@
       "examBoard": "CEBRASPE",
       "organization": "INOVERSASUL",
       "year": 2025,
-      "prompt": "A cultura é algo que está no corpo, nos gestos, na memória, na forma de andar, no contorno das\nexpressões verbais e não verbais.\nO primeiro período do quarto parágrafo é construído com sentido conotativo.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A12-aula12.q0090.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "questionSha256": "f30b813c3f8caa4c0afecb925c94851223940903ec9467e582b3366929f8e7e9",
       "answerSha256": "4fbf9f41bacb5353fb32884befc71afe4067616b16734cfedae3d08ec687f721",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Hiperonímia e Hiponímia; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -2493,7 +2498,7 @@
       "organization": "PREF. JOINVILLE",
       "year": 2024,
       "role": "Professor",
-      "prompt": "No texto 10A2-II, o emprego do verbo vencer, com sentidos diferentes, é um caso de",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A12-aula12.q0082.",
       "options": [
         {
           "label": "A",
@@ -2520,6 +2525,7 @@
       "explanation": "A polissemia é a propriedade de a expressão apresentar vários sentidos.\nO cartão venceu= a fatura chegou, o prazo para pagamento expirou.\nO cartão me venceu= o cartão me derrotou.\n Gabarito letra A.",
       "questionSha256": "1409426e50c1f6e0fd32832062fe27745a3dae8d00a8e9acf791744024e70903",
       "answerSha256": "ba359eac2c3360c193ee3bce56baf7470d90337f8f520cb1aab8a56c3e957cd8",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Hiperonímia e Hiponímia; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "pedagogicalEvaluation": {
@@ -2570,12 +2576,13 @@
       "examBoard": "CEBRASPE",
       "organization": "TRF-6a REGIÃO",
       "year": 2025,
-      "prompt": "Julgue os itens que se seguem, relativos ao vocabulário e à estrutura linguística do texto.\nOs dois últimos períodos do texto retomam, por coesão lexical, o período inicial do texto.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A12-aula12.q0079.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "explanation": "Aqui, a banca resgata um conceito técnico: “coesão lexical”. Então, vale a pena uma revisão:\nA coesão lexical é um dos mecanismos de coesão textual e diz respeito à forma como as palavras\ne expressões são usadas para garantir a continuidade e a clareza do texto. Ela ocorre por meio da\nrepetição de termos, do uso de sinônimos, hiperônimos, hipônimos, antônimos e outros recursos\nque evitam ambiguidades e mantêm a progressão temática do texto.\nPrincipais mecanismos da coesão lexical:\nRepetição (Recorrência) – Reutilização de palavras para reforçar ideias e manter o fio condutor do\ntexto.\nExemplo: O professor explicou o conteúdo. O professor também tirou as dúvidas dos alunos.\nSinonímia – Substituição de palavras por sinônimos para evitar repetições excessivas.\nExemplo: O advogado apresentou seus argumentos. O jurista demonstrou grande conhecimento\njurídico.\nHiperonímia e Hiponímia – Uso de termos mais genéricos (hiperônimos) ou mais específicos\n(hipônimos).\nExemplo: A orquídea foi bem cuidada. A flor floresceu no outono.\n(Flor = hiperônimo de orquídea.)\nAntonímia – Uso de antônimos para reforçar contrastes no texto.\nExemplo: O problema não foi simples, mas extremamente complexo.\nParáfrase – Expressar a mesma ideia com palavras diferentes.\nExemplo: A educação de qualidade é essencial. Uma boa formação acadêmica contribui para o\nfuturo dos alunos.\nVoltando à questão, temos coesão lexical por repetição/reiteração. O autor repete as ideias\niniciais.\nTudo está interconectado. Na Amazônia [...]\nTudo está conectado. Para toda ação há uma reação.\nGabarito: Correto.",
       "questionSha256": "aafac00a8fd3beb5308217100d8e298d779cafa459a869007c74fc965ee7c15b",
       "answerSha256": "e823e264187de903459e9502009f1850fa04445e6849863da7367fe4549ec820",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Hiperonímia e Hiponímia; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "pedagogicalEvaluation": {
@@ -2595,11 +2602,12 @@
       "examBoard": "CEBRASPE",
       "organization": "TRF-6a REGIÃO",
       "year": 2025,
-      "prompt": "Julgue os itens que se seguem, relativos ao vocabulário e à estrutura linguística do texto.\nOs dois últimos períodos do texto retomam, por coesão lexical, o período inicial do texto.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A12-aula12.q0149.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "questionSha256": "715057717b4eba8d059a53ae387793cdf949368cfb7cfaa6230864ced056d1a2",
       "answerSha256": "5c8d9ce99f03c7065e14e84b3286ef40191a2bc76eab16770f73585ae95dddb9",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Hiperonímia e Hiponímia; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -2611,7 +2619,7 @@
       "organization": "PREF. JOINVILLE",
       "year": 2024,
       "role": "Professor",
-      "prompt": "No texto 10A2-II, o emprego do verbo vencer, com sentidos diferentes, é um caso de",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A12-aula12.q0152.",
       "options": [
         {
           "label": "A",
@@ -2637,6 +2645,7 @@
       "officialAnswer": "A",
       "questionSha256": "e3ec948c14478273f3b719f1862c653042a24789487a74e40d82174c88390d2f",
       "answerSha256": "d363e54494454d5704ce19f9c87d44310ffac31b245b0a9b665c5b1d783144c0",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Hiperonímia e Hiponímia; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": [

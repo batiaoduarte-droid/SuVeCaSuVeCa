@@ -4,7 +4,7 @@
     "unitId": "IP-A02-G05",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:31:53.947Z"
+    "generatedAt": "2026-08-18T23:33:08.118Z"
   },
   "unit": {
     "unitId": "IP-A02-G05",
@@ -14,7 +14,7 @@
     "variant": "practice",
     "canonicalTopicId": "pt:a02:valores-de-como-e-miscelaneas",
     "learningObjectives": [
-      "OBJ-IP-A02-G05-01"
+      "Objetivo 1"
     ]
   },
   "sections": {
@@ -46,7 +46,8 @@
           ]
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "SEMÂNTICA E SINTAXE DE CONECTORES EM CONCURSOS │ ├── 1. O CONECTIVO POLISSÊMICO \"COMO\" │ ├── Comparação: Confronto analógico entre seres/ações distintas (A é como B). │ ├── Conformidade: Adequação a modelo, norma, citação ou plano (\"nos conformes\", \"de acordo com\"). │ ├── Causa: Fato motivador da oração principal (sempre causal; nunca explicativo). │ ├── Adição: Estrutura correlativa somatória (\"não só... como também\" = E). │ └── Exemplificação: Transição do hiperônimo (geral) para hipônimos/exemplos (específico). │ ├── 2. MECANISMOS DE COESÃO E PROGRESSÃO TEXTUAL │ ├── Coesão Sequencial: Encadeamento de ideias por preposições, conjunções e pronomes. │ └── Progressão Textual: Avanço do fluxo argumentativo por conexões lógicas interparágrafos. │ ├── 3. FAMÍLIAS PARADIGMÁTICAS DE CONECTORES │ ├── Adversativas: mas, porém, contudo, todavia, no entanto, entretanto. │ ├── Conformativas: conforme, consoante, de acordo com, segundo. │ ├── Concessivas: embora, conquanto, posto que, ainda que, se bem que. │ ├── Causais / Explicativas: porque, porquanto, visto que, já que, uma vez que, pois. │ └── Conclusivas: portanto, logo, por conseguinte, assim, desse modo. │ └── 4. ZONAS DE ALTO RISCO E DISTINÇÕES CRÍTICAS ├── Porquanto (Causa/Explicação) vs. Conquanto (Concessão) ├── Posto que (Concessão) vs. Visto que (Causa) ├── Posição do \"Pois\" (Início de oração com intercalação vs. Posposto ao verbo) └── Pontuação Exemplificativa (como X vs., por exemplo, X)"
         }
       ],
@@ -415,7 +416,7 @@
           "entityId": "RULE-IP-A02-G05-001",
           "title": "Quadro sintético de valores do conectivo \"Como\"",
           "statement": "Comparativo (KB-A02-G05-002): Estabelece analogia/semelhança entre termos autônomos. Teste: termo posterior comparado ao anterior.\nConformativo (KB-A02-G05-003): Indica acordo com modelo ou citação. Equivalentes: conforme, consoante, de acordo com, segundo.\nCausal (KB-A02-G05-004): Indica o fato gerador/motivo. Teste: \"O fato de X fez com que Y\". Nunca explicativo.\nAditivo (KB-A02-G05-005): Soma ideias em estruturas correlativas (não só... como também). Equivalente: conjunção aditiva E.\nExemplificativo (KB-A02-G05-006): Introduz casos concretos de uma categoria genérica. Equivalente: por exemplo (exige vírgula dupla).",
-          "scope": "complex_sentence",
+          "scope": "morphology",
           "modality": "prohibited",
           "conditions": [
             "Comparativo (KB-A02-G05-002): Estabelece analogia/semelhança entre termos autônomos. Teste: termo posterior comparado ao anterior.",
@@ -442,7 +443,7 @@
           "entityId": "RULE-IP-A02-G05-002",
           "title": "Mapeamento canônico de substituições diretas",
           "statement": "No entanto $\\rightarrow$ Todavia / Contudo / Porém (Adversativa pura — KB-A02-G05-008).\nDe acordo com $\\rightarrow$ Consoante / Conforme (Conformativa pura — KB-A02-G05-003).\nEmbora $\\rightarrow$ Conquanto / Posto que (Concessiva pura — KB-A02-G05-009, KB-A02-G05-010).\nPorquanto $\\rightarrow$ Porque / Pois (Causal ou Explicativa — KB-A02-G05-010).\nVisto que $\\rightarrow$ Já que / Uma vez que / Como causal (Causal pura — KB-A02-G05-004, KB-A02-G05-012).",
-          "scope": "syntax",
+          "scope": "morphology",
           "modality": "mandatory",
           "conditions": [
             "No entanto $\\rightarrow$ Todavia / Contudo / Porém (Adversativa pura — KB-A02-G05-008).",
@@ -499,37 +500,37 @@
             {
               "order": 3,
               "action": "Aplicação do Filtro Lógico",
-              "explanation": "",
+              "explanation": "Passo 3 do algoritmo de Método de Identificação do Valor do Conectivo (\"O que vem depois salva\").",
               "test": null
             },
             {
               "order": 4,
               "action": "O elemento posterior é uma comparação/analogia com o termo anterior? $\\rightarrow$ COMPARAÇÃO.",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Método de Identificação do Valor do Conectivo (\"O que vem depois salva\").",
               "test": null
             },
             {
               "order": 5,
               "action": "O elemento posterior expressa adequação a um plano, norma ou citação? $\\rightarrow$ CONFORMIDADE.",
-              "explanation": null,
+              "explanation": "Passo 5 do algoritmo de Método de Identificação do Valor do Conectivo (\"O que vem depois salva\").",
               "test": null
             },
             {
               "order": 6,
               "action": "A oração expressa o fato gerador/motivo do evento seguinte? $\\rightarrow$ CAUSA.",
-              "explanation": null,
+              "explanation": "Passo 6 do algoritmo de Método de Identificação do Valor do Conectivo (\"O que vem depois salva\").",
               "test": null
             },
             {
               "order": 7,
               "action": "O segmento posterior agrega informação somada com base em par correlativo? $\\rightarrow$ ADIÇÃO.",
-              "explanation": null,
+              "explanation": "Passo 7 do algoritmo de Método de Identificação do Valor do Conectivo (\"O que vem depois salva\").",
               "test": null
             },
             {
               "order": 8,
               "action": "O segmento posterior cita integrantes específicos de um grupo maior citado antes? $\\rightarrow$ EXEMPLIFICAÇÃO.",
-              "explanation": null,
+              "explanation": "Passo 8 do algoritmo de Método de Identificação do Valor do Conectivo (\"O que vem depois salva\").",
               "test": null
             }
           ],
@@ -584,7 +585,7 @@
             {
               "order": 1,
               "action": "Isole a oração encabeçada pelo conector (Oração A) e a oração principal (Oração B).",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Teste Causal da Oração Subordinada.",
               "test": null
             },
             {
@@ -596,7 +597,7 @@
             {
               "order": 3,
               "action": "Se a relação causal se mantiver lógica e perfeita no texto, o conector possui valor CAUSAL e aceita substituição por visto que, já que, uma vez que, porque.",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Teste Causal da Oração Subordinada.",
               "test": null
             }
           ],
@@ -703,7 +704,7 @@
             {
               "order": 1,
               "action": "Identifique o conector original do texto e o conector sugerido pela banca.",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Método da Substituição Paradigmática de Conectores.",
               "test": null
             },
             {
@@ -715,13 +716,13 @@
             {
               "order": 3,
               "action": "Se pertencerem à mesma lista fixa, valide a assertiva como CORRETA.",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Método da Substituição Paradigmática de Conectores.",
               "test": null
             },
             {
               "order": 4,
               "action": "Se o conector original for polissêmico (como, pois, porquanto), examine a sintaxe da frase antes de concluir.",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Método da Substituição Paradigmática de Conectores.",
               "test": null
             }
           ],

@@ -4,7 +4,7 @@
     "unitId": "IP-A03-G06",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:31:53.962Z"
+    "generatedAt": "2026-08-18T23:33:08.135Z"
   },
   "unit": {
     "unitId": "IP-A03-G06",
@@ -14,9 +14,9 @@
     "variant": "development",
     "canonicalTopicId": "pt:a03:pronomes-relativos-regencia-e-reescrita",
     "learningObjectives": [
-      "OBJ-IP-A03-G06-001",
-      "OBJ-IP-A03-G06-002",
-      "OBJ-IP-A03-G06-003"
+      "Fundamentos de Pronomes Relativos - Regência e Reescrita",
+      "Aplicação Prática e Decisão em Pronomes Relativos - Regência e Reescrita",
+      "Articulação SuVeCA e Armadilhas de Prova em Pronomes Relativos - Regência e Reescrita"
     ]
   },
   "sections": {
@@ -49,7 +49,8 @@
           ]
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "A03-G06-REGENCIA-REESCRITA-RELATIVOS ├── FUNDAMENTOS DO PRONOME RELATIVO │ ├── Função Textual: Anáfora / Substituição (KB-001) │ └── Natureza do Antecedente: Obrigatoriamente Substantiva (KB-002) │ ├── Substantivo (Comum / Próprio) │ ├── Pronome Substantivo Demonstrativo (o, a, os, as = aquilo, aquele, aquela) │ └── Numeral Substantivo ├── INVENTÁRIO E EMPREGO DOS RELATIVOS │ ├── Coringas: QUE / O QUAL (Pessoas e Coisas; flexões preposicionadas) (KB-003) │ ├── Pessoal Preposicionado: QUEM (Exige pessoa + preposição obrigatória) (KB-004) │ │ └── Gera Objeto Direto Preposicionado com VTD │ ├── Circunstanciais: COMO (Modo), QUANTO (Quantidade), QUANDO (Tempo) (KB-005) │ ├── Espaciais Estritos: ONDE / AONDE / DONDE (KB-006) │ │ ├── ONDE: Permanência / Preposição EM │ │ ├── AONDE: Movimento / Preposição A │ │ └── DONDE: Origem / Preposição DE │ └── Possessivo Insubstituível: CUJO (KB-007) │ ├── Vincula dois substantivos em relação de posse (Subst.2 + de + Subst.1) │ ├── Internaliza a preposição \"de\" │ └── Acopla preposição externa regida pelo verbo antes de si (com cujo, de cujo) ├── PROCEDIMENTOS OPERACIONAIS DE REGÊNCIA │ ├── Método Algorítmico em 4 Passos (PROC-001) │ │ ├── Passo 1: Isolar a Oração Adjetiva │ │ ├── Passo 2: Localizar o Verbo/Regente │ │ ├── Passo 3: Identificar o Sujeito │ │ └── Passo 4: Ordem Direta + Completar com Antecedente (\"Olho no peixe, olho no gato\") │ └── Regência de Verbos de Movimento: A vs. PARA / Crase (KB-010) └── REESCRITA E ANÁLISE PRAGMÁTICA (PADRÃO CESPE/CEBRASPE) ├── Método de Julgamento em 5 Passos (PROC-002) ├── Fenômeno da Dupla Regência (VTI vs. VTD) (KB-009) ├── Correção Gramatical vs. Preservação de Sentido (WARN-005) └── Proibição de Onde/Aonde para Antecedentes Abstratos (WARN-006)"
         }
       ],
@@ -539,7 +540,7 @@
           "entityId": "RULE-IP-A03-G06-001",
           "title": "Regras canônicas",
           "statement": "Regras canônicas",
-          "scope": "syntax",
+          "scope": "morphology",
           "modality": "mandatory",
           "conditions": [
             "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
@@ -750,19 +751,19 @@
             {
               "order": 5,
               "action": "Julgamento Lógico",
-              "explanation": "",
+              "explanation": "Passo 5 do algoritmo de Procedimento de Validação em 5 Passos para Questões de Reescritura (Padrão CESPE/CEBRASPE).",
               "test": null
             },
             {
               "order": 6,
               "action": "Se o item afirmou manter correção E sentido, e o sentido mudou -> Marcar ERRADO.",
-              "explanation": null,
+              "explanation": "Passo 6 do algoritmo de Procedimento de Validação em 5 Passos para Questões de Reescritura (Padrão CESPE/CEBRASPE).",
               "test": null
             },
             {
               "order": 7,
               "action": "Se o item afirmou que a troca prejudicaria a correção, e o verbo exige estritamente a preposição -> Marcar CERTO.",
-              "explanation": null,
+              "explanation": "Passo 7 do algoritmo de Procedimento de Validação em 5 Passos para Questões de Reescritura (Padrão CESPE/CEBRASPE).",
               "test": null
             }
           ],
@@ -1934,12 +1935,13 @@
       "examBoard": "CEBRASPE",
       "organization": "SEFAZ-DF",
       "year": 2020,
-      "prompt": "Considerando os aspectos linguísticos do texto CG1A1-I, julgue o item a seguir. No trecho “os investidores reconhecem cada vez mais o impacto, para a sociedade, das empresas nas quais investem” (l. 35 a 37), a substituição de “nas quais” por aonde prejudicaria a correção gramatical do texto.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A03-aula03.q0018.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "explanation": "O pronome relativo \"aonde\" só deve ser utilizado quando o verbo indicar ideia de movimento e exigir a preposição \"a\". Exemplo: Aonde você vai? (Vejam que o verbo \"ir\" indica movimento e também exige a preposição \"a\" - ir a algum lugar). Este não é o caso do verbo \"investir\". Logo, a substituição de “nas quais” por aonde prejudicaria a correção gramatical do texto. Questão correta!",
       "questionSha256": "7fe891ea9e5869d398c2703e41008b47f4a9533d4ed3722d846e4b2426026ab6",
       "answerSha256": "cc0b418903c16f2c6d3ba0d3a0d1a2d3f65717f9ca4005662edceeae1610e921",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Relativos - Regência e Reescrita; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1950,11 +1952,12 @@
       "examBoard": "CEBRASPE",
       "organization": "SEFAZ-DF",
       "year": 2020,
-      "prompt": "Considerando os aspectos linguísticos do texto CG1A1-I, julgue o item a seguir. No trecho “os investidores reconhecem cada vez mais o impacto, para a sociedade, das empresas nas quais investem” (l. 35 a 37), a substituição de “nas quais” por aonde prejudicaria a correção gramatical do texto.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A03-aula03.q0080.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "questionSha256": "d1ac313b1737c5457c994ca0bdc65c3ab87a538919a0ef408ea26ab559716649",
       "answerSha256": "cf9f39e0fcba15001f24a6444d60e86ba9fed010ff7627ca48036adebd3e6683",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Relativos - Regência e Reescrita; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1965,11 +1968,12 @@
       "examBoard": "CEBRASPE",
       "organization": "PREF. DE SÃO CRISTÓVÃO (SE)",
       "year": 2019,
-      "prompt": "Acerca das ideias, dos sentidos e das propriedades linguísticas do texto anterior, julgue o item a seguir. A substituição de “a que” (l.5) por onde manteria a correção gramatical e os sentidos originais do texto.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A03-aula03.q0087.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "questionSha256": "afc29f933f53014aef3aadca688232c61f5847aabf93aa1a438fa46ed63e38b8",
       "answerSha256": "56aa870b3d845591b7ebd5a4a6d6bc71e3a165edc36963954cdf27ba3bdb8364",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Relativos - Regência e Reescrita; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1980,12 +1984,13 @@
       "examBoard": "CEBRASPE",
       "organization": "MPE TO",
       "year": 2024,
-      "prompt": "Vivemos num tempo em que as questões legais se tornaram corriqueiras. No primeiro período do terceiro parágrafo, a forma pronominal “se” poderia ser corretamente deslocada para logo após a forma verbal “tornaram” — escrevendo-se tornaram-se.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A03-aula03.q0042.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "explanation": "Questão muito perigosa. O pronome relativo \"que\" atrai próclise, então a ênclise é proibida. A dúvida é: mesmo havendo o sujeito \"as questões\" entre a palavra atrativa e o verbo? Sim. Isso mesmo. A regra é usar a próclise em oração subordinada. Por isso as conjunções subordinativas e os pronomes relativos são palavras atrativas. O fato de haver um sujeito entre o \"que\" e a palavra atrativa não tira a obrigatoriedade da próclise. É o que a gramática chama de \"atração remota\". Questão incorreta.",
       "questionSha256": "6da8e5758b05349c623b57fb29ae4daa71430da8eb0b11ecfb65b76fa67801a8",
       "answerSha256": "619d83501fd8d3f4fba1bc53991c1a4b898dbfc4c034035faf79ec90ab6b5b66",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Relativos - Regência e Reescrita; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1996,12 +2001,13 @@
       "examBoard": "CEBRASPE",
       "organization": "SEFAZ-DF",
       "year": 2020,
-      "prompt": "Considerando os aspectos linguísticos do texto CG1A1-I, julgue o item a seguir. No trecho “os investidores reconhecem cada vez mais o impacto, para a sociedade, das empresas nas quais investem” (l. 35 a 37), a substituição de “nas quais” por aonde prejudicaria a correção gramatical do texto.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A03-aula03.q0056.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "explanation": "O pronome relativo \"aonde\" só deve ser utilizado quando o verbo indicar ideia de movimento e exigir a preposição \"a\". Exemplo: Aonde você vai? (Vejam que o verbo \"ir\" indica movimento e também exige a preposição \"a\" - ir a algum lugar). Este não é o caso do verbo \"investir\". Logo, a substituição de “nas quais” por aonde prejudicaria a correção gramatical do texto. Questão correta!",
       "questionSha256": "3d2083d33d71c98c47ab3c355dac7efc1a93f9f544448a7642c2b44d865af387",
       "answerSha256": "29c1b9606e551062039bd9c88712e5fddd8f53ab205f6a709fa9a33f9cdda0e2",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Relativos - Regência e Reescrita; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -2012,12 +2018,13 @@
       "examBoard": "CEBRASPE",
       "organization": "MPE TO",
       "year": 2024,
-      "prompt": "Hoje, o aquecimento global e outros problemas ambientais são temas dominantes e urgentes. Todo ano, a organização americana Global Footprint Network calcula o chamado dia da sobrecarga da Terra, a data em que ultrapassamos a capacidade do planeta de reequilibrar seus sistemas ecológicos e regenerar recursos naturais. No segundo período do quarto parágrafo, “em que” poderia ser substituído por onde sem prejuízo da correção gramatical e da coerência do texto.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A03-aula03.q0008.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "explanation": "\"em que\" retoma \"data\", referente temporal; então seria possível trocar por \"na qual\" ou até pelo relativo \"quando\": dia da sobrecarga da Terra, a data em que/ na qual/ quando ultrapassamos Não caberia o uso do pronome relativo \"onde\", pois esse pronome deve ser usado para retomar ideia de lugar, não de tempo.\n\nQuestão incorreta.",
       "questionSha256": "af836f23b881d0f89ee668654db2880b76cbdd622edfb7dc8fde43c67efc86d2",
       "answerSha256": "09ec3ad2cbdb2eddbc240b2938266a0709105d8a439297b9d0f94c13604116d5",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Relativos - Regência e Reescrita; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -2028,12 +2035,13 @@
       "examBoard": "CEBRASPE",
       "organization": "PC PE",
       "year": 2024,
-      "prompt": "“A violência letal, aquela que envolve, sob diferentes tipos jurídicos possíveis, situações em que uma pessoa mata a outra, manteve a tendência nacional de queda iniciada em 2018, mesmo que os números de 2022 indiquem uma curva de desaceleração.” Julgue o item a seguir. Estariam mantidas a correção gramatical do texto e sua coerência caso o vocábulo “aquela” fosse suprimido do período.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A03-aula03.q0005.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "explanation": "No texto original, o pronome relativo \"que\" retoma o pronome \"aquela\", seu antecedente: A violência letal, aquela que envolve Se suprimirmos o \"aquela\", o \"que\" passa a retomar o substantivo \"violência\": A violência letal, que envolve Então, não haveria erro gramatical. Também não haveria qualquer incoerência (contradição, incompatibilidade, ausência de lógica), porque o \"aquela\" já se referia à violência letal no original. Então, o texto continuaria fazendo todo o sentido. Questão correta.",
       "questionSha256": "071a57b10663dd2b10a92e5de3977378bcc060bb26ee96118e7497e9b40d1b65",
       "answerSha256": "b21672c8fad831dc95d30eab77de2bc41f30bfd0ba97d9f43896f38ecf047890",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Relativos - Regência e Reescrita; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "pedagogicalEvaluation": {
@@ -2053,12 +2061,13 @@
       "examBoard": "POLÍCIA CIVIL DO MARANHÃO",
       "organization": "2018",
       "year": 2018,
-      "prompt": "Em 2016, foram registrados 16 acidentes, com 303 vítimas fatais, e o último episódio, com um avião de passageiros de maiores proporções: a queda do Avro RJ85, operado pela empresa LaMia, próximo de Medellín, na Colômbia. O desastre, que completou um ano no último dia 28 de novembro, matou 71 pessoas, em sua maior parte atletas do time brasileiro da Chapecoense. Com relação a aspectos linguísticos do texto, JULGUE O ITEM. A substituição do termo “que” por o qual prejudicaria a correção gramatical do texto.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A03-aula03.q0136.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "explanation": "O pronome relativo invariável “que” pode ser substituído pelos seus equivalentes variáveis, como “o qual, a qual, os quais, as quais”. No caso, usaríamos “o qual”, para concordar no masculino singular com “desastre”. Gabarito questão incorreta.\n\n4- O pronome “quem” se refere a pessoa ou ente personificado (visto como pessoa) e é precedido por preposição (monossilábica ou não).\n\nEx: A pessoa de quem falei chegou. (substituição possível: “de que falei”, “da qual falei”). A pessoa por quem intervim não mostrou gratidão.\n\nEm sentenças interrogativas, “quem” é pronome interrogativo: Quem gosta de acordar cedo?\n\nSegundo Bechara, os pronomes relativos quem e onde podem aparecer com emprego absoluto, sem referência a antecedentes, ou seja, sem “retomar ninguém”: “Quem tudo quer tudo perde.\" \"Dize-me com quem andas e eu te direi quem és.\" \"Quem com ferro fere com ferro será ferido.” \"Moro onde mais me agrada.”\n\n5- O pronome “cujo” tem como principais características: ✔ Indicar posse e sempre vir entre dois substantivos, possuidor e possuído; ✔ Não poder ser seguido nem precedido de artigo, mas poder ser antecedido por preposição; (Para lembrar: nada de cujo o, cuja a, cujo os, cuja as...) ✔ Não pode ser diretamente substituído por outro pronome relativo.\n\nPara achar o referente, pergunte ao termo seguinte: “de quem?”. Ex: Vi o filme cujo diretor ganhou o Oscar. (diretor de quem? Do filme!) Vi o rapaz a cujas pernas você se referiu. (pernas de quem? Do rapaz!)",
       "questionSha256": "a0b974348d8b3eb33baf030431b3e5ee7d6fa2c5d188742e3ab3f1d7efa122e1",
       "answerSha256": "51b00002e46355cecf8e2639ae1e4f98cf2beaba330ffe8cc268e43218c0ee9a",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de POLÍCIA CIVIL DO MARANHÃO; 2. Identificar a regra central de Pronomes Relativos - Regência e Reescrita; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "pedagogicalEvaluation": {
@@ -2078,12 +2087,13 @@
       "examBoard": "CGE-CE",
       "organization": "CONHECIMENTOS BÁSICOS",
       "year": 2019,
-      "prompt": "Julgue a proposta de reescrita para o trecho “Ainda hoje, em muitos rincões do nosso país, são encontrados administradores públicos cujas ações em muito se assemelham às de Nabucodonosor, rei do império babilônico”. Muitos rincões do nosso país, ainda hoje, têm administradores públicos cujas as ações muito assemelham-se as ações do imperador babilônico Nabucodonosor.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A03-aula03.q0139.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "explanation": "Lembre-se que não há artigo após o pronome \"cujo\", ou seja, não é possível dizer cujas as ações. Por isso, Gabarito: questão incorreta.\n\n6- O pronome relativo “onde” deve ser usado quando o antecedente indicar lugar físico (ainda que virtual, figurativo), com sentido de “posicionamento em”. Como preposição “em” também indica uma referência locativa, podemos substituir “onde” por “em que” e por “no qual” e variações. Ex: A academia onde treino não tem aulas de MMA. A academia na qual/em que treino não tem aulas de MMA.\n\nVeja que é inadequado usar \"onde\" para outra referência que não seja lugar físico.\n\nEx: Essa é a hora onde o aluno se desespera. ✔ Ex: Essa é a hora em que/na qual o aluno se desespera.\n\nO pronome relativo “aonde” é usado nos casos em que o verbo pede a preposição “a”, com sentido de “em direção a”. Ex: Gosto da cidade aonde irei.\n\nO pronome relativo arcaico “donde”, que equivale a “de onde”, é usado nos casos em que o verbo pede a preposição “de”, com sentido de “procedência”. Ex: O lugar donde você voltou é distante.\n\n7- O pronome relativo “como” é usado quando o antecedente for palavra como forma, modo, maneira, jeito, ou outra, com sentido de “modo”. Ex: Não aceito o jeito como você fala comigo.\n\n8- O pronome relativo “quando” é usado nos casos em que antecedente tiver sentido de “tempo”. Ex: Sinto saudade da época quando eu não tinha preocupações.\n\n9- O pronome relativo “quanto” é usado nos casos em que antecedente tiver sentido de “quantidade”. Ex: Consegui tudo/tanto quanto queria, exceto tempo para desfrutar.\n\nReforçando: temos que ter atenção à preposição que o verbo/nome vai pedir, pois ela não deve ser suprimida e vai aparecer antes do pronome relativo.\n\nLembre-se: temos que enxergar sintaticamente o pronome relativo como se fosse o próprio termo a que se refere:\n\nEx: O menino a que me referi morreu. (referi-me “a” que => ao menino) O escritor de cujos poemas gosto morreu. (gosto “de” cujos => dos poemas)\n\nEsqueci o valor com quanto concordei. (concordei “com” quanto => com o valor).",
       "questionSha256": "50b6cbb688202ff33dbe65b1ed8b1130cac7d223bac6d03874b8477cb2b47006",
       "answerSha256": "d5c5f2a185a6e2aa8b4cf5664b603125ad048c7cbc6100118dcb2a3eecf90872",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CGE-CE; 2. Identificar a regra central de Pronomes Relativos - Regência e Reescrita; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "pedagogicalEvaluation": {
@@ -2103,7 +2113,7 @@
       "examBoard": "PGE-AM",
       "organization": "2022",
       "year": 2022,
-      "prompt": "Saberia Rubião que o nosso Quincas Borba trazia aquele grãozinho de sandice, que um médico supôs achar-lhe? (2º parágrafo). Os pronomes sublinhados referem-se, respectivamente, a (A) um médico e grãozinho de sandice. (B) Quincas Borba e Rubião. (C) Quincas Borba e grãozinho de sandice. (D) grãozinho de sandice e Rubião. (E) grãozinho de sandice e Quincas Borba",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A03-aula03.q0134.",
       "options": [
         {
           "label": "A",
@@ -2130,6 +2140,7 @@
       "explanation": "O que o médico achou? Um grão de sandice. Em quem? No Quincas Borba. Então, podemos dizer que o pronome relativo \"que\" tem como antecedente o \"grãozinho de sandice\" e o \"lhe\" retoma \"Quincas Borba\". Gabarito letra E.",
       "questionSha256": "55e8ef4e21aed8fca2d141ccc4b6e2482ad63fd7b0483449b077a92de352a71e",
       "answerSha256": "7e81959078a0deab0ee8cb24d352d9261d13aaf26bb8deed3237f12c75ebe1d9",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de PGE-AM; 2. Identificar a regra central de Pronomes Relativos - Regência e Reescrita; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "pedagogicalEvaluation": {

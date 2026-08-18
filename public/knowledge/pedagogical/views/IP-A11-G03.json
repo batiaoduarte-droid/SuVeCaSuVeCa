@@ -4,7 +4,7 @@
     "unitId": "IP-A11-G03",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:31:54.109Z"
+    "generatedAt": "2026-08-18T23:33:08.285Z"
   },
   "unit": {
     "unitId": "IP-A11-G03",
@@ -14,9 +14,9 @@
     "variant": "development",
     "canonicalTopicId": "pt:a11:coesao-referencial",
     "learningObjectives": [
-      "OBJ-IP-A11-G03-001",
-      "OBJ-IP-A11-G03-002",
-      "OBJ-IP-A11-G03-003"
+      "Fundamentos de Coesão Referencial",
+      "Aplicação Prática e Decisão em Coesão Referencial",
+      "Articulação SuVeCA e Armadilhas de Prova em Coesão Referencial"
     ]
   },
   "sections": {
@@ -48,7 +48,8 @@
           ]
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "COESÃO TEXTUAL (\"A LIGA\") │ ┌───────────────────────┴───────────────────────┐ ▼ ▼ COESÃO SEQUENCIAL COESÃO REFERENCIAL (Conectores lógico-semânticos: (Mecanismos de substituição causa, oposição, tempo, etc.) e apontamento: \"Setas\") │ │ └──────── Sem envio de setas ──────┐ │ │ ▼ TRÍADE DA REFERENCIAÇÃO ├── Coesivo (Emissor / Operador) ├── Referência (A Seta / Processo) └── Referente (Receptor / Alvo) │ ┌───────────────────────────────┴───────────────────────────────┐ ▼ ▼ FUNÇÃO ENDOFÓRICA FUNÇÃO EXOFÓRICA (DÊIXIS) (Referente EXPLÍCITO no texto) (Referente FORA do texto / Situação) │ │ ┌─────────────┴─────────────┐ ┌─────────────┼─────────────┐ ▼ ▼ ▼ ▼ ▼ ANÁFORA CATÁFORA QUEM QUANDO ONDE (Aponta p/ trás / (Aponta p/ frente / (Pessoa / (Tempo / (Espaço / termo antecedente) termo subsequente) Interlocutor) Cronologia) Lugar) │ │ │ │ │ └─────────────┬─────────────┘ └──────┬──────┴──────┬──────┘ │ │ │ ▼ ▼ ▼ MECANISMOS E CLASSES CRÍTICAS EXPLICITAÇÃO PROIBIÇÃO EM ├── Pronomes Pessoais / Relativos TEXTUAL REDAÇÃO │ └── Concordam com o referente (Converte dêixis (Autonomia ├── Pronomes Demonstrativos (Isso/Esse) em endófora) do texto) │ └── Função Resumitiva (Todo vs. Parte) ├── Pronomes Possessivos (Seu/Sua) │ ├── Concorda com: Coisa possuída (posposta) │ └── Refere-se a: Possuidor (antecedente) └── Coesão Lexical (FGV) └── Substantivo retoma verbo / hiperônimos"
         }
       ],
@@ -446,7 +447,8 @@
           ]
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "CONCORDÂNCIA (Morfossintaxe) ┌─────────────────────────────┐ ▼ │ [ os países ]  [ cadeias produtivas ] ▲ │ └────────────────────┘ REFERENCIAÇÃO (Semântica / Posse: \"cadeias produtivas DELES\")"
         },
         {
@@ -518,7 +520,7 @@
           "entityId": "RULE-IP-A11-G03-001",
           "title": "Regras canônicas",
           "statement": "Regras canônicas",
-          "scope": "syntax",
+          "scope": "textual_cohesion",
           "modality": "mandatory",
           "conditions": [
             "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
@@ -625,19 +627,19 @@
             {
               "order": 1,
               "action": "Isolar substantivo posposto (com que concorda morfologicamente - NÃO É O REFERENTE);",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Algoritmo Geral para Identificação e Validação de Referentes em Provas Objetivas e Discursivas.",
               "test": null
             },
             {
               "order": 2,
               "action": "Substituir mentalmente por \"dele / deles / dela / delas\";",
-              "explanation": null,
+              "explanation": "Passo 2 do algoritmo de Algoritmo Geral para Identificação e Validação de Referentes em Provas Objetivas e Discursivas.",
               "test": null
             },
             {
               "order": 3,
               "action": "Identificar o possuidor antecedente (este é o REFERENTE).",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Algoritmo Geral para Identificação e Validação de Referentes em Provas Objetivas e Discursivas.",
               "test": null
             }
           ],
@@ -653,7 +655,8 @@
           ],
           "blocks": [
             {
-              "type": "paragraph",
+              "type": "diagram",
+              "diagramType": "tree",
               "text": "INÍCIO: Isolar o Elemento Coesivo │ ▼ O referente está explícito dentro da superfície textual? │ ┌────────────────────┴────────────────────┐ ▼ SIM ▼ NÃO FUNÇÃO ENDOFÓRICA FUNÇÃO EXOFÓRICA (DÊIXIS) │ │ ┌────────┴────────┐ ┌────────┼────────┐ ▼ ▼ ▼ ▼ ▼ ANÁFORA CATÁFORA QUEM QUANDO ONDE (Vetor p/ trás) (Vetor p/ frente) (Pessoa) (Tempo) (Espaço) │ ▼ Identificar a Classe do Coesivo Anafórico: ├── Pronome Pessoal / Relativo: Aplicar filtro de concordância com antecedente. ├── Pronome Demonstrativo (Isso): Testar escopo (retoma o fato global ou um sintagma?). └── Pronome Possessivo (Seu/Sua):"
             },
             {
@@ -713,19 +716,19 @@
             {
               "order": 5,
               "action": "Passo 5 — Julgamento da Assertiva",
-              "explanation": "",
+              "explanation": "Passo 5 do algoritmo de Protocolo dos Dois Candidatos para Julgamento de Assertivas do CEBRASPE.",
               "test": null
             },
             {
               "order": 6,
               "action": "Se o Candidato A (da banca) for o único sustentado pelo predicado posterior $\\rightarrow$ Julgue CERTO.",
-              "explanation": null,
+              "explanation": "Passo 6 do algoritmo de Protocolo dos Dois Candidatos para Julgamento de Assertivas do CEBRASPE.",
               "test": null
             },
             {
               "order": 7,
               "action": "Se o Candidato B (o concorrente) for o termo real exigido pela lógica do autor $\\rightarrow$ Julgue ERRADO.",
-              "explanation": null,
+              "explanation": "Passo 7 do algoritmo de Protocolo dos Dois Candidatos para Julgamento de Assertivas do CEBRASPE.",
               "test": null
             }
           ],

@@ -4,7 +4,7 @@
     "unitId": "IP-A01-G01",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:31:53.912Z"
+    "generatedAt": "2026-08-18T23:33:08.083Z"
   },
   "unit": {
     "unitId": "IP-A01-G01",
@@ -14,7 +14,7 @@
     "variant": "development",
     "canonicalTopicId": "pt:a01:classes-variaveis-e-invariaveis",
     "learningObjectives": [
-      "OBJ-IP-A01-G01-01"
+      "Objetivo 1"
     ]
   },
   "sections": {
@@ -45,7 +45,8 @@
           ]
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "SISTEMA MORFOLÓGICO DA LÍNGUA PORTUGUESA (10 CLASSES) │ ├── 1. CLASSES VARIÁVEIS (Admitem flexão de Gênero [M/F] e Número [S/P]) │ ├── Substantivo: Núcleo do sistema nominal; nomeia seres/ideias; admite Artigo antecedente. │ ├── Artigo: Acompanha e determina/generaliza o substantivo. │ ├── Adjetivo: Palavra simples que caracteriza o substantivo (Flexiona no plural). │ │ └── [Contraste] Locução Adjetiva: Expressão (Prep + Subst); em regra INVARIÁVEL. │ ├── Pronome: Relação com o nome. │ │ ├── Pronome Substantivo: Ocupa o lugar do nome (isolado na função). │ │ └── Pronome Adjetivo: Acompanha o substantivo (manda seta para ele). │ ├── Numeral: Quantifica, ordena, multiplica ou fraciona seres. │ │ ├── Numeral Substantivo: Atua isoladamente como núcleo nominal. │ │ └── Numeral Adjetivo: Acompanha e determina o substantivo. │ └── Verbo: Exprime ação, estado, fenômeno; classe de maior flexibilidade morfológica. │ └── 2. CLASSES INVARIÁVEIS (Forma fixa; sem flexão de gênero e número) ├── Advérbio: Modifica Verbo, Adjetivo ou outro Advérbio; indica circunstância. │ ├── Locução Adverbial: Expressão preposicionada com valor adverbial (invariável). │ └── [Exceção] Advérbio \"Todo/Toda\": Admite concordância atípica com adjetivo feminino. ├── Conjunção: Conectivo; liga orações ou termos de mesma função sintática. │ └── Locução Conjuntiva: Expressão conectiva; TERMINA OBRIGATORIAMENTE EM CONJUNÇÃO. ├── Preposição: Conectivo; liga termos (palavras) ou orações reduzidas. │ └── Locução Prepositiva: Expressão conectiva; TERMINA OBRIGATORIAMENTE EM PREPOSIÇÃO. └── Interjeição: Palavra/expressão invariável que exprime emoções, sentimentos e sensações."
         }
       ],
@@ -441,7 +442,7 @@
           "entityId": "RULE-IP-A01-G01-001",
           "title": "Quadro Sinótico de Classes e Flexibilidade",
           "statement": "\\*Exceções registradas: Pronomes invariáveis (alguém, ninguém, tudo); Advérbio de intensidade todo (\"toda feliz\").",
-          "scope": "syntax",
+          "scope": "morphology",
           "modality": "mandatory",
           "conditions": [
             "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
@@ -546,7 +547,7 @@
           "entityId": "RULE-IP-A01-G01-002",
           "title": "Regra Canônica das Locuções",
           "statement": "Locução Adjetiva: Expressão preposicionada que qualifica substantivo $\\rightarrow$ Em regra Invariável (KB-...-003).\nLocução Conjuntiva: Expressão conectiva que termina em conjunção (KB-...-008).\nLocução Prepositiva: Expressão conectiva que termina em preposição (KB-...-008).",
-          "scope": "syntax",
+          "scope": "morphology",
           "modality": "mandatory",
           "conditions": [
             "Locução Adjetiva: Expressão preposicionada que qualifica substantivo $\\rightarrow$ Em regra Invariável (KB-...-003).",
@@ -588,19 +589,19 @@
             {
               "order": 1,
               "action": "Isole o vocábulo sob análise na frase.",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Teste do Artigo para Identificação de Substantivos.",
               "test": null
             },
             {
               "order": 2,
               "action": "Tente inserir imediatamente antes dele um artigo definido (o, a, os, as) ou indefinido (um, uma).",
-              "explanation": null,
+              "explanation": "Passo 2 do algoritmo de Teste do Artigo para Identificação de Substantivos.",
               "test": null
             },
             {
               "order": 3,
               "action": "Se a estrutura acolher o artigo mantendo a higidez gramatical e o sentido, a palavra funciona contextualmente como Substantivo.",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Teste do Artigo para Identificação de Substantivos.",
               "test": null
             }
           ],
@@ -644,25 +645,25 @@
             {
               "order": 1,
               "action": "Localize o pronome ou numeral na estrutura oracional.",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Teste da \"Seta\" para Diferenciação de Funções Substantivas e Adjetivas.",
               "test": null
             },
             {
               "order": 2,
               "action": "Verifique a existência de substantivo adjacente",
-              "explanation": "",
+              "explanation": "Passo 2 do algoritmo de Teste da \"Seta\" para Diferenciação de Funções Substantivas e Adjetivas.",
               "test": "Verifique a existência de substantivo adjacente:"
             },
             {
               "order": 3,
               "action": "Se a palavra manda uma seta para um substantivo ao lado $\\rightarrow$ Classifica-se como Pronome Adjetivo ou Numeral Adjetivo (\"Meu aluno\", \"Dois homens\").",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Teste da \"Seta\" para Diferenciação de Funções Substantivas e Adjetivas.",
               "test": null
             },
             {
               "order": 4,
               "action": "Se a palavra estiver isolada, sem substantivo ao lado, desempenhando ela própria o papel nuclear $\\rightarrow$ Classifica-se como Pronome Substantivo ou Numeral Substantivo (\"Alguém chegou\", \"Os dois chegaram\").",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Teste da \"Seta\" para Diferenciação de Funções Substantivas e Adjetivas.",
               "test": null
             }
           ],
@@ -713,25 +714,25 @@
             {
               "order": 1,
               "action": "Isole a expressão conectiva pluriverbal.",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Regra do Vocábulo Final para Locuções Conectivas.",
               "test": null
             },
             {
               "order": 2,
               "action": "Examine a última palavra que encerra a locução",
-              "explanation": "",
+              "explanation": "Passo 2 do algoritmo de Regra do Vocábulo Final para Locuções Conectivas.",
               "test": null
             },
             {
               "order": 3,
               "action": "Se a última palavra for uma preposição (de, a, em, com, por) $\\rightarrow$ A estrutura é uma Locução Prepositiva (a fim de, por causa de).",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Regra do Vocábulo Final para Locuções Conectivas.",
               "test": null
             },
             {
               "order": 4,
               "action": "Se a última palavra for uma conjunção (que, se, como) $\\rightarrow$ A estrutura é uma Locução Conjuntiva (a fim de que, visto que).",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Regra do Vocábulo Final para Locuções Conectivas.",
               "test": null
             }
           ],
@@ -794,25 +795,25 @@
             {
               "order": 3,
               "action": "Mapeamento",
-              "explanation": "",
+              "explanation": "Passo 3 do algoritmo de Protocolo do Método das Setas para Classificação Morfossintática.",
               "test": null
             },
             {
               "order": 4,
               "action": "Referência a Substantivo $\\rightarrow$ Natureza Adjetiva/Nominal (Variável).",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Protocolo do Método das Setas para Classificação Morfossintática.",
               "test": null
             },
             {
               "order": 5,
               "action": "Referência a Verbo, Adjetivo ou Advérbio $\\rightarrow$ Advérbio (Invariável).",
-              "explanation": null,
+              "explanation": "Passo 5 do algoritmo de Protocolo do Método das Setas para Classificação Morfossintática.",
               "test": null
             },
             {
               "order": 6,
               "action": "Ligação pura $\\rightarrow$ Preposição / Conjunção (Invariável).",
-              "explanation": null,
+              "explanation": "Passo 6 do algoritmo de Protocolo do Método das Setas para Classificação Morfossintática.",
               "test": null
             },
             {
@@ -1807,12 +1808,13 @@
       "organization": "POLICIAL",
       "year": 2019,
       "role": "2019",
-      "prompt": "a correção gramatical do\nperíodo.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A01-aula01.q0023.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "explanation": "O artigo faz toda a diferença no sentido:\n“a cidade toda”— a cidade inteira, a cidade por completo.\n“toda cidade”— todas as cidades, qualquer cidade. Questão incorreta.",
       "questionSha256": "a56694d30a056ff5d9c40f8ea9122a69407503a25ca37851d3959a8ce68fd87c",
       "answerSha256": "7c0a4385c47207696b255c330b1d9b240e1b265f66dd4988278c8645d8a02971",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de PRF; 2. Identificar a regra central de Classes Variáveis e Invariáveis; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1824,11 +1826,12 @@
       "organization": "PRF",
       "year": 2019,
       "role": "POLICIAL",
-      "prompt": "os sentidos e a\ncorreção gramatical do período.\n\n BACEN - Língua Portuguesa 98\n www.estrategiaconcursos.com.br 102",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A01-aula01.q0066.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "questionSha256": "010b957fba46adb174b0ee4ece9deb8dd9dc0e16d15fda24433adb397106f180",
       "answerSha256": "2bec534007fd78c65b64ced33111fa276897efb5e6bae5578f1cbeaf16ca72f2",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Classes Variáveis e Invariáveis; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1840,7 +1843,7 @@
       "organization": "TJ-CE",
       "year": 2023,
       "role": "2023",
-      "prompt": "a palavra \"mágica\" está\nempregada como um\n\nA) adjetivo. D) substantivo.\n\nB) advérbio de modo. E) verbo.\n\nC) pronome.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A01-aula01.q0040.",
       "options": [
         {
           "label": "A",
@@ -1858,6 +1861,7 @@
       "officialAnswer": "option_A",
       "questionSha256": "e6249f301e104d85d73f2382aacbefbcca254d8db763071191d9ebcc94dc4d5a",
       "answerSha256": "02c3ff311d6cf4a684d99db4eed2d87d017ebf7ebf9076c9f03bcdd8c3b0d6a7",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Classes Variáveis e Invariáveis; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": [
@@ -1888,11 +1892,12 @@
       "organization": "INOVERSASUL",
       "year": 2025,
       "role": "2025",
-      "prompt": "no texto\ncomo locuções adjetivas.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A01-aula01.q0047.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "questionSha256": "515f6fb6ed96195b63edd01362d4fc45a569be4f8186fa3d74b059b9a41346e5",
       "answerSha256": "b67db5aa9a1e4824bdc85c03fc915cb92d12cb60ad3747570264ad336f5153d0",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Classes Variáveis e Invariáveis; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -1904,7 +1909,7 @@
       "organization": "CGDF",
       "year": 2023,
       "role": "2023",
-      "prompt": "o termo quantum classifica-se\ngramaticalmente como\n\nA) adjetivo, empregado com valor semântico valorativo.\n\nB) substantivo, empregado com sentido quantitativo.\n\nC) pronome, empregado com valor semântico de intensidade.\n\nD) advérbio, empregado com sentido de proporcionalidade.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A01-aula01.q0033.",
       "options": [
         {
           "label": "A",
@@ -1926,6 +1931,7 @@
       "officialAnswer": "option_B",
       "questionSha256": "84c1fc65badb442963c51b9aca4b75e5e7445b6e40bf8d7910d19797ad7b0749",
       "answerSha256": "6029c8a925a0cbb3af8618af1cdbd440515c149142b36f84db7a15acefdde3f4",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Classes Variáveis e Invariáveis; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": [
@@ -1962,11 +1968,12 @@
       "organization": "INOVERSASUL",
       "year": 2025,
       "role": "2025",
-      "prompt": "Em “A eclosão da mal chamada Inconfidência Mineira deveria ter lugar em 1789” (quinto\nperíodo), o vocábulo “mal” está empregado como adjetivo.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A01-aula01.q0049.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "questionSha256": "6c3416edf1ab58c6926882f349094ec079c1348c271da1756d00b374908c446d",
       "answerSha256": "1027d7d1e23627e2c44440ae7c9303fbd1728453d9e71b67e0c4aefe738bdb2c",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Classes Variáveis e Invariáveis; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []

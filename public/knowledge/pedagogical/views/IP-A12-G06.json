@@ -4,7 +4,7 @@
     "unitId": "IP-A12-G06",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:31:54.124Z"
+    "generatedAt": "2026-08-18T23:33:08.298Z"
   },
   "unit": {
     "unitId": "IP-A12-G06",
@@ -14,9 +14,9 @@
     "variant": "foundation",
     "canonicalTopicId": "pt:a12:figuras-de-linguagem",
     "learningObjectives": [
-      "OBJ-IP-A12-G06-001",
-      "OBJ-IP-A12-G06-002",
-      "OBJ-IP-A12-G06-003"
+      "Fundamentos de Figuras de Linguagem - Fundamentos",
+      "Aplicação Prática e Decisão em Figuras de Linguagem - Fundamentos",
+      "Articulação SuVeCA e Armadilhas de Prova em Figuras de Linguagem - Fundamentos"
     ]
   },
   "sections": {
@@ -48,7 +48,8 @@
           ]
         },
         {
-          "type": "paragraph",
+          "type": "diagram",
+          "diagramType": "tree",
           "text": "FIGURAS DE LINGUAGEM (ESTILÍSTICA APLICADA) │ ├── 1. Figuras de Palavras / Semânticas (Tropos) │ ├── Metáfora (comparação implícita / predicação direta de identidade) │ ├── Comparação / Símile (comparação analógica explícita com conectivo formal) │ ├── Metonímia / Sinédoque (substituição por contiguidade lógica e material) │ │ ├── I. Autor pela obra │ │ ├── II. Continente pelo conteúdo │ │ ├── III. Abstrato pelo concreto │ │ ├── IV. Concreto pelo abstrato │ │ ├── V. A parte pelo todo │ │ ├── VI. Singular pelo plural │ │ ├── VII. Gênero pela espécie (e vice-versa) │ │ ├── VIII. Marca pelo produto │ │ └── IX. Matéria pelo objeto │ ├── Catacrese (empréstimo lexical cristalizado por lacuna vocabular da língua) │ └── Sinestesia (fusão e cruzamento de diferentes esferas sensoriais) │ ├── 2. Figuras de Pensamento │ ├── Antítese (confronto de termos/vocábulos opostos em referentes distintos) │ ├── Paradoxo / Oxímoro (contradição lógica de ideias sobre o mesmo referente) │ ├── Ironia (expressão deliberada do inverso do pensamento com pistas contextuais) │ ├── Eufemismo (atenuação expressiva de fatos trágicos, grosseiros ou desagradáveis) │ ├── Hipérbole (exagero enfático, intencional e desmedido da realidade) │ └── Prosopopeia / Personificação (atribuição de traços humanos a inanimados ou animais) │ ├── 3. Figuras de Sintaxe / Construção │ ├── Anacoluto (quebra da linearidade estrutural com isolamento do termo inicial) │ ├── Pleonasmo (repetição enfática literária vs. redundância viciosa) │ ├── Elipse (omissão contextual de termo subentendido) │ ├── Zeugma (omissão de termo expresso formalmente em oração anterior) │ ├── Silepse / Concordância Ideológica (concordância com o sentido mental) │ │ ├── Silepse de Gênero (flexão nominal conforme o sexo biológico/ideológico) │ │ ├── Silepse de Número (sujeito singular coletivo com verbo no plural afastado) │ │ └── Silepse de Pessoa (sujeito de 3ª pessoa associado a verbo na 1ª pessoa plural) │ └── Hipérbato / Inversão (deslocamento intencional da ordem direta da oração) │ └── 4. Figuras de Som / Harmonia ├── Onomatopeia (reprodução fonética aproximada de sons, ruídos e gritos) ├── Aliteração (repetição intencional e rítmica de fonemas consonantais) └── Assonância (repetição intencional e rítmica de fonemas vocálicos tônicos)"
         }
       ],
@@ -556,7 +557,7 @@
           "entityId": "RULE-IP-A12-G06-001",
           "title": "Regras canônicas",
           "statement": "Regras canônicas",
-          "scope": "syntax",
+          "scope": "semantics",
           "modality": "mandatory",
           "conditions": [
             "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
@@ -752,25 +753,25 @@
             {
               "order": 1,
               "action": "Localize os dois elementos associados semanticamente no período.",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Teste do \"Como\" para Metáfora versus Comparação.",
               "test": null
             },
             {
               "order": 2,
               "action": "Verifique se há conectivo comparativo formal expresso (como, tal qual, que nem). Se houver $\\rightarrow$ Classifique como Comparação.",
-              "explanation": null,
+              "explanation": "Passo 2 do algoritmo de Teste do \"Como\" para Metáfora versus Comparação.",
               "test": "Verifique se há conectivo comparativo formal expresso (como, tal qual, que nem). Se houver $\\rightarrow$ Classifique como Comparação."
             },
             {
               "order": 3,
               "action": "Se a relação for de identidade direta (com verbo de ligação), substitua mentalmente o verbo por \"é como\".",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Teste do \"Como\" para Metáfora versus Comparação.",
               "test": "Se a relação for de identidade direta (com verbo de ligação), substitua mentalmente o verbo por \"é como\"."
             },
             {
               "order": 4,
               "action": "Mantendo-se a perfeita inteligibilidade figurada da analogia sem conectivo original $\\rightarrow$ Classifique como Metáfora.",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Teste do \"Como\" para Metáfora versus Comparação.",
               "test": null
             }
           ],
@@ -815,7 +816,7 @@
             {
               "order": 1,
               "action": "Localize os vocábulos de valor semântico oposto no período.",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Teste do Referente e Inclusão para Antítese versus Paradoxo.",
               "test": null
             },
             {
@@ -827,13 +828,13 @@
             {
               "order": 3,
               "action": "Se atribuídas a elementos distintos ou coordenadas paralelas sem anulação lógica $\\rightarrow$ ANTÍTESE.",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Teste do Referente e Inclusão para Antítese versus Paradoxo.",
               "test": null
             },
             {
               "order": 4,
               "action": "Se atribuídas ao mesmo e único referente, gerando contradição insolúvel que anula a lógica formal $\\rightarrow$ PARADOXO (OXÍMORO).",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Teste do Referente e Inclusão para Antítese versus Paradoxo.",
               "test": null
             }
           ],
@@ -878,37 +879,37 @@
             {
               "order": 1,
               "action": "Isole o sujeito formal da oração e determine sua morfologia gramatical (gênero, número e pessoa).",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Protocolo de Identificação de Silepse em Provas.",
               "test": null
             },
             {
               "order": 2,
               "action": "Examine a flexão verbal ou nominal do predicativo.",
-              "explanation": null,
+              "explanation": "Passo 2 do algoritmo de Protocolo de Identificação de Silepse em Provas.",
               "test": null
             },
             {
               "order": 3,
               "action": "Havendo discrepância entre forma morfológica e flexão",
-              "explanation": "",
+              "explanation": "Passo 3 do algoritmo de Protocolo de Identificação de Silepse em Provas.",
               "test": null
             },
             {
               "order": 4,
               "action": "Feminino vs. Masculino biológico/ideológico (A bonita Porto Velho) $\\rightarrow$ Silepse de Gênero.",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Protocolo de Identificação de Silepse em Provas.",
               "test": null
             },
             {
               "order": 5,
               "action": "Singular formal vs. Verbo no Plural (O grupo... reagiram) $\\rightarrow$ Silepse de Número (verifique se o verbo está em oração posterior afastada; se estiver contíguo colado, marque como erro gramatical puro).",
-              "explanation": null,
+              "explanation": "Passo 5 do algoritmo de Protocolo de Identificação de Silepse em Provas.",
               "test": "Singular formal vs. Verbo no Plural (O grupo... reagiram) $\\rightarrow$ Silepse de Número (verifique se o verbo está em oração posterior afastada; se estiver contíguo colado, marque como erro gramatical puro)."
             },
             {
               "order": 6,
               "action": "Sujeito de 3ª pessoa vs. Verbo na 1ª pessoa do plural (Os brasileiros somos) $\\rightarrow$ Silepse de Pessoa.",
-              "explanation": null,
+              "explanation": "Passo 6 do algoritmo de Protocolo de Identificação de Silepse em Provas.",
               "test": null
             }
           ],
@@ -961,43 +962,43 @@
             {
               "order": 1,
               "action": "Encontre o verbo da oração principal.",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Algoritmo de Análise Sintática Restritiva para Anacoluto.",
               "test": null
             },
             {
               "order": 2,
               "action": "Identifique o sujeito gramatical legítimo e os complementos verbais diretos/indiretos.",
-              "explanation": null,
+              "explanation": "Passo 2 do algoritmo de Algoritmo de Análise Sintática Restritiva para Anacoluto.",
               "test": null
             },
             {
               "order": 3,
               "action": "Examine a expressão inicial isolada por pontuação",
-              "explanation": "",
+              "explanation": "Passo 3 do algoritmo de Algoritmo de Análise Sintática Restritiva para Anacoluto.",
               "test": null
             },
             {
               "order": 4,
               "action": "Ela exerce função de sujeito? Não.",
-              "explanation": null,
+              "explanation": "Passo 4 do algoritmo de Algoritmo de Análise Sintática Restritiva para Anacoluto.",
               "test": null
             },
             {
               "order": 5,
               "action": "Ela é objeto direto/indireto? Não.",
-              "explanation": null,
+              "explanation": "Passo 5 do algoritmo de Algoritmo de Análise Sintática Restritiva para Anacoluto.",
               "test": null
             },
             {
               "order": 6,
               "action": "Ela é adjunto adverbial, aposto ou vocativo? Não.",
-              "explanation": null,
+              "explanation": "Passo 6 do algoritmo de Algoritmo de Análise Sintática Restritiva para Anacoluto.",
               "test": null
             },
             {
               "order": 7,
               "action": "Restando o termo desprovido de qualquer função na malha sintática $\\rightarrow$ Classifique como Anacoluto.",
-              "explanation": null,
+              "explanation": "Passo 7 do algoritmo de Algoritmo de Análise Sintática Restritiva para Anacoluto.",
               "test": null
             }
           ],
@@ -1113,7 +1114,7 @@
             {
               "order": 1,
               "action": "Em questões de correspondência entre figura e frase, determine a figura real de cada alternativa independentemente do rótulo.",
-              "explanation": null,
+              "explanation": "Passo 1 do algoritmo de Método de Autoexclusão por Equivalência Estrutural (FGV).",
               "test": null
             },
             {
@@ -1169,19 +1170,19 @@
             {
               "order": 1,
               "action": "Observe a presença da preposição de conteúdo",
-              "explanation": "",
+              "explanation": "Passo 1 do algoritmo de Teste da Preposição \"De\" em Continente versus Conteúdo (FCC).",
               "test": null
             },
             {
               "order": 2,
               "action": "Estrutura [Recipiente] + de + [Alimento] (\"um prato de tutu\", \"um copo de suco\") $\\rightarrow$ Sentido literal descritivo de conteúdo (Não é metonímia).",
-              "explanation": null,
+              "explanation": "Passo 2 do algoritmo de Teste da Preposição \"De\" em Continente versus Conteúdo (FCC).",
               "test": null
             },
             {
               "order": 3,
               "action": "Omissão do alimento com presença isolada do recipiente (\"comeu o prato todo\", \"bebeu dois copos\") $\\rightarrow$ Metonímia legítima de continente pelo conteúdo.",
-              "explanation": null,
+              "explanation": "Passo 3 do algoritmo de Teste da Preposição \"De\" em Continente versus Conteúdo (FCC).",
               "test": null
             }
           ],
@@ -3083,12 +3084,13 @@
       "organization": "MPU",
       "year": 2018,
       "role": "ANALISTA",
-      "prompt": "Na linha 2, o adjetivo patente tem um significado de impressionante.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A12-aula12.q0057.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "explanation": "Tem um significado de evidente, óbvio, flagrante. Questão incorreta.",
       "questionSha256": "39823976c25b35763d4643155b298d5c832ec4dd67d8bab18e699a23e67589f1",
       "answerSha256": "3b383e44c4e5e128c2da0395a4730eebde03a58d73a263482dd19783940047c2",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Figuras de Linguagem - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -3100,11 +3102,12 @@
       "organization": "MPU",
       "year": 2018,
       "role": "ANALISTA",
-      "prompt": "Na linha 2, o adjetivo patente tem um significado de impressionante.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A12-aula12.q0127.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "questionSha256": "2bccce8f1d1b98f2e0af1e4fc324cc77bb38d5fe6ca1ee62307d64a44299baf6",
       "answerSha256": "3fab2ffea451d1739e3da22655b8754ec83527019f0ca8f7d0ed92728d56bd9b",
+      "extractionQuality": "partial",
       "cognitiveDemand": "analise_estrutural",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Figuras de Linguagem - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -3115,12 +3118,13 @@
       "examBoard": "CEBRASPE",
       "organization": "SEE-PE",
       "year": 2022,
-      "prompt": "No primeiro parágrafo, o verbo “denotar” apresenta o mesmo sentido de demonstrar, por isso é\ncorreto afirmar que são vocábulos homônimos.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A12-aula12.q0080.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "explanation": "\"Denotar\" significa: anunciar ou mostrar por certos sinais, indicar. Mesmo que o sentido fosse o\nmesmo, diríamos que são \"sinônimos\", não \"homônimos\".\n\"Homônimos\" são palavras que compartilham a mesma pronúncia ou grafia, mas possuem\nsignificados diferentes.\nQuestão incorreta.",
       "questionSha256": "b0a8b6e27e89ffef0894b88f4f0f3430b4de9dca9cc1c5634a831e65356aa2a3",
       "answerSha256": "14387b2fb47c0f0b2092c3fdd5035ae55e82c5d76a741679ba29db0ddb9504ac",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Figuras de Linguagem - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -3131,11 +3135,12 @@
       "examBoard": "CEBRASPE",
       "organization": "SEE-PE",
       "year": 2022,
-      "prompt": "No primeiro parágrafo, o verbo “denotar” apresenta o mesmo sentido de demonstrar, por isso é\ncorreto afirmar que são vocábulos homônimos.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A12-aula12.q0151.",
       "options": [],
-      "officialAnswer": "incorrect",
+      "officialAnswer": "ERRADO",
       "questionSha256": "96b64bbe84801edf555f93cc2b2c0e5cfc135789b1d08977a234502801a9a42b",
       "answerSha256": "ea09947dcf67c37eed520e57401396403f400623fb037aeb693724ff326c9d68",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Figuras de Linguagem - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -3146,12 +3151,13 @@
       "examBoard": "CEBRASPE",
       "organization": "PETROBRÁS",
       "year": 2022,
-      "prompt": "Em relação às ideias, aos sentidos e aspectos linguísticos do texto precedente, julgue o item\nsubsecutivo. No que se refere às ideias, aos sentidos e às construções linguísticas do texto\nprecedente, assim como a sua tipologia, julgue o item a seguir.\nO termo “Alegoria”, empregado no texto precedente, alude à ideia de representação.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A12-aula12.q0045.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "explanation": "No primeiro parágrafo, temos que Platão utiliza “linguagem alegórica”, que é uma forma\nmetafórica de representar suas ideias; por exemplo, o sol representa a verdade; as sombras\nrepresentam a ignorância e os preconceitos. Isso se coaduna com o significado da palavra\n“alegoria”, vejamos:\n(a.le.go.ri.a)\n1. Expressão do pensamento ou da emoção, muito us. em literatura, pintura e escultura, pela\nqual se representa simbolicamente um objeto para significar outro.\nQuestão correta.",
       "questionSha256": "a74e6a28fe5ef8b8767cd7b9c1a0919d18efeccc12d8200858b8cb49a9c5e46d",
       "answerSha256": "f0aebdf9fdfb1b3129ae901c7e4603a5c642cead824d6dde3ab78ebed478b111",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Figuras de Linguagem - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
@@ -3162,11 +3168,12 @@
       "examBoard": "CEBRASPE",
       "organization": "PETROBRÁS",
       "year": 2022,
-      "prompt": "Em relação às ideias, aos sentidos e aspectos linguísticos do texto precedente, julgue o item\nsubsecutivo. No que se refere às ideias, aos sentidos e às construções linguísticas do texto\nprecedente, assim como a sua tipologia, julgue o item a seguir.\nO termo “Alegoria”, empregado no texto precedente, alude à ideia de representação.",
+      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A12-aula12.q0115.",
       "options": [],
-      "officialAnswer": "correct",
+      "officialAnswer": "CERTO",
       "questionSha256": "e01b409bbaac37e06ec7a01c91909789769d24012a7893ef72dd9d346c260344",
       "answerSha256": "4448b5811d26165ddb28424f14d554b1a0bae7299afd38721390cafe5703b383",
+      "extractionQuality": "partial",
       "cognitiveDemand": "interpretacao_contextual",
       "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Figuras de Linguagem - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
       "distractorAnalysis": []
