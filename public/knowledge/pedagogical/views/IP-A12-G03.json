@@ -4,7 +4,7 @@
     "unitId": "IP-A12-G03",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:23:26.649Z"
+    "generatedAt": "2026-08-18T21:31:54.116Z"
   },
   "unit": {
     "unitId": "IP-A12-G03",
@@ -589,38 +589,27 @@
           "inputs": [
             {
               "name": "segmento_analisado",
-              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo de Diagnóstico de Relações Semânticas Lexicais em Provas."
-            },
-            {
-              "name": "contexto_linguistico",
-              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+              "description": "Estrutura textual submetida ao roteiro de Algoritmo de Diagnóstico de Relações Semânticas Lexicais em Provas."
             }
           ],
           "steps": [
             {
               "order": 1,
-              "action": "Identificar a estrutura sintático-morfológica alvo de Algoritmo de Diagnóstico de Relações Semânticas Lexicais em Provas.",
-              "test": "Localizar o termo regente ou núcleo do segmento."
+              "action": "Finalidade: Identificar com precisão matemática se uma relação entre dois vocábulos configura Sinonímia, Hiperonímia, Hiponímia ou Campo Semântico (Anáfora Associativa)",
+              "explanation": "Procedimento operacional para Algoritmo de Diagnóstico de Relações Semânticas Lexicais em Provas.",
+              "test": null
             },
             {
               "order": 2,
-              "action": "Aplicar os critérios decisórios da regra canônica.",
-              "test": "Verificar se há exceção ou caso facultativo aplicável."
-            },
-            {
-              "order": 3,
-              "action": "Concluir a classificação definitiva para resolução da questão.",
-              "test": "Confrontar o resultado obtido com as alternativas da prova."
+              "action": "Início: Identificar Termo 1 (T1) e Termo 2 (T2) │ ▼ ┌───────────────────────────────────────────┐ │ Passo 1: Avaliar Equivalência Semântica │ │ T1 e T2 estão no mesmo patamar │ │ de sentido no contexto da frase? │ └─────────────────────┬─────────────────────┘ │ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────┐ ┌──────────────────┐ │ SINONÍMIA │ │ Ir para Passo 2 │ │ (ex.: ceia/jantar│ └─────────┬────────┘ │ telas/quadros) │ │ └──────────────────┘ ▼ ┌───────────────────────────────────────────┐ │ Passo 2: Aplicar Teste Lógico \"TIPO DE\" │ │ \"T1 é tipo de T2\" OU \"T2 é tipo de T1\"?│ └─────────────────────┬─────────────────────┘ │ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────────────────────┐ ┌──────────────────────────────────┐ │ Passo 2b: Checar Direcionalidade│ │ Passo 3: Avaliar Campo Semântico │ │ - Se T1=Específico e T2=Geral: │ │ T1 e T2 pertencem ao mesmo tema │ │ ──> HIPONÍMIA │ │ sem relação taxonômica de gênero?│ │ - Se T1=Geral e T2=Específico: │ └──────────────────┬───────────────┘ │ ──> HIPERONÍMIA │ │ └──────────────────────────────────┘ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────┐ ┌──────────────────┐ │ CAMPO SEMÂNTICO │ │ Relações Lógicas │ │ Anáfora │ │ Distintas │ │ Associativa │ │ (Antonímia, │ │ (ex.: febre/ │ │ Paronímia, │ │ doença; pista/ │ │ Coordenação) │ │ aeroporto) │ └──────────────────┘ └──────────────────┘",
+              "explanation": "Procedimento operacional para Algoritmo de Diagnóstico de Relações Semânticas Lexicais em Provas.",
+              "test": "Início: Identificar Termo 1 (T1) e Termo 2 (T2) │ ▼ ┌───────────────────────────────────────────┐ │ Passo 1: Avaliar Equivalência Semântica │ │ T1 e T2 estão no mesmo patamar │ │ de sentido no contexto da frase? │ └─────────────────────┬─────────────────────┘ │ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────┐ ┌──────────────────┐ │ SINONÍMIA │ │ Ir para Passo 2 │ │ (ex.: ceia/jantar│ └─────────┬────────┘ │ telas/quadros) │ │ └──────────────────┘ ▼ ┌───────────────────────────────────────────┐ │ Passo 2: Aplicar Teste Lógico \"TIPO DE\" │ │ \"T1 é tipo de T2\" OU \"T2 é tipo de T1\"?│ └─────────────────────┬─────────────────────┘ │ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────────────────────┐ ┌──────────────────────────────────┐ │ Passo 2b: Checar Direcionalidade│ │ Passo 3: Avaliar Campo Semântico │ │ - Se T1=Específico e T2=Geral: │ │ T1 e T2 pertencem ao mesmo tema │ │ ──> HIPONÍMIA │ │ sem relação taxonômica de gênero?│ │ - Se T1=Geral e T2=Específico: │ └──────────────────┬───────────────┘ │ ──> HIPERONÍMIA │ │ └──────────────────────────────────┘ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────┐ ┌──────────────────┐ │ CAMPO SEMÂNTICO │ │ Relações Lógicas │ │ Anáfora │ │ Distintas │ │ Associativa │ │ (Antonímia, │ │ (ex.: febre/ │ │ Paronímia, │ │ doença; pista/ │ │ Coordenação) │ │ aeroporto) │ └──────────────────┘ └──────────────────┘"
             }
           ],
           "outputs": [
             {
               "name": "classificacao_normativa",
-              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo de Diagnóstico de Relações Semânticas Lexicais em Provas."
-            },
-            {
-              "name": "diagnostico_resolucao",
-              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+              "description": "Diagnóstico definitivo conforme os preceitos de Algoritmo de Diagnóstico de Relações Semânticas Lexicais em Provas."
             }
           ],
           "blocks": [

@@ -4,7 +4,7 @@
     "unitId": "IP-A06-G07",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:23:26.576Z"
+    "generatedAt": "2026-08-18T21:31:54.040Z"
   },
   "unit": {
     "unitId": "IP-A06-G07",
@@ -544,38 +544,39 @@
           "inputs": [
             {
               "name": "segmento_analisado",
-              "description": "Oração, período ou vocábulo submetido à análise de O Método dos Dois Passos da Análise Sintática (Método da Seta)."
-            },
-            {
-              "name": "contexto_linguistico",
-              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+              "description": "Estrutura textual submetida ao roteiro de O Método dos Dois Passos da Análise Sintática (Método da Seta)."
             }
           ],
           "steps": [
             {
               "order": 1,
-              "action": "Identificar a estrutura sintático-morfológica alvo de O Método dos Dois Passos da Análise Sintática (Método da Seta).",
-              "test": "Localizar o termo regente ou núcleo do segmento."
+              "action": "Identificar e classificar com exatidão a função de termos modificadores dependentes, garantindo a correspondência entre a relação sintática e a morfologia receptora",
+              "explanation": "Procedimento operacional para O Método dos Dois Passos da Análise Sintática (Método da Seta).",
+              "test": null
             },
             {
               "order": 2,
-              "action": "Aplicar os critérios decisórios da regra canônica.",
-              "test": "Verificar se há exceção ou caso facultativo aplicável."
+              "action": "Início da Análise do Termo │ ▼ [Passo 1: Conversar com a Frase & Lançar a SETA] │ Interrogar a estrutura da oração para descobrir a qual palavra exata o termo em análise se subordina",
+              "explanation": "Procedimento operacional para O Método dos Dois Passos da Análise Sintática (Método da Seta).",
+              "test": null
             },
             {
               "order": 3,
-              "action": "Concluir a classificação definitiva para resolução da questão.",
-              "test": "Confrontar o resultado obtido com as alternativas da prova."
+              "action": "│ Traçar visualmente a seta do termo emissor para o vocábulo receptor",
+              "explanation": "Procedimento operacional para O Método dos Dois Passos da Análise Sintática (Método da Seta).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "│ ▼ [Passo 2: Identificar a Classe da Palavra Receptora] │ Classificar morfologicamente a palavra que recebeu a ponta da seta: │ ├── Se recebeu seta em VERBO, ADJETIVO ou ADVÉRBIO + denota circunstância → ADJUNTO ADVERBIAL │ └── Se recebeu seta em SUBSTANTIVO → ADJUNTO ADNOMINAL (ou Predicativo) │ ▼ [Passo 3: Dupla Etiquetagem Morfossintática] │ Definir Função Sintática (nível relacional) + Classe Gramatical (nível morfológico)",
+              "explanation": "Procedimento operacional para O Método dos Dois Passos da Análise Sintática (Método da Seta).",
+              "test": null
             }
           ],
           "outputs": [
             {
               "name": "classificacao_normativa",
-              "description": "Classificação gramatical precisa e justificada conforme o padrão de O Método dos Dois Passos da Análise Sintática (Método da Seta)."
-            },
-            {
-              "name": "diagnostico_resolucao",
-              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+              "description": "Diagnóstico definitivo conforme os preceitos de O Método dos Dois Passos da Análise Sintática (Método da Seta)."
             }
           ],
           "blocks": [
@@ -606,38 +607,39 @@
           "inputs": [
             {
               "name": "segmento_analisado",
-              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo de 4 Etapas para Diferenciar Adjunto Adverbial de Objeto Indireto."
-            },
-            {
-              "name": "contexto_linguistico",
-              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+              "description": "Estrutura textual submetida ao roteiro de Algoritmo de 4 Etapas para Diferenciar Adjunto Adverbial de Objeto Indireto."
             }
           ],
           "steps": [
             {
               "order": 1,
-              "action": "Identificar a estrutura sintático-morfológica alvo de Algoritmo de 4 Etapas para Diferenciar Adjunto Adverbial de Objeto Indireto.",
-              "test": "Localizar o termo regente ou núcleo do segmento."
+              "action": "Classificar termos preposicionados associados a verbos, evitando a armadilha de rotular qualquer estrutura preposicionada como objeto indireto",
+              "explanation": "Procedimento operacional para Algoritmo de 4 Etapas para Diferenciar Adjunto Adverbial de Objeto Indireto.",
+              "test": null
             },
             {
               "order": 2,
-              "action": "Aplicar os critérios decisórios da regra canônica.",
-              "test": "Verificar se há exceção ou caso facultativo aplicável."
+              "action": "Termo Preposicionado Ligado a Verbo │ ▼ [Etapa 1] Traçar a seta do termo preposicionado até o verbo regente/referente",
+              "explanation": "Procedimento operacional para Algoritmo de 4 Etapas para Diferenciar Adjunto Adverbial de Objeto Indireto.",
+              "test": null
             },
             {
               "order": 3,
-              "action": "Concluir a classificação definitiva para resolução da questão.",
-              "test": "Confrontar o resultado obtido com as alternativas da prova."
+              "action": "│ ▼ [Etapa 2] Confirmar que a palavra receptora é um VERBO",
+              "explanation": "Procedimento operacional para Algoritmo de 4 Etapas para Diferenciar Adjunto Adverbial de Objeto Indireto.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "│ ▼ [Etapa 3] Teste Semântico: \"A expressão tem CHEIRO DE CIRCUNSTÂNCIA?\" │ ├── SIM (Preposição é NOCIONAL: indica causa, modo, tempo, lugar, instrumento, etc.) │ │ │ ▼ │ [Etapa 4A] Classificar como ADJUNTO ADVERBIAL (Termo Acessório / Fofoca)",
+              "explanation": "Procedimento operacional para Algoritmo de 4 Etapas para Diferenciar Adjunto Adverbial de Objeto Indireto.",
+              "test": "│ ▼ [Etapa 3] Teste Semântico: \"A expressão tem CHEIRO DE CIRCUNSTÂNCIA?\" │ ├── SIM (Preposição é NOCIONAL: indica causa, modo, tempo, lugar, instrumento, etc.) │ │ │ ▼ │ [Etapa 4A] Classificar como ADJUNTO ADVERBIAL (Termo Acessório / Fofoca)"
             }
           ],
           "outputs": [
             {
               "name": "classificacao_normativa",
-              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo de 4 Etapas para Diferenciar Adjunto Adverbial de Objeto Indireto."
-            },
-            {
-              "name": "diagnostico_resolucao",
-              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+              "description": "Diagnóstico definitivo conforme os preceitos de Algoritmo de 4 Etapas para Diferenciar Adjunto Adverbial de Objeto Indireto."
             }
           ],
           "blocks": [
@@ -668,38 +670,39 @@
           "inputs": [
             {
               "name": "segmento_analisado",
-              "description": "Oração, período ou vocábulo submetido à análise de Método do Farejador de Adjuntos Adnominais (Substantivo Núcleo e Satélites)."
-            },
-            {
-              "name": "contexto_linguistico",
-              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+              "description": "Estrutura textual submetida ao roteiro de Método do Farejador de Adjuntos Adnominais (Substantivo Núcleo e Satélites)."
             }
           ],
           "steps": [
             {
               "order": 1,
-              "action": "Identificar a estrutura sintático-morfológica alvo de Método do Farejador de Adjuntos Adnominais (Substantivo Núcleo e Satélites).",
-              "test": "Localizar o termo regente ou núcleo do segmento."
+              "action": "Localizar todos os adjuntos adnominais em qualquer segmento do período com 100% de segurança",
+              "explanation": "Procedimento operacional para Método do Farejador de Adjuntos Adnominais (Substantivo Núcleo e Satélites).",
+              "test": null
             },
             {
               "order": 2,
-              "action": "Aplicar os critérios decisórios da regra canônica.",
-              "test": "Verificar se há exceção ou caso facultativo aplicável."
+              "action": "Varredura do Período │ ▼ [Passo 1: Localizar o SUBSTANTIVO NÚCLEO] │ Varrer o período identificando todos os substantivos que encabeçam funções sintáticas │ (estejam dentro do sujeito, objetos, predicativos, complementos nominais, etc.)",
+              "explanation": "Procedimento operacional para Método do Farejador de Adjuntos Adnominais (Substantivo Núcleo e Satélites).",
+              "test": null
             },
             {
               "order": 3,
-              "action": "Concluir a classificação definitiva para resolução da questão.",
-              "test": "Confrontar o resultado obtido com as alternativas da prova."
+              "action": "│ ▼ [Passo 2: Rastrear os TERMOS SATÉLITES] │ Inspecionar o entorno imediato do substantivo núcleo em busca de modificadores diretos",
+              "explanation": "Procedimento operacional para Método do Farejador de Adjuntos Adnominais (Substantivo Núcleo e Satélites).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "│ ▼ [Passo 3: Validar a Classe do Satélite] │ Verificar se o modificador pertence a uma das 5 classes: │ [Artigo | Numeral | Pronome Adjetivo | Adjetivo | Locução Adjetiva] │ ▼ [Passo 4: Teste de Acessoriedade] │ Confirmar que o termo não atua como predicativo indispensável à predicação verbal",
+              "explanation": "Procedimento operacional para Método do Farejador de Adjuntos Adnominais (Substantivo Núcleo e Satélites).",
+              "test": "│ ▼ [Passo 3: Validar a Classe do Satélite] │ Verificar se o modificador pertence a uma das 5 classes: │ [Artigo | Numeral | Pronome Adjetivo | Adjetivo | Locução Adjetiva] │ ▼ [Passo 4: Teste de Acessoriedade] │ Confirmar que o termo não atua como predicativo indispensável à predicação verbal"
             }
           ],
           "outputs": [
             {
               "name": "classificacao_normativa",
-              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método do Farejador de Adjuntos Adnominais (Substantivo Núcleo e Satélites)."
-            },
-            {
-              "name": "diagnostico_resolucao",
-              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+              "description": "Diagnóstico definitivo conforme os preceitos de Método do Farejador de Adjuntos Adnominais (Substantivo Núcleo e Satélites)."
             }
           ],
           "blocks": [

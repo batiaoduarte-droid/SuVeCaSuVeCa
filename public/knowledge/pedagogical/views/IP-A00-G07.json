@@ -4,7 +4,7 @@
     "unitId": "IP-A00-G07",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:23:26.457Z"
+    "generatedAt": "2026-08-18T21:31:53.910Z"
   },
   "unit": {
     "unitId": "IP-A00-G07",
@@ -735,38 +735,39 @@
           "inputs": [
             {
               "name": "segmento_analisado",
-              "description": "Oração, período ou vocábulo submetido à análise de Roteiro Geral de Decisão Ortográfica e Sintática dos Porquês."
-            },
-            {
-              "name": "contexto_linguistico",
-              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+              "description": "Estrutura textual submetida ao roteiro de Roteiro Geral de Decisão Ortográfica e Sintática dos Porquês."
             }
           ],
           "steps": [
             {
               "order": 1,
-              "action": "Identificar a estrutura sintático-morfológica alvo de Roteiro Geral de Decisão Ortográfica e Sintática dos Porquês.",
-              "test": "Localizar o termo regente ou núcleo do segmento."
+              "action": "[Início: Análise da Lacuna] │ ▼ Passo 1: Há determinante (artigo \"o/um\", pronome \"meu/este\", numeral \"dois\", contração \"do\") antes da lacuna? ├─► SIM: Escreva \"PORQUÊ\" (junto com acento) ──► [Classe: Substantivo] └─► NÃO: Prossiga para o Passo 2",
+              "explanation": "Procedimento operacional para Roteiro Geral de Decisão Ortográfica e Sintática dos Porquês.",
+              "test": null
             },
             {
               "order": 2,
-              "action": "Aplicar os critérios decisórios da regra canônica.",
-              "test": "Verificar se há exceção ou caso facultativo aplicável."
+              "action": "│ ▼ Passo 2: A lacuna introduz justificativa, causa ou finalidade (com verbo no subjuntivo), substituível por \"pois\" ou \"para que\"? ├─► SIM: Escreva \"PORQUE\" (junto sem acento) ──► [Classe: Conjunção] └─► NÃO: Prossiga para o Passo 3",
+              "explanation": "Procedimento operacional para Roteiro Geral de Decisão Ortográfica e Sintática dos Porquês.",
+              "test": null
             },
             {
               "order": 3,
-              "action": "Concluir a classificação definitiva para resolução da questão.",
-              "test": "Confrontar o resultado obtido com as alternativas da prova."
+              "action": "│ ▼ Passo 3: A expressão situa-se imediatamente antes de uma PAUSA discursiva (pontuação ?,.,,,;,..",
+              "explanation": "Procedimento operacional para Roteiro Geral de Decisão Ortográfica e Sintática dos Porquês.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "ou pausa oral de final de interrogativa)? ├─► SIM: Escreva \"POR QUÊ\" (separado com acento) ──► [Classe: Locução Adverbial Interrogativa Tônica] └─► NÃO: Prossiga para o Passo 4",
+              "explanation": "Procedimento operacional para Roteiro Geral de Decisão Ortográfica e Sintática dos Porquês.",
+              "test": null
             }
           ],
           "outputs": [
             {
               "name": "classificacao_normativa",
-              "description": "Classificação gramatical precisa e justificada conforme o padrão de Roteiro Geral de Decisão Ortográfica e Sintática dos Porquês."
-            },
-            {
-              "name": "diagnostico_resolucao",
-              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+              "description": "Diagnóstico definitivo conforme os preceitos de Roteiro Geral de Decisão Ortográfica e Sintática dos Porquês."
             }
           ],
           "blocks": [

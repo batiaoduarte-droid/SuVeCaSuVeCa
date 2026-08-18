@@ -4,7 +4,7 @@
     "unitId": "IP-A03-G02",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:23:26.496Z"
+    "generatedAt": "2026-08-18T21:31:53.953Z"
   },
   "unit": {
     "unitId": "IP-A03-G02",
@@ -895,38 +895,39 @@
           "inputs": [
             {
               "name": "segmento_analisado",
-              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo de Validação de Reescritas em Verbos Transitivos Diretos e Indiretos (VTDI)."
-            },
-            {
-              "name": "contexto_linguistico",
-              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+              "description": "Estrutura textual submetida ao roteiro de Algoritmo de Validação de Reescritas em Verbos Transitivos Diretos e Indiretos (VTDI)."
             }
           ],
           "steps": [
             {
               "order": 1,
-              "action": "Identificar a estrutura sintático-morfológica alvo de Algoritmo de Validação de Reescritas em Verbos Transitivos Diretos e Indiretos (VTDI).",
-              "test": "Localizar o termo regente ou núcleo do segmento."
+              "action": "Identificar erros de duplicidade de objetos diretos (OD + OD) ou indiretos (OI + OI) em itens de concurso (especialmente CEBRASPE/CESPE)",
+              "explanation": "Procedimento operacional para Algoritmo de Validação de Reescritas em Verbos Transitivos Diretos e Indiretos (VTDI).",
+              "test": null
             },
             {
               "order": 2,
-              "action": "Aplicar os critérios decisórios da regra canônica.",
-              "test": "Verificar se há exceção ou caso facultativo aplicável."
+              "action": "[Início: Questão de Reescrita Pronominal] │ ▼ [Passo 1: Isolar o verbo principal e identificar o Sujeito] │ ▼ [Passo 2: Inventariar os complementos já presentes na frase original] │ ├── Cenário A: A frase já possui Objeto Direto (OD) substantivado sem preposição? │ │ │ └── SIM ──► O novo pronome inserido OBRIGATORIAMENTE deve ser Objeto Indireto (lhe / a ele)",
+              "explanation": "Procedimento operacional para Algoritmo de Validação de Reescritas em Verbos Transitivos Diretos e Indiretos (VTDI).",
+              "test": null
             },
             {
               "order": 3,
-              "action": "Concluir a classificação definitiva para resolução da questão.",
-              "test": "Confrontar o resultado obtido com as alternativas da prova."
+              "action": "│ └── Se a banca propôs pronome de OD (o, a, los, las, nos, nas): │ ==► MARCAR ITEM COMO ERRADO (Erro: OD + OD)",
+              "explanation": "Procedimento operacional para Algoritmo de Validação de Reescritas em Verbos Transitivos Diretos e Indiretos (VTDI).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "│ └── Cenário B: A frase já possui Objeto Indireto (OI) preposicionado (ex.: \"a artigos\")? │ └── SIM ──► O novo pronome associado OBRIGATORIAMENTE deve ser Objeto Direto (o, a, me)",
+              "explanation": "Procedimento operacional para Algoritmo de Validação de Reescritas em Verbos Transitivos Diretos e Indiretos (VTDI).",
+              "test": null
             }
           ],
           "outputs": [
             {
               "name": "classificacao_normativa",
-              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo de Validação de Reescritas em Verbos Transitivos Diretos e Indiretos (VTDI)."
-            },
-            {
-              "name": "diagnostico_resolucao",
-              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+              "description": "Diagnóstico definitivo conforme os preceitos de Algoritmo de Validação de Reescritas em Verbos Transitivos Diretos e Indiretos (VTDI)."
             }
           ],
           "blocks": [
@@ -1049,26 +1050,21 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-001",
           "title": "Enunciado",
-          "prompt": "A educação para a cidadania é um objetivo essencial, mas comprometem essa educação para a cidadania os que pretendem praticar a educação para a cidadania sem dotar a educação para a cidadania da visibilidade das atitudes públicas. Evitam-se as repetições viciosas da frase acima substituindo-se os segmentos sublinhados, respectivamente, por: A) comprometem-lhe – praticá-la – dotar-lhe B) comprometem ela – praticar-lhe – dotá-la C) comprometem-na – praticá-la – dotá-la D) comprometem a mesma – a praticar – lhe dotar E) comprometem a ela – lhe praticar – a dotar",
+          "prompt": "A educação para a cidadania é um objetivo essencial, mas comprometem essa educação para a cidadania os que pretendem praticar a educação para a cidadania sem dotar a educação para a cidadania da visibilidade das atitudes públicas",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"A educação para a cidadania é um objetivo essencial, mas com...\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "A educação para a cidadania é um objetivo essencial, mas comprometem essa educação para a cidadania os que pretendem praticar a educação para a cidadania sem dotar a educação para a cidadania da visibilidade das atitudes públicas",
+              "rationale": "Etapa 1 de análise para Enunciado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
-            },
-            {
-              "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Evitam-se as repetições viciosas da frase acima substituindo-se os segmentos sublinhados, respectivamente, por: A) comprometem-lhe – praticá-la – dotar-lhe B) comprometem ela – praticar-lhe – dotá-la C) comprometem-na – praticá-la – dotá-la D) comprometem a mesma – a praticar – lhe dotar E) comprometem a ela – lhe praticar – a dotar",
+              "rationale": "Etapa 2 de análise para Enunciado."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "result": "Evitam-se as repetições viciosas da frase acima substituindo-se os segmentos sublinhados, respectivamente, por: A) comprometem-lhe – praticá-la – dotar-lhe B) comprometem ela – praticar-lhe – dotá-la C) comprometem-na – praticá-la – dotá-la D) comprometem a mesma – a praticar – lhe dotar E) comprometem a ela – lhe praticar – a dotar",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"A educação para a cidadania é um objetiv\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
@@ -1124,26 +1120,26 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-003",
           "title": "Gabarito Consolidado",
-          "prompt": "Letra C (comprometem-na – praticá-la – dotá-la).",
+          "prompt": "Letra C (comprometem-na – praticá-la – dotá-la)",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"Letra C (comprometem-na – praticá-la – dotá-la)....\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "Identificar a estrutura frasal em: \"Letra C (comprometem-na – praticá-la – dotá-la)\".",
+              "rationale": "Constatação do elemento sob exame de Gabarito Consolidado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
+              "action": "Aplicar os preceitos normativos específicos de Gabarito Consolidado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
             },
             {
               "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "result": "Letra C (comprometem-na – praticá-la – dotá-la).",
+          "decisivePoint": "Critério decisório de Gabarito Consolidado aplicado a \"Letra C (comprometem-na – praticá-la – d\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
@@ -1156,26 +1152,21 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-004",
           "title": "Enunciado",
-          "prompt": "Ao tratar da morte, o cronista atribui à morte um poder de imantação tal que acaba por identificar a morte como uma força que, paradoxalmente, exerce uma estranha atração até mesmo sobre os que temem a morte. Evitam-se as viciosas repetições do período acima substituindo-se os elementos sublinhados, na ordem dada, por: A) atribui-lhe – identificá-la – a temem B) lhe atribui – identificar a ela – lhe temem C) atribui-lhe – a identificar – temem-lhe D) atribui nela – lhe identificar – temem-na E) a atribui – identificar-lhe – a temem",
+          "prompt": "Ao tratar da morte, o cronista atribui à morte um poder de imantação tal que acaba por identificar a morte como uma força que, paradoxalmente, exerce uma estranha atração até mesmo sobre os que temem a morte",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"Ao tratar da morte, o cronista atribui à morte um poder de i...\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "Ao tratar da morte, o cronista atribui à morte um poder de imantação tal que acaba por identificar a morte como uma força que, paradoxalmente, exerce uma estranha atração até mesmo sobre os que temem a morte",
+              "rationale": "Etapa 1 de análise para Enunciado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
-            },
-            {
-              "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Evitam-se as viciosas repetições do período acima substituindo-se os elementos sublinhados, na ordem dada, por: A) atribui-lhe – identificá-la – a temem B) lhe atribui – identificar a ela – lhe temem C) atribui-lhe – a identificar – temem-lhe D) atribui nela – lhe identificar – temem-na E) a atribui – identificar-lhe – a temem",
+              "rationale": "Etapa 2 de análise para Enunciado."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "result": "Evitam-se as viciosas repetições do período acima substituindo-se os elementos sublinhados, na ordem dada, por: A) atribui-lhe – identificá-la – a temem B) lhe atribui – identificar a ela – lhe temem C) atribui-lhe – a identificar – temem-lhe D) atribui nela – lhe identificar – temem-na E) a atribui – identificar-lhe – a temem",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Ao tratar da morte, o cronista atribui à\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
@@ -1225,26 +1216,26 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-006",
           "title": "Gabarito Consolidado",
-          "prompt": "Letra A (atribui-lhe – identificá-la – a temem).",
+          "prompt": "Letra A (atribui-lhe – identificá-la – a temem)",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"Letra A (atribui-lhe – identificá-la – a temem)....\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "Identificar a estrutura frasal em: \"Letra A (atribui-lhe – identificá-la – a temem)\".",
+              "rationale": "Constatação do elemento sob exame de Gabarito Consolidado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
+              "action": "Aplicar os preceitos normativos específicos de Gabarito Consolidado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
             },
             {
               "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "result": "Letra A (atribui-lhe – identificá-la – a temem).",
+          "decisivePoint": "Critério decisório de Gabarito Consolidado aplicado a \"Letra A (atribui-lhe – identificá-la – a\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
@@ -1257,26 +1248,31 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-007",
           "title": "Enunciado",
-          "prompt": "Assinale a alternativa em que o enunciado está reescrito, nos colchetes, empregando pronomes para substituir o trecho destacado, de acordo com a norma-padrão. A)... quando resolveram revistar também as cargas líquidas... [revistar-lhes] B)... os fiscais concentravam as revistas somente nas cargas sólidas. [concentravam elas] C)... lá estavam fabricando dinheiro falso brasileiro [fabricando-o] D)... evitando assim os rigores da alfândega [evitando-nos]",
+          "prompt": "Assinale a alternativa em que o enunciado está reescrito, nos colchetes, empregando pronomes para substituir o trecho destacado, de acordo com a norma-padrão",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"Assinale a alternativa em que o enunciado está reescrito, no...\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "Assinale a alternativa em que o enunciado está reescrito, nos colchetes, empregando pronomes para substituir o trecho destacado, de acordo com a norma-padrão",
+              "rationale": "Etapa 1 de análise para Enunciado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
+              "action": "quando resolveram revistar também as cargas líquidas..",
+              "rationale": "Etapa 2 de análise para Enunciado."
             },
             {
               "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "[revistar-lhes] B)..",
+              "rationale": "Etapa 3 de análise para Enunciado."
+            },
+            {
+              "order": 4,
+              "action": "os fiscais concentravam as revistas somente nas cargas sólidas",
+              "rationale": "Etapa 4 de análise para Enunciado."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "result": "evitando assim os rigores da alfândega [evitando-nos]",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Assinale a alternativa em que o enunciad\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
@@ -1332,26 +1328,26 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-009",
           "title": "Gabarito Consolidado",
-          "prompt": "Letra C.",
+          "prompt": "Letra C",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"Letra C....\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "Identificar a estrutura frasal em: \"Letra C\".",
+              "rationale": "Constatação do elemento sob exame de Gabarito Consolidado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
+              "action": "Aplicar os preceitos normativos específicos de Gabarito Consolidado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
             },
             {
               "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "result": "Letra C.",
+          "decisivePoint": "Critério decisório de Gabarito Consolidado aplicado a \"Letra C\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
@@ -1434,26 +1430,26 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-012",
           "title": "Gabarito Consolidado",
-          "prompt": "Letra C (substituí-los / transmiti-las).",
+          "prompt": "Letra C (substituí-los / transmiti-las)",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"Letra C (substituí-los / transmiti-las)....\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "Identificar a estrutura frasal em: \"Letra C (substituí-los / transmiti-las)\".",
+              "rationale": "Constatação do elemento sob exame de Gabarito Consolidado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
+              "action": "Aplicar os preceitos normativos específicos de Gabarito Consolidado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
             },
             {
               "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "result": "Letra C (substituí-los / transmiti-las).",
+          "decisivePoint": "Critério decisório de Gabarito Consolidado aplicado a \"Letra C (substituí-los / transmiti-las)\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
@@ -1466,26 +1462,21 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-013",
           "title": "Enunciado",
-          "prompt": "Assinale a alternativa em que o termo entre parênteses substitui corretamente a expressão. A) chegar ao principal polo varejista de rua (chegá-lo) B) recebem 350 mil pessoas (recebem-as) C) prefere comprar em Osasco (prefere comprar-lhe) D) distribuem sacolinha plástica (distribuem-na) E) supre demandas (supre-lhes)",
+          "prompt": "Assinale a alternativa em que o termo entre parênteses substitui corretamente a expressão",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"Assinale a alternativa em que o termo entre parênteses subst...\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "Assinale a alternativa em que o termo entre parênteses substitui corretamente a expressão",
+              "rationale": "Etapa 1 de análise para Enunciado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
-            },
-            {
-              "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "A) chegar ao principal polo varejista de rua (chegá-lo) B) recebem 350 mil pessoas (recebem-as) C) prefere comprar em Osasco (prefere comprar-lhe) D) distribuem sacolinha plástica (distribuem-na) E) supre demandas (supre-lhes)",
+              "rationale": "Etapa 2 de análise para Enunciado."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "result": "A) chegar ao principal polo varejista de rua (chegá-lo) B) recebem 350 mil pessoas (recebem-as) C) prefere comprar em Osasco (prefere comprar-lhe) D) distribuem sacolinha plástica (distribuem-na) E) supre demandas (supre-lhes)",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Assinale a alternativa em que o termo en\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
@@ -1547,26 +1538,26 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-015",
           "title": "Gabarito Consolidado",
-          "prompt": "Letra D.",
+          "prompt": "Letra D",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"Letra D....\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "Identificar a estrutura frasal em: \"Letra D\".",
+              "rationale": "Constatação do elemento sob exame de Gabarito Consolidado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
+              "action": "Aplicar os preceitos normativos específicos de Gabarito Consolidado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
             },
             {
               "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "result": "Letra D.",
+          "decisivePoint": "Critério decisório de Gabarito Consolidado aplicado a \"Letra D\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
@@ -1579,26 +1570,31 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-016",
           "title": "Enunciado",
-          "prompt": "Quando os pronomes oblíquos o, a, os, as forem precedidos de formas verbais que terminem em r, s ou z assumem as formas lo, la, los, las. Assim, estão gramaticalmente corretas todas as frases abaixo. a) Quero recebê-lo bem, ouvi-lo e consultá-lo quando achar necessário. b) A promotora? Ei-la assumindo novas funções no MPSC. c) Meu filho estava jogando no computador. Fi-lo parar e voltar aos estudos. Certo Errado",
+          "prompt": "Quando os pronomes oblíquos o, a, os, as forem precedidos de formas verbais que terminem em r, s ou z assumem as formas lo, la, los, las",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"Quando os pronomes oblíquos o, a, os, as forem precedidos de...\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "Quando os pronomes oblíquos o, a, os, as forem precedidos de formas verbais que terminem em r, s ou z assumem as formas lo, la, los, las",
+              "rationale": "Etapa 1 de análise para Enunciado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
+              "action": "Assim, estão gramaticalmente corretas todas as frases abaixo",
+              "rationale": "Etapa 2 de análise para Enunciado."
             },
             {
               "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "a) Quero recebê-lo bem, ouvi-lo e consultá-lo quando achar necessário",
+              "rationale": "Etapa 3 de análise para Enunciado."
+            },
+            {
+              "order": 4,
+              "action": "b) A promotora? Ei-la assumindo novas funções no MPSC",
+              "rationale": "Etapa 4 de análise para Enunciado."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "result": "Certo Errado",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Quando os pronomes oblíquos o, a, os, as\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
@@ -1648,26 +1644,26 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-018",
           "title": "Gabarito Consolidado",
-          "prompt": "CERTO (Todas as frases estão plenamente corretas na norma-padrão).",
+          "prompt": "CERTO (Todas as frases estão plenamente corretas na norma-padrão)",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"CERTO (Todas as frases estão plenamente corretas na norma-pa...\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "Identificar a estrutura frasal em: \"CERTO (Todas as frases estão plenamente corretas na norma-pa\".",
+              "rationale": "Constatação do elemento sob exame de Gabarito Consolidado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
+              "action": "Aplicar os preceitos normativos específicos de Gabarito Consolidado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
             },
             {
               "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "result": "CERTO (Todas as frases estão plenamente corretas na norma-padrão).",
+          "decisivePoint": "Critério decisório de Gabarito Consolidado aplicado a \"CERTO (Todas as frases estão plenamente \".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
@@ -1680,26 +1676,31 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-019",
           "title": "Enunciado",
-          "prompt": "A frase em que o pronome pessoal lhe tem valor possessivo é: A) Nunca prive alguém da esperança. Pode ser tudo o que lhe resta. B) Não é que ele não possa ver a solução. É que não lhe é possível ver o problema. C) Assim é, se lhe parece. D) Eu posso explicar-lhes isso, mas eu não posso entender isso por eles. E) O certo não é priorizar o que lhe está na agenda, mas agendar suas prioridades.",
+          "prompt": "A frase em que o pronome pessoal lhe tem valor possessivo é: A) Nunca prive alguém da esperança",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"A frase em que o pronome pessoal lhe tem valor possessivo é:...\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "A frase em que o pronome pessoal lhe tem valor possessivo é: A) Nunca prive alguém da esperança",
+              "rationale": "Etapa 1 de análise para Enunciado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
+              "action": "Pode ser tudo o que lhe resta",
+              "rationale": "Etapa 2 de análise para Enunciado."
             },
             {
               "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "B) Não é que ele não possa ver a solução",
+              "rationale": "Etapa 3 de análise para Enunciado."
+            },
+            {
+              "order": 4,
+              "action": "É que não lhe é possível ver o problema",
+              "rationale": "Etapa 4 de análise para Enunciado."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "result": "E) O certo não é priorizar o que lhe está na agenda, mas agendar suas prioridades.",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"A frase em que o pronome pessoal lhe tem\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
@@ -1761,26 +1762,26 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-021",
           "title": "Gabarito Consolidado",
-          "prompt": "Letra E.",
+          "prompt": "Letra E",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"Letra E....\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "Identificar a estrutura frasal em: \"Letra E\".",
+              "rationale": "Constatação do elemento sob exame de Gabarito Consolidado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
+              "action": "Aplicar os preceitos normativos específicos de Gabarito Consolidado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
             },
             {
               "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "result": "Letra E.",
+          "decisivePoint": "Critério decisório de Gabarito Consolidado aplicado a \"Letra E\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
@@ -1793,26 +1794,21 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-022",
           "title": "Enunciado",
-          "prompt": "(...) \"Mesmo agora, quando já diviso a brumosa porta da casa dos setenta, o convite à viagem tem ainda o poder de incendiar-me a fantasia.\" Com relação ao trecho \"incendiar-me a fantasia\", é correto interpretar a partícula \"me\" como o possuidor da fantasia. Certo Errado",
+          "prompt": "Mesmo agora, quando já diviso a brumosa porta da casa dos setenta, o convite à viagem tem ainda o poder de incendiar-me a fantasia.",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"(...) \"Mesmo agora, quando já diviso a brumosa porta da casa...\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "(...) \"Mesmo agora, quando já diviso a brumosa porta da casa dos setenta, o convite à viagem tem ainda o poder de incendiar-me a fantasia.\" Com relação ao trecho \"incendiar-me a fantasia\", é correto interpretar a partícula \"me\" como o possuidor da fantasia",
+              "rationale": "Etapa 1 de análise para Enunciado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
-            },
-            {
-              "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Certo Errado",
+              "rationale": "Etapa 2 de análise para Enunciado."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "result": "Certo Errado",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Mesmo agora, quando já diviso a brumosa \".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
@@ -1862,26 +1858,26 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-024",
           "title": "Gabarito Consolidado",
-          "prompt": "CERTO.",
+          "prompt": "CERTO",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"CERTO....\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "Identificar a estrutura frasal em: \"CERTO\".",
+              "rationale": "Constatação do elemento sob exame de Gabarito Consolidado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
+              "action": "Aplicar os preceitos normativos específicos de Gabarito Consolidado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
             },
             {
               "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "result": "CERTO.",
+          "decisivePoint": "Critério decisório de Gabarito Consolidado aplicado a \"CERTO\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
@@ -1894,26 +1890,21 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-025",
           "title": "Enunciado",
-          "prompt": "A correção gramatical do trecho \"Tinha às vezes vontade de chamar o feitor e dar ordens\" seria mantida caso ele fosse reescrito da seguinte forma: Tinha às vezes vontade de chamar o feitor e dá-lo ordens. Certo Errado",
+          "prompt": "Tinha às vezes vontade de chamar o feitor e dar ordens",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"A correção gramatical do trecho \"Tinha às vezes vontade de c...\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "A correção gramatical do trecho \"Tinha às vezes vontade de chamar o feitor e dar ordens\" seria mantida caso ele fosse reescrito da seguinte forma: Tinha às vezes vontade de chamar o feitor e dá-lo ordens",
+              "rationale": "Etapa 1 de análise para Enunciado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
-            },
-            {
-              "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Certo Errado",
+              "rationale": "Etapa 2 de análise para Enunciado."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "result": "Certo Errado",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Tinha às vezes vontade de chamar o feito\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
@@ -1963,26 +1954,26 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-027",
           "title": "Gabarito Consolidado",
-          "prompt": "ERRADO.",
+          "prompt": "ERRADO",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"ERRADO....\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "Identificar a estrutura frasal em: \"ERRADO\".",
+              "rationale": "Constatação do elemento sob exame de Gabarito Consolidado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
+              "action": "Aplicar os preceitos normativos específicos de Gabarito Consolidado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
             },
             {
               "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "result": "ERRADO.",
+          "decisivePoint": "Critério decisório de Gabarito Consolidado aplicado a \"ERRADO\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
@@ -1995,26 +1986,21 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-028",
           "title": "Enunciado",
-          "prompt": "A substituição da parte sublinhada em \"têm costumes\" pelo pronome oblíquo correspondente está correta em tê-los. Certo Errado",
+          "prompt": "têm costumes",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"A substituição da parte sublinhada em \"têm costumes\" pelo pr...\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "A substituição da parte sublinhada em \"têm costumes\" pelo pronome oblíquo correspondente está correta em tê-los",
+              "rationale": "Etapa 1 de análise para Enunciado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
-            },
-            {
-              "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Certo Errado",
+              "rationale": "Etapa 2 de análise para Enunciado."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "result": "Certo Errado",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"têm costumes\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
@@ -2070,26 +2056,26 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-030",
           "title": "Gabarito Consolidado",
-          "prompt": "ERRADO.",
+          "prompt": "ERRADO",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"ERRADO....\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "Identificar a estrutura frasal em: \"ERRADO\".",
+              "rationale": "Constatação do elemento sob exame de Gabarito Consolidado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
+              "action": "Aplicar os preceitos normativos específicos de Gabarito Consolidado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
             },
             {
               "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "result": "ERRADO.",
+          "decisivePoint": "Critério decisório de Gabarito Consolidado aplicado a \"ERRADO\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
@@ -2102,26 +2088,26 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-031",
           "title": "Enunciado",
-          "prompt": "No trecho \"Os heterônimos de Fernando Pessoa renderam obras com diferentes nuances: do sarcasmo ao lirismo\", ainda cabe um complemento para o sentido da forma verbal \"renderam\". Pelos sentidos do texto, esse complemento poderia ser renderam-no. Certo Errado",
+          "prompt": "Os heterônimos de Fernando Pessoa renderam obras com diferentes nuances: do sarcasmo ao lirismo",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"No trecho \"Os heterônimos de Fernando Pessoa renderam obras ...\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "No trecho \"Os heterônimos de Fernando Pessoa renderam obras com diferentes nuances: do sarcasmo ao lirismo\", ainda cabe um complemento para o sentido da forma verbal \"renderam\"",
+              "rationale": "Etapa 1 de análise para Enunciado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
+              "action": "Pelos sentidos do texto, esse complemento poderia ser renderam-no",
+              "rationale": "Etapa 2 de análise para Enunciado."
             },
             {
               "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Certo Errado",
+              "rationale": "Etapa 3 de análise para Enunciado."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "result": "Certo Errado",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Os heterônimos de Fernando Pessoa render\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
@@ -2171,26 +2157,26 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-033",
           "title": "Gabarito Consolidado",
-          "prompt": "ERRADO.",
+          "prompt": "ERRADO",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"ERRADO....\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "Identificar a estrutura frasal em: \"ERRADO\".",
+              "rationale": "Constatação do elemento sob exame de Gabarito Consolidado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
+              "action": "Aplicar os preceitos normativos específicos de Gabarito Consolidado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
             },
             {
               "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "result": "ERRADO.",
+          "decisivePoint": "Critério decisório de Gabarito Consolidado aplicado a \"ERRADO\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
@@ -2203,26 +2189,21 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-034",
           "title": "Enunciado",
-          "prompt": "A substituição do pronome \"o\", em \"reduziu-o a artigos\", por lhe preservaria a correção gramatical do texto. Certo Errado",
+          "prompt": "A substituição do pronome \"o\", em \"reduziu-o a artigos\", por lhe preservaria a correção gramatical do texto",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"A substituição do pronome \"o\", em \"reduziu-o a artigos\", por...\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "A substituição do pronome \"o\", em \"reduziu-o a artigos\", por lhe preservaria a correção gramatical do texto",
+              "rationale": "Etapa 1 de análise para Enunciado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
-            },
-            {
-              "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Certo Errado",
+              "rationale": "Etapa 2 de análise para Enunciado."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "result": "Certo Errado",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"A substituição do pronome \"o\", em \"reduz\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
@@ -2272,26 +2253,26 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-036",
           "title": "Gabarito Consolidado",
-          "prompt": "ERRADO.",
+          "prompt": "ERRADO",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"ERRADO....\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "Identificar a estrutura frasal em: \"ERRADO\".",
+              "rationale": "Constatação do elemento sob exame de Gabarito Consolidado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
+              "action": "Aplicar os preceitos normativos específicos de Gabarito Consolidado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
             },
             {
               "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "result": "ERRADO.",
+          "decisivePoint": "Critério decisório de Gabarito Consolidado aplicado a \"ERRADO\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
@@ -2304,26 +2285,21 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-037",
           "title": "Enunciado",
-          "prompt": "Na oração \"guiava-me a promessa do livro\", o pronome \"me\" exerce a função de complemento da forma verbal \"guiava\". Certo Errado",
+          "prompt": "guiava-me a promessa do livro",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"Na oração \"guiava-me a promessa do livro\", o pronome \"me\" ex...\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "Na oração \"guiava-me a promessa do livro\", o pronome \"me\" exerce a função de complemento da forma verbal \"guiava\"",
+              "rationale": "Etapa 1 de análise para Enunciado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
-            },
-            {
-              "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Certo Errado",
+              "rationale": "Etapa 2 de análise para Enunciado."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "result": "Certo Errado",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"guiava-me a promessa do livro\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
@@ -2379,26 +2355,26 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-039",
           "title": "Gabarito Consolidado",
-          "prompt": "CERTO.",
+          "prompt": "CERTO",
           "analysisSteps": [
             {
               "order": 1,
-              "action": "Localizar a ocorrência do fenômeno linguístico em \"CERTO....\".",
-              "rationale": "Identificação da estrutura-alvo na oração."
+              "action": "Identificar a estrutura frasal em: \"CERTO\".",
+              "rationale": "Constatação do elemento sob exame de Gabarito Consolidado."
             },
             {
               "order": 2,
-              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
-              "rationale": "Aplicação do critério normativo canônico."
+              "action": "Aplicar os preceitos normativos específicos de Gabarito Consolidado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
             },
             {
               "order": 3,
-              "action": "Validar o resultado obtido conforme o padrão culto.",
-              "rationale": "Confirmação da conformidade gramatical."
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
             }
           ],
-          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
-          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "result": "CERTO.",
+          "decisivePoint": "Critério decisório de Gabarito Consolidado aplicado a \"CERTO\".",
           "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
           "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [

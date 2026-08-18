@@ -4,7 +4,7 @@
     "unitId": "IP-A05-G12",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:23:26.561Z"
+    "generatedAt": "2026-08-18T21:31:54.024Z"
   },
   "unit": {
     "unitId": "IP-A05-G12",
@@ -538,38 +538,39 @@
           "inputs": [
             {
               "name": "segmento_analisado",
-              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo de Identificação Rápida e Excludente do \"SE\"."
-            },
-            {
-              "name": "contexto_linguistico",
-              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+              "description": "Estrutura textual submetida ao roteiro de Algoritmo de Identificação Rápida e Excludente do \"SE\"."
             }
           ],
           "steps": [
             {
               "order": 1,
-              "action": "Identificar a estrutura sintático-morfológica alvo de Algoritmo de Identificação Rápida e Excludente do \"SE\".",
-              "test": "Localizar o termo regente ou núcleo do segmento."
+              "action": "Classificar qualquer ocorrência da palavra \"SE\" em provas de concurso em menos de 30 segundos, eliminando distratores por testes de hipótese",
+              "explanation": "Procedimento operacional para Algoritmo de Identificação Rápida e Excludente do \"SE\".",
+              "test": "Classificar qualquer ocorrência da palavra \"SE\" em provas de concurso em menos de 30 segundos, eliminando distratores por testes de hipótese"
             },
             {
               "order": 2,
-              "action": "Aplicar os critérios decisórios da regra canônica.",
-              "test": "Verificar se há exceção ou caso facultativo aplicável."
+              "action": "text [ PALAVRA \"SE\" ] │ ┌────────────────────────────────┴────────────────────────────────┐ ▼ ▼ [ETAPA 1: TESTE DE CONJUNÇÃO] [ETAPA 2: TESTE DE REALCE] A palavra liga duas orações? Pode retirar o \"se\" sem qualquer alteração ├─ Troca a oração por \"ISSO\"? ──► CONJUNÇÃO INTEGRANTE estrutural ou semântica? (ex.: foram-se) ├─ Troca por \"CASO\"? ───────────► CONJUNÇÃO CONDICIONAL └─ Sim ──► PARTÍCULA DE REALCE / EXPLETIVA ├─ Troca por \"JÁ QUE\"? ─────────► CONJUNÇÃO CAUSAL └─ Troca por \"EMBORA\"? ─────────► CONJUNÇÃO CONCESSIVA │ (Se não for conjunção nem realce) ▼ [ETAPA 3: TESTE PRONOMINAL / SINTÁTICO] │ ┌───────────────────────────────────────┬────────────────────────┴──────────────┬────────────────────────────────────────┐ ▼ ▼ ▼ ▼ [TESTE DA PASSIVA (PA)] [TESTE DO SUJEITO (PIS)] [TESTE DO MENINO (REFLEX)] [TESTE DA CONJUGAÇÃO (PIV)] Verbo VTD/VTDI + termo sem Verbo VTI/VI/VL + termo com Ação sobre o próprio corpo; Verbo só existe com pronome ou preposição: converte em passiva preposição: verbo fixo no permite transferir a terceiro muda regência; conjuga em analítica (ser + particípio)",
+              "explanation": "Procedimento operacional para Algoritmo de Identificação Rápida e Excludente do \"SE\".",
+              "test": "text [ PALAVRA \"SE\" ] │ ┌────────────────────────────────┴────────────────────────────────┐ ▼ ▼ [ETAPA 1: TESTE DE CONJUNÇÃO] [ETAPA 2: TESTE DE REALCE] A palavra liga duas orações? Pode retirar o \"se\" sem qualquer alteração ├─ Troca a oração por \"ISSO\"? ──► CONJUNÇÃO INTEGRANTE estrutural ou semântica? (ex.: foram-se) ├─ Troca por \"CASO\"? ───────────► CONJUNÇÃO CONDICIONAL └─ Sim ──► PARTÍCULA DE REALCE / EXPLETIVA ├─ Troca por \"JÁ QUE\"? ─────────► CONJUNÇÃO CAUSAL └─ Troca por \"EMBORA\"? ─────────► CONJUNÇÃO CONCESSIVA │ (Se não for conjunção nem realce) ▼ [ETAPA 3: TESTE PRONOMINAL / SINTÁTICO] │ ┌───────────────────────────────────────┬────────────────────────┴──────────────┬────────────────────────────────────────┐ ▼ ▼ ▼ ▼ [TESTE DA PASSIVA (PA)] [TESTE DO SUJEITO (PIS)] [TESTE DO MENINO (REFLEX)] [TESTE DA CONJUGAÇÃO (PIV)] Verbo VTD/VTDI + termo sem Verbo VTI/VI/VL + termo com Ação sobre o próprio corpo; Verbo só existe com pronome ou preposição: converte em passiva preposição: verbo fixo no permite transferir a terceiro muda regência; conjuga em analítica (ser + particípio)"
             },
             {
               "order": 3,
-              "action": "Concluir a classificação definitiva para resolução da questão.",
-              "test": "Confrontar o resultado obtido com as alternativas da prova."
+              "action": "singular (\"alguém...\")",
+              "explanation": "Procedimento operacional para Algoritmo de Identificação Rápida e Excludente do \"SE\".",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "(\"olhou o menino\")",
+              "explanation": "Procedimento operacional para Algoritmo de Identificação Rápida e Excludente do \"SE\".",
+              "test": null
             }
           ],
           "outputs": [
             {
               "name": "classificacao_normativa",
-              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo de Identificação Rápida e Excludente do \"SE\"."
-            },
-            {
-              "name": "diagnostico_resolucao",
-              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+              "description": "Diagnóstico definitivo conforme os preceitos de Algoritmo de Identificação Rápida e Excludente do \"SE\"."
             }
           ],
           "blocks": [

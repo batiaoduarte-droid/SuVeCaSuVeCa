@@ -4,7 +4,7 @@
     "unitId": "IP-A12-G05",
     "canonicalSchemaVersion": "2.0.0",
     "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T21:23:26.653Z"
+    "generatedAt": "2026-08-18T21:31:54.122Z"
   },
   "unit": {
     "unitId": "IP-A12-G05",
@@ -582,38 +582,39 @@
           "inputs": [
             {
               "name": "segmento_analisado",
-              "description": "Oração, período ou vocábulo submetido à análise de Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias."
-            },
-            {
-              "name": "contexto_linguistico",
-              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+              "description": "Estrutura textual submetida ao roteiro de Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias."
             }
           ],
           "steps": [
             {
               "order": 1,
-              "action": "Identificar a estrutura sintático-morfológica alvo de Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias.",
-              "test": "Localizar o termo regente ou núcleo do segmento."
+              "action": "[Início da Análise da Sentença] │ ▼ Passo 1: Testar a Via 1 (Palavra Isolada / Polissemia Pura) └─ Há vocábulo polissêmico ou homônimo sem restrição no cotexto? (ex.: \"banco\", \"cachorro\") ├─ SIM ──> Classificar como AMBIGUIDADE LEXICAL / IMPRECISÃO VOCABULAR",
+              "explanation": "Procedimento operacional para Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias.",
+              "test": null
             },
             {
               "order": 2,
-              "action": "Aplicar os critérios decisórios da regra canônica.",
-              "test": "Verificar se há exceção ou caso facultativo aplicável."
+              "action": "└─ NÃO ──> Avançar para o Passo 2",
+              "explanation": "Procedimento operacional para Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias.",
+              "test": null
             },
             {
               "order": 3,
-              "action": "Concluir a classificação definitiva para resolução da questão.",
-              "test": "Confrontar o resultado obtido com as alternativas da prova."
+              "action": "│ ▼ Passo 2: Testar a Via 2 (Conectivos Específicos \"DE\" e \"E\") ├─ Há preposição \"DE\" ligada a substantivo abstrato de ação? │ └─ O termo preposicionado pode ser Agente (Adj",
+              "explanation": "Procedimento operacional para Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Adnominal) E Paciente (Compl",
+              "explanation": "Procedimento operacional para Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias.",
+              "test": null
             }
           ],
           "outputs": [
             {
               "name": "classificacao_normativa",
-              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias."
-            },
-            {
-              "name": "diagnostico_resolucao",
-              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+              "description": "Diagnóstico definitivo conforme os preceitos de Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias."
             }
           ],
           "blocks": [
