@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A01-G01",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.699Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.459Z"
   },
   "unit": {
     "unitId": "IP-A01-G01",
@@ -440,6 +440,14 @@
         {
           "entityId": "RULE-IP-A01-G01-001",
           "title": "Quadro Sinótico de Classes e Flexibilidade",
+          "statement": "\\*Exceções registradas: Pronomes invariáveis (alguém, ninguém, tudo); Advérbio de intensidade todo (\"toda feliz\").",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Quadro Sinótico de Classes e Flexibilidade."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -537,6 +545,15 @@
         {
           "entityId": "RULE-IP-A01-G01-002",
           "title": "Regra Canônica das Locuções",
+          "statement": "Locução Adjetiva: Expressão preposicionada que qualifica substantivo $\\rightarrow$ Em regra Invariável (KB-...-003).\nLocução Conjuntiva: Expressão conectiva que termina em conjunção (KB-...-008).\nLocução Prepositiva: Expressão conectiva que termina em preposição (KB-...-008).",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Locução Adjetiva: Expressão preposicionada que qualifica substantivo $\\rightarrow$ Em regra Invariável (KB-...-003).",
+            "Locução Conjuntiva: Expressão conectiva que termina em conjunção (KB-...-008).",
+            "Locução Prepositiva: Expressão conectiva que termina em preposição (KB-...-008)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -556,6 +573,47 @@
         {
           "procedureId": "PROC-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-001",
           "title": "Teste do Artigo para Identificação de Substantivos",
+          "objective": "Executar o algoritmo decisório para Teste do Artigo para Identificação de Substantivos",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste do Artigo para Identificação de Substantivos."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole o vocábulo sob análise na frase.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Tente inserir imediatamente antes dele um artigo definido (o, a, os, as) ou indefinido (um, uma).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se a estrutura acolher o artigo mantendo a higidez gramatical e o sentido, a palavra funciona contextualmente como Substantivo.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste do Artigo para Identificação de Substantivos."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -571,6 +629,53 @@
         {
           "procedureId": "PROC-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-002",
           "title": "Teste da \"Seta\" para Diferenciação de Funções Substantivas e Adjetivas",
+          "objective": "Executar o algoritmo decisório para Teste da \"Seta\" para Diferenciação de Funções Substantivas e Adjetivas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste da \"Seta\" para Diferenciação de Funções Substantivas e Adjetivas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize o pronome ou numeral na estrutura oracional.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Verifique a existência de substantivo adjacente",
+              "explanation": "",
+              "test": "Verifique a existência de substantivo adjacente:"
+            },
+            {
+              "order": 3,
+              "action": "Se a palavra manda uma seta para um substantivo ao lado $\\rightarrow$ Classifica-se como Pronome Adjetivo ou Numeral Adjetivo (\"Meu aluno\", \"Dois homens\").",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se a palavra estiver isolada, sem substantivo ao lado, desempenhando ela própria o papel nuclear $\\rightarrow$ Classifica-se como Pronome Substantivo ou Numeral Substantivo (\"Alguém chegou\", \"Os dois chegaram\").",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste da \"Seta\" para Diferenciação de Funções Substantivas e Adjetivas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -593,6 +698,53 @@
         {
           "procedureId": "PROC-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-003",
           "title": "Regra do Vocábulo Final para Locuções Conectivas",
+          "objective": "Executar o algoritmo decisório para Regra do Vocábulo Final para Locuções Conectivas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Regra do Vocábulo Final para Locuções Conectivas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole a expressão conectiva pluriverbal.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Examine a última palavra que encerra a locução",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se a última palavra for uma preposição (de, a, em, com, por) $\\rightarrow$ A estrutura é uma Locução Prepositiva (a fim de, por causa de).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se a última palavra for uma conjunção (que, se, como) $\\rightarrow$ A estrutura é uma Locução Conjuntiva (a fim de que, visto que).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Regra do Vocábulo Final para Locuções Conectivas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -615,6 +767,71 @@
         {
           "procedureId": "PROC-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-004",
           "title": "Protocolo do Método das Setas para Classificação Morfossintática",
+          "objective": "Executar o algoritmo decisório para Protocolo do Método das Setas para Classificação Morfossintática",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo do Método das Setas para Classificação Morfossintática."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Delimitação",
+              "explanation": "Verifique o escopo exato do sublinhado da banca (evitando analisar a locução inteira quando apenas o núcleo está marcado).",
+              "test": "Delimitação: Verifique o escopo exato do sublinhado da banca (evitando analisar a locução inteira quando apenas o núcleo está marcado)."
+            },
+            {
+              "order": 2,
+              "action": "Pergunta de Relação",
+              "explanation": "Formule a pergunta de dependência: \"Este vocábulo está no texto para modificar, caracterizar ou ligar quem?\"",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Mapeamento",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Referência a Substantivo $\\rightarrow$ Natureza Adjetiva/Nominal (Variável).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Referência a Verbo, Adjetivo ou Advérbio $\\rightarrow$ Advérbio (Invariável).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Ligação pura $\\rightarrow$ Preposição / Conjunção (Invariável).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Confirmação",
+              "explanation": "Teste a flexão passando a oração para o plural/feminino.",
+              "test": "Confirmação: Teste a flexão passando a oração para o plural/feminino."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo do Método das Setas para Classificação Morfossintática."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -646,6 +863,47 @@
         {
           "procedureId": "PROC-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-005",
           "title": "Teste de Substituição Contextual para \"Só\" e \"A sós\"",
+          "objective": "Executar o algoritmo decisório para Teste de Substituição Contextual para \"Só\" e \"A sós\"",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Substituição Contextual para \"Só\" e \"A sós\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Substitua \"só\" por \"sozinho(a)\"",
+              "explanation": "se mantiver a coerência, refere-se a substantivo $\\rightarrow$ Adjetivo (Variável).",
+              "test": "Substitua \"só\" por \"sozinho(a)\": se mantiver a coerência, refere-se a substantivo $\\rightarrow$ Adjetivo (Variável)."
+            },
+            {
+              "order": 2,
+              "action": "Substitua \"só\" por \"somente / apenas\"",
+              "explanation": "se mantiver a coerência, refere-se a verbo $\\rightarrow$ Advérbio (Invariável).",
+              "test": "Substitua \"só\" por \"somente / apenas\": se mantiver a coerência, refere-se a verbo $\\rightarrow$ Advérbio (Invariável)."
+            },
+            {
+              "order": 3,
+              "action": "Diante da expressão preposicionada \"a sós\"",
+              "explanation": "identifique-a como Locução Adjetiva Invariável.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Substituição Contextual para \"Só\" e \"A sós\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -665,6 +923,22 @@
         {
           "contrastId": "CONTRAST-IP-A01-G01-001",
           "title": "1. Palavra Simples vs. Locução Correspondente (Comportamento de Flexão)",
+          "contrastType": "mixed",
+          "conceptA": "1. Palavra Simples vs. Locução Correspondente (Comportamento de Flexão)",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -716,6 +990,22 @@
         {
           "contrastId": "CONTRAST-IP-A01-G01-002",
           "title": "2. Distinção entre Conectores e suas Locuções",
+          "contrastType": "mixed",
+          "conceptA": "2. Distinção entre Conectores e suas Locuções",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -762,6 +1052,22 @@
         {
           "contrastId": "CONTRAST-IP-A01-G01-003",
           "title": "3. Vocábulos Polissêmicos em Análise Contrastiva",
+          "contrastType": "mixed",
+          "conceptA": "3. Vocábulos Polissêmicos em Análise Contrastiva",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -836,6 +1142,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A01-G01-001",
           "title": "EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-001 — Contraste de Flexão no Plural: Adjetivo vs. Locução Adjetiva",
+          "prompt": "Construção A: \"Ele é homem inteligente.\" $\\rightarrow$ Plural: \"Eles são homens inteligentes.\" (O adjetivo simples flexiona no plural).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Construção A",
+              "rationale": "\"Ele é homem inteligente.\" $\\rightarrow$ Plural: \"Eles são homens inteligentes.\" (O adjetivo simples flexiona no plural)."
+            },
+            {
+              "order": 2,
+              "action": "Construção B",
+              "rationale": "\"Ele é homem de inteligência.\" $\\rightarrow$ Plural: \"Eles são homens de inteligência.\" (A locução adjetiva permanece invariável; a forma \"de inteligências\" é gramaticalmente rejeitada)."
+            }
+          ],
+          "result": "Construção B: \"Ele é homem de inteligência.\" $\\rightarrow$ Plural: \"Eles são homens de inteligência.\" (A locução adjetiva permanece invariável; a forma \"de inteligências\" é gramaticalmente rejeitada).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-001 — Contraste de Flexão no Plural: Adjetivo vs. Locução Adjetiva sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-001 — Contraste de Flexão no Plural: Adjetivo vs. Locução Adjetiva.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-001 — Contraste de Flexão no Plural: Adjetivo vs. Locução Adjetiva.",
           "blocks": [
             {
               "type": "list",
@@ -850,6 +1173,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A01-G01-002",
           "title": "EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-002 — Diferenciação de Funções Substantivas e Adjetivas",
+          "prompt": "EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-002 — Diferenciação de Funções Substantivas e Adjetivas",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-002 — Diferenciaç...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-002 — Diferenciação de Funções Substantivas e Adjetivas.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-002 — Diferenciação de Funções Substantivas e Adjetivas sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-002 — Diferenciação de Funções Substantivas e Adjetivas.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-002 — Diferenciação de Funções Substantivas e Adjetivas.",
           "blocks": [
             {
               "type": "table_ref",
@@ -901,6 +1246,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A01-G01-003",
           "title": "EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-003 — Aplicação da Exceção do Advérbio \"Todo\"",
+          "prompt": "Frase: \"Ela chegou toda feliz.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Ela chegou toda feliz.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "O adjetivo feliz refere-se a ela. A palavra toda intensifica o adjetivo (equivale a \"completamente\"). Pela regra geral, modificador de adjetivo é advérbio. Trata-se de uma exceção em que o advérbio sofreu flexão facultativa/estilística de gênero. A forma invariável \"Ela chegou todo feliz\" também é culta e correta."
+            }
+          ],
+          "result": "Análise: O adjetivo feliz refere-se a ela. A palavra toda intensifica o adjetivo (equivale a \"completamente\"). Pela regra geral, modificador de adjetivo é advérbio. Trata-se de uma exceção em que o advérbio sofreu flexão facultativa/estilística de gênero. A forma invariável \"Ela chegou todo feliz\" também é culta e correta.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-003 — Aplicação da Exceção do Advérbio \"Todo\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-003 — Aplicação da Exceção do Advérbio \"Todo\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-003 — Aplicação da Exceção do Advérbio \"Todo\".",
           "blocks": [
             {
               "type": "list",
@@ -915,6 +1277,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A01-G01-004",
           "title": "EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-004 — Bateria Consolidada de Exercícios de Fixação (8 Itens)",
+          "prompt": "EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-004 — Bateria Consolidada de Exercícios de Fixação (8 Itens)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-004 — Bateria Con...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-004 — Bateria Consolidada de Exercícios de Fixação (8 Itens).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-004 — Bateria Consolidada de Exercícios de Fixação (8 Itens) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-004 — Bateria Consolidada de Exercícios de Fixação (8 Itens).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-004 — Bateria Consolidada de Exercícios de Fixação (8 Itens).",
           "blocks": [
             {
               "type": "table_ref",
@@ -994,6 +1378,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A01-G01-005",
           "title": "EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-005 — Questão de Concurso 01 — INSTITUTO AOCP / Câmara de Maringá-PR",
+          "prompt": "Texto 1: \"— Claro que estou indo à festa. — respondi.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto 1",
+              "rationale": "\"— Claro que estou indo à festa. — respondi.\""
+            },
+            {
+              "order": 2,
+              "action": "Texto 2",
+              "rationale": "\"... e, claro, eu estava dormindo.\""
+            },
+            {
+              "order": 3,
+              "action": "Enunciado",
+              "rationale": "Em ambos os casos, a palavra \"claro\" classifica-se como:"
+            },
+            {
+              "order": 4,
+              "action": "A) adjetivo que traz a ideia de clareza; portanto, nos dois casos, é uma palavra variável.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "B) adjetivo que traz a ideia de obviedade; apesar disso, nos dois casos, é uma palavra invariável.",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: C",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-005 — Questão de Concurso 01 — INSTITUTO AOCP / Câmara de Maringá-PR sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-005 — Questão de Concurso 01 — INSTITUTO AOCP / Câmara de Maringá-PR.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-005 — Questão de Concurso 01 — INSTITUTO AOCP / Câmara de Maringá-PR.",
           "blocks": [
             {
               "type": "list",
@@ -1016,6 +1432,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A01-G01-006",
           "title": "EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-006 — Questão de Concurso 02 — AOCP / Prefeitura de Marilena-PR",
+          "prompt": "Enunciado: Em \"... o sujeito passa a se achar menos condenável que os outros por ser poderoso [...]\", a palavra \"menos\":",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Em \"... o sujeito passa a se achar menos condenável que os outros por ser poderoso [...]\", a palavra \"menos\":"
+            },
+            {
+              "order": 2,
+              "action": "A) pertence a uma classe de palavras invariável.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "B) está flexionada no gênero masculino.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) pertence à classe dos adjetivos.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) está flexionada em gênero e número.",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: A",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-006 — Questão de Concurso 02 — AOCP / Prefeitura de Marilena-PR sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-006 — Questão de Concurso 02 — AOCP / Prefeitura de Marilena-PR.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-006 — Questão de Concurso 02 — AOCP / Prefeitura de Marilena-PR.",
           "blocks": [
             {
               "type": "list",
@@ -1036,6 +1484,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A01-G01-007",
           "title": "EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-007 — Questão de Concurso 03 — IESES / Prefeitura de São José-SC",
+          "prompt": "Enunciado: Assinale a alternativa correta quanto aos termos: \"Ângela fez todo o trabalho do escritório só (1), e Maria só (2) arrumou os canteiros da horta. As duas, quando estão a sós (3), gostam de ler e cozinhar.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assinale a alternativa correta quanto aos termos: \"Ângela fez todo o trabalho do escritório só (1), e Maria só (2) arrumou os canteiros da horta. As duas, quando estão a sós (3), gostam de ler e cozinhar.\""
+            },
+            {
+              "order": 2,
+              "action": "A) (1) adjetivo, variável; (2) advérbio, invariável; (3) locução, invariável.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "B) (1) advérbio, invariável; (2) adjetivo, variável; (3) locução, variável.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) (1) advérbio, invariável; (2) advérbio, invariável; (3) locução, invariável.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) (1) adjetivo variável; (2) adjetivo, variável; (3) locução, variável.",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: A",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-007 — Questão de Concurso 03 — IESES / Prefeitura de São José-SC sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-007 — Questão de Concurso 03 — IESES / Prefeitura de São José-SC.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-007 — Questão de Concurso 03 — IESES / Prefeitura de São José-SC.",
           "blocks": [
             {
               "type": "list",
@@ -1110,8 +1590,12 @@
         {
           "trapId": "WARN-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-001",
           "title": "Pegadinha do Escopo do Sublinhado (Núcleo vs. Locução)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha do Escopo do Sublinhado (Núcleo vs. Locução).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha do Escopo do Sublinhado (Núcleo vs. Locução).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha do Escopo do Sublinhado (Núcleo vs. Locução) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha do Escopo do Sublinhado (Núcleo vs. Locução).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha do Escopo do Sublinhado (Núcleo vs. Locução).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pegadinha do Escopo do Sublinhado (Núcleo vs. Locução) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha do Escopo do Sublinhado (Núcleo vs. Locução).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha do Escopo do Sublinhado (Núcleo vs. Locução).",
           "blocks": [
             {
               "type": "list",
@@ -1126,8 +1610,12 @@
         {
           "trapId": "WARN-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-002",
           "title": "Erro de Pluralizar o Substantivo Interno da Locução Adjetiva",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Erro de Pluralizar o Substantivo Interno da Locução Adjetiva.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Erro de Pluralizar o Substantivo Interno da Locução Adjetiva.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Erro de Pluralizar o Substantivo Interno da Locução Adjetiva no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Erro de Pluralizar o Substantivo Interno da Locução Adjetiva.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Erro de Pluralizar o Substantivo Interno da Locução Adjetiva.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Erro de Pluralizar o Substantivo Interno da Locução Adjetiva para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Erro de Pluralizar o Substantivo Interno da Locução Adjetiva.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Erro de Pluralizar o Substantivo Interno da Locução Adjetiva.",
           "blocks": [
             {
               "type": "list",
@@ -1142,8 +1630,12 @@
         {
           "trapId": "WARN-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-003",
           "title": "Pegadinha da Invariabilidade Culta do Advérbio \"Todo\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha da Invariabilidade Culta do Advérbio \"Todo\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha da Invariabilidade Culta do Advérbio \"Todo\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha da Invariabilidade Culta do Advérbio \"Todo\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha da Invariabilidade Culta do Advérbio \"Todo\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha da Invariabilidade Culta do Advérbio \"Todo\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pegadinha da Invariabilidade Culta do Advérbio \"Todo\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha da Invariabilidade Culta do Advérbio \"Todo\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha da Invariabilidade Culta do Advérbio \"Todo\".",
           "blocks": [
             {
               "type": "list",
@@ -1158,8 +1650,12 @@
         {
           "trapId": "WARN-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-004",
           "title": "Invariabilidade Absoluta da Locução \"A sós\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Invariabilidade Absoluta da Locução \"A sós\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Invariabilidade Absoluta da Locução \"A sós\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Invariabilidade Absoluta da Locução \"A sós\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Invariabilidade Absoluta da Locução \"A sós\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Invariabilidade Absoluta da Locução \"A sós\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Invariabilidade Absoluta da Locução \"A sós\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Invariabilidade Absoluta da Locução \"A sós\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Invariabilidade Absoluta da Locução \"A sós\".",
           "blocks": [
             {
               "type": "list",
@@ -1174,8 +1670,12 @@
         {
           "trapId": "WARN-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-005",
           "title": "Erro de Supor que Conjunção Exige Duas Orações",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Erro de Supor que Conjunção Exige Duas Orações.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Erro de Supor que Conjunção Exige Duas Orações.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Erro de Supor que Conjunção Exige Duas Orações no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Erro de Supor que Conjunção Exige Duas Orações.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Erro de Supor que Conjunção Exige Duas Orações.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Erro de Supor que Conjunção Exige Duas Orações para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Erro de Supor que Conjunção Exige Duas Orações.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Erro de Supor que Conjunção Exige Duas Orações.",
           "blocks": [
             {
               "type": "list",
@@ -1312,7 +1812,10 @@
       "officialAnswer": "incorrect",
       "explanation": "O artigo faz toda a diferença no sentido:\n“a cidade toda”— a cidade inteira, a cidade por completo.\n“toda cidade”— todas as cidades, qualquer cidade. Questão incorreta.",
       "questionSha256": "a56694d30a056ff5d9c40f8ea9122a69407503a25ca37851d3959a8ce68fd87c",
-      "answerSha256": "7c0a4385c47207696b255c330b1d9b240e1b265f66dd4988278c8645d8a02971"
+      "answerSha256": "7c0a4385c47207696b255c330b1d9b240e1b265f66dd4988278c8645d8a02971",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de PRF; 2. Identificar a regra central de Classes Variáveis e Invariáveis; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula01.q0066",
@@ -1325,7 +1828,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "010b957fba46adb174b0ee4ece9deb8dd9dc0e16d15fda24433adb397106f180",
-      "answerSha256": "2bec534007fd78c65b64ced33111fa276897efb5e6bae5578f1cbeaf16ca72f2"
+      "answerSha256": "2bec534007fd78c65b64ced33111fa276897efb5e6bae5578f1cbeaf16ca72f2",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Classes Variáveis e Invariáveis; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula01.q0040",
@@ -1351,7 +1857,29 @@
       ],
       "officialAnswer": "option_A",
       "questionSha256": "e6249f301e104d85d73f2382aacbefbcca254d8db763071191d9ebcc94dc4d5a",
-      "answerSha256": "02c3ff311d6cf4a684d99db4eed2d87d017ebf7ebf9076c9f03bcdd8c3b0d6a7"
+      "answerSha256": "02c3ff311d6cf4a684d99db4eed2d87d017ebf7ebf9076c9f03bcdd8c3b0d6a7",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Classes Variáveis e Invariáveis; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Classes Variáveis e Invariáveis."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Classes Variáveis e Invariáveis."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Classes Variáveis e Invariáveis."
+        }
+      ]
     },
     {
       "questionId": "aula01.q0047",
@@ -1364,7 +1892,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "515f6fb6ed96195b63edd01362d4fc45a569be4f8186fa3d74b059b9a41346e5",
-      "answerSha256": "b67db5aa9a1e4824bdc85c03fc915cb92d12cb60ad3747570264ad336f5153d0"
+      "answerSha256": "b67db5aa9a1e4824bdc85c03fc915cb92d12cb60ad3747570264ad336f5153d0",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Classes Variáveis e Invariáveis; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula01.q0033",
@@ -1394,7 +1925,35 @@
       ],
       "officialAnswer": "option_B",
       "questionSha256": "84c1fc65badb442963c51b9aca4b75e5e7445b6e40bf8d7910d19797ad7b0749",
-      "answerSha256": "6029c8a925a0cbb3af8618af1cdbd440515c149142b36f84db7a15acefdde3f4"
+      "answerSha256": "6029c8a925a0cbb3af8618af1cdbd440515c149142b36f84db7a15acefdde3f4",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Classes Variáveis e Invariáveis; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Classes Variáveis e Invariáveis."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Classes Variáveis e Invariáveis."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Classes Variáveis e Invariáveis."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Classes Variáveis e Invariáveis."
+        }
+      ]
     },
     {
       "questionId": "aula01.q0049",
@@ -1407,7 +1966,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "6c3416edf1ab58c6926882f349094ec079c1348c271da1756d00b374908c446d",
-      "answerSha256": "1027d7d1e23627e2c44440ae7c9303fbd1728453d9e71b67e0c4aefe738bdb2c"
+      "answerSha256": "1027d7d1e23627e2c44440ae7c9303fbd1728453d9e71b67e0c4aefe738bdb2c",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Classes Variáveis e Invariáveis; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

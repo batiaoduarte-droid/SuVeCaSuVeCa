@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A03-G02",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.733Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.496Z"
   },
   "unit": {
     "unitId": "IP-A03-G02",
@@ -460,6 +460,14 @@
         {
           "entityId": "RULE-IP-A03-G02-001",
           "title": "Regras canônicas",
+          "statement": "Regras canônicas",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -540,6 +548,59 @@
         {
           "procedureId": "PROC-A03-G02-001",
           "title": "Método do Substantivo Masculino Singular (\"Noun Test\") para Regência Verbal",
+          "objective": "Executar o algoritmo decisório para Método do Substantivo Masculino Singular (\"Noun Test\") para Regência Verbal",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método do Substantivo Masculino Singular (\"Noun Test\") para Regência Verbal."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole a forma verbal sob análise.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Acople imediatamente após o verbo o substantivo hipotético masculino singular \"o menino\".",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Avalie a exigência de preposição",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se a regência natural resultar em \"o menino\" (sem preposição) $\\rightarrow$ Verbo pede Objeto Direto $\\rightarrow$ empregue o, a, os, as.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se a regência natural resultar em \"ao menino\" (com preposição a) $\\rightarrow$ Verbo pede Objeto Indireto $\\rightarrow$ empregue lhe, lhes.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método do Substantivo Masculino Singular (\"Noun Test\") para Regência Verbal."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -577,6 +638,101 @@
         {
           "procedureId": "PROC-A03-G02-002",
           "title": "Algoritmo Geral de Substituição Pronominal e Morfofonética em Reescritas",
+          "objective": "Executar o algoritmo decisório para Algoritmo Geral de Substituição Pronominal e Morfofonética em Reescritas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo Geral de Substituição Pronominal e Morfofonética em Reescritas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificação do Núcleo do Complemento",
+              "explanation": "Isole o substantivo núcleo a ser substituído (desconsiderando adjuntos intermediários).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Determinação da Regência Verbal",
+              "explanation": "Aplique o Noun Test (PROC-A03-G02-001) para identificar se o termo é OD ou OI.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Seleção da Família Pronominal",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Objeto Direto $\\rightarrow$ o, a, os, as.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Objeto Indireto com prep. a/para $\\rightarrow$ lhe, lhes (ressalvados os verbos refratários $\\rightarrow$ a ele).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Objeto Indireto com outras preposições (de, em, com) $\\rightarrow$ oblíquo tônico preposicionado (dele, nele, com ele).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Verificação da Posição Sintática (Colocação)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Presença de palavra atrativa (relativo que, advérbio, negação) $\\rightarrow$ Próclise Obrigatória (pronome antes do verbo, em forma pura, sem acréscimo de L ou N).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Ausência de atrativo $\\rightarrow$ Ênclise (pronome após o verbo).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Aplicação de Modificações Fonéticas (Apenas se for Ênclise)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Terminação em R, S, Z $\\rightarrow$ corta a consoante e usa lo/la/los/las.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 12,
+              "action": "Terminação em som nasal (-m, ~, -ão, -õe) $\\rightarrow$ mantém o verbo e usa no/na/nos/nas.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo Geral de Substituição Pronominal e Morfofonética em Reescritas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -645,6 +801,59 @@
         {
           "procedureId": "PROC-A03-G02-003",
           "title": "Teste da Substituição Genitiva para Identificação do Valor Possessivo",
+          "objective": "Executar o algoritmo decisório para Teste da Substituição Genitiva para Identificação do Valor Possessivo",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste da Substituição Genitiva para Identificação do Valor Possessivo."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize o substantivo determinado imediatamente associado ao pronome na oração.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Tente substituir a estrutura pronominal por um pronome possessivo correspondente (seu/sua, dele/dela, meu/minha, nosso/nossa).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Avalie o resultado",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se a frase reescrita mantiver sentido fluido e denotar posse sobre o substantivo $\\rightarrow$ Valor Possessivo (Função",
+              "explanation": "Adjunto Adnominal).",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se a reescrita exigir a preposição pura (a ele, a eles, a mim) $\\rightarrow$ Valor de Complemento Verbal (Função",
+              "explanation": "Objeto Indireto).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste da Substituição Genitiva para Identificação do Valor Possessivo."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -682,6 +891,44 @@
         {
           "procedureId": "PROC-A03-G02-004",
           "title": "Algoritmo de Validação de Reescritas em Verbos Transitivos Diretos e Indiretos (VTDI)",
+          "objective": "Executar o algoritmo decisório para Algoritmo de Validação de Reescritas em Verbos Transitivos Diretos e Indiretos (VTDI)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo de Validação de Reescritas em Verbos Transitivos Diretos e Indiretos (VTDI)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura sintático-morfológica alvo de Algoritmo de Validação de Reescritas em Verbos Transitivos Diretos e Indiretos (VTDI).",
+              "test": "Localizar o termo regente ou núcleo do segmento."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios decisórios da regra canônica.",
+              "test": "Verificar se há exceção ou caso facultativo aplicável."
+            },
+            {
+              "order": 3,
+              "action": "Concluir a classificação definitiva para resolução da questão.",
+              "test": "Confrontar o resultado obtido com as alternativas da prova."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo de Validação de Reescritas em Verbos Transitivos Diretos e Indiretos (VTDI)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -710,6 +957,22 @@
         {
           "contrastId": "CONTRAST-IP-A03-G02-001",
           "title": "Contrastes decisivos",
+          "contrastType": "mixed",
+          "conceptA": "Contrastes decisivos",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -786,6 +1049,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-001",
           "title": "Enunciado",
+          "prompt": "A educação para a cidadania é um objetivo essencial, mas comprometem essa educação para a cidadania os que pretendem praticar a educação para a cidadania sem dotar a educação para a cidadania da visibilidade das atitudes públicas. Evitam-se as repetições viciosas da frase acima substituindo-se os segmentos sublinhados, respectivamente, por: A) comprometem-lhe – praticá-la – dotar-lhe B) comprometem ela – praticar-lhe – dotá-la C) comprometem-na – praticá-la – dotá-la D) comprometem a mesma – a praticar – lhe dotar E) comprometem a ela – lhe praticar – a dotar",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"A educação para a cidadania é um objetivo essencial, mas com...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -796,6 +1081,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-002",
           "title": "Análise Passo a Passo",
+          "prompt": "comprometem essa educação para a cidadania: \"Comprometer\" é VTD (comprometem o quê? a educação = OD). Verbo termina em som nasal M $\\rightarrow$ Ênclise com inserção de N $\\rightarrow$ comprometem-na. (Eliminam-se A, B, D, E).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "comprometem essa educação para a cidadania",
+              "rationale": "\"Comprometer\" é VTD (comprometem o quê? a educação = OD). Verbo termina em som nasal M $\\rightarrow$ Ênclise com inserção de N $\\rightarrow$ comprometem-na. (Eliminam-se A, B, D, E)."
+            },
+            {
+              "order": 2,
+              "action": "praticar a educação para a cidadania",
+              "rationale": "\"Praticar\" é VTD (OD). Verbo termina na consoante R $\\rightarrow$ Ênclise com corte do R e inserção de L $\\rightarrow$ praticá-la."
+            },
+            {
+              "order": 3,
+              "action": "dotar a educação para a cidadania",
+              "rationale": "\"Dotar\" é VTD (OD). Verbo termina em R $\\rightarrow$ Ênclise com corte do R e inserção de L $\\rightarrow$ dotá-la."
+            },
+            {
+              "order": 4,
+              "action": "Análise da Armadilha na Letra D (\"comprometem a mesma\")",
+              "rationale": "O pronome demonstrativo \"a mesma\" é proibido para substituir substantivos simples (KB-A03-G02-005)."
+            }
+          ],
+          "result": "Análise da Armadilha na Letra D (\"comprometem a mesma\"): O pronome demonstrativo \"a mesma\" é proibido para substituir substantivos simples (KB-A03-G02-005).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise Passo a Passo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise Passo a Passo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise Passo a Passo.",
           "blocks": [
             {
               "type": "list",
@@ -812,6 +1124,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-003",
           "title": "Gabarito Consolidado",
+          "prompt": "Letra C (comprometem-na – praticá-la – dotá-la).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Letra C (comprometem-na – praticá-la – dotá-la)....\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -822,6 +1156,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-004",
           "title": "Enunciado",
+          "prompt": "Ao tratar da morte, o cronista atribui à morte um poder de imantação tal que acaba por identificar a morte como uma força que, paradoxalmente, exerce uma estranha atração até mesmo sobre os que temem a morte. Evitam-se as viciosas repetições do período acima substituindo-se os elementos sublinhados, na ordem dada, por: A) atribui-lhe – identificá-la – a temem B) lhe atribui – identificar a ela – lhe temem C) atribui-lhe – a identificar – temem-lhe D) atribui nela – lhe identificar – temem-na E) a atribui – identificar-lhe – a temem",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Ao tratar da morte, o cronista atribui à morte um poder de i...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -832,6 +1188,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-005",
           "title": "Análise Passo a Passo",
+          "prompt": "atribui à morte: O verbo \"atribuir\" é VTDI. O termo vem craseado (à morte), atuando como Objeto Indireto regido pela prep. a $\\rightarrow$ atribui-lhe (ou atribui a ela). (Elimina-se E).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "atribui à morte",
+              "rationale": "O verbo \"atribuir\" é VTDI. O termo vem craseado (à morte), atuando como Objeto Indireto regido pela prep. a $\\rightarrow$ atribui-lhe (ou atribui a ela). (Elimina-se E)."
+            },
+            {
+              "order": 2,
+              "action": "identificar a morte",
+              "rationale": "\"Identificar\" é VTD. \"A morte\" é Objeto Direto $\\rightarrow$ terminação em R no infinitivo $\\rightarrow$ identificá-la (ou a identificar). (Elimina-se B)."
+            },
+            {
+              "order": 3,
+              "action": "sobre os que temem a morte",
+              "rationale": "\"Temer\" é VTD (\"a morte\" = OD). O termo é precedido pelo pronome relativo \"que\" (palavra atrativa que exige próclise). Em próclise, o pronome permanece inalterado $\\rightarrow$ que a temem. Formas como \"temem-na\" ou \"temem-lhe\" violam a colocação ou a regência."
+            }
+          ],
+          "result": "sobre os que temem a morte: \"Temer\" é VTD (\"a morte\" = OD). O termo é precedido pelo pronome relativo \"que\" (palavra atrativa que exige próclise). Em próclise, o pronome permanece inalterado $\\rightarrow$ que a temem. Formas como \"temem-na\" ou \"temem-lhe\" violam a colocação ou a regência.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise Passo a Passo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise Passo a Passo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise Passo a Passo.",
           "blocks": [
             {
               "type": "list",
@@ -847,6 +1225,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-006",
           "title": "Gabarito Consolidado",
+          "prompt": "Letra A (atribui-lhe – identificá-la – a temem).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Letra A (atribui-lhe – identificá-la – a temem)....\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -857,6 +1257,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-007",
           "title": "Enunciado",
+          "prompt": "Assinale a alternativa em que o enunciado está reescrito, nos colchetes, empregando pronomes para substituir o trecho destacado, de acordo com a norma-padrão. A)... quando resolveram revistar também as cargas líquidas... [revistar-lhes] B)... os fiscais concentravam as revistas somente nas cargas sólidas. [concentravam elas] C)... lá estavam fabricando dinheiro falso brasileiro [fabricando-o] D)... evitando assim os rigores da alfândega [evitando-nos]",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Assinale a alternativa em que o enunciado está reescrito, no...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -867,6 +1289,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-008",
           "title": "Análise Passo a Passo",
+          "prompt": "A) [revistar-lhes]: Incorreto. \"Revistar\" é VTD (revistar as cargas = OD). Exige pronome direto com corte de R: revistá-las.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) [revistar-lhes]",
+              "rationale": "Incorreto. \"Revistar\" é VTD (revistar as cargas = OD). Exige pronome direto com corte de R: revistá-las."
+            },
+            {
+              "order": 2,
+              "action": "B) [concentravam elas]",
+              "rationale": "Incorreto. \"Elas\" é pronome reto, vedado na função de objeto direto sem preposição (KB-A03-G02-004). Correto: concentravam-nas."
+            },
+            {
+              "order": 3,
+              "action": "C) [fabricando-o]",
+              "rationale": "CORRETO. \"Fabricando\" é VTD. \"Dinheiro falso brasileiro\" é OD masculino singular. Ênclise regular em terminação vocal: fabricando-o."
+            },
+            {
+              "order": 4,
+              "action": "D) [evitando-nos]",
+              "rationale": "Incorreto. \"Evitando\" termina na vogal oral 'o' (não é som nasal). O pronome correspondente a \"os rigores\" é os $\\rightarrow$ evitando-os (sem N)."
+            }
+          ],
+          "result": "D) [evitando-nos]: Incorreto. \"Evitando\" termina na vogal oral 'o' (não é som nasal). O pronome correspondente a \"os rigores\" é os $\\rightarrow$ evitando-os (sem N).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise Passo a Passo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise Passo a Passo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise Passo a Passo.",
           "blocks": [
             {
               "type": "list",
@@ -883,6 +1332,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-009",
           "title": "Gabarito Consolidado",
+          "prompt": "Letra C.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Letra C....\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -893,6 +1364,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-010",
           "title": "Enunciado",
+          "prompt": "Considere as seguintes frases do texto:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "É que a internet não se destina a substituir os livros...",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": ".. a educação não consiste apenas em transmitir informações...",
+              "rationale": null
+            }
+          ],
+          "result": "Para evitar tal repetição, a sua substituição por pronomes atende à norma-padrão em: A)... a substituir-lhes /... em transmitir-lhes... B)... a substituir-lhes /... em transmiti-las... C)... a substituí-los /... em transmiti-las... D)... a substituir-nos /... em transmitir-lhes... E)... a substituí-los /... em transmitir-nas...",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -915,6 +1403,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-011",
           "title": "Análise Passo a Passo",
+          "prompt": "substituir os livros: \"Substituir\" é VTD (exige OD = os). Terminação verbal em R $\\rightarrow$ suprime o R e acopla L $\\rightarrow$ substituí-los (com acento gráfico no i por regra de hiato).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "substituir os livros",
+              "rationale": "\"Substituir\" é VTD (exige OD = os). Terminação verbal em R $\\rightarrow$ suprime o R e acopla L $\\rightarrow$ substituí-los (com acento gráfico no i por regra de hiato)."
+            },
+            {
+              "order": 2,
+              "action": "transmitir informações",
+              "rationale": "\"Transmitir\" é VTD (exige OD = as). Terminação verbal em R $\\rightarrow$ suprime o R e acopla L $\\rightarrow$ transmiti-las."
+            }
+          ],
+          "result": "transmitir informações: \"Transmitir\" é VTD (exige OD = as). Terminação verbal em R $\\rightarrow$ suprime o R e acopla L $\\rightarrow$ transmiti-las.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise Passo a Passo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise Passo a Passo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise Passo a Passo.",
           "blocks": [
             {
               "type": "list",
@@ -929,6 +1434,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-012",
           "title": "Gabarito Consolidado",
+          "prompt": "Letra C (substituí-los / transmiti-las).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Letra C (substituí-los / transmiti-las)....\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -939,6 +1466,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-013",
           "title": "Enunciado",
+          "prompt": "Assinale a alternativa em que o termo entre parênteses substitui corretamente a expressão. A) chegar ao principal polo varejista de rua (chegá-lo) B) recebem 350 mil pessoas (recebem-as) C) prefere comprar em Osasco (prefere comprar-lhe) D) distribuem sacolinha plástica (distribuem-na) E) supre demandas (supre-lhes)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Assinale a alternativa em que o termo entre parênteses subst...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -949,6 +1498,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-014",
           "title": "Análise Passo a Passo",
+          "prompt": "A) (chegá-lo): Incorreto. \"Chegar\" rege prep. a, mas é verbo refratário ao lhe por eufonia. Exige tônico: chegar a ele.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) (chegá-lo)",
+              "rationale": "Incorreto. \"Chegar\" rege prep. a, mas é verbo refratário ao lhe por eufonia. Exige tônico: chegar a ele."
+            },
+            {
+              "order": 2,
+              "action": "B) (recebem-as)",
+              "rationale": "Incorreto. Verbo termina em som nasal M, exigindo acoplagem de N na ênclise: recebem-nas."
+            },
+            {
+              "order": 3,
+              "action": "C) (prefere comprar-lhe)",
+              "rationale": "Incorreto. O complemento é regido pela preposição em. O pronome lhe só aceita a/para. Correto: comprar nele."
+            },
+            {
+              "order": 4,
+              "action": "D) (distribuem-na)",
+              "rationale": "CORRETO. \"Distribuem\" é VTD terminado em som nasal M. \"Sacolinha plástica\" é OD feminino singular $\\rightarrow$ distribuem-na."
+            },
+            {
+              "order": 5,
+              "action": "E) (supre-lhes)",
+              "rationale": "Incorreto. \"Suprir\" é VTD (suprir demandas = OD). Correto: supre-as."
+            }
+          ],
+          "result": "E) (supre-lhes): Incorreto. \"Suprir\" é VTD (suprir demandas = OD). Correto: supre-as.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise Passo a Passo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise Passo a Passo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise Passo a Passo.",
           "blocks": [
             {
               "type": "list",
@@ -966,6 +1547,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-015",
           "title": "Gabarito Consolidado",
+          "prompt": "Letra D.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Letra D....\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -976,6 +1579,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-016",
           "title": "Enunciado",
+          "prompt": "Quando os pronomes oblíquos o, a, os, as forem precedidos de formas verbais que terminem em r, s ou z assumem as formas lo, la, los, las. Assim, estão gramaticalmente corretas todas as frases abaixo. a) Quero recebê-lo bem, ouvi-lo e consultá-lo quando achar necessário. b) A promotora? Ei-la assumindo novas funções no MPSC. c) Meu filho estava jogando no computador. Fi-lo parar e voltar aos estudos. Certo Errado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Quando os pronomes oblíquos o, a, os, as forem precedidos de...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -986,6 +1611,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-017",
           "title": "Análise Passo a Passo",
+          "prompt": "Frase a: Verbos no infinitivo em R (receber + o = recebê-lo; ouvir + o = ouvi-lo; consultar + o = consultá-lo). Todos corretos.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase a",
+              "rationale": "Verbos no infinitivo em R (receber + o = recebê-lo; ouvir + o = ouvi-lo; consultar + o = consultá-lo). Todos corretos."
+            },
+            {
+              "order": 2,
+              "action": "Frase b",
+              "rationale": "A palavra \"eis\" termina na consoante S. Aplica-se a regra morfofonológica: cai o S e insere-se L $\\rightarrow$ eis + a = ei-la. Perfeito."
+            },
+            {
+              "order": 3,
+              "action": "Frase c",
+              "rationale": "O verbo conjugado \"fiz\" termina na consoante Z. Aplica-se a regra: cai o Z e insere-se L $\\rightarrow$ fiz + o = fi-lo. Perfeito."
+            }
+          ],
+          "result": "Frase c: O verbo conjugado \"fiz\" termina na consoante Z. Aplica-se a regra: cai o Z e insere-se L $\\rightarrow$ fiz + o = fi-lo. Perfeito.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise Passo a Passo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise Passo a Passo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise Passo a Passo.",
           "blocks": [
             {
               "type": "list",
@@ -1001,6 +1648,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-018",
           "title": "Gabarito Consolidado",
+          "prompt": "CERTO (Todas as frases estão plenamente corretas na norma-padrão).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"CERTO (Todas as frases estão plenamente corretas na norma-pa...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1011,6 +1680,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-019",
           "title": "Enunciado",
+          "prompt": "A frase em que o pronome pessoal lhe tem valor possessivo é: A) Nunca prive alguém da esperança. Pode ser tudo o que lhe resta. B) Não é que ele não possa ver a solução. É que não lhe é possível ver o problema. C) Assim é, se lhe parece. D) Eu posso explicar-lhes isso, mas eu não posso entender isso por eles. E) O certo não é priorizar o que lhe está na agenda, mas agendar suas prioridades.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"A frase em que o pronome pessoal lhe tem valor possessivo é:...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1021,6 +1712,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-020",
           "title": "Análise Passo a Passo",
+          "prompt": "Alternativa A: \"tudo o que lhe resta\" = \"resta a ele\" (Objeto Indireto). Sem valor de posse.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Alternativa A",
+              "rationale": "\"tudo o que lhe resta\" = \"resta a ele\" (Objeto Indireto). Sem valor de posse."
+            },
+            {
+              "order": 2,
+              "action": "Alternativa B",
+              "rationale": "\"não lhe é possível\" = \"não é possível a ele\" (Complemento). Sem posse."
+            },
+            {
+              "order": 3,
+              "action": "Alternativa C",
+              "rationale": "\"se lhe parece\" = \"se parece a ele\" (Objeto Indireto). Sem posse."
+            },
+            {
+              "order": 4,
+              "action": "Alternativa D",
+              "rationale": "\"explicar-lhes isso\" = \"explicar isso a eles\" (Objeto Indireto). Sem posse."
+            },
+            {
+              "order": 5,
+              "action": "Alternativa E",
+              "rationale": "\"o que lhe está na agenda\" = \"o que está na sua agenda\" / \"na agenda dele\". Permite a substituição perfeita por pronome possessivo genitivo. O pronome lhe é Adjunto Adnominal com valor possessivo."
+            }
+          ],
+          "result": "Alternativa E: \"o que lhe está na agenda\" = \"o que está na sua agenda\" / \"na agenda dele\". Permite a substituição perfeita por pronome possessivo genitivo. O pronome lhe é Adjunto Adnominal com valor possessivo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise Passo a Passo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise Passo a Passo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise Passo a Passo.",
           "blocks": [
             {
               "type": "list",
@@ -1038,6 +1761,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-021",
           "title": "Gabarito Consolidado",
+          "prompt": "Letra E.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Letra E....\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1048,6 +1793,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-022",
           "title": "Enunciado",
+          "prompt": "(...) \"Mesmo agora, quando já diviso a brumosa porta da casa dos setenta, o convite à viagem tem ainda o poder de incendiar-me a fantasia.\" Com relação ao trecho \"incendiar-me a fantasia\", é correto interpretar a partícula \"me\" como o possuidor da fantasia. Certo Errado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"(...) \"Mesmo agora, quando já diviso a brumosa porta da casa...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1058,6 +1825,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-023",
           "title": "Análise Passo a Passo",
+          "prompt": "O trecho \"incendiar-me a fantasia\" equivale a \"incendiar a minha fantasia\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "O trecho \"incendiar-me a fantasia\" equivale a \"incendiar a minha fantasia\".",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "O pronome oblíquo me exerce a função sintática de Adjunto Adnominal com valor possessivo.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "Na semântica da posse, o pronome de 1ª pessoa me expressa o possuidor da fantasia, enquanto \"a fantasia\" é o elemento possuído. A afirmativa da banca é impecável.",
+              "rationale": null
+            }
+          ],
+          "result": "Na semântica da posse, o pronome de 1ª pessoa me expressa o possuidor da fantasia, enquanto \"a fantasia\" é o elemento possuído. A afirmativa da banca é impecável.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise Passo a Passo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise Passo a Passo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise Passo a Passo.",
           "blocks": [
             {
               "type": "list",
@@ -1073,6 +1862,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-024",
           "title": "Gabarito Consolidado",
+          "prompt": "CERTO.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"CERTO....\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1083,6 +1894,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-025",
           "title": "Enunciado",
+          "prompt": "A correção gramatical do trecho \"Tinha às vezes vontade de chamar o feitor e dar ordens\" seria mantida caso ele fosse reescrito da seguinte forma: Tinha às vezes vontade de chamar o feitor e dá-lo ordens. Certo Errado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"A correção gramatical do trecho \"Tinha às vezes vontade de c...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1093,6 +1926,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-026",
           "title": "Análise Passo a Passo",
+          "prompt": "Na oração \"dar ordens\", o termo \"ordens\" já atua como Objeto Direto (OD) sem preposição.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Na oração \"dar ordens\", o termo \"ordens\" já atua como Objeto Direto (OD) sem preposição.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "O verbo \"dar\" é VTDI. A inserção de um complemento para referenciar a pessoa (o feitor) exige a função de Objeto Indireto (dar-lhe ordens ou dar ordens a ele).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "O pronome lo é variante exclusiva de Objeto Direto. A reescrita \"dá-lo [OD] ordens [OD]\" acarreta duplicidade proibida de Objetos Diretos (OD + OD), violando a norma culta (KB-A03-G02-008).",
+              "rationale": null
+            }
+          ],
+          "result": "O pronome lo é variante exclusiva de Objeto Direto. A reescrita \"dá-lo [OD] ordens [OD]\" acarreta duplicidade proibida de Objetos Diretos (OD + OD), violando a norma culta (KB-A03-G02-008).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise Passo a Passo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise Passo a Passo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise Passo a Passo.",
           "blocks": [
             {
               "type": "list",
@@ -1108,6 +1963,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-027",
           "title": "Gabarito Consolidado",
+          "prompt": "ERRADO.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"ERRADO....\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1118,6 +1995,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-028",
           "title": "Enunciado",
+          "prompt": "A substituição da parte sublinhada em \"têm costumes\" pelo pronome oblíquo correspondente está correta em tê-los. Certo Errado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"A substituição da parte sublinhada em \"têm costumes\" pelo pr...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1128,6 +2027,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-029",
           "title": "Análise Passo a Passo",
+          "prompt": "\"Costumes\" é Objeto Direto plural (os).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"Costumes\" é Objeto Direto plural (os).",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "A forma verbal \"têm\" está no presente do indicativo e termina na consoante nasal m.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "A regra de acoplagem enclítica nasal impõe",
+              "rationale": "têm + os $\\rightarrow$ têm-nos."
+            },
+            {
+              "order": 4,
+              "action": "A forma \"tê-los\" provém do verbo no infinitivo (ter + os $\\rightarrow$ tê-los), sendo incorreta para substituir a forma flexionada no presente (KB-A03-G02-010).",
+              "rationale": null
+            }
+          ],
+          "result": "A forma \"tê-los\" provém do verbo no infinitivo (ter + os $\\rightarrow$ tê-los), sendo incorreta para substituir a forma flexionada no presente (KB-A03-G02-010).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise Passo a Passo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise Passo a Passo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise Passo a Passo.",
           "blocks": [
             {
               "type": "list",
@@ -1144,6 +2070,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-030",
           "title": "Gabarito Consolidado",
+          "prompt": "ERRADO.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"ERRADO....\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1154,6 +2102,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-031",
           "title": "Enunciado",
+          "prompt": "No trecho \"Os heterônimos de Fernando Pessoa renderam obras com diferentes nuances: do sarcasmo ao lirismo\", ainda cabe um complemento para o sentido da forma verbal \"renderam\". Pelos sentidos do texto, esse complemento poderia ser renderam-no. Certo Errado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"No trecho \"Os heterônimos de Fernando Pessoa renderam obras ...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1164,6 +2134,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-032",
           "title": "Análise Passo a Passo",
+          "prompt": "No trecho original, \"obras\" funciona como Objeto Direto (OD) do verbo \"renderam\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "No trecho original, \"obras\" funciona como Objeto Direto (OD) do verbo \"renderam\".",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Para adicionar um complemento referente à pessoa (Fernando Pessoa), o novo termo deve ser Objeto Indireto (renderam-lhe ou renderam a ele).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "A forma proposta pela banca (-no) é pronome de Objeto Direto. A construção \"renderam-no [OD] obras [OD]\" geraria inadmissível duplicidade de dois Objetos Diretos (KB-A03-G02-008).",
+              "rationale": null
+            }
+          ],
+          "result": "A forma proposta pela banca (-no) é pronome de Objeto Direto. A construção \"renderam-no [OD] obras [OD]\" geraria inadmissível duplicidade de dois Objetos Diretos (KB-A03-G02-008).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise Passo a Passo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise Passo a Passo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise Passo a Passo.",
           "blocks": [
             {
               "type": "list",
@@ -1179,6 +2171,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-033",
           "title": "Gabarito Consolidado",
+          "prompt": "ERRADO.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"ERRADO....\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1189,6 +2203,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-034",
           "title": "Enunciado",
+          "prompt": "A substituição do pronome \"o\", em \"reduziu-o a artigos\", por lhe preservaria a correção gramatical do texto. Certo Errado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"A substituição do pronome \"o\", em \"reduziu-o a artigos\", por...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1199,6 +2235,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-035",
           "title": "Análise Passo a Passo",
+          "prompt": "Na oração original \"reduziu-o a artigos\", a expressão \"a artigos\" é preposicionada, atuando como Objeto Indireto (OI).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Na oração original \"reduziu-o a artigos\", a expressão \"a artigos\" é preposicionada, atuando como Objeto Indireto (OI).",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "O pronome \"o\" é o Objeto Direto (OD).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "Substituir \"o\" por \"lhe\" geraria a estrutura \"reduziu-lhe [OI] a artigos [OI]\", acumulando dois Objetos Indiretos na mesma oração, o que viola o princípio de regência verbal (KB-A03-G02-008).",
+              "rationale": null
+            }
+          ],
+          "result": "Substituir \"o\" por \"lhe\" geraria a estrutura \"reduziu-lhe [OI] a artigos [OI]\", acumulando dois Objetos Indiretos na mesma oração, o que viola o princípio de regência verbal (KB-A03-G02-008).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise Passo a Passo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise Passo a Passo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise Passo a Passo.",
           "blocks": [
             {
               "type": "list",
@@ -1214,6 +2272,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-036",
           "title": "Gabarito Consolidado",
+          "prompt": "ERRADO.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"ERRADO....\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1224,6 +2304,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-037",
           "title": "Enunciado",
+          "prompt": "Na oração \"guiava-me a promessa do livro\", o pronome \"me\" exerce a função de complemento da forma verbal \"guiava\". Certo Errado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Na oração \"guiava-me a promessa do livro\", o pronome \"me\" ex...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1234,6 +2336,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-038",
           "title": "Análise Passo a Passo",
+          "prompt": "Pergunta-se ao verbo pelo Sujeito: \"O que é que guiava?\" $\\rightarrow$ \"A promessa do livro\" (Sujeito posposto).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Pergunta-se ao verbo pelo Sujeito",
+              "rationale": "\"O que é que guiava?\" $\\rightarrow$ \"A promessa do livro\" (Sujeito posposto)."
+            },
+            {
+              "order": 2,
+              "action": "Pergunta-se pelo Complemento",
+              "rationale": "\"A promessa guiava quem?\" $\\rightarrow$ \"guiava a mim\" (guiava o menino)."
+            },
+            {
+              "order": 3,
+              "action": "O verbo \"guiar\" é VTD e o pronome me exerce a função de Objeto Direto.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "O CEBRASPE adota a terminologia ampla \"complemento da forma verbal\" para designar tanto objetos diretos quanto indiretos. A assertiva está correta.",
+              "rationale": null
+            }
+          ],
+          "result": "O CEBRASPE adota a terminologia ampla \"complemento da forma verbal\" para designar tanto objetos diretos quanto indiretos. A assertiva está correta.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise Passo a Passo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise Passo a Passo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise Passo a Passo.",
           "blocks": [
             {
               "type": "list",
@@ -1250,6 +2379,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G02-039",
           "title": "Gabarito Consolidado",
+          "prompt": "CERTO.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"CERTO....\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito Consolidado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito Consolidado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito Consolidado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito Consolidado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1307,8 +2458,12 @@
         {
           "trapId": "WARN-A03-G02-001",
           "title": "Emprego do Pronome Reto sem Preposição como Complemento Verbal",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Emprego do Pronome Reto sem Preposição como Complemento Verbal.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Emprego do Pronome Reto sem Preposição como Complemento Verbal.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Emprego do Pronome Reto sem Preposição como Complemento Verbal no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Emprego do Pronome Reto sem Preposição como Complemento Verbal.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Emprego do Pronome Reto sem Preposição como Complemento Verbal.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Emprego do Pronome Reto sem Preposição como Complemento Verbal para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Emprego do Pronome Reto sem Preposição como Complemento Verbal.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Emprego do Pronome Reto sem Preposição como Complemento Verbal.",
           "blocks": [
             {
               "type": "list",
@@ -1324,8 +2479,12 @@
         {
           "trapId": "WARN-A03-G02-002",
           "title": "A Armadilha de \"O Mesmo\" como Pronome Pessoal Anafórico",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha de \"O Mesmo\" como Pronome Pessoal Anafórico.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha de \"O Mesmo\" como Pronome Pessoal Anafórico.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha de \"O Mesmo\" como Pronome Pessoal Anafórico no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha de \"O Mesmo\" como Pronome Pessoal Anafórico.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha de \"O Mesmo\" como Pronome Pessoal Anafórico.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha de \"O Mesmo\" como Pronome Pessoal Anafórico para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha de \"O Mesmo\" como Pronome Pessoal Anafórico.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha de \"O Mesmo\" como Pronome Pessoal Anafórico.",
           "blocks": [
             {
               "type": "list",
@@ -1341,8 +2500,12 @@
         {
           "trapId": "WARN-A03-G02-003",
           "title": "Ilusão da Alteração Fonética na Próclise",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Ilusão da Alteração Fonética na Próclise.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Ilusão da Alteração Fonética na Próclise.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Ilusão da Alteração Fonética na Próclise no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Ilusão da Alteração Fonética na Próclise.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Ilusão da Alteração Fonética na Próclise.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Ilusão da Alteração Fonética na Próclise para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Ilusão da Alteração Fonética na Próclise.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Ilusão da Alteração Fonética na Próclise.",
           "blocks": [
             {
               "type": "list",
@@ -1357,8 +2520,12 @@
         {
           "trapId": "WARN-A03-G02-004",
           "title": "Uso do LHE com Preposições Diversas ou Verbos Eufonicamente Refratários",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Uso do LHE com Preposições Diversas ou Verbos Eufonicamente Refratários.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Uso do LHE com Preposições Diversas ou Verbos Eufonicamente Refratários.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Uso do LHE com Preposições Diversas ou Verbos Eufonicamente Refratários no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Uso do LHE com Preposições Diversas ou Verbos Eufonicamente Refratários.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Uso do LHE com Preposições Diversas ou Verbos Eufonicamente Refratários.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Uso do LHE com Preposições Diversas ou Verbos Eufonicamente Refratários para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Uso do LHE com Preposições Diversas ou Verbos Eufonicamente Refratários.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Uso do LHE com Preposições Diversas ou Verbos Eufonicamente Refratários.",
           "blocks": [
             {
               "type": "list",
@@ -1373,8 +2540,12 @@
         {
           "trapId": "WARN-A03-G02-005",
           "title": "Confusão de Verbo Conjugado no Presente Nasal com Infinitivo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão de Verbo Conjugado no Presente Nasal com Infinitivo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão de Verbo Conjugado no Presente Nasal com Infinitivo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão de Verbo Conjugado no Presente Nasal com Infinitivo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão de Verbo Conjugado no Presente Nasal com Infinitivo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão de Verbo Conjugado no Presente Nasal com Infinitivo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão de Verbo Conjugado no Presente Nasal com Infinitivo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão de Verbo Conjugado no Presente Nasal com Infinitivo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão de Verbo Conjugado no Presente Nasal com Infinitivo.",
           "blocks": [
             {
               "type": "list",
@@ -1390,8 +2561,12 @@
         {
           "trapId": "WARN-A03-G02-006",
           "title": "Leitura Parcial e Precipitada de Sintagmas Possessivos",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Leitura Parcial e Precipitada de Sintagmas Possessivos.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Leitura Parcial e Precipitada de Sintagmas Possessivos.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Leitura Parcial e Precipitada de Sintagmas Possessivos no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Leitura Parcial e Precipitada de Sintagmas Possessivos.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Leitura Parcial e Precipitada de Sintagmas Possessivos.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Leitura Parcial e Precipitada de Sintagmas Possessivos para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Leitura Parcial e Precipitada de Sintagmas Possessivos.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Leitura Parcial e Precipitada de Sintagmas Possessivos.",
           "blocks": [
             {
               "type": "list",
@@ -1406,8 +2581,12 @@
         {
           "trapId": "WARN-A03-G02-007",
           "title": "Duplicação Indevida de Objetos Homogêneos (OD + OD / OI + OI)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Duplicação Indevida de Objetos Homogêneos (OD + OD / OI + OI).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Duplicação Indevida de Objetos Homogêneos (OD + OD / OI + OI).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Duplicação Indevida de Objetos Homogêneos (OD + OD / OI + OI) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Duplicação Indevida de Objetos Homogêneos (OD + OD / OI + OI).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Duplicação Indevida de Objetos Homogêneos (OD + OD / OI + OI).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Duplicação Indevida de Objetos Homogêneos (OD + OD / OI + OI) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Duplicação Indevida de Objetos Homogêneos (OD + OD / OI + OI).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Duplicação Indevida de Objetos Homogêneos (OD + OD / OI + OI).",
           "blocks": [
             {
               "type": "list",
@@ -1569,7 +2748,10 @@
       "officialAnswer": "correct",
       "explanation": "Ao unir o pronome ao verbo, há alterações na grafia: Quando os verbos são terminados em /r/, /s/, /z/ + o, os, a, as, teremos: lo, los, la, las. Quando os verbos são terminados em som nasal, como /m/, /ão/, /aos/, /õe/, /ões/ + o, os, a, as, teremos: no, nos, na, nas. No texto: Aprimorar o Estado: aprimorá-lo; tornar o Estado: torná-lo. O pronome “seu” é possessivo e delimita o substantivo “funcionamento”. Quem funciona é o Estado, então este é o referente do pronome possessivo. Questão correta.",
       "questionSha256": "c891d0c120b54aaa4e917c1d84aa55cb7936890640d485cd2b29d1f77ec22c99",
-      "answerSha256": "1bafe6cf57f55f8b5f8939386c97b5e6d99e698ba16352f607b5a0b34eb47eb9"
+      "answerSha256": "1bafe6cf57f55f8b5f8939386c97b5e6d99e698ba16352f607b5a0b34eb47eb9",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Pessoais - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0029",
@@ -1583,7 +2765,10 @@
       "officialAnswer": "correct",
       "explanation": "Aqui, temos exemplo clássico de pronome pessoal com sentido possessivo: Incendiar-me a fantasia equivale a “incendiar minha fantasia”. Questão correta.",
       "questionSha256": "5334e7724386985357aa8f8a69f022c54def8bf88329747271747e1abb425e77",
-      "answerSha256": "4f4240b33a91255a94cb6ecbd4ada1bca32f3388eb6ad5872582fe228af41455"
+      "answerSha256": "4f4240b33a91255a94cb6ecbd4ada1bca32f3388eb6ad5872582fe228af41455",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Pessoais - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0099",
@@ -1595,7 +2780,10 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "c2879d111c18add4a909b3aef4ac738009fe0ca2d5273a288d2fa10b9d8a76e3",
-      "answerSha256": "ef589849e21e63d01fdc4188dd032dd8ed8c347389d26eb1e7671cb01d41ab90"
+      "answerSha256": "ef589849e21e63d01fdc4188dd032dd8ed8c347389d26eb1e7671cb01d41ab90",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Pessoais - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0079",
@@ -1607,7 +2795,10 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "e0051116eb0227b52751920bdb5d59f53c32cbf9b4857404917e1e0ad452aae6",
-      "answerSha256": "ba004c3e6ef272eaafa9fb75914a89617c60afa4cfbff38f153bc08f18bb688a"
+      "answerSha256": "ba004c3e6ef272eaafa9fb75914a89617c60afa4cfbff38f153bc08f18bb688a",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Pessoais - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0094",
@@ -1620,7 +2811,10 @@
       "options": [],
       "officialAnswer": "option_b",
       "questionSha256": "98fb8989e705dab944b4a21dd43091ec22735bc4df6887e43c69ba37548089b6",
-      "answerSha256": "fe1eb43a878b82cf0281a74fe3675457df5a784b9e8d8ac61fdc54cab396ae80"
+      "answerSha256": "fe1eb43a878b82cf0281a74fe3675457df5a784b9e8d8ac61fdc54cab396ae80",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Pessoais - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0063",
@@ -1632,7 +2826,10 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "e285f7eed41f410ebb39d10f566c62ec59e81ba16f837026abd97d1d04af9549",
-      "answerSha256": "3be952fb960d7dbd218e134d1d493cce1454fefb1649de771283e6fab043901e"
+      "answerSha256": "3be952fb960d7dbd218e134d1d493cce1454fefb1649de771283e6fab043901e",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Pessoais - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0032",
@@ -1646,7 +2843,10 @@
       "officialAnswer": "option_b",
       "explanation": "Aqui, temos o “o” como pronome demonstrativo, retomando o adjetivo “seletiva”: Ela o é por definição => Ela é seletiva por definição. Gabarito letra B.",
       "questionSha256": "8b5b423fff0681a82c792d75f9d47c3cb72de3137e8361838ef3b3eeac65932a",
-      "answerSha256": "bbde721425bbe838a958cda2c87f68664fec40dd68f75e305a52533041397469"
+      "answerSha256": "bbde721425bbe838a958cda2c87f68664fec40dd68f75e305a52533041397469",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Pessoais - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0042",
@@ -1659,7 +2859,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Questão muito perigosa. O pronome relativo \"que\" atrai próclise, então a ênclise é proibida. A dúvida é: mesmo havendo o sujeito \"as questões\" entre a palavra atrativa e o verbo? Sim. Isso mesmo. A regra é usar a próclise em oração subordinada. Por isso as conjunções subordinativas e os pronomes relativos são palavras atrativas. O fato de haver um sujeito entre o \"que\" e a palavra atrativa não tira a obrigatoriedade da próclise. É o que a gramática chama de \"atração remota\". Questão incorreta.",
       "questionSha256": "6da8e5758b05349c623b57fb29ae4daa71430da8eb0b11ecfb65b76fa67801a8",
-      "answerSha256": "619d83501fd8d3f4fba1bc53991c1a4b898dbfc4c034035faf79ec90ab6b5b66"
+      "answerSha256": "619d83501fd8d3f4fba1bc53991c1a4b898dbfc4c034035faf79ec90ab6b5b66",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Pessoais - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0017",
@@ -1672,7 +2875,10 @@
       "officialAnswer": "correct",
       "explanation": "Trata-se de uma questão que exige conhecimento a respeito de termos anafóricos (como é o caso dos pronomes possessivos) e interpretação textual. A função dos termos anafóricos é retomar uma palavra ou expressão que já apareceu no texto (termos ANafóricos retomam termos ANteriores) e são muito importantes para garantir a coesão (encadeamento lógico das ideias) e evitar a repetição excessiva das palavras. Vamos analisar o texto: “Desde os alvores da democracia ateniense, são sobejamente conhecidas as suas relações com a argumentação e com a retórica”. Observem que o pronome possessivo anafórico “suas” acompanha o nome “relações”, mas, ao mesmo tempo, retoma um termo que já apareceu e é exatamente essa a cobrança do enunciado. Agora que já sabemos o que é um termo anafórico e que o pronome “suas” está se referindo a um termo antecedente, vamos partir para a interpretação de texto. Notem que o texto menciona que desde os alvores (amanhecer/ início) da democracia ateniense são sobejamente (muito/ de forma excessiva) conhecidas as relações com a argumentação e a retórica, ou seja, a argumentação e a retórica se relacionam com a ideia de democracia, no caso, a democracia ateniense. Questão correta!",
       "questionSha256": "d65aa5b9295a7a0058d0f69c1b6a4bc48bb36e46987dec415fa06c1f4cfca70c",
-      "answerSha256": "4f21391d85f293844f828bd8bb4cc58896c29e6cc08301b1951c6181519eb255"
+      "answerSha256": "4f21391d85f293844f828bd8bb4cc58896c29e6cc08301b1951c6181519eb255",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Pessoais - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0134",
@@ -1706,7 +2912,41 @@
       "officialAnswer": "option_e",
       "explanation": "O que o médico achou? Um grão de sandice. Em quem? No Quincas Borba. Então, podemos dizer que o pronome relativo \"que\" tem como antecedente o \"grãozinho de sandice\" e o \"lhe\" retoma \"Quincas Borba\". Gabarito letra E.",
       "questionSha256": "55e8ef4e21aed8fca2d141ccc4b6e2482ad63fd7b0483449b077a92de352a71e",
-      "answerSha256": "7e81959078a0deab0ee8cb24d352d9261d13aaf26bb8deed3237f12c75ebe1d9"
+      "answerSha256": "7e81959078a0deab0ee8cb24d352d9261d13aaf26bb8deed3237f12c75ebe1d9",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de PGE-AM; 2. Identificar a regra central de Pronomes Pessoais - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Pronomes Pessoais - Questões."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Pronomes Pessoais - Questões."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Pronomes Pessoais - Questões."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Pronomes Pessoais - Questões."
+        },
+        {
+          "optionLabel": "E",
+          "status": "incorrect",
+          "explanation": "Opção E: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Pronomes Pessoais - Questões."
+        }
+      ]
     },
     {
       "questionId": "aula03.q0054",
@@ -1719,7 +2959,10 @@
       "officialAnswer": "correct",
       "explanation": "Trata-se de uma questão que exige conhecimento a respeito de termos anafóricos (como é o caso dos pronomes possessivos) e interpretação textual. A função dos termos anafóricos é retomar uma palavra ou expressão que já apareceu no texto (termos ANafóricos retomam termos ANteriores) e são muito importantes para garantir a coesão (encadeamento lógico das ideias) e evitar a repetição excessiva das palavras. Vamos analisar o texto: “Desde os alvores da democracia ateniense, são sobejamente conhecidas as suas relações com a argumentação e com a retórica”. Observem que o pronome possessivo anafórico “suas” acompanha o nome “relações”, mas, ao mesmo tempo, retoma um termo que já apareceu e é exatamente essa a cobrança do enunciado. Agora que já sabemos o que é um termo anafórico e que o pronome “suas” está se referindo a um termo antecedente, vamos partir para a interpretação de texto. Notem que o texto menciona que desde os alvores (amanhecer/ início) da democracia ateniense são sobejamente (muito/ de forma excessiva) conhecidas as relações com a argumentação e a retórica, ou seja, a\n\nargumentação e a retórica se relacionam com a ideia de democracia, no caso, a democracia ateniense. Questão correta!",
       "questionSha256": "dd37e0827c446f5052d2d6ad3958011c51fc22af2f5be6d38dd981c838317ff0",
-      "answerSha256": "5f6b4b2ae1bf7a8b75a32bd4948ff7074f1fb86ee123879e3e5fdc5531d99ce9"
+      "answerSha256": "5f6b4b2ae1bf7a8b75a32bd4948ff7074f1fb86ee123879e3e5fdc5531d99ce9",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Pessoais - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0051",
@@ -1732,7 +2975,10 @@
       "officialAnswer": "correct",
       "explanation": "Vamos analisar o trecho em questão \"apalpava o bife com as costas do garfo, quase o cheirava, mexendo a boca de antemão. E começava a cortá-lo com um movimento inútil de vigor de todo o corpo\". É importante lembrar que os pronomes \"o, a, os, as\" substituem objeto direto. Cortar o quê? O bife! Ao unir o pronome ao verbo, há alterações na grafia: Quando os verbos são terminados em R, S, Z + o, os, a, as, teremos: lo, los, la, las. Questão correta!",
       "questionSha256": "83b86c0af579af44799494688875788a9fee3cd65366738e4c9cbafb44fd05ea",
-      "answerSha256": "4eb9aa7d743d0ac0cd577fe1be3cc09ccb2c8a7173488e026fed429756d6a884"
+      "answerSha256": "4eb9aa7d743d0ac0cd577fe1be3cc09ccb2c8a7173488e026fed429756d6a884",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Pessoais - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

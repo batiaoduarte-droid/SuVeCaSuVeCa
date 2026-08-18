@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A08-G05",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.859Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.605Z"
   },
   "unit": {
     "unitId": "IP-A08-G05",
@@ -455,6 +455,14 @@
         {
           "entityId": "RULE-IP-A08-G05-001",
           "title": "Tabela de regras e formulações canônicas",
+          "statement": "Tabela de regras e formulações canônicas",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Tabela de regras e formulações canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -535,6 +543,77 @@
         {
           "procedureId": "PROC-A08-G05-001",
           "title": "Procedimento do \"Teste da Retirada\" para Validação Sintática de Parênteses",
+          "objective": "Executar o algoritmo decisório para Procedimento do \"Teste da Retirada\" para Validação Sintática de Parênteses",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento do \"Teste da Retirada\" para Validação Sintática de Parênteses."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 (Isolamento Visual)",
+              "explanation": "Cubra ou ignore visualmente o segmento contido entre parênteses (... ).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 (Leitura Contínua da Cadeia Externa)",
+              "explanation": "Conecte diretamente a palavra imediatamente anterior à palavra imediatamente posterior aos parênteses.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Passo 3 (Diagnóstico Sintático de Bloqueio)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "O verbo ficou sem o objeto direto ou indireto exigido pela sua regência? $\\rightarrow$ Incorreto / Elimine.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "O sujeito foi separado do predicado verbal? $\\rightarrow$ Incorreto / Elimine.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Uma oração adjetiva ou subordinada substantiva ficou sem verbo? $\\rightarrow$ Incorreto / Elimine.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Passo 4 (Confirmação da Correção)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "A oração remanescente subsistiu com coerência e completude estrutural plena? $\\rightarrow$ Correto (Termo acessório legitimamente isolado).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento do \"Teste da Retirada\" para Validação Sintática de Parênteses."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -587,6 +666,65 @@
         {
           "procedureId": "PROC-A08-G05-002",
           "title": "Método das Setas Coesivas para Diferenciar Hiponímia/Exemplo de Sinonímia",
+          "objective": "Executar o algoritmo decisório para Método das Setas Coesivas para Diferenciar Hiponímia/Exemplo de Sinonímia",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método das Setas Coesivas para Diferenciar Hiponímia/Exemplo de Sinonímia."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 (Localização do Termo Parentético)",
+              "explanation": "Destaque os termos abrigados entre parênteses.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 (Lançamento da Seta de Referência)",
+              "explanation": "Pergunte ao texto: A qual elemento do enunciado esta informação se subordina semanticamente? Trace uma seta da informação até seu referente real.",
+              "test": "Passo 2 (Lançamento da Seta de Referência): Pergunte ao texto: A qual elemento do enunciado esta informação se subordina semanticamente? Trace uma seta da informação até seu referente real."
+            },
+            {
+              "order": 3,
+              "action": "Passo 3 (Análise da Relação Semântica)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "A seta liga uma espécie ao seu gênero (ex.",
+              "explanation": "doença de Chagas ligada a doenças)? $\\rightarrow$ Trata-se de exemplificação / hiponímia (acréscimo de dado novo) e NÃO de sinônimo.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "A seta estabelece equivalência total com o termo anterior? $\\rightarrow$ Trata-se de definição / sinonímia.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Passo 4 (Checagem Fato vs. Opinião)",
+              "explanation": "Se o conteúdo for científico/objetivo, elimine alternativas contendo modalizadores subjetivos (opinião, crítica, reflexão).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método das Setas Coesivas para Diferenciar Hiponímia/Exemplo de Sinonímia."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -631,6 +769,47 @@
         {
           "procedureId": "PROC-A08-G05-003",
           "title": "Teste Prático do \"Diz o Mesmo\" vs. \"Diz Além\" (Dicotomia FGV)",
+          "objective": "Executar o algoritmo decisório para Teste Prático do \"Diz o Mesmo\" vs. \"Diz Além\" (Dicotomia FGV)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste Prático do \"Diz o Mesmo\" vs. \"Diz Além\" (Dicotomia FGV)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize a oração principal e o segmento parentético.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Teste 1 (Explicação)",
+              "explanation": "O trecho apenas esclarece, define ou reformula o que já foi dito com outras palavras? Se SIM $\\rightarrow$ Explicação / Esclarecimento.",
+              "test": "Teste 1 (Explicação): O trecho apenas esclarece, define ou reformula o que já foi dito com outras palavras? Se SIM $\\rightarrow$ Explicação / Esclarecimento."
+            },
+            {
+              "order": 3,
+              "action": "Teste 2 (Ampliação)",
+              "explanation": "O trecho contém conectivo aditivo (e), introduz um dado inédito ou soma uma nova perspectiva temporal (passado + presente)? Se SIM $\\rightarrow$ Ampliação / Acréscimo de Nova Ideia.",
+              "test": "Teste 2 (Ampliação): O trecho contém conectivo aditivo (e), introduz um dado inédito ou soma uma nova perspectiva temporal (passado + presente)? Se SIM $\\rightarrow$ Ampliação / Acréscimo de Nova Ideia."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste Prático do \"Diz o Mesmo\" vs. \"Diz Além\" (Dicotomia FGV)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -651,6 +830,53 @@
         {
           "procedureId": "PROC-A08-G05-004",
           "title": "Teste do \"Etc.\" para Diferenciar Exemplificação de Enumeração",
+          "objective": "Executar o algoritmo decisório para Teste do \"Etc.\" para Diferenciar Exemplificação de Enumeração",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste do \"Etc.\" para Diferenciar Exemplificação de Enumeração."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Verifique se o segmento isolado desdobra um conceito genérico em múltiplos termos.",
+              "explanation": null,
+              "test": "Verifique se o segmento isolado desdobra um conceito genérico em múltiplos termos."
+            },
+            {
+              "order": 2,
+              "action": "Avalie a exaustão da listagem",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se a lista fecha com conectivo e encerrando todos os elementos conhecidos do conjunto $\\rightarrow$ Enumeração.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se a lista contém \"etc.\", \"como\", \"por exemplo\" ou reticências $\\rightarrow$ A listagem é não exaustiva $\\rightarrow$ Exemplificação.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste do \"Etc.\" para Diferenciar Exemplificação de Enumeração."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -682,6 +908,22 @@
         {
           "contrastId": "CONTRAST-IP-A08-G05-001",
           "title": "8.1. Matriz de Expressividade e Comutabilidade na Reescritura",
+          "contrastType": "mixed",
+          "conceptA": "8.1. Matriz de Expressividade e Comutabilidade na Reescritura",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -726,6 +968,22 @@
         {
           "contrastId": "CONTRAST-IP-A08-G05-002",
           "title": "8.2. Quadro Comparativo de Tipologia Discursivo-Textual",
+          "contrastType": "discursive",
+          "conceptA": "8.2. Quadro Comparativo de Tipologia Discursivo-Textual",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -778,6 +1036,22 @@
         {
           "contrastId": "CONTRAST-IP-A08-G05-003",
           "title": "8.3. Distinções Semânticas Finas em Bancas Examinadoras",
+          "contrastType": "mixed",
+          "conceptA": "8.3. Distinções Semânticas Finas em Bancas Examinadoras",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -822,6 +1096,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G05-001",
           "title": "Enunciado resumido",
+          "prompt": "Análise do emprego das aspas no trecho em que o gari Tales Gari declara: “Eu não tinha noção da proporção que ia tomar. Nas ruas, as pessoas estão me reconhecendo, pedindo para tirar fotos.”",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Análise do emprego das aspas no trecho em que o gari Tales G...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado resumido.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado resumido sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado resumido.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado resumido.",
           "blocks": [
             {
               "type": "paragraph",
@@ -832,6 +1128,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G05-002",
           "title": "Alternativas e Gabarito",
+          "prompt": "A) Fazer uma citação de outro texto.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) Fazer uma citação de outro texto.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "B) Marcar a fala de alguém. (Gabarito)",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "C) Isolar expressões populares.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "D) Mostrar o sentido figurado de algum termo.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "E) Dar destaque a uma palavra.",
+              "rationale": null
+            }
+          ],
+          "result": "Justificativa: Trata-se de discurso direto / transcrição literal da fala do entrevistado, equivalendo à marcação da fala de uma personagem real.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Alternativas e Gabarito sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Alternativas e Gabarito.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Alternativas e Gabarito.",
           "blocks": [
             {
               "type": "list",
@@ -850,6 +1178,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G05-003",
           "title": "Enunciado resumido",
+          "prompt": "Avaliar a justificativa do emprego dos travessões no período: “Nessa tona das águas da vida, por cima da qual nossa cabeça espia — se não naufragamos de vez —, somos assediados por pensamentos nem sempre muito inteligentes ou positivos sobre nós mesmos.”",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Avaliar a justificativa do emprego dos travessões no período...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado resumido.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado resumido sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado resumido.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado resumido.",
           "blocks": [
             {
               "type": "paragraph",
@@ -860,6 +1210,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G05-004",
           "title": "Alternativas e Análise",
+          "prompt": "A) Indicar a fala de um personagem. (Incorreta: não há diálogo).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) Indicar a fala de um personagem. (Incorreta",
+              "rationale": "não há diálogo)."
+            },
+            {
+              "order": 2,
+              "action": "B) Introduzir uma enumeração explicativa. (Incorreta",
+              "rationale": "não há listagem de múltiplos termos)."
+            },
+            {
+              "order": 3,
+              "action": "C) Sinalizar a mudança de interlocutor. (Incorreta",
+              "rationale": "autoexclui-se com A)."
+            },
+            {
+              "order": 4,
+              "action": "D) Realçar um aposto, termo explicativo. (Pegadinha",
+              "rationale": "contém verbo [oração] e traz ideia nova que não repete o antecedente)."
+            },
+            {
+              "order": 5,
+              "action": "E) Assinalar um comentário do autor. (Gabarito",
+              "rationale": "oração intercalada de teor opinativo/subjetivo que insere ponderação reflexiva inédita do articulista)."
+            }
+          ],
+          "result": "E) Assinalar um comentário do autor. (Gabarito: oração intercalada de teor opinativo/subjetivo que insere ponderação reflexiva inédita do articulista).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Alternativas e Análise sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Alternativas e Análise.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Alternativas e Análise.",
           "blocks": [
             {
               "type": "list",
@@ -877,6 +1259,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G05-005",
           "title": "Enunciado resumido",
+          "prompt": "Identificar a função dos travessões empregados no trecho: “Naquele ano, por indicação médica — pois adoecera por excesso de trabalho —, Marx deixou Berlim...”",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Identificar a função dos travessões empregados no trecho: “N...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado resumido.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado resumido sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado resumido.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado resumido.",
           "blocks": [
             {
               "type": "paragraph",
@@ -887,6 +1291,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G05-006",
           "title": "Alternativas e Gabarito",
+          "prompt": "A) Resumitiva. (Incorreta: anula-se com D).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) Resumitiva. (Incorreta",
+              "rationale": "anula-se com D)."
+            },
+            {
+              "order": 2,
+              "action": "B) Enumerativa. (Incorreta",
+              "rationale": "não há listagem)."
+            },
+            {
+              "order": 3,
+              "action": "C) Explicativa. (Gabarito",
+              "rationale": "contém a conjunção causal/explicativa \"pois\", esclarecendo a causa da indicação médica)."
+            },
+            {
+              "order": 4,
+              "action": "D) Recapitulativa. (Incorreta",
+              "rationale": "sinônimo perfeito de resumitiva)."
+            },
+            {
+              "order": 5,
+              "action": "E) Exemplificativa. (Incorreta",
+              "rationale": "não cita casos empíricos)."
+            }
+          ],
+          "result": "E) Exemplificativa. (Incorreta: não cita casos empíricos).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Alternativas e Gabarito sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Alternativas e Gabarito.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Alternativas e Gabarito.",
           "blocks": [
             {
               "type": "list",
@@ -904,6 +1340,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G05-007",
           "title": "Enunciado resumido",
+          "prompt": "Analisar a função do travessão no trecho: “Eles podem estar envolvidos em uso passivo da rede social — que ocorre quando você passa muito tempo no Facebook, Twitter e Instagram vendo comentários, fotos e postagens de outras pessoas, e não publicando nada próprio nem se envolvendo em conversas. (...)”",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Analisar a função do travessão no trecho: “Eles podem estar ...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado resumido.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado resumido sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado resumido.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado resumido.",
           "blocks": [
             {
               "type": "paragraph",
@@ -914,6 +1372,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G05-008",
           "title": "Alternativas e Gabarito",
+          "prompt": "A) Uma exemplificação que esclarece a afirmação anterior. (Gabarito: transita do plano abstrato de \"uso passivo\" para instâncias concretas e práticas: Facebook, Twitter, Instagram).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) Uma exemplificação que esclarece a afirmação anterior. (Gabarito",
+              "rationale": "transita do plano abstrato de \"uso passivo\" para instâncias concretas e práticas: Facebook, Twitter, Instagram)."
+            },
+            {
+              "order": 2,
+              "action": "B) Um comentário que corrige a afirmação anterior.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "C) Um questionamento que contraria a afirmação anterior.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "D) Uma informação que não tem relação com a afirmação anterior.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "E) Uma observação que resume a afirmação anterior.",
+              "rationale": null
+            }
+          ],
+          "result": "E) Uma observação que resume a afirmação anterior.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Alternativas e Gabarito sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Alternativas e Gabarito.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Alternativas e Gabarito.",
           "blocks": [
             {
               "type": "list",
@@ -931,6 +1421,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G05-009",
           "title": "Enunciado resumido",
+          "prompt": "Indicar o valor do segmento sublinhado entre travessões: “Em certas sociedades primitivas o tempo gasto nas preliminares do casamento — corte, namoro, noivado etc. — era abreviado.”",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Indicar o valor do segmento sublinhado entre travessões: “Em...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado resumido.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado resumido sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado resumido.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado resumido.",
           "blocks": [
             {
               "type": "paragraph",
@@ -941,6 +1453,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G05-010",
           "title": "Alternativas e Gabarito",
+          "prompt": "A) Uma retificação de um erro anterior.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) Uma retificação de um erro anterior.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "B) Uma explicação de um termo obscuro.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "C) Uma exemplificação de tradições sociais. (Gabarito",
+              "rationale": "a presença da abreviação \"etc.\" comprova que a listagem é amostral e não exaure o conjunto)."
+            },
+            {
+              "order": 4,
+              "action": "D) Uma citação de todas as preliminares referidas.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "E) Uma enumeração de todas as preliminares citadas. (Distrator forte",
+              "rationale": "enumerar exige trazer todas as partes; o \"etc.\" impede a alegação de que foram citadas \"todas\")."
+            }
+          ],
+          "result": "E) Uma enumeração de todas as preliminares citadas. (Distrator forte: enumerar exige trazer todas as partes; o \"etc.\" impede a alegação de que foram citadas \"todas\").",
+          "decisivePoint": "Aplicação estrita da regra canônica de Alternativas e Gabarito sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Alternativas e Gabarito.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Alternativas e Gabarito.",
           "blocks": [
             {
               "type": "list",
@@ -958,6 +1502,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G05-011",
           "title": "Enunciado resumido",
+          "prompt": "Identificar em qual alternativa os parênteses poderiam ser inseridos corretamente de acordo com a norma-padrão.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Identificar em qual alternativa os parênteses poderiam ser i...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado resumido.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado resumido sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado resumido.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado resumido.",
           "blocks": [
             {
               "type": "paragraph",
@@ -968,6 +1534,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G05-012",
           "title": "Alternativas e Resolução",
+          "prompt": "A) Nos diários mais simples, cromos coloridos de cestinhos floridos (ou crianças abraçadas a um cachorro). $\\rightarrow$ Gabarito: Isola oração coordenada alternativa acessória; a oração principal mantém integridade plena.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) Nos diários mais simples, cromos coloridos de cestinhos floridos (ou crianças abraçadas a um cachorro). $\\rightarrow$ Gabarito",
+              "rationale": "Isola oração coordenada alternativa acessória; a oração principal mantém integridade plena."
+            },
+            {
+              "order": 2,
+              "action": "B) ...não tinha (mais sentido) pensar sequer... $\\rightarrow$ Incorreta (quebra o objeto direto de tinha).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "C) ...confissão que se (juntava na linha adiante) com o preço... $\\rightarrow$ Incorreta (deixa a oração subordinada sem verbo).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "D) ...cadernos que pertencera (à minha avó Belmira). $\\rightarrow$ Incorreta (isola o objeto indireto obrigatório).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "E) ...via minha mãe (recorrer a esse caderno) para conferir... $\\rightarrow$ Incorreta (isola a oração substantiva que complementa via).",
+              "rationale": null
+            }
+          ],
+          "result": "E) ...via minha mãe (recorrer a esse caderno) para conferir... $\\rightarrow$ Incorreta (isola a oração substantiva que complementa via).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Alternativas e Resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Alternativas e Resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Alternativas e Resolução.",
           "blocks": [
             {
               "type": "list",
@@ -985,6 +1583,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G05-013",
           "title": "Enunciado resumido",
+          "prompt": "No trecho \"vetores de doenças, como o barbeiro (doença de Chagas), o mosquito-palha (leishmaniose) e o mosquito-prego (malária)\", os parênteses foram utilizados com o objetivo de:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"No trecho \"vetores de doenças, como o barbeiro (doença de Ch...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado resumido.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado resumido sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado resumido.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado resumido.",
           "blocks": [
             {
               "type": "paragraph",
@@ -995,6 +1615,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G05-014",
           "title": "Alternativas e Gabarito",
+          "prompt": "A) acrescentar uma informação relacionada ao termo anterior. (Gabarito: as doenças não haviam sido citadas; são exemplos/hipônimos novos adicionados aos respectivos vetores).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) acrescentar uma informação relacionada ao termo anterior. (Gabarito",
+              "rationale": "as doenças não haviam sido citadas; são exemplos/hipônimos novos adicionados aos respectivos vetores)."
+            },
+            {
+              "order": 2,
+              "action": "B) expressar a opinião do autor sobre a temática do texto. (Eliminada",
+              "rationale": "conteúdo factual/científico)."
+            },
+            {
+              "order": 3,
+              "action": "C) inserir um sinônimo para explicar o sentido de um termo. (Pegadinha",
+              "rationale": "barbeiro não é sinônimo de doença de Chagas; é o vetor da doença)."
+            },
+            {
+              "order": 4,
+              "action": "D) introduzir uma crítica ao que foi mencionado antes.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "E) provocar a reflexão do leitor sobre um termo científico.",
+              "rationale": null
+            }
+          ],
+          "result": "E) provocar a reflexão do leitor sobre um termo científico.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Alternativas e Gabarito sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Alternativas e Gabarito.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Alternativas e Gabarito.",
           "blocks": [
             {
               "type": "list",
@@ -1012,6 +1664,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G05-015",
           "title": "Enunciado resumido",
+          "prompt": "No trecho \"A máquina de escrever podia ter recursos que você também nunca usaria (abandonei a minha sem saber para o que servia 'tabulador', por exemplo)...\", os parênteses são usados para:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"No trecho \"A máquina de escrever podia ter recursos que você...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado resumido.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado resumido sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado resumido.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado resumido.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1022,6 +1696,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G05-016",
           "title": "Alternativas e Gabarito",
+          "prompt": "A) delimitar uma ideia comparativa.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) delimitar uma ideia comparativa.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "B) separar a fala de uma personagem.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "C) apresentar um comentário do autor. (Gabarito",
+              "rationale": "o enunciador interrompe o diálogo com o leitor ['você'] para inserir relato empírico em 1ª pessoa ['minha', 'abandonei'])."
+            },
+            {
+              "order": 4,
+              "action": "D) isolar informações bibliográficas sobre o texto.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "E) introduzir uma informação contrária à frase anterior.",
+              "rationale": null
+            }
+          ],
+          "result": "E) introduzir uma informação contrária à frase anterior.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Alternativas e Gabarito sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Alternativas e Gabarito.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Alternativas e Gabarito.",
           "blocks": [
             {
               "type": "list",
@@ -1039,6 +1745,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G05-017",
           "title": "Enunciado resumido",
+          "prompt": "No trecho \"...fato que atraiu (e ainda atrai) milhões de pessoas para as cidades\", as palavras entre parênteses mostram:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"No trecho \"...fato que atraiu (e ainda atrai) milhões de pes...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado resumido.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado resumido sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado resumido.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado resumido.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1049,6 +1777,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G05-018",
           "title": "Alternativas e Gabarito",
+          "prompt": "A) uma ampliação da informação dada. (Gabarito: o verbo principal está no passado ['atraiu'] e os parênteses agregam a dimensão contínua no presente com o aditivo ['e ainda atrai'], dizendo mais).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) uma ampliação da informação dada. (Gabarito",
+              "rationale": "o verbo principal está no passado ['atraiu'] e os parênteses agregam a dimensão contínua no presente com o aditivo ['e ainda atrai'], dizendo mais)."
+            },
+            {
+              "order": 2,
+              "action": "B) uma retificação de um erro. (Incorreta",
+              "rationale": "o conectivo 'e' indica soma, não correção)."
+            },
+            {
+              "order": 3,
+              "action": "C) uma intensificação de um fenômeno. (Incorreta",
+              "rationale": "o 'ainda' aqui expressa tempo presente, não aumento de grau)."
+            },
+            {
+              "order": 4,
+              "action": "D) uma ironia sobre o fato citado. (Incorreta",
+              "rationale": "o autor expressa fato literal sem inversão de sentido)."
+            },
+            {
+              "order": 5,
+              "action": "E) uma confirmação de algo já dito. (Incorreta",
+              "rationale": "confirmar/ratificar é dizer o mesmo; somar o presente ao passado é ampliar)."
+            }
+          ],
+          "result": "E) uma confirmação de algo já dito. (Incorreta: confirmar/ratificar é dizer o mesmo; somar o presente ao passado é ampliar).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Alternativas e Gabarito sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Alternativas e Gabarito.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Alternativas e Gabarito.",
           "blocks": [
             {
               "type": "list",
@@ -1095,8 +1855,12 @@
         {
           "trapId": "WARN-A08-G05-001",
           "title": "A Falsa Premissa \"Mudou a Ênfase, Mudou o Sentido\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Falsa Premissa \"Mudou a Ênfase, Mudou o Sentido\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Falsa Premissa \"Mudou a Ênfase, Mudou o Sentido\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Falsa Premissa \"Mudou a Ênfase, Mudou o Sentido\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Falsa Premissa \"Mudou a Ênfase, Mudou o Sentido\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Falsa Premissa \"Mudou a Ênfase, Mudou o Sentido\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Falsa Premissa \"Mudou a Ênfase, Mudou o Sentido\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Falsa Premissa \"Mudou a Ênfase, Mudou o Sentido\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Falsa Premissa \"Mudou a Ênfase, Mudou o Sentido\".",
           "blocks": [
             {
               "type": "list",
@@ -1111,8 +1875,12 @@
         {
           "trapId": "WARN-A08-G05-002",
           "title": "O Mito de que \"Vírgula Após Travessão é Sempre Erro\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Mito de que \"Vírgula Após Travessão é Sempre Erro\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Mito de que \"Vírgula Após Travessão é Sempre Erro\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Mito de que \"Vírgula Após Travessão é Sempre Erro\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Mito de que \"Vírgula Após Travessão é Sempre Erro\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Mito de que \"Vírgula Após Travessão é Sempre Erro\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Mito de que \"Vírgula Após Travessão é Sempre Erro\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Mito de que \"Vírgula Após Travessão é Sempre Erro\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Mito de que \"Vírgula Após Travessão é Sempre Erro\".",
           "blocks": [
             {
               "type": "list",
@@ -1127,8 +1895,12 @@
         {
           "trapId": "WARN-A08-G05-003",
           "title": "Segmentação Viciosa de Termos Integrantes por Parênteses",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Segmentação Viciosa de Termos Integrantes por Parênteses.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Segmentação Viciosa de Termos Integrantes por Parênteses.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Segmentação Viciosa de Termos Integrantes por Parênteses no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Segmentação Viciosa de Termos Integrantes por Parênteses.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Segmentação Viciosa de Termos Integrantes por Parênteses.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Segmentação Viciosa de Termos Integrantes por Parênteses para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Segmentação Viciosa de Termos Integrantes por Parênteses.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Segmentação Viciosa de Termos Integrantes por Parênteses.",
           "blocks": [
             {
               "type": "list",
@@ -1143,8 +1915,12 @@
         {
           "trapId": "WARN-A08-G05-004",
           "title": "Confundir Exemplificação/Hiponímia com Sinônimo Lexical",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Exemplificação/Hiponímia com Sinônimo Lexical.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Exemplificação/Hiponímia com Sinônimo Lexical.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Exemplificação/Hiponímia com Sinônimo Lexical no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Exemplificação/Hiponímia com Sinônimo Lexical.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Exemplificação/Hiponímia com Sinônimo Lexical.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Exemplificação/Hiponímia com Sinônimo Lexical para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Exemplificação/Hiponímia com Sinônimo Lexical.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Exemplificação/Hiponímia com Sinônimo Lexical.",
           "blocks": [
             {
               "type": "list",
@@ -1159,8 +1935,12 @@
         {
           "trapId": "WARN-A08-G05-005",
           "title": "Confundir Crítica Severa com Ironia",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Crítica Severa com Ironia.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Crítica Severa com Ironia.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Crítica Severa com Ironia no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Crítica Severa com Ironia.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Crítica Severa com Ironia.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Crítica Severa com Ironia para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Crítica Severa com Ironia.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Crítica Severa com Ironia.",
           "blocks": [
             {
               "type": "list",

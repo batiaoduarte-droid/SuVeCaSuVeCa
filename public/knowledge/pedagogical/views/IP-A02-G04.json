@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A02-G04",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.718Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.480Z"
   },
   "unit": {
     "unitId": "IP-A02-G04",
@@ -499,6 +499,16 @@
         {
           "entityId": "RULE-IP-A02-G04-001",
           "title": "Regras canônicas",
+          "statement": "Esta seção consolida as formulações canônicas definitivas estabelecidas pelo percurso pedagógico do grupo G04:\nRegra de Reconhecimento Semântico do \"E\": O valor semântico do \"E\" depende da relação do elemento posterior com o anterior:\nAdição: soma de termos ou orações compatíveis $\\rightarrow$ KB-A02-G04-001.\nOposição: quebra de expectativa ($=$ porém) $\\rightarrow$ KB-A02-G04-001.\nConclusão/Consequência: efeito lógico ou fático ($=$ por isso, logo) $\\rightarrow$ KB-A02-G04-001.\nRegra da Substantivação de Conectores: A anteposição de artigo ou pronome demonstrativo/possessivo a uma conjunção converte-a em substantivo por derivação imprópria $\\rightarrow$ KB-A02-G04-004.\nRegra da Pontuação Forte e Próclise: É vedada a próclise pronominal no início de oração após ponto e vírgula ou ponto final; a substituição de conjunção por ponto e vírgula exige conversão para ênclise $\\rightarrow$ KB-A02-G04-005.\nRegra Divisória Posicional do \"Pois\":\n$\\text{Pois} + \\text{Verbo}$ (Início) $=$ Porque (Causal ou Explicativo) $\\rightarrow$ KB-A02-G04-006.\n$\\text{Verbo} +,\\text{pois},$ (Deslocado) $=$ Portanto (Conclusivo) $\\rightarrow$ KB-A02-G04-008.\nO Mantra da Causa: Diante de pois no início de oração, testa-se a causa primeiro:\nFato gerador anterior com consequência física consumada $=$ Causal $\\rightarrow$ KB-A02-G04-007.\nJustificativa de ordem, pedido, imperativo ou conselho modal $=$ Explicativo $\\rightarrow$ KB-A02-G04-007.\nRegra do Falso \"Pois Deslocado\": Conjunção pois acompanhada de adjunto intercalado entre vírgulas antes do verbo continua no início da oração e não é conclusiva $\\rightarrow$ KB-A02-G04-009.\nRegra da Intercambiabilidade Causal/Explicativa: No início da oração, pois, porque, já que, visto que, uma vez que, porquanto são intercambiáveis sem prejuízo da correção gramatical $\\rightarrow$ KB-A02-G04-010.",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Regra de Reconhecimento Semântico do \"E\": O valor semântico do \"E\" depende da relação do elemento posterior com o anterior:",
+            "Adição: soma de termos ou orações compatíveis $\\rightarrow$ KB-A02-G04-001.",
+            "Oposição: quebra de expectativa ($=$ porém) $\\rightarrow$ KB-A02-G04-001.",
+            "Conclusão/Consequência: efeito lógico ou fático ($=$ por isso, logo) $\\rightarrow$ KB-A02-G04-001."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "paragraph",
@@ -569,6 +579,44 @@
         {
           "procedureId": "PROC-A02-G04-001",
           "title": "Roteiro de Identificação Semântica da Conjunção \"E\"",
+          "objective": "Executar o algoritmo decisório para Roteiro de Identificação Semântica da Conjunção \"E\"",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Roteiro de Identificação Semântica da Conjunção \"E\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura sintático-morfológica alvo de Roteiro de Identificação Semântica da Conjunção \"E\".",
+              "test": "Localizar o termo regente ou núcleo do segmento."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios decisórios da regra canônica.",
+              "test": "Verificar se há exceção ou caso facultativo aplicável."
+            },
+            {
+              "order": 3,
+              "action": "Concluir a classificação definitiva para resolução da questão.",
+              "test": "Confrontar o resultado obtido com as alternativas da prova."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Roteiro de Identificação Semântica da Conjunção \"E\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -579,6 +627,65 @@
         {
           "procedureId": "PROC-A02-G04-002",
           "title": "Protocolo de Validação de Substituição por Ponto e Vírgula (Teste de Colocação)",
+          "objective": "Executar o algoritmo decisório para Protocolo de Validação de Substituição por Ponto e Vírgula (Teste de Colocação)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo de Validação de Substituição por Ponto e Vírgula (Teste de Colocação)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Validação Estrutural",
+              "explanation": "Verifique se as orações são coordenadas. O ponto e vírgula é legítimo para ligar orações coordenadas assindéticas.",
+              "test": "Validação Estrutural: Verifique se as orações são coordenadas. O ponto e vírgula é legítimo para ligar orações coordenadas assindéticas."
+            },
+            {
+              "order": 2,
+              "action": "Inspeção do Primeiro Termo Subsequente ao Ponto e Vírgula",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Inspecione a palavra imediatamente após o ;.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se for um pronome oblíquo átono (me, te, se, nos, vos, o, a, os, as, lhe, lhes), há erro de próclise.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Julgamento do Item de Concurso",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se o enunciado propuser a troca pura da conjunção por ; sem ajustar o verbo para ênclise (ex.",
+              "explanation": "propor ; te deixa em vez de ; deixa-te), marque ERRADO.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo de Validação de Substituição por Ponto e Vírgula (Teste de Colocação)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -615,6 +722,44 @@
         {
           "procedureId": "PROC-A02-G04-003",
           "title": "Algoritmo em 2 Passos para Análise do \"Pois\" no Cebraspe",
+          "objective": "Executar o algoritmo decisório para Algoritmo em 2 Passos para Análise do \"Pois\" no Cebraspe",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo em 2 Passos para Análise do \"Pois\" no Cebraspe."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura sintático-morfológica alvo de Algoritmo em 2 Passos para Análise do \"Pois\" no Cebraspe.",
+              "test": "Localizar o termo regente ou núcleo do segmento."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios decisórios da regra canônica.",
+              "test": "Verificar se há exceção ou caso facultativo aplicável."
+            },
+            {
+              "order": 3,
+              "action": "Concluir a classificação definitiva para resolução da questão.",
+              "test": "Confrontar o resultado obtido com as alternativas da prova."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo em 2 Passos para Análise do \"Pois\" no Cebraspe."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -625,6 +770,65 @@
         {
           "procedureId": "PROC-A02-G04-004",
           "title": "O \"Mantra da Causa\": Protocolo Decisório Causa vs. Explicação",
+          "objective": "Executar o algoritmo decisório para O \"Mantra da Causa\": Protocolo Decisório Causa vs. Explicação",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de O \"Mantra da Causa\": Protocolo Decisório Causa vs. Explicação."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Pergunte sempre primeiro se é CAUSA. Nunca comece perguntando se é explicação, pois a mente tende a interpretar qualquer justificativa como explicação genérica.",
+              "explanation": null,
+              "test": "Pergunte sempre primeiro se é CAUSA. Nunca comece perguntando se é explicação, pois a mente tende a interpretar qualquer justificativa como explicação genérica."
+            },
+            {
+              "order": 2,
+              "action": "Aplique o Teste do Fato Gerador e Consequência Fática",
+              "explanation": "",
+              "test": "Aplique o Teste do Fato Gerador e Consequência Fática:"
+            },
+            {
+              "order": 3,
+              "action": "Monte a fórmula",
+              "explanation": "\"O fato de [Oração do Pois] fez com que [Oração Principal]?\"",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Verifique a natureza da oração principal",
+              "explanation": "",
+              "test": "Verifique a natureza da oração principal:"
+            },
+            {
+              "order": 5,
+              "action": "Relata um fato histórico/fático consumado no modo indicativo? $\\rightarrow$ SIM $\\rightarrow$ CAUSAL.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "É um comando imperativo (venha, façam), convite (vamos) ou conselho modal (não se deve)? $\\rightarrow$ NÃO $\\rightarrow$ EXPLICATIVO.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de O \"Mantra da Causa\": Protocolo Decisório Causa vs. Explicação."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -653,6 +857,22 @@
         {
           "contrastId": "CONTRAST-IP-A02-G04-001",
           "title": "Tabela Comparativa 8.1 — Conjunção \"E\": Adição vs. Oposição vs. Conclusão",
+          "contrastType": "morphological",
+          "conceptA": "Tabela Comparativa 8.1 — Conjunção \"E\": Adição vs. Oposição vs. Conclusão",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -699,6 +919,22 @@
         {
           "contrastId": "CONTRAST-IP-A02-G04-002",
           "title": "Tabela Comparativa 8.2 — Conjunção \"Pois\": Início de Oração vs. Deslocado",
+          "contrastType": "morphological",
+          "conceptA": "Tabela Comparativa 8.2 — Conjunção \"Pois\": Início de Oração vs. Deslocado",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -750,6 +986,22 @@
         {
           "contrastId": "CONTRAST-IP-A02-G04-003",
           "title": "Tabela Comparativa 8.3 — Diferenciação Crítica: Causa vs. Explicação",
+          "contrastType": "mixed",
+          "conceptA": "Tabela Comparativa 8.3 — Diferenciação Crítica: Causa vs. Explicação",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -800,6 +1052,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G04-001",
           "title": "EX-A02-G04-001 — Exercício de Fixação: Frase a (Valores do E)",
+          "prompt": "Frase: \"Ela estudou muito e passou no concurso.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Ela estudou muito e passou no concurso.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Pedagógica",
+              "rationale": "O fato de passar no concurso soma-se a ter estudado muito, constituindo também a consequência direta e o resultado do esforço."
+            },
+            {
+              "order": 3,
+              "action": "Classificação Consolidada",
+              "rationale": "Adição / Consequência (Conclusão)."
+            }
+          ],
+          "result": "Classificação Consolidada: Adição / Consequência (Conclusão).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G04-001 — Exercício de Fixação: Frase a (Valores do E) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G04-001 — Exercício de Fixação: Frase a (Valores do E).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G04-001 — Exercício de Fixação: Frase a (Valores do E).",
           "blocks": [
             {
               "type": "list",
@@ -815,6 +1089,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G04-002",
           "title": "EX-A02-G04-002 — Exercício de Fixação: Frase b (Valores do E)",
+          "prompt": "Frase: \"Tentei falar com ele e ele não me atendeu.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Tentei falar com ele e ele não me atendeu.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Pedagógica",
+              "rationale": "O ato de \"não atender\" frustra a expectativa natural de quem tentou estabelecer contato. Relação adversativa clara."
+            },
+            {
+              "order": 3,
+              "action": "Classificação Consolidada",
+              "rationale": "Adversativa (Oposição) (equivale a porém)."
+            }
+          ],
+          "result": "Classificação Consolidada: Adversativa (Oposição) (equivale a porém).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G04-002 — Exercício de Fixação: Frase b (Valores do E) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G04-002 — Exercício de Fixação: Frase b (Valores do E).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G04-002 — Exercício de Fixação: Frase b (Valores do E).",
           "blocks": [
             {
               "type": "list",
@@ -830,6 +1126,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G04-003",
           "title": "EX-A02-G04-003 — Exercício de Fixação: Frase c (Valores do E)",
+          "prompt": "Frase: \"Façam silêncio e poderão ouvir o pássaro cantar.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Façam silêncio e poderão ouvir o pássaro cantar.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Pedagógica",
+              "rationale": "Poder ouvir o pássaro cantar é o efeito / resultado decorrente do ato prévio de fazer silêncio."
+            },
+            {
+              "order": 3,
+              "action": "Classificação Consolidada",
+              "rationale": "Adição / Consequência (Conclusão)."
+            }
+          ],
+          "result": "Classificação Consolidada: Adição / Consequência (Conclusão).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G04-003 — Exercício de Fixação: Frase c (Valores do E) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G04-003 — Exercício de Fixação: Frase c (Valores do E).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G04-003 — Exercício de Fixação: Frase c (Valores do E).",
           "blocks": [
             {
               "type": "list",
@@ -845,6 +1163,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G04-004",
           "title": "EX-A02-G04-004 — Exercício de Fixação: Frase d (Valores do E)",
+          "prompt": "Frase: \"Ele é inteligente e preguiçoso.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Ele é inteligente e preguiçoso.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Pedagógica",
+              "rationale": "Trata-se da atribuição acumulada de duas características coexistentes a um mesmo sujeito. Inteligência e preguiça não se anulam logicamente."
+            },
+            {
+              "order": 3,
+              "action": "Classificação Consolidada",
+              "rationale": "Aditivo (não é oposição)."
+            }
+          ],
+          "result": "Classificação Consolidada: Aditivo (não é oposição).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G04-004 — Exercício de Fixação: Frase d (Valores do E) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G04-004 — Exercício de Fixação: Frase d (Valores do E).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G04-004 — Exercício de Fixação: Frase d (Valores do E).",
           "blocks": [
             {
               "type": "list",
@@ -860,6 +1200,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G04-005",
           "title": "EX-A02-G04-005 — Exercício de Fixação: Frase e (Valores do E)",
+          "prompt": "Frase: \"Ele se esforça muito e não consegue bons resultados.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Ele se esforça muito e não consegue bons resultados.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Pedagógica",
+              "rationale": "O esforço gera a expectativa de bons resultados; a ausência deles quebra diretamente essa premissa."
+            },
+            {
+              "order": 3,
+              "action": "Classificação Consolidada",
+              "rationale": "Adversativo (Oposição)."
+            }
+          ],
+          "result": "Classificação Consolidada: Adversativo (Oposição).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G04-005 — Exercício de Fixação: Frase e (Valores do E) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G04-005 — Exercício de Fixação: Frase e (Valores do E).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G04-005 — Exercício de Fixação: Frase e (Valores do E).",
           "blocks": [
             {
               "type": "list",
@@ -875,6 +1237,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G04-006",
           "title": "EX-A02-G04-006 — Exercício de Fixação: Frase f (Valores do E)",
+          "prompt": "Frase: \"Ande logo e não se atrase para a reunião.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Ande logo e não se atrase para a reunião.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Pedagógica",
+              "rationale": "Ação solicitada associada ao resultado/efeito pretendido de não se atrasar."
+            },
+            {
+              "order": 3,
+              "action": "Classificação Consolidada",
+              "rationale": "Aditivo / Conclusivo / Consecutivo."
+            }
+          ],
+          "result": "Classificação Consolidada: Aditivo / Conclusivo / Consecutivo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G04-006 — Exercício de Fixação: Frase f (Valores do E) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G04-006 — Exercício de Fixação: Frase f (Valores do E).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G04-006 — Exercício de Fixação: Frase f (Valores do E).",
           "blocks": [
             {
               "type": "list",
@@ -890,6 +1274,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G04-007",
           "title": "EX-A02-G04-007 — Questão de Concurso: Substantivação do \"E\" (CEBRASPE 2024 - Pref. Cachoeiro de Itapemirim)",
+          "prompt": "Órgão / Cargo: CEBRASPE - 2024 - Pref. Cachoeiro de Itapemirim / ES - Agente Administrativo",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Órgão / Cargo",
+              "rationale": "CEBRASPE - 2024 - Pref. Cachoeiro de Itapemirim / ES - Agente Administrativo"
+            },
+            {
+              "order": 2,
+              "action": "Texto Suporte",
+              "rationale": "Rubem Braga (Em Cachoeiro, 2003)."
+            },
+            {
+              "order": 3,
+              "action": "Item",
+              "rationale": "\"Enquanto, no trecho 'precisavam daquele E que os conjugava com outras camadas sociais' (sétimo período), o vocábulo 'E' se comporta como um substantivo, no trecho 'os operários E todos que queriam proteção mútua estavam dançando' (último período), o mesmo vocábulo está empregado como conjunção aditiva.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução Detalhada",
+              "rationale": ""
+            },
+            {
+              "order": 5,
+              "action": "Em \"daquele E\", o vocábulo vem antecedido do demonstrativo daquele, operando como substantivo por derivação imprópria ($=$ suporte/elo).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G04-007 — Questão de Concurso: Substantivação do \"E\" (CEBRASPE 2024 - Pref. Cachoeiro de Itapemirim) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G04-007 — Questão de Concurso: Substantivação do \"E\" (CEBRASPE 2024 - Pref. Cachoeiro de Itapemirim).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G04-007 — Questão de Concurso: Substantivação do \"E\" (CEBRASPE 2024 - Pref. Cachoeiro de Itapemirim).",
           "blocks": [
             {
               "type": "list",
@@ -921,6 +1337,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G04-008",
           "title": "EX-A02-G04-008 — Questão de Concurso: Troca por Ponto e Vírgula e Próclise (CEBRASPE 2022 - DPE-DF)",
+          "prompt": "Órgão / Cargo: CEBRASPE - 2022 - DPE-DF - Analista de Apoio à Assistência Judiciária",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Órgão / Cargo",
+              "rationale": "CEBRASPE - 2022 - DPE-DF - Analista de Apoio à Assistência Judiciária"
+            },
+            {
+              "order": 2,
+              "action": "Texto Suporte",
+              "rationale": "George Steiner (sobre Kafka)."
+            },
+            {
+              "order": 3,
+              "action": "Item",
+              "rationale": "\"Em 'Acolhe-te quando vens e te deixa ir quando partes', a conjunção 'e' poderia ser substituída por ponto e vírgula, sem prejuízo do sentido original e da correção gramatical do texto.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução Detalhada",
+              "rationale": "A substituição mecânica gera \"Acolhe-te quando vens; te deixa ir quando partes\". O pronome oblíquo átono te fica em próclise após o ponto e vírgula, o que é proibido pela norma-padrão (exige-se ênclise: ; deixa-te). Como a questão não postulou adaptações gramaticais, o item é incorreto."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G04-008 — Questão de Concurso: Troca por Ponto e Vírgula e Próclise (CEBRASPE 2022 - DPE-DF) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G04-008 — Questão de Concurso: Troca por Ponto e Vírgula e Próclise (CEBRASPE 2022 - DPE-DF).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G04-008 — Questão de Concurso: Troca por Ponto e Vírgula e Próclise (CEBRASPE 2022 - DPE-DF).",
           "blocks": [
             {
               "type": "list",
@@ -938,6 +1386,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G04-009",
           "title": "EX-A02-G04-009 — Exercício de Fixação: Item a (Valores do Pois)",
+          "prompt": "Frase: \"Vamos embora, pois o filme está muito chato.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Vamos embora, pois o filme está muito chato.\""
+            },
+            {
+              "order": 2,
+              "action": "Resolução Detalhada",
+              "rationale": "O pois está no início da oração. A oração principal \"Vamos embora\" é um convite / comando exortativo. Não há relação fática de causalidade mecânica, mas uma justificativa discursiva para o convite."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "EXPLICATIVA."
+            }
+          ],
+          "result": "Gabarito: EXPLICATIVA.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G04-009 — Exercício de Fixação: Item a (Valores do Pois) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G04-009 — Exercício de Fixação: Item a (Valores do Pois).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G04-009 — Exercício de Fixação: Item a (Valores do Pois).",
           "blocks": [
             {
               "type": "list",
@@ -953,6 +1423,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G04-010",
           "title": "EX-A02-G04-010 — Exercício de Fixação: Item b (Valores do Pois)",
+          "prompt": "Frase: \"Você leu as cláusulas do contrato; não reclame, pois, das dificuldades que surgirem.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Você leu as cláusulas do contrato; não reclame, pois, das dificuldades que surgirem.\""
+            },
+            {
+              "order": 2,
+              "action": "Resolução Detalhada",
+              "rationale": "A conjunção pois encontra-se deslocada, posicionada após o verbo \"reclame\" e isolada entre vírgulas. Equivale perfeitamente a portanto."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "CONCLUSIVA."
+            }
+          ],
+          "result": "Gabarito: CONCLUSIVA.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G04-010 — Exercício de Fixação: Item b (Valores do Pois) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G04-010 — Exercício de Fixação: Item b (Valores do Pois).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G04-010 — Exercício de Fixação: Item b (Valores do Pois).",
           "blocks": [
             {
               "type": "list",
@@ -968,6 +1460,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G04-011",
           "title": "EX-A02-G04-011 — Exercício de Fixação: Item c (Valores do Pois)",
+          "prompt": "Frase: \"Não se deve ler o que é ruim, pois a vida é curta.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Não se deve ler o que é ruim, pois a vida é curta.\""
+            },
+            {
+              "order": 2,
+              "action": "Resolução Detalhada",
+              "rationale": "O pois está no início da oração. A oração principal \"Não se deve ler...\" expressa uma orientação modal/conselho. A brevidade da vida fundamenta o conselho."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "EXPLICATIVA."
+            }
+          ],
+          "result": "Gabarito: EXPLICATIVA.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G04-011 — Exercício de Fixação: Item c (Valores do Pois) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G04-011 — Exercício de Fixação: Item c (Valores do Pois).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G04-011 — Exercício de Fixação: Item c (Valores do Pois).",
           "blocks": [
             {
               "type": "list",
@@ -983,6 +1497,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G04-012",
           "title": "EX-A02-G04-012 — Exercício de Fixação: Item d (Valores do Pois)",
+          "prompt": "Frase: \"Os banqueiros comemoraram, pois o índice de risco do Brasil caiu.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Os banqueiros comemoraram, pois o índice de risco do Brasil caiu.\""
+            },
+            {
+              "order": 2,
+              "action": "Resolução Detalhada",
+              "rationale": "A queda do risco Brasil é o fato gerador anterior que provocou, no mundo real, a comemoração consumada dos banqueiros. Relação incontestável de Causa $\\rightarrow$ Consequência."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "CAUSAL."
+            }
+          ],
+          "result": "Gabarito: CAUSAL.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G04-012 — Exercício de Fixação: Item d (Valores do Pois) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G04-012 — Exercício de Fixação: Item d (Valores do Pois).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G04-012 — Exercício de Fixação: Item d (Valores do Pois).",
           "blocks": [
             {
               "type": "list",
@@ -998,6 +1534,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G04-013",
           "title": "EX-A02-G04-013 — Questão de Concurso: \"Pois\" Pós-verbal Conclusivo (CESPE - SEE-AL)",
+          "prompt": "Órgão / Cargo: CESPE - SEE-AL - Secretário Escolar",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Órgão / Cargo",
+              "rationale": "CESPE - SEE-AL - Secretário Escolar"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"...muitas vezes, porém, ele toma decisões e executa tarefas relevantes e decisivas. É, pois, nesse momento, verdadeiro assessor...\" (l. 13)"
+            },
+            {
+              "order": 3,
+              "action": "Item",
+              "rationale": "\"O termo 'pois' (l.13) explicita uma relação sintática de conclusão.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução Detalhada",
+              "rationale": "O verbo da oração é É. A conjunção pois aparece posicionada após o verbo, intercalada por vírgulas. Estando deslocada, possui valor exclusivamente conclusivo ($=$ portanto)."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G04-013 — Questão de Concurso: \"Pois\" Pós-verbal Conclusivo (CESPE - SEE-AL) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G04-013 — Questão de Concurso: \"Pois\" Pós-verbal Conclusivo (CESPE - SEE-AL).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G04-013 — Questão de Concurso: \"Pois\" Pós-verbal Conclusivo (CESPE - SEE-AL).",
           "blocks": [
             {
               "type": "list",
@@ -1015,6 +1583,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G04-014",
           "title": "EX-A02-G04-014 — Questão de Concurso: \"Pois\" Pré-verbal Não Conclusivo (CESPE / CEBRASPE 2024 - ANA)",
+          "prompt": "Órgão / Cargo: CESPE / CEBRASPE - 2024 - ANA - Especialista em Regulação",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Órgão / Cargo",
+              "rationale": "CESPE / CEBRASPE - 2024 - ANA - Especialista em Regulação"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"...do CDESC convergem entre si, pois este último se refere à preocupação com o respeito à cultura...\""
+            },
+            {
+              "order": 3,
+              "action": "Item",
+              "rationale": "\"No segundo período do terceiro parágrafo, o vocábulo 'pois' introduz um trecho que expressa uma conclusão a respeito do que se afirma na oração anterior.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução Detalhada",
+              "rationale": "O verbo da oração introduzida por pois é se refere. A conjunção pois está situada antes do verbo (no início da oração). Nessa posição, equivale a porque e nunca pode introduzir conclusão."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G04-014 — Questão de Concurso: \"Pois\" Pré-verbal Não Conclusivo (CESPE / CEBRASPE 2024 - ANA) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G04-014 — Questão de Concurso: \"Pois\" Pré-verbal Não Conclusivo (CESPE / CEBRASPE 2024 - ANA).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G04-014 — Questão de Concurso: \"Pois\" Pré-verbal Não Conclusivo (CESPE / CEBRASPE 2024 - ANA).",
           "blocks": [
             {
               "type": "list",
@@ -1032,6 +1632,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G04-015",
           "title": "EX-A02-G04-015 — Questão de Concurso: Reescrita com Adjunto Intercalado (CESPE / TJ-CE Adaptada)",
+          "prompt": "Órgão / Cargo: (ADAPTADA) CESPE / CEBRASPE - TJ-CE - Conhecimentos Básicos",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Órgão / Cargo",
+              "rationale": "(ADAPTADA) CESPE / CEBRASPE - TJ-CE - Conhecimentos Básicos"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"...uma nova tendência ou processo, pois, desde 2010, cresce o peso do interior na contratação...\""
+            },
+            {
+              "order": 3,
+              "action": "Item",
+              "rationale": "\"Prejudicam-se a correção gramatical do período e suas relações sintáticas ao se substituir 'pois' (l.7) por qualquer um dos termos a seguir: porquanto, já que, porque, visto que.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução Detalhada",
+              "rationale": "O termo desde 2010 é um adjunto adverbial intercalado entre vírgulas. O verbo da oração é cresce, posicionado após o adjunto. O pois está no início da oração e equivale a porque. A sua substituição por porquanto, já que, porque, visto que é perfeitamente legítima e NÃO prejudica a correção do texto."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G04-015 — Questão de Concurso: Reescrita com Adjunto Intercalado (CESPE / TJ-CE Adaptada) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G04-015 — Questão de Concurso: Reescrita com Adjunto Intercalado (CESPE / TJ-CE Adaptada).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G04-015 — Questão de Concurso: Reescrita com Adjunto Intercalado (CESPE / TJ-CE Adaptada).",
           "blocks": [
             {
               "type": "list",
@@ -1073,8 +1705,12 @@
         {
           "trapId": "WARN-A02-G04-001",
           "title": "A Armadilha da Colocação Pronomial na Troca de Conjunção por Ponto e Vírgula",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha da Colocação Pronomial na Troca de Conjunção por Ponto e Vírgula.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha da Colocação Pronomial na Troca de Conjunção por Ponto e Vírgula.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha da Colocação Pronomial na Troca de Conjunção por Ponto e Vírgula no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha da Colocação Pronomial na Troca de Conjunção por Ponto e Vírgula.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha da Colocação Pronomial na Troca de Conjunção por Ponto e Vírgula.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha da Colocação Pronomial na Troca de Conjunção por Ponto e Vírgula para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha da Colocação Pronomial na Troca de Conjunção por Ponto e Vírgula.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha da Colocação Pronomial na Troca de Conjunção por Ponto e Vírgula.",
           "blocks": [
             {
               "type": "list",
@@ -1090,8 +1726,12 @@
         {
           "trapId": "WARN-A02-G04-002",
           "title": "A Pegadinha Visual do \"Pois Entre Vírgulas\" Induzida por Adjunto Intercalado",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Pegadinha Visual do \"Pois Entre Vírgulas\" Induzida por Adjunto Intercalado.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Pegadinha Visual do \"Pois Entre Vírgulas\" Induzida por Adjunto Intercalado.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Pegadinha Visual do \"Pois Entre Vírgulas\" Induzida por Adjunto Intercalado no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Pegadinha Visual do \"Pois Entre Vírgulas\" Induzida por Adjunto Intercalado.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Pegadinha Visual do \"Pois Entre Vírgulas\" Induzida por Adjunto Intercalado.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Pegadinha Visual do \"Pois Entre Vírgulas\" Induzida por Adjunto Intercalado para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Pegadinha Visual do \"Pois Entre Vírgulas\" Induzida por Adjunto Intercalado.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Pegadinha Visual do \"Pois Entre Vírgulas\" Induzida por Adjunto Intercalado.",
           "blocks": [
             {
               "type": "list",
@@ -1107,8 +1747,12 @@
         {
           "trapId": "WARN-A02-G04-003",
           "title": "Julgar Oposição por Simples Contraste de Adjetivos Positivos/Negativos",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Julgar Oposição por Simples Contraste de Adjetivos Positivos/Negativos.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Julgar Oposição por Simples Contraste de Adjetivos Positivos/Negativos.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Julgar Oposição por Simples Contraste de Adjetivos Positivos/Negativos no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Julgar Oposição por Simples Contraste de Adjetivos Positivos/Negativos.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Julgar Oposição por Simples Contraste de Adjetivos Positivos/Negativos.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Julgar Oposição por Simples Contraste de Adjetivos Positivos/Negativos para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Julgar Oposição por Simples Contraste de Adjetivos Positivos/Negativos.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Julgar Oposição por Simples Contraste de Adjetivos Positivos/Negativos.",
           "blocks": [
             {
               "type": "list",
@@ -1123,8 +1767,12 @@
         {
           "trapId": "WARN-A02-G04-004",
           "title": "Perda de Tempo com Discussões Desnecessárias de Causa vs. Explicação",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Perda de Tempo com Discussões Desnecessárias de Causa vs. Explicação.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Perda de Tempo com Discussões Desnecessárias de Causa vs. Explicação.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Perda de Tempo com Discussões Desnecessárias de Causa vs. Explicação no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Perda de Tempo com Discussões Desnecessárias de Causa vs. Explicação.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Perda de Tempo com Discussões Desnecessárias de Causa vs. Explicação.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Perda de Tempo com Discussões Desnecessárias de Causa vs. Explicação para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Perda de Tempo com Discussões Desnecessárias de Causa vs. Explicação.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Perda de Tempo com Discussões Desnecessárias de Causa vs. Explicação.",
           "blocks": [
             {
               "type": "list",

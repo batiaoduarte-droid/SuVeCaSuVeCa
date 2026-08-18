@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A02-G02",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.714Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.475Z"
   },
   "unit": {
     "unitId": "IP-A02-G02",
@@ -403,6 +403,14 @@
         {
           "entityId": "RULE-IP-A02-G02-001",
           "title": "Regras canônicas",
+          "statement": "Regras canônicas",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -507,6 +515,44 @@
         {
           "procedureId": "PROC-A02-G02-001",
           "title": "Teste Diagnóstico do \"Pois\" (Conclusivo Pós-Verbal vs. Explicativo Pré-Verbal)",
+          "objective": "Executar o algoritmo decisório para Teste Diagnóstico do \"Pois\" (Conclusivo Pós-Verbal vs. Explicativo Pré-Verbal)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste Diagnóstico do \"Pois\" (Conclusivo Pós-Verbal vs. Explicativo Pré-Verbal)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura sintático-morfológica alvo de Teste Diagnóstico do \"Pois\" (Conclusivo Pós-Verbal vs. Explicativo Pré-Verbal).",
+              "test": "Localizar o termo regente ou núcleo do segmento."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios decisórios da regra canônica.",
+              "test": "Verificar se há exceção ou caso facultativo aplicável."
+            },
+            {
+              "order": 3,
+              "action": "Concluir a classificação definitiva para resolução da questão.",
+              "test": "Confrontar o resultado obtido com as alternativas da prova."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste Diagnóstico do \"Pois\" (Conclusivo Pós-Verbal vs. Explicativo Pré-Verbal)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -517,6 +563,83 @@
         {
           "procedureId": "PROC-A02-G02-002",
           "title": "Algoritmo de Análise e Pontuação do Conectivo \"NEM\"",
+          "objective": "Executar o algoritmo decisório para Algoritmo de Análise e Pontuação do Conectivo \"NEM\"",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo de Análise e Pontuação do Conectivo \"NEM\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Examinar o contexto anterior à palavra \"NEM\"",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Há uma palavra de sentido negativo (não, nunca, jamais, nem) antecedendo o vocábulo?",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se HOUVER negação antecedente (ex.",
+              "explanation": "\"Ele não estuda nem trabalha\"):",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "O nem equivale funcionalmente a e não.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Classificação",
+              "explanation": "Conjunção Coordenativa Aditiva.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Regra de Pontuação/Sintaxe",
+              "explanation": "Verifique se NÃO há vírgula antes dele e se NÃO foi colocada a conjunção \"e\" antes dele.",
+              "test": "Regra de Pontuação/Sintaxe: Verifique se NÃO há vírgula antes dele e se NÃO foi colocada a conjunção \"e\" antes dele."
+            },
+            {
+              "order": 7,
+              "action": "Se NÃO HOUVER negação antecedente e o \"NEM\" estiver isolado no início (ex.",
+              "explanation": "\"Nem estuda\"):",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "O nem equivale a não ou sequer.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Classificação",
+              "explanation": "Advérbio de Negação (NÃO é conjunção).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo de Análise e Pontuação do Conectivo \"NEM\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -568,6 +691,71 @@
         {
           "procedureId": "PROC-A02-G02-003",
           "title": "Teste de Polaridade para Conjunções Adversativas (\"Positivo [+] vs. Negativo [-]\")",
+          "objective": "Executar o algoritmo decisório para Teste de Polaridade para Conjunções Adversativas (\"Positivo [+] vs. Negativo [-]\")",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Polaridade para Conjunções Adversativas (\"Positivo [+] vs. Negativo [-]\")."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isolar as duas orações/períodos conectados pela conjunção adversativa.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Atribuir sinais de polaridade semântica",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Sinal (+) para fatos favoráveis, avanços, notícias positivas ou quedas de índices desfavoráveis (ex.",
+              "explanation": "queda da criminalidade $= +$).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Sinal (-) para fatos desfavoráveis, problemas, preocupações ou elevações de índices ruins (ex.",
+              "explanation": "violência em alta $= -$).",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Julgar o valor discursivo",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se o conector ligar um polo (+) a um polo (-) (ou vice-versa), fica caracterizada a Oposição / Contraste Estrito.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Se os dois trechos possuírem a mesma polaridade básica, o conector estará atuando no plano da Restrição / Ressalva / Compensação.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Polaridade para Conjunções Adversativas (\"Positivo [+] vs. Negativo [-]\")."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -605,6 +793,44 @@
         {
           "procedureId": "PROC-A02-G02-004",
           "title": "Método em 2 Passos para Reescritura e Substituição de Conectivos",
+          "objective": "Executar o algoritmo decisório para Método em 2 Passos para Reescritura e Substituição de Conectivos",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método em 2 Passos para Reescritura e Substituição de Conectivos."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura sintático-morfológica alvo de Método em 2 Passos para Reescritura e Substituição de Conectivos.",
+              "test": "Localizar o termo regente ou núcleo do segmento."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios decisórios da regra canônica.",
+              "test": "Verificar se há exceção ou caso facultativo aplicável."
+            },
+            {
+              "order": 3,
+              "action": "Concluir a classificação definitiva para resolução da questão.",
+              "test": "Confrontar o resultado obtido com as alternativas da prova."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método em 2 Passos para Reescritura e Substituição de Conectivos."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -615,6 +841,47 @@
         {
           "procedureId": "PROC-A02-G02-005",
           "title": "Técnica de Leitura Textual \"Um Olho no Peixe, Outro no Gato\" e Sublinhado Econômico",
+          "objective": "Executar o algoritmo decisório para Técnica de Leitura Textual \"Um Olho no Peixe, Outro no Gato\" e Sublinhado Econômico",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Técnica de Leitura Textual \"Um Olho no Peixe, Outro no Gato\" e Sublinhado Econômico."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Olho 1 (no Peixe)",
+              "explanation": "Ler o período anterior ao conector e sublinhar apenas o núcleo do argumento (verbo principal + palavra-chave), ignorando adjuntos prolixos.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Olho 2 (no Gato)",
+              "explanation": "Ler o período posterior ao conector e sublinhar igualmente apenas o núcleo proposicional.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Confronto Lógico",
+              "explanation": "Isolar os dois núcleos reduzidos e identificar o nexo lógico objetivo (Causa-Efeito, Fato-Ressalva, Argumento 1 + Argumento 2).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Técnica de Leitura Textual \"Um Olho no Peixe, Outro no Gato\" e Sublinhado Econômico."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -634,6 +901,22 @@
         {
           "contrastId": "CONTRAST-IP-A02-G02-001",
           "title": "Tabela 8.1 — Comparações Semânticas e Sintáticas Decisivas",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 8.1 — Comparações Semânticas e Sintáticas Decisivas",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -710,6 +993,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G02-001",
           "title": "EX-A02-G02-001 — Fixação Teórica: Conjunção Aditiva Simples",
+          "prompt": "Frase: \"A sua pesquisa é clara e objetiva.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"A sua pesquisa é clara e objetiva.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Pedagógica",
+              "rationale": "O conectivo e une dois adjetivos qualificadores (\"clara\", \"objetiva\"), somando atributos da pesquisa."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Conjunção Coordenativa Aditiva (Valor: Adição / Soma)."
+            },
+            {
+              "order": 4,
+              "action": "Proveniência",
+              "rationale": "004 - Conjunções Coordenativas - 720p.md (EX-A02-V004-001, )."
+            }
+          ],
+          "result": "Proveniência: 004 - Conjunções Coordenativas - 720p.md (EX-A02-V004-001, ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G02-001 — Fixação Teórica: Conjunção Aditiva Simples sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G02-001 — Fixação Teórica: Conjunção Aditiva Simples.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G02-001 — Fixação Teórica: Conjunção Aditiva Simples.",
           "blocks": [
             {
               "type": "list",
@@ -726,6 +1036,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G02-002",
           "title": "EX-A02-G02-002 — Fixação Teórica: Conjunção Adversativa de Oposição",
+          "prompt": "Frase: \"Tentei chegar mais cedo, porém não consegui.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Tentei chegar mais cedo, porém não consegui.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Pedagógica",
+              "rationale": "A oração introduzida por porém expressa resultado antagônico à intenção declarada na primeira oração (tentativa [+] vs. insucesso [-])."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Conjunção Coordenativa Adversativa (Valor: Oposição / Contraste)."
+            },
+            {
+              "order": 4,
+              "action": "Proveniência",
+              "rationale": "004 - Conjunções Coordenativas - 720p.md (EX-A02-V004-002, )."
+            }
+          ],
+          "result": "Proveniência: 004 - Conjunções Coordenativas - 720p.md (EX-A02-V004-002, ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G02-002 — Fixação Teórica: Conjunção Adversativa de Oposição sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G02-002 — Fixação Teórica: Conjunção Adversativa de Oposição.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G02-002 — Fixação Teórica: Conjunção Adversativa de Oposição.",
           "blocks": [
             {
               "type": "list",
@@ -742,6 +1079,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G02-003",
           "title": "EX-A02-G02-003 — Fixação Teórica: Estrutura Correlativa Aditiva",
+          "prompt": "Frase: \"Ela não só é competente, mas também divertida.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Ela não só é competente, mas também divertida.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Pedagógica",
+              "rationale": "A correlação não só... mas também soma dois predicativos do sujeito, equivalendo semanticamente a \"Ela é competente e divertida\"."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Estrutura Correlativa Aditiva (Valor: Adição / Soma)."
+            },
+            {
+              "order": 4,
+              "action": "Proveniência",
+              "rationale": "004 - Conjunções Coordenativas - 720p.md (EX-A02-V004-003, )."
+            }
+          ],
+          "result": "Proveniência: 004 - Conjunções Coordenativas - 720p.md (EX-A02-V004-003, ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G02-003 — Fixação Teórica: Estrutura Correlativa Aditiva sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G02-003 — Fixação Teórica: Estrutura Correlativa Aditiva.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G02-003 — Fixação Teórica: Estrutura Correlativa Aditiva.",
           "blocks": [
             {
               "type": "list",
@@ -758,6 +1122,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G02-004",
           "title": "EX-A02-G02-004 — Fixação Teórica: Conjunção Explicativa ligada ao Imperativo",
+          "prompt": "Frase: \"Venha para casa, pois está começando a chover.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Venha para casa, pois está começando a chover.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Pedagógica",
+              "rationale": "A oração principal traz verbo no imperativo (Venha). A oração introduzida por pois (pré-verbal) fornece a justificativa da ordem dada."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Conjunção Coordenativa Explicativa (Valor: Explicação / Justificativa)."
+            },
+            {
+              "order": 4,
+              "action": "Proveniência",
+              "rationale": "004 - Conjunções Coordenativas - 720p.md (EX-A02-V004-004,, )."
+            }
+          ],
+          "result": "Proveniência: 004 - Conjunções Coordenativas - 720p.md (EX-A02-V004-004,, ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G02-004 — Fixação Teórica: Conjunção Explicativa ligada ao Imperativo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G02-004 — Fixação Teórica: Conjunção Explicativa ligada ao Imperativo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G02-004 — Fixação Teórica: Conjunção Explicativa ligada ao Imperativo.",
           "blocks": [
             {
               "type": "list",
@@ -774,6 +1165,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G02-005",
           "title": "EX-A02-G02-005 — Fixação Teórica: Exercício \"#ANOTAAÍ\" (Classificação Geral)",
+          "prompt": "Enunciado: Classifique as conjunções coordenativas: a) Aditiva, b) Adversativa, c) Alternativa, d) Conclusiva, e) Explicativa.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Classifique as conjunções coordenativas: a) Aditiva, b) Adversativa, c) Alternativa, d) Conclusiva, e) Explicativa."
+            },
+            {
+              "order": 2,
+              "action": "( a ) \"O menino levantou-se e timidamente saiu.\" (Adição de ações verbais).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "( b ) \"Todos prometeram ajudar; muitos, porém, não cumpriram a promessa.\" (Adversidade / Quebra de expectativa).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "( a ) \"Ela não foi só recebê-lo no aeroporto mas também se prontificou a mostrar-lhe a cidade.\" (Correlativa Aditiva).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "( e ) \"Vamos embora, pois o filme está muito chato.\" (Justificativa de ordem / Imperativo).",
+              "rationale": null
+            }
+          ],
+          "result": "Proveniência: 004 - Conjunções Coordenativas - 720p.md (VIS-A02-V004-003, ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G02-005 — Fixação Teórica: Exercício \"#ANOTAAÍ\" (Classificação Geral) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G02-005 — Fixação Teórica: Exercício \"#ANOTAAÍ\" (Classificação Geral).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G02-005 — Fixação Teórica: Exercício \"#ANOTAAÍ\" (Classificação Geral).",
           "blocks": [
             {
               "type": "list",
@@ -806,6 +1229,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G02-006",
           "title": "EX-A02-G02-006 — Questão de Concurso: CEBRASPE 2024 - PC-PE (Agente de Polícia)",
+          "prompt": "Texto: \"...A violência letal... manteve a tendência nacional de queda iniciada em 2018, mesmo que os números de 2022 indiquem uma curva de desaceleração. Porém, em uma segunda e mais panorâmica leitura do cenário sobre crime e violência no Brasil, há movimentos preocupantes e tendências que começam a ganhar corpo...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...A violência letal... manteve a tendência nacional de queda iniciada em 2018, mesmo que os números de 2022 indiquem uma curva de desaceleração. Porém, em uma segunda e mais panorâmica leitura do cenário sobre crime e violência no Brasil, há movimentos preocupantes e tendências que começam a ganhar corpo...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "\"No terceiro período do primeiro parágrafo do texto 1A1-I, a conjunção “Porém” introduz ideia de oposição.\""
+            },
+            {
+              "order": 3,
+              "action": "Análise e Resolução",
+              "rationale": "Aplicação do método de polaridade: a primeira oração destaca a queda da violência letal (fato positivo [+]); a segunda, introduzida por Porém, aponta movimentos preocupantes e tendências negativas (fato desfavorável [-]). Há oposição e contraste estrito."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "CERTO"
+            },
+            {
+              "order": 5,
+              "action": "Proveniência",
+              "rationale": "005 - Conjunções Coordenativas - Questões de Concurso - 720p.md (EX-A02-V005-001, )."
+            }
+          ],
+          "result": "Proveniência: 005 - Conjunções Coordenativas - Questões de Concurso - 720p.md (EX-A02-V005-001, ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G02-006 — Questão de Concurso: CEBRASPE 2024 - PC-PE (Agente de Polícia) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G02-006 — Questão de Concurso: CEBRASPE 2024 - PC-PE (Agente de Polícia).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G02-006 — Questão de Concurso: CEBRASPE 2024 - PC-PE (Agente de Polícia).",
           "blocks": [
             {
               "type": "list",
@@ -823,6 +1278,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G02-007",
           "title": "EX-A02-G02-007 — Questão de Concurso: CEBRASPE 2024 - CAU-BR (Assistente Administrativo)",
+          "prompt": "Texto: \"O curso da história não está escrito em pedra, mas é moldado pelas decisões tomadas hoje... A arquitetura, então, torna-se o resultado de decisões coletivas...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"O curso da história não está escrito em pedra, mas é moldado pelas decisões tomadas hoje... A arquitetura, então, torna-se o resultado de decisões coletivas...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "\"O vocábulo “então” introduz uma explicação no penúltimo período do último parágrafo.\""
+            },
+            {
+              "order": 3,
+              "action": "Análise e Resolução",
+              "rationale": "Aplicação imediata da \"vacina do CEBRASPE\": o conector então só pode expressar tempo ou conclusão ($=\\text{portanto}$), nunca explicação. No texto, estabelece a conclusão dedutiva de que, se a história é moldada hoje, a arquitetura é o resultado coletivo."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "ERRADO"
+            },
+            {
+              "order": 5,
+              "action": "Proveniência",
+              "rationale": "005 - Conjunções Coordenativas - Questões de Concurso - 720p.md (EX-A02-V005-002, )."
+            }
+          ],
+          "result": "Proveniência: 005 - Conjunções Coordenativas - Questões de Concurso - 720p.md (EX-A02-V005-002, ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G02-007 — Questão de Concurso: CEBRASPE 2024 - CAU-BR (Assistente Administrativo) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G02-007 — Questão de Concurso: CEBRASPE 2024 - CAU-BR (Assistente Administrativo).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G02-007 — Questão de Concurso: CEBRASPE 2024 - CAU-BR (Assistente Administrativo).",
           "blocks": [
             {
               "type": "list",
@@ -840,6 +1327,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G02-008",
           "title": "EX-A02-G02-008 — Questão de Concurso: CEBRASPE 2024 - INPI (Analista)",
+          "prompt": "Item: \"No primeiro período do texto, o conectivo “mas também” confere sentido aditivo à oração que introduz, de modo que são complementares entre si as informações veiculadas no trecho “não apenas por ser um processo evolucionário, mas também por ter se manifestado de formas muito diferentes através dos tempos”.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item",
+              "rationale": "\"No primeiro período do texto, o conectivo “mas também” confere sentido aditivo à oração que introduz, de modo que são complementares entre si as informações veiculadas no trecho “não apenas por ser um processo evolucionário, mas também por ter se manifestado de formas muito diferentes através dos tempos”.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise e Resolução",
+              "rationale": "A presença do par correlativo \"não apenas... mas também\" elimina a adversidade e estabelece adição de causas complementares que justificam conjuntamente a tese central."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "CERTO"
+            },
+            {
+              "order": 4,
+              "action": "Proveniência",
+              "rationale": "005 - Conjunções Coordenativas - Questões de Concurso - 720p.md (EX-A02-V005-004, )."
+            }
+          ],
+          "result": "Proveniência: 005 - Conjunções Coordenativas - Questões de Concurso - 720p.md (EX-A02-V005-004, ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G02-008 — Questão de Concurso: CEBRASPE 2024 - INPI (Analista) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G02-008 — Questão de Concurso: CEBRASPE 2024 - INPI (Analista).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G02-008 — Questão de Concurso: CEBRASPE 2024 - INPI (Analista).",
           "blocks": [
             {
               "type": "list",
@@ -856,6 +1370,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G02-009",
           "title": "EX-A02-G02-009 — Questão de Concurso: CEBRASPE 2024 - ITAIPU BINACIONAL (Nível Técnico)",
+          "prompt": "Texto: \"...pesquisadores e especialistas reconhecem as dificuldades enfrentadas pelo setor elétrico... mas se tem verificado uma transição energética peculiar do Brasil...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...pesquisadores e especialistas reconhecem as dificuldades enfrentadas pelo setor elétrico... mas se tem verificado uma transição energética peculiar do Brasil...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "\"A correção gramatical e o sentido original do texto CB3A1 seriam mantidos caso o vocábulo “mas” (primeiro período do último parágrafo) fosse substituído por porém.\""
+            },
+            {
+              "order": 3,
+              "action": "Análise e Resolução",
+              "rationale": "Aplicação do método em 2 passos: (1) O conector mas é coordenativo adversativo com valor de oposição no texto; (2) O conector substituto porém pertence à mesma família e possui equivalência sintático-semântica perfeita."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "CERTO"
+            },
+            {
+              "order": 5,
+              "action": "Proveniência",
+              "rationale": "005 - Conjunções Coordenativas - Questões de Concurso - 720p.md (EX-A02-V005-005, )."
+            }
+          ],
+          "result": "Proveniência: 005 - Conjunções Coordenativas - Questões de Concurso - 720p.md (EX-A02-V005-005, ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G02-009 — Questão de Concurso: CEBRASPE 2024 - ITAIPU BINACIONAL (Nível Técnico) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G02-009 — Questão de Concurso: CEBRASPE 2024 - ITAIPU BINACIONAL (Nível Técnico).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G02-009 — Questão de Concurso: CEBRASPE 2024 - ITAIPU BINACIONAL (Nível Técnico).",
           "blocks": [
             {
               "type": "list",
@@ -873,6 +1419,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G02-010",
           "title": "EX-A02-G02-010 — Questão de Concurso: CEBRASPE 2023 - AGER-MT (Analista Administrativo)",
+          "prompt": "Item: \"Mantendo-se as relações coesivas estabelecidas no segundo parágrafo do texto CB1A1-I, a expressão “Dessa forma” (último período) poderia ser corretamente substituída por Além disso.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item",
+              "rationale": "\"Mantendo-se as relações coesivas estabelecidas no segundo parágrafo do texto CB1A1-I, a expressão “Dessa forma” (último período) poderia ser corretamente substituída por Além disso.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise e Resolução",
+              "rationale": "A locução Dessa forma é coordenativa conclusiva ($=\\text{portanto}$), ao passo que Além disso é expressão aditiva ($=\\text{ademais}$). Conectivos de famílias lógicas conflitantes alteram o sentido e destroem a coerência textual."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "ERRADO"
+            },
+            {
+              "order": 4,
+              "action": "Proveniência",
+              "rationale": "005 - Conjunções Coordenativas - Questões de Concurso - 720p.md (EX-A02-V005-006, )."
+            }
+          ],
+          "result": "Proveniência: 005 - Conjunções Coordenativas - Questões de Concurso - 720p.md (EX-A02-V005-006, ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G02-010 — Questão de Concurso: CEBRASPE 2023 - AGER-MT (Analista Administrativo) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G02-010 — Questão de Concurso: CEBRASPE 2023 - AGER-MT (Analista Administrativo).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G02-010 — Questão de Concurso: CEBRASPE 2023 - AGER-MT (Analista Administrativo).",
           "blocks": [
             {
               "type": "list",
@@ -889,6 +1462,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G02-011",
           "title": "EX-A02-G02-011 — Questão de Concurso: CEBRASPE - IPHAN (Técnico I)",
+          "prompt": "Texto: \"...Essa falta de conhecimento e de valorização leva, por conseguinte, à marginalização e à discriminação de grupos falantes de outras línguas.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...Essa falta de conhecimento e de valorização leva, por conseguinte, à marginalização e à discriminação de grupos falantes de outras línguas.\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "\"A locução “por conseguinte” (ℓ.9) introduz no período uma ideia de oposição e equivale à conjunção entretanto.\""
+            },
+            {
+              "order": 3,
+              "action": "Análise e Resolução",
+              "rationale": "Por conseguinte é locução conclusiva ($=\\text{portanto}$), enquanto entretanto é adversativa. A banca erra duplamente ao afirmar que expressa oposição e que equivale a entretanto."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "ERRADO"
+            },
+            {
+              "order": 5,
+              "action": "Proveniência",
+              "rationale": "005 - Conjunções Coordenativas - Questões de Concurso - 720p.md (EX-A02-V005-007, )."
+            }
+          ],
+          "result": "Proveniência: 005 - Conjunções Coordenativas - Questões de Concurso - 720p.md (EX-A02-V005-007, ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G02-011 — Questão de Concurso: CEBRASPE - IPHAN (Técnico I) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G02-011 — Questão de Concurso: CEBRASPE - IPHAN (Técnico I).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G02-011 — Questão de Concurso: CEBRASPE - IPHAN (Técnico I).",
           "blocks": [
             {
               "type": "list",

@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A09-G03",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.866Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.612Z"
   },
   "unit": {
     "unitId": "IP-A09-G03",
@@ -351,6 +351,14 @@
         {
           "entityId": "RULE-IP-A09-G03-001",
           "title": "Quadro Sinótico dos 5 Tipos de Sujeito (#ANOTAAÍ)",
+          "statement": "|:-------------------------------- |:------------------------------------------------------------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:----------------------------------------------------------------- |:------------------------------- |\n| 1) Simples | 1 único núcleo substantivo/pronominal sem preposição. | O verbo concorda em número e pessoa com o núcleo. | Basta a verdade. / Bastam verdades. | KB-A09-G03-002 |\n| 2) Composto | Mais de 1 núcleo substantivo/pronominal. | •Anteposto: Concordância TOTAL (Plural obrigatório).• Posposto: TOTAL (Plural) ou ATRATIVO (com o 1º núcleo). | Pai e mãe chegaram.Chegaram / Chegou pai e mãe. | KB-A09-G03-003 |\n| 3) Indeterminado | Agente não identificado/não revelado. | • Verbo na3ª pessoa do Plural (sem contexto prévio).• Verbo no Infinitivo Impessoal.• Verbo na 3ª pessoa do Singular + SE (PIS) [VTI/VI/VL]. | Falaram de você.Amar é bom.Precisa-se de vendedores. | KB-A09-G03-007 |\n| 4) Oração sem Sujeito | Verbos impessoais (haver existencial, fazer temporal, fenômenos). | Verbo fixado compulsoriamente na3ª pessoa do Singular.(Auxiliar na locução herda a impessoalidade). | Deve haver motivos.(cf. Devem existir motivos). | KB-A09-G03-009KB-A09-G03-010 |\n| 5) Oracional | Sujeito estruturado como oração subordinada (=ISSO). | Verbo da oração principal fica compulsoriamente na3ª pessoa do Singular. | Basta que vocês estudem.Basta vocês estudarem. | KB-A09-G03-008 |",
+          "scope": "agreement",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de agreement no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Quadro Sinótico dos 5 Tipos de Sujeito (#ANOTAAÍ)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "paragraph",
@@ -385,6 +393,89 @@
         {
           "procedureId": "PROC-A09-G03-001",
           "title": "Protocolo Universal de Análise Sintática: \"Viva Cada Verbo a Seu Momento\"",
+          "objective": "Executar o algoritmo decisório para Protocolo Universal de Análise Sintática: \"Viva Cada Verbo a Seu Momento\"",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo Universal de Análise Sintática: \"Viva Cada Verbo a Seu Momento\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar e Sublinhar",
+              "explanation": "Isole visualmente o verbo ou a locução verbal sob análise no período.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Interrogar o Verbo",
+              "explanation": "Formule a pergunta de reconhecimento: \"O que é que [verbo]?\" ou \"Quem é que [verbo]?\".",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Filtrar Termos Preposicionados",
+              "explanation": "Ignore complementos introduzidos por preposição (a, de, em, com, por), pois o sujeito não aceita preposição.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Isolar o Núcleo Substantivo",
+              "explanation": "Extraia a palavra central não preposicionada.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Ajustar a Ordem Sintática",
+              "explanation": "Se a frase estiver em ordem inversa (Complemento + Verbo + Sujeito), reorganize-a na ordem direta.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Harmonizar a Flexão",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Núcleo singular $\\rightarrow$ Verbo no singular.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Núcleo plural $\\rightarrow$ Verbo no plural.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Sujeito composto anteposto $\\rightarrow$ Verbo no plural.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Sujeito composto posposto $\\rightarrow$ Verbo no plural (total) ou concorda com o mais próximo (atrativa).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo Universal de Análise Sintática: \"Viva Cada Verbo a Seu Momento\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -413,6 +504,44 @@
         {
           "procedureId": "PROC-A09-G03-002",
           "title": "Algoritmo Decisório para a Partícula SE (PA vs. PIS)",
+          "objective": "Executar o algoritmo decisório para Algoritmo Decisório para a Partícula SE (PA vs. PIS)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo Decisório para a Partícula SE (PA vs. PIS)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura sintático-morfológica alvo de Algoritmo Decisório para a Partícula SE (PA vs. PIS).",
+              "test": "Localizar o termo regente ou núcleo do segmento."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios decisórios da regra canônica.",
+              "test": "Verificar se há exceção ou caso facultativo aplicável."
+            },
+            {
+              "order": 3,
+              "action": "Concluir a classificação definitiva para resolução da questão.",
+              "test": "Confrontar o resultado obtido com as alternativas da prova."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo Decisório para a Partícula SE (PA vs. PIS)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -423,6 +552,59 @@
         {
           "procedureId": "PROC-A09-G03-003",
           "title": "Método Diagnóstico do Sujeito Oracional (O Teste do \"ISSO\")",
+          "objective": "Executar o algoritmo decisório para Método Diagnóstico do Sujeito Oracional (O Teste do \"ISSO\")",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método Diagnóstico do Sujeito Oracional (O Teste do \"ISSO\")."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize o verbo principal e faça a pergunta",
+              "explanation": "\"O que é que [verbo principal]?\".",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Verifique se a resposta constitui uma oração (possui verbo conjugado ou no infinitivo).",
+              "explanation": null,
+              "test": "Verifique se a resposta constitui uma oração (possui verbo conjugado ou no infinitivo)."
+            },
+            {
+              "order": 3,
+              "action": "Substitua todo o bloco oracional pelo pronome \"ISSO\".",
+              "explanation": null,
+              "test": "Substitua todo o bloco oracional pelo pronome \"ISSO\"."
+            },
+            {
+              "order": 4,
+              "action": "Leia a estrutura simplificada",
+              "explanation": "[Verbo] + ISSO $\\rightarrow$ ISSO + [Verbo].",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Comprovada a equivalência a ISSO, trave o verbo principal obrigatoriamente na 3ª pessoa do singular.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método Diagnóstico do Sujeito Oracional (O Teste do \"ISSO\")."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -440,6 +622,53 @@
         {
           "procedureId": "PROC-A09-G03-004",
           "title": "Transposição Sintática: Haver $\\leftrightarrow$ Existir",
+          "objective": "Executar o algoritmo decisório para Transposição Sintática: Haver $\\leftrightarrow$ Existir",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Transposição Sintática: Haver $\\leftrightarrow$ Existir."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar o verbo HAVER",
+              "explanation": "Localize o complemento direto não preposicionado (Havia [muitos problemas]).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Substituir por EXISTIR",
+              "explanation": "No mesmo tempo e modo verbal (Havia $\\rightarrow$ Existiam).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Converter a Função Sintática",
+              "explanation": "O antigo Objeto Direto passa a ser o Sujeito Sintático de existir.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Harmonizar a Concordância",
+              "explanation": "Como o sujeito é plural (muitos problemas), o verbo existir flexiona-se obrigatoriamente no plural (Existiam muitos problemas).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Transposição Sintática: Haver $\\leftrightarrow$ Existir."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -460,6 +689,22 @@
         {
           "contrastId": "CONTRAST-IP-A09-G03-001",
           "title": "Tabela 1: Partícula Apassivadora (PA) vs. Pronome Indeterminador do Sujeito (PIS)",
+          "contrastType": "morphological",
+          "conceptA": "Tabela 1: Partícula Apassivadora (PA) vs. Pronome Indeterminador do Sujeito (PIS)",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -511,6 +756,22 @@
         {
           "contrastId": "CONTRAST-IP-A09-G03-002",
           "title": "Tabela 2: Verbo Haver (Existencial) vs. Verbo Existir",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 2: Verbo Haver (Existencial) vs. Verbo Existir",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -561,6 +822,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G03-001",
           "title": "9.1. Bateria de Fixação Multirregra (material de origem — Adriana Figueiredo)",
+          "prompt": "Gabarito: representa | Justificativa: Sujeito oracional reduzido Chegar na hora marcada (= ISSO representa). Verbo no singular. (KB-A09-G03-008).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "EX-A09-G03-001 (Item 1)",
+              "rationale": "nove horas no relógio da igreja local. (Batiam/ Batia)Gabarito: Batiam | Justificativa: Sujeito é o numeral substantivado plural nove horas. O termo preposicionado no relógio... é adjunto adverbial de lugar. (KB-A09-G03-012)."
+            },
+            {
+              "order": 2,
+              "action": "EX-A09-G03-002 (Item 2)",
+              "rationale": "Não  uma relação direta entre crescimento e emprego. (existem/ existe)Gabarito: existe | Justificativa: Existir é verbo pessoal e concorda com o sujeito simples uma relação direta (núcleo singular relação). (KB-A09-G03-011)."
+            },
+            {
+              "order": 3,
+              "action": "EX-A09-G03-003 (Item 3)",
+              "rationale": "Um grupo de alunos  uma manifestação. (fizeram/ fez)Gabarito: fez / fizeram | Justificativa: Expressão partitiva singular (grupo) com especificador plural (alunos). Admite concordância lógica (fez) ou atrativa (fizeram). (KB-A09-G03-012)."
+            },
+            {
+              "order": 4,
+              "action": "EX-A09-G03-004 (Item 4)",
+              "rationale": "de profissionais habilitados. (Precisam-se/ Precisa-se)Gabarito: Precisa-se | Justificativa: Precisar é VTI acompanhado de SE (PIS). Sujeito indeterminado impõe a 3ª pessoa do singular. (KB-A09-G03-007)."
+            },
+            {
+              "order": 5,
+              "action": "EX-A09-G03-005 (Item 5)",
+              "rationale": "muitas pessoas fazendo propaganda... (Haviam/ Havia)Gabarito: Havia | Justificativa: Haver no sentido de existir é impessoal. O termo muitas pessoas funciona como objeto direto. (KB-A09-G03-009)."
+            }
+          ],
+          "result": "EX-A09-G03-015 (Item 15): Chegar na hora marcada  comprometimento... (representa/ representam)",
+          "decisivePoint": "Aplicação estrita da regra canônica de 9.1. Bateria de Fixação Multirregra (material de origem — Adriana Figueiredo) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de 9.1. Bateria de Fixação Multirregra (material de origem — Adriana Figueiredo).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em 9.1. Bateria de Fixação Multirregra (material de origem — Adriana Figueiredo).",
           "blocks": [
             {
               "type": "list",
@@ -592,6 +885,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G03-002",
           "title": "9.2. Questões de Concurso de Múltipla Escolha (material de origem — VUNESP, CESGRANRIO, FCC)",
+          "prompt": "A) Nunca lhes (ter) ocorrido que devem se empenhar... (Singular: tinha ocorrido - sujeito oracional). B) A muitos competidores não (interessar) permanecer... (Singular: interessa - sujeito oracional). C) Aos interessados (cumprir) buscar novas energias... (Singular: cumpre - sujeito oracional). D) O que aos perdedores (servir) de consolação... (Singular: serve - retoma antecedente 'O' = aquilo). E) [CORRETA] A nenhum participante do concurso (prejudicar) as alterações no regulamento... (Plural: prejudicam as alterações - sujeito plural posposto). Gabarito: E (KB-A09-G03-002, KB-A09-G03-006, KB-A09-G03-008).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "EX-A09-G03-016 (Q38 - VUNESP 2020 - Pref. Cananéia)",
+              "rationale": "Assinale a alternativa correta quanto à concordância.A) Fazem muitos anos... (Incorreto: Faz temporal).B) [CORRETA] Nas famílias modernas, o número de filhos vem sendo reduzido, além de as mulheres tornarem-se mães com mais idade. (Auxiliar 'vem' concorda com 'o número'; 'tornarem-se' concorda com 'mulheres').C) Os conflitos... nem sempre significa... (Incorreto: significam).D) Muita afeição e muita compreensão é necessário... (Incorreto: são necessárias - sujeito composto anteposto).E) A família... refletem... (Incorreto: reflete).Gabarito: B (KB-A09-G03-002, KB-A09-G03-003, KB-A09-G03-009)."
+            },
+            {
+              "order": 2,
+              "action": "EX-A09-G03-017 (Q39 - CESGRANRIO 2021 - Banco do Brasil)",
+              "rationale": "Concordância verbal correta na forma destacada:A)...analisaram-se... o comportamento... (Incorreto: analisou-se - sujeito singular).B) [CORRETA] Em grupos de jovens..., constataram-se inúmeras situações de dependência crônica... (VTD+SE = PA; 'inúmeras situações foram constatadas').C)...atendem-se a reclamações... (Incorreto: atende-se - VTI+SE).D)...atribuem-se... a maior responsabilidade... (Incorreto: atribui-se - sujeito singular).E)...estimam-se que os jovens sejam... (Incorreto: estima-se - sujeito oracional = ISSO).Gabarito: B (KB-A09-G03-007, KB-A09-G03-008)."
+            },
+            {
+              "order": 3,
+              "action": "EX-A09-G03-018 (Q40 - CESGRANRIO 2021 - Banco do Brasil TI)",
+              "rationale": "Concordância correta na forma destacada:A) Aspiram-se a bons cargos... (Incorreto: Aspira-se - VTI+SE).B)...fazem dois anos... (Incorreto: faz dois anos).C) [CORRETA] Nos últimos anos, combatem-se batalhas comerciais cotidianamente... (VTD+SE = PA; 'batalhas comerciais são combatidas').D)...existe problemas... (Incorreto: existem problemas).E)...precisam-se de equipamentos... (Incorreto: precisa-se - VTI+SE).Gabarito: C (KB-A09-G03-007, KB-A09-G03-009, KB-A09-G03-011)."
+            },
+            {
+              "order": 4,
+              "action": "EX-A09-G03-019 (Q41 - FCC 2019 - DPE-AM)",
+              "rationale": "Normas de concordância plenamente observadas:A) Não se esperem que os enigmas sejam resolvidos. (Incorreto: Não se espere - sujeito oracional).B) Sempre haverão teses insólitas... (Incorreto: Sempre haverá).C) [CORRETA] Não merece crédito dos físicos modernos a postulação desses cientistas. (Ordem direta: 'A postulação... não merece').D) Mesmo que se dessem resolução... (Incorreto: se desse resolução).E) Caso se proponham... essa dúvida final... (Incorreto: se proponha essa dúvida).Gabarito: C (KB-A09-G03-002, KB-A09-G03-007, KB-A09-G03-008, KB-A09-G03-009)."
+            },
+            {
+              "order": 5,
+              "action": "EX-A09-G03-020 (Q42 - FCC 2019 - Pref. Manaus)",
+              "rationale": "O verbo entre parênteses deverá flexionar-se no PLURAL:"
+            }
+          ],
+          "result": "EX-A09-G03-020 (Q42 - FCC 2019 - Pref. Manaus): O verbo entre parênteses deverá flexionar-se no PLURAL:",
+          "decisivePoint": "Aplicação estrita da regra canônica de 9.2. Questões de Concurso de Múltipla Escolha (material de origem — VUNESP, CESGRANRIO, FCC) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de 9.2. Questões de Concurso de Múltipla Escolha (material de origem — VUNESP, CESGRANRIO, FCC).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em 9.2. Questões de Concurso de Múltipla Escolha (material de origem — VUNESP, CESGRANRIO, FCC).",
           "blocks": [
             {
               "type": "list",
@@ -613,6 +938,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G03-003",
           "title": "9.3. Bateria Avançada CESPE/CEBRASPE — Certo / Errado (material de origem)",
+          "prompt": "Gabarito: Errado | Justificativa: Tratar-se de com SE (PIS) é absolutamente invariável na 3ª pessoa do singular. (KB-A09-G03-007).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "EX-A09-G03-021 (Q43 - TJ-AM 2019)",
+              "rationale": "\"A forma verbal 'têm' (l.20) concorda com o termo 'muitos segurados do INSS' (l.19).\"Gabarito: Certo | Justificativa: O pronome relativo que atua como sujeito e retoma o antecedente plural (segurados), exigindo têm com acento circunflexo. (KB-A09-G03-006)."
+            },
+            {
+              "order": 2,
+              "action": "EX-A09-G03-022 (Q44 - SEED-PR 2021)",
+              "rationale": "\"A forma verbal 'obrigam' estabelece concordância com os termos 'olhar', 'contraste' e 'luta'.\"Gabarito: Certo | Justificativa: Sujeito composto anteposto formado por 3 núcleos singulares exige plural. (KB-A09-G03-003)."
+            },
+            {
+              "order": 3,
+              "action": "EX-A09-G03-023 (Q45 - SEED-PR 2021 / IPCESPE)",
+              "rationale": "\"A forma verbal 'impõem' (l.24) está no plural porque concorda com o termo 'instituições' (l.23).\"Gabarito: Errado | Justificativa: O verbo concorda com o sujeito composto anteposto (perfil e política). O termo instituições é adjunto preposicionado. (KB-A09-G03-003)."
+            },
+            {
+              "order": 4,
+              "action": "EX-A09-G03-024 (Q46 - PF Escrivão 2021)",
+              "rationale": "\"A forma verbal 'crescem'... está flexionada no plural para concordar com o sujeito composto cujos núcleos são 'gastos', 'efetivos' e 'serviços'.\"Gabarito: Errado | Justificativa: Falso sujeito composto. O sujeito é simples, cujo único núcleo é o substantivo plural gastos. (KB-A09-G03-004)."
+            },
+            {
+              "order": 5,
+              "action": "EX-A09-G03-025 (Q47 - TRE-MT)",
+              "rationale": "\"O sujeito da oração iniciada por 'Sabe-se' (l.14) é indeterminado.\"Gabarito: Errado | Justificativa: A oração subordinada que esse processo... depende... atua como sujeito oracional (Isto é sabido). (KB-A09-G03-008)."
+            }
+          ],
+          "result": "EX-A09-G03-038 (Q60 - STM 2018): \"Trata-se de uma visão... Se 'uma visão' fosse substituída por ideias, seria necessário alterar 'Trata-se' para Tratam-se...\"",
+          "decisivePoint": "Aplicação estrita da regra canônica de 9.3. Bateria Avançada CESPE/CEBRASPE — Certo / Errado (material de origem) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de 9.3. Bateria Avançada CESPE/CEBRASPE — Certo / Errado (material de origem).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em 9.3. Bateria Avançada CESPE/CEBRASPE — Certo / Errado (material de origem).",
           "blocks": [
             {
               "type": "list",
@@ -690,8 +1047,12 @@
         {
           "trapId": "WARN-A09-G03-001",
           "title": "A Armadilha do Sujeito Preposicionado Inexistente",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha do Sujeito Preposicionado Inexistente.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha do Sujeito Preposicionado Inexistente.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha do Sujeito Preposicionado Inexistente no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha do Sujeito Preposicionado Inexistente.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha do Sujeito Preposicionado Inexistente.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha do Sujeito Preposicionado Inexistente para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha do Sujeito Preposicionado Inexistente.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha do Sujeito Preposicionado Inexistente.",
           "blocks": [
             {
               "type": "list",
@@ -707,8 +1068,12 @@
         {
           "trapId": "WARN-A09-G03-002",
           "title": "Proibição de Concordância Atrativa em Sujeito Composto Anteposto",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Proibição de Concordância Atrativa em Sujeito Composto Anteposto.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Proibição de Concordância Atrativa em Sujeito Composto Anteposto.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Proibição de Concordância Atrativa em Sujeito Composto Anteposto no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Proibição de Concordância Atrativa em Sujeito Composto Anteposto.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Proibição de Concordância Atrativa em Sujeito Composto Anteposto.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Proibição de Concordância Atrativa em Sujeito Composto Anteposto para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Proibição de Concordância Atrativa em Sujeito Composto Anteposto.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Proibição de Concordância Atrativa em Sujeito Composto Anteposto.",
           "blocks": [
             {
               "type": "list",
@@ -723,8 +1088,12 @@
         {
           "trapId": "WARN-A09-G03-003",
           "title": "A Falsa Coordenação do \"E\" em Termos Modificadores",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Falsa Coordenação do \"E\" em Termos Modificadores.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Falsa Coordenação do \"E\" em Termos Modificadores.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Falsa Coordenação do \"E\" em Termos Modificadores no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Falsa Coordenação do \"E\" em Termos Modificadores.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Falsa Coordenação do \"E\" em Termos Modificadores.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Falsa Coordenação do \"E\" em Termos Modificadores para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Falsa Coordenação do \"E\" em Termos Modificadores.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Falsa Coordenação do \"E\" em Termos Modificadores.",
           "blocks": [
             {
               "type": "list",
@@ -739,8 +1108,12 @@
         {
           "trapId": "WARN-A09-G03-004",
           "title": "Pluralização Incorreta da Expressão \"Tratar-se de\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pluralização Incorreta da Expressão \"Tratar-se de\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pluralização Incorreta da Expressão \"Tratar-se de\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pluralização Incorreta da Expressão \"Tratar-se de\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pluralização Incorreta da Expressão \"Tratar-se de\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pluralização Incorreta da Expressão \"Tratar-se de\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pluralização Incorreta da Expressão \"Tratar-se de\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pluralização Incorreta da Expressão \"Tratar-se de\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pluralização Incorreta da Expressão \"Tratar-se de\".",
           "blocks": [
             {
               "type": "list",
@@ -755,8 +1128,12 @@
         {
           "trapId": "WARN-A09-G03-005",
           "title": "Pluralização Indevida do Verbo Fazer Temporal",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pluralização Indevida do Verbo Fazer Temporal.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pluralização Indevida do Verbo Fazer Temporal.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pluralização Indevida do Verbo Fazer Temporal no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pluralização Indevida do Verbo Fazer Temporal.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pluralização Indevida do Verbo Fazer Temporal.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pluralização Indevida do Verbo Fazer Temporal para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pluralização Indevida do Verbo Fazer Temporal.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pluralização Indevida do Verbo Fazer Temporal.",
           "blocks": [
             {
               "type": "list",
@@ -771,8 +1148,12 @@
         {
           "trapId": "WARN-A09-G03-006",
           "title": "Contaminação de Plural em Locuções com Haver Impessoal",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Contaminação de Plural em Locuções com Haver Impessoal.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Contaminação de Plural em Locuções com Haver Impessoal.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Contaminação de Plural em Locuções com Haver Impessoal no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Contaminação de Plural em Locuções com Haver Impessoal.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Contaminação de Plural em Locuções com Haver Impessoal.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Contaminação de Plural em Locuções com Haver Impessoal para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Contaminação de Plural em Locuções com Haver Impessoal.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Contaminação de Plural em Locuções com Haver Impessoal.",
           "blocks": [
             {
               "type": "list",
@@ -787,8 +1168,12 @@
         {
           "trapId": "WARN-A09-G03-007",
           "title": "Pluralização Diante de Aposto Resumitivo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pluralização Diante de Aposto Resumitivo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pluralização Diante de Aposto Resumitivo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pluralização Diante de Aposto Resumitivo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pluralização Diante de Aposto Resumitivo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pluralização Diante de Aposto Resumitivo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pluralização Diante de Aposto Resumitivo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pluralização Diante de Aposto Resumitivo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pluralização Diante de Aposto Resumitivo.",
           "blocks": [
             {
               "type": "list",

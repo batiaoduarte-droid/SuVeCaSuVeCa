@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A13-G01",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.909Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.660Z"
   },
   "unit": {
     "unitId": "IP-A13-G01",
@@ -296,6 +296,14 @@
         {
           "entityId": "RULE-IP-A13-G01-001",
           "title": "Equação Canônica da Compreensão Textual",
+          "statement": "\\text{Compreensão Textual} \\equiv \\text{Recorrência} \\equiv \\text{Paráfrases} \\equiv \\text{Equivalências} \\equiv \\text{Reescrituras} \\equiv \\text{Explícitos do Texto}\n(Referência: KB-A13-G01-RECORRENCIA-002, VIS-A13-G01-RECORRENCIA-001)",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Equação Canônica da Compreensão Textual."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "formula",
@@ -310,6 +318,14 @@
         {
           "entityId": "RULE-IP-A13-G01-002",
           "title": "Tabela Sintética das Modalidades de Paráfrase",
+          "statement": "|:------------------------------------- |:-------------------------------------------------------------------------------- |:----------------------------------------------------------------------------------------------------------------------------- |:----------------------------: |\n| Paráfrase Correta | Correspondência semântica e sintática integral em todos os blocos frasais. | Preservação perfeita do sentido por sinonímia, singular genérico ou equivalência temporal.$\\rightarrow$ CERTO | KB-A13-G01-RECORRENCIA-003 |\n| Incorreta por Contradição | Inversão da polaridade axiológica ou negação direta de afirmação do texto. | Presença de vocábulo, advérbio ou adjetivo com carga oposta ([+] vs. [-]). $\\rightarrow$ ERRADO | KB-A13-G01-RECORRENCIA-004 |\n| Incorreta por Extrapolação | Introdução de dados, juízos de valor, conclusões ou quantificadores ausentes. | Falso raciocínio \"se... então\", troca de tempo por prioridade ou apelo à \"verdade da vida\".$\\rightarrow$ ERRADO | KB-A13-G01-RECORRENCIA-005 |",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Tabela Sintética das Modalidades de Paráfrase."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "paragraph",
@@ -336,6 +352,44 @@
         {
           "procedureId": "PROC-A13-G01-RECORRENCIA-001",
           "title": "Protocolo de Resolução de Recorrência e Fatiamento de Assertivas",
+          "objective": "Executar o algoritmo decisório para Protocolo de Resolução de Recorrência e Fatiamento de Assertivas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo de Resolução de Recorrência e Fatiamento de Assertivas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura sintático-morfológica alvo de Protocolo de Resolução de Recorrência e Fatiamento de Assertivas.",
+              "test": "Localizar o termo regente ou núcleo do segmento."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios decisórios da regra canônica.",
+              "test": "Verificar se há exceção ou caso facultativo aplicável."
+            },
+            {
+              "order": 3,
+              "action": "Concluir a classificação definitiva para resolução da questão.",
+              "test": "Confrontar o resultado obtido com as alternativas da prova."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo de Resolução de Recorrência e Fatiamento de Assertivas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -360,6 +414,47 @@
         {
           "procedureId": "PROC-A13-G01-RECORRENCIA-002",
           "title": "Procedimento de Leitura Ativa \"Um Olho no Peixe, Outro no Gato\"",
+          "objective": "Executar o algoritmo decisório para Procedimento de Leitura Ativa \"Um Olho no Peixe, Outro no Gato\"",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento de Leitura Ativa \"Um Olho no Peixe, Outro no Gato\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Leitura Silenciosa Contínua",
+              "explanation": "Realizar a leitura estritamente interna (evitar sussurros ou leitura labial que consomem atenção e energia cognitiva).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Escaneamento Retrospectivo",
+              "explanation": "Ao atingir o final de cada oração subordinada ou sintagma complexo, a visão e a mente devem retornar instantaneamente ao sujeito ou termo nuclear antecedente.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Ancoragem Mecânica",
+              "explanation": "Preencher visualmente no papel lacunas de sujeitos elípticos com o nome do respectivo agente.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento de Leitura Ativa \"Um Olho no Peixe, Outro no Gato\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -375,6 +470,53 @@
         {
           "procedureId": "PROC-A13-G01-RECORRENCIA-003",
           "title": "Protocolo para Manejo de Enumerações Extensas",
+          "objective": "Executar o algoritmo decisório para Protocolo para Manejo de Enumerações Extensas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo para Manejo de Enumerações Extensas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ao se deparar com listas longas de substantivos em textos legais ou descritivos (ex.",
+              "explanation": "lista de nove equipamentos escolares), interromper a leitura detalhada de item por item.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Traçar um enlace curvo envolvendo todo o bloco da enumeração.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Conectar o bloco diretamente por uma seta ao verbo regente principal (ex.",
+              "explanation": "\"equipar\") e ao hiperônimo funcional correspondente (ex.: \"critérios mínimos de qualidade\").",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Proceder à leitura da assertiva verificando se a banca cobrou a totalidade, um elemento específico ou se formulou uma generalização indevida.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo para Manejo de Enumerações Extensas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -395,6 +537,22 @@
         {
           "contrastId": "CONTRAST-IP-A13-G01-001",
           "title": "Tabela 1: Compreensão Textual (Recorrência) vs. Interpretação Textual (Inferência)",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 1: Compreensão Textual (Recorrência) vs. Interpretação Textual (Inferência)",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -436,6 +594,22 @@
         {
           "contrastId": "CONTRAST-IP-A13-G01-002",
           "title": "Tabela 2: \"Verdade do Texto\" vs. \"Verdade da Vida\"",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 2: \"Verdade do Texto\" vs. \"Verdade da Vida\"",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -477,6 +651,22 @@
         {
           "contrastId": "CONTRAST-IP-A13-G01-003",
           "title": "Tabela 3: Marcadores Temporais vs. Operadores de Hierarquia/Importância",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 3: Marcadores Temporais vs. Operadores de Hierarquia/Importância",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -515,6 +705,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G01-001",
           "title": "EX-A13-G01-RECORRENCIA-001 — Análise de Paráfrase Correta (Educação e Transformações)",
+          "prompt": "Texto de apoio: \"Tal destaque dado pela campanha evidencia a necessidade de integrar a educação nessas transformações, relação que, apesar de fundamental, não é tão expressiva na atualidade.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto de apoio",
+              "rationale": "\"Tal destaque dado pela campanha evidencia a necessidade de integrar a educação nessas transformações, relação que, apesar de fundamental, não é tão expressiva na atualidade.\""
+            },
+            {
+              "order": 2,
+              "action": "Assertiva",
+              "rationale": "\"O texto esclarece que, apesar de crucial, o papel transformador da educação não tem sido aproveitado.\""
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento da resolução",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Bloco 1",
+              "rationale": "\"apesar de crucial\" $\\leftrightarrow$ \"apesar de fundamental\" (equivalência de concessão e sinonímia perfeita)."
+            },
+            {
+              "order": 5,
+              "action": "Bloco 2",
+              "rationale": "\"o papel transformador da educação\" $\\leftrightarrow$ \"a necessidade de integrar a educação nessas transformações\" (equivalência semântica de conteúdo)."
+            }
+          ],
+          "result": "Julgamento: CORRETO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A13-G01-RECORRENCIA-001 — Análise de Paráfrase Correta (Educação e Transformações) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A13-G01-RECORRENCIA-001 — Análise de Paráfrase Correta (Educação e Transformações).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A13-G01-RECORRENCIA-001 — Análise de Paráfrase Correta (Educação e Transformações).",
           "blocks": [
             {
               "type": "list",
@@ -534,6 +756,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G01-002",
           "title": "EX-A13-G01-RECORRENCIA-002 — Análise de Paráfrase Incorreta por Contradição (Venda de Alimentos)",
+          "prompt": "Texto de apoio: \"Impulsionada pela alta geral dos preços, a venda de produtos alimentícios industrializados tem caminhado na contramão da economia, que não anda bem das pernas.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto de apoio",
+              "rationale": "\"Impulsionada pela alta geral dos preços, a venda de produtos alimentícios industrializados tem caminhado na contramão da economia, que não anda bem das pernas.\""
+            },
+            {
+              "order": 2,
+              "action": "Assertiva",
+              "rationale": "\"A alta nos preços dos alimentos industrializados tem impactado negativamente sua comercialização.\""
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento da resolução",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Mapeamento",
+              "rationale": "A economia vai mal [-]. A venda de alimentos caminha na contramão da economia, logo tem desempenho positivo [+]."
+            },
+            {
+              "order": 5,
+              "action": "Confronto",
+              "rationale": "A assertiva afirma que os preços impactaram negativamente [-] a comercialização."
+            }
+          ],
+          "result": "Julgamento: INCORRETO (POR CONTRADIÇÃO).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A13-G01-RECORRENCIA-002 — Análise de Paráfrase Incorreta por Contradição (Venda de Alimentos) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A13-G01-RECORRENCIA-002 — Análise de Paráfrase Incorreta por Contradição (Venda de Alimentos).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A13-G01-RECORRENCIA-002 — Análise de Paráfrase Incorreta por Contradição (Venda de Alimentos).",
           "blocks": [
             {
               "type": "list",
@@ -553,6 +807,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G01-003",
           "title": "EX-A13-G01-RECORRENCIA-003 — Análise de Paráfrase Incorreta por Extrapolação (Pilares da Segurança)",
+          "prompt": "Texto de apoio: \"O sistema de segurança deve englobar três pilares: de início, a prevenção, passando pela contenção e terminando na recuperação.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto de apoio",
+              "rationale": "\"O sistema de segurança deve englobar três pilares: de início, a prevenção, passando pela contenção e terminando na recuperação.\""
+            },
+            {
+              "order": 2,
+              "action": "Assertiva",
+              "rationale": "\"De acordo com o texto, as forças de segurança devem priorizar a prevenção.\""
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento da resolução",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "O texto estabelece uma sequência estritamente cronológica (de início $\\rightarrow$ passando por $\\rightarrow$ terminando em).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "A assertiva introduz a noção axiológica de prioridade hierárquica (priorizar).",
+              "rationale": null
+            }
+          ],
+          "result": "Julgamento: INCORRETO (POR EXTRAPOLAÇÃO).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A13-G01-RECORRENCIA-003 — Análise de Paráfrase Incorreta por Extrapolação (Pilares da Segurança) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A13-G01-RECORRENCIA-003 — Análise de Paráfrase Incorreta por Extrapolação (Pilares da Segurança).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A13-G01-RECORRENCIA-003 — Análise de Paráfrase Incorreta por Extrapolação (Pilares da Segurança).",
           "blocks": [
             {
               "type": "list",
@@ -572,6 +858,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G01-004",
           "title": "EX-A13-G01-RECORRENCIA-004 — Questão Cebraspe 1: Sebrae Nacional 2024 (Ritos e Humanidade)",
+          "prompt": "Banca / Órgão / Ano / Cargo: CESPE / CEBRASPE — SEBRAE-NACIONAL (2024) — Analista Técnico II (Adaptada).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano / Cargo",
+              "rationale": "CESPE / CEBRASPE — SEBRAE-NACIONAL (2024) — Analista Técnico II (Adaptada)."
+            },
+            {
+              "order": 2,
+              "action": "Texto de apoio",
+              "rationale": "\"O rito consiste em um conjunto de atos formalizados, expressivos e portadores de uma dimensão simbólica. É caracterizado por uma configuração espaço-temporal específica, por sistemas de linguagem e comportamentos específicos e por signos emblemáticos cujo sentido codificado constitui um dos bens comuns do grupo. O uso do rito é paralelo ao aparecimento da humanidade.\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva avaliada",
+              "rationale": "\"De acordo com as ideias do texto 1A9, os ritos são tão antigos quanto a humanidade.\""
+            },
+            {
+              "order": 4,
+              "action": "Desenvolvimento da resolução",
+              "rationale": ""
+            },
+            {
+              "order": 5,
+              "action": "Comando",
+              "rationale": "\"De acordo com as ideias do texto\" $\\rightarrow$ Recorrência estrita."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A13-G01-RECORRENCIA-004 — Questão Cebraspe 1: Sebrae Nacional 2024 (Ritos e Humanidade) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A13-G01-RECORRENCIA-004 — Questão Cebraspe 1: Sebrae Nacional 2024 (Ritos e Humanidade).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A13-G01-RECORRENCIA-004 — Questão Cebraspe 1: Sebrae Nacional 2024 (Ritos e Humanidade).",
           "blocks": [
             {
               "type": "list",
@@ -593,6 +911,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G01-005",
           "title": "EX-A13-G01-RECORRENCIA-005 — Questão Cebraspe 2: TCE-AC 2024 (Dualismo Cartesiano e Conjunção Adversativa)",
+          "prompt": "Banca / Órgão / Ano / Cargo: CESPE / CEBRASPE — TCE-AC (2024) — Auditor de Controle Externo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano / Cargo",
+              "rationale": "CESPE / CEBRASPE — TCE-AC (2024) — Auditor de Controle Externo."
+            },
+            {
+              "order": 2,
+              "action": "Texto de apoio",
+              "rationale": "\"A ideia de que a mente pertence a um domínio separado, distinto do corpo, foi teorizada bem cedo, em grandes textos como o Fédon, de Platão (IV a.C.) e a Suma teológica, de Tomás de Aquino (1265-1274), um texto fundador da concepção cristã da alma. Mas foi o filósofo francês René Descartes (1596-1650) quem estabeleceu aquilo que é hoje conhecido como dualismo: a tese de que a mente dotada de consciência é feita de uma substância imaterial que não está sujeita às leis da física.\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva avaliada",
+              "rationale": "\"Conforme as ideias do texto, a distinção entre mente e corpo como objetos de estudo já era conhecida desde a Antiguidade, mas apenas com René Descartes essa distinção foi teorizada e difundida.\""
+            },
+            {
+              "order": 4,
+              "action": "Desenvolvimento da resolução",
+              "rationale": ""
+            },
+            {
+              "order": 5,
+              "action": "Blocos 1 a 4",
+              "rationale": "A distinção entre mente e corpo era conhecida desde a Antiguidade $\\rightarrow$ Correspondência válida com Platão e Tomás de Aquino (\"foi teorizada bem cedo\")."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A13-G01-RECORRENCIA-005 — Questão Cebraspe 2: TCE-AC 2024 (Dualismo Cartesiano e Conjunção Adversativa) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A13-G01-RECORRENCIA-005 — Questão Cebraspe 2: TCE-AC 2024 (Dualismo Cartesiano e Conjunção Adversativa).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A13-G01-RECORRENCIA-005 — Questão Cebraspe 2: TCE-AC 2024 (Dualismo Cartesiano e Conjunção Adversativa).",
           "blocks": [
             {
               "type": "list",
@@ -614,6 +964,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G01-006",
           "title": "EX-A13-G01-RECORRENCIA-006 — Questão Cebraspe 3: FNDE 2024 (Projeto de Lei e Infraestrutura Escolar)",
+          "prompt": "Banca / Órgão / Ano / Cargo: CESPE / CEBRASPE — FNDE (2024) — Arquiteto e Urbanista.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano / Cargo",
+              "rationale": "CESPE / CEBRASPE — FNDE (2024) — Arquiteto e Urbanista."
+            },
+            {
+              "order": 2,
+              "action": "Texto de apoio",
+              "rationale": "\"Um projeto de lei que determina critérios mínimos de qualidade para escolas públicas de educação básica foi aprovado na Comissão de Constituição e Justiça (CCJ) do Senado Federal, em abril deste ano. Conforme estabelece o projeto de lei, o poder público deverá equipar todas as unidades do ensino básico com bibliotecas, laboratórios de ciências e informática, acesso à Internet, quadras poliesportivas cobertas, instalações com condições adequadas de acessibilidade, energia elétrica, abastecimento de água potável, esgoto sanitário e manejo de resíduos sólidos.\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva avaliada",
+              "rationale": "\"De acordo com o texto, a maior parte das instituições brasileiras de ensino não apresenta a infraestrutura básica para o adequado funcionamento.\""
+            },
+            {
+              "order": 4,
+              "action": "Desenvolvimento da resolução",
+              "rationale": ""
+            },
+            {
+              "order": 5,
+              "action": "Comando",
+              "rationale": "\"De acordo com o texto\" $\\rightarrow$ Recorrência estrita."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A13-G01-RECORRENCIA-006 — Questão Cebraspe 3: FNDE 2024 (Projeto de Lei e Infraestrutura Escolar) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A13-G01-RECORRENCIA-006 — Questão Cebraspe 3: FNDE 2024 (Projeto de Lei e Infraestrutura Escolar).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A13-G01-RECORRENCIA-006 — Questão Cebraspe 3: FNDE 2024 (Projeto de Lei e Infraestrutura Escolar).",
           "blocks": [
             {
               "type": "list",
@@ -684,8 +1066,12 @@
         {
           "trapId": "WARN-A13-G01-RECORRENCIA-001",
           "title": "O Risco da Leitura Afetiva e Ideológica",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Risco da Leitura Afetiva e Ideológica.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Risco da Leitura Afetiva e Ideológica.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Risco da Leitura Afetiva e Ideológica no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Risco da Leitura Afetiva e Ideológica.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Risco da Leitura Afetiva e Ideológica.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Risco da Leitura Afetiva e Ideológica para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Risco da Leitura Afetiva e Ideológica.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Risco da Leitura Afetiva e Ideológica.",
           "blocks": [
             {
               "type": "list",
@@ -701,8 +1087,12 @@
         {
           "trapId": "WARN-A13-G01-RECORRENCIA-002",
           "title": "Falsa Incorreção por Singular Genérico vs. Plural",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Falsa Incorreção por Singular Genérico vs. Plural.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Falsa Incorreção por Singular Genérico vs. Plural.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Falsa Incorreção por Singular Genérico vs. Plural no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Falsa Incorreção por Singular Genérico vs. Plural.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Falsa Incorreção por Singular Genérico vs. Plural.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Falsa Incorreção por Singular Genérico vs. Plural para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Falsa Incorreção por Singular Genérico vs. Plural.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Falsa Incorreção por Singular Genérico vs. Plural.",
           "blocks": [
             {
               "type": "list",
@@ -718,8 +1108,12 @@
         {
           "trapId": "WARN-A13-G01-RECORRENCIA-003",
           "title": "Armadilha da Paráfrase com Sinônimos Parciais",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Armadilha da Paráfrase com Sinônimos Parciais.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Armadilha da Paráfrase com Sinônimos Parciais.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Armadilha da Paráfrase com Sinônimos Parciais no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Armadilha da Paráfrase com Sinônimos Parciais.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Armadilha da Paráfrase com Sinônimos Parciais.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Armadilha da Paráfrase com Sinônimos Parciais para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Armadilha da Paráfrase com Sinônimos Parciais.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Armadilha da Paráfrase com Sinônimos Parciais.",
           "blocks": [
             {
               "type": "list",
@@ -735,8 +1129,12 @@
         {
           "trapId": "WARN-A13-G01-RECORRENCIA-004",
           "title": "Confundir Marcador Temporal com Hierarquia de Importância",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Marcador Temporal com Hierarquia de Importância.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Marcador Temporal com Hierarquia de Importância.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Marcador Temporal com Hierarquia de Importância no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Marcador Temporal com Hierarquia de Importância.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Marcador Temporal com Hierarquia de Importância.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Marcador Temporal com Hierarquia de Importância para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Marcador Temporal com Hierarquia de Importância.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Marcador Temporal com Hierarquia de Importância.",
           "blocks": [
             {
               "type": "list",
@@ -752,8 +1150,12 @@
         {
           "trapId": "WARN-A13-G01-RECORRENCIA-005",
           "title": "Embaralhamento de Referentes após Conjunção Adversativa",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Embaralhamento de Referentes após Conjunção Adversativa.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Embaralhamento de Referentes após Conjunção Adversativa.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Embaralhamento de Referentes após Conjunção Adversativa no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Embaralhamento de Referentes após Conjunção Adversativa.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Embaralhamento de Referentes após Conjunção Adversativa.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Embaralhamento de Referentes após Conjunção Adversativa para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Embaralhamento de Referentes após Conjunção Adversativa.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Embaralhamento de Referentes após Conjunção Adversativa.",
           "blocks": [
             {
               "type": "list",
@@ -769,8 +1171,12 @@
         {
           "trapId": "WARN-A13-G01-RECORRENCIA-006",
           "title": "A Armadilha Fatal da \"Verdade da Vida\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha Fatal da \"Verdade da Vida\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha Fatal da \"Verdade da Vida\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha Fatal da \"Verdade da Vida\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha Fatal da \"Verdade da Vida\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha Fatal da \"Verdade da Vida\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha Fatal da \"Verdade da Vida\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha Fatal da \"Verdade da Vida\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha Fatal da \"Verdade da Vida\".",
           "blocks": [
             {
               "type": "list",
@@ -933,7 +1339,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Não é a cultura em si, é “limitarmo-nos a ela”, isto é, “limitarmo-nos à nossa própria cultura” e\ndepreciar as demais. Questão incorreta.",
       "questionSha256": "06bf3f52c717f89757710f4c6897a02a152737a1b21513ec2791674ef4b3d622",
-      "answerSha256": "3f9178d6ac46785d6d2a5c3b6a8aa99cc7dda0120053a29dc8cbb53317f1fff2"
+      "answerSha256": "3f9178d6ac46785d6d2a5c3b6a8aa99cc7dda0120053a29dc8cbb53317f1fff2",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Recorrência; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula13.q0331",
@@ -945,7 +1354,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "9066c0c1ae5fc4d8c802fb3dc7fea1f218c81bf7be097fe0e3cadc2e41855fa2",
-      "answerSha256": "52d9dee7b40614b2c6104fecc1716186d16b795f02ce7b41d35db282d5260295"
+      "answerSha256": "52d9dee7b40614b2c6104fecc1716186d16b795f02ce7b41d35db282d5260295",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Recorrência; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula13.q0027",
@@ -975,7 +1387,35 @@
       "officialAnswer": "letter_B",
       "explanation": "O texto traz um comando, com verbo no imperativo e sugere seguir um passo a passo, uma lista de\ninstruções. Temos texto injuntivo.\nGabarito letra B.",
       "questionSha256": "a23e16757deb22136ec3e1bc79e3b7509912d9cdb27c078ff8860f9b6a99f3d4",
-      "answerSha256": "e89d14fd9d95a46bbb3a06955e21c6a7261ed98f18307a7720bd8bb9e86ceef7"
+      "answerSha256": "e89d14fd9d95a46bbb3a06955e21c6a7261ed98f18307a7720bd8bb9e86ceef7",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Recorrência; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Recorrência."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Recorrência."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Recorrência."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Recorrência."
+        }
+      ]
     },
     {
       "questionId": "aula13.q0030",
@@ -1005,7 +1445,35 @@
       "officialAnswer": "letter_B",
       "explanation": "O texto traz um comando, com verbo no imperativo e sugere seguir um passo a passo, uma lista\nde instruções. Temos texto injuntivo.\nGabarito letra B.",
       "questionSha256": "d5b0ee7dec0eada32148712503ca54fb416fb204235d42c7b38085e524ec2d07",
-      "answerSha256": "3f5c0b9b26941d3219f1f484123d77b6033239eda3562a0de0a2fec10cc5e7e3"
+      "answerSha256": "3f5c0b9b26941d3219f1f484123d77b6033239eda3562a0de0a2fec10cc5e7e3",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Recorrência; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Recorrência."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Recorrência."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Recorrência."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Recorrência."
+        }
+      ]
     },
     {
       "questionId": "aula13.q0058",
@@ -1034,7 +1502,35 @@
       ],
       "officialAnswer": "letter_B",
       "questionSha256": "7d3055d0fdf3debf62837345837992c3c231f3012c5b7cd12c111bf09860c7b4",
-      "answerSha256": "ea90404fa9c6bd06d3caa2c4522e55e58a2d8d35d06b65f02f8c72aaa6b56f02"
+      "answerSha256": "ea90404fa9c6bd06d3caa2c4522e55e58a2d8d35d06b65f02f8c72aaa6b56f02",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Recorrência; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Recorrência."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Recorrência."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Recorrência."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Recorrência."
+        }
+      ]
     },
     {
       "questionId": "aula13.q0171",
@@ -1047,7 +1543,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Não se pode afirmar isso. Apenas foi dito que o nome é hispânico. Garcia é um nome hispânico e\nnem todo Garcia é espanhol. Questão incorreta.",
       "questionSha256": "0cfcac50ab0abc062263022aacaeb1d9d0630254fa35200b8a18e83c6f850c43",
-      "answerSha256": "a4ce290ef30e3140ed1698dc91667978b6d10e29b11e1dcc6a0294a55a5964e4"
+      "answerSha256": "a4ce290ef30e3140ed1698dc91667978b6d10e29b11e1dcc6a0294a55a5964e4",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Recorrência; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

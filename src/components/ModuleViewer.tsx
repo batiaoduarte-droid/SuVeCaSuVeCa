@@ -4,6 +4,7 @@ import { CadernoErroItem, ModuleData, ModuleSection, SuvecaMethodConnection } fr
 import { db, type User } from '../lib/firebase';
 import { MarkdownContent } from './ui/MarkdownContent';
 import { PedagogicalUnitRenderer } from './pedagogical/PedagogicalUnitRenderer';
+import { CumulativeReviewRenderer } from './pedagogical/CumulativeReviewRenderer';
 import type { PedagogicalUnitView } from '../types/pedagogicalView';
 import {
   isRichNoteEmpty,
@@ -117,7 +118,8 @@ const deepDiveViewCache = new Map<string, PedagogicalUnitView>();
 export const PedagogicalDeepDive: React.FC<{ section: ModuleSection }> = ({ section }) => {
   const panelId = useId();
   const [isOpen, setIsOpen] = useState(false);
-  const integrationUnitId = section.editorial?.integrationUnitId;
+  const a14Match = section.contentUrl?.match(/A14-(S\d+)/);
+  const integrationUnitId = section.editorial?.integrationUnitId || (a14Match ? `IP-A14-${a14Match[1]}` : null);
   const viewUrl = integrationUnitId ? `/knowledge/pedagogical/views/${integrationUnitId}.json` : null;
 
   const [viewModel, setViewModel] = useState<PedagogicalUnitView | null>(() =>
@@ -219,7 +221,11 @@ export const PedagogicalDeepDive: React.FC<{ section: ModuleSection }> = ({ sect
               Não foi possível carregar esta unidade. Verifique a conexão e tente abri-la novamente.
             </div>
           )}
-          {viewModel && <PedagogicalUnitRenderer view={viewModel} />}
+          {viewModel && ((viewModel as any).unitType === 'cumulative_review' ? (
+            <CumulativeReviewRenderer view={viewModel as any} />
+          ) : (
+            <PedagogicalUnitRenderer view={viewModel} />
+          ))}
           {!viewModel && content && <MarkdownContent content={content} pedagogical />}
         </div>
       )}

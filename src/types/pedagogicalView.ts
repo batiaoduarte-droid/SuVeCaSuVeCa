@@ -1,6 +1,6 @@
 /**
- * Contrato Canônico de Apresentação (View Model V1)
- * Boundary estrito entre a base canônica v2 e o frontend React do SuVeCa.
+ * Contrato Canônico de Apresentação (View Model V1 / V2.1)
+ * Boundary estrito entre a base canônica v2.1 e o frontend React do SuVeCa.
  */
 
 export type ContentBlockType =
@@ -103,7 +103,7 @@ export interface ConnectionMapView {
 }
 
 export interface SuvecaConnectionView {
-  level: 'central' | 'strong' | 'support' | 'indirect' | 'outside_core';
+  level: 'central' | 'strong' | 'support' | 'indirect' | 'outside_core' | 'review';
   label: string;
   summary: string;
   steps: string[];
@@ -119,6 +119,11 @@ export interface SuvecaConnectionView {
 export interface CanonicalEntityView {
   entityId: string;
   title: string;
+  statement?: string;
+  scope?: string;
+  modality?: string;
+  conditions?: string[];
+  exceptions?: string[];
   blocks: ContentBlock[];
 }
 
@@ -126,26 +131,46 @@ export interface ProcedureView {
   procedureId: string;
   title: string;
   objective?: string;
+  inputs?: { name: string; description: string }[];
+  steps?: { order: number; action: string; explanation?: string; test?: string }[];
+  outputs?: { name: string; description: string }[];
+  formulas?: string[];
   blocks: ContentBlock[];
 }
 
 export interface ContrastView {
   contrastId: string;
   title: string;
+  contrastType?: string;
   conceptA?: string;
   conceptB?: string;
+  sideA?: { label: string; criteria: string[] };
+  sideB?: { label: string; criteria: string[] };
+  decisionCriterion?: string;
   blocks: ContentBlock[];
 }
 
 export interface WorkedExampleView {
   exampleId: string;
   title: string;
+  prompt?: string;
+  analysisSteps?: { order: number; action: string; rationale?: string }[];
+  result?: string;
+  decisivePoint?: string;
+  commonMistake?: string;
+  examTip?: string;
   blocks: ContentBlock[];
 }
 
 export interface ExamTrapView {
   trapId: string;
   title: string;
+  trigger?: string;
+  misleadingReasoning?: string;
+  expectedWrongConclusion?: string;
+  correctReasoning?: string;
+  decisiveTest?: string;
+  studentCaveat?: string;
   errorPattern?: string;
   correctiveRule?: string;
   blocks: ContentBlock[];
@@ -154,6 +179,21 @@ export interface ExamTrapView {
 export interface OfficialQuestionOptionView {
   label: string;
   text: string;
+}
+
+export interface QuestionPedagogicalEvaluation {
+  officialAnswer: string;
+  acceptedPedagogicalAnswers?: string[];
+  anomalyType?: 'material_error' | 'exam_board_divergence' | 'ambiguous_item';
+  editorialCaseRef?: string;
+  explanation?: string;
+}
+
+export interface DistractorAnalysisView {
+  optionLabel: string;
+  status: 'correct' | 'incorrect' | 'officially_correct_but_contested' | 'theoretically_defensible';
+  explanation: string;
+  decisiveCriterion?: string;
 }
 
 export interface OfficialQuestionView {
@@ -169,6 +209,11 @@ export interface OfficialQuestionView {
   explanation?: string;
   questionSha256?: string;
   answerSha256?: string;
+  // Question Intelligence v2.1
+  cognitiveDemand?: string;
+  solutionStrategy?: string;
+  pedagogicalEvaluation?: QuestionPedagogicalEvaluation;
+  distractorAnalysis?: DistractorAnalysisView[];
 }
 
 export interface PedagogicalUnitSections {
@@ -228,10 +273,37 @@ export interface PedagogicalUnitView {
   officialQuestions?: OfficialQuestionView[];
 }
 
+export interface CumulativeReviewView {
+  viewSchemaVersion: '1.0.0';
+  unitType: 'cumulative_review';
+  source: {
+    unitId: string;
+    lessonId: 'A14';
+    generatedAt: string;
+  };
+  unit: {
+    unitId: string;
+    lessonId: 'A14';
+    sectionId: string;
+    title: string;
+    objective: string;
+  };
+  sections: {
+    suveca: SuvecaConnectionView;
+    conceptMap: { items: string[] };
+    prioritizedRules: { items: string[] };
+    structuredSynthesis: { blocks: ContentBlock[] };
+    recoveryExamples: { blocks: ContentBlock[] };
+    activeReviewProtocol: { items: string[] };
+  };
+}
+
 export interface PedagogicalViewsManifest {
   viewSchemaVersion: '1.0.0';
   sourceBuildId: string;
   unitsCount: number;
+  standardUnitsCount?: number;
+  cumulativeUnitsCount?: number;
   tablesCorpusCount: number;
   tablesEmbeddedCount: number;
   questionBlocksCount: number;

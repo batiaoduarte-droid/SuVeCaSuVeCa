@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A04-G04",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.758Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.523Z"
   },
   "unit": {
     "unitId": "IP-A04-G04",
@@ -644,6 +644,14 @@
         {
           "entityId": "RULE-IP-A04-G04-001",
           "title": "Regras canônicas",
+          "statement": "Regras canônicas",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -742,6 +750,44 @@
         {
           "procedureId": "PROC-A04-G04-FORMAS-NOMINAIS-001",
           "title": "Algoritmo de Escolha da Forma de Particípio em Locuções",
+          "objective": "Executar o algoritmo decisório para Algoritmo de Escolha da Forma de Particípio em Locuções",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo de Escolha da Forma de Particípio em Locuções."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura sintático-morfológica alvo de Algoritmo de Escolha da Forma de Particípio em Locuções.",
+              "test": "Localizar o termo regente ou núcleo do segmento."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios decisórios da regra canônica.",
+              "test": "Verificar se há exceção ou caso facultativo aplicável."
+            },
+            {
+              "order": 3,
+              "action": "Concluir a classificação definitiva para resolução da questão.",
+              "test": "Confrontar o resultado obtido com as alternativas da prova."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo de Escolha da Forma de Particípio em Locuções."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -752,6 +798,59 @@
         {
           "procedureId": "PROC-A04-G04-FORMAS-NOMINAIS-002",
           "title": "Identificação Sintática do Infinitivo Não Flexionado",
+          "objective": "Executar o algoritmo decisório para Identificação Sintática do Infinitivo Não Flexionado",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Identificação Sintática do Infinitivo Não Flexionado."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize a oração reduzida de infinitivo cujo verbo não possui desinência pessoal visível (-es, -mos, -des, -em).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Formule a pergunta de agente",
+              "explanation": "\"Quem realiza ou é o sujeito da ação expressa por este infinitivo?\"",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Inspecione o contexto sintático",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se o sujeito for indeterminado, genérico ou inexistente (qualquer pessoa, todo mundo) $\\rightarrow$ Classifique como Infinitivo Impessoal.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se houver um sujeito determinado expresso ou desinencial em outra oração do mesmo período $\\rightarrow$ Classifique como Infinitivo Pessoal Não Flexionado.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Identificação Sintática do Infinitivo Não Flexionado."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -775,6 +874,77 @@
         {
           "procedureId": "PROC-A04-G04-FORMAS-NOMINAIS-003",
           "title": "Macete da Substituição (Infinitivo Pessoal vs. Futuro do Subjuntivo)",
+          "objective": "Executar o algoritmo decisório para Macete da Substituição (Infinitivo Pessoal vs. Futuro do Subjuntivo)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Macete da Substituição (Infinitivo Pessoal vs. Futuro do Subjuntivo)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificação do Alvo",
+              "explanation": "Isole o verbo regular em dúvida terminado em -r, -res, -rmos, -rem.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Substituição Mecânica",
+              "explanation": "Troque o verbo regular por uma das formas do par irregular modelo:",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Par 1",
+              "explanation": "FAZER (Infinitivo) vs. FIZER (Futuro do Subjuntivo).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Par 2",
+              "explanation": "DIZER (Infinitivo) vs. DISSER (Futuro do Subjuntivo).",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Julgamento Sintático",
+              "explanation": "Avalie a harmonia morfológica no ponto da frase:",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Encaixou FAZER / DIZER $\\rightarrow$ A forma original é INFINITIVO.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Encaixou FIZER / DISSER $\\rightarrow$ A forma original é FUTURO DO SUBJUNTIVO.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Regra de Ouro da Aplicação",
+              "explanation": "Não leia a frase inteira buscando coerência semântica com o sentido de \"fazer\"; avalie exclusivamente o ajuste morfossintático da forma verbal diante do conector (preposição ou conjunção).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Macete da Substituição (Infinitivo Pessoal vs. Futuro do Subjuntivo)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -819,6 +989,77 @@
         {
           "procedureId": "PROC-A04-G04-FORMAS-NOMINAIS-004",
           "title": "Roteiro de Identificação de Valores Semânticos do Gerúndio",
+          "objective": "Executar o algoritmo decisório para Roteiro de Identificação de Valores Semânticos do Gerúndio",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Roteiro de Identificação de Valores Semânticos do Gerúndio."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole o Gerúndio",
+              "explanation": "Destaque o verbo com terminação -NDO.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Localize o Verbo Principal",
+              "explanation": "Encontre o verbo da oração principal ao qual o gerúndio está conectado.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Teste de Conectivos Equivalentes",
+              "explanation": "",
+              "test": "Teste de Conectivos Equivalentes:"
+            },
+            {
+              "order": 4,
+              "action": "Troque a oração por \"Quando / Assim que + verbo flexionado\" $\\rightarrow$ Manteve o sentido? Valor de TEMPO.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Troque a oração por \"Porque / Visto que + verbo flexionado\" $\\rightarrow$ Indica a causa do fato principal? Valor de CAUSA.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Troque a oração por \"De modo que / De forma que + verbo flexionado\" $\\rightarrow$ Indica a consequência ou resultado? Valor de CONSEQUÊNCIA.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Troque por \"e + verbo no mesmo tempo da oração principal\" $\\rightarrow$ Adiciona um fato consequente? Valor de ADIÇÃO / CONSEQUÊNCIA.",
+              "explanation": null,
+              "test": "Troque por \"e + verbo no mesmo tempo da oração principal\" $\\rightarrow$ Adiciona um fato consequente? Valor de ADIÇÃO / CONSEQUÊNCIA."
+            },
+            {
+              "order": 8,
+              "action": "Seleção da Alternativa",
+              "explanation": "Opte pela alternativa que corresponda à relação lógica comprovada, rejeitando escolhas baseadas apenas em \"sonoridade agradável\".",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Roteiro de Identificação de Valores Semânticos do Gerúndio."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -851,6 +1092,59 @@
         {
           "procedureId": "PROC-A04-G04-FORMAS-NOMINAIS-005",
           "title": "Teste do \"Chegando/Chegado\" para a Forma \"VINDO\"",
+          "objective": "Executar o algoritmo decisório para Teste do \"Chegando/Chegado\" para a Forma \"VINDO\"",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste do \"Chegando/Chegado\" para a Forma \"VINDO\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize a palavra VINDO (ou de verbos derivados",
+              "explanation": "intervindo, convindo, provindo) no texto da prova.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Substitua mentalmente pelo verbo regular chegar ou trazer",
+              "explanation": "",
+              "test": "Substitua mentalmente pelo verbo regular chegar ou trazer:"
+            },
+            {
+              "order": 3,
+              "action": "Se a frase pedir a forma em -ANDO (chegando / trazendo), a palavra vindo é um GERÚNDIO (ação em andamento).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se a frase pedir a forma em -ADO / -IDO (chegado / trazido / procedente), a palavra vindo é um PARTICÍPIO IRREGULAR (origem, estado ou tempo composto).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Julgue as assertivas da banca examinadora com base nessa classificação categorial.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste do \"Chegando/Chegado\" para a Forma \"VINDO\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -884,6 +1178,22 @@
         {
           "contrastId": "CONTRAST-IP-A04-G04-001",
           "title": "8.1. Infinitivo Pessoal Flexionado vs. Infinitivo Pessoal Não Flexionado vs. Infinitivo Impessoal",
+          "contrastType": "mixed",
+          "conceptA": "8.1. Infinitivo Pessoal Flexionado vs. Infinitivo Pessoal Não Flexionado vs. Infinitivo Impessoal",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -930,6 +1240,22 @@
         {
           "contrastId": "CONTRAST-IP-A04-G04-002",
           "title": "8.2. Bom Gerúndio vs. Mau Gerúndio (Critérios Decisivos de Correção)",
+          "contrastType": "mixed",
+          "conceptA": "8.2. Bom Gerúndio vs. Mau Gerúndio (Critérios Decisivos de Correção)",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -971,6 +1297,22 @@
         {
           "contrastId": "CONTRAST-IP-A04-G04-003",
           "title": "8.3. Verbo VIR: Gerúndio vs. Particípio Irregular (\"Vindo\")",
+          "contrastType": "mixed",
+          "conceptA": "8.3. Verbo VIR: Gerúndio vs. Particípio Irregular (\"Vindo\")",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -1016,6 +1358,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G04-001",
           "title": "EX-A04-G04-FORMAS-NOMINAIS-001 — Identificação dos Três Valores Nominais em Frases",
+          "prompt": "Frase 1: \"Fumar é proibido.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase 1",
+              "rationale": "\"Fumar é proibido.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "O infinitivo fumar desempenha papel de Substantivo (núcleo do sujeito da oração), equivalente a \"O fumo\"."
+            },
+            {
+              "order": 3,
+              "action": "Frase 2",
+              "rationale": "\"Tempo perdido.\""
+            },
+            {
+              "order": 4,
+              "action": "Análise",
+              "rationale": "O particípio perdido desempenha papel de Adjetivo, qualificando o substantivo tempo."
+            },
+            {
+              "order": 5,
+              "action": "Frase 3",
+              "rationale": "\"Amanhecendo, partiremos.\""
+            }
+          ],
+          "result": "Análise: O gerúndio amanhecendo desempenha papel de Advérbio de tempo, indicando a circunstância temporal da partida (\"Quando amanhecer\").",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G04-FORMAS-NOMINAIS-001 — Identificação dos Três Valores Nominais em Frases sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G04-FORMAS-NOMINAIS-001 — Identificação dos Três Valores Nominais em Frases.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G04-FORMAS-NOMINAIS-001 — Identificação dos Três Valores Nominais em Frases.",
           "blocks": [
             {
               "type": "list",
@@ -1034,6 +1408,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G04-002",
           "title": "EX-A04-G04-FORMAS-NOMINAIS-002 — Fixação Prática de Particípio em Locuções Verbais",
+          "prompt": "Haviam  toda a louça. (enxugar) $\\rightarrow$ enxugado (Auxiliar haver exige Particípio Regular).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Haviam  toda a louça. (enxugar) $\\rightarrow$ enxugado (Auxiliar haver exige Particípio Regular).",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "A louça estava . (enxugar) $\\rightarrow$ enxuta (Auxiliar estar exige Particípio Irregular).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "Tinham  o ladrão em flagrante. (prender) $\\rightarrow$ prendido (Auxiliar ter exige Particípio Regular).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "O ladrão foi  em flagrante. (prender) $\\rightarrow$ preso (Auxiliar ser exige Particípio Irregular).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Eles tinham  o fogo. (acender) $\\rightarrow$ acendido (Auxiliar ter exige Particípio Regular).",
+              "rationale": null
+            }
+          ],
+          "result": "O livro foi . (imprimir) $\\rightarrow$ impresso (Auxiliar ser exige Particípio Irregular).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G04-FORMAS-NOMINAIS-002 — Fixação Prática de Particípio em Locuções Verbais sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G04-FORMAS-NOMINAIS-002 — Fixação Prática de Particípio em Locuções Verbais.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G04-FORMAS-NOMINAIS-002 — Fixação Prática de Particípio em Locuções Verbais.",
           "blocks": [
             {
               "type": "list",
@@ -1055,6 +1461,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G04-003",
           "title": "EX-A04-G04-FORMAS-NOMINAIS-003 — Infinitivo Pessoal Flexionado em Contexto",
+          "prompt": "Frase: \"Para passares em concurso, é preciso estudo.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Para passares em concurso, é preciso estudo.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Pedagógica",
+              "rationale": "O verbo passares possui sujeito determinado (tu) e exibe a desinência pessoal -es (2ª pessoa do singular). Classificação: Infinitivo Pessoal Flexionado."
+            }
+          ],
+          "result": "Análise Pedagógica: O verbo passares possui sujeito determinado (tu) e exibe a desinência pessoal -es (2ª pessoa do singular). Classificação: Infinitivo Pessoal Flexionado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G04-FORMAS-NOMINAIS-003 — Infinitivo Pessoal Flexionado em Contexto sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G04-FORMAS-NOMINAIS-003 — Infinitivo Pessoal Flexionado em Contexto.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G04-FORMAS-NOMINAIS-003 — Infinitivo Pessoal Flexionado em Contexto.",
           "blocks": [
             {
               "type": "list",
@@ -1069,6 +1492,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G04-004",
           "title": "EX-A04-G04-FORMAS-NOMINAIS-004 — Infinitivo Pessoal Não Flexionado em Contexto",
+          "prompt": "Frase: \"É importante que estudemos para passar em concurso.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"É importante que estudemos para passar em concurso.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Pedagógica",
+              "rationale": "O verbo passar não recebeu desinência pessoal, mas seu sujeito é recuperável pela forma estudemos (sujeito nós). Trata-se de Infinitivo Pessoal Não Flexionado."
+            }
+          ],
+          "result": "Análise Pedagógica: O verbo passar não recebeu desinência pessoal, mas seu sujeito é recuperável pela forma estudemos (sujeito nós). Trata-se de Infinitivo Pessoal Não Flexionado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G04-FORMAS-NOMINAIS-004 — Infinitivo Pessoal Não Flexionado em Contexto sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G04-FORMAS-NOMINAIS-004 — Infinitivo Pessoal Não Flexionado em Contexto.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G04-FORMAS-NOMINAIS-004 — Infinitivo Pessoal Não Flexionado em Contexto.",
           "blocks": [
             {
               "type": "list",
@@ -1083,6 +1523,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G04-005",
           "title": "Texto e Enunciado",
+          "prompt": "Texto e Enunciado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Texto e Enunciado...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Texto e Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Texto e Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Texto e Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Texto e Enunciado.",
           "blocks": [
             {
               "type": "callout",
@@ -1094,6 +1556,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G04-006",
           "title": "Resolução Passo a Passo (Aplicação do Macete FAZER / FIZER)",
+          "prompt": "(1) garantir-se: \"para fazer-se...\" (Preposição para exige infinitivo) $\\rightarrow$ Infinitivo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "(1) garantir-se",
+              "rationale": "\"para fazer-se...\" (Preposição para exige infinitivo) $\\rightarrow$ Infinitivo."
+            },
+            {
+              "order": 2,
+              "action": "(2) cuidar",
+              "rationale": "\"é preciso fazer...\" (Expressão é preciso rege infinitivo) $\\rightarrow$ Infinitivo."
+            },
+            {
+              "order": 3,
+              "action": "(3) desmoralizar",
+              "rationale": "\"para não fazer...\" (Preposição para exige infinitivo) $\\rightarrow$ Infinitivo."
+            },
+            {
+              "order": 4,
+              "action": "(4) desesperar",
+              "rationale": "\"Da próxima vez que fizer...\" (Conectivo temporal exige futuro do subjuntivo) $\\rightarrow$ Futuro do Subjuntivo."
+            },
+            {
+              "order": 5,
+              "action": "(5) enojar",
+              "rationale": "\"e que alguma notícia... lhe fizer...\" (Conjunção que rege futuro do subjuntivo) $\\rightarrow$ Futuro do Subjuntivo."
+            }
+          ],
+          "result": "Gabarito Oficial: A (1 – 2 – 3).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Passo a Passo (Aplicação do Macete FAZER / FIZER) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Passo a Passo (Aplicação do Macete FAZER / FIZER).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Passo a Passo (Aplicação do Macete FAZER / FIZER).",
           "blocks": [
             {
               "type": "list",
@@ -1118,6 +1612,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G04-007",
           "title": "Enunciado",
+          "prompt": "A frase em que o emprego do gerúndio mostra adequação é:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) Entrou na sala, sentando-se na primeira fila;",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "B) Nasceu em Curitiba, sendo filho de imigrantes;",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "C) Repreendeu a torcida, condenando as ofensas;",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "D) Desceu as escadas, chegando rapidamente ao térreo;",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "E) Saiu da festa, pegando um táxi na porta.",
+              "rationale": null
+            }
+          ],
+          "result": "E) Saiu da festa, pegando um táxi na porta.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1139,6 +1665,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G04-008",
           "title": "Resolução Passo a Passo",
+          "prompt": "Alternativa A: Entrou... sentando-se. Ação posterior cronológica (primeiro entra, depois senta). Inadequado no gerúndio. Correção: \"Entrou na sala e sentou-se...\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Alternativa A",
+              "rationale": "Entrou... sentando-se. Ação posterior cronológica (primeiro entra, depois senta). Inadequado no gerúndio. Correção: \"Entrou na sala e sentou-se...\"."
+            },
+            {
+              "order": 2,
+              "action": "Alternativa B",
+              "rationale": "Nasceu... sendo filho. Não expressa processo durativo/simultâneo. Inadequado. Correção: \"Nasceu em Curitiba e é filho...\"."
+            },
+            {
+              "order": 3,
+              "action": "Alternativa C",
+              "rationale": "Repreendeu... condenando. Ações perfeitamente simultâneas (o próprio ato de repreender materializa-se na condenação das ofensas). [CORRETA / ADEQUADA]."
+            },
+            {
+              "order": 4,
+              "action": "Alternativa D",
+              "rationale": "Desceu... chegando. Ação posterior sucessiva. Inadequado. Correção: \"Desceu as escadas e chegou...\"."
+            },
+            {
+              "order": 5,
+              "action": "Alternativa E",
+              "rationale": "Saiu... pegando. Ação posterior sucessiva. Inadequado. Correção: \"Saiu da festa e pegou um táxi...\"."
+            }
+          ],
+          "result": "Gabarito Oficial: C.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Passo a Passo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Passo a Passo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Passo a Passo.",
           "blocks": [
             {
               "type": "list",
@@ -1157,6 +1715,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G04-009",
           "title": "Texto de Suporte",
+          "prompt": "Texto de Suporte",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Texto de Suporte...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Texto de Suporte.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Texto de Suporte sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Texto de Suporte.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Texto de Suporte.",
           "blocks": [
             {
               "type": "callout",
@@ -1168,6 +1748,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G04-010",
           "title": "Enunciado e Resolução",
+          "prompt": "O gerúndio do segmento acima introduz uma oração que expressa:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) consequência, e pode ser substituído por \"de maneira a permitir\".",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "A oração principal expressa uma causa (\"Isso evitará a perda de tempo...\"), cujo efeito/consequência lógica é a concessão de folga suficiente (\"permitindo folga...\" $\\rightarrow$ \"de maneira a permitir folga...\")."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "A."
+            }
+          ],
+          "result": "Gabarito Oficial: A.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e Resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e Resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e Resolução.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1187,6 +1789,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G04-011",
           "title": "Texto de Suporte",
+          "prompt": "Texto de Suporte",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Texto de Suporte...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Texto de Suporte.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Texto de Suporte sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Texto de Suporte.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Texto de Suporte.",
           "blocks": [
             {
               "type": "callout",
@@ -1198,6 +1822,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G04-012",
           "title": "Enunciado e Resolução",
+          "prompt": "Mantendo-se um sentido adequado ao contexto, o gerúndio presente em...revelando mais sobre a atual classe média brasileira... pode ser substituído por:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) de maneira que revela",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "A grande percepção (fato gerador/causa) gera o resultado consecutivo de revelar mais sobre a classe média (\"de maneira que revela\" = conjunção consecutiva)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "A."
+            }
+          ],
+          "result": "Gabarito Oficial: A.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e Resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e Resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e Resolução.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1217,6 +1863,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G04-013",
           "title": "Texto de Suporte",
+          "prompt": "Texto de Suporte",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Texto de Suporte...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Texto de Suporte.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Texto de Suporte sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Texto de Suporte.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Texto de Suporte.",
           "blocks": [
             {
               "type": "callout",
@@ -1228,6 +1896,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G04-014",
           "title": "Enunciado e Resolução",
+          "prompt": "O gerúndio \"obrigando\" poderia ser adequadamente substituído pela seguinte forma desenvolvida:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) e obrigam;",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "O gerúndio expressa uma adição com consequência lógica decorrente do direcionamento teórico. A forma desenvolvida adequada une os fatos por coordenação aditiva (\"são direcionados... e obrigam\")."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "A."
+            }
+          ],
+          "result": "Gabarito Oficial: A.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e Resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e Resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e Resolução.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1247,6 +1937,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G04-015",
           "title": "Texto de Suporte",
+          "prompt": "Texto de Suporte",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Texto de Suporte...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Texto de Suporte.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Texto de Suporte sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Texto de Suporte.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Texto de Suporte.",
           "blocks": [
             {
               "type": "callout",
@@ -1258,6 +1970,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G04-016",
           "title": "Item",
+          "prompt": "O termo \"Vindo\" (l.5) corresponde ao gerúndio do verbo vir e, no texto, indica um prolongamento da ação de que trata a última oração do texto. (Certo / Errado)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"O termo \"Vindo\" (l.5) corresponde ao gerúndio do verbo vir e...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Item.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Item sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Item.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Item.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1268,6 +2002,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G04-017",
           "title": "Resolução Passo a Passo",
+          "prompt": "Aplicando o teste de substituição por trazer: \"Trazido de fornecedores selecionados...\" / \"Procedente de fornecedores...\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Aplicando o teste de substituição por trazer",
+              "rationale": "\"Trazido de fornecedores selecionados...\" / \"Procedente de fornecedores...\"."
+            },
+            {
+              "order": 2,
+              "action": "A oração exige a forma do particípio (adjetivo qualificando bacalhau), e não gerúndio (\"trazendo\").",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "A palavra Vindo no texto é o Particípio Irregular do verbo VIR, não expressando nenhum prolongamento de ação.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito Oficial: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Passo a Passo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Passo a Passo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Passo a Passo.",
           "blocks": [
             {
               "type": "list",
@@ -1334,8 +2095,12 @@
         {
           "trapId": "WARN-A04-G04-FORMAS-NOMINAIS-001",
           "title": "O Erro Crasso do Falso Particípio \"Chego\" e \"Trago\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Erro Crasso do Falso Particípio \"Chego\" e \"Trago\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Erro Crasso do Falso Particípio \"Chego\" e \"Trago\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Erro Crasso do Falso Particípio \"Chego\" e \"Trago\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Erro Crasso do Falso Particípio \"Chego\" e \"Trago\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Erro Crasso do Falso Particípio \"Chego\" e \"Trago\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Erro Crasso do Falso Particípio \"Chego\" e \"Trago\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Erro Crasso do Falso Particípio \"Chego\" e \"Trago\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Erro Crasso do Falso Particípio \"Chego\" e \"Trago\".",
           "blocks": [
             {
               "type": "list",
@@ -1351,8 +2116,12 @@
         {
           "trapId": "WARN-A04-G04-FORMAS-NOMINAIS-002",
           "title": "O Vício Redacional do Gerúndio Posterior",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Vício Redacional do Gerúndio Posterior.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Vício Redacional do Gerúndio Posterior.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Vício Redacional do Gerúndio Posterior no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Vício Redacional do Gerúndio Posterior.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Vício Redacional do Gerúndio Posterior.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Vício Redacional do Gerúndio Posterior para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Vício Redacional do Gerúndio Posterior.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Vício Redacional do Gerúndio Posterior.",
           "blocks": [
             {
               "type": "list",
@@ -1368,8 +2137,12 @@
         {
           "trapId": "WARN-A04-G04-FORMAS-NOMINAIS-003",
           "title": "A Pegadinha da Forma \"VINDO\" no CESPE/Cebraspe",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Pegadinha da Forma \"VINDO\" no CESPE/Cebraspe.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Pegadinha da Forma \"VINDO\" no CESPE/Cebraspe.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Pegadinha da Forma \"VINDO\" no CESPE/Cebraspe no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Pegadinha da Forma \"VINDO\" no CESPE/Cebraspe.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Pegadinha da Forma \"VINDO\" no CESPE/Cebraspe.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Pegadinha da Forma \"VINDO\" no CESPE/Cebraspe para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Pegadinha da Forma \"VINDO\" no CESPE/Cebraspe.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Pegadinha da Forma \"VINDO\" no CESPE/Cebraspe.",
           "blocks": [
             {
               "type": "list",
@@ -1505,7 +2278,35 @@
       "officialAnswer": "C",
       "explanation": "O infinitivo é a forma substantiva do verbo, pois é “nome” do verbo: estar. O gerúndio é a forma nominal indicativa de processo contínuo, terminada em NDO: suando. Gabarito letra C. Carga semântica do gerúndio O gerúndio geralmente indica uma ação continuada ou ações que ocorrem simultaneamente. Mas, em questões de concurso, geralmente também são cobrados outros sentidos: Tempo, Condição, Modo e Causa. Ex.: ●​ TEMPO: Chegando ao banco, ele se assustou com a fila (ele se assustou quando chegou ao banco.) ●​ CONDIÇÃO: Lavando a louça, deixo você sair (se lavar a louça, poderá sair.) ●​ MODO: Desenvolveu a memória fazendo exercícios (exercícios foram a maneira que usou para desenvolver a memória.) ●​ CAUSA: Estudando com dedicação por anos, foi aprovada em primeiro lugar (foi aprovada em primeiro lugar porque estudou por anos.) Para expressar continuidade, é possível usar locução de gerúndio (Ele vem buscando a aprovação), ou, alternativamente, locução de infinitivo (Ele está a buscar a aprovação) e particípio (Ele tem buscado a aprovação). O gerúndio também pode funcionar com valor adjetivo. Ex.: BACEN - Língua Portuguesa 37 www.estrategiaconcursos.com.br 154 Tenho um livro ensinando essa questão (um livro que ensina).",
       "questionSha256": "180501fb29964d28b0fd7f72f70762a362258109e1f0128dac86b39cfb82b975",
-      "answerSha256": "5b0cefa7f3a01c56cf0847f4e8d721530e2ff6c85d2ebbb71117ce23238324cc"
+      "answerSha256": "5b0cefa7f3a01c56cf0847f4e8d721530e2ff6c85d2ebbb71117ce23238324cc",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de SAAE BARRA BONITA-SP; 2. Identificar a regra central de Formas Nominais do Verbo; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "incorrect",
+          "explanation": "Opção a: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Formas Nominais do Verbo."
+        },
+        {
+          "optionLabel": "b",
+          "status": "incorrect",
+          "explanation": "Opção b: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Formas Nominais do Verbo."
+        },
+        {
+          "optionLabel": "c",
+          "status": "correct",
+          "explanation": "Opção c: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Formas Nominais do Verbo."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Formas Nominais do Verbo."
+        }
+      ]
     },
     {
       "questionId": "aula04.q0107",
@@ -1526,7 +2327,23 @@
       "officialAnswer": "E",
       "explanation": "Observem que temos um comando, uma ordem: Toque, clique e leia. O modo responsável por comandos em geral é imperativo e é nesse modo que os verbos estão conjugados. Gabarito letra E.",
       "questionSha256": "3ecc94f4d0c20f010d777d88df65b0a076e8c0eaed19baffd08f381a0c9c3664",
-      "answerSha256": "1447481373c8ddf11976781e449bd810ca2e46062e4c7839c683c6f9bdfac459"
+      "answerSha256": "1447481373c8ddf11976781e449bd810ca2e46062e4c7839c683c6f9bdfac459",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CORE-PE; 2. Identificar a regra central de Formas Nominais do Verbo; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "incorrect",
+          "explanation": "Opção a: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Formas Nominais do Verbo."
+        },
+        {
+          "optionLabel": "b",
+          "status": "incorrect",
+          "explanation": "Opção b: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Formas Nominais do Verbo."
+        }
+      ]
     },
     {
       "questionId": "aula04.q0105",
@@ -1538,7 +2355,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Na verdade, “for” e “vir” são formas flexionadas no modo subjuntivo dos verbos de movimento ser e vEr. O modo subjuntivo do verbo “vir” seria “vier”. Questão incorreta.",
       "questionSha256": "47a10eef54dc934b27fc93be860373db984d458eb2759310b0258b0f8f3ca33e",
-      "answerSha256": "d78cb7a952d5a3d503d56222e02b0faaf481588fd7c4c242c026212e8cfc5235"
+      "answerSha256": "d78cb7a952d5a3d503d56222e02b0faaf481588fd7c4c242c026212e8cfc5235",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de SEDF; 2. Identificar a regra central de Formas Nominais do Verbo; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula04.q0120",
@@ -1571,7 +2391,41 @@
       "officialAnswer": "A",
       "explanation": "“Deve” é o auxiliar da locução “deve crescer” e está no presente do indicativo. Gabarito letra A.",
       "questionSha256": "70e69be6750dd6631762f8207eff07c3601c0c0f7e67a643668e1c2ccde2fb97",
-      "answerSha256": "7f5a2e87f57d71b91c9852d2917d7b2cf624e6c3215ef0a5a7252a35e585e7fd"
+      "answerSha256": "7f5a2e87f57d71b91c9852d2917d7b2cf624e6c3215ef0a5a7252a35e585e7fd",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CORE-SP; 2. Identificar a regra central de Formas Nominais do Verbo; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "correct",
+          "explanation": "Opção a: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Formas Nominais do Verbo."
+        },
+        {
+          "optionLabel": "b",
+          "status": "incorrect",
+          "explanation": "Opção b: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Formas Nominais do Verbo."
+        },
+        {
+          "optionLabel": "c",
+          "status": "incorrect",
+          "explanation": "Opção c: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Formas Nominais do Verbo."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Formas Nominais do Verbo."
+        },
+        {
+          "optionLabel": "e",
+          "status": "incorrect",
+          "explanation": "Opção e: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Formas Nominais do Verbo."
+        }
+      ]
     },
     {
       "questionId": "aula04.q0115",
@@ -1604,7 +2458,41 @@
       ],
       "explanation": "Essa questão é extremamente técnica e específica. Devemos aplicar o diferenciador essencial do particípio: a voz passiva. Em: \"D Um irmão é um amigo dado pela natureza.\", \"pela natureza\" é agente da passiva, \"ser+particípio\" é estrutura de voz passiva: Um irmão é um amigo (que foi) dado pela natureza. Nesse caso, só podemos classificar como particípio. \"desconhecida\" e \"desejado\" são adjetivos originais; em \"um desconhecido\" e \"sendo assalariado\", temos adjetivos substantivados. BACEN - Língua Portuguesa 42 www.estrategiaconcursos.com.br 154",
       "questionSha256": "0fb972c8ca1816a782efcce0f40b84c2d9c9da84d709021ca13865b0213bd0b8",
-      "answerSha256": "a8ed384d7dd7207d4a89e65a579d70df9bd8a6a460d6434b693988fe34b45d41"
+      "answerSha256": "a8ed384d7dd7207d4a89e65a579d70df9bd8a6a460d6434b693988fe34b45d41",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de FGV; 2. Identificar a regra central de Formas Nominais do Verbo; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "incorrect",
+          "explanation": "Opção a: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Formas Nominais do Verbo."
+        },
+        {
+          "optionLabel": "b",
+          "status": "incorrect",
+          "explanation": "Opção b: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Formas Nominais do Verbo."
+        },
+        {
+          "optionLabel": "c",
+          "status": "incorrect",
+          "explanation": "Opção c: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Formas Nominais do Verbo."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Formas Nominais do Verbo."
+        },
+        {
+          "optionLabel": "e",
+          "status": "incorrect",
+          "explanation": "Opção e: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Formas Nominais do Verbo."
+        }
+      ]
     },
     {
       "questionId": "aula04.q0111",
@@ -1633,7 +2521,35 @@
       "officialAnswer": "B",
       "explanation": "BACEN - Língua Portuguesa 38 www.estrategiaconcursos.com.br 154 Primariamente, o gerúndio indica ação continuada, prolongada, durativa. Esse é seu principal sentido. O infinitivo caracteriza uma forma nominal e neutra. Gabarito letra B. (DPE-MT / 2015) Adaptada A frase que identifica o primeiro erro – “Usar água da chuva para beber, tomar banho e cozinhar” – emprega a forma verbal do infinitivo. Com isso, o autor do texto consegue um resultado conveniente para esse tipo de texto, que é não personalizar as ações. Comentários: O infinitivo impessoal, não flexionado, não se refere a nenhum sujeito explícito. Por isso, tem o efeito de não personalizar as ações e indicá-las de modo vago. Questão correta. Particípios Abundantes Há verbos que trazem mais de um particípio, um regular, terminado em –do, e um não regular, que pode ter diversas terminações. Isso sempre gera muita dúvida no dia a dia e nas provas. Segue uma pequena lista deles. Infinitivo Particípio Regular Particípio Irregular Aceitar Aceitado Aceito Acender Acendido Aceso Afligir Afligido Aflito Assentar Assentado Assento Corrigir Corrigido Correto Encher Enchido Cheio Entregar Entregado Entregue Expressar Expressado Expresso Extinguir Extinguido Extinto Fixar Fixado Fixo Fritar Fritado Frito Limpar Limpado Limpo Misturar Misturado Misto Morrer Morrido Morto Pagar Pagado Pago Submeter Submetido Submisso Suspender Suspendido Suspenso Tingir Tingido Tinto Vagar Vagado Vago Imprimir Imprimido Impresso Veja o uso dos particípios: BACEN - Língua Portuguesa 39 www.estrategiaconcursos.com.br 154 PARTICÍPIO APLICAÇÃO EXEMPLOS Regular Serão usados na voz ativa, Tenho pagado minhas dívidas em com os verbos TER / HAVER. débito automático. (terminação -do) Eu nunca havia aceitado bem críticas. Irregular Serão usados na voz passiva, O boleto foi pago em dinheiro com os verbos SER / ESTAR. vivo. (com outras terminações) Estive suspenso do trabalho, por desafiar ordens sem sentido. Só não vale misturar! ​ Ex.: Tenho impresso meus cursos em PDF! ​ Ex.: Meu cigarro foi acendido. Um último alerta: “trago” e “chego” não existem (na prova)! Os particípios corretos são “trazido” e “chegado”. O particípio também pode apresentar valores adverbiais. Ex.: ●​ TEMPO: Concluído o curso, começou a procurar emprego (quando concluiu). ●​ CONDIÇÃO: Lavada a louça, eu deixarei você sair, filha! (se lavar). ●​ CAUSA: Preso no trânsito, não conseguiu chegar a tempo (porque ficou preso). ●​ CONCESSÃO: Cercado de policiais, o bandido não se entregou e abriu fogo (mesmo estando cercado).",
       "questionSha256": "4e34933972cd6e2a6de76d6697561dce82aa13eac7511084fe3fb9ffb169c15e",
-      "answerSha256": "857aff9f3fa091beb5ebd0b4cef21909a805baaa5821dafb71af070c854a2c2d"
+      "answerSha256": "857aff9f3fa091beb5ebd0b4cef21909a805baaa5821dafb71af070c854a2c2d",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CS-UFG; 2. Identificar a regra central de Formas Nominais do Verbo; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "incorrect",
+          "explanation": "Opção a: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Formas Nominais do Verbo."
+        },
+        {
+          "optionLabel": "b",
+          "status": "correct",
+          "explanation": "Opção b: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Formas Nominais do Verbo."
+        },
+        {
+          "optionLabel": "c",
+          "status": "incorrect",
+          "explanation": "Opção c: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Formas Nominais do Verbo."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Formas Nominais do Verbo."
+        }
+      ]
     }
   ]
 }

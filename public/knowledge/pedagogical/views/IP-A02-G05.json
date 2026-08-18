@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A02-G05",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.722Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.482Z"
   },
   "unit": {
     "unitId": "IP-A02-G05",
@@ -414,6 +414,16 @@
         {
           "entityId": "RULE-IP-A02-G05-001",
           "title": "Quadro sintético de valores do conectivo \"Como\"",
+          "statement": "Comparativo (KB-A02-G05-002): Estabelece analogia/semelhança entre termos autônomos. Teste: termo posterior comparado ao anterior.\nConformativo (KB-A02-G05-003): Indica acordo com modelo ou citação. Equivalentes: conforme, consoante, de acordo com, segundo.\nCausal (KB-A02-G05-004): Indica o fato gerador/motivo. Teste: \"O fato de X fez com que Y\". Nunca explicativo.\nAditivo (KB-A02-G05-005): Soma ideias em estruturas correlativas (não só... como também). Equivalente: conjunção aditiva E.\nExemplificativo (KB-A02-G05-006): Introduz casos concretos de uma categoria genérica. Equivalente: por exemplo (exige vírgula dupla).",
+          "scope": "complex_sentence",
+          "modality": "prohibited",
+          "conditions": [
+            "Comparativo (KB-A02-G05-002): Estabelece analogia/semelhança entre termos autônomos. Teste: termo posterior comparado ao anterior.",
+            "Conformativo (KB-A02-G05-003): Indica acordo com modelo ou citação. Equivalentes: conforme, consoante, de acordo com, segundo.",
+            "Causal (KB-A02-G05-004): Indica o fato gerador/motivo. Teste: \"O fato de X fez com que Y\". Nunca explicativo.",
+            "Aditivo (KB-A02-G05-005): Soma ideias em estruturas correlativas (não só... como também). Equivalente: conjunção aditiva E."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -431,6 +441,16 @@
         {
           "entityId": "RULE-IP-A02-G05-002",
           "title": "Mapeamento canônico de substituições diretas",
+          "statement": "No entanto $\\rightarrow$ Todavia / Contudo / Porém (Adversativa pura — KB-A02-G05-008).\nDe acordo com $\\rightarrow$ Consoante / Conforme (Conformativa pura — KB-A02-G05-003).\nEmbora $\\rightarrow$ Conquanto / Posto que (Concessiva pura — KB-A02-G05-009, KB-A02-G05-010).\nPorquanto $\\rightarrow$ Porque / Pois (Causal ou Explicativa — KB-A02-G05-010).\nVisto que $\\rightarrow$ Já que / Uma vez que / Como causal (Causal pura — KB-A02-G05-004, KB-A02-G05-012).",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "No entanto $\\rightarrow$ Todavia / Contudo / Porém (Adversativa pura — KB-A02-G05-008).",
+            "De acordo com $\\rightarrow$ Consoante / Conforme (Conformativa pura — KB-A02-G05-003).",
+            "Embora $\\rightarrow$ Conquanto / Posto que (Concessiva pura — KB-A02-G05-009, KB-A02-G05-010).",
+            "Porquanto $\\rightarrow$ Porque / Pois (Causal ou Explicativa — KB-A02-G05-010)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -452,6 +472,77 @@
         {
           "procedureId": "PROC-A02-G05-001",
           "title": "Método de Identificação do Valor do Conectivo (\"O que vem depois salva\")",
+          "objective": "Executar o algoritmo decisório para Método de Identificação do Valor do Conectivo (\"O que vem depois salva\")",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método de Identificação do Valor do Conectivo (\"O que vem depois salva\")."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Leitura Global",
+              "explanation": "Leia o período completo até a pontuação final para captar o sentido macro.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Foco no Segmento Posterior",
+              "explanation": "Isole a palavra \"como\" e examine atentamente a oração ou termo que vem imediatamente após ela.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Aplicação do Filtro Lógico",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "O elemento posterior é uma comparação/analogia com o termo anterior? $\\rightarrow$ COMPARAÇÃO.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "O elemento posterior expressa adequação a um plano, norma ou citação? $\\rightarrow$ CONFORMIDADE.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "A oração expressa o fato gerador/motivo do evento seguinte? $\\rightarrow$ CAUSA.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "O segmento posterior agrega informação somada com base em par correlativo? $\\rightarrow$ ADIÇÃO.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "O segmento posterior cita integrantes específicos de um grupo maior citado antes? $\\rightarrow$ EXEMPLIFICAÇÃO.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método de Identificação do Valor do Conectivo (\"O que vem depois salva\")."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -478,6 +569,47 @@
         {
           "procedureId": "PROC-A02-G05-002",
           "title": "Teste Causal da Oração Subordinada",
+          "objective": "Executar o algoritmo decisório para Teste Causal da Oração Subordinada",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste Causal da Oração Subordinada."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole a oração encabeçada pelo conector (Oração A) e a oração principal (Oração B).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Monte a estrutura mental",
+              "explanation": "\"O fato de [Oração A] fez com que [Oração B]\".",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se a relação causal se mantiver lógica e perfeita no texto, o conector possui valor CAUSAL e aceita substituição por visto que, já que, uma vez que, porque.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste Causal da Oração Subordinada."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -493,6 +625,53 @@
         {
           "procedureId": "PROC-A02-G05-003",
           "title": "Técnica de Poda de Intercalações em Períodos Longos do CEBRASPE",
+          "objective": "Executar o algoritmo decisório para Técnica de Poda de Intercalações em Períodos Longos do CEBRASPE",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Técnica de Poda de Intercalações em Períodos Longos do CEBRASPE."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Leitura Contínua",
+              "explanation": "Leia o período extenso até o ponto final sem interromper o raciocínio na primeira vírgula.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Poda Visual",
+              "explanation": "Risque ou ignore mentalmente segmentos explicativos, adjetivos ou adverbiais intercalados entre vírgulas ou travessões.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Conexão Direta dos Núcleos",
+              "explanation": "Ligue a oração subordinada inicial diretamente ao núcleo da oração principal.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Julgamento Semântico",
+              "explanation": "Avalie a relação de causa/efeito ou conformidade nos núcleos desimpedidos.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Técnica de Poda de Intercalações em Períodos Longos do CEBRASPE."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -509,6 +688,53 @@
         {
           "procedureId": "PROC-A02-G05-004",
           "title": "Método da Substituição Paradigmática de Conectores",
+          "objective": "Executar o algoritmo decisório para Método da Substituição Paradigmática de Conectores",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método da Substituição Paradigmática de Conectores."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identifique o conector original do texto e o conector sugerido pela banca.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Verifique se ambos pertencem à mesma família semântica fixa (ex.",
+              "explanation": "adversativas puras, conformativas puras, concessivas puras).",
+              "test": "Verifique se ambos pertencem à mesma família semântica fixa (ex.: adversativas puras, conformativas puras, concessivas puras)."
+            },
+            {
+              "order": 3,
+              "action": "Se pertencerem à mesma lista fixa, valide a assertiva como CORRETA.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se o conector original for polissêmico (como, pois, porquanto), examine a sintaxe da frase antes de concluir.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método da Substituição Paradigmática de Conectores."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -529,6 +755,22 @@
         {
           "contrastId": "CONTRAST-IP-A02-G05-001",
           "title": "Tabela comparativa de armadilhas semânticas frequentes em bancas",
+          "contrastType": "mixed",
+          "conceptA": "Tabela comparativa de armadilhas semânticas frequentes em bancas",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -585,6 +827,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G05-001",
           "title": "EX-A02-G05-001 — Exercício de Fixação: Item (a)",
+          "prompt": "Enunciado: Identifique o valor semântico da palavra sublinhada: \"Os soldados agiam como seus inimigos\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identifique o valor semântico da palavra sublinhada: \"Os soldados agiam como seus inimigos\"."
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "O termo posterior \"seus inimigos\" estabelece uma analogia com a forma de agir dos soldados."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito oficial",
+              "rationale": "COMPARAÇÃO."
+            }
+          ],
+          "result": "Gabarito oficial: COMPARAÇÃO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G05-001 — Exercício de Fixação: Item (a) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G05-001 — Exercício de Fixação: Item (a).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G05-001 — Exercício de Fixação: Item (a).",
           "blocks": [
             {
               "type": "list",
@@ -600,6 +864,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G05-002",
           "title": "EX-A02-G05-002 — Exercício de Fixação: Item (b)",
+          "prompt": "Enunciado: Identifique o valor semântico da oração sublinhada: \"Como consta dos livros, deve-se a Euclides da Cunha a mais completa descrição do sertão brasileiro.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identifique o valor semântico da oração sublinhada: \"Como consta dos livros, deve-se a Euclides da Cunha a mais completa descrição do sertão brasileiro.\""
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "Indica conformidade com o que está registrado nas obras de referência (\"de acordo com o que consta nos livros\")."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito oficial",
+              "rationale": "CONFORMIDADE."
+            }
+          ],
+          "result": "Gabarito oficial: CONFORMIDADE.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G05-002 — Exercício de Fixação: Item (b) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G05-002 — Exercício de Fixação: Item (b).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G05-002 — Exercício de Fixação: Item (b).",
           "blocks": [
             {
               "type": "list",
@@ -615,6 +901,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G05-003",
           "title": "EX-A02-G05-003 — Exercício de Fixação: Item (c)",
+          "prompt": "Enunciado: Identifique o valor semântico da palavra sublinhada: \"Como adotou atitudes de um político qualquer, o republicano ficou desmoralizado.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identifique o valor semântico da palavra sublinhada: \"Como adotou atitudes de um político qualquer, o republicano ficou desmoralizado.\""
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "Teste: \"O fato de adotar atitudes de um político qualquer fez com que o republicano ficasse desmoralizado.\""
+            },
+            {
+              "order": 3,
+              "action": "Gabarito oficial",
+              "rationale": "CAUSA (Causal)."
+            }
+          ],
+          "result": "Gabarito oficial: CAUSA (Causal).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G05-003 — Exercício de Fixação: Item (c) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G05-003 — Exercício de Fixação: Item (c).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G05-003 — Exercício de Fixação: Item (c).",
           "blocks": [
             {
               "type": "list",
@@ -630,6 +938,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G05-004",
           "title": "EX-A02-G05-004 — Exercício de Fixação: Item (d)",
+          "prompt": "Enunciado: Identifique o valor semântico da expressão sublinhada: \"Alguns animais, como o leão e o tigre, são carnívoros.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identifique o valor semântico da expressão sublinhada: \"Alguns animais, como o leão e o tigre, são carnívoros.\""
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "\"Leão\" e \"tigre\" são exemplos de animais carnívoros, e não termos comparados a eles."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito oficial",
+              "rationale": "EXEMPLIFICAÇÃO."
+            }
+          ],
+          "result": "Gabarito oficial: EXEMPLIFICAÇÃO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G05-004 — Exercício de Fixação: Item (d) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G05-004 — Exercício de Fixação: Item (d).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G05-004 — Exercício de Fixação: Item (d).",
           "blocks": [
             {
               "type": "list",
@@ -645,6 +975,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G05-005",
           "title": "EX-A02-G05-005 — Exercício de Fixação: Item (e)",
+          "prompt": "Enunciado: Identifique o valor semântico da palavra sublinhada: \"Ele leu não só o livro como também a revista.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identifique o valor semântico da palavra sublinhada: \"Ele leu não só o livro como também a revista.\""
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "Estrutura correlativa aditiva (não só... como também) que soma dois objetos lidos (= leu o livro e a revista)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito oficial",
+              "rationale": "ADIÇÃO."
+            }
+          ],
+          "result": "Gabarito oficial: ADIÇÃO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G05-005 — Exercício de Fixação: Item (e) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G05-005 — Exercício de Fixação: Item (e).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G05-005 — Exercício de Fixação: Item (e).",
           "blocks": [
             {
               "type": "list",
@@ -660,6 +1012,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G05-006",
           "title": "EX-A02-G05-006 — Exercício de Fixação: Item (f)",
+          "prompt": "Enunciado: Identifique o valor semântico da palavra sublinhada: \"Como não viu o poste, colidiu com ele.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identifique o valor semântico da palavra sublinhada: \"Como não viu o poste, colidiu com ele.\""
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "O fato de não ter visto o poste foi o motivo/causa da colisão."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito oficial",
+              "rationale": "CAUSA."
+            }
+          ],
+          "result": "Gabarito oficial: CAUSA.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G05-006 — Exercício de Fixação: Item (f) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G05-006 — Exercício de Fixação: Item (f).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G05-006 — Exercício de Fixação: Item (f).",
           "blocks": [
             {
               "type": "list",
@@ -675,6 +1049,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G05-007",
           "title": "EX-A02-G05-007 — Questão CEBRASPE: Prefeitura de São Luís - MA",
+          "prompt": "Texto: \"Tinha chegado o tempo da colheita, era uma manhã risonha, e bela, como o rosto de um infante, entretanto eu tinha um peso enorme no coração...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"Tinha chegado o tempo da colheita, era uma manhã risonha, e bela, como o rosto de um infante, entretanto eu tinha um peso enorme no coração...\""
+            },
+            {
+              "order": 2,
+              "action": "Assertiva",
+              "rationale": "No texto, o trecho \"como o rosto de um infante\" introduz uma ideia de comparação."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O conector correlaciona a beleza da manhã com o rosto de uma criança (infante). Há analogia direta."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G05-007 — Questão CEBRASPE: Prefeitura de São Luís - MA sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G05-007 — Questão CEBRASPE: Prefeitura de São Luís - MA.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G05-007 — Questão CEBRASPE: Prefeitura de São Luís - MA.",
           "blocks": [
             {
               "type": "list",
@@ -691,6 +1092,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G05-008",
           "title": "EX-A02-G05-008 — Questão CEBRASPE: PGE-PE (Analista Judiciário)",
+          "prompt": "Texto: \"Se observarmos bem, essas ondas longas da história, como as chamava Braudel, tornaram-se cada vez mais curtas.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"Se observarmos bem, essas ondas longas da história, como as chamava Braudel, tornaram-se cada vez mais curtas.\""
+            },
+            {
+              "order": 2,
+              "action": "Assertiva",
+              "rationale": "O sentido original e a correção gramatical do texto seriam mantidos se a palavra \"como\" fosse substituída por conforme."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O termo introduz a denominação formulada pelo historiador Braudel (= conforme as chamava Braudel). Sentido conformativo perfeito."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G05-008 — Questão CEBRASPE: PGE-PE (Analista Judiciário) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G05-008 — Questão CEBRASPE: PGE-PE (Analista Judiciário).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G05-008 — Questão CEBRASPE: PGE-PE (Analista Judiciário).",
           "blocks": [
             {
               "type": "list",
@@ -707,6 +1135,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G05-009",
           "title": "EX-A02-G05-009 — Questão CEBRASPE: PC-PB (Escrivão de Polícia 2022)",
+          "prompt": "Texto: \"Como aprendemos a falar na mais tenra infância e sem maior esforço, além de usarmos a linguagem no dia a dia da forma mais corriqueira, não nos damos conta do grande prodígio que é falar.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"Como aprendemos a falar na mais tenra infância e sem maior esforço, além de usarmos a linguagem no dia a dia da forma mais corriqueira, não nos damos conta do grande prodígio que é falar.\""
+            },
+            {
+              "order": 2,
+              "action": "Assertiva",
+              "rationale": "Estariam preservadas as ideias e a correção gramatical do texto caso se substituísse a conjunção \"Como\" por Visto que."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "Aplicando a técnica de poda de intercalações e o teste causal: \"O fato de aprendermos a falar na infância fez com que não nos demos conta do prodígio\". O \"como\" é causal e admite \"visto que\"."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G05-009 — Questão CEBRASPE: PC-PB (Escrivão de Polícia 2022) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G05-009 — Questão CEBRASPE: PC-PB (Escrivão de Polícia 2022).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G05-009 — Questão CEBRASPE: PC-PB (Escrivão de Polícia 2022).",
           "blocks": [
             {
               "type": "list",
@@ -723,6 +1178,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G05-010",
           "title": "EX-A02-G05-010 — Questão CEBRASPE: Prefeitura de Camaçari - BA (2024)",
+          "prompt": "Texto: \"quando as pessoas leem a descrição de ações, como 'subindo as escadas'...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"quando as pessoas leem a descrição de ações, como 'subindo as escadas'...\""
+            },
+            {
+              "order": 2,
+              "action": "Assertiva",
+              "rationale": "Sem alteração das relações coesivas, o vocábulo \"como\" poderia ser corretamente substituído pela expressão conforme, seguida de vírgula."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "\"Subindo as escadas\" é um exemplo de ação (exemplificação), tornando errada a troca por \"conforme\". Ademais, substitutos explicativos como \"por exemplo\" exigiriam duas vírgulas (antes e depois)."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G05-010 — Questão CEBRASPE: Prefeitura de Camaçari - BA (2024) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G05-010 — Questão CEBRASPE: Prefeitura de Camaçari - BA (2024).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G05-010 — Questão CEBRASPE: Prefeitura de Camaçari - BA (2024).",
           "blocks": [
             {
               "type": "list",
@@ -739,6 +1221,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G05-011",
           "title": "EX-A02-G05-011 — Questão CEBRASPE: MPE-SC (Promotor de Justiça 2023)",
+          "prompt": "Texto:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "\"...não apenas [...] como também se observa a existência de robôs...\"",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "\"...há evidentes situações [...], como naquelas em que não foram realizadas atualizações...\"",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Assertiva",
+              "rationale": "A classificação gramatical do vocábulo \"como\" na ocorrência 1 é distinta de sua classificação na ocorrência 2."
+            },
+            {
+              "order": 5,
+              "action": "Resolução",
+              "rationale": "Ocorrência 1 = Adição (correlativa aditiva); Ocorrência 2 = Exemplificação. As classificações são de fato distintas."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G05-011 — Questão CEBRASPE: MPE-SC (Promotor de Justiça 2023) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G05-011 — Questão CEBRASPE: MPE-SC (Promotor de Justiça 2023).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G05-011 — Questão CEBRASPE: MPE-SC (Promotor de Justiça 2023).",
           "blocks": [
             {
               "type": "list",
@@ -769,6 +1283,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G05-012",
           "title": "EX-A02-G05-012 — Questão CEBRASPE: Prefeitura de Joinville - SC (2024)",
+          "prompt": "Assertiva: As expressões “Além disso” e “No entanto” funcionam como mecanismos de coesão sequencial, estabelecendo relação entre partes do texto e permitindo a progressão textual.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Assertiva",
+              "rationale": "As expressões “Além disso” e “No entanto” funcionam como mecanismos de coesão sequencial, estabelecendo relação entre partes do texto e permitindo a progressão textual."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Ambos os termos operam como conectores interoracionais que garantem o avanço coerente das ideias."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G05-012 — Questão CEBRASPE: Prefeitura de Joinville - SC (2024) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G05-012 — Questão CEBRASPE: Prefeitura de Joinville - SC (2024).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G05-012 — Questão CEBRASPE: Prefeitura de Joinville - SC (2024).",
           "blocks": [
             {
               "type": "list",
@@ -784,6 +1320,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G05-013",
           "title": "EX-A02-G05-013 — Questão CEBRASPE: PC-PE (Agente de Polícia 2024)",
+          "prompt": "Assertiva: Sem prejuízo da correção gramatical e do sentido original, a expressão “no entanto” poderia ser substituída por todavia.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Assertiva",
+              "rationale": "Sem prejuízo da correção gramatical e do sentido original, a expressão “no entanto” poderia ser substituída por todavia."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Conjunções adversativas pertencentes à mesma lista fixa paradigmática."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G05-013 — Questão CEBRASPE: PC-PE (Agente de Polícia 2024) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G05-013 — Questão CEBRASPE: PC-PE (Agente de Polícia 2024).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G05-013 — Questão CEBRASPE: PC-PE (Agente de Polícia 2024).",
           "blocks": [
             {
               "type": "list",
@@ -799,6 +1357,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G05-014",
           "title": "EX-A02-G05-014 — Questão CEBRASPE: SEE-PE (Professor Braillista 2023)",
+          "prompt": "Assertiva: No quarto parágrafo, a expressão “Mas não fica apenas nisso” estabelece uma relação de causa e consequência entre duas citações.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Assertiva",
+              "rationale": "No quarto parágrafo, a expressão “Mas não fica apenas nisso” estabelece uma relação de causa e consequência entre duas citações."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "A expressão adiciona um novo argumento (comprovado pela presença do advérbio \"também\" no trecho seguinte), configurando adição, e não causa/consequência."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G05-014 — Questão CEBRASPE: SEE-PE (Professor Braillista 2023) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G05-014 — Questão CEBRASPE: SEE-PE (Professor Braillista 2023).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G05-014 — Questão CEBRASPE: SEE-PE (Professor Braillista 2023).",
           "blocks": [
             {
               "type": "list",
@@ -814,6 +1394,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G05-015",
           "title": "EX-A02-G05-015 — Questão CEBRASPE: ITAIPU BINACIONAL (2024)",
+          "prompt": "Assertiva: Estariam mantidas a coesão textual e a coerência do texto caso se substituísse “De acordo com” por Consoante.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Assertiva",
+              "rationale": "Estariam mantidas a coesão textual e a coerência do texto caso se substituísse “De acordo com” por Consoante."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "\"De acordo com\" e \"Consoante\" são expressões conformativas perfeitamente sinônimas."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G05-015 — Questão CEBRASPE: ITAIPU BINACIONAL (2024) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G05-015 — Questão CEBRASPE: ITAIPU BINACIONAL (2024).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G05-015 — Questão CEBRASPE: ITAIPU BINACIONAL (2024).",
           "blocks": [
             {
               "type": "list",
@@ -829,6 +1431,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G05-016",
           "title": "EX-A02-G05-016 — Questão CEBRASPE: Prefeitura de Mossoró - RN (2024)",
+          "prompt": "Assertiva: O termo “embora” introduz uma oração que expressa, em relação à oração anterior, sentido explicativo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Assertiva",
+              "rationale": "O termo “embora” introduz uma oração que expressa, em relação à oração anterior, sentido explicativo."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "O conector \"embora\" é estritamente concessivo, jamais explicativo."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G05-016 — Questão CEBRASPE: Prefeitura de Mossoró - RN (2024) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G05-016 — Questão CEBRASPE: Prefeitura de Mossoró - RN (2024).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G05-016 — Questão CEBRASPE: Prefeitura de Mossoró - RN (2024).",
           "blocks": [
             {
               "type": "list",
@@ -844,6 +1468,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G05-017",
           "title": "EX-A02-G05-017 — Questão CEBRASPE: CNMP (Analista 2023)",
+          "prompt": "Texto: \"A previsão de autodefinição é de suma relevância porquanto parte do pressuposto de que...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"A previsão de autodefinição é de suma relevância porquanto parte do pressuposto de que...\""
+            },
+            {
+              "order": 2,
+              "action": "Assertiva",
+              "rationale": "Estariam mantidos os sentidos e a coerência do texto caso se substituísse “porquanto” por logo."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "\"Porquanto\" é explicativo/causal (= porque), enquanto \"logo\" é conclusivo (= portanto)."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G05-017 — Questão CEBRASPE: CNMP (Analista 2023) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G05-017 — Questão CEBRASPE: CNMP (Analista 2023).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G05-017 — Questão CEBRASPE: CNMP (Analista 2023).",
           "blocks": [
             {
               "type": "list",
@@ -860,6 +1511,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G05-018",
           "title": "EX-A02-G05-018 — Questão CEBRASPE: Prefeitura de Joinville - SC (Auxiliar de Educador 2024)",
+          "prompt": "Texto: \"...Ensiná-la não faz sentido, pois, nessa idade narcisista, ela responde a cada interferência... e \"...conforme nos ensina a pedagogia...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...Ensiná-la não faz sentido, pois, nessa idade narcisista, ela responde a cada interferência... e \"...conforme nos ensina a pedagogia...\""
+            },
+            {
+              "order": 2,
+              "action": "Assertiva",
+              "rationale": "Seriam mantidas a correção e a coerência caso “pois” e “conforme” fossem substituídos, respectivamente, por porque e de acordo com."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O \"pois\" introduz a oração causal/explicativa (o trecho entre vírgulas é adjunto intercalado). Ambas as substituições são válidas."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G05-018 — Questão CEBRASPE: Prefeitura de Joinville - SC (Auxiliar de Educador 2024) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G05-018 — Questão CEBRASPE: Prefeitura de Joinville - SC (Auxiliar de Educador 2024).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G05-018 — Questão CEBRASPE: Prefeitura de Joinville - SC (Auxiliar de Educador 2024).",
           "blocks": [
             {
               "type": "list",

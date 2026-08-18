@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A06-G08",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.825Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.577Z"
   },
   "unit": {
     "unitId": "IP-A06-G08",
@@ -472,6 +472,14 @@
         {
           "entityId": "RULE-IP-A06-G08-001",
           "title": "Quadro Síntese de Termos e Regras Estruturais",
+          "statement": "Quadro Síntese de Termos e Regras Estruturais",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Quadro Síntese de Termos e Regras Estruturais."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -540,6 +548,53 @@
         {
           "procedureId": "PROC-A06-G08-001",
           "title": "Checklist em 4 Passos para Identificação do Predicativo do Sujeito",
+          "objective": "Executar o algoritmo decisório para Checklist em 4 Passos para Identificação do Predicativo do Sujeito",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Checklist em 4 Passos para Identificação do Predicativo do Sujeito."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Segmentação Estrutural",
+              "explanation": "Delimitar os blocos do Sujeito e do Predicado. Confirmar se o termo sob análise encontra-se fisicamente no interior do Predicado.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 — Vetor de Referência (\"Traçar a Seta\")",
+              "explanation": "Lançar uma seta relacional a partir do termo. Se o termo expressar atributo ou estado concordando com o núcleo do Sujeito, pré-classifica-se como Predicativo do Sujeito.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Passo 3 — Neutralidade da Transitividade Verbal",
+              "explanation": "Verificar a presença de um verbo qualquer. Não rejeitar a hipótese caso o verbo seja nocional de ação (intransitivo ou transitivo).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Passo 4 — Validação Morfossintática",
+              "explanation": "Identificar a classe (Substantivo, Adjetivo, Pronome Reto ou Numeral) e validar a função de Predicativo do Sujeito.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Checklist em 4 Passos para Identificação do Predicativo do Sujeito."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -565,6 +620,44 @@
         {
           "procedureId": "PROC-A06-G08-002",
           "title": "Teste Morfológico de Flexão (Predicativo do Sujeito vs. Modo)",
+          "objective": "Executar o algoritmo decisório para Teste Morfológico de Flexão (Predicativo do Sujeito vs. Modo)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste Morfológico de Flexão (Predicativo do Sujeito vs. Modo)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura sintático-morfológica alvo de Teste Morfológico de Flexão (Predicativo do Sujeito vs. Modo).",
+              "test": "Localizar o termo regente ou núcleo do segmento."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios decisórios da regra canônica.",
+              "test": "Verificar se há exceção ou caso facultativo aplicável."
+            },
+            {
+              "order": 3,
+              "action": "Concluir a classificação definitiva para resolução da questão.",
+              "test": "Confrontar o resultado obtido com as alternativas da prova."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste Morfológico de Flexão (Predicativo do Sujeito vs. Modo)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -579,6 +672,59 @@
         {
           "procedureId": "PROC-A06-G08-003",
           "title": "Método Decisório em 3 Passos (Adjunto Adnominal vs. Predicativo do Objeto)",
+          "objective": "Executar o algoritmo decisório para Método Decisório em 3 Passos (Adjunto Adnominal vs. Predicativo do Objeto)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método Decisório em 3 Passos (Adjunto Adnominal vs. Predicativo do Objeto)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Vetorizar a Seta de Referência",
+              "explanation": "Identificar o termo adjetivo e conectar a seta ao substantivo que ele qualifica. Constatando que aponta para o Objeto Direto ou Indireto, passar ao Passo 2.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 — Inspecionar a Predicação Verbal",
+              "explanation": "Olhar criticamente para a semântica do verbo regente (verificar se é verbo de opinião/julgamento como achar, considerar, julgar, chamar ou verbo de ação comum como comprar, comer, resolver).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Passo 3 — Teste de Supressão Semântica",
+              "explanation": "Omitir mentalmente o adjetivo da oração:",
+              "test": "Passo 3 — Teste de Supressão Semântica: Omitir mentalmente o adjetivo da oração:"
+            },
+            {
+              "order": 4,
+              "action": "Se o verbo mantiver a acepção original e a predicação estiver íntegra $\\rightarrow$ Adjunto Adnominal (KB-A06-G08-002).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se o verbo mudar de significado (achar de opinar para encontrar; considerar de avaliar para estimar) ou a mensagem for desvirtuada $\\rightarrow$ Predicativo do Objeto (KB-A06-G08-005).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método Decisório em 3 Passos (Adjunto Adnominal vs. Predicativo do Objeto)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -606,6 +752,41 @@
         {
           "procedureId": "PROC-A06-G08-004",
           "title": "Teste de Deslocamento Posicional do Predicativo do Objeto",
+          "objective": "Executar o algoritmo decisório para Teste de Deslocamento Posicional do Predicativo do Objeto",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Deslocamento Posicional do Predicativo do Objeto."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Frase 1",
+              "explanation": "Os candidatos consideraram a prova difícil. $\\rightarrow$ Deslocamento: Os candidatos consideraram difícil a prova. (Construção fluida e perfeitamente gramatical $\\rightarrow$ Predicativo do Objeto confirmado).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Frase 2",
+              "explanation": "Os candidatos resolveram uma questão difícil. $\\rightarrow$ Deslocamento: Os candidatos resolveram difícil uma questão. (Construção quebrada/agramatical $\\rightarrow$ Adjunto Adnominal confirmado).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Deslocamento Posicional do Predicativo do Objeto."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -633,6 +814,59 @@
         {
           "procedureId": "PROC-A06-G08-005",
           "title": "Teste da Inserção de Verbo de Ligação Implícito / Elíptico",
+          "objective": "Executar o algoritmo decisório para Teste da Inserção de Verbo de Ligação Implícito / Elíptico",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste da Inserção de Verbo de Ligação Implícito / Elíptico."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Em Predicativos do Sujeito com Verbo de Ação",
+              "explanation": "Insira a conjunção e acompanhada de verbo de ligação (e estava / e estavam):",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "A mulher chegou cansada $\\rightarrow$ A mulher chegou [e estava] cansada (Sentido pleno de estado $\\rightarrow$ Predicativo do Sujeito).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Em Predicativos do Objeto (Inclusive Preposicionados)",
+              "explanation": "Insira o verbo de ligação flexionado entre o objeto e a qualidade:",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Chamaram o menino de mentiroso $\\rightarrow$ O menino [é] mentiroso (Relação predicativa comprovada $\\rightarrow$ Predicativo do Objeto).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Acho aquela senhora muito simpática $\\rightarrow$ Aquela senhora [é] muito simpática (Relação comprovada $\\rightarrow$ Predicativo do Objeto).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste da Inserção de Verbo de Ligação Implícito / Elíptico."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -681,6 +915,22 @@
         {
           "contrastId": "CONTRAST-IP-A06-G08-001",
           "title": "Matriz Comparativa de Desambiguação Sintática",
+          "contrastType": "mixed",
+          "conceptA": "Matriz Comparativa de Desambiguação Sintática",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -736,6 +986,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G08-001",
           "title": "EX-A06-G08-001 — O Mar Virou Sertão (Substantivo como Predicativo do Sujeito)",
+          "prompt": "Análise Sintática: Sujeito: O mar; Verbo: virou (Verbo de Ligação expressando mudança de estado); Predicativo do Sujeito: sertão.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise Sintática",
+              "rationale": "Sujeito: O mar; Verbo: virou (Verbo de Ligação expressando mudança de estado); Predicativo do Sujeito: sertão."
+            },
+            {
+              "order": 2,
+              "action": "Análise Morfológica",
+              "rationale": "sertão é substantivo (validado pelo teste do artigo: o sertão)."
+            },
+            {
+              "order": 3,
+              "action": "Conceito Consolidado",
+              "rationale": "Demonstra que substantivos exercem regularmente a função de predicativo do sujeito."
+            }
+          ],
+          "result": "Conceito Consolidado: Demonstra que substantivos exercem regularmente a função de predicativo do sujeito.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G08-001 — O Mar Virou Sertão (Substantivo como Predicativo do Sujeito) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G08-001 — O Mar Virou Sertão (Substantivo como Predicativo do Sujeito).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G08-001 — O Mar Virou Sertão (Substantivo como Predicativo do Sujeito).",
           "blocks": [
             {
               "type": "list",
@@ -751,6 +1023,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G08-002",
           "title": "EX-A06-G08-002 — Tu Não És Eu / Nós Somos Cinco (Pronome e Numeral como Predicativo)",
+          "prompt": "Análise 1: Tu não és eu. $\\rightarrow$ Tu (Sujeito), és (VL), eu (Pronome pessoal reto na morfologia $\\rightarrow$ Predicativo do Sujeito na sintaxe).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise 1",
+              "rationale": "Tu não és eu. $\\rightarrow$ Tu (Sujeito), és (VL), eu (Pronome pessoal reto na morfologia $\\rightarrow$ Predicativo do Sujeito na sintaxe)."
+            },
+            {
+              "order": 2,
+              "action": "Análise 2",
+              "rationale": "Nós somos cinco. $\\rightarrow$ Nós (Sujeito), somos (VL), cinco (Numeral cardinal na morfologia $\\rightarrow$ Predicativo do Sujeito na sintaxe)."
+            },
+            {
+              "order": 3,
+              "action": "Conceito Consolidado",
+              "rationale": "Desmistifica a exigência exclusiva de adjetivos para a composição do predicativo."
+            }
+          ],
+          "result": "Conceito Consolidado: Desmistifica a exigência exclusiva de adjetivos para a composição do predicativo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G08-002 — Tu Não És Eu / Nós Somos Cinco (Pronome e Numeral como Predicativo) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G08-002 — Tu Não És Eu / Nós Somos Cinco (Pronome e Numeral como Predicativo).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G08-002 — Tu Não És Eu / Nós Somos Cinco (Pronome e Numeral como Predicativo).",
           "blocks": [
             {
               "type": "list",
@@ -766,6 +1060,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G08-003",
           "title": "EX-A06-G08-003 — A Mulher Chegou Cansada / O Rapaz Chegou Ferido (PS com Verbo Intransitivo)",
+          "prompt": "Análise: A mulher (Sujeito), chegou (Verbo Intransitivo de ação), cansada (Adjetivo feminino singular $\\rightarrow$ Predicativo do Sujeito).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "A mulher (Sujeito), chegou (Verbo Intransitivo de ação), cansada (Adjetivo feminino singular $\\rightarrow$ Predicativo do Sujeito)."
+            },
+            {
+              "order": 2,
+              "action": "Validações Aplicadas",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Flexão",
+              "rationale": "As mulheres chegaram cansadas (variou $\\rightarrow$ não é modo)."
+            },
+            {
+              "order": 4,
+              "action": "Teste do verbo implícito",
+              "rationale": "A mulher chegou [e estava] cansada (confirmado)."
+            }
+          ],
+          "result": "Teste do verbo implícito: A mulher chegou [e estava] cansada (confirmado).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G08-003 — A Mulher Chegou Cansada / O Rapaz Chegou Ferido (PS com Verbo Intransitivo) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G08-003 — A Mulher Chegou Cansada / O Rapaz Chegou Ferido (PS com Verbo Intransitivo).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G08-003 — A Mulher Chegou Cansada / O Rapaz Chegou Ferido (PS com Verbo Intransitivo).",
           "blocks": [
             {
               "type": "list",
@@ -782,6 +1103,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G08-004",
           "title": "EX-A06-G08-004 — O Homem Comeu o Bolo Feliz (PS com Verbo Transitivo Direto)",
+          "prompt": "Análise: Sujeito: O homem; Verbo: comeu (VTD); Objeto Direto: o bolo; Predicativo do Sujeito: feliz.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Sujeito: O homem; Verbo: comeu (VTD); Objeto Direto: o bolo; Predicativo do Sujeito: feliz."
+            },
+            {
+              "order": 2,
+              "action": "Conceito Consolidado",
+              "rationale": "O adjetivo feliz está no predicado, mas lança a seta atributiva para o sujeito homem, coexistindo com objeto direto."
+            }
+          ],
+          "result": "Conceito Consolidado: O adjetivo feliz está no predicado, mas lança a seta atributiva para o sujeito homem, coexistindo com objeto direto.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G08-004 — O Homem Comeu o Bolo Feliz (PS com Verbo Transitivo Direto) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G08-004 — O Homem Comeu o Bolo Feliz (PS com Verbo Transitivo Direto).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G08-004 — O Homem Comeu o Bolo Feliz (PS com Verbo Transitivo Direto).",
           "blocks": [
             {
               "type": "list",
@@ -796,6 +1134,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G08-005",
           "title": "EX-A06-G08-005 — Achei-o Competente / Julguei as Suas Perguntas Tolas (Predicativo do Objeto)",
+          "prompt": "Análise 1: Achei (VTD) + -o (Objeto Direto) + competente (Predicativo do Objeto Direto).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise 1",
+              "rationale": "Achei (VTD) + -o (Objeto Direto) + competente (Predicativo do Objeto Direto)."
+            },
+            {
+              "order": 2,
+              "action": "Supressão",
+              "rationale": "Achei-o transmuta o verbo para o sentido de localização física (\"encontrei-o\")."
+            },
+            {
+              "order": 3,
+              "action": "Análise 2",
+              "rationale": "Julguei (VTD) + as suas perguntas (Objeto Direto) + tolas (Predicativo do Objeto Direto)."
+            }
+          ],
+          "result": "Análise 2: Julguei (VTD) + as suas perguntas (Objeto Direto) + tolas (Predicativo do Objeto Direto).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G08-005 — Achei-o Competente / Julguei as Suas Perguntas Tolas (Predicativo do Objeto) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G08-005 — Achei-o Competente / Julguei as Suas Perguntas Tolas (Predicativo do Objeto).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G08-005 — Achei-o Competente / Julguei as Suas Perguntas Tolas (Predicativo do Objeto).",
           "blocks": [
             {
               "type": "list",
@@ -811,6 +1171,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G08-006",
           "title": "EX-A06-G08-006 — Chamaram o Delegado de Inquieto (Predicativo do Objeto Preposicionado)",
+          "prompt": "Estrutura: Chamaram (VTD com sujeito indeterminado) + o delegado (Objeto Direto) + de inquieto (Predicativo do Objeto Direto Preposicionado).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura",
+              "rationale": "Chamaram (VTD com sujeito indeterminado) + o delegado (Objeto Direto) + de inquieto (Predicativo do Objeto Direto Preposicionado)."
+            },
+            {
+              "order": 2,
+              "action": "Justificativa",
+              "rationale": "O termo qualifica o objeto direto pré-existente; a preposição de possui função conectiva e não transforma o atributo em objeto indireto."
+            }
+          ],
+          "result": "Justificativa: O termo qualifica o objeto direto pré-existente; a preposição de possui função conectiva e não transforma o atributo em objeto indireto.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G08-006 — Chamaram o Delegado de Inquieto (Predicativo do Objeto Preposicionado) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G08-006 — Chamaram o Delegado de Inquieto (Predicativo do Objeto Preposicionado).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G08-006 — Chamaram o Delegado de Inquieto (Predicativo do Objeto Preposicionado).",
           "blocks": [
             {
               "type": "list",
@@ -825,6 +1202,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G08-007",
           "title": "EX-A06-G08-007 — Gosto de Você Alegre (Predicativo do Objeto Indireto)",
+          "prompt": "Estrutura: Gosto (VTI) + de você (Objeto Indireto) + alegre (Predicativo do Objeto Indireto).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura",
+              "rationale": "Gosto (VTI) + de você (Objeto Indireto) + alegre (Predicativo do Objeto Indireto)."
+            },
+            {
+              "order": 2,
+              "action": "Semântica",
+              "rationale": "O verbo assume a acepção de \"apreciar ver alguém em determinado estado\"."
+            }
+          ],
+          "result": "Semântica: O verbo assume a acepção de \"apreciar ver alguém em determinado estado\".",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G08-007 — Gosto de Você Alegre (Predicativo do Objeto Indireto) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G08-007 — Gosto de Você Alegre (Predicativo do Objeto Indireto).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G08-007 — Gosto de Você Alegre (Predicativo do Objeto Indireto).",
           "blocks": [
             {
               "type": "list",
@@ -839,6 +1233,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G08-008",
           "title": "EX-A06-G08-008 — Bateria de Fixação 1 (material de origem — Itens A a E)",
+          "prompt": "Item a: Zeca parece alegre. $\\rightarrow$ alegre = Predicativo do Sujeito (com Verbo de Ligação parece).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item a",
+              "rationale": "Zeca parece alegre. $\\rightarrow$ alegre = Predicativo do Sujeito (com Verbo de Ligação parece)."
+            },
+            {
+              "order": 2,
+              "action": "Item b",
+              "rationale": "O rapaz chegou gravemente ferido ao hospital. $\\rightarrow$ ferido = Predicativo do Sujeito (com Verbo Intransitivo chegou)."
+            },
+            {
+              "order": 3,
+              "action": "Item c",
+              "rationale": "Chamaram o menino de mentiroso. $\\rightarrow$ de mentiroso = Predicativo do Objeto Direto (preposicionado)."
+            },
+            {
+              "order": 4,
+              "action": "Item d",
+              "rationale": "Consideramos o candidato apto. $\\rightarrow$ apto = Predicativo do Objeto Direto (extensão semântica de considerar)."
+            },
+            {
+              "order": 5,
+              "action": "Item e",
+              "rationale": "O mar parecia traiçoeiro naquela manhã. $\\rightarrow$ traiçoeiro = Predicativo do Sujeito (com Verbo de Ligação parecia)."
+            }
+          ],
+          "result": "Item e: O mar parecia traiçoeiro naquela manhã. $\\rightarrow$ traiçoeiro = Predicativo do Sujeito (com Verbo de Ligação parecia).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G08-008 — Bateria de Fixação 1 (material de origem — Itens A a E) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G08-008 — Bateria de Fixação 1 (material de origem — Itens A a E).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G08-008 — Bateria de Fixação 1 (material de origem — Itens A a E).",
           "blocks": [
             {
               "type": "list",
@@ -856,6 +1282,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G08-009",
           "title": "EX-A06-G08-009 — Bateria de Fixação 2 (material de origem — Itens A a D: AA vs. PO)",
+          "prompt": "Item a: Os candidatos resolveram uma questão difícil.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item a",
+              "rationale": "Os candidatos resolveram uma questão difícil."
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "difícil qualifica questão (OD). Supressão: Os candidatos resolveram uma questão (íntegro). Deslocamento: Resolveram difícil uma questão ❌. $\\rightarrow$ Adjunto Adnominal."
+            },
+            {
+              "order": 3,
+              "action": "Item b",
+              "rationale": "Os candidatos consideraram a prova difícil."
+            },
+            {
+              "order": 4,
+              "action": "Análise",
+              "rationale": "difícil qualifica prova (OD). Supressão: Consideraram a prova (muda sentido). Deslocamento: Consideraram difícil a prova ✔️. $\\rightarrow$ Predicativo do Objeto."
+            },
+            {
+              "order": 5,
+              "action": "Item c",
+              "rationale": "A pobre criança comeu aquela sopa horrorosa."
+            }
+          ],
+          "result": "Análise: muito simpática qualifica aquela senhora (OD). Supressão: Acho aquela senhora (muda para localizar/encontrar). $\\rightarrow$ Predicativo do Objeto.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G08-009 — Bateria de Fixação 2 (material de origem — Itens A a D: AA vs. PO) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G08-009 — Bateria de Fixação 2 (material de origem — Itens A a D: AA vs. PO).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G08-009 — Bateria de Fixação 2 (material de origem — Itens A a D: AA vs. PO).",
           "blocks": [
             {
               "type": "list",
@@ -919,8 +1377,12 @@
         {
           "trapId": "WARN-A06-G08-001",
           "title": "O Mito da Restrição do Predicativo ao Adjetivo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Mito da Restrição do Predicativo ao Adjetivo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Mito da Restrição do Predicativo ao Adjetivo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Mito da Restrição do Predicativo ao Adjetivo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Mito da Restrição do Predicativo ao Adjetivo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Mito da Restrição do Predicativo ao Adjetivo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Mito da Restrição do Predicativo ao Adjetivo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Mito da Restrição do Predicativo ao Adjetivo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Mito da Restrição do Predicativo ao Adjetivo.",
           "blocks": [
             {
               "type": "list",
@@ -935,8 +1397,12 @@
         {
           "trapId": "WARN-A06-G08-002",
           "title": "O Erro Gramatical da Expressão \"Somos em Cinco\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Erro Gramatical da Expressão \"Somos em Cinco\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Erro Gramatical da Expressão \"Somos em Cinco\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Erro Gramatical da Expressão \"Somos em Cinco\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Erro Gramatical da Expressão \"Somos em Cinco\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Erro Gramatical da Expressão \"Somos em Cinco\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Erro Gramatical da Expressão \"Somos em Cinco\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Erro Gramatical da Expressão \"Somos em Cinco\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Erro Gramatical da Expressão \"Somos em Cinco\".",
           "blocks": [
             {
               "type": "list",
@@ -951,8 +1417,12 @@
         {
           "trapId": "WARN-A06-G08-003",
           "title": "O Mito da Dependência Exclusiva de Verbo de Ligação",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Mito da Dependência Exclusiva de Verbo de Ligação.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Mito da Dependência Exclusiva de Verbo de Ligação.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Mito da Dependência Exclusiva de Verbo de Ligação no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Mito da Dependência Exclusiva de Verbo de Ligação.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Mito da Dependência Exclusiva de Verbo de Ligação.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Mito da Dependência Exclusiva de Verbo de Ligação para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Mito da Dependência Exclusiva de Verbo de Ligação.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Mito da Dependência Exclusiva de Verbo de Ligação.",
           "blocks": [
             {
               "type": "list",
@@ -967,8 +1437,12 @@
         {
           "trapId": "WARN-A06-G08-004",
           "title": "Confundir \"Fazer Falta Contextual\" com \"Ser Termo Integrante\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir \"Fazer Falta Contextual\" com \"Ser Termo Integrante\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir \"Fazer Falta Contextual\" com \"Ser Termo Integrante\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir \"Fazer Falta Contextual\" com \"Ser Termo Integrante\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir \"Fazer Falta Contextual\" com \"Ser Termo Integrante\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir \"Fazer Falta Contextual\" com \"Ser Termo Integrante\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir \"Fazer Falta Contextual\" com \"Ser Termo Integrante\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir \"Fazer Falta Contextual\" com \"Ser Termo Integrante\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir \"Fazer Falta Contextual\" com \"Ser Termo Integrante\".",
           "blocks": [
             {
               "type": "list",
@@ -983,8 +1457,12 @@
         {
           "trapId": "WARN-A06-G08-005",
           "title": "Falsa Identificação de Objeto Indireto no Predicativo Preposicionado",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Falsa Identificação de Objeto Indireto no Predicativo Preposicionado.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Falsa Identificação de Objeto Indireto no Predicativo Preposicionado.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Falsa Identificação de Objeto Indireto no Predicativo Preposicionado no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Falsa Identificação de Objeto Indireto no Predicativo Preposicionado.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Falsa Identificação de Objeto Indireto no Predicativo Preposicionado.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Falsa Identificação de Objeto Indireto no Predicativo Preposicionado para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Falsa Identificação de Objeto Indireto no Predicativo Preposicionado.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Falsa Identificação de Objeto Indireto no Predicativo Preposicionado.",
           "blocks": [
             {
               "type": "list",
@@ -999,8 +1477,12 @@
         {
           "trapId": "WARN-A06-G08-006",
           "title": "A Armadilha da Pergunta Interrogativa \"Como?\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha da Pergunta Interrogativa \"Como?\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha da Pergunta Interrogativa \"Como?\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha da Pergunta Interrogativa \"Como?\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha da Pergunta Interrogativa \"Como?\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha da Pergunta Interrogativa \"Como?\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha da Pergunta Interrogativa \"Como?\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha da Pergunta Interrogativa \"Como?\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha da Pergunta Interrogativa \"Como?\".",
           "blocks": [
             {
               "type": "list",

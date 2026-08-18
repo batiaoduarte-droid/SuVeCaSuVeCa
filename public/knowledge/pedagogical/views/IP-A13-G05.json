@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A13-G05",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.917Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.668Z"
   },
   "unit": {
     "unitId": "IP-A13-G05",
@@ -284,6 +284,14 @@
         {
           "entityId": "RULE-IP-A13-G05-001",
           "title": "Regras canônicas",
+          "statement": "Regras canônicas",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -352,6 +360,41 @@
         {
           "procedureId": "PROC-A13-G05-001",
           "title": "Procedimento Integrado de Diagnóstico Tipológico Cebraspe (\"O Final Matador\")",
+          "objective": "Executar o algoritmo decisório para Procedimento Integrado de Diagnóstico Tipológico Cebraspe (\"O Final Matador\")",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento Integrado de Diagnóstico Tipológico Cebraspe (\"O Final Matador\")."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Reconhecimento de que o texto pertence ao macro-gênero dissertativo (discute ideias/conceitos).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Neutralização da opinião pessoal do candidato sobre o tema.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento Integrado de Diagnóstico Tipológico Cebraspe (\"O Final Matador\")."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -402,6 +445,22 @@
         {
           "contrastId": "CONTRAST-IP-A13-G05-001",
           "title": "Tabela Comparativa Central: Exposição versus Argumentação",
+          "contrastType": "mixed",
+          "conceptA": "Tabela Comparativa Central: Exposição versus Argumentação",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -462,6 +521,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G05-001",
           "title": "Texto Analisado",
+          "prompt": "Texto Analisado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Texto Analisado...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Texto Analisado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Texto Analisado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Texto Analisado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Texto Analisado.",
           "blocks": [
             {
               "type": "callout",
@@ -473,6 +554,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G05-002",
           "title": "Diagnóstico Pedagógico",
+          "prompt": "Tema: Singularidade geográfica e histórica da fundação de Brasília.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Tema",
+              "rationale": "Singularidade geográfica e histórica da fundação de Brasília."
+            },
+            {
+              "order": 2,
+              "action": "Intenção do Autor",
+              "rationale": "Expor e contrastar informações históricas e urbanísticas que domina sobre o surgimento de capitais."
+            },
+            {
+              "order": 3,
+              "action": "Ausência de Persuasão",
+              "rationale": "O enunciador não emite juízo sobre se foi benéfico ou prejudicial erguer a cidade naquele local; relata os fatos objetivamente."
+            },
+            {
+              "order": 4,
+              "action": "Classificação Consolidada",
+              "rationale": "Dissertativo-Expositivo."
+            }
+          ],
+          "result": "Classificação Consolidada: Dissertativo-Expositivo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Diagnóstico Pedagógico sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Diagnóstico Pedagógico.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Diagnóstico Pedagógico.",
           "blocks": [
             {
               "type": "list",
@@ -489,6 +597,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G05-003",
           "title": "Texto Analisado",
+          "prompt": "Texto Analisado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Texto Analisado...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Texto Analisado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Texto Analisado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Texto Analisado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Texto Analisado.",
           "blocks": [
             {
               "type": "callout",
@@ -500,6 +630,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G05-004",
           "title": "Diagnóstico Pedagógico",
+          "prompt": "Tese: A necessidade incontornável de a população tomar a dose suplementar (marcada pelo verbo modal deôntico \"devem tomar\").",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Tese",
+              "rationale": "A necessidade incontornável de a população tomar a dose suplementar (marcada pelo verbo modal deôntico \"devem tomar\")."
+            },
+            {
+              "order": 2,
+              "action": "Intenção do Autor",
+              "rationale": "Persuadir o leitor a praticar um ato sanitário conforme a opinião defendida."
+            },
+            {
+              "order": 3,
+              "action": "Função dos Dados",
+              "rationale": "A menção a \"estudos americanos\" e ao percentual de \"90%\" atua como argumento probatório para fundamentar a tese, comprovando que textos argumentativos utilizam rotineiramente dados estatísticos."
+            },
+            {
+              "order": 4,
+              "action": "Classificação Consolidada",
+              "rationale": "Dissertativo-Argumentativo."
+            }
+          ],
+          "result": "Classificação Consolidada: Dissertativo-Argumentativo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Diagnóstico Pedagógico sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Diagnóstico Pedagógico.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Diagnóstico Pedagógico.",
           "blocks": [
             {
               "type": "list",
@@ -516,6 +673,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G05-005",
           "title": "Contexto do Texto-Base",
+          "prompt": "Fragmento extraído da obra acadêmica Argumentação de José Luiz Fiorin, abordando a persuasão na sociedade democrática, o dialogismo constitutivo da linguagem e as dimensões discursivas entre enunciador e enunciatário. Contém o segmento: \"esse é um aprendizado extremamente importante\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Fragmento extraído da obra acadêmica Argumentação de José Lu...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Contexto do Texto-Base.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Contexto do Texto-Base sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Contexto do Texto-Base.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Contexto do Texto-Base.",
           "blocks": [
             {
               "type": "paragraph",
@@ -526,6 +705,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G05-006",
           "title": "Item da Prova",
+          "prompt": "Item da Prova",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Item da Prova...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Item da Prova.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Item da Prova sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Item da Prova.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Item da Prova.",
           "blocks": [
             {
               "type": "callout",
@@ -537,6 +738,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G05-007",
           "title": "Resolução e Fundamentação",
+          "prompt": "Intenção Autoral: O linguista expõe uma teoria científica sobre como os discursos humanos operam.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Intenção Autoral",
+              "rationale": "O linguista expõe uma teoria científica sobre como os discursos humanos operam."
+            },
+            {
+              "order": 2,
+              "action": "Neutralização do Modalizador",
+              "rationale": "A locução \"extremamente importante\" reflete apenas a avaliação didática do autor sobre o alcance da teoria, sem transformá-la em bandeira política polêmica."
+            },
+            {
+              "order": 3,
+              "action": "Exame do Fecho",
+              "rationale": "O parágrafo final encerra definindo conceitos técnicos de dialogismo e enunciação, confirmando o caráter didático-explicativo."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução e Fundamentação sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução e Fundamentação.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução e Fundamentação.",
           "blocks": [
             {
               "type": "list",
@@ -559,6 +787,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G05-008",
           "title": "Contexto do Texto-Base",
+          "prompt": "Artigo opinativo publicado na Folha de S. Paulo (2018) debatendo o foro privilegiado. Inicia afirmando: \"A impunidade de políticos não decorre de foro privilegiado, mas de justiça ineficiente. Abolir o referido mecanismo produzirá efeitos desfavoráveis.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Artigo opinativo publicado na Folha de S. Paulo (2018) debat...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Contexto do Texto-Base.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Contexto do Texto-Base sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Contexto do Texto-Base.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Contexto do Texto-Base.",
           "blocks": [
             {
               "type": "paragraph",
@@ -569,6 +819,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G05-009",
           "title": "Item da Prova",
+          "prompt": "Item da Prova",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Item da Prova...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Item da Prova.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Item da Prova sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Item da Prova.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Item da Prova.",
           "blocks": [
             {
               "type": "callout",
@@ -580,6 +852,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G05-010",
           "title": "Resolução e Fundamentação",
+          "prompt": "Identificação da Tese: Posicionamento explícito e polêmico contrário à extinção do foro na introdução.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificação da Tese",
+              "rationale": "Posicionamento explícito e polêmico contrário à extinção do foro na introdução."
+            },
+            {
+              "order": 2,
+              "action": "Corpo Argumentativo",
+              "rationale": "Desenvolvimento de refutações apontando \"dois equívocos\" no raciocínio do senso comum."
+            },
+            {
+              "order": 3,
+              "action": "Fecho Persuasivo (\"Final Matador\")",
+              "rationale": "A conclusão defende que tribunais superiores são mais resistentes a pressões locais do que juízos de primeira instância, consolidando a defesa da tese."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução e Fundamentação sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução e Fundamentação.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução e Fundamentação.",
           "blocks": [
             {
               "type": "list",
@@ -602,6 +901,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G05-011",
           "title": "Contexto do Texto-Base",
+          "prompt": "Texto doutrinário do magistrado e jurista Sergio Cavalieri Filho (Direito, justiça e sociedade), definindo o Direito como técnica de pacificação e a Justiça como valor transcendental, citando a busca por uma \"sociedade justa, livre, solidária e fraterna\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Texto doutrinário do magistrado e jurista Sergio Cavalieri F...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Contexto do Texto-Base.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Contexto do Texto-Base sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Contexto do Texto-Base.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Contexto do Texto-Base.",
           "blocks": [
             {
               "type": "paragraph",
@@ -612,6 +933,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G05-012",
           "title": "Item da Prova",
+          "prompt": "Item da Prova",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Item da Prova...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Item da Prova.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Item da Prova sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Item da Prova.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Item da Prova.",
           "blocks": [
             {
               "type": "callout",
@@ -623,6 +966,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G05-013",
           "title": "Resolução e Fundamentação",
+          "prompt": "Intenção Autoral: Transmissão de lição doutrinária sobre a filosofia do Direito.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Intenção Autoral",
+              "rationale": "Transmissão de lição doutrinária sobre a filosofia do Direito."
+            },
+            {
+              "order": 2,
+              "action": "Valores Constitucionais como Fatos",
+              "rationale": "As referências a ideais nobres de justiça reproduzem os objetivos normativos do Estado de Direito positivados na ordem jurídica, caracterizando fatos conceituais e não militância opinativa individual."
+            },
+            {
+              "order": 3,
+              "action": "Julgamento da Assertiva",
+              "rationale": "A asserção erra ao rotular o texto doutrinário como argumentativo."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial da Assertiva",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito Oficial da Assertiva: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução e Fundamentação sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução e Fundamentação.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução e Fundamentação.",
           "blocks": [
             {
               "type": "list",
@@ -674,8 +1044,12 @@
         {
           "trapId": "WARN-A13-G05-001",
           "title": "Pegadinha da Associação Mecânica entre Dados Estatísticos e Exposição",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha da Associação Mecânica entre Dados Estatísticos e Exposição.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha da Associação Mecânica entre Dados Estatísticos e Exposição.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha da Associação Mecânica entre Dados Estatísticos e Exposição no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha da Associação Mecânica entre Dados Estatísticos e Exposição.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha da Associação Mecânica entre Dados Estatísticos e Exposição.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pegadinha da Associação Mecânica entre Dados Estatísticos e Exposição para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha da Associação Mecânica entre Dados Estatísticos e Exposição.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha da Associação Mecânica entre Dados Estatísticos e Exposição.",
           "blocks": [
             {
               "type": "list",
@@ -691,8 +1065,12 @@
         {
           "trapId": "WARN-A13-G05-002",
           "title": "Pegadinha da Associação entre Modalizador Isolado e Texto Argumentativo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha da Associação entre Modalizador Isolado e Texto Argumentativo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha da Associação entre Modalizador Isolado e Texto Argumentativo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha da Associação entre Modalizador Isolado e Texto Argumentativo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha da Associação entre Modalizador Isolado e Texto Argumentativo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha da Associação entre Modalizador Isolado e Texto Argumentativo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pegadinha da Associação entre Modalizador Isolado e Texto Argumentativo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha da Associação entre Modalizador Isolado e Texto Argumentativo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha da Associação entre Modalizador Isolado e Texto Argumentativo.",
           "blocks": [
             {
               "type": "list",
@@ -708,8 +1086,12 @@
         {
           "trapId": "WARN-A13-G05-003",
           "title": "Confundir Ideário Constitucional e Doutrina com Argumentação Subjetiva",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Ideário Constitucional e Doutrina com Argumentação Subjetiva.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Ideário Constitucional e Doutrina com Argumentação Subjetiva.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Ideário Constitucional e Doutrina com Argumentação Subjetiva no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Ideário Constitucional e Doutrina com Argumentação Subjetiva.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Ideário Constitucional e Doutrina com Argumentação Subjetiva.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Ideário Constitucional e Doutrina com Argumentação Subjetiva para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Ideário Constitucional e Doutrina com Argumentação Subjetiva.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Ideário Constitucional e Doutrina com Argumentação Subjetiva.",
           "blocks": [
             {
               "type": "list",
@@ -725,8 +1107,12 @@
         {
           "trapId": "WARN-A13-G05-004",
           "title": "Confundir a Opinião do Leitor com a Intenção do Autor",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir a Opinião do Leitor com a Intenção do Autor.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir a Opinião do Leitor com a Intenção do Autor.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir a Opinião do Leitor com a Intenção do Autor no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir a Opinião do Leitor com a Intenção do Autor.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir a Opinião do Leitor com a Intenção do Autor.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir a Opinião do Leitor com a Intenção do Autor para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir a Opinião do Leitor com a Intenção do Autor.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir a Opinião do Leitor com a Intenção do Autor.",
           "blocks": [
             {
               "type": "list",
@@ -850,7 +1236,10 @@
       "officialAnswer": "letter_C",
       "explanation": "De  fato, temos texto dissertativo-argumentativo. Dissertativo porque traz informações, tem\nnatureza de comentar, explicar, esclarecer um tema. Argumentativo porque defende uma tese: a\nsituação do judiciário é “praticamente insustentável”, pois o número de processos é assustador.\nSendo assim, para pouco mais de dois brasileiros, há um processo judicial, o que representa uma\nsituação praticamente insustentável sob o aspecto econômico, gerencial e jurídico.\nGabarito: Correto.",
       "questionSha256": "e5b4f66308a9005b2686649fe5a7b64c61957bed7b63f2c86c12d17d1fe33acd",
-      "answerSha256": "c273df0f348f90b8d540fcaf82aa79ab6e190537d36f460cdf7eacb2217d92d3"
+      "answerSha256": "c273df0f348f90b8d540fcaf82aa79ab6e190537d36f460cdf7eacb2217d92d3",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Dissertação Expositiva e Argumentativa; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula13.q0057",
@@ -862,7 +1251,10 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "99b283c39a2b8432a56d7d5184efa27f575bfbdfcdddcbe006a2db8b7d85c431",
-      "answerSha256": "d4373c58977101ccfa464fa6b038d53bee44f5c79bca5756b94cb97faa9c2810"
+      "answerSha256": "d4373c58977101ccfa464fa6b038d53bee44f5c79bca5756b94cb97faa9c2810",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Dissertação Expositiva e Argumentativa; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula13.q0042",
@@ -896,7 +1288,41 @@
       "officialAnswer": "letter_E",
       "explanation": "O texto basicamente expõe características dos direitos humanos, como a universalidade, a\ninalienabilidade etc… Então, predominam elementos da tipologia expositiva, como verbos no\npresente universal, o fornecimento de dados, exemplos, o tom objetivo e impessoal. Não há\ndefesa clara e predominante de um ponto de vista nem objetivo de narrar uma história.\nA letra B poderia causar dúvidas, mas entendo que não há aqui, de forma PREDOMINANTE, os\ntípicos recursos de argumentação, como citação de autoridades,  estatísticas, analogias etc.\nBasicamente são oferecidas informações sobre tais direitos. Gabarito letra E.",
       "questionSha256": "685b88dd3071a50ccba9ef3693b55568ad86cc86929ac27215a8a16c92877756",
-      "answerSha256": "d11c4e6ec031c58ce7f01418bf7e09cc500b14926ff234e835ede9093c6e9280"
+      "answerSha256": "d11c4e6ec031c58ce7f01418bf7e09cc500b14926ff234e835ede9093c6e9280",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Dissertação Expositiva e Argumentativa; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Dissertação Expositiva e Argumentativa."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Dissertação Expositiva e Argumentativa."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Dissertação Expositiva e Argumentativa."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Dissertação Expositiva e Argumentativa."
+        },
+        {
+          "optionLabel": "E",
+          "status": "incorrect",
+          "explanation": "Opção E: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Dissertação Expositiva e Argumentativa."
+        }
+      ]
     },
     {
       "questionId": "aula13.q0070",
@@ -929,7 +1355,41 @@
       ],
       "officialAnswer": "letter_E",
       "questionSha256": "a862932fa3e8e39c809d57d7c03c6e9d20b2e74968aadd840c308dcbe6cde540",
-      "answerSha256": "b95d0abd5fddf661a3faf021b04e72736c2ebefa14c270c32f00d7da52f936d0"
+      "answerSha256": "b95d0abd5fddf661a3faf021b04e72736c2ebefa14c270c32f00d7da52f936d0",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Dissertação Expositiva e Argumentativa; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Dissertação Expositiva e Argumentativa."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Dissertação Expositiva e Argumentativa."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Dissertação Expositiva e Argumentativa."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Dissertação Expositiva e Argumentativa."
+        },
+        {
+          "optionLabel": "E",
+          "status": "incorrect",
+          "explanation": "Opção E: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Dissertação Expositiva e Argumentativa."
+        }
+      ]
     },
     {
       "questionId": "aula13.q0039",
@@ -963,7 +1423,41 @@
       "officialAnswer": "letter_E",
       "explanation": "O texto é carregado de opiniões do autor: ele declara que há obras desproporcionais, que há\nadministradores corruptos que gastam demais com obras de pouca utilidade pública. Para ilustrar\nseu ponto de vista, usa uma analogia histórica: os jardins suspensos da babilônia, um exemplo de\nobra extremamente cara, com pouco benefício para o povo que paga por ela. Por esses indícios,\no texto é mais bem enquadrado no tipo argumentativo. Gabarito letra E.",
       "questionSha256": "dc33df949b2e8a241868da44f665ce2d411b85b895291821e20cd79a386df189",
-      "answerSha256": "383124b0523dfd7f99a9c79a54748d3bbd93176e09725722c8199e651baa8998"
+      "answerSha256": "383124b0523dfd7f99a9c79a54748d3bbd93176e09725722c8199e651baa8998",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Dissertação Expositiva e Argumentativa; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Dissertação Expositiva e Argumentativa."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Dissertação Expositiva e Argumentativa."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Dissertação Expositiva e Argumentativa."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Dissertação Expositiva e Argumentativa."
+        },
+        {
+          "optionLabel": "E",
+          "status": "incorrect",
+          "explanation": "Opção E: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Dissertação Expositiva e Argumentativa."
+        }
+      ]
     },
     {
       "questionId": "aula13.q0067",
@@ -996,7 +1490,41 @@
       ],
       "officialAnswer": "letter_E",
       "questionSha256": "62335a8a4d2cc58162b26209d6ee1e5fbb7d378334843237d08062ae53bf60a4",
-      "answerSha256": "9a1db57f11b2bd95f1c1b02ae8572fffd60731a729d3815fabb26d9f42869e79"
+      "answerSha256": "9a1db57f11b2bd95f1c1b02ae8572fffd60731a729d3815fabb26d9f42869e79",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Dissertação Expositiva e Argumentativa; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Dissertação Expositiva e Argumentativa."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Dissertação Expositiva e Argumentativa."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Dissertação Expositiva e Argumentativa."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Dissertação Expositiva e Argumentativa."
+        },
+        {
+          "optionLabel": "E",
+          "status": "incorrect",
+          "explanation": "Opção E: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Dissertação Expositiva e Argumentativa."
+        }
+      ]
     }
   ]
 }

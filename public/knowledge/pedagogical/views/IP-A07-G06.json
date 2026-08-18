@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A07-G06",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.841Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.589Z"
   },
   "unit": {
     "unitId": "IP-A07-G06",
@@ -630,6 +630,16 @@
         {
           "entityId": "RULE-IP-A07-G06-001",
           "title": "Regras canônicas",
+          "statement": "Oração Reduzida: Estrutura subordinada desprovida de conjunção subordinativa ou pronome relativo, centrada em verbo na forma nominal de infinitivo, gerúndio ou particípio, admitindo preposição introdutória (KB-A07-G06-001).\nOração Desenvolvida: Estrutura subordinada encabeçada por conjunção ou pronome relativo com verbo conjugado em tempo e modo finitos (KB-A07-G06-001).\nTeste do ISSO: Substituição integral da oração por pronome demonstrativo para comprovação da natureza substantiva (KB-A07-G06-002).\nSujeito Oracional (OSSSRI): Oração no infinitivo que funciona como sujeito de verbos unipessoais, passiva sintética ou predicados nominais (KB-A07-G06-003).\nRegra do Destino da Seta: Seta para verbo $\\rightarrow$ Objetiva Indireta; seta para nome (substantivo/adjetivo) $\\rightarrow$ Completiva Nominal (KB-A07-G06-004).\nObjeto Direto Topicalizado: Oração substantiva no infinitivo que surge no início do período invertido como complemento da locução verbal posterior (KB-A07-G06-005).\nPredicativa Reduzida: Oração no infinitivo que atua como predicativo do sujeito após verbo de ligação (KB-A07-G06-006).\nDesdobramento de Adjetiva: Conversão de forma nominal ligada a substantivo em \"QUE + verbo flexionado\" (KB-A07-G06-007).\nInfinitivo Flexionado / Pessoal: Infinitivo com marcas número-pessoais (-es, -mos, -des, -em) que concorda com sujeito próprio (KB-A07-G06-008).\nFórmula $6CS + FTP$: As 9 circunstâncias adverbiais da gramática normativa (KB-A07-G06-009).\nRegra \"Ao\" vs. \"A\": Ao + infinitivo indica Tempo; A + infinitivo indica Condição (KB-A07-G06-010).\nRegra \"Por\" Causal vs. Final: Por + infinitivo indica Causa (porque); se atrelado a desejo/ansiedade, indica Finalidade futura (KB-A07-G06-010).\nCronologia do Gerúndio: Ação anterior $\\rightarrow$ Causa; Ação simultânea respondendo a \"como?\" $\\rightarrow$ Modo; Ação posterior decorrente $\\rightarrow$ Consequência (KB-A07-G06-012).\nParticípio Hipotético: Particípio associado ao modalizador \"é possível\" assume valor de Condição (KB-A07-G06-013).",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Oração Reduzida: Estrutura subordinada desprovida de conjunção subordinativa ou pronome relativo, centrada em verbo na forma nominal de infinitivo, gerúndio ou particípio, admitindo preposição introdutória (KB-A07-G06-001).",
+            "Oração Desenvolvida: Estrutura subordinada encabeçada por conjunção ou pronome relativo com verbo conjugado em tempo e modo finitos (KB-A07-G06-001).",
+            "Teste do ISSO: Substituição integral da oração por pronome demonstrativo para comprovação da natureza substantiva (KB-A07-G06-002).",
+            "Sujeito Oracional (OSSSRI): Oração no infinitivo que funciona como sujeito de verbos unipessoais, passiva sintética ou predicados nominais (KB-A07-G06-003)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -660,6 +670,83 @@
         {
           "procedureId": "PROC-A07-G06-001",
           "title": "Algoritmo Integrado de Classificação de Orações Reduzidas",
+          "objective": "Executar o algoritmo decisório para Algoritmo Integrado de Classificação de Orações Reduzidas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo Integrado de Classificação de Orações Reduzidas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar e Isolar",
+              "explanation": "Isole o verbo na forma nominal (infinitivo, gerúndio ou particípio) e confirme a ausência de conjunção integrante/adverbial e de pronome relativo.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Teste 1 — Substituição por \"ISSO\"",
+              "explanation": "",
+              "test": "Teste 1 — Substituição por \"ISSO\":"
+            },
+            {
+              "order": 3,
+              "action": "Tente substituir a oração inteira por \"ISSO\", \"DISSO\" ou \"A ISSO\".",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se fizer sentido sintático perfeito $\\rightarrow$ É Subordinada Substantiva. Avance para o PROC-A07-G06-002 ou reorganize na ordem direta.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Teste 2 — Vínculo com Substantivo / Pronome Relativo",
+              "explanation": "",
+              "test": "Teste 2 — Vínculo com Substantivo / Pronome Relativo:"
+            },
+            {
+              "order": 6,
+              "action": "Se não couber \"ISSO\", verifique se a oração qualifica um substantivo antecedente e aceita conversão para \"QUE + verbo flexionado\".",
+              "explanation": null,
+              "test": "Se não couber \"ISSO\", verifique se a oração qualifica um substantivo antecedente e aceita conversão para \"QUE + verbo flexionado\"."
+            },
+            {
+              "order": 7,
+              "action": "Se sim $\\rightarrow$ É Subordinada Adjetiva (Restritiva se sem vírgula; Explicativa se entre vírgulas).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Teste 3 — Sentido Circunstancial Adverbial",
+              "explanation": "",
+              "test": "Teste 3 — Sentido Circunstancial Adverbial:"
+            },
+            {
+              "order": 9,
+              "action": "Se trouxer ideia de circunstância em relação ao verbo principal $\\rightarrow$ É Subordinada Adverbial (enquadrar em uma das 9 circunstâncias $6CS + FTP$).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo Integrado de Classificação de Orações Reduzidas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -711,6 +798,59 @@
         {
           "procedureId": "PROC-A07-G06-002",
           "title": "Técnica das Setas para Desempate de Orações Preposicionadas (OI vs. CN)",
+          "objective": "Executar o algoritmo decisório para Técnica das Setas para Desempate de Orações Preposicionadas (OI vs. CN)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Técnica das Setas para Desempate de Orações Preposicionadas (OI vs. CN)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole a oração reduzida preposicionada (\"de ser recepcionista\", \"de ficar fora\", \"a terem o foco desviado\").",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Localize o termo regente imediato à esquerda que exige a preposição.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se o termo for um VERBO $\\rightarrow$ A oração é Objetiva Indireta.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se o termo for um NOME (Substantivo / Adjetivo) $\\rightarrow$ A oração é Completiva Nominal.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Checagem de Verbo de Ligação",
+              "explanation": "Em estruturas com VL + Adjetivo (\"Estão propensas a...\"), a oração completa o adjetivo predicativo (Completiva Nominal) e não o verbo de ligação.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Técnica das Setas para Desempate de Orações Preposicionadas (OI vs. CN)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -728,6 +868,68 @@
         {
           "procedureId": "PROC-A07-G06-003",
           "title": "Protocolo de Análise Sintática em Períodos com Ordem Inversa",
+          "objective": "Executar o algoritmo decisório para Protocolo de Análise Sintática em Períodos com Ordem Inversa",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo de Análise Sintática em Períodos com Ordem Inversa."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Não classifique o segmento oracional inicial antes de ler o período até o ponto final.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Localize o núcleo verbal ou a locução verbal do predicado (\"não parece recomendar\").",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Formule a pergunta do sujeito ao verbo",
+              "explanation": "\"Quem/O que [verbo]?\".",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se houver um sintagma nominal posposto que responda à pergunta (\"o bom senso\"), ele é o Sujeito.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Reescreva o período na ordem canônica direta",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Verifique a transitividade",
+              "explanation": "se o verbo for VTD, o bloco inicial é Objeto Direto Oracional.",
+              "test": "Verifique a transitividade: se o verbo for VTD, o bloco inicial é Objeto Direto Oracional."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo de Análise Sintática em Períodos com Ordem Inversa."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "formulas": [
+            "\\text{[Sujeito]} + \\text{[Locução Verbal]} + \\text{[Oração Reduzida / ISSO]}."
+          ],
           "blocks": [
             {
               "type": "list",
@@ -756,6 +958,53 @@
         {
           "procedureId": "PROC-A07-G06-004",
           "title": "Método Mnemônico do \"Para\" para Flexão do Infinitivo Pessoal",
+          "objective": "Executar o algoritmo decisório para Método Mnemônico do \"Para\" para Flexão do Infinitivo Pessoal",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método Mnemônico do \"Para\" para Flexão do Infinitivo Pessoal."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Tome a forma base do infinitivo impessoal (amar, ser, fazer).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Anteponha a preposição funcional \"para\" combinada com os pronomes retos",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "para eu amar / para tu amares / para ele amar / para nós amarmos / para vós amardes / para eles amarem.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Aplique as desinências número-pessoais sem confundi-las com o futuro do subjuntivo.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método Mnemônico do \"Para\" para Flexão do Infinitivo Pessoal."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -784,6 +1033,53 @@
         {
           "procedureId": "PROC-A07-G06-005",
           "title": "Teste da Cronologia/Anterioridade para Causa vs. Consequência no Gerúndio",
+          "objective": "Executar o algoritmo decisório para Teste da Cronologia/Anterioridade para Causa vs. Consequência no Gerúndio",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste da Cronologia/Anterioridade para Causa vs. Consequência no Gerúndio."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole os dois polos verbais",
+              "explanation": "a oração de gerúndio e o verbo da oração a que ela se vincula.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Pergunte",
+              "explanation": "\"Qual fato ocorreu primeiro no tempo real?\".",
+              "test": "Pergunte: \"Qual fato ocorreu primeiro no tempo real?\"."
+            },
+            {
+              "order": 3,
+              "action": "O fato que ocorre em 1º lugar (gerador) é a CAUSA (\"temendo por sua saúde, escreveu...\" $\\rightarrow$ 1º temeu = Causa).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "O fato que ocorre em 2º lugar como efeito resultante é a CONSEQUÊNCIA (\"...montar conexões, criando o arco-íris\" $\\rightarrow$ 2º criou = Consequência).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste da Cronologia/Anterioridade para Causa vs. Consequência no Gerúndio."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -800,6 +1096,47 @@
         {
           "procedureId": "PROC-A07-G06-006",
           "title": "Teste de Associação Verbal para Gerúndio Modal",
+          "objective": "Executar o algoritmo decisório para Teste de Associação Verbal para Gerúndio Modal",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Associação Verbal para Gerúndio Modal."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole o verbo no gerúndio e localize o verbo regente principal.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Formule a pergunta interrogativa",
+              "explanation": "[Verbo Principal] + COMO?.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se o gerúndio responder com o modo ou maneira de execução (\"defender como? Falando bem\"), classifica-se como Adverbial Modal (Modo).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Associação Verbal para Gerúndio Modal."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -815,6 +1152,47 @@
         {
           "procedureId": "PROC-A07-G06-007",
           "title": "Técnica de Eliminação Reversa e Regra \"Vá ao Verbo\"",
+          "objective": "Executar o algoritmo decisório para Técnica de Eliminação Reversa e Regra \"Vá ao Verbo\"",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Técnica de Eliminação Reversa e Regra \"Vá ao Verbo\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Em questões de correspondência com múltiplos trechos ou textos longos, inicie a análise pelos trechos que trazem conectivos canônicos (para = finalidade; uma vez que = causa).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Elimine as opções incompatíveis nas colunas correspondentes.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se houver dúvida em termo sublinhado, \"vá ao verbo\"",
+              "explanation": "determine a transitividade do verbo regente e aplique as perguntas do sujeito e dos objetos antes de tentar classificar termos periféricos.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Técnica de Eliminação Reversa e Regra \"Vá ao Verbo\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -834,6 +1212,22 @@
         {
           "contrastId": "CONTRAST-IP-A07-G06-001",
           "title": "Contrastes decisivos",
+          "contrastType": "mixed",
+          "conceptA": "Contrastes decisivos",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -902,6 +1296,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-001",
           "title": "EX-A07-G06-001 — Questão 07: AOCP / EBSERH",
+          "prompt": "Enunciado: No período \"Pegar a estrada com os filhos pequenos revelou-se uma delícia insuspeitada.\", a oração em destaque tem função de:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "No período \"Pegar a estrada com os filhos pequenos revelou-se uma delícia insuspeitada.\", a oração em destaque tem função de:"
+            },
+            {
+              "order": 2,
+              "action": "Alternativas",
+              "rationale": "A) complemento nominal / B) objeto direto / C) sujeito / D) objeto indireto / E) aposto."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "Substituição: \"Isso revelou-se uma delícia.\" Pergunta ao verbo: O que se revelou uma delícia? Isso. O pronome \"se\" atua como parte integrante do verbo (PIV)."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "C (sujeito) — Oração Subordinada Substantiva Subjetiva Reduzida de Infinitivo."
+            }
+          ],
+          "result": "Gabarito: C (sujeito) — Oração Subordinada Substantiva Subjetiva Reduzida de Infinitivo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-001 — Questão 07: AOCP / EBSERH sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-001 — Questão 07: AOCP / EBSERH.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-001 — Questão 07: AOCP / EBSERH.",
           "blocks": [
             {
               "type": "list",
@@ -918,6 +1339,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-002",
           "title": "EX-A07-G06-002 — Questão 08: Quadrix / CRM-MS",
+          "prompt": "Enunciado: A oração \"discutir a regulamentação da prática\" em \"Agora, cabe aos Conselhos de Medicina discutir a regulamentação da prática\" classifica-se como subordinada:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "A oração \"discutir a regulamentação da prática\" em \"Agora, cabe aos Conselhos de Medicina discutir a regulamentação da prática\" classifica-se como subordinada:"
+            },
+            {
+              "order": 2,
+              "action": "Alternativas",
+              "rationale": "A) substantiva subjetiva / B) substantiva objetiva direta / C) substantiva objetiva indireta / D) adjetiva restritiva / E) adverbial temporal."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "Ordem direta: \"Discutir a regulamentação da prática [Isso] cabe aos Conselhos de Medicina.\" O verbo caber é unipessoal e rege sujeito oracional."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "A (substantiva subjetiva)."
+            }
+          ],
+          "result": "Gabarito: A (substantiva subjetiva).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-002 — Questão 08: Quadrix / CRM-MS sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-002 — Questão 08: Quadrix / CRM-MS.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-002 — Questão 08: Quadrix / CRM-MS.",
           "blocks": [
             {
               "type": "list",
@@ -934,6 +1382,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-003",
           "title": "EX-A07-G06-003 — Questão 09: AOCP / Pref. Feira de Santana",
+          "prompt": "Enunciado: Assinale a alternativa em que a oração em destaque tenha função de objeto indireto.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assinale a alternativa em que a oração em destaque tenha função de objeto indireto."
+            },
+            {
+              "order": 2,
+              "action": "Análise das Alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "A) \"[Conciliar os estudos]... não era viável\" $\\rightarrow$ \"Isso não era viável\" (Subjetiva).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "B) \"[Para ter mais oportunidades]... percebeu...\" $\\rightarrow$ (Adverbial Final).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "C) \"...é possível [manter os jovens...]\" $\\rightarrow$ \"Isso é possível\" (Subjetiva).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito: D.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-003 — Questão 09: AOCP / Pref. Feira de Santana sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-003 — Questão 09: AOCP / Pref. Feira de Santana.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-003 — Questão 09: AOCP / Pref. Feira de Santana.",
           "blocks": [
             {
               "type": "list",
@@ -954,6 +1434,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-004",
           "title": "EX-A07-G06-004 — Questão 10: Instituto AOCP / UFSM",
+          "prompt": "Enunciado: Em \"Estão mais propensas a terem o foco desviado.\", a oração destacada exerce função de:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Em \"Estão mais propensas a terem o foco desviado.\", a oração destacada exerce função de:"
+            },
+            {
+              "order": 2,
+              "action": "Alternativas",
+              "rationale": "A) complemento nominal / B) sujeito / C) objeto direto / D) objeto indireto / E) predicativo."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "\"Estão\" é verbo de ligação; \"propensas\" é adjetivo predicativo. A oração preposicionada completa o adjetivo propensas (nome)."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "A (complemento nominal)."
+            }
+          ],
+          "result": "Gabarito: A (complemento nominal).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-004 — Questão 10: Instituto AOCP / UFSM sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-004 — Questão 10: Instituto AOCP / UFSM.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-004 — Questão 10: Instituto AOCP / UFSM.",
           "blocks": [
             {
               "type": "list",
@@ -970,6 +1477,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-005",
           "title": "EX-A07-G06-005 — Questão 11: Instituto AOCP / IBC",
+          "prompt": "Enunciado: Em \"não será possível ultrapassar o número mágico de 35.\", a função sintática da oração destacada é a mesma encontrada em:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Em \"não será possível ultrapassar o número mágico de 35.\", a função sintática da oração destacada é a mesma encontrada em:"
+            },
+            {
+              "order": 2,
+              "action": "Resolução do Trecho-Base",
+              "rationale": "\"Isso não será possível\" $\\rightarrow$ Sujeito (Subjetiva)."
+            },
+            {
+              "order": 3,
+              "action": "Análise das Alternativas",
+              "rationale": "Todas as opções preposicionadas (A: de determinar, B: para devorar, D: a legislar, E: de reduzir) foram eliminadas pelo descarte rápido de sujeito. A alternativa C (\"Infere-se que os casos... são raríssimos\") traz a forma desenvolvida equivalente (\"Isso é inferido\" $\\rightarrow$ Sujeito)."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "C."
+            }
+          ],
+          "result": "Gabarito: C.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-005 — Questão 11: Instituto AOCP / IBC sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-005 — Questão 11: Instituto AOCP / IBC.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-005 — Questão 11: Instituto AOCP / IBC.",
           "blocks": [
             {
               "type": "list",
@@ -986,6 +1520,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-006",
           "title": "EX-A07-G06-006 — Questão 12: CONTEMAX / Pref. Alagoa Nova",
+          "prompt": "Enunciado: Assinale a alternativa em que há uma oração subordinada adjetiva destacada:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assinale a alternativa em que há uma oração subordinada adjetiva destacada:"
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "Na alternativa B (\"A Virgin Hyperloop não é a única empresa [desenvolvendo o conceito]\"), o segmento liga-se a empresa e equivale a \"empresa que desenvolve o conceito\"."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "B (Adjetiva Restritiva Reduzida de Gerúndio)."
+            }
+          ],
+          "result": "Gabarito: B (Adjetiva Restritiva Reduzida de Gerúndio).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-006 — Questão 12: CONTEMAX / Pref. Alagoa Nova sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-006 — Questão 12: CONTEMAX / Pref. Alagoa Nova.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-006 — Questão 12: CONTEMAX / Pref. Alagoa Nova.",
           "blocks": [
             {
               "type": "list",
@@ -1001,6 +1557,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-007",
           "title": "EX-A07-G06-007 — Questão 13: Quadrix / CONTER",
+          "prompt": "Enunciado: O trecho \"bombardeado por fótons de alta energia\" no quadrinho do Calvin é:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "O trecho \"bombardeado por fótons de alta energia\" no quadrinho do Calvin é:"
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Apresenta verbo no particípio sem conectivo e expressa a causa da transformação física do personagem (\"o fato de ter sido bombardeado causou sua mutação\")."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "A (Oração subordinada adverbial, reduzida de particípio)."
+            }
+          ],
+          "result": "Gabarito: A (Oração subordinada adverbial, reduzida de particípio).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-007 — Questão 13: Quadrix / CONTER sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-007 — Questão 13: Quadrix / CONTER.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-007 — Questão 13: Quadrix / CONTER.",
           "blocks": [
             {
               "type": "list",
@@ -1016,6 +1594,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-008",
           "title": "EX-A07-G06-008 — Questão 14: Instituto AOCP / SES-DF",
+          "prompt": "Enunciado: Em \"[...] Pais órfãos que não se negam a prestar ajuda financeira.\", a oração destacada é subordinada adjetiva restritiva. (Certo / Errado)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Em \"[...] Pais órfãos que não se negam a prestar ajuda financeira.\", a oração destacada é subordinada adjetiva restritiva. (Certo / Errado)"
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Substituição: \"não se negam a isso\". A oração completa o verbo negar-se (VTI) $\\rightarrow$ Oração Subordinada Substantiva Objetiva Indireta Reduzida de Infinitivo."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "Errado."
+            }
+          ],
+          "result": "Gabarito: Errado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-008 — Questão 14: Instituto AOCP / SES-DF sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-008 — Questão 14: Instituto AOCP / SES-DF.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-008 — Questão 14: Instituto AOCP / SES-DF.",
           "blocks": [
             {
               "type": "list",
@@ -1031,6 +1631,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-009",
           "title": "EX-A07-G06-009 — Questão 15: VUNESP / TJ-SP",
+          "prompt": "Enunciado: Em \"—... fez de tudo para sobreviver... —\", a oração em destaque é:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Em \"—... fez de tudo para sobreviver... —\", a oração em destaque é:"
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Preposição para indicando objetivo + verbo no infinitivo sobreviver."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "A (subordinada adverbial final, encerrando ideia de finalidade — OSAFRI)."
+            }
+          ],
+          "result": "Gabarito: A (subordinada adverbial final, encerrando ideia de finalidade — OSAFRI).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-009 — Questão 15: VUNESP / TJ-SP sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-009 — Questão 15: VUNESP / TJ-SP.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-009 — Questão 15: VUNESP / TJ-SP.",
           "blocks": [
             {
               "type": "list",
@@ -1046,6 +1668,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-010",
           "title": "EX-A07-G06-010 — Questão 16: Instituto AOCP / TRT 5ª Região",
+          "prompt": "Enunciado: No excerto \"[...] a reciprocidade é essencial para a coisa funcionar [...]\", classificar o trecho destacado.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "No excerto \"[...] a reciprocidade é essencial para a coisa funcionar [...]\", classificar o trecho destacado."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "para + sujeito próprio (a coisa) + infinitivo (funcionar)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "A (adverbial final reduzida de infinitivo)."
+            }
+          ],
+          "result": "Gabarito: A (adverbial final reduzida de infinitivo).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-010 — Questão 16: Instituto AOCP / TRT 5ª Região sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-010 — Questão 16: Instituto AOCP / TRT 5ª Região.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-010 — Questão 16: Instituto AOCP / TRT 5ª Região.",
           "blocks": [
             {
               "type": "list",
@@ -1061,6 +1705,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-011",
           "title": "EX-A07-G06-011 — Questão 17: FGV / SEFAZ-RJ",
+          "prompt": "Enunciado: \"Ao analisar o progresso da humanidade, percebe-se que...\" / A oração sublinhada tem valor:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "\"Ao analisar o progresso da humanidade, percebe-se que...\" / A oração sublinhada tem valor:"
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Estrutura Ao + infinitivo denota tempo (\"Quando se analisa...\")."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "D (temporal)."
+            }
+          ],
+          "result": "Gabarito: D (temporal).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-011 — Questão 17: FGV / SEFAZ-RJ sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-011 — Questão 17: FGV / SEFAZ-RJ.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-011 — Questão 17: FGV / SEFAZ-RJ.",
           "blocks": [
             {
               "type": "list",
@@ -1076,6 +1742,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-012",
           "title": "EX-A07-G06-012 — Questão 18: Instituto AOCP / PC-ES",
+          "prompt": "Enunciado: Todas as frases apresentam oração subordinada temporal, EXCETO:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Todas as frases apresentam oração subordinada temporal, EXCETO:"
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "A alternativa D traz \"Caso haja suspeita, não estacione...\", encabeçada pela conjunção condicional caso."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "D."
+            }
+          ],
+          "result": "Gabarito: D.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-012 — Questão 18: Instituto AOCP / PC-ES sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-012 — Questão 18: Instituto AOCP / PC-ES.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-012 — Questão 18: Instituto AOCP / PC-ES.",
           "blocks": [
             {
               "type": "list",
@@ -1091,6 +1779,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-013",
           "title": "EX-A07-G06-013 — Questão 19: VUNESP / SPTrans",
+          "prompt": "Trechos Analisados:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Trechos Analisados",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "I. \"...defender seus pontos de vista [falando bem]?\" $\\rightarrow$ Defendia como? $\\rightarrow$ Modo.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "II. \"...[uma vez que as peças de defesa já haviam sido escritas]...\" $\\rightarrow$ Causa.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "III. \"...[para conseguir escrever] suas sentenças...\" $\\rightarrow$ Finalidade.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "E (modo, causa e finalidade)."
+            }
+          ],
+          "result": "Gabarito: E (modo, causa e finalidade).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-013 — Questão 19: VUNESP / SPTrans sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-013 — Questão 19: VUNESP / SPTrans.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-013 — Questão 19: VUNESP / SPTrans.",
           "blocks": [
             {
               "type": "list",
@@ -1108,6 +1828,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-014",
           "title": "EX-A07-G06-014 — Questão 20: VUNESP / TJ-SP",
+          "prompt": "Enunciado: No excerto \"...sociedades com maior número de pessoas altruístas sobreviveram por mais tempo por serem mais capazes de manter a coesão.\", a oração destacada expressa o sentido de:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "No excerto \"...sociedades com maior número de pessoas altruístas sobreviveram por mais tempo por serem mais capazes de manter a coesão.\", a oração destacada expressa o sentido de:"
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Preposição por + infinitivo flexionado serem. Equivale a \"porque são / visto que são\". Atende à fórmula: \"O fato de serem mais capazes fez com que sobrevivessem\"."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "C (causa)."
+            }
+          ],
+          "result": "Gabarito: C (causa).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-014 — Questão 20: VUNESP / TJ-SP sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-014 — Questão 20: VUNESP / TJ-SP.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-014 — Questão 20: VUNESP / TJ-SP.",
           "blocks": [
             {
               "type": "list",
@@ -1123,6 +1865,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-015",
           "title": "EX-A07-G06-015 — Questão 21: FCC / TCE-AL",
+          "prompt": "Enunciado: O elemento sublinhado tem valor causal em:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "O elemento sublinhado tem valor causal em:"
+            },
+            {
+              "order": 2,
+              "action": "Varredura das Opções",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "A) \"...nos devolvem [a autoria da vida]\" $\\rightarrow$ Objeto Direto.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "B) \"Liberdade seria [sinônimo de decisão]\" $\\rightarrow$ Predicativo do Sujeito.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "C) \"...torna tão difícil [cumprir propósitos...]\" $\\rightarrow$ OSSODRI (\"torna isso difícil\").",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito: E.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-015 — Questão 21: FCC / TCE-AL sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-015 — Questão 21: FCC / TCE-AL.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-015 — Questão 21: FCC / TCE-AL.",
           "blocks": [
             {
               "type": "list",
@@ -1143,6 +1917,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-016",
           "title": "EX-A07-G06-016 — Questão 22: FGV / Senado Federal",
+          "prompt": "Enunciado: \"Em julho de 1898, temendo por sua saúde, escreveu um testamento...\" / A oração destacada tem valor:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "\"Em julho de 1898, temendo por sua saúde, escreveu um testamento...\" / A oração destacada tem valor:"
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Aplicação da anterioridade cronológica: 1º temeu por sua saúde (causa); 2º redigiu o documento (efeito)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "C (causal — OSACRGer)."
+            }
+          ],
+          "result": "Gabarito: C (causal — OSACRGer).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-016 — Questão 22: FGV / Senado Federal sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-016 — Questão 22: FGV / Senado Federal.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-016 — Questão 22: FGV / Senado Federal.",
           "blocks": [
             {
               "type": "list",
@@ -1158,6 +1954,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-017",
           "title": "EX-A07-G06-017 — Questão 23: FCC / TRT 15ª Região",
+          "prompt": "Enunciado: Identificar as ideias das orações sublinhadas:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identificar as ideias das orações sublinhadas:"
+            },
+            {
+              "order": 2,
+              "action": "\"[Somadas a isso influências...], é possível transcender...\" $\\rightarrow$ Modalizador é possível confere valor de hipótese $\\rightarrow$ Condição.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "\"...[para montar os trilhões...]\" $\\rightarrow$ Preposição para $\\rightarrow$ Finalidade.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "\"...[criando o arco-íris de possibilidades...]\" $\\rightarrow$ Efeito resultante derivado da montagem $\\rightarrow$ Consequência.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "A (Condição – finalidade – consequência)."
+            }
+          ],
+          "result": "Gabarito: A (Condição – finalidade – consequência).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-017 — Questão 23: FCC / TRT 15ª Região sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-017 — Questão 23: FCC / TRT 15ª Região.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-017 — Questão 23: FCC / TRT 15ª Região.",
           "blocks": [
             {
               "type": "list",
@@ -1187,6 +2015,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-018",
           "title": "EX-A07-G06-018 — Questão 24: CESPE / TJ-DFT",
+          "prompt": "Item: Em \"Importa destacar que a violência...\", a oração \"destacar\" exerce função de sujeito.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item",
+              "rationale": "Em \"Importa destacar que a violência...\", a oração \"destacar\" exerce função de sujeito."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Ordem direta: \"Destacar [Isso] importa.\" Oração subjetiva reduzida de infinitivo."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-018 — Questão 24: CESPE / TJ-DFT sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-018 — Questão 24: CESPE / TJ-DFT.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-018 — Questão 24: CESPE / TJ-DFT.",
           "blocks": [
             {
               "type": "list",
@@ -1202,6 +2052,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-019",
           "title": "EX-A07-G06-019 — Questão 25: CESPE / TCU",
+          "prompt": "Item: A oração \"[Realizar mudanças permanentes na lei...]\" exerce a função de complemento da forma verbal \"recomendar\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item",
+              "rationale": "A oração \"[Realizar mudanças permanentes na lei...]\" exerce a função de complemento da forma verbal \"recomendar\"."
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"...Realizar mudanças permanentes na lei por conta de circunstâncias excepcionais e episódicas não parece recomendar o bom senso.\""
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "Período invertido. O sujeito é \"o bom senso\". Na ordem direta: \"O bom senso não parece recomendar isso\". A oração é objeto direto (complemento verbal) de recomendar."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-019 — Questão 25: CESPE / TCU sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-019 — Questão 25: CESPE / TCU.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-019 — Questão 25: CESPE / TCU.",
           "blocks": [
             {
               "type": "list",
@@ -1218,6 +2095,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-020",
           "title": "EX-A07-G06-020 — Questão 26: CESPE / MPU",
+          "prompt": "Item: A oração \"[quinhoar desigualmente aos desiguais...]\" exerce a função de complemento indireto da forma verbal \"consiste\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item",
+              "rationale": "A oração \"[quinhoar desigualmente aos desiguais...]\" exerce a função de complemento indireto da forma verbal \"consiste\"."
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"A regra da igualdade não consiste senão em quinhoar desigualmente...\""
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "Substituição: \"não consiste senão nisso\". O verbo consistir é VTI regido por em."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-020 — Questão 26: CESPE / MPU sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-020 — Questão 26: CESPE / MPU.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-020 — Questão 26: CESPE / MPU.",
           "blocks": [
             {
               "type": "list",
@@ -1234,6 +2138,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-021",
           "title": "EX-A07-G06-021 — Questão 27: CESPE / TRE-BA",
+          "prompt": "Item: A oração \"[apertar a tecla branca]\" exerce a função de complemento da forma verbal \"basta\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item",
+              "rationale": "A oração \"[apertar a tecla branca]\" exerce a função de complemento da forma verbal \"basta\"."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Ordem direta: \"Apertar a tecla branca [Isso] basta.\" É sujeito oracional e não complemento."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-021 — Questão 27: CESPE / TRE-BA sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-021 — Questão 27: CESPE / TRE-BA.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-021 — Questão 27: CESPE / TRE-BA.",
           "blocks": [
             {
               "type": "list",
@@ -1249,6 +2175,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-022",
           "title": "EX-A07-G06-022 — Questão 28: CESPE / TJ-DFT",
+          "prompt": "Item: A oração \"[usar a iluminação natural]\" exerce a função de complemento do adjetivo \"possível\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item",
+              "rationale": "A oração \"[usar a iluminação natural]\" exerce a função de complemento do adjetivo \"possível\"."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "\"Usar a iluminação natural [Isso] é possível.\" \"Possível\" é predicativo do sujeito; a oração é o sujeito."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-022 — Questão 28: CESPE / TJ-DFT sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-022 — Questão 28: CESPE / TJ-DFT.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-022 — Questão 28: CESPE / TJ-DFT.",
           "blocks": [
             {
               "type": "list",
@@ -1264,6 +2212,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-023",
           "title": "EX-A07-G06-023 — Questão 29: CESPE / INSS",
+          "prompt": "Item: A oração introduzida pela preposição \"por\" em \"Estamos ansiosos por ler a peça...\" remete a uma ação anterior ao estado descrito em \"Estamos ansiosos\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item",
+              "rationale": "A oração introduzida pela preposição \"por\" em \"Estamos ansiosos por ler a peça...\" remete a uma ação anterior ao estado descrito em \"Estamos ansiosos\"."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "\"Ansiosos por ler\" equivale a \"ansiosos para ler\" (finalidade). O objetivo visado é uma ação futura (posterior), e não anterior."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-023 — Questão 29: CESPE / INSS sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-023 — Questão 29: CESPE / INSS.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-023 — Questão 29: CESPE / INSS.",
           "blocks": [
             {
               "type": "list",
@@ -1279,6 +2249,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-024",
           "title": "EX-A07-G06-024 — Questão 30: CESPE / TCE-AC",
+          "prompt": "Item: No texto \"O problema não é mudar a consciência das pessoas...\", a oração \"mudar a consciência...\" exerce a função sintática de sujeito.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item",
+              "rationale": "No texto \"O problema não é mudar a consciência das pessoas...\", a oração \"mudar a consciência...\" exerce a função sintática de sujeito."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "\"O problema\" é o sujeito; \"é\" é verbo de ligação; \"mudar...\" é oração predicativa (\"O problema não é isso\")."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-024 — Questão 30: CESPE / TCE-AC sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-024 — Questão 30: CESPE / TCE-AC.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-024 — Questão 30: CESPE / TCE-AC.",
           "blocks": [
             {
               "type": "list",
@@ -1294,6 +2286,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-025",
           "title": "EX-A07-G06-025 — Questão 31: CESPE / TCE-PE",
+          "prompt": "Item: O trecho \"[ser o desafio das democracias de massa para obter legitimidade]\" exerce a função de sujeito de \"parece\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item",
+              "rationale": "O trecho \"[ser o desafio das democracias de massa para obter legitimidade]\" exerce a função de sujeito de \"parece\"."
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"Responder a esse modelo de forma integrada e aproximar as expectativas do cidadão da realidade social parece ser o desafio...\""
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O sujeito composto está no início (\"Responder... e aproximar...\"). O trecho sublinhado integra a locução com predicativo do sujeito."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-025 — Questão 31: CESPE / TCE-PE sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-025 — Questão 31: CESPE / TCE-PE.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-025 — Questão 31: CESPE / TCE-PE.",
           "blocks": [
             {
               "type": "list",
@@ -1310,6 +2329,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-026",
           "title": "EX-A07-G06-026 — Questão 32: CESPE / TRE-MT",
+          "prompt": "Item: O termo \"a legítima expectativa\" (\"...surge a legítima expectativa\") e a oração \"aguardar até o dia da votação\" (\"...não seria razoável aguardar...\") desempenham a mesma função sintática.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item",
+              "rationale": "O termo \"a legítima expectativa\" (\"...surge a legítima expectativa\") e a oração \"aguardar até o dia da votação\" (\"...não seria razoável aguardar...\") desempenham a mesma função sintática."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Ambos são sujeitos sintáticos dos seus predicados (\"A legítima expectativa surge\"; \"Aguardar... não seria razoável\")."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-026 — Questão 32: CESPE / TRE-MT sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-026 — Questão 32: CESPE / TRE-MT.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-026 — Questão 32: CESPE / TRE-MT.",
           "blocks": [
             {
               "type": "list",
@@ -1325,6 +2366,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G06-027",
           "title": "EX-A07-G06-027 — Questão 33: CESPE / TJ-DFT",
+          "prompt": "Item: A oração \"[radicalizar a política...]\" (\"...é preciso radicalizar a política...\") e o termo \"consenso\" (\"Há consenso de que...\") exercem a mesma função sintática.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item",
+              "rationale": "A oração \"[radicalizar a política...]\" (\"...é preciso radicalizar a política...\") e o termo \"consenso\" (\"Há consenso de que...\") exercem a mesma função sintática."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "\"Radicalizar...\" é Sujeito Oracional de é preciso. \"Consenso\" é Objeto Direto do verbo impessoal haver. Funções distintas."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G06-027 — Questão 33: CESPE / TJ-DFT sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G06-027 — Questão 33: CESPE / TJ-DFT.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G06-027 — Questão 33: CESPE / TJ-DFT.",
           "blocks": [
             {
               "type": "list",
@@ -1437,7 +2500,10 @@
       "officialAnswer": "incorrect",
       "explanation": "A oração “não confundir a língua com o discurso” classifica-se como subordinada substantiva SUBJETIVA reduzida de infinitivo. Em suma, é um nome feio para o bom e velho “sujeito oracional” É importante [não confundir a língua com o discurso] [não confundir a língua com o discurso] É importante [ISSO] É importante Gabarito: Errado.",
       "questionSha256": "58f1c7b96d88e2c09a2deff0c4dc96c46f0e986cbdd3651d19f5615f5eb9da47",
-      "answerSha256": "caf695214a7b235b3bff291b2783ebfc22d16f95d29ead3cfdebe540ea1d0d79"
+      "answerSha256": "caf695214a7b235b3bff291b2783ebfc22d16f95d29ead3cfdebe540ea1d0d79",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Orações Reduzidas - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0065",
@@ -1449,7 +2515,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "76359815bc084c44d80774f4458db62fb4ba57c67e88a96063d1fbd1b4ee7037",
-      "answerSha256": "148f9256683993219b2bcd70da4ce0a2bb2ab4c0c613d6d11031e2a077f8fc53"
+      "answerSha256": "148f9256683993219b2bcd70da4ce0a2bb2ab4c0c613d6d11031e2a077f8fc53",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Orações Reduzidas - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0061",
@@ -1462,7 +2531,10 @@
       "officialAnswer": "incorrect",
       "explanation": "“como” é conjunção comparativa: a galinha não contava consigo da mesma forma que o galo crê na sua crista. Questão incorreta.",
       "questionSha256": "70550a52bd8da47d4eef00d132fd90d06e19c72458d13c6ffffdaeae8b700c02",
-      "answerSha256": "f0ab422a60bef27a4472237ca86c341406a20f00e5c0d861dddad9c8fb2ec349"
+      "answerSha256": "f0ab422a60bef27a4472237ca86c341406a20f00e5c0d861dddad9c8fb2ec349",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Orações Reduzidas - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0113",
@@ -1474,7 +2546,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "11ec5e386b2b52f7c5b63eaea16ff549966ff99e1fac47a88c2227e2a700a976",
-      "answerSha256": "c963c3d076026d5a7f1aa8869162540f2aa01f1644ee71b0b9ec20b6ec72837e"
+      "answerSha256": "c963c3d076026d5a7f1aa8869162540f2aa01f1644ee71b0b9ec20b6ec72837e",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Orações Reduzidas - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0022",
@@ -1488,7 +2563,10 @@
       "officialAnswer": "correct",
       "explanation": "Observe que a conjunção “que”, correlacionada a termos como “tão, tanto, tal, tamanho”, introduz oração consecutiva: Como os hospitais curavam pouco e traziam perigo de infecção (causa), os ricos preferiam tratar-se em casa (consequência). Questão correta.",
       "questionSha256": "ac97b959190b8bf9d37d8793770637a29ea98111b0eddbaf62a7846b5972f83d",
-      "answerSha256": "527a56e47c21a872968ef64a404b70718a57fd41b7bc556c7a92655d6687630c"
+      "answerSha256": "527a56e47c21a872968ef64a404b70718a57fd41b7bc556c7a92655d6687630c",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Orações Reduzidas - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0077",
@@ -1501,7 +2579,10 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "4c0ea64119abc12466374b43745c2c8cbb5342b3cd596049a29c35bd4e644953",
-      "answerSha256": "6b57a6755038ab3474d4200350392085a2aa85dbe0d4c04078a4cac8fd2c7344"
+      "answerSha256": "6b57a6755038ab3474d4200350392085a2aa85dbe0d4c04078a4cac8fd2c7344",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Orações Reduzidas - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

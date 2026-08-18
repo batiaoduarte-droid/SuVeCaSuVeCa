@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A04-G02",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.752Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.517Z"
   },
   "unit": {
     "unitId": "IP-A04-G02",
@@ -379,6 +379,16 @@
         {
           "entityId": "RULE-IP-A04-G02-001",
           "title": "Regras canônicas",
+          "statement": "Os 5 Valores do Presente do Indicativo: Presente Atual (1), Presente Histórico/Narrativo (2), Presente com Valor de Futuro (3), Presente Habitual/Atemporal (4) e Presente Durativo (5) [KB-A04-G02-SEMANTICA-VERBAL-002].\nAspecto Pontual vs. Aspecto Durativo: O Pretérito Perfeito é pontual (ação delimitada que começa e conclui no passado); o Pretérito Imperfeito é durativo/contínuo (ação prolongada ou repetida no passado) [KB-A04-G02-SEMANTICA-VERBAL-003].\nAnterioridade do Pretérito Mais-que-Perfeito: Ação passada anterior a outro fato passado, referindo-se estritamente à cronologia real dos eventos, sem relação com a posição física dos verbos no texto [KB-A04-G02-SEMANTICA-VERBAL-003].\nEquivalência Simples x Composto no Mais-que-Perfeito: $\\text{Verbo em } -ra \\iff \\text{Tinha/Havia } + \\text{Particípio}$ (ex.: estudara = tinha estudado) [KB-A04-G02-SEMANTICA-VERBAL-001, KB-A04-G02-SEMANTICA-VERBAL-003].\nOs 4 Valores do Futuro do Pretérito: Fato posterior a outro no passado (1), Dúvida/Incerteza (2), Hipótese/Possibilidade (3) e Polidez/Cortesia (4) [KB-A04-G02-SEMANTICA-VERBAL-004].\nRegra Canônica de Hipótese: Expressa indistintamente pelo Modo Subjuntivo OU pelo Futuro do Pretérito do Indicativo [KB-A04-G02-SEMANTICA-VERBAL-005].\nEquação Semântica de Prova: $\\text{Hipótese} = \\text{Possibilidade} \\neq \\text{Impossibilidade}$ [KB-A04-G02-SEMANTICA-VERBAL-005, KB-A04-G02-SEMANTICA-VERBAL-006].\nA Tríade da Reescritura: $\\text{Correção Gramatical (Norma)} \\neq \\text{Semântica (Sentido)} \\neq \\text{Coerência (Lógica)}$ [KB-A04-G02-SEMANTICA-VERBAL-007].",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Os 5 Valores do Presente do Indicativo: Presente Atual (1), Presente Histórico/Narrativo (2), Presente com Valor de Futuro (3), Presente Habitual/Atemporal (4) e Presente Durativo (5) [KB-A04-G02-SEMANTICA-VERBAL-002].",
+            "Aspecto Pontual vs. Aspecto Durativo: O Pretérito Perfeito é pontual (ação delimitada que começa e conclui no passado); o Pretérito Imperfeito é durativo/contínuo (ação prolongada ou repetida no passado) [KB-A04-G02-SEMANTICA-VERBAL-003].",
+            "Anterioridade do Pretérito Mais-que-Perfeito: Ação passada anterior a outro fato passado, referindo-se estritamente à cronologia real dos eventos, sem relação com a posição física dos verbos no texto [KB-A04-G02-SEMANTICA-VERBAL-003].",
+            "Equivalência Simples x Composto no Mais-que-Perfeito: $\\text{Verbo em } -ra \\iff \\text{Tinha/Havia } + \\text{Particípio}$ (ex.: estudara = tinha estudado) [KB-A04-G02-SEMANTICA-VERBAL-001, KB-A04-G02-SEMANTICA-VERBAL-003]."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -403,6 +413,89 @@
         {
           "procedureId": "PROC-A04-G02-SEMANTICA-VERBAL-001",
           "title": "Método das Palavras Mágicas para Identificação Verbal",
+          "objective": "Executar o algoritmo decisório para Método das Palavras Mágicas para Identificação Verbal",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método das Palavras Mágicas para Identificação Verbal."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Redução ao Infinitivo",
+              "explanation": "Isole a forma verbal flexionada e converta-a mentalmente ao infinitivo para identificar a raiz do verbo (ex.: vinha $\\rightarrow$ vir; aprendera $\\rightarrow$ aprender).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Aplicação da Palavra-Chave Temporal de Teste",
+              "explanation": "",
+              "test": "Aplicação da Palavra-Chave Temporal de Teste:"
+            },
+            {
+              "order": 3,
+              "action": "Encaixe HOJE $\\rightarrow$ Presente do Indicativo (Hoje ele estuda / Hoje elas cravam).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Encaixe ONTEM $\\rightarrow$ Pretérito Perfeito do Indicativo (Ontem ele estudou / Ontem ele abriu).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Encaixe ANTIGAMENTE $\\rightarrow$ Pretérito Imperfeito do Indicativo (Antigamente ele estudava / Antigamente ele vinha).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Substitua por TINHA + Particípio $\\rightarrow$ Pretérito Mais-que-Perfeito do Indicativo (aprendera = tinha aprendido).",
+              "explanation": null,
+              "test": "Substitua por TINHA + Particípio $\\rightarrow$ Pretérito Mais-que-Perfeito do Indicativo (aprendera = tinha aprendido)."
+            },
+            {
+              "order": 7,
+              "action": "Teste de Conjunções para o Subjuntivo",
+              "explanation": "",
+              "test": "Teste de Conjunções para o Subjuntivo:"
+            },
+            {
+              "order": 8,
+              "action": "Encaixe QUE $\\rightarrow$ Presente do Subjuntivo (Que eu aproxime).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Encaixe SE $\\rightarrow$ Pretérito Imperfeito do Subjuntivo (Se eu devesse / Se estudassem).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Encaixe QUANDO $\\rightarrow$ Futuro do Subjuntivo (Quando eu chegar).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método das Palavras Mágicas para Identificação Verbal."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -448,6 +541,65 @@
         {
           "procedureId": "PROC-A04-G02-SEMANTICA-VERBAL-002",
           "title": "Método do Fatiamento e Análise de Sujeito/Referenciação no Cebraspe",
+          "objective": "Executar o algoritmo decisório para Método do Fatiamento e Análise de Sujeito/Referenciação no Cebraspe",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método do Fatiamento e Análise de Sujeito/Referenciação no Cebraspe."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Fatiar a Assertiva em Duas Partes Autônomas",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Parte 1 (Morfossintaxe)",
+              "explanation": "Verifique se o verbo citado está de fato no tempo e modo indicados no comando. Se a classificação morfológica estiver errada, o item morre como ERRADO imediatamente.",
+              "test": "Parte 1 (Morfossintaxe): Verifique se o verbo citado está de fato no tempo e modo indicados no comando. Se a classificação morfológica estiver errada, o item morre como ERRADO imediatamente."
+            },
+            {
+              "order": 3,
+              "action": "Parte 2 (Semântica/Interpretação)",
+              "explanation": "Analise o valor semântico alegado pela banca.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Checagem de Sujeito e Referenciação Anafórica",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Volte ao texto e trace setas ligando a forma verbal ao seu sujeito real. Verifique se a ação atribuída na assertiva foi de fato praticada pelo referente citado (ex.",
+              "explanation": "diferenciar ações da 1ª pessoa/narrador das ações da 3ª pessoa/\"homem modesto\").",
+              "test": "Volte ao texto e trace setas ligando a forma verbal ao seu sujeito real. Verifique se a ação atribuída na assertiva foi de fato praticada pelo referente citado (ex.: diferenciar ações da 1ª pessoa/narrador das ações da 3ª pessoa/\"homem modesto\")."
+            },
+            {
+              "order": 6,
+              "action": "Confronto Semântico",
+              "explanation": "Valide se o sentido pretendido condiz com a aspectualidade real do texto, eliminando interpretações meramente intuitivas.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método do Fatiamento e Análise de Sujeito/Referenciação no Cebraspe."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -495,6 +647,77 @@
         {
           "procedureId": "PROC-A04-G02-SEMANTICA-VERBAL-003",
           "title": "Diagnóstico das Nuances de Hipótese, Dúvida e Impossibilidade (\"O que vem depois salva\")",
+          "objective": "Executar o algoritmo decisório para Diagnóstico das Nuances de Hipótese, Dúvida e Impossibilidade (\"O que vem depois salva\")",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Diagnóstico das Nuances de Hipótese, Dúvida e Impossibilidade (\"O que vem depois salva\")."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize o Verbo no Futuro do Pretérito ou Subjuntivo",
+              "explanation": "Identifique a forma em -ria ou no modo subjuntivo.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Inspecione o Entorno Textual",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se o texto contiver verbos modais de potencialidade (podem, permite) ou tratar de projetos arquitetônicos/teorias $\\rightarrow$ Classifique como Hipótese / Possibilidade. Se a banca alegar \"impossibilidade\" ou \"fato improvável\", marque ERRADO.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Aplique a Regra \"O Que Vem Depois Salva\"",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Ao analisar citações de terceiros (\"segundo doutrinadores, as instituições descenderiam...\"), leia obrigatoriamente o período subsequente.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se o período seguinte trouxer uma afirmação categórica em sentido oposto (\"A verdade, bem outra, é que pertencem a ordens diferentes...\"), confirma-se que o autor utilizou o verbo para marcar a tese como duvidosa/incerta. O item da banca é CERTO.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Verifique Existência de Impedimento Real",
+              "explanation": "",
+              "test": "Verifique Existência de Impedimento Real:"
+            },
+            {
+              "order": 8,
+              "action": "Somente considere o valor de Impossibilidade se o texto registrar uma condição adversativa categórica que inviabilizou o fato.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Diagnóstico das Nuances de Hipótese, Dúvida e Impossibilidade (\"O que vem depois salva\")."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -550,6 +773,47 @@
         {
           "procedureId": "PROC-A04-G02-SEMANTICA-VERBAL-004",
           "title": "Análise da Tríade em Questões de Reescritura",
+          "objective": "Executar o algoritmo decisório para Análise da Tríade em Questões de Reescritura",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Análise da Tríade em Questões de Reescritura."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Teste da Correção Gramatical",
+              "explanation": "A substituição proposta gera erro de concordância, regência ou flexão irregular? Se sim $\\rightarrow$ Item Incorreto.",
+              "test": "Teste da Correção Gramatical: A substituição proposta gera erro de concordância, regência ou flexão irregular? Se sim $\\rightarrow$ Item Incorreto."
+            },
+            {
+              "order": 2,
+              "action": "Teste Semântico (Sentido Original)",
+              "explanation": "O comando da questão pergunta se o sentido original foi preservado? Verifique se houve alteração aspectual (ex.: pontual para habitual) ou modal (ex.: certeza para hipótese). Se o sentido mudou e a questão dizia que ele se mantinha $\\rightarrow$ Item Errado.",
+              "test": "Teste Semântico (Sentido Original): O comando da questão pergunta se o sentido original foi preservado? Verifique se houve alteração aspectual (ex.: pontual para habitual) ou modal (ex.: certeza para hipótese). Se o sentido mudou e a questão dizia que ele se mantinha $\\rightarrow$ Item Errado."
+            },
+            {
+              "order": 3,
+              "action": "Teste de Coerência (Lógica do Texto)",
+              "explanation": "O comando da questão pergunta apenas se o texto permanece coerente? Se a frase continuar fazendo sentido lógico dentro da narrativa/argumentação, a coerência está preservada, mesmo que o sentido original tenha sofrido modificação estilística $\\rightarrow$ Item Certo.",
+              "test": "Teste de Coerência (Lógica do Texto): O comando da questão pergunta apenas se o texto permanece coerente? Se a frase continuar fazendo sentido lógico dentro da narrativa/argumentação, a coerência está preservada, mesmo que o sentido original tenha sofrido modificação estilística $\\rightarrow$ Item Certo."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Análise da Tríade em Questões de Reescritura."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -574,6 +838,22 @@
         {
           "contrastId": "CONTRAST-IP-A04-G02-001",
           "title": "Tabela 1: Oposição Aspectual dos Pretéritos do Indicativo",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 1: Oposição Aspectual dos Pretéritos do Indicativo",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -622,6 +902,22 @@
         {
           "contrastId": "CONTRAST-IP-A04-G02-002",
           "title": "Tabela 2: Matriz Semântica Cebraspe para Formas Hipotéticas (Futuro do Pretérito e Subjuntivo)",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 2: Matriz Semântica Cebraspe para Formas Hipotéticas (Futuro do Pretérito e Subjuntivo)",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -670,6 +966,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G02-001",
           "title": "EX-A04-G02-SEMANTICA-VERBAL-001 — Exemplos dos 5 Valores do Presente do Indicativo",
+          "prompt": "Presente Atual: \"Guilherme está cansado.\" (Ação concomitante ao ato de fala).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Presente Atual",
+              "rationale": "\"Guilherme está cansado.\" (Ação concomitante ao ato de fala)."
+            },
+            {
+              "order": 2,
+              "action": "Presente Histórico",
+              "rationale": "\"Em 1500 Cabral chega ao Brasil.\" (Fato passado narrado no presente para vivacidade)."
+            },
+            {
+              "order": 3,
+              "action": "Presente por Futuro",
+              "rationale": "\"Vou amanhã para Búzios.\" (Vou expressa futuro certo e imediato: irei)."
+            },
+            {
+              "order": 4,
+              "action": "Presente Habitual",
+              "rationale": "\"Maria estuda todos os dias.\" (Ação rotineira e frequente)."
+            },
+            {
+              "order": 5,
+              "action": "Presente Durativo",
+              "rationale": "\"Moro em Berlim desde 2014.\" (Iniciado no passado e ativo no presente pelo marcador desde)."
+            }
+          ],
+          "result": "Presente Durativo: \"Moro em Berlim desde 2014.\" (Iniciado no passado e ativo no presente pelo marcador desde).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G02-SEMANTICA-VERBAL-001 — Exemplos dos 5 Valores do Presente do Indicativo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G02-SEMANTICA-VERBAL-001 — Exemplos dos 5 Valores do Presente do Indicativo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G02-SEMANTICA-VERBAL-001 — Exemplos dos 5 Valores do Presente do Indicativo.",
           "blocks": [
             {
               "type": "list",
@@ -687,6 +1015,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G02-002",
           "title": "EX-A04-G02-SEMANTICA-VERBAL-002 — Questão 01 / V004: Pretérito Imperfeito e Ação Repetida no Passado",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE - 2024 - Pref. de Cachoeiro de Itapemirim - ES - Auditor Fiscal",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE - 2024 - Pref. de Cachoeiro de Itapemirim - ES - Auditor Fiscal"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"Está bem. Tomo o meu café com pão dormido... E, enquanto tomo café, vou me lembrando de um homem modesto que conheci antigamente. Quando vinha deixar o pão à porta do apartamento, ele apertava a campainha, mas, para não incomodar os moradores, avisava gritando:\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"No segundo parágrafo, as formas verbais “vinha”, “apertava” e “avisava” (quarto período) expressam ações que “um homem modesto” (terceiro período) desempenhava repetidamente em tempo passado.\""
+            },
+            {
+              "order": 4,
+              "action": "Análise",
+              "rationale": "Vinha, apertava, avisava estão no Pretérito Imperfeito do Indicativo (antigamente vinha), denotando ações habituais/repetidas. As setas de sujeito confirmam que o agente é \"um homem modesto\" (3ª pessoa)."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G02-SEMANTICA-VERBAL-002 — Questão 01 / V004: Pretérito Imperfeito e Ação Repetida no Passado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G02-SEMANTICA-VERBAL-002 — Questão 01 / V004: Pretérito Imperfeito e Ação Repetida no Passado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G02-SEMANTICA-VERBAL-002 — Questão 01 / V004: Pretérito Imperfeito e Ação Repetida no Passado.",
           "blocks": [
             {
               "type": "list",
@@ -704,6 +1064,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G02-003",
           "title": "EX-A04-G02-SEMANTICA-VERBAL-003 — Questão 02 / V004: Pretérito Imperfeito vs. Pegadinha do \"Início de Ações\"",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE - Instituto Rio Branco - Diplomata",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE - Instituto Rio Branco - Diplomata"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"Dei em passear de bonde... crescera. Jantava uns dias; em outros, almoçava unicamente... Vivia pobremente...\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"O tom memorialista do primeiro parágrafo manifesta-se pelo uso predominante de formas verbais que denotam o início de determinadas ações, das quais são exemplos “Jantava” e “almoçava”, ambas na linha 10, e “Vivia” (l.20).\""
+            },
+            {
+              "order": 4,
+              "action": "Análise",
+              "rationale": "Jantava, almoçava, vivia são Pretérito Imperfeito do Indicativo. Expressam continuidade e hábito passado, e nunca o início (aspecto inchoativo) de ações."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G02-SEMANTICA-VERBAL-003 — Questão 02 / V004: Pretérito Imperfeito vs. Pegadinha do \"Início de Ações\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G02-SEMANTICA-VERBAL-003 — Questão 02 / V004: Pretérito Imperfeito vs. Pegadinha do \"Início de Ações\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G02-SEMANTICA-VERBAL-003 — Questão 02 / V004: Pretérito Imperfeito vs. Pegadinha do \"Início de Ações\".",
           "blocks": [
             {
               "type": "list",
@@ -721,6 +1113,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G02-004",
           "title": "EX-A04-G02-SEMANTICA-VERBAL-004 — Questão 03 / V004: Pretérito Mais-que-Perfeito e Anterioridade Cronológica Real",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE - 2024 - Pref. de Cachoeiro de Itapemirim - ES - Auditor Fiscal",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE - 2024 - Pref. de Cachoeiro de Itapemirim - ES - Auditor Fiscal"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"Ele abriu um sorriso largo. Explicou que aprendera aquilo de ouvido. Muitas vezes lhe acontecera bater a campainha... e ouvir a pessoa que o atendera dizer para dentro...\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"No quinto parágrafo, as formas verbais “aprendera”, “acontecera” e “atendera” estão flexionadas no pretérito mais-que-perfeito do modo indicativo e denotam ações que ocorreram em momento anterior ao da ocorrência de outras ações no passado, expressas, no texto, pelas formas verbais “abriu” e “Explicou”.\""
+            },
+            {
+              "order": 4,
+              "action": "Análise",
+              "rationale": "As formas em -ra expressam fatos pretéritos que antecederam cronologicamente os atos de abrir e explicar. A anterioridade é da cronologia real da história, não da ordem gráfica no papel."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G02-SEMANTICA-VERBAL-004 — Questão 03 / V004: Pretérito Mais-que-Perfeito e Anterioridade Cronológica Real sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G02-SEMANTICA-VERBAL-004 — Questão 03 / V004: Pretérito Mais-que-Perfeito e Anterioridade Cronológica Real.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G02-SEMANTICA-VERBAL-004 — Questão 03 / V004: Pretérito Mais-que-Perfeito e Anterioridade Cronológica Real.",
           "blocks": [
             {
               "type": "list",
@@ -738,6 +1162,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G02-005",
           "title": "EX-A04-G02-SEMANTICA-VERBAL-005 — Questão 04 / V004: Pretérito Mais-que-Perfeito não Projeta para o Futuro",
+          "prompt": "Banca / Órgão / Ano: (ADAPTADO) CESPE / CEBRASPE - 2024 - PC-PE - Escrivão",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "(ADAPTADO) CESPE / CEBRASPE - 2024 - PC-PE - Escrivão"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"Espanto, e enorme, senti ao enxergar meu pai abatido na sala, o gesto lento. Habituara-me a vê-lo grave...\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"Em relação a aspectos linguísticos do trecho..., o tempo em que está flexionada a forma verbal “Habituara” projeta essa ação para o futuro.\""
+            },
+            {
+              "order": 4,
+              "action": "Análise",
+              "rationale": "Habituara está no Pretérito Mais-que-Perfeito do Indicativo (passado anterior a senti); não possui qualquer projeção futurista."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G02-SEMANTICA-VERBAL-005 — Questão 04 / V004: Pretérito Mais-que-Perfeito não Projeta para o Futuro sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G02-SEMANTICA-VERBAL-005 — Questão 04 / V004: Pretérito Mais-que-Perfeito não Projeta para o Futuro.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G02-SEMANTICA-VERBAL-005 — Questão 04 / V004: Pretérito Mais-que-Perfeito não Projeta para o Futuro.",
           "blocks": [
             {
               "type": "list",
@@ -755,6 +1211,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G02-006",
           "title": "EX-A04-G02-SEMANTICA-VERBAL-006 — Questões 05 e 06 / V004: Presente Habitual e Substituição do Presente Histórico",
+          "prompt": "Caso 1 (Cachoeiro de Itapemirim - Cuidador): \"Na febre alta, as toxinas cravam as garras nos músculos...\" $\\rightarrow$ Assertiva: a ação designada por cravam é habitual. Gabarito: CERTO (Presente habitual/atemporal em verdade médica).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Caso 1 (Cachoeiro de Itapemirim - Cuidador)",
+              "rationale": "\"Na febre alta, as toxinas cravam as garras nos músculos...\" $\\rightarrow$ Assertiva: a ação designada por cravam é habitual. Gabarito: CERTO (Presente habitual/atemporal em verdade médica)."
+            },
+            {
+              "order": 2,
+              "action": "Caso 2 (MPE-SC - Promotor)",
+              "rationale": "\"No Brasil, a figura do promotor só surge em 1609, quando é regulamentado...\" $\\rightarrow$ Assertiva: o tempo é presente histórico e admite substituição adequada pelo pretérito perfeito (surgiu, foi). Gabarito: CERTO."
+            }
+          ],
+          "result": "Caso 2 (MPE-SC - Promotor): \"No Brasil, a figura do promotor só surge em 1609, quando é regulamentado...\" $\\rightarrow$ Assertiva: o tempo é presente histórico e admite substituição adequada pelo pretérito perfeito (surgiu, foi). Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G02-SEMANTICA-VERBAL-006 — Questões 05 e 06 / V004: Presente Habitual e Substituição do Presente Histórico sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G02-SEMANTICA-VERBAL-006 — Questões 05 e 06 / V004: Presente Habitual e Substituição do Presente Histórico.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G02-SEMANTICA-VERBAL-006 — Questões 05 e 06 / V004: Presente Habitual e Substituição do Presente Histórico.",
           "blocks": [
             {
               "type": "list",
@@ -769,6 +1242,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G02-007",
           "title": "EX-A04-G02-SEMANTICA-VERBAL-007 — Questão 07 / V004: Presente Dissertativo não É Ação Contínua Vinda do Passado",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE - 2024 - CAPES - Analista",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE - 2024 - CAPES - Analista"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"Todo discurso tem uma dimensão argumentativa. Alguns se apresentam como explicitamente argumentativos...\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"O emprego do presente do indicativo... sinaliza que as ações apresentadas tiveram início no passado e se estendem até o momento atual.\""
+            },
+            {
+              "order": 4,
+              "action": "Análise",
+              "rationale": "As formas no presente expressam definições atemporais e genéricas. Sem marca durativa (desde), não exprimem ação iniciada no passado e contínua no presente."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G02-SEMANTICA-VERBAL-007 — Questão 07 / V004: Presente Dissertativo não É Ação Contínua Vinda do Passado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G02-SEMANTICA-VERBAL-007 — Questão 07 / V004: Presente Dissertativo não É Ação Contínua Vinda do Passado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G02-SEMANTICA-VERBAL-007 — Questão 07 / V004: Presente Dissertativo não É Ação Contínua Vinda do Passado.",
           "blocks": [
             {
               "type": "list",
@@ -786,6 +1291,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G02-008",
           "title": "EX-A04-G02-SEMANTICA-VERBAL-008 — Questão 08 / V004: Futuro do Pretérito como Possibilidade Vista do Passado",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE - 2024 - Pref. de Mossoró - RN - Analista",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE - 2024 - Pref. de Mossoró - RN - Analista"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"Os acordos de 1810 foram firmados contra a garantia da Inglaterra de que nenhum governo imposto por Napoleão em Portugal seria reconhecido...\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"O tempo verbal em que se encontra flexionada a forma “seria” (antepenúltimo período) indica uma possibilidade futura vislumbrada a partir do passado.\""
+            },
+            {
+              "order": 4,
+              "action": "Análise",
+              "rationale": "Seria está no Futuro do Pretérito do Indicativo, projetando um plano/possibilidade futura vinculada a fatos pretéritos (foram firmados)."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G02-SEMANTICA-VERBAL-008 — Questão 08 / V004: Futuro do Pretérito como Possibilidade Vista do Passado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G02-SEMANTICA-VERBAL-008 — Questão 08 / V004: Futuro do Pretérito como Possibilidade Vista do Passado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G02-SEMANTICA-VERBAL-008 — Questão 08 / V004: Futuro do Pretérito como Possibilidade Vista do Passado.",
           "blocks": [
             {
               "type": "list",
@@ -803,6 +1340,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G02-009",
           "title": "EX-A04-G02-SEMANTICA-VERBAL-009 — Questão 09 / V004: Futuro do Pretérito como Dúvida vs. Pegadinha de Fato Consumado",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE - 2023 - MPE-SC - Promotor",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE - 2023 - MPE-SC - Promotor"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"...torna difícil indicar quem seria o responsável pelo dano, uma vez que o processo decisório decorreu de um aprendizado automático...\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"No segundo período do segundo parágrafo, o tempo verbal em “seria” indica que se trata de um acontecimento que se deu no passado posteriormente a outro também ocorrido no passado.\""
+            },
+            {
+              "order": 4,
+              "action": "Análise",
+              "rationale": "Seria expressa dúvida, incerteza e indagação teórica decorrente de \"torna difícil indicar\". Não expressa um fato real consumado no passado."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G02-SEMANTICA-VERBAL-009 — Questão 09 / V004: Futuro do Pretérito como Dúvida vs. Pegadinha de Fato Consumado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G02-SEMANTICA-VERBAL-009 — Questão 09 / V004: Futuro do Pretérito como Dúvida vs. Pegadinha de Fato Consumado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G02-SEMANTICA-VERBAL-009 — Questão 09 / V004: Futuro do Pretérito como Dúvida vs. Pegadinha de Fato Consumado.",
           "blocks": [
             {
               "type": "list",
@@ -820,6 +1389,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G02-010",
           "title": "EX-A04-G02-SEMANTICA-VERBAL-010 — Questão 10 / V004: Futuro do Pretérito Teórico vs. Pegadinha de Ação Iminente",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE - 2022 - TCE-RJ - Analista",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE - 2022 - TCE-RJ - Analista"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"Dessa forma, podemos delegar cada vez mais tarefas a algoritmos que, avaliando os resultados... se reajustariam e revisariam suas regras de funcionamento...\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"No primeiro período do último parágrafo, as formas verbais “reajustariam” e “revisariam” expressam ações que estavam prestes a acontecer no passado.\""
+            },
+            {
+              "order": 4,
+              "action": "Análise",
+              "rationale": "Em contexto de projeção algorítmica, o Futuro do Pretérito expressa hipótese e possibilidade técnica, e não ações iminentes (\"prestes a acontecer\")."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G02-SEMANTICA-VERBAL-010 — Questão 10 / V004: Futuro do Pretérito Teórico vs. Pegadinha de Ação Iminente sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G02-SEMANTICA-VERBAL-010 — Questão 10 / V004: Futuro do Pretérito Teórico vs. Pegadinha de Ação Iminente.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G02-SEMANTICA-VERBAL-010 — Questão 10 / V004: Futuro do Pretérito Teórico vs. Pegadinha de Ação Iminente.",
           "blocks": [
             {
               "type": "list",
@@ -837,6 +1438,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G02-011",
           "title": "EX-A04-G02-SEMANTICA-VERBAL-011 — Questão 01 / V005: Pretérito Imperfeito do Subjuntivo com \"Talvez\" (Hipótese)",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE - CBM-CE - Aspirante",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE - CBM-CE - Aspirante"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"Talvez o grande número de escravos no Sítio do Tatu se devesse ao fato de Federalina possuir...\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"O emprego da forma verbal “devesse” (l.13) no subjuntivo justifica-se pelo sentido hipotético da primeira oração do período.\""
+            },
+            {
+              "order": 4,
+              "action": "Análise",
+              "rationale": "Devesse é Pretérito Imperfeito do Subjuntivo (se eu devesse). O advérbio Talvez justifica plenamente a oração com sentido de hipótese (= possibilidade)."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G02-SEMANTICA-VERBAL-011 — Questão 01 / V005: Pretérito Imperfeito do Subjuntivo com \"Talvez\" (Hipótese) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G02-SEMANTICA-VERBAL-011 — Questão 01 / V005: Pretérito Imperfeito do Subjuntivo com \"Talvez\" (Hipótese).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G02-SEMANTICA-VERBAL-011 — Questão 01 / V005: Pretérito Imperfeito do Subjuntivo com \"Talvez\" (Hipótese).",
           "blocks": [
             {
               "type": "list",
@@ -854,6 +1487,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G02-012",
           "title": "EX-A04-G02-SEMANTICA-VERBAL-012 — Questão 02 / V005: Futuro do Pretérito Marcando Tese Duvidosa Confirmada no Texto",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE - 2024 - CNJ - Técnico Judiciário",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE - 2024 - CNJ - Técnico Judiciário"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"De acordo com esses doutrinadores, o Estado e as suas instituições descenderiam em linha reta, e por simples evolução, da família. A verdade, bem outra, é que pertencem a ordens diferentes em essência...\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"O futuro do pretérito empregado na forma verbal “descenderiam”, no contexto do quarto período do primeiro parágrafo do texto, permite concluir que o autor considera duvidosa a percepção de que Estado e família se confundem, o que se confirma na defesa categórica do exato oposto no período seguinte.\""
+            },
+            {
+              "order": 4,
+              "action": "Análise",
+              "rationale": "O autor usa descenderiam para citar terceiros com distanciamento/dúvida. A postura duvidosa confirma-se no período seguinte quando afirma com certeza categórica que \"A verdade, bem outra, é que pertentem a ordens diferentes\"."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G02-SEMANTICA-VERBAL-012 — Questão 02 / V005: Futuro do Pretérito Marcando Tese Duvidosa Confirmada no Texto sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G02-SEMANTICA-VERBAL-012 — Questão 02 / V005: Futuro do Pretérito Marcando Tese Duvidosa Confirmada no Texto.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G02-SEMANTICA-VERBAL-012 — Questão 02 / V005: Futuro do Pretérito Marcando Tese Duvidosa Confirmada no Texto.",
           "blocks": [
             {
               "type": "list",
@@ -871,6 +1536,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G02-013",
           "title": "EX-A04-G02-SEMANTICA-VERBAL-013 — Questão 03 / V005: Futuro do Pretérito em Poesia vs. Pegadinha de \"Impossibilidade\"",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE - 2024 - CAU-BR - Analista",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE - 2024 - CAU-BR - Analista"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"O arquiteto: o que abre para o homem / (tudo se sanearia desde casas abertas) / portas por-onde, jamais portas-contra...\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"Em “tudo se sanearia desde casas abertas” (primeira estrofe), a forma verbal é empregada no futuro do pretérito no modo indicativo para expressar a certeza da impossibilidade do saneamento.\""
+            },
+            {
+              "order": 4,
+              "action": "Análise",
+              "rationale": "O poema trata da capacidade transformadora da arquitetura. Sanearia expressa possibilidade e hipótese positiva, e não \"certeza da impossibilidade\"."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G02-SEMANTICA-VERBAL-013 — Questão 03 / V005: Futuro do Pretérito em Poesia vs. Pegadinha de \"Impossibilidade\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G02-SEMANTICA-VERBAL-013 — Questão 03 / V005: Futuro do Pretérito em Poesia vs. Pegadinha de \"Impossibilidade\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G02-SEMANTICA-VERBAL-013 — Questão 03 / V005: Futuro do Pretérito em Poesia vs. Pegadinha de \"Impossibilidade\".",
           "blocks": [
             {
               "type": "list",
@@ -888,6 +1585,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G02-014",
           "title": "EX-A04-G02-SEMANTICA-VERBAL-014 — Questão 04 / V005: Presente do Subjuntivo com \"Podem Construir\" vs. \"Fato Improvável\"",
+          "prompt": "Banca / Órgão / Ano: (ADAPTADO) CESPE / CEBRASPE - 2022 - Pref. de Joinville - SC - Auxiliar de Educador",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "(ADAPTADO) CESPE / CEBRASPE - 2022 - Pref. de Joinville - SC - Auxiliar de Educador"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"Assim, as crianças podem construir para a leitura um sentimento que as aproxime desse instrumento cultural...\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"No segmento “que as aproxime desse instrumento cultural” (quarto parágrafo), o emprego do modo subjuntivo denota a ocorrência de um fato improvável.\""
+            },
+            {
+              "order": 4,
+              "action": "Análise",
+              "rationale": "Aproxime é Presente do Subjuntivo (que aproxime). A locução antecedente podem construir prova que o fato é viável e possível. Rotulá-lo como \"fato improvável\" (quase impossível) deturpa o texto."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G02-SEMANTICA-VERBAL-014 — Questão 04 / V005: Presente do Subjuntivo com \"Podem Construir\" vs. \"Fato Improvável\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G02-SEMANTICA-VERBAL-014 — Questão 04 / V005: Presente do Subjuntivo com \"Podem Construir\" vs. \"Fato Improvável\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G02-SEMANTICA-VERBAL-014 — Questão 04 / V005: Presente do Subjuntivo com \"Podem Construir\" vs. \"Fato Improvável\".",
           "blocks": [
             {
               "type": "list",
@@ -905,6 +1634,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G02-015",
           "title": "EX-A04-G02-SEMANTICA-VERBAL-015 — Questão 05 / V005: Definição Teórica com Futuro do Pretérito vs. \"Impossível de Realizar\"",
+          "prompt": "Banca / Órgão / Ano: (ADAPTADO) CESPE / CEBRASPE - Pref. de Barra dos Coqueiros - SE - Arquiteto",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "(ADAPTADO) CESPE / CEBRASPE - Pref. de Barra dos Coqueiros - SE - Arquiteto"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"Para o psicólogo..., a empatia seria 'uma forma de restabelecer um contato com um objeto de amor perdido...'.\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"No texto CG1A2-I, o emprego da forma verbal “seria” (L.23) expressa algo impossível de se realizar.\""
+            },
+            {
+              "order": 4,
+              "action": "Análise",
+              "rationale": "O especialista utiliza seria para enunciar uma definição conceitual / hipótese teórica sobre a empatia. A empatia é um fenômeno humano perfeitamente realizável."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G02-SEMANTICA-VERBAL-015 — Questão 05 / V005: Definição Teórica com Futuro do Pretérito vs. \"Impossível de Realizar\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G02-SEMANTICA-VERBAL-015 — Questão 05 / V005: Definição Teórica com Futuro do Pretérito vs. \"Impossível de Realizar\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G02-SEMANTICA-VERBAL-015 — Questão 05 / V005: Definição Teórica com Futuro do Pretérito vs. \"Impossível de Realizar\".",
           "blocks": [
             {
               "type": "list",
@@ -967,8 +1728,12 @@
         {
           "trapId": "WARN-A04-G02-SEMANTICA-VERBAL-001",
           "title": "A Armadilha do Presente Restrito ao Momento da Fala",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha do Presente Restrito ao Momento da Fala.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha do Presente Restrito ao Momento da Fala.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha do Presente Restrito ao Momento da Fala no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha do Presente Restrito ao Momento da Fala.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha do Presente Restrito ao Momento da Fala.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha do Presente Restrito ao Momento da Fala para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha do Presente Restrito ao Momento da Fala.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha do Presente Restrito ao Momento da Fala.",
           "blocks": [
             {
               "type": "list",
@@ -983,8 +1748,12 @@
         {
           "trapId": "WARN-A04-G02-SEMANTICA-VERBAL-002",
           "title": "A Pegadinha Clássica do \"Início da Ação\" para o Pretérito Imperfeito",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Pegadinha Clássica do \"Início da Ação\" para o Pretérito Imperfeito.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Pegadinha Clássica do \"Início da Ação\" para o Pretérito Imperfeito.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Pegadinha Clássica do \"Início da Ação\" para o Pretérito Imperfeito no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Pegadinha Clássica do \"Início da Ação\" para o Pretérito Imperfeito.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Pegadinha Clássica do \"Início da Ação\" para o Pretérito Imperfeito.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Pegadinha Clássica do \"Início da Ação\" para o Pretérito Imperfeito para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Pegadinha Clássica do \"Início da Ação\" para o Pretérito Imperfeito.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Pegadinha Clássica do \"Início da Ação\" para o Pretérito Imperfeito.",
           "blocks": [
             {
               "type": "list",
@@ -999,8 +1768,12 @@
         {
           "trapId": "WARN-A04-G02-SEMANTICA-VERBAL-003",
           "title": "Confundir Anterioridade Cronológica com Ordem Gráfica no Texto",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Anterioridade Cronológica com Ordem Gráfica no Texto.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Anterioridade Cronológica com Ordem Gráfica no Texto.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Anterioridade Cronológica com Ordem Gráfica no Texto no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Anterioridade Cronológica com Ordem Gráfica no Texto.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Anterioridade Cronológica com Ordem Gráfica no Texto.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Anterioridade Cronológica com Ordem Gráfica no Texto para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Anterioridade Cronológica com Ordem Gráfica no Texto.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Anterioridade Cronológica com Ordem Gráfica no Texto.",
           "blocks": [
             {
               "type": "list",
@@ -1015,8 +1788,12 @@
         {
           "trapId": "WARN-A04-G02-SEMANTICA-VERBAL-004",
           "title": "Confundir Futuro do Pretérito com Fato Consumado ou Ação Iminente",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Futuro do Pretérito com Fato Consumado ou Ação Iminente.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Futuro do Pretérito com Fato Consumado ou Ação Iminente.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Futuro do Pretérito com Fato Consumado ou Ação Iminente no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Futuro do Pretérito com Fato Consumado ou Ação Iminente.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Futuro do Pretérito com Fato Consumado ou Ação Iminente.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Futuro do Pretérito com Fato Consumado ou Ação Iminente para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Futuro do Pretérito com Fato Consumado ou Ação Iminente.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Futuro do Pretérito com Fato Consumado ou Ação Iminente.",
           "blocks": [
             {
               "type": "list",
@@ -1031,8 +1808,12 @@
         {
           "trapId": "WARN-A04-G02-SEMANTICA-VERBAL-005",
           "title": "Confundir Polidez com Dúvida no Futuro do Pretérito",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Polidez com Dúvida no Futuro do Pretérito.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Polidez com Dúvida no Futuro do Pretérito.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Polidez com Dúvida no Futuro do Pretérito no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Polidez com Dúvida no Futuro do Pretérito.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Polidez com Dúvida no Futuro do Pretérito.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Polidez com Dúvida no Futuro do Pretérito para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Polidez com Dúvida no Futuro do Pretérito.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Polidez com Dúvida no Futuro do Pretérito.",
           "blocks": [
             {
               "type": "list",
@@ -1047,8 +1828,12 @@
         {
           "trapId": "WARN-A04-G02-SEMANTICA-VERBAL-006",
           "title": "A Pegadinha Tripla da \"Impossibilidade\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Pegadinha Tripla da \"Impossibilidade\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Pegadinha Tripla da \"Impossibilidade\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Pegadinha Tripla da \"Impossibilidade\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Pegadinha Tripla da \"Impossibilidade\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Pegadinha Tripla da \"Impossibilidade\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Pegadinha Tripla da \"Impossibilidade\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Pegadinha Tripla da \"Impossibilidade\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Pegadinha Tripla da \"Impossibilidade\".",
           "blocks": [
             {
               "type": "list",
@@ -1212,7 +1997,41 @@
       "officialAnswer": "A",
       "explanation": "“Deve” é o auxiliar da locução “deve crescer” e está no presente do indicativo. Gabarito letra A.",
       "questionSha256": "70e69be6750dd6631762f8207eff07c3601c0c0f7e67a643668e1c2ccde2fb97",
-      "answerSha256": "7f5a2e87f57d71b91c9852d2917d7b2cf624e6c3215ef0a5a7252a35e585e7fd"
+      "answerSha256": "7f5a2e87f57d71b91c9852d2917d7b2cf624e6c3215ef0a5a7252a35e585e7fd",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CORE-SP; 2. Identificar a regra central de Semântica dos Tempos e Modos Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "correct",
+          "explanation": "Opção a: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Semântica dos Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "b",
+          "status": "incorrect",
+          "explanation": "Opção b: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Semântica dos Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "c",
+          "status": "incorrect",
+          "explanation": "Opção c: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Semântica dos Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Semântica dos Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "e",
+          "status": "incorrect",
+          "explanation": "Opção e: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Semântica dos Tempos e Modos Verbais."
+        }
+      ]
     },
     {
       "questionId": "aula04.q0103",
@@ -1224,7 +2043,10 @@
       "officialAnswer": "correct",
       "explanation": "Terceira pessoa do plural (eles) escutaSSEm. Observe a desinência SSE, que marca esse tempo. Questão correta.",
       "questionSha256": "a21439efc0d8deb8908205d2b340c08de89508a07a4dfb4b39bb6413133e696d",
-      "answerSha256": "ed957cba1afc577097a7f594fdfab3c50d2fd02d55cd6e96d1425170b84857da"
+      "answerSha256": "ed957cba1afc577097a7f594fdfab3c50d2fd02d55cd6e96d1425170b84857da",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de UFSC; 2. Identificar a regra central de Semântica dos Tempos e Modos Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula04.q0101",
@@ -1257,7 +2079,41 @@
       "officialAnswer": "B",
       "explanation": "“PasseiE” é forma do presente do subjuntivo: que maria passeie; que o amor passeiE. A desinência que marca esse tempo A/E: que saiA, que aprendA, que estudE, que passE. Gabarito letra B.",
       "questionSha256": "ae0ba2a8cd5420bc716982658e366ccd829fdbce3ee4e4f85a2465ec4a2cd2fb",
-      "answerSha256": "a6ba219133dbd24ec367e054696bd4cc98780b8b30c6397c02eaed1c3f57fc7b"
+      "answerSha256": "a6ba219133dbd24ec367e054696bd4cc98780b8b30c6397c02eaed1c3f57fc7b",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de IMESF; 2. Identificar a regra central de Semântica dos Tempos e Modos Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "incorrect",
+          "explanation": "Opção a: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Semântica dos Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "b",
+          "status": "correct",
+          "explanation": "Opção b: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Semântica dos Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "c",
+          "status": "incorrect",
+          "explanation": "Opção c: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Semântica dos Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Semântica dos Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "e",
+          "status": "incorrect",
+          "explanation": "Opção e: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Semântica dos Tempos e Modos Verbais."
+        }
+      ]
     },
     {
       "questionId": "aula04.q0097",
@@ -1269,7 +2125,10 @@
       "officialAnswer": "correct",
       "explanation": "O futuro do pretérito indica dúvida/possibilidade, razão por que é usado frequentemente nas condicionais. Aqui, temos que a sociedade possivelmente se desenvolveria numa situação hipotética: caso não houvesse desigualdade social. Questão correta. Vejamos agora um quadro esquemático com as divisões vistas até aqui. BACEN - Língua Portuguesa 22 www.estrategiaconcursos.com.br 154",
       "questionSha256": "7c40c531963ee40713d58386fded165b994c8d3226439c76f51caf39ecfde4d3",
-      "answerSha256": "e3544afc74db435e064ea8dac1f45585e3448e437a8b59b2228297cebf822aad"
+      "answerSha256": "e3544afc74db435e064ea8dac1f45585e3448e437a8b59b2228297cebf822aad",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CÂMARA DE SALVADOR; 2. Identificar a regra central de Semântica dos Tempos e Modos Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula04.q0080",
@@ -1281,7 +2140,10 @@
       "officialAnswer": "incorrect",
       "explanation": "São sinônimos, mas \"alumiou\" está no pretérito PERFEITO. Questão incorreta.",
       "questionSha256": "1e74cec111b455115d09274329f4ea3ceeaeab30326587196d5f97268266ef58",
-      "answerSha256": "f3ceebf48b7a009d1abac6c7b1954b62fc66ffec912bd890fe33f1d53ef3eb4c"
+      "answerSha256": "f3ceebf48b7a009d1abac6c7b1954b62fc66ffec912bd890fe33f1d53ef3eb4c",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de TRE-PA; 2. Identificar a regra central de Semântica dos Tempos e Modos Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula04.q0005",
@@ -1293,7 +2155,10 @@
       "options": [],
       "explanation": "Não há futuro. \"habituaRA\" é forma do pretérito mais-que-perfeito do indicativo. O narrador \"tinha/havia\" se habituado a ver o pai de outra maneira antes da cena narrada. Incorreto. BACEN - Língua Portuguesa 71 www.estrategiaconcursos.com.br 154",
       "questionSha256": "72cfad06422e050285fa28ec6a5f57b494d3f4fa8de1d475d85e04c89865418c",
-      "answerSha256": "9d38c4b4a461a2101a10ef3e69992679bfe00d695091797071be37042452b3da"
+      "answerSha256": "9d38c4b4a461a2101a10ef3e69992679bfe00d695091797071be37042452b3da",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Semântica dos Tempos e Modos Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

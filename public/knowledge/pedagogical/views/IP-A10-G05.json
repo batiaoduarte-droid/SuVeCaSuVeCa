@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A10-G05",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.884Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.633Z"
   },
   "unit": {
     "unitId": "IP-A10-G05",
@@ -492,6 +492,14 @@
         {
           "entityId": "RULE-IP-A10-G05-001",
           "title": "Regras canônicas",
+          "statement": "Regras canônicas",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -560,6 +568,71 @@
         {
           "procedureId": "PROC-A10-G05-001",
           "title": "Roteiro Geral do \"Farejador de Regência\"",
+          "objective": "Executar o algoritmo decisório para Roteiro Geral do \"Farejador de Regência\"",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Roteiro Geral do \"Farejador de Regência\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar e Sublinhar os Termos Regentes",
+              "explanation": "Percorrer a frase inspecionando cada substantivo, adjetivo, advérbio ou verbo subordinador.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Isolar o Sintagma Preposicionado",
+              "explanation": "Delimitar o complemento introduzido por preposição e verificar para qual palavra ele aponta.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Classificar a Natureza Morfossintática do Regente",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se for verbo $\\rightarrow$ verificar transitividade verbal (VTD, VTI, VTDI).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se for substantivo, adjetivo ou advérbio $\\rightarrow$ confirmar regência nominal.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Confrontar com o Regime Padrão Dicionarizado",
+              "explanation": "Verificar se a preposição usada é a exigida pela norma culta ou se pertence ao rol de dupla regência legítima.",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Verificar a Ocorrência de Fusão com Artigo (Crase ou Combinação)",
+              "explanation": "Se o nome reger a e o termo regido for substantivo feminino com artigo, validar a crase (à); se masculino, validar a combinação (ao).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Roteiro Geral do \"Farejador de Regência\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -605,6 +678,47 @@
         {
           "procedureId": "PROC-A10-G05-002",
           "title": "Teste Diagnóstico do Artigo para Reconhecimento de Substantivo",
+          "objective": "Executar o algoritmo decisório para Teste Diagnóstico do Artigo para Reconhecimento de Substantivo",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste Diagnóstico do Artigo para Reconhecimento de Substantivo."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isolar a palavra regente sob dúvida (certeza, necessidade, ampliação, aversão).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Antepor mentalmente ou por escrito um artigo definido (o, a) ou indefinido (um, uma).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se a inserção mantiver a naturalidade e a correção morfossintática (a certeza, a necessidade, a ampliação), o vocábulo é categoricamente um substantivo.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste Diagnóstico do Artigo para Reconhecimento de Substantivo."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -634,6 +748,65 @@
         {
           "procedureId": "PROC-A10-G05-003",
           "title": "Validação de Regência com Pronomes Relativos (Método da Ordem Direta)",
+          "objective": "Executar o algoritmo decisório para Validação de Regência com Pronomes Relativos (Método da Ordem Direta)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Validação de Regência com Pronomes Relativos (Método da Ordem Direta)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar o pronome relativo precedido de preposição (do qual, ao qual, em que).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Localizar o substantivo antecedente que o pronome substitui.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Reorganizar a oração subordinada na ordem direta (Sujeito + Verbo + Complemento), substituindo o pronome pelo substantivo antecedente.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Analisar a exigência sintática do verbo ou nome",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se o termo exigir preposição $\\rightarrow$ a preposição antes do pronome relativo é obrigatória.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se o termo não exigir preposição (ex.",
+              "explanation": "VTD) $\\rightarrow$ a preposição deve ser eliminada.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Validação de Regência com Pronomes Relativos (Método da Ordem Direta)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -672,6 +845,53 @@
         {
           "procedureId": "PROC-A10-G05-004",
           "title": "Protocolo de Avaliação de Dupla Regência e Crase",
+          "objective": "Executar o algoritmo decisório para Protocolo de Avaliação de Dupla Regência e Crase",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo de Avaliação de Dupla Regência e Crase."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar o par de preposições em análise (relacionada com vs. relacionada a; intenção de vs. intenção em).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Confirmar se o termo integra a lista canônica de dupla regência.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Verificar a fusão gráfica",
+              "explanation": "se a nova preposição for a e o termo regido for feminino determinado, confirmar a aposição do acento grave (relacionada à disciplina).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Julgar falsas as assertivas que declarem prejuízo gramatical ou semântico na troca autorizada.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo de Avaliação de Dupla Regência e Crase."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -706,6 +926,22 @@
         {
           "contrastId": "CONTRAST-IP-A10-G05-001",
           "title": "Contrastes decisivos",
+          "contrastType": "mixed",
+          "conceptA": "Contrastes decisivos",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -762,6 +998,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G05-001",
           "title": "EX-A10-G05-001 — Bateria de Fixação Teórico-Prática (Itens A a I)",
+          "prompt": "Item A: \"A entidade responsável  fazer o estudo...\" $\\rightarrow$ por (responsável = Adjetivo).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item A",
+              "rationale": "\"A entidade responsável  fazer o estudo...\" $\\rightarrow$ por (responsável = Adjetivo)."
+            },
+            {
+              "order": 2,
+              "action": "Item B",
+              "rationale": "\"Depois  um longo período...\" $\\rightarrow$ de (depois = Advérbio)."
+            },
+            {
+              "order": 3,
+              "action": "Item C",
+              "rationale": "\"Ficou furioso  os alunos.\" $\\rightarrow$ com (furioso = Adjetivo)."
+            },
+            {
+              "order": 4,
+              "action": "Item D",
+              "rationale": "\"Não houve a necessidade  que outros clientes fossem contatados.\" $\\rightarrow$ de (necessidade = Substantivo)."
+            },
+            {
+              "order": 5,
+              "action": "Item E",
+              "rationale": "\"Foi anunciada a ampliação  nossas reservas...\" $\\rightarrow$ de ou das (ampliação = Substantivo; artigo facultativo diante de possessivo)."
+            }
+          ],
+          "result": "Item I: \"Estamos imunes  crises existenciais.\" $\\rightarrow$ a ou de (imunes = Adjetivo de dupla regência).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G05-001 — Bateria de Fixação Teórico-Prática (Itens A a I) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G05-001 — Bateria de Fixação Teórico-Prática (Itens A a I).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G05-001 — Bateria de Fixação Teórico-Prática (Itens A a I).",
           "blocks": [
             {
               "type": "list",
@@ -783,6 +1051,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G05-002",
           "title": "EX-A10-G05-002 — Questão 01: Objetiva Concursos (2021) — Pref. de Horizontina/RS",
+          "prompt": "Itens Analisados:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Itens Analisados",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "I. Ele foi contrário ao pedido. (Correto",
+              "rationale": "contrário rege a + artigo o = ao)."
+            },
+            {
+              "order": 3,
+              "action": "II. Foi capaz de ações terríveis. (Correto",
+              "rationale": "capaz rege de)."
+            },
+            {
+              "order": 4,
+              "action": "III. Era um substantivo comum em dois gêneros. (Incorreto",
+              "rationale": "no contexto gramatical, comum rege a ou de, refutando em)."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito Consolidado",
+              "rationale": "Letra D (Somente os itens I e II)."
+            }
+          ],
+          "result": "Gabarito Consolidado: Letra D (Somente os itens I e II).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G05-002 — Questão 01: Objetiva Concursos (2021) — Pref. de Horizontina/RS sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G05-002 — Questão 01: Objetiva Concursos (2021) — Pref. de Horizontina/RS.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G05-002 — Questão 01: Objetiva Concursos (2021) — Pref. de Horizontina/RS.",
           "blocks": [
             {
               "type": "list",
@@ -800,6 +1100,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G05-003",
           "title": "EX-A10-G05-003 — Questão 02: Cesgranrio (2021) — IBGE — Supervisor de Pesquisas",
+          "prompt": "Análise das Alternativas:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise das Alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "A (Correta)",
+              "rationale": "Os pobres são ávidos por melhores condições de vida. (Ávido aceita dupla regência: por ou de)."
+            },
+            {
+              "order": 3,
+              "action": "B (Incorreta)",
+              "rationale": "desejo com $\\rightarrow$ o correto é desejo de / por."
+            },
+            {
+              "order": 4,
+              "action": "C (Incorreta)",
+              "rationale": "orgulho em $\\rightarrow$ o correto é orgulho de / por."
+            },
+            {
+              "order": 5,
+              "action": "D (Incorreta)",
+              "rationale": "sensível para a pobreza $\\rightarrow$ sensível rege a, exigindo crase: sensível à pobreza."
+            }
+          ],
+          "result": "Gabarito Consolidado: Letra A.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G05-003 — Questão 02: Cesgranrio (2021) — IBGE — Supervisor de Pesquisas sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G05-003 — Questão 02: Cesgranrio (2021) — IBGE — Supervisor de Pesquisas.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G05-003 — Questão 02: Cesgranrio (2021) — IBGE — Supervisor de Pesquisas.",
           "blocks": [
             {
               "type": "list",
@@ -819,6 +1151,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G05-004",
           "title": "EX-A10-G05-004 — Questão 03: Vunesp (2021) — SES-PB — Auxiliar Administrativo",
+          "prompt": "Proposta: Substituir \"enxeridos loucos pela intimidade das pessoas\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Proposta",
+              "rationale": "Substituir \"enxeridos loucos pela intimidade das pessoas\"."
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "Desejosos rege de (A incorreta); curiosos rege por/para/de, nunca com (B incorreta); avessos rege a/em (C incorreta); receosos rege de/em (D incorreta); ávidos por rege legitimamente por ou de."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Consolidado",
+              "rationale": "Letra E (ávidos por conhecer)."
+            }
+          ],
+          "result": "Gabarito Consolidado: Letra E (ávidos por conhecer).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G05-004 — Questão 03: Vunesp (2021) — SES-PB — Auxiliar Administrativo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G05-004 — Questão 03: Vunesp (2021) — SES-PB — Auxiliar Administrativo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G05-004 — Questão 03: Vunesp (2021) — SES-PB — Auxiliar Administrativo.",
           "blocks": [
             {
               "type": "list",
@@ -834,6 +1188,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G05-005",
           "title": "EX-A10-G05-005 — Questão 04: Vunesp (2019) — Pref. de Marília/SP — Arquiteto",
+          "prompt": "Proposta: Substituir \"apresentam risco de rompimento\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Proposta",
+              "rationale": "Substituir \"apresentam risco de rompimento\"."
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "Adjetivos propensas, sensíveis, suscetíveis e sujeitas regem todos a preposição a. O único adjetivo que mantém a regência com de e preserva o sentido é passíveis de."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Consolidado",
+              "rationale": "Letra B (estruturas passíveis de rompimento)."
+            }
+          ],
+          "result": "Gabarito Consolidado: Letra B (estruturas passíveis de rompimento).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G05-005 — Questão 04: Vunesp (2019) — Pref. de Marília/SP — Arquiteto sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G05-005 — Questão 04: Vunesp (2019) — Pref. de Marília/SP — Arquiteto.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G05-005 — Questão 04: Vunesp (2019) — Pref. de Marília/SP — Arquiteto.",
           "blocks": [
             {
               "type": "list",
@@ -849,6 +1225,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G05-006",
           "title": "EX-A10-G05-006 — Questão 05: Vunesp (2020) — FITO — Auxiliar de Administração",
+          "prompt": "Proposta: Substituir \"maneiras eficazes de combater a pobreza\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Proposta",
+              "rationale": "Substituir \"maneiras eficazes de combater a pobreza\"."
+            },
+            {
+              "order": 2,
+              "action": "Análise Composta",
+              "rationale": "Eficazes rege em (eficazes no combate); combate rege a, exigindo crase com o artigo de pobreza (combate à pobreza)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Consolidado",
+              "rationale": "Letra D (maneiras eficazes no combate à pobreza)."
+            }
+          ],
+          "result": "Gabarito Consolidado: Letra D (maneiras eficazes no combate à pobreza).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G05-006 — Questão 05: Vunesp (2020) — FITO — Auxiliar de Administração sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G05-006 — Questão 05: Vunesp (2020) — FITO — Auxiliar de Administração.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G05-006 — Questão 05: Vunesp (2020) — FITO — Auxiliar de Administração.",
           "blocks": [
             {
               "type": "list",
@@ -864,6 +1262,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G05-007",
           "title": "EX-A10-G05-007 — Questão 06: Instituto AOCP — UFS — Fisioterapeuta",
+          "prompt": "Enunciado: Em \"E não há dúvida que o progresso...\", NÃO há atendimento à norma quanto a:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Em \"E não há dúvida que o progresso...\", NÃO há atendimento à norma quanto a:"
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "O substantivo dúvida exige a preposição de antes de oração subordinada (dúvida de que). Sua falta constitui desvio de regência nominal."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Consolidado",
+              "rationale": "Letra A (regência nominal)."
+            }
+          ],
+          "result": "Gabarito Consolidado: Letra A (regência nominal).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G05-007 — Questão 06: Instituto AOCP — UFS — Fisioterapeuta sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G05-007 — Questão 06: Instituto AOCP — UFS — Fisioterapeuta.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G05-007 — Questão 06: Instituto AOCP — UFS — Fisioterapeuta.",
           "blocks": [
             {
               "type": "list",
@@ -879,6 +1299,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G05-008",
           "title": "EX-A10-G05-008 — Questão 07: FCC — DPE-RR — Auxiliar Administrativo",
+          "prompt": "Análise das Alternativas:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise das Alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "A (Correta)",
+              "rationale": "faz alusão a um programa (alusão rege a)."
+            },
+            {
+              "order": 3,
+              "action": "B (Incorreta)",
+              "rationale": "impacto sob o público $\\rightarrow$ o correto é impacto sobre."
+            },
+            {
+              "order": 4,
+              "action": "C (Incorreta)",
+              "rationale": "restrita de poucos $\\rightarrow$ o correto é restrita a."
+            },
+            {
+              "order": 5,
+              "action": "D (Incorreta)",
+              "rationale": "aprovação sobre o programa $\\rightarrow$ o correto é aprovação do / ao."
+            }
+          ],
+          "result": "Gabarito Consolidado: Letra A.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G05-008 — Questão 07: FCC — DPE-RR — Auxiliar Administrativo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G05-008 — Questão 07: FCC — DPE-RR — Auxiliar Administrativo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G05-008 — Questão 07: FCC — DPE-RR — Auxiliar Administrativo.",
           "blocks": [
             {
               "type": "list",
@@ -898,6 +1350,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G05-009",
           "title": "EX-A10-G05-009 — Questão 08: FCC — Pref. de Manaus — Assistente de TI",
+          "prompt": "Enunciado: \"É difícil ignorar a sensação........ estamos sendo vigiados...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "\"É difícil ignorar a sensação........ estamos sendo vigiados...\""
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "O termo regente é o substantivo sensação, que exige a preposição de introduzindo a completiva nominal (sensação de que)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Consolidado",
+              "rationale": "Letra A (de que)."
+            }
+          ],
+          "result": "Gabarito Consolidado: Letra A (de que).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G05-009 — Questão 08: FCC — Pref. de Manaus — Assistente de TI sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G05-009 — Questão 08: FCC — Pref. de Manaus — Assistente de TI.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G05-009 — Questão 08: FCC — Pref. de Manaus — Assistente de TI.",
           "blocks": [
             {
               "type": "list",
@@ -913,6 +1387,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G05-010",
           "title": "EX-A10-G05-010 — Questão 09: FGV — TJ-SC — Odontólogo",
+          "prompt": "Análise das Alternativas:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise das Alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "A (Incorreta)",
+              "rationale": "com o que discordava $\\rightarrow$ discordar rege de (de que discordava)."
+            },
+            {
+              "order": 3,
+              "action": "B (Incorreta)",
+              "rationale": "do qual não pediu para integrar $\\rightarrow$ integrar é VTD (o qual)."
+            },
+            {
+              "order": 4,
+              "action": "C (Incorreta)",
+              "rationale": "aonde trabalhar $\\rightarrow$ trabalhar exige onde; prioridade à locais tem crase indevida antes de palavra masculina plural."
+            },
+            {
+              "order": 5,
+              "action": "D (Incorreta)",
+              "rationale": "inconsciente com $\\rightarrow$ inconsciente rege de (inconsciente da limpeza)."
+            }
+          ],
+          "result": "Gabarito Consolidado: Letra E.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G05-010 — Questão 09: FGV — TJ-SC — Odontólogo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G05-010 — Questão 09: FGV — TJ-SC — Odontólogo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G05-010 — Questão 09: FGV — TJ-SC — Odontólogo.",
           "blocks": [
             {
               "type": "list",
@@ -932,6 +1438,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G05-011",
           "title": "EX-A10-G05-011 — Bateria CEBRASPE (Questões 10 a 14)",
+          "prompt": "Q10 (TJ-ES): O emprego de \"de\" em \"de que estão dominando\" justifica-se por \"sensação\". $\\rightarrow$ Certo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Q10 (TJ-ES)",
+              "rationale": "O emprego de \"de\" em \"de que estão dominando\" justifica-se por \"sensação\". $\\rightarrow$ Certo."
+            },
+            {
+              "order": 2,
+              "action": "Q11 (DETRAN-ES)",
+              "rationale": "A preposição \"a\" em \"ao uso\" e \"ao transporte\" é obrigatória por regência de \"alternativas\". $\\rightarrow$ Certo (com ressalva crítica da professora quanto ao termo na L. 11 atuar como adjetivo)."
+            },
+            {
+              "order": 3,
+              "action": "Q12 (Pref. São Cristóvão)",
+              "rationale": "Em \"necessários ao bom andamento\", \"ao\" é a fusão de preposição \"a\" (exigida por necessários) com artigo \"o\". $\\rightarrow$ Certo."
+            },
+            {
+              "order": 4,
+              "action": "Q13 (MPU)",
+              "rationale": "A substituição de \"relacionada com\" por \"relacionada à\", embora mantivesse o sentido, prejudicaria a correção gramatical. $\\rightarrow$ Errado (a dupla regência mantém a correção e o sentido)."
+            },
+            {
+              "order": 5,
+              "action": "Q14 (PGE-PE)",
+              "rationale": "Em \"intenção de difamar\", a troca de \"de\" por \"em\" mantém a correção gramatical. $\\rightarrow$ Certo (dupla regência legítima)."
+            }
+          ],
+          "result": "Q14 (PGE-PE): Em \"intenção de difamar\", a troca de \"de\" por \"em\" mantém a correção gramatical. $\\rightarrow$ Certo (dupla regência legítima).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G05-011 — Bateria CEBRASPE (Questões 10 a 14) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G05-011 — Bateria CEBRASPE (Questões 10 a 14).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G05-011 — Bateria CEBRASPE (Questões 10 a 14).",
           "blocks": [
             {
               "type": "list",
@@ -978,8 +1516,12 @@
         {
           "trapId": "WARN-A10-G05-001",
           "title": "O Erro de Reprovar a Preposição Culta por Desconhecimento",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Erro de Reprovar a Preposição Culta por Desconhecimento.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Erro de Reprovar a Preposição Culta por Desconhecimento.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Erro de Reprovar a Preposição Culta por Desconhecimento no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Erro de Reprovar a Preposição Culta por Desconhecimento.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Erro de Reprovar a Preposição Culta por Desconhecimento.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Erro de Reprovar a Preposição Culta por Desconhecimento para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Erro de Reprovar a Preposição Culta por Desconhecimento.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Erro de Reprovar a Preposição Culta por Desconhecimento.",
           "blocks": [
             {
               "type": "list",
@@ -994,8 +1536,12 @@
         {
           "trapId": "WARN-A10-G05-002",
           "title": "Omissão de Preposição diante de Orações Subordinadas",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Omissão de Preposição diante de Orações Subordinadas.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Omissão de Preposição diante de Orações Subordinadas.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Omissão de Preposição diante de Orações Subordinadas no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Omissão de Preposição diante de Orações Subordinadas.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Omissão de Preposição diante de Orações Subordinadas.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Omissão de Preposição diante de Orações Subordinadas para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Omissão de Preposição diante de Orações Subordinadas.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Omissão de Preposição diante de Orações Subordinadas.",
           "blocks": [
             {
               "type": "list",
@@ -1010,8 +1556,12 @@
         {
           "trapId": "WARN-A10-G05-003",
           "title": "Pegadinha de Falsa Concessão do CEBRASPE",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha de Falsa Concessão do CEBRASPE.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha de Falsa Concessão do CEBRASPE.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha de Falsa Concessão do CEBRASPE no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha de Falsa Concessão do CEBRASPE.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha de Falsa Concessão do CEBRASPE.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pegadinha de Falsa Concessão do CEBRASPE para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha de Falsa Concessão do CEBRASPE.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha de Falsa Concessão do CEBRASPE.",
           "blocks": [
             {
               "type": "list",
@@ -1026,8 +1576,12 @@
         {
           "trapId": "WARN-A10-G05-004",
           "title": "Confusão entre Preposição Pura e Crase Diante de Plural",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão entre Preposição Pura e Crase Diante de Plural.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão entre Preposição Pura e Crase Diante de Plural.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão entre Preposição Pura e Crase Diante de Plural no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão entre Preposição Pura e Crase Diante de Plural.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão entre Preposição Pura e Crase Diante de Plural.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão entre Preposição Pura e Crase Diante de Plural para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão entre Preposição Pura e Crase Diante de Plural.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão entre Preposição Pura e Crase Diante de Plural.",
           "blocks": [
             {
               "type": "list",
@@ -1042,8 +1596,12 @@
         {
           "trapId": "WARN-A10-G05-005",
           "title": "Confusão Semântica entre \"Sob\" e \"Sobre\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão Semântica entre \"Sob\" e \"Sobre\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão Semântica entre \"Sob\" e \"Sobre\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão Semântica entre \"Sob\" e \"Sobre\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão Semântica entre \"Sob\" e \"Sobre\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão Semântica entre \"Sob\" e \"Sobre\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão Semântica entre \"Sob\" e \"Sobre\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão Semântica entre \"Sob\" e \"Sobre\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão Semântica entre \"Sob\" e \"Sobre\".",
           "blocks": [
             {
               "type": "list",
@@ -1058,8 +1616,12 @@
         {
           "trapId": "WARN-A10-G05-006",
           "title": "Quebra de Paralelismo em Correlações Fixas",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Quebra de Paralelismo em Correlações Fixas.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Quebra de Paralelismo em Correlações Fixas.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Quebra de Paralelismo em Correlações Fixas no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Quebra de Paralelismo em Correlações Fixas.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Quebra de Paralelismo em Correlações Fixas.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Quebra de Paralelismo em Correlações Fixas para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Quebra de Paralelismo em Correlações Fixas.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Quebra de Paralelismo em Correlações Fixas.",
           "blocks": [
             {
               "type": "list",
@@ -1185,7 +1747,10 @@
       "officialAnswer": "correct",
       "explanation": "Questão correta. Temos crase pela fusão entre “anterior A+A (época) dos dinossauros. Esse A foi\nconsiderado artigo diante de substantivo elíptico.",
       "questionSha256": "1575b5a8866e6b44c461f95d582f1bb027363907531afd0d8861629ab53cea4c",
-      "answerSha256": "b8fabc241577cc52bb267aab4801752dfff3a206a67b2b329d77b3705ad3baaf"
+      "answerSha256": "b8fabc241577cc52bb267aab4801752dfff3a206a67b2b329d77b3705ad3baaf",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Regência Nominal; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula10.q0179",
@@ -1198,7 +1763,10 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "11be5446bb8d1de337cb250596398935ff8870825c4ad9bbf064bc6204b1d264",
-      "answerSha256": "3d4775444e19d6259d63f27f0150b554e1264e84de7f7acef812eb730b315f6b"
+      "answerSha256": "3d4775444e19d6259d63f27f0150b554e1264e84de7f7acef812eb730b315f6b",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Regência Nominal; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula10.q0084",
@@ -1211,7 +1779,10 @@
       "officialAnswer": "incorrect",
       "explanation": "A preposição “DE” é obrigatória pela regência do adjetivo “afastados”: afastados de algo >\nafastado de uma ferocidade. Como foi utilizado o pronome relativo, a preposição obrigatória\naparece normalmente antes desse pronome:\na uma ferocidade de que todos queriam vê-los afastados. Questão incorreta.",
       "questionSha256": "11f5180c91d836f67c253b6352b36ad04030dd29c7f74bcce41f4aa4e34a5071",
-      "answerSha256": "91410967df0a2b3bdf723ade1e6ac616523792daef09c609f633d90060cba16c"
+      "answerSha256": "91410967df0a2b3bdf723ade1e6ac616523792daef09c609f633d90060cba16c",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Regência Nominal; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula10.q0177",
@@ -1223,7 +1794,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "0d7cc2dabdcd39ef90b58627649f1277f74d16490a95b05315f066789f7437a1",
-      "answerSha256": "d5f21c05b4c3e492345a6b9f2542c3284d11dce972a2cdb4ed6229e150432024"
+      "answerSha256": "d5f21c05b4c3e492345a6b9f2542c3284d11dce972a2cdb4ed6229e150432024",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Regência Nominal; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula10.q0082",
@@ -1237,7 +1811,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Aqui, não há prejuízo gramatical algum, pois a troca da preposição “com” por “a” geraria a\nnecessidade do acento grave, como a banca propôs:\n“relacionada com a disciplina”\nrelacionada à disciplina (relacionada A+A disciplina)\nQuestão incorreta.",
       "questionSha256": "819c2d3b502bcfea6c8f6e0a02f7f715e45c479c27139c72bec4426c3b14b254",
-      "answerSha256": "194873dc68cc6d4608784623f990df8207fa4eadfc1cc9c2ea9c40b0aee9fba7"
+      "answerSha256": "194873dc68cc6d4608784623f990df8207fa4eadfc1cc9c2ea9c40b0aee9fba7",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Regência Nominal; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula10.q0175",
@@ -1250,7 +1827,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "f272ba790afdbb07dee454cc02f34b83cd9fd45372a011bd1ee020ce008a8b5c",
-      "answerSha256": "c3ce641bd37952e9093de4c58de2e8f593a37326fe62057375a741904b93f373"
+      "answerSha256": "c3ce641bd37952e9093de4c58de2e8f593a37326fe62057375a741904b93f373",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Regência Nominal; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

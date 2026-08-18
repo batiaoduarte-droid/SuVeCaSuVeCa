@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A13-G04",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.916Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.666Z"
   },
   "unit": {
     "unitId": "IP-A13-G04",
@@ -248,6 +248,16 @@
         {
           "entityId": "RULE-IP-A13-G04-001",
           "title": "Regras canônicas",
+          "statement": "Critério da Intenção Comunicativa: KB-A13-G04-NARRA-DISS-EXP-002 estabelece que a classificação tipológica soberana depende da finalidade do autor (relatar fatos particulares de personagens $\\rightarrow$ Narração; expor e esclarecer conhecimentos $\\rightarrow$ Dissertação Expositiva).\nRegra da Vinculação ao Tema: KB-A13-G04-NARRA-DISS-EXP-002 define que texto que orbita em torno de um tema central conceitual é dissertativo, ainda que contenha datas e cronologia pretérita.\nRegra da Equivalência Expositivo-Informativa: KB-A13-G04-NARRA-DISS-EXP-004 define que todo texto informativo é, em sua essência discursiva, uma dissertação expositiva caracterizada pela veiculação de novidades ao público.\nRegra da Opinião de Terceiros: KB-A13-G04-NARRA-DISS-EXP-005 estipula que a menção a pontos de vista ou declarações de autoridades externas é tratada pelo autor como dado factual, não descaracterizando a dissertação expositiva.\nRegra do Hibridismo Tipológico: KB-A13-G04-NARRA-DISS-EXP-006 estabelece a coexistência hierarquizada entre a tipologia predominante do texto global (macroestrutura) e a tipologia de sequências internas ilustrativas (microestrutura).",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Critério da Intenção Comunicativa: KB-A13-G04-NARRA-DISS-EXP-002 estabelece que a classificação tipológica soberana depende da finalidade do autor (relatar fatos particulares de personagens $\\rightarrow$ Narração; expor e esclarecer conhecimentos $\\rightarrow$ Dissertação Expositiva).",
+            "Regra da Vinculação ao Tema: KB-A13-G04-NARRA-DISS-EXP-002 define que texto que orbita em torno de um tema central conceitual é dissertativo, ainda que contenha datas e cronologia pretérita.",
+            "Regra da Equivalência Expositivo-Informativa: KB-A13-G04-NARRA-DISS-EXP-004 define que todo texto informativo é, em sua essência discursiva, uma dissertação expositiva caracterizada pela veiculação de novidades ao público.",
+            "Regra da Opinião de Terceiros: KB-A13-G04-NARRA-DISS-EXP-005 estipula que a menção a pontos de vista ou declarações de autoridades externas é tratada pelo autor como dado factual, não descaracterizando a dissertação expositiva."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -269,6 +279,95 @@
         {
           "procedureId": "PROC-A13-G04-NARRA-DISS-EXP-001",
           "title": "Método Unificado para Diagnóstico Tipológico em Concursos",
+          "objective": "Executar o algoritmo decisório para Método Unificado para Diagnóstico Tipológico em Concursos",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método Unificado para Diagnóstico Tipológico em Concursos."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Delimitar o Escopo da Assertiva",
+              "explanation": "Verificar se a questão indaga sobre a totalidade do texto (\"Predomina no texto o tipo...\") ou sobre um parágrafo/trecho específico (\"Seu terceiro parágrafo é essencialmente...\").",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Inspeção Estrutural Rápida",
+              "explanation": "Ler atentamente o início (primeiro e segundo parágrafos) e o encerramento do texto para capturar a espinha dorsal discursiva.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Interrogar a Intenção do Autor",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "O autor veio relatar uma história de personagens (enredo/trama)? $\\rightarrow$ Hipótese",
+              "explanation": "Narração.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "O autor veio expor, explicar ou noticiar dados sobre um assunto? $\\rightarrow$ Hipótese",
+              "explanation": "Dissertação Expositiva / Informativa.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "O autor veio defender tese própria e persuadir o leitor com juízos de valor? $\\rightarrow$ Hipótese",
+              "explanation": "Dissertação Argumentativa.",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Verificar a Presença do Tema (\"Mantra\")",
+              "explanation": "Identificar o núcleo conceitual reiterado no texto. Havendo tema condutor (leis, tecnologias, eventos científicos), trata-se de dissertação.",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Validar as Marcas Linguísticas sem Mecanicismo",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Se for narração",
+              "explanation": "checar a cadeia de ações no tempo (antes e depois), em pretérito perfeito ou presente histórico.",
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Se for dissertação com verbos no passado",
+              "explanation": "verificar se os verbos apenas relatam acontecimentos institucionais ou métodos de pesquisa passados para fundamentar a exposição do tema.",
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Avaliar Eventual Hibridismo",
+              "explanation": "Se o texto global for dissertativo, mas um parágrafo narrar um caso particular/hipotético de uma personagem, reconhecer a convivência de microestrutura narrativa em macroestrutura dissertativa.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método Unificado para Diagnóstico Tipológico em Concursos."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -334,6 +433,22 @@
         {
           "contrastId": "CONTRAST-IP-A13-G04-001",
           "title": "Contrastes decisivos",
+          "contrastType": "mixed",
+          "conceptA": "Contrastes decisivos",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -396,6 +511,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G04-001",
           "title": "Trecho analisado",
+          "prompt": "\"Em nossa família, meu avô morreu no front; de seus três filhos, dois serviram no Exército e desapareceram nos primeiros meses da guerra.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"\"Em nossa família, meu avô morreu no front; de seus três fil...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Trecho analisado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Trecho analisado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Trecho analisado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Trecho analisado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -406,6 +543,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G04-002",
           "title": "Análise pedagógica",
+          "prompt": "Verbos: morreu, serviram, desapareceram (Pretérito Perfeito do Indicativo).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Verbos",
+              "rationale": "morreu, serviram, desapareceram (Pretérito Perfeito do Indicativo)."
+            },
+            {
+              "order": 2,
+              "action": "Sequência cronológica",
+              "rationale": "Morte do avô $\\rightarrow$ alistamento/serviço dos filhos $\\rightarrow$ desaparecimento no conflito."
+            },
+            {
+              "order": 3,
+              "action": "Intenção do autor",
+              "rationale": "Relatar episódios dramáticos vivenciados por integrantes de sua própria família."
+            },
+            {
+              "order": 4,
+              "action": "Classificação",
+              "rationale": "Texto Narrativo."
+            }
+          ],
+          "result": "Classificação: Texto Narrativo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise pedagógica sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise pedagógica.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise pedagógica.",
           "blocks": [
             {
               "type": "list",
@@ -422,6 +586,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G04-003",
           "title": "Trecho analisado",
+          "prompt": "\"Em 2016, a ONU criou o Dia Internacional das Mulheres e Meninas na Ciência, celebrado em 11 de fevereiro. A criação da data representou um importante marco.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"\"Em 2016, a ONU criou o Dia Internacional das Mulheres e Men...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Trecho analisado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Trecho analisado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Trecho analisado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Trecho analisado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -432,6 +618,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G04-004",
           "title": "Análise pedagógica",
+          "prompt": "Verbos: criou, representou (Pretérito Perfeito do Indicativo).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Verbos",
+              "rationale": "criou, representou (Pretérito Perfeito do Indicativo)."
+            },
+            {
+              "order": 2,
+              "action": "Marcadores temporais",
+              "rationale": "em 2016, em 11 de fevereiro."
+            },
+            {
+              "order": 3,
+              "action": "Intenção do autor",
+              "rationale": "Apresentar e esclarecer a origem e a importância de uma data temática internacional."
+            },
+            {
+              "order": 4,
+              "action": "Tema central",
+              "rationale": "Dia Internacional das Mulheres e Meninas na Ciência."
+            },
+            {
+              "order": 5,
+              "action": "Classificação",
+              "rationale": "Dissertação Expositiva (não é narração, apesar das datas e verbos no passado)."
+            }
+          ],
+          "result": "Classificação: Dissertação Expositiva (não é narração, apesar das datas e verbos no passado).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise pedagógica sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise pedagógica.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise pedagógica.",
           "blocks": [
             {
               "type": "list",
@@ -449,6 +667,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G04-005",
           "title": "Dados da questão",
+          "prompt": "Banca / Ano / Órgão / Cargo: CESPE / CEBRASPE – 2025 – Inoversa认Sul – Professor de Língua Portuguesa.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Ano / Órgão / Cargo",
+              "rationale": "CESPE / CEBRASPE – 2025 – Inoversa认Sul – Professor de Língua Portuguesa."
+            },
+            {
+              "order": 2,
+              "action": "Enunciado / Item",
+              "rationale": "\"O encadeamento de acontecimentos expressos por verbos no pretérito perfeito, como ocorre no primeiro parágrafo, é um dos elementos que caracterizam o texto como narrativo.\""
+            },
+            {
+              "order": 3,
+              "action": "Texto de apoio (fragmento)",
+              "rationale": "Fragmento da Revista Piauí relatando a rotina matinal de Cleber de Souza e a visita de Francis Ford Coppola (acordou, cumpriu rotina, se vestiu e partiu, pagou por uma única foto, foi tietado, criou uma pizza)."
+            }
+          ],
+          "result": "Texto de apoio (fragmento): Fragmento da Revista Piauí relatando a rotina matinal de Cleber de Souza e a visita de Francis Ford Coppola (acordou, cumpriu rotina, se vestiu e partiu, pagou por uma única foto, foi tietado, criou uma pizza).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Dados da questão sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Dados da questão.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Dados da questão.",
           "blocks": [
             {
               "type": "list",
@@ -464,6 +704,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G04-006",
           "title": "Resolução e fundamentação",
+          "prompt": "A assertiva correlaciona corretamente a presença de uma sucessão temporal de eventos amparada em verbos no pretérito perfeito (acordou, cumpriu, vestiu, partiu, pagou, criou) à caracterização da tipologia narrativa.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução e fundamentação sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução e fundamentação.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução e fundamentação.",
           "blocks": [
             {
               "type": "paragraph",
@@ -481,6 +733,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G04-007",
           "title": "Dados da questão",
+          "prompt": "Banca / Ano / Órgão / Cargo: CESPE / CEBRASPE – 2024 – TCE-AC – Técnico de Controle Externo – TI.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Ano / Órgão / Cargo",
+              "rationale": "CESPE / CEBRASPE – 2024 – TCE-AC – Técnico de Controle Externo – TI."
+            },
+            {
+              "order": 2,
+              "action": "Enunciado / Item",
+              "rationale": "\"O texto é, essencialmente, informativo.\""
+            },
+            {
+              "order": 3,
+              "action": "Texto de apoio (fragmento)",
+              "rationale": "Texto sobre a introdução e os impactos da inteligência artificial na educação (Inteligência Liberada), citando relatórios internacionais e ferramentas."
+            }
+          ],
+          "result": "Texto de apoio (fragmento): Texto sobre a introdução e os impactos da inteligência artificial na educação (Inteligência Liberada), citando relatórios internacionais e ferramentas.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Dados da questão sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Dados da questão.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Dados da questão.",
           "blocks": [
             {
               "type": "list",
@@ -496,6 +770,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G04-008",
           "title": "Resolução e fundamentação",
+          "prompt": "O texto apresenta novidades, conceitos e dados factuais sobre a tecnologia na educação, sem defender julgamentos morais ou teses subjetivas do autor. Para a banca Cebraspe, a denominação \"texto informativo\" equivale rigorosamente à dissertação expositivo-informativa.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução e fundamentação sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução e fundamentação.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução e fundamentação.",
           "blocks": [
             {
               "type": "paragraph",
@@ -513,6 +799,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G04-009",
           "title": "Dados da questão",
+          "prompt": "Banca / Ano / Órgão / Cargo: CEBRASPE – 2024 – Prefeitura de Cachoeiro de Itapemirim – ES – Auxiliar Administrativo – Texto CB3A1-I.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Ano / Órgão / Cargo",
+              "rationale": "CEBRASPE – 2024 – Prefeitura de Cachoeiro de Itapemirim – ES – Auxiliar Administrativo – Texto CB3A1-I."
+            },
+            {
+              "order": 2,
+              "action": "Enunciado / Item",
+              "rationale": "\"Predomina no texto o tipo textual narrativo.\""
+            },
+            {
+              "order": 3,
+              "action": "Texto de apoio (fragmento)",
+              "rationale": "Divulgação científica sobre o impacto de cochilos diurnos na preservação do volume cerebral (\"A soneca habitual foi relacionada...\", \"disse a pesquisadora\")."
+            }
+          ],
+          "result": "Texto de apoio (fragmento): Divulgação científica sobre o impacto de cochilos diurnos na preservação do volume cerebral (\"A soneca habitual foi relacionada...\", \"disse a pesquisadora\").",
+          "decisivePoint": "Aplicação estrita da regra canônica de Dados da questão sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Dados da questão.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Dados da questão.",
           "blocks": [
             {
               "type": "list",
@@ -528,6 +836,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G04-010",
           "title": "Resolução e fundamentação",
+          "prompt": "O texto é dissertativo expositivo-informativo, pois gravita em torno do tema \"tirar cochilos durante o dia\". As formas verbais no pretérito perfeito (foi relacionada, mostraram, disse) apenas relatam as etapas da pesquisa e a autoria das declarações científicas, não constituindo enredo de personagens.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Gabarito Oficial",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito Oficial: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução e fundamentação sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução e fundamentação.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução e fundamentação.",
           "blocks": [
             {
               "type": "paragraph",
@@ -545,6 +865,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G04-011",
           "title": "Dados da questão",
+          "prompt": "Banca / Órgão / Cargo: CEBRASPE – TJ-AM – Analista Judiciário – Analista de Sistemas – Texto CB1A1-I.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Cargo",
+              "rationale": "CEBRASPE – TJ-AM – Analista Judiciário – Analista de Sistemas – Texto CB1A1-I."
+            },
+            {
+              "order": 2,
+              "action": "Enunciado / Item",
+              "rationale": "\"Embora o texto seja predominantemente dissertativo, seu terceiro parágrafo é essencialmente narrativo.\""
+            },
+            {
+              "order": 3,
+              "action": "Texto de apoio (fragmento)",
+              "rationale": "Texto sobre contratos inteligentes (smart contracts). O 3º parágrafo ilustra a tecnologia com o caso hipotético de Alice (\"compre um automóvel... introduz sua chave... a porta não abre... chega o funcionário... liga o motor... o banco recupera\")."
+            }
+          ],
+          "result": "Texto de apoio (fragmento): Texto sobre contratos inteligentes (smart contracts). O 3º parágrafo ilustra a tecnologia com o caso hipotético de Alice (\"compre um automóvel... introduz sua chave... a porta não abre... chega o funcionário... liga o motor... o banco recupera\").",
+          "decisivePoint": "Aplicação estrita da regra canônica de Dados da questão sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Dados da questão.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Dados da questão.",
           "blocks": [
             {
               "type": "list",
@@ -560,6 +902,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G04-012",
           "title": "Resolução e fundamentação",
+          "prompt": "A assertiva está correta em suas duas partes: (1) o macrotexto é dissertativo expositivo (discute o tema dos smart contracts no início e fim); (2) o terceiro parágrafo relata uma cadeia sucessiva de acontecimentos vivenciados por Alice em presente histórico, configurando uma narrativa interna.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução e fundamentação sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução e fundamentação.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução e fundamentação.",
           "blocks": [
             {
               "type": "paragraph",
@@ -607,8 +961,12 @@
         {
           "trapId": "WARN-A13-G04-NARRA-DISS-EXP-001",
           "title": "A Pegadinha do Pretérito Perfeito em Textos Científicos e Históricos",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Pegadinha do Pretérito Perfeito em Textos Científicos e Históricos.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Pegadinha do Pretérito Perfeito em Textos Científicos e Históricos.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Pegadinha do Pretérito Perfeito em Textos Científicos e Históricos no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Pegadinha do Pretérito Perfeito em Textos Científicos e Históricos.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Pegadinha do Pretérito Perfeito em Textos Científicos e Históricos.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Pegadinha do Pretérito Perfeito em Textos Científicos e Históricos para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Pegadinha do Pretérito Perfeito em Textos Científicos e Históricos.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Pegadinha do Pretérito Perfeito em Textos Científicos e Históricos.",
           "blocks": [
             {
               "type": "list",
@@ -624,8 +982,12 @@
         {
           "trapId": "WARN-A13-G04-NARRA-DISS-EXP-002",
           "title": "Confundir Citação de Especialistas com Dissertação Argumentativa",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Citação de Especialistas com Dissertação Argumentativa.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Citação de Especialistas com Dissertação Argumentativa.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Citação de Especialistas com Dissertação Argumentativa no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Citação de Especialistas com Dissertação Argumentativa.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Citação de Especialistas com Dissertação Argumentativa.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Citação de Especialistas com Dissertação Argumentativa para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Citação de Especialistas com Dissertação Argumentativa.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Citação de Especialistas com Dissertação Argumentativa.",
           "blocks": [
             {
               "type": "list",
@@ -640,8 +1002,12 @@
         {
           "trapId": "WARN-A13-G04-NARRA-DISS-EXP-003",
           "title": "Desconsiderar o Hibridismo Tipológico",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Desconsiderar o Hibridismo Tipológico.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Desconsiderar o Hibridismo Tipológico.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Desconsiderar o Hibridismo Tipológico no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Desconsiderar o Hibridismo Tipológico.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Desconsiderar o Hibridismo Tipológico.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Desconsiderar o Hibridismo Tipológico para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Desconsiderar o Hibridismo Tipológico.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Desconsiderar o Hibridismo Tipológico.",
           "blocks": [
             {
               "type": "list",
@@ -739,7 +1105,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Não se pode afirmar isso. Apenas foi dito que o nome é hispânico. Garcia é um nome hispânico e\nnem todo Garcia é espanhol. Questão incorreta.",
       "questionSha256": "0cfcac50ab0abc062263022aacaeb1d9d0630254fa35200b8a18e83c6f850c43",
-      "answerSha256": "a4ce290ef30e3140ed1698dc91667978b6d10e29b11e1dcc6a0294a55a5964e4"
+      "answerSha256": "a4ce290ef30e3140ed1698dc91667978b6d10e29b11e1dcc6a0294a55a5964e4",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Narração e Dissertação Expositiva; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula13.q0317",
@@ -751,7 +1120,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "40453e848403d9ac8e4e44c12f00e93bfaa9fc6611ee616e36bc4a4fe875ebcb",
-      "answerSha256": "77f8a3660840d4bcb0ae359002cd74f1ba8ed88858de1ba704e92ac9a97b4f17"
+      "answerSha256": "77f8a3660840d4bcb0ae359002cd74f1ba8ed88858de1ba704e92ac9a97b4f17",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Narração e Dissertação Expositiva; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula13.q0166",
@@ -764,7 +1136,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Seguindo a literalidade, conforme o texto, o responsável é o Modelo Capitalista. Leiamos no\ntexto essa afirmação:\nO modelo econômico de produção  capitalista, aperfeiçoado pelos avanços  científicos e\ntecnológicos que, por sua vez, proporcionaram a reestruturação da produção e a Terceira\nRevolução Industrial, retirou do trabalho seu valor, transformando o empregado em simples\nmercadoria inserta no processo de produção. Questão incorreta.",
       "questionSha256": "bf3a82fb2f3db75fbec68cd826607ef1321b1432f25897f0d26267bc4ecce1d5",
-      "answerSha256": "177ee9075b730233125315e28022591fc89565619ad0c8d0e4e9080d32eac5a2"
+      "answerSha256": "177ee9075b730233125315e28022591fc89565619ad0c8d0e4e9080d32eac5a2",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Narração e Dissertação Expositiva; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula13.q0312",
@@ -776,7 +1151,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "7bd2b3d59db8c80d4e71cf3c1731d564325cd75d9620a94d6d98568515d524e7",
-      "answerSha256": "3a219f3d3b4d501ccd1be0fcf3ccbc501b6183c88bf50b1e3cfcfbe0dc148673"
+      "answerSha256": "3a219f3d3b4d501ccd1be0fcf3ccbc501b6183c88bf50b1e3cfcfbe0dc148673",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Narração e Dissertação Expositiva; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula13.q0043",
@@ -789,7 +1167,10 @@
       "officialAnswer": "correct",
       "explanation": "Certo. O texto é predominantemente expositivo e tem como informação principal a definição de\n“Atividade de  inteligência” e suas  divisões em  “inteligência” e “contrainteligência”. Sua\nfinalidade principal é informar, dissertar sobre a distinção entre esses dois conceitos. Questão\ncorreta.",
       "questionSha256": "1f37468eca0a332c67b001cd632435dbade65336b1b1539d2c68b4206c4ffcab",
-      "answerSha256": "15c4f1dc436f77597cae21bed4983d0197e2bea799ab43b4d5b2674eaa40b9ae"
+      "answerSha256": "15c4f1dc436f77597cae21bed4983d0197e2bea799ab43b4d5b2674eaa40b9ae",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Narração e Dissertação Expositiva; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula13.q0071",
@@ -801,7 +1182,10 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "5467cd6b8909347a332104d49a25fd54e0e5c386c3e813289902bc8dc57103ec",
-      "answerSha256": "145395e63530bac69ccc208ab1fb8eb3bab16a918be435d052a475d3dae190fc"
+      "answerSha256": "145395e63530bac69ccc208ab1fb8eb3bab16a918be435d052a475d3dae190fc",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Narração e Dissertação Expositiva; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A07-G04",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.836Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.584Z"
   },
   "unit": {
     "unitId": "IP-A07-G04",
@@ -457,6 +457,14 @@
         {
           "entityId": "RULE-IP-A07-G04-001",
           "title": "Tabela Sintética das 9 Subclasses Adverbiais (6C + FTP)",
+          "statement": "Tabela Sintética das 9 Subclasses Adverbiais (6C + FTP)",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Tabela Sintética das 9 Subclasses Adverbiais (6C + FTP)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -537,6 +545,80 @@
         {
           "procedureId": "PROC-A07-G04-001",
           "title": "O Teste Semântico Operacional de Causa e Consequência",
+          "objective": "Executar o algoritmo decisório para O Teste Semântico Operacional de Causa e Consequência",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de O Teste Semântico Operacional de Causa e Consequência."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isolamento dos Fatos",
+              "explanation": "Identifique os dois acontecimentos interconectados no período (Fato A e Fato B).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Molde Universal",
+              "explanation": "Monte mentalmente a estrutura:",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Determinação dos Papéis",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "O fato que preenche a lacuna de \"O fato de...\" é a CAUSA (motivo originador);",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "O fato que preenche a lacuna de \"...fez com que\" é a CONSEQUÊNCIA / EFEITO (desfecho derivado).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Conferência da Pergunta da Banca",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Se o enunciado sublinhou o trecho que preenche \"O fato de...\", assinale CAUSAL;",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Se o enunciado sublinhou o trecho que preenche \"fez com que...\", assinale CONSECUTIVA.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de O Teste Semântico Operacional de Causa e Consequência."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "formulas": [
+            "\\text{\"O fato de [Fato A] fez com que acontecesse [Fato B]\"}"
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -603,6 +685,77 @@
         {
           "procedureId": "PROC-A07-G04-002",
           "title": "Técnica de Resolução Vertical por Inspeção de Conectivos",
+          "objective": "Executar o algoritmo decisório para Técnica de Resolução Vertical por Inspeção de Conectivos",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Técnica de Resolução Vertical por Inspeção de Conectivos."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Comando da Questão",
+              "explanation": "Identifique a relação semântica exigida pela banca (ex.: \"a segunda parte expressa consequência\").",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Localização dos Marcadores de Divisão",
+              "explanation": "Observe a barra / ou vírgula que separa as orações nas alternativas A, B, C, D, E.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Inspeção Vertical dos Conectivos",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Conjunção alternativa (ou) $\\rightarrow$ Elimine;",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Locução causal (já que, visto que) $\\rightarrow$ Elimine;",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Conjunção adversativa (mas, porém) $\\rightarrow$ Elimine;",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Pronome relativo (que) com valor adjetivo restritivo $\\rightarrow$ Elimine;",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Intensificador correlato (tão, tanto, tamanho) na 1ª oração seguido de que na 2ª $\\rightarrow$ Marque o gabarito.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Técnica de Resolução Vertical por Inspeção de Conectivos."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -647,6 +800,47 @@
         {
           "procedureId": "PROC-A07-G04-003",
           "title": "Desambiguação Funcional da Locução \"Assim Como\"",
+          "objective": "Executar o algoritmo decisório para Desambiguação Funcional da Locução \"Assim Como\"",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Desambiguação Funcional da Locução \"Assim Como\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identifique os elementos articulados pela locução",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Se conecta termos nominais, somando sujeitos para o mesmo predicado $\\rightarrow$ Valor Aditivo (\"A professora, assim como os alunos, compareceu\");",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se conecta duas orações completas (com verbos expressos ou elípticos), confrontando condutas ou estados $\\rightarrow$ Valor Comparativo (\"Ele agiu com firmeza, assim como o pai agira\").",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Desambiguação Funcional da Locução \"Assim Como\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -686,6 +880,53 @@
         {
           "procedureId": "PROC-A07-G04-004",
           "title": "Teste do Modo Verbal para a Locução \"Desde que\"",
+          "objective": "Executar o algoritmo decisório para Teste do Modo Verbal para a Locução \"Desde que\"",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste do Modo Verbal para a Locução \"Desde que\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize a oração subordinada encabeçada por \"desde que\";",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Inspecione a forma verbal associada",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Verbo no Modo Subjuntivo (trabalhe, fizesse, venha) $\\rightarrow$ Equivale a contanto que $\\rightarrow$ Condição;",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Verbo no Modo Indicativo (chegou, começou, mora) $\\rightarrow$ Marca cronológica de início $\\rightarrow$ Tempo.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste do Modo Verbal para a Locução \"Desde que\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -730,6 +971,22 @@
         {
           "contrastId": "CONTRAST-IP-A07-G04-001",
           "title": "1. Causa vs. Condição vs. Consequência",
+          "contrastType": "mixed",
+          "conceptA": "1. Causa vs. Condição vs. Consequência",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -770,6 +1027,22 @@
         {
           "contrastId": "CONTRAST-IP-A07-G04-002",
           "title": "2. Oposição Adversativa vs. Oposição Concessiva",
+          "contrastType": "mixed",
+          "conceptA": "2. Oposição Adversativa vs. Oposição Concessiva",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -811,6 +1084,22 @@
         {
           "contrastId": "CONTRAST-IP-A07-G04-003",
           "title": "3. Perfil de Cobrança por Bancas Examinadoras",
+          "contrastType": "mixed",
+          "conceptA": "3. Perfil de Cobrança por Bancas Examinadoras",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -851,6 +1140,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G04-001",
           "title": "Bateria 1: Exercícios de Fixação com Código Numérico (material de origem)",
+          "prompt": "Sistema de Códigos: (1) Causal | (2) Consecutiva | (3) Concessiva | (4) Condicional | (5) Comparativa | (6) Conformativa | (7) Final | (8) Proporcional | (9) Temporal",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "EX-A07-G04-001 (EX-A07-V011-001 / )",
+              "rationale": "\"O que você faria se ela entrasse por aquela porta?\" $\\rightarrow$ se introduz hipótese $\\rightarrow$ Código (4) Condicional."
+            },
+            {
+              "order": 2,
+              "action": "EX-A07-G04-002 (EX-A07-V011-002 / )",
+              "rationale": "\"Antes que essa coluna fosse publicada, tomei a decisão.\" $\\rightarrow$ Antes que localiza no tempo $\\rightarrow$ Código (9) Temporal."
+            },
+            {
+              "order": 3,
+              "action": "EX-A07-G04-003 (EX-A07-V011-003 / )",
+              "rationale": "\"Nossa aventura existencial terá mais ou menos chance à medida que esse chão for confiável.\" $\\rightarrow$ à medida que indica proporção $\\rightarrow$ Código (8) Proporcional."
+            },
+            {
+              "order": 4,
+              "action": "EX-A07-G04-004 (EX-A07-V011-004 / )",
+              "rationale": "\"Conquanto estivesse descontente, não desistia do plano.\" $\\rightarrow$ Conquanto equivale a embora $\\rightarrow$ Código (3) Concessiva."
+            },
+            {
+              "order": 5,
+              "action": "EX-A07-G04-005 (EX-A07-V011-005 / )",
+              "rationale": "\"Segundo previu o economista, o mercado se estabilizou.\" $\\rightarrow$ Segundo indica conformidade $\\rightarrow$ Código (6) Conformativa."
+            }
+          ],
+          "result": "EX-A07-G04-011 (EX-A07-V011-011 / ): \"Mesmo que insista no pedido, não irei à posse do prefeito.\" $\\rightarrow$ Mesmo que expressa ressalva $\\rightarrow$ Código (3) Concessiva.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Bateria 1: Exercícios de Fixação com Código Numérico (material de origem) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Bateria 1: Exercícios de Fixação com Código Numérico (material de origem).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Bateria 1: Exercícios de Fixação com Código Numérico (material de origem).",
           "blocks": [
             {
               "type": "paragraph",
@@ -878,6 +1199,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G04-002",
           "title": "Bateria 2: Questões da Banca VUNESP (material de origem)",
+          "prompt": "EX-A07-G04-012 (EX-A07-V012-001 / / PC-SP 2018): \"Se eu resolver isso aqui, vou acabar com o conflito...\" $\\rightarrow$ Se encabeça hipótese $\\rightarrow$ Gabarito: B (condição).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "EX-A07-G04-012 (EX-A07-V012-001 / / PC-SP 2018)",
+              "rationale": "\"Se eu resolver isso aqui, vou acabar com o conflito...\" $\\rightarrow$ Se encabeça hipótese $\\rightarrow$ Gabarito: B (condição)."
+            },
+            {
+              "order": 2,
+              "action": "EX-A07-G04-013 (EX-A07-V012-002 / / TJ-SP Escrevente)",
+              "rationale": "\"– (I) Se você não me ajudar com a lição de casa, (II) eu vou processar você –\" $\\rightarrow$ (I) Condição (possível causa) e (II) Possível ação consequente $\\rightarrow$ Gabarito: B."
+            },
+            {
+              "order": 3,
+              "action": "EX-A07-G04-014 (EX-A07-V012-003 / / Pref. Guaratinguetá 2019)",
+              "rationale": "\"Embora seja cedo para qualquer conclusão definitiva...\" $\\rightarrow$ Conectivo concessivo prototípico $\\rightarrow$ Gabarito: D (concessão)."
+            },
+            {
+              "order": 4,
+              "action": "EX-A07-G04-015 (EX-A07-V012-004 / / PC-SP 2018)",
+              "rationale": "\"Não pagavam conta de luz e gás porque luz e gás não consumiam.\" $\\rightarrow$ porque expressa a causa geradora $\\rightarrow$ Gabarito: E (causa)."
+            },
+            {
+              "order": 5,
+              "action": "EX-A07-G04-016 (EX-A07-V012-005 / / Pref. Serrana 2018)",
+              "rationale": "\"A preocupação é tamanha que o tema ganhou lugar de destaque...\" $\\rightarrow$ Par correlativo tamanha... que $\\rightarrow$ Gabarito: B (consequência)."
+            }
+          ],
+          "result": "EX-A07-G04-018 (EX-A07-V012-007 / / Câm. Dois Córregos 2018): Alternativa cuja segunda parte expressa consequência $\\rightarrow$ \"...com tantos detalhes e com uma exatidão tão perfeita / que são comparáveis a uma gravação\" $\\rightarrow$ Gabarito: B.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Bateria 2: Questões da Banca VUNESP (material de origem) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Bateria 2: Questões da Banca VUNESP (material de origem).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Bateria 2: Questões da Banca VUNESP (material de origem).",
           "blocks": [
             {
               "type": "list",
@@ -897,6 +1250,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G04-003",
           "title": "Bateria 3: Questões das Bancas Instituto AOCP e FCC (material de origem)",
+          "prompt": "EX-A07-G04-019 (EX-A07-V013-ORAC-SUB-ADV-P02-001 / / Inst. AOCP - EBSERH): \"[...] embora acredite na necessidade de uma política penal eficiente [...], é preciso vencer o estupor social.\" $\\rightarrow$ Concessão expressa por embora $\\rightarrow$ Gabarito: D (concessão).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "EX-A07-G04-019 (EX-A07-V013-ORAC-SUB-ADV-P02-001 / / Inst. AOCP - EBSERH)",
+              "rationale": "\"[...] embora acredite na necessidade de uma política penal eficiente [...], é preciso vencer o estupor social.\" $\\rightarrow$ Concessão expressa por embora $\\rightarrow$ Gabarito: D (concessão)."
+            },
+            {
+              "order": 2,
+              "action": "EX-A07-G04-020 (EX-A07-V013-ORAC-SUB-ADV-P02-002 / / Inst. AOCP - Betim)",
+              "rationale": "\"...quanto mais longe enxergamos, mais ao passado voltamos\" $\\rightarrow$ Correlação proporcional $\\rightarrow$ Gabarito: A (Oração subordinada adverbial proporcional)."
+            },
+            {
+              "order": 3,
+              "action": "EX-A07-G04-021 (EX-A07-V013-ORAC-SUB-ADV-P02-003 / / Inst. AOCP - João Pessoa)",
+              "rationale": "\"Se tivesse simplesmente feito isso [...]\" $\\rightarrow$ Hipótese condicional $\\rightarrow$ Gabarito: C (condição)."
+            },
+            {
+              "order": 4,
+              "action": "EX-A07-G04-022 (EX-A07-V013-ORAC-SUB-ADV-P02-004 / / FCC - Câm. Fortaleza)",
+              "rationale": "\"...é fácil trocá-las agora, desde que a razão não trabalhe...\" $\\rightarrow$ desde que + presente do subjuntivo = condição $\\rightarrow$ Gabarito: B (condição)."
+            },
+            {
+              "order": 5,
+              "action": "EX-A07-G04-023 (EX-A07-V013-ORAC-SUB-ADV-P02-005 / / FCC - TRF 3ª)",
+              "rationale": "\"Mas o uso excessivo do aparelho é tão predominante que os pesquisadores cunharam o termo 'nomofobia'...\" $\\rightarrow$ Intensificador tão... que $\\rightarrow$ Gabarito: A (consequência)."
+            }
+          ],
+          "result": "EX-A07-G04-025 (EX-A07-V013-ORAC-SUB-ADV-P02-007 / / FCC - TRE-PR): \"O que fica de nosso desfile [...] é pouco, já que o ritmo da mudança não dá tempo...\" $\\rightarrow$ já que expressa a causa da escassez $\\rightarrow$ Gabarito: C (causa).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Bateria 3: Questões das Bancas Instituto AOCP e FCC (material de origem) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Bateria 3: Questões das Bancas Instituto AOCP e FCC (material de origem).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Bateria 3: Questões das Bancas Instituto AOCP e FCC (material de origem).",
           "blocks": [
             {
               "type": "list",
@@ -916,6 +1301,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G04-004",
           "title": "Bateria 4: Questões da Banca FGV (material de origem)",
+          "prompt": "EX-A07-G04-026 (EX-A07-V014-FGV-001 / / FGV - FBN): \"'É certo que o mundo mudou [...]. Mas a vocação de encontro e de lazer desses espaços públicos jamais deve ser perdida'.\" $\\rightarrow$ O período iniciado por É certo que possui função de concessão no arranjo dissertativo $\\rightarrow$ Gabarito: A (concessivo).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "EX-A07-G04-026 (EX-A07-V014-FGV-001 / / FGV - FBN)",
+              "rationale": "\"'É certo que o mundo mudou [...]. Mas a vocação de encontro e de lazer desses espaços públicos jamais deve ser perdida'.\" $\\rightarrow$ O período iniciado por É certo que possui função de concessão no arranjo dissertativo $\\rightarrow$ Gabarito: A (concessivo)."
+            },
+            {
+              "order": 2,
+              "action": "EX-A07-G04-027 (EX-A07-V014-FGV-002 / / FGV - Pref. João Pessoa)",
+              "rationale": "Reescrita de \"Embora em alguns pontos eu discorde do escritor\". A alternativa A (\"Sem que em alguns pontos eu discorde...\") altera o sentido original porque sem que traz carga de negação (não discordo / concordo) $\\rightarrow$ Gabarito: A."
+            },
+            {
+              "order": 3,
+              "action": "EX-A07-G04-028 (EX-A07-V014-FGV-003 / / FGV - IBGE)",
+              "rationale": "Manchete: \"Se reforma for adiada, direitos serão perdidos\" $\\rightarrow$ Sequência de condição (causa hipotética) seguida de consequência $\\rightarrow$ Gabarito: B (uma condição seguida de uma consequência)."
+            },
+            {
+              "order": 4,
+              "action": "EX-A07-G04-029 (EX-A07-V014-FGV-004 / / FGV - IBGE)",
+              "rationale": "\"'a caça predatória de animais [...]; todos esses animais, de uma forma ou de outra, rendem expressivos lucros'.\" $\\rightarrow$ O fato de render lucros é a causa motivadora da caça predatória $\\rightarrow$ Gabarito: B (causa)."
+            }
+          ],
+          "result": "EX-A07-G04-029 (EX-A07-V014-FGV-004 / / FGV - IBGE): \"'a caça predatória de animais [...]; todos esses animais, de uma forma ou de outra, rendem expressivos lucros'.\" $\\rightarrow$ O fato de render lucros é a causa motivadora da caça predatória $\\rightarrow$ Gabarito: B (causa).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Bateria 4: Questões da Banca FGV (material de origem) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Bateria 4: Questões da Banca FGV (material de origem).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Bateria 4: Questões da Banca FGV (material de origem).",
           "blocks": [
             {
               "type": "list",
@@ -960,8 +1372,12 @@
         {
           "trapId": "WARN-A07-G04-001",
           "title": "A Armadilha de Inverter Causa e Consequência",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha de Inverter Causa e Consequência.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha de Inverter Causa e Consequência.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha de Inverter Causa e Consequência no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha de Inverter Causa e Consequência.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha de Inverter Causa e Consequência.",
+          "correctReasoning": "Arquivo de origem: 013 -....md (WARN-A07-V013-ORAC-SUB-ADV-P02-001), 014 -....md (WARN-A07-V014-FGV-002)",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha de Inverter Causa e Consequência.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha de Inverter Causa e Consequência.",
           "blocks": [
             {
               "type": "paragraph",
@@ -980,8 +1396,12 @@
         {
           "trapId": "WARN-A07-G04-002",
           "title": "Confundir a Concessão \"É certo que...\" com a Adversativa Subsequente \"Mas...\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir a Concessão \"É certo que...\" com a Adversativa Subsequente \"Mas...\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir a Concessão \"É certo que...\" com a Adversativa Subsequente \"Mas...\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir a Concessão \"É certo que...\" com a Adversativa Subsequente \"Mas...\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir a Concessão \"É certo que...\" com a Adversativa Subsequente \"Mas...\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir a Concessão \"É certo que...\" com a Adversativa Subsequente \"Mas...\".",
+          "correctReasoning": "Arquivo de origem: 014 -....md (WARN-A07-V014-FGV-001)",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir a Concessão \"É certo que...\" com a Adversativa Subsequente \"Mas...\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir a Concessão \"É certo que...\" com a Adversativa Subsequente \"Mas...\".",
           "blocks": [
             {
               "type": "paragraph",
@@ -1000,8 +1420,12 @@
         {
           "trapId": "WARN-A07-G04-003",
           "title": "Pegadinha de Contagem de Orações em Comparativas com Elipse",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha de Contagem de Orações em Comparativas com Elipse.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha de Contagem de Orações em Comparativas com Elipse.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha de Contagem de Orações em Comparativas com Elipse no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha de Contagem de Orações em Comparativas com Elipse.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha de Contagem de Orações em Comparativas com Elipse.",
+          "correctReasoning": "Arquivo de origem: 011 -....md (WARN-A07-V011-002)",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha de Contagem de Orações em Comparativas com Elipse.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha de Contagem de Orações em Comparativas com Elipse.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1020,8 +1444,12 @@
         {
           "trapId": "WARN-A07-G04-004",
           "title": "A Carga de Negação no Conectivo Concessivo \"Sem que\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Carga de Negação no Conectivo Concessivo \"Sem que\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Carga de Negação no Conectivo Concessivo \"Sem que\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Carga de Negação no Conectivo Concessivo \"Sem que\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Carga de Negação no Conectivo Concessivo \"Sem que\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Carga de Negação no Conectivo Concessivo \"Sem que\".",
+          "correctReasoning": "Arquivo de origem: 014 -....md (KB-A07-V014-FGV-002)",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Carga de Negação no Conectivo Concessivo \"Sem que\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Carga de Negação no Conectivo Concessivo \"Sem que\".",
           "blocks": [
             {
               "type": "paragraph",
@@ -1164,7 +1592,19 @@
       "officialAnswer": "correct",
       "explanation": "Observe que a conjunção “que”, correlacionada a termos como “tão, tanto, tal, tamanho”, introduz oração consecutiva: Como os hospitais curavam pouco e traziam perigo de infecção (causa), os ricos preferiam tratar-se em casa (consequência). Questão correta.",
       "questionSha256": "ac97b959190b8bf9d37d8793770637a29ea98111b0eddbaf62a7846b5972f83d",
-      "answerSha256": "527a56e47c21a872968ef64a404b70718a57fd41b7bc556c7a92655d6687630c"
+      "answerSha256": "527a56e47c21a872968ef64a404b70718a57fd41b7bc556c7a92655d6687630c",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Orações Subordinadas Adverbiais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "correct",
+        "acceptedPedagogicalAnswers": [
+          "correct"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A07-G04-CONFLICT-001-62",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0077",
@@ -1177,7 +1617,19 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "4c0ea64119abc12466374b43745c2c8cbb5342b3cd596049a29c35bd4e644953",
-      "answerSha256": "6b57a6755038ab3474d4200350392085a2aa85dbe0d4c04078a4cac8fd2c7344"
+      "answerSha256": "6b57a6755038ab3474d4200350392085a2aa85dbe0d4c04078a4cac8fd2c7344",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Orações Subordinadas Adverbiais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "correct",
+        "acceptedPedagogicalAnswers": [
+          "correct"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A07-G04-CONFLICT-001-62",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0061",
@@ -1190,7 +1642,19 @@
       "officialAnswer": "incorrect",
       "explanation": "“como” é conjunção comparativa: a galinha não contava consigo da mesma forma que o galo crê na sua crista. Questão incorreta.",
       "questionSha256": "70550a52bd8da47d4eef00d132fd90d06e19c72458d13c6ffffdaeae8b700c02",
-      "answerSha256": "f0ab422a60bef27a4472237ca86c341406a20f00e5c0d861dddad9c8fb2ec349"
+      "answerSha256": "f0ab422a60bef27a4472237ca86c341406a20f00e5c0d861dddad9c8fb2ec349",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Orações Subordinadas Adverbiais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "incorrect",
+        "acceptedPedagogicalAnswers": [
+          "incorrect"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A07-G04-CONFLICT-001-62",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0113",
@@ -1202,7 +1666,19 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "11ec5e386b2b52f7c5b63eaea16ff549966ff99e1fac47a88c2227e2a700a976",
-      "answerSha256": "c963c3d076026d5a7f1aa8869162540f2aa01f1644ee71b0b9ec20b6ec72837e"
+      "answerSha256": "c963c3d076026d5a7f1aa8869162540f2aa01f1644ee71b0b9ec20b6ec72837e",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Orações Subordinadas Adverbiais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "incorrect",
+        "acceptedPedagogicalAnswers": [
+          "incorrect"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A07-G04-CONFLICT-001-62",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0041",
@@ -1215,7 +1691,19 @@
       "officialAnswer": "correct",
       "explanation": "Sim. O pronome relativo “que” retoma um antecedente (sua conta) e relaciona a oração principal (chega uma pessoa precisando pagar sua conta) à oração adjetiva (que vence naquele dia). - chega uma pessoa precisando pagar sua conta [que vence naquele dia]. Questão correta.",
       "questionSha256": "8c8a52753a1dc6d4c1598c36673cac942ebb8f483220b7ab2aa130979e12615b",
-      "answerSha256": "fe206cc1cc4f06c1f7f2c2d863e95e91a4a8a0c7e786b653c8cc62cc8244e98e"
+      "answerSha256": "fe206cc1cc4f06c1f7f2c2d863e95e91a4a8a0c7e786b653c8cc62cc8244e98e",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Orações Subordinadas Adverbiais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "correct",
+        "acceptedPedagogicalAnswers": [
+          "correct"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A07-G04-CONFLICT-001-62",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0049",
@@ -1228,7 +1716,19 @@
       "officialAnswer": "incorrect",
       "explanation": "Em \"Ninguém ignora\", o sujeito é determinado, ativo e simples, o núcleo é o pronome indefinido \"Ninguém\". O segmento \"que paira sobre nossas cabeças uma gigantesca teia de normas\" é objeto direto. Em \"Não se ignora\", o sujeito é determinado, passivo e oracional: [que paira sobre nossas cabeças uma gigantesca teia de normas] não se ignora/não é ignorado [ISSO] não se ignora/não é ignorado Questão incorreta.",
       "questionSha256": "4872a83aeb524917a1bd484dcf6faf7746a8cc5342b3fcd977928e4751441d20",
-      "answerSha256": "07f44680291b7ca1b2289ca249a9c1b038b99c15e6f50ccf4272bdb603ec00fd"
+      "answerSha256": "07f44680291b7ca1b2289ca249a9c1b038b99c15e6f50ccf4272bdb603ec00fd",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Orações Subordinadas Adverbiais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "incorrect",
+        "acceptedPedagogicalAnswers": [
+          "incorrect"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A07-G04-CONFLICT-001-62",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": []
     }
   ]
 }

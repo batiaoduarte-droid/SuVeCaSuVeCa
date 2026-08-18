@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A00-G04",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.690Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.449Z"
   },
   "unit": {
     "unitId": "IP-A00-G04",
@@ -381,6 +381,14 @@
         {
           "entityId": "RULE-IP-A00-G04-001",
           "title": "Regras canônicas",
+          "statement": "Regras canônicas",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -455,6 +463,44 @@
         {
           "procedureId": "PROC-A00-G04-001",
           "title": "Método dos 3 Passos para Julgamento de Acentuação",
+          "objective": "Executar o algoritmo decisório para Método dos 3 Passos para Julgamento de Acentuação",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método dos 3 Passos para Julgamento de Acentuação."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura sintático-morfológica alvo de Método dos 3 Passos para Julgamento de Acentuação.",
+              "test": "Localizar o termo regente ou núcleo do segmento."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios decisórios da regra canônica.",
+              "test": "Verificar se há exceção ou caso facultativo aplicável."
+            },
+            {
+              "order": 3,
+              "action": "Concluir a classificação definitiva para resolução da questão.",
+              "test": "Confrontar o resultado obtido com as alternativas da prova."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método dos 3 Passos para Julgamento de Acentuação."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -483,6 +529,22 @@
         {
           "contrastId": "CONTRAST-IP-A00-G04-001",
           "title": "Tabela 1: Oxítona vs. Monossílabo Tônico",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 1: Oxítona vs. Monossílabo Tônico",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -524,6 +586,22 @@
         {
           "contrastId": "CONTRAST-IP-A00-G04-002",
           "title": "Tabela 2: Hiato de 1ª Vogal vs. Hiato de 2ª Vogal (Proparoxítona vs. Hiato Tônico)",
+          "contrastType": "phonological",
+          "conceptA": "Tabela 2: Hiato de 1ª Vogal vs. Hiato de 2ª Vogal (Proparoxítona vs. Hiato Tônico)",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -564,6 +642,22 @@
         {
           "contrastId": "CONTRAST-IP-A00-G04-003",
           "title": "Tabela 3: Ditongo Crescente vs. Ditongo Decrescente",
+          "contrastType": "phonological",
+          "conceptA": "Tabela 3: Ditongo Crescente vs. Ditongo Decrescente",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "paragraph",
@@ -586,6 +680,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G04-001",
           "title": "EX-A00-G04-001 — Demonstração Contrastiva: \"Juiz\" vs. \"Juíza\"",
+          "prompt": "Análise de JUIZ: Divisão silábica: JU - IZ. A letra \"I\" é a 2ª vogal do hiato, mas fica acompanhada da consoante \"Z\" na mesma sílaba. Conclusão: NÃO recebe acento gráfico.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise de JUIZ",
+              "rationale": "Divisão silábica: JU - IZ. A letra \"I\" é a 2ª vogal do hiato, mas fica acompanhada da consoante \"Z\" na mesma sílaba. Conclusão: NÃO recebe acento gráfico."
+            },
+            {
+              "order": 2,
+              "action": "Análise de JUÍZA",
+              "rationale": "Divisão silábica: JU - Í - ZA. A letra \"I\" é a 2ª vogal do hiato e fica completamente sozinha em sua sílaba. Conclusão: RECEBE acento agudo pela Regra 6 (Hiato)."
+            }
+          ],
+          "result": "Análise de JUÍZA: Divisão silábica: JU - Í - ZA. A letra \"I\" é a 2ª vogal do hiato e fica completamente sozinha em sua sílaba. Conclusão: RECEBE acento agudo pela Regra 6 (Hiato).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G04-001 — Demonstração Contrastiva: \"Juiz\" vs. \"Juíza\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G04-001 — Demonstração Contrastiva: \"Juiz\" vs. \"Juíza\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G04-001 — Demonstração Contrastiva: \"Juiz\" vs. \"Juíza\".",
           "blocks": [
             {
               "type": "list",
@@ -600,6 +711,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G04-002",
           "title": "EX-A00-G04-002 — Bateria de Fixação Manual (Treino dos 3 Passos)",
+          "prompt": "Logística: lo-gís-ti-ca $\\rightarrow$ Tônica na antepenúltima (gís) $\\rightarrow$ Proparoxítona (Regra 3).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Logística",
+              "rationale": "lo-gís-ti-ca $\\rightarrow$ Tônica na antepenúltima (gís) $\\rightarrow$ Proparoxítona (Regra 3)."
+            },
+            {
+              "order": 2,
+              "action": "Até",
+              "rationale": "a-té $\\rightarrow$ Tônica na última (té) $\\rightarrow$ Oxítona terminada em E (Regra 1)."
+            },
+            {
+              "order": 3,
+              "action": "Pé",
+              "rationale": "pé $\\rightarrow$ Vocábulo de sílaba única $\\rightarrow$ Monossílabo Tônico terminado em E (Regra 4)."
+            },
+            {
+              "order": 4,
+              "action": "Interminável",
+              "rationale": "in-ter-mi-ná-vel $\\rightarrow$ Tônica na penúltima (ná), terminada em L $\\rightarrow$ Paroxítona não terminada em A, E, O, EM (Regra 2)."
+            },
+            {
+              "order": 5,
+              "action": "Cafeína",
+              "rationale": "ca-fe-í-na $\\rightarrow$ Tônica no I (2ª vogal do hiato, isolado) $\\rightarrow$ Regra do Hiato Tônico (Regra 6)."
+            }
+          ],
+          "result": "Previsíveis: pre-vi-sí-veis $\\rightarrow$ Tônica na penúltima (sí), terminada em ditongo decrescente -eis $\\rightarrow$ Paroxítona terminada em ditongo (Regra 5).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G04-002 — Bateria de Fixação Manual (Treino dos 3 Passos) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G04-002 — Bateria de Fixação Manual (Treino dos 3 Passos).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G04-002 — Bateria de Fixação Manual (Treino dos 3 Passos).",
           "blocks": [
             {
               "type": "list",
@@ -618,6 +761,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G04-003",
           "title": "EX-A00-G04-003 — Questão CEBRASPE — MPE-SC 2021 (Promotor de Justiça)",
+          "prompt": "Enunciado: O emprego do acento agudo em \"nomeá-la\" e \"ordená-la\", no primeiro parágrafo, justifica-se pela mesma regra de acentuação gráfica.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "O emprego do acento agudo em \"nomeá-la\" e \"ordená-la\", no primeiro parágrafo, justifica-se pela mesma regra de acentuação gráfica."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Isolam-se os pronomes enclíticos -la. Analisam-se as bases verbais: nomeá (no-me-á) e ordená (or-de-ná). Ambas são oxítonas terminadas na vogal \"A\" (Regra 1)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "CERTO"
+            }
+          ],
+          "result": "Gabarito: CERTO",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G04-003 — Questão CEBRASPE — MPE-SC 2021 (Promotor de Justiça) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G04-003 — Questão CEBRASPE — MPE-SC 2021 (Promotor de Justiça).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G04-003 — Questão CEBRASPE — MPE-SC 2021 (Promotor de Justiça).",
           "blocks": [
             {
               "type": "list",
@@ -633,6 +798,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G04-004",
           "title": "EX-A00-G04-004 — Questão CEBRASPE — TRT-8ª Região 2022 (Técnico Judiciário)",
+          "prompt": "Enunciado: O emprego do acento nos vocábulos \"etimológico\" e \"fenômeno\" (primeiro período do segundo parágrafo) justifica-se pela mesma regra de acentuação gráfica.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "O emprego do acento nos vocábulos \"etimológico\" e \"fenômeno\" (primeiro período do segundo parágrafo) justifica-se pela mesma regra de acentuação gráfica."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Separação silábica: e-ti-mo-ló-gi-co e fe-nô-me-no. Em ambas as palavras, a sílaba tônica recai na antepenúltima posição. Ambas são proparoxítonas (Regra 3)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "CERTO"
+            }
+          ],
+          "result": "Gabarito: CERTO",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G04-004 — Questão CEBRASPE — TRT-8ª Região 2022 (Técnico Judiciário) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G04-004 — Questão CEBRASPE — TRT-8ª Região 2022 (Técnico Judiciário).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G04-004 — Questão CEBRASPE — TRT-8ª Região 2022 (Técnico Judiciário).",
           "blocks": [
             {
               "type": "list",
@@ -648,6 +835,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G04-005",
           "title": "EX-A00-G04-005 — Questão CEBRASPE — ITAIPU Binacional 2024",
+          "prompt": "Enunciado: Empregado no texto CB2A1, o vocábulo \"eólica\" acentua-se devido à mesma regra de acentuação que determina o emprego do acento na palavra renovável.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Empregado no texto CB2A1, o vocábulo \"eólica\" acentua-se devido à mesma regra de acentuação que determina o emprego do acento na palavra renovável."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Eólica (e-ó-li-ca) é proparoxítona (Regra 3). Renovável (re-no-vá-vel) é paroxítona terminada na consoante L (Regra 2). Trata-se de regras distintas."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "ERRADO"
+            }
+          ],
+          "result": "Gabarito: ERRADO",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G04-005 — Questão CEBRASPE — ITAIPU Binacional 2024 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G04-005 — Questão CEBRASPE — ITAIPU Binacional 2024.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G04-005 — Questão CEBRASPE — ITAIPU Binacional 2024.",
           "blocks": [
             {
               "type": "list",
@@ -663,6 +872,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G04-006",
           "title": "EX-A00-G04-006 — Questão CEBRASPE — Pref. Cachoeiro de Itapemirim 2024",
+          "prompt": "Enunciado: Os vocábulos \"homicídios\" e \"caíram\" são acentuados graficamente de acordo com a mesma regra de acentuação gráfica.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Os vocábulos \"homicídios\" e \"caíram\" são acentuados graficamente de acordo com a mesma regra de acentuação gráfica."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Homicídios (ho-mi-cí-dios) é paroxítona terminada em ditongo crescente / proparoxítona eventual (Regra 5). Caíram (ca-í-ram) é acentuada pela regra do hiato tônico (Regra 6, \"I\" é 2ª vogal do hiato). Regras distintas."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "ERRADO"
+            }
+          ],
+          "result": "Gabarito: ERRADO",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G04-006 — Questão CEBRASPE — Pref. Cachoeiro de Itapemirim 2024 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G04-006 — Questão CEBRASPE — Pref. Cachoeiro de Itapemirim 2024.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G04-006 — Questão CEBRASPE — Pref. Cachoeiro de Itapemirim 2024.",
           "blocks": [
             {
               "type": "list",
@@ -678,6 +909,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G04-007",
           "title": "EX-A00-G04-007 — Questão CEBRASPE — SME Recife 2023 (Professor)",
+          "prompt": "Enunciado: Os vocábulos \"fáceis\" e \"possíveis\" recebem acento por serem paroxítonas terminadas em ditongo oral.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Os vocábulos \"fáceis\" e \"possíveis\" recebem acento por serem paroxítonas terminadas em ditongo oral."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "fá-ceis e pos-sí-veis são paroxítonas terminadas no ditongo decrescente oral -eis. O enquadramento anunciado no item é perfeito."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "CERTO"
+            }
+          ],
+          "result": "Gabarito: CERTO",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G04-007 — Questão CEBRASPE — SME Recife 2023 (Professor) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G04-007 — Questão CEBRASPE — SME Recife 2023 (Professor).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G04-007 — Questão CEBRASPE — SME Recife 2023 (Professor).",
           "blocks": [
             {
               "type": "list",
@@ -693,6 +946,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G04-008",
           "title": "EX-A00-G04-008 — Questão CEBRASPE — TCE-RJ (Analista de Controle Externo)",
+          "prompt": "Enunciado: O emprego de acento agudo nas palavras \"elétricos\" (l.7), \"pálidas\" (l.7) e \"móveis\" (l.8) justifica-se pela mesma regra de acentuação gráfica.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "O emprego de acento agudo nas palavras \"elétricos\" (l.7), \"pálidas\" (l.7) e \"móveis\" (l.8) justifica-se pela mesma regra de acentuação gráfica."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Elétricos (e-lé-tri-cos) e pálidas (pá-li-das) são proparoxítonas (Regra 3). A palavra móveis (mó-veis) é paroxítona terminada em ditongo decrescente. Por ser decrescente, não pode ser reclassificada como proparoxítona eventual. Logo, a regra de móveis não é a mesma das outras duas."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "ERRADO"
+            }
+          ],
+          "result": "Gabarito: ERRADO",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G04-008 — Questão CEBRASPE — TCE-RJ (Analista de Controle Externo) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G04-008 — Questão CEBRASPE — TCE-RJ (Analista de Controle Externo).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G04-008 — Questão CEBRASPE — TCE-RJ (Analista de Controle Externo).",
           "blocks": [
             {
               "type": "list",
@@ -708,6 +983,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G04-009",
           "title": "EX-A00-G04-009 — Questão CEBRASPE — TRF-1ª Região (Analista Judiciário)",
+          "prompt": "Enunciado: O emprego de acento na palavra \"memória\" (l.19) pode ser justificado por duas regras de acentuação distintas.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "O emprego de acento na palavra \"memória\" (l.19) pode ser justificado por duas regras de acentuação distintas."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Por terminar em ditongo crescente, memória admite a separação padrão me-mó-ria (Paroxítona em Ditongo) e a separação secundária me-mó-ri-a (Proparoxítona Eventual/Ocasional). Logo, pode ser justificada por duas regras distintas."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "CERTO"
+            }
+          ],
+          "result": "Gabarito: CERTO",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G04-009 — Questão CEBRASPE — TRF-1ª Região (Analista Judiciário) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G04-009 — Questão CEBRASPE — TRF-1ª Região (Analista Judiciário).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G04-009 — Questão CEBRASPE — TRF-1ª Região (Analista Judiciário).",
           "blocks": [
             {
               "type": "list",
@@ -769,8 +1066,12 @@
         {
           "trapId": "WARN-A00-G04-001",
           "title": "Confusão entre Oxítona e Monossílabo Tônico",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão entre Oxítona e Monossílabo Tônico.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão entre Oxítona e Monossílabo Tônico.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão entre Oxítona e Monossílabo Tônico no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão entre Oxítona e Monossílabo Tônico.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão entre Oxítona e Monossílabo Tônico.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão entre Oxítona e Monossílabo Tônico para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão entre Oxítona e Monossílabo Tônico.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão entre Oxítona e Monossílabo Tônico.",
           "blocks": [
             {
               "type": "list",
@@ -785,8 +1086,12 @@
         {
           "trapId": "WARN-A00-G04-002",
           "title": "A Falsa Regra do Hiato em \"Varíola\" (1ª Vogal do Hiato)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Falsa Regra do Hiato em \"Varíola\" (1ª Vogal do Hiato).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Falsa Regra do Hiato em \"Varíola\" (1ª Vogal do Hiato).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Falsa Regra do Hiato em \"Varíola\" (1ª Vogal do Hiato) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Falsa Regra do Hiato em \"Varíola\" (1ª Vogal do Hiato).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Falsa Regra do Hiato em \"Varíola\" (1ª Vogal do Hiato).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Falsa Regra do Hiato em \"Varíola\" (1ª Vogal do Hiato) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Falsa Regra do Hiato em \"Varíola\" (1ª Vogal do Hiato).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Falsa Regra do Hiato em \"Varíola\" (1ª Vogal do Hiato).",
           "blocks": [
             {
               "type": "list",
@@ -801,8 +1106,12 @@
         {
           "trapId": "WARN-A00-G04-003",
           "title": "Tentativa de Converter Ditongo Decrescente em Proparoxítona Eventual",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Tentativa de Converter Ditongo Decrescente em Proparoxítona Eventual.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Tentativa de Converter Ditongo Decrescente em Proparoxítona Eventual.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Tentativa de Converter Ditongo Decrescente em Proparoxítona Eventual no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Tentativa de Converter Ditongo Decrescente em Proparoxítona Eventual.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Tentativa de Converter Ditongo Decrescente em Proparoxítona Eventual.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Tentativa de Converter Ditongo Decrescente em Proparoxítona Eventual para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Tentativa de Converter Ditongo Decrescente em Proparoxítona Eventual.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Tentativa de Converter Ditongo Decrescente em Proparoxítona Eventual.",
           "blocks": [
             {
               "type": "list",
@@ -817,8 +1126,12 @@
         {
           "trapId": "WARN-A00-G04-004",
           "title": "Impedimentos à Acentuação do Hiato (Consoante Z e Dígrafo NH)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Impedimentos à Acentuação do Hiato (Consoante Z e Dígrafo NH).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Impedimentos à Acentuação do Hiato (Consoante Z e Dígrafo NH).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Impedimentos à Acentuação do Hiato (Consoante Z e Dígrafo NH) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Impedimentos à Acentuação do Hiato (Consoante Z e Dígrafo NH).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Impedimentos à Acentuação do Hiato (Consoante Z e Dígrafo NH).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Impedimentos à Acentuação do Hiato (Consoante Z e Dígrafo NH) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Impedimentos à Acentuação do Hiato (Consoante Z e Dígrafo NH).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Impedimentos à Acentuação do Hiato (Consoante Z e Dígrafo NH).",
           "blocks": [
             {
               "type": "list",
@@ -965,7 +1278,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Observe a separação das sílabas e a classificação de cada palavra: JU - Í - ZO - penúltima sílaba tônica acentuada por ser HIATO. EX - TRA - Í - DOS - penúltima sílaba tônica acentuada por ser HIATO. “PE - RÍ - O - DO” é acentuada por ser uma proparoxítona. Cuidado, não há como pensar que “período” pudesse ser acentuada pela regra do hiato, pois o I não está sozinho, nem seguido de S, nem forma hiato com sílaba anterior. Questão incorreta.",
       "questionSha256": "8a2979f2b251d714bbb91ee8525dad4037b976bb447517ff59d457424bba34b5",
-      "answerSha256": "2d7a9e0ffebc89ab6159a63287b396a62098dc9f003f741598244b0ed668574f"
+      "answerSha256": "2d7a9e0ffebc89ab6159a63287b396a62098dc9f003f741598244b0ed668574f",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Acentuação Gráfica; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula00.q0205",
@@ -977,7 +1293,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "ef8284c0a2d927288c55cbfb1f11450c269f7849aa18b6e23630c7ae590b9c7d",
-      "answerSha256": "c3ad1e1effac24cfc118b3485646e1e0c913a8bd9472a344b1b3c2aa1756e426"
+      "answerSha256": "c3ad1e1effac24cfc118b3485646e1e0c913a8bd9472a344b1b3c2aa1756e426",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Acentuação Gráfica; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula00.q0115",
@@ -990,7 +1309,10 @@
       "officialAnswer": "correct",
       "explanation": "Observe a separação das sílabas e a classificação de cada palavra: PRE - JU - Í - ZO - penúltima sílaba tônica acentuada por ser HIATO. PA - Í - SES - penúltima sílaba tônica acentuada por ser HIATO. Questão correta.",
       "questionSha256": "9c22ecb5e5ae1446f3c900c24000e063c0eab5e58beb58f9f39d3c38846356b8",
-      "answerSha256": "ec63de2d71dee46f385d3e5ce164c496a115a67b09ddb40872f4f647665d3a6d"
+      "answerSha256": "ec63de2d71dee46f385d3e5ce164c496a115a67b09ddb40872f4f647665d3a6d",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Acentuação Gráfica; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula00.q0076",
@@ -1003,7 +1325,10 @@
       "officialAnswer": "incorrect",
       "explanation": "“pos.sí.veis” é acentuada por ser paroxítona terminada em ditongo. “pa.no.râ.mi.ca” é acentuada por ser proparoxítona. Questão incorreta.",
       "questionSha256": "5c77d5946cef2d96edc56f0db1b09767c2d1f26cb1ce07987e02419b6c48cf80",
-      "answerSha256": "6230678d51f2412886159d11799c5c6382ac17df4982076bc10e451a8d1be06f"
+      "answerSha256": "6230678d51f2412886159d11799c5c6382ac17df4982076bc10e451a8d1be06f",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Acentuação Gráfica; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula00.q0206",
@@ -1015,7 +1340,10 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "66e458cd25899619a36460d66b210ff5cb4e92583ec3d32cc9697e6534f232ac",
-      "answerSha256": "f1870335b7f48ab366fbbaccff59f7408bd1c1eed4e9c65e4531e95e87801f94"
+      "answerSha256": "f1870335b7f48ab366fbbaccff59f7408bd1c1eed4e9c65e4531e95e87801f94",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Acentuação Gráfica; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula00.q0167",
@@ -1027,7 +1355,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "c4b75cd302c7c1c9b5b5371a538188b3ab19cef21e4cef08e045f6be149a39d8",
-      "answerSha256": "78394a44bf97ca22ff587a2883c520e43dd5d1d2422a56360487138b9da4afe4"
+      "answerSha256": "78394a44bf97ca22ff587a2883c520e43dd5d1d2422a56360487138b9da4afe4",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Acentuação Gráfica; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

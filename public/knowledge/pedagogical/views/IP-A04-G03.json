@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A04-G03",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.755Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.520Z"
   },
   "unit": {
     "unitId": "IP-A04-G03",
@@ -463,6 +463,16 @@
         {
           "entityId": "RULE-IP-A04-G03-001",
           "title": "Regras canônicas",
+          "statement": "Conjugações Verbais: 1ª Conjugação (VT = A), 2ª Conjugação (VT = E, inclui pôr < poer), 3ª Conjugação (VT = I). Inexistência de 4ª conjugação (KB-A04-G03-DESINENCIAS-VERBAIS-001).\nTema Verbal: Fórmula canônica $\\text{Tema} = \\text{Radical} + \\text{Vogal Temática}$ (KB-A04-G03-DESINENCIAS-VERBAIS-002).\nDMT (Desinência Modo-Temporal): Morfema fixo e comum que identifica modo e tempo ao longo das pessoas gramaticais (KB-A04-G03-DESINENCIAS-VERBAIS-003).\nDNP (Desinência Número-Pessoal): Morfema variável e particular que individualiza o número e a pessoa gramatical (KB-A04-G03-DESINENCIAS-VERBAIS-004).\nAlomorfe: Realização variante de um morfema em contexto específico (part-e-s, fal-á-ve-is) (KB-A04-G03-DESINENCIAS-VERBAIS-005).\nMorfema Zero ($\\emptyset$): Ausência significativa de afixo em posições paradigmáticas (ex.: DMT no Presente do Indicativo; DNP na 3ª pess. sing.) (KB-A04-G03-DESINENCIAS-VERBAIS-007).\nDMT no Subjuntivo: Substituição da VT pela DMT (-e- para 1ª conj.; -a- para 2ª e 3ª conj.) (KB-A04-G03-DESINENCIAS-VERBAIS-008).\nDMT do Imperfeito (Padrão Bechara): -va-/-ve- (1ª conj.) e -ia-/-ie- (2ª e 3ª conj.) (KB-A04-G03-DESINENCIAS-VERBAIS-009).\nInfinitivo Pessoal: Radical + VT + DMT -r- + DNPs pessoais (KB-A04-G03-DESINENCIAS-VERBAIS-011).\nHomonímia em -aram: Coincidência morfológica entre Pretérito Perfeito e Pretérito Mais-Que-Perfeito na 3ª pessoa do plural (KB-A04-G03-DESINENCIAS-VERBAIS-012).",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Conjugações Verbais: 1ª Conjugação (VT = A), 2ª Conjugação (VT = E, inclui pôr < poer), 3ª Conjugação (VT = I). Inexistência de 4ª conjugação (KB-A04-G03-DESINENCIAS-VERBAIS-001).",
+            "Tema Verbal: Fórmula canônica $\\text{Tema} = \\text{Radical} + \\text{Vogal Temática}$ (KB-A04-G03-DESINENCIAS-VERBAIS-002).",
+            "DMT (Desinência Modo-Temporal): Morfema fixo e comum que identifica modo e tempo ao longo das pessoas gramaticais (KB-A04-G03-DESINENCIAS-VERBAIS-003).",
+            "DNP (Desinência Número-Pessoal): Morfema variável e particular que individualiza o número e a pessoa gramatical (KB-A04-G03-DESINENCIAS-VERBAIS-004)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -489,6 +499,53 @@
         {
           "procedureId": "PROC-A04-G03-DESINENCIAS-VERBAIS-001",
           "title": "Algoritmo dos 3 Passos para Decomposição Mórfica Verbal",
+          "objective": "Executar o algoritmo decisório para Algoritmo dos 3 Passos para Decomposição Mórfica Verbal",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo dos 3 Passos para Decomposição Mórfica Verbal."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Objetivo",
+              "explanation": "Isolar e classificar sem erros Radical, VT, DMT e DNP de qualquer forma verbal.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 1 (Vogal Temática e Radical)",
+              "explanation": "Projete a forma verbal no Infinitivo Impessoal. Remova a terminação -r. A vogal final restante é a VT; o segmento anterior é o Radical. Juntos formam o Tema.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Passo 2 (Desinência Modo-Temporal)",
+              "explanation": "Ative o tempo verbal pelo gatilho temporal (ex.: \"antigamente\", \"amanhã\", \"que\", \"se\") e conjugue mentalmente as pessoas. O elemento constante que impregna o paradigma é a DMT. Se for Presente do Indicativo, anote $\\text{DMT} = \\emptyset$.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Passo 3 (Desinência Número-Pessoal)",
+              "explanation": "Isole o elemento final particular que varia de pessoa para pessoa (-o, -s, $\\emptyset$, -mos, -is, -m/-ão).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo dos 3 Passos para Decomposição Mórfica Verbal."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -505,6 +562,65 @@
         {
           "procedureId": "PROC-A04-G03-DESINENCIAS-VERBAIS-002",
           "title": "Método do Infinitivo Impessoal para Identificação da Vogal Temática",
+          "objective": "Executar o algoritmo decisório para Método do Infinitivo Impessoal para Identificação da Vogal Temática",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método do Infinitivo Impessoal para Identificação da Vogal Temática."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Objetivo",
+              "explanation": "Evitar a armadilha de classificar vogais alteradas no meio do verbo flexionado como vogais temáticas.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Aplicação",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Isole a forma (ex.",
+              "explanation": "possam, fale, amem).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Enuncie o infinitivo não flexionado (poder, falar, amar).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Verifique a terminação",
+              "explanation": "-ar $\\rightarrow$ VT = A; -er ou pôr $\\rightarrow$ VT = E; -ir $\\rightarrow$ VT = I.",
+              "test": "Verifique a terminação: -ar $\\rightarrow$ VT = A; -er ou pôr $\\rightarrow$ VT = E; -ir $\\rightarrow$ VT = I."
+            },
+            {
+              "order": 6,
+              "action": "Em possam, o infinitivo é poder (VT = e). Logo, o a em possam é a DMT do Presente do Subjuntivo.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método do Infinitivo Impessoal para Identificação da Vogal Temática."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -529,6 +645,83 @@
         {
           "procedureId": "PROC-A04-G03-DESINENCIAS-VERBAIS-003",
           "title": "Método dos Gatilhos Psicológicos / Marcadores Temporais",
+          "objective": "Executar o algoritmo decisório para Método dos Gatilhos Psicológicos / Marcadores Temporais",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método dos Gatilhos Psicológicos / Marcadores Temporais."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Objetivo",
+              "explanation": "Descobrir o tempo e modo exato sem hesitação no rascunho de prova.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Gatilhos Operacionais",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Encaixa com \"HOJE\" $\\rightarrow$ Presente do Indicativo (Hoje eu conto).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Encaixa com \"ONTEM\" $\\rightarrow$ Pretérito Perfeito do Indicativo (Ontem ele escreveu).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Encaixa com \"ANTIGAMENTE\" $\\rightarrow$ Pretérito Imperfeito do Indicativo (Antigamente eu chorava/dormia).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Encaixa com \"AMANHÃ\" $\\rightarrow$ Futuro do Presente do Indicativo (Amanhã tu correrás).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Encaixa com \"QUE\" $\\rightarrow$ Presente do Subjuntivo (Que eles amem/possam).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Encaixa com \"SE\" $\\rightarrow$ Pretérito Imperfeito do Subjuntivo (Se nós corrêssemos).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Encaixa com \"QUANDO\" $\\rightarrow$ Futuro do Subjuntivo (Quando vós insistirdes).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método dos Gatilhos Psicológicos / Marcadores Temporais."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -550,6 +743,77 @@
         {
           "procedureId": "PROC-A04-G03-DESINENCIAS-VERBAIS-004",
           "title": "Macete da Preposição \"PARA\" para o Infinitivo Pessoal",
+          "objective": "Executar o algoritmo decisório para Macete da Preposição \"PARA\" para o Infinitivo Pessoal",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Macete da Preposição \"PARA\" para o Infinitivo Pessoal."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Objetivo",
+              "explanation": "Conjugar rapidamente o Infinitivo Pessoal e isolar suas DNPs.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Procedimento",
+              "explanation": "Anteponha a estrutura (PARA) + Pronome Reto + Infinitivo:",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "(Para) eu dedicar-Ø",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "(Para) tu dedicar-es",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "(Para) ele dedicar-Ø",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "(Para) nós dedicar-mos",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "(Para) vós dedicar-des",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "(Para) eles dedicar-rem",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Macete da Preposição \"PARA\" para o Infinitivo Pessoal."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -570,6 +834,41 @@
         {
           "procedureId": "PROC-A04-G03-DESINENCIAS-VERBAIS-005",
           "title": "Procedimento de \"Esquartejamento\" Estrutural em Questões de Prova",
+          "objective": "Executar o algoritmo decisório para Procedimento de \"Esquartejamento\" Estrutural em Questões de Prova",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento de \"Esquartejamento\" Estrutural em Questões de Prova."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Objetivo",
+              "explanation": "Resolver questões que pedem estruturas morfológicas completas (ex.: $\\text{Radical} + \\text{VT} + \\text{DMT} + \\text{DNP}$).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Procedimento",
+              "explanation": "Monte quatro colunas no rascunho (RAD | VT | DMT | DNP) e preencha cada alternativa. Descarte alternativas que apresentem $\\emptyset$ em qualquer uma das colunas exigidas.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento de \"Esquartejamento\" Estrutural em Questões de Prova."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -588,6 +887,22 @@
         {
           "contrastId": "CONTRAST-IP-A04-G03-001",
           "title": "Contrastes decisivos",
+          "contrastType": "mixed",
+          "conceptA": "Contrastes decisivos",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -650,6 +965,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G03-001",
           "title": "EX-A04-G03-DESINENCIAS-VERBAIS-001 — Demonstração da Decomposição de Falava",
+          "prompt": "Forma Verbal: falava (Pretérito Imperfeito do Indicativo / 1ª conjugação).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Forma Verbal",
+              "rationale": "falava (Pretérito Imperfeito do Indicativo / 1ª conjugação)."
+            },
+            {
+              "order": 2,
+              "action": "Decomposição",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "fal- $\\rightarrow$ Radical",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "-a- $\\rightarrow$ Vogal Temática (1ª conjugação)",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "fala- $\\rightarrow$ Tema Verbal",
+              "rationale": null
+            }
+          ],
+          "result": "Ø $\\rightarrow$ Desinência Número-Pessoal (DNP Zero)",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G03-DESINENCIAS-VERBAIS-001 — Demonstração da Decomposição de Falava sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G03-DESINENCIAS-VERBAIS-001 — Demonstração da Decomposição de Falava.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G03-DESINENCIAS-VERBAIS-001 — Demonstração da Decomposição de Falava.",
           "blocks": [
             {
               "type": "list",
@@ -669,6 +1016,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G03-002",
           "title": "EX-A04-G03-DESINENCIAS-VERBAIS-002 — Decomposição de Falávamos e Partes",
+          "prompt": "Formas Verbais: falávamos e partes (Alomorfia de VT).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Formas Verbais",
+              "rationale": "falávamos e partes (Alomorfia de VT)."
+            },
+            {
+              "order": 2,
+              "action": "Decomposição de falávamos",
+              "rationale": "fal- (Radical) + -a- (VT) + -va- (DMT) + -mos (DNP)."
+            },
+            {
+              "order": 3,
+              "action": "Decomposição de partes",
+              "rationale": "part- (Radical) + -e- (VT Alomorfe da VT i) + $\\emptyset$ (DMT) + -s (DNP)."
+            }
+          ],
+          "result": "Decomposição de partes: part- (Radical) + -e- (VT Alomorfe da VT i) + $\\emptyset$ (DMT) + -s (DNP).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G03-DESINENCIAS-VERBAIS-002 — Decomposição de Falávamos e Partes sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G03-DESINENCIAS-VERBAIS-002 — Decomposição de Falávamos e Partes.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G03-DESINENCIAS-VERBAIS-002 — Decomposição de Falávamos e Partes.",
           "blocks": [
             {
               "type": "list",
@@ -684,6 +1053,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G03-003",
           "title": "EX-A04-G03-DESINENCIAS-VERBAIS-003 — Oficina de Fixação: Decomposição das Seis Formas Verbais",
+          "prompt": "EX-A04-G03-DESINENCIAS-VERBAIS-003 — Oficina de Fixação: Decomposição das Seis Formas Verbais",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"EX-A04-G03-DESINENCIAS-VERBAIS-003 — Oficina de Fixação: Dec...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de EX-A04-G03-DESINENCIAS-VERBAIS-003 — Oficina de Fixação: Decomposição das Seis Formas Verbais.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G03-DESINENCIAS-VERBAIS-003 — Oficina de Fixação: Decomposição das Seis Formas Verbais sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G03-DESINENCIAS-VERBAIS-003 — Oficina de Fixação: Decomposição das Seis Formas Verbais.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G03-DESINENCIAS-VERBAIS-003 — Oficina de Fixação: Decomposição das Seis Formas Verbais.",
           "blocks": [
             {
               "type": "table_ref",
@@ -770,6 +1161,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G03-004",
           "title": "EX-A04-G03-DESINENCIAS-VERBAIS-004 — Questão 01: FCM - IF Sudeste - MG (vamos)",
+          "prompt": "Enunciado: Classificação desinencial do verbo vamos em \"e aí vamos entrar em outra área...\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Classificação desinencial do verbo vamos em \"e aí vamos entrar em outra área...\"."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Infinitivo ir. Marcador \"Hoje nós vamos\". Classificação: 1ª pessoa do plural do Presente do Indicativo."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "Letra A."
+            }
+          ],
+          "result": "Gabarito: Letra A.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G03-DESINENCIAS-VERBAIS-004 — Questão 01: FCM - IF Sudeste - MG (vamos) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G03-DESINENCIAS-VERBAIS-004 — Questão 01: FCM - IF Sudeste - MG (vamos).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G03-DESINENCIAS-VERBAIS-004 — Questão 01: FCM - IF Sudeste - MG (vamos).",
           "blocks": [
             {
               "type": "list",
@@ -785,6 +1198,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G03-005",
           "title": "EX-A04-G03-DESINENCIAS-VERBAIS-005 — Questão 02: COMVEST UFAM (formulásseis)",
+          "prompt": "Enunciado: Assinale a forma que corresponde à estrutura: $\\text{Radical} + \\text{VT} + \\text{DMT} + \\text{DNP}$.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assinale a forma que corresponde à estrutura: $\\text{Radical} + \\text{VT} + \\text{DMT} + \\text{DNP}$."
+            },
+            {
+              "order": 2,
+              "action": "Análise das Alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "A) escreveu",
+              "rationale": "ESCREV + E + $\\emptyset$ (falta DMT) + U."
+            },
+            {
+              "order": 4,
+              "action": "B) vendesse",
+              "rationale": "VEND + E + SSE + $\\emptyset$ (falta DNP)."
+            },
+            {
+              "order": 5,
+              "action": "C) esfregava",
+              "rationale": "ESFREG + A + VA + $\\emptyset$ (falta DNP)."
+            }
+          ],
+          "result": "Gabarito: Letra E.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G03-DESINENCIAS-VERBAIS-005 — Questão 02: COMVEST UFAM (formulásseis) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G03-DESINENCIAS-VERBAIS-005 — Questão 02: COMVEST UFAM (formulásseis).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G03-DESINENCIAS-VERBAIS-005 — Questão 02: COMVEST UFAM (formulásseis).",
           "blocks": [
             {
               "type": "list",
@@ -805,6 +1250,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G03-006",
           "title": "EX-A04-G03-DESINENCIAS-VERBAIS-006 — Questão 03: FUNRIO - IF-PA (contamos)",
+          "prompt": "Enunciado: Assinale a única forma verbal que não possui desinência modo-temporal.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assinale a única forma verbal que não possui desinência modo-temporal."
+            },
+            {
+              "order": 2,
+              "action": "Análise das Alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "A) riam",
+              "rationale": "Pret. Imperfeito (DMT = IA)."
+            },
+            {
+              "order": 4,
+              "action": "B) cantavam",
+              "rationale": "Pret. Imperfeito (DMT = VA)."
+            },
+            {
+              "order": 5,
+              "action": "C) contamos",
+              "rationale": "Presente do Indicativo (Radical CONT + VT A + DMT Ø + DNP MOS)."
+            }
+          ],
+          "result": "Gabarito: Letra C.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G03-DESINENCIAS-VERBAIS-006 — Questão 03: FUNRIO - IF-PA (contamos) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G03-DESINENCIAS-VERBAIS-006 — Questão 03: FUNRIO - IF-PA (contamos).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G03-DESINENCIAS-VERBAIS-006 — Questão 03: FUNRIO - IF-PA (contamos).",
           "blocks": [
             {
               "type": "list",
@@ -825,6 +1302,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G03-007",
           "title": "EX-A04-G03-DESINENCIAS-VERBAIS-007 — Questão 01: FUNDATEC - Pref. Vacaria/RS (dedicarmos, ajudará, possam)",
+          "prompt": "Análise dos Itens:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise dos Itens",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Item I (dedicarmos)",
+              "rationale": "dedic (radical), ar (desinência de infinitivo), mos (DNP de 1ª pessoa plural). Aceito pela FUNDATEC como CORRETO."
+            },
+            {
+              "order": 3,
+              "action": "Item II (ajudará)",
+              "rationale": "ajud (radical), a (VT de 1ª conj.), rá (DMT). CORRETO."
+            },
+            {
+              "order": 4,
+              "action": "Item III (possam)",
+              "rationale": "afirmava que a era vogal temática. INCORRETO (infinitivo poder $\\rightarrow$ VT é e; o a é DMT do Subjuntivo)."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "Letra D (Apenas I e II)."
+            }
+          ],
+          "result": "Gabarito: Letra D (Apenas I e II).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G03-DESINENCIAS-VERBAIS-007 — Questão 01: FUNDATEC - Pref. Vacaria/RS (dedicarmos, ajudará, possam) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G03-DESINENCIAS-VERBAIS-007 — Questão 01: FUNDATEC - Pref. Vacaria/RS (dedicarmos, ajudará, possam).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G03-DESINENCIAS-VERBAIS-007 — Questão 01: FUNDATEC - Pref. Vacaria/RS (dedicarmos, ajudará, possam).",
           "blocks": [
             {
               "type": "list",
@@ -842,6 +1351,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G03-008",
           "title": "EX-A04-G03-DESINENCIAS-VERBAIS-008 — Questão 02: Quadrix - DATAPREV (puxaram)",
+          "prompt": "Enunciado: Análise da forma verbal puxaram.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Análise da forma verbal puxaram."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Descontextualizada, a forma puxaram pode pertencer tanto ao Pretérito Perfeito (ontem eles puxaram) quanto ao Pretérito Mais-Que-Perfeito (outrora eles puxaram)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "Letra C."
+            }
+          ],
+          "result": "Gabarito: Letra C.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G03-DESINENCIAS-VERBAIS-008 — Questão 02: Quadrix - DATAPREV (puxaram) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G03-DESINENCIAS-VERBAIS-008 — Questão 02: Quadrix - DATAPREV (puxaram).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G03-DESINENCIAS-VERBAIS-008 — Questão 02: Quadrix - DATAPREV (puxaram).",
           "blocks": [
             {
               "type": "list",
@@ -857,6 +1388,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G03-009",
           "title": "EX-A04-G03-DESINENCIAS-VERBAIS-009 — Questão 03: FGV - SEDUC-AM (pusera)",
+          "prompt": "Enunciado: Classificação do elemento mórfico puse- em pusera.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Classificação do elemento mórfico puse- em pusera."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Radical pus- + VT e = Tema Verbal (puse-)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "Letra C (tema)."
+            }
+          ],
+          "result": "Gabarito: Letra C (tema).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G03-DESINENCIAS-VERBAIS-009 — Questão 03: FGV - SEDUC-AM (pusera) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G03-DESINENCIAS-VERBAIS-009 — Questão 03: FGV - SEDUC-AM (pusera).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G03-DESINENCIAS-VERBAIS-009 — Questão 03: FGV - SEDUC-AM (pusera).",
           "blocks": [
             {
               "type": "list",
@@ -872,6 +1425,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G03-010",
           "title": "EX-A04-G03-DESINENCIAS-VERBAIS-010 — Questão 04: CESPE/CEBRASPE - SEDUC-AM (zombavam)",
+          "prompt": "Enunciado: Julgamento da afirmação de que em zombavam identifica-se o morfema modo-temporal -vam.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Julgamento da afirmação de que em zombavam identifica-se o morfema modo-temporal -vam."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "O morfema modo-temporal é apenas -va-. O -m é morfema número-pessoal. A fusão em -vam torna a assertiva falsa."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G03-DESINENCIAS-VERBAIS-010 — Questão 04: CESPE/CEBRASPE - SEDUC-AM (zombavam) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G03-DESINENCIAS-VERBAIS-010 — Questão 04: CESPE/CEBRASPE - SEDUC-AM (zombavam).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G03-DESINENCIAS-VERBAIS-010 — Questão 04: CESPE/CEBRASPE - SEDUC-AM (zombavam).",
           "blocks": [
             {
               "type": "list",
@@ -930,8 +1505,12 @@
         {
           "trapId": "WARN-A04-G03-DESINENCIAS-VERBAIS-001",
           "title": "O Mito da \"4ª Conjugação\" no Verbo Pôr",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Mito da \"4ª Conjugação\" no Verbo Pôr.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Mito da \"4ª Conjugação\" no Verbo Pôr.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Mito da \"4ª Conjugação\" no Verbo Pôr no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Mito da \"4ª Conjugação\" no Verbo Pôr.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Mito da \"4ª Conjugação\" no Verbo Pôr.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Mito da \"4ª Conjugação\" no Verbo Pôr para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Mito da \"4ª Conjugação\" no Verbo Pôr.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Mito da \"4ª Conjugação\" no Verbo Pôr.",
           "blocks": [
             {
               "type": "list",
@@ -946,8 +1525,12 @@
         {
           "trapId": "WARN-A04-G03-DESINENCIAS-VERBAIS-002",
           "title": "Ausência de DMT no Presente do Indicativo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Ausência de DMT no Presente do Indicativo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Ausência de DMT no Presente do Indicativo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Ausência de DMT no Presente do Indicativo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Ausência de DMT no Presente do Indicativo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Ausência de DMT no Presente do Indicativo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Ausência de DMT no Presente do Indicativo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Ausência de DMT no Presente do Indicativo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Ausência de DMT no Presente do Indicativo.",
           "blocks": [
             {
               "type": "list",
@@ -962,8 +1545,12 @@
         {
           "trapId": "WARN-A04-G03-DESINENCIAS-VERBAIS-003",
           "title": "A Armadilha da Troca Vocálica no Presente do Subjuntivo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha da Troca Vocálica no Presente do Subjuntivo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha da Troca Vocálica no Presente do Subjuntivo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha da Troca Vocálica no Presente do Subjuntivo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha da Troca Vocálica no Presente do Subjuntivo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha da Troca Vocálica no Presente do Subjuntivo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha da Troca Vocálica no Presente do Subjuntivo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha da Troca Vocálica no Presente do Subjuntivo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha da Troca Vocálica no Presente do Subjuntivo.",
           "blocks": [
             {
               "type": "list",
@@ -978,8 +1565,12 @@
         {
           "trapId": "WARN-A04-G03-DESINENCIAS-VERBAIS-004",
           "title": "Divergência Gramatical no Pretérito Imperfeito (2ª/3ª Conjugações)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Divergência Gramatical no Pretérito Imperfeito (2ª/3ª Conjugações).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Divergência Gramatical no Pretérito Imperfeito (2ª/3ª Conjugações).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Divergência Gramatical no Pretérito Imperfeito (2ª/3ª Conjugações) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Divergência Gramatical no Pretérito Imperfeito (2ª/3ª Conjugações).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Divergência Gramatical no Pretérito Imperfeito (2ª/3ª Conjugações).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Divergência Gramatical no Pretérito Imperfeito (2ª/3ª Conjugações) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Divergência Gramatical no Pretérito Imperfeito (2ª/3ª Conjugações).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Divergência Gramatical no Pretérito Imperfeito (2ª/3ª Conjugações).",
           "blocks": [
             {
               "type": "list",
@@ -994,8 +1585,12 @@
         {
           "trapId": "WARN-A04-G03-DESINENCIAS-VERBAIS-005",
           "title": "Imprecisão Tradicional da Banca FUNDATEC",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Imprecisão Tradicional da Banca FUNDATEC.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Imprecisão Tradicional da Banca FUNDATEC.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Imprecisão Tradicional da Banca FUNDATEC no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Imprecisão Tradicional da Banca FUNDATEC.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Imprecisão Tradicional da Banca FUNDATEC.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Imprecisão Tradicional da Banca FUNDATEC para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Imprecisão Tradicional da Banca FUNDATEC.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Imprecisão Tradicional da Banca FUNDATEC.",
           "blocks": [
             {
               "type": "list",
@@ -1009,8 +1604,12 @@
         {
           "trapId": "WARN-A04-G03-DESINENCIAS-VERBAIS-006",
           "title": "Fusão Indevida de DMT e DNP em Provas do CESPE",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Fusão Indevida de DMT e DNP em Provas do CESPE.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Fusão Indevida de DMT e DNP em Provas do CESPE.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Fusão Indevida de DMT e DNP em Provas do CESPE no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Fusão Indevida de DMT e DNP em Provas do CESPE.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Fusão Indevida de DMT e DNP em Provas do CESPE.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Fusão Indevida de DMT e DNP em Provas do CESPE para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Fusão Indevida de DMT e DNP em Provas do CESPE.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Fusão Indevida de DMT e DNP em Provas do CESPE.",
           "blocks": [
             {
               "type": "list",
@@ -1025,8 +1624,12 @@
         {
           "trapId": "WARN-A04-G03-DESINENCIAS-VERBAIS-007",
           "title": "Homonímia da Terminação *-aram* Descontextualizada",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Homonímia da Terminação *-aram* Descontextualizada.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Homonímia da Terminação *-aram* Descontextualizada.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Homonímia da Terminação *-aram* Descontextualizada no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Homonímia da Terminação *-aram* Descontextualizada.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Homonímia da Terminação *-aram* Descontextualizada.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Homonímia da Terminação *-aram* Descontextualizada para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Homonímia da Terminação *-aram* Descontextualizada.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Homonímia da Terminação *-aram* Descontextualizada.",
           "blocks": [
             {
               "type": "list",
@@ -1206,7 +1809,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Há três locuções: a sociedade deveria ser harmoniosa e as pessoas deveriam ser encorajadas em seu ‘autodesenvolvimento’ para que pudessem aproveitar. Poder e Dever são verbos auxiliares. Questão incorreta.",
       "questionSha256": "05ce674d43b0efe5e959e521273111d0aa6ddad0bbbedb6b58e51bda0b98b6d3",
-      "answerSha256": "d6e5e95b2353a1188418f0b800e2a4cd0cf7d0cac23086b232c404fbc2e30d47"
+      "answerSha256": "d6e5e95b2353a1188418f0b800e2a4cd0cf7d0cac23086b232c404fbc2e30d47",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de AGU; 2. Identificar a regra central de Desinências Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula04.q0129",
@@ -1239,7 +1845,50 @@
       "officialAnswer": "B",
       "explanation": "O pretérito perfeito de “requerer” é “requereram”, não é “requiseram”. Então, seria possível eliminar A e C. “Fique”, “Mantenha”, “Continue” e “Permaneça” estão no presente do subjuntivo. “Mantém” e “Permanece” estão no presente do indicativo. Gabarito letra B. BACEN - Língua Portuguesa 62 www.estrategiaconcursos.com.br 154 Essas conjugações vão aparecer em geral quando o verbo vier conjugado no subjuntivo, em função de conjunções: se/que/quando/caso/embora/ainda que... Grave essas “bases”, pois nelas estarão as questões. Ter- TIVE+DESINÊNCIA: Se tivesse, quando tiver... Pôr- PUSE+DESINÊNCIA: Se puser, quando supuséssemos... Requerer- REQUERE+DESINÊNCIA: Se requeresse, quando requereu... Precaver- PRECAVE+DESINÊNCIA: Se precavesse, quando precaveu... Prover- PROVE+DESINÊNCIA: se provesse, quando proveu... Ver-VI+DESINÊNCIA: Se visse, quando víssemos, se vir... Vir- VIE+DESINÊNCIA: Se viéssemos, quando vier, se vierem... Verbo Aprazer Esse verbo é bastante irregular e compartilha o radical do adjetivo aprazível, com sentido de agradável. Para lidar com ele na hora da prova, lembre-se de algumas terminações do verbo haver em que há “V” e base “ou” na palavra, a saber: Pretérito mais-que-perfeito: Eu aprouvera, tu aprouveras... Pretérito imperfeito do subjuntivo: Se eu aprouvesse; se tu aprouvesses... Futuro do subjuntivo: Quando eu aprouver; quanto tu aprouveres... Acima estão as primeiras pessoas de cada conjugação, basta seguir o padrão. Bechara e o Dicionário Houaiss mencionam que, embora tenha conjugação completa, só é usado normalmente nas terceiras pessoas. Medir, Pedir, Valer e Eleger Os verbos acima trazem variações no radical, anotem estes detalhes: Pedir e Medir trazem Ç antes de O e A: Eu Peço/Meço; que eu Peça/Meça. Valer traz LH antes de O e A: Não valho nada/Valha-me Deus! Eleger traz J antes de O e A: Eu eleJo; Que eu eleJa. Isso vale para os verbos com “G” no radical. BACEN - Língua Portuguesa 63 www.estrategiaconcursos.com.br 154",
       "questionSha256": "68b70d345f81aa3303d014e4da77af3578d7cc1e88b7543d9f8f09e059ef37aa",
-      "answerSha256": "88928dd9ba8154c5d44b40631f093c89b05753ce966773d938523ebdb5b13e62"
+      "answerSha256": "88928dd9ba8154c5d44b40631f093c89b05753ce966773d938523ebdb5b13e62",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de SEPLAG-RECIFE; 2. Identificar a regra central de Desinências Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "B",
+        "acceptedPedagogicalAnswers": [
+          "B"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A04-G03-CONFLICT-001-29",
+        "explanation": "Em bancas nacionais (FGV, Cebraspe, FCC), o sufixo '-ia' no imperfeito é DMT unificada. Em provas da FUNDATEC ou de perfil tradicional, atente para o tratamento de blocos inteiros de terminação infinitiva (-ar, -er, -ir) como desinências de infinitivo."
+      },
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "incorrect",
+          "explanation": "Opção a: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        },
+        {
+          "optionLabel": "b",
+          "status": "correct",
+          "explanation": "Opção b: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        },
+        {
+          "optionLabel": "c",
+          "status": "incorrect",
+          "explanation": "Opção c: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        },
+        {
+          "optionLabel": "e",
+          "status": "incorrect",
+          "explanation": "Opção e: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        }
+      ]
     },
     {
       "questionId": "aula04.q0130",
@@ -1272,7 +1921,50 @@
       "officialAnswer": "A",
       "explanation": "Estudamos crase separadamente na aula de regência, mas essa questão é essencialmente sobre conjugação dos verbos que temos estudado. Então, vamos focar na conjugação. A letra A está perfeita, observe a conjugação de “conter”, derivado de “ter”: ter-tivermos>conter-contivermos. Vejamos as demais: b) Ele acabará se desfazendo dos amigos à medida que eles vierem a contrariar seus ímpetos caprichosos. (a forma de futuro do subjuntivo do verbo “vir” é “vierem”) c) Uma amizade resiste a toda prova quando, em qualquer das ocasiões da vida, se mantiver leal e verdadeira. (“manter” deriva de “ter”) d) Se aprouvesse a alguém construir uma sólida amizade, teria de renunciar as fraquezas mais comuns. (a forma de “aprazer” vira “aprouvesse”) e) Nada poderei fazer em reparo à fragilidade de uma amizade que não advier de uma leal construção. (“advir” deriva de “vir”) Gabarito letra A. Verbos defectivos São aqueles verbos que têm defeito de conjugação, pois não são conjugados em todas as pessoas, normalmente pela semelhança que a conjugação teria com outro verbo (Falar e Falir: eu falo), ou pelo mau som: “ela computa”... Na maioria dos casos, são conjugados só na primeira e segunda pessoa do plural do modo indicativo, na segunda pessoa do plural do modo imperativo e não possuem flexões no presente do subjuntivo (porque não têm o presente do indicativo). Obs.: O presente do subjuntivo é derivado do radical da primeira pessoa do singular do presente do indicativo, em suma, “eu faço” vira “que eu faça”. Então, quando o verbo não tem a primeira pessoa do singular no indicativo, não terá o presente do subjuntivo. Por consequência, não terá as formas de imperativo que também derivam do subjuntivo. Por não trazerem a primeira pessoa do singular do presente do indicativo, são defectivos os verbos: abolir, banir, brandir, carpir, colorir, computar, delir, explodir, ruir, exaurir, demolir, puir, BACEN - Língua Portuguesa 64 www.estrategiaconcursos.com.br 154 delinquir, fulgir (resplandecer), feder, aturdir, bramir, esculpir, extorquir, retorquir, soer (costumar: ter costume de). Há certa controvérsia entre esses verbos, pois alguns gramáticos e dicionários listam verbos defectivos como regulares. Não podemos entrar nessa discussão, então vamos destacar alguns que já foram cobrados em prova. Verbo Precaver e Reaver No presente do indicativo, só se conjuga com nós (precavemos/reavemos) e vós (precaveis/reaveis). Como o presente do indicativo é a base do presente do subjuntivo, esse verbo não é conjugado neste tempo. Sabendo disso, basta conjugar o verbo precaver seguindo a segunda conjugação, como Beber. No Imperativo, temos: precavei, reavei. Reaver e Precaver não trazem “J” nem “nh” na sua conjugação. Então, estão incorretas formas como “precaveja”, “reaveja”, “reavenha”. Para você não ter que estudar a conjugação dele inteira, siga essa dica: o verbo Reaver só se conjuga naquelas pessoas em que o verbo Haver tem “v” na palavra. Segue a primeira pessoa de cada tempo em que isso ocorre, para você saber o padrão: reouve, reavia, reouvera, reaverei, reaveria. Obs.: Nessa mesma linha estão os verbos “falir” e “adequar”, que também só possuem as pessoas ‘nós’ e ‘vós’ no presente do indicativo. Cuidado: Apesar de “estranhos”, estes verbos não são considerados defectivos: caber, valer, redimir, polir, sortir, rir, escapulir, entupir, sacudir. Verbos vicários São chamados de Verbos Vicários aqueles que fazem as vezes de outros verbos, substituindo-os para evitar repetição. Os mais comuns são os verbos ser e fazer. Normalmente vêm acompanhados de um pronome demonstrativo o, que retoma a ação ou o evento da oração anterior. Ex.: Eu poderia ter fugido, mas não o fiz. (“o fiz” retoma “ter fugido”) Se você não estudou foi porque teve preguiça. (“foi” retoma “não estudou”) Se ela não aceita ir ao cinema é porque não quer. (“é” retoma “aceita”) Observe que há dois verbos e um substitui o outro, quando vicário, o “fazer” não traz seu sentido próprio, pois assume o sentido do outro verbo. As estruturas com esses verbos costumam ser cobradas até em questões de compreensão textual, quando a banca pode perguntar o referente do pronome. BACEN - Língua Portuguesa 65 www.estrategiaconcursos.com.br 154",
       "questionSha256": "4b706c9205409cdb250dde549ae6e6dffc5d82514356dff8af39c42fabfd2150",
-      "answerSha256": "d69bec84a699fe1e873732aaf20446d297458afed1a7dc2e39888aec3605c867"
+      "answerSha256": "d69bec84a699fe1e873732aaf20446d297458afed1a7dc2e39888aec3605c867",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de PREF. DE RECIFE; 2. Identificar a regra central de Desinências Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "A",
+        "acceptedPedagogicalAnswers": [
+          "A"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A04-G03-CONFLICT-001-29",
+        "explanation": "Em bancas nacionais (FGV, Cebraspe, FCC), o sufixo '-ia' no imperfeito é DMT unificada. Em provas da FUNDATEC ou de perfil tradicional, atente para o tratamento de blocos inteiros de terminação infinitiva (-ar, -er, -ir) como desinências de infinitivo."
+      },
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "correct",
+          "explanation": "Opção a: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        },
+        {
+          "optionLabel": "b",
+          "status": "incorrect",
+          "explanation": "Opção b: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        },
+        {
+          "optionLabel": "c",
+          "status": "incorrect",
+          "explanation": "Opção c: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        },
+        {
+          "optionLabel": "e",
+          "status": "incorrect",
+          "explanation": "Opção e: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        }
+      ]
     },
     {
       "questionId": "aula04.q0120",
@@ -1305,7 +1997,50 @@
       "officialAnswer": "A",
       "explanation": "“Deve” é o auxiliar da locução “deve crescer” e está no presente do indicativo. Gabarito letra A.",
       "questionSha256": "70e69be6750dd6631762f8207eff07c3601c0c0f7e67a643668e1c2ccde2fb97",
-      "answerSha256": "7f5a2e87f57d71b91c9852d2917d7b2cf624e6c3215ef0a5a7252a35e585e7fd"
+      "answerSha256": "7f5a2e87f57d71b91c9852d2917d7b2cf624e6c3215ef0a5a7252a35e585e7fd",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CORE-SP; 2. Identificar a regra central de Desinências Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "A",
+        "acceptedPedagogicalAnswers": [
+          "A"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A04-G03-CONFLICT-001-29",
+        "explanation": "Em bancas nacionais (FGV, Cebraspe, FCC), o sufixo '-ia' no imperfeito é DMT unificada. Em provas da FUNDATEC ou de perfil tradicional, atente para o tratamento de blocos inteiros de terminação infinitiva (-ar, -er, -ir) como desinências de infinitivo."
+      },
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "correct",
+          "explanation": "Opção a: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        },
+        {
+          "optionLabel": "b",
+          "status": "incorrect",
+          "explanation": "Opção b: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        },
+        {
+          "optionLabel": "c",
+          "status": "incorrect",
+          "explanation": "Opção c: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        },
+        {
+          "optionLabel": "e",
+          "status": "incorrect",
+          "explanation": "Opção e: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        }
+      ]
     },
     {
       "questionId": "aula04.q0104",
@@ -1334,7 +2069,44 @@
       "officialAnswer": "B",
       "explanation": "Questão muito ilustrativa sobre o uso dos tempos/modos verbais: a) “ficaria” está no futuro do pretérito, usado para indicar um futuro subordinado a uma condição (conquistar o tricampeonato). b) “tinha” e “era” são formas de pretérito imperfeito, tempo que indica continuidade e repetição no passado; o foco é na duração, não é na conclusão. É o pretérito perfeito que indica ações concluídas. c) “conquistasse” está no pretérito imperfeito do subjuntivo, tempo que indica fato incerto, hipotético no passado. d) vale o mesmo raciocínio da letra b. Gabarito letra B. BACEN - Língua Portuguesa 28 www.estrategiaconcursos.com.br 154 Pretérito Imperfeito do Subjuntivo Levantar Beber Cair Eu se eu levantasse se eu bebesse se eu caísse Tu se tu levantasses se tu bebesses se tu caísses Ele se ele levantasse se ele bebesse se ele caísse Nós se nós levantássemos se nós bebêssemos se nós caíssemos Vós se vós levantásseis se vós bebêsseis se vós caísseis Eles se eles levantassem se eles bebessem se eles caíssem Veja os sentidos que seu uso pode implicar. SENTIDOS DO PRETÉRITO IMPERFEITO EXEMPLOS DO SUBJUNTIVO Denota ação posterior a outro fato na Duvidei que minha avó bebesse tanta tequila. oração principal Pedia que eles se levantassem. Denota, hipóteses, conjectura, condição ou Se eu estudasse todo dia, passaria em qualquer desejo prova. Seria melhor que falassem logo. Temia que fosse um golpe. Obs.: O pretérito mais-que-perfeito do subjuntivo, tempo composto formado por TIVESSE.../HOUVESSE...+PARTICÍPIO, pode indicar uma “ação irreal no passado”, um fato que não se realizou e muito provavelmente não se realizará. Ex.: Se a sorte nos tivesse favorecido, não faltaria dinheiro hoje. Se eu tivesse aplicado tudo, teria obtido sucesso. O pretérito perfeito do subjuntivo é um tempo eminentemente composto, com auxiliar ‘ter ou haver’ no presente do subjuntivo, e expressa: ●​ Fato passado. Ex.: Espero que você tenha entendido a explicação. ●​ Fato futuro já concluído, antes de outro também no futuro. Ex.: Suponho que João já tenha saído quando chegarmos. Observe que o modo subjuntivo como um todo é usado em orações subordinadas ou orações que de modo geral expressam hipóteses/desejos. BACEN - Língua Portuguesa 29 www.estrategiaconcursos.com.br 154 Futuro do Subjuntivo Levantar Beber Cair Eu quando eu levantar quando eu beber quando eu cair Tu quando tu levantares quando tu beberes quando tu caíres Ele quando ele levantar quando ele beber quando ele cair Nós quando nós levantarmos quando nós bebermos quando nós cairmos Vós quando vós levantardes quando vós beberdes quando vós cairdes Eles quando eles levantarem quando eles beberem Quando eles caírem Para ajudar a conjugação, pense: “quando eu______”... ✔​ Denota ação eventual ou hipotética no futuro. Ex.: Quando você me pagar, eu entregarei o produto. “Se eu quiser falar com Deus, tenho que ficar a sós”. Direi adeus àqueles que me traírem. Também pode ocorrer em forma composta, caso em que o “particípio” da locução vai sugerir uma ideia de completude da ação vista como hipotética. Ex.: Quando tudo estiver acabado, pediremos uma pizza. Futuro do Subjuntivo X Infinitivo Cuidado para não confundir o futuro do subjuntivo com o infinitivo, pois, em muitos verbos, a terminação é idêntica. Veja: Quando eu entregar o trabalho, ficarei tranquilo (futuro do subjuntivo). Para entregar o trabalho, faço horas extras (infinitivo). Para distinguir um do outro, deve-se observar o contexto. O futuro do subjuntivo tem ideia de BACEN - Língua Portuguesa 30 www.estrategiaconcursos.com.br 154 possibilidade/hipótese futura e geralmente vem apoiado numa conjunção “quando/se”. O infinitivo geralmente vem após uma preposição. Porém, o macete para fazer essa diferenciação imediatamente é trocar por um verbo que tenha infinitivo diferente do futuro do subjuntivo. Troque pelo verbo fazer. Ex.: Quando eu entregar (fizer) o trabalho, ficarei tranquilo. (futuro do subjuntivo) Para entregar (fazer) o trabalho, faço horas extras. (infinitivo) Propor (Infinitivo) x Propuser (futuro do subjuntivo) Entreter (Infinitivo) x Entretiver (futuro do subjuntivo) Ver (Infinitivo) x Vir (futuro do subjuntivo) Vir (Infinitivo) x Vier (futuro do subjuntivo) Essa diferença vale para os verbo",
       "questionSha256": "933f333717ff5712faae8bc1c36e0b5e8ab742dc42f1f0b5c157af8851f0bf4b",
-      "answerSha256": "651f600002caabd91946c7ebd537974fc9a404041d33a42a0800bd1008b683fe"
+      "answerSha256": "651f600002caabd91946c7ebd537974fc9a404041d33a42a0800bd1008b683fe",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de UFU-MG; 2. Identificar a regra central de Desinências Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "B",
+        "acceptedPedagogicalAnswers": [
+          "B"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A04-G03-CONFLICT-001-29",
+        "explanation": "Em bancas nacionais (FGV, Cebraspe, FCC), o sufixo '-ia' no imperfeito é DMT unificada. Em provas da FUNDATEC ou de perfil tradicional, atente para o tratamento de blocos inteiros de terminação infinitiva (-ar, -er, -ir) como desinências de infinitivo."
+      },
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "incorrect",
+          "explanation": "Opção a: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        },
+        {
+          "optionLabel": "b",
+          "status": "correct",
+          "explanation": "Opção b: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        },
+        {
+          "optionLabel": "c",
+          "status": "incorrect",
+          "explanation": "Opção c: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        }
+      ]
     },
     {
       "questionId": "aula04.q0101",
@@ -1367,7 +2139,50 @@
       "officialAnswer": "B",
       "explanation": "“PasseiE” é forma do presente do subjuntivo: que maria passeie; que o amor passeiE. A desinência que marca esse tempo A/E: que saiA, que aprendA, que estudE, que passE. Gabarito letra B.",
       "questionSha256": "ae0ba2a8cd5420bc716982658e366ccd829fdbce3ee4e4f85a2465ec4a2cd2fb",
-      "answerSha256": "a6ba219133dbd24ec367e054696bd4cc98780b8b30c6397c02eaed1c3f57fc7b"
+      "answerSha256": "a6ba219133dbd24ec367e054696bd4cc98780b8b30c6397c02eaed1c3f57fc7b",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de IMESF; 2. Identificar a regra central de Desinências Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "B",
+        "acceptedPedagogicalAnswers": [
+          "B"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A04-G03-CONFLICT-001-29",
+        "explanation": "Em bancas nacionais (FGV, Cebraspe, FCC), o sufixo '-ia' no imperfeito é DMT unificada. Em provas da FUNDATEC ou de perfil tradicional, atente para o tratamento de blocos inteiros de terminação infinitiva (-ar, -er, -ir) como desinências de infinitivo."
+      },
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "incorrect",
+          "explanation": "Opção a: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        },
+        {
+          "optionLabel": "b",
+          "status": "correct",
+          "explanation": "Opção b: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        },
+        {
+          "optionLabel": "c",
+          "status": "incorrect",
+          "explanation": "Opção c: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        },
+        {
+          "optionLabel": "e",
+          "status": "incorrect",
+          "explanation": "Opção e: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Desinências Verbais."
+        }
+      ]
     }
   ]
 }

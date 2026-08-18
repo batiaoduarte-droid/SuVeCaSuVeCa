@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A00-G01",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.683Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.424Z"
   },
   "unit": {
     "unitId": "IP-A00-G01",
@@ -354,6 +354,16 @@
         {
           "entityId": "RULE-IP-A00-G01-001",
           "title": "Definições Canônicas",
+          "statement": "Letra / Grafema: Símbolo escrito e visual que representa um som na escrita (KB-A00-G01-FONETICA-FONOLOGIA-002).\nFonema: Unidade acústica mínima com valor distintivo de sentido entre vocábulos (KB-A00-G01-FONETICA-FONOLOGIA-002).\nDígrafo: Grupo de duas letras que representa um único fonema (KB-A00-G01-FONETICA-FONOLOGIA-003).\nDífono: Uma única letra que expressa dois fonemas simultâneos (KB-A00-G01-FONETICA-FONOLOGIA-004).",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Letra / Grafema: Símbolo escrito e visual que representa um som na escrita (KB-A00-G01-FONETICA-FONOLOGIA-002).",
+            "Fonema: Unidade acústica mínima com valor distintivo de sentido entre vocábulos (KB-A00-G01-FONETICA-FONOLOGIA-002).",
+            "Dígrafo: Grupo de duas letras que representa um único fonema (KB-A00-G01-FONETICA-FONOLOGIA-003).",
+            "Dífono: Uma única letra que expressa dois fonemas simultâneos (KB-A00-G01-FONETICA-FONOLOGIA-004)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -370,6 +380,14 @@
         {
           "entityId": "RULE-IP-A00-G01-002",
           "title": "Classificações Canônicas de Dígrafos",
+          "statement": "Dígrafos Consonantais: CH, LH, NH, RR, SS, SC, SÇ, XC, XS, GU (diante de E/I mudo), QU (diante de E/I mudo) (KB-A00-G01-FONETICA-FONOLOGIA-003).\nDígrafos Vocálicos: Sequência de vogal + M ou N na mesma sílaba (AM, EM, IM, OM, UM / AN, EN, IN, ON, UN), produzindo vogais nasalizadas (KB-A00-G01-FONETICA-FONOLOGIA-003).",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Dígrafos Consonantais: CH, LH, NH, RR, SS, SC, SÇ, XC, XS, GU (diante de E/I mudo), QU (diante de E/I mudo) (KB-A00-G01-FONETICA-FONOLOGIA-003).",
+            "Dígrafos Vocálicos: Sequência de vogal + M ou N na mesma sílaba (AM, EM, IM, OM, UM / AN, EN, IN, ON, UN), produzindo vogais nasalizadas (KB-A00-G01-FONETICA-FONOLOGIA-003)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -384,6 +402,16 @@
         {
           "entityId": "RULE-IP-A00-G01-003",
           "title": "Regras Canônicas de Contagem",
+          "statement": "Regra Padrão: $F = L$ (em vocábulos regulares sem alterações fonéticas).\nRegra do Dígrafo / H mudo: A cada dígrafo ou $H$ inicial, subtrai-se 1 do total de letras ($F = L - 1$).\nRegra do Dífono (X = /ks/): A cada $X$ com som /ks/, adiciona-se 1 ao total de letras ($F = L + 1$).\nRegra da Imutabilidade: O número de fonemas só difere do número de letras na ocorrência de dígrafo/H mudo ou de $X = \\text{/ks/}$ (KB-A00-G01-FONETICA-FONOLOGIA-005).",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Regra Padrão: $F = L$ (em vocábulos regulares sem alterações fonéticas).",
+            "Regra do Dígrafo / H mudo: A cada dígrafo ou $H$ inicial, subtrai-se 1 do total de letras ($F = L - 1$).",
+            "Regra do Dífono (X = /ks/): A cada $X$ com som /ks/, adiciona-se 1 ao total de letras ($F = L + 1$).",
+            "Regra da Imutabilidade: O número de fonemas só difere do número de letras na ocorrência de dígrafo/H mudo ou de $X = \\text{/ks/}$ (KB-A00-G01-FONETICA-FONOLOGIA-005)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -404,6 +432,86 @@
         {
           "procedureId": "PROC-A00-G01-FONETICA-FONOLOGIA-001",
           "title": "Algoritmo Sistemático de Contagem de Letras e Fonemas",
+          "objective": "Executar o algoritmo decisório para Algoritmo Sistemático de Contagem de Letras e Fonemas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo Sistemático de Contagem de Letras e Fonemas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Contar os Grafemas ($L$)",
+              "explanation": "Conte todos os caracteres gráficos da palavra da esquerda para a direita.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Identificar Elementos Redutores ($-1$ por ocorrência)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Verificar $H$ inicial mudo (Hoje, Habilidoso);",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Sublinhar dígrafos consonantais (CH, LH, NH, RR, SS, SC, SÇ, XC, GU/QU mudos);",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Sublinhar dígrafos vocálicos (vogal + M/N na mesma sílaba",
+              "explanation": "AM, EN, IN, etc.).",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Identificar Elementos Ampliadores ($+1$ por ocorrência)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Localizar a letra $X$ e verificar se possui o som duplo de /ks/ (táxi, fixo, nexo).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Executar a Equação Aritmética",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Validar",
+              "explanation": "Caso não existam redutores nem ampliadores, confirme que $F = L$.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo Sistemático de Contagem de Letras e Fonemas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "formulas": [
+            "F = L - \\text{Total de Redutores} + \\text{Total de Ampliadores}"
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -473,6 +581,77 @@
         {
           "procedureId": "PROC-A00-G01-FONETICA-FONOLOGIA-002",
           "title": "Teste Diagnóstico para Classificação de Dígrafos",
+          "objective": "Executar o algoritmo decisório para Teste Diagnóstico para Classificação de Dígrafos",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste Diagnóstico para Classificação de Dígrafos."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar o encontro de duas letras.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Teste do Dígrafo Consonantal",
+              "explanation": "O som produzido é uma única consoante?",
+              "test": "Teste do Dígrafo Consonantal: O som produzido é uma única consoante?"
+            },
+            {
+              "order": 3,
+              "action": "Se for CH, LH, NH, RR, SS, SC, SÇ, XC $\\rightarrow$ Dígrafo Consonantal (DC).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se for GU ou QU, faça o teste",
+              "explanation": "a letra U é pronunciada?",
+              "test": "Se for GU ou QU, faça o teste: a letra U é pronunciada?"
+            },
+            {
+              "order": 5,
+              "action": "Se o U for mudo (guerra, quilo, quente) $\\rightarrow$ Dígrafo Consonantal (DC).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se o U for pronunciado (água, quase, cinquenta) $\\rightarrow$ Não é dígrafo (é encontro consonantal + semivogal/vogal).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Teste do Dígrafo Vocálico",
+              "explanation": "Há vogal seguida de M ou N no final da sílaba?",
+              "test": "Teste do Dígrafo Vocálico: Há vogal seguida de M ou N no final da sílaba?"
+            },
+            {
+              "order": 8,
+              "action": "Se o M ou N apenas nasalizarem a vogal (tampa, campo, vento, tinta) $\\rightarrow$ Dígrafo Vocálico (DV).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste Diagnóstico para Classificação de Dígrafos."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -520,6 +699,22 @@
         {
           "contrastId": "CONTRAST-IP-A00-G01-001",
           "title": "Tabela Comparativa de Fenômenos Fonéticos",
+          "contrastType": "mixed",
+          "conceptA": "Tabela Comparativa de Fenômenos Fonéticos",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -578,6 +773,22 @@
         {
           "contrastId": "CONTRAST-IP-A00-G01-002",
           "title": "Quadro de Distinção dos Quatro Valores do X",
+          "contrastType": "mixed",
+          "conceptA": "Quadro de Distinção dos Quatro Valores do X",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -633,6 +844,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G01-001",
           "title": "Análise Vocábulo a Vocábulo",
+          "prompt": "CHAVE:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "CHAVE",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Contagem de Letras",
+              "rationale": "$C - H - A - V - E = 5 \\text{ letras}$."
+            },
+            {
+              "order": 3,
+              "action": "Dígrafo",
+              "rationale": "CH (Dígrafo Consonantal, som /x/ ou /ʃ/)."
+            },
+            {
+              "order": 4,
+              "action": "Cálculo",
+              "rationale": "$5 - 1 = \\mathbf{4\\text{ \\textbf{fonemas}}}$."
+            },
+            {
+              "order": 5,
+              "action": "GUERRA",
+              "rationale": ""
+            }
+          ],
+          "result": "Cálculo: $5 - 1 = \\mathbf{4\\text{ \\textbf{fonemas}}}$.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise Vocábulo a Vocábulo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise Vocábulo a Vocábulo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise Vocábulo a Vocábulo.",
           "blocks": [
             {
               "type": "list",
@@ -703,6 +946,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G01-002",
           "title": "Enunciado e Resolução",
+          "prompt": "Identifique os tipos de dígrafo (vocálico ou consonantal) nos vocábulos abaixo:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Chave",
+              "rationale": "Possui o encontro CH $\\rightarrow$ Dígrafo Consonantal (DC)."
+            },
+            {
+              "order": 2,
+              "action": "Passar",
+              "rationale": "Possui o encontro SS $\\rightarrow$ Dígrafo Consonantal (DC)."
+            },
+            {
+              "order": 3,
+              "action": "Quente",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "QU antes de E (sem pronúncia do U) $\\rightarrow$ Dígrafo Consonantal (DC);",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "EN (nasalização da vogal E) $\\rightarrow$ Dígrafo Vocálico (DV);",
+              "rationale": null
+            }
+          ],
+          "result": "Campo: Possui o encontro AM (nasalização da vogal A) $\\rightarrow$ Dígrafo Vocálico (DV).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e Resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e Resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e Resolução.",
           "blocks": [
             {
               "type": "paragraph",
@@ -755,6 +1030,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G01-003",
           "title": "Tabela Consolidada de Resolução",
+          "prompt": "Tabela Consolidada de Resolução",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Tabela Consolidada de Resolução...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Tabela Consolidada de Resolução.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Tabela Consolidada de Resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Tabela Consolidada de Resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Tabela Consolidada de Resolução.",
           "blocks": [
             {
               "type": "table_ref",
@@ -895,8 +1192,12 @@
         {
           "trapId": "WARN-A00-G01-FONETICA-FONOLOGIA-001",
           "title": "O Falso Dígrafo nos Grupos \"GU\" e \"QU\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Falso Dígrafo nos Grupos \"GU\" e \"QU\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Falso Dígrafo nos Grupos \"GU\" e \"QU\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Falso Dígrafo nos Grupos \"GU\" e \"QU\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Falso Dígrafo nos Grupos \"GU\" e \"QU\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Falso Dígrafo nos Grupos \"GU\" e \"QU\".",
+          "correctReasoning": "Supor que toda ocorrência gráfica de GU ou QU forma dígrafo.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Falso Dígrafo nos Grupos \"GU\" e \"QU\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Falso Dígrafo nos Grupos \"GU\" e \"QU\".",
           "blocks": [
             {
               "type": "heading",
@@ -925,8 +1226,12 @@
         {
           "trapId": "WARN-A00-G01-FONETICA-FONOLOGIA-002",
           "title": "A Armadilha da Letra X com Sons de /z/, /s/ ou /ʃ/",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha da Letra X com Sons de /z/, /s/ ou /ʃ/.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha da Letra X com Sons de /z/, /s/ ou /ʃ/.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha da Letra X com Sons de /z/, /s/ ou /ʃ/ no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha da Letra X com Sons de /z/, /s/ ou /ʃ/.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha da Letra X com Sons de /z/, /s/ ou /ʃ/.",
+          "correctReasoning": "Adicionar $+1$ fonema a qualquer palavra que contenha a letra X.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha da Letra X com Sons de /z/, /s/ ou /ʃ/.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha da Letra X com Sons de /z/, /s/ ou /ʃ/.",
           "blocks": [
             {
               "type": "heading",
@@ -951,8 +1256,12 @@
         {
           "trapId": "WARN-A00-G01-FONETICA-FONOLOGIA-003",
           "title": "O Impacto do H Inicial Mudo na Contagem",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Impacto do H Inicial Mudo na Contagem.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Impacto do H Inicial Mudo na Contagem.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Impacto do H Inicial Mudo na Contagem no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Impacto do H Inicial Mudo na Contagem.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Impacto do H Inicial Mudo na Contagem.",
+          "correctReasoning": "Esquecer de subtrair o H inicial mudo na contagem de fonemas por não encontrá-lo na lista clássica de dígrafos.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Impacto do H Inicial Mudo na Contagem.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Impacto do H Inicial Mudo na Contagem.",
           "blocks": [
             {
               "type": "heading",
@@ -1054,7 +1363,10 @@
       "officialAnswer": "correct",
       "explanation": "O “h” não tem som próprio, então há um fonema a menos que o número de letras. Gabarito: Correto.",
       "questionSha256": "63e389ff8f7f2d25ed6aae93e3a6870ed114001873fa7d0a49300ee9eccd2339",
-      "answerSha256": "e83c543a71025c94898c47170e440a64a6ef527b8a007dcbcbbde4fd329212d5"
+      "answerSha256": "e83c543a71025c94898c47170e440a64a6ef527b8a007dcbcbbde4fd329212d5",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Fonética e Fonologia; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula00.q0157",
@@ -1066,7 +1378,10 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "6ff02bf7b9c316a7359afd780ffaeeb3460958434ed1febc6bdb0d860106d3cf",
-      "answerSha256": "c90d3b2f7a85b638fbaef27ceb9b666320a4e522cde31c543428565e85c178a9"
+      "answerSha256": "c90d3b2f7a85b638fbaef27ceb9b666320a4e522cde31c543428565e85c178a9",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Fonética e Fonologia; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula00.q0065",
@@ -1079,7 +1394,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Não em “cada um”: em “falantes”, temos dígrafo vocálico: an=ã. Portanto, nessa palavra, temos 8 letras, mas apenas 7 fonemas. Gabarito: Errado.",
       "questionSha256": "b6f5552edd7343fae8c54afda5be90d2d144e7195129fe282094fd9baf7b9e54",
-      "answerSha256": "ecaaced97754a4e74f2feaeeb973a1e1cc54914ad66e9dfec28bf81b72994038"
+      "answerSha256": "ecaaced97754a4e74f2feaeeb973a1e1cc54914ad66e9dfec28bf81b72994038",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Fonética e Fonologia; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula00.q0156",
@@ -1091,7 +1409,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "0f55354f8ad0ecd800ab0639b1bc4f14cfa62f744a46438afea6445d8907f6de",
-      "answerSha256": "4587cf2094d9b9084aaa4b75538e2f6344283269a008e0898194a42c1e7ac7a3"
+      "answerSha256": "4587cf2094d9b9084aaa4b75538e2f6344283269a008e0898194a42c1e7ac7a3",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Fonética e Fonologia; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula00.q0002",
@@ -1125,7 +1446,41 @@
       "officialAnswer": "D",
       "explanation": "As palavras “distinguir”, “extinguir” e “adquirir” não têm o “u” pronunciado, pois temos dígrafo GU e QU. a) A palavra “subsídio” possui o som de /cê/ no segundo “s”, como em suiCÍdio. b) As palavras “sintaxe” e “inexorável” possuem a letra “x” com som de \"SS\" (*sintaSSE) e \"Z\" (*ineZorável) c) As palavras “gratUito”, “fortUito” e “circuito” têm tonicidade no “U”. e) As palavras como “cruz” e “mas” são pronunciadas com o som /S/. Gabarito letra D.",
       "questionSha256": "aa63c6f5be63f5857d00352e5a656e7d539929d0434aaed512805e1fd9dccad2",
-      "answerSha256": "ed2421aacc674a67eaf8cc9d3e361d80d203e11d2646ba477290023325d9029d"
+      "answerSha256": "ed2421aacc674a67eaf8cc9d3e361d80d203e11d2646ba477290023325d9029d",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de ALEPI; 2. Identificar a regra central de Fonética e Fonologia; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "incorrect",
+          "explanation": "Opção a: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Fonética e Fonologia."
+        },
+        {
+          "optionLabel": "b",
+          "status": "incorrect",
+          "explanation": "Opção b: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Fonética e Fonologia."
+        },
+        {
+          "optionLabel": "c",
+          "status": "incorrect",
+          "explanation": "Opção c: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Fonética e Fonologia."
+        },
+        {
+          "optionLabel": "d",
+          "status": "correct",
+          "explanation": "Opção d: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Fonética e Fonologia."
+        },
+        {
+          "optionLabel": "e",
+          "status": "incorrect",
+          "explanation": "Opção e: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Fonética e Fonologia."
+        }
+      ]
     },
     {
       "questionId": "aula00.q0067",
@@ -1138,7 +1493,10 @@
       "officialAnswer": "correct",
       "explanation": "Exato. SS é um dígrafo consonantal, pois representa o mesmo som do “s” na palavra “sapo”, por exemplo. Os dígrafos para consoantes são os seguintes, todos inseparáveis, com exceção de rr e ss, sc, sç, xc, xs: CH: chá XS: exsudar (def. transpirar) XC: exceto LH: malha RR: carro SÇ: nasça GU: guerra NH: banha SS: passo SC: nascer QU: quero Questão correta.",
       "questionSha256": "882bbe052414dbdd3ebda04b8ad3eef6798023b1da0ced787c6483e731aec545",
-      "answerSha256": "fcc57831b79452892934ab135f80bb8aebf20ac9c8841c8d357f2b722dfd410c"
+      "answerSha256": "fcc57831b79452892934ab135f80bb8aebf20ac9c8841c8d357f2b722dfd410c",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Fonética e Fonologia; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A07-G01",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.828Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.579Z"
   },
   "unit": {
     "unitId": "IP-A07-G01",
@@ -482,6 +482,16 @@
         {
           "entityId": "RULE-IP-A07-G01-001",
           "title": "Regras canônicas",
+          "statement": "Abaixo consolidam-se as formulações normativas e operacionais adotadas no grupo temático:\nPeríodo Simples / Oração Absoluta: Unidade oracional delimitada por pontuação final que contém exatamente 1 verbo ou 1 locução verbal com valor predicativo pleno (KB-A07-G01-001, TERM-A07-G01-001, TERM-A07-G01-002).\nPeríodo Composto: Estrutura sintática delimitada por pontuação final que possui 2 ou mais orações (2 ou mais verbos ou locuções verbais) (KB-A07-G01-001, TERM-A07-G01-003).\nCoordenação: Relação sintática caracterizada pelo paralelismo e ausência de dependência funcional entre as orações (KB-A07-G01-002, TERM-A07-G01-005).\nSubordinação: Relação sintática em que uma oração funciona estritamente como termo sintático de outra (KB-A07-G01-002, TERM-A07-G01-006).\nRegra de Ouro da Classificação (\"De Trás para Frente\"): A determinação sintática da oração inicia-se pela identificação morfológico-semântica do conectivo (KB-A07-G01-003, PROC-A07-G01-001).\nConectivo Oracional: Palavra ou locução invariável (conjunção coordenativa, subordinativa ou pronome relativo) que encabeça orações no período composto desenvolvido (KB-A07-G01-004, TERM-A07-G01-004).\nMnemônico dos 3 As + C + E: Fórmula de memorização das 5 classes de orações coordenadas sindéticas: Aditivas, Adversativas, Alternativas, Conclusivas e Explicativas (KB-A07-G01-005, TIP-A07-G01-002).\nRegra da Locução Verbal: Uma locução verbal, ainda que integrada por preposição intermediária, expressa um único processo predicativo e conta como 1 única oração (KB-A07-G01-001, WARN-A07-G01-004).\nRegra de Extensão da Conjunção: Conjunções podem articular orações ou apenas termos nominais/adjuntos (KB-A07-G01-006, QUOTE-A07-G01-004).",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Período Simples / Oração Absoluta: Unidade oracional delimitada por pontuação final que contém exatamente 1 verbo ou 1 locução verbal com valor predicativo pleno (KB-A07-G01-001, TERM-A07-G01-001, TERM-A07-G01-002).",
+            "Período Composto: Estrutura sintática delimitada por pontuação final que possui 2 ou mais orações (2 ou mais verbos ou locuções verbais) (KB-A07-G01-001, TERM-A07-G01-003).",
+            "Coordenação: Relação sintática caracterizada pelo paralelismo e ausência de dependência funcional entre as orações (KB-A07-G01-002, TERM-A07-G01-005).",
+            "Subordinação: Relação sintática em que uma oração funciona estritamente como termo sintático de outra (KB-A07-G01-002, TERM-A07-G01-006)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "paragraph",
@@ -511,6 +521,131 @@
         {
           "procedureId": "PROC-A07-G01-001",
           "title": "Roteiro Integrado de Identificação e Classificação Sintática (\"Método Ninja\")",
+          "objective": "Executar o algoritmo decisório para Roteiro Integrado de Identificação e Classificação Sintática (\"Método Ninja\")",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Roteiro Integrado de Identificação e Classificação Sintática (\"Método Ninja\")."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Reconhecimento imediato de locuções verbais.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Domínio da tabela de conjunções coordenativas (3 As + C + E).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Contagem dos núcleos verbais",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Sublinhar todos os verbos e locuções verbais.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Tratar cada locução verbal (mesmo com preposição intermediária) como 1 único verbo.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Descartar verbos no infinitivo precedidos de artigo (são substantivos).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Se houver apenas 1 verbo/locução verbal $\\rightarrow$ Classificar como Período Simples (Oração Absoluta) e encerrar.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Se houver 2 ou mais verbos/locuções verbais $\\rightarrow$ Classificar como Período Composto e avançar ao Passo 2.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Localização e isolamento do conectivo",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Localizar os conectores oracionais.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Se não houver conectivo e as orações forem independentes $\\rightarrow$ Orações Coordenadas Assindéticas.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 12,
+              "action": "Se houver conjunção coordenativa (e, mas, ou, por isso, que/porque) $\\rightarrow$ Orações Coordenadas Sindéticas.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 13,
+              "action": "Se houver conectivo subordinativo $\\rightarrow$ Avançar ao Passo 3.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 14,
+              "action": "Classificação \"de trás para frente\" da subordinação",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 15,
+              "action": "Aplicar o teste do \"isso\" no que/se $\\rightarrow$ Sendo afirmativo, é Conjunção Integrante (Oração Subordinada Substantiva).",
+              "explanation": null,
+              "test": "Aplicar o teste do \"isso\" no que/se $\\rightarrow$ Sendo afirmativo, é Conjunção Integrante (Oração Subordinada Substantiva)."
+            },
+            {
+              "order": 16,
+              "action": "Substituir o que por o qual / a qual $\\rightarrow$ Sendo afirmativo, é Pronome Relativo (Oração Subordinada Adjetiva).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 17,
+              "action": "Identificar a circunstância adverbial (para que, quando, como causal) $\\rightarrow$ Oração Subordinada Adverbial.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Roteiro Integrado de Identificação e Classificação Sintática (\"Método Ninja\")."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -595,6 +730,71 @@
         {
           "procedureId": "PROC-A07-G01-002",
           "title": "Teste da Substituição por \"Isso\" para Reconhecimento de Conjunção Integrante",
+          "objective": "Executar o algoritmo decisório para Teste da Substituição por \"Isso\" para Reconhecimento de Conjunção Integrante",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste da Substituição por \"Isso\" para Reconhecimento de Conjunção Integrante."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar a oração encabeçada pela palavra que (ou forma reduzida de infinitivo).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Isolar a oração principal e substituir mentalmente toda a oração subordinada pelo pronome demonstrativo substantivo \"isso\" (ou contrações disso, nisso).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Avaliar a integridade sintático-semântica da sentença resultante",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Espero [que ele se recupere logo] -> Espero [isso] (Sentido completo -> que = Conjunção Integrante -> Oração Subordinada Substantiva Objetiva Direta).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "É claro [que a criminalidade tem de ser combatida] -> É claro [isso] / [Isso] é claro (Sentido completo -> que = Conjunção Integrante -> Oração Subordinada Substantiva Subjetiva).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "É dever do Estado [prover crianças...] -> É dever do Estado [isso] (Sentido completo -> Oração Subordinada Substantiva reduzida).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Resultado",
+              "explanation": "Se a substituição for perfeita, descarta-se categoricamente processo de coordenação ou subordinação adverbial/adjetiva.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste da Substituição por \"Isso\" para Reconhecimento de Conjunção Integrante."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -640,6 +840,65 @@
         {
           "procedureId": "PROC-A07-G01-003",
           "title": "Teste de Substituição por \"O Qual\" para Reconhecimento de Pronome Relativo",
+          "objective": "Executar o algoritmo decisório para Teste de Substituição por \"O Qual\" para Reconhecimento de Pronome Relativo",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Substituição por \"O Qual\" para Reconhecimento de Pronome Relativo."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar o vocábulo que.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Verificar se há substantivo ou pronome antecedente ao qual o que se refere.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Substituir o que por o qual / a qual / os quais / as quais (conforme gênero e número do antecedente)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Assistimos ao espetáculo [que ganhou o prêmio] -> ...espetáculo [o qual ganhou o prêmio].",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "...dispositivos importantes, [que asseguram proteção] -> ...dispositivos [os quais asseguram proteção].",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Resultado",
+              "explanation": "Havendo concordância e sentido pleno, confirma-se que o vocábulo é pronome relativo e introduz Oração Subordinada Adjetiva.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Substituição por \"O Qual\" para Reconhecimento de Pronome Relativo."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -684,6 +943,59 @@
         {
           "procedureId": "PROC-A07-G01-004",
           "title": "Teste Diagnóstico para Conjunções Ligando Termos Nominais versus Orações",
+          "objective": "Executar o algoritmo decisório para Teste Diagnóstico para Conjunções Ligando Termos Nominais versus Orações",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste Diagnóstico para Conjunções Ligando Termos Nominais versus Orações."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ao encontrar conjunções no período, verificar imediatamente o segmento textual após cada conector.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Formular a pergunta-teste",
+              "explanation": "Há verbo conjugado ou forma nominal predicativa associada a esta conjunção?",
+              "test": "Formular a pergunta-teste: Há verbo conjugado ou forma nominal predicativa associada a esta conjunção?"
+            },
+            {
+              "order": 3,
+              "action": "Se SIM -> A conjunção está ligando orações -> Computa-se nova oração -> Período Composto.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se NÃO (há apenas substantivos, pronomes ou sintagmas preposicionados) -> A conjunção está ligando termos da oração.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Contar os verbos restantes no período",
+              "explanation": "se houver apenas 1 núcleo verbal na frase inteira, o período é formalmente Simples (Oração Absoluta).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste Diagnóstico para Conjunções Ligando Termos Nominais versus Orações."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -731,6 +1043,22 @@
         {
           "contrastId": "CONTRAST-IP-A07-G01-001",
           "title": "Tabela 1: Período Simples vs. Período Composto",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 1: Período Simples vs. Período Composto",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -772,6 +1100,22 @@
         {
           "contrastId": "CONTRAST-IP-A07-G01-002",
           "title": "Tabela 2: Processo Sintático de Coordenação vs. Subordinação",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 2: Processo Sintático de Coordenação vs. Subordinação",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -813,6 +1157,22 @@
         {
           "contrastId": "CONTRAST-IP-A07-G01-003",
           "title": "Tabela 3: Conjunção Integrante vs. Pronome Relativo",
+          "contrastType": "morphological",
+          "conceptA": "Tabela 3: Conjunção Integrante vs. Pronome Relativo",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -849,6 +1209,22 @@
         {
           "contrastId": "CONTRAST-IP-A07-G01-004",
           "title": "Tabela 4: Conjunção Conectando Orações vs. Conectando Termos",
+          "contrastType": "morphological",
+          "conceptA": "Tabela 4: Conjunção Conectando Orações vs. Conectando Termos",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -884,6 +1260,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-001",
           "title": "EX-A07-G01-001 — Modelo 1: Período Simples com Derivação Imprópria",
+          "prompt": "Enunciado: Ontem, durante o amanhecer do dia, Júlio sorriu para Cristina meigamente.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Ontem, durante o amanhecer do dia, Júlio sorriu para Cristina meigamente."
+            },
+            {
+              "order": 2,
+              "action": "Análise passo a passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Identificação de núcleos verbais",
+              "rationale": "sorriu (1 verbo conjugado)."
+            },
+            {
+              "order": 4,
+              "action": "Análise do vocábulo amanhecer",
+              "rationale": "precedido do artigo definido o -> sofreu derivação imprópria (substantivo)."
+            },
+            {
+              "order": 5,
+              "action": "Contagem",
+              "rationale": "1 verbo = 1 oração."
+            }
+          ],
+          "result": "Classificação: Período Simples / Oração Absoluta.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-001 — Modelo 1: Período Simples com Derivação Imprópria sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-001 — Modelo 1: Período Simples com Derivação Imprópria.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-001 — Modelo 1: Período Simples com Derivação Imprópria.",
           "blocks": [
             {
               "type": "list",
@@ -914,6 +1322,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-002",
           "title": "EX-A07-G01-002 — Modelo 2: Coordenação Sindética Adversativa",
+          "prompt": "Enunciado: Escreveu a carta, mas não a enviou.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Escreveu a carta, mas não a enviou."
+            },
+            {
+              "order": 2,
+              "action": "Análise passo a passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Identificação de núcleos verbais",
+              "rationale": "Escreveu (verbo 1) e enviou (verbo 2) -> Período Composto."
+            },
+            {
+              "order": 4,
+              "action": "Análise do conectivo",
+              "rationale": "mas é conjunção coordenativa adversativa."
+            },
+            {
+              "order": 5,
+              "action": "Classificação",
+              "rationale": "Período Composto por Coordenação (Oração Coordenada Sindética Adversativa)."
+            }
+          ],
+          "result": "Classificação: Período Composto por Coordenação (Oração Coordenada Sindética Adversativa).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-002 — Modelo 2: Coordenação Sindética Adversativa sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-002 — Modelo 2: Coordenação Sindética Adversativa.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-002 — Modelo 2: Coordenação Sindética Adversativa.",
           "blocks": [
             {
               "type": "list",
@@ -943,6 +1383,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-003",
           "title": "EX-A07-G01-003 — Modelo 3: Subordinação Substantiva com Conjunção Integrante",
+          "prompt": "Enunciado: Espero que ele se recupere logo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Espero que ele se recupere logo."
+            },
+            {
+              "order": 2,
+              "action": "Análise passo a passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Identificação de núcleos verbais",
+              "rationale": "Espero (verbo 1) e recupere (verbo 2) -> Período Composto."
+            },
+            {
+              "order": 4,
+              "action": "Teste do conectivo",
+              "rationale": "Espero [isso]. Sentido completo -> que é Conjunção Integrante (C.I.)."
+            },
+            {
+              "order": 5,
+              "action": "Classificação",
+              "rationale": "Período Composto por Subordinação (Oração Subordinada Substantiva Objetiva Direta)."
+            }
+          ],
+          "result": "Classificação: Período Composto por Subordinação (Oração Subordinada Substantiva Objetiva Direta).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-003 — Modelo 3: Subordinação Substantiva com Conjunção Integrante sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-003 — Modelo 3: Subordinação Substantiva com Conjunção Integrante.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-003 — Modelo 3: Subordinação Substantiva com Conjunção Integrante.",
           "blocks": [
             {
               "type": "list",
@@ -972,6 +1444,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-004",
           "title": "EX-A07-G01-004 — Modelo 4: Subordinação Adjetiva com Pronome Relativo",
+          "prompt": "Enunciado: Assistimos ao espetáculo que ganhou o prêmio.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assistimos ao espetáculo que ganhou o prêmio."
+            },
+            {
+              "order": 2,
+              "action": "Análise passo a passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Identificação de núcleos verbais",
+              "rationale": "Assistimos (verbo 1) e ganhou (verbo 2) -> Período Composto."
+            },
+            {
+              "order": 4,
+              "action": "Análise do conectivo",
+              "rationale": "que retoma o substantivo espetáculo (= o qual ganhou o prêmio) -> Pronome Relativo."
+            },
+            {
+              "order": 5,
+              "action": "Classificação",
+              "rationale": "Período Composto por Subordinação (Oração Subordinada Adjetiva)."
+            }
+          ],
+          "result": "Classificação: Período Composto por Subordinação (Oração Subordinada Adjetiva).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-004 — Modelo 4: Subordinação Adjetiva com Pronome Relativo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-004 — Modelo 4: Subordinação Adjetiva com Pronome Relativo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-004 — Modelo 4: Subordinação Adjetiva com Pronome Relativo.",
           "blocks": [
             {
               "type": "list",
@@ -1001,6 +1505,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-005",
           "title": "EX-A07-G01-005 — Modelo 5: Subordinação Adverbial Final",
+          "prompt": "Enunciado: Cheguei cedo para que conseguisse um bom lugar.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Cheguei cedo para que conseguisse um bom lugar."
+            },
+            {
+              "order": 2,
+              "action": "Análise passo a passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Identificação de núcleos verbais",
+              "rationale": "Cheguei (verbo 1) e conseguisse (verbo 2) -> Período Composto."
+            },
+            {
+              "order": 4,
+              "action": "Análise do conectivo",
+              "rationale": "para que introduz ideia de finalidade (= a fim de que)."
+            },
+            {
+              "order": 5,
+              "action": "Classificação",
+              "rationale": "Período Composto por Subordinação (Oração Subordinada Adverbial Final)."
+            }
+          ],
+          "result": "Classificação: Período Composto por Subordinação (Oração Subordinada Adverbial Final).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-005 — Modelo 5: Subordinação Adverbial Final sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-005 — Modelo 5: Subordinação Adverbial Final.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-005 — Modelo 5: Subordinação Adverbial Final.",
           "blocks": [
             {
               "type": "list",
@@ -1030,6 +1566,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-006",
           "title": "EX-A07-G01-006 — Modelo 6: Orações Coordenadas Assindéticas em Sequência",
+          "prompt": "Enunciado: Não brincara, não pandegara, não amara.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Não brincara, não pandegara, não amara."
+            },
+            {
+              "order": 2,
+              "action": "Análise passo a passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Identificação de núcleos verbais",
+              "rationale": "brincara (1), pandegara (2), amara (3) -> 3 orações."
+            },
+            {
+              "order": 4,
+              "action": "Análise dos conectivos",
+              "rationale": "ausência de conjunções de ligação entre elas; orações separadas apenas por vírgulas."
+            },
+            {
+              "order": 5,
+              "action": "Classificação",
+              "rationale": "Orações Coordenadas Assindéticas."
+            }
+          ],
+          "result": "Classificação: Orações Coordenadas Assindéticas.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-006 — Modelo 6: Orações Coordenadas Assindéticas em Sequência sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-006 — Modelo 6: Orações Coordenadas Assindéticas em Sequência.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-006 — Modelo 6: Orações Coordenadas Assindéticas em Sequência.",
           "blocks": [
             {
               "type": "list",
@@ -1059,6 +1627,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-007",
           "title": "EX-A07-G01-007 — Questão 01: Identificação Básica de Coordenação Aditiva",
+          "prompt": "Banca / Órgão / Ano / Cargo: IBADE - 2019 - JARU-PREVI - RO - Contador",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano / Cargo",
+              "rationale": "IBADE - 2019 - JARU-PREVI - RO - Contador"
+            },
+            {
+              "order": 2,
+              "action": "Enunciado",
+              "rationale": "Classificar a estrutura: \"Uma operação certamente durará horas e os resultados são incertos.\""
+            },
+            {
+              "order": 3,
+              "action": "A) simples; B) oração absoluta; C) composto por coordenação; D) composto por subordinação; E) composto por coordenação e subordinação.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Resolução",
+              "rationale": ""
+            },
+            {
+              "order": 5,
+              "action": "Verbos",
+              "rationale": "durará (1) e são (2) -> Período composto (elimina A e B)."
+            }
+          ],
+          "result": "Gabarito oficial: C (composto por coordenação).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-007 — Questão 01: Identificação Básica de Coordenação Aditiva sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-007 — Questão 01: Identificação Básica de Coordenação Aditiva.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-007 — Questão 01: Identificação Básica de Coordenação Aditiva.",
           "blocks": [
             {
               "type": "list",
@@ -1090,6 +1690,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-008",
           "title": "EX-A07-G01-008 — Questão 02: Coordenação Adversativa com \"Agora\" vs. Subordinação",
+          "prompt": "Banca / Órgão / Ano / Cargo: IBADE - 2018 - Câmara de Vilhena - RO - Auditor Interno",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano / Cargo",
+              "rationale": "IBADE - 2018 - Câmara de Vilhena - RO - Auditor Interno"
+            },
+            {
+              "order": 2,
+              "action": "Enunciado",
+              "rationale": "Identificar o período composto por coordenação entre as alternativas."
+            },
+            {
+              "order": 3,
+              "action": "Análise das alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "A) É possível [que a estreia seja amanhã] -> que = Conjunção Integrante (É possível isso) -> Subordinação.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "B) Não sou mau; agora, também não sou bobo. -> agora atua com valor adversativo (= porém) -> Coordenação.",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito oficial: B.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-008 — Questão 02: Coordenação Adversativa com \"Agora\" vs. Subordinação sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-008 — Questão 02: Coordenação Adversativa com \"Agora\" vs. Subordinação.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-008 — Questão 02: Coordenação Adversativa com \"Agora\" vs. Subordinação.",
           "blocks": [
             {
               "type": "list",
@@ -1111,6 +1743,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-009",
           "title": "EX-A07-G01-009 — Questão 03: Coordenação em Alternativas Extensas da FGV",
+          "prompt": "Banca / Órgão / Cargo: FGV - AL-MA - Consultor Legislativo - Direito Constitucional",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Cargo",
+              "rationale": "FGV - AL-MA - Consultor Legislativo - Direito Constitucional"
+            },
+            {
+              "order": 2,
+              "action": "Enunciado",
+              "rationale": "Assinalar a oração que exemplifica o processo de coordenação."
+            },
+            {
+              "order": 3,
+              "action": "Análise das alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "A) ...prover crianças e adolescentes... -> Oração reduzida de infinitivo substantiva (É dever do Estado isso).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "B) ...dispositivos importantes, [que asseguram proteção] -> que = pronome relativo -> Subordinação adjetiva.",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito oficial: E.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-009 — Questão 03: Coordenação em Alternativas Extensas da FGV sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-009 — Questão 03: Coordenação em Alternativas Extensas da FGV.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-009 — Questão 03: Coordenação em Alternativas Extensas da FGV.",
           "blocks": [
             {
               "type": "list",
@@ -1132,6 +1796,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-010",
           "title": "EX-A07-G01-010 — Questão 04: Orações Coordenadas Assindéticas",
+          "prompt": "Banca / Órgão / Ano / Cargo: INSTITUTO AOCP - 2018 - ADAF - AM - Agente de Fiscalização Agropecuária",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano / Cargo",
+              "rationale": "INSTITUTO AOCP - 2018 - ADAF - AM - Agente de Fiscalização Agropecuária"
+            },
+            {
+              "order": 2,
+              "action": "Enunciado",
+              "rationale": "Identificar a alternativa composta unicamente por orações coordenadas assindéticas (sem conjunções)."
+            },
+            {
+              "order": 3,
+              "action": "Análise das alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "A) [Espere aqui], [eu vou te mostrar imediatamente...] -> Orações ligadas por vírgula, sem qualquer conjunção -> Assindéticas.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "B) ...e eu vou segurar... -> Conjunção e (sindética).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito oficial: A.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-010 — Questão 04: Orações Coordenadas Assindéticas sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-010 — Questão 04: Orações Coordenadas Assindéticas.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-010 — Questão 04: Orações Coordenadas Assindéticas.",
           "blocks": [
             {
               "type": "list",
@@ -1153,6 +1849,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-011",
           "title": "EX-A07-G01-011 — Questão 05: Classificação de Oração Justaposta",
+          "prompt": "Banca / Órgão / Ano / Cargo: IBADE - 2019 - Prefeitura de Aracruz - ES - Instrutor de Libras",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano / Cargo",
+              "rationale": "IBADE - 2019 - Prefeitura de Aracruz - ES - Instrutor de Libras"
+            },
+            {
+              "order": 2,
+              "action": "Enunciado",
+              "rationale": "Classificar a oração destacada: \"Ele tem experiência de mato e de cidade, SABE EXPLORAR OS MUNDOS, AS HORAS\"."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Oração 1",
+              "rationale": "Ele tem experiência de mato e de cidade."
+            },
+            {
+              "order": 5,
+              "action": "Oração 2 (destacada)",
+              "rationale": "sabe explorar os mundos, as horas."
+            }
+          ],
+          "result": "Gabarito oficial: A (coordenada assindética).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-011 — Questão 05: Classificação de Oração Justaposta sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-011 — Questão 05: Classificação de Oração Justaposta.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-011 — Questão 05: Classificação de Oração Justaposta.",
           "blocks": [
             {
               "type": "list",
@@ -1184,6 +1912,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-012",
           "title": "EX-A07-G01-012 — Questão 06: Encadeamento Coordenativo Assindético e Sindético",
+          "prompt": "Banca / Órgão / Ano / Cargo: IBADE - 2018 - CAERN - Técnico em Segurança do Trabalho",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano / Cargo",
+              "rationale": "IBADE - 2018 - CAERN - Técnico em Segurança do Trabalho"
+            },
+            {
+              "order": 2,
+              "action": "Enunciado",
+              "rationale": "Identificar o recurso sintático em: \"O lixo é caro, gasta energia, leva tempo para decompor e demanda muito espaço.\""
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Orações 1, 2 e 3 (é caro, gasta energia, leva tempo)",
+              "rationale": "ligadas sem conjunção -> coordenadas assindéticas."
+            },
+            {
+              "order": 5,
+              "action": "Oração final (e demanda muito espaço)",
+              "rationale": "introduzida pela conjunção aditiva e -> coordenada sindética aditiva."
+            }
+          ],
+          "result": "Gabarito oficial: C (coordenação assindética e sindética).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-012 — Questão 06: Encadeamento Coordenativo Assindético e Sindético sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-012 — Questão 06: Encadeamento Coordenativo Assindético e Sindético.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-012 — Questão 06: Encadeamento Coordenativo Assindético e Sindético.",
           "blocks": [
             {
               "type": "list",
@@ -1202,6 +1962,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-013",
           "title": "EX-A07-G01-013 — Questão 07: Julgamento de Coordenação com Pares Correlativos",
+          "prompt": "Banca / Órgão / Cargo: CESPE - TRE-AL - Analista Judiciário - Área Administrativa",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Cargo",
+              "rationale": "CESPE - TRE-AL - Analista Judiciário - Área Administrativa"
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "\"No segundo período do texto ['Mas leitura, quer do mundo, quer de livros, só se aprende e se vivencia...'], a relação entre as orações dá-se por coordenação.\""
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Conectivos presentes",
+              "rationale": "par alternativo quer... quer e conjunção aditiva e ligando as ações verbais se aprende e se vivencia. Conectivos alternativos e aditivos pertencem estritamente à coordenação."
+            },
+            {
+              "order": 5,
+              "action": "Julgamento",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Julgamento: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-013 — Questão 07: Julgamento de Coordenação com Pares Correlativos sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-013 — Questão 07: Julgamento de Coordenação com Pares Correlativos.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-013 — Questão 07: Julgamento de Coordenação com Pares Correlativos.",
           "blocks": [
             {
               "type": "list",
@@ -1219,6 +2011,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-014",
           "title": "EX-A07-G01-014 — Questão 08: Contagem de Orações com Locução Verbal com Preposição",
+          "prompt": "Banca / Órgão / Cargo: CESPE / CEBRASPE - PC-RR - Médico-Legista",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Cargo",
+              "rationale": "CESPE / CEBRASPE - PC-RR - Médico-Legista"
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "\"No período 'O comércio eletrônico não se resume a colocar um site na Internet, mas o custo maior dessa operação está na logística', há apenas duas orações ligadas pelo processo de coordenação.\""
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Contagem oracional",
+              "rationale": ""
+            },
+            {
+              "order": 5,
+              "action": "Oração 1",
+              "rationale": "não se resume a colocar = locução verbal com preposição = 1 oração."
+            }
+          ],
+          "result": "Julgamento: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-014 — Questão 08: Contagem de Orações com Locução Verbal com Preposição sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-014 — Questão 08: Contagem de Orações com Locução Verbal com Preposição.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-014 — Questão 08: Contagem de Orações com Locução Verbal com Preposição.",
           "blocks": [
             {
               "type": "list",
@@ -1264,6 +2088,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-015",
           "title": "EX-A07-G01-015 — Questão 09: A Pegadinha do Período Simples com \"Seja... Seja\"",
+          "prompt": "Banca / Órgão / Cargo: CESPE - SEDF - Professor de Educação Básica - Língua Portuguesa",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Cargo",
+              "rationale": "CESPE - SEDF - Professor de Educação Básica - Língua Portuguesa"
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "\"O primeiro parágrafo do texto ['A língua continua sendo forte elemento de discriminação social, seja no próprio contexto escolar, seja em outros contextos sociais...'] é um período composto por orações coordenadas.\""
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Contagem de verbos",
+              "rationale": "localiza-se unicamente a locução verbal continua sendo."
+            },
+            {
+              "order": 5,
+              "action": "Análise do seja... seja",
+              "rationale": "atuam como conjunções alternativas (= ou... ou) que ligam adjuntos adverbiais de lugar nominais (no próprio contexto escolar, em outros contextos sociais), e não orações. Não há novos verbos."
+            }
+          ],
+          "result": "Julgamento: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-015 — Questão 09: A Pegadinha do Período Simples com \"Seja... Seja\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-015 — Questão 09: A Pegadinha do Período Simples com \"Seja... Seja\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-015 — Questão 09: A Pegadinha do Período Simples com \"Seja... Seja\".",
           "blocks": [
             {
               "type": "list",
@@ -1295,6 +2151,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-016",
           "title": "EX-A07-G01-001 — Demonstração 1: Período Simples com Infinitivo Substantivado",
+          "prompt": "Enunciado: Ontem, durante o amanhecer do dia, Júlio sorriu para Cristina meigamente.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Ontem, durante o amanhecer do dia, Júlio sorriu para Cristina meigamente."
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "O termo amanhecer está precedido do artigo definido o (o amanhecer = substantivo). Há apenas um verbo conjugado (sorriu)."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Período Simples / Oração Absoluta."
+            }
+          ],
+          "result": "Classificação: Período Simples / Oração Absoluta.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-001 — Demonstração 1: Período Simples com Infinitivo Substantivado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-001 — Demonstração 1: Período Simples com Infinitivo Substantivado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-001 — Demonstração 1: Período Simples com Infinitivo Substantivado.",
           "blocks": [
             {
               "type": "list",
@@ -1310,6 +2188,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-017",
           "title": "EX-A07-G01-002 — Demonstração 2: Coordenação por Conjunção Adversativa",
+          "prompt": "Enunciado: Escreveu a carta, mas não a enviou.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Escreveu a carta, mas não a enviou."
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "2 verbos (Escreveu, enviou). Conectivo mas = conjunção coordenativa adversativa."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Período Composto por Coordenação (Oração Coordenada Sindética Adversativa)."
+            }
+          ],
+          "result": "Classificação: Período Composto por Coordenação (Oração Coordenada Sindética Adversativa).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-002 — Demonstração 2: Coordenação por Conjunção Adversativa sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-002 — Demonstração 2: Coordenação por Conjunção Adversativa.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-002 — Demonstração 2: Coordenação por Conjunção Adversativa.",
           "blocks": [
             {
               "type": "list",
@@ -1325,6 +2225,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-018",
           "title": "EX-A07-G01-003 — Demonstração 3: Subordinação com Conjunção Integrante",
+          "prompt": "Enunciado: Espero que ele se recupere logo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Espero que ele se recupere logo."
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "2 verbos (Espero, recupere). Teste do isso: Espero [isso]. O que é conjunção integrante."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Período Composto por Subordinação (Oração Subordinada Substantiva)."
+            }
+          ],
+          "result": "Classificação: Período Composto por Subordinação (Oração Subordinada Substantiva).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-003 — Demonstração 3: Subordinação com Conjunção Integrante sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-003 — Demonstração 3: Subordinação com Conjunção Integrante.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-003 — Demonstração 3: Subordinação com Conjunção Integrante.",
           "blocks": [
             {
               "type": "list",
@@ -1340,6 +2262,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-019",
           "title": "EX-A07-G01-004 — Demonstração 4: Subordinação com Pronome Relativo",
+          "prompt": "Enunciado: Assistimos ao espetáculo que ganhou o prêmio.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assistimos ao espetáculo que ganhou o prêmio."
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "2 verbos (Assistimos, ganhou). O que retoma espetáculo (= o qual ganhou o prêmio)."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Período Composto por Subordinação (Oração Subordinada Adjetiva)."
+            }
+          ],
+          "result": "Classificação: Período Composto por Subordinação (Oração Subordinada Adjetiva).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-004 — Demonstração 4: Subordinação com Pronome Relativo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-004 — Demonstração 4: Subordinação com Pronome Relativo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-004 — Demonstração 4: Subordinação com Pronome Relativo.",
           "blocks": [
             {
               "type": "list",
@@ -1355,6 +2299,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-020",
           "title": "EX-A07-G01-005 — Demonstração 5: Subordinação por Conjunção Adverbial Final",
+          "prompt": "Enunciado: Cheguei cedo para que conseguisse um bom lugar.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Cheguei cedo para que conseguisse um bom lugar."
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "2 verbos (Cheguei, conseguisse). Conectivo para que introduz ideia de finalidade (a fim de que)."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Período Composto por Subordinação (Oração Subordinada Adverbial Final)."
+            }
+          ],
+          "result": "Classificação: Período Composto por Subordinação (Oração Subordinada Adverbial Final).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-005 — Demonstração 5: Subordinação por Conjunção Adverbial Final sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-005 — Demonstração 5: Subordinação por Conjunção Adverbial Final.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-005 — Demonstração 5: Subordinação por Conjunção Adverbial Final.",
           "blocks": [
             {
               "type": "list",
@@ -1370,6 +2336,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-021",
           "title": "EX-A07-G01-006 — Demonstração 6: Oração Coordenada Assindética em Tríade",
+          "prompt": "Enunciado: Não brincara, não pandegara, não amara.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Não brincara, não pandegara, não amara."
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "3 verbos (brincara, pandegara, amara), 3 orações justapostas por vírgula sem conectivos."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Orações Coordenadas Assindéticas."
+            }
+          ],
+          "result": "Classificação: Orações Coordenadas Assindéticas.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-006 — Demonstração 6: Oração Coordenada Assindética em Tríade sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-006 — Demonstração 6: Oração Coordenada Assindética em Tríade.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-006 — Demonstração 6: Oração Coordenada Assindética em Tríade.",
           "blocks": [
             {
               "type": "list",
@@ -1385,6 +2373,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-022",
           "title": "EX-A07-G01-007 — Questão 01: Classificação Básica de Período",
+          "prompt": "Banca / Órgão / Ano: IBADE - JARU-PREVI-RO - 2019",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "IBADE - JARU-PREVI-RO - 2019"
+            },
+            {
+              "order": 2,
+              "action": "Enunciado sintético",
+              "rationale": "Classificar o período: \"Uma operação certamente durará horas e os resultados são incertos.\""
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "Verbos durará e são (2 verbos = período composto). Conectivo e = conjunção aditiva coordenativa."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "Letra C (composto por coordenação)."
+            }
+          ],
+          "result": "Gabarito: Letra C (composto por coordenação).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-007 — Questão 01: Classificação Básica de Período sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-007 — Questão 01: Classificação Básica de Período.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-007 — Questão 01: Classificação Básica de Período.",
           "blocks": [
             {
               "type": "list",
@@ -1401,6 +2416,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-023",
           "title": "EX-A07-G01-008 — Questão 02: Identificação de Coordenação e \"Agora\" Adversativo",
+          "prompt": "Banca / Órgão / Ano: IBADE - Câmara de Vilhena-RO - 2018",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "IBADE - Câmara de Vilhena-RO - 2018"
+            },
+            {
+              "order": 2,
+              "action": "Enunciado sintético",
+              "rationale": "Identificar o período composto por coordenação entre as alternativas."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Letra A",
+              "rationale": "É possível que... $\\rightarrow$ que = C.I. (É possível isso) $\\rightarrow$ Subordinação."
+            },
+            {
+              "order": 5,
+              "action": "Letra B",
+              "rationale": "Não sou mau; agora, também não sou bobo. $\\rightarrow$ agora = porém (conjunção adversativa) $\\rightarrow$ Coordenação."
+            }
+          ],
+          "result": "Gabarito: Letra B.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-008 — Questão 02: Identificação de Coordenação e \"Agora\" Adversativo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-008 — Questão 02: Identificação de Coordenação e \"Agora\" Adversativo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-008 — Questão 02: Identificação de Coordenação e \"Agora\" Adversativo.",
           "blocks": [
             {
               "type": "list",
@@ -1421,6 +2468,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-024",
           "title": "EX-A07-G01-009 — Questão 03: Processo de Coordenação em Alternativas Extensas",
+          "prompt": "Banca / Órgão / Ano: FGV - AL-MA - Consultor Legislativo",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "FGV - AL-MA - Consultor Legislativo"
+            },
+            {
+              "order": 2,
+              "action": "Enunciado sintético",
+              "rationale": "Localizar a alternativa em que a oração destacada exemplifica coordenação."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "Nas opções A, B, C e D ocorrem orações reduzidas substantivas (prover crianças), orações adjetivas com pronome relativo (que asseguram, que anaboliza) e adverbial condicional (se estes são aspectos). Na Letra E, o segmento \"...ou serve de salvo-conduto...\" é introduzido pela conjunção alternativa ou."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "Letra E."
+            }
+          ],
+          "result": "Gabarito: Letra E.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-009 — Questão 03: Processo de Coordenação em Alternativas Extensas sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-009 — Questão 03: Processo de Coordenação em Alternativas Extensas.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-009 — Questão 03: Processo de Coordenação em Alternativas Extensas.",
           "blocks": [
             {
               "type": "list",
@@ -1437,6 +2511,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-025",
           "title": "EX-A07-G01-010 — Questão 04: Orações Coordenadas Assindéticas",
+          "prompt": "Banca / Órgão / Ano: Instituto AOCP - ADAF-AM - 2018",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "Instituto AOCP - ADAF-AM - 2018"
+            },
+            {
+              "order": 2,
+              "action": "Enunciado sintético",
+              "rationale": "Indicar a alternativa composta exclusivamente por orações coordenadas assindéticas."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "A alternativa A traz \"Espere aqui, eu vou te mostrar imediatamente\", contendo duas orações ligadas por vírgula sem conectivo. As demais alternativas trazem e (aditiva), Por isso (conclusiva), que (pronome relativo) e Como (causal)."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "Letra A."
+            }
+          ],
+          "result": "Gabarito: Letra A.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-010 — Questão 04: Orações Coordenadas Assindéticas sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-010 — Questão 04: Orações Coordenadas Assindéticas.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-010 — Questão 04: Orações Coordenadas Assindéticas.",
           "blocks": [
             {
               "type": "list",
@@ -1453,6 +2554,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-026",
           "title": "EX-A07-G01-011 — Questão 05: Classificação de Oração Justaposta",
+          "prompt": "Banca / Órgão / Ano: IBADE - Prefeitura de Aracruz-ES - 2019",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "IBADE - Prefeitura de Aracruz-ES - 2019"
+            },
+            {
+              "order": 2,
+              "action": "Enunciado sintético",
+              "rationale": "Classificar a oração destacada: \"Ele tem experiência de mato e de cidade, SABE EXPLORAR OS MUNDOS, AS HORAS\"."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "A oração destacada liga-se à anterior por vírgula, mantendo independência sintática e sem conjunção."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "Letra A (coordenada assindética)."
+            }
+          ],
+          "result": "Gabarito: Letra A (coordenada assindética).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-011 — Questão 05: Classificação de Oração Justaposta sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-011 — Questão 05: Classificação de Oração Justaposta.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-011 — Questão 05: Classificação de Oração Justaposta.",
           "blocks": [
             {
               "type": "list",
@@ -1469,6 +2597,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-027",
           "title": "EX-A07-G01-012 — Questão 06: Coordenação Assindética e Sindética Combinadas",
+          "prompt": "Banca / Órgão / Ano: IBADE - CAERN - 2018",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "IBADE - CAERN - 2018"
+            },
+            {
+              "order": 2,
+              "action": "Enunciado sintético",
+              "rationale": "Identificar o recurso sintático em: \"O lixo é caro, gasta energia, leva tempo para decompor e demanda muito espaço.\""
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "Três orações iniciais justapostas sem conjunção (assindéticas) e a oração final introduzida por e (sindética aditiva)."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "Letra C (coordenação assindética e sindética)."
+            }
+          ],
+          "result": "Gabarito: Letra C (coordenação assindética e sindética).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-012 — Questão 06: Coordenação Assindética e Sindética Combinadas sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-012 — Questão 06: Coordenação Assindética e Sindética Combinadas.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-012 — Questão 06: Coordenação Assindética e Sindética Combinadas.",
           "blocks": [
             {
               "type": "list",
@@ -1485,6 +2640,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-028",
           "title": "EX-A07-G01-013 — Questão 07: Julgamento de Coordenação com Conectivos Correlativos",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE - TRE-AL",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE - TRE-AL"
+            },
+            {
+              "order": 2,
+              "action": "Enunciado sintético",
+              "rationale": "Julgar se no período \"Mas leitura, quer do mundo, quer de livros, só se aprende e se vivencia...\" a relação dá-se por coordenação."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O período estrutura-se por pares correlativos alternativos (quer... quer) e conjunção aditiva (e), processos estritamente coordenativos."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-013 — Questão 07: Julgamento de Coordenação com Conectivos Correlativos sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-013 — Questão 07: Julgamento de Coordenação com Conectivos Correlativos.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-013 — Questão 07: Julgamento de Coordenação com Conectivos Correlativos.",
           "blocks": [
             {
               "type": "list",
@@ -1501,6 +2683,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-029",
           "title": "EX-A07-G01-014 — Questão 08: Contagem de Orações com Locução Verbal Preposicionada",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE - PC-RR",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE - PC-RR"
+            },
+            {
+              "order": 2,
+              "action": "Enunciado sintético",
+              "rationale": "Julgar se no período \"O comércio eletrônico não se resume a colocar um site na Internet, mas o custo maior dessa operação está na logística\" há apenas duas orações coordenadas."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Oração 1",
+              "rationale": "não se resume a colocar (locução verbal com preposição = 1 oração)."
+            },
+            {
+              "order": 5,
+              "action": "Oração 2",
+              "rationale": "está (1 oração)."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-014 — Questão 08: Contagem de Orações com Locução Verbal Preposicionada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-014 — Questão 08: Contagem de Orações com Locução Verbal Preposicionada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-014 — Questão 08: Contagem de Orações com Locução Verbal Preposicionada.",
           "blocks": [
             {
               "type": "list",
@@ -1520,6 +2734,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G01-030",
           "title": "EX-A07-G01-015 — Questão 09: Período Simples Longo com Conjunção de Termos (\"Seja... Seja\")",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE - SEDF",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE - SEDF"
+            },
+            {
+              "order": 2,
+              "action": "Enunciado sintético",
+              "rationale": "Julgar se o parágrafo \"A língua continua sendo forte elemento de discriminação social, seja no próprio contexto escolar, seja em outros contextos sociais...\" é um período composto por orações coordenadas."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Há apenas uma locução verbal em todo o parágrafo",
+              "rationale": "continua sendo (= 1 oração)."
+            },
+            {
+              "order": 5,
+              "action": "A estrutura correlativa seja... seja atua como conjunção alternativa pura (= ou... ou) interligando adjuntos adverbiais de lugar, sem estruturar orações.",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G01-015 — Questão 09: Período Simples Longo com Conjunção de Termos (\"Seja... Seja\") sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G01-015 — Questão 09: Período Simples Longo com Conjunção de Termos (\"Seja... Seja\").",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G01-015 — Questão 09: Período Simples Longo com Conjunção de Termos (\"Seja... Seja\").",
           "blocks": [
             {
               "type": "list",
@@ -1594,8 +2840,12 @@
         {
           "trapId": "WARN-A07-G01-001",
           "title": "A Falácia do \"Tampar a Oração com a Mão\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Falácia do \"Tampar a Oração com a Mão\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Falácia do \"Tampar a Oração com a Mão\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Falácia do \"Tampar a Oração com a Mão\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Falácia do \"Tampar a Oração com a Mão\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Falácia do \"Tampar a Oração com a Mão\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Falácia do \"Tampar a Oração com a Mão\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Falácia do \"Tampar a Oração com a Mão\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Falácia do \"Tampar a Oração com a Mão\".",
           "blocks": [
             {
               "type": "list",
@@ -1611,8 +2861,12 @@
         {
           "trapId": "WARN-A07-G01-002",
           "title": "Confusão entre Conjunção Integrante e Pronome Relativo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão entre Conjunção Integrante e Pronome Relativo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão entre Conjunção Integrante e Pronome Relativo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão entre Conjunção Integrante e Pronome Relativo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão entre Conjunção Integrante e Pronome Relativo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão entre Conjunção Integrante e Pronome Relativo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão entre Conjunção Integrante e Pronome Relativo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão entre Conjunção Integrante e Pronome Relativo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão entre Conjunção Integrante e Pronome Relativo.",
           "blocks": [
             {
               "type": "list",
@@ -1629,8 +2883,12 @@
         {
           "trapId": "WARN-A07-G01-003",
           "title": "A Pegadinha do \"Seja... Seja\" (Verbo vs. Conjunção de Termos)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Pegadinha do \"Seja... Seja\" (Verbo vs. Conjunção de Termos).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Pegadinha do \"Seja... Seja\" (Verbo vs. Conjunção de Termos).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Pegadinha do \"Seja... Seja\" (Verbo vs. Conjunção de Termos) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Pegadinha do \"Seja... Seja\" (Verbo vs. Conjunção de Termos).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Pegadinha do \"Seja... Seja\" (Verbo vs. Conjunção de Termos).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Pegadinha do \"Seja... Seja\" (Verbo vs. Conjunção de Termos) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Pegadinha do \"Seja... Seja\" (Verbo vs. Conjunção de Termos).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Pegadinha do \"Seja... Seja\" (Verbo vs. Conjunção de Termos).",
           "blocks": [
             {
               "type": "list",
@@ -1645,8 +2903,12 @@
         {
           "trapId": "WARN-A07-G01-004",
           "title": "Locuções Verbais com Preposição Intermediária",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Locuções Verbais com Preposição Intermediária.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Locuções Verbais com Preposição Intermediária.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Locuções Verbais com Preposição Intermediária no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Locuções Verbais com Preposição Intermediária.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Locuções Verbais com Preposição Intermediária.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Locuções Verbais com Preposição Intermediária para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Locuções Verbais com Preposição Intermediária.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Locuções Verbais com Preposição Intermediária.",
           "blocks": [
             {
               "type": "list",
@@ -1661,8 +2923,12 @@
         {
           "trapId": "WARN-A07-G01-005",
           "title": "Ilusão de Complexidade por Extensão Textual",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Ilusão de Complexidade por Extensão Textual.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Ilusão de Complexidade por Extensão Textual.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Ilusão de Complexidade por Extensão Textual no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Ilusão de Complexidade por Extensão Textual.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Ilusão de Complexidade por Extensão Textual.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Ilusão de Complexidade por Extensão Textual para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Ilusão de Complexidade por Extensão Textual.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Ilusão de Complexidade por Extensão Textual.",
           "blocks": [
             {
               "type": "list",
@@ -1901,7 +3167,19 @@
       "officialAnswer": "correct",
       "explanation": "Temos aqui a tradicional correlação proporcional: Quanto/Tanto mais X, mais Y. A oração subordinada proporcional é aquela que traz o fato que estabelece a proporção: quanto menos reclama. A outra é a principal. Gabarito: Correto. 3. (TST / TÉCNICO / 2024) Finalmente, os pesquisadores descobriram o óbvio, ou seja, que os seres humanos não vivem só de produtividade, mas valorizam momentos felizes e agradáveis, que raramente ocorrem na solidão do trabalho remoto ou nos contatos fortuitos das reuniões virtuais. No último parágrafo, a oração “mas valorizam momentos felizes e agradáveis” equivale, sintática e semanticamente, à oração embora valorizem momentos felizes e agradáveis. Comentários: \"mas\" é conjunção adversativa e indica a informação mais \"forte\" do período; \"embora\" é conjunção concessiva e indica a informação mais \"fraca\" do período. Portanto, não é possível trocar diretamente uma pela outra. Questão incorreta.",
       "questionSha256": "a2b532cfd22bcbdfa43981fb237a60df7f196494fac4790d169b6f5c144ca642",
-      "answerSha256": "4bc6bee71c2ff2ab275fa4280c385ab64a369882c41e1ca5027fab7fa0124664"
+      "answerSha256": "4bc6bee71c2ff2ab275fa4280c385ab64a369882c41e1ca5027fab7fa0124664",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Período Composto - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "correct",
+        "acceptedPedagogicalAnswers": [
+          "correct"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A07-G01-CONFLICT-001-57",
+        "explanation": "Teoricamente, a presença de uma oração subordinada reduzida torna o período misto. Em provas com opções restritas (como na IBADE), identifique se a questão foca apenas a relação entre as orações principais coordenadas."
+      },
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0060",
@@ -1914,7 +3192,19 @@
       "officialAnswer": "incorrect",
       "explanation": "O vocábulo “quais” classifica-se como pronome interrogativo, em uma interrogativa indireta: há uma dificuldade de diferenciar quais danos decorreram (Quais danos decorreram?) Para ser mais preciso, a oração introduzida pelo pronome interrogativo \"quais\" é, sim, um tipo de objeto direto oracional. Trata-se de uma oração subordinada substantiva objetiva direta justaposta. Algumas orações substantivas são introduzidas por pronomes interrogativos ou advérbios interrogativos: Ex.: Quem acredita sempre alcança. (Oração subordinada substantiva subjetiva justaposta) Ex.: Perguntei qual era a prova. (Oração subordinada substantiva objetiva direta justaposta) Ex.: Perguntei quando era a prova. (Oração subordinada substantiva objetiva direta justaposta) Ex.: Perguntei por que fez a prova. (Oração subordinada substantiva objetiva direta justaposta) Ex.: Perguntei onde fez a prova. (Oração subordinada substantiva objetiva direta justaposta) Ex.: Perguntei como fez a prova. (Oração subordinada substantiva objetiva direta justaposta) Questão incorreta.",
       "questionSha256": "0337ffdb23ec5bb0c6336e4d076dcc331427189d822cb23a499fb4c618c03c71",
-      "answerSha256": "68f7f09645eef18da0460a142b0f03d6ce3e4ec92231dc85c75709ac4bdf5bff"
+      "answerSha256": "68f7f09645eef18da0460a142b0f03d6ce3e4ec92231dc85c75709ac4bdf5bff",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Período Composto - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "incorrect",
+        "acceptedPedagogicalAnswers": [
+          "incorrect"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A07-G01-CONFLICT-001-57",
+        "explanation": "Teoricamente, a presença de uma oração subordinada reduzida torna o período misto. Em provas com opções restritas (como na IBADE), identifique se a questão foca apenas a relação entre as orações principais coordenadas."
+      },
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0069",
@@ -1926,7 +3216,19 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "b7df5940fbf831385f4a94a847037776c06c8583a5adb884c6f4370afc677563",
-      "answerSha256": "c6efb32434c0a339034c477990ce4abe526a0a2e1dd82f576b6ace9099fd4087"
+      "answerSha256": "c6efb32434c0a339034c477990ce4abe526a0a2e1dd82f576b6ace9099fd4087",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Período Composto - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "correct",
+        "acceptedPedagogicalAnswers": [
+          "correct"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A07-G01-CONFLICT-001-57",
+        "explanation": "Teoricamente, a presença de uma oração subordinada reduzida torna o período misto. Em provas com opções restritas (como na IBADE), identifique se a questão foca apenas a relação entre as orações principais coordenadas."
+      },
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0112",
@@ -1938,7 +3240,19 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "2f141edb950db62aa64cf8a3806ba4e79d4f8f49a28b21845359300e868bc124",
-      "answerSha256": "c213d5b3caac8b1c8c321606b5c2d9181f68726ae9da548c3b38efddda1a0ce0"
+      "answerSha256": "c213d5b3caac8b1c8c321606b5c2d9181f68726ae9da548c3b38efddda1a0ce0",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Período Composto - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "incorrect",
+        "acceptedPedagogicalAnswers": [
+          "incorrect"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A07-G01-CONFLICT-001-57",
+        "explanation": "Teoricamente, a presença de uma oração subordinada reduzida torna o período misto. Em provas com opções restritas (como na IBADE), identifique se a questão foca apenas a relação entre as orações principais coordenadas."
+      },
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0003",
@@ -1951,7 +3265,19 @@
       "officialAnswer": "incorrect",
       "explanation": "A oração “não confundir a língua com o discurso” classifica-se como subordinada substantiva SUBJETIVA reduzida de infinitivo. Em suma, é um nome feio para o bom e velho “sujeito oracional” É importante [não confundir a língua com o discurso] [não confundir a língua com o discurso] É importante [ISSO] É importante Gabarito: Errado.",
       "questionSha256": "58f1c7b96d88e2c09a2deff0c4dc96c46f0e986cbdd3651d19f5615f5eb9da47",
-      "answerSha256": "caf695214a7b235b3bff291b2783ebfc22d16f95d29ead3cfdebe540ea1d0d79"
+      "answerSha256": "caf695214a7b235b3bff291b2783ebfc22d16f95d29ead3cfdebe540ea1d0d79",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Período Composto - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "incorrect",
+        "acceptedPedagogicalAnswers": [
+          "incorrect"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A07-G01-CONFLICT-001-57",
+        "explanation": "Teoricamente, a presença de uma oração subordinada reduzida torna o período misto. Em provas com opções restritas (como na IBADE), identifique se a questão foca apenas a relação entre as orações principais coordenadas."
+      },
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0065",
@@ -1963,7 +3289,19 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "76359815bc084c44d80774f4458db62fb4ba57c67e88a96063d1fbd1b4ee7037",
-      "answerSha256": "148f9256683993219b2bcd70da4ce0a2bb2ab4c0c613d6d11031e2a077f8fc53"
+      "answerSha256": "148f9256683993219b2bcd70da4ce0a2bb2ab4c0c613d6d11031e2a077f8fc53",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Período Composto - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "incorrect",
+        "acceptedPedagogicalAnswers": [
+          "incorrect"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A07-G01-CONFLICT-001-57",
+        "explanation": "Teoricamente, a presença de uma oração subordinada reduzida torna o período misto. Em provas com opções restritas (como na IBADE), identifique se a questão foca apenas a relação entre as orações principais coordenadas."
+      },
+      "distractorAnalysis": []
     }
   ]
 }

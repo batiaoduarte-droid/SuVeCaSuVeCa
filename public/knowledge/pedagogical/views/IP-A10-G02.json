@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A10-G02",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.879Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.627Z"
   },
   "unit": {
     "unitId": "IP-A10-G02",
@@ -936,6 +936,14 @@
         {
           "entityId": "RULE-IP-A10-G02-001",
           "title": "Regras canônicas",
+          "statement": "Regras canônicas",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -1180,6 +1188,83 @@
         {
           "procedureId": "PROC-A10-G02-001",
           "title": "Protocolo de Análise em Questões de Reescritura de Frases",
+          "objective": "Executar o algoritmo decisório para Protocolo de Análise em Questões de Reescritura de Frases",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo de Análise em Questões de Reescritura de Frases."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Decodificar o Comando do Enunciado",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "O comando exige apenas conformidade com a norma-padrão (ou identificação de erro)? $\\rightarrow$ Desconsidere alterações semânticas legítimas (ex.",
+              "explanation": "vírgula transformando restritiva em explicativa) e foque no regime preposicional.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "O comando exige manutenção de sentido cumulada com correção gramatical? $\\rightarrow$ Avalie a correção formal e certifique-se de que a relação semântica não mudou de objeto para adjunto de meio/instrumento.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Isolar o Verbo Substituto",
+              "explanation": "Localize o novo verbo inserido na frase. Ignore a transitividade do verbo original e estabeleça a regência própria do novo verbo.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Verificar os Complementos e Preposições",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se for VTD, certifique-se de que não foi inserida preposição indevida (interrogar o doutor, e não do doutor).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Se for VTI, verifique se a preposição exigida foi mantida e se houve crase diante de termos femininos determinados (visar à vaga, aspirar ao cargo).",
+              "explanation": null,
+              "test": "Se for VTI, verifique se a preposição exigida foi mantida e se houve crase diante de termos femininos determinados (visar à vaga, aspirar ao cargo)."
+            },
+            {
+              "order": 8,
+              "action": "Se for VTDI, valide se há exatamente um complemento sem preposição e outro com preposição.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Checar a Pronominalidade",
+              "explanation": "Verifique se o verbo exige pronome integrante acompanhado de preposição (lembrar-se de, recusar-se a) ou se rejeita pronome (simpatizar com).",
+              "test": "Checar a Pronominalidade: Verifique se o verbo exige pronome integrante acompanhado de preposição (lembrar-se de, recusar-se a) ou se rejeita pronome (simpatizar com)."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo de Análise em Questões de Reescritura de Frases."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1239,6 +1324,47 @@
         {
           "procedureId": "PROC-A10-G02-002",
           "title": "Método de Resolução Comparativa Vertical (Padrão VUNESP)",
+          "objective": "Executar o algoritmo decisório para Método de Resolução Comparativa Vertical (Padrão VUNESP)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método de Resolução Comparativa Vertical (Padrão VUNESP)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Coluna 1 (Verbos Iniciais)",
+              "explanation": "Compare verticalmente os verbos das alternativas (ansiava em / aspirou por / pretendeu de / aspirou de / ansiou por). Elimine as alternativas com preposições erradas.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Coluna 2 (Regências Nominais / Finais)",
+              "explanation": "Nas alternativas sobreviventes, confronte a regência dos nomes na segunda metade (capaz nisso [errado] vs. capaz disso [correto]; apto disso [errado] vs. apto para isso [correto]).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Validação do Par",
+              "explanation": "Assinale a opção que apresentar 100% de conformidade em ambos os segmentos.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método de Resolução Comparativa Vertical (Padrão VUNESP)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1268,6 +1394,71 @@
         {
           "procedureId": "PROC-A10-G02-003",
           "title": "Teste Diagnóstico de Bitransitividade (Prevenção de Duplo Objeto)",
+          "objective": "Executar o algoritmo decisório para Teste Diagnóstico de Bitransitividade (Prevenção de Duplo Objeto)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste Diagnóstico de Bitransitividade (Prevenção de Duplo Objeto)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize o verbo bitransitivo na oração.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Isole o primeiro termo completivo",
+              "explanation": "determine se é introduzido por preposição.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Isole o segundo termo completivo",
+              "explanation": "determine se é introduzido por preposição.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Aplique a verificação",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se houver $1\\text{ sem preposição (OD)} + 1\\text{ com preposição (OI)} \\rightarrow \\mathbf{CORRETO}$.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se houver $2\\text{ sem preposição (OD + OD)} \\rightarrow \\mathbf{INCORRETO}$.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Se houver $2\\text{ com preposição (OI + OI)} \\rightarrow \\mathbf{INCORRETO}$ (ex.",
+              "explanation": "informar ao Tribunal sobre os atos).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste Diagnóstico de Bitransitividade (Prevenção de Duplo Objeto)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1311,6 +1502,22 @@
         {
           "contrastId": "CONTRAST-IP-A10-G02-001",
           "title": "Contrastes decisivos",
+          "contrastType": "mixed",
+          "conceptA": "Contrastes decisivos",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -1450,6 +1657,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G02-001",
           "title": "EX-A10-G02-001 — Exercícios de Fixação Teórica de Regência Locativa e Preferir (Slides 31 a 35)",
+          "prompt": "Itens resolvidos:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Itens resolvidos",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "1) Prefiro a democracia ao totalitarismo. (Preferir é VTDI regido por a).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "2) Cheguei ao estádio atrasado. (Verbo de movimento exige a + artigo o = ao).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "3) Fui ao supermercado. (Verbo de movimento exige a + artigo o = ao).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "4) Moro/Resido na rua dez. (Verbos estáticos exigem em + artigo a = na).",
+              "rationale": null
+            }
+          ],
+          "result": "35) O imóvel situado na rua dez está à venda. (Particípio de posicionamento exige na).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G02-001 — Exercícios de Fixação Teórica de Regência Locativa e Preferir (Slides 31 a 35) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G02-001 — Exercícios de Fixação Teórica de Regência Locativa e Preferir (Slides 31 a 35).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G02-001 — Exercícios de Fixação Teórica de Regência Locativa e Preferir (Slides 31 a 35).",
           "blocks": [
             {
               "type": "list",
@@ -1468,6 +1707,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G02-002",
           "title": "EX-A10-G02-002 — Questão 09: Instituto Excelência (2019 - Prefeitura de Lucélia - SP)",
+          "prompt": "Enunciado: Identifique a alternativa que utiliza a preposição de forma equivocada segundo a norma culta.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identifique a alternativa que utiliza a preposição de forma equivocada segundo a norma culta."
+            },
+            {
+              "order": 2,
+              "action": "Análise das Alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "A) Ela aspira à carreira de modelo. $\\rightarrow$ Correta (aspirar = almejar é VTI com crase).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "B) Assisti a muitos filmes semana passada. $\\rightarrow$ Correta (assistir = ver é VTI com preposição a).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "C) Sempre chego em casa muito tarde. $\\rightarrow$ Incorreta (Gabarito). O verbo chegar exige a preposição a (chego a casa).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: C",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G02-002 — Questão 09: Instituto Excelência (2019 - Prefeitura de Lucélia - SP) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G02-002 — Questão 09: Instituto Excelência (2019 - Prefeitura de Lucélia - SP).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G02-002 — Questão 09: Instituto Excelência (2019 - Prefeitura de Lucélia - SP).",
           "blocks": [
             {
               "type": "list",
@@ -1487,6 +1758,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G02-003",
           "title": "EX-A10-G02-003 — Questão 11: VUNESP (PC-SP - Desenhista Técnico-Pericial)",
+          "prompt": "Enunciado: Identifique a alternativa que corrige adequadamente o emprego dos verbos pedir e ir com base na norma-padrão.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identifique a alternativa que corrige adequadamente o emprego dos verbos pedir e ir com base na norma-padrão."
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "Na tirinha original, o diálogo trazia: \"Vou ao banco pedir um empréstimo / Onde é que você vai?\". A correção exige:"
+            },
+            {
+              "order": 3,
+              "action": "Verbo pedir",
+              "rationale": "VTDI $\\rightarrow$ pedir um empréstimo [OD] ao banco [OI]."
+            },
+            {
+              "order": 4,
+              "action": "Verbo ir",
+              "rationale": "movimento em direção a $\\rightarrow$ Aonde é que você vai?."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito Oficial",
+              "rationale": "A (... pedir um empréstimo ao banco / Aonde é que você vai?)"
+            }
+          ],
+          "result": "Gabarito Oficial: A (... pedir um empréstimo ao banco / Aonde é que você vai?)",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G02-003 — Questão 11: VUNESP (PC-SP - Desenhista Técnico-Pericial) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G02-003 — Questão 11: VUNESP (PC-SP - Desenhista Técnico-Pericial).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G02-003 — Questão 11: VUNESP (PC-SP - Desenhista Técnico-Pericial).",
           "blocks": [
             {
               "type": "list",
@@ -1504,6 +1807,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G02-004",
           "title": "EX-A10-G02-004 — Questão 10: CONSULPLAN (TRE-RS - Analista Judiciário)",
+          "prompt": "Enunciado: Assinale a alternativa em que a regência verbal é INCORRETA.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assinale a alternativa em que a regência verbal é INCORRETA."
+            },
+            {
+              "order": 2,
+              "action": "Análise das Alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "A) Os colegas de Antônio implicam com o seu jeito de andar. $\\rightarrow$ Correta (implicar com sentido de antipatia rege com).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "B) José prefere vinho a cerveja. $\\rightarrow$ Correta (preferir é VTDI regido pela preposição a).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "C) O policial visou toda a documentação do motorista. $\\rightarrow$ Correta (visar no sentido de pôr visto é VTD).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: E",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G02-004 — Questão 10: CONSULPLAN (TRE-RS - Analista Judiciário) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G02-004 — Questão 10: CONSULPLAN (TRE-RS - Analista Judiciário).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G02-004 — Questão 10: CONSULPLAN (TRE-RS - Analista Judiciário).",
           "blocks": [
             {
               "type": "list",
@@ -1524,6 +1859,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G02-005",
           "title": "EX-A10-G02-005 — Questão 12: CONSULPLAN (CREA-RJ - Engenheiro Civil)",
+          "prompt": "Enunciado: Assinale a alternativa INCORRETA quanto à regência.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assinale a alternativa INCORRETA quanto à regência."
+            },
+            {
+              "order": 2,
+              "action": "Análise das Alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "A) As pessoas vão à praia... $\\rightarrow$ Correta (ir pede prep. a + art. a = à praia).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "B) Não me lembro de quando o conheci e o namorei. $\\rightarrow$ Correta (lembrar-se de é VTI pronominal e namorar é VTD).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "C) As pessoas não visam à preservação da natureza... $\\rightarrow$ Correta (visar = almejar é VTI com crase).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: E",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G02-005 — Questão 12: CONSULPLAN (CREA-RJ - Engenheiro Civil) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G02-005 — Questão 12: CONSULPLAN (CREA-RJ - Engenheiro Civil).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G02-005 — Questão 12: CONSULPLAN (CREA-RJ - Engenheiro Civil).",
           "blocks": [
             {
               "type": "list",
@@ -1544,6 +1911,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G02-006",
           "title": "EX-A10-G02-006 — Questão 13: INSTITUTO AOCP (PC-ES - Escrivão de Polícia)",
+          "prompt": "Enunciado: Considere a regência dos verbos em destaque e assinale a alternativa correta.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Considere a regência dos verbos em destaque e assinale a alternativa correta."
+            },
+            {
+              "order": 2,
+              "action": "Análise das Alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "A) O projeto aspira a aproximação... $\\rightarrow$ Incorreta (falta crase em à aproximação).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "B) O projeto visa à aproximação com a comunidade. $\\rightarrow$ Correta (Gabarito). (visar = almejar é VTI + crase).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "C) Como os adolescentes preferem mais as atividades lúdicas... $\\rightarrow$ Incorreta (veto a mais com preferir).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: B",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G02-006 — Questão 13: INSTITUTO AOCP (PC-ES - Escrivão de Polícia) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G02-006 — Questão 13: INSTITUTO AOCP (PC-ES - Escrivão de Polícia).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G02-006 — Questão 13: INSTITUTO AOCP (PC-ES - Escrivão de Polícia).",
           "blocks": [
             {
               "type": "list",
@@ -1564,6 +1963,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G02-007",
           "title": "EX-A10-G02-007 — Questão 15: VUNESP (Prefeitura de Guarulhos - SP)",
+          "prompt": "Enunciado: Assinale a alternativa em que a regência está correta conforme a norma padrão.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assinale a alternativa em que a regência está correta conforme a norma padrão."
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "A) Incorreta (procedesse o pagamento $\\rightarrow$ exige ao pagamento; visando o bem-estar $\\rightarrow$ exige ao bem-estar).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "B) Incorreta (prefira mais trabalhar... do que voltar $\\rightarrow$ exige prefira trabalhar... a voltar).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "C) Incorreta (não agradou os estudantes $\\rightarrow$ exige aos estudantes; ansiosos de $\\rightarrow$ exige ansiosos por).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: D",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G02-007 — Questão 15: VUNESP (Prefeitura de Guarulhos - SP) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G02-007 — Questão 15: VUNESP (Prefeitura de Guarulhos - SP).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G02-007 — Questão 15: VUNESP (Prefeitura de Guarulhos - SP).",
           "blocks": [
             {
               "type": "list",
@@ -1584,6 +2015,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G02-008",
           "title": "EX-A10-G02-008 — Questão 16: CESGRANRIO (UNIRIO - Assistente em Administração)",
+          "prompt": "Trecho original: \"A uma dezena de metros, olhos curiosos viam o intruso montar o caniço\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Trecho original",
+              "rationale": "\"A uma dezena de metros, olhos curiosos viam o intruso montar o caniço\""
+            },
+            {
+              "order": 2,
+              "action": "Comando",
+              "rationale": "Identificar a reescrita cuja regência verbal NÃO está de acordo com a norma-padrão."
+            },
+            {
+              "order": 3,
+              "action": "Análise",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "A) espiavam o intruso, que montava seu caniço $\\rightarrow$ Gramaticalmente correta (espiar é VTD; alteração de sentido é tolerada pois o enunciado não pediu manutenção de sentido).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "B) observavam o intruso a montar o caniço $\\rightarrow$ Gramaticalmente correta (a facultativo antes de infinitivo).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: C",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G02-008 — Questão 16: CESGRANRIO (UNIRIO - Assistente em Administração) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G02-008 — Questão 16: CESGRANRIO (UNIRIO - Assistente em Administração).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G02-008 — Questão 16: CESGRANRIO (UNIRIO - Assistente em Administração).",
           "blocks": [
             {
               "type": "list",
@@ -1605,6 +2068,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G02-009",
           "title": "EX-A10-G02-009 — Questão 17: VUNESP (Prefeitura de Guarulhos - Professor)",
+          "prompt": "Trecho original: \"... tornamos o egoísmo um hábito.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Trecho original",
+              "rationale": "\"... tornamos o egoísmo um hábito.\""
+            },
+            {
+              "order": 2,
+              "action": "Comando",
+              "rationale": "Substituir a frase mantendo a correção de regência e sem prejuízo do sentido."
+            },
+            {
+              "order": 3,
+              "action": "Análise",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "A) transformamos o egoísmo em um hábito $\\rightarrow$ Correta (Gabarito). (transformar algo [OD] em algo [OI] mantém sentido e regência).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "B) convertemos o egoísmo para um hábito $\\rightarrow$ Incorreta (converter exige preposição em).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: A",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G02-009 — Questão 17: VUNESP (Prefeitura de Guarulhos - Professor) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G02-009 — Questão 17: VUNESP (Prefeitura de Guarulhos - Professor).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G02-009 — Questão 17: VUNESP (Prefeitura de Guarulhos - Professor).",
           "blocks": [
             {
               "type": "list",
@@ -1626,6 +2121,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G02-010",
           "title": "EX-A10-G02-010 — Questão 19: CEBRASPE (2021 - MPE-SC - Promotor de Justiça Substituto)",
+          "prompt": "Trecho: \"medidas políticas que visam acabar com a exclusão social, cultural e econômica\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Trecho",
+              "rationale": "\"medidas políticas que visam acabar com a exclusão social, cultural e econômica\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "Afirma que o verbo visar está empregado como transitivo direto e significa direcionar o olhar, mirar."
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento",
+              "rationale": "O item comete duplo erro: o sentido é almejar/desejar e a transitividade é indireta (VTI). A ausência da preposição a diante de verbo no infinitivo decorre de facultatividade sintática em complementos oracionais, mas não transforma o verbo em VTD."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "ERRADO"
+            }
+          ],
+          "result": "Gabarito Oficial: ERRADO",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G02-010 — Questão 19: CEBRASPE (2021 - MPE-SC - Promotor de Justiça Substituto) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G02-010 — Questão 19: CEBRASPE (2021 - MPE-SC - Promotor de Justiça Substituto).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G02-010 — Questão 19: CEBRASPE (2021 - MPE-SC - Promotor de Justiça Substituto).",
           "blocks": [
             {
               "type": "list",
@@ -1642,6 +2164,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G02-011",
           "title": "EX-A10-G02-011 — Questões 20 e 21: CEBRASPE (DPE-RS e TJ-AM)",
+          "prompt": "Questão 20 (DPE-RS): \"lojas que se recusavam a atender clientes...\". A supressão da preposição a prejudicaria a correção gramatical do texto? $\\rightarrow$ Gabarito: CERTO (recusar-se é pronominal, preposição a obrigatória).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Questão 20 (DPE-RS)",
+              "rationale": "\"lojas que se recusavam a atender clientes...\". A supressão da preposição a prejudicaria a correção gramatical do texto? $\\rightarrow$ Gabarito: CERTO (recusar-se é pronominal, preposição a obrigatória)."
+            },
+            {
+              "order": 2,
+              "action": "Questão 21 (TJ-AM)",
+              "rationale": "\"atende muitos segurados do INSS\". A correção seria preservada com a inserção de a (atende a muitos)? $\\rightarrow$ Gabarito: CERTO (atender admite dupla regência VTD/VTI sem alterar o sentido para pessoas ou coisas)."
+            }
+          ],
+          "result": "Questão 21 (TJ-AM): \"atende muitos segurados do INSS\". A correção seria preservada com a inserção de a (atende a muitos)? $\\rightarrow$ Gabarito: CERTO (atender admite dupla regência VTD/VTI sem alterar o sentido para pessoas ou coisas).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G02-011 — Questões 20 e 21: CEBRASPE (DPE-RS e TJ-AM) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G02-011 — Questões 20 e 21: CEBRASPE (DPE-RS e TJ-AM).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G02-011 — Questões 20 e 21: CEBRASPE (DPE-RS e TJ-AM).",
           "blocks": [
             {
               "type": "list",
@@ -1656,6 +2195,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G02-012",
           "title": "EX-A10-G02-012 — Questões 22 e 23: CEBRASPE (STM e AL-CE)",
+          "prompt": "Questão 22 (STM): \"deseje que a sua futura mulher venha...\" $\\rightarrow$ Pode ser substituído por aspire a que mantendo correção e sentido? $\\rightarrow$ Gabarito: CERTO (desejar [VTD] $\\rightarrow$ aspirar a [VTI] preserva o almejo com ajuste preposicional).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Questão 22 (STM)",
+              "rationale": "\"deseje que a sua futura mulher venha...\" $\\rightarrow$ Pode ser substituído por aspire a que mantendo correção e sentido? $\\rightarrow$ Gabarito: CERTO (desejar [VTD] $\\rightarrow$ aspirar a [VTI] preserva o almejo com ajuste preposicional)."
+            },
+            {
+              "order": 2,
+              "action": "Questão 23 (AL-CE)",
+              "rationale": "\"perguntei ao doutor Murilo Carvalho\" $\\rightarrow$ Substituir por interroguei do doutor é correto? $\\rightarrow$ Gabarito: ERRADO (interrogar é VTD e exige interroguei o doutor)."
+            }
+          ],
+          "result": "Questão 23 (AL-CE): \"perguntei ao doutor Murilo Carvalho\" $\\rightarrow$ Substituir por interroguei do doutor é correto? $\\rightarrow$ Gabarito: ERRADO (interrogar é VTD e exige interroguei o doutor).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G02-012 — Questões 22 e 23: CEBRASPE (STM e AL-CE) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G02-012 — Questões 22 e 23: CEBRASPE (STM e AL-CE).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G02-012 — Questões 22 e 23: CEBRASPE (STM e AL-CE).",
           "blocks": [
             {
               "type": "list",
@@ -1670,6 +2226,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G02-013",
           "title": "EX-A10-G02-013 — Questão 24: CEBRASPE (TCE-RN - Conhecimentos Básicos)",
+          "prompt": "Trecho: \"informar ao Tribunal de Contas... os atos ilegítimos\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Trecho",
+              "rationale": "\"informar ao Tribunal de Contas... os atos ilegítimos\""
+            },
+            {
+              "order": 2,
+              "action": "Proposta de reescrita",
+              "rationale": "\"informar ao Tribunal de Contas... sobre os atos ilegítimos\""
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento",
+              "rationale": "A reescrita gerou dois objetos indiretos preposicionados (ao Tribunal [prep. a] + sobre os atos [prep. sobre]), infringindo a regra da bitransitividade culta."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "ERRADO"
+            }
+          ],
+          "result": "Gabarito Oficial: ERRADO",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G02-013 — Questão 24: CEBRASPE (TCE-RN - Conhecimentos Básicos) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G02-013 — Questão 24: CEBRASPE (TCE-RN - Conhecimentos Básicos).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G02-013 — Questão 24: CEBRASPE (TCE-RN - Conhecimentos Básicos).",
           "blocks": [
             {
               "type": "list",
@@ -1686,6 +2269,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G02-014",
           "title": "EX-A10-G02-014 — Questão 25: CEBRASPE (INSS - Técnico do Seguro Social)",
+          "prompt": "Proposta: Substituição de \"lembrei-me de que\" por \"lembrei que\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Proposta",
+              "rationale": "Substituição de \"lembrei-me de que\" por \"lembrei que\"."
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "A substituição converte a estrutura pronominal transitiva indireta (lembrar-se de) na forma não pronominal transitiva direta (lembrar que). Ambas são legítimas e rigorosamente equivalentes em sentido."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO"
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G02-014 — Questão 25: CEBRASPE (INSS - Técnico do Seguro Social) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G02-014 — Questão 25: CEBRASPE (INSS - Técnico do Seguro Social).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G02-014 — Questão 25: CEBRASPE (INSS - Técnico do Seguro Social).",
           "blocks": [
             {
               "type": "list",
@@ -1701,6 +2306,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G02-015",
           "title": "EX-A10-G02-015 — Questão 26: CEBRASPE (SEE-AL - Professor de Língua Portuguesa)",
+          "prompt": "Trecho: \"implica a negação do homem abstrato\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Trecho",
+              "rationale": "\"implica a negação do homem abstrato\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "Afirma que o verbo implica aceita dupla regência podendo ser seguido por a ou na."
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento",
+              "rationale": "No sentido de acarretar, implicar é estritamente VTD (a negação é OD). Não admite preposição em/na."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "ERRADO"
+            }
+          ],
+          "result": "Gabarito Oficial: ERRADO",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G02-015 — Questão 26: CEBRASPE (SEE-AL - Professor de Língua Portuguesa) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G02-015 — Questão 26: CEBRASPE (SEE-AL - Professor de Língua Portuguesa).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G02-015 — Questão 26: CEBRASPE (SEE-AL - Professor de Língua Portuguesa).",
           "blocks": [
             {
               "type": "list",
@@ -1717,6 +2349,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G02-016",
           "title": "EX-A10-G02-016 — Questão 27: CEBRASPE (SEFAZ-RS - Auditor Fiscal da Receita Estadual)",
+          "prompt": "Trecho: \"O direito tributário brasileiro depara-se com grandes desafios\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Trecho",
+              "rationale": "\"O direito tributário brasileiro depara-se com grandes desafios\""
+            },
+            {
+              "order": 2,
+              "action": "Proposta",
+              "rationale": "Substituir \"depara-se com\" por \"depara com\"."
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento",
+              "rationale": "O verbo deparar admite deparar-se com, deparar com e deparar, mantendo correção e sentido."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO"
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G02-016 — Questão 27: CEBRASPE (SEFAZ-RS - Auditor Fiscal da Receita Estadual) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G02-016 — Questão 27: CEBRASPE (SEFAZ-RS - Auditor Fiscal da Receita Estadual).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G02-016 — Questão 27: CEBRASPE (SEFAZ-RS - Auditor Fiscal da Receita Estadual).",
           "blocks": [
             {
               "type": "list",
@@ -1733,6 +2392,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G02-017",
           "title": "EX-A10-G02-017 — Questão 28: CEBRASPE (Ministério da Economia)",
+          "prompt": "Trecho: \"deparamos com uma realidade única e definida\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Trecho",
+              "rationale": "\"deparamos com uma realidade única e definida\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "Afirma que a supressão de com prejudicaria a correção gramatical do texto."
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento",
+              "rationale": "Como deparar admite uso direto (deparamos uma realidade), a supressão não prejudica a correção nem o sentido."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "ERRADO"
+            }
+          ],
+          "result": "Gabarito Oficial: ERRADO",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-G02-017 — Questão 28: CEBRASPE (Ministério da Economia) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-G02-017 — Questão 28: CEBRASPE (Ministério da Economia).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-G02-017 — Questão 28: CEBRASPE (Ministério da Economia).",
           "blocks": [
             {
               "type": "list",
@@ -1781,8 +2467,12 @@
         {
           "trapId": "WARN-A10-G02-001",
           "title": "O Vício Coloquial de \"Chegar em\" e \"Ir no\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Vício Coloquial de \"Chegar em\" e \"Ir no\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Vício Coloquial de \"Chegar em\" e \"Ir no\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Vício Coloquial de \"Chegar em\" e \"Ir no\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Vício Coloquial de \"Chegar em\" e \"Ir no\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Vício Coloquial de \"Chegar em\" e \"Ir no\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Vício Coloquial de \"Chegar em\" e \"Ir no\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Vício Coloquial de \"Chegar em\" e \"Ir no\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Vício Coloquial de \"Chegar em\" e \"Ir no\".",
           "blocks": [
             {
               "type": "list",
@@ -1798,8 +2488,12 @@
         {
           "trapId": "WARN-A10-G02-002",
           "title": "Expressões Comerciais e Forenses Incorretas (\"A Domicílio\" e \"Sito à Rua\")",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Expressões Comerciais e Forenses Incorretas (\"A Domicílio\" e \"Sito à Rua\").",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Expressões Comerciais e Forenses Incorretas (\"A Domicílio\" e \"Sito à Rua\").",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Expressões Comerciais e Forenses Incorretas (\"A Domicílio\" e \"Sito à Rua\") no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Expressões Comerciais e Forenses Incorretas (\"A Domicílio\" e \"Sito à Rua\").",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Expressões Comerciais e Forenses Incorretas (\"A Domicílio\" e \"Sito à Rua\").",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Expressões Comerciais e Forenses Incorretas (\"A Domicílio\" e \"Sito à Rua\") para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Expressões Comerciais e Forenses Incorretas (\"A Domicílio\" e \"Sito à Rua\").",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Expressões Comerciais e Forenses Incorretas (\"A Domicílio\" e \"Sito à Rua\").",
           "blocks": [
             {
               "type": "list",
@@ -1814,8 +2508,12 @@
         {
           "trapId": "WARN-A10-G02-003",
           "title": "Uso de \"(Do) que\" e Intensificadores com Preferir",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Uso de \"(Do) que\" e Intensificadores com Preferir.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Uso de \"(Do) que\" e Intensificadores com Preferir.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Uso de \"(Do) que\" e Intensificadores com Preferir no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Uso de \"(Do) que\" e Intensificadores com Preferir.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Uso de \"(Do) que\" e Intensificadores com Preferir.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Uso de \"(Do) que\" e Intensificadores com Preferir para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Uso de \"(Do) que\" e Intensificadores com Preferir.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Uso de \"(Do) que\" e Intensificadores com Preferir.",
           "blocks": [
             {
               "type": "list",
@@ -1830,8 +2528,12 @@
         {
           "trapId": "WARN-A10-G02-004",
           "title": "Preposição Indevida no Verbo Namorar",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Preposição Indevida no Verbo Namorar.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Preposição Indevida no Verbo Namorar.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Preposição Indevida no Verbo Namorar no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Preposição Indevida no Verbo Namorar.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Preposição Indevida no Verbo Namorar.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Preposição Indevida no Verbo Namorar para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Preposição Indevida no Verbo Namorar.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Preposição Indevida no Verbo Namorar.",
           "blocks": [
             {
               "type": "list",
@@ -1846,8 +2548,12 @@
         {
           "trapId": "WARN-A10-G02-005",
           "title": "Pegadinha de Visar Diante de Oração Infinitiva",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha de Visar Diante de Oração Infinitiva.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha de Visar Diante de Oração Infinitiva.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha de Visar Diante de Oração Infinitiva no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha de Visar Diante de Oração Infinitiva.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha de Visar Diante de Oração Infinitiva.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pegadinha de Visar Diante de Oração Infinitiva para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha de Visar Diante de Oração Infinitiva.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha de Visar Diante de Oração Infinitiva.",
           "blocks": [
             {
               "type": "list",
@@ -1862,8 +2568,12 @@
         {
           "trapId": "WARN-A10-G02-006",
           "title": "Assistir no Sentido de Prestar Socorro em Provas Tradicionais",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Assistir no Sentido de Prestar Socorro em Provas Tradicionais.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Assistir no Sentido de Prestar Socorro em Provas Tradicionais.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Assistir no Sentido de Prestar Socorro em Provas Tradicionais no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Assistir no Sentido de Prestar Socorro em Provas Tradicionais.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Assistir no Sentido de Prestar Socorro em Provas Tradicionais.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Assistir no Sentido de Prestar Socorro em Provas Tradicionais para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Assistir no Sentido de Prestar Socorro em Provas Tradicionais.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Assistir no Sentido de Prestar Socorro em Provas Tradicionais.",
           "blocks": [
             {
               "type": "list",
@@ -1878,8 +2588,12 @@
         {
           "trapId": "WARN-A10-G02-007",
           "title": "Uso Vicioso de \"Implicar em\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Uso Vicioso de \"Implicar em\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Uso Vicioso de \"Implicar em\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Uso Vicioso de \"Implicar em\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Uso Vicioso de \"Implicar em\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Uso Vicioso de \"Implicar em\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Uso Vicioso de \"Implicar em\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Uso Vicioso de \"Implicar em\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Uso Vicioso de \"Implicar em\".",
           "blocks": [
             {
               "type": "list",
@@ -1894,8 +2608,12 @@
         {
           "trapId": "WARN-A10-G02-008",
           "title": "Confundir a Polissemia de Agradar",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir a Polissemia de Agradar.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir a Polissemia de Agradar.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir a Polissemia de Agradar no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir a Polissemia de Agradar.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir a Polissemia de Agradar.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir a Polissemia de Agradar para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir a Polissemia de Agradar.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir a Polissemia de Agradar.",
           "blocks": [
             {
               "type": "list",
@@ -1910,8 +2628,12 @@
         {
           "trapId": "WARN-A10-G02-009",
           "title": "Pronominalização Indevida de Simpatizar / Antipatizar",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pronominalização Indevida de Simpatizar / Antipatizar.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pronominalização Indevida de Simpatizar / Antipatizar.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pronominalização Indevida de Simpatizar / Antipatizar no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pronominalização Indevida de Simpatizar / Antipatizar.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pronominalização Indevida de Simpatizar / Antipatizar.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pronominalização Indevida de Simpatizar / Antipatizar para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pronominalização Indevida de Simpatizar / Antipatizar.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pronominalização Indevida de Simpatizar / Antipatizar.",
           "blocks": [
             {
               "type": "list",
@@ -1926,8 +2648,12 @@
         {
           "trapId": "WARN-A10-G02-010",
           "title": "Confusão entre Regência Verbal (Simpatizar com) e Nominal (Simpatia por)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão entre Regência Verbal (Simpatizar com) e Nominal (Simpatia por).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão entre Regência Verbal (Simpatizar com) e Nominal (Simpatia por).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão entre Regência Verbal (Simpatizar com) e Nominal (Simpatia por) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão entre Regência Verbal (Simpatizar com) e Nominal (Simpatia por).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão entre Regência Verbal (Simpatizar com) e Nominal (Simpatia por).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão entre Regência Verbal (Simpatizar com) e Nominal (Simpatia por) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão entre Regência Verbal (Simpatizar com) e Nominal (Simpatia por).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão entre Regência Verbal (Simpatizar com) e Nominal (Simpatia por).",
           "blocks": [
             {
               "type": "list",
@@ -1942,8 +2668,12 @@
         {
           "trapId": "WARN-A10-G02-011",
           "title": "Confundir Objeto Indireto com Adjunto Adverbial de Meio em Reescrita",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Objeto Indireto com Adjunto Adverbial de Meio em Reescrita.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Objeto Indireto com Adjunto Adverbial de Meio em Reescrita.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Objeto Indireto com Adjunto Adverbial de Meio em Reescrita no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Objeto Indireto com Adjunto Adverbial de Meio em Reescrita.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Objeto Indireto com Adjunto Adverbial de Meio em Reescrita.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Objeto Indireto com Adjunto Adverbial de Meio em Reescrita para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Objeto Indireto com Adjunto Adverbial de Meio em Reescrita.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Objeto Indireto com Adjunto Adverbial de Meio em Reescrita.",
           "blocks": [
             {
               "type": "list",
@@ -1958,8 +2688,12 @@
         {
           "trapId": "WARN-A10-G02-012",
           "title": "Duplo Objeto Indireto no Verbo Informar",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Duplo Objeto Indireto no Verbo Informar.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Duplo Objeto Indireto no Verbo Informar.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Duplo Objeto Indireto no Verbo Informar no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Duplo Objeto Indireto no Verbo Informar.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Duplo Objeto Indireto no Verbo Informar.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Duplo Objeto Indireto no Verbo Informar para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Duplo Objeto Indireto no Verbo Informar.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Duplo Objeto Indireto no Verbo Informar.",
           "blocks": [
             {
               "type": "list",
@@ -2195,7 +2929,10 @@
       "officialAnswer": "incorrect",
       "explanation": "O verbo “esquecer” muda de regência dependendo de seu uso. Como verbo não pronominal, é\ntransitivo direto, isto é, pede complemento sem preposição. Se for usado como pronominal, é\num verbo transitivo indireto e exige o uso da preposição “de”. Portanto, temos duas\npossibilidades:\n“Já esqueci a língua” (uso não pronominal, como VTD)\n“Já me esqueci da língua” (uso pronominal, como VTI)\nA sugestão da banca está errada, pois usou o verbo como pronominal, sem utilizar paralelamente\na preposição. Questão incorreta.",
       "questionSha256": "cb31800f147b1db799aafcffff17e3dafd55a6e7670d994015bce45e049a3b02",
-      "answerSha256": "b32771fce42b2018ea486a98f541e336d4290653df7179523c72482dbe6d5e80"
+      "answerSha256": "b32771fce42b2018ea486a98f541e336d4290653df7179523c72482dbe6d5e80",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Regência Verbal - Aprofundamento; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula10.q0168",
@@ -2207,7 +2944,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "593517fb3a05be78c16917df3b2af05ed0e794a893484bf6d1ab9ae5de06c09c",
-      "answerSha256": "d1930e8e29cb056d3368095cf19d4e5a1a13a51b838d57d90b97770fe7e69872"
+      "answerSha256": "d1930e8e29cb056d3368095cf19d4e5a1a13a51b838d57d90b97770fe7e69872",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Regência Verbal - Aprofundamento; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula10.q0158",
@@ -2220,7 +2960,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "0e44cec04b990f84e2ca710e636f6ec9290d4531417bf3c672153ef82475dfe1",
-      "answerSha256": "4c309ce63077cc68f5ad5235d987a7d239ba7b340875157524aad34c13cd2366"
+      "answerSha256": "4c309ce63077cc68f5ad5235d987a7d239ba7b340875157524aad34c13cd2366",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Regência Verbal - Aprofundamento; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula10.q0045",
@@ -2233,7 +2976,19 @@
       "officialAnswer": "option_C",
       "explanation": "A regência de “ensinar” admite basicamente duas análises:\nEnsinar (algo: OD) (a alguém: OI).\nEnsinar (alguém: OD) (a fazer algo: OI).\nAqui, temos a segunda análise:\nEnsinar (alguém: OD) (a fazer algo: OI).\nEnsinar (nos: OD) (a nomear determinados comportamentos: OI).\nGabarito: Correto.",
       "questionSha256": "ca44e99f1d040afa572e91171d5b54b3d37d31ca391d5484a2bacad2f6e15dc9",
-      "answerSha256": "7fc3d138f22c7bc869df5d3025dfbf728d772e956558615b1befab0341d4aac8"
+      "answerSha256": "7fc3d138f22c7bc869df5d3025dfbf728d772e956558615b1befab0341d4aac8",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Regência Verbal - Aprofundamento; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "option_C",
+        "acceptedPedagogicalAnswers": [
+          "option_C"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A10-G02-CONFLICT-001-83",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula10.q0138",
@@ -2245,7 +3000,10 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "7c83106e3c1d64bd9060fb62fbee42f0846c465777b7944a5e64bf3c3a4fa9b6",
-      "answerSha256": "08c0fec2652ac49756164d4a11fba836d0ef3b17b81398b69a0abb4305e97abf"
+      "answerSha256": "08c0fec2652ac49756164d4a11fba836d0ef3b17b81398b69a0abb4305e97abf",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Regência Verbal - Aprofundamento; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula10.q0049",
@@ -2258,7 +3016,10 @@
       "officialAnswer": "correct",
       "explanation": "\"Responder\" pode ser transitivo direto (sem preposição) ou indireto (com preposição \"a\"). Então,\na supressão da preposição não prejudicaria a correção.\nQuestão correta.",
       "questionSha256": "a7ea83cdc6fd06800d1910b5d8ead5d9ebe8734c1376d382edc9c242e6af246c",
-      "answerSha256": "7e91cfb8731e3c31c37a93b08101e4fe49c204caffdb2b96a6eaf074bc97bdae"
+      "answerSha256": "7e91cfb8731e3c31c37a93b08101e4fe49c204caffdb2b96a6eaf074bc97bdae",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Regência Verbal - Aprofundamento; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

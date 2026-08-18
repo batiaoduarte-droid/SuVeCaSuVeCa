@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A05-G01",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.772Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.536Z"
   },
   "unit": {
     "unitId": "IP-A05-G01",
@@ -454,6 +454,14 @@
         {
           "entityId": "RULE-IP-A05-G01-001",
           "title": "6.1. Tabela de Transitividades e Código do Exercício",
+          "statement": "6.1. Tabela de Transitividades e Código do Exercício",
+          "scope": "government_and_regency",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de government_and_regency no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de 6.1. Tabela de Transitividades e Código do Exercício."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -512,6 +520,16 @@
         {
           "entityId": "RULE-IP-A05-G01-002",
           "title": "6.2. O Decálogo dos 9 Mantras da Análise Sintática",
+          "statement": "Mantra 1: \"Se o verbo não indicar estado, será de ação.\" (KB-A05-G01-TRANSITIVIDADE-VERBAL-002)\nMantra 2: \"Ao classificar o verbo, não olhe para ele apenas; a sua classificação depende do que vem depois dele.\" (KB-A05-G01-TRANSITIVIDADE-VERBAL-004)\nMantra 3: \"Se o que vem depois dele indica circunstância, será adjunto adverbial e poderá sair da frase (mesmo que a curiosidade não permita).\" (KB-A05-G01-TRANSITIVIDADE-VERBAL-003)\nMantra 4: \"Nem sempre o V.I. fica bonito sozinho.\" (KB-A05-G01-TRANSITIVIDADE-VERBAL-003)\nMantra 5: \"Complemento é o que não é adjunto.\" (KB-A05-G01-TRANSITIVIDADE-VERBAL-004, KB-A05-G01-TRANSITIVIDADE-VERBAL-010)\nMantra 6: \"Um verbo só é de estado/ligação se houver predicativo do sujeito na frase.\" (KB-A05-G01-TRANSITIVIDADE-VERBAL-006)\nMantra 7: \"Predicativo pode vir com qualquer verbo (seja ele de ação ou de ligação).\" (KB-A05-G01-TRANSITIVIDADE-VERBAL-007)\nMantra 8: \"Na locução verbal, quem manda (tem a predicação) é o V. Principal (o último). O auxiliar não tem predicação, só obedece/se flexiona.\" (KB-A05-G01-TRANSITIVIDADE-VERBAL-009)\nMantra 9: \"Na dúvida, tente flexionar (feminino/plural): caso se flexione, será ADJETIVO (predicativo), não ADVÉRBIO! Não confunda MODO (= jeito) com ESTADO.\" (KB-A05-G01-TRANSITIVIDADE-VERBAL-008)",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Mantra 1: \"Se o verbo não indicar estado, será de ação.\" (KB-A05-G01-TRANSITIVIDADE-VERBAL-002)",
+            "Mantra 2: \"Ao classificar o verbo, não olhe para ele apenas; a sua classificação depende do que vem depois dele.\" (KB-A05-G01-TRANSITIVIDADE-VERBAL-004)",
+            "Mantra 3: \"Se o que vem depois dele indica circunstância, será adjunto adverbial e poderá sair da frase (mesmo que a curiosidade não permita).\" (KB-A05-G01-TRANSITIVIDADE-VERBAL-003)",
+            "Mantra 4: \"Nem sempre o V.I. fica bonito sozinho.\" (KB-A05-G01-TRANSITIVIDADE-VERBAL-003)"
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -537,6 +555,71 @@
         {
           "procedureId": "PROC-A05-G01-TRANSITIVIDADE-VERBAL-001",
           "title": "O Passo a Passo Canônico da Análise Sintática em 5 Etapas",
+          "objective": "Executar o algoritmo decisório para O Passo a Passo Canônico da Análise Sintática em 5 Etapas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de O Passo a Passo Canônico da Análise Sintática em 5 Etapas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Localizar o Verbo (\"Viver o verbo\")",
+              "explanation": "Identifique a forma verbal e coloque mentalmente a oração na ordem direta (Sujeito + Verbo + Complementos + Adjuntos).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 — Perguntar pelo Sujeito",
+              "explanation": "Faça a pergunta ao verbo: \"Quem é que [verbo]?\" ou \"O que é que [verbo]?\". Delimite o sintagma do sujeito e isole seu núcleo (substantivo/pronome/numeral sem preposição).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Passo 3 — Isolar os Blocos Pós-Verbais",
+              "explanation": "Isole cada sintagma pós-verbal entre colchetes: [Bloco 1], [Bloco 2].",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Passo 4 — Diagnosticar Circunstâncias (Adjuntos Adverbiais)",
+              "explanation": "Pergunte se o termo pós-verbal tem valor circunstancial (tempo, lugar, modo, causa, etc.). Se tiver, classifique como Adjunto Adverbial (não conta como complemento do verbo).",
+              "test": "Passo 4 — Diagnosticar Circunstâncias (Adjuntos Adverbiais): Pergunte se o termo pós-verbal tem valor circunstancial (tempo, lugar, modo, causa, etc.). Se tiver, classifique como Adjunto Adverbial (não conta como complemento do verbo)."
+            },
+            {
+              "order": 5,
+              "action": "Passo 5 — Diagnosticar Estado vs. Ação (Predicativo vs. Objeto)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se o termo qualifica o sujeito (Estado) $\\rightarrow$ É Predicativo do Sujeito. Se o verbo for sem noção de ação = VL; se for de ação = Verbo Nocional + Predicativo.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Se o termo completa o verbo (não circunstancial) $\\rightarrow$ Sem preposição = OD (VTD); Com preposição = OI (VTI); Ambos = VTDI.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de O Passo a Passo Canônico da Análise Sintática em 5 Etapas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -576,6 +659,71 @@
         {
           "procedureId": "PROC-A05-G01-TRANSITIVIDADE-VERBAL-002",
           "title": "Técnica de Isolamento por Colchetes e Traçado de Setas Sintáticas",
+          "objective": "Executar o algoritmo decisório para Técnica de Isolamento por Colchetes e Traçado de Setas Sintáticas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Técnica de Isolamento por Colchetes e Traçado de Setas Sintáticas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Coloque o sujeito entre colchetes",
+              "explanation": "[Sujeito].",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Delimite cada complemento ou adjunto entre colchetes",
+              "explanation": "[Termo A], [Termo B].",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Puxe uma seta do bloco para o seu termo-alvo",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Seta apontando para o Verbo (sem preposição) $\\rightarrow$ Objeto Direto.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Seta apontando para o Verbo (com preposição de regência) $\\rightarrow$ Objeto Indireto.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Seta apontando para o Verbo (com valor de circunstância) $\\rightarrow$ Adjunto Adverbial.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Seta apontando para o Sujeito $\\rightarrow$ Predicativo do Sujeito.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Técnica de Isolamento por Colchetes e Traçado de Setas Sintáticas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -606,6 +754,47 @@
         {
           "procedureId": "PROC-A05-G01-TRANSITIVIDADE-VERBAL-003",
           "title": "Teste do \"E Estava\" para Diagnóstico de Predicativo do Sujeito",
+          "objective": "Executar o algoritmo decisório para Teste do \"E Estava\" para Diagnóstico de Predicativo do Sujeito",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste do \"E Estava\" para Diagnóstico de Predicativo do Sujeito."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identifique o termo sob dúvida no predicado de um verbo de ação.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Insira a expressão \"e estava\" (ou e estavam) imediatamente antes do termo.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se a estrutura mantiver a coerência textual perfeita (\"Ela ligou o ferro [e estava] silenciosa\"; \"O marido transitava [e estava] impecável\"), o termo expressa Estado, e sua função sintática é Predicativo do Sujeito.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste do \"E Estava\" para Diagnóstico de Predicativo do Sujeito."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -626,6 +815,53 @@
         {
           "procedureId": "PROC-A05-G01-TRANSITIVIDADE-VERBAL-004",
           "title": "Teste de Flexão de Gênero e Número para Distinguir Estado (Adjetivo) de Modo (Advérbio)",
+          "objective": "Executar o algoritmo decisório para Teste de Flexão de Gênero e Número para Distinguir Estado (Adjetivo) de Modo (Advérbio)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Flexão de Gênero e Número para Distinguir Estado (Adjetivo) de Modo (Advérbio)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Altere o sujeito da oração para o plural (ou modifique o gênero de masculino para feminino).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Observe o comportamento do termo sob análise",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Caso A (Flexionou/Variou)",
+              "explanation": "Se o termo variou para concordar com o sujeito (congressista preocupado $\\rightarrow$ congressistas preocupados; José caiu doente $\\rightarrow$ Os meninos caíram doentes), trata-se de Adjetivo $\\rightarrow$ Expressa Estado $\\rightarrow$ Predicativo do Sujeito.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Caso B (Permaneceu Invariável)",
+              "explanation": "Se o termo não sofrer flexão (Eles falaram calmo/firme com valor de calmamente), trata-se de Advérbio $\\rightarrow$ Expressa Modo $\\rightarrow$ Adjunto Adverbial de Modo.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Flexão de Gênero e Número para Distinguir Estado (Adjetivo) de Modo (Advérbio)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -653,6 +889,41 @@
         {
           "procedureId": "PROC-A05-G01-TRANSITIVIDADE-VERBAL-005",
           "title": "Teste de Substituição por \"Ficar / Tornar-se\" para Verbos de Mudança de Estado",
+          "objective": "Executar o algoritmo decisório para Teste de Substituição por \"Ficar / Tornar-se\" para Verbos de Mudança de Estado",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Substituição por \"Ficar / Tornar-se\" para Verbos de Mudança de Estado."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Diante de verbos de movimento ou ação atípicos seguidos de predicativo (ex.",
+              "explanation": "cair, virar), substitua o verbo por ficar ou tornar-se.",
+              "test": "Diante de verbos de movimento ou ação atípicos seguidos de predicativo (ex.: cair, virar), substitua o verbo por ficar ou tornar-se."
+            },
+            {
+              "order": 2,
+              "action": "Se a frase mantiver perfeito sentido de mudança de condição (\"José caiu doente\" $\\rightarrow$ \"José ficou doente\"), o verbo opera como Verbo de Ligação (VL).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Substituição por \"Ficar / Tornar-se\" para Verbos de Mudança de Estado."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -672,6 +943,47 @@
         {
           "procedureId": "PROC-A05-G01-TRANSITIVIDADE-VERBAL-006",
           "title": "Procedimento de Análise de Locuções Verbais e Intercalações",
+          "objective": "Executar o algoritmo decisório para Procedimento de Análise de Locuções Verbais e Intercalações",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento de Análise de Locuções Verbais e Intercalações."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identifique os verbos agrupados. Una o verbo auxiliar ao verbo principal em forma nominal (infinitivo, gerúndio ou particípio), desconsiderando eventuais adjuntos adverbiais intercalados.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Para classificar a transitividade da oração, analise exclusivamente a regência do Verbo Principal.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se a questão demandar especificamente a classificação do verbo auxiliar isolado, assinale Verbo Auxiliar de Locução Verbal (Código 6).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento de Análise de Locuções Verbais e Intercalações."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -696,6 +1008,22 @@
         {
           "contrastId": "CONTRAST-IP-A05-G01-001",
           "title": "Tabela 1: Verbo de Ligação vs. Verbo Intransitivo (Comportamento Contextual)",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 1: Verbo de Ligação vs. Verbo Intransitivo (Comportamento Contextual)",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -775,6 +1103,22 @@
         {
           "contrastId": "CONTRAST-IP-A05-G01-002",
           "title": "Tabela 2: Estado (Predicativo) vs. Modo (Adjunto Adverbial)",
+          "contrastType": "syntactic",
+          "conceptA": "Tabela 2: Estado (Predicativo) vs. Modo (Adjunto Adverbial)",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -816,6 +1160,22 @@
         {
           "contrastId": "CONTRAST-IP-A05-G01-003",
           "title": "Tabela 3: Objeto Indireto vs. Adjunto Adverbial Preposicionado",
+          "contrastType": "syntactic",
+          "conceptA": "Tabela 3: Objeto Indireto vs. Adjunto Adverbial Preposicionado",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -860,6 +1220,22 @@
         {
           "contrastId": "CONTRAST-IP-A05-G01-004",
           "title": "Tabela 4: Sujeito Oculto vs. Sujeito Indeterminado",
+          "contrastType": "syntactic",
+          "conceptA": "Tabela 4: Sujeito Oculto vs. Sujeito Indeterminado",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -912,6 +1288,22 @@
         {
           "contrastId": "CONTRAST-IP-A05-G01-005",
           "title": "Tabela 5: Divergência Doutrinária: Padrão Geral vs. Banca FCC",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 5: Divergência Doutrinária: Padrão Geral vs. Banca FCC",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -950,6 +1342,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G01-001",
           "title": "EX-A05-G01-TRANSITIVIDADE-VERBAL-001 — Oração com Verbo Intransitivo Típico",
+          "prompt": "Oração: \"O ladrão desapareceu entre as árvores.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "\"O ladrão desapareceu entre as árvores.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Verbo",
+              "rationale": "desapareceu (ação)."
+            },
+            {
+              "order": 4,
+              "action": "Sujeito",
+              "rationale": "\"Quem desapareceu?\" $\\rightarrow$ [O ladrão] (Sujeito Simples)."
+            },
+            {
+              "order": 5,
+              "action": "Pós-verbo",
+              "rationale": "[entre as árvores] $\\rightarrow$ expressa circunstância espacial $\\rightarrow$ Adjunto Adverbial de Lugar."
+            }
+          ],
+          "result": "Gabarito / Classificação: desapareceu = Verbo Intransitivo (VI) (Código 1).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G01-TRANSITIVIDADE-VERBAL-001 — Oração com Verbo Intransitivo Típico sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G01-TRANSITIVIDADE-VERBAL-001 — Oração com Verbo Intransitivo Típico.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G01-TRANSITIVIDADE-VERBAL-001 — Oração com Verbo Intransitivo Típico.",
           "blocks": [
             {
               "type": "list",
@@ -980,6 +1404,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G01-002",
           "title": "EX-A05-G01-TRANSITIVIDADE-VERBAL-002 — Verbo Nocional de Ação sem Movimento (Pegadinha FGV)",
+          "prompt": "Oração: \"Ele dormia profundamente.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "\"Ele dormia profundamente.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Verbo",
+              "rationale": "dormia (expressa processo fisiológico/ação estática $\\rightarrow$ Verbo Nocional)."
+            },
+            {
+              "order": 4,
+              "action": "Sujeito",
+              "rationale": "[Ele] (Sujeito Simples)."
+            },
+            {
+              "order": 5,
+              "action": "Pós-verbo",
+              "rationale": "[profundamente] $\\rightarrow$ Adjunto Adverbial de Modo."
+            }
+          ],
+          "result": "Gabarito / Classificação: dormia = Verbo Intransitivo (VI) (Código 1).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G01-TRANSITIVIDADE-VERBAL-002 — Verbo Nocional de Ação sem Movimento (Pegadinha FGV) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G01-TRANSITIVIDADE-VERBAL-002 — Verbo Nocional de Ação sem Movimento (Pegadinha FGV).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G01-TRANSITIVIDADE-VERBAL-002 — Verbo Nocional de Ação sem Movimento (Pegadinha FGV).",
           "blocks": [
             {
               "type": "list",
@@ -1010,6 +1466,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G01-003",
           "title": "EX-A05-G01-TRANSITIVIDADE-VERBAL-003 — Exercício de Fixação — Frase 1",
+          "prompt": "Oração: 1) \"Ela ligou o ferro silenciosa.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "1) \"Ela ligou o ferro silenciosa.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Verbo",
+              "rationale": "ligou (ação)."
+            },
+            {
+              "order": 4,
+              "action": "Sujeito",
+              "rationale": "\"Quem ligou?\" $\\rightarrow$ [Ela] (Sujeito Simples)."
+            },
+            {
+              "order": 5,
+              "action": "Blocos pós-verbais",
+              "rationale": ""
+            }
+          ],
+          "result": "Gabarito / Classificação: ligou = Verbo Transitivo Direto (VTD) $\\rightarrow$ Código ( 2 ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G01-TRANSITIVIDADE-VERBAL-003 — Exercício de Fixação — Frase 1 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G01-TRANSITIVIDADE-VERBAL-003 — Exercício de Fixação — Frase 1.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G01-TRANSITIVIDADE-VERBAL-003 — Exercício de Fixação — Frase 1.",
           "blocks": [
             {
               "type": "list",
@@ -1042,6 +1530,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G01-004",
           "title": "EX-A05-G01-TRANSITIVIDADE-VERBAL-004 — Exercício de Fixação — Frase 2",
+          "prompt": "Oração: 2) \"Impecável, transitava o marido pelo tempo.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "2) \"Impecável, transitava o marido pelo tempo.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Ordem direta",
+              "rationale": "\"O marido transitava impecável pelo tempo.\""
+            },
+            {
+              "order": 4,
+              "action": "Sujeito",
+              "rationale": "[O marido] (Sujeito Simples)."
+            },
+            {
+              "order": 5,
+              "action": "Blocos",
+              "rationale": "[Impecável] = Predicativo do Sujeito; [pelo tempo] = Adjunto Adverbial de Lugar (figurado)."
+            }
+          ],
+          "result": "Gabarito / Classificação: transitava = Verbo Intransitivo (VI) $\\rightarrow$ Código ( 1 ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G01-TRANSITIVIDADE-VERBAL-004 — Exercício de Fixação — Frase 2 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G01-TRANSITIVIDADE-VERBAL-004 — Exercício de Fixação — Frase 2.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G01-TRANSITIVIDADE-VERBAL-004 — Exercício de Fixação — Frase 2.",
           "blocks": [
             {
               "type": "list",
@@ -1072,6 +1592,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G01-005",
           "title": "EX-A05-G01-TRANSITIVIDADE-VERBAL-005 — Exercício de Fixação — Frases 3 e 4 (Contraste com \"Estar\")",
+          "prompt": "Frase 3: \"Paulo está adoentado.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase 3",
+              "rationale": "\"Paulo está adoentado.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "[adoentado] = Predicativo do Sujeito (Estado)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "está = Verbo de Ligação (VL) $\\rightarrow$ Código ( 5 )."
+            },
+            {
+              "order": 4,
+              "action": "Frase 4",
+              "rationale": "\"Paulo está no hospital.\""
+            },
+            {
+              "order": 5,
+              "action": "Análise",
+              "rationale": "[no hospital] = Adjunto Adverbial de Lugar. Sem predicativo."
+            }
+          ],
+          "result": "Gabarito: está = Verbo Intransitivo (VI) $\\rightarrow$ Código ( 1 ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G01-TRANSITIVIDADE-VERBAL-005 — Exercício de Fixação — Frases 3 e 4 (Contraste com \"Estar\") sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G01-TRANSITIVIDADE-VERBAL-005 — Exercício de Fixação — Frases 3 e 4 (Contraste com \"Estar\").",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G01-TRANSITIVIDADE-VERBAL-005 — Exercício de Fixação — Frases 3 e 4 (Contraste com \"Estar\").",
           "blocks": [
             {
               "type": "list",
@@ -1090,6 +1642,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G01-006",
           "title": "EX-A05-G01-TRANSITIVIDADE-VERBAL-006 — Exercício de Fixação — Frase 5",
+          "prompt": "Oração: 5) \"As discussões continuaram pela noite.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "5) \"As discussões continuaram pela noite.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Sujeito",
+              "rationale": "[As discussões]."
+            },
+            {
+              "order": 4,
+              "action": "Pós-verbo",
+              "rationale": "[pela noite] $\\rightarrow$ Adjunto Adverbial de Tempo."
+            },
+            {
+              "order": 5,
+              "action": "Aplicação do Mantra 6",
+              "rationale": "Não há predicativo do sujeito. O verbo perde a função relacional e atua como nocional."
+            }
+          ],
+          "result": "Gabarito / Classificação: continuaram = Verbo Intransitivo (VI) $\\rightarrow$ Código ( 1 ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G01-TRANSITIVIDADE-VERBAL-006 — Exercício de Fixação — Frase 5 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G01-TRANSITIVIDADE-VERBAL-006 — Exercício de Fixação — Frase 5.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G01-TRANSITIVIDADE-VERBAL-006 — Exercício de Fixação — Frase 5.",
           "blocks": [
             {
               "type": "list",
@@ -1120,6 +1704,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G01-007",
           "title": "EX-A05-G01-TRANSITIVIDADE-VERBAL-007 — Exercício de Fixação — Frase 6",
+          "prompt": "Oração: 6) \"Permaneciam abertas as listas de adesão às emendas.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "6) \"Permaneciam abertas as listas de adesão às emendas.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Ordem direta",
+              "rationale": "\"As listas de adesão às emendas permaneciam abertas.\""
+            },
+            {
+              "order": 4,
+              "action": "Sujeito",
+              "rationale": "[as listas de adesão às emendas] (Núcleo: listas)."
+            },
+            {
+              "order": 5,
+              "action": "Pós-verbo",
+              "rationale": "[abertas] $\\rightarrow$ Predicativo do Sujeito (Estado Continuativo)."
+            }
+          ],
+          "result": "Gabarito / Classificação: permaneciam = Verbo de Ligação (VL) $\\rightarrow$ Código ( 5 ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G01-TRANSITIVIDADE-VERBAL-007 — Exercício de Fixação — Frase 6 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G01-TRANSITIVIDADE-VERBAL-007 — Exercício de Fixação — Frase 6.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G01-TRANSITIVIDADE-VERBAL-007 — Exercício de Fixação — Frase 6.",
           "blocks": [
             {
               "type": "list",
@@ -1150,6 +1766,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G01-008",
           "title": "EX-A05-G01-TRANSITIVIDADE-VERBAL-008 — Exercício de Fixação — Frase 7",
+          "prompt": "Oração: 7) \"Um congressista compareceu à sessão preocupado.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "7) \"Um congressista compareceu à sessão preocupado.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Sujeito",
+              "rationale": "[Um congressista]."
+            },
+            {
+              "order": 4,
+              "action": "Blocos",
+              "rationale": "[à sessão] = Adjunto Adverbial de Lugar; [preocupado] = Predicativo do Sujeito (Mantra 7)."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito Padrão Geral",
+              "rationale": "compareceu = Verbo Intransitivo (VI) $\\rightarrow$ Código ( 1 )."
+            }
+          ],
+          "result": "Ressalva FCC: Na banca FCC, à sessão é tido como OI $\\rightarrow$ VTI / Código ( 3 ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G01-TRANSITIVIDADE-VERBAL-008 — Exercício de Fixação — Frase 7 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G01-TRANSITIVIDADE-VERBAL-008 — Exercício de Fixação — Frase 7.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G01-TRANSITIVIDADE-VERBAL-008 — Exercício de Fixação — Frase 7.",
           "blocks": [
             {
               "type": "list",
@@ -1180,6 +1828,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G01-009",
           "title": "EX-A05-G01-TRANSITIVIDADE-VERBAL-009 — Exercício de Fixação — Frases 8 e 9",
+          "prompt": "Frase 8: \"Choverá bastante.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase 8",
+              "rationale": "\"Choverá bastante.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "Oração sem sujeito. [bastante] = Adjunto Adverbial de Intensidade."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "Choverá = Verbo Intransitivo (VI) $\\rightarrow$ Código ( 1 )."
+            },
+            {
+              "order": 4,
+              "action": "Frase 9",
+              "rationale": "\"Eu sou sempre a estrela matutina.\""
+            },
+            {
+              "order": 5,
+              "action": "Análise",
+              "rationale": "Sujeito [Eu]; [sempre] = Adj. Adv. Tempo; [a estrela matutina] = Predicativo do Sujeito (substantivo)."
+            }
+          ],
+          "result": "Gabarito: sou = Verbo de Ligação (VL) $\\rightarrow$ Código ( 5 ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G01-TRANSITIVIDADE-VERBAL-009 — Exercício de Fixação — Frases 8 e 9 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G01-TRANSITIVIDADE-VERBAL-009 — Exercício de Fixação — Frases 8 e 9.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G01-TRANSITIVIDADE-VERBAL-009 — Exercício de Fixação — Frases 8 e 9.",
           "blocks": [
             {
               "type": "list",
@@ -1198,6 +1878,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G01-010",
           "title": "EX-A05-G01-TRANSITIVIDADE-VERBAL-010 — Exercício de Fixação — Frase 10 (Locução Intercalada)",
+          "prompt": "Oração: 10) \"Surgiu, pela esquina, assobiando.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "10) \"Surgiu, pela esquina, assobiando.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Sujeito",
+              "rationale": "Oculto de 3ª pessoa (ele/ela)."
+            },
+            {
+              "order": 4,
+              "action": "Estrutura",
+              "rationale": "Surgiu (Verbo Auxiliar) + [pela esquina] (Adj. Adv. Lugar intercalado) + assobiando (Verbo Principal no gerúndio $\\rightarrow$ VI)."
+            },
+            {
+              "order": 5,
+              "action": "Aplicação do Mantra 8",
+              "rationale": "O auxiliar apenas se flexiona; a predicação é do principal."
+            }
+          ],
+          "result": "Gabarito / Classificação: Surgiu = Verbo Auxiliar de Locução Verbal $\\rightarrow$ Código ( 6 ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G01-TRANSITIVIDADE-VERBAL-010 — Exercício de Fixação — Frase 10 (Locução Intercalada) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G01-TRANSITIVIDADE-VERBAL-010 — Exercício de Fixação — Frase 10 (Locução Intercalada).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G01-TRANSITIVIDADE-VERBAL-010 — Exercício de Fixação — Frase 10 (Locução Intercalada).",
           "blocks": [
             {
               "type": "list",
@@ -1228,6 +1940,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G01-011",
           "title": "EX-A05-G01-TRANSITIVIDADE-VERBAL-011 — Exercício de Fixação — Frase 11 (VTD com Instrumento)",
+          "prompt": "Oração: 11) \"Os operários perfuravam a rocha com suas brocas e picaretas.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "11) \"Os operários perfuravam a rocha com suas brocas e picaretas.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Sujeito",
+              "rationale": "[Os operários]."
+            },
+            {
+              "order": 4,
+              "action": "Blocos pós-verbais",
+              "rationale": ""
+            },
+            {
+              "order": 5,
+              "action": "[a rocha]",
+              "rationale": "Complemento direto $\\rightarrow$ Objeto Direto."
+            }
+          ],
+          "result": "Gabarito / Classificação: perfuravam = Verbo Transitivo Direto (VTD) $\\rightarrow$ Código ( 2 ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G01-TRANSITIVIDADE-VERBAL-011 — Exercício de Fixação — Frase 11 (VTD com Instrumento) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G01-TRANSITIVIDADE-VERBAL-011 — Exercício de Fixação — Frase 11 (VTD com Instrumento).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G01-TRANSITIVIDADE-VERBAL-011 — Exercício de Fixação — Frase 11 (VTD com Instrumento).",
           "blocks": [
             {
               "type": "list",
@@ -1259,6 +2003,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G01-012",
           "title": "EX-A05-G01-TRANSITIVIDADE-VERBAL-012 — Exercício de Fixação — Frase 12",
+          "prompt": "Oração: 12) \"Existe em Nova Lima uma importante mina de ouro.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "12) \"Existe em Nova Lima uma importante mina de ouro.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Verbo",
+              "rationale": "Existe."
+            },
+            {
+              "order": 4,
+              "action": "Sujeito pós-posto",
+              "rationale": "\"O que existe em Nova Lima?\" $\\rightarrow$ [uma importante mina de ouro] (Núcleo: mina)."
+            },
+            {
+              "order": 5,
+              "action": "Termo restante",
+              "rationale": "[em Nova Lima] $\\rightarrow$ Adjunto Adverbial de Lugar."
+            }
+          ],
+          "result": "Gabarito / Classificação: Existe = Verbo Intransitivo (VI) $\\rightarrow$ Código ( 1 ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G01-TRANSITIVIDADE-VERBAL-012 — Exercício de Fixação — Frase 12 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G01-TRANSITIVIDADE-VERBAL-012 — Exercício de Fixação — Frase 12.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G01-TRANSITIVIDADE-VERBAL-012 — Exercício de Fixação — Frase 12.",
           "blocks": [
             {
               "type": "list",
@@ -1289,6 +2065,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G01-013",
           "title": "EX-A05-G01-TRANSITIVIDADE-VERBAL-013 — Exercício de Fixação — Frase 13",
+          "prompt": "Oração: 13) \"Contou-me um amigo uma história exemplar.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "13) \"Contou-me um amigo uma história exemplar.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Sujeito pós-posto",
+              "rationale": "[um amigo]."
+            },
+            {
+              "order": 4,
+              "action": "Complementos",
+              "rationale": "[uma história exemplar] = OD; [me] (a mim) = OI."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito / Classificação",
+              "rationale": "Contou = Verbo Transitivo Direto e Indireto (VTDI) $\\rightarrow$ Código ( 4 )."
+            }
+          ],
+          "result": "Gabarito / Classificação: Contou = Verbo Transitivo Direto e Indireto (VTDI) $\\rightarrow$ Código ( 4 ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G01-TRANSITIVIDADE-VERBAL-013 — Exercício de Fixação — Frase 13 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G01-TRANSITIVIDADE-VERBAL-013 — Exercício de Fixação — Frase 13.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G01-TRANSITIVIDADE-VERBAL-013 — Exercício de Fixação — Frase 13.",
           "blocks": [
             {
               "type": "list",
@@ -1318,6 +2126,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G01-014",
           "title": "EX-A05-G01-TRANSITIVIDADE-VERBAL-014 — Exercício de Fixação — Frase 14",
+          "prompt": "Oração: 14) \"Uma das janelas vivia aberta.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "14) \"Uma das janelas vivia aberta.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Sujeito",
+              "rationale": "[Uma das janelas] (Núcleo: Uma)."
+            },
+            {
+              "order": 4,
+              "action": "Pós-verbo",
+              "rationale": "[aberta] = Predicativo do Sujeito."
+            },
+            {
+              "order": 5,
+              "action": "Semântica verbal",
+              "rationale": "vivia = permanecia continuamente aberta (Estado Continuado)."
+            }
+          ],
+          "result": "Gabarito / Classificação: vivia = Verbo de Ligação (VL) $\\rightarrow$ Código ( 5 ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G01-TRANSITIVIDADE-VERBAL-014 — Exercício de Fixação — Frase 14 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G01-TRANSITIVIDADE-VERBAL-014 — Exercício de Fixação — Frase 14.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G01-TRANSITIVIDADE-VERBAL-014 — Exercício de Fixação — Frase 14.",
           "blocks": [
             {
               "type": "list",
@@ -1348,6 +2188,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G01-015",
           "title": "EX-A05-G01-TRANSITIVIDADE-VERBAL-015 — Exercício de Fixação — Frase 15",
+          "prompt": "Oração: 15) \"Estava, naquele dia, em Friburgo.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "15) \"Estava, naquele dia, em Friburgo.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Sujeito",
+              "rationale": "Oculto (Ele/Ela/Eu)."
+            },
+            {
+              "order": 4,
+              "action": "Blocos pós-verbais",
+              "rationale": "[naquele dia] = Adjunto Adverbial de Tempo; [em Friburgo] = Adjunto Adverbial de Lugar."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito / Classificação",
+              "rationale": "Estava = Verbo Intransitivo (VI) $\\rightarrow$ Código ( 1 )."
+            }
+          ],
+          "result": "Gabarito / Classificação: Estava = Verbo Intransitivo (VI) $\\rightarrow$ Código ( 1 ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G01-TRANSITIVIDADE-VERBAL-015 — Exercício de Fixação — Frase 15 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G01-TRANSITIVIDADE-VERBAL-015 — Exercício de Fixação — Frase 15.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G01-TRANSITIVIDADE-VERBAL-015 — Exercício de Fixação — Frase 15.",
           "blocks": [
             {
               "type": "list",
@@ -1377,6 +2249,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G01-016",
           "title": "EX-A05-G01-TRANSITIVIDADE-VERBAL-016 — Exercício de Fixação — Frase 16",
+          "prompt": "Oração: 16) \"Ela parece triste.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "16) \"Ela parece triste.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Sujeito",
+              "rationale": "[Ela]."
+            },
+            {
+              "order": 4,
+              "action": "Pós-verbo",
+              "rationale": "[triste] = Predicativo do Sujeito (Estado Aparente)."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito / Classificação",
+              "rationale": "parece = Verbo de Ligação (VL) $\\rightarrow$ Código ( 5 )."
+            }
+          ],
+          "result": "Gabarito / Classificação: parece = Verbo de Ligação (VL) $\\rightarrow$ Código ( 5 ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G01-TRANSITIVIDADE-VERBAL-016 — Exercício de Fixação — Frase 16 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G01-TRANSITIVIDADE-VERBAL-016 — Exercício de Fixação — Frase 16.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G01-TRANSITIVIDADE-VERBAL-016 — Exercício de Fixação — Frase 16.",
           "blocks": [
             {
               "type": "list",
@@ -1406,6 +2310,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G01-017",
           "title": "EX-A05-G01-TRANSITIVIDADE-VERBAL-017 — Exercício de Fixação — Frase 17",
+          "prompt": "Oração: 17) \"Distribuímos as cartas na mesa.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "17) \"Distribuímos as cartas na mesa.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Sujeito",
+              "rationale": "Oculto desinencial (Nós)."
+            },
+            {
+              "order": 4,
+              "action": "Blocos",
+              "rationale": "[as cartas] = Objeto Direto; [na mesa] = Adjunto Adverbial de Lugar."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito / Classificação",
+              "rationale": "Distribuímos = Verbo Transitivo Direto (VTD) $\\rightarrow$ Código ( 2 )."
+            }
+          ],
+          "result": "Gabarito / Classificação: Distribuímos = Verbo Transitivo Direto (VTD) $\\rightarrow$ Código ( 2 ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G01-TRANSITIVIDADE-VERBAL-017 — Exercício de Fixação — Frase 17 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G01-TRANSITIVIDADE-VERBAL-017 — Exercício de Fixação — Frase 17.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G01-TRANSITIVIDADE-VERBAL-017 — Exercício de Fixação — Frase 17.",
           "blocks": [
             {
               "type": "list",
@@ -1435,6 +2371,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G01-018",
           "title": "EX-A05-G01-TRANSITIVIDADE-VERBAL-018 — Exercício de Fixação — Frase 18",
+          "prompt": "Oração: 18) \"Chegamos alegres.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "18) \"Chegamos alegres.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Sujeito",
+              "rationale": "Oculto desinencial (Nós)."
+            },
+            {
+              "order": 4,
+              "action": "Pós-verbo",
+              "rationale": "[alegres] = Predicativo do Sujeito (Adjetivo flexionado concordando com o sujeito)."
+            },
+            {
+              "order": 5,
+              "action": "Verbo",
+              "rationale": "Chegamos é verbo nocional de ação. Não há objetos."
+            }
+          ],
+          "result": "Gabarito / Classificação: Chegamos = Verbo Intransitivo (VI) $\\rightarrow$ Código ( 1 ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G01-TRANSITIVIDADE-VERBAL-018 — Exercício de Fixação — Frase 18 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G01-TRANSITIVIDADE-VERBAL-018 — Exercício de Fixação — Frase 18.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G01-TRANSITIVIDADE-VERBAL-018 — Exercício de Fixação — Frase 18.",
           "blocks": [
             {
               "type": "list",
@@ -1465,6 +2433,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G01-019",
           "title": "EX-A05-G01-TRANSITIVIDADE-VERBAL-019 — Exercício de Fixação — Frase 19 (Mudança de Estado)",
+          "prompt": "Oração: 19) \"José caiu doente.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "19) \"José caiu doente.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Sujeito",
+              "rationale": "[José]."
+            },
+            {
+              "order": 4,
+              "action": "Termo doente",
+              "rationale": "Teste de flexão do Mantra 9 (\"Os meninos caíram doentes\") $\\rightarrow$ Adjetivo $\\rightarrow$ Predicativo do Sujeito."
+            },
+            {
+              "order": 5,
+              "action": "Sentido do verbo",
+              "rationale": "caiu = ficou (Mudança de Estado)."
+            }
+          ],
+          "result": "Gabarito / Classificação: caiu = Verbo de Ligação (VL) $\\rightarrow$ Código ( 5 ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G01-TRANSITIVIDADE-VERBAL-019 — Exercício de Fixação — Frase 19 (Mudança de Estado) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G01-TRANSITIVIDADE-VERBAL-019 — Exercício de Fixação — Frase 19 (Mudança de Estado).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G01-TRANSITIVIDADE-VERBAL-019 — Exercício de Fixação — Frase 19 (Mudança de Estado).",
           "blocks": [
             {
               "type": "list",
@@ -1495,6 +2495,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G01-020",
           "title": "EX-A05-G01-TRANSITIVIDADE-VERBAL-020 — Exercício de Fixação — Frase 20",
+          "prompt": "Oração: 20) \"Aquela estrela no peito é uma predestinação, símbolo ao mesmo tempo de fulgor e solidão.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "20) \"Aquela estrela no peito é uma predestinação, símbolo ao mesmo tempo de fulgor e solidão.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Sujeito",
+              "rationale": "[Aquela estrela no peito] (Núcleo: estrela)."
+            },
+            {
+              "order": 4,
+              "action": "Pós-verbo",
+              "rationale": "[uma predestinação] = Predicativo do Sujeito (núcleo substantivado)."
+            },
+            {
+              "order": 5,
+              "action": "Verbo",
+              "rationale": "é (Estado Permanente)."
+            }
+          ],
+          "result": "Gabarito / Classificação: é = Verbo de Ligação (VL) $\\rightarrow$ Código ( 5 ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G01-TRANSITIVIDADE-VERBAL-020 — Exercício de Fixação — Frase 20 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G01-TRANSITIVIDADE-VERBAL-020 — Exercício de Fixação — Frase 20.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G01-TRANSITIVIDADE-VERBAL-020 — Exercício de Fixação — Frase 20.",
           "blocks": [
             {
               "type": "list",
@@ -1597,8 +2629,12 @@
         {
           "trapId": "WARN-A05-G01-TRANSITIVIDADE-VERBAL-001",
           "title": "Confundir Ação com Movimento Físico (Pegadinha FGV)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Ação com Movimento Físico (Pegadinha FGV).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Ação com Movimento Físico (Pegadinha FGV).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Ação com Movimento Físico (Pegadinha FGV) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Ação com Movimento Físico (Pegadinha FGV).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Ação com Movimento Físico (Pegadinha FGV).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Ação com Movimento Físico (Pegadinha FGV) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Ação com Movimento Físico (Pegadinha FGV).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Ação com Movimento Físico (Pegadinha FGV).",
           "blocks": [
             {
               "type": "list",
@@ -1613,8 +2649,12 @@
         {
           "trapId": "WARN-A05-G01-TRANSITIVIDADE-VERBAL-002",
           "title": "O Erro do Teste de \"Tampar o Verbo\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Erro do Teste de \"Tampar o Verbo\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Erro do Teste de \"Tampar o Verbo\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Erro do Teste de \"Tampar o Verbo\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Erro do Teste de \"Tampar o Verbo\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Erro do Teste de \"Tampar o Verbo\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Erro do Teste de \"Tampar o Verbo\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Erro do Teste de \"Tampar o Verbo\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Erro do Teste de \"Tampar o Verbo\".",
           "blocks": [
             {
               "type": "list",
@@ -1629,8 +2669,12 @@
         {
           "trapId": "WARN-A05-G01-TRANSITIVIDADE-VERBAL-003",
           "title": "A Armadilha da Lista Decorada de Verbos de Ligação",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha da Lista Decorada de Verbos de Ligação.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha da Lista Decorada de Verbos de Ligação.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha da Lista Decorada de Verbos de Ligação no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha da Lista Decorada de Verbos de Ligação.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha da Lista Decorada de Verbos de Ligação.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha da Lista Decorada de Verbos de Ligação para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha da Lista Decorada de Verbos de Ligação.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha da Lista Decorada de Verbos de Ligação.",
           "blocks": [
             {
               "type": "list",
@@ -1645,8 +2689,12 @@
         {
           "trapId": "WARN-A05-G01-TRANSITIVIDADE-VERBAL-004",
           "title": "Confundir Adjunto Adverbial de Lugar com Estado/Predicativo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Adjunto Adverbial de Lugar com Estado/Predicativo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Adjunto Adverbial de Lugar com Estado/Predicativo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Adjunto Adverbial de Lugar com Estado/Predicativo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Adjunto Adverbial de Lugar com Estado/Predicativo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Adjunto Adverbial de Lugar com Estado/Predicativo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Adjunto Adverbial de Lugar com Estado/Predicativo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Adjunto Adverbial de Lugar com Estado/Predicativo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Adjunto Adverbial de Lugar com Estado/Predicativo.",
           "blocks": [
             {
               "type": "list",
@@ -1661,8 +2709,12 @@
         {
           "trapId": "WARN-A05-G01-TRANSITIVIDADE-VERBAL-005",
           "title": "Pegadinha do \"Perfurar algo com algo\" (Instrumento vs. Objeto Indireto)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha do \"Perfurar algo com algo\" (Instrumento vs. Objeto Indireto).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha do \"Perfurar algo com algo\" (Instrumento vs. Objeto Indireto).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha do \"Perfurar algo com algo\" (Instrumento vs. Objeto Indireto) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha do \"Perfurar algo com algo\" (Instrumento vs. Objeto Indireto).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha do \"Perfurar algo com algo\" (Instrumento vs. Objeto Indireto).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pegadinha do \"Perfurar algo com algo\" (Instrumento vs. Objeto Indireto) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha do \"Perfurar algo com algo\" (Instrumento vs. Objeto Indireto).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha do \"Perfurar algo com algo\" (Instrumento vs. Objeto Indireto).",
           "blocks": [
             {
               "type": "list",
@@ -1677,8 +2729,12 @@
         {
           "trapId": "WARN-A05-G01-TRANSITIVIDADE-VERBAL-006",
           "title": "Falsa Regra de que Predicativo do Sujeito Exige Verbo de Ligação",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Falsa Regra de que Predicativo do Sujeito Exige Verbo de Ligação.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Falsa Regra de que Predicativo do Sujeito Exige Verbo de Ligação.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Falsa Regra de que Predicativo do Sujeito Exige Verbo de Ligação no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Falsa Regra de que Predicativo do Sujeito Exige Verbo de Ligação.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Falsa Regra de que Predicativo do Sujeito Exige Verbo de Ligação.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Falsa Regra de que Predicativo do Sujeito Exige Verbo de Ligação para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Falsa Regra de que Predicativo do Sujeito Exige Verbo de Ligação.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Falsa Regra de que Predicativo do Sujeito Exige Verbo de Ligação.",
           "blocks": [
             {
               "type": "list",
@@ -1693,8 +2749,12 @@
         {
           "trapId": "WARN-A05-G01-TRANSITIVIDADE-VERBAL-007",
           "title": "Pegadinha da Pergunta Decorada (\"Quem está, está em...\")",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha da Pergunta Decorada (\"Quem está, está em...\").",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha da Pergunta Decorada (\"Quem está, está em...\").",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha da Pergunta Decorada (\"Quem está, está em...\") no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha da Pergunta Decorada (\"Quem está, está em...\").",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha da Pergunta Decorada (\"Quem está, está em...\").",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pegadinha da Pergunta Decorada (\"Quem está, está em...\") para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha da Pergunta Decorada (\"Quem está, está em...\").",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha da Pergunta Decorada (\"Quem está, está em...\").",
           "blocks": [
             {
               "type": "list",
@@ -1709,8 +2769,12 @@
         {
           "trapId": "WARN-A05-G01-TRANSITIVIDADE-VERBAL-008",
           "title": "Armadilha da 3ª Pessoa do Plural com Referente Textual",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Armadilha da 3ª Pessoa do Plural com Referente Textual.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Armadilha da 3ª Pessoa do Plural com Referente Textual.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Armadilha da 3ª Pessoa do Plural com Referente Textual no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Armadilha da 3ª Pessoa do Plural com Referente Textual.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Armadilha da 3ª Pessoa do Plural com Referente Textual.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Armadilha da 3ª Pessoa do Plural com Referente Textual para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Armadilha da 3ª Pessoa do Plural com Referente Textual.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Armadilha da 3ª Pessoa do Plural com Referente Textual.",
           "blocks": [
             {
               "type": "list",
@@ -1725,8 +2789,12 @@
         {
           "trapId": "WARN-A05-G01-TRANSITIVIDADE-VERBAL-009",
           "title": "Divergência Doutrinária Específica da Banca FCC",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Divergência Doutrinária Específica da Banca FCC.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Divergência Doutrinária Específica da Banca FCC.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Divergência Doutrinária Específica da Banca FCC no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Divergência Doutrinária Específica da Banca FCC.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Divergência Doutrinária Específica da Banca FCC.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Divergência Doutrinária Específica da Banca FCC para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Divergência Doutrinária Específica da Banca FCC.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Divergência Doutrinária Específica da Banca FCC.",
           "blocks": [
             {
               "type": "list",
@@ -1919,7 +2987,44 @@
       "officialAnswer": "option_C",
       "explanation": "“A voz de Wagner” é objeto direto de “ouvir”, na voz ativa. Na voz passiva, o objeto direto vira\nsujeito. Então, teremos, na voz passiva:\n“A voz de Wagner” é ouvida. Gabarito letra C.",
       "questionSha256": "e43c590526924d76634f1120235bbdac36c99e7f624a1b6c068954ab637490d6",
-      "answerSha256": "8c63d6eda288a06b88b5b2f2f0a60f92584e654a33b1d0e180fbe593971091b8"
+      "answerSha256": "8c63d6eda288a06b88b5b2f2f0a60f92584e654a33b1d0e180fbe593971091b8",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Transitividade Verbal - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "option_C",
+        "acceptedPedagogicalAnswers": [
+          "option_C"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A05-G01-CONFLICT-001-37",
+        "explanation": "Classifique verbos de movimento como VI + Adjunto Adverbial de Lugar como regra geral; altere para VTI + Objeto Indireto apenas se a prova for elaborada pela FCC."
+      },
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Transitividade Verbal - Fundamentos."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Transitividade Verbal - Fundamentos."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Transitividade Verbal - Fundamentos."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Transitividade Verbal - Fundamentos."
+        }
+      ]
     },
     {
       "questionId": "aula05.q0016",
@@ -1952,7 +3057,50 @@
       "officialAnswer": "option_E",
       "explanation": "Para converter da voz ativa para a passiva, o objeto direto deve virar sujeito paciente:\nEmpresas de cobrança usam [técnicas abusivas]\n\n[técnicas abusivas] são usadas (pelas empresas de cobrança)\nObservem que o sujeito da ativa virou agente da passiva.\nGabarito letra E.",
       "questionSha256": "faa0e6c6f89f480532f59c49426cf108ee624d781a19f2f48638bbec2ef5d9da",
-      "answerSha256": "c64ced88f802398f5ce05b3326de9c354a394b0cc85b3bb8e6cc8baace3dc5d8"
+      "answerSha256": "c64ced88f802398f5ce05b3326de9c354a394b0cc85b3bb8e6cc8baace3dc5d8",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Transitividade Verbal - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "option_E",
+        "acceptedPedagogicalAnswers": [
+          "option_E"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A05-G01-CONFLICT-001-37",
+        "explanation": "Classifique verbos de movimento como VI + Adjunto Adverbial de Lugar como regra geral; altere para VTI + Objeto Indireto apenas se a prova for elaborada pela FCC."
+      },
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Transitividade Verbal - Fundamentos."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Transitividade Verbal - Fundamentos."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Transitividade Verbal - Fundamentos."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Transitividade Verbal - Fundamentos."
+        },
+        {
+          "optionLabel": "E",
+          "status": "incorrect",
+          "explanation": "Opção E: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Transitividade Verbal - Fundamentos."
+        }
+      ]
     },
     {
       "questionId": "aula05.q0001",
@@ -1964,7 +3112,19 @@
       "officialAnswer": "option_E",
       "explanation": "Aqui, aplicamos a correlação básica da condicional futura:\nSe puder, farei. (futuro do subjuntivo + futuro do presente)\nE Se as mudanças tecnológicas avançarem muito, resolverão o problema…\nVou propor soluções possíveis para as demais:\nA Se as mudanças tecnológicas avançarEM muito, RESOLVERÃO o problema…\nB Se as mudanças tecnológicas avançassem muito, RESOLVERIAM o problema…\nC Se as mudanças tecnológicas avançarem muito, RESOLVERÃO o problema…\nD Se as mudanças tecnológicas avançam muito, resolvEM o problema…\nGabarito: E",
       "questionSha256": "28b0b66aa25a0895e513ab5448642fcffa11548acc19c567bec022ba860493a5",
-      "answerSha256": "5ec5ba0f93da2e7bc4b1f16c8c0149612319e065bc5ad25c43375c787f34b59d"
+      "answerSha256": "5ec5ba0f93da2e7bc4b1f16c8c0149612319e065bc5ad25c43375c787f34b59d",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Transitividade Verbal - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "option_E",
+        "acceptedPedagogicalAnswers": [
+          "option_E"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A05-G01-CONFLICT-001-37",
+        "explanation": "Classifique verbos de movimento como VI + Adjunto Adverbial de Lugar como regra geral; altere para VTI + Objeto Indireto apenas se a prova for elaborada pela FCC."
+      },
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula05.q0013",
@@ -1997,7 +3157,50 @@
       "officialAnswer": "option_B",
       "explanation": "Se a voz é passiva, “eficazes sistemas de irrigação” é sujeito paciente. Na voz ativa, esse termo\ndeverá assumir função de objeto direto e o agente da passiva “pelos antigos” vai ter que virar\nsujeito. O “ser” da voz passiva desaparece:\nEficazes sistemas de irrigação teriam sido utilizados pelos antigos\nOs antigos teriam utilizado eficazes sistemas de irrigação.\nHá uma locução de tempo composto “Ter+particípio”, essa locução de tempo composto se\nmantém; então basta subtrair o verbo “ser” da locução passiva que teremos a voz ativa de novo.\nGabarito letra B.",
       "questionSha256": "1fe739acb19cc7e4461378961990cf7213a474b430b74f84ccdf07fd313729f0",
-      "answerSha256": "c6a75fb0667f0a530e1635a647d8b535d93f0eea9a881131f77706750f8a8e98"
+      "answerSha256": "c6a75fb0667f0a530e1635a647d8b535d93f0eea9a881131f77706750f8a8e98",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Transitividade Verbal - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "option_B",
+        "acceptedPedagogicalAnswers": [
+          "option_B"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A05-G01-CONFLICT-001-37",
+        "explanation": "Classifique verbos de movimento como VI + Adjunto Adverbial de Lugar como regra geral; altere para VTI + Objeto Indireto apenas se a prova for elaborada pela FCC."
+      },
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Transitividade Verbal - Fundamentos."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Transitividade Verbal - Fundamentos."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Transitividade Verbal - Fundamentos."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Transitividade Verbal - Fundamentos."
+        },
+        {
+          "optionLabel": "E",
+          "status": "incorrect",
+          "explanation": "Opção E: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Transitividade Verbal - Fundamentos."
+        }
+      ]
     },
     {
       "questionId": "aula05.q0008",
@@ -2009,7 +3212,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Aplicando a correlação básica PudeSSE/FaRIA, teríamos: viéSSEmos/garantiRIA. Observem que\nnão faz sentido um verbo indicando hipótese no passado correlacionado a um indicando sua\nconsequência no futuro. É um situação tão incoerente como: *Se eu pudesse, viajarei... Questão\nincorreta.",
       "questionSha256": "a0433c5227f1dfa52721fe103ae7872ee39dc2f680a96b4b1bdc2ce80da749a3",
-      "answerSha256": "aac79ef8f681a2db0ca0b1221ef11ded8c5b9e50cf16f2e0a0fea18cff6eb9b8"
+      "answerSha256": "aac79ef8f681a2db0ca0b1221ef11ded8c5b9e50cf16f2e0a0fea18cff6eb9b8",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Transitividade Verbal - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula05.q0002",
@@ -2021,7 +3227,10 @@
       "officialAnswer": "correct",
       "explanation": "A correlação depende dos sentidos dos tempos e modos verbais. O advérbio “talvez” expressa\ndúvida; então, naturalmente, com ele é empregado o subjuntivo, modo que indica dúvida,\nhipótese:\nTalvez sejamos, Talvez possamos\nTalvez pudéssemos, Talvez viajássemos\nQuestão correta.",
       "questionSha256": "4400af32bb03f61c4c31d26deaea9592e7a19302447620f5b904ec3d65df5feb",
-      "answerSha256": "a05b15c351bbd04d21c88ff862dc06db732115acfca97e76ac37b496ed688610"
+      "answerSha256": "a05b15c351bbd04d21c88ff862dc06db732115acfca97e76ac37b496ed688610",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Transitividade Verbal - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

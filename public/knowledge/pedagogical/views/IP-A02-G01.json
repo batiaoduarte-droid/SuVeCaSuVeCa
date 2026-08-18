@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A02-G01",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.712Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.473Z"
   },
   "unit": {
     "unitId": "IP-A02-G01",
@@ -557,6 +557,14 @@
         {
           "entityId": "RULE-IP-A02-G01-001",
           "title": "Regras canônicas",
+          "statement": "Regras canônicas",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -631,6 +639,65 @@
         {
           "procedureId": "PROC-A02-G01-PREPOSICOES-001",
           "title": "Procedimento de Validação Sintático-Semântica em Reescrita de Locuções",
+          "objective": "Executar o algoritmo decisório para Procedimento de Validação Sintático-Semântica em Reescrita de Locuções",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento de Validação Sintático-Semântica em Reescrita de Locuções."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar o Conectivo Original",
+              "explanation": "Determine se a frase original emprega preposição isolada/locução prepositiva (a fim de, apesar de, para) ou locução conjuntiva (a fim de que, apesar de que, para que).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Verificar a Equivalência Semântica",
+              "explanation": "Certifique-se de que o conector substituto carrega a mesma noção circunstancial do original (ex.: finalidade com finalidade, concessão com concessão).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Inspecionar a Flexão Verbal (Passo Decisivo)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se a proposta de reescrita usar locução prepositiva (terminada em preposição)",
+              "explanation": "o verbo subordinado deve estar obrigatoriamente na forma nominal de infinitivo (oração reduzida).",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se a proposta de reescrita usar locução conjuntiva (terminada em \"que\")",
+              "explanation": "o verbo subordinado deve estar obrigatoriamente flexionado/conjugado no modo subjuntivo (oração desenvolvida).",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Julgamento",
+              "explanation": "Se a correlação temporal e modal do verbo foi devidamente adaptada, considere a reescrita correta e com sentido preservado.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento de Validação Sintático-Semântica em Reescrita de Locuções."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -675,6 +742,107 @@
         {
           "procedureId": "PROC-A02-G01-PREPOSICOES-002",
           "title": "Algoritmo do \"Termo Posterior Salva\" para Identificação do Valor Nocional",
+          "objective": "Executar o algoritmo decisório para Algoritmo do \"Termo Posterior Salva\" para Identificação do Valor Nocional",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo do \"Termo Posterior Salva\" para Identificação do Valor Nocional."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isolar os Termos Conectados",
+              "explanation": "Delimite o termo anterior regente e o termo posterior regido (ex.: [porta] de [madeira], [saíram cedo] para [o trabalho]).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Descartar a Preposição Relacional",
+              "explanation": "Verifique se o termo não é objeto indireto exigido por VTI ou complemento nominal. Se não for exigido por regência, trata-se de valor nocional.",
+              "test": "Descartar a Preposição Relacional: Verifique se o termo não é objeto indireto exigido por VTI ou complemento nominal. Se não for exigido por regência, trata-se de valor nocional."
+            },
+            {
+              "order": 3,
+              "action": "Analisar a Carga do Termo Posterior (\"O que vem depois salva\")",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Termo posterior indica material constitutivo $\\rightarrow$ Matéria (mesa de vidro).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Termo posterior indica possuidor $\\rightarrow$ Posse (casa da Maria).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Termo posterior indica conteúdo preenchedor $\\rightarrow$ Conteúdo (lata de óleo).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Termo posterior indica ponto de destino/espaço físico $\\rightarrow$ Direção / Lugar (olhe para cima, foi para casa).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Termo posterior indica pessoa recebedora $\\rightarrow$ Destinatário (flores para a mãe).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Termo posterior indica parecer/opinião $\\rightarrow$ Conformidade (para os cientistas...).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Termo posterior indica marco temporal/prazo $\\rightarrow$ Tempo (para o mês que vem).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Termo posterior indica ação/meta a atingir $\\rightarrow$ Finalidade (para conseguir vaga).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 12,
+              "action": "Termo posterior indica companhia associada $\\rightarrow$ Companhia (pipoca com refrigerante).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 13,
+              "action": "Termo posterior indica sujeito agente da passiva $\\rightarrow$ Agente (derrotado pelo rival).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo do \"Termo Posterior Salva\" para Identificação do Valor Nocional."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -720,6 +888,47 @@
         {
           "procedureId": "PROC-A02-G01-PREPOSICOES-003",
           "title": "Teste Canônico de Substituição para Circunstância de Finalidade",
+          "objective": "Executar o algoritmo decisório para Teste Canônico de Substituição para Circunstância de Finalidade",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste Canônico de Substituição para Circunstância de Finalidade."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar a preposição \"para\" e identificar a oração subordinada por ela introduzida.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Substituir mentalmente \"para\" por \"a fim de\" ou \"com o objetivo de\".",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Avaliar a fluidez semântica",
+              "explanation": "Se a substituição mantiver perfeito sentido de meta/propósito da oração anterior, a circunstância é estritamente de finalidade.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste Canônico de Substituição para Circunstância de Finalidade."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -749,6 +958,53 @@
         {
           "procedureId": "PROC-A02-G01-PREPOSICOES-004",
           "title": "Teste de Paralelismo em Estruturas Correlativas com Múltiplas Preposições",
+          "objective": "Executar o algoritmo decisório para Teste de Paralelismo em Estruturas Correlativas com Múltiplas Preposições",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Paralelismo em Estruturas Correlativas com Múltiplas Preposições."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Destacar as ocorrências de \"para\" e identificar os conectores correlativos que as unem (não apenas... mas também... e sobretudo...).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Testar o valor de finalidade na primeira ocorrência (para sempre permitirem = a fim de sempre permitirem).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Aplicar a propriedade de simetria do paralelismo aditivo",
+              "explanation": "Elementos sob adição correlativa possuem compulsoriamente a mesma natureza semântica.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Validar o item como Certo sem necessidade de decomposição exaustiva das ocorrências intermediárias.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Paralelismo em Estruturas Correlativas com Múltiplas Preposições."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -783,6 +1039,22 @@
         {
           "contrastId": "CONTRAST-IP-A02-G01-001",
           "title": "8.1. Preposição Relacional (Gramatical) vs. Preposição Nocional (Semântica)",
+          "contrastType": "morphological",
+          "conceptA": "8.1. Preposição Relacional (Gramatical) vs. Preposição Nocional (Semântica)",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -819,6 +1091,22 @@
         {
           "contrastId": "CONTRAST-IP-A02-G01-002",
           "title": "8.2. Locução Prepositiva vs. Locução Conjuntiva",
+          "contrastType": "mixed",
+          "conceptA": "8.2. Locução Prepositiva vs. Locução Conjuntiva",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -860,6 +1148,22 @@
         {
           "contrastId": "CONTRAST-IP-A02-G01-003",
           "title": "8.3. Distinções Semânticas Contextuais da Preposição \"PARA\"",
+          "contrastType": "morphological",
+          "conceptA": "8.3. Distinções Semânticas Contextuais da Preposição \"PARA\"",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -905,6 +1209,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G01-001",
           "title": "EX-A02-G01-PREPOSICOES-001 — Estudo de Caso Cesgranrio: \"Sairei após o jantar\"",
+          "prompt": "Contexto / Frase: Sairei após o jantar.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Contexto / Frase",
+              "rationale": "Sairei após o jantar."
+            },
+            {
+              "order": 2,
+              "action": "Problema Proposto",
+              "rationale": "A banca sublinhou o vocábulo após e perguntou sua classificação morfológica, colocando \"advérbio de tempo\" entre as opções."
+            },
+            {
+              "order": 3,
+              "action": "Resolução Consolidada",
+              "rationale": "A palavra isolada após pertence à lista memorizada das preposições essenciais. Embora veicule semântica temporal, sua classe morfológica é preposição. Apenas se o segmento sublinhado fosse o bloco completo após o jantar a classificação correta seria locução adverbial de tempo."
+            }
+          ],
+          "result": "Resolução Consolidada: A palavra isolada após pertence à lista memorizada das preposições essenciais. Embora veicule semântica temporal, sua classe morfológica é preposição. Apenas se o segmento sublinhado fosse o bloco completo após o jantar a classificação correta seria locução adverbial de tempo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G01-PREPOSICOES-001 — Estudo de Caso Cesgranrio: \"Sairei após o jantar\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G01-PREPOSICOES-001 — Estudo de Caso Cesgranrio: \"Sairei após o jantar\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G01-PREPOSICOES-001 — Estudo de Caso Cesgranrio: \"Sairei após o jantar\".",
           "blocks": [
             {
               "type": "list",
@@ -920,6 +1246,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G01-002",
           "title": "EX-A02-G01-PREPOSICOES-002 — Estudo de Caso FGV: \"Pipoca e guaraná\" vs. \"Pipoca com guaraná\"",
+          "prompt": "Construções Analisadas:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Construções Analisadas",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Comerei pipoca e guaraná. $\\rightarrow$ e = Conjunção coordenativa aditiva (liga dois núcleos de objeto direto).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "Comerei pipoca com guaraná. $\\rightarrow$ com = Preposição essencial com valor nocional de companhia, introduzindo um Adjunto Adnominal.",
+              "rationale": null
+            }
+          ],
+          "result": "Comerei pipoca com guaraná. $\\rightarrow$ com = Preposição essencial com valor nocional de companhia, introduzindo um Adjunto Adnominal.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G01-PREPOSICOES-002 — Estudo de Caso FGV: \"Pipoca e guaraná\" vs. \"Pipoca com guaraná\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G01-PREPOSICOES-002 — Estudo de Caso FGV: \"Pipoca e guaraná\" vs. \"Pipoca com guaraná\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G01-PREPOSICOES-002 — Estudo de Caso FGV: \"Pipoca e guaraná\" vs. \"Pipoca com guaraná\".",
           "blocks": [
             {
               "type": "list",
@@ -941,6 +1289,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G01-003",
           "title": "EX-A02-G01-PREPOSICOES-003 — Bloco de Fixação: Valores Semânticos da Preposição \"PARA\"",
+          "prompt": "\"Estudou com afinco para conseguir boas notas.\" $\\rightarrow$ Finalidade (a fim de conseguir).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"Estudou com afinco para conseguir boas notas.\" $\\rightarrow$ Finalidade (a fim de conseguir).",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "\"Saíram cedo para o trabalho.\" $\\rightarrow$ Direção / Lugar (substantivo espacial de destino).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "\"Enviarei um presente para minha amiga.\" $\\rightarrow$ Destinatário (ser receptor da ação/presente).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "\"Para os colaboradores, são sólidas as normas da instituição.\" $\\rightarrow$ Conformidade (conforme / segundo os colaboradores).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "\"Guardou dinheiro para comprar uma casa.\" $\\rightarrow$ Finalidade (para que comprasse uma casa).",
+              "rationale": null
+            }
+          ],
+          "result": "\"A reunião foi adiada para a próxima segunda-feira.\" $\\rightarrow$ Tempo (prazo/data limite futura).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G01-PREPOSICOES-003 — Bloco de Fixação: Valores Semânticos da Preposição \"PARA\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G01-PREPOSICOES-003 — Bloco de Fixação: Valores Semânticos da Preposição \"PARA\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G01-PREPOSICOES-003 — Bloco de Fixação: Valores Semânticos da Preposição \"PARA\".",
           "blocks": [
             {
               "type": "list",
@@ -959,6 +1339,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G01-004",
           "title": "EX-A02-G01-PREPOSICOES-004 — Questão de Concurso: Instituto AOCP (EBSERH - Pedagogo)",
+          "prompt": "Trecho da Prova: \"Para evitar que as consequências do aquecimento global 'saiam de controle'...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Trecho da Prova",
+              "rationale": "\"Para evitar que as consequências do aquecimento global 'saiam de controle'...\""
+            },
+            {
+              "order": 2,
+              "action": "Comando",
+              "rationale": "O termo destacado expressa: (A) finalidade; (B) condição; (C) concessão; (D) conformidade; (E) proporção."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O conector Para introduz oração reduzida que equivale a \"A fim de evitar que...\", indicando o objetivo de conter os danos climáticos."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "A (Finalidade)."
+            }
+          ],
+          "result": "Gabarito Oficial: A (Finalidade).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G01-PREPOSICOES-004 — Questão de Concurso: Instituto AOCP (EBSERH - Pedagogo) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G01-PREPOSICOES-004 — Questão de Concurso: Instituto AOCP (EBSERH - Pedagogo).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G01-PREPOSICOES-004 — Questão de Concurso: Instituto AOCP (EBSERH - Pedagogo).",
           "blocks": [
             {
               "type": "list",
@@ -975,6 +1382,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G01-005",
           "title": "EX-A02-G01-PREPOSICOES-005 — Questão de Concurso: Instituto AOCP (EBSERH - Enfermeiro)",
+          "prompt": "Comando: Assinale a alternativa cujo \"para\" em destaque NÃO tem função de introduzir uma ideia de finalidade.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Comando",
+              "rationale": "Assinale a alternativa cujo \"para\" em destaque NÃO tem função de introduzir uma ideia de finalidade."
+            },
+            {
+              "order": 2,
+              "action": "Análise das Alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "A) \"...gasta um grande valor para obter informações...\" $\\rightarrow$ Finalidade (a fim de obter).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "B) \"...obter informações para poder definir estratégias...\" $\\rightarrow$ Finalidade (a fim de poder definir).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "C) \"...cada membro tenha seu banco (...) para que o governo federal construa...\" $\\rightarrow$ Finalidade (locução conjuntiva final).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: D.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G01-PREPOSICOES-005 — Questão de Concurso: Instituto AOCP (EBSERH - Enfermeiro) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G01-PREPOSICOES-005 — Questão de Concurso: Instituto AOCP (EBSERH - Enfermeiro).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G01-PREPOSICOES-005 — Questão de Concurso: Instituto AOCP (EBSERH - Enfermeiro).",
           "blocks": [
             {
               "type": "list",
@@ -995,6 +1434,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G01-006",
           "title": "EX-A02-G01-PREPOSICOES-006 — Questão Cebraspe: CODEVASF 2024 (Analista)",
+          "prompt": "Trecho da Prova: [...] reconhecer e abordar as maneiras como se manifesta o racismo institucional é fundamental para promover a igualdade racial nos espaços de trabalho.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Trecho da Prova",
+              "rationale": "[...] reconhecer e abordar as maneiras como se manifesta o racismo institucional é fundamental para promover a igualdade racial nos espaços de trabalho."
+            },
+            {
+              "order": 2,
+              "action": "Item Julgado",
+              "rationale": "No último período do texto, a preposição “para” introduz uma oração que expressa finalidade."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "A oração introduzida por para responde ao objetivo da ação anterior (é fundamental a fim de promover a igualdade racial)."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G01-PREPOSICOES-006 — Questão Cebraspe: CODEVASF 2024 (Analista) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G01-PREPOSICOES-006 — Questão Cebraspe: CODEVASF 2024 (Analista).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G01-PREPOSICOES-006 — Questão Cebraspe: CODEVASF 2024 (Analista).",
           "blocks": [
             {
               "type": "list",
@@ -1011,6 +1477,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G01-007",
           "title": "EX-A02-G01-PREPOSICOES-007 — Questão Cebraspe: SME Recife (Professor II)",
+          "prompt": "Trecho da Prova: [...] faltam docentes para lecionar disciplinas específicas em áreas de ciências exatas e da natureza.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Trecho da Prova",
+              "rationale": "[...] faltam docentes para lecionar disciplinas específicas em áreas de ciências exatas e da natureza."
+            },
+            {
+              "order": 2,
+              "action": "Item Julgado",
+              "rationale": "No segundo período do terceiro parágrafo, a oração introduzida pela preposição “para” expressa circunstância de finalidade."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O termo introduzido indica a finalidade da contratação/existência dos docentes (docentes a fim de lecionar disciplinas). Foco estritamente semântico."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G01-PREPOSICOES-007 — Questão Cebraspe: SME Recife (Professor II) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G01-PREPOSICOES-007 — Questão Cebraspe: SME Recife (Professor II).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G01-PREPOSICOES-007 — Questão Cebraspe: SME Recife (Professor II).",
           "blocks": [
             {
               "type": "list",
@@ -1027,6 +1520,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A02-G01-008",
           "title": "EX-A02-G01-PREPOSICOES-008 — Questão Cebraspe: DPE-RS (Defensor Público)",
+          "prompt": "Trecho da Prova: [...] todas as inovações eletrônicas e virtuais devem sempre ser implementadas com parcimônia e vistas com muito cuidado, não apenas para sempre permitirem o exercício de direitos e garantias, mas também para não restringirem — e, sim, ampliarem — o acesso à justiça e, sobretudo, para manterem a insubstituível humanidade da justiça.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Trecho da Prova",
+              "rationale": "[...] todas as inovações eletrônicas e virtuais devem sempre ser implementadas com parcimônia e vistas com muito cuidado, não apenas para sempre permitirem o exercício de direitos e garantias, mas também para não restringirem — e, sim, ampliarem — o acesso à justiça e, sobretudo, para manterem a insubstituível humanidade da justiça."
+            },
+            {
+              "order": 2,
+              "action": "Item Julgado",
+              "rationale": "No último período do texto, a preposição “para”, em suas três ocorrências, veicula uma ideia de finalidade."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Ocorrência 1 (para sempre permitirem)",
+              "rationale": "O vocábulo sempre é advérbio temporal que modifica o verbo permitirem; a preposição para introduz a oração com valor de finalidade (a fim de permitirem sempre)."
+            },
+            {
+              "order": 5,
+              "action": "Ocorrências 2 e 3 (mas também para não restringirem... e sobretudo para manterem)",
+              "rationale": "Estão vinculadas por estrutura correlativa aditiva (não apenas... mas também... e sobretudo...). Pelo princípio do paralelismo sintático-semântico, todas as orações aditivamente conectadas compartilham a mesma função e o mesmo valor semântico de finalidade."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A02-G01-PREPOSICOES-008 — Questão Cebraspe: DPE-RS (Defensor Público) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A02-G01-PREPOSICOES-008 — Questão Cebraspe: DPE-RS (Defensor Público).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A02-G01-PREPOSICOES-008 — Questão Cebraspe: DPE-RS (Defensor Público).",
           "blocks": [
             {
               "type": "list",
@@ -1081,8 +1606,12 @@
         {
           "trapId": "WARN-A02-G01-PREPOSICOES-001",
           "title": "Pegadinha do Sublinhado Parcial vs. Total (\"Após\" vs. \"Após o jantar\")",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha do Sublinhado Parcial vs. Total (\"Após\" vs. \"Após o jantar\").",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha do Sublinhado Parcial vs. Total (\"Após\" vs. \"Após o jantar\").",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha do Sublinhado Parcial vs. Total (\"Após\" vs. \"Após o jantar\") no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha do Sublinhado Parcial vs. Total (\"Após\" vs. \"Após o jantar\").",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha do Sublinhado Parcial vs. Total (\"Após\" vs. \"Após o jantar\").",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pegadinha do Sublinhado Parcial vs. Total (\"Após\" vs. \"Após o jantar\") para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha do Sublinhado Parcial vs. Total (\"Após\" vs. \"Após o jantar\").",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha do Sublinhado Parcial vs. Total (\"Após\" vs. \"Após o jantar\").",
           "blocks": [
             {
               "type": "list",
@@ -1100,8 +1629,12 @@
         {
           "trapId": "WARN-A02-G01-PREPOSICOES-002",
           "title": "Uso Incorreto de Crase Após Preposições Essenciais",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Uso Incorreto de Crase Após Preposições Essenciais.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Uso Incorreto de Crase Após Preposições Essenciais.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Uso Incorreto de Crase Após Preposições Essenciais no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Uso Incorreto de Crase Após Preposições Essenciais.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Uso Incorreto de Crase Após Preposições Essenciais.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Uso Incorreto de Crase Após Preposições Essenciais para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Uso Incorreto de Crase Após Preposições Essenciais.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Uso Incorreto de Crase Após Preposições Essenciais.",
           "blocks": [
             {
               "type": "list",
@@ -1117,8 +1650,12 @@
         {
           "trapId": "WARN-A02-G01-PREPOSICOES-003",
           "title": "Leitura Automatizada da Preposição \"PARA\" (Lugar vs. Finalidade)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Leitura Automatizada da Preposição \"PARA\" (Lugar vs. Finalidade).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Leitura Automatizada da Preposição \"PARA\" (Lugar vs. Finalidade).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Leitura Automatizada da Preposição \"PARA\" (Lugar vs. Finalidade) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Leitura Automatizada da Preposição \"PARA\" (Lugar vs. Finalidade).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Leitura Automatizada da Preposição \"PARA\" (Lugar vs. Finalidade).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Leitura Automatizada da Preposição \"PARA\" (Lugar vs. Finalidade) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Leitura Automatizada da Preposição \"PARA\" (Lugar vs. Finalidade).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Leitura Automatizada da Preposição \"PARA\" (Lugar vs. Finalidade).",
           "blocks": [
             {
               "type": "list",
@@ -1133,8 +1670,12 @@
         {
           "trapId": "WARN-A02-G01-PREPOSICOES-004",
           "title": "Falso Valor Temporal por Advérbio Adjacente (\"Para Sempre Permitirem\")",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Falso Valor Temporal por Advérbio Adjacente (\"Para Sempre Permitirem\").",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Falso Valor Temporal por Advérbio Adjacente (\"Para Sempre Permitirem\").",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Falso Valor Temporal por Advérbio Adjacente (\"Para Sempre Permitirem\") no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Falso Valor Temporal por Advérbio Adjacente (\"Para Sempre Permitirem\").",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Falso Valor Temporal por Advérbio Adjacente (\"Para Sempre Permitirem\").",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Falso Valor Temporal por Advérbio Adjacente (\"Para Sempre Permitirem\") para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Falso Valor Temporal por Advérbio Adjacente (\"Para Sempre Permitirem\").",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Falso Valor Temporal por Advérbio Adjacente (\"Para Sempre Permitirem\").",
           "blocks": [
             {
               "type": "list",
@@ -1149,8 +1690,12 @@
         {
           "trapId": "WARN-A02-G01-PREPOSICOES-005",
           "title": "Perda de Tempo com Classificação Sintática Exaustiva",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Perda de Tempo com Classificação Sintática Exaustiva.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Perda de Tempo com Classificação Sintática Exaustiva.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Perda de Tempo com Classificação Sintática Exaustiva no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Perda de Tempo com Classificação Sintática Exaustiva.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Perda de Tempo com Classificação Sintática Exaustiva.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Perda de Tempo com Classificação Sintática Exaustiva para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Perda de Tempo com Classificação Sintática Exaustiva.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Perda de Tempo com Classificação Sintática Exaustiva.",
           "blocks": [
             {
               "type": "list",

@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A05-G05",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.788Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.546Z"
   },
   "unit": {
     "unitId": "IP-A05-G05",
@@ -598,6 +598,14 @@
         {
           "entityId": "RULE-IP-A05-G05-001",
           "title": "Tabela de Formulações Canônicas do Módulo",
+          "statement": "Tabela de Formulações Canônicas do Módulo",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Tabela de Formulações Canônicas do Módulo."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -672,6 +680,65 @@
         {
           "procedureId": "PROC-A05-G05-001",
           "title": "Algoritmo de Validação da Voz Passiva Sintética",
+          "objective": "Executar o algoritmo decisório para Algoritmo de Validação da Voz Passiva Sintética",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo de Validação da Voz Passiva Sintética."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Exame da Transitividade",
+              "explanation": "Inspecione o verbo ao qual o se está acoplado. Se o verbo for Transitivo Indireto (rege preposição), Intransitivo ou de Ligação, elimine a passiva sintética (o se será IIS ou PIV).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 — Identificação do Elemento Paciente",
+              "explanation": "Localize o termo substantivo sem preposição associado ao verbo.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Passo 3 — Execução da Transposição Analítica Estrita",
+              "explanation": "Converta a oração para o modelo Elemento Paciente + Verbo SER (no mesmo tempo/modo da oração) + Particípio:",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "se encerrou a escravidão $\\rightarrow$ a escravidão foi encerrada (Válido).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "se mencionam espécies $\\rightarrow$ espécies são mencionadas (Válido).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Passo 4 — Checagem Semântica Lexical",
+              "explanation": "Verifique se o verbo não é acidentalmente pronominal (dar-se = acontecer; acomodar-se = conformar-se). Se a versão analítica corromper o sentido original, o se é PIV na voz ativa. Se a transposição for fluida e expressar processo sofrido, confirma-se Voz Passiva Sintética.",
+              "test": "Passo 4 — Checagem Semântica Lexical: Verifique se o verbo não é acidentalmente pronominal (dar-se = acontecer; acomodar-se = conformar-se). Se a versão analítica corromper o sentido original, o se é PIV na voz ativa. Se a transposição for fluida e expressar processo sofrido, confirma-se Voz Passiva Sintética."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo de Validação da Voz Passiva Sintética."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -716,6 +783,65 @@
         {
           "procedureId": "PROC-A05-G05-002",
           "title": "Desarmamento da Pegadinha de Sujeito do CESPE/CEBRASPE",
+          "objective": "Executar o algoritmo decisório para Desarmamento da Pegadinha de Sujeito do CESPE/CEBRASPE",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Desarmamento da Pegadinha de Sujeito do CESPE/CEBRASPE."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Localização da Estrutura Passiva",
+              "explanation": "Identifique a perífrase SER + particípio ou VTD + SE.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 — Formulação da Pergunta do Sujeito",
+              "explanation": "Pergunte ao verbo: O que é [particípio]? ou Quem é [particípio]?.",
+              "test": "Passo 2 — Formulação da Pergunta do Sujeito: Pergunte ao verbo: O que é [particípio]? ou Quem é [particípio]?."
+            },
+            {
+              "order": 3,
+              "action": "Passo 3 — Reconhecimento da Ordem Inversa",
+              "explanation": "Observe que na voz passiva o sujeito frequentemente encontra-se posposto ao verbo (ex.: \"São excluídos do cálculo os desligamentos\" $\\rightarrow$ os desligamentos é o sujeito).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Passo 4 — Julgamento da Assertiva",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se a assertiva afirmar que a oração \"não possui sujeito sintático identificado\" $\\rightarrow$ Julgar ERRADO.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se a assertiva afirmar que \"o agente da passiva está indeterminado/omitido\" $\\rightarrow$ Julgar CERTO.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Desarmamento da Pegadinha de Sujeito do CESPE/CEBRASPE."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -754,6 +880,53 @@
         {
           "procedureId": "PROC-A05-G05-003",
           "title": "Protocolo Rápido de Admissibilidade de Transposição de Voz",
+          "objective": "Executar o algoritmo decisório para Protocolo Rápido de Admissibilidade de Transposição de Voz",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo Rápido de Admissibilidade de Transposição de Voz."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Filtro das Preposições",
+              "explanation": "Olhe o termo regido após o verbo. Havendo preposição obrigatória (de, em, com, a), classifique como Objeto Indireto ou Adjunto Adverbial e descarte a alternativa.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 — Filtro dos Verbos de Estado e Intransitivos",
+              "explanation": "Se o verbo for ser, estar, tornar-se, sair, morrer, falecer, descarte a alternativa.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Passo 3 — Filtro da Exceção do Verbo Haver",
+              "explanation": "Se o verbo for haver no sentido de existir, mesmo sendo VTD, descarte a alternativa.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Passo 4 — Confirmação do Objeto Direto",
+              "explanation": "Localizado o substantivo, pronome substantivo ou pronome relativo que sem preposição vinculado a VTD/VTDI, marque a opção como a única que admite transposição.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo Rápido de Admissibilidade de Transposição de Voz."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -783,6 +956,65 @@
         {
           "procedureId": "PROC-A05-G05-004",
           "title": "Técnica de Desarme de Orações com Sujeito Posposto",
+          "objective": "Executar o algoritmo decisório para Técnica de Desarme de Orações com Sujeito Posposto",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Técnica de Desarme de Orações com Sujeito Posposto."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Detecção da Inversão",
+              "explanation": "Constatar que a oração inicia-se diretamente pela forma verbal (ex.: \"Resulta disso tudo...\", \"Cresce a olhos vistos...\").",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 — Aplicação da Pergunta Canônica do Sujeito",
+              "explanation": "Formule rigorosamente a pergunta: \"O que é que [verbo]?\".",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Passo 3 — Montagem da Ordem Direta",
+              "explanation": "Reordene mentalmente a oração no padrão [Sujeito] + [Verbo] + [Complementos/Adjuntos]:",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "\"Uma espécie de código comportamental [Sujeito] resulta disso tudo [O.I.]\".",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "\"A oferta de produtos [Sujeito] cresce [VI] a olhos vistos [Adjunto de Modo]\".",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Passo 4 — Conclusão de Transitividade",
+              "explanation": "Constatado que o substantivo pós-verbal é sujeito, conclui-se que o verbo não possui objeto direto e não pode ir para a voz passiva.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Técnica de Desarme de Orações com Sujeito Posposto."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -831,6 +1063,22 @@
         {
           "contrastId": "CONTRAST-IP-A05-G05-001",
           "title": "1. Sujeito Sintático Paciente vs. Agente da Passiva",
+          "contrastType": "syntactic",
+          "conceptA": "1. Sujeito Sintático Paciente vs. Agente da Passiva",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -877,6 +1125,22 @@
         {
           "contrastId": "CONTRAST-IP-A05-G05-002",
           "title": "2. Voz Passiva Analítica vs. Voz Passiva Sintética",
+          "contrastType": "mixed",
+          "conceptA": "2. Voz Passiva Analítica vs. Voz Passiva Sintética",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -923,6 +1187,22 @@
         {
           "contrastId": "CONTRAST-IP-A05-G05-003",
           "title": "3. Locução Passiva Analítica vs. Verbo de Ligação com Predicativo",
+          "contrastType": "mixed",
+          "conceptA": "3. Locução Passiva Analítica vs. Verbo de Ligação com Predicativo",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -973,6 +1253,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-001",
           "title": "EX-A05-G05-001 — Questão 01 (FCC / DPE-AM / Assistente Técnico)",
+          "prompt": "Enunciado: Indeterminar o agente é um dos efeitos de sentido produzido pela voz passiva analítica, a qual pode ser observada em:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Indeterminar o agente é um dos efeitos de sentido produzido pela voz passiva analítica, a qual pode ser observada em:"
+            },
+            {
+              "order": 2,
+              "action": "A) Sabemos até que nós somos feitos de poeira estelar.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "B) É verdade que Comte não era cientista, mas filósofo.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) Os deuses parecem ter um prazer especial em desmoralizar quem faz profecias...",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) É diversão certa para quem gosta de grandes questões.",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: A",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-001 — Questão 01 (FCC / DPE-AM / Assistente Técnico) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-001 — Questão 01 (FCC / DPE-AM / Assistente Técnico).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-001 — Questão 01 (FCC / DPE-AM / Assistente Técnico).",
           "blocks": [
             {
               "type": "list",
@@ -998,6 +1310,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-002",
           "title": "EX-A05-G05-002 — Questão 02 (FCC / DPE-RS / Defensor Público)",
+          "prompt": "Enunciado: Caso se queira minorar o destaque dado ao sujeito responsável por determinado ato, deve-se adotar a estruturação sintática exemplificada por:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Caso se queira minorar o destaque dado ao sujeito responsável por determinado ato, deve-se adotar a estruturação sintática exemplificada por:"
+            },
+            {
+              "order": 2,
+              "action": "A) A pesquisa corrobora o fato de que a sociedade se volta...",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "B) [...]",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "D) A pesquisa corrobora o fato de que a sociedade se volta para o passado e tudo é posto em perspectiva.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "E) As histórias tinham sido contadas com riqueza de detalhes, de modo que todos foram transportados para dentro da ação.",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: E",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-002 — Questão 02 (FCC / DPE-RS / Defensor Público) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-002 — Questão 02 (FCC / DPE-RS / Defensor Público).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-002 — Questão 02 (FCC / DPE-RS / Defensor Público).",
           "blocks": [
             {
               "type": "list",
@@ -1017,6 +1361,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-003",
           "title": "EX-A05-G05-003 — Questão 03 (FGV / MRE / Oficial de Chancelaria)",
+          "prompt": "Enunciado: “O Brasil real começou a ser construído...”; a adoção da voz passiva, nesse caso:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "“O Brasil real começou a ser construído...”; a adoção da voz passiva, nesse caso:"
+            },
+            {
+              "order": 2,
+              "action": "A) evita a difícil indicação dos agentes da ação verbal.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "B) permite a indicação adequada do sujeito como paciente.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) indica a presença de uma ação totalmente passada.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) [...]",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: B",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-003 — Questão 03 (FGV / MRE / Oficial de Chancelaria) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-003 — Questão 03 (FGV / MRE / Oficial de Chancelaria).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-003 — Questão 03 (FGV / MRE / Oficial de Chancelaria).",
           "blocks": [
             {
               "type": "list",
@@ -1036,6 +1412,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-004",
           "title": "EX-A05-G05-004 — Questão 04 (FGV / DPE-RJ / Técnico Superior)",
+          "prompt": "Enunciado: Identificar o segmento em voz passiva que apresente expressamente a indicação do agente.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identificar o segmento em voz passiva que apresente expressamente a indicação do agente."
+            },
+            {
+              "order": 2,
+              "action": "C) O mundo será julgado pelas crianças.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "Análise Técnica",
+              "rationale": "Em \"será julgado\" temos locução passiva analítica (SER + particípio) e em \"pelas crianças\" temos o Agente da Passiva Explícito/Expresso introduzido pela contração prepositiva por + as. As demais opções omitiram o agente."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "C"
+            }
+          ],
+          "result": "Gabarito Oficial: C",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-004 — Questão 04 (FGV / DPE-RJ / Técnico Superior) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-004 — Questão 04 (FGV / DPE-RJ / Técnico Superior).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-004 — Questão 04 (FGV / DPE-RJ / Técnico Superior).",
           "blocks": [
             {
               "type": "list",
@@ -1052,6 +1455,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-005",
           "title": "EX-A05-G05-005 — Questão 05 (CESPE / FUB / Técnico)",
+          "prompt": "Trechos: \"é falado o talian\" e \"onde se fala ucraniano\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Trechos",
+              "rationale": "\"é falado o talian\" e \"onde se fala ucraniano\"."
+            },
+            {
+              "order": 2,
+              "action": "Assertiva",
+              "rationale": "Ambas as orações apresentam construções gramaticais distintas que cumprem a função de omitir o agente da ação verbal."
+            },
+            {
+              "order": 3,
+              "action": "Julgamento",
+              "rationale": "CERTO. A primeira é passiva analítica e a segunda é passiva sintética; em ambas os sujeitos pacientes estão determinados (o talian e ucraniano), e em ambas o agente que pratica a fala foi omitido."
+            }
+          ],
+          "result": "Julgamento: CERTO. A primeira é passiva analítica e a segunda é passiva sintética; em ambas os sujeitos pacientes estão determinados (o talian e ucraniano), e em ambas o agente que pratica a fala foi omitido.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-005 — Questão 05 (CESPE / FUB / Técnico) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-005 — Questão 05 (CESPE / FUB / Técnico).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-005 — Questão 05 (CESPE / FUB / Técnico).",
           "blocks": [
             {
               "type": "list",
@@ -1067,6 +1492,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-006",
           "title": "EX-A05-G05-006 — Questão 09 (CESPE / STM)",
+          "prompt": "Texto: \"São excluídos do cálculo os desligamentos por transferências, aposentadorias, falecimentos...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"São excluídos do cálculo os desligamentos por transferências, aposentadorias, falecimentos...\""
+            },
+            {
+              "order": 2,
+              "action": "Assertiva",
+              "rationale": "A oração \"São excluídos do cálculo (...) por iniciativa do empregado\" é uma construção passiva e, portanto, destituída de sujeito sintático que possa ser identificado."
+            },
+            {
+              "order": 3,
+              "action": "Julgamento",
+              "rationale": "ERRADO. A oração é passiva analítica, mas possui Sujeito Sintático Paciente determinado e perfeitamente identificado: \"os desligamentos por transferências...\", que se encontra posposto ao verbo. O que está destituído é o Agente da Passiva."
+            }
+          ],
+          "result": "Julgamento: ERRADO. A oração é passiva analítica, mas possui Sujeito Sintático Paciente determinado e perfeitamente identificado: \"os desligamentos por transferências...\", que se encontra posposto ao verbo. O que está destituído é o Agente da Passiva.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-006 — Questão 09 (CESPE / STM) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-006 — Questão 09 (CESPE / STM).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-006 — Questão 09 (CESPE / STM).",
           "blocks": [
             {
               "type": "list",
@@ -1082,6 +1529,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-007",
           "title": "EX-A05-G05-007 — Questão 10 (COPEVE-UFAL / Pref. Inhapi-AL)",
+          "prompt": "Enunciado: Relacione a numeração correspondente: 1. Ativa | 2. Passiva analítica | 3. Passiva sintética | 4. Reflexiva",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Relacione a numeração correspondente: 1. Ativa | 2. Passiva analítica | 3. Passiva sintética | 4. Reflexiva"
+            },
+            {
+              "order": 2,
+              "action": "( 4 ) O cozinheiro feriu-se. (feriu a si mesmo $\\rightarrow$ Reflexiva)",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "( 2 ) Os clientes do banco serão atendidos pelo gerente. (serão atendidos $\\rightarrow$ Passiva analítica)",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "( 1 ) Os gregos inventaram a política. (sujeito agente $\\rightarrow$ Ativa)",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "( 3 ) Vendem-se limões. (limões são vendidos $\\rightarrow$ Passiva sintética)",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: Letra D (4 – 2 – 1 – 3)",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-007 — Questão 10 (COPEVE-UFAL / Pref. Inhapi-AL) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-007 — Questão 10 (COPEVE-UFAL / Pref. Inhapi-AL).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-007 — Questão 10 (COPEVE-UFAL / Pref. Inhapi-AL).",
           "blocks": [
             {
               "type": "list",
@@ -1100,6 +1579,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-008",
           "title": "EX-A05-G05-008 — Questão 11 (CESGRANRIO / ANP)",
+          "prompt": "Enunciado: Identificar estrutura idêntica a \"Eu olhava tudo\" (Voz ativa + VTD):",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identificar estrutura idêntica a \"Eu olhava tudo\" (Voz ativa + VTD):"
+            },
+            {
+              "order": 2,
+              "action": "A) O apelido [...] era Flor-de-Lis. (era = VL)",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "B) Clarice virou cidadã... (virou = VL de mudança de estado)",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) Clarice é uma das escritoras... (é = VL)",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) O prêmio [...] foi duas vezes concedido... (foi concedido = Passiva analítica com adjunto intercalado)",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: E",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-008 — Questão 11 (CESGRANRIO / ANP) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-008 — Questão 11 (CESGRANRIO / ANP).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-008 — Questão 11 (CESGRANRIO / ANP).",
           "blocks": [
             {
               "type": "list",
@@ -1119,6 +1630,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-009",
           "title": "EX-A05-G05-009 — Questão 13 (FCC / Pref. São José do Rio Preto-SP)",
+          "prompt": "Alternativa B (Gabarito): \"Todos podem ser amados por uma boa pessoa.\" $\\rightarrow$ Locução passiva analítica (podem ser amados = modal + auxiliar ser + particípio); sujeito paciente Todos. As demais opções apresentam VL (são perfeitos, tornam-se) ou verbo impessoal ativo (Há muitas decepções).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Alternativa B (Gabarito)",
+              "rationale": "\"Todos podem ser amados por uma boa pessoa.\" $\\rightarrow$ Locução passiva analítica (podem ser amados = modal + auxiliar ser + particípio); sujeito paciente Todos. As demais opções apresentam VL (são perfeitos, tornam-se) ou verbo impessoal ativo (Há muitas decepções)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito Oficial",
+              "rationale": "B"
+            }
+          ],
+          "result": "Gabarito Oficial: B",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-009 — Questão 13 (FCC / Pref. São José do Rio Preto-SP) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-009 — Questão 13 (FCC / Pref. São José do Rio Preto-SP).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-009 — Questão 13 (FCC / Pref. São José do Rio Preto-SP).",
           "blocks": [
             {
               "type": "list",
@@ -1133,6 +1661,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-010",
           "title": "EX-A05-G05-010 — Questão 14 (VUNESP / PC-SP / Agente de Telecomunicações)",
+          "prompt": "Modelo do Enunciado: \"...se encerrou a escravidão negra...\" (Passiva sintética: a escravidão foi encerrada).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Modelo do Enunciado",
+              "rationale": "\"...se encerrou a escravidão negra...\" (Passiva sintética: a escravidão foi encerrada)."
+            },
+            {
+              "order": 2,
+              "action": "Análise das Alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "A) ...se serão pagos... $\\rightarrow$ Passiva analítica (se é conjunção integrante).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "B) Os homens não se deixam escravizar... $\\rightarrow$ Voz reflexiva (a si mesmos).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "C) Ali se trabalha como escravo... $\\rightarrow$ trabalhar é VI; se é IIS (Voz ativa).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: D",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-010 — Questão 14 (VUNESP / PC-SP / Agente de Telecomunicações) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-010 — Questão 14 (VUNESP / PC-SP / Agente de Telecomunicações).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-010 — Questão 14 (VUNESP / PC-SP / Agente de Telecomunicações).",
           "blocks": [
             {
               "type": "list",
@@ -1153,6 +1713,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-011",
           "title": "EX-A05-G05-011 — Questão 16 (FGV / TJ-SC / Analista Administrativo)",
+          "prompt": "Enunciado: Assinalar a frase que NÃO exemplifica voz passiva:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assinalar a frase que NÃO exemplifica voz passiva:"
+            },
+            {
+              "order": 2,
+              "action": "A) ...os resultados são valorizados (Passiva analítica",
+              "rationale": "SER + particípio)"
+            },
+            {
+              "order": 3,
+              "action": "B) Aparentemente, apenas os mais inteligentes estão destinados a obter sucesso (Voz Ativa",
+              "rationale": "estão é VL e destinados é Predicativo do Sujeito)"
+            },
+            {
+              "order": 4,
+              "action": "C) Eles devem ser observados... (Passiva analítica)",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) Eles são guiados... (Passiva analítica)",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: B",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-011 — Questão 16 (FGV / TJ-SC / Analista Administrativo) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-011 — Questão 16 (FGV / TJ-SC / Analista Administrativo).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-011 — Questão 16 (FGV / TJ-SC / Analista Administrativo).",
           "blocks": [
             {
               "type": "list",
@@ -1172,6 +1764,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-012",
           "title": "EX-A05-G05-012 — Questão 18 (FGV / Pref. Angra dos Reis-RJ)",
+          "prompt": "Alternativa A (Gabarito): \"Não se faz arte com fórmula.\" $\\rightarrow$ faz (VTD) + se (PA) + arte (Sujeito Paciente). Conversão analítica: Arte não é feita com fórmula (Voz Passiva Sintética). As demais alternativas trazem verbos na voz ativa e predicativos (estar emocionado, vive, continua sendo).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Alternativa A (Gabarito)",
+              "rationale": "\"Não se faz arte com fórmula.\" $\\rightarrow$ faz (VTD) + se (PA) + arte (Sujeito Paciente). Conversão analítica: Arte não é feita com fórmula (Voz Passiva Sintética). As demais alternativas trazem verbos na voz ativa e predicativos (estar emocionado, vive, continua sendo)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito Oficial",
+              "rationale": "A"
+            }
+          ],
+          "result": "Gabarito Oficial: A",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-012 — Questão 18 (FGV / Pref. Angra dos Reis-RJ) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-012 — Questão 18 (FGV / Pref. Angra dos Reis-RJ).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-012 — Questão 18 (FGV / Pref. Angra dos Reis-RJ).",
           "blocks": [
             {
               "type": "list",
@@ -1186,6 +1795,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-013",
           "title": "EX-A05-G05-013 — Questão 19 (FGV / Câmara de Salvador-BA)",
+          "prompt": "Alternativa A (Distrator): \"não se dá por acaso\" $\\rightarrow$ dar-se significa acontecer (o se é PIV na voz ativa).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Alternativa A (Distrator)",
+              "rationale": "\"não se dá por acaso\" $\\rightarrow$ dar-se significa acontecer (o se é PIV na voz ativa)."
+            },
+            {
+              "order": 2,
+              "action": "Alternativa C (Gabarito)",
+              "rationale": "\"...generalize-se a opinião...\" $\\rightarrow$ generalize (VTD) + se (PA) + a opinião (Sujeito Paciente). Conversão analítica: a opinião seja generalizada (Voz Passiva Sintética)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "C"
+            }
+          ],
+          "result": "Gabarito Oficial: C",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-013 — Questão 19 (FGV / Câmara de Salvador-BA) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-013 — Questão 19 (FGV / Câmara de Salvador-BA).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-013 — Questão 19 (FGV / Câmara de Salvador-BA).",
           "blocks": [
             {
               "type": "list",
@@ -1201,6 +1832,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-014",
           "title": "EX-A05-G05-014 — Questão 21 (FGV / Pref. Cuiabá-MT)",
+          "prompt": "Análise das Alternativas:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise das Alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "A) Aliviaram-se tensões... (Passiva sintética",
+              "rationale": "tensões foram aliviadas)"
+            },
+            {
+              "order": 3,
+              "action": "B) ...sepultou-se o passado... (Passiva sintética",
+              "rationale": "o passado foi sepultado)"
+            },
+            {
+              "order": 4,
+              "action": "C) O Brasil acomodou-se à versão oficial... (Voz Ativa",
+              "rationale": "acomodar-se a é VTI pronominal no sentido de conformar-se; se é PIV)"
+            },
+            {
+              "order": 5,
+              "action": "D) ...foram escondidas as rupturas (Passiva analítica)",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: C",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-014 — Questão 21 (FGV / Pref. Cuiabá-MT) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-014 — Questão 21 (FGV / Pref. Cuiabá-MT).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-014 — Questão 21 (FGV / Pref. Cuiabá-MT).",
           "blocks": [
             {
               "type": "list",
@@ -1220,6 +1883,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-015",
           "title": "EX-A05-G05-015 — Questão 17 (FGV / Pref. Angra dos Reis-RJ)",
+          "prompt": "Alternativa B (Gabarito): \"A natureza só é comandada se é obedecida.\" $\\rightarrow$ Duas formas na passiva analítica (é comandada, é obedecida).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Alternativa B (Gabarito)",
+              "rationale": "\"A natureza só é comandada se é obedecida.\" $\\rightarrow$ Duas formas na passiva analítica (é comandada, é obedecida)."
+            },
+            {
+              "order": 2,
+              "action": "Alternativa D (Distrator)",
+              "rationale": "\"Os perfumes, as cores e os sons correspondem-se.\" $\\rightarrow$ O pronome se expressa reciprocidade mútua (uns aos outros), tratando-se de Voz Recíproca."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "B"
+            }
+          ],
+          "result": "Gabarito Oficial: B",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-015 — Questão 17 (FGV / Pref. Angra dos Reis-RJ) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-015 — Questão 17 (FGV / Pref. Angra dos Reis-RJ).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-015 — Questão 17 (FGV / Pref. Angra dos Reis-RJ).",
           "blocks": [
             {
               "type": "list",
@@ -1235,6 +1920,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-016",
           "title": "EX-A05-G05-016 — Questão 24 (CESPE / Correios / Analista)",
+          "prompt": "Assertiva: As formas verbais \"dedicou-se\" (L.2) e \"se afastar\" (L.17) estão na voz reflexiva.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Assertiva",
+              "rationale": "As formas verbais \"dedicou-se\" (L.2) e \"se afastar\" (L.17) estão na voz reflexiva."
+            },
+            {
+              "order": 2,
+              "action": "Julgamento",
+              "rationale": "CERTO. Em ambas as ocorrências o pronome equivale contextualmente a \"a si mesmo\" (dedicou a si mesmo, afastar a si mesmo), atendendo ao critério da banca para classificação em Voz Reflexiva."
+            }
+          ],
+          "result": "Julgamento: CERTO. Em ambas as ocorrências o pronome equivale contextualmente a \"a si mesmo\" (dedicou a si mesmo, afastar a si mesmo), atendendo ao critério da banca para classificação em Voz Reflexiva.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-016 — Questão 24 (CESPE / Correios / Analista) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-016 — Questão 24 (CESPE / Correios / Analista).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-016 — Questão 24 (CESPE / Correios / Analista).",
           "blocks": [
             {
               "type": "list",
@@ -1249,6 +1951,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-017",
           "title": "EX-A05-G05-017 — Questão 25 (AOCP / Pref. Juiz de Fora-MG)",
+          "prompt": "Alternativa A (Gabarito): \"... acompanhei de perto, juntamente com Mário Pedrosa, o seu trabalho no Centro Psiquiátrico Nacional.\" $\\rightarrow$ O verbo acompanhei é VTD e rege o Objeto Direto o seu trabalho. Admite passiva (\"o seu trabalho foi acompanhado por mim...\"). As demais opções apresentam VL (era, se tornaram) ou VI (jogando-se, morreu).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Alternativa A (Gabarito)",
+              "rationale": "\"... acompanhei de perto, juntamente com Mário Pedrosa, o seu trabalho no Centro Psiquiátrico Nacional.\" $\\rightarrow$ O verbo acompanhei é VTD e rege o Objeto Direto o seu trabalho. Admite passiva (\"o seu trabalho foi acompanhado por mim...\"). As demais opções apresentam VL (era, se tornaram) ou VI (jogando-se, morreu)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito Oficial",
+              "rationale": "A"
+            }
+          ],
+          "result": "Gabarito Oficial: A",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-017 — Questão 25 (AOCP / Pref. Juiz de Fora-MG) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-017 — Questão 25 (AOCP / Pref. Juiz de Fora-MG).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-017 — Questão 25 (AOCP / Pref. Juiz de Fora-MG).",
           "blocks": [
             {
               "type": "list",
@@ -1263,6 +1982,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-018",
           "title": "EX-A05-G05-018 — Questão 26 (FCC / MPE-RS / Assessor)",
+          "prompt": "Enunciado: NÃO admite transposição para a voz passiva a frase:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "NÃO admite transposição para a voz passiva a frase:"
+            },
+            {
+              "order": 2,
+              "action": "A) Os adeptos da ética de princípios não se queixam da distância das estrelas. (Gabarito",
+              "rationale": "queixar-se é VTI regendo preposição de; sem O.D., não admite passiva)"
+            },
+            {
+              "order": 3,
+              "action": "B) ...diminuir a propagação da Aids. (diminuir = VTD; a propagação = O.D.)",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) Essa é a única pergunta que o médico fará. (fará = VTD; que = O.D. retomando pergunta)",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) Ele não desviará os seus dos olhos... (desviará = VTDI; os seus = O.D.)",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: A",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-018 — Questão 26 (FCC / MPE-RS / Assessor) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-018 — Questão 26 (FCC / MPE-RS / Assessor).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-018 — Questão 26 (FCC / MPE-RS / Assessor).",
           "blocks": [
             {
               "type": "list",
@@ -1282,6 +2033,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-019",
           "title": "EX-A05-G05-019 — Questão 27 (FCC / TRT-24ª / Analista)",
+          "prompt": "Alternativa D (Gabarito): \"... publico ativamente fotos de minhas fornadas...\" $\\rightarrow$ publico é VTD e fotos de minhas fornadas é Objeto Direto.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Alternativa D (Gabarito)",
+              "rationale": "\"... publico ativamente fotos de minhas fornadas...\" $\\rightarrow$ publico é VTD e fotos de minhas fornadas é Objeto Direto."
+            },
+            {
+              "order": 2,
+              "action": "Distratores Analisados",
+              "rationale": "chega aos amigos (VTI na FCC / VI geral com preposição a); saía da cozinha (VI com preposição de); interajo com muita gente (VTI com preposição com); está na rede (VI de lugar)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "D"
+            }
+          ],
+          "result": "Gabarito Oficial: D",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-019 — Questão 27 (FCC / TRT-24ª / Analista) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-019 — Questão 27 (FCC / TRT-24ª / Analista).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-019 — Questão 27 (FCC / TRT-24ª / Analista).",
           "blocks": [
             {
               "type": "list",
@@ -1297,6 +2070,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-020",
           "title": "EX-A05-G05-020 — Questão 28 (FCC / TRF-2ª / Técnico)",
+          "prompt": "Alternativa B (Gabarito): \"As leis do mercado favorecem esse culto da juventude.\" $\\rightarrow$ favorecem é VTD e esse culto da juventude é Objeto Direto.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Alternativa B (Gabarito)",
+              "rationale": "\"As leis do mercado favorecem esse culto da juventude.\" $\\rightarrow$ favorecem é VTD e esse culto da juventude é Objeto Direto."
+            },
+            {
+              "order": 2,
+              "action": "Distratores Analisados",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "A) São inúmeras as consequências... (São = VL; inúmeras = Predicativo)",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) A juventude deixou de ser uma fase da vida. (Locução com verbo principal ser = VL)",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) Resulta disso tudo uma espécie de código... (uma espécie de código é Sujeito Posposto de Resulta [VTI]; não há O.D.)",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: B",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-020 — Questão 28 (FCC / TRF-2ª / Técnico) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-020 — Questão 28 (FCC / TRF-2ª / Técnico).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-020 — Questão 28 (FCC / TRF-2ª / Técnico).",
           "blocks": [
             {
               "type": "list",
@@ -1316,6 +2121,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-021",
           "title": "EX-A05-G05-021 — Questão 29 (FCC / TJ-SE / Analista)",
+          "prompt": "Alternativa A (Gabarito): \"Florença, com seu ciclo artístico, serve como exemplo.\" $\\rightarrow$ serve funciona como Verbo Intransitivo (VI) e como exemplo é adjunto adverbial de conformidade/comparação. Sem O.D., NÃO admite transposição. As opções B, C, D e E trazem VTDs com objetos diretos (a lei da gravidade, os horizontes, a prensa de vinho, uma reciclagem).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Alternativa A (Gabarito)",
+              "rationale": "\"Florença, com seu ciclo artístico, serve como exemplo.\" $\\rightarrow$ serve funciona como Verbo Intransitivo (VI) e como exemplo é adjunto adverbial de conformidade/comparação. Sem O.D., NÃO admite transposição. As opções B, C, D e E trazem VTDs com objetos diretos (a lei da gravidade, os horizontes, a prensa de vinho, uma reciclagem)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito Oficial",
+              "rationale": "A"
+            }
+          ],
+          "result": "Gabarito Oficial: A",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-021 — Questão 29 (FCC / TJ-SE / Analista) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-021 — Questão 29 (FCC / TJ-SE / Analista).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-021 — Questão 29 (FCC / TJ-SE / Analista).",
           "blocks": [
             {
               "type": "list",
@@ -1330,6 +2152,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-022",
           "title": "EX-A05-G05-022 — Questão 30 (FCC / METRÔ-SP / Enfermeiro do Trabalho)",
+          "prompt": "Alternativa A (Gabarito): \"ele encontrou um envelope na carta do correio\" $\\rightarrow$ encontrou é VTD pleno e um envelope é Objeto Direto. Admite passiva analítica (\"um envelope foi encontrado por ele...\").",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Alternativa A (Gabarito)",
+              "rationale": "\"ele encontrou um envelope na carta do correio\" $\\rightarrow$ encontrou é VTD pleno e um envelope é Objeto Direto. Admite passiva analítica (\"um envelope foi encontrado por ele...\")."
+            },
+            {
+              "order": 2,
+              "action": "Alternativa D (Exceção Analisada)",
+              "rationale": "\"No seu caso havia uma razão óbvia para isso\" $\\rightarrow$ havia é VTD e uma razão óbvia é O.D., mas por ser verbo impessoal no sentido de existir, constitui exceção absoluta e não aceita voz passiva."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "A"
+            }
+          ],
+          "result": "Gabarito Oficial: A",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-022 — Questão 30 (FCC / METRÔ-SP / Enfermeiro do Trabalho) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-022 — Questão 30 (FCC / METRÔ-SP / Enfermeiro do Trabalho).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-022 — Questão 30 (FCC / METRÔ-SP / Enfermeiro do Trabalho).",
           "blocks": [
             {
               "type": "list",
@@ -1345,6 +2189,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G05-023",
           "title": "EX-A05-G05-023 — Questão 23 (CESPE / INCA)",
+          "prompt": "Texto: \"O regime trabalhista, ao adotar estratégias de proteção à saúde do trabalhador, institui mecanismos de monitoração...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"O regime trabalhista, ao adotar estratégias de proteção à saúde do trabalhador, institui mecanismos de monitoração...\""
+            },
+            {
+              "order": 2,
+              "action": "Assertiva",
+              "rationale": "Para se realçar \"mecanismos de monitoração\", em vez de \"regime trabalhista\", poderia ser usada a voz passiva, escrevendo-se são instituídos em vez de \"institui\", sem que a coerência entre os argumentos e a correção gramatical do texto fossem prejudicadas."
+            },
+            {
+              "order": 3,
+              "action": "Julgamento",
+              "rationale": "ERRADO. A alteração sintática desloca mecanismos de monitoração para o papel de sujeito, que passa a ser o referente lógico da oração intercalada ao adotar estratégias..., tornando o argumento textual absurdo e incoerente."
+            }
+          ],
+          "result": "Julgamento: ERRADO. A alteração sintática desloca mecanismos de monitoração para o papel de sujeito, que passa a ser o referente lógico da oração intercalada ao adotar estratégias..., tornando o argumento textual absurdo e incoerente.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G05-023 — Questão 23 (CESPE / INCA) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G05-023 — Questão 23 (CESPE / INCA).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G05-023 — Questão 23 (CESPE / INCA).",
           "blocks": [
             {
               "type": "list",
@@ -1396,8 +2262,12 @@
         {
           "trapId": "WARN-A05-G05-001",
           "title": "Confundir Agente Indeterminado com Sujeito Indeterminado",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Agente Indeterminado com Sujeito Indeterminado.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Agente Indeterminado com Sujeito Indeterminado.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Agente Indeterminado com Sujeito Indeterminado no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Agente Indeterminado com Sujeito Indeterminado.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Agente Indeterminado com Sujeito Indeterminado.",
+          "correctReasoning": "Problema: O candidato analisa uma oração passiva analítica ou sintética sem agente explícito (ex.: \"São excluídos os registros\", \"fala-se ucraniano\") e julga que se trata de \"sujeito indeterminado\" ou \"oração sem sujeito\". Consequência: Erro grave em itens de julgamento do CESPE/CEBRASPE. Como Evitar: Lembre-se de que na voz passiva o sujeito sintático está presente e determinado (o paciente). O que está indeterminado/omitido é unicamente o Agente da Passiva.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Agente Indeterminado com Sujeito Indeterminado.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Agente Indeterminado com Sujeito Indeterminado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1408,8 +2278,12 @@
         {
           "trapId": "WARN-A05-G05-002",
           "title": "A Pegadinha do Verbo \"Estar + Particípio\" na FGV",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Pegadinha do Verbo \"Estar + Particípio\" na FGV.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Pegadinha do Verbo \"Estar + Particípio\" na FGV.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Pegadinha do Verbo \"Estar + Particípio\" na FGV no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Pegadinha do Verbo \"Estar + Particípio\" na FGV.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Pegadinha do Verbo \"Estar + Particípio\" na FGV.",
+          "correctReasoning": "Problema: Classificar perífrases estativas formadas por estar/ficar + particípio (ex.: \"estão destinados\", \"ficaram preocupados\") como voz passiva analítica. Consequência: Erro fatal no padrão da FGV, que restringe a passiva analítica estritamente à locução SER + particípio. Como Evitar: Reconhecer que estar + particípio expressa estado/atributo, configurando Verbo de Ligação + Predicativo do Sujeito na Voz Ativa.",
+          "decisiveTest": "Problema: Classificar perífrases estativas formadas por estar/ficar + particípio (ex.: \"estão destinados\", \"ficaram preocupados\") como voz passiva analítica. Consequência: Erro fatal no padrão da FGV, que restringe a passiva analítica estritamente à locução SER + particípio. Como Evitar: Reconhecer que estar + particípio expressa estado/atributo, configurando Verbo de Ligação + Predicativo do Sujeito na Voz Ativa.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Pegadinha do Verbo \"Estar + Particípio\" na FGV.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1420,8 +2294,12 @@
         {
           "trapId": "WARN-A05-G05-003",
           "title": "Intercalação Adverbial na Passiva Analítica",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Intercalação Adverbial na Passiva Analítica.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Intercalação Adverbial na Passiva Analítica.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Intercalação Adverbial na Passiva Analítica no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Intercalação Adverbial na Passiva Analítica.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Intercalação Adverbial na Passiva Analítica.",
+          "correctReasoning": "Problema: Deixar de reconhecer a locução passiva analítica quando a banca insere adjuntos adverbiais longos entre o auxiliar e o particípio (ex.: \"O prêmio foi duas vezes concedido\"). Consequência: Analisar apenas o verbo foi isolado e confundi-lo com verbo de ligação. Como Evitar: Ao encontrar qualquer forma do verbo ser, examine os termos posteriores na oração para identificar se há particípio conectado ao sujeito paciente.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Intercalação Adverbial na Passiva Analítica.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Intercalação Adverbial na Passiva Analítica.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1432,8 +2310,12 @@
         {
           "trapId": "WARN-A05-G05-004",
           "title": "Falsa Passiva Sintética com Verbos Pronominais (PIV)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Falsa Passiva Sintética com Verbos Pronominais (PIV).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Falsa Passiva Sintética com Verbos Pronominais (PIV).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Falsa Passiva Sintética com Verbos Pronominais (PIV) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Falsa Passiva Sintética com Verbos Pronominais (PIV).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Falsa Passiva Sintética com Verbos Pronominais (PIV).",
+          "correctReasoning": "Problema: Forçar a conversão passiva em verbos pronominais ou acidentalmente pronominais que indicam sentimentos, atitudes ou acontecimentos espontâneos (dar-se, acomodar-se, sair-se, sentir-se). Consequência: Tratar uma estrutura da voz ativa com PIV como se fosse passiva sintética. Como Evitar: Aplique o teste da passiva analítica: se gerar ilogicidade ou frases agramaticais (\"cientistas não são saídos\", \"a resistência não é dada por acaso\"), o se é Parte Integrante do Verbo (PIV) na Voz Ativa.",
+          "decisiveTest": "Problema: Forçar a conversão passiva em verbos pronominais ou acidentalmente pronominais que indicam sentimentos, atitudes ou acontecimentos espontâneos (dar-se, acomodar-se, sair-se, sentir-se). Consequência: Tratar uma estrutura da voz ativa com PIV como se fosse passiva sintética. Como Evitar: Aplique o teste da passiva analítica: se gerar ilogicidade ou frases agramaticais (\"cientistas não são saídos\", \"a resistência não é dada por acaso\"), o se é Parte Integrante do Verbo (PIV) na Voz Ativa.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Falsa Passiva Sintética com Verbos Pronominais (PIV).",
           "blocks": [
             {
               "type": "paragraph",
@@ -1444,8 +2326,12 @@
         {
           "trapId": "WARN-A05-G05-005",
           "title": "A Exceção Absoluta do Verbo \"Haver\" Existencial",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Exceção Absoluta do Verbo \"Haver\" Existencial.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Exceção Absoluta do Verbo \"Haver\" Existencial.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Exceção Absoluta do Verbo \"Haver\" Existencial no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Exceção Absoluta do Verbo \"Haver\" Existencial.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Exceção Absoluta do Verbo \"Haver\" Existencial.",
+          "correctReasoning": "Problema: Localizar o verbo haver em orações como \"Havia motivos suficientes\", classificá-lo corretamente como VTD com O.D. (motivos suficientes) e concluir que ele admite transposição passiva. Consequência: Erro certo em questões da FCC e de bancas congêneres. Como Evitar: Fixe a exceção: o verbo haver no sentido de existir é VTD, mas nunca admite transposição para a passiva analítica por restrição semântica e ausência de agente.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Exceção Absoluta do Verbo \"Haver\" Existencial.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Exceção Absoluta do Verbo \"Haver\" Existencial.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1456,8 +2342,12 @@
         {
           "trapId": "WARN-A05-G05-006",
           "title": "Confundir Sujeito Posposto com Objeto Direto em Orações Invertidas",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Sujeito Posposto com Objeto Direto em Orações Invertidas.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Sujeito Posposto com Objeto Direto em Orações Invertidas.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Sujeito Posposto com Objeto Direto em Orações Invertidas no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Sujeito Posposto com Objeto Direto em Orações Invertidas.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Sujeito Posposto com Objeto Direto em Orações Invertidas.",
+          "correctReasoning": "Problema: Em orações que se iniciam por verbo (ex.: \"Resulta disso tudo uma espécie de código\"), fazer a pergunta genérica \"o quê?\" e classificar o substantivo pós-verbal como objeto direto. Consequência: Tratar verbos intransitivos ou transitivos indiretos como se fossem VTDs e achar erroneamente que admitem passiva. Como Evitar: Sempre faça a pergunta do sujeito em primeiro lugar (O que é que resulta?). Coloque a frase na ordem direta antes de classificar a predicação verbal.",
+          "decisiveTest": "Problema: Em orações que se iniciam por verbo (ex.: \"Resulta disso tudo uma espécie de código\"), fazer a pergunta genérica \"o quê?\" e classificar o substantivo pós-verbal como objeto direto. Consequência: Tratar verbos intransitivos ou transitivos indiretos como se fossem VTDs e achar erroneamente que admitem passiva. Como Evitar: Sempre faça a pergunta do sujeito em primeiro lugar (O que é que resulta?). Coloque a frase na ordem direta antes de classificar a predicação verbal.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Sujeito Posposto com Objeto Direto em Orações Invertidas.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1468,8 +2358,12 @@
         {
           "trapId": "WARN-A05-G05-007",
           "title": "Transposição Passiva Isolada sem Análise do Parágrafo (CESPE)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Transposição Passiva Isolada sem Análise do Parágrafo (CESPE).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Transposição Passiva Isolada sem Análise do Parágrafo (CESPE).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Transposição Passiva Isolada sem Análise do Parágrafo (CESPE) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Transposição Passiva Isolada sem Análise do Parágrafo (CESPE).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Transposição Passiva Isolada sem Análise do Parágrafo (CESPE).",
+          "correctReasoning": "Problema: Validar a conversão da voz ativa para a passiva analítica apenas analisando a oração principal isoladamente, sem verificar os termos periféricos do parágrafo no texto original. Consequência: Não perceber que a troca de sujeito transfere indevidamente a referência lógica de orações reduzidas intercaladas, destruindo a coerência argumentativa do texto. Como Evitar: Leia sempre o período completo com a modificação proposta no contexto textual amplo da prova do CESPE.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Transposição Passiva Isolada sem Análise do Parágrafo (CESPE).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Transposição Passiva Isolada sem Análise do Parágrafo (CESPE).",
           "blocks": [
             {
               "type": "paragraph",
@@ -1573,7 +2467,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Temos verbo transitivo direto + SE, estrutura de voz passiva sintética. Para conferir, vamos\ntransformar em voz passiva analítica:\n\nnão se poderiam resolver todas as questões.\nnão poderiam ser resolvidas todas as questões.\nO verbo estava no plural, isso prova que o sujeito não era indeterminado. Quando temos \"se\"\nindeterminador do sujeito, o verbo fica invariável. Questão incorreta.",
       "questionSha256": "8aa0f80153146f3ca8d444d9ab5390b7c26a0c56f497ef5ad0aeaa9e25a23f0b",
-      "answerSha256": "17b173b948a60b85c5192d9f11428a47c0d03928a4b28a405ed31eb6bcc6a9e6"
+      "answerSha256": "17b173b948a60b85c5192d9f11428a47c0d03928a4b28a405ed31eb6bcc6a9e6",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Vozes Verbais - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula05.q0058",
@@ -1585,7 +2482,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "b6386363bcef45ba827f7f171b2e95a5b364ebe856ee913c5b0d5dcc8e984ff1",
-      "answerSha256": "bd0c2d9008946cfd5a6762af10d74d6fec23c906fafc32df852fb04e71d1feff"
+      "answerSha256": "bd0c2d9008946cfd5a6762af10d74d6fec23c906fafc32df852fb04e71d1feff",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Vozes Verbais - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula05.q0022",
@@ -1614,7 +2514,35 @@
       "officialAnswer": "option_C",
       "explanation": "“A voz de Wagner” é objeto direto de “ouvir”, na voz ativa. Na voz passiva, o objeto direto vira\nsujeito. Então, teremos, na voz passiva:\n“A voz de Wagner” é ouvida. Gabarito letra C.",
       "questionSha256": "e43c590526924d76634f1120235bbdac36c99e7f624a1b6c068954ab637490d6",
-      "answerSha256": "8c63d6eda288a06b88b5b2f2f0a60f92584e654a33b1d0e180fbe593971091b8"
+      "answerSha256": "8c63d6eda288a06b88b5b2f2f0a60f92584e654a33b1d0e180fbe593971091b8",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Vozes Verbais - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Questões."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Questões."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Questões."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Questões."
+        }
+      ]
     },
     {
       "questionId": "aula05.q0024",
@@ -1647,7 +2575,41 @@
       "officialAnswer": "option_B",
       "explanation": "A voz passiva “nasce” de um objeto direto na voz ativa. Esse objeto direto é necessário para virar\nsujeito passivo. Então, sem verbo transitivo direto, não há voz passiva. Então, verbos transitivos\nindiretos (Letra C: levam a=proporcionam), intransitivos (Letra E: sair) ou de ligação (Letras A e D:\nera e estão) não admitem transposição. Então, só podemos ter voz passiva em “as redes\npromovem aumento” (aumento é promovido pelas redes). Gabarito letra B.",
       "questionSha256": "248853a9e0fe4af31596ee85a52533b780e3bb33843c51fdd0ff2a1bd1aee11a",
-      "answerSha256": "b3c81d274ad95a9ae82ffcf030f881daf6ab04d880b97452beb8ef0fc0804e53"
+      "answerSha256": "b3c81d274ad95a9ae82ffcf030f881daf6ab04d880b97452beb8ef0fc0804e53",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Vozes Verbais - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Questões."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Questões."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Questões."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Questões."
+        },
+        {
+          "optionLabel": "E",
+          "status": "incorrect",
+          "explanation": "Opção E: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Questões."
+        }
+      ]
     },
     {
       "questionId": "aula05.q0008",
@@ -1659,7 +2621,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Aplicando a correlação básica PudeSSE/FaRIA, teríamos: viéSSEmos/garantiRIA. Observem que\nnão faz sentido um verbo indicando hipótese no passado correlacionado a um indicando sua\nconsequência no futuro. É um situação tão incoerente como: *Se eu pudesse, viajarei... Questão\nincorreta.",
       "questionSha256": "a0433c5227f1dfa52721fe103ae7872ee39dc2f680a96b4b1bdc2ce80da749a3",
-      "answerSha256": "aac79ef8f681a2db0ca0b1221ef11ded8c5b9e50cf16f2e0a0fea18cff6eb9b8"
+      "answerSha256": "aac79ef8f681a2db0ca0b1221ef11ded8c5b9e50cf16f2e0a0fea18cff6eb9b8",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Vozes Verbais - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula05.q0035",
@@ -1672,7 +2637,10 @@
       "officialAnswer": "incorrect",
       "explanation": "A voz passiva analítica é formada por \"SER + PARTICÍPIO\". O segmento \"a primeira patente\" é\nsujeito passivo da locução \"foi concedida\". Questão incorreta.",
       "questionSha256": "ecef731b7873bf739ecb26146612eb5428d8ebea53b258b6d3aae0f61b5ad1df",
-      "answerSha256": "43b46a0e5f590758f45349aa93a34df4e82606ff68ac01299bc8820b219683c5"
+      "answerSha256": "43b46a0e5f590758f45349aa93a34df4e82606ff68ac01299bc8820b219683c5",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Vozes Verbais - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

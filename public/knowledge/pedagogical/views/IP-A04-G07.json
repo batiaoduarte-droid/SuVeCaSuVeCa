@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A04-G07",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.765Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.530Z"
   },
   "unit": {
     "unitId": "IP-A04-G07",
@@ -417,6 +417,14 @@
         {
           "entityId": "RULE-IP-A04-G07-001",
           "title": "Tabela Canônica de Verbos Problemáticos",
+          "statement": "Tabela Canônica de Verbos Problemáticos",
+          "scope": "verbal_system",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de verbal_system no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Tabela Canônica de Verbos Problemáticos."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -507,6 +515,65 @@
         {
           "procedureId": "PROC-A04-G07-001",
           "title": "O Método dos 4 Passos para Verbos Falsos Amigos",
+          "objective": "Executar o algoritmo decisório para O Método dos 4 Passos para Verbos Falsos Amigos",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de O Método dos 4 Passos para Verbos Falsos Amigos."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Identificar o Infinitivo",
+              "explanation": "Isole o verbo solicitado na questão (prover ou requerer).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 — Determinar o Verbo Líder Conforme o Tempo",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se for PROVER",
+              "explanation": "tempo do Presente $\\rightarrow$ líder VER; demais tempos (Pretérito/Futuro) $\\rightarrow$ líder BEBER.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se for REQUERER",
+              "explanation": "1ª p. Pres. Ind. ou Pres. Subj. $\\rightarrow$ aplica a ditongação EI; todos os demais tempos $\\rightarrow$ líder BEBER.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Passo 3 — Acomodar o Verbo Líder com Gatilhos",
+              "explanation": "Encaixe a forma do líder na frase usando advérbios temporais (Antigamente p/ imperfeito; Ontem p/ perfeito; Que p/ pres. subj.; Se/Quando p/ fut. subj.).",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Passo 4 — Substituição Direta",
+              "explanation": "Aplique a terminação do líder ao radical do verbo alvo.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de O Método dos 4 Passos para Verbos Falsos Amigos."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -525,6 +592,101 @@
         {
           "procedureId": "PROC-A04-G07-002",
           "title": "Procedimento Universal de Derivação Temporal",
+          "objective": "Executar o algoritmo decisório para Procedimento Universal de Derivação Temporal",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento Universal de Derivação Temporal."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Derivação 1 (Acesso ao Presente do Subjuntivo)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Conjugue a 1ª pessoa do singular (EU) do Presente do Indicativo (caibo, creio, adiro).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Extraia a desinência terminal -o (caib-, crei-, adir-).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Adicione a vogal temática oposta",
+              "explanation": "-a para 2ª/3ª conjugação (-ER/-IR) ou -e para 1ª conjugação (-AR).",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Acople as desinências número-pessoais (-a, -as, -a, -amos, -ais, -am).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Derivação 2 (Acesso aos Tempos do Passado e Futuro do Subjuntivo)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Conjugue a 3ª pessoa do plural (ELES) do Pretérito Perfeito do Indicativo (couberam, creram, houveram, aprouveram).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Remova estritamente a terminação -ram, obtendo o tema matriz (coube-, cre-, houve-, aprouve-).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Forme os três tempos derivados adicionando os sufixos característicos",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Adicione -ra $\\rightarrow$ Pretérito Mais-Que-Perfeito do Indicativo (coubera, houvera).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Adicione -sse $\\rightarrow$ Pretérito Imperfeito do Subjuntivo (coubesse, houvesse).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 12,
+              "action": "Adicione -r $\\rightarrow$ Futuro do Subjuntivo (couber, houver).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento Universal de Derivação Temporal."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -573,6 +735,53 @@
         {
           "procedureId": "PROC-A04-G07-003",
           "title": "Técnica da \"Colinha Temporal\" e Infinitivo Anotado (FGV)",
+          "objective": "Executar o algoritmo decisório para Técnica da \"Colinha Temporal\" e Infinitivo Anotado (FGV)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Técnica da \"Colinha Temporal\" e Infinitivo Anotado (FGV)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Mapear o Modelo",
+              "explanation": "Identifique pessoa e tempos da frase-guia (ex.: fui [ontem] / sou [hoje] / serei [amanhã] $\\rightarrow$ 1ª p. sing. EU).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 — Montar o Cabeçalho Temporal",
+              "explanation": "Escreva no rascunho: [EU] -> ONTEM (Pret. Perf.) | HOJE (Pres. Ind.) | AMANHÃ (Fut. Pres.).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Passo 3 — Anotar o Infinitivo ao Lado de Cada Opção",
+              "explanation": "Registre -> TER, -> FAZER, -> VER, -> HAVER, -> VIR ao lado das alternativas para blindar a análise contra parônimos.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Passo 4 — Teste Auditivo-Conceitual",
+              "explanation": "Elimine alternativas com erro de pessoa (teve em vez de tive), radical deformado (fazerei em vez de farei) ou troca de base (virei de vir em vez de verei de ver).",
+              "test": "Passo 4 — Teste Auditivo-Conceitual: Elimine alternativas com erro de pessoa (teve em vez de tive), radical deformado (fazerei em vez de farei) ou troca de base (virei de vir em vez de verei de ver)."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Técnica da \"Colinha Temporal\" e Infinitivo Anotado (FGV)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -589,6 +798,47 @@
         {
           "procedureId": "PROC-A04-G07-004",
           "title": "Formação do Infinitivo Pessoal",
+          "objective": "Executar o algoritmo decisório para Formação do Infinitivo Pessoal",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Formação do Infinitivo Pessoal."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Anteponha a preposição \"para\" aos pronomes retos (para eu, para tu, para ele, para nós, para vós, para eles).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Tome o infinitivo impessoal do verbo (ir, aprazer, aderir).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Aplique as desinências número-pessoais",
+              "explanation": "$\\emptyset$ (1ª/3ª sing.), -es (2ª sing.), -mos (1ª pl.), -des (2ª pl.), -em (3ª pl.) $\\rightarrow$ para eu ir, para tu ires, para nós irmos, para vós irdes, para eles irem.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Formação do Infinitivo Pessoal."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -608,6 +858,22 @@
         {
           "contrastId": "CONTRAST-IP-A04-G07-001",
           "title": "1. PROVER vs. PROVIR",
+          "contrastType": "mixed",
+          "conceptA": "1. PROVER vs. PROVIR",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -654,6 +920,22 @@
         {
           "contrastId": "CONTRAST-IP-A04-G07-002",
           "title": "2. REQUERER vs. QUERER",
+          "contrastType": "mixed",
+          "conceptA": "2. REQUERER vs. QUERER",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -700,6 +982,22 @@
         {
           "contrastId": "CONTRAST-IP-A04-G07-003",
           "title": "3. IR (Indicativo) vs. IR (Subjuntivo)",
+          "contrastType": "mixed",
+          "conceptA": "3. IR (Indicativo) vs. IR (Subjuntivo)",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -740,6 +1038,22 @@
         {
           "contrastId": "CONTRAST-IP-A04-G07-004",
           "title": "4. VER vs. VIR no Futuro do Presente (1ª p. sing.)",
+          "contrastType": "mixed",
+          "conceptA": "4. VER vs. VIR no Futuro do Presente (1ª p. sing.)",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -775,6 +1089,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G07-001",
           "title": "EX-A04-G07-001 — Exercício de Fixação 01: Prover no Imperfeito",
+          "prompt": "Enunciado: Os pais  as necessidades dos filhos. (PROVER - pretérito imperfeito do indicativo)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Os pais  as necessidades dos filhos. (PROVER - pretérito imperfeito do indicativo)"
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Como não é presente, o líder é BEBER (Antigamente eles bebiam $\\rightarrow$ Os pais proviam)."
+            },
+            {
+              "order": 3,
+              "action": "Resposta",
+              "rationale": "proviam (021 - )."
+            }
+          ],
+          "result": "Resposta: proviam (021 - ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G07-001 — Exercício de Fixação 01: Prover no Imperfeito sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G07-001 — Exercício de Fixação 01: Prover no Imperfeito.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G07-001 — Exercício de Fixação 01: Prover no Imperfeito.",
           "blocks": [
             {
               "type": "list",
@@ -790,6 +1126,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G07-002",
           "title": "EX-A04-G07-002 — Exercício de Fixação 02: Prover no Presente",
+          "prompt": "Enunciado: O policiamento  a segurança da população. (PROVER - presente do indicativo)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "O policiamento  a segurança da população. (PROVER - presente do indicativo)"
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Tempo do presente $\\rightarrow$ líder VER (O policiamento vê $\\rightarrow$ O policiamento provê)."
+            },
+            {
+              "order": 3,
+              "action": "Resposta",
+              "rationale": "provê (021 - )."
+            }
+          ],
+          "result": "Resposta: provê (021 - ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G07-002 — Exercício de Fixação 02: Prover no Presente sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G07-002 — Exercício de Fixação 02: Prover no Presente.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G07-002 — Exercício de Fixação 02: Prover no Presente.",
           "blocks": [
             {
               "type": "list",
@@ -805,6 +1163,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G07-003",
           "title": "EX-A04-G07-003 — Exercício de Fixação 03: Prover no Presente do Subjuntivo",
+          "prompt": "Enunciado: O juiz deliberou que eu  assistência às vítimas. (PROVER - presente do subjuntivo)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "O juiz deliberou que eu  assistência às vítimas. (PROVER - presente do subjuntivo)"
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Tempo do presente $\\rightarrow$ líder VER (Que eu veja $\\rightarrow$ Que eu proveja)."
+            },
+            {
+              "order": 3,
+              "action": "Resposta",
+              "rationale": "proveja (021 - )."
+            }
+          ],
+          "result": "Resposta: proveja (021 - ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G07-003 — Exercício de Fixação 03: Prover no Presente do Subjuntivo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G07-003 — Exercício de Fixação 03: Prover no Presente do Subjuntivo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G07-003 — Exercício de Fixação 03: Prover no Presente do Subjuntivo.",
           "blocks": [
             {
               "type": "list",
@@ -820,6 +1200,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G07-004",
           "title": "EX-A04-G07-004 — Exercício de Fixação 04: Requerer no Presente do Indicativo",
+          "prompt": "Enunciado: Um filho  atenção integral. (REQUERER - presente do indicativo)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Um filho  atenção integral. (REQUERER - presente do indicativo)"
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "3ª pessoa do singular não recebe a ditongação EI (que é exclusiva da 1ª p.). Forma regular: requer."
+            },
+            {
+              "order": 3,
+              "action": "Resposta",
+              "rationale": "requer (021 - )."
+            }
+          ],
+          "result": "Resposta: requer (021 - ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G07-004 — Exercício de Fixação 04: Requerer no Presente do Indicativo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G07-004 — Exercício de Fixação 04: Requerer no Presente do Indicativo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G07-004 — Exercício de Fixação 04: Requerer no Presente do Indicativo.",
           "blocks": [
             {
               "type": "list",
@@ -835,6 +1237,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G07-005",
           "title": "EX-A04-G07-005 — Exercício de Fixação 05: Requerer no Futuro do Subjuntivo",
+          "prompt": "Enunciado: Os candidatos só poderão se inscrever no concurso se o . (REQUERER - futuro do subjuntivo)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Os candidatos só poderão se inscrever no concurso se o . (REQUERER - futuro do subjuntivo)"
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Fora do presente $\\rightarrow$ líder BEBER (Se eles beberem $\\rightarrow$ Se eles requererem)."
+            },
+            {
+              "order": 3,
+              "action": "Resposta",
+              "rationale": "requererem (021 - )."
+            }
+          ],
+          "result": "Resposta: requererem (021 - ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G07-005 — Exercício de Fixação 05: Requerer no Futuro do Subjuntivo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G07-005 — Exercício de Fixação 05: Requerer no Futuro do Subjuntivo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G07-005 — Exercício de Fixação 05: Requerer no Futuro do Subjuntivo.",
           "blocks": [
             {
               "type": "list",
@@ -850,6 +1274,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G07-006",
           "title": "EX-A04-G07-006 — Exercício de Fixação 06: Requerer no Presente do Subjuntivo",
+          "prompt": "Enunciado: Espero que ele  residência no exterior. (REQUERER - presente do subjuntivo)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Espero que ele  residência no exterior. (REQUERER - presente do subjuntivo)"
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Presente do Subjuntivo exige obrigatoriamente o ditongo EI em todas as pessoas $\\rightarrow$ requeira."
+            },
+            {
+              "order": 3,
+              "action": "Resposta",
+              "rationale": "requeira (021 - )."
+            }
+          ],
+          "result": "Resposta: requeira (021 - ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G07-006 — Exercício de Fixação 06: Requerer no Presente do Subjuntivo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G07-006 — Exercício de Fixação 06: Requerer no Presente do Subjuntivo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G07-006 — Exercício de Fixação 06: Requerer no Presente do Subjuntivo.",
           "blocks": [
             {
               "type": "list",
@@ -865,6 +1311,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G07-007",
           "title": "EX-A04-G07-007 — Questão 01 (VUNESP - Câmara de Guaratinguetá)",
+          "prompt": "Enunciado: Assinale a alternativa que dá sequência ao enunciado, expressando ideia de possibilidade:É provável que aprender habilidades novas...A) requeria / pôde | B) requeira / possa | C) requeresse / pôde | D) requereu / podia | E) requereu / pode",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assinale a alternativa que dá sequência ao enunciado, expressando ideia de possibilidade:É provável que aprender habilidades novas...A) requeria / pôde | B) requeira / possa | C) requeresse / pôde | D) requereu / podia | E) requereu / pode"
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "A expressão \"É provável que...\" exige Presente do Subjuntivo. Requerer com ditongo EI $\\rightarrow$ requeira; Poder no Pres. Subj. $\\rightarrow$ possa."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "B (021 - )."
+            }
+          ],
+          "result": "Gabarito: B (021 - ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G07-007 — Questão 01 (VUNESP - Câmara de Guaratinguetá) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G07-007 — Questão 01 (VUNESP - Câmara de Guaratinguetá).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G07-007 — Questão 01 (VUNESP - Câmara de Guaratinguetá).",
           "blocks": [
             {
               "type": "list",
@@ -880,6 +1348,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G07-008",
           "title": "EX-A04-G07-008 — Questão 02 (AOCP - TCE-PA)",
+          "prompt": "Enunciado: A forma verbal requerer, se conjugada no pretérito mais que perfeito, apresentará a seguinte forma: A) requerera | B) requisera | C) requereu | D) requis | E) requeriu.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "A forma verbal requerer, se conjugada no pretérito mais que perfeito, apresentará a seguinte forma: A) requerera | B) requisera | C) requereu | D) requis | E) requeriu."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Líder BEBER no Mais-Que-Perfeito (bebera) $\\rightarrow$ requerera."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "A (021 - )."
+            }
+          ],
+          "result": "Gabarito: A (021 - ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G07-008 — Questão 02 (AOCP - TCE-PA) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G07-008 — Questão 02 (AOCP - TCE-PA).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G07-008 — Questão 02 (AOCP - TCE-PA).",
           "blocks": [
             {
               "type": "list",
@@ -895,6 +1385,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G07-009",
           "title": "EX-A04-G07-009 — Questão 03 (FCC - TCE-AM)",
+          "prompt": "Enunciado: Quanto à flexão verbal, há uma irregularidade na frase:A) Todos os benefícios que advirem de atos ilícitos... | B) Nem sempre convirá... | C)...caso nos propusessem... | D) Se eles requeressem... | E)...nunca lhes aprouve...",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Quanto à flexão verbal, há uma irregularidade na frase:A) Todos os benefícios que advirem de atos ilícitos... | B) Nem sempre convirá... | C)...caso nos propusessem... | D) Se eles requeressem... | E)...nunca lhes aprouve..."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Na opção A, o verbo ADVIR deriva de VIR (Futuro Subj: vierem). A forma correta é advierem (e não \"advirem\"). Opção D está correta (requeressem = bebessem). Opção E está correta (aprouve = houve)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "A (021 - )."
+            }
+          ],
+          "result": "Gabarito: A (021 - ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G07-009 — Questão 03 (FCC - TCE-AM) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G07-009 — Questão 03 (FCC - TCE-AM).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G07-009 — Questão 03 (FCC - TCE-AM).",
           "blocks": [
             {
               "type": "list",
@@ -910,6 +1422,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G07-010",
           "title": "EX-A04-G07-010 — Questão 10 (CESGRANRIO - Petrobrás)",
+          "prompt": "Enunciado: A(s) sentença(s) em que os verbos ter, caber e pôr estão flexionados de acordo com a norma-padrão é(são):I - Os linguistas tiveram participação na polêmica.II - Caberam todos no carro.III - Quando o sol se pôr, vamos embora.A) I | B) II | C) III | D) I e II | E) II e III",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "A(s) sentença(s) em que os verbos ter, caber e pôr estão flexionados de acordo com a norma-padrão é(são):I - Os linguistas tiveram participação na polêmica.II - Caberam todos no carro.III - Quando o sol se pôr, vamos embora.A) I | B) II | C) III | D) I e II | E) II e III"
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "I",
+              "rationale": "tiveram (Pret. Perf. de ter) $\\rightarrow$ Correto."
+            },
+            {
+              "order": 4,
+              "action": "II",
+              "rationale": "Caberam $\\rightarrow$ Errado (O correto é couberam)."
+            },
+            {
+              "order": 5,
+              "action": "III",
+              "rationale": "se pôr $\\rightarrow$ Errado (Futuro do Subjuntivo exige se puser)."
+            }
+          ],
+          "result": "Gabarito: A (024 - ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G07-010 — Questão 10 (CESGRANRIO - Petrobrás) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G07-010 — Questão 10 (CESGRANRIO - Petrobrás).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G07-010 — Questão 10 (CESGRANRIO - Petrobrás).",
           "blocks": [
             {
               "type": "list",
@@ -928,6 +1472,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G07-011",
           "title": "EX-A04-G07-011 — Questão 11 (Prime Concursos - Pref. Santo Expedito)",
+          "prompt": "Enunciado: Assinale a alternativa em que o verbo Crer está conjugado adequadamente no pretérito perfeito do indicativo: A) Eu cri | B) Eu creei | C) Eu creu | D) Eu credo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assinale a alternativa em que o verbo Crer está conjugado adequadamente no pretérito perfeito do indicativo: A) Eu cri | B) Eu creei | C) Eu creu | D) Eu credo."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "A 1ª pessoa do singular do Pretérito Perfeito de CRER é Eu cri (creu é 3ª p.; crido é particípio)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "A (024 - )."
+            }
+          ],
+          "result": "Gabarito: A (024 - ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G07-011 — Questão 11 (Prime Concursos - Pref. Santo Expedito) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G07-011 — Questão 11 (Prime Concursos - Pref. Santo Expedito).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G07-011 — Questão 11 (Prime Concursos - Pref. Santo Expedito).",
           "blocks": [
             {
               "type": "list",
@@ -943,6 +1509,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G07-012",
           "title": "EX-A04-G07-012 — Questão 12 (VUNESP - Pref. Arujá)",
+          "prompt": "Enunciado: Ao substituir-se a forma verbal destacada na frase \"Tudo o que não puder contar como faz, não faça!\" pela forma do verbo ir flexionada no modo e no tempo correspondentes, tem-se: A) vai | B) for | C) irá | D) vá | E) fosse.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Ao substituir-se a forma verbal destacada na frase \"Tudo o que não puder contar como faz, não faça!\" pela forma do verbo ir flexionada no modo e no tempo correspondentes, tem-se: A) vai | B) for | C) irá | D) vá | E) fosse."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "puder está no Futuro do Subjuntivo de poder. O verbo ir no Futuro do Subjuntivo (3ª p. sing.) é for (quando ele for)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "B (024 - )."
+            }
+          ],
+          "result": "Gabarito: B (024 - ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G07-012 — Questão 12 (VUNESP - Pref. Arujá) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G07-012 — Questão 12 (VUNESP - Pref. Arujá).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G07-012 — Questão 12 (VUNESP - Pref. Arujá).",
           "blocks": [
             {
               "type": "list",
@@ -958,6 +1546,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G07-013",
           "title": "EX-A04-G07-013 — Questão 13 (VUNESP - Pref. Arujá)",
+          "prompt": "Enunciado: Reescrita correta segundo a norma culta:As pessoas sabem que pratico futebol... / O futebol tem mais importância que as artes. /... algo que me dá prazer.A) adiro o futebol / sobrepõem-se às artes / me aprazB) adero ao futebol / sobrepõe-se as artes / apraza-meC) adiro ao futebol / sobrepõe-se as artes / me aprazD) vou aderir ao futebol / sobrepõe-se as artes / me aprazeráE) adiro ao futebol / sobrepõe-se às artes / me apraz",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Reescrita correta segundo a norma culta:As pessoas sabem que pratico futebol... / O futebol tem mais importância que as artes. /... algo que me dá prazer.A) adiro o futebol / sobrepõem-se às artes / me aprazB) adero ao futebol / sobrepõe-se as artes / apraza-meC) adiro ao futebol / sobrepõe-se as artes / me aprazD) vou aderir ao futebol / sobrepõe-se as artes / me aprazeráE) adiro ao futebol / sobrepõe-se às artes / me apraz"
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "pratico $\\rightarrow$ aderir (1ª p. Pres. Ind",
+              "rationale": "adiro) + regência da prep. a $\\rightarrow$ adiro ao futebol."
+            },
+            {
+              "order": 4,
+              "action": "sobrepor-se no singular (sobrepõe-se) + prep. a + art. as artes $\\rightarrow$ sobrepõe-se às artes (com crase obrigatória).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "me dá prazer $\\rightarrow$ aprazer no Pres. Ind. $\\rightarrow$ me apraz.",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito: E (024 - ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G07-013 — Questão 13 (VUNESP - Pref. Arujá) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G07-013 — Questão 13 (VUNESP - Pref. Arujá).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G07-013 — Questão 13 (VUNESP - Pref. Arujá).",
           "blocks": [
             {
               "type": "list",
@@ -988,6 +1608,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G07-014",
           "title": "EX-A04-G07-014 — Questão 14 (FGV - Pref. Angra dos Reis)",
+          "prompt": "Enunciado: \"Sou tudo o que fui, o que sou, o que serei.\" Assinale a opção em que todas as formas correspondem, respectivamente, às sublinhadas:A) teve / tenho / terei (TER)B) fiz / faço / fazerei (FAZER)C) vi / vejo / virei (VER)D) houve / hei / haverei (HAVER)E) venho / vim / verei (VIR)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "\"Sou tudo o que fui, o que sou, o que serei.\" Assinale a opção em que todas as formas correspondem, respectivamente, às sublinhadas:A) teve / tenho / terei (TER)B) fiz / faço / fazerei (FAZER)C) vi / vejo / virei (VER)D) houve / hei / haverei (HAVER)E) venho / vim / verei (VIR)"
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Modelo: 1ª p. sing. (EU) $\\rightarrow$ fui (Pret. Perf. / Ontem), sou (Pres. Ind. / Hoje), serei (Fut. Pres. / Amanhã)."
+            },
+            {
+              "order": 3,
+              "action": "A) Erro em teve (3ª p.; correto",
+              "rationale": "tive)."
+            },
+            {
+              "order": 4,
+              "action": "B) Erro em fazerei (forma inexistente; correto",
+              "rationale": "farei)."
+            },
+            {
+              "order": 5,
+              "action": "C) Erro em virei (é do verbo vir; o futuro de ver é verei).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito: D (024 - ).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G07-014 — Questão 14 (FGV - Pref. Angra dos Reis) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G07-014 — Questão 14 (FGV - Pref. Angra dos Reis).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G07-014 — Questão 14 (FGV - Pref. Angra dos Reis).",
           "blocks": [
             {
               "type": "list",
@@ -1043,8 +1695,12 @@
         {
           "trapId": "WARN-A04-G07-001",
           "title": "O Risco de Confundir Falsos Amigos com Derivados Autênticos",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Risco de Confundir Falsos Amigos com Derivados Autênticos.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Risco de Confundir Falsos Amigos com Derivados Autênticos.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Risco de Confundir Falsos Amigos com Derivados Autênticos no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Risco de Confundir Falsos Amigos com Derivados Autênticos.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Risco de Confundir Falsos Amigos com Derivados Autênticos.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Risco de Confundir Falsos Amigos com Derivados Autênticos para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Risco de Confundir Falsos Amigos com Derivados Autênticos.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Risco de Confundir Falsos Amigos com Derivados Autênticos.",
           "blocks": [
             {
               "type": "list",
@@ -1059,8 +1715,12 @@
         {
           "trapId": "WARN-A04-G07-002",
           "title": "As Formas Fantasmas \"Proviu\" e \"Provisse\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em As Formas Fantasmas \"Proviu\" e \"Provisse\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de As Formas Fantasmas \"Proviu\" e \"Provisse\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a As Formas Fantasmas \"Proviu\" e \"Provisse\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de As Formas Fantasmas \"Proviu\" e \"Provisse\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de As Formas Fantasmas \"Proviu\" e \"Provisse\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de As Formas Fantasmas \"Proviu\" e \"Provisse\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de As Formas Fantasmas \"Proviu\" e \"Provisse\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de As Formas Fantasmas \"Proviu\" e \"Provisse\".",
           "blocks": [
             {
               "type": "list",
@@ -1075,8 +1735,12 @@
         {
           "trapId": "WARN-A04-G07-003",
           "title": "As Formas Inexistentes \"Requiz\" e \"Requisesse\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em As Formas Inexistentes \"Requiz\" e \"Requisesse\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de As Formas Inexistentes \"Requiz\" e \"Requisesse\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a As Formas Inexistentes \"Requiz\" e \"Requisesse\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de As Formas Inexistentes \"Requiz\" e \"Requisesse\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de As Formas Inexistentes \"Requiz\" e \"Requisesse\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de As Formas Inexistentes \"Requiz\" e \"Requisesse\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de As Formas Inexistentes \"Requiz\" e \"Requisesse\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de As Formas Inexistentes \"Requiz\" e \"Requisesse\".",
           "blocks": [
             {
               "type": "list",
@@ -1091,8 +1755,12 @@
         {
           "trapId": "WARN-A04-G07-004",
           "title": "A Armadilha do Pretérito de Caber (\"Caberam\" vs. \"Couberam\")",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha do Pretérito de Caber (\"Caberam\" vs. \"Couberam\").",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha do Pretérito de Caber (\"Caberam\" vs. \"Couberam\").",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha do Pretérito de Caber (\"Caberam\" vs. \"Couberam\") no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha do Pretérito de Caber (\"Caberam\" vs. \"Couberam\").",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha do Pretérito de Caber (\"Caberam\" vs. \"Couberam\").",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha do Pretérito de Caber (\"Caberam\" vs. \"Couberam\") para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha do Pretérito de Caber (\"Caberam\" vs. \"Couberam\").",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha do Pretérito de Caber (\"Caberam\" vs. \"Couberam\").",
           "blocks": [
             {
               "type": "list",
@@ -1107,8 +1775,12 @@
         {
           "trapId": "WARN-A04-G07-005",
           "title": "Rejeição Intuitiva do Particípio CRIDO (Pegadinha FGV)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Rejeição Intuitiva do Particípio CRIDO (Pegadinha FGV).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Rejeição Intuitiva do Particípio CRIDO (Pegadinha FGV).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Rejeição Intuitiva do Particípio CRIDO (Pegadinha FGV) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Rejeição Intuitiva do Particípio CRIDO (Pegadinha FGV).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Rejeição Intuitiva do Particípio CRIDO (Pegadinha FGV).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Rejeição Intuitiva do Particípio CRIDO (Pegadinha FGV) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Rejeição Intuitiva do Particípio CRIDO (Pegadinha FGV).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Rejeição Intuitiva do Particípio CRIDO (Pegadinha FGV).",
           "blocks": [
             {
               "type": "list",
@@ -1123,8 +1795,12 @@
         {
           "trapId": "WARN-A04-G07-006",
           "title": "Construção Agramatical com 1ª Pessoa de Aprazer",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Construção Agramatical com 1ª Pessoa de Aprazer.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Construção Agramatical com 1ª Pessoa de Aprazer.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Construção Agramatical com 1ª Pessoa de Aprazer no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Construção Agramatical com 1ª Pessoa de Aprazer.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Construção Agramatical com 1ª Pessoa de Aprazer.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Construção Agramatical com 1ª Pessoa de Aprazer para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Construção Agramatical com 1ª Pessoa de Aprazer.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Construção Agramatical com 1ª Pessoa de Aprazer.",
           "blocks": [
             {
               "type": "list",
@@ -1139,8 +1815,12 @@
         {
           "trapId": "WARN-A04-G07-007",
           "title": "Variantes Abundantes de Haver no Presente do Plural",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Variantes Abundantes de Haver no Presente do Plural.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Variantes Abundantes de Haver no Presente do Plural.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Variantes Abundantes de Haver no Presente do Plural no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Variantes Abundantes de Haver no Presente do Plural.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Variantes Abundantes de Haver no Presente do Plural.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Variantes Abundantes de Haver no Presente do Plural para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Variantes Abundantes de Haver no Presente do Plural.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Variantes Abundantes de Haver no Presente do Plural.",
           "blocks": [
             {
               "type": "list",
@@ -1154,8 +1834,12 @@
         {
           "trapId": "WARN-A04-G07-008",
           "title": "Confusão de 2ª Pessoa do Plural no Verbo IR (*Ides* vs. *Vades*)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão de 2ª Pessoa do Plural no Verbo IR (*Ides* vs. *Vades*).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão de 2ª Pessoa do Plural no Verbo IR (*Ides* vs. *Vades*).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão de 2ª Pessoa do Plural no Verbo IR (*Ides* vs. *Vades*) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão de 2ª Pessoa do Plural no Verbo IR (*Ides* vs. *Vades*).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão de 2ª Pessoa do Plural no Verbo IR (*Ides* vs. *Vades*).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão de 2ª Pessoa do Plural no Verbo IR (*Ides* vs. *Vades*) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão de 2ª Pessoa do Plural no Verbo IR (*Ides* vs. *Vades*).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão de 2ª Pessoa do Plural no Verbo IR (*Ides* vs. *Vades*).",
           "blocks": [
             {
               "type": "list",
@@ -1170,8 +1854,12 @@
         {
           "trapId": "WARN-A04-G07-009",
           "title": "Confusão FGV no Futuro do Presente de Ver (*Verei*) e Vir (*Virei*)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão FGV no Futuro do Presente de Ver (*Verei*) e Vir (*Virei*).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão FGV no Futuro do Presente de Ver (*Verei*) e Vir (*Virei*).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão FGV no Futuro do Presente de Ver (*Verei*) e Vir (*Virei*) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão FGV no Futuro do Presente de Ver (*Verei*) e Vir (*Virei*).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão FGV no Futuro do Presente de Ver (*Verei*) e Vir (*Virei*).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão FGV no Futuro do Presente de Ver (*Verei*) e Vir (*Virei*) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão FGV no Futuro do Presente de Ver (*Verei*) e Vir (*Virei*).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão FGV no Futuro do Presente de Ver (*Verei*) e Vir (*Virei*).",
           "blocks": [
             {
               "type": "list",
@@ -1324,7 +2012,10 @@
       "officialAnswer": "correct",
       "explanation": "Se você reparar, o item pede para você julgar 6 afirmativas! Vamos lá: O verbo “somos” está na primeira pessoa do plural, no presente do modo indicativo (Certo. Nós somos) e é um verbo anômalo (Certo. Pois o radical se altera radicalmente: Eu sou, tu és… eu fui… eu era… (que) eu seja… (se) eu fosse… (quando) eu for… ). O verbo “sobrarem” está na terceira pessoa do plural, no futuro do presente do modo subjuntivo (Certo. Se eles/5 minutos sobrarem) e pertence à primeira conjugação (Certo. Vogal temática A, terminação em Ar, marca da primeira conjugação). Tudo certo! Questão correta. Vamos relembrar a matéria com alguns quadros esquemáticos sobre o modo subjuntivo: BACEN - Língua Portuguesa 32 www.estrategiaconcursos.com.br 154",
       "questionSha256": "18c7c1fcfe988cd45aea58747c8e373a597ad4081777ab3112c0250ae3e8d6f5",
-      "answerSha256": "3745aac24b3daed187d235427cf87d55ffe9c76127cbddd484aca2439028b957"
+      "answerSha256": "3745aac24b3daed187d235427cf87d55ffe9c76127cbddd484aca2439028b957",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de EBSERH; 2. Identificar a regra central de Falsos Amigos e Difícil Conjugação; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula04.q0107",
@@ -1345,7 +2036,23 @@
       "officialAnswer": "E",
       "explanation": "Observem que temos um comando, uma ordem: Toque, clique e leia. O modo responsável por comandos em geral é imperativo e é nesse modo que os verbos estão conjugados. Gabarito letra E.",
       "questionSha256": "3ecc94f4d0c20f010d777d88df65b0a076e8c0eaed19baffd08f381a0c9c3664",
-      "answerSha256": "1447481373c8ddf11976781e449bd810ca2e46062e4c7839c683c6f9bdfac459"
+      "answerSha256": "1447481373c8ddf11976781e449bd810ca2e46062e4c7839c683c6f9bdfac459",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CORE-PE; 2. Identificar a regra central de Falsos Amigos e Difícil Conjugação; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "incorrect",
+          "explanation": "Opção a: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Falsos Amigos e Difícil Conjugação."
+        },
+        {
+          "optionLabel": "b",
+          "status": "incorrect",
+          "explanation": "Opção b: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Falsos Amigos e Difícil Conjugação."
+        }
+      ]
     },
     {
       "questionId": "aula04.q0109",
@@ -1374,7 +2081,35 @@
       "officialAnswer": "C",
       "explanation": "O infinitivo é a forma substantiva do verbo, pois é “nome” do verbo: estar. O gerúndio é a forma nominal indicativa de processo contínuo, terminada em NDO: suando. Gabarito letra C. Carga semântica do gerúndio O gerúndio geralmente indica uma ação continuada ou ações que ocorrem simultaneamente. Mas, em questões de concurso, geralmente também são cobrados outros sentidos: Tempo, Condição, Modo e Causa. Ex.: ●​ TEMPO: Chegando ao banco, ele se assustou com a fila (ele se assustou quando chegou ao banco.) ●​ CONDIÇÃO: Lavando a louça, deixo você sair (se lavar a louça, poderá sair.) ●​ MODO: Desenvolveu a memória fazendo exercícios (exercícios foram a maneira que usou para desenvolver a memória.) ●​ CAUSA: Estudando com dedicação por anos, foi aprovada em primeiro lugar (foi aprovada em primeiro lugar porque estudou por anos.) Para expressar continuidade, é possível usar locução de gerúndio (Ele vem buscando a aprovação), ou, alternativamente, locução de infinitivo (Ele está a buscar a aprovação) e particípio (Ele tem buscado a aprovação). O gerúndio também pode funcionar com valor adjetivo. Ex.: BACEN - Língua Portuguesa 37 www.estrategiaconcursos.com.br 154 Tenho um livro ensinando essa questão (um livro que ensina).",
       "questionSha256": "180501fb29964d28b0fd7f72f70762a362258109e1f0128dac86b39cfb82b975",
-      "answerSha256": "5b0cefa7f3a01c56cf0847f4e8d721530e2ff6c85d2ebbb71117ce23238324cc"
+      "answerSha256": "5b0cefa7f3a01c56cf0847f4e8d721530e2ff6c85d2ebbb71117ce23238324cc",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de SAAE BARRA BONITA-SP; 2. Identificar a regra central de Falsos Amigos e Difícil Conjugação; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "incorrect",
+          "explanation": "Opção a: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Falsos Amigos e Difícil Conjugação."
+        },
+        {
+          "optionLabel": "b",
+          "status": "incorrect",
+          "explanation": "Opção b: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Falsos Amigos e Difícil Conjugação."
+        },
+        {
+          "optionLabel": "c",
+          "status": "correct",
+          "explanation": "Opção c: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Falsos Amigos e Difícil Conjugação."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Falsos Amigos e Difícil Conjugação."
+        }
+      ]
     },
     {
       "questionId": "aula04.q0105",
@@ -1386,7 +2121,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Na verdade, “for” e “vir” são formas flexionadas no modo subjuntivo dos verbos de movimento ser e vEr. O modo subjuntivo do verbo “vir” seria “vier”. Questão incorreta.",
       "questionSha256": "47a10eef54dc934b27fc93be860373db984d458eb2759310b0258b0f8f3ca33e",
-      "answerSha256": "d78cb7a952d5a3d503d56222e02b0faaf481588fd7c4c242c026212e8cfc5235"
+      "answerSha256": "d78cb7a952d5a3d503d56222e02b0faaf481588fd7c4c242c026212e8cfc5235",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de SEDF; 2. Identificar a regra central de Falsos Amigos e Difícil Conjugação; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula04.q0030",
@@ -1399,7 +2137,10 @@
       "officialAnswer": "correct",
       "explanation": "No presente do subjuntivo, a forma do verbo ‘diferir’ vai ser “difirA” (que eu di“fira”). Questão correta.",
       "questionSha256": "36d1982fc06d901b7f18b15eca5c6ef5e40af44fac6474b45da46212263c6f41",
-      "answerSha256": "c907b0a0b9e095a9b9e10b101bbd349ab15dc26f3e564388bdfada1ba98938ab"
+      "answerSha256": "c907b0a0b9e095a9b9e10b101bbd349ab15dc26f3e564388bdfada1ba98938ab",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Falsos Amigos e Difícil Conjugação; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula04.q0130",
@@ -1432,7 +2173,41 @@
       "officialAnswer": "A",
       "explanation": "Estudamos crase separadamente na aula de regência, mas essa questão é essencialmente sobre conjugação dos verbos que temos estudado. Então, vamos focar na conjugação. A letra A está perfeita, observe a conjugação de “conter”, derivado de “ter”: ter-tivermos>conter-contivermos. Vejamos as demais: b) Ele acabará se desfazendo dos amigos à medida que eles vierem a contrariar seus ímpetos caprichosos. (a forma de futuro do subjuntivo do verbo “vir” é “vierem”) c) Uma amizade resiste a toda prova quando, em qualquer das ocasiões da vida, se mantiver leal e verdadeira. (“manter” deriva de “ter”) d) Se aprouvesse a alguém construir uma sólida amizade, teria de renunciar as fraquezas mais comuns. (a forma de “aprazer” vira “aprouvesse”) e) Nada poderei fazer em reparo à fragilidade de uma amizade que não advier de uma leal construção. (“advir” deriva de “vir”) Gabarito letra A. Verbos defectivos São aqueles verbos que têm defeito de conjugação, pois não são conjugados em todas as pessoas, normalmente pela semelhança que a conjugação teria com outro verbo (Falar e Falir: eu falo), ou pelo mau som: “ela computa”... Na maioria dos casos, são conjugados só na primeira e segunda pessoa do plural do modo indicativo, na segunda pessoa do plural do modo imperativo e não possuem flexões no presente do subjuntivo (porque não têm o presente do indicativo). Obs.: O presente do subjuntivo é derivado do radical da primeira pessoa do singular do presente do indicativo, em suma, “eu faço” vira “que eu faça”. Então, quando o verbo não tem a primeira pessoa do singular no indicativo, não terá o presente do subjuntivo. Por consequência, não terá as formas de imperativo que também derivam do subjuntivo. Por não trazerem a primeira pessoa do singular do presente do indicativo, são defectivos os verbos: abolir, banir, brandir, carpir, colorir, computar, delir, explodir, ruir, exaurir, demolir, puir, BACEN - Língua Portuguesa 64 www.estrategiaconcursos.com.br 154 delinquir, fulgir (resplandecer), feder, aturdir, bramir, esculpir, extorquir, retorquir, soer (costumar: ter costume de). Há certa controvérsia entre esses verbos, pois alguns gramáticos e dicionários listam verbos defectivos como regulares. Não podemos entrar nessa discussão, então vamos destacar alguns que já foram cobrados em prova. Verbo Precaver e Reaver No presente do indicativo, só se conjuga com nós (precavemos/reavemos) e vós (precaveis/reaveis). Como o presente do indicativo é a base do presente do subjuntivo, esse verbo não é conjugado neste tempo. Sabendo disso, basta conjugar o verbo precaver seguindo a segunda conjugação, como Beber. No Imperativo, temos: precavei, reavei. Reaver e Precaver não trazem “J” nem “nh” na sua conjugação. Então, estão incorretas formas como “precaveja”, “reaveja”, “reavenha”. Para você não ter que estudar a conjugação dele inteira, siga essa dica: o verbo Reaver só se conjuga naquelas pessoas em que o verbo Haver tem “v” na palavra. Segue a primeira pessoa de cada tempo em que isso ocorre, para você saber o padrão: reouve, reavia, reouvera, reaverei, reaveria. Obs.: Nessa mesma linha estão os verbos “falir” e “adequar”, que também só possuem as pessoas ‘nós’ e ‘vós’ no presente do indicativo. Cuidado: Apesar de “estranhos”, estes verbos não são considerados defectivos: caber, valer, redimir, polir, sortir, rir, escapulir, entupir, sacudir. Verbos vicários São chamados de Verbos Vicários aqueles que fazem as vezes de outros verbos, substituindo-os para evitar repetição. Os mais comuns são os verbos ser e fazer. Normalmente vêm acompanhados de um pronome demonstrativo o, que retoma a ação ou o evento da oração anterior. Ex.: Eu poderia ter fugido, mas não o fiz. (“o fiz” retoma “ter fugido”) Se você não estudou foi porque teve preguiça. (“foi” retoma “não estudou”) Se ela não aceita ir ao cinema é porque não quer. (“é” retoma “aceita”) Observe que há dois verbos e um substitui o outro, quando vicário, o “fazer” não traz seu sentido próprio, pois assume o sentido do outro verbo. As estruturas com esses verbos costumam ser cobradas até em questões de compreensão textual, quando a banca pode perguntar o referente do pronome. BACEN - Língua Portuguesa 65 www.estrategiaconcursos.com.br 154",
       "questionSha256": "4b706c9205409cdb250dde549ae6e6dffc5d82514356dff8af39c42fabfd2150",
-      "answerSha256": "d69bec84a699fe1e873732aaf20446d297458afed1a7dc2e39888aec3605c867"
+      "answerSha256": "d69bec84a699fe1e873732aaf20446d297458afed1a7dc2e39888aec3605c867",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de PREF. DE RECIFE; 2. Identificar a regra central de Falsos Amigos e Difícil Conjugação; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "correct",
+          "explanation": "Opção a: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Falsos Amigos e Difícil Conjugação."
+        },
+        {
+          "optionLabel": "b",
+          "status": "incorrect",
+          "explanation": "Opção b: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Falsos Amigos e Difícil Conjugação."
+        },
+        {
+          "optionLabel": "c",
+          "status": "incorrect",
+          "explanation": "Opção c: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Falsos Amigos e Difícil Conjugação."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Falsos Amigos e Difícil Conjugação."
+        },
+        {
+          "optionLabel": "e",
+          "status": "incorrect",
+          "explanation": "Opção e: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Falsos Amigos e Difícil Conjugação."
+        }
+      ]
     }
   ]
 }

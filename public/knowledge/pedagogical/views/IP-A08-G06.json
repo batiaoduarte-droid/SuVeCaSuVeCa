@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A08-G06",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.861Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.607Z"
   },
   "unit": {
     "unitId": "IP-A08-G06",
@@ -621,6 +621,16 @@
         {
           "entityId": "RULE-IP-A08-G06-001",
           "title": "Regras canônicas",
+          "statement": "Para consulta rápida e precisa, consolidam-se abaixo as regras canônicas do grupo:\nVírgula antes do \"E\":\nSujeitos iguais + Adição pura $\\rightarrow$ Proibida.\nSujeitos iguais + Valor Conclusivo (logo/portanto) ou Adversativo (mas) $\\rightarrow$ Facultativa (KB-A08-G06-001).\nAdjunto Adverbial Final: Posicionado no fim da oração na ordem direta $\\rightarrow$ Vírgula facultativa (KB-A08-G06-002).\nIntercalações Adverbiais/Explicativas: Exigem isolamento bilateral obrigatório por vírgulas casadas ou travessões duplos (KB-A08-G06-003).\nOração Adjetiva (Particípio):\nRestritiva (delimita a somente aqueles) $\\rightarrow$ Sem pontuação.\nExplicativa (generaliza para a totalidade) $\\rightarrow$ Entre vírgulas/travessões (KB-A08-G06-004).\nVerbo Transitivo Direto + Oração Substantiva: Proibição absoluta de pontuação entre VTD e \"que\" integrante (KB-A08-G06-005).\nVírgula Vicária: Sinaliza a elipse/zeugma de verbo antecedente em oração coordenada (KB-A08-G06-006).\nParênteses: Uso restrito a informações acessórias cuja supressão não quebra a estrutura sintática (KB-A08-G06-007).\nTravessão Duplo: Inserção de Informação = Fato objetivo; Inserção de Comentário = Opinião/julgamento (KB-A08-G06-009).\nDois-Pontos: Antecedidos por verbum dicendi $\\rightarrow$ introduzem fala; antecedidos por nome/ideia geral $\\rightarrow$ introduzem explicação (KB-A08-G06-010).\nExemplo vs. Enumeração vs. Explicação:\nRol aberto sem \"e\" $\\rightarrow$ Exemplificação.\nRol fechado por \"e\" $\\rightarrow$ Enumeração.\nParáfrase abstrata $\\rightarrow$ Explicação (KB-A08-G06-011).\nDois-Pontos $\\rightarrow$ Travessão Simples: Válido em fim de período (:.... $\\rightarrow$ —....) (KB-A08-G06-012).\nPonto e Vírgula: Usado exclusivamente em enumerações com vírgulas internas e orações coordenadas; nunca decorre de intercalação (KB-A08-G06-013).\n\"Agora\" Adversativo: Quando equivale a mas/porém, encabeça oração coordenada e aceita ponto e vírgula antecedente (KB-A08-G06-014).\nSegmentação por Ponto Final: Exige que a nova oração possua verbo e sentido autônomo completo (KB-A08-G06-015).\nPonto e Vírgula e Próclise: A troca de \"e\" por \";\" cria início de nova oração, vedando a próclise e exigindo ênclise (KB-A08-G06-016).",
+          "scope": "syntax",
+          "modality": "prohibited",
+          "conditions": [
+            "Vírgula antes do \"E\":",
+            "Sujeitos iguais + Adição pura $\\rightarrow$ Proibida.",
+            "Sujeitos iguais + Valor Conclusivo (logo/portanto) ou Adversativo (mas) $\\rightarrow$ Facultativa (KB-A08-G06-001).",
+            "Adjunto Adverbial Final: Posicionado no fim da oração na ordem direta $\\rightarrow$ Vírgula facultativa (KB-A08-G06-002)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "paragraph",
@@ -699,6 +709,59 @@
         {
           "procedureId": "PROC-A08-G06-001",
           "title": "Teste de Supressão para Vírgulas Casadas e Parênteses",
+          "objective": "Executar o algoritmo decisório para Teste de Supressão para Vírgulas Casadas e Parênteses",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Supressão para Vírgulas Casadas e Parênteses."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole visualmente o termo ou oração contido entre as duas vírgulas, travessões ou parênteses.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Faça a leitura do período eliminando mentalmente o trecho isolado e ligando o bloco anterior ao posterior.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Avalie a coesão",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se o período mantiver integridade sintática e sentido coeso, a intercalação acessória é válida.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se a frase ficar truncada (ex.",
+              "explanation": "faltando o verbo principal ou complemento obrigatório), o termo é nuclear e a pontuação parentética é incorreta.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Supressão para Vírgulas Casadas e Parênteses."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -722,6 +785,59 @@
         {
           "procedureId": "PROC-A08-G06-002",
           "title": "Diferenciação de Enumeração vs. Exemplificação no Cebraspe",
+          "objective": "Executar o algoritmo decisório para Diferenciação de Enumeração vs. Exemplificação no Cebraspe",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Diferenciação de Enumeração vs. Exemplificação no Cebraspe."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize os dois-pontos ou travessão e leia o termo regente antecedente.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Inspecione a listagem de elementos",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se os itens forem conectados estritamente por vírgulas (A, B, C...), o rol é aberto $\\rightarrow$ Exemplo.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se o último item for precedido pela conjunção aditiva \"e\" (A, B e C), o rol foi fechado $\\rightarrow$ Enumeração.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se a banca afirmar que são \"exemplos\", mas a lista é fechada com \"e\", marque o item como ERRADO.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Diferenciação de Enumeração vs. Exemplificação no Cebraspe."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -751,6 +867,59 @@
         {
           "procedureId": "PROC-A08-G06-003",
           "title": "Validação de Ponto e Vírgula no Cebraspe",
+          "objective": "Executar o algoritmo decisório para Validação de Ponto e Vírgula no Cebraspe",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Validação de Ponto e Vírgula no Cebraspe."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize o ponto e vírgula e identifique os blocos coordenados por ele separados.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Verifique se a assertiva afirma que o ponto e vírgula \"decorre da intercalação\"",
+              "explanation": "",
+              "test": "Verifique se a assertiva afirma que o ponto e vírgula \"decorre da intercalação\":"
+            },
+            {
+              "order": 3,
+              "action": "Se a banca alegar causa em intercalação, marque ERRADO imediatamente.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Verifique se os blocos constituem enumeração de itens com vírgulas internas ou orações coordenadas independentes",
+              "explanation": "",
+              "test": "Verifique se os blocos constituem enumeração de itens com vírgulas internas ou orações coordenadas independentes:"
+            },
+            {
+              "order": 5,
+              "action": "Se sim, marque CERTO.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Validação de Ponto e Vírgula no Cebraspe."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -786,6 +955,53 @@
         {
           "procedureId": "PROC-A08-G06-004",
           "title": "Substituição de Dois-Pontos por Travessão em Reescrita",
+          "objective": "Executar o algoritmo decisório para Substituição de Dois-Pontos por Travessão em Reescrita",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Substituição de Dois-Pontos por Travessão em Reescrita."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identifique se os dois-pontos introduzem aposto ou oração explicativa.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Verifique se a explicação se estende até o ponto final do período.",
+              "explanation": null,
+              "test": "Verifique se a explicação se estende até o ponto final do período."
+            },
+            {
+              "order": 3,
+              "action": "Se fechar no ponto final, substitua os dois-pontos por um travessão simples (—....).",
+              "explanation": null,
+              "test": "Se fechar no ponto final, substitua os dois-pontos por um travessão simples (—....)."
+            },
+            {
+              "order": 4,
+              "action": "Confirme que a substituição preserva a gramática e o sentido, agregando ênfase.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Substituição de Dois-Pontos por Travessão em Reescrita."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -802,6 +1018,47 @@
         {
           "procedureId": "PROC-A08-G06-005",
           "title": "Validação de Troca de Pontuação por Ponto Final",
+          "objective": "Executar o algoritmo decisório para Validação de Troca de Pontuação por Ponto Final",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Validação de Troca de Pontuação por Ponto Final."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole o segmento textual que se inicia após a pontuação proposta para virar ponto final.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Verifique a existência de forma verbal própria e autonomia semântica.",
+              "explanation": null,
+              "test": "Verifique a existência de forma verbal própria e autonomia semântica."
+            },
+            {
+              "order": 3,
+              "action": "Se a oração não depender sintaticamente de outra oração ausente para fazer sentido, valide a divisão do período.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Validação de Troca de Pontuação por Ponto Final."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -817,6 +1074,47 @@
         {
           "procedureId": "PROC-A08-G06-006",
           "title": "Diagnóstico de Efeitos Colaterais em Colocação Pronominal",
+          "objective": "Executar o algoritmo decisório para Diagnóstico de Efeitos Colaterais em Colocação Pronominal",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Diagnóstico de Efeitos Colaterais em Colocação Pronominal."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ao avaliar a troca de conjunções (como \"e\") por ponto e vírgula ou vírgula, observe o início da oração seguinte.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Inspecione se há pronome oblíquo átono (me, te, se, nos, vos, lhe, o, a) encabeçando o novo bloco oracional.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se houver pronome átono em próclise logo após a pontuação forte sem a presença de palavra atrativa, classifique a reescrita como INCORRETA por violação da colocação pronominal.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Diagnóstico de Efeitos Colaterais em Colocação Pronominal."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -832,6 +1130,47 @@
         {
           "procedureId": "PROC-A08-G06-007",
           "title": "Teste de Sentido Denotativo vs. Conotativo em Aspas",
+          "objective": "Executar o algoritmo decisório para Teste de Sentido Denotativo vs. Conotativo em Aspas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Sentido Denotativo vs. Conotativo em Aspas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identifique a palavra aspeada e recupere seu sentido dicionarizado estrito (denotativo).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Analise o contexto textual",
+              "explanation": "o termo está sendo aplicado ao seu objeto literal ou a uma analogia/metáfora?",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se for analogia conceitual (ex.",
+              "explanation": "visão \"bancária\" da educação), conclua que o vocábulo está deslocado de seu sentido denotativo (sentido conotativo/figurado).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Sentido Denotativo vs. Conotativo em Aspas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -851,6 +1190,22 @@
         {
           "contrastId": "CONTRAST-IP-A08-G06-001",
           "title": "Quadro Comparativo de Sinais e Funções Textuais",
+          "contrastType": "mixed",
+          "conceptA": "Quadro Comparativo de Sinais e Funções Textuais",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -919,6 +1274,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G06-001",
           "title": "EX-A08-G06-001 — Questão 21 (VUNESP - Pref. Jundiaí - SP / Agente de Trânsito)",
+          "prompt": "Foco: Análise global de período composto envolvendo conjunção \"e\" conclusiva, parênteses em termo essencial, vírgulas casadas em oração causal e oração adjetiva restritiva reduzida de particípio.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Foco",
+              "rationale": "Análise global de período composto envolvendo conjunção \"e\" conclusiva, parênteses em termo essencial, vírgulas casadas em oração causal e oração adjetiva restritiva reduzida de particípio."
+            },
+            {
+              "order": 2,
+              "action": "Análise das Alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "A (Incorreta)",
+              "rationale": "Isolou o verbo nuclear entre parênteses (se inteirar) e omitiu a vírgula antes de como."
+            },
+            {
+              "order": 4,
+              "action": "B (Incorreta)",
+              "rationale": "Omitiu vírgula antes de portanto e antes de como; inseriu vírgula indevida após optou."
+            },
+            {
+              "order": 5,
+              "action": "C (Incorreta)",
+              "rationale": "Empregou travessões em oração restritiva — tomadas pela diretoria — e omitiu vírgulas casadas."
+            }
+          ],
+          "result": "Gabarito: Alternativa E.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G06-001 — Questão 21 (VUNESP - Pref. Jundiaí - SP / Agente de Trânsito) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G06-001 — Questão 21 (VUNESP - Pref. Jundiaí - SP / Agente de Trânsito).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G06-001 — Questão 21 (VUNESP - Pref. Jundiaí - SP / Agente de Trânsito).",
           "blocks": [
             {
               "type": "list",
@@ -939,6 +1326,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G06-002",
           "title": "EX-A08-G06-002 — Questão 22 (IBFC - Pref. São Gonçalo do Amarante - RN / Agente Administrativo)",
+          "prompt": "Foco: Julgamento de adjunto adverbial final em ordem direta, travessão explicativo e tratamento de aposto pela banca.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Foco",
+              "rationale": "Julgamento de adjunto adverbial final em ordem direta, travessão explicativo e tratamento de aposto pela banca."
+            },
+            {
+              "order": 2,
+              "action": "Análise dos Itens",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Item I (Correto)",
+              "rationale": "Vírgula facultativa separando adjunto adverbial de lugar no término do período."
+            },
+            {
+              "order": 4,
+              "action": "Item II (Incorreto)",
+              "rationale": "O travessão introduz explicação sobre \"nosso amor\", e não fala de personagem."
+            },
+            {
+              "order": 5,
+              "action": "Item III (Correto segundo a banca)",
+              "rationale": "Expressão adjetiva explicativa tratada genericamente como aposto."
+            }
+          ],
+          "result": "Gabarito: Alternativa A (Apenas I e III estão corretas).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G06-002 — Questão 22 (IBFC - Pref. São Gonçalo do Amarante - RN / Agente Administrativo) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G06-002 — Questão 22 (IBFC - Pref. São Gonçalo do Amarante - RN / Agente Administrativo).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G06-002 — Questão 22 (IBFC - Pref. São Gonçalo do Amarante - RN / Agente Administrativo).",
           "blocks": [
             {
               "type": "list",
@@ -957,6 +1376,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G06-003",
           "title": "EX-A08-G06-003 — Questão 23 (VUNESP - UNICAMP / Engenheiro Civil)",
+          "prompt": "Foco: Efeitos de sentido do travessão duplo e dos dois-pontos.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Foco",
+              "rationale": "Efeitos de sentido do travessão duplo e dos dois-pontos."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Os travessões em — e entre os — realizam a inclusão de informação (dado factual objetivo sobre o mecanismo), e os dois-pontos introduzem a explicação de passagem anterior (especificam o sentido positivo e invejável)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "Alternativa C."
+            }
+          ],
+          "result": "Gabarito: Alternativa C.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G06-003 — Questão 23 (VUNESP - UNICAMP / Engenheiro Civil) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G06-003 — Questão 23 (VUNESP - UNICAMP / Engenheiro Civil).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G06-003 — Questão 23 (VUNESP - UNICAMP / Engenheiro Civil).",
           "blocks": [
             {
               "type": "list",
@@ -972,6 +1413,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G06-004",
           "title": "EX-A08-G06-004 — Questão 24 (VUNESP - Câmara de São José dos Campos - SP / Técnico Legislativo)",
+          "prompt": "Foco: Funções das aspas em títulos literários e realce semântico.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Foco",
+              "rationale": "Funções das aspas em títulos literários e realce semântico."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "As primeiras aspas indicam título de obra literária (Itinerário de Pasárgada); as segundas aspas em Não \"essenciais\" servem para acentuar o valor significativo de uma palavra no debate político-cultural (e não para ironizar)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "Alternativa C."
+            }
+          ],
+          "result": "Gabarito: Alternativa C.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G06-004 — Questão 24 (VUNESP - Câmara de São José dos Campos - SP / Técnico Legislativo) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G06-004 — Questão 24 (VUNESP - Câmara de São José dos Campos - SP / Técnico Legislativo).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G06-004 — Questão 24 (VUNESP - Câmara de São José dos Campos - SP / Técnico Legislativo).",
           "blocks": [
             {
               "type": "list",
@@ -987,6 +1450,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G06-005",
           "title": "EX-A08-G06-005 — Questão 25 (FCC - Câmara de Fortaleza - CE / Redator)",
+          "prompt": "Foco: Aspas duplas e simples no texto Pedagogia do Oprimido.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Foco",
+              "rationale": "Aspas duplas e simples no texto Pedagogia do Oprimido."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "As aspas simples em 'bancária' têm a finalidade de realçar um termo deslocado de seu sentido denotativo (sentido conotativo/figurado)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "Alternativa E."
+            }
+          ],
+          "result": "Gabarito: Alternativa E.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G06-005 — Questão 25 (FCC - Câmara de Fortaleza - CE / Redator) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G06-005 — Questão 25 (FCC - Câmara de Fortaleza - CE / Redator).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G06-005 — Questão 25 (FCC - Câmara de Fortaleza - CE / Redator).",
           "blocks": [
             {
               "type": "list",
@@ -1002,6 +1487,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G06-006",
           "title": "EX-A08-G06-006 — Questão 26 (FGV - Câmara de Aracaju - SE / Assistente Administrativo)",
+          "prompt": "Foco: Identificação de assertiva inadequada sobre sinais em frase com vírgula vicária e dois-pontos.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Foco",
+              "rationale": "Identificação de assertiva inadequada sobre sinais em frase com vírgula vicária e dois-pontos."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "A alternativa E é incorreta ao afirmar que o ponto final mostra \"a interrupção de um pensamento\", quando na verdade ele opera a finalização de um período gramatical."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "Alternativa E (Inadequada)."
+            }
+          ],
+          "result": "Gabarito: Alternativa E (Inadequada).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G06-006 — Questão 26 (FGV - Câmara de Aracaju - SE / Assistente Administrativo) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G06-006 — Questão 26 (FGV - Câmara de Aracaju - SE / Assistente Administrativo).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G06-006 — Questão 26 (FGV - Câmara de Aracaju - SE / Assistente Administrativo).",
           "blocks": [
             {
               "type": "list",
@@ -1017,6 +1524,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G06-007",
           "title": "EX-A08-G06-007 — Questão 27 (Cebraspe - TJ-RJ / Técnico Judiciário)",
+          "prompt": "Enunciado: Em \"disse mais uma vez: sou vigorosa, dezesseis\", os dois-pontos introduzem uma fala.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Em \"disse mais uma vez: sou vigorosa, dezesseis\", os dois-pontos introduzem uma fala."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Antecedidos pelo verbum dicendi \"disse\", os dois-pontos introduzem a fala direta do personagem."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G06-007 — Questão 27 (Cebraspe - TJ-RJ / Técnico Judiciário) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G06-007 — Questão 27 (Cebraspe - TJ-RJ / Técnico Judiciário).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G06-007 — Questão 27 (Cebraspe - TJ-RJ / Técnico Judiciário).",
           "blocks": [
             {
               "type": "list",
@@ -1032,6 +1561,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G06-008",
           "title": "EX-A08-G06-008 — Questão 28 (Cebraspe - SEDUC-AL / Professor)",
+          "prompt": "Enunciado: Em \"...do que devemos fazer: correção educacional de pensamentos distorcidos e medicação exata\", os dois-pontos introduzem exemplos.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Em \"...do que devemos fazer: correção educacional de pensamentos distorcidos e medicação exata\", os dois-pontos introduzem exemplos."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "A presença da conjunção aditiva \"e\" fecha a relação de procedimentos, configurando enumeração exaustiva, e não listagem aberta de exemplos."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G06-008 — Questão 28 (Cebraspe - SEDUC-AL / Professor) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G06-008 — Questão 28 (Cebraspe - SEDUC-AL / Professor).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G06-008 — Questão 28 (Cebraspe - SEDUC-AL / Professor).",
           "blocks": [
             {
               "type": "list",
@@ -1047,6 +1598,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G06-009",
           "title": "EX-A08-G06-009 — Questão 29 (Cebraspe - SEDUC-AL / Professor)",
+          "prompt": "Enunciado: Em texto dialogado, os travessões indicam a mudança dos interlocutores.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Em texto dialogado, os travessões indicam a mudança dos interlocutores."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Emprego clássico de travessão simples no início de linhas para marcar a troca de turnos no diálogo."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G06-009 — Questão 29 (Cebraspe - SEDUC-AL / Professor) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G06-009 — Questão 29 (Cebraspe - SEDUC-AL / Professor).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G06-009 — Questão 29 (Cebraspe - SEDUC-AL / Professor).",
           "blocks": [
             {
               "type": "list",
@@ -1062,6 +1635,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G06-010",
           "title": "EX-A08-G06-010 — Questão 30 (Cebraspe - SEED-PR / Professor)",
+          "prompt": "Enunciado: Os travessões em \"...Em situações de estresse — quando nosso organismo acha que estamos sob ameaça... —...\" indicam citação.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Os travessões em \"...Em situações de estresse — quando nosso organismo acha que estamos sob ameaça... —...\" indicam citação."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Os travessões isolam oração intercalada explicativa; a citação de autoridade é demarcada pelas aspas subsequentes."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G06-010 — Questão 30 (Cebraspe - SEED-PR / Professor) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G06-010 — Questão 30 (Cebraspe - SEED-PR / Professor).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G06-010 — Questão 30 (Cebraspe - SEED-PR / Professor).",
           "blocks": [
             {
               "type": "list",
@@ -1077,6 +1672,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G06-011",
           "title": "EX-A08-G06-011 — Questão 31 (Cebraspe - TRE-RJ / Técnico Judiciário)",
+          "prompt": "Enunciado: O ponto e vírgula justifica-se para isolar segmentos de enumeração que contêm vírgulas.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "O ponto e vírgula justifica-se para isolar segmentos de enumeração que contêm vírgulas."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Uso canônico do ponto e vírgula para coordenar itens complexos de uma listagem legal contendo vírgulas internas."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G06-011 — Questão 31 (Cebraspe - TRE-RJ / Técnico Judiciário) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G06-011 — Questão 31 (Cebraspe - TRE-RJ / Técnico Judiciário).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G06-011 — Questão 31 (Cebraspe - TRE-RJ / Técnico Judiciário).",
           "blocks": [
             {
               "type": "list",
@@ -1092,6 +1709,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G06-012",
           "title": "EX-A08-G06-012 — Questão 32 (Cebraspe - MJSP / Técnico)",
+          "prompt": "Enunciado: O ponto e vírgula decorre da intercalação da oração \"onde se mói a cana\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "O ponto e vírgula decorre da intercalação da oração \"onde se mói a cana\"."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "O ponto e vírgula decorre da enumeração dos núcleos locativos da fazenda (\"embaixo\" e \"na colina\"). Intercalações são isoladas por vírgulas."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G06-012 — Questão 32 (Cebraspe - MJSP / Técnico) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G06-012 — Questão 32 (Cebraspe - MJSP / Técnico).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G06-012 — Questão 32 (Cebraspe - MJSP / Técnico).",
           "blocks": [
             {
               "type": "list",
@@ -1107,6 +1746,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G06-013",
           "title": "EX-A08-G06-013 — Questão 35 (Cebraspe - MPE-SC / Promotor de Justiça)",
+          "prompt": "Enunciado: Substituição de dois-pontos por travessão simples em \"...ações afirmativas: medidas políticas que visam acabar com a exclusão social...\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Substituição de dois-pontos por travessão simples em \"...ações afirmativas: medidas políticas que visam acabar com a exclusão social...\"."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Como a explicação encerra o período, a troca de :.... por —.... é perfeitamente válida."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G06-013 — Questão 35 (Cebraspe - MPE-SC / Promotor de Justiça) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G06-013 — Questão 35 (Cebraspe - MPE-SC / Promotor de Justiça).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G06-013 — Questão 35 (Cebraspe - MPE-SC / Promotor de Justiça).",
           "blocks": [
             {
               "type": "list",
@@ -1122,6 +1783,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G06-014",
           "title": "EX-A08-G06-014 — Questão 36 (Cebraspe - PC-SE / Agente de Polícia)",
+          "prompt": "Enunciado: Substituição de travessão por ponto final em período sobre criminalização de conduta contra a mulher.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Substituição de travessão por ponto final em período sobre criminalização de conduta contra a mulher."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "O segmento seguinte possui verbo próprio e autonomia semântica plena, legitimando a formação de novo período autônomo."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G06-014 — Questão 36 (Cebraspe - PC-SE / Agente de Polícia) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G06-014 — Questão 36 (Cebraspe - PC-SE / Agente de Polícia).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G06-014 — Questão 36 (Cebraspe - PC-SE / Agente de Polícia).",
           "blocks": [
             {
               "type": "list",
@@ -1137,6 +1820,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G06-015",
           "title": "EX-A08-G06-015 — Questão 37 (Cebraspe - Petrobras / Administração)",
+          "prompt": "Enunciado: Troca de ponto final por ponto e vírgula antes de \"Agora, dizer 'cometi um crime...'\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Troca de ponto final por ponto e vírgula antes de \"Agora, dizer 'cometi um crime...'\"."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "O termo \"agora\" atua como conjunção coordenativa adversativa (= mas/porém), admitindo ponto e vírgula antes de si."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G06-015 — Questão 37 (Cebraspe - Petrobras / Administração) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G06-015 — Questão 37 (Cebraspe - Petrobras / Administração).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G06-015 — Questão 37 (Cebraspe - Petrobras / Administração).",
           "blocks": [
             {
               "type": "list",
@@ -1152,6 +1857,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G06-016",
           "title": "EX-A08-G06-016 — Questão 38 (Cebraspe - DPE-RO / Oficial de Diligência)",
+          "prompt": "Enunciado: Preservação da correção gramatical com a supressão pura dos travessões em oração causal intercalada longa.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Preservação da correção gramatical com a supressão pura dos travessões em oração causal intercalada longa."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "A supressão dos travessões sem a inserção de vírgulas de isolamento deixa a oração intercalada sem demarcação sintática."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G06-016 — Questão 38 (Cebraspe - DPE-RO / Oficial de Diligência) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G06-016 — Questão 38 (Cebraspe - DPE-RO / Oficial de Diligência).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G06-016 — Questão 38 (Cebraspe - DPE-RO / Oficial de Diligência).",
           "blocks": [
             {
               "type": "list",
@@ -1167,6 +1894,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G06-017",
           "title": "EX-A08-G06-017 — Questão 39 (Cebraspe - DPE-RO / Oficial de Diligência)",
+          "prompt": "Enunciado: Inserção de dois-pontos após a forma verbal \"definia\" em \"O código definia que o interessado...\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Inserção de dois-pontos após a forma verbal \"definia\" em \"O código definia que o interessado...\"."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "É expressamente proibido separar o verbo transitivo direto de sua oração substantiva objetiva direta (\"definia isso\")."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G06-017 — Questão 39 (Cebraspe - DPE-RO / Oficial de Diligência) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G06-017 — Questão 39 (Cebraspe - DPE-RO / Oficial de Diligência).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G06-017 — Questão 39 (Cebraspe - DPE-RO / Oficial de Diligência).",
           "blocks": [
             {
               "type": "list",
@@ -1182,6 +1931,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G06-018",
           "title": "EX-A08-G06-018 — Questão 40 (Cebraspe - DPE-DF / Analista)",
+          "prompt": "Enunciado: Substituição da conjunção \"e\" por ponto e vírgula em \"Acolhe-te quando vens e te deixa ir quando partes\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Substituição da conjunção \"e\" por ponto e vírgula em \"Acolhe-te quando vens e te deixa ir quando partes\"."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "A remoção do \"e\" cria uma nova oração que se inicia com o pronome oblíquo átono te, violando a regra culta de colocação pronominal (exige ênclise: ; deixa-te ir)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G06-018 — Questão 40 (Cebraspe - DPE-DF / Analista) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G06-018 — Questão 40 (Cebraspe - DPE-DF / Analista).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G06-018 — Questão 40 (Cebraspe - DPE-DF / Analista).",
           "blocks": [
             {
               "type": "list",
@@ -1232,8 +2003,12 @@
         {
           "trapId": "WARN-A08-G06-001",
           "title": "Omissão Unilateral em Vírgulas Casadas",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Omissão Unilateral em Vírgulas Casadas.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Omissão Unilateral em Vírgulas Casadas.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Omissão Unilateral em Vírgulas Casadas no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Omissão Unilateral em Vírgulas Casadas.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Omissão Unilateral em Vírgulas Casadas.",
+          "correctReasoning": "Bancas examinadoras costumam inserir a vírgula de fechamento de uma oração adverbial intercalada, mas omitir a vírgula de abertura (ex.: ...portanto como pegou o bonde andando, optou...), gerando incorreção sintática.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Omissão Unilateral em Vírgulas Casadas.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Omissão Unilateral em Vírgulas Casadas.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1244,8 +2019,12 @@
         {
           "trapId": "WARN-A08-G06-002",
           "title": "Alteração Indevida de Sentido ao Pontuar Adjetiva Restritiva",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Alteração Indevida de Sentido ao Pontuar Adjetiva Restritiva.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Alteração Indevida de Sentido ao Pontuar Adjetiva Restritiva.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Alteração Indevida de Sentido ao Pontuar Adjetiva Restritiva no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Alteração Indevida de Sentido ao Pontuar Adjetiva Restritiva.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Alteração Indevida de Sentido ao Pontuar Adjetiva Restritiva.",
+          "correctReasoning": "Inserir vírgulas ou travessões em uma oração adjetiva que contextualmente é restritiva altera o sentido original do texto, transformando uma delimitação de subconjunto em uma generalização totalizadora.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Alteração Indevida de Sentido ao Pontuar Adjetiva Restritiva.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Alteração Indevida de Sentido ao Pontuar Adjetiva Restritiva.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1256,8 +2035,12 @@
         {
           "trapId": "WARN-A08-G06-003",
           "title": "Supressão Indevida de Termos Nucleares entre Parênteses",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Supressão Indevida de Termos Nucleares entre Parênteses.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Supressão Indevida de Termos Nucleares entre Parênteses.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Supressão Indevida de Termos Nucleares entre Parênteses no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Supressão Indevida de Termos Nucleares entre Parênteses.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Supressão Indevida de Termos Nucleares entre Parênteses.",
+          "correctReasoning": "Parênteses jamais podem envolver verbos principais ou complementos verbais obrigatórios. Se a supressão do termo entre parênteses deixar a frase truncada, o uso é incorreto.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Supressão Indevida de Termos Nucleares entre Parênteses.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Supressão Indevida de Termos Nucleares entre Parênteses.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1268,8 +2051,12 @@
         {
           "trapId": "WARN-A08-G06-004",
           "title": "Pegadinha da \"Supressão Pura\" de Sinais de Intercalação",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha da \"Supressão Pura\" de Sinais de Intercalação.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha da \"Supressão Pura\" de Sinais de Intercalação.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha da \"Supressão Pura\" de Sinais de Intercalação no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha da \"Supressão Pura\" de Sinais de Intercalação.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha da \"Supressão Pura\" de Sinais de Intercalação.",
+          "correctReasoning": "Candidatos frequentemente confundem a possibilidade de substituir travessões por vírgulas com a proposta da banca de suprimir puramente os travessões. A retirada dos sinais sem inserção de vírgulas destrói a correção sintática.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha da \"Supressão Pura\" de Sinais de Intercalação.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha da \"Supressão Pura\" de Sinais de Intercalação.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1280,8 +2067,12 @@
         {
           "trapId": "WARN-A08-G06-005",
           "title": "Dois-Pontos após Verbo Transitivo Direto",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Dois-Pontos após Verbo Transitivo Direto.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Dois-Pontos após Verbo Transitivo Direto.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Dois-Pontos após Verbo Transitivo Direto no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Dois-Pontos após Verbo Transitivo Direto.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Dois-Pontos após Verbo Transitivo Direto.",
+          "correctReasoning": "A presença de conjunção integrante (\"que\") não autoriza o uso de dois-pontos. Separar verbo transitivo direto de seu objeto oracional por dois-pontos é erro grave.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Dois-Pontos após Verbo Transitivo Direto.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Dois-Pontos após Verbo Transitivo Direto.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1292,8 +2083,12 @@
         {
           "trapId": "WARN-A08-G06-006",
           "title": "A Armadilha da Conjunção \"e\" Fechando Listagens",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha da Conjunção \"e\" Fechando Listagens.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha da Conjunção \"e\" Fechando Listagens.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha da Conjunção \"e\" Fechando Listagens no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha da Conjunção \"e\" Fechando Listagens.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha da Conjunção \"e\" Fechando Listagens.",
+          "correctReasoning": "A presença da conjunção aditiva \"e\" antes do último item de uma listagem após dois-pontos encerra o conjunto como enumeração exaustiva, anulando assertivas que classifiquem o rol como \"exemplos\".",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha da Conjunção \"e\" Fechando Listagens.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha da Conjunção \"e\" Fechando Listagens.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1304,8 +2099,12 @@
         {
           "trapId": "WARN-A08-G06-007",
           "title": "Ponto e Vírgula NÃO Decorre de Intercalação",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Ponto e Vírgula NÃO Decorre de Intercalação.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Ponto e Vírgula NÃO Decorre de Intercalação.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Ponto e Vírgula NÃO Decorre de Intercalação no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Ponto e Vírgula NÃO Decorre de Intercalação.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Ponto e Vírgula NÃO Decorre de Intercalação.",
+          "correctReasoning": "O ponto e vírgula organiza enumerações complexas ou separa orações coordenadas. A intercalação interna a um segmento é isolada por vírgulas. A tese de que o ponto e vírgula \"decorre de intercalação\" é invariavelmente falsa.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Ponto e Vírgula NÃO Decorre de Intercalação.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Ponto e Vírgula NÃO Decorre de Intercalação.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1316,8 +2115,12 @@
         {
           "trapId": "WARN-A08-G06-008",
           "title": "Efeito Colateral do Ponto e Vírgula na Colocação Pronominal",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Efeito Colateral do Ponto e Vírgula na Colocação Pronominal.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Efeito Colateral do Ponto e Vírgula na Colocação Pronominal.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Efeito Colateral do Ponto e Vírgula na Colocação Pronominal no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Efeito Colateral do Ponto e Vírgula na Colocação Pronominal.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Efeito Colateral do Ponto e Vírgula na Colocação Pronominal.",
+          "correctReasoning": "Ao trocar \"e\" por ponto e vírgula, cria-se o início formal de uma nova oração. Se essa oração iniciar com pronome oblíquo átono em próclise, o período torna-se incorreto na norma padrão.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Efeito Colateral do Ponto e Vírgula na Colocação Pronominal.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Efeito Colateral do Ponto e Vírgula na Colocação Pronominal.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1328,8 +2131,12 @@
         {
           "trapId": "WARN-A08-G06-009",
           "title": "O Mito de que Todo Destaque Entre Aspas É Ironia",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Mito de que Todo Destaque Entre Aspas É Ironia.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Mito de que Todo Destaque Entre Aspas É Ironia.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Mito de que Todo Destaque Entre Aspas É Ironia no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Mito de que Todo Destaque Entre Aspas É Ironia.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Mito de que Todo Destaque Entre Aspas É Ironia.",
+          "correctReasoning": "Classificar automaticamente qualquer termo aspeado como \"ironia\" é um erro recorrente. Só há ironia se o autor expressar o oposto do que pensa. Se o autor concordar com o termo e quiser valorizá-lo no debate, a função é de ênfase no valor significativo.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Mito de que Todo Destaque Entre Aspas É Ironia.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Mito de que Todo Destaque Entre Aspas É Ironia.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1340,8 +2147,12 @@
         {
           "trapId": "WARN-A08-G06-010",
           "title": "Ponto Final Não É Sinal de Interrupção",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Ponto Final Não É Sinal de Interrupção.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Ponto Final Não É Sinal de Interrupção.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Ponto Final Não É Sinal de Interrupção no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Ponto Final Não É Sinal de Interrupção.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Ponto Final Não É Sinal de Interrupção.",
+          "correctReasoning": "O ponto final encerra períodos sintáticos estruturados. O sinal gráfico que indica interrupção ou suspensão de pensamentos inacabados são as reticências.",
+          "decisiveTest": "O ponto final encerra períodos sintáticos estruturados. O sinal gráfico que indica interrupção ou suspensão de pensamentos inacabados são as reticências.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Ponto Final Não É Sinal de Interrupção.",
           "blocks": [
             {
               "type": "paragraph",

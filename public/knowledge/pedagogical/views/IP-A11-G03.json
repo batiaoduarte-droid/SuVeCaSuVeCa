@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A11-G03",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.893Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.645Z"
   },
   "unit": {
     "unitId": "IP-A11-G03",
@@ -517,6 +517,14 @@
         {
           "entityId": "RULE-IP-A11-G03-001",
           "title": "Regras canônicas",
+          "statement": "Regras canônicas",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -602,6 +610,47 @@
         {
           "procedureId": "PROC-A11-G03-001",
           "title": "Algoritmo Geral para Identificação e Validação de Referentes em Provas Objetivas e Discursivas",
+          "objective": "Executar o algoritmo decisório para Algoritmo Geral para Identificação e Validação de Referentes em Provas Objetivas e Discursivas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo Geral para Identificação e Validação de Referentes em Provas Objetivas e Discursivas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isolar substantivo posposto (com que concorda morfologicamente - NÃO É O REFERENTE);",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Substituir mentalmente por \"dele / deles / dela / delas\";",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Identificar o possuidor antecedente (este é o REFERENTE).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo Geral para Identificação e Validação de Referentes em Provas Objetivas e Discursivas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -625,6 +674,71 @@
         {
           "procedureId": "PROC-A11-G03-002",
           "title": "Protocolo dos Dois Candidatos para Julgamento de Assertivas do CEBRASPE",
+          "objective": "Executar o algoritmo decisório para Protocolo dos Dois Candidatos para Julgamento de Assertivas do CEBRASPE",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo dos Dois Candidatos para Julgamento de Assertivas do CEBRASPE."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Isolar a Proposta da Banca",
+              "explanation": "Identifique o elemento coesivo destacado no texto e anote o substantivo que a assertiva afirma ser o referente (Candidato A).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 — Rastreamento Ativo do Segundo Concorrente",
+              "explanation": "Não confie passivamente no Candidato A. Varra o mesmo segmento textual e localize o Candidato B (outro substantivo próximo, gramaticalmente compatível).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Passo 3 — Teste da Dupla Substituição Contextual",
+              "explanation": "Substitua o pronome/coesivo mentalmente pelo Candidato A e, em seguida, pelo Candidato B.",
+              "test": "Passo 3 — Teste da Dupla Substituição Contextual: Substitua o pronome/coesivo mentalmente pelo Candidato A e, em seguida, pelo Candidato B."
+            },
+            {
+              "order": 4,
+              "action": "Passo 4 — Validação pelo Predicado Posterior (\"O que vem depois salva\")",
+              "explanation": "Leia o que vem depois do coesivo. Qual dos dois candidatos preenche com coerência os requisitos semânticos e argumentais exigidos pela ação verbal subsequente?",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Passo 5 — Julgamento da Assertiva",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se o Candidato A (da banca) for o único sustentado pelo predicado posterior $\\rightarrow$ Julgue CERTO.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Se o Candidato B (o concorrente) for o termo real exigido pela lógica do autor $\\rightarrow$ Julgue ERRADO.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo dos Dois Candidatos para Julgamento de Assertivas do CEBRASPE."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -659,6 +773,22 @@
         {
           "contrastId": "CONTRAST-IP-A11-G03-001",
           "title": "8.1. Coesão Sequencial vs. Coesão Referencial",
+          "contrastType": "discursive",
+          "conceptA": "8.1. Coesão Sequencial vs. Coesão Referencial",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -700,6 +830,22 @@
         {
           "contrastId": "CONTRAST-IP-A11-G03-002",
           "title": "8.2. Função Endofórica vs. Função Exofórica (Dêixis)",
+          "contrastType": "mixed",
+          "conceptA": "8.2. Função Endofórica vs. Função Exofórica (Dêixis)",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -741,6 +887,22 @@
         {
           "contrastId": "CONTRAST-IP-A11-G03-003",
           "title": "8.3. Pronomes Pessoais vs. Pronomes Possessivos na Referenciação",
+          "contrastType": "morphological",
+          "conceptA": "8.3. Pronomes Pessoais vs. Pronomes Possessivos na Referenciação",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -782,6 +944,22 @@
         {
           "contrastId": "CONTRAST-IP-A11-G03-004",
           "title": "8.4. Demonstrativo Resumitivo: Retomada do Todo vs. Parte do Todo",
+          "contrastType": "mixed",
+          "conceptA": "8.4. Demonstrativo Resumitivo: Retomada do Todo vs. Parte do Todo",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "paragraph",
@@ -804,6 +982,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G03-001",
           "title": "EX-A11-G03-001 — Pronome Pessoal Anafórico",
+          "prompt": "Frase: \"Os alunos chegaram cedo. Eles queriam conversar antes da prova.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Os alunos chegaram cedo. Eles queriam conversar antes da prova.\""
+            },
+            {
+              "order": 2,
+              "action": "Termo avaliado",
+              "rationale": "Eles"
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O pronome pessoal reto \"Eles\" resgata diretamente o sintagma antecedente \"Os alunos\", situado dentro do texto."
+            },
+            {
+              "order": 4,
+              "action": "Classificação",
+              "rationale": "Endofórica Anafórica (Anáfora)."
+            }
+          ],
+          "result": "Classificação: Endofórica Anafórica (Anáfora).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A11-G03-001 — Pronome Pessoal Anafórico sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A11-G03-001 — Pronome Pessoal Anafórico.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A11-G03-001 — Pronome Pessoal Anafórico.",
           "blocks": [
             {
               "type": "list",
@@ -820,6 +1025,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G03-002",
           "title": "EX-A11-G03-002 — Demonstrativo Neutro Catafórico",
+          "prompt": "Frase: \"Isto é o que precisamos mudar: a falta de pontualidade.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Isto é o que precisamos mudar: a falta de pontualidade.\""
+            },
+            {
+              "order": 2,
+              "action": "Termo avaliado",
+              "rationale": "Isto"
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O pronome demonstrativo neutro \"Isto\" projeta a leitura para o termo posposto aos dois-pontos (\"a falta de pontualidade\")."
+            },
+            {
+              "order": 4,
+              "action": "Classificação",
+              "rationale": "Endofórica Catafórica (Catáfora)."
+            }
+          ],
+          "result": "Classificação: Endofórica Catafórica (Catáfora).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A11-G03-002 — Demonstrativo Neutro Catafórico sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A11-G03-002 — Demonstrativo Neutro Catafórico.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A11-G03-002 — Demonstrativo Neutro Catafórico.",
           "blocks": [
             {
               "type": "list",
@@ -836,6 +1068,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G03-003",
           "title": "EX-A11-G03-003 — Demonstrativo Dêitico Temporal",
+          "prompt": "Frase: \"Este é o melhor momento da minha vida.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Este é o melhor momento da minha vida.\""
+            },
+            {
+              "order": 2,
+              "action": "Termo avaliado",
+              "rationale": "Este"
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "Inexiste explicitação textual de qual é o momento (mês, ano ou evento). O termo vincula-se ao instante cronológico de enunciação do falante."
+            },
+            {
+              "order": 4,
+              "action": "Classificação",
+              "rationale": "Exofórica / Dêitica (Dêixis temporal)."
+            }
+          ],
+          "result": "Classificação: Exofórica / Dêitica (Dêixis temporal).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A11-G03-003 — Demonstrativo Dêitico Temporal sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A11-G03-003 — Demonstrativo Dêitico Temporal.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A11-G03-003 — Demonstrativo Dêitico Temporal.",
           "blocks": [
             {
               "type": "list",
@@ -852,6 +1111,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G03-004",
           "title": "EX-A11-G03-004 — Sintagma Nominal Demonstrativo Catafórico",
+          "prompt": "Frase: \"Este rapaz certamente terá sucesso: Paulo é muito estudioso.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Este rapaz certamente terá sucesso: Paulo é muito estudioso.\""
+            },
+            {
+              "order": 2,
+              "action": "Termo avaliado",
+              "rationale": "Este rapaz"
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "A expressão demonstrativa projeta a identificação do referente nominal subsequente aos dois-pontos (\"Paulo\")."
+            },
+            {
+              "order": 4,
+              "action": "Classificação",
+              "rationale": "Endofórica Catafórica (Catáfora)."
+            }
+          ],
+          "result": "Classificação: Endofórica Catafórica (Catáfora).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A11-G03-004 — Sintagma Nominal Demonstrativo Catafórico sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A11-G03-004 — Sintagma Nominal Demonstrativo Catafórico.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A11-G03-004 — Sintagma Nominal Demonstrativo Catafórico.",
           "blocks": [
             {
               "type": "list",
@@ -868,6 +1154,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G03-005",
           "title": "EX-A11-G03-005 — Coesão Lexical Anafórica (Padrão FGV)",
+          "prompt": "Frase: \"O cachorro latiu a noite toda; o barulho incomodou os vizinhos.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"O cachorro latiu a noite toda; o barulho incomodou os vizinhos.\""
+            },
+            {
+              "order": 2,
+              "action": "Termo avaliado",
+              "rationale": "o barulho"
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O substantivo \"o barulho\" não é pronome, mas retoma anadoforicamente a ação expressa pelo verbo antecedente \"latiu\" por afinidade de campo semântico."
+            },
+            {
+              "order": 4,
+              "action": "Classificação",
+              "rationale": "Endofórica Anafórica (Anáfora lexical/semântica)."
+            }
+          ],
+          "result": "Classificação: Endofórica Anafórica (Anáfora lexical/semântica).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A11-G03-005 — Coesão Lexical Anafórica (Padrão FGV) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A11-G03-005 — Coesão Lexical Anafórica (Padrão FGV).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A11-G03-005 — Coesão Lexical Anafórica (Padrão FGV).",
           "blocks": [
             {
               "type": "list",
@@ -884,6 +1197,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G03-006",
           "title": "EX-A11-G03-006 — Falso Catafórico de Espaço vs. Oração Subordinada (Padrão FGV)",
+          "prompt": "Frase: \"Aqui é onde me sinto em paz.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Aqui é onde me sinto em paz.\""
+            },
+            {
+              "order": 2,
+              "action": "Termo avaliado",
+              "rationale": "Aqui"
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O advérbio \"Aqui\" é dêitico de espaço puro (depende da localização física do falante). A oração relativa subsequente (\"onde me sinto em paz\") não é o referente físico do lugar, mas mera qualificação atributiva."
+            },
+            {
+              "order": 4,
+              "action": "Classificação",
+              "rationale": "Exofórica / Dêitica (Dêixis espacial)."
+            }
+          ],
+          "result": "Classificação: Exofórica / Dêitica (Dêixis espacial).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A11-G03-006 — Falso Catafórico de Espaço vs. Oração Subordinada (Padrão FGV) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A11-G03-006 — Falso Catafórico de Espaço vs. Oração Subordinada (Padrão FGV).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A11-G03-006 — Falso Catafórico de Espaço vs. Oração Subordinada (Padrão FGV).",
           "blocks": [
             {
               "type": "list",
@@ -900,6 +1240,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G03-007",
           "title": "EX-A11-G03-007 — Pronome Possessivo Anafórico em Terceira Pessoa",
+          "prompt": "Frase: \"Mariana comprou um vestido novo e ficou radiante com sua escolha.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Mariana comprou um vestido novo e ficou radiante com sua escolha.\""
+            },
+            {
+              "order": 2,
+              "action": "Termo avaliado",
+              "rationale": "sua"
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O possessivo \"sua\" equivale a \"dela\", retomando o sujeito antecedente \"Mariana\"."
+            },
+            {
+              "order": 4,
+              "action": "Classificação",
+              "rationale": "Endofórica Anafórica (Anáfora)."
+            }
+          ],
+          "result": "Classificação: Endofórica Anafórica (Anáfora).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A11-G03-007 — Pronome Possessivo Anafórico em Terceira Pessoa sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A11-G03-007 — Pronome Possessivo Anafórico em Terceira Pessoa.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A11-G03-007 — Pronome Possessivo Anafórico em Terceira Pessoa.",
           "blocks": [
             {
               "type": "list",
@@ -916,6 +1283,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G03-008",
           "title": "EX-A11-G03-008 — Pronome Pessoal Reto com Aplicação da Progressividade Textual",
+          "prompt": "Frase: \"O que torna a caverna tão curiosa para a pesquisadora é que ela ainda é um enigma.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"O que torna a caverna tão curiosa para a pesquisadora é que ela ainda é um enigma.\""
+            },
+            {
+              "order": 2,
+              "action": "Termo avaliado",
+              "rationale": "ela"
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "Candidatos: a caverna e a pesquisadora. O predicado subsequente afirma ainda é um enigma. A entidade que constitui um enigma arqueológico/geológico é a caverna, e não a pesquisadora."
+            },
+            {
+              "order": 4,
+              "action": "Referente",
+              "rationale": "caverna (ou a caverna)."
+            }
+          ],
+          "result": "Referente: caverna (ou a caverna).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A11-G03-008 — Pronome Pessoal Reto com Aplicação da Progressividade Textual sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A11-G03-008 — Pronome Pessoal Reto com Aplicação da Progressividade Textual.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A11-G03-008 — Pronome Pessoal Reto com Aplicação da Progressividade Textual.",
           "blocks": [
             {
               "type": "list",
@@ -932,6 +1326,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G03-009",
           "title": "EX-A11-G03-009 — Pronome Pessoal Oblíquo com Filtro de Concordância e Lógica",
+          "prompt": "Frase: \"A saúde pública precisa de métodos administrativos que lhe assegurem eficiência.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"A saúde pública precisa de métodos administrativos que lhe assegurem eficiência.\""
+            },
+            {
+              "order": 2,
+              "action": "Termo avaliado",
+              "rationale": "lhe"
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "lhe está no singular, eliminando métodos administrativos (plural). O predicado questiona: assegurar eficiência a quem? À saúde pública."
+            },
+            {
+              "order": 4,
+              "action": "Referente",
+              "rationale": "saúde pública (núcleo: saúde)."
+            }
+          ],
+          "result": "Referente: saúde pública (núcleo: saúde).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A11-G03-009 — Pronome Pessoal Oblíquo com Filtro de Concordância e Lógica sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A11-G03-009 — Pronome Pessoal Oblíquo com Filtro de Concordância e Lógica.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A11-G03-009 — Pronome Pessoal Oblíquo com Filtro de Concordância e Lógica.",
           "blocks": [
             {
               "type": "list",
@@ -948,6 +1369,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G03-010",
           "title": "EX-A11-G03-010 — Pronome Relativo com Filtro Verbal e Semântico",
+          "prompt": "Frase: \"O desrespeito instalou-se nos modos do morador civilizado das cidades que dava lugar no bonde às senhoras.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"O desrespeito instalou-se nos modos do morador civilizado das cidades que dava lugar no bonde às senhoras.\""
+            },
+            {
+              "order": 2,
+              "action": "Termo avaliado",
+              "rationale": "que"
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O verbo subsequente dava está no singular, eliminando o antecedente imediato cidades (plural). Entre os singulares o desrespeito e o morador civilizado, quem dava lugar no bonde às senhoras era o morador."
+            },
+            {
+              "order": 4,
+              "action": "Referente",
+              "rationale": "morador (ou morador civilizado)."
+            }
+          ],
+          "result": "Referente: morador (ou morador civilizado).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A11-G03-010 — Pronome Relativo com Filtro Verbal e Semântico sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A11-G03-010 — Pronome Relativo com Filtro Verbal e Semântico.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A11-G03-010 — Pronome Relativo com Filtro Verbal e Semântico.",
           "blocks": [
             {
               "type": "list",
@@ -964,6 +1412,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G03-011",
           "title": "EX-A11-G03-011 — Demonstrativo Resumitivo com Retomada de Parte do Período",
+          "prompt": "Frase: \"A produção depende de uma última liberação da Anvisa. A empresa acredita que isso vai ocorrer logo.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"A produção depende de uma última liberação da Anvisa. A empresa acredita que isso vai ocorrer logo.\""
+            },
+            {
+              "order": 2,
+              "action": "Termo avaliado",
+              "rationale": "isso"
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O que a empresa acredita que vai ocorrer logo é o ato específico de liberação, e não a dependência produtiva inteira."
+            },
+            {
+              "order": 4,
+              "action": "Referente",
+              "rationale": "última liberação da Anvisa (retoma parte do período antecedente)."
+            }
+          ],
+          "result": "Referente: última liberação da Anvisa (retoma parte do período antecedente).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A11-G03-011 — Demonstrativo Resumitivo com Retomada de Parte do Período sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A11-G03-011 — Demonstrativo Resumitivo com Retomada de Parte do Período.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A11-G03-011 — Demonstrativo Resumitivo com Retomada de Parte do Período.",
           "blocks": [
             {
               "type": "list",
@@ -980,6 +1455,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G03-012",
           "title": "EX-A11-G03-012 — Demonstrativo Resumitivo com Retomada de Todo o Período",
+          "prompt": "Frase: \"João chegou. Isso me fez feliz.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"João chegou. Isso me fez feliz.\""
+            },
+            {
+              "order": 2,
+              "action": "Termo avaliado",
+              "rationale": "Isso"
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "A causa da felicidade não foi a pessoa isolada de João, mas o fato integral de João ter chegado."
+            },
+            {
+              "order": 4,
+              "action": "Referente",
+              "rationale": "João chegou (retoma a totalidade do período antecedente)."
+            }
+          ],
+          "result": "Referente: João chegou (retoma a totalidade do período antecedente).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A11-G03-012 — Demonstrativo Resumitivo com Retomada de Todo o Período sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A11-G03-012 — Demonstrativo Resumitivo com Retomada de Todo o Período.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A11-G03-012 — Demonstrativo Resumitivo com Retomada de Todo o Período.",
           "blocks": [
             {
               "type": "list",
@@ -996,6 +1498,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G03-013",
           "title": "EX-A11-G03-013 — Pronome Possessivo Plural Retomando Masculino Plural",
+          "prompt": "Frase: \"A falta de insumos médicos levou os países a repensarem suas cadeias produtivas.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"A falta de insumos médicos levou os países a repensarem suas cadeias produtivas.\""
+            },
+            {
+              "order": 2,
+              "action": "Termo avaliado",
+              "rationale": "suas"
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "suas concorda em gênero e número com o substantivo determinado posposto cadeias produtivas (feminino plural), mas refere-se aos possuidores países (masculino plural $\\rightarrow$ cadeias produtivas deles)."
+            },
+            {
+              "order": 4,
+              "action": "Referente",
+              "rationale": "países."
+            }
+          ],
+          "result": "Referente: países.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A11-G03-013 — Pronome Possessivo Plural Retomando Masculino Plural sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A11-G03-013 — Pronome Possessivo Plural Retomando Masculino Plural.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A11-G03-013 — Pronome Possessivo Plural Retomando Masculino Plural.",
           "blocks": [
             {
               "type": "list",
@@ -1012,6 +1541,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G03-014",
           "title": "EX-A11-G03-014 — CEBRASPE / InoversaSul (2025) — Professor de Português",
+          "prompt": "Texto: \"Tudo o que a avó fabrica [...] tem cheiro bom: bolo de chocolate, biscoito de nata, sonhos embrulhados em açúcar e canela...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"Tudo o que a avó fabrica [...] tem cheiro bom: bolo de chocolate, biscoito de nata, sonhos embrulhados em açúcar e canela...\""
+            },
+            {
+              "order": 2,
+              "action": "Assertiva da Banca",
+              "rationale": "\"A enumeração contida nos versos 'bolo de chocolate, biscoito de nata...' caracteriza uma relação anafórica com o referente 'Tudo', no primeiro verso.\""
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento e Resolução",
+              "rationale": "A assertiva contém erro duplo:"
+            },
+            {
+              "order": 4,
+              "action": "Tudo é o elemento coesivo antecipador; a lista de doces é o referente concretizador (a banca inverteu os papéis).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Tudo antecede a enumeração e aponta para a frente, configurando relação catáfórica (e não anafórica).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A11-G03-014 — CEBRASPE / InoversaSul (2025) — Professor de Português sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A11-G03-014 — CEBRASPE / InoversaSul (2025) — Professor de Português.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A11-G03-014 — CEBRASPE / InoversaSul (2025) — Professor de Português.",
           "blocks": [
             {
               "type": "list",
@@ -1042,6 +1603,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G03-015",
           "title": "EX-A11-G03-015 — (ADAPTADO) CEBRASPE / SEED-PR — Professor",
+          "prompt": "Texto: \"Socorro, alguma alma, mesmo que penada, / me empreste suas penas...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"Socorro, alguma alma, mesmo que penada, / me empreste suas penas...\""
+            },
+            {
+              "order": 2,
+              "action": "Assertiva da Banca",
+              "rationale": "\"No texto, constitui um elemento coesivo de referência anafórica a palavra 'suas', no verso 'me empreste suas penas'.\""
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento e Resolução",
+              "rationale": "O pronome possessivo suas opera remissão anafórica resgatando o substantivo antecedente alma (penas pertencentes à alma)."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A11-G03-015 — (ADAPTADO) CEBRASPE / SEED-PR — Professor sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A11-G03-015 — (ADAPTADO) CEBRASPE / SEED-PR — Professor.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A11-G03-015 — (ADAPTADO) CEBRASPE / SEED-PR — Professor.",
           "blocks": [
             {
               "type": "list",
@@ -1058,6 +1646,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G03-016",
           "title": "EX-A11-G03-016 — CEBRASPE / Polícia Federal (2025) — Agente de Polícia Federal",
+          "prompt": "Texto: \"...se justificaria por essa relação estabelecida entre a narrativa policial e os indivíduos, que buscam nela sanar suas preocupações com a segurança...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...se justificaria por essa relação estabelecida entre a narrativa policial e os indivíduos, que buscam nela sanar suas preocupações com a segurança...\""
+            },
+            {
+              "order": 2,
+              "action": "Assertiva da Banca",
+              "rationale": "\"O pronome presente no termo 'nela' (último parágrafo) tem como referente 'a narrativa policial'.\""
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento e Resolução (Protocolo dos 2 Candidatos)",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Candidato A (banca)",
+              "rationale": "a narrativa policial; Candidato B (concorrente): relação."
+            },
+            {
+              "order": 5,
+              "action": "Teste pelo predicado posterior (\"sanar suas preocupações com a segurança\")",
+              "rationale": "Os indivíduos buscam sanar suas aflições consumindo a ficção contida na narrativa policial (e não na relação)."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A11-G03-016 — CEBRASPE / Polícia Federal (2025) — Agente de Polícia Federal sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A11-G03-016 — CEBRASPE / Polícia Federal (2025) — Agente de Polícia Federal.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A11-G03-016 — CEBRASPE / Polícia Federal (2025) — Agente de Polícia Federal.",
           "blocks": [
             {
               "type": "list",
@@ -1076,6 +1696,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G03-017",
           "title": "EX-A11-G03-017 — CEBRASPE / UNB (2025) — Assistente Administrativo",
+          "prompt": "Texto: Dois parágrafos abordando a evolução histórica da instituição universitária (\"A universidade evoluiu... Mas ela pouco mudou... Para o terceiro milênio, ela deverá mudar...\").",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "Dois parágrafos abordando a evolução histórica da instituição universitária (\"A universidade evoluiu... Mas ela pouco mudou... Para o terceiro milênio, ela deverá mudar...\")."
+            },
+            {
+              "order": 2,
+              "action": "Assertiva da Banca",
+              "rationale": "\"O pronome 'ela' empregado no último período do terceiro parágrafo e no quarto parágrafo tem o mesmo referente nas duas ocorrências.\""
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento e Resolução",
+              "rationale": "Ambas as ocorrências do pronome pessoal reto feminino singular ela resgatam anaforicamente o sujeito temático principal A universidade."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A11-G03-017 — CEBRASPE / UNB (2025) — Assistente Administrativo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A11-G03-017 — CEBRASPE / UNB (2025) — Assistente Administrativo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A11-G03-017 — CEBRASPE / UNB (2025) — Assistente Administrativo.",
           "blocks": [
             {
               "type": "list",
@@ -1092,6 +1739,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G03-018",
           "title": "EX-A11-G03-018 — CEBRASPE / CAU-MG (2025) — Advogado",
+          "prompt": "Texto: \"...observou-se uma das maiores transformações técnicas nas habitações: a sua articulação aos sistemas de infraestrutura urbana.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...observou-se uma das maiores transformações técnicas nas habitações: a sua articulação aos sistemas de infraestrutura urbana.\""
+            },
+            {
+              "order": 2,
+              "action": "Assertiva da Banca",
+              "rationale": "\"No primeiro período do primeiro parágrafo, o vocábulo 'sua' tem como referente o termo 'transformações'.\""
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento e Resolução",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Alerta Morfológico",
+              "rationale": "sua concorda com articulação (coisa possuída), podendo retomar substantivo plural."
+            },
+            {
+              "order": 5,
+              "action": "Candidato A (banca)",
+              "rationale": "transformações; Candidato B (concorrente): habitações."
+            }
+          ],
+          "result": "Gabarito Oficial: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A11-G03-018 — CEBRASPE / CAU-MG (2025) — Advogado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A11-G03-018 — CEBRASPE / CAU-MG (2025) — Advogado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A11-G03-018 — CEBRASPE / CAU-MG (2025) — Advogado.",
           "blocks": [
             {
               "type": "list",
@@ -1164,8 +1843,12 @@
         {
           "trapId": "WARN-A11-G03-001",
           "title": "Confundir Compreensibilidade com Adequação Redacional",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Compreensibilidade com Adequação Redacional.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Compreensibilidade com Adequação Redacional.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Compreensibilidade com Adequação Redacional no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Compreensibilidade com Adequação Redacional.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Compreensibilidade com Adequação Redacional.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Compreensibilidade com Adequação Redacional para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Compreensibilidade com Adequação Redacional.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Compreensibilidade com Adequação Redacional.",
           "blocks": [
             {
               "type": "list",
@@ -1181,8 +1864,12 @@
         {
           "trapId": "WARN-A11-G03-002",
           "title": "Inversão Conceitual entre Coesivo e Referente",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Inversão Conceitual entre Coesivo e Referente.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Inversão Conceitual entre Coesivo e Referente.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Inversão Conceitual entre Coesivo e Referente no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Inversão Conceitual entre Coesivo e Referente.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Inversão Conceitual entre Coesivo e Referente.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Inversão Conceitual entre Coesivo e Referente para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Inversão Conceitual entre Coesivo e Referente.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Inversão Conceitual entre Coesivo e Referente.",
           "blocks": [
             {
               "type": "list",
@@ -1197,8 +1884,12 @@
         {
           "trapId": "WARN-A11-G03-003",
           "title": "O Erro do \"Atualmente\" e \"Nos Dias Atuais\" em Redações",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Erro do \"Atualmente\" e \"Nos Dias Atuais\" em Redações.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Erro do \"Atualmente\" e \"Nos Dias Atuais\" em Redações.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Erro do \"Atualmente\" e \"Nos Dias Atuais\" em Redações no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Erro do \"Atualmente\" e \"Nos Dias Atuais\" em Redações.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Erro do \"Atualmente\" e \"Nos Dias Atuais\" em Redações.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Erro do \"Atualmente\" e \"Nos Dias Atuais\" em Redações para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Erro do \"Atualmente\" e \"Nos Dias Atuais\" em Redações.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Erro do \"Atualmente\" e \"Nos Dias Atuais\" em Redações.",
           "blocks": [
             {
               "type": "list",
@@ -1213,8 +1904,12 @@
         {
           "trapId": "WARN-A11-G03-004",
           "title": "A Dêixis Viciosa em Estudos de Caso (\"O caso em tela\")",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Dêixis Viciosa em Estudos de Caso (\"O caso em tela\").",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Dêixis Viciosa em Estudos de Caso (\"O caso em tela\").",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Dêixis Viciosa em Estudos de Caso (\"O caso em tela\") no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Dêixis Viciosa em Estudos de Caso (\"O caso em tela\").",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Dêixis Viciosa em Estudos de Caso (\"O caso em tela\").",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Dêixis Viciosa em Estudos de Caso (\"O caso em tela\") para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Dêixis Viciosa em Estudos de Caso (\"O caso em tela\").",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Dêixis Viciosa em Estudos de Caso (\"O caso em tela\").",
           "blocks": [
             {
               "type": "list",
@@ -1229,8 +1924,12 @@
         {
           "trapId": "WARN-A11-G03-005",
           "title": "Generalização Indevida da Retomada Integral com Pronome \"Isso\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Generalização Indevida da Retomada Integral com Pronome \"Isso\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Generalização Indevida da Retomada Integral com Pronome \"Isso\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Generalização Indevida da Retomada Integral com Pronome \"Isso\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Generalização Indevida da Retomada Integral com Pronome \"Isso\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Generalização Indevida da Retomada Integral com Pronome \"Isso\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Generalização Indevida da Retomada Integral com Pronome \"Isso\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Generalização Indevida da Retomada Integral com Pronome \"Isso\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Generalização Indevida da Retomada Integral com Pronome \"Isso\".",
           "blocks": [
             {
               "type": "list",
@@ -1245,8 +1944,12 @@
         {
           "trapId": "WARN-A11-G03-006",
           "title": "Falsa Discordância de Número em Pronomes Possessivos",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Falsa Discordância de Número em Pronomes Possessivos.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Falsa Discordância de Número em Pronomes Possessivos.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Falsa Discordância de Número em Pronomes Possessivos no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Falsa Discordância de Número em Pronomes Possessivos.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Falsa Discordância de Número em Pronomes Possessivos.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Falsa Discordância de Número em Pronomes Possessivos para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Falsa Discordância de Número em Pronomes Possessivos.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Falsa Discordância de Número em Pronomes Possessivos.",
           "blocks": [
             {
               "type": "list",
@@ -1261,8 +1964,12 @@
         {
           "trapId": "WARN-A11-G03-007",
           "title": "Pegadinha FGV: O Falso Catafórico em \"Aqui é onde...\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha FGV: O Falso Catafórico em \"Aqui é onde...\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha FGV: O Falso Catafórico em \"Aqui é onde...\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha FGV: O Falso Catafórico em \"Aqui é onde...\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha FGV: O Falso Catafórico em \"Aqui é onde...\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha FGV: O Falso Catafórico em \"Aqui é onde...\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pegadinha FGV: O Falso Catafórico em \"Aqui é onde...\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha FGV: O Falso Catafórico em \"Aqui é onde...\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha FGV: O Falso Catafórico em \"Aqui é onde...\".",
           "blocks": [
             {
               "type": "list",

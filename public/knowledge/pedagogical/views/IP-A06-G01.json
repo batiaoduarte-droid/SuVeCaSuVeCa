@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A06-G01",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.809Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.563Z"
   },
   "unit": {
     "unitId": "IP-A06-G01",
@@ -977,6 +977,14 @@
         {
           "entityId": "RULE-IP-A06-G01-001",
           "title": "Tabela-Resumo de Formulações Canônicas",
+          "statement": "Tabela-Resumo de Formulações Canônicas",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Tabela-Resumo de Formulações Canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -1062,6 +1070,92 @@
         {
           "procedureId": "PROC-A06-G01-CONCEITOS-INICIAIS-001",
           "title": "Algoritmo Canônico de Análise Sintática da Oração",
+          "objective": "Executar o algoritmo decisório para Algoritmo Canônico de Análise Sintática da Oração",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo Canônico de Análise Sintática da Oração."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ancorar no Verbo",
+              "explanation": "Aplique o mantra: \"No desespero, vírgula, vá ao verbo\". Toda análise sintática inicia-se obrigatoriamente pela localização do verbo finito ou locução verbal.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Formular a Pergunta Canônica Pré-Verbal",
+              "explanation": "Antes do verbo, formule rigorosamente:",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Classificar a Resposta do Sujeito",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se houver resposta substantiva expressa na oração $\\rightarrow$ É o Sujeito (Simples ou Composto).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se o verbo for impessoal (ex.",
+              "explanation": "haver com sentido de existir/tempo) $\\rightarrow$ O sujeito é Inexistente (Oração Sem Sujeito).",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se a desinência verbal indicar a pessoa gramatical sem pronome grafado $\\rightarrow$ O sujeito é Oculto / Desinencial.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Extrair o Predicado por Exclusão",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Aplique a fórmula",
+              "explanation": "$\\text{Predicado} = \\text{Oração Inteira} - \\text{Sujeito}$.",
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Se o sujeito for inexistente $\\rightarrow$ $\\text{Predicado} = \\text{Toda a Oração}$.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Validar por Concordância",
+              "explanation": "Certifique-se de que o verbo flexiona-se em número e pessoa em estrita harmonia com o sujeito identificado.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo Canônico de Análise Sintática da Oração."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "formulas": [
+            "\\text{\"QUEM É QUE\" ou \"O QUE É QUE\"} + \\text{[VERBO]}?"
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1132,6 +1226,65 @@
         {
           "procedureId": "PROC-A06-G01-CONCEITOS-INICIAIS-002",
           "title": "Teste de Reconhecimento Topológico de Termos Deslocados",
+          "objective": "Executar o algoritmo decisório para Teste de Reconhecimento Topológico de Termos Deslocados",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Reconhecimento Topológico de Termos Deslocados."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole o Sujeito ($S$), o Verbo ($V$), os Complementos ($C$) e os Adjuntos Adverbiais ($Adv$).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Compare a ordem dos termos encontrados com o gabarito canônico",
+              "explanation": "$S - V - C - Adv$.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Diagnóstico de Posição",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Adjunto Adverbial no início absoluto (antes do sujeito ou do verbo) $\\rightarrow$ Deslocamento por Antecipação.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Termo inserido entre $S$ e $V$ ou entre $V$ e $C$ $\\rightarrow$ Deslocamento por Intercalação.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Sequência rigorosa $S - V - C - Adv$ $\\rightarrow$ Ordem Direta.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Reconhecimento Topológico de Termos Deslocados."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1170,6 +1323,62 @@
         {
           "procedureId": "PROC-A06-G01-CONCEITOS-INICIAIS-003",
           "title": "Resolução de Estruturas com Predicativo Antecipado e Sujeito Posposto",
+          "objective": "Executar o algoritmo decisório para Resolução de Estruturas com Predicativo Antecipado e Sujeito Posposto",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Resolução de Estruturas com Predicativo Antecipado e Sujeito Posposto."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar o Verbo de Ligação",
+              "explanation": "Identifique formas como são, eram, foram, parecem.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Formular a Pergunta do Sujeito",
+              "explanation": "Pergunte: \"O que é que [verbo de ligação] [adjetivo inicial]?\" (ex.: \"O que é que são inúmeros?\" $\\rightarrow$ Resposta: \"Os benefícios...\").",
+              "test": "Formular a Pergunta do Sujeito: Pergunte: \"O que é que [verbo de ligação] [adjetivo inicial]?\" (ex.: \"O que é que são inúmeros?\" $\\rightarrow$ Resposta: \"Os benefícios...\")."
+            },
+            {
+              "order": 3,
+              "action": "Reescrever na Ordem Direta Canônica",
+              "explanation": "Reestruture mentalmente ou no rascunho:",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Verificar a Regência da Concordância",
+              "explanation": "Comprove que o substantivo núcleo do sujeito posposto é quem dita a flexão plural/singular do verbo e do adjetivo predicativo.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Julgar a Assertiva",
+              "explanation": "Se a banca afirmar que o adjetivo inicial é sujeito ou que o substantivo concorda com o adjetivo, marque o item como ERRADO.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Resolução de Estruturas com Predicativo Antecipado e Sujeito Posposto."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "formulas": [
+            "\\text{[Sujeito Completo]} + \\text{[Verbo de Ligação]} + \\text{[Predicativo do Sujeito]}"
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1211,6 +1420,71 @@
         {
           "procedureId": "PROC-A06-G01-CONCEITOS-INICIAIS-004",
           "title": "Validação Formal do Núcleo do Sujeito (Filtro Morfocategorial e Teste das Setas)",
+          "objective": "Executar o algoritmo decisório para Validação Formal do Núcleo do Sujeito (Filtro Morfocategorial e Teste das Setas)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Validação Formal do Núcleo do Sujeito (Filtro Morfocategorial e Teste das Setas)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Delimitar o Sujeito Integral",
+              "explanation": "Isole todo o sintagma nominal sujeito.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Aplicar o Teste das Setas (Palavra Mais Especificada)",
+              "explanation": "Desenhe as conexões de dependência interna. Identifique a palavra que recebe as setas de determinação dos demais termos.",
+              "test": "Aplicar o Teste das Setas (Palavra Mais Especificada): Desenhe as conexões de dependência interna. Identifique a palavra que recebe as setas de determinação dos demais termos."
+            },
+            {
+              "order": 3,
+              "action": "Aplicar o Filtro Morfocategorial",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "O núcleo deve ser obrigatoriamente um substantivo (ou pronome/numeral substantivo).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Exclua adjetivos e locuções adjetivas (são adjuntos adnominais satélites).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Verificar Termo Especificativo (Aposto)",
+              "explanation": "Se houver substantivo específico que dá nome ao substantivo genérico anterior (sem vírgulas), classifique o termo específico como aposto especificativo e mantenha o termo genérico como núcleo.",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Gatilho de Rejeição Imediata",
+              "explanation": "Se a assertiva justificar o núcleo por \"transmitir a ideia principal\" ou \"ser a parte mais importante\", julgue o item como ERRADO.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Validação Formal do Núcleo do Sujeito (Filtro Morfocategorial e Teste das Setas)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1256,6 +1530,75 @@
         {
           "procedureId": "PROC-A06-V001-002-CONCEITOS-INICIAIS-001",
           "title": "Algoritmo Geral de Análise Sintática da Oração",
+          "objective": "Executar o algoritmo decisório para Algoritmo Geral de Análise Sintática da Oração",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo Geral de Análise Sintática da Oração."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar o Verbo ou Locução",
+              "explanation": "Bordão: \"No desespero, vírgula, vá ao verbo\". Toda análise sintática inicia-se pelo verbo.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Formular a Pergunta Interrogativa",
+              "explanation": "Antes do verbo, formule:",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Classificar a Resposta Sintática",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Resposta substantiva interna à oração $\\rightarrow$ Sujeito (Simples/Composto).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Verbo impessoal (haver no sentido de existir/tempo) $\\rightarrow$ Sujeito Inexistente.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Desinência identificável sem pronome expresso $\\rightarrow$ Sujeito Oculto/Desinencial.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Extrair o Predicado",
+              "explanation": "",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo Geral de Análise Sintática da Oração."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "formulas": [
+            "\\text{\"QUEM É QUE\" ou \"O QUE É QUE\"} + \\text{[VERBO]}?",
+            "\\text{Predicado} = \\text{Oração Completa} - \\text{Sujeito}"
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1319,6 +1662,59 @@
         {
           "procedureId": "PROC-A06-V001-002-CONCEITOS-INICIAIS-002",
           "title": "Teste de Reconhecimento de Termo Deslocado",
+          "objective": "Executar o algoritmo decisório para Teste de Reconhecimento de Termo Deslocado",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Reconhecimento de Termo Deslocado."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identifique o Sujeito ($S$), o Verbo ($V$), os Complementos ($C$) e os Adjuntos Adverbiais ($Adv$).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Compare a posição com o padrão $S - V - C - Adv$",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Adjunto no início da oração $\\rightarrow$ Deslocamento por Antecipação.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Adjunto entre Sujeito e Verbo ou Verbo e Complemento $\\rightarrow$ Deslocamento por Intercalação.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Adjunto ao término $\\rightarrow$ Ordem Direta.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Reconhecimento de Termo Deslocado."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1356,6 +1752,59 @@
         {
           "procedureId": "PROC-A06-V001-002-CONCEITOS-INICIAIS-003",
           "title": "Procedimento para Análise de Oração Invertida no CEBRASPE",
+          "objective": "Executar o algoritmo decisório para Procedimento para Análise de Oração Invertida no CEBRASPE",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento para Análise de Oração Invertida no CEBRASPE."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize o verbo finito (frequentemente verbo de ligação",
+              "explanation": "ser, estar, parecer).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Pergunte",
+              "explanation": "\"O que é que [verbo] [termo inicial]?\"",
+              "test": "Pergunte: \"O que é que [verbo] [termo inicial]?\""
+            },
+            {
+              "order": 3,
+              "action": "Isole o bloco substantivo que responde à pergunta (este é o sujeito posposto).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Reorganize a frase na ordem canônica",
+              "explanation": "Sujeito + Verbo + Predicativo.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Valide que o verbo flexiona-se obrigatoriamente para concordar com o sujeito posposto, e não com o termo adjetivo antecipado.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento para Análise de Oração Invertida no CEBRASPE."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1387,6 +1836,53 @@
         {
           "procedureId": "PROC-A06-V001-002-CONCEITOS-INICIAIS-004",
           "title": "Procedimento de Validação Formal do Núcleo do Sujeito",
+          "objective": "Executar o algoritmo decisório para Procedimento de Validação Formal do Núcleo do Sujeito",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento de Validação Formal do Núcleo do Sujeito."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Delimite o sujeito completo da oração.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Teste das Setas (Especificação)",
+              "explanation": "Localize a palavra sobre a qual recaem os determinantes e modificadores (a palavra mais especificada).",
+              "test": "Teste das Setas (Especificação): Localize a palavra sobre a qual recaem os determinantes e modificadores (a palavra mais especificada)."
+            },
+            {
+              "order": 3,
+              "action": "Filtro Morfológico",
+              "explanation": "Verifique a classe gramatical do núcleo. O núcleo DEVE ser substantivo, pronome substantivo ou numeral substantivo. Exclua qualquer adjetivo da composição do núcleo.",
+              "test": "Filtro Morfológico: Verifique a classe gramatical do núcleo. O núcleo DEVE ser substantivo, pronome substantivo ou numeral substantivo. Exclua qualquer adjetivo da composição do núcleo."
+            },
+            {
+              "order": 4,
+              "action": "Descarte de \"Ideia Principal\"",
+              "explanation": "Se a assertiva justificar o núcleo por \"transmitir a ideia principal\", julgue o item imediatamente como ERRADO.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento de Validação Formal do Núcleo do Sujeito."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1421,6 +1917,22 @@
         {
           "contrastId": "CONTRAST-IP-A06-G01-001",
           "title": "Tabela 1: Frase vs Oração vs Período",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 1: Frase",
+          "conceptB": "Oração",
+          "sideA": {
+            "label": "Tabela 1: Frase",
+            "criteria": [
+              "Características diagnósticas de Tabela 1: Frase"
+            ]
+          },
+          "sideB": {
+            "label": "Oração",
+            "criteria": [
+              "Características diagnósticas de Oração"
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -1472,6 +1984,22 @@
         {
           "contrastId": "CONTRAST-IP-A06-G01-002",
           "title": "Tabela 2: Sujeito (Sintático) vs Referente (Semântico)",
+          "contrastType": "syntactic",
+          "conceptA": "Tabela 2: Sujeito (Sintático)",
+          "conceptB": "Referente (Semântico)",
+          "sideA": {
+            "label": "Tabela 2: Sujeito (Sintático)",
+            "criteria": [
+              "Características diagnósticas de Tabela 2: Sujeito (Sintático)"
+            ]
+          },
+          "sideB": {
+            "label": "Referente (Semântico)",
+            "criteria": [
+              "Características diagnósticas de Referente (Semântico)"
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -1518,6 +2046,22 @@
         {
           "contrastId": "CONTRAST-IP-A06-G01-003",
           "title": "Tabela 3: Abordagem Escolar Tradicional vs Gramática Moderna (Núcleo do Sujeito)",
+          "contrastType": "syntactic",
+          "conceptA": "Tabela 3: Abordagem Escolar Tradicional",
+          "conceptB": "Gramática Moderna (Núcleo do Sujeito)",
+          "sideA": {
+            "label": "Tabela 3: Abordagem Escolar Tradicional",
+            "criteria": [
+              "Características diagnósticas de Tabela 3: Abordagem Escolar Tradicional"
+            ]
+          },
+          "sideB": {
+            "label": "Gramática Moderna (Núcleo do Sujeito)",
+            "criteria": [
+              "Características diagnósticas de Gramática Moderna (Núcleo do Sujeito)"
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -1563,6 +2107,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G01-001",
           "title": "Enunciados sob análise",
+          "prompt": "\"João chegou.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"João chegou.\"",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "\"Puxa!\"",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "\"A força das mulheres.\"",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "\"Cheguei!\"",
+              "rationale": null
+            }
+          ],
+          "result": "\"Cheguei!\"",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciados sob análise sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciados sob análise.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciados sob análise.",
           "blocks": [
             {
               "type": "list",
@@ -1579,6 +2150,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G01-002",
           "title": "Análise e Resolução",
+          "prompt": "\"João chegou.\": Enunciado com sentido completo estruturado em torno da forma verbal chegou $\\rightarrow$ Frase Verbal e Oração.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"João chegou.\"",
+              "rationale": "Enunciado com sentido completo estruturado em torno da forma verbal chegou $\\rightarrow$ Frase Verbal e Oração."
+            },
+            {
+              "order": 2,
+              "action": "\"Puxa!\"",
+              "rationale": "Interjeição emotiva de sentido pleno sem verbo $\\rightarrow$ Frase Nominal (não é oração)."
+            },
+            {
+              "order": 3,
+              "action": "\"A força das mulheres.\"",
+              "rationale": "Sintagma nominal típico de título dissertativo sem verbo $\\rightarrow$ Frase Nominal."
+            },
+            {
+              "order": 4,
+              "action": "\"Cheguei!\"",
+              "rationale": "Verbo intransitivo que encerra sentido completo em si mesmo $\\rightarrow$ Frase Verbal, Oração e Período Simples."
+            }
+          ],
+          "result": "\"Cheguei!\": Verbo intransitivo que encerra sentido completo em si mesmo $\\rightarrow$ Frase Verbal, Oração e Período Simples.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise e Resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise e Resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise e Resolução.",
           "blocks": [
             {
               "type": "list",
@@ -1595,6 +2193,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G01-003",
           "title": "Enunciados sob análise",
+          "prompt": "\"Esses doces parecem muito gostosos.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"Esses doces parecem muito gostosos.\"",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "\"Há dúvidas sobre esse assunto.\"",
+              "rationale": null
+            }
+          ],
+          "result": "\"Há dúvidas sobre esse assunto.\"",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciados sob análise sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciados sob análise.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciados sob análise.",
           "blocks": [
             {
               "type": "list",
@@ -1609,6 +2224,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G01-004",
           "title": "Desenvolvimento e Justificativa",
+          "prompt": "Oração 1: Verbo parecem. Pergunta: O que é que parece muito gostoso? Resposta: Esses doces (Sujeito). O que resta (parecem muito gostosos) é o Predicado.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração 1",
+              "rationale": "Verbo parecem. Pergunta: O que é que parece muito gostoso? Resposta: Esses doces (Sujeito). O que resta (parecem muito gostosos) é o Predicado."
+            },
+            {
+              "order": 2,
+              "action": "Oração 2",
+              "rationale": "Verbo Há (impessoal, sentido de existir). Pergunta: Quem é que há? Sem resposta (Sujeito Inexistente). Como o predicado é tudo menos o sujeito e este inexiste, a oração inteira (Há dúvidas sobre esse assunto) é o Predicado Integral."
+            }
+          ],
+          "result": "Oração 2: Verbo Há (impessoal, sentido de existir). Pergunta: Quem é que há? Sem resposta (Sujeito Inexistente). Como o predicado é tudo menos o sujeito e este inexiste, a oração inteira (Há dúvidas sobre esse assunto) é o Predicado Integral.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Desenvolvimento e Justificativa sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Desenvolvimento e Justificativa.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Desenvolvimento e Justificativa.",
           "blocks": [
             {
               "type": "list",
@@ -1623,6 +2255,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G01-005",
           "title": "Enunciados sob análise",
+          "prompt": "\"Os alunos estudaram matemática ontem à tarde.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"Os alunos estudaram matemática ontem à tarde.\"",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "\"Ontem à tarde, os alunos estudaram matemática.\"",
+              "rationale": null
+            }
+          ],
+          "result": "\"Ontem à tarde, os alunos estudaram matemática.\"",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciados sob análise sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciados sob análise.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciados sob análise.",
           "blocks": [
             {
               "type": "list",
@@ -1637,6 +2286,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G01-006",
           "title": "Análise e Resolução",
+          "prompt": "Estrutura 1: Os alunos ($S$) + estudaram ($V$) + matemática ($C/OD$) + ontem à tarde ($Adv$). Sequência canônica $S-V-C-Adv$ $\\rightarrow$ Ordem Direta (SVC).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura 1",
+              "rationale": "Os alunos ($S$) + estudaram ($V$) + matemática ($C/OD$) + ontem à tarde ($Adv$). Sequência canônica $S-V-C-Adv$ $\\rightarrow$ Ordem Direta (SVC)."
+            },
+            {
+              "order": 2,
+              "action": "Estrutura 2",
+              "rationale": "Ontem à tarde ($Adv$) antecipado para o início, seguido por $S-V-C$ $\\rightarrow$ Ordem Inversa (Deslocamento por Antecipação)."
+            }
+          ],
+          "result": "Estrutura 2: Ontem à tarde ($Adv$) antecipado para o início, seguido por $S-V-C$ $\\rightarrow$ Ordem Inversa (Deslocamento por Antecipação).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise e Resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise e Resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise e Resolução.",
           "blocks": [
             {
               "type": "list",
@@ -1651,6 +2317,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G01-007",
           "title": "Enunciado sob análise",
+          "prompt": "\"Os meninos jogam futebol. Jogam futebol todos os dias.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"\"Os meninos jogam futebol. Jogam futebol todos os dias.\"...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado sob análise.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sob análise sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado sob análise.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado sob análise.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1661,6 +2349,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G01-008",
           "title": "Análise e Resolução",
+          "prompt": "1ª Oração (\"Os meninos jogam futebol.\"): Verbo jogam; sujeito sintático explícito = \"Os meninos\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "ª Oração (\"Os meninos jogam futebol.\")",
+              "rationale": "Verbo jogam; sujeito sintático explícito = \"Os meninos\"."
+            },
+            {
+              "order": 2,
+              "action": "ª Oração (\"Jogam futebol todos os dias.\")",
+              "rationale": "Verbo Jogam; sujeito sintático = Oculto / Desinencial (eles)."
+            },
+            {
+              "order": 3,
+              "action": "Análise do Termo \"Os meninos\" em relação à 2ª oração",
+              "rationale": "Não é sujeito sintático da segunda oração (pois está separado por ponto final); atua estritamente como seu Referente Semântico na cadeia discursiva."
+            }
+          ],
+          "result": "Análise do Termo \"Os meninos\" em relação à 2ª oração: Não é sujeito sintático da segunda oração (pois está separado por ponto final); atua estritamente como seu Referente Semântico na cadeia discursiva.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise e Resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise e Resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise e Resolução.",
           "blocks": [
             {
               "type": "list",
@@ -1676,6 +2386,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G01-009",
           "title": "Dados da Questão",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE – CNJ – Analista Judiciário (2024)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE – CNJ – Analista Judiciário (2024)"
+            },
+            {
+              "order": 2,
+              "action": "Texto de Apoio",
+              "rationale": "\"Inúmeros são os benefícios do oferecimento de produtos e da prestação de serviços no ambiente digital.\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"No segundo período do primeiro parágrafo, a flexão dos termos “são” e “benefícios” no plural deve-se à concordância que estabelecem com “inúmeros”, que funciona como sujeito da oração.\""
+            }
+          ],
+          "result": "Assertiva: \"No segundo período do primeiro parágrafo, a flexão dos termos “são” e “benefícios” no plural deve-se à concordância que estabelecem com “inúmeros”, que funciona como sujeito da oração.\"",
+          "decisivePoint": "Aplicação estrita da regra canônica de Dados da Questão sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Dados da Questão.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Dados da Questão.",
           "blocks": [
             {
               "type": "list",
@@ -1691,6 +2423,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G01-010",
           "title": "Resolução Comentada",
+          "prompt": "Reorganização na ordem direta: \"Os benefícios do oferecimento de produtos e da prestação de serviços no ambiente digital são inúmeros.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Reorganização na ordem direta",
+              "rationale": "\"Os benefícios do oferecimento de produtos e da prestação de serviços no ambiente digital são inúmeros.\""
+            },
+            {
+              "order": 2,
+              "action": "O sujeito da oração é \"os benefícios [...]\", cujo núcleo é o substantivo \"benefícios\".",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "O verbo \"são\" é verbo de ligação que flexiona no plural para concordar com o sujeito posposto \"benefícios\".",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "A palavra \"inúmeros\" é adjetivo que atua como predicativo do sujeito antecipado, flexionando-se no plural por concordância nominal com o sujeito \"benefícios\".",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "A banca inverteu a relação",
+              "rationale": "quem dita a concordância é \"benefícios\", e não \"inúmeros\"."
+            }
+          ],
+          "result": "A banca inverteu a relação: quem dita a concordância é \"benefícios\", e não \"inúmeros\".",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Comentada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Comentada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Comentada.",
           "blocks": [
             {
               "type": "list",
@@ -1708,6 +2472,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G01-011",
           "title": "Gabarito",
+          "prompt": "ERRADO",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"ERRADO...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1718,6 +2504,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G01-012",
           "title": "Dados da Questão",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE – Pref. de Cachoeiro de Itapemirim-ES (2024)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE – Pref. de Cachoeiro de Itapemirim-ES (2024)"
+            },
+            {
+              "order": 2,
+              "action": "Texto de Apoio",
+              "rationale": "\"A expressão 'inteligência artificial' é muito popular, tanto na literatura técnica quanto no imaginário popular.\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"Na oração que inicia o texto — “A expressão ‘inteligência artificial’ é muito popular” —, o núcleo do sujeito é ‘inteligência artificial’, que transmite a ideia principal da citada afirmação.\""
+            }
+          ],
+          "result": "Assertiva: \"Na oração que inicia o texto — “A expressão ‘inteligência artificial’ é muito popular” —, o núcleo do sujeito é ‘inteligência artificial’, que transmite a ideia principal da citada afirmação.\"",
+          "decisivePoint": "Aplicação estrita da regra canônica de Dados da Questão sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Dados da Questão.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Dados da Questão.",
           "blocks": [
             {
               "type": "list",
@@ -1733,6 +2541,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G01-013",
           "title": "Resolução Comentada",
+          "prompt": "Delimitação do Sujeito: Verbo \"é\". O que é muito popular? Sujeito completo: \"[A expressão 'inteligência artificial']\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Delimitação do Sujeito",
+              "rationale": "Verbo \"é\". O que é muito popular? Sujeito completo: \"[A expressão 'inteligência artificial']\"."
+            },
+            {
+              "order": 2,
+              "action": "Aplicação dos Critérios Formais de Núcleo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "O artigo \"A\" determina \"expressão\";",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "O sintagma \"'inteligência artificial'\" dá o nome específico à expressão genérica (atua como aposto especificativo);",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "A palavra mais especificada receptora das determinações é o substantivo comum \"expressão\", que constitui o único núcleo sintático do sujeito.",
+              "rationale": null
+            }
+          ],
+          "result": "Erro 3: A assertiva apoia-se na justificativa semântica de \"ideia principal\", critério refutado pela sintaxe formal.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Comentada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Comentada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Comentada.",
           "blocks": [
             {
               "type": "list",
@@ -1772,6 +2612,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G01-014",
           "title": "Gabarito",
+          "prompt": "ERRADO",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"ERRADO...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Gabarito.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1782,6 +2644,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G01-015",
           "title": "EX-A06-V001-002-CONCEITOS-INICIAIS-001 — Demonstração de Frase Nominal e Frase Verbal",
+          "prompt": "\"João chegou.\": Sentido completo + verbo expresso $\\rightarrow$ Frase Verbal e Oração.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"João chegou.\"",
+              "rationale": "Sentido completo + verbo expresso $\\rightarrow$ Frase Verbal e Oração."
+            },
+            {
+              "order": 2,
+              "action": "\"Puxa!\"",
+              "rationale": "Interjeição com sentido contextual completo, sem verbo $\\rightarrow$ Frase Nominal (não é oração)."
+            },
+            {
+              "order": 3,
+              "action": "\"A força das mulheres.\"",
+              "rationale": "Título dissertativo sem verbo $\\rightarrow$ Frase Nominal."
+            },
+            {
+              "order": 4,
+              "action": "\"Cheguei!\"",
+              "rationale": "Verbo com sentido pleno $\\rightarrow$ Frase Verbal e Oração."
+            }
+          ],
+          "result": "\"Cheguei!\": Verbo com sentido pleno $\\rightarrow$ Frase Verbal e Oração.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-V001-002-CONCEITOS-INICIAIS-001 — Demonstração de Frase Nominal e Frase Verbal sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-V001-002-CONCEITOS-INICIAIS-001 — Demonstração de Frase Nominal e Frase Verbal.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-V001-002-CONCEITOS-INICIAIS-001 — Demonstração de Frase Nominal e Frase Verbal.",
           "blocks": [
             {
               "type": "list",
@@ -1798,6 +2687,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G01-016",
           "title": "EX-A06-V001-002-CONCEITOS-INICIAIS-002 — Oração com Sujeito Explícito vs. Oração com Sujeito Inexistente",
+          "prompt": "\"Esses doces parecem muito gostosos.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"Esses doces parecem muito gostosos.\"",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Verbo",
+              "rationale": "parecem. Pergunta: O que é que parece gostoso? $\\rightarrow$ Esses doces (Sujeito)."
+            },
+            {
+              "order": 3,
+              "action": "Predicado",
+              "rationale": "parecem muito gostosos."
+            },
+            {
+              "order": 4,
+              "action": "\"Há dúvidas sobre esse assunto.\"",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Verbo",
+              "rationale": "Há (impessoal). Pergunta: Quem é que há? $\\rightarrow$ Sem resposta (Sujeito Inexistente)."
+            }
+          ],
+          "result": "Predicado: a oração inteira (Há dúvidas sobre esse assunto).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-V001-002-CONCEITOS-INICIAIS-002 — Oração com Sujeito Explícito vs. Oração com Sujeito Inexistente sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-V001-002-CONCEITOS-INICIAIS-002 — Oração com Sujeito Explícito vs. Oração com Sujeito Inexistente.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-V001-002-CONCEITOS-INICIAIS-002 — Oração com Sujeito Explícito vs. Oração com Sujeito Inexistente.",
           "blocks": [
             {
               "type": "list",
@@ -1834,6 +2755,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G01-017",
           "title": "EX-A06-V001-002-CONCEITOS-INICIAIS-003 — Ordem Direta vs. Ordem Indireta com Adjunto Deslocado",
+          "prompt": "\"Os alunos estudaram matemática ontem à tarde.\" $\\rightarrow$ $S (\\text{Os alunos}) + V (\\text{estudaram}) + C (\\text{matemática}) + Adv (\\text{ontem à tarde})$ $\\rightarrow$ Ordem Direta (SVC).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"Os alunos estudaram matemática ontem à tarde.\" $\\rightarrow$ $S (\\text{Os alunos}) + V (\\text{estudaram}) + C (\\text{matemática}) + Adv (\\text{ontem à tarde})$ $\\rightarrow$ Ordem Direta (SVC).",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "\"Ontem à tarde, os alunos estudaram matemática.\" $\\rightarrow$ $Adv (\\text{Ontem à tarde}) + S + V + C$ $\\rightarrow$ Ordem Inversa (Deslocamento por Antecipação).",
+              "rationale": null
+            }
+          ],
+          "result": "\"Ontem à tarde, os alunos estudaram matemática.\" $\\rightarrow$ $Adv (\\text{Ontem à tarde}) + S + V + C$ $\\rightarrow$ Ordem Inversa (Deslocamento por Antecipação).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-V001-002-CONCEITOS-INICIAIS-003 — Ordem Direta vs. Ordem Indireta com Adjunto Deslocado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-V001-002-CONCEITOS-INICIAIS-003 — Ordem Direta vs. Ordem Indireta com Adjunto Deslocado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-V001-002-CONCEITOS-INICIAIS-003 — Ordem Direta vs. Ordem Indireta com Adjunto Deslocado.",
           "blocks": [
             {
               "type": "list",
@@ -1848,6 +2786,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G01-018",
           "title": "EX-A06-V001-002-CONCEITOS-INICIAIS-004 — Separação entre Sujeito Sintático e Referente Semântico",
+          "prompt": "Enunciado: \"Os meninos jogam futebol. Jogam futebol todos os dias.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "\"Os meninos jogam futebol. Jogam futebol todos os dias.\""
+            },
+            {
+              "order": 2,
+              "action": "Oração 1",
+              "rationale": "Sujeito simples expresso = Os meninos."
+            },
+            {
+              "order": 3,
+              "action": "Oração 2",
+              "rationale": "Sujeito = Oculto/Desinencial (eles). O termo Os meninos atua como Referente Semântico contextual da elipse, não como sujeito sintático direto da 2ª oração."
+            }
+          ],
+          "result": "Oração 2: Sujeito = Oculto/Desinencial (eles). O termo Os meninos atua como Referente Semântico contextual da elipse, não como sujeito sintático direto da 2ª oração.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-V001-002-CONCEITOS-INICIAIS-004 — Separação entre Sujeito Sintático e Referente Semântico sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-V001-002-CONCEITOS-INICIAIS-004 — Separação entre Sujeito Sintático e Referente Semântico.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-V001-002-CONCEITOS-INICIAIS-004 — Separação entre Sujeito Sintático e Referente Semântico.",
           "blocks": [
             {
               "type": "list",
@@ -1863,6 +2823,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G01-019",
           "title": "EX-A06-V001-002-CONCEITOS-INICIAIS-005 — Questão CNJ 2024 (Sujeito Posposto e Predicativo Antecipado)",
+          "prompt": "Banca/Órgão: CESPE / CEBRASPE – CNJ – Analista Judiciário (2024).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca/Órgão",
+              "rationale": "CESPE / CEBRASPE – CNJ – Analista Judiciário (2024)."
+            },
+            {
+              "order": 2,
+              "action": "Trecho",
+              "rationale": "\"Inúmeros são os benefícios do oferecimento de produtos e da prestação de serviços no ambiente digital.\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"No segundo período do primeiro parágrafo, a flexão dos termos “são” e “benefícios” no plural deve-se à concordância que estabelecem com “inúmeros”, que funciona como sujeito da oração.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução",
+              "rationale": "Na ordem direta: \"Os benefícios [...] são inúmeros\". O sujeito é \"os benefícios...\" (núcleo: benefícios), o verbo é de ligação (são) e inúmeros é o predicativo do sujeito. O sujeito rege o verbo e o predicativo; a banca inverteu a relação."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-V001-002-CONCEITOS-INICIAIS-005 — Questão CNJ 2024 (Sujeito Posposto e Predicativo Antecipado) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-V001-002-CONCEITOS-INICIAIS-005 — Questão CNJ 2024 (Sujeito Posposto e Predicativo Antecipado).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-V001-002-CONCEITOS-INICIAIS-005 — Questão CNJ 2024 (Sujeito Posposto e Predicativo Antecipado).",
           "blocks": [
             {
               "type": "list",
@@ -1880,6 +2872,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G01-020",
           "title": "EX-A06-V001-002-CONCEITOS-INICIAIS-006 — Questão Prefeitura de Cachoeiro de Itapemirim 2024 (Núcleo do Sujeito e Aposto)",
+          "prompt": "Banca/Órgão: CESPE / CEBRASPE – Prefeitura de Cachoeiro de Itapemirim-ES (2024).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca/Órgão",
+              "rationale": "CESPE / CEBRASPE – Prefeitura de Cachoeiro de Itapemirim-ES (2024)."
+            },
+            {
+              "order": 2,
+              "action": "Trecho",
+              "rationale": "\"A expressão 'inteligência artificial' é muito popular, tanto na literatura técnica quanto no imaginário popular.\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"Na oração que inicia o texto — “A expressão ‘inteligência artificial’ é muito popular” —, o núcleo do sujeito é ‘inteligência artificial’, que transmite a ideia principal da citada afirmação.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução",
+              "rationale": "O sujeito é \"A expressão 'inteligência artificial'\". O núcleo é o substantivo comum \"expressão\"; \"'inteligência artificial'\" é o aposto especificativo (e contém o adjetivo artificial, que não integra núcleo). A justificativa de \"ideia principal\" é conceitualmente errônea."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-V001-002-CONCEITOS-INICIAIS-006 — Questão Prefeitura de Cachoeiro de Itapemirim 2024 (Núcleo do Sujeito e Aposto) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-V001-002-CONCEITOS-INICIAIS-006 — Questão Prefeitura de Cachoeiro de Itapemirim 2024 (Núcleo do Sujeito e Aposto).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-V001-002-CONCEITOS-INICIAIS-006 — Questão Prefeitura de Cachoeiro de Itapemirim 2024 (Núcleo do Sujeito e Aposto).",
           "blocks": [
             {
               "type": "list",
@@ -1970,8 +2994,12 @@
         {
           "trapId": "WARN-A06-G01-CONCEITOS-INICIAIS-001",
           "title": "O Erro de Tratar Frase e Oração como Sinônimos na Contagem de Períodos",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Erro de Tratar Frase e Oração como Sinônimos na Contagem de Períodos.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Erro de Tratar Frase e Oração como Sinônimos na Contagem de Períodos.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Erro de Tratar Frase e Oração como Sinônimos na Contagem de Períodos no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Erro de Tratar Frase e Oração como Sinônimos na Contagem de Períodos.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Erro de Tratar Frase e Oração como Sinônimos na Contagem de Períodos.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Erro de Tratar Frase e Oração como Sinônimos na Contagem de Períodos para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Erro de Tratar Frase e Oração como Sinônimos na Contagem de Períodos.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Erro de Tratar Frase e Oração como Sinônimos na Contagem de Períodos.",
           "blocks": [
             {
               "type": "list",
@@ -1986,8 +3014,12 @@
         {
           "trapId": "WARN-A06-G01-CONCEITOS-INICIAIS-002",
           "title": "O Mito Escolar de que \"Não se Pode Iniciar Frase com Preposição\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Mito Escolar de que \"Não se Pode Iniciar Frase com Preposição\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Mito Escolar de que \"Não se Pode Iniciar Frase com Preposição\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Mito Escolar de que \"Não se Pode Iniciar Frase com Preposição\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Mito Escolar de que \"Não se Pode Iniciar Frase com Preposição\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Mito Escolar de que \"Não se Pode Iniciar Frase com Preposição\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Mito Escolar de que \"Não se Pode Iniciar Frase com Preposição\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Mito Escolar de que \"Não se Pode Iniciar Frase com Preposição\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Mito Escolar de que \"Não se Pode Iniciar Frase com Preposição\".",
           "blocks": [
             {
               "type": "list",
@@ -2002,8 +3034,12 @@
         {
           "trapId": "WARN-A06-G01-CONCEITOS-INICIAIS-003",
           "title": "Confundir Sujeito Sintático com Referente Semântico em Orações Consecutivas",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Sujeito Sintático com Referente Semântico em Orações Consecutivas.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Sujeito Sintático com Referente Semântico em Orações Consecutivas.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Sujeito Sintático com Referente Semântico em Orações Consecutivas no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Sujeito Sintático com Referente Semântico em Orações Consecutivas.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Sujeito Sintático com Referente Semântico em Orações Consecutivas.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Sujeito Sintático com Referente Semântico em Orações Consecutivas para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Sujeito Sintático com Referente Semântico em Orações Consecutivas.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Sujeito Sintático com Referente Semântico em Orações Consecutivas.",
           "blocks": [
             {
               "type": "list",
@@ -2018,8 +3054,12 @@
         {
           "trapId": "WARN-A06-G01-CONCEITOS-INICIAIS-004",
           "title": "Inversão de Papéis Sintáticos: Atribuir Regência de Concordância ao Predicativo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Inversão de Papéis Sintáticos: Atribuir Regência de Concordância ao Predicativo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Inversão de Papéis Sintáticos: Atribuir Regência de Concordância ao Predicativo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Inversão de Papéis Sintáticos: Atribuir Regência de Concordância ao Predicativo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Inversão de Papéis Sintáticos: Atribuir Regência de Concordância ao Predicativo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Inversão de Papéis Sintáticos: Atribuir Regência de Concordância ao Predicativo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Inversão de Papéis Sintáticos: Atribuir Regência de Concordância ao Predicativo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Inversão de Papéis Sintáticos: Atribuir Regência de Concordância ao Predicativo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Inversão de Papéis Sintáticos: Atribuir Regência de Concordância ao Predicativo.",
           "blocks": [
             {
               "type": "list",
@@ -2034,8 +3074,12 @@
         {
           "trapId": "WARN-A06-G01-CONCEITOS-INICIAIS-005",
           "title": "Confundir Relevância Temática Global com Núcleo Sintático Estrutural",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Relevância Temática Global com Núcleo Sintático Estrutural.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Relevância Temática Global com Núcleo Sintático Estrutural.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Relevância Temática Global com Núcleo Sintático Estrutural no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Relevância Temática Global com Núcleo Sintático Estrutural.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Relevância Temática Global com Núcleo Sintático Estrutural.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Relevância Temática Global com Núcleo Sintático Estrutural para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Relevância Temática Global com Núcleo Sintático Estrutural.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Relevância Temática Global com Núcleo Sintático Estrutural.",
           "blocks": [
             {
               "type": "list",
@@ -2050,8 +3094,12 @@
         {
           "trapId": "WARN-A06-V001-002-CONCEITOS-INICIAIS-001",
           "title": "O Erro de Tratar Frase e Oração como Sinônimos",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Erro de Tratar Frase e Oração como Sinônimos.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Erro de Tratar Frase e Oração como Sinônimos.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Erro de Tratar Frase e Oração como Sinônimos no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Erro de Tratar Frase e Oração como Sinônimos.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Erro de Tratar Frase e Oração como Sinônimos.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Erro de Tratar Frase e Oração como Sinônimos para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Erro de Tratar Frase e Oração como Sinônimos.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Erro de Tratar Frase e Oração como Sinônimos.",
           "blocks": [
             {
               "type": "list",
@@ -2066,8 +3114,12 @@
         {
           "trapId": "WARN-A06-V001-002-CONCEITOS-INICIAIS-002",
           "title": "O Mito Escolar da Proibição de Preposição Inicial",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Mito Escolar da Proibição de Preposição Inicial.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Mito Escolar da Proibição de Preposição Inicial.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Mito Escolar da Proibição de Preposição Inicial no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Mito Escolar da Proibição de Preposição Inicial.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Mito Escolar da Proibição de Preposição Inicial.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Mito Escolar da Proibição de Preposição Inicial para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Mito Escolar da Proibição de Preposição Inicial.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Mito Escolar da Proibição de Preposição Inicial.",
           "blocks": [
             {
               "type": "list",
@@ -2082,8 +3134,12 @@
         {
           "trapId": "WARN-A06-V001-002-CONCEITOS-INICIAIS-003",
           "title": "Confundir Sujeito Sintático com Referente em Orações Distintas",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Sujeito Sintático com Referente em Orações Distintas.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Sujeito Sintático com Referente em Orações Distintas.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Sujeito Sintático com Referente em Orações Distintas no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Sujeito Sintático com Referente em Orações Distintas.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Sujeito Sintático com Referente em Orações Distintas.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Sujeito Sintático com Referente em Orações Distintas para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Sujeito Sintático com Referente em Orações Distintas.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Sujeito Sintático com Referente em Orações Distintas.",
           "blocks": [
             {
               "type": "list",
@@ -2098,8 +3154,12 @@
         {
           "trapId": "WARN-A06-V001-002-CONCEITOS-INICIAIS-004",
           "title": "Inversão de Papéis Sintáticos no CEBRASPE",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Inversão de Papéis Sintáticos no CEBRASPE.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Inversão de Papéis Sintáticos no CEBRASPE.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Inversão de Papéis Sintáticos no CEBRASPE no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Inversão de Papéis Sintáticos no CEBRASPE.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Inversão de Papéis Sintáticos no CEBRASPE.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Inversão de Papéis Sintáticos no CEBRASPE para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Inversão de Papéis Sintáticos no CEBRASPE.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Inversão de Papéis Sintáticos no CEBRASPE.",
           "blocks": [
             {
               "type": "list",
@@ -2114,8 +3174,12 @@
         {
           "trapId": "WARN-A06-V001-002-CONCEITOS-INICIAIS-005",
           "title": "Confundir Relevância Temática com Núcleo Sintático",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Relevância Temática com Núcleo Sintático.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Relevância Temática com Núcleo Sintático.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Relevância Temática com Núcleo Sintático no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Relevância Temática com Núcleo Sintático.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Relevância Temática com Núcleo Sintático.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Relevância Temática com Núcleo Sintático para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Relevância Temática com Núcleo Sintático.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Relevância Temática com Núcleo Sintático.",
           "blocks": [
             {
               "type": "list",

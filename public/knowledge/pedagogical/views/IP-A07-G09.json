@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A07-G09",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.848Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.595Z"
   },
   "unit": {
     "unitId": "IP-A07-G09",
@@ -631,6 +631,16 @@
         {
           "entityId": "RULE-IP-A07-G09-001",
           "title": "Regras canônicas",
+          "statement": "Quadro Geral das Classes Morfológicas do QUE:\nPronome Relativo: Retoma antecedente substantivo/pronominal; equivale a o qual (KB-A07-G09-003).\nPronome Indefinido: Modifica substantivo seguinte como pronome adjetivo (KB-A07-G09-006).\nPronome Interrogativo: Modifica substantivo em perguntas diretas ou indiretas (KB-A07-G09-007).\nAdvérbio de Intensidade: Modifica adjetivo ou advérbio (KB-A07-G09-006).\nConjunção Integrante: Inicia oração subordinada substantiva (= ISSO) (KB-A07-G09-002).\nConjunção Coordenativa: Explicativa (= pois/porque) e Aditiva (= e, em policíndeto) (KB-A07-G09-004).\nConjunção Subordinativa Adverbial: Consecutiva, Causal, Comparativa, Concessiva e Final (KB-A07-G09-005).\nPartícula Expletiva / Realce: Suprimível sem prejuízo gramatical ou semântico (KB-A07-G09-008).\nPreposição Acidental: Conectivo na locução [TER + QUE + INFINITIVO] (KB-A07-G09-008).\nRegras Canônicas de Decisão e Desempate:\nRegra do ISSO: Troca-se toda a oração iniciada pelo \"QUE\" por ISSO; funcionando, é Conjunção Integrante.\nMantra Adverbial: \"O que vem depois salva\" — a circunstância da oração subsequente dá o nome à conjunção adverbial.\nPrimazia da Causa: Relação de causa e efeito factual anula a possibilidade de conjunção explicativa.\nRegra do Imperativo: Verbo no modo imperativo seguido de vírgula e \"QUE\" indica conjunção coordenada explicativa (\"com imperativo eu sou feliz\").\nRegra da Ordem Direta para Relativos: A função sintática do pronome relativo obtém-se colocando a oração adjetiva na ordem direta com o antecedente substituído.",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Quadro Geral das Classes Morfológicas do QUE:",
+            "Pronome Relativo: Retoma antecedente substantivo/pronominal; equivale a o qual (KB-A07-G09-003).",
+            "Pronome Indefinido: Modifica substantivo seguinte como pronome adjetivo (KB-A07-G09-006).",
+            "Pronome Interrogativo: Modifica substantivo em perguntas diretas ou indiretas (KB-A07-G09-007)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -681,6 +691,53 @@
         {
           "procedureId": "PROC-A07-G09-001",
           "title": "Teste de Identificação da Conjunção Integrante (Troca por ISSO)",
+          "objective": "Executar o algoritmo decisório para Teste de Identificação da Conjunção Integrante (Troca por ISSO)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Identificação da Conjunção Integrante (Troca por ISSO)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole a oração que se inicia a partir da palavra \"QUE\".",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Substitua a oração inteira pelo pronome neutro \"ISSO\" (ou contrações disso / nisso / a isso).",
+              "explanation": null,
+              "test": "Substitua a oração inteira pelo pronome neutro \"ISSO\" (ou contrações disso / nisso / a isso)."
+            },
+            {
+              "order": 3,
+              "action": "Se a oração principal formar sentido sintático pleno completada por \"ISSO\" (Sei [ISSO], Acho [ISSO], Preciso [DISSO]), a oração é Subordinada Substantiva.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Conclusão",
+              "explanation": "O \"QUE\" é Conjunção Subordinativa Integrante.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Identificação da Conjunção Integrante (Troca por ISSO)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -697,6 +754,59 @@
         {
           "procedureId": "PROC-A07-G09-002",
           "title": "Teste de Identificação do Pronome Relativo (Troca por O QUAL)",
+          "objective": "Executar o algoritmo decisório para Teste de Identificação do Pronome Relativo (Troca por O QUAL)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Identificação do Pronome Relativo (Troca por O QUAL)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize o termo imediatamente antecedente ao \"QUE\".",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Verifique se o termo é um substantivo ou o pronome demonstrativo o (= aquilo).",
+              "explanation": null,
+              "test": "Verifique se o termo é um substantivo ou o pronome demonstrativo o (= aquilo)."
+            },
+            {
+              "order": 3,
+              "action": "Substitua o \"QUE\" por o qual, a qual, os quais, as quais.",
+              "explanation": null,
+              "test": "Substitua o \"QUE\" por o qual, a qual, os quais, as quais."
+            },
+            {
+              "order": 4,
+              "action": "Havendo perfeita coerência e retomada anafórica, confirme que se inicia uma Oração Subordinada Adjetiva.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Conclusão",
+              "explanation": "O \"QUE\" é Pronome Relativo.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Identificação do Pronome Relativo (Troca por O QUAL)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -714,6 +824,83 @@
         {
           "procedureId": "PROC-A07-G09-003",
           "title": "Protocolo Decisório da Tríade Conectiva (Causal vs. Consecutiva vs. Explicativa)",
+          "objective": "Executar o algoritmo decisório para Protocolo Decisório da Tríade Conectiva (Causal vs. Consecutiva vs. Explicativa)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo Decisório da Tríade Conectiva (Causal vs. Consecutiva vs. Explicativa)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Teste de Causalidade Factual",
+              "explanation": "Pergunte ao período: \"O fato de [A] provocou a realização de [B] no plano da realidade?\"",
+              "test": "Passo 1 — Teste de Causalidade Factual: Pergunte ao período: \"O fato de [A] provocou a realização de [B] no plano da realidade?\""
+            },
+            {
+              "order": 2,
+              "action": "NÃO",
+              "explanation": "Classifique como Conjunção Explicativa (verifique se há verbo no Imperativo ou justificativa dedutiva).",
+              "test": "NÃO: Classifique como Conjunção Explicativa (verifique se há verbo no Imperativo ou justificativa dedutiva)."
+            },
+            {
+              "order": 3,
+              "action": "SIM",
+              "explanation": "Exclua a explicativa e avance para o Passo 2.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Passo 2 — Análise Cronológica dos Fatos",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Fato ocorrido em 1º lugar no tempo $\\rightarrow$ Causa.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Fato ocorrido em 2º lugar no tempo $\\rightarrow$ Efeito / Consequência.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Passo 3 — Aplicação do Mantra",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Se o \"QUE\" introduzir o 1º fato $\\rightarrow$ Conjunção Subordinativa Causal.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Se o \"QUE\" introduzir o 2º fato $\\rightarrow$ Conjunção Subordinativa Consecutiva (tente inserir tão/tanto na oração principal para validar).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo Decisório da Tríade Conectiva (Causal vs. Consecutiva vs. Explicativa)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -765,6 +952,65 @@
         {
           "procedureId": "PROC-A07-G09-004",
           "title": "O Método das Setas (Advérbio de Intensidade vs. Pronome Indefinido)",
+          "objective": "Executar o algoritmo decisório para O Método das Setas (Advérbio de Intensidade vs. Pronome Indefinido)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de O Método das Setas (Advérbio de Intensidade vs. Pronome Indefinido)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Posicione o ponto de partida da seta sobre a palavra \"QUE\".",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Trace a seta até o termo que o \"QUE\" modifica diretamente.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Classifique morfologicamente o termo apontado",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Seta em Adjetivo ou Advérbio $\\Rightarrow$ Advérbio de Intensidade.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Seta em Substantivo $\\Rightarrow$ Pronome Indefinido.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Regra de Bloqueio",
+              "explanation": "Não tente decidir trocando por \"muito\" nem pela presença de ponto de exclamação.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de O Método das Setas (Advérbio de Intensidade vs. Pronome Indefinido)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -795,6 +1041,53 @@
         {
           "procedureId": "PROC-A07-G09-005",
           "title": "Teste de Supressão Expletiva e Avaliação de Pontuação",
+          "objective": "Executar o algoritmo decisório para Teste de Supressão Expletiva e Avaliação de Pontuação",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Supressão Expletiva e Avaliação de Pontuação."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole a partícula \"QUE\" ou a locução \"É QUE / FOI QUE\".",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Suprima os termos e reorganize a frase.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se a frase resultante permanecer perfeitamente correta e sem lacuna sintática, confirma-se o caráter de Realce / Expletiva.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Avaliação de Pontuação",
+              "explanation": "Se a estrutura enfatizada suprimida for um termo preposicionado antecipado, ele passa a funcionar como Adjunto Adverbial Deslocado. Se possuir três ou mais palavras (longa extensão), insira compulsoriamente a vírgula obrigatória antes do sujeito.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Supressão Expletiva e Avaliação de Pontuação."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -811,6 +1104,71 @@
         {
           "procedureId": "PROC-A07-G09-006",
           "title": "Algoritmo \"Passo a Passo\" para Função Sintática do Pronome Relativo",
+          "objective": "Executar o algoritmo decisório para Algoritmo \"Passo a Passo\" para Função Sintática do Pronome Relativo",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo \"Passo a Passo\" para Função Sintática do Pronome Relativo."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 (Destacar o PR)",
+              "explanation": "Identifique o pronome relativo e delimite a oração subordinada adjetiva.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 (Substituir pelo Antecedente)",
+              "explanation": "Substitua o pronome relativo pelo substantivo que ele retoma.",
+              "test": "Passo 2 (Substituir pelo Antecedente): Substitua o pronome relativo pelo substantivo que ele retoma."
+            },
+            {
+              "order": 3,
+              "action": "Passo 3 (Análise Sintática na Ordem Direta)",
+              "explanation": "Escreva a oração adjetiva na ordem direta (Sujeito + Verbo + Complementos) no canto da prova:",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Localize o verbo da oração adjetiva e pergunte",
+              "explanation": "\"Quem é que [verbo]?\". Se for o antecedente $\\rightarrow$ Sujeito.",
+              "test": "Localize o verbo da oração adjetiva e pergunte: \"Quem é que [verbo]?\". Se for o antecedente $\\rightarrow$ Sujeito."
+            },
+            {
+              "order": 5,
+              "action": "Se o sujeito for outro termo e o antecedente completar o verbo sem preposição $\\rightarrow$ Objeto Direto.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se o antecedente completar o verbo com preposição $\\rightarrow$ Objeto Indireto.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Se o antecedente completar um substantivo abstrato com preposição $\\rightarrow$ Complemento Nominal.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo \"Passo a Passo\" para Função Sintática do Pronome Relativo."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -840,6 +1198,22 @@
         {
           "contrastId": "CONTRAST-IP-A07-G09-001",
           "title": "Contrastes decisivos",
+          "contrastType": "mixed",
+          "conceptA": "Contrastes decisivos",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -914,6 +1288,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G09-001",
           "title": "EX-A07-G09-001 — Fixação Morfológica: Conjunção Integrante, Pronome Relativo e Realce",
+          "prompt": "Item A: \"Acho que o celular se juntará ao cigarro como um divisor da Humanidade.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item A",
+              "rationale": "\"Acho que o celular se juntará ao cigarro como um divisor da Humanidade.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "Substituição por \"Acho [ISSO]\". O \"QUE\" introduz oração substantiva objetiva direta $\\Rightarrow$ Conjunção Integrante."
+            },
+            {
+              "order": 3,
+              "action": "Item B",
+              "rationale": "\"O preconceito é doença que turva nosso olhar e entorta nossa alma.\""
+            },
+            {
+              "order": 4,
+              "action": "Análise",
+              "rationale": "Substituição por \"doença [a qual turva...]\". O \"QUE\" retoma doença e introduz oração adjetiva restritiva $\\Rightarrow$ Pronome Relativo."
+            },
+            {
+              "order": 5,
+              "action": "Item C",
+              "rationale": "\"Queriam saber o que tinha acontecido.\""
+            }
+          ],
+          "result": "Análise: Supressão: \"A memória e as emoções são processadas no hipocampo.\" $\\Rightarrow$ Expressão de Realce / Expletiva.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G09-001 — Fixação Morfológica: Conjunção Integrante, Pronome Relativo e Realce sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G09-001 — Fixação Morfológica: Conjunção Integrante, Pronome Relativo e Realce.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G09-001 — Fixação Morfológica: Conjunção Integrante, Pronome Relativo e Realce.",
           "blocks": [
             {
               "type": "list",
@@ -934,6 +1340,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G09-002",
           "title": "EX-A07-G09-002 — Fixação: Método das Setas em Advérbio vs. Pronome Indefinido",
+          "prompt": "Frase 1: \"Que inteligente é Fernanda!\" $\\rightarrow$ Seta aponta para inteligente (Adjetivo) $\\Rightarrow$ Advérbio de Intensidade.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase 1",
+              "rationale": "\"Que inteligente é Fernanda!\" $\\rightarrow$ Seta aponta para inteligente (Adjetivo) $\\Rightarrow$ Advérbio de Intensidade."
+            },
+            {
+              "order": 2,
+              "action": "Frase 2",
+              "rationale": "\"Que bem você me faz!\" $\\rightarrow$ Seta aponta para bem (Advérbio) $\\Rightarrow$ Advérbio de Intensidade."
+            },
+            {
+              "order": 3,
+              "action": "Frase 3",
+              "rationale": "\"Que linda menina!\" $\\rightarrow$ Seta aponta para linda (Adjetivo anteposto) $\\Rightarrow$ Advérbio de Intensidade."
+            },
+            {
+              "order": 4,
+              "action": "Frase 4",
+              "rationale": "\"Que felicidade!\" $\\rightarrow$ Seta aponta para felicidade (Substantivo) $\\Rightarrow$ Pronome Indefinido."
+            },
+            {
+              "order": 5,
+              "action": "Frase 5 (Caso Crítico)",
+              "rationale": "\"Que calor está hoje!\" $\\rightarrow$ Seta aponta para calor (Substantivo) $\\Rightarrow$ Pronome Indefinido (e NUNCA advérbio)."
+            }
+          ],
+          "result": "Frase 5 (Caso Crítico): \"Que calor está hoje!\" $\\rightarrow$ Seta aponta para calor (Substantivo) $\\Rightarrow$ Pronome Indefinido (e NUNCA advérbio).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G09-002 — Fixação: Método das Setas em Advérbio vs. Pronome Indefinido sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G09-002 — Fixação: Método das Setas em Advérbio vs. Pronome Indefinido.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G09-002 — Fixação: Método das Setas em Advérbio vs. Pronome Indefinido.",
           "blocks": [
             {
               "type": "list",
@@ -951,6 +1389,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G09-003",
           "title": "EX-A07-G09-003 — Bateria de Provas CEBRASPE (Classificações e Distinções)",
+          "prompt": "Questão 1 (PC-PB): \"...somos herdeiros da cultura patriarcal que instaurou a dominação...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Questão 1 (PC-PB)",
+              "rationale": "\"...somos herdeiros da cultura patriarcal que instaurou a dominação...\""
+            },
+            {
+              "order": 2,
+              "action": "Comando",
+              "rationale": "Afirma que \"que\" exerce função de pronome relativo."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "Retoma cultura patriarcal (= a qual instaurou). Gabarito: CERTO."
+            },
+            {
+              "order": 4,
+              "action": "Questão 2 (PC-PB)",
+              "rationale": "\"...diríamos que por detrás da violência funcionam poderosas estruturas.\""
+            },
+            {
+              "order": 5,
+              "action": "Comando",
+              "rationale": "Afirma que \"que\" é pronome relativo."
+            }
+          ],
+          "result": "Resolução: Supressão válida de realce; termo converte-se em adjunto adverbial causal longo deslocado, tornando a vírgula obrigatória. Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G09-003 — Bateria de Provas CEBRASPE (Classificações e Distinções) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G09-003 — Bateria de Provas CEBRASPE (Classificações e Distinções).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G09-003 — Bateria de Provas CEBRASPE (Classificações e Distinções).",
           "blocks": [
             {
               "type": "list",
@@ -984,6 +1454,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G09-004",
           "title": "EX-A07-G09-004 — Bateria de Funções Sintáticas do Pronome Relativo (material de origem)",
+          "prompt": "Item A: \"Trouxe o livro para nós, que não sabíamos ler.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item A",
+              "rationale": "\"Trouxe o livro para nós, que não sabíamos ler.\""
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "\"Que\" retoma nós. Ordem direta da adjetiva: Nós não sabíamos ler. Pergunta: Quem não sabia ler? $\\rightarrow$ Nós. Função: Sujeito."
+            },
+            {
+              "order": 3,
+              "action": "Item B",
+              "rationale": "\"O 'detox digital' traz benefícios que já foram amplamente descritos pelos cientistas.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução",
+              "rationale": "\"Que\" retoma benefícios. Ordem direta: Benefícios foram descritos. Função: Sujeito paciente."
+            },
+            {
+              "order": 5,
+              "action": "Item C",
+              "rationale": "\"Pegou o punhal que o índio lhe dera.\""
+            }
+          ],
+          "result": "Resolução: \"Que\" retoma medicamento, regido por \"de\". Ordem direta: O menino tem necessidade do medicamento. Necessidade = substantivo abstrato (OD); do medicamento = completa o substantivo. Função: Complemento Nominal.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G09-004 — Bateria de Funções Sintáticas do Pronome Relativo (material de origem) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G09-004 — Bateria de Funções Sintáticas do Pronome Relativo (material de origem).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G09-004 — Bateria de Funções Sintáticas do Pronome Relativo (material de origem).",
           "blocks": [
             {
               "type": "list",
@@ -1145,7 +1647,10 @@
       "officialAnswer": "incorrect",
       "explanation": "O “que” retoma “paz”: trocando o “que” pelo seu antecedente, temos: [a paz interessa (lhe/a ele)] Quem interessa? A paz interessa... O termo “a paz” seria sujeito, então o “que” tem função de sujeito. A questão está errada. OBS: Por algum motivo, a banca deu como “certo”, o que só mostra como as bancas erram nesses gabaritos, mesmo em algo objetivo. Fica a questão para treinamento... Gabarito: *Incorreto.",
       "questionSha256": "004e0101dcd0af3f146a3ef2783615c14860fd216faf2bf96835602ecadd5deb",
-      "answerSha256": "29854ecd3d66987340ed9c5156d79a8ebcb91f6373b5cdd72448232d561d59ee"
+      "answerSha256": "29854ecd3d66987340ed9c5156d79a8ebcb91f6373b5cdd72448232d561d59ee",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Palavra QUE; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0092",
@@ -1157,7 +1662,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "01d699ed5de77085f908162f462a19d2aa3cd30bec31cb71703b747d5a917016",
-      "answerSha256": "fbc5b08815e07b446b771559a5cfd03f749eec77dad553b7d901a8bc7e42e828"
+      "answerSha256": "fbc5b08815e07b446b771559a5cfd03f749eec77dad553b7d901a8bc7e42e828",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Palavra QUE; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0042",
@@ -1170,7 +1678,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Se você trocar o “que” pelo seu antecedente e analisá-lo dentro da oração adjetiva, perceberá que a função é de sujeito: alguma coisa [que se ache escondida] [alguma coisa se ache escondida] O que se acha escondido? Resposta: alguma coisa Então, esse termo “seria” sujeito dentro da oração adjetiva, o que significa então que o “que” é sujeito. Questão incorreta.",
       "questionSha256": "d52df4693e4b76f2de408c35d1c7f3e38c72c0093333a7d3f81d60b9a92da84d",
-      "answerSha256": "b3e2d7291331f9b3a0470ff8dd5733da1a85fef6d474193ab573881044feeff4"
+      "answerSha256": "b3e2d7291331f9b3a0470ff8dd5733da1a85fef6d474193ab573881044feeff4",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Palavra QUE; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0097",
@@ -1182,7 +1693,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "61e410d73fea2c4251936767b305c6f84b676617c2b1689a7fbe708bbbe2b386",
-      "answerSha256": "d0fd1bda55607be3dd35afc1a56d27269225034500098780b86377486019b429"
+      "answerSha256": "d0fd1bda55607be3dd35afc1a56d27269225034500098780b86377486019b429",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Palavra QUE; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0038",
@@ -1195,7 +1709,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Temos oração adjetiva. O sujeito é o pronome relativo \"que\"; o segmento \"os indivíduos\" nem faz parte da oração adjetiva; é apenas o referente do pronome relativo. Para saber a função sintática do relativo, devemos substituí-lo por seu antecedente dentro da oração adjetiva. Como retoma \"os indivíduos\", teremos: “Notava diferenças entre os indivíduos [que se sentavam nas redes e os que se acocoravam no alpendre.] [os indivíduos sentavam nas redes e os que se acocoravam no alpendre.] Se \"os indivíduos\" seria sujeito dos verbos, esta é a função do relativo \"que\". Questão incorreta.",
       "questionSha256": "bfc9e5e19b61d94571cfa5642b968ccd92b9a2630800c06af105865f32cfff73",
-      "answerSha256": "d6a3d999e54fd580bbdaf18eade3ad805473d6e65cf8e84352e2d4f67c6b7915"
+      "answerSha256": "d6a3d999e54fd580bbdaf18eade3ad805473d6e65cf8e84352e2d4f67c6b7915",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Palavra QUE; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0093",
@@ -1207,7 +1724,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "bacb977afc67b5be556bce4e47aa876ab4ac880ccdeb0a9622459089614d9135",
-      "answerSha256": "a07e6b95277ee93ad60b3bea4a8613c1f413bf40327f6ec242af35f5c3ff5cc6"
+      "answerSha256": "a07e6b95277ee93ad60b3bea4a8613c1f413bf40327f6ec242af35f5c3ff5cc6",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Palavra QUE; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

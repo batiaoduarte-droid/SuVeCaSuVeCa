@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A09-G08",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.874Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.624Z"
   },
   "unit": {
     "unitId": "IP-A09-G08",
@@ -492,6 +492,14 @@
         {
           "entityId": "RULE-IP-A09-G08-001",
           "title": "Regras canônicas",
+          "statement": "A tabela abaixo sintetiza a matriz canônica de regras e comportamentos morfossintáticos consolidados no Grupo G08:",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "paragraph",
@@ -719,6 +727,59 @@
         {
           "procedureId": "PROC-A09-G08-001",
           "title": "Método da \"Seta Sintática\" de Referenciação",
+          "objective": "Executar o algoritmo decisório para Método da \"Seta Sintática\" de Referenciação",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método da \"Seta Sintática\" de Referenciação."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar o vocábulo-alvo na oração.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Traçar a seta sintática até o núcleo com o qual ele estabelece relação semântica direta.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Avaliar a classe gramatical do núcleo",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se for substantivo/pronome $\\to$ flexione o adjetivo/pronome/numeral.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se for verbo/adjetivo/advérbio $\\to$ mantenha o advérbio invariável.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método da \"Seta Sintática\" de Referenciação."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -755,6 +816,71 @@
         {
           "procedureId": "PROC-A09-G08-002",
           "title": "Método da Ordem Direta para Orações Invertidas",
+          "objective": "Executar o algoritmo decisório para Método da Ordem Direta para Orações Invertidas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método da Ordem Direta para Orações Invertidas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar o verbo e o adjetivo no início da oração",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Exemplo invertido",
+              "explanation": "\"Seguem  aos documentos as fotografias.\"",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Perguntar ao verbo pelo sujeito real",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "O que é que segue? Resposta",
+              "explanation": "As fotografias (feminino plural).",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Reescrever a oração na ordem canônica (Sujeito + Verbo + Predicativo/Complementos)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Ordem direta",
+              "explanation": "\"As fotografias seguem inclusas aos documentos.\"",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Validar a concordância",
+              "explanation": "Transfira a marca feminina plural para o adjetivo: \"Seguem inclusas...\".",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método da Ordem Direta para Orações Invertidas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -819,6 +945,59 @@
         {
           "procedureId": "PROC-A09-G08-003",
           "title": "Teste de Substituição para a Palavra \"Bastante / Bastantes\"",
+          "objective": "Executar o algoritmo decisório para Teste de Substituição para a Palavra \"Bastante / Bastantes\"",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Substituição para a Palavra \"Bastante / Bastantes\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Substitua mentalmente bastante por muito / muitos",
+              "explanation": "",
+              "test": "Substitua mentalmente bastante por muito / muitos:"
+            },
+            {
+              "order": 2,
+              "action": "Se couber muitos / muitas $\\to$ use bastantes (\"Há bastantes exemplos\" $\\leftrightarrow$ \"Há muitos exemplos\").",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se couber apenas muito invariável $\\to$ use bastante (\"Eram bastante antigos\" $\\leftrightarrow$ \"Eram muito antigos\").",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Substitua mentalmente bastante por suficiente / suficientes",
+              "explanation": "",
+              "test": "Substitua mentalmente bastante por suficiente / suficientes:"
+            },
+            {
+              "order": 5,
+              "action": "Se couber suficientes posposto ao substantivo $\\to$ trata-se de adjetivo flexionado no plural",
+              "explanation": "bastantes (\"razões bastantes\" = \"razões suficientes\").",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Substituição para a Palavra \"Bastante / Bastantes\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -863,6 +1042,59 @@
         {
           "procedureId": "PROC-A09-G08-004",
           "title": "Teste de Simetria para Superlativos com \"Possível\"",
+          "objective": "Executar o algoritmo decisório para Teste de Simetria para Superlativos com \"Possível\"",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Simetria para Superlativos com \"Possível\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole o artigo que encabeça a locução superlativa.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Regra de Simetria",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Artigo no plural (os / as) $\\longrightarrow$ Exige adjetivo no plural (possíveis). Ex.",
+              "explanation": "\"as mais belas possíveis\".",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Artigo no masculino singular (o) $\\longrightarrow$ Exige adjetivo no singular (possível). Ex.",
+              "explanation": "\"o mais belas possível\".",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se houver divergência entre o número do artigo e o de possível, marque a opção como incorreta.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Simetria para Superlativos com \"Possível\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -901,6 +1133,53 @@
         {
           "procedureId": "PROC-A09-G08-005",
           "title": "Teste de Substituição por \"Isso\" para Sujeito Oracional",
+          "objective": "Executar o algoritmo decisório para Teste de Substituição por \"Isso\" para Sujeito Oracional",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Substituição por \"Isso\" para Sujeito Oracional."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identifique o sujeito formado por verbo no infinitivo (ex.",
+              "explanation": "\"Dormir pelo menos uma meia hora...\").",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Substitua toda a oração sujeito pelo pronome demonstrativo neutro \"isso\".",
+              "explanation": null,
+              "test": "Substitua toda a oração sujeito pelo pronome demonstrativo neutro \"isso\"."
+            },
+            {
+              "order": 3,
+              "action": "Formule a estrutura simplificada",
+              "explanation": "\"Isso é [predicativo]\".",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "O predicativo neutro deve terminar obrigatoriamente no masculino singular",
+              "explanation": "\"Isso é benéfico\".",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Substituição por \"Isso\" para Sujeito Oracional."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -926,6 +1205,47 @@
         {
           "procedureId": "PROC-A09-G08-006",
           "title": "Estratégia Tática Diante de Falhas de Bancas Examinadoras Menores",
+          "objective": "Executar o algoritmo decisório para Estratégia Tática Diante de Falhas de Bancas Examinadoras Menores",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Estratégia Tática Diante de Falhas de Bancas Examinadoras Menores."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ao encontrar uma alternativa teoricamente correta que possa ser vítima de má elaboração (ex.",
+              "explanation": "a banca considerar erroneamente quite invariável), examine as demais alternativas.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Identifique se existe outra alternativa blindada e inquestionável (ex.",
+              "explanation": "a invariabilidade de em anexo).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Assinale a alternativa blindada para evitar prejuízo, tendo em vista que o Poder Judiciário costuma rejeitar anulações de itens por mérito de correção gramatical.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Estratégia Tática Diante de Falhas de Bancas Examinadoras Menores."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -954,6 +1274,22 @@
         {
           "contrastId": "CONTRAST-IP-A09-G08-001",
           "title": "Matriz de Contrastes Críticos",
+          "contrastType": "mixed",
+          "conceptA": "Matriz de Contrastes Críticos",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -1028,6 +1364,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-001",
           "title": "EX-A09-G08-001 — Frases de Fixação 10 e 11: Invariabilidade de \"Menos\"",
+          "prompt": "Enunciados:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciados",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "0) Trabalhas  que eu. (menos)",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "1) Havia, naquela festa,  mulheres que homens. (menos)",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Desenvolvimento",
+              "rationale": "A palavra menos é invariável tanto como advérbio modificador quanto como pronome indefinido adjetivo."
+            },
+            {
+              "order": 5,
+              "action": "Respostas",
+              "rationale": "10) menos \\| 11) menos."
+            }
+          ],
+          "result": "Proveniência: 023 - Concordância Nominal - Parte 04 - 720p.md (EX-A09-V023-001, EX-A09-V023-002).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-001 — Frases de Fixação 10 e 11: Invariabilidade de \"Menos\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-001 — Frases de Fixação 10 e 11: Invariabilidade de \"Menos\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-001 — Frases de Fixação 10 e 11: Invariabilidade de \"Menos\".",
           "blocks": [
             {
               "type": "list",
@@ -1046,6 +1414,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-002",
           "title": "EX-A09-G08-002 — Frase de Fixação 12: \"Alerta\" Posposto ao Verbo",
+          "prompt": "Enunciado: Os candidatos estavam . (alerta)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Os candidatos estavam . (alerta)"
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "A palavra surge após o verbo de ligação estavam. Assume papel de advérbio de modo invariável."
+            },
+            {
+              "order": 3,
+              "action": "Resposta",
+              "rationale": "alerta."
+            },
+            {
+              "order": 4,
+              "action": "Proveniência",
+              "rationale": "023 - Concordância Nominal - Parte 04 - 720p.md (EX-A09-V023-003)."
+            }
+          ],
+          "result": "Proveniência: 023 - Concordância Nominal - Parte 04 - 720p.md (EX-A09-V023-003).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-002 — Frase de Fixação 12: \"Alerta\" Posposto ao Verbo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-002 — Frase de Fixação 12: \"Alerta\" Posposto ao Verbo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-002 — Frase de Fixação 12: \"Alerta\" Posposto ao Verbo.",
           "blocks": [
             {
               "type": "list",
@@ -1062,6 +1457,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-003",
           "title": "EX-A09-G08-003 — Frases de Fixação 13 e 14: Locuções Prepositivas \"Junto a\" e \"Junto com\"",
+          "prompt": "Enunciados:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciados",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "3) Ficou  portão. (junto a)",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "4) Fernanda chegou  Guilherme ao colégio. (junto com)",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Desenvolvimento",
+              "rationale": "São locuções prepositivas invariáveis. Na 13, ocorre fusão da preposição a com o artigo o (junto ao)."
+            },
+            {
+              "order": 5,
+              "action": "Respostas",
+              "rationale": "13) junto ao \\| 14) junto com."
+            }
+          ],
+          "result": "Proveniência: 023 - Concordância Nominal - Parte 04 - 720p.md (EX-A09-V023-004, EX-A09-V023-005).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-003 — Frases de Fixação 13 e 14: Locuções Prepositivas \"Junto a\" e \"Junto com\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-003 — Frases de Fixação 13 e 14: Locuções Prepositivas \"Junto a\" e \"Junto com\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-003 — Frases de Fixação 13 e 14: Locuções Prepositivas \"Junto a\" e \"Junto com\".",
           "blocks": [
             {
               "type": "list",
@@ -1080,6 +1507,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-004",
           "title": "EX-A09-G08-004 — Frases de Fixação 15, 16 e 17: \"Anexo\", \"Anexos\" e \"Em anexo\"",
+          "prompt": "Enunciados:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciados",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "5)  ao presente documento, encaminhamos a fotocópia do decreto. (anexo)",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "6) Vão  à carta meus documentos. (anexo)",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "7) Vão  à carta meus documentos. (em anexo)",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Desenvolvimento",
+              "rationale": "Na 15, concorda com a fotocópia (Anexa); na 16, concorda com meus documentos (anexos); na 17, locução adverbial invariável (em anexo)."
+            }
+          ],
+          "result": "Proveniência: 023 - Concordância Nominal - Parte 04 - 720p.md (EX-A09-V023-006 a EX-A09-V023-008).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-004 — Frases de Fixação 15, 16 e 17: \"Anexo\", \"Anexos\" e \"Em anexo\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-004 — Frases de Fixação 15, 16 e 17: \"Anexo\", \"Anexos\" e \"Em anexo\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-004 — Frases de Fixação 15, 16 e 17: \"Anexo\", \"Anexos\" e \"Em anexo\".",
           "blocks": [
             {
               "type": "list",
@@ -1099,6 +1558,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-005",
           "title": "EX-A09-G08-005 — Frases de Fixação 18 e 19: Flexão do Adjetivo \"Quite\"",
+          "prompt": "Enunciados:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciados",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "8) Estou  com todos vocês. (quite)",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "9) Estamos  com todos vocês. (quite)",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Desenvolvimento",
+              "rationale": "Na 18, sujeito implícito singular eu (quite); na 19, sujeito implícito plural nós (quites)."
+            },
+            {
+              "order": 5,
+              "action": "Respostas",
+              "rationale": "18) quite \\| 19) quites."
+            }
+          ],
+          "result": "Proveniência: 023 - Concordância Nominal - Parte 04 - 720p.md (EX-A09-V023-009, EX-A09-V023-010).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-005 — Frases de Fixação 18 e 19: Flexão do Adjetivo \"Quite\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-005 — Frases de Fixação 18 e 19: Flexão do Adjetivo \"Quite\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-005 — Frases de Fixação 18 e 19: Flexão do Adjetivo \"Quite\".",
           "blocks": [
             {
               "type": "list",
@@ -1117,6 +1608,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-006",
           "title": "EX-A09-G08-006 — Frases de Fixação 20 e 21: \"Obrigado\" e \"Incluso\" com Ordem Invertida",
+          "prompt": "Enunciados:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciados",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "0) Muito , respondeu a tia. (obrigado)",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "1) Seguem  aos documentos as fotografias. (incluso)",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Desenvolvimento",
+              "rationale": "Na 20, emissor feminino a tia (obrigada); na 21, sujeito posposto as fotografias (inclusas)."
+            },
+            {
+              "order": 5,
+              "action": "Respostas",
+              "rationale": "20) obrigada \\| 21) inclusas."
+            }
+          ],
+          "result": "Proveniência: 023 - Concordância Nominal - Parte 04 - 720p.md (EX-A09-V023-011, EX-A09-V023-012).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-006 — Frases de Fixação 20 e 21: \"Obrigado\" e \"Incluso\" com Ordem Invertida sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-006 — Frases de Fixação 20 e 21: \"Obrigado\" e \"Incluso\" com Ordem Invertida.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-006 — Frases de Fixação 20 e 21: \"Obrigado\" e \"Incluso\" com Ordem Invertida.",
           "blocks": [
             {
               "type": "list",
@@ -1135,6 +1658,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-007",
           "title": "EX-A09-G08-007 — Frases de Fixação 22 e 23: Adjetivo \"Junto\" e Pronome \"Próprio/Mesmo\"",
+          "prompt": "Enunciados:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciados",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "2) Ana e Rosa saem sempre . (junto)",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "3) Elas  entenderão o recado. (próprio)",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Desenvolvimento",
+              "rationale": "Na 22, adjetivo plural feminino (juntas); na 23, pronome de reforço feminino plural (próprias / mesmas)."
+            },
+            {
+              "order": 5,
+              "action": "Respostas",
+              "rationale": "22) juntas \\| 23) próprias / mesmas."
+            }
+          ],
+          "result": "Proveniência: 023 - Concordância Nominal - Parte 04 - 720p.md (EX-A09-V023-013, EX-A09-V023-014).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-007 — Frases de Fixação 22 e 23: Adjetivo \"Junto\" e Pronome \"Próprio/Mesmo\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-007 — Frases de Fixação 22 e 23: Adjetivo \"Junto\" e Pronome \"Próprio/Mesmo\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-007 — Frases de Fixação 22 e 23: Adjetivo \"Junto\" e Pronome \"Próprio/Mesmo\".",
           "blocks": [
             {
               "type": "list",
@@ -1153,6 +1708,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-008",
           "title": "EX-A09-G08-008 — Frases de Fixação 24 e 25: \"Só\" Adjetivo vs. Advérbio",
+          "prompt": "Enunciados:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciados",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "4) Os fatos falam por si . (só)",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "5)  alunos são admitidos na reunião. (só)",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Desenvolvimento",
+              "rationale": "Na 24, equivale a sozinhos referindo-se a fatos (sós); na 25, equivale a somente (Só)."
+            },
+            {
+              "order": 5,
+              "action": "Respostas",
+              "rationale": "24) sós \\| 25) Só."
+            }
+          ],
+          "result": "Proveniência: 024 - Concordância Nominal - Parte 05 - 720p.md (EX-A09-V024-001, EX-A09-V024-002).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-008 — Frases de Fixação 24 e 25: \"Só\" Adjetivo vs. Advérbio sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-008 — Frases de Fixação 24 e 25: \"Só\" Adjetivo vs. Advérbio.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-008 — Frases de Fixação 24 e 25: \"Só\" Adjetivo vs. Advérbio.",
           "blocks": [
             {
               "type": "list",
@@ -1171,6 +1758,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-009",
           "title": "EX-A09-G08-009 — Frases de Fixação 26 e 27: \"Meio\" Numeral vs. Advérbio",
+          "prompt": "Enunciados:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciados",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "6) Bebeu sozinho  caneca de vinho. (meio)",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "7) Eram pessoas  estranhas. (meio)",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Desenvolvimento",
+              "rationale": "Na 26, numeral fracionário modificando caneca (meia); na 27, advérbio modificando estranhas (meio)."
+            },
+            {
+              "order": 5,
+              "action": "Respostas",
+              "rationale": "26) meia \\| 27) meio."
+            }
+          ],
+          "result": "Proveniência: 024 - Concordância Nominal - Parte 05 - 720p.md (EX-A09-V024-003, EX-A09-V024-004).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-009 — Frases de Fixação 26 e 27: \"Meio\" Numeral vs. Advérbio sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-009 — Frases de Fixação 26 e 27: \"Meio\" Numeral vs. Advérbio.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-009 — Frases de Fixação 26 e 27: \"Meio\" Numeral vs. Advérbio.",
           "blocks": [
             {
               "type": "list",
@@ -1189,6 +1808,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-010",
           "title": "EX-A09-G08-010 — Frases de Fixação 28, 29 e 30: Três Usos de \"Bastante\"",
+          "prompt": "Enunciados:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciados",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "8) Há  exemplos neste livro. (bastante)",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "9) Comprou livros . (bastante)",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "0) Comprou livros  antigos. (bastante)",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Desenvolvimento",
+              "rationale": "Na 28, pronome indefinido anteposto a exemplos (bastantes); na 29, adjetivo posposto a livros (= suficientes, bastantes); na 30, advérbio modificando antigos (bastante)."
+            }
+          ],
+          "result": "Proveniência: 024 - Concordância Nominal - Parte 05 - 720p.md (EX-A09-V024-005 a EX-A09-V024-007).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-010 — Frases de Fixação 28, 29 e 30: Três Usos de \"Bastante\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-010 — Frases de Fixação 28, 29 e 30: Três Usos de \"Bastante\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-010 — Frases de Fixação 28, 29 e 30: Três Usos de \"Bastante\".",
           "blocks": [
             {
               "type": "list",
@@ -1208,6 +1859,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-011",
           "title": "EX-A09-G08-011 — Frase de Fixação 31: \"Conforme\" como Adjetivo",
+          "prompt": "Enunciado: Só dois atos seus não pareciam  a esta imagem. (conforme)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Só dois atos seus não pareciam  a esta imagem. (conforme)"
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "Funciona como adjetivo predicativo referindo-se a dois atos seus (= adequados/ajustados)."
+            },
+            {
+              "order": 3,
+              "action": "Resposta",
+              "rationale": "conformes."
+            },
+            {
+              "order": 4,
+              "action": "Proveniência",
+              "rationale": "024 - Concordância Nominal - Parte 05 - 720p.md (EX-A09-V024-008)."
+            }
+          ],
+          "result": "Proveniência: 024 - Concordância Nominal - Parte 05 - 720p.md (EX-A09-V024-008).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-011 — Frase de Fixação 31: \"Conforme\" como Adjetivo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-011 — Frase de Fixação 31: \"Conforme\" como Adjetivo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-011 — Frase de Fixação 31: \"Conforme\" como Adjetivo.",
           "blocks": [
             {
               "type": "list",
@@ -1224,6 +1902,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-012",
           "title": "EX-A09-G08-012 — Frases de Fixação 32 e 33: \"Mesmo\" Pronome vs. Denotativa",
+          "prompt": "Enunciados:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciados",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "2) Elas  entenderão o recado. (mesmo)",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "3)  as crianças entenderão o recado. (mesmo)",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Desenvolvimento",
+              "rationale": "Na 32, pronome de reforço ligado a Elas (mesmas); na 33, palavra denotativa de inclusão (= inclusive, Mesmo)."
+            },
+            {
+              "order": 5,
+              "action": "Respostas",
+              "rationale": "32) mesmas \\| 33) Mesmo."
+            }
+          ],
+          "result": "Proveniência: 024 - Concordância Nominal - Parte 05 - 720p.md (EX-A09-V024-009, EX-A09-V024-010).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-012 — Frases de Fixação 32 e 33: \"Mesmo\" Pronome vs. Denotativa sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-012 — Frases de Fixação 32 e 33: \"Mesmo\" Pronome vs. Denotativa.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-012 — Frases de Fixação 32 e 33: \"Mesmo\" Pronome vs. Denotativa.",
           "blocks": [
             {
               "type": "list",
@@ -1242,6 +1952,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-013",
           "title": "EX-A09-G08-013 — Frase de Fixação 34: \"Caro\" e \"Barato\" com Verbo de Ligação",
+          "prompt": "Enunciado: As canetas eram . (caro; barato)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "As canetas eram . (caro; barato)"
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "Há verbo de ligação (eram); atua como adjetivo predicativo concordando com canetas."
+            },
+            {
+              "order": 3,
+              "action": "Resposta",
+              "rationale": "caras / baratas."
+            },
+            {
+              "order": 4,
+              "action": "Proveniência",
+              "rationale": "024 - Concordância Nominal - Parte 05 - 720p.md (EX-A09-V024-011)."
+            }
+          ],
+          "result": "Proveniência: 024 - Concordância Nominal - Parte 05 - 720p.md (EX-A09-V024-011).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-013 — Frase de Fixação 34: \"Caro\" e \"Barato\" com Verbo de Ligação sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-013 — Frase de Fixação 34: \"Caro\" e \"Barato\" com Verbo de Ligação.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-013 — Frase de Fixação 34: \"Caro\" e \"Barato\" com Verbo de Ligação.",
           "blocks": [
             {
               "type": "list",
@@ -1258,6 +1995,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-014",
           "title": "EX-A09-G08-014 — Questão 33 (VUNESP — Câmara de Sorocaba — Telefonista)",
+          "prompt": "Enunciado: Identificar a concordância correta entre as opções:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identificar a concordância correta entre as opções:"
+            },
+            {
+              "order": 2,
+              "action": "A) \"A senhora quis dizer obrigado...\" (Erro",
+              "rationale": "emissor feminino exige obrigada)."
+            },
+            {
+              "order": 3,
+              "action": "B) \"Meia envergonhada...\" (Erro",
+              "rationale": "advérbio exige meio)."
+            },
+            {
+              "order": 4,
+              "action": "C) \"É proibido a entrada...\" (Erro",
+              "rationale": "com artigo exige é proibida)."
+            },
+            {
+              "order": 5,
+              "action": "D) \"Havia menos moças visitando os pais.\" (CORRETA",
+              "rationale": "menos é invariável)."
+            }
+          ],
+          "result": "Proveniência: 025 - Concordância nominal - Questões Parte 06 - 720p.md (EX-A09-V025-001).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-014 — Questão 33 (VUNESP — Câmara de Sorocaba — Telefonista) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-014 — Questão 33 (VUNESP — Câmara de Sorocaba — Telefonista).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-014 — Questão 33 (VUNESP — Câmara de Sorocaba — Telefonista).",
           "blocks": [
             {
               "type": "list",
@@ -1278,6 +2047,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-015",
           "title": "EX-A09-G08-015 — Questão 34 (VUNESP — Pref. de Barretos - SP — Agente de Saúde)",
+          "prompt": "Enunciado: Concordância nominal padrão:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Concordância nominal padrão:"
+            },
+            {
+              "order": 2,
+              "action": "A) \"menas vitaminas\" (Erro",
+              "rationale": "menos)."
+            },
+            {
+              "order": 3,
+              "action": "B) \"Mesmo em época de safra de lichia, essa fruta custa caro. Ela é caríssima, na verdade.\" (CORRETA",
+              "rationale": "mesmo inclusivo, custa caro advérbio de preço, caríssima adjetivo predicativo)."
+            },
+            {
+              "order": 4,
+              "action": "C) \"a banana é recomendado\" (Erro",
+              "rationale": "com artigo exige recomendada)."
+            },
+            {
+              "order": 5,
+              "action": "D) \"os dois são benéfico\" (Erro",
+              "rationale": "exige plural benéficos)."
+            }
+          ],
+          "result": "Proveniência: 025 - Concordância nominal - Questões Parte 06 - 720p.md (EX-A09-V025-002).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-015 — Questão 34 (VUNESP — Pref. de Barretos - SP — Agente de Saúde) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-015 — Questão 34 (VUNESP — Pref. de Barretos - SP — Agente de Saúde).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-015 — Questão 34 (VUNESP — Pref. de Barretos - SP — Agente de Saúde).",
           "blocks": [
             {
               "type": "list",
@@ -1298,6 +2099,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-016",
           "title": "EX-A09-G08-016 — Questão 35 (VUNESP — Câmara de Itaquaquecetuba - SP — Jornalista)",
+          "prompt": "Enunciado: Concordância nominal padrão:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Concordância nominal padrão:"
+            },
+            {
+              "order": 2,
+              "action": "A) \"anúncios são difundido\" (Erro",
+              "rationale": "passiva analítica exige difundidos)."
+            },
+            {
+              "order": 3,
+              "action": "B) \"Os ecologistas mantêm-se alerta quanto à dizimação...\" (CORRETA",
+              "rationale": "alerta após verbo é advérbio invariável)."
+            },
+            {
+              "order": 4,
+              "action": "C) \"menas áreas florestais\" (Erro",
+              "rationale": "menos)."
+            },
+            {
+              "order": 5,
+              "action": "D) \"O abacate e o petróleo junto\" (Erro",
+              "rationale": "adjetivo exige plural juntos)."
+            }
+          ],
+          "result": "Proveniência: 025 - Concordância nominal - Questões Parte 06 - 720p.md (EX-A09-V025-003).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-016 — Questão 35 (VUNESP — Câmara de Itaquaquecetuba - SP — Jornalista) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-016 — Questão 35 (VUNESP — Câmara de Itaquaquecetuba - SP — Jornalista).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-016 — Questão 35 (VUNESP — Câmara de Itaquaquecetuba - SP — Jornalista).",
           "blocks": [
             {
               "type": "list",
@@ -1318,6 +2151,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-017",
           "title": "EX-A09-G08-017 — Questão 36 (CESGRANRIO — UNIRIO — Administrador)",
+          "prompt": "Enunciado: Concordância correta do elemento destacado:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Concordância correta do elemento destacado:"
+            },
+            {
+              "order": 2,
+              "action": "A) \"As lembranças e o saudosismo são dolorosas.\" (Erro",
+              "rationale": "núcleos mistos exigem masculino plural dolorosos)."
+            },
+            {
+              "order": 3,
+              "action": "B) \"As pessoas não deveriam ficar sós no final da vida.\" (CORRETA",
+              "rationale": "sós = sozinhas, adjetivo predicativo)."
+            },
+            {
+              "order": 4,
+              "action": "C) \"Caixas de notebook não têm nada de encantadora.\" (Erro",
+              "rationale": "refere-se a caixas, exige encantadoras)."
+            },
+            {
+              "order": 5,
+              "action": "D) \"É desnecessário a tristeza...\" (Erro",
+              "rationale": "com artigo exige é desnecessária)."
+            }
+          ],
+          "result": "Proveniência: 025 - Concordância nominal - Questões Parte 06 - 720p.md (EX-A09-V025-004).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-017 — Questão 36 (CESGRANRIO — UNIRIO — Administrador) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-017 — Questão 36 (CESGRANRIO — UNIRIO — Administrador).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-017 — Questão 36 (CESGRANRIO — UNIRIO — Administrador).",
           "blocks": [
             {
               "type": "list",
@@ -1338,6 +2203,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-018",
           "title": "EX-A09-G08-018 — Questão 37 (Instituto Excelência — Pref. de Taubaté - SP — Agente de Endemias)",
+          "prompt": "Enunciado: Identificar onde NÃO há erro de concordância nominal:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identificar onde NÃO há erro de concordância nominal:"
+            },
+            {
+              "order": 2,
+              "action": "A) \"Todos os soldados estavam alertas.\" (Erro",
+              "rationale": "advérbio invariável alerta)."
+            },
+            {
+              "order": 3,
+              "action": "B) \"Estamos quites com a Justiça Eleitoral.\" (Gramaticalmente correta, mas rejeitada pela banca por erro técnico do examinador).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) \"As fotografias seguem em anexo.\" (GABARITO OFICIAL",
+              "rationale": "em anexo é locução invariável inquestionável)."
+            },
+            {
+              "order": 5,
+              "action": "D) \"Nenhuma das alternativas.\"",
+              "rationale": null
+            }
+          ],
+          "result": "Proveniência: 025 - Concordância nominal - Questões Parte 06 - 720p.md (EX-A09-V025-005).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-018 — Questão 37 (Instituto Excelência — Pref. de Taubaté - SP — Agente de Endemias) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-018 — Questão 37 (Instituto Excelência — Pref. de Taubaté - SP — Agente de Endemias).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-018 — Questão 37 (Instituto Excelência — Pref. de Taubaté - SP — Agente de Endemias).",
           "blocks": [
             {
               "type": "list",
@@ -1357,6 +2254,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-019",
           "title": "EX-A09-G08-019 — Questão 38 (OBJETIVA — Pref. de Santa Maria - RS — Analista)",
+          "prompt": "Enunciado: Identificar a alternativa correta:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identificar a alternativa correta:"
+            },
+            {
+              "order": 2,
+              "action": "A) \"Segue anexa a lista.\" (CORRETA",
+              "rationale": "adjetivo concordando com a lista)."
+            },
+            {
+              "order": 3,
+              "action": "B) \"Vão inclusa as procurações.\" (Erro",
+              "rationale": "exige plural inclusas)."
+            },
+            {
+              "order": 4,
+              "action": "C) \"Elas mesma falaram...\" (Erro",
+              "rationale": "exige plural mesmas)."
+            },
+            {
+              "order": 5,
+              "action": "D) \"menas arrogância\" (Erro",
+              "rationale": "menos)."
+            }
+          ],
+          "result": "Proveniência: 025 - Concordância nominal - Questões Parte 06 - 720p.md (EX-A09-V025-006).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-019 — Questão 38 (OBJETIVA — Pref. de Santa Maria - RS — Analista) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-019 — Questão 38 (OBJETIVA — Pref. de Santa Maria - RS — Analista).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-019 — Questão 38 (OBJETIVA — Pref. de Santa Maria - RS — Analista).",
           "blocks": [
             {
               "type": "list",
@@ -1377,6 +2306,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-020",
           "title": "EX-A09-G08-020 — Questão 39 (VUNESP — Pref. de Arujá - SP — Professor)",
+          "prompt": "Enunciado: Preenchimento de lacunas:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Preenchimento de lacunas:"
+            },
+            {
+              "order": 2,
+              "action": "\"Quanto à bisavó, era ela  [1] quem contava a Félix a trajetória das joias da família, que depois foram substituídas por meros objetos  [2] de vidro; mas,  [3] com a venda das joias, o jegue e a primeira leva de mercadorias...\"",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento",
+              "rationale": "1) mesma (concorda com ela); 2) feitos (particípio de meros objetos); 3) comprados (particípio referente a objetos)."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "A (mesma... feitos... comprados)."
+            },
+            {
+              "order": 5,
+              "action": "Proveniência",
+              "rationale": "025 - Concordância nominal - Questões Parte 06 - 720p.md (EX-A09-V025-007)."
+            }
+          ],
+          "result": "Proveniência: 025 - Concordância nominal - Questões Parte 06 - 720p.md (EX-A09-V025-007).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-020 — Questão 39 (VUNESP — Pref. de Arujá - SP — Professor) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-020 — Questão 39 (VUNESP — Pref. de Arujá - SP — Professor).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-020 — Questão 39 (VUNESP — Pref. de Arujá - SP — Professor).",
           "blocks": [
             {
               "type": "list",
@@ -1394,6 +2355,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-021",
           "title": "EX-A09-G08-021 — Questão 40 (FGV — SEAD-AP — Fiscal da Receita Estadual)",
+          "prompt": "Enunciado: Assinalar a concordância nominal INCORRETA:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assinalar a concordância nominal INCORRETA:"
+            },
+            {
+              "order": 2,
+              "action": "A) \"Persistência é necessário...\" (Correta",
+              "rationale": "sem determinante, sentido geral)."
+            },
+            {
+              "order": 3,
+              "action": "B) \"As questões definidas serão bastantes...\" (Correta",
+              "rationale": "adjetivo = suficientes)."
+            },
+            {
+              "order": 4,
+              "action": "C) \"Vão incluídos na pasta do congressista a programação e o mapa...\" (Correta",
+              "rationale": "predicativo anteposto segue o verbo no plural masculino)."
+            },
+            {
+              "order": 5,
+              "action": "D) \"Consideraram-se satisfatórios os resumos...\" (Correta",
+              "rationale": "predicativo concorda com os resumos)."
+            }
+          ],
+          "result": "Proveniência: 025 - Concordância nominal - Questões Parte 06 - 720p.md (EX-A09-V025-008).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-021 — Questão 40 (FGV — SEAD-AP — Fiscal da Receita Estadual) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-021 — Questão 40 (FGV — SEAD-AP — Fiscal da Receita Estadual).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-021 — Questão 40 (FGV — SEAD-AP — Fiscal da Receita Estadual).",
           "blocks": [
             {
               "type": "list",
@@ -1414,6 +2407,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-022",
           "title": "EX-A09-G08-022 — Questão 41 (Máxima — Pref. de Heliodora - MG — Técnico)",
+          "prompt": "Enunciado: Avaliar a correção das frases:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Avaliar a correção das frases:"
+            },
+            {
+              "order": 2,
+              "action": "I. \"São bastantes argumentos pertinentes ao assunto.\" (Correto",
+              "rationale": "pronome indefinido = muitos)."
+            },
+            {
+              "order": 3,
+              "action": "II. \"Foram questões as mais complicadas possível.\" (Incorreto",
+              "rationale": "artigo as exige possíveis)."
+            },
+            {
+              "order": 4,
+              "action": "III. \"Anexas aos contratos estão as cópias dos documentos.\" (Correto",
+              "rationale": "concorda com as cópias)."
+            },
+            {
+              "order": 5,
+              "action": "Comando",
+              "rationale": "Estão corretos: Apenas dois itens (I e III)."
+            }
+          ],
+          "result": "Proveniência: 026 - Concordância nominal - Questões Parte 07 - 720p.md (EX-A09-V026-001).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-022 — Questão 41 (Máxima — Pref. de Heliodora - MG — Técnico) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-022 — Questão 41 (Máxima — Pref. de Heliodora - MG — Técnico).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-022 — Questão 41 (Máxima — Pref. de Heliodora - MG — Técnico).",
           "blocks": [
             {
               "type": "list",
@@ -1433,6 +2458,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-023",
           "title": "EX-A09-G08-023 — Questão 42 (VUNESP — PM-SP — Sargento)",
+          "prompt": "Enunciado: Assinalar o enunciado correto segundo a norma-padrão:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assinalar o enunciado correto segundo a norma-padrão:"
+            },
+            {
+              "order": 2,
+              "action": "A) \"floresta pode ser meia perigosa\" (Erro",
+              "rationale": "advérbio exige meio)."
+            },
+            {
+              "order": 3,
+              "action": "B) \"a acusação e o convite que foram feitas [...] foram justas\" (Erro",
+              "rationale": "núcleos mistos exigem masculino plural feitos / justos)."
+            },
+            {
+              "order": 4,
+              "action": "C) \"com menas possibilidades\" (Erro",
+              "rationale": "menos)."
+            },
+            {
+              "order": 5,
+              "action": "D) \"a tristeza e a solidão imensas\" (CORRETA",
+              "rationale": "concordância total no feminino plural com dois substantivos femininos)."
+            }
+          ],
+          "result": "Proveniência: 026 - Concordância nominal - Questões Parte 07 - 720p.md (EX-A09-V026-002).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-023 — Questão 42 (VUNESP — PM-SP — Sargento) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-023 — Questão 42 (VUNESP — PM-SP — Sargento).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-023 — Questão 42 (VUNESP — PM-SP — Sargento).",
           "blocks": [
             {
               "type": "list",
@@ -1452,6 +2509,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-024",
           "title": "EX-A09-G08-024 — Questão 43 (OBJETIVA — Pref. de Santa Maria - RS — Arquiteto)",
+          "prompt": "Enunciado: Assinalar a alternativa INCORRETA:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assinalar a alternativa INCORRETA:"
+            },
+            {
+              "order": 2,
+              "action": "A) \"Ela mesma disse a verdade.\" (Correta).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "B) \"Precisamos de mais amor e menos desconfiança.\" (Correta).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) \"Vimos paisagens o mais belas possíveis.\" (INCORRETA / GABARITO",
+              "rationale": "misturou artigo singular o com plural possíveis; o correto é o mais belas possível ou as mais belas possíveis)."
+            },
+            {
+              "order": 5,
+              "action": "D) \"É necessário paciência.\" (Correta",
+              "rationale": "sem determinante)."
+            }
+          ],
+          "result": "Proveniência: 026 - Concordância nominal - Questões Parte 07 - 720p.md (EX-A09-V026-003).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-024 — Questão 43 (OBJETIVA — Pref. de Santa Maria - RS — Arquiteto) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-024 — Questão 43 (OBJETIVA — Pref. de Santa Maria - RS — Arquiteto).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-024 — Questão 43 (OBJETIVA — Pref. de Santa Maria - RS — Arquiteto).",
           "blocks": [
             {
               "type": "list",
@@ -1472,6 +2561,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-025",
           "title": "EX-A09-G08-025 — Questão 44 (CESGRANRIO — Caixa Econômica Federal — Técnico Bancário)",
+          "prompt": "Enunciado: Assinalar a concordância adequadamente construída:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assinalar a concordância adequadamente construída:"
+            },
+            {
+              "order": 2,
+              "action": "A) \"foram abordadas ensinamentos e orientações\" (Erro",
+              "rationale": "1º núcleo masculino exige abordados)."
+            },
+            {
+              "order": 3,
+              "action": "B) \"Sempre há bastante investidores...\" (Erro",
+              "rationale": "pronome indefinido exige bastantes)."
+            },
+            {
+              "order": 4,
+              "action": "C) \"Perderemos menas oportunidades...\" (Erro",
+              "rationale": "menos)."
+            },
+            {
+              "order": 5,
+              "action": "D) \"conglomerados francos-brasileiros\" (Erro",
+              "rationale": "adjetivo composto exige franco-brasileiros)."
+            }
+          ],
+          "result": "Proveniência: 026 - Concordância nominal - Questões Parte 07 - 720p.md (EX-A09-V026-004).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-025 — Questão 44 (CESGRANRIO — Caixa Econômica Federal — Técnico Bancário) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-025 — Questão 44 (CESGRANRIO — Caixa Econômica Federal — Técnico Bancário).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-025 — Questão 44 (CESGRANRIO — Caixa Econômica Federal — Técnico Bancário).",
           "blocks": [
             {
               "type": "list",
@@ -1492,6 +2613,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G08-026",
           "title": "EX-A09-G08-026 — Questão 45 (VUNESP — Câmara de São Roque - SP — Oficial)",
+          "prompt": "Enunciado: Assinalar a frase escrita em conformidade com a norma-padrão:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assinalar a frase escrita em conformidade com a norma-padrão:"
+            },
+            {
+              "order": 2,
+              "action": "A) \"sonhos pequenos [...] são permitido\" (Erro",
+              "rationale": "refere-se a sonhos, exige permitidos)."
+            },
+            {
+              "order": 3,
+              "action": "B) \"filmes durante o qual se dorme\" (Erro",
+              "rationale": "refere-se a filmes, exige os quais)."
+            },
+            {
+              "order": 4,
+              "action": "C) \"com os menores barulhos possível\" (Erro",
+              "rationale": "artigo plural os exige possíveis)."
+            },
+            {
+              "order": 5,
+              "action": "D) \"dormir [...] é muito benéfica\" (Erro",
+              "rationale": "sujeito oracional exige masculino singular benéfico)."
+            }
+          ],
+          "result": "Proveniência: 026 - Concordância nominal - Questões Parte 07 - 720p.md (EX-A09-V026-005).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G08-026 — Questão 45 (VUNESP — Câmara de São Roque - SP — Oficial) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G08-026 — Questão 45 (VUNESP — Câmara de São Roque - SP — Oficial).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G08-026 — Questão 45 (VUNESP — Câmara de São Roque - SP — Oficial).",
           "blocks": [
             {
               "type": "list",
@@ -1556,8 +2709,12 @@
         {
           "trapId": "WARN-A09-G08-001",
           "title": "A Armadilha da Palavra Inexistente \"Menas\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha da Palavra Inexistente \"Menas\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha da Palavra Inexistente \"Menas\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha da Palavra Inexistente \"Menas\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha da Palavra Inexistente \"Menas\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha da Palavra Inexistente \"Menas\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha da Palavra Inexistente \"Menas\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha da Palavra Inexistente \"Menas\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha da Palavra Inexistente \"Menas\".",
           "blocks": [
             {
               "type": "list",
@@ -1573,8 +2730,12 @@
         {
           "trapId": "WARN-A09-G08-002",
           "title": "Pegadinha de \"Alerta\" Posposto ao Verbo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha de \"Alerta\" Posposto ao Verbo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha de \"Alerta\" Posposto ao Verbo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha de \"Alerta\" Posposto ao Verbo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha de \"Alerta\" Posposto ao Verbo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha de \"Alerta\" Posposto ao Verbo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pegadinha de \"Alerta\" Posposto ao Verbo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha de \"Alerta\" Posposto ao Verbo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha de \"Alerta\" Posposto ao Verbo.",
           "blocks": [
             {
               "type": "list",
@@ -1590,8 +2751,12 @@
         {
           "trapId": "WARN-A09-G08-003",
           "title": "O Uso Coloquial Incorreto de \"Estou Quites\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Uso Coloquial Incorreto de \"Estou Quites\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Uso Coloquial Incorreto de \"Estou Quites\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Uso Coloquial Incorreto de \"Estou Quites\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Uso Coloquial Incorreto de \"Estou Quites\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Uso Coloquial Incorreto de \"Estou Quites\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Uso Coloquial Incorreto de \"Estou Quites\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Uso Coloquial Incorreto de \"Estou Quites\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Uso Coloquial Incorreto de \"Estou Quites\".",
           "blocks": [
             {
               "type": "list",
@@ -1607,8 +2772,12 @@
         {
           "trapId": "WARN-A09-G08-004",
           "title": "O Desvio do \"Por Si Só\" para Referentes Plurais",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Desvio do \"Por Si Só\" para Referentes Plurais.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Desvio do \"Por Si Só\" para Referentes Plurais.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Desvio do \"Por Si Só\" para Referentes Plurais no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Desvio do \"Por Si Só\" para Referentes Plurais.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Desvio do \"Por Si Só\" para Referentes Plurais.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Desvio do \"Por Si Só\" para Referentes Plurais para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Desvio do \"Por Si Só\" para Referentes Plurais.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Desvio do \"Por Si Só\" para Referentes Plurais.",
           "blocks": [
             {
               "type": "list",
@@ -1624,8 +2793,12 @@
         {
           "trapId": "WARN-A09-G08-005",
           "title": "O Erro Popular do \"Meia Cansada\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Erro Popular do \"Meia Cansada\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Erro Popular do \"Meia Cansada\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Erro Popular do \"Meia Cansada\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Erro Popular do \"Meia Cansada\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Erro Popular do \"Meia Cansada\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Erro Popular do \"Meia Cansada\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Erro Popular do \"Meia Cansada\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Erro Popular do \"Meia Cansada\".",
           "blocks": [
             {
               "type": "list",
@@ -1641,8 +2814,12 @@
         {
           "trapId": "WARN-A09-G08-006",
           "title": "Confusão entre \"Caro/Barato\" Adjetivo e Advérbio de Preço",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão entre \"Caro/Barato\" Adjetivo e Advérbio de Preço.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão entre \"Caro/Barato\" Adjetivo e Advérbio de Preço.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão entre \"Caro/Barato\" Adjetivo e Advérbio de Preço no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão entre \"Caro/Barato\" Adjetivo e Advérbio de Preço.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão entre \"Caro/Barato\" Adjetivo e Advérbio de Preço.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão entre \"Caro/Barato\" Adjetivo e Advérbio de Preço para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão entre \"Caro/Barato\" Adjetivo e Advérbio de Preço.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão entre \"Caro/Barato\" Adjetivo e Advérbio de Preço.",
           "blocks": [
             {
               "type": "list",
@@ -1658,8 +2835,12 @@
         {
           "trapId": "WARN-A09-G08-007",
           "title": "Estruturas Híbridas Inválidas com \"Possível\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Estruturas Híbridas Inválidas com \"Possível\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Estruturas Híbridas Inválidas com \"Possível\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Estruturas Híbridas Inválidas com \"Possível\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Estruturas Híbridas Inválidas com \"Possível\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Estruturas Híbridas Inválidas com \"Possível\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Estruturas Híbridas Inválidas com \"Possível\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Estruturas Híbridas Inválidas com \"Possível\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Estruturas Híbridas Inválidas com \"Possível\".",
           "blocks": [
             {
               "type": "list",

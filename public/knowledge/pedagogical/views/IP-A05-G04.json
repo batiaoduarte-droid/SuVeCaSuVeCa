@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A05-G04",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.780Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.543Z"
   },
   "unit": {
     "unitId": "IP-A05-G04",
@@ -504,6 +504,59 @@
         {
           "procedureId": "PROC-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001",
           "title": "Procedimento de Identificação da Voz Verbal a Partir do Sujeito",
+          "objective": "Executar o algoritmo decisório para Procedimento de Identificação da Voz Verbal a Partir do Sujeito",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento de Identificação da Voz Verbal a Partir do Sujeito."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Sujeito pratica a ação -> Classificar como VOZ ATIVA.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Sujeito sofre/recebe a ação -> Classificar como VOZ PASSIVA.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Sujeito pratica e sofre a ação (mesmo referente) -> Classificar como VOZ REFLEXIVA.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Locução SER + Particípio -> PASSIVA ANALÍTICA.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "VTD/VTDI + Partícula SE -> PASSIVA SINTÉTICA.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento de Identificação da Voz Verbal a Partir do Sujeito."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -535,6 +588,44 @@
         {
           "procedureId": "PROC-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-002",
           "title": "Método das Duas Verificações para Validar a Passiva Sintética",
+          "objective": "Executar o algoritmo decisório para Método das Duas Verificações para Validar a Passiva Sintética",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método das Duas Verificações para Validar a Passiva Sintética."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura sintático-morfológica alvo de Método das Duas Verificações para Validar a Passiva Sintética.",
+              "test": "Localizar o termo regente ou núcleo do segmento."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios decisórios da regra canônica.",
+              "test": "Verificar se há exceção ou caso facultativo aplicável."
+            },
+            {
+              "order": 3,
+              "action": "Concluir a classificação definitiva para resolução da questão.",
+              "test": "Confrontar o resultado obtido com as alternativas da prova."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método das Duas Verificações para Validar a Passiva Sintética."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -545,6 +636,65 @@
         {
           "procedureId": "PROC-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003",
           "title": "Algoritmo Geral de Classificação Estrutural de Vozes Verbais",
+          "objective": "Executar o algoritmo decisório para Algoritmo Geral de Classificação Estrutural de Vozes Verbais",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo Geral de Classificação Estrutural de Vozes Verbais."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Inspecione a oração buscando as duas únicas formas passivas",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Há Verbo Auxiliar (SER) + Particípio? -> SIM",
+              "explanation": "Voz Passiva Analítica.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Há VTD/VTDI + SE apassivador? -> SIM",
+              "explanation": "Voz Passiva Sintética.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Não havendo estrutura passiva, verifique a reflexividade",
+              "explanation": "",
+              "test": "Não havendo estrutura passiva, verifique a reflexividade:"
+            },
+            {
+              "order": 5,
+              "action": "Sujeito e complemento possuem o mesmo referente? -> SIM",
+              "explanation": "Voz Reflexiva.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se não for passiva analítica, nem passiva sintética, nem reflexiva",
+              "explanation": "",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo Geral de Classificação Estrutural de Vozes Verbais."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -595,6 +745,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G04-001",
           "title": "EX-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001 — Exemplos Estruturais Fundamentais (material de origem)",
+          "prompt": "Voz Ativa: \"Todos compreenderam a questão.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Voz Ativa",
+              "rationale": "\"Todos compreenderam a questão.\""
+            },
+            {
+              "order": 2,
+              "action": "Todos",
+              "rationale": "Sujeito Agente."
+            },
+            {
+              "order": 3,
+              "action": "compreenderam",
+              "rationale": "VTD em voz ativa."
+            },
+            {
+              "order": 4,
+              "action": "a questão",
+              "rationale": "Objeto Direto."
+            },
+            {
+              "order": 5,
+              "action": "Voz Passiva Analítica com Agente Determinado",
+              "rationale": "\"A questão foi compreendida por todos.\""
+            }
+          ],
+          "result": "o nome de Primeiros Cantos: Sujeito Paciente singular. (Equivale a \"O nome de Primeiros Cantos foi dado às poesias\").",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001 — Exemplos Estruturais Fundamentais (material de origem) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001 — Exemplos Estruturais Fundamentais (material de origem).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001 — Exemplos Estruturais Fundamentais (material de origem).",
           "blocks": [
             {
               "type": "list",
@@ -698,6 +880,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G04-002",
           "title": "Frase 1: Recebeu-se o projeto com ceticismo.",
+          "prompt": "Análise Sintática: Verbo recebeu (VTD) + se (Partícula Apassivadora) + o projeto (Sujeito Paciente).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise Sintática",
+              "rationale": "Verbo recebeu (VTD) + se (Partícula Apassivadora) + o projeto (Sujeito Paciente)."
+            },
+            {
+              "order": 2,
+              "action": "Transposição Analítica",
+              "rationale": "O projeto foi recebido com ceticismo."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Voz Passiva Sintética."
+            }
+          ],
+          "result": "Classificação: Voz Passiva Sintética.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Frase 1: Recebeu-se o projeto com ceticismo. sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Frase 1: Recebeu-se o projeto com ceticismo..",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Frase 1: Recebeu-se o projeto com ceticismo..",
           "blocks": [
             {
               "type": "list",
@@ -713,6 +917,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G04-003",
           "title": "Frase 2: A comunidade científica recebeu o projeto com ceticismo.",
+          "prompt": "Análise Sintática: A comunidade científica (Sujeito Agente) + recebeu (VTD) + o projeto (Objeto Direto). Não possui locução auxiliar nem partícula se.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise Sintática",
+              "rationale": "A comunidade científica (Sujeito Agente) + recebeu (VTD) + o projeto (Objeto Direto). Não possui locução auxiliar nem partícula se."
+            },
+            {
+              "order": 2,
+              "action": "Classificação",
+              "rationale": "Voz Ativa (Armadilha semântica desconstruída)."
+            }
+          ],
+          "result": "Classificação: Voz Ativa (Armadilha semântica desconstruída).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Frase 2: A comunidade científica recebeu o projeto com ceticismo. sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Frase 2: A comunidade científica recebeu o projeto com ceticismo..",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Frase 2: A comunidade científica recebeu o projeto com ceticismo..",
           "blocks": [
             {
               "type": "list",
@@ -727,6 +948,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G04-004",
           "title": "Frase 3: O projeto foi recebido com ceticismo pela comunidade científica.",
+          "prompt": "Análise Sintática: O projeto (Sujeito Paciente) + foi recebido (Locução Passiva Analítica: SER + Particípio) + pela comunidade científica (Agente da Passiva Determinado com preposição por).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise Sintática",
+              "rationale": "O projeto (Sujeito Paciente) + foi recebido (Locução Passiva Analítica: SER + Particípio) + pela comunidade científica (Agente da Passiva Determinado com preposição por)."
+            },
+            {
+              "order": 2,
+              "action": "Classificação",
+              "rationale": "Voz Passiva Analítica."
+            }
+          ],
+          "result": "Classificação: Voz Passiva Analítica.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Frase 3: O projeto foi recebido com ceticismo pela comunidade científica. sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Frase 3: O projeto foi recebido com ceticismo pela comunidade científica..",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Frase 3: O projeto foi recebido com ceticismo pela comunidade científica..",
           "blocks": [
             {
               "type": "list",
@@ -741,6 +979,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G04-005",
           "title": "Frase 4: Fazendeiros brasileiros ajudam a equipar a polícia.",
+          "prompt": "Análise Sintática: Fazendeiros brasileiros (Sujeito Agente) + ajudam a equipar (Locução verbal com verbo principal no infinitivo).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise Sintática",
+              "rationale": "Fazendeiros brasileiros (Sujeito Agente) + ajudam a equipar (Locução verbal com verbo principal no infinitivo)."
+            },
+            {
+              "order": 2,
+              "action": "Classificação",
+              "rationale": "Voz Ativa."
+            }
+          ],
+          "result": "Classificação: Voz Ativa.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Frase 4: Fazendeiros brasileiros ajudam a equipar a polícia. sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Frase 4: Fazendeiros brasileiros ajudam a equipar a polícia..",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Frase 4: Fazendeiros brasileiros ajudam a equipar a polícia..",
           "blocks": [
             {
               "type": "list",
@@ -755,6 +1010,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G04-006",
           "title": "Frase 5: Os resultados foram divulgados via TV.",
+          "prompt": "Análise Sintática: Os resultados (Sujeito Paciente) + foram divulgados (Locução Passiva Analítica) + via TV (= por meio da TV $\\rightarrow$ Adjunto Adverbial de Meio). Agente da passiva indeterminado.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise Sintática",
+              "rationale": "Os resultados (Sujeito Paciente) + foram divulgados (Locução Passiva Analítica) + via TV (= por meio da TV $\\rightarrow$ Adjunto Adverbial de Meio). Agente da passiva indeterminado."
+            },
+            {
+              "order": 2,
+              "action": "Classificação",
+              "rationale": "Voz Passiva Analítica."
+            }
+          ],
+          "result": "Classificação: Voz Passiva Analítica.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Frase 5: Os resultados foram divulgados via TV. sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Frase 5: Os resultados foram divulgados via TV..",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Frase 5: Os resultados foram divulgados via TV..",
           "blocks": [
             {
               "type": "list",
@@ -769,6 +1041,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G04-007",
           "title": "Frase 6: \"A Bíblia é uma coleção de lendas veneráveis, mas primitivas e infantis.\" (Albert Einstein)",
+          "prompt": "Análise Sintática: A Bíblia (Sujeito) + é (Verbo de Ligação isolado) + predicativo do sujeito. Não há particípio.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise Sintática",
+              "rationale": "A Bíblia (Sujeito) + é (Verbo de Ligação isolado) + predicativo do sujeito. Não há particípio."
+            },
+            {
+              "order": 2,
+              "action": "Classificação",
+              "rationale": "Voz Ativa."
+            }
+          ],
+          "result": "Classificação: Voz Ativa.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Frase 6: \"A Bíblia é uma coleção de lendas veneráveis, mas primitivas e infantis.\" (Albert Einstein) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Frase 6: \"A Bíblia é uma coleção de lendas veneráveis, mas primitivas e infantis.\" (Albert Einstein).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Frase 6: \"A Bíblia é uma coleção de lendas veneráveis, mas primitivas e infantis.\" (Albert Einstein).",
           "blocks": [
             {
               "type": "list",
@@ -783,6 +1072,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G04-008",
           "title": "Frase 7: Assaltou-se uma senhora.",
+          "prompt": "Análise Sintática: Assaltou (VTD) + se (Partícula Apassivadora) + uma senhora (Sujeito Paciente).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise Sintática",
+              "rationale": "Assaltou (VTD) + se (Partícula Apassivadora) + uma senhora (Sujeito Paciente)."
+            },
+            {
+              "order": 2,
+              "action": "Transposição Analítica",
+              "rationale": "Uma senhora foi assaltada."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Voz Passiva Sintética."
+            }
+          ],
+          "result": "Classificação: Voz Passiva Sintética.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Frase 7: Assaltou-se uma senhora. sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Frase 7: Assaltou-se uma senhora..",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Frase 7: Assaltou-se uma senhora..",
           "blocks": [
             {
               "type": "list",
@@ -798,6 +1109,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G04-009",
           "title": "Frase 8: A cozinha era antiga e escura.",
+          "prompt": "Análise Sintática: A cozinha (Sujeito gramatical) + era (Verbo de Ligação) + antiga e escura (Predicativo do Sujeito composto por adjetivos).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise Sintática",
+              "rationale": "A cozinha (Sujeito gramatical) + era (Verbo de Ligação) + antiga e escura (Predicativo do Sujeito composto por adjetivos)."
+            },
+            {
+              "order": 2,
+              "action": "Classificação",
+              "rationale": "Voz Ativa."
+            }
+          ],
+          "result": "Classificação: Voz Ativa.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Frase 8: A cozinha era antiga e escura. sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Frase 8: A cozinha era antiga e escura..",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Frase 8: A cozinha era antiga e escura..",
           "blocks": [
             {
               "type": "list",
@@ -812,6 +1140,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G04-010",
           "title": "Frase 9: A cozinha era reformada aos poucos.",
+          "prompt": "Análise Sintática: A cozinha (Sujeito Paciente) + era reformada (Auxiliar era + Particípio reformada) + aos poucos (Adjunto Adverbial de Tempo). Agente da passiva indeterminado.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise Sintática",
+              "rationale": "A cozinha (Sujeito Paciente) + era reformada (Auxiliar era + Particípio reformada) + aos poucos (Adjunto Adverbial de Tempo). Agente da passiva indeterminado."
+            },
+            {
+              "order": 2,
+              "action": "Classificação",
+              "rationale": "Voz Passiva Analítica."
+            }
+          ],
+          "result": "Classificação: Voz Passiva Analítica.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Frase 9: A cozinha era reformada aos poucos. sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Frase 9: A cozinha era reformada aos poucos..",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Frase 9: A cozinha era reformada aos poucos..",
           "blocks": [
             {
               "type": "list",
@@ -826,6 +1171,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G04-011",
           "title": "Frase 10: Arrumou-se para o jantar.",
+          "prompt": "Análise Sintática: Sujeito elíptico (Ele/Ela) pratica e sofre a ação através do pronome reflexivo se (a si mesmo). Coincidência de referente.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise Sintática",
+              "rationale": "Sujeito elíptico (Ele/Ela) pratica e sofre a ação através do pronome reflexivo se (a si mesmo). Coincidência de referente."
+            },
+            {
+              "order": 2,
+              "action": "Classificação",
+              "rationale": "Voz Reflexiva."
+            }
+          ],
+          "result": "Classificação: Voz Reflexiva.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Frase 10: Arrumou-se para o jantar. sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Frase 10: Arrumou-se para o jantar..",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Frase 10: Arrumou-se para o jantar..",
           "blocks": [
             {
               "type": "list",
@@ -878,8 +1240,12 @@
         {
           "trapId": "WARN-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001",
           "title": "Pegadinha do Cebraspe: Inexistência do Agente da Passiva",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha do Cebraspe: Inexistência do Agente da Passiva.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha do Cebraspe: Inexistência do Agente da Passiva.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha do Cebraspe: Inexistência do Agente da Passiva no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha do Cebraspe: Inexistência do Agente da Passiva.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha do Cebraspe: Inexistência do Agente da Passiva.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pegadinha do Cebraspe: Inexistência do Agente da Passiva para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha do Cebraspe: Inexistência do Agente da Passiva.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha do Cebraspe: Inexistência do Agente da Passiva.",
           "blocks": [
             {
               "type": "list",
@@ -894,8 +1260,12 @@
         {
           "trapId": "WARN-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-002",
           "title": "Confusão entre Objeto Direto e Sujeito Paciente na Passiva Sintética",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão entre Objeto Direto e Sujeito Paciente na Passiva Sintética.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão entre Objeto Direto e Sujeito Paciente na Passiva Sintética.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão entre Objeto Direto e Sujeito Paciente na Passiva Sintética no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão entre Objeto Direto e Sujeito Paciente na Passiva Sintética.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão entre Objeto Direto e Sujeito Paciente na Passiva Sintética.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão entre Objeto Direto e Sujeito Paciente na Passiva Sintética para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão entre Objeto Direto e Sujeito Paciente na Passiva Sintética.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão entre Objeto Direto e Sujeito Paciente na Passiva Sintética.",
           "blocks": [
             {
               "type": "list",
@@ -910,8 +1280,12 @@
         {
           "trapId": "WARN-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003",
           "title": "Erro Frequente de Concordância Verbal (\"Aluga-se casas\")",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Erro Frequente de Concordância Verbal (\"Aluga-se casas\").",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Erro Frequente de Concordância Verbal (\"Aluga-se casas\").",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Erro Frequente de Concordância Verbal (\"Aluga-se casas\") no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Erro Frequente de Concordância Verbal (\"Aluga-se casas\").",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Erro Frequente de Concordância Verbal (\"Aluga-se casas\").",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Erro Frequente de Concordância Verbal (\"Aluga-se casas\") para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Erro Frequente de Concordância Verbal (\"Aluga-se casas\").",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Erro Frequente de Concordância Verbal (\"Aluga-se casas\").",
           "blocks": [
             {
               "type": "list",
@@ -926,8 +1300,12 @@
         {
           "trapId": "WARN-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004",
           "title": "Armadilha Semântica do Verbo \"Receber\" e Sujeitos Inanimados",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Armadilha Semântica do Verbo \"Receber\" e Sujeitos Inanimados.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Armadilha Semântica do Verbo \"Receber\" e Sujeitos Inanimados.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Armadilha Semântica do Verbo \"Receber\" e Sujeitos Inanimados no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Armadilha Semântica do Verbo \"Receber\" e Sujeitos Inanimados.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Armadilha Semântica do Verbo \"Receber\" e Sujeitos Inanimados.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Armadilha Semântica do Verbo \"Receber\" e Sujeitos Inanimados para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Armadilha Semântica do Verbo \"Receber\" e Sujeitos Inanimados.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Armadilha Semântica do Verbo \"Receber\" e Sujeitos Inanimados.",
           "blocks": [
             {
               "type": "list",
@@ -942,8 +1320,12 @@
         {
           "trapId": "WARN-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-005",
           "title": "O Falso Amigo do Verbo \"SER\" Isolado",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Falso Amigo do Verbo \"SER\" Isolado.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Falso Amigo do Verbo \"SER\" Isolado.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Falso Amigo do Verbo \"SER\" Isolado no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Falso Amigo do Verbo \"SER\" Isolado.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Falso Amigo do Verbo \"SER\" Isolado.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Falso Amigo do Verbo \"SER\" Isolado para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Falso Amigo do Verbo \"SER\" Isolado.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Falso Amigo do Verbo \"SER\" Isolado.",
           "blocks": [
             {
               "type": "list",
@@ -1132,7 +1514,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Aplicando a correlação básica PudeSSE/FaRIA, teríamos: viéSSEmos/garantiRIA. Observem que\nnão faz sentido um verbo indicando hipótese no passado correlacionado a um indicando sua\nconsequência no futuro. É um situação tão incoerente como: *Se eu pudesse, viajarei... Questão\nincorreta.",
       "questionSha256": "a0433c5227f1dfa52721fe103ae7872ee39dc2f680a96b4b1bdc2ce80da749a3",
-      "answerSha256": "aac79ef8f681a2db0ca0b1221ef11ded8c5b9e50cf16f2e0a0fea18cff6eb9b8"
+      "answerSha256": "aac79ef8f681a2db0ca0b1221ef11ded8c5b9e50cf16f2e0a0fea18cff6eb9b8",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Vozes Verbais - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula05.q0024",
@@ -1165,7 +1550,50 @@
       "officialAnswer": "option_B",
       "explanation": "A voz passiva “nasce” de um objeto direto na voz ativa. Esse objeto direto é necessário para virar\nsujeito passivo. Então, sem verbo transitivo direto, não há voz passiva. Então, verbos transitivos\nindiretos (Letra C: levam a=proporcionam), intransitivos (Letra E: sair) ou de ligação (Letras A e D:\nera e estão) não admitem transposição. Então, só podemos ter voz passiva em “as redes\npromovem aumento” (aumento é promovido pelas redes). Gabarito letra B.",
       "questionSha256": "248853a9e0fe4af31596ee85a52533b780e3bb33843c51fdd0ff2a1bd1aee11a",
-      "answerSha256": "b3c81d274ad95a9ae82ffcf030f881daf6ab04d880b97452beb8ef0fc0804e53"
+      "answerSha256": "b3c81d274ad95a9ae82ffcf030f881daf6ab04d880b97452beb8ef0fc0804e53",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Vozes Verbais - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "option_B",
+        "acceptedPedagogicalAnswers": [
+          "option_B"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A05-G04-CONFLICT-001-42",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Fundamentos."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Fundamentos."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Fundamentos."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Fundamentos."
+        },
+        {
+          "optionLabel": "E",
+          "status": "incorrect",
+          "explanation": "Opção E: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Fundamentos."
+        }
+      ]
     },
     {
       "questionId": "aula05.q0022",
@@ -1194,7 +1622,44 @@
       "officialAnswer": "option_C",
       "explanation": "“A voz de Wagner” é objeto direto de “ouvir”, na voz ativa. Na voz passiva, o objeto direto vira\nsujeito. Então, teremos, na voz passiva:\n“A voz de Wagner” é ouvida. Gabarito letra C.",
       "questionSha256": "e43c590526924d76634f1120235bbdac36c99e7f624a1b6c068954ab637490d6",
-      "answerSha256": "8c63d6eda288a06b88b5b2f2f0a60f92584e654a33b1d0e180fbe593971091b8"
+      "answerSha256": "8c63d6eda288a06b88b5b2f2f0a60f92584e654a33b1d0e180fbe593971091b8",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Vozes Verbais - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "option_C",
+        "acceptedPedagogicalAnswers": [
+          "option_C"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A05-G04-CONFLICT-001-42",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Fundamentos."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Fundamentos."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Fundamentos."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Fundamentos."
+        }
+      ]
     },
     {
       "questionId": "aula05.q0011",
@@ -1227,7 +1692,50 @@
       "officialAnswer": "option_B",
       "explanation": "Em questões desse tipo, procure logo as correlações clássicas!!Aplique as correlações aos verbos\nnas alternativas.\nSe eu pudesse, faria/ Se eu puder, farei (Caso eu possa, farei)\na) Não há voz passiva. Não há estrutura de voz passiva analítica (SER+particípio) nem sintética\n(VTD+SE apassivador).\nb) Na b, temos a chamada voz passiva analítica (SER+Particípio) “serem avistadas”. A correlação\nestá perfeita, todos os verbos estão no presente.\nc) A correlação correta seria:\nSe fosse para levar a sério a materialidade das instalações, nenhuma delas necessitaria da\njustificativa a ser dada pelo criador.\nObserve que é a correlação clássica: Se eu pudesse, faria\nd) A correlação correta seria:\nNunca a linguagem das grandes obras de arte teria necessidade de alguma explicação que\nviesse a se tornar indispensável.\nObserve que temos novamente a correlação clássica: Se eu pudesse, faria\ne) A correlação correta seria:\nPor mais que nos esforcemos para perscrutar o sentido de uma instalação, este sempre\ndependerá das razões alegadas pelo autor.\nObserve que temos novamente a correlação clássica: (Caso eu possa, farei).\nGabarito letra B.\n\nSubstituições válidas entre correlações verbais já cobradas:\nTêm de ser fiscalizados = devem ser fiscalizados\nTem gerado nas últimas décadas = gerou nas últimas décadas\nTinha estado = estivera; Tenha sido = haja sido\nSe pudéssemos, faríamos = se pudermos, faremos\n\nLOCUÇÃO VERBAL X TEMPO COMPOSTO\nNa voz passiva, o particípio concorda em gênero e número com o sujeito paciente:\nEx.: Eu fui assaltado > Elas foram assaltadas.\nO particípio formador de tempo composto na voz ativa não se flexiona.\nEx.: Elas têm estudado muito.\n\nPara ficar ainda mais claro, vamos fazer uma transposição da voz ativa com tempo composto para\nvoz passiva. Observe que o tempo composto não muda:\n✔ O homem havia realizado sua missão. (voz ativa com tempo composto)\n✔ A missão havia sido realizada pelo homem. (voz passiva com tempo composto)\n\nNa voz passiva analítica, observe que o particípio varia em gênero e número para concordar com\nseu referente.\n\nRessaltamos que, para concurso, voz passiva sintética e voz passiva analítica são equivalentes,\nconstituindo alternativas sintáticas para o mesmo enunciado.\nEntretanto, cuidado com a colocação pronominal na hora de substituir uma pela outra:\n✔ Alguns pontos não foram contabilizados na minha prova discursiva.\n✔ Alguns pontos não se contabilizaram na minha prova discursiva. (próclise)\nEmbora as estruturas sejam equivalentes, “Não contabilizaram-se” seria erro de colocação\npronominal, pois palavra negativa atrai o pronome para antes do verbo.",
       "questionSha256": "110e4976fd49050a682b529295366bd026ced1504a12a1dbe832d0d3a0014984",
-      "answerSha256": "c4a7872c8c94d160feacd3f1a35be0c9bf4d4dce88390b9e607848d7ab6a60fe"
+      "answerSha256": "c4a7872c8c94d160feacd3f1a35be0c9bf4d4dce88390b9e607848d7ab6a60fe",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Vozes Verbais - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "option_B",
+        "acceptedPedagogicalAnswers": [
+          "option_B"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A05-G04-CONFLICT-001-42",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Fundamentos."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Fundamentos."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Fundamentos."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Fundamentos."
+        },
+        {
+          "optionLabel": "E",
+          "status": "incorrect",
+          "explanation": "Opção E: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Vozes Verbais - Fundamentos."
+        }
+      ]
     },
     {
       "questionId": "aula05.q0035",
@@ -1240,7 +1748,10 @@
       "officialAnswer": "incorrect",
       "explanation": "A voz passiva analítica é formada por \"SER + PARTICÍPIO\". O segmento \"a primeira patente\" é\nsujeito passivo da locução \"foi concedida\". Questão incorreta.",
       "questionSha256": "ecef731b7873bf739ecb26146612eb5428d8ebea53b258b6d3aae0f61b5ad1df",
-      "answerSha256": "43b46a0e5f590758f45349aa93a34df4e82606ff68ac01299bc8820b219683c5"
+      "answerSha256": "43b46a0e5f590758f45349aa93a34df4e82606ff68ac01299bc8820b219683c5",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Vozes Verbais - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula05.q0036",
@@ -1253,7 +1764,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Temos verbo transitivo direto + SE, estrutura de voz passiva sintética. Para conferir, vamos\ntransformar em voz passiva analítica:\n\nnão se poderiam resolver todas as questões.\nnão poderiam ser resolvidas todas as questões.\nO verbo estava no plural, isso prova que o sujeito não era indeterminado. Quando temos \"se\"\nindeterminador do sujeito, o verbo fica invariável. Questão incorreta.",
       "questionSha256": "8aa0f80153146f3ca8d444d9ab5390b7c26a0c56f497ef5ad0aeaa9e25a23f0b",
-      "answerSha256": "17b173b948a60b85c5192d9f11428a47c0d03928a4b28a405ed31eb6bcc6a9e6"
+      "answerSha256": "17b173b948a60b85c5192d9f11428a47c0d03928a4b28a405ed31eb6bcc6a9e6",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Vozes Verbais - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

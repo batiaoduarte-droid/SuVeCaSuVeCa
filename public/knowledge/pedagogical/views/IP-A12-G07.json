@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A12-G07",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.906Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.658Z"
   },
   "unit": {
     "unitId": "IP-A12-G07",
@@ -431,6 +431,14 @@
         {
           "entityId": "RULE-IP-A12-G07-001",
           "title": "Regras canônicas",
+          "statement": "Regras canônicas",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -583,6 +591,71 @@
         {
           "procedureId": "PROC-A12-G07-001",
           "title": "Método do \"Farejador de Elementos\" (Metáfora vs. Comparação vs. Metonímia)",
+          "objective": "Executar o algoritmo decisório para Método do \"Farejador de Elementos\" (Metáfora vs. Comparação vs. Metonímia)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método do \"Farejador de Elementos\" (Metáfora vs. Comparação vs. Metonímia)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 (Contagem de Elementos)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Se houver apenas 1 elemento visível no texto substituindo outro por proximidade lógica (\"Li Machado\", \"Bebi duas latas\"), classifique como Metonímia.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se houver 2 elementos distintos postos em relação analógica de semelhança, avance para o Passo 2.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Passo 2 (Verificação Conectiva)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se houver conector explícito (como, tal qual, tipo, feito, como sendo) ou verbo de similitude (parecer, assemelhar-se), classifique como Comparação Explícita.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se a atribuição figurada for direta sem conector (\"Teus olhos são livros\"), classifique como Metáfora.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Passo 3 (Calibração por Banca)",
+              "explanation": "Em provas da FGV, se a questão pedir \"metáfora/base comparativa\" e a única opção analógica trouxer como, marque-a (KB-A12-G07-002).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método do \"Farejador de Elementos\" (Metáfora vs. Comparação vs. Metonímia)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -626,6 +699,65 @@
         {
           "procedureId": "PROC-A12-G07-002",
           "title": "Algoritmo de Decisão: Paradoxo vs. Antítese vs. Concessão Adverbial",
+          "objective": "Executar o algoritmo decisório para Algoritmo de Decisão: Paradoxo vs. Antítese vs. Concessão Adverbial",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo de Decisão: Paradoxo vs. Antítese vs. Concessão Adverbial."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar as palavras ou proposições opostas no enunciado.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Teste de Compatibilidade Lógica Real",
+              "explanation": "",
+              "test": "Teste de Compatibilidade Lógica Real:"
+            },
+            {
+              "order": 3,
+              "action": "Pergunta",
+              "explanation": "É fisicamente possível que as duas realidades coexistam sem que uma anule a verdade da outra?",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Resposta SIM",
+              "explanation": "Trata-se de Antítese (\"Sua alma subiu ao céu, seu corpo desceu à terra\").",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Resposta NÃO (Contradição Insuperável)",
+              "explanation": "Trata-se de Paradoxo / Oxímoro (\"Inocência maliciosa\", \"Ferida que dói e não se sente\").",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Filtro de Concessão Sintática",
+              "explanation": "Se a oposição for estruturada por embora/apesar de relatando um fato empírico real que frustrou uma expectativa (\"Ninguém ouviu os gritos, embora a noite estivesse calma\"), classifique como concessão sintática, e não como paradoxo.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo de Decisão: Paradoxo vs. Antítese vs. Concessão Adverbial."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -656,6 +788,59 @@
         {
           "procedureId": "PROC-A12-G07-003",
           "title": "Teste de Isolamento Sintático: Anacoluto vs. Pleonasmo Sintático",
+          "objective": "Executar o algoritmo decisório para Teste de Isolamento Sintático: Anacoluto vs. Pleonasmo Sintático",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Isolamento Sintático: Anacoluto vs. Pleonasmo Sintático."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize o verbo principal e determine seu sujeito formal.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Identifique os complementos verbais diretos e indiretos preenchidos na oração.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Isole o termo inicial que antecede a vírgula",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se o termo inicial for preposicionado e coincidir funcionalmente com pronome oblíquo que reitera o objeto (\"A ela [OI], não lhe [OI pleonástico] dei o livro\"), trata-se de Pleonasmo Sintático.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se todos os papéis sintáticos do verbo já estiverem preenchidos e a palavra inicial estiver completamente solta, sem exercer função de sujeito, objeto ou adjunto (\"Joana, eu não sei o que dizer a ela\"), trata-se de Anacoluto.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Isolamento Sintático: Anacoluto vs. Pleonasmo Sintático."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -679,6 +864,47 @@
         {
           "procedureId": "PROC-A12-G07-004",
           "title": "Decodificação de Fórmulas em Questões de Metonímia",
+          "objective": "Executar o algoritmo decisório para Decodificação de Fórmulas em Questões de Metonímia",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Decodificação de Fórmulas em Questões de Metonímia."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Elemento X (Primeiro Termo)",
+              "explanation": "É o vocábulo que está materialmente escrito na frase da prova.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Elemento Y (Segundo Termo)",
+              "explanation": "É o referente real que foi omitido / substituído.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Aplicação",
+              "explanation": "\"Abstrato pelo concreto\" -> A prova escreveu \"juventude\" (abstrato) para representar \"jovens\" (concreto).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Decodificação de Fórmulas em Questões de Metonímia."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -698,6 +924,77 @@
         {
           "procedureId": "PROC-A12-G07-005",
           "title": "Mapeamento Sensorial para Identificação de Sinestesia",
+          "objective": "Executar o algoritmo decisório para Mapeamento Sensorial para Identificação de Sinestesia",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Mapeamento Sensorial para Identificação de Sinestesia."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole os dois núcleos qualificadores da expressão (ex.",
+              "explanation": "substantivo + adjetivo).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Decomponha o órgão sensorial biológico receptor de cada núcleo",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Visão",
+              "explanation": "cores, formas, brilho, pálido.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Audição",
+              "explanation": "ruídos, sons, estridente, sussurro.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Tato",
+              "explanation": "duro, macio, frio, quente, abraço.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Paladar",
+              "explanation": "doce, amargo, azedo, salgado.",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Olfato",
+              "explanation": "cheiro, fétido, aromático.",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Se a expressão fundir dois canais sensoriais fisiológicos distintos (\"pálido [visão] ruído [audição]\" / \"doce [paladar] abraço [tato]\"), a sinestesia está demonstrada.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Mapeamento Sensorial para Identificação de Sinestesia."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -730,6 +1027,47 @@
         {
           "procedureId": "PROC-A12-G07-006",
           "title": "Reconhecimento e Aplicação da Vírgula Vicária",
+          "objective": "Executar o algoritmo decisório para Reconhecimento e Aplicação da Vírgula Vicária",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Reconhecimento e Aplicação da Vírgula Vicária."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Observe períodos compostos coordenados com paralelismo sintático.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Verifique se na segunda oração o verbo idêntico ao da primeira foi suprimido (zeugma verbal).",
+              "explanation": null,
+              "test": "Verifique se na segunda oração o verbo idêntico ao da primeira foi suprimido (zeugma verbal)."
+            },
+            {
+              "order": 3,
+              "action": "Inserir ou validar a vírgula vicária exatamente no ponto em que o verbo omitido deveria figurar (\"Eu estudo Português; meu irmão, [estuda] Direito\"). A vírgula é de uso mandatório.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Reconhecimento e Aplicação da Vírgula Vicária."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -749,6 +1087,22 @@
         {
           "contrastId": "CONTRAST-IP-A12-G07-001",
           "title": "Contrastes decisivos",
+          "contrastType": "mixed",
+          "conceptA": "Contrastes decisivos",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -823,6 +1177,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G07-001",
           "title": "EX-A12-G07-001 — Bloco Integrado de Fixação de Figuras de Linguagem",
+          "prompt": "\"A natureza chorou sua ausência.\" -> Prosopopeia (Personificação) (ação humana atribuída à natureza).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"A natureza chorou sua ausência.\" -> Prosopopeia (Personificação) (ação humana atribuída à natureza).",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "\"Distinguíamos o bem e o mal.\" -> Antítese (oposição lexical de vocábulos antônimos).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "\"Os olhos dela eram como duas jabuticabas.\" -> Comparação Explícita (presença da conjunção como).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "\"Estou morrendo de fome.\" -> Hipérbole (exagero enfático).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "\"Ela não sabe escrever mesmo... Tirou 10 na redação!\" -> Ironia (o marcador contextual desmente a declaração inicial).",
+              "rationale": null
+            }
+          ],
+          "result": "\"Teus olhos são meus livros.\" -> Metáfora (dois elementos + relação direta implícita).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G07-001 — Bloco Integrado de Fixação de Figuras de Linguagem sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G07-001 — Bloco Integrado de Fixação de Figuras de Linguagem.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G07-001 — Bloco Integrado de Fixação de Figuras de Linguagem.",
           "blocks": [
             {
               "type": "list",
@@ -853,6 +1239,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G07-002",
           "title": "EX-A12-G07-002 — Questão de Concurso: FEPESE 2023 — Cia. Águas de Joinville",
+          "prompt": "Comando: Assinale a frase na qual ocorre uma metáfora.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Comando",
+              "rationale": "Assinale a frase na qual ocorre uma metáfora."
+            },
+            {
+              "order": 2,
+              "action": "A) \"Quando voltei para casa, a fome era tão grande que comi três pratos de sopa.\" (Incorreta",
+              "rationale": "oração subordinada consecutiva tão... que)."
+            },
+            {
+              "order": 3,
+              "action": "B) CORRETA",
+              "rationale": "\"O dono do mercado disse que sua sogra é uma cobra e, por isso, não se pode confiar nela.\" (Metáfora pura entre sogra e cobra sem conectivo comparativo)."
+            },
+            {
+              "order": 4,
+              "action": "C) \"Para não repetir os erros, é preciso avançar para a frente e esquecer o passado.\" (Incorreta",
+              "rationale": "pleonasmo vicioso em avançar para a frente)."
+            },
+            {
+              "order": 5,
+              "action": "D) \"Quando olhamos para o Universo, vemos que o homem é nada; mas, apesar disso, o homem é tudo.\" (Incorreta",
+              "rationale": "antítese entre nada e tudo)."
+            }
+          ],
+          "result": "Gabarito: B",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G07-002 — Questão de Concurso: FEPESE 2023 — Cia. Águas de Joinville sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G07-002 — Questão de Concurso: FEPESE 2023 — Cia. Águas de Joinville.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G07-002 — Questão de Concurso: FEPESE 2023 — Cia. Águas de Joinville.",
           "blocks": [
             {
               "type": "list",
@@ -872,6 +1290,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G07-003",
           "title": "EX-A12-G07-003 — Questão de Concurso: IF-MT 2023 — Professor EBTT",
+          "prompt": "Comando: Identificar a alternativa em que a metáfora NÃO se faz presente em excertos literário-musicais.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Comando",
+              "rationale": "Identificar a alternativa em que a metáfora NÃO se faz presente em excertos literário-musicais."
+            },
+            {
+              "order": 2,
+              "action": "A) \"Sou teu ego, tua alma, sou teu céu, o teu inferno, a tua calma.\" (Metáfora",
+              "rationale": "predicativos figurados diretos)."
+            },
+            {
+              "order": 3,
+              "action": "B) \"O amor é um grande laço/ Um passo pr'uma armadilha/ Um lobo...\" (Metáfora",
+              "rationale": "identidade analógica direta)."
+            },
+            {
+              "order": 4,
+              "action": "C) \"Ela é um filme de ação com vários finais...\" (Metáfora",
+              "rationale": "equivalência direta)."
+            },
+            {
+              "order": 5,
+              "action": "D) \"Há escolas que são gaiolas e há escolas que são asas.\" (Metáfora",
+              "rationale": "analogia conceitual)."
+            }
+          ],
+          "result": "Gabarito: E",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G07-003 — Questão de Concurso: IF-MT 2023 — Professor EBTT sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G07-003 — Questão de Concurso: IF-MT 2023 — Professor EBTT.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G07-003 — Questão de Concurso: IF-MT 2023 — Professor EBTT.",
           "blocks": [
             {
               "type": "list",
@@ -891,6 +1341,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G07-004",
           "title": "EX-A12-G07-004 — Questão de Concurso: Instituto Consulplan 2023 — CORE-PB",
+          "prompt": "Excerto: \"Primeiro houve um erro de interpretação: o quase imperceptível cheiro foi tomado como sendo de camarão.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Excerto",
+              "rationale": "\"Primeiro houve um erro de interpretação: o quase imperceptível cheiro foi tomado como sendo de camarão.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "Confronto de dois termos (cheiro imperceptível e cheiro de camarão) mediado pela locução conectiva formal como sendo."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "Comparação (D)"
+            }
+          ],
+          "result": "Gabarito: Comparação (D)",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G07-004 — Questão de Concurso: Instituto Consulplan 2023 — CORE-PB sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G07-004 — Questão de Concurso: Instituto Consulplan 2023 — CORE-PB.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G07-004 — Questão de Concurso: Instituto Consulplan 2023 — CORE-PB.",
           "blocks": [
             {
               "type": "list",
@@ -906,6 +1378,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G07-005",
           "title": "EX-A12-G07-005 — Questão de Concurso: Instituto Consulplan 2023 — CORE-RS",
+          "prompt": "Associação de Colunas:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Associação de Colunas",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "\"As nuvens se clareando sob um sol às vezes pálido como uma lua...\" -> ( 1 ) Comparação (conectivo como).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "\"Mas quantas vezes a insônia é um dom.\" -> ( 2 ) Metáfora (insônia = dom sem conector).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "\"E tomo café com gosto, toda sozinha no mundo.\" -> ( 3 ) Eufemismo (suavização histórica de abandono social).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "\"E sinto-me feliz por nada, por tudo.\" -> ( 4 ) Paradoxo (contradição lógica insuperável simultânea).",
+              "rationale": null
+            }
+          ],
+          "result": "Sequência e Gabarito: 1, 2, 3, 4, 5 (Alternativa A).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G07-005 — Questão de Concurso: Instituto Consulplan 2023 — CORE-RS sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G07-005 — Questão de Concurso: Instituto Consulplan 2023 — CORE-RS.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G07-005 — Questão de Concurso: Instituto Consulplan 2023 — CORE-RS.",
           "blocks": [
             {
               "type": "list",
@@ -937,6 +1441,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G07-006",
           "title": "EX-A12-G07-006 — Questão de Concurso: FGV 2023 — Pref. São José dos Campos",
+          "prompt": "Texto do Enunciado: \"Uma metáfora é um exemplo de linguagem figurada de base comparativa, fundamentada em uma semelhança entre os termos.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto do Enunciado",
+              "rationale": "\"Uma metáfora é um exemplo de linguagem figurada de base comparativa, fundamentada em uma semelhança entre os termos.\""
+            },
+            {
+              "order": 2,
+              "action": "Comando",
+              "rationale": "Assinale a frase que se estrutura a partir de uma metáfora."
+            },
+            {
+              "order": 3,
+              "action": "A) \"Ninguém é tão velho que não creia poder viver mais um ano.\" (Incorreta",
+              "rationale": "oração adverbial consecutiva tão... que)."
+            },
+            {
+              "order": 4,
+              "action": "B) \"Está morto",
+              "rationale": "podemos elogiá-lo à vontade.\" (Incorreta: oração explicativa causal)."
+            },
+            {
+              "order": 5,
+              "action": "C) CORRETA",
+              "rationale": "\"A felicidade é como a pluma que o vento vai levando pelo ar...\" (Única opção com relação analógica entre dois termos; a FGV unifica a base comparativa sob o hiperônimo metáfora)."
+            }
+          ],
+          "result": "Gabarito: C",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G07-006 — Questão de Concurso: FGV 2023 — Pref. São José dos Campos sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G07-006 — Questão de Concurso: FGV 2023 — Pref. São José dos Campos.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G07-006 — Questão de Concurso: FGV 2023 — Pref. São José dos Campos.",
           "blocks": [
             {
               "type": "list",
@@ -957,6 +1493,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G07-007",
           "title": "EX-A12-G07-007 — Questão de Concurso: FGV 2023 — Câmara dos Deputados",
+          "prompt": "Comando: Assinale a frase em que o exemplo está correto em relação à figura indicada no início.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Comando",
+              "rationale": "Assinale a frase em que o exemplo está correto em relação à figura indicada no início."
+            },
+            {
+              "order": 2,
+              "action": "A) CORRETA",
+              "rationale": "Sinestesia — \"De longe podia-se ouvir o pálido ruído das manifestações.\" (Fusão sensorial de pálido [visão] com ruído [audição])."
+            },
+            {
+              "order": 3,
+              "action": "B) Incorreta",
+              "rationale": "Paradoxo — \"Ninguém ouviu os gritos da vítima, embora a noite estivesse silenciosa.\" (A oração concessiva embora relata fatos reais, sem contradição conceitual intrínseca)."
+            },
+            {
+              "order": 4,
+              "action": "C) Incorreta",
+              "rationale": "Ironia — \"Quem dera os políticos dessem mais atenção às reclamações dos eleitores.\" (Expressa um desejo literal e sincero, não ironia)."
+            },
+            {
+              "order": 5,
+              "action": "D) Incorreta",
+              "rationale": "Hipérbole — \"A lua abriu, sobre as ondas, a sua cortina de prata.\" (A expressão cortina de prata é metáfora, não exagero quantitativo)."
+            }
+          ],
+          "result": "Gabarito: A",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G07-007 — Questão de Concurso: FGV 2023 — Câmara dos Deputados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G07-007 — Questão de Concurso: FGV 2023 — Câmara dos Deputados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G07-007 — Questão de Concurso: FGV 2023 — Câmara dos Deputados.",
           "blocks": [
             {
               "type": "list",
@@ -1000,8 +1568,12 @@
         {
           "trapId": "WARN-A12-G07-001",
           "title": "A Pegadinha dos Verbos de Comparação",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Pegadinha dos Verbos de Comparação.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Pegadinha dos Verbos de Comparação.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Pegadinha dos Verbos de Comparação no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Pegadinha dos Verbos de Comparação.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Pegadinha dos Verbos de Comparação.",
+          "correctReasoning": "Não procure apenas conjunções como como ou tal qual. Verbos de similitude como parecer, assemelhar-se ou lembrar (\"Ela parece o irmão\") estruturam comparações explícitas formais, e não metáforas.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Pegadinha dos Verbos de Comparação.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Pegadinha dos Verbos de Comparação.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1012,8 +1584,12 @@
         {
           "trapId": "WARN-A12-G07-002",
           "title": "Distinção entre Estrutura Consecutiva (\"Tão... Que\") e Comparativa",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Distinção entre Estrutura Consecutiva (\"Tão... Que\") e Comparativa.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Distinção entre Estrutura Consecutiva (\"Tão... Que\") e Comparativa.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Distinção entre Estrutura Consecutiva (\"Tão... Que\") e Comparativa no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Distinção entre Estrutura Consecutiva (\"Tão... Que\") e Comparativa.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Distinção entre Estrutura Consecutiva (\"Tão... Que\") e Comparativa.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Distinção entre Estrutura Consecutiva (\"Tão... Que\") e Comparativa para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Distinção entre Estrutura Consecutiva (\"Tão... Que\") e Comparativa.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Distinção entre Estrutura Consecutiva (\"Tão... Que\") e Comparativa.",
           "blocks": [
             {
               "type": "list",
@@ -1029,8 +1605,12 @@
         {
           "trapId": "WARN-A12-G07-003",
           "title": "Conjunção Concessiva (\"Embora\") NÃO Instala Paradoxo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Conjunção Concessiva (\"Embora\") NÃO Instala Paradoxo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Conjunção Concessiva (\"Embora\") NÃO Instala Paradoxo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Conjunção Concessiva (\"Embora\") NÃO Instala Paradoxo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Conjunção Concessiva (\"Embora\") NÃO Instala Paradoxo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Conjunção Concessiva (\"Embora\") NÃO Instala Paradoxo.",
+          "correctReasoning": "A presença de conectivos concessivos (embora, apesar de, conquanto) marca uma quebra de expectativa entre fatos do mundo real, mas não gera contradição lógica insuperável. O paradoxo exige a colisão conceitual excludente (\"ferida que dói sem ser sentida\").",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Conjunção Concessiva (\"Embora\") NÃO Instala Paradoxo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Conjunção Concessiva (\"Embora\") NÃO Instala Paradoxo.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1041,8 +1621,12 @@
         {
           "trapId": "WARN-A12-G07-004",
           "title": "Ironia NÃO é Crítica Sincera nem Humor Cotidiano",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Ironia NÃO é Crítica Sincera nem Humor Cotidiano.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Ironia NÃO é Crítica Sincera nem Humor Cotidiano.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Ironia NÃO é Crítica Sincera nem Humor Cotidiano no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Ironia NÃO é Crítica Sincera nem Humor Cotidiano.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Ironia NÃO é Crítica Sincera nem Humor Cotidiano.",
+          "correctReasoning": "Para haver a figura de linguagem ironia, o falante precisa emitir formalmente o inverso semântico do que pensa. Desabafos sinceros, críticas políticas diretas ou anedotas humorísticas constituem discurso literal, e não figura de ironia.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Ironia NÃO é Crítica Sincera nem Humor Cotidiano.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Ironia NÃO é Crítica Sincera nem Humor Cotidiano.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1053,8 +1637,12 @@
         {
           "trapId": "WARN-A12-G07-005",
           "title": "Silepse de Número no Primeiro Verbo é Erro Gramatical Grave",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Silepse de Número no Primeiro Verbo é Erro Gramatical Grave.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Silepse de Número no Primeiro Verbo é Erro Gramatical Grave.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Silepse de Número no Primeiro Verbo é Erro Gramatical Grave no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Silepse de Número no Primeiro Verbo é Erro Gramatical Grave.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Silepse de Número no Primeiro Verbo é Erro Gramatical Grave.",
+          "correctReasoning": "A concordância ideológica no plural com sujeito coletivo no singular (\"O grupo saíram\") é erro gramatical grosseiro. A silepse de número só é legitimada se o verbo estiver afastado/distanciado do sujeito na sequência do período (\"O grupo não gostou [rígida], reagiram [silepse] imediatamente\").",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Silepse de Número no Primeiro Verbo é Erro Gramatical Grave.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Silepse de Número no Primeiro Verbo é Erro Gramatical Grave.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1065,8 +1653,12 @@
         {
           "trapId": "WARN-A12-G07-006",
           "title": "Proibição de Recursos Figurados em Redações Discursivas Técnicas",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Proibição de Recursos Figurados em Redações Discursivas Técnicas.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Proibição de Recursos Figurados em Redações Discursivas Técnicas.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Proibição de Recursos Figurados em Redações Discursivas Técnicas no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Proibição de Recursos Figurados em Redações Discursivas Técnicas.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Proibição de Recursos Figurados em Redações Discursivas Técnicas.",
+          "correctReasoning": "O uso de metáforas, hipérboles, pleonasmos estilísticos e silepses de pessoa (\"nós/somos\") em provas discursivas de concursos públicos acarreta perda severa de nota. A dissertação técnica exige rigorosamente linguagem denotativa, objetiva e impessoalidade em 3ª pessoa.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Proibição de Recursos Figurados em Redações Discursivas Técnicas.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Proibição de Recursos Figurados em Redações Discursivas Técnicas.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1217,7 +1809,10 @@
       "officialAnswer": "incorrect",
       "explanation": "\"Denotar\" significa: anunciar ou mostrar por certos sinais, indicar. Mesmo que o sentido fosse o\nmesmo, diríamos que são \"sinônimos\", não \"homônimos\".\n\"Homônimos\" são palavras que compartilham a mesma pronúncia ou grafia, mas possuem\nsignificados diferentes.\nQuestão incorreta.",
       "questionSha256": "b0a8b6e27e89ffef0894b88f4f0f3430b4de9dca9cc1c5634a831e65356aa2a3",
-      "answerSha256": "14387b2fb47c0f0b2092c3fdd5035ae55e82c5d76a741679ba29db0ddb9504ac"
+      "answerSha256": "14387b2fb47c0f0b2092c3fdd5035ae55e82c5d76a741679ba29db0ddb9504ac",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Figuras de Linguagem - Aprofundamento; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula12.q0151",
@@ -1229,7 +1824,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "96b64bbe84801edf555f93cc2b2c0e5cfc135789b1d08977a234502801a9a42b",
-      "answerSha256": "ea09947dcf67c37eed520e57401396403f400623fb037aeb693724ff326c9d68"
+      "answerSha256": "ea09947dcf67c37eed520e57401396403f400623fb037aeb693724ff326c9d68",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Figuras de Linguagem - Aprofundamento; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula12.q0057",
@@ -1243,7 +1841,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Tem um significado de evidente, óbvio, flagrante. Questão incorreta.",
       "questionSha256": "39823976c25b35763d4643155b298d5c832ec4dd67d8bab18e699a23e67589f1",
-      "answerSha256": "3b383e44c4e5e128c2da0395a4730eebde03a58d73a263482dd19783940047c2"
+      "answerSha256": "3b383e44c4e5e128c2da0395a4730eebde03a58d73a263482dd19783940047c2",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Figuras de Linguagem - Aprofundamento; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula12.q0127",
@@ -1256,7 +1857,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "2bccce8f1d1b98f2e0af1e4fc324cc77bb38d5fe6ca1ee62307d64a44299baf6",
-      "answerSha256": "3fab2ffea451d1739e3da22655b8754ec83527019f0ca8f7d0ed92728d56bd9b"
+      "answerSha256": "3fab2ffea451d1739e3da22655b8754ec83527019f0ca8f7d0ed92728d56bd9b",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Figuras de Linguagem - Aprofundamento; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula12.q0021",
@@ -1269,7 +1873,10 @@
       "officialAnswer": "incorrect",
       "explanation": "“inerradicáveis”=impossíveis de erradicar, de eliminar.\n“inarredáveis”=impossíveis de arredar, de mover, de retroceder.\nGabarito: Errado.",
       "questionSha256": "0584fe6d0d77dd55fb955177fa2c59828936b3942782d23e9fb67b5098118247",
-      "answerSha256": "87258ee9b8781299c2e785b5193837f08fae58850c6332d6104e0dedb1fc1bfa"
+      "answerSha256": "87258ee9b8781299c2e785b5193837f08fae58850c6332d6104e0dedb1fc1bfa",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Figuras de Linguagem - Aprofundamento; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula12.q0091",
@@ -1281,7 +1888,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "f4374485481853fc5959be50ef715f8374aa0de9ef69725fdb61e7a78b092258",
-      "answerSha256": "27e2980c09c06b589a96ac0356c1a3839583d5d76d303a53f7ca861fce6fda10"
+      "answerSha256": "27e2980c09c06b589a96ac0356c1a3839583d5d76d303a53f7ca861fce6fda10",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Figuras de Linguagem - Aprofundamento; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

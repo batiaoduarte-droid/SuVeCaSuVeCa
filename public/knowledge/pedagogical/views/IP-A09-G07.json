@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A09-G07",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.872Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.622Z"
   },
   "unit": {
     "unitId": "IP-A09-G07",
@@ -566,6 +566,14 @@
         {
           "entityId": "RULE-IP-A09-G07-001",
           "title": "Regras canônicas",
+          "statement": "Regras canônicas",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -670,6 +678,89 @@
         {
           "procedureId": "PROC-A09-G07-001",
           "title": "Protocolo de Análise para Expressões Avaliativas e Sujeito Oracional",
+          "objective": "Executar o algoritmo decisório para Protocolo de Análise para Expressões Avaliativas e Sujeito Oracional",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo de Análise para Expressões Avaliativas e Sujeito Oracional."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar a Estrutura",
+              "explanation": "Localizar o verbo de ligação e o predicativo avaliativo (é bom, é proibido, é necessário, é permitido, é obrigatório).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Avaliar a Natureza do Sujeito",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se o sujeito contiver um verbo (Sujeito Oracional)",
+              "explanation": "Substituir o segmento por \"isso\". Se resultar em \"Isso é [adjetivo]\", fixar o predicativo no masculino singular invariável (É necessário solidarizar-se).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se o sujeito for um substantivo",
+              "explanation": "Seguir para o passo 3.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Fazer a Varredura de Determinantes",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Verificar se antes do substantivo há artigo, pronome ou numeral.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Verificar se após o substantivo há adjetivo ou locução adjetiva restritiva.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Decisão Flexional",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Sem determinante",
+              "explanation": "Manter o predicativo no masculino singular invariável (Fé é necessário).",
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Com determinante",
+              "explanation": "Flexionar o predicativo em gênero e número com o substantivo (A fé é necessária / É proibida entrada de estranhos).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo de Análise para Expressões Avaliativas e Sujeito Oracional."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -722,6 +813,65 @@
         {
           "procedureId": "PROC-A09-G07-002",
           "title": "Protocolo de Concordância do Superlativo com \"Possível\"",
+          "objective": "Executar o algoritmo decisório para Protocolo de Concordância do Superlativo com \"Possível\"",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo de Concordância do Superlativo com \"Possível\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Separar os Elementos da Oração",
+              "explanation": "Estabelecer a concordância normal entre o substantivo e seus adjetivos qualificadores comuns (as verdades descobertas / variadas).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Localizar o Artigo Superlativo",
+              "explanation": "Isolar o artigo que abre a expressão intensificadora (o mais..., a mais..., os mais..., as mais...).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Traçar a Seta de Possível",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se o artigo for singular (O / A) $\\to$ escrever possível.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se o artigo for plural (OS / AS) $\\to$ escrever possíveis.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Blindagem contra Estranheza Auditiva",
+              "explanation": "Não alterar a forma de possível para o plural se o artigo superlativo estiver no singular (Casos o mais variados possível).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo de Concordância do Superlativo com \"Possível\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -752,6 +902,71 @@
         {
           "procedureId": "PROC-A09-G07-003",
           "title": "Protocolo de Validação para \"Haja Vista\" e \"Olhos Vistos\"",
+          "objective": "Executar o algoritmo decisório para Protocolo de Validação para \"Haja Vista\" e \"Olhos Vistos\"",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo de Validação para \"Haja Vista\" e \"Olhos Vistos\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Se a frase trouxer a locução fixa haja vista, validar imediatamente como correta (diante de singular ou plural).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Se a frase trouxer hajam vista",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Verificar o termo subsequente",
+              "explanation": "se for substantivo plural, validar como correta.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se o termo subsequente for singular, marcar como incorreta.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se a frase trouxer hajas vistas ou hajam vistas, marcar como erro gramatical absoluto.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Validar a forma invariável a olhos vistos como correta para qualquer contexto.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Se houver variação em visto (a olhos vista/vistas/visto), localizar o sujeito e verificar se a terminação concorda estritamente com ele em gênero e número.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo de Validação para \"Haja Vista\" e \"Olhos Vistos\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -799,6 +1014,65 @@
         {
           "procedureId": "PROC-A09-G07-004",
           "title": "Método das Setas Bivalentes para \"Tal Qual\" e Anáfora de \"Como Tal\"",
+          "objective": "Executar o algoritmo decisório para Método das Setas Bivalentes para \"Tal Qual\" e Anáfora de \"Como Tal\"",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método das Setas Bivalentes para \"Tal Qual\" e Anáfora de \"Como Tal\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Para \"Tal Qual\"",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Seta para a esquerda (Antecedente)",
+              "explanation": "Ligar o termo TAL ao núcleo que vem antes. Se o antecedente for plural $\\to$ tais; se singular $\\to$ tal.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Seta para a direita (Consequente)",
+              "explanation": "Ligar o termo QUAL ao núcleo que vem depois. Se o consequente for plural $\\to$ quais; se singular $\\to$ qual.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Para \"Como Tal\"",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Localizar o termo antecedente que o pronome substitui contextualmente.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se o termo antecedente for plural, obrigar a flexão em como tais (bagunceiros $\\to$ punidos como tais).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método das Setas Bivalentes para \"Tal Qual\" e Anáfora de \"Como Tal\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -835,6 +1109,53 @@
         {
           "procedureId": "PROC-A09-G07-005",
           "title": "Método do \"Farejador de Núcleos\" e Técnica das Setas Gerais",
+          "objective": "Executar o algoritmo decisório para Método do \"Farejador de Núcleos\" e Técnica das Setas Gerais",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método do \"Farejador de Núcleos\" e Técnica das Setas Gerais."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Descartar Termos Preposicionados",
+              "explanation": "Ignorar complementos ou adjuntos encabeçados por preposição (ex.: em o cerceamento da liberdade, descartar da liberdade).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Localizar o Substantivo Núcleo",
+              "explanation": "Identificar o termo substantivo base não preposicionado (o cerceamento).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Lançar as Setas de Concordância",
+              "explanation": "Puxar setas do adjetivo, predicativo ou particípio para esse núcleo substantivo e ajustar gênero e número (o cerceamento [...] pode ser danoso).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Verificar a Voz Verbal",
+              "explanation": "Em caso de particípio com auxiliar ser, harmonizá-lo com o sujeito paciente (direitos [...] foram reconhecidos).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método do \"Farejador de Núcleos\" e Técnica das Setas Gerais."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -851,6 +1172,47 @@
         {
           "procedureId": "PROC-A09-G07-006",
           "title": "Protocolo da Contagem de Artigos em Substantivos Coordenados (Bechara)",
+          "objective": "Executar o algoritmo decisório para Protocolo da Contagem de Artigos em Substantivos Coordenados (Bechara)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo da Contagem de Artigos em Substantivos Coordenados (Bechara)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Contar os Artigos Definidos",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Se houver apenas 1 artigo (o período de seca e inundação ou o período de seca e de inundação) $\\to$ manter o adjetivo no singular (alterado).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se houver 2 artigos (o período de seca e o de inundação) $\\to$ o segundo artigo substantiva uma elipse, configurando dois núcleos $\\to$ flexionar o adjetivo no plural (alterados).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo da Contagem de Artigos em Substantivos Coordenados (Bechara)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -876,6 +1238,22 @@
         {
           "contrastId": "CONTRAST-IP-A09-G07-001",
           "title": "Tabela 1: Expressões Avaliativas — Determinante vs. Sentido Genérico vs. Sujeito Oracional",
+          "contrastType": "syntactic",
+          "conceptA": "Tabela 1: Expressões Avaliativas — Determinante vs. Sentido Genérico vs. Sujeito Oracional",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -922,6 +1300,22 @@
         {
           "contrastId": "CONTRAST-IP-A09-G07-002",
           "title": "Tabela 2: Superlativo com \"Possível\" — Singular vs. Plural",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 2: Superlativo com \"Possível\" — Singular vs. Plural",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -959,6 +1353,22 @@
         {
           "contrastId": "CONTRAST-IP-A09-G07-003",
           "title": "Tabela 3: Variações da Locução Comparativa \"Tal Qual\"",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 3: Variações da Locução Comparativa \"Tal Qual\"",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -1005,6 +1415,22 @@
         {
           "contrastId": "CONTRAST-IP-A09-G07-004",
           "title": "Tabela 4: O Vocábulo \"Junto\" — Advérbio vs. Adjetivo",
+          "contrastType": "morphological",
+          "conceptA": "Tabela 4: O Vocábulo \"Junto\" — Advérbio vs. Adjetivo",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -1043,6 +1469,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G07-001",
           "title": "EX-A09-G07-001 — Exercício de Fixação: Substantivo sem Determinante (Fé)",
+          "prompt": "Enunciado: Preencher a lacuna com a forma correta do adjetivo necessário: Fé é .",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Preencher a lacuna com a forma correta do adjetivo necessário: Fé é ."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "O substantivo feminino fé não traz artigo, pronome ou delimitador. Empregado em sentido geral."
+            },
+            {
+              "order": 3,
+              "action": "Resposta",
+              "rationale": "necessário (Fé é necessário.)."
+            }
+          ],
+          "result": "Resposta: necessário (Fé é necessário.).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G07-001 — Exercício de Fixação: Substantivo sem Determinante (Fé) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G07-001 — Exercício de Fixação: Substantivo sem Determinante (Fé).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G07-001 — Exercício de Fixação: Substantivo sem Determinante (Fé).",
           "blocks": [
             {
               "type": "list",
@@ -1058,6 +1506,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G07-002",
           "title": "EX-A09-G07-002 — Exercício de Fixação: Locução Adjetiva como Determinante",
+          "prompt": "Enunciado: Preencher a lacuna com a flexão de proibido: É  entrada de pessoas estranhas ao serviço.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Preencher a lacuna com a flexão de proibido: É  entrada de pessoas estranhas ao serviço."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "O substantivo entrada é determinado pela locução restritiva de pessoas estranhas, o que obriga a flexão de gênero."
+            },
+            {
+              "order": 3,
+              "action": "Resposta",
+              "rationale": "proibida (É proibida entrada de pessoas estranhas ao serviço.)."
+            }
+          ],
+          "result": "Resposta: proibida (É proibida entrada de pessoas estranhas ao serviço.).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G07-002 — Exercício de Fixação: Locução Adjetiva como Determinante sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G07-002 — Exercício de Fixação: Locução Adjetiva como Determinante.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G07-002 — Exercício de Fixação: Locução Adjetiva como Determinante.",
           "blocks": [
             {
               "type": "list",
@@ -1073,6 +1543,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G07-003",
           "title": "EX-A09-G07-003 — Exercício de Fixação: Substantivo com Artigo Definido",
+          "prompt": "Enunciado: Preencher a lacuna com a flexão de necessário: A fé é .",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Preencher a lacuna com a flexão de necessário: A fé é ."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "O artigo definido A atua como determinante direto do substantivo feminino fé."
+            },
+            {
+              "order": 3,
+              "action": "Resposta",
+              "rationale": "necessária (A fé é necessária.)."
+            }
+          ],
+          "result": "Resposta: necessária (A fé é necessária.).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G07-003 — Exercício de Fixação: Substantivo com Artigo Definido sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G07-003 — Exercício de Fixação: Substantivo com Artigo Definido.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G07-003 — Exercício de Fixação: Substantivo com Artigo Definido.",
           "blocks": [
             {
               "type": "list",
@@ -1088,6 +1580,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G07-004",
           "title": "EX-A09-G07-004 — Exercício de Fixação: Duplo Determinante",
+          "prompt": "Enunciado: Preencher a lacuna com a flexão de proibido: É  a entrada de pessoas estranhas ao serviço.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Preencher a lacuna com a flexão de proibido: É  a entrada de pessoas estranhas ao serviço."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Presença concomitante de artigo definido (a) e locução adjetiva (de pessoas estranhas)."
+            },
+            {
+              "order": 3,
+              "action": "Resposta",
+              "rationale": "proibida (É proibida a entrada de pessoas estranhas ao serviço.)."
+            }
+          ],
+          "result": "Resposta: proibida (É proibida a entrada de pessoas estranhas ao serviço.).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G07-004 — Exercício de Fixação: Duplo Determinante sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G07-004 — Exercício de Fixação: Duplo Determinante.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G07-004 — Exercício de Fixação: Duplo Determinante.",
           "blocks": [
             {
               "type": "list",
@@ -1103,6 +1617,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G07-005",
           "title": "EX-A09-G07-005 — Exercício de Fixação: Superlativo com Artigo Plural",
+          "prompt": "Enunciado: Preencher a lacuna com possível: As verdades descobertas são as mais variadas .",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Preencher a lacuna com possível: As verdades descobertas são as mais variadas ."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "A locução superlativa é introduzida pelo artigo plural as. Logo, possível flexiona-se no plural."
+            },
+            {
+              "order": 3,
+              "action": "Resposta",
+              "rationale": "possíveis (As verdades descobertas são as mais variadas possíveis.)."
+            }
+          ],
+          "result": "Resposta: possíveis (As verdades descobertas são as mais variadas possíveis.).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G07-005 — Exercício de Fixação: Superlativo com Artigo Plural sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G07-005 — Exercício de Fixação: Superlativo com Artigo Plural.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G07-005 — Exercício de Fixação: Superlativo com Artigo Plural.",
           "blocks": [
             {
               "type": "list",
@@ -1118,6 +1654,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G07-006",
           "title": "EX-A09-G07-006 — Exercício de Fixação: Superlativo com Artigo Singular",
+          "prompt": "Enunciado: Preencher a lacuna com possível: As verdades descobertas são o mais variadas .",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Preencher a lacuna com possível: As verdades descobertas são o mais variadas ."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "A locução superlativa é encabeçada pelo artigo singular o. O adjetivo possível permanece no singular."
+            },
+            {
+              "order": 3,
+              "action": "Resposta",
+              "rationale": "possível (As verdades descobertas são o mais variadas possível.)."
+            }
+          ],
+          "result": "Resposta: possível (As verdades descobertas são o mais variadas possível.).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G07-006 — Exercício de Fixação: Superlativo com Artigo Singular sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G07-006 — Exercício de Fixação: Superlativo com Artigo Singular.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G07-006 — Exercício de Fixação: Superlativo com Artigo Singular.",
           "blocks": [
             {
               "type": "list",
@@ -1133,6 +1691,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G07-007",
           "title": "EX-A09-G07-007 — Exercício de Fixação: Expressão \"Haja Vista\" com Substantivo Plural",
+          "prompt": "Enunciado: Preencher a lacuna com haja vista: Deve ser um bom livro,  as suas edições sucessivas.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Preencher a lacuna com haja vista: Deve ser um bom livro,  as suas edições sucessivas."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Seguido por termo plural (edições), admitem-se duas formas normativas legítimas: a locução invariável (haja vista) ou a flexão do verbo auxiliar (hajam vista)."
+            },
+            {
+              "order": 3,
+              "action": "Respostas",
+              "rationale": "haja vista ou hajam vista."
+            }
+          ],
+          "result": "Respostas: haja vista ou hajam vista.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G07-007 — Exercício de Fixação: Expressão \"Haja Vista\" com Substantivo Plural sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G07-007 — Exercício de Fixação: Expressão \"Haja Vista\" com Substantivo Plural.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G07-007 — Exercício de Fixação: Expressão \"Haja Vista\" com Substantivo Plural.",
           "blocks": [
             {
               "type": "list",
@@ -1148,6 +1728,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G07-008",
           "title": "EX-A09-G07-008 — Exercício de Fixação: Expressão \"Olhos Vistos\"",
+          "prompt": "Enunciado: Preencher a lacuna com a flexão de visto: Suas forças definhavam a olhos .",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Preencher a lacuna com a flexão de visto: Suas forças definhavam a olhos ."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Admite-se a forma fixa invariável vistos (concordância com olhos) ou a forma concordante vistas (concordando com o sujeito forças)."
+            },
+            {
+              "order": 3,
+              "action": "Respostas",
+              "rationale": "vistos ou vistas."
+            }
+          ],
+          "result": "Respostas: vistos ou vistas.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G07-008 — Exercício de Fixação: Expressão \"Olhos Vistos\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G07-008 — Exercício de Fixação: Expressão \"Olhos Vistos\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G07-008 — Exercício de Fixação: Expressão \"Olhos Vistos\".",
           "blocks": [
             {
               "type": "list",
@@ -1163,6 +1765,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G07-009",
           "title": "EX-A09-G07-009 — Exercício de Fixação: Expressão Comparativa \"Tal Qual\"",
+          "prompt": "Enunciado: Preencher a lacuna com tal qual: Os filhos são  a mãe.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Preencher a lacuna com tal qual: Os filhos são  a mãe."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Antecedente plural (Os filhos $\\to$ tais); Consequente singular (a mãe $\\to$ qual)."
+            },
+            {
+              "order": 3,
+              "action": "Resposta",
+              "rationale": "tais qual (Os filhos são tais qual a mãe.)."
+            }
+          ],
+          "result": "Resposta: tais qual (Os filhos são tais qual a mãe.).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G07-009 — Exercício de Fixação: Expressão Comparativa \"Tal Qual\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G07-009 — Exercício de Fixação: Expressão Comparativa \"Tal Qual\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G07-009 — Exercício de Fixação: Expressão Comparativa \"Tal Qual\".",
           "blocks": [
             {
               "type": "list",
@@ -1178,6 +1802,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G07-010",
           "title": "EX-A09-G07-010 — Questão de Concurso: OMNI / 2021 (Questão 28)",
+          "prompt": "Banca / Órgão: OMNI - 2021 - Prefeitura de Lençóis Paulista/SP - Médico do Trabalho.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão",
+              "rationale": "OMNI - 2021 - Prefeitura de Lençóis Paulista/SP - Médico do Trabalho."
+            },
+            {
+              "order": 2,
+              "action": "Enunciado",
+              "rationale": "De acordo com a norma-padrão da língua portuguesa, assinale a alternativa INCORRETA com relação à concordância:"
+            },
+            {
+              "order": 3,
+              "action": "A) É necessária a defesa do direito dos animais.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "B) São necessárias outras medidas para conter o avanço da doença.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "C) É proibido a entrada no recinto.",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: C.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G07-010 — Questão de Concurso: OMNI / 2021 (Questão 28) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G07-010 — Questão de Concurso: OMNI / 2021 (Questão 28).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G07-010 — Questão de Concurso: OMNI / 2021 (Questão 28).",
           "blocks": [
             {
               "type": "list",
@@ -1202,6 +1858,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G07-011",
           "title": "EX-A09-G07-011 — Questão de Concurso: VUNESP / SAAE de Barretos (Questão 29)",
+          "prompt": "Banca / Órgão: VUNESP - SAAE de Barretos/SP - Advogado.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão",
+              "rationale": "VUNESP - SAAE de Barretos/SP - Advogado."
+            },
+            {
+              "order": 2,
+              "action": "Enunciado",
+              "rationale": "Assinale a alternativa em que a redação atende à norma-padrão de concordância nominal:"
+            },
+            {
+              "order": 3,
+              "action": "A) A luta pelo direito de ser esquecido e de ter informações pessoais retificadas é um fenômeno de proporções mundial.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "B) Só recentemente direitos como o de ter informações pessoais apagadas na internet foram reconhecidas pelos tribunais.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "C) É necessário solidarizar-se com o indivíduo que não aceita ter sua identidade relacionada a eventos traumáticos.",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: C.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G07-011 — Questão de Concurso: VUNESP / SAAE de Barretos (Questão 29) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G07-011 — Questão de Concurso: VUNESP / SAAE de Barretos (Questão 29).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G07-011 — Questão de Concurso: VUNESP / SAAE de Barretos (Questão 29).",
           "blocks": [
             {
               "type": "list",
@@ -1228,6 +1916,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G07-012",
           "title": "EX-A09-G07-012 — Questão de Concurso: MOURA MELO / ARSEP (Questão 30)",
+          "prompt": "Banca / Órgão: MOURA MELO - ARSEP - Analista Técnico - Administrativo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão",
+              "rationale": "MOURA MELO - ARSEP - Analista Técnico - Administrativo."
+            },
+            {
+              "order": 2,
+              "action": "Enunciado",
+              "rationale": "Acerca da concordância nominal, analise as afirmativas abaixo:"
+            },
+            {
+              "order": 3,
+              "action": "I. À tarde, há menos trânsito na região central de Mauá.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "II. A cidade se desenvolve a olhos vistos.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "III. A enfermeira vacinou o maior número de crianças possível.",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: D.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G07-012 — Questão de Concurso: MOURA MELO / ARSEP (Questão 30) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G07-012 — Questão de Concurso: MOURA MELO / ARSEP (Questão 30).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G07-012 — Questão de Concurso: MOURA MELO / ARSEP (Questão 30).",
           "blocks": [
             {
               "type": "list",
@@ -1251,6 +1971,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G07-013",
           "title": "EX-A09-G07-013 — Questão de Concurso: CETREDE / 2019 (Questão 31)",
+          "prompt": "Banca / Órgão: CETREDE - 2019 - Prefeitura de Pacujá/CE - Fiscal de Tributos.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão",
+              "rationale": "CETREDE - 2019 - Prefeitura de Pacujá/CE - Fiscal de Tributos."
+            },
+            {
+              "order": 2,
+              "action": "Enunciado",
+              "rationale": "Assinale a opção em que a afirmativa apresenta um erro de concordância nominal:"
+            },
+            {
+              "order": 3,
+              "action": "A) Os filhos são tais quais os pais.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "B) Os torcedores eram bagunceiros e foram punidos como tal.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "C) O vaidoso, mesmo derrotado, é orgulhoso.",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: B.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G07-013 — Questão de Concurso: CETREDE / 2019 (Questão 31) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G07-013 — Questão de Concurso: CETREDE / 2019 (Questão 31).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G07-013 — Questão de Concurso: CETREDE / 2019 (Questão 31).",
           "blocks": [
             {
               "type": "list",
@@ -1277,6 +2029,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G07-014",
           "title": "EX-A09-G07-014 — Questão de Concurso: VUNESP / 2021 (Questão 32)",
+          "prompt": "Banca / Órgão: VUNESP - 2021 - Prefeitura de Ribeirão Preto/SP - Agente de Administração.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão",
+              "rationale": "VUNESP - 2021 - Prefeitura de Ribeirão Preto/SP - Agente de Administração."
+            },
+            {
+              "order": 2,
+              "action": "Enunciado",
+              "rationale": "Preencha as lacunas conforme a norma-padrão de concordância nominal:"
+            },
+            {
+              "order": 3,
+              "action": "Estava [1] alguma elevação da temperatura da Terra, porém o período de seca e o de inundação, cada vez mais [2] em diversas regiões, levam à conclusão de que os efeitos desse aumento estão chegando antes do esperado.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "É [3] perseverança para reverter as consequências de cunho [4] causadas pelo aquecimento global.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Análise das Lacunas",
+              "rationale": ""
+            }
+          ],
+          "result": "Gabarito Oficial: prevista... alterados... necessário... ambiental (Alternativa A).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G07-014 — Questão de Concurso: VUNESP / 2021 (Questão 32) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G07-014 — Questão de Concurso: VUNESP / 2021 (Questão 32).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G07-014 — Questão de Concurso: VUNESP / 2021 (Questão 32).",
           "blocks": [
             {
               "type": "list",
@@ -1351,8 +2135,12 @@
         {
           "trapId": "WARN-A09-G07-001",
           "title": "Pegadinha da Locução Adjetiva como Determinante",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha da Locução Adjetiva como Determinante.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha da Locução Adjetiva como Determinante.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha da Locução Adjetiva como Determinante no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha da Locução Adjetiva como Determinante.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha da Locução Adjetiva como Determinante.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pegadinha da Locução Adjetiva como Determinante para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha da Locução Adjetiva como Determinante.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha da Locução Adjetiva como Determinante.",
           "blocks": [
             {
               "type": "list",
@@ -1367,8 +2155,12 @@
         {
           "trapId": "WARN-A09-G07-002",
           "title": "Estranhamento Auditivo de \"Casos o mais variados possível\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Estranhamento Auditivo de \"Casos o mais variados possível\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Estranhamento Auditivo de \"Casos o mais variados possível\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Estranhamento Auditivo de \"Casos o mais variados possível\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Estranhamento Auditivo de \"Casos o mais variados possível\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Estranhamento Auditivo de \"Casos o mais variados possível\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Estranhamento Auditivo de \"Casos o mais variados possível\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Estranhamento Auditivo de \"Casos o mais variados possível\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Estranhamento Auditivo de \"Casos o mais variados possível\".",
           "blocks": [
             {
               "type": "list",
@@ -1383,8 +2175,12 @@
         {
           "trapId": "WARN-A09-G07-003",
           "title": "Proibição de Pluralizar o Vocábulo \"Vista\" em \"Haja Vista\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Proibição de Pluralizar o Vocábulo \"Vista\" em \"Haja Vista\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Proibição de Pluralizar o Vocábulo \"Vista\" em \"Haja Vista\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Proibição de Pluralizar o Vocábulo \"Vista\" em \"Haja Vista\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Proibição de Pluralizar o Vocábulo \"Vista\" em \"Haja Vista\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Proibição de Pluralizar o Vocábulo \"Vista\" em \"Haja Vista\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Proibição de Pluralizar o Vocábulo \"Vista\" em \"Haja Vista\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Proibição de Pluralizar o Vocábulo \"Vista\" em \"Haja Vista\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Proibição de Pluralizar o Vocábulo \"Vista\" em \"Haja Vista\".",
           "blocks": [
             {
               "type": "list",
@@ -1399,8 +2195,12 @@
         {
           "trapId": "WARN-A09-G07-004",
           "title": "O Erro de Congelar a Locução \"Tal Qual\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Erro de Congelar a Locução \"Tal Qual\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Erro de Congelar a Locução \"Tal Qual\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Erro de Congelar a Locução \"Tal Qual\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Erro de Congelar a Locução \"Tal Qual\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Erro de Congelar a Locução \"Tal Qual\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Erro de Congelar a Locução \"Tal Qual\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Erro de Congelar a Locução \"Tal Qual\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Erro de Congelar a Locução \"Tal Qual\".",
           "blocks": [
             {
               "type": "list",
@@ -1415,8 +2215,12 @@
         {
           "trapId": "WARN-A09-G07-005",
           "title": "Descuido com a Retomada Anafórica de \"Como Tal\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Descuido com a Retomada Anafórica de \"Como Tal\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Descuido com a Retomada Anafórica de \"Como Tal\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Descuido com a Retomada Anafórica de \"Como Tal\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Descuido com a Retomada Anafórica de \"Como Tal\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Descuido com a Retomada Anafórica de \"Como Tal\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Descuido com a Retomada Anafórica de \"Como Tal\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Descuido com a Retomada Anafórica de \"Como Tal\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Descuido com a Retomada Anafórica de \"Como Tal\".",
           "blocks": [
             {
               "type": "list",
@@ -1431,8 +2235,12 @@
         {
           "trapId": "WARN-A09-G07-006",
           "title": "Confusão de Particípio Passivo com Particípio em Tempos Compostos Ativos",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão de Particípio Passivo com Particípio em Tempos Compostos Ativos.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão de Particípio Passivo com Particípio em Tempos Compostos Ativos.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão de Particípio Passivo com Particípio em Tempos Compostos Ativos no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão de Particípio Passivo com Particípio em Tempos Compostos Ativos.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão de Particípio Passivo com Particípio em Tempos Compostos Ativos.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão de Particípio Passivo com Particípio em Tempos Compostos Ativos para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão de Particípio Passivo com Particípio em Tempos Compostos Ativos.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão de Particípio Passivo com Particípio em Tempos Compostos Ativos.",
           "blocks": [
             {
               "type": "list",

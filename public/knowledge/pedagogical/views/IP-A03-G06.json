@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A03-G06",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.743Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.507Z"
   },
   "unit": {
     "unitId": "IP-A03-G06",
@@ -538,6 +538,14 @@
         {
           "entityId": "RULE-IP-A03-G06-001",
           "title": "Regras canônicas",
+          "statement": "Regras canônicas",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -603,6 +611,65 @@
         {
           "procedureId": "PROC-A03-G06-001",
           "title": "Algoritmo Metodológico em 4 Passos para Regência com Pronomes Relativos",
+          "objective": "Executar o algoritmo decisório para Algoritmo Metodológico em 4 Passos para Regência com Pronomes Relativos",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo Metodológico em 4 Passos para Regência com Pronomes Relativos."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "explanation": "\"A empresa [ lacuna ] diretor conversei progride.\"",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 1 (Isolar adjetiva)",
+              "explanation": "diretor conversei",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Passo 2 (Verbo)",
+              "explanation": "conversei",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Passo 3 (Sujeito)",
+              "explanation": "Eu (sujeito desinencial) -> Eu conversei...",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Passo 4 (Ordem direta com antecedente e posse)",
+              "explanation": "Eu conversei [com o diretor] [da empresa].",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Dedução sintática",
+              "explanation": "O verbo conversar rege a preposição com. A relação diretor da empresa expressa posse, exigindo o pronome cujo. Unindo a preposição ao relativo: com cujo.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo Metodológico em 4 Passos para Regência com Pronomes Relativos."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -644,6 +711,71 @@
         {
           "procedureId": "PROC-A03-G06-002",
           "title": "Procedimento de Validação em 5 Passos para Questões de Reescritura (Padrão CESPE/CEBRASPE)",
+          "objective": "Executar o algoritmo decisório para Procedimento de Validação em 5 Passos para Questões de Reescritura (Padrão CESPE/CEBRASPE)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento de Validação em 5 Passos para Questões de Reescritura (Padrão CESPE/CEBRASPE)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Auditoria do Comando",
+              "explanation": "Verificar se a banca indaga sobre correção gramatical, sentido ou a conjunção de ambos;",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Desconstrução do Original",
+              "explanation": "Isolar a oração adjetiva e montar a ordem direta para identificar a regência e o sentido originais (ex.: VTI com preposição de indicando prática/vivência);",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Teste Gramatical da Reescrita",
+              "explanation": "Avaliar se a nova estrutura sem preposição (ou com outro relativo) é agramatical ou se configura outra regência aceita na norma culta (ex.: VTD indicando compreensão);",
+              "test": "Teste Gramatical da Reescrita: Avaliar se a nova estrutura sem preposição (ou com outro relativo) é agramatical ou se configura outra regência aceita na norma culta (ex.: VTD indicando compreensão);"
+            },
+            {
+              "order": 4,
+              "action": "Teste Semântico da Reescrita",
+              "explanation": "Comparar se o sentido original do texto permaneceu idêntico ou se foi sutilmente modificado pela nova regência;",
+              "test": "Teste Semântico da Reescrita: Comparar se o sentido original do texto permaneceu idêntico ou se foi sutilmente modificado pela nova regência;"
+            },
+            {
+              "order": 5,
+              "action": "Julgamento Lógico",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se o item afirmou manter correção E sentido, e o sentido mudou -> Marcar ERRADO.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Se o item afirmou que a troca prejudicaria a correção, e o verbo exige estritamente a preposição -> Marcar CERTO.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento de Validação em 5 Passos para Questões de Reescritura (Padrão CESPE/CEBRASPE)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -678,6 +810,22 @@
         {
           "contrastId": "CONTRAST-IP-A03-G06-001",
           "title": "Contrastes decisivos",
+          "contrastType": "mixed",
+          "conceptA": "Contrastes decisivos",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -734,6 +882,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G06-001",
           "title": "EX-A03-G06-001 — Antecedente Substantivo Comum",
+          "prompt": "Frase: \"Conheço o aluno que foi aprovado.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Conheço o aluno que foi aprovado.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "O pronome relativo que retoma o antecedente substantivo aluno."
+            }
+          ],
+          "result": "Análise: O pronome relativo que retoma o antecedente substantivo aluno.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A03-G06-001 — Antecedente Substantivo Comum sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A03-G06-001 — Antecedente Substantivo Comum.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A03-G06-001 — Antecedente Substantivo Comum.",
           "blocks": [
             {
               "type": "list",
@@ -748,6 +913,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G06-002",
           "title": "EX-A03-G06-002 — Antecedente Pronome Demonstrativo",
+          "prompt": "Frase: \"Conheço o que você comprou.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Conheço o que você comprou.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "O pronome relativo que retoma o, que atua como pronome substantivo demonstrativo (equivalente a aquilo -> \"Conheço aquilo que você comprou\")."
+            }
+          ],
+          "result": "Análise: O pronome relativo que retoma o, que atua como pronome substantivo demonstrativo (equivalente a aquilo -> \"Conheço aquilo que você comprou\").",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A03-G06-002 — Antecedente Pronome Demonstrativo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A03-G06-002 — Antecedente Pronome Demonstrativo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A03-G06-002 — Antecedente Pronome Demonstrativo.",
           "blocks": [
             {
               "type": "list",
@@ -762,6 +944,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G06-003",
           "title": "EX-A03-G06-003 — Antecedente Numeral Substantivo",
+          "prompt": "Frase: \"Conheço milhões que foram aprovados.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Conheço milhões que foram aprovados.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "O pronome relativo que retoma o numeral de valor substantivo milhões."
+            }
+          ],
+          "result": "Análise: O pronome relativo que retoma o numeral de valor substantivo milhões.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A03-G06-003 — Antecedente Numeral Substantivo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A03-G06-003 — Antecedente Numeral Substantivo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A03-G06-003 — Antecedente Numeral Substantivo.",
           "blocks": [
             {
               "type": "list",
@@ -776,6 +975,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G06-004",
           "title": "EX-A03-G06-004 — Exercício de Fixação - Item a (Verbo Pronominal / Preposição A)",
+          "prompt": "Enunciado: O assunto  me referi não foi este. (que – a que – ao qual – o qual – a quem)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "O assunto  me referi não foi este. (que – a que – ao qual – o qual – a quem)"
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Ordem direta",
+              "rationale": "Eu me referi ao assunto."
+            },
+            {
+              "order": 4,
+              "action": "Regência",
+              "rationale": "referir-se a (exige preposição a)."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito / Formas Válidas",
+              "rationale": "a que / ao qual."
+            }
+          ],
+          "result": "Gabarito / Formas Válidas: a que / ao qual.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A03-G06-004 — Exercício de Fixação - Item a (Verbo Pronominal / Preposição A) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A03-G06-004 — Exercício de Fixação - Item a (Verbo Pronominal / Preposição A).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A03-G06-004 — Exercício de Fixação - Item a (Verbo Pronominal / Preposição A).",
           "blocks": [
             {
               "type": "list",
@@ -793,6 +1024,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G06-005",
           "title": "EX-A03-G06-005 — Exercício de Fixação - Item b (Posse sem Preposição Verbal)",
+          "prompt": "Enunciado: A empresa  diretor é sério progride. (onde – que – a qual – cujo – a que)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "A empresa  diretor é sério progride. (onde – que – a qual – cujo – a que)"
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Relação de posse",
+              "rationale": "diretor da empresa."
+            },
+            {
+              "order": 4,
+              "action": "Verbo",
+              "rationale": "é (verbo de ligação, sem preposição)."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito / Formas Válidas",
+              "rationale": "cujo."
+            }
+          ],
+          "result": "Gabarito / Formas Válidas: cujo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A03-G06-005 — Exercício de Fixação - Item b (Posse sem Preposição Verbal) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A03-G06-005 — Exercício de Fixação - Item b (Posse sem Preposição Verbal).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A03-G06-005 — Exercício de Fixação - Item b (Posse sem Preposição Verbal).",
           "blocks": [
             {
               "type": "list",
@@ -810,6 +1073,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G06-006",
           "title": "EX-A03-G06-006 — Exercício de Fixação - Item c (Posse com Preposição \"Com\")",
+          "prompt": "Enunciado: A empresa  diretor conversei progride. (com que – com cujo – aonde – cujo – com a qual)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "A empresa  diretor conversei progride. (com que – com cujo – aonde – cujo – com a qual)"
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Ordem direta",
+              "rationale": "Eu conversei com o diretor da empresa."
+            },
+            {
+              "order": 4,
+              "action": "Regência",
+              "rationale": "conversar com + posse (cujo)."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito / Formas Válidas",
+              "rationale": "com cujo."
+            }
+          ],
+          "result": "Gabarito / Formas Válidas: com cujo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A03-G06-006 — Exercício de Fixação - Item c (Posse com Preposição \"Com\") sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A03-G06-006 — Exercício de Fixação - Item c (Posse com Preposição \"Com\").",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A03-G06-006 — Exercício de Fixação - Item c (Posse com Preposição \"Com\").",
           "blocks": [
             {
               "type": "list",
@@ -827,6 +1122,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G06-007",
           "title": "EX-A03-G06-007 — Exercício de Fixação - Item d (Antecedente Temporal)",
+          "prompt": "Enunciado: No momento  sou homenageado fico triste. (quando – que – em que – no qual)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "No momento  sou homenageado fico triste. (quando – que – em que – no qual)"
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Ordem direta",
+              "rationale": "Eu sou homenageado no momento."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito / Formas Válidas",
+              "rationale": "quando / em que / no qual."
+            }
+          ],
+          "result": "Gabarito / Formas Válidas: quando / em que / no qual.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A03-G06-007 — Exercício de Fixação - Item d (Antecedente Temporal) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A03-G06-007 — Exercício de Fixação - Item d (Antecedente Temporal).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A03-G06-007 — Exercício de Fixação - Item d (Antecedente Temporal).",
           "blocks": [
             {
               "type": "list",
@@ -843,6 +1165,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G06-008",
           "title": "EX-A03-G06-008 — Exercício de Fixação - Item e (VTD e Objeto Direto Preposicionado)",
+          "prompt": "Enunciado: Aí está a pessoa  sempre respeitei. (que – quem – a quem – a qual – a que)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Aí está a pessoa  sempre respeitei. (que – quem – a quem – a qual – a que)"
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Ordem direta",
+              "rationale": "Eu sempre respeitei a pessoa (VTD)."
+            },
+            {
+              "order": 4,
+              "action": "Com que",
+              "rationale": "que (sem preposição)."
+            },
+            {
+              "order": 5,
+              "action": "Com a qual",
+              "rationale": "a qual (a é artigo)."
+            }
+          ],
+          "result": "Gabarito / Formas Válidas: que / a qual / a quem.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A03-G06-008 — Exercício de Fixação - Item e (VTD e Objeto Direto Preposicionado) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A03-G06-008 — Exercício de Fixação - Item e (VTD e Objeto Direto Preposicionado).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A03-G06-008 — Exercício de Fixação - Item e (VTD e Objeto Direto Preposicionado).",
           "blocks": [
             {
               "type": "list",
@@ -862,6 +1216,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G06-009",
           "title": "EX-A03-G06-009 — Exercício de Fixação - Item f (Posse com Preposição \"De\")",
+          "prompt": "Enunciado: Chegou o diretor  relatório ninguém gostou. (que – de que – cujo – o qual – de cujo)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Chegou o diretor  relatório ninguém gostou. (que – de que – cujo – o qual – de cujo)"
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Ordem direta",
+              "rationale": "Ninguém gostou do relatório do diretor."
+            },
+            {
+              "order": 4,
+              "action": "Regência",
+              "rationale": "gostar de (preposição de antes de cujo)."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito / Formas Válidas",
+              "rationale": "de cujo."
+            }
+          ],
+          "result": "Gabarito / Formas Válidas: de cujo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A03-G06-009 — Exercício de Fixação - Item f (Posse com Preposição \"De\") sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A03-G06-009 — Exercício de Fixação - Item f (Posse com Preposição \"De\").",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A03-G06-009 — Exercício de Fixação - Item f (Posse com Preposição \"De\").",
           "blocks": [
             {
               "type": "list",
@@ -879,6 +1265,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G06-010",
           "title": "EX-A03-G06-010 — Exercício de Fixação - Item g (Lugar Estático / Morar em)",
+          "prompt": "Enunciado: Esta é a cidade  eu morei. (onde – aonde – em que – na qual – donde)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Esta é a cidade  eu morei. (onde – aonde – em que – na qual – donde)"
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Ordem direta",
+              "rationale": "Eu morei na cidade (em + a)."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito / Formas Válidas",
+              "rationale": "onde / em que / na qual."
+            }
+          ],
+          "result": "Gabarito / Formas Válidas: onde / em que / na qual.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A03-G06-010 — Exercício de Fixação - Item g (Lugar Estático / Morar em) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A03-G06-010 — Exercício de Fixação - Item g (Lugar Estático / Morar em).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A03-G06-010 — Exercício de Fixação - Item g (Lugar Estático / Morar em).",
           "blocks": [
             {
               "type": "list",
@@ -895,6 +1308,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G06-011",
           "title": "EX-A03-G06-011 — Exercício de Fixação - Item h (Movimento / Ir a / Ir para / Crase)",
+          "prompt": "Enunciado: Esta é a cidade  gosto de ir sempre. (onde – aonde – a qual – para a qual – que)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Esta é a cidade  gosto de ir sempre. (onde – aonde – a qual – para a qual – que)"
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Ordem direta",
+              "rationale": "Eu gosto de ir à cidade / para a cidade."
+            },
+            {
+              "order": 4,
+              "action": "aonde = a + onde (Correto).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "para a qual = para + a qual (Correto).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito / Formas Válidas: aonde / para a qual (e seria válida a forma à qual).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A03-G06-011 — Exercício de Fixação - Item h (Movimento / Ir a / Ir para / Crase) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A03-G06-011 — Exercício de Fixação - Item h (Movimento / Ir a / Ir para / Crase).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A03-G06-011 — Exercício de Fixação - Item h (Movimento / Ir a / Ir para / Crase).",
           "blocks": [
             {
               "type": "list",
@@ -914,6 +1359,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G06-012",
           "title": "EX-A03-G06-012 — Exercício de Fixação - Item i (Dupla Direção de Movimento / Vir a / Vir de)",
+          "prompt": "Enunciado: Esta é a cidade  vêm os visitantes. (onde – aonde – donde – em que – do qual)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Esta é a cidade  vêm os visitantes. (onde – aonde – donde – em que – do qual)"
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Sentido de destino",
+              "rationale": "Os visitantes vêm à cidade -> aonde."
+            },
+            {
+              "order": 4,
+              "action": "Sentido de origem",
+              "rationale": "Os visitantes vêm da cidade -> donde."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito / Formas Válidas",
+              "rationale": "aonde (destino) / donde (origem)."
+            }
+          ],
+          "result": "Gabarito / Formas Válidas: aonde (destino) / donde (origem).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A03-G06-012 — Exercício de Fixação - Item i (Dupla Direção de Movimento / Vir a / Vir de) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A03-G06-012 — Exercício de Fixação - Item i (Dupla Direção de Movimento / Vir a / Vir de).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A03-G06-012 — Exercício de Fixação - Item i (Dupla Direção de Movimento / Vir a / Vir de).",
           "blocks": [
             {
               "type": "list",
@@ -931,6 +1408,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G06-013",
           "title": "EX-A03-G06-013 — Questão 46 (CESPE / SEFAZ-AL 2020 — Auditor de Finanças)",
+          "prompt": "Texto: \"...coisas de que não precisa, coisas das quais não entende.\" (l.19)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...coisas de que não precisa, coisas das quais não entende.\" (l.19)"
+            },
+            {
+              "order": 2,
+              "action": "Item Proposto",
+              "rationale": "\"A substituição da expressão 'das quais' (l.19) por 'que' preservaria tanto o sentido quanto a correção gramatical do período.\""
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento e Julgamento",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Original",
+              "rationale": "entende de coisas (VTI — ter experiência/prática)."
+            },
+            {
+              "order": 5,
+              "action": "Reescrita",
+              "rationale": "entende as coisas (VTD — compreender o significado)."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A03-G06-013 — Questão 46 (CESPE / SEFAZ-AL 2020 — Auditor de Finanças) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A03-G06-013 — Questão 46 (CESPE / SEFAZ-AL 2020 — Auditor de Finanças).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A03-G06-013 — Questão 46 (CESPE / SEFAZ-AL 2020 — Auditor de Finanças).",
           "blocks": [
             {
               "type": "list",
@@ -950,6 +1459,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G06-014",
           "title": "EX-A03-G06-014 — Questão 47 (CESPE / MPE-PI 2018 — Técnico Ministerial)",
+          "prompt": "Texto: \"Sou forçado, pois, a limitar-me aos elementos de que disponho...\" (l.9-10)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"Sou forçado, pois, a limitar-me aos elementos de que disponho...\" (l.9-10)"
+            },
+            {
+              "order": 2,
+              "action": "Item Proposto",
+              "rationale": "\"A correção gramatical do texto seria prejudicada caso se substituísse, na linha 9, 'de que' por 'os quais'.\""
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento e Julgamento",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "O verbo dispor é VTI e rege a preposição de (dispor de algo). A substituição por os quais sem preposição gera erro de regência (deveria ser dos quais). Logo, a correção seria prejudicada.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A03-G06-014 — Questão 47 (CESPE / MPE-PI 2018 — Técnico Ministerial) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A03-G06-014 — Questão 47 (CESPE / MPE-PI 2018 — Técnico Ministerial).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A03-G06-014 — Questão 47 (CESPE / MPE-PI 2018 — Técnico Ministerial).",
           "blocks": [
             {
               "type": "list",
@@ -967,6 +1508,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G06-015",
           "title": "EX-A03-G06-015 — Questão 48 (CESPE / SEFAZ-DF 2020 — Auditor Fiscal)",
+          "prompt": "Texto: \"...das empresas nas quais investem\" (l.35-37)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...das empresas nas quais investem\" (l.35-37)"
+            },
+            {
+              "order": 2,
+              "action": "Item Proposto",
+              "rationale": "\"a substituição de 'nas quais' por 'aonde' prejudicaria a correção gramatical do texto.\""
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento e Julgamento",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Investir rege preposição em (e não a); ademais, empresas não constitui lugar físico. O uso de aonde incorre em duplo erro. A correção de fato seria prejudicada.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A03-G06-015 — Questão 48 (CESPE / SEFAZ-DF 2020 — Auditor Fiscal) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A03-G06-015 — Questão 48 (CESPE / SEFAZ-DF 2020 — Auditor Fiscal).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A03-G06-015 — Questão 48 (CESPE / SEFAZ-DF 2020 — Auditor Fiscal).",
           "blocks": [
             {
               "type": "list",
@@ -984,6 +1557,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G06-016",
           "title": "EX-A03-G06-016 — Questão 49 (CESPE / Pref. São Cristóvão-SE 2019 — Professor)",
+          "prompt": "Texto: \"...as palavras a que falta a corporeidade do exemplo...\" (l.4-5)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...as palavras a que falta a corporeidade do exemplo...\" (l.4-5)"
+            },
+            {
+              "order": 2,
+              "action": "Item Proposto",
+              "rationale": "\"A substituição de 'a que' (.5) por onde manteria a correção gramatical e os sentidos originais do texto.\""
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento e Julgamento",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Ordem direta",
+              "rationale": "A corporeidade do exemplo [sujeito] falta [VTI] às palavras [objeto indireto]. O verbo faltar rege a preposição a. Onde indica lugar estático (em) e palavras é termo abstrato. A troca causaria erro gramatical."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A03-G06-016 — Questão 49 (CESPE / Pref. São Cristóvão-SE 2019 — Professor) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A03-G06-016 — Questão 49 (CESPE / Pref. São Cristóvão-SE 2019 — Professor).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A03-G06-016 — Questão 49 (CESPE / Pref. São Cristóvão-SE 2019 — Professor).",
           "blocks": [
             {
               "type": "list",
@@ -1001,6 +1606,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G06-017",
           "title": "EX-A03-G06-017 — Questão 50 (CESPE / TCE-MG 2018 — Auditor)",
+          "prompt": "Texto: \"...no meio ambiente de que nossas vidas dependem.\" (l.13-14)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...no meio ambiente de que nossas vidas dependem.\" (l.13-14)"
+            },
+            {
+              "order": 2,
+              "action": "Comando",
+              "rationale": "\"Na linha 14 do texto, o termo 'de que' poderia ser substituído, sem alteração da correção gramatical e dos sentidos do texto, por: A) no qual. B) pelo qual. C) cujas. D) dos quais. E) do qual.\""
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento e Julgamento",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Ordem direta",
+              "rationale": "Nossas vidas dependem do meio ambiente (depender de)."
+            },
+            {
+              "order": 5,
+              "action": "Substituição",
+              "rationale": "de + o qual = do qual."
+            }
+          ],
+          "result": "Gabarito: Letra E (do qual).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A03-G06-017 — Questão 50 (CESPE / TCE-MG 2018 — Auditor) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A03-G06-017 — Questão 50 (CESPE / TCE-MG 2018 — Auditor).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A03-G06-017 — Questão 50 (CESPE / TCE-MG 2018 — Auditor).",
           "blocks": [
             {
               "type": "list",
@@ -1062,8 +1699,12 @@
         {
           "trapId": "WARN-A03-G06-001",
           "title": "Insubstituibilidade e Proibição de Artigo com o Pronome \"Cujo\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Insubstituibilidade e Proibição de Artigo com o Pronome \"Cujo\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Insubstituibilidade e Proibição de Artigo com o Pronome \"Cujo\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Insubstituibilidade e Proibição de Artigo com o Pronome \"Cujo\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Insubstituibilidade e Proibição de Artigo com o Pronome \"Cujo\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Insubstituibilidade e Proibição de Artigo com o Pronome \"Cujo\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Insubstituibilidade e Proibição de Artigo com o Pronome \"Cujo\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Insubstituibilidade e Proibição de Artigo com o Pronome \"Cujo\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Insubstituibilidade e Proibição de Artigo com o Pronome \"Cujo\".",
           "blocks": [
             {
               "type": "list",
@@ -1078,8 +1719,12 @@
         {
           "trapId": "WARN-A03-G06-002",
           "title": "Obrigatoriedade de Preposição com o Pronome \"Quem\" (Objeto Direto Preposicionado)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Obrigatoriedade de Preposição com o Pronome \"Quem\" (Objeto Direto Preposicionado).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Obrigatoriedade de Preposição com o Pronome \"Quem\" (Objeto Direto Preposicionado).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Obrigatoriedade de Preposição com o Pronome \"Quem\" (Objeto Direto Preposicionado) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Obrigatoriedade de Preposição com o Pronome \"Quem\" (Objeto Direto Preposicionado).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Obrigatoriedade de Preposição com o Pronome \"Quem\" (Objeto Direto Preposicionado).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Obrigatoriedade de Preposição com o Pronome \"Quem\" (Objeto Direto Preposicionado) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Obrigatoriedade de Preposição com o Pronome \"Quem\" (Objeto Direto Preposicionado).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Obrigatoriedade de Preposição com o Pronome \"Quem\" (Objeto Direto Preposicionado).",
           "blocks": [
             {
               "type": "list",
@@ -1094,8 +1739,12 @@
         {
           "trapId": "WARN-A03-G06-003",
           "title": "Distinção Crítica entre \"A qual\" (Artigo) e \"À qual\" (Crase)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Distinção Crítica entre \"A qual\" (Artigo) e \"À qual\" (Crase).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Distinção Crítica entre \"A qual\" (Artigo) e \"À qual\" (Crase).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Distinção Crítica entre \"A qual\" (Artigo) e \"À qual\" (Crase) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Distinção Crítica entre \"A qual\" (Artigo) e \"À qual\" (Crase).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Distinção Crítica entre \"A qual\" (Artigo) e \"À qual\" (Crase).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Distinção Crítica entre \"A qual\" (Artigo) e \"À qual\" (Crase) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Distinção Crítica entre \"A qual\" (Artigo) e \"À qual\" (Crase).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Distinção Crítica entre \"A qual\" (Artigo) e \"À qual\" (Crase).",
           "blocks": [
             {
               "type": "list",
@@ -1110,8 +1759,12 @@
         {
           "trapId": "WARN-A03-G06-004",
           "title": "A Dupla Preposição \"DE\" na Estrutura do Pronome \"Cujo\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Dupla Preposição \"DE\" na Estrutura do Pronome \"Cujo\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Dupla Preposição \"DE\" na Estrutura do Pronome \"Cujo\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Dupla Preposição \"DE\" na Estrutura do Pronome \"Cujo\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Dupla Preposição \"DE\" na Estrutura do Pronome \"Cujo\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Dupla Preposição \"DE\" na Estrutura do Pronome \"Cujo\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Dupla Preposição \"DE\" na Estrutura do Pronome \"Cujo\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Dupla Preposição \"DE\" na Estrutura do Pronome \"Cujo\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Dupla Preposição \"DE\" na Estrutura do Pronome \"Cujo\".",
           "blocks": [
             {
               "type": "list",
@@ -1126,8 +1779,12 @@
         {
           "trapId": "WARN-A03-G06-005",
           "title": "Confundir \"Manutenção de Correção Gramatical\" com \"Preservação de Sentido\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir \"Manutenção de Correção Gramatical\" com \"Preservação de Sentido\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir \"Manutenção de Correção Gramatical\" com \"Preservação de Sentido\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir \"Manutenção de Correção Gramatical\" com \"Preservação de Sentido\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir \"Manutenção de Correção Gramatical\" com \"Preservação de Sentido\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir \"Manutenção de Correção Gramatical\" com \"Preservação de Sentido\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir \"Manutenção de Correção Gramatical\" com \"Preservação de Sentido\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir \"Manutenção de Correção Gramatical\" com \"Preservação de Sentido\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir \"Manutenção de Correção Gramatical\" com \"Preservação de Sentido\".",
           "blocks": [
             {
               "type": "list",
@@ -1141,8 +1798,12 @@
         {
           "trapId": "WARN-A03-G06-006",
           "title": "Uso Indevido de \"Onde\" e \"Aonde\" para Antecedentes Abstratos",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Uso Indevido de \"Onde\" e \"Aonde\" para Antecedentes Abstratos.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Uso Indevido de \"Onde\" e \"Aonde\" para Antecedentes Abstratos.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Uso Indevido de \"Onde\" e \"Aonde\" para Antecedentes Abstratos no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Uso Indevido de \"Onde\" e \"Aonde\" para Antecedentes Abstratos.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Uso Indevido de \"Onde\" e \"Aonde\" para Antecedentes Abstratos.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Uso Indevido de \"Onde\" e \"Aonde\" para Antecedentes Abstratos para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Uso Indevido de \"Onde\" e \"Aonde\" para Antecedentes Abstratos.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Uso Indevido de \"Onde\" e \"Aonde\" para Antecedentes Abstratos.",
           "blocks": [
             {
               "type": "list",
@@ -1278,7 +1939,10 @@
       "officialAnswer": "correct",
       "explanation": "O pronome relativo \"aonde\" só deve ser utilizado quando o verbo indicar ideia de movimento e exigir a preposição \"a\". Exemplo: Aonde você vai? (Vejam que o verbo \"ir\" indica movimento e também exige a preposição \"a\" - ir a algum lugar). Este não é o caso do verbo \"investir\". Logo, a substituição de “nas quais” por aonde prejudicaria a correção gramatical do texto. Questão correta!",
       "questionSha256": "7fe891ea9e5869d398c2703e41008b47f4a9533d4ed3722d846e4b2426026ab6",
-      "answerSha256": "cc0b418903c16f2c6d3ba0d3a0d1a2d3f65717f9ca4005662edceeae1610e921"
+      "answerSha256": "cc0b418903c16f2c6d3ba0d3a0d1a2d3f65717f9ca4005662edceeae1610e921",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Relativos - Regência e Reescrita; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0080",
@@ -1290,7 +1954,10 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "d1ac313b1737c5457c994ca0bdc65c3ab87a538919a0ef408ea26ab559716649",
-      "answerSha256": "cf9f39e0fcba15001f24a6444d60e86ba9fed010ff7627ca48036adebd3e6683"
+      "answerSha256": "cf9f39e0fcba15001f24a6444d60e86ba9fed010ff7627ca48036adebd3e6683",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Relativos - Regência e Reescrita; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0087",
@@ -1302,7 +1969,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "afc29f933f53014aef3aadca688232c61f5847aabf93aa1a438fa46ed63e38b8",
-      "answerSha256": "56aa870b3d845591b7ebd5a4a6d6bc71e3a165edc36963954cdf27ba3bdb8364"
+      "answerSha256": "56aa870b3d845591b7ebd5a4a6d6bc71e3a165edc36963954cdf27ba3bdb8364",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Relativos - Regência e Reescrita; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0042",
@@ -1315,7 +1985,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Questão muito perigosa. O pronome relativo \"que\" atrai próclise, então a ênclise é proibida. A dúvida é: mesmo havendo o sujeito \"as questões\" entre a palavra atrativa e o verbo? Sim. Isso mesmo. A regra é usar a próclise em oração subordinada. Por isso as conjunções subordinativas e os pronomes relativos são palavras atrativas. O fato de haver um sujeito entre o \"que\" e a palavra atrativa não tira a obrigatoriedade da próclise. É o que a gramática chama de \"atração remota\". Questão incorreta.",
       "questionSha256": "6da8e5758b05349c623b57fb29ae4daa71430da8eb0b11ecfb65b76fa67801a8",
-      "answerSha256": "619d83501fd8d3f4fba1bc53991c1a4b898dbfc4c034035faf79ec90ab6b5b66"
+      "answerSha256": "619d83501fd8d3f4fba1bc53991c1a4b898dbfc4c034035faf79ec90ab6b5b66",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Relativos - Regência e Reescrita; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0056",
@@ -1328,7 +2001,10 @@
       "officialAnswer": "correct",
       "explanation": "O pronome relativo \"aonde\" só deve ser utilizado quando o verbo indicar ideia de movimento e exigir a preposição \"a\". Exemplo: Aonde você vai? (Vejam que o verbo \"ir\" indica movimento e também exige a preposição \"a\" - ir a algum lugar). Este não é o caso do verbo \"investir\". Logo, a substituição de “nas quais” por aonde prejudicaria a correção gramatical do texto. Questão correta!",
       "questionSha256": "3d2083d33d71c98c47ab3c355dac7efc1a93f9f544448a7642c2b44d865af387",
-      "answerSha256": "29c1b9606e551062039bd9c88712e5fddd8f53ab205f6a709fa9a33f9cdda0e2"
+      "answerSha256": "29c1b9606e551062039bd9c88712e5fddd8f53ab205f6a709fa9a33f9cdda0e2",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Relativos - Regência e Reescrita; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0008",
@@ -1341,7 +2017,10 @@
       "officialAnswer": "incorrect",
       "explanation": "\"em que\" retoma \"data\", referente temporal; então seria possível trocar por \"na qual\" ou até pelo relativo \"quando\": dia da sobrecarga da Terra, a data em que/ na qual/ quando ultrapassamos Não caberia o uso do pronome relativo \"onde\", pois esse pronome deve ser usado para retomar ideia de lugar, não de tempo.\n\nQuestão incorreta.",
       "questionSha256": "af836f23b881d0f89ee668654db2880b76cbdd622edfb7dc8fde43c67efc86d2",
-      "answerSha256": "09ec3ad2cbdb2eddbc240b2938266a0709105d8a439297b9d0f94c13604116d5"
+      "answerSha256": "09ec3ad2cbdb2eddbc240b2938266a0709105d8a439297b9d0f94c13604116d5",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Relativos - Regência e Reescrita; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0005",
@@ -1354,7 +2033,19 @@
       "officialAnswer": "correct",
       "explanation": "No texto original, o pronome relativo \"que\" retoma o pronome \"aquela\", seu antecedente: A violência letal, aquela que envolve Se suprimirmos o \"aquela\", o \"que\" passa a retomar o substantivo \"violência\": A violência letal, que envolve Então, não haveria erro gramatical. Também não haveria qualquer incoerência (contradição, incompatibilidade, ausência de lógica), porque o \"aquela\" já se referia à violência letal no original. Então, o texto continuaria fazendo todo o sentido. Questão correta.",
       "questionSha256": "071a57b10663dd2b10a92e5de3977378bcc060bb26ee96118e7497e9b40d1b65",
-      "answerSha256": "b21672c8fad831dc95d30eab77de2bc41f30bfd0ba97d9f43896f38ecf047890"
+      "answerSha256": "b21672c8fad831dc95d30eab77de2bc41f30bfd0ba97d9f43896f38ecf047890",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Pronomes Relativos - Regência e Reescrita; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "correct",
+        "acceptedPedagogicalAnswers": [
+          "correct"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A03-G06-CONFLICT-001-25",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0136",
@@ -1367,7 +2058,19 @@
       "officialAnswer": "incorrect",
       "explanation": "O pronome relativo invariável “que” pode ser substituído pelos seus equivalentes variáveis, como “o qual, a qual, os quais, as quais”. No caso, usaríamos “o qual”, para concordar no masculino singular com “desastre”. Gabarito questão incorreta.\n\n4- O pronome “quem” se refere a pessoa ou ente personificado (visto como pessoa) e é precedido por preposição (monossilábica ou não).\n\nEx: A pessoa de quem falei chegou. (substituição possível: “de que falei”, “da qual falei”). A pessoa por quem intervim não mostrou gratidão.\n\nEm sentenças interrogativas, “quem” é pronome interrogativo: Quem gosta de acordar cedo?\n\nSegundo Bechara, os pronomes relativos quem e onde podem aparecer com emprego absoluto, sem referência a antecedentes, ou seja, sem “retomar ninguém”: “Quem tudo quer tudo perde.\" \"Dize-me com quem andas e eu te direi quem és.\" \"Quem com ferro fere com ferro será ferido.” \"Moro onde mais me agrada.”\n\n5- O pronome “cujo” tem como principais características: ✔ Indicar posse e sempre vir entre dois substantivos, possuidor e possuído; ✔ Não poder ser seguido nem precedido de artigo, mas poder ser antecedido por preposição; (Para lembrar: nada de cujo o, cuja a, cujo os, cuja as...) ✔ Não pode ser diretamente substituído por outro pronome relativo.\n\nPara achar o referente, pergunte ao termo seguinte: “de quem?”. Ex: Vi o filme cujo diretor ganhou o Oscar. (diretor de quem? Do filme!) Vi o rapaz a cujas pernas você se referiu. (pernas de quem? Do rapaz!)",
       "questionSha256": "a0b974348d8b3eb33baf030431b3e5ee7d6fa2c5d188742e3ab3f1d7efa122e1",
-      "answerSha256": "51b00002e46355cecf8e2639ae1e4f98cf2beaba330ffe8cc268e43218c0ee9a"
+      "answerSha256": "51b00002e46355cecf8e2639ae1e4f98cf2beaba330ffe8cc268e43218c0ee9a",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de POLÍCIA CIVIL DO MARANHÃO; 2. Identificar a regra central de Pronomes Relativos - Regência e Reescrita; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "incorrect",
+        "acceptedPedagogicalAnswers": [
+          "incorrect"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A03-G06-CONFLICT-001-25",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0139",
@@ -1380,7 +2083,19 @@
       "officialAnswer": "incorrect",
       "explanation": "Lembre-se que não há artigo após o pronome \"cujo\", ou seja, não é possível dizer cujas as ações. Por isso, Gabarito: questão incorreta.\n\n6- O pronome relativo “onde” deve ser usado quando o antecedente indicar lugar físico (ainda que virtual, figurativo), com sentido de “posicionamento em”. Como preposição “em” também indica uma referência locativa, podemos substituir “onde” por “em que” e por “no qual” e variações. Ex: A academia onde treino não tem aulas de MMA. A academia na qual/em que treino não tem aulas de MMA.\n\nVeja que é inadequado usar \"onde\" para outra referência que não seja lugar físico.\n\nEx: Essa é a hora onde o aluno se desespera. ✔ Ex: Essa é a hora em que/na qual o aluno se desespera.\n\nO pronome relativo “aonde” é usado nos casos em que o verbo pede a preposição “a”, com sentido de “em direção a”. Ex: Gosto da cidade aonde irei.\n\nO pronome relativo arcaico “donde”, que equivale a “de onde”, é usado nos casos em que o verbo pede a preposição “de”, com sentido de “procedência”. Ex: O lugar donde você voltou é distante.\n\n7- O pronome relativo “como” é usado quando o antecedente for palavra como forma, modo, maneira, jeito, ou outra, com sentido de “modo”. Ex: Não aceito o jeito como você fala comigo.\n\n8- O pronome relativo “quando” é usado nos casos em que antecedente tiver sentido de “tempo”. Ex: Sinto saudade da época quando eu não tinha preocupações.\n\n9- O pronome relativo “quanto” é usado nos casos em que antecedente tiver sentido de “quantidade”. Ex: Consegui tudo/tanto quanto queria, exceto tempo para desfrutar.\n\nReforçando: temos que ter atenção à preposição que o verbo/nome vai pedir, pois ela não deve ser suprimida e vai aparecer antes do pronome relativo.\n\nLembre-se: temos que enxergar sintaticamente o pronome relativo como se fosse o próprio termo a que se refere:\n\nEx: O menino a que me referi morreu. (referi-me “a” que => ao menino) O escritor de cujos poemas gosto morreu. (gosto “de” cujos => dos poemas)\n\nEsqueci o valor com quanto concordei. (concordei “com” quanto => com o valor).",
       "questionSha256": "50b6cbb688202ff33dbe65b1ed8b1130cac7d223bac6d03874b8477cb2b47006",
-      "answerSha256": "d5c5f2a185a6e2aa8b4cf5664b603125ad048c7cbc6100118dcb2a3eecf90872"
+      "answerSha256": "d5c5f2a185a6e2aa8b4cf5664b603125ad048c7cbc6100118dcb2a3eecf90872",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CGE-CE; 2. Identificar a regra central de Pronomes Relativos - Regência e Reescrita; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "incorrect",
+        "acceptedPedagogicalAnswers": [
+          "incorrect"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A03-G06-CONFLICT-001-25",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0134",
@@ -1414,7 +2129,50 @@
       "officialAnswer": "option_e",
       "explanation": "O que o médico achou? Um grão de sandice. Em quem? No Quincas Borba. Então, podemos dizer que o pronome relativo \"que\" tem como antecedente o \"grãozinho de sandice\" e o \"lhe\" retoma \"Quincas Borba\". Gabarito letra E.",
       "questionSha256": "55e8ef4e21aed8fca2d141ccc4b6e2482ad63fd7b0483449b077a92de352a71e",
-      "answerSha256": "7e81959078a0deab0ee8cb24d352d9261d13aaf26bb8deed3237f12c75ebe1d9"
+      "answerSha256": "7e81959078a0deab0ee8cb24d352d9261d13aaf26bb8deed3237f12c75ebe1d9",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de PGE-AM; 2. Identificar a regra central de Pronomes Relativos - Regência e Reescrita; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "option_e",
+        "acceptedPedagogicalAnswers": [
+          "option_e"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A03-G06-CONFLICT-001-25",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Pronomes Relativos - Regência e Reescrita."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Pronomes Relativos - Regência e Reescrita."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Pronomes Relativos - Regência e Reescrita."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Pronomes Relativos - Regência e Reescrita."
+        },
+        {
+          "optionLabel": "E",
+          "status": "incorrect",
+          "explanation": "Opção E: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Pronomes Relativos - Regência e Reescrita."
+        }
+      ]
     }
   ]
 }

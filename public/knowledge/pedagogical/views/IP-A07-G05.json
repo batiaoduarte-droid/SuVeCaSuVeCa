@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A07-G05",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.839Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.587Z"
   },
   "unit": {
     "unitId": "IP-A07-G05",
@@ -514,6 +514,16 @@
         {
           "entityId": "RULE-IP-A07-G05-001",
           "title": "Definições Canônicas",
+          "statement": "Oração Desenvolvida: Oração estruturada com conectivo explícito (conjunção ou pronome relativo) e verbo flexionado em tempo e modo finitos (KB-A07-G05-001).\nOração Reduzida: Oração desprovida de conjunção e pronome relativo, com verbo em forma nominal (infinitivo, gerúndio ou particípio), podendo ser antecedida por preposição pura ou locução prepositiva (KB-A07-G05-001).\nLocução Conjuntiva: Estrutura pluriverbal terminada em conjunção (que), que introduz oração desenvolvida (KB-A07-G05-002).\nLocução Prepositiva: Estrutura pluriverbal terminada em preposição (de, a, para), que introduz oração reduzida quando associada a infinitivo (KB-A07-G05-002).",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Oração Desenvolvida: Oração estruturada com conectivo explícito (conjunção ou pronome relativo) e verbo flexionado em tempo e modo finitos (KB-A07-G05-001).",
+            "Oração Reduzida: Oração desprovida de conjunção e pronome relativo, com verbo em forma nominal (infinitivo, gerúndio ou particípio), podendo ser antecedida por preposição pura ou locução prepositiva (KB-A07-G05-001).",
+            "Locução Conjuntiva: Estrutura pluriverbal terminada em conjunção (que), que introduz oração desenvolvida (KB-A07-G05-002).",
+            "Locução Prepositiva: Estrutura pluriverbal terminada em preposição (de, a, para), que introduz oração reduzida quando associada a infinitivo (KB-A07-G05-002)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -530,6 +540,16 @@
         {
           "entityId": "RULE-IP-A07-G05-002",
           "title": "Regras Canônicas",
+          "statement": "Regra da Subordinação Exclusiva em Concursos: Toda oração reduzida é sintaticamente subordinada (substantiva, adjetiva ou adverbial); não se reconhecem coordenadas reduzidas em provas (KB-A07-G05-004).\nRegra do Diagnóstico Substantivo: Toda oração reduzida substituível integralmente pelo pronome neutro \"ISSO\" é subordinada substantiva (KB-A07-G05-005).\nRegra do Diagnóstico Adjetivo: Toda oração reduzida que modifica diretamente um substantivo/pronome antecedente sem conjunção é subordinada adjetiva (restritiva se não pontuada; explicativa se isolada por pontuação) (KB-A07-G05-006).\nRegra do Diagnóstico Adverbial: Toda oração reduzida que agrega circunstância lógica (6C + FTP) ao verbo da oração principal é subordinada adverbial (KB-A07-G05-007).\nRegra da Fronteira Oracional: A oração principal retém seus objetos e complementos imediatos; a oração reduzida inicia-se no verbo nominal ou na preposição introdutória (KB-A07-G05-008).",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Regra da Subordinação Exclusiva em Concursos: Toda oração reduzida é sintaticamente subordinada (substantiva, adjetiva ou adverbial); não se reconhecem coordenadas reduzidas em provas (KB-A07-G05-004).",
+            "Regra do Diagnóstico Substantivo: Toda oração reduzida substituível integralmente pelo pronome neutro \"ISSO\" é subordinada substantiva (KB-A07-G05-005).",
+            "Regra do Diagnóstico Adjetivo: Toda oração reduzida que modifica diretamente um substantivo/pronome antecedente sem conjunção é subordinada adjetiva (restritiva se não pontuada; explicativa se isolada por pontuação) (KB-A07-G05-006).",
+            "Regra do Diagnóstico Adverbial: Toda oração reduzida que agrega circunstância lógica (6C + FTP) ao verbo da oração principal é subordinada adverbial (KB-A07-G05-007)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -547,6 +567,16 @@
         {
           "entityId": "RULE-IP-A07-G05-003",
           "title": "Classificações Sintáticas Estruturadas",
+          "statement": "Subordinadas Substantivas Reduzidas (6 Funções):\nSubjetiva (atua como sujeito da principal).\nObjetiva Direta (atua como objeto direto).\nObjetiva Indireta (atua como objeto indireto preposicionado).\nCompletiva Nominal (completa o sentido de nome transitivo).\nPredicativa (atua como predicativo do sujeito com verbo de ligação).\nApositiva (atua como aposto explicativo).\nSubordinadas Adjetivas Reduzidas (2 Tipos):\nRestritiva (sem vírgula).\nExplicativa (isolada por vírgulas, travessões ou parênteses).\nSubordinadas Adverbiais Reduzidas (9 Circunstâncias — 6C + FTP):\nCausal, Comparativa, Concessiva, Condicional, Conformativa, Consecutiva, Final, Temporal, Proporcional.",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Subordinadas Substantivas Reduzidas (6 Funções):",
+            "Subjetiva (atua como sujeito da principal).",
+            "Objetiva Direta (atua como objeto direto).",
+            "Objetiva Indireta (atua como objeto indireto preposicionado)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -575,6 +605,119 @@
         {
           "procedureId": "PROC-A07-G05-001",
           "title": "Protocolo de Análise e Classificação Completa de Orações Reduzidas",
+          "objective": "Executar o algoritmo decisório para Protocolo de Análise e Classificação Completa de Orações Reduzidas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo de Análise e Classificação Completa de Orações Reduzidas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Inspecionar a Redução Estrutural",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Verificar a ausência de conectivos subordinativos típicos (conjunções integrantes, conjunções adverbiais ou pronomes relativos);",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Confirmar se o verbo encontra-se em uma das três formas nominais",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Infinitivo (terminação em -r",
+              "explanation": "-ar, -er, -ir);",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Gerúndio (terminação em -ndo);",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Particípio (regular em -ado, -ido ou irregular em -to, -so).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Passo 2 — Delimitar a Fronteira Oracional",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Isolar a oração principal preservando seus termos essenciais e complementos diretos/indiretos;",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Inserir a barra divisória imediatamente antes do verbo na forma nominal ou da preposição/locução prepositiva que o introduz.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Passo 3 — Executar a Triagem Diagnóstica Categorial",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Teste A (Substantiva)",
+              "explanation": "Substituir toda a oração reduzida por \"ISSO\" (ou disso, nisso, a isso). Se o período mantiver coesão sintática plena, classificar como Subordinada Substantiva e identificar a função sintática (Subjetiva, O.D., O.I., C.N., Predicativa, Apositiva).",
+              "test": "Teste A (Substantiva): Substituir toda a oração reduzida por \"ISSO\" (ou disso, nisso, a isso). Se o período mantiver coesão sintática plena, classificar como Subordinada Substantiva e identificar a função sintática (Subjetiva, O.D., O.I., C.N., Predicativa, Apositiva)."
+            },
+            {
+              "order": 12,
+              "action": "Teste B (Adjetiva)",
+              "explanation": "Se não couber a troca por \"ISSO\", verificar se o verbo nominal qualifica diretamente um substantivo antecedente da oração principal (admitindo conversão mental para que + verbo conjugado). Confirmada a relação, classificar como Subordinada Adjetiva e aplicar a regra de pontuação (sem vírgula $\\rightarrow$ Restritiva; isolada por pontuação $\\rightarrow$ Explicativa).",
+              "test": "Teste B (Adjetiva): Se não couber a troca por \"ISSO\", verificar se o verbo nominal qualifica diretamente um substantivo antecedente da oração principal (admitindo conversão mental para que + verbo conjugado). Confirmada a relação, classificar como Subordinada Adjetiva e aplicar a regra de pontuação (sem vírgula $\\rightarrow$ Restritiva; isolada por pontuação $\\rightarrow$ Explicativa)."
+            },
+            {
+              "order": 13,
+              "action": "Teste C (Adverbial)",
+              "explanation": "Se não for substantiva nem adjetiva, identificar a ideia circunstancial veiculada em relação à oração principal. Enquadrar em uma das 9 circunstâncias (6C + FTP) e classificar como Subordinada Adverbial.",
+              "test": "Teste C (Adverbial): Se não for substantiva nem adjetiva, identificar a ideia circunstancial veiculada em relação à oração principal. Enquadrar em uma das 9 circunstâncias (6C + FTP) e classificar como Subordinada Adverbial."
+            },
+            {
+              "order": 14,
+              "action": "Passo 4 — Redigir a Nomenclatura Padrão",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 15,
+              "action": "Estruturar a classificação no formato canônico",
+              "explanation": "",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo de Análise e Classificação Completa de Orações Reduzidas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -653,6 +796,53 @@
         {
           "procedureId": "PROC-A07-G05-002",
           "title": "Teste Diagnóstico da Palavra Terminal em Locuções Conectivas",
+          "objective": "Executar o algoritmo decisório para Teste Diagnóstico da Palavra Terminal em Locuções Conectivas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste Diagnóstico da Palavra Terminal em Locuções Conectivas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isolar a locução introdutória que encabeça a oração dependente.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Inspecionar visualmente o último elemento mórfico/palavra final da locução",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se terminar com a conjunção \"que\" (ex.",
+              "explanation": "a fim de que, apesar de que, para que, desde que) $\\rightarrow$ Trata-se de Locução Conjuntiva $\\rightarrow$ Introduz Oração Desenvolvida com verbo conjugado finito.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se terminar com uma preposição pura (ex.",
+              "explanation": "de, a, para, com) (ex.: a fim de, apesar de, para, ao invés de) $\\rightarrow$ Trata-se de Locução Prepositiva $\\rightarrow$ Introduz Oração Reduzida com verbo no infinitivo.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste Diagnóstico da Palavra Terminal em Locuções Conectivas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -684,6 +874,22 @@
         {
           "contrastId": "CONTRAST-IP-A07-G05-001",
           "title": "Tabela 1: Matriz Comparativa Tripartite — Desenvolvidas vs. Reduzidas",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 1: Matriz Comparativa Tripartite — Desenvolvidas vs. Reduzidas",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -724,6 +930,22 @@
         {
           "contrastId": "CONTRAST-IP-A07-G05-002",
           "title": "Tabela 2: Contraste de Conectivos — Locução Conjuntiva vs. Locução Prepositiva",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 2: Contraste de Conectivos — Locução Conjuntiva vs. Locução Prepositiva",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -780,6 +1002,22 @@
         {
           "contrastId": "CONTRAST-IP-A07-G05-003",
           "title": "Tabela 3: Matriz de Testes Diagnósticos das Três Famílias de Reduzidas",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 3: Matriz de Testes Diagnósticos das Três Famílias de Reduzidas",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -828,6 +1066,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G05-001",
           "title": "Frases Analisadas",
+          "prompt": "Frase A: Estudo para passar no concurso.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase A",
+              "rationale": "Estudo para passar no concurso."
+            },
+            {
+              "order": 2,
+              "action": "Frase B",
+              "rationale": "Estudo para que passe no concurso."
+            }
+          ],
+          "result": "Frase B: Estudo para que passe no concurso.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Frases Analisadas sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Frases Analisadas.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Frases Analisadas.",
           "blocks": [
             {
               "type": "list",
@@ -842,6 +1097,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G05-002",
           "title": "Análise e Raciocínio Sintático",
+          "prompt": "Na Frase A, o elemento introdutório é a preposição pura \"para\", que rege o verbo na forma nominal de infinitivo \"passar\". Não havendo conjunção nem pronome relativo, a oração classifica-se como oração subordinada adverbial final reduzida de infinitivo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Na Frase A, o elemento introdutório é a preposição pura \"para\", que rege o verbo na forma nominal de infinitivo \"passar\". Não havendo conjunção nem pronome relativo, a oração classifica-se como oração subordinada adverbial final reduzida de infinitivo.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Na Frase B, o conectivo introdutório é a locução conjuntiva final \"para que\" (terminada na conjunção que), que introduz o verbo flexionado no presente do subjuntivo \"passe\". A oração classifica-se como oração subordinada adverbial final desenvolvida.",
+              "rationale": null
+            }
+          ],
+          "result": "Na Frase B, o conectivo introdutório é a locução conjuntiva final \"para que\" (terminada na conjunção que), que introduz o verbo flexionado no presente do subjuntivo \"passe\". A oração classifica-se como oração subordinada adverbial final desenvolvida.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise e Raciocínio Sintático sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise e Raciocínio Sintático.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise e Raciocínio Sintático.",
           "blocks": [
             {
               "type": "list",
@@ -856,6 +1128,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G05-003",
           "title": "Frase Analisada",
+          "prompt": "É preciso seguir em frente.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"É preciso seguir em frente....\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Frase Analisada.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Frase Analisada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Frase Analisada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Frase Analisada.",
           "blocks": [
             {
               "type": "paragraph",
@@ -866,6 +1160,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G05-004",
           "title": "Resolução Passo a Passo",
+          "prompt": "Identificação da Redução: O verbo \"seguir\" está no infinitivo impessoal e a oração prescinde de conectivo conjuncional $\\rightarrow$ Oração reduzida de infinitivo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificação da Redução",
+              "rationale": "O verbo \"seguir\" está no infinitivo impessoal e a oração prescinde de conectivo conjuncional $\\rightarrow$ Oração reduzida de infinitivo."
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Teste do \"ISSO\"",
+              "rationale": "É preciso [seguir em frente] $\\rightarrow$ É preciso [ISSO] $\\rightarrow$ [ISSO] é preciso. O período preserva coesão e sentido perfeito $\\rightarrow$ Natureza Subordinada Substantiva."
+            },
+            {
+              "order": 3,
+              "action": "Determinação da Função Sintática",
+              "rationale": "A oração principal \"É preciso\" compõe-se de verbo de ligação + predicativo, não possuindo sujeito interno. A oração subordinada atua como sujeito sintático."
+            },
+            {
+              "order": 4,
+              "action": "Nomenclatura Consolidada",
+              "rationale": "Oração subordinada substantiva subjetiva reduzida de infinitivo."
+            }
+          ],
+          "result": "Nomenclatura Consolidada: Oração subordinada substantiva subjetiva reduzida de infinitivo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Passo a Passo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Passo a Passo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Passo a Passo.",
           "blocks": [
             {
               "type": "list",
@@ -882,6 +1203,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G05-005",
           "title": "Frase Analisada",
+          "prompt": "Vi a menina chorando na praça.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Vi a menina chorando na praça....\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Frase Analisada.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Frase Analisada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Frase Analisada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Frase Analisada.",
           "blocks": [
             {
               "type": "paragraph",
@@ -892,6 +1235,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G05-006",
           "title": "Resolução Passo a Passo",
+          "prompt": "Identificação da Redução: O verbo \"chorando\" apresenta-se no gerúndio (-ndo), sem pronome relativo introdutório $\\rightarrow$ Oração reduzida de gerúndio.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificação da Redução",
+              "rationale": "O verbo \"chorando\" apresenta-se no gerúndio (-ndo), sem pronome relativo introdutório $\\rightarrow$ Oração reduzida de gerúndio."
+            },
+            {
+              "order": 2,
+              "action": "Delimitação Oracional",
+              "rationale": "Oração Principal = Vi a menina (em que \"a menina\" é o objeto direto de \"Vi\"); Oração Subordinada = chorando na praça."
+            },
+            {
+              "order": 3,
+              "action": "Identificação do Vínculo",
+              "rationale": "O verbo \"chorando\" adjetiva diretamente o substantivo \"menina\" (menina que chorava)."
+            },
+            {
+              "order": 4,
+              "action": "Critério de Pontuação",
+              "rationale": "A oração não está isolada por vírgula $\\rightarrow$ Valor restritivo."
+            },
+            {
+              "order": 5,
+              "action": "Nomenclatura Consolidada",
+              "rationale": "Oração subordinada adjetiva restritiva reduzida de gerúndio."
+            }
+          ],
+          "result": "Nomenclatura Consolidada: Oração subordinada adjetiva restritiva reduzida de gerúndio.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Passo a Passo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Passo a Passo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Passo a Passo.",
           "blocks": [
             {
               "type": "list",
@@ -909,6 +1284,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G05-007",
           "title": "Frase Analisada",
+          "prompt": "Chegada a hora, saiu rapidamente.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Chegada a hora, saiu rapidamente....\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Frase Analisada.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Frase Analisada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Frase Analisada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Frase Analisada.",
           "blocks": [
             {
               "type": "paragraph",
@@ -919,6 +1316,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A07-G05-008",
           "title": "Resolução Passo a Passo",
+          "prompt": "Identificação da Redução: O verbo \"Chegada\" apresenta-se no particípio regular feminino, encabeçando a oração sem qualquer conectivo subordinativo $\\rightarrow$ Oração reduzida de particípio.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificação da Redução",
+              "rationale": "O verbo \"Chegada\" apresenta-se no particípio regular feminino, encabeçando a oração sem qualquer conectivo subordinativo $\\rightarrow$ Oração reduzida de particípio."
+            },
+            {
+              "order": 2,
+              "action": "Desdobramento e Apreensão Semântica",
+              "rationale": "A oração estabelece a circunstância de tempo em que a oração principal ocorreu (Quando a hora chegou / Logo que a hora chegou, saiu rapidamente)."
+            },
+            {
+              "order": 3,
+              "action": "Nomenclatura Consolidada",
+              "rationale": "Oração subordinada adverbial temporal reduzida de particípio."
+            }
+          ],
+          "result": "Nomenclatura Consolidada: Oração subordinada adverbial temporal reduzida de particípio.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Passo a Passo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Passo a Passo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Passo a Passo.",
           "blocks": [
             {
               "type": "list",
@@ -976,8 +1395,12 @@
         {
           "trapId": "WARN-A07-G05-001",
           "title": "Confusão entre Circunstância Adverbial Oracional e Adjunto Locativo Interno",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão entre Circunstância Adverbial Oracional e Adjunto Locativo Interno.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão entre Circunstância Adverbial Oracional e Adjunto Locativo Interno.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão entre Circunstância Adverbial Oracional e Adjunto Locativo Interno no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão entre Circunstância Adverbial Oracional e Adjunto Locativo Interno.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão entre Circunstância Adverbial Oracional e Adjunto Locativo Interno.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão entre Circunstância Adverbial Oracional e Adjunto Locativo Interno para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão entre Circunstância Adverbial Oracional e Adjunto Locativo Interno.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão entre Circunstância Adverbial Oracional e Adjunto Locativo Interno.",
           "blocks": [
             {
               "type": "list",
@@ -993,8 +1416,12 @@
         {
           "trapId": "WARN-A07-G05-002",
           "title": "Erro de Delimitação Oracional Englobando o Objeto da Principal",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Erro de Delimitação Oracional Englobando o Objeto da Principal.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Erro de Delimitação Oracional Englobando o Objeto da Principal.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Erro de Delimitação Oracional Englobando o Objeto da Principal no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Erro de Delimitação Oracional Englobando o Objeto da Principal.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Erro de Delimitação Oracional Englobando o Objeto da Principal.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Erro de Delimitação Oracional Englobando o Objeto da Principal para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Erro de Delimitação Oracional Englobando o Objeto da Principal.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Erro de Delimitação Oracional Englobando o Objeto da Principal.",
           "blocks": [
             {
               "type": "list",
@@ -1010,8 +1437,12 @@
         {
           "trapId": "WARN-A07-G05-003",
           "title": "Confusão entre Oração Adjetiva de Gerúndio e Predicativo do Objeto",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão entre Oração Adjetiva de Gerúndio e Predicativo do Objeto.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão entre Oração Adjetiva de Gerúndio e Predicativo do Objeto.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão entre Oração Adjetiva de Gerúndio e Predicativo do Objeto no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão entre Oração Adjetiva de Gerúndio e Predicativo do Objeto.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão entre Oração Adjetiva de Gerúndio e Predicativo do Objeto.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão entre Oração Adjetiva de Gerúndio e Predicativo do Objeto para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão entre Oração Adjetiva de Gerúndio e Predicativo do Objeto.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão entre Oração Adjetiva de Gerúndio e Predicativo do Objeto.",
           "blocks": [
             {
               "type": "list",
@@ -1026,8 +1457,12 @@
         {
           "trapId": "WARN-A07-G05-004",
           "title": "Presença de Preposição não Converte Oração Reduzida em Desenvolvida",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Presença de Preposição não Converte Oração Reduzida em Desenvolvida.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Presença de Preposição não Converte Oração Reduzida em Desenvolvida.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Presença de Preposição não Converte Oração Reduzida em Desenvolvida no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Presença de Preposição não Converte Oração Reduzida em Desenvolvida.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Presença de Preposição não Converte Oração Reduzida em Desenvolvida.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Presença de Preposição não Converte Oração Reduzida em Desenvolvida para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Presença de Preposição não Converte Oração Reduzida em Desenvolvida.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Presença de Preposição não Converte Oração Reduzida em Desenvolvida.",
           "blocks": [
             {
               "type": "list",
@@ -1042,8 +1477,12 @@
         {
           "trapId": "WARN-A07-G05-005",
           "title": "Atenção aos Particípios Irregulares Terminados em \"-to\" e \"-so\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Atenção aos Particípios Irregulares Terminados em \"-to\" e \"-so\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Atenção aos Particípios Irregulares Terminados em \"-to\" e \"-so\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Atenção aos Particípios Irregulares Terminados em \"-to\" e \"-so\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Atenção aos Particípios Irregulares Terminados em \"-to\" e \"-so\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Atenção aos Particípios Irregulares Terminados em \"-to\" e \"-so\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Atenção aos Particípios Irregulares Terminados em \"-to\" e \"-so\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Atenção aos Particípios Irregulares Terminados em \"-to\" e \"-so\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Atenção aos Particípios Irregulares Terminados em \"-to\" e \"-so\".",
           "blocks": [
             {
               "type": "list",
@@ -1181,7 +1620,10 @@
       "officialAnswer": "correct",
       "explanation": "A população global, que, em 1972, era de 3,8 bilhões, mais que dobrou: em 2022, a Terra cruzou a marca de 8 bilhões de habitantes. Como regra, para contar as orações, contamos os verbos: era, dobrou, cruzou... Temos de fato 3 orações. A população global, que, em 1972, era de 3,8 bilhões, mais que dobrou: em 2022, a Terra cruzou a marca de 8 bilhões de habitantes. A oração principal é: A população global mais que dobrou. A oração subordinada adjetiva, ligada a \"população global\", é: que, em 1972, era de 3,8 bilhões A última oração é uma espécie de oração apositiva, com valor explicativo: em 2022, a Terra cruzou a marca de 8 bilhões de habitantes. Questão correta.",
       "questionSha256": "b6231e5195b7f15e5565011a20932b454468f5e1902d33f86f3348d335923829",
-      "answerSha256": "60d314de86716a09d8f86287dafec18d94f7f899b7a2b17769a1c0db69053978"
+      "answerSha256": "60d314de86716a09d8f86287dafec18d94f7f899b7a2b17769a1c0db69053978",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Orações Reduzidas - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0061",
@@ -1194,7 +1636,10 @@
       "officialAnswer": "incorrect",
       "explanation": "“como” é conjunção comparativa: a galinha não contava consigo da mesma forma que o galo crê na sua crista. Questão incorreta.",
       "questionSha256": "70550a52bd8da47d4eef00d132fd90d06e19c72458d13c6ffffdaeae8b700c02",
-      "answerSha256": "f0ab422a60bef27a4472237ca86c341406a20f00e5c0d861dddad9c8fb2ec349"
+      "answerSha256": "f0ab422a60bef27a4472237ca86c341406a20f00e5c0d861dddad9c8fb2ec349",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Orações Reduzidas - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0113",
@@ -1206,7 +1651,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "11ec5e386b2b52f7c5b63eaea16ff549966ff99e1fac47a88c2227e2a700a976",
-      "answerSha256": "c963c3d076026d5a7f1aa8869162540f2aa01f1644ee71b0b9ec20b6ec72837e"
+      "answerSha256": "c963c3d076026d5a7f1aa8869162540f2aa01f1644ee71b0b9ec20b6ec72837e",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Orações Reduzidas - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0003",
@@ -1219,7 +1667,10 @@
       "officialAnswer": "incorrect",
       "explanation": "A oração “não confundir a língua com o discurso” classifica-se como subordinada substantiva SUBJETIVA reduzida de infinitivo. Em suma, é um nome feio para o bom e velho “sujeito oracional” É importante [não confundir a língua com o discurso] [não confundir a língua com o discurso] É importante [ISSO] É importante Gabarito: Errado.",
       "questionSha256": "58f1c7b96d88e2c09a2deff0c4dc96c46f0e986cbdd3651d19f5615f5eb9da47",
-      "answerSha256": "caf695214a7b235b3bff291b2783ebfc22d16f95d29ead3cfdebe540ea1d0d79"
+      "answerSha256": "caf695214a7b235b3bff291b2783ebfc22d16f95d29ead3cfdebe540ea1d0d79",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Orações Reduzidas - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0065",
@@ -1231,7 +1682,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "76359815bc084c44d80774f4458db62fb4ba57c67e88a96063d1fbd1b4ee7037",
-      "answerSha256": "148f9256683993219b2bcd70da4ce0a2bb2ab4c0c613d6d11031e2a077f8fc53"
+      "answerSha256": "148f9256683993219b2bcd70da4ce0a2bb2ab4c0c613d6d11031e2a077f8fc53",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Orações Reduzidas - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula07.q0041",
@@ -1244,7 +1698,10 @@
       "officialAnswer": "correct",
       "explanation": "Sim. O pronome relativo “que” retoma um antecedente (sua conta) e relaciona a oração principal (chega uma pessoa precisando pagar sua conta) à oração adjetiva (que vence naquele dia). - chega uma pessoa precisando pagar sua conta [que vence naquele dia]. Questão correta.",
       "questionSha256": "8c8a52753a1dc6d4c1598c36673cac942ebb8f483220b7ab2aa130979e12615b",
-      "answerSha256": "fe206cc1cc4f06c1f7f2c2d863e95e91a4a8a0c7e786b653c8cc62cc8244e98e"
+      "answerSha256": "fe206cc1cc4f06c1f7f2c2d863e95e91a4a8a0c7e786b653c8cc62cc8244e98e",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Orações Reduzidas - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

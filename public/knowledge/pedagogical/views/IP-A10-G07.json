@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A10-G07",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.888Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.639Z"
   },
   "unit": {
     "unitId": "IP-A10-G07",
@@ -1349,6 +1349,101 @@
         {
           "procedureId": "PROC-A10-V022-001",
           "title": "Protocolo de Análise para Crase Diante de Palavras Femininas no Plural",
+          "objective": "Executar o algoritmo decisório para Protocolo de Análise para Crase Diante de Palavras Femininas no Plural",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo de Análise para Crase Diante de Palavras Femininas no Plural."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Verificar a forma do \"A\"",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Se estiver grafado A (singular)",
+              "explanation": "trata-se apenas de preposição.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "É proibido crasear (à + plural = ERRO).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "A estrutura a [substantivo plural] está gramaticalmente correta e expressa sentido genérico.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se estiver grafado ÀS (plural craseado)",
+              "explanation": "trata-se de preposição a + artigo as.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "A crase é obrigatória.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "A estrutura às [substantivo plural] está gramaticalmente correta e expressa sentido determinado.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Avaliar a tentativa de retirada do acento em às",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Trocar às por as (sem acento) = ERRO (falta de preposição).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Avaliar a tentativa de substituição mútua (a por às ou às por a)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Mantém a correção gramatical",
+              "explanation": "SIM.",
+              "test": null
+            },
+            {
+              "order": 12,
+              "action": "Mantém o sentido original",
+              "explanation": "NÃO.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo de Análise para Crase Diante de Palavras Femininas no Plural."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1417,6 +1512,59 @@
         {
           "procedureId": "PROC-A10-V022-002",
           "title": "Protocolo para Supressão de Termos Intervenientes",
+          "objective": "Executar o algoritmo decisório para Protocolo para Supressão de Termos Intervenientes",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo para Supressão de Termos Intervenientes."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize o termo regente e determine sua regência (se exige ou não preposição).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Isole mentalmente o segmento a ser suprimido (ex.",
+              "explanation": "a todas).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Conecte o regente diretamente ao termo remanescente (ex.",
+              "explanation": "subjacente + as relações).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Verifique a fusão",
+              "explanation": "se o regente pede a e o termo remanescente tem artigo as, a fusão resulta obrigatoriamente em às.",
+              "test": "Verifique a fusão: se o regente pede a e o termo remanescente tem artigo as, a fusão resulta obrigatoriamente em às."
+            },
+            {
+              "order": 5,
+              "action": "Valide a assertiva",
+              "explanation": "se a banca afirmar que a crase se torna obrigatória nesse caso, o item é CERTO.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo para Supressão de Termos Intervenientes."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1439,6 +1587,53 @@
         {
           "procedureId": "PROC-A10-V023-001",
           "title": "Algoritmo de Resolução de Crase em Expressões e Locuções",
+          "objective": "Executar o algoritmo decisório para Algoritmo de Resolução de Crase em Expressões e Locuções",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo de Resolução de Crase em Expressões e Locuções."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Se o candidato tentar aplicar a substituição por palavra masculina (trocar por 'ao') em uma locução feminina pura (como às pressas ou à noite), o teste falhará ou gerará confusão, pois o teste do ao pertence à Regra 1 (FF).",
+              "explanation": null,
+              "test": "Se o candidato tentar aplicar a substituição por palavra masculina (trocar por 'ao') em uma locução feminina pura (como às pressas ou à noite), o teste falhará ou gerará confusão, pois o teste do ao pertence à Regra 1 (FF)."
+            },
+            {
+              "order": 2,
+              "action": "Na Regra 2, a única verificação exigida é confirmar se a estrutura é locutiva e se seu núcleo é feminino.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Depende de",
+              "explanation": "KB-A10-V023-001, KB-A10-V023-003",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Aplicado em",
+              "explanation": "EX-A10-V023-011 até EX-A10-V023-020",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo de Resolução de Crase em Expressões e Locuções."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1569,6 +1764,89 @@
         {
           "procedureId": "PROC-A10-V024-001",
           "title": "Roteiro de Inspeção Mental para Análise de Crase",
+          "objective": "Executar o algoritmo decisório para Roteiro de Inspeção Mental para Análise de Crase",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Roteiro de Inspeção Mental para Análise de Crase."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Identificar a Natureza da Estrutura",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Verificar se o termo é uma Locução Feminina (adverbial, prepositiva ou conjuntiva); caso positivo, aplica-se o acento grave fixo (Regra de LF).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se não for locução, analisar a ocorrência do Fenômeno Fonético (FF)",
+              "explanation": "verificar se o termo regente exige a preposição A.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Passo 2 — Identificar o Termo Regido (no caso de FF)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Verificar se o termo regido aceita artigo feminino A, se é o pronome a qual/as quais, se é pronome demonstrativo (aquele/aquela/aquilo) ou o pronome demonstrativo a antes de que/de.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Passo 3 — Checar as Restrições Específicas",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Conferir se não se trata de caso de Crase Proibida (ex.",
+              "explanation": "palavra masculina, verbo, pronome indefinido, etc.).",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Conferir se o termo está no singular diante de plural (Crase no Plural).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Verificar se há simetria em enumerações ou correlações (Paralelismo).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Verificar se a ocorrência se enquadra em um dos 3 Casos Facultativos.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Roteiro de Inspeção Mental para Análise de Crase."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1635,6 +1913,71 @@
         {
           "procedureId": "PROC-A10-V025-001",
           "title": "Método do \"Farejador de Regência\" para Validação de Fenômeno Fonético",
+          "objective": "Executar o algoritmo decisório para Método do \"Farejador de Regência\" para Validação de Fenômeno Fonético",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método do \"Farejador de Regência\" para Validação de Fenômeno Fonético."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Objetivo",
+              "explanation": "Determinar se a crase ocorre por fusão de preposição + artigo (Fenômeno Fonético).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo a passo",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Localizar o termo com acento grave",
+              "explanation": "Isolar o vocábulo à(s) no texto.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Buscar o termo regente",
+              "explanation": "Ler o período oracional e identificar se há algum verbo ou nome anterior que exija a preposição a.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Identificar o termo regido",
+              "explanation": "Verificar se a palavra seguinte é um substantivo feminino que admite artigo a.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Testar a fusão",
+              "explanation": "Confirmar se Regência (Prep. A) + Substantivo Feminino (Artigo A) = Crase Obrigatória.",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Desfecho",
+              "explanation": "Se houver preposição regida + artigo, a justificativa é Fenômeno Fonético.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método do \"Farejador de Regência\" para Validação de Fenômeno Fonético."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -1660,6 +2003,65 @@
         {
           "procedureId": "PROC-A10-V025-002",
           "title": "Método de Reconhecimento de Locuções Femininas",
+          "objective": "Executar o algoritmo decisório para Método de Reconhecimento de Locuções Femininas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método de Reconhecimento de Locuções Femininas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Objetivo",
+              "explanation": "Identificar se o acento grave decorre de locução feminina e julgar assertivas sobre sua obrigatoriedade/facultatividade.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo a passo",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Verificar a ausência de regência",
+              "explanation": "Observar que o verbo anterior não rege preposição a (ex.: verbos transitivos diretos como ver, acordar, trazer).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Analisar a natureza do bloco",
+              "explanation": "Verificar se a expressão atua como adjunto adverbial (lugar, tempo, modo) ou expressão cristalizada (à direita, à hora de, à tona, à toa).",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Avaliar o gênero do núcleo",
+              "explanation": "Certificar-se de que o núcleo é feminino (direita, hora, tona).",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Julgar a obrigatoriedade",
+              "explanation": "Locuções femininas possuem acento grave obrigatório. Se a banca afirmar que é \"facultativo\", classifique o item como ERRADO.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método de Reconhecimento de Locuções Femininas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -1684,6 +2086,89 @@
         {
           "procedureId": "PROC-A10-V026-CRASE-001",
           "title": "Algoritmo de Verificação de Crase em Pronomes Possessivos",
+          "objective": "Executar o algoritmo decisório para Algoritmo de Verificação de Crase em Pronomes Possessivos",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo de Verificação de Crase em Pronomes Possessivos."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar que o termo regente exige a preposição a.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 1",
+              "explanation": "Analisar o número gramatical do pronome possessivo.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se estiver no singular (minha, tua, sua, nossa, vossa), avançar para o Passo 2.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se estiver no plural (minhas, tuas, suas, nossas, vossas), avançar para o Passo 3.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Passo 2 (Possessivo no Singular)",
+              "explanation": "Verificar se o substantivo feminino está explícito ao lado (função adjetiva) ou omitido (função substantiva).",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se o substantivo estiver expresso",
+              "explanation": "o artigo é facultativo -> CRASE FACULTATIVA (Obedeceu a/à sua mãe).",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Se o substantivo estiver elidido/subentendido",
+              "explanation": "o artigo é obrigatório para sustentar a elipse -> CRASE OBRIGATÓRIA (Referiu-se à sua mãe, não à minha).",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Passo 3 (Possessivo no Plural)",
+              "explanation": "Verificar a forma da letra \"a\" que o antecede.",
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Se for apenas \"a\" (singular) diante de possessivo plural",
+              "explanation": "é preposição pura -> CRASE PROIBIDA (Obedeceu a suas ordens).",
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Se for \"às\" (plural)",
+              "explanation": "é a fusão de preposição a + artigo as -> CRASE OBRIGATÓRIA (Obedeceu às suas ordens).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo de Verificação de Crase em Pronomes Possessivos."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1761,6 +2246,53 @@
         {
           "procedureId": "PROC-A10-V026-CRASE-002",
           "title": "Teste de Validação de Crase após Preposições",
+          "objective": "Executar o algoritmo decisório para Teste de Validação de Crase após Preposições",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Validação de Crase após Preposições."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1",
+              "explanation": "Identificar qual preposição antecede o \"a\".",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2",
+              "explanation": "A preposição é \"até\"?",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "SIM",
+              "explanation": "A preposição a subsequente é facultativa. Diante de substantivo feminino que aceite artigo, a crase é FACULTATIVA (Foi até a/à praia).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "NÃO (é desde, após, ante, com, contra, de, para, sob, sobre, etc.)",
+              "explanation": "Nenhuma outra preposição aceita a preposição a após si. O \"a\" seguinte será exclusivamente artigo definido -> CRASE PROIBIDA (Desde as oito horas, Após as duas horas, Ante a decisão).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Validação de Crase após Preposições."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1801,6 +2333,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-001",
           "title": "EX-A10-V022-001 — Questão 1: Petrobras 2024 (Obrigatoriedade de Crase em \"Às\")",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE — Petrobras — 2024 (Técnico Júnior)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE — Petrobras — 2024 (Técnico Júnior)"
+            },
+            {
+              "order": 2,
+              "action": "Trecho de análise",
+              "rationale": "\"...submete-se às regras gerais da administração pública...\""
+            },
+            {
+              "order": 3,
+              "action": "Afirmação da Banca",
+              "rationale": "\"É obrigatório o emprego do acento indicativo de crase no vocábulo 'às' em 'às regras gerais da administração pública'.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução",
+              "rationale": "O verbo submeter-se rege a preposição a (submeter-se a algo). O substantivo regras está antecedido do artigo as. Se retirássemos o acento grave, restaria as, que é somente artigo, violando a regência do verbo. Como não se pode usar as sem crase, o acento no vocábulo às é obrigatório."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito oficial",
+              "rationale": "Certo."
+            }
+          ],
+          "result": "Gabarito oficial: Certo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V022-001 — Questão 1: Petrobras 2024 (Obrigatoriedade de Crase em \"Às\") sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V022-001 — Questão 1: Petrobras 2024 (Obrigatoriedade de Crase em \"Às\").",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V022-001 — Questão 1: Petrobras 2024 (Obrigatoriedade de Crase em \"Às\").",
           "blocks": [
             {
               "type": "list",
@@ -1818,6 +2382,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-002",
           "title": "EX-A10-V022-002 — Questão 2: MPE-TO 2024 (Crase Obrigatória com Complemento Nominal)",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE — MPE-TO — 2024 (Analista Ministerial Especializado - Pedagogia)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE — MPE-TO — 2024 (Analista Ministerial Especializado - Pedagogia)"
+            },
+            {
+              "order": 2,
+              "action": "Trecho de análise",
+              "rationale": "\"...ainda existe uma enorme dificuldade de acesso às coisas do direito.\""
+            },
+            {
+              "order": 3,
+              "action": "Afirmação da Banca",
+              "rationale": "\"No segundo período do terceiro parágrafo, o emprego do sinal indicativo de crase no trecho 'ainda existe uma enorme dificuldade de acesso às coisas do direito' é obrigatório.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução",
+              "rationale": "O substantivo acesso exige a preposição a (acesso a algo). Diante do substantivo feminino plural coisas, temos a fusão $a + as = às$. Caberiam as formas às coisas ou a coisas. A forma as coisas (sem crase) é incorreta por falta de preposição. Logo, o sinal em às é obrigatório."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito oficial",
+              "rationale": "Certo."
+            }
+          ],
+          "result": "Gabarito oficial: Certo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V022-002 — Questão 2: MPE-TO 2024 (Crase Obrigatória com Complemento Nominal) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V022-002 — Questão 2: MPE-TO 2024 (Crase Obrigatória com Complemento Nominal).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V022-002 — Questão 2: MPE-TO 2024 (Crase Obrigatória com Complemento Nominal).",
           "blocks": [
             {
               "type": "list",
@@ -1835,6 +2431,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-003",
           "title": "EX-A10-V022-003 — Questão 3: MEC 2023 (Proibição de Crase em \"A\" Singular antes de Plural)",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE — MEC — 2023 (Técnico em Assuntos Educacionais)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE — MEC — 2023 (Técnico em Assuntos Educacionais)"
+            },
+            {
+              "order": 2,
+              "action": "Trecho de análise",
+              "rationale": "\"...correspondem a novas ansiedades emergentes...\""
+            },
+            {
+              "order": 3,
+              "action": "Afirmação da Banca",
+              "rationale": "\"No trecho 'correspondem a novas ansiedades emergentes' (...), seria gramaticalmente correta a inserção do acento indicativo de crase no vocábulo 'a', haja vista a regência do verbo corresponder e a flexão da palavra 'novas' no feminino.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução",
+              "rationale": "O verbo corresponder exige preposição a, mas o substantivo novas ansiedades não está precedido de artigo definido plural. O \"a\" está no singular. \"A\" no singular diante de palavra no plural não recebe crase em hipótese alguma."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito oficial",
+              "rationale": "Errado."
+            }
+          ],
+          "result": "Gabarito oficial: Errado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V022-003 — Questão 3: MEC 2023 (Proibição de Crase em \"A\" Singular antes de Plural) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V022-003 — Questão 3: MEC 2023 (Proibição de Crase em \"A\" Singular antes de Plural).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V022-003 — Questão 3: MEC 2023 (Proibição de Crase em \"A\" Singular antes de Plural).",
           "blocks": [
             {
               "type": "list",
@@ -1852,6 +2480,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-004",
           "title": "EX-A10-V022-004 — Questão 4: Pref. Joinville 2024 (Falsa Facultatividade de Crase)",
+          "prompt": "Banca / Órgão / Ano: (Adaptado) CESPE / CEBRASPE — Pref. de Joinville - SC — 2024 (Prof. Bilíngue)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "(Adaptado) CESPE / CEBRASPE — Pref. de Joinville - SC — 2024 (Prof. Bilíngue)"
+            },
+            {
+              "order": 2,
+              "action": "Trecho de análise",
+              "rationale": "\"...ir a exposições...\""
+            },
+            {
+              "order": 3,
+              "action": "Afirmação da Banca",
+              "rationale": "\"A inserção do acento indicativo de crase no trecho 'ir a exposições' (...) manteria a correção gramatical do texto, uma vez que seu emprego, nesse caso, é facultativo.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução",
+              "rationale": "Em ir a exposições, o \"a\" está no singular diante do plural exposições. Inserir crase no \"a\" singular (ir à exposições) tornaria o período incorreto. A crase não é facultativa nessa posição."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito oficial",
+              "rationale": "Errado."
+            }
+          ],
+          "result": "Gabarito oficial: Errado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V022-004 — Questão 4: Pref. Joinville 2024 (Falsa Facultatividade de Crase) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V022-004 — Questão 4: Pref. Joinville 2024 (Falsa Facultatividade de Crase).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V022-004 — Questão 4: Pref. Joinville 2024 (Falsa Facultatividade de Crase).",
           "blocks": [
             {
               "type": "list",
@@ -1869,6 +2529,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-005",
           "title": "EX-A10-V022-005 — Questão 5: Min. Economia 2020 (Substituição de \"A\" por \"Às\")",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE — Ministério da Economia — 2020 (Tecnologia da Informação)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE — Ministério da Economia — 2020 (Tecnologia da Informação)"
+            },
+            {
+              "order": 2,
+              "action": "Trecho de análise",
+              "rationale": "\"...com relação a centenas de anos de pensamento científico...\""
+            },
+            {
+              "order": 3,
+              "action": "Afirmação da Banca",
+              "rationale": "\"No trecho 'com relação a centenas de anos de pensamento científico', no quarto período do texto, a substituição do vocábulo 'a' por às manteria a correção gramatical do texto.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução",
+              "rationale": "A locução com relação a exige a preposição a. Antes do substantivo feminino plural centenas, o artigo é facultativo. Pode-se usar apenas a preposição (a centenas) ou preposição + artigo (às centenas). Ambas as construções são gramaticalmente corretas."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito oficial",
+              "rationale": "Certo."
+            }
+          ],
+          "result": "Gabarito oficial: Certo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V022-005 — Questão 5: Min. Economia 2020 (Substituição de \"A\" por \"Às\") sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V022-005 — Questão 5: Min. Economia 2020 (Substituição de \"A\" por \"Às\").",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V022-005 — Questão 5: Min. Economia 2020 (Substituição de \"A\" por \"Às\").",
           "blocks": [
             {
               "type": "list",
@@ -1886,6 +2578,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-006",
           "title": "EX-A10-V022-006 — Questão 6: PC-AL 2023 (Supressão de Termo e Crase Obrigatória)",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE — PC-AL — 2023 (Delegado de Polícia Civil)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE — PC-AL — 2023 (Delegado de Polícia Civil)"
+            },
+            {
+              "order": 2,
+              "action": "Trecho de análise",
+              "rationale": "\"...Esse comando é subjacente a todas as relações da República...\""
+            },
+            {
+              "order": 3,
+              "action": "Afirmação da Banca",
+              "rationale": "\"Caso a expressão 'a todas' fosse suprimida do terceiro período do primeiro parágrafo, o sinal indicativo de crase deveria ser necessariamente empregado no vocábulo 'as' que precede 'relações', para que a correção gramatical do texto fosse mantida.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução",
+              "rationale": "No original, a preposição a introduz o pronome todas. Ao retirar a todas, o adjetivo subjacente rege diretamente o substantivo relações, que já possui o artigo as. A fusão $a + as$ resulta obrigatoriamente em às."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito oficial",
+              "rationale": "Certo."
+            }
+          ],
+          "result": "Gabarito oficial: Certo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V022-006 — Questão 6: PC-AL 2023 (Supressão de Termo e Crase Obrigatória) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V022-006 — Questão 6: PC-AL 2023 (Supressão de Termo e Crase Obrigatória).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V022-006 — Questão 6: PC-AL 2023 (Supressão de Termo e Crase Obrigatória).",
           "blocks": [
             {
               "type": "list",
@@ -1903,6 +2627,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-007",
           "title": "EX-A10-V023-001 — Análise de Locução Adverbial Temporal",
+          "prompt": "Frase: Chego à noite.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "Chego à noite."
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento da Resolução",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Passo 1 (FF)",
+              "rationale": "Quem chega, chega (verbo intransitivo). Não há termo regente pedindo preposição A."
+            },
+            {
+              "order": 4,
+              "action": "Passo 2 (Locução)",
+              "rationale": "A noite funciona como adjunto adverbial de tempo (expressão de tempo)."
+            },
+            {
+              "order": 5,
+              "action": "Passo 3 (Gênero do Núcleo)",
+              "rationale": "Núcleo noite $\\rightarrow$ palavra feminina (a noite)."
+            }
+          ],
+          "result": "Conclusão: Crase obrigatória por se tratar de locução adverbial feminina.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V023-001 — Análise de Locução Adverbial Temporal sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V023-001 — Análise de Locução Adverbial Temporal.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V023-001 — Análise de Locução Adverbial Temporal.",
           "blocks": [
             {
               "type": "list",
@@ -1933,6 +2689,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-008",
           "title": "EX-A10-V023-002 — Análise de Locução Conjuntiva Proporcional",
+          "prompt": "Frase: À medida que a vida passa, ficamos mais maduros.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "À medida que a vida passa, ficamos mais maduros."
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento da Resolução",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Passo 1 (FF)",
+              "rationale": "Início de oração subordinada, sem regência anterior."
+            },
+            {
+              "order": 4,
+              "action": "Passo 2 (Locução)",
+              "rationale": "À medida que é locução conjuntiva proporcional."
+            },
+            {
+              "order": 5,
+              "action": "Passo 3 (Gênero do Núcleo)",
+              "rationale": "Núcleo medida $\\rightarrow$ palavra feminina (a medida)."
+            }
+          ],
+          "result": "Conclusão: Crase obrigatória por ser locução conjuntiva feminina.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V023-002 — Análise de Locução Conjuntiva Proporcional sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V023-002 — Análise de Locução Conjuntiva Proporcional.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V023-002 — Análise de Locução Conjuntiva Proporcional.",
           "blocks": [
             {
               "type": "list",
@@ -1963,6 +2751,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-009",
           "title": "EX-A10-V023-003 — Análise de Locução Prepositiva Feminina",
+          "prompt": "Frase: Vive às custas dos amigos.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "Vive às custas dos amigos."
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento da Resolução",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Passo 1 (FF)",
+              "rationale": "Vive é intransitivo. Não há regência exigindo preposição."
+            },
+            {
+              "order": 4,
+              "action": "Passo 2 (Locução)",
+              "rationale": "Às custas de é locução prepositiva."
+            },
+            {
+              "order": 5,
+              "action": "Passo 3 (Gênero do Núcleo)",
+              "rationale": "Núcleo custas $\\rightarrow$ substantivo feminino plural (as custas)."
+            }
+          ],
+          "result": "Conclusão: Crase obrigatória por ser locução prepositiva feminina.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V023-003 — Análise de Locução Prepositiva Feminina sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V023-003 — Análise de Locução Prepositiva Feminina.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V023-003 — Análise de Locução Prepositiva Feminina.",
           "blocks": [
             {
               "type": "list",
@@ -1993,6 +2813,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-010",
           "title": "EX-A10-V023-004 — Análise de Locução Adverbial Temporal: À tarde",
+          "prompt": "Frase: Viajo à tarde.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "Viajo à tarde."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "Viajar é intransitivo; à tarde é locução adverbial de tempo com núcleo feminino (a tarde). Crase obrigatória."
+            }
+          ],
+          "result": "Resolução: Viajar é intransitivo; à tarde é locução adverbial de tempo com núcleo feminino (a tarde). Crase obrigatória.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V023-004 — Análise de Locução Adverbial Temporal: À tarde sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V023-004 — Análise de Locução Adverbial Temporal: À tarde.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V023-004 — Análise de Locução Adverbial Temporal: À tarde.",
           "blocks": [
             {
               "type": "list",
@@ -2007,6 +2844,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-011",
           "title": "EX-A10-V023-005 — Análise de Locução Adjetiva Feminina: Às avessas",
+          "prompt": "Frase: Encontro às avessas.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "Encontro às avessas."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "A expressão às avessas qualifica o substantivo encontro, atuando como locução adjetiva de base feminina (as avessas). Crase obrigatória."
+            }
+          ],
+          "result": "Resolução: A expressão às avessas qualifica o substantivo encontro, atuando como locução adjetiva de base feminina (as avessas). Crase obrigatória.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V023-005 — Análise de Locução Adjetiva Feminina: Às avessas sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V023-005 — Análise de Locução Adjetiva Feminina: Às avessas.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V023-005 — Análise de Locução Adjetiva Feminina: Às avessas.",
           "blocks": [
             {
               "type": "list",
@@ -2021,6 +2875,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-012",
           "title": "EX-A10-V023-006 — Análise de Locução Prepositiva Feminina: À força de",
+          "prompt": "Frase: À força do ódio, escreveu a carta.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "À força do ódio, escreveu a carta."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "À força de é locução prepositiva cujo núcleo é força (substantivo feminino). Recebe acento grave obrigatório."
+            }
+          ],
+          "result": "Resolução: À força de é locução prepositiva cujo núcleo é força (substantivo feminino). Recebe acento grave obrigatório.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V023-006 — Análise de Locução Prepositiva Feminina: À força de sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V023-006 — Análise de Locução Prepositiva Feminina: À força de.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V023-006 — Análise de Locução Prepositiva Feminina: À força de.",
           "blocks": [
             {
               "type": "list",
@@ -2035,6 +2906,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-013",
           "title": "EX-A10-V023-007 — Questão Recente de Prova: Pronome Demonstrativo em Locução Temporal",
+          "prompt": "Frase: Àquela noite nós nos vimos.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "Àquela noite nós nos vimos."
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento da Resolução",
+              "rationale": "Muitos candidatos estranharam o acento grave no pronome Àquela. A professora demonstra que Àquela noite é uma locução adverbial de tempo feminina. O núcleo é noite (feminino). Se fosse masculino (Aquele dia nos vimos), não haveria crase. Logo, Àquela noite recebe crase obrigatoriamente."
+            }
+          ],
+          "result": "Desenvolvimento da Resolução: Muitos candidatos estranharam o acento grave no pronome Àquela. A professora demonstra que Àquela noite é uma locução adverbial de tempo feminina. O núcleo é noite (feminino). Se fosse masculino (Aquele dia nos vimos), não haveria crase. Logo, Àquela noite recebe crase obrigatoriamente.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V023-007 — Questão Recente de Prova: Pronome Demonstrativo em Locução Temporal sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V023-007 — Questão Recente de Prova: Pronome Demonstrativo em Locução Temporal.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V023-007 — Questão Recente de Prova: Pronome Demonstrativo em Locução Temporal.",
           "blocks": [
             {
               "type": "list",
@@ -2049,6 +2937,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-014",
           "title": "EX-A10-V023-008 — Desambiguação Sintático-Semântica: Francesa e Noite",
+          "prompt": "Pares Contrastivos:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Pares Contrastivos",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Comeu à francesa (modo como comeu = locução adverbial) vs. Comeu a francesa (objeto direto = consumiu a mulher).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "O astrônomo estuda à noite (tempo em que estuda = locução adverbial) vs. O astrônomo estuda a noite (objeto direto = objeto de pesquisa).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Conceito Demonstrado",
+              "rationale": "Função diferencial da crase em desfazer ambiguidade textual."
+            }
+          ],
+          "result": "Conceito Demonstrado: Função diferencial da crase em desfazer ambiguidade textual.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V023-008 — Desambiguação Sintático-Semântica: Francesa e Noite sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V023-008 — Desambiguação Sintático-Semântica: Francesa e Noite.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V023-008 — Desambiguação Sintático-Semântica: Francesa e Noite.",
           "blocks": [
             {
               "type": "list",
@@ -2077,6 +2992,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-015",
           "title": "EX-A10-V023-009 — Culinária com Núcleo Feminino",
+          "prompt": "Expressões: Bife à parmegiana, Frango à milanesa.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Expressões",
+              "rationale": "Bife à parmegiana, Frango à milanesa."
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento da Resolução",
+              "rationale": "Parmegiana e milanesa são palavras femininas (a parmegiana, a milanesa). Formam locuções femininas de modo. Crase obrigatória."
+            }
+          ],
+          "result": "Desenvolvimento da Resolução: Parmegiana e milanesa são palavras femininas (a parmegiana, a milanesa). Formam locuções femininas de modo. Crase obrigatória.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V023-009 — Culinária com Núcleo Feminino sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V023-009 — Culinária com Núcleo Feminino.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V023-009 — Culinária com Núcleo Feminino.",
           "blocks": [
             {
               "type": "list",
@@ -2091,6 +3023,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-016",
           "title": "EX-A10-V023-010 — Culinária com Núcleo Masculino: Osvaldo Aranha versus Cavalo",
+          "prompt": "Comparações:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Comparações",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Bife à Osvaldo Aranha",
+              "rationale": "Osvaldo Aranha é masculino, mas há a elipse explícita da expressão à moda de (homenagem à moda do diplomata). Crase obrigatória."
+            },
+            {
+              "order": 3,
+              "action": "Bife a cavalo / Frango a passarinho",
+              "rationale": "Cavalo e passarinho são palavras masculinas. Não existe \"moda do cavalo\" nem \"moda do passarinho\". Sem crase."
+            }
+          ],
+          "result": "Bife a cavalo / Frango a passarinho: Cavalo e passarinho são palavras masculinas. Não existe \"moda do cavalo\" nem \"moda do passarinho\". Sem crase.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V023-010 — Culinária com Núcleo Masculino: Osvaldo Aranha versus Cavalo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V023-010 — Culinária com Núcleo Masculino: Osvaldo Aranha versus Cavalo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V023-010 — Culinária com Núcleo Masculino: Osvaldo Aranha versus Cavalo.",
           "blocks": [
             {
               "type": "list",
@@ -2112,6 +3066,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-017",
           "title": "Quadro Geral Consolidado dos Exercícios de Fixação",
+          "prompt": "Neste material específico de sistematização teórica não foram apresentadas questões com alternativas nem exercícios de aplicação prática; o conteúdo é estritamente conceitual e esquemático, preparando para a resolução que ocorre no material de origem seguinte.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Neste material específico de sistematização teórica não fora...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Quadro Geral Consolidado dos Exercícios de Fixação.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Quadro Geral Consolidado dos Exercícios de Fixação sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Quadro Geral Consolidado dos Exercícios de Fixação.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Quadro Geral Consolidado dos Exercícios de Fixação.",
           "blocks": [
             {
               "type": "table_ref",
@@ -2198,6 +3174,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-018",
           "title": "EX-A10-V025-001 — Questão 1: Crase por Regência Contextual (à porta do apartamento)",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE – Prefeitura de Cachoeiro de Itapemirim - ES – Auditor Fiscal de Tributos Municipais (2024)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE – Prefeitura de Cachoeiro de Itapemirim - ES – Auditor Fiscal de Tributos Municipais (2024)"
+            },
+            {
+              "order": 2,
+              "action": "Texto-base",
+              "rationale": "\"Está bem. Tomo o meu café com pão dormido... Quando vinha deixar o pão à porta do apartamento, ele apertava a campainha...\""
+            },
+            {
+              "order": 3,
+              "action": "Enunciado / Assertiva",
+              "rationale": "\"O emprego do sinal indicativo de crase no vocábulo 'à', em 'à porta do apartamento' (quarto período), é obrigatório.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução / Justificativa",
+              "rationale": ""
+            },
+            {
+              "order": 5,
+              "action": "O verbo deixar rege preposição a para indicar proximidade/lugar ao qual o pão é destinado.",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V025-001 — Questão 1: Crase por Regência Contextual (à porta do apartamento) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V025-001 — Questão 1: Crase por Regência Contextual (à porta do apartamento).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V025-001 — Questão 1: Crase por Regência Contextual (à porta do apartamento).",
           "blocks": [
             {
               "type": "list",
@@ -2218,6 +3226,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-019",
           "title": "EX-A10-V025-002 — Questão 2: Locução Adverbial Feminina de Lugar (à direita)",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE – Prefeitura de Cachoeiro de Itapemirim - ES – Agente Administrativo (2024)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE – Prefeitura de Cachoeiro de Itapemirim - ES – Agente Administrativo (2024)"
+            },
+            {
+              "order": 2,
+              "action": "Texto-base",
+              "rationale": "\"...onde o último da esquerda era o preto Bernardino, e à direita, o rosto lindo de Lélia, com seus cabelos doces...\""
+            },
+            {
+              "order": 3,
+              "action": "Enunciado / Assertiva",
+              "rationale": "\"Em 'à direita, o rosto lindo de Lélia', o emprego do sinal indicativo de crase é obrigatório.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução / Justificativa",
+              "rationale": ""
+            },
+            {
+              "order": 5,
+              "action": "Não há verbo exigindo preposição a.",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V025-002 — Questão 2: Locução Adverbial Feminina de Lugar (à direita) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V025-002 — Questão 2: Locução Adverbial Feminina de Lugar (à direita).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V025-002 — Questão 2: Locução Adverbial Feminina de Lugar (à direita).",
           "blocks": [
             {
               "type": "list",
@@ -2238,6 +3278,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-020",
           "title": "EX-A10-V025-003 — Questão 3: Pegadinha de Justificativa — VTD vs. Locução (ver à porta)",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE – INSS – Técnico do Seguro Social (2022)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE – INSS – Técnico do Seguro Social (2022)"
+            },
+            {
+              "order": 2,
+              "action": "Texto-base",
+              "rationale": "\"Tem quem deteste ver à porta a cara do mascate em cada primeiro do mês...\""
+            },
+            {
+              "order": 3,
+              "action": "Enunciado / Assertiva",
+              "rationale": "\"No quinto período do primeiro parágrafo, o emprego do sinal indicativo de crase no vocábulo 'à', em 'à porta', justifica-se pela combinação de dois fatores: a regência do verbo 'ver' e o gênero feminino da palavra 'porta'.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução / Justificativa",
+              "rationale": ""
+            },
+            {
+              "order": 5,
+              "action": "O verbo ver é Transitivo Direto (VTD); seu objeto direto é a cara do mascate.",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V025-003 — Questão 3: Pegadinha de Justificativa — VTD vs. Locução (ver à porta) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V025-003 — Questão 3: Pegadinha de Justificativa — VTD vs. Locução (ver à porta).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V025-003 — Questão 3: Pegadinha de Justificativa — VTD vs. Locução (ver à porta).",
           "blocks": [
             {
               "type": "list",
@@ -2258,6 +3330,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-021",
           "title": "EX-A10-V025-004 — Questão 4: Locução Temporal Feminina vs. Facultatividade (à hora de)",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE – SERPRO – Analista: Tecnologia (2023)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE – SERPRO – Analista: Tecnologia (2023)"
+            },
+            {
+              "order": 2,
+              "action": "Texto-base",
+              "rationale": "\"Os pais pediram que o menino fosse dormir cedo para que pudesse acordar à hora da passagem do ano.\""
+            },
+            {
+              "order": 3,
+              "action": "Enunciado / Assertiva",
+              "rationale": "\"O emprego do sinal indicativo de crase em 'à hora da passagem do ano' (primeiro período do primeiro parágrafo) é facultativo, ou seja, a sua retirada não prejudicaria a correção gramatical nem o sentido original do texto.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução / Justificativa",
+              "rationale": ""
+            },
+            {
+              "order": 5,
+              "action": "À hora da passagem do ano é uma locução adverbial temporal de núcleo feminino (hora).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V025-004 — Questão 4: Locução Temporal Feminina vs. Facultatividade (à hora de) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V025-004 — Questão 4: Locução Temporal Feminina vs. Facultatividade (à hora de).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V025-004 — Questão 4: Locução Temporal Feminina vs. Facultatividade (à hora de).",
           "blocks": [
             {
               "type": "list",
@@ -2278,6 +3382,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-022",
           "title": "EX-A10-V025-005 — Questão 5: Expressão Feminina Cristalizada (à tona)",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE – DATAPREV – Auxiliar de Enfermagem do Trabalho (2023)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE – DATAPREV – Auxiliar de Enfermagem do Trabalho (2023)"
+            },
+            {
+              "order": 2,
+              "action": "Texto-base",
+              "rationale": "\"...confirmam a necessidade de se trazer o debate ainda mais à tona.\""
+            },
+            {
+              "order": 3,
+              "action": "Enunciado / Assertiva",
+              "rationale": "\"De acordo com as normas gramaticais, é facultativo o emprego do sinal indicativo de crase na expressão 'à tona' (segundo período do primeiro parágrafo).\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução / Justificativa",
+              "rationale": ""
+            },
+            {
+              "order": 5,
+              "action": "À tona é uma locução adverbial/expressão cristalizada feminina (sentido de \"à superfície\", \"em evidência\").",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V025-005 — Questão 5: Expressão Feminina Cristalizada (à tona) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V025-005 — Questão 5: Expressão Feminina Cristalizada (à tona).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V025-005 — Questão 5: Expressão Feminina Cristalizada (à tona).",
           "blocks": [
             {
               "type": "list",
@@ -2297,6 +3433,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-023",
           "title": "EX-A10-V025-006 — Questão 6: Locução com Núcleo Masculino (a granel)",
+          "prompt": "Banca / Órgão / Ano: CESPE / CEBRASPE – PG-DF – Analista Jurídico: Administração (2021)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Banca / Órgão / Ano",
+              "rationale": "CESPE / CEBRASPE – PG-DF – Analista Jurídico: Administração (2021)"
+            },
+            {
+              "order": 2,
+              "action": "Texto-base",
+              "rationale": "\"E, no entanto, sonha-se. Sonha-se muito e a granel, sonha-se sofregamente...\""
+            },
+            {
+              "order": 3,
+              "action": "Enunciado / Assertiva",
+              "rationale": "\"A correção gramatical do texto seria prejudicada caso se inserisse acento indicativo de crase na expressão 'a granel' (l.43).\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução / Justificativa",
+              "rationale": ""
+            },
+            {
+              "order": 5,
+              "action": "Granel é uma palavra masculina (o granel).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V025-006 — Questão 6: Locução com Núcleo Masculino (a granel) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V025-006 — Questão 6: Locução com Núcleo Masculino (a granel).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V025-006 — Questão 6: Locução com Núcleo Masculino (a granel).",
           "blocks": [
             {
               "type": "list",
@@ -2317,6 +3485,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-024",
           "title": "Item 1: \"Ninguém escapa à sua origem.\"",
+          "prompt": "Classificação: Facultativa (Item correto para marcação).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Classificação",
+              "rationale": "Facultativa (Item correto para marcação)."
+            },
+            {
+              "order": 2,
+              "action": "Justificativa",
+              "rationale": "O verbo escapar rege a preposição a (escapa a algo), e o termo regido é encabeçado pelo pronome possessivo feminino singular adjetivo sua, acompanhado do substantivo origem. O artigo é facultativo."
+            }
+          ],
+          "result": "Justificativa: O verbo escapar rege a preposição a (escapa a algo), e o termo regido é encabeçado pelo pronome possessivo feminino singular adjetivo sua, acompanhado do substantivo origem. O artigo é facultativo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Item 1: \"Ninguém escapa à sua origem.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Item 1: \"Ninguém escapa à sua origem.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Item 1: \"Ninguém escapa à sua origem.\".",
           "blocks": [
             {
               "type": "list",
@@ -2331,6 +3516,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-025",
           "title": "Item 2: \"A área ocupada vai até à divisa do estado.\"",
+          "prompt": "Classificação: Facultativa (Item correto para marcação).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Classificação",
+              "rationale": "Facultativa (Item correto para marcação)."
+            },
+            {
+              "order": 2,
+              "action": "Justificativa",
+              "rationale": "Presença da preposição até. O emprego da preposição a após até é opcional diante da palavra feminina divisa (que recebe artigo a)."
+            }
+          ],
+          "result": "Justificativa: Presença da preposição até. O emprego da preposição a após até é opcional diante da palavra feminina divisa (que recebe artigo a).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Item 2: \"A área ocupada vai até à divisa do estado.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Item 2: \"A área ocupada vai até à divisa do estado.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Item 2: \"A área ocupada vai até à divisa do estado.\".",
           "blocks": [
             {
               "type": "list",
@@ -2345,6 +3547,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-026",
           "title": "Item 3: \"As palavras dele me soaram à brincadeira.\"",
+          "prompt": "Classificação: Obrigatória (Não marcar).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Classificação",
+              "rationale": "Obrigatória (Não marcar)."
+            },
+            {
+              "order": 2,
+              "action": "Justificativa",
+              "rationale": "O verbo soar rege a preposição a (soar a algo), e brincadeira é um substantivo feminino determinado que exige artigo a. Ocorre fenômeno fonético regular (preposição + artigo obrigatório)."
+            }
+          ],
+          "result": "Justificativa: O verbo soar rege a preposição a (soar a algo), e brincadeira é um substantivo feminino determinado que exige artigo a. Ocorre fenômeno fonético regular (preposição + artigo obrigatório).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Item 3: \"As palavras dele me soaram à brincadeira.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Item 3: \"As palavras dele me soaram à brincadeira.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Item 3: \"As palavras dele me soaram à brincadeira.\".",
           "blocks": [
             {
               "type": "list",
@@ -2359,6 +3578,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-027",
           "title": "Item 4: \"Encaminharei o discurso a Eduardo.\"",
+          "prompt": "Classificação: Proibida (Não marcar).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Classificação",
+              "rationale": "Proibida (Não marcar)."
+            },
+            {
+              "order": 2,
+              "action": "Justificativa",
+              "rationale": "Eduardo é nome próprio masculino. Não admite artigo feminino a; há apenas a preposição a exigida por encaminhar algo a alguém."
+            }
+          ],
+          "result": "Justificativa: Eduardo é nome próprio masculino. Não admite artigo feminino a; há apenas a preposição a exigida por encaminhar algo a alguém.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Item 4: \"Encaminharei o discurso a Eduardo.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Item 4: \"Encaminharei o discurso a Eduardo.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Item 4: \"Encaminharei o discurso a Eduardo.\".",
           "blocks": [
             {
               "type": "list",
@@ -2373,6 +3609,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-028",
           "title": "Item 5: \"Pedi um favor à Juliana.\"",
+          "prompt": "Classificação: Facultativa (Item correto para marcação).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Classificação",
+              "rationale": "Facultativa (Item correto para marcação)."
+            },
+            {
+              "order": 2,
+              "action": "Justificativa",
+              "rationale": "O verbo pedir rege a preposição a (pedir algo a alguém), e Juliana é um nome próprio feminino comum, diante do qual o artigo definido é facultativo."
+            }
+          ],
+          "result": "Justificativa: O verbo pedir rege a preposição a (pedir algo a alguém), e Juliana é um nome próprio feminino comum, diante do qual o artigo definido é facultativo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Item 5: \"Pedi um favor à Juliana.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Item 5: \"Pedi um favor à Juliana.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Item 5: \"Pedi um favor à Juliana.\".",
           "blocks": [
             {
               "type": "list",
@@ -2387,6 +3640,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-029",
           "title": "Item 6: \"O que ele dizia era agradável à nossa fantasia.\"",
+          "prompt": "Classificação: Facultativa (Item correto para marcação).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Classificação",
+              "rationale": "Facultativa (Item correto para marcação)."
+            },
+            {
+              "order": 2,
+              "action": "Justificativa",
+              "rationale": "O adjetivo agradável rege a preposição a (agradável a algo), e nossa é pronome possessivo feminino singular adjetivo modificando fantasia. Artigo facultativo."
+            }
+          ],
+          "result": "Justificativa: O adjetivo agradável rege a preposição a (agradável a algo), e nossa é pronome possessivo feminino singular adjetivo modificando fantasia. Artigo facultativo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Item 6: \"O que ele dizia era agradável à nossa fantasia.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Item 6: \"O que ele dizia era agradável à nossa fantasia.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Item 6: \"O que ele dizia era agradável à nossa fantasia.\".",
           "blocks": [
             {
               "type": "list",
@@ -2401,6 +3671,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-030",
           "title": "Item 7: \"O navio ficou à deriva.\"",
+          "prompt": "Classificação: Obrigatória (Não marcar).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Classificação",
+              "rationale": "Obrigatória (Não marcar)."
+            },
+            {
+              "order": 2,
+              "action": "Justificativa",
+              "rationale": "À deriva é uma locução adverbial feminina. O acento grave em locuções femininas prepositivas, conjuntivas ou adverbiais é de uso fixo e obrigatório."
+            }
+          ],
+          "result": "Justificativa: À deriva é uma locução adverbial feminina. O acento grave em locuções femininas prepositivas, conjuntivas ou adverbiais é de uso fixo e obrigatório.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Item 7: \"O navio ficou à deriva.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Item 7: \"O navio ficou à deriva.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Item 7: \"O navio ficou à deriva.\".",
           "blocks": [
             {
               "type": "list",
@@ -2415,6 +3702,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-031",
           "title": "Item 8: \"Recebeu críticas a seu trabalho.\"",
+          "prompt": "Classificação: Proibida (Não marcar).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Classificação",
+              "rationale": "Proibida (Não marcar)."
+            },
+            {
+              "order": 2,
+              "action": "Justificativa",
+              "rationale": "Seu trabalho possui núcleo substantivo masculino (trabalho). Não admite artigo feminino."
+            }
+          ],
+          "result": "Justificativa: Seu trabalho possui núcleo substantivo masculino (trabalho). Não admite artigo feminino.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Item 8: \"Recebeu críticas a seu trabalho.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Item 8: \"Recebeu críticas a seu trabalho.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Item 8: \"Recebeu críticas a seu trabalho.\".",
           "blocks": [
             {
               "type": "list",
@@ -2429,6 +3733,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G07-032",
           "title": "Item 9: \"Sua roupa tem o tamanho adequado a suas medidas.\"",
+          "prompt": "Classificação: Proibida (Não marcar).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Classificação",
+              "rationale": "Proibida (Não marcar)."
+            },
+            {
+              "order": 2,
+              "action": "Justificativa",
+              "rationale": "O \"a\" está no singular diante de palavra/pronome no plural (suas medidas). Trata-se de preposição pura desacompanhada de artigo. Diante de plural, a crase só seria possível com a forma às (adequado às suas medidas)."
+            }
+          ],
+          "result": "Justificativa: O \"a\" está no singular diante de palavra/pronome no plural (suas medidas). Trata-se de preposição pura desacompanhada de artigo. Diante de plural, a crase só seria possível com a forma às (adequado às suas medidas).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Item 9: \"Sua roupa tem o tamanho adequado a suas medidas.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Item 9: \"Sua roupa tem o tamanho adequado a suas medidas.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Item 9: \"Sua roupa tem o tamanho adequado a suas medidas.\".",
           "blocks": [
             {
               "type": "list",
@@ -2544,8 +3865,12 @@
         {
           "trapId": "WARN-A10-V022-001",
           "title": "Confundir Existência de Duas Formas Corretas com Crase Facultativa no \"Às\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Existência de Duas Formas Corretas com Crase Facultativa no \"Às\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Existência de Duas Formas Corretas com Crase Facultativa no \"Às\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Existência de Duas Formas Corretas com Crase Facultativa no \"Às\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Existência de Duas Formas Corretas com Crase Facultativa no \"Às\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Existência de Duas Formas Corretas com Crase Facultativa no \"Às\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Existência de Duas Formas Corretas com Crase Facultativa no \"Às\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Existência de Duas Formas Corretas com Crase Facultativa no \"Às\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Existência de Duas Formas Corretas com Crase Facultativa no \"Às\".",
           "blocks": [
             {
               "type": "list",
@@ -2561,8 +3886,12 @@
         {
           "trapId": "WARN-A10-V022-002",
           "title": "Omissão de Preposição em Supressão de Termos",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Omissão de Preposição em Supressão de Termos.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Omissão de Preposição em Supressão de Termos.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Omissão de Preposição em Supressão de Termos no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Omissão de Preposição em Supressão de Termos.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Omissão de Preposição em Supressão de Termos.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Omissão de Preposição em Supressão de Termos para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Omissão de Preposição em Supressão de Termos.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Omissão de Preposição em Supressão de Termos.",
           "blocks": [
             {
               "type": "list",
@@ -2576,8 +3905,12 @@
         {
           "trapId": "WARN-A10-V023-001",
           "title": "Tentar Aplicar Regência em Locuções Femininas",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Tentar Aplicar Regência em Locuções Femininas.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Tentar Aplicar Regência em Locuções Femininas.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Tentar Aplicar Regência em Locuções Femininas no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Tentar Aplicar Regência em Locuções Femininas.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Tentar Aplicar Regência em Locuções Femininas.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Tentar Aplicar Regência em Locuções Femininas para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Tentar Aplicar Regência em Locuções Femininas.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Tentar Aplicar Regência em Locuções Femininas.",
           "blocks": [
             {
               "type": "list",
@@ -2593,8 +3926,12 @@
         {
           "trapId": "WARN-A10-V023-002",
           "title": "O Falso Mito de que \"Uma\" Nunca Aceita Crase",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Falso Mito de que \"Uma\" Nunca Aceita Crase.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Falso Mito de que \"Uma\" Nunca Aceita Crase.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Falso Mito de que \"Uma\" Nunca Aceita Crase no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Falso Mito de que \"Uma\" Nunca Aceita Crase.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Falso Mito de que \"Uma\" Nunca Aceita Crase.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Falso Mito de que \"Uma\" Nunca Aceita Crase para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Falso Mito de que \"Uma\" Nunca Aceita Crase.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Falso Mito de que \"Uma\" Nunca Aceita Crase.",
           "blocks": [
             {
               "type": "list",
@@ -2617,8 +3954,12 @@
         {
           "trapId": "WARN-A10-V023-003",
           "title": "Preposição Prévia Impedindo Crase em Horas",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Preposição Prévia Impedindo Crase em Horas.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Preposição Prévia Impedindo Crase em Horas.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Preposição Prévia Impedindo Crase em Horas no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Preposição Prévia Impedindo Crase em Horas.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Preposição Prévia Impedindo Crase em Horas.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Preposição Prévia Impedindo Crase em Horas para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Preposição Prévia Impedindo Crase em Horas.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Preposição Prévia Impedindo Crase em Horas.",
           "blocks": [
             {
               "type": "list",
@@ -2634,8 +3975,12 @@
         {
           "trapId": "WARN-A10-V023-004",
           "title": "Generalização Indevida de \"À Moda De\" em Pratos Masculinos",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Generalização Indevida de \"À Moda De\" em Pratos Masculinos.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Generalização Indevida de \"À Moda De\" em Pratos Masculinos.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Generalização Indevida de \"À Moda De\" em Pratos Masculinos no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Generalização Indevida de \"À Moda De\" em Pratos Masculinos.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Generalização Indevida de \"À Moda De\" em Pratos Masculinos.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Generalização Indevida de \"À Moda De\" em Pratos Masculinos para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Generalização Indevida de \"À Moda De\" em Pratos Masculinos.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Generalização Indevida de \"À Moda De\" em Pratos Masculinos.",
           "blocks": [
             {
               "type": "list",
@@ -2650,8 +3995,12 @@
         {
           "trapId": "WARN-A10-V024-001",
           "title": "A Ilusão do Aprendizado Exclusivo por Questões",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Ilusão do Aprendizado Exclusivo por Questões.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Ilusão do Aprendizado Exclusivo por Questões.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Ilusão do Aprendizado Exclusivo por Questões no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Ilusão do Aprendizado Exclusivo por Questões.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Ilusão do Aprendizado Exclusivo por Questões.",
+          "correctReasoning": "Acreditar que é possível dominar crase apenas resolvendo questões sem estudar ou sistematizar a teoria.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Ilusão do Aprendizado Exclusivo por Questões.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Ilusão do Aprendizado Exclusivo por Questões.",
           "blocks": [
             {
               "type": "heading",
@@ -2685,8 +4034,12 @@
         {
           "trapId": "WARN-A10-V025-001",
           "title": "Pegadinha de Justificativa Sintática: Misturar VTD com Locução",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha de Justificativa Sintática: Misturar VTD com Locução.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha de Justificativa Sintática: Misturar VTD com Locução.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha de Justificativa Sintática: Misturar VTD com Locução no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha de Justificativa Sintática: Misturar VTD com Locução.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha de Justificativa Sintática: Misturar VTD com Locução.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pegadinha de Justificativa Sintática: Misturar VTD com Locução para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha de Justificativa Sintática: Misturar VTD com Locução.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha de Justificativa Sintática: Misturar VTD com Locução.",
           "blocks": [
             {
               "type": "list",
@@ -2702,8 +4055,12 @@
         {
           "trapId": "WARN-A10-V025-002",
           "title": "A Falsa Facultatividade em Locuções Adverbiais Femininas",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Falsa Facultatividade em Locuções Adverbiais Femininas.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Falsa Facultatividade em Locuções Adverbiais Femininas.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Falsa Facultatividade em Locuções Adverbiais Femininas no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Falsa Facultatividade em Locuções Adverbiais Femininas.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Falsa Facultatividade em Locuções Adverbiais Femininas.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Falsa Facultatividade em Locuções Adverbiais Femininas para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Falsa Facultatividade em Locuções Adverbiais Femininas.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Falsa Facultatividade em Locuções Adverbiais Femininas.",
           "blocks": [
             {
               "type": "list",
@@ -2719,8 +4076,12 @@
         {
           "trapId": "WARN-A10-V026-CRASE-001",
           "title": "Nomes Próprios Femininos de Figuras Históricas ou Notáveis",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Nomes Próprios Femininos de Figuras Históricas ou Notáveis.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Nomes Próprios Femininos de Figuras Históricas ou Notáveis.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Nomes Próprios Femininos de Figuras Históricas ou Notáveis no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Nomes Próprios Femininos de Figuras Históricas ou Notáveis.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Nomes Próprios Femininos de Figuras Históricas ou Notáveis.",
+          "correctReasoning": "O candidato assume que qualquer nome próprio feminino aceita crase facultativa e erra quando a questão traz personalidades célebres ou históricas.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Nomes Próprios Femininos de Figuras Históricas ou Notáveis.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Nomes Próprios Femininos de Figuras Históricas ou Notáveis.",
           "blocks": [
             {
               "type": "heading",
@@ -2762,8 +4123,12 @@
         {
           "trapId": "WARN-A10-V026-CRASE-002",
           "title": "Pronome Possessivo Substantivo (Elipse)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pronome Possessivo Substantivo (Elipse).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pronome Possessivo Substantivo (Elipse).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pronome Possessivo Substantivo (Elipse) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pronome Possessivo Substantivo (Elipse).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pronome Possessivo Substantivo (Elipse).",
+          "correctReasoning": "Achar que toda ocorrência de pronome possessivo feminino singular gera crase facultativa, mesmo quando o substantivo não estiver presente.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pronome Possessivo Substantivo (Elipse).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pronome Possessivo Substantivo (Elipse).",
           "blocks": [
             {
               "type": "heading",
@@ -2804,8 +4169,12 @@
         {
           "trapId": "WARN-A10-V026-CRASE-003",
           "title": "\"A\" no Singular Diante de Pronome Possessivo no Plural",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em \"A\" no Singular Diante de Pronome Possessivo no Plural.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de \"A\" no Singular Diante de Pronome Possessivo no Plural.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a \"A\" no Singular Diante de Pronome Possessivo no Plural no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de \"A\" no Singular Diante de Pronome Possessivo no Plural.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de \"A\" no Singular Diante de Pronome Possessivo no Plural.",
+          "correctReasoning": "Julgar que a presença de pronome possessivo feminino autoriza crase facultativa mesmo no plural.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de \"A\" no Singular Diante de Pronome Possessivo no Plural.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de \"A\" no Singular Diante de Pronome Possessivo no Plural.",
           "blocks": [
             {
               "type": "heading",
@@ -2843,8 +4212,12 @@
         {
           "trapId": "WARN-A10-V026-CRASE-004",
           "title": "Crase após Preposições Diferentes de \"Até\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Crase após Preposições Diferentes de \"Até\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Crase após Preposições Diferentes de \"Até\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Crase após Preposições Diferentes de \"Até\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Crase após Preposições Diferentes de \"Até\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Crase após Preposições Diferentes de \"Até\".",
+          "correctReasoning": "Generalizar a regra da preposição até para outras preposições (desde, após, ante, perante, com).",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Crase após Preposições Diferentes de \"Até\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Crase após Preposições Diferentes de \"Até\".",
           "blocks": [
             {
               "type": "heading",
@@ -3339,7 +4712,10 @@
       "officialAnswer": "option_C",
       "explanation": "Exatamente. “Chegar” exige preposição “a’”(não “em”). Essa preposição se funde ao artigo\nantes de “mesma conclusão”.\nGabarito: Correto.",
       "questionSha256": "5b8a08f44686717269cb8acc619bae02386524f7a504c27081087587df90c3b1",
-      "answerSha256": "01817b87cb98b4759e064003f80853c9d0c66a02144bba44be606663f0aea256"
+      "answerSha256": "01817b87cb98b4759e064003f80853c9d0c66a02144bba44be606663f0aea256",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Crase - Aprofundamento e Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula10.q0137",
@@ -3351,7 +4727,10 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "275db4f0d77472bec6095194aa61cd8f8522c82c585f7ca9fd89fbc3a7d39e6f",
-      "answerSha256": "2005114756d6000e35012b96e07e082118f0c51ee5ef6a288c2be3f8db77d869"
+      "answerSha256": "2005114756d6000e35012b96e07e082118f0c51ee5ef6a288c2be3f8db77d869",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Crase - Aprofundamento e Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula10.q0053",
@@ -3364,7 +4743,10 @@
       "officialAnswer": "incorrect",
       "explanation": "É obrigatório. O adjetivo \"ligado\" exige preposição \"a\", que se funde com o artigo diante de\n\"vida em sociedade\": ligado A + A vida em sociedade. Questão incorreta.",
       "questionSha256": "7a445edae958ab30a8fca8e005ed67e7e9dc903a6e50aae67dbbb728b0441095",
-      "answerSha256": "aa8ff3ddcf36f76aa4b2650b6d2734d8cac7cc415e52d9b34e0e9185bcae4555"
+      "answerSha256": "aa8ff3ddcf36f76aa4b2650b6d2734d8cac7cc415e52d9b34e0e9185bcae4555",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Crase - Aprofundamento e Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula10.q0086",
@@ -3378,7 +4760,10 @@
       "officialAnswer": "correct",
       "explanation": "Questão correta. Temos crase pela fusão entre “anterior A+A (época) dos dinossauros. Esse A foi\nconsiderado artigo diante de substantivo elíptico.",
       "questionSha256": "1575b5a8866e6b44c461f95d582f1bb027363907531afd0d8861629ab53cea4c",
-      "answerSha256": "b8fabc241577cc52bb267aab4801752dfff3a206a67b2b329d77b3705ad3baaf"
+      "answerSha256": "b8fabc241577cc52bb267aab4801752dfff3a206a67b2b329d77b3705ad3baaf",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Crase - Aprofundamento e Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula10.q0179",
@@ -3391,7 +4776,10 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "11be5446bb8d1de337cb250596398935ff8870825c4ad9bbf064bc6204b1d264",
-      "answerSha256": "3d4775444e19d6259d63f27f0150b554e1264e84de7f7acef812eb730b315f6b"
+      "answerSha256": "3d4775444e19d6259d63f27f0150b554e1264e84de7f7acef812eb730b315f6b",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Crase - Aprofundamento e Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula10.q0146",
@@ -3403,7 +4791,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "5585efe58b642b8ebc1e935bacfd33e4bf73cd56b47da270581fd4e3a7187e52",
-      "answerSha256": "cd702cd5fd6fde49d653048841a293c3d216e80dde8ff17f3268ddb4a1098f54"
+      "answerSha256": "cd702cd5fd6fde49d653048841a293c3d216e80dde8ff17f3268ddb4a1098f54",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Crase - Aprofundamento e Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

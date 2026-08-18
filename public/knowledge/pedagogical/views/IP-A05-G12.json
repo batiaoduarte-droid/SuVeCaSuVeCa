@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A05-G12",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.807Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.561Z"
   },
   "unit": {
     "unitId": "IP-A05-G12",
@@ -414,6 +414,14 @@
         {
           "entityId": "RULE-IP-A05-G12-001",
           "title": "Regras canônicas",
+          "statement": "Esta seção fornece uma síntese de consulta rápida com os critérios decisórios para cada uma das funções consolidadas:",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "paragraph",
@@ -526,6 +534,44 @@
         {
           "procedureId": "PROC-A05-G12-001",
           "title": "Algoritmo de Identificação Rápida e Excludente do \"SE\"",
+          "objective": "Executar o algoritmo decisório para Algoritmo de Identificação Rápida e Excludente do \"SE\"",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo de Identificação Rápida e Excludente do \"SE\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura sintático-morfológica alvo de Algoritmo de Identificação Rápida e Excludente do \"SE\".",
+              "test": "Localizar o termo regente ou núcleo do segmento."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios decisórios da regra canônica.",
+              "test": "Verificar se há exceção ou caso facultativo aplicável."
+            },
+            {
+              "order": 3,
+              "action": "Concluir a classificação definitiva para resolução da questão.",
+              "test": "Confrontar o resultado obtido com as alternativas da prova."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo de Identificação Rápida e Excludente do \"SE\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -550,6 +596,77 @@
         {
           "procedureId": "PROC-A05-G12-002",
           "title": "Método de Distinção Conclusiva entre PA e PIS/IIS",
+          "objective": "Executar o algoritmo decisório para Método de Distinção Conclusiva entre PA e PIS/IIS",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método de Distinção Conclusiva entre PA e PIS/IIS."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Predicação do verbo",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "É Transitivo Direto (VTD) ou Transitivo Direto e Indireto (VTDI)? $\\rightarrow$ Candidato a PA.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "É Transitivo Indireto (VTI), Intransitivo (VI) ou de Ligação (VL)? $\\rightarrow$ Candidato a PIS.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Passo 2 — Análise da preposição no termo subsequente",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "O termo posposto não tem preposição? $\\rightarrow$ Trata-se do Sujeito Paciente. O verbo deve concordar em número (\"Vendem-se casas\" $\\rightarrow$ Casas são vendidas). Confirma-se PA.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "O termo posposto vem regido por preposição obrigatória (de, em, a)? $\\rightarrow$ Trata-se de Objeto Indireto ou Adjunto. O verbo fica travado no singular (\"Precisa-se de empregados\" $\\rightarrow$ não existe \"empregados são precisados\"). Confirma-se PIS/IIS.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Passo 3 — Teste de Transposição Analítica",
+              "explanation": "",
+              "test": "Passo 3 — Teste de Transposição Analítica:"
+            },
+            {
+              "order": 8,
+              "action": "Se couber a conversão \"Sujeito + Ser + Particípio\", é rigorosamente PA.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método de Distinção Conclusiva entre PA e PIS/IIS."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -605,6 +722,83 @@
         {
           "procedureId": "PROC-A05-G12-003",
           "title": "Teste de Reconhecimento de PIV por Conjugação Dinâmica",
+          "objective": "Executar o algoritmo decisório para Teste de Reconhecimento de PIV por Conjugação Dinâmica",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Reconhecimento de PIV por Conjugação Dinâmica."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole a forma verbal acompanhada de pronome (ex.",
+              "explanation": "concentrava-se, arrependeu-se, rendeu-se).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Verifique se o sujeito é determinado (A menina, Ele, A população).",
+              "explanation": null,
+              "test": "Verifique se o sujeito é determinado (A menina, Ele, A população)."
+            },
+            {
+              "order": 3,
+              "action": "Execute mentalmente a flexão nas três primeiras pessoas do singular e do plural",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Eu me [arrependo / concentro / rendo / transformo]",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Tu te [arrependes / concentras / rendes / transformas]",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Ele se [arrepende / concentra / rende / transforma]",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Nós nos [arrependemos / concentramos / rendemos / transformamos]",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Verifique se o pronome é intrínseco à conjugação e desprovido de função de complemento externo.",
+              "explanation": null,
+              "test": "Verifique se o pronome é intrínseco à conjugação e desprovido de função de complemento externo."
+            },
+            {
+              "order": 9,
+              "action": "Resultado",
+              "explanation": "Classifica-se como Parte Integrante do Verbo (PIV).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Reconhecimento de PIV por Conjugação Dinâmica."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -647,6 +841,22 @@
         {
           "contrastId": "CONTRAST-IP-A05-G12-001",
           "title": "Matriz de Contrastes Estruturais",
+          "contrastType": "mixed",
+          "conceptA": "Matriz de Contrastes Estruturais",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -703,6 +913,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G12-001",
           "title": "EX-A05-G12-001 — Caderno de Fixação: Classificação da Partícula SE (10 Itens Consolidados)",
+          "prompt": "Item (a): \"Do que importa a vida se nela não houver risos e lágrimas.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item (a)",
+              "rationale": "\"Do que importa a vida se nela não houver risos e lágrimas.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "Permutável por \"caso nela não haja...\"."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Conjunção Subordinativa Condicional."
+            },
+            {
+              "order": 4,
+              "action": "Item (b)",
+              "rationale": "\"O governo ainda irá decidir se libera o pagamento dos funcionários.\""
+            },
+            {
+              "order": 5,
+              "action": "Análise",
+              "rationale": "Verbo decidir é VTD; a oração equivale a \"decidir [ISSO]\"."
+            }
+          ],
+          "result": "Classificação: Parte Integrante do Verbo (PIV).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G12-001 — Caderno de Fixação: Classificação da Partícula SE (10 Itens Consolidados) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G12-001 — Caderno de Fixação: Classificação da Partícula SE (10 Itens Consolidados).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G12-001 — Caderno de Fixação: Classificação da Partícula SE (10 Itens Consolidados).",
           "blocks": [
             {
               "type": "list",
@@ -745,6 +987,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G12-002",
           "title": "EX-A05-G12-002 — Questão 01: VUNESP (2021) — Identificação de Reciprocidade",
+          "prompt": "Enunciado: Na frase – As pessoas se repelem e se atraem o tempo inteiro. –, o vocábulo se indica reciprocidade, como em:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Na frase – As pessoas se repelem e se atraem o tempo inteiro. –, o vocábulo se indica reciprocidade, como em:"
+            },
+            {
+              "order": 2,
+              "action": "A) Quanto ao exposto, constata-se que é uma discussão filosófica. $\\rightarrow$ PA (é constatado que...).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "B) A população não se rendeu diante das imposições do governo. $\\rightarrow$ PIV (verbo acidental render-se).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) Ao dividirem o palco, trataram-se com muita indiferença. $\\rightarrow$ Pronome Recíproco (GABARITO",
+              "rationale": "C — trataram um ao outro; verbo no plural)."
+            },
+            {
+              "order": 5,
+              "action": "D) Compra-se ouro nos centros das grandes cidades. $\\rightarrow$ PA (ouro é comprado).",
+              "rationale": null
+            }
+          ],
+          "result": "E) Foram-se os dias em que as pessoas prestavam atenção umas nas outras. $\\rightarrow$ Partícula de Realce / Expletiva (os dias foram...).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G12-002 — Questão 01: VUNESP (2021) — Identificação de Reciprocidade sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G12-002 — Questão 01: VUNESP (2021) — Identificação de Reciprocidade.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G12-002 — Questão 01: VUNESP (2021) — Identificação de Reciprocidade.",
           "blocks": [
             {
               "type": "list",
@@ -763,6 +1037,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G12-003",
           "title": "EX-A05-G12-003 — Questão 02: Instituto AOCP (2020) — Partícula Apassivadora",
+          "prompt": "Enunciado: Assinale a alternativa em que a palavra \"se\" exerce a função de partícula apassivadora:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assinale a alternativa em que a palavra \"se\" exerce a função de partícula apassivadora:"
+            },
+            {
+              "order": 2,
+              "action": "A) \"No trabalho, percebe-se facilmente o efeito negativo dos aparelhinhos...\" $\\rightarrow$ PA (GABARITO",
+              "rationale": "A — VTD + o efeito negativo é facilmente percebido)."
+            },
+            {
+              "order": 3,
+              "action": "B) \"De símbolo de status, transformaram-se rapidamente em bem de consumo...\" $\\rightarrow$ PIV (verbo acidental transformar-se).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) \"(...) e faz com que todos se sintam como bombeiros sem equipamentos...\" $\\rightarrow$ PIV (verbo acidental sentir-se).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) \"Não se trata de combater, tal qual luditas, a tecnologia.\" $\\rightarrow$ PIS / IIS (tratar-se de = VTI impessoal com sujeito indeterminado).",
+              "rationale": null
+            }
+          ],
+          "result": "D) \"Não se trata de combater, tal qual luditas, a tecnologia.\" $\\rightarrow$ PIS / IIS (tratar-se de = VTI impessoal com sujeito indeterminado).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G12-003 — Questão 02: Instituto AOCP (2020) — Partícula Apassivadora sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G12-003 — Questão 02: Instituto AOCP (2020) — Partícula Apassivadora.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G12-003 — Questão 02: Instituto AOCP (2020) — Partícula Apassivadora.",
           "blocks": [
             {
               "type": "list",
@@ -780,6 +1086,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G12-004",
           "title": "EX-A05-G12-004 — Questão 03: CESGRANRIO — Parte Integrante do Verbo",
+          "prompt": "Enunciado: Em \"...de que você possa arrepender-se\" (título), o pronome destacado é parte integrante do verbo. Em qual das frases a seguir o \"se\" também é parte integrante do verbo?",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Em \"...de que você possa arrepender-se\" (título), o pronome destacado é parte integrante do verbo. Em qual das frases a seguir o \"se\" também é parte integrante do verbo?"
+            },
+            {
+              "order": 2,
+              "action": "A) Ninguém se queixou de problemas maiores. $\\rightarrow$ PIV (GABARITO",
+              "rationale": "A — queixar-se é essencialmente pronominal)."
+            },
+            {
+              "order": 3,
+              "action": "B) Encontrou-se um caminho para um futuro ameno. $\\rightarrow$ PA (um caminho foi encontrado).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) Não sei se um dia seria censurado. $\\rightarrow$ Conjunção Integrante (Não sei [isso]).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) Vive-se melhor com a ajuda de um especialista. $\\rightarrow$ PIS / IIS (VI na 3ª pessoa do singular = alguém vive).",
+              "rationale": null
+            }
+          ],
+          "result": "E) Viu-se diante de um problema insolúvel. $\\rightarrow$ Pronome Reflexivo (viu a si mesmo).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G12-004 — Questão 03: CESGRANRIO — Parte Integrante do Verbo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G12-004 — Questão 03: CESGRANRIO — Parte Integrante do Verbo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G12-004 — Questão 03: CESGRANRIO — Parte Integrante do Verbo.",
           "blocks": [
             {
               "type": "list",
@@ -840,8 +1178,12 @@
         {
           "trapId": "WARN-A05-G12-001",
           "title": "Omissão Coloquial de Pronomes Integrantes em Redes Sociais",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Omissão Coloquial de Pronomes Integrantes em Redes Sociais.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Omissão Coloquial de Pronomes Integrantes em Redes Sociais.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Omissão Coloquial de Pronomes Integrantes em Redes Sociais no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Omissão Coloquial de Pronomes Integrantes em Redes Sociais.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Omissão Coloquial de Pronomes Integrantes em Redes Sociais.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Omissão Coloquial de Pronomes Integrantes em Redes Sociais para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Omissão Coloquial de Pronomes Integrantes em Redes Sociais.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Omissão Coloquial de Pronomes Integrantes em Redes Sociais.",
           "blocks": [
             {
               "type": "list",
@@ -856,8 +1198,12 @@
         {
           "trapId": "WARN-A05-G12-002",
           "title": "Confundir Processo Psicológico / Mental com Ação Reflexiva",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Processo Psicológico / Mental com Ação Reflexiva.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Processo Psicológico / Mental com Ação Reflexiva.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Processo Psicológico / Mental com Ação Reflexiva no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Processo Psicológico / Mental com Ação Reflexiva.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Processo Psicológico / Mental com Ação Reflexiva.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Processo Psicológico / Mental com Ação Reflexiva para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Processo Psicológico / Mental com Ação Reflexiva.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Processo Psicológico / Mental com Ação Reflexiva.",
           "blocks": [
             {
               "type": "list",
@@ -872,8 +1218,12 @@
         {
           "trapId": "WARN-A05-G12-003",
           "title": "Regência Alternada de Lembrar / Esquecer",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Regência Alternada de Lembrar / Esquecer.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Regência Alternada de Lembrar / Esquecer.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Regência Alternada de Lembrar / Esquecer no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Regência Alternada de Lembrar / Esquecer.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Regência Alternada de Lembrar / Esquecer.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Regência Alternada de Lembrar / Esquecer para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Regência Alternada de Lembrar / Esquecer.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Regência Alternada de Lembrar / Esquecer.",
           "blocks": [
             {
               "type": "list",
@@ -890,8 +1240,12 @@
         {
           "trapId": "WARN-A05-G12-004",
           "title": "Concordância Verbal: PA versus PIS",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Concordância Verbal: PA versus PIS.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Concordância Verbal: PA versus PIS.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Concordância Verbal: PA versus PIS no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Concordância Verbal: PA versus PIS.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Concordância Verbal: PA versus PIS.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Concordância Verbal: PA versus PIS para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Concordância Verbal: PA versus PIS.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Concordância Verbal: PA versus PIS.",
           "blocks": [
             {
               "type": "list",
@@ -908,8 +1262,12 @@
         {
           "trapId": "WARN-A05-G12-005",
           "title": "Uso Vicioso do Macete do \"ISSO\" em Orações Passivas",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Uso Vicioso do Macete do \"ISSO\" em Orações Passivas.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Uso Vicioso do Macete do \"ISSO\" em Orações Passivas.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Uso Vicioso do Macete do \"ISSO\" em Orações Passivas no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Uso Vicioso do Macete do \"ISSO\" em Orações Passivas.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Uso Vicioso do Macete do \"ISSO\" em Orações Passivas.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Uso Vicioso do Macete do \"ISSO\" em Orações Passivas para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Uso Vicioso do Macete do \"ISSO\" em Orações Passivas.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Uso Vicioso do Macete do \"ISSO\" em Orações Passivas.",
           "blocks": [
             {
               "type": "list",
@@ -924,8 +1282,12 @@
         {
           "trapId": "WARN-A05-G12-006",
           "title": "Classificação Errónea de Verbos Pronominais como Realce",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Classificação Errónea de Verbos Pronominais como Realce.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Classificação Errónea de Verbos Pronominais como Realce.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Classificação Errónea de Verbos Pronominais como Realce no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Classificação Errónea de Verbos Pronominais como Realce.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Classificação Errónea de Verbos Pronominais como Realce.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Classificação Errónea de Verbos Pronominais como Realce para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Classificação Errónea de Verbos Pronominais como Realce.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Classificação Errónea de Verbos Pronominais como Realce.",
           "blocks": [
             {
               "type": "list",
@@ -1165,7 +1527,10 @@
       "officialAnswer": "correct",
       "explanation": "A correlação depende dos sentidos dos tempos e modos verbais. O advérbio “talvez” expressa\ndúvida; então, naturalmente, com ele é empregado o subjuntivo, modo que indica dúvida,\nhipótese:\nTalvez sejamos, Talvez possamos\nTalvez pudéssemos, Talvez viajássemos\nQuestão correta.",
       "questionSha256": "4400af32bb03f61c4c31d26deaea9592e7a19302447620f5b904ec3d65df5feb",
-      "answerSha256": "a05b15c351bbd04d21c88ff862dc06db732115acfca97e76ac37b496ed688610"
+      "answerSha256": "a05b15c351bbd04d21c88ff862dc06db732115acfca97e76ac37b496ed688610",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Verbos Pronominais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula05.q0004",
@@ -1198,7 +1563,41 @@
       "officialAnswer": "option_C",
       "explanation": "A correlação verbal é assunto dependente das conjunções. Vejamos:\nNa letra a temos sentido de proporcionalidade.\nNa letra b temos sentido de consequência (Tão X Que Y)\nNa letra c temos relação de causa. Não saímos porque chovia. Essa forma “chovesse” nas\norações causais introduzidas por “como” é muito formal, mas é correta.\nNa letra d temos sentido de adição. Não vi isso nem aquilo.\nNa letra e temos sentido de conclusão. Gabarito letra C.",
       "questionSha256": "c59ed3caf765fa5567cee2c09803260ea483995fc7c526c0008d4a341b06dfbc",
-      "answerSha256": "2df8c1aef1df89e05bacd912fa0a4d7fbbef949f2c3d9221cd5adbc2811a0a75"
+      "answerSha256": "2df8c1aef1df89e05bacd912fa0a4d7fbbef949f2c3d9221cd5adbc2811a0a75",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Verbos Pronominais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Pronominais."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Pronominais."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Pronominais."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Pronominais."
+        },
+        {
+          "optionLabel": "E",
+          "status": "incorrect",
+          "explanation": "Opção E: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Pronominais."
+        }
+      ]
     },
     {
       "questionId": "aula05.q0048",
@@ -1211,7 +1610,10 @@
       "officialAnswer": "incorrect",
       "explanation": "As ações se referem à própria pessoa: Florence entregou a si mesma e preparou a si mesma. Não\nsofreu ação de algum outro agente, então não há sentido passivo. A partícula “se” classifica-se\ncomo pronome reflexivo.\nQuestão incorreta.",
       "questionSha256": "bffe33ba5b87e400d5aa1e73fa727a591cde5fdc526e66c670ea42884f0843aa",
-      "answerSha256": "e306e88bb361f6cd603324a24613925076ec5822863f0a82424017629e0015c8"
+      "answerSha256": "e306e88bb361f6cd603324a24613925076ec5822863f0a82424017629e0015c8",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Verbos Pronominais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula05.q0070",
@@ -1223,7 +1625,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "ee1baf5c2208c75fd6d6ba7007446d860c810c301bf6cdaa2fb49f9e94d25a1c",
-      "answerSha256": "bff4ba75d978c8fea2ae365e743ec2a5014da65b05fc90e9fc52213304a0c646"
+      "answerSha256": "bff4ba75d978c8fea2ae365e743ec2a5014da65b05fc90e9fc52213304a0c646",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Verbos Pronominais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula05.q0007",
@@ -1252,7 +1657,35 @@
       "officialAnswer": "option_B",
       "explanation": "A questão é de correlação verbal. Aplicaremos a correlação básica: se eu pudeSSE, faRIA:\nSe soubéSSEmos, podeRÍAmos compreendê-la (compreender a Polícia Militar). Gabarito letra B.",
       "questionSha256": "e9ea933aa79f0e1b2da0ee3c98cbbbeb97d395e444b80593f97b1a0740f882e1",
-      "answerSha256": "4fd38b5133eb3ff33ee17689110e1f3a01e3d4d9797884762cc5d36169bbf37f"
+      "answerSha256": "4fd38b5133eb3ff33ee17689110e1f3a01e3d4d9797884762cc5d36169bbf37f",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Verbos Pronominais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Pronominais."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Pronominais."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Pronominais."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Pronominais."
+        }
+      ]
     },
     {
       "questionId": "aula05.q0036",
@@ -1265,7 +1698,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Temos verbo transitivo direto + SE, estrutura de voz passiva sintética. Para conferir, vamos\ntransformar em voz passiva analítica:\n\nnão se poderiam resolver todas as questões.\nnão poderiam ser resolvidas todas as questões.\nO verbo estava no plural, isso prova que o sujeito não era indeterminado. Quando temos \"se\"\nindeterminador do sujeito, o verbo fica invariável. Questão incorreta.",
       "questionSha256": "8aa0f80153146f3ca8d444d9ab5390b7c26a0c56f497ef5ad0aeaa9e25a23f0b",
-      "answerSha256": "17b173b948a60b85c5192d9f11428a47c0d03928a4b28a405ed31eb6bcc6a9e6"
+      "answerSha256": "17b173b948a60b85c5192d9f11428a47c0d03928a4b28a405ed31eb6bcc6a9e6",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Verbos Pronominais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A03-G03",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.736Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.499Z"
   },
   "unit": {
     "unitId": "IP-A03-G03",
@@ -562,6 +562,16 @@
         {
           "entityId": "RULE-IP-A03-G03-001",
           "title": "Regras canônicas",
+          "statement": "Esta seção condensa as regras mestras consolidadas para consulta rápida e recuperação direta:\nRegra de Concordância do Possessivo: O pronome possessivo concorda em gênero e número com a coisa possuída (substantivo posposto) e aponta semanticamente para o possuidor (referente) (KB-A03-G03-002).\nDicotomia Pronome Adjetivo vs. Substantivo: Pronome adjetivo acompanha substantivo expresso; pronome substantivo substitui o substantivo e opera como núcleo oracional (KB-A03-G03-005).\nRegra de Exclusão do Advérbio: Advérbio modifica verbo, adjetivo ou advérbio. Advérbio jamais se refere a substantivo (KB-A03-G03-006).\nRegra de Inclusão dos Interrogativos: Todo pronome interrogativo (que, quem, qual, quanto) é morfologicamente um pronome indefinido em contexto de pergunta (KB-A03-G03-007).\nRegra das Interrogações Indiretas: Orações interrogativas introduzidas por verbos de conjectura/dúvida encerram-se por ponto final (.), mantendo a classificação de pronomes interrogativos (KB-A03-G03-008).\nRegra Posicional das Duplas (Certo, Bastante, Vários):\nAnteposto ao substantivo = Pronome Indefinido (KB-A03-G03-009).\nPosposto ao substantivo = Adjetivo (KB-A03-G03-009).\nRegra Posicional de \"Algum\":\nAlgum + Substantivo = Indeterminação positiva / qualquer (KB-A03-G03-009).\nSubstantivo + Algum = Negação absoluta / nenhum (KB-A03-G03-009).\nEquivalência Morfossemântica do \"Mais\" (FGV):\nSeta para Verbo / Adjetivo = Morfologia: Advérbio | Semântica: Intensidade (KB-A03-G03-010).\nSeta para Substantivo = Morfologia: Pronome Indefinido | Semântica: Quantidade (KB-A03-G03-010).\nRegra de Flexão do Advérbio \"Todo\": É o único advérbio que admite concordância facultativa com o adjetivo modificado (ela é todo / toda poderosa) (KB-A03-G03-011).\nRegra de \"Todo\" com vs. sem Artigo:\nTodo sem artigo = Sentido genérico / \"qualquer\" (KB-A03-G03-011).\nTodo o com artigo = Totalidade / \"inteiro\" (KB-A03-G03-011).",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Regra de Concordância do Possessivo: O pronome possessivo concorda em gênero e número com a coisa possuída (substantivo posposto) e aponta semanticamente para o possuidor (referente) (KB-A03-G03-002).",
+            "Dicotomia Pronome Adjetivo vs. Substantivo: Pronome adjetivo acompanha substantivo expresso; pronome substantivo substitui o substantivo e opera como núcleo oracional (KB-A03-G03-005).",
+            "Regra de Exclusão do Advérbio: Advérbio modifica verbo, adjetivo ou advérbio. Advérbio jamais se refere a substantivo (KB-A03-G03-006).",
+            "Regra de Inclusão dos Interrogativos: Todo pronome interrogativo (que, quem, qual, quanto) é morfologicamente um pronome indefinido em contexto de pergunta (KB-A03-G03-007)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "paragraph",
@@ -642,6 +652,65 @@
         {
           "procedureId": "PROC-A03-G03-001",
           "title": "Método das Setas para Rastreamento de Cadeias Coesivas do Possessivo",
+          "objective": "Executar o algoritmo decisório para Método das Setas para Rastreamento de Cadeias Coesivas do Possessivo",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método das Setas para Rastreamento de Cadeias Coesivas do Possessivo."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar o Pronome Possessivo",
+              "explanation": "Destaque seu, sua, seus, suas, nosso, etc.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Identificar o Substantivo Posposto",
+              "explanation": "Trace a seta de concordância gramatical para o substantivo que vem imediatamente depois do pronome (a coisa possuída).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Formular a Pergunta de Posse",
+              "explanation": "Pergunte à oração: \"De quem é [substantivo posposto]?\".",
+              "test": "Formular a Pergunta de Posse: Pergunte à oração: \"De quem é [substantivo posposto]?\"."
+            },
+            {
+              "order": 4,
+              "action": "Substituição Diagnóstica por \"Dele(s) / Dela(s)\"",
+              "explanation": "Reescreva mentalmente a expressão substituindo o possessivo por dele, dela, deles ou delas (ex.: \"suas relações\" $\\rightarrow$ \"as relações dela\").",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Reconstrução da Cadeia Coesiva Linha a Linha",
+              "explanation": "Se a substituição exigir \"dela\", busque no período anterior qual substantivo feminino (singular ou plural) responde por essa referência, rastreando pronomes demonstrativos e pessoais intermediários.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Julgamento do Item",
+              "explanation": "Verifique se o termo apontado pela banca é o possuidor originário ou apenas um elemento gramatical próximo inserido para induzir ao erro.",
+              "test": "Julgamento do Item: Verifique se o termo apontado pela banca é o possuidor originário ou apenas um elemento gramatical próximo inserido para induzir ao erro."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método das Setas para Rastreamento de Cadeias Coesivas do Possessivo."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -674,6 +743,71 @@
         {
           "procedureId": "PROC-A03-G03-002",
           "title": "Método das Setas de Referência para Discriminação Multiclasse",
+          "objective": "Executar o algoritmo decisório para Método das Setas de Referência para Discriminação Multiclasse",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método das Setas de Referência para Discriminação Multiclasse."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Traçar a Seta de Modificação",
+              "explanation": "Pergunte à frase a qual termo a palavra sob análise se refere diretamente.",
+              "test": "Traçar a Seta de Modificação: Pergunte à frase a qual termo a palavra sob análise se refere diretamente."
+            },
+            {
+              "order": 2,
+              "action": "Classificar o Termo-Alvo",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se o termo-alvo for Verbo, Adjetivo ou Advérbio $\\rightarrow$ A palavra é ADVÉRBIO.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se o termo-alvo for Substantivo $\\rightarrow$ A palavra NÃO é advérbio; prossiga para o desempate.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Desempate entre Adjetivo e Pronome Indefinido",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Tente substituir por \"suficiente(s)\"",
+              "explanation": "Se couber e qualificar o substantivo (geralmente posposto), é Adjetivo.",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Tente substituir por \"muito(s) / muita(s)\"",
+              "explanation": "Se couber e quantificar vagamente o substantivo (geralmente anteposto), é Pronome Indefinido Adjetivo.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método das Setas de Referência para Discriminação Multiclasse."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -729,6 +863,65 @@
         {
           "procedureId": "PROC-A03-G03-003",
           "title": "Teste de Validação para Interrogação Indireta",
+          "objective": "Executar o algoritmo decisório para Teste de Validação para Interrogação Indireta",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Validação para Interrogação Indireta."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar a Matriz de Dúvida",
+              "explanation": "Localize na oração principal verbos/expressões de cognição, desconhecimento ou elocução (desconheço, não sei, quero saber, pergunto, é indagado).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Isolar a Oração Subordinada",
+              "explanation": "Destaque o segmento introduzido por que, quem, qual ou quanto.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Inversão para Pergunta Direta",
+              "explanation": "Reorganize o segmento destacado sob a forma de questionamento direto finalizado com ponto de interrogação (?).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Original",
+              "explanation": "\"Desconheço quem organizou a festa.\"",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Inversão",
+              "explanation": "\"Quem organizou a festa? Desconheço.\"",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Validação",
+              "explanation": "Se a conversão mantiver a coerência e a intenção interrogativa, o vocábulo é Pronome Interrogativo.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Validação para Interrogação Indireta."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -773,6 +966,107 @@
         {
           "procedureId": "PROC-A03-G03-004",
           "title": "Teste Semântico-Posicional para \"Certo\", \"Bastante\", \"Vários\" e \"Algum\"",
+          "objective": "Executar o algoritmo decisório para Teste Semântico-Posicional para \"Certo\", \"Bastante\", \"Vários\" e \"Algum\"",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste Semântico-Posicional para \"Certo\", \"Bastante\", \"Vários\" e \"Algum\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize a palavra e verifique se está antes ou depois do substantivo.",
+              "explanation": null,
+              "test": "Localize a palavra e verifique se está antes ou depois do substantivo."
+            },
+            {
+              "order": 2,
+              "action": "Para Certo",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Certo + Substantivo = Pronome Indefinido (= \"um qualquer\").",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Substantivo + Certo = Adjetivo (= \"correto / exato\").",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Para Bastante",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Bastante + Substantivo = Pronome Indefinido (= \"muito\").",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Substantivo + Bastante = Adjetivo (= \"suficiente\").",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Para Vários",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Vários + Substantivo = Pronome Indefinido (= \"muitos\").",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Substantivo + Vários = Adjetivo (= \"diversificados / variados\").",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Para Algum",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 12,
+              "action": "Algum + Substantivo = Sentido Afirmativo/Indeterminado (= \"uma parte qualquer\").",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 13,
+              "action": "Substantivo + Algum = Sentido Negativo Absoluto (= \"nenhuma parte\").",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste Semântico-Posicional para \"Certo\", \"Bastante\", \"Vários\" e \"Algum\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -854,6 +1148,53 @@
         {
           "procedureId": "PROC-A03-G03-005",
           "title": "Teste de Substituição Contextual para o Vocábulo \"Todo/Toda\"",
+          "objective": "Executar o algoritmo decisório para Teste de Substituição Contextual para o Vocábulo \"Todo/Toda\"",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Substituição Contextual para o Vocábulo \"Todo/Toda\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Verifique se o termo está acompanhado de artigo definido (todo vs. todo o).",
+              "explanation": null,
+              "test": "Verifique se o termo está acompanhado de artigo definido (todo vs. todo o)."
+            },
+            {
+              "order": 2,
+              "action": "Tente substituir por \"qualquer\"",
+              "explanation": "Se o contexto admitir generalização entre múltiplos indivíduos, confirma-se o sentido genérico (Toda operação = Qualquer operação).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Tente substituir por \"inteiro / inteira\"",
+              "explanation": "Se houver artigo, confirma-se totalidade (Toda a cidade = A cidade inteira).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Checagem de Pluralidade Contextual (Filtro CESPE)",
+              "explanation": "Se não houver artigo, mas o substantivo for unitário/indivisível na realidade textual (ex.: \"todo mundo\"), a expressão veicula valor semântico de totalidade.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Substituição Contextual para o Vocábulo \"Todo/Toda\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -888,6 +1229,22 @@
         {
           "contrastId": "CONTRAST-IP-A03-G03-001",
           "title": "1. Pronome Pessoal vs. Pronome Possessivo na Coesão Textual",
+          "contrastType": "morphological",
+          "conceptA": "1. Pronome Pessoal vs. Pronome Possessivo na Coesão Textual",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -924,6 +1281,22 @@
         {
           "contrastId": "CONTRAST-IP-A03-G03-002",
           "title": "2. Matriz Diferencial de Vocábulos Mutáveis",
+          "contrastType": "mixed",
+          "conceptA": "2. Matriz Diferencial de Vocábulos Mutáveis",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -976,6 +1349,22 @@
         {
           "contrastId": "CONTRAST-IP-A03-G03-003",
           "title": "3. O Impacto da Supressão do Artigo: \"Da Manhã\" vs. \"De Manhã\"",
+          "contrastType": "morphological",
+          "conceptA": "3. O Impacto da Supressão do Artigo: \"Da Manhã\" vs. \"De Manhã\"",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -1017,6 +1406,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-001",
           "title": "Enunciado",
+          "prompt": "(VUNESP - Prefeitura de Morro Agudo - SP)Leia os quadrinhos que compõem a tira de André Dahmer para responder à questão:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"Seu país tem 13,5 milhões de miseráveis?\"",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "\"Sim.\"",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "\"Não é de cortar o coração?\" / \"Quando as pessoas tinham coração, era.\"",
+              "rationale": null
+            }
+          ],
+          "result": "Assinale a alternativa que apresenta uma palavra que, no desenrolar do diálogo, estabelece o sentido de posse. A) de B) o C) Seu D) Quando E) é",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1040,6 +1451,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-002",
           "title": "Resolução Consolidada",
+          "prompt": "Análise: A palavra Seu no primeiro quadrinho é um pronome possessivo de 3ª pessoa determinando o substantivo país (\"Seu país\"), indicando a relação de posse/pertencimento em relação ao interlocutor. A preposição de na opção A (\"de cortar o coração\") estabelece relação sintática verbal, desprovida de valor possessivo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "A palavra Seu no primeiro quadrinho é um pronome possessivo de 3ª pessoa determinando o substantivo país (\"Seu país\"), indicando a relação de posse/pertencimento em relação ao interlocutor. A preposição de na opção A (\"de cortar o coração\") estabelece relação sintática verbal, desprovida de valor possessivo."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "C"
+            }
+          ],
+          "result": "Gabarito: C",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Consolidada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
           "blocks": [
             {
               "type": "list",
@@ -1054,6 +1482,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-003",
           "title": "Enunciado",
+          "prompt": "(VUNESP - TJ-PA - Analista Judiciário) Trecho: \"Meu amigo lusitano, Diniz, está traduzindo... por conta de palavras e gírias comuns no meu Pará...\" O pronome possessivo em – \"meu Pará\" – atribui ao termo Pará a ideia de que se trata de um lugar: A) estimado pelo autor. B) abandonado pelo autor. C) desdenhado pelo autor. D) adquirido pelo autor. E) subjugado pelo autor.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"(VUNESP - TJ-PA - Analista Judiciário) Trecho: \"Meu amigo lu...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1064,6 +1514,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-004",
           "title": "Resolução Consolidada",
+          "prompt": "Análise: Um Estado da federação (Pará) não constitui bem de domínio material passível de compra ou aquisição privada (eliminando a alternativa D). O emprego do pronome de 1ª pessoa meu carrega carga semântica afetiva, indicando apreço, estima e vínculo afetivo do autor com sua terra natal.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Um Estado da federação (Pará) não constitui bem de domínio material passível de compra ou aquisição privada (eliminando a alternativa D). O emprego do pronome de 1ª pessoa meu carrega carga semântica afetiva, indicando apreço, estima e vínculo afetivo do autor com sua terra natal."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "A"
+            }
+          ],
+          "result": "Gabarito: A",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Consolidada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
           "blocks": [
             {
               "type": "list",
@@ -1078,6 +1545,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-005",
           "title": "Enunciado",
+          "prompt": "(FCC - TRF 3ª Região - Analista Judiciário)Trechos extraídos do texto:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": ".. suas financiadoras (1º parágrafo)",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Suas diferenças funcionais... (1º parágrafo)",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": ".. seu caráter mais violento... (3º parágrafo)",
+              "rationale": null
+            }
+          ],
+          "result": "Os pronomes dos trechos acima referem-se, respectivamente, a: A) vitórias militares – manifestações – museu B) vitórias militares – obras modernas – museu C) potências dominantes – obras modernas – trabalho de abstração D) potências dominantes – manifestações – trabalho de abstração E) potências dominantes – obras modernas – museu",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1101,6 +1590,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-006",
           "title": "Resolução Consolidada",
+          "prompt": "suas financiadoras $\\rightarrow$ No contexto (\"presta homenagem às potências dominantes, suas financiadoras\"), o pronome remete a potências dominantes.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "suas financiadoras $\\rightarrow$ No contexto (\"presta homenagem às potências dominantes, suas financiadoras\"), o pronome remete a potências dominantes.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Suas diferenças funcionais $\\rightarrow$ No contexto (\"O museu reúne todas essas manifestações de sentido oposto... Suas diferenças funcionais...\"), o pronome refere-se a manifestações.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "seu caráter mais violento $\\rightarrow$ No contexto (\"onde o trabalho de abstração assume seu caráter mais violento\"), o pronome remete a trabalho de abstração.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "D"
+            }
+          ],
+          "result": "Gabarito: D",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Consolidada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
           "blocks": [
             {
               "type": "list",
@@ -1123,6 +1639,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-007",
           "title": "Enunciado",
+          "prompt": "(CESPE - MPE-CE - Analista Ministerial) Texto: \"Desde os alvores da democracia ateniense, são sobejamente conhecidas as suas relações com a argumentação e a retórica...\" Item: A expressão “suas relações” (l.22) refere-se às relações da “democracia ateniense” (l.21). Certo Errado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"(CESPE - MPE-CE - Analista Ministerial) Texto: \"Desde os alv...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1133,6 +1671,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-008",
           "title": "Resolução Consolidada",
+          "prompt": "Análise: O pronome suas está flexionado no feminino plural para concordar estritamente com o substantivo posposto relações (a coisa possuída). No entanto, o referente semântico (o possuidor) é o substantivo singular democracia ateniense (as relações da democracia ateniense). A divergência de número entre pronome e referente é perfeitamente regular nos pronomes possessivos.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "O pronome suas está flexionado no feminino plural para concordar estritamente com o substantivo posposto relações (a coisa possuída). No entanto, o referente semântico (o possuidor) é o substantivo singular democracia ateniense (as relações da democracia ateniense). A divergência de número entre pronome e referente é perfeitamente regular nos pronomes possessivos."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "CERTO"
+            }
+          ],
+          "result": "Gabarito: CERTO",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Consolidada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
           "blocks": [
             {
               "type": "list",
@@ -1147,6 +1702,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-009",
           "title": "Enunciado",
+          "prompt": "(CESPE - Instituto Rio Branco - Diplomata) Texto: \"Foi neste momento que a surpreendeu Machado de Assis, mal inclinado a ela por força de seu preconceito, nutrido de tradição. No seu sarcasmo, ferindo-a de zombarias e risos, ele vê um mundo que cresce à sua frente...\" Item: Nas expressões “seu preconceito” (l.45) e “seu sarcasmo” (l. 45 e 46), o pronome possessivo remete a referentes distintos. Certo Errado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"(CESPE - Instituto Rio Branco - Diplomata) Texto: \"Foi neste...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1157,6 +1734,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-010",
           "title": "Resolução Consolidada",
+          "prompt": "Rastreamento Coesivo:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Rastreamento Coesivo",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "seu preconceito",
+              "rationale": "Machado de Assis era mal inclinado a ela (a classe lucrativa) por força do preconceito dela (classe lucrativa). Logo, o referente é classe lucrativa."
+            },
+            {
+              "order": 3,
+              "action": "seu sarcasmo",
+              "rationale": "O sarcasmo que fere a classe pertence a ele (Machado de Assis). Logo, o referente é Machado de Assis."
+            },
+            {
+              "order": 4,
+              "action": "Os dois pronomes masculinos singulares possuem referentes efetivamente distintos.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "CERTO"
+            }
+          ],
+          "result": "Gabarito: CERTO",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Consolidada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
           "blocks": [
             {
               "type": "list",
@@ -1174,6 +1783,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-011",
           "title": "Enunciado",
+          "prompt": "(CESPE - Instituto Rio Branco - Diplomata) Texto: \"Esquematizando, pode-se dizer que a colonização produziu... três classes de população: o latifundiário, o escravo e o 'homem livre'... Entre os primeiros dois a relação é clara, é a multidão dos terceiros que nos interessa. Nem proprietários nem proletários, seu acesso à vida e a seus bens depende... O agregado é a sua caricatura.\" Item: Do período “O agregado é a sua caricatura” (l. 23 e 24), é correto inferir que o agregado é uma caricatura de si próprio. Certo Errado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"(CESPE - Instituto Rio Branco - Diplomata) Texto: \"Esquemati...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1184,6 +1815,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-012",
           "title": "Resolução Consolidada",
+          "prompt": "Rastreamento Coesivo: Na divisão tripartite (1. latifundiário, 2. escravo, 3. homem livre), a cadeia coesiva desdobra-se em: terceiros $\\rightarrow$ homem livre $\\rightarrow$ seu acesso $\\rightarrow$ seus bens $\\rightarrow$ sua caricatura. O agregado constitui a caricatura do homem livre, e não de si mesmo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Rastreamento Coesivo",
+              "rationale": "Na divisão tripartite (1. latifundiário, 2. escravo, 3. homem livre), a cadeia coesiva desdobra-se em: terceiros $\\rightarrow$ homem livre $\\rightarrow$ seu acesso $\\rightarrow$ seus bens $\\rightarrow$ sua caricatura. O agregado constitui a caricatura do homem livre, e não de si mesmo."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "ERRADO"
+            }
+          ],
+          "result": "Gabarito: ERRADO",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Consolidada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
           "blocks": [
             {
               "type": "list",
@@ -1198,6 +1846,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-013",
           "title": "Código de Classificação",
+          "prompt": "(1) Adjetivo ou locução adjetiva | (2) Advérbio ou locução adverbial | (3) Pronome indefinido",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"(1) Adjetivo ou locução adjetiva | (2) Advérbio ou locução a...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Código de Classificação.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Código de Classificação sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Código de Classificação.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Código de Classificação.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1208,6 +1878,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-014",
           "title": "Itens e Análise Sintático-Semântica Consolidada",
+          "prompt": "a) ( 2 ) Maria é muito calma. $\\rightarrow$ Muito modifica o adjetivo calma (Advérbio de intensidade).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "a) ( 2 ) Maria é muito calma. $\\rightarrow$ Muito modifica o adjetivo calma (Advérbio de intensidade).",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "b) ( 3 ) Precisou de muita calma para resolver o impasse. $\\rightarrow$ Muita modifica o substantivo calma (Pronome indefinido adjetivo).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "c) ( 3 ) Precisou de muito dinheiro para comprar a casa. $\\rightarrow$ Muito modifica o substantivo dinheiro (Pronome indefinido adjetivo).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "d) ( 2 ) Beijo pouco, falo menos ainda. $\\rightarrow$ Pouco modifica o verbo beijo; menos modifica o verbo falo (Advérbios de intensidade).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "e) ( 3 ) Hoje disponho de pouco tempo para diversão; e o que é pior, de menos disposição. $\\rightarrow$ Pouco modifica o substantivo tempo; menos modifica o substantivo disposição (Pronomes indefinidos adjetivos).",
+              "rationale": null
+            }
+          ],
+          "result": "m) ( 2 ) Sempre leio os jornais de manhã. $\\rightarrow$ De manhã (sem artigo) liga-se ao verbo leio (Locução Adverbial de tempo).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Itens e Análise Sintático-Semântica Consolidada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Itens e Análise Sintático-Semântica Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Itens e Análise Sintático-Semântica Consolidada.",
           "blocks": [
             {
               "type": "list",
@@ -1233,6 +1935,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-015",
           "title": "Enunciado",
+          "prompt": "(AOCP - Prefeitura de Juiz de Fora - MG - Assistente de Administração) Em “[...] Com as infinitas informações veiculadas pela Internet, um certo senhor virtual armou-se de estetoscópio [...]”, o termo em destaque é classificado morfologicamente como: A) substantivo. B) adjetivo. C) pronome. D) conjunção. E) preposição.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"(AOCP - Prefeitura de Juiz de Fora - MG - Assistente de Admi...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1243,6 +1967,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-016",
           "title": "Resolução Consolidada",
+          "prompt": "Análise: O vocábulo certo precede imediatamente o substantivo senhor (\"um certo senhor\"). Pela regra posicional, quando anteposto ao substantivo, certo funciona como pronome indefinido (equivalente a um senhor qualquer). Se viesse posposto (\"senhor certo\"), funcionaria como adjetivo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "O vocábulo certo precede imediatamente o substantivo senhor (\"um certo senhor\"). Pela regra posicional, quando anteposto ao substantivo, certo funciona como pronome indefinido (equivalente a um senhor qualquer). Se viesse posposto (\"senhor certo\"), funcionaria como adjetivo."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "C"
+            }
+          ],
+          "result": "Gabarito: C",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Consolidada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
           "blocks": [
             {
               "type": "list",
@@ -1257,6 +1998,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-017",
           "title": "Enunciado",
+          "prompt": "(VUNESP - Prefeitura de Campinas - SP - Agente Administrativo) Assinale a alternativa em que o primeiro pronome destacado tem um referente posposto a ele, e o segundo expressa sentido genérico. A) Ela encontra nas redes sociais o seu lugar... /... e serve para apontar algum sofrimento psíquico. B) Toda paixão nos torna cegos... / Nesse momento de nossa experiência com as redes sociais... C)... e ela também procura seu lugar. /... que fizesse bem a quem delas participa... D) Ele é cada vez mais evidente. /... aquilo que ficava oculto nas microrrelações... E)... e é também ele que pode nos curar. /... relação com o que somos em relação a outros.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"(VUNESP - Prefeitura de Campinas - SP - Agente Administrativ...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1267,6 +2030,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-018",
           "title": "Resolução Consolidada",
+          "prompt": "Análise da Alternativa A:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise da Alternativa A",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Primeiro Pronome (\"Ela\")",
+              "rationale": "No trecho \"Ela encontra nas redes sociais o seu lugar, pois toda neurose é um distúrbio...\", o pronome Ela antecipa o substantivo neurose (referente posposto / catáfora)."
+            },
+            {
+              "order": 3,
+              "action": "Segundo Pronome (\"algum\")",
+              "rationale": "O termo algum em \"algum sofrimento psíquico\" atua como pronome indefinido expressando valor genérico e indeterminado."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "A"
+            }
+          ],
+          "result": "Gabarito: A",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Consolidada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
           "blocks": [
             {
               "type": "list",
@@ -1295,6 +2085,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-019",
           "title": "Enunciado",
+          "prompt": "(VUNESP - PC-SP - Escrivão de Polícia Civil) Na passagem — Problema de lixo não tinham; podia ser atirado em qualquer parte, embora não conviesse atirá-lo em parte alguma... — os pronomes destacados expressam, correta e respectivamente, as ideias de: A) parte indiscriminada; parte definida. B) parte toda; parte certa. C) parte indeterminada; parte nenhuma. D) parte inadequada; parte adequada. E) parte incerta; parte certa.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"(VUNESP - PC-SP - Escrivão de Polícia Civil) Na passagem — P...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1305,6 +2117,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-020",
           "title": "Resolução Consolidada",
+          "prompt": "Análise: O pronome qualquer em \"qualquer parte\" atribui a ideia de parte indeterminada. O pronome alguma posposto ao substantivo em \"parte alguma\" adquire valor semântico de negação total, correspondendo estritamente a parte nenhuma.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "O pronome qualquer em \"qualquer parte\" atribui a ideia de parte indeterminada. O pronome alguma posposto ao substantivo em \"parte alguma\" adquire valor semântico de negação total, correspondendo estritamente a parte nenhuma."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "C"
+            }
+          ],
+          "result": "Gabarito: C",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Consolidada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
           "blocks": [
             {
               "type": "list",
@@ -1319,6 +2148,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-021",
           "title": "Enunciado",
+          "prompt": "(FGV - AL-BA - Técnico de Nível Superior) “Já desde Platão sabemos que ela é sensível à ação dos demagogos. E, quanto mais avançamos no conhecimento do cérebro e da psicologia humana, descobrimos novas e mais sutis maneiras de influenciar os eleitores, que usam muito mais a emoção do que a razão na hora de fazer suas escolhas”. Sobre as três ocorrências do vocábulo “mais”, assinale a afirmativa correta: A) Todas as ocorrências pertencem à mesma classe gramatical. B) A segunda ocorrência é o único caso de pronome indefinido. C) O único caso de adjetivo é a terceira ocorrência. D) A primeira e a segunda ocorrências não pertencem à mesma classe. E) As três ocorrências pertencem a classes gramaticais diferentes.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"(FGV - AL-BA - Técnico de Nível Superior) “Já desde Platão s...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1329,6 +2180,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-022",
           "title": "Resolução Consolidada",
+          "prompt": "1º \"mais\" (\"quanto mais avançamos\"): Liga-se ao verbo avançamos $\\rightarrow$ Advérbio.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "º \"mais\" (\"quanto mais avançamos\")",
+              "rationale": "Liga-se ao verbo avançamos $\\rightarrow$ Advérbio."
+            },
+            {
+              "order": 2,
+              "action": "º \"mais\" (\"mais sutis maneiras\")",
+              "rationale": "Liga-se ao adjetivo sutis $\\rightarrow$ Advérbio."
+            },
+            {
+              "order": 3,
+              "action": "º \"mais\" (\"usam muito mais a emoção\")",
+              "rationale": "Liga-se ao verbo usam (\"usam mais\") $\\rightarrow$ Advérbio (o artigo \"a\" impede a conexão direta com o substantivo)."
+            },
+            {
+              "order": 4,
+              "action": "Conclusão",
+              "rationale": "Todas as três ocorrências são advérbios."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "A"
+            }
+          ],
+          "result": "Gabarito: A",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Consolidada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
           "blocks": [
             {
               "type": "list",
@@ -1346,6 +2229,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-023",
           "title": "Enunciado",
+          "prompt": "(FGV - IBGE - Recenseador) No texto, há três ocorrências do vocábulo “mais”: (1) “...joga mais luz sobre a origem da vida”; (2) “...uma das mais importantes publicações científicas” e (3) “...será o mais antigo registro de vida na Terra”. Sobre essas ocorrências, é correto afirmar que em: A) (1) e (2) “mais” tem valor de intensidade; B) (1) e (3) “mais” tem valor de quantidade; C) (2) e (3) “mais” tem valor de intensidade; D) (2) “mais” tem valor de quantidade indeterminada; E) (3) “mais” tem valor de quantidade determinada.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"(FGV - IBGE - Recenseador) No texto, há três ocorrências do ...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1356,6 +2261,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-024",
           "title": "Resolução Consolidada",
+          "prompt": "Ocorrência (1) (\"mais luz\"): Liga-se a luz (substantivo) $\\rightarrow$ Pronome Indefinido $\\rightarrow$ Valor de Quantidade.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Ocorrência (1) (\"mais luz\")",
+              "rationale": "Liga-se a luz (substantivo) $\\rightarrow$ Pronome Indefinido $\\rightarrow$ Valor de Quantidade."
+            },
+            {
+              "order": 2,
+              "action": "Ocorrência (2) (\"mais importantes\")",
+              "rationale": "Liga-se a importantes (adjetivo) $\\rightarrow$ Advérbio $\\rightarrow$ Valor de Intensidade."
+            },
+            {
+              "order": 3,
+              "action": "Ocorrência (3) (\"mais antigo\")",
+              "rationale": "Liga-se a antigo (adjetivo) $\\rightarrow$ Advérbio $\\rightarrow$ Valor de Intensidade."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "C"
+            }
+          ],
+          "result": "Gabarito: C",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Consolidada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
           "blocks": [
             {
               "type": "list",
@@ -1372,6 +2304,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-025",
           "title": "Enunciado",
+          "prompt": "(CESPE - SEDF) Texto: \"Quanta inútil retórica se tem desperdiçado para provar que todos os nossos males ficariam resolvidos...\" Item: O vocábulo “Quanta” (l.6) classifica-se, na oração em que ocorre, como pronome interrogativo. Certo Errado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"(CESPE - SEDF) Texto: \"Quanta inútil retórica se tem desperd...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1382,6 +2336,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-026",
           "title": "Resolução Consolidada",
+          "prompt": "Análise: O vocábulo Quanta introduz uma oração interrogativa indireta (uma conjectura acerca da quantidade de retórica desperdiçada) encerrada por ponto final. A ausência de ponto de interrogação não invalida sua classificação morfológica como pronome interrogativo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "O vocábulo Quanta introduz uma oração interrogativa indireta (uma conjectura acerca da quantidade de retórica desperdiçada) encerrada por ponto final. A ausência de ponto de interrogação não invalida sua classificação morfológica como pronome interrogativo."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "CERTO"
+            }
+          ],
+          "result": "Gabarito: CERTO",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Consolidada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
           "blocks": [
             {
               "type": "list",
@@ -1396,6 +2367,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-027",
           "title": "Enunciado",
+          "prompt": "(CESPE - TRE-BA - Técnico Judiciário) Texto: \"Quase todo mundo conhece os riscos de se ter os documentos usados de forma indevida... Mas um sistema que começou a ser implantado na Bahia pode resolver o problema em todo o país.\" Item: No texto, tanto o termo “todo” (l.1) quanto “todo o” (l.5) expressam totalidade. Certo Errado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"(CESPE - TRE-BA - Técnico Judiciário) Texto: \"Quase todo mun...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1406,6 +2399,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A03-G03-028",
           "title": "Resolução Consolidada",
+          "prompt": "Análise Contextual: Embora a regra teórica aponte que todo sem artigo equivale a \"qualquer\", na expressão \"todo mundo\" (l.1) o referente é a totalidade das pessoas (o mundo inteiro), assim como \"todo o país\" (l.5) denota o país inteiro. Ambos os termos expressam semanticamente a ideia de totalidade.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise Contextual",
+              "rationale": "Embora a regra teórica aponte que todo sem artigo equivale a \"qualquer\", na expressão \"todo mundo\" (l.1) o referente é a totalidade das pessoas (o mundo inteiro), assim como \"todo o país\" (l.5) denota o país inteiro. Ambos os termos expressam semanticamente a ideia de totalidade."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "CERTO"
+            }
+          ],
+          "result": "Gabarito: CERTO",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Consolidada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
           "blocks": [
             {
               "type": "list",
@@ -1456,8 +2466,12 @@
         {
           "trapId": "WARN-A03-G03-001",
           "title": "A Armadilha de Concordância do Pronome Possessivo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha de Concordância do Pronome Possessivo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha de Concordância do Pronome Possessivo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha de Concordância do Pronome Possessivo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha de Concordância do Pronome Possessivo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha de Concordância do Pronome Possessivo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha de Concordância do Pronome Possessivo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha de Concordância do Pronome Possessivo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha de Concordância do Pronome Possessivo.",
           "blocks": [
             {
               "type": "list",
@@ -1473,8 +2487,12 @@
         {
           "trapId": "WARN-A03-G03-002",
           "title": "O Invariável \"Menos\" como Pronome Indefinido Adjetivo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Invariável \"Menos\" como Pronome Indefinido Adjetivo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Invariável \"Menos\" como Pronome Indefinido Adjetivo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Invariável \"Menos\" como Pronome Indefinido Adjetivo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Invariável \"Menos\" como Pronome Indefinido Adjetivo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Invariável \"Menos\" como Pronome Indefinido Adjetivo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Invariável \"Menos\" como Pronome Indefinido Adjetivo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Invariável \"Menos\" como Pronome Indefinido Adjetivo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Invariável \"Menos\" como Pronome Indefinido Adjetivo.",
           "blocks": [
             {
               "type": "list",
@@ -1489,8 +2507,12 @@
         {
           "trapId": "WARN-A03-G03-003",
           "title": "Confusão entre \"Paciência\" (Substantivo) e \"Paciente\" (Adjetivo)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão entre \"Paciência\" (Substantivo) e \"Paciente\" (Adjetivo).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão entre \"Paciência\" (Substantivo) e \"Paciente\" (Adjetivo).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão entre \"Paciência\" (Substantivo) e \"Paciente\" (Adjetivo) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão entre \"Paciência\" (Substantivo) e \"Paciente\" (Adjetivo).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão entre \"Paciência\" (Substantivo) e \"Paciente\" (Adjetivo).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão entre \"Paciência\" (Substantivo) e \"Paciente\" (Adjetivo) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão entre \"Paciência\" (Substantivo) e \"Paciente\" (Adjetivo).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão entre \"Paciência\" (Substantivo) e \"Paciente\" (Adjetivo).",
           "blocks": [
             {
               "type": "list",
@@ -1505,8 +2527,12 @@
         {
           "trapId": "WARN-A03-G03-004",
           "title": "Interrogação Indireta sem Sinal Gráfico",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Interrogação Indireta sem Sinal Gráfico.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Interrogação Indireta sem Sinal Gráfico.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Interrogação Indireta sem Sinal Gráfico no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Interrogação Indireta sem Sinal Gráfico.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Interrogação Indireta sem Sinal Gráfico.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Interrogação Indireta sem Sinal Gráfico para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Interrogação Indireta sem Sinal Gráfico.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Interrogação Indireta sem Sinal Gráfico.",
           "blocks": [
             {
               "type": "list",
@@ -1521,8 +2547,12 @@
         {
           "trapId": "WARN-A03-G03-005",
           "title": "Inversão Semântica do Pronome \"Algum\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Inversão Semântica do Pronome \"Algum\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Inversão Semântica do Pronome \"Algum\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Inversão Semântica do Pronome \"Algum\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Inversão Semântica do Pronome \"Algum\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Inversão Semântica do Pronome \"Algum\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Inversão Semântica do Pronome \"Algum\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Inversão Semântica do Pronome \"Algum\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Inversão Semântica do Pronome \"Algum\".",
           "blocks": [
             {
               "type": "list",
@@ -1537,8 +2567,12 @@
         {
           "trapId": "WARN-A03-G03-006",
           "title": "Aplicação Mecânica da Regra de \"Todo\" sem Artigo no CESPE",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Aplicação Mecânica da Regra de \"Todo\" sem Artigo no CESPE.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Aplicação Mecânica da Regra de \"Todo\" sem Artigo no CESPE.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Aplicação Mecânica da Regra de \"Todo\" sem Artigo no CESPE no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Aplicação Mecânica da Regra de \"Todo\" sem Artigo no CESPE.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Aplicação Mecânica da Regra de \"Todo\" sem Artigo no CESPE.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Aplicação Mecânica da Regra de \"Todo\" sem Artigo no CESPE para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Aplicação Mecânica da Regra de \"Todo\" sem Artigo no CESPE.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Aplicação Mecânica da Regra de \"Todo\" sem Artigo no CESPE.",
           "blocks": [
             {
               "type": "list",
@@ -1553,8 +2587,12 @@
         {
           "trapId": "WARN-A03-G03-007",
           "title": "Supressão de Artigo em Locuções Preposicionadas",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Supressão de Artigo em Locuções Preposicionadas.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Supressão de Artigo em Locuções Preposicionadas.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Supressão de Artigo em Locuções Preposicionadas no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Supressão de Artigo em Locuções Preposicionadas.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Supressão de Artigo em Locuções Preposicionadas.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Supressão de Artigo em Locuções Preposicionadas para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Supressão de Artigo em Locuções Preposicionadas.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Supressão de Artigo em Locuções Preposicionadas.",
           "blocks": [
             {
               "type": "list",
@@ -1698,7 +2736,10 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "7ef2b2baf7b8af5c85a4c12078dd103f5916398e542ec2067b6efdfebe72399f",
-      "answerSha256": "92a36e9f0c88958987aef3ac735e45a7d5c1989562661eb0d1b96159b2326213"
+      "answerSha256": "92a36e9f0c88958987aef3ac735e45a7d5c1989562661eb0d1b96159b2326213",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Possessivos Indefinidos e Interrogativos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0035",
@@ -1711,7 +2752,10 @@
       "officialAnswer": "correct",
       "explanation": "Exato. O pronome indefinido “todo” antes de um substantivo, sem artigo, tem sentido geral, de “qualquer”. Se inseríssemos um artigo, teríamos sentido de “completude”, “inteireza”: Toda a língua tem uma gramática complexa. (a língua inteira, por completo, tem uma gramática complexa). Questão correta.",
       "questionSha256": "e6ffc8e41b5953a329265033f5d0f101259c8115ab3c0ad27d4d15c92b2c20fb",
-      "answerSha256": "1d251465f7540a7c990e1566ad397c180c2c5355fcb58ac27f70fae63ff07b53"
+      "answerSha256": "1d251465f7540a7c990e1566ad397c180c2c5355fcb58ac27f70fae63ff07b53",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Possessivos Indefinidos e Interrogativos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0054",
@@ -1724,7 +2768,10 @@
       "officialAnswer": "correct",
       "explanation": "Trata-se de uma questão que exige conhecimento a respeito de termos anafóricos (como é o caso dos pronomes possessivos) e interpretação textual. A função dos termos anafóricos é retomar uma palavra ou expressão que já apareceu no texto (termos ANafóricos retomam termos ANteriores) e são muito importantes para garantir a coesão (encadeamento lógico das ideias) e evitar a repetição excessiva das palavras. Vamos analisar o texto: “Desde os alvores da democracia ateniense, são sobejamente conhecidas as suas relações com a argumentação e com a retórica”. Observem que o pronome possessivo anafórico “suas” acompanha o nome “relações”, mas, ao mesmo tempo, retoma um termo que já apareceu e é exatamente essa a cobrança do enunciado. Agora que já sabemos o que é um termo anafórico e que o pronome “suas” está se referindo a um termo antecedente, vamos partir para a interpretação de texto. Notem que o texto menciona que desde os alvores (amanhecer/ início) da democracia ateniense são sobejamente (muito/ de forma excessiva) conhecidas as relações com a argumentação e a retórica, ou seja, a\n\nargumentação e a retórica se relacionam com a ideia de democracia, no caso, a democracia ateniense. Questão correta!",
       "questionSha256": "dd37e0827c446f5052d2d6ad3958011c51fc22af2f5be6d38dd981c838317ff0",
-      "answerSha256": "5f6b4b2ae1bf7a8b75a32bd4948ff7074f1fb86ee123879e3e5fdc5531d99ce9"
+      "answerSha256": "5f6b4b2ae1bf7a8b75a32bd4948ff7074f1fb86ee123879e3e5fdc5531d99ce9",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Possessivos Indefinidos e Interrogativos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0029",
@@ -1738,7 +2785,10 @@
       "officialAnswer": "correct",
       "explanation": "Aqui, temos exemplo clássico de pronome pessoal com sentido possessivo: Incendiar-me a fantasia equivale a “incendiar minha fantasia”. Questão correta.",
       "questionSha256": "5334e7724386985357aa8f8a69f022c54def8bf88329747271747e1abb425e77",
-      "answerSha256": "4f4240b33a91255a94cb6ecbd4ada1bca32f3388eb6ad5872582fe228af41455"
+      "answerSha256": "4f4240b33a91255a94cb6ecbd4ada1bca32f3388eb6ad5872582fe228af41455",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Possessivos Indefinidos e Interrogativos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0017",
@@ -1751,7 +2801,10 @@
       "officialAnswer": "correct",
       "explanation": "Trata-se de uma questão que exige conhecimento a respeito de termos anafóricos (como é o caso dos pronomes possessivos) e interpretação textual. A função dos termos anafóricos é retomar uma palavra ou expressão que já apareceu no texto (termos ANafóricos retomam termos ANteriores) e são muito importantes para garantir a coesão (encadeamento lógico das ideias) e evitar a repetição excessiva das palavras. Vamos analisar o texto: “Desde os alvores da democracia ateniense, são sobejamente conhecidas as suas relações com a argumentação e com a retórica”. Observem que o pronome possessivo anafórico “suas” acompanha o nome “relações”, mas, ao mesmo tempo, retoma um termo que já apareceu e é exatamente essa a cobrança do enunciado. Agora que já sabemos o que é um termo anafórico e que o pronome “suas” está se referindo a um termo antecedente, vamos partir para a interpretação de texto. Notem que o texto menciona que desde os alvores (amanhecer/ início) da democracia ateniense são sobejamente (muito/ de forma excessiva) conhecidas as relações com a argumentação e a retórica, ou seja, a argumentação e a retórica se relacionam com a ideia de democracia, no caso, a democracia ateniense. Questão correta!",
       "questionSha256": "d65aa5b9295a7a0058d0f69c1b6a4bc48bb36e46987dec415fa06c1f4cfca70c",
-      "answerSha256": "4f21391d85f293844f828bd8bb4cc58896c29e6cc08301b1951c6181519eb255"
+      "answerSha256": "4f21391d85f293844f828bd8bb4cc58896c29e6cc08301b1951c6181519eb255",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Possessivos Indefinidos e Interrogativos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0002",
@@ -1764,7 +2817,19 @@
       "officialAnswer": "correct",
       "explanation": "Exato. “Algum” também é pronome indefinido e mantém a ideia vaga do pronome indefinido “certo”. parece haver na literatura certo consenso parece haver na literatura algum consenso Aproveitando, já que a banca já cobrou: a ordem desses pronomes altera o sentido e pode até alterar a classe. Vi certo número (pronome indefinido: algum/qualquer número) Vi o número certo (adjetivo: número exato) Algum dinheiro resolveria (pronome indefinido: alguma quantia, pouco dinheiro) Dinheiro algum resolveria(pronome indefinido: ideia de negação, nenhum dinheiro) Gabarito: Correto.",
       "questionSha256": "ac9bfa120f3ce35a3c2d4a3967fa00de9b2e0516ca3c1bb9becce1ef07e39c2d",
-      "answerSha256": "ce2daa655ccb1d57e0e0a8f341013ba0c9b4ca37f9e3dd84ef9b566ac5730288"
+      "answerSha256": "ce2daa655ccb1d57e0e0a8f341013ba0c9b4ca37f9e3dd84ef9b566ac5730288",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Possessivos Indefinidos e Interrogativos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "correct",
+        "acceptedPedagogicalAnswers": [
+          "correct"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A03-G03-CONFLICT-001-21",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula03.q0134",
@@ -1798,7 +2863,50 @@
       "officialAnswer": "option_e",
       "explanation": "O que o médico achou? Um grão de sandice. Em quem? No Quincas Borba. Então, podemos dizer que o pronome relativo \"que\" tem como antecedente o \"grãozinho de sandice\" e o \"lhe\" retoma \"Quincas Borba\". Gabarito letra E.",
       "questionSha256": "55e8ef4e21aed8fca2d141ccc4b6e2482ad63fd7b0483449b077a92de352a71e",
-      "answerSha256": "7e81959078a0deab0ee8cb24d352d9261d13aaf26bb8deed3237f12c75ebe1d9"
+      "answerSha256": "7e81959078a0deab0ee8cb24d352d9261d13aaf26bb8deed3237f12c75ebe1d9",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de PGE-AM; 2. Identificar a regra central de Possessivos Indefinidos e Interrogativos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "option_e",
+        "acceptedPedagogicalAnswers": [
+          "option_e"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A03-G03-CONFLICT-001-21",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Possessivos Indefinidos e Interrogativos."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Possessivos Indefinidos e Interrogativos."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Possessivos Indefinidos e Interrogativos."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Possessivos Indefinidos e Interrogativos."
+        },
+        {
+          "optionLabel": "E",
+          "status": "incorrect",
+          "explanation": "Opção E: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Possessivos Indefinidos e Interrogativos."
+        }
+      ]
     },
     {
       "questionId": "aula03.q0143",
@@ -1811,7 +2919,19 @@
       "officialAnswer": "correct",
       "explanation": "Os pronomes têm a propriedade de retomar e substituir termos anteriores. O pronome pessoal reto “eles” se refere aos acidentes e foi contraído com a preposição “DE” (de + os acidentes => dez deles, dez entre os acidentes que houve). Gabarito: questão correta.",
       "questionSha256": "cc228498c14272a43de4387285b244e0149056a816cc1780c914bdebf0e916fd",
-      "answerSha256": "a1b8b2f8f22f2aeb47eeac28cbcda36f5771df9820d51174904ba48565a9d44d"
+      "answerSha256": "a1b8b2f8f22f2aeb47eeac28cbcda36f5771df9820d51174904ba48565a9d44d",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de POLÍCIA CIVIL DO MARANHÃO; 2. Identificar a regra central de Possessivos Indefinidos e Interrogativos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "correct",
+        "acceptedPedagogicalAnswers": [
+          "correct"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A03-G03-CONFLICT-001-21",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": []
     }
   ]
 }

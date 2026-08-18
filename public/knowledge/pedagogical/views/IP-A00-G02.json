@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A00-G02",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.685Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.427Z"
   },
   "unit": {
     "unitId": "IP-A00-G02",
@@ -403,6 +403,16 @@
         {
           "entityId": "RULE-IP-A00-G02-001",
           "title": "Regras canônicas",
+          "statement": "Vogal Canônica: Centro obrigatório da sílaba; 1 por sílaba (KB-A00-G02-ESTUDO-DA-SILABA-TEORIA-001).\nSemivogal Canônica: Som brando de /i/ ou /u/ em apoio a uma vogal (KB-A00-G02-ESTUDO-DA-SILABA-TEORIA-002).\nDitongo Decrescente ($DD$): $V + SV$, inseparável ($DD \\neq H$) (KB-A00-G02-ESTUDO-DA-SILABA-TEORIA-003).\nDitongo Crescente ($DC$): $SV + V$, passível de virar hiato / proparoxítona eventual ($DC = H$) (KB-A00-G02-ESTUDO-DA-SILABA-TEORIA-003).\nTritongo Canônico: Estrutura fixa $SV + V + SV$ na mesma sílaba (KB-A00-G02-ESTUDO-DA-SILABA-TEORIA-004).\nHiato Canônico: $V + V$ em sílabas separadas; não possui semivogal (KB-A00-G02-ESTUDO-DA-SILABA-TEORIA-005).\nEncontro Consonantal: Consoantes simultaneamente pronunciadas; divide-se em perfeito e imperfeito (KB-A00-G02-ESTUDO-DA-SILABA-TEORIA-006).\nDígrafo Consonantal: Duas letras gerando 1 fonema consonantal (KB-A00-G02-ESTUDO-DA-SILABA-TEORIA-006).\nDígrafo Vocálico: Vogal nasalizada por $M/N$ na mesma sílaba (KB-A00-G02-ESTUDO-DA-SILABA-TEORIA-007).\nDífono: Uma letra ($X$) gerando 2 fonemas ($/ks/$) (KB-A00-G02-ESTUDO-DA-SILABA-TEORIA-009).",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Vogal Canônica: Centro obrigatório da sílaba; 1 por sílaba (KB-A00-G02-ESTUDO-DA-SILABA-TEORIA-001).",
+            "Semivogal Canônica: Som brando de /i/ ou /u/ em apoio a uma vogal (KB-A00-G02-ESTUDO-DA-SILABA-TEORIA-002).",
+            "Ditongo Decrescente ($DD$): $V + SV$, inseparável ($DD \\neq H$) (KB-A00-G02-ESTUDO-DA-SILABA-TEORIA-003).",
+            "Ditongo Crescente ($DC$): $SV + V$, passível de virar hiato / proparoxítona eventual ($DC = H$) (KB-A00-G02-ESTUDO-DA-SILABA-TEORIA-003)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -429,6 +439,44 @@
         {
           "procedureId": "PROC-A00-G02-ESTUDO-DA-SILABA-TEORIA-001",
           "title": "Protocolo Mestre de Análise Fonética e Silábica",
+          "objective": "Executar o algoritmo decisório para Protocolo Mestre de Análise Fonética e Silábica",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo Mestre de Análise Fonética e Silábica."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura sintático-morfológica alvo de Protocolo Mestre de Análise Fonética e Silábica.",
+              "test": "Localizar o termo regente ou núcleo do segmento."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios decisórios da regra canônica.",
+              "test": "Verificar se há exceção ou caso facultativo aplicável."
+            },
+            {
+              "order": 3,
+              "action": "Concluir a classificação definitiva para resolução da questão.",
+              "test": "Confrontar o resultado obtido com as alternativas da prova."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo Mestre de Análise Fonética e Silábica."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -443,6 +491,22 @@
         {
           "contrastId": "CONTRAST-IP-A00-G02-001",
           "title": "Tabela Comparativa de Fenômenos Fonéticos",
+          "contrastType": "mixed",
+          "conceptA": "Tabela Comparativa de Fenômenos Fonéticos",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -511,6 +575,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G02-001",
           "title": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-001 — Resolução Completa: \"Queijo\"",
+          "prompt": "Palavra: Queijo | Separação: quei-jo",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Palavra",
+              "rationale": "Queijo | Separação: quei-jo"
+            },
+            {
+              "order": 2,
+              "action": "Análise dos Fenômenos",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "QU",
+              "rationale": "O U é mudo $\\rightarrow$ Dígrafo Consonantal (elimina a hipótese de tritongo)."
+            },
+            {
+              "order": 4,
+              "action": "EI",
+              "rationale": "$E$ (Vogal) + $I$ (Semivogal) na mesma sílaba $\\rightarrow$ Ditongo Decrescente."
+            },
+            {
+              "order": 5,
+              "action": "Cômputo",
+              "rationale": "6 Letras, 5 Fonemas ($6 - 1 = 5$)."
+            }
+          ],
+          "result": "Cômputo: 6 Letras, 5 Fonemas ($6 - 1 = 5$).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-001 — Resolução Completa: \"Queijo\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-001 — Resolução Completa: \"Queijo\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-001 — Resolução Completa: \"Queijo\".",
           "blocks": [
             {
               "type": "list",
@@ -528,6 +624,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G02-002",
           "title": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-002 — Resolução Completa: \"Quebranto\"",
+          "prompt": "Palavra: Quebranto | Separação: que-bran-to",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Palavra",
+              "rationale": "Quebranto | Separação: que-bran-to"
+            },
+            {
+              "order": 2,
+              "action": "Análise dos Fenômenos",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "QU",
+              "rationale": "O U é mudo $\\rightarrow$ Dígrafo Consonantal."
+            },
+            {
+              "order": 4,
+              "action": "BR",
+              "rationale": "$B$ e $R$ são ouvidos $\\rightarrow$ Encontro Consonantal Perfeito."
+            },
+            {
+              "order": 5,
+              "action": "AN",
+              "rationale": "$N$ nasaliza o $A$ $\\rightarrow$ Dígrafo Vocálico."
+            }
+          ],
+          "result": "Cômputo: 9 Letras, 7 Fonemas ($9 - 2 = 7$).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-002 — Resolução Completa: \"Quebranto\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-002 — Resolução Completa: \"Quebranto\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-002 — Resolução Completa: \"Quebranto\".",
           "blocks": [
             {
               "type": "list",
@@ -547,6 +675,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G02-003",
           "title": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-003 — Resolução Completa: \"Uruguai\" e \"Quais\"",
+          "prompt": "Uruguai: u-ru-guai $\\rightarrow$ Na sílaba guai, temos $U (SV) + A (V) + I (SV) \\rightarrow$ Tritongo Oral.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Uruguai",
+              "rationale": "u-ru-guai $\\rightarrow$ Na sílaba guai, temos $U (SV) + A (V) + I (SV) \\rightarrow$ Tritongo Oral."
+            },
+            {
+              "order": 2,
+              "action": "Quais",
+              "rationale": "quais (Monossílabo) $\\rightarrow U (SV) + A (V) + I (SV) \\rightarrow$ Tritongo Oral."
+            }
+          ],
+          "result": "Quais: quais (Monossílabo) $\\rightarrow U (SV) + A (V) + I (SV) \\rightarrow$ Tritongo Oral.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-003 — Resolução Completa: \"Uruguai\" e \"Quais\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-003 — Resolução Completa: \"Uruguai\" e \"Quais\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-003 — Resolução Completa: \"Uruguai\" e \"Quais\".",
           "blocks": [
             {
               "type": "list",
@@ -561,6 +706,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G02-004",
           "title": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-004 — Resolução Completa: \"Enxurrada\"",
+          "prompt": "Palavra: Enxurrada | Separação: en-xur-ra-da",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Palavra",
+              "rationale": "Enxurrada | Separação: en-xur-ra-da"
+            },
+            {
+              "order": 2,
+              "action": "Análise dos Fenômenos",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "EN",
+              "rationale": "Dígrafo Vocálico."
+            },
+            {
+              "order": 4,
+              "action": "X",
+              "rationale": "Fonema $/x/$."
+            },
+            {
+              "order": 5,
+              "action": "RR",
+              "rationale": "Dígrafo Consonantal Separável."
+            }
+          ],
+          "result": "Cômputo: 9 Letras, 7 Fonemas ($9 - 2 = 7$).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-004 — Resolução Completa: \"Enxurrada\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-004 — Resolução Completa: \"Enxurrada\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-004 — Resolução Completa: \"Enxurrada\".",
           "blocks": [
             {
               "type": "list",
@@ -579,6 +756,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G02-005",
           "title": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-005 — Resolução Completa: \"Aguento\"",
+          "prompt": "Palavra: Aguento | Separação: a-guen-to",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Palavra",
+              "rationale": "Aguento | Separação: a-guen-to"
+            },
+            {
+              "order": 2,
+              "action": "Análise dos Fenômenos",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "gue",
+              "rationale": "O U é pronunciado como semivogal $\\rightarrow$ Ditongo Crescente (ue)."
+            },
+            {
+              "order": 4,
+              "action": "en",
+              "rationale": "O N nasaliza a vogal $E \\rightarrow$ Dígrafo Vocálico."
+            },
+            {
+              "order": 5,
+              "action": "Cômputo",
+              "rationale": "7 Letras, 6 Fonemas ($7 - 1 = 6$)."
+            }
+          ],
+          "result": "Cômputo: 7 Letras, 6 Fonemas ($7 - 1 = 6$).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-005 — Resolução Completa: \"Aguento\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-005 — Resolução Completa: \"Aguento\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-005 — Resolução Completa: \"Aguento\".",
           "blocks": [
             {
               "type": "list",
@@ -596,6 +805,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G02-006",
           "title": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-006 — Resolução Completa: \"Sexo\" e \"Tóxico\" (Dífono)",
+          "prompt": "Sexo: se-xo $\\rightarrow$ O grafema X tem som de $/ks/ \\rightarrow$ Dífono. Contagem: 4 Letras, 5 Fonemas ($4 + 1 = 5$).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Sexo",
+              "rationale": "se-xo $\\rightarrow$ O grafema X tem som de $/ks/ \\rightarrow$ Dífono. Contagem: 4 Letras, 5 Fonemas ($4 + 1 = 5$)."
+            },
+            {
+              "order": 2,
+              "action": "Tóxico",
+              "rationale": "tó-xi-co $\\rightarrow$ O grafema X tem som de $/ks/ \\rightarrow$ Dífono. Contagem: 6 Letras, 7 Fonemas ($6 + 1 = 7$)."
+            }
+          ],
+          "result": "Tóxico: tó-xi-co $\\rightarrow$ O grafema X tem som de $/ks/ \\rightarrow$ Dífono. Contagem: 6 Letras, 7 Fonemas ($6 + 1 = 7$).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-006 — Resolução Completa: \"Sexo\" e \"Tóxico\" (Dífono) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-006 — Resolução Completa: \"Sexo\" e \"Tóxico\" (Dífono).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-006 — Resolução Completa: \"Sexo\" e \"Tóxico\" (Dífono).",
           "blocks": [
             {
               "type": "list",
@@ -610,6 +836,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G02-007",
           "title": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007 — Bateria Sintética de Fixação",
+          "prompt": "| Nº | Palavra | Divisão Silábica | Classificação Vocálica / Consonantal | Letras ($L$) | Fonemas ($F$) | |",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"| Nº | Palavra | Divisão Silábica | Classificação Vocálica /...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "| 18 | Descer | des-cer | Dígrafo Consonantal Separável (SC) | 6 | 5 |",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007 — Bateria Sintética de Fixação sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007 — Bateria Sintética de Fixação.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007 — Bateria Sintética de Fixação.",
           "blocks": [
             {
               "type": "paragraph",
@@ -803,7 +1051,41 @@
       "officialAnswer": "A",
       "explanation": "Vejamos a separação das sílabas e classificação de cada palavra: PA - Í - SES - paroxítona acentuada por apresentar hiato na penúltima sílaba. LÍN - GUAS - paroxítona acentuada por terminar em ditongo crescente (semivogal + vogal). Portanto, as duas palavras são paroxítonas, mas são acentuadas por justificativas diferentes. Gabarito letra A.",
       "questionSha256": "8ce52543f0329d423e413c1e95a76b68f6bfd1bda6adf5e98bbe7cc7d4683dd0",
-      "answerSha256": "0926d1e76da41988e4b855d002c98a64a37d4c5ffe9c0d7b50cfe03b9e26257b"
+      "answerSha256": "0926d1e76da41988e4b855d002c98a64a37d4c5ffe9c0d7b50cfe03b9e26257b",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Estudo da Sílaba - Teoria; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "correct",
+          "explanation": "Opção a: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        },
+        {
+          "optionLabel": "b",
+          "status": "incorrect",
+          "explanation": "Opção b: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        },
+        {
+          "optionLabel": "c",
+          "status": "incorrect",
+          "explanation": "Opção c: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        },
+        {
+          "optionLabel": "e",
+          "status": "incorrect",
+          "explanation": "Opção e: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        }
+      ]
     },
     {
       "questionId": "aula00.q0180",
@@ -836,7 +1118,41 @@
       ],
       "officialAnswer": "A",
       "questionSha256": "0124c0f097492a04e98557b1926ff09203fa14af4197c18cb09cd7c744acf981",
-      "answerSha256": "f2330364324cfb3b4031b53c665e0d67488053af753e9184f5e1330fb4fd6721"
+      "answerSha256": "f2330364324cfb3b4031b53c665e0d67488053af753e9184f5e1330fb4fd6721",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Estudo da Sílaba - Teoria; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "correct",
+          "explanation": "Opção a: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        },
+        {
+          "optionLabel": "b",
+          "status": "incorrect",
+          "explanation": "Opção b: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        },
+        {
+          "optionLabel": "c",
+          "status": "incorrect",
+          "explanation": "Opção c: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        },
+        {
+          "optionLabel": "e",
+          "status": "incorrect",
+          "explanation": "Opção e: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        }
+      ]
     },
     {
       "questionId": "aula00.q0113",
@@ -870,7 +1186,41 @@
       "officialAnswer": "B",
       "explanation": "“paÍses” e “prejuÍzos”, assim como \"conteúdo\", são acentuadas pela regra do hiato. \"inúmeros\" é acentuado pela regra da proparoxítona. \"heróis\" é acentuada por ser oxítona terminada em ditongo aberto. Gabarito letra B.",
       "questionSha256": "c6799439af661b4e673bfcb693b70782b1b09c6d42b28cf9106693cdb2ea066b",
-      "answerSha256": "7733e834513d42829ac6ca8f8c243f098f9b8890dc61e47288358b0288960a82"
+      "answerSha256": "7733e834513d42829ac6ca8f8c243f098f9b8890dc61e47288358b0288960a82",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Estudo da Sílaba - Teoria; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "incorrect",
+          "explanation": "Opção a: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        },
+        {
+          "optionLabel": "b",
+          "status": "correct",
+          "explanation": "Opção b: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        },
+        {
+          "optionLabel": "c",
+          "status": "incorrect",
+          "explanation": "Opção c: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        },
+        {
+          "optionLabel": "e",
+          "status": "incorrect",
+          "explanation": "Opção e: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        }
+      ]
     },
     {
       "questionId": "aula00.q0204",
@@ -903,7 +1253,41 @@
       ],
       "officialAnswer": "B",
       "questionSha256": "1e50450e114e22590c59d50b31bf42b2b43c1f49527bc6ee38d19cf29e779136",
-      "answerSha256": "be17e87315f034cd80dce36c86191155349b14372708bddbd7255a8606b472a2"
+      "answerSha256": "be17e87315f034cd80dce36c86191155349b14372708bddbd7255a8606b472a2",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Estudo da Sílaba - Teoria; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "incorrect",
+          "explanation": "Opção a: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        },
+        {
+          "optionLabel": "b",
+          "status": "correct",
+          "explanation": "Opção b: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        },
+        {
+          "optionLabel": "c",
+          "status": "incorrect",
+          "explanation": "Opção c: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        },
+        {
+          "optionLabel": "e",
+          "status": "incorrect",
+          "explanation": "Opção e: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        }
+      ]
     },
     {
       "questionId": "aula00.q0007",
@@ -933,7 +1317,35 @@
       "officialAnswer": "C",
       "explanation": "Em Com-pra-va, palavra paroxítona, temos encontro consonantal PR e dígrafo vocálico em OM. O dígrafo tem duas letras e representa só um fonema. Por isso, a palavra tem 8 letras e só 7 fonemas. Gabarito letra C. Dígrafo Nasal X Ditongo Nasal O dígrafo é a união de duas letras que formam um único som (UM SOM). Ocorre com M ou N após uma vogal antes de outra sílaba, em que o M ou N apenas nasaliza a vogal, funcionando exatamente como um til: ẽ - ENtre - O EN representa um único som, o som da vogal nasal ẽ ĩ - IMpor - O IM representa um único som, o som da vogal nasal ĩ ã - AMplo - O AM representa um único som, o som da vogal nasal ã O ditongo tem dois sons vocálicos, de uma vogal (+forte) e uma semivogal (+fraco) Então, o ditongo nasal tem DOIS SONS de vogal. Ocorre no final da palavra: ChegAM: chegÃU Portanto: Dígrafo, um som nasal (UM SOM): ã - AMplo X Ditongo, DOIS SONS: ChegAM: chegÃU DÍGRAFO NASAL DITONGO NASAL Duas letras que representam som vocálico nasal Duas letras (am / em) que representam dois sons, portanto dois fonemas. Ocorrem no final das palavras AM Ampola Falam Batem Cantam Alguém Cem Ninguém Ontem EM Emprego IM Limpeza OM Ombro UM Jejum AN Canto EN Venda IN Mingau ON Ontem UN Mundo",
       "questionSha256": "4bd2aeeab2276e37eb3e02141fe96b2e91795e72048643423c3020674ea3c2bc",
-      "answerSha256": "bf2e9b122234b5537f7d29b8a29576e6fbdd0b75975e771a5f75c04943c26cec"
+      "answerSha256": "bf2e9b122234b5537f7d29b8a29576e6fbdd0b75975e771a5f75c04943c26cec",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de UEPB; 2. Identificar a regra central de Estudo da Sílaba - Teoria; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "incorrect",
+          "explanation": "Opção a: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        },
+        {
+          "optionLabel": "c",
+          "status": "correct",
+          "explanation": "Opção c: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        },
+        {
+          "optionLabel": "b",
+          "status": "incorrect",
+          "explanation": "Opção b: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Estudo da Sílaba - Teoria."
+        }
+      ]
     },
     {
       "questionId": "aula00.q0074",
@@ -946,7 +1358,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Há erro ortográfico. Hiatos com “ee” e “oo”, como “veem” e “doo”, não são acentuados. Gabarito: Errado.",
       "questionSha256": "35948da9c208f32d12fab2ff610238ea7a916d9a835cf1aaa46abda1c6af2f66",
-      "answerSha256": "dd229a082bedb2f57ca7cd18318b63b233bc9e46a6b9774660174eb3ccbd13cc"
+      "answerSha256": "dd229a082bedb2f57ca7cd18318b63b233bc9e46a6b9774660174eb3ccbd13cc",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Estudo da Sílaba - Teoria; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

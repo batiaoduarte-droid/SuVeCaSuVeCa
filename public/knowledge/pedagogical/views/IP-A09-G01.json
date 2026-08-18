@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A09-G01",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.863Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.609Z"
   },
   "unit": {
     "unitId": "IP-A09-G01",
@@ -397,6 +397,14 @@
         {
           "entityId": "RULE-IP-A09-G01-001",
           "title": "Regras canônicas",
+          "statement": "A tabela abaixo consolida as regras fundamentais do grupo G01 para consulta rápida:",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "paragraph",
@@ -529,6 +537,95 @@
         {
           "procedureId": "PROC-A09-G01-001",
           "title": "Protocolo do \"Farejador de Núcleo\" para Localização do Sujeito",
+          "objective": "Executar o algoritmo decisório para Protocolo do \"Farejador de Núcleo\" para Localização do Sujeito",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo do \"Farejador de Núcleo\" para Localização do Sujeito."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar o verbo ou a locução verbal",
+              "explanation": "Sublinhe a forma verbal na oração.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Formular a pergunta sintática direcionada",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Para seres humanos/animados",
+              "explanation": "Quem é que + [verbo]?",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Para conceitos/coisas/inanimados",
+              "explanation": "O que é que + [verbo]?",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Isolar o sintagma nominal que responde integralmente à pergunta.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Descarte sistemático de termos preposicionados",
+              "explanation": "Risque ou elimine mentalmente todos os sintagmas introduzidos por preposição (de, em, a, com, por, para, crase às), pois termo preposicionado nunca é sujeito.",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Isolar o núcleo substantivo",
+              "explanation": "Identifique a palavra-base sem preposição e circule-a.",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Verificar a flexão",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Núcleo no singular $\\rightarrow$ Verbo no singular.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Núcleo no plural $\\rightarrow$ Verbo no plural.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Locução verbal $\\rightarrow$ Flexione apenas o verbo auxiliar.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo do \"Farejador de Núcleo\" para Localização do Sujeito."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -584,6 +681,44 @@
         {
           "procedureId": "PROC-A09-G01-002",
           "title": "Algoritmo Decisório para Funções do Pronome SE (PA vs. PIS vs. Realce)",
+          "objective": "Executar o algoritmo decisório para Algoritmo Decisório para Funções do Pronome SE (PA vs. PIS vs. Realce)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo Decisório para Funções do Pronome SE (PA vs. PIS vs. Realce)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura sintático-morfológica alvo de Algoritmo Decisório para Funções do Pronome SE (PA vs. PIS vs. Realce).",
+              "test": "Localizar o termo regente ou núcleo do segmento."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios decisórios da regra canônica.",
+              "test": "Verificar se há exceção ou caso facultativo aplicável."
+            },
+            {
+              "order": 3,
+              "action": "Concluir a classificação definitiva para resolução da questão.",
+              "test": "Confrontar o resultado obtido com as alternativas da prova."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo Decisório para Funções do Pronome SE (PA vs. PIS vs. Realce)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -603,6 +738,53 @@
         {
           "procedureId": "PROC-A09-G01-003",
           "title": "Protocolo de Decisão com Conjunção \"OU\" (\"O Que Vem Depois Salva\")",
+          "objective": "Executar o algoritmo decisório para Protocolo de Decisão com Conjunção \"OU\" (\"O Que Vem Depois Salva\")",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo de Decisão com Conjunção \"OU\" (\"O Que Vem Depois Salva\")."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize os substantivos ligados pela conjunção ou.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Examine o predicado posposto ao verbo (o complemento, predicativo ou circunstância).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Teste da exclusão",
+              "explanation": "Pergunte se a condição é exclusiva de um só agente (ex.: ser presidente, ser a capital, casar com alguém). Se sim $\\rightarrow$ Valor de Exclusão $\\rightarrow$ Verbo no singular.",
+              "test": "Teste da exclusão: Pergunte se a condição é exclusiva de um só agente (ex.: ser presidente, ser a capital, casar com alguém). Se sim $\\rightarrow$ Valor de Exclusão $\\rightarrow$ Verbo no singular."
+            },
+            {
+              "order": 4,
+              "action": "Teste da adição",
+              "explanation": "Substitua mentalmente ou por e. Se ambos puderem praticar a ação concomitantemente sem contradição semântica $\\rightarrow$ Valor de Adição $\\rightarrow$ Verbo no plural.",
+              "test": "Teste da adição: Substitua mentalmente ou por e. Se ambos puderem praticar a ação concomitantemente sem contradição semântica $\\rightarrow$ Valor de Adição $\\rightarrow$ Verbo no plural."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo de Decisão com Conjunção \"OU\" (\"O Que Vem Depois Salva\")."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -633,6 +815,53 @@
         {
           "procedureId": "PROC-A09-G01-004",
           "title": "Teste do \"ISSO\" para Identificação de Sujeito Oracional",
+          "objective": "Executar o algoritmo decisório para Teste do \"ISSO\" para Identificação de Sujeito Oracional",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste do \"ISSO\" para Identificação de Sujeito Oracional."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Ao encontrar uma oração subordinada ou infinitivo desempenhando função substantiva junto a um verbo principal, delimite todo o bloco oracional.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Substitua o bloco integralmente pelo pronome \"ISSO\".",
+              "explanation": null,
+              "test": "Substitua o bloco integralmente pelo pronome \"ISSO\"."
+            },
+            {
+              "order": 3,
+              "action": "Formule a frase reduzida",
+              "explanation": "Isso + verbo principal.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Constatada a equivalência, trave o verbo principal obrigatoriamente na 3ª pessoa do singular e o predicativo no masculino singular.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste do \"ISSO\" para Identificação de Sujeito Oracional."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -658,6 +887,22 @@
         {
           "contrastId": "CONTRAST-IP-A09-G01-001",
           "title": "8.1. Sujeito Anteposto vs. Sujeito Posposto ao Verbo",
+          "contrastType": "syntactic",
+          "conceptA": "8.1. Sujeito Anteposto vs. Sujeito Posposto ao Verbo",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -694,6 +939,22 @@
         {
           "contrastId": "CONTRAST-IP-A09-G01-002",
           "title": "8.2. Conectivo COM: Com Vírgulas vs. Sem Vírgulas",
+          "contrastType": "mixed",
+          "conceptA": "8.2. Conectivo COM: Com Vírgulas vs. Sem Vírgulas",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -728,6 +989,22 @@
         {
           "contrastId": "CONTRAST-IP-A09-G01-003",
           "title": "8.3. Sujeito Indeterminado vs. Oração Sem Sujeito",
+          "contrastType": "syntactic",
+          "conceptA": "8.3. Sujeito Indeterminado vs. Oração Sem Sujeito",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -773,6 +1050,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-001",
           "title": "Exemplos resolvidos",
+          "prompt": "Nesta seção, agrupam-se as 26 questões e exercícios resolvidos ao longo das 4 KBs de origem, categorizados por habilidade e fenômeno gramatical.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Nesta seção, agrupam-se as 26 questões e exercícios resolvid...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Exemplos resolvidos.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Exemplos resolvidos sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Exemplos resolvidos.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Exemplos resolvidos.",
           "blocks": [
             {
               "type": "paragraph",
@@ -783,6 +1082,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-002",
           "title": "EX-A09-G01-001 — Fixação de Sujeito Simples e Locuções (Frases 1 a 6)",
+          "prompt": "Itens e Resoluções:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Itens e Resoluções",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "\"Altamente irreais, suas palavras só contêm valores supérfluos.\" (Núcleo",
+              "rationale": "palavras [plural])."
+            },
+            {
+              "order": 3,
+              "action": "\"Fazem muito barulho aqueles meninos.\" (Núcleo",
+              "rationale": "meninos [plural])."
+            },
+            {
+              "order": 4,
+              "action": "\"Faltam vinte minutos para as dez horas.\" (Núcleo",
+              "rationale": "minutos [plural])."
+            },
+            {
+              "order": 5,
+              "action": "\"Devem existir dúvidas sobre aquele ponto...\" (Locução",
+              "rationale": "dúvidas é sujeito $\\rightarrow$ devem existir)."
+            }
+          ],
+          "result": "\"A ordem social e humana nem sempre se alcança sem o grotesco.\" (Núcleo: ordem [singular]).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-001 — Fixação de Sujeito Simples e Locuções (Frases 1 a 6) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-001 — Fixação de Sujeito Simples e Locuções (Frases 1 a 6).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-001 — Fixação de Sujeito Simples e Locuções (Frases 1 a 6).",
           "blocks": [
             {
               "type": "list",
@@ -808,6 +1139,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-003",
           "title": "EX-A09-G01-002 — Questão 01 — VUNESP (2019) — Pref. de Osasco - SP",
+          "prompt": "Análise sucinta: Avalia concordância com sujeitos antepostos e pospostos. Alternativa correta: \"Existem muitas câmeras instaladas ao longo da Avenida Paulista\" (O verbo pessoal existir concorda com o sujeito plural muitas câmeras).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Avalia concordância com sujeitos antepostos e pospostos. Alternativa correta: \"Existem muitas câmeras instaladas ao longo da Avenida Paulista\" (O verbo pessoal existir concorda com o sujeito plural muitas câmeras)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "E"
+            }
+          ],
+          "result": "Gabarito: E",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-002 — Questão 01 — VUNESP (2019) — Pref. de Osasco - SP sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-002 — Questão 01 — VUNESP (2019) — Pref. de Osasco - SP.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-002 — Questão 01 — VUNESP (2019) — Pref. de Osasco - SP.",
           "blocks": [
             {
               "type": "list",
@@ -822,6 +1170,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-004",
           "title": "EX-A09-G01-003 — Questão 05 — VUNESP (2018) — Pref. de Serrana - SP",
+          "prompt": "Análise sucinta: Locução verbal com sujeito plural: \"As mulheres vêm assinando metade dos artigos científicos...\" (Auxiliar vir flexionado na 3ª pessoa do plural com acento circunflexo diferencial).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Locução verbal com sujeito plural: \"As mulheres vêm assinando metade dos artigos científicos...\" (Auxiliar vir flexionado na 3ª pessoa do plural com acento circunflexo diferencial)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "A"
+            }
+          ],
+          "result": "Gabarito: A",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-003 — Questão 05 — VUNESP (2018) — Pref. de Serrana - SP sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-003 — Questão 05 — VUNESP (2018) — Pref. de Serrana - SP.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-003 — Questão 05 — VUNESP (2018) — Pref. de Serrana - SP.",
           "blocks": [
             {
               "type": "list",
@@ -836,6 +1201,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-005",
           "title": "EX-A09-G01-004 — Questão 06 — CESGRANRIO (2018) — Petrobras",
+          "prompt": "Análise sucinta: Distanciamento entre sujeito e locução verbal: \"Os avanços [obtidos pelo mundo na construção de uma agenda global] devem ser valorizados.\" (Núcleo plural avanços rege o auxiliar devem).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Distanciamento entre sujeito e locução verbal: \"Os avanços [obtidos pelo mundo na construção de uma agenda global] devem ser valorizados.\" (Núcleo plural avanços rege o auxiliar devem)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "E"
+            }
+          ],
+          "result": "Gabarito: E",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-004 — Questão 06 — CESGRANRIO (2018) — Petrobras sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-004 — Questão 06 — CESGRANRIO (2018) — Petrobras.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-004 — Questão 06 — CESGRANRIO (2018) — Petrobras.",
           "blocks": [
             {
               "type": "list",
@@ -850,6 +1232,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-006",
           "title": "EX-A09-G01-005 — Questão 08 — INSTITUTO AOCP (2019) — Cabo de Santo Agostinho - PE",
+          "prompt": "Análise sucinta: Justificativa morfossintática em \"surgiu nas empresas a necessidade...\". O verbo surgiu está no singular para concordar com o núcleo do sujeito posposto simples necessidade.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Justificativa morfossintática em \"surgiu nas empresas a necessidade...\". O verbo surgiu está no singular para concordar com o núcleo do sujeito posposto simples necessidade."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "D"
+            }
+          ],
+          "result": "Gabarito: D",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-005 — Questão 08 — INSTITUTO AOCP (2019) — Cabo de Santo Agostinho - PE sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-005 — Questão 08 — INSTITUTO AOCP (2019) — Cabo de Santo Agostinho - PE.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-005 — Questão 08 — INSTITUTO AOCP (2019) — Cabo de Santo Agostinho - PE.",
           "blocks": [
             {
               "type": "list",
@@ -864,6 +1263,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-007",
           "title": "EX-A09-G01-006 — Questão 10 — FCC (2019) — TRF 4ª Região",
+          "prompt": "Análise sucinta: Identificação de opção que exige plural: \"Constituem patrimônio histórico importante... as belas ruínas das igrejas...\" (Sujeito posposto plural: as belas ruínas).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Identificação de opção que exige plural: \"Constituem patrimônio histórico importante... as belas ruínas das igrejas...\" (Sujeito posposto plural: as belas ruínas)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "E"
+            }
+          ],
+          "result": "Gabarito: E",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-006 — Questão 10 — FCC (2019) — TRF 4ª Região sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-006 — Questão 10 — FCC (2019) — TRF 4ª Região.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-006 — Questão 10 — FCC (2019) — TRF 4ª Região.",
           "blocks": [
             {
               "type": "list",
@@ -878,6 +1294,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-008",
           "title": "EX-A09-G01-007 — Questão 13 — VUNESP (2021) — CODEN - SP",
+          "prompt": "Análise sucinta: Avaliação geral de concordância: \"Para a humanidade não existem soluções a curto prazo.\" (Verbo existir concorda com o sujeito plural posposto soluções).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Avaliação geral de concordância: \"Para a humanidade não existem soluções a curto prazo.\" (Verbo existir concorda com o sujeito plural posposto soluções)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "E"
+            }
+          ],
+          "result": "Gabarito: E",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-007 — Questão 13 — VUNESP (2021) — CODEN - SP sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-007 — Questão 13 — VUNESP (2021) — CODEN - SP.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-007 — Questão 13 — VUNESP (2021) — CODEN - SP.",
           "blocks": [
             {
               "type": "list",
@@ -892,6 +1325,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-009",
           "title": "EX-A09-G01-008 — Questão 15 — VUNESP (2018) — PC-SP",
+          "prompt": "Análise sucinta: Armadilha do conectivo e ligando adjuntos preposicionados: \"A falta [de investimentos na construção civil e de criação de novos canteiros] reforça a inquietude...\" (Núcleo único singular falta rege o verbo singular reforça).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Armadilha do conectivo e ligando adjuntos preposicionados: \"A falta [de investimentos na construção civil e de criação de novos canteiros] reforça a inquietude...\" (Núcleo único singular falta rege o verbo singular reforça)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "C"
+            }
+          ],
+          "result": "Gabarito: C",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-008 — Questão 15 — VUNESP (2018) — PC-SP sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-008 — Questão 15 — VUNESP (2018) — PC-SP.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-008 — Questão 15 — VUNESP (2018) — PC-SP.",
           "blocks": [
             {
               "type": "list",
@@ -906,6 +1356,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-010",
           "title": "EX-A09-G01-009 — Questão 16 — FCC (2018) — CLDF",
+          "prompt": "Análise sucinta: Sujeito composto anteposto exigindo plural: \"A arquitetura límpida e a perfeição melódica... evocam a ideia de um mundo harmônico.\" (Dois núcleos coordenados determinam flexão plural obrigatória).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Sujeito composto anteposto exigindo plural: \"A arquitetura límpida e a perfeição melódica... evocam a ideia de um mundo harmônico.\" (Dois núcleos coordenados determinam flexão plural obrigatória)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "C"
+            }
+          ],
+          "result": "Gabarito: C",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-009 — Questão 16 — FCC (2018) — CLDF sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-009 — Questão 16 — FCC (2018) — CLDF.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-009 — Questão 16 — FCC (2018) — CLDF.",
           "blocks": [
             {
               "type": "list",
@@ -920,6 +1387,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-011",
           "title": "EX-A09-G01-010 — Questão 18 — FGV — IBGE",
+          "prompt": "Análise sucinta: Identificação de estrutura idêntica a \"Água e luz avançam\": \"Norte e Nordeste registraram o menor tempo médio...\" (Sujeito composto anteposto com 2 núcleos + verbo no plural).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Identificação de estrutura idêntica a \"Água e luz avançam\": \"Norte e Nordeste registraram o menor tempo médio...\" (Sujeito composto anteposto com 2 núcleos + verbo no plural)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "C"
+            }
+          ],
+          "result": "Gabarito: C",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-010 — Questão 18 — FGV — IBGE sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-010 — Questão 18 — FGV — IBGE.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-010 — Questão 18 — FGV — IBGE.",
           "blocks": [
             {
               "type": "list",
@@ -934,6 +1418,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-012",
           "title": "EX-A09-G01-011 — Questão 20 — FGV — Magistério",
+          "prompt": "Análise sucinta: Conjunção OU com valor de exclusão mandatória: \"Portugal ou México será a sede do Congresso...\" (Apenas um país será a sede física; o emprego de \"serão\" na alternativa E é incorreto).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Conjunção OU com valor de exclusão mandatória: \"Portugal ou México será a sede do Congresso...\" (Apenas um país será a sede física; o emprego de \"serão\" na alternativa E é incorreto)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "E"
+            }
+          ],
+          "result": "Gabarito: E",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-011 — Questão 20 — FGV — Magistério sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-011 — Questão 20 — FGV — Magistério.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-011 — Questão 20 — FGV — Magistério.",
           "blocks": [
             {
               "type": "list",
@@ -948,6 +1449,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-013",
           "title": "EX-A09-G01-012 — Questão 21 — Instituto Excelência (2019) — Pref. Catanduvas - PR",
+          "prompt": "Análise sucinta: Identificação de erro: \"Durante muitos anos, a construção das estradas pavimentadas eram feitas...\" (Núcleo singular construção exige era feita).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Identificação de erro: \"Durante muitos anos, a construção das estradas pavimentadas eram feitas...\" (Núcleo singular construção exige era feita)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "A"
+            }
+          ],
+          "result": "Gabarito: A",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-012 — Questão 21 — Instituto Excelência (2019) — Pref. Catanduvas - PR sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-012 — Questão 21 — Instituto Excelência (2019) — Pref. Catanduvas - PR.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-012 — Questão 21 — Instituto Excelência (2019) — Pref. Catanduvas - PR.",
           "blocks": [
             {
               "type": "list",
@@ -962,6 +1480,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-014",
           "title": "EX-A09-G01-013 — Questão 22 — INSTITUTO AOCP (2019) — TJ-MG",
+          "prompt": "Análise sucinta: Trecho: \"...mas o amor ou o ódio, a piedade, a cólera, que aos primeiros homens lhes arrancaram as primeiras vozes\". O verbo está no plural para concordar com o antecedente composto enumerativo resgatado pelo pronome relativo que.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Trecho: \"...mas o amor ou o ódio, a piedade, a cólera, que aos primeiros homens lhes arrancaram as primeiras vozes\". O verbo está no plural para concordar com o antecedente composto enumerativo resgatado pelo pronome relativo que."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "C"
+            }
+          ],
+          "result": "Gabarito: C",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-013 — Questão 22 — INSTITUTO AOCP (2019) — TJ-MG sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-013 — Questão 22 — INSTITUTO AOCP (2019) — TJ-MG.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-013 — Questão 22 — INSTITUTO AOCP (2019) — TJ-MG.",
           "blocks": [
             {
               "type": "list",
@@ -976,6 +1511,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-015",
           "title": "EX-A09-G01-014 — Questão 02 — VUNESP (2021) — Pref. de Guarulhos - SP",
+          "prompt": "Análise sucinta: Voz passiva sintética: \"Por iniciativa de algumas entidades, empreendeu-se uma pesquisa na cidade de São Paulo.\" (Passiva analítica: uma pesquisa foi empreendida $\\rightarrow$ singular correto).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Voz passiva sintética: \"Por iniciativa de algumas entidades, empreendeu-se uma pesquisa na cidade de São Paulo.\" (Passiva analítica: uma pesquisa foi empreendida $\\rightarrow$ singular correto)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "B"
+            }
+          ],
+          "result": "Gabarito: B",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-014 — Questão 02 — VUNESP (2021) — Pref. de Guarulhos - SP sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-014 — Questão 02 — VUNESP (2021) — Pref. de Guarulhos - SP.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-014 — Questão 02 — VUNESP (2021) — Pref. de Guarulhos - SP.",
           "blocks": [
             {
               "type": "list",
@@ -990,6 +1542,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-016",
           "title": "EX-A09-G01-015 — Questão 03 — OBJETIVA (2019) — Pref. São João da Urtiga - RS",
+          "prompt": "Análise sucinta: Preenchimento de lacunas: 1) Alugam-se salas (PA, plural); 2) O relógio bateu seis horas (sujeito singular relógio); 3) não se veem as crianças (PA, plural).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Preenchimento de lacunas: 1) Alugam-se salas (PA, plural); 2) O relógio bateu seis horas (sujeito singular relógio); 3) não se veem as crianças (PA, plural)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "B"
+            }
+          ],
+          "result": "Gabarito: B",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-015 — Questão 03 — OBJETIVA (2019) — Pref. São João da Urtiga - RS sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-015 — Questão 03 — OBJETIVA (2019) — Pref. São João da Urtiga - RS.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-015 — Questão 03 — OBJETIVA (2019) — Pref. São João da Urtiga - RS.",
           "blocks": [
             {
               "type": "list",
@@ -1004,6 +1573,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-017",
           "title": "EX-A09-G01-016 — Questão 07 — VUNESP (2019) — Câmara de São Roque - SP",
+          "prompt": "Análise sucinta: Substituição ativa por passiva sintética: \"...não se podem fazer verificações desse tipo... pois se encontram à nossa disposição apenas os testemunhos...\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Substituição ativa por passiva sintética: \"...não se podem fazer verificações desse tipo... pois se encontram à nossa disposição apenas os testemunhos...\"."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "B"
+            }
+          ],
+          "result": "Gabarito: B",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-016 — Questão 07 — VUNESP (2019) — Câmara de São Roque - SP sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-016 — Questão 07 — VUNESP (2019) — Câmara de São Roque - SP.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-016 — Questão 07 — VUNESP (2019) — Câmara de São Roque - SP.",
           "blocks": [
             {
               "type": "list",
@@ -1018,6 +1604,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-018",
           "title": "EX-A09-G01-017 — Questão 11 — FCC (2018) — SABESP",
+          "prompt": "Análise sucinta: Correção de sujeito oracional: \"Demonstrar seus sentimentos e emoções não é fácil\" (Macete do \"ISSO\"). Alternativa A correta: \"Algumas pessoas têm o hábito de frequentar as redes sociais sem travar diálogos\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Correção de sujeito oracional: \"Demonstrar seus sentimentos e emoções não é fácil\" (Macete do \"ISSO\"). Alternativa A correta: \"Algumas pessoas têm o hábito de frequentar as redes sociais sem travar diálogos\"."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "A"
+            }
+          ],
+          "result": "Gabarito: A",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-017 — Questão 11 — FCC (2018) — SABESP sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-017 — Questão 11 — FCC (2018) — SABESP.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-017 — Questão 11 — FCC (2018) — SABESP.",
           "blocks": [
             {
               "type": "list",
@@ -1032,6 +1635,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-019",
           "title": "EX-A09-G01-018 — Questão 12 — INSTITUTO AOCP (2019) — IBGE",
+          "prompt": "Análise sucinta: Identificação da incorreta: \"Dá-se pistas para nós...\" (Deveria ser \"Dão-se pistas\", pois pistas é sujeito paciente plural).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Identificação da incorreta: \"Dá-se pistas para nós...\" (Deveria ser \"Dão-se pistas\", pois pistas é sujeito paciente plural)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "E"
+            }
+          ],
+          "result": "Gabarito: E",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-018 — Questão 12 — INSTITUTO AOCP (2019) — IBGE sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-018 — Questão 12 — INSTITUTO AOCP (2019) — IBGE.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-018 — Questão 12 — INSTITUTO AOCP (2019) — IBGE.",
           "blocks": [
             {
               "type": "list",
@@ -1046,6 +1666,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-020",
           "title": "EX-A09-G01-019 — Questão 14 — CESGRANRIO (2018) — Banco do Brasil",
+          "prompt": "Análise sucinta: Voz passiva sintética com sujeito composto posposto: \"...atribuem-se às cidades a responsabilidade... e a condição...\" (Concordância total no plural com os dois núcleos pacientes).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Voz passiva sintética com sujeito composto posposto: \"...atribuem-se às cidades a responsabilidade... e a condição...\" (Concordância total no plural com os dois núcleos pacientes)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "C"
+            }
+          ],
+          "result": "Gabarito: C",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-019 — Questão 14 — CESGRANRIO (2018) — Banco do Brasil sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-019 — Questão 14 — CESGRANRIO (2018) — Banco do Brasil.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-019 — Questão 14 — CESGRANRIO (2018) — Banco do Brasil.",
           "blocks": [
             {
               "type": "list",
@@ -1060,6 +1697,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-021",
           "title": "EX-A09-G01-020 — Questão 17 — INSTITUTO AOCP (2019) — PC-ES",
+          "prompt": "Análise sucinta: Passiva analítica com sujeito composto posposto: \"São trabalhadas palavras e atividades lúdicas.\" (Concordância no feminino plural).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Passiva analítica com sujeito composto posposto: \"São trabalhadas palavras e atividades lúdicas.\" (Concordância no feminino plural)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "B"
+            }
+          ],
+          "result": "Gabarito: B",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-020 — Questão 17 — INSTITUTO AOCP (2019) — PC-ES sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-020 — Questão 17 — INSTITUTO AOCP (2019) — PC-ES.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-020 — Questão 17 — INSTITUTO AOCP (2019) — PC-ES.",
           "blocks": [
             {
               "type": "list",
@@ -1074,6 +1728,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-022",
           "title": "EX-A09-G01-021 — Questão 19 — FGV (2021) — IMBEL",
+          "prompt": "Análise sucinta: Trecho: \"Onde intervém o favor e as doações, abate-se os obstáculos e desfaz-se as dificuldades\". Apenas a 1ª forma está correta (concordância atrativa com o favor); as demais trazem erros em voz passiva sintética (abatem-se, desfazem-se).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Trecho: \"Onde intervém o favor e as doações, abate-se os obstáculos e desfaz-se as dificuldades\". Apenas a 1ª forma está correta (concordância atrativa com o favor); as demais trazem erros em voz passiva sintética (abatem-se, desfazem-se)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "E"
+            }
+          ],
+          "result": "Gabarito: E",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-021 — Questão 19 — FGV (2021) — IMBEL sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-021 — Questão 19 — FGV (2021) — IMBEL.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-021 — Questão 19 — FGV (2021) — IMBEL.",
           "blocks": [
             {
               "type": "list",
@@ -1088,6 +1759,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-023",
           "title": "EX-A09-G01-022 — Questão 23 — VUNESP (2018) — Pref. de Barretos - SP",
+          "prompt": "Análise sucinta: Alternativa correta: \"Trata-se de obras densas, que enfocam a natureza humana...\" (VTI + PIS invariável no singular + pronome que retomando obras no plural).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Alternativa correta: \"Trata-se de obras densas, que enfocam a natureza humana...\" (VTI + PIS invariável no singular + pronome que retomando obras no plural)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "D"
+            }
+          ],
+          "result": "Gabarito: D",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-022 — Questão 23 — VUNESP (2018) — Pref. de Barretos - SP sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-022 — Questão 23 — VUNESP (2018) — Pref. de Barretos - SP.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-022 — Questão 23 — VUNESP (2018) — Pref. de Barretos - SP.",
           "blocks": [
             {
               "type": "list",
@@ -1102,6 +1790,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-024",
           "title": "EX-A09-G01-023 — Questão 24 — VUNESP (2019) — Pref. de Arujá - SP",
+          "prompt": "Análise sucinta: Reescrita de \"E há inaceitáveis 10% e 9%...\". Alternativa correta: \"E se trata de inaceitáveis 10% e 9%...\" (VTI + PIS invariável).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Reescrita de \"E há inaceitáveis 10% e 9%...\". Alternativa correta: \"E se trata de inaceitáveis 10% e 9%...\" (VTI + PIS invariável)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "C"
+            }
+          ],
+          "result": "Gabarito: C",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-023 — Questão 24 — VUNESP (2019) — Pref. de Arujá - SP sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-023 — Questão 24 — VUNESP (2019) — Pref. de Arujá - SP.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-023 — Questão 24 — VUNESP (2019) — Pref. de Arujá - SP.",
           "blocks": [
             {
               "type": "list",
@@ -1116,6 +1821,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-025",
           "title": "EX-A09-G01-024 — Questão 25 — VUNESP (2019) — ESEF - SP",
+          "prompt": "Análise sucinta: Alternativa correta: \"Buscando apartamento para alugar, vivem-se agruras.\" (VTD + PA = agruras são vividas). Destaca o erro em \"Passa-se muitos dias\" (deveria ser Passam-se, realce) e \"Tratam-se de\" (deveria ser Trata-se).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Alternativa correta: \"Buscando apartamento para alugar, vivem-se agruras.\" (VTD + PA = agruras são vividas). Destaca o erro em \"Passa-se muitos dias\" (deveria ser Passam-se, realce) e \"Tratam-se de\" (deveria ser Trata-se)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "A"
+            }
+          ],
+          "result": "Gabarito: A",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-024 — Questão 25 — VUNESP (2019) — ESEF - SP sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-024 — Questão 25 — VUNESP (2019) — ESEF - SP.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-024 — Questão 25 — VUNESP (2019) — ESEF - SP.",
           "blocks": [
             {
               "type": "list",
@@ -1130,6 +1852,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G01-026",
           "title": "EX-A09-G01-025 — Questão 26 — CESGRANRIO — ANP",
+          "prompt": "Análise sucinta: Alternativa correta: \"Nos filmes de ficção científica... previam-se inúmeras sociedades...\" (VTD + PA = inúmeras sociedades eram previstas). As demais trazem erros de flexão plural indevida em VTI + PIS (assistem-se a, necessitam-se de, obedecem-se a).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise sucinta",
+              "rationale": "Alternativa correta: \"Nos filmes de ficção científica... previam-se inúmeras sociedades...\" (VTD + PA = inúmeras sociedades eram previstas). As demais trazem erros de flexão plural indevida em VTI + PIS (assistem-se a, necessitam-se de, obedecem-se a)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "C"
+            }
+          ],
+          "result": "Gabarito: C",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G01-025 — Questão 26 — CESGRANRIO — ANP sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G01-025 — Questão 26 — CESGRANRIO — ANP.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G01-025 — Questão 26 — CESGRANRIO — ANP.",
           "blocks": [
             {
               "type": "list",
@@ -1180,8 +1919,12 @@
         {
           "trapId": "WARN-A09-G01-001",
           "title": "Distanciamento Sintático e Termos Atrativos Plurais Intercalados",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Distanciamento Sintático e Termos Atrativos Plurais Intercalados.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Distanciamento Sintático e Termos Atrativos Plurais Intercalados.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Distanciamento Sintático e Termos Atrativos Plurais Intercalados no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Distanciamento Sintático e Termos Atrativos Plurais Intercalados.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Distanciamento Sintático e Termos Atrativos Plurais Intercalados.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Distanciamento Sintático e Termos Atrativos Plurais Intercalados para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Distanciamento Sintático e Termos Atrativos Plurais Intercalados.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Distanciamento Sintático e Termos Atrativos Plurais Intercalados.",
           "blocks": [
             {
               "type": "list",
@@ -1197,8 +1940,12 @@
         {
           "trapId": "WARN-A09-G01-002",
           "title": "Preposição Impedindo o Vocábulo \"Relógio\" de ser Sujeito",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Preposição Impedindo o Vocábulo \"Relógio\" de ser Sujeito.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Preposição Impedindo o Vocábulo \"Relógio\" de ser Sujeito.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Preposição Impedindo o Vocábulo \"Relógio\" de ser Sujeito no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Preposição Impedindo o Vocábulo \"Relógio\" de ser Sujeito.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Preposição Impedindo o Vocábulo \"Relógio\" de ser Sujeito.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Preposição Impedindo o Vocábulo \"Relógio\" de ser Sujeito para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Preposição Impedindo o Vocábulo \"Relógio\" de ser Sujeito.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Preposição Impedindo o Vocábulo \"Relógio\" de ser Sujeito.",
           "blocks": [
             {
               "type": "list",
@@ -1214,8 +1961,12 @@
         {
           "trapId": "WARN-A09-G01-003",
           "title": "O Falso Sujeito Composto com Conectivo \"E\" sem Repetição de Artigo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Falso Sujeito Composto com Conectivo \"E\" sem Repetição de Artigo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Falso Sujeito Composto com Conectivo \"E\" sem Repetição de Artigo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Falso Sujeito Composto com Conectivo \"E\" sem Repetição de Artigo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Falso Sujeito Composto com Conectivo \"E\" sem Repetição de Artigo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Falso Sujeito Composto com Conectivo \"E\" sem Repetição de Artigo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Falso Sujeito Composto com Conectivo \"E\" sem Repetição de Artigo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Falso Sujeito Composto com Conectivo \"E\" sem Repetição de Artigo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Falso Sujeito Composto com Conectivo \"E\" sem Repetição de Artigo.",
           "blocks": [
             {
               "type": "list",
@@ -1231,8 +1982,12 @@
         {
           "trapId": "WARN-A09-G01-004",
           "title": "Termo Preposicionado ou Craseado Tratado como Sujeito Paciente",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Termo Preposicionado ou Craseado Tratado como Sujeito Paciente.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Termo Preposicionado ou Craseado Tratado como Sujeito Paciente.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Termo Preposicionado ou Craseado Tratado como Sujeito Paciente no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Termo Preposicionado ou Craseado Tratado como Sujeito Paciente.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Termo Preposicionado ou Craseado Tratado como Sujeito Paciente.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Termo Preposicionado ou Craseado Tratado como Sujeito Paciente para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Termo Preposicionado ou Craseado Tratado como Sujeito Paciente.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Termo Preposicionado ou Craseado Tratado como Sujeito Paciente.",
           "blocks": [
             {
               "type": "list",
@@ -1248,8 +2003,12 @@
         {
           "trapId": "WARN-A09-G01-005",
           "title": "Pluralização Indevida de Verbos com PIS Diante de Objeto Indireto Plural",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pluralização Indevida de Verbos com PIS Diante de Objeto Indireto Plural.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pluralização Indevida de Verbos com PIS Diante de Objeto Indireto Plural.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pluralização Indevida de Verbos com PIS Diante de Objeto Indireto Plural no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pluralização Indevida de Verbos com PIS Diante de Objeto Indireto Plural.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pluralização Indevida de Verbos com PIS Diante de Objeto Indireto Plural.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pluralização Indevida de Verbos com PIS Diante de Objeto Indireto Plural para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pluralização Indevida de Verbos com PIS Diante de Objeto Indireto Plural.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pluralização Indevida de Verbos com PIS Diante de Objeto Indireto Plural.",
           "blocks": [
             {
               "type": "list",
@@ -1265,8 +2024,12 @@
         {
           "trapId": "WARN-A09-G01-006",
           "title": "Atração Indevida de Plural em Sujeito Oracional Intercalado",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Atração Indevida de Plural em Sujeito Oracional Intercalado.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Atração Indevida de Plural em Sujeito Oracional Intercalado.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Atração Indevida de Plural em Sujeito Oracional Intercalado no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Atração Indevida de Plural em Sujeito Oracional Intercalado.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Atração Indevida de Plural em Sujeito Oracional Intercalado.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Atração Indevida de Plural em Sujeito Oracional Intercalado para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Atração Indevida de Plural em Sujeito Oracional Intercalado.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Atração Indevida de Plural em Sujeito Oracional Intercalado.",
           "blocks": [
             {
               "type": "list",

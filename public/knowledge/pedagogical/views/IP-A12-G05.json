@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A12-G05",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.901Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.653Z"
   },
   "unit": {
     "unitId": "IP-A12-G05",
@@ -443,6 +443,14 @@
         {
           "entityId": "RULE-IP-A12-G05-001",
           "title": "Quadro Sinótico de Relações Léxico-Semânticas",
+          "statement": "Quadro Sinótico de Relações Léxico-Semânticas",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Quadro Sinótico de Relações Léxico-Semânticas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -540,6 +548,16 @@
         {
           "entityId": "RULE-IP-A12-G05-002",
           "title": "Regras Canônicas Invariáveis",
+          "statement": "Regra da Distinção: Homônimos e parônimos possuem obrigatoriamente significados diferentes (KB-A12-G05-005).\nRegra de Ouro do Pronome Possessivo: O pronome seu/sua só gera ambiguidade se houver dois ou mais referentes de 3ª pessoa explícitos no próprio texto. O leitor/interlocutor nunca conta como referente textual (WARN-A12-G05-001).\nRegra de Inexistência Vocabular: A forma \"beneficiente\" não existe no vocabulário oficial da língua portuguesa; a única forma padrão é beneficente (WARN-A12-G05-003).\nRegra de Identidade de SC: O dígrafo sc antes de e ou i (/s/) torna acender e ascender rigorosamente homófonos, e não parônimos (WARN-A12-G05-007).",
+          "scope": "syntax",
+          "modality": "prohibited",
+          "conditions": [
+            "Regra da Distinção: Homônimos e parônimos possuem obrigatoriamente significados diferentes (KB-A12-G05-005).",
+            "Regra de Ouro do Pronome Possessivo: O pronome seu/sua só gera ambiguidade se houver dois ou mais referentes de 3ª pessoa explícitos no próprio texto. O leitor/interlocutor nunca conta como referente textual (WARN-A12-G05-001).",
+            "Regra de Inexistência Vocabular: A forma \"beneficiente\" não existe no vocabulário oficial da língua portuguesa; a única forma padrão é beneficente (WARN-A12-G05-003).",
+            "Regra de Identidade de SC: O dígrafo sc antes de e ou i (/s/) torna acender e ascender rigorosamente homófonos, e não parônimos (WARN-A12-G05-007)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -560,6 +578,44 @@
         {
           "procedureId": "PROC-A12-G05-001",
           "title": "Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias",
+          "objective": "Executar o algoritmo decisório para Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura sintático-morfológica alvo de Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias.",
+              "test": "Localizar o termo regente ou núcleo do segmento."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios decisórios da regra canônica.",
+              "test": "Verificar se há exceção ou caso facultativo aplicável."
+            },
+            {
+              "order": 3,
+              "action": "Concluir a classificação definitiva para resolução da questão.",
+              "test": "Confrontar o resultado obtido com as alternativas da prova."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -570,6 +626,107 @@
         {
           "procedureId": "PROC-A12-G05-002",
           "title": "Algoritmo de Identificação e Diferenciação entre Homônimos e Parônimos",
+          "objective": "Executar o algoritmo decisório para Algoritmo de Identificação e Diferenciação entre Homônimos e Parônimos",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo de Identificação e Diferenciação entre Homônimos e Parônimos."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Teste Fonético (Pronúncia Mental)",
+              "explanation": "Pronuncie os vocábulos confrontados:",
+              "test": "Teste Fonético (Pronúncia Mental): Pronuncie os vocábulos confrontados:"
+            },
+            {
+              "order": 2,
+              "action": "O som é 100% idêntico? Se sim, e as grafias diferirem, trata-se de Homônimos Homófonos (ex.",
+              "explanation": "conserto/concerto, sessão/seção/cessão).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Teste Gráfico (Ortografia Visual)",
+              "explanation": "Examine a escrita dos vocábulos:",
+              "test": "Teste Gráfico (Ortografia Visual): Examine a escrita dos vocábulos:"
+            },
+            {
+              "order": 4,
+              "action": "A grafia é 100% idêntica e o som muda (timbre)? Trata-se de Homônimos Homógrafos (ex.",
+              "explanation": "sede /ê/ vs. sede /é/).",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "A grafia e o som são ambos 100% idênticos? Trata-se de Homônimos Perfeitos (ex.",
+              "explanation": "manga/manga).",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Teste da Semelhança (Sem Igualdade)",
+              "explanation": "",
+              "test": "Teste da Semelhança (Sem Igualdade):"
+            },
+            {
+              "order": 7,
+              "action": "O som varia (troca de vogal/consoante) E a grafia também varia? Como nada é idêntico, trata-se de Parônimos (ex.",
+              "explanation": "eminente/iminente, aferir/auferir, despercebido/desapercebido).",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Inspeção Radical e Cognata",
+              "explanation": "Recorra à família morfológica da palavra para resgatar o sentido:",
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Diferir $\\rightarrow$ diferença / divergir.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Deferir $\\rightarrow$ deferimento / aprovar.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Cessão $\\rightarrow$ ceder.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 12,
+              "action": "Cerrou $\\rightarrow$ cerrado / fechar.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 13,
+              "action": "Serrou $\\rightarrow$ serra / cortar.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo de Identificação e Diferenciação entre Homônimos e Parônimos."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -637,6 +794,59 @@
         {
           "procedureId": "PROC-A12-G05-003",
           "title": "Identificação do Sentido Coesivo de Hiperônimos e Hipônimos",
+          "objective": "Executar o algoritmo decisório para Identificação do Sentido Coesivo de Hiperônimos e Hipônimos",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Identificação do Sentido Coesivo de Hiperônimos e Hipônimos."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identifique o termo antecedente (Termo 1) e o termo subsequente que o retoma (Termo 2).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Formule a pergunta de inclusão",
+              "explanation": "[Termo A] é uma espécie/tipo de [Termo B]?",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Mapeie a direção do fluxo textual",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se o texto partiu do específico para o geral (ex.",
+              "explanation": "o boi $\\rightarrow$ o animal): Retomada por Hiperônimo.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se o texto partiu do geral para o específico (ex.",
+              "explanation": "os animais $\\rightarrow$ o cavalo): Especificação por Hipônimo.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Identificação do Sentido Coesivo de Hiperônimos e Hipônimos."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -660,6 +870,53 @@
         {
           "procedureId": "PROC-A12-G05-004",
           "title": "Protocolo de Resolução de Questões Sem Destaque Gráfico (\"Sentir o Cheiro\")",
+          "objective": "Executar o algoritmo decisório para Protocolo de Resolução de Questões Sem Destaque Gráfico (\"Sentir o Cheiro\")",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo de Resolução de Questões Sem Destaque Gráfico (\"Sentir o Cheiro\")."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Leitura do Comando",
+              "explanation": "Observe se a banca busca a alternativa inadequada/incorreta ou a correta, e se restringiu a busca a parônimos ou homônimos.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Varredura Léxica (\"Sentir o Cheiro\")",
+              "explanation": "Escaneie cada opção em busca de vocábulos notórios do repertório de confusão semântica (eminente, ascender, expirar, emigrar, seção, despercebido).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Ancoragem Contextual",
+              "explanation": "Isole as palavras circundantes que impõem restrição de sentido (ex.: tribuna, vida, em Paris, entusiasmo, perfumes).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Validação do Par",
+              "explanation": "Confronte a palavra grafada com seu par correspondente. Se o significado exigido pelo contexto conflitar com a grafia presente, marque a opção.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo de Resolução de Questões Sem Destaque Gráfico (\"Sentir o Cheiro\")."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -684,6 +941,22 @@
         {
           "contrastId": "CONTRAST-IP-A12-G05-001",
           "title": "Tabela 1 — Ambiguidade Lexical vs. Ambiguidade Estrutural",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 1 — Ambiguidade Lexical vs. Ambiguidade Estrutural",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -725,6 +998,22 @@
         {
           "contrastId": "CONTRAST-IP-A12-G05-002",
           "title": "Tabela 2 — Homônimos Homófonos vs. Parônimos de Alta Recorrência",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 2 — Homônimos Homófonos vs. Parônimos de Alta Recorrência",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -853,6 +1142,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G05-001",
           "title": "EX-A12-G05-001 — Exemplos de Ambiguidade Estrutural nas Demonstrações Orais",
+          "prompt": "Gerúndio: João foi atrás do táxi correndo. (João corria a pé ou o táxi corria em alta velocidade?).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Gerúndio",
+              "rationale": "João foi atrás do táxi correndo. (João corria a pé ou o táxi corria em alta velocidade?)."
+            },
+            {
+              "order": 2,
+              "action": "Adjunto de Companhia",
+              "rationale": "Maria encontrou o gerente da loja com seu irmão. (O irmão pertencia a Maria ou ao gerente?)."
+            },
+            {
+              "order": 3,
+              "action": "Preposição \"de\" (Modo vs. Lugar)",
+              "rationale": "Meu pai foi embora da loja de sapatos. (O pai calçava sapatos ao sair ou saiu de um estabelecimento que vende sapatos?)."
+            },
+            {
+              "order": 4,
+              "action": "Adjetivo vs. Advérbio",
+              "rationale": "Comprou o carro rápido. (Carro veloz = adjetivo vs. comprou rapidamente = advérbio). Desambiguação: Comprou rápido o carro (advérbio) / Comprou o rápido carro (adjetivo)."
+            },
+            {
+              "order": 5,
+              "action": "Agente vs. Paciente",
+              "rationale": "A lembrança de meu pai alegrou-me. (O pai lembrou-se de algo = Adjunto Adnominal ativo vs. eu me lembrei do pai = Complemento Nominal passivo)."
+            }
+          ],
+          "result": "Agente vs. Paciente: A lembrança de meu pai alegrou-me. (O pai lembrou-se de algo = Adjunto Adnominal ativo vs. eu me lembrei do pai = Complemento Nominal passivo).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G05-001 — Exemplos de Ambiguidade Estrutural nas Demonstrações Orais sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G05-001 — Exemplos de Ambiguidade Estrutural nas Demonstrações Orais.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G05-001 — Exemplos de Ambiguidade Estrutural nas Demonstrações Orais.",
           "blocks": [
             {
               "type": "list",
@@ -870,6 +1191,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G05-002",
           "title": "EX-A12-G05-002 — Bateria de Fixação de Ambiguidade (8 Frases Codificadas)",
+          "prompt": "Tabela de Códigos do Exercício:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Tabela de Códigos do Exercício",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "(1) Mau uso da coordenação",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "(2) Mau uso das formas nominais",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "(3) Má colocação dos termos",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "(4) Má colocação dos pronomes",
+              "rationale": null
+            }
+          ],
+          "result": "(6) Imprecisão do vocábulo (ambiguidade lexical)",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G05-002 — Bateria de Fixação de Ambiguidade (8 Frases Codificadas) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G05-002 — Bateria de Fixação de Ambiguidade (8 Frases Codificadas).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G05-002 — Bateria de Fixação de Ambiguidade (8 Frases Codificadas).",
           "blocks": [
             {
               "type": "list",
@@ -953,6 +1306,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G05-003",
           "title": "EX-A12-G05-003 — Bateria de Fixação Guiada de Homônimos e Parônimos (10 Sentenças)",
+          "prompt": "As nuvens fizeram o temporal parecer iminente. (Parônimo de eminente; temporal prestes a ocorrer).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "As nuvens fizeram o temporal parecer iminente. (Parônimo de eminente; temporal prestes a ocorrer).",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Os assaltantes passaram despercebidos pelos vigias. (Parônimo de desapercebidos; não foram notados).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "O taxista nunca deixa de aferir o taxímetro. (Parônimo de auferir; ato de medir/calibrar).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Pensou em auferir grandes lucros. (Parônimo de aferir; ato de obter/colher lucros).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Ela comprou um aparelho na seção de artigos para o lar. (Homófono de sessão e cessão; setor/divisão da loja).",
+              "rationale": null
+            }
+          ],
+          "result": "Esta instituição beneficente ajuda os pobres. (Parônimo de forma inexistente; beneficiente NÃO EXISTE).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G05-003 — Bateria de Fixação Guiada de Homônimos e Parônimos (10 Sentenças) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G05-003 — Bateria de Fixação Guiada de Homônimos e Parônimos (10 Sentenças).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G05-003 — Bateria de Fixação Guiada de Homônimos e Parônimos (10 Sentenças).",
           "blocks": [
             {
               "type": "list",
@@ -975,6 +1360,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G05-004",
           "title": "EX-A12-G05-004 — Questão 21 (IBADE - 2022 - SES-MG - D01 - Área de Direito)",
+          "prompt": "Enunciado: A alternativa que contém INADEQUAÇÃO quanto ao emprego de homônimos ou de parônimos é:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) Cidadãos iminentes passaram por aquela tribuna.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "B) Organizaram uma festa beneficente em prol dos mais vulneráveis.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "C) O paço episcopal fica no centro daquela cidade interiorana.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "D) Receba o preito de nossa admiração pelo seu sucesso.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "E) O tráfico de escravos denegriu a história brasileira.",
+              "rationale": null
+            }
+          ],
+          "result": "Desenvolvimento e Resolução:",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G05-004 — Questão 21 (IBADE - 2022 - SES-MG - D01 - Área de Direito) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G05-004 — Questão 21 (IBADE - 2022 - SES-MG - D01 - Área de Direito).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G05-004 — Questão 21 (IBADE - 2022 - SES-MG - D01 - Área de Direito).",
           "blocks": [
             {
               "type": "paragraph",
@@ -1009,6 +1426,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G05-005",
           "title": "EX-A12-G05-005 — Questão 22 (Instituto Consulplan - 2021 - TJM-MG - Analista Judiciário)",
+          "prompt": "Enunciado: Avaliar a correção linguística em livre comentário temático:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) O eminente poeta afirmou que a simplicidade da vida deve ser valorizada por cada um de nós.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "B) Para acender na vida, é preciso não só muito trabalho e dedicação, mas também companheirismo.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "C) Muitas vezes o homem passa pelo outro com tanto desprezo que o seu semelhante passa a ser alguém desapercebido.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "D) A vivência humana requer o exercício da solidariedade para que aja o alcance dos objetivos estabelecidos para o coletivo.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Em A, eminente poeta está perfeito (ilustre).",
+              "rationale": null
+            }
+          ],
+          "result": "Desenvolvimento e Resolução:",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G05-005 — Questão 22 (Instituto Consulplan - 2021 - TJM-MG - Analista Judiciário) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G05-005 — Questão 22 (Instituto Consulplan - 2021 - TJM-MG - Analista Judiciário).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G05-005 — Questão 22 (Instituto Consulplan - 2021 - TJM-MG - Analista Judiciário).",
           "blocks": [
             {
               "type": "paragraph",
@@ -1044,6 +1493,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G05-006",
           "title": "EX-A12-G05-006 — Questão 23 (IBADE - SEE-AC - Assistente Educacional)",
+          "prompt": "Enunciado: No trecho \"...presença de cães nas sessões...\", a palavra destacada é comumente confundida com seção e cessão. Essas formas exemplificadas são empregos de:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) homônimas homógrafas.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "B) homônimas homófonas.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "C) homônimas perfeitas.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "D) parônimas.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "E) antônimas.",
+              "rationale": null
+            }
+          ],
+          "result": "Desenvolvimento e Resolução: Sessão, seção e cessão possuem idêntica realização fonética (som =) e grafias distintas (grafia ≠). São estritamente homônimas homófonas.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G05-006 — Questão 23 (IBADE - SEE-AC - Assistente Educacional) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G05-006 — Questão 23 (IBADE - SEE-AC - Assistente Educacional).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G05-006 — Questão 23 (IBADE - SEE-AC - Assistente Educacional).",
           "blocks": [
             {
               "type": "paragraph",
@@ -1076,6 +1557,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G05-007",
           "title": "EX-A12-G05-007 — Questão 24 (IBADE - Pref. São Felipe D'Oeste - RO)",
+          "prompt": "Enunciado: Considerando que passarão (verbo) e passarão (pássaro grande) são homônimos perfeitos, assinalar a alternativa que NÃO apresenta um par de homônimos (ou seja, apresenta parônimos):",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) cesto / sexto.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "B) sessão / cessão.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "C) cheque / xeque.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "D) calda / cauda.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "E) deferir / diferir.",
+              "rationale": null
+            }
+          ],
+          "result": "Desenvolvimento e Resolução:",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G05-007 — Questão 24 (IBADE - Pref. São Felipe D'Oeste - RO) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G05-007 — Questão 24 (IBADE - Pref. São Felipe D'Oeste - RO).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G05-007 — Questão 24 (IBADE - Pref. São Felipe D'Oeste - RO).",
           "blocks": [
             {
               "type": "paragraph",
@@ -1110,6 +1623,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G05-008",
           "title": "EX-A12-G05-008 — Questão 25 (FCC - TRE-PE - Técnico Judiciário)",
+          "prompt": "Enunciado: Assinalar o par grifado que constitui exemplo de parônimos:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) No espaço de uma noite / Pela manhã",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "B) caudaloso fluxo de águas sujas / violência barrenta das águas",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "C) Famílias eminentes / Eram iminentes os riscos",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "D) contenção do rio / concentração dos homens",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "E) mangas e cajus / mangas de camisa",
+              "rationale": null
+            }
+          ],
+          "result": "Desenvolvimento e Resolução:",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G05-008 — Questão 25 (FCC - TRE-PE - Técnico Judiciário) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G05-008 — Questão 25 (FCC - TRE-PE - Técnico Judiciário).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G05-008 — Questão 25 (FCC - TRE-PE - Técnico Judiciário).",
           "blocks": [
             {
               "type": "paragraph",
@@ -1144,6 +1689,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G05-009",
           "title": "EX-A12-G05-009 — Questão 26 (FCC - TJ-SE - Programador de Computador)",
+          "prompt": "Enunciado: Constituem parônimos os vocábulos grifados em:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) descrição pormenorizada / muita discrição",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "B) culminou com um protesto / Como protesto contra",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "C) invadiram a sede do clube / Com sede de vitória",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "D) bombas de fabricação caseira / soltaram-se bombas",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "E) Os feridos no confronto / ficaram feridos",
+              "rationale": null
+            }
+          ],
+          "result": "Desenvolvimento e Resolução:",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G05-009 — Questão 26 (FCC - TJ-SE - Programador de Computador) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G05-009 — Questão 26 (FCC - TJ-SE - Programador de Computador).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G05-009 — Questão 26 (FCC - TJ-SE - Programador de Computador).",
           "blocks": [
             {
               "type": "paragraph",
@@ -1179,6 +1756,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G05-010",
           "title": "EX-A12-G05-010 — Questão 27 (FGV - 2023 - Pref. São José dos Campos - SP)",
+          "prompt": "Enunciado: Assinale a frase em que houve troca indevida entre parônimos:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) Os emigrantes em Paris são numerosos.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "B) O time entrou em campo com o moral alto.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "C) O conserto do carro custou caro.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "D) Nessa conjuntura atual, todos se prejudicam.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "E) Foi feito o acerto de contas.",
+              "rationale": null
+            }
+          ],
+          "result": "Desenvolvimento e Resolução:",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G05-010 — Questão 27 (FGV - 2023 - Pref. São José dos Campos - SP) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G05-010 — Questão 27 (FGV - 2023 - Pref. São José dos Campos - SP).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G05-010 — Questão 27 (FGV - 2023 - Pref. São José dos Campos - SP).",
           "blocks": [
             {
               "type": "paragraph",
@@ -1215,6 +1824,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G05-011",
           "title": "EX-A12-G05-011 — Questão 28 (FGV - 2023 - SMF-RJ - Fiscal de Rendas)",
+          "prompt": "Enunciado: A frase em que a palavra sublinhada mostra emprego indevido em função de um parônimo é:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) Virtudes não são acidentes da natureza. Virtudes são algo que se constrói (acidente/incidente);",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "B) Uma ideia medíocre que desperta entusiasmo irá mais longe do que uma grande ideia que não expira entusiasmo algum (expirar/inspirar);",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "C) Coloque uma pitada de ousadia em tudo o que você fizer (pitada/pontada);",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "D) Para se chegar na fonte é preciso nadar contra a corrente (fonte/fronte);",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "E) Ninguém jamais se afogou em seu próprio suor (afogar / afagar).",
+              "rationale": null
+            }
+          ],
+          "result": "Desenvolvimento e Resolução:",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G05-011 — Questão 28 (FGV - 2023 - SMF-RJ - Fiscal de Rendas) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G05-011 — Questão 28 (FGV - 2023 - SMF-RJ - Fiscal de Rendas).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G05-011 — Questão 28 (FGV - 2023 - SMF-RJ - Fiscal de Rendas).",
           "blocks": [
             {
               "type": "paragraph",
@@ -1249,6 +1890,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G05-012",
           "title": "EX-A12-G05-012 — Questão 29 (FGV - 2022 - IBGE - Agente Censitário)",
+          "prompt": "Enunciado: Assinale a frase em que a forma sublinhada mostra uma forma de parônimo/homônimo mal empregada:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) O aumento era tão pequeno que passou despercebido.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "B) Ela trabalhava na seção de perfumes da loja.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "C) Falou acerca da situação política.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "D) Não estou feliz aqui; vou imigrar.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "E) Pensou em auferir grandes lucros.",
+              "rationale": null
+            }
+          ],
+          "result": "Desenvolvimento e Resolução:",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G05-012 — Questão 29 (FGV - 2022 - IBGE - Agente Censitário) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G05-012 — Questão 29 (FGV - 2022 - IBGE - Agente Censitário).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G05-012 — Questão 29 (FGV - 2022 - IBGE - Agente Censitário).",
           "blocks": [
             {
               "type": "paragraph",
@@ -1283,6 +1956,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G05-013",
           "title": "EX-A12-G05-013 — Questão 30 (CESPE / CEBRASPE - PC-RR - Auxiliar de Necropsia)",
+          "prompt": "Enunciado: Julgar o item: \"Gramaticalmente, são consideradas homógrafas palavras que têm a mesma grafia, mas sentidos diferentes. São exemplo disso as palavras 'sessão' e 'cessão'.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Certo",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Errado",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "Gabarito oficial",
+              "rationale": "Errado"
+            }
+          ],
+          "result": "Desenvolvimento e Resolução: O item define corretamente palavras homógrafas (mesma grafia), mas traz um exemplo falso: sessão (com s inicial) e cessão (com c inicial) possuem grafias manifestamente distintas, configurando homófonas, e não homógrafas.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G05-013 — Questão 30 (CESPE / CEBRASPE - PC-RR - Auxiliar de Necropsia) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G05-013 — Questão 30 (CESPE / CEBRASPE - PC-RR - Auxiliar de Necropsia).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G05-013 — Questão 30 (CESPE / CEBRASPE - PC-RR - Auxiliar de Necropsia).",
           "blocks": [
             {
               "type": "paragraph",
@@ -1378,8 +2073,12 @@
         {
           "trapId": "WARN-A12-G05-001",
           "title": "A Falsa Ambiguidade do Pronome Possessivo \"Seu\" e a Proibição de Extrapolação",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Falsa Ambiguidade do Pronome Possessivo \"Seu\" e a Proibição de Extrapolação.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Falsa Ambiguidade do Pronome Possessivo \"Seu\" e a Proibição de Extrapolação.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Falsa Ambiguidade do Pronome Possessivo \"Seu\" e a Proibição de Extrapolação no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Falsa Ambiguidade do Pronome Possessivo \"Seu\" e a Proibição de Extrapolação.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Falsa Ambiguidade do Pronome Possessivo \"Seu\" e a Proibição de Extrapolação.",
+          "correctReasoning": "O candidato lê a frase \"João gosta do seu pai\" e afirma haver ambiguidade, alegando que \"seu pai\" pode ser o pai do próprio leitor da prova (\"o seu pai / meu pai\").",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Falsa Ambiguidade do Pronome Possessivo \"Seu\" e a Proibição de Extrapolação.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Falsa Ambiguidade do Pronome Possessivo \"Seu\" e a Proibição de Extrapolação.",
           "blocks": [
             {
               "type": "heading",
@@ -1409,8 +2108,12 @@
         {
           "trapId": "WARN-A12-G05-002",
           "title": "A Falsa Premissa de que Toda Polissemia Gera Ambiguidade",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Falsa Premissa de que Toda Polissemia Gera Ambiguidade.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Falsa Premissa de que Toda Polissemia Gera Ambiguidade.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Falsa Premissa de que Toda Polissemia Gera Ambiguidade no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Falsa Premissa de que Toda Polissemia Gera Ambiguidade.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Falsa Premissa de que Toda Polissemia Gera Ambiguidade.",
+          "correctReasoning": "A simples presença de uma palavra polissêmica não torna a frase ambígua. A ambiguidade só se concretiza se os demais termos da oração falharem em restringir o sentido pretendido.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Falsa Premissa de que Toda Polissemia Gera Ambiguidade.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Falsa Premissa de que Toda Polissemia Gera Ambiguidade.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1421,8 +2124,12 @@
         {
           "trapId": "WARN-A12-G05-003",
           "title": "A Inexistência Ortográfica do Vocábulo \"Beneficiente\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Inexistência Ortográfica do Vocábulo \"Beneficiente\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Inexistência Ortográfica do Vocábulo \"Beneficiente\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Inexistência Ortográfica do Vocábulo \"Beneficiente\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Inexistência Ortográfica do Vocábulo \"Beneficiente\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Inexistência Ortográfica do Vocábulo \"Beneficiente\".",
+          "correctReasoning": "A forma \"beneficiente\" (com 'i' medial) constitui erro de hipercorreção popular por analogia a benefício. A forma padrão única registrada no VOLP é beneficente.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Inexistência Ortográfica do Vocábulo \"Beneficiente\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Inexistência Ortográfica do Vocábulo \"Beneficiente\".",
           "blocks": [
             {
               "type": "paragraph",
@@ -1433,8 +2140,12 @@
         {
           "trapId": "WARN-A12-G05-004",
           "title": "Confusão entre Despercebido e Desapercebido",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão entre Despercebido e Desapercebido.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão entre Despercebido e Desapercebido.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão entre Despercebido e Desapercebido no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão entre Despercebido e Desapercebido.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão entre Despercebido e Desapercebido.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão entre Despercebido e Desapercebido para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão entre Despercebido e Desapercebido.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão entre Despercebido e Desapercebido.",
           "blocks": [
             {
               "type": "list",
@@ -1449,8 +2160,12 @@
         {
           "trapId": "WARN-A12-G05-005",
           "title": "Confusão entre Homófonos e Parônimos por Proximidade Fonética",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão entre Homófonos e Parônimos por Proximidade Fonética.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão entre Homófonos e Parônimos por Proximidade Fonética.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão entre Homófonos e Parônimos por Proximidade Fonética no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão entre Homófonos e Parônimos por Proximidade Fonética.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão entre Homófonos e Parônimos por Proximidade Fonética.",
+          "correctReasoning": "Pares como acerca de e cerca de, ou eminente e iminente, não possuem som rigorosamente igual. Apresentam fonética e morfologia apenas semelhantes, devendo ser categorizados estritamente como parônimos.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão entre Homófonos e Parônimos por Proximidade Fonética.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão entre Homófonos e Parônimos por Proximidade Fonética.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1461,8 +2176,12 @@
         {
           "trapId": "WARN-A12-G05-006",
           "title": "A Inexistência de Sinonímia Universal e Absoluta",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Inexistência de Sinonímia Universal e Absoluta.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Inexistência de Sinonímia Universal e Absoluta.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Inexistência de Sinonímia Universal e Absoluta no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Inexistência de Sinonímia Universal e Absoluta.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Inexistência de Sinonímia Universal e Absoluta.",
+          "correctReasoning": "Não rejeite alternativas de substituição vocabular por pequenas nuances de estilo; a sinonímia avaliada em bancas de concurso opera por equivalência contextual e manutenção do sentido global.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Inexistência de Sinonímia Universal e Absoluta.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Inexistência de Sinonímia Universal e Absoluta.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1473,8 +2192,12 @@
         {
           "trapId": "WARN-A12-G05-007",
           "title": "Confusão Fonética e Hipercorreção em Acender vs. Ascender",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão Fonética e Hipercorreção em Acender vs. Ascender.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão Fonética e Hipercorreção em Acender vs. Ascender.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão Fonética e Hipercorreção em Acender vs. Ascender no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão Fonética e Hipercorreção em Acender vs. Ascender.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão Fonética e Hipercorreção em Acender vs. Ascender.",
+          "correctReasoning": "O dígrafo sc antes de e ou i soa como /s/. Acender e ascender são rigorosamente homófonos. A distinção é puramente gráfica e semântica (atear fogo vs. elevar-se).",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão Fonética e Hipercorreção em Acender vs. Ascender.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão Fonética e Hipercorreção em Acender vs. Ascender.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1485,8 +2208,12 @@
         {
           "trapId": "WARN-A12-G05-008",
           "title": "Distinção Crítica entre Acidente e Incidente na FGV",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Distinção Crítica entre Acidente e Incidente na FGV.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Distinção Crítica entre Acidente e Incidente na FGV.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Distinção Crítica entre Acidente e Incidente na FGV no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Distinção Crítica entre Acidente e Incidente na FGV.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Distinção Crítica entre Acidente e Incidente na FGV.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Distinção Crítica entre Acidente e Incidente na FGV para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Distinção Crítica entre Acidente e Incidente na FGV.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Distinção Crítica entre Acidente e Incidente na FGV.",
           "blocks": [
             {
               "type": "list",
@@ -1501,8 +2228,12 @@
         {
           "trapId": "WARN-A12-G05-009",
           "title": "Troca Indevida de Gênero Gramatical em \"O Moral\" vs. \"A Moral\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Troca Indevida de Gênero Gramatical em \"O Moral\" vs. \"A Moral\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Troca Indevida de Gênero Gramatical em \"O Moral\" vs. \"A Moral\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Troca Indevida de Gênero Gramatical em \"O Moral\" vs. \"A Moral\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Troca Indevida de Gênero Gramatical em \"O Moral\" vs. \"A Moral\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Troca Indevida de Gênero Gramatical em \"O Moral\" vs. \"A Moral\".",
+          "correctReasoning": "Em contextos de disposição psicológica, ânimo ou astral esportivo, o substantivo exige obrigatoriamente o gênero masculino (o moral alto). O feminino (a moral) designa a conduta ética ou a lição de uma fábula.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Troca Indevida de Gênero Gramatical em \"O Moral\" vs. \"A Moral\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Troca Indevida de Gênero Gramatical em \"O Moral\" vs. \"A Moral\".",
           "blocks": [
             {
               "type": "paragraph",
@@ -1643,7 +2374,10 @@
       "officialAnswer": "correct",
       "explanation": "Sim. Há duas leituras:\nQuando estão sozinhas, as mulheres fumam como chaminés (o adjetivo se refere a “mulheres”)\nFumam como chaminés que são sozinhas (o adjetivo se refere a chaminés)\nA ambiguidade é estrutural porque a posição do adjetivo poderia deixar claro o sentido\npretendido:\n“As mulheres sozinhas fumam feito chaminés” Questão correta.",
       "questionSha256": "4f63e05091398d973702f6d8d0b0565de5a901e89637eb14a4ce42dffc29590f",
-      "answerSha256": "751bd01be0678a1aaee4622fd6ef37eacf1650f6756785b0b771f1591b6fa741"
+      "answerSha256": "751bd01be0678a1aaee4622fd6ef37eacf1650f6756785b0b771f1591b6fa741",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Ambiguidade Homônimos e Parônimos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula12.q0154",
@@ -1655,7 +2389,10 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "b1d9d681b71469b8492cc71d8e28f57a860268c59bc70b8c8d39692e11bb7895",
-      "answerSha256": "3b9a4101bdcd537a859322f3bb6cb2c22245c370e62b83dc9dc5c44ac4ee5ca4"
+      "answerSha256": "3b9a4101bdcd537a859322f3bb6cb2c22245c370e62b83dc9dc5c44ac4ee5ca4",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Ambiguidade Homônimos e Parônimos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula12.q0015",
@@ -1688,7 +2425,50 @@
       "officialAnswer": "D",
       "explanation": "O vocábulo prender foi usado de forma ambígua, para criar humor: pode ser lido, de forma\nfigurada, como \"capturar a atenção\" do leitor; ou pode ser lido literalmente como prender de\nforma física, como aconteceu ao personagem.\nGabarito letra D.",
       "questionSha256": "e44f91caaee24532a7c72f573bb5355765c018e5a1041b336668a1a9b8b1b01d",
-      "answerSha256": "8dbe9000e7c861fc0af33bd67b02f6f1e5e8eff95fac815372353324104798a0"
+      "answerSha256": "8dbe9000e7c861fc0af33bd67b02f6f1e5e8eff95fac815372353324104798a0",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Ambiguidade Homônimos e Parônimos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "D",
+        "acceptedPedagogicalAnswers": [
+          "D"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A12-G05-CONFLICT-001-91",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Ambiguidade Homônimos e Parônimos."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Ambiguidade Homônimos e Parônimos."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Ambiguidade Homônimos e Parônimos."
+        },
+        {
+          "optionLabel": "D",
+          "status": "correct",
+          "explanation": "Opção D: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Ambiguidade Homônimos e Parônimos."
+        },
+        {
+          "optionLabel": "E",
+          "status": "incorrect",
+          "explanation": "Opção E: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Ambiguidade Homônimos e Parônimos."
+        }
+      ]
     },
     {
       "questionId": "aula12.q0014",
@@ -1700,7 +2480,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Perceba que o efeito de humor está construída em função da palavra “Nó”, que é uma medida\nnáutica (1,852 km/h). No plural, a palavra fica “nós”, que se confunde com o pronome pessoal\n“nós”, o que explica a ambiguidade da tira. Nesse caso, a ambiguidade é um “efeito” da\npolissemia, isto é, o uso de palavras polissêmicas pode gerar ambiguidade. Questão incorreta.",
       "questionSha256": "859ba4494cb10774f2a7b52f805b7559c484d26f9aee1220207e5ba4b3e77984",
-      "answerSha256": "bc94e352de9065daed0493ddc5a26222c29208ebb3cbdfa959fed5a69349c282"
+      "answerSha256": "bc94e352de9065daed0493ddc5a26222c29208ebb3cbdfa959fed5a69349c282",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Ambiguidade Homônimos e Parônimos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula12.q0017",
@@ -1733,7 +2516,50 @@
       "officialAnswer": "C",
       "explanation": "Conforme se aprende na aula de sintaxe, o termo preposicionado “do Ministro” pode ser lido\ncomo “agente” (aí seria um adjunto adnominal) ou “paciente” (aí seria um complemento\nnominal):\n1) O Ministro nomeou alguém e isso foi surpreendente.\n2) O Ministro foi nomeado e isso foi surpreendente.\nNas demais, não há outra leitura possível, além da literal. Gabarito letra C.",
       "questionSha256": "d5bafc20819013740d13c6384e25a407b542ba2a68cd12a9cccf276b5bce2c3c",
-      "answerSha256": "41c5801ddcbd492c69120e3f2526f7b7e32744479917a32f3d3b501c40986125"
+      "answerSha256": "41c5801ddcbd492c69120e3f2526f7b7e32744479917a32f3d3b501c40986125",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Ambiguidade Homônimos e Parônimos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "C",
+        "acceptedPedagogicalAnswers": [
+          "C"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A12-G05-CONFLICT-001-91",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Ambiguidade Homônimos e Parônimos."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Ambiguidade Homônimos e Parônimos."
+        },
+        {
+          "optionLabel": "C",
+          "status": "correct",
+          "explanation": "Opção C: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Ambiguidade Homônimos e Parônimos."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Ambiguidade Homônimos e Parônimos."
+        },
+        {
+          "optionLabel": "E",
+          "status": "incorrect",
+          "explanation": "Opção E: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Ambiguidade Homônimos e Parônimos."
+        }
+      ]
     },
     {
       "questionId": "aula12.q0088",
@@ -1746,7 +2572,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Cuidado, cada caso é um caso. Não haveria ambiguidade, porque aqui não há outro referente\npossível para o pronome relativo, a única possibilidade é “situações”, pois ele se defronta com\nsituações, não existe outro substantivo naquela oração. Questão incorreta.",
       "questionSha256": "b5f5058932b0e10bf48ae8e863508710172edaae348e4993a8ae529075559d3b",
-      "answerSha256": "4f2ada68119a99e340d2a6a82d3db0a2ee23b4cdb5eef4be732474f35f04188f"
+      "answerSha256": "4f2ada68119a99e340d2a6a82d3db0a2ee23b4cdb5eef4be732474f35f04188f",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Ambiguidade Homônimos e Parônimos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

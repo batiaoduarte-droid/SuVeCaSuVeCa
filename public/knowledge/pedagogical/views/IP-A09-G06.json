@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A09-G06",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.870Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.617Z"
   },
   "unit": {
     "unitId": "IP-A09-G06",
@@ -444,6 +444,16 @@
         {
           "entityId": "RULE-IP-A09-G06-001",
           "title": "Regras canônicas",
+          "statement": "Concordância Total (Gramatical): Flexão do adjetivo no plural que abrange a totalidade dos núcleos substantivos, aplicando-se a prevalência do masculino plural na presença de gêneros mistos ($M + F \\rightarrow M.Pl.$) — KB-A09-G06-002, KB-A09-G06-004.\nConcordância Atrativa (Parcial): Flexão do adjetivo que espelha estritamente o gênero e o número do núcleo substantivo gramaticalmente mais próximo no espaço oracional — KB-A09-G06-002, KB-A09-G06-004.\nPredicativo do Sujeito: Termo que qualifica o sujeito mediado por um verbo de ligação ou estado. Posposto exige Concordância Total; anteposto \"segue o verbo\" — KB-A09-G06-002.\nPredicativo do Objeto: Termo integrante que qualifica o objeto direto/indireto, sendo indispensável à estrutura semântica do predicado. Admite C.T. ou C.A. em qualquer posição sem alteração de sentido — KB-A09-G06-003.\nParticípio em Tempos Compostos: Verbo principal puro acompanhado dos auxiliares ter ou haver, invariável com terminação em -o — KB-A09-G06-005.\nParticípio em Voz Passiva Analítica: Verbo com função adjetiva acompanhado de auxiliares de estado (ser, estar, ficar), com flexão obrigatória em concordância com o sujeito paciente — KB-A09-G06-005.\nParticípios Abundantes: Bipartição funcional entre particípio regular (-do, com ter/haver) e particípio irregular/curto (incluso, ganho, pago, com ser/estar ou como adjetivo autônomo) — KB-A09-G06-006.\nBloqueio Preposicional: Princípio segundo o qual nenhum substantivo regido por preposição pode atuar como núcleo de sujeito ou governar concordância — KB-A09-G06-007.\nUnidirecionalidade: Princípio que determina que modificadores concordam com substantivos; substantivos nunca concordam com substantivos nem com adjetivos — KB-A09-G06-008.\nTríade do Cebraspe: Diferenciação funcional entre Correção Gramatical (norma), Sentido (ideias) e Coerência (lógica) — KB-A09-G06-010.\nColetivo Partitivo em Concordância Nominal: Expressões quantitativas com especificador plural que autorizam dupla concordância com preservação simultânea de correção e sentido — KB-A09-G06-011.",
+          "scope": "syntax",
+          "modality": "prohibited",
+          "conditions": [
+            "Concordância Total (Gramatical): Flexão do adjetivo no plural que abrange a totalidade dos núcleos substantivos, aplicando-se a prevalência do masculino plural na presença de gêneros mistos ($M + F \\rightarrow M.Pl.$) — KB-A09-G06-002, KB-A09-G06-004.",
+            "Concordância Atrativa (Parcial): Flexão do adjetivo que espelha estritamente o gênero e o número do núcleo substantivo gramaticalmente mais próximo no espaço oracional — KB-A09-G06-002, KB-A09-G06-004.",
+            "Predicativo do Sujeito: Termo que qualifica o sujeito mediado por um verbo de ligação ou estado. Posposto exige Concordância Total; anteposto \"segue o verbo\" — KB-A09-G06-002.",
+            "Predicativo do Objeto: Termo integrante que qualifica o objeto direto/indireto, sendo indispensável à estrutura semântica do predicado. Admite C.T. ou C.A. em qualquer posição sem alteração de sentido — KB-A09-G06-003."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -471,6 +481,101 @@
         {
           "procedureId": "PROC-A09-G06-001",
           "title": "Protocolo de Resolução por Setas Sintáticas e Isolamento de Núcleos",
+          "objective": "Executar o algoritmo decisório para Protocolo de Resolução por Setas Sintáticas e Isolamento de Núcleos",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo de Resolução por Setas Sintáticas e Isolamento de Núcleos."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar o termo flexionado",
+              "explanation": "Identificar a palavra sob análise (adjetivo, particípio, pronome adjetivo).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Perguntar ao termo qualificador",
+              "explanation": "Formular a pergunta \"Quem/O que é [qualificador]?\".",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Eliminar barreiras preposicionadas",
+              "explanation": "Riscar mentalmente adjuntos adnominais e complementos nominais introduzidos por preposição (de, do, da, em, com, por).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Isolar os núcleos substantivos sem preposição",
+              "explanation": "Identificar o substantivo central (\"farejador de núcleos\").",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Classificar gênero e número dos núcleos",
+              "explanation": "Anotar $M$ (masculino) ou $F$ (feminino) e se está no singular ou plural.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Identificar a função sintática e a posição relativa",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Adjunto Adnominal Posposto",
+              "explanation": "Aplicar C.T. ($M.Pl.$) ou C.A. (mais próximo).",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Adjunto Adnominal Anteposto",
+              "explanation": "Aplicar estritamente C.A. com o primeiro núcleo.",
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Predicativo do Sujeito Posposto",
+              "explanation": "Aplicar estritamente C.T. ($M.Pl.$ ou $F.Pl.$).",
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Predicativo do Sujeito Anteposto",
+              "explanation": "Seguir a flexão do verbo de ligação.",
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Predicativo do Objeto",
+              "explanation": "Aplicar C.T. ou C.A. indiferentemente.",
+              "test": null
+            },
+            {
+              "order": 12,
+              "action": "Particípio Passivo",
+              "explanation": "Concordar integralmente com o sujeito paciente.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo de Resolução por Setas Sintáticas e Isolamento de Núcleos."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -505,6 +610,59 @@
         {
           "procedureId": "PROC-A09-G06-002",
           "title": "Teste de Retirada para Identificação do Predicativo do Objeto",
+          "objective": "Executar o algoritmo decisório para Teste de Retirada para Identificação do Predicativo do Objeto",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Retirada para Identificação do Predicativo do Objeto."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar o adjetivo adjacente ao objeto",
+              "explanation": "Ex.: Encontrei a janela e o portão abertos.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Suprimir o adjetivo da oração",
+              "explanation": "Ex.: Encontrei a janela e o portão.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Avaliar a alteração semântica do verbo transitivo",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se a oração mantiver o mesmo significado da ação $\\rightarrow$ O adjetivo era mero Adjunto Adnominal (dispensável).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se a oração desfigurar o sentido contextual (o verbo encontrar deixar de expressar constatação de estado e passar a significar localização física de algo perdido) $\\rightarrow$ O adjetivo é Predicativo do Objeto (termo integrante indispensável).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Retirada para Identificação do Predicativo do Objeto."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -532,6 +690,59 @@
         {
           "procedureId": "PROC-A09-G06-003",
           "title": "Protocolo de Julgamento de Itens \"Deveria\" vs. \"Poderia\" (Padrão FGV / Cebraspe)",
+          "objective": "Executar o algoritmo decisório para Protocolo de Julgamento de Itens \"Deveria\" vs. \"Poderia\" (Padrão FGV / Cebraspe)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo de Julgamento de Itens \"Deveria\" vs. \"Poderia\" (Padrão FGV / Cebraspe)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Avaliar a oração original",
+              "explanation": "Identificar com qual substantivo o adjetivo concorda e verificar se a redação original é gramaticalmente correta.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Avaliar a nova concordância proposta",
+              "explanation": "Ligar o adjetivo ao outro substantivo do sintagma preposicionado e testar se a nova frase é gramatical e logicamente coerente.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Inspecionar o verbo modal do comando da banca",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se o comando diz \"DEVERIA estar no singular/plural\"",
+              "explanation": "Marcar ERRADO / INCORRETO, pois imputa erro inexistente à frase original.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se o comando diz \"PODERIA estar no singular/plural\"",
+              "explanation": "Marcar CERTO / CORRETO, desde que a assertiva reconheça a mudança de referente e a alteração do sentido original.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo de Julgamento de Itens \"Deveria\" vs. \"Poderia\" (Padrão FGV / Cebraspe)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -559,6 +770,53 @@
         {
           "procedureId": "PROC-A09-G06-004",
           "title": "Teste do \"Ler o que vem Depois\" no Modelo CEBRASPE",
+          "objective": "Executar o algoritmo decisório para Teste do \"Ler o que vem Depois\" no Modelo CEBRASPE",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste do \"Ler o que vem Depois\" no Modelo CEBRASPE."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Mapear a nova seta sugerida pela banca",
+              "explanation": "Ligar o adjetivo flexionado no singular/plural ao substantivo candidato.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Ler obrigatoriamente o segmento textual subsequente ao adjetivo",
+              "explanation": "Nunca julgar o item olhando apenas para o par substantivo-adjetivo isolado.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Verificar a plausibilidade semântica no mundo real",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Em a transmissão dos saberes formulados ao longo da história, testar transmissão formulada ao longo da história",
+              "explanation": "o complemento ao longo da história denuncia que quem é construído historicamente são os saberes, e não o ato de transmissão $\\rightarrow$ Item ERRADO.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste do \"Ler o que vem Depois\" no Modelo CEBRASPE."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -585,6 +843,47 @@
         {
           "procedureId": "PROC-A09-G06-005",
           "title": "Estratégia de Resolução de Lacunas \"De Trás para Frente\" (Padrão VUNESP)",
+          "objective": "Executar o algoritmo decisório para Estratégia de Resolução de Lacunas \"De Trás para Frente\" (Padrão VUNESP)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Estratégia de Resolução de Lacunas \"De Trás para Frente\" (Padrão VUNESP)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar que a 1ª lacuna geralmente explora casos de dupla concordância permissiva (ex.",
+              "explanation": "adjunto adnominal posposto que admite total ou atrativa).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Inverter a ordem",
+              "explanation": "Analisar primeiro a 3ª lacuna e a 2ª lacuna, que contêm regras rígidas unívocas (sujeito simples ou predicativos fixos).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Eliminar as alternativas descartadas pelas lacunas finais unívocas, tornando a escolha da 1ª lacuna direta e imediata.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Estratégia de Resolução de Lacunas \"De Trás para Frente\" (Padrão VUNESP)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -608,6 +907,22 @@
         {
           "contrastId": "CONTRAST-IP-A09-G06-001",
           "title": "Tabela Comparativa das Funções Sintáticas e Comportamentos Flexionais",
+          "contrastType": "mixed",
+          "conceptA": "Tabela Comparativa das Funções Sintáticas e Comportamentos Flexionais",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -652,6 +967,22 @@
         {
           "contrastId": "CONTRAST-IP-A09-G06-002",
           "title": "Distinção entre Tempos Compostos e Voz Passiva Analítica",
+          "contrastType": "mixed",
+          "conceptA": "Distinção entre Tempos Compostos e Voz Passiva Analítica",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -698,6 +1029,22 @@
         {
           "contrastId": "CONTRAST-IP-A09-G06-003",
           "title": "Distinção de Comandos em Questões de Reescrita (Banca CEBRASPE)",
+          "contrastType": "discursive",
+          "conceptA": "Distinção de Comandos em Questões de Reescrita (Banca CEBRASPE)",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -742,6 +1089,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-001",
           "title": "EX-A09-G06-001 — Frase 12: Predicativo do Sujeito Posposto (Teoria)",
+          "prompt": "Estrutura analisada: A neve (F) e o jardim (M) eram . (branco)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura analisada",
+              "rationale": "A neve (F) e o jardim (M) eram . (branco)"
+            },
+            {
+              "order": 2,
+              "action": "Análise sintática",
+              "rationale": "Sujeito composto anteposto ($F + M$) + Verbo de ligação eram + Predicativo posposto."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "Exige obrigatoriamente Concordância Total no masculino plural."
+            },
+            {
+              "order": 4,
+              "action": "Forma correta",
+              "rationale": "A neve e o jardim eram brancos."
+            }
+          ],
+          "result": "Forma correta: A neve e o jardim eram brancos.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-001 — Frase 12: Predicativo do Sujeito Posposto (Teoria) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-001 — Frase 12: Predicativo do Sujeito Posposto (Teoria).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-001 — Frase 12: Predicativo do Sujeito Posposto (Teoria).",
           "blocks": [
             {
               "type": "list",
@@ -758,6 +1132,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-002",
           "title": "EX-A09-G06-002 — Frase 13: Predicativo do Sujeito Anteposto com Verbo no Plural (Teoria)",
+          "prompt": "Estrutura analisada: Eram  a neve e o jardim. (branco)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura analisada",
+              "rationale": "Eram  a neve e o jardim. (branco)"
+            },
+            {
+              "order": 2,
+              "action": "Análise sintática",
+              "rationale": "Verbo de ligação no plural (Eram) + Predicativo anteposto + Sujeito composto ($F + M$)."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O predicativo anteposto segue o verbo. Verbo no plural impõe Concordância Total."
+            },
+            {
+              "order": 4,
+              "action": "Forma correta",
+              "rationale": "Eram brancos a neve e o jardim."
+            }
+          ],
+          "result": "Forma correta: Eram brancos a neve e o jardim.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-002 — Frase 13: Predicativo do Sujeito Anteposto com Verbo no Plural (Teoria) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-002 — Frase 13: Predicativo do Sujeito Anteposto com Verbo no Plural (Teoria).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-002 — Frase 13: Predicativo do Sujeito Anteposto com Verbo no Plural (Teoria).",
           "blocks": [
             {
               "type": "list",
@@ -774,6 +1175,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-003",
           "title": "EX-A09-G06-003 — Frase 14: Predicativo do Sujeito Anteposto com Verbo no Singular (Teoria)",
+          "prompt": "Estrutura analisada: Era  a neve e o jardim. (branco)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura analisada",
+              "rationale": "Era  a neve e o jardim. (branco)"
+            },
+            {
+              "order": 2,
+              "action": "Análise sintática",
+              "rationale": "Verbo de ligação no singular (Era) + Predicativo anteposto + Sujeito composto ($F + M$)."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O predicativo anteposto segue o verbo. Verbo no singular impõe Concordância Atrativa com o primeiro núcleo (neve $\\rightarrow$ feminino singular)."
+            },
+            {
+              "order": 4,
+              "action": "Forma correta",
+              "rationale": "Era branca a neve e o jardim."
+            }
+          ],
+          "result": "Forma correta: Era branca a neve e o jardim.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-003 — Frase 14: Predicativo do Sujeito Anteposto com Verbo no Singular (Teoria) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-003 — Frase 14: Predicativo do Sujeito Anteposto com Verbo no Singular (Teoria).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-003 — Frase 14: Predicativo do Sujeito Anteposto com Verbo no Singular (Teoria).",
           "blocks": [
             {
               "type": "list",
@@ -790,6 +1218,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-004",
           "title": "EX-A09-G06-004 — Frase 15: Predicativo do Objeto Posposto (Teoria)",
+          "prompt": "Estrutura analisada: Encontrei a janela (F) e o portão (M)  / . (aberto)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura analisada",
+              "rationale": "Encontrei a janela (F) e o portão (M)  / . (aberto)"
+            },
+            {
+              "order": 2,
+              "action": "Análise sintática",
+              "rationale": "Verbo transitivo direto (Encontrei) + Objeto direto composto + Predicativo do objeto posposto."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "Admite livremente Concordância Total ou Concordância Atrativa."
+            },
+            {
+              "order": 4,
+              "action": "Formas corretas",
+              "rationale": "Encontrei a janela e o portão abertos (C.T.) / Encontrei a janela e o portão aberto (C.A. com portão)."
+            }
+          ],
+          "result": "Formas corretas: Encontrei a janela e o portão abertos (C.T.) / Encontrei a janela e o portão aberto (C.A. com portão).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-004 — Frase 15: Predicativo do Objeto Posposto (Teoria) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-004 — Frase 15: Predicativo do Objeto Posposto (Teoria).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-004 — Frase 15: Predicativo do Objeto Posposto (Teoria).",
           "blocks": [
             {
               "type": "list",
@@ -806,6 +1261,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-005",
           "title": "EX-A09-G06-005 — Frase 16: Predicativo do Objeto Anteposto (Teoria)",
+          "prompt": "Estrutura analisada: Encontrei (aberto)  /  a janela (F) e o portão (M).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura analisada",
+              "rationale": "Encontrei (aberto)  /  a janela (F) e o portão (M)."
+            },
+            {
+              "order": 2,
+              "action": "Análise sintática",
+              "rationale": "Verbo transitivo direto + Predicativo do objeto anteposto + Objeto direto composto."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "Admite livremente Concordância Total ou Concordância Atrativa com o primeiro núcleo."
+            },
+            {
+              "order": 4,
+              "action": "Formas corretas",
+              "rationale": "Encontrei abertos a janela e o portão (C.T.) / Encontrei aberta a janela e o portão (C.A. com janela)."
+            }
+          ],
+          "result": "Formas corretas: Encontrei abertos a janela e o portão (C.T.) / Encontrei aberta a janela e o portão (C.A. com janela).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-005 — Frase 16: Predicativo do Objeto Anteposto (Teoria) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-005 — Frase 16: Predicativo do Objeto Anteposto (Teoria).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-005 — Frase 16: Predicativo do Objeto Anteposto (Teoria).",
           "blocks": [
             {
               "type": "list",
@@ -822,6 +1304,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-006",
           "title": "EX-A09-G06-006 — Demonstração da Flexão de Particípios em Locuções (Teoria)",
+          "prompt": "Par contrastivo analisado:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Par contrastivo analisado",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "As paredes deviam ser pintadas. (Voz passiva analítica",
+              "rationale": "particípio concorda com o sujeito paciente feminino plural paredes)."
+            },
+            {
+              "order": 3,
+              "action": "A mulher tinha pintado a parede do quarto. (Tempo composto da voz ativa",
+              "rationale": "particípio invariável com o auxiliar tinha)."
+            }
+          ],
+          "result": "A mulher tinha pintado a parede do quarto. (Tempo composto da voz ativa: particípio invariável com o auxiliar tinha).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-006 — Demonstração da Flexão de Particípios em Locuções (Teoria) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-006 — Demonstração da Flexão de Particípios em Locuções (Teoria).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-006 — Demonstração da Flexão de Particípios em Locuções (Teoria).",
           "blocks": [
             {
               "type": "list",
@@ -843,6 +1347,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-007",
           "title": "EX-A09-G06-007 — Questão 06: VUNESP - Pref. Guarulhos (2019)",
+          "prompt": "Enunciado: Reescrita na voz passiva da frase \"O cineasta assina a fotografia e a montagem do filme.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Reescrita na voz passiva da frase \"O cineasta assina a fotografia e a montagem do filme.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "Sujeito composto paciente posposto: a fotografia (F.Sg.) e a montagem (F.Sg.). Predicativo/particípio posposto exige Concordância Total no feminino plural: são assinadas."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "Alternativa C."
+            }
+          ],
+          "result": "Gabarito Oficial: Alternativa C.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-007 — Questão 06: VUNESP - Pref. Guarulhos (2019) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-007 — Questão 06: VUNESP - Pref. Guarulhos (2019).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-007 — Questão 06: VUNESP - Pref. Guarulhos (2019).",
           "blocks": [
             {
               "type": "list",
@@ -858,6 +1384,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-008",
           "title": "EX-A09-G06-008 — Questão 07: CESGRANRIO - Liquigás (2018)",
+          "prompt": "Análise das alternativas:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise das alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "A) Incorreta (Alimentos [M] e prática [F]... são necessárias $\\rightarrow$ Exige necessários).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "B) Incorreta/Descartada (Inexistência [F] e falta [F]... são causadores $\\rightarrow$ Desarmonia de gênero em predicativo substantivado biforme; exige causadoras).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) Incorreta (Notícias [F] e boatos [M]... reproduzidas $\\rightarrow$ Exige reproduzidos).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) Correta (Plantas [F] e frutos [M] foram elogiados $\\rightarrow$ Voz passiva perfeita no masculino plural).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: Alternativa D.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-008 — Questão 07: CESGRANRIO - Liquigás (2018) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-008 — Questão 07: CESGRANRIO - Liquigás (2018).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-008 — Questão 07: CESGRANRIO - Liquigás (2018).",
           "blocks": [
             {
               "type": "list",
@@ -877,6 +1435,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-009",
           "title": "EX-A09-G06-009 — Questão 08: CESGRANRIO - Banco do Brasil (2021)",
+          "prompt": "Análise das alternativas:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise das alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "A) Correta (A capacitação dos técnicos [F] e o atendimento aos trabalhadores [M]... precisam ser desenvolvidos $\\rightarrow$ Sujeito composto misto na voz passiva exige masculino plural).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "B a E) Incorretas (Tentativas de concordância no feminino plural com sujeitos compostos que continham núcleos masculinos).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "Alternativa A."
+            }
+          ],
+          "result": "Gabarito Oficial: Alternativa A.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-009 — Questão 08: CESGRANRIO - Banco do Brasil (2021) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-009 — Questão 08: CESGRANRIO - Banco do Brasil (2021).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-009 — Questão 08: CESGRANRIO - Banco do Brasil (2021).",
           "blocks": [
             {
               "type": "list",
@@ -893,6 +1478,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-010",
           "title": "EX-A09-G06-010 — Questão 09: VUNESP - TJ-SP Escrevente (2021)",
+          "prompt": "Resolução por lacunas:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Resolução por lacunas",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "ª Lacuna",
+              "rationale": "...a meta (F) e até o limite (M) de tolerância [...] pelo Conselho... $\\rightarrow$ Adjunto posposto admite fixados (total) ou fixado (atrativa)."
+            },
+            {
+              "order": 3,
+              "action": "ª Lacuna",
+              "rationale": "...a alta (F.Sg.) de preços [...] no mercado... $\\rightarrow$ Núcleo alta exige estritamente estimada."
+            },
+            {
+              "order": 4,
+              "action": "ª Lacuna",
+              "rationale": "...Se as previsões (F.Pl.) estiverem [...]... $\\rightarrow$ Predicativo referente a previsões exige estritamente certas."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito Oficial",
+              "rationale": "Alternativa C (fixados... estimada... certas)."
+            }
+          ],
+          "result": "Gabarito Oficial: Alternativa C (fixados... estimada... certas).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-010 — Questão 09: VUNESP - TJ-SP Escrevente (2021) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-010 — Questão 09: VUNESP - TJ-SP Escrevente (2021).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-010 — Questão 09: VUNESP - TJ-SP Escrevente (2021).",
           "blocks": [
             {
               "type": "list",
@@ -910,6 +1527,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-011",
           "title": "EX-A09-G06-011 — Questão 10: VUNESP - Pref. Taubaté (2022)",
+          "prompt": "Análise das alternativas:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise das alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "A) Incorreta (A retirada do lixo das casas e praias eram feitas... $\\rightarrow$ Núcleo é o singular retirada; correto",
+              "rationale": "era feita)."
+            },
+            {
+              "order": 3,
+              "action": "B) Incorreta (Animais de carga era usados... $\\rightarrow$ Correto",
+              "rationale": "eram usados)."
+            },
+            {
+              "order": 4,
+              "action": "C) Incorreta (Casas e praias produzia... $\\rightarrow$ Correto",
+              "rationale": "produziam)."
+            },
+            {
+              "order": 5,
+              "action": "D) Incorreta (Era ruins os serviços... $\\rightarrow$ Correto",
+              "rationale": "Eram ruins)."
+            }
+          ],
+          "result": "Gabarito Oficial: Alternativa E.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-011 — Questão 10: VUNESP - Pref. Taubaté (2022) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-011 — Questão 10: VUNESP - Pref. Taubaté (2022).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-011 — Questão 10: VUNESP - Pref. Taubaté (2022).",
           "blocks": [
             {
               "type": "list",
@@ -929,6 +1578,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-012",
           "title": "EX-A09-G06-012 — Questão 11: VUNESP - Pref. Guarulhos (2021)",
+          "prompt": "Análise das alternativas:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise das alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "A) Incorreta (crianças serem diferente... $\\rightarrow$ Exige diferentes).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "B) Incorreta (muita dúvida e problemas sérias $\\rightarrow$ Adjunto posposto a $F+M$ exige masculino plural sérios).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) Correta (Segue incluso naquela carta mais um documento a ser apreciado. $\\rightarrow$ Particípio irregular incluso concorda com documento).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) Incorreta (doenças tanto física quanto mental $\\rightarrow$ Exige físicas quanto mentais).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: Alternativa C.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-012 — Questão 11: VUNESP - Pref. Guarulhos (2021) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-012 — Questão 11: VUNESP - Pref. Guarulhos (2021).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-012 — Questão 11: VUNESP - Pref. Guarulhos (2021).",
           "blocks": [
             {
               "type": "list",
@@ -948,6 +1629,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-013",
           "title": "EX-A09-G06-013 — Questão 12: FCC - SABESP",
+          "prompt": "Análise das alternativas:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise das alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "A) Incorreta (Saudosos do tempo de menino, o pai... $\\rightarrow$ Quem sente saudade é o pai; exige Saudoso).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "B) Incorreta (A atenção... estava voltado $\\rightarrow$ Exige voltada).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) Incorreta (As bolas de couro são caro $\\rightarrow$ Exige caras).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) Correta (O pai viu frustrada sua tentativa de jogar bola com o filho. $\\rightarrow$ Frustrada concorda com sua tentativa).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: Alternativa D.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-013 — Questão 12: FCC - SABESP sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-013 — Questão 12: FCC - SABESP.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-013 — Questão 12: FCC - SABESP.",
           "blocks": [
             {
               "type": "list",
@@ -967,6 +1680,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-014",
           "title": "EX-A09-G06-014 — Questão 13: Instituto AOCP - Pref. João Pessoa (2021)",
+          "prompt": "Trecho: \"...além de tornarem os ambientes mais bonitos e os pratos mais aromáticos, as plantas possuem características químicas que podem fazer com que sejam tóxicas...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Trecho",
+              "rationale": "\"...além de tornarem os ambientes mais bonitos e os pratos mais aromáticos, as plantas possuem características químicas que podem fazer com que sejam tóxicas...\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "Eliminação imediata das assertivas A, D e E por afirmarem falsamente que substantivos concordam com substantivos/adjetivos. Validação da assertiva C: os adjetivos bonitos e aromáticos concordam em gênero e número com os substantivos a que se referem (ambientes e pratos)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "Alternativa C."
+            }
+          ],
+          "result": "Gabarito Oficial: Alternativa C.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-014 — Questão 13: Instituto AOCP - Pref. João Pessoa (2021) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-014 — Questão 13: Instituto AOCP - Pref. João Pessoa (2021).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-014 — Questão 13: Instituto AOCP - Pref. João Pessoa (2021).",
           "blocks": [
             {
               "type": "list",
@@ -982,6 +1717,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-015",
           "title": "EX-A09-G06-015 — Questão 14: FGV - IBGE",
+          "prompt": "Frase 3: Mas o pontapé inicial é sempre das empresas de conteúdo independentes.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase 3",
+              "rationale": "Mas o pontapé inicial é sempre das empresas de conteúdo independentes."
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "O adjetivo independentes está no plural por concordar com empresas (correto - Alternativa D). A assertiva E alegava que o termo deveria estar no singular por referir-se a conteúdo; a concordância no singular seria uma possibilidade (poderia), mas alteraria o referente e o sentido original."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "Alternativa D."
+            }
+          ],
+          "result": "Gabarito Oficial: Alternativa D.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-015 — Questão 14: FGV - IBGE sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-015 — Questão 14: FGV - IBGE.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-015 — Questão 14: FGV - IBGE.",
           "blocks": [
             {
               "type": "list",
@@ -997,6 +1754,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-016",
           "title": "EX-A09-G06-016 — Questão 15: CESPE - ANS",
+          "prompt": "Texto: \"...reunindo várias queixas, organizadas e agrupadas por temas e por operadora.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...reunindo várias queixas, organizadas e agrupadas por temas e por operadora.\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "Os vocábulos \"organizadas\" e \"agrupadas\" estão no feminino plural porque concordam com \"queixas\"."
+            },
+            {
+              "order": 3,
+              "action": "Análise",
+              "rationale": "Rastreamento direto de seta: particípios em função adnominal concordando com o antecedente queixas."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "Certo."
+            }
+          ],
+          "result": "Gabarito Oficial: Certo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-016 — Questão 15: CESPE - ANS sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-016 — Questão 15: CESPE - ANS.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-016 — Questão 15: CESPE - ANS.",
           "blocks": [
             {
               "type": "list",
@@ -1013,6 +1797,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-017",
           "title": "EX-A09-G06-017 — Questão 16: CESPE - SEDUC-AL (2021)",
+          "prompt": "Texto: \"...a ciência e a arte são também produtos da riqueza e da estabilidade...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...a ciência e a arte são também produtos da riqueza e da estabilidade...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "O vocábulo \"produtos\" está flexionado no plural porque concorda com o sujeito composto \"a ciência e a arte\"."
+            },
+            {
+              "order": 3,
+              "action": "Análise",
+              "rationale": "Predicativo do sujeito substantivado assumindo flexão plural em referência aos dois núcleos do sujeito composto."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "Certo."
+            }
+          ],
+          "result": "Gabarito Oficial: Certo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-017 — Questão 16: CESPE - SEDUC-AL (2021) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-017 — Questão 16: CESPE - SEDUC-AL (2021).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-017 — Questão 16: CESPE - SEDUC-AL (2021).",
           "blocks": [
             {
               "type": "list",
@@ -1029,6 +1840,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-018",
           "title": "EX-A09-G06-018 — Questão 17: CESPE - FUB",
+          "prompt": "Texto: \"...respeitadas a ética e a valorização de identidades e culturas com responsabilidade social.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...respeitadas a ética e a valorização de identidades e culturas com responsabilidade social.\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "O adjetivo \"respeitadas\" encontra-se no plural porque concorda com \"ética\", \"valorização\", \"identidades\" e \"culturas\"."
+            },
+            {
+              "order": 3,
+              "action": "Análise",
+              "rationale": "O particípio anteposto concorda exclusivamente com os núcleos do sujeito (ética e valorização). O segmento de identidades e culturas é complemento nominal e não participa da concordância."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "Errado."
+            }
+          ],
+          "result": "Gabarito Oficial: Errado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-018 — Questão 17: CESPE - FUB sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-018 — Questão 17: CESPE - FUB.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-018 — Questão 17: CESPE - FUB.",
           "blocks": [
             {
               "type": "list",
@@ -1045,6 +1883,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-019",
           "title": "EX-A09-G06-019 — Questão 18: CEBRASPE - Pref. Barra dos Coqueiros (2020)",
+          "prompt": "Texto: \"Assim como podemos treinar os bíceps na academia, e ficar mais fortes...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"Assim como podemos treinar os bíceps na academia, e ficar mais fortes...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "O termo \"fortes\" está flexionado no plural porque concorda com a palavra \"bíceps\"."
+            },
+            {
+              "order": 3,
+              "action": "Análise",
+              "rationale": "O adjetivo fortes é predicativo do sujeito elíptico nós (para nós ficarmos mais fortes), e não qualificador do objeto os bíceps."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "Errado."
+            }
+          ],
+          "result": "Gabarito Oficial: Errado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-019 — Questão 18: CEBRASPE - Pref. Barra dos Coqueiros (2020) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-019 — Questão 18: CEBRASPE - Pref. Barra dos Coqueiros (2020).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-019 — Questão 18: CEBRASPE - Pref. Barra dos Coqueiros (2020).",
           "blocks": [
             {
               "type": "list",
@@ -1061,6 +1926,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-020",
           "title": "EX-A09-G06-020 — Questão 19: CESPE - DPU",
+          "prompt": "Texto: \"...inúmeras formas de relação jurídica então existentes...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...inúmeras formas de relação jurídica então existentes...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "Sem prejuízo para a correção gramatical e para o sentido original, \"existentes\" poderia ser flexionado no singular, concordando com \"relação jurídica\"."
+            },
+            {
+              "order": 3,
+              "action": "Análise",
+              "rationale": "A flexão no singular existente é gramaticalmente aceita, mas a mudança de referente altera obrigatoriamente o sentido original. O item erra ao afirmar que o sentido seria mantido."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "Errado."
+            }
+          ],
+          "result": "Gabarito Oficial: Errado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-020 — Questão 19: CESPE - DPU sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-020 — Questão 19: CESPE - DPU.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-020 — Questão 19: CESPE - DPU.",
           "blocks": [
             {
               "type": "list",
@@ -1077,6 +1969,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-021",
           "title": "EX-A09-G06-021 — Questão 20: CESPE - TCU",
+          "prompt": "Texto: \"O crescimento populacional e econômico, aliado à evolução dos mercados...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"O crescimento populacional e econômico, aliado à evolução dos mercados...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "O emprego de \"aliado\" no plural não prejudicaria a correção gramatical, concordando com \"populacional e econômico\"."
+            },
+            {
+              "order": 3,
+              "action": "Análise",
+              "rationale": "Adjetivo concorda exclusivamente com substantivo (crescimento), sendo sintática e semanticamente impossível concordar com adjetivos adjuntos."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "Errado."
+            }
+          ],
+          "result": "Gabarito Oficial: Errado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-021 — Questão 20: CESPE - TCU sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-021 — Questão 20: CESPE - TCU.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-021 — Questão 20: CESPE - TCU.",
           "blocks": [
             {
               "type": "list",
@@ -1093,6 +2012,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-022",
           "title": "EX-A09-G06-022 — Questão 21: CESPE - UNIPAMPA",
+          "prompt": "Texto: \"...a transmissão dos saberes formulados ao longo da história...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...a transmissão dos saberes formulados ao longo da história...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "Caso \"formulados\" estivesse no feminino singular (\"formulada\"), para concordar com \"transmissão\", não haveria prejuízo da correção nem dos sentidos originais."
+            },
+            {
+              "order": 3,
+              "action": "Análise",
+              "rationale": "O teste do \"ler o que vem depois\" (ao longo da história) evidencia que apenas saberes podem ser historicamente formulados, tornando a troca semanticamente incoerente."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "Errado."
+            }
+          ],
+          "result": "Gabarito Oficial: Errado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-022 — Questão 21: CESPE - UNIPAMPA sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-022 — Questão 21: CESPE - UNIPAMPA.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-022 — Questão 21: CESPE - UNIPAMPA.",
           "blocks": [
             {
               "type": "list",
@@ -1109,6 +2055,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-023",
           "title": "EX-A09-G06-023 — Questão 22: CESPE - STF",
+          "prompt": "Texto: \"...navegação pelo ciberespaço, desprovida de fricção.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...navegação pelo ciberespaço, desprovida de fricção.\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "Seriam mantidas as relações sintáticas e semânticas caso \"desprovida\" fosse substituído por \"desprovido\", passando a concordar com \"ciberespaço\"."
+            },
+            {
+              "order": 3,
+              "action": "Análise",
+              "rationale": "A substituição é coerente e gramatical, mas altera a relação sintática (de adjunto de navegação para adjunto de ciberespaço) e a relação semântica. O erro do item está em afirmar que seriam \"mantidas\"."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "Errado."
+            }
+          ],
+          "result": "Gabarito Oficial: Errado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-023 — Questão 22: CESPE - STF sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-023 — Questão 22: CESPE - STF.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-023 — Questão 22: CESPE - STF.",
           "blocks": [
             {
               "type": "list",
@@ -1125,6 +2098,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-024",
           "title": "EX-A09-G06-024 — Questão 23: CESPE - TCU",
+          "prompt": "Texto: \"O costume aparece como expressão da legalidade... instrumentalizada pela repetição de atos...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"O costume aparece como expressão da legalidade... instrumentalizada pela repetição de atos...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "Seriam mantidos o sentido e a correção do texto caso \"instrumentalizada\" fosse empregado no masculino: \"instrumentalizado\"."
+            },
+            {
+              "order": 3,
+              "action": "Análise",
+              "rationale": "No masculino, o particípio qualificaria costume em vez de expressão da legalidade. Mantém a correção, mas altera o sentido original."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "Errado."
+            }
+          ],
+          "result": "Gabarito Oficial: Errado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-024 — Questão 23: CESPE - TCU sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-024 — Questão 23: CESPE - TCU.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-024 — Questão 23: CESPE - TCU.",
           "blocks": [
             {
               "type": "list",
@@ -1141,6 +2141,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-025",
           "title": "EX-A09-G06-025 — Questão 24: CESPE - Petrobras (2022)",
+          "prompt": "Texto: \"...usava ferramentas de pedra primitivas...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...usava ferramentas de pedra primitivas...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "A correção gramatical seria mantida caso \"primitivas\" fosse flexionado no singular (\"primitiva\"), embora o sentido original e as relações sintáticas fossem alterados: no original qualifica \"ferramentas\"; no singular qualificaria \"pedra\"."
+            },
+            {
+              "order": 3,
+              "action": "Análise",
+              "rationale": "Assertiva conceitualmente impecável que descreve perfeitamente a manutenção da gramática com mudança de relações sintáticas e semânticas."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "Certo."
+            }
+          ],
+          "result": "Gabarito Oficial: Certo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-025 — Questão 24: CESPE - Petrobras (2022) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-025 — Questão 24: CESPE - Petrobras (2022).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-025 — Questão 24: CESPE - Petrobras (2022).",
           "blocks": [
             {
               "type": "list",
@@ -1157,6 +2184,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-026",
           "title": "EX-A09-G06-026 — Questão 25: CEBRASPE - ICMBio (2022)",
+          "prompt": "Texto: \"As castanholas... são uma espécie extremamente abundante... mas demonizadas em outras regiões...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"As castanholas... são uma espécie extremamente abundante... mas demonizadas em outras regiões...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "Sem prejuízo da correção gramatical e da coerência do texto, a palavra \"demonizadas\" poderia ser substituída por \"demonizada\", concordando com \"uma espécie\"."
+            },
+            {
+              "order": 3,
+              "action": "Análise",
+              "rationale": "A troca preserva a correção gramatical e a lógica textual (coerência). Como a banca não exigiu a manutenção do sentido estrito, o item é correto."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "Certo."
+            }
+          ],
+          "result": "Gabarito Oficial: Certo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-026 — Questão 25: CEBRASPE - ICMBio (2022) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-026 — Questão 25: CEBRASPE - ICMBio (2022).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-026 — Questão 25: CEBRASPE - ICMBio (2022).",
           "blocks": [
             {
               "type": "list",
@@ -1173,6 +2227,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-027",
           "title": "EX-A09-G06-027 — Questão 26: CEBRASPE - DPE-DF (2022)",
+          "prompt": "Texto: \"Vivem 4,5 bilhões de pessoas... desprovidas das condições mínimas de higiene.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"Vivem 4,5 bilhões de pessoas... desprovidas das condições mínimas de higiene.\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "Caso \"desprovidas\" fosse empregada no masculino — \"desprovidos\" —, em concordância com \"4,5 bilhões\", a correção gramatical e o sentido do texto seriam mantidos."
+            },
+            {
+              "order": 3,
+              "action": "Análise",
+              "rationale": "Aplicação exata da exceção do quantificador com especificador plural: a alternância de flexão preserva simultaneamente a correção gramatical e o sentido original."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "Certo."
+            }
+          ],
+          "result": "Gabarito Oficial: Certo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-027 — Questão 26: CEBRASPE - DPE-DF (2022) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-027 — Questão 26: CEBRASPE - DPE-DF (2022).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-027 — Questão 26: CEBRASPE - DPE-DF (2022).",
           "blocks": [
             {
               "type": "list",
@@ -1189,6 +2270,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A09-G06-028",
           "title": "EX-A09-G06-028 — Questão 27: CESPE - SEGESP-AL",
+          "prompt": "Texto: \"...Galton inventou o primeiro sistema moderno de impressão digital. Adotado pelos departamentos de polícia... a impressão digital era a forma mais confiável...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...Galton inventou o primeiro sistema moderno de impressão digital. Adotado pelos departamentos de polícia... a impressão digital era a forma mais confiável...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "\"Adotado\" concorda com \"sistema\". Caso fosse flexionado no feminino (\"Adotada\"), concordando com \"impressão\", a correção e a coerência seriam mantidas."
+            },
+            {
+              "order": 3,
+              "action": "Análise",
+              "rationale": "A flexão no feminino ancora o particípio da oração reduzida no sujeito da oração principal subsequente (impressão digital), mantendo a correção e aperfeiçoando a coesão."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "Certo."
+            }
+          ],
+          "result": "Gabarito Oficial: Certo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A09-G06-028 — Questão 27: CESPE - SEGESP-AL sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A09-G06-028 — Questão 27: CESPE - SEGESP-AL.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A09-G06-028 — Questão 27: CESPE - SEGESP-AL.",
           "blocks": [
             {
               "type": "list",
@@ -1263,8 +2371,12 @@
         {
           "trapId": "WARN-A09-G06-001",
           "title": "O Gênero Masculino NÃO Prevalece na Concordância Atrativa",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Gênero Masculino NÃO Prevalece na Concordância Atrativa.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Gênero Masculino NÃO Prevalece na Concordância Atrativa.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Gênero Masculino NÃO Prevalece na Concordância Atrativa no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Gênero Masculino NÃO Prevalece na Concordância Atrativa.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Gênero Masculino NÃO Prevalece na Concordância Atrativa.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Gênero Masculino NÃO Prevalece na Concordância Atrativa para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Gênero Masculino NÃO Prevalece na Concordância Atrativa.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Gênero Masculino NÃO Prevalece na Concordância Atrativa.",
           "blocks": [
             {
               "type": "list",
@@ -1279,8 +2391,12 @@
         {
           "trapId": "WARN-A09-G06-002",
           "title": "Falsa Alegação de Mudança de Sentido no Predicativo do Objeto",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Falsa Alegação de Mudança de Sentido no Predicativo do Objeto.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Falsa Alegação de Mudança de Sentido no Predicativo do Objeto.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Falsa Alegação de Mudança de Sentido no Predicativo do Objeto no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Falsa Alegação de Mudança de Sentido no Predicativo do Objeto.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Falsa Alegação de Mudança de Sentido no Predicativo do Objeto.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Falsa Alegação de Mudança de Sentido no Predicativo do Objeto para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Falsa Alegação de Mudança de Sentido no Predicativo do Objeto.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Falsa Alegação de Mudança de Sentido no Predicativo do Objeto.",
           "blocks": [
             {
               "type": "list",
@@ -1295,8 +2411,12 @@
         {
           "trapId": "WARN-A09-G06-003",
           "title": "Tentativa Indevida de Flexão do Particípio em Tempos Compostos",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Tentativa Indevida de Flexão do Particípio em Tempos Compostos.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Tentativa Indevida de Flexão do Particípio em Tempos Compostos.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Tentativa Indevida de Flexão do Particípio em Tempos Compostos no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Tentativa Indevida de Flexão do Particípio em Tempos Compostos.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Tentativa Indevida de Flexão do Particípio em Tempos Compostos.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Tentativa Indevida de Flexão do Particípio em Tempos Compostos para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Tentativa Indevida de Flexão do Particípio em Tempos Compostos.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Tentativa Indevida de Flexão do Particípio em Tempos Compostos.",
           "blocks": [
             {
               "type": "list",
@@ -1311,8 +2431,12 @@
         {
           "trapId": "WARN-A09-G06-004",
           "title": "A Conjunção \"E\" Dentro de Termos Preposicionados",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Conjunção \"E\" Dentro de Termos Preposicionados.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Conjunção \"E\" Dentro de Termos Preposicionados.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Conjunção \"E\" Dentro de Termos Preposicionados no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Conjunção \"E\" Dentro de Termos Preposicionados.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Conjunção \"E\" Dentro de Termos Preposicionados.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Conjunção \"E\" Dentro de Termos Preposicionados para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Conjunção \"E\" Dentro de Termos Preposicionados.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Conjunção \"E\" Dentro de Termos Preposicionados.",
           "blocks": [
             {
               "type": "list",
@@ -1327,8 +2451,12 @@
         {
           "trapId": "WARN-A09-G06-005",
           "title": "Confundir Sentido Original com Coerência Textual (Cebraspe)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Sentido Original com Coerência Textual (Cebraspe).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Sentido Original com Coerência Textual (Cebraspe).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Sentido Original com Coerência Textual (Cebraspe) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Sentido Original com Coerência Textual (Cebraspe).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Sentido Original com Coerência Textual (Cebraspe).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Sentido Original com Coerência Textual (Cebraspe) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Sentido Original com Coerência Textual (Cebraspe).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Sentido Original com Coerência Textual (Cebraspe).",
           "blocks": [
             {
               "type": "list",

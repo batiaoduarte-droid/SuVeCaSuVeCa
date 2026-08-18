@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A11-G01",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.891Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.642Z"
   },
   "unit": {
     "unitId": "IP-A11-G01",
@@ -313,6 +313,14 @@
         {
           "entityId": "RULE-IP-A11-G01-001",
           "title": "Regras canônicas",
+          "statement": "Regras canônicas",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -375,6 +383,47 @@
         {
           "procedureId": "PROC-A11-G01-COESAO-TEXTUAL-001",
           "title": "Método Operacional \"Setas Salvam\" para Análise Referencial",
+          "objective": "Executar o algoritmo decisório para Método Operacional \"Setas Salvam\" para Análise Referencial",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método Operacional \"Setas Salvam\" para Análise Referencial."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Reconhecimento morfológico de pronomes (pessoais, demonstrativos, possessivos, relativos).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Fundamenta-se em",
+              "explanation": "KB-A11-G01-COESAO-TEXTUAL-004 e KB-A11-G01-COESAO-TEXTUAL-005.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Dica operacional associada",
+              "explanation": "TIP-A11-G01-COESAO-TEXTUAL-001.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método Operacional \"Setas Salvam\" para Análise Referencial."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -441,6 +490,22 @@
         {
           "contrastId": "CONTRAST-IP-A11-G01-001",
           "title": "Tabela 8.1 — Coesão Sequencial vs. Coesão Referencial",
+          "contrastType": "discursive",
+          "conceptA": "Tabela 8.1 — Coesão Sequencial vs. Coesão Referencial",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -482,6 +547,22 @@
         {
           "contrastId": "CONTRAST-IP-A11-G01-002",
           "title": "Tabela 8.2 — Termo Coesivo vs. Referente",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 8.2 — Termo Coesivo vs. Referente",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -518,6 +599,22 @@
         {
           "contrastId": "CONTRAST-IP-A11-G01-003",
           "title": "Tabela 8.3 — Anáfora vs. Catáfora",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 8.3 — Anáfora vs. Catáfora",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "paragraph",
@@ -540,6 +637,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G01-001",
           "title": "Enunciado / Estrutura textual",
+          "prompt": "Enunciado / Estrutura textual",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Enunciado / Estrutura textual...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado / Estrutura textual.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado / Estrutura textual sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado / Estrutura textual.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado / Estrutura textual.",
           "blocks": [
             {
               "type": "callout",
@@ -551,6 +670,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G01-002",
           "title": "Análise e resolução comentada",
+          "prompt": "Identificação do elemento: O conectivo mas é classificado morfologicamente como conjunção coordenativa adversativa.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificação do elemento",
+              "rationale": "O conectivo mas é classificado morfologicamente como conjunção coordenativa adversativa."
+            },
+            {
+              "order": 2,
+              "action": "Operação de coesão",
+              "rationale": "Estabelece coesão sequencial ao ligar duas orações independentes, introduzindo uma relação semântica de quebra de expectativa ou contraste (quem sai cedo normalmente não se atrasa)."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Coesão Sequencial interoracional por conjunção."
+            }
+          ],
+          "result": "Classificação: Coesão Sequencial interoracional por conjunção.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise e resolução comentada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise e resolução comentada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise e resolução comentada.",
           "blocks": [
             {
               "type": "list",
@@ -566,6 +707,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G01-003",
           "title": "Enunciado / Estrutura textual",
+          "prompt": "Enunciado / Estrutura textual",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Enunciado / Estrutura textual...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado / Estrutura textual.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado / Estrutura textual sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado / Estrutura textual.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado / Estrutura textual.",
           "blocks": [
             {
               "type": "callout",
@@ -577,6 +740,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G01-004",
           "title": "Análise e resolução comentada",
+          "prompt": "Identificação do elemento: O vocábulo por atua como preposição essencial conectora que introduz uma oração reduzida de infinitivo (ter perdido o trem).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificação do elemento",
+              "rationale": "O vocábulo por atua como preposição essencial conectora que introduz uma oração reduzida de infinitivo (ter perdido o trem)."
+            },
+            {
+              "order": 2,
+              "action": "Operação de coesão",
+              "rationale": "Conecta a oração principal ao seu motivo determinante. O que sucede a preposição (\"ter perdido o trem\") expressa a causa formal do fato anterior (\"Chegou tarde\")."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Coesão Sequencial por preposição de valor causal."
+            }
+          ],
+          "result": "Classificação: Coesão Sequencial por preposição de valor causal.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise e resolução comentada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise e resolução comentada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise e resolução comentada.",
           "blocks": [
             {
               "type": "list",
@@ -592,6 +777,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G01-005",
           "title": "Enunciado / Estrutura textual",
+          "prompt": "Enunciado / Estrutura textual",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Enunciado / Estrutura textual...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado / Estrutura textual.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado / Estrutura textual sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado / Estrutura textual.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado / Estrutura textual.",
           "blocks": [
             {
               "type": "callout",
@@ -603,6 +810,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A11-G01-006",
           "title": "Análise e resolução comentada",
+          "prompt": "Análise dos papéis relacionais:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise dos papéis relacionais",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Ela",
+              "rationale": "Pronome pessoal do caso reto $\\rightarrow$ Termo Coesivo (origem do vetor / termo que dispara a seta)."
+            },
+            {
+              "order": 3,
+              "action": "Maria",
+              "rationale": "Substantivo próprio $\\rightarrow$ Referente (destino do vetor / termo que recebe a seta / \"termo setado\")."
+            },
+            {
+              "order": 4,
+              "action": "Direcionalidade",
+              "rationale": "Como o pronome remete a um substantivo enunciado na oração antecedente, a coesão é classificada como referencial anafórica."
+            }
+          ],
+          "result": "Direcionalidade: Como o pronome remete a um substantivo enunciado na oração antecedente, a coesão é classificada como referencial anafórica.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise e resolução comentada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise e resolução comentada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise e resolução comentada.",
           "blocks": [
             {
               "type": "list",
@@ -648,8 +882,12 @@
         {
           "trapId": "WARN-A11-G01-COESAO-TEXTUAL-001",
           "title": "Redução Equivocada da Coesão Sequencial Exclusivamente às Conjunções",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Redução Equivocada da Coesão Sequencial Exclusivamente às Conjunções.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Redução Equivocada da Coesão Sequencial Exclusivamente às Conjunções.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Redução Equivocada da Coesão Sequencial Exclusivamente às Conjunções no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Redução Equivocada da Coesão Sequencial Exclusivamente às Conjunções.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Redução Equivocada da Coesão Sequencial Exclusivamente às Conjunções.",
+          "correctReasoning": "Julgar incorreta a afirmação de que uma preposição exerce papel de conector ou estabelece coesão sequencial.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Redução Equivocada da Coesão Sequencial Exclusivamente às Conjunções.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Redução Equivocada da Coesão Sequencial Exclusivamente às Conjunções.",
           "blocks": [
             {
               "type": "heading",

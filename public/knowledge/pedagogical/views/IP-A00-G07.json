@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A00-G07",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.697Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.457Z"
   },
   "unit": {
     "unitId": "IP-A00-G07",
@@ -629,6 +629,14 @@
         {
           "entityId": "RULE-IP-A00-G07-001",
           "title": "Regras canônicas",
+          "statement": "A matriz a seguir sintetiza as formulações canônicas das quatro formas para consulta objetiva:",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "paragraph",
@@ -723,6 +731,44 @@
         {
           "procedureId": "PROC-A00-G07-PORQUES-001",
           "title": "Roteiro Geral de Decisão Ortográfica e Sintática dos Porquês",
+          "objective": "Executar o algoritmo decisório para Roteiro Geral de Decisão Ortográfica e Sintática dos Porquês",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Roteiro Geral de Decisão Ortográfica e Sintática dos Porquês."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura sintático-morfológica alvo de Roteiro Geral de Decisão Ortográfica e Sintática dos Porquês.",
+              "test": "Localizar o termo regente ou núcleo do segmento."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios decisórios da regra canônica.",
+              "test": "Verificar se há exceção ou caso facultativo aplicável."
+            },
+            {
+              "order": 3,
+              "action": "Concluir a classificação definitiva para resolução da questão.",
+              "test": "Confrontar o resultado obtido com as alternativas da prova."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Roteiro Geral de Decisão Ortográfica e Sintática dos Porquês."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -733,6 +779,83 @@
         {
           "procedureId": "PROC-A00-G07-PORQUES-002",
           "title": "Algoritmo de Identificação de Frases Interrogativas Indiretas por Conjectura",
+          "objective": "Executar o algoritmo decisório para Algoritmo de Identificação de Frases Interrogativas Indiretas por Conjectura",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo de Identificação de Frases Interrogativas Indiretas por Conjectura."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar o Verbo de Conjectura",
+              "explanation": "Identifique no período verbos que denotam dúvida, questionamento, cognição ou ignorância (não sei, nunca entenderia, quero saber, busca compreender, não sabia, foram questionados, pesquisar para descobrir).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Teste da Inserção de \"Motivo\"",
+              "explanation": "Insira a palavra \"motivo\" imediatamente após o que:",
+              "test": "Teste da Inserção de \"Motivo\": Insira a palavra \"motivo\" imediatamente após o que:"
+            },
+            {
+              "order": 3,
+              "action": "\"Não sabia por que [motivo] os aparelhos eram abandonados.\"",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "\"Foram questionados por que [motivo] utilizaram tal método.\"",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Teste da Pergunta Direta",
+              "explanation": "Isole a oração subordinada e transforme-a em pergunta direta com ponto de interrogação:",
+              "test": "Teste da Pergunta Direta: Isole a oração subordinada e transforme-a em pergunta direta com ponto de interrogação:"
+            },
+            {
+              "order": 6,
+              "action": "\"Por que os aparelhos eram abandonados? Não sabia.\"",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Conclusão",
+              "explanation": "Confirmada a natureza interrogativa indireta:",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Se estiver no início/meio $\\rightarrow$ Grafar por que (separado sem acento).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Se estiver no final/antes de pausa $\\rightarrow$ Grafar por quê (separado com acento).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo de Identificação de Frases Interrogativas Indiretas por Conjectura."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -784,6 +907,56 @@
         {
           "procedureId": "PROC-A00-G07-PORQUES-003",
           "title": "Procedimento de Recomposição da Ordem Direta em Frases Invertidas",
+          "objective": "Executar o algoritmo decisório para Procedimento de Recomposição da Ordem Direta em Frases Invertidas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento de Recomposição da Ordem Direta em Frases Invertidas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isolar as Orações do Período",
+              "explanation": "Identifique a oração que contém o porque e a oração principal associada.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Reorganizar na Sequência Canônica",
+              "explanation": "Desloque a oração principal para o início e posicione a oração iniciada pelo conector na sequência:",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Avaliar a Carga Semântica",
+              "explanation": "Verifique se o conector introduz a causa/justificativa ($=$ pois, já que, visto que).",
+              "test": "Avaliar a Carga Semântica: Verifique se o conector introduz a causa/justificativa ($=$ pois, já que, visto que)."
+            },
+            {
+              "order": 4,
+              "action": "Conclusão",
+              "explanation": "Se a oração for causal/explicativa, a grafia no início do período invertido permanece Porque (junta e sem acento), mesmo que o período termine com ponto de interrogação.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento de Recomposição da Ordem Direta em Frases Invertidas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "formulas": [
+            "\\text{[Oração Principal]} + \\text{[Conector + Oração Subordinada]}"
+          ],
           "blocks": [
             {
               "type": "list",
@@ -814,6 +987,22 @@
         {
           "contrastId": "CONTRAST-IP-A00-G07-001",
           "title": "Tabela 1: Conjunção Final vs. Preposição + Conjunção Integrante (A Pegadinha da FGV)",
+          "contrastType": "morphological",
+          "conceptA": "Tabela 1: Conjunção Final vs. Preposição + Conjunção Integrante (A Pegadinha da FGV)",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -865,6 +1054,22 @@
         {
           "contrastId": "CONTRAST-IP-A00-G07-002",
           "title": "Tabela 2: Vírgula de Intercalação vs. Pausa de Final de Oração Interrogativa",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 2: Vírgula de Intercalação vs. Pausa de Final de Oração Interrogativa",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -916,6 +1121,22 @@
         {
           "contrastId": "CONTRAST-IP-A00-G07-003",
           "title": "Tabela 3: Oração Causal na Ordem Direta vs. Oração Coordenada Explicativa",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 3: Oração Causal na Ordem Direta vs. Oração Coordenada Explicativa",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -966,6 +1187,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-001",
           "title": "EX-A00-G07-PORQUES-001 — Fixação 1: Conjunção Causal",
+          "prompt": "Enunciado: Complete e classifique: 1. Ele fez isso  queria atenção.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Complete e classifique: 1. Ele fez isso  queria atenção."
+            },
+            {
+              "order": 2,
+              "action": "Preenchimento",
+              "rationale": "porque (junto e sem acento)."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Conjunção Subordinativa Causal ($=$ pois, visto que)."
+            }
+          ],
+          "result": "Classificação: Conjunção Subordinativa Causal ($=$ pois, visto que).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-001 — Fixação 1: Conjunção Causal sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-001 — Fixação 1: Conjunção Causal.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-001 — Fixação 1: Conjunção Causal.",
           "blocks": [
             {
               "type": "list",
@@ -981,6 +1224,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-002",
           "title": "EX-A00-G07-PORQUES-002 — Fixação 2: Pergunta Direta Inicial",
+          "prompt": "Enunciado: Complete e classifique: 2.  fizeste isso?",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Complete e classifique: 2.  fizeste isso?"
+            },
+            {
+              "order": 2,
+              "action": "Preenchimento",
+              "rationale": "Por que (separado e sem acento, P maiúsculo)."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Locução Adverbial Interrogativa de Causa ($=$ Por qual razão fizeste isso?)."
+            }
+          ],
+          "result": "Classificação: Locução Adverbial Interrogativa de Causa ($=$ Por qual razão fizeste isso?).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-002 — Fixação 2: Pergunta Direta Inicial sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-002 — Fixação 2: Pergunta Direta Inicial.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-002 — Fixação 2: Pergunta Direta Inicial.",
           "blocks": [
             {
               "type": "list",
@@ -996,6 +1261,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-003",
           "title": "EX-A00-G07-PORQUES-003 — Fixação 3: Interrogativa Indireta com Conjectura",
+          "prompt": "Enunciado: Complete e classifique: 3. Juro que eu não sei  fez aquilo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Complete e classifique: 3. Juro que eu não sei  fez aquilo."
+            },
+            {
+              "order": 2,
+              "action": "Preenchimento",
+              "rationale": "por que (separado e sem acento)."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Locução Adverbial Interrogativa de Causa em frase interrogativa indireta (motivada pelo verbo de conjectura não sei)."
+            }
+          ],
+          "result": "Classificação: Locução Adverbial Interrogativa de Causa em frase interrogativa indireta (motivada pelo verbo de conjectura não sei).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-003 — Fixação 3: Interrogativa Indireta com Conjectura sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-003 — Fixação 3: Interrogativa Indireta com Conjectura.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-003 — Fixação 3: Interrogativa Indireta com Conjectura.",
           "blocks": [
             {
               "type": "list",
@@ -1011,6 +1298,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-004",
           "title": "EX-A00-G07-PORQUES-004 — Fixação 4: Pergunta Direta no Final de Frase",
+          "prompt": "Enunciado: Complete e classifique: 4. Houve nova desvalorização da moeda  ?",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Complete e classifique: 4. Houve nova desvalorização da moeda  ?"
+            },
+            {
+              "order": 2,
+              "action": "Preenchimento",
+              "rationale": "por quê (separado e com acento)."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Locução Adverbial Interrogativa de Causa posicionada imediatamente antes da pausa interrogativa final."
+            }
+          ],
+          "result": "Classificação: Locução Adverbial Interrogativa de Causa posicionada imediatamente antes da pausa interrogativa final.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-004 — Fixação 4: Pergunta Direta no Final de Frase sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-004 — Fixação 4: Pergunta Direta no Final de Frase.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-004 — Fixação 4: Pergunta Direta no Final de Frase.",
           "blocks": [
             {
               "type": "list",
@@ -1026,6 +1335,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-005",
           "title": "EX-A00-G07-PORQUES-005 — Fixação 5: Substantivo com Artigo",
+          "prompt": "Enunciado: Complete e classifique: 5. Explique-nos o  dessa atitude precipitada.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Complete e classifique: 5. Explique-nos o  dessa atitude precipitada."
+            },
+            {
+              "order": 2,
+              "action": "Preenchimento",
+              "rationale": "porquê (junto e com acento)."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Substantivo determinado pelo artigo \"o\" ($=$ o motivo / a razão)."
+            }
+          ],
+          "result": "Classificação: Substantivo determinado pelo artigo \"o\" ($=$ o motivo / a razão).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-005 — Fixação 5: Substantivo com Artigo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-005 — Fixação 5: Substantivo com Artigo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-005 — Fixação 5: Substantivo com Artigo.",
           "blocks": [
             {
               "type": "list",
@@ -1041,6 +1372,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-006",
           "title": "EX-A00-G07-PORQUES-006 — Fixação 6: Regência de VTI + Conjunção Integrante (A Pegadinha da FGV)",
+          "prompt": "Enunciado: Complete e classifique: 6. Sempre ansiamos  você explicasse seus motivos.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Complete e classifique: 6. Sempre ansiamos  você explicasse seus motivos."
+            },
+            {
+              "order": 2,
+              "action": "Preenchimento",
+              "rationale": "por que (separado e sem acento)."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Preposição por (exigida pela regência de ansiar) + Conjunção Integrante que (introduzindo Oração Subordinada Substantiva Objetiva Indireta: \"ansiamos POR ISSO\")."
+            }
+          ],
+          "result": "Classificação: Preposição por (exigida pela regência de ansiar) + Conjunção Integrante que (introduzindo Oração Subordinada Substantiva Objetiva Indireta: \"ansiamos POR ISSO\").",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-006 — Fixação 6: Regência de VTI + Conjunção Integrante (A Pegadinha da FGV) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-006 — Fixação 6: Regência de VTI + Conjunção Integrante (A Pegadinha da FGV).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-006 — Fixação 6: Regência de VTI + Conjunção Integrante (A Pegadinha da FGV).",
           "blocks": [
             {
               "type": "list",
@@ -1056,6 +1409,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-007",
           "title": "EX-A00-G07-PORQUES-007 — Fixação 7: Conjunção Final com Subjuntivo",
+          "prompt": "Enunciado: Complete e classifique: 7. Só fiz isso  conseguisse me dar bem.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Complete e classifique: 7. Só fiz isso  conseguisse me dar bem."
+            },
+            {
+              "order": 2,
+              "action": "Preenchimento",
+              "rationale": "porque (junto e sem acento)."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Conjunção Subordinativa Final ($=$ para que / a fim de que), confirmada pelo verbo no modo subjuntivo (conseguisse)."
+            }
+          ],
+          "result": "Classificação: Conjunção Subordinativa Final ($=$ para que / a fim de que), confirmada pelo verbo no modo subjuntivo (conseguisse).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-007 — Fixação 7: Conjunção Final com Subjuntivo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-007 — Fixação 7: Conjunção Final com Subjuntivo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-007 — Fixação 7: Conjunção Final com Subjuntivo.",
           "blocks": [
             {
               "type": "list",
@@ -1071,6 +1446,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-008",
           "title": "EX-A00-G07-PORQUES-008 — Fixação 8: Preposição + Pronome Relativo",
+          "prompt": "Enunciado: Complete e classifique: 8. São justos os ideais  lutamos.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Complete e classifique: 8. São justos os ideais  lutamos."
+            },
+            {
+              "order": 2,
+              "action": "Preenchimento",
+              "rationale": "por que (separado e sem acento)."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Preposição por + Pronome Relativo que ($=$ pelos quais lutamos)."
+            }
+          ],
+          "result": "Classificação: Preposição por + Pronome Relativo que ($=$ pelos quais lutamos).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-008 — Fixação 8: Preposição + Pronome Relativo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-008 — Fixação 8: Preposição + Pronome Relativo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-008 — Fixação 8: Preposição + Pronome Relativo.",
           "blocks": [
             {
               "type": "list",
@@ -1086,6 +1483,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-009",
           "title": "EX-A00-G07-PORQUES-009 — Fixação 9: Substantivo com Pronome Demonstrativo",
+          "prompt": "Enunciado: Complete e classifique: 9. Só vou dar este  a vocês.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Complete e classifique: 9. Só vou dar este  a vocês."
+            },
+            {
+              "order": 2,
+              "action": "Preenchimento",
+              "rationale": "porquê (junto e com acento)."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Substantivo determinado pelo pronome demonstrativo \"este\"."
+            }
+          ],
+          "result": "Classificação: Substantivo determinado pelo pronome demonstrativo \"este\".",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-009 — Fixação 9: Substantivo com Pronome Demonstrativo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-009 — Fixação 9: Substantivo com Pronome Demonstrativo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-009 — Fixação 9: Substantivo com Pronome Demonstrativo.",
           "blocks": [
             {
               "type": "list",
@@ -1101,6 +1520,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-010",
           "title": "EX-A00-G07-PORQUES-010 — Fixação 10: Conjunção Causal no Período Composto",
+          "prompt": "Enunciado: Complete e classifique: 10. Os servidores fizeram cursos de aperfeiçoamento  a chefia os obrigou.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Complete e classifique: 10. Os servidores fizeram cursos de aperfeiçoamento  a chefia os obrigou."
+            },
+            {
+              "order": 2,
+              "action": "Preenchimento",
+              "rationale": "porque (junto e sem acento)."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Conjunção Subordinativa Causal ($=$ pois / já que)."
+            }
+          ],
+          "result": "Classificação: Conjunção Subordinativa Causal ($=$ pois / já que).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-010 — Fixação 10: Conjunção Causal no Período Composto sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-010 — Fixação 10: Conjunção Causal no Período Composto.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-010 — Fixação 10: Conjunção Causal no Período Composto.",
           "blocks": [
             {
               "type": "list",
@@ -1116,6 +1557,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-011",
           "title": "EX-A00-G07-PORQUES-011 — Fixação 11: Interrogativa Indireta no Final de Período",
+          "prompt": "Enunciado: Complete e classifique: 11. Sem seu esclarecimento, nunca entenderia .",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Complete e classifique: 11. Sem seu esclarecimento, nunca entenderia ."
+            },
+            {
+              "order": 2,
+              "action": "Preenchimento",
+              "rationale": "por quê (separado e com acento)."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Locução Adverbial Interrogativa de Causa posicionada no final de oração interrogativa indireta (antes do ponto final)."
+            }
+          ],
+          "result": "Classificação: Locução Adverbial Interrogativa de Causa posicionada no final de oração interrogativa indireta (antes do ponto final).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-011 — Fixação 11: Interrogativa Indireta no Final de Período sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-011 — Fixação 11: Interrogativa Indireta no Final de Período.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-011 — Fixação 11: Interrogativa Indireta no Final de Período.",
           "blocks": [
             {
               "type": "list",
@@ -1131,6 +1594,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-012",
           "title": "EX-A00-G07-PORQUES-012 — Fixação 12: Interrogativa Indireta Antes de Vírgula",
+          "prompt": "Enunciado: Complete e classifique: 12. Não sabia , mas estava confiante.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Complete e classifique: 12. Não sabia , mas estava confiante."
+            },
+            {
+              "order": 2,
+              "action": "Preenchimento",
+              "rationale": "por quê (separado e com acento)."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Locução Adverbial Interrogativa de Causa em interrogativa indireta posicionada imediatamente antes de pausa marcada por vírgula."
+            }
+          ],
+          "result": "Classificação: Locução Adverbial Interrogativa de Causa em interrogativa indireta posicionada imediatamente antes de pausa marcada por vírgula.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-012 — Fixação 12: Interrogativa Indireta Antes de Vírgula sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-012 — Fixação 12: Interrogativa Indireta Antes de Vírgula.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-012 — Fixação 12: Interrogativa Indireta Antes de Vírgula.",
           "blocks": [
             {
               "type": "list",
@@ -1146,6 +1631,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-013",
           "title": "EX-A00-G07-PORQUES-013 — Questão 01: VUNESP - Pref. Birigui 2018 (Tirinha Curupira)",
+          "prompt": "Enunciado Resumido: Preenchimento de lacunas em quadrinho: Balão 1 (\"... CURUPIRA ANDA DESCALÇO?\") e Balão 2 (\"... NUNCA ENCONTREI TÊNIS AO CONTRÁRIO!\").",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado Resumido",
+              "rationale": "Preenchimento de lacunas em quadrinho: Balão 1 (\"... CURUPIRA ANDA DESCALÇO?\") e Balão 2 (\"... NUNCA ENCONTREI TÊNIS AO CONTRÁRIO!\")."
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "Balão 1 é início de pergunta direta $\\rightarrow$ Por que; Balão 2 é resposta/justificativa $\\rightarrow$ Porque."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "Letra C (Por que... Porque)."
+            }
+          ],
+          "result": "Gabarito Oficial: Letra C (Por que... Porque).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-013 — Questão 01: VUNESP - Pref. Birigui 2018 (Tirinha Curupira) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-013 — Questão 01: VUNESP - Pref. Birigui 2018 (Tirinha Curupira).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-013 — Questão 01: VUNESP - Pref. Birigui 2018 (Tirinha Curupira).",
           "blocks": [
             {
               "type": "list",
@@ -1161,6 +1668,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-014",
           "title": "EX-A00-G07-PORQUES-014 — Questão 02: VUNESP - IPREMM 2019 (Estátuas Egípcias)",
+          "prompt": "Texto Base: \"...pesquisa que busca compreender por que as estátuas egípcias têm...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto Base",
+              "rationale": "\"...pesquisa que busca compreender por que as estátuas egípcias têm...\""
+            },
+            {
+              "order": 2,
+              "action": "Análise das Alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "A) ...o por que... $\\rightarrow$ Incorreta (exige o porquê substantivo).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "B) Por que muitas deidades... essa era a mão vandalizada. $\\rightarrow$ Incorreta (oração causal invertida $=$ Porque).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "C) ...por que assim... $\\rightarrow$ Incorreta (explicativa $=$ porque).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: Letra E.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-014 — Questão 02: VUNESP - IPREMM 2019 (Estátuas Egípcias) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-014 — Questão 02: VUNESP - IPREMM 2019 (Estátuas Egípcias).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-014 — Questão 02: VUNESP - IPREMM 2019 (Estátuas Egípcias).",
           "blocks": [
             {
               "type": "list",
@@ -1181,6 +1720,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-015",
           "title": "EX-A00-G07-PORQUES-015 — Questão 03: VUNESP - SAAE Barretos 2018",
+          "prompt": "Análise das Alternativas:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise das Alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "A) ...tão bons por que o estudo... $\\rightarrow$ Incorreta (causal $=$ porque).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "B) ...um porque por trás... $\\rightarrow$ Incorreta (exige um porquê substantivo).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) Porquê esquizofrênicos... ? $\\rightarrow$ Incorreta (pergunta direta inicial $=$ Por que).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) Os pesquisadores foram questionados por que utilizaram... $\\rightarrow$ Correta (interrogativa indireta $=$ por qual motivo).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: Letra D.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-015 — Questão 03: VUNESP - SAAE Barretos 2018 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-015 — Questão 03: VUNESP - SAAE Barretos 2018.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-015 — Questão 03: VUNESP - SAAE Barretos 2018.",
           "blocks": [
             {
               "type": "list",
@@ -1200,6 +1771,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-016",
           "title": "EX-A00-G07-PORQUES-016 — Questão 04: FCC - SABESP (Período Interrogativo com Causa)",
+          "prompt": "Texto: \"Até onde terei deixado de perceber para onde se dirigia a Itália porque minha observação era deficiente e até onde porque as curvas do caminho ainda não eram visíveis?\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"Até onde terei deixado de perceber para onde se dirigia a Itália porque minha observação era deficiente e até onde porque as curvas do caminho ainda não eram visíveis?\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "A pergunta global incide sobre \"Até onde...?\". Os conectores porque introduzem as causas motivadoras da falha de percepção."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "Letra D (causa)."
+            }
+          ],
+          "result": "Gabarito Oficial: Letra D (causa).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-016 — Questão 04: FCC - SABESP (Período Interrogativo com Causa) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-016 — Questão 04: FCC - SABESP (Período Interrogativo com Causa).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-016 — Questão 04: FCC - SABESP (Período Interrogativo com Causa).",
           "blocks": [
             {
               "type": "list",
@@ -1215,6 +1808,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-017",
           "title": "EX-A00-G07-PORQUES-017 — Questão 05: AOCP - Pref. Juiz de Fora (Final de Frase)",
+          "prompt": "Análise: Pergunta direta posicionada no final de período com ponto de interrogação: \"Você não vem por quê?\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Pergunta direta posicionada no final de período com ponto de interrogação: \"Você não vem por quê?\"."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito Oficial",
+              "rationale": "Letra D."
+            }
+          ],
+          "result": "Gabarito Oficial: Letra D.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-017 — Questão 05: AOCP - Pref. Juiz de Fora (Final de Frase) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-017 — Questão 05: AOCP - Pref. Juiz de Fora (Final de Frase).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-017 — Questão 05: AOCP - Pref. Juiz de Fora (Final de Frase).",
           "blocks": [
             {
               "type": "list",
@@ -1229,6 +1839,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-018",
           "title": "EX-A00-G07-PORQUES-018 — Questão 06: FCC - TRT 15ª Região (Texto de Drummond)",
+          "prompt": "Texto: \"...é porque estou morto...\" (conjunção causal $=$ pois).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...é porque estou morto...\" (conjunção causal $=$ pois)."
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "A alternativa E (\"Os jovens às vezes erram porque são muito ansiosos\") é a única que também exige a conjunção causal porque."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "Letra E."
+            }
+          ],
+          "result": "Gabarito Oficial: Letra E.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-018 — Questão 06: FCC - TRT 15ª Região (Texto de Drummond) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-018 — Questão 06: FCC - TRT 15ª Região (Texto de Drummond).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-018 — Questão 06: FCC - TRT 15ª Região (Texto de Drummond).",
           "blocks": [
             {
               "type": "list",
@@ -1244,6 +1876,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-019",
           "title": "EX-A00-G07-PORQUES-019 — Questão 07: FCC - MPE-CE (Julgamento de Proposições)",
+          "prompt": "Proposições:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Proposições",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "I. Meu coração, não sei porque, bate feliz... $\\rightarrow$ Incorreta (está antes de vírgula em indireta; deveria ser por quê).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "II. ...só não sei por quê. $\\rightarrow$ Correta (indireta no final).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "III. ...esclarecer o porquê... $\\rightarrow$ Correta (substantivo com artigo o).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Gabarito Oficial",
+              "rationale": "Letra B (II e III)."
+            }
+          ],
+          "result": "Gabarito Oficial: Letra B (II e III).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-019 — Questão 07: FCC - MPE-CE (Julgamento de Proposições) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-019 — Questão 07: FCC - MPE-CE (Julgamento de Proposições).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-019 — Questão 07: FCC - MPE-CE (Julgamento de Proposições).",
           "blocks": [
             {
               "type": "list",
@@ -1261,6 +1925,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-020",
           "title": "EX-A00-G07-PORQUES-020 — Questão 08: INSTITUTO AOCP - Pref. Vitória (Conjunções Explicativas)",
+          "prompt": "Texto: \"Não porque seus gestores não acreditam em vocês, mas porque a mudança é um processo.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"Não porque seus gestores não acreditam em vocês, mas porque a mudança é um processo.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "Ambos os termos introduzem justificativas coordenadas, estando corretamente grafados juntos e sem acento."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "Letra C."
+            }
+          ],
+          "result": "Gabarito Oficial: Letra C.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-020 — Questão 08: INSTITUTO AOCP - Pref. Vitória (Conjunções Explicativas) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-020 — Questão 08: INSTITUTO AOCP - Pref. Vitória (Conjunções Explicativas).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-020 — Questão 08: INSTITUTO AOCP - Pref. Vitória (Conjunções Explicativas).",
           "blocks": [
             {
               "type": "list",
@@ -1276,6 +1962,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-021",
           "title": "EX-A00-G07-PORQUES-021 — Questão 09: AOCP - CODEM-PA (Substantivação)",
+          "prompt": "Texto: \"Os cientistas não sabem explicar o porquê\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"Os cientistas não sabem explicar o porquê\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "O termo está substantivado pelo artigo \"o\", significando \"motivo\"."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "Letra A."
+            }
+          ],
+          "result": "Gabarito Oficial: Letra A.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-021 — Questão 09: AOCP - CODEM-PA (Substantivação) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-021 — Questão 09: AOCP - CODEM-PA (Substantivação).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-021 — Questão 09: AOCP - CODEM-PA (Substantivação).",
           "blocks": [
             {
               "type": "list",
@@ -1291,6 +1999,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-022",
           "title": "EX-A00-G07-PORQUES-022 — Questão 10: INSTITUTO AOCP - TJ-MG Juiz Leigo (\"Eis por que\")",
+          "prompt": "Texto: \"Eis por que as primeiras línguas foram cantantes...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"Eis por que as primeiras línguas foram cantantes...\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "A palavra de designação Eis introduz um motivo subjetivo à assertiva prévia, podendo ser substituído por \"por qual motivo\". Não é pergunta retórica nem conjunção causal simples."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "Letra B."
+            }
+          ],
+          "result": "Gabarito Oficial: Letra B.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-022 — Questão 10: INSTITUTO AOCP - TJ-MG Juiz Leigo (\"Eis por que\") sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-022 — Questão 10: INSTITUTO AOCP - TJ-MG Juiz Leigo (\"Eis por que\").",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-022 — Questão 10: INSTITUTO AOCP - TJ-MG Juiz Leigo (\"Eis por que\").",
           "blocks": [
             {
               "type": "list",
@@ -1306,6 +2036,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-023",
           "title": "EX-A00-G07-PORQUES-023 — Questão 11: FGV - COMPESA (Pegadinha da Intercalação)",
+          "prompt": "Análise das Alternativas: Na opção E (\"Entre o porque e o por quê...\"), o primeiro termo é determinado pelo artigo \"o\", devendo ser grafado como substantivo (\"o porquê\"). A opção B (\"por que, na máquina escrever...\") está correta sem acento por ser início de pergunta com adjunto intercalado.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise das Alternativas",
+              "rationale": "Na opção E (\"Entre o porque e o por quê...\"), o primeiro termo é determinado pelo artigo \"o\", devendo ser grafado como substantivo (\"o porquê\"). A opção B (\"por que, na máquina escrever...\") está correta sem acento por ser início de pergunta com adjunto intercalado."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito Oficial",
+              "rationale": "Letra E (inadequada)."
+            }
+          ],
+          "result": "Gabarito Oficial: Letra E (inadequada).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-023 — Questão 11: FGV - COMPESA (Pegadinha da Intercalação) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-023 — Questão 11: FGV - COMPESA (Pegadinha da Intercalação).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-023 — Questão 11: FGV - COMPESA (Pegadinha da Intercalação).",
           "blocks": [
             {
               "type": "list",
@@ -1320,6 +2067,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-024",
           "title": "EX-A00-G07-PORQUES-024 — Questão 12: FGV - Pref. Salvador (Pronome Relativo)",
+          "prompt": "Análise: Na opção B (\"A razão porque sentimos calafrios...\"), o conector atua como pronome relativo preposicionado ($=$ pela qual), devendo ser separado (por que).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Na opção B (\"A razão porque sentimos calafrios...\"), o conector atua como pronome relativo preposicionado ($=$ pela qual), devendo ser separado (por que)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito Oficial",
+              "rationale": "Letra B (equivocada)."
+            }
+          ],
+          "result": "Gabarito Oficial: Letra B (equivocada).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-024 — Questão 12: FGV - Pref. Salvador (Pronome Relativo) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-024 — Questão 12: FGV - Pref. Salvador (Pronome Relativo).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-024 — Questão 12: FGV - Pref. Salvador (Pronome Relativo).",
           "blocks": [
             {
               "type": "list",
@@ -1334,6 +2098,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-025",
           "title": "EX-A00-G07-PORQUES-025 — Questão 13: FGV - TJ-PI (Interrogativa Indireta)",
+          "prompt": "Análise: Na opção B (\"Não sabia porque os aparelhos eram abandonados\"), o verbo conjectural Não sabia exige por que separado ($=$ por qual motivo).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Na opção B (\"Não sabia porque os aparelhos eram abandonados\"), o verbo conjectural Não sabia exige por que separado ($=$ por qual motivo)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito Oficial",
+              "rationale": "Letra B."
+            }
+          ],
+          "result": "Gabarito Oficial: Letra B.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-025 — Questão 13: FGV - TJ-PI (Interrogativa Indireta) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-025 — Questão 13: FGV - TJ-PI (Interrogativa Indireta).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-025 — Questão 13: FGV - TJ-PI (Interrogativa Indireta).",
           "blocks": [
             {
               "type": "list",
@@ -1348,6 +2129,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-026",
           "title": "EX-A00-G07-PORQUES-026 — Questão 14: CESPE - MPC-PA 2019 (Reescrita)",
+          "prompt": "Original: \"Qual é o motivo de a sustentabilidade ser tão importante para a economia?\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Original",
+              "rationale": "\"Qual é o motivo de a sustentabilidade ser tão importante para a economia?\""
+            },
+            {
+              "order": 2,
+              "action": "Reescrita",
+              "rationale": "\"Por que a sustentabilidade é tão importante para a economia?\" (Letra D)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "Letra D."
+            }
+          ],
+          "result": "Gabarito Oficial: Letra D.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-026 — Questão 14: CESPE - MPC-PA 2019 (Reescrita) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-026 — Questão 14: CESPE - MPC-PA 2019 (Reescrita).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-026 — Questão 14: CESPE - MPC-PA 2019 (Reescrita).",
           "blocks": [
             {
               "type": "list",
@@ -1363,6 +2166,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-027",
           "title": "EX-A00-G07-PORQUES-027 — Questão 15: CESPE - FUNPRESP-EXE (Substantivação Aceita)",
+          "prompt": "Texto: \"Não sei por quê.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"Não sei por quê.\""
+            },
+            {
+              "order": 2,
+              "action": "Proposta",
+              "rationale": "Substituir por \"o porquê\"."
+            },
+            {
+              "order": 3,
+              "action": "Análise",
+              "rationale": "A inserção do artigo \"o\" substantiva a expressão perfeitamente."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "Certo."
+            }
+          ],
+          "result": "Gabarito Oficial: Certo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-027 — Questão 15: CESPE - FUNPRESP-EXE (Substantivação Aceita) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-027 — Questão 15: CESPE - FUNPRESP-EXE (Substantivação Aceita).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-027 — Questão 15: CESPE - FUNPRESP-EXE (Substantivação Aceita).",
           "blocks": [
             {
               "type": "list",
@@ -1379,6 +2209,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-028",
           "title": "EX-A00-G07-PORQUES-028 — Questão 16: CESPE - TJ-AM 2019",
+          "prompt": "Texto: \"...porque ela não cumpriu o contrato...\" (conjunção causal).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...porque ela não cumpriu o contrato...\" (conjunção causal)."
+            },
+            {
+              "order": 2,
+              "action": "Proposta",
+              "rationale": "Substituir por por que separado."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "Errado."
+            }
+          ],
+          "result": "Gabarito Oficial: Errado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-028 — Questão 16: CESPE - TJ-AM 2019 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-028 — Questão 16: CESPE - TJ-AM 2019.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-028 — Questão 16: CESPE - TJ-AM 2019.",
           "blocks": [
             {
               "type": "list",
@@ -1394,6 +2246,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-029",
           "title": "EX-A00-G07-PORQUES-029 — Questão 17: CESPE - SEDUC-AL 2018",
+          "prompt": "Texto: \"Por que falharam os programas de formação?\" (pergunta direta).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"Por que falharam os programas de formação?\" (pergunta direta)."
+            },
+            {
+              "order": 2,
+              "action": "Proposta",
+              "rationale": "Substituir por Porque junto."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "Errado."
+            }
+          ],
+          "result": "Gabarito Oficial: Errado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-029 — Questão 17: CESPE - SEDUC-AL 2018 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-029 — Questão 17: CESPE - SEDUC-AL 2018.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-029 — Questão 17: CESPE - SEDUC-AL 2018.",
           "blocks": [
             {
               "type": "list",
@@ -1409,6 +2283,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-030",
           "title": "EX-A00-G07-PORQUES-030 — Questão 18: CESPE - MME (Adaptada)",
+          "prompt": "Texto: \"...por que é adotado\" (pergunta indireta em título).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...por que é adotado\" (pergunta indireta em título)."
+            },
+            {
+              "order": 2,
+              "action": "Proposta",
+              "rationale": "Substituir por \"porque é adotado?\"."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "Errado."
+            }
+          ],
+          "result": "Gabarito Oficial: Errado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-030 — Questão 18: CESPE - MME (Adaptada) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-030 — Questão 18: CESPE - MME (Adaptada).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-030 — Questão 18: CESPE - MME (Adaptada).",
           "blocks": [
             {
               "type": "list",
@@ -1424,6 +2320,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-031",
           "title": "EX-A00-G07-PORQUES-031 — Questão 19: CESPE - Pref. São Cristóvão 2019",
+          "prompt": "Texto: \"...não tem por que contra ele ou contra ela nutrir uma raiva desmedida...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...não tem por que contra ele ou contra ela nutrir uma raiva desmedida...\""
+            },
+            {
+              "order": 2,
+              "action": "Proposta",
+              "rationale": "Substituir por porque junto."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "Errado."
+            }
+          ],
+          "result": "Gabarito Oficial: Errado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-031 — Questão 19: CESPE - Pref. São Cristóvão 2019 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-031 — Questão 19: CESPE - Pref. São Cristóvão 2019.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-031 — Questão 19: CESPE - Pref. São Cristóvão 2019.",
           "blocks": [
             {
               "type": "list",
@@ -1439,6 +2357,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G07-032",
           "title": "EX-A00-G07-PORQUES-032 — Questão 21: IDECAN - IFCE 2021 (A Questão Polêmica de Alto Nível)",
+          "prompt": "Comando: Assinale a alternativa que NÃO tenha mantido adequação à norma culta.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Comando",
+              "rationale": "Assinale a alternativa que NÃO tenha mantido adequação à norma culta."
+            },
+            {
+              "order": 2,
+              "action": "Análise das Alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "A) \"Porque eles parecem ter um desempenho pior em tarefas cognitivas, seus cérebros são pequenos?\" $\\rightarrow$ Correta perante a norma (oração subordinada adverbial causal invertida $=$ pois).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "B) \"Seus cérebros são pequenos, mas a ciência não consegue ainda explicar por quê porque os estudos são incipientes.\" $\\rightarrow$ Correta perante a norma (por quê com pausa oral + oração causal na ordem direta com vírgula facultativa segundo Bechara).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "C) \"Deve existir um porquê muito claro...\" $\\rightarrow$ Correta perante a norma (um porquê substantivado por artigo indefinido).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito Oficial: Letra D.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G07-PORQUES-032 — Questão 21: IDECAN - IFCE 2021 (A Questão Polêmica de Alto Nível) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G07-PORQUES-032 — Questão 21: IDECAN - IFCE 2021 (A Questão Polêmica de Alto Nível).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G07-PORQUES-032 — Questão 21: IDECAN - IFCE 2021 (A Questão Polêmica de Alto Nível).",
           "blocks": [
             {
               "type": "list",
@@ -1518,8 +2468,12 @@
         {
           "trapId": "WARN-A00-G07-PORQUES-001",
           "title": "O Mito de que \"Por Que\" Separado só Existe em Perguntas",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Mito de que \"Por Que\" Separado só Existe em Perguntas.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Mito de que \"Por Que\" Separado só Existe em Perguntas.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Mito de que \"Por Que\" Separado só Existe em Perguntas no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Mito de que \"Por Que\" Separado só Existe em Perguntas.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Mito de que \"Por Que\" Separado só Existe em Perguntas.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Mito de que \"Por Que\" Separado só Existe em Perguntas para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Mito de que \"Por Que\" Separado só Existe em Perguntas.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Mito de que \"Por Que\" Separado só Existe em Perguntas.",
           "blocks": [
             {
               "type": "list",
@@ -1535,8 +2489,12 @@
         {
           "trapId": "WARN-A00-G07-PORQUES-002",
           "title": "A Armadilha da Regência com Verbo no Subjuntivo (FGV)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha da Regência com Verbo no Subjuntivo (FGV).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha da Regência com Verbo no Subjuntivo (FGV).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha da Regência com Verbo no Subjuntivo (FGV) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha da Regência com Verbo no Subjuntivo (FGV).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha da Regência com Verbo no Subjuntivo (FGV).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha da Regência com Verbo no Subjuntivo (FGV) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha da Regência com Verbo no Subjuntivo (FGV).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha da Regência com Verbo no Subjuntivo (FGV).",
           "blocks": [
             {
               "type": "list",
@@ -1551,8 +2509,12 @@
         {
           "trapId": "WARN-A00-G07-PORQUES-003",
           "title": "O Mito do \"Por Quê\" Acentuado Exclusivamente no Final de Período",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Mito do \"Por Quê\" Acentuado Exclusivamente no Final de Período.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Mito do \"Por Quê\" Acentuado Exclusivamente no Final de Período.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Mito do \"Por Quê\" Acentuado Exclusivamente no Final de Período no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Mito do \"Por Quê\" Acentuado Exclusivamente no Final de Período.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Mito do \"Por Quê\" Acentuado Exclusivamente no Final de Período.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Mito do \"Por Quê\" Acentuado Exclusivamente no Final de Período para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Mito do \"Por Quê\" Acentuado Exclusivamente no Final de Período.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Mito do \"Por Quê\" Acentuado Exclusivamente no Final de Período.",
           "blocks": [
             {
               "type": "list",
@@ -1567,8 +2529,12 @@
         {
           "trapId": "WARN-A00-G07-PORQUES-004",
           "title": "A Armadilha da Oração Causal Invertida Iniciando Frase com Ponto de Interrogação",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha da Oração Causal Invertida Iniciando Frase com Ponto de Interrogação.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha da Oração Causal Invertida Iniciando Frase com Ponto de Interrogação.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha da Oração Causal Invertida Iniciando Frase com Ponto de Interrogação no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha da Oração Causal Invertida Iniciando Frase com Ponto de Interrogação.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha da Oração Causal Invertida Iniciando Frase com Ponto de Interrogação.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha da Oração Causal Invertida Iniciando Frase com Ponto de Interrogação para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha da Oração Causal Invertida Iniciando Frase com Ponto de Interrogação.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha da Oração Causal Invertida Iniciando Frase com Ponto de Interrogação.",
           "blocks": [
             {
               "type": "list",
@@ -1583,8 +2549,12 @@
         {
           "trapId": "WARN-A00-G07-PORQUES-005",
           "title": "A Falsa Pausa Criada por Vírgula de Intercalação Adverbial",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Falsa Pausa Criada por Vírgula de Intercalação Adverbial.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Falsa Pausa Criada por Vírgula de Intercalação Adverbial.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Falsa Pausa Criada por Vírgula de Intercalação Adverbial no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Falsa Pausa Criada por Vírgula de Intercalação Adverbial.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Falsa Pausa Criada por Vírgula de Intercalação Adverbial.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Falsa Pausa Criada por Vírgula de Intercalação Adverbial para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Falsa Pausa Criada por Vírgula de Intercalação Adverbial.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Falsa Pausa Criada por Vírgula de Intercalação Adverbial.",
           "blocks": [
             {
               "type": "list",
@@ -1599,8 +2569,12 @@
         {
           "trapId": "WARN-A00-G07-PORQUES-006",
           "title": "A Troca Indevida de Conjunção pelo Substantivo Isolado \"Motivo\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Troca Indevida de Conjunção pelo Substantivo Isolado \"Motivo\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Troca Indevida de Conjunção pelo Substantivo Isolado \"Motivo\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Troca Indevida de Conjunção pelo Substantivo Isolado \"Motivo\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Troca Indevida de Conjunção pelo Substantivo Isolado \"Motivo\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Troca Indevida de Conjunção pelo Substantivo Isolado \"Motivo\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Troca Indevida de Conjunção pelo Substantivo Isolado \"Motivo\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Troca Indevida de Conjunção pelo Substantivo Isolado \"Motivo\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Troca Indevida de Conjunção pelo Substantivo Isolado \"Motivo\".",
           "blocks": [
             {
               "type": "list",
@@ -1615,8 +2589,12 @@
         {
           "trapId": "WARN-A00-G07-PORQUES-007",
           "title": "O Padrão de Substituição Direta do CESPE/CEBRASPE",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Padrão de Substituição Direta do CESPE/CEBRASPE.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Padrão de Substituição Direta do CESPE/CEBRASPE.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Padrão de Substituição Direta do CESPE/CEBRASPE no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Padrão de Substituição Direta do CESPE/CEBRASPE.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Padrão de Substituição Direta do CESPE/CEBRASPE.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Padrão de Substituição Direta do CESPE/CEBRASPE para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Padrão de Substituição Direta do CESPE/CEBRASPE.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Padrão de Substituição Direta do CESPE/CEBRASPE.",
           "blocks": [
             {
               "type": "list",
@@ -1821,7 +2799,41 @@
       "officialAnswer": "E",
       "explanation": "Na primeira lacuna, usaremos “por que”, pois temos uma interrogativa direta. Na segunda, na resposta, usaremos “porque” junto, conjunção explicativa. Na terceira, temos novamente uma interrogativa, mas dessa vez antes de pontuação final, então o “quê” vai ser tônico e acentuado: “por quê?”. Por fim, temos o “porquê” substantivo, conforme revela o uso do artigo anterior. Gabarito letra E.",
       "questionSha256": "1591c05ef37200af41e5d86c9b772d66b481e92895ade4aa0f999c40e18713d9",
-      "answerSha256": "bd5e13d26ce34f986db8c737ec045fbb37c2271fca64b718d9ebd5432ebef18b"
+      "answerSha256": "bd5e13d26ce34f986db8c737ec045fbb37c2271fca64b718d9ebd5432ebef18b",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de UFPR; 2. Identificar a regra central de Emprego dos Porquês; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "incorrect",
+          "explanation": "Opção a: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Emprego dos Porquês."
+        },
+        {
+          "optionLabel": "b",
+          "status": "incorrect",
+          "explanation": "Opção b: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Emprego dos Porquês."
+        },
+        {
+          "optionLabel": "c",
+          "status": "incorrect",
+          "explanation": "Opção c: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Emprego dos Porquês."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Emprego dos Porquês."
+        },
+        {
+          "optionLabel": "e",
+          "status": "correct",
+          "explanation": "Opção e: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Emprego dos Porquês."
+        }
+      ]
     },
     {
       "questionId": "aula00.q0145",
@@ -1834,7 +2846,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Aqui, temos \"porque\" conjunção causal/explicativa, por isso a grafia em palavra única, sem acento. A troca por \"de modo que\" indicaria ideia de consequência, alterando os sentidos originais. Questão incorreta.",
       "questionSha256": "0a69d2fd92b21433fd2282939c971d94739d004e4377962adfe334bcbc7f402b",
-      "answerSha256": "670c372b9f65753294637f77961731e10e46882c23b1d974caa365e4956b45bc"
+      "answerSha256": "670c372b9f65753294637f77961731e10e46882c23b1d974caa365e4956b45bc",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Emprego dos Porquês; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula00.q0054",
@@ -1847,7 +2862,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Aqui, temos preposição \"por\"+\"que\" pronome relativo. Tomou proporções gigantescas o crescimento econômico por que foi marcado o período dos últimos quinhentos anos. Tomou proporções gigantescas o crescimento econômico pelo qual foi marcado o período dos últimos quinhentos anos. Gabarito: incorreto.",
       "questionSha256": "9904ec6aa516c3320ef3db51f4ce1d5086e85765322a0fdd89eba9a95f46343b",
-      "answerSha256": "5f2db674ad58a69eae2523c679535b49234916929a4fe2014f6149ec9af1a213"
+      "answerSha256": "5f2db674ad58a69eae2523c679535b49234916929a4fe2014f6149ec9af1a213",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de TRT 4ª REGIÃO; 2. Identificar a regra central de Emprego dos Porquês; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula00.q0236",
@@ -1859,7 +2877,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "b83c35e10243cbe423540e67c8e7fc02433d92f922b6fcb8fff85b1a094448ea",
-      "answerSha256": "9990c8d9c98113a7727c4bb7ae0b51d21caa5026b50ef5b599f45440e07091a3"
+      "answerSha256": "9990c8d9c98113a7727c4bb7ae0b51d21caa5026b50ef5b599f45440e07091a3",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Emprego dos Porquês; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula00.q0103",
@@ -1872,7 +2893,10 @@
       "officialAnswer": "incorrect",
       "explanation": "A palavra “é” recebe acento pela regra do monossílabo tônico terminado em A, E ou O. Já o “à” recebe acento grave, que marca a fusão de A+A, fenômeno chamado “CRASE” (assunto tratado na aula de regência). Questão incorreta.",
       "questionSha256": "8b34dac887aaa20c4e2fd178624a96cc51e83b2235efada0ba0a30b6382d6edb",
-      "answerSha256": "32656e5094a1d9213616205a9c8fa5a9c2a94a7a82f33d3f2a587750d35665f2"
+      "answerSha256": "32656e5094a1d9213616205a9c8fa5a9c2a94a7a82f33d3f2a587750d35665f2",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Emprego dos Porquês; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula00.q0095",
@@ -1885,7 +2909,10 @@
       "officialAnswer": "incorrect",
       "explanation": "As palavras “só” e “nós” são acentuadas por serem monossílabos tônicos. Já a palavra “dói” recebe acento por se um monossílabo que apresenta ditongo aberto (como as palavras céu, véu, sóis, réu etc.). Portanto, as palavras são acentuadas por justificativas diferentes. Questão incorreta.",
       "questionSha256": "e0a1d096fb54e692ad834a81bc5c68b6a2f0c54eb08ee2b7fa55c58eea7f4007",
-      "answerSha256": "10f6639c7bf6adad4fc61e29b63a0616c2e0fce6103d249722e8a1ab63654611"
+      "answerSha256": "10f6639c7bf6adad4fc61e29b63a0616c2e0fce6103d249722e8a1ab63654611",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Emprego dos Porquês; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

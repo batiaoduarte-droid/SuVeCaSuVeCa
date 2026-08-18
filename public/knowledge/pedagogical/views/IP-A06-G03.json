@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A06-G03",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.813Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.568Z"
   },
   "unit": {
     "unitId": "IP-A06-G03",
@@ -645,6 +645,14 @@
         {
           "entityId": "RULE-IP-A06-G03-001",
           "title": "Regras canônicas",
+          "statement": "Regras canônicas",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -731,6 +739,125 @@
         {
           "procedureId": "PROC-A06-G03-001",
           "title": "Algoritmo Integrado de Análise Sintática Oracional",
+          "objective": "Executar o algoritmo decisório para Algoritmo Integrado de Análise Sintática Oracional",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo Integrado de Análise Sintática Oracional."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Etapa 1 — \"Viva o Verbo\" (Localização e Reordenação do Sujeito)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Dirija-se ao verbo principal e faça a pergunta canônica",
+              "explanation": "\"Quem é que [verbo]?\" ou \"O que é que [verbo]?\".",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Extraia o sujeito e reorganize mentalmente a oração na ordem direta ($\\text{Sujeito} + \\text{Verbo} + \\text{Complementos} + \\text{Adjuntos}$).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Isole o núcleo do sujeito (substantivo não preposicionado).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Etapa 2 — Delimitação do Predicado",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Extraia o sujeito; todo o segmento remanescente é o predicado. Se o sujeito for elíptico ou inexistente, a frase inteira é predicado.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Etapa 3 — O Mantra da Sintaxe Contextual e a Natureza do Verbo",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Não olhe para o verbo isolado no dicionário; examine os termos que o sucedem no contexto concreto.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Aplique o teste",
+              "explanation": "o verbo indica estado ou ação?",
+              "test": "Aplique o teste: o verbo indica estado ou ação?"
+            },
+            {
+              "order": 10,
+              "action": "Etapa 4 — Classificação da Predicação e do Predicado",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Se o verbo for de estado e houver predicativo do sujeito $\\rightarrow$ Verbo de Ligação (VL) $\\rightarrow$ Predicado Nominal (PN).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 12,
+              "action": "Se o verbo for de ação",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 13,
+              "action": "Analise os complementos",
+              "explanation": "sem objeto (VI); objeto direto sem preposição (VTD); objeto indireto com preposição (VTI); ambos (VTDI).",
+              "test": null
+            },
+            {
+              "order": 14,
+              "action": "Verifique se há predicativo",
+              "explanation": "",
+              "test": "Verifique se há predicativo:"
+            },
+            {
+              "order": 15,
+              "action": "Se NÃO houver predicativo $\\rightarrow$ Predicado Verbal (PV).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 16,
+              "action": "Se HOUVER predicativo (do sujeito ou do objeto) $\\rightarrow$ Predicado Verbo-Nominal (PVN).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo Integrado de Análise Sintática Oracional."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -819,6 +946,65 @@
         {
           "procedureId": "PROC-A06-G03-002",
           "title": "Método das Setas Sintáticas para Diferenciação Funcional",
+          "objective": "Executar o algoritmo decisório para Método das Setas Sintáticas para Diferenciação Funcional",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método das Setas Sintáticas para Diferenciação Funcional."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identifique o termo em dúvida após o verbo.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Trace a seta de relação funcional",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se a seta apontar para o VERBO indicando circunstância (onde, quando, como) $\\rightarrow$ Adjunto Adverbial (termo acessório dispensável; não transita o verbo).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se a seta apontar para o VERBO completando-o sem circunstância $\\rightarrow$ Complemento Verbal (Objeto Direto ou Indireto).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se a seta apontar para o SUJEITO (Substantivo/Pronome) qualificando-o $\\rightarrow$ Predicativo do Sujeito.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se a seta apontar para o OBJETO qualificando-o $\\rightarrow$ Predicativo do Objeto.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método das Setas Sintáticas para Diferenciação Funcional."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -857,6 +1043,65 @@
         {
           "procedureId": "PROC-A06-G03-003",
           "title": "Teste de Substituição por \"Estar/Ser\" para Verbos de Ligação Contextuais",
+          "objective": "Executar o algoritmo decisório para Teste de Substituição por \"Estar/Ser\" para Verbos de Ligação Contextuais",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Substituição por \"Estar/Ser\" para Verbos de Ligação Contextuais."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole o verbo sob análise na oração (\"Ele andava preocupado\" / \"Ela caiu doente\").",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Substitua o verbo por estar (estado passageiro) ou ser (estado permanente)",
+              "explanation": "",
+              "test": "Substitua o verbo por estar (estado passageiro) ou ser (estado permanente):"
+            },
+            {
+              "order": 3,
+              "action": "\"Ele andava preocupado\" $\\rightarrow$ \"Ele estava preocupado\".",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "\"Ela caiu doente\" $\\rightarrow$ \"Ela ficou/estava doente\".",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Verifique se o termo seguinte é um adjetivo que qualifica o sujeito (preocupado qualifica Ele; doente qualifica Ela).",
+              "explanation": null,
+              "test": "Verifique se o termo seguinte é um adjetivo que qualifica o sujeito (preocupado qualifica Ele; doente qualifica Ela)."
+            },
+            {
+              "order": 6,
+              "action": "Conclusão",
+              "explanation": "Mantido o sentido de estado e a presença do adjetivo, o verbo é Verbo de Ligação (VL) e o predicado é Nominal (PN).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Substituição por \"Estar/Ser\" para Verbos de Ligação Contextuais."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -901,6 +1146,59 @@
         {
           "procedureId": "PROC-A06-G03-004",
           "title": "Teste do Masculino para Validação de Artigo vs. Preposição Regencial",
+          "objective": "Executar o algoritmo decisório para Teste do Masculino para Validação de Artigo vs. Preposição Regencial",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste do Masculino para Validação de Artigo vs. Preposição Regencial."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identifique o termo feminino regido pelo verbo (\"Consideraram absurda a decisão\").",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Substitua o substantivo feminino por um substantivo masculino correlato (\"o comentário\" ou \"o projeto\").",
+              "explanation": null,
+              "test": "Substitua o substantivo feminino por um substantivo masculino correlato (\"o comentário\" ou \"o projeto\")."
+            },
+            {
+              "order": 3,
+              "action": "Avalie o comportamento do artigo",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se virar \"o\" (\"Consideraram absurdo o comentário\"), a palavra \"a\" original é mero artigo definido $\\rightarrow$ Termo é Objeto Direto $\\rightarrow$ Verbo é VTD.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se virar \"ao\" (\"Visamos ao cargo\"), a palavra \"a\" contém preposição regencial obrigatória $\\rightarrow$ Termo é Objeto Indireto $\\rightarrow$ Verbo é VTI.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste do Masculino para Validação de Artigo vs. Preposição Regencial."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -938,6 +1236,41 @@
         {
           "procedureId": "PROC-A06-G03-005",
           "title": "Teste de Substituição por \"Estar/Ser\" para Validação de Verbo de Ligação",
+          "objective": "Executar o algoritmo decisório para Teste de Substituição por \"Estar/Ser\" para Validação de Verbo de Ligação",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Substituição por \"Estar/Ser\" para Validação de Verbo de Ligação."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Diante de verbos polifuncionais (andar, cair, virar, viver, parecer), substitua a forma verbal por estar (estado passageiro) ou ser (estado permanente).",
+              "explanation": null,
+              "test": "Diante de verbos polifuncionais (andar, cair, virar, viver, parecer), substitua a forma verbal por estar (estado passageiro) ou ser (estado permanente)."
+            },
+            {
+              "order": 2,
+              "action": "Se a oração mantiver coerência de atribuição qualitativa (\"Ele andava preocupado\" $\\rightarrow$ \"Ele estava preocupado\"), confirma-se a função de Verbo de Ligação e o predicado classifica-se como Nominal.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Substituição por \"Estar/Ser\" para Validação de Verbo de Ligação."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -956,6 +1289,22 @@
         {
           "contrastId": "CONTRAST-IP-A06-G03-001",
           "title": "Tabela 1: Adjunto Adverbial vs. Objeto Indireto",
+          "contrastType": "syntactic",
+          "conceptA": "Tabela 1: Adjunto Adverbial vs. Objeto Indireto",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -997,6 +1346,22 @@
         {
           "contrastId": "CONTRAST-IP-A06-G03-002",
           "title": "Tabela 2: Predicativo do Objeto vs. Adjunto Adnominal",
+          "contrastType": "syntactic",
+          "conceptA": "Tabela 2: Predicativo do Objeto vs. Adjunto Adnominal",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -1038,6 +1403,22 @@
         {
           "contrastId": "CONTRAST-IP-A06-G03-003",
           "title": "Tabela 3: Comparação Estrutural dos Três Tipos de Predicado",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 3: Comparação Estrutural dos Três Tipos de Predicado",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "paragraph",
@@ -1064,6 +1445,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-001",
           "title": "EX-A06-G03-001 — Decomposição Canônica de Termos Essenciais",
+          "prompt": "Oração: \"Uma comitiva de empresários chegou ontem a São Paulo.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "\"Uma comitiva de empresários chegou ontem a São Paulo.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Verbo",
+              "rationale": "chegou."
+            },
+            {
+              "order": 4,
+              "action": "Pergunta pelo sujeito",
+              "rationale": "\"Quem é que chegou ontem a São Paulo?\" $\\rightarrow$ \"Uma comitiva de empresários\" (Sujeito Simples)."
+            },
+            {
+              "order": 5,
+              "action": "Núcleo do Sujeito",
+              "rationale": "\"comitiva\" (substantivo principal não preposicionado)."
+            }
+          ],
+          "result": "Classificação do Predicado: chegou (ação $\\rightarrow$ VI) + ontem (adj. adv. tempo) + a São Paulo (adj. adv. lugar) $\\rightarrow$ Predicado Verbal (PV).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-001 — Decomposição Canônica de Termos Essenciais sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-001 — Decomposição Canônica de Termos Essenciais.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-001 — Decomposição Canônica de Termos Essenciais.",
           "blocks": [
             {
               "type": "list",
@@ -1090,6 +1503,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-002",
           "title": "EX-A06-G03-002 — Oração Sem Sujeito com Verbo Impessoal",
+          "prompt": "Oração: \"Havia crianças no parque.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "\"Havia crianças no parque.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "O verbo haver é empregado com sentido de existir, sendo impessoal (não admite sujeito sintático). A oração é constituída exclusivamente por predicado. O termo \"crianças\" atua como Objeto Direto e \"no parque\" como Adjunto Adverbial de Lugar."
+            }
+          ],
+          "result": "Análise: O verbo haver é empregado com sentido de existir, sendo impessoal (não admite sujeito sintático). A oração é constituída exclusivamente por predicado. O termo \"crianças\" atua como Objeto Direto e \"no parque\" como Adjunto Adverbial de Lugar.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-002 — Oração Sem Sujeito com Verbo Impessoal sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-002 — Oração Sem Sujeito com Verbo Impessoal.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-002 — Oração Sem Sujeito com Verbo Impessoal.",
           "blocks": [
             {
               "type": "list",
@@ -1104,6 +1534,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-003",
           "title": "EX-A06-G03-003 — Sujeito Indeterminado",
+          "prompt": "Orações:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Orações",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "\"Guardaram a minha bolsa.\"",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "\"Ofereceram o cargo ao deputado.\"",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Análise",
+              "rationale": "Verbos conjugados na 3ª pessoa do plural sem sujeito expresso e sem referência anafórica no texto $\\rightarrow$ Sujeito Indeterminado. Na oração 2: o cargo = OD; ao deputado = OI $\\rightarrow$ Verbo VTDI $\\rightarrow$ Predicado Verbal (PV)."
+            }
+          ],
+          "result": "Análise: Verbos conjugados na 3ª pessoa do plural sem sujeito expresso e sem referência anafórica no texto $\\rightarrow$ Sujeito Indeterminado. Na oração 2: o cargo = OD; ao deputado = OI $\\rightarrow$ Verbo VTDI $\\rightarrow$ Predicado Verbal (PV).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-003 — Sujeito Indeterminado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-003 — Sujeito Indeterminado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-003 — Sujeito Indeterminado.",
           "blocks": [
             {
               "type": "list",
@@ -1132,6 +1589,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-004",
           "title": "EX-A06-G03-004 — VI com Adjunto Adverbial de Lugar (Dispensabilidade)",
+          "prompt": "Oração: \"O menino foi ao clube.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração",
+              "rationale": "\"O menino foi ao clube.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "O menino = Sujeito; foi = VI (verbo de movimento); ao clube = Adjunto Adverbial de Lugar."
+            },
+            {
+              "order": 3,
+              "action": "Justificativa",
+              "rationale": "\"Ao clube\" responde a onde? (circunstância). Sendo acessório, pode ser suprimido sem destruir a integridade sintática básica do verbo, mantendo a intransitividade verbal."
+            }
+          ],
+          "result": "Justificativa: \"Ao clube\" responde a onde? (circunstância). Sendo acessório, pode ser suprimido sem destruir a integridade sintática básica do verbo, mantendo a intransitividade verbal.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-004 — VI com Adjunto Adverbial de Lugar (Dispensabilidade) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-004 — VI com Adjunto Adverbial de Lugar (Dispensabilidade).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-004 — VI com Adjunto Adverbial de Lugar (Dispensabilidade).",
           "blocks": [
             {
               "type": "list",
@@ -1147,6 +1626,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-005",
           "title": "EX-A06-G03-005 — VI Cercado de Múltiplos Adjuntos Adverbiais",
+          "prompt": "Orações:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Orações",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "\"De repente, você surgiu na minha frente.\"",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "\"As crianças corriam pelo gramado.\"",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Análise na Frase 1",
+              "rationale": "você = Sujeito; De repente = Adjunto Adverbial de Modo; na minha frente = Adjunto Adverbial de Lugar; surgiu = Verbo Intransitivo (VI) $\\rightarrow$ Predicado Verbal (PV)."
+            }
+          ],
+          "result": "Análise na Frase 1: você = Sujeito; De repente = Adjunto Adverbial de Modo; na minha frente = Adjunto Adverbial de Lugar; surgiu = Verbo Intransitivo (VI) $\\rightarrow$ Predicado Verbal (PV).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-005 — VI Cercado de Múltiplos Adjuntos Adverbiais sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-005 — VI Cercado de Múltiplos Adjuntos Adverbiais.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-005 — VI Cercado de Múltiplos Adjuntos Adverbiais.",
           "blocks": [
             {
               "type": "list",
@@ -1175,6 +1681,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-006",
           "title": "EX-A06-G03-006 — Verbos Transitivos Diretos e Indiretos",
+          "prompt": "Orações:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Orações",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "\"Comprei jornais variados.\" $\\rightarrow$ comprei = VTD; jornais variados = OD.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "\"Estes documentos pertencem ao cliente.\" $\\rightarrow$ pertencem = VTI; ao cliente = OI (preposição a obrigatória).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "\"Visamos a um cargo elevado.\" $\\rightarrow$ Visamos = VTI; a um cargo elevado = OI; elevado = Adjunto Adnominal.",
+              "rationale": null
+            }
+          ],
+          "result": "\"Visamos a um cargo elevado.\" $\\rightarrow$ Visamos = VTI; a um cargo elevado = OI; elevado = Adjunto Adnominal.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-006 — Verbos Transitivos Diretos e Indiretos sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-006 — Verbos Transitivos Diretos e Indiretos.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-006 — Verbos Transitivos Diretos e Indiretos.",
           "blocks": [
             {
               "type": "list",
@@ -1197,6 +1730,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-007",
           "title": "EX-A06-G03-007 — Verbos de Ligação Protótipos e Não Protótipos",
+          "prompt": "Orações e Análises:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Orações e Análises",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "\"Eles estavam eufóricos.\" $\\rightarrow$ estavam = VL (estado transitório) + eufóricos = Predicativo do Sujeito $\\rightarrow$ Predicado Nominal (PN).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "\"As mochilas são mais caras que os livros.\" $\\rightarrow$ são = VL (estado permanente) + mais caras = Predicativo do Sujeito $\\rightarrow$ Predicado Nominal (PN).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "\"Permaneciam abertas as listas de adesão.\" $\\rightarrow$ Ordem direta",
+              "rationale": "\"As listas de adesão permaneciam abertas\" $\\rightarrow$ permaneciam = VL (continuidade de estado) + abertas = Predicativo do Sujeito $\\rightarrow$ Predicado Nominal (PN)."
+            },
+            {
+              "order": 5,
+              "action": "\"Ele andava preocupado.\" $\\rightarrow$ andava = equivale a estava (estado transitório / VL) + preocupado = Predicativo do Sujeito $\\rightarrow$ Predicado Nominal (PN).",
+              "rationale": null
+            }
+          ],
+          "result": "\"Ela caiu doente.\" $\\rightarrow$ caiu = equivale a ficou (mudança de estado / VL) + doente = Predicativo do Sujeito $\\rightarrow$ Predicado Nominal (PN).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-007 — Verbos de Ligação Protótipos e Não Protótipos sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-007 — Verbos de Ligação Protótipos e Não Protótipos.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-007 — Verbos de Ligação Protótipos e Não Protótipos.",
           "blocks": [
             {
               "type": "list",
@@ -1221,6 +1786,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-008",
           "title": "EX-A06-G03-008 — Bateria Completa de Predicado Verbo-Nominal",
+          "prompt": "| Nº | Oração Analisada | Análise do Verbo | Termos Integrantes / Acessórios | Análise do Predicativo | Tipo de Predicado |",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"| Nº | Oração Analisada | Análise do Verbo | Termos Integran...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "| 7 | \"Acho sua atitude imperdoável.\" | Acho (Ação $\\rightarrow$ VTD) | sua atitude (Objeto Direto) | imperdoável (Pred. do Objeto) | PVN |",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-008 — Bateria Completa de Predicado Verbo-Nominal sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-008 — Bateria Completa de Predicado Verbo-Nominal.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-008 — Bateria Completa de Predicado Verbo-Nominal.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1263,6 +1850,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-009",
           "title": "EX-A06-G03-001 — \"Ela saiu.\"",
+          "prompt": "Análise: Ela = Sujeito; saiu = Verbo Intransitivo (VI) puro (sentido completo).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Ela = Sujeito; saiu = Verbo Intransitivo (VI) puro (sentido completo)."
+            }
+          ],
+          "result": "Análise: Ela = Sujeito; saiu = Verbo Intransitivo (VI) puro (sentido completo).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-001 — \"Ela saiu.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-001 — \"Ela saiu.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-001 — \"Ela saiu.\".",
           "blocks": [
             {
               "type": "list",
@@ -1276,6 +1875,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-010",
           "title": "EX-A06-G03-002 — \"Ela chegou desesperada.\"",
+          "prompt": "Análise: Ela = Sujeito; chegou = Verbo Intransitivo (VI) (ação); desesperada = adjetivo que qualifica o sujeito $\\rightarrow$ Predicativo do Sujeito (Predicado Verbo-Nominal).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Ela = Sujeito; chegou = Verbo Intransitivo (VI) (ação); desesperada = adjetivo que qualifica o sujeito $\\rightarrow$ Predicativo do Sujeito (Predicado Verbo-Nominal)."
+            }
+          ],
+          "result": "Análise: Ela = Sujeito; chegou = Verbo Intransitivo (VI) (ação); desesperada = adjetivo que qualifica o sujeito $\\rightarrow$ Predicativo do Sujeito (Predicado Verbo-Nominal).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-002 — \"Ela chegou desesperada.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-002 — \"Ela chegou desesperada.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-002 — \"Ela chegou desesperada.\".",
           "blocks": [
             {
               "type": "list",
@@ -1289,6 +1900,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-011",
           "title": "EX-A06-G03-003 — \"O menino foi ao clube.\"",
+          "prompt": "Análise: O menino = Sujeito; foi = Verbo Intransitivo (VI) (movimento); ao clube = Adjunto Adverbial de Lugar (dispensável).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "O menino = Sujeito; foi = Verbo Intransitivo (VI) (movimento); ao clube = Adjunto Adverbial de Lugar (dispensável)."
+            }
+          ],
+          "result": "Análise: O menino = Sujeito; foi = Verbo Intransitivo (VI) (movimento); ao clube = Adjunto Adverbial de Lugar (dispensável).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-003 — \"O menino foi ao clube.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-003 — \"O menino foi ao clube.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-003 — \"O menino foi ao clube.\".",
           "blocks": [
             {
               "type": "list",
@@ -1302,6 +1925,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-012",
           "title": "EX-A06-G03-004 — \"A menina chegou satisfeita.\"",
+          "prompt": "Análise: chegou = VI; satisfeita = Predicativo do Sujeito (ao pluralizar: \"As meninas chegaram satisfeitas\", comprovando a concordância adjetiva nominal contra a invariabilidade do advérbio).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "chegou = VI; satisfeita = Predicativo do Sujeito (ao pluralizar: \"As meninas chegaram satisfeitas\", comprovando a concordância adjetiva nominal contra a invariabilidade do advérbio)."
+            }
+          ],
+          "result": "Análise: chegou = VI; satisfeita = Predicativo do Sujeito (ao pluralizar: \"As meninas chegaram satisfeitas\", comprovando a concordância adjetiva nominal contra a invariabilidade do advérbio).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-004 — \"A menina chegou satisfeita.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-004 — \"A menina chegou satisfeita.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-004 — \"A menina chegou satisfeita.\".",
           "blocks": [
             {
               "type": "list",
@@ -1315,6 +1950,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-013",
           "title": "EX-A06-G03-005 — \"Comprei jornais variados.\" / \"Cantou músicas populares.\"",
+          "prompt": "Análise: Comprei / Cantou = Verbos Transitivos Diretos (VTD); jornais variados / músicas populares = Objetos Diretos (OD).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Comprei / Cantou = Verbos Transitivos Diretos (VTD); jornais variados / músicas populares = Objetos Diretos (OD)."
+            }
+          ],
+          "result": "Análise: Comprei / Cantou = Verbos Transitivos Diretos (VTD); jornais variados / músicas populares = Objetos Diretos (OD).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-005 — \"Comprei jornais variados.\" / \"Cantou músicas populares.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-005 — \"Comprei jornais variados.\" / \"Cantou músicas populares.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-005 — \"Comprei jornais variados.\" / \"Cantou músicas populares.\".",
           "blocks": [
             {
               "type": "list",
@@ -1328,6 +1975,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-014",
           "title": "EX-A06-G03-006 — \"Estes documentos pertencem ao cliente.\"",
+          "prompt": "Análise: pertencem = Verbo Transitivo Indireto (VTI); ao cliente = Objeto Indireto (OI) (preposição a obrigatória).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "pertencem = Verbo Transitivo Indireto (VTI); ao cliente = Objeto Indireto (OI) (preposição a obrigatória)."
+            }
+          ],
+          "result": "Análise: pertencem = Verbo Transitivo Indireto (VTI); ao cliente = Objeto Indireto (OI) (preposição a obrigatória).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-006 — \"Estes documentos pertencem ao cliente.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-006 — \"Estes documentos pertencem ao cliente.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-006 — \"Estes documentos pertencem ao cliente.\".",
           "blocks": [
             {
               "type": "list",
@@ -1341,6 +2000,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-015",
           "title": "EX-A06-G03-007 — \"Deu o lugar ao velhinho.\"",
+          "prompt": "Análise: Deu = Verbo Bitransitivo (VTDI); o lugar = OD; ao velhinho = OI.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Deu = Verbo Bitransitivo (VTDI); o lugar = OD; ao velhinho = OI."
+            }
+          ],
+          "result": "Análise: Deu = Verbo Bitransitivo (VTDI); o lugar = OD; ao velhinho = OI.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-007 — \"Deu o lugar ao velhinho.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-007 — \"Deu o lugar ao velhinho.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-007 — \"Deu o lugar ao velhinho.\".",
           "blocks": [
             {
               "type": "list",
@@ -1354,6 +2025,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-016",
           "title": "EX-A06-G03-008 — \"Ela caiu doente.\"",
+          "prompt": "Análise: caiu equivale a ficou (mudança de estado) $\\rightarrow$ Verbo de Ligação (VL); doente = Predicativo do Sujeito.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "caiu equivale a ficou (mudança de estado) $\\rightarrow$ Verbo de Ligação (VL); doente = Predicativo do Sujeito."
+            }
+          ],
+          "result": "Análise: caiu equivale a ficou (mudança de estado) $\\rightarrow$ Verbo de Ligação (VL); doente = Predicativo do Sujeito.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-008 — \"Ela caiu doente.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-008 — \"Ela caiu doente.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-008 — \"Ela caiu doente.\".",
           "blocks": [
             {
               "type": "list",
@@ -1367,6 +2050,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-017",
           "title": "EX-A06-G03-009 — \"Ela caiu na rua.\"",
+          "prompt": "Análise: caiu = Verbo Intransitivo (VI) (ação física de tombo); na rua = Adjunto Adverbial de Lugar.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "caiu = Verbo Intransitivo (VI) (ação física de tombo); na rua = Adjunto Adverbial de Lugar."
+            }
+          ],
+          "result": "Análise: caiu = Verbo Intransitivo (VI) (ação física de tombo); na rua = Adjunto Adverbial de Lugar.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-009 — \"Ela caiu na rua.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-009 — \"Ela caiu na rua.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-009 — \"Ela caiu na rua.\".",
           "blocks": [
             {
               "type": "list",
@@ -1380,6 +2075,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-018",
           "title": "EX-A06-G03-010 — Frase 1: \"Ela ligou o ferro silenciosa.\"",
+          "prompt": "Análise: Ela = Sujeito Simples; ligou = VTD; o ferro = Objeto Direto; silenciosa = Predicativo do Sujeito (Predicado Verbo-Nominal).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Ela = Sujeito Simples; ligou = VTD; o ferro = Objeto Direto; silenciosa = Predicativo do Sujeito (Predicado Verbo-Nominal)."
+            }
+          ],
+          "result": "Análise: Ela = Sujeito Simples; ligou = VTD; o ferro = Objeto Direto; silenciosa = Predicativo do Sujeito (Predicado Verbo-Nominal).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-010 — Frase 1: \"Ela ligou o ferro silenciosa.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-010 — Frase 1: \"Ela ligou o ferro silenciosa.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-010 — Frase 1: \"Ela ligou o ferro silenciosa.\".",
           "blocks": [
             {
               "type": "list",
@@ -1393,6 +2100,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-019",
           "title": "EX-A06-G03-011 — Frase 2: \"Permaneciam abertas as listas de adesão.\"",
+          "prompt": "Análise: Ordem direta: \"As listas de adesão [suj.] permaneciam [VL - continuidade de estado] abertas [Pred. Suj.]\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Ordem direta: \"As listas de adesão [suj.] permaneciam [VL - continuidade de estado] abertas [Pred. Suj.]\"."
+            }
+          ],
+          "result": "Análise: Ordem direta: \"As listas de adesão [suj.] permaneciam [VL - continuidade de estado] abertas [Pred. Suj.]\".",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-011 — Frase 2: \"Permaneciam abertas as listas de adesão.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-011 — Frase 2: \"Permaneciam abertas as listas de adesão.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-011 — Frase 2: \"Permaneciam abertas as listas de adesão.\".",
           "blocks": [
             {
               "type": "list",
@@ -1406,6 +2125,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-020",
           "title": "EX-A06-G03-012 — Frase 3: \"Chegamos ofegantes à porta da cantina.\"",
+          "prompt": "Análise: Nós = Sujeito Oculto; chegamos = VI (ação/movimento); ofegantes = Predicativo do Sujeito; à porta da cantina = Adjunto Adverbial de Lugar.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Nós = Sujeito Oculto; chegamos = VI (ação/movimento); ofegantes = Predicativo do Sujeito; à porta da cantina = Adjunto Adverbial de Lugar."
+            }
+          ],
+          "result": "Análise: Nós = Sujeito Oculto; chegamos = VI (ação/movimento); ofegantes = Predicativo do Sujeito; à porta da cantina = Adjunto Adverbial de Lugar.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-012 — Frase 3: \"Chegamos ofegantes à porta da cantina.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-012 — Frase 3: \"Chegamos ofegantes à porta da cantina.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-012 — Frase 3: \"Chegamos ofegantes à porta da cantina.\".",
           "blocks": [
             {
               "type": "list",
@@ -1419,6 +2150,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-021",
           "title": "EX-A06-G03-013 — Frase 4: \"Visamos a um cargo elevado.\"",
+          "prompt": "Análise: Visamos = VTI (rege prep. a no sentido de almejar); a um cargo elevado = Objeto Indireto (elevado = Adjunto Adnominal de cargo).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Visamos = VTI (rege prep. a no sentido de almejar); a um cargo elevado = Objeto Indireto (elevado = Adjunto Adnominal de cargo)."
+            }
+          ],
+          "result": "Análise: Visamos = VTI (rege prep. a no sentido de almejar); a um cargo elevado = Objeto Indireto (elevado = Adjunto Adnominal de cargo).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-013 — Frase 4: \"Visamos a um cargo elevado.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-013 — Frase 4: \"Visamos a um cargo elevado.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-013 — Frase 4: \"Visamos a um cargo elevado.\".",
           "blocks": [
             {
               "type": "list",
@@ -1432,6 +2175,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-022",
           "title": "EX-A06-G03-014 — Frase 5: \"Ofereceram o cargo ao deputado.\"",
+          "prompt": "Análise: Sujeito Indeterminado (verbo na 3ª pessoa do plural); ofereceram = VTDI; o cargo = OD; ao deputado = OI.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Sujeito Indeterminado (verbo na 3ª pessoa do plural); ofereceram = VTDI; o cargo = OD; ao deputado = OI."
+            }
+          ],
+          "result": "Análise: Sujeito Indeterminado (verbo na 3ª pessoa do plural); ofereceram = VTDI; o cargo = OD; ao deputado = OI.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-014 — Frase 5: \"Ofereceram o cargo ao deputado.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-014 — Frase 5: \"Ofereceram o cargo ao deputado.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-014 — Frase 5: \"Ofereceram o cargo ao deputado.\".",
           "blocks": [
             {
               "type": "list",
@@ -1445,6 +2200,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-023",
           "title": "EX-A06-G03-015 — Frase 6: \"As mochilas são mais caras que os livros.\"",
+          "prompt": "Análise: As mochilas = Sujeito; são = VL (estado permanente); mais caras = Predicativo do Sujeito.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "As mochilas = Sujeito; são = VL (estado permanente); mais caras = Predicativo do Sujeito."
+            }
+          ],
+          "result": "Análise: As mochilas = Sujeito; são = VL (estado permanente); mais caras = Predicativo do Sujeito.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-015 — Frase 6: \"As mochilas são mais caras que os livros.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-015 — Frase 6: \"As mochilas são mais caras que os livros.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-015 — Frase 6: \"As mochilas são mais caras que os livros.\".",
           "blocks": [
             {
               "type": "list",
@@ -1458,6 +2225,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-024",
           "title": "EX-A06-G03-016 — Frase 7: \"De repente, você surgiu na minha frente.\"",
+          "prompt": "Análise: você = Sujeito; surgiu = VI; De repente = Adjunto Adverbial de Modo; na minha frente = Adjunto Adverbial de Lugar.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "você = Sujeito; surgiu = VI; De repente = Adjunto Adverbial de Modo; na minha frente = Adjunto Adverbial de Lugar."
+            }
+          ],
+          "result": "Análise: você = Sujeito; surgiu = VI; De repente = Adjunto Adverbial de Modo; na minha frente = Adjunto Adverbial de Lugar.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-016 — Frase 7: \"De repente, você surgiu na minha frente.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-016 — Frase 7: \"De repente, você surgiu na minha frente.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-016 — Frase 7: \"De repente, você surgiu na minha frente.\".",
           "blocks": [
             {
               "type": "list",
@@ -1471,6 +2250,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-025",
           "title": "EX-A06-G03-017 — Frase 8: \"Consideraram absurda a decisão do chefe.\"",
+          "prompt": "Análise: Sujeito Indeterminado; consideraram = VTD; a decisão do chefe = Objeto Direto; absurda = Predicativo do Objeto (Predicado Verbo-Nominal).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Sujeito Indeterminado; consideraram = VTD; a decisão do chefe = Objeto Direto; absurda = Predicativo do Objeto (Predicado Verbo-Nominal)."
+            }
+          ],
+          "result": "Análise: Sujeito Indeterminado; consideraram = VTD; a decisão do chefe = Objeto Direto; absurda = Predicativo do Objeto (Predicado Verbo-Nominal).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-017 — Frase 8: \"Consideraram absurda a decisão do chefe.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-017 — Frase 8: \"Consideraram absurda a decisão do chefe.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-017 — Frase 8: \"Consideraram absurda a decisão do chefe.\".",
           "blocks": [
             {
               "type": "list",
@@ -1484,6 +2275,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-026",
           "title": "EX-A06-G03-018 — \"Uma comitiva de empresários chegou ontem a São Paulo.\"",
+          "prompt": "Análise: Sujeito: Uma comitiva de empresários (Núcleo: comitiva); Predicado: chegou ontem a São Paulo (tudo menos o sujeito).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Sujeito: Uma comitiva de empresários (Núcleo: comitiva); Predicado: chegou ontem a São Paulo (tudo menos o sujeito)."
+            }
+          ],
+          "result": "Análise: Sujeito: Uma comitiva de empresários (Núcleo: comitiva); Predicado: chegou ontem a São Paulo (tudo menos o sujeito).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-018 — \"Uma comitiva de empresários chegou ontem a São Paulo.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-018 — \"Uma comitiva de empresários chegou ontem a São Paulo.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-018 — \"Uma comitiva de empresários chegou ontem a São Paulo.\".",
           "blocks": [
             {
               "type": "list",
@@ -1497,6 +2300,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-027",
           "title": "EX-A06-G03-019 — \"Havia crianças no parque.\"",
+          "prompt": "Análise: Verbo haver impessoal $\\implies$ Oração Sem Sujeito; Predicado: a frase inteira (Havia crianças no parque).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Verbo haver impessoal $\\implies$ Oração Sem Sujeito; Predicado: a frase inteira (Havia crianças no parque)."
+            }
+          ],
+          "result": "Análise: Verbo haver impessoal $\\implies$ Oração Sem Sujeito; Predicado: a frase inteira (Havia crianças no parque).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-019 — \"Havia crianças no parque.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-019 — \"Havia crianças no parque.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-019 — \"Havia crianças no parque.\".",
           "blocks": [
             {
               "type": "list",
@@ -1510,6 +2325,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-028",
           "title": "EX-A06-G03-020 — \"Guardaram a minha bolsa.\"",
+          "prompt": "Análise: Verbo na 3ª pessoa do plural sem sujeito expresso $\\implies$ Sujeito Indeterminado.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Verbo na 3ª pessoa do plural sem sujeito expresso $\\implies$ Sujeito Indeterminado."
+            }
+          ],
+          "result": "Análise: Verbo na 3ª pessoa do plural sem sujeito expresso $\\implies$ Sujeito Indeterminado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-020 — \"Guardaram a minha bolsa.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-020 — \"Guardaram a minha bolsa.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-020 — \"Guardaram a minha bolsa.\".",
           "blocks": [
             {
               "type": "list",
@@ -1523,6 +2350,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-029",
           "title": "EX-A06-G03-021 — \"kkk\"",
+          "prompt": "Análise: Mensagem comunicativa sem verbo $\\implies$ Não é oração, inexiste predicado.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Mensagem comunicativa sem verbo $\\implies$ Não é oração, inexiste predicado."
+            }
+          ],
+          "result": "Análise: Mensagem comunicativa sem verbo $\\implies$ Não é oração, inexiste predicado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-021 — \"kkk\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-021 — \"kkk\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-021 — \"kkk\".",
           "blocks": [
             {
               "type": "list",
@@ -1536,6 +2375,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-030",
           "title": "EX-A06-G03-022 — Sentença 1: \"Tu pisavas nos astros.\"",
+          "prompt": "Análise: Tu = Sujeito; pisavas = VI de ação; nos astros = Adjunto Adverbial de Lugar; sem predicativo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Tu = Sujeito; pisavas = VI de ação; nos astros = Adjunto Adverbial de Lugar; sem predicativo."
+            }
+          ],
+          "result": "Análise: Tu = Sujeito; pisavas = VI de ação; nos astros = Adjunto Adverbial de Lugar; sem predicativo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-022 — Sentença 1: \"Tu pisavas nos astros.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-022 — Sentença 1: \"Tu pisavas nos astros.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-022 — Sentença 1: \"Tu pisavas nos astros.\".",
           "blocks": [
             {
               "type": "list",
@@ -1549,6 +2400,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-031",
           "title": "EX-A06-G03-023 — Sentença 2: \"Tu estavas distraída.\"",
+          "prompt": "Análise: Tu = Sujeito; estavas = VL (estado passageiro); distraída = Predicativo do Sujeito.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Tu = Sujeito; estavas = VL (estado passageiro); distraída = Predicativo do Sujeito."
+            }
+          ],
+          "result": "Análise: Tu = Sujeito; estavas = VL (estado passageiro); distraída = Predicativo do Sujeito.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-023 — Sentença 2: \"Tu estavas distraída.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-023 — Sentença 2: \"Tu estavas distraída.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-023 — Sentença 2: \"Tu estavas distraída.\".",
           "blocks": [
             {
               "type": "list",
@@ -1562,6 +2425,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-032",
           "title": "EX-A06-G03-024 — Sentença 3: \"Tu pisavas nos astros distraída.\"",
+          "prompt": "Análise: Tu = Sujeito; pisavas = VI de ação (Núcleo 1); distraída = Predicativo do Sujeito (Núcleo 2); nos astros = Adjunto Adverbial.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Tu = Sujeito; pisavas = VI de ação (Núcleo 1); distraída = Predicativo do Sujeito (Núcleo 2); nos astros = Adjunto Adverbial."
+            }
+          ],
+          "result": "Análise: Tu = Sujeito; pisavas = VI de ação (Núcleo 1); distraída = Predicativo do Sujeito (Núcleo 2); nos astros = Adjunto Adverbial.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-024 — Sentença 3: \"Tu pisavas nos astros distraída.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-024 — Sentença 3: \"Tu pisavas nos astros distraída.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-024 — Sentença 3: \"Tu pisavas nos astros distraída.\".",
           "blocks": [
             {
               "type": "list",
@@ -1575,6 +2450,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-033",
           "title": "EX-A06-G03-025 — Sentença 4: \"Os jovens trabalhavam no laboratório.\"",
+          "prompt": "Análise: Os jovens = Sujeito; trabalhavam = VI de ação; no laboratório = Adjunto Adverbial de Lugar.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Os jovens = Sujeito; trabalhavam = VI de ação; no laboratório = Adjunto Adverbial de Lugar."
+            }
+          ],
+          "result": "Análise: Os jovens = Sujeito; trabalhavam = VI de ação; no laboratório = Adjunto Adverbial de Lugar.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-025 — Sentença 4: \"Os jovens trabalhavam no laboratório.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-025 — Sentença 4: \"Os jovens trabalhavam no laboratório.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-025 — Sentença 4: \"Os jovens trabalhavam no laboratório.\".",
           "blocks": [
             {
               "type": "list",
@@ -1588,6 +2475,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-034",
           "title": "EX-A06-G03-026 — Sentença 5: \"Ele andava preocupado.\"",
+          "prompt": "Análise: Ele = Sujeito; andava = VL ($= estava$, estado transitório); preocupado = Predicativo do Sujeito.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Ele = Sujeito; andava = VL ($= estava$, estado transitório); preocupado = Predicativo do Sujeito."
+            }
+          ],
+          "result": "Análise: Ele = Sujeito; andava = VL ($= estava$, estado transitório); preocupado = Predicativo do Sujeito.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-026 — Sentença 5: \"Ele andava preocupado.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-026 — Sentença 5: \"Ele andava preocupado.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-026 — Sentença 5: \"Ele andava preocupado.\".",
           "blocks": [
             {
               "type": "list",
@@ -1601,6 +2500,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-035",
           "title": "EX-A06-G03-027 — Sentença 6: \"O jogador correu para a bola afoito.\"",
+          "prompt": "Análise: O jogador = Sujeito; correu = VI de ação (Núcleo 1); afoito = Predicativo do Sujeito (Núcleo 2); para a bola = Adjunto Adverbial de Lugar/Direção.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "O jogador = Sujeito; correu = VI de ação (Núcleo 1); afoito = Predicativo do Sujeito (Núcleo 2); para a bola = Adjunto Adverbial de Lugar/Direção."
+            }
+          ],
+          "result": "Análise: O jogador = Sujeito; correu = VI de ação (Núcleo 1); afoito = Predicativo do Sujeito (Núcleo 2); para a bola = Adjunto Adverbial de Lugar/Direção.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-027 — Sentença 6: \"O jogador correu para a bola afoito.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-027 — Sentença 6: \"O jogador correu para a bola afoito.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-027 — Sentença 6: \"O jogador correu para a bola afoito.\".",
           "blocks": [
             {
               "type": "list",
@@ -1614,6 +2525,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-036",
           "title": "EX-A06-G03-028 — Sentença 7: \"As crianças corriam pelo gramado.\"",
+          "prompt": "Análise: As crianças = Sujeito; corriam = VI de ação; pelo gramado = Adjunto Adverbial de Lugar.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "As crianças = Sujeito; corriam = VI de ação; pelo gramado = Adjunto Adverbial de Lugar."
+            }
+          ],
+          "result": "Análise: As crianças = Sujeito; corriam = VI de ação; pelo gramado = Adjunto Adverbial de Lugar.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-028 — Sentença 7: \"As crianças corriam pelo gramado.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-028 — Sentença 7: \"As crianças corriam pelo gramado.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-028 — Sentença 7: \"As crianças corriam pelo gramado.\".",
           "blocks": [
             {
               "type": "list",
@@ -1627,6 +2550,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G03-037",
           "title": "EX-A06-G03-029 — Sentença 8: \"Acho sua atitude imperdoável.\"",
+          "prompt": "Análise: Eu = Sujeito Elíptico; Predicado = Frase Inteira; Acho = VTD de ação (Núcleo 1); sua atitude = Objeto Direto; imperdoável = Predicativo do Objeto (Núcleo 2).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Eu = Sujeito Elíptico; Predicado = Frase Inteira; Acho = VTD de ação (Núcleo 1); sua atitude = Objeto Direto; imperdoável = Predicativo do Objeto (Núcleo 2)."
+            }
+          ],
+          "result": "Análise: Eu = Sujeito Elíptico; Predicado = Frase Inteira; Acho = VTD de ação (Núcleo 1); sua atitude = Objeto Direto; imperdoável = Predicativo do Objeto (Núcleo 2).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G03-029 — Sentença 8: \"Acho sua atitude imperdoável.\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G03-029 — Sentença 8: \"Acho sua atitude imperdoável.\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G03-029 — Sentença 8: \"Acho sua atitude imperdoável.\".",
           "blocks": [
             {
               "type": "list",
@@ -1707,8 +2642,12 @@
         {
           "trapId": "WARN-A06-G03-001",
           "title": "A Nomenclatura \"Termo Essencial\" para o Sujeito [material de origem]",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Nomenclatura \"Termo Essencial\" para o Sujeito [material de origem].",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Nomenclatura \"Termo Essencial\" para o Sujeito [material de origem].",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Nomenclatura \"Termo Essencial\" para o Sujeito [material de origem] no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Nomenclatura \"Termo Essencial\" para o Sujeito [material de origem].",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Nomenclatura \"Termo Essencial\" para o Sujeito [material de origem].",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Nomenclatura \"Termo Essencial\" para o Sujeito [material de origem] para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Nomenclatura \"Termo Essencial\" para o Sujeito [material de origem].",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Nomenclatura \"Termo Essencial\" para o Sujeito [material de origem].",
           "blocks": [
             {
               "type": "list",
@@ -1723,8 +2662,12 @@
         {
           "trapId": "WARN-A06-G03-002",
           "title": "Confundir Incompletude Semântica com Incompletude Sintática",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Incompletude Semântica com Incompletude Sintática.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Incompletude Semântica com Incompletude Sintática.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Incompletude Semântica com Incompletude Sintática no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Incompletude Semântica com Incompletude Sintática.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Incompletude Semântica com Incompletude Sintática.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Incompletude Semântica com Incompletude Sintática para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Incompletude Semântica com Incompletude Sintática.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Incompletude Semântica com Incompletude Sintática.",
           "blocks": [
             {
               "type": "list",
@@ -1739,8 +2682,12 @@
         {
           "trapId": "WARN-A06-G03-003",
           "title": "Confundir Termo Preposicionado com Crase de Lugar com Objeto Indireto",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Termo Preposicionado com Crase de Lugar com Objeto Indireto.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Termo Preposicionado com Crase de Lugar com Objeto Indireto.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Termo Preposicionado com Crase de Lugar com Objeto Indireto no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Termo Preposicionado com Crase de Lugar com Objeto Indireto.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Termo Preposicionado com Crase de Lugar com Objeto Indireto.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Termo Preposicionado com Crase de Lugar com Objeto Indireto para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Termo Preposicionado com Crase de Lugar com Objeto Indireto.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Termo Preposicionado com Crase de Lugar com Objeto Indireto.",
           "blocks": [
             {
               "type": "list",
@@ -1755,8 +2702,12 @@
         {
           "trapId": "WARN-A06-G03-004",
           "title": "A Falsa Correlação \"Predicativo = Verbo de Ligação\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Falsa Correlação \"Predicativo = Verbo de Ligação\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Falsa Correlação \"Predicativo = Verbo de Ligação\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Falsa Correlação \"Predicativo = Verbo de Ligação\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Falsa Correlação \"Predicativo = Verbo de Ligação\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Falsa Correlação \"Predicativo = Verbo de Ligação\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Falsa Correlação \"Predicativo = Verbo de Ligação\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Falsa Correlação \"Predicativo = Verbo de Ligação\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Falsa Correlação \"Predicativo = Verbo de Ligação\".",
           "blocks": [
             {
               "type": "list",
@@ -1771,8 +2722,12 @@
         {
           "trapId": "WARN-A06-G03-005",
           "title": "Polifuncionalidade Semântica de \"Andar\", \"Cair\" e \"Viver\" (Pegadinha FGV)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Polifuncionalidade Semântica de \"Andar\", \"Cair\" e \"Viver\" (Pegadinha FGV).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Polifuncionalidade Semântica de \"Andar\", \"Cair\" e \"Viver\" (Pegadinha FGV).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Polifuncionalidade Semântica de \"Andar\", \"Cair\" e \"Viver\" (Pegadinha FGV) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Polifuncionalidade Semântica de \"Andar\", \"Cair\" e \"Viver\" (Pegadinha FGV).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Polifuncionalidade Semântica de \"Andar\", \"Cair\" e \"Viver\" (Pegadinha FGV).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Polifuncionalidade Semântica de \"Andar\", \"Cair\" e \"Viver\" (Pegadinha FGV) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Polifuncionalidade Semântica de \"Andar\", \"Cair\" e \"Viver\" (Pegadinha FGV).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Polifuncionalidade Semântica de \"Andar\", \"Cair\" e \"Viver\" (Pegadinha FGV).",
           "blocks": [
             {
               "type": "list",
@@ -1791,8 +2746,12 @@
         {
           "trapId": "WARN-A06-G03-006",
           "title": "A Pegadinha da Troca Indistinta de Verbos de Ligação",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Pegadinha da Troca Indistinta de Verbos de Ligação.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Pegadinha da Troca Indistinta de Verbos de Ligação.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Pegadinha da Troca Indistinta de Verbos de Ligação no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Pegadinha da Troca Indistinta de Verbos de Ligação.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Pegadinha da Troca Indistinta de Verbos de Ligação.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Pegadinha da Troca Indistinta de Verbos de Ligação para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Pegadinha da Troca Indistinta de Verbos de Ligação.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Pegadinha da Troca Indistinta de Verbos de Ligação.",
           "blocks": [
             {
               "type": "list",
@@ -1807,8 +2766,12 @@
         {
           "trapId": "WARN-A06-G03-007",
           "title": "A Pegadinha da Troca Indistinta de Verbos de Ligação (Padrão FGV) [material de origem]",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Pegadinha da Troca Indistinta de Verbos de Ligação (Padrão FGV) [material de origem].",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Pegadinha da Troca Indistinta de Verbos de Ligação (Padrão FGV) [material de origem].",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Pegadinha da Troca Indistinta de Verbos de Ligação (Padrão FGV) [material de origem] no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Pegadinha da Troca Indistinta de Verbos de Ligação (Padrão FGV) [material de origem].",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Pegadinha da Troca Indistinta de Verbos de Ligação (Padrão FGV) [material de origem].",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Pegadinha da Troca Indistinta de Verbos de Ligação (Padrão FGV) [material de origem] para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Pegadinha da Troca Indistinta de Verbos de Ligação (Padrão FGV) [material de origem].",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Pegadinha da Troca Indistinta de Verbos de Ligação (Padrão FGV) [material de origem].",
           "blocks": [
             {
               "type": "list",
@@ -1823,8 +2786,12 @@
         {
           "trapId": "WARN-A06-G03-008",
           "title": "Confusão entre Predicativo do Objeto e Adjunto Adnominal [material de origem, 009]",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão entre Predicativo do Objeto e Adjunto Adnominal [material de origem, 009].",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão entre Predicativo do Objeto e Adjunto Adnominal [material de origem, 009].",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão entre Predicativo do Objeto e Adjunto Adnominal [material de origem, 009] no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão entre Predicativo do Objeto e Adjunto Adnominal [material de origem, 009].",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão entre Predicativo do Objeto e Adjunto Adnominal [material de origem, 009].",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão entre Predicativo do Objeto e Adjunto Adnominal [material de origem, 009] para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão entre Predicativo do Objeto e Adjunto Adnominal [material de origem, 009].",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão entre Predicativo do Objeto e Adjunto Adnominal [material de origem, 009].",
           "blocks": [
             {
               "type": "list",

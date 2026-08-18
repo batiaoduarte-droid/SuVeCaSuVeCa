@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A06-G06",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.820Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.574Z"
   },
   "unit": {
     "unitId": "IP-A06-G06",
@@ -483,6 +483,16 @@
         {
           "entityId": "RULE-IP-A06-G06-001",
           "title": "Vocativo",
+          "statement": "Definição Canônica: Termo de chamamento ou invocação discursiva direta a interlocutor humano ou entidade inanimada personificada (KB-A06-G06-VOCATIVO-E-APOSTO-002).\nRegra de Núcleo: O núcleo é restrito a substantivos ou pronomes substantivos; qualificadores adjetivos sofrem substantivação contextual compulsória (KB-A06-G06-VOCATIVO-E-APOSTO-003).\nRegra de Pontuação Geral: Isolamento obrigatório por vírgula(s) em qualquer posição (KB-A06-G06-VOCATIVO-E-APOSTO-005).\nRegra de Pontuação Epistolar: Autorizado formalmente o emprego de dois-pontos em cabeçalhos de cartas (KB-A06-G06-VOCATIVO-E-APOSTO-005).",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Definição Canônica: Termo de chamamento ou invocação discursiva direta a interlocutor humano ou entidade inanimada personificada (KB-A06-G06-VOCATIVO-E-APOSTO-002).",
+            "Regra de Núcleo: O núcleo é restrito a substantivos ou pronomes substantivos; qualificadores adjetivos sofrem substantivação contextual compulsória (KB-A06-G06-VOCATIVO-E-APOSTO-003).",
+            "Regra de Pontuação Geral: Isolamento obrigatório por vírgula(s) em qualquer posição (KB-A06-G06-VOCATIVO-E-APOSTO-005).",
+            "Regra de Pontuação Epistolar: Autorizado formalmente o emprego de dois-pontos em cabeçalhos de cartas (KB-A06-G06-VOCATIVO-E-APOSTO-005)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -499,6 +509,14 @@
         {
           "entityId": "RULE-IP-A06-G06-002",
           "title": "Aposto",
+          "statement": "Mantra Morfossintático: Substantivo ou pronome que se refere a outro substantivo ou pronome (KB-A06-G06-VOCATIVO-E-APOSTO-006).\nQuadro Canônico das 6 Tipologias de Aposto:",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Mantra Morfossintático: Substantivo ou pronome que se refere a outro substantivo ou pronome (KB-A06-G06-VOCATIVO-E-APOSTO-006).",
+            "Quadro Canônico das 6 Tipologias de Aposto:"
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -576,6 +594,59 @@
         {
           "procedureId": "PROC-A06-G06-VOCATIVO-E-APOSTO-001",
           "title": "Teste Diagnóstico: Vocativo vs. Sujeito em Orações Imperativas",
+          "objective": "Executar o algoritmo decisório para Teste Diagnóstico: Vocativo vs. Sujeito em Orações Imperativas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste Diagnóstico: Vocativo vs. Sujeito em Orações Imperativas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar a forma verbal",
+              "explanation": "Verificar se o verbo expressa comando, ordem, pedido ou apelo (modo imperativo).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Inspecionar a pontuação imediata",
+              "explanation": "Verificar a existência de vírgula isolando o elemento nominal inicial do restante da oração.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Aplicar a regra de bloqueio do sujeito",
+              "explanation": "Havendo vírgula entre o termo nominal inicial e o verbo, esse termo não pode ser o sujeito (pois sujeito e predicado não se separam por vírgula simples).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Classificar o vocativo",
+              "explanation": "O elemento nominal isolado é classificado como vocativo (o destinatário do chamamento).",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Determinar o sujeito implícito",
+              "explanation": "O sujeito sintático da oração imperativa é determinado pela desinência verbal como oculto / elíptico / implícito (você, vocês, tu ou vós).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste Diagnóstico: Vocativo vs. Sujeito em Orações Imperativas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -593,6 +664,71 @@
         {
           "procedureId": "PROC-A06-G06-VOCATIVO-E-APOSTO-002",
           "title": "Diagnóstico do Impacto da Supressão de Vírgula (Aposto vs. Vocativo)",
+          "objective": "Executar o algoritmo decisório para Diagnóstico do Impacto da Supressão de Vírgula (Aposto vs. Vocativo)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Diagnóstico do Impacto da Supressão de Vírgula (Aposto vs. Vocativo)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Análise da Estrutura Padrão (2 Vírgulas)",
+              "explanation": "[Nome 1], [Expressão Substantiva 2], [Verbo]...",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Nome 1 = Sujeito do verbo.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Expressão Substantiva 2 = Aposto Explicativo intercalado entre vírgulas.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Análise da Estrutura Modificada (Supressão da 2ª Vírgula)",
+              "explanation": "[Nome 1], [Expressão Substantiva 2] [Verbo]...",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Nome 1 = Converte-se em Vocativo (isolado pela vírgula restante).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Expressão Substantiva 2 = Liga-se diretamente ao verbo sem pontuação, convertendo-se no novo Sujeito.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Conclusão para Questões de Prova",
+              "explanation": "Validar que a retirada de uma única vírgula gera dupla modificação: alteração sintática de ambos os termos e alteração semântica no sentido global do texto.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Diagnóstico do Impacto da Supressão de Vírgula (Aposto vs. Vocativo)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -636,6 +772,101 @@
         {
           "procedureId": "PROC-A06-G06-VOCATIVO-E-APOSTO-003",
           "title": "Procedimento Sistemático para Reconhecimento e Classificação de Aposto",
+          "objective": "Executar o algoritmo decisório para Procedimento Sistemático para Reconhecimento e Classificação de Aposto",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento Sistemático para Reconhecimento e Classificação de Aposto."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Delimitação Estrutural",
+              "explanation": "Isolar todo o bloco explicativo/especificativo/resumitivo entre colchetes [... ].",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Filtro Morfológico",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "O termo é adjetivo? $\\rightarrow$ Não é aposto (classifica-se como predicativo deslocado).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "O termo é substantivo ou pronome substantivo? $\\rightarrow$ É candidato a aposto.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Extração do Núcleo",
+              "explanation": "Localizar a palavra-base que não esteja regida diretamente por preposição interna.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Aplicação dos Testes Tipológicos",
+              "explanation": "",
+              "test": "Aplicação dos Testes Tipológicos:"
+            },
+            {
+              "order": 7,
+              "action": "Explica antecedente entre pausas? $\\rightarrow$ Explicativo.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Desdobra antecedente em lista? $\\rightarrow$ Enumerativo.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Distribui em pares simétricos (um/outro, este/aquele)? $\\rightarrow$ Distributivo.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Sintetiza vários termos por pronome indefinido (tudo, nada, ninguém)? $\\rightarrow$ Resumitivo (força verbo no singular).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Dá o nome próprio a um termo comum sem vírgulas? $\\rightarrow$ Especificativo.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 12,
+              "action": "Sintetiza uma oração inteira via substantivo genérico ou pronome \"o\"? $\\rightarrow$ Em referência a uma oração.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento Sistemático para Reconhecimento e Classificação de Aposto."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -682,6 +913,22 @@
         {
           "contrastId": "CONTRAST-IP-A06-G06-001",
           "title": "Matriz Comparativa de Distinções Sintáticas",
+          "contrastType": "mixed",
+          "conceptA": "Matriz Comparativa de Distinções Sintáticas",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -765,6 +1012,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G06-001",
           "title": "EX-A06-G06-VOCATIVO-E-APOSTO-001 — Pegadinha Vunesp: Substantivação de Adjetivo em Vocativo",
+          "prompt": "Enunciado/Contexto: Em letra musical, analisa-se a estrutura \"Pretinha, eu te amo!\". A banca Vunesp exigiu a determinação da classe morfológica do termo grifado (Pretinha).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado/Contexto",
+              "rationale": "Em letra musical, analisa-se a estrutura \"Pretinha, eu te amo!\". A banca Vunesp exigiu a determinação da classe morfológica do termo grifado (Pretinha)."
+            },
+            {
+              "order": 2,
+              "action": "Pegadinha da banca",
+              "rationale": "A maioria dos concorrentes assinalou \"adjetivo\", associando a palavra ao adjetivo primitivo de cor/qualidade (menina pretinha)."
+            },
+            {
+              "order": 3,
+              "action": "Resolução Morfossintática",
+              "rationale": "Como o vocábulo opera como chamamento isolado por pontuação, sua função sintática é de vocativo. Como o núcleo do vocativo é privativo dos substantivos, ocorreu derivação imprópria/substantivação contextual."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "Substantivo."
+            }
+          ],
+          "result": "Gabarito: Substantivo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G06-VOCATIVO-E-APOSTO-001 — Pegadinha Vunesp: Substantivação de Adjetivo em Vocativo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G06-VOCATIVO-E-APOSTO-001 — Pegadinha Vunesp: Substantivação de Adjetivo em Vocativo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G06-VOCATIVO-E-APOSTO-001 — Pegadinha Vunesp: Substantivação de Adjetivo em Vocativo.",
           "blocks": [
             {
               "type": "list",
@@ -781,6 +1055,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G06-002",
           "title": "EX-A06-G06-VOCATIVO-E-APOSTO-002 — Exercício de Fixação: Sujeito + Aposto vs. Vocativo + Sujeito",
+          "prompt": "Enunciado Original: \"Nicole, a representante da turma, chegou neste instante.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado Original",
+              "rationale": "\"Nicole, a representante da turma, chegou neste instante.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise da Frase Original",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Nicole = Sujeito do verbo chegou.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "a representante da turma = Aposto Explicativo (intercalado entre duas vírgulas).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Resposta quanto ao vocativo",
+              "rationale": "Não há vocativo na frase original."
+            }
+          ],
+          "result": "a representante da turma = Converte-se no novo Sujeito de chegou.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G06-VOCATIVO-E-APOSTO-002 — Exercício de Fixação: Sujeito + Aposto vs. Vocativo + Sujeito sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G06-VOCATIVO-E-APOSTO-002 — Exercício de Fixação: Sujeito + Aposto vs. Vocativo + Sujeito.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G06-VOCATIVO-E-APOSTO-002 — Exercício de Fixação: Sujeito + Aposto vs. Vocativo + Sujeito.",
           "blocks": [
             {
               "type": "list",
@@ -801,6 +1107,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G06-003",
           "title": "EX-A06-G06-VOCATIVO-E-APOSTO-003 — Exercício de Fixação: Extração do Núcleo do Vocativo",
+          "prompt": "Enunciado: \"Bom dia, meu caro senhor!\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "\"Bom dia, meu caro senhor!\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Sintática",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Sintagma completo do vocativo posicionado ao final",
+              "rationale": "\"meu caro senhor\"."
+            },
+            {
+              "order": 4,
+              "action": "Núcleo do vocativo",
+              "rationale": "\"senhor\" (substantivo)."
+            },
+            {
+              "order": 5,
+              "action": "Elementos satélites",
+              "rationale": "\"meu\" (pronome possessivo adjunto) e \"caro\" (adjetivo adjunto)."
+            }
+          ],
+          "result": "Elementos satélites: \"meu\" (pronome possessivo adjunto) e \"caro\" (adjetivo adjunto).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G06-VOCATIVO-E-APOSTO-003 — Exercício de Fixação: Extração do Núcleo do Vocativo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G06-VOCATIVO-E-APOSTO-003 — Exercício de Fixação: Extração do Núcleo do Vocativo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G06-VOCATIVO-E-APOSTO-003 — Exercício de Fixação: Extração do Núcleo do Vocativo.",
           "blocks": [
             {
               "type": "list",
@@ -818,6 +1156,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G06-004",
           "title": "EX-A06-G06-VOCATIVO-E-APOSTO-004 — Questão Cebraspe: Concordância Especial com Aposto Resumitivo",
+          "prompt": "Estrutura analisada: \"Empresários, trabalhadores, ninguém confia em nossos governantes.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura analisada",
+              "rationale": "\"Empresários, trabalhadores, ninguém confia em nossos governantes.\""
+            },
+            {
+              "order": 2,
+              "action": "Proposição típica Cebraspe",
+              "rationale": "\"O verbo confia está flexionado na terceira pessoa do singular para concordar com o seu sujeito ninguém.\""
+            },
+            {
+              "order": 3,
+              "action": "Julgamento do item",
+              "rationale": "ERRADO."
+            },
+            {
+              "order": 4,
+              "action": "Fundamentação",
+              "rationale": "O sujeito da oração é composto (Empresários, trabalhadores). O termo ninguém é aposto resumitivo. O verbo concorda compulsoriamente com o aposto resumitivo por força de uma regra de concordância verbal especialíssima, e não por concordância regular de sujeito."
+            }
+          ],
+          "result": "Fundamentação: O sujeito da oração é composto (Empresários, trabalhadores). O termo ninguém é aposto resumitivo. O verbo concorda compulsoriamente com o aposto resumitivo por força de uma regra de concordância verbal especialíssima, e não por concordância regular de sujeito.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G06-VOCATIVO-E-APOSTO-004 — Questão Cebraspe: Concordância Especial com Aposto Resumitivo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G06-VOCATIVO-E-APOSTO-004 — Questão Cebraspe: Concordância Especial com Aposto Resumitivo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G06-VOCATIVO-E-APOSTO-004 — Questão Cebraspe: Concordância Especial com Aposto Resumitivo.",
           "blocks": [
             {
               "type": "list",
@@ -834,6 +1199,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G06-005",
           "title": "EX-A06-G06-VOCATIVO-E-APOSTO-005 — Questão Cebraspe (Promotor de Justiça): Aposto Especificativo Preposicionado",
+          "prompt": "Estrutura analisada: \"A Lei de Responsabilidade Fiscal transformou a gestão pública.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura analisada",
+              "rationale": "\"A Lei de Responsabilidade Fiscal transformou a gestão pública.\""
+            },
+            {
+              "order": 2,
+              "action": "Proposição Cebraspe",
+              "rationale": "\"O segmento 'de Responsabilidade Fiscal' exerce a função sintática de aposto.\""
+            },
+            {
+              "order": 3,
+              "action": "Julgamento do item",
+              "rationale": "CERTO."
+            },
+            {
+              "order": 4,
+              "action": "Fundamentação",
+              "rationale": "\"Responsabilidade Fiscal\" é o nome próprio dado ao substantivo comum genérico \"Lei\". Como dá nome sem uso de vírgulas, trata-se de aposto especificativo (que admite preposição de ligação)."
+            }
+          ],
+          "result": "Fundamentação: \"Responsabilidade Fiscal\" é o nome próprio dado ao substantivo comum genérico \"Lei\". Como dá nome sem uso de vírgulas, trata-se de aposto especificativo (que admite preposição de ligação).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G06-VOCATIVO-E-APOSTO-005 — Questão Cebraspe (Promotor de Justiça): Aposto Especificativo Preposicionado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G06-VOCATIVO-E-APOSTO-005 — Questão Cebraspe (Promotor de Justiça): Aposto Especificativo Preposicionado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G06-VOCATIVO-E-APOSTO-005 — Questão Cebraspe (Promotor de Justiça): Aposto Especificativo Preposicionado.",
           "blocks": [
             {
               "type": "list",
@@ -850,6 +1242,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G06-006",
           "title": "EX-A06-G06-VOCATIVO-E-APOSTO-006 — Dissecação de Exercícios de Fixação de Aposto (Slide 3)",
+          "prompt": "Códigos: (1) Explicativo | (2) Enumerativo | (3) Distributivo | (4) Especificativo | (5) Referência a uma Oração.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "( 4 ) A tragédia Hamlet é uma das mais encenadas no mundo.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Justificativa",
+              "rationale": "\"Hamlet\" é substantivo próprio que dá nome à tragédia sem sinais de pontuação $\\rightarrow$ Aposto especificativo."
+            },
+            {
+              "order": 3,
+              "action": "( 2 ) Vendemos de tudo",
+              "rationale": "alimentos, roupas, brinquedos..."
+            },
+            {
+              "order": 4,
+              "action": "Justificativa",
+              "rationale": "A listagem após dois-pontos desdobra o pronome \"tudo\" $\\rightarrow$ Aposto enumerativo."
+            },
+            {
+              "order": 5,
+              "action": "( 1 ) A geografia, estudo da terra, é uma disciplina fundamental do currículo escolar.",
+              "rationale": null
+            }
+          ],
+          "result": "Justificativa: Desdobra simetricamente o pronome \"Ambas\" $\\rightarrow$ Aposto distributivo (na ausência do código 3, seria classificado como código 2 - enumerativo).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G06-VOCATIVO-E-APOSTO-006 — Dissecação de Exercícios de Fixação de Aposto (Slide 3) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G06-VOCATIVO-E-APOSTO-006 — Dissecação de Exercícios de Fixação de Aposto (Slide 3).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G06-VOCATIVO-E-APOSTO-006 — Dissecação de Exercícios de Fixação de Aposto (Slide 3).",
           "blocks": [
             {
               "type": "paragraph",
@@ -930,6 +1354,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G06-007",
           "title": "EX-A06-G06-VOCATIVO-E-APOSTO-007 — Análise da Cadeia Coesiva na Estrutura \"o que\"",
+          "prompt": "Estrutura analisada: \"Eles eram felizes, o que todos percebiam.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura analisada",
+              "rationale": "\"Eles eram felizes, o que todos percebiam.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Morfossintática Completa",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Eles eram felizes = Oração principal antecedente.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "o = Pronome demonstrativo equivalente a \"isso\", atuando como aposto em referência à oração.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "que = Pronome relativo que retoma o pronome demonstrativo antecedente o (equivalente a \"o qual todos percebiam\").",
+              "rationale": null
+            }
+          ],
+          "result": "que = Pronome relativo que retoma o pronome demonstrativo antecedente o (equivalente a \"o qual todos percebiam\").",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G06-VOCATIVO-E-APOSTO-007 — Análise da Cadeia Coesiva na Estrutura \"o que\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G06-VOCATIVO-E-APOSTO-007 — Análise da Cadeia Coesiva na Estrutura \"o que\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G06-VOCATIVO-E-APOSTO-007 — Análise da Cadeia Coesiva na Estrutura \"o que\".",
           "blocks": [
             {
               "type": "list",
@@ -988,8 +1444,12 @@
         {
           "trapId": "WARN-A06-G06-VOCATIVO-E-APOSTO-001",
           "title": "Pegadinha de Morfologia: Adjetivo no Vocativo Sofre Substantivação",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha de Morfologia: Adjetivo no Vocativo Sofre Substantivação.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha de Morfologia: Adjetivo no Vocativo Sofre Substantivação.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha de Morfologia: Adjetivo no Vocativo Sofre Substantivação no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha de Morfologia: Adjetivo no Vocativo Sofre Substantivação.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha de Morfologia: Adjetivo no Vocativo Sofre Substantivação.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pegadinha de Morfologia: Adjetivo no Vocativo Sofre Substantivação para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha de Morfologia: Adjetivo no Vocativo Sofre Substantivação.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha de Morfologia: Adjetivo no Vocativo Sofre Substantivação.",
           "blocks": [
             {
               "type": "list",
@@ -1005,8 +1465,12 @@
         {
           "trapId": "WARN-A06-G06-VOCATIVO-E-APOSTO-002",
           "title": "Erro Grave: Tratar Vocativo como Sujeito do Imperativo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Erro Grave: Tratar Vocativo como Sujeito do Imperativo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Erro Grave: Tratar Vocativo como Sujeito do Imperativo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Erro Grave: Tratar Vocativo como Sujeito do Imperativo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Erro Grave: Tratar Vocativo como Sujeito do Imperativo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Erro Grave: Tratar Vocativo como Sujeito do Imperativo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Erro Grave: Tratar Vocativo como Sujeito do Imperativo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Erro Grave: Tratar Vocativo como Sujeito do Imperativo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Erro Grave: Tratar Vocativo como Sujeito do Imperativo.",
           "blocks": [
             {
               "type": "list",
@@ -1021,8 +1485,12 @@
         {
           "trapId": "WARN-A06-G06-VOCATIVO-E-APOSTO-003",
           "title": "Armadilha do Adjetivo Entre Vírgulas (Predicativo vs. Aposto)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Armadilha do Adjetivo Entre Vírgulas (Predicativo vs. Aposto).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Armadilha do Adjetivo Entre Vírgulas (Predicativo vs. Aposto).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Armadilha do Adjetivo Entre Vírgulas (Predicativo vs. Aposto) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Armadilha do Adjetivo Entre Vírgulas (Predicativo vs. Aposto).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Armadilha do Adjetivo Entre Vírgulas (Predicativo vs. Aposto).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Armadilha do Adjetivo Entre Vírgulas (Predicativo vs. Aposto) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Armadilha do Adjetivo Entre Vírgulas (Predicativo vs. Aposto).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Armadilha do Adjetivo Entre Vírgulas (Predicativo vs. Aposto).",
           "blocks": [
             {
               "type": "list",
@@ -1037,8 +1505,12 @@
         {
           "trapId": "WARN-A06-G06-VOCATIVO-E-APOSTO-004",
           "title": "Armadilha Cebraspe: Sujeito com Aposto Resumitivo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Armadilha Cebraspe: Sujeito com Aposto Resumitivo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Armadilha Cebraspe: Sujeito com Aposto Resumitivo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Armadilha Cebraspe: Sujeito com Aposto Resumitivo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Armadilha Cebraspe: Sujeito com Aposto Resumitivo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Armadilha Cebraspe: Sujeito com Aposto Resumitivo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Armadilha Cebraspe: Sujeito com Aposto Resumitivo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Armadilha Cebraspe: Sujeito com Aposto Resumitivo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Armadilha Cebraspe: Sujeito com Aposto Resumitivo.",
           "blocks": [
             {
               "type": "list",
@@ -1053,8 +1525,12 @@
         {
           "trapId": "WARN-A06-G06-VOCATIVO-E-APOSTO-005",
           "title": "Exceção Absoluta: Aposto Especificativo Proíbe Pontuação",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Exceção Absoluta: Aposto Especificativo Proíbe Pontuação.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Exceção Absoluta: Aposto Especificativo Proíbe Pontuação.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Exceção Absoluta: Aposto Especificativo Proíbe Pontuação no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Exceção Absoluta: Aposto Especificativo Proíbe Pontuação.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Exceção Absoluta: Aposto Especificativo Proíbe Pontuação.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Exceção Absoluta: Aposto Especificativo Proíbe Pontuação para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Exceção Absoluta: Aposto Especificativo Proíbe Pontuação.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Exceção Absoluta: Aposto Especificativo Proíbe Pontuação.",
           "blocks": [
             {
               "type": "list",

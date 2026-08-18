@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A05-G02",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.775Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.539Z"
   },
   "unit": {
     "unitId": "IP-A05-G02",
@@ -395,6 +395,113 @@
         {
           "procedureId": "PROC-A05-G02-TRANSITIVIDADE-QUESTOES-001",
           "title": "Protocolo Universal de Análise Sintática em 4 Passos",
+          "objective": "Executar o algoritmo decisório para Protocolo Universal de Análise Sintática em 4 Passos",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo Universal de Análise Sintática em 4 Passos."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1",
+              "explanation": "Localizar o Verbo ou Locução Verbal:",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Em locuções verbais (veio comprar, deveria existir), a transitividade é fixada exclusivamente pelo verbo principal (o último verbo).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Passo 2",
+              "explanation": "Identificar o Sujeito:",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Pergunte \"Quem é que [verbo]?\" ou \"O que é que [verbo]?\".",
+              "explanation": null,
+              "test": "Pergunte \"Quem é que [verbo]?\" ou \"O que é que [verbo]?\"."
+            },
+            {
+              "order": 5,
+              "action": "Atenção especial",
+              "explanation": "Se o verbo for haver (sentido existencial), a oração é sem sujeito. Se o verbo for existir, o elemento associado é o Sujeito.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Passo 3",
+              "explanation": "Verificar se o Verbo é de Ligação:",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Se for o verbo SER, classifique-o como V.L. e o termo que o caracteriza como Predicativo do Sujeito.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Se for estar ou ficar, verifique se há Predicativo (V.L.) ou indicação pura de lugar (V.I.).",
+              "explanation": null,
+              "test": "Se for estar ou ficar, verifique se há Predicativo (V.L.) ou indicação pura de lugar (V.I.)."
+            },
+            {
+              "order": 9,
+              "action": "Passo 4",
+              "explanation": "Inspecionar os Termos Pós-Verbais (Complemento vs. Circunstância):",
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Sem preposição",
+              "explanation": "Termo completa o verbo $\\rightarrow$ Objeto Direto.",
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Com preposição",
+              "explanation": "Aplique o Teste do \"Cheiro\":",
+              "test": "Com preposição: Aplique o Teste do \"Cheiro\":"
+            },
+            {
+              "order": 12,
+              "action": "Com cheiro de tempo, lugar, modo, causa, finalidade, preço $\\rightarrow$ Adjunto Adverbial.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 13,
+              "action": "Sem cheiro circunstancial (indica destinatário/paciente puro) $\\rightarrow$ Objeto Indireto.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 14,
+              "action": "Com preposição qualificando o objeto",
+              "explanation": "Verbo denominativo (chamar) $\\rightarrow$ Predicativo do Objeto.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo Universal de Análise Sintática em 4 Passos."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -472,6 +579,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G02-001",
           "title": "EX-A05-G02-TRANSITIVIDADE-QUESTOES-001 — Questão 01 (Instituto AOCP - IBGE - Analista Censitário - Letras)",
+          "prompt": "Enunciado Resumido: Identificar a alternativa cujo verbo destacado exige dois complementos: um regido por preposição (O.I.) e outro sem preposição (O.D.).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado Resumido",
+              "rationale": "Identificar a alternativa cujo verbo destacado exige dois complementos: um regido por preposição (O.I.) e outro sem preposição (O.D.)."
+            },
+            {
+              "order": 2,
+              "action": "Análise das Alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "A) \"...não se pode fazer sem um ponto de interrogação.\" $\\rightarrow$ Voz passiva pronominal (fazer = V.T.D., sem... = Adj. Adv. Condição).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "B) \"...basta olhar-lhe para a cara.\" $\\rightarrow$ olhar = V.I.; para a cara = Adj. Adv. Lugar; -lhe = Adjunto Adnominal possessivo (a cara dele).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "C) \"...serve para pescar.\" $\\rightarrow$ serve = V.I.; para pescar = Adj. Adv. Finalidade.",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito: E",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G02-TRANSITIVIDADE-QUESTOES-001 — Questão 01 (Instituto AOCP - IBGE - Analista Censitário - Letras) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G02-TRANSITIVIDADE-QUESTOES-001 — Questão 01 (Instituto AOCP - IBGE - Analista Censitário - Letras).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G02-TRANSITIVIDADE-QUESTOES-001 — Questão 01 (Instituto AOCP - IBGE - Analista Censitário - Letras).",
           "blocks": [
             {
               "type": "list",
@@ -492,6 +631,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G02-002",
           "title": "EX-A05-G02-TRANSITIVIDADE-QUESTOES-002 — Questão 02 (Instituto AOCP - Pref. João Pessoa - Engenheiro)",
+          "prompt": "Texto: \"O hábito de cultivar plantas em jardins dentro e fora de casa cresceu durante os meses de pandemia.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"O hábito de cultivar plantas em jardins dentro e fora de casa cresceu durante os meses de pandemia.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "O sujeito completo do verbo cresceu é O hábito de cultivar plantas em jardins dentro e fora de casa (núcleo: hábito). O termo durante os meses de pandemia expressa tempo (Adjunto Adverbial de Tempo). Logo, o verbo cresceu é Intransitivo (V.I.)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "D (O verbo \"cresceu\" é intransitivo)"
+            }
+          ],
+          "result": "Gabarito: D (O verbo \"cresceu\" é intransitivo)",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G02-TRANSITIVIDADE-QUESTOES-002 — Questão 02 (Instituto AOCP - Pref. João Pessoa - Engenheiro) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G02-TRANSITIVIDADE-QUESTOES-002 — Questão 02 (Instituto AOCP - Pref. João Pessoa - Engenheiro).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G02-TRANSITIVIDADE-QUESTOES-002 — Questão 02 (Instituto AOCP - Pref. João Pessoa - Engenheiro).",
           "blocks": [
             {
               "type": "list",
@@ -507,6 +668,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G02-003",
           "title": "EX-A05-G02-TRANSITIVIDADE-QUESTOES-003 — Questão 03 (FUNDEP - FUTEL-MG - Procurador)",
+          "prompt": "Enunciado Resumido: Identificar a alternativa com classificação incorreta entre parênteses.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado Resumido",
+              "rationale": "Identificar a alternativa com classificação incorreta entre parênteses."
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "Na alternativa B (\"[...] reorganiza a vivência diária do praticante.\"), a classificação fornecida como (OBJETO INDIRETO) está errada. O vocábulo a em a vivência é um artigo definido, configurando um Objeto Direto."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "B"
+            }
+          ],
+          "result": "Gabarito: B",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G02-TRANSITIVIDADE-QUESTOES-003 — Questão 03 (FUNDEP - FUTEL-MG - Procurador) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G02-TRANSITIVIDADE-QUESTOES-003 — Questão 03 (FUNDEP - FUTEL-MG - Procurador).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G02-TRANSITIVIDADE-QUESTOES-003 — Questão 03 (FUNDEP - FUTEL-MG - Procurador).",
           "blocks": [
             {
               "type": "list",
@@ -522,6 +705,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G02-004",
           "title": "EX-A05-G02-TRANSITIVIDADE-QUESTOES-004 — Questão 04 (VUNESP - TJ-SP - Técnico Judiciário)",
+          "prompt": "Texto: \"A verdade é apenas uma.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"A verdade é apenas uma.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "O verbo é é Verbo de Ligação (SER). O segmento apenas uma caracteriza o sujeito A verdade, exercendo a função de Predicativo do Sujeito."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "B (predicativo)"
+            }
+          ],
+          "result": "Gabarito: B (predicativo)",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G02-TRANSITIVIDADE-QUESTOES-004 — Questão 04 (VUNESP - TJ-SP - Técnico Judiciário) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G02-TRANSITIVIDADE-QUESTOES-004 — Questão 04 (VUNESP - TJ-SP - Técnico Judiciário).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G02-TRANSITIVIDADE-QUESTOES-004 — Questão 04 (VUNESP - TJ-SP - Técnico Judiciário).",
           "blocks": [
             {
               "type": "list",
@@ -537,6 +742,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G02-005",
           "title": "EX-A05-G02-TRANSITIVIDADE-QUESTOES-005 — Questão 05 (FCC - TRT 23ª Região - Técnico Judiciário)",
+          "prompt": "Texto Base: \"Logo adiante vimos um quati\" $\\rightarrow$ um quati = Objeto Direto (V.T.D. = vimos).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto Base",
+              "rationale": "\"Logo adiante vimos um quati\" $\\rightarrow$ um quati = Objeto Direto (V.T.D. = vimos)."
+            },
+            {
+              "order": 2,
+              "action": "Análise da Alternativa Correta (A)",
+              "rationale": "\"Logo encontramos uma criame de caracóis\" $\\rightarrow$ uma criame de caracóis = Objeto Direto do V.T.D. encontramos. As demais opções trazem Predicativo (viúvos, sem rumo) e Adjuntos de Lugar (naquele lugar, na garupa do vento)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "A"
+            }
+          ],
+          "result": "Gabarito: A",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G02-TRANSITIVIDADE-QUESTOES-005 — Questão 05 (FCC - TRT 23ª Região - Técnico Judiciário) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G02-TRANSITIVIDADE-QUESTOES-005 — Questão 05 (FCC - TRT 23ª Região - Técnico Judiciário).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G02-TRANSITIVIDADE-QUESTOES-005 — Questão 05 (FCC - TRT 23ª Região - Técnico Judiciário).",
           "blocks": [
             {
               "type": "list",
@@ -552,6 +779,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G02-006",
           "title": "EX-A05-G02-TRANSITIVIDADE-QUESTOES-006 — Questão 06 (FCC - METRÔ-SP - Enfermeiro do Trabalho)",
+          "prompt": "Texto Base: \"ela lhe fizera uma confissão\" $\\rightarrow$ -lhe = Objeto Indireto (a ele).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto Base",
+              "rationale": "\"ela lhe fizera uma confissão\" $\\rightarrow$ -lhe = Objeto Indireto (a ele)."
+            },
+            {
+              "order": 2,
+              "action": "Análise da Alternativa Correta (B)",
+              "rationale": "\"o recado chegara a ele\" $\\rightarrow$ a ele = Objeto Indireto (termo preposicionado sem cheiro de circunstância espacial/temporal). Em D (\"retornava a cada Natal\"), trata-se de Adjunto Adverbial de Tempo."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "B"
+            }
+          ],
+          "result": "Gabarito: B",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G02-TRANSITIVIDADE-QUESTOES-006 — Questão 06 (FCC - METRÔ-SP - Enfermeiro do Trabalho) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G02-TRANSITIVIDADE-QUESTOES-006 — Questão 06 (FCC - METRÔ-SP - Enfermeiro do Trabalho).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G02-TRANSITIVIDADE-QUESTOES-006 — Questão 06 (FCC - METRÔ-SP - Enfermeiro do Trabalho).",
           "blocks": [
             {
               "type": "list",
@@ -567,6 +816,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G02-007",
           "title": "EX-A05-G02-TRANSITIVIDADE-QUESTOES-007 — Questão 07 (FCC - Pref. Macapá - Educador Social)",
+          "prompt": "Texto Base: \"Nunca houve gente mais exigente...\" $\\rightarrow$ gente... = Objeto Direto (houve = V.T.D. impessoal).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto Base",
+              "rationale": "\"Nunca houve gente mais exigente...\" $\\rightarrow$ gente... = Objeto Direto (houve = V.T.D. impessoal)."
+            },
+            {
+              "order": 2,
+              "action": "Análise da Alternativa Correta (E)",
+              "rationale": "\"...gerou um padrão estético...\" $\\rightarrow$ um padrão estético = Objeto Direto do V.T.D. gerou."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "E"
+            }
+          ],
+          "result": "Gabarito: E",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G02-TRANSITIVIDADE-QUESTOES-007 — Questão 07 (FCC - Pref. Macapá - Educador Social) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G02-TRANSITIVIDADE-QUESTOES-007 — Questão 07 (FCC - Pref. Macapá - Educador Social).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G02-TRANSITIVIDADE-QUESTOES-007 — Questão 07 (FCC - Pref. Macapá - Educador Social).",
           "blocks": [
             {
               "type": "list",
@@ -582,6 +853,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G02-008",
           "title": "EX-A05-G02-TRANSITIVIDADE-QUESTOES-008 — Questão 08 (FCC - TRT 22ª Região - Técnico Judiciário)",
+          "prompt": "Texto: \"Esse estoque de amor que acumulei / Ninguém veio comprar a preço justo.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"Esse estoque de amor que acumulei / Ninguém veio comprar a preço justo.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "A locução verbal veio comprar tem como verbo principal comprar (V.T.D.). A expressão sublinhada Esse estoque de amor que acumulei responde a \"veio comprar o quê?\", funcionando como Objeto Direto."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "D (objeto direto)"
+            }
+          ],
+          "result": "Gabarito: D (objeto direto)",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G02-TRANSITIVIDADE-QUESTOES-008 — Questão 08 (FCC - TRT 22ª Região - Técnico Judiciário) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G02-TRANSITIVIDADE-QUESTOES-008 — Questão 08 (FCC - TRT 22ª Região - Técnico Judiciário).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G02-TRANSITIVIDADE-QUESTOES-008 — Questão 08 (FCC - TRT 22ª Região - Técnico Judiciário).",
           "blocks": [
             {
               "type": "list",
@@ -597,6 +890,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G02-009",
           "title": "EX-A05-G02-TRANSITIVIDADE-QUESTOES-009 — Questão 09 (FCC - TRT 22ª Região - Analista Judiciário)",
+          "prompt": "Texto Base: \"A misteriosa bebida desperta neles a mais profunda das paixões.\" $\\rightarrow$ a mais profunda... = Objeto Direto (V.T.D.I. = desperta).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto Base",
+              "rationale": "\"A misteriosa bebida desperta neles a mais profunda das paixões.\" $\\rightarrow$ a mais profunda... = Objeto Direto (V.T.D.I. = desperta)."
+            },
+            {
+              "order": 2,
+              "action": "Análise da Alternativa Correta (D)",
+              "rationale": "\"...o que o atraiu para essa história\" $\\rightarrow$ O pronome o funciona como Objeto Direto do verbo V.T.D.I. atraiu (atraiu alguém [o] para algo). As demais opções continham: P.Suj. (um homem casado), Complemento Nominal (entre os dois protagonistas), Sujeito (poções) e Objeto Indireto (lhe)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito",
+              "rationale": "D"
+            }
+          ],
+          "result": "Gabarito: D",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G02-TRANSITIVIDADE-QUESTOES-009 — Questão 09 (FCC - TRT 22ª Região - Analista Judiciário) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G02-TRANSITIVIDADE-QUESTOES-009 — Questão 09 (FCC - TRT 22ª Região - Analista Judiciário).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G02-TRANSITIVIDADE-QUESTOES-009 — Questão 09 (FCC - TRT 22ª Região - Analista Judiciário).",
           "blocks": [
             {
               "type": "list",
@@ -612,6 +927,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G02-010",
           "title": "EX-A05-G02-TRANSITIVIDADE-QUESTOES-010 — Questão 10 (CEBRASPE - CGM João Pessoa - Técnico)",
+          "prompt": "Texto: \"temos o 'jeitinho' virando corrupção\". A assertiva afirma que 'jeitinho' e 'corrupção' funcionam como complementos diretos de temos.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"temos o 'jeitinho' virando corrupção\". A assertiva afirma que 'jeitinho' e 'corrupção' funcionam como complementos diretos de temos."
+            },
+            {
+              "order": 2,
+              "action": "Julgamento",
+              "rationale": "ERRADO."
+            },
+            {
+              "order": 3,
+              "action": "Justificativa",
+              "rationale": "O complemento de temos é a oração reduzida inteira (o 'jeitinho' virando corrupção). Dentro dela, 'jeitinho' é o sujeito e 'corrupção' é o predicativo do sujeito de virando (V.L.)."
+            }
+          ],
+          "result": "Justificativa: O complemento de temos é a oração reduzida inteira (o 'jeitinho' virando corrupção). Dentro dela, 'jeitinho' é o sujeito e 'corrupção' é o predicativo do sujeito de virando (V.L.).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G02-TRANSITIVIDADE-QUESTOES-010 — Questão 10 (CEBRASPE - CGM João Pessoa - Técnico) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G02-TRANSITIVIDADE-QUESTOES-010 — Questão 10 (CEBRASPE - CGM João Pessoa - Técnico).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G02-TRANSITIVIDADE-QUESTOES-010 — Questão 10 (CEBRASPE - CGM João Pessoa - Técnico).",
           "blocks": [
             {
               "type": "list",
@@ -627,6 +964,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G02-011",
           "title": "EX-A05-G02-TRANSITIVIDADE-QUESTOES-011 — Questão 11 (CEBRASPE - PC-AL - Escrivão de Polícia)",
+          "prompt": "Texto: \"Ele nada faz sem motivo\". A assertiva afirma que sem motivo é complemento verbal de faz.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"Ele nada faz sem motivo\". A assertiva afirma que sem motivo é complemento verbal de faz."
+            },
+            {
+              "order": 2,
+              "action": "Julgamento",
+              "rationale": "ERRADO."
+            },
+            {
+              "order": 3,
+              "action": "Justificativa",
+              "rationale": "sem motivo é introduzido por preposição com valor circunstancial de modo/ausência, operando como Adjunto Adverbial de Modo. O complemento direto de faz é a palavra nada."
+            }
+          ],
+          "result": "Justificativa: sem motivo é introduzido por preposição com valor circunstancial de modo/ausência, operando como Adjunto Adverbial de Modo. O complemento direto de faz é a palavra nada.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G02-TRANSITIVIDADE-QUESTOES-011 — Questão 11 (CEBRASPE - PC-AL - Escrivão de Polícia) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G02-TRANSITIVIDADE-QUESTOES-011 — Questão 11 (CEBRASPE - PC-AL - Escrivão de Polícia).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G02-TRANSITIVIDADE-QUESTOES-011 — Questão 11 (CEBRASPE - PC-AL - Escrivão de Polícia).",
           "blocks": [
             {
               "type": "list",
@@ -642,6 +1001,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G02-012",
           "title": "EX-A05-G02-TRANSITIVIDADE-QUESTOES-012 — Questão 12 (CEBRASPE - TCE-PE - Conhecimentos Básicos)",
+          "prompt": "Texto: \"deveria existir um patamar mínimo de igualdade...\". A assertiva afirma que o segmento um patamar mínimo... é complemento de existir.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"deveria existir um patamar mínimo de igualdade...\". A assertiva afirma que o segmento um patamar mínimo... é complemento de existir."
+            },
+            {
+              "order": 2,
+              "action": "Julgamento",
+              "rationale": "ERRADO."
+            },
+            {
+              "order": 3,
+              "action": "Justificativa",
+              "rationale": "O verbo existir é intransitivo e possui Sujeito. O segmento nominal concorda com a locução verbal e exerce a função de Sujeito, e não de complemento."
+            }
+          ],
+          "result": "Justificativa: O verbo existir é intransitivo e possui Sujeito. O segmento nominal concorda com a locução verbal e exerce a função de Sujeito, e não de complemento.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G02-TRANSITIVIDADE-QUESTOES-012 — Questão 12 (CEBRASPE - TCE-PE - Conhecimentos Básicos) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G02-TRANSITIVIDADE-QUESTOES-012 — Questão 12 (CEBRASPE - TCE-PE - Conhecimentos Básicos).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G02-TRANSITIVIDADE-QUESTOES-012 — Questão 12 (CEBRASPE - TCE-PE - Conhecimentos Básicos).",
           "blocks": [
             {
               "type": "list",
@@ -657,6 +1038,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G02-013",
           "title": "EX-A05-G02-TRANSITIVIDADE-QUESTOES-013 — Questão 13 (CEBRASPE - TCE-PE - Conhecimentos Básicos)",
+          "prompt": "Texto: \"...ao que chamo de a ordem das propriedades\". A assertiva afirma que o verbo chamar possui um complemento direto elíptico e um complemento indireto (de a ordem...).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...ao que chamo de a ordem das propriedades\". A assertiva afirma que o verbo chamar possui um complemento direto elíptico e um complemento indireto (de a ordem...)."
+            },
+            {
+              "order": 2,
+              "action": "Julgamento",
+              "rationale": "ERRADO."
+            },
+            {
+              "order": 3,
+              "action": "Justificativa",
+              "rationale": "O objeto direto não é elíptico (é o pronome relativo que); o sujeito (eu) é quem está elíptico. O termo de a ordem das propriedades não é objeto indireto, mas sim Predicativo do Objeto."
+            }
+          ],
+          "result": "Justificativa: O objeto direto não é elíptico (é o pronome relativo que); o sujeito (eu) é quem está elíptico. O termo de a ordem das propriedades não é objeto indireto, mas sim Predicativo do Objeto.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A05-G02-TRANSITIVIDADE-QUESTOES-013 — Questão 13 (CEBRASPE - TCE-PE - Conhecimentos Básicos) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A05-G02-TRANSITIVIDADE-QUESTOES-013 — Questão 13 (CEBRASPE - TCE-PE - Conhecimentos Básicos).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A05-G02-TRANSITIVIDADE-QUESTOES-013 — Questão 13 (CEBRASPE - TCE-PE - Conhecimentos Básicos).",
           "blocks": [
             {
               "type": "list",
@@ -701,8 +1104,12 @@
         {
           "trapId": "WARN-A05-G02-TRANSITIVIDADE-QUESTOES-001",
           "title": "Confusão entre Artigo Definido e Preposição",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão entre Artigo Definido e Preposição.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão entre Artigo Definido e Preposição.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão entre Artigo Definido e Preposição no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão entre Artigo Definido e Preposição.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão entre Artigo Definido e Preposição.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão entre Artigo Definido e Preposição para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão entre Artigo Definido e Preposição.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão entre Artigo Definido e Preposição.",
           "blocks": [
             {
               "type": "list",
@@ -717,8 +1124,12 @@
         {
           "trapId": "WARN-A05-G02-TRANSITIVIDADE-QUESTOES-002",
           "title": "O Pronome \"LHE\" com Sentido Possessivo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Pronome \"LHE\" com Sentido Possessivo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Pronome \"LHE\" com Sentido Possessivo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Pronome \"LHE\" com Sentido Possessivo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Pronome \"LHE\" com Sentido Possessivo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Pronome \"LHE\" com Sentido Possessivo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Pronome \"LHE\" com Sentido Possessivo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Pronome \"LHE\" com Sentido Possessivo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Pronome \"LHE\" com Sentido Possessivo.",
           "blocks": [
             {
               "type": "list",
@@ -733,8 +1144,12 @@
         {
           "trapId": "WARN-A05-G02-TRANSITIVIDADE-QUESTOES-003",
           "title": "Jurisprudência de Bancas em Verbos de Movimento",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Jurisprudência de Bancas em Verbos de Movimento.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Jurisprudência de Bancas em Verbos de Movimento.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Jurisprudência de Bancas em Verbos de Movimento no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Jurisprudência de Bancas em Verbos de Movimento.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Jurisprudência de Bancas em Verbos de Movimento.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Jurisprudência de Bancas em Verbos de Movimento para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Jurisprudência de Bancas em Verbos de Movimento.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Jurisprudência de Bancas em Verbos de Movimento.",
           "blocks": [
             {
               "type": "list",
@@ -750,8 +1165,12 @@
         {
           "trapId": "WARN-A05-G02-TRANSITIVIDADE-QUESTOES-004",
           "title": "O Vício da Pergunta \"É o quê?\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Vício da Pergunta \"É o quê?\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Vício da Pergunta \"É o quê?\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Vício da Pergunta \"É o quê?\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Vício da Pergunta \"É o quê?\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Vício da Pergunta \"É o quê?\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Vício da Pergunta \"É o quê?\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Vício da Pergunta \"É o quê?\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Vício da Pergunta \"É o quê?\".",
           "blocks": [
             {
               "type": "list",
@@ -766,8 +1185,12 @@
         {
           "trapId": "WARN-A05-G02-TRANSITIVIDADE-QUESTOES-005",
           "title": "Confusão entre Verbo Haver e Verbo Existir",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão entre Verbo Haver e Verbo Existir.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão entre Verbo Haver e Verbo Existir.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão entre Verbo Haver e Verbo Existir no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão entre Verbo Haver e Verbo Existir.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão entre Verbo Haver e Verbo Existir.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão entre Verbo Haver e Verbo Existir para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão entre Verbo Haver e Verbo Existir.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão entre Verbo Haver e Verbo Existir.",
           "blocks": [
             {
               "type": "list",
@@ -782,8 +1205,12 @@
         {
           "trapId": "WARN-A05-G02-TRANSITIVIDADE-QUESTOES-006",
           "title": "Predicativo do Objeto do Verbo Chamar com Preposição \"DE\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Predicativo do Objeto do Verbo Chamar com Preposição \"DE\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Predicativo do Objeto do Verbo Chamar com Preposição \"DE\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Predicativo do Objeto do Verbo Chamar com Preposição \"DE\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Predicativo do Objeto do Verbo Chamar com Preposição \"DE\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Predicativo do Objeto do Verbo Chamar com Preposição \"DE\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Predicativo do Objeto do Verbo Chamar com Preposição \"DE\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Predicativo do Objeto do Verbo Chamar com Preposição \"DE\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Predicativo do Objeto do Verbo Chamar com Preposição \"DE\".",
           "blocks": [
             {
               "type": "list",
@@ -926,7 +1353,10 @@
       "officialAnswer": "incorrect",
       "explanation": "A voz passiva analítica é formada por \"SER + PARTICÍPIO\". O segmento \"a primeira patente\" é\nsujeito passivo da locução \"foi concedida\". Questão incorreta.",
       "questionSha256": "ecef731b7873bf739ecb26146612eb5428d8ebea53b258b6d3aae0f61b5ad1df",
-      "answerSha256": "43b46a0e5f590758f45349aa93a34df4e82606ff68ac01299bc8820b219683c5"
+      "answerSha256": "43b46a0e5f590758f45349aa93a34df4e82606ff68ac01299bc8820b219683c5",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Transitividade Verbal - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula05.q0057",
@@ -938,7 +1368,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "5c6898f77d5b7cacb5b201eb845a856e6688988b59914d4b100f25178f221143",
-      "answerSha256": "7ae07c6a56a5f45e200a91c76c0a26a78c465608c6de92ce406e43d13aab3234"
+      "answerSha256": "7ae07c6a56a5f45e200a91c76c0a26a78c465608c6de92ce406e43d13aab3234",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Transitividade Verbal - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula05.q0030",
@@ -951,7 +1384,10 @@
       "officialAnswer": "incorrect",
       "explanation": "“Teremos conquistado” é forma de futuro do presente composto e indica que ação estará\nconcluída no momento futuro sugerido.\nTrazendo para um exemplo mais simples, compare:\nÀs 21h, jantarei (começarei a comer).\nÀs 21h, terei jantado (já terei terminado de comer).\nEntão, “teremos conquistados” indica que a ação de conquistar já estará completa,\nperfeitamente concluída. “Conquistaremos” não tem esse sentido, apenas indica a ação como\nalgo que ocorrerá no futuro, sem esse valor de ação “já concluída” naquele momento.\nQuestão incorreta.",
       "questionSha256": "463d95dd6b62e2918416a3edbacee211069cff979d78b3669f58f3b718ee12d9",
-      "answerSha256": "c5cbdeb92cafb54e78d3e6e7e6e01709a1d033659f0163e4631eb19ee42e4c30"
+      "answerSha256": "c5cbdeb92cafb54e78d3e6e7e6e01709a1d033659f0163e4631eb19ee42e4c30",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Transitividade Verbal - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula05.q0052",
@@ -963,7 +1399,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "5d2d274bab465ec718ea59ee17155572c7d6596a3ff6634be050ad1320af836e",
-      "answerSha256": "86368d8cd0d971d6204c1649002360813b84d663133e1f95637cb94099b4cfa0"
+      "answerSha256": "86368d8cd0d971d6204c1649002360813b84d663133e1f95637cb94099b4cfa0",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Transitividade Verbal - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula05.q0031",
@@ -976,7 +1415,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Aqui temos aplicação da correlação clássica: Se eu puder, farei\nSe o verbo for usado no futuro do subjuntivo “disser”, para manter a correlação rígida, teremos\nuso do futuro do presente:\nEnquanto se DISSER que os pobres da cidade são violentos, a atenção da violência que eles\nsofrem SERÁ invertida.\nQuestão incorreta.",
       "questionSha256": "3d6dd51372a42f2d9dbe2136c4e963c56d6b22154cbf3e90a83b1aaa6bd7776a",
-      "answerSha256": "fa8182a45d8cdfc26a5894359969883dd607412ebd71185631a159bcae1509af"
+      "answerSha256": "fa8182a45d8cdfc26a5894359969883dd607412ebd71185631a159bcae1509af",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Transitividade Verbal - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula05.q0053",
@@ -988,7 +1430,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "119b5d9bb07189d87193d7025fe45b92a059aaa90ea0cec41f0812c88b958693",
-      "answerSha256": "115f865c49500d6b441b71dba2763bfea8228a2ff5a06bc74e6e46b91cdad080"
+      "answerSha256": "115f865c49500d6b441b71dba2763bfea8228a2ff5a06bc74e6e46b91cdad080",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Transitividade Verbal - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

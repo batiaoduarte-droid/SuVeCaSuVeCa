@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A08-G03",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.854Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.601Z"
   },
   "unit": {
     "unitId": "IP-A08-G03",
@@ -515,6 +515,14 @@
         {
           "entityId": "RULE-IP-A08-G03-001",
           "title": "Regras canônicas",
+          "statement": "Regras canônicas",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -647,6 +655,71 @@
         {
           "procedureId": "PROC-A08-G03-001",
           "title": "Passo a Passo para Identificar e Estruturar a Oração Adjetiva",
+          "objective": "Executar o algoritmo decisório para Passo a Passo para Identificar e Estruturar a Oração Adjetiva",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Passo a Passo para Identificar e Estruturar a Oração Adjetiva."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar o elemento conector ou verbo na forma nominal",
+              "explanation": "Identificar a presença de que, o qual, cujo, onde ou verbo no gerúndio (-ndo), infinitivo (-ar/-er/-ir) ou particípio (-do/-to).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Executar o Teste da Seta",
+              "explanation": "Traçar mentalmente uma seta da oração em direção ao termo antecedente. Se apontar para um substantivo qualificando-o, confirma-se o caráter Adjetivo.",
+              "test": "Executar o Teste da Seta: Traçar mentalmente uma seta da oração em direção ao termo antecedente. Se apontar para um substantivo qualificando-o, confirma-se o caráter Adjetivo."
+            },
+            {
+              "order": 3,
+              "action": "Classificar a Estrutura",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Pronome relativo expresso -> Desenvolvida Explícita.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Pronome relativo/verbo oculto -> Desenvolvida Implícita.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Sem pronome relativo + forma nominal -> Reduzida.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Executar a Prova Real na Reduzida",
+              "explanation": "Descompactar a oração inserindo [que + verbo flexionado]. Se a frase mantiver sentido e correção, confirma-se a oração adjetiva reduzida.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Passo a Passo para Identificar e Estruturar a Oração Adjetiva."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -678,6 +751,44 @@
         {
           "procedureId": "PROC-A08-G03-002",
           "title": "Algoritmo de Decisão de Prova para Impacto da Pontuação em Orações Adjetivas",
+          "objective": "Executar o algoritmo decisório para Algoritmo de Decisão de Prova para Impacto da Pontuação em Orações Adjetivas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo de Decisão de Prova para Impacto da Pontuação em Orações Adjetivas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura sintático-morfológica alvo de Algoritmo de Decisão de Prova para Impacto da Pontuação em Orações Adjetivas.",
+              "test": "Localizar o termo regente ou núcleo do segmento."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios decisórios da regra canônica.",
+              "test": "Verificar se há exceção ou caso facultativo aplicável."
+            },
+            {
+              "order": 3,
+              "action": "Concluir a classificação definitiva para resolução da questão.",
+              "test": "Confrontar o resultado obtido com as alternativas da prova."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo de Decisão de Prova para Impacto da Pontuação em Orações Adjetivas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -688,6 +799,65 @@
         {
           "procedureId": "PROC-A08-G03-003",
           "title": "Diagnóstico e Validação da Vírgula Vicária vs. Falso Aposto",
+          "objective": "Executar o algoritmo decisório para Diagnóstico e Validação da Vírgula Vicária vs. Falso Aposto",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Diagnóstico e Validação da Vírgula Vicária vs. Falso Aposto."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar a vírgula suspeita",
+              "explanation": "Identificar uma vírgula isolando termo intercalado ou separando sujeito e predicativo.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Checar a Oração Anterior",
+              "explanation": "Verificar se há forma verbal na oração imediatamente precedente.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Teste da Seta Anafórica",
+              "explanation": "Inserir mentalmente o verbo anterior no lugar da vírgula. Se a oração fizer sentido pleno, valida-se a elipse verbal (vírgula vicária).",
+              "test": "Teste da Seta Anafórica: Inserir mentalmente o verbo anterior no lugar da vírgula. Se a oração fizer sentido pleno, valida-se a elipse verbal (vírgula vicária)."
+            },
+            {
+              "order": 4,
+              "action": "Analisar a Classe Gramatical do Termo Posposto",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se o termo for um substantivo explicando outro substantivo -> Aposto Explicativo.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se o termo for um adjetivo ou particípio -> Predicativo em Elipse Verbal (Vírgula Vicária). Nunca aposto.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Diagnóstico e Validação da Vírgula Vicária vs. Falso Aposto."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -712,6 +882,83 @@
         {
           "procedureId": "PROC-A08-G03-004",
           "title": "Algoritmo de Análise Sintática para Julgamento de Vírgula (Proibição SVC)",
+          "objective": "Executar o algoritmo decisório para Algoritmo de Análise Sintática para Julgamento de Vírgula (Proibição SVC)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo de Análise Sintática para Julgamento de Vírgula (Proibição SVC)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar o Verbo Principal",
+              "explanation": "Constitui o ponto de ancoragem sintática.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Identificar o Sujeito",
+              "explanation": "Formular a pergunta Quem + verbo?. Delimitar todo o bloco do sujeito.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Proposta de vírgula entre o fim do bloco do sujeito e o verbo -> PROIBIDA (Item prejudica a correção).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Identificar os Complementos",
+              "explanation": "Formular a pergunta Verbo + quê/quem?.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se o complemento for uma oração introduzida por que substituível por isso (objeto direto oracional) -> PROIBIDA vírgula entre verbo e conjunção integrante.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Classificar Termos Adverbiais",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Posicionados ao final -> FACULTATIVA.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Deslocados com verbo (orações) -> OBRIGATÓRIA.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Deslocados sem verbo",
+              "explanation": "até 2 palavras (FACULTATIVA) | 3 ou mais palavras (OBRIGATÓRIA).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo de Análise Sintática para Julgamento de Vírgula (Proibição SVC)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -763,6 +1010,53 @@
         {
           "procedureId": "PROC-A08-G03-005",
           "title": "Protocolo Master para Questões de \"Supressão de Vírgula\" no Cebraspe",
+          "objective": "Executar o algoritmo decisório para Protocolo Master para Questões de \"Supressão de Vírgula\" no Cebraspe",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo Master para Questões de \"Supressão de Vírgula\" no Cebraspe."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Adverbial na ordem direta (ao final); (É vírgula obrigatória",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Adjunto adverbial curto deslocado (<= 2 palavras); adverbial deslocada longa,",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Conjunção \"e\" com sujeitos distintos ou adversativo; expressão explicativa,",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Adjetiva explicativa em contexto de referente múltiplo. aposto, polissíndeto, etc.)",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo Master para Questões de \"Supressão de Vírgula\" no Cebraspe."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -791,6 +1085,22 @@
         {
           "contrastId": "CONTRAST-IP-A08-G03-001",
           "title": "Tabela 1: Oração Adjetiva Restritiva vs. Oração Adjetiva Explicativa",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 1: Oração Adjetiva Restritiva vs. Oração Adjetiva Explicativa",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -842,6 +1152,22 @@
         {
           "contrastId": "CONTRAST-IP-A08-G03-002",
           "title": "Tabela 2: Explicar vs. Retificar",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 2: Explicar vs. Retificar",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -883,6 +1209,22 @@
         {
           "contrastId": "CONTRAST-IP-A08-G03-003",
           "title": "Tabela 3: Vírgula Vicária (Elipse Verbal) vs. Aposto Explicativo",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 3: Vírgula Vicária (Elipse Verbal) vs. Aposto Explicativo",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -929,6 +1271,22 @@
         {
           "contrastId": "CONTRAST-IP-A08-G03-004",
           "title": "Tabela 4: Alternância de Sinais de Intercalação no Cebraspe",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 4: Alternância de Sinais de Intercalação no Cebraspe",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -965,6 +1323,22 @@
         {
           "contrastId": "CONTRAST-IP-A08-G03-005",
           "title": "Tabela 5: Casuística da Conjunção Aditiva \"E\"",
+          "contrastType": "morphological",
+          "conceptA": "Tabela 5: Casuística da Conjunção Aditiva \"E\"",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -1015,6 +1389,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G03-001",
           "title": "EX-A08-G03-001 — Demonstração Didática das Três Estruturas Adjetivas",
+          "prompt": "Frase 1 (Desenvolvida Explícita): O aluno [que é dedicado] atinge seu objetivo. -> Pronome relativo que visível substituindo aluno.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase 1 (Desenvolvida Explícita)",
+              "rationale": "O aluno [que é dedicado] atinge seu objetivo. -> Pronome relativo que visível substituindo aluno."
+            },
+            {
+              "order": 2,
+              "action": "Frase 2 (Desenvolvida Implícita)",
+              "rationale": "O aluno [dedicado] atinge seu objetivo. / João, [feliz com a sua prova], comemorou. -> Pronome relativo e verbo ocultos ([que está] feliz)."
+            },
+            {
+              "order": 3,
+              "action": "Frase 3 (Reduzida de Gerúndio)",
+              "rationale": "O aluno [dedicando-se aos estudos] atinge seu objetivo. -> Sem conectivo relativo; verbo no gerúndio descompactável em que se dedica."
+            }
+          ],
+          "result": "Frase 3 (Reduzida de Gerúndio): O aluno [dedicando-se aos estudos] atinge seu objetivo. -> Sem conectivo relativo; verbo no gerúndio descompactável em que se dedica.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G03-001 — Demonstração Didática das Três Estruturas Adjetivas sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G03-001 — Demonstração Didática das Três Estruturas Adjetivas.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G03-001 — Demonstração Didática das Três Estruturas Adjetivas.",
           "blocks": [
             {
               "type": "list",
@@ -1030,6 +1426,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G03-002",
           "title": "EX-A08-G03-002 — Cenário de Dupla Leitura: \"Os Meninos Fantasiados\"",
+          "prompt": "Opção A (Sem vírgulas): Os meninos que estão fantasiados receberão prêmios.Análise: Oração Adjetiva Restritiva. Pressupõe que há meninos não fantasiados; somente os fantasiados ganham prêmios.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Opção A (Sem vírgulas)",
+              "rationale": "Os meninos que estão fantasiados receberão prêmios.Análise: Oração Adjetiva Restritiva. Pressupõe que há meninos não fantasiados; somente os fantasiados ganham prêmios."
+            },
+            {
+              "order": 2,
+              "action": "Opção B (Com vírgulas)",
+              "rationale": "Os meninos, que estão fantasiados, receberão prêmios.Análise: Oração Adjetiva Explicativa. Pressupõe que todos os meninos do contexto estão fantasiados e todos receberão prêmios."
+            },
+            {
+              "order": 3,
+              "action": "Julgamento de Prova",
+              "rationale": "As vírgulas são opcionais. A alteração da pontuação mantém a correção gramatical e altera o sentido."
+            }
+          ],
+          "result": "Julgamento de Prova: As vírgulas são opcionais. A alteração da pontuação mantém a correção gramatical e altera o sentido.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G03-002 — Cenário de Dupla Leitura: \"Os Meninos Fantasiados\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G03-002 — Cenário de Dupla Leitura: \"Os Meninos Fantasiados\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G03-002 — Cenário de Dupla Leitura: \"Os Meninos Fantasiados\".",
           "blocks": [
             {
               "type": "list",
@@ -1045,6 +1463,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G03-003",
           "title": "EX-A08-G03-003 — Leitura Única Explicativa: \"A Galinha que Põe Ovos\" (FGV / Cebraspe)",
+          "prompt": "Frase: A galinha, que põe ovos, merece respeito.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "A galinha, que põe ovos, merece respeito."
+            },
+            {
+              "order": 2,
+              "action": "Item de Prova Hipotético",
+              "rationale": "A supressão das vírgulas no trecho manteria a correção gramatical do texto, gerando apenas alteração semântica."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "A propriedade de pôr ovos é universal para a espécie galinha. Suprimir as vírgulas implicaria criar um subgrupo inexistente (\"somente as galinhas que põem ovos\"), gerando incoerência semântica e erro gramatical."
+            },
+            {
+              "order": 4,
+              "action": "Julgamento",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Julgamento: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G03-003 — Leitura Única Explicativa: \"A Galinha que Põe Ovos\" (FGV / Cebraspe) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G03-003 — Leitura Única Explicativa: \"A Galinha que Põe Ovos\" (FGV / Cebraspe).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G03-003 — Leitura Única Explicativa: \"A Galinha que Põe Ovos\" (FGV / Cebraspe).",
           "blocks": [
             {
               "type": "list",
@@ -1061,6 +1506,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G03-004",
           "title": "EX-A08-G03-004 — Leitura Única Restritiva: Contexto com Quantidade Prévia Fixada",
+          "prompt": "Frase 1: Tenho dois irmãos. O irmão que é primogênito chegou.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase 1",
+              "rationale": "Tenho dois irmãos. O irmão que é primogênito chegou."
+            },
+            {
+              "order": 2,
+              "action": "Frase 2",
+              "rationale": "Tenho três processos tramitando. O processo que é contra a União será logo julgado."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O texto declarou previamente a existência de 2 irmãos e 3 processos. A oração adjetiva precisa obrigatoriamente restringir qual deles é o foco. Inserir vírgulas afirmaria que só existe um irmão/processo, contradizendo o texto."
+            },
+            {
+              "order": 4,
+              "action": "Julgamento",
+              "rationale": "As vírgulas são proibidas. Inseri-las gera erro gramatical e incoerência."
+            }
+          ],
+          "result": "Julgamento: As vírgulas são proibidas. Inseri-las gera erro gramatical e incoerência.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G03-004 — Leitura Única Restritiva: Contexto com Quantidade Prévia Fixada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G03-004 — Leitura Única Restritiva: Contexto com Quantidade Prévia Fixada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G03-004 — Leitura Única Restritiva: Contexto com Quantidade Prévia Fixada.",
           "blocks": [
             {
               "type": "list",
@@ -1077,6 +1549,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G03-005",
           "title": "EX-A08-G03-005 — Questão Cebraspe: ANTT (2024) — Adjetiva Reduzida em Referente Múltiplo",
+          "prompt": "Texto: \"A iniciativa Mãe Servidora, inserida no contexto do programa Pró-Equidade de Gênero, reflete um esforço significativo da ANTT...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"A iniciativa Mãe Servidora, inserida no contexto do programa Pró-Equidade de Gênero, reflete um esforço significativo da ANTT...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "Não haveria prejuízo da correção gramatical do texto caso se suprimissem as vírgulas que delimitam o trecho “inserida no contexto do programa Pró-Equidade de Gênero”, embora tal supressão alterasse as relações sintáticas no período."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O trecho equivale a [que está] inserida... (oração adjetiva reduzida de particípio). Como a \"iniciativa Mãe Servidora\" pode existir em múltiplos órgãos (referente múltiplo), admite explicação ou restrição. A supressão altera a sintaxe e o sentido, preservando a correção."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G03-005 — Questão Cebraspe: ANTT (2024) — Adjetiva Reduzida em Referente Múltiplo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G03-005 — Questão Cebraspe: ANTT (2024) — Adjetiva Reduzida em Referente Múltiplo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G03-005 — Questão Cebraspe: ANTT (2024) — Adjetiva Reduzida em Referente Múltiplo.",
           "blocks": [
             {
               "type": "list",
@@ -1093,6 +1592,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G03-006",
           "title": "EX-A08-G03-006 — Questão Cebraspe: SERPRO (2023) — Adjetiva em Referente Único (\"Mãe\")",
+          "prompt": "Texto: \"Os adultos mentem muito, sabia. Até mesmo sua mãe, que lhe pede não mentir nunca, inventava histórias...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"Os adultos mentem muito, sabia. Até mesmo sua mãe, que lhe pede não mentir nunca, inventava histórias...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "A correção gramatical e a coerência do texto seriam preservadas caso se suprimisse a vírgula empregada logo após o vocábulo “mãe”."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "No contexto comunicativo, o indivíduo tem apenas uma mãe (referente único). A oração que lhe pede não mentir nunca é estritamente explicativa. Retirar a vírgula restringe indevidamente o termo, gerando incoerência e erro gramatical."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G03-006 — Questão Cebraspe: SERPRO (2023) — Adjetiva em Referente Único (\"Mãe\") sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G03-006 — Questão Cebraspe: SERPRO (2023) — Adjetiva em Referente Único (\"Mãe\").",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G03-006 — Questão Cebraspe: SERPRO (2023) — Adjetiva em Referente Único (\"Mãe\").",
           "blocks": [
             {
               "type": "list",
@@ -1109,6 +1635,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G03-007",
           "title": "EX-A08-G03-007 — Questão Cebraspe: TCE-RJ — Expressão Explicativa \"Ou Seja\"",
+          "prompt": "Texto: \"...A corrupção, por sua vez, era identificada com vícios..., ou seja, tudo aquilo que causa caos social...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...A corrupção, por sua vez, era identificada com vícios..., ou seja, tudo aquilo que causa caos social...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "As vírgulas que isolam a expressão “ou seja” poderiam ser suprimidas, sem prejuízo da correção gramatical do texto."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "Expressões explicativas e retificativas devem obrigatoriamente figurar isoladas por vírgulas. A supressão fere a norma padrão."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G03-007 — Questão Cebraspe: TCE-RJ — Expressão Explicativa \"Ou Seja\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G03-007 — Questão Cebraspe: TCE-RJ — Expressão Explicativa \"Ou Seja\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G03-007 — Questão Cebraspe: TCE-RJ — Expressão Explicativa \"Ou Seja\".",
           "blocks": [
             {
               "type": "list",
@@ -1125,6 +1678,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G03-008",
           "title": "EX-A08-G03-008 — Questão Cebraspe: Pref. Mossoró (2024) — Vírgula Vicária de Elipse",
+          "prompt": "Texto: \"O preconceito é uma opinião; a discriminação, um comportamento real e efetivo.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"O preconceito é uma opinião; a discriminação, um comportamento real e efetivo.\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "No último período do primeiro parágrafo, o emprego da vírgula logo após “discriminação” é obrigatório."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "A vírgula substitui anaforicamente o verbo é expresso na oração anterior. A vírgula vicária é de uso obrigatório para assinalar a elipse."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G03-008 — Questão Cebraspe: Pref. Mossoró (2024) — Vírgula Vicária de Elipse sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G03-008 — Questão Cebraspe: Pref. Mossoró (2024) — Vírgula Vicária de Elipse.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G03-008 — Questão Cebraspe: Pref. Mossoró (2024) — Vírgula Vicária de Elipse.",
           "blocks": [
             {
               "type": "list",
@@ -1141,6 +1721,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G03-009",
           "title": "EX-A08-G03-009 — Questão Cebraspe: MEC (2023) — Vírgula Vicária vs. Falso Aposto",
+          "prompt": "Texto: \"...realiza-se na proporção em que seus temas forem captados e suas tarefas, resolvidas.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...realiza-se na proporção em que seus temas forem captados e suas tarefas, resolvidas.\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "A vírgula imediatamente após “tarefas” foi empregada para isolar um aposto explicativo."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "A vírgula marca a elipse do verbo forem (suas tarefas [forem] resolvidas). O termo resolvidas é particípio/adjetivo concordando com tarefas. Por não ser substantivo, não pode constituir aposto explicativo."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G03-009 — Questão Cebraspe: MEC (2023) — Vírgula Vicária vs. Falso Aposto sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G03-009 — Questão Cebraspe: MEC (2023) — Vírgula Vicária vs. Falso Aposto.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G03-009 — Questão Cebraspe: MEC (2023) — Vírgula Vicária vs. Falso Aposto.",
           "blocks": [
             {
               "type": "list",
@@ -1157,6 +1764,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G03-010",
           "title": "EX-A08-G03-010 — Questão Cebraspe: Pref. Cachoeiro (2024 / Professor) — Adverbial Condicional Final",
+          "prompt": "Texto: \"...e sobre o seu potencial para ajudar alunos e professores, caso seja integrada à prática pedagógica.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...e sobre o seu potencial para ajudar alunos e professores, caso seja integrada à prática pedagógica.\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "No trecho citado, o emprego da vírgula é facultativo."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "A conjunção caso introduz oração subordinada adverbial condicional situada no final do período (ordem direta). Na ordem direta, a vírgula é facultativa."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G03-010 — Questão Cebraspe: Pref. Cachoeiro (2024 / Professor) — Adverbial Condicional Final sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G03-010 — Questão Cebraspe: Pref. Cachoeiro (2024 / Professor) — Adverbial Condicional Final.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G03-010 — Questão Cebraspe: Pref. Cachoeiro (2024 / Professor) — Adverbial Condicional Final.",
           "blocks": [
             {
               "type": "list",
@@ -1173,6 +1807,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G03-011",
           "title": "EX-A08-G03-011 — Questão Cebraspe: Pref. Cachoeiro (2024 / Professor) — Sujeito Composto e SVC",
+          "prompt": "Texto: \"...as discussões, os relatórios, as publicações apontaram que o problema...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...as discussões, os relatórios, as publicações apontaram que o problema...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "É facultativo o emprego de vírgula após a expressão \"as publicações\"."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O termo as publicações é o último núcleo do sujeito composto ligado diretamente ao verbo apontaram. É terminantemente proibido separar sujeito de verbo por vírgula."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G03-011 — Questão Cebraspe: Pref. Cachoeiro (2024 / Professor) — Sujeito Composto e SVC sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G03-011 — Questão Cebraspe: Pref. Cachoeiro (2024 / Professor) — Sujeito Composto e SVC.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G03-011 — Questão Cebraspe: Pref. Cachoeiro (2024 / Professor) — Sujeito Composto e SVC.",
           "blocks": [
             {
               "type": "list",
@@ -1189,6 +1850,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G03-012",
           "title": "EX-A08-G03-012 — Questão Cebraspe: Pref. Cachoeiro (2024 / Enfermeiro) — Concessiva Deslocada",
+          "prompt": "Texto: \"...Embora alguém possa imaginar cérebros biológicos artificiais, hoje toda a ação em inteligência artificial está centrada...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...Embora alguém possa imaginar cérebros biológicos artificiais, hoje toda a ação em inteligência artificial está centrada...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "O emprego da vírgula logo após a palavra \"artificiais\" é obrigatório."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "Oração subordinada adverbial concessiva antecipada com verbo próprio (possa imaginar). Orações adverbiais deslocadas exigem vírgula obrigatória."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G03-012 — Questão Cebraspe: Pref. Cachoeiro (2024 / Enfermeiro) — Concessiva Deslocada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G03-012 — Questão Cebraspe: Pref. Cachoeiro (2024 / Enfermeiro) — Concessiva Deslocada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G03-012 — Questão Cebraspe: Pref. Cachoeiro (2024 / Enfermeiro) — Concessiva Deslocada.",
           "blocks": [
             {
               "type": "list",
@@ -1205,6 +1893,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G03-013",
           "title": "EX-A08-G03-013 — Questão Cebraspe: MPE-GO (2024 / Analista) — Aposto e Vírgula de Dupla Função",
+          "prompt": "Texto: \"...e o papel — suportes que criam a possibilidade de a pessoa retomar a leitura para relembrar ou refletir sobre um acontecimento —, a própria elaboração do pensamento...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...e o papel — suportes que criam a possibilidade de a pessoa retomar a leitura para relembrar ou refletir sobre um acontecimento —, a própria elaboração do pensamento...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "Seriam preservadas a correção gramatical e a coerência das ideias do texto caso o trecho \"suportes que criam [...] acontecimento\" fosse isolado por vírgulas em vez dos travessões."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O trecho é aposto explicativo (núcleo substantivo suportes). A vírgula pós-travessão já presente acumula a função de fechar o aposto e fechar a oração adverbial temporal antecipada iniciada por Quando. A troca mantém correção e coerência."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G03-013 — Questão Cebraspe: MPE-GO (2024 / Analista) — Aposto e Vírgula de Dupla Função sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G03-013 — Questão Cebraspe: MPE-GO (2024 / Analista) — Aposto e Vírgula de Dupla Função.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G03-013 — Questão Cebraspe: MPE-GO (2024 / Analista) — Aposto e Vírgula de Dupla Função.",
           "blocks": [
             {
               "type": "list",
@@ -1221,6 +1936,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G03-014",
           "title": "EX-A08-G03-014 — Questão Cebraspe: Pref. Cachoeiro (2024 / Guarda) — Adjunto Curto Deslocado",
+          "prompt": "Texto: \"...Em Alagoas, os indicadores do mesmo crime caíram 14,8%...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...Em Alagoas, os indicadores do mesmo crime caíram 14,8%...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "A supressão da vírgula empregada logo após \"Alagoas\" prejudicaria a correção gramatical do texto."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "Em Alagoas é adjunto adverbial de lugar deslocado composto por 2 palavras (curta extensão). Para adjuntos curtos, a vírgula é facultativa; sua supressão não prejudica a correção."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G03-014 — Questão Cebraspe: Pref. Cachoeiro (2024 / Guarda) — Adjunto Curto Deslocado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G03-014 — Questão Cebraspe: Pref. Cachoeiro (2024 / Guarda) — Adjunto Curto Deslocado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G03-014 — Questão Cebraspe: Pref. Cachoeiro (2024 / Guarda) — Adjunto Curto Deslocado.",
           "blocks": [
             {
               "type": "list",
@@ -1237,6 +1979,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G03-015",
           "title": "EX-A08-G03-015 — Questão Cebraspe: Pref. Cachoeiro (2024 / Procurador) — Verbo e Objeto Oracional",
+          "prompt": "Texto: \"...saibam que essa é a única emergência global real.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...saibam que essa é a única emergência global real.\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "A inserção de uma vírgula imediatamente depois da forma verbal \"saibam\" comprometeria a correção gramatical do texto."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "saibam é VTD e a oração iniciada por que é objeto direto oracional (saibam isso). A inserção violaria o princípio SVC."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G03-015 — Questão Cebraspe: Pref. Cachoeiro (2024 / Procurador) — Verbo e Objeto Oracional sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G03-015 — Questão Cebraspe: Pref. Cachoeiro (2024 / Procurador) — Verbo e Objeto Oracional.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G03-015 — Questão Cebraspe: Pref. Cachoeiro (2024 / Procurador) — Verbo e Objeto Oracional.",
           "blocks": [
             {
               "type": "list",
@@ -1253,6 +2022,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G03-016",
           "title": "EX-A08-G03-016 — Questão Cebraspe: Pref. Cachoeiro (2024 / Aux. Adm.) — Sujeito Extenso e Verbo",
+          "prompt": "Texto: \"O precursor do que viria a ser um jornal foi o romano Acta Diurna...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"O precursor do que viria a ser um jornal foi o romano Acta Diurna...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "A inserção de vírgula imediatamente depois da palavra \"jornal\" prejudicaria a correção gramatical do texto."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O precursor do que viria a ser um jornal é o sujeito completo de foi. É proibido separar sujeito de verbo por vírgula."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G03-016 — Questão Cebraspe: Pref. Cachoeiro (2024 / Aux. Adm.) — Sujeito Extenso e Verbo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G03-016 — Questão Cebraspe: Pref. Cachoeiro (2024 / Aux. Adm.) — Sujeito Extenso e Verbo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G03-016 — Questão Cebraspe: Pref. Cachoeiro (2024 / Aux. Adm.) — Sujeito Extenso e Verbo.",
           "blocks": [
             {
               "type": "list",
@@ -1269,6 +2065,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G03-017",
           "title": "EX-A08-G03-017 — Questão Cebraspe: CAU-BR (2024 / Assistente TI) — Conjunção \"E\" com Sujeitos Distintos",
+          "prompt": "Texto: \"...escritório de arquitetura boutique, e a grande maioria sendo feita no local com papel e lápis...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...escritório de arquitetura boutique, e a grande maioria sendo feita no local com papel e lápis...\""
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "No penúltimo período do primeiro parágrafo, a supressão da vírgula entre \"boutique\" e \"e a grande\" prejudicaria a correção gramatical do texto."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "O conector e une orações com sujeitos diferentes (a desigualdade social vs. a grande maioria). A vírgula antes do \"e\" com sujeitos diferentes é facultativa; sua supressão não prejudica a correção."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G03-017 — Questão Cebraspe: CAU-BR (2024 / Assistente TI) — Conjunção \"E\" com Sujeitos Distintos sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G03-017 — Questão Cebraspe: CAU-BR (2024 / Assistente TI) — Conjunção \"E\" com Sujeitos Distintos.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G03-017 — Questão Cebraspe: CAU-BR (2024 / Assistente TI) — Conjunção \"E\" com Sujeitos Distintos.",
           "blocks": [
             {
               "type": "list",
@@ -1314,8 +2137,12 @@
         {
           "trapId": "WARN-A08-G03-008",
           "title": "Mito da Vírgula Obrigatória Antes de \"E\" com Sujeitos Distintos:",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Mito da Vírgula Obrigatória Antes de \"E\" com Sujeitos Distintos:.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Mito da Vírgula Obrigatória Antes de \"E\" com Sujeitos Distintos:.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Mito da Vírgula Obrigatória Antes de \"E\" com Sujeitos Distintos: no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Mito da Vírgula Obrigatória Antes de \"E\" com Sujeitos Distintos:.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Mito da Vírgula Obrigatória Antes de \"E\" com Sujeitos Distintos:.",
+          "correctReasoning": "Problema: Achar que sujeitos diferentes tornam a vírgula antes do \"e\" obrigatória. Correção: A vírgula é estritamente facultativa. Sua supressão nunca prejudica a correção gramatical.",
+          "decisiveTest": "Problema: Achar que sujeitos diferentes tornam a vírgula antes do \"e\" obrigatória. Correção: A vírgula é estritamente facultativa. Sua supressão nunca prejudica a correção gramatical.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Mito da Vírgula Obrigatória Antes de \"E\" com Sujeitos Distintos:.",
           "blocks": [
             {
               "type": "paragraph",

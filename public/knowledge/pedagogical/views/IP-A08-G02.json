@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A08-G02",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.852Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.599Z"
   },
   "unit": {
     "unitId": "IP-A08-G02",
@@ -531,6 +531,16 @@
         {
           "entityId": "RULE-IP-A08-G02-001",
           "title": "Regras canônicas",
+          "statement": "Esta seção sumariza as formulações canônicas definitivas estabelecidas no percurso temático:\nOrdem Direta Canônica: SVC + Adjuntos/Orações Adverbiais ao final $\\rightarrow$ KB-003.\nDeslocamento por Antecipação: Termo movido para o início da oração $\\rightarrow$ Exige 1 única vírgula $\\rightarrow$ KB-004.\nDeslocamento por Intercalação: Termo no meio da oração $\\rightarrow$ Exige duas vírgulas casadas (ou saem as duas ou nenhuma) $\\rightarrow$ KB-004.\nAdjunto Adverbial Curto (1 a 2 palavras): Vírgula facultativa em qualquer deslocamento $\\rightarrow$ KB-006.\nAdjunto Adverbial Longo (3 ou mais palavras): Vírgula obrigatória em deslocamento $\\rightarrow$ KB-006.\nOração Adverbial Deslocada (Com Verbo): Vírgula obrigatória incondicionalmente (\"O de Oração = O de Obrigatória\") $\\rightarrow$ KB-007.\nOração Coordenada Assindética: Vírgula obrigatória separando orações justapostas $\\rightarrow$ KB-009.\nOração Coordenada Sindética Canônica: Vírgula obrigatória posicionada antes da conjunção $\\rightarrow$ KB-009.\nConjunção Coordenada Deslocada: Exclusiva de adversativas e conclusivas $\\rightarrow$ Duas vírgulas se intercalada; uma vírgula se ao final $\\rightarrow$ KB-010.\nConjunção \"E\" com Sujeitos Iguais: Vírgula proibida $\\rightarrow$ KB-011.\nConjunção \"E\" com Sujeitos Diferentes: Vírgula facultativa / aconselhável $\\rightarrow$ KB-011.\nConjunção \"E\" com Valor Adversativo ou Conclusivo: Vírgula facultativa $\\rightarrow$ KB-011.\nPolicíndeto: Repetição de conectivo $\\rightarrow$ Única hipótese de vírgula obrigatória no \"E\" $\\rightarrow$ KB-011.",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Ordem Direta Canônica: SVC + Adjuntos/Orações Adverbiais ao final $\\rightarrow$ KB-003.",
+            "Deslocamento por Antecipação: Termo movido para o início da oração $\\rightarrow$ Exige 1 única vírgula $\\rightarrow$ KB-004.",
+            "Deslocamento por Intercalação: Termo no meio da oração $\\rightarrow$ Exige duas vírgulas casadas (ou saem as duas ou nenhuma) $\\rightarrow$ KB-004.",
+            "Adjunto Adverbial Curto (1 a 2 palavras): Vírgula facultativa em qualquer deslocamento $\\rightarrow$ KB-006."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "paragraph",
@@ -564,6 +574,44 @@
         {
           "procedureId": "PROC-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-001",
           "title": "O Método dos 4 Passos (\"Passo a Passo de Ouro\") para Termos Adverbiais",
+          "objective": "Executar o algoritmo decisório para O Método dos 4 Passos (\"Passo a Passo de Ouro\") para Termos Adverbiais",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de O Método dos 4 Passos (\"Passo a Passo de Ouro\") para Termos Adverbiais."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura sintático-morfológica alvo de O Método dos 4 Passos (\"Passo a Passo de Ouro\") para Termos Adverbiais.",
+              "test": "Localizar o termo regente ou núcleo do segmento."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios decisórios da regra canônica.",
+              "test": "Verificar se há exceção ou caso facultativo aplicável."
+            },
+            {
+              "order": 3,
+              "action": "Concluir a classificação definitiva para resolução da questão.",
+              "test": "Confrontar o resultado obtido com as alternativas da prova."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de O Método dos 4 Passos (\"Passo a Passo de Ouro\") para Termos Adverbiais."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -574,6 +622,77 @@
         {
           "procedureId": "PROC-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-002",
           "title": "Algoritmo de Análise para Vírgula Antes do Conectivo \"E\" (O Teste dos Dois Sujeitos)",
+          "objective": "Executar o algoritmo decisório para Algoritmo de Análise para Vírgula Antes do Conectivo \"E\" (O Teste dos Dois Sujeitos)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo de Análise para Vírgula Antes do Conectivo \"E\" (O Teste dos Dois Sujeitos)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar o \"E\" e a vírgula antecedente",
+              "explanation": "Isole a frase coordenada aditiva.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Localizar o Verbo 1 (Oração Anterior)",
+              "explanation": "Faça a pergunta \"Quem/o que realiza a ação?\" e determine o Sujeito 1.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Localizar o Verbo 2 (Oração Posterior)",
+              "explanation": "Faça a pergunta \"Quem/o que realiza a ação?\" e determine o Sujeito 2.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Comparação Sintática",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Sujeito 1 == Sujeito 2",
+              "explanation": "A vírgula é PROIBIDA.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Sujeito 1 != Sujeito 2",
+              "explanation": "A vírgula é FACULTATIVA. (A assertiva que propõe omitir ou manter a vírgula é correta).",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Teste Semântico Secundário",
+              "explanation": "",
+              "test": "Teste Semântico Secundário:"
+            },
+            {
+              "order": 8,
+              "action": "Se o \"E\" equivale a mas ou portanto, a vírgula é FACULTATIVA, mesmo que Sujeito 1 == Sujeito 2.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo de Análise para Vírgula Antes do Conectivo \"E\" (O Teste dos Dois Sujeitos)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -612,6 +731,47 @@
         {
           "procedureId": "PROC-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-003",
           "title": "Julgamento Rápido de Questões Cebraspe sobre Termos Intercalados e Conjunções Deslocadas",
+          "objective": "Executar o algoritmo decisório para Julgamento Rápido de Questões Cebraspe sobre Termos Intercalados e Conjunções Deslocadas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Julgamento Rápido de Questões Cebraspe sobre Termos Intercalados e Conjunções Deslocadas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Verifique se o termo ou conjunção (porém, portanto, contudo) está no meio da estrutura oracional isolado por vírgulas (, palavra,).",
+              "explanation": null,
+              "test": "Verifique se o termo ou conjunção (porém, portanto, contudo) está no meio da estrutura oracional isolado por vírgulas (, palavra,)."
+            },
+            {
+              "order": 2,
+              "action": "Se a assertiva justificar o par de vírgulas por \"conjunção deslocada\", \"intercalação\" ou \"posição da palavra na oração\", julgue o item como CERTO.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se a assertiva propor suprimir apenas uma das vírgulas, julgue o item como ERRADO imediatamente (violação da regra das vírgulas casadas).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Julgamento Rápido de Questões Cebraspe sobre Termos Intercalados e Conjunções Deslocadas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "list",
@@ -631,6 +791,22 @@
         {
           "contrastId": "CONTRAST-IP-A08-G02-001",
           "title": "Tabela Matriz: Comportamento da Vírgula nas Estruturas Adverbiais",
+          "contrastType": "mixed",
+          "conceptA": "Tabela Matriz: Comportamento da Vírgula nas Estruturas Adverbiais",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -689,6 +865,22 @@
         {
           "contrastId": "CONTRAST-IP-A08-G02-002",
           "title": "Tabela Matriz: Comportamento da Vírgula no Período Composto por Coordenação",
+          "contrastType": "mixed",
+          "conceptA": "Tabela Matriz: Comportamento da Vírgula no Período Composto por Coordenação",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "paragraph",
@@ -731,6 +923,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G02-001",
           "title": "EX-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-001 — Exemplos Paradigmáticos de Circunstâncias Adverbiais",
+          "prompt": "Adjunto Adverbial de Lugar (Sem Verbo — \"no parque\"):",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Adjunto Adverbial de Lugar (Sem Verbo — \"no parque\")",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Ordem Direta",
+              "rationale": "\"Encontrei meus amigos no parque.\" (Sem vírgula / Vírgula facultativa)."
+            },
+            {
+              "order": 3,
+              "action": "Antecipado",
+              "rationale": "\"No parque, encontrei meus amigos.\" (1 vírgula facultativa — 2 palavras)."
+            },
+            {
+              "order": 4,
+              "action": "Intercalado",
+              "rationale": "\"Encontrei, no parque, meus amigos.\" (2 vírgulas casadas facultativas)."
+            },
+            {
+              "order": 5,
+              "action": "Oração Subordinada Adverbial Temporal (Com Verbo — \"quando cheguei\")",
+              "rationale": ""
+            }
+          ],
+          "result": "Intercalada: \"A festa, quando cheguei, acabou.\" (2 vírgulas casadas obrigatórias).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-001 — Exemplos Paradigmáticos de Circunstâncias Adverbiais sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-001 — Exemplos Paradigmáticos de Circunstâncias Adverbiais.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-001 — Exemplos Paradigmáticos de Circunstâncias Adverbiais.",
           "blocks": [
             {
               "type": "list",
@@ -769,6 +993,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G02-002",
           "title": "EX-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-002 — Bateria de Exercícios de Fixação: Adverbiais (material de origem)",
+          "prompt": "Item 1: \"Se o Brasil se tornasse independente dos empréstimos externos, poderia voltar a crescer.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item 1",
+              "rationale": "\"Se o Brasil se tornasse independente dos empréstimos externos, poderia voltar a crescer.\""
+            },
+            {
+              "order": 2,
+              "action": "Classificação",
+              "rationale": "(2) Oração Adverbial Deslocada | Pontuação: Obrigatória (Verbo \"tornasse\")."
+            },
+            {
+              "order": 3,
+              "action": "Item 2",
+              "rationale": "\"Em fila, os candidatos aguardavam o resultado do concurso.\""
+            },
+            {
+              "order": 4,
+              "action": "Classificação",
+              "rationale": "(1) Adjunto Adverbial Deslocado | Pontuação: Facultativa (Sem verbo, 2 palavras)."
+            },
+            {
+              "order": 5,
+              "action": "Item 3",
+              "rationale": "\"Ele sai, todos os dias, tranquilamente de casa.\""
+            }
+          ],
+          "result": "Classificação: (2) Oração Adverbial Intercalada | Pontuação: Obrigatórias Casadas (Verbo \"fazia\").",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-002 — Bateria de Exercícios de Fixação: Adverbiais (material de origem) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-002 — Bateria de Exercícios de Fixação: Adverbiais (material de origem).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-002 — Bateria de Exercícios de Fixação: Adverbiais (material de origem).",
           "blocks": [
             {
               "type": "list",
@@ -793,6 +1049,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G02-003",
           "title": "EX-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-003 — Questões Cebraspe (2024): Termos Adverbiais (material de origem)",
+          "prompt": "Trecho: \"Tudo indica que, negociando esses acordos, o governo português tinha...\" Assertiva: A correção e o sentido seriam mantidos caso fosse eliminada a vírgula após \"acordos\", por ser facultativo. $\\rightarrow$ Gabarito: ERRADO. (Oração adverbial reduzida de gerúndio deslocada $\\rightarrow$ vírgula obrigatória e casada).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "(Cebraspe / 2024 / Pref. Cachoeiro de Itapemirim / Guarda Municipal)Trecho",
+              "rationale": "\"Em Alagoas, os indicadores do mesmo crime caíram 14,8%.\"Assertiva: A supressão da vírgula após \"Alagoas\" prejudicaria a correção gramatical do texto.$\\rightarrow$ Gabarito: ERRADO. (Adjunto adverbial curto antecipado: vírgula facultativa)."
+            },
+            {
+              "order": 2,
+              "action": "(Cebraspe / 2024 / MPE-TO / Analista Ministerial)Trecho",
+              "rationale": "\"Tal articulação foi alcunhada, mais tarde, de Sistema de Garantia...\"Assertiva: As vírgulas empregadas isolam segmento de natureza adverbial.$\\rightarrow$ Gabarito: CERTO. (Adjunto adverbial temporal intercalado)."
+            },
+            {
+              "order": 3,
+              "action": "(Cebraspe / 2024 / MPE-TO / Analista Ministerial)Trecho",
+              "rationale": "\"Isso significa que, no ano de 2022, usamos 75% mais recursos...\"Assertiva: A correção seria preservada caso se suprimisse a vírgula logo após \"que\".$\\rightarrow$ Gabarito: ERRADO. (Intercalação com vírgulas casadas e adjunto longo de 4 palavras)."
+            },
+            {
+              "order": 4,
+              "action": "(Cebraspe / 2024 / Pref. Cachoeiro de Itapemirim / Enfermeiro)Trecho",
+              "rationale": "\"Embora alguém possa imaginar cérebros biológicos artificiais, hoje toda a ação...\"Assertiva: O emprego da vírgula logo após \"artificiais\" é obrigatório.$\\rightarrow$ Gabarito: CERTO. (Oração subordinada adverbial concessiva antecipada)."
+            },
+            {
+              "order": 5,
+              "action": "(Cebraspe / 2024 / Pref. Mossoró-RN / Analista de Procuradoria)",
+              "rationale": null
+            }
+          ],
+          "result": "(Cebraspe / 2024 / Pref. Mossoró-RN / Analista de Procuradoria)",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-003 — Questões Cebraspe (2024): Termos Adverbiais (material de origem) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-003 — Questões Cebraspe (2024): Termos Adverbiais (material de origem).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-003 — Questões Cebraspe (2024): Termos Adverbiais (material de origem).",
           "blocks": [
             {
               "type": "list",
@@ -814,6 +1102,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G02-004",
           "title": "EX-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-004 — Bateria de Exercícios de Fixação: Orações Coordenadas (material de origem)",
+          "prompt": "Item 1: \"Aguardei alguns minutos, e comecei a palestra.\" $\\rightarrow$ (2) ERRADO. (Sujeitos iguais Eu $\\rightarrow$ vírgula proibida).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item 1",
+              "rationale": "\"Aguardei alguns minutos, e comecei a palestra.\" $\\rightarrow$ (2) ERRADO. (Sujeitos iguais Eu $\\rightarrow$ vírgula proibida)."
+            },
+            {
+              "order": 2,
+              "action": "Item 2",
+              "rationale": "\"Os adjetivos passam, e os substantivos ficam.\" $\\rightarrow$ (2) CERTO. (Sujeitos diferentes \"adjetivos\" $\\ne$ \"substantivos\" $\\rightarrow$ vírgula facultativa)."
+            },
+            {
+              "order": 3,
+              "action": "Item 3",
+              "rationale": "\"...Todo progresso depende, portanto, do homem sensato.\" $\\rightarrow$ (3) CERTO. (Conclusiva portanto intercalada $\\rightarrow$ vírgulas casadas corretas)."
+            },
+            {
+              "order": 4,
+              "action": "Item 4",
+              "rationale": "\"Não alimente nenhuma esperança vã, pois tudo é triste.\" $\\rightarrow$ (1) CERTO. (Explicativa pois em posição canônica $\\rightarrow$ vírgula obrigatória antes)."
+            },
+            {
+              "order": 5,
+              "action": "Item 5",
+              "rationale": "\"As economias do imperador, no entanto, não foram o bastante...\" $\\rightarrow$ (3) CERTO. (Adversativa no entanto intercalada $\\rightarrow$ vírgulas casadas corretas)."
+            }
+          ],
+          "result": "Item 6: \"Tentei impedi-la de ir embora, mas não adiantou.\" $\\rightarrow$ (1) CERTO. (Adversativa mas em posição canônica $\\rightarrow$ vírgula obrigatória antes).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-004 — Bateria de Exercícios de Fixação: Orações Coordenadas (material de origem) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-004 — Bateria de Exercícios de Fixação: Orações Coordenadas (material de origem).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-004 — Bateria de Exercícios de Fixação: Orações Coordenadas (material de origem).",
           "blocks": [
             {
               "type": "list",
@@ -832,6 +1152,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A08-G02-005",
           "title": "EX-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-005 — Questões Cebraspe (2023–2024): Orações Coordenadas (material de origem)",
+          "prompt": "Trecho: \"[...a resposta da criança... depende...], e [essa condição tem a ver...]\" Assertiva: A omissão da vírgula logo após \"emocional\" preservaria sua correção gramatical. $\\rightarrow$ Gabarito: CERTO. (Sujeitos distintos $\\rightarrow$ vírgula facultativa $\\rightarrow$ omissão lícita).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "(Cebraspe / Pref. Maringá-PR / Professor)Trecho",
+              "rationale": "\"...as mulheres representam 33,3% dos pesquisadores, porém apenas 12% dos membros...\"Assertiva: O uso da vírgula que antecede o trecho \"porém...\" é opcional.$\\rightarrow$ Gabarito: ERRADO. (Conjunção adversativa em posição canônica $\\rightarrow$ vírgula obrigatória)."
+            },
+            {
+              "order": 2,
+              "action": "(Cebraspe / 2023 / CGDF / Auditor de Controle Interno)Trecho",
+              "rationale": "\"...Muito ainda, porém, estão alheios os cidadãos acerca do que o Estado arrecada...\"Assertiva: As vírgulas justificam-se pela presença de conjunção adversativa deslocada.$\\rightarrow$ Gabarito: CERTO. (Porém intercalado)."
+            },
+            {
+              "order": 3,
+              "action": "(Cebraspe / 2023 / TBG / Técnico de Segurança)Trecho",
+              "rationale": "\"...não atingindo, portanto, todos os atos da administração pública...\"Assertiva: As vírgulas que isolam \"portanto\" justificam-se pela posição dessa palavra na oração.$\\rightarrow$ Gabarito: CERTO. (Portanto conclusivo deslocado)."
+            },
+            {
+              "order": 4,
+              "action": "(Cebraspe / 2024 / Pref. Mossoró-RN / Analista de Procuradoria)Trecho",
+              "rationale": "\"[O poder é a objetivação política...], e [um de seus recursos é o convencimento...]\"Assertiva: A vírgula separa orações cujos sujeitos são distintos.$\\rightarrow$ Gabarito: CERTO. (Sujeito 1: \"O poder\"; Sujeito 2: \"um de seus recursos\")."
+            },
+            {
+              "order": 5,
+              "action": "(Cebraspe / SESAU-AL / Assistente Social)",
+              "rationale": null
+            }
+          ],
+          "result": "(Cebraspe / SESAU-AL / Assistente Social)",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-005 — Questões Cebraspe (2023–2024): Orações Coordenadas (material de origem) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-005 — Questões Cebraspe (2023–2024): Orações Coordenadas (material de origem).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-005 — Questões Cebraspe (2023–2024): Orações Coordenadas (material de origem).",
           "blocks": [
             {
               "type": "list",
@@ -881,8 +1233,12 @@
         {
           "trapId": "WARN-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-001",
           "title": "O Erro do \"Par de Meias\" em Intercalações",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Erro do \"Par de Meias\" em Intercalações.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Erro do \"Par de Meias\" em Intercalações.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Erro do \"Par de Meias\" em Intercalações no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Erro do \"Par de Meias\" em Intercalações.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Erro do \"Par de Meias\" em Intercalações.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Erro do \"Par de Meias\" em Intercalações para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Erro do \"Par de Meias\" em Intercalações.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Erro do \"Par de Meias\" em Intercalações.",
           "blocks": [
             {
               "type": "list",
@@ -897,8 +1253,12 @@
         {
           "trapId": "WARN-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-002",
           "title": "Inserção Indevida de Vírgula APÓS Conjunção em Posição Canônica",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Inserção Indevida de Vírgula APÓS Conjunção em Posição Canônica.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Inserção Indevida de Vírgula APÓS Conjunção em Posição Canônica.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Inserção Indevida de Vírgula APÓS Conjunção em Posição Canônica no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Inserção Indevida de Vírgula APÓS Conjunção em Posição Canônica.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Inserção Indevida de Vírgula APÓS Conjunção em Posição Canônica.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Inserção Indevida de Vírgula APÓS Conjunção em Posição Canônica para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Inserção Indevida de Vírgula APÓS Conjunção em Posição Canônica.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Inserção Indevida de Vírgula APÓS Conjunção em Posição Canônica.",
           "blocks": [
             {
               "type": "list",
@@ -913,8 +1273,12 @@
         {
           "trapId": "WARN-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-003",
           "title": "Separação Indevida de Sujeito e Predicado com a Conjunção \"E\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Separação Indevida de Sujeito e Predicado com a Conjunção \"E\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Separação Indevida de Sujeito e Predicado com a Conjunção \"E\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Separação Indevida de Sujeito e Predicado com a Conjunção \"E\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Separação Indevida de Sujeito e Predicado com a Conjunção \"E\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Separação Indevida de Sujeito e Predicado com a Conjunção \"E\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Separação Indevida de Sujeito e Predicado com a Conjunção \"E\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Separação Indevida de Sujeito e Predicado com a Conjunção \"E\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Separação Indevida de Sujeito e Predicado com a Conjunção \"E\".",
           "blocks": [
             {
               "type": "list",
@@ -929,8 +1293,12 @@
         {
           "trapId": "WARN-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-004",
           "title": "Confusão entre Sujeito Temático/Semântico e Sujeito Sintático",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão entre Sujeito Temático/Semântico e Sujeito Sintático.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão entre Sujeito Temático/Semântico e Sujeito Sintático.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão entre Sujeito Temático/Semântico e Sujeito Sintático no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão entre Sujeito Temático/Semântico e Sujeito Sintático.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão entre Sujeito Temático/Semântico e Sujeito Sintático.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão entre Sujeito Temático/Semântico e Sujeito Sintático para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão entre Sujeito Temático/Semântico e Sujeito Sintático.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão entre Sujeito Temático/Semântico e Sujeito Sintático.",
           "blocks": [
             {
               "type": "list",
@@ -945,8 +1313,12 @@
         {
           "trapId": "WARN-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-005",
           "title": "Contar Palavras em Orações Adverbiais (Risco de Truncamento)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Contar Palavras em Orações Adverbiais (Risco de Truncamento).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Contar Palavras em Orações Adverbiais (Risco de Truncamento).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Contar Palavras em Orações Adverbiais (Risco de Truncamento) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Contar Palavras em Orações Adverbiais (Risco de Truncamento).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Contar Palavras em Orações Adverbiais (Risco de Truncamento).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Contar Palavras em Orações Adverbiais (Risco de Truncamento) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Contar Palavras em Orações Adverbiais (Risco de Truncamento).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Contar Palavras em Orações Adverbiais (Risco de Truncamento).",
           "blocks": [
             {
               "type": "list",
@@ -961,8 +1333,12 @@
         {
           "trapId": "WARN-A08-G02-USO-DA-VIRGULA-FUNDAMENTOS-006",
           "title": "Penalização Máxima em Redações Discursivas",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Penalização Máxima em Redações Discursivas.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Penalização Máxima em Redações Discursivas.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Penalização Máxima em Redações Discursivas no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Penalização Máxima em Redações Discursivas.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Penalização Máxima em Redações Discursivas.",
+          "correctReasoning": "A omissão de vírgula em adjuntos longos e orações adverbiais antecipadas/intercaladas é a falha isolada mais penalizada pelas bancas examinadoras em provas discursivas.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Penalização Máxima em Redações Discursivas.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Penalização Máxima em Redações Discursivas.",
           "blocks": [
             {
               "type": "paragraph",

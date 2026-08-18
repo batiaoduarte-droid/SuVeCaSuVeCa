@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A00-G06",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.694Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.454Z"
   },
   "unit": {
     "unitId": "IP-A00-G06",
@@ -390,6 +390,14 @@
         {
           "entityId": "RULE-IP-A00-G06-001",
           "title": "Quadro Sinótico dos 5 Casos Fundamentais de Hifenização",
+          "statement": "Quadro Sinótico dos 5 Casos Fundamentais de Hifenização",
+          "scope": "orthography",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de orthography no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Quadro Sinótico dos 5 Casos Fundamentais de Hifenização."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -446,6 +454,107 @@
         {
           "procedureId": "PROC-A00-G06-HIFEN-QUESTOES-001",
           "title": "Algoritmo Integrado de Decisão para Questões de Hífen",
+          "objective": "Executar o algoritmo decisório para Algoritmo Integrado de Decisão para Questões de Hífen",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo Integrado de Decisão para Questões de Hífen."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Identificação Estrutural",
+              "explanation": "Pergunte: o primeiro elemento possui autonomia morfológica e lexical independente ou é um prefixo?",
+              "test": "Passo 1 — Identificação Estrutural: Pergunte: o primeiro elemento possui autonomia morfológica e lexical independente ou é um prefixo?"
+            },
+            {
+              "order": 2,
+              "action": "Se for prefixo, siga para os 5 Casos de Prefixação.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se for vocábulo autônomo (substantivo, adjetivo, verbo, numeral), siga para as 3 Categorias de Compostos.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Passo 2 — Aplicação das Regras Prefixais",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Termina em vogal? Vogais iguais = hífen (micro-organismo); vogais diferentes = junta (autoanálise); R/S = junta e dobra (contrarregra).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Termina em R (hiper/inter/super)? Seguido de H/R = hífen (super-ricos); seguido de S = junta sem dobrar (hipersensibilidade).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "É co- ou re-? Aglutina incondicionalmente (coobrigação, reeditar).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "É bem ou mal? bem sempre com hífen (bem-estar); mal só com vogal/H (mal-humorado).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "É prefixo átono? Junta sem hífen (prerrogativa).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Passo 3 — Aplicação das Regras de Compostos",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Possui elemento de ligação (preposição/conjunção)? Categoria II -> sem hífen (dia a dia, mão de obra). Verifique se não é Categoria III-B (cor-de-rosa, cana-de-açúcar).",
+              "explanation": null,
+              "test": "Possui elemento de ligação (preposição/conjunção)? Categoria II -> sem hífen (dia a dia, mão de obra). Verifique se não é Categoria III-B (cor-de-rosa, cana-de-açúcar)."
+            },
+            {
+              "order": 12,
+              "action": "Não possui elemento de ligação? Categoria I -> com hífen (decreto-lei, norte-americano, porta-retrato). Verifique se não é Categoria III-A (girassol, mandachuva, paraquedas).",
+              "explanation": null,
+              "test": "Não possui elemento de ligação? Categoria I -> com hífen (decreto-lei, norte-americano, porta-retrato). Verifique se não é Categoria III-A (girassol, mandachuva, paraquedas)."
+            },
+            {
+              "order": 13,
+              "action": "Verbo + substantivo? Não é prefixo! Mantém hífen e R simples (porta-retrato).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo Integrado de Decisão para Questões de Hífen."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -519,6 +628,83 @@
         {
           "procedureId": "PROC-A00-G06-HIFEN-QUESTOES-002",
           "title": "Protocolo Cebraspe para Itens de Certo/Errado e \"Mesma Regra\"",
+          "objective": "Executar o algoritmo decisório para Protocolo Cebraspe para Itens de Certo/Errado e \"Mesma Regra\"",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo Cebraspe para Itens de Certo/Errado e \"Mesma Regra\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Comando \"Justifica-se pela mesma regra\"",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Premissa",
+              "explanation": "As alternativas não contêm erros ortográficos grosseiros; a banca quer testar a classificação teórica.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Ação",
+              "explanation": "Enquadre o modelo do enunciado no seu Caso exato (ex.: bem-estar -> Caso 3 incondicional) e busque a alternativa com o mesmo enquadramento (sem-teto -> Caso 3 incondicional). Descarte opções de outros Casos (mal-humorado, super-ricos), mesmo que estejam com a grafia correta.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Proposta de \"Grafia Alternativa\" para palavra do Texto de Apoio",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Premissa",
+              "explanation": "O Cebraspe extrai seus textos de obras publicadas e não contradiz a ortografia padrão adotada pelo autor original.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Ação",
+              "explanation": "Se a palavra consta no texto sem hífen (coexistem, prerrogativa), o item que afirmar que \"poderia ser grafada alternativamente com hífen\" (Co-existem, pré-rogativa) é ERRADO.",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Afirmação de \"Hífen Facultativo\"",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Premissa",
+              "explanation": "As regras do Acordo Ortográfico são prescritivas e rígidas.",
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Ação",
+              "explanation": "Se o item afirmar que o hífen em adjetivos compostos (ético-jurídicos) é de uso facultativo, marque ERRADO.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo Cebraspe para Itens de Certo/Errado e \"Mesma Regra\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -579,6 +765,22 @@
         {
           "contrastId": "CONTRAST-IP-A00-G06-001",
           "title": "1. Prefixo Vocálico + Consoante vs. Verbo + Substantivo (A Pegadinha do Dobramento de R/S)",
+          "contrastType": "morphological",
+          "conceptA": "1. Prefixo Vocálico + Consoante vs. Verbo + Substantivo (A Pegadinha do Dobramento de R/S)",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -625,6 +827,22 @@
         {
           "contrastId": "CONTRAST-IP-A00-G06-002",
           "title": "2. Elemento BEM vs. Elemento MAL",
+          "contrastType": "mixed",
+          "conceptA": "2. Elemento BEM vs. Elemento MAL",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -666,6 +884,22 @@
         {
           "contrastId": "CONTRAST-IP-A00-G06-003",
           "title": "3. Prefixos Especiais (co-, re-) vs. Regra Geral de Prefixos (semi-, anti-)",
+          "contrastType": "mixed",
+          "conceptA": "3. Prefixos Especiais (co-, re-) vs. Regra Geral de Prefixos (semi-, anti-)",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -710,6 +944,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G06-001",
           "title": "EX-A00-G06-HIFEN-QUESTOES-001 — Questão 1 (EMBRAPA 2025 - Prefixo co-)",
+          "prompt": "Enunciado (CESPE/CEBRASPE - 2025 - EMBRAPA - Técnico):",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado (CESPE/CEBRASPE - 2025 - EMBRAPA - Técnico)",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "CERTO"
+            },
+            {
+              "order": 3,
+              "action": "Justificativa Pedagógica",
+              "rationale": "O prefixo co- tem regra de aglutinação permanente. Diante de \"a\" (coautor) e diante de \"o\" (coobrigação, coordenação), ele se junta sem hífen, validando as duas premissas do item."
+            }
+          ],
+          "result": "Justificativa Pedagógica: O prefixo co- tem regra de aglutinação permanente. Diante de \"a\" (coautor) e diante de \"o\" (coobrigação, coordenação), ele se junta sem hífen, validando as duas premissas do item.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G06-HIFEN-QUESTOES-001 — Questão 1 (EMBRAPA 2025 - Prefixo co-) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G06-HIFEN-QUESTOES-001 — Questão 1 (EMBRAPA 2025 - Prefixo co-).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G06-HIFEN-QUESTOES-001 — Questão 1 (EMBRAPA 2025 - Prefixo co-).",
           "blocks": [
             {
               "type": "list",
@@ -736,6 +992,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G06-002",
           "title": "EX-A00-G06-HIFEN-QUESTOES-002 — Questão 2 (EMBRAPA 2025 - Nomes Compostos: alto-mar)",
+          "prompt": "Enunciado (CESPE/CEBRASPE - 2025 - EMBRAPA - Analista):",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado (CESPE/CEBRASPE - 2025 - EMBRAPA - Analista)",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "ERRADO"
+            },
+            {
+              "order": 3,
+              "action": "Justificativa Pedagógica",
+              "rationale": "Alto-mar é um substantivo composto (adjetivo + substantivo) sem preposição intermediária. Enquadra-se na Categoria I de nomes compostos, mantendo o hífen obrigatório. A forma altomar é incorreta."
+            }
+          ],
+          "result": "Justificativa Pedagógica: Alto-mar é um substantivo composto (adjetivo + substantivo) sem preposição intermediária. Enquadra-se na Categoria I de nomes compostos, mantendo o hífen obrigatório. A forma altomar é incorreta.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G06-HIFEN-QUESTOES-002 — Questão 2 (EMBRAPA 2025 - Nomes Compostos: alto-mar) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G06-HIFEN-QUESTOES-002 — Questão 2 (EMBRAPA 2025 - Nomes Compostos: alto-mar).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G06-HIFEN-QUESTOES-002 — Questão 2 (EMBRAPA 2025 - Nomes Compostos: alto-mar).",
           "blocks": [
             {
               "type": "list",
@@ -762,6 +1040,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G06-003",
           "title": "EX-A00-G06-HIFEN-QUESTOES-003 — Questão 3 (Instituto Rio Branco 2024 - Prefixos semi- vs. co- e re-)",
+          "prompt": "Enunciado (CESPE/CEBRASPE - 2024 - Instituto Rio Branco - Terceiro Secretário):",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado (CESPE/CEBRASPE - 2024 - Instituto Rio Branco - Terceiro Secretário)",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "ERRADO"
+            },
+            {
+              "order": 3,
+              "action": "Justificativa Pedagógica",
+              "rationale": "semi- rege-se pela Regra Geral (Caso 1: hífen com vogal igual ou H; aglutina nos demais). Já co- e re- são prefixos especiais de união incondicional (reeditar, coautor). Logo, obedecem a regras diferentes."
+            }
+          ],
+          "result": "Justificativa Pedagógica: semi- rege-se pela Regra Geral (Caso 1: hífen com vogal igual ou H; aglutina nos demais). Já co- e re- são prefixos especiais de união incondicional (reeditar, coautor). Logo, obedecem a regras diferentes.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G06-HIFEN-QUESTOES-003 — Questão 3 (Instituto Rio Branco 2024 - Prefixos semi- vs. co- e re-) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G06-HIFEN-QUESTOES-003 — Questão 3 (Instituto Rio Branco 2024 - Prefixos semi- vs. co- e re-).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G06-HIFEN-QUESTOES-003 — Questão 3 (Instituto Rio Branco 2024 - Prefixos semi- vs. co- e re-).",
           "blocks": [
             {
               "type": "list",
@@ -788,6 +1088,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G06-004",
           "title": "EX-A00-G06-HIFEN-QUESTOES-004 — Questão 4 (MPE-SC Promotor - Prefixo anti-: antidireito)",
+          "prompt": "Enunciado (CESPE/CEBRASPE - MPE-SC - Promotor de Justiça Substituto):",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado (CESPE/CEBRASPE - MPE-SC - Promotor de Justiça Substituto)",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "CERTO"
+            },
+            {
+              "order": 3,
+              "action": "Justificativa Pedagógica",
+              "rationale": "anti- diante de consoante diferente de \"h\" aglutina-se sem hífen (antidireito). Inserir o hífen gera erro ortográfico. Logo, a substituição realmente deixaria o texto em desacordo com a norma."
+            }
+          ],
+          "result": "Justificativa Pedagógica: anti- diante de consoante diferente de \"h\" aglutina-se sem hífen (antidireito). Inserir o hífen gera erro ortográfico. Logo, a substituição realmente deixaria o texto em desacordo com a norma.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G06-HIFEN-QUESTOES-004 — Questão 4 (MPE-SC Promotor - Prefixo anti-: antidireito) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G06-HIFEN-QUESTOES-004 — Questão 4 (MPE-SC Promotor - Prefixo anti-: antidireito).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G06-HIFEN-QUESTOES-004 — Questão 4 (MPE-SC Promotor - Prefixo anti-: antidireito).",
           "blocks": [
             {
               "type": "list",
@@ -814,6 +1136,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G06-005",
           "title": "EX-A00-G06-HIFEN-QUESTOES-005 — Questão 5 (INSS Técnico - Substantivo Composto bem-estar)",
+          "prompt": "Enunciado (CESPE/CEBRASPE - INSS - Técnico do Seguro Social):",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado (CESPE/CEBRASPE - INSS - Técnico do Seguro Social)",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "ERRADO"
+            },
+            {
+              "order": 3,
+              "action": "Justificativa Pedagógica",
+              "rationale": "O elemento bem- em substantivos compostos exige hífen incondicionalmente (bem-estar). A separação em duas palavras livres (bem estar) é proibida pela norma ortográfica."
+            }
+          ],
+          "result": "Justificativa Pedagógica: O elemento bem- em substantivos compostos exige hífen incondicionalmente (bem-estar). A separação em duas palavras livres (bem estar) é proibida pela norma ortográfica.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G06-HIFEN-QUESTOES-005 — Questão 5 (INSS Técnico - Substantivo Composto bem-estar) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G06-HIFEN-QUESTOES-005 — Questão 5 (INSS Técnico - Substantivo Composto bem-estar).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G06-HIFEN-QUESTOES-005 — Questão 5 (INSS Técnico - Substantivo Composto bem-estar).",
           "blocks": [
             {
               "type": "list",
@@ -840,6 +1184,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G06-006",
           "title": "EX-A00-G06-HIFEN-QUESTOES-006 — Questão 6: Bateria de Fixação de Nomes Compostos (10 Itens)",
+          "prompt": "EX-A00-G06-HIFEN-QUESTOES-006 — Questão 6: Bateria de Fixação de Nomes Compostos (10 Itens)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"EX-A00-G06-HIFEN-QUESTOES-006 — Questão 6: Bateria de Fixaçã...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de EX-A00-G06-HIFEN-QUESTOES-006 — Questão 6: Bateria de Fixação de Nomes Compostos (10 Itens).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G06-HIFEN-QUESTOES-006 — Questão 6: Bateria de Fixação de Nomes Compostos (10 Itens) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G06-HIFEN-QUESTOES-006 — Questão 6: Bateria de Fixação de Nomes Compostos (10 Itens).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G06-HIFEN-QUESTOES-006 — Questão 6: Bateria de Fixação de Nomes Compostos (10 Itens).",
           "blocks": [
             {
               "type": "table_ref",
@@ -922,6 +1288,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G06-007",
           "title": "EX-A00-G06-HIFEN-QUESTOES-007 — Questão 7 (SEED-PR - Mapeamento nos 5 Casos)",
+          "prompt": "Enunciado (CESPE/CEBRASPE - SEED-PR - Professor - Língua Portuguesa):",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado (CESPE/CEBRASPE - SEED-PR - Professor - Língua Portuguesa)",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "E (autoanálise)"
+            },
+            {
+              "order": 3,
+              "action": "Análise das Opções",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "A) seminternato (Incorreta)",
+              "rationale": "semi- + internato (vogais iguais \"i\"+\"i\" se repelem -> Caso 1: semi-internato)."
+            },
+            {
+              "order": 5,
+              "action": "B) hiperssensibilidade (Incorreta)",
+              "rationale": "hiper- termina em R; diante de S, junta direto sem dobrar (Caso 2: hipersensibilidade)."
+            }
+          ],
+          "result": "E) autoanálise (CORRETA): auto- termina em 'o' + 'a' (vogais diferentes se atraem -> Caso 1: autoanálise).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G06-HIFEN-QUESTOES-007 — Questão 7 (SEED-PR - Mapeamento nos 5 Casos) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G06-HIFEN-QUESTOES-007 — Questão 7 (SEED-PR - Mapeamento nos 5 Casos).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G06-HIFEN-QUESTOES-007 — Questão 7 (SEED-PR - Mapeamento nos 5 Casos).",
           "blocks": [
             {
               "type": "list",
@@ -953,6 +1351,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G06-008",
           "title": "EX-A00-G06-HIFEN-QUESTOES-008 — Questão 8 (Pref. Camaçari 2024 - Mesma Regra de bem-estar)",
+          "prompt": "Enunciado (CESPE/CEBRASPE - 2024 - Prefeitura de Camaçari-BA - ACS):",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado (CESPE/CEBRASPE - 2024 - Prefeitura de Camaçari-BA - ACS)",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "C (sem-teto)"
+            },
+            {
+              "order": 3,
+              "action": "Análise das Opções",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Modelo (bem-estar)",
+              "rationale": "Caso 3 (elementos independentes / prefixos fixos incondicionais)."
+            },
+            {
+              "order": 5,
+              "action": "A) mal-humorado",
+              "rationale": "Caso do MAL (hífen condicionado à presença de H; regra diferente de BEM)."
+            }
+          ],
+          "result": "E) cana-de-açúcar: Caso 5 / Categoria III-B (exceção consagrada com preposição).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G06-HIFEN-QUESTOES-008 — Questão 8 (Pref. Camaçari 2024 - Mesma Regra de bem-estar) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G06-HIFEN-QUESTOES-008 — Questão 8 (Pref. Camaçari 2024 - Mesma Regra de bem-estar).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G06-HIFEN-QUESTOES-008 — Questão 8 (Pref. Camaçari 2024 - Mesma Regra de bem-estar).",
           "blocks": [
             {
               "type": "list",
@@ -985,6 +1415,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G06-009",
           "title": "EX-A00-G06-HIFEN-QUESTOES-009 — Questão 9 (DPE-DF e MPE-SC - Prefixos co- e pre-)",
+          "prompt": "-> Gabarito: ERRADO. prerrogativa deriva de prefixo átono pre- (Caso 4), aglutinado com dobra de R. O prefixo tônico pré- não se aplica.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item A (DPE-DF)",
+              "rationale": "\"Conforme as regras oficiais de grafia, “Coexistem” poderia ser grafado alternativamente como Co-existem.\"-> Gabarito: ERRADO. co- aglutina-se sempre sem hífen."
+            },
+            {
+              "order": 2,
+              "action": "Item B (MPE-SC Promotor)",
+              "rationale": "\"O termo “prerrogativa” (primeiro parágrafo) também pode ser corretamente grafado como pré-rogativa.\""
+            }
+          ],
+          "result": "Item B (MPE-SC Promotor): \"O termo “prerrogativa” (primeiro parágrafo) também pode ser corretamente grafado como pré-rogativa.\"",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G06-HIFEN-QUESTOES-009 — Questão 9 (DPE-DF e MPE-SC - Prefixos co- e pre-) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G06-HIFEN-QUESTOES-009 — Questão 9 (DPE-DF e MPE-SC - Prefixos co- e pre-).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G06-HIFEN-QUESTOES-009 — Questão 9 (DPE-DF e MPE-SC - Prefixos co- e pre-).",
           "blocks": [
             {
               "type": "list",
@@ -1003,6 +1450,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A00-G06-010",
           "title": "EX-A00-G06-HIFEN-QUESTOES-010 — Questão 10 (MPE-SC Promotor - ético-jurídicos)",
+          "prompt": "Enunciado (CESPE/CEBRASPE - MPE-SC - Promotor de Justiça Substituto):",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado (CESPE/CEBRASPE - MPE-SC - Promotor de Justiça Substituto)",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "ERRADO"
+            },
+            {
+              "order": 3,
+              "action": "Justificativa Pedagógica",
+              "rationale": "Adjetivos compostos (Caso 5) exigem hífen de forma estritamente obrigatória. Não há facultatividade nem autorização para a forma aglutinada eticojurídicos."
+            }
+          ],
+          "result": "Justificativa Pedagógica: Adjetivos compostos (Caso 5) exigem hífen de forma estritamente obrigatória. Não há facultatividade nem autorização para a forma aglutinada eticojurídicos.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G06-HIFEN-QUESTOES-010 — Questão 10 (MPE-SC Promotor - ético-jurídicos) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A00-G06-HIFEN-QUESTOES-010 — Questão 10 (MPE-SC Promotor - ético-jurídicos).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G06-HIFEN-QUESTOES-010 — Questão 10 (MPE-SC Promotor - ético-jurídicos).",
           "blocks": [
             {
               "type": "list",
@@ -1066,8 +1535,12 @@
         {
           "trapId": "WARN-A00-G06-HIFEN-QUESTOES-001",
           "title": "Pegadinha do Duplo \"O\" no Prefixo \"co-\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha do Duplo \"O\" no Prefixo \"co-\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha do Duplo \"O\" no Prefixo \"co-\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha do Duplo \"O\" no Prefixo \"co-\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha do Duplo \"O\" no Prefixo \"co-\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha do Duplo \"O\" no Prefixo \"co-\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pegadinha do Duplo \"O\" no Prefixo \"co-\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha do Duplo \"O\" no Prefixo \"co-\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha do Duplo \"O\" no Prefixo \"co-\".",
           "blocks": [
             {
               "type": "list",
@@ -1082,8 +1555,12 @@
         {
           "trapId": "WARN-A00-G06-HIFEN-QUESTOES-002",
           "title": "A Falsa Dobra de Consoantes em Verbo + Substantivo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Falsa Dobra de Consoantes em Verbo + Substantivo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Falsa Dobra de Consoantes em Verbo + Substantivo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Falsa Dobra de Consoantes em Verbo + Substantivo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Falsa Dobra de Consoantes em Verbo + Substantivo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Falsa Dobra de Consoantes em Verbo + Substantivo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Falsa Dobra de Consoantes em Verbo + Substantivo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Falsa Dobra de Consoantes em Verbo + Substantivo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Falsa Dobra de Consoantes em Verbo + Substantivo.",
           "blocks": [
             {
               "type": "list",
@@ -1098,8 +1575,12 @@
         {
           "trapId": "WARN-A00-G06-HIFEN-QUESTOES-003",
           "title": "Dobramento Indevido em Prefixo Consonantal",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Dobramento Indevido em Prefixo Consonantal.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Dobramento Indevido em Prefixo Consonantal.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Dobramento Indevido em Prefixo Consonantal no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Dobramento Indevido em Prefixo Consonantal.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Dobramento Indevido em Prefixo Consonantal.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Dobramento Indevido em Prefixo Consonantal para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Dobramento Indevido em Prefixo Consonantal.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Dobramento Indevido em Prefixo Consonantal.",
           "blocks": [
             {
               "type": "list",
@@ -1114,8 +1595,12 @@
         {
           "trapId": "WARN-A00-G06-HIFEN-QUESTOES-004",
           "title": "Incoerência nos Adjetivos Étnicos",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Incoerência nos Adjetivos Étnicos.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Incoerência nos Adjetivos Étnicos.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Incoerência nos Adjetivos Étnicos no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Incoerência nos Adjetivos Étnicos.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Incoerência nos Adjetivos Étnicos.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Incoerência nos Adjetivos Étnicos para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Incoerência nos Adjetivos Étnicos.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Incoerência nos Adjetivos Étnicos.",
           "blocks": [
             {
               "type": "list",
@@ -1130,8 +1615,12 @@
         {
           "trapId": "WARN-A00-G06-HIFEN-QUESTOES-005",
           "title": "Falsa Equivalência de Regra entre BEM e MAL",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Falsa Equivalência de Regra entre BEM e MAL.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Falsa Equivalência de Regra entre BEM e MAL.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Falsa Equivalência de Regra entre BEM e MAL no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Falsa Equivalência de Regra entre BEM e MAL.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Falsa Equivalência de Regra entre BEM e MAL.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Falsa Equivalência de Regra entre BEM e MAL para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Falsa Equivalência de Regra entre BEM e MAL.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Falsa Equivalência de Regra entre BEM e MAL.",
           "blocks": [
             {
               "type": "list",
@@ -1318,7 +1807,41 @@
       "officialAnswer": "C",
       "explanation": "\"bem-estar\" traz como prefixo o \"bem\", que sempre exige hífen. Usado como prefixo, o \"sem\" também pede hífen sempre. Então, a banca entendeu que seria \"uma mesma regra\". \"mal-humorado\" traz hífen porque sempre há hífen na prefixação se houver palavra iniciada por H: anti-herói, anti-higiênico, super-homem, mini-hotel, neo-helênico, co-herdeiro, sobre-humano, pré-história, sub-hepático, auto-hipnose, neo-humanismo, semi-hospitalar... Em \"supeR-Ricos\" e \"autO-Organização\", o hífen separa letras iguais na prefixação. Gabarito letra C.",
       "questionSha256": "31a2ac642ce7661aac28f95e88b4b28aabf12cd8a2ca0b809b8d06bc44a26c8c",
-      "answerSha256": "10deabd7c3c8c1a43dfa97200a7568eb55d2fe50f74ef9cf1e77888575dd3d86"
+      "answerSha256": "10deabd7c3c8c1a43dfa97200a7568eb55d2fe50f74ef9cf1e77888575dd3d86",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Emprego do Hífen - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "incorrect",
+          "explanation": "Opção a: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Emprego do Hífen - Questões."
+        },
+        {
+          "optionLabel": "b",
+          "status": "incorrect",
+          "explanation": "Opção b: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Emprego do Hífen - Questões."
+        },
+        {
+          "optionLabel": "c",
+          "status": "correct",
+          "explanation": "Opção c: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Emprego do Hífen - Questões."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Emprego do Hífen - Questões."
+        },
+        {
+          "optionLabel": "e",
+          "status": "incorrect",
+          "explanation": "Opção e: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Emprego do Hífen - Questões."
+        }
+      ]
     },
     {
       "questionId": "aula00.q0133",
@@ -1331,7 +1854,10 @@
       "officialAnswer": "correct",
       "explanation": "Os advérbios “bem” e “mal”, se usados como prefixo, pedem hífen quando a próxima palavra é iniciada por vogal (ou H, porque tem som de vogal). Essa é a regra que justifica “bem-estar” e “mal-estar e faz o item estar correto. Porém, no caso de “bem”, não há hífen quando a palavra seguinte for derivada de “querer” ou “fazer”: benquerer, benfeito. No caso de “mal”, não há hífen quando a palavra seguinte for iniciada por consoante: malcriado, malfeito. Questão correta.",
       "questionSha256": "efc2b0c52aa530119039218784ff4e1ff4a4f5211b1ac09518aa5b56b36d7ce0",
-      "answerSha256": "c0ef66c29ab2ec48dada33e37dc8e04e85c2d9d26490309e722b506abbcd3c47"
+      "answerSha256": "c0ef66c29ab2ec48dada33e37dc8e04e85c2d9d26490309e722b506abbcd3c47",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Emprego do Hífen - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula00.q0224",
@@ -1343,7 +1869,10 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "1ee00a05e177d5cf789d9d7ec079a056cd978f51f92165b0cc00b9019179c5cb",
-      "answerSha256": "1a6ff877829ba00d4e7eb9e5774698e65edb8a78a5af7eb098d9dde246e747f4"
+      "answerSha256": "1a6ff877829ba00d4e7eb9e5774698e65edb8a78a5af7eb098d9dde246e747f4",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Emprego do Hífen - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula00.q0217",
@@ -1376,7 +1905,41 @@
       ],
       "officialAnswer": "C",
       "questionSha256": "2f6a074b4956b264ad3661659210f7db1171dcf26c78ab229b57d6a7b7b20075",
-      "answerSha256": "8e415b2ea1483dbed6ac74448f2b20dcb00201be08d0c8685e80c33535b1c123"
+      "answerSha256": "8e415b2ea1483dbed6ac74448f2b20dcb00201be08d0c8685e80c33535b1c123",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Emprego do Hífen - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "incorrect",
+          "explanation": "Opção a: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Emprego do Hífen - Questões."
+        },
+        {
+          "optionLabel": "b",
+          "status": "incorrect",
+          "explanation": "Opção b: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Emprego do Hífen - Questões."
+        },
+        {
+          "optionLabel": "c",
+          "status": "correct",
+          "explanation": "Opção c: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Emprego do Hífen - Questões."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Emprego do Hífen - Questões."
+        },
+        {
+          "optionLabel": "e",
+          "status": "incorrect",
+          "explanation": "Opção e: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Emprego do Hífen - Questões."
+        }
+      ]
     },
     {
       "questionId": "aula00.q0036",
@@ -1389,7 +1952,10 @@
       "officialAnswer": "correct",
       "explanation": "Os advérbios “bem” e “mal”, se usados como prefixo, pedem hífen quando a próxima palavra é iniciada por vogal (ou H, porque tem som de vogal). Essa é a regra que justifica “bem-estar” e “mal-estar e faz o item estar correto. Porém, acrescento que, no caso de “bem”, não há hífen quando a palavra seguinte for derivada de “querer” ou “fazer”: benquerer, benfeito. No caso de “mal”, não há hífen quando a palavra seguinte for iniciada por consoante: malcriado, malfeito. Gabarito: questão correta.",
       "questionSha256": "3f9979674f5ed206000a091992e3659327632cb6e0aef4c570da3fd118c6e052",
-      "answerSha256": "12a3940359861023c3bac696d11f670ab8dab0cb97de66009864547de1fe617d"
+      "answerSha256": "12a3940359861023c3bac696d11f670ab8dab0cb97de66009864547de1fe617d",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de PC-GO; 2. Identificar a regra central de Emprego do Hífen - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula00.q0041",
@@ -1402,7 +1968,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Mandachuva se grafa sem hífen, consta expressamente na regra especial das palavras que perderam a noção de composição. Mão de obra não possui hífen mesmo, porque palavras compostas com elemento de ligação são grafadas sem hífen. O prefixo PAN, seguido de Vogal, M ou N, exige hífen: Pan-africano. Gabarito: questão incorreta.",
       "questionSha256": "8f96d2b49fd1567e120187db4472a576922c55aa7e660044979fb5175f9ff216",
-      "answerSha256": "14d01d217581b7b90123a1a785e4daeb07276d53cd3de29f53dffb22c260b11d"
+      "answerSha256": "14d01d217581b7b90123a1a785e4daeb07276d53cd3de29f53dffb22c260b11d",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de IFN-MG; 2. Identificar a regra central de Emprego do Hífen - Questões; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

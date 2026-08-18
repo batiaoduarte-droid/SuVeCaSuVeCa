@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A13-G03",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.914Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.664Z"
   },
   "unit": {
     "unitId": "IP-A13-G03",
@@ -452,6 +452,14 @@
         {
           "entityId": "RULE-IP-A13-G03-001",
           "title": "Tabela Canônica Comparativa",
+          "statement": "Tabela Canônica Comparativa",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Tabela Canônica Comparativa."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "table_ref",
@@ -512,6 +520,41 @@
         {
           "procedureId": "PROC-A13-G03-001",
           "title": "Protocolo Universal de Discriminação entre Narração e Descrição",
+          "objective": "Executar o algoritmo decisório para Protocolo Universal de Discriminação entre Narração e Descrição",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo Universal de Discriminação entre Narração e Descrição."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Contar história / relatar fatos? ──> Confirmação Plena da NARRAÇÃO.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Qualificar / detalhar atributos? ──> Confirmação Plena da DESCRIÇÃO.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo Universal de Discriminação entre Narração e Descrição."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -544,6 +587,89 @@
         {
           "procedureId": "PROC-A13-G03-002",
           "title": "Método de Avaliação de Predominância Tipológica em Textos Híbridos (Cebraspe)",
+          "objective": "Executar o algoritmo decisório para Método de Avaliação de Predominância Tipológica em Textos Híbridos (Cebraspe)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método de Avaliação de Predominância Tipológica em Textos Híbridos (Cebraspe)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Identificar o Tipo de Proposição da Banca",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Proposição de Predomínio Excludente",
+              "explanation": "A banca afirma que o texto é \"predominantemente narrativo\" ou \"predominantemente descritivo\".",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Proposição Cumulativa",
+              "explanation": "A banca afirma que o texto desenvolve-se em \"sequências predominantemente descritivas e narrativas\".",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Passo 2 — Inspeção Tripartite do Texto (Abertura, Meio e Desfecho)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Abertura",
+              "explanation": "Verifique se o primeiro parágrafo introduz o tempo, o espaço e inicia uma ação ou lembrança de personagem.",
+              "test": "Abertura: Verifique se o primeiro parágrafo introduz o tempo, o espaço e inicia uma ação ou lembrança de personagem."
+            },
+            {
+              "order": 6,
+              "action": "Meio",
+              "explanation": "Verifique se as descrições de cenários e personagens servem de apoio a diálogos ou conflitos.",
+              "test": "Meio: Verifique se as descrições de cenários e personagens servem de apoio a diálogos ou conflitos."
+            },
+            {
+              "order": 7,
+              "action": "Desfecho",
+              "explanation": "Verifique se os parágrafos finais mostram uma tomada de decisão, ação conclusiva ou encerramento do evento narrado.",
+              "test": "Desfecho: Verifique se os parágrafos finais mostram uma tomada de decisão, ação conclusiva ou encerramento do evento narrado."
+            },
+            {
+              "order": 8,
+              "action": "Passo 3 — Regra de Decisão",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Se o item for excludente e houver enredo avançando no início e no fim, marque Predominantemente Narrativo. Se a banca afirmar que é \"predominantemente descritivo\", marque ERRADO.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Se o item for cumulativo e reconhecer a coexistência de ambas as sequências, marque CERTO.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método de Avaliação de Predominância Tipológica em Textos Híbridos (Cebraspe)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -614,6 +740,22 @@
         {
           "contrastId": "CONTRAST-IP-A13-G03-001",
           "title": "1. Pretérito Imperfeito na Descrição vs. Pretérito Imperfeito na Narração",
+          "contrastType": "mixed",
+          "conceptA": "1. Pretérito Imperfeito na Descrição vs. Pretérito Imperfeito na Narração",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "list",
@@ -628,6 +770,22 @@
         {
           "contrastId": "CONTRAST-IP-A13-G03-002",
           "title": "2. Presente Histórico Literário vs. Presente Descritivo Institucional",
+          "contrastType": "mixed",
+          "conceptA": "2. Presente Histórico Literário vs. Presente Descritivo Institucional",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "list",
@@ -642,6 +800,22 @@
         {
           "contrastId": "CONTRAST-IP-A13-G03-003",
           "title": "3. Itens Excludentes vs. Itens Cumulativos no Cebraspe",
+          "contrastType": "mixed",
+          "conceptA": "3. Itens Excludentes vs. Itens Cumulativos no Cebraspe",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "list",
@@ -660,6 +834,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G03-001",
           "title": "EX-A13-G03-001 — Exemplo Prototípico de Descrição (A Menina e as Vitrines)",
+          "prompt": "Texto Base: \"A menina passeava pela calçada da avenida elegante do bairro e olhava as vitrines que exibiam uma imensa variedade de roupas finas e caras.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto Base",
+              "rationale": "\"A menina passeava pela calçada da avenida elegante do bairro e olhava as vitrines que exibiam uma imensa variedade de roupas finas e caras.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Gramatical e Semântica",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Verbos",
+              "rationale": "passeava, olhava, exibiam (todos no Pretérito Imperfeito do Indicativo)."
+            },
+            {
+              "order": 4,
+              "action": "Relação Temporal",
+              "rationale": "Simultaneidade. Enquanto caminha, ela olha a vitrine, que está exibindo os produtos no mesmo recorte de tempo."
+            },
+            {
+              "order": 5,
+              "action": "Classificação",
+              "rationale": "Texto Descritivo puro (Simultaneidade / Fotografia)."
+            }
+          ],
+          "result": "Classificação: Texto Descritivo puro (Simultaneidade / Fotografia).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A13-G03-001 — Exemplo Prototípico de Descrição (A Menina e as Vitrines) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A13-G03-001 — Exemplo Prototípico de Descrição (A Menina e as Vitrines).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A13-G03-001 — Exemplo Prototípico de Descrição (A Menina e as Vitrines).",
           "blocks": [
             {
               "type": "list",
@@ -677,6 +883,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G03-002",
           "title": "EX-A13-G03-002 — Exemplo Prototípico de Narração (O Funcionário e o Pedido)",
+          "prompt": "Texto Base: \"O funcionário acabou de anotar um pedido, repousou a caneta e voltou-se para atender o cliente.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto Base",
+              "rationale": "\"O funcionário acabou de anotar um pedido, repousou a caneta e voltou-se para atender o cliente.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Gramatical e Semântica",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Verbos",
+              "rationale": "acabou de anotar (locução no Pretérito Perfeito), repousou (Pretérito Perfeito), voltou-se (Pretérito Perfeito)."
+            },
+            {
+              "order": 4,
+              "action": "Relação Temporal",
+              "rationale": "Sucessividade. Ação 1 (termina anotação) $\\rightarrow$ Ação 2 (pousa a caneta) $\\rightarrow$ Ação 3 (vira o corpo)."
+            },
+            {
+              "order": 5,
+              "action": "Classificação",
+              "rationale": "Texto Narrativo puro (Sucessividade / Antes e Depois)."
+            }
+          ],
+          "result": "Classificação: Texto Narrativo puro (Sucessividade / Antes e Depois).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A13-G03-002 — Exemplo Prototípico de Narração (O Funcionário e o Pedido) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A13-G03-002 — Exemplo Prototípico de Narração (O Funcionário e o Pedido).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A13-G03-002 — Exemplo Prototípico de Narração (O Funcionário e o Pedido).",
           "blocks": [
             {
               "type": "list",
@@ -694,6 +932,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G03-003",
           "title": "EX-A13-G03-003 — Demonstração de Presente Histórico em Contexto Descritivo e Narrativo",
+          "prompt": "Variação Descritiva no Presente: \"A menina passeia pela calçada da avenida elegante do bairro e olha as vitrines que exibem uma imensa variedade de roupas finas e caras.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Variação Descritiva no Presente",
+              "rationale": "\"A menina passeia pela calçada da avenida elegante do bairro e olha as vitrines que exibem uma imensa variedade de roupas finas e caras.\""
+            },
+            {
+              "order": 2,
+              "action": "Diagnóstico",
+              "rationale": "Continua descritivo, pois a simultaneidade entre passear, olhar e exibir permanece estática."
+            },
+            {
+              "order": 3,
+              "action": "Variação Narrativa no Presente",
+              "rationale": "\"O funcionário acaba de anotar um pedido, repousa a caneta e volta-se para atender o cliente.\""
+            },
+            {
+              "order": 4,
+              "action": "Diagnóstico",
+              "rationale": "Continua narrativo, pois a cadeia sucessiva de ações (1º acaba $\\rightarrow$ 2º repousa $\\rightarrow$ 3º volta-se) permanece sequencial no tempo."
+            }
+          ],
+          "result": "Diagnóstico: Continua narrativo, pois a cadeia sucessiva de ações (1º acaba $\\rightarrow$ 2º repousa $\\rightarrow$ 3º volta-se) permanece sequencial no tempo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A13-G03-003 — Demonstração de Presente Histórico em Contexto Descritivo e Narrativo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A13-G03-003 — Demonstração de Presente Histórico em Contexto Descritivo e Narrativo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A13-G03-003 — Demonstração de Presente Histórico em Contexto Descritivo e Narrativo.",
           "blocks": [
             {
               "type": "list",
@@ -710,6 +975,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G03-004",
           "title": "EX-A13-G03-004 — Presente Histórico Clássico vs. Cotidiano (Sacada 2)",
+          "prompt": "Exemplo 1 (Fato Histórico): \"Em 1492, Colombo descobre a América.\" $\\rightarrow$ descobre (presente) equivale a descobriu (pretérito perfeito).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Exemplo 1 (Fato Histórico)",
+              "rationale": "\"Em 1492, Colombo descobre a América.\" $\\rightarrow$ descobre (presente) equivale a descobriu (pretérito perfeito)."
+            },
+            {
+              "order": 2,
+              "action": "Exemplo 2 (Fato Cotidiano)",
+              "rationale": "\"Às 12 horas do dia 16/04 de 2004, Adriana acorda, toma banho, toma café...\" $\\rightarrow$ acorda, toma (presente) equivalem a acordou, tomou (pretérito perfeito). Ambos configuram narração em presente histórico."
+            }
+          ],
+          "result": "Exemplo 2 (Fato Cotidiano): \"Às 12 horas do dia 16/04 de 2004, Adriana acorda, toma banho, toma café...\" $\\rightarrow$ acorda, toma (presente) equivalem a acordou, tomou (pretérito perfeito). Ambos configuram narração em presente histórico.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A13-G03-004 — Presente Histórico Clássico vs. Cotidiano (Sacada 2) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A13-G03-004 — Presente Histórico Clássico vs. Cotidiano (Sacada 2).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A13-G03-004 — Presente Histórico Clássico vs. Cotidiano (Sacada 2).",
           "blocks": [
             {
               "type": "list",
@@ -724,6 +1006,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G03-005",
           "title": "EX-A13-G03-005 — Questão Cebraspe: TJ-SE (Passagem Descritiva Institucional)",
+          "prompt": "Órgão / Banca: CEBRASPE – TJ-SE – Titular de Serviços de Notas e de Registros.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Órgão / Banca",
+              "rationale": "CEBRASPE – TJ-SE – Titular de Serviços de Notas e de Registros."
+            },
+            {
+              "order": 2,
+              "action": "Excerto Avaliado",
+              "rationale": "\"Os objetivos perseguidos pelas entidades representativas de notários e registradores bandeirantes são o aperfeiçoamento dos serviços, a harmonização de procedimentos, buscando uma regulação uniforme nas atividades notariais e registrais.\""
+            },
+            {
+              "order": 3,
+              "action": "Item de Prova",
+              "rationale": "\"A referência aos 'objetivos perseguidos' (L.8-9) faz parte de uma passagem descritiva do texto.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução e Justificativa",
+              "rationale": "O trecho detalha, qualifica e caracteriza os objetivos institucionais por meio de núcleos substantivos e adjetivos. Embora o verbo são esteja no presente do indicativo, a intenção comunicativa é caracterizadora, sem avanço temporal."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A13-G03-005 — Questão Cebraspe: TJ-SE (Passagem Descritiva Institucional) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A13-G03-005 — Questão Cebraspe: TJ-SE (Passagem Descritiva Institucional).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A13-G03-005 — Questão Cebraspe: TJ-SE (Passagem Descritiva Institucional).",
           "blocks": [
             {
               "type": "list",
@@ -741,6 +1055,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G03-006",
           "title": "EX-A13-G03-006 — Questão Cebraspe: InoversaSul 2025 (Predominância Narrativa em Vidas Secas)",
+          "prompt": "Órgão / Banca: CESPE / CEBRASPE – 2025 – InoversaSul – Analista Administrativo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Órgão / Banca",
+              "rationale": "CESPE / CEBRASPE – 2025 – InoversaSul – Analista Administrativo."
+            },
+            {
+              "order": 2,
+              "action": "Excerto Avaliado",
+              "rationale": "Trecho de Vidas Secas (Graciliano Ramos) relatando o episódio em que Fabiano recorda a venda de um porco e o embate com o fiscal da prefeitura."
+            },
+            {
+              "order": 3,
+              "action": "Item de Prova",
+              "rationale": "\"Predomina no texto o tipo textual narrativo.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução e Justificativa",
+              "rationale": "O excerto inicia com ações encadeadas no passado (Recordou-se, sucedera, recorrera), contém descrições acessórias de suporte (quartos de porco, pedaços de carne, chapéu de couro) e culmina em diálogos e no desfecho da ação (Despedira-se, metera a carne no saco e fora vendê-la). A macroestrutura é uma história com progressão temporal."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A13-G03-006 — Questão Cebraspe: InoversaSul 2025 (Predominância Narrativa em Vidas Secas) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A13-G03-006 — Questão Cebraspe: InoversaSul 2025 (Predominância Narrativa em Vidas Secas).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A13-G03-006 — Questão Cebraspe: InoversaSul 2025 (Predominância Narrativa em Vidas Secas).",
           "blocks": [
             {
               "type": "list",
@@ -758,6 +1104,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G03-007",
           "title": "EX-A13-G03-007 — Questão Cebraspe: PG-DF (Clarice Lispector e a Falsa Predominância Descritiva)",
+          "prompt": "Órgão / Banca: CEBRASPE – PG-DF – Técnico Jurídico.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Órgão / Banca",
+              "rationale": "CEBRASPE – PG-DF – Técnico Jurídico."
+            },
+            {
+              "order": 2,
+              "action": "Excerto Avaliado",
+              "rationale": "Excerto de A Paixão segundo G. H. (Clarice Lispector) descrevendo o processo de rememoração da protagonista em relação à empregada Janair."
+            },
+            {
+              "order": 3,
+              "action": "Item de Prova",
+              "rationale": "\"No que se refere à tipologia, o texto é predominantemente descritivo.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução e Justificativa",
+              "rationale": "O texto inicia com um estado (me coagia), mas logo desenvolve uma sucessão de eventos cronológicos de rememoração no pretérito (Quis lembrar-me, não consegui, acabara, lembrei-me, consegui rememorar, Revi). As frases descritivas finais (traços finos e delicados) são apenas o fechamento de um processo narrativo. O texto é predominantemente narrativo com aspectos descritivos."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito Oficial",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito Oficial: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A13-G03-007 — Questão Cebraspe: PG-DF (Clarice Lispector e a Falsa Predominância Descritiva) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A13-G03-007 — Questão Cebraspe: PG-DF (Clarice Lispector e a Falsa Predominância Descritiva).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A13-G03-007 — Questão Cebraspe: PG-DF (Clarice Lispector e a Falsa Predominância Descritiva).",
           "blocks": [
             {
               "type": "list",
@@ -775,6 +1153,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G03-008",
           "title": "EX-A13-G03-008 — Questão Cebraspe: Câmara de Maceió 2024 (Sequências Mistas em Carta de Graciliano)",
+          "prompt": "Órgão / Banca: CEBRASPE – 2024 – Câmara de Maceió - AL – Analista Administrativo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Órgão / Banca",
+              "rationale": "CEBRASPE – 2024 – Câmara de Maceió - AL – Analista Administrativo."
+            },
+            {
+              "order": 2,
+              "action": "Excerto Avaliado",
+              "rationale": "Carta de Graciliano Ramos datada de 1911 em Maniçoba (\"Aqui cheguei... acorda-se às cinco... leva-se o dia lendo... Fui visitar o tal Lajedo... Diga a meu pai...\")."
+            },
+            {
+              "order": 3,
+              "action": "Item de Prova",
+              "rationale": "\"O texto se desenvolve em sequências tipológicas predominantemente descritivas e narrativas.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução e Justificativa",
+              "rationale": "A carta integra sequências narrativas de viagem (cheguei, fui visitar, não vi) com sequências descritivas de rotina e hábitos no presente histórico (acorda-se às cinco, leva-se o dia lendo), além de interlocução epistolar. A proposição reconhece cumulativamente a presença de ambas as tipologias sem forçar exclusão."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A13-G03-008 — Questão Cebraspe: Câmara de Maceió 2024 (Sequências Mistas em Carta de Graciliano) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A13-G03-008 — Questão Cebraspe: Câmara de Maceió 2024 (Sequências Mistas em Carta de Graciliano).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A13-G03-008 — Questão Cebraspe: Câmara de Maceió 2024 (Sequências Mistas em Carta de Graciliano).",
           "blocks": [
             {
               "type": "list",
@@ -832,8 +1242,12 @@
         {
           "trapId": "WARN-A13-G03-001",
           "title": "A Armadilha da Fixação Cega em Tempos Verbais",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha da Fixação Cega em Tempos Verbais.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha da Fixação Cega em Tempos Verbais.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha da Fixação Cega em Tempos Verbais no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha da Fixação Cega em Tempos Verbais.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha da Fixação Cega em Tempos Verbais.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha da Fixação Cega em Tempos Verbais para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha da Fixação Cega em Tempos Verbais.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha da Fixação Cega em Tempos Verbais.",
           "blocks": [
             {
               "type": "list",
@@ -849,8 +1263,12 @@
         {
           "trapId": "WARN-A13-G03-002",
           "title": "O Mito da Exclusividade do Pretérito Imperfeito na Descrição",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Mito da Exclusividade do Pretérito Imperfeito na Descrição.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Mito da Exclusividade do Pretérito Imperfeito na Descrição.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Mito da Exclusividade do Pretérito Imperfeito na Descrição no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Mito da Exclusividade do Pretérito Imperfeito na Descrição.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Mito da Exclusividade do Pretérito Imperfeito na Descrição.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Mito da Exclusividade do Pretérito Imperfeito na Descrição para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Mito da Exclusividade do Pretérito Imperfeito na Descrição.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Mito da Exclusividade do Pretérito Imperfeito na Descrição.",
           "blocks": [
             {
               "type": "list",
@@ -866,8 +1284,12 @@
         {
           "trapId": "WARN-A13-G03-003",
           "title": "A Armadilha da \"Última Linha\" em Textos Literários",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha da \"Última Linha\" em Textos Literários.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha da \"Última Linha\" em Textos Literários.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha da \"Última Linha\" em Textos Literários no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha da \"Última Linha\" em Textos Literários.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha da \"Última Linha\" em Textos Literários.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha da \"Última Linha\" em Textos Literários para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha da \"Última Linha\" em Textos Literários.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha da \"Última Linha\" em Textos Literários.",
           "blocks": [
             {
               "type": "list",
@@ -882,8 +1304,12 @@
         {
           "trapId": "WARN-A13-G03-004",
           "title": "Confundir Presente Histórico Estilístico com Fenômeno Sintático",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Presente Histórico Estilístico com Fenômeno Sintático.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Presente Histórico Estilístico com Fenômeno Sintático.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Presente Histórico Estilístico com Fenômeno Sintático no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Presente Histórico Estilístico com Fenômeno Sintático.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Presente Histórico Estilístico com Fenômeno Sintático.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Presente Histórico Estilístico com Fenômeno Sintático para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Presente Histórico Estilístico com Fenômeno Sintático.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Presente Histórico Estilístico com Fenômeno Sintático.",
           "blocks": [
             {
               "type": "list",
@@ -1018,7 +1444,35 @@
       "officialAnswer": "letter_B",
       "explanation": "O texto traz um comando, com verbo no imperativo e sugere seguir um passo a passo, uma lista de\ninstruções. Temos texto injuntivo.\nGabarito letra B.",
       "questionSha256": "a23e16757deb22136ec3e1bc79e3b7509912d9cdb27c078ff8860f9b6a99f3d4",
-      "answerSha256": "e89d14fd9d95a46bbb3a06955e21c6a7261ed98f18307a7720bd8bb9e86ceef7"
+      "answerSha256": "e89d14fd9d95a46bbb3a06955e21c6a7261ed98f18307a7720bd8bb9e86ceef7",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Narração e Descrição; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Narração e Descrição."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Narração e Descrição."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Narração e Descrição."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Narração e Descrição."
+        }
+      ]
     },
     {
       "questionId": "aula13.q0030",
@@ -1048,7 +1502,35 @@
       "officialAnswer": "letter_B",
       "explanation": "O texto traz um comando, com verbo no imperativo e sugere seguir um passo a passo, uma lista\nde instruções. Temos texto injuntivo.\nGabarito letra B.",
       "questionSha256": "d5b0ee7dec0eada32148712503ca54fb416fb204235d42c7b38085e524ec2d07",
-      "answerSha256": "3f5c0b9b26941d3219f1f484123d77b6033239eda3562a0de0a2fec10cc5e7e3"
+      "answerSha256": "3f5c0b9b26941d3219f1f484123d77b6033239eda3562a0de0a2fec10cc5e7e3",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Narração e Descrição; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Narração e Descrição."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Narração e Descrição."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Narração e Descrição."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Narração e Descrição."
+        }
+      ]
     },
     {
       "questionId": "aula13.q0058",
@@ -1077,7 +1559,35 @@
       ],
       "officialAnswer": "letter_B",
       "questionSha256": "7d3055d0fdf3debf62837345837992c3c231f3012c5b7cd12c111bf09860c7b4",
-      "answerSha256": "ea90404fa9c6bd06d3caa2c4522e55e58a2d8d35d06b65f02f8c72aaa6b56f02"
+      "answerSha256": "ea90404fa9c6bd06d3caa2c4522e55e58a2d8d35d06b65f02f8c72aaa6b56f02",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Narração e Descrição; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Narração e Descrição."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Narração e Descrição."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Narração e Descrição."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Narração e Descrição."
+        }
+      ]
     },
     {
       "questionId": "aula13.q0055",
@@ -1106,7 +1616,35 @@
       ],
       "officialAnswer": "letter_B",
       "questionSha256": "0162287bf4b10bd7cce13d3575369b62a4fd1e678c8260e075db295b0767c30f",
-      "answerSha256": "c61064cd32e68a5c2411a26ec9ba9cdfabee900aa2a1a457011ed86a9104cf48"
+      "answerSha256": "c61064cd32e68a5c2411a26ec9ba9cdfabee900aa2a1a457011ed86a9104cf48",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Narração e Descrição; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Narração e Descrição."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Narração e Descrição."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Narração e Descrição."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Narração e Descrição."
+        }
+      ]
     },
     {
       "questionId": "aula13.q0166",
@@ -1119,7 +1657,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Seguindo a literalidade, conforme o texto, o responsável é o Modelo Capitalista. Leiamos no\ntexto essa afirmação:\nO modelo econômico de produção  capitalista, aperfeiçoado pelos avanços  científicos e\ntecnológicos que, por sua vez, proporcionaram a reestruturação da produção e a Terceira\nRevolução Industrial, retirou do trabalho seu valor, transformando o empregado em simples\nmercadoria inserta no processo de produção. Questão incorreta.",
       "questionSha256": "bf3a82fb2f3db75fbec68cd826607ef1321b1432f25897f0d26267bc4ecce1d5",
-      "answerSha256": "177ee9075b730233125315e28022591fc89565619ad0c8d0e4e9080d32eac5a2"
+      "answerSha256": "177ee9075b730233125315e28022591fc89565619ad0c8d0e4e9080d32eac5a2",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Narração e Descrição; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula13.q0312",
@@ -1131,7 +1672,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "7bd2b3d59db8c80d4e71cf3c1731d564325cd75d9620a94d6d98568515d524e7",
-      "answerSha256": "3a219f3d3b4d501ccd1be0fcf3ccbc501b6183c88bf50b1e3cfcfbe0dc148673"
+      "answerSha256": "3a219f3d3b4d501ccd1be0fcf3ccbc501b6183c88bf50b1e3cfcfbe0dc148673",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Narração e Descrição; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

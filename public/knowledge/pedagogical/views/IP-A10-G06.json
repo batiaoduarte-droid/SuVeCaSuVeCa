@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A10-G06",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.886Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.636Z"
   },
   "unit": {
     "unitId": "IP-A10-G06",
@@ -972,6 +972,71 @@
         {
           "procedureId": "PROC-A10-V018-001",
           "title": "Método Operacional do Termo Masculino (\"Teste do Menino\")",
+          "objective": "Executar o algoritmo decisório para Método Operacional do Termo Masculino (\"Teste do Menino\")",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método Operacional do Termo Masculino (\"Teste do Menino\")."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize a palavra feminina que se encontra após a lacuna ou sob suspeita de receber crase.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Troque mentalmente essa palavra feminina por um substantivo masculino singular equivalente ou pelo termo padrão \"menino\" (ou \"curso\", \"encontro\", etc.).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Observe como a regência se comporta diante do masculino",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se surgir a combinação \"ao\" (a preposição + o artigo), fica provado que o regente exige a preposição a.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se surgir apenas o artigo \"o\" (ou se não houver preposição a), fica provado que o regente não exige preposição a (ex.",
+              "explanation": "verbo transitivo direto).",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Obedeceu  vontade",
+              "explanation": "substitui-se por menino $\\rightarrow$ \"Obedeceu ao menino\". Houve \"ao\", logo o verbo pede a preposição a.",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Viu  menina",
+              "explanation": "substitui-se por menino $\\rightarrow$ \"Viu o menino\" (e não \"viu ao menino\"). Houve apenas \"o\", logo o verbo não pede preposição (VTD); portanto, a frase fica \"Viu a menina\" (sem crase).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método Operacional do Termo Masculino (\"Teste do Menino\")."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1022,6 +1087,65 @@
         {
           "procedureId": "PROC-A10-V018-002",
           "title": "Método de Validação de Aceitação de Artigo Feminino (\"Teste do Sujeito\")",
+          "objective": "Executar o algoritmo decisório para Método de Validação de Aceitação de Artigo Feminino (\"Teste do Sujeito\")",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método de Validação de Aceitação de Artigo Feminino (\"Teste do Sujeito\")."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole o substantivo feminino que sucede a preposição.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Crie uma frase declarativa simples na qual esse substantivo funcione como núcleo do sujeito no início da oração.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Observe a necessidade natural do artigo",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se a frase exigir o artigo A para soar gramatical e natural (A [palavra] é boa/importante), o termo aceita artigo definido.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se a frase dispensar o artigo ou soar agramatical com ele, o termo rejeita artigo.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Para avaliar a palavra vontade em Obedeceu à vontade",
+              "explanation": "",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método de Validação de Aceitação de Artigo Feminino (\"Teste do Sujeito\")."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1075,6 +1199,65 @@
         {
           "procedureId": "PROC-A10-V018-003",
           "title": "Procedimento de Resolução e Justificativa de Crase em Questões",
+          "objective": "Executar o algoritmo decisório para Procedimento de Resolução e Justificativa de Crase em Questões",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento de Resolução e Justificativa de Crase em Questões."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 (Sublinhar o Regente)",
+              "explanation": "Localize e sublinhe o verbo ou nome anterior que rege a estrutura. Aplique o Teste do Menino para comprovar a preposição a.",
+              "test": "Passo 1 (Sublinhar o Regente): Localize e sublinhe o verbo ou nome anterior que rege a estrutura. Aplique o Teste do Menino para comprovar a preposição a."
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 (Analisar o Termo Consequente)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se for um substantivo feminino comum/próprio",
+              "explanation": "aplique o Teste do Sujeito ou o Teste do Voltar. Confirmando-se o artigo a(s), classifique como Código 1 (Preposição + Artigo).",
+              "test": "Se for um substantivo feminino comum/próprio: aplique o Teste do Sujeito ou o Teste do Voltar. Confirmando-se o artigo a(s), classifique como Código 1 (Preposição + Artigo)."
+            },
+            {
+              "order": 4,
+              "action": "Se for o pronome aquele(s), aquela(s), aquilo",
+              "explanation": "confirme a fusão na vogal inicial do pronome e classifique como Código 2a (Preposição + Demonstrativo Aquele/a/o).",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se for um a antes de que ou de",
+              "explanation": "faça o teste de substituição por aquela. Confirmando-se a equivalência demonstrativa, classifique como Código 2b (Preposição + Pronome Demonstrativo a).",
+              "test": "Se for um a antes de que ou de: faça o teste de substituição por aquela. Confirmando-se a equivalência demonstrativa, classifique como Código 2b (Preposição + Pronome Demonstrativo a)."
+            },
+            {
+              "order": 6,
+              "action": "Se for o pronome relativo a qual / as quais",
+              "explanation": "confirme a regência da oração subordinada e classifique como Código 3 (Preposição + Pronome Relativo a qual).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento de Resolução e Justificativa de Crase em Questões."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1113,6 +1296,101 @@
         {
           "procedureId": "PROC-A10-V019-001",
           "title": "Procedimento Analítico em Dois Passos para Verificação de Crase",
+          "objective": "Executar o algoritmo decisório para Procedimento Analítico em Dois Passos para Verificação de Crase",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento Analítico em Dois Passos para Verificação de Crase."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 (Olhar para a esquerda / Termo Regente)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Identificar o verbo ou nome que rege a estrutura.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Analisar a regência",
+              "explanation": "esse termo exige a preposição a?",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Teste de apoio",
+              "explanation": "Substituir o complemento por um termo masculino genérico (ex.: ao menino). Se der ao, a preposição a está confirmada.",
+              "test": "Teste de apoio: Substituir o complemento por um termo masculino genérico (ex.: ao menino). Se der ao, a preposição a está confirmada."
+            },
+            {
+              "order": 5,
+              "action": "Passo 2 (Olhar para a direita / Termo Regido)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Analisar o termo posterior",
+              "explanation": "trata-se de palavra feminina que admite o artigo definido feminino a/as?",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Verificar se há fatores de proibição de artigo (palavra masculina, verbo, pronome indefinido, pronome demonstrativo este/esse, artigo indefinido um/uma, nome de lugar que rejeita artigo).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Teste de apoio para termos duvidosos",
+              "explanation": "Criar uma frase iniciando pelo termo para ver se aceita o artigo A (ex.: \"A qualquer realidade é boa\" $\\rightarrow$ agramatical $\\rightarrow$ não aceita artigo).",
+              "test": "Teste de apoio para termos duvidosos: Criar uma frase iniciando pelo termo para ver se aceita o artigo A (ex.: \"A qualquer realidade é boa\" $\\rightarrow$ agramatical $\\rightarrow$ não aceita artigo)."
+            },
+            {
+              "order": 9,
+              "action": "Decisão / Conclusão",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Preposição A $+$ Artigo A $=$ Crase obrigatória (À).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Preposição A $+$ Ausência de Artigo $=$ Apenas preposição (A sem acento).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 12,
+              "action": "Ausência de Preposição $+$ Artigo A $=$ Apenas artigo (A sem acento).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento Analítico em Dois Passos para Verificação de Crase."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1181,6 +1459,47 @@
         {
           "procedureId": "PROC-A10-V019-002",
           "title": "Verificação de Paralelismo em Estruturas Correlativas",
+          "objective": "Executar o algoritmo decisório para Verificação de Paralelismo em Estruturas Correlativas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Verificação de Paralelismo em Estruturas Correlativas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Observar a formação do primeiro termo correlato",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Se estiver com preposição simples de (sem artigo)",
+              "explanation": "o segundo termo obrigatoriamente terá preposição simples a $\\rightarrow$ Sem crase (de segunda a sexta, de 8h a 18h).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se estiver com preposição combinada da (de + a)",
+              "explanation": "o segundo termo obrigatoriamente terá preposição contraída com artigo à (a + a) $\\rightarrow$ Com crase (da terça à sexta, das 8h às 18h).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Verificação de Paralelismo em Estruturas Correlativas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1216,6 +1535,65 @@
         {
           "procedureId": "PROC-A10-V019-003",
           "title": "Teste de Nomes de Lugar (Topônimos) com Verbo Voltar",
+          "objective": "Executar o algoritmo decisório para Teste de Nomes de Lugar (Topônimos) com Verbo Voltar",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Nomes de Lugar (Topônimos) com Verbo Voltar."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Formular uma oração com o verbo voltar associado ao topônimo em análise",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Se a construção resultante for \"Voltei de [Lugar]\"",
+              "explanation": "o topônimo rejeita artigo $\\rightarrow$ a ida será \"Fui a [Lugar]\" (sem crase).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se a construção resultante for \"Voltei da [Lugar]\"",
+              "explanation": "o topônimo admite artigo $\\rightarrow$ a ida será \"Fui à [Lugar]\" (com crase).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Checagem de Determinante",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "O topônimo possui termo adjetivo/especificador restritivo associado (ex.",
+              "explanation": "Londres dos meus sonhos, São Paulo da garoa)?",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se sim, o artigo torna-se obrigatório (Voltei da Londres dos meus sonhos) $\\rightarrow$ Crase obrigatória (Fui à Londres dos meus sonhos).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Nomes de Lugar (Topônimos) com Verbo Voltar."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1266,6 +1644,77 @@
         {
           "procedureId": "PROC-A10-V020-001",
           "title": "Passo 1: Teste de Regência pelo Substantivo Masculino (\"Menino\" / \"Clube\")",
+          "objective": "Executar o algoritmo decisório para Passo 1: Teste de Regência pelo Substantivo Masculino (\"Menino\" / \"Clube\")",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Passo 1: Teste de Regência pelo Substantivo Masculino (\"Menino\" / \"Clube\")."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize o termo regente na frase (ex.",
+              "explanation": "direito, obedecer, referir-se, retornar).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Substitua o termo feminino regido por um substantivo masculino genérico no singular, preferencialmente menino. Caso o contexto semântico fique estranho com menino, utilize outro termo masculino como clube ou trabalho.",
+              "explanation": null,
+              "test": "Substitua o termo feminino regido por um substantivo masculino genérico no singular, preferencialmente menino. Caso o contexto semântico fique estranho com menino, utilize outro termo masculino como clube ou trabalho."
+            },
+            {
+              "order": 3,
+              "action": "Observe a preposição/combinação resultante",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se surgir ao (ao menino / ao clube), fica ratificada a exigência da preposição a.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se surgir apenas o (o menino / o clube), o termo rege objeto direto/não pede preposição a (crase descartada).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se o candidato já tiver pleno domínio da regência daquele termo, a substituição por menino torna-se dispensável.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "O juiz reconheceu o direito [ao menino] -> Surgiu ao -> Termo direito rege preposição a.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "O juiz retornou [ao clube] -> Surgiu ao -> Verbo retornar rege preposição a.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Passo 1: Teste de Regência pelo Substantivo Masculino (\"Menino\" / \"Clube\")."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1332,6 +1781,65 @@
         {
           "procedureId": "PROC-A10-V020-002",
           "title": "Passo 2A: Teste de Aceitação de Artigo para Substantivos Comuns",
+          "objective": "Executar o algoritmo decisório para Passo 2A: Teste de Aceitação de Artigo para Substantivos Comuns",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Passo 2A: Teste de Aceitação de Artigo para Substantivos Comuns."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole a palavra feminina que vem após a preposição (ex.",
+              "explanation": "terra, escola, empresa).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Elabore mentalmente ou no rascunho uma oração independente iniciando por essa palavra na função sintática de sujeito.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Verifique se a anteposição do artigo a é gramatical",
+              "explanation": "",
+              "test": "Verifique se a anteposição do artigo a é gramatical:"
+            },
+            {
+              "order": 4,
+              "action": "Exemplo",
+              "explanation": "A terra é boa. / A escola é conceituada.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se a sentença com o artigo A inicial for natural e correta, conclui-se que o termo admite artigo.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Combine o resultado com o Passo 1",
+              "explanation": "Preposição A + Artigo A = À (com acento grave).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Passo 2A: Teste de Aceitação de Artigo para Substantivos Comuns."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1376,6 +1884,65 @@
         {
           "procedureId": "PROC-A10-V020-003",
           "title": "Passo 2B: Teste de Aceitação de Artigo para Topônimos (Regra do Voltar)",
+          "objective": "Executar o algoritmo decisório para Passo 2B: Teste de Aceitação de Artigo para Topônimos (Regra do Voltar)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Passo 2B: Teste de Aceitação de Artigo para Topônimos (Regra do Voltar)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole o topônimo (ex.",
+              "explanation": "Brasília, Itália, França, Curitiba).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Construa uma oração com o verbo voltar",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se a construção resultar em Volto DA ou Voltei DA",
+              "explanation": "o lugar admite artigo feminino (de + a = da).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Conclusão",
+              "explanation": "Havendo preposição a no termo regente, ocorre crase (à).",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se a construção resultar em Volto DE ou Voltei DE",
+              "explanation": "o lugar repele artigo (apenas preposição de).",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Conclusão",
+              "explanation": "Havendo preposição a no termo regente, não ocorre crase (apenas a simples).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Passo 2B: Teste de Aceitação de Artigo para Topônimos (Regra do Voltar)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1414,6 +1981,65 @@
         {
           "procedureId": "PROC-A10-V021-001",
           "title": "Algoritmo de Validação de Crase Antes de Palavras no Plural",
+          "objective": "Executar o algoritmo decisório para Algoritmo de Validação de Crase Antes de Palavras no Plural",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo de Validação de Crase Antes de Palavras no Plural."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Teste de Regência",
+              "explanation": "Examine o termo anterior (verbo ou nome). Troque o complemento por um masculino singular (ex: ao menino). Se exigir ao, o regente pede a preposição a.",
+              "test": "Passo 1 — Teste de Regência: Examine o termo anterior (verbo ou nome). Troque o complemento por um masculino singular (ex: ao menino). Se exigir ao, o regente pede a preposição a."
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 — Teste de Artigo e Grafia",
+              "explanation": "Observe a estrutura diante do substantivo plural:",
+              "test": "Passo 2 — Teste de Artigo e Grafia: Observe a estrutura diante do substantivo plural:"
+            },
+            {
+              "order": 3,
+              "action": "Se estiver grafado às",
+              "explanation": "Representa preposição A + artigo AS. É correto e tem sentido específico.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se estiver grafado a (singular, sem acento)",
+              "explanation": "Representa apenas a preposição A (sem artigo). É correto e tem sentido geral/indeterminado (quaisquer).",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se estiver grafado à (singular, com acento grave)",
+              "explanation": "É terminantemente incorreto (crase no singular antes de plural).",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se estiver grafado as (plural, sem acento)",
+              "explanation": "É terminantemente incorreto (falta a preposição obrigatória de regência).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo de Validação de Crase Antes de Palavras no Plural."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -1460,6 +2086,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-001",
           "title": "EX-A10-V018-001 — Exercício 1: Concorrer à presidência",
+          "prompt": "Texto sob análise: \"O senador manifestou o desejo de concorrer à presidência.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto sob análise",
+              "rationale": "\"O senador manifestou o desejo de concorrer à presidência.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise passo a passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Passo 1 (Regência)",
+              "rationale": "Quem concorre, concorre a algum cargo (concorre ao cargo / ao menino) $\\rightarrow$ exige preposição a."
+            },
+            {
+              "order": 4,
+              "action": "Passo 2 (Artigo)",
+              "rationale": "\"A presidência é um cargo importante\" $\\rightarrow$ aceita artigo feminino a."
+            },
+            {
+              "order": 5,
+              "action": "Justificativa e Classificação",
+              "rationale": "Ocorre a fusão da preposição a exigida pelo verbo concorrer com o artigo definido feminino a admitido pelo substantivo presidência."
+            }
+          ],
+          "result": "Código atribuído: Código 1 (Preposição + Artigo).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V018-001 — Exercício 1: Concorrer à presidência sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V018-001 — Exercício 1: Concorrer à presidência.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V018-001 — Exercício 1: Concorrer à presidência.",
           "blocks": [
             {
               "type": "list",
@@ -1478,6 +2136,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-002",
           "title": "EX-A10-V018-002 — Exercício 2: Favorável às tarefas manuais",
+          "prompt": "Texto sob análise: \"Era favorável às tarefas manuais.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto sob análise",
+              "rationale": "\"Era favorável às tarefas manuais.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise passo a passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Passo 1 (Regência)",
+              "rationale": "O adjetivo favorável possui regência nominal e exige preposição a (quem é favorável, é favorável a algo / ao projeto / ao menino)."
+            },
+            {
+              "order": 4,
+              "action": "Passo 2 (Artigo)",
+              "rationale": "\"As tarefas manuais são boas\" $\\rightarrow$ aceita artigo definido feminino plural as."
+            },
+            {
+              "order": 5,
+              "action": "Justificativa e Classificação",
+              "rationale": "Fusão da preposição a exigida pelo adjetivo favorável com o artigo feminino plural as admitido por tarefas."
+            }
+          ],
+          "result": "Código atribuído: Código 1 (Preposição + Artigo).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V018-002 — Exercício 2: Favorável às tarefas manuais sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V018-002 — Exercício 2: Favorável às tarefas manuais.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V018-002 — Exercício 2: Favorável às tarefas manuais.",
           "blocks": [
             {
               "type": "list",
@@ -1496,6 +2186,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-003",
           "title": "EX-A10-V018-003 — Exercício 3: Discursou favoravelmente à proposta",
+          "prompt": "Texto sob análise: \"Discursou favoravelmente à proposta.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto sob análise",
+              "rationale": "\"Discursou favoravelmente à proposta.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise passo a passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Passo 1 (Regência)",
+              "rationale": "O advérbio favoravelmente exige preposição a (discursou favoravelmente ao projeto / ao menino)."
+            },
+            {
+              "order": 4,
+              "action": "Passo 2 (Artigo)",
+              "rationale": "\"A proposta foi boa\" $\\rightarrow$ aceita artigo definido feminino a."
+            },
+            {
+              "order": 5,
+              "action": "Justificativa e Classificação",
+              "rationale": "Fusão da preposição a exigida pelo advérbio favoravelmente com o artigo feminino a que acompanha o substantivo proposta."
+            }
+          ],
+          "result": "Código atribuído: Código 1 (Preposição + Artigo).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V018-003 — Exercício 3: Discursou favoravelmente à proposta sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V018-003 — Exercício 3: Discursou favoravelmente à proposta.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V018-003 — Exercício 3: Discursou favoravelmente à proposta.",
           "blocks": [
             {
               "type": "list",
@@ -1514,6 +2236,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-004",
           "title": "EX-A10-V018-004 — Exercício 4: Aludiu àquele escritor",
+          "prompt": "Texto sob análise: \"O professor aludiu àquele escritor.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto sob análise",
+              "rationale": "\"O professor aludiu àquele escritor.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise passo a passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Passo 1 (Regência)",
+              "rationale": "O verbo transitivo indireto aludir exige preposição a (quem alude, alude a algo / ao menino)."
+            },
+            {
+              "order": 4,
+              "action": "Passo 2 (Demonstrativo)",
+              "rationale": "O pronome demonstrativo aquele inicia-se com a vogal a."
+            },
+            {
+              "order": 5,
+              "action": "Justificativa e Classificação",
+              "rationale": "Fusão da preposição a exigida por aludiu com a vogal inicial a do pronome demonstrativo aquele ($a + aquele = àquele$)."
+            }
+          ],
+          "result": "Código atribuído: Código 2a (Preposição + Pronome Demonstrativo Aquele).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V018-004 — Exercício 4: Aludiu àquele escritor sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V018-004 — Exercício 4: Aludiu àquele escritor.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V018-004 — Exercício 4: Aludiu àquele escritor.",
           "blocks": [
             {
               "type": "list",
@@ -1532,6 +2286,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-005",
           "title": "EX-A10-V018-005 — Exercício 5: Pedisse desculpas à irmã",
+          "prompt": "Texto sob análise: \"O pai fez com que pedisse desculpas à irmã.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto sob análise",
+              "rationale": "\"O pai fez com que pedisse desculpas à irmã.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise passo a passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Passo 1 (Regência)",
+              "rationale": "Quem pede desculpas, pede desculpas a alguém (ao irmão / ao menino) $\\rightarrow$ exige preposição a."
+            },
+            {
+              "order": 4,
+              "action": "Passo 2 (Artigo)",
+              "rationale": "\"A irmã é legal\" $\\rightarrow$ aceita artigo definido feminino a."
+            },
+            {
+              "order": 5,
+              "action": "Justificativa e Classificação",
+              "rationale": "Fusão da preposição a com o artigo definido feminino a."
+            }
+          ],
+          "result": "Código atribuído: Código 1 (Preposição + Artigo).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V018-005 — Exercício 5: Pedisse desculpas à irmã sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V018-005 — Exercício 5: Pedisse desculpas à irmã.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V018-005 — Exercício 5: Pedisse desculpas à irmã.",
           "blocks": [
             {
               "type": "list",
@@ -1550,6 +2336,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-006",
           "title": "EX-A10-V018-006 — Exercício 6: Cheguei à conclusão",
+          "prompt": "Texto sob análise: \"Cheguei à conclusão de que a única doença que eu não tinha era diabetes.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto sob análise",
+              "rationale": "\"Cheguei à conclusão de que a única doença que eu não tinha era diabetes.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise passo a passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Passo 1 (Regência)",
+              "rationale": "O verbo chegar exige preposição a indicando termo regido de destino/conclusão (cheguei ao resultado / ao curso / ao menino)."
+            },
+            {
+              "order": 4,
+              "action": "Passo 2 (Artigo)",
+              "rationale": "\"A conclusão foi boa\" $\\rightarrow$ aceita artigo feminino a."
+            },
+            {
+              "order": 5,
+              "action": "Justificativa e Classificação",
+              "rationale": "Fusão da preposição a exigida pelo verbo chegar com o artigo a de conclusão."
+            }
+          ],
+          "result": "Código atribuído: Código 1 (Preposição + Artigo).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V018-006 — Exercício 6: Cheguei à conclusão sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V018-006 — Exercício 6: Cheguei à conclusão.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V018-006 — Exercício 6: Cheguei à conclusão.",
           "blocks": [
             {
               "type": "list",
@@ -1568,6 +2386,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-007",
           "title": "EX-A10-V018-007 — Exercício 7: Dão verdadeira consistência à vida",
+          "prompt": "Texto sob análise: \"As datas dão verdadeira consistência à vida.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto sob análise",
+              "rationale": "\"As datas dão verdadeira consistência à vida.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise passo a passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Passo 1 (Regência)",
+              "rationale": "Quem dá consistência, dá consistência a algo / ao projeto / ao menino $\\rightarrow$ exige preposição a."
+            },
+            {
+              "order": 4,
+              "action": "Passo 2 (Artigo)",
+              "rationale": "\"A vida é boa\" $\\rightarrow$ aceita artigo feminino a."
+            },
+            {
+              "order": 5,
+              "action": "Justificativa e Classificação",
+              "rationale": "Fusão da preposição a com o artigo feminino a do substantivo vida."
+            }
+          ],
+          "result": "Código atribuído: Código 1 (Preposição + Artigo).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V018-007 — Exercício 7: Dão verdadeira consistência à vida sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V018-007 — Exercício 7: Dão verdadeira consistência à vida.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V018-007 — Exercício 7: Dão verdadeira consistência à vida.",
           "blocks": [
             {
               "type": "list",
@@ -1586,6 +2436,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-008",
           "title": "EX-A10-V018-008 — Exercício 8: Dedicar-se à religião",
+          "prompt": "Texto sob análise: \"Muitas pessoas conseguem se dedicar à religião.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto sob análise",
+              "rationale": "\"Muitas pessoas conseguem se dedicar à religião.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise passo a passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Passo 1 (Regência)",
+              "rationale": "O verbo pronominal dedicar-se exige preposição a (quem se dedica, dedica-se a algo / ao trabalho / ao menino)."
+            },
+            {
+              "order": 4,
+              "action": "Passo 2 (Artigo)",
+              "rationale": "\"A religião é importante\" $\\rightarrow$ aceita artigo feminino a."
+            },
+            {
+              "order": 5,
+              "action": "Justificativa e Classificação",
+              "rationale": "Fusão da preposição a com o artigo feminino a."
+            }
+          ],
+          "result": "Código atribuído: Código 1 (Preposição + Artigo).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V018-008 — Exercício 8: Dedicar-se à religião sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V018-008 — Exercício 8: Dedicar-se à religião.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V018-008 — Exercício 8: Dedicar-se à religião.",
           "blocks": [
             {
               "type": "list",
@@ -1604,6 +2486,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-009",
           "title": "EX-A10-V018-009 — Exemplo Topônimo: Vou a Brasília vs. Vou à Bahia",
+          "prompt": "Contexto: Comparação do comportamento do acento grave diante de topônimos pelo teste do Voltar.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Contexto",
+              "rationale": "Comparação do comportamento do acento grave diante de topônimos pelo teste do Voltar."
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Vou a Brasília",
+              "rationale": "Volto de Brasília $\\rightarrow$ preposição de pura, sem artigo $\\rightarrow$ sem crase."
+            },
+            {
+              "order": 4,
+              "action": "Vou à Bahia",
+              "rationale": "Volto da Bahia $\\rightarrow$ preposição de + artigo a ($da$) $\\rightarrow$ com crase ($a \\text{ [prep.]} + a \\text{ [artigo]} = \\text{à}$)."
+            }
+          ],
+          "result": "Vou à Bahia: Volto da Bahia $\\rightarrow$ preposição de + artigo a ($da$) $\\rightarrow$ com crase ($a \\text{ [prep.]} + a \\text{ [artigo]} = \\text{à}$).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V018-009 — Exemplo Topônimo: Vou a Brasília vs. Vou à Bahia sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V018-009 — Exemplo Topônimo: Vou a Brasília vs. Vou à Bahia.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V018-009 — Exemplo Topônimo: Vou a Brasília vs. Vou à Bahia.",
           "blocks": [
             {
               "type": "list",
@@ -1620,6 +2529,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-010",
           "title": "EX-A10-V018-010 — Exercício 9: Associado àquilo",
+          "prompt": "Texto sob análise: \"Não mais queria ser associado àquilo.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto sob análise",
+              "rationale": "\"Não mais queria ser associado àquilo.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise passo a passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Passo 1 (Regência)",
+              "rationale": "O adjetivo/particípio associado possui regência nominal e exige preposição a (quem está associado, está associado a algo / ao projeto / ao menino)."
+            },
+            {
+              "order": 4,
+              "action": "Passo 2 (Demonstrativo)",
+              "rationale": "O pronome demonstrativo neutro aquilo começa com a letra a."
+            },
+            {
+              "order": 5,
+              "action": "Justificativa e Classificação",
+              "rationale": "Fusão da preposição a exigida por associado com o a inicial do pronome demonstrativo aquilo."
+            }
+          ],
+          "result": "Código atribuído: Código 2a (Preposição + Pronome Demonstrativo Aquilo).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V018-010 — Exercício 9: Associado àquilo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V018-010 — Exercício 9: Associado àquilo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V018-010 — Exercício 9: Associado àquilo.",
           "blocks": [
             {
               "type": "list",
@@ -1638,6 +2579,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-011",
           "title": "EX-A10-V018-011 — Exemplo Demonstrativo: Chegou àquele encontro",
+          "prompt": "Texto sob análise: \"Chegou àquele encontro no horário certo.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto sob análise",
+              "rationale": "\"Chegou àquele encontro no horário certo.\""
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "O verbo chegar exige preposição a (chegou ao local). O pronome aquele inicia-se com a. Fusão: $a + aquele = àquele$."
+            }
+          ],
+          "result": "Desenvolvimento: O verbo chegar exige preposição a (chegou ao local). O pronome aquele inicia-se com a. Fusão: $a + aquele = àquele$.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V018-011 — Exemplo Demonstrativo: Chegou àquele encontro sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V018-011 — Exemplo Demonstrativo: Chegou àquele encontro.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V018-011 — Exemplo Demonstrativo: Chegou àquele encontro.",
           "blocks": [
             {
               "type": "list",
@@ -1652,6 +2610,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-012",
           "title": "EX-A10-V018-012 — Exemplo Demonstrativo: Dirigiu-se àquelas pessoas",
+          "prompt": "Texto sob análise: \"Dirigiu-se àquelas pessoas em tom emocionado.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto sob análise",
+              "rationale": "\"Dirigiu-se àquelas pessoas em tom emocionado.\""
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "O verbo dirigir-se exige preposição a (dirigiu-se ao menino). O pronome demonstrativo aquelas inicia-se com a. Fusão: $a + aquelas = àquelas$."
+            }
+          ],
+          "result": "Desenvolvimento: O verbo dirigir-se exige preposição a (dirigiu-se ao menino). O pronome demonstrativo aquelas inicia-se com a. Fusão: $a + aquelas = àquelas$.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V018-012 — Exemplo Demonstrativo: Dirigiu-se àquelas pessoas sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V018-012 — Exemplo Demonstrativo: Dirigiu-se àquelas pessoas.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V018-012 — Exemplo Demonstrativo: Dirigiu-se àquelas pessoas.",
           "blocks": [
             {
               "type": "list",
@@ -1666,6 +2641,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-013",
           "title": "EX-A10-V018-013 — Exercício 10: Refiro-me à que chegou de branco",
+          "prompt": "Texto sob análise: \"Refiro-me à que chegou de branco.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto sob análise",
+              "rationale": "\"Refiro-me à que chegou de branco.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise passo a passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Passo 1 (Regência)",
+              "rationale": "O verbo pronominal referir-se exige preposição a (quem se refere, refere-se a alguém / ao menino)."
+            },
+            {
+              "order": 4,
+              "action": "Passo 2 (Demonstrativo Elíptico)",
+              "rationale": "O termo a antes do conectivo que equivale ao pronome demonstrativo aquela (\"Refiro-me àquela que chegou de branco\")."
+            },
+            {
+              "order": 5,
+              "action": "Justificativa e Classificação",
+              "rationale": "Fusão da preposição a exigida pelo verbo com o pronome demonstrativo a (= aquela) antecedendo o pronome relativo que."
+            }
+          ],
+          "result": "Código atribuído: Código 2b (Preposição + Pronome Demonstrativo a antes de que/de).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V018-013 — Exercício 10: Refiro-me à que chegou de branco sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V018-013 — Exercício 10: Refiro-me à que chegou de branco.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V018-013 — Exercício 10: Refiro-me à que chegou de branco.",
           "blocks": [
             {
               "type": "list",
@@ -1684,6 +2691,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-014",
           "title": "EX-A10-V018-014 — Exemplo Demonstrativo: Vestia uma camisa igual à do irmão",
+          "prompt": "Texto sob análise: \"Vestia uma camisa igual à do irmão.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto sob análise",
+              "rationale": "\"Vestia uma camisa igual à do irmão.\""
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "O adjetivo igual exige preposição a (igual ao casaco / ao modelo). O vocábulo a antes de do irmão funciona como pronome demonstrativo elíptico substituindo a palavra camisa (vestia uma camisa igual àquela do irmão). Fusão: $a \\text{ (prep.)} + a \\text{ (pron. dem.)} = à$."
+            }
+          ],
+          "result": "Desenvolvimento: O adjetivo igual exige preposição a (igual ao casaco / ao modelo). O vocábulo a antes de do irmão funciona como pronome demonstrativo elíptico substituindo a palavra camisa (vestia uma camisa igual àquela do irmão). Fusão: $a \\text{ (prep.)} + a \\text{ (pron. dem.)} = à$.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V018-014 — Exemplo Demonstrativo: Vestia uma camisa igual à do irmão sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V018-014 — Exemplo Demonstrativo: Vestia uma camisa igual à do irmão.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V018-014 — Exemplo Demonstrativo: Vestia uma camisa igual à do irmão.",
           "blocks": [
             {
               "type": "list",
@@ -1698,6 +2722,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-015",
           "title": "EX-A10-V018-015 — Exemplo Demonstrativo: Obedeceu à que estava de blusa azul",
+          "prompt": "Texto sob análise: \"Obedeceu à que estava de blusa azul.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto sob análise",
+              "rationale": "\"Obedeceu à que estava de blusa azul.\""
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "Obedeceu exige preposição a (obedeceu ao menino). O a antes de que equivale a aquela (\"Obedeceu àquela que estava de blusa azul\"). Ocorre crase pela regra 2b."
+            }
+          ],
+          "result": "Desenvolvimento: Obedeceu exige preposição a (obedeceu ao menino). O a antes de que equivale a aquela (\"Obedeceu àquela que estava de blusa azul\"). Ocorre crase pela regra 2b.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V018-015 — Exemplo Demonstrativo: Obedeceu à que estava de blusa azul sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V018-015 — Exemplo Demonstrativo: Obedeceu à que estava de blusa azul.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V018-015 — Exemplo Demonstrativo: Obedeceu à que estava de blusa azul.",
           "blocks": [
             {
               "type": "list",
@@ -1712,6 +2753,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-016",
           "title": "EX-A10-V018-016 — Exemplo Relativo: Essa é uma questão à qual o governo deveria dar mais atenção",
+          "prompt": "Texto sob análise: \"Essa é uma questão à qual o governo deveria dar mais atenção.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto sob análise",
+              "rationale": "\"Essa é uma questão à qual o governo deveria dar mais atenção.\""
+            },
+            {
+              "order": 2,
+              "action": "Desenvolvimento",
+              "rationale": "Na oração subordinada, a locução \"dar atenção\" exige preposição a (dar atenção a algo / ao assunto). O pronome relativo antecedente é feminino singular (a qual). Fusão: $a \\text{ (preposição de 'dar atenção')} + a \\text{ qual (relativo)} = \\text{à qual}$."
+            }
+          ],
+          "result": "Desenvolvimento: Na oração subordinada, a locução \"dar atenção\" exige preposição a (dar atenção a algo / ao assunto). O pronome relativo antecedente é feminino singular (a qual). Fusão: $a \\text{ (preposição de 'dar atenção')} + a \\text{ qual (relativo)} = \\text{à qual}$.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V018-016 — Exemplo Relativo: Essa é uma questão à qual o governo deveria dar mais atenção sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V018-016 — Exemplo Relativo: Essa é uma questão à qual o governo deveria dar mais atenção.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V018-016 — Exemplo Relativo: Essa é uma questão à qual o governo deveria dar mais atenção.",
           "blocks": [
             {
               "type": "list",
@@ -1726,6 +2784,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-017",
           "title": "EX-A10-V018-017 — Contraexemplo Relativo: A mulher a quem obedeço vs. A mulher à qual obedeço",
+          "prompt": "Comparação:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Comparação",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "A mulher a quem obedeço chegou",
+              "rationale": "o verbo obedecer pede preposição a. Porém, o pronome relativo quem não aceita artigo. Há apenas uma vogal a (preposição); logo, crase proibida (a quem)."
+            },
+            {
+              "order": 3,
+              "action": "A mulher à qual obedeço chegou",
+              "rationale": "o verbo obedecer pede preposição a. O pronome a qual já traz embutido o artigo a. Ocorrem duas vogais a; logo, crase obrigatória (à qual)."
+            }
+          ],
+          "result": "A mulher à qual obedeço chegou: o verbo obedecer pede preposição a. O pronome a qual já traz embutido o artigo a. Ocorrem duas vogais a; logo, crase obrigatória (à qual).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V018-017 — Contraexemplo Relativo: A mulher a quem obedeço vs. A mulher à qual obedeço sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V018-017 — Contraexemplo Relativo: A mulher a quem obedeço vs. A mulher à qual obedeço.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V018-017 — Contraexemplo Relativo: A mulher a quem obedeço vs. A mulher à qual obedeço.",
           "blocks": [
             {
               "type": "list",
@@ -1741,6 +2821,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-018",
           "title": "Enunciado e dados",
+          "prompt": "Completar a lacuna com a, à, as ou às: \"Não contesto que a medicina seja útil  alguns homens.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Completar a lacuna com a, à, as ou às: \"Não contesto que a m...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado e dados.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e dados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e dados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e dados.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1751,6 +2853,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-019",
           "title": "Resolução comentada",
+          "prompt": "Passo 1 (Termo regente): O adjetivo útil rege a preposição a (quem é útil é útil a alguém / útil ao menino).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Passo 1 (Termo regente)",
+              "rationale": "O adjetivo útil rege a preposição a (quem é útil é útil a alguém / útil ao menino)."
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 (Termo regido)",
+              "rationale": "O pronome/substantivo seguinte é alguns homens, vocábulo masculino plural. Palavras masculinas não aceitam artigo definido feminino."
+            },
+            {
+              "order": 3,
+              "action": "Resultado",
+              "rationale": "O a presente é apenas preposição simples."
+            },
+            {
+              "order": 4,
+              "action": "Resposta final",
+              "rationale": "a (sem acento indicativo de crase). Justificativa visual: circular homens (masculino)."
+            }
+          ],
+          "result": "Resposta final: a (sem acento indicativo de crase). Justificativa visual: circular homens (masculino).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução comentada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução comentada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução comentada.",
           "blocks": [
             {
               "type": "list",
@@ -1767,6 +2896,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-020",
           "title": "Enunciado e dados",
+          "prompt": "Completar a lacuna com a, à, as ou às: \"A pesquisa mostrou os genes ativos associados  inflamação.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Completar a lacuna com a, à, as ou às: \"A pesquisa mostrou o...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado e dados.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e dados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e dados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e dados.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1777,6 +2928,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-021",
           "title": "Resolução comentada",
+          "prompt": "Passo 1 (Termo regente): O particípio/adjetivo associados rege a preposição a (associados ao menino).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Passo 1 (Termo regente)",
+              "rationale": "O particípio/adjetivo associados rege a preposição a (associados ao menino)."
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 (Termo regido)",
+              "rationale": "Inflamação é substantivo feminino singular que admite artigo definido (A inflamação é grave)."
+            },
+            {
+              "order": 3,
+              "action": "Resultado",
+              "rationale": "Ocorre o Fenômeno Fonético (Preposição a $+$ Artigo a)."
+            },
+            {
+              "order": 4,
+              "action": "Resposta final",
+              "rationale": "à (com acento grave)."
+            }
+          ],
+          "result": "Resposta final: à (com acento grave).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução comentada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução comentada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução comentada.",
           "blocks": [
             {
               "type": "list",
@@ -1793,6 +2971,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-022",
           "title": "Enunciado e dados",
+          "prompt": "Completar a lacuna com a, à, as ou às: \"Todas as áreas do conhecimento estão submetidas  prepotente teoria do achismo.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Completar a lacuna com a, à, as ou às: \"Todas as áreas do co...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado e dados.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e dados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e dados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e dados.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1803,6 +3003,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-023",
           "title": "Resolução comentada",
+          "prompt": "Passo 1 (Termo regente): Submetidas rege preposição a (submetidas ao menino).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Passo 1 (Termo regente)",
+              "rationale": "Submetidas rege preposição a (submetidas ao menino)."
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 (Termo regido)",
+              "rationale": "A expressão nominal tem como núcleo o substantivo feminino teoria acompanhado do adjetivo prepotente, aceitando artigo definido (A prepotente teoria do achismo)."
+            },
+            {
+              "order": 3,
+              "action": "Resultado",
+              "rationale": "Fenômeno Fonético confirmado."
+            },
+            {
+              "order": 4,
+              "action": "Resposta final",
+              "rationale": "à (com acento grave)."
+            }
+          ],
+          "result": "Resposta final: à (com acento grave).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução comentada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução comentada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução comentada.",
           "blocks": [
             {
               "type": "list",
@@ -1819,6 +3046,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-024",
           "title": "Enunciado e dados",
+          "prompt": "Completar a lacuna com a, à, as ou às: \"Ela está disposta  fazer a decoração da festa em casa.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Completar a lacuna com a, à, as ou às: \"Ela está disposta  f...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado e dados.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e dados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e dados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e dados.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1829,6 +3078,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-025",
           "title": "Resolução comentada",
+          "prompt": "Passo 1 (Termo regente): Disposta rege preposição a (disposta a algo).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Passo 1 (Termo regente)",
+              "rationale": "Disposta rege preposição a (disposta a algo)."
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 (Termo regido)",
+              "rationale": "Fazer é verbo no infinitivo. Verbos não aceitam artigo definido."
+            },
+            {
+              "order": 3,
+              "action": "Resultado",
+              "rationale": "O a é preposição isolada."
+            },
+            {
+              "order": 4,
+              "action": "Resposta final",
+              "rationale": "a (sem acento indicativo de crase). Justificativa visual: circular fazer (verbo)."
+            }
+          ],
+          "result": "Resposta final: a (sem acento indicativo de crase). Justificativa visual: circular fazer (verbo).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução comentada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução comentada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução comentada.",
           "blocks": [
             {
               "type": "list",
@@ -1845,6 +3121,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-026",
           "title": "Enunciado e dados",
+          "prompt": "Completar a lacuna com a, à, as ou às: \"Não cozinho no meu dia  dia.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Completar a lacuna com a, à, as ou às: \"Não cozinho no meu d...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado e dados.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e dados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e dados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e dados.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1855,6 +3153,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-027",
           "title": "Resolução comentada",
+          "prompt": "Análise: Trata-se de expressão formada por palavras repetidas (dia a dia) e substantivos masculinos. Pelo princípio do paralelismo sintático, a ausência de artigo antes do primeiro vocábulo determina a ausência de artigo antes do segundo. O a é preposição simples.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise",
+              "rationale": "Trata-se de expressão formada por palavras repetidas (dia a dia) e substantivos masculinos. Pelo princípio do paralelismo sintático, a ausência de artigo antes do primeiro vocábulo determina a ausência de artigo antes do segundo. O a é preposição simples."
+            },
+            {
+              "order": 2,
+              "action": "Resposta final",
+              "rationale": "a (sem acento indicativo de crase). Justificativa visual: circular dia a dia (palavras repetidas)."
+            }
+          ],
+          "result": "Resposta final: a (sem acento indicativo de crase). Justificativa visual: circular dia a dia (palavras repetidas).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução comentada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução comentada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução comentada.",
           "blocks": [
             {
               "type": "list",
@@ -1869,6 +3184,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-028",
           "title": "Enunciado e dados",
+          "prompt": "Completar a lacuna com a, à, as ou às: \"Assistiram  cena em silêncio.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Completar a lacuna com a, à, as ou às: \"Assistiram  cena em ...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado e dados.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e dados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e dados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e dados.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1879,6 +3216,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-029",
           "title": "Resolução comentada",
+          "prompt": "Passo 1 (Termo regente): O verbo assistir no sentido de presenciar/ver é transitivo indireto e rege preposição a (assistiram ao filme / ao menino).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Passo 1 (Termo regente)",
+              "rationale": "O verbo assistir no sentido de presenciar/ver é transitivo indireto e rege preposição a (assistiram ao filme / ao menino)."
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 (Termo regido)",
+              "rationale": "Cena é substantivo feminino singular que admite artigo (A cena foi emocionante)."
+            },
+            {
+              "order": 3,
+              "action": "Resultado",
+              "rationale": "Fusão de preposição a $+$ artigo a (Fenômeno Fonético)."
+            },
+            {
+              "order": 4,
+              "action": "Resposta final",
+              "rationale": "à (com acento grave)."
+            }
+          ],
+          "result": "Resposta final: à (com acento grave).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução comentada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução comentada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução comentada.",
           "blocks": [
             {
               "type": "list",
@@ -1895,6 +3259,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-030",
           "title": "Enunciado e dados",
+          "prompt": "Completar a lacuna com a, à, as ou às: \"Espera-se que a greve termine daqui  uma semana.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Completar a lacuna com a, à, as ou às: \"Espera-se que a grev...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado e dados.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e dados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e dados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e dados.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1905,6 +3291,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-031",
           "title": "Resolução comentada",
+          "prompt": "Passo 1 (Termo regente): A locução temporal daqui a rege a preposição a indicando tempo futuro.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Passo 1 (Termo regente)",
+              "rationale": "A locução temporal daqui a rege a preposição a indicando tempo futuro."
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 (Termo regido)",
+              "rationale": "O vocábulo uma atua como artigo indefinido / numeral. O artigo indefinido repele o artigo definido a."
+            },
+            {
+              "order": 3,
+              "action": "Resultado",
+              "rationale": "Apenas preposição a."
+            },
+            {
+              "order": 4,
+              "action": "Resposta final",
+              "rationale": "a (sem acento indicativo de crase). Justificativa visual: circular uma (artigo indefinido)."
+            }
+          ],
+          "result": "Resposta final: a (sem acento indicativo de crase). Justificativa visual: circular uma (artigo indefinido).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução comentada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução comentada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução comentada.",
           "blocks": [
             {
               "type": "list",
@@ -1921,6 +3334,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-032",
           "title": "Enunciado e dados",
+          "prompt": "Completar a lacuna com a, à, as ou às: \"Os cientistas foram  Londres conhecer a Universidade de Oxford.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Completar a lacuna com a, à, as ou às: \"Os cientistas foram ...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado e dados.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e dados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e dados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e dados.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1931,6 +3366,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-033",
           "title": "Resolução comentada",
+          "prompt": "Passo 1 (Termo regente): O verbo ir (foram) rege a preposição a para destinos (foram a algum lugar).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Passo 1 (Termo regente)",
+              "rationale": "O verbo ir (foram) rege a preposição a para destinos (foram a algum lugar)."
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 (Termo regido)",
+              "rationale": "Londres é topônimo que não admite artigo definido (Voltei de Londres, e não Voltei da Londres)."
+            },
+            {
+              "order": 3,
+              "action": "Resultado",
+              "rationale": "O a é preposição isolada $\\rightarrow$ sem crase."
+            },
+            {
+              "order": 4,
+              "action": "Contraponto pedagógico demonstrado",
+              "rationale": "Se houvesse determinante (Os cientistas foram  Londres dos meus sonhos), o retorno seria Voltei da Londres dos meus sonhos, resultando em crase obrigatória (à Londres dos meus sonhos)."
+            },
+            {
+              "order": 5,
+              "action": "Resposta final",
+              "rationale": "a (sem acento indicativo de crase). Justificativa visual: circular Londres (lugar sem artigo)."
+            }
+          ],
+          "result": "Resposta final: a (sem acento indicativo de crase). Justificativa visual: circular Londres (lugar sem artigo).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução comentada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução comentada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução comentada.",
           "blocks": [
             {
               "type": "list",
@@ -1948,6 +3415,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-034",
           "title": "Enunciado e dados",
+          "prompt": "Completar a lacuna com a, à, as ou às: \"Os pais podem pedir apoio  escola.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Completar a lacuna com a, à, as ou às: \"Os pais podem pedir ...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado e dados.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e dados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e dados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e dados.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1958,6 +3447,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-035",
           "title": "Resolução comentada",
+          "prompt": "Passo 1 (Termo regente): O verbo bitransitivo pedir rege objeto direto de coisa (apoio) e preposição a para o destinatário (pedir apoio a alguém / ao menino).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Passo 1 (Termo regente)",
+              "rationale": "O verbo bitransitivo pedir rege objeto direto de coisa (apoio) e preposição a para o destinatário (pedir apoio a alguém / ao menino)."
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 (Termo regido)",
+              "rationale": "Escola é substantivo feminino singular que admite artigo (A escola é acolhedora)."
+            },
+            {
+              "order": 3,
+              "action": "Resultado",
+              "rationale": "Preposição a $+$ artigo a $=$ Fenômeno Fonético."
+            },
+            {
+              "order": 4,
+              "action": "Resposta final",
+              "rationale": "à (com acento grave)."
+            }
+          ],
+          "result": "Resposta final: à (com acento grave).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução comentada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução comentada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução comentada.",
           "blocks": [
             {
               "type": "list",
@@ -1974,6 +3490,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-036",
           "title": "Enunciado e dados",
+          "prompt": "Completar a lacuna com a, à, as ou às: \"A comissão visava  essa uniformização.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Completar a lacuna com a, à, as ou às: \"A comissão visava  e...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Enunciado e dados.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e dados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e dados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e dados.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1984,6 +3522,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-037",
           "title": "Resolução comentada",
+          "prompt": "Passo 1 (Termo regente): O verbo visar no sentido de ter por objetivo/almejar é transitivo indireto e rege preposição a (visava a algo / ao cargo).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Passo 1 (Termo regente)",
+              "rationale": "O verbo visar no sentido de ter por objetivo/almejar é transitivo indireto e rege preposição a (visava a algo / ao cargo)."
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 (Termo regido)",
+              "rationale": "O pronome demonstrativo essa não aceita artigo definido anteposto no padrão culto."
+            },
+            {
+              "order": 3,
+              "action": "Resultado",
+              "rationale": "O a é apenas preposição."
+            },
+            {
+              "order": 4,
+              "action": "Resposta final",
+              "rationale": "a (sem acento indicativo de crase). Justificativa visual: circular essa (pronome demonstrativo)."
+            }
+          ],
+          "result": "Resposta final: a (sem acento indicativo de crase). Justificativa visual: circular essa (pronome demonstrativo).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução comentada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução comentada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução comentada.",
           "blocks": [
             {
               "type": "list",
@@ -2000,6 +3565,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-038",
           "title": "Contexto / Enunciado",
+          "prompt": "Análise da ocorrência de crase na oração: \"O juiz reconheceu o direito à terra.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Localizar a ocorrência do fenômeno linguístico em \"Análise da ocorrência de crase na oração: \"O juiz reconheceu...\".",
+              "rationale": "Identificação da estrutura-alvo na oração."
+            },
+            {
+              "order": 2,
+              "action": "Verificar a relação de regência, concordância ou valor morfossintático aplicável.",
+              "rationale": "Aplicação do critério normativo canônico."
+            },
+            {
+              "order": 3,
+              "action": "Validar o resultado obtido conforme o padrão culto.",
+              "rationale": "Confirmação da conformidade gramatical."
+            }
+          ],
+          "result": "Emprego gramatical correto e justificado de acordo com os preceitos de Contexto / Enunciado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Contexto / Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Contexto / Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Contexto / Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -2010,6 +3597,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-039",
           "title": "Desenvolvimento e aplicação dos passos",
+          "prompt": "Identificação do termo regente: Substantivo direito.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificação do termo regente",
+              "rationale": "Substantivo direito."
+            },
+            {
+              "order": 2,
+              "action": "Teste do Passo 1",
+              "rationale": "\"O juiz reconheceu o direito ao menino.\""
+            },
+            {
+              "order": 3,
+              "action": "Resultado 1",
+              "rationale": "Deu ao -> exige preposição a."
+            },
+            {
+              "order": 4,
+              "action": "Identificação do termo regido",
+              "rationale": "Substantivo comum terra."
+            },
+            {
+              "order": 5,
+              "action": "Teste do Passo 2",
+              "rationale": "\"A terra é boa.\""
+            }
+          ],
+          "result": "Grafia correta: \"O juiz reconheceu o direito à terra.\"",
+          "decisivePoint": "Aplicação estrita da regra canônica de Desenvolvimento e aplicação dos passos sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Desenvolvimento e aplicação dos passos.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Desenvolvimento e aplicação dos passos.",
           "blocks": [
             {
               "type": "list",
@@ -2060,6 +3679,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-040",
           "title": "Contexto / Enunciado",
+          "prompt": "Análise comparativa da ocorrência de crase nas sentenças:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Sentença A",
+              "rationale": "\"O juiz retornou a/à Brasília.\""
+            },
+            {
+              "order": 2,
+              "action": "Sentença B",
+              "rationale": "\"O juiz retornou a/à Itália.\""
+            }
+          ],
+          "result": "Sentença B: \"O juiz retornou a/à Itália.\"",
+          "decisivePoint": "Aplicação estrita da regra canônica de Contexto / Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Contexto / Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Contexto / Enunciado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -2078,6 +3714,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-041",
           "title": "Desenvolvimento e resolução",
+          "prompt": "Regência do verbo regente: Quem retorna, retorna a (verificado via \"retornou ao clube\"). Preposição a confirmada para ambas as frases.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Regência do verbo regente",
+              "rationale": "Quem retorna, retorna a (verificado via \"retornou ao clube\"). Preposição a confirmada para ambas as frases."
+            },
+            {
+              "order": 2,
+              "action": "Análise de Brasília (Sentença A)",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Teste do voltar",
+              "rationale": "\"Voltei DE Brasília.\" (Usa-se de, logo não tem artigo)."
+            },
+            {
+              "order": 4,
+              "action": "Junção",
+              "rationale": "Preposição a + sem artigo = a."
+            },
+            {
+              "order": 5,
+              "action": "Forma correta",
+              "rationale": "\"O juiz retornou a Brasília.\" (sem crase)."
+            }
+          ],
+          "result": "Forma correta: \"O juiz retornou à Itália.\" (com crase).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Desenvolvimento e resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Desenvolvimento e resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Desenvolvimento e resolução.",
           "blocks": [
             {
               "type": "list",
@@ -2117,6 +3785,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-042",
           "title": "EX-A10-V021-001 — Análise do Exemplo Introdutório: 'Dedicou-se a/às atividades lucrativas'",
+          "prompt": "Construções analisadas:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Construções analisadas",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Ele dedicou-se a atividades lucrativas.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "Ele dedicou-se às atividades lucrativas.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Desenvolvimento e Justificativa",
+              "rationale": ""
+            },
+            {
+              "order": 5,
+              "action": "O verbo dedicar-se rege preposição a (dedicou-se ao trabalho).",
+              "rationale": null
+            }
+          ],
+          "result": "Conclusão: Ambas as frases estão gramaticalmente corretas. A troca de uma pela outra altera o sentido, mas mantém a correção e a coerência.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V021-001 — Análise do Exemplo Introdutório: 'Dedicou-se a/às atividades lucrativas' sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V021-001 — Análise do Exemplo Introdutório: 'Dedicou-se a/às atividades lucrativas'.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V021-001 — Análise do Exemplo Introdutório: 'Dedicou-se a/às atividades lucrativas'.",
           "blocks": [
             {
               "type": "list",
@@ -2150,6 +3850,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-043",
           "title": "EX-A10-V021-002 — Exercício 1: 'Dedicou sua vida a crianças abandonadas'",
+          "prompt": "Frase: 1. Dedicou sua vida a crianças abandonadas.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "1. Dedicou sua vida a crianças abandonadas."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito / Julgamento",
+              "rationale": "CERTO"
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento do raciocínio",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Regência verbal",
+              "rationale": "Quem dedica, dedica algo a alguém (Dedicou sua vida ao menino). Exige preposição a."
+            },
+            {
+              "order": 5,
+              "action": "Termo seguinte",
+              "rationale": "crianças abandonadas é substantivo feminino no plural."
+            }
+          ],
+          "result": "Conceito demonstrado: Emprego lícito de preposição simples antes de substantivo plural com valor semântico indeterminado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V021-002 — Exercício 1: 'Dedicou sua vida a crianças abandonadas' sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V021-002 — Exercício 1: 'Dedicou sua vida a crianças abandonadas'.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V021-002 — Exercício 1: 'Dedicou sua vida a crianças abandonadas'.",
           "blocks": [
             {
               "type": "list",
@@ -2182,6 +3914,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-044",
           "title": "EX-A10-V021-003 — Exercício 2: 'Era favorável às propostas do diretor'",
+          "prompt": "Frase: 2. Era favorável às propostas do diretor.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "2. Era favorável às propostas do diretor."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito / Julgamento",
+              "rationale": "CERTO"
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento do raciocínio",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Regência nominal",
+              "rationale": "O adjetivo favorável rege complemento nominal introduzido pela preposição a (favorável ao menino / ao projeto)."
+            },
+            {
+              "order": 5,
+              "action": "Termo seguinte",
+              "rationale": "propostas do diretor aceita artigo definido as (As propostas do diretor são boas)."
+            }
+          ],
+          "result": "Conceito demonstrado: Crase no plural decorrente de regência nominal com sentido especificado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V021-003 — Exercício 2: 'Era favorável às propostas do diretor' sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V021-003 — Exercício 2: 'Era favorável às propostas do diretor'.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V021-003 — Exercício 2: 'Era favorável às propostas do diretor'.",
           "blocks": [
             {
               "type": "list",
@@ -2214,6 +3978,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-045",
           "title": "EX-A10-V021-004 — Exercício 3: 'A pesquisa se refere as obras medievais'",
+          "prompt": "Frase: 3. A pesquisa se refere as obras medievais.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "3. A pesquisa se refere as obras medievais."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito / Julgamento",
+              "rationale": "ERRADO"
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento do raciocínio",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Regência verbal",
+              "rationale": "O verbo pronominal referir-se rege preposição a (refere-se ao menino)."
+            },
+            {
+              "order": 5,
+              "action": "Estrutura grafada",
+              "rationale": "Grafou-se as sem acento indicativo de crase."
+            }
+          ],
+          "result": "Conceito demonstrado: Inadmissibilidade do artigo plural desacompanhado de preposição quando o regente exige a preposição a.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V021-004 — Exercício 3: 'A pesquisa se refere as obras medievais' sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V021-004 — Exercício 3: 'A pesquisa se refere as obras medievais'.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V021-004 — Exercício 3: 'A pesquisa se refere as obras medievais'.",
           "blocks": [
             {
               "type": "list",
@@ -2248,6 +4044,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-046",
           "title": "EX-A10-V021-005 — Exercício 4: 'O relatório alude à várias barragens que estão vulneráveis'",
+          "prompt": "Frase: 4. O relatório alude à várias barragens que estão vulneráveis.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "4. O relatório alude à várias barragens que estão vulneráveis."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito / Julgamento",
+              "rationale": "ERRADO"
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento do raciocínio",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Regência verbal",
+              "rationale": "O verbo aludir rege preposição a (alude ao menino / ao fato)."
+            },
+            {
+              "order": 5,
+              "action": "Termo seguinte",
+              "rationale": "várias barragens é encabeçado pelo pronome indefinido várias."
+            }
+          ],
+          "result": "Conceito demonstrado: Proibição de crase diante de pronomes indefinidos no plural.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V021-005 — Exercício 4: 'O relatório alude à várias barragens que estão vulneráveis' sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V021-005 — Exercício 4: 'O relatório alude à várias barragens que estão vulneráveis'.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V021-005 — Exercício 4: 'O relatório alude à várias barragens que estão vulneráveis'.",
           "blocks": [
             {
               "type": "list",
@@ -2281,6 +4109,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-047",
           "title": "EX-A10-V021-006 — Exercício 5: 'A Constituição reconhece aos povos indígenas o direito às terras que habitam'",
+          "prompt": "Frase: 5. A Constituição reconhece aos povos indígenas o direito às terras que habitam.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "5. A Constituição reconhece aos povos indígenas o direito às terras que habitam."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito / Julgamento",
+              "rationale": "CERTO"
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento do raciocínio",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Análise sintática do regente",
+              "rationale": "O termo que rege às terras é o substantivo direito (e não o verbo reconhece, que rege o direito como objeto direto e aos povos indígenas como objeto indireto)."
+            },
+            {
+              "order": 5,
+              "action": "Regência nominal",
+              "rationale": "O nome direito rege complemento nominal introduzido por preposição a (direito ao usufruto / ao benefício)."
+            }
+          ],
+          "result": "Conceito demonstrado: Identificação correta do termo regente nominal em períodos complexos e validação da crase no plural.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V021-006 — Exercício 5: 'A Constituição reconhece aos povos indígenas o direito às terras que habitam' sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V021-006 — Exercício 5: 'A Constituição reconhece aos povos indígenas o direito às terras que habitam'.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V021-006 — Exercício 5: 'A Constituição reconhece aos povos indígenas o direito às terras que habitam'.",
           "blocks": [
             {
               "type": "list",
@@ -2313,6 +4173,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-048",
           "title": "EX-A10-V021-007 — Exercício 6: 'Não costumava ir à festas de aniversário'",
+          "prompt": "Frase: 6. Não costumava ir à festas de aniversário.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "6. Não costumava ir à festas de aniversário."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito / Julgamento",
+              "rationale": "ERRADO"
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento do raciocínio",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Regência verbal",
+              "rationale": "O verbo ir exige preposição a (ir ao clube / ao cinema)."
+            },
+            {
+              "order": 5,
+              "action": "Termo seguinte",
+              "rationale": "festas está no plural."
+            }
+          ],
+          "result": "Conceito demonstrado: Aplicação do princípio \"crase no singular antes de plural, nem a pau\".",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V021-007 — Exercício 6: 'Não costumava ir à festas de aniversário' sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V021-007 — Exercício 6: 'Não costumava ir à festas de aniversário'.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V021-007 — Exercício 6: 'Não costumava ir à festas de aniversário'.",
           "blocks": [
             {
               "type": "list",
@@ -2347,6 +4239,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-049",
           "title": "EX-A10-V021-008 — Exercício 7: 'Não me submeto a ordens desse tipo;'",
+          "prompt": "Frase: 7. Não me submeto a ordens desse tipo;",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "7. Não me submeto a ordens desse tipo;"
+            },
+            {
+              "order": 2,
+              "action": "Gabarito / Julgamento",
+              "rationale": "CERTO"
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento do raciocínio",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Regência verbal",
+              "rationale": "O verbo submeter-se exige preposição a (submeto-me ao regulamento / ao diretor)."
+            },
+            {
+              "order": 5,
+              "action": "Termo seguinte",
+              "rationale": "ordens desse tipo está no plural."
+            }
+          ],
+          "result": "Conceito demonstrado: Validade do emprego de preposição simples singular antes de substantivo plural.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V021-008 — Exercício 7: 'Não me submeto a ordens desse tipo;' sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V021-008 — Exercício 7: 'Não me submeto a ordens desse tipo;'.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V021-008 — Exercício 7: 'Não me submeto a ordens desse tipo;'.",
           "blocks": [
             {
               "type": "list",
@@ -2379,6 +4303,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A10-G06-050",
           "title": "EX-A10-V021-009 — Exercício 8: 'Muitos consumidores não se mostram atentos as necessidades do meio ambiente'",
+          "prompt": "Frase: 8. Muitos consumidores não se mostram atentos as necessidades do meio ambiente.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "8. Muitos consumidores não se mostram atentos as necessidades do meio ambiente."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito / Julgamento",
+              "rationale": "ERRADO"
+            },
+            {
+              "order": 3,
+              "action": "Desenvolvimento do raciocínio",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Regência nominal",
+              "rationale": "O adjetivo atentos exige preposição a (atentos ao menino / ao chamado)."
+            },
+            {
+              "order": 5,
+              "action": "Estrutura grafada",
+              "rationale": "Grafou-se as sem acento indicativo de crase."
+            }
+          ],
+          "result": "Conceito demonstrado: Erro de regência nominal pela utilização de artigo plural desprovido de preposição.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A10-V021-009 — Exercício 8: 'Muitos consumidores não se mostram atentos as necessidades do meio ambiente' sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A10-V021-009 — Exercício 8: 'Muitos consumidores não se mostram atentos as necessidades do meio ambiente'.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A10-V021-009 — Exercício 8: 'Muitos consumidores não se mostram atentos as necessidades do meio ambiente'.",
           "blocks": [
             {
               "type": "list",
@@ -2538,8 +4494,12 @@
         {
           "trapId": "WARN-A10-V018-001",
           "title": "Confundir Crase com Acento Gráfico em Editais e Questões",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Crase com Acento Gráfico em Editais e Questões.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Crase com Acento Gráfico em Editais e Questões.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Crase com Acento Gráfico em Editais e Questões no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Crase com Acento Gráfico em Editais e Questões.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Crase com Acento Gráfico em Editais e Questões.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Crase com Acento Gráfico em Editais e Questões para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Crase com Acento Gráfico em Editais e Questões.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Crase com Acento Gráfico em Editais e Questões.",
           "blocks": [
             {
               "type": "list",
@@ -2555,8 +4515,12 @@
         {
           "trapId": "WARN-A10-V018-002",
           "title": "O Mito de que Palavras Masculinas Nunca Admitem Crase",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Mito de que Palavras Masculinas Nunca Admitem Crase.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Mito de que Palavras Masculinas Nunca Admitem Crase.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Mito de que Palavras Masculinas Nunca Admitem Crase no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Mito de que Palavras Masculinas Nunca Admitem Crase.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Mito de que Palavras Masculinas Nunca Admitem Crase.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Mito de que Palavras Masculinas Nunca Admitem Crase para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Mito de que Palavras Masculinas Nunca Admitem Crase.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Mito de que Palavras Masculinas Nunca Admitem Crase.",
           "blocks": [
             {
               "type": "list",
@@ -2572,8 +4536,12 @@
         {
           "trapId": "WARN-A10-V018-003",
           "title": "Tentativa Indevida de Usar Crase antes de \"Quem\" e \"Cujo\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Tentativa Indevida de Usar Crase antes de \"Quem\" e \"Cujo\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Tentativa Indevida de Usar Crase antes de \"Quem\" e \"Cujo\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Tentativa Indevida de Usar Crase antes de \"Quem\" e \"Cujo\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Tentativa Indevida de Usar Crase antes de \"Quem\" e \"Cujo\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Tentativa Indevida de Usar Crase antes de \"Quem\" e \"Cujo\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Tentativa Indevida de Usar Crase antes de \"Quem\" e \"Cujo\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Tentativa Indevida de Usar Crase antes de \"Quem\" e \"Cujo\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Tentativa Indevida de Usar Crase antes de \"Quem\" e \"Cujo\".",
           "blocks": [
             {
               "type": "list",
@@ -2589,8 +4557,12 @@
         {
           "trapId": "WARN-A10-V019-001",
           "title": "Falso Macete da Troca de Preposições por \"Para\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Falso Macete da Troca de Preposições por \"Para\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Falso Macete da Troca de Preposições por \"Para\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Falso Macete da Troca de Preposições por \"Para\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Falso Macete da Troca de Preposições por \"Para\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Falso Macete da Troca de Preposições por \"Para\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Falso Macete da Troca de Preposições por \"Para\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Falso Macete da Troca de Preposições por \"Para\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Falso Macete da Troca de Preposições por \"Para\".",
           "blocks": [
             {
               "type": "list",
@@ -2606,8 +4578,12 @@
         {
           "trapId": "WARN-A10-V019-002",
           "title": "Quebra de Paralelismo em Dias da Semana e Horários",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Quebra de Paralelismo em Dias da Semana e Horários.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Quebra de Paralelismo em Dias da Semana e Horários.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Quebra de Paralelismo em Dias da Semana e Horários no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Quebra de Paralelismo em Dias da Semana e Horários.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Quebra de Paralelismo em Dias da Semana e Horários.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Quebra de Paralelismo em Dias da Semana e Horários para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Quebra de Paralelismo em Dias da Semana e Horários.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Quebra de Paralelismo em Dias da Semana e Horários.",
           "blocks": [
             {
               "type": "list",
@@ -2624,8 +4600,12 @@
         {
           "trapId": "WARN-A10-V019-003",
           "title": "Crase no Singular Diante de Palavras no Plural",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Crase no Singular Diante de Palavras no Plural.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Crase no Singular Diante de Palavras no Plural.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Crase no Singular Diante de Palavras no Plural no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Crase no Singular Diante de Palavras no Plural.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Crase no Singular Diante de Palavras no Plural.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Crase no Singular Diante de Palavras no Plural para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Crase no Singular Diante de Palavras no Plural.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Crase no Singular Diante de Palavras no Plural.",
           "blocks": [
             {
               "type": "list",
@@ -2640,8 +4620,12 @@
         {
           "trapId": "WARN-A10-V020-001",
           "title": "Crase diante dos Demonstrativos \"Aquele\", \"Aquela\" e \"Aquilo\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Crase diante dos Demonstrativos \"Aquele\", \"Aquela\" e \"Aquilo\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Crase diante dos Demonstrativos \"Aquele\", \"Aquela\" e \"Aquilo\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Crase diante dos Demonstrativos \"Aquele\", \"Aquela\" e \"Aquilo\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Crase diante dos Demonstrativos \"Aquele\", \"Aquela\" e \"Aquilo\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Crase diante dos Demonstrativos \"Aquele\", \"Aquela\" e \"Aquilo\".",
+          "correctReasoning": "Muitos estudantes acreditam erroneamente que a crase só pode ocorrer antes de palavras femininas. No caso dos pronomes demonstrativos aquele(s), aquela(s) e aquilo, a crase ocorre pela fusão da preposição a com a letra A inicial do próprio pronome (a + aquele = àquele; a + aquilo = àquilo).",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Crase diante dos Demonstrativos \"Aquele\", \"Aquela\" e \"Aquilo\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Crase diante dos Demonstrativos \"Aquele\", \"Aquela\" e \"Aquilo\".",
           "blocks": [
             {
               "type": "heading",
@@ -2664,8 +4648,12 @@
         {
           "trapId": "WARN-A10-V020-002",
           "title": "O Risco de Pular a Checagem da Regência",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Risco de Pular a Checagem da Regência.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Risco de Pular a Checagem da Regência.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Risco de Pular a Checagem da Regência no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Risco de Pular a Checagem da Regência.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Risco de Pular a Checagem da Regência.",
+          "correctReasoning": "O candidato observa que a palavra seguinte é feminina e aceita artigo (ex.: a terra, a empresa) e imediatamente coloca crase, esquecendo-se de verificar se o verbo ou nome anterior é transitivo direto (não pede preposição). Se a regência pedir preposição nula, haverá apenas artigo simples, sem crase (ex.: O juiz comprou a terra -> comprou o menino -> sem preposição -> sem crase).",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Risco de Pular a Checagem da Regência.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Risco de Pular a Checagem da Regência.",
           "blocks": [
             {
               "type": "heading",
@@ -2681,8 +4669,12 @@
         {
           "trapId": "WARN-A10-V021-001",
           "title": "Confundir Sentido com Coerência Textual",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Sentido com Coerência Textual.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Sentido com Coerência Textual.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Sentido com Coerência Textual no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Sentido com Coerência Textual.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Sentido com Coerência Textual.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Sentido com Coerência Textual para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Sentido com Coerência Textual.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Sentido com Coerência Textual.",
           "blocks": [
             {
               "type": "list",
@@ -2698,8 +4690,12 @@
         {
           "trapId": "WARN-A10-V021-002",
           "title": "O Erro Silencioso do 'AS' sem Acento (Omissão da Preposição)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Erro Silencioso do 'AS' sem Acento (Omissão da Preposição).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Erro Silencioso do 'AS' sem Acento (Omissão da Preposição).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Erro Silencioso do 'AS' sem Acento (Omissão da Preposição) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Erro Silencioso do 'AS' sem Acento (Omissão da Preposição).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Erro Silencioso do 'AS' sem Acento (Omissão da Preposição).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Erro Silencioso do 'AS' sem Acento (Omissão da Preposição) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Erro Silencioso do 'AS' sem Acento (Omissão da Preposição).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Erro Silencioso do 'AS' sem Acento (Omissão da Preposição).",
           "blocks": [
             {
               "type": "list",
@@ -2715,8 +4711,12 @@
         {
           "trapId": "WARN-A10-V021-003",
           "title": "Estranhamento Sonoro com 'A' Singular Antes de Plural ('Recaída')",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Estranhamento Sonoro com 'A' Singular Antes de Plural ('Recaída').",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Estranhamento Sonoro com 'A' Singular Antes de Plural ('Recaída').",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Estranhamento Sonoro com 'A' Singular Antes de Plural ('Recaída') no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Estranhamento Sonoro com 'A' Singular Antes de Plural ('Recaída').",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Estranhamento Sonoro com 'A' Singular Antes de Plural ('Recaída').",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Estranhamento Sonoro com 'A' Singular Antes de Plural ('Recaída') para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Estranhamento Sonoro com 'A' Singular Antes de Plural ('Recaída').",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Estranhamento Sonoro com 'A' Singular Antes de Plural ('Recaída').",
           "blocks": [
             {
               "type": "list",
@@ -2731,8 +4731,12 @@
         {
           "trapId": "WARN-A10-V021-004",
           "title": "Pronomes Indefinidos Plurais Não Admitem 'À' Nem 'ÀS'",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pronomes Indefinidos Plurais Não Admitem 'À' Nem 'ÀS'.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pronomes Indefinidos Plurais Não Admitem 'À' Nem 'ÀS'.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pronomes Indefinidos Plurais Não Admitem 'À' Nem 'ÀS' no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pronomes Indefinidos Plurais Não Admitem 'À' Nem 'ÀS'.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pronomes Indefinidos Plurais Não Admitem 'À' Nem 'ÀS'.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pronomes Indefinidos Plurais Não Admitem 'À' Nem 'ÀS' para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pronomes Indefinidos Plurais Não Admitem 'À' Nem 'ÀS'.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pronomes Indefinidos Plurais Não Admitem 'À' Nem 'ÀS'.",
           "blocks": [
             {
               "type": "list",
@@ -3083,7 +5087,10 @@
       "officialAnswer": "option_C",
       "explanation": "Exatamente. “Chegar” exige preposição “a’”(não “em”). Essa preposição se funde ao artigo\nantes de “mesma conclusão”.\nGabarito: Correto.",
       "questionSha256": "5b8a08f44686717269cb8acc619bae02386524f7a504c27081087587df90c3b1",
-      "answerSha256": "01817b87cb98b4759e064003f80853c9d0c66a02144bba44be606663f0aea256"
+      "answerSha256": "01817b87cb98b4759e064003f80853c9d0c66a02144bba44be606663f0aea256",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Crase - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula10.q0137",
@@ -3095,7 +5102,10 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "275db4f0d77472bec6095194aa61cd8f8522c82c585f7ca9fd89fbc3a7d39e6f",
-      "answerSha256": "2005114756d6000e35012b96e07e082118f0c51ee5ef6a288c2be3f8db77d869"
+      "answerSha256": "2005114756d6000e35012b96e07e082118f0c51ee5ef6a288c2be3f8db77d869",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Crase - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula10.q0086",
@@ -3109,7 +5119,10 @@
       "officialAnswer": "correct",
       "explanation": "Questão correta. Temos crase pela fusão entre “anterior A+A (época) dos dinossauros. Esse A foi\nconsiderado artigo diante de substantivo elíptico.",
       "questionSha256": "1575b5a8866e6b44c461f95d582f1bb027363907531afd0d8861629ab53cea4c",
-      "answerSha256": "b8fabc241577cc52bb267aab4801752dfff3a206a67b2b329d77b3705ad3baaf"
+      "answerSha256": "b8fabc241577cc52bb267aab4801752dfff3a206a67b2b329d77b3705ad3baaf",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Crase - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula10.q0179",
@@ -3122,7 +5135,10 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "11be5446bb8d1de337cb250596398935ff8870825c4ad9bbf064bc6204b1d264",
-      "answerSha256": "3d4775444e19d6259d63f27f0150b554e1264e84de7f7acef812eb730b315f6b"
+      "answerSha256": "3d4775444e19d6259d63f27f0150b554e1264e84de7f7acef812eb730b315f6b",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Crase - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula10.q0023",
@@ -3135,7 +5151,10 @@
       "officialAnswer": "correct",
       "explanation": "Questão correta. Temos crase pela fusão entre “anterior A+A (época) dos dinossauros. Esse A foi\nconsiderado artigo diante de substantivo elíptico.\nNomes de lugares particularizados\nA crase vai depender de o nome de lugar aceitar ou não artigo. Se estiver determinado, isto é,\nespecificado por um termo ou até pelo contexto, o lugar passa a ter artigo definido.\nEx: Gosto de Recife (menção genérica a Recife, sem artigo, sem especificação)\nEx.: Vou à Recife que ninguém conhece ainda. (Não é uma Recife qualquer, é específica, é\n“aquela que ninguém conhece ainda”; por isso se usa o artigo “a”)\nNão posso deixar de reproduzir aqui o lendário macete: quem vai “a” e volta “da”, crase haverá.\nMas quem vai “a” e volta “de”, crase para quê?\nQuem vai à Bahia, volta da Bahia.\nQuem vai a Brasília, volta de Brasília.\nQuem vai à Meca, volta da Meca.\nQuem vai a Recife, volta de Recife.\nQuem vai a Campinas, volta de Campinas.\nIsso ocorre porque certos lugares aceitam artigo, outros não. Vamos fazer aquele teste: “*A\nRecife é uma cidade bela” ou “*A Brasília é uma cidade cinza”. Ficou estranho, né? Parece que\nestamos falando daquele carro antigo...\nVeja que esse artigo não cabe antes desses nomes. Se não aceita artigo, não há crase. Agora\nobserve como certos nomes aceitam o artigo ou como o artigo surge naturalmente quando\nespecificamos esse nome. Isso ocorre porque nomes que trazem determinantes, naturalmente,\ntornam-se determinados, definidos. Logo, pedem artigo definido.\nA Bahia é linda.\nVou à Bahia curtir o bloco dos concurseiros.\nA Recife que amei não existe mais. (Não é qualquer Recife, é \"a Recife amada\")\nVou à Recife que amei. (Como Recife está especificada, há crase = vou a + a Recife que amei)\nLocuções Femininas\nEssas expressões têm um “núcleo feminino” e sempre vêm com acento grave!\nEx.: Vire à direita depois à esquerda. (locução adverbial)\nEx.: Chegue às duas horas por favor. (locução adverbial)\nEx.: A menina gostava de ficar à toa. (locução adjetiva)\nEx.: Estude para não ficar à espera de um milagre. (locução prepositiva)\nEx.: Seu humor melhorava à medida que lia. (locução conjuntiva)\nAtenção às locuções adverbiais com sentido de meio ou instrumento: a (à) mão, a (à) caneta, (à) a\nvista, (à) a prestação. Nesses casos, há controvérsia entre os gramáticos; então você deve\npresumir na prova que ambas as formas são aceitas, a crase é facultativa. No entanto, a\npreferência é usar a crase, para eliminar ambiguidades:\nDesenhei à mão (meio/instrumento) x Desenhei a mão (a mão foi desenhada?)\nApesar da controvérsia, guarde também que a expressão “a distância” não tem crase, salvo se\nvier especificada esta distância.\nEx.: Estudo a distância porque a universidade pública mais próxima da minha casa fica à\ndistância de 40 km.",
       "questionSha256": "d22223a16f122213c6b7f5ec27657e95609a79fdbfe2809de2af3f39f0d9e0a2",
-      "answerSha256": "c81ad50f1b90d8d2537e4968a79b2b5c81b9d9893be38c972a05e5f8b9cef2a8"
+      "answerSha256": "c81ad50f1b90d8d2537e4968a79b2b5c81b9d9893be38c972a05e5f8b9cef2a8",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de TRE TO; 2. Identificar a regra central de Crase - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula10.q0053",
@@ -3148,7 +5167,10 @@
       "officialAnswer": "incorrect",
       "explanation": "É obrigatório. O adjetivo \"ligado\" exige preposição \"a\", que se funde com o artigo diante de\n\"vida em sociedade\": ligado A + A vida em sociedade. Questão incorreta.",
       "questionSha256": "7a445edae958ab30a8fca8e005ed67e7e9dc903a6e50aae67dbbb728b0441095",
-      "answerSha256": "aa8ff3ddcf36f76aa4b2650b6d2734d8cac7cc415e52d9b34e0e9185bcae4555"
+      "answerSha256": "aa8ff3ddcf36f76aa4b2650b6d2734d8cac7cc415e52d9b34e0e9185bcae4555",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Crase - Fundamentos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

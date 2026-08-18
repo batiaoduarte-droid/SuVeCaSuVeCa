@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A04-G01",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.750Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.514Z"
   },
   "unit": {
     "unitId": "IP-A04-G01",
@@ -520,6 +520,14 @@
         {
           "entityId": "RULE-IP-A04-G01-001",
           "title": "Regras canônicas",
+          "statement": "A tabela a seguir consolida as regras fundamentais para acesso rápido e consulta direta:",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "paragraph",
@@ -634,6 +642,71 @@
         {
           "procedureId": "PROC-A04-G01-TEMPOS-MODOS-VERBAIS-001",
           "title": "Procedimento Universal de Identificação Temporal-Modal",
+          "objective": "Executar o algoritmo decisório para Procedimento Universal de Identificação Temporal-Modal",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento Universal de Identificação Temporal-Modal."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Isolar e Reduzir ao Infinitivo",
+              "explanation": "Localize o verbo sublinhado no texto e escreva mentalmente ou no rascunho a sua forma terminada em -R. Em verbos irregulares (estivesse), confirme a raiz pelo contexto (estar, e não ter).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 — Aplicar o Teste das Palavras Mágicas do Indicativo e Subjuntivo",
+              "explanation": "",
+              "test": "Passo 2 — Aplicar o Teste das Palavras Mágicas do Indicativo e Subjuntivo:"
+            },
+            {
+              "order": 3,
+              "action": "Teste a lista de deflagradores",
+              "explanation": "Hoje, Ontem, Antigamente, Outrora/-ra, Amanhã, -ria, Que, Se/-sse, Quando.",
+              "test": "Teste a lista de deflagradores: Hoje, Ontem, Antigamente, Outrora/-ra, Amanhã, -ria, Que, Se/-sse, Quando."
+            },
+            {
+              "order": 4,
+              "action": "A palavra mágica que gerar a forma exata presente no texto determina o tempo e modo.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Passo 3 — Checar se há Sentido Pragmático de Ordem/Conselho (Imperativo)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se o texto orienta diretamente o leitor, classifique como Modo Imperativo.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Aplique o teste \"De onde saiu?\"",
+              "explanation": "veio de Hoje sem -s? (Interlocutor Tu). Veio de Que? (Interlocutor Você).",
+              "test": "Aplique o teste \"De onde saiu?\": veio de Hoje sem -s? (Interlocutor Tu). Veio de Que? (Interlocutor Você)."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento Universal de Identificação Temporal-Modal."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -685,6 +758,59 @@
         {
           "procedureId": "PROC-A04-G01-TEMPOS-MODOS-VERBAIS-002",
           "title": "Procedimento de Desempate entre Infinitivo Pessoal e Futuro do Subjuntivo (Macete do Fazer/Fizer)",
+          "objective": "Executar o algoritmo decisório para Procedimento de Desempate entre Infinitivo Pessoal e Futuro do Subjuntivo (Macete do Fazer/Fizer)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento de Desempate entre Infinitivo Pessoal e Futuro do Subjuntivo (Macete do Fazer/Fizer)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1",
+              "explanation": "Ao encontrar uma forma verbal regular terminada em -r, -res, -rmos, -rdes, -rem introduzida por conectivos como se, quando, logo que, assim que ou preposições como para, por:",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2",
+              "explanation": "Isole a oração e substitua mentalmente o verbo em análise pelo verbo FAZER (ou DIZER).",
+              "test": "Passo 2: Isole a oração e substitua mentalmente o verbo em análise pelo verbo FAZER (ou DIZER)."
+            },
+            {
+              "order": 3,
+              "action": "Passo 3 — Avaliação",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se a frase exigir gramaticalmente a forma FAZER (Infinitivo) ➔ O verbo original está no Infinitivo Pessoal.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se a frase exigir gramaticalmente a forma FIZER (Subjuntivo) ➔ O verbo original está no Futuro do Subjuntivo.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento de Desempate entre Infinitivo Pessoal e Futuro do Subjuntivo (Macete do Fazer/Fizer)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -722,6 +848,59 @@
         {
           "procedureId": "PROC-A04-G01-TEMPOS-MODOS-VERBAIS-003",
           "title": "Procedimento para Análise e Validação do Modo Imperativo",
+          "objective": "Executar o algoritmo decisório para Procedimento para Análise e Validação do Modo Imperativo",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento para Análise e Validação do Modo Imperativo."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1",
+              "explanation": "Confirme o valor semântico de ordem, pedido, recomendação ou exortação no texto.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2",
+              "explanation": "Rastreie o interlocutor no contexto textual imediato (verifique se o autor utilizou Tu/Te/Teu ou Você/Seu/Lhe).",
+              "test": "Passo 2: Rastreie o interlocutor no contexto textual imediato (verifique se o autor utilizou Tu/Te/Teu ou Você/Seu/Lhe)."
+            },
+            {
+              "order": 3,
+              "action": "Passo 3 — Teste de Concordância",
+              "explanation": "",
+              "test": "Passo 3 — Teste de Concordância:"
+            },
+            {
+              "order": 4,
+              "action": "Se o interlocutor for Você, a forma deve derivar do Presente do Subjuntivo (Que você imagine ➔ Imagine!).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se o interlocutor for Tu, a forma deve derivar do Presente do Indicativo sem -s (Tu imaginas ➔ Imagina!).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento para Análise e Validação do Modo Imperativo."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -759,6 +938,47 @@
         {
           "procedureId": "PROC-A04-G01-TEMPOS-MODOS-VERBAIS-004",
           "title": "Diagnóstico de Atratores Sintáticos de Subjuntivo",
+          "objective": "Executar o algoritmo decisório para Diagnóstico de Atratores Sintáticos de Subjuntivo",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Diagnóstico de Atratores Sintáticos de Subjuntivo."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1",
+              "explanation": "Circule os termos que antecedem a forma verbal sob análise.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2",
+              "explanation": "Verifique se há a presença de conjunções subordinativas concessivas (Embora, Conquanto, Ainda que) ou advérbios de dúvida (Talvez).",
+              "test": "Passo 2: Verifique se há a presença de conjunções subordinativas concessivas (Embora, Conquanto, Ainda que) ou advérbios de dúvida (Talvez)."
+            },
+            {
+              "order": 3,
+              "action": "Passo 3 — Regra de Bloqueio",
+              "explanation": "Conjunções subordinativas e advérbios de dúvida nunca admitem modo Imperativo. A presença desses conectivos determina compulsoriamente a classificação no Modo Subjuntivo.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Diagnóstico de Atratores Sintáticos de Subjuntivo."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -792,6 +1012,22 @@
         {
           "contrastId": "CONTRAST-IP-A04-G01-001",
           "title": "8.1. Comparação entre Modos Verbais Básicos",
+          "contrastType": "mixed",
+          "conceptA": "8.1. Comparação entre Modos Verbais Básicos",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -838,6 +1074,22 @@
         {
           "contrastId": "CONTRAST-IP-A04-G01-002",
           "title": "8.2. Contraste de Tratamento no Imperativo: Tu x Você",
+          "contrastType": "mixed",
+          "conceptA": "8.2. Contraste de Tratamento no Imperativo: Tu",
+          "conceptB": "Você",
+          "sideA": {
+            "label": "8.2. Contraste de Tratamento no Imperativo: Tu",
+            "criteria": [
+              "Características diagnósticas de 8.2. Contraste de Tratamento no Imperativo: Tu"
+            ]
+          },
+          "sideB": {
+            "label": "Você",
+            "criteria": [
+              "Características diagnósticas de Você"
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -889,6 +1141,22 @@
         {
           "contrastId": "CONTRAST-IP-A04-G01-003",
           "title": "8.3. Distinção Crítica: Infinitivo Pessoal vs. Futuro do Subjuntivo",
+          "contrastType": "mixed",
+          "conceptA": "8.3. Distinção Crítica: Infinitivo Pessoal vs. Futuro do Subjuntivo",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -934,6 +1202,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G01-001",
           "title": "EX-A04-G01-TEMPOS-MODOS-VERBAIS-001 — Exercício de Fixação A: Verbo \"Publicava\"",
+          "prompt": "Enunciado: Identifique o tempo e o modo verbal do verbo sublinhado:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identifique o tempo e o modo verbal do verbo sublinhado:"
+            },
+            {
+              "order": 2,
+              "action": "Resolução Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Infinitivo do verbo",
+              "rationale": "PUBLICAR."
+            },
+            {
+              "order": 4,
+              "action": "Teste das palavras mágicas",
+              "rationale": ""
+            },
+            {
+              "order": 5,
+              "action": "\"Hoje ele publica\" (não confere).",
+              "rationale": null
+            }
+          ],
+          "result": "Classificação Final: Pretérito Imperfeito do Modo Indicativo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G01-TEMPOS-MODOS-VERBAIS-001 — Exercício de Fixação A: Verbo \"Publicava\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G01-TEMPOS-MODOS-VERBAIS-001 — Exercício de Fixação A: Verbo \"Publicava\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G01-TEMPOS-MODOS-VERBAIS-001 — Exercício de Fixação A: Verbo \"Publicava\".",
           "blocks": [
             {
               "type": "list",
@@ -977,6 +1277,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G01-002",
           "title": "EX-A04-G01-TEMPOS-MODOS-VERBAIS-002 — Exercício de Fixação B: Verbos \"Funcionam\" e \"Dormirem\"",
+          "prompt": "Enunciado: Identifique o tempo e o modo verbal dos verbos sublinhados:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identifique o tempo e o modo verbal dos verbos sublinhados:"
+            },
+            {
+              "order": 2,
+              "action": "Resolução Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Funcionam",
+              "rationale": "Infinitivo FUNCIONAR. Teste: \"Hoje os adultos funcionam\" ➔ Presente do Indicativo."
+            },
+            {
+              "order": 4,
+              "action": "Dormirem",
+              "rationale": "Infinitivo DORMIR. Precedido de condicional se. Teste: \"Quando eles dormirem\" ➔ Expressa eventualidade futura hipotética ➔ Futuro do Subjuntivo."
+            },
+            {
+              "order": 5,
+              "action": "Classificação Final",
+              "rationale": ""
+            }
+          ],
+          "result": "Dormirem: Futuro do Subjuntivo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G01-TEMPOS-MODOS-VERBAIS-002 — Exercício de Fixação B: Verbos \"Funcionam\" e \"Dormirem\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G01-TEMPOS-MODOS-VERBAIS-002 — Exercício de Fixação B: Verbos \"Funcionam\" e \"Dormirem\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G01-TEMPOS-MODOS-VERBAIS-002 — Exercício de Fixação B: Verbos \"Funcionam\" e \"Dormirem\".",
           "blocks": [
             {
               "type": "list",
@@ -1019,6 +1351,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G01-003",
           "title": "EX-A04-G01-TEMPOS-MODOS-VERBAIS-003 — Exercício de Fixação C: Verbos \"Emprestaria\" e \"Estivesse\"",
+          "prompt": "Enunciado: Identifique o tempo e o modo verbal dos verbos sublinhados:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identifique o tempo e o modo verbal dos verbos sublinhados:"
+            },
+            {
+              "order": 2,
+              "action": "Resolução Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Emprestaria",
+              "rationale": "Desinência -ria / Teste estrutural: \"Se eu fosse você, eu emprestaria\" ➔ Futuro do Pretérito do Indicativo."
+            },
+            {
+              "order": 4,
+              "action": "Estivesse",
+              "rationale": "Infinitivo ESTAR (cuidado para não confundir com a raiz de ter). Desinência -sse antecedida por se ➔ Pretérito Imperfeito do Subjuntivo."
+            },
+            {
+              "order": 5,
+              "action": "Classificação Final",
+              "rationale": ""
+            }
+          ],
+          "result": "Estivesse: Pretérito Imperfeito do Subjuntivo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G01-TEMPOS-MODOS-VERBAIS-003 — Exercício de Fixação C: Verbos \"Emprestaria\" e \"Estivesse\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G01-TEMPOS-MODOS-VERBAIS-003 — Exercício de Fixação C: Verbos \"Emprestaria\" e \"Estivesse\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G01-TEMPOS-MODOS-VERBAIS-003 — Exercício de Fixação C: Verbos \"Emprestaria\" e \"Estivesse\".",
           "blocks": [
             {
               "type": "list",
@@ -1061,6 +1425,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G01-004",
           "title": "EX-A04-G01-TEMPOS-MODOS-VERBAIS-004 — Exercício de Fixação D: Verbo \"Lave\"",
+          "prompt": "Enunciado: Identifique o tempo e o modo verbal do verbo sublinhado:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identifique o tempo e o modo verbal do verbo sublinhado:"
+            },
+            {
+              "order": 2,
+              "action": "Resolução Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Infinitivo",
+              "rationale": "LAVAR. Expressa instrução/ordem sanitária ➔ Imperativo Afirmativo."
+            },
+            {
+              "order": 4,
+              "action": "Origem da forma",
+              "rationale": "\"Que você lave\" ➔ Derivado do Presente do Subjuntivo para a 3ª pessoa do singular (Você)."
+            },
+            {
+              "order": 5,
+              "action": "Classificação Final",
+              "rationale": "Modo Imperativo Afirmativo (interlocutor Você)."
+            }
+          ],
+          "result": "Classificação Final: Modo Imperativo Afirmativo (interlocutor Você).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G01-TEMPOS-MODOS-VERBAIS-004 — Exercício de Fixação D: Verbo \"Lave\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G01-TEMPOS-MODOS-VERBAIS-004 — Exercício de Fixação D: Verbo \"Lave\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G01-TEMPOS-MODOS-VERBAIS-004 — Exercício de Fixação D: Verbo \"Lave\".",
           "blocks": [
             {
               "type": "list",
@@ -1101,6 +1497,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G01-005",
           "title": "EX-A04-G01-TEMPOS-MODOS-VERBAIS-005 — Exercício de Fixação E: Verbos \"Descubra\" e \"Telefone\"",
+          "prompt": "Enunciado: Identifique o tempo e o modo verbal dos verbos sublinhados:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identifique o tempo e o modo verbal dos verbos sublinhados:"
+            },
+            {
+              "order": 2,
+              "action": "Resolução Passo a Passo",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Descubra",
+              "rationale": "Introduzido pela conjunção condicional Caso. Teste: \"Que ele descubra\" ➔ Presente do Subjuntivo."
+            },
+            {
+              "order": 4,
+              "action": "Telefone",
+              "rationale": "Expressa instrução/ordem direta na oração principal ➔ Imperativo Afirmativo (derivado do Subjuntivo Que você telefone, mantendo uniformidade com a 3ª pessoa de descubra)."
+            },
+            {
+              "order": 5,
+              "action": "Classificação Final",
+              "rationale": ""
+            }
+          ],
+          "result": "Telefone: Imperativo Afirmativo (interlocutor Você).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G01-TEMPOS-MODOS-VERBAIS-005 — Exercício de Fixação E: Verbos \"Descubra\" e \"Telefone\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G01-TEMPOS-MODOS-VERBAIS-005 — Exercício de Fixação E: Verbos \"Descubra\" e \"Telefone\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G01-TEMPOS-MODOS-VERBAIS-005 — Exercício de Fixação E: Verbos \"Descubra\" e \"Telefone\".",
           "blocks": [
             {
               "type": "list",
@@ -1143,6 +1571,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G01-006",
           "title": "EX-A04-G01-TEMPOS-MODOS-VERBAIS-006 — Questão de Concurso Cebraspe 1: Flexão de \"Saíra\"",
+          "prompt": "Texto e Item:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto e Item",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Análise e Julgamento",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Forma verbal",
+              "rationale": "saíra (Infinitivo: sair)."
+            },
+            {
+              "order": 4,
+              "action": "Presença da desinência temporal-modo -ra não oxítona (eu saíra).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "O sujeito da narrativa é o narrador em 1ª pessoa (eu nunca saíra).",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G01-TEMPOS-MODOS-VERBAIS-006 — Questão de Concurso Cebraspe 1: Flexão de \"Saíra\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G01-TEMPOS-MODOS-VERBAIS-006 — Questão de Concurso Cebraspe 1: Flexão de \"Saíra\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G01-TEMPOS-MODOS-VERBAIS-006 — Questão de Concurso Cebraspe 1: Flexão de \"Saíra\".",
           "blocks": [
             {
               "type": "list",
@@ -1172,6 +1632,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G01-007",
           "title": "EX-A04-G01-TEMPOS-MODOS-VERBAIS-007 — Questão de Concurso Cebraspe 2: Comparação \"Variam\" vs. \"Passaram\"",
+          "prompt": "Texto e Item:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto e Item",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Análise e Julgamento",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Variam",
+              "rationale": "Teste: \"Hoje as oportunidades variam\" ➔ Presente do Indicativo."
+            },
+            {
+              "order": 4,
+              "action": "Passaram",
+              "rationale": "Teste: \"Ontem as famílias passaram\" ➔ Pretérito Perfeito do Indicativo."
+            },
+            {
+              "order": 5,
+              "action": "Como uma forma está no presente e a outra no pretérito, os tempos são distintos.",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G01-TEMPOS-MODOS-VERBAIS-007 — Questão de Concurso Cebraspe 2: Comparação \"Variam\" vs. \"Passaram\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G01-TEMPOS-MODOS-VERBAIS-007 — Questão de Concurso Cebraspe 2: Comparação \"Variam\" vs. \"Passaram\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G01-TEMPOS-MODOS-VERBAIS-007 — Questão de Concurso Cebraspe 2: Comparação \"Variam\" vs. \"Passaram\".",
           "blocks": [
             {
               "type": "list",
@@ -1201,6 +1693,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G01-008",
           "title": "EX-A04-G01-TEMPOS-MODOS-VERBAIS-008 — Questão de Concurso Cebraspe 3: Desempate em \"Significar\" com \"Se\"",
+          "prompt": "Texto e Item:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto e Item",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Análise e Julgamento",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Aplicação do Macete do Fazer/Fizer",
+              "rationale": "\"Se a expressão fizer...\" (encaixe perfeito) vs. \"Se a expressão fazer\" (agramatical)."
+            },
+            {
+              "order": 4,
+              "action": "A conjunção condicional se atua como elemento atrator da hipótese no Futuro do Subjuntivo.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G01-TEMPOS-MODOS-VERBAIS-008 — Questão de Concurso Cebraspe 3: Desempate em \"Significar\" com \"Se\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G01-TEMPOS-MODOS-VERBAIS-008 — Questão de Concurso Cebraspe 3: Desempate em \"Significar\" com \"Se\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G01-TEMPOS-MODOS-VERBAIS-008 — Questão de Concurso Cebraspe 3: Desempate em \"Significar\" com \"Se\".",
           "blocks": [
             {
               "type": "list",
@@ -1229,6 +1753,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G01-009",
           "title": "EX-A04-G01-TEMPOS-MODOS-VERBAIS-009 — Questão de Concurso Cebraspe 4: Concordância de \"Imagine\" com \"Você\"",
+          "prompt": "Texto e Item:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto e Item",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Análise e Julgamento",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "O verbo expressa uma exortação/orientação ao leitor ➔ Modo Imperativo.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "No Imperativo Afirmativo",
+              "rationale": "Tu seria imagina (Hoje tu imaginas sem -s); Você é imagine (Que você imagine)."
+            },
+            {
+              "order": 5,
+              "action": "A concordância mantém rigorosa uniformidade com o pronome Você expresso anteriormente.",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G01-TEMPOS-MODOS-VERBAIS-009 — Questão de Concurso Cebraspe 4: Concordância de \"Imagine\" com \"Você\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G01-TEMPOS-MODOS-VERBAIS-009 — Questão de Concurso Cebraspe 4: Concordância de \"Imagine\" com \"Você\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G01-TEMPOS-MODOS-VERBAIS-009 — Questão de Concurso Cebraspe 4: Concordância de \"Imagine\" com \"Você\".",
           "blocks": [
             {
               "type": "list",
@@ -1258,6 +1814,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G01-010",
           "title": "EX-A04-G01-TEMPOS-MODOS-VERBAIS-010 — Questão de Concurso Cebraspe 5: Atração por Conjunção Concessiva \"Embora\"",
+          "prompt": "Texto e Item:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto e Item",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Análise e Julgamento",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "A conjunção Embora é subordinativa concessiva.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Conjunções concessivas exigem compulsoriamente a flexão no Modo Subjuntivo (Presente do Subjuntivo",
+              "rationale": "embora ela levante), sendo incompatíveis com o Modo Imperativo."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G01-TEMPOS-MODOS-VERBAIS-010 — Questão de Concurso Cebraspe 5: Atração por Conjunção Concessiva \"Embora\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G01-TEMPOS-MODOS-VERBAIS-010 — Questão de Concurso Cebraspe 5: Atração por Conjunção Concessiva \"Embora\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G01-TEMPOS-MODOS-VERBAIS-010 — Questão de Concurso Cebraspe 5: Atração por Conjunção Concessiva \"Embora\".",
           "blocks": [
             {
               "type": "list",
@@ -1286,6 +1874,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A04-G01-011",
           "title": "EX-A04-G01-TEMPOS-MODOS-VERBAIS-011 — Questão de Concurso Cebraspe 6: Contraste \"Entre\" vs. \"Encontre\" (com \"Talvez\")",
+          "prompt": "Texto e Item:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto e Item",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Análise e Julgamento",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Entre",
+              "rationale": "Expressa convite/conselho direto ➔ Modo Imperativo Afirmativo (pessoa Você)."
+            },
+            {
+              "order": 4,
+              "action": "Encontre",
+              "rationale": "Precedido do advérbio de dúvida talvez, expressa hipótese subordinada ➔ Presente do Subjuntivo (que você encontre)."
+            },
+            {
+              "order": 5,
+              "action": "Como pertencem a modos verbais distintos (Imperativo x Subjuntivo), o item é falso.",
+              "rationale": null
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G01-TEMPOS-MODOS-VERBAIS-011 — Questão de Concurso Cebraspe 6: Contraste \"Entre\" vs. \"Encontre\" (com \"Talvez\") sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G01-TEMPOS-MODOS-VERBAIS-011 — Questão de Concurso Cebraspe 6: Contraste \"Entre\" vs. \"Encontre\" (com \"Talvez\").",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G01-TEMPOS-MODOS-VERBAIS-011 — Questão de Concurso Cebraspe 6: Contraste \"Entre\" vs. \"Encontre\" (com \"Talvez\").",
           "blocks": [
             {
               "type": "list",
@@ -1360,8 +1980,12 @@
         {
           "trapId": "WARN-A04-G01-TEMPOS-MODOS-VERBAIS-001",
           "title": "Confusão entre Presente do Indicativo e Presente do Subjuntivo em Verbos de 1ª Conjugação (-AR)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão entre Presente do Indicativo e Presente do Subjuntivo em Verbos de 1ª Conjugação (-AR).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão entre Presente do Indicativo e Presente do Subjuntivo em Verbos de 1ª Conjugação (-AR).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão entre Presente do Indicativo e Presente do Subjuntivo em Verbos de 1ª Conjugação (-AR) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão entre Presente do Indicativo e Presente do Subjuntivo em Verbos de 1ª Conjugação (-AR).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão entre Presente do Indicativo e Presente do Subjuntivo em Verbos de 1ª Conjugação (-AR).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão entre Presente do Indicativo e Presente do Subjuntivo em Verbos de 1ª Conjugação (-AR) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão entre Presente do Indicativo e Presente do Subjuntivo em Verbos de 1ª Conjugação (-AR).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão entre Presente do Indicativo e Presente do Subjuntivo em Verbos de 1ª Conjugação (-AR).",
           "blocks": [
             {
               "type": "list",
@@ -1378,8 +2002,12 @@
         {
           "trapId": "WARN-A04-G01-TEMPOS-MODOS-VERBAIS-002",
           "title": "Homonímia entre Imperativo Afirmativo (Você) e Presente do Subjuntivo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Homonímia entre Imperativo Afirmativo (Você) e Presente do Subjuntivo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Homonímia entre Imperativo Afirmativo (Você) e Presente do Subjuntivo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Homonímia entre Imperativo Afirmativo (Você) e Presente do Subjuntivo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Homonímia entre Imperativo Afirmativo (Você) e Presente do Subjuntivo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Homonímia entre Imperativo Afirmativo (Você) e Presente do Subjuntivo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Homonímia entre Imperativo Afirmativo (Você) e Presente do Subjuntivo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Homonímia entre Imperativo Afirmativo (Você) e Presente do Subjuntivo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Homonímia entre Imperativo Afirmativo (Você) e Presente do Subjuntivo.",
           "blocks": [
             {
               "type": "list",
@@ -1396,8 +2024,12 @@
         {
           "trapId": "WARN-A04-G01-TEMPOS-MODOS-VERBAIS-003",
           "title": "Ilusão de Infinitivo em Formas Regulares do Futuro do Subjuntivo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Ilusão de Infinitivo em Formas Regulares do Futuro do Subjuntivo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Ilusão de Infinitivo em Formas Regulares do Futuro do Subjuntivo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Ilusão de Infinitivo em Formas Regulares do Futuro do Subjuntivo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Ilusão de Infinitivo em Formas Regulares do Futuro do Subjuntivo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Ilusão de Infinitivo em Formas Regulares do Futuro do Subjuntivo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Ilusão de Infinitivo em Formas Regulares do Futuro do Subjuntivo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Ilusão de Infinitivo em Formas Regulares do Futuro do Subjuntivo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Ilusão de Infinitivo em Formas Regulares do Futuro do Subjuntivo.",
           "blocks": [
             {
               "type": "list",
@@ -1412,8 +2044,12 @@
         {
           "trapId": "WARN-A04-G01-TEMPOS-MODOS-VERBAIS-004",
           "title": "A Falsa Exclusividade da Conjunção \"SE\" com o Imperfeito do Subjuntivo",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Falsa Exclusividade da Conjunção \"SE\" com o Imperfeito do Subjuntivo.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Falsa Exclusividade da Conjunção \"SE\" com o Imperfeito do Subjuntivo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Falsa Exclusividade da Conjunção \"SE\" com o Imperfeito do Subjuntivo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Falsa Exclusividade da Conjunção \"SE\" com o Imperfeito do Subjuntivo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Falsa Exclusividade da Conjunção \"SE\" com o Imperfeito do Subjuntivo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Falsa Exclusividade da Conjunção \"SE\" com o Imperfeito do Subjuntivo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Falsa Exclusividade da Conjunção \"SE\" com o Imperfeito do Subjuntivo.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Falsa Exclusividade da Conjunção \"SE\" com o Imperfeito do Subjuntivo.",
           "blocks": [
             {
               "type": "list",
@@ -1430,8 +2066,12 @@
         {
           "trapId": "WARN-A04-G01-TEMPOS-MODOS-VERBAIS-005",
           "title": "Falsa Indução de Imperativo por Conjunção Concessiva ou Advérbio de Dúvida",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Falsa Indução de Imperativo por Conjunção Concessiva ou Advérbio de Dúvida.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Falsa Indução de Imperativo por Conjunção Concessiva ou Advérbio de Dúvida.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Falsa Indução de Imperativo por Conjunção Concessiva ou Advérbio de Dúvida no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Falsa Indução de Imperativo por Conjunção Concessiva ou Advérbio de Dúvida.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Falsa Indução de Imperativo por Conjunção Concessiva ou Advérbio de Dúvida.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Falsa Indução de Imperativo por Conjunção Concessiva ou Advérbio de Dúvida para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Falsa Indução de Imperativo por Conjunção Concessiva ou Advérbio de Dúvida.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Falsa Indução de Imperativo por Conjunção Concessiva ou Advérbio de Dúvida.",
           "blocks": [
             {
               "type": "list",
@@ -1613,7 +2253,41 @@
       "officialAnswer": "B",
       "explanation": "O pretérito perfeito de “requerer” é “requereram”, não é “requiseram”. Então, seria possível eliminar A e C. “Fique”, “Mantenha”, “Continue” e “Permaneça” estão no presente do subjuntivo. “Mantém” e “Permanece” estão no presente do indicativo. Gabarito letra B. BACEN - Língua Portuguesa 62 www.estrategiaconcursos.com.br 154 Essas conjugações vão aparecer em geral quando o verbo vier conjugado no subjuntivo, em função de conjunções: se/que/quando/caso/embora/ainda que... Grave essas “bases”, pois nelas estarão as questões. Ter- TIVE+DESINÊNCIA: Se tivesse, quando tiver... Pôr- PUSE+DESINÊNCIA: Se puser, quando supuséssemos... Requerer- REQUERE+DESINÊNCIA: Se requeresse, quando requereu... Precaver- PRECAVE+DESINÊNCIA: Se precavesse, quando precaveu... Prover- PROVE+DESINÊNCIA: se provesse, quando proveu... Ver-VI+DESINÊNCIA: Se visse, quando víssemos, se vir... Vir- VIE+DESINÊNCIA: Se viéssemos, quando vier, se vierem... Verbo Aprazer Esse verbo é bastante irregular e compartilha o radical do adjetivo aprazível, com sentido de agradável. Para lidar com ele na hora da prova, lembre-se de algumas terminações do verbo haver em que há “V” e base “ou” na palavra, a saber: Pretérito mais-que-perfeito: Eu aprouvera, tu aprouveras... Pretérito imperfeito do subjuntivo: Se eu aprouvesse; se tu aprouvesses... Futuro do subjuntivo: Quando eu aprouver; quanto tu aprouveres... Acima estão as primeiras pessoas de cada conjugação, basta seguir o padrão. Bechara e o Dicionário Houaiss mencionam que, embora tenha conjugação completa, só é usado normalmente nas terceiras pessoas. Medir, Pedir, Valer e Eleger Os verbos acima trazem variações no radical, anotem estes detalhes: Pedir e Medir trazem Ç antes de O e A: Eu Peço/Meço; que eu Peça/Meça. Valer traz LH antes de O e A: Não valho nada/Valha-me Deus! Eleger traz J antes de O e A: Eu eleJo; Que eu eleJa. Isso vale para os verbos com “G” no radical. BACEN - Língua Portuguesa 63 www.estrategiaconcursos.com.br 154",
       "questionSha256": "68b70d345f81aa3303d014e4da77af3578d7cc1e88b7543d9f8f09e059ef37aa",
-      "answerSha256": "88928dd9ba8154c5d44b40631f093c89b05753ce966773d938523ebdb5b13e62"
+      "answerSha256": "88928dd9ba8154c5d44b40631f093c89b05753ce966773d938523ebdb5b13e62",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de SEPLAG-RECIFE; 2. Identificar a regra central de Tempos e Modos Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "incorrect",
+          "explanation": "Opção a: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "b",
+          "status": "correct",
+          "explanation": "Opção b: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "c",
+          "status": "incorrect",
+          "explanation": "Opção c: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "e",
+          "status": "incorrect",
+          "explanation": "Opção e: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Tempos e Modos Verbais."
+        }
+      ]
     },
     {
       "questionId": "aula04.q0107",
@@ -1634,7 +2308,23 @@
       "officialAnswer": "E",
       "explanation": "Observem que temos um comando, uma ordem: Toque, clique e leia. O modo responsável por comandos em geral é imperativo e é nesse modo que os verbos estão conjugados. Gabarito letra E.",
       "questionSha256": "3ecc94f4d0c20f010d777d88df65b0a076e8c0eaed19baffd08f381a0c9c3664",
-      "answerSha256": "1447481373c8ddf11976781e449bd810ca2e46062e4c7839c683c6f9bdfac459"
+      "answerSha256": "1447481373c8ddf11976781e449bd810ca2e46062e4c7839c683c6f9bdfac459",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CORE-PE; 2. Identificar a regra central de Tempos e Modos Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "incorrect",
+          "explanation": "Opção a: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "b",
+          "status": "incorrect",
+          "explanation": "Opção b: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Tempos e Modos Verbais."
+        }
+      ]
     },
     {
       "questionId": "aula04.q0121",
@@ -1646,7 +2336,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Há três locuções: a sociedade deveria ser harmoniosa e as pessoas deveriam ser encorajadas em seu ‘autodesenvolvimento’ para que pudessem aproveitar. Poder e Dever são verbos auxiliares. Questão incorreta.",
       "questionSha256": "05ce674d43b0efe5e959e521273111d0aa6ddad0bbbedb6b58e51bda0b98b6d3",
-      "answerSha256": "d6e5e95b2353a1188418f0b800e2a4cd0cf7d0cac23086b232c404fbc2e30d47"
+      "answerSha256": "d6e5e95b2353a1188418f0b800e2a4cd0cf7d0cac23086b232c404fbc2e30d47",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de AGU; 2. Identificar a regra central de Tempos e Modos Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula04.q0120",
@@ -1679,7 +2372,41 @@
       "officialAnswer": "A",
       "explanation": "“Deve” é o auxiliar da locução “deve crescer” e está no presente do indicativo. Gabarito letra A.",
       "questionSha256": "70e69be6750dd6631762f8207eff07c3601c0c0f7e67a643668e1c2ccde2fb97",
-      "answerSha256": "7f5a2e87f57d71b91c9852d2917d7b2cf624e6c3215ef0a5a7252a35e585e7fd"
+      "answerSha256": "7f5a2e87f57d71b91c9852d2917d7b2cf624e6c3215ef0a5a7252a35e585e7fd",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CORE-SP; 2. Identificar a regra central de Tempos e Modos Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "correct",
+          "explanation": "Opção a: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "b",
+          "status": "incorrect",
+          "explanation": "Opção b: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "c",
+          "status": "incorrect",
+          "explanation": "Opção c: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "e",
+          "status": "incorrect",
+          "explanation": "Opção e: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Tempos e Modos Verbais."
+        }
+      ]
     },
     {
       "questionId": "aula04.q0130",
@@ -1712,7 +2439,41 @@
       "officialAnswer": "A",
       "explanation": "Estudamos crase separadamente na aula de regência, mas essa questão é essencialmente sobre conjugação dos verbos que temos estudado. Então, vamos focar na conjugação. A letra A está perfeita, observe a conjugação de “conter”, derivado de “ter”: ter-tivermos>conter-contivermos. Vejamos as demais: b) Ele acabará se desfazendo dos amigos à medida que eles vierem a contrariar seus ímpetos caprichosos. (a forma de futuro do subjuntivo do verbo “vir” é “vierem”) c) Uma amizade resiste a toda prova quando, em qualquer das ocasiões da vida, se mantiver leal e verdadeira. (“manter” deriva de “ter”) d) Se aprouvesse a alguém construir uma sólida amizade, teria de renunciar as fraquezas mais comuns. (a forma de “aprazer” vira “aprouvesse”) e) Nada poderei fazer em reparo à fragilidade de uma amizade que não advier de uma leal construção. (“advir” deriva de “vir”) Gabarito letra A. Verbos defectivos São aqueles verbos que têm defeito de conjugação, pois não são conjugados em todas as pessoas, normalmente pela semelhança que a conjugação teria com outro verbo (Falar e Falir: eu falo), ou pelo mau som: “ela computa”... Na maioria dos casos, são conjugados só na primeira e segunda pessoa do plural do modo indicativo, na segunda pessoa do plural do modo imperativo e não possuem flexões no presente do subjuntivo (porque não têm o presente do indicativo). Obs.: O presente do subjuntivo é derivado do radical da primeira pessoa do singular do presente do indicativo, em suma, “eu faço” vira “que eu faça”. Então, quando o verbo não tem a primeira pessoa do singular no indicativo, não terá o presente do subjuntivo. Por consequência, não terá as formas de imperativo que também derivam do subjuntivo. Por não trazerem a primeira pessoa do singular do presente do indicativo, são defectivos os verbos: abolir, banir, brandir, carpir, colorir, computar, delir, explodir, ruir, exaurir, demolir, puir, BACEN - Língua Portuguesa 64 www.estrategiaconcursos.com.br 154 delinquir, fulgir (resplandecer), feder, aturdir, bramir, esculpir, extorquir, retorquir, soer (costumar: ter costume de). Há certa controvérsia entre esses verbos, pois alguns gramáticos e dicionários listam verbos defectivos como regulares. Não podemos entrar nessa discussão, então vamos destacar alguns que já foram cobrados em prova. Verbo Precaver e Reaver No presente do indicativo, só se conjuga com nós (precavemos/reavemos) e vós (precaveis/reaveis). Como o presente do indicativo é a base do presente do subjuntivo, esse verbo não é conjugado neste tempo. Sabendo disso, basta conjugar o verbo precaver seguindo a segunda conjugação, como Beber. No Imperativo, temos: precavei, reavei. Reaver e Precaver não trazem “J” nem “nh” na sua conjugação. Então, estão incorretas formas como “precaveja”, “reaveja”, “reavenha”. Para você não ter que estudar a conjugação dele inteira, siga essa dica: o verbo Reaver só se conjuga naquelas pessoas em que o verbo Haver tem “v” na palavra. Segue a primeira pessoa de cada tempo em que isso ocorre, para você saber o padrão: reouve, reavia, reouvera, reaverei, reaveria. Obs.: Nessa mesma linha estão os verbos “falir” e “adequar”, que também só possuem as pessoas ‘nós’ e ‘vós’ no presente do indicativo. Cuidado: Apesar de “estranhos”, estes verbos não são considerados defectivos: caber, valer, redimir, polir, sortir, rir, escapulir, entupir, sacudir. Verbos vicários São chamados de Verbos Vicários aqueles que fazem as vezes de outros verbos, substituindo-os para evitar repetição. Os mais comuns são os verbos ser e fazer. Normalmente vêm acompanhados de um pronome demonstrativo o, que retoma a ação ou o evento da oração anterior. Ex.: Eu poderia ter fugido, mas não o fiz. (“o fiz” retoma “ter fugido”) Se você não estudou foi porque teve preguiça. (“foi” retoma “não estudou”) Se ela não aceita ir ao cinema é porque não quer. (“é” retoma “aceita”) Observe que há dois verbos e um substitui o outro, quando vicário, o “fazer” não traz seu sentido próprio, pois assume o sentido do outro verbo. As estruturas com esses verbos costumam ser cobradas até em questões de compreensão textual, quando a banca pode perguntar o referente do pronome. BACEN - Língua Portuguesa 65 www.estrategiaconcursos.com.br 154",
       "questionSha256": "4b706c9205409cdb250dde549ae6e6dffc5d82514356dff8af39c42fabfd2150",
-      "answerSha256": "d69bec84a699fe1e873732aaf20446d297458afed1a7dc2e39888aec3605c867"
+      "answerSha256": "d69bec84a699fe1e873732aaf20446d297458afed1a7dc2e39888aec3605c867",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de PREF. DE RECIFE; 2. Identificar a regra central de Tempos e Modos Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "a",
+          "status": "correct",
+          "explanation": "Opção a: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "b",
+          "status": "incorrect",
+          "explanation": "Opção b: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "c",
+          "status": "incorrect",
+          "explanation": "Opção c: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "d",
+          "status": "incorrect",
+          "explanation": "Opção d: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Tempos e Modos Verbais."
+        },
+        {
+          "optionLabel": "e",
+          "status": "incorrect",
+          "explanation": "Opção e: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Tempos e Modos Verbais."
+        }
+      ]
     },
     {
       "questionId": "aula04.q0052",
@@ -1724,7 +2485,10 @@
       "options": [],
       "officialAnswer": "INCORRETA",
       "questionSha256": "3558efaf0d60a7594e850b49f752000db456739b48df8a256ae16f800cf28c7f",
-      "answerSha256": "8c09de9cd548b9191e4e87ade74026de61a223e5f89a404a21eb829c7a4ad3f7"
+      "answerSha256": "8c09de9cd548b9191e4e87ade74026de61a223e5f89a404a21eb829c7a4ad3f7",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Tempos e Modos Verbais; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     }
   ]
 }

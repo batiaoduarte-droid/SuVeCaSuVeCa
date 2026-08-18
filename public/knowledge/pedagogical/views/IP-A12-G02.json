@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A12-G02",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.896Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.648Z"
   },
   "unit": {
     "unitId": "IP-A12-G02",
@@ -458,6 +458,16 @@
         {
           "entityId": "RULE-IP-A12-G02-001",
           "title": "Regras canônicas",
+          "statement": "Abaixo consolidam-se as formulações definitivas estabelecidas ao longo do grupo temático:\nSemântica: Estudo do sentido e da significação dos vocábulos modulados pelo contexto textual e pelas relações de coesão (\"setas\"). [KB-A12-G02-001]\nSinônimos: Palavras diferentes com sentido igual ou semelhante no mesmo nível hierárquico. Dividem-se em Perfeitos (identidade plena) e Imperfeitos (semelhança aproximada). Para a FGV, não existem sinônimos 100% perfeitos absolutos. [KB-A12-G02-002]\nAntônimos: Palavras diferentes com sentidos opostos. Dividem-se em Contrários (oposição gradual), Contraditórios (oposição binária excludente) e Correlativos (papéis relacionais complementares). [KB-A12-G02-003]\nHomônimos: Palavras com significados totalmente distintos em que algo tem que ser estritamente igual. [KB-A12-G02-004]\nPerfeitos: $\\text{Grafia} = \\text{SIM}$, $\\text{Som} = \\text{SIM}$.\nHomógrafos: $\\text{Grafia} = \\text{SIM}$, $\\text{Som} = \\text{NÃO}$.\nHomófonos: $\\text{Grafia} = \\text{NÃO}$, $\\text{Som} = \\text{SIM}$.\nParônimos: Palavras apenas parecidas em que nada é estritamente igual ($\\text{Grafia} \\neq$, $\\text{Som} \\neq$, $\\text{Sentido} \\neq$). [KB-A12-G02-005]\nHiperônimos e Hipônimos: Termos do mesmo campo semântico unidos por relação hierárquica. O hiperônimo é o termo geral/abrangente (gênero); o hipônimo é o termo específico/restrito (espécie). Relação testada por \"tipo de\". [KB-A12-G02-006]\nRegra da Coesão Anafórica: A classificação da retomada segue estritamente o termo que retoma: se o termo que retoma for o geral, é retomada por hiperônimo; se for o específico, é retomada por hipônimo. [KB-A12-G02-006]\nRegra de Antonímia FGV: Estruturação apoiada em antônimos exige termos lexicais opostos; conjunções adversativas (mas) indicam apenas oposição discursiva, não antonímia lexical. [KB-A12-G02-007]\nRegra do Artigo Totalizador FCC: O artigo definido no plural (\"os\") generaliza e possui equivalência semântica com o pronome totalizador \"todos os\". [KB-A12-G02-008]",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Semântica: Estudo do sentido e da significação dos vocábulos modulados pelo contexto textual e pelas relações de coesão (\"setas\"). [KB-A12-G02-001]",
+            "Sinônimos: Palavras diferentes com sentido igual ou semelhante no mesmo nível hierárquico. Dividem-se em Perfeitos (identidade plena) e Imperfeitos (semelhança aproximada). Para a FGV, não existem sinônimos 100% perfeitos absolutos. [KB-A12-G02-002]",
+            "Antônimos: Palavras diferentes com sentidos opostos. Dividem-se em Contrários (oposição gradual), Contraditórios (oposição binária excludente) e Correlativos (papéis relacionais complementares). [KB-A12-G02-003]",
+            "Homônimos: Palavras com significados totalmente distintos em que algo tem que ser estritamente igual. [KB-A12-G02-004]"
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "paragraph",
@@ -490,6 +500,71 @@
         {
           "procedureId": "PROC-A12-G02-001",
           "title": "Teste Fono-Ortográfico de Decisão: Homônimo vs. Parônimo",
+          "objective": "Executar o algoritmo decisório para Teste Fono-Ortográfico de Decisão: Homônimo vs. Parônimo",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste Fono-Ortográfico de Decisão: Homônimo vs. Parônimo."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Verificar Grafia",
+              "explanation": "Comparar cada letra e acento. As palavras são escritas exatamente iguais?",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Verificar Pronúncia",
+              "explanation": "Produzir o som de ambos os vocábulos (avaliando timbre aberto/fechado e fonemas consonantais). O som é 100% idêntico?",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Decisão",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se Grafia = SIM e Som = SIM $\\rightarrow$ Homônimo Perfeito (caminho [v.] / caminho [s.]).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se Grafia = SIM e Som = NÃO $\\rightarrow$ Homônimo Imperfeito Homógrafo (almoço [ô] / almoço [ó]).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se Grafia = NÃO e Som = SIM $\\rightarrow$ Homônimo Imperfeito Homófono (seção / sessão).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Se Grafia = NÃO e Som = NÃO (apenas semelhantes) $\\rightarrow$ Parônimo (infligir / infringir).",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste Fono-Ortográfico de Decisão: Homônimo vs. Parônimo."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -538,6 +613,59 @@
         {
           "procedureId": "PROC-A12-G02-002",
           "title": "Identificação da Direção da Retomada Coesiva (Hiperonímia vs. Hiponímia)",
+          "objective": "Executar o algoritmo decisório para Identificação da Direção da Retomada Coesiva (Hiperonímia vs. Hiponímia)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Identificação da Direção da Retomada Coesiva (Hiperonímia vs. Hiponímia)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar o Antecedente ($T1$) e o Termo Anafórico ($T2$)",
+              "explanation": "$T1$ é o vocábulo citado primeiro; $T2$ é o termo posterior que aponta a \"seta\" para $T1$.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Aplicar o Teste do \"Tipo de\"",
+              "explanation": "Identificar quem é a espécie e quem é o gênero ([Específico] é um tipo de [Geral]).",
+              "test": "Aplicar o Teste do \"Tipo de\": Identificar quem é a espécie e quem é o gênero ([Específico] é um tipo de [Geral])."
+            },
+            {
+              "order": 3,
+              "action": "Inspecionar Exclusivamente o Termo Anafórico ($T2$)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se $T2$ for o termo Geral $\\rightarrow$ Trata-se de Retomada por Hiperônimo.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se $T2$ for o termo Específico $\\rightarrow$ Trata-se de Retomada por Hipônimo.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Identificação da Direção da Retomada Coesiva (Hiperonímia vs. Hiponímia)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -575,6 +703,59 @@
         {
           "procedureId": "PROC-A12-G02-003",
           "title": "Técnica da Polaridade Semântica (+ / -) para Vocabulário Raro",
+          "objective": "Executar o algoritmo decisório para Técnica da Polaridade Semântica (+ / -) para Vocabulário Raro",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Técnica da Polaridade Semântica (+ / -) para Vocabulário Raro."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isolamento do Vocábulo",
+              "explanation": "Localizar a palavra no período original.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Identificação da Carga Axiológica (Polaridade)",
+              "explanation": "Inspecionar os qualificadores do entorno e responder: o autor empregou a palavra para elogiar/valorizar positivamente ([+]), para criticar/denegrir ([-]) ou de modo descritivo neutro?",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Classificação das Alternativas",
+              "explanation": "Atribuir [+], [-] ou neutro a cada uma das opções de resposta.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Descarte Sumário",
+              "explanation": "Eliminar as alternativas que possuem carga valorativa conflitante com a do texto base.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Desempate Denotativo",
+              "explanation": "Se sobrarem opções de mesma polaridade, comparar o campo de aplicação específico (ex.: infalível = que não falha vs. invicto = que não perde disputas esportivas/bélicas).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Técnica da Polaridade Semântica (+ / -) para Vocabulário Raro."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -606,6 +787,63 @@
         {
           "procedureId": "PROC-A12-G02-004",
           "title": "Método dos Blocos Semânticos (Técnica dos Colchetes) para Reescrita de Frases (FCC)",
+          "objective": "Executar o algoritmo decisório para Método dos Blocos Semânticos (Técnica dos Colchetes) para Reescrita de Frases (FCC)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método dos Blocos Semânticos (Técnica dos Colchetes) para Reescrita de Frases (FCC)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Segmentação Estrutural",
+              "explanation": "Isolar sintagmas correspondentes no texto original e na proposta de reescrita utilizando colchetes:",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Checagem de Simetria Predicativa",
+              "explanation": "Verificar se a ação verbal foi distorcida (ex.: ação efetiva vs. mera condição de merecimento).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Detecção de Extrapolação Semântica",
+              "explanation": "Identificar palavras ou adjetivos na reescrita que não encontram respaldo no original (termos \"sobrantes\").",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Detecção de Redução Semântica Indevida",
+              "explanation": "Identificar qualificadores, advérbios ou restritores do texto-base que foram omitidos na reescrita.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Validação de Determinantes",
+              "explanation": "Lembrar que determinantes definidos no plural ([os]) cobrem integralmente pronomes generalizadores ([todos os]).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método dos Blocos Semânticos (Técnica dos Colchetes) para Reescrita de Frases (FCC)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "formulas": [
+            "\\text{Original: } [ \\text{Bloco A} ] + [ \\text{Bloco B} ] + [ \\text{Bloco C} ]",
+            "\\text{Reescrita: } [ \\text{Bloco A'} ] + [ \\text{Bloco B'} ] + [ \\text{Bloco C'} ]"
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -651,6 +889,53 @@
         {
           "procedureId": "PROC-A12-G02-005",
           "title": "Estratégia de Resolução em Colunas Múltiplas e Eliminação de Trás para Frente (VUNESP)",
+          "objective": "Executar o algoritmo decisório para Estratégia de Resolução em Colunas Múltiplas e Eliminação de Trás para Frente (VUNESP)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Estratégia de Resolução em Colunas Múltiplas e Eliminação de Trás para Frente (VUNESP)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Diagnóstico da Coluna Central",
+              "explanation": "Reconhecer que a coluna do meio geralmente traz vocábulos neutros e polissêmicos (modelo, símbolo, mito) com baixo poder discriminatório.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Inversão da Ordem",
+              "explanation": "Iniciar a resolução pela última coluna (de trás para frente), que costuma concentrar termos de sentido mais delimitado e categórico.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Eliminação por Simetria Lógica",
+              "explanation": "Identificar opções que representam desvios simétricos sem apoio textual (ex.: \"algo aquém\" vs. \"algo além\" anulam-se mutuamente se o texto aponta apenas para o ponto médio).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Confirmação",
+              "explanation": "Retornar à primeira coluna apenas para ratificar a alternativa sobrevivente.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Estratégia de Resolução em Colunas Múltiplas e Eliminação de Trás para Frente (VUNESP)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -685,6 +970,22 @@
         {
           "contrastId": "CONTRAST-IP-A12-G02-001",
           "title": "Tabela 1: Matriz Comparativa de Relações Fono-Ortográficas e Semânticas",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 1: Matriz Comparativa de Relações Fono-Ortográficas e Semânticas",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -743,6 +1044,22 @@
         {
           "contrastId": "CONTRAST-IP-A12-G02-002",
           "title": "Tabela 2: Distinções Semânticas Críticas para Provas",
+          "contrastType": "mixed",
+          "conceptA": "Tabela 2: Distinções Semânticas Críticas para Provas",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -805,6 +1122,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G02-001",
           "title": "EX-A12-G02-001 — Bloco de 10 Itens de Fixação Vocabular (Certo/Errado)",
+          "prompt": "\"Em 'Imagens realistas borram a linha entre o que é real e o que é ficção', os vocábulos sublinhados são sinônimos.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"Em 'Imagens realistas borram a linha entre o que é real e o que é ficção', os vocábulos sublinhados são sinônimos.\"",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Julgamento",
+              "rationale": "ERRADO. Real e ficção possuem sentidos opostos (são antônimos contraditórios)."
+            },
+            {
+              "order": 3,
+              "action": "\"Um antônimo de 'prolixo' é 'conciso'.\"",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Julgamento",
+              "rationale": "CERTO. Prolixo é o discurso excessivamente longo/redundante; conciso é o discurso breve/sintético."
+            },
+            {
+              "order": 5,
+              "action": "\"Um sinônimo de 'adorável' é 'agradável'.\"",
+              "rationale": null
+            }
+          ],
+          "result": "Julgamento: CERTO. Próprio, peculiar e particular denotam a mesma singularidade.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G02-001 — Bloco de 10 Itens de Fixação Vocabular (Certo/Errado) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G02-001 — Bloco de 10 Itens de Fixação Vocabular (Certo/Errado).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G02-001 — Bloco de 10 Itens de Fixação Vocabular (Certo/Errado).",
           "blocks": [
             {
               "type": "list",
@@ -951,6 +1300,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G02-002",
           "title": "EX-A12-G02-002 — Questão 11: Consulplan 2023 — CORE-PB (Assistente Administrativo)",
+          "prompt": "Enunciado: Avaliar a proposta inadequada de substituição contextual para os termos sublinhados.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Avaliar a proposta inadequada de substituição contextual para os termos sublinhados."
+            },
+            {
+              "order": 2,
+              "action": "A) \"Reunida na cozinha, a criadagem confabulava.\" — enraivecia; atormentava (GABARITO",
+              "rationale": "INADEQUADA)."
+            },
+            {
+              "order": 3,
+              "action": "B) \"Tachada de desleixada, a arrumadeira caprichou na limpeza.\" — definida; qualificada (Adequada).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) \"Madame esbanjou suas essências com uma altivez digna de uma rainha a caminho do cadafalso.\" — forca; guilhotina (Adequada).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) \"Há dias já que buscavam uma explicação para os odores esquisitos...\" — anormais; incomuns (Adequada).",
+              "rationale": null
+            }
+          ],
+          "result": "A rainha a caminho do cadafalso (estrado de execução) legitima a substituição contextual por guilhotina/forca, consagrando a autonomia do texto frente a dicionários rígidos.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G02-002 — Questão 11: Consulplan 2023 — CORE-PB (Assistente Administrativo) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G02-002 — Questão 11: Consulplan 2023 — CORE-PB (Assistente Administrativo).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G02-002 — Questão 11: Consulplan 2023 — CORE-PB (Assistente Administrativo).",
           "blocks": [
             {
               "type": "list",
@@ -971,6 +1352,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G02-003",
           "title": "EX-A12-G02-003 — Questão 12: VUNESP 2023 — Prefeitura de São Paulo (Fiscal de Posturas)",
+          "prompt": "Trechos Analisados:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Trechos Analisados",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "\"O tempo é meado do século 19.\"",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "\"...o 'flâneur' virou um ícone...\"",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "\"Caminhar sem destino desafiava o utilitarismo.\"",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Alternativas",
+              "rationale": ""
+            }
+          ],
+          "result": "Na primeira coluna, meado indica o meio aproximado (aproximadamente a metade), eliminando as opções extremistas (exatamente) e as opções simetricamente excludentes (aquém/além).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G02-003 — Questão 12: VUNESP 2023 — Prefeitura de São Paulo (Fiscal de Posturas) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G02-003 — Questão 12: VUNESP 2023 — Prefeitura de São Paulo (Fiscal de Posturas).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G02-003 — Questão 12: VUNESP 2023 — Prefeitura de São Paulo (Fiscal de Posturas).",
           "blocks": [
             {
               "type": "list",
@@ -1008,6 +1421,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G02-004",
           "title": "EX-A12-G02-004 — Questão 13: VUNESP 2023 — DPE-SP (Agente de Defensoria - Arquiteto)",
+          "prompt": "Trechos: \"...alivia os efeitos catastróficos (ou, ao menos, os mais perniciosos) do efeito estufa\" e \"O relatório da Organização Meteorológica Mundial é taxativo e deixa um alerta equivalente a uma advertência.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Trechos",
+              "rationale": "\"...alivia os efeitos catastróficos (ou, ao menos, os mais perniciosos) do efeito estufa\" e \"O relatório da Organização Meteorológica Mundial é taxativo e deixa um alerta equivalente a uma advertência.\""
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "Letra D (nocivos... categórico)."
+            },
+            {
+              "order": 3,
+              "action": "Resolução e Justificativa",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Perniciosos liga-se a danos e catástrofes climáticas, significando nocivos ou prejudiciais.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Um relatório que emite uma advertência firme é taxativo, o que equivale formalmente a categórico ou definitivo. A opção consensual possui traço positivo de conciliação, incompatível com uma advertência severa.",
+              "rationale": null
+            }
+          ],
+          "result": "Um relatório que emite uma advertência firme é taxativo, o que equivale formalmente a categórico ou definitivo. A opção consensual possui traço positivo de conciliação, incompatível com uma advertência severa.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G02-004 — Questão 13: VUNESP 2023 — DPE-SP (Agente de Defensoria - Arquiteto) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G02-004 — Questão 13: VUNESP 2023 — DPE-SP (Agente de Defensoria - Arquiteto).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G02-004 — Questão 13: VUNESP 2023 — DPE-SP (Agente de Defensoria - Arquiteto).",
           "blocks": [
             {
               "type": "list",
@@ -1025,6 +1470,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G02-005",
           "title": "EX-A12-G02-005 — Questão 14: VUNESP 2023 — DPE-SP (Oficial de Defensoria)",
+          "prompt": "Trechos: \"...enchiam de mensagens amáveis as ruas de outrora\", \"...expunham todos os seus disparates felizes...\" e \"...ouvia-se a sua linguagem com enternecimento.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Trechos",
+              "rationale": "\"...enchiam de mensagens amáveis as ruas de outrora\", \"...expunham todos os seus disparates felizes...\" e \"...ouvia-se a sua linguagem com enternecimento.\""
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "Letra A (tempos passados; absurdos; brandura)."
+            },
+            {
+              "order": 3,
+              "action": "Resolução e Justificativa",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Outrora remete a tempos passados.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Disparates são incoerências, desatinos ou absurdos.",
+              "rationale": null
+            }
+          ],
+          "result": "Pela técnica da polaridade (PROC-A12-G02-003), enternecimento deriva de terno/ternura, expressando carga positiva [+] que corresponde a brandura (suavidade). Descarta-se compadecimento [-] por carregar ideia de sofrimento/dó.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G02-005 — Questão 14: VUNESP 2023 — DPE-SP (Oficial de Defensoria) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G02-005 — Questão 14: VUNESP 2023 — DPE-SP (Oficial de Defensoria).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G02-005 — Questão 14: VUNESP 2023 — DPE-SP (Oficial de Defensoria).",
           "blocks": [
             {
               "type": "list",
@@ -1043,6 +1520,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G02-006",
           "title": "EX-A12-G02-006 — Questão 15: FCC 2023 — Copergás-PE (Técnico Operacional)",
+          "prompt": "Enunciado: Substituição sem prejuízo de sentido para o termo grifado em: \"Eu iria comprar frutas e uma lista pequena de coisas, além da minha indefectível água mineral com gás.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Substituição sem prejuízo de sentido para o termo grifado em: \"Eu iria comprar frutas e uma lista pequena de coisas, além da minha indefectível água mineral com gás.\""
+            },
+            {
+              "order": 2,
+              "action": "Alternativas",
+              "rationale": "A) insossa | B) insípida | C) inacessível | D) invicta | E) infalível (GABARITO)."
+            },
+            {
+              "order": 3,
+              "action": "Resolução e Justificativa",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Indefectível traz carga positiva [+] (aquilo que não tem defeito, que nunca falta, infalível).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Eliminam-se de imediato as alternativas de carga negativa [-]",
+              "rationale": "insossa (sem sal), insípida (sem gosto) e inacessível (inalcançável)."
+            }
+          ],
+          "result": "Entre invicta (que nunca perdeu torneios/lutas) e infalível (que não falha/que é constante), a acepção exata para o hábito do autor é infalível.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G02-006 — Questão 15: FCC 2023 — Copergás-PE (Técnico Operacional) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G02-006 — Questão 15: FCC 2023 — Copergás-PE (Técnico Operacional).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G02-006 — Questão 15: FCC 2023 — Copergás-PE (Técnico Operacional).",
           "blocks": [
             {
               "type": "list",
@@ -1061,6 +1570,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G02-007",
           "title": "EX-A12-G02-007 — Questão 16: FCC 2023 — TRT 18ª Região (Analista Judiciário)",
+          "prompt": "Enunciado: Identificar o segmento em que o sentido do texto original é adequadamente traduzido no contexto.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identificar o segmento em que o sentido do texto original é adequadamente traduzido no contexto."
+            },
+            {
+              "order": 2,
+              "action": "Análise Segmentada por Blocos Semânticos (PROC-A12-G02-004)",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "A) Incorreta",
+              "rationale": "[têm a \"igualdade\"] $\\neq$ [trabalham de modo igualitário]. Ter a igualdade como tema de estudo não significa executar o trabalho de maneira igualitária."
+            },
+            {
+              "order": 4,
+              "action": "B) Incorreta",
+              "rationale": "[tratam uns aos outros com igual dignidade] $\\neq$ [fazem-se dignos do mesmo tratamento]. Tratar é ação efetiva realizada; fazer-se digno é apenas ter merecimento para recebê-la."
+            },
+            {
+              "order": 5,
+              "action": "C) Incorreta",
+              "rationale": "[homens adultos] $\\neq$ [mais bem formados]. Inserção indevida de critério de instrução formal (extrapolação semântica)."
+            }
+          ],
+          "result": "E) Correta (GABARITO): [estariam ausentes] = [não se apresentariam]; [todos os sinais] = [os traços] (artigo definido plural atuando como generalizador universal); [mais evidentes] = [mais visíveis].",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G02-007 — Questão 16: FCC 2023 — TRT 18ª Região (Analista Judiciário) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G02-007 — Questão 16: FCC 2023 — TRT 18ª Região (Analista Judiciário).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G02-007 — Questão 16: FCC 2023 — TRT 18ª Região (Analista Judiciário).",
           "blocks": [
             {
               "type": "list",
@@ -1080,6 +1621,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G02-008",
           "title": "EX-A12-G02-008 — Questão 17: FGV 2023 — TJ-BA (Juiz Leigo)",
+          "prompt": "Trechos: \"Esses resultados sugerem um possível alvo...\" e \"...formas de diagnósticos mais assertivas...\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Trechos",
+              "rationale": "\"Esses resultados sugerem um possível alvo...\" e \"...formas de diagnósticos mais assertivas...\"."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "Letra E (potencial e categóricas)."
+            },
+            {
+              "order": 3,
+              "action": "Resolução e Justificativa",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Alvo possível = alvo em potencial (potencial). Descarta-se eventual (esporádico) e iminente (que vai ocorrer já).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Diagnósticos assertivos = diagnósticos afirmativos, firmes, precisos (categóricas). Descarta-se sutis (que é o exato oposto).",
+              "rationale": null
+            }
+          ],
+          "result": "Diagnósticos assertivos = diagnósticos afirmativos, firmes, precisos (categóricas). Descarta-se sutis (que é o exato oposto).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G02-008 — Questão 17: FGV 2023 — TJ-BA (Juiz Leigo) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G02-008 — Questão 17: FGV 2023 — TJ-BA (Juiz Leigo).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G02-008 — Questão 17: FGV 2023 — TJ-BA (Juiz Leigo).",
           "blocks": [
             {
               "type": "list",
@@ -1097,6 +1670,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G02-009",
           "title": "EX-A12-G02-009 — Questão 18: FGV 2023 — PGM Niterói (Técnico de Procuradoria)",
+          "prompt": "Enunciado: Identificar o pensamento que apresenta uma estruturação apoiada em antônimos.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identificar o pensamento que apresenta uma estruturação apoiada em antônimos."
+            },
+            {
+              "order": 2,
+              "action": "Análise das Alternativas",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "A) Incorreta. \"A dor é uma advertência, assim como os pequenos prejuízos...\" $\\rightarrow$ Comparação de igualdade (assim como).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "B) Correta (GABARITO). \"Não se acomode com a maré mansa, uma grande onda pode estar se preparando\" $\\rightarrow$ Oposição lexical estrutural direta entre calmaria (maré mansa) e agitação marítima (grande onda).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "C) Incorreta. \"Acelerar demais... derrapagem perigosa\" $\\rightarrow$ Relação de causa e efeito.",
+              "rationale": null
+            }
+          ],
+          "result": "E) Incorreta. \"A concorrência é uma prática dolorosa, mas produz ótimos resultados\" $\\rightarrow$ Conjunção adversativa (mas), e não antônimos lexicais.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G02-009 — Questão 18: FGV 2023 — PGM Niterói (Técnico de Procuradoria) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G02-009 — Questão 18: FGV 2023 — PGM Niterói (Técnico de Procuradoria).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G02-009 — Questão 18: FGV 2023 — PGM Niterói (Técnico de Procuradoria).",
           "blocks": [
             {
               "type": "list",
@@ -1116,6 +1721,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G02-010",
           "title": "EX-A12-G02-010 — Questão 19: Cebraspe 2023 — SERPRO (Analista)",
+          "prompt": "Item: No trecho \"...seria possível devassar de vez o mistério da passagem do ano\", o verbo \"devassar\" é empregado com o mesmo sentido de descobrir.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item",
+              "rationale": "No trecho \"...seria possível devassar de vez o mistério da passagem do ano\", o verbo \"devassar\" é empregado com o mesmo sentido de descobrir."
+            },
+            {
+              "order": 2,
+              "action": "Julgamento",
+              "rationale": "CERTO. No contexto literário, devassar o mistério significa penetrar a fundo, desvendar e trazer à luz o desconhecido."
+            }
+          ],
+          "result": "Julgamento: CERTO. No contexto literário, devassar o mistério significa penetrar a fundo, desvendar e trazer à luz o desconhecido.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G02-010 — Questão 19: Cebraspe 2023 — SERPRO (Analista) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G02-010 — Questão 19: Cebraspe 2023 — SERPRO (Analista).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G02-010 — Questão 19: Cebraspe 2023 — SERPRO (Analista).",
           "blocks": [
             {
               "type": "list",
@@ -1130,6 +1752,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A12-G02-011",
           "title": "EX-A12-G02-011 — Questão 20: Cebraspe 2023 — FUB (Técnico de Laboratório)",
+          "prompt": "Item: O vocábulo \"indelével\" em \"...tornou-se uma marca indelével de nossa espécie\" está empregado com o mesmo sentido de permanente.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item",
+              "rationale": "O vocábulo \"indelével\" em \"...tornou-se uma marca indelével de nossa espécie\" está empregado com o mesmo sentido de permanente."
+            },
+            {
+              "order": 2,
+              "action": "Julgamento",
+              "rationale": "CERTO. Aquilo que é indelével não se pode apagar, correspondendo contextualmente a um traço permanente e inalterável."
+            }
+          ],
+          "result": "Julgamento: CERTO. Aquilo que é indelével não se pode apagar, correspondendo contextualmente a um traço permanente e inalterável.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A12-G02-011 — Questão 20: Cebraspe 2023 — FUB (Técnico de Laboratório) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A12-G02-011 — Questão 20: Cebraspe 2023 — FUB (Técnico de Laboratório).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A12-G02-011 — Questão 20: Cebraspe 2023 — FUB (Técnico de Laboratório).",
           "blocks": [
             {
               "type": "list",
@@ -1188,8 +1827,12 @@
         {
           "trapId": "WARN-A12-G02-001",
           "title": "A Ilusão dos Sinônimos Perfeitos na FGV",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Ilusão dos Sinônimos Perfeitos na FGV.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Ilusão dos Sinônimos Perfeitos na FGV.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Ilusão dos Sinônimos Perfeitos na FGV no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Ilusão dos Sinônimos Perfeitos na FGV.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Ilusão dos Sinônimos Perfeitos na FGV.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Ilusão dos Sinônimos Perfeitos na FGV para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Ilusão dos Sinônimos Perfeitos na FGV.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Ilusão dos Sinônimos Perfeitos na FGV.",
           "blocks": [
             {
               "type": "list",
@@ -1204,8 +1847,12 @@
         {
           "trapId": "WARN-A12-G02-002",
           "title": "O Erro de Restringir Antonímia à Contradição Pura",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Erro de Restringir Antonímia à Contradição Pura.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Erro de Restringir Antonímia à Contradição Pura.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Erro de Restringir Antonímia à Contradição Pura no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Erro de Restringir Antonímia à Contradição Pura.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Erro de Restringir Antonímia à Contradição Pura.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Erro de Restringir Antonímia à Contradição Pura para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Erro de Restringir Antonímia à Contradição Pura.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Erro de Restringir Antonímia à Contradição Pura.",
           "blocks": [
             {
               "type": "list",
@@ -1220,8 +1867,12 @@
         {
           "trapId": "WARN-A12-G02-003",
           "title": "Confundir Homófonos com Parônimos",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Homófonos com Parônimos.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Homófonos com Parônimos.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Homófonos com Parônimos no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Homófonos com Parônimos.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Homófonos com Parônimos.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Homófonos com Parônimos para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Homófonos com Parônimos.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Homófonos com Parônimos.",
           "blocks": [
             {
               "type": "list",
@@ -1236,8 +1887,12 @@
         {
           "trapId": "WARN-A12-G02-004",
           "title": "Confusão entre Oposição Adversativa e Antonímia Lexical",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão entre Oposição Adversativa e Antonímia Lexical.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão entre Oposição Adversativa e Antonímia Lexical.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão entre Oposição Adversativa e Antonímia Lexical no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão entre Oposição Adversativa e Antonímia Lexical.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão entre Oposição Adversativa e Antonímia Lexical.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão entre Oposição Adversativa e Antonímia Lexical para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão entre Oposição Adversativa e Antonímia Lexical.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão entre Oposição Adversativa e Antonímia Lexical.",
           "blocks": [
             {
               "type": "list",
@@ -1252,8 +1907,12 @@
         {
           "trapId": "WARN-A12-G02-005",
           "title": "A Armadilha da Paráfrase Incompleta por Redução (FCC)",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha da Paráfrase Incompleta por Redução (FCC).",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha da Paráfrase Incompleta por Redução (FCC).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha da Paráfrase Incompleta por Redução (FCC) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha da Paráfrase Incompleta por Redução (FCC).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha da Paráfrase Incompleta por Redução (FCC).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha da Paráfrase Incompleta por Redução (FCC) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha da Paráfrase Incompleta por Redução (FCC).",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha da Paráfrase Incompleta por Redução (FCC).",
           "blocks": [
             {
               "type": "list",
@@ -1402,7 +2061,10 @@
       "officialAnswer": "incorrect",
       "explanation": "“Mono”, em “monopólio”, até pelo prefixo, não significa “poucos”, significa “um, único”.\nQuestão incorreta.",
       "questionSha256": "0dd6328a9a5bae005320a44d13612140137cf7c774324a03c8e88541d91b414a",
-      "answerSha256": "b9f698455f686b5de64451d9a070f80c855ac2792fc93ab3678a8bf9cf30cdf5"
+      "answerSha256": "b9f698455f686b5de64451d9a070f80c855ac2792fc93ab3678a8bf9cf30cdf5",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Sinônimos e Antônimos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula12.q0147",
@@ -1414,7 +2076,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "0aff2b81c69d3a7cb8a4bfc7131e81d9ab0be8095f8a8d10c1e5f333e2798aba",
-      "answerSha256": "92692d5ed1fb5c397130e2ed43869b391ee2821dcd26a6ce3274c70878168549"
+      "answerSha256": "92692d5ed1fb5c397130e2ed43869b391ee2821dcd26a6ce3274c70878168549",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Sinônimos e Antônimos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula12.q0044",
@@ -1427,7 +2092,10 @@
       "officialAnswer": "correct",
       "explanation": "Exatamente, temos antônimos, palavras que possuem sentido contrário.\nQuestão correta.",
       "questionSha256": "755d6990aa58209fc73ed856e75056ea1675eae3201749974b6dd0376c421404",
-      "answerSha256": "0e655d70bd47bc979682efa410e756deb6e210cdf0c4405af19f40a047859cfa"
+      "answerSha256": "0e655d70bd47bc979682efa410e756deb6e210cdf0c4405af19f40a047859cfa",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Sinônimos e Antônimos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula12.q0114",
@@ -1439,7 +2107,10 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "661fdb59fcf767be702c2cc10909b75dbb09bc72660f187041e7fabf51293183",
-      "answerSha256": "0f2dcb3e710fa2e85ec1ec838eaadf23cbd539d6c186c8111e8458cee54759b7"
+      "answerSha256": "0f2dcb3e710fa2e85ec1ec838eaadf23cbd539d6c186c8111e8458cee54759b7",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Sinônimos e Antônimos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula12.q0076",
@@ -1473,7 +2144,41 @@
       "officialAnswer": "A",
       "explanation": "a) Bastava lembrar-se do famoso “livre-arbítrio”, que é a livre escolha de fazer o que se tem\nvontade. Assim, “arbítrio” e “vontade” são utilizados como sinônimos. Questão correta.\nb) “Inusitado” é incomum, não usual, que causa surpresa. “Corriqueiro” significa comum,\nordinário, usual, trivial. Essas palavras são antônimas. Questão incorreta.\nc) “Comezinha” é sinônimo de usual, corriqueiro. Tem então sentido oposto a “extraordinário”.\nd) “aterrador” é aterrorizante; “atenuador” é aquilo que suaviza algo. Questão incorreta.\ne) Na terminologia técnica da filosofia, “dilema” até tem o sentido de uma decisão entre\npremissas contraditórias. Mas, no texto, “dilema” foi utilizado com sentido de “decisão a ser\ntomada”, “escolha”, “problema”, “dicotomia”. Questão incorreta. Gabarito Letra A.",
       "questionSha256": "708b9e6318ce9861d73f832f562ede95b6550a12e1942cd8c2ffe42e8123a41d",
-      "answerSha256": "40ba99069255b8fcba79865c91850b1b1f69e4b4854077d9198c5486525e7ee8"
+      "answerSha256": "40ba99069255b8fcba79865c91850b1b1f69e4b4854077d9198c5486525e7ee8",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Sinônimos e Antônimos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "correct",
+          "explanation": "Opção A: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Sinônimos e Antônimos."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Sinônimos e Antônimos."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Sinônimos e Antônimos."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Sinônimos e Antônimos."
+        },
+        {
+          "optionLabel": "E",
+          "status": "incorrect",
+          "explanation": "Opção E: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Sinônimos e Antônimos."
+        }
+      ]
     },
     {
       "questionId": "aula12.q0146",
@@ -1506,7 +2211,41 @@
       ],
       "officialAnswer": "A",
       "questionSha256": "1dea2d0813bbdce53bf84d9c74ab658e7c66d0f3af2d6a2b83a3341dbadae392",
-      "answerSha256": "b5c085e9f1cb8197f7e0a1c24dcc76385fb0ba3e887ad49dfaf78ec0b85de40d"
+      "answerSha256": "b5c085e9f1cb8197f7e0a1c24dcc76385fb0ba3e887ad49dfaf78ec0b85de40d",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Sinônimos e Antônimos; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "correct",
+          "explanation": "Opção A: Gabarito oficial correto.",
+          "decisiveCriterion": "Aplicação das regras normativas de Sinônimos e Antônimos."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Sinônimos e Antônimos."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Sinônimos e Antônimos."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Sinônimos e Antônimos."
+        },
+        {
+          "optionLabel": "E",
+          "status": "incorrect",
+          "explanation": "Opção E: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Sinônimos e Antônimos."
+        }
+      ]
     }
   ]
 }

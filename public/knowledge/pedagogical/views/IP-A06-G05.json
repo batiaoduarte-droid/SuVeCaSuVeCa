@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A06-G05",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.818Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.573Z"
   },
   "unit": {
     "unitId": "IP-A06-G05",
@@ -461,6 +461,16 @@
         {
           "entityId": "RULE-IP-A06-G05-001",
           "title": "Regras canônicas",
+          "statement": "Complemento Nominal (Regra Canônica): Termo integrante preposicionado obrigatório que completa o sentido de substantivo abstrato (com sentido passivo), adjetivo ou advérbio (KB-A06-G05-CN-AGENTE-PASSIVA-002).\nAgente da Passiva (Regra Canônica): Termo integrante preposicionado (por ou de) que indica o agente executor da ação em orações na voz passiva analítica (ser + particípio), convertendo-se em sujeito na voz ativa (KB-A06-G05-CN-AGENTE-PASSIVA-003).\nObjeto Direto vs. Objeto Indireto: Ambos completam verbo; o OD possui preposição facultativa/não obrigatória, enquanto o OI possui preposição estritamente obrigatória (KB-A06-G05-CN-AGENTE-PASSIVA-004).\nConceito Operacional de \"Nome\": No âmbito da sintaxe oracional, compreende estritamente a tríade morfossintática: substantivo, adjetivo e advérbio (KB-A06-G05-CN-AGENTE-PASSIVA-002).\nRegra da Autonomia Vetorial do Agente da Passiva: O Agente da Passiva não estabelece subordinação de complementação sobre outro termo (não manda seta); atua diretamente como praticante da ação verbal passiva (KB-A06-G05-CN-AGENTE-PASSIVA-004, KB-A06-G05-CN-AGENTE-PASSIVA-008).",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Complemento Nominal (Regra Canônica): Termo integrante preposicionado obrigatório que completa o sentido de substantivo abstrato (com sentido passivo), adjetivo ou advérbio (KB-A06-G05-CN-AGENTE-PASSIVA-002).",
+            "Agente da Passiva (Regra Canônica): Termo integrante preposicionado (por ou de) que indica o agente executor da ação em orações na voz passiva analítica (ser + particípio), convertendo-se em sujeito na voz ativa (KB-A06-G05-CN-AGENTE-PASSIVA-003).",
+            "Objeto Direto vs. Objeto Indireto: Ambos completam verbo; o OD possui preposição facultativa/não obrigatória, enquanto o OI possui preposição estritamente obrigatória (KB-A06-G05-CN-AGENTE-PASSIVA-004).",
+            "Conceito Operacional de \"Nome\": No âmbito da sintaxe oracional, compreende estritamente a tríade morfossintática: substantivo, adjetivo e advérbio (KB-A06-G05-CN-AGENTE-PASSIVA-002)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -482,6 +492,107 @@
         {
           "procedureId": "PROC-A06-G05-CN-AGENTE-PASSIVA-001",
           "title": "O Algoritmo Operacional dos 3 Passos da Análise Sintática por Setas",
+          "objective": "Executar o algoritmo decisório para O Algoritmo Operacional dos 3 Passos da Análise Sintática por Setas",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de O Algoritmo Operacional dos 3 Passos da Análise Sintática por Setas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Achar o Referente (Lançar a Seta)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Dialogue com a frase para identificar a que palavra a expressão sublinhada se subordina semanticamente.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Desenhe uma seta que parte do termo sublinhado e aponta para a palavra regente.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Atenção",
+              "explanation": "Se o termo estiver em uma locução passiva e expressar quem pratica a ação, observe que ele não manda seta para palavra alguma.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Passo 2 — Classificar Morfologicamente o Termo Regente (Destino da Seta)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Teste do Verbo",
+              "explanation": "Conjugável no tempo/modo $\\rightarrow$ Verbo.",
+              "test": "Teste do Verbo: Conjugável no tempo/modo $\\rightarrow$ Verbo."
+            },
+            {
+              "order": 7,
+              "action": "Teste do Substantivo",
+              "explanation": "Admite anteposição de artigo (a necessidade, o amor, a leitura) $\\rightarrow$ Substantivo.",
+              "test": "Teste do Substantivo: Admite anteposição de artigo (a necessidade, o amor, a leitura) $\\rightarrow$ Substantivo."
+            },
+            {
+              "order": 8,
+              "action": "Teste do Adjetivo",
+              "explanation": "Aceita o encaixe de \"que é / que está\" (remédio [que é] prejudicial) $\\rightarrow$ Adjetivo.",
+              "test": "Teste do Adjetivo: Aceita o encaixe de \"que é / que está\" (remédio [que é] prejudicial) $\\rightarrow$ Adjetivo."
+            },
+            {
+              "order": 9,
+              "action": "Teste do Advérbio",
+              "explanation": "Modifica verbo indicando circunstância de modo (agiu contrariamente) $\\rightarrow$ Advérbio.",
+              "test": "Teste do Advérbio: Modifica verbo indicando circunstância de modo (agiu contrariamente) $\\rightarrow$ Advérbio."
+            },
+            {
+              "order": 10,
+              "action": "Passo 3 — Enquadrar na Matriz Sintática",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Se a seta apontou para Verbo com preposição $\\rightarrow$ Classifique como Objeto Indireto (OI).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 12,
+              "action": "Se a seta apontou para Nome (substantivo, adjetivo, advérbio) com preposição $\\rightarrow$ Classifique como Complemento Nominal (CN).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 13,
+              "action": "Se não mandou seta, houver locução passiva (ser + particípio) e passar no teste de transposição ativa $\\rightarrow$ Classifique como Agente da Passiva (AP).",
+              "explanation": null,
+              "test": "Se não mandou seta, houver locução passiva (ser + particípio) e passar no teste de transposição ativa $\\rightarrow$ Classifique como Agente da Passiva (AP)."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de O Algoritmo Operacional dos 3 Passos da Análise Sintática por Setas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -551,6 +662,83 @@
         {
           "procedureId": "PROC-A06-G05-CN-AGENTE-PASSIVA-002",
           "title": "Teste de Transposição para Voz Ativa (Validação do Agente da Passiva)",
+          "objective": "Executar o algoritmo decisório para Teste de Transposição para Voz Ativa (Validação do Agente da Passiva)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Transposição para Voz Ativa (Validação do Agente da Passiva)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole o termo preposicionado introduzido por por (pelo/pela) ou de.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Identifique o particípio da oração passiva (expresso em locução analítica ou em oração reduzida).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Transponha a oração para a voz ativa, transformando o termo candidato a Agente da Passiva no sujeito da oração ativa",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "O trem foi filmado pela TV $\\rightarrow$ A TV filmou o trem. (Válido $\\rightarrow$ Agente da Passiva).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "O castelo foi cercado pelos inimigos $\\rightarrow$ Os inimigos cercaram o castelo. (Válido $\\rightarrow$ Agente da Passiva).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "O menino cercado de curiosos $\\rightarrow$ Curiosos cercaram o menino. (Válido $\\rightarrow$ Agente da Passiva).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Avalie o resultado semântico",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Se a conversão for anômala ou indicar a causa (A inteligência elogiou o menino? $\\rightarrow$ Impossível) $\\rightarrow$ Trata-se de Adjunto Adverbial de Causa.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Se o termo não realizou o ato (Os pais receberam a herança? $\\rightarrow$ Incompatível) $\\rightarrow$ Trata-se de Complemento Nominal.",
+              "explanation": null,
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Transposição para Voz Ativa (Validação do Agente da Passiva)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -608,6 +796,22 @@
         {
           "contrastId": "CONTRAST-IP-A06-G05-001",
           "title": "Tabela de Contrastes Críticos",
+          "contrastType": "mixed",
+          "conceptA": "Tabela de Contrastes Críticos",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -658,6 +862,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G05-001",
           "title": "EX-A06-G05-CN-AGENTE-PASSIVA-001 — Tríade Canônica de Exemplos de Complemento Nominal",
+          "prompt": "CN completando Substantivo:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "CN completando Substantivo",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Frase",
+              "rationale": "O povo tinha necessidade de alimentos."
+            },
+            {
+              "order": 3,
+              "action": "Análise",
+              "rationale": "de alimentos $\\rightarrow$ aponta para necessidade (substantivo: a necessidade) $\\rightarrow$ Complemento Nominal (núcleo morfológico: substantivo alimentos)."
+            },
+            {
+              "order": 4,
+              "action": "CN completando Adjetivo",
+              "rationale": ""
+            },
+            {
+              "order": 5,
+              "action": "Frase",
+              "rationale": "Este remédio é prejudicial à saúde."
+            }
+          ],
+          "result": "Análise: ao esperado $\\rightarrow$ aponta para contrariamente (advérbio de modo modificando agiu) $\\rightarrow$ Complemento Nominal.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G05-CN-AGENTE-PASSIVA-001 — Tríade Canônica de Exemplos de Complemento Nominal sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G05-CN-AGENTE-PASSIVA-001 — Tríade Canônica de Exemplos de Complemento Nominal.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G05-CN-AGENTE-PASSIVA-001 — Tríade Canônica de Exemplos de Complemento Nominal.",
           "blocks": [
             {
               "type": "list",
@@ -709,6 +945,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G05-002",
           "title": "EX-A06-G05-CN-AGENTE-PASSIVA-002 — Exemplos Canônicos de Agente da Passiva com Preposições \"Por\" e \"De\"",
+          "prompt": "Forma Padrão (Preposição por / contração pelos):",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Forma Padrão (Preposição por / contração pelos)",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Frase",
+              "rationale": "O castelo foi cercado pelos inimigos."
+            },
+            {
+              "order": 3,
+              "action": "Análise",
+              "rationale": "Locução passiva analítica foi cercado (ser + particípio); conversão ativa: Os inimigos cercaram o castelo $\\rightarrow$ Agente da Passiva."
+            },
+            {
+              "order": 4,
+              "action": "Forma Variante (Preposição de)",
+              "rationale": ""
+            },
+            {
+              "order": 5,
+              "action": "Frase",
+              "rationale": "O castelo foi cercado de inimigos."
+            }
+          ],
+          "result": "Análise: Oração equivalente à padrão; preposição de introduzindo o agente executor $\\rightarrow$ Agente da Passiva.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G05-CN-AGENTE-PASSIVA-002 — Exemplos Canônicos de Agente da Passiva com Preposições \"Por\" e \"De\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G05-CN-AGENTE-PASSIVA-002 — Exemplos Canônicos de Agente da Passiva com Preposições \"Por\" e \"De\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G05-CN-AGENTE-PASSIVA-002 — Exemplos Canônicos de Agente da Passiva com Preposições \"Por\" e \"De\".",
           "blocks": [
             {
               "type": "list",
@@ -745,6 +1013,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G05-003",
           "title": "EX-A06-G05-CN-AGENTE-PASSIVA-003 — Pares Mínimos de Contraste Lexical: OI vs. CN",
+          "prompt": "Oração A: O aluno necessita [VTI] de ajuda [OI].",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração A",
+              "rationale": "O aluno necessita [VTI] de ajuda [OI]."
+            },
+            {
+              "order": 2,
+              "action": "O termo de ajuda liga-se diretamente ao verbo necessita $\\rightarrow$ Objeto Indireto.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "Oração B",
+              "rationale": "O aluno tem necessidade [Subst.] de ajuda [CN]."
+            },
+            {
+              "order": 4,
+              "action": "O termo de ajuda liga-se ao substantivo necessidade (a necessidade) $\\rightarrow$ Complemento Nominal.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Lição",
+              "rationale": "A estrutura do termo regido é idêntica (de ajuda); sua função sintática muda em decorrência exclusiva da morfologia do termo regente."
+            }
+          ],
+          "result": "Lição: A estrutura do termo regido é idêntica (de ajuda); sua função sintática muda em decorrência exclusiva da morfologia do termo regente.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G05-CN-AGENTE-PASSIVA-003 — Pares Mínimos de Contraste Lexical: OI vs. CN sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G05-CN-AGENTE-PASSIVA-003 — Pares Mínimos de Contraste Lexical: OI vs. CN.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G05-CN-AGENTE-PASSIVA-003 — Pares Mínimos de Contraste Lexical: OI vs. CN.",
           "blocks": [
             {
               "type": "list",
@@ -762,6 +1062,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G05-004",
           "title": "EX-A06-G05-CN-AGENTE-PASSIVA-004 — Bloco de Exercícios 1: Diferenciação entre CN (A) e OI (B)",
+          "prompt": "Enunciado: Diferencie o complemento nominal (A) do objeto indireto (B).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Ele agradeceu aos companheiros.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 1 e 2",
+              "rationale": "Seta de aos companheiros $\\rightarrow$ agradeceu (Verbo)."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "( B ) Objeto Indireto | Morfologia do núcleo: Substantivo (companheiros)."
+            },
+            {
+              "order": 4,
+              "action": "Estava realmente agradecido a eles.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Passo 1 e 2",
+              "rationale": "Seta de a eles $\\rightarrow$ agradecido (Adjetivo: ele que estava agradecido)."
+            }
+          ],
+          "result": "Classificação: ( B ) Objeto Indireto | Morfologia do núcleo: Pronome de tratamento (você).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G05-CN-AGENTE-PASSIVA-004 — Bloco de Exercícios 1: Diferenciação entre CN (A) e OI (B) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G05-CN-AGENTE-PASSIVA-004 — Bloco de Exercícios 1: Diferenciação entre CN (A) e OI (B).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G05-CN-AGENTE-PASSIVA-004 — Bloco de Exercícios 1: Diferenciação entre CN (A) e OI (B).",
           "blocks": [
             {
               "type": "paragraph",
@@ -862,6 +1194,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G05-005",
           "title": "EX-A06-G05-CN-AGENTE-PASSIVA-005 — Bloco de Exercícios 2: Identificação Mista (CN, AP e OI)",
+          "prompt": "Enunciado: Identifique as funções sintáticas dos termos destacados: (A) complemento nominal, (B) agente da passiva, (C) objeto indireto.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Sua classificação foi comemorada pelos amigos.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "Locução passiva foi comemorada; ativa: Os amigos comemoraram; não manda seta."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "( B ) Agente da Passiva | Morfologia: Substantivo."
+            },
+            {
+              "order": 4,
+              "action": "A crença em dias melhores animava-os.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Análise",
+              "rationale": "Seta de em dias melhores $\\rightarrow$ crença (Substantivo: a crença)."
+            }
+          ],
+          "result": "Classificação: ( C ) Objeto Indireto | Morfologia: Substantivo (prova).",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G05-CN-AGENTE-PASSIVA-005 — Bloco de Exercícios 2: Identificação Mista (CN, AP e OI) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G05-CN-AGENTE-PASSIVA-005 — Bloco de Exercícios 2: Identificação Mista (CN, AP e OI).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G05-CN-AGENTE-PASSIVA-005 — Bloco de Exercícios 2: Identificação Mista (CN, AP e OI).",
           "blocks": [
             {
               "type": "paragraph",
@@ -992,6 +1356,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A06-G05-006",
           "title": "EX-A06-G05-CN-AGENTE-PASSIVA-006 — Estudo de Caso Avançado FGV: Particípio com Auxiliar Implícito",
+          "prompt": "Oração da Questão: O menino cercado de curiosos estava vivo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração da Questão",
+              "rationale": "O menino cercado de curiosos estava vivo."
+            },
+            {
+              "order": 2,
+              "action": "Resolução Comentada",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Há uma oração reduzida de particípio (cercado = que fora cercado).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "O verbo auxiliar estar/ser encontra-se elíptico.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Aplicando a transposição ativa",
+              "rationale": "Curiosos cercaram o menino."
+            }
+          ],
+          "result": "O termo de curiosos realiza o papel de agente da ação passiva $\\rightarrow$ Agente da Passiva.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G05-CN-AGENTE-PASSIVA-006 — Estudo de Caso Avançado FGV: Particípio com Auxiliar Implícito sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G05-CN-AGENTE-PASSIVA-006 — Estudo de Caso Avançado FGV: Particípio com Auxiliar Implícito.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G05-CN-AGENTE-PASSIVA-006 — Estudo de Caso Avançado FGV: Particípio com Auxiliar Implícito.",
           "blocks": [
             {
               "type": "list",
@@ -1038,8 +1434,12 @@
         {
           "trapId": "WARN-A06-G05-CN-AGENTE-PASSIVA-001",
           "title": "A Pegadinha do \"Pelo/Pela\" sem Agente da Passiva",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Pegadinha do \"Pelo/Pela\" sem Agente da Passiva.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Pegadinha do \"Pelo/Pela\" sem Agente da Passiva.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Pegadinha do \"Pelo/Pela\" sem Agente da Passiva no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Pegadinha do \"Pelo/Pela\" sem Agente da Passiva.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Pegadinha do \"Pelo/Pela\" sem Agente da Passiva.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Pegadinha do \"Pelo/Pela\" sem Agente da Passiva para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Pegadinha do \"Pelo/Pela\" sem Agente da Passiva.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Pegadinha do \"Pelo/Pela\" sem Agente da Passiva.",
           "blocks": [
             {
               "type": "list",
@@ -1055,8 +1455,12 @@
         {
           "trapId": "WARN-A06-G05-CN-AGENTE-PASSIVA-002",
           "title": "Falso Agente da Passiva em Particípios Adjetivados",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Falso Agente da Passiva em Particípios Adjetivados.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Falso Agente da Passiva em Particípios Adjetivados.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Falso Agente da Passiva em Particípios Adjetivados no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Falso Agente da Passiva em Particípios Adjetivados.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Falso Agente da Passiva em Particípios Adjetivados.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Falso Agente da Passiva em Particípios Adjetivados para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Falso Agente da Passiva em Particípios Adjetivados.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Falso Agente da Passiva em Particípios Adjetivados.",
           "blocks": [
             {
               "type": "list",
@@ -1071,8 +1475,12 @@
         {
           "trapId": "WARN-A06-G05-CN-AGENTE-PASSIVA-003",
           "title": "O Erro de Classificar o Termo Isolado sem Olhar o Regente",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Erro de Classificar o Termo Isolado sem Olhar o Regente.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Erro de Classificar o Termo Isolado sem Olhar o Regente.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Erro de Classificar o Termo Isolado sem Olhar o Regente no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Erro de Classificar o Termo Isolado sem Olhar o Regente.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Erro de Classificar o Termo Isolado sem Olhar o Regente.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Erro de Classificar o Termo Isolado sem Olhar o Regente para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Erro de Classificar o Termo Isolado sem Olhar o Regente.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Erro de Classificar o Termo Isolado sem Olhar o Regente.",
           "blocks": [
             {
               "type": "list",
@@ -1087,8 +1495,12 @@
         {
           "trapId": "WARN-A06-G05-CN-AGENTE-PASSIVA-004",
           "title": "O Erro de Lançar Seta a Partir do Agente da Passiva",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Erro de Lançar Seta a Partir do Agente da Passiva.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Erro de Lançar Seta a Partir do Agente da Passiva.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Erro de Lançar Seta a Partir do Agente da Passiva no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Erro de Lançar Seta a Partir do Agente da Passiva.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Erro de Lançar Seta a Partir do Agente da Passiva.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Erro de Lançar Seta a Partir do Agente da Passiva para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Erro de Lançar Seta a Partir do Agente da Passiva.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Erro de Lançar Seta a Partir do Agente da Passiva.",
           "blocks": [
             {
               "type": "list",

@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A05-G10",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.802Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.558Z"
   },
   "unit": {
     "unitId": "IP-A05-G10",
@@ -802,6 +802,59 @@
         {
           "procedureId": "PROC-A05-V034-036-001",
           "title": "Método da Análise Verbal de Trás para Frente",
+          "objective": "Executar o algoritmo decisório para Método da Análise Verbal de Trás para Frente",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método da Análise Verbal de Trás para Frente."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize todos os verbos e conectivos da cadeia",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Dirija-se ao ÚLTIMO VERBO da sequência",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Questione a Sintaxe ao VERBO PRINCIPAL",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Classifique TODOS os verbos anteriores como AUXILIARES",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Aplique a Concordância",
+              "explanation": "",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método da Análise Verbal de Trás para Frente."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -881,6 +934,77 @@
         {
           "procedureId": "PROC-A05-V034-036-002",
           "title": "Teste de Substituição de \"Haver\" em Questões de Reescritura",
+          "objective": "Executar o algoritmo decisório para Teste de Substituição de \"Haver\" em Questões de Reescritura",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Substituição de \"Haver\" em Questões de Reescritura."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar o Valor Semântico do \"Haver\" Original",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Existência de coisas/pessoas $\\rightarrow$ Sentido de existir.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Acontecimento/evento $\\rightarrow$ Sentido de ocorrer / acontecer.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Tempo cronológico passado $\\rightarrow$ Sentido de fazer.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Validar a Preservação Semântica",
+              "explanation": "Rejeitar a troca se a banca substituir haver (evento) por existir.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Aplicar a Regra de Concordância do Verbo Substituto",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Se substituir por existir ou ocorrer",
+              "explanation": "converta o objeto direto em sujeito e flexione o verbo se o sujeito for plural (Houve erros $\\rightarrow$ Ocorreram erros).",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Se substituir por fazer temporal",
+              "explanation": "mantenha-o no singular (Há três meses $\\rightarrow$ Faz três meses).",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Substituição de \"Haver\" em Questões de Reescritura."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -933,6 +1057,107 @@
         {
           "procedureId": "PROC-A05-V034-036-003",
           "title": "Protocolo de Classificação do Sujeito pela Flexão Verbal",
+          "objective": "Executar o algoritmo decisório para Protocolo de Classificação do Sujeito pela Flexão Verbal",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo de Classificação do Sujeito pela Flexão Verbal."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Teste de Impessoalidade",
+              "explanation": "O verbo exprime fenômeno natural denotativo, haver (= existir/ocorrer/tempo) ou fazer temporal?",
+              "test": "Passo 1 — Teste de Impessoalidade: O verbo exprime fenômeno natural denotativo, haver (= existir/ocorrer/tempo) ou fazer temporal?"
+            },
+            {
+              "order": 2,
+              "action": "SIM",
+              "explanation": "Classifique como Oração Sem Sujeito (Sujeito Inexistente).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "NÃO",
+              "explanation": "O verbo é pessoal. Prossiga para o Passo 2.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Passo 2 — Análise da Desinência Verbal",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "1ª Pessoa Singular (Eu) ou Plural (Nós)",
+              "explanation": "Sujeito Oculto / Desinencial / Elíptico.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "3ª Pessoa do Singular (Ele/Ela)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Possui partícula de indeterminação se?",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Se SIM",
+              "explanation": "Sujeito Indeterminado.",
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Se NÃO",
+              "explanation": "Sujeito Oculto / Elíptico Contextual (resgate o referente no texto).",
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "3ª Pessoa do Plural (Eles/Elas)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Há referente expresso no parágrafo/texto anterior?",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 12,
+              "action": "Se SIM",
+              "explanation": "Sujeito Oculto / Elíptico Contextual.",
+              "test": null
+            },
+            {
+              "order": 13,
+              "action": "Se NÃO",
+              "explanation": "Sujeito Indeterminado.",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo de Classificação do Sujeito pela Flexão Verbal."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -994,6 +1219,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G10-001",
           "title": "Análise morfossintática",
+          "prompt": "Hei: Verbo auxiliar (haver flexionado na 1ª pessoa do singular).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Hei",
+              "rationale": "Verbo auxiliar (haver flexionado na 1ª pessoa do singular)."
+            },
+            {
+              "order": 2,
+              "action": "de",
+              "rationale": "Preposição conectiva intracausal."
+            },
+            {
+              "order": 3,
+              "action": "vencer",
+              "rationale": "Verbo principal na forma nominal de infinitivo."
+            },
+            {
+              "order": 4,
+              "action": "Conclusão",
+              "rationale": "Locução verbal com valor aspectual de futuro/determinação."
+            }
+          ],
+          "result": "Conclusão: Locução verbal com valor aspectual de futuro/determinação.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Análise morfossintática sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Análise morfossintática.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Análise morfossintática.",
           "blocks": [
             {
               "type": "list",
@@ -1010,6 +1262,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G10-002",
           "title": "Casos analisados",
+          "prompt": "\"Chovia forte naquela tarde.\" $\\rightarrow$ Fenômeno físico real = Impessoal / Oração sem sujeito.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"Chovia forte naquela tarde.\" $\\rightarrow$ Fenômeno físico real = Impessoal / Oração sem sujeito.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "\"Choveram reclamações no site.\" $\\rightarrow$ Sentido figurado = Pessoal / Sujeito plural",
+              "rationale": "reclamações."
+            },
+            {
+              "order": 3,
+              "action": "\"Irritado, o homem trovejava insultos.\" $\\rightarrow$ Sentido figurado (esbravejar) = Pessoal / Sujeito",
+              "rationale": "o homem; Objeto Direto: insultos."
+            }
+          ],
+          "result": "\"Irritado, o homem trovejava insultos.\" $\\rightarrow$ Sentido figurado (esbravejar) = Pessoal / Sujeito: o homem; Objeto Direto: insultos.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Casos analisados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Casos analisados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Casos analisados.",
           "blocks": [
             {
               "type": "list",
@@ -1025,6 +1299,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G10-003",
           "title": "Casos analisados",
+          "prompt": "\"Faz sol lá fora.\" $\\rightarrow$ Verbo fazer expressando clima = Impessoal / Oração sem sujeito (sol é complemento).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"Faz sol lá fora.\" $\\rightarrow$ Verbo fazer expressando clima = Impessoal / Oração sem sujeito (sol é complemento).",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "\"Saiu o sol lá fora.\" $\\rightarrow$ Ordem direta",
+              "rationale": "\"O sol saiu lá fora\" = Pessoal / Sujeito simples: o sol."
+            }
+          ],
+          "result": "\"Saiu o sol lá fora.\" $\\rightarrow$ Ordem direta: \"O sol saiu lá fora\" = Pessoal / Sujeito simples: o sol.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Casos analisados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Casos analisados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Casos analisados.",
           "blocks": [
             {
               "type": "list",
@@ -1039,6 +1330,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G10-004",
           "title": "Casos analisados",
+          "prompt": "Forma Correta: Faz três anos que não o vejo. / Faz duas horas que espero.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Forma Correta",
+              "rationale": "Faz três anos que não o vejo. / Faz duas horas que espero."
+            },
+            {
+              "order": 2,
+              "action": "Forma Incorreta (Coloquial)",
+              "rationale": "Fazem três anos... / Fazem duas horas..."
+            }
+          ],
+          "result": "Forma Incorreta (Coloquial): Fazem três anos... / Fazem duas horas...",
+          "decisivePoint": "Aplicação estrita da regra canônica de Casos analisados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Casos analisados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Casos analisados.",
           "blocks": [
             {
               "type": "list",
@@ -1053,6 +1361,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G10-005",
           "title": "Casos analisados",
+          "prompt": "\"Há pessoas dedicadas.\" $\\rightarrow$ Sentido de existir (pessoas dedicadas = OD).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"Há pessoas dedicadas.\" $\\rightarrow$ Sentido de existir (pessoas dedicadas = OD).",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "\"Houve acidentes graves.\" $\\rightarrow$ Sentido de ocorrer (acidentes graves = OD).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "\"Há 2 anos parei de fumar.\" $\\rightarrow$ Sentido de tempo decorrido (= Faz 2 anos).",
+              "rationale": null
+            }
+          ],
+          "result": "\"Há 2 anos parei de fumar.\" $\\rightarrow$ Sentido de tempo decorrido (= Faz 2 anos).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Casos analisados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Casos analisados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Casos analisados.",
           "blocks": [
             {
               "type": "list",
@@ -1068,6 +1398,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G10-006",
           "title": "Casos analisados",
+          "prompt": "Há (VTD, sing.) [pessoas boas] (OD). $\\rightarrow$ Existem (VI, plur.) [pessoas boas] (Sujeito Plural).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Há (VTD, sing.) [pessoas boas] (OD). $\\rightarrow$ Existem (VI, plur.) [pessoas boas] (Sujeito Plural).",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Houve (VTD, sing.) [acidentes graves] (OD). $\\rightarrow$ Ocorreram (VI, plur.) [acidentes graves] (Sujeito Plural).",
+              "rationale": null
+            }
+          ],
+          "result": "Houve (VTD, sing.) [acidentes graves] (OD). $\\rightarrow$ Ocorreram (VI, plur.) [acidentes graves] (Sujeito Plural).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Casos analisados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Casos analisados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Casos analisados.",
           "blocks": [
             {
               "type": "list",
@@ -1082,6 +1429,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G10-007",
           "title": "Caso analisado",
+          "prompt": "\"Eles se houveram bem na prova.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Verbo pronominal haver-se (= saíram-se bem).",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Sujeito",
+              "rationale": "Eles."
+            },
+            {
+              "order": 3,
+              "action": "Flexão legítima",
+              "rationale": "houveram na 3ª pessoa do plural do pretérito perfeito."
+            }
+          ],
+          "result": "Flexão legítima: houveram na 3ª pessoa do plural do pretérito perfeito.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Caso analisado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Caso analisado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Caso analisado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1101,6 +1470,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G10-008",
           "title": "Casos analisados",
+          "prompt": "\"Eles hão de estudar.\" $\\rightarrow$ Auxiliar hão concorda com o sujeito plural Eles.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"Eles hão de estudar.\" $\\rightarrow$ Auxiliar hão concorda com o sujeito plural Eles.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "\"Se os alunos houvessem lido o livro...\" $\\rightarrow$ Auxiliar houvessem concorda com os alunos.",
+              "rationale": null
+            }
+          ],
+          "result": "\"Se os alunos houvessem lido o livro...\" $\\rightarrow$ Auxiliar houvessem concorda com os alunos.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Casos analisados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Casos analisados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Casos analisados.",
           "blocks": [
             {
               "type": "list",
@@ -1115,6 +1501,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G10-009",
           "title": "Caso analisado",
+          "prompt": "\"Muitos problemas havia naquela família.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Verbo havia = ocorriam (impessoal / 3ª singular).",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Muitos problemas = Objeto Direto antecipado ao verbo (não é sujeito).",
+              "rationale": null
+            }
+          ],
+          "result": "Muitos problemas = Objeto Direto antecipado ao verbo (não é sujeito).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Caso analisado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Caso analisado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Caso analisado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1133,6 +1536,33 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G10-010",
           "title": "Caso analisado",
+          "prompt": "\"Há de dar tudo certo.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Ordem direta",
+              "rationale": "\"Tudo há de dar certo\"."
+            },
+            {
+              "order": 2,
+              "action": "Verbo principal",
+              "rationale": "dar (pessoal)."
+            },
+            {
+              "order": 3,
+              "action": "Sujeito",
+              "rationale": "pronome indefinido tudo (singular)."
+            },
+            {
+              "order": 4,
+              "action": "Verbo auxiliar",
+              "rationale": "Há (singular, concordando com tudo)."
+            }
+          ],
+          "result": "Verbo auxiliar: Há (singular, concordando com tudo).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Caso analisado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Caso analisado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Caso analisado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1153,6 +1583,28 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G10-011",
           "title": "Casos analisados",
+          "prompt": "Eu estou estudando. (Gerúndio).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Eu estou estudando. (Gerúndio).",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Eu comecei a estudar. (Infinitivo com preposição).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "Eu tenho estudado. (Particípio / Tempo composto).",
+              "rationale": null
+            }
+          ],
+          "result": "Eu tenho estudado. (Particípio / Tempo composto).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Casos analisados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Casos analisados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Casos analisados.",
           "blocks": [
             {
               "type": "list",
@@ -1168,6 +1620,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G10-012",
           "title": "Caso analisado",
+          "prompt": "\"Eu tenho estudado português.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Morfologia",
+              "rationale": "Pretérito Perfeito Composto do Indicativo."
+            },
+            {
+              "order": 2,
+              "action": "Sintaxe",
+              "rationale": "Locução verbal (auxiliar: tenho; principal: estudado)."
+            }
+          ],
+          "result": "Sintaxe: Locução verbal (auxiliar: tenho; principal: estudado).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Caso analisado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Caso analisado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Caso analisado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1186,6 +1655,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G10-013",
           "title": "Casos analisados",
+          "prompt": "\"Tenho que estudar.\" $\\rightarrow$ Locução com conectivo que intercalado.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"Tenho que estudar.\" $\\rightarrow$ Locução com conectivo que intercalado.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "\"Estou me acostumando.\" $\\rightarrow$ Locução com pronome oblíquo me intercalado.",
+              "rationale": null
+            }
+          ],
+          "result": "\"Estou me acostumando.\" $\\rightarrow$ Locução com pronome oblíquo me intercalado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Casos analisados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Casos analisados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Casos analisados.",
           "blocks": [
             {
               "type": "list",
@@ -1200,6 +1686,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G10-014",
           "title": "Casos analisados",
+          "prompt": "\"Temos que aprender a estudar.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"Temos que aprender a estudar.\"",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Temos",
+              "rationale": "1º Auxiliar flexionado na 1ª plural (Nós)."
+            },
+            {
+              "order": 3,
+              "action": "aprender",
+              "rationale": "2º Auxiliar no infinitivo."
+            },
+            {
+              "order": 4,
+              "action": "estudar",
+              "rationale": "Verbo Principal no infinitivo."
+            },
+            {
+              "order": 5,
+              "action": "\"Aquelas formas poéticas deixaram de ser valorizadas.\"",
+              "rationale": null
+            }
+          ],
+          "result": "valorizadas: Verbo Principal no particípio.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Casos analisados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Casos analisados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Casos analisados.",
           "blocks": [
             {
               "type": "list",
@@ -1238,6 +1756,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G10-015",
           "title": "Casos analisados",
+          "prompt": "\"Hão de existir amigos.\" $\\rightarrow$ Principal existir é pessoal; sujeito: amigos $\\rightarrow$ Auxiliar flexiona: Hão.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"Hão de existir amigos.\" $\\rightarrow$ Principal existir é pessoal; sujeito",
+              "rationale": "amigos $\\rightarrow$ Auxiliar flexiona: Hão."
+            },
+            {
+              "order": 2,
+              "action": "\"Há de haver amigos.\" $\\rightarrow$ Principal haver é impessoal; amigos é OD $\\rightarrow$ Auxiliar trava no singular",
+              "rationale": "Há."
+            }
+          ],
+          "result": "\"Há de haver amigos.\" $\\rightarrow$ Principal haver é impessoal; amigos é OD $\\rightarrow$ Auxiliar trava no singular: Há.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Casos analisados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Casos analisados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Casos analisados.",
           "blocks": [
             {
               "type": "list",
@@ -1252,6 +1787,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G10-016",
           "title": "Casos analisados",
+          "prompt": "\"Saí cedo.\" $\\rightarrow$ Desinência -i identifica Eu $\\rightarrow$ Sujeito Oculto / Desinencial.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"Saí cedo.\" $\\rightarrow$ Desinência -i identifica Eu $\\rightarrow$ Sujeito Oculto / Desinencial.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "\"Saímos cedo.\" $\\rightarrow$ Desinência -mos identifica Nós $\\rightarrow$ Sujeito Oculto / Desinencial.",
+              "rationale": null
+            }
+          ],
+          "result": "\"Saímos cedo.\" $\\rightarrow$ Desinência -mos identifica Nós $\\rightarrow$ Sujeito Oculto / Desinencial.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Casos analisados sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Casos analisados.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Casos analisados.",
           "blocks": [
             {
               "type": "list",
@@ -1266,6 +1818,23 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G10-017",
           "title": "Caso analisado",
+          "prompt": "\"O presidente discursou na abertura. Saiu cedo.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Verbo saiu na 3ª singular isolada.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Sujeito",
+              "rationale": "oculto / elíptico contextual (referente anafórico: O presidente)."
+            }
+          ],
+          "result": "Sujeito: oculto / elíptico contextual (referente anafórico: O presidente).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Caso analisado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Caso analisado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Caso analisado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1284,6 +1853,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A05-G10-018",
           "title": "Caso analisado",
+          "prompt": "\"Saíram cedo da reunião e esqueceram os documentos.\" (Frase isolada, sem referente textual).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Verbo na 3ª pessoa do plural sem pronome explícito e sem antecedente no discurso $\\rightarrow$ Sujeito Indeterminado.",
+              "rationale": null
+            }
+          ],
+          "result": "Verbo na 3ª pessoa do plural sem pronome explícito e sem antecedente no discurso $\\rightarrow$ Sujeito Indeterminado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Caso analisado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Caso analisado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Caso analisado.",
           "blocks": [
             {
               "type": "paragraph",
@@ -1335,8 +1916,12 @@
         {
           "trapId": "WARN-A05-V034-036-001",
           "title": "Hipercorreção Coloquial com \"Fazer\" Temporal",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Hipercorreção Coloquial com \"Fazer\" Temporal.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Hipercorreção Coloquial com \"Fazer\" Temporal.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Hipercorreção Coloquial com \"Fazer\" Temporal no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Hipercorreção Coloquial com \"Fazer\" Temporal.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Hipercorreção Coloquial com \"Fazer\" Temporal.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Hipercorreção Coloquial com \"Fazer\" Temporal para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Hipercorreção Coloquial com \"Fazer\" Temporal.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Hipercorreção Coloquial com \"Fazer\" Temporal.",
           "blocks": [
             {
               "type": "list",
@@ -1352,8 +1937,12 @@
         {
           "trapId": "WARN-A05-V034-036-002",
           "title": "Não Flexionar \"Existir\" ou \"Ocorrer\" por Falsa Contaminação",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Não Flexionar \"Existir\" ou \"Ocorrer\" por Falsa Contaminação.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Não Flexionar \"Existir\" ou \"Ocorrer\" por Falsa Contaminação.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Não Flexionar \"Existir\" ou \"Ocorrer\" por Falsa Contaminação no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Não Flexionar \"Existir\" ou \"Ocorrer\" por Falsa Contaminação.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Não Flexionar \"Existir\" ou \"Ocorrer\" por Falsa Contaminação.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Não Flexionar \"Existir\" ou \"Ocorrer\" por Falsa Contaminação para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Não Flexionar \"Existir\" ou \"Ocorrer\" por Falsa Contaminação.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Não Flexionar \"Existir\" ou \"Ocorrer\" por Falsa Contaminação.",
           "blocks": [
             {
               "type": "list",
@@ -1368,8 +1957,12 @@
         {
           "trapId": "WARN-A05-V034-036-003",
           "title": "Generalização Errada de que a Palavra \"Houveram\" Nunca Existe",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Generalização Errada de que a Palavra \"Houveram\" Nunca Existe.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Generalização Errada de que a Palavra \"Houveram\" Nunca Existe.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Generalização Errada de que a Palavra \"Houveram\" Nunca Existe no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Generalização Errada de que a Palavra \"Houveram\" Nunca Existe.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Generalização Errada de que a Palavra \"Houveram\" Nunca Existe.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Generalização Errada de que a Palavra \"Houveram\" Nunca Existe para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Generalização Errada de que a Palavra \"Houveram\" Nunca Existe.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Generalização Errada de que a Palavra \"Houveram\" Nunca Existe.",
           "blocks": [
             {
               "type": "list",
@@ -1384,8 +1977,12 @@
         {
           "trapId": "WARN-A05-V034-036-004",
           "title": "Alteração Semântica em Reescrituras com \"Haver\"",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Alteração Semântica em Reescrituras com \"Haver\".",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Alteração Semântica em Reescrituras com \"Haver\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Alteração Semântica em Reescrituras com \"Haver\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Alteração Semântica em Reescrituras com \"Haver\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Alteração Semântica em Reescrituras com \"Haver\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Alteração Semântica em Reescrituras com \"Haver\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Alteração Semântica em Reescrituras com \"Haver\".",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Alteração Semântica em Reescrituras com \"Haver\".",
           "blocks": [
             {
               "type": "list",
@@ -1400,8 +1997,12 @@
         {
           "trapId": "WARN-A05-V034-036-005",
           "title": "Pegadinha de Sujeito Posposto em Verbos Climáticos Pessoais",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha de Sujeito Posposto em Verbos Climáticos Pessoais.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha de Sujeito Posposto em Verbos Climáticos Pessoais.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha de Sujeito Posposto em Verbos Climáticos Pessoais no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha de Sujeito Posposto em Verbos Climáticos Pessoais.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha de Sujeito Posposto em Verbos Climáticos Pessoais.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pegadinha de Sujeito Posposto em Verbos Climáticos Pessoais para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha de Sujeito Posposto em Verbos Climáticos Pessoais.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha de Sujeito Posposto em Verbos Climáticos Pessoais.",
           "blocks": [
             {
               "type": "list",
@@ -1416,8 +2017,12 @@
         {
           "trapId": "WARN-A05-V034-036-006",
           "title": "Ilusão de Sujeito Anteposto com \"Haver\" Impessoal",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Ilusão de Sujeito Anteposto com \"Haver\" Impessoal.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Ilusão de Sujeito Anteposto com \"Haver\" Impessoal.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Ilusão de Sujeito Anteposto com \"Haver\" Impessoal no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Ilusão de Sujeito Anteposto com \"Haver\" Impessoal.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Ilusão de Sujeito Anteposto com \"Haver\" Impessoal.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Ilusão de Sujeito Anteposto com \"Haver\" Impessoal para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Ilusão de Sujeito Anteposto com \"Haver\" Impessoal.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Ilusão de Sujeito Anteposto com \"Haver\" Impessoal.",
           "blocks": [
             {
               "type": "list",
@@ -1432,8 +2037,12 @@
         {
           "trapId": "WARN-A05-V034-036-007",
           "title": "Falha dos Macetes da Internet em Cadeias com 3 ou mais Verbos",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Falha dos Macetes da Internet em Cadeias com 3 ou mais Verbos.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Falha dos Macetes da Internet em Cadeias com 3 ou mais Verbos.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Falha dos Macetes da Internet em Cadeias com 3 ou mais Verbos no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Falha dos Macetes da Internet em Cadeias com 3 ou mais Verbos.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Falha dos Macetes da Internet em Cadeias com 3 ou mais Verbos.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Falha dos Macetes da Internet em Cadeias com 3 ou mais Verbos para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Falha dos Macetes da Internet em Cadeias com 3 ou mais Verbos.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Falha dos Macetes da Internet em Cadeias com 3 ou mais Verbos.",
           "blocks": [
             {
               "type": "list",
@@ -1448,8 +2057,12 @@
         {
           "trapId": "WARN-A05-V034-036-008",
           "title": "Intercalação de Adjuntos que Oculta a Locução Verbal",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Intercalação de Adjuntos que Oculta a Locução Verbal.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Intercalação de Adjuntos que Oculta a Locução Verbal.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Intercalação de Adjuntos que Oculta a Locução Verbal no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Intercalação de Adjuntos que Oculta a Locução Verbal.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Intercalação de Adjuntos que Oculta a Locução Verbal.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Intercalação de Adjuntos que Oculta a Locução Verbal para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Intercalação de Adjuntos que Oculta a Locução Verbal.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Intercalação de Adjuntos que Oculta a Locução Verbal.",
           "blocks": [
             {
               "type": "list",
@@ -1464,8 +2077,12 @@
         {
           "trapId": "WARN-A05-V034-036-009",
           "title": "Erro Crasso: *\"Hão de haver problemas\"*",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Erro Crasso: *\"Hão de haver problemas\"*.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Erro Crasso: *\"Hão de haver problemas\"*.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Erro Crasso: *\"Hão de haver problemas\"* no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Erro Crasso: *\"Hão de haver problemas\"*.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Erro Crasso: *\"Hão de haver problemas\"*.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Erro Crasso: *\"Hão de haver problemas\"* para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Erro Crasso: *\"Hão de haver problemas\"*.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Erro Crasso: *\"Hão de haver problemas\"*.",
           "blocks": [
             {
               "type": "list",
@@ -1480,8 +2097,12 @@
         {
           "trapId": "WARN-A05-V034-036-010",
           "title": "Confundir 3ª Pessoa do Singular Isolada com Sujeito Indeterminado",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir 3ª Pessoa do Singular Isolada com Sujeito Indeterminado.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir 3ª Pessoa do Singular Isolada com Sujeito Indeterminado.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir 3ª Pessoa do Singular Isolada com Sujeito Indeterminado no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir 3ª Pessoa do Singular Isolada com Sujeito Indeterminado.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir 3ª Pessoa do Singular Isolada com Sujeito Indeterminado.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir 3ª Pessoa do Singular Isolada com Sujeito Indeterminado para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir 3ª Pessoa do Singular Isolada com Sujeito Indeterminado.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir 3ª Pessoa do Singular Isolada com Sujeito Indeterminado.",
           "blocks": [
             {
               "type": "list",
@@ -1653,7 +2274,10 @@
       "officialAnswer": "incorrect",
       "explanation": "Temos verbo transitivo direto + SE, estrutura de voz passiva sintética. Para conferir, vamos\ntransformar em voz passiva analítica:\n\nnão se poderiam resolver todas as questões.\nnão poderiam ser resolvidas todas as questões.\nO verbo estava no plural, isso prova que o sujeito não era indeterminado. Quando temos \"se\"\nindeterminador do sujeito, o verbo fica invariável. Questão incorreta.",
       "questionSha256": "8aa0f80153146f3ca8d444d9ab5390b7c26a0c56f497ef5ad0aeaa9e25a23f0b",
-      "answerSha256": "17b173b948a60b85c5192d9f11428a47c0d03928a4b28a405ed31eb6bcc6a9e6"
+      "answerSha256": "17b173b948a60b85c5192d9f11428a47c0d03928a4b28a405ed31eb6bcc6a9e6",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Verbos Impessoais e Auxiliares; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula05.q0058",
@@ -1665,7 +2289,10 @@
       "options": [],
       "officialAnswer": "incorrect",
       "questionSha256": "b6386363bcef45ba827f7f171b2e95a5b364ebe856ee913c5b0d5dcc8e984ff1",
-      "answerSha256": "bd0c2d9008946cfd5a6762af10d74d6fec23c906fafc32df852fb04e71d1feff"
+      "answerSha256": "bd0c2d9008946cfd5a6762af10d74d6fec23c906fafc32df852fb04e71d1feff",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Verbos Impessoais e Auxiliares; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula05.q0022",
@@ -1694,7 +2321,35 @@
       "officialAnswer": "option_C",
       "explanation": "“A voz de Wagner” é objeto direto de “ouvir”, na voz ativa. Na voz passiva, o objeto direto vira\nsujeito. Então, teremos, na voz passiva:\n“A voz de Wagner” é ouvida. Gabarito letra C.",
       "questionSha256": "e43c590526924d76634f1120235bbdac36c99e7f624a1b6c068954ab637490d6",
-      "answerSha256": "8c63d6eda288a06b88b5b2f2f0a60f92584e654a33b1d0e180fbe593971091b8"
+      "answerSha256": "8c63d6eda288a06b88b5b2f2f0a60f92584e654a33b1d0e180fbe593971091b8",
+      "cognitiveDemand": "discriminacao_sintatica",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Verbos Impessoais e Auxiliares; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Impessoais e Auxiliares."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Impessoais e Auxiliares."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Impessoais e Auxiliares."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Impessoais e Auxiliares."
+        }
+      ]
     },
     {
       "questionId": "aula05.q0002",
@@ -1706,7 +2361,10 @@
       "officialAnswer": "correct",
       "explanation": "A correlação depende dos sentidos dos tempos e modos verbais. O advérbio “talvez” expressa\ndúvida; então, naturalmente, com ele é empregado o subjuntivo, modo que indica dúvida,\nhipótese:\nTalvez sejamos, Talvez possamos\nTalvez pudéssemos, Talvez viajássemos\nQuestão correta.",
       "questionSha256": "4400af32bb03f61c4c31d26deaea9592e7a19302447620f5b904ec3d65df5feb",
-      "answerSha256": "a05b15c351bbd04d21c88ff862dc06db732115acfca97e76ac37b496ed688610"
+      "answerSha256": "a05b15c351bbd04d21c88ff862dc06db732115acfca97e76ac37b496ed688610",
+      "cognitiveDemand": "analise_estrutural",
+      "solutionStrategy": "1. Ler atentamente o enunciado de None; 2. Identificar a regra central de Verbos Impessoais e Auxiliares; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula05.q0037",
@@ -1736,7 +2394,35 @@
       "officialAnswer": "option_D",
       "explanation": "Verbos impessoais introduzem oração sem sujeito, o que, na prática, significa que são invariáveis,\nnão vão ao plural.\nO verbo \"haver\" é impessoal em três situações:\nSinônimo de Existir: Há/Existem soluções.\nSinônimo de Ocorrer: Houve/Ocorreram acidentes.\nIndica tempo decorrido: Há/Faz dez anos não viajamos.\nNa questão, \"haver\" equivale a \"existir\":\nhá gravuras em abrigo.\nexistem gravuras em abrigo.\nO verbo deve ser mantido no mesmo tempo verbal. Também por isso, estariam incorretos\n\"tinham\" ou \"existiu\".\nEm uma locução verbal na qual o \"haver\" impessoal é o verbo principal, nenhum verbo é\nflexionado. A locução inteira fica invariável:\nPode haver/Podem existir gravuras...\nGabarito letra D.",
       "questionSha256": "ced22e5282e3b5eb919fec83375ad41ad67f443ffb676faa3dde4e66890accf1",
-      "answerSha256": "c11749adf4fec2b884a246b87cebbc3d0083cccad5a4a4f6964a6b7e87331309"
+      "answerSha256": "c11749adf4fec2b884a246b87cebbc3d0083cccad5a4a4f6964a6b7e87331309",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Verbos Impessoais e Auxiliares; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Impessoais e Auxiliares."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Impessoais e Auxiliares."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Impessoais e Auxiliares."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Impessoais e Auxiliares."
+        }
+      ]
     },
     {
       "questionId": "aula05.q0059",
@@ -1765,7 +2451,35 @@
       ],
       "officialAnswer": "option_D",
       "questionSha256": "d4af95f07258d0f2e3448eb8b29249a79d0d3bdd174c071202778c6b35e82c77",
-      "answerSha256": "caeaa29ec3da4ad067589a636c38490161926d5732a80fd0798a65e0ab1d9ffa"
+      "answerSha256": "caeaa29ec3da4ad067589a636c38490161926d5732a80fd0798a65e0ab1d9ffa",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Verbos Impessoais e Auxiliares; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Impessoais e Auxiliares."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Impessoais e Auxiliares."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Impessoais e Auxiliares."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Verbos Impessoais e Auxiliares."
+        }
+      ]
     }
   ]
 }

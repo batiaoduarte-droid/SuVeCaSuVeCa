@@ -3,8 +3,8 @@
   "source": {
     "unitId": "IP-A13-G06",
     "canonicalSchemaVersion": "2.0.0",
-    "buildId": "4db419775e60bb47",
-    "generatedAt": "2026-08-18T20:56:19.919Z"
+    "buildId": "v2.1-semantic-hardening",
+    "generatedAt": "2026-08-18T21:23:26.672Z"
   },
   "unit": {
     "unitId": "IP-A13-G06",
@@ -241,6 +241,16 @@
         {
           "entityId": "RULE-IP-A13-G06-001",
           "title": "Regras canônicas",
+          "statement": "Critério das Extremidades e Fonte (Canônico): A determinação inicial da tipologia textual deve ser feita pelo exame conjunto do primeiro parágrafo, último parágrafo, título e fonte bibliográfica (KB-A13-G06-MISCELANEA-INTERPRETACAO-001).\nBifurcação Dissertativa (Canônica): Textos temáticos dividem-se em Expositivos/Informativos (quando o emissor apenas expõe o que domina ou informa novidades) e Argumentativos (quando busca defender uma tese persuasiva) (KB-A13-G06-MISCELANEA-INTERPRETACAO-002).\nRegra de Dominância Narrativa (Canônica): Havendo coexistência de fatos temporais e traços caracterizadores, prevalece a macroestrutura narrativa com aspectos descritivos mesclados (KB-A13-G06-MISCELANEA-INTERPRETACAO-003).\nInstrumentalidade dos Dados (Canônica): Estatísticas e números em textos dissertativos não anulam a argumentação quando inseridos a serviço de um propósito comunicativo persuasivo (KB-A13-G06-MISCELANEA-INTERPRETACAO-004).",
+          "scope": "syntax",
+          "modality": "mandatory",
+          "conditions": [
+            "Critério das Extremidades e Fonte (Canônico): A determinação inicial da tipologia textual deve ser feita pelo exame conjunto do primeiro parágrafo, último parágrafo, título e fonte bibliográfica (KB-A13-G06-MISCELANEA-INTERPRETACAO-001).",
+            "Bifurcação Dissertativa (Canônica): Textos temáticos dividem-se em Expositivos/Informativos (quando o emissor apenas expõe o que domina ou informa novidades) e Argumentativos (quando busca defender uma tese persuasiva) (KB-A13-G06-MISCELANEA-INTERPRETACAO-002).",
+            "Regra de Dominância Narrativa (Canônica): Havendo coexistência de fatos temporais e traços caracterizadores, prevalece a macroestrutura narrativa com aspectos descritivos mesclados (KB-A13-G06-MISCELANEA-INTERPRETACAO-003).",
+            "Instrumentalidade dos Dados (Canônica): Estatísticas e números em textos dissertativos não anulam a argumentação quando inseridos a serviço de um propósito comunicativo persuasivo (KB-A13-G06-MISCELANEA-INTERPRETACAO-004)."
+          ],
+          "exceptions": [],
           "blocks": [
             {
               "type": "list",
@@ -261,6 +271,131 @@
         {
           "procedureId": "PROC-A13-G06-MISCELANEA-INTERPRETACAO-001",
           "title": "Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos)",
+          "objective": "Executar o algoritmo decisório para Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos)",
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 — Triagem Estrutural pelas Extremidades",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Efetuar a leitura do primeiro parágrafo, do último parágrafo, do título e da referência da fonte.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Formular a pergunta diagnóstica",
+              "explanation": "O texto gravita sobre um tema/conceito abstrato ou desenvolve um enredo fático/caracterização de cena?",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Caso possua tema definido $\\rightarrow$ Direcionar para o Passo 2 (Ramo Dissertativo).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Caso possua personagens e linha temporal de ações $\\rightarrow$ Direcionar para o Passo 3 (Ramo Narrativo/Descritivo).",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Passo 2 — Análise da Intenção Autoral (Ramo Dissertativo)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Assumir hipoteticamente a perspectiva do autor e interrogar",
+              "explanation": "Qual o objetivo primordial da publicação?",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Se o objetivo for conceituar, detalhar funcionamento, relatar dados técnicos ou noticiar fatos $\\rightarrow$ Classificar como Dissertativo Expositivo / Informativo.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Se o objetivo for sustentar um posicionamento crítico, conscientizar ou persuadir o leitor mediante tese e valorações $\\rightarrow$ Classificar como Dissertativo Argumentativo.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Passo 3 — Hierarquização de Ações e Detalhes (Ramo Narrativo/Descritivo)",
+              "explanation": "",
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Constatar a presença de progressão cronológica balizada por verbos de ação no pretérito.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 12,
+              "action": "Identificar a ocorrência de adjetivações e qualificações de cenários, trajes ou objetos.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 13,
+              "action": "Concluir pela classificação de Predominantemente Narrativo com Sequências Descritivas Mescladas.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 14,
+              "action": "Textos dissertativos mantêm amarração conceitual circular entre o primeiro e o último parágrafo.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 15,
+              "action": "Textos narrativos preservam a continuidade dos agentes e a evolução dos acontecimentos entre a abertura e o desfecho.",
+              "explanation": null,
+              "test": null
+            },
+            {
+              "order": 16,
+              "action": "Consolida",
+              "explanation": "KB-A13-G06-MISCELANEA-INTERPRETACAO-001, KB-A13-G06-MISCELANEA-INTERPRETACAO-002, KB-A13-G06-MISCELANEA-INTERPRETACAO-003",
+              "test": null
+            },
+            {
+              "order": 17,
+              "action": "Aplicado em",
+              "explanation": "EX-A13-G06-MISCELANEA-INTERPRETACAO-001, EX-A13-G06-MISCELANEA-INTERPRETACAO-002, EX-A13-G06-MISCELANEA-INTERPRETACAO-003, EX-A13-G06-MISCELANEA-INTERPRETACAO-004",
+              "test": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
           "blocks": [
             {
               "type": "heading",
@@ -364,6 +499,22 @@
         {
           "contrastId": "CONTRAST-IP-A13-G06-001",
           "title": "Contrastes decisivos",
+          "contrastType": "mixed",
+          "conceptA": "Contrastes decisivos",
+          "conceptB": "Forma concorrente",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
           "blocks": [
             {
               "type": "table_ref",
@@ -426,6 +577,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G06-001",
           "title": "Enunciado e dados essenciais",
+          "prompt": "Texto jornalístico abordando o caso de Harold Hackett, habitante da Ilha Príncipe Eduardo (Canadá), que lança garrafas com bilhetes ao mar desde 1996 e obteve mais de 3.100 respostas.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item avaliado",
+              "rationale": "O texto apresenta características narrativas e dissertativas. (Certo / Errado)."
+            }
+          ],
+          "result": "Item avaliado: O texto apresenta características narrativas e dissertativas. (Certo / Errado).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e dados essenciais sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e dados essenciais.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e dados essenciais.",
           "blocks": [
             {
               "type": "paragraph",
@@ -443,6 +606,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G06-002",
           "title": "Desenvolvimento e raciocínio pedagógico",
+          "prompt": "Aplicação do Passo 1:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Aplicação do Passo 1",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Início",
+              "rationale": "\"Na era das redes sociais, algumas formas de comunicação arcaicas ainda dão resultado.\" $\\rightarrow$ Lança um tema abstrato/geral (formas de comunicação arcaicas)."
+            },
+            {
+              "order": 3,
+              "action": "Final",
+              "rationale": "\"O canadense diz que continua adorando se comunicar dessa maneira e afirma que o método chega a ser [...] mais 'eficaz'...\" $\\rightarrow$ Reafirmação conclusiva do tema de abertura."
+            },
+            {
+              "order": 4,
+              "action": "Diagnóstico base",
+              "rationale": "Estrutura dissertativa expositiva."
+            },
+            {
+              "order": 5,
+              "action": "Reconhecimento da camada narrativa de suporte",
+              "rationale": ""
+            }
+          ],
+          "result": "Julgamento: Como o texto articula a discussão de um tema abstrato com a narrativa de acontecimentos empíricos, a afirmação de que apresenta características de ambas as tipologias é exata.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Desenvolvimento e raciocínio pedagógico sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Desenvolvimento e raciocínio pedagógico.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Desenvolvimento e raciocínio pedagógico.",
           "blocks": [
             {
               "type": "list",
@@ -486,6 +681,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G06-003",
           "title": "Gabarito e resolução",
+          "prompt": "Gabarito: Certo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Gabarito",
+              "rationale": "Certo."
+            }
+          ],
+          "result": "Gabarito: Certo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito e resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito e resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito e resolução.",
           "blocks": [
             {
               "type": "list",
@@ -499,6 +706,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G06-004",
           "title": "Enunciado e dados essenciais",
+          "prompt": "Texto biográfico/crônica narrando a trajetória de Cléber de Souza, empresário e ex-garçom em Jaraguá do Sul, que guarda o registro fotográfico de seu encontro em 2003 com o cineasta Francis Ford Coppola.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item avaliado",
+              "rationale": "A narração é composta de sequências mescladas com outras tipologias textuais, como a descritiva. (Certo / Errado)."
+            }
+          ],
+          "result": "Item avaliado: A narração é composta de sequências mescladas com outras tipologias textuais, como a descritiva. (Certo / Errado).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e dados essenciais sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e dados essenciais.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e dados essenciais.",
           "blocks": [
             {
               "type": "paragraph",
@@ -516,6 +735,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G06-005",
           "title": "Desenvolvimento e raciocínio pedagógico",
+          "prompt": "Aplicação do Passo 1 e Reconhecimento Narrativo:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Aplicação do Passo 1 e Reconhecimento Narrativo",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Início",
+              "rationale": "\"Cléber de Souza [...] acordou mais cedo que de costume. Cumpriu sua rotina matinal, se vestiu e partiu...\" $\\rightarrow$ Introdução direta de personagem e encadeamento de ações temporais."
+            },
+            {
+              "order": 3,
+              "action": "Final",
+              "rationale": "\"desta vez, permaneceu por apenas um dia. Souza, ansioso por reencontrar o antigo freguês [...], pegou a fotografia e percorreu [...] os 160 quilômetros...\" $\\rightarrow$ Manutenção contínua do enredo de fatos."
+            },
+            {
+              "order": 4,
+              "action": "Diagnóstico base",
+              "rationale": "Macroestrutura predominantemente narrativa."
+            },
+            {
+              "order": 5,
+              "action": "Reconhecimento das sequências descritivas enxertadas",
+              "rationale": ""
+            }
+          ],
+          "result": "Julgamento: A narração abriga passagens descritivas subordinadas, tornando o item plenamente correto.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Desenvolvimento e raciocínio pedagógico sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Desenvolvimento e raciocínio pedagógico.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Desenvolvimento e raciocínio pedagógico.",
           "blocks": [
             {
               "type": "list",
@@ -559,6 +810,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G06-006",
           "title": "Gabarito e resolução",
+          "prompt": "Gabarito: Certo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Gabarito",
+              "rationale": "Certo."
+            }
+          ],
+          "result": "Gabarito: Certo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito e resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito e resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito e resolução.",
           "blocks": [
             {
               "type": "list",
@@ -572,6 +835,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G06-007",
           "title": "Enunciado e dados essenciais",
+          "prompt": "Texto conceitual e explicativo que aborda as origens, o funcionamento tecnológico e o futuro do metaverso em ambientes virtuais e jogos eletrônicos.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item avaliado",
+              "rationale": "A tipologia textual predominante no texto CB1A1 é descritiva, evidenciada pela apresentação das características dos jogos online dentro do metaverso. (Certo / Errado)."
+            }
+          ],
+          "result": "Item avaliado: A tipologia textual predominante no texto CB1A1 é descritiva, evidenciada pela apresentação das características dos jogos online dentro do metaverso. (Certo / Errado).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e dados essenciais sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e dados essenciais.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e dados essenciais.",
           "blocks": [
             {
               "type": "paragraph",
@@ -589,6 +864,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G06-008",
           "title": "Desenvolvimento e raciocínio pedagógico",
+          "prompt": "Aplicação do Passo 1:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Aplicação do Passo 1",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Início",
+              "rationale": "\"O conceito de metaverso não é algo novo. Existem videogames online que oferecem ambientes virtuais...\" $\\rightarrow$ Introdução de um conceito abstrato/tecnológico."
+            },
+            {
+              "order": 3,
+              "action": "Final",
+              "rationale": "\"Em um futuro muito próximo, o metaverso será acessível às pessoas, assim como o celular.\" $\\rightarrow$ Projeção analítica do tema."
+            },
+            {
+              "order": 4,
+              "action": "Diagnóstico base",
+              "rationale": "O texto possui tema conceitual $\\rightarrow$ Dissertativo."
+            },
+            {
+              "order": 5,
+              "action": "Aplicação do Passo 2",
+              "rationale": ""
+            }
+          ],
+          "result": "O examinador induz ao erro ao classificar a apresentação de propriedades de uma tecnologia como \"tipologia descritiva\". Explicar o funcionamento ou atributos de um conceito abstrato é ato de exposição conceitual, não descrição física de um objeto/cena concreta.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Desenvolvimento e raciocínio pedagógico sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Desenvolvimento e raciocínio pedagógico.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Desenvolvimento e raciocínio pedagógico.",
           "blocks": [
             {
               "type": "list",
@@ -639,6 +946,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G06-009",
           "title": "Gabarito e resolução",
+          "prompt": "Gabarito: Errado.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Gabarito",
+              "rationale": "Errado."
+            }
+          ],
+          "result": "Gabarito: Errado.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito e resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito e resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito e resolução.",
           "blocks": [
             {
               "type": "list",
@@ -652,6 +971,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G06-010",
           "title": "Enunciado e dados essenciais",
+          "prompt": "Artigo assinado pelo juiz federal Grégore Moreira de Moura detalhando o acervo de 80 milhões de processos judiciais no Brasil e o custo de R$ 12,3 bilhões do Judiciário, qualificando o cenário como alarmante e sustentando a necessidade de soluções desjudicializadoras.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item avaliado",
+              "rationale": "Para atingir seu propósito comunicativo, o autor constrói o texto com base nas tipologias textuais expositiva e argumentativa. (Certo / Errado)."
+            }
+          ],
+          "result": "Item avaliado: Para atingir seu propósito comunicativo, o autor constrói o texto com base nas tipologias textuais expositiva e argumentativa. (Certo / Errado).",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e dados essenciais sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e dados essenciais.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e dados essenciais.",
           "blocks": [
             {
               "type": "paragraph",
@@ -669,6 +1000,38 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G06-011",
           "title": "Desenvolvimento e raciocínio pedagógico",
+          "prompt": "Identificação do Propósito Comunicativo e Tese:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificação do Propósito Comunicativo e Tese",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "O autor pretende convencer o público sobre a insustentabilidade da sobrecarga de processos no Brasil e defender a desjudicialização (tese confirmada pelo título da fonte",
+              "rationale": "\"Um sonho de desjudicialização\")."
+            },
+            {
+              "order": 3,
+              "action": "Integração das Tipologias Mobilizadas",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Camada Expositiva",
+              "rationale": "Apresentação factual de dados estatísticos rigorosos (80 milhões de ações, 203 milhões de cidadãos, despesas de R$ 12.369.100.765, custo per capita de R$ 387,00)."
+            },
+            {
+              "order": 5,
+              "action": "Camada Argumentativa",
+              "rationale": "Qualificação enfática dos dados mediante vocabulário apreciativo (\"número é estarrecedor\", \"situação praticamente insustentável\", \"há muito o que fazer\"), orientando os números para a comprovação da tese."
+            }
+          ],
+          "result": "Julgamento: O autor constrói o texto conjugando a exposição de dados com a argumentação persuasiva para cumprir sua finalidade discursiva.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Desenvolvimento e raciocínio pedagógico sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Desenvolvimento e raciocínio pedagógico.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Desenvolvimento e raciocínio pedagógico.",
           "blocks": [
             {
               "type": "list",
@@ -711,6 +1074,18 @@
         {
           "exampleId": "WORKED_EXAMPLE-IP-A13-G06-012",
           "title": "Gabarito e resolução",
+          "prompt": "Gabarito: Certo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Gabarito",
+              "rationale": "Certo."
+            }
+          ],
+          "result": "Gabarito: Certo.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito e resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito e resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito e resolução.",
           "blocks": [
             {
               "type": "list",
@@ -765,8 +1140,12 @@
         {
           "trapId": "WARN-A13-G06-MISCELANEA-INTERPRETACAO-001",
           "title": "Confundir Opinião ou Comentário Circunstancial com Dissertação Argumentativa",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Opinião ou Comentário Circunstancial com Dissertação Argumentativa.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Opinião ou Comentário Circunstancial com Dissertação Argumentativa.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Opinião ou Comentário Circunstancial com Dissertação Argumentativa no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Opinião ou Comentário Circunstancial com Dissertação Argumentativa.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Opinião ou Comentário Circunstancial com Dissertação Argumentativa.",
+          "correctReasoning": "Classificar um texto jornalístico/informativo como \"dissertativo argumentativo\" apenas porque o redator emitiu um comentário pontual, juízo de valor ou advérbio apreciativo no corpo da notícia (ex.: \"infelizmente\", \"o conceito não é novo\").",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Opinião ou Comentário Circunstancial com Dissertação Argumentativa.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Opinião ou Comentário Circunstancial com Dissertação Argumentativa.",
           "blocks": [
             {
               "type": "heading",
@@ -800,8 +1179,12 @@
         {
           "trapId": "WARN-A13-G06-MISCELANEA-INTERPRETACAO-002",
           "title": "Confundir Enumeração de Características/Conceito Abstrato com Tipologia Descritiva",
-          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Enumeração de Características/Conceito Abstrato com Tipologia Descritiva.",
-          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Enumeração de Características/Conceito Abstrato com Tipologia Descritiva.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Enumeração de Características/Conceito Abstrato com Tipologia Descritiva no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Enumeração de Características/Conceito Abstrato com Tipologia Descritiva.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Enumeração de Características/Conceito Abstrato com Tipologia Descritiva.",
+          "correctReasoning": "Aceitar como correto o item da banca que classifica como \"descritivo\" um texto que apenas enumera propriedades, funcionalidades ou atributos de uma ferramenta técnica, jogo online ou conceito abstrato (ex.: metaverso).",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Enumeração de Características/Conceito Abstrato com Tipologia Descritiva.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Enumeração de Características/Conceito Abstrato com Tipologia Descritiva.",
           "blocks": [
             {
               "type": "heading",
@@ -907,7 +1290,10 @@
       "officialAnswer": "correct",
       "explanation": "Outra  questão  conceitual. Todos  esses  gêneros contam  “histórias”, em  sentido  amplo:\ndescrevem ações, com personagens, num fluxo temporal dinâmico. Questão correta.",
       "questionSha256": "c8fcab5bb81d02d6e7ba72e7f75977ffba6b5b5b9592303a1db6816bdf079a6f",
-      "answerSha256": "ef645a8ec672147c9ad0a8192635401e73d9fd868e42a371312a132a98fa4982"
+      "answerSha256": "ef645a8ec672147c9ad0a8192635401e73d9fd868e42a371312a132a98fa4982",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Miscelânea de Interpretação; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula13.q0052",
@@ -919,7 +1305,10 @@
       "options": [],
       "officialAnswer": "correct",
       "questionSha256": "17cb5cf86969a6c8e991a5ba2a5b4812a110cc273e01894d7852cbcfb2dbc642",
-      "answerSha256": "1d608fd2a976702326c35c4366049ee6852ce12e08a82cd6dd6706c1cdaa7982"
+      "answerSha256": "1d608fd2a976702326c35c4366049ee6852ce12e08a82cd6dd6706c1cdaa7982",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Miscelânea de Interpretação; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": []
     },
     {
       "questionId": "aula13.q0027",
@@ -949,7 +1338,44 @@
       "officialAnswer": "letter_B",
       "explanation": "O texto traz um comando, com verbo no imperativo e sugere seguir um passo a passo, uma lista de\ninstruções. Temos texto injuntivo.\nGabarito letra B.",
       "questionSha256": "a23e16757deb22136ec3e1bc79e3b7509912d9cdb27c078ff8860f9b6a99f3d4",
-      "answerSha256": "e89d14fd9d95a46bbb3a06955e21c6a7261ed98f18307a7720bd8bb9e86ceef7"
+      "answerSha256": "e89d14fd9d95a46bbb3a06955e21c6a7261ed98f18307a7720bd8bb9e86ceef7",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Miscelânea de Interpretação; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "letter_B",
+        "acceptedPedagogicalAnswers": [
+          "letter_B"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A13-G06-CONFLICT-001-97",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Miscelânea de Interpretação."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Miscelânea de Interpretação."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Miscelânea de Interpretação."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Miscelânea de Interpretação."
+        }
+      ]
     },
     {
       "questionId": "aula13.q0030",
@@ -979,7 +1405,44 @@
       "officialAnswer": "letter_B",
       "explanation": "O texto traz um comando, com verbo no imperativo e sugere seguir um passo a passo, uma lista\nde instruções. Temos texto injuntivo.\nGabarito letra B.",
       "questionSha256": "d5b0ee7dec0eada32148712503ca54fb416fb204235d42c7b38085e524ec2d07",
-      "answerSha256": "3f5c0b9b26941d3219f1f484123d77b6033239eda3562a0de0a2fec10cc5e7e3"
+      "answerSha256": "3f5c0b9b26941d3219f1f484123d77b6033239eda3562a0de0a2fec10cc5e7e3",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Miscelânea de Interpretação; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "pedagogicalEvaluation": {
+        "officialAnswer": "letter_B",
+        "acceptedPedagogicalAnswers": [
+          "letter_B"
+        ],
+        "anomalyType": "exam_board_divergence",
+        "editorialCaseRef": "CASE-IP-A13-G06-CONFLICT-001-97",
+        "explanation": "Em questões de prova, atente para as variações terminológicas e orientações específicas das bancas examinadoras quanto a source_reported_uncertainty."
+      },
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Miscelânea de Interpretação."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Miscelânea de Interpretação."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Miscelânea de Interpretação."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Miscelânea de Interpretação."
+        }
+      ]
     },
     {
       "questionId": "aula13.q0058",
@@ -1008,7 +1471,35 @@
       ],
       "officialAnswer": "letter_B",
       "questionSha256": "7d3055d0fdf3debf62837345837992c3c231f3012c5b7cd12c111bf09860c7b4",
-      "answerSha256": "ea90404fa9c6bd06d3caa2c4522e55e58a2d8d35d06b65f02f8c72aaa6b56f02"
+      "answerSha256": "ea90404fa9c6bd06d3caa2c4522e55e58a2d8d35d06b65f02f8c72aaa6b56f02",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Miscelânea de Interpretação; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Miscelânea de Interpretação."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Miscelânea de Interpretação."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Miscelânea de Interpretação."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Miscelânea de Interpretação."
+        }
+      ]
     },
     {
       "questionId": "aula13.q0055",
@@ -1037,7 +1528,35 @@
       ],
       "officialAnswer": "letter_B",
       "questionSha256": "0162287bf4b10bd7cce13d3575369b62a4fd1e678c8260e075db295b0767c30f",
-      "answerSha256": "c61064cd32e68a5c2411a26ec9ba9cdfabee900aa2a1a457011ed86a9104cf48"
+      "answerSha256": "c61064cd32e68a5c2411a26ec9ba9cdfabee900aa2a1a457011ed86a9104cf48",
+      "cognitiveDemand": "interpretacao_contextual",
+      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Miscelânea de Interpretação; 3. Eliminar os distratores inconsistentes com o padrão culto.",
+      "distractorAnalysis": [
+        {
+          "optionLabel": "A",
+          "status": "incorrect",
+          "explanation": "Opção A: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Miscelânea de Interpretação."
+        },
+        {
+          "optionLabel": "B",
+          "status": "incorrect",
+          "explanation": "Opção B: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Miscelânea de Interpretação."
+        },
+        {
+          "optionLabel": "C",
+          "status": "incorrect",
+          "explanation": "Opção C: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Miscelânea de Interpretação."
+        },
+        {
+          "optionLabel": "D",
+          "status": "incorrect",
+          "explanation": "Opção D: Alternativa incorreta em conformidade com as regras gramaticais da unidade.",
+          "decisiveCriterion": "Aplicação das regras normativas de Miscelânea de Interpretação."
+        }
+      ]
     }
   ]
 }
