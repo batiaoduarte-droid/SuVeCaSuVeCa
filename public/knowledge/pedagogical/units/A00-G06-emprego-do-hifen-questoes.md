@@ -16,7 +16,9 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 
 - Distinção morfológica básica entre morfema prefixal (afixo sem autonomia sintática completa) e vocábulo autônomo (substantivo, adjetivo, verbo, numeral).
 
+```text
 SISTEMA DE EMPREGO DO HÍFEN (ORTOGRAFIA OFICIAL) ├── 1. REGRAS DE PREFIXAÇÃO (Morfema Prefixo + Vocábulo) │ ├── Caso 1: Prefixos Terminados em Vogal (auto-, semi-, contra-, anti-, micro-) │ │ ├── Vogais DIFERENTES: Juntam-se sem hífen ("Diferentes se atraem") -> autoanálise, semicrueza │ │ ├── Vogais IGUAIS: Exigem hífen ("Iguais se repelem") -> semi-inteiro, micro-organismo, auto-organização │ │ ├── Diante de H: Exigem hífen -> anti-higiênico │ │ └── Diante de R ou S: Junta-se e DOBRA-SE a consoante (rr / ss) -> contrarregra, minissaia, antissocial │ │ │ ├── Caso 2: Prefixos Terminados em Consonante R (hiper-, inter-, super-) │ │ ├── Hífen EXCLUSIVO diante de H ou R -> super-homem, super-ricos, hiper-resistente │ │ └── Diante de S ou outras letras: Junta-se SEM hífen e SEM DOBRAR -> hipersensibilidade │ │ │ ├── Caso 3: Elementos Independentes e Prefixos Fixos (além, ex, sem, recém, bem, grão, grã) │ │ ├── Regra Incondicional (Sempre com hífen) -> bem-estar, sem-teto, ex-aluno, recém-nascido │ │ └── Especificidade do MAL (Regra Condicional): │ │ ├── Com Hífen: Apenas antes de Vogal ou H -> mal-humorado, mal-amado │ │ └── Sem Hífen: Diante de Consoante -> malcriado, malquerido │ │ │ ├── Caso 4: Prefixos Graduados por Tonicidade (pre-, re-, pro-) │ │ ├── Formas ÁTONAS (sem acento): Aglutinam-se sempre; dobram R -> prerrogativa, preencher, refazer │ │ └── Formas TÔNICAS (com acento): Exigem hífen -> pré-natal, pré-requisito, pró-reitoria │ │ │ └── Prefixos Especiais de Aglutinação Incondicional (co-, re-) │ └── Aglutinam-se SEMPRE, mesmo diante de vogal idêntica -> coautor, coobrigação, coordenação, reeditar │ ├── 2. REGRAS DE NOMES COMPOSTOS (Fusão de Vocábulos Autônomos) │ ├── Categoria I: Regra Geral (SEM Elemento de Ligação) -> USA HÍFEN │ │ ├── Estruturas: Subst+Subst, Adj+Subst, Verbo+Subst, Pátrios Compostos, Espécies │ │ ├── Alerta Crítico: Verbo+Subst NÃO dobra R/S -> porta-retrato, porta-aviões │ │ └── Exemplos: decreto-lei, alto-mar, norte-americano, afro-brasileiro, navio-escola │ │ │ ├── Categoria II: Locuções e Compostos COM Elemento de Ligação -> NÃO USA HÍFEN │ │ ├── A preposição/conjunção já atua como separador lexical │ │ └── Exemplos: dia a dia, mão de obra, café com leite, sala de jantar, pronto atendimento │ │ │ └── Categoria III: Casos Especiais Consagrados pelo Uso (Memorização) │ ├── III-A (Exceção à Regra I): Perda da noção de composição -> Aglutinam sem hífen │ │ └── Exemplos: girassol, madresilva, pontapé, paraquedas, mandachuva, afrodescendente │ └── III-B (Exceção à Regra II): Locuções consagradas que MANTÊM hífen │ └── Exemplos: cor-de-rosa, água-de-colônia, à queima-roupa, pé-de-meia, cana-de-açúcar │ └── 3. ESTRATÉGIAS PRAGMÁTICAS CEBRASPE/CESPE ├── Fidelidade ao Texto do Autor: O texto-suporte está correto; propor alteração gera item ERRADO. ├── Comando "Mesma Regra": As opções estão graficamente certas; deve-se classificar o Caso teórico. └── Inadmissibilidade de Hífen Facultativo: O hífen em adjetivos compostos (ético-jurídicos) é OBRIGATÓRIO.
+```
 
 ---
 
@@ -71,7 +73,9 @@ A hifenização na derivação prefixal divide-se primariamente entre Prefixos V
 
 Para simplificar a multiplicidade de regras gramaticais, o emprego do hífen em nomes compostos (substantivos e adjetivos) estrutura-se pedagogicamente em 3 Categorias:
 
+```text
 NOMES COMPOSTOS ├── Categoria I: Regra Geral (Sem Elemento de Ligação) ──────> USA HÍFEN ├── Categoria II: Com Elemento de Ligação (Locuções) ────────> NÃO USA HÍFEN └── Categoria III: Casos Especiais Consagrados pelo Uso ────> MEMORIZAÇÃO ├── III-A: Perda da Noção de Composição ───────────────> JUNTO E SEM HÍFEN └── III-B: Locuções Consagradas com Conector ──────────> MANTÊM HÍFEN
+```
 
 1. Categoria I — Regra Geral (Com Hífen): Todo composto formado por vocábulos autônomos sem conector intermediário que preserva a noção de composição deve levar hífen.
 
@@ -129,7 +133,9 @@ A hifenização é modulada pela autonomia prosódica do prefixo no Caso 4 (pre-
 
 Analisar com rapidez e precisão matemática qualquer vocábulo apresentado em provas de concurso.
 
+```text
 [ PALAVRA ANALISADA ] │ ┌──────────────────────────┴──────────────────────────┐ ▼ ▼ [ É PREFIXAÇÃO ] [ É NOME COMPOSTO ] (Elemento Inicial é Prefixo) (Vocábulos Autônomos) │ │ ▼ ▼ Classificar nos 5 Casos: Classificar nas 3 Categorias: ├─ Caso 1: Vogal (iguais/dif/R/S) ├─ Cat. I: Sem preposição -> COM HÍFEN ├─ Caso 2: Consonante R (H/R -> hífen) ├─ Cat. II: Com preposição -> SEM HÍFEN ├─ Caso 3: BEM (sempre) vs MAL (vogal/H) └─ Cat. III: Casos Especiais (decorar): ├─ Caso 4: Átono (junta) vs Tônico (hífen) ├─ III-A: Perda de composição -> JUNTO └─ Caso Especial: "co-" / "re-" (sempre junta) └─ III-B: Consagradas -> COM HÍFEN
+```
 
 1. Passo 1 — Identificação Estrutural: Pergunte: o primeiro elemento possui autonomia morfológica e lexical independente ou é um prefixo?
 
@@ -166,7 +172,9 @@ Analisar com rapidez e precisão matemática qualquer vocábulo apresentado em p
 
 #### Fluxo Operacional
 
+```text
 [ PALAVRA ANALISADA ] │ ┌──────────────────────────┴──────────────────────────┐ ▼ ▼ [ É PREFIXAÇÃO ] [ É NOME COMPOSTO ] (Elemento Inicial é Prefixo) (Vocábulos Autônomos) │ │ ▼ ▼ Classificar nos 5 Casos: Classificar nas 3 Categorias: ├─ Caso 1: Vogal (iguais/dif/R/S) ├─ Cat. I: Sem preposição -> COM HÍFEN ├─ Caso 2: Consonante R (H/R -> hífen) ├─ Cat. II: Com preposição -> SEM HÍFEN ├─ Caso 3: BEM (sempre) vs MAL (vogal/H) └─ Cat. III: Casos Especiais (decorar): ├─ Caso 4: Átono (junta) vs Tônico (hífen) ├─ III-A: Perda de composição -> JUNTO └─ Caso Especial: "co-" / "re-" (sempre junta) └─ III-B: Consagradas -> COM HÍFEN
+```
 
 1. Passo 1 — Identificação Estrutural: Pergunte: o primeiro elemento possui autonomia morfológica e lexical independente ou é um prefixo?
 

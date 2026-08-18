@@ -44,7 +44,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Sintaxe Geral: Noções de transitividade verbal, subordinação sintática e diferenciação entre complemento nominal e adjunto.
 - Fonossintaxe: Princípio básico da ocorrência de crase (fusão da preposição a com o artigo definido feminino a).
 
+```text
 SINTAXE DE REGÊNCIA ├── Regência Verbal (Verbo -> Complementos Diretos / Indiretos) └── REGÊNCIA NOMINAL (Nome -> Complemento Nominal) │ ├── 1. Natureza e Estrutura │ ├── Termo Regente: NOME (Substantivo, Adjetivo ou Advérbio) │ ├── Termo Regido: COMPLEMENTO NOMINAL (Sintagma ou Oração) │ └── Conector: SEMPRE mediado por PREPOSIÇÃO OBRIGATÓRIA │ ├── 2. Tipos de Regimes Preposicionais │ ├── Regência Simples (exigência de preposição unívoca) │ │ ├── contrário a, capaz de, responsável por, depois de, alusão a, restrito a │ │ └── passível de, sensível a, suscetível a, sujeito a, eficaz em, combate a │ └── Pluralidade / Dupla Regência (preposições alternativas equivalentes) │ ├── acostumado a / com | adaptado a / de / para | capacidade de / para │ ├── querido de / por | satisfeito com / de / em / por │ ├── aversão a / por | propenso a / para | imune a / de │ ├── ávido por / de | desejo de / por | orgulho de / por │ ├── curioso por/para/de| avesso a / em | receoso de / em │ └── relacionada com / a| intenção de / em │ ├── 3. Estruturas Sintáticas Especiais │ ├── Oração Completiva Nominal: Proibição de omissão do "de" (ex.: dúvida de que) │ ├── Pronome Relativo Preposicionado: Método da ordem direta (ex.: do qual integrar -> incorreto) │ └── Verbo Preferir (VTDI): [OD sem prep.] + [a + OI] com inversão estilística │ └── 4. Fenômenos de Intersecção ├── Determinação Semântica: Prep. simples (genérico) vs. Prep. + Artigo / Crase (determinado) ├── Pronome Possessivo Feminino: Artigo facultativo (de nossas vs. das nossas) └── Paralelismo Sintático: Recurso de ênfase (FGV) vs. Vício de redação (CEBRASPE)
+```
 
 ---
 

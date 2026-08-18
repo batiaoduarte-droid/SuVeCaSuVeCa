@@ -42,7 +42,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 - Reconhecimento de classes gramaticais: pronomes relativos (que), pronomes oblíquos (lhes), conjunções integrantes (que, se) e artigos.
 
+```text
 MAPA CONCEITUAL DO CONHECIMENTO CONSOLIDADO (esta unidade) │ ├── 1. ORAÇÃO SEM SUJEITO (VERBOS IMPESSOAIS) ─────────────────────── [] │ ├── Fenômenos Naturais (Literal = Impessoal vs. Figurado = Pessoal) [] │ ├── Verbo HAVER (= existir/ocorrer/acontecer) vs. EXISTIR/OCORRER ─ [] │ ├── Verbos de Tempo Decorrido (HAVER, FAZER, IR) ───────────────── [] │ └── Expressões Idiomáticas (CHEGA DE, BASTA DE, PASSA DE) ──────── [] │ ├── 2. SUJEITO ORACIONAL (ORAÇÃO SUBORDINADA SUBJETIVA) ─────────────── [] │ ├── Formas: Oração Desenvolvida (com C.I.) vs. Reduzida (Infinitivo)[] │ ├── Estruturas Típicas: Unipessoais, VL + Predicativo, Voz Passiva ─ [] │ └── Caso Específico: Verbo PARECER e Falso Sujeito Anteposto ───── [] │ ├── 3. SINTAXE DE LOCUÇÕES VERBAIS ────────────────────────────────── [] │ ├── Principal Impessoal (Haver/Fazer) → Auxiliar no SINGULAR │ ├── Principal Pessoal (Existir/Precipitar-se) → Auxiliar FLEXIONA │ └── Locução Modal "Haver de + Infinitivo" (Haver Pessoal Auxiliar)─ [] │ ├── 4. ESTRUTURAS DE VOZ PASSIVA E INDETERMINAÇÃO DO SUJEITO ───────── [] │ ├── VTD + SE = Partícula Apassivadora (PA) → Concorda com Sujeito Paciente │ ├── VTI + SE = Partícula de Indeterminação (PIS) → Verbo na 3ª pessoa do singular │ └── Estrutura "Trata-se de" (IIS invariável) ───────────────────── [] │ └── 5. MECANISMOS AVANÇADOS DE CONCORDÂNCIA E DESAMBIGUAÇÃO ├── Pronome Relativo "Que" como Sujeito ("O que vem depois salva") [] ├── Inversões Sintáticas, Núcleo Não Preposicionado e Pronome LHES ─ [] ├── Sujeito Composto Posposto (Concordância Total vs. Atrativa) ──── [] └── Acentuação Diferencial (têm/vêm, convém/convêm) e Particípios ── []
+```
 
 ---
 
@@ -77,7 +79,9 @@ O verbo haver, quando expressa existência, ocorrência ou acontecimento, é imp
 - Estrutura com EXISTIR: Existiam [muitas dúvidas].
 - Sintaxe: Existiam = Verbo Intransitivo (VI) pessoal; muitas dúvidas = Sujeito Simples Plural. O verbo concorda com o sujeito. A forma \*"existe muitas dúvidas" é erro de concordância.
 
+```text
 HAVER (= existir) ────────► IMPESSOAL (3ª sing.) ──► Termo associado = OBJETO DIRETO EXISTIR / OCORRER ────────► PESSOAL (Flexiona) ──► Termo associado = SUJEITO
+```
 
 Os verbos haver, fazer e ir, quando empregados para indicar tempo decorrido/transcorrido (tempo cronológico passado ou aproximado), atuam como verbos impessoais, permanecendo invariáveis na 3ª pessoa do singular.
 
@@ -99,7 +103,9 @@ Em qualquer locução verbal (verbo auxiliar + verbo principal), o verbo princip
 - O verbo principal exige sujeito; logo, o verbo auxiliar flexiona-se obrigatoriamente para concordar com o sujeito sintático.
 - Exemplos: Poderão existir novas rebeliões; Devem existir soluções; Passaram a existir fortunas enormes.
 
+```text
 LOCUÇÃO VERBAL ──► Analisar o ÚLTIMO verbo (Principal) ├── Principal IMPESSOAL (Haver/Fazer) ──► Auxiliar FIXO no SINGULAR ("Deve haver problemas") └── Principal PESSOAL (Existir/Passar) ──► Auxiliar FLEXIONA com Sujeito ("Devem existir problemas")
+```
 
 Na locução verbal modal formada pela perífrase haver de + infinitivo (ex.: haver de pesquisar, haver de precipitar-se), o verbo haver atua exclusivamente como verbo auxiliar pessoal (com valor modal de ter de, dever ou futuro), devendo flexionar-se normalmente em número e pessoa para concordar com o sujeito da oração.
 

@@ -42,7 +42,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 - Reconhecimento morfológico básico: verbos de ação no pretérito vs. adjetivos e qualificadores estáticos.
 
+```text
 TIPOLOGIA TEXTUAL (MÉTODO SISTEMATIZADO CEBRASPE) │ ├── 1. TRIAGEM ESTRUTURAL MACRO (Passo 1: Início, Final, Título, Fonte) │ ├── Foco em Tema / Conceito / Reflexão ──► ESTRUTURA DISSERTATIVA │ └── Foco em Personagens / Ações / Cenários ──► ESTRUTURA NARRATIVA / DESCRITIVA │ ├── 2. INTENÇÃO DISCURSIVA DO AUTOR (Passo 2: se Dissertativo) │ ├── Expor conhecimento / Informar fatos / Neutralidade ──► DISSERTAÇÃO EXPOSITIVA / INFORMATIVA │ │ └── Nota: Comentários pontuais não descaracterizam a exposição informativa. │ └── Persuadir o leitor / Defender tese / Juízos de valor ──► DISSERTAÇÃO ARGUMENTATIVA │ └── Dados numéricos/estatísticos = Instrumentos a serviço da persuasão. │ └── 3. RELAÇÃO AÇÃO vs. CARACTERIZAÇÃO (Passo 3: se Narrativo/Descritivo) ├── Verbos de ação + Enredo cronológico ──► PREDOMINÂNCIA NARRATIVA └── Detalhamento físico / Pausa temporal ──► ASPECTOS DESCRITIVOS SUBORDINADOS
+```
 
 ---
 
@@ -114,7 +116,9 @@ Textos argumentativos maduros frequentemente utilizam recursos de exposição fa
 
 Roteiro operacional padronizado para identificar, classificar e validar a tipologia textual e os fenômenos de hibridismo discursivo em provas de concursos públicos elaboradas pelo Cebraspe.
 
+```text
 ┌───────────────────────────────────┐ │ PASSO 1: TRIAGEM DAS EXTREMIDADES │ │ (Início, Final, Título e Fonte) │ └─────────────────┬─────────────────┘ │ ┌────────────────┴────────────────┐ ▼ ▼ O texto tem tema/assunto? O texto tem história/ações? (ESTRUTURA DISSERTATIVA) (NARRATIVO / DESCRITIVO) │ │ ┌──────────────┴──────────────┐ │ ▼ ▼ ▼ PASSO 2: EXPOSITIVO PASSO 2: ARGUMENTATIVO PASSO 3: DOMINÂNCIA • Intenção: expor o • Intenção: convencer e • Ações temporais + que sabe ou informar defender tese central detalhes físicos = • Não busca persuadir • Juízos de valor e dados Predominantemente • Opiniões pontuais usados para persuasão Narrativo com aspectos não alteram o tipo • Propósito comunicativo descritivos mesclados
+```
 
 1. Passo 1 — Triagem Estrutural pelas Extremidades:
 
@@ -140,7 +144,9 @@ Roteiro operacional padronizado para identificar, classificar e validar a tipolo
 
 #### Sequência de passos operacionais
 
+```text
 ┌───────────────────────────────────┐ │ PASSO 1: TRIAGEM DAS EXTREMIDADES │ │ (Início, Final, Título e Fonte) │ └─────────────────┬─────────────────┘ │ ┌────────────────┴────────────────┐ ▼ ▼ O texto tem tema/assunto? O texto tem história/ações? (ESTRUTURA DISSERTATIVA) (NARRATIVO / DESCRITIVO) │ │ ┌──────────────┴──────────────┐ │ ▼ ▼ ▼ PASSO 2: EXPOSITIVO PASSO 2: ARGUMENTATIVO PASSO 3: DOMINÂNCIA • Intenção: expor o • Intenção: convencer e • Ações temporais + que sabe ou informar defender tese central detalhes físicos = • Não busca persuadir • Juízos de valor e dados Predominantemente • Opiniões pontuais usados para persuasão Narrativo com aspectos não alteram o tipo • Propósito comunicativo descritivos mesclados
+```
 
 1. Passo 1 — Triagem Estrutural pelas Extremidades:
 

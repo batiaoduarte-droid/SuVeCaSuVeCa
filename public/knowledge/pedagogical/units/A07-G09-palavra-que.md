@@ -42,7 +42,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 - Reconhecimento básico de termos essenciais e integrantes (Sujeito, Predicado, Objeto Direto, Objeto Indireto, Predicativo e Complemento Nominal).
 
+```text
 MAPA CONCEITUAL GLOBAL DA MORFOSSINTAXE DO "QUE" │ ├── 1. EIXO MORFOLÓGICO │ ├── 1.1. PRONOME │ │ ├── Relativo (retoma antecedente; troca por "o qual/a qual") │ │ ├── Indefinido (modifica substantivo posterior; troca por "quanto/qual") │ │ └── Interrogativo (em interrogações diretas [?] ou indiretas/conjecturas [.]) │ ├── 1.2. ADVÉRBIO DE INTENSIDADE │ │ └── Modifica Adjetivo ou outro Advérbio (Método das Setas; troca por "quão/muito") │ ├── 1.3. CONJUNÇÃO │ │ ├── Coordenativa: Explicativa (pois/porque) e Aditiva (policíndeto iterativo) │ │ ├── Subordinativa Integrante: Introduz oração substantiva (troca por "ISSO") │ │ └── Subordinativa Adverbial: Consecutiva, Causal, Comparativa, Concessiva, Final │ └── 1.4. OUTRAS CLASSIFICAÇÕES │ ├── Partícula / Expressão Expletiva ou de Realce (supressão total sem prejuízo) │ └── Preposição Acidental (estrutura fixa [TER + QUE + INFINITIVO] = "ter de") │ ├── 2. EIXO DE CONFRONTO E DISTINÇÃO │ ├── Integrante (ISSO) vs. Relativo (O QUAL / anáfora) │ ├── Integrante (mero conectivo) vs. Indefinido/Interrogativo (modifica substantivo) │ └── Tríade Conectiva: Causal (1º no tempo) vs. Consecutiva (2º no tempo) vs. Explicativa (sem causa física) │ └── 3. EIXO SINTÁTICO (Funções do Pronome Relativo na Oração Adjetiva) ├── Sujeito (antecedente pratica/sofre a ação verbal da adjetiva) ├── Objeto Direto (antecedente completa VTD sem preposição) ├── Objeto Indireto (antecedente completa VTI com preposição) └── Complemento Nominal (antecedente completa nome/substantivo abstrato com preposição)
+```
 
 ---
 
@@ -133,7 +135,9 @@ A diferenciação morfológica entre QUE advérbio de intensidade e QUE pronome 
 
 - Exemplos: "Que felicidade!" (seta em felicidade = substantivo); "Que calor está hoje!" (seta em calor = substantivo).
 
+```text
 MÉTODO DAS SETAS ┌─────────┐ aponta para ┌────────────────────────┐ Classificação: │ QUE │ ──────────────> │ ADJETIVO ou ADVÉRBIO │ ═> ADVÉRBIO DE INTENSIDADE └─────────┘ └────────────────────────┘ ┌─────────┐ aponta para ┌────────────────────────┐ Classificação: │ QUE │ ──────────────> │ SUBSTANTIVO │ ═> PRONOME INDEFINIDO └─────────┘ └────────────────────────┘
+```
 
 - A ilusão do "muito": Tanto "Que inteligente!" quanto "Que calor!" aceitam troca por "muito" (muito inteligente / muito calor). Portanto, a troca por "muito" não define a classe morfológica.
 - A falácia da exclamação: Frases declarativas com ponto final podem conter o QUE advérbio ou pronome indefinido (ex.: "Vi que linda menina era ela").
@@ -170,7 +174,9 @@ O QUE é classificado como pronome interrogativo quando é empregado na formula�
 
 A diferenciação entre as conjunções causal, consecutiva e explicativa orienta-se pela primazia da relação de causa e efeito factual. Havendo causalidade objetiva entre os eventos ("o fato de X fez com que Y"), o conectivo JAMAIS será explicativo: será causal ou consecutivo, resolvido pelo critério cronológico linear. Não havendo relação de causa e efeito, será coordenativo explicativo.
 
+```text
 TESTE DE RESOLUÇÃO DA TRÍADE CONECTIVA │ Existe nexo de Causa e Efeito no plano dos fatos? ("O fato de X fez com que ocorresse Y?") │ ┌───────────────┴───────────────┐ SIM NÃO │ │ ┌──────────────┴──────────────┐ CONJUNÇÃO EXPLICATIVA │ Exclui-se a Explicativa! │ • Com Imperativo (ordem/pedido) │ Aplica-se o critério │ • Justificativa / Dedução │ cronológico dos fatos │ baseada em indício visível └──────────────┬──────────────┘ (sem causa física geradora) │ ┌──────────────┴──────────────┐ │ │ "QUE" introduz o 1º FATO "QUE" introduz o 2º FATO (o motivo / fato gerador) (o resultado / consequência) │ │ CONJUNÇÃO CAUSAL CONJUNÇÃO CONSECUTIVA (= porque / visto que) (admite "tão/tanto... que")
+```
 
 1. Causal: "Choveu, [que o dia foi quente]." $\rightarrow$ 1º fato = o dia foi quente (Causa); 2º fato = choveu (Efeito). O QUE introduz a causa $\Rightarrow$ Conjunção Causal.
 2. Consecutiva: "Choveu [que alagou a rua]." $\rightarrow$ 1º fato = choveu (Causa); 2º fato = alagou a rua (Efeito). Admite tanto que $\Rightarrow$ Conjunção Consecutiva.

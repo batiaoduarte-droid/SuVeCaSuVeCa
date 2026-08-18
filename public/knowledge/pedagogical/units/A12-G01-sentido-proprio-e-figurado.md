@@ -18,7 +18,9 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 - Noções de Dicionário: Compreensão intuitiva da acepção usual/primária das palavras (significado concreto/físico no mundo real).
 - Distinção Gramatical Básica: Entendimento preliminar de que classe de palavra (morfologia) não define o sentido da sentença (semântica).
 
+```text
 SEMÂNTICA (O Sentido Determinado pelo Contexto Discursivo) │ ├── 1. Distinção Epistemológica Fundamental │ ├── Morfologia: Análise estática da classe da palavra (substantivo, adjetivo, verbo) │ └── Semântica: Análise dinâmica do sentido e relações de significação no texto │ ├── 2. Eixo Denotativo (Sentido Próprio) │ ├── Nomenclaturas: Real | Lógico (FGV) | Dicionarizado | Denotativo | Literal | Usual │ ├── Critério: Relação factual, física, biológica ou institucionalmente direta com o referente │ └── Fenômeno Associado: POLISSEMIA │ ├── Múltiplos sentidos dicionarizados próprios para o mesmo vocábulo │ ├── Ex: "Banco" (instituição financeira vs. peça de mobília) │ ├── Ex: "Montar" (cavalgar animal vs. organizar/estruturar escritório) │ └── Ex: "Gastar" (desembolsar moeda vs. despender tempo/duração) │ ├── 3. Eixo Conotativo (Sentido Figurado) │ ├── Nomenclaturas: Figurado | Conotativo | Não Lógico (FGV) | Metafórico | Sentido Poético │ ├── Critério: Translação semântica por analogia, sensação, abstração ou quebra da lógica física │ ├── Fenômeno de Alta Recorrência: REIFICAÇÃO (Coisificação) │ ├── Atribuição de propriedades de coisas/objetos/máquinas a seres humanos ou entidades │ ├── Ex: Pessoa "doce", "bateria" de crianças, ser um "trampolim" (= meio) │ └── Toda reificação resulta obrigatoriamente em sentido figurado │ ├── Linguagem Figurada em Textos Científicos e Jornalísticos (FGV) │ ├── Função Didática: Traduzir conceitos complexos para o público leigo │ └── Exemplos: "aprofundar" resultados, "impulsionar" perda neuronal, bactéria "comer" plástico │ └── Deslocamento Semântico em Textos Literários / Crônicas (Consulplan / FCC / Cebraspe) │ └── Exemplos: "pavão enfático", "volúpia autoral", "cigarro em chamas", "me constipei" │ └── 4. Método Operacional e Protocolo de Resolução ├── Passo 1: Traçado da Seta Semântica (Vincular vocábulo ao seu referente textual) ├── Passo 2: Resgate do Sentido Nuclear Dicionarizado (O que o vocábulo significa no mundo físico?) ├── Passo 3: Confronto Físico/Lógico vs. Metafórico (Compatibilidade material) └── Passo 4: Teste da Paráfrase Denotativa Inversa (Substituir o figurado por palavra real equivalente)
+```
 
 ---
 
@@ -173,7 +175,9 @@ A linguagem literária, poética e a crônica jornalística utilizam o deslocame
 
 ## Roteiros de resolução
 
+```text
 [TEXTO INTEGRAL DA QUESTÃO] │ ▼ [Etapa 1: Farejamento e Traçado da Seta] (Conectar palavra suspeita ao referente textual) │ ▼ [Etapa 2: Resgate do Sentido Nuclear Dicionarizado] (Definir significado físico/primário no dicionário) │ ▼ [Etapa 3: Teste da Compatibilidade Física/Real] / \ / \ [Compatibilidade Direta] [Incompatibilidade / Metáfora] (Assaltante de máscara, (Memória que desgruda, roedores em movimento) pessoa doce, trampolim) │ │ ▼ ▼ SENTIDO DENOTATIVO SENTIDO CONOTATIVO (PROPRIO / LÓGICO) (FIGURADO / NÃO LÓGICO) │ ▼ [Etapa 4: Teste da Paráfrase Inversa] (Substituir mentalmente pelo termo real)
+```
 
 1. Etapa 1 — Localização e Traçado da Seta Semântica: Identifique o vocábulo-alvo. Caso a banca não grife termos, examine cada verbo e adjetivo ("farejamento"). Desenhe uma seta conectando a palavra ao substantivo, pronome ou entidade a que ela se vincula.
 2. Etapa 2 — Resgate do Sentido Nuclear do Dicionário: Formule a pergunta de controle: Qual é o sentido comum, físico, visual ou mecânico primordial deste vocábulo? (ex.: brinco = joia de orelha; trampolim = prancha de salto; vibrante = o que oscila fisicamente).
@@ -198,7 +202,9 @@ Descobrir com rapidez a alternativa literal em provas de alta densidade da FGV q
 3. Observe que as 4 alternativas figuradas confirmam mutuamente o padrão conotativo da banca.
 4. Isole a única alternativa que relata ação física e laboratorial concreta (movimento de roedores, analisaram placentas) como gabarito incontestável.
 
+```text
 [TEXTO INTEGRAL DA QUESTÃO] │ ▼ [Etapa 1: Farejamento e Traçado da Seta] (Conectar palavra suspeita ao referente textual) │ ▼ [Etapa 2: Resgate do Sentido Nuclear Dicionarizado] (Definir significado físico/primário no dicionário) │ ▼ [Etapa 3: Teste da Compatibilidade Física/Real] / \ / \ [Compatibilidade Direta] [Incompatibilidade / Metáfora] (Assaltante de máscara, (Memória que desgruda, roedores em movimento) pessoa doce, trampolim) │ │ ▼ ▼ SENTIDO DENOTATIVO SENTIDO CONOTATIVO (PROPRIO / LÓGICO) (FIGURADO / NÃO LÓGICO) │ ▼ [Etapa 4: Teste da Paráfrase Inversa] (Substituir mentalmente pelo termo real)
+```
 
 ### Roteiro Operacional
 

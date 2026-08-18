@@ -42,7 +42,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 - Noção preliminar dos três modos verbais: Indicativo (certeza), Subjuntivo (hipótese/dúvida) e Imperativo (ordem/pedido).
 
+```text
 ESTRUTURA MORFOLÓGICA DO VERBO │ ┌───────────────────────────────────┴───────────────────────────────────┐ ▼ ▼ BASE LEXICAL E TEMÁTICA DESINÊNCIAS FLEXIONAIS │ │ ┌───────┴───────┐ ┌───────────────┴───────────────┐ ▼ ▼ ▼ ▼ RADICAL VOGAL TEMÁTICA (VT) DMT DNP (Significado (Classifica a conjugação: (Modo e Tempo: (Número e Pessoa: Léxico) 1ª: -a-, 2ª: -e-, 3ª: -i-) marca comum a marca particular │ todas as pessoas) que varia p/ pessoa) ▼ │ │ ┌───────────────┐ ├─ Pret. Imp. Ind (1ª): -va- ├─ 1ª Sing: -o / -i / Ø │ TEMA VERBAL │ ├─ Pret. Imp. Ind (2ª/3ª): -ia- ├─ 2ª Sing: -s │ (Radical + VT)│ ├─ Pret. Imp. Subj: -sse- ├─ 3ª Sing: Ø └───────────────┘ ├─ Pres. Subj (1ª): -e- (VT Ø) ├─ 1ª Plural: -mos ├─ Pres. Subj (2ª/3ª): -a- (VT Ø)├─ 2ª Plural: -is / -des └─ Pres. Ind: Ø └─ 3ª Plural: -m / -ão
+```
 
 1. Reconhecer as três conjugações e o caso etimológico do verbo pôr.
 2. Dominar o teste do Infinitivo Impessoal para extrair Radical, VT e Tema.
@@ -115,7 +117,9 @@ As fontes registram dois casos canônicos de alomorfia analisados no quadro:
 
 O Método dos 3 Passos é um procedimento analítico estruturado para segmentar e classificar os constituintes morfológicos de qualquer verbo flexionado, substituindo a memorização aleatória pelo raciocínio lógico.
 
+```text
 ALGORITMO DOS 3 PASSOS │ 1º PASSO: ACHAR A VOGAL TEMÁTICA ▼ • "Jogar" o verbo para o Infinitivo Impessoal. • Identificar a vogal antes do "-r" (A = 1ª, E = 2ª, I = 3ª). • Isolar o Radical e obter a base do Tema (Radical + VT). │ 2º PASSO: ACHAR A DESINÊNCIA MODO-TEMPORAL (DMT) ▼ • Conjugar mentalmente o tempo verbal com o apoio de marcadores. • Isolar a desinência COMUM que se repete em todas as pessoas. │ 3º PASSO: ACHAR A DESINÊNCIA NÚMERO-PESSOAL (DNP) ▼ • Observar a terminação específica da pessoa solicitada. • Isolar a desinência PARTICULAR que varia de pessoa para pessoa.
+```
 
 - Implementado em:
 

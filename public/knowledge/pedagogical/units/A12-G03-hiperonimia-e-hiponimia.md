@@ -44,7 +44,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Semântica Fundamental: Noções preliminares de sinonímia (equivalência de sentido) e antonímia (oposição de sentido).
 - Linguística Textual: Noção elementar de cadeia referencial (retomada de ideias para evitar repetição).
 
+```text
 ANÁLISE LINGUÍSTICA E RELAÇÕES SEMÂNTICO-COESIVAS ├── 1. Critérios de Análise │ ├── Morfologia (Classe da palavra isolada) │ ├── Semântica (Sentido, valor discursivo e relações de significado) │ └── Sintaxe (Função estrutural/relacional na oração) │ ├── 2. Relações Semânticas Lexicais │ ├── Hiperonímia (Hiperônimo: Geral / Gênero / Superordenado / Ampla Extensão) │ └── Hiponímia (Hipônimo: Específico / Espécie / Subordenado / Restrita Extensão) │ └── Chave de Validação: Teste Lógico-Categorial "TIPO DE" │ ├── 3. Fronteiras e Distinções Semânticas Críticas │ ├── Hiperonímia / Hiponímia (Níveis hierárquicos assimétricos: Geral ↔ Específico) │ ├── Sinonímia Contextual (Mesmo nível semântico: Equivalência sem relação "tipo de") │ └── Campo Semântico (Mesmo domínio temático sem subordinação taxonômica ou sinonímia) │ ├── 4. Aplicações em Mecanismos Coesivos │ ├── Vetores Direcionais Básicos │ │ ├── Elemento Coesivo ("Manda a Seta" / Emissor) │ │ ├── Referente ("Recebe a Seta" / Alvo) │ │ ├── Anáfora (Vetor Retrospectivo: Aponta para trás / Antes) │ │ └── Catáfora (Vetor Prospectivo: Aponta para frente / Depois) │ ├── Tipologia Coesiva Lexical │ │ ├── Anáfora por Hiperônimo (Termo Geral retoma Termo Específico antecedente) │ │ ├── Anáfora Especificativa / Especificadora (Hipônimo retoma e particulariza Hiperônimo) │ │ ├── Anáfora Associativa (Retomada por contiguidade temática de Campo Semântico) │ │ └── Sumarização / Encapsulamento (Termo sintético condensa enumeração prévia) │ └── Distinções Funcionais de Coesão │ ├── Coesão por Substituição Real (Termo anafórico ocupa o lugar do referente) │ ├── Coesão Explicativa / Aposição (Termo geral coexiste lado a lado com o nome próprio) │ └── Coesão Pronominal (Morfológica) vs. Coesão Lexical (Semântica) │ └── 5. Aplicações Lexicográficas e em Provas ├── Estrutura de Verbetes: [Entrada] — [Hiperônimo de Abertura] + [Particularizações] ├── Direcionalidade Obrigatória: [Específico -> Geral = Hiponímia] vs. [Geral -> Específico = Hiperonímia] └── Distinção CEBRASPE: Adjetivação Sintagmática (Qualificação) ≠ Coesão Lexical por Hiperonímia
+```
 
 ---
 
@@ -75,7 +77,9 @@ A hiperonímia e a hiponímia constituem relações semânticas hierárquicas e 
 
 A chave de validação consiste na proposição afirmativa: [Termo A] é um TIPO DE [Termo B]. Se a proposição for verdadeira, $A$ é categoricamente o hipônimo e $B$ é o hiperônimo.
 
+```text
 ┌────────────────────────────────────────┐ │ HIPERÔNIMO (Geral) │ │ ex.: Animais, Veículo, Alimento │ └───────────────────┬────────────────────┘ │ engloba / inclui │ ┌───────────────────▼────────────────────┐ │ HIPÔNIMO (Específico) │ ──> Teste: "Pássaro é um │ ex.: Pássaros, Carro, Gelatina │ TIPO DE animal" └────────────────────────────────────────┘
+```
 
 - Animais (Hiperônimo) ↔ Pássaros (Hipônimo): pássaro é um tipo de animal.
 - Transporte (Hiperônimo) ↔ Navio, Avião (Hipônimos): navio é um tipo de transporte.
@@ -229,7 +233,9 @@ A modificação direta de um substantivo por um adjetivo adjacente dentro do mes
 
 Finalidade: Identificar com precisão matemática se uma relação entre dois vocábulos configura Sinonímia, Hiperonímia, Hiponímia ou Campo Semântico (Anáfora Associativa).
 
+```text
 Início: Identificar Termo 1 (T1) e Termo 2 (T2) │ ▼ ┌───────────────────────────────────────────┐ │ Passo 1: Avaliar Equivalência Semântica │ │ T1 e T2 estão no mesmo patamar │ │ de sentido no contexto da frase? │ └─────────────────────┬─────────────────────┘ │ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────┐ ┌──────────────────┐ │ SINONÍMIA │ │ Ir para Passo 2 │ │ (ex.: ceia/jantar│ └─────────┬────────┘ │ telas/quadros) │ │ └──────────────────┘ ▼ ┌───────────────────────────────────────────┐ │ Passo 2: Aplicar Teste Lógico "TIPO DE" │ │ "T1 é tipo de T2" OU "T2 é tipo de T1"?│ └─────────────────────┬─────────────────────┘ │ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────────────────────┐ ┌──────────────────────────────────┐ │ Passo 2b: Checar Direcionalidade│ │ Passo 3: Avaliar Campo Semântico │ │ - Se T1=Específico e T2=Geral: │ │ T1 e T2 pertencem ao mesmo tema │ │ ──> HIPONÍMIA │ │ sem relação taxonômica de gênero?│ │ - Se T1=Geral e T2=Específico: │ └──────────────────┬───────────────┘ │ ──> HIPERONÍMIA │ │ └──────────────────────────────────┘ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────┐ ┌──────────────────┐ │ CAMPO SEMÂNTICO │ │ Relações Lógicas │ │ Anáfora │ │ Distintas │ │ Associativa │ │ (Antonímia, │ │ (ex.: febre/ │ │ Paronímia, │ │ doença; pista/ │ │ Coordenação) │ │ aeroporto) │ └──────────────────┘ └──────────────────┘
+```
 
 Finalidade: Identificar sem erro papéis referenciais e vetores direcionais (anáfora vs. catáfora).Evidências herdadas: , .
 
@@ -264,7 +270,9 @@ Finalidade: Identificar a legitimidade de definições lexicográficas pelo hipe
 
 Finalidade: Identificar com precisão matemática se uma relação entre dois vocábulos configura Sinonímia, Hiperonímia, Hiponímia ou Campo Semântico (Anáfora Associativa).
 
+```text
 Início: Identificar Termo 1 (T1) e Termo 2 (T2) │ ▼ ┌───────────────────────────────────────────┐ │ Passo 1: Avaliar Equivalência Semântica │ │ T1 e T2 estão no mesmo patamar │ │ de sentido no contexto da frase? │ └─────────────────────┬─────────────────────┘ │ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────┐ ┌──────────────────┐ │ SINONÍMIA │ │ Ir para Passo 2 │ │ (ex.: ceia/jantar│ └─────────┬────────┘ │ telas/quadros) │ │ └──────────────────┘ ▼ ┌───────────────────────────────────────────┐ │ Passo 2: Aplicar Teste Lógico "TIPO DE" │ │ "T1 é tipo de T2" OU "T2 é tipo de T1"?│ └─────────────────────┬─────────────────────┘ │ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────────────────────┐ ┌──────────────────────────────────┐ │ Passo 2b: Checar Direcionalidade│ │ Passo 3: Avaliar Campo Semântico │ │ - Se T1=Específico e T2=Geral: │ │ T1 e T2 pertencem ao mesmo tema │ │ ──> HIPONÍMIA │ │ sem relação taxonômica de gênero?│ │ - Se T1=Geral e T2=Específico: │ └──────────────────┬───────────────┘ │ ──> HIPERONÍMIA │ │ └──────────────────────────────────┘ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────┐ ┌──────────────────┐ │ CAMPO SEMÂNTICO │ │ Relações Lógicas │ │ Anáfora │ │ Distintas │ │ Associativa │ │ (Antonímia, │ │ (ex.: febre/ │ │ Paronímia, │ │ doença; pista/ │ │ Coordenação) │ │ aeroporto) │ └──────────────────┘ └──────────────────┘
+```
 
 Finalidade: Identificar sem erro papéis referenciais e vetores direcionais (anáfora vs. catáfora).Evidências herdadas: , .
 

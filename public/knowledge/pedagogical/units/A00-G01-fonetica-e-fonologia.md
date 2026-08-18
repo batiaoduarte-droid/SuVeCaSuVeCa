@@ -21,7 +21,9 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 - Dífono (Letra X = /ks/): Uma única letra gráfica representando dois fonemas consonantais simultâneos (/k/ + /s/).
 - Letra Muda (H inicial): Grafema sem emissão de som, com impacto redutor na contagem fonética.
 
+```text
 ESTRUTURA DA PALAVRA │ ┌─────────────────────┴─────────────────────┐ ▼ ▼ PLANO GRÁFICO PLANO FONÉTICO Letras / Grafemas Fonemas / Sons │ │ └───────────────┬───────────────────────────┘ │ RELAÇÃO MATEMÁTICA PADRÃO: L = F │ ┌───────────────────┴───────────────────┐ ▼ ▼ CASO 1: REDUÇÃO (-1) CASO 2: AUMENTO (+1) ┌───────────────────────┐ ┌───────────────────────┐ │ Dígrafos Consonantais │ │ Dífono da Letra X │ │ Dígrafos Vocálicos │ │ (som /ks/) │ │ Letra H inicial mudo │ │ Ex.: Táxi, Fixo │ └───────────────────────┘ └───────────────────────┘
+```
 
 ---
 
@@ -42,7 +44,9 @@ A Letra (Grafema) é a representação visual, gráfica e escrita da língua. O 
 
 Dígrafo é o encontro de duas letras consecutivas que representam um único fonema (uma só emissão sonora). Classificam-se estritamente em Dígrafos Consonantais e Dígrafos Vocálicos.
 
+```text
 ┌── CONSONANTAIS: CH, LH, NH, RR, SS, SC, SÇ, XC, XS, GU, QU │ (som resultante = consoante; ex.: chave /x/, guerra /g/) DÍGRAFOS (2L = 1 Som) ──┤ └── VOCÁLICOS: AM, EM, IM, OM, UM / AN, EN, IN, ON, UN (som resultante = vogal nasal; m/n atuam como til)
+```
 
 1. Dígrafos Consonantais:
 
@@ -58,7 +62,9 @@ Dígrafo é o encontro de duas letras consecutivas que representam um único fon
 
 A letra X é polifônica na Língua Portuguesa, assumindo quatro realizações sonoras distintas: /s/, /z/, /ʃ/ e /ks/. Dentre elas, apenas o som /ks/ constitui um dífono (uma letra representando dois sons), provocando acréscimo na contagem de fonemas.
 
+```text
 QUADRO DA POLIFONIA DO X │ ┌──────────────────┬─────────────────┴─────────────────┬──────────────────┐ ▼ ▼ ▼ ▼ SOM DE /s/ SOM DE /z/ SOM DE /ʃ/ SOM DE /ks/ (1L = 1 Som) (1L = 1 Som) (1L = 1 Som) (1L = 2 SONS) experiência, exílio, caixa, complexo, táxi, exceder, exemplo mexer, tórax, fixo, excelente mexicano látex, nexo [Relação 1:1] [Relação 1:1] [Relação 1:1] [DÍFONO: F = L + 1]
+```
 
 1. X com som de /s/: experiência, exceder, excelente. Em exceder e excelente, o agrupamento XC atua como dígrafo consonantal.
 2. X com som de /z/: Ocorre em posição intervocálica em vocábulos como exílio, exemplo, exame. Mantém a relação padrão de 1 letra para 1 fonema.

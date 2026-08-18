@@ -42,7 +42,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 - Noção preliminar de Transitividade Verbal (verbos que pedem ou não complemento e a presença de preposição).
 
+```text
 MAPA TEMÁTICO CONSOLIDADO — PRONOMES PESSOAIS ├── 1. Morfossintaxe Fundamental │ ├── Pessoas do Discurso (1ª, 2ª e 3ª do singular e plural) │ ├── Pronomes Retos ──> Função típica: Sujeito (sem preposição regente) │ └── Pronomes Oblíquos ──> Função típica: Complementos Verbais ou Nominais │ ├── Átonos (Fracos / sem prep.) ──> me, te, se, o, a, lhe, nos, vos, os, as, lhes │ └── Tônicos (Fortes / SEMPRE PREPOSICIONADOS) ──> mim, ti, si, ele, nós, vós, eles ├── 2. Critérios de Desempate e Formas Idênticas │ └── Ele, Ela, Nós, Vós, Eles, Elas │ ├── Sem Preposição / Sujeito ──> Pronome Pessoal Reto │ └── Com Preposição / Complemento ──> Pronome Pessoal Oblíquo Tônico ├── 3. Regras de Substituição Pronominal de 3ª Pessoa │ ├── Objeto Direto (sem preposição) ──> O, A, OS, AS │ │ ├── Verbos em -R, -S, -Z ──> Queda da consoante + LO, LA, LOS, LAS │ │ └── Verbos em som nasal (-M, -ÃO, -ÕE) ──> Verbo intacto + NO, NA, NOS, NAS │ └── Objeto Indireto (com preposição) ──> LHE, LHES / A ELE(S), A ELA(S) ├── 4. Pronomes Oblíquos Átonos Coringas (ME, TE, SE, NOS, VOS) │ ├── Verbo Transitivo Direto (VTD) ──> Atuam como Objeto Direto │ ├── Verbo Transitivo Indireto (VTI) ──> Atuam como Objeto Indireto │ └── Verbo Bitransitivo (VTDI) ──> Regra da Eliminação Mútua com o outro objeto ├── 5. Valor Possessivo do Pronome Oblíquo │ ├── Equivalência Semântica: pronome oblíquo = possessivo (dele, sua, meu...) │ └── Reclassificação Sintática: Deixa de ser objeto verbal ──> Passa a ser ADJUNTO ADNOMINAL └── 6. Norma Culta e Regência em Concursos ├── Uniformidade de Tratamento (Tu/Te/Ti vs. Você/Lhe/Seu) ├── Sujeito de Infinitivo: "Para eu fazer" (Reto) vs. "Para mim" (Oblíquo Complementar) └── Macete do Menino (substituição por "o menino" vs. "ao menino")
+```
 
 ---
 
@@ -235,7 +237,9 @@ Mesmo estando fonética ou graficamente ligados ao verbo por próclise ou êncli
 
 Propósito: Substituir termos sublinhados em frases pelo pronome pessoal correto segundo a norma culta.
 
+```text
 Passo 1: Localizar o VERBO principal da oração. │ ▼ Passo 2: Executar a Pergunta pelo SUJEITO ("Quem é que / O que é que + VERBO?"). │ ├── Se o termo sublinhado for a resposta -> É SUJEITO. │ │ └── Ação: Substituir por PRONOME RETO (ele, ela, nós, eles...). │ └── Se o sujeito for outro elemento -> Seguir para o Passo 3. ▼ Passo 3: Executar a Pergunta pelo COMPLEMENTO ("VERBO + o quê / a quem?"). ├── Caso A: Complemento SEM Preposição (Objeto Direto): │ └── Ação: Substituir por O, A, OS, AS (aplicar regras fonéticas ). └── Caso B: Complemento COM Preposição (Objeto Indireto): └── Ação: Substituir por LHE, LHES ou forma tônica preposicionada (A ELE, A ELA...).
+```
 
 Propósito: Descobrir rapidamente se o verbo rege complemento com preposição (OI / LHE) ou sem preposição (OD / O) sem recorrer à memorização mecânica.Origem: 002 - Parte 02  e 004 - Parte 04 .
 
@@ -248,7 +252,9 @@ Propósito: Descobrir rapidamente se o verbo rege complemento com preposição (
 
 Propósito: Aplicar corretamente as regras de transformação fonética ao associar verbos aos pronomes o, a, os, as por ênclise.
 
+```text
 Início: Verbo associado a pronome em ênclise │ ├── O pronome é O, A, OS ou AS? │ ├── NÃO (é LHE, ME, NOS...) ──> APENAS HÍFEN (ex.: obedecer-lhe). Não altere o verbo! │ └── SIM ──> Analisar terminação do verbo: │ │ │ ├── Termina em -R, -S ou -Z: │ │ 1. Cortar a consoante final (-r, -s, -z). │ │ 2. Transformar o pronome em -LO, -LA, -LOS, -LAS. │ │ 3. Ajustar acento gráfico da oxítona/hiato (ex.: comprar+as = comprá-las). │ │ │ ├── Termina em Som Nasal (-M, -ÃO, -ÕE): │ │ 1. Manter a grafia do verbo intacta. │ │ 2. Transformar o pronome em -NO, -NA, -NOS, -NAS (ex.: põe+a = põe-na). │ │ │ └── Outra terminação (vogal oral): │ └── APENAS HÍFEN (ex.: ama+a = ama-a; ajudava+as = ajudava-as).
+```
 
 Propósito: Resolver a função sintática ou preenchimento de lacunas em períodos com verbos de dois complementos (contar, avisar, informar, responder, retirar).Origem: 002 - Parte 02  e 004 - Parte 04 .
 
@@ -269,7 +275,9 @@ Propósito: Distinguir se um pronome oblíquo ligado ao verbo é Complemento Ver
 
 Propósito: Substituir termos sublinhados em frases pelo pronome pessoal correto segundo a norma culta.
 
+```text
 Passo 1: Localizar o VERBO principal da oração. │ ▼ Passo 2: Executar a Pergunta pelo SUJEITO ("Quem é que / O que é que + VERBO?"). │ ├── Se o termo sublinhado for a resposta -> É SUJEITO. │ │ └── Ação: Substituir por PRONOME RETO (ele, ela, nós, eles...). │ └── Se o sujeito for outro elemento -> Seguir para o Passo 3. ▼ Passo 3: Executar a Pergunta pelo COMPLEMENTO ("VERBO + o quê / a quem?"). ├── Caso A: Complemento SEM Preposição (Objeto Direto): │ └── Ação: Substituir por O, A, OS, AS (aplicar regras fonéticas ). └── Caso B: Complemento COM Preposição (Objeto Indireto): └── Ação: Substituir por LHE, LHES ou forma tônica preposicionada (A ELE, A ELA...).
+```
 
 Propósito: Descobrir rapidamente se o verbo rege complemento com preposição (OI / LHE) ou sem preposição (OD / O) sem recorrer à memorização mecânica.Origem: 002 - Parte 02  e 004 - Parte 04 .
 
@@ -282,7 +290,9 @@ Propósito: Descobrir rapidamente se o verbo rege complemento com preposição (
 
 Propósito: Aplicar corretamente as regras de transformação fonética ao associar verbos aos pronomes o, a, os, as por ênclise.
 
+```text
 Início: Verbo associado a pronome em ênclise │ ├── O pronome é O, A, OS ou AS? │ ├── NÃO (é LHE, ME, NOS...) ──> APENAS HÍFEN (ex.: obedecer-lhe). Não altere o verbo! │ └── SIM ──> Analisar terminação do verbo: │ │ │ ├── Termina em -R, -S ou -Z: │ │ 1. Cortar a consoante final (-r, -s, -z). │ │ 2. Transformar o pronome em -LO, -LA, -LOS, -LAS. │ │ 3. Ajustar acento gráfico da oxítona/hiato (ex.: comprar+as = comprá-las). │ │ │ ├── Termina em Som Nasal (-M, -ÃO, -ÕE): │ │ 1. Manter a grafia do verbo intacta. │ │ 2. Transformar o pronome em -NO, -NA, -NOS, -NAS (ex.: põe+a = põe-na). │ │ │ └── Outra terminação (vogal oral): │ └── APENAS HÍFEN (ex.: ama+a = ama-a; ajudava+as = ajudava-as).
+```
 
 Propósito: Resolver a função sintática ou preenchimento de lacunas em períodos com verbos de dois complementos (contar, avisar, informar, responder, retirar).Origem: 002 - Parte 02  e 004 - Parte 04 .
 

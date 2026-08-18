@@ -8,7 +8,7 @@ export const MODULES_DATA = [
     "title": "Aula 00",
     "subtitle": "Aula 00 · 7 unidades pedagógicas",
     "description": "Forma gráfica, estrutura sonora, sílaba, acentuação, hífen e emprego dos porquês.",
-    "estimatedMinutes": 199,
+    "estimatedMinutes": 178,
     "sections": [
       {
         "title": "Fonética e Fonologia",
@@ -18,7 +18,7 @@ export const MODULES_DATA = [
         "lessonId": "A00",
         "groupId": "G01",
         "canonicalTopicId": "pt:a00:fonetica-e-fonologia",
-        "estimatedMinutes": 21,
+        "estimatedMinutes": 20,
         "searchTerms": [
           "digrafo",
           "digrafos",
@@ -168,7 +168,7 @@ export const MODULES_DATA = [
         "lessonId": "A00",
         "groupId": "G02",
         "canonicalTopicId": "pt:a00:estudo-da-silaba",
-        "estimatedMinutes": 22,
+        "estimatedMinutes": 20,
         "searchTerms": [
           "silaba",
           "vogal",
@@ -318,7 +318,7 @@ export const MODULES_DATA = [
         "lessonId": "A00",
         "groupId": "G03",
         "canonicalTopicId": "pt:a00:estudo-da-silaba",
-        "estimatedMinutes": 34,
+        "estimatedMinutes": 31,
         "searchTerms": [
           "fonemas",
           "digrafo",
@@ -468,7 +468,7 @@ export const MODULES_DATA = [
         "lessonId": "A00",
         "groupId": "G04",
         "canonicalTopicId": "pt:a00:acentuacao-grafica",
-        "estimatedMinutes": 24,
+        "estimatedMinutes": 20,
         "searchTerms": [
           "paroxitonas",
           "silaba",
@@ -618,7 +618,7 @@ export const MODULES_DATA = [
         "lessonId": "A00",
         "groupId": "G05",
         "canonicalTopicId": "pt:a00:emprego-do-hifen",
-        "estimatedMinutes": 28,
+        "estimatedMinutes": 25,
         "searchTerms": [
           "hifen",
           "regra",
@@ -768,7 +768,7 @@ export const MODULES_DATA = [
         "lessonId": "A00",
         "groupId": "G06",
         "canonicalTopicId": "pt:a00:emprego-do-hifen",
-        "estimatedMinutes": 31,
+        "estimatedMinutes": 26,
         "searchTerms": [
           "hifen",
           "ref",
@@ -918,7 +918,7 @@ export const MODULES_DATA = [
         "lessonId": "A00",
         "groupId": "G07",
         "canonicalTopicId": "pt:a00:emprego-dos-porques",
-        "estimatedMinutes": 39,
+        "estimatedMinutes": 36,
         "searchTerms": [
           "porque",
           "conjuncao",
@@ -1139,7 +1139,7 @@ export const MODULES_DATA = [
     "title": "Aula 01",
     "subtitle": "Aula 01 · 5 unidades pedagógicas",
     "description": "Classes variáveis e invariáveis analisadas em contexto e em funções sintáticas reais.",
-    "estimatedMinutes": 140,
+    "estimatedMinutes": 133,
     "sections": [
       {
         "title": "Classes Variáveis e Invariáveis",
@@ -1149,7 +1149,7 @@ export const MODULES_DATA = [
         "lessonId": "A01",
         "groupId": "G01",
         "canonicalTopicId": "pt:a01:classes-variaveis-e-invariaveis",
-        "estimatedMinutes": 26,
+        "estimatedMinutes": 25,
         "searchTerms": [
           "locucao",
           "adjetivo",
@@ -1299,7 +1299,7 @@ export const MODULES_DATA = [
         "lessonId": "A01",
         "groupId": "G02",
         "canonicalTopicId": "pt:a01:emprego-das-classes-de-palavras",
-        "estimatedMinutes": 28,
+        "estimatedMinutes": 26,
         "searchTerms": [
           "adjetivo",
           "adverbio",
@@ -1599,7 +1599,7 @@ export const MODULES_DATA = [
         "lessonId": "A01",
         "groupId": "G04",
         "canonicalTopicId": "pt:a01:artigos",
-        "estimatedMinutes": 26,
+        "estimatedMinutes": 25,
         "searchTerms": [
           "artigo",
           "substantivo",
@@ -1749,7 +1749,7 @@ export const MODULES_DATA = [
         "lessonId": "A01",
         "groupId": "G05",
         "canonicalTopicId": "pt:a01:numerais-e-interjeicoes",
-        "estimatedMinutes": 35,
+        "estimatedMinutes": 32,
         "searchTerms": [
           "numeral",
           "meio",
@@ -1963,7 +1963,7 @@ export const MODULES_DATA = [
     "title": "Aula 02",
     "subtitle": "Aula 02 · 5 unidades pedagógicas",
     "description": "Preposições, conjunções e relações lógico-semânticas que organizam orações e textos.",
-    "estimatedMinutes": 161,
+    "estimatedMinutes": 147,
     "sections": [
       {
         "title": "Preposições",
@@ -1973,7 +1973,7 @@ export const MODULES_DATA = [
         "lessonId": "A02",
         "groupId": "G01",
         "canonicalTopicId": "pt:a02:preposicoes",
-        "estimatedMinutes": 35,
+        "estimatedMinutes": 33,
         "searchTerms": [
           "preposicao",
           "locucao",
@@ -2123,7 +2123,7 @@ export const MODULES_DATA = [
         "lessonId": "A02",
         "groupId": "G02",
         "canonicalTopicId": "pt:a02:conjuncoes-coordenativas",
-        "estimatedMinutes": 34,
+        "estimatedMinutes": 29,
         "searchTerms": [
           "nao",
           "conectivos",
@@ -2273,7 +2273,7 @@ export const MODULES_DATA = [
         "lessonId": "A02",
         "groupId": "G03",
         "canonicalTopicId": "pt:a02:conjuncoes-subordinativas-e-desde-que",
-        "estimatedMinutes": 30,
+        "estimatedMinutes": 28,
         "searchTerms": [
           "conjuncoes",
           "subjuntivo",
@@ -2423,7 +2423,7 @@ export const MODULES_DATA = [
         "lessonId": "A02",
         "groupId": "G04",
         "canonicalTopicId": "pt:a02:valores-de-e-e-pois",
-        "estimatedMinutes": 34,
+        "estimatedMinutes": 30,
         "searchTerms": [
           "pois",
           "rightarrow",
@@ -2573,7 +2573,7 @@ export const MODULES_DATA = [
         "lessonId": "A02",
         "groupId": "G05",
         "canonicalTopicId": "pt:a02:valores-de-como-e-miscelaneas",
-        "estimatedMinutes": 28,
+        "estimatedMinutes": 27,
         "searchTerms": [
           "causal",
           "conector",
@@ -2787,7 +2787,7 @@ export const MODULES_DATA = [
     "title": "Aula 03",
     "subtitle": "Aula 03 · 8 unidades pedagógicas",
     "description": "Pronomes, referenciação, relativos e colocação pronominal orientados por critérios de prova.",
-    "estimatedMinutes": 308,
+    "estimatedMinutes": 282,
     "sections": [
       {
         "title": "Pronomes Pessoais",
@@ -2797,7 +2797,7 @@ export const MODULES_DATA = [
         "lessonId": "A03",
         "groupId": "G01",
         "canonicalTopicId": "pt:a03:pronomes-pessoais",
-        "estimatedMinutes": 41,
+        "estimatedMinutes": 36,
         "searchTerms": [
           "verbo",
           "pronomes",
@@ -2947,7 +2947,7 @@ export const MODULES_DATA = [
         "lessonId": "A03",
         "groupId": "G02",
         "canonicalTopicId": "pt:a03:pronomes-pessoais",
-        "estimatedMinutes": 42,
+        "estimatedMinutes": 39,
         "searchTerms": [
           "verbo",
           "lhe",
@@ -3097,7 +3097,7 @@ export const MODULES_DATA = [
         "lessonId": "A03",
         "groupId": "G03",
         "canonicalTopicId": "pt:a03:possessivos-indefinidos-e-interrogativos",
-        "estimatedMinutes": 42,
+        "estimatedMinutes": 39,
         "searchTerms": [
           "pronome",
           "substantivo",
@@ -3397,7 +3397,7 @@ export const MODULES_DATA = [
         "lessonId": "A03",
         "groupId": "G05",
         "canonicalTopicId": "pt:a03:emprego-dos-pronomes-relativos",
-        "estimatedMinutes": 48,
+        "estimatedMinutes": 41,
         "searchTerms": [
           "qual",
           "cujo",
@@ -3547,7 +3547,7 @@ export const MODULES_DATA = [
         "lessonId": "A03",
         "groupId": "G06",
         "canonicalTopicId": "pt:a03:pronomes-relativos-regencia-e-reescrita",
-        "estimatedMinutes": 36,
+        "estimatedMinutes": 33,
         "searchTerms": [
           "relativo",
           "preposicao",
@@ -3697,7 +3697,7 @@ export const MODULES_DATA = [
         "lessonId": "A03",
         "groupId": "G07",
         "canonicalTopicId": "pt:a03:colocacao-dos-pronomes-atonos",
-        "estimatedMinutes": 30,
+        "estimatedMinutes": 27,
         "searchTerms": [
           "enclise",
           "proclise",
@@ -3847,7 +3847,7 @@ export const MODULES_DATA = [
         "lessonId": "A03",
         "groupId": "G08",
         "canonicalTopicId": "pt:a03:colocacao-pronominal",
-        "estimatedMinutes": 33,
+        "estimatedMinutes": 31,
         "searchTerms": [
           "proclise",
           "enclise",
@@ -4068,7 +4068,7 @@ export const MODULES_DATA = [
     "title": "Aula 04",
     "subtitle": "Aula 04 · 9 unidades pedagógicas",
     "description": "Tempos, modos, formas nominais, conjugação e valores dos verbos.",
-    "estimatedMinutes": 310,
+    "estimatedMinutes": 283,
     "sections": [
       {
         "title": "Tempos e Modos Verbais",
@@ -4078,7 +4078,7 @@ export const MODULES_DATA = [
         "lessonId": "A04",
         "groupId": "G01",
         "canonicalTopicId": "pt:a04:tempos-e-modos-verbais",
-        "estimatedMinutes": 35,
+        "estimatedMinutes": 31,
         "searchTerms": [
           "subjuntivo",
           "voce",
@@ -4228,7 +4228,7 @@ export const MODULES_DATA = [
         "lessonId": "A04",
         "groupId": "G02",
         "canonicalTopicId": "pt:a04:semantica-dos-tempos-e-modos-verbais",
-        "estimatedMinutes": 37,
+        "estimatedMinutes": 35,
         "searchTerms": [
           "preterito",
           "presente",
@@ -4378,7 +4378,7 @@ export const MODULES_DATA = [
         "lessonId": "A04",
         "groupId": "G03",
         "canonicalTopicId": "pt:a04:desinencias-verbais",
-        "estimatedMinutes": 31,
+        "estimatedMinutes": 29,
         "searchTerms": [
           "dmt",
           "text",
@@ -4528,7 +4528,7 @@ export const MODULES_DATA = [
         "lessonId": "A04",
         "groupId": "G04",
         "canonicalTopicId": "pt:a04:formas-nominais-do-verbo",
-        "estimatedMinutes": 38,
+        "estimatedMinutes": 33,
         "searchTerms": [
           "participio",
           "gerundio",
@@ -4678,7 +4678,7 @@ export const MODULES_DATA = [
         "lessonId": "A04",
         "groupId": "G05",
         "canonicalTopicId": "pt:a04:verbos-irregulares-lideres-e-bons-amigos",
-        "estimatedMinutes": 35,
+        "estimatedMinutes": 31,
         "searchTerms": [
           "vir",
           "futuro",
@@ -4828,7 +4828,7 @@ export const MODULES_DATA = [
         "lessonId": "A04",
         "groupId": "G06",
         "canonicalTopicId": "pt:a04:verbos-irregulares",
-        "estimatedMinutes": 30,
+        "estimatedMinutes": 28,
         "searchTerms": [
           "vir",
           "rightarrow",
@@ -4978,7 +4978,7 @@ export const MODULES_DATA = [
         "lessonId": "A04",
         "groupId": "G07",
         "canonicalTopicId": "pt:a04:falsos-amigos-e-dificil-conjugacao",
-        "estimatedMinutes": 33,
+        "estimatedMinutes": 31,
         "searchTerms": [
           "pres",
           "subj",
@@ -5128,7 +5128,7 @@ export const MODULES_DATA = [
         "lessonId": "A04",
         "groupId": "G08",
         "canonicalTopicId": "pt:a04:verbos-em-ear-e-iar-e-defectivos",
-        "estimatedMinutes": 37,
+        "estimatedMinutes": 35,
         "searchTerms": [
           "verbos",
           "verbo",
@@ -5278,7 +5278,7 @@ export const MODULES_DATA = [
         "lessonId": "A04",
         "groupId": "G09",
         "canonicalTopicId": "pt:a04:correlacao-de-tempos-verbais",
-        "estimatedMinutes": 34,
+        "estimatedMinutes": 30,
         "searchTerms": [
           "presente",
           "preterito",
@@ -5499,7 +5499,7 @@ export const MODULES_DATA = [
     "title": "Aula 05",
     "subtitle": "Aula 05 · 12 unidades pedagógicas",
     "description": "Transitividade, correlação, vozes verbais, partícula se e estruturas de predicação.",
-    "estimatedMinutes": 420,
+    "estimatedMinutes": 386,
     "sections": [
       {
         "title": "Transitividade Verbal - Fundamentos",
@@ -5509,7 +5509,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G01",
         "canonicalTopicId": "pt:a05:transitividade-verbal",
-        "estimatedMinutes": 42,
+        "estimatedMinutes": 40,
         "searchTerms": [
           "verbo",
           "mantra",
@@ -5659,7 +5659,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G02",
         "canonicalTopicId": "pt:a05:transitividade-verbal",
-        "estimatedMinutes": 24,
+        "estimatedMinutes": 23,
         "searchTerms": [
           "verbo",
           "sujeito",
@@ -5809,7 +5809,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G03",
         "canonicalTopicId": "pt:a05:complementos-e-objetos-pleonasticos",
-        "estimatedMinutes": 29,
+        "estimatedMinutes": 25,
         "searchTerms": [
           "pronome",
           "objeto",
@@ -5959,7 +5959,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G04",
         "canonicalTopicId": "pt:a05:vozes-verbais",
-        "estimatedMinutes": 27,
+        "estimatedMinutes": 24,
         "searchTerms": [
           "passiva",
           "voz",
@@ -6109,7 +6109,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G05",
         "canonicalTopicId": "pt:a05:vozes-verbais",
-        "estimatedMinutes": 53,
+        "estimatedMinutes": 49,
         "searchTerms": [
           "sujeito",
           "passiva",
@@ -6259,7 +6259,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G06",
         "canonicalTopicId": "pt:a05:reescritura-de-vozes",
-        "estimatedMinutes": 36,
+        "estimatedMinutes": 33,
         "searchTerms": [
           "passiva",
           "verbo",
@@ -6409,7 +6409,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G07",
         "canonicalTopicId": "pt:a05:reescritura-de-vozes-e",
-        "estimatedMinutes": 31,
+        "estimatedMinutes": 27,
         "searchTerms": [
           "verbo",
           "sujeito",
@@ -6709,7 +6709,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G09",
         "canonicalTopicId": "pt:a05:reescritura-de-vozes",
-        "estimatedMinutes": 26,
+        "estimatedMinutes": 21,
         "searchTerms": [
           "sujeito",
           "verbo",
@@ -6859,7 +6859,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G10",
         "canonicalTopicId": "pt:a05:verbos-impessoais-e-auxiliares",
-        "estimatedMinutes": 37,
+        "estimatedMinutes": 36,
         "searchTerms": [
           "verbo",
           "sujeito",
@@ -7009,7 +7009,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G11",
         "canonicalTopicId": "pt:a05:verbos-impessoais-e-auxiliares",
-        "estimatedMinutes": 40,
+        "estimatedMinutes": 37,
         "searchTerms": [
           "sujeito",
           "verbo",
@@ -7159,7 +7159,7 @@ export const MODULES_DATA = [
         "lessonId": "A05",
         "groupId": "G12",
         "canonicalTopicId": "pt:a05:verbos-pronominais",
-        "estimatedMinutes": 33,
+        "estimatedMinutes": 29,
         "searchTerms": [
           "pronome",
           "verbo",
@@ -7380,7 +7380,7 @@ export const MODULES_DATA = [
     "title": "Aula 06",
     "subtitle": "Aula 06 · 8 unidades pedagógicas",
     "description": "Reconstrução morfossintática e identificação segura dos termos da oração.",
-    "estimatedMinutes": 325,
+    "estimatedMinutes": 303,
     "sections": [
       {
         "title": "Análise Sintática - Conceitos Iniciais",
@@ -7390,7 +7390,7 @@ export const MODULES_DATA = [
         "lessonId": "A06",
         "groupId": "G01",
         "canonicalTopicId": "pt:a06:analise-sintatica-conceitos-iniciais",
-        "estimatedMinutes": 62,
+        "estimatedMinutes": 59,
         "searchTerms": [
           "sujeito",
           "verbo",
@@ -7540,7 +7540,7 @@ export const MODULES_DATA = [
         "lessonId": "A06",
         "groupId": "G02",
         "canonicalTopicId": "pt:a06:tipos-de-sujeito",
-        "estimatedMinutes": 38,
+        "estimatedMinutes": 36,
         "searchTerms": [
           "sujeito",
           "verbo",
@@ -7690,7 +7690,7 @@ export const MODULES_DATA = [
         "lessonId": "A06",
         "groupId": "G03",
         "canonicalTopicId": "pt:a06:predicacao-verbal-e-tipos-de-predicado",
-        "estimatedMinutes": 51,
+        "estimatedMinutes": 45,
         "searchTerms": [
           "verbo",
           "predicado",
@@ -7840,7 +7840,7 @@ export const MODULES_DATA = [
         "lessonId": "A06",
         "groupId": "G04",
         "canonicalTopicId": "pt:a06:objetos-e-transitividade-verbal",
-        "estimatedMinutes": 46,
+        "estimatedMinutes": 44,
         "searchTerms": [
           "verbo",
           "sujeito",
@@ -7990,7 +7990,7 @@ export const MODULES_DATA = [
         "lessonId": "A06",
         "groupId": "G05",
         "canonicalTopicId": "pt:a06:complemento-nominal-e-agente-da-passiva",
-        "estimatedMinutes": 30,
+        "estimatedMinutes": 29,
         "searchTerms": [
           "passiva",
           "agente",
@@ -8140,7 +8140,7 @@ export const MODULES_DATA = [
         "lessonId": "A06",
         "groupId": "G06",
         "canonicalTopicId": "pt:a06:vocativo-e-aposto",
-        "estimatedMinutes": 29,
+        "estimatedMinutes": 28,
         "searchTerms": [
           "aposto",
           "vocativo",
@@ -8290,7 +8290,7 @@ export const MODULES_DATA = [
         "lessonId": "A06",
         "groupId": "G07",
         "canonicalTopicId": "pt:a06:adjuntos-adverbial-e-adnominal",
-        "estimatedMinutes": 37,
+        "estimatedMinutes": 32,
         "searchTerms": [
           "adverbial",
           "adjunto",
@@ -8440,7 +8440,7 @@ export const MODULES_DATA = [
         "lessonId": "A06",
         "groupId": "G08",
         "canonicalTopicId": "pt:a06:predicativos-versus-adjunto-adnominal",
-        "estimatedMinutes": 32,
+        "estimatedMinutes": 30,
         "searchTerms": [
           "predicativo",
           "objeto",
@@ -8661,7 +8661,7 @@ export const MODULES_DATA = [
     "title": "Aula 07",
     "subtitle": "Aula 07 · 10 unidades pedagógicas",
     "description": "Coordenação, subordinação, funções de que e se e relações no período composto.",
-    "estimatedMinutes": 381,
+    "estimatedMinutes": 359,
     "sections": [
       {
         "title": "Período Composto - Fundamentos",
@@ -8671,7 +8671,7 @@ export const MODULES_DATA = [
         "lessonId": "A07",
         "groupId": "G01",
         "canonicalTopicId": "pt:a07:periodo-composto",
-        "estimatedMinutes": 49,
+        "estimatedMinutes": 45,
         "searchTerms": [
           "oracao",
           "periodo",
@@ -8821,7 +8821,7 @@ export const MODULES_DATA = [
         "lessonId": "A07",
         "groupId": "G02",
         "canonicalTopicId": "pt:a07:oracoes-coordenadas-sindeticas",
-        "estimatedMinutes": 55,
+        "estimatedMinutes": 50,
         "searchTerms": [
           "oracao",
           "conjuncao",
@@ -8971,7 +8971,7 @@ export const MODULES_DATA = [
         "lessonId": "A07",
         "groupId": "G03",
         "canonicalTopicId": "pt:a07:subordinadas-substantivas-e-adjetivas",
-        "estimatedMinutes": 36,
+        "estimatedMinutes": 34,
         "searchTerms": [
           "oracao",
           "preposicao",
@@ -9121,7 +9121,7 @@ export const MODULES_DATA = [
         "lessonId": "A07",
         "groupId": "G04",
         "canonicalTopicId": "pt:a07:oracoes-subordinadas-adverbiais",
-        "estimatedMinutes": 30,
+        "estimatedMinutes": 29,
         "searchTerms": [
           "oracao",
           "oracoes",
@@ -9271,7 +9271,7 @@ export const MODULES_DATA = [
         "lessonId": "A07",
         "groupId": "G05",
         "canonicalTopicId": "pt:a07:oracoes-reduzidas",
-        "estimatedMinutes": 36,
+        "estimatedMinutes": 34,
         "searchTerms": [
           "oracao",
           "reduzida",
@@ -9421,7 +9421,7 @@ export const MODULES_DATA = [
         "lessonId": "A07",
         "groupId": "G06",
         "canonicalTopicId": "pt:a07:oracoes-reduzidas",
-        "estimatedMinutes": 45,
+        "estimatedMinutes": 43,
         "searchTerms": [
           "infinitivo",
           "verbo",
@@ -9571,7 +9571,7 @@ export const MODULES_DATA = [
         "lessonId": "A07",
         "groupId": "G07",
         "canonicalTopicId": "pt:a07:oracoes-reduzidas-e-reescrita",
-        "estimatedMinutes": 31,
+        "estimatedMinutes": 30,
         "searchTerms": [
           "oracao",
           "reduzida",
@@ -9721,7 +9721,7 @@ export const MODULES_DATA = [
         "lessonId": "A07",
         "groupId": "G08",
         "canonicalTopicId": "pt:a07:desenvolvimento-das-oracoes-reduzidas",
-        "estimatedMinutes": 41,
+        "estimatedMinutes": 39,
         "searchTerms": [
           "oracao",
           "verbo",
@@ -9871,7 +9871,7 @@ export const MODULES_DATA = [
         "lessonId": "A07",
         "groupId": "G09",
         "canonicalTopicId": "pt:a07:palavra-que",
-        "estimatedMinutes": 38,
+        "estimatedMinutes": 35,
         "searchTerms": [
           "pronome",
           "conjuncao",
@@ -10242,7 +10242,7 @@ export const MODULES_DATA = [
     "title": "Aula 08",
     "subtitle": "Aula 08 · 6 unidades pedagógicas",
     "description": "Pontuação decidida pela sintaxe, pelo deslocamento, pelo escopo e pelo efeito de sentido.",
-    "estimatedMinutes": 222,
+    "estimatedMinutes": 202,
     "sections": [
       {
         "title": "Sinais de Pontuação - Visão Geral",
@@ -10252,7 +10252,7 @@ export const MODULES_DATA = [
         "lessonId": "A08",
         "groupId": "G01",
         "canonicalTopicId": "pt:a08:sinais-de-pontuacao-visao-geral",
-        "estimatedMinutes": 27,
+        "estimatedMinutes": 25,
         "searchTerms": [
           "aposto",
           "virgula",
@@ -10402,7 +10402,7 @@ export const MODULES_DATA = [
         "lessonId": "A08",
         "groupId": "G02",
         "canonicalTopicId": "pt:a08:uso-da-virgula",
-        "estimatedMinutes": 32,
+        "estimatedMinutes": 28,
         "searchTerms": [
           "virgula",
           "rightarrow",
@@ -10552,7 +10552,7 @@ export const MODULES_DATA = [
         "lessonId": "A08",
         "groupId": "G03",
         "canonicalTopicId": "pt:a08:uso-da-virgula",
-        "estimatedMinutes": 46,
+        "estimatedMinutes": 41,
         "searchTerms": [
           "virgula",
           "obrigatoria",
@@ -10702,7 +10702,7 @@ export const MODULES_DATA = [
         "lessonId": "A08",
         "groupId": "G04",
         "canonicalTopicId": "pt:a08:ponto-e-virgula-dois-pontos-e-aspas",
-        "estimatedMinutes": 39,
+        "estimatedMinutes": 35,
         "searchTerms": [
           "ponto",
           "virgula",
@@ -10852,7 +10852,7 @@ export const MODULES_DATA = [
         "lessonId": "A08",
         "groupId": "G05",
         "canonicalTopicId": "pt:a08:travessao-e-parenteses",
-        "estimatedMinutes": 35,
+        "estimatedMinutes": 33,
         "searchTerms": [
           "travessao",
           "citacao",
@@ -11002,7 +11002,7 @@ export const MODULES_DATA = [
         "lessonId": "A08",
         "groupId": "G06",
         "canonicalTopicId": "pt:a08:pontuacao-e-reescrita",
-        "estimatedMinutes": 43,
+        "estimatedMinutes": 40,
         "searchTerms": [
           "oracao",
           "virgula",
@@ -11223,7 +11223,7 @@ export const MODULES_DATA = [
     "title": "Aula 09",
     "subtitle": "Aula 09 · 8 unidades pedagógicas",
     "description": "Concordância verbal e nominal com procedimentos, casos especiais e armadilhas recorrentes.",
-    "estimatedMinutes": 311,
+    "estimatedMinutes": 285,
     "sections": [
       {
         "title": "Concordância Verbal - Fundamentos",
@@ -11233,7 +11233,7 @@ export const MODULES_DATA = [
         "lessonId": "A09",
         "groupId": "G01",
         "canonicalTopicId": "pt:a09:concordancia-verbal",
-        "estimatedMinutes": 36,
+        "estimatedMinutes": 31,
         "searchTerms": [
           "verbo",
           "sujeito",
@@ -11383,7 +11383,7 @@ export const MODULES_DATA = [
         "lessonId": "A09",
         "groupId": "G02",
         "canonicalTopicId": "pt:a09:concordancia-verbal",
-        "estimatedMinutes": 50,
+        "estimatedMinutes": 48,
         "searchTerms": [
           "sujeito",
           "verbo",
@@ -11533,7 +11533,7 @@ export const MODULES_DATA = [
         "lessonId": "A09",
         "groupId": "G03",
         "canonicalTopicId": "pt:a09:concordancia-verbal",
-        "estimatedMinutes": 36,
+        "estimatedMinutes": 32,
         "searchTerms": [
           "verbo",
           "sujeito",
@@ -11683,7 +11683,7 @@ export const MODULES_DATA = [
         "lessonId": "A09",
         "groupId": "G04",
         "canonicalTopicId": "pt:a09:concordancia-verbal-casos-especiais",
-        "estimatedMinutes": 42,
+        "estimatedMinutes": 39,
         "searchTerms": [
           "sujeito",
           "verbo",
@@ -11833,7 +11833,7 @@ export const MODULES_DATA = [
         "lessonId": "A09",
         "groupId": "G05",
         "canonicalTopicId": "pt:a09:concordancia-nominal",
-        "estimatedMinutes": 28,
+        "estimatedMinutes": 24,
         "searchTerms": [
           "concordancia",
           "adjetivo",
@@ -11983,7 +11983,7 @@ export const MODULES_DATA = [
         "lessonId": "A09",
         "groupId": "G06",
         "canonicalTopicId": "pt:a09:concordancia-nominal",
-        "estimatedMinutes": 41,
+        "estimatedMinutes": 39,
         "searchTerms": [
           "concordancia",
           "sujeito",
@@ -12133,7 +12133,7 @@ export const MODULES_DATA = [
         "lessonId": "A09",
         "groupId": "G07",
         "canonicalTopicId": "pt:a09:concordancia-nominal",
-        "estimatedMinutes": 36,
+        "estimatedMinutes": 33,
         "searchTerms": [
           "text",
           "invariavel",
@@ -12283,7 +12283,7 @@ export const MODULES_DATA = [
         "lessonId": "A09",
         "groupId": "G08",
         "canonicalTopicId": "pt:a09:concordancia-nominal-e",
-        "estimatedMinutes": 42,
+        "estimatedMinutes": 39,
         "searchTerms": [
           "adjetivo",
           "invariavel",
@@ -12504,7 +12504,7 @@ export const MODULES_DATA = [
     "title": "Aula 10",
     "subtitle": "Aula 10 · 7 unidades pedagógicas",
     "description": "Regência verbal e nominal e crase analisadas por acepção, estrutura e contexto.",
-    "estimatedMinutes": 376,
+    "estimatedMinutes": 355,
     "sections": [
       {
         "title": "Regência Verbal - Fundamentos",
@@ -12514,7 +12514,7 @@ export const MODULES_DATA = [
         "lessonId": "A10",
         "groupId": "G01",
         "canonicalTopicId": "pt:a10:regencia-verbal",
-        "estimatedMinutes": 37,
+        "estimatedMinutes": 35,
         "searchTerms": [
           "vti",
           "vtd",
@@ -12664,7 +12664,7 @@ export const MODULES_DATA = [
         "lessonId": "A10",
         "groupId": "G02",
         "canonicalTopicId": "pt:a10:regencia-verbal",
-        "estimatedMinutes": 47,
+        "estimatedMinutes": 45,
         "searchTerms": [
           "rightarrow",
           "preposicao",
@@ -12814,7 +12814,7 @@ export const MODULES_DATA = [
         "lessonId": "A10",
         "groupId": "G03",
         "canonicalTopicId": "pt:a10:regencia-e-pronomes-relativos",
-        "estimatedMinutes": 38,
+        "estimatedMinutes": 35,
         "searchTerms": [
           "verbo",
           "preposicao",
@@ -12964,7 +12964,7 @@ export const MODULES_DATA = [
         "lessonId": "A10",
         "groupId": "G04",
         "canonicalTopicId": "pt:a10:regencia-e-pronomes-pessoais",
-        "estimatedMinutes": 44,
+        "estimatedMinutes": 41,
         "searchTerms": [
           "lhe",
           "regencia",
@@ -13114,7 +13114,7 @@ export const MODULES_DATA = [
         "lessonId": "A10",
         "groupId": "G05",
         "canonicalTopicId": "pt:a10:regencia-nominal",
-        "estimatedMinutes": 32,
+        "estimatedMinutes": 30,
         "searchTerms": [
           "regencia",
           "nominal",
@@ -13264,7 +13264,7 @@ export const MODULES_DATA = [
         "lessonId": "A10",
         "groupId": "G06",
         "canonicalTopicId": "pt:a10:crase",
-        "estimatedMinutes": 94,
+        "estimatedMinutes": 88,
         "searchTerms": [
           "crase",
           "preposicao",
@@ -13414,7 +13414,7 @@ export const MODULES_DATA = [
         "lessonId": "A10",
         "groupId": "G07",
         "canonicalTopicId": "pt:a10:crase-e",
-        "estimatedMinutes": 84,
+        "estimatedMinutes": 81,
         "searchTerms": [
           "crase",
           "acento",
@@ -13635,7 +13635,7 @@ export const MODULES_DATA = [
     "title": "Aula 11",
     "subtitle": "Aula 11 · 3 unidades pedagógicas",
     "description": "Coesão sequencial e referencial, coerência e reescrita com preservação de relações.",
-    "estimatedMinutes": 105,
+    "estimatedMinutes": 102,
     "sections": [
       {
         "title": "Coesão Textual - Visão Geral",
@@ -13945,7 +13945,7 @@ export const MODULES_DATA = [
         "lessonId": "A11",
         "groupId": "G03",
         "canonicalTopicId": "pt:a11:coesao-referencial",
-        "estimatedMinutes": 37,
+        "estimatedMinutes": 34,
         "searchTerms": [
           "coesao",
           "texto",
@@ -14145,7 +14145,7 @@ export const MODULES_DATA = [
     "title": "Aula 12",
     "subtitle": "Aula 12 · 7 unidades pedagógicas",
     "description": "Sentido, relações lexicais, ambiguidade, polissemia e figuras de linguagem.",
-    "estimatedMinutes": 283,
+    "estimatedMinutes": 257,
     "sections": [
       {
         "title": "Sentido Próprio e Figurado",
@@ -14155,7 +14155,7 @@ export const MODULES_DATA = [
         "lessonId": "A12",
         "groupId": "G01",
         "canonicalTopicId": "pt:a12:sentido-proprio-e-figurado",
-        "estimatedMinutes": 37,
+        "estimatedMinutes": 34,
         "searchTerms": [
           "sentido",
           "logico",
@@ -14305,7 +14305,7 @@ export const MODULES_DATA = [
         "lessonId": "A12",
         "groupId": "G02",
         "canonicalTopicId": "pt:a12:sinonimos-e-antonimos",
-        "estimatedMinutes": 39,
+        "estimatedMinutes": 35,
         "searchTerms": [
           "text",
           "igual",
@@ -14455,7 +14455,7 @@ export const MODULES_DATA = [
         "lessonId": "A12",
         "groupId": "G03",
         "canonicalTopicId": "pt:a12:hiperonimia-e-hiponimia",
-        "estimatedMinutes": 45,
+        "estimatedMinutes": 40,
         "searchTerms": [
           "hiperonimo",
           "aponta",
@@ -14605,7 +14605,7 @@ export const MODULES_DATA = [
         "lessonId": "A12",
         "groupId": "G04",
         "canonicalTopicId": "pt:a12:polissemia",
-        "estimatedMinutes": 41,
+        "estimatedMinutes": 34,
         "searchTerms": [
           "polissemia",
           "text",
@@ -14755,7 +14755,7 @@ export const MODULES_DATA = [
         "lessonId": "A12",
         "groupId": "G05",
         "canonicalTopicId": "pt:a12:ambiguidade-homonimos-e-paronimos",
-        "estimatedMinutes": 39,
+        "estimatedMinutes": 34,
         "searchTerms": [
           "ambiguidade",
           "igual",
@@ -14905,7 +14905,7 @@ export const MODULES_DATA = [
         "lessonId": "A12",
         "groupId": "G06",
         "canonicalTopicId": "pt:a12:figuras-de-linguagem",
-        "estimatedMinutes": 43,
+        "estimatedMinutes": 41,
         "searchTerms": [
           "figuras",
           "linguagem",
@@ -15276,7 +15276,7 @@ export const MODULES_DATA = [
     "title": "Compreensão, Interpretação e Tipologia Textual",
     "subtitle": "Aula 13 · 7 unidades pedagógicas",
     "description": "Recorrência, inferência, tipologias textuais, argumentação e funções da linguagem.",
-    "estimatedMinutes": 206,
+    "estimatedMinutes": 188,
     "sections": [
       {
         "title": "Recorrência",
@@ -15286,7 +15286,7 @@ export const MODULES_DATA = [
         "lessonId": "A13",
         "groupId": "G01",
         "canonicalTopicId": "pt:a13:recorrencia",
-        "estimatedMinutes": 32,
+        "estimatedMinutes": 28,
         "searchTerms": [
           "recorrencia",
           "texto",
@@ -15436,7 +15436,7 @@ export const MODULES_DATA = [
         "lessonId": "A13",
         "groupId": "G02",
         "canonicalTopicId": "pt:a13:inferencia",
-        "estimatedMinutes": 35,
+        "estimatedMinutes": 31,
         "searchTerms": [
           "inferencia",
           "texto",
@@ -15586,7 +15586,7 @@ export const MODULES_DATA = [
         "lessonId": "A13",
         "groupId": "G03",
         "canonicalTopicId": "pt:a13:narracao-e-descricao",
-        "estimatedMinutes": 31,
+        "estimatedMinutes": 28,
         "searchTerms": [
           "presente",
           "descricao",
@@ -15736,7 +15736,7 @@ export const MODULES_DATA = [
         "lessonId": "A13",
         "groupId": "G04",
         "canonicalTopicId": "pt:a13:narracao-e-dissertacao-expositiva",
-        "estimatedMinutes": 23,
+        "estimatedMinutes": 22,
         "searchTerms": [
           "dissertacao",
           "narracao",
@@ -15886,7 +15886,7 @@ export const MODULES_DATA = [
         "lessonId": "A13",
         "groupId": "G05",
         "canonicalTopicId": "pt:a13:dissertacao-expositiva-e-argumentativa",
-        "estimatedMinutes": 22,
+        "estimatedMinutes": 20,
         "searchTerms": [
           "dissertacao",
           "texto",
@@ -16036,7 +16036,7 @@ export const MODULES_DATA = [
         "lessonId": "A13",
         "groupId": "G06",
         "canonicalTopicId": "pt:a13:miscelanea-de-interpretacao",
-        "estimatedMinutes": 24,
+        "estimatedMinutes": 22,
         "searchTerms": [
           "dissertacao",
           "textos",
@@ -16186,7 +16186,7 @@ export const MODULES_DATA = [
         "lessonId": "A13",
         "groupId": "G07",
         "canonicalTopicId": "pt:a13:funcoes-da-linguagem",
-        "estimatedMinutes": 39,
+        "estimatedMinutes": 37,
         "searchTerms": [
           "funcao",
           "rightarrow",

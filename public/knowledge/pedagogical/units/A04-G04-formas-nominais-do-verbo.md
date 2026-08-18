@@ -40,7 +40,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ## Pré-requisitos e modelo mental
 
+```text
 FORMAS NOMINAIS DO VERBO │ ├── 1. CONCEITO DE NOME │ ├── Substantivo (Núcleo sintático) ──> Papel típico do INFINITIVO │ ├── Adjetivo (Qualificador) ─────────> Papel típico do PARTICÍPIO │ └── Advérbio (Circunstância) ────────> Papel típico do GERÚNDIO │ ├── 2. PARTICÍPIO │ ├── Morfologia │ │ ├── Regular: Desinência -DO (ex.: falado, imprimido, entregado) │ │ └── Irregular: Sem -DO (ex.: feito, impresso, entregue, posto, dito) │ ├── Classificação dos Verbos │ │ ├── Verbos Abundantes (duplo particípio: aceitado/aceito, suspendido/suspenso) │ │ └── Verbos Não Abundantes (particípio único) │ │ ├── Apenas Regular: chegar -> chegado; trazer -> trazido │ │ └── Apenas Irregular: dizer -> dito; pôr -> posto; cobrir -> coberto │ ├── Regra Sintática dos Auxiliares │ │ ├── TER / HAVER ──> Exigem PARTICÍPIO REGULAR (-do) [Voz Ativa] │ │ └── SER / ESTAR / FICAR ──> Exigem PARTICÍPIO IRREGULAR [Voz Passiva / Estado] │ └── Regra do "Vale Tudo" (Exceções Normativas) │ └── GANHAR, GASTAR, PEGAR, PAGAR ──> Admitem regular ou irregular com qualquer auxiliar │ ├── 3. INFINITIVO (Desinência -R) │ ├── Infinitivo Impessoal (Sem sujeito / Nome do verbo / Vago) │ └── Infinitivo Pessoal (Com sujeito / Conjugável com "PARA") │ ├── Flexionado: Apresenta desinência número-pessoal (-es, -mos, -des, -em) │ └── Não Flexionado: Possui sujeito, mas mantém forma invariável │ └── Confronto com Futuro do Subjuntivo (Homografia em Verbos Regulares) │ └── Macete da Substituição: │ ├── Coube FAZER / DIZER ──> INFINITIVO │ └── Coube FIZER / DISSER ──> FUTURO DO SUBJUNTIVO │ └── 4. GERÚNDIO (Desinência -NDO) ├── Aspecto Verbal: Processo contínuo, durativo e imperfeito ├── Adequação Normativa │ ├── Bom Gerúndio: Ação Durativa / Ação Simultânea │ └── Mau Gerúndio: Ação Instantânea (Gerundismo) / Ação Posterior (Sucessão cronológica) ├── Valores Semânticos em Orações Reduzidas │ ├── Tempo (= quando, assim que) │ ├── Causa (= porque, visto que) │ ├── Consequência (= de modo que, de forma que) │ └── Adição / Consequência (= e + verbo conjugado) └── Caso Especial: Verbo VIR └── Forma "VINDO" ├── Gerúndio (Ação contínua = chegando / trazendo) └── Particípio Irregular (Estado / Procedência = chegado / trazido / "vido" NÃO EXISTE)
+```
 
 ---
 
@@ -69,7 +71,9 @@ As três formas nominais identificam-se morfologicamente por desinências espec�
 2. Gerúndio: Desinência -NDO (ex.: falando, bebendo, partindo).
 3. Particípio Regular: Desinência -DO (ex.: falado, bebido, partido).
 
+```text
 RADICAL + VOGAL TEMÁTICA + DESINÊNCIA NOMINAL ├─ FALA + -R ──> Infinitivo (falar) ├─ FALA + -NDO ──> Gerúndio (falando) └─ FALA + -DO ──> Particípio Regular (falado)
+```
 
 - O Gerúndio expressa o processo verbal em curso, inacabado, em desenvolvimento (aspecto imperfeito/durativo).
 - O Particípio expressa o resultado concluído da ação, o estado atingido ou o aspecto perfectivo acabado.
@@ -109,7 +113,9 @@ A gramática normativa e os manuais de referência consagram uma exceção plena
 
 O Infinitivo divide-se em Impessoal (não faz referência a nenhum sujeito ou pessoa gramatical) e Pessoal (possui sujeito ou agente determinado). Por sua vez, o Infinitivo Pessoal pode apresentar-se sob duas formas: Flexionado ou Não Flexionado.
 
+```text
 INFINITIVO │ ┌────────────────────────────┴────────────────────────────┐ ▼ ▼ INFINITIVO IMPESSOAL INFINITIVO PESSOAL • Não tem pessoa / Sem sujeito • Tem pessoa / Sujeito determinado • Enunciação vaga / Nome do verbo • Conjugável com "PARA" • Ex: "É preciso acabar com a miséria." │ ┌───────────────┴───────────────┐ ▼ ▼ FLEXIONADO NÃO FLEXIONADO • Apresenta desinência pessoal • Sem desinência gráfica • Desinências: -es, -mos, • Sujeito recuperado no contexto -des, -em • Ex: "...estudemos para PASSAR." • Ex: "Para PASSARES..." (Sujeito de passar: nós)
+```
 
 1. Infinitivo Impessoal:
 
@@ -197,7 +203,9 @@ A determinação do valor semântico nunca deve ser feita isolando-se o gerúndi
 
 O verbo VIR (e seus derivados: intervir, convir, provir, advir) apresenta uma particularidade morfológica explorada como armadilha clássica em concursos: a forma VINDO funciona tanto como Gerúndio quanto como Particípio Irregular. A forma regular "vido" não existe na língua portuguesa.
 
+```text
 VERBO "VIR" E DERIVADOS │ ┌──────────────────────────────┴──────────────────────────────┐ ▼ ▼ GERÚNDIO PARTICÍPIO │ │ VINDO ┌─────────────────┴─────────────────┐ (Terminação -ndo) ▼ ▼ Expressa ação contínua PARTICÍPIO REGULAR PARTICÍPIO IRREGULAR (Forma em -DO) (Sem terminação -DO) │ │ ~VIDO~ VINDO (NÃO EXISTE!) (Homógrafo ao Gerúndio)
+```
 
 Para determinar se uma ocorrência da palavra vindo em um texto é gerúndio ou particípio, substitui-se o verbo por um verbo modelo de flexões regulares distintas (como chegar ou trazer):
 
@@ -230,7 +238,9 @@ Para determinar se uma ocorrência da palavra vindo em um texto é gerúndio ou 
 
 ## Roteiros de resolução
 
+```text
 INÍCIO: Identificar o verbo principal da oração a ser colocado no particípio. │ ├── PASSO 1: O verbo é uma das 4 exceções (GANHAR, GASTAR, PEGAR, PAGAR)? │ ├── SIM ──> "Regra do Vale Tudo": Use livremente REGULAR (-do) ou IRREGULAR com qualquer auxiliar. (FIM) │ └── NÃO ──> Avançar para o PASSO 2. │ ├── PASSO 2: O verbo é ABUNDANTE no particípio? │ ├── NÃO ──> Use a ÚNICA forma existente do verbo na norma culta: │ │ • Se for exclusivamente regular: usar em -DO (ex.: "tinha chegado", "foi trazido"). │ │ • Se for exclusivamente irregular: usar forma reduzida (ex.: "tinha dito", "foi posto", "estava coberto"). (FIM) │ └── SIM ──> Avançar para o PASSO 3. │ └── PASSO 3: Identificar o VERBO AUXILIAR da locução: ├── Se for TER ou HAVER (Voz Ativa / Tempos Compostos): │ └── Selecionar obrigatoriamente o PARTICÍPIO REGULAR em -DO (ex.: "havia entregado", "tinham imprimido"). │ └── Se for SER, ESTAR, FICAR (ou voz passiva / estado / oração reduzida): └── Selecionar obrigatoriamente o PARTICÍPIO IRREGULAR (ex.: "foi entregue", "estava impresso", "ficou suspenso"). (FIM)
+```
 
 1. Localize a oração reduzida de infinitivo cujo verbo não possui desinência pessoal visível (-es, -mos, -des, -em).
 2. Formule a pergunta de agente: "Quem realiza ou é o sujeito da ação expressa por este infinitivo?"
@@ -268,7 +278,9 @@ INÍCIO: Identificar o verbo principal da oração a ser colocado no particípio
 
 1. Julgue as assertivas da banca examinadora com base nessa classificação categorial.
 
+```text
 INÍCIO: Identificar o verbo principal da oração a ser colocado no particípio. │ ├── PASSO 1: O verbo é uma das 4 exceções (GANHAR, GASTAR, PEGAR, PAGAR)? │ ├── SIM ──> "Regra do Vale Tudo": Use livremente REGULAR (-do) ou IRREGULAR com qualquer auxiliar. (FIM) │ └── NÃO ──> Avançar para o PASSO 2. │ ├── PASSO 2: O verbo é ABUNDANTE no particípio? │ ├── NÃO ──> Use a ÚNICA forma existente do verbo na norma culta: │ │ • Se for exclusivamente regular: usar em -DO (ex.: "tinha chegado", "foi trazido"). │ │ • Se for exclusivamente irregular: usar forma reduzida (ex.: "tinha dito", "foi posto", "estava coberto"). (FIM) │ └── SIM ──> Avançar para o PASSO 3. │ └── PASSO 3: Identificar o VERBO AUXILIAR da locução: ├── Se for TER ou HAVER (Voz Ativa / Tempos Compostos): │ └── Selecionar obrigatoriamente o PARTICÍPIO REGULAR em -DO (ex.: "havia entregado", "tinham imprimido"). │ └── Se for SER, ESTAR, FICAR (ou voz passiva / estado / oração reduzida): └── Selecionar obrigatoriamente o PARTICÍPIO IRREGULAR (ex.: "foi entregue", "estava impresso", "ficou suspenso"). (FIM)
+```
 
 1. Localize a oração reduzida de infinitivo cujo verbo não possui desinência pessoal visível (-es, -mos, -des, -em).
 2. Formule a pergunta de agente: "Quem realiza ou é o sujeito da ação expressa por este infinitivo?"

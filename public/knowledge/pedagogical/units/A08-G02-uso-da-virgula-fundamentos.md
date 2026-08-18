@@ -42,7 +42,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 - Noção elementar de estrutura oracional (sujeito, verbo transitivo/intransitivo, complementos verbais).
 
+```text
 PONTUAÇÃO: REGRAS FUNDAMENTAIS DA VÍRGULA (esta unidade) │ ├── 1. ESTRUTURA ADVERBIAL (CIRCUNSTÂNCIAS) │ ├── Semântica: Noções intuitivas (tempo, lugar, modo) + Mnemônico "6 CS + FTP" │ ├── Morfossintaxe: Morfologia (Advérbio / Locução) vs. Sintaxe (Adjunto Adverbial) │ ├── Estrutura Sintática: Ordem Direta (SVC + Final) vs. Ordem Inversa (Deslocamento) │ │ ├── Antecipação (Início do período) ──► 1 Vírgula delimitadora │ │ └── Intercalação (Meio do período) ──► 2 Vírgulas Casadas ("Par de Meias") │ ├── Critério do Verbo: │ │ ├── Adjunto Adverbial (Sem Verbo) │ │ │ ├── Ordem Direta ─────────────► Vírgula FACULTATIVA (ênfase/expressividade) │ │ │ ├── Deslocado Curto (1 a 2 pal) ► Vírgula FACULTATIVA │ │ │ └── Deslocado Longo (3+ pal) ──► Vírgula OBRIGATÓRIA │ │ └── Oração Subordinada Adverbial (Com Verbo) │ │ ├── Ordem Direta ─────────────► Vírgula FACULTATIVA em objetivas (Recomendada em redação) │ │ └── Deslocada (Antecipada/Intercalada) ► Vírgula SEMPRE OBRIGATÓRIA ("O de Oração = O de Obrigatória") │ │ ├── Desenvolvida (Conjunção + Verbo Conjugado) │ │ └── Reduzida (Sem Conjunção + Infinitivo / Gerúndio / Particípio) │ └── Algoritmo Prático: Método dos 4 Passos (Cheiro ➔ Ordem ➔ Colchetes ➔ Classificação) │ └── 2. ESTRUTURA COORDENADA (PERÍODO COMPOSTO) ├── Situação 1: Orações Assindéticas (Sem conectivo) ────────► Vírgula OBRIGATÓRIA ├── Situação 2: Orações Sindéticas Canônicas (Posição padrão) ─► Vírgula OBRIGATÓRIA ANTES da conjunção ├── Situação 3: Conjunções Deslocadas (Adversativas e Conclusivas) │ ├── Intercaladas (No meio do predicado) ────────────────► 2 Vírgulas OBRIGATÓRIAS (Vírgulas Casadas) │ └── Finais (Ao final do período) ───────────────────────► 1 Vírgula OBRIGATÓRIA antes da conjunção └── Situação 4: Vírgula Antes da Conjunção "E" ├── Sujeitos Iguais (Mesmo Sujeito Sintático) ──────────► Vírgula PROIBIDA ├── Sujeitos Diferentes / Distintos ────────────────────► Vírgula FACULTATIVA (Aconselhável) └── Valor Polissêmico (Adversativo / Conclusivo) ───────► Vírgula FACULTATIVA
+```
 
 ---
 
@@ -234,7 +236,9 @@ Esta seção sumariza as formulações canônicas definitivas estabelecidas no p
 
 ## Roteiros de resolução
 
+```text
 ┌──────────────────────────────────────────────────────────────────────────┐ │ PASSO 1: Sentir "Cheiro de Circunstância" │ │ (Localizar conectivos: conjunções 6C+FTP, advérbios, preposições, verbos)│ └────────────────────────────────────┬─────────────────────────────────────┘ ▼ ┌──────────────────────────────────────────────────────────────────────────┐ │ PASSO 2: Verificar a Posição Sintática │ │ (Perguntar: está no final [Ordem Direta] ou Deslocado [Início / Meio]?) │ └────────────────────────────────────┬─────────────────────────────────────┘ ▼ ┌──────────────────────────────────────────────────────────────────────────┐ │ PASSO 3: Delimitar com Colchetes [ ] │ │ (Marcar rigorosamente onde o bloco circunstancial abre e fecha) │ └────────────────────────────────────┬─────────────────────────────────────┘ ▼ ┌──────────────────────────────────────────────────────────────────────────┐ │ PASSO 4: Classificar Natureza e Extensão │ │ ├─ TEM VERBO? ──► ORAÇÃO ADVERBIAL Deslocada ──► VÍRGULA OBRIGATÓRIA │ │ └─ NÃO TEM VERBO? ──► ADJUNTO ADVERBIAL Deslocado │ │ ├── Curto (1 a 2 palavras) ──────────────► VÍRGULA FACULTATIVA │ │ └── Longo (3 ou mais palavras) ──────────► VÍRGULA OBRIGATÓRIA │ └──────────────────────────────────────────────────────────────────────────┘
+```
 
 1. Localizar o "E" e a vírgula antecedente: Isole a frase coordenada aditiva.
 2. Localizar o Verbo 1 (Oração Anterior): Faça a pergunta "Quem/o que realiza a ação?" e determine o Sujeito 1.
@@ -250,7 +254,9 @@ Esta seção sumariza as formulações canônicas definitivas estabelecidas no p
 2. Se a assertiva justificar o par de vírgulas por "conjunção deslocada", "intercalação" ou "posição da palavra na oração", julgue o item como CERTO.
 3. Se a assertiva propor suprimir apenas uma das vírgulas, julgue o item como ERRADO imediatamente (violação da regra das vírgulas casadas).
 
+```text
 ┌──────────────────────────────────────────────────────────────────────────┐ │ PASSO 1: Sentir "Cheiro de Circunstância" │ │ (Localizar conectivos: conjunções 6C+FTP, advérbios, preposições, verbos)│ └────────────────────────────────────┬─────────────────────────────────────┘ ▼ ┌──────────────────────────────────────────────────────────────────────────┐ │ PASSO 2: Verificar a Posição Sintática │ │ (Perguntar: está no final [Ordem Direta] ou Deslocado [Início / Meio]?) │ └────────────────────────────────────┬─────────────────────────────────────┘ ▼ ┌──────────────────────────────────────────────────────────────────────────┐ │ PASSO 3: Delimitar com Colchetes [ ] │ │ (Marcar rigorosamente onde o bloco circunstancial abre e fecha) │ └────────────────────────────────────┬─────────────────────────────────────┘ ▼ ┌──────────────────────────────────────────────────────────────────────────┐ │ PASSO 4: Classificar Natureza e Extensão │ │ ├─ TEM VERBO? ──► ORAÇÃO ADVERBIAL Deslocada ──► VÍRGULA OBRIGATÓRIA │ │ └─ NÃO TEM VERBO? ──► ADJUNTO ADVERBIAL Deslocado │ │ ├── Curto (1 a 2 palavras) ──────────────► VÍRGULA FACULTATIVA │ │ └── Longo (3 ou mais palavras) ──────────► VÍRGULA OBRIGATÓRIA │ └──────────────────────────────────────────────────────────────────────────┘
+```
 
 1. Localizar o "E" e a vírgula antecedente: Isole a frase coordenada aditiva.
 2. Localizar o Verbo 1 (Oração Anterior): Faça a pergunta "Quem/o que realiza a ação?" e determine o Sujeito 1.

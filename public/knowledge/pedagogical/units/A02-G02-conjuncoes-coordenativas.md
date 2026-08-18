@@ -44,9 +44,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Diferenciação entre Coordenação e Subordinação: Compreensão prévia de que na coordenação as orações são sintaticamente independentes (nenhuma oração desempenha função de termo sintático da outra), enquanto na subordinação há dependência funcional.
 - Conceito de Coesão Sequencial: Noção de que as conjunções atuam como operadores discursivos que orientam a linha argumentativa do texto.
 
-CONJUNÇÕES COORDENATIVAS (Coesão Semântica entre Termos/Orações Independentes) │ ├── 1. ADITIVAS (Ideia de Soma / Adição / Acréscimo) │ ├── Lista Canônica: e, nem, não só... mas também, não apenas... como também │ ├── Correlativas Aditivas: "Não só/apenas A, mas também B" = Soma de termos/causas complementares (=
-E) │ ├── Conectivo "NEM": │ │ ├── Com negação antecedente: Conjunção Coordenativa Aditiva (= E NÃO) -> SEM vírgula e SEM "e" │ │ └── Isolado no início: Advérbio de Negação (= NÃO / SEQUER) │ └── Locução "TANTO... QUANTO": │ ├── Soma de sujeitos/elementos: Valor Aditivo (=
-E) -> Ex.: "Tanto João quanto José vieram" │ └── Igualdade de intensidade/grau: Valor Comparativo -> Ex.: "João estuda tanto quanto José" │ ├── 2. ADVERSATIVAS (Ideia de Oposição / Contraste / Restrição / Ressalva) │ ├── Sinônimos Semânticos Canônicos: Oposição = Contraste = Contraposição │ ├── Lista Canônica: mas, porém, todavia, contudo, entretanto, no entanto, não obstante │ └── Dupla Função Discursiva em Prova: │ ├── Oposição / Contraste Estrito: Polaridade antagônica direta (Fato Positivo [+] vs. Fato Negativo [-]) │ └── Restrição / Ressalva / Compensação: Limitação contextual sem contradição simétrica/antônima │ ├── 3. ALTERNATIVAS (Ideia de Alternância no Tempo vs. Escolha/Exclusão Mútua) │ ├── Distinção Crítica: │ │ ├── Alternância: Ações sucessivas que se alternam no tempo ("ora estuda, ora trabalha") │ │ └── Escolha / Exclusão: Opções que se anulam mutuamente ("ou saio eu, ou sai ele") │ └── Lista Canônica: ou, ou... ou, ora... ora, já... já, quer... quer │ ├── 4. CONCLUSIVAS (Ideia de Conclusão / Dedução / Consequência Lógica) │ ├── Paráfrase Semântica Canônica: Conclusão = Consequência (Efeito derivado de uma causa/premissa) │ ├── Lista Canônica: logo, portanto, por conseguinte, por isso, dessa forma, assim, pois (deslocado) │ ├── Regra do "POIS" Deslocado: Posicionado APÓS o verbo da oração = Conclusivo (= portanto) │ └── Conectivo "ENTÃO": │ ├── Valores possíveis: Temporal (tempo) ou Conclusivo (= portanto) │ └── A "Vacina do CEBRASPE": O conectivo "ENTÃO" NUNCA possui valor explicativo! │ └── 5. EXPLICATIVAS (Ideia de Explicação / Justificativa / Motivação) ├── Sinônimos Semânticos Canônicos: Explicação = Justificativa ├── Associação Sintática Típica: Orações com verbo no MODO IMPERATIVO (Ordem/Pedido + Justificativa) ├── Lista Canônica: que, porque, porquanto, pois (no início da oração / antes do verbo) ├── Regra do "POIS" Explicativo: Posicionado no INÍCIO da oração (pré-verbal) = Explicativo (= porque) └── Diferenciação Crítica: PORQUANTO (= porque / explicativa) vs. PORTANTO (= logo / conclusiva)
+```text
+CONJUNÇÕES COORDENATIVAS (Coesão Semântica entre Termos/Orações Independentes) │ ├── 1. ADITIVAS (Ideia de Soma / Adição / Acréscimo) │ ├── Lista Canônica: e, nem, não só... mas também, não apenas... como também │ ├── Correlativas Aditivas: "Não só/apenas A, mas também B" = Soma de termos/causas complementares (= E) │ ├── Conectivo "NEM": │ │ ├── Com negação antecedente: Conjunção Coordenativa Aditiva (= E NÃO) -> SEM vírgula e SEM "e" │ │ └── Isolado no início: Advérbio de Negação (= NÃO / SEQUER) │ └── Locução "TANTO... QUANTO": │ ├── Soma de sujeitos/elementos: Valor Aditivo (= E) -> Ex.: "Tanto João quanto José vieram" │ └── Igualdade de intensidade/grau: Valor Comparativo -> Ex.: "João estuda tanto quanto José" │ ├── 2. ADVERSATIVAS (Ideia de Oposição / Contraste / Restrição / Ressalva) │ ├── Sinônimos Semânticos Canônicos: Oposição = Contraste = Contraposição │ ├── Lista Canônica: mas, porém, todavia, contudo, entretanto, no entanto, não obstante │ └── Dupla Função Discursiva em Prova: │ ├── Oposição / Contraste Estrito: Polaridade antagônica direta (Fato Positivo [+] vs. Fato Negativo [-]) │ └── Restrição / Ressalva / Compensação: Limitação contextual sem contradição simétrica/antônima │ ├── 3. ALTERNATIVAS (Ideia de Alternância no Tempo vs. Escolha/Exclusão Mútua) │ ├── Distinção Crítica: │ │ ├── Alternância: Ações sucessivas que se alternam no tempo ("ora estuda, ora trabalha") │ │ └── Escolha / Exclusão: Opções que se anulam mutuamente ("ou saio eu, ou sai ele") │ └── Lista Canônica: ou, ou... ou, ora... ora, já... já, quer... quer │ ├── 4. CONCLUSIVAS (Ideia de Conclusão / Dedução / Consequência Lógica) │ ├── Paráfrase Semântica Canônica: Conclusão = Consequência (Efeito derivado de uma causa/premissa) │ ├── Lista Canônica: logo, portanto, por conseguinte, por isso, dessa forma, assim, pois (deslocado) │ ├── Regra do "POIS" Deslocado: Posicionado APÓS o verbo da oração = Conclusivo (= portanto) │ └── Conectivo "ENTÃO": │ ├── Valores possíveis: Temporal (tempo) ou Conclusivo (= portanto) │ └── A "Vacina do CEBRASPE": O conectivo "ENTÃO" NUNCA possui valor explicativo! │ └── 5. EXPLICATIVAS (Ideia de Explicação / Justificativa / Motivação) ├── Sinônimos Semânticos Canônicos: Explicação = Justificativa ├── Associação Sintática Típica: Orações com verbo no MODO IMPERATIVO (Ordem/Pedido + Justificativa) ├── Lista Canônica: que, porque, porquanto, pois (no início da oração / antes do verbo) ├── Regra do "POIS" Explicativo: Posicionado no INÍCIO da oração (pré-verbal) = Explicativo (= porque) └── Diferenciação Crítica: PORQUANTO (= porque / explicativa) vs. PORTANTO (= logo / conclusiva)
+```
 
 ---
 
@@ -186,7 +186,9 @@ As questões de substituição de conectivos avaliam a manutenção da correçã
 
 ## Roteiros de resolução
 
+```text
 [Início: Ocorrência do conector "POIS"] │ ├── 1. Localizar o verbo da oração introduzida pelo "POIS". │ ├── 2. Verificar a posição do "POIS" em relação a esse verbo: │ │ │ ├── O "POIS" está DEPOIS do verbo? (Posição Pós-verbal / Deslocado) │ │ ├── Teste: Substituir mentalmente por PORTANTO. │ │ └── Classificação: CONJUNÇÃO CONCLUSIVA (Valor: Conclusão / Consequência). │ │ │ └── O "POIS" está ANTES do verbo? (Posição Pré-verbal / Início da oração) │ ├── Teste: Substituir mentalmente por PORQUE. │ └── Classificação: CONJUNÇÃO EXPLICATIVA (Valor: Explicação / Justificativa). │ [Fim]
+```
 
 1. Examinar o contexto anterior à palavra "NEM":
 
@@ -212,13 +214,17 @@ As questões de substituição de conectivos avaliam a manutenção da correçã
 - Se o conector ligar um polo (+) a um polo (-) (ou vice-versa), fica caracterizada a Oposição / Contraste Estrito.
 - Se os dois trechos possuírem a mesma polaridade básica, o conector estará atuando no plano da Restrição / Ressalva / Compensação.
 
+```text
 [Início: Questão de Reescritura / Troca de Conectivo A por B] │ ├── Passo 1: Analisar o conectivo original "A" no contexto do texto. │ └── Determinar seu sentido real (ex.: Conclusivo, Adversativo, Aditivo). │ ├── Passo 2: Analisar o conectivo substituto "B" proposto pela banca. │ └── Verificar sua família semântica e requisitos sintáticos. │ ├── Teste de Equivalência: │ ├── Pertencem à mesma família semântica e mantêm a sintaxe? │ │ ├── SIM ──► Item CERTO (mantém sentido e correção). │ │ └── NÃO ──► Item ERRADO (altera sentido ou fere a gramática). │ [Fim]
+```
 
 1. Olho 1 (no Peixe): Ler o período anterior ao conector e sublinhar apenas o núcleo do argumento (verbo principal + palavra-chave), ignorando adjuntos prolixos.
 2. Olho 2 (no Gato): Ler o período posterior ao conector e sublinhar igualmente apenas o núcleo proposicional.
 3. Confronto Lógico: Isolar os dois núcleos reduzidos e identificar o nexo lógico objetivo (Causa-Efeito, Fato-Ressalva, Argumento 1 + Argumento 2).
 
+```text
 [Início: Ocorrência do conector "POIS"] │ ├── 1. Localizar o verbo da oração introduzida pelo "POIS". │ ├── 2. Verificar a posição do "POIS" em relação a esse verbo: │ │ │ ├── O "POIS" está DEPOIS do verbo? (Posição Pós-verbal / Deslocado) │ │ ├── Teste: Substituir mentalmente por PORTANTO. │ │ └── Classificação: CONJUNÇÃO CONCLUSIVA (Valor: Conclusão / Consequência). │ │ │ └── O "POIS" está ANTES do verbo? (Posição Pré-verbal / Início da oração) │ ├── Teste: Substituir mentalmente por PORQUE. │ └── Classificação: CONJUNÇÃO EXPLICATIVA (Valor: Explicação / Justificativa). │ [Fim]
+```
 
 1. Examinar o contexto anterior à palavra "NEM":
 
@@ -244,7 +250,9 @@ As questões de substituição de conectivos avaliam a manutenção da correçã
 - Se o conector ligar um polo (+) a um polo (-) (ou vice-versa), fica caracterizada a Oposição / Contraste Estrito.
 - Se os dois trechos possuírem a mesma polaridade básica, o conector estará atuando no plano da Restrição / Ressalva / Compensação.
 
+```text
 [Início: Questão de Reescritura / Troca de Conectivo A por B] │ ├── Passo 1: Analisar o conectivo original "A" no contexto do texto. │ └── Determinar seu sentido real (ex.: Conclusivo, Adversativo, Aditivo). │ ├── Passo 2: Analisar o conectivo substituto "B" proposto pela banca. │ └── Verificar sua família semântica e requisitos sintáticos. │ ├── Teste de Equivalência: │ ├── Pertencem à mesma família semântica e mantêm a sintaxe? │ │ ├── SIM ──► Item CERTO (mantém sentido e correção). │ │ └── NÃO ──► Item ERRADO (altera sentido ou fere a gramática). │ [Fim]
+```
 
 1. Olho 1 (no Peixe): Ler o período anterior ao conector e sublinhar apenas o núcleo do argumento (verbo principal + palavra-chave), ignorando adjuntos prolixos.
 2. Olho 2 (no Gato): Ler o período posterior ao conector e sublinhar igualmente apenas o núcleo proposicional.

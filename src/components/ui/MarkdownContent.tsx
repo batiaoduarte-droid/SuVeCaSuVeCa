@@ -174,7 +174,7 @@ const MarkdownRenderer: React.FC<{ content: string }> = ({ content }) => {
   const renderPlainMarkdown = (markdown: string) => (
     <ReactMarkdown
       remarkPlugins={[remarkGfm, remarkMath]}
-      rehypePlugins={[rehypeKatex]}
+      rehypePlugins={[[rehypeKatex, { strict: false, throwOnError: false }]]}
       components={{
         table: ({ children }) => {
           tableNumber += 1;

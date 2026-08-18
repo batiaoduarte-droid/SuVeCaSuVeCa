@@ -112,8 +112,10 @@ const clip = (value, length) => {
 };
 
 const normalizeCodeFences = (markdown) => {
+  let text = String(markdown || '');
+  text = text.replace(/(?<!`)`\s*\n([\s\S]*?)\n\s*`(?!`)/g, (_, inner) => `\n\`\`\`text\n${inner.trim()}\n\`\`\`\n`);
   let open = false;
-  const normalized = markdown
+  const normalized = text
     .split('\n')
     .map((line) => {
       if (line.trim() !== '`') return line;
@@ -392,15 +394,39 @@ const tablesPath = path.join(PORTUGUESE_ROOT, 'Integracao_Pedagogica', 'v2', 'ca
 const tablesRecords = isV2 && fs.existsSync(tablesPath) ? readJsonl(tablesPath) : [];
 const tablesById = Object.fromEntries(tablesRecords.map((t) => [t.entityId, t]));
 
+const isAsciiDiagram = (text) => {
+  if (!text || typeof text !== 'string') return false;
+  const trimmed = text.trim();
+  if (!trimmed) return false;
+  const boxMatches = trimmed.match(/[│├──└──┌┐└┘─▼▲►◄═├└┬┴┼]/gu)?.length || 0;
+  if (boxMatches >= 3) return true;
+  if (trimmed.includes('├──') || trimmed.includes('└──') || trimmed.includes('┌──') || (trimmed.includes('│') && trimmed.split(/\r?\n/).length >= 2)) {
+    return true;
+  }
+  if (trimmed.startsWith('[Início:') || (trimmed.includes('Passo 1:') && (trimmed.includes('──►') || trimmed.includes('SIM:')))) {
+    return true;
+  }
+  if ((trimmed.includes('──►') || trimmed.includes('───►') || trimmed.includes('─►') || trimmed.includes('├──')) && (trimmed.includes('SIM:') || trimmed.includes('NÃO:'))) {
+    return true;
+  }
+  return false;
+};
+
 const renderBlock = (block, tables = {}) => {
   if (block.type === 'heading') return `${'#'.repeat(Math.min(6, Math.max(2, block.level || 2)))} ${block.text || ''}`;
-  if (block.type === 'paragraph') return block.text || '';
+  if (block.type === 'paragraph') {
+    const text = block.text || '';
+    if (isAsciiDiagram(text)) {
+      return `\`\`\`text\n${text.trim()}\n\`\`\``;
+    }
+    return text;
+  }
   if (block.type === 'list') {
     return (block.items || []).map((item, i) => block.ordered ? `${i + 1}. ${item}` : `- ${item}`).join('\n');
   }
   if (block.type === 'callout') return `> ${block.text || ''}`;
-  if (block.type === 'code') return `\`\`\`${block.language || 'text'}\n${block.text || ''}\n\`\`\``;
-  if (block.type === 'formula') return `$$\n${block.text || ''}\n$$`;
+  if (block.type === 'code') return `\`\`\`${block.language || 'text'}\n${(block.text || '').trim()}\n\`\`\``;
+  if (block.type === 'formula') return `$$\n${(block.text || '').trim()}\n$$`;
   if (block.type === 'table_ref' && tables[block.tableId]) {
     const table = tables[block.tableId];
     const headers = table.headers || [];

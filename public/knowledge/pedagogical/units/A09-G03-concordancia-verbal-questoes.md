@@ -45,7 +45,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Vozes Verbais: Compreensão estrutural da Voz Ativa, Voz Passiva Analítica (Ser + Particípio) e Voz Passiva Sintética (Verbo + SE).
 - Sintaxe do Período Composto: Identificação de Orações Subordinadas Substantivas (Subjetivas e Objetivas Diretas) desenvolvidas (com conjunção integrante que/se) e reduzidas de infinitivo.
 
+```text
 CONCORDÂNCIA VERBAL: A RELAÇÃO DO VERBO COM OS 5 TIPOS DE SUJEITO │ ├── 1. Sujeito Simples  │ ├── Possui apenas 1 núcleo substantivo, pronominal ou numeral. │ ├── REGRA DE EXCLUSÃO ABSOLUTA: O núcleo do sujeito NUNCA é preposicionado. │ └── REGRA GERAL: O verbo concorda em número e pessoa com o núcleo. │ ├── 2. Sujeito Composto (, , ) │ ├── ANTEPOSTO ao verbo: Concordância Total (obrigatoriamente no PLURAL; sem concordância atrativa). │ ├── POSPOSTO ao verbo: Dupla possibilidade — Total (PLURAL) ou Atrativa (com o núcleo mais próximo). │ ├── RESUMIDO POR APOSTO (tudo, nada, tudo isso): Concordância OBRIGATÓRIA no SINGULAR. │ └── ALERTA DO FALSO COMPOSTO: O conectivo "e" dentro de adjuntos/complementos preposicionados NÃO cria novo núcleo. │ ├── 3. Sujeito Indeterminado  │ ├── Estrutura A: Verbo na 3ª pessoa do PLURAL sem referente textual contextualizável. │ ├── Estrutura B: Verbo no Infinitivo Impessoal de sentido genérico ("Amar é bom"). │ └── Estrutura C: Verbo na 3ª pessoa do SINGULAR + SE (PIS/IIS) acoplado a VTI, VI ou VL. │ ├── 4. Oração sem Sujeito / Verbos Impessoais (, , ) │ ├── Verbo HAVER com sentido de existir, ocorrer ou acontecer ──► Fixo na 3ª pessoa do SINGULAR. │ ├── Verbos FAZER e HAVER indicando tempo decorrido/cronológico ──► Fixo na 3ª pessoa do SINGULAR. │ ├── Verbos indicadores de fenômenos meteorológicos/naturais ──► Fixo na 3ª pessoa do SINGULAR. │ └── LOCUÇÕES VERBAIS: │ ├── Principal Impessoal (Haver) ──► O auxiliar herda a impessoalidade e fica no SINGULAR. │ └── Principal Pessoal (Existir) ──► O auxiliar concorda com o sujeito sintático. │ ├── 5. Sujeito Oracional  │ ├── Função de sujeito exercida por Oração Subordinada Substantiva Subjetiva (desenvolvida ou reduzida). │ ├── TESTE DE DIAGNÓSTICO: A oração inteira equivale ao pronome demonstrativo neutro "ISSO". │ └── REGRA DE OURO: O verbo da oração principal permanece OBRIGATORIAMENTE na 3ª pessoa do SINGULAR. │ └── 6. Casos Especiais Integrados  ├── Pronome Relativo "QUE": O verbo da oração adjetiva concorda com o termo antecedente. ├── Expressões Partitivas ("a maioria de", "um grupo de" + plural): Concordância lógica ou atrativa. └── Verbos de Horas/Soada (bater, dar, soar): Concordam com o numeral de horas na ausência de sujeito explícito.
+```
 
 ---
 
@@ -160,7 +162,9 @@ A substituição mútua entre os verbos existenciais acarreta alterações profu
 
 - Sujeito composto posposto $\rightarrow$ Verbo no plural (total) ou concorda com o mais próximo (atrativa).
 
+```text
 ┌────────────────────────────────────────┐ │ Analisar a Transitividade Verbal + SE │ └───────────────────┬────────────────────┘ │ ┌───────────────────────┴───────────────────────┐ ▼ ▼ ┌────────────────────────┐ ┌────────────────────────┐ │ VTD ou VTDI │ │ VTI, VI ou VL │ └────────────┬───────────┘ └────────────┬───────────┘ │ │ ▼ ▼ ┌────────────────────────┐ ┌────────────────────────┐ │ SE = Partícula │ │ SE = Pronome │ │ Apassivadora (PA) │ │ Indeterminador │ └────────────┬───────────┘ │ do Sujeito (PIS) │ │ └────────────┬───────────┘ ▼ │ ┌────────────────────────┐ ▼ │ Teste Passiva Analítica│ ┌────────────────────────┐ │ (SER + Particípio) │ │ Verbo OBRIGATORIAMENTE │ └────────────┬───────────┘ │ na 3ª pessoa do │ │ │ SINGULAR │ ▼ └────────────────────────┘ ┌────────────────────────┐ │ Verbo CONCORDA com o │ │ Sujeito Paciente │ │ (Singular ou Plural) │ └────────────────────────┘
+```
 
 1. Localize o verbo principal e faça a pergunta: "O que é que [verbo principal]?".
 2. Verifique se a resposta constitui uma oração (possui verbo conjugado ou no infinitivo).
@@ -182,7 +186,9 @@ A substituição mútua entre os verbos existenciais acarreta alterações profu
 
 - Sujeito composto posposto $\rightarrow$ Verbo no plural (total) ou concorda com o mais próximo (atrativa).
 
+```text
 ┌────────────────────────────────────────┐ │ Analisar a Transitividade Verbal + SE │ └───────────────────┬────────────────────┘ │ ┌───────────────────────┴───────────────────────┐ ▼ ▼ ┌────────────────────────┐ ┌────────────────────────┐ │ VTD ou VTDI │ │ VTI, VI ou VL │ └────────────┬───────────┘ └────────────┬───────────┘ │ │ ▼ ▼ ┌────────────────────────┐ ┌────────────────────────┐ │ SE = Partícula │ │ SE = Pronome │ │ Apassivadora (PA) │ │ Indeterminador │ └────────────┬───────────┘ │ do Sujeito (PIS) │ │ └────────────┬───────────┘ ▼ │ ┌────────────────────────┐ ▼ │ Teste Passiva Analítica│ ┌────────────────────────┐ │ (SER + Particípio) │ │ Verbo OBRIGATORIAMENTE │ └────────────┬───────────┘ │ na 3ª pessoa do │ │ │ SINGULAR │ ▼ └────────────────────────┘ ┌────────────────────────┐ │ Verbo CONCORDA com o │ │ Sujeito Paciente │ │ (Singular ou Plural) │ └────────────────────────┘
+```
 
 1. Localize o verbo principal e faça a pergunta: "O que é que [verbo principal]?".
 2. Verifique se a resposta constitui uma oração (possui verbo conjugado ou no infinitivo).

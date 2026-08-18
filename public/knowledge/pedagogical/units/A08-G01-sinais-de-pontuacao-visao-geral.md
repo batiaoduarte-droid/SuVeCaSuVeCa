@@ -43,7 +43,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Noções fundamentais de Sintaxe da Oração: Sujeito (simples e composto), Objeto Direto (OD) e Objeto Indireto (OI).
 - Distinção básica de Classes Gramaticais: Substantivo versus Adjetivo versus Advérbio.
 
+```text
 PONTUAÇÃO: REGRAS FUNDAMENTAIS DA VÍRGULA │ ├── 1. ESTRUTURA DIRETA (PROIBIÇÃO - REGRA DO SVC) │ ├── Sujeito  Verbo │ └── Verbo  Complemento (OD / OI) │ └── Aplicação: Método "Diante do Verbo" │ ├── 2. TERMO EXTERNO INDEPENDENTE (VOCATIVO) │ ├── Definição: Chamamento / Invocação do interlocutor │ ├── Pontuação: Obrigatoriamente ISOLADO por vírgula(s) │ └── Variações: Início (Vrg após), Intercalado (Entre vírgulas), Fim (Vrg antes) │ ├── 3. TERMO EXPLICATIVO SUBSTANTIVO (APOSTO EXPLICATIVO) │ ├── Mantra: "Aposto é caso de SUBSTANTIVO" (Substantivo explica Substantivo) │ ├── Pontuação: Obrigatoriamente entre vírgulas, travessões ou parênteses │ ├── Teste de Validação: Inserção de "[que é]" mantendo a equivalência (A = B) │ └── Distinções Críticas: │ ├── Adjetivo entre vírgulas = Predicativo do Sujeito Deslocado (NÃO é aposto) │ └── Advérbio / Data entre vírgulas = Adjunto Adverbial (NÃO é aposto) │ └── 4. TERMOS COORDENADOS (ENUMERAÇÃO E DOIS-PONTOS) ├── Enumeração: Separação por vírgulas de termos de mesma função sintática ├── Presença do conectivo "e": Marca adição/enumeração, afastando a ideia de aposto └── Sintaxe dos Dois-Pontos (:): ├── Verbo + [: ] + Lista = ✗ INCORRETO (Violação do SVC) └── Verbo + Substantivo Genérico (OD) + [: ] + Lista = ✓ CORRETO (Aposto Enumerativo)
+```
 
 ---
 
@@ -167,7 +169,9 @@ Detectar instantaneamente proibições de vírgula em frases extensas, sujeitos 
 
 - Verificação 2: Observe a transição entre a forma verbal e o complemento (seja ele um substantivo ou uma oração introduzida por que/se). Se houver uma vírgula simples intermediária, a estrutura está INCORRETA.
 
+```text
 [ PASSO 1: LOCALIZAR O VERBO ] │ ▼ [ PASSO 2: PERGUNTAR PELO SUJEITO ] ───► Há vírgula antes do Verbo? ───► SIM: ERRO (Quebra S-V) │ NÃO: Válido ▼ [ PASSO 3: PERGUNTAR PELO COMPLEMENTO ] ─► Há vírgula após o Verbo? ───► SIM: ERRO (Quebra V-C) NÃO: Válido
+```
 
 Diferenciar com precisão categorial se um elemento intercalado entre vírgulas trata-se de um Aposto Explicativo, um Predicativo do Sujeito, um Adjunto Adverbial ou uma Enumeração.
 
@@ -198,7 +202,9 @@ Detectar instantaneamente proibições de vírgula em frases extensas, sujeitos 
 
 - Verificação 2: Observe a transição entre a forma verbal e o complemento (seja ele um substantivo ou uma oração introduzida por que/se). Se houver uma vírgula simples intermediária, a estrutura está INCORRETA.
 
+```text
 [ PASSO 1: LOCALIZAR O VERBO ] │ ▼ [ PASSO 2: PERGUNTAR PELO SUJEITO ] ───► Há vírgula antes do Verbo? ───► SIM: ERRO (Quebra S-V) │ NÃO: Válido ▼ [ PASSO 3: PERGUNTAR PELO COMPLEMENTO ] ─► Há vírgula após o Verbo? ───► SIM: ERRO (Quebra V-C) NÃO: Válido
+```
 
 #### Objetivo
 

@@ -42,19 +42,27 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Distinção morfológica entre pronomes pessoais do caso reto (eu, tu, ele, nós, vós, eles), pronomes oblíquos tônicos (mim, ti, ele, si, nós, vós, eles regidos por preposição) e pronomes oblíquos átonos.
 - Noções fundamentais de formas nominais do verbo (infinitivo, gerúndio e particípio) e tempos verbais (futuro do presente, futuro do pretérito e futuro do subjuntivo).
 
+```text
 SISTEMA INTEGRADO DE COLOCAÇÃO PRONOMINAL │ ┌──────────────────────────────────┴──────────────────────────────────┐ ▼ ▼
+```
 
 1. VEDAÇÕES CATEGÓRICAS 2. DIRETRIZES DE ATRAÇÃO
 
+```text
 [-...-002] [-...-003] ├── Proibição I: Início de Oração ├── Regra Geral: Palavra Invariável ├── Proibição II: Ênclise ao Futuro │ ├── Advérbios / Palavras Negativas └── Proibição III: Ênclise ao Particípio │ ├── Pronomes Interrogativos │ ├── Conjunções Subordinativas │ └── Preposições └── Exceções da Invariabilidade (Variam e Atraem) ├── Pronomes Relativos (que, o qual) └── Pronomes Indefinidos (ninguém, todos) │ ┌─────────────────────────────────────────┘ ▼
+```
 
 1. NEUTRALIZAÇÃO DA ATRAÇÃO (2 EXCEÇÕES)
 
+```text
 [-...-004] ├── Exceção I: Verbo no Infinitivo (sempre aceita ênclise) └── Exceção II: Conjunções Coordenativas (facultativas) │ ┌───────────────────────────────────┴───────────────────────────────────┐ ▼ ▼
+```
 
 1. APROFUNDAMENTO & CASOS COMPLEXOS 5. MANTRA OPERACIONAL
 
+```text
 ├── Futuro + Atrativo = Próclise [KB-...-006] [-...-005] ├── Infinitivo vs. Fut. Subjuntivo [KB-...-007] └── "O que não é proibido está correto" │ └── Teste "FAZER" vs. "FIZER" [PROC-...-002] ├── Sujeitos explícitos / Substantivos ├── Pontuação e Vírgula Casada [KB-...-008] └── Pronomes pessoais do caso reto ├── Locuções Verbais / "Vale Tudo" [KB-...-009] └── Atração a Distância e Aposínclise [KB-...-010]
+```
 
 ---
 
@@ -266,19 +274,25 @@ com atrativo) + Aposínclise válida. ==========================================
 
 ## Roteiros de resolução
 
+```text
 PASSO 1: TESTAR AS 3 PROIBIÇÕES ABSOLUTAS NA PROPOSTA │ ├── A posição pretendida inicia oração ou período? ─────────────► SIM: PROIBIDO! (Item Errado) ├── A posição pretendida faz ênclise a verbo no Futuro? ────────► SIM: PROIBIDO! (Item Errado) ├── A posição pretendida faz ênclise a verbo no Particípio? ────► SIM: PROIBIDO! (Item Errado) └── NÃO: Prosseguir para o PASSO 2.
+```
 
 $$
 \Downarrow
 $$
 
+```text
 PASSO 2: TESTAR A PRESENÇA DE PALAVRA ATRATIVA ANTES DO VERBO │ ├── Há palavra invariável (advérbio, conj. subordinativa, preposição, pron. interrogativo)? ├── Há pronome relativo ("que", "o qual", "cujo") ou pronome indefinido ("ninguém", "todos")? │ │ │ ├── NÃO ──► A colocação é FACULTATIVA (Próclise ou Ênclise são válidas — Mantra). │ └── SIM ──► Prosseguir para o PASSO 3.
+```
 
 $$
 \Downarrow
 $$
 
+```text
 PASSO 3: TESTAR SE INCIDE UMA DAS 2 EXCEÇÕES DA ATRAÇÃO │ ├── O verbo está no INFINITIVO? ───────────────────────────────► SIM: Ênclise PERMITIDA (Facultativo). ├── A palavra atrativa é CONJUNÇÃO COORDENATIVA? ──────────────► SIM: Ênclise PERMITIDA (Facultativo). └── NÃO É EXCEÇÃO ─────────────────────────────────────────────► PRÓCLISE ESTRITAMENTE OBRIGATÓRIA.
+```
 
 1. Isole a forma verbal regular terminada em -r, -res ou -rmos antecedida de palavra atrativa.
 2. Substitua o verbo regular pelo verbo irregular Fazer:
@@ -297,19 +311,25 @@ PASSO 3: TESTAR SE INCIDE UMA DAS 2 EXCEÇÕES DA ATRAÇÃO │ ├── O verb
 
 - Se houver palavra atrativa, o pronome pode ficar em próclise ao auxiliar (não me está...) ou solto no meio em próclise ao principal (não está me...).
 
+```text
 PASSO 1: TESTAR AS 3 PROIBIÇÕES ABSOLUTAS NA PROPOSTA │ ├── A posição pretendida inicia oração ou período? ─────────────► SIM: PROIBIDO! (Item Errado) ├── A posição pretendida faz ênclise a verbo no Futuro? ────────► SIM: PROIBIDO! (Item Errado) ├── A posição pretendida faz ênclise a verbo no Particípio? ────► SIM: PROIBIDO! (Item Errado) └── NÃO: Prosseguir para o PASSO 2.
+```
 
 $$
 \Downarrow
 $$
 
+```text
 PASSO 2: TESTAR A PRESENÇA DE PALAVRA ATRATIVA ANTES DO VERBO │ ├── Há palavra invariável (advérbio, conj. subordinativa, preposição, pron. interrogativo)? ├── Há pronome relativo ("que", "o qual", "cujo") ou pronome indefinido ("ninguém", "todos")? │ │ │ ├── NÃO ──► A colocação é FACULTATIVA (Próclise ou Ênclise são válidas — Mantra). │ └── SIM ──► Prosseguir para o PASSO 3.
+```
 
 $$
 \Downarrow
 $$
 
+```text
 PASSO 3: TESTAR SE INCIDE UMA DAS 2 EXCEÇÕES DA ATRAÇÃO │ ├── O verbo está no INFINITIVO? ───────────────────────────────► SIM: Ênclise PERMITIDA (Facultativo). ├── A palavra atrativa é CONJUNÇÃO COORDENATIVA? ──────────────► SIM: Ênclise PERMITIDA (Facultativo). └── NÃO É EXCEÇÃO ─────────────────────────────────────────────► PRÓCLISE ESTRITAMENTE OBRIGATÓRIA.
+```
 
 1. Isole a forma verbal regular terminada em -r, -res ou -rmos antecedida de palavra atrativa.
 2. Substitua o verbo regular pelo verbo irregular Fazer:

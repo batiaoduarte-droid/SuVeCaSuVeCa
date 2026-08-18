@@ -44,7 +44,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Pessoas do Discurso: Distinção entre 1ª pessoa (quem fala/emissor), 2ª pessoa (com quem se fala/receptor) e 3ª pessoa (de quem se fala/assunto).
 - Noção de Período Composto: Compreensão da articulação entre oração principal e oração subordinada.
 
+```text
 SISTEMA PRONOMINAL: DEMONSTRATIVOS E RELATIVOS │ ┌──────────────────────────────────────┴──────────────────────────────────────┐ ▼ ▼ PRONOMES DEMONSTRATIVOS PRONOMES RELATIVOS (este/isto, esse/isso, aquele/aquilo) (que, quem, cujo, onde, o qual, etc.) │ │ ┌───────┼───────────────────┐ ┌───────┼───────────────────┐ ▼ ▼ ▼ ▼ ▼ ▼ ESPAÇO TEMPO TEXTO RECONHECIMENTO ANTECEDENTE DISTINÇÕES DE (Dêixis)(Dêixis) (Endofórica) (2 Passos) (Natureza Subst.) "QUE" │ │ │ │ │ │ ├1ª P. ├Presente/ ├Anáfora (esse/isso) ├Retoma ├Substantivo ├C. Integrante │(Este) │Fut. Próx. (Este) ├Catáfora (este/isto) │Subst. ├Pron. Subst. │("ISSO") │ ├Passado ├2 Antecedentes: └Troca │(o/os = aquilo) ├Realce ("é que") ├2ª P. │Recente (Esse) │ Este (próximo) / Aquele (distante) por ├Numeral Subst. ├Prep. Acidental │(Esse) ├Pass./Fut. └3+ Antecedentes: "o qual" │("milhões") └Consecutiva │ │Distante (Aquele) Este (último) / Aquele (1º) / Ordinais (meio) └Cujo: Posposto (Concord.) ("tanto... que") └3ª P. vs Antecedente (Ref.) (Aquele)
+```
 
 ---
 

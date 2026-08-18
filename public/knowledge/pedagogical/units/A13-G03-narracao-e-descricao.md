@@ -44,7 +44,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Morfossintaxe Verbal Básica: Noção elementar dos tempos do Modo Indicativo (Presente, Pretérito Perfeito, Pretérito Imperfeito e Pretérito Mais-que-perfeito).
 - Classes de Palavras de Caracterização: Reconhecimento de substantivos e adjetivos como núcleos de qualificação.
 
+```text
 text DISTINÇÃO TIPOLÓGICA: NARRAÇÃO vs. DESCRIÇÃO │ ├── 1. EIXO DA TEMPORALIDADE (Critério Estrutural Supremo) │ ├── DESCRIÇÃO: Simultaneidade │ │ ├── Um único momento no tempo │ │ ├── Metáfora da Fotografia / Cena Congelada │ │ └── Inexistência de linha temporal "antes e depois" │ └── NARRAÇÃO: Sucessividade │ ├── Momentos sucessivos no tempo │ ├── Vetor Cronológico ("Antes e Depois" / Causa e Efeito) │ └── Transformação de estado / Enredo em movimento │ ├── 2. EIXO DA INTENÇÃO COMUNICATIVA (Critério Pragmático Supremo) │ ├── DESCRIÇÃO: Identificar, qualificar, localizar e detalhar │ │ ├── Objetos, cenários, paisagens, pessoas │ │ ├── Metas e objetivos institucionais abstratos │ │ └── Hábitos, costumes e rotinas periódicas │ └── NARRAÇÃO: Relatar acontecimentos e enredos │ ├── Fatos vivenciados por personagens │ ├── Presença de conflito, clímax e desfecho │ └── Diálogos e alternância de vozes (discurso direto/indireto) │ ├── 3. EIXO DOS TEMPOS VERBAIS (Critério Secundário / Relativo) │ ├── Padrão Prototípico no Pretérito: │ │ ├── Pretérito Imperfeito ──> Expressa duração/continuidade ──> Base da Descrição │ │ └── Pretérito Perfeito / MQP ──> Expressa pontualidade/sucessão ──> Base da Narração │ └── Comportamento Híbrido no Presente: │ ├── Presente Histórico ──> Substitui o pretérito (aproximação, vivacidade, suspense) │ ├── Presente Descritivo ──> Detalha características estáticas ou metas │ └── Regra Crítica: O tempo verbal NÃO determina a tipologia por si só │ └── 4. EIXO DA PREDOMINÂNCIA EM TEXTOS HÍBRIDOS (Padrão de Concurso / Cebraspe) ├── Estrutura Literária Padrão: Abertura narrativa + Entremeio descritivo + Desfecho narrativo │ └── Classificação: Texto PREDOMINANTEMENTE NARRATIVO com aspectos descritivos └── Tipos de Formulação de Questões: ├── Itens Excludentes: Exigem a tipologia dominante (Narração prevalece em romances/contos) └── Itens Cumulativos: Validam a coexistência de sequências narrativas e descritivas
+```
 
 ---
 
@@ -187,7 +189,9 @@ Quando verbos no presente expressam ações cíclicas/rotineiras ("acorda-se às
 
 Determinar com exatidão matemática a tipologia de qualquer excerto de prova de concurso público, eliminando falsas deduções baseadas apenas na terminação verbal.
 
+```text
 text [FRAGMENTO TEXTUAL DE PROVA] │ ▼ PASSO 1: Mapear as ações, estados e intenção discursiva central │ ▼ PASSO 2: Aplicar o Teste da Temporalidade Interna ───────────────────────────────────────────────── As ações / estados ocorrem em momentos cronológicos sucessivos? │ ┌─────────────────┴─────────────────┐ ▼ ▼ [SIM] [NÃO] │ │ ▼ ▼ O tempo avançou? As ações e atributos coexistem Há linha de "antes e depois"? em um só instante (fotografia)? (Teste: "1º... depois... então") (Teste: "Cena congelada") │ │ ▼ ▼ ┌───────────┐ ┌───────────┐ │ NARRAÇÃO │ │ DESCRIÇÃO │ └───────────┘ └───────────┘ │ │ ▼ ▼ PASSO 3: Validação Secundária por Intenção Comunicativa
+```
 
 Resolver itens de julgamento (Certo/Errado ou Múltipla Escolha) que abordam predominância tipológica em contos, romances ou crônicas.
 
@@ -212,7 +216,9 @@ Determinar com exatidão matemática a tipologia de qualquer excerto de prova de
 
 #### Fluxograma Operacional
 
+```text
 text [FRAGMENTO TEXTUAL DE PROVA] │ ▼ PASSO 1: Mapear as ações, estados e intenção discursiva central │ ▼ PASSO 2: Aplicar o Teste da Temporalidade Interna ───────────────────────────────────────────────── As ações / estados ocorrem em momentos cronológicos sucessivos? │ ┌─────────────────┴─────────────────┐ ▼ ▼ [SIM] [NÃO] │ │ ▼ ▼ O tempo avançou? As ações e atributos coexistem Há linha de "antes e depois"? em um só instante (fotografia)? (Teste: "1º... depois... então") (Teste: "Cena congelada") │ │ ▼ ▼ ┌───────────┐ ┌───────────┐ │ NARRAÇÃO │ │ DESCRIÇÃO │ └───────────┘ └───────────┘ │ │ ▼ ▼ PASSO 3: Validação Secundária por Intenção Comunicativa
+```
 
 #### Finalidade
 

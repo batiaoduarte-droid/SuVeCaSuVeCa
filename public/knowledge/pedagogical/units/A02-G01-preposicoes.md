@@ -44,7 +44,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Noções de Sintaxe Oracional: Distinção elementar entre termos integrantes (Objeto Indireto, Complemento Nominal) e termos acessórios (Adjunto Adverbial, Adjunto Adnominal, Agente da Passiva).
 - Período Composto: Compreensão introdutória da diferença entre orações reduzidas (infinitivo) e orações desenvolvidas (verbo conjugado).
 
+```text
 PREPOSIÇÃO (Palavra invariável conectiva) │ ├── 1. NATUREZA CONECTIVA │ ├── Conecta Termos (ex.: "Casa [de] José") │ └── Conecta Orações (ex.: "Correu [para] chegar a tempo") │ ├── 2. PREPOSIÇÕES ESSENCIAIS (18 vocábulos) │ ├── Lista: a, ante, até, após, com, contra, de, desde, em, entre, para, per, perante, por, sem, sob, sobre, trás. │ ├── Distinção Morfológica: │ │ ├── Preposição isolada ("após") vs. Locução adverbial ("após o jantar") │ │ └── Preposição ("com") vs. Conjunção ("e") │ └── Vedação de Crase: Proibida fusão com 'a' após preposição essencial (exceção: "até" = facultativa). │ ├── 3. ESTRUTURAÇÃO DE LOCUÇÕES & REESCRITA │ ├── Locução Prepositiva (Termina em preposição) ──► Rege Infinitivo (Oração Reduzida) │ ├── Locução Conjuntiva (Termina em "que") ──► Rege Subjuntivo (Oração Desenvolvida) │ └── Princípio da Reescrita: Sentido semântico idêntico com ajuste obrigatório da flexão verbal. │ ├── 4. DICOTOMIA FUNCIONAL │ ├── VALOR RELACIONAL (Gramatical / Sintático / Obrigatório) │ │ ├── Carga Semântica: NULA (não introduz sentido próprio). │ │ └── Funções Regidas: Objeto Indireto (OI) e Complemento Nominal (CN). │ │ │ └── VALOR NOCIONAL (Semântico / Circunstancial / Não Obrigatório) │ ├── Critério de Identificação: "O que vem depois salva" (Natureza do termo regido). │ └── Funções Sintáticas Não Regidas: │ ├── Adjunto Adverbial (tempo, lugar, modo, causa, finalidade, etc.) │ ├── Adjunto Adnominal (matéria, posse, conteúdo, companhia) │ └── Agente da Passiva (agente) │ └── 5. POLISSEMIA DA PREPOSIÇÃO "PARA" & ESTRATÉGIAS DE PROVA ├── Valências: Finalidade, Direção/Lugar, Destinatário, Conformidade, Tempo. ├── Teste Canônico de Finalidade: Substituição por "a fim de" / "com o propósito de". ├── Desarme de Armadilha: "para [sempre permitirem]" = Finalidade (não locução temporal). └── Paralelismo Correlativo: Cadeia aditiva ("não apenas... mas também...") impõe simetria semântica.
+```
 
 ---
 
@@ -138,7 +140,9 @@ A preposição desempenha dois papéis estruturais e funcionais mutuamente exclu
 1. Valor Relacional (Gramatical / Obrigatório): Presença imposta pelas regras de regência verbal ou nominal; atua como mero ligame sintático destituído de valor semântico próprio.
 2. Valor Nocional (Semântico / Não Obrigatório): Presença não exigida pela regência; introduz circunstâncias conceituais, sentidos e noções interpretativas na oração.
 
+```text
 DICOTOMIA DA PREPOSIÇÃO │ ┌─────────────────────────────┴─────────────────────────────┐ ▼ ▼ VALOR RELACIONAL (GRAMATICAL) VALOR NOCIONAL (SEMÂNTICO) • Obrigatória por Regência Verbal/Nominal • Não obrigatória por Regência • Carga Semântica: NULA • Carga Semântica: PLENA (introduz noções) • Inicia Termos Integrantes Regidos: • Inicia Termos Acessórios / Não Regidos:
+```
 
 - Objeto Indireto (OI) - Adjunto Adverbial (tempo, lugar, causa...)
 - Complemento Nominal (CN) - Adjunto Adnominal (posse, matéria...)

@@ -40,7 +40,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ## Pré-requisitos e modelo mental
 
+```text
 EMPREGO DAS CLASSES DE PALAVRAS (CEBRASPE) ├── 1. TRÍADE MORFOLÓGICA BÁSICA & TÉCNICA DAS SETAS │ ├── SUBSTANTIVO: Núcleo do sintagma; classe variável; nomeia seres; atrai determinantes. │ ├── ADJETIVO: Classe variável; aponta SEMPRE para o Substantivo; testado por "QUE É". │ └── ADVÉRBIO: Classe invariável; modifica Verbo, Adjetivo ou outro Advérbio. │ ├── 2. DINÂMICA DO SINTAGMA NOMINAL │ ├── Ordem Direta: [Artigo] + [Substantivo] + [Adjetivo] (ex: "O menino inteligente") │ ├── Ordem Invertida / Anteposição: [Artigo] + [Adjetivo Interposto] + [Substantivo] │ │ └── Regra: O artigo pula o adjetivo e conecta-se ao substantivo posterior (ex: "O inteligente menino", "à mágica transformação") │ └── Caso Especial: Adjetivos invariáveis em gênero (ex: "notícia monstro", "ideia monstro") │ ├── 3. DERIVAÇÃO IMPRÓPRIA (SUBSTANTIVAÇÃO) │ ├── Determinantes Substantivadores: Artigo, Pronome (Demonstrativo/Possessivo) e Numeral │ ├── Substantivação de Verbos: "Aquele olhar", "Um desesperar" │ ├── Substantivação de Advérbios: "O não que levou", "O amanhã é imprevisível" │ ├── Substantivação de Numerais: "O último dos mortais" │ └── Substantivação de Conjunções/Letras: "Daquele E" │ └── 4. SEMÂNTICA E SINTAXE ADVERBIAL ├── Modificação de Verbo: Exprime circunstâncias diversas (Tempo, Modo, Lugar, etc.) │ ├── Teste de Modo: Responde a "COMO?" / "De que jeito?" (ex: "rapidamente", "necessariamente") │ ├── Teste de Tempo: Responde a "QUANDO?" (ex: "amanhã", "posteriormente", "presentemente", "hoje") │ └── Modificação à Distância: O advérbio pode estar separado do verbo por orações intercaladas ("Hoje [...] abrange") └── Modificação de Adjetivo / Advérbio: Atua OBRIGATORIAMENTE como INTENSIFICADOR └── Teste do "Muito": "bem provável" (= muito provável), "bem cedo" (= muito cedo), "menos estressante"
+```
 
 ---
 

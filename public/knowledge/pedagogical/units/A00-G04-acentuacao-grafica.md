@@ -18,7 +18,9 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 - Distinção entre Ditongo e Hiato: Noção básica de encontro vocálico dentro da mesma sílaba (ditongo) versus encontro de vogais em sílabas distintas (hiato).
 - Noção de Ênclise Pronominal: Reconhecimento da junção de pronomes oblíquos átonos a formas verbais por meio de hífen (-lo, -la, -nos, -se).
 
+```text
 ARQUITETURA DA ACENTUAÇÃO GRÁFICA │ ┌────────────────────────────────────┴────────────────────────────────────┐ ▼ ▼ REGRAS GERAIS DE BASE CASOS ESPECIAIS E EXCEÇÕES ├── [] OXÍTONAS ├── [] PAROXÍTONAS EM DITONGO │ ├── Terminações: -A(s), -E(s), -O(s), -EM(ens) │ ├── Ditongo Crescente: SV + V (Ex: história) │ └── [] Formas Verbais com Ênclise (Ex: encontrá-lo) │ └── Ditongo Decrescente: V + SV (Ex: móveis) ├── [] PAROXÍTONAS (REGRA GERAL/INVERSA) ├── [] PROPAROXÍTONAS EVENTUAIS │ ├── Terminações: NÃO terminadas em A, E, O, EM(ens) │ └── Válidas APENAS para Ditongo Crescente │ └── Ex: cáqui, ônix, ímã, Méier ├── [] HIATO TÔNICO EM "I" OU "U" ├── [] PROPAROXÍTONAS (REGRA UNIVERSAL) │ ├── 2ª Vogal do Hiato, Tônica, Sozinha ou com S │ ├── Todas são acentuadas graficamente │ ├── Restrição 1: Com Z não acentua (ju-iz) │ └── [] 1ª Vogal do Hiato = Proparoxítona (va-rí-o-la) │ └── Restrição 2: Seguido de NH não acentua (ra-i-nha) └── [] MONOSSÍLABOS TÔNICOS └── [] ACENTOS DIFERENCIAIS CIRCUNFLEXOS ├── Terminações: -A(s), -E(s), -O(s) ├── I. têm / vêm (e derivados plurais) └── [] Não inclui terminação -EM/-ENS ├── II. pôr (verbo) vs. por (preposição) └── III. pôde (passado) vs. pode (presente)
+```
 
 ---
 
@@ -143,7 +145,9 @@ Na fonologia da língua portuguesa, a vogal é o núcleo obrigatório de toda s�
 
 Analisar com 100% de precisão qualquer palavra submetida a julgamento de regra em provas de concursos, evitando armadilhas fonéticas e visuais.
 
+```text
 [Início do Processo] │ ▼ [Passo 1: Separação Silábica na Margem da Prova] ├── Se houver hífen/pronome enclítico (-lo, -la), corte o pronome e separe apenas o verbo. └── Lembre-se: Toda sílaba tem uma vogal; consoante muda gruda na anterior (af-ta). │ ▼ [Passo 2: Determinação da Sílaba Tônica] ├── Sílaba única forte ──> Monossílabo Tônico ├── Antepenúltima sílaba ──> Proparoxítona ├── Última sílaba ──> Oxítona └── Penúltima sílaba ──> Paroxítona / Hiato / Ditongo │ ▼ [Passo 3: Enquadramento Normativo nas 7 Justificativas] ├── É I ou U tônico isolado na 2ª posição de hiato? ──> Regra 6 (Hiato) ├── É paroxítona terminada em ditongo? ──────────────> Regra 5 (Ditongo / Eventual se crescente) ├── É paroxítona sem A, E, O, EM? ───────────────────> Regra 2 (Paroxítona Geral) ├── É oxítona terminada em A, E, O, EM(ens)? ────────> Regra 1 (Oxítona) └── É circunflexo para diferenciar homógrafos? ───────> Regra 7 (Acento Diferencial) │ ▼ [Julgamento da Assertiva] Se palavra A e palavra B possuem o mesmo enquadramento final no Passo 3 ──> [CERTO] Se possuem enquadramentos distintos ────────────────────────────────────> [ERRADO]
+```
 
 ### Objetivo
 
@@ -151,7 +155,9 @@ Analisar com 100% de precisão qualquer palavra submetida a julgamento de regra 
 
 #### Passos do Procedimento
 
+```text
 [Início do Processo] │ ▼ [Passo 1: Separação Silábica na Margem da Prova] ├── Se houver hífen/pronome enclítico (-lo, -la), corte o pronome e separe apenas o verbo. └── Lembre-se: Toda sílaba tem uma vogal; consoante muda gruda na anterior (af-ta). │ ▼ [Passo 2: Determinação da Sílaba Tônica] ├── Sílaba única forte ──> Monossílabo Tônico ├── Antepenúltima sílaba ──> Proparoxítona ├── Última sílaba ──> Oxítona └── Penúltima sílaba ──> Paroxítona / Hiato / Ditongo │ ▼ [Passo 3: Enquadramento Normativo nas 7 Justificativas] ├── É I ou U tônico isolado na 2ª posição de hiato? ──> Regra 6 (Hiato) ├── É paroxítona terminada em ditongo? ──────────────> Regra 5 (Ditongo / Eventual se crescente) ├── É paroxítona sem A, E, O, EM? ───────────────────> Regra 2 (Paroxítona Geral) ├── É oxítona terminada em A, E, O, EM(ens)? ────────> Regra 1 (Oxítona) └── É circunflexo para diferenciar homógrafos? ───────> Regra 7 (Acento Diferencial) │ ▼ [Julgamento da Assertiva] Se palavra A e palavra B possuem o mesmo enquadramento final no Passo 3 ──> [CERTO] Se possuem enquadramentos distintos ────────────────────────────────────> [ERRADO]
+```
 
 ---
 

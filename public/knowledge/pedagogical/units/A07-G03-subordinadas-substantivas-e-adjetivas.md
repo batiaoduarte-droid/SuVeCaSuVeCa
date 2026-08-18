@@ -44,7 +44,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Termos da Oração: Identificação de sujeito, objeto direto, objeto indireto, complemento nominal, predicativo do sujeito, aposto e adjunto adnominal.
 - Período Simples vs. Composto: Capacidade de localizar núcleos verbais e locuções verbais para delimitar orações.
 
+```text
 PERÍODO COMPOSTO POR SUBORDINAÇÃO │ ┌───────────────────────────────┼───────────────────────────────┐ ▼ ▼ ▼ SUBSTANTIVAS ADJETIVAS ADVERBIAIS (Equivalem a "ISSO") (Iniciadas por Relativo) (6 Cs + FTP) │ │ ├─► Subjetiva (Sujeito) ├─► Função Externa: SEMPRE Adjunto Adnominal ├─► Obj. Direta (OD) │ ├─► Obj. Indireta (OI) ├─► Classificação Semântico-Pontual: │ └─ Prep. FACULTATIVA │ ├─ Restritiva (sem vírgula / particulariza) ├─► Compl. Nominal (CN) │ └─ Explicativa (com vírgulas / generaliza) │ └─ Prep. OBRIGATÓRIA │ ├─► Predicativa (Predicativo) └─► Sintaxe Interna do Pronome Relativo: └─► Apositiva (Aposto) ├─ Método dos 3 Passos (Isolar->Substituir->Ordem Direta) └─ Pontuação assinalada ├─ Independência da OP (Evitar "Recaída Sintática") └─ "Onde" = Sempre Adjunto Adverbial de Lugar
+```
 
 ---
 
@@ -251,7 +253,9 @@ Algoritmo mecânico infalível estruturado em três etapas consecutivas para apu
 4. Localize o término do predicado da oração adjetiva e passe a segunda barra (|).
 5. Reúna a parte inicial e a parte final externa às barras: essa estrutura contínua constitui a Oração Principal (OP).
 
+```text
 [Início: Período Composto com Pronome Relativo] │ ▼ [PASSO 1: ISOLAR A ORAÇÃO ADJETIVA] ├─ Inserir barra (|) antes do pronome relativo e no fim da oração adjetiva. └─ Realçar com marca-texto (bloquear visualmente a Oração Principal). │ ▼ [PASSO 2: SUBSTITUIR PELO ANTECEDENTE] ├─ Localizar o núcleo nominal antecedente na OP. └─ Reescrever a oração adjetiva inserindo o substantivo no lugar do pronome relativo. │ ▼ [PASSO 3: ORDEM DIRETA (S - V - C) E ANÁLISE] ├─ Organizar: Sujeito + Verbo + Complemento / Adjunto. ├─ Fazer a análise sintática do substantivo perante o verbo da oração adjetiva. └─ A função obtida É A FUNÇÃO SINTÁTICA DO PRONOME RELATIVO.
+```
 
 1. Localize a oração subordinada iniciada por que ou se.
 2. Substitua o bloco oracional subordinado por ISSO (ou DISSO / NISSO).
@@ -274,7 +278,9 @@ Algoritmo mecânico infalível estruturado em três etapas consecutivas para apu
 4. Localize o término do predicado da oração adjetiva e passe a segunda barra (|).
 5. Reúna a parte inicial e a parte final externa às barras: essa estrutura contínua constitui a Oração Principal (OP).
 
+```text
 [Início: Período Composto com Pronome Relativo] │ ▼ [PASSO 1: ISOLAR A ORAÇÃO ADJETIVA] ├─ Inserir barra (|) antes do pronome relativo e no fim da oração adjetiva. └─ Realçar com marca-texto (bloquear visualmente a Oração Principal). │ ▼ [PASSO 2: SUBSTITUIR PELO ANTECEDENTE] ├─ Localizar o núcleo nominal antecedente na OP. └─ Reescrever a oração adjetiva inserindo o substantivo no lugar do pronome relativo. │ ▼ [PASSO 3: ORDEM DIRETA (S - V - C) E ANÁLISE] ├─ Organizar: Sujeito + Verbo + Complemento / Adjunto. ├─ Fazer a análise sintática do substantivo perante o verbo da oração adjetiva. └─ A função obtida É A FUNÇÃO SINTÁTICA DO PRONOME RELATIVO.
+```
 
 ---
 
