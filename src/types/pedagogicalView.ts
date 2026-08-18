@@ -10,7 +10,8 @@ export type ContentBlockType =
   | 'formula'
   | 'table_ref'
   | 'callout'
-  | 'code';
+  | 'code'
+  | 'diagram';
 
 export interface ParagraphBlock {
   type: 'paragraph';
@@ -53,6 +54,14 @@ export interface CodeBlock {
   text: string;
 }
 
+export interface DiagramBlock {
+  type: 'diagram';
+  diagramType: 'tree' | 'flow' | 'classification' | 'relationship' | 'connection_map';
+  text?: string;
+  nodes?: ConnectionMapNode[];
+  edges?: ConnectionMapEdge[];
+}
+
 export type ContentBlock =
   | ParagraphBlock
   | HeadingBlock
@@ -60,7 +69,8 @@ export type ContentBlock =
   | FormulaBlock
   | TableRefBlock
   | CalloutBlock
-  | CodeBlock;
+  | CodeBlock
+  | DiagramBlock;
 
 export interface CanonicalTableView {
   tableId: string;
@@ -222,9 +232,12 @@ export interface PedagogicalViewsManifest {
   viewSchemaVersion: '1.0.0';
   sourceBuildId: string;
   unitsCount: number;
-  tablesCount: number;
+  tablesCorpusCount: number;
+  tablesEmbeddedCount: number;
   questionBlocksCount: number;
-  officialQuestionsCount: number;
+  linkedOfficialQuestionOccurrences: number;
+  linkedOfficialQuestionsUnique: number;
+  officialQuestionsCorpusCount: number;
   unresolvedRefs: 0;
   unknownBlockTypes: 0;
   generatedAt: string;

@@ -4,7 +4,7 @@ import { InlineRichText } from './InlineRichText';
 import { FormulaBlock } from './FormulaBlock';
 import { CanonicalTable } from './CanonicalTable';
 import { CalloutBlock } from './CalloutBlock';
-import { ConnectionMap, looksLikeConnectionMap } from '../../ui/ConnectionMap';
+import { ConnectionMap } from '../../ui/ConnectionMap';
 
 interface ContentBlockRendererProps {
   block: ContentBlock;
@@ -67,10 +67,13 @@ export const ContentBlockRenderer: React.FC<ContentBlockRendererProps> = ({ bloc
     case 'callout':
       return <CalloutBlock block={block} />;
 
-    case 'code':
-      if (looksLikeConnectionMap(block.text)) {
+    case 'diagram':
+      if (block.text) {
         return <ConnectionMap source={block.text} />;
       }
+      return null;
+
+    case 'code':
       return (
         <div className="my-4 overflow-x-auto rounded-xl border border-slate-200 bg-slate-50 p-3 text-xs leading-relaxed font-mono text-slate-900">
           <pre><code>{block.text}</code></pre>
