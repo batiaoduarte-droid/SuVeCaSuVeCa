@@ -14,12 +14,24 @@ export const ContentBlockRenderer: React.FC<ContentBlockRendererProps> = ({ bloc
   if (!block) return null;
 
   switch (block.type) {
-    case 'paragraph':
+    case 'paragraph': {
+      if (
+        block.text &&
+        (block.text.includes('|——') ||
+          block.text.includes('├──') ||
+          block.text.includes('└──') ||
+          (block.text.includes(' | ') && block.text.includes('CLASSES')))
+      ) {
+        const formattedTree = block.text.replace(/\s*\|\s*/g, '\n');
+        return <ConnectionMap source={formattedTree} />;
+      }
+
       return (
         <p className="my-2.5 text-xs sm:text-sm font-medium leading-relaxed text-slate-800">
           <InlineRichText>{block.text}</InlineRichText>
         </p>
       );
+    }
 
     case 'heading': {
       const level = block.level || 2;

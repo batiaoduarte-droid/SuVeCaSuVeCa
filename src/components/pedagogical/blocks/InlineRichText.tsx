@@ -9,8 +9,19 @@ interface InlineRichTextProps {
   className?: string;
 }
 
+const sanitizePedagogicalText = (text: string): string => {
+  if (!text || typeof text !== 'string') return '';
+  return text
+    // Remove referências brutas a IDs técnicos: "Contrasta com: KB-... (Título)" -> "Contrasta com: Título"
+    .replace(/Contrasta com:\s*KB-[A-Z0-9_-]+\s*\(([^)]+)\)/gi, 'Contrasta com: **$1**')
+    .replace(/Expandido em:\s*KB-[A-Z0-9_-]+\s*a\s*KB-[A-Z0-9_-]+/gi, 'Detalhamento disponível nos tópicos do módulo')
+    .replace(/\s*\(KB-[^)]+\)/gi, '')
+    .replace(/\s*\bKB-[A-Z0-9_-]{8,}\b/gi, '');
+};
+
 export const InlineRichText: React.FC<InlineRichTextProps> = ({ children, className = '' }) => {
   if (!children) return null;
+  const processedText = sanitizePedagogicalText(children);
 
   return (
     <span className={`inline-rich-text ${className}`}>
@@ -32,7 +43,7 @@ export const InlineRichText: React.FC<InlineRichTextProps> = ({ children, classN
           ),
         }}
       >
-        {children}
+        {processedText}
       </ReactMarkdown>
     </span>
   );

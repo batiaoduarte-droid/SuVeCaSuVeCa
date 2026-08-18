@@ -28,8 +28,8 @@ export const ContrastsSection: React.FC<ContrastsSectionProps> = ({ items = [] }
               </h4>
             </div>
             {contrast.conceptA && contrast.conceptB && (
-              <span className="rounded-full bg-teal-50 px-2.5 py-0.5 text-xs font-bold text-teal-800 border border-teal-200">
-                {contrast.conceptA} vs {contrast.conceptB}
+              <span className="hidden sm:inline-flex rounded-full bg-teal-50 px-2.5 py-0.5 text-xs font-bold text-teal-800 border border-teal-200">
+                {contrast.conceptA.length > 25 ? 'Distinção Canônica' : `${contrast.conceptA} vs ${contrast.conceptB}`}
               </span>
             )}
           </div>
