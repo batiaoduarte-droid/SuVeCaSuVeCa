@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Identifique primeiro a camada linguística efetivamente cobrada.
-2. Use o mapa SuVeCA somente nos trechos em que função, referente, escopo ou encaixe sejam relevantes.
-3. Conclua pela regra própria do tema e explicite o limite da análise sintática.
+1. Localizar os verbos e predicados das orações para avaliar a natureza do evento (ação pontual transitiva/intransitiva vs. estado/qualificação com verbo de ligação ou ação durativa).
+2. Passo 1: Isolar o trecho e mapear os núcleos verbais, os sujeitos e os complementos/predicativos de cada oração.
+3. Passo 2: Aplicar o Teste da Temporalidade Interna: verificar se os fatos se encadeiam em momentos sucessivos ('1º... depois... então' -> Narração) ou coexistem em um único instante estático ('fotografia' -> Descrição).
+4. Passo 3: Validar a intenção comunicativa autoral: questionar se a finalidade primordial do emissor é contar uma história com transformação de estado ou qualificar e detalhar uma entidade, cena, rotina ou meta.
 
-> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual.
+### Testes decisivos
+
+- Teste da Fotografia / Cena Congelada: Se todos os elementos e ações cabem simultaneamente em uma única imagem estática sem avanço no tempo, o trecho é descritivo.
+- Teste dos Conectivos Ordinais ('1º... depois... em seguida...'): Se o excerto aceita a inserção natural de conectores de seriação cronológica entre as orações, o trecho é narrativo.
+- Teste da Neutralidade do Presente Histórico: Ao transpor os verbos no presente para o pretérito perfeito/imperfeito, se a relação cronológica for mantida, trata-se de presente histórico estilístico, preservando a tipologia de base.
+- Teste da Inversão Oracional sem Quebra Temporal: Na descrição, a reordenação das frases não altera a lógica do quadro; na narração, inverter a ordem dos fatos corrompe a relação de causa, efeito e cronologia.
+
+> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual. A análise sintática oracional SuVeCA identifica os elementos gramaticais e núcleos predicativos locais, mas a classificação tipológica (Narração vs. Descrição) é decidida na camada textual e discursiva pela temporalidade (sucessividade vs. simultaneidade) e intenção autoral. A metáfora do trem opera no nível da oração e do encadeamento sintático, não sendo suficiente por si só para julgar a intenção comunicativa global do texto.
 
 ---
 

@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo ou a locução verbal na oração ('Viva cada verbo a seu momento').
+2. Passo 1: Sublinhe o verbo ou a locução verbal em foco no período.
+3. Passo 2: Verifique se o verbo é impessoal (haver existencial/temporal, fazer temporal, fenômenos climáticos). Se sim, mantenha-o ou ao verbo auxiliar fixo na 3ª pessoa do singular.
+4. Passo 3: Se houver partícula 'se', verifique a predicação verbal: se VTD/VTDI, 'se' é PA e o verbo concorda com o sujeito paciente; se VTI/VI/VL, 'se' é PIS e o verbo fica na 3ª pessoa do singular.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste do 'ISSO' para Sujeito Oracional: substitua toda a oração subordinada por 'ISSO'; se a estrutura 'ISSO + Verbo' fizer sentido, o verbo principal fica compulsoriamente no singular.
+- Teste da Voz Passiva Analítica com SE: converta 'Verbo + SE + Substantivo' para 'Substantivo + SER + Particípio'; se a conversão for válida, o 'SE' é Partícula Apassivadora (PA) e o verbo concorda com o sujeito paciente.
+- Teste da Preposição Obrigatória com SE: se o termo seguinte ao verbo com 'SE' for regido por preposição ('de', 'a', 'em'), o 'SE' é PIS e o verbo fica fixo na 3ª pessoa do singular ('Trata-se de', 'Precisa-se de').
+- Teste do 'Salto' em Locuções Verbais: em locuções com intercalação ('podem não mais haver'), isole os elementos intercalados e analise a relação direta 'auxiliar + principal'; se o principal for impessoal ('haver'), o auxiliar fica no singular ('pode haver').
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA mapeia as posições e funções oracionais de Sujeito, Verbo, Complementos e Adjuntos, mas a flexão morfológica final depende das regras gramaticais de impessoalidade, acentuação gráfica diferencial (ter/vir) e regências transitivas específicas. A metáfora não decide regras morfológicas de acentuação diferencial em verbos derivados como 'mantém' vs. 'mantêm'.
 
 ---
 

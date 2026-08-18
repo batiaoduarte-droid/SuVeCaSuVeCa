@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Identifique primeiro a camada linguística efetivamente cobrada.
-2. Use o mapa SuVeCA somente nos trechos em que função, referente, escopo ou encaixe sejam relevantes.
-3. Conclua pela regra própria do tema e explicite o limite da análise sintática.
+1. Examinar o verbo de comando do enunciado para determinar se a resolução exige Compreensão (Recorrência) ou Interpretação (Inferência).
+2. Passo 1: Ler o enunciado e classificar a demanda: se for comando de compreensão ('O texto afirma que'), buscar paráfrase estrita; se for de inferência ('Infere-se que', 'Entende-se que'), buscar dedução autorizada.
+3. Passo 2: Decompor a assertiva em blocos conceituais e identificar seus componentes sintáticos (sujeito, verbo, complementos e adjuntos).
+4. Passo 3: Mapear os equivalentes semânticos no texto-base, identificando os termos já comprovados e isolando o resíduo proposicional ('o que sobrou').
 
-> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual.
+### Testes decisivos
+
+- Teste do Mantra do Enunciado: verificar se o comando da questão autoriza dedução ('infere-se', 'deduz-se', 'entende-se') ou exige recorrência ('de acordo com o texto', 'o autor afirma').
+- Teste da Pista Linguística: identificar o operador gramatical explícito (verbo aspectual, advérbio, adjetivo, quantificador) responsável por ancorar a proposição implícita.
+- Teste da Condicionalidade Lógica: aplicar a fórmula 'Se o texto afirma [X], isso é condição suficiente para garantir [Y]?'
+- Teste da Autonomia Textual Estrita: verificar se a assertiva depende de fatos verídicos externos (conhecimento de mundo) que não foram enunciados no fragmento da prova.
+
+> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual. A análise sintática SuVeCA estabelece as conexões funcionais da frase, mas a validação da inferência requer comprovação semântica e adesão rigorosa ao princípio da autonomia textual estrita. A metáfora do trem organiza as conexões sintáticas intra e interoracionais, mas não substitui o teste semântico de pressuposição.
 
 ---
 

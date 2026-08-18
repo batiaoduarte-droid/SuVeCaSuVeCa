@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo motor da oração e identificar seus limites sintáticos para diferenciar complementos exigidos de modificadores circunstanciais e nominais.
+2. Localizar o termo sob análise e rastrear a qual palavra da oração ele se subordina hierarquicamente (Passo 1 do Método da Seta).
+3. Determinar a classe gramatical da palavra receptora da seta (Passo 2 do Método da Seta).
+4. Se a palavra receptora for VERBO, ADJETIVO ou ADVÉRBIO:
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste da Palavra Receptora (Método da Seta): verificar se a subordinação aponta para substantivo (adjunto adnominal/predicativo) ou para verbo/adjetivo/advérbio (adjunto adverbial).
+- Teste do 'Cheiro de Circunstância' / Preposição Nocional: avaliar se a estrutura preposicionada carrega semântica circunstancial autônoma (causa, modo, lugar, tempo) para rotular como adjunto adverbial, e não objeto indireto.
+- Teste da Supressão Semântica da Predicação: remover o qualificador ligado a substantivo; se a acepção e transitividade do verbo forem alteradas (como em 'chamou o amigo de ingrato' -> 'chamou o amigo'), trata-se de Predicativo do Objeto, e não de Adjunto Adnominal.
+- Teste das 5 Classes Satélites: para classificar como adjunto adnominal, o termo ligado ao substantivo deve enquadrar-se estritamente como Artigo, Numeral, Adjetivo, Locução Adjetiva ou Pronome Adjetivo.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA oracional organiza as funções macroestruturais (Su, Ve, C, A e Predicativo); a classificação interna dos satélites nominais (Artigo, Numeral, Adjetivo, Pronome) e a identificação do valor nocional de preposições exigem microanálise morfossintática e semântica. A SuVeCA não substitui a distinção morfológica entre advérbio (classe invariável) e locução adverbial (expressão preposicionada com palavras variáveis).
 
 ---
 

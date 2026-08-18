@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo conjugado associado à partícula SE e determinar se a palavra atua como conectivo interoracional ou como elemento vinculado ao núcleo verbal.
+2. Etapa 1 (Triagem Interoracional - Conjunção): Verificar se a palavra SE introduz uma oração subordinada. Aplicar o teste do 'ISSO' (se substituir oração substantiva, é Conjunção Integrante); testar substituição por 'CASO' (Condicional), 'JÁ QUE' (Causal) ou 'EMBORA' (Concessiva).
+3. Etapa 2 (Triagem Estilística - Realce): Se ligado a verbo (frequentemente intransitivo/movimento), verificar se a palavra SE pode ser retirada sem qualquer prejuízo sintático ou semântico. Se sim, classificar como Partícula Expletiva ou de Realce.
+4. Etapa 3 (Triagem Sintática - Predicação e Preposição):
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste de Transposição Analítica: Se a estrutura VTD/VTDI + SE admitir conversão para 'SER + Particípio', confirma-se Pronome Apassivador (PA) e o substantivo não preposicionado é Sujeito Paciente.
+- Teste da Conjugação Dinâmica: Flexione o verbo nas 1ª e 2ª pessoas (Eu me..., Tu te..., Nós nos...). Se o pronome variar compulsoriamente sem indicar ação reflexiva física, classifica-se como Parte Integrante do Verbo (PIV).
+- Macete do 'Menino' (Evanildo Bechara): Substitua o pronome 'se' por 'o menino' / 'a si mesmo'. Se mantiver sentido transitivo coerente ('feriu o menino'), é Pronome Reflexivo; se ficar agramatical ('queixou o menino'), é PIV.
+- Macete do 'ISSO': Substitua a oração inteira introduzida por 'se' pelo pronome 'ISSO' (ou 'DISSO'/'NISSO'). Havendo perfeita substituição substantiva, trata-se de Conjunção Integrante.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A análise SuVeCA resolve integralmente a identificação dos termos oracionais nucleares (sujeito agente vs. paciente, complementos diretos e indiretos), mas a validação de processos cognitivos/emotivos em PIV e a discriminação de conjunções adverbiais exigem testes lexicais e semânticos complementares. A metáfora do trem não explica o motivo histórico ou lexical pelo qual certos verbos são essencialmente pronominais.
 
 ---
 

@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo ou nome da oração e determinar sua valência para verificar se há exigência da preposição 'a'.
+2. 1. Inspecionar a oração e localizar o termo regente (verbo ou nome) e os blocos circunstanciais.
+3. 2. Testar a ocorrência de Fenômeno Fonético: o termo regente exige a preposição 'a'? Se SIM, verificar se o termo seguinte aceita artigo definido 'a(s)' ou inicia por pronome 'aquele(a)(s)/aquilo/a qual'. Havendo as duas vogais, a crase é OBRIGATÓRIA.
+4. 3. Se NÃO houver regência exigindo 'a', verificar se o bloco é uma expressão pluriverbal (locução adverbial, prepositiva, conjuntiva ou adjetiva).
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste da Alternância do Plural: Se a estrutura trouxer 'a' no singular diante de plural, a crase é proibida ('a regras'); se trouxer 'às', o acento é obrigatório ('às regras'). Trocar 'a' por 'às' preserva a correção gramatical, mas altera o sentido de genérico para determinado.
+- Teste do Núcleo da Locução: Isole o substantivo principal da expressão e antaponha o artigo definido; se admitir 'A' (feminino), haverá crase obrigatória ('à noite', 'às pressas'); se admitir 'O' (masculino), não haverá crase ('a óleo', 'a granel').
+- Teste da Predicação Verbal em Questões de Justificativa: Verifique se o verbo é VTD ou VTI. Se for VTD (como 'ver', 'trazer', 'acordar'), o termo craseado subsequente é um Adjunto Adverbial (Locução Feminina) e não complemento regido.
+- Teste da Preposição Prévia: Se houver preposição anterior (desde, após, para, contra), a crase é proibida ('após as dez horas'). Se a preposição for 'até', a crase é facultativa ('até a/à praia').
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A análise SuVeCA delimita a estrutura sintática da oração e rastreia a exigência de preposições, mas a decisão final sobre o acento grave transfere-se para a morfologia dos determinantes e para as convenções fixas de locuções. A metáfora do trem não resolve a crase em nomes de comidas (núcleo feminino vs. 'à moda de' elíptico).
 
 ---
 

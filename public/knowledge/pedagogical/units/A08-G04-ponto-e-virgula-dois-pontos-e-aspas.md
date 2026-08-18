@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Reconstrua apenas as relações sintáticas relevantes para a decisão.
-2. Acrescente o critério próprio do tema — morfológico, semântico, coesivo ou discursivo.
-3. Confirme que estrutura e contexto sustentam a mesma conclusão.
+1. Identificar a presença de verbos ou locuções verbais para delimitar as orações envolvidas no período e verificar se a estrutura analisada constitui frase verbal ou nominal.
+2. Passo 1 (Ponto e vírgula): Avaliar a relação entre os segmentos. Se for oração subordinada (grupo 6Cs + FTP: causal, temporal, concessiva, etc.) ou estrutura reduzida causal, REJEITAR ponto e vírgula.
+3. Passo 2 (Ponto e vírgula + Coordenação): Se a estrutura for oração coordenada, verificar a primeira palavra pós-ponto e vírgula. Se for pronome oblíquo átono sem atrator anterior, REJEITAR por erro de próclise; se não houver vício de colocação, VALIDAR o ponto e vírgula.
+4. Passo 3 (Dois-pontos - Estrutura): Verificar se o trecho introduzido encerra-se no ponto final (: ... .). Se tentar intercalar no meio do período fechando com vírgula ou travessão (: ... ,), REJEITAR.
 
-> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria.
+### Testes decisivos
+
+- Teste da Causa e Efeito ('O fato de [Causa] faz com que [Efeito]'): se confirmar subordinação causal em orações reduzidas ou preposicionadas, veda terminantemente o ponto e vírgula.
+- Mnemônico 6Cs + FTP: identifica orações subordinadas adverbiais que não admitem separação por ponto e vírgula.
+- Trava de Próclise Pós-Pausa: checagem de pronome oblíquo átono em início de oração após ponto e vírgula.
+- Teste do 'Pois' / 'Já que': substituição mental de dois-pontos por conectivo causal/explicativo para atestar esclarecimento sem progressão temática.
+
+> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria. A SuVeCA delimita a oração e verifica a existência de coordenação versus subordinação; a partir do momento em que a relação interoracional é classificada ou quando a análise envolve valores semântico-discursivos (explicação, enumeração, citação, ironia, sentido figurado e estrangeirismo), a decisão pertence integralmente às regras de pontuação, semântica e discurso. A metáfora do trem não impõe ordem fixa linear: os termos podem estar deslocados, invertidos, intercalados ou ocultos.
 
 ---
 

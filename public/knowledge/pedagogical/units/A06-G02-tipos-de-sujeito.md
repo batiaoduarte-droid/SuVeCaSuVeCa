@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar a forma verbal ou locução verbal da oração e isolar a sentença em análise.
+2. 1. Localizar o verbo principal ou locução verbal da oração.
+3. 2. Verificar se o verbo é impessoal (haver existencial/temporal, fazer temporal, clima literal). Se SIM, classificar como Oração Sem Sujeito (Sujeito Inexistente).
+4. 3. Formular a pergunta-teste: 'Quem é que + V?' ou 'O que é que + V?'.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste da Pergunta Canônica: 'Quem é que / O que é que + [verbo flexionado]?' para delimitar o bloco integral do sujeito.
+- Teste da Barreira Preposicional: descartar da função de núcleo qualquer substantivo antecedido de preposição.
+- Teste de Substituição por 'ISSO': substituir a oração subordinada por 'ISSO' e verificar a ordem direta 'ISSO + V + Predicativo' para validar Sujeito Oracional.
+- Teste de Conversão Analítica da Partícula SE: converter 'VTD + SE + Termo' em '[Termo] + ser + particípio'; se admitir, trata-se de Sujeito Paciente com SE Partícula Apassivadora; se rejeitar e for preposicionado, trata-se de Sujeito Indeterminado com SE IIS.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A análise SuVeCA identifica a presença ou ausência estrutural do sujeito na oração; a recuperação de referentes contextuais, a interpretação metafórica e o julgamento sociolinguístico exigem camadas coesivas e semântico-discursivas. A metáfora do trem não representa uma fila linear rígida de palavras, pois a língua admite ordem inversa e termos intercalados.
 
 ---
 

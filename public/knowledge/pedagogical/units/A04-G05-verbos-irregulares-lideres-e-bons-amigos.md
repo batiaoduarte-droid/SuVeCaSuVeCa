@@ -802,8 +802,15 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Resolva o fenômeno pela regra própria da matéria.
-2. Se houver uma oração relevante, use a SuVeCA apenas para localizar a forma ou o efeito no contexto.
-3. Mantenha separadas a justificativa principal e a observação sintática auxiliar.
+1. Localizar a lacuna verbal ou forma flexionada no interior da oração e determinar o sujeito sintático de referência.
+2. 1. Identificar o verbo cognato em teste e decompor sua estrutura isolando o prefixo da raiz do verbo líder primitivo (PÔR, TER, VER, VIR).
+3. 2. Localizar o sujeito sintático na oração SuVeCA e registrar os traços de pessoa e número gramatical (1ª/2ª/3ª; singular/plural).
 
-> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe.
+### Testes decisivos
+
+- Método Operacional dos 4 Passos: Infinitivo -> Identificar Líder -> Acomodar Líder na Frase (Sujeito + Gatilho) -> Trocar pelo Verbo Pretendido.
+- Teste Diagnóstico do Verbo CHEGAR: Substituir a forma em '-ndo' por 'chegado' (se couber = Particípio Irregular) ou 'chegando' (se couber = Gerúndio).
+- Teste Diferencial do Infinitivo Pessoal vs. Futuro do Subjuntivo: Testar com a preposição 'PARA' (mantém infinitivo) versus conjunção 'QUANDO/SE' (adota raiz irregular do subjuntivo).
+- Teste do Gatilho Temporal para VIMOS vs. VIEMOS: Inserir 'Hoje' (Presente de VIR: 'Hoje nós vimos') versus 'Ontem' (Pretérito Perfeito de VIR: 'Ontem nós viemos').
+
+> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe. A metodologia SuVeCA localiza a oração, o sujeito e o ambiente sintático da lacuna verbal, mas a flexão dos radicais primitivos irregulares (pus-, tiv-, vis-, vier-) e desinências específicas é governada pelas regras morfológicas da gramática. A metáfora do trem e a análise SuVeCA organizam as relações sintáticas da oração, mas não são capazes de gerar sozinhas as irregularidades alomórficas dos radicais verbais (pus-, tiv-, vis-, vier-).

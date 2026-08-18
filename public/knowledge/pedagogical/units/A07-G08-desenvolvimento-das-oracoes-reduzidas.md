@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Identificar todas as formas verbais (finitas e nominais) do período composto para delimitar as fronteiras oracionais com barras divisórias.
+2. 1. Contar verbos e locuções verbais do período composto para quantificar as orações existentes .
+3. 2. Inserir barra delimitadora imediatamente antes da forma nominal (infinitivo, gerúndio, particípio) ou da preposição regente introdutória.
+4. 3. Diagnosticar a função sintática da oração: aplicar o teste do 'ISSO' (substantiva), teste da seta no antecedente (adjetiva) ou teste circunstancial (adverbial).
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste do 'ISSO': substituição integral da oração por 'ISSO', 'DISSO' ou 'NISSO' para comprovar a natureza substantiva e exigir conjunção integrante ('que' ou 'se').
+- Teste da Seta (Modificador Nominal): verificar se a oração reduzida qualifica diretamente um substantivo ou pronome antecedente para classificá-la como adjetiva e inserir pronome relativo ('que').
+- Teste Cronológico 'O fato de A faz com que B': determinar qual evento ocorre em primeiro lugar no plano dos fatos para isolar a causa (1º fato) do efeito/consequência (2º fato) em orações de gerúndio e particípio.
+- Teste do 'Verbo Amigo': inspeção do tempo e modo da oração regente para fixar a esfera temporal (presente com presente do subjuntivo/indicativo; pretérito com pretérito imperfeito do subjuntivo/indicativo).
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A análise SuVeCA delimita as orações e identifica os núcleos verbais e seus sujeitos, mas não gera por si só os conectivos subordinativos nem decodifica os valores semânticos contextuais de gerúndios e particípios. A metáfora do trem não decodifica a oposição semântica entre causa e consequência em orações de gerúndio.
 
 ---
 

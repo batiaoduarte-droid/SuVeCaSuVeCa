@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Identifique primeiro a camada linguística efetivamente cobrada.
-2. Use o mapa SuVeCA somente nos trechos em que função, referente, escopo ou encaixe sejam relevantes.
-3. Conclua pela regra própria do tema e explicite o limite da análise sintática.
+1. Localizar o predicador verbal principal ou a forma nominal (gerúndio/particípio) e delimitar as fronteiras oracionais do período.
+2. 1. Diante de frase sob análise, execute o Método das 3 Vias: verifique primeiro se há termo polissêmico isolado sem restrição contextual (Via 1: Ambiguidade Lexical).
+3. 2. Inspecione conectivos específicos: analise se a preposição 'de' introduz termo ambivalente entre agente (Adjunto Adnominal) e paciente (Complemento Nominal), ou se a conjunção 'e' gera oscilação entre adição simples e reciprocidade (Via 2: Conectivos).
+4. 3. Trace as setas sintáticas (Via 3): verifique se forma de gerúndio (-ndo), particípio (-do), pronome relativo ('que'), possessivo ('seu' com 2 referentes textuais explícitos) ou modificador flutuante possuem duplo acoplamento sintático.
 
-> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual.
+### Testes decisivos
+
+- Teste de Anteposição do Modificador: antepor o termo ao substantivo sem artigo para forçar valor de advérbio de modo ('Comprou rápido o carro') vs. intercalar entre artigo e substantivo para forçar valor adjetivo ('Comprou o rápido carro').
+- Teste do Plural no Particípio: flexionar para o plural masculino para verificar se a concordância desfaz a ambiguidade ('Júlio conversou com Paulo sentados no muro') vs. invariabilidade no gerúndio.
+- Teste de Substituição Unívoca na Ambiguidade Lexical: substituir o termo polissêmico por vocábulo unívoco (ex.: 'agência bancária' ou 'assento de praça' no lugar de 'banco') para validar a intenção.
+- Teste dos Dois Referentes de 3ª Pessoa para o Possessivo 'Seu': confirmar a existência de 2 ou mais antecedentes explícitos no próprio texto, sendo vedada a extrapolação para o interlocutor da prova.
+
+> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual. O método SuVeCA encerra sua atuação decisiva na delimitação das fronteiras oracionais e dos vínculos de regência e modificação; a confirmação ortográfica e semântica de homônimos e parônimos exige aplicação de regras lexicais e consulta a cognatos morfológicos. A SuVeCA não resolve a ambiguidade lexical pura quando o cotexto oracional não fornece pistas semânticas diferenciadoras.
 
 ---
 

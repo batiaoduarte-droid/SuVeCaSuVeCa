@@ -688,8 +688,15 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Resolva o fenômeno pela regra própria da matéria.
-2. Se houver uma oração relevante, use a SuVeCA apenas para localizar a forma ou o efeito no contexto.
-3. Mantenha separadas a justificativa principal e a observação sintática auxiliar.
+1. Localizar o verbo na oração e isolar o núcleo do sujeito para extrair a pessoa gramatical e o número.
+2. Compreensão da Tríade dos Verbos Líderes (-EAR -> PASSEAR; -IAR regular -> CRIAR; MARIO -> ODIAR) e do mecanismo morfofonológico da ditongação.
+3. Fixação do bloqueio de ditongação nas formas arrizotônicas (Nós e Vós) e nos tempos passados e futuros através de sentenças guiadas.
 
-> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe.
+### Testes decisivos
+
+- Teste do Verbo Líder: substituir o verbo em análise pelo líder paradigmático (PASSEAR para -EAR, CRIAR para -IAR regular, ODIAR para MARIO, HAVER para REAVER, BEBER para PRECAVER-SE e REQUERER).
+- Teste da Palavra-Gatilho de Apoio Temporal: aplicar mentalmente 'Hoje' (Presente Ind.), 'Que' (Presente Subj.), 'Ontem' (Pretérito Perf.) ou 'Se' (Pretérito Imperfeito Subj.) para travar o tempo antes de flexionar.
+- Teste Diagnóstico do Subjuntivo em Defectivos: tentar conjugar a 1ª pessoa do singular do Presente do Indicativo (Eu); constatada a inexistência, anula-se integralmente todo o Presente do Subjuntivo.
+- Teste de Arrizotonicidade na 1ª Pessoa do Plural: ao identificar sujeito 'Nós' ou 'Vós', bloquear qualquer inserção de ditongo (-ei-) em verbos em -EAR e no grupo MARIO.
+
+> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe. A SuVeCA encerra seu papel ao identificar o sujeito e o contexto oracional de tempo/modo; a flexão exata do verbo líder e as regras de ditongação e defectividade pertencem estritamente à camada morfológica. A arquitetura SuVeCA identifica as funções oracionais (Sujeito, Verbo, Complementos e Adjuntos), mas não gera nem substitui as tabelas mórficas de paradigmas verbais (-EAR, -IAR, MARIO, defectivos).

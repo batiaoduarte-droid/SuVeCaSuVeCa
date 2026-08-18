@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Identificar a oração, isolar o verbo ou nome regente e verificar se ele projeta a exigência sintática da preposição 'a' sobre o complemento ou adjunto.
+2. Passo 1: Localize na oração o termo regente (verbo ou nome) e aplique o teste da troca por substantivo masculino singular ('ao menino' / 'ao clube'). Se resultar em 'ao', a preposição 'a' é obrigatória; se resultar em 'o', não há preposição e a crase está descartada.
+3. Passo 2: Examine a natureza do termo regido subsequente à preposição:
+4. - Substantivo feminino comum: aplique o teste do sujeito ('A [palavra] é boa'). Se admitir o artigo 'a', a crase é obrigatória ('à'); se rejeitar, a crase é proibida ('a').
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste da Substituição pelo Masculino ('Menino' / 'Clube'): substitui-se o termo feminino por um masculino correspondente; se surgir 'ao', comprova-se a exigência sintática da preposição 'a'.
+- Teste da Posição de Sujeito: inicia-se uma frase independente com o substantivo na função de sujeito atributivo ('A [palavra] é...'); a naturalidade do artigo 'A' comprova a admissão do determinante.
+- Teste do Retorno com o Verbo Voltar: para topônimos, conjuga-se 'voltar de' vs. 'voltar da'. 'Volto DA' indica artigo presente (crase na ida); 'Volto DE' indica ausência de artigo (sem crase na ida).
+- Teste de Equivalência Demonstrativa por 'Aquela': substitui-se o 'a' antes de 'que' ou 'de' por 'aquela'; mantendo-se a coerência 'a aquela', confirma-se a crase no demonstrativo 'à'.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA encerra sua atuação primária ao determinar a função sintática (termo regente e termo regido) e a obrigatoriedade da preposição 'a'; a validação da presença do artigo feminino ou do pronome demonstrativo constitui análise morfológica e semântica complementar. A SuVeCA orienta com precisão a identificação da transitividade e da presença da preposição 'a', mas não decide isoladamente se um substantivo aceita ou rejeita artigo feminino na língua.
 
 ---
 

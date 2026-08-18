@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar a forma verbal ou locução verbal principal que organiza a predicação da oração em análise.
+2. Passo 1: Localize a forma verbal principal do período.
+3. Passo 2: Formule a pergunta 'Quem/O que é que + Verbo?' para delimitar o bloco completo do Sujeito.
+4. Passo 3: Verifique se há vírgula simples imediatamente antes do verbo ao término do Sujeito. Se houver, a pontuação é ILEGAL (quebra S-V).
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste 'Diante do Verbo': formular ao verbo a pergunta 'Quem/O que é que + Verbo?' para delimitar o sujeito e verificar a ausência de vírgula simples divisória.
+- Teste de Transitividade e Complemento: identificar o objeto (direto/indireto ou oração subordinada substantiva) e verificar a proibição de vírgula ou dois-pontos interceptadores após a forma verbal.
+- Teste do 'Que é' (Validação do Aposto): inserir mentalmente a locução explicativa 'que é' / 'que são' antes do termo entre vírgulas; se mantiver sentido e igualdade semântica (A = B), confirma-se aposto explicativo.
+- Teste do Conectivo 'e' (Enumeração vs. Explicação): se os termos entre vírgulas integrarem uma sequência aditiva fechada por 'e' (A, B e C), trata-se de enumeração de mesma função sintática, e não de explicação.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA governa a integridade da cadeia oracional nuclear (S-V-C), mas a classificação de termos periféricos e explicativos exige testes morfológicos (classe do núcleo) e semânticos (equivalência conceitual vs. circunstância). A metáfora do trem representa relações funcionais e não uma sequência rígida linear de palavras, admitindo inversões e deslocamentos no português.
 
 ---
 

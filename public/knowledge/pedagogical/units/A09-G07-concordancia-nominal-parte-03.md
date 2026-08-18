@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo principal ou de ligação da oração e isolar os núcleos nominais e oracionais vinculados a ele.
+2. Passo 1: Localizar o verbo da oração e determinar se expressa ligação, ação transitiva/intransitiva ou locução passiva analítica.
+3. Passo 2: Isolar o sujeito e avaliar se é substantivo ou oração subordinada (sujeito oracional).
+4. Passo 3: Para sujeito oracional, fixar imediatamente o verbo na 3ª pessoa do singular e o predicativo no masculino singular invariável.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste do 'Isso' para Sujeito Oracional: substituir a oração introduzida por infinitivo ou 'que' por 'isso'; se a estrutura resultar em 'Isso é [adjetivo]', o predicativo é rigorosamente invariável.
+- Teste do Sentido Geral ('Qualquer'): verificar se o substantivo sem artigo admite a leitura generalizante (ex.: '[qualquer] cerveja é bom'); caso afirmativo, fixa-se o masculino singular.
+- Teste da Seta do Artigo para 'Possível': traçar uma linha direta entre o artigo que abre o superlativo ('o/a' ou 'os/as') e a forma de 'possível', desconsiderando o substantivo plural intermediário.
+- Teste da Balança Bivalente para 'Tal Qual': verificar de forma independente a concordância de 'tal/tais' com o termo da esquerda e de 'qual/quais' com o termo da direita.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A análise SuVeCA organiza a identificação das funções oracionais e da voz verbal, mas não substitui a verificação morfológica dos determinantes nem as regras particulares de locuções cristalizadas. A metáfora do trem não explica por que o vocábulo 'possível' subordina-se ao artigo superlativo em vez de seguir o substantivo núcleo do vagão.
 
 ---
 

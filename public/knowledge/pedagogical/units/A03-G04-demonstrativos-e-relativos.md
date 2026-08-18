@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Reconstrua apenas as relações sintáticas relevantes para a decisão.
-2. Acrescente o critério próprio do tema — morfológico, semântico, coesivo ou discursivo.
-3. Confirme que estrutura e contexto sustentam a mesma conclusão.
+1. Localizar o verbo ou os verbos do período e delimitar a fronteira entre a oração principal e a oração subordinada.
+2. 1. Ao analisar pronome demonstrativo: execute a Pergunta Tripla. Se for Espaço, verifique a proximidade do falante (1ª P. = este), ouvinte (2ª P. = esse) ou terceiro (3ª P. = aquele). Se for Tempo, identifique se é presente/futuro próximo (este), passado recente (esse) ou tempo remoto (aquele). Se for Texto, use 'esse' para anáfora e 'este' para catáfora.
+3. 2. Diante de múltiplos antecedentes no texto: use 'este' para o termo mais próximo (último citado) e 'aquele' para o mais distante (primeiro citado). Se houver 3 ou mais referentes, use obrigatoriamente numerais ordinais ('o segundo') para os elementos intermediários, banindo o 'esse' singular.
+4. 3. Ao analisar a palavra 'QUE': inspecione o termo imediatamente anterior. Se for verbo, teste a troca da oração inteira por 'ISSO' (conjunção integrante). Se for elemento substantivo, teste a troca do 'que' por 'o qual / a qual' (pronome relativo).
 
-> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria.
+### Testes decisivos
+
+- Teste da Pergunta Tripla: classificar a ocorrência demonstrativa em Espaço (onde estão os interlocutores?), Tempo (quando ocorre o fato?) ou Texto (onde está a informação na página?).
+- Teste do 'ISSO' x 'O QUAL': a troca do conectivo por 'o qual / a qual' confirma pronome relativo; a troca da oração subordinada inteira por 'ISSO' confirma conjunção integrante.
+- Teste do 'Aquilo/Aqueles': substituição de 'o que' por 'aquilo que' e 'dos que' por 'daqueles que' confirma a presença de pronome demonstrativo substantivo antecedente acoplado a relativo.
+- Teste da Supressão de Realce: a eliminação da locução 'é que' sem provocar truncamento sintático nem perda de sentido denotativo confirma o valor expletivo/realce.
+
+> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria. A SuVeCA resolve com precisão a delimitação oracional, a função sintática interna do pronome relativo e a desambiguação de múltiplos antecedentes por meio da análise do predicado posterior. Contudo, ela alcança seu limite na seleção morfológica déitica no espaço e no tempo, no cisma discursivo entre provas objetivas e redações e na identificação de preposições acidentais ou partículas de realce, domínios próprios das camadas pragmática, textual e morfológica. A metáfora do trem não explica o cisma entre provas objetivas e redações discursivas no uso de 'este' anafórico.
 
 ---
 

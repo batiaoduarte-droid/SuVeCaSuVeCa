@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar todas as formas verbais ou locuções verbais para quantificar as orações e verificar a existência de constituintes sem verbo.
+2. Passo 1: Contar as formas verbais ou locuções verbais no período para estabelecer o número exato de orações.
+3. Passo 2: Verificar se algum constituinte isolado por vírgula carece de verbo; em caso afirmativo, rotulá-lo como termo nominal (ex.: adjunto adverbial antecipado) e descartar a existência de oração coordenada.
+4. Passo 3: Localizar as conjunções coordenativas e marcar a fronteira oracional imediatamente antes de cada conector.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste do Verbo e Validação de Oração vs. Termo Nominal: examinar a presença obrigatória de verbo antes de validar assertivas sobre pontuação separando orações coordenadas .
+- Teste de Polaridade Semântica (+/-) para Conectivos Opositivos 'E' e 'MAS': confrontar as cargas axiológicas dos enunciados para identificar adversidade por choque de sinais (+ com -) ou adição por homogeneidade (+ com + / - com -) .
+- Teste dos Núcleos Conectados para o 'MAS' Aditivo: isolar os termos ligados pelo conectivo para verificar se representam atributos convergentes do mesmo sujeito (aditivo) ou noções antagônicas (adversativo) .
+- Teste da Coexistência vs. Anulação Mútua para 'OU': avaliar se as proposições se revezam no tempo de forma cíclica (alternância) ou se a escolha de uma inviabiliza a outra (exclusão) .
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA delimita a integridade de cada oração individual, mas a taxonomia final da oração sindética é definida pela semântica contextual da conjunção coordenativa. A metáfora do trem não explica por si só os matizes semânticos finos de uma conjunção polissêmica, como a diferença entre alternância temporal e exclusão mútua.
 
 ---
 

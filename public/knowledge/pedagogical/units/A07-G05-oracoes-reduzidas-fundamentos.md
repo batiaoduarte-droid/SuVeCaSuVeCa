@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Identificar os verbos finitos e as formas nominais (infinitivo, gerúndio ou particípio) no período para isolar cada oração.
+2. Passo 1: Localizar todos os verbos e locuções verbais no período.
+3. Passo 2: Inspecionar se há oração sem conjunção/pronome relativo cujo verbo esteja no infinitivo (-r), gerúndio (-ndo) ou particípio (-do, -to, -so) -> Se sim, confirma-se oração reduzida.
+4. Passo 3: Se houver locução introdutória, examinar a palavra terminal: se terminar em conjunção ('que') -> oração desenvolvida; se terminar em preposição pura -> oração reduzida de infinitivo.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste do 'ISSO' (Troca Integral): Substituir a oração reduzida por 'ISSO'. Se a frase fizer sentido gramatical perfeito ('Oração Principal + ISSO' ou 'ISSO + Oração Principal'), comprova-se oração subordinada substantiva.
+- Teste da Seta no Substantivo Antecedente: Verificar se a oração reduzida (geralmente de gerúndio ou particípio) qualifica diretamente um substantivo da oração principal, admitindo desdobramento para 'que + verbo conjugado' -> Comprova oração subordinada adjetiva.
+- Teste da Palavra Terminal da Locução: Inspecionar o último vocábulo da locução introdutória. Terminou em 'que' = conjuntiva (desenvolvida); terminou em preposição = prepositiva (reduzida de infinitivo).
+- Teste do Desdobramento Circunstancial (6C + FTP): Converter mentalmente a oração reduzida em desenvolvida introduzida por conjunção adverbial típica para identificar a circunstância exata (Causa, Comparação, Concessão, Condição, Conformidade, Consequência, Finalidade, Tempo, Proporção).
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA delimita os termos da oração principal e identifica em qual função (Sujeito, Complemento ou Adjunto) a oração reduzida se encaixa. No entanto, a identificação morfológica das formas nominais (infinitivo, gerúndio, particípio regular e irregular em -to/-so) e a interpretação semântica das 9 circunstâncias adverbiais (6C + FTP) dependem das camadas de morfologia e semântica. A metáfora do trem não substitui a verificação mórfica das formas nominais (terminações em -r, -ndo, -do e formas irregulares em -to/-so).
 
 ---
 

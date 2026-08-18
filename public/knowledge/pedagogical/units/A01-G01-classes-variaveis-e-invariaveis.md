@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Identifique primeiro a camada linguística efetivamente cobrada.
-2. Use o mapa SuVeCA somente nos trechos em que função, referente, escopo ou encaixe sejam relevantes.
-3. Conclua pela regra própria do tema e explicite o limite da análise sintática.
+1. Localizar o verbo ou a locução verbal da oração para fixar a âncora relacional do enunciado.
+2. Delimite com precisão a palavra ou expressão indicada no enunciado da questão, verificando se o destaque abrange uma palavra isolada ou a locução inteira.
+3. Identifique o verbo da oração e estabeleça os polos da estrutura SuVeCA (sujeito, complementos e adjuntos).
+4. Pergunte ao texto: 'A qual termo esta palavra se refere ou a quem ela se conecta diretamente?'.
 
-> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual.
+### Testes decisivos
+
+- Teste do Artigo Antecedente: Inserir artigo 'o/a' antes do vocábulo para confirmar sua natureza substantiva .
+- Teste da Seta Sintática: Mapear se o modificador aponta para substantivo (classe nominal/variável) ou para verbo/adjetivo/advérbio (advérbio/invariável) .
+- Teste da Terminação da Locução: Identificar se a expressão encerra em conjunção ('que' -> locução conjuntiva) ou preposição ('de/a/em' -> locução prepositiva) .
+- Teste de Substituição de 'Só': Comutar por 'sozinho(a)' (adjetivo variável) ou por 'somente/apenas' (advérbio invariável) .
+
+> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual. A SuVeCA mapeia a dependência funcional e a posição dos termos na oração, mas a flexibilidade mórfica e as regras ortográficas decorrem dos paradigmas da morfologia e do léxico. A metáfora do trem não explica por si só a etimologia ou o comportamento flexional de exceções morfológicas como o advérbio 'todo'.
 
 ---
 

@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo principal ou de ligação da oração e rastrear o sujeito gramatical, identificando se a estrutura está em ordem direta ou invertida.
+2. Passo 1: Localize o verbo da oração e determine o sujeito sintático.
+3. Passo 2: Verifique se a oração está invertida; se estiver, reescreva-a mentalmente na ordem direta: Sujeito + Verbo + Predicativo/Complementos + Adjuntos.
+4. Passo 3: Se a palavra em análise for 'menos', 'em anexo', 'em alerta', 'junto a' ou 'junto com', mantenha-a estritamente invariável.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste da Seta Sintática: traçar a dependência do vocábulo até o núcleo regente (substantivo/pronome = varia; verbo/adjetivo/advérbio = invariável).
+- Teste da Ordem Direta: reorganizar orações com predicativo ou verbo anteposto (Sujeito + Verbo + Complementos/Predicativo) para identificar o gênero e número do sujeito real.
+- Teste do 'Muito/Muitos' e 'Suficientes': substituir 'bastante' por 'muitos/as' (pronome indefinido) ou por 'suficientes' (adjetivo) para validar o plural 'bastantes'.
+- Teste da Simetria do Artigo com 'Possível': conferir se o adjetivo 'possível' acompanha estritamente o número do artigo que encabeça a locução ('as mais... possíveis' vs. 'o mais... possível').
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA reorganiza a estrutura da oração e identifica os termos nucleares e periféricos, mas não substitui as regras morfológicas de flexão lexical nem a tradição prescritiva de classes gramaticais. A metáfora do trem não resolve a flexão interna de adjetivos compostos ('franco-brasileiros'), que é fenômeno micromorfológico de formação de palavras.
 
 ---
 

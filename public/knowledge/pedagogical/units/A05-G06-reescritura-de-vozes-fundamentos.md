@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo ou locução verbal na oração ativa e verificar se há verbo transitivo direto (VTD) ou transitivo direto e indireto (VTDI) acompanhado de objeto direto legítimo.
+2. Passo 1 — Pré-requisito de Transitividade: Localizar o verbo principal da oração e checar sua valência. Se for VTI, VI ou VL (sem Objeto Direto), abortar a passivação analítica.
+3. Passo 2 — Isolamento Nuclear ('Chamar o feito à ordem'): Isolar o núcleo substantivo do Objeto Direto, identificar o Sujeito original e anotar a sigla do Tempo e Modo verbal acima do verbo.
+4. Passo 3 — Conversão do Sujeito: Deslocar o termo que exercia a função de Objeto Direto para a posição de Sujeito Paciente, identificando seu gênero e número.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste do Isolamento do Objeto Direto: Isolar o termo e verificar se ele não possui preposição regida obrigatoriamente. Se for regido por preposição de regência (VTI), não admite passiva analítica.
+- Teste da Soma Verbal (N -> N+1): Contar os verbos da oração ativa; a forma passiva analítica correspondente deve conter rigorosamente um verbo auxiliar a mais.
+- Teste do Espelhamento Temporal de SER: Comparar o tempo/modo do verbo ativo com o auxiliar SER conjugado; qualquer discrepância temporal (ex.: pretérito imperfeito virando pretérito perfeito) invalida a alternativa.
+- Teste da Concordância Nominal do Particípio: Verificar se a desinência de gênero e número do particípio concorda rigorosamente com o Sujeito Paciente.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A análise SuVeCA estabelece a arquitetura posicional e funcional da oração passiva, mas a correta conjugação das formas irregulares de SER, a concordância de particípios heterogêneos e a identificação de regência de VTIs dependem das camadas morfológica, de concordância e de regência. A metáfora do trem organiza as posições funcionais dos termos, mas não resolve regras de tempo e modo verbal nem a morfologia irregular de particípios.
 
 ---
 

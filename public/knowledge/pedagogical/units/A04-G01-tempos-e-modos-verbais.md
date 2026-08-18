@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo ou a locução verbal no enunciado e delimitar a respectiva oração para identificar sua função como motor relacional e núcleo do predicado.
+2. Passo 1: Identificar a forma verbal em destaque na frase e reduzi-la mentalmente ao infinitivo impessoal para reconhecer sua conjugação e verificar se pertence à família de um verbo líder (TER, VER, VIR, PÔR).
+3. Passo 2: Localizar o sujeito e delimitar a oração, avaliando se se trata de oração independente de valor injuntivo/exortativo (Modo Imperativo) ou se possui sujeito interlocutor definido (Tu versus Você).
+4. Passo 3: Inspecionar os termos pré-verbais e conectores oracionais em busca de atratores modais subordinativos (conjunções concessivas como 'Embora', condicionais como 'Se/Caso', temporais como 'Quando' ou advérbios de dúvida como 'Talvez').
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste das Palavras Mágicas do Indicativo e Subjuntivo: antepor o advérbio ou conectivo de teste (HOJE = Presente Ind.; ONTEM = Pretérito Perf.; ANTIGAMENTE = Pretérito Imperf.; OUTRORA/-RA = Mais-que-perf.; AMANHÃ = Futuro Pres.; -RIA = Futuro Pret.; QUE = Presente Subj.; SE/-SSE = Imperf. Subj.; QUANDO = Futuro Subj.; PARA = Infinitivo Pessoal).
+- Macete do Fazer/Fizer: substituir o verbo regular sob dúvida por 'fazer' ou 'fizer'. Se a frase aceitar 'fazer', trata-se de Infinitivo Pessoal flexionado; se aceitar 'fizer', trata-se de Futuro do Subjuntivo.
+- Teste 'De Onde Saiu?' para o Imperativo: verificar se a forma afirmativa para 2ª pessoa (Tu) decorre do Presente do Indicativo ('hoje tu cantas') com eliminação do '-s' ('canta tu'), ou se para 3ª pessoa de tratamento (Você) decorre integralmente do Presente do Subjuntivo ('que você cante' -> 'cante você').
+- Teste de Bloqueio por Atrator Modal: verificar se a forma verbal é precedida de conjunção subordinativa concessiva ('embora', 'conquanto') ou advérbio de dúvida ('talvez'); a presença desses termos bloqueia o Modo Imperativo e fixa o Modo Subjuntivo.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA organiza a delimitação da oração, a identificação do sujeito e o mapeamento dos conectores atratores, mas o reconhecimento das desinências modo-temporais e a matriz de conjugação dos verbos líderes pertencem à camada morfológica. A arquitetura SuVeCA delimita os polos oracionais, mas a flexão de verbos primitivos irregulares (verbos líderes) exige domínio do paradigma mórfico-lexical.
 
 ---
 

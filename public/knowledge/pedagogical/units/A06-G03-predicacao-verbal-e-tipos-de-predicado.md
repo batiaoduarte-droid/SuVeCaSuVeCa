@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo conjugado ou a locução verbal e aplicar a pergunta 'Quem é que / O que é que + VERBO?' para isolar o sujeito e o predicado.
+2. 1. Identificar o verbo conjugado da oração.
+3. 2. Interrogar o verbo com 'Quem é que / O que é que + VERBO?' para localizar o sujeito.
+4. 3. Se houver sujeito expresso, isolar o núcleo (substantivo não preposicionado) e subtrair o sujeito; o restante é o predicado.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste da Pergunta Prévia de Estado ('A Grande Sacada'): verificar preliminarmente se o verbo indica estado ou ação para bifurcar o diagnóstico entre Predicado Nominal e predicados com núcleo verbal.
+- Critério Bivalente do Verbo de Ligação: validar cumulativamente se há semântica de estado E presença efetiva de predicativo do sujeito na frase.
+- Teste de Substituição por Estar/Ser: substituir verbos polifuncionais (andar, cair, virar, viver) por 'estar' ou 'ser'; se mantiver sentido coerente com adjetivo, confirma-se Verbo de Ligação.
+- Princípio da Dispensabilidade Adverbial: suprimir termos circunstanciais ('onde', 'quando', 'como'); se a estrutura sintática básica do verbo permanecer estável, o termo é Adjunto Adverbial e o verbo é Intransitivo.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA mapeia a valência e a função dos termos oracionais, mas a atribuição de matizes aspectuais de estado (permanente vs. transitório) ou a semântica intrínseca de locuções adverbiais exige análise lexical e semântica contextual. A metáfora do trem não deve induzir o estudante a esperar uma fila linear rígida de palavras na frase.
 
 ---
 

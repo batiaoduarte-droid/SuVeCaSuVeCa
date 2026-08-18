@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo da oração subordinada adjetiva e delimitar as fronteiras entre a oração principal e a oração adjetiva introduzida pelo conectivo relativo.
+2. 1. Localize o pronome relativo (ou a lacuna) e delimite as fronteiras da oração subordinada adjetiva.
+3. 2. Identifique o termo antecedente na oração principal aplicando o Método da Seta para avaliar sua categoria semântica (pessoa, coisa, lugar físico, tempo, modo ou possuidor).
+4. 3. Examine o verbo ou nome no interior da oração subordinada adjetiva e determine sua predicação (VTD, VTI, VTDI, VI, VL ou nome regente).
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste da Ordem Direta da Oração Adjetiva: desmonte a oração subordinada colocando Sujeito + Verbo + Complemento/Adjunto (substituindo o relativo pelo antecedente) para revelar a preposição exigida e a função sintática interna.
+- Mecanismo da Seta do CESPE: puxe a seta anafórica do conectivo relativo até o termo antecedente para checar se o referente é estritamente espacial (lugar físico palpável), temporal, pessoal ou conceitual abstrato.
+- Teste do 'Correr na Praça' (Regência vs. Movimento): monte uma oração simples unindo o verbo subordinado ao substantivo de lugar. Se reger 'em' ('corro na praça'), use 'onde'; se reger 'a' ('vou à praça'), use 'aonde'; se reger 'de' ('venho da praça'), use 'donde'.
+- Teste Inverso da Posse para o CUJO: leia a estrutura do 2º substantivo (consequente) para o 1º substantivo (antecedente) com a preposição 'de' ([Substantivo 2] + DE + [Substantivo 1]). Se expressar pertencimento lógico, o uso de 'cujo' é imperativo.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A análise SuVeCA resolve com rigor a determinação da preposição regida e a função sintática interna na oração adjetiva, mas não substitui as restrições semântico-lexicais dos antecedentes (onde restrito a lugar físico palpável, quem restrito a pessoas, cujo restrito a posse entre dois substantivos) nem as proibições prescritivas como o veto ao artigo pós-cujo. A metáfora do trem ilustra a conexão interoracional e a valência verbal, mas não explica restrições morfológicas arbitrárias (como a proibição de 'cujo o').
 
 ---
 

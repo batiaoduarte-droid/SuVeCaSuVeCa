@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Identifique primeiro a camada linguística efetivamente cobrada.
-2. Use o mapa SuVeCA somente nos trechos em que função, referente, escopo ou encaixe sejam relevantes.
-3. Conclua pela regra própria do tema e explicite o limite da análise sintática.
+1. Localizar o verbo principal da oração e isolar visualmente o segmento intercalado por travessões ou parênteses para aplicar o Teste da Retirada.
+2. Passo 1: Localize o verbo principal e identifique sujeito, complementos e adjuntos da oração.
+3. Passo 2: Isole visualmente o trecho entre travessões ou parênteses e faça a leitura direta da oração principal (Teste da Retirada). Se faltar objeto direto/indireto ou sujeito, assinale erro sintático.
+4. Passo 3: Se houver vírgula após o segundo travessão ('—... —, '), verifique se ela decorre de oração subordinada adverbial antecipada ou vocativo. Se decorrer de regra externa autônoma, valide a estrutura.
 
-> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual.
+### Testes decisivos
+
+- Teste da Retirada Sintática: cubra o trecho entre parênteses/travessões; se a oração remanescente mantiver a predicação SuVeCA completa e a regência correta, o isolamento é lícito .
+- Teste da Simetria e Cumulação: verifique se a intercalação aberta por travessão fecha com travessão; se houver vírgula em seguida ('—... —, '), confira se há oração adverbial antecipada justificando a pontuação adjacente .
+- Teste da Comutabilidade de Ênfase: na reescrita, substitua parênteses por travessões ou vírgulas; constate a conservação do sentido proposicional e da gramaticalidade, modulando unicamente o relevo discursivo .
+- Teste do 'Etc.' e da Exaustão: examine se a listagem traz todos os elementos do conjunto (Enumeração) ou amostras parciais com 'etc.' / 'como' (Exemplificação) .
+
+> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual. A SuVeCA valida a correção sintática da oração e impede a amputação de termos integrantes por parênteses; a classificação da função discursiva e os efeitos de relevo expressivo pertencem às camadas semântica e pragmática. A metáfora do trem não resolve a tipologia discursiva entre enumeração exaustiva e exemplificação amostral com 'etc.'.
 
 ---
 

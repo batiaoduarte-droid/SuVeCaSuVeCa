@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Identificar os núcleos nominais (substantivos abstratos, adjetivos e advérbios relacionais) alojados nos termos da oração SuVeCA e delimitar seus complementos preposicionados.
+2. 1. Localizar na oração os termos subordinantes nominais (substantivos, adjetivos e advérbios) e verificar se demandam complemento para integralizar seu sentido .
+3. 2. Aplicar o teste diagnóstico do artigo caso haja dúvida sobre a classe morfológica do termo regente: se aceitar artigo anteposto, é substantivo .
+4. 3. Confrontar a preposição empregada com o padrão culto dicionarizado, avaliando se o nome admite dupla regência legítima sem alteração semântica .
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste Diagnóstico do Artigo: antepor mentalmente artigo definido/indefinido à palavra para confirmar se atua como substantivo (ex.: 'a certeza', 'a necessidade', 'a dúvida').
+- Teste da Ordem Direta em Orações Relativas: reordenar 'Sujeito + Verbo + Objeto' substituindo o pronome relativo pelo antecedente para verificar se a preposição é realmente exigida pelo regente.
+- Teste de Determinação Semântica: contrastar a preposição simples no singular diante de substantivo plural ('a pessoas' = genérico, sem crase) com a preposição contraída ('às pessoas' = específico, com crase).
+- Teste de Paralelismo Correlativo: em correlações fixas, checar a simetria absoluta entre membros (ou apenas preposição: 'de... a...', ou preposição + artigo: 'da... à...').
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA fornece a arquitetura para isolar o termo regente e o termo regido dentro da oração ou período composto; a escolha da preposição cabível depende do inventário lexical e normativo de regência nominal. A SuVeCA não gera nem deduz logicamente qual preposição é regida por determinado nome, pois a regência nominal é convenção lexical consagrada pelo uso culto ('é porque é').
 
 ---
 

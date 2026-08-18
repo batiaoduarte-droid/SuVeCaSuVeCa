@@ -25,7 +25,7 @@ if (!errors.length) {
   const studySections = coreModules.flatMap((module) => module.sections);
   const expectedCoreIds = Array.from({ length: 15 }, (_, index) => `mod${index}`);
 
-  check(curriculum.schemaVersion === '4.1.0', `Schema curricular inesperado: ${curriculum.schemaVersion}.`);
+  check(curriculum.schemaVersion === '4.2.0', `Schema curricular inesperado: ${curriculum.schemaVersion}.`);
   check(curriculum.buildId === manifest.buildId, 'Build ID diverge entre currículo e manifesto.');
   check(JSON.stringify(coreModules.map((module) => module.id)) === JSON.stringify(expectedCoreIds), 'Módulos curriculares não correspondem às aulas 00–14.');
   check(studySections.length === 115, `Unidades de estudo: ${studySections.length}/115.`);
@@ -66,6 +66,11 @@ if (!errors.length) {
   check(methodGroupKeys.length === 102, `Conexões temáticas SuVeCA: ${methodGroupKeys.length}/102.`);
   check(JSON.stringify(methodGroupKeys) === JSON.stringify(expectedGroupKeys), 'Conexões SuVeCA não correspondem exatamente aos grupos curriculares.');
   check(Object.values(method.groupConnections || {}).every((connection) => validGroupLevels.has(connection.level)), 'Há nível temático SuVeCA inválido.');
+  check(Object.values(method.groupConnections || {}).every((connection) => connection.publicationStatus?.startsWith('approved')), 'Há conexão temática sem aprovação editorial.');
+  check(Object.values(method.groupConnections || {}).every((connection) => connection.editorialSourceId), 'Há conexão temática sem vínculo com o detalhamento editorial Gemini aprovado.');
+  check(method.editorialConnectionSource?.sourceDigest?.length === 64, 'Digest da revisão editorial das conexões ausente.');
+  check(method.editorialConnectionSource?.totals?.connections === 102, 'Revisão editorial não cobre 102 conexões.');
+  check(method.editorialConnectionSource?.totals?.conflictsReviewed === 79, 'Revisão editorial não adjudicou os 79 conflitos referenciados.');
   check(integratedSections.every((section) => section.suvecaMethod?.methodId === method.methodId), 'Há grupo sem conexão SuVeCA materializada.');
   check(integratedSections.every((section) => {
     const source = method.groupConnections?.[`${section.lessonId}/${section.groupId}`];
@@ -122,6 +127,9 @@ if (!errors.length) {
     check(!/\bmaterial de origem\b/i.test(markdown), `${path.relative(ROOT, file)}: linguagem de processamento exposta.`);
     check(markdown.includes('## Conexão com o método SuVeCA'), `${path.relative(ROOT, file)}: conexão SuVeCA ausente.`);
     const section = studySections.find((item) => path.join(ROOT, 'public', item.contentUrl?.replace(/^\//, '') || '__missing__') === file);
+    if (section?.lessonId !== 'A14') {
+      check(markdown.includes('### Testes decisivos'), `${path.relative(ROOT, file)}: testes editoriais SuVeCA ausentes.`);
+    }
     if (section?.suvecaMethod?.level === 'outside_core') {
       check(
         markdown.indexOf('## Conexão com o método SuVeCA') > markdown.indexOf('## Pré-requisitos e modelo mental'),

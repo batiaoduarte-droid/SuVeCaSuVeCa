@@ -488,8 +488,15 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Aplique diretamente a regra fonológica, ortográfica, lexical ou discursiva pertinente.
-2. Use frases completas como contexto de aplicação, sem obrigar sua decomposição sintática.
-3. Recorra à SuVeCA apenas se uma questão específica introduzir uma dependência funcional real.
+1. Reconhecer que o tópico pertence à camada fonética subsintática e não requer análise de orações.
+2. Diferenciar grafema (unidade gráfica escrita) de fonema (unidade sonora mínima distintiva).
+3. Identificar e classificar dígrafos consonantais e vocálicos (duas letras representando um único som).
 
-> **Limite do método:** A SuVeCA não é fonte da regra deste grupo e sua ausência na resolução pode ser pedagogicamente correta.
+### Testes decisivos
+
+- Teste do Dígrafo: verificar se o agrupamento de duas letras emite um único fonema consonantal ou vogal nasal.
+- Teste do U mudo em GU/QU: verificar se a letra U é articulada (não é dígrafo) ou muda (é dígrafo consonantal).
+- Teste do Dífono do X: verificar se o X representa a sequência /ks/ (+1 fonema) ou sons simples /s/, /z/, /ʃ/ (relação 1:1).
+- Teste do H inicial: verificar a presença de H inicial mudo sem emissão fônica (-1 fonema).
+
+> **Limite do método:** A SuVeCA não é fonte da regra deste grupo e sua ausência na resolução pode ser pedagogicamente correta. A análise fonética encerra-se no nível da palavra; a metodologia SuVeCA atua a partir da organização de termos e orações em torno de um verbo. A arquitetura SuVeCA não deve ser utilizada para explicar contagem de letras e fonemas.

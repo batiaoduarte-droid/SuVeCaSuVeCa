@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Identifique primeiro a camada linguística efetivamente cobrada.
-2. Use o mapa SuVeCA somente nos trechos em que função, referente, escopo ou encaixe sejam relevantes.
-3. Conclua pela regra própria do tema e explicite o limite da análise sintática.
+1. Examinar o núcleo verbal e as margens oracionais (adjuntos adverbiais e predicativos) nas passagens estratégicas de abertura e encerramento do texto.
+2. Passo 1: Mapear os extremos do texto e a fonte bibliográfica (título, introdução, conclusão e referência de rodapé).
+3. Passo 2: Aplicar a pergunta-guia da intenção autoral: 'O autor quer me convencer de sua opinião ou veio expor/explicar um conhecimento consolidado?'
+4. Passo 3: Rastrear a presença de tese explícita no início (posicionamento controvertido, verbos deônticos de dever/obrigação) versus apresentação de definições teóricas.
 
-> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual.
+### Testes decisivos
+
+- Teste da Pergunta-Guia de Intencionalidade: 'O autor visa convencer o leitor a aderir a uma tese ou apenas transmitir e explicar saberes consolidados?'
+- Teste da Subordinação dos Dados Numéricos: 'Se o dado empírico for isolado, ele constitui o próprio conteúdo informativo ou funciona como argumento probatório de uma tese controversa?'
+- Teste do 'Final Matador': 'O parágrafo conclusivo do texto arremata a persuasão cravando o ponto de vista ou encerra o encadeamento de conceitos de forma didática?'
+- Teste do Fato Normativo: 'Os vocábulos axiológicos (justiça, igualdade, fraternidade) referem-se a preceitos positivados da ciência jurídica (exposição) ou a pleitos subjetivos e partidários do autor (argumentação)?'
+
+> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual. A análise SuVeCA delimita os operadores modais, adjuntos probatórios e predicativos na oração; a decisão sobre o tipo dissertativo pertence ao nível discursivo da intencionalidade autoral global. A estrutura SuVeCA na escala da oração não substitui o diagnóstico macroestrutural da intenção do autor.
 
 ---
 

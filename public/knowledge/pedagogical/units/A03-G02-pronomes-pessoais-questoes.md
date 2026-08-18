@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo ou locução verbal da oração e determinar sua predicação e transitividade imediata.
+2. Passo 1: Isolar a oração e identificar a forma verbal ou locução verbal principal.
+3. Passo 2: Localizar o sujeito da oração (atentando para sujeitos pospostos ou elípticos) e validar o uso de pronomes retos.
+4. Passo 3: Determinar a predicação do verbo aplicando o Noun Test ('o menino' -> VTD / 'ao menino' -> VTI ou VTDI).
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste do Substantivo Masculino Singular (Noun Test): acoplar mentalmente 'o menino' (sem preposição = OD -> o/a) ou 'ao menino' (com preposição a = OI -> lhe).
+- Teste da Substituição Genitiva Possessiva: substituir o pronome por 'meu/minha', 'seu/sua' ou 'dele/dela'. Se mantiver sentido de posse com o substantivo vizinho, trata-se de Adjunto Adnominal.
+- Balanço de Transitividade em VTDI: verificar se a oração já possui OD ou OI substantivado; proibir categoricamente duplicidade de objetos da mesma natureza (OD+OD ou OI+OI).
+- Teste da Posição Fonética: verificar se há palavra atrativa impondo próclise; se houver próclise, proibir terminantemente o acréscimo de consoantes L ou N.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA delimita com precisão os papéis sintáticos de sujeito, objeto direto, objeto indireto e adjunto adnominal, mas transfere a decisão final para as camadas morfológica e fonológica quanto às alterações alomórficas (lo/la, no/na), e para a camada de regência e estilística quanto à eufonia de verbos refratários e função anafórica de demonstrativos. A metáfora do trem não estabelece uma ordem linear rígida ou fixa de palavras; ela modela vínculos funcionais (núcleos e dependências), devendo o estudante reconhecer que o sujeito pode estar posposto, os adjuntos intercalados e os complementos antepostos por próclise.
 
 ---
 

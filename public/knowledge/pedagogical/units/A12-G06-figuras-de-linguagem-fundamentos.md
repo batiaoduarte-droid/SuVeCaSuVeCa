@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Identifique primeiro a camada linguística efetivamente cobrada.
-2. Use o mapa SuVeCA somente nos trechos em que função, referente, escopo ou encaixe sejam relevantes.
-3. Conclua pela regra própria do tema e explicite o limite da análise sintática.
+1. Localizar o verbo principal ou a locução verbal do período para delimitar as fronteiras oracionais e estabelecer a base predicativa da análise estilística.
+2. Passo 1 — Mapeamento Sintático Inicial: Localize o verbo principal e verifique a ordem dos constituintes. Se houver inversão da ordem direta canônica, classifique como Hipérbato . Se houver termo inicial solto sem função sintática, classifique como Anacoluto .
+3. Passo 2 — Verificação de Omissões e Concordâncias: Verifique se há termos gramaticais omitidos. Se o termo foi expresso antes, é Zeugma; se não foi citado antes, é Elipse pura . Examine a concordância: se o verbo ou predicativo concorda com a ideia mental e não com a morfologia (com distanciamento sintático em número ou inclusão em pessoa), valide a Silepse .
+4. Passo 3 — Teste de Analogia e Contiguidade: Havendo linguagem figurada, aplique o teste do 'é como'. Se houver conectivo comparativo formal expresso, é Comparação; se houver predicação direta de identidade sem conectivo, é Metáfora . Se a substituição decorrer de contiguidade real objetiva (autor/obra, parte/todo, continente/conteúdo sem preposição 'de'), classifique como Metonímia (, , ).
 
-> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual.
+### Testes decisivos
+
+- Teste do 'É Como' para Metáfora vs. Comparação Explícita: substituição do verbo de ligação por conectivo analógico .
+- Teste do Referente Único para Antítese vs. Paradoxo: mesmo referente com contradição = Paradoxo; referentes distintos = Antítese .
+- Protocolo de Silepse: identificação de gênero, número (com distanciamento obrigatório) ou pessoa (com regra de inclusão do falante) .
+- Algoritmo de Análise Sintática Restritiva para Anacoluto: comprovação de termo inicial periférico sem função gramatical na oração .
+
+> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual. A SuVeCA organiza e diagnostica com precisão os desvios de sintaxe e concordância (hipérbato, anacoluto, elipse, silepse, pleonasmo), mas a identificação de tropos semânticos (metáforas, metonímias, catacreses), figuras de pensamento (antíteses, paradoxos, ironias, hipérboles) e figuras sonoras (aliteração, assonância) exige a ativação das camadas semântica, pragmática, discursiva e fonológica. A SuVeCA não gera nem resolve tropos semânticos puros (metáforas, metonímias, catacreses), que operam no nível lexical e conceptual.
 
 ---
 

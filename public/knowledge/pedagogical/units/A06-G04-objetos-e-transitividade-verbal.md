@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo ou a locução verbal como eixo estruturador da oração e motor relacional da predicação.
+2. Passo 1: Localizar o verbo principal ou a locução verbal que constitui o núcleo da oração.
+3. Passo 2: Formular a pergunta obrigatória pelo sujeito ('Quem é que [verbo]?' ou 'O que é que [verbo]?') antes de avaliar qualquer complemento, isolando sujeitos pospostos ou pacientes.
+4. Passo 3: Se o verbo for 'haver' com sentido existencial, reconhecer a oração sem sujeito, fixá-lo na 3ª pessoa do singular e tratar o termo posposto como Objeto Direto.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Bizu do Menino (Verbo + o menino vs. Verbo + ao menino) para definir VTD/OD ou VTI/OI.
+- Teste do Cheiro de Circunstância (interrogação por Onde?, Quando?, Como?) para isolar Adjuntos Adverbiais e identificar Verbos Intransitivos (VI).
+- Teste da Pergunta Canônica do Sujeito (Quem é que...? / O que é que...?) antes de qualquer classificação de complementos.
+- Teste da Supressão da Preposição Facultativa em VTD para atestar Objeto Direto Preposicionado sem alteração semântica.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A análise SuVeCA estabelece a estrutura oracional e a delimitação funcional de complementos e adjuntos, mas não substitui a verificação morfológica dos pronomes oblíquos nem as regras específicas de concordância de verbos impessoais ou regência de verbos de dupla acepção. A metáfora do trem não resolve a morfologia dos pronomes oblíquos átonos exclusivos e coringas.
 
 ---
 

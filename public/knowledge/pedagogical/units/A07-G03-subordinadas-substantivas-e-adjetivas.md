@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar e sublinhar todos os verbos e locuções verbais do período composto para delimitar a Oração Principal e as Orações Subordinadas.
+2. 1. Ao deparar com período composto subordinado, identifique os verbos e aplique o teste do 'ISSO' na oração iniciada por 'que' ou 'se'. Se a substituição for válida, classifique a oração como Subordinada Substantiva e o conectivo como Conjunção Integrante .
+3. 2. Para classificar a Substantiva: se a OP não tiver sujeito e contiver verbo unipessoal, voz passiva ou VL+Predicativo, classifique como Subjetiva (Sujeito Oracional). Se a OP contiver VTD, classifique como Objetiva Direta. Se contiver VTI, classifique como Objetiva Indireta (preposição facultativa). Se completar substantivo/adjetivo abstrato com preposição obrigatória, classifique como Completiva Nominal. Se vier após Sujeito+VL, classifique como Predicativa. Se vier após pontuação explicando um substantivo, classifique como Apositiva.
+4. 3. Se o conectivo 'que' puder ser substituído por 'o qual / a qual', classifique-o como Pronome Relativo e a oração como Subordinada Adjetiva .
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste do 'ISSO' / 'DISSO' / 'NISSO' para identificação inequívoca de Orações Subordinadas Substantivas e Conjunções Integrantes .
+- Teste da substituição por 'o qual / a qual / os quais / as quais' para confirmação de Pronome Relativo e Oração Subordinada Adjetiva .
+- Teste de Supressão Sintática para identificação de expressões e partículas expletivas ou de realce ('é que', 'quase que') .
+- Método dos Três Passos (Isolar -> Substituir -> Ordem Direta S-V-C) para determinação mecânica da função sintática do pronome relativo .
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA estrutura a delimitação e a montagem das ordens diretas das orações, mas a validação da classe do conectivo (conjunção integrante vs pronome relativo vs partícula de realce), o regime de regência de preposições e os efeitos discursivo-semânticos das vírgulas exigem o recurso às camadas morfológica, de regência e de pontuação. A metáfora do trem não explica sozinha a diferença semântica e pontual entre orações adjetivas restritivas e explicativas, que depende da camada semântico-discursiva.
 
 ---
 

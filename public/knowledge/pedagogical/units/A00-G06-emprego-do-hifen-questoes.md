@@ -584,8 +584,15 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Aplique diretamente a regra fonológica, ortográfica, lexical ou discursiva pertinente.
-2. Use frases completas como contexto de aplicação, sem obrigar sua decomposição sintática.
-3. Recorra à SuVeCA apenas se uma questão específica introduzir uma dependência funcional real.
+1. Identificar que a questão aborda grafia de vocábulos e derivacionais/compostos, delimitando que a análise é estritamente ortográfica e morfológica.
+2. 1. Compreender a ruptura fundamental entre derivação prefixal (morfema preso) e composição lexical (vocábulos autônomos).
+3. 2. Dominar as regras de prefixação estruturadas em 5 Casos (prefixos vocálicos, consonantais em R, elementos fixos/independentes, tonicidade e prefixos especiais de aglutinação contínua).
 
-> **Limite do método:** A SuVeCA não é fonte da regra deste grupo e sua ausência na resolução pode ser pedagogicamente correta.
+### Testes decisivos
+
+- Teste da Natureza do Elemento Inicial: O primeiro elemento é prefixo dependente (auto-, anti-, super-) ou vocábulo autônomo (porta-, alto-, dia)? Se for vocábulo autônomo, desative regras prefixais.
+- Teste da Conexão em Compostos: Há preposição ou conjunção entre os termos? Se houver, aplica-se Categoria II (sem hífen), exceto se for consagrada na Categoria III-B (cor-de-rosa).
+- Teste dos Opostos nos Prefixos Vocálicos: Letras iguais se repelem (com hífen: micro-organismo); letras diferentes se atraem (sem hífen: autoanálise).
+- Teste da Consoante R em Prefixos Consonantais: Diante de S, 'super-' e 'hiper-' aglutinam sem dobrar (hipersensibilidade); hífen somente diante de H e R (super-ricos).
+
+> **Limite do método:** A SuVeCA não é fonte da regra deste grupo e sua ausência na resolução pode ser pedagogicamente correta. A SuVeCA não governa regras fonotáticas e morfolexicais de hifenização; sua atuação limita-se a contextualizar sintagmas na oração. A metáfora do trem e as funções oracionais SuVeCA não resolvem atração/repulsão de vogais em prefixos.

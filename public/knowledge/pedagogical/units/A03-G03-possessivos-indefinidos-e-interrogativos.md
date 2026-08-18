@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Reconstrua apenas as relações sintáticas relevantes para a decisão.
-2. Acrescente o critério próprio do tema — morfológico, semântico, coesivo ou discursivo.
-3. Confirme que estrutura e contexto sustentam a mesma conclusão.
+1. Identificar a forma verbal nuclear da oração para delimitar a estrutura SuVeCA e discernir se o pronome ou palavra quantitativa atua como núcleo sintático autônomo, modificador de substantivo ou modificador do verbo/adjetivo.
+2. Passo 1: Localizar a palavra em análise e identificar a forma verbal da oração para situar os termos da estrutura SuVeCA.
+3. Passo 2: Se a palavra for um pronome que atua sozinho como sujeito ou complemento, classificar como pronome substantivo; se acompanhar um substantivo expresso, classificar como pronome adjetivo (adjunto adnominal).
+4. Passo 3: Se a palavra for quantificadora ou intensificadora (bastante, mais, menos, muito, pouco, todo), traçar a seta de modificação: se apontar para verbo, adjetivo ou advérbio, classificar como advérbio (adjunto adverbial); se apontar para substantivo, excluir a hipótese de advérbio.
 
-> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria.
+### Testes decisivos
+
+- Teste da Seta de Referência: verificar se o termo modificado é Verbo/Adjetivo/Advérbio (Advérbio) ou Substantivo (Adjetivo ou Pronome Indefinido).
+- Teste do Dele(s)/Dela(s): substituir seu/sua/seus/suas por dele(s)/dela(s) para isolar o possuidor real sem contaminação pela concordância com o substantivo posposto.
+- Teste de Substituição por 'Suficiente(s)': substituir bastante(s) posposto por suficiente(s) para validar a classe de adjetivo.
+- Teste de Substituição por 'Muito(s)': substituir bastante(s) anteposto por muito(s) para validar a classe de pronome indefinido.
+
+> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria. O procedimento SuVeCA isola a função estrutural dos sintagmas (núcleos vs. determinantes e adjuntos adnominais vs. adverbiais), mas delega a resolução da cadeia coesiva (possuidores anafóricos/catafóricos) e a polissemia posicional às camadas de coesão textual e semântica. A metáfora do trem organiza as posições sintáticas, mas não resolve por si a distinção morfológica interna entre adjetivo e pronome indefinido quando ambos estão acoplados ao substantivo.
 
 ---
 

@@ -612,8 +612,15 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Aplique diretamente a regra fonológica, ortográfica, lexical ou discursiva pertinente.
-2. Use frases completas como contexto de aplicação, sem obrigar sua decomposição sintática.
-3. Recorra à SuVeCA apenas se uma questão específica introduzir uma dependência funcional real.
+1. Identificar que a dúvida ortográfica reside na formação de uma palavra específica (sublexical) e não nas relações sintáticas oracionais.
+2. Identificar se a estrutura envolve prefixação, radical erudito ou composição justaposta.
+3. Verificar a presença da letra H no segundo elemento para aplicação da regra de repulsão obrigatória.
 
-> **Limite do método:** A SuVeCA não é fonte da regra deste grupo e sua ausência na resolução pode ser pedagogicamente correta.
+### Testes decisivos
+
+- Teste de Colisão de Letras: verificar se as letras no ponto de junção são idênticas ('Iguais se repelem' -> hífen) ou distintas ('Diferentes se atraem' -> sem hífen).
+- Teste da Letra H: verificar se o segundo elemento inicia por H, impondo separação obrigatória por hífen ('H é um problema').
+- Teste Fonético de R/S pós-vogal: verificar se prefixo terminado em vogal encontra palavra iniciada por R ou S, exigindo duplicação (RR / SS) para manter a pronúncia correta.
+- Teste de Autonomia e Prosódia: verificar se o prefixo é autônomo/tônico acentuado (pré-, pró-, pós- -> com hífen) ou átono inacentuado (pre-, pro-, pos- -> sem hífen).
+
+> **Limite do método:** A SuVeCA não é fonte da regra deste grupo e sua ausência na resolução pode ser pedagogicamente correta. A SuVeCA apenas contextualiza a posição da palavra na oração; a decisão sobre o uso do hífen é 100% ortográfica e morfológica. A arquitetura SuVeCA delimita a oração e seus termos, mas não rege a morfologia derivacional nem as regras ortográficas de hífen.

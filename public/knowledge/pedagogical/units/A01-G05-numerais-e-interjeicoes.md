@@ -769,8 +769,15 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Resolva o fenômeno pela regra própria da matéria.
-2. Se houver uma oração relevante, use a SuVeCA apenas para localizar a forma ou o efeito no contexto.
-3. Mantenha separadas a justificativa principal e a observação sintática auxiliar.
+1. Isolar eventuais termos extraoracionais (interjeições) e conectores conformativos ('segundo'), delimitando a oração canônica SuVeCA.
+2. Morfologia e Taxonomia dos Numerais: Dominar as quatro categorias tradicionais (cardinais, ordinais, fracionários e multiplicativos) e os numerais coletivos.
+3. Discriminação Diagnóstica de Vocábulos Críticos: Aplicar o Mantra da Pista para 'um/uma' (artigo vs. numeral) e o teste de 'de acordo com' para 'segundo'.
 
-> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe.
+### Testes decisivos
+
+- Mantra da Pista Numérica: 'um/uma' só é numeral cardinal com presença de 'apenas', 'somente', 'unicamente' ou oposição explícita 'não dois'.
+- Teste da Conformidade: substituir 'segundo' por 'de acordo com' ou 'conforme'; se mantiver sentido, não é numeral ordinal.
+- Teste do Advérbio 'Meio': substituir 'meio' por 'um pouco'; se mantiver sentido e modificar adjetivo, é advérbio invariável ('meio cansada').
+- Teste da Não Conjugação Interjetiva: interjeição é forma invariável autônoma sem flexão de pessoa ou tempo (descarta 'Corra!' e 'Tenho dito!').
+
+> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe. A SuVeCA delimita a estrutura e os termos oracionais onde os numerais se inserem, mas a identificação de classes, a derivação imprópria de interjeições e as distinções semânticas de quantificação dependem das camadas morfológica, semântica e pragmática. A análise SuVeCA não resolve a distinção entre artigo indefinido e numeral cardinal sem o rastreamento semântico de pistas como 'apenas' e 'somente'.

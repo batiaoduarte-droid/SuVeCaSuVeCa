@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo principal ou locução verbal da oração e identificar a sua transitividade e tempo primitivo ('chamar o feito à ordem').
+2. Passo 1: Localizar o verbo ou locução verbal primitivo, identificar tempo, modo e transitividade (VTD/VTDI), e contar o número de formas verbais.
+3. Passo 2: Identificar a voz primitiva e delimitar o termo alvo: se voz ativa, isolar o objeto direto; se analítica, isolar o sujeito paciente e o tempo do auxiliar SER.
+4. Passo 3: Executar a conversão estrutural: promover o objeto direto a sujeito paciente (ou manter o sujeito paciente) e ajustar o verbo principal mantendo estritamente o tempo/modo original.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste do 'ISSO' para Sujeito Oracional: substituir a oração subordinada por 'ISSO' para comprovar que a passiva equivalente exige a 3ª pessoa do singular masculino ('Estima-se [ISSO]' -> '[ISSO] é estimado').
+- Teste da Eliminação do Auxiliar SER: verificar se o tempo e modo do auxiliar SER foram perfeitamente transferidos para o verbo pleno conjugado com o pronome 'se' ('eram proibidos' [imperfeito] -> 'proibiam-se' [imperfeito]).
+- Teste de Invariância em Locuções Ativas/Sintéticas: checar se a contagem de verbos foi preservada na transposição para passiva sintética (locução ativa de 2 verbos permanece com 2 verbos na sintética com 'se').
+- Teste de Ambiguidade Reflexiva da Ordem Direta: ler a construção 'sujeito + se + verbo' para descartar se a frase passou a indicar que o sujeito praticou a ação em si mesmo em vez de sofrê-la.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA estabelece a reorganização funcional dos termos oracionais (Sujeito, Verbo, Complementos e Adjuntos), mas não substitui as regras morfológicas de conjugação e flexão temporal nem os critérios de coerência semântica e discursiva do texto. A metáfora do trem não deve sugerir uma sequência rígida linear de palavras; termos pospostos, intercalados e elípticos são comuns na sintaxe de vozes.
 
 ---
 

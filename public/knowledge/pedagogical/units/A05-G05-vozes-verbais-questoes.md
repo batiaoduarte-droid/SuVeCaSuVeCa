@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar a forma ou locução verbal da oração para determinar se há marcação passiva ('SER + particípio' ou 'VTD + SE') ou verbo ativo com seus respectivos complementos.
+2. Passo 1 (Localização do Motor Verbal): Localize o verbo principal ou locução da oração e registre seu tipo flexional e predicação inicial.
+3. Passo 2 (Filtro da Passiva Analítica Canônica): Se houver 'SER + particípio', confirme o Sujeito Paciente com o qual a locução concorda; se houver 'ESTAR/FICAR/VIRAR + particípio/adjetivo', classifique como Verbo de Ligação + Predicativo do Sujeito na Voz Ativa.
+4. Passo 3 (Desambiguação da Partícula SE): Se o verbo estiver na 3ª pessoa acompanhado de 'SE', verifique a transitividade: com VTD/VTDI e termo não preposicionado, tente a conversão para 'SER + particípio' (Voz Passiva Sintética); com VI/VTI/VL, classifique como IIS (Voz Ativa); com verbos pronominais de sentimento/mudança que rejeitam passiva, classifique como PIV (Voz Ativa); se equivaler a 'a si mesmo', classifique como Voz Reflexiva.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste da Transposição Analítica Estrita: 'VTD + SE + Substantivo' converte-se fluidamente em 'Substantivo + SER (mesmo tempo/modo) + Particípio' (Validação da Voz Passiva Sintética).
+- Teste da Pergunta Canônica do Sujeito: Formular 'O que é [particípio]?' ou 'Quem é [particípio]?' para localizar o Sujeito Paciente posposto e nunca confundi-lo com ausência de sujeito ou com objeto direto.
+- Filtro Visual das Preposições Departamentais: A presença de preposição regimental obrigatória ('de', 'em', 'com', 'a') logo após o verbo elimina sumariamente VTD e veta a transposição passiva analítica.
+- Teste de Autodirecionamento 'A Si Mesmo': Substituição do pronome oblíquo por 'a si mesmo(s)' ou 'a si próprio(s)' para validar pragmaticamente a Voz Reflexiva em bancas como o CESPE.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA encerra seu procedimento no mapa oracional da oração analisada; julgamentos sobre intenção discursiva, atenuação moral de autoria ou coerência argumentativa do parágrafo exigem articulação com as camadas semântico-discursiva e interoracional. A SuVeCA não resolve sozinha a distinção morfológica e lexical entre a partícula apassivadora (PA), a parte integrante do verbo (PIV) e o índice de indeterminação do sujeito (IIS).
 
 ---
 

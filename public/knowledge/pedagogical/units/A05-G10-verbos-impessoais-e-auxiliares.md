@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar a cadeia verbal completa da oração (verbo simples ou locução verbal) e aplicar a análise de trás para frente no verbo nuclear para verificar a existência de sujeito ou impessoalidade.
+2. Passo 1 (Localização e Isolação Verbal): Localize o complexo verbal da oração. Se houver apenas um verbo simples, vá ao Passo 2; se houver dois ou mais verbos associados, vá ao Passo 4.
+3. Passo 2 (Teste de Impessoalidade do Verbo Simples): Verifique se o verbo expressa: (a) fenômeno natural denotativo ('chover'); (b) verbo 'fazer' indicando clima ou tempo decorrido; ou (c) verbo 'haver' nos sentidos de existir, ocorrer ou tempo decorrido.
+4. Passo 3 (Ramificação do Verbo Simples): Se SIM ao Passo 2 -> Classifique como Oração Sem Sujeito (Impessoal), congele o verbo na 3ª pessoa do singular e classifique os substantivos associados como Objetos Diretos ou Adjuntos. Se NÃO -> Trate o verbo como pessoal, identifique o sujeito pela desinência ou pelo contexto e flexione em concordância.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste de Substituição Léxica Haver por Existir/Ocorrer: Trocar 'haver' por 'existir' converte o objeto direto em sujeito sintático, exigindo flexão de plural no verbo substituto e mantendo a correção se a oração original expressava existência ontológica.
+- Teste de Transposição para a Ordem Direta: Mover termos substantivos antepostos para a posição pós-verbal para verificar se exercem função de objeto direto de verbo impessoal ('Muitos problemas havia' -> 'Havia muitos problemas') ou de sujeito posposto ('Saiu o sol' -> 'O sol saiu').
+- Teste da Leitura Verbal de Trás para Frente: Isolar o último verbo de uma cadeia perifrástica para fixar a transitividade e a presença de sujeito a partir do verbo principal, ignorando a flexão provisória dos auxiliares precedentes.
+- Teste de Desinência Unívoca vs. Ambiguidade de 3ª Pessoa: Identificar se a terminação verbal aponta matematicamente para 1ª pessoa ('eu'/'nós' = desinencial) ou se requer busca anafórica no texto ('ele'/'ela' = elíptico contextual).
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA delimita as funções oracionais e as relações de concordância/regência, mas não substitui o teste léxico-semântico (sentido denotativo vs. conotativo de verbos meteorológicos) nem o resgate anafórico interparagrafal de referentes contextuais do sujeito de 3ª pessoa. A metáfora do trem não decide a distinção semântica entre sentido literal (chover = denotativo) e sentido figurado (choveram reclamações = conotativo).
 
 ---
 

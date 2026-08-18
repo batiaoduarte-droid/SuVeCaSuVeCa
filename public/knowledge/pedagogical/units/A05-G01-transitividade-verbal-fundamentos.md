@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar a forma verbal flexionada ou a locução verbal na oração ('viver o verbo').
+2. Passo 1: Identifique a forma verbal (ou locução verbal) e reordene mentalmente a frase na ordem direta (Sujeito + Verbo + Complementos + Adjuntos).
+3. Passo 2: Isole o sujeito perguntando 'Quem é que [verbo]?' ou 'O que é que [verbo]?'. Classifique o sujeito (simples, composto, oculto desinencial/anafórico ou indeterminado).
+4. Passo 3: Isole cada bloco sintático pós-verbal entre colchetes.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste do 'E Estava' : Inserir 'e estava' antes do adjetivo/termo sob dúvida para comprovar Predicativo do Sujeito.
+- Teste de Flexão de Gênero e Número (Mantra 9 / ): Alterar o sujeito para o plural ou feminino; se o termo flexionar, é Adjetivo (Predicativo); se permanecer invariável, é Advérbio (Adjunto Adverbial de Modo).
+- Teste de Substituição por 'Ficar / Tornar-se' : Comutar verbos atípicos (ex.: cair, virar) por 'ficar' para validar mudança de estado e classificar como Verbo de Ligação.
+- Teste da Acessoriedade Circunstancial (Mantra 3): Suprimir mentalmente o sintagma circunstancial (lugar, tempo, instrumento); se a estrutura nuclear oracional permanecer íntegra, trata-se de Adjunto Adverbial.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA delimita a arquitetura oracional e a distribuição de termos imediatos do verbo, mas não substitui a classificação morfológica de palavras nem determina a semântica discursiva ou a resolução de divergências de bancas específicas. A metáfora do trem não define se um termo preposicionado é objeto indireto ou adjunto adverbial; essa distinção exige o teste das circunstâncias (6C + FTP).
 
 ---
 

@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar e sublinhar todos os verbos conjugados e locuções verbais do período para estabelecer a contagem exata de orações.
+2. 1. Mapear os núcleos verbais: sublinhar verbos e locuções verbais. Descartar infinitivos antecedidos de artigo (substantivos). Se total = 1, declarar Período Simples (Oração Absoluta).
+3. 2. Havendo 2 ou mais verbos, localizar os elementos conectores entre as orações ou verificar a presença de pontuação divisória.
+4. 3. Se houver ausência de conectivo entre orações sintaticamente independentes, classificar como Orações Coordenadas Assindéticas.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste do 'ISSO': Substituir mentalmente toda a oração introduzida por 'que' ou 'se' pelo pronome 'isso' (ou contrações 'disso', 'nisso'). A integridade sintática confirma Conjunção Integrante e Oração Subordinada Substantiva.
+- Teste do 'O QUAL': Substituir o vocábulo 'que' por 'o qual / a qual / os quais / as quais' com retomada do termo antecedente. A concordância confirma Pronome Relativo e Oração Subordinada Adjetiva.
+- Teste do Verbo na Locução: Verificar se a sequência de formas verbais (mesmo com preposição intermediária como 'resumir a colocar') expressa um único evento predicativo com sujeito comum, computando apenas 1 oração.
+- Teste da Conjunção de Termos Nominais: Ao identificar conjunções como 'seja... seja' ou 'e', inspecionar se o segmento seguinte contém verbo próprio ou apenas sintagmas nominais/preposicionados.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA delimita a fronteira oracional e a função sintática dos termos, mas a classificação do tipo lógico-semântico da oração coordenada ou subordinada adverbial depende da camada de morfossintaxe de conectivos. A metáfora do trem não deve ser utilizada para sustentar o método intuitivo arcaico de que coordenadas possuem 'sentido completo isolado', pois sua independência é formal e sintática.
 
 ---
 

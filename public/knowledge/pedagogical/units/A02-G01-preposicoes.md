@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Reconstrua apenas as relações sintáticas relevantes para a decisão.
-2. Acrescente o critério próprio do tema — morfológico, semântico, coesivo ou discursivo.
-3. Confirme que estrutura e contexto sustentam a mesma conclusão.
+1. Localizar o verbo motor da oração e identificar a presença de termos iniciados por preposição essencial ou locução prepositiva.
+2. Passo 1: Identificar a preposição ou locução prepositiva e delimitar o termo ou oração por ela introduzido.
+3. Passo 2: Avaliar a obrigatoriedade sintática. Se o verbo ou nome anterior exige a preposição por regência (VTI ou Nome Transitivo), trata-se de Preposição Relacional (sem valor semântico próprio; termo = Complemento na SuVeCA). Se não houver exigência de regência, trata-se de Preposição Nocional (termo = Adjunto ou Agente da Passiva).
+4. Passo 3: Se o comando propuser reescrita entre locução prepositiva e conjuntiva, checar a equivalência de sentido e a adaptação verbal obrigatória: locução prepositiva rege infinitivo (oração reduzida); locução conjuntiva rege verbo conjugado no subjuntivo (oração desenvolvida).
 
-> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria.
+### Testes decisivos
+
+- Teste de Regência Obrigatória vs Termo Acessório: suprimir o termo preposicionado para verificar se a estrutura oracional é rompida (Complemento / Preposição Relacional) ou se preserva a gramaticalidade básica (Adjunto / Preposição Nocional).
+- Teste de Substituição Pragmática por 'a fim de': trocar a preposição 'para' seguida de infinitivo por 'a fim de' para certificar a circunstância de finalidade.
+- Teste de Reescrita Preposição-Conjunção: verificar se a substituição de locução prepositiva por conjuntiva correlata ajustou o verbo de infinitivo para o modo subjuntivo (ex.: 'a fim de conversar' = 'a fim de que conversasse').
+- Teste do Termo Posterior ('O que vem depois salva'): inspecionar se o vocábulo posterior expressa espaço/destino físico (Lugar), ser recebedor (Destinatário), ponto de vista (Conformidade), marco temporal (Tempo) ou ação a cumprir (Finalidade).
+
+> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria. A SuVeCA organiza a oração e discrimina com precisão termos integrantes (Complementos) de termos acessórios (Adjuntos), mas não substitui a memorização do rol das 18 preposições essenciais, a regra ortográfica de crase após 'até' nem a interpretação semântica fina exigida pelo contexto. A metáfora do trem não permite deduzir o rol arbitrário das 18 preposições essenciais, o qual exige memorização morfológica direta.
 
 ---
 

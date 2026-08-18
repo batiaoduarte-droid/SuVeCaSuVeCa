@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Reconstrua apenas as relações sintáticas relevantes para a decisão.
-2. Acrescente o critério próprio do tema — morfológico, semântico, coesivo ou discursivo.
-3. Confirme que estrutura e contexto sustentam a mesma conclusão.
+1. Delimitar a oração que contém o elemento coesivo e localizar seu verbo ou núcleo predicativo.
+2. 1. Localizar o elemento coesivo destacado no enunciado ou no texto da prova.
+3. 2. Verificar se o referente está explícito na superfície textual (Função Endofórica) ou se depende da situação de enunciação (Função Exofórica / Dêixis).
+4. 3. Em se tratando de função endofórica, determinar o vetor: se remete a termo anterior, classificar como Anáfora; se projeta termo posterior, como Catáfora.
 
-> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria.
+### Testes decisivos
+
+- Teste da Paráfrase de Posse ('dele / deles / dela / delas'): isola o substantivo determinado e identifica com exatidão o verdadeiro possuidor antecedente.
+- Teste do Predicado Subsequente ('O que vem depois salva'): substitui os candidatos a referente no sujeito/complemento do predicado seguinte para verificar qual faz sentido lógico.
+- Teste da Explicitação Textual: verifica se o referente temporal, espacial ou pessoal foi nomeado no corpo do texto para distinguir dêixis de endófora.
+- Teste do Escopo Resumitivo: avalia se o pronome neutro 'isso' substitui o fato/proposição global ou apenas o núcleo de um sintagma nominal específico.
+
+> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria. A SuVeCA delimita a estrutura sintática da oração e seu predicado, mas não determina se o referente é extratextual (dêixis), catafórico ou anafórico, nem decide relações lexicais puras. A metáfora do trem não explica a dêixis pura, na qual o referente situa-se inteiramente fora do trilho textual.
 
 ---
 

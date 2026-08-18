@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Reconstrua apenas as relações sintáticas relevantes para a decisão.
-2. Acrescente o critério próprio do tema — morfológico, semântico, coesivo ou discursivo.
-3. Confirme que estrutura e contexto sustentam a mesma conclusão.
+1. Localizar os verbos e delimitar as fronteiras oracionais do período, determinando se o termo sob análise desempenha papel de núcleo substantivo (com determinante), adjunto adverbial interrogativo, conector conjuntivo interoracional ou complemento regido por verbo transitivo indireto.
+2. Passo 1: Há determinante (artigo, pronome possessivo/demonstrativo, numeral) antes da lacuna? Se SIM, use 'porquê' (substantivo oxítono acentuado).
+3. Passo 2: A lacuna introduz oração subordinada causal, coordenada explicativa ou final (verbo no subjuntivo), substituível por 'pois' ou 'para que'? Se SIM, use 'porque' (conjunção junta sem acento).
+4. Passo 3: A lacuna situa-se imediatamente antes de pausa discursiva terminal ou pontuada (?, ., ,, ;, ...) em estrutura interrogativa? Se SIM, use 'por quê' (locução interrogativa tônica separada e acentuada).
 
-> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria.
+### Testes decisivos
+
+- Teste do Determinante: Inserção de artigo 'o' ou pronome antes do termo para validar substantivação ('o porquê' = 'o motivo').
+- Teste da Conjunção Causal/Explicativa: Substituição por 'pois', 'já que' ou 'visto que' para confirmar conjunção junta sem acento ('porque').
+- Teste da Conjunção Final: Verificação de verbo conjugado no modo subjuntivo e substituição por 'para que' ou 'a fim de que' ('porque').
+- Teste da Pergunta Indireta / Locução Interrogativa: Substituição por 'por qual razão' ou 'por qual motivo' em orações com verbos de cognição/conjectura ('por que').
+
+> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria. A análise SuVeCA esclarece as funções sintáticas, as valências verbais e as relações interoracionais, mas a decisão ortográfica final exige a aplicação das regras de homofonia morfológica e acentuação fonética pré-pausa. A SuVeCA mapeia a arquitetura sintática e a predicação verbal, mas não define de forma autônoma convenções ortográficas homófonas.
 
 ---
 

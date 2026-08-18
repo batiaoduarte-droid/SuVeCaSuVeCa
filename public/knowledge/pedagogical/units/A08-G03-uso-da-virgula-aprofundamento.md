@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo principal (ou a locução verbal) de cada oração e delimitar as fronteiras sintáticas entre os blocos essenciais e os termos satélites.
+2. Passo 1: Localizar o verbo principal da oração e perguntar 'Quem?' para delimitar o sujeito integral. Se houver proposta de vírgula entre o fim do sujeito e o verbo, julgar como PROIBIDA.
+3. Passo 2: Perguntar 'O quê / A quem?' ao verbo. Se o complemento (inclusive oração substantiva com 'que' substituível por 'isso') for separado do verbo por vírgula, julgar como PROIBIDA.
+4. Passo 3: Identificar orações adverbiais (mnemônico 6C + FTP). Se estiverem no final da frase, a vírgula é FACULTATIVA; se estiverem deslocadas no início ou intercaladas, a vírgula é OBRIGATÓRIA.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste da Seta no Pronome Relativo ou Forma Nominal: traçar uma seta para o substantivo antecedente para confirmar o caráter adjetivo da oração.
+- Teste de Unicidade do Referente: indagar se no contexto comunicativo o substantivo admite mais de um elemento ('Somente' -> Restritiva / Sem vírgula) ou se o elemento é único/total ('Só Há Um' -> Explicativa / Com vírgula).
+- Teste do 'Isso' após Verbo Transitivo: substituir a oração completiva introduzida por 'que' por 'isso' para validar objeto direto oracional e vedar vírgula separadora.
+- Teste da Seta Anafórica na Vírgula Vicária: reinserir mentalmente o verbo da oração anterior na posição da vírgula para confirmar a elipse verbal.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA organiza e delimita as posições sintáticas dos termos, mas não substitui o teste de unicidade do referente no mundo real para orações adjetivas nem as nuances de ênfase gráfica em sinais de intercalação. A metáfora não define se um substantivo antecedente possui referente único no universo real.
 
 ---
 

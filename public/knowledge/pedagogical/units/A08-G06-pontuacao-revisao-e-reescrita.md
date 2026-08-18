@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Reconstrua apenas as relações sintáticas relevantes para a decisão.
-2. Acrescente o critério próprio do tema — morfológico, semântico, coesivo ou discursivo.
-3. Confirme que estrutura e contexto sustentam a mesma conclusão.
+1. Localizar os verbos de cada oração do período e identificar os limites oracionais e as conexões entre blocos.
+2. Passo 1: Para cada segmento sob análise, localize a forma verbal e desmonte a estrutura oracional em termos essenciais (Su-Ve), integrantes (C) e acessórios (A).
+3. Passo 2: Verifique se há termo intercalado quebrando a sequência dos termos nucleares; em caso afirmativo, exija o par completo de vírgulas ou travessões (teste de supressão ).
+4. Passo 3: Verifique se há oração adjetiva e determine se o sentido contextualmente restringe ('somente') ou generaliza/explica; se restringe, elimine toda pontuação .
 
-> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria.
+### Testes decisivos
+
+- Teste de Supressão Sintática: eliminar mentalmente o trecho entre vírgulas casadas ou parênteses para validar se a oração principal permanece íntegra .
+- Mantra do 'Somente': testar a inserção da palavra 'somente' para comprovar se a oração adjetiva é restritiva (sem vírgulas) ou explicativa (com vírgulas) .
+- Teste do 'Isso': substituir a oração introduzida por 'que' pelo pronome 'isso' para atestar objeto direto oracional e vedar pontuação após VTD .
+- Teste do Fechamento de Rol por 'E': inspecionar a presença da conjunção 'e' no último item para distinguir enumeração exaustiva de exemplificação aberta .
+
+> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria. A SuVeCA estabelece a arquitetura estrutural da oração e do período; camadas semânticas, pragmáticas e discursivas decidem restrição vs. explicação, fato vs. opinião, e conotação vs. denotação em aspas. A SuVeCA não distingue sentido literal (denotativo) de figurado (conotativo) no emprego de aspas.
 
 ---
 

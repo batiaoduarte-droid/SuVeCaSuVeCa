@@ -732,8 +732,15 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Resolva o fenômeno pela regra própria da matéria.
-2. Se houver uma oração relevante, use a SuVeCA apenas para localizar a forma ou o efeito no contexto.
-3. Mantenha separadas a justificativa principal e a observação sintática auxiliar.
+1. Localizar o verbo ou a locução verbal na oração para delimitar a estrutura sintática de base e a função dos vocábulos sob exame.
+2. Compreender a semântica como estudo relacional do sentido moldado pelo contexto discursivo por meio de 'setas' coesivas.
+3. Mapear as relações de forma e som: distinguir Homônimos (algo 100% igual) de Parônimos (nada é igual, apenas parecido).
 
-> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe.
+### Testes decisivos
+
+- Mantra do 'Tipo de': '[Hipônimo] é um tipo de [Hiperônimo]' para dirimir dúvidas entre sinonímia e relação hierárquica .
+- Teste Fono-Ortográfico Cruzado: 'Grafia = SIM e Som = SIM' (Homônimo Perfeito), 'Grafia = SIM e Som = NÃO' (Homógrafo), 'Grafia = NÃO e Som = SIM' (Homófono), 'Grafia = NÃO e Som = NÃO' (Parônimo) .
+- Teste do Termo Retomador Anafórico: a classificação da coesão é definida exclusivamente pela espécie do termo posterior que aponta a seta para trás .
+- Teste da Polaridade Axiológica (+ / -): rotular o contexto em positivo, negativo ou neutro e descartar distratores com carga axiológica oposta .
+
+> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe. A SuVeCA encerra sua atuação direta ao delimitar os papéis funcionais e a simetria sintática dos blocos; a atribuição do sentido contextual, a sinonímia precisa, a gradação de antônimos e a etimologia erudita pertencem estritamente à camada de semântica lexical e pragmática. A metáfora do trem não explica por que a FGV considera inexistentes os sinônimos 100% perfeitos no uso vivo da língua.

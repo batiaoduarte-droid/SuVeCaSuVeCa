@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o vocábulo 'se' no período e identificar todos os verbos e locuções verbais para verificar se o termo conecta orações distintas ou opera internamente na predicação de uma única oração.
+2. Passo 1: Localize o vocábulo 'se' e circule todos os verbos e locuções verbais do período.
+3. Passo 2: Pergunte se o 'se' está conectando duas orações com verbos próprios. Se SIM, siga para o ramo CONJUNÇÃO. Se NÃO, siga para o ramo PRONOME.
+4. Passo 3 (Ramo Conjunção): Tente substituir toda a oração iniciada por 'se' pelos pronomes 'isso', 'disso' ou 'nisso'. Se a substituição fizer sentido sintático pleno (completando o verbo ou servindo de sujeito), classifique como CONJUNÇÃO INTEGRANTE.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste da Conjunção Integrante: substituir a oração inteira por 'isso', 'disso' ou 'nisso' (ex.: 'Não sei [se devemos partir]' -> 'Não sei [isso]').
+- Teste da Conjunção Condicional: substituir 'se' por 'caso' e verificar se o verbo expressa hipótese no modo subjuntivo (ex.: 'Se todos concordarem' -> 'Caso todos concordem').
+- Teste da Conjunção Concessiva: substituir 'se' por 'embora' e constatar a existência de contraste/oposição entre fatos coexistentes.
+- Teste da Conjunção Causal: substituir 'se' por 'já que', 'visto que' ou 'uma vez que' e aplicar a fórmula lógica 'O fato de X faz com que Y', observando o verbo no modo indicativo.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A análise SuVeCA estabelece a armação sintática (identifica orações, termos centrais e adjuntos), mas a classificação definitiva dos valores adverbiais e pronominais requer a validação de testes semânticos, correlações modais e valência verbal. A metáfora visual do trem não substitui a verificação formal dos modos verbais (subjuntivo versus indicativo).
 
 ---
 

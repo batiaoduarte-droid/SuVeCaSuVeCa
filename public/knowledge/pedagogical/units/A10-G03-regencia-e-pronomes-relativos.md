@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo ou locução verbal no interior da oração subordinada adjetiva (Passo 1 do algoritmo).
+2. Isolar a oração subordinada adjetiva a partir do pronome relativo (que, quem, o qual, cujo, onde).
+3. Localizar o termo regente (verbo ou nome) posicionado após o pronome relativo; em locuções verbais, identificar o último verbo (verbo principal).
+4. Transpor mentalmente a oração adjetiva para a ordem canônica: Sujeito + Verbo + Complemento.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste da Transposição Canônica SuVeCA: isolar a oração adjetiva e estruturá-la como 'Sujeito + Verbo + [Preposição ?] + Termo Antecedente'.
+- Teste do 'Menino' : testar 'o menino' (VTD sem prep.), 'ao menino' (VTI com 'a') ou 'do menino' (VTI com 'de').
+- Teste do 'Nele / Nela' para Cujo : substituir a coisa possuída por 'nele/nela' para validar a preposição 'em' (em cujo/em cuja).
+- Regra do Último Verbo : em locuções verbais, ignorar auxiliares e testar a regência estritamente no verbo principal.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA reconstrói a estrutura interna da oração adjetiva para revelar o encaixe do complemento; a determinação do regime de preposição específico de cada verbo (valência lexical) e as proibições morfológicas (como artigo após 'cujo' ou crase antes de 'quem') dependem do léxico e da morfossintaxe normativa. A metáfora do trem auxilia na visualização das conexões entre orações, mas não substitui a memorização das valências verbais normativas.
 
 ---
 

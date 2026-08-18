@@ -528,8 +528,15 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Resolva o fenômeno pela regra própria da matéria.
-2. Se houver uma oração relevante, use a SuVeCA apenas para localizar a forma ou o efeito no contexto.
-3. Mantenha separadas a justificativa principal e a observação sintática auxiliar.
+1. Isolar o vocábulo alvo e identificar a camada estritamente fonético-ortográfica.
+2. 1. Compreender o paradigma das 7 justificativas canônicas oficiais de acentuação gráfica da língua portuguesa.
+3. 2. Dominar as 4 regras gerais de acentuação: oxítonas, paroxítonas (regra inversa), proparoxítonas (universal) e monossílabos tônicos.
 
-> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe.
+### Testes decisivos
+
+- Teste da Separação Silábica na Margem: isolar pronomes enclíticos presos por hífen e aglutinar consoantes mudas na sílaba anterior.
+- Teste da Posição Tônica: identificar se a força expiratória recai na última (oxítona), penúltima (paroxítona), antepenúltima (proparoxítona) ou se o vocábulo é monossílabo.
+- Teste da 2ª Vogal no Hiato: verificar se o 'I' ou 'U' tônico ocupa a segunda posição do encontro vocálico, sem acompanhamento de consoante que não seja 'S' e sem ser seguido de NH.
+- Teste do Ditongo Crescente vs. Decrescente: verificar se a semivogal precede a vogal (crescente, permitindo proparoxítona eventual) ou sucede a vogal (decrescente, mantendo a palavra estritamente paroxítona).
+
+> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe. Acentuação gráfica não depende de relações de regência, concordância ampla ou papéis sintáticos oracionais; a regra decisiva é 100% fonológica e ortográfica. Acentuação gráfica não é regida nem explicada por papéis sintáticos oracionais (sujeito, objeto, adjunto).

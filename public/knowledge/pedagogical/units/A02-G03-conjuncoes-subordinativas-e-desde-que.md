@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Reconstrua apenas as relações sintáticas relevantes para a decisão.
-2. Acrescente o critério próprio do tema — morfológico, semântico, coesivo ou discursivo.
-3. Confirme que estrutura e contexto sustentam a mesma conclusão.
+1. Localizar os verbos de cada oração para delimitar a fronteira entre a oração principal e a oração subordinada iniciada pelo conectivo.
+2. Passo 1: Localizar todos os verbos e locuções verbais do período para identificar a fronteira entre as orações e destacar o conectivo subordinativo.
+3. Passo 2: Testar se a oração iniciada pelo conectivo pode ser integralmente substituída por 'ISSO' (ou 'disso'/'nisso'). Em caso afirmativo, classificar como Conjunção Integrante (sem valor semântico próprio).
+4. Passo 3: Se não couber 'ISSO', a oração é subordinada adverbial (Adjunto Adverbial). Aplicar o Mantra do Referente Posterior para analisar a ideia expressa pela oração subsequente ao conectivo.
 
-> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria.
+### Testes decisivos
+
+- Teste do 'ISSO' (ou 'disso'/'nisso'): se toda a oração subordinada puder ser substituída por 'ISSO', trata-se de Conjunção Integrante (sem valor semântico próprio).
+- Mantra do Referente Posterior: isolar a oração que vem imediatamente DEPOIS do conectivo para classificar a circunstância semântica sem inverter causa com consequência ou finalidade.
+- Regra 'O Verbo Salva' para 'desde que': verbo no Modo Subjuntivo marca Condição (= caso, contanto que); verbo no Modo Indicativo marca Tempo (= desde quando, a partir de quando).
+- Teste do Pós-Conectivo para 'uma vez que': se a oração posterior contiver fato gerador/motivo no indicativo, é Causal/Explicativa (= porque); se contiver exigência/hipótese no subjuntivo, é Condicional (= se).
+
+> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria. A SuVeCA delimita a fronteira oracional e a função macro (Complemento/Sujeito vs Adjunto), mas não determina sozinha qual dos 9 valores semânticos adverbiais está presente sem a camada semântica e a correlação modal. A SuVeCA não gera automaticamente a lista dos conectivos sinônimos nem substitui a memorização das 9 classes adverbiais ('6Cs + FTP').
 
 ---
 

@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Isolar a forma verbal ou a locução verbal na oração delimitada e perguntar obrigatoriamente pelo sujeito antes de classificar qualquer complemento ou adjunto.
+2. Passo 1: Localizar o verbo central ou locução verbal. Se for locução verbal, isole o verbo principal, pois é ele quem define a transitividade e comanda os complementos.
+3. Passo 2: Identificar o sujeito gramatical. Pergunte 'Quem/O que [verbo]?'. Se o verbo for HAVER com sentido de existir, marque 'oração sem sujeito'. Se for EXISTIR, o sintagma nominal associado é o Sujeito da oração.
+4. Passo 3: Verificar se o verbo é de Ligação. Se for o verbo SER, classifique-o como VL e o termo atributivo como Predicativo do Sujeito. Se for ESTAR ou FICAR, confira se há atribuição de estado (VL + Predicativo) ou mera localização espacial (VI + Adjunto Adverbial de Lugar).
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste do Mantra 10 (Cheiro de Circunstância): Pergunte ao termo preposicionado 'Quando? Onde? Como? Por qual motivo? Com que finalidade? A que preço?'. Resposta afirmativa indica Adjunto Adverbial; resposta de destinatário ('a quem?') sem valor circunstancial indica Objeto Indireto.
+- Teste do Mantra 11 (Com o Verbo SER Eu Sou Feliz): Substitua o verbo pela matriz relacional de estado permanente do verbo SER para confirmar a função de Predicativo do Sujeito e descartar falso Objeto Direto.
+- Teste de Conversão Haver x Existir: Se a oração contiver 'haver' existencial, o termo é Objeto Direto e o verbo fica no singular invariável; se contiver 'existir', o termo é Sujeito e obriga a flexão de concordância do verbo.
+- Teste da Substituição do Pronome LHE: Substitua o pronome 'lhe' por 'a ele/a ela' para confirmar a função de Objeto Indireto ou por 'dele/dela' para confirmar função de Adjunto Adnominal possessivo.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA estabelece a organização sintática dos termos na oração, mas a identificação de valores semânticos nas preposições, a morfologia pronominal e as regras de impessoalidade dependem de suas respectivas camadas normativas. A metáfora do trem organiza as posições funcionais da oração, mas não substitui a análise da regência verbal e do valor semântico das preposições.
 
 ---
 

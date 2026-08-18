@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Reconstrua apenas as relações sintáticas relevantes para a decisão.
-2. Acrescente o critério próprio do tema — morfológico, semântico, coesivo ou discursivo.
-3. Confirme que estrutura e contexto sustentam a mesma conclusão.
+1. Localizar o conector no período e delimitar os núcleos verbais das orações conectadas.
+2. 1. Identifique o conector destacado no período e sublinhe as formas verbais das orações conectadas.
+3. 2. Se o conector for a palavra 'COMO':
+4. a. Examine o termo ou oração imediatamente posterior ('o que vem depois salva').
 
-> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria.
+### Testes decisivos
+
+- Teste Causal ('O fato de X fez com que Y'): se o período admitir a paráfrase causal mantendo a lógica de fato gerador e consequência, o conector 'como' possui valor estritamente CAUSAL.
+- Teste Conformativo ('Nos conformes de'): se o conectivo 'como' equivaler a 'segundo', 'consoante' ou 'de acordo com o que foi dito/planejado', o valor é CONFORMATIVO.
+- Teste do Termo Posterior ('O que vem depois salva'): isolar o elemento após o 'como' para distinguir se é uma comparação (ser autônomo confrontado) ou exemplificação (membro/espécie de um hiperônimo).
+- Teste do 'Pois' Deslocado: verificar se o 'pois' está situado imediatamente após o verbo principal da oração; caso esteja no início da oração com adjunto intercalado entre vírgulas, seu valor permanece EXPLICATIVO/CAUSAL.
+
+> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria. A SuVeCA isola a arquitetura oracional e remove ruídos estruturais (intercalações), mas o teste semântico de substituição paradigmática é o critério decisivo para fixar o valor conjuntivo. A metáfora do trem não impõe uma ordem linear fixa: vagões de adjuntos e orações subordinadas podem ser antepostos, pospostos ou intercalados sem descaracterizar sua função sintática.
 
 ---
 

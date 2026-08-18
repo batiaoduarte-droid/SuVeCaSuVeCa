@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Identifique primeiro a camada linguística efetivamente cobrada.
-2. Use o mapa SuVeCA somente nos trechos em que função, referente, escopo ou encaixe sejam relevantes.
-3. Conclua pela regra própria do tema e explicite o limite da análise sintática.
+1. Identificar a predicação e a tipologia dos verbos nucleares nas sentenças de abertura e de fecho do texto.
+2. 1. Inspecionar o título e os dados da fonte bibliográfica no rodapé para levantar a hipótese tipológica preliminar.
+3. 2. Ler a primeira oração do primeiro parágrafo e a última oração do último parágrafo, aplicando a triagem SuVeCA para identificar o sujeito e o verbo nuclear.
+4. 3. Formular o teste da circularidade temática: se o encerramento retoma e sintetiza o conceito abstrato da introdução, confirmar o eixo DISSERTATIVO.
 
-> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual.
+### Testes decisivos
+
+- Teste da Retomada Circular: ligar o primeiro ao último parágrafo; se houver fechamento conceitual em torno da mesma ideia, trata-se de dissertação.
+- Teste da Empatia com o Autor: perguntar se o autor escreveu para relatar novidades/ensinar (expositivo) ou para persuadir/defender tese (argumentativo).
+- Teste da Dinâmica Temporal: substituir verbos de estado por verbos de ação; se a sequência de eventos no tempo for essencial, o texto é narrativo.
+- Teste do Descarte Instrumental: isolar os números e estatísticas; se retirados eles deixarem evidente uma tese valorativa ('situação insustentável'), o texto é argumentativo.
+
+> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual. A análise SuVeCA opera exclusivamente na identificação das marcas morfossintáticas locais da oração; a decisão sobre tipologia predominante, hibridismo discursivo, gênero textual e propósito comunicativo global pertence às camadas de texto e discurso. A estrutura SuVeCA não resolve por si só a identificação do propósito comunicativo global, que depende da pragmática do discurso e do suporte de publicação.
 
 ---
 

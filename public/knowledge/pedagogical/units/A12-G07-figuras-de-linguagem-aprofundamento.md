@@ -672,8 +672,15 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Resolva o fenômeno pela regra própria da matéria.
-2. Se houver uma oração relevante, use a SuVeCA apenas para localizar a forma ou o efeito no contexto.
-3. Mantenha separadas a justificativa principal e a observação sintática auxiliar.
+1. Localizar o verbo principal da oração e identificar se a relação predicativa é literal ou figurada, mapeando os argumentos nominais (sujeito e complementos) envolvidos.
+2. 1. Revisão e ancoragem inicial: diferenciar denotação (sentido literal) de conotação (sentido figurado) e estabelecer o mapa dos 4 eixos (palavras, pensamento, sintaxe e som).
+3. 2. Domínio do eixo de palavras: aplicar a regra dos dois elementos para distinguir Metáfora de Comparação explícita e confrontá-las com a Metonímia (1 termo expresso por contiguidade) e a Catacrese (lacuna lexical).
 
-> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe.
+### Testes decisivos
+
+- Teste dos Dois Elementos: verificar se há 2 termos presentes em correspondência analógica (Metáfora / Comparação) ou apenas 1 termo expresso ocupando o lugar de outro (Metonímia).
+- Teste do Conector Formal: verificar se a correspondência analógica é mediada por conector ('como', 'tipo') ou verbo de similitude ('parecer') para distinguir Comparação de Metáfora.
+- Teste de Insuperabilidade Lógica: verificar se as proposições opostas coexistem factualmente (Antítese) ou se anulam reciprocamente a verdade lógica (Paradoxo / Oxímoro).
+- Teste de Isolamento Sintático: verificar se o termo anteposto é objeto preposicionado reiterado por oblíquo (Pleonasmo Sintático) ou termo que sobra sem função gramatical (Anacoluto).
+
+> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe. A SuVeCA estabelece o esqueleto sintático oracional (predicação, sujeitos, complementos e conectores), mas a decodificação de tropos semânticos (metonímia, eufemismo, catacrese), julgamentos pragmáticos (ironia) e fusões perceptivas (sinestesia) depende exclusivamente das camadas semântica, pragmática e fonológica. A SuVeCA não decodifica o teor pragmático da Ironia, que depende de contexto discursivo e sinais de quebra de sentido literal.

@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Reconstrua apenas as relações sintáticas relevantes para a decisão.
-2. Acrescente o critério próprio do tema — morfológico, semântico, coesivo ou discursivo.
-3. Confirme que estrutura e contexto sustentam a mesma conclusão.
+1. Localizar o verbo motor da oração e delimitar as funções sintáticas maiores (Sujeito, Complementos, Adjuntos).
+2. Destaque o vocábulo sob análise no trecho do texto indicado pela banca.
+3. Aplique a Técnica das Setas: verifique a qual elemento a palavra se vincula sintaticamente no período.
+4. Se o termo apontar para um Substantivo: aplique o teste do 'que é / que são' para confirmar a função adjetiva e verificar se há anteposição.
 
-> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria.
+### Testes decisivos
+
+- Técnica das Setas: perguntar para qual termo a palavra aponta no contexto sintático (substantivo -> adjetivo; verbo -> advérbio; adjetivo/advérbio -> advérbio intensificador).
+- Teste do 'que é / que são': converter a relação nominal em oração adjetiva para distinguir adjetivo interposto de substantivo núcleo ('a mágica transformação' -> 'transformação que é mágica').
+- Teste da substituição por 'MUITO': verificar se o modificador de adjetivo/advérbio atua como intensificador ('bem provável' -> 'muito provável').
+- Teste interrogativo circunstancial: perguntar ao verbo 'Como?' (modo) vs. 'Quando?' (tempo) para desarmar pegadinhas com advérbios terminados em '-mente'.
+
+> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria. A SuVeCA estabelece os papéis oracionais e sintagmáticos, mas a classificação morfológica fina, a semântica circunstancial (tempo vs. modo) e a flexão normativa dependem de procedimentos diagnósticos próprios da morfologia e semântica. A metáfora do trem e o esquema SuVeCA representam relações funcionais, não uma fila linear rígida de palavras; inversões, anteposições e intercalações são comuns na língua culta.
 
 ---
 

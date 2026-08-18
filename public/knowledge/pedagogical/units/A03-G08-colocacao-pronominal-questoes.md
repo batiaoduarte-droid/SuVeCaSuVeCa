@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo ou a locução verbal na oração para estabelecer o ponto de ancoragem da colocação pronominal.
+2. Passo 1 (Verificação das 3 Proibições Absolutas): Checar se o pronome ficaria em início absoluto de oração, em ênclise a verbo no futuro (do presente ou do pretérito) ou em ênclise a particípio. Se incidir em qualquer dessas proibições, a posição é incorreta.
+3. Passo 2 (Verificação da Regra Geral de Atração): Identificar se há palavra invariável anteposta ao verbo (advérbio sem vírgula, conjunção subordinativa, palavra negativa, preposição) ou classe variável atrativa (pronome relativo ou pronome indefinido) antes do verbo. Em caso afirmativo, a próclise é obrigatória.
+4. Passo 3 (Verificação das 2 Exceções Soberanas): Checar se o verbo principal está no infinitivo (aceita ênclise soberana mesmo com palavra atrativa) ou se o elemento anterior é conjunção coordenativa (permite próclise ou ênclise facultativa).
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste do Verbo Irregular (Fazer/Dizer vs. Fizer/Disser): substitui-se o verbo regular terminado em -r por fazer/dizer (se encaixar, é infinitivo e aceita ênclise) ou por fizer/disser (se encaixar, é futuro do subjuntivo e exige próclise com atrator).
+- Teste do Plural da Palavra Anteposta: flexiona-se a palavra que antecede o verbo; se flexionar (ex.: eu/nós, este/estes), é palavra variável e não atrai (salvo relativos e indefinidos); se for invariável (ex.: não, jamais, onde), exerce atração obrigatória.
+- Teste do Hífen na Locução Verbal: em locuções verbais com palavra atrativa, o pronome pode vir próclito ao auxiliar, próclito ao principal sem hífen ou enclítico ao gerúndio/infinitivo; a única forma proibida é o hífen associado ao verbo auxiliar.
+- Teste da Omissão da Intercalação: retira-se mentalmente o segmento adverbial isolado por vírgulas casadas para comprovar se a oração já se iniciou no sujeito expresso, validando a próclise facultativa ao verbo subsequente.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA delimita a fronteira da oração, a posição do sujeito e a função dos adjuntos antecipados ou intercalados; a decisão final quanto à próclise, ênclise ou mesóclise exige a aplicação de regras morfológicas e convenções normativas de colocação dos clíticos. A SuVeCA organiza a identificação das funções sintáticas e os limites da oração, mas não cria nem substitui as regras fonotáticas, morfológicas e normativas de colocação pronominal.
 
 ---
 

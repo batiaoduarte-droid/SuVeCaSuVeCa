@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Reconstrua apenas as relações sintáticas relevantes para a decisão.
-2. Acrescente o critério próprio do tema — morfológico, semântico, coesivo ou discursivo.
-3. Confirme que estrutura e contexto sustentam a mesma conclusão.
+1. Localizar o verbo ou locução verbal para delimitar as orações e mapear os sintagmas nominais que ocupam as posições de Sujeito, Complementos, Aposto ou Predicativo.
+2. Passo 1: Isolar o par de vocábulos solicitado no comando da questão (Termo 1 e Termo 2).
+3. Passo 2: Avaliar a equivalência semântica no cotexto: se operam no mesmo patamar referencial sem inclusão de classe, classificar como SINONÍMIA CONTEXTUAL (ex.: ceia/jantar, telas/quadros).
+4. Passo 3: Se não forem sinônimos, aplicar o teste lógico-categorial: 'T1 é um TIPO DE T2' OU 'T2 é um TIPO DE T1'?
 
-> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria.
+### Testes decisivos
+
+- Teste do 'Tipo de' para inclusão categorial: '[Termo A] é um TIPO DE [Termo B]?' (Se verdadeiro, A é hipônimo e B é hiperônimo).
+- Teste de Patamar Semântico para Sinonímia: '[Termo A] e [Termo B] possuem o mesmo nível referencial e podem ser permutados no contexto sem alteração de extensão?'
+- Teste da Direcionalidade Relacional: 'Qual é o papel do PRIMEIRO termo citado no comando?' (Se o 1º for específico = Hiponímia; se o 1º for geral = Hiperonímia).
+- Teste do Método 'Manda a Seta / Recebe a Seta': 'O termo coesivo aponta para trás (Anáfora) ou antecipa termo posterior (Catáfora)?'
+
+> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria. A SuVeCA delimita a fronteira dos sintagmas e orações, mas a determinação categorial de gênero e espécie e a distinção entre sinonímia e hiponímia pertencem estritamente à semântica lexical. A metáfora do trem e o mapa SuVeCA organizam as posições estruturais dos sintagmas, mas não substituem a semântica lexical nem o teste ontológico do 'tipo de'.
 
 ---
 

@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo ou a locução verbal na oração em análise para estabelecer a predicação central.
+2. 1. Delimite a oração e localize o verbo principal (ou locução verbal).
+3. 2. Determine o sujeito para confirmar a integridade da concordância e a delimitação do predicado.
+4. 3. Aplique o Teste Diagnóstico do Substantivo Masculino ('o menino' vs. 'ao menino') ao verbo:
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste Operacional do 'Menino' : Substituir mentalmente o complemento por 'o menino' (VTD -> o/a) ou 'ao menino' (VTI -> lhe/lhes).
+- Teste de Reescrita Possessiva : Trocar o pronome oblíquo acoplado ao verbo por 'dele/dela' ou 'seu/sua' associado ao substantivo; se mantiver sentido, classifica-se como Adjunto Adnominal.
+- Teste da Balança Bitransitiva : Inspecionar se o VTDI já possui um complemento preposicionado; se houver, o pronome inserido é obrigatoriamente direto (o/a) para evitar duplicidade de O.I.
+- Teste da Flecha Invertida em Relativos : Traçar a flecha de regência a partir do verbo posposto dentro da oração adjetiva em direção à preposição anteposta ao relativo.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA resolve a delimitação da oração, a identificação das vagas de complementos e a estruturação da bitransitividade; ela não decide a acomodação fonética de alomorfes (-lo/-no), a invariância morfológica de gênero de 'lhes', nem os desvios semânticos lexicais de verbos com dupla regência. A metáfora do trem não deve ser utilizada para justificar a morfologia interna de flexão invariável de gênero de 'lhes'.
 
 ---
 

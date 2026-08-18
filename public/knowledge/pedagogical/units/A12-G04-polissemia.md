@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Reconstrua apenas as relações sintáticas relevantes para a decisão.
-2. Acrescente o critério próprio do tema — morfológico, semântico, coesivo ou discursivo.
-3. Confirme que estrutura e contexto sustentam a mesma conclusão.
+1. Localizar o vocábulo polissêmico em seu ambiente oracional e mapear o verbo e os sintagmas vizinhos imediatos (sujeito, complementos e adjuntos).
+2. Passo 1: Verificar se os vocábulos confrontados possuem grafia 100% idêntica e pronúncia rigorosamente igual (descartando homófonos e homógrafos imperfeitos).
+3. Passo 2: Avaliar se os sentidos nos enunciados divergem a partir de uma mesma matriz lexical (confirmando polissemia/homonímia perfeita).
+4. Passo 3: Mapear a oração SuVeCA e verificar se adjuntos ou complementos atuam como restritores imediatos que neutralizam o duplo sentido.
 
-> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria.
+### Testes decisivos
+
+- Teste do Dicionário Mental: isolar a palavra e checar se sob a mesma entrada formal constam múltiplas acepções numeradas.
+- Teste da Identidade Formal Bilateral: confrontar grafia e fonética; havendo alteração de letra (cesta/sexta) ou de timbre (colher/colher), descarta-se polissemia.
+- Teste do Restritor Cotextual: verificar se adjetivos descritivos ou termos correlatos no predicado eliminam as demais acepções, neutralizando a polissemia na frase.
+- Teste das Duas Setas (FGV): traçar conexões simultâneas entre a palavra-chave, a atividade do emissor entre parênteses e o sentido comum da frase.
+
+> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria. A análise SuVeCA delimita os elementos cotextuais da oração, mas a validação das acepções dicionarizadas e da matriz etimológica pertence à semântica lexical. A SuVeCA organiza as funções gramaticais na oração, mas não gera as definições lexicais presentes no dicionário.
 
 ---
 

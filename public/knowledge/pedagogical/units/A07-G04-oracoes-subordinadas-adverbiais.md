@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar e delimitar todas as formas verbais ou locuções verbais do período composto para isolar a oração principal e a oração dependente.
+2. 1. Localizar os verbos e locuções verbais do período composto, demarcando a fronteira entre a oração principal e a oração dependente.
+3. 2. Reconstituir mentalmente o verbo subentendido caso haja comparação correlativa com elipse verbal ('Ele é inteligente como o pai [é]').
+4. 3. Identificar o conectivo ou locução introdutória da oração subordinada adverbial.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste Operacional de Causalidade: Inserir os fatos na fórmula universal 'O fato de [Causa] fez com que acontecesse [Consequência]'. O segmento que preenche 'O fato de' é Causal; o segmento que preenche 'fez com que' é Consecutiva.
+- Mecanismo dos 4 T's para Consecutivas: Buscar na oração principal os intensificadores 'tão', 'tanto', 'tamanho' ou 'tal' correlacionados à conjunção 'que' na oração subordinada.
+- Mantra da Causa Futura para Condicionais: Verificar se a oração com 'se'/'caso' atua como pré-requisito hipotético (possível causa) para a concretização do efeito na oração principal (possível consequência).
+- Teste de Reconstituição da Elipse na Comparativa: Inserir explicitamente o verbo subentendido após o segundo termo para comprovar a existência da oração subordinada comparativa ('Ele é rápido como o leopardo [é rápido]').
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA delimita com rigor a fronteira oracional e estabelece que a oração subordinada adverbial atua como Adjunto Adverbial ('A') do verbo principal; no entanto, a determinação da circunstância específica entre as 9 subclasses e a análise discursiva dependem da camada semântico-conjuntiva. A metáfora do trem auxilia a visualizar que uma oração inteira é o adjunto da outra, mas não substitui a memorização das conjunções prototípicas nem o teste semântico de causalidade.
 
 ---
 

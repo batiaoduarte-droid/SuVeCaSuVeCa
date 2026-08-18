@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Identifique primeiro a camada linguística efetivamente cobrada.
-2. Use o mapa SuVeCA somente nos trechos em que função, referente, escopo ou encaixe sejam relevantes.
-3. Conclua pela regra própria do tema e explicite o limite da análise sintática.
+1. Localizar os núcleos verbais para delimitar as orações e identificar em quais posições sintáticas situam-se os conectores e pronomes.
+2. Passo 1: Localizar os núcleos verbais e delimitar as orações do período.
+3. Passo 2: Verificar se a questão exige análise da progressão lógica entre orações (coesão sequencial) ou identificação do vínculo entre pronomes e entidades substantivas (coesão referencial).
+4. Passo 3: Se o foco for coesão sequencial, identificar o conector (conjunção ou preposição) e classificar a relação lógico-semântica (adversidade, causa, conclusão, finalidade, etc.).
 
-> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual.
+### Testes decisivos
+
+- Teste da Substituição Conectiva (Coesão Sequencial): Substituir a preposição que encabeça a oração reduzida por uma conjunção subordinativa equivalente (ex.: 'por ter perdido' = 'porque perdeu') para comprovar seu papel de operador sequencial.
+- Teste do Vetor Referencial ('Setas Salvam'): Traçar graficamente o vetor a partir do pronome/termo vicário até o substantivo núcleo apontado para definir com certeza a direcionalidade (retrospectiva = anáfora; prospectiva = catáfora).
+- Teste da Comutação Referencial: Substituir temporariamente o pronome pelo substantivo referente apontado no texto; a manutenção da integridade gramatical e semântica valida a identificação correta do referente.
+- Teste de Autonomia entre Coesão e Coerência: Verificar se a reescrita ou substituição de conectivos preserva a amarração formal de superfície sem gerar contradição lógica com o sentido discursivo global.
+
+> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual. A análise SuVeCA resolve a estrutura sintática interna de cada oração; o valor lógico-semântico dos nexos interoracionais e a correferencialidade entre termos distantes no texto pertencem às camadas de coesão, semântica e discurso. A metáfora do trem não impõe uma ordem linear obrigatória de palavras na superfície da frase, admitindo deslocamentos, inversões e elipses.
 
 ---
 

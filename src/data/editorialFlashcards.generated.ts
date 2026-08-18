@@ -1265,13 +1265,13 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
-    "id": "editorial-flash-ip-a05-g08-misconceptions-and-traps-029",
+    "id": "editorial-flash-ip-a05-g08-misconceptions-and-traps-022",
     "source": "suveca",
     "topic": "Reescritura de Vozes - Partes 04 a 07",
-    "front": "Qual erro deve ser evitado em Não descartar verbos de uma locução?",
-    "back": "Na passagem da sintética para a ativa, uma locução verbal já existente continua com o mesmo conjunto essencial de formas; o acréscimo sistemático de um verbo ocorre na passagem para a analítica, pela entrada de ser.",
+    "front": "Qual erro deve ser evitado em Pegadinha do Agente Inexistente vs. Agente Indeterminado (Cebraspe)?",
+    "back": "Erro comum: Marcar como \"certo\" item que afirma que o agente da passiva na oração sintética (*Vende-se casa*) é \"inexistente\". Forma correta: O agente existe factualmente, mas é sintaticamente indeterminado (026:, 028: ).",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
-    "explanation": "Na passagem da sintética para a ativa, uma locução verbal já existente continua com o mesmo conjunto essencial de formas; o acréscimo sistemático de um verbo ocorre na passagem para a analítica, pela entrada de ser.",
+    "explanation": "Erro comum: Marcar como \"certo\" item que afirma que o agente da passiva na oração sintética (*Vende-se casa*) é \"inexistente\". Forma correta: O agente existe factualmente, mas é sintaticamente indeterminado (026:, 028: ).",
     "sourceRefs": [
       "EDITORIAL:IP-A05-G08"
     ],
@@ -1281,13 +1281,13 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
-    "id": "editorial-flash-ip-a05-g08-misconceptions-and-traps-024",
+    "id": "editorial-flash-ip-a05-g08-misconceptions-and-traps-023",
     "source": "suveca",
     "topic": "Reescritura de Vozes - Partes 04 a 07",
-    "front": "Qual erro deve ser evitado em O sujeito precisa realmente sofrer a ação?",
-    "back": "A mera possibilidade formal de montar ser + particípio não garante que a paráfrase represente o sentido da frase. A abordagem didática exige verificar se há paciente real.",
+    "front": "Qual erro deve ser evitado em Confundir Sujeito Determinado Paciente com Sujeito Indeterminado (Cebraspe)?",
+    "back": "Erro comum: Classificar orações passivas sintéticas (*Alugam-se salas*) como tendo \"sujeito indeterminado\". Forma correta: O sujeito é determinado paciente (*salas*); quem é indeterminado é o agente da passiva (030: ).",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
-    "explanation": "A mera possibilidade formal de montar ser + particípio não garante que a paráfrase represente o sentido da frase. A abordagem didática exige verificar se há paciente real.",
+    "explanation": "Erro comum: Classificar orações passivas sintéticas (*Alugam-se salas*) como tendo \"sujeito indeterminado\". Forma correta: O sujeito é determinado paciente (*salas*); quem é indeterminado é o agente da passiva (030: ).",
     "sourceRefs": [
       "EDITORIAL:IP-A05-G08"
     ],

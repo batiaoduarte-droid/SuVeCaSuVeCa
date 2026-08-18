@@ -657,8 +657,15 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Resolva o fenômeno pela regra própria da matéria.
-2. Se houver uma oração relevante, use a SuVeCA apenas para localizar a forma ou o efeito no contexto.
-3. Mantenha separadas a justificativa principal e a observação sintática auxiliar.
+1. Localizar a forma verbal sob teste no período e delimitar os limites da oração à qual ela pertence.
+2. 1. Fixação dos paradigmas dos quatro verbos primitivos matrizes (TER, VER, VIR, PÔR) e dos três líderes regulares (AMAR, BEBER, PARTIR).
+3. 2. Treinamento sistemático do Algoritmo dos 4 Passos para isolar o infinitivo e acoplar prefixos sem violar a fidelidade ao líder.
 
-> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe.
+### Testes decisivos
+
+- Teste do 'Ontem' para Pretérito Perfeito de formas curtas: 'Ontem eu vim' (VIR), 'Ontem eu vi' (VER), 'Ontem eu pus' (PÔR).
+- Teste de Substituição Léxica para VER vs. VIR: substituir mentalmente por 'enxergar' (VER -> vir/virem) ou 'chegar' (VIR -> vier/vierem).
+- Teste da Rodinha do 'Hoje' para o Presente do Indicativo na 1ª pessoa: 'Hoje eu provejo' (PROVER) versus 'Hoje eu provo' (PROVAR).
+- Teste do Verbo Errado da Banca como Pista: extrair a desinência temporal da alternativa incorreta para acertar o tempo no Passo 3 (ex.: 'contessem' -> terminação -ssem -> imperfeito do subjuntivo -> 'tivessem' -> 'contivessem').
+
+> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe. O procedimento SuVeCA estabelece as restrições sintáticas de sujeito, tempo e subordinação; a flexão final da forma irregular é concluída pelo algoritmo mecânico da morfologia verbal. A SuVeCA não substitui a retenção das tabelas de verbos anômalos e irregulares primitivos.

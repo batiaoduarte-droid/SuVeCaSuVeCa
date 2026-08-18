@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo principal da oração e examinar sua predicação (ligação, intransitivo ou transitivo direto/indireto).
+2. Passo 1: Localizar o verbo da oração e determinar sua predicação (de ligação, intransitivo, transitivo direto, transitivo indireto ou transobjetivo).
+3. Passo 2: Delimitar o Sujeito e isolar o bloco do Predicado.
+4. Passo 3: Identificar todos os modificadores adjetivos e qualificadores da oração e rastrear para qual núcleo substantivo apontam ('vetor relacional').
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste de Flexão Morfológica (Predicativo vs. Advérbio de Modo): Flexionar o sujeito em gênero e número; se o termo qualificador variar em concordância, é adjetivo (Predicativo do Sujeito); se permanecer invariável, é advérbio (Adjunto Adverbial de Modo).
+- Teste do Verbo de Ligação Elíptico ('e estava'): Inserir a conjunção aditiva com verbo de estado ('A mulher chegou [e estava] cansada'); a fluidez semântica confirma o predicativo do sujeito em predicado verbo-nominal.
+- Teste de Supressão Semântica (Adjunto Adnominal vs. Predicativo do Objeto): Omitir o termo adjetivo; se a predicação verbal mantiver seu sentido original ('Comprei a carteira'), trata-se de Adjunto Adnominal; se o verbo mudar de significado ou a predicação ficar truncada ('Considero a carteira' -> 'ter apreço'), trata-se de Predicativo do Objeto.
+- Teste de Deslocamento Posicional do Predicativo do Objeto: Antepor o termo adjetivo ao objeto direto, aproximando-o do verbo ('Consideraram difícil a prova'); a aceitabilidade gramatical confirma o Predicativo do Objeto, ao passo que a agramaticalidade ('Resolveram difícil a questão') confirma o Adjunto Adnominal.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA delimita os constituintes funcionais da oração (Su-Ve-C-A), mas a distinção fina entre estado e modo e entre termo acessório e integrante exige o teste morfológico de flexão e o teste semântico de supressão. A metáfora visual não substitui a avaliação morfológica de invariabilidade no caso dos advérbios.
 
 ---
 

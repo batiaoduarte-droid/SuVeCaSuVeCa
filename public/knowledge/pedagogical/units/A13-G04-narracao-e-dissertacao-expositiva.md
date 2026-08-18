@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Identifique primeiro a camada linguística efetivamente cobrada.
-2. Use o mapa SuVeCA somente nos trechos em que função, referente, escopo ou encaixe sejam relevantes.
-3. Conclua pela regra própria do tema e explicite o limite da análise sintática.
+1. Identificar a forma e o tempo do núcleo verbal (Ve) e os adjuntos adverbiais temporais (A) para registrar as marcas cronológicas da oração.
+2. Passo 1: Verificar se o comando da questão indaga sobre a tipologia global ou sobre um parágrafo/trecho isolado.
+3. Passo 2: Ler os parágrafos introdutório e conclusivo para mapear o objetivo central do texto.
+4. Passo 3: Questionar a finalidade do autor: (a) relatar fatos particulares de personagens (Narração); (b) expor conceitos, dados e novidades sobre um assunto (Dissertação Expositiva/Informativa); (c) defender tese e persuadir o leitor (Dissertação Argumentativa).
 
-> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual.
+### Testes decisivos
+
+- Teste da Intenção Autoral: Indagar se o autor visa contar uma história de personagens ou expor informações sobre um tema.
+- Teste do Tema Central ('Mantra'): Verificar se o parágrafo/texto pode ser resumido por um título temático conceitual ou científico.
+- Teste Mental do 'Era uma vez...': Tentar iniciar o texto com a fórmula narrativa clássica; se soar incoerente diante da matéria informativa, trata-se de dissertação.
+- Teste do Estatuto da Citação: Verificar se declarações e opiniões entre aspas são de terceiros (fato noticiado = expositivo) ou se expressam juízo de valor autoral direto (tese = argumentativo).
+
+> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual. A identificação de SuVeCA e de marcas temporais isoladas não define o tipo textual; a decisão depende da intenção comunicativa do autor e da vinculação a um tema central. A análise de SuVeCA isolada em uma oração é insuficiente para categorizar o gênero ou a tipologia textual do texto integral.
 
 ---
 

@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Reconstrua apenas as relações sintáticas relevantes para a decisão.
-2. Acrescente o critério próprio do tema — morfológico, semântico, coesivo ou discursivo.
-3. Confirme que estrutura e contexto sustentam a mesma conclusão.
+1. Localizar o verbo ou locução verbal da oração para identificar se a palavra destacada se refere diretamente à ação/estado verbal ou se modifica um adjetivo/advérbio no interior de um sintagma.
+2. Passo 1: Localizar a forma verbal principal da oração e delimitar os termos oracionais e sintagmáticos.
+3. Passo 2: Desenhar a seta sintática de subordinação do vocábulo examinado até o seu núcleo referente.
+4. Passo 3: Se o referente for um substantivo, classificar a palavra como adjetivo (adjunto adnominal ou predicativo); rejeitar categoricamente qualquer classificação de advérbio ou circunstância de modo.
 
-> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria.
+### Testes decisivos
+
+- Teste da Seta de Referência Sintática (Substantivo vs Verbo/Adjetivo/Advérbio)
+- Teste de Flexão de Plural para Invariabilidade (Advérbio Invariável + VI vs Adjetivo Variável + VL)
+- Teste de Substituição por 'Muito' para Validação de Intensificador
+- Teste do 'Modo = Jeito' para Validação de Advérbio Modificador Verbal
+
+> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria. A SuVeCA atua com precisão ao identificar a função sintática de adjunto adverbial vinculado ao verbo e ao estruturar a oração em ordem direta. No entanto, a determinação do valor semântico específico (ex.: distinguir modo de tempo em palavras como 'raramente' ou reconhecer a ambivalência de 'nunca') e o exame de modificadores sintagmáticos internos (como 'bem provável') exigem a aplicação direta das camadas morfológica, lexical e semântica. A metáfora do trem e o esquema SuVeCA mapeiam com clareza as relações oracionais (quando o advérbio modifica o verbo como adjunto), mas não explicam por si sós as gradações semânticas internas aos sintagmas nominais ou adjetivais (ex.: 'recursos bem diferentes').
 
 ---
 

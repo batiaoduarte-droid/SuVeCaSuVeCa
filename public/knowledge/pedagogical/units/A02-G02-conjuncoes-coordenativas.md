@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Reconstrua apenas as relações sintáticas relevantes para a decisão.
-2. Acrescente o critério próprio do tema — morfológico, semântico, coesivo ou discursivo.
-3. Confirme que estrutura e contexto sustentam a mesma conclusão.
+1. Localizar os verbos e locuções verbais para delimitar as orações coordenadas e identificar a posição dos conectivos.
+2. 1. Identificar todos os núcleos verbais do período para segmentar as orações coordenadas autônomas.
+3. 2. Para o conectivo 'POIS': verificar se está antes do verbo (explicativo = 'porque') ou após o verbo/deslocado (conclusivo = 'portanto').
+4. 3. Para o conectivo 'NEM': checar se há negação antecedente no período; se houver, classificar como conjunção aditiva ('= e não') e proibir vírgula e conjunção 'e'; se estiver isolado no início, classificar como advérbio de negação.
 
-> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria.
+### Testes decisivos
+
+- Teste do 'Pois' Pós-Verbal: substituir mentalmente o 'pois' deslocado por 'portanto'; se mantiver sentido e coesão, trata-se de conjunção conclusiva.
+- Teste do 'Pois' Pré-Verbal: substituir mentalmente o 'pois' em início de oração por 'porque'; se justificar a oração anterior (especialmente com verbo imperativo), trata-se de conjunção explicativa.
+- Teste de Negação Prévia do 'NEM': se houver palavra negativa antes, 'nem' equivale a 'e não' (conjunção aditiva sem vírgula); se não houver negação antecedente, trata-se de advérbio.
+- Teste de Polaridade das Adversativas: atribuir sinal (+) para fatos favoráveis e (-) para desfavoráveis; se conectar (+) a (-), há oposição/contraste estrito; se mantiver a mesma polaridade, há restrição/ressalva.
+
+> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria. A análise SuVeCA resolve a identificação dos núcleos verbais, a delimitação das orações e a checagem da posição dos conectivos (como o 'pois' deslocado), mas a determinação do valor semântico exato (ex.: oposição vs. restrição, alternância vs. exclusão) e a memorização das listas canônicas pertencem à camada semântico-discursiva e lexical. A análise SuVeCA delimita orações e posições verbais, mas não gera por dedução puramente sintática as listas de conectivos nem seus valores contextuais específicos.
 
 ---
 

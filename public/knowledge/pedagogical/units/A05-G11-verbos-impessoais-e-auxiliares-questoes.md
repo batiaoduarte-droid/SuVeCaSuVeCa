@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o predicado verbal ou a locução verbal no período para estabelecer o núcleo do slot Verbo (Ve).
+2. Passo 1: Localizar a forma verbal ou locução verbal do enunciado e isolar a oração.
+3. Passo 2: Executar o teste interrogativo de sujeito ('Quem é que [verbo]?' / 'O que é que [verbo]?').
+4. Passo 3: Se houver termo substantivo ou oração substantiva respondendo à pergunta, classificar o verbo como pessoal e verificar a concordância no slot Su.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste Interrogativo de Sujeito: aplicar 'Quem é que [verbo]?' ou 'O que é que [verbo]?'. A obtenção de resposta substantiva ou oracional comprova que o verbo é pessoal.
+- Teste da Substituição Haver/Existir: substituir 'haver' por 'existir'. Se a substituição for válida, 'haver' é impessoal (termo seguinte é objeto direto) e 'existir' é pessoal (termo seguinte é sujeito).
+- Teste do Mantra da Locução Verbal: localizar o último verbo (sempre o principal, em forma nominal) e os verbos anteriores (auxiliares que absorvem tempo, modo, número e pessoa).
+- Teste da Crase em Expressões Temporais Femininas: sem crase ('A tarde escurece'), trata-se de sujeito substantivo (verbo pessoal); com crase ('À tarde escurece'), trata-se de adjunto adverbial de tempo (oração sem sujeito).
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A análise SuVeCA resolve a demarcação posicional de Sujeito, Verbo, Complementos e Adjuntos, mas não substitui a verificação semântica de sentido figurado versus próprio nem as regras morfológicas de flexão verbal de tempos compostos. A metáfora do trem não substitui o domínio das desinências modo-temporais e número-pessoais da morfologia.
 
 ---
 

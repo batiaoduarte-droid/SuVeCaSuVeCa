@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo ou locução verbal da oração principal e delimitar o segmento verbal subordinado em forma nominal.
+2. Passo 1: Localize o verbo da oração subordinada e verifique se está no infinitivo (-r/-rem), gerúndio (-ndo) ou particípio (-do/irregular) sem conectivo conjuncional ou relativo explícito.
+3. Passo 2: Execute o Teste do 'ISSO': substitua a oração por 'ISSO', 'DISSO' ou 'A ISSO'. Se fizer sentido gramatical perfeito, classifique como SUBSTANTIVA. Pergunte ao verbo da OP: 'O que é que [verbo]?' -> Subjetiva; 'Quem [verbo], [verbo] isso' -> Objetiva Direta; se preposicionada, use a Técnica das Setas (seta para verbo -> Objetiva Indireta; seta para nome -> Completiva Nominal); se após verbo de ligação -> Predicativa.
+4. Passo 3: Se não aceitar 'ISSO', verifique se a oração qualifica substantivo antecedente e admite conversão para 'QUE + verbo flexionado'. Se sim, classifique como ADJETIVA (sem vírgula = Restritiva; com vírgula = Explicativa).
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste do 'ISSO' / 'DISSO' / 'A ISSO' para isolamento instantâneo de orações subordinadas substantivas reduzidas.
+- Técnica das Setas: traçar vetor da oração preposicionada para o termo regente (seta para Verbo -> Objetiva Indireta; seta para Nome -> Completiva Nominal).
+- Teste da Pergunta do Sujeito ('O que é que [verbo]?') para identificar sujeitos oracionais pospostos a verbos unipessoais e predicados nominais.
+- Descarte Rápido de Sujeito Preposicionado: eliminação automática de alternativas com preposição quando a questão solicitar sujeito oracional.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA organiza a função sintática da oração no período, mas a identificação morfológica das formas nominais e o valor semântico de preposições e circunstâncias exigem análise morfossemântica complementar. A metáfora do trem não substitui a morfologia verbal que distingue tempos finitos de formas nominais.
 
 ---
 

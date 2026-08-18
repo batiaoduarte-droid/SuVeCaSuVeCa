@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Identificar a terminação morfológica do verbo (-r, -ndo, -do ou forma irregular reduzida) e determinar se atua como elemento nominal na oração, se integra locução verbal ou se introduz oração reduzida.
+2. Passo 1 (Particípio em Locuções): Identificar se o verbo pertence ao quarteto do 'Vale Tudo' (ganhar, gastar, pegar, pagar). Se sim, qualquer forma de particípio é legítima com qualquer auxiliar. Se não, verificar se é abundante: com ter/haver, usar regular em -do; com ser/estar/ficar, usar irregular sem -do.
+3. Passo 2 (Verbos Não Abundantes): Se o particípio for de 'chegar' ou 'trazer', usar exclusivamente 'chegado' e 'trazido', banindo 'chego' e 'trago' com auxiliares.
+4. Passo 3 (Classificação do Infinitivo): Diante de verbo terminado em -r/-res/-rmos/-rem, formular a pergunta de agente. Havendo sujeito determinado expresso ou contextual, classificar como infinitivo pessoal (flexionado ou não flexionado); inexistindo sujeito determinado, classificar como infinitivo impessoal.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste do Auxiliar para Particípio: Ter/Haver exige particípio regular em -do (havia limpado); Ser/Estar/Ficar exige particípio irregular sem -do (estava limpo).
+- Teste do Vale Tudo: Para ganhar, gastar, pegar e pagar, qualquer particípio é correto com qualquer verbo auxiliar (havia pago/havia pagado; foi gasto/foi gastado).
+- Teste FAZER / FIZER: Substituir o verbo regular duvidoso por FAZER (infinitivo) ou FIZER (futuro do subjuntivo) para resolver homografias em provas.
+- Teste DIZER / DISSER: Substituição auxiliar por DIZER (infinitivo) ou DISSER (futuro do subjuntivo) para validar o regime sintático do conector.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A análise SuVeCA resolve o enquadramento funcional e a relação sintática entre orações, mas a determinação de paradigmas flexionais irregulares, inventários de abundância e desambiguações homográficas exige a aplicação de procedimentos morfológicos e semânticos complementares. A metáfora do trem não automatiza o reconhecimento de verbos de particípio único (como chegado e trazido), cuja proibição de formas curtas decorre do léxico morfológico.
 
 ---
 

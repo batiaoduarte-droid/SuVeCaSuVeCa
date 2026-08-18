@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Reconstrua apenas as relações sintáticas relevantes para a decisão.
-2. Acrescente o critério próprio do tema — morfológico, semântico, coesivo ou discursivo.
-3. Confirme que estrutura e contexto sustentam a mesma conclusão.
+1. Localizar o verbo significativo de cada período ou oração e delimitar o núcleo oracional básico (sujeito + verbo + complementos diretos).
+2. Passo 1: Delimitar os blocos textuais com colchetes ([Bloco 1] e [Bloco 2]) e sublinhar o verbo significativo de cada oração ('o verbo salva'). Se o verbo for de ligação, sublinhar o predicativo.
+3. Passo 2: Isolar e ignorar adjuntos adverbiais intercalados longos para extrair o núcleo proposicional Su-Ve-C de cada bloco.
+4. Passo 3: Mapear termos anafóricos com setas para confirmar a identidade dos sujeitos e objetos de ambos os blocos.
 
-> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria.
+### Testes decisivos
+
+- Teste mental de causalidade: 'O fato de [1º fato / Causa] fez com que [2º fato / Consequência]'. A conjunção causal só cabe antes do 1º fato; a conclusiva/consecutiva só cabe antes do 2º fato.
+- Mantra do posicionamento: 'A conjunção recebe o nome da oração que vem depois dela / O que vem depois salva'. Isolar o conectivo e testar exclusivamente a oração subsequente.
+- Marcador do modo imperativo ('Com imperativo, eu sou feliz'): havendo verbo no modo imperativo na 1ª oração, a 2ª oração é de explicação/justificativa (exige 'pois', 'porque', 'que').
+- Teste de oposição real (+ vs -): confrontar os núcleos proposicionais. Se houver contradição/ressalva, cabe conector adversativo/concessivo; se houver reafirmação da mesma ideia sob outras palavras, conectores opositivos são nulos.
+
+> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria. A SuVeCA isola o núcleo de cada oração e remove o ruído sintático, mas a validação semântica da relação lógica (nexo causal, quebra de expectativa, ilustração) e o valor fixo dos conectivos exigem regras da camada semântico-discursiva. A metáfora do trem não determina por si só se dois fatos possuem nexo causal ou explicativo no mundo real.
 
 ---
 

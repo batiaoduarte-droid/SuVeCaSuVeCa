@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Identificar e sublinhar todos os verbos e locuções verbais do período composto, delimitando as fronteiras de cada oração.
+2. 1. Localize todos os verbos e locuções verbais presentes no período, dividindo a sentença em suas orações constituintes.
+3. 2. Se houver locução verbal, identifique o tempo e o modo expressos pelo verbo auxiliar, desconsiderando a forma nominal do verbo principal.
+4. 3. Determine o tempo do primeiro verbo (ou do verbo da oração principal) para definir o eixo cronológico de referência: Eixo do Presente ou Eixo do Pretérito.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste da Bússola Temporal: O tempo verbal da oração dependente pertence ao mesmo eixo cronológico (Presente/Futuro ou Pretérito/Hipótese) definido pelo verbo de partida?
+- Teste da Independência Modal: A eventual diferença de modo (Indicativo vs. Subjuntivo) ocorre dentro do mesmo tempo cronológico, respeitando a regência da oração?
+- Teste dos Amigos do Futuro: Em construções com Futuro do Pretérito (-ria), a oração condicional correspondente traz obrigatoriamente Pretérito Imperfeito do Subjuntivo (-sse)?
+- Teste do Gatilho Concessivo: Diante de 'mesmo que' ou 'embora', qualquer forma verbal conjugada no Modo Indicativo foi sumariamente eliminada?
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. O procedimento SuVeCA atua com precisão no isolamento dos núcleos verbais de cada oração e na decomposição sintática do período. Contudo, a validação da adequação temporal depende das matrizes morfológicas de correlação e da coerência semântica discursiva, que extrapolam a análise do termo oracional isolado. A SuVeCA e a metáfora do trem auxiliam na identificação dos núcleos verbais em cada oração, mas não determinam autonomamente quais tempos são compatíveis; isso é governado pelas regras de interclausalidade e semântica temporal.
 
 ---
 

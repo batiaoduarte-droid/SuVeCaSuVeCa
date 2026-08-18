@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo principal da oração e determinar sua predicação em relação ao sujeito canônico.
+2. Passo 1: Isole o verbo da oração e determine o sujeito (pergunta 'quem é que...?').
+3. Passo 2: Se houver pronome oblíquo sob análise, execute o 'Macete do Menino' (encaixe 'o menino' -> VTD -> complemento é OD; encaixe 'ao menino' -> VTI -> complemento é OI). Nunca use 'a mim' ou 'a alguém' como teste.
+4. Passo 3: Se a questão pedir substituição de termo sublinhado, observe o termo inicial: artigo definido exige pronome do Grupo 1 (o, a, os, as); preposição exige pronome do Grupo 2 (lhe, lhes).
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste do Macete do Menino: substituir o pronome por 'o menino' (ausência de preposição indica VTD e Objeto Direto) ou por 'ao menino' (presença da preposição 'a' indica VTI/VTDI e Objeto Indireto).
+- Teste da Sobra na Ordem Direta: reorganizar a oração no padrão Sujeito + Verbo + Complemento; se o pronome oblíquo átono não tiver vaga sintática própria e reiterar termo antecipado, confirma-se o Objeto Pleonástico.
+- Teste do Termo Sublinhado: verificar a palavra inicial do sintagma destacado (artigo definido direciona para o/a/os/as; preposição regencial direciona para lhe/lhes).
+- Teste da Unidade Verbal: verificar se os dois complementos referem-se ao mesmo núcleo verbal (pleonasmo sintático) ou a orações distintas com verbos diferentes ('Comprei esta casa; vendi-a' -> não é pleonasmo).
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA estrutura e delimita as posições de sujeito, verbo e complementos, mas a seleção de preposições regenciais específicas, as licenças poéticas catafóricas e as regras de colocação pronominal dependem de normas complementares de regência e sintaxe. A metáfora do trem não automatiza o reconhecimento de regências verbais irregulares ou pronominalizações condicionadas por eufonia.
 
 ---
 

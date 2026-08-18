@@ -22,11 +22,18 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo ou a locução verbal na oração para estabelecer o ponto de ancoragem do pronome oblíquo átono.
+2. PASSO 1: Examinar a proposta em relação às 3 Proibições Absolutas:
+3. - A posição sugerida faz ênclise a verbo no Futuro do Presente ou do Pretérito? Se SIM -> Item INCORRETO.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste da Invariabilidade Morfológica: Tentar flexionar a palavra pré-verbal em gênero e número. Se não flexionar (advérbio, conjunção subordinativa, preposição), atua como atrator obrigatório de próclise; se flexionar (substantivo, pronome reto, demonstrativo), a colocação é facultativa.
+- Teste Diagnóstico Verbal Fazer/Fizer: Substituir o verbo regular duvidoso terminado em -r pelo verbo irregular fazer. Se couber 'FAZER', trata-se de infinitivo (aceita ênclise sempre); se couber 'FIZER', trata-se de futuro do subjuntivo (próclise estritamente obrigatória diante de atrator).
+- Teste da Omissão de Termo Intercalado: Omitir mentalmente a expressão isolada entre vírgulas casadas para enxergar o elo direto entre o sujeito anterior e o verbo, confirmando que a vírgula não abriu oração nova.
+- Teste Visual do Hífen em Locuções Verbais: Em locução com palavra atrativa, checar a posição medial: se o pronome estiver preso ao auxiliar por hífen ('não está-me vendo'), o item é INCORRETO; se estiver solto ('não está me vendo') ou ligado ao principal ('não está vendo-me'), é CORRETO.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A análise SuVeCA organiza a localização do verbo e a topologia dos termos antecedentes e complementares na oração, mas a decisão final depende do reconhecimento da classe morfológica dos atratores, da flexão verbal e das vedações prescritivas da norma padrão. A metáfora do trem não explica por que o infinitivo é imune à atração enquanto o gerúndio com 'em' exige próclise.
 
 ---
 

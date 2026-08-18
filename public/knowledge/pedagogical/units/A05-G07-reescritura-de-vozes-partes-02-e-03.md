@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Isolar o complexo verbal passivo (Ve) e identificar o tempo e modo do verbo auxiliar 'ser' antes de qualquer movimentação de termos.
+2. Passo 1: Chamar o feito à ordem — sublinhar o Sujeito Paciente, circular a forma do verbo auxiliar 'ser' anotando seu tempo/modo/forma nominal, e identificar o Agente da Passiva.
+3. Passo 2: Determinar o novo Sujeito — Se o agente estiver expresso por 'por/pelo/de', retire a preposição e coloque-o como sujeito ativo. Se não houver agente expresso, declare o sujeito como indeterminado e prepare o verbo para a 3ª pessoa do plural.
+4. Passo 3: Transformar o complexo verbal — Risque o verbo 'ser' e transfira integralmente sua carga temporal para o verbo principal seguinte. Em locuções de 3 verbos, mantenha o primeiro auxiliar flexionado no plural e passe o principal para a forma nominal correspondente, mantendo-o invariável.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste da Contagem Aritmética: Verbos na Passiva Analítica - 1 = Verbos na Voz Ativa. Se a oração passiva tem 3 formas verbais, descarte qualquer opção ativa com 1 ou 3 verbos.
+- Teste do Descarte da Fuga com SE: Se o comando da questão pede 'Voz Ativa', elimine imediatamente alternativas com pronome apassivador 'se' (como 'sancionou-se', 'fez-se', 'criaram-se'), pois pertencem à voz passiva sintética.
+- Teste da Transferência Temporal do SER: Escreva o tempo verbal de 'ser' no rascunho e aplique-o obrigatoriamente ao verbo seguinte. Verifique se o tempo resultante na ativa (ex.: pretérito perfeito) coincide rigorosamente com o tempo do auxiliar eliminado.
+- Teste do Sujeito Indeterminado: Na ausência de agente da passiva expresso, verifique se o verbo ou o primeiro auxiliar da ativa está estritamente flexionado na 3ª pessoa do plural sem acréscimo de pronomes retos substantivos.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. O ponto de entrada SuVeCA estabelece a organização sintática dos termos oracionais (Su, Ve, C, A), mas as flexões morfológicas de tempos primitivos/derivados, a colocação pronominal estrita e as nuances semânticas de escopo dependem de suas respectivas camadas linguísticas especializadas. A metáfora do trem organiza as posições funcionais relativas, mas não calcula a flexão do particípio ou do infinitivo pessoal.
 
 ---
 

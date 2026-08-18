@@ -614,8 +614,15 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Resolva o fenômeno pela regra própria da matéria.
-2. Se houver uma oração relevante, use a SuVeCA apenas para localizar a forma ou o efeito no contexto.
-3. Mantenha separadas a justificativa principal e a observação sintática auxiliar.
+1. Localizar a forma verbal ou a lacuna a ser preenchida na oração para identificar o verbo base e seu papel sintático como núcleo do predicado.
+2. 1. Superação de falsas analogias cotidianas através do estudo dos Falsos Amigos (PROVER vs. PROVIR; REQUERER vs. QUERER) e aplicação do Método dos 4 Passos.
+3. 2. Domínio do Paradigma de Formação dos Tempos Verbais (Derivação 1 do Presente do Indicativo para o Subjuntivo; Derivação 2 do Pretérito Perfeito para Mais-Que-Perfeito, Imperfeito e Futuro do Subjuntivo).
 
-> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe.
+### Testes decisivos
+
+- Teste do Advérbio Temporal / Gatilho Mental ('Ontem' para Pretérito Perfeito; 'Antigamente' para Pretérito Imperfeito; 'Que' para Presente do Subjuntivo; 'Se'/'Quando' para Subjuntivos).
+- Teste de Substituição pelo Verbo Líder BEBER (se a forma de BEBER terminar em '-ia' ou '-ido', a forma correspondente em PROVER, REQUERER, CRER ou PODER é plenamente válida: 'proviam', 'requereu', 'cria', 'crido', 'podido').
+- Teste do Primitivo 1 (EU no Presente do Indicativo): extração de '-o' + adição de vogal temática invertida ('-a' para 2ª/3ª conj., '-e' para 1ª conj.) para gerar todo o Presente do Subjuntivo ('caibo' -> 'caiba'; 'adiro' -> 'adira').
+- Teste do Primitivo 2 (ELES no Pretérito Perfeito): extração de '-ram' para obter o tema matriz invariável e acoplar as desinências '-ra', '-sse' e '-r' ('couberam' -> 'coubera', 'coubesse', 'couber'; 'houveram' -> 'houvera', 'houvesse', 'houver'; 'aprouveram' -> 'aprouvera', 'aprouvesse', 'aprouver').
+
+> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe. A SuVeCA conduz a delimitação oracional, a identificação do sujeito e a estrutura de complementos, mas cede a decisão final à morfologia flexional para a produção do radical e desinências exatas do verbo irregular. A metáfora do trem auxilia na visualização das relações funcionais da oração, mas não explica a etimologia ou os paradigmas morfogenéticos de alternância vocálica e derivação dos tempos primitivos.

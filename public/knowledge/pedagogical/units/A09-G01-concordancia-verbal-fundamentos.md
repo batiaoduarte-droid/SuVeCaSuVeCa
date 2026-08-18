@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Identificar a forma verbal simples ou locução verbal na oração para delimitar a estrutura sintática.
+2. 1. Localizar o verbo ou a locução verbal no enunciado da oração.
+3. 2. Formular a pergunta sintática direcionada ('Quem é que...?' ou 'O que é que...?').
+4. 3. Isolar o sintagma nominal de resposta e eliminar mentalmente todos os termos iniciados por preposição.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste da Pergunta Sintática Direcionada ('Quem é que...?' / 'O que é que...?')
+- Teste do Descarte Visual de Termos Preposicionados (eliminação de sintagmas com de, em, a, com, por, para, às)
+- Teste da Passiva Analítica para Partícula SE ('Verbo ser + particípio' confirma PA; impossibilidade com preposição confirma PIS)
+- Teste do 'ISSO' para Sujeito Oracional (substituição do bloco oracional pelo pronome demonstrativo singular)
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA estabelece a arquitetura relacional e isola o núcleo substantivo, mas não substitui as convenções morfológicas de desinência, as nuances semânticas contextuais do predicado (como na conjunção 'ou') nem a fixação normativa de locuções cristalizadas como 'trata-se de'. A metáfora do trem não substitui a análise da transitividade verbal necessária para distinguir Pronome Apassivador (PA) de Índice de Indeterminação (PIS).
 
 ---
 

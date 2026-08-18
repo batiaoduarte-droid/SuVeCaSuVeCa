@@ -699,8 +699,15 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Resolva o fenômeno pela regra própria da matéria.
-2. Se houver uma oração relevante, use a SuVeCA apenas para localizar a forma ou o efeito no contexto.
-3. Mantenha separadas a justificativa principal e a observação sintática auxiliar.
+1. Localizar o verbo ou locução da oração e identificar a qual termo sintático (sujeito, complemento ou núcleo nominal) a palavra-alvo está vinculada.
+2. Compreender o princípio 'Semântica é Contexto', superando a análise morfológica e sintática estática .
+3. Dominar as cadeias de equivalência sinonímica de prova: Denotativo = Real = Lógico = Literal vs. Conotativo = Figurado = Não Lógico = Metafórico (, , ).
 
-> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe.
+### Testes decisivos
+
+- Teste da Compatibilidade Factual e Física com o Mundo Real: verificar se a ação/qualidade ocorre ao pé da letra.
+- Teste da Paráfrase Denotativa Inversa: substituir o termo suspeito por um sinônimo puramente literal (ex.: cidade vibrante -> cidade movimentada; trampolim -> meio).
+- Teste da Coisificação / Reificação: verificar se propriedades de objetos, alimentos ou máquinas estão projetadas sobre seres vivos ou instituições.
+- Teste do Dicionário (Polissemia vs. Conotação): verificar se a acepção (ex.: gastar tempo, montar escritório, banco como assento ou instituição) já é registrada como sentido próprio convencional.
+
+> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe. A análise SuVeCA esgota seu papel ao isolar a relação predicativa ou modificadora; a decisão entre sentido próprio e figurado é puramente semântico-contextual e não deve ser confundida com análise sintática formal. A SuVeCA não resolve a distinção entre múltiplos sentidos dicionarizados (polissemia) e desvios figurados.

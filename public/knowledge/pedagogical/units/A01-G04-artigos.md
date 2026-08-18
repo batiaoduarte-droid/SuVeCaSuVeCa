@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Identifique primeiro a camada linguística efetivamente cobrada.
-2. Use o mapa SuVeCA somente nos trechos em que função, referente, escopo ou encaixe sejam relevantes.
-3. Conclua pela regra própria do tema e explicite o limite da análise sintática.
+1. Localizar o verbo para delimitar as funções sintáticas da oração (Sujeito, Complementos, Adjuntos) e isolar os sintagmas nominais que contêm determinantes ou os conectivos prepositivos regidos.
+2. Passo 1: Localizar o vocábulo sob análise no período ('a', 'o', 'um', 'uma' ou formas contraídas 'do', 'na', 'pelo').
+3. Passo 2: Se for contração ('do', 'na', 'pelo'), decompor mentalmente em Preposição + Artigo Definido antes de avaliar o termo regido ou a contagem morfológica.
+4. Passo 3: Se o termo for 'a/o', verificar se aponta para um substantivo explícito ou implícito com o qual concorda. Se sim, classificar como Artigo Definido.
 
-> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual.
+### Testes decisivos
+
+- Teste da Seta Morfossintática: verificar se o vocábulo antecede e concorda com um substantivo explícito ou implícito para confirmar o papel de artigo.
+- Teste de Substituição Pronominal por 'ela/ele': se a forma 'a/o' estiver vinculada ao verbo como objeto sem determinar substantivo, a troca por 'ela/ele' confirma pronome pessoal oblíquo átono.
+- Teste da Invariabilidade diante de Plural: se a forma singular 'a' antecede um substantivo feminino plural sem flexionar ('aberto a várias alternativas'), trata-se de preposição pura invariável.
+- Teste de Substituição Demonstrativa: se a forma 'a/o' antecede 'que' ou 'de' e admite troca por 'aquela/aquele/aquilo', confirma-se o pronome demonstrativo.
+
+> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual. A análise da arquitetura SuVeCA delimita os sintagmas e sua função sintática na oração, mas não substitui a regra morfológica da 'seta para o substantivo', a avaliação semântica de conhecimento de mundo/não exclusividade, nem a decomposição interna de contrações. A metáfora do trem não explica por si só a semântica discursiva de 'não exclusividade' ou de 'conhecimento de mundo'.
 
 ---
 

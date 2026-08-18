@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar a forma verbal flexionada ou locução verbal no texto da questão e convertê-la mentalmente ao infinitivo para identificar a raiz e a desinência modo-temporal.
+2. Passo 1: Isole o verbo sob análise, determine sua forma no infinitivo e identifique a desinência modo-temporal (ex.: -va/-ia = imperfeito; -ra = mais-que-perfeito; -ria = futuro do pretérito; -sse = imperfeito do subjuntivo) [].
+3. Passo 2: Fatie a assertiva da banca: a classificação gramatical alegada (tempo/modo) está correta? Se incorreta, marque ERRADO imediatamente [].
+4. Passo 3: Localize o sujeito da oração no texto original e verifique se a ação atribuída na assertiva pertence de fato ao referente indicado [].
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste das Palavras Mágicas: Inserir mentalmente 'hoje' (presente), 'ontem' (pretérito perfeito), 'antigamente' (pretérito imperfeito) ou 'tinha + particípio' (mais-que-perfeito) para validar a morfologia verbal.
+- Teste de Aspecto Pontual vs. Cursivo: Verificar se o evento se esgota em um ponto concluído no tempo ('começa e acaba' = Perfeito) ou se constitui processo contínuo/rotineiro ('hábito/duração' = Imperfeito).
+- Teste do Inchoativo (Anti-Pegadinha): Se a assertiva alegar que o Pretérito Imperfeito indica 'o início de ações', rejeitar imediatamente (o imperfeito nunca é inchoativo).
+- Teste da Anterioridade Fática: Verificar se a forma em '-ra' (mais-que-perfeito) ocorreu antes de outro evento pretérito na ordem real dos fatos do mundo, ignorando a disposição física no papel.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A análise SuVeCA identifica o núcleo verbal, seu sujeito e os adjuntos que emolduram a oração. A partir desse ponto, o julgamento de valor modal (hipótese factível vs. impossibilidade contrafactual vs. dúvida) depende da matriz semântica e da leitura dos períodos subsequentes ('o que vem depois salva'). A metáfora do trem não substitui a memorização de desinências modo-temporais clássicas (-va, -ia, -ra, -ria, -sse).
 
 ---
 

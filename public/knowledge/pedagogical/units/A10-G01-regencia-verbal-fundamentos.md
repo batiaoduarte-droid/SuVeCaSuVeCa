@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo regente e delimitar a oração, examinando a sua valência sintática e o sentido lexical pretendido no contexto.
+2. Localizar o verbo principal da oração e determinar o seu sujeito sintático (verificando se o sujeito está em ordem direta, oculto ou posposto).
+3. Determinar a acepção semântica do verbo no contexto oracional para selecionar a sua matriz de transitividade correspondente (ex.: inalar vs. almejar em 'aspirar'; ver vs. residir vs. caber em 'assistir'; ter fundamento vs. executar em 'proceder').
+4. Verificar a presença de pronome reflexivo/integrante do verbo: se for verbo pronominal genuíno (esquecer-se, lembrar-se, deparar-se), aplicar a exigência da preposição correlata ('de', 'com'); se for não pronominal (simpatizar, antipatizar), rejeitar o pronome reflexivo.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste do 'Menino' para verbos de uso cotidiano: conectar o verbo ao sintagma masculino 'o menino' para verificar se rege 'o menino' (VTD) ou 'ao menino' (VTI).
+- Teste do Isolamento do Núcleo do Complemento: em sintagmas complexos como 'o delito da filha' ou 'o passado dos políticos', isolar o substantivo-núcleo ('delito', 'passado') para constatar que se trata de coisa (OD) com adjunto adnominal de posse, e não de objeto indireto.
+- Teste da Polaridade Pronominal em Esquecer/Lembrar: checar o paralelismo 'tudo ou nada' — 'Lembrei a matéria' (sem pronome, sem preposição) vs. 'Lembrei-me da matéria' (com pronome, com preposição 'de'). Rejeitar as formas híbridas 'Lembrei da matéria' e 'Lembrei-me a matéria'.
+- Teste da Pergunta de Sujeito na Construção Arcaica de Esquecer/Lembrar: ao deparar com 'Esqueceu-me o compromisso', perguntar 'O que esqueceu?' -> 'o compromisso' responde como Sujeito sintático (logo, não pode receber preposição 'de').
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA mapeia a estrutura de valência e os slots de complementação da oração, mas não cria as regências preposicionais fixadas por convenção lexicográfica na norma culta nem substitui a consulta ao registro lexicográfico. A metáfora do trem organiza as posições funcionais da oração, mas a seleção exata da preposição ('a', 'de', 'em', 'com', 'por') depende de convenção catalogada no léxico.
 
 ---
 

@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar os verbos do período e mapear os núcleos da oração principal e das orações dependentes ou coordenadas.
+2. Passo 1: Sentir o 'Cheiro de Circunstância' e localizar marcadores circunstanciais ou conjunções.
+3. Passo 2: Avaliar a posição sintática na oração (Ordem Direta ao final vs. Deslocada em Antecipação ou Intercalação).
+4. Passo 3: Delimitar com colchetes [ ] o segmento circunstancial para visualizar suas fronteiras exatas.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste do Verbo: Verificar se a estrutura circunstancial contém verbo conjugado ou em forma nominal (definindo se é adjunto ou oração).
+- Teste da Extensão Lexical: Contar a quantidade de palavras no adjunto adverbial sem verbo (1-2 palavras = curto/facultativo; 3+ palavras = longo/obrigatório).
+- Teste do Par de Meias: Verificar se o termo intercalado possui abertura e fechamento simétricos por vírgulas, impedindo pontuação singular.
+- Teste dos Dois Sujeitos: Perguntar aos verbos das orações coordenadas quem realiza cada ação (Sujeito 1 == Sujeito 2 -> proibida; Sujeito 1 != Sujeito 2 -> facultativa).
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA delimita com precisão os termos oracionais e seus deslocamentos, mas a pontuação exige regras específicas de extensão e paridade. A metáfora do trem auxilia na visualização das posições estruturais, mas não substitui a contagem lexical de palavras em adjuntos adverbiais.
 
 ---
 

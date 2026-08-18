@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo principal ou a locução verbal da oração para utilizá-lo como eixo estruturador das perguntas sintáticas.
+2. Passo 1: Localizar o verbo principal da oração para estabelecer o eixo sintático relacional.
+3. Passo 2: Perguntar ao verbo 'Quem é que / O que é que + verbo?' para identificar o Sujeito. Se o termo for sujeito, empregar Pronome Pessoal Reto (eu, tu, ele, nós, vós, eles) — inclusive em orações reduzidas de infinitivo ('para eu ler').
+4. Passo 3: Se o termo for complemento verbal, aplicar o Teste do Menino após o verbo: se resultar em 'verbo + o menino' (sem preposição), trata-se de Objeto Direto (empregar o, a, os, as); se resultar em 'verbo + ao menino' (com preposição a), trata-se de Objeto Indireto (empregar lhe, lhes ou a ele/a ela).
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Técnica do Menino: substituir a lacuna ou complemento por 'o menino'. Se soar 'verbo + o menino' (sem preposição), o verbo é VTD e exige O/A; se soar 'verbo + ao menino' (com preposição a), o verbo é VTI e exige LHE.
+- Teste de Validação Tônica: substituir o pronome 'lhe' por 'a ele' ou 'a ela'. Se mantiver o sentido gramatical exato, confirma-se a função de Objeto Indireto.
+- Teste do 'Dele / Sua': diante de pronomes oblíquos átonos, substituir a construção por '[Substantivo] + dele' ou 'sua/seu + [substantivo]'. Se mantiver relação semântica de posse, trata-se de Adjunto Adnominal e não de complemento verbal.
+- Teste do Sujeito do Infinitivo: perguntar 'Quem vai realizar a ação do verbo no infinitivo?'. Se for a 1ª pessoa, exigir o pronome reto 'eu' ('para eu ler'); se for mero termo preposicionado sem ação associada, empregar o pronome oblíquo tônico 'mim' ('trouxe para mim').
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A análise SuVeCA resolve as funções sintáticas de sujeito, complemento direto, complemento indireto e adjunto adnominal, mas não resolve regras puramente morfofonológicas de assimilação na ênclise (queda de r/s/z, nasalização), regras ortográficas de acentuação gráfica nem o paralelismo discursivo da uniformidade de tratamento. A metáfora do trem não explica fatores fônicos de atração proclítica por palavras invariáveis (advérbios, pronomes relativos).
 
 ---
 

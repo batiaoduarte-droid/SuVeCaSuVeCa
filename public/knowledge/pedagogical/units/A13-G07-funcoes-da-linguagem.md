@@ -705,8 +705,15 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Resolva o fenômeno pela regra própria da matéria.
-2. Se houver uma oração relevante, use a SuVeCA apenas para localizar a forma ou o efeito no contexto.
-3. Mantenha separadas a justificativa principal e a observação sintática auxiliar.
+1. Localizar o verbo ou a estrutura do enunciado e formular a pergunta pragmática guia: 'Com que finalidade o enunciador disse isso?'.
+2. 1. Compreensão da linguagem como ato interativo e assimilação do princípio da finalidade comunicativa ('Mantra' Analítico).
+3. 2. Estudo do primeiro trio funcional: Referencial (informação factual e normas), Apelativa (injunção e desmistificação do imperativo) e Fática (canal e fórmulas rituais).
 
-> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe.
+### Testes decisivos
+
+- O Teste do 'Mantra' Analítico: Perguntar 'Por que o enunciador produziu este texto?' para isolar o polo comunicativo catalisador (emissor, receptor, referente, mensagem, canal ou código).
+- O Teste do Modalizador: Retirar ou inserir advérbios como 'infelizmente' para verificar se a oração é puramente factual (referencial) ou expressa julgamento de valor do emissor (emotiva).
+- O Teste da Subordinação Hierárquica: Perguntar 'O texto continuaria cumprindo sua finalidade institucional sem o recurso secundário?' para distinguir marcas acessórias da função predominante do gênero.
+- O Teste da Incompatibilidade Conotativa: Verificar se termos figurados e metáforas estão presentes; caso positivo, afastar categoricamente a classificação como função denotativa/referencial.
+
+> **Limite do método:** Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe. A SuVeCA identifica a pessoa gramatical, o modo verbal e os adjuntos modalizadores da oração, mas a classificação definitiva da função da linguagem e de sua predominância pertence soberanamente à camada pragmático-discursiva. A SuVeCA analisa a oração e o período, mas a determinação da função da linguagem depende da finalidade pragmática no contexto de circulação.

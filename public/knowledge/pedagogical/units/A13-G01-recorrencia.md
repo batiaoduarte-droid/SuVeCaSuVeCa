@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Identifique primeiro a camada linguística efetivamente cobrada.
-2. Use o mapa SuVeCA somente nos trechos em que função, referente, escopo ou encaixe sejam relevantes.
-3. Conclua pela regra própria do tema e explicite o limite da análise sintática.
+1. Identificar no comando da questão os marcadores de recorrência ('De acordo com o texto', 'Conforme o texto') para desativar inferências livres e fatiar a assertiva em blocos funcionais SuVeCA.
+2. Passo 1 — Identificação do Comando: verificar a presença de marcadores de recorrência ('De acordo com o texto', 'Segundo o autor', 'O texto esclarece que') e inibir inferências subjetivas livres.
+3. Passo 2 — Leitura Ativa e Rastreamento Coesivo: realizar leitura silenciosa interna ('Um olho no peixe, outro no gato') traçando setas gráficas de pronomes e elipses verbais até seus núcleos substantivos.
+4. Passo 3 — Fragmentação Sintática da Assertiva: decompor a assertiva da banca em blocos numerados isolando Sujeito [1], Verbo [2], Complementos [3] e Adjuntos Modificadores [4].
 
-> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual.
+### Testes decisivos
+
+- Teste do Sujeito e do Verbo: o sujeito da assertiva realiza exatamente a ação declarada pelo verbo no texto, ou houve troca de predicados entre agentes distintos?
+- Teste da Polaridade Semântica: a oração da assertiva mantém o mesmo sinal axiológico/lógico ([+] ou [-]) da oração original, ou um modificador inverteu o sentido (Contradição)?
+- Teste do Eixo Temporal vs. Axiológico: um marcador de cronologia ('de início', 'primeiramente') foi indevidamente convertido em juízo de valor ou prioridade ('priorizar', 'mais importante') (Extrapolação)?
+- Teste da Âncora Explícita ('Verdade do Texto' vs. 'Verdade da Vida'): a informação está expressamente grafada no texto-base, ou decorre de conhecimento empírico do mundo real não mencionado pelo autor?
+
+> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual. A SuVeCA encerra sua atuação direta na delimitação e desmontagem sintática dos constituintes da oração; a validação da equivalência semântica e a proibição de extrapolações extratextuais são regidas pela semântica textual e pelo fechamento discursivo. A SuVeCA organiza a inspeção sintática da oração, mas a validação de uma paráfrase como correta, contraditória ou extrapolada é decidida pela semântica e pelo fechamento discursivo.
 
 ---
 

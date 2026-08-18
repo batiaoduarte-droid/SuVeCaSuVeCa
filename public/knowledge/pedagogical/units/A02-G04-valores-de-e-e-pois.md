@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Reconstrua apenas as relações sintáticas relevantes para a decisão.
-2. Acrescente o critério próprio do tema — morfológico, semântico, coesivo ou discursivo.
-3. Confirme que estrutura e contexto sustentam a mesma conclusão.
+1. Localizar o verbo ou a locução verbal de cada oração envolvida no período e delimitar as fronteiras oracionais.
+2. 1. Identificar o conector sob análise ('E' ou 'POIS') e delimitar as orações do período.
+3. 2. Para o conector 'E': examinar se há determinante anteposto (substantivação). Se não houver, analisar o segmento posterior: se soma fatos compatíveis -> Aditivo; se quebra expectativa (= porém) -> Adversativo; se expressa efeito decorrente (= por isso) -> Conclusivo/Consecutivo.
+4. 3. Para reescrita de 'E' por ';': verificar se o termo seguinte é pronome oblíquo átono; se for próclise, rejeitar o item por violação gramatical (exige-se ênclise).
 
-> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria.
+### Testes decisivos
+
+- Teste da Substituição do 'E': substituir por 'além disso' (adição), 'porém' (oposição) ou 'por isso/logo' (conclusão/consequência).
+- Teste do Determinante na Substantivação: verificar se antes de 'E' existe artigo, pronome demonstrativo ou possessivo (ex.: 'daquele E').
+- Teste de Colocação Pós-Ponto e Vírgula: verificar se a supressão do 'e' deixa pronome oblíquo átono no início da oração assindética (; te deixa = ERRO; ; deixa-te = CERTO).
+- Teste Posicional do Verbo para 'Pois': localizar o verbo conjugado da oração; 'pois' pós-verbal = CONCLUSIVO (= portanto); 'pois' pré-verbal = NÃO CONCLUSIVO (= porque).
+
+> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria. O método SuVeCA delimita as orações e posiciona os termos funcionais em relação ao verbo; a partir dessa demarcação, a decisão do valor semântico exato e das relações lógico-discursivas é transferida para a camada semântica e de coesão. A SuVeCA organiza as funções sintáticas internas de cada oração e a posição relativa dos termos, mas os valores semânticos (adição, oposição, conclusão, causa e explicação) pertencem à semântica oracional e à coesão discursiva.
 
 ---
 

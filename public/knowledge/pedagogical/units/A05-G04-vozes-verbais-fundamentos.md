@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo principal ou a locução verbal e identificar se há marcas de passivação (locução SER + Particípio ou verbo VTD/VTDI acompanhado do pronome SE).
+2. Passo 1: Localizar o verbo principal ou locução verbal da oração.
+3. Passo 2: Inspecionar se há presença formal de locução passiva analítica (SER + Particípio) ou de verbo acompanhado de SE apassivador.
+4. Passo 3: Se houver locução SER + Particípio, classificar como VOZ PASSIVA ANALÍTICA e identificar o agente da passiva (se houver termo regido por por/de) ou registrá-lo como indeterminado.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste de Transposição Mental para a Passiva Analítica: Diante de 'Verbo + SE', testar se a conversão em 'Termo + SER + Particípio' produz sentido idêntico (ex.: 'Vende-se terreno' -> 'Terreno é vendido'). Se sim, o SE é apassivador e a voz é passiva sintética.
+- Teste de Transitividade Verbal com SE: Checar se o verbo é Transitivo Direto (VTD) ou Transitivo Direto e Indireto (VTDI). Se for VTI, VI ou VL, a estrutura não forma voz passiva sintética (o SE será índice de indeterminação ou parte integrante).
+- Teste da Preposição no Agente vs. Conectivo de Meio: Se o termo for regido por 'por/pela' e indicar quem praticou a ação sofrida, classifica-se como Agente da Passiva; se introduzido por 'via' ou 'por meio de', trata-se de Adjunto Adverbial de Meio.
+- Teste de Coincidência de Referente: Verificar se a entidade do sujeito sintático e a entidade do pronome complemento são idênticas na realidade discursiva (mesmo referente). Se sim, classifica-se como Voz Reflexiva.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. O método SuVeCA desmonta as relações sintáticas oracionais de voz verbal, mas não substitui a verificação da transitividade no léxico verbal nem a concordância nominal de particípio. A metáfora do trem não define se um verbo isolado com SE é VTD ou VTI; a transitividade depende da regência verbal dicionarizada.
 
 ---
 

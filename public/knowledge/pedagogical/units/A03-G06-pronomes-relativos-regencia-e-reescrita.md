@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Isolar a oração subordinada adjetiva posterior ao conectivo e localizar imediatamente o seu núcleo verbal regente.
+2. Passo 1 (Isolar a oração adjetiva): Delimitar a oração subordinada que se inicia após a oração principal a partir da lacuna ou do pronome relativo.
+3. Passo 2 (Localizar o verbo): Identificar o verbo principal ou locução verbal da oração subordinada adjetiva.
+4. Passo 3 (Identificar o sujeito): Formular a pergunta 'Quem é que [verbo]?' para determinar o sujeito da oração adjetiva e posicioná-lo no início.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste da Ordem Direta dos 4 Passos: reconstruir a oração subordinada adjetiva na ordem [Sujeito] + [Verbo] + [Preposição ?] + [Antecedente] para extrair a preposição exigida pelo regente.
+- Teste da Inversão Genitiva do Cujo: verificar a presença de relação de posse através da fórmula '[Substantivo 2 posterior] + de + [Substantivo 1 anterior]'.
+- Teste da Substituição por 'O qual': verificar se o pronome relativo admite variação de gênero/número com artigo intrínseco e fusão preposicional (ao qual, do qual, no qual, pelo qual).
+- Teste do Referente Físico Concreto: confirmar se o antecedente denota espaço geográfico/físico real antes de validar o emprego de 'onde', 'aonde' ou 'donde'.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA organiza a identificação do sujeito, verbo e complementos na ordem direta para explicitar a preposição regida, mas a seleção morfológica do pronome (cujo, onde, quem) e a diferenciação de sentido em verbos de dupla regência são reguladas pelas camadas morfológica e semântica. A representação por vagões não resolve a distinção semântica entre 'entender de' (ter prática/experiência) e 'entender' (assimilar intelectualmente).
 
 ---
 

@@ -451,8 +451,15 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Aplique diretamente a regra fonológica, ortográfica, lexical ou discursiva pertinente.
-2. Use frases completas como contexto de aplicação, sem obrigar sua decomposição sintática.
-3. Recorra à SuVeCA apenas se uma questão específica introduzir uma dependência funcional real.
+1. Identificar a palavra e aplicar a análise fonético-silábica no estrato ortográfico/fonológico antes de qualquer integração oracional.
+2. 1. Compreender o conceito de vogal como ápice e núcleo indispensável da sílaba e o Mantra da Vogal Única.
+3. 2. Diferenciar vogal de semivogal a partir da intensidade sonora e do timbre (/i/, /u/), aplicando a soberania da letra 'A'.
 
-> **Limite do método:** A SuVeCA não é fonte da regra deste grupo e sua ausência na resolução pode ser pedagogicamente correta.
+### Testes decisivos
+
+- Teste da Vogal Soberana: Se houver a letra 'A' no encontro vocálico, ela é invariavelmente a VOGAL da sílaba.
+- Teste da Articulação Natural (Abertura da Boca): Contar os impulsos fonatórios para determinar o número exato de sílabas sem depender de contagem por palmas.
+- Teste Fonético de QU/GU: Verificar se o 'u' é audível (gerando ditongo crescente) ou áfono/mudo (constituindo dígrafo consonantal).
+- Teste do Dígrafo Vocálico: Identificar se M/N fecha a sílaba pós-vocálica para reconhecer a nasalização e evitar falsos encontros consonantais como NT ou MP.
+
+> **Limite do método:** A SuVeCA não é fonte da regra deste grupo e sua ausência na resolução pode ser pedagogicamente correta. A análise silábica e fonêmica encerra-se no limite do vocábulo; a SuVeCA opera apenas na sintaxe da oração e não interfere na partição silábica ou contagem de fonemas. A metáfora do trem e as funções oracionais SuVeCA não se aplicam à partição silábica ou contagem fonêmica interna dos vocábulos.

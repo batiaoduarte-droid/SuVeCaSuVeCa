@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar todos os núcleos verbais do período (incluindo formas finitas, formas nominais e locuções) e verificar se há conjunção subordinativa ou pronome relativo introduzindo cada oração dependente.
+2. Identificar os núcleos verbais e verificar se há conjunção ou pronome relativo; havendo verbo nominal sem conectivo, trata-se de oração reduzida potencial.
+3. Testar inserção de 'que' entre verbos adjacentes: se for agramatical ('deve que saia'), classificar como locução verbal; se aceitar 'que' ('finge que entende'), classificar como oração reduzida.
+4. Em locução verbal reduzida, extrair o nome da oração a partir da forma nominal do verbo auxiliar (o principal dita apenas complementos).
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste do 'Isso / Disso / Nisso' para identificação e classificação das 6 subclasses de orações substantivas reduzidas de infinitivo .
+- Teste de Desenvolvimento com 'Que' para distinção absoluta entre Locução Verbal e Oração Subordinada Reduzida .
+- Teste Cronológico de Anterioridade Causal ('O fato de 1º evento fez com que 2º evento') para discriminar causa de consequência .
+- Teste de Paráfrase Relativa ('que + verbo conjugado') para gerúndio e particípio com função adjetiva .
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA opera com precisão na delimitação das orações e na distribuição de funções oracionais nucleares e adverbiais, mas a determinação do valor semântico de gerúndios ambíguos e a morfologia das formas nominais pertencem às camadas semântica e morfológica. A metáfora do trem não resolve a ambiguidade semântica de orações de gerúndio que acumulam valores de causa, tempo e consequência.
 
 ---
 

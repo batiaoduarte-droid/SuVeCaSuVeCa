@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo principal da oração e determinar sua valência semântico-sintática no contexto específico.
+2. Passo 1: Localize o verbo principal e determine o contexto semântico da oração.
+3. Passo 2: Verifique a predicação do verbo: é VTD, VTI, VTDI ou Intransitivo?
+4. Passo 3: Se for bitransitivo (VTDI), aplique a verificação: há exatamente 1 complemento sem preposição e 1 com preposição? (Elimine frases com duplo objeto preposicionado).
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste de Bitransitividade: isolar os complementos do verbo bitransitivo e conferir se há exatamente 1 Objeto Direto (sem preposição) e 1 Objeto Indireto (com preposição), bloqueando a ocorrência de dois objetos preposicionados.
+- Teste do Filtro Antirredundância em Preferir: verificar visualmente e banir a presença de 'mais', 'muito', 'antes', 'mil vezes', 'que' ou 'do que', garantindo a transição exclusiva pela preposição 'a'.
+- Teste do 'Com Pronome / Sem Pronome' em Lembrar e Esquecer: se houver pronome integrante (me/te/se/nos/vos), a preposição 'de' é obrigatória; se não houver pronome, o verbo liga-se diretamente sem preposição.
+- Teste de Direção vs. Posicionamento: associar verbos de movimento (chegar, ir) à preposição 'a' e ao pronome 'aonde', e verbos estáticos (morar, residir, situar) à preposição 'em', ao pronome 'onde' e à locução 'em domicílio'.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. O método SuVeCA delimita a arquitetura sintática e as vagas funcionais de complementos e adjuntos na oração, mas a seleção da preposição canônica exata (ex.: 'de', 'a', 'com', 'por', 'em') e a fixação de invariância semântica pertencem à camada normativo-lexical da regência e devem ser recuperadas da convenção culta. A metáfora representa papéis e relações funcionais de dependência sintática, não uma sequência linear fixa obrigatória na superfície textual.
 
 ---
 

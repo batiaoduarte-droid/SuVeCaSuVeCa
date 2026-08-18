@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo principal ou a locução verbal passiva ('ser + particípio') para determinar a voz da oração e a natureza da predicação.
+2. 1. Isole o sintagma preposicionado sob exame e analise seu contexto relacional na oração.
+3. 2. Verifique se a oração apresenta locução passiva analítica ('ser + particípio') ou oração reduzida de particípio.
+4. 3. Se houver estrutura passiva com preposição 'por' ou 'de', aplique o Teste de Transposição Ativa: se o termo se converter perfeitamente no sujeito agente da ativa, classifique como Agente da Passiva (AP); se indicar motivo/causa sem capacidade de agentividade, classifique como Adjunto Adverbial de Causa.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste de Transposição para a Voz Ativa: o Agente da Passiva transforma-se obrigatoriamente no sujeito agente da oração correspondente na voz ativa ('filmado pela TV' -> 'A TV filmou o trem').
+- Teste do Artigo Definido no Termo Regente: substantivos abstratos regentes de CN aceitam anteposição de artigo ('a necessidade de ajuda' -> 'necessidade' é substantivo, logo 'de ajuda' é CN; 'ele necessita de ajuda' -> 'necessita' é verbo flexionado, logo 'de ajuda' é OI).
+- Teste do 'Que é / Que está' para Adjetivo Regente: adjetivos regentes de CN aceitam inserção relativa explicativa ('remédio [que é] prejudicial à saúde' -> 'prejudicial' é adjetivo, logo 'à saúde' é CN).
+- Teste da Causa vs. Agência: se o sintagma com 'por/pelo/pela' expressar motivação inanimada sem agência ('elogiado pela inteligência' -> 'a inteligência não elogia'), classifica-se como Adjunto Adverbial de Causa.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A análise SuVeCA oracional estabelece os limites entre sujeito, predicação verbal e complementos maiores; a distinção entre Complemento Nominal e Objeto Indireto requer o exame da morfologia interna do regente intra-sintagmático. A estrutura macro SuVeCA organiza os constituintes da oração, mas o Complemento Nominal reside na microestrutura intra-sintagmática de nomes regentes.
 
 ---
 

@@ -755,8 +755,15 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Aplique diretamente a regra fonológica, ortográfica, lexical ou discursiva pertinente.
-2. Use frases completas como contexto de aplicação, sem obrigar sua decomposição sintática.
-3. Recorra à SuVeCA apenas se uma questão específica introduzir uma dependência funcional real.
+1. Identificar se a questão avalia a estrutura fonético-ortográfica interna da palavra ou a articulação sintático-semântica do período.
+2. 1. Distinção rigorosa entre Hiato (V-V), Ditongo Crescente (SV+V) e Ditongo Decrescente (V+SV), com ênfase na ortoepia culta.
+3. 2. Diferenciação conceitual e acústica entre Dígrafos (consonantais e vocálicos = 1 som) e Encontros Consonantais (2 sons articulados).
 
-> **Limite do método:** A SuVeCA não é fonte da regra deste grupo e sua ausência na resolução pode ser pedagogicamente correta.
+### Testes decisivos
+
+- Teste da Audibilidade do 'U': pronunciar o vocábulo com QU/GU para verificar se a letra 'u' é emitida como semivogal /w/ (não é dígrafo, como em 'quantidade') ou se é áfona (é dígrafo consonantal, como em 'esqueleto').
+- Teste do Cálculo Rápido de Fonemas: aplicar a fórmula universal Fonemas = Letras - Dígrafos + Dífonos, subtraindo 1 fonema por dígrafo e somando 1 por dífono.
+- Teste da Atração da Consoante Muda: verificar se a consoante desprovida de vogal é medial (atraída obrigatoriamente para a sílaba anterior: 'co-lap-so', 'at-mos-fe-ra') ou inicial (permanece em monossílabo indivisível: 'pneu').
+- Teste de Supressão do 'Também': retirar o vocábulo para verificar se atua como partícula expletiva de realce (insignificante) ou como operador aditivo indispensável.
+
+> **Limite do método:** A SuVeCA não é fonte da regra deste grupo e sua ausência na resolução pode ser pedagogicamente correta. A análise fonética e de divisão silábica encerra-se no domínio do vocábulo isolado; o procedimento SuVeCA inicia-se na predicação oracional. Fenômenos fonéticos e regras de partição silábica atuam no nível das peças lexicais isoladas e não configuram termos sintáticos oracionais.

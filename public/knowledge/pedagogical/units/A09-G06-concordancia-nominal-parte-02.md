@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar o verbo ou a locução verbal e verificar se a predicação envolve verbo de ligação, verbo transitivo com predicativo ou locução passiva/tempo composto.
+2. 1. Localizar o termo flexionado sob análise (adjetivo, particípio ou pronome adjetivo).
+3. 2. Formular a pergunta de referenciação ('Quem ou o que é [termo]?') e identificar os substantivos candidatos.
+4. 3. Aplicar o bloqueio preposicional: eliminar segmentos introduzidos por preposição (de, em, com, por) para isolar o núcleo autêntico.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste de Retirada do Predicativo do Objeto: Suprimir o adjetivo da oração; se o verbo mudar de acepção (de constatação de estado para mera localização física), trata-se de predicativo do objeto indispensável.
+- Teste do 'Segue o Verbo' no Predicativo Anteposto: Se o verbo de ligação estiver no plural, o predicativo anteposto fica no plural; se o verbo estiver no singular atrativo, o predicativo concorda no singular com o primeiro núcleo.
+- Teste do Bloqueio Preposicional: Riscar mentalmente segmentos iniciados por preposição; o núcleo do sujeito é unicamente o termo substantivo desprovido de regência preposicional.
+- Teste do 'Ler o que vem Depois' (Cebraspe): Ler integralmente o complemento subsequente ao adjetivo para invalidar propostas de concordância sintaticamente possíveis, mas contextualmente absurdas.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA mapeia a topologia oracional, as funções sintáticas e os núcleos reitores sem preposição; as regras de soma de gênero, atração por proximidade e formas de particípios abundantes pertencem às camadas de concordância e morfologia. A metáfora do trem não explica o paradigma lexical dos particípios abundantes (incluso vs. incluído).
 
 ---
 

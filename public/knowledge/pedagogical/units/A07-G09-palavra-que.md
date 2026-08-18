@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Identificar a oração em que a palavra QUE se insere e verificar se ela atua como conectivo interoracional, modificador sintagmático ou pronome anafórico.
+2. 1. Identificar todas as ocorrências da palavra QUE no período e isolar os verbos de cada oração.
+3. 2. Testar Conjunção Integrante: substituir a oração inteira introduzida por QUE por 'ISSO' (ou 'DISSO'/'NISSO'). Havendo sentido pleno e preenchendo lacuna de Sujeito, Objeto ou Complemento da principal, trata-se de Conjunção Subordinativa Integrante.
+4. 3. Testar Pronome Relativo: verificar se o QUE retoma substantivo ou pronome demonstrativo 'o' (= aquilo). Substituir por 'o qual', 'a qual', 'os quais', 'as quais'. Sendo confirmada a anáfora, trata-se de Pronome Relativo.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Macete do ISSO/DISSO: substituição de toda a oração substantiva por 'ISSO' para certificar Conjunção Integrante.
+- Troca por O QUAL / A QUAL: teste de flexão e anáfora para atestar Pronome Relativo.
+- Transposição SuVeCA para a Ordem Direta: reescrita da oração adjetiva (Sujeito + Verbo + Complementos) substituindo o QUE pelo antecedente para apurar sua função sintática exata.
+- Método das Setas: identificação da classe gramatical da palavra modificada (adjetivo/advérbio = advérbio; substantivo = pronome indefinido).
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A SuVeCA governa a sintaxe oracional interna e o acoplamento de orações como termos; distinções lexicais de advérbio vs. pronome indefinido e causalidade cronológica exigem análise morfológica e semântica prévia. A metáfora do trem não resolve a distinção morfológica entre advérbio de intensidade e pronome indefinido, a qual depende da relação sintagmática direta de modificação.
 
 ---
 

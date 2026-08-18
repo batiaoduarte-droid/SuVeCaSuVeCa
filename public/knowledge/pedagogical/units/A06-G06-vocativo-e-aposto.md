@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Reconstrua apenas as relações sintáticas relevantes para a decisão.
-2. Acrescente o critério próprio do tema — morfológico, semântico, coesivo ou discursivo.
-3. Confirme que estrutura e contexto sustentam a mesma conclusão.
+1. Localizar o verbo principal da oração e verificar se o elemento inicial ou intercalado isolado por pontuação possui relação argumental de sujeito ou se opera como chamamento/aposto.
+2. Passo 1: Localizar a forma verbal da oração e determinar sua flexão e modo gramatical.
+3. Passo 2: Inspecionar os sinais de pontuação ao redor dos termos nominais da frase.
+4. Passo 3: Se o termo nominal inicial estiver isolado por vírgula diante de verbo no imperativo, classifique-o como VOCATIVO e identifique o sujeito como oculto/elíptico .
 
-> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria.
+### Testes decisivos
+
+- Teste de Bloqueio da Vírgula (Vocativo vs. Sujeito): termo nominal antes do verbo isolado por vírgula não pode ser sujeito (pois não se separa sujeito de verbo por vírgula simples); trata-se de vocativo com sujeito elíptico.
+- Teste da Classe Morfológica do Núcleo (Aposto vs. Predicativo Deslocado): se a palavra-base isolada entre vírgulas for substantivo/pronome, é aposto; se for adjetivo/particípio, é predicativo do sujeito deslocado.
+- Teste da Denominação (Aposto Especificativo vs. Adjunto Adnominal): pergunte ao termo genérico 'Qual é o seu nome?'; se a resposta for o elemento analisado, trata-se de aposto especificativo (ex.: 'Mês de maio'); se indicar apenas relação temática, restrição ou posse, trata-se de adjunto adnominal (ex.: 'Mês das noivas').
+- Teste da Substituição 'o que' = 'isso o qual': na construção ', o que...', se 'o' puder ser substituído por 'isso' e 'que' por 'o qual', confirma-se 'o' como pronome demonstrativo aposto oracional e 'que' como pronome relativo.
+
+> **Limite do método:** A análise sintática é necessária, mas não substitui a regra específica desta matéria. A análise SuVeCA resolve a estrutura sintática da oração e a concordância do verbo, mas não substitui a verificação morfológica da classe da palavra (substantivação contextual) nem os critérios discursivos do vocativo. A metáfora do trem não explica por si só a regra de derivação imprópria nem a semântica da personificação.
 
 ---
 

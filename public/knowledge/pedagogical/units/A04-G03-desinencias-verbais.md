@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Identifique primeiro a camada linguística efetivamente cobrada.
-2. Use o mapa SuVeCA somente nos trechos em que função, referente, escopo ou encaixe sejam relevantes.
-3. Conclua pela regra própria do tema e explicite o limite da análise sintática.
+1. Localizar o verbo flexionado na oração e isolar suas desinências no rascunho através do Infinitivo Impessoal e dos marcadores temporais.
+2. Passo 1: Para identificar a Vogal Temática e o Radical, remeta a forma verbal ao seu Infinitivo Impessoal e remova a terminação '-r'. A vogal final restante é a VT (A = 1ª, E = 2ª, I = 3ª); a porção anterior é o Radical. A união de ambos forma o Tema Verbal.
+3. Passo 2: Para identificar a DMT, associe o verbo ao gatilho mnemônico do tempo (Hoje = Pres. Ind., Antigamente = Pret. Imp. Ind., Amanhã = Fut. Pres., Que = Pres. Subj., Se = Pret. Imp. Subj., Quando = Fut. Subj.) e conjugue mentalmente as pessoas. A marca constante comum a todas as pessoas é a DMT. Se o tempo for Presente do Indicativo, classifique DMT = Ø.
+4. Passo 3: Para identificar a DNP, observe a terminação específica da pessoa gramatical solicitada na questão (-o/-i/Ø para 1ª sing., -s para 2ª sing., Ø para 3ª sing., -mos para 1ª plur., -is/-des para 2ª plur., -m/-ão para 3ª plur.).
 
-> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual.
+### Testes decisivos
+
+- Teste do Infinitivo Impessoal: substitua a terminação flexionada por '-r' para isolar a Vogal Temática verdadeira e não confundi-la com a DMT do subjuntivo.
+- Teste dos Marcadores Temporais: aplique advérbios ou conjunções de apoio ('Hoje', 'Ontem', 'Antigamente', 'Amanhã', 'Que', 'Se', 'Quando') para fixar tempo e modo sem hesitação.
+- Teste do Paradigma Comum da DMT: conjugue duas ou mais pessoas do mesmo tempo; o segmento que se repete em todas elas é a DMT ('muleta do tempo').
+- Teste do 'PARA' no Infinitivo Pessoal: anteceda a expressão 'para nós / para eles' para certificar-se da flexão do infinitivo pessoal sem confundi-lo com o futuro do subjuntivo.
+
+> **Limite do método:** Não transforme uma pista sintática em explicação completa de um fenômeno morfológico, semântico ou textual. A SuVeCA organiza a identificação do verbo e a verificação da concordância com o sujeito na oração, mas a segmentação morfofonética dos constituintes internos da palavra verbal (Rad, VT, DMT, DNP e alomorfes) é resolvida pelas regras da morfologia. A metáfora do trem não explica fenômenos fonéticos históricos como a evolução de ponere para poer e pôr.
 
 ---
 

@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Localizar a forma verbal simples ou locução verbal para determinar o predicador da oração.
+2. Passo 1: Destaque o verbo ou locução verbal. Se for locução, identifique o verbo principal (último) para verificar impessoalidade ou transitividade.
+3. Passo 2: Formule a pergunta 'Quem é que + verbo?' ou 'O que é que + verbo?'.
+4. Passo 3: Delimite a resposta integral do sujeito entre colchetes.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Fórmula interrogativa canônica de sujeito: isolar o verbo e perguntar 'Quem é que + verbo?' ou 'O que é que + verbo?'.
+- Teste da voz passiva analítica para o pronome SE: verificar se 'VTD + SE + Substantivo' equivale a 'Substantivo + Ser + Particípio' para confirmar sujeito paciente.
+- Macete do 'ISSO' para sujeito oracional: substituir a oração inteira por 'ISSO' para validar sujeito oracional e travar o verbo no singular.
+- Mantra da locução verbal: 'o verbo principal manda na impessoalidade/sujeito e o auxiliar obedece na flexão'.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. O método SuVeCA identifica e delimita perfeitamente as funções sintáticas oracionais, mas a decisão de flexão verbal exige a integração com as regras morfológicas de concordância e com as convenções normativas adotadas pelas bancas examinadoras. A metáfora do trem não explica por si só a impessoalidade semântica de verbos existenciais como 'haver'.
 
 ---
 

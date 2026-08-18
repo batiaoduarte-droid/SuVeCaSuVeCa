@@ -22,11 +22,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Sublinhar individualmente cada verbo ou locução verbal do período para delimitar as fronteiras oracionais pelo princípio 'Viva Cada Verbo'.
+2. Passo 1: Sublinhe todos os verbos e locuções verbais do período e separe as orações pelo princípio 'Viva Cada Verbo'.
+3. Passo 2: Para o verbo sob análise, formule a pergunta: 'O que é que [verbo]?' ou 'Quem é que [verbo]?'.
+4. Passo 3: Se o termo que responde possuir um verbo (flexionado ou no infinitivo), trata-se de Sujeito Oracional. Substitua a oração por 'ISSO' (ex.: 'Isso convém', 'Isso é importante') e fixe o verbo principal obrigatoriamente na 3ª pessoa do singular.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste do Pronome 'ISSO': substituição de qualquer oração subordinada candidata a sujeito pelo pronome demonstrativo neutro 'ISSO' (se 'Isso [verbo]' for gramatical, o sujeito é oracional e o verbo fica na 3ª pessoa do singular).
+- Teste da Transposição para Voz Passiva Analítica: conversão de 'VTD + SE + Substantivo' para 'Substantivo + Verbo Ser + Particípio' para confirmar a presença de Sujeito Paciente (Partícula Apassivadora) versus impossibilidade de passivação em 'VTI + SE' (Índice de Indeterminação do Sujeito).
+- Teste de Substituição HAVER x EXISTIR: ao usar 'haver' no sentido de existir, fixar o verbo no singular como VTD e o termo associado como objeto direto; ao trocar por 'existir', flexionar obrigatoriamente o verbo com o sujeito sintático.
+- Técnica 'O Que Vem Depois Salva': em estruturas com pronome relativo 'que' precedido por núcleo singular e adjunto plural, inspecionar predicativos, adjetivos ou particípios posteriores para identificar qual termo governa a concordância.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A análise estrutural SuVeCA delimita orações e posições funcionais; fenômenos de acentuação diferencial gráfica, valor semântico conotativo e identificação de anáforas interparagrafais exigem regras ortográficas, lexicais e discursivas complementares. A metáfora do trem não substitui o teste da voz passiva analítica para distinguir PA de PIS.
 
 ---
 

@@ -16,11 +16,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Como aplicar neste tema
 
-1. Delimite as orações e preserve a ordem real do enunciado.
-2. Reconstrua Sujeito, Verbo, Complementos, Adjuntos e Predicativos, registrando ausências, elipses e encaixes.
-3. Aplique a regra específica do tema às relações reconstruídas e justifique a resposta.
+1. Delimitar o termo oracional (Sujeito, Complemento ou Adjunto) e localizar a posição do adjetivo modificador em relação aos substantivos.
+2. Passo 1: Localizar a oração e delimitar o termo sintático (Sujeito, Complemento ou Adjunto) que contém os substantivos coordenados e o adjetivo qualificador.
+3. Passo 2: Aplicar o método do farejador de núcleos, isolando mentalmente sintagmas iniciados por preposição (de, da, do, dos, em) para expor os substantivos-núcleo sem preposição.
+4. Passo 3: Verificar a posição do adjetivo modificador em relação aos núcleos substantivos.
 
-> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos.
+### Testes decisivos
+
+- Teste da Posição Linear do Modificador: verificar se o adjetivo antecede ou sucede os substantivos para definir se há dupla faculdade (posposto) ou atração mandatória (anteposto).
+- Teste do Farejador de Núcleos: descartar mentalmente todos os sintagmas preposicionados para identificar quais palavras substantivas sem preposição governam o modificador.
+- Teste da Plausibilidade Semântica: associar o adjetivo isoladamente a cada um dos substantivos para certificar se a qualificação faz sentido no contexto do enunciado.
+- Teste da Invariabilidade de Sentido: confirmar que a alternância entre concordância total e atrativa com adjetivo posposto preserva o sentido integral de ambos os substantivos na regra geral.
+
+> **Limite do método:** O mapa representa relações sintáticas; não impõe ordem direta nem exige que todos os componentes estejam expressos. A análise SuVeCA delimita os termos da oração e isola os núcleos substantivos sem preposição, mas não substitui a regra morfológica de prevalência do masculino plural nem a avaliação da plausibilidade semântica no contexto textual. A metáfora do trem não explica por que a norma gramatical fixou o masculino plural como forma neutra/prevalecente na concordância total de gêneros mistos.
 
 ---
 
