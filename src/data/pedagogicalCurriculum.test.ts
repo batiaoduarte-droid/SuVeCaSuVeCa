@@ -8,9 +8,9 @@ import {
   EDITORIAL_DUEL_QUESTION_SET_VERSION,
 } from './editorialDuelQuestions.generated';
 import {
-  PEDAGOGICAL_KNOWLEDGE_BUILD,
   PEDAGOGICAL_KNOWLEDGE_INDEX,
-} from './pedagogicalKnowledge.generated';
+} from './pedagogicalKnowledgeIndex.generated';
+import { PEDAGOGICAL_KNOWLEDGE_BUILD } from './pedagogicalKnowledge.generated';
 import { SUVECA_METHOD } from './suvecaMethod.generated';
 import { formatKnowledgeContext, retrieveKnowledge } from '../lib/knowledgeRetrieval';
 

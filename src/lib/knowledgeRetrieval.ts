@@ -1,7 +1,7 @@
 import {
-  PEDAGOGICAL_KNOWLEDGE_BUILD,
   PEDAGOGICAL_KNOWLEDGE_INDEX,
-} from '../data/pedagogicalKnowledge.generated';
+} from '../data/pedagogicalKnowledgeIndex.generated';
+import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
 
 export type KnowledgeRecord = (typeof PEDAGOGICAL_KNOWLEDGE_INDEX)[number];
 

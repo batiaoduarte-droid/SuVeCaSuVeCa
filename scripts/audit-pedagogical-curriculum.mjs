@@ -11,6 +11,13 @@ const check = (condition, message) => {
 };
 const readJson = (file) => JSON.parse(fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, ''));
 const sha256File = (file) => createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+const readQuestionProjection = (kind) => {
+  const knowledgeRoot = path.join(ROOT, 'public', 'knowledge');
+  const monolith = path.join(knowledgeRoot, `official-questions.${kind}.json`);
+  if (fs.existsSync(monolith)) return readJson(monolith);
+  const shardManifest = readJson(path.join(knowledgeRoot, 'official-questions.manifest.json'));
+  return shardManifest.shards.flatMap((shard) => readJson(path.join(knowledgeRoot, shard[kind].file)));
+};
 
 check(fs.existsSync(manifestPath), 'Manifesto público da integração pedagógica ausente.');
 check(fs.existsSync(curriculumPath), 'Currículo pedagógico canônico ausente.');
@@ -165,8 +172,15 @@ if (!errors.length) {
   check(procedures.procedures.every((item) => !forbiddenMedia.test(`${item.title} ${item.markdown}`)), 'Há roteiro decisório dependente de mídia.');
   check(procedures.procedures.every((item) => !forbiddenEditorialResidue.test(`${item.title} ${item.markdown}`)), 'Há roteiro decisório com resíduo técnico/editorial.');
 
-  const knowledgeSource = fs.readFileSync(path.join(ROOT, 'src', 'data', 'pedagogicalKnowledge.generated.ts'), 'utf8');
-  const records = JSON.parse(/export const PEDAGOGICAL_KNOWLEDGE_INDEX = ([\s\S]*?) as const;/.exec(knowledgeSource)?.[1] || '[]');
+  const knowledgeShardFiles = fs.readdirSync(path.join(ROOT, 'src', 'data'))
+    .filter((name) => /^pedagogicalKnowledge\.part-\d+\.generated\.ts$/.test(name))
+    .sort();
+  const records = knowledgeShardFiles.flatMap((name) => {
+    const source = fs.readFileSync(path.join(ROOT, 'src', 'data', name), 'utf8');
+    return JSON.parse(/export const PEDAGOGICAL_KNOWLEDGE_PART_\d+ = ([\s\S]*?) as const;/.exec(source)?.[1] || '[]');
+  });
+  check(knowledgeShardFiles.length > 1, 'Índice do Professor SuVeCA não foi particionado para implantação.');
+  check(knowledgeShardFiles.every((name) => fs.statSync(path.join(ROOT, 'src', 'data', name)).size < 900_000), 'Partição do Professor SuVeCA excede 900 KB.');
   check(records.length === 115, `Índice do Professor SuVeCA: ${records.length}/115.`);
   check(new Set(records.map((record) => record.unitId)).size === records.length, 'Índice pedagógico contém unitId duplicado.');
   check(records.every((record) => record.sections?.length && record.routingTerms?.length), 'Índice pedagógico contém registro sem contexto ou roteamento.');
@@ -192,8 +206,8 @@ if (!errors.length) {
   check(duelFunctionsVersion === `editorial-duel-${curriculum.buildId}`, 'Versão confiável do Duelo diverge do build.');
   check(simulado.questions.every((question) => !forbiddenEditorialResidue.test(`${question.supportText || ''} ${question.questionText} ${question.commentary}`)), 'Simulado contém resíduo técnico/editorial.');
 
-  const rawQuestions = readJson(path.join(ROOT, 'public', 'knowledge', 'official-questions.raw.json'));
-  const normalizedQuestions = readJson(path.join(ROOT, 'public', 'knowledge', 'official-questions.normalized.json'));
+  const rawQuestions = readQuestionProjection('raw');
+  const normalizedQuestions = readQuestionProjection('normalized');
   const questionIndex = readJson(path.join(ROOT, 'public', 'knowledge', 'official-question-index.json'));
   const questionQuality = readJson(path.join(ROOT, 'public', 'knowledge', 'editorial-question-quality.json'));
   const questionIds = normalizedQuestions.map((question) => question.id);

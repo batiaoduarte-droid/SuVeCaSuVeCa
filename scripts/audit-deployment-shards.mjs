@@ -65,15 +65,19 @@ check(manifestIds.every((id) => /^A(?:0\d|1[0-3]):/.test(id)), 'Partições cont
 check(JSON.stringify(raw.map(getId)) === JSON.stringify(normalized.map(getId)), 'Ordem entre bruto e normalizado divergente.');
 check(JSON.stringify(indexIds) === JSON.stringify(manifestIds), 'A ordem do índice diverge das partições editoriais.');
 
-for (const source of [manifest.sources.raw, manifest.sources.normalized, manifest.sources.index]) {
-  await auditFile(base, source);
+await auditFile(base, manifest.sources.index);
+const rawSourcePath = resolve(base, manifest.sources.raw.file);
+const normalizedSourcePath = resolve(base, manifest.sources.normalized.file);
+if (existsSync(rawSourcePath)) {
+  await auditFile(base, manifest.sources.raw);
+  const rawSource = await readFile(rawSourcePath);
+  check(JSON.stringify(JSON.parse(rawSource.toString('utf8'))) === JSON.stringify(raw), 'As partições brutas não equivalem ao monólito.');
 }
-const [rawSource, normalizedSource] = await Promise.all([
-  readFile(resolve(base, manifest.sources.raw.file)),
-  readFile(resolve(base, manifest.sources.normalized.file)),
-]);
-check(JSON.stringify(JSON.parse(rawSource.toString('utf8'))) === JSON.stringify(raw), 'As partições brutas não equivalem ao monólito.');
-check(JSON.stringify(JSON.parse(normalizedSource.toString('utf8'))) === JSON.stringify(normalized), 'As partições normalizadas não equivalem ao monólito.');
+if (existsSync(normalizedSourcePath)) {
+  await auditFile(base, manifest.sources.normalized);
+  const normalizedSource = await readFile(normalizedSourcePath);
+  check(JSON.stringify(JSON.parse(normalizedSource.toString('utf8'))) === JSON.stringify(normalized), 'As partições normalizadas não equivalem ao monólito.');
+}
 
 const generatedKeySource = await readFile(resolve('functions', 'src', 'officialCorpus.generated.ts'), 'utf8');
 const generatedKey = JSON.parse(/export const OFFICIAL_CORPUS_ANSWER_KEY = ([\s\S]*?) as const;/.exec(generatedKeySource)?.[1] || '{}');
