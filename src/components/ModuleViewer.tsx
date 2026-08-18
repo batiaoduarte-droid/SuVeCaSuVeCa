@@ -111,7 +111,7 @@ const saveLocalNotes = (moduleId: string, notes: ModuleNotes, userId?: string) =
 
 const deepDiveCache = new Map<string, string>();
 
-const PedagogicalDeepDive: React.FC<{ section: ModuleSection }> = ({ section }) => {
+export const PedagogicalDeepDive: React.FC<{ section: ModuleSection }> = ({ section }) => {
   const panelId = useId();
   const [isOpen, setIsOpen] = useState(false);
   const [content, setContent] = useState<string | null>(() =>
@@ -122,8 +122,9 @@ const PedagogicalDeepDive: React.FC<{ section: ModuleSection }> = ({ section }) 
   );
 
   useEffect(() => {
-    if (!isOpen || !section.contentUrl || content || state === 'loading') return;
+    if (!isOpen || !section.contentUrl || content) return;
     const controller = new AbortController();
+    let active = true;
     setState('loading');
     fetch(section.contentUrl, { signal: controller.signal, headers: { Accept: 'text/markdown' } })
       .then((response) => {
@@ -131,16 +132,20 @@ const PedagogicalDeepDive: React.FC<{ section: ModuleSection }> = ({ section }) 
         return response.text();
       })
       .then((markdown) => {
+        if (!active) return;
         deepDiveCache.set(section.contentUrl!, markdown);
         setContent(markdown);
         setState('loaded');
       })
       .catch((error: unknown) => {
-        if (error instanceof DOMException && error.name === 'AbortError') return;
+        if (!active || (error instanceof DOMException && error.name === 'AbortError')) return;
         setState('error');
       });
-    return () => controller.abort();
-  }, [content, isOpen, section.contentUrl, state]);
+    return () => {
+      active = false;
+      controller.abort();
+    };
+  }, [content, isOpen, section.contentUrl]);
 
   if (!section.contentUrl) return null;
 
@@ -702,7 +707,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
         <div className="space-y-8">
           {moduleData.sections.map((section, idx) => (
             <section
-              key={idx}
+              key={`${section.lessonId || moduleData.id}:${section.groupId || idx}:${section.contentUrl || section.title}`}
               className="min-w-0 overflow-hidden bg-white rounded-2xl p-4 sm:p-8 border border-slate-200 shadow-xs space-y-5"
             >
               <div className="border-b border-slate-100 pb-3 flex items-start justify-between gap-3">
