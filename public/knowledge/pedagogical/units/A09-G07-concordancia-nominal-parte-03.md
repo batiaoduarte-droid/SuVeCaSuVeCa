@@ -45,9 +45,35 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Noções de transitividade verbal, verbos de ligação e estrutura de voz passiva analítica ($\text{verbo auxiliar } \textit{ser} + \text{particípio}$).
 - Regra geral de concordância nominal (o adjetivo concorda em gênero e número com o substantivo a que se refere).
 
-```text
-text CONCORDÂNCIA NOMINAL: EXPRESSÕES E CASOS ESPECIAIS │ ├── 1. EXPRESSÕES AVALIATIVAS (V.L. + PREDICATIVO) │ ├── Substantivo COM determinante (artigo, pronome, numeral, loc. adjetiva) ──► FLEXIONA │ ├── Substantivo SEM determinante (sentido geral/abstrato) ──► INVARIÁVEL (Masc. Sing.) │ └── Sujeito Oracional (Oração Substantiva Subjetiva = "ISSO") ──► INVARIÁVEL (Masc. Sing.) │ ├── 2. ESTRUTURAS SUPERLATIVAS COM "POSSÍVEL" │ ├── "Possível" segue estritamente o ARTIGO determinante da locução superlativa │ ├── Artigo no singular ("o / a mais...") ──► "possível" (singular) │ └── Artigo no plural ("os / as mais...") ──► "possíveis" (plural) │ ├── 3. LOCUÇÕES COM DUPLA POSSIBILIDADE NORMATIVA │ ├── "Haja vista": │ │ ├── Padrão invariável: "haja vista" (válido para singular ou plural) │ │ ├── Flexão verbal: "hajam vista" (admitido apenas diante de substantivo plural) │ │ └── Erro absoluto: "haja vistas" / "hajam vistas" (o substantivo "vista" NUNCA varia) │ └── "A olhos vistos" / "Olhos vistos": │ ├── Padrão invariável: "a olhos vistos" (concordância interna com "olhos") │ └── Concordância referencial: "a olhos visto / vista / vistos / vistas" (com o sujeito) │ ├── 4. ESTRUTURAS COMPARATIVAS E ANAFÓRICAS │ ├── "Tal qual" (Bivalente): │ │ ├── "TAL" concorda em número com o ANTECEDENTE │ │ └── "QUAL" concorda em número com o CONSEQUENTE │ └── "Como tal": O pronome "tal/tais" flexiona conforme o número do termo que retoma │ ├── 5. NÚCLEOS COORDENADOS E DOUTRINA DE BECHARA │ ├── "O período de X e Y" (1 artigo) ──► 1 núcleo expandido ──► Singular ("alterado") │ ├── "O período de X e de Y" (preposição repetida) ──► Preferência normativa: Singular │ └── "O período de X e o [período] de Y" (2 artigos) ──► 2 núcleos ──► Plural ("alterados") │ ├── 6. PARTICÍPIO NA VOZ PASSIVA ANALÍTICA │ └── Locução "ser + particípio" ──► Particípio concorda com o sujeito paciente │ └── 7. VOCÁBULOS ESPECIAIS ├── "Menos" ──► Estritamente invariável (inexiste "menas") ├── "Só" ──► Sentido de "somente/apenas" = advérbio invariável ├── "Junto" ──► Duplo referente: advérbio de modo (invariável) ou adjetivo (variável) └── "Alerta" ──► Advérbio invariável / uso de "em alerta" como locução invariável
-```
+text CONCORDÂNCIA NOMINAL: EXPRESSÕES E CASOS ESPECIAIS
+- ➔ 1. EXPRESSÕES AVALIATIVAS (V.L. + PREDICATIVO)
+➔ Substantivo COM determinante (artigo, pronome, numeral, loc. adjetiva) ➔ FLEXIONA
+- ➔ Substantivo SEM determinante (sentido geral/abstrato) ➔ INVARIÁVEL (Masc. Sing.)
+➔ Sujeito Oracional (Oração Substantiva Subjetiva = "ISSO") ➔ INVARIÁVEL (Masc. Sing.)
+- ➔ 2. ESTRUTURAS SUPERLATIVAS COM "POSSÍVEL"
+➔ "Possível" segue estritamente o ARTIGO determinante da locução superlativa
+- ➔ Artigo no singular ("o / a mais...") ➔ "possível" (singular)
+➔ Artigo no plural ("os / as mais...") ➔ "possíveis" (plural)
+- ➔ 3. LOCUÇÕES COM DUPLA POSSIBILIDADE NORMATIVA
+➔ "Haja vista":
+- ➔ Padrão invariável: "haja vista" (válido para singular ou plural)
+➔ Flexão verbal: "hajam vista" (admitido apenas diante de substantivo plural)
+- ➔ Erro absoluto: "haja vistas" / "hajam vistas" (o substantivo "vista" NUNCA varia)
+➔ "A olhos vistos" / "Olhos vistos":
+- ➔ Padrão invariável: "a olhos vistos" (concordância interna com "olhos")
+➔ Concordância referencial: "a olhos visto / vista / vistos / vistas" (com o sujeito)
+- ➔ 4. ESTRUTURAS COMPARATIVAS E ANAFÓRICAS
+➔ "Tal qual" (Bivalente):
+- ➔ "TAL" concorda em número com o ANTECEDENTE
+➔ "QUAL" concorda em número com o CONSEQUENTE
+- ➔ "Como tal": O pronome "tal/tais" flexiona conforme o número do termo que retoma
+➔ 5. NÚCLEOS COORDENADOS E DOUTRINA DE BECHARA
+- ➔ "O período de X e Y" (1 artigo) ➔ 1 núcleo expandido ➔ Singular ("alterado")
+➔ "O período de X e de Y" (preposição repetida) ➔ Preferência normativa: Singular
+- ➔ "O período de X e o [período] de Y" (2 artigos) ➔ 2 núcleos ➔ Plural ("alterados")
+➔ 6. PARTICÍPIO NA VOZ PASSIVA ANALÍTICA
+- ➔ Locução "ser + particípio" ➔ Particípio concorda com o sujeito paciente
+➔ 7. VOCÁBULOS ESPECIAIS ➔ "Menos" ➔ Estritamente invariável (inexiste "menas") ➔ "Só" ➔ Sentido de "somente/apenas" = advérbio invariável ➔ "Junto" ➔ Duplo referente: advérbio de modo (invariável) ou adjetivo (variável) ➔ "Alerta" ➔ Advérbio invariável / uso de "em alerta" como locução invariável
 
 ---
 
@@ -90,9 +116,8 @@ $$
 
 1. Invariabilidade Absoluta: Como o pronome neutro isso (e a oração que ele sintetiza) não possui gênero feminino nem número plural, é gramaticalmente impossível flexionar o predicativo para o feminino ou para o plural. No sujeito oracional, nem o verbo nem o adjetivo sofrem qualquer flexão.
 
-```text
-text [ É necessário ] ◄─────── [ solidarizar-se com o indivíduo que não aceita... ] (Predicado) (Oração Subordinada Substantiva Subjetiva) │ │ ▼ ▼ Masculino Singular Equivale a "ISSO"
-```
+text [ É necessário ] ➔ [ solidarizar-se com o indivíduo que não aceita... ] (Predicado) (Oração Subordinada Substantiva Subjetiva)
+- Masculino Singular Equivale a "ISSO"
 
 - Correto: "É necessário solidarizar-se com o indivíduo..."
 - Incorreto: "É necessária solidarizar-se com as vítimas..." (erro grave de concordância com sujeito oracional).
@@ -157,9 +182,9 @@ Na locução comparativa tal qual, os dois termos constituintes possuem vínculo
 
 - Exemplo: "Os torcedores eram bagunceiros (pl.) e foram punidos como tais (pl.)."
 
-```text
-text ┌────────── TAL concorda com o ANTECEDENTE │ [ Antecedente ]... TAL QUAL... [ Consequente ] │ │ └─────┼──────── QUAL concorda com o CONSEQUENTE
-```
+text ➔ TAL concorda com o ANTECEDENTE
+- [ Antecedente ]... TAL QUAL... [ Consequente ]
+➔ QUAL concorda com o CONSEQUENTE
 
 - Exemplificado em: , .
 
@@ -182,9 +207,7 @@ Apresentam-se três cenários sintáticos respaldados na doutrina do gramático 
 - "o período de seca e o [período] de inundação [alterados]"
 - O segundo artigo (o) substantiva uma elipse (o período de seca e o período de inundação). Como passam a existir formalmente dois núcleos coordenados ($1 + 1 = 2$), o adjetivo qualificador vai obrigatoriamente para o plural: alterados.
 
-```text
-text "o período de seca e inundação" ──► 1 núcleo ──► alterado (singular) "o período de seca e de inundação" ──► 1 núcleo ──► alterado (singular - preferência Bechara) "o período de seca e o de inundação" ──► 2 núcleos ──► alterados (plural obrigatório)
-```
+text "o período de seca e inundação" ➔ 1 núcleo ➔ alterado (singular) "o período de seca e de inundação" ➔ 1 núcleo ➔ alterado (singular - preferência Bechara) "o período de seca e o de inundação" ➔ 2 núcleos ➔ alterados (plural obrigatório)
 
 Certos vocábulos da língua portuguesa apresentam restrições morfológicas absolutas de invariabilidade ou comportamentos sintáticos bivalentes dependendo de sua vinculação ao verbo ou ao substantivo.
 

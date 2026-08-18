@@ -14,9 +14,32 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 
 ## Pré-requisitos e modelo mental
 
-```text
-SEMÂNTICA VOCABULAR E TEXTUAL (Sentido / Contexto / Relações por Setas) │ ├── 1. RELAÇÕES DE EQUIVALÊNCIA E OPOSIÇÃO LEXICAL │ ├── SINÔNIMOS (Palavras ≠s com sentidos =s ou semelhantes no mesmo nível semântico) │ │ ├── Sinônimos Perfeitos: Identidade semântica estrita (morrer / falecer) │ │ ├── Sinônimos Imperfeitos: Semelhança aproximada/contextual (feliz / alegre, belo / bonito) │ │ └── Nuance Crítica de Prova: Inexistência de sinonímia 100% perfeita em rigor formal (FGV) │ │ │ └── ANTÔNIMOS (Palavras ≠s com sentidos opostos entre si) │ ├── Antônimos Contrários: Oposição gradual / Não excludente (leve / pesado, frio / quente) │ ├── Antônimos Contraditórios: Oposição binária / Exclusão mútua (guerra / paz, vivo / morto) │ └── Antônimos Correlativos: Papéis recíprocos/complementares (pai / mãe, professor / aluno, chefe / funcionário) │ ├── 2. RELAÇÕES DE FORMA E SOM (FONO-ORTOGRÁFICAS) │ ├── HOMÔNIMOS (Homo = Igual: pelo menos UM elemento formal é estritamente IDÊNTICO) │ │ ├── Homônimos Perfeitos: Grafia IGUAL e Som IGUAL (caminho [v.] / caminho [subst.], são [adj.] / são [v.]) │ │ └── Homônimos Imperfeitos (Apenas um elemento é igual): │ │ ├── Homógrafos: Grafia IGUAL e Som DIFERENTE (almoço [ô] / almoço [ó]) │ │ └── Homófonos: Som IGUAL e Grafia DIFERENTE (sessão / seção, apressar / apreçar) │ │ │ └── PARÔNIMOS (Paro = Parecido: NADA é estritamente igual; sentidos diferentes) │ └── Grafia DIFERENTE + Som DIFERENTE (infligir / infringir, retificar / ratificar, eminente / iminente) │ ├── 3. RELAÇÕES DE HIERARQUIA CONCEITUAL (CAMPO SEMÂNTICO) │ ├── Teste Mantra: "[Hipônimo] é um TIPO DE [Hiperônimo]" │ ├── Hiperônimo: Termo geral / abrangente / gênero (calçado, ferramenta, flor, animal) │ ├── Hipônimo: Termo específico / restrito / espécie (tamanco, martelo, violeta, elefante) │ └── Coesão Anafórica: A classificação depende exclusivamente da natureza do termo que retoma │ ├── Retomada por Hiperônimo: Termo Geral retoma o Termo Específico (martelo... a ferramenta) │ └── Retomada por Hipônimo: Termo Específico retoma o Termo Geral (flor... a violeta) │ └── 4. METODOLOGIAS DE RESOLUÇÃO EM CONCURSOS PÚBLICOS ├── Técnica da Polaridade Semântica: Rotulação axiológica positiva [+] vs. negativa [-] ├── Método dos Blocos Semânticos (Colchetes): Segmentação e confronto de simetria em reescritas (FCC) ├── Artigo Definido Plural Generalizador: Equivalência funcional entre "os" e "todos os" ├── Diferenciação Estrutural FGV: Antônimos lexicais vs. Conjunções adversativas ("mas") └── Primazia do Contexto: Superação do senso comum em termos eruditos (Cebraspe)
-```
+SEMÂNTICA VOCABULAR E TEXTUAL (Sentido / Contexto / Relações por Setas)
+- ➔ 1. RELAÇÕES DE EQUIVALÊNCIA E OPOSIÇÃO LEXICAL
+➔ SINÔNIMOS (Palavras ≠s com sentidos =s ou semelhantes no mesmo nível semântico)
+- ➔ Sinônimos Perfeitos: Identidade semântica estrita (morrer / falecer)
+➔ Sinônimos Imperfeitos: Semelhança aproximada/contextual (feliz / alegre, belo / bonito)
+- ➔ Nuance Crítica de Prova: Inexistência de sinonímia 100% perfeita em rigor formal (FGV)
+➔ ANTÔNIMOS (Palavras ≠s com sentidos opostos entre si)
+- ➔ Antônimos Contrários: Oposição gradual / Não excludente (leve / pesado, frio / quente)
+➔ Antônimos Contraditórios: Oposição binária / Exclusão mútua (guerra / paz, vivo / morto)
+- ➔ Antônimos Correlativos: Papéis recíprocos/complementares (pai / mãe, professor / aluno, chefe / funcionário)
+➔ 2. RELAÇÕES DE FORMA E SOM (FONO-ORTOGRÁFICAS)
+- ➔ HOMÔNIMOS (Homo = Igual: pelo menos UM elemento formal é estritamente IDÊNTICO)
+➔ Homônimos Perfeitos: Grafia IGUAL e Som IGUAL (caminho [v.] / caminho [subst.], são [adj.] / são [v.])
+- ➔ Homônimos Imperfeitos (Apenas um elemento é igual):
+➔ Homógrafos: Grafia IGUAL e Som DIFERENTE (almoço [ô] / almoço [ó])
+- ➔ Homófonos: Som IGUAL e Grafia DIFERENTE (sessão / seção, apressar / apreçar)
+➔ PARÔNIMOS (Paro = Parecido: NADA é estritamente igual; sentidos diferentes)
+- ➔ Grafia DIFERENTE + Som DIFERENTE (infligir / infringir, retificar / ratificar, eminente / iminente)
+➔ 3. RELAÇÕES DE HIERARQUIA CONCEITUAL (CAMPO SEMÂNTICO)
+- ➔ Teste Mantra: "[Hipônimo] é um TIPO DE [Hiperônimo]"
+➔ Hiperônimo: Termo geral / abrangente / gênero (calçado, ferramenta, flor, animal)
+- ➔ Hipônimo: Termo específico / restrito / espécie (tamanco, martelo, violeta, elefante)
+➔ Coesão Anafórica: A classificação depende exclusivamente da natureza do termo que retoma
+- ➔ Retomada por Hiperônimo: Termo Geral retoma o Termo Específico (martelo... a ferramenta)
+➔ Retomada por Hipônimo: Termo Específico retoma o Termo Geral (flor... a violeta)
+- ➔ 4. METODOLOGIAS DE RESOLUÇÃO EM CONCURSOS PÚBLICOS ➔ Técnica da Polaridade Semântica: Rotulação axiológica positiva [+] vs. negativa [-] ➔ Método dos Blocos Semânticos (Colchetes): Segmentação e confronto de simetria em reescritas (FCC) ➔ Artigo Definido Plural Generalizador: Equivalência funcional entre "os" e "todos os" ➔ Diferenciação Estrutural FGV: Antônimos lexicais vs. Conjunções adversativas ("mas") ➔ Primazia do Contexto: Superação do senso comum em termos eruditos (Cebraspe)
 
 ---
 
@@ -170,9 +193,13 @@ Abaixo consolidam-se as formulações definitivas estabelecidas ao longo do grup
 
 Determinar categoricamente se um par de vocábulos constitui caso de homonímia (perfeita, homógrafa ou homófona) ou de paronímia.
 
-```text
-[ ANALISAR O PAR DE VOCÁBULOS ] │ ┌──────────────────────┴──────────────────────┐ ▼ ▼ [ Teste 1: Grafia ] [ Teste 2: Pronúncia ] A grafia é IDÊNTICA? A pronúncia é IDÊNTICA? │ │ ┌───────┴───────┐ ┌───────┴───────┐ SIM NÃO SIM NÃO │ │ │ │ ▼ ▼ ▼ ▼ (Homônimo (Pode ser (Homônimo (Pode ser Perfeito ou Homófono ou Perfeito ou Homógrafo ou Homógrafo) Parônimo) Homófono) Parônimo) │ │ │ │ └───────────────┼─────────────────────────────┘ │ ▼ │ [ AO MENOS UM TESTE DEU "SIM"? ] │ │ │ ┌───────┴───────┐ │ SIM NÃO ◄──────────────────────────────────┘ │ │ ▼ ▼ [ HOMÔNIMO ] [ PARÔNIMO ] (ALGO É IGUAL) (NADA É IGUAL, SÓ PARECIDO)
-```
+[ ANALISAR O PAR DE VOCÁBULOS ]
+- ➔ [ Teste 1: Grafia ] [ Teste 2: Pronúncia ] A grafia é IDÊNTICA? A pronúncia é IDÊNTICA?
+➔ ➔ SIM NÃO SIM NÃO
+- (Homônimo (Pode ser (Homônimo (Pode ser Perfeito ou Homófono ou Perfeito ou Homógrafo ou Homógrafo) Parônimo) Homófono) Parônimo)
+➔
+- [ AO MENOS UM TESTE DEU "SIM"? ]
+➔ SIM NÃO ➔ [ HOMÔNIMO ] [ PARÔNIMO ] (ALGO É IGUAL) (NADA É IGUAL, SÓ PARECIDO)
 
 1. Verificar Grafia: Comparar cada letra e acento. As palavras são escritas exatamente iguais?
 2. Verificar Pronúncia: Produzir o som de ambos os vocábulos (avaliando timbre aberto/fechado e fonemas consonantais). O som é 100% idêntico?
@@ -222,9 +249,13 @@ Determinar categoricamente se um par de vocábulos constitui caso de homonímia 
 
 #### Diagrama de Execução
 
-```text
-[ ANALISAR O PAR DE VOCÁBULOS ] │ ┌──────────────────────┴──────────────────────┐ ▼ ▼ [ Teste 1: Grafia ] [ Teste 2: Pronúncia ] A grafia é IDÊNTICA? A pronúncia é IDÊNTICA? │ │ ┌───────┴───────┐ ┌───────┴───────┐ SIM NÃO SIM NÃO │ │ │ │ ▼ ▼ ▼ ▼ (Homônimo (Pode ser (Homônimo (Pode ser Perfeito ou Homófono ou Perfeito ou Homógrafo ou Homógrafo) Parônimo) Homófono) Parônimo) │ │ │ │ └───────────────┼─────────────────────────────┘ │ ▼ │ [ AO MENOS UM TESTE DEU "SIM"? ] │ │ │ ┌───────┴───────┐ │ SIM NÃO ◄──────────────────────────────────┘ │ │ ▼ ▼ [ HOMÔNIMO ] [ PARÔNIMO ] (ALGO É IGUAL) (NADA É IGUAL, SÓ PARECIDO)
-```
+[ ANALISAR O PAR DE VOCÁBULOS ]
+- ➔ [ Teste 1: Grafia ] [ Teste 2: Pronúncia ] A grafia é IDÊNTICA? A pronúncia é IDÊNTICA?
+➔ ➔ SIM NÃO SIM NÃO
+- (Homônimo (Pode ser (Homônimo (Pode ser Perfeito ou Homófono ou Perfeito ou Homógrafo ou Homógrafo) Parônimo) Homófono) Parônimo)
+➔
+- [ AO MENOS UM TESTE DEU "SIM"? ]
+➔ SIM NÃO ➔ [ HOMÔNIMO ] [ PARÔNIMO ] (ALGO É IGUAL) (NADA É IGUAL, SÓ PARECIDO)
 
 #### Roteiro Passo a Passo
 

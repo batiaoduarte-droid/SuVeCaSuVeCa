@@ -40,9 +40,25 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ## Pré-requisitos e modelo mental
 
-```text
-IDENTIFICAÇÃO E EMPREGO DE TEMPOS E MODOS VERBAIS ├── 1. MODO INDICATIVO (Certeza / Realidade / Fato) │ ├── Presente ➔ Palavra mágica: "HOJE" │ ├── Pretérito Perfeito ➔ Palavra mágica: "ONTEM" (Ação pontual concluída) │ ├── Pretérito Imperfeito ➔ Palavra mágica: "ANTIGAMENTE" (Hábito / Continuidade no passado) │ ├── Pretérito Mais-que-perfeito ➔ Palavra mágica: "OUTRORA" / Desinência "-RA" (Passado anterior ao passado) │ ├── Futuro do Presente ➔ Palavra mágica: "AMANHÃ" │ └── Futuro do Pretérito ➔ Estrutura: "Se eu fosse você, eu..." / Desinência "-RIA" ├── 2. MODO SUBJUNTIVO (Dúvida / Hipótese / Desejo / Eventualidade) │ ├── Presente ➔ Conectivo mágica: "QUE" (Que eu fale / Que você fale) │ ├── Pretérito Imperfeito ➔ Conectivo mágica: "SE" / Desinência "-SSE" (Se eu falasse) │ └── Futuro ➔ Conectivo mágica: "QUANDO" ou "SE" (Quando eu falar / Se eu falar) ├── 3. MODO IMPERATIVO (Ordem / Conselho / Pedido / Exortação) │ ├── Imperativo Afirmativo │ │ ├── TU e VÓS ➔ Derivam do Presente do Indicativo ("HOJE") sem a letra "-S" │ │ └── VOCÊ, NÓS, VOCÊS ➔ Derivam do Presente do Subjuntivo ("QUE") │ └── Imperativo Negativo ➔ Deriva 100% do Presente do Subjuntivo ("QUE") + "NÃO" ├── 4. FORMAS NOMINAIS │ ├── Infinitivo Impessoal ➔ Terminação "-R" (Nome dicionarizado) │ ├── Infinitivo Pessoal (Conjugado) ➔ Palavra mágica: "PARA" (Para eu amar, para tu amares...) │ ├── Gerúndio ➔ Terminação "-NDO" (Ação em curso) │ └── Particípio ➔ Terminação "-DO" (Regular) ou "-TO/-SO" (Irregular) ├── 5. PARADIGMA DOS VERBOS LÍDERES (COGNATOS) │ └── Verbos Primitivos: TER, VER, VIR, PÔR (ex.: detivera <- tivera; intervinha <- vinha) └── 6. ARMADILHAS MORFOSSINTÁTICAS DAS BANCAS & ANTÍDOTOS ├── Perigo 1: Presente do Ind. vs. Presente do Subj. (-ar troca para -e) ➔ Antídoto: Teste "HOJE" x "QUE" ├── Perigo 2: Imperativo vs. Presente do Subjuntivo ➔ Antídoto: Contexto (Ordem x Hipótese subordinada) ├── Perigo 3: Infinitivo Pessoal vs. Futuro do Subjuntivo ➔ Antídoto: Macete "FAZER" (Inf.) / "FIZER" (Fut. Subj.) ├── Perigo 4: Ambivalência da conjunção "SE" ➔ Antídoto: Aceita Imperfeito (-sse) OU Futuro do Subjuntivo └── Perigo 5: Falsa indução por Conjunção Subordinativa ➔ Antídoto: Concessiva/Dúvida NUNCA aceita Imperativo
-```
+IDENTIFICAÇÃO E EMPREGO DE TEMPOS E MODOS VERBAIS ➔ 1. MODO INDICATIVO (Certeza / Realidade / Fato)
+- ➔ Presente ➔ Palavra mágica: "HOJE"
+➔ Pretérito Perfeito ➔ Palavra mágica: "ONTEM" (Ação pontual concluída)
+- ➔ Pretérito Imperfeito ➔ Palavra mágica: "ANTIGAMENTE" (Hábito / Continuidade no passado)
+➔ Pretérito Mais-que-perfeito ➔ Palavra mágica: "OUTRORA" / Desinência "-RA" (Passado anterior ao passado)
+- ➔ Futuro do Presente ➔ Palavra mágica: "AMANHÃ"
+➔ Futuro do Pretérito ➔ Estrutura: "Se eu fosse você, eu..." / Desinência "-RIA" ➔ 2. MODO SUBJUNTIVO (Dúvida / Hipótese / Desejo / Eventualidade)
+- ➔ Presente ➔ Conectivo mágica: "QUE" (Que eu fale / Que você fale)
+➔ Pretérito Imperfeito ➔ Conectivo mágica: "SE" / Desinência "-SSE" (Se eu falasse)
+- ➔ Futuro ➔ Conectivo mágica: "QUANDO" ou "SE" (Quando eu falar / Se eu falar) ➔ 3. MODO IMPERATIVO (Ordem / Conselho / Pedido / Exortação)
+➔ Imperativo Afirmativo
+- ➔ TU e VÓS ➔ Derivam do Presente do Indicativo ("HOJE") sem a letra "-S"
+➔ VOCÊ, NÓS, VOCÊS ➔ Derivam do Presente do Subjuntivo ("QUE")
+- ➔ Imperativo Negativo ➔ Deriva 100% do Presente do Subjuntivo ("QUE") + "NÃO" ➔ 4. FORMAS NOMINAIS
+➔ Infinitivo Impessoal ➔ Terminação "-R" (Nome dicionarizado)
+- ➔ Infinitivo Pessoal (Conjugado) ➔ Palavra mágica: "PARA" (Para eu amar, para tu amares...)
+➔ Gerúndio ➔ Terminação "-NDO" (Ação em curso)
+- ➔ Particípio ➔ Terminação "-DO" (Regular) ou "-TO/-SO" (Irregular) ➔ 5. PARADIGMA DOS VERBOS LÍDERES (COGNATOS)
+➔ Verbos Primitivos: TER, VER, VIR, PÔR (ex.: detivera <- tivera; intervinha <- vinha) ➔ 6. ARMADILHAS MORFOSSINTÁTICAS DAS BANCAS & ANTÍDOTOS ➔ Perigo 1: Presente do Ind. vs. Presente do Subj. (-ar troca para -e) ➔ Antídoto: Teste "HOJE" x "QUE" ➔ Perigo 2: Imperativo vs. Presente do Subjuntivo ➔ Antídoto: Contexto (Ordem x Hipótese subordinada) ➔ Perigo 3: Infinitivo Pessoal vs. Futuro do Subjuntivo ➔ Antídoto: Macete "FAZER" (Inf.) / "FIZER" (Fut. Subj.) ➔ Perigo 4: Ambivalência da conjunção "SE" ➔ Antídoto: Aceita Imperfeito (-sse) OU Futuro do Subjuntivo ➔ Perigo 5: Falsa indução por Conjunção Subordinativa ➔ Antídoto: Concessiva/Dúvida NUNCA aceita Imperativo
 
 1. Fixar as Palavras Mágicas do Indicativo e do Subjuntivo no rascunho de estudos.
 2. Treinar a técnica dos Verbos Líderes para os primitivos irregulares (Ter, Ver, Vir, Pôr).
@@ -161,9 +177,9 @@ O Modo Imperativo expressa ordem, solicitação, conselho, instrução ou exorta
 - Exemplo (Tu): Que tu fiques ➔ Não fiques (tu).
 - Exemplo (Você): Que você fique ➔ Não fique (você).
 
-```text
-┌── TU / VÓS ──────────► Presente do Indicativo ("HOJE") sem "-S" ┌─ AFIRMATIVO ────┤ │ └── VOCÊ / NÓS / VOCÊS ► Presente do Subjuntivo ("QUE") │ └─ NEGATIVO ─────────────────────────────► 100% Presente do Subjuntivo ("QUE") + "NÃO"
-```
+➔ TU / VÓS ➔ Presente do Indicativo ("HOJE") sem "-S" AFIRMATIVO ➔ ┤
+- ➔ VOCÊ / NÓS / VOCÊS Presente do Subjuntivo ("QUE")
+NEGATIVO ➔ 100% Presente do Subjuntivo ("QUE") + "NÃO"
 
 1. Uniformidade de Tratamento:
 
@@ -192,9 +208,30 @@ As Formas Nominais não expressam por si mesmas a categoria de modo verbal e pod
 
 As bancas de concurso exploram a coincidência gráfica e fonética de formas verbais homônimas para induzir o candidato ao erro. A resolução sistemática dessas ambiguidades assenta-se em quatro antídotos específicos e no Macete do Fazer/Fizer.
 
-```text
-┌──────────────────────────────────────┬────────────────────────────────────────────────────────┐ │ HOMONÍMIA / PERIGO │ ANTÍDOTO PEDAGÓGICO CANÔNICO │ ├──────────────────────────────────────┼────────────────────────────────────────────────────────┤ │ 1. Presente do Ind. x Pres. Subj. │ Teste "De onde saiu?": Aplicar HOJE x QUE no rascunho. │ │ (ex.: acorda x acorde) │ Se saiu de HOJE -> Indicativo; se de QUE -> Subjuntivo│ ├──────────────────────────────────────┼────────────────────────────────────────────────────────┤ │ 2. Imperativo x Presente do Subj. │ Análise de Contexto: Ordem/Conselho -> Imperativo; │ │ (ex.: Acorde logo! x Espero...) │ Hipótese/Subordinação -> Presente do Subjuntivo. │ ├──────────────────────────────────────┼────────────────────────────────────────────────────────┤ │ 3. Infinitivo Pessoal x Fut. Subj. │ MACETE DO FAZER / FIZER (Substituição por Irregular): │ │ (em verbos regulares: significar) │ Se couber FAZER -> Infinitivo Pessoal. │ │ │ Se couber FIZER -> Futuro do Subjuntivo. │ ├──────────────────────────────────────┼────────────────────────────────────────────────────────┤ │ 4. Conectivo "SE" Ambivalente │ Aceita tanto Pretérito Imperfeito (-SSE) quanto │ │ (se fizesse x se fizer) │ Futuro do Subjuntivo (se fizer / se significar). │ └──────────────────────────────────────┴────────────────────────────────────────────────────────┘
-```
+➔ HOMONÍMIA / PERIGO
+- ANTÍDOTO PEDAGÓGICO CANÔNICO
+➔ ┤
+1. Presente do Ind. x Pres. Subj.
+- Teste "De onde saiu?": Aplicar HOJE x QUE no rascunho.
+(ex.: acorda x acorde)
+- Se saiu de HOJE -> Indicativo; se de QUE -> Subjuntivo
+➔ ┤
+2. Imperativo x Presente do Subj.
+- Análise de Contexto: Ordem/Conselho -> Imperativo;
+(ex.: Acorde logo! x Espero...)
+
+➔ ┤
+3. Infinitivo Pessoal x Fut. Subj.
+- MACETE DO FAZER / FIZER (Substituição por Irregular):
+(em verbos regulares: significar)
+
+Se couber FIZER -> Futuro do Subjuntivo.
+- ➔ ┤
+4. Conectivo "SE" Ambivalente
+- Aceita tanto Pretérito Imperfeito (-SSE) quanto
+(se fizesse x se fizer)
+
+➔
 
 - Mecânica do Macete do Fazer/Fizer (Perigo 3):
 - Verbos regulares como amar ou significar possuem formas 100% idênticas no Infinitivo Pessoal e no Futuro do Subjuntivo (amares / amares; significar / significar).

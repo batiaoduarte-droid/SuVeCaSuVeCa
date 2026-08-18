@@ -44,13 +44,75 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Distinção entre Termo da Oração e Oração: Capacidade de distinguir adjuntos adnominais/adverbiais de estruturas oracionais plenas.
 - Morfologia das Conjunções Coordenativas: Conhecimento prévio das famílias de conectivos (e, mas, ou, logo, porque).
 
-```text
-SINTAXE DO PERÍODO COMPOSTO POR COORDENAÇÃO ├── 1. Orações Coordenadas Assindéticas │ └── Justapostas por pontuação (vírgula, ponto e vírgula), sem conectivo │ └── 2. Orações Coordenadas Sindéticas (Classificadas pela Conjunção) ├── A) Aditivas (Soma, acréscimo) │ ├── Conectivo "E": Adição pura, Adição + Tempo (cronologia), Adversativo, Conclusivo │ ├── Conectivo "NEM" (= "e não"): Condenação culta do pleonasmo "e nem" │ ├── Estrutura "Nem... nem...": 1º nem = Advérbio; 2º nem = Conjunção Aditiva │ ├── Locuções Correlativas: "não só... mas também/como/principalmente" (e elipse do 1º termo) │ └── Conectivo "MAS" Aditivo: Conecta atributos acumulativos convergentes │ ├── B) Alternativas (Alternância vs. Exclusão) │ ├── Conectivos: ou, ou...ou, ora...ora, seja...seja, quer...quer, já...já │ ├── Valor de Alternância: Ações cíclicas/distributivas que se revezam no tempo │ ├── Valor de Exclusão / Alternativo Puro: Polos opostos mutuamente excludentes │ └── Duplicidade Sindética: Ambas as orações podem ser coordenadas sindéticas │ ├── C) Adversativas (Quebra de expectativa) │ ├── Conectivos canônicos: mas, porém, contudo, todavia, entretanto, no entanto, não obstante │ ├── Valor de Oposição / Contraste: Polos antagônicos diretos (+ vs. -) │ ├── Valor de Ressalva / Compensação: Ponderação atenuante ("em compensação") │ └── Pontuação do "E" adversativo: Uso de vírgula antes do conectivo é facultativo │ ├── D) Conclusivas (Dedução, desfecho lógico) │ ├── Conectivos: logo, portanto, então, assim, por conseguinte, por isso │ └── Conectivo "POIS" Conclusivo: Obrigatoriamente posposto/deslocado após o verbo, entre vírgulas │ └── E) Explicativas (Justificativa, motivo discursivo) ├── Conectivos: porque, que (= pois), porquanto, pois (anteposto ao verbo) ├── Estrutura com Imperativo: Verbo no modo imperativo + "que"/"pois" explicativo ├── Estrutura com Declarativa: Afirmação + Justificativa do falante ├── Distinção com a Causa: Causa = relação física/ontológica no mundo real; Explicação = justificativa discursiva └── Pontuação: Substituição de dois-pontos (:) por conectivo explicativo
-```
+SINTAXE DO PERÍODO COMPOSTO POR COORDENAÇÃO ➔ 1. Orações Coordenadas Assindéticas
+- ➔ Justapostas por pontuação (vírgula, ponto e vírgula), sem conectivo
+➔ 2. Orações Coordenadas Sindéticas (Classificadas pela Conjunção) ➔ A) Aditivas (Soma, acréscimo)
+- ➔ Conectivo "E": Adição pura, Adição + Tempo (cronologia), Adversativo, Conclusivo
+➔ Conectivo "NEM" (= "e não"): Condenação culta do pleonasmo "e nem"
+- ➔ Estrutura "Nem... nem...": 1º nem = Advérbio; 2º nem = Conjunção Aditiva
+➔ Locuções Correlativas: "não só... mas também/como/principalmente" (e elipse do 1º termo)
+- ➔ Conectivo "MAS" Aditivo: Conecta atributos acumulativos convergentes
+➔ B) Alternativas (Alternância vs. Exclusão)
+- ➔ Conectivos: ou, ou...ou, ora...ora, seja...seja, quer...quer, já...já
+➔ Valor de Alternância: Ações cíclicas/distributivas que se revezam no tempo
+- ➔ Valor de Exclusão / Alternativo Puro: Polos opostos mutuamente excludentes
+➔ Duplicidade Sindética: Ambas as orações podem ser coordenadas sindéticas
+- ➔ C) Adversativas (Quebra de expectativa)
+➔ Conectivos canônicos: mas, porém, contudo, todavia, entretanto, no entanto, não obstante
+- ➔ Valor de Oposição / Contraste: Polos antagônicos diretos (+ vs. -)
+➔ Valor de Ressalva / Compensação: Ponderação atenuante ("em compensação")
+- ➔ Pontuação do "E" adversativo: Uso de vírgula antes do conectivo é facultativo
+➔ D) Conclusivas (Dedução, desfecho lógico)
+- ➔ Conectivos: logo, portanto, então, assim, por conseguinte, por isso
+➔ Conectivo "POIS" Conclusivo: Obrigatoriamente posposto/deslocado após o verbo, entre vírgulas
+- ➔ E) Explicativas (Justificativa, motivo discursivo) ➔ Conectivos: porque, que (= pois), porquanto, pois (anteposto ao verbo) ➔ Estrutura com Imperativo: Verbo no modo imperativo + "que"/"pois" explicativo ➔ Estrutura com Declarativa: Afirmação + Justificativa do falante ➔ Distinção com a Causa: Causa = relação física/ontológica no mundo real; Explicação = justificativa discursiva ➔ Pontuação: Substituição de dois-pontos (:) por conectivo explicativo
 
-```text
-SINTAXE DO PERÍODO COMPOSTO POR COORDENAÇÃO │ ├── 1. ORAÇÕES COORDENADAS ASSINDÉTICAS │ ├── Definição: Independentes sintaticamente, sem conjunção coordenativa (síndeto) │ ├── Conexão: Feita exclusivamente por pontuação (vírgula, ponto e vírgula, dois-pontos) │ └── Alerta de Prova: Exige a presença de VERBO; adjunto adverbial antecipado NÃO é oração │ └── 2. ORAÇÕES COORDENADAS SINDÉTICAS (5 ESPÉCIES) │ ├── A. ADITIVAS (Ideia central: soma, acréscimo, adição de termos ou orações) │ ├── Conectivo "E" (Polissêmico): │ │ ├── 1. Adição Pura: Soma termos ou ações homogêneas │ │ ├── 2. Adição + Tempo: Sequência cronológica linear obrigatória │ │ ├── 3. Oposição / Adversativo (= mas, porém): Choque de polaridades (+ e -) │ │ └── 4. Conclusão / Consequência (= portanto, por isso): Relação de causa e efeito │ ├── Conectivo "NEM" (= "e não"): │ │ ├── Sentido: Adição com polaridade negativa (soma de negações) │ │ ├── Norma Culta: "e nem" é pleonasmo vicioso redundante │ │ └── Estrutura "Nem... Nem...": │ │ ├── 1º "nem" = Advérbio de negação (oração assindética) │ │ └── 2º "nem" = Conjunção coordenativa aditiva (oração sindética aditiva) │ ├── Expressões Correlativas Aditivas: │ │ ├── "não só... mas também" / "não apenas... como também" │ │ ├── Pragmática: Complementação e reforço argumentativo │ │ └── Fenômeno da Elipse: Omissão do 1º termo ("..., mas também...") │ └── Conectivo "MAS" com Valor Aditivo: │ └── Soma atributos/qualificadores de um mesmo referente sem oposição │ ├── B. ALTERNATIVAS (Ideia central: alternância ou escolha/exclusão) │ ├── Conectivos: ou, ou...ou, ora...ora, seja...seja, já...já, quer...quer │ ├── Duplicidade Sindética: Quando o conectivo se repete, AMBAS as orações são sindéticas │ ├── Permutabilidade: "seja... seja" é plenamente substituível por "quer... quer" │ └── Valores Semânticos Distintos: │ ├── Alternância Distributiva: Ações que se revezam ciclicamente no tempo │ └── Exclusão (Valor Alternativo Puro): Polos opostos mutuamente excludentes │ ├── C. ADVERSATIVAS (Ideia central: quebra de expectativa, contraste, compensação) │ ├── Conectivos Canônicos: mas, porém, contudo, todavia, entretanto, no entanto, senão │ ├── Valores Semânticos: │ │ ├── Oposição / Contraste: Antagonismo direto entre polos contrários (sim x não) │ │ └── Ressalva / Compensação: Ponderação restritiva atenuante (= "em compensação") │ ├── Teste de Polaridade: (+) com (-) = Oposição; (+) com (+) ou (-) com (-) = Adição │ └── Pontuação: Vírgula antes do "e" com valor adversativo é facultativa │ ├── D. CONCLUSIVAS (Ideia central: dedução lógica, conclusão, consequência) │ ├── Conectivos: logo, portanto, então, assim, por conseguinte, por isso, pois (posposto) │ └── Comportamento Sintático do "POIS": │ ├── "Pois" Posposto (deslocado após o verbo, entre vírgulas) = CONCLUSIVO (= portanto) │ └── "Pois" Anteposto (início da oração, antes do verbo) = EXPLICATIVO (= porque) │ └── E. EXPLICATIVAS (Ideia central: justificativa, razão discursiva, fundamentação) ├── Conectivos: porque, que (= pois), porquanto (= porque), pois (anteposto ao verbo) ├── Estruturas Típicas: │ ├── 1. Modo Imperativo (ordem/pedido) + "que"/"pois" explicativo │ └── 2. Oração Declarativa + Justificativa do enunciador └── Distinção entre Explicação e Causa: ├── Oração Causal: Causa física, objetiva e real no mundo dos fatos └── Oração Explicativa: Evidência discursiva que fundamenta a afirmação prévia
-```
+SINTAXE DO PERÍODO COMPOSTO POR COORDENAÇÃO
+- ➔ 1. ORAÇÕES COORDENADAS ASSINDÉTICAS
+➔ Definição: Independentes sintaticamente, sem conjunção coordenativa (síndeto)
+- ➔ Conexão: Feita exclusivamente por pontuação (vírgula, ponto e vírgula, dois-pontos)
+➔ Alerta de Prova: Exige a presença de VERBO; adjunto adverbial antecipado NÃO é oração
+- ➔ 2. ORAÇÕES COORDENADAS SINDÉTICAS (5 ESPÉCIES)
+➔ A. ADITIVAS (Ideia central: soma, acréscimo, adição de termos ou orações)
+- ➔ Conectivo "E" (Polissêmico):
+➔ 1. Adição Pura: Soma termos ou ações homogêneas
+- ➔ 2. Adição + Tempo: Sequência cronológica linear obrigatória
+➔ 3. Oposição / Adversativo (= mas, porém): Choque de polaridades (+ e -)
+- ➔ 4. Conclusão / Consequência (= portanto, por isso): Relação de causa e efeito
+➔ Conectivo "NEM" (= "e não"):
+- ➔ Sentido: Adição com polaridade negativa (soma de negações)
+➔ Norma Culta: "e nem" é pleonasmo vicioso redundante
+- ➔ Estrutura "Nem... Nem...":
+➔ 1º "nem" = Advérbio de negação (oração assindética)
+- ➔ 2º "nem" = Conjunção coordenativa aditiva (oração sindética aditiva)
+➔ Expressões Correlativas Aditivas:
+- ➔ "não só... mas também" / "não apenas... como também"
+➔ Pragmática: Complementação e reforço argumentativo
+- ➔ Fenômeno da Elipse: Omissão do 1º termo ("..., mas também...")
+➔ Conectivo "MAS" com Valor Aditivo:
+- ➔ Soma atributos/qualificadores de um mesmo referente sem oposição
+➔ B. ALTERNATIVAS (Ideia central: alternância ou escolha/exclusão)
+- ➔ Conectivos: ou, ou...ou, ora...ora, seja...seja, já...já, quer...quer
+➔ Duplicidade Sindética: Quando o conectivo se repete, AMBAS as orações são sindéticas
+- ➔ Permutabilidade: "seja... seja" é plenamente substituível por "quer... quer"
+➔ Valores Semânticos Distintos:
+- ➔ Alternância Distributiva: Ações que se revezam ciclicamente no tempo
+➔ Exclusão (Valor Alternativo Puro): Polos opostos mutuamente excludentes
+- ➔ C. ADVERSATIVAS (Ideia central: quebra de expectativa, contraste, compensação)
+➔ Conectivos Canônicos: mas, porém, contudo, todavia, entretanto, no entanto, senão
+- ➔ Valores Semânticos:
+➔ Oposição / Contraste: Antagonismo direto entre polos contrários (sim x não)
+- ➔ Ressalva / Compensação: Ponderação restritiva atenuante (= "em compensação")
+➔ Teste de Polaridade: (+) com (-) = Oposição; (+) com (+) ou (-) com (-) = Adição
+- ➔ Pontuação: Vírgula antes do "e" com valor adversativo é facultativa
+➔ D. CONCLUSIVAS (Ideia central: dedução lógica, conclusão, consequência)
+- ➔ Conectivos: logo, portanto, então, assim, por conseguinte, por isso, pois (posposto)
+➔ Comportamento Sintático do "POIS":
+- ➔ "Pois" Posposto (deslocado após o verbo, entre vírgulas) = CONCLUSIVO (= portanto)
+➔ "Pois" Anteposto (início da oração, antes do verbo) = EXPLICATIVO (= porque)
+- ➔ E. EXPLICATIVAS (Ideia central: justificativa, razão discursiva, fundamentação) ➔ Conectivos: porque, que (= pois), porquanto (= porque), pois (anteposto ao verbo) ➔ Estruturas Típicas:
+➔ 1. Modo Imperativo (ordem/pedido) + "que"/"pois" explicativo
+- ➔ 2. Oração Declarativa + Justificativa do enunciador ➔ Distinção entre Explicação e Causa: ➔ Oração Causal: Causa física, objetiva e real no mundo dos fatos ➔ Oração Explicativa: Evidência discursiva que fundamenta a afirmação prévia
 
 ---
 

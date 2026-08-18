@@ -18,13 +18,35 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 - Noção elementar de estrutura morfológica verbal (radical, vogal temática, desinência modo-temporal e desinência número-pessoal).
 - Noções fundamentais de colocação pronominal (fatores de atração da próclise) e sintaxe de regência/objeto indireto.
 
-```text
-ARQUITETURA GERAL DA FLEXÃO VERBAL ├── GRUPO 1: VERBOS LÍDERES E BONS AMIGOS (Foco Total deste Módulo) │ ├── Matrizes Primitivas (4 Líderes): TER, VER, VIR, PÔR │ ├── Princípio da Fidelidade Absoluta: Derivado = Prefixo + Flexão do Líder │ ├── Protocolo de Resolução: Método dos 4 Passos │ └── Instrumentos de Apoio: Rodinhas de Bicicleta (Gatilhos Mentais) │ ├── GRUPO 2: FALSOS AMIGOS E DIFÍCIL CONJUGAÇÃO ("ALOPRADOS") (Módulos Subsequentes) │ └── Verbos aparentados com conjugação divergente (ex.: PROVER não segue VER) │ └── GRUPO 3: VERBOS DEFECTIVOS (Módulos Subsequentes) └── Verbos com lacunas de conjugação (Atualização sobre ADEQUAR-SE)
-```
+ARQUITETURA GERAL DA FLEXÃO VERBAL ➔ GRUPO 1: VERBOS LÍDERES E BONS AMIGOS (Foco Total deste Módulo)
+- ➔ Matrizes Primitivas (4 Líderes): TER, VER, VIR, PÔR
+➔ Princípio da Fidelidade Absoluta: Derivado = Prefixo + Flexão do Líder
+- ➔ Protocolo de Resolução: Método dos 4 Passos
+➔ Instrumentos de Apoio: Rodinhas de Bicicleta (Gatilhos Mentais)
+- ➔ GRUPO 2: FALSOS AMIGOS E DIFÍCIL CONJUGAÇÃO ("ALOPRADOS") (Módulos Subsequentes)
+➔ Verbos aparentados com conjugação divergente (ex.: PROVER não segue VER)
+- ➔ GRUPO 3: VERBOS DEFECTIVOS (Módulos Subsequentes) ➔ Verbos com lacunas de conjugação (Atualização sobre ADEQUAR-SE)
 
-```text
-MAPA OPERACIONAL DOS 4 LÍDERES DO GRUPO 1 ├── PÔR & DERIVADOS (propor, dispor, compor, contrapor, depor, etc.) │ ├── Presente Ind.: ponho, pões, põe, pomos, pondes, põem │ ├── Pretérito Perf.: pus, puseste, pôs, pusemos, pusestes, puseram │ ├── Futuro Subjuntivo: quando eu puser, tu puseres... │ ├── Infinitivo Pessoal: para eu pôr, tu pôres, ele pôr, nós pôrmos, vós pôrdes, eles porem │ └── Particípio Irregular: POSTO (terminação -to) | Gerúndio: PONDO │ ├── TER & DERIVADOS (abster-se, conter, deter, entreter, manter, obter, reter, suster) │ ├── Pretérito Perf.: tive, tiveste, teve, tivemos, tivestes, tiveram (-> detiveram, obtiveram) │ ├── Acentuação Diferencial Singular/Plural: │ │ ├── Líder Monossilábico: ele tem / eles têm │ │ └── Derivados Oxítonos: ele mantém / eles mantêm; ele entretém / eles entretêm │ └── Sintaxe: Próclise obrigatória com conjunção integrante (que se absteriam) │ ├── VER & DERIVADOS (antever, entrever, prever, rever) │ ├── Pretérito Perf.: vi, viste, viu, vimos, visteis, viram (-> anteviram) │ ├── Futuro Subjuntivo: quando eu vir, tu vires, ele vir, nós virmos, vós virdes, eles virem │ ├── Pretérito Imp. Subjuntivo: se eu visse, se tu visses... (-> antevissem) │ └── Particípio Irregular: VISTO (terminação -to) │ └── VIR & DERIVADOS (advir, avir-se, convir, desavir-se, intervir, provir, sobrevir) ├── O Par VIMOS vs. VIEMOS: │ ├── VIMOS = Pres. Ind. de VIR ("Hoje nós vimos") OU Pret. Perf. de VER ("Ontem nós vimos") │ └── VIEMOS = Pret. Perf. de VIR ("Ontem nós viemos") ├── Futuro Subjuntivo: quando eu vier, tu vieres, ele vier, nós viermos, vós vierdes, eles vierem ├── Pretérito Imp. Subjuntivo: se eu viesse, se tu viesses... (-> interviessem) ├── Acentuação no Presente Ind.: ele advém / eles advêm; ele convém / eles convêm └── Formas Nominais Homógrafas: ├── Particípio Irregular: VINDO / INTERVINDO ├── Gerúndio: VINDO / INTERVINDO └── Diagnóstico via Teste CHEGAR: chegado = Particípio | chegando = Gerúndio
-```
+MAPA OPERACIONAL DOS 4 LÍDERES DO GRUPO 1 ➔ PÔR & DERIVADOS (propor, dispor, compor, contrapor, depor, etc.)
+- ➔ Presente Ind.: ponho, pões, põe, pomos, pondes, põem
+➔ Pretérito Perf.: pus, puseste, pôs, pusemos, pusestes, puseram
+- ➔ Futuro Subjuntivo: quando eu puser, tu puseres...
+➔ Infinitivo Pessoal: para eu pôr, tu pôres, ele pôr, nós pôrmos, vós pôrdes, eles porem
+- ➔ Particípio Irregular: POSTO (terminação -to) | Gerúndio: PONDO
+➔ TER & DERIVADOS (abster-se, conter, deter, entreter, manter, obter, reter, suster)
+- ➔ Pretérito Perf.: tive, tiveste, teve, tivemos, tivestes, tiveram (-> detiveram, obtiveram)
+➔ Acentuação Diferencial Singular/Plural:
+- ➔ Líder Monossilábico: ele tem / eles têm
+➔ Derivados Oxítonos: ele mantém / eles mantêm; ele entretém / eles entretêm
+- ➔ Sintaxe: Próclise obrigatória com conjunção integrante (que se absteriam)
+➔ VER & DERIVADOS (antever, entrever, prever, rever)
+- ➔ Pretérito Perf.: vi, viste, viu, vimos, visteis, viram (-> anteviram)
+➔ Futuro Subjuntivo: quando eu vir, tu vires, ele vir, nós virmos, vós virdes, eles virem
+- ➔ Pretérito Imp. Subjuntivo: se eu visse, se tu visses... (-> antevissem)
+➔ Particípio Irregular: VISTO (terminação -to)
+- ➔ VIR & DERIVADOS (advir, avir-se, convir, desavir-se, intervir, provir, sobrevir) ➔ O Par VIMOS vs. VIEMOS:
+➔ VIMOS = Pres. Ind. de VIR ("Hoje nós vimos") OU Pret. Perf. de VER ("Ontem nós vimos")
+- ➔ VIEMOS = Pret. Perf. de VIR ("Ontem nós viemos") ➔ Futuro Subjuntivo: quando eu vier, tu vieres, ele vier, nós viermos, vós vierdes, eles vierem ➔ Pretérito Imp. Subjuntivo: se eu viesse, se tu viesses... (-> interviessem) ➔ Acentuação no Presente Ind.: ele advém / eles advêm; ele convém / eles convêm ➔ Formas Nominais Homógrafas: ➔ Particípio Irregular: VINDO / INTERVINDO ➔ Gerúndio: VINDO / INTERVINDO ➔ Diagnóstico via Teste CHEGAR: chegado = Particípio | chegando = Gerúndio
 
 ---
 
@@ -174,9 +196,7 @@ Substitui-se a forma terminada em -ndo por flexões do verbo modelo regular CHEG
 1. Se o contexto oracional aceitar naturalmente a forma CHEGADO $\rightarrow$ A palavra sob análise classifica-se como PARTICÍPIO.
 2. Se o contexto oracional aceitar naturalmente a forma CHEGANDO $\rightarrow$ A palavra sob análise classifica-se como GERÚNDIO.
 
-```text
-┌── VINDO = CHEGADO ──> PARTICÍPIO IRREGULAR FORMA "VINDO" ─┤ └── VINDO = CHEGANDO ──> GERÚNDIO REGULAR
-```
+➔ VINDO = CHEGADO ➔ > PARTICÍPIO IRREGULAR FORMA "VINDO" ┤ ➔ VINDO = CHEGANDO ➔ > GERÚNDIO REGULAR
 
 - "Ele tinha intervindo na discussão."$\rightarrow$ Teste: "Ele tinha chegado na discussão" (aceito) / "Ele tinha chegando..." (agramatical).$\rightarrow$ Classificação: Particípio Irregular.
 - "Eu teria vindo mais vezes se tivesse sido convidado."$\rightarrow$ Teste: "Eu teria chegado mais vezes..."$\rightarrow$ Classificação: Particípio Irregular.
@@ -238,9 +258,12 @@ A correta flexão dos verbos cognatos interage diretamente com regras de coloca�
 
 ## Roteiros de resolução
 
-```text
-[PASSO 1: INFINITIVO] Isolar o verbo solicitado na sua forma infinitiva. (Exemplo: Frase pede "DETER" ou "INTERVIR") │ ▼ [PASSO 2: PENSAR NO LÍDER] Identificar o verbo primitivo matriz de mesmo radical. (Exemplo: DETER -> TER | INTERVIR -> VIR) │ ▼ [PASSO 3: ACOMODAR O LÍDER NA FRASE] PASSO MAIS IMPORTANTE! Não conjugar desde o início ("eu tenho..."). Aplicar o gatilho temporal ("Rodinha") e conjugar o LÍDER diretamente para o sujeito da frase. (Exemplo: Pretérito Perfeito + "Os fiscais" -> "Ontem eles TIVERAM") │ ▼ [PASSO 4: TROCAR PELO VERBO PRETENDIDO] Reanexar o prefixo à forma flexionada do líder obtida no Passo 3. (Exemplo: "DE-" + "TIVERAM" = "DETIVERAM")
-```
+**[**
+
+1. INFINITIVO] Isolar o verbo solicitado na sua forma infinitiva. (Exemplo: Frase pede "DETER" ou "INTERVIR") [
+2. PENSAR NO LÍDER] Identificar o verbo primitivo matriz de mesmo radical. (Exemplo: DETER -> TER INTERVIR -> VIR) [
+3. ACOMODAR O LÍDER NA FRASE] PASSO MAIS IMPORTANTE! Não conjugar desde o início ("eu tenho..."). Aplicar o gatilho temporal ("Rodinha") e conjugar o LÍDER diretamente para o sujeito da frase. (Exemplo: Pretérito Perfeito + "Os fiscais" -> "Ontem eles TIVERAM") [
+4. TROCAR PELO VERBO PRETENDIDO] Reanexar o prefixo à forma flexionada do líder obtida no Passo 3. (Exemplo: "DE-" + "TIVERAM" = "DETIVERAM")
 
 1. Localize a palavra terminada em -ndo associada a VIR (vindo, intervindo, convindo).
 2. Substitua a forma verbal em teste pelo verbo regular paradigma CHEGAR:
@@ -250,9 +273,12 @@ A correta flexão dos verbos cognatos interage diretamente com regras de coloca�
 1. Anteponha a preposição PARA à oração: se fizer sentido lógico e mantiver o radical do infinitivo (para eu pôr, para eles porem), a forma é Infinitivo Pessoal.
 2. Anteponha a conjunção QUANDO / SE à oração: se exigir modificação irregular de radical (quando eu puser, quando eles puserem), a forma é Futuro do Subjuntivo.
 
-```text
-[PASSO 1: INFINITIVO] Isolar o verbo solicitado na sua forma infinitiva. (Exemplo: Frase pede "DETER" ou "INTERVIR") │ ▼ [PASSO 2: PENSAR NO LÍDER] Identificar o verbo primitivo matriz de mesmo radical. (Exemplo: DETER -> TER | INTERVIR -> VIR) │ ▼ [PASSO 3: ACOMODAR O LÍDER NA FRASE] PASSO MAIS IMPORTANTE! Não conjugar desde o início ("eu tenho..."). Aplicar o gatilho temporal ("Rodinha") e conjugar o LÍDER diretamente para o sujeito da frase. (Exemplo: Pretérito Perfeito + "Os fiscais" -> "Ontem eles TIVERAM") │ ▼ [PASSO 4: TROCAR PELO VERBO PRETENDIDO] Reanexar o prefixo à forma flexionada do líder obtida no Passo 3. (Exemplo: "DE-" + "TIVERAM" = "DETIVERAM")
-```
+**[**
+
+1. INFINITIVO] Isolar o verbo solicitado na sua forma infinitiva. (Exemplo: Frase pede "DETER" ou "INTERVIR") [
+2. PENSAR NO LÍDER] Identificar o verbo primitivo matriz de mesmo radical. (Exemplo: DETER -> TER INTERVIR -> VIR) [
+3. ACOMODAR O LÍDER NA FRASE] PASSO MAIS IMPORTANTE! Não conjugar desde o início ("eu tenho..."). Aplicar o gatilho temporal ("Rodinha") e conjugar o LÍDER diretamente para o sujeito da frase. (Exemplo: Pretérito Perfeito + "Os fiscais" -> "Ontem eles TIVERAM") [
+4. TROCAR PELO VERBO PRETENDIDO] Reanexar o prefixo à forma flexionada do líder obtida no Passo 3. (Exemplo: "DE-" + "TIVERAM" = "DETIVERAM")
 
 1. Localize a palavra terminada em -ndo associada a VIR (vindo, intervindo, convindo).
 2. Substitua a forma verbal em teste pelo verbo regular paradigma CHEGAR:

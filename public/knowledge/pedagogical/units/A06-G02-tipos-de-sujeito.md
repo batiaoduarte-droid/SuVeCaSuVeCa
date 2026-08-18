@@ -44,9 +44,11 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Estrutura Verbal: Noção de radical, desinências número-pessoais de 1ª, 2ª e 3ª pessoas, formas nominais do verbo (infinitivo) e transitividade verbal (VTD, VTI, VI, VL).
 - Noção de Oração: Reconhecimento de limites oracionais marcados pela presença de formas verbais.
 
-```text
-SINTAXE DO SUJEITO (AULA 06) │ ┌──────────────────────────────────┴──────────────────────────────────┐ ▼ ▼ PROTOCOLO OPERACIONAL TAXONOMIA DOS TIPOS ┌─────────────────────────┐ │ │ Passo 1: Interrogar V. │ ┌───────────────────────┼───────────────────────┐ │ "Quem/O que é que + V?" │ ▼ ▼ ▼ └─────────────┬───────────┘ SUJEITO DETERMINADO SUJEITO INDETERMINADO SUJEITO INEXISTENTE │ (Agente Identificável) (Existe, mas oculto) (Oração Sem Sujeito) ▼ │ │ │ ┌─────────────────────────┐ ┌────────┼────────┐ ┌───────┼───────┐ ┌───────┼───────┐ │ Passo 2: Extrair Núcleo │ │ │ │ │ │ │ │ │ │ │ • Substantivo/Pron/Num │ Simples Composto Oculto 3ª P. 3ª Sing Inf. Haver Fazer Fenôm. │ • VEDAÇÃO DE PREPOSIÇÃO │ (1 Núc.) (2+ Núcs)(Elípt.) Plural + SE Impes. (Exist.)(Tempo) Natureza └─────────────┬───────────┘ │ │ │ (s/ ctx) (IIS) ("Estudar") │ │ (Literal) │ │ │ │ │ │ │ │ │ │ ▼ └────────┼────────┘ └───────┼───────┘ └───────┼───────┘ ┌─────────────────────────┐ │ │ │ │ Passo 3: Classificar │ ▼ ▼ ▼ │ (Contagem / Estrutura) │ Sujeito Oracional Marca Formal da Verbos Impessoais └─────────────────────────┘ (Oração Subjetiva) Língua Escrita (3ª P. Singular) • Teste do "ISSO" (Norma Culta) [Exceção: Sentido Figurado • Contém VERBO próprio -> Sujeito Simples]
-```
+**SINTAXE DO SUJEITO (AULA 06)                                                                               PROTOCOLO OPERACIONAL TAXONOMIA DOS TIPOS**
+
+1. Interrogar V. "Quem/O que é que + V?" SUJEITO DETERMINADO SUJEITO INDETERMINADO SUJEITO INEXISTENTE (Agente Identificável) (Existe, mas oculto) (Oração Sem Sujeito)
+2. Extrair Núcleo • Substantivo/Pron/Num Simples Composto Oculto 3ª P. 3ª Sing Inf. Haver Fazer Fenôm. • VEDAÇÃO DE PREPOSIÇÃO (1 Núc.) (2+ Núcs)(Elípt.) Plural + SE Impes. (Exist.)(Tempo) Natureza (s/ ctx) (IIS) ("Estudar") (Literal)
+3. Classificar (Contagem / Estrutura) Sujeito Oracional Marca Formal da Verbos Impessoais (Oração Subjetiva) Língua Escrita (3ª P. Singular) • Teste do "ISSO" (Norma Culta) [Exceção: Sentido Figurado • Contém VERBO próprio -> Sujeito Simples]
 
 ---
 
@@ -65,9 +67,9 @@ A localização do sujeito constitui o fundamento operacional de toda a sintaxe 
 1. Passo 2 (Extração e Filtragem do Núcleo): Inspecionar o interior do bloco do sujeito e isolar a palavra substantiva de valor semântico central (substantivo, pronome substantivo ou numeral substantivo). Aplica-se a regra inegociável da não preposição.
 2. Passo 3 (Classificação Estrutural): Contar os núcleos válidos e analisar a morfossintaxe do termo para enquadrá-lo em uma das tipologias canônicas.
 
-```text
-[Frase Qualquer] ──> Localizar Verbo ──> Perguntar "Quem/O que é que + V?" ──> Isolar Bloco [ Sujeito ] │ ▼ Localizar NÚCLEO (Substantivo SEM preposição) │ ▼ Classificar o Sujeito
-```
+[Frase Qualquer] ➔ > Localizar Verbo ➔ > Perguntar "Quem/O que é que + V?" ➔ > Isolar Bloco [ Sujeito ]
+- Localizar NÚCLEO (Substantivo SEM preposição)
+Classificar o Sujeito
 
 - Jamais assumir como sujeito a palavra que inicia a frase, pois a língua portuguesa admite livremente ordem inversa (sujeito posposto).
 
@@ -104,7 +106,7 @@ Configura-se Sujeito Simples quando o verbo principal faz referência a um sujei
 
 - Analogia pedagógica da professora: Em "O mascarado chegou", a pessoa sob a máscara é desconhecida, mas o termo mascarado é o núcleo expresso do sujeito simples.
 
-Análise Morfológica: "Alguém" = Pronome Indefinido Substantivo Análise Sintática: "Alguém" = Núcleo Único do Sujeito ──> SUJEITO SIMPLES
+Análise Morfológica: "Alguém" = Pronome Indefinido Substantivo Análise Sintática: "Alguém" = Núcleo Único do Sujeito ➔ > SUJEITO SIMPLES
 
 O Sujeito Oculto (sinônimo de elíptico, implícito ou subentendido) é aquele que existe e é determinado, mas não se encontra graficamente expresso imediatamente antes do verbo, dividindo-se em: Desinencial (1ª pessoa) e Não-Desinencial / Anafórico (3ª pessoa com referente contextual).
 
@@ -123,9 +125,7 @@ A sintaxe da Língua Portuguesa sistematiza a indeterminação por meio de três
 2. Via 2 (Verbo na 3ª pessoa do singular + Partícula SE como IIS): Ocorre com Verbos Transitivos Indiretos (VTI), Verbos Intransitivos (VI) ou Verbos de Ligação (VL). A partícula se funciona como Índice de Indeterminação do Sujeito (IIS), e o termo substantivo subsequente vem regido por preposição obrigatória ("Precisa-se de vendedores" / "Acredita-se na existência de discos voadores" / "Não se trata de negar...").
 3. Via 3 (Infinitivo Impessoal): Ocorre quando o verbo é empregado em sua forma nominal não flexionada expressando processos em tese ou genéricos ("É bom estudar para concurso" / "Prenderam os suspeitos de fraudar o INSS").
 
-```text
-SUJEITO INDETERMINADO (Semântica: "Alguém pratica a ação, não se sabe ou não se diz quem") ├── Via 1: Verbo na 3ª pessoa do PLURAL (sem referente anafórico no contexto) ├── Via 2: Verbo na 3ª pessoa do SINGULAR + SE como IIS (com VTI, VI ou VL preposicionados) └── Via 3: Verbo no INFINITIVO IMPESSOAL (enunciados gerais sem agente determinado)
-```
+SUJEITO INDETERMINADO (Semântica: "Alguém pratica a ação, não se sabe ou não se diz quem") ➔ Via 1: Verbo na 3ª pessoa do PLURAL (sem referente anafórico no contexto) ➔ Via 2: Verbo na 3ª pessoa do SINGULAR + SE como IIS (com VTI, VI ou VL preposicionados) ➔ Via 3: Verbo no INFINITIVO IMPESSOAL (enunciados gerais sem agente determinado)
 
 A Oração Sem Sujeito (Sujeito Inexistente) é aquela estruturada em torno de verbos impessoais, os quais não possuem sujeito gramatical nem agente no mundo dos fatos, permanecendo compulsoriamente na 3ª pessoa do singular.
 
@@ -139,9 +139,8 @@ A gramática unifica três formulações sinônimas: Sujeito Inexistente = Oraç
 - Quando um verbo meteorológico é empregado metaforicamente, ele deixa de ser impessoal e passa a admitir Sujeito Simples, flexionando normalmente no plural.
 - Em "Choveram elogios para A abordagem didática", o verbo chover significa ocorrer em grande quantidade. A pergunta O que é que choveu? resulta em Elogios (núcleo do Sujeito Simples).
 
-```text
-VERBOS IMPESSOAIS (Oração Sem Sujeito / Sujeito Inexistente) ├── 1. HAVER = Existir / Ocorrer / Acontecer (termo acompanhante = Objeto Direto) ├── 2. FAZER / HAVER = Tempo decorrido / Clima (Invariável na 3ª do singular) └── 3. FENÔMENOS DA NATUREZA em sentido literal ("Chove muito") │ └── EXCEÇÃO: Sentido Conotativo / Figurado ("Choveram elogios") └── Verbo deixa de ser impessoal ──> Possui SUJEITO SIMPLES
-```
+VERBOS IMPESSOAIS (Oração Sem Sujeito / Sujeito Inexistente) ➔ 1. HAVER = Existir / Ocorrer / Acontecer (termo acompanhante = Objeto Direto) ➔ 2. FAZER / HAVER = Tempo decorrido / Clima (Invariável na 3ª do singular) ➔ 3. FENÔMENOS DA NATUREZA em sentido literal ("Chove muito")
+- ➔ EXCEÇÃO: Sentido Conotativo / Figurado ("Choveram elogios") ➔ Verbo deixa de ser impessoal ➔ > Possui SUJEITO SIMPLES
 
 Ocorre Sujeito Oracional (Oração Subordinada Substantiva Subjetiva) quando o termo que exerce o papel sintático de sujeito do verbo principal é constituído por uma oração inteira, caracterizada obrigatoriamente por conter um verbo em seu interior, exigindo que o verbo principal permaneça na 3ª pessoa do singular.
 
@@ -158,7 +157,10 @@ Ocorre Sujeito Oracional (Oração Subordinada Substantiva Subjetiva) quando o t
 
 - Regra de Concordância Verbal: Todo sujeito oracional impõe ao verbo regente da oração principal a concordância estrita na 3ª pessoa do singular.
 
-Passo 1: Identificar a estrutura: "É imprescindível analisar os impactos da carga tributária" Passo 2: Substituir a oração subordinada por "ISSO": "É imprescindível ISSO" Passo 3: Reorganizar na ordem direta: "ISSO é imprescindível" Passo 4: Confirmar verbo no interior do bloco ("analisar") ──> SUJEITO ORACIONAL (Verbo "é" na 3ª Sing.)
+1. Identificar a estrutura: "É imprescindível analisar os impactos da carga tributária"
+2. Substituir a oração subordinada por "ISSO": "É imprescindível ISSO"
+3. Reorganizar na ordem direta: "ISSO é imprescindível"
+4. Confirmar verbo no interior do bloco ("analisar") > SUJEITO ORACIONAL (Verbo "é" na 3ª Sing.)
 
 - Operacionalizado em:
 
@@ -171,9 +173,9 @@ A partícula se desempenha funções sintáticas distintas a depender da transit
 - Na oralidade cotidiana e informal, falantes nativos evitam construções com se apassivador ou indeterminador (recorrendo a pronomes indefinidos como alguém ou à 3ª pessoa do plural sem pronome).
 - Portanto, o emprego do pronome se (seja como PA, seja como IIS) é reconhecido em concursos públicos como marca inequívoca de formalidade da linguagem e da modalidade escrita culta.
 
-```text
-EMPREGO DA PARTÍCULA "SE" NA SINTAXE DO SUJEITO │ ┌────────────────────────────────┴────────────────────────────────┐ ▼ ▼ SE = PRONOME APASSIVADOR (PA) SE = ÍNDICE DE INDETERMINAÇÃO (IIS) • Verbo: VTD ou VTDI • Verbo: VTI, VI ou VL • Termo seguinte: NÃO PREPOSICIONADO • Termo seguinte: PREPOSICIONADO • Função do termo: SUJEITO PACIENTE (Determinado) • Função sintática: SUJEITO INDETERMINADO • Conversão: Admite Passiva Analítica • Conversão: NÃO admite Passiva Analítica • Exemplo: "Alugam-se casas" (= Casas são alugadas) • Exemplo: "Trata-se de problemas" │ │ └────────────────────────────────┬────────────────────────────────┘ ▼ MARCA DE FORMALIDADE DA LÍNGUA ESCRITA (Assertiva canônica da banca Cebraspe)
-```
+EMPREGO DA PARTÍCULA "SE" NA SINTAXE DO SUJEITO
+- ➔ SE = PRONOME APASSIVADOR (PA) SE = ÍNDICE DE INDETERMINAÇÃO (IIS) • Verbo: VTD ou VTDI • Verbo: VTI, VI ou VL • Termo seguinte: NÃO PREPOSICIONADO • Termo seguinte: PREPOSICIONADO • Função do termo: SUJEITO PACIENTE (Determinado) • Função sintática: SUJEITO INDETERMINADO • Conversão: Admite Passiva Analítica • Conversão: NÃO admite Passiva Analítica • Exemplo: "Alugam-se casas" (= Casas são alugadas) • Exemplo: "Trata-se de problemas"
+➔ MARCA DE FORMALIDADE DA LÍNGUA ESCRITA (Assertiva canônica da banca Cebraspe)
 
 - Operacionalizado em:
 

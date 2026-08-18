@@ -44,17 +44,17 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Noções de transitividade verbal, voz passiva analítica (ser/estar + particípio) e tempos compostos da voz ativa (ter/haver + particípio).
 - Domínio prévio da concordância do adjunto adnominal (estudada no Bloco esta unidade / Parte 01): posposto admite Concordância Total ou Atrativa; anteposto admite estritamente Concordância Atrativa.
 
-```text
-CONCORDÂNCIA NOMINAL POR FUNÇÃO SINTÁTICA │ ┌─────────────────────────────┼─────────────────────────────┐ ▼ ▼ ▼ ADJUNTO ADNOMINAL PREDICATIVO DO SUJEITO PREDICATIVO DO OBJETO (Termo Acessório) (Termo Integrante) (Termo Integrante) Refere-se ao substantivo Ligado por Verbo Atribui estado ao O.D./O.I.; diretamente, sem verbo de Ligação/Estado Indispensável ao sentido │ │ │ ┌────────┴────────┐ ┌────────┴────────┐ ┌────────┴────────┐ ▼ ▼ ▼ ▼ ▼ ▼ Posposto: Anteposto: Posposto: Anteposto: Posposto: Anteposto: C.T. ou C.A. Apenas C.A. Apenas C.T. SEGUE O C.T. ou C.A. C.T. ou C.A. VERBO (Semântica =) (Semântica =)
-```
+CONCORDÂNCIA NOMINAL POR FUNÇÃO SINTÁTICA
+- ➔ ADJUNTO ADNOMINAL PREDICATIVO DO SUJEITO PREDICATIVO DO OBJETO (Termo Acessório) (Termo Integrante) (Termo Integrante) Refere-se ao substantivo Ligado por Verbo Atribui estado ao O.D./O.I.; diretamente, sem verbo de Ligação/Estado Indispensável ao sentido
+➔ ➔ ➔ Posposto: Anteposto: Posposto: Anteposto: Posposto: Anteposto: C.T. ou C.A. Apenas C.A. Apenas C.T. SEGUE O C.T. ou C.A. C.T. ou C.A. VERBO (Semântica =) (Semântica =)
 
-```text
-ESTRUTURAS COM PARTICÍPIO │ ┌─────────────────────────┴─────────────────────────┐ ▼ ▼ TEMPOS COMPOSTOS VOZ PASSIVA ANALÍTICA (Auxiliares TER / HAVER) (Auxiliares SER / ESTAR) Particípio = Verbo Principal Puro Particípio = Natureza Adjetiva INVARIÁVEL (Terminação fixa em -o) VARIÁVEL (Concorda com Sujeito Paciente) Ex.: "Tinham pintado as paredes" Ex.: "As paredes foram pintadas"
-```
+ESTRUTURAS COM PARTICÍPIO
+- ➔ TEMPOS COMPOSTOS VOZ PASSIVA ANALÍTICA (Auxiliares TER / HAVER) (Auxiliares SER / ESTAR) Particípio = Verbo Principal Puro Particípio = Natureza Adjetiva INVARIÁVEL (Terminação fixa em -o) VARIÁVEL (Concorda com Sujeito Paciente) Ex.: "Tinham pintado as paredes" Ex.: "As paredes foram pintadas"
 
-```text
-MATRIZ CEBRASPE DE REESCRITURA │ ┌─────────────────────────┼─────────────────────────┐ ▼ ▼ ▼ CORREÇÃO GRAMATICAL SENTIDO ORIGINAL COERÊNCIA TEXTUAL Conformidade formal com Preservação das ideias e Lógica interna e não a norma-padrão culta. conteúdos originais do texto contradição contextuais. │ │ │ └─────────────────────────┼─────────────────────────┘ ▼ MUDANÇA DE REFERENTE (SETA SINTÁTICA) │ ┌─────────────────────────┴─────────────────────────┐ ▼ ▼ REGRA GERAL EXCEÇÃO CANÔNICA Muda Seta = MUDA SENTIDO Coletivos Partitivos / Quantificadores (Pode manter Correção e Coerência) (A maioria de... / Bilhões de pessoas...) Muda Seta = MANTÉM O SENTIDO
-```
+MATRIZ CEBRASPE DE REESCRITURA
+- ➔ CORREÇÃO GRAMATICAL SENTIDO ORIGINAL COERÊNCIA TEXTUAL Conformidade formal com Preservação das ideias e Lógica interna e não a norma-padrão culta. conteúdos originais do texto contradição contextuais.
+➔ MUDANÇA DE REFERENTE (SETA SINTÁTICA)
+- ➔ REGRA GERAL EXCEÇÃO CANÔNICA Muda Seta = MUDA SENTIDO Coletivos Partitivos / Quantificadores (Pode manter Correção e Coerência) (A maioria de... / Bilhões de pessoas...) Muda Seta = MANTÉM O SENTIDO
 
 ---
 

@@ -42,21 +42,24 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 - Conhecimento morfológico das classes gramaticais conectivas: conjunções coordenativas (aditivas, adversativas, alternativas, conclusivas, explicativas), conjunções subordinativas adverbiais (especialmente causais e consecutivas), preposições e advérbios conectivos.
 
-```text
-TEXTUALIDADE (Texto com qualidade comunicativa global) │ ┌─────────────────────────┴─────────────────────────┐ ▼ ▼ COESÃO SEQUENCIAL COERÊNCIA (Mecanismo gramatical explícito) (Lógica interna / Sentido) │ │ ┌──────────────┴──────────────┐ │ ▼ ▼ │ Inventário de Conectores Regra de Posicionamento │
-```
+TEXTUALIDADE (Texto com qualidade comunicativa global)
+- ➔ COESÃO SEQUENCIAL COERÊNCIA (Mecanismo gramatical explícito) (Lógica interna / Sentido)
+➔
+- Inventário de Conectores Regra de Posicionamento
 
-- Conjunções - A conjunção recebe o nome │
-- Preposições da oração imediatamente seguinte │
-- Advérbios conectivos - Mantra: "O que vem depois salva" │
+- Conjunções - A conjunção recebe o nome
+- Preposições da oração imediatamente seguinte
+- Advérbios conectivos - Mantra: "O que vem depois salva"
 
-```text
-│ │ ┌──────────────┴──────────────┐ │ ▼ ▼ ▼ MÉTODO DOS 3 PASSOS TAXONOMIA DAS RELAÇÕES LÓGICAS 1º Resumo nuclear pelo verbo ├── OPOSIÇÃO / CONTRASTE (Sim vs Não) ("O verbo salva") │ └── Conectivos: mas, porém, não obstante 2º Identificação da relação lógica ├── EXPLICAÇÃO / JUSTIFICATIVA 3º Escolha e alocação do conector │ └── Marcador: Imperativo ("Com imperativo, │ eu sou feliz"); conectivo: pois, porque ├── CAUSA E CONSEQUÊNCIA / CONCLUSÃO │ ├── Fórmula: "O fato de [1º] fez com que [2º]" │ ├── Causa (1º cronológico) -> Conector Causal │ └── Efeito/Conclusão (2º) -> Consecutivo/Conclusivo └── EXEMPLIFICAÇÃO (Geral -> Específico) └── Conectivos: por exemplo, como exemplo └── Incompatível com conclusivos (portanto)
-```
+➔ MÉTODO DOS 3 PASSOS TAXONOMIA DAS RELAÇÕES LÓGICAS 1º Resumo nuclear pelo verbo ➔ OPOSIÇÃO / CONTRASTE (Sim vs Não) ("O verbo salva")
+- ➔ Conectivos: mas, porém, não obstante 2º Identificação da relação lógica ➔ EXPLICAÇÃO / JUSTIFICATIVA 3º Escolha e alocação do conector
+➔ Marcador: Imperativo ("Com imperativo,
+- eu sou feliz"); conectivo: pois, porque ➔ CAUSA E CONSEQUÊNCIA / CONCLUSÃO
+➔ Fórmula: "O fato de [1º] fez com que [2º]"
+- ➔ Causa (1º cronológico) -> Conector Causal
+➔ Efeito/Conclusão (2º) -> Consecutivo/Conclusivo ➔ EXEMPLIFICAÇÃO (Geral -> Específico) ➔ Conectivos: por exemplo, como exemplo ➔ Incompatível com conclusivos (portanto)
 
-```text
-SINTAXE E PONTUAÇÃO DE COORDENATIVAS ├── Posição Inicial: 1 vírgula facultativa ("Portanto[,]...") └── Posição Deslocada: 2 vírgulas obrigatórias ("..., portanto,...")
-```
+SINTAXE E PONTUAÇÃO DE COORDENATIVAS ➔ Posição Inicial: 1 vírgula facultativa ("Portanto[,]...") ➔ Posição Deslocada: 2 vírgulas obrigatórias ("..., portanto,...")
 
 - Coesão depende da Coerência para ser válida: A coesão sem coerência é nula em provas de concurso .
 - Causa vs. Consequência: A causa é necessariamente o fato antecedente na linha do tempo real (1º fato), enquanto a consequência é o fato decorrente (2º fato). Conjunções causais encabeçam a causa; conjunções conclusivas e consecutivas encabeçam o efeito .

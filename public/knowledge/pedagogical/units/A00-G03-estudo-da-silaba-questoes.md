@@ -16,9 +16,37 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 
 - Identificação dos dígrafos consonantais (ch, lh, nh, rr, ss, sc, sç, xc, qu, gu) e vocálicos (am, em, im, om, um, an, en, in, on, un).
 
-```text
-ESTUDO DA SÍLABA E FONÉTICA CONSOLIDADA (esta unidade) │ ┌──────────────────────────────┬───────────────┴──────────────┬──────────────────────────────┐ ▼ ▼ ▼ ▼ ENCONTROS VOCÁLICOS RELAÇÃO LETRA/FONEMA DIVISÃO SILÁBICA POLIFONIA DO "X" │ │ │ │ ├── Hiato (V-V): ├── Letra: grafema visual ├── Consoante Muda Medial: ├── Dífono /ks/ (1L = 2F): │ Separados em sílabas │ │ Aere à vogal anterior │ sexualidade, intoxicação, │ distintas [ma-te-ri-al, ├── Fonema: som emitido │ [at-mos-fe-ra, co-lap-so, │ conexão (+1 fonema) │ po-e-si-a, e-co-no-mi-a] │ │ et-ni-a, felds-pa-to] │ │ ├── Dígrafo (-1 fonema): │ ├── Som /s/ ou /ss/: ├── Ditongo Crescente: │ Consonantal [lh, nh, ss] ├── Consoante Muda Inicial: │ expirar, êxtase, │ SV + V na mesma sílaba │ Vocálico [an, en, on] │ Monossílabo indivisível │ sintaxe (/sin'tasi/) │ [e-mer-gên-cia, │ │ [pneu] │ │ cui-da-do, ma-lí-cia] ├── Grupo QU/GU: │ ├── Som /ch/ (/ʃ/): │ │ Dígrafo se U for mudo ├── Dígrafos Separáveis: │ pixo, lixo └── Ditongo Decrescente: │ Não é dígrafo se U for │ rr, ss, sc, sç, xc │ V + SV na mesma sílaba │ audível [quan-ti-da-de] │ [ter-ra, an-das-se] └── Som /z/: [gra-tui-to, bei-ra, │ │ exame, exaustivamente ve-lei-ros, co-ne-xão] └── Dífono X=/ks/ (+1 fonema): └── Paroxítonas em Ditongo: [co-ne-xão, se-xu-al] Divisão clássica padrão [ma-lí-cia, su-per-fí-cie]
-```
+ESTUDO DA SÍLABA E FONÉTICA CONSOLIDADA (esta unidade)
+- ➔ ENCONTROS VOCÁLICOS RELAÇÃO LETRA/FONEMA DIVISÃO SILÁBICA POLIFONIA DO "X"
+➔ Hiato (V-V): ➔ Letra: grafema visual ➔ Consoante Muda Medial: ➔ Dífono /ks/ (1L = 2F):
+- Separados em sílabas
+Aere à vogal anterior
+
+distintas [ma-te-ri-al, ➔ Fonema: som emitido
+
+conexão (+1 fonema)
+- po-e-si-a, e-co-no-mi-a]
+et-ni-a, felds-pa-to]
+- ➔ Dígrafo (-1 fonema):
+➔ Som /s/ ou /ss/: ➔ Ditongo Crescente:
+- Consonantal [lh, nh, ss] ➔ Consoante Muda Inicial:
+expirar, êxtase,
+- SV + V na mesma sílaba
+Vocálico [an, en, on]
+- Monossílabo indivisível
+sintaxe (/sin'tasi/)
+
+[pneu]
+- cui-da-do, ma-lí-cia] ➔ Grupo QU/GU:
+➔ Som /ch/ (/ʃ/):
+- Dígrafo se U for mudo ➔ Dígrafos Separáveis:
+pixo, lixo ➔ Ditongo Decrescente:
+- Não é dígrafo se U for
+rr, ss, sc, sç, xc
+- V + SV na mesma sílaba
+audível [quan-ti-da-de]
+- [ter-ra, an-das-se] ➔ Som /z/: [gra-tui-to, bei-ra,
+exame, exaustivamente ve-lei-ros, co-ne-xão] ➔ Dífono X=/ks/ (+1 fonema): ➔ Paroxítonas em Ditongo: [co-ne-xão, se-xu-al] Divisão clássica padrão [ma-lí-cia, su-per-fí-cie]
 
 ---
 
@@ -206,23 +234,21 @@ Bancas de alto nível (como a FCC) integram a divisão silábica formal a análi
 
 ## Roteiros de resolução
 
-[INÍCIO: Palavra Alvo] │ ▼
+[INÍCIO: Palavra Alvo]
 
 1. Contar Grafemas Totais (Nº de Letras)
 
-│ ▼
-
 1. Rastrear Ocorrência de Dígrafos
 
-```text
-┌─────────────────────────────┴─────────────────────────────┐ ▼ ▼ [Dígrafos Consonantais] [Dígrafos Vocálicos] (ch, lh, nh, rr, ss, sc, sç, xc, (Vogal + M/N na mesma sílaba: qu/gu com U mudo) an, en, in, on, un, am, em...) │ │ └─────────────────────────────┬─────────────────────────────┘ │ ▼ Subtrair 1 Fonema por Dígrafo │ ▼
-```
+➔ [Dígrafos Consonantais] [Dígrafos Vocálicos] (ch, lh, nh, rr, ss, sc, sç, xc, (Vogal + M/N na mesma sílaba: qu/gu com U mudo) an, en, in, on, un, am, em...)
+- ➔ Subtrair 1 Fonema por Dígrafo
 
 1. Rastrear Ocorrência de Dífonos
 
-```text
-(Letra X com som de /ks/) │ ┌──────────────────┴──────────────────┐ ▼ ▼ [Existe Dífono?] [Não há Dífono] (Ex: conexão, (X = /s/, /z/, /ʃ/) sexualidade) │ │ ▼ ├─ SIM ──► Somar +1 Fonema Manter Contagem │ └──────────────────┬──────────────────┘ │ ▼ [FÓRMULA FINAL: Fonemas = Letras - Dígrafos + Dífonos]
-```
+(Letra X com som de /ks/)
+- ➔ [Existe Dífono?] [Não há Dífono] (Ex: conexão, (X = /s/, /z/, /ʃ/) sexualidade)
+SIM ➔ Somar +1 Fonema Manter Contagem
+- ➔ [FÓRMULA FINAL: Fonemas = Letras - Dígrafos + Dífonos]
 
 1. Localizar o grupo: Identifique o vocábulo com qu ou gu (esqueleto, porque, quantidade, quase).
 2. Teste da audibilidade do 'U':
@@ -256,23 +282,21 @@ Bancas de alto nível (como a FCC) integram a divisão silábica formal a análi
 - Se a palavra puder ser retirada da frase sem prejuízo sintático ou de informação básica ("Essa história [também] já é demais!"), trata-se de partícula expletiva / de realce.
 - Se a palavra expressar adição de conteúdo e equivaler a "além disso" ("Na verdade, também eles tinham..."), trata-se de operador aditivo / inclusivo.
 
-[INÍCIO: Palavra Alvo] │ ▼
+[INÍCIO: Palavra Alvo]
 
 1. Contar Grafemas Totais (Nº de Letras)
 
-│ ▼
-
 1. Rastrear Ocorrência de Dígrafos
 
-```text
-┌─────────────────────────────┴─────────────────────────────┐ ▼ ▼ [Dígrafos Consonantais] [Dígrafos Vocálicos] (ch, lh, nh, rr, ss, sc, sç, xc, (Vogal + M/N na mesma sílaba: qu/gu com U mudo) an, en, in, on, un, am, em...) │ │ └─────────────────────────────┬─────────────────────────────┘ │ ▼ Subtrair 1 Fonema por Dígrafo │ ▼
-```
+➔ [Dígrafos Consonantais] [Dígrafos Vocálicos] (ch, lh, nh, rr, ss, sc, sç, xc, (Vogal + M/N na mesma sílaba: qu/gu com U mudo) an, en, in, on, un, am, em...)
+- ➔ Subtrair 1 Fonema por Dígrafo
 
 1. Rastrear Ocorrência de Dífonos
 
-```text
-(Letra X com som de /ks/) │ ┌──────────────────┴──────────────────┐ ▼ ▼ [Existe Dífono?] [Não há Dífono] (Ex: conexão, (X = /s/, /z/, /ʃ/) sexualidade) │ │ ▼ ├─ SIM ──► Somar +1 Fonema Manter Contagem │ └──────────────────┬──────────────────┘ │ ▼ [FÓRMULA FINAL: Fonemas = Letras - Dígrafos + Dífonos]
-```
+(Letra X com som de /ks/)
+- ➔ [Existe Dífono?] [Não há Dífono] (Ex: conexão, (X = /s/, /z/, /ʃ/) sexualidade)
+SIM ➔ Somar +1 Fonema Manter Contagem
+- ➔ [FÓRMULA FINAL: Fonemas = Letras - Dígrafos + Dífonos]
 
 1. Localizar o grupo: Identifique o vocábulo com qu ou gu (esqueleto, porque, quantidade, quase).
 2. Teste da audibilidade do 'U':

@@ -44,9 +44,40 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Semântica e Lexicologia: Domínio das noções de denotação (sentido literal) versus conotação (sentido figurado), relações de hiperonímia/hiponímia, sinonímia e antonímia.
 - Pragmática e Linguística Textual: Noções de contexto discursivo, intencionalidade enunciativa, paralelismo sintático e quebras de linearidade.
 
-```text
-FIGURAS DE LINGUAGEM (ESTILÍSTICA APLICADA) │ ├── 1. Figuras de Palavras / Semânticas (Tropos) │ ├── Metáfora (comparação implícita / predicação direta de identidade) │ ├── Comparação / Símile (comparação analógica explícita com conectivo formal) │ ├── Metonímia / Sinédoque (substituição por contiguidade lógica e material) │ │ ├── I. Autor pela obra │ │ ├── II. Continente pelo conteúdo │ │ ├── III. Abstrato pelo concreto │ │ ├── IV. Concreto pelo abstrato │ │ ├── V. A parte pelo todo │ │ ├── VI. Singular pelo plural │ │ ├── VII. Gênero pela espécie (e vice-versa) │ │ ├── VIII. Marca pelo produto │ │ └── IX. Matéria pelo objeto │ ├── Catacrese (empréstimo lexical cristalizado por lacuna vocabular da língua) │ └── Sinestesia (fusão e cruzamento de diferentes esferas sensoriais) │ ├── 2. Figuras de Pensamento │ ├── Antítese (confronto de termos/vocábulos opostos em referentes distintos) │ ├── Paradoxo / Oxímoro (contradição lógica de ideias sobre o mesmo referente) │ ├── Ironia (expressão deliberada do inverso do pensamento com pistas contextuais) │ ├── Eufemismo (atenuação expressiva de fatos trágicos, grosseiros ou desagradáveis) │ ├── Hipérbole (exagero enfático, intencional e desmedido da realidade) │ └── Prosopopeia / Personificação (atribuição de traços humanos a inanimados ou animais) │ ├── 3. Figuras de Sintaxe / Construção │ ├── Anacoluto (quebra da linearidade estrutural com isolamento do termo inicial) │ ├── Pleonasmo (repetição enfática literária vs. redundância viciosa) │ ├── Elipse (omissão contextual de termo subentendido) │ ├── Zeugma (omissão de termo expresso formalmente em oração anterior) │ ├── Silepse / Concordância Ideológica (concordância com o sentido mental) │ │ ├── Silepse de Gênero (flexão nominal conforme o sexo biológico/ideológico) │ │ ├── Silepse de Número (sujeito singular coletivo com verbo no plural afastado) │ │ └── Silepse de Pessoa (sujeito de 3ª pessoa associado a verbo na 1ª pessoa plural) │ └── Hipérbato / Inversão (deslocamento intencional da ordem direta da oração) │ └── 4. Figuras de Som / Harmonia ├── Onomatopeia (reprodução fonética aproximada de sons, ruídos e gritos) ├── Aliteração (repetição intencional e rítmica de fonemas consonantais) └── Assonância (repetição intencional e rítmica de fonemas vocálicos tônicos)
-```
+FIGURAS DE LINGUAGEM (ESTILÍSTICA APLICADA)
+- ➔ 1. Figuras de Palavras / Semânticas (Tropos)
+➔ Metáfora (comparação implícita / predicação direta de identidade)
+- ➔ Comparação / Símile (comparação analógica explícita com conectivo formal)
+➔ Metonímia / Sinédoque (substituição por contiguidade lógica e material)
+- ➔ I. Autor pela obra
+➔ II. Continente pelo conteúdo
+- ➔ III. Abstrato pelo concreto
+➔ IV. Concreto pelo abstrato
+- ➔ V. A parte pelo todo
+➔ VI. Singular pelo plural
+- ➔ VII. Gênero pela espécie (e vice-versa)
+➔ VIII. Marca pelo produto
+- ➔ IX. Matéria pelo objeto
+➔ Catacrese (empréstimo lexical cristalizado por lacuna vocabular da língua)
+- ➔ Sinestesia (fusão e cruzamento de diferentes esferas sensoriais)
+➔ 2. Figuras de Pensamento
+- ➔ Antítese (confronto de termos/vocábulos opostos em referentes distintos)
+➔ Paradoxo / Oxímoro (contradição lógica de ideias sobre o mesmo referente)
+- ➔ Ironia (expressão deliberada do inverso do pensamento com pistas contextuais)
+➔ Eufemismo (atenuação expressiva de fatos trágicos, grosseiros ou desagradáveis)
+- ➔ Hipérbole (exagero enfático, intencional e desmedido da realidade)
+➔ Prosopopeia / Personificação (atribuição de traços humanos a inanimados ou animais)
+- ➔ 3. Figuras de Sintaxe / Construção
+➔ Anacoluto (quebra da linearidade estrutural com isolamento do termo inicial)
+- ➔ Pleonasmo (repetição enfática literária vs. redundância viciosa)
+➔ Elipse (omissão contextual de termo subentendido)
+- ➔ Zeugma (omissão de termo expresso formalmente em oração anterior)
+➔ Silepse / Concordância Ideológica (concordância com o sentido mental)
+- ➔ Silepse de Gênero (flexão nominal conforme o sexo biológico/ideológico)
+➔ Silepse de Número (sujeito singular coletivo com verbo no plural afastado)
+- ➔ Silepse de Pessoa (sujeito de 3ª pessoa associado a verbo na 1ª pessoa plural)
+➔ Hipérbato / Inversão (deslocamento intencional da ordem direta da oração)
+- ➔ 4. Figuras de Som / Harmonia ➔ Onomatopeia (reprodução fonética aproximada de sons, ruídos e gritos) ➔ Aliteração (repetição intencional e rítmica de fonemas consonantais) ➔ Assonância (repetição intencional e rítmica de fonemas vocálicos tônicos)
 
 ---
 

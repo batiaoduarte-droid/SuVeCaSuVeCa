@@ -17,9 +17,44 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 - Conhecimento da divisão elementar entre palavras variáveis (substantivo, adjetivo, artigo, numeral, pronome, verbo) e invariáveis (advérbio, preposição, conjunção, interjeição, palavra denotativa).
 - Noções de sintaxe oracional básica (termos essenciais, integrantes e acessórios) para compreender por que a interjeição é classificada como termo à parte (sem função sintática).
 
-```text
-[ AULA 01 — MORFOLOGIA: NUMERAIS E INTERJEIÇÕES ] │ ├── 1. CLASSE DOS NUMERAIS (Variáveis em regra) │ ├── 1.1 Classificação Canônica │ │ ├── Cardinais (Quantificam / contam: um, dois, treze...) │ │ ├── Ordinais (Indicam ordem/posição: primeiro, segundo...) │ │ ├── Fracionários (Indicam divisão/fração: meio, um terço, um quinto...) │ │ └── Multiplicativos (Indicam multiplicação/múltiplos: dobro, triplo...) │ │ │ ├── 1.2 Diferenciação Artigo Indefinido vs. Numeral Cardinal (Um / Uma / Num) │ │ ├── Artigo Indefinido: Generalização, indefinição, "um qualquer" (Ausência de pista) │ │ └── Numeral Cardinal: Contagem explícita (Exige palavra-pista: somente, apenas, não dois) │ │ │ ├── 1.3 As Funções do Vocábulo "Segundo" │ │ ├── Numeral Ordinal (Posição 2º em sequência numérica) │ │ └── Conector de Conformidade (Substituível por "de acordo com" / "conforme") │ │ ├── Preposição Acidental (Gramática Tradicional / Padrão) │ │ └── Conjunção Conformativa (Bancas e manuais simplificados) │ │ │ ├── 1.4 Numerais Coletivos (#ANOTAAÍ) │ │ └── Designam conjuntos de quantidade exata (dúzia, década, bimestre, novena, dezena) -> NÃO são Cardinais │ │ │ ├── 1.5 Contexto Semântico do Cardinal │ │ └── Cardinal isolado = Quantidade exata; Modificado por "cerca de" = Quantidade aproximada (permanece Cardinal) │ │ │ └── 1.6 Empregos e Flexões de "Metade" e "Meio" │ ├── Metade: Sempre Numeral Fracionário (Variável) │ └── Meio: │ ├── Numeral Fracionário (= metade de) -> VARIÁVEL (meio copo / meia caneca) │ ├── Substantivo (= lugar, ambiente, recurso) -> VARIÁVEL (o meio ambiente / os meios) │ └── Advérbio (= um pouco) -> INVARIÁVEL (meio cansada / meio aberta) │ └── 2. CLASSE DAS INTERJEIÇÕES (Invariáveis & Sem Função Sintática) ├── 2.1 Conceito e Estrutura │ ├── Interjeição Simples (Vocábulo único: Ah!, Oba!, Puxa!, Pimba!, Bravo!) │ └── Locução Interjetiva (Expressão com valor interjetivo: Pelo amor de Deus!, Cruz credo!, Se Deus quiser!) │ ├── 2.2 Características Morfossintáticas │ ├── Morfologia: Invariável (não flexiona em gênero, número ou pessoa) │ ├── Sintaxe: Zero função sintática (não é sujeito, objeto, adjunto ou predicativo) │ └── Pontuação: Comumente exclamação (!), mas aceita reticências (...) e vírgulas  │ └── 2.3 Padrões de Questões em Concursos ├── Modelo I: Identificação Morfológica & Derivação Imprópria │ ├── Reconhecimento direto de interjeições textuais │ ├── Mudança de classe gramatical contextual (Substantivo "surpresa" -> Interjeição "Surpresa!" [FGV]) │ └── Distinção: Verbo no imperativo ("Corra!") NÃO é interjeição │ └── Distinção: Locução verbal ("Tenho dito!") NÃO é interjeição [CESPE] │ └── Modelo II: Valor Semântico Contextual (Análise da Sequência Textual) ├── Realce / Enfatização (ex.: "Ah, que minha história...") ├── Chamamento / Função Apelativa (ex.: "Ei! Vamos embora!" -> "Ei!" = chamamento) ├── Desejo / Esperança (ex.: "Oxalá" = "Tomara que") ├── Surpresa / Espanto (ex.: "Puxa! Não esperava você aqui!") └── Alerta (ex.: "Cuidado com o carro!")
-```
+[ AULA 01 — MORFOLOGIA: NUMERAIS E INTERJEIÇÕES ]
+- ➔ 1. CLASSE DOS NUMERAIS (Variáveis em regra)
+➔ 1.1 Classificação Canônica
+- ➔ Cardinais (Quantificam / contam: um, dois, treze...)
+➔ Ordinais (Indicam ordem/posição: primeiro, segundo...)
+- ➔ Fracionários (Indicam divisão/fração: meio, um terço, um quinto...)
+➔ Multiplicativos (Indicam multiplicação/múltiplos: dobro, triplo...)
+- ➔ 1.2 Diferenciação Artigo Indefinido vs. Numeral Cardinal (Um / Uma / Num)
+➔ Artigo Indefinido: Generalização, indefinição, "um qualquer" (Ausência de pista)
+- ➔ Numeral Cardinal: Contagem explícita (Exige palavra-pista: somente, apenas, não dois)
+➔ 1.3 As Funções do Vocábulo "Segundo"
+- ➔ Numeral Ordinal (Posição 2º em sequência numérica)
+➔ Conector de Conformidade (Substituível por "de acordo com" / "conforme")
+- ➔ Preposição Acidental (Gramática Tradicional / Padrão)
+➔ Conjunção Conformativa (Bancas e manuais simplificados)
+- ➔ 1.4 Numerais Coletivos (#ANOTAAÍ)
+➔ Designam conjuntos de quantidade exata (dúzia, década, bimestre, novena, dezena) -> NÃO são Cardinais
+- ➔ 1.5 Contexto Semântico do Cardinal
+➔ Cardinal isolado = Quantidade exata; Modificado por "cerca de" = Quantidade aproximada (permanece Cardinal)
+- ➔ 1.6 Empregos e Flexões de "Metade" e "Meio"
+➔ Metade: Sempre Numeral Fracionário (Variável)
+- ➔ Meio:
+➔ Numeral Fracionário (= metade de) -> VARIÁVEL (meio copo / meia caneca)
+- ➔ Substantivo (= lugar, ambiente, recurso) -> VARIÁVEL (o meio ambiente / os meios)
+➔ Advérbio (= um pouco) -> INVARIÁVEL (meio cansada / meio aberta)
+- ➔ 2. CLASSE DAS INTERJEIÇÕES (Invariáveis & Sem Função Sintática) ➔ 2.1 Conceito e Estrutura
+➔ Interjeição Simples (Vocábulo único: Ah!, Oba!, Puxa!, Pimba!, Bravo!)
+- ➔ Locução Interjetiva (Expressão com valor interjetivo: Pelo amor de Deus!, Cruz credo!, Se Deus quiser!)
+➔ 2.2 Características Morfossintáticas
+- ➔ Morfologia: Invariável (não flexiona em gênero, número ou pessoa)
+➔ Sintaxe: Zero função sintática (não é sujeito, objeto, adjunto ou predicativo)
+- ➔ Pontuação: Comumente exclamação (!), mas aceita reticências (...) e vírgulas
+➔ 2.3 Padrões de Questões em Concursos ➔ Modelo I: Identificação Morfológica & Derivação Imprópria
+- ➔ Reconhecimento direto de interjeições textuais
+➔ Mudança de classe gramatical contextual (Substantivo "surpresa" -> Interjeição "Surpresa!" [FGV])
+- ➔ Distinção: Verbo no imperativo ("Corra!") NÃO é interjeição
+➔ Distinção: Locução verbal ("Tenho dito!") NÃO é interjeição [CESPE]
+- ➔ Modelo II: Valor Semântico Contextual (Análise da Sequência Textual) ➔ Realce / Enfatização (ex.: "Ah, que minha história...") ➔ Chamamento / Função Apelativa (ex.: "Ei! Vamos embora!" -> "Ei!" = chamamento) ➔ Desejo / Esperança (ex.: "Oxalá" = "Tomara que") ➔ Surpresa / Espanto (ex.: "Puxa! Não esperava você aqui!") ➔ Alerta (ex.: "Cuidado com o carro!")
 
 ---
 

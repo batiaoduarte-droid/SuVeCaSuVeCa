@@ -45,9 +45,26 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Modos Verbais: Conjugação e semântica do modo imperativo (afirmativo e negativo).
 - Pontuação Básica: Regra proibitiva universal de separação entre sujeito e predicado por vírgula simples.
 
-```text
-text TERMOS ACESSÓRIOS DA ORAÇÃO │ ├── VOCATIVO (Termo Independente de Invocação/Chamamento) │ ├── Destinatário: Pessoa real ou Coisa/Entidade Personificada │ ├── Restrição Morfológica: Núcleo É SEMPRE Substantivo (Adjetivo sofre substantivação) │ ├── Diferenciação com Sujeito: Bloqueio por vírgula no imperativo (Sujeito fica oculto/elíptico) │ └── Pontuação: │ ├── Regra Geral: Isolamento obrigatório por vírgula(s) em qualquer posição │ ├── Registro Informal: Omissão tolerada no cotidiano (não padrão) │ └── Caso Especial Epistolar: Emprego legítimo de dois-pontos (ex.: "Meu amigo:") │ └── APOSTO (Termo Acessório de Relação Substantiva Anafórica) ├── Mantra Morfossintático: Substantivo/Pronome que se refere a outro Substantivo/Pronome ├── Diferenciação com Predicativo: Adjetivo entre vírgulas = Predicativo do Sujeito Deslocado ├── Estrutura Interna: Núcleo (sem preposição direta) + Satélites (adjuntos adnominais) │ ├── Tipologias Pontuadas (Vírgulas, Dois-Pontos, Travessões, Parênteses): │ ├── 1. Explicativo: Esclarece/define termo antecedente │ ├── 2. Enumerativo: Desdobra em dois ou mais elementos │ ├── 3. Distributivo: Distribui antecedentes em pares ("um... outro", "este... aquele") │ ├── 4. Resumitivo: Sintetiza enumeração via pronome indefinido ("ninguém", "tudo", "nada") │ │ └── Regra Especial: Verbo concorda compulsoriamente no singular com o aposto │ └── 5. Em Referência a uma Oração: Sintetiza oração inteira │ ├── Substantivos genéricos: "coisa", "fato", "razão", "motivo", "sinal" │ └── Pronome Demonstrativo "o" (= "isso") na cadeia coesiva ", o que..." │ └── Tipologia NÃO Pontuada (Exceção Universal): └── 6. Especificativo: Nomeia/individualiza substantivo comum genérico └── Diferenciação com Adjunto Adnominal: Critério da Denominação (Dá o nome próprio vs. Relação/Posse)
-```
+text TERMOS ACESSÓRIOS DA ORAÇÃO
+- ➔ VOCATIVO (Termo Independente de Invocação/Chamamento)
+➔ Destinatário: Pessoa real ou Coisa/Entidade Personificada
+- ➔ Restrição Morfológica: Núcleo É SEMPRE Substantivo (Adjetivo sofre substantivação)
+➔ Diferenciação com Sujeito: Bloqueio por vírgula no imperativo (Sujeito fica oculto/elíptico)
+- ➔ Pontuação:
+➔ Regra Geral: Isolamento obrigatório por vírgula(s) em qualquer posição
+- ➔ Registro Informal: Omissão tolerada no cotidiano (não padrão)
+➔ Caso Especial Epistolar: Emprego legítimo de dois-pontos (ex.: "Meu amigo:")
+- ➔ APOSTO (Termo Acessório de Relação Substantiva Anafórica) ➔ Mantra Morfossintático: Substantivo/Pronome que se refere a outro Substantivo/Pronome ➔ Diferenciação com Predicativo: Adjetivo entre vírgulas = Predicativo do Sujeito Deslocado ➔ Estrutura Interna: Núcleo (sem preposição direta) + Satélites (adjuntos adnominais)
+➔ Tipologias Pontuadas (Vírgulas, Dois-Pontos, Travessões, Parênteses):
+- ➔ 1. Explicativo: Esclarece/define termo antecedente
+➔ 2. Enumerativo: Desdobra em dois ou mais elementos
+- ➔ 3. Distributivo: Distribui antecedentes em pares ("um... outro", "este... aquele")
+➔ 4. Resumitivo: Sintetiza enumeração via pronome indefinido ("ninguém", "tudo", "nada")
+- ➔ Regra Especial: Verbo concorda compulsoriamente no singular com o aposto
+➔ 5. Em Referência a uma Oração: Sintetiza oração inteira
+- ➔ Substantivos genéricos: "coisa", "fato", "razão", "motivo", "sinal"
+➔ Pronome Demonstrativo "o" (= "isso") na cadeia coesiva ", o que..."
+- ➔ Tipologia NÃO Pontuada (Exceção Universal): ➔ 6. Especificativo: Nomeia/individualiza substantivo comum genérico ➔ Diferenciação com Adjunto Adnominal: Critério da Denominação (Dá o nome próprio vs. Relação/Posse)
 
 ---
 

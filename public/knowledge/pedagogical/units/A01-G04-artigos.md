@@ -43,9 +43,33 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Morfologia Básica: Noções de substantivo (classe determinada), adjetivo (modificador) e classes invariáveis (preposição).
 - Sintaxe Introdutória: Conceito elementar de regência verbal/nominal (termos regentes que exigem preposição) e concordância nominal (o determinante deve concordar em gênero e número com o núcleo substantivo).
 
-```text
-CLASSE DOS ARTIGOS (esta unidade) │ ┌────────────────────────────────────┼────────────────────────────────────┐ ▼ ▼ ▼ RECONHECIMENTO SINTÁTICO SEMÂNTICA DISCURSIVA HOMÔNIMOS DO "A / O" (Dependência do Substantivo) (Status da Realidade) (Classes Concorrentes) │ │ │ ┌────────┴────────┐ ┌────────┴────────┐ ┌────────┴────────┐ │ Artigo Distante │ │ ARTIGO DEFINIDO │ │ PRONOME PESSOAL │ │ (Adjetivo meio) │ │ • Anáfora textual │ (Troca por ela) │ └────────┬────────┘ │ • Conhecimento │ └────────┬────────┘ │ │ de mundo │ │ ┌────────┴────────┐ └────────┬────────┘ ┌────────┴────────┐ │ Subst. Implícito│ │ │ PREPOSIÇÃO │ │ (Elipse textual)│ ┌────────┴────────┐ │ (Conectivo / VTI│ └────────┬────────┘ │ARTIGO INDEFINIDO│ │ ou Nominal) │ │ │ • Realidade vaga│ └────────┬────────┘ ┌────────┴────────┐ │ • Não exclusiva │ │ │ CONTRAÇÕES │ │ (uma dentre │ ┌────────┴────────┐ │ DA, DO, NA, NO, │ │ várias) │ │ PRON. DEMONSTR. │ │ PELO, PELA... │ └─────────────────┘ │ (Antes de QUE/DE│ └─────────────────┘ │ = Aquele/Aquilo│ └─────────────────┘
-```
+CLASSE DOS ARTIGOS (esta unidade)
+- ➔ RECONHECIMENTO SINTÁTICO SEMÂNTICA DISCURSIVA HOMÔNIMOS DO "A / O" (Dependência do Substantivo) (Status da Realidade) (Classes Concorrentes)
+➔ ➔ ➔ Artigo Distante
+- ARTIGO DEFINIDO
+PRONOME PESSOAL
+- (Adjetivo meio)
+• Anáfora textual
+- (Troca por ela)
+➔ • Conhecimento
+- ➔ de mundo
+➔ ➔ ➔ Subst. Implícito
+- PREPOSIÇÃO
+(Elipse textual)
+- ➔ (Conectivo / VTI
+➔ ARTIGO INDEFINIDO
+- ou Nominal)
+• Realidade vaga
+- ➔ ➔ • Não exclusiva
+CONTRAÇÕES
+- (uma dentre
+➔ DA, DO, NA, NO,
+- várias)
+PRON. DEMONSTR.
+
+➔ (Antes de QUE/DE
+- ➔ = Aquele/Aquilo
+➔
 
 ---
 

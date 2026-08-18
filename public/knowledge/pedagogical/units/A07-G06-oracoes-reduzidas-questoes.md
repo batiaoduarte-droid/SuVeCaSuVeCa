@@ -44,9 +44,27 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Sintaxe do Período Simples: Termos essenciais (sujeito), integrantes (objeto direto, objeto indireto, complemento nominal, predicativo do sujeito) e acessórios (adjunto adverbial, adjunto adnominal); transitividade e regência verbal e nominal; verbos de ligação e verbos impessoais (haver).
 - Sintaxe do Período Composto: Estrutura de subordinação (oração principal vs. oração subordinada); conhecimento das conjunções integrantes (que, se) e das 9 circunstâncias adverbiais.
 
-```text
-ORAÇÕES SUBORDINADAS │ ┌──────────────────────────────┴──────────────────────────────┐ ▼ ▼ ORAÇÕES DESENVOLVIDAS ORAÇÕES REDUZIDAS • Conjunção / Pronome Relativo • Sem Conjunção / Sem Pronome Relativo • Verbo em Tempo/Modo Finito • Admite Preposição ou Locução Prepositiva • Ex: "...a fim de que passasse" • Verbo em Forma Nominal │ ┌───────────────────────────────────────────────────────────────┼───────────────────────────────────────────────┐ ▼ ▼ ▼ ORAÇÕES SUBSTANTIVAS ORAÇÕES ADJETIVAS ORAÇÕES ADVERBIAIS (Troca Integral por "ISSO") (Referem-se a Substantivo) ("Cheiro de Circunstância") │ │ │ ├─► Subjetiva (Sujeito) ├─► Restritiva (Sem vírgula) ├─► Mnemônico: 6Cs + FTP │ • "Isso basta / Isso é preciso" │ • Desdobra: "que + verbo" │ (Causais, Consecutivas, Concessivas, ├─► Objetiva Direta └─► Explicativa (Com vírgula) │ Conformativas, Comparativas, Condicionais, │ • Completa VTD sem prep. (Ordem Inversa) • Ex: "...empresa desenvolvendo..." │ Finais, Temporais, Proporcionais) ├─► Objetiva Indireta (Aplica Seta ──► VERBO) │ │ • Completa VTI / prep. obrigatória ├─► Padrões de Infinitivo: ├─► Completiva Nominal (Aplica Seta ──► NOME) │ • "Para / A fim de" ──► Finalidade │ • Completa Subst. Abstrato ou Adjetivo │ • "Por" (= porque) ──► Causa └─► Predicativa (Pós Verbo de Ligação) │ • "Ao" (= quando/porque) ──► Tempo + Causa • "O problema não é isso" │ • "A" (= se/caso) ──► Condição │ ├─► Gerúndio: │ • Anterior ──► Causa │ • Resposta a "como?" ──► Modo │ • Posterior/Efeito ──► Consequência │ └─► Particípio: • Com modalizador "é possível" ──► Condição
-```
+ORAÇÕES SUBORDINADAS
+- ➔ ORAÇÕES DESENVOLVIDAS ORAÇÕES REDUZIDAS • Conjunção / Pronome Relativo • Sem Conjunção / Sem Pronome Relativo • Verbo em Tempo/Modo Finito • Admite Preposição ou Locução Prepositiva • Ex: "...a fim de que passasse" • Verbo em Forma Nominal
+➔ ORAÇÕES SUBSTANTIVAS ORAÇÕES ADJETIVAS ORAÇÕES ADVERBIAIS (Troca Integral por "ISSO") (Referem-se a Substantivo) ("Cheiro de Circunstância")
+- ➔ Subjetiva (Sujeito) ➔ Restritiva (Sem vírgula) ➔ Mnemônico: 6Cs + FTP
+• "Isso basta / Isso é preciso"
+- • Desdobra: "que + verbo"
+(Causais, Consecutivas, Concessivas, ➔ Objetiva Direta ➔ Explicativa (Com vírgula)
+
+• Completa VTD sem prep. (Ordem Inversa) • Ex: "...empresa desenvolvendo..."
+- Finais, Temporais, Proporcionais) ➔ Objetiva Indireta (Aplica Seta ➔ VERBO)
+• Completa VTI / prep. obrigatória ➔ Padrões de Infinitivo: ➔ Completiva Nominal (Aplica Seta ➔ NOME)
+- • "Para / A fim de" ➔ Finalidade
+• Completa Subst. Abstrato ou Adjetivo
+- • "Por" (= porque) ➔ Causa ➔ Predicativa (Pós Verbo de Ligação)
+• "Ao" (= quando/porque) ➔ Tempo + Causa • "O problema não é isso"
+- • "A" (= se/caso) ➔ Condição
+➔ Gerúndio:
+- • Anterior ➔ Causa
+• Resposta a "como?" ➔ Modo
+- • Posterior/Efeito ➔ Consequência
+➔ Particípio: • Com modalizador "é possível" ➔ Condição
 
 ---
 
@@ -108,9 +126,7 @@ Ao traçar uma seta da oração preposicionada em direção ao termo subordinant
 - Se a seta apontar para um VERBO (transitivo indireto ou transitivo direto e indireto) $\rightarrow$ A oração é Objetiva Indireta.
 - Se a seta apontar para um NOME (substantivo abstrato, adjetivo predicativo ou advérbio) $\rightarrow$ A oração é Completiva Nominal.
 
-```text
-[ Oração Reduzida com Preposição ] ────────► VERBO = Objetiva Indireta [ Oração Reduzida com Preposição ] ────────► NOME = Completiva Nominal (substantivo / adjetivo)
-```
+[ Oração Reduzida com Preposição ] ➔ VERBO = Objetiva Indireta [ Oração Reduzida com Preposição ] ➔ NOME = Completiva Nominal (substantivo / adjetivo)
 
 Desmistificação do Critério Agente vs. Paciente: Na sintaxe do período composto, o candidato não deve analisar se há "sentido paciente" ou "sentido agente" (distinção válida apenas para o embate entre Adjunto Adnominal e Complemento Nominal no período simples). Em orações, basta seguir o destino regencial da seta (verbo vs. nome).
 
@@ -219,9 +235,19 @@ Bancas sofisticadas (como a FCC) exploram períodos em que o marco temporal defl
 
 O gerúndio é a forma nominal de maior fluidez semântica na língua. Sua classificação depende do pareamento direto com o verbo da oração principal e da análise da linha cronológica dos eventos:
 
-```text
-LINHA CRONOLÓGICA DOS EVENTOS 1º Fato (Anterior) 2º Fato (Posterior) ┌─────────────────────────────────┐ ┌─────────────────────────────────┐ │ CAUSA │ ────────────► │ EFEITO / CONSEQUÊNCIA │ │ "temendo por sua saúde" │ │ "escreveu um testamento" │ │ (Gerúndio Causal) │ │ (Verbo Principal) │ └─────────────────────────────────┘ └─────────────────────────────────┘ OU ┌─────────────────────────────────┐ ┌─────────────────────────────────┐ │ AÇÃO PRINCIPAL │ ────────────► │ EFEITO / CONSEQUÊNCIA │ │ "montar os trilhões..." │ │ "criando o arco-íris..." │ │ (Infinitivo / Fato Gerador) │ │ (Gerúndio Consecutivo) │ └─────────────────────────────────┘ └─────────────────────────────────┘
-```
+LINHA CRONOLÓGICA DOS EVENTOS 1º Fato (Anterior) 2º Fato (Posterior) ➔ ➔ CAUSA
+- ➔ EFEITO / CONSEQUÊNCIA
+"temendo por sua saúde"
+- "escreveu um testamento"
+(Gerúndio Causal)
+- (Verbo Principal)
+➔ ➔ OU ➔ ➔ AÇÃO PRINCIPAL
+- ➔ EFEITO / CONSEQUÊNCIA
+"montar os trilhões..."
+- "criando o arco-íris..."
+(Infinitivo / Fato Gerador)
+- (Gerúndio Consecutivo)
+➔ ➔
 
 1. Gerúndio com Valor de Causa (Princípio da Anterioridade): Ocorre quando o fato expresso no gerúndio acontece cronologicamente antes do verbo principal, atuando como seu motivo gerador ("Em julho de 1898, [temendo por sua saúde], escreveu um testamento" $\rightarrow$ 1º temeu, 2º escreveu).
 2. Gerúndio com Valor de Modo: Ocorre quando a oração responde à pergunta "Como? / De que modo?" direcionada ao verbo principal ("...defender seus pontos de vista [falando bem]" $\rightarrow$ defendia como? $\rightarrow$ falando bem).

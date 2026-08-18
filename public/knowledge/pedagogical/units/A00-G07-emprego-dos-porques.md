@@ -45,9 +45,12 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Regência Verbal Básica: Noção de verbos transitivos indiretos (VTI) que exigem preposição fixa (ex.: ansiar por, lutar por).
 - Semântica e Pontuação: Noção de causa versus consequência; papel das vírgulas em intercalações e deslocamentos sintáticos.
 
-```text
-EMPREGO DOS PORQUÊS │ ┌────────────────────────┬─────────────┴───────────────┬────────────────────────┐ ▼ ▼ ▼ ▼ PORQUÊ PORQUE POR QUÊ POR QUE (Junto + Acento) (Junto + Sem Acento) (Separado + Acento) (Separado + Sem Acento) │ │ │ │ Substantivo Conjunção: Advérbio em: Múltiplas Funções: Exige Determinante: - Causal (= pois) - Final de oração 1. Preposição "por" +
-```
+| Forma | Classificação Gramatical | Condição de Uso Principal | Exemplo Prático |
+|---|---|---|---|
+| **Por que** | Preposição + Pronome | Início/meio de interrogativas (= por qual razão) ou Relativo (= pelo qual) | *Por que você não veio ontem?* / *Os caminhos por que passei.* |
+| **Por quê** | Preposição + Pronome Tônico | Imediatamente antes de pontuação final (?, !, .) ou pausa | *Eles não vieram e nem disseram por quê.* |
+| **Porque** | Conjunção Explicativa/Causal | Respostas, justificativas e orações subordinadas causais (= pois, já que) | *Não compareci porque estava doente.* |
+| **Porquê** | Substantivo Masculino | Precedido por determinante (artigo, pronome, numeral) com sentido de 'motivo' | *Não entendi o porquê de tanta confusão.* |
 
 - Artigo (o, um) - Explicativa (= pois) interrogativa Pronome Relativo
 - Pronome (meu, este) - Final (= para que; - Imediatamente (= pelo qual)
@@ -254,9 +257,10 @@ A matriz a seguir sintetiza as formulações canônicas das quatro formas para c
 
 ## Roteiros de resolução
 
-```text
-[Início: Análise da Lacuna] │ ▼ Passo 1: Há determinante (artigo "o/um", pronome "meu/este", numeral "dois", contração "do") antes da lacuna? ├─► SIM: Escreva "PORQUÊ" (junto com acento) ──► [Classe: Substantivo] └─► NÃO: Prossiga para o Passo 2. │ ▼ Passo 2: A lacuna introduz justificativa, causa ou finalidade (com verbo no subjuntivo), substituível por "pois" ou "para que"? ├─► SIM: Escreva "PORQUE" (junto sem acento) ──► [Classe: Conjunção] └─► NÃO: Prossiga para o Passo 3. │ ▼ Passo 3: A expressão situa-se imediatamente antes de uma PAUSA discursiva (pontuação ?,.,,,;,... ou pausa oral de final de interrogativa)? ├─► SIM: Escreva "POR QUÊ" (separado com acento) ──► [Classe: Locução Adverbial Interrogativa Tônica] └─► NÃO: Prossiga para o Passo 4. │ ▼ Passo 4: Verifique as funções do "POR QUE" (separado sem acento): ├─ Retoma antecedente? (= pelo qual) ──► Pronome Relativo ├─ Acompanha substantivo posterior? (= por qual) ──► Pronome Indefinido / Interrogativo ├─ Pergunta direta ou indireta no início/meio? (= por qual motivo) ──► Locução Adverbial ├─ Regência de VTI + oração ("ansiar por isso")? ──► Preposição + Conjunção Integrante └─ Precedido de "Eis"? ──► Palavra Denotativa + Conector └─► RESULTADO: Escreva "POR QUE" (separado sem acento).
-```
+1. Há determinante (artigo "o/um", pronome "meu/este", numeral "dois", contração "do") antes da lacuna? SIM: Escreva "PORQUÊ" (junto com acento) ➔ [Classe: Substantivo] NÃO: Prossiga para o Passo 2.
+2. A lacuna introduz justificativa, causa ou finalidade (com verbo no subjuntivo), substituível por "pois" ou "para que"? SIM: Escreva "PORQUE" (junto sem acento) ➔ [Classe: Conjunção] NÃO: Prossiga para o Passo 3.
+3. A expressão situa-se imediatamente antes de uma PAUSA discursiva (pontuação ?,.,,,;,... ou pausa oral de final de interrogativa)? SIM: Escreva "POR QUÊ" (separado com acento) ➔ [Classe: Locução Adverbial Interrogativa Tônica] NÃO: Prossiga para o Passo 4.
+4. Verifique as funções do "POR QUE" (separado sem acento): Retoma antecedente? (= pelo qual) ➔ Pronome Relativo Acompanha substantivo posterior? (= por qual) ➔ Pronome Indefinido / Interrogativo Pergunta direta ou indireta no início/meio? (= por qual motivo) ➔ Locução Adverbial Regência de VTI + oração ("ansiar por isso")? ➔ Preposição + Conjunção Integrante Precedido de "Eis"? ➔ Palavra Denotativa + Conector RESULTADO: Escreva "POR QUE" (separado sem acento).
 
 1. Localizar o Verbo de Conjectura: Identifique no período verbos que denotam dúvida, questionamento, cognição ou ignorância (não sei, nunca entenderia, quero saber, busca compreender, não sabia, foram questionados, pesquisar para descobrir).
 2. Teste da Inserção de "Motivo": Insira a palavra "motivo" imediatamente após o que:
@@ -280,9 +284,10 @@ $$
 1. Avaliar a Carga Semântica: Verifique se o conector introduz a causa/justificativa ($=$ pois, já que, visto que).
 2. Conclusão: Se a oração for causal/explicativa, a grafia no início do período invertido permanece Porque (junta e sem acento), mesmo que o período termine com ponto de interrogação.
 
-```text
-[Início: Análise da Lacuna] │ ▼ Passo 1: Há determinante (artigo "o/um", pronome "meu/este", numeral "dois", contração "do") antes da lacuna? ├─► SIM: Escreva "PORQUÊ" (junto com acento) ──► [Classe: Substantivo] └─► NÃO: Prossiga para o Passo 2. │ ▼ Passo 2: A lacuna introduz justificativa, causa ou finalidade (com verbo no subjuntivo), substituível por "pois" ou "para que"? ├─► SIM: Escreva "PORQUE" (junto sem acento) ──► [Classe: Conjunção] └─► NÃO: Prossiga para o Passo 3. │ ▼ Passo 3: A expressão situa-se imediatamente antes de uma PAUSA discursiva (pontuação ?,.,,,;,... ou pausa oral de final de interrogativa)? ├─► SIM: Escreva "POR QUÊ" (separado com acento) ──► [Classe: Locução Adverbial Interrogativa Tônica] └─► NÃO: Prossiga para o Passo 4. │ ▼ Passo 4: Verifique as funções do "POR QUE" (separado sem acento): ├─ Retoma antecedente? (= pelo qual) ──► Pronome Relativo ├─ Acompanha substantivo posterior? (= por qual) ──► Pronome Indefinido / Interrogativo ├─ Pergunta direta ou indireta no início/meio? (= por qual motivo) ──► Locução Adverbial ├─ Regência de VTI + oração ("ansiar por isso")? ──► Preposição + Conjunção Integrante └─ Precedido de "Eis"? ──► Palavra Denotativa + Conector └─► RESULTADO: Escreva "POR QUE" (separado sem acento).
-```
+1. Há determinante (artigo "o/um", pronome "meu/este", numeral "dois", contração "do") antes da lacuna? SIM: Escreva "PORQUÊ" (junto com acento) ➔ [Classe: Substantivo] NÃO: Prossiga para o Passo 2.
+2. A lacuna introduz justificativa, causa ou finalidade (com verbo no subjuntivo), substituível por "pois" ou "para que"? SIM: Escreva "PORQUE" (junto sem acento) ➔ [Classe: Conjunção] NÃO: Prossiga para o Passo 3.
+3. A expressão situa-se imediatamente antes de uma PAUSA discursiva (pontuação ?,.,,,;,... ou pausa oral de final de interrogativa)? SIM: Escreva "POR QUÊ" (separado com acento) ➔ [Classe: Locução Adverbial Interrogativa Tônica] NÃO: Prossiga para o Passo 4.
+4. Verifique as funções do "POR QUE" (separado sem acento): Retoma antecedente? (= pelo qual) ➔ Pronome Relativo Acompanha substantivo posterior? (= por qual) ➔ Pronome Indefinido / Interrogativo Pergunta direta ou indireta no início/meio? (= por qual motivo) ➔ Locução Adverbial Regência de VTI + oração ("ansiar por isso")? ➔ Preposição + Conjunção Integrante Precedido de "Eis"? ➔ Palavra Denotativa + Conector RESULTADO: Escreva "POR QUE" (separado sem acento).
 
 1. Localizar o Verbo de Conjectura: Identifique no período verbos que denotam dúvida, questionamento, cognição ou ignorância (não sei, nunca entenderia, quero saber, busca compreender, não sabia, foram questionados, pesquisar para descobrir).
 2. Teste da Inserção de "Motivo": Insira a palavra "motivo" imediatamente após o que:

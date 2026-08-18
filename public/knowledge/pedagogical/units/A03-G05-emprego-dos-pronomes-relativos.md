@@ -47,9 +47,28 @@ Para a plena compreensão deste grupo, o estudante deve mobilizar:
 3. Morfologia dos Pronomes: Reconhecimento de pronomes possessivos, demonstrativos e indefinidos;
 4. Noções de Concordância Nominal: Adequação de gênero e número entre determinantes e substantivos.
 
-```text
-SISTEMÁTICA DOS PRONOMES RELATIVOS (CONSOLIDAÇÃO esta unidade) │ ├── 1. PRONOMES CORINGAS (Pessoa ou Coisa) │ ├── QUE: Invariável, universal, não traz artigo embutido. │ └── O QUAL / A QUAL / OS QUAIS / AS QUAIS: Variáveis, artigo embutido. │ ├── Regra de Ouro 1: "O qual/flexões" ──> "QUE" (SEMPRE VÁLIDO). │ └── Regra de Ouro 2: "QUE" ──> "O qual/flexões" (Exige concordância com o antecedente). │ ├── 2. PRONOMES DE RESTRIÇÃO SEMÂNTICA │ ├── QUEM: Antecedente PESSOA + SEMPRE PREPOSICIONADO. │ ├── COMO: Antecedente MODO, MANEIRA ou FORMA. │ ├── QUANDO: Antecedente TEMPO (Equivale a "em que" / "na qual"). │ └── QUANTO: Antecedente QUANTIDADE/INDEFINIDO (tudo, todos, tanto). │ ├── 3. TRÍADE DE LUGAR & REGÊNCIA (Antecedente = LUGAR FÍSICO/CONCRETO) │ ├── ONDE ──────> Verbo exige EM (Posicionamento/Espaço) ──> Reescrita: EM QUE / NO QUAL │ ├── AONDE ─────> Verbo exige A (Destino/Direção) ──> Reescrita: A QUE / AO QUAL / À QUAL │ └── DONDE ─────> Verbo exige DE (Procedência/Origem) ──> Reescrita: DE QUE / DO QUAL │ └── CRITÉRIO DECISIVO: Regência do verbo regente (Refutação de repouso vs. movimento). │ └── 4. PRONOME RELATIVO CUJO (E FLEXÕES) ├── Natureza: Pronome relativo adjetivo possessivo puro (Insubstituível por coringas). ├── Os 5 Mandamentos: │ 1. Posicionado entre dois substantivos; │ 2. Relação de posse (Leitura inversa: Substantivo 2 + DE + Substantivo 1); │ 3. Concorda com o substantivo posterior (consequente); │ 4. Proibido artigo posterior ("cujo o" = ERRO) / Admite preposição anterior regida; │ 5. Único que indica posse na norma-padrão. └── Regência com Cujo: Preposição externa desloca-se para ANTES do relativo (ex: "de cujo", "a cujo").
-```
+SISTEMÁTICA DOS PRONOMES RELATIVOS (CONSOLIDAÇÃO esta unidade)
+- ➔ 1. PRONOMES CORINGAS (Pessoa ou Coisa)
+➔ QUE: Invariável, universal, não traz artigo embutido.
+- ➔ O QUAL / A QUAL / OS QUAIS / AS QUAIS: Variáveis, artigo embutido.
+➔ Regra de Ouro 1: "O qual/flexões" ➔ > "QUE" (SEMPRE VÁLIDO).
+- ➔ Regra de Ouro 2: "QUE" ➔ > "O qual/flexões" (Exige concordância com o antecedente).
+➔ 2. PRONOMES DE RESTRIÇÃO SEMÂNTICA
+- ➔ QUEM: Antecedente PESSOA + SEMPRE PREPOSICIONADO.
+➔ COMO: Antecedente MODO, MANEIRA ou FORMA.
+- ➔ QUANDO: Antecedente TEMPO (Equivale a "em que" / "na qual").
+➔ QUANTO: Antecedente QUANTIDADE/INDEFINIDO (tudo, todos, tanto).
+- ➔ 3. TRÍADE DE LUGAR & REGÊNCIA (Antecedente = LUGAR FÍSICO/CONCRETO)
+➔ ONDE ➔ > Verbo exige EM (Posicionamento/Espaço) ➔ > Reescrita: EM QUE / NO QUAL
+- ➔ AONDE ➔ > Verbo exige A (Destino/Direção) ➔ > Reescrita: A QUE / AO QUAL / À QUAL
+➔ DONDE ➔ > Verbo exige DE (Procedência/Origem) ➔ > Reescrita: DE QUE / DO QUAL
+- ➔ CRITÉRIO DECISIVO: Regência do verbo regente (Refutação de repouso vs. movimento).
+➔ 4. PRONOME RELATIVO CUJO (E FLEXÕES) ➔ Natureza: Pronome relativo adjetivo possessivo puro (Insubstituível por coringas). ➔ Os 5 Mandamentos:
+1. Posicionado entre dois substantivos;
+2. Relação de posse (Leitura inversa: Substantivo 2 + DE + Substantivo 1);
+3. Concorda com o substantivo posterior (consequente);
+4. Proibido artigo posterior ("cujo o" = ERRO) / Admite preposição anterior regida;
+5. Único que indica posse na norma-padrão. ➔ Regência com Cujo: Preposição externa desloca-se para ANTES do relativo (ex: "de cujo", "a cujo").
 
 ---
 
@@ -184,9 +203,8 @@ $$
 \text{"Gostei do \underline{livro} a \textbf{cujo} \underline{autor} você se referiu."}
 $$
 
-```text
-┌──────────────────────────────────────────────┐ │ OS 5 MANDAMENTOS DO PRONOME CUJO │ └──────────────────────────────────────────────┘ ① SEMPRE ENTRE DOIS SUBSTANTIVOS └── Posicionado entre Substantivo 1 (possuidor) e Substantivo 2 (coisa possuída). ② SEMPRE TRAZ IDEIA DE POSSE └── Teste Inverso: Leitura do 2º para o 1º substantivo com a preposição "DE" (Ex: "autor DO livro"). ③ CONCORDA COM O SUBSTANTIVO QUE VEM DEPOIS └── A concordância em gênero e número é com o termo consequente (Ex: "cujo autor", "cujas obras"). ④ NUNCA VEM SEGUIDO DE ARTIGO / ADMITE PREPOSIÇÃO ANTERIOR └── Proibição absoluta de "cujo o", "cuja a", "cujos os", "cujas as". └── Pode vir antecedido de preposição regida por verbo/nome posterior ("a cujo"). ⑤ É O ÚNICO PRONOME RELATIVO QUE INDICA POSSE └── É insubstituível por "que o", "ao qual", "do qual o" quando se pretende indicar posse.
-```
+➔ OS 5 MANDAMENTOS DO PRONOME CUJO
+- ➔ ① SEMPRE ENTRE DOIS SUBSTANTIVOS ➔ Posicionado entre Substantivo 1 (possuidor) e Substantivo 2 (coisa possuída). ② SEMPRE TRAZ IDEIA DE POSSE ➔ Teste Inverso: Leitura do 2º para o 1º substantivo com a preposição "DE" (Ex: "autor DO livro"). ③ CONCORDA COM O SUBSTANTIVO QUE VEM DEPOIS ➔ A concordância em gênero e número é com o termo consequente (Ex: "cujo autor", "cujas obras"). ④ NUNCA VEM SEGUIDO DE ARTIGO / ADMITE PREPOSIÇÃO ANTERIOR ➔ Proibição absoluta de "cujo o", "cuja a", "cujos os", "cujas as". ➔ Pode vir antecedido de preposição regida por verbo/nome posterior ("a cujo"). ⑤ É O ÚNICO PRONOME RELATIVO QUE INDICA POSSE ➔ É insubstituível por "que o", "ao qual", "do qual o" quando se pretende indicar posse.
 
 1. O pronome está entre dois substantivos?
 2. A leitura inversa Substantivo 2 + DE + Substantivo 1 faz sentido lógico de posse?
@@ -239,51 +257,41 @@ A determinação da preposição que antecede o pronome cujo decorre unicamente 
 
 Objetivo: Resolver questões que propõem substituição de pronomes relativos (que, o qual, onde, em que) por equivalentes.
 
-```text
-PASSO 1: Analisar o Verbo/Nome após o pronome relativo (Oração Adjetiva). ├── Ele exige preposição? │ ├── SIM ──> Identifique a preposição exata (em, a, de, com, por). │ └── NÃO ──> Elimine todas as alternativas preposicionadas (no qual, da qual, aonde). │ PASSO 2: Identificar o Antecedente Exato (Trace a Seta). ├── Analise o gênero (M/F) e o número (Sing/Plur). └── Se houver mais de um substantivo antecedente, verifique qual deles pratica/sofre a ação verbal. │ PASSO 3: Validar a Concordância de "O QUAL" e Flexões. ├── Antecedente masc. sing. ──> o qual / no qual / do qual / ao qual ├── Antecedente fem. sing. ──> a qual / na qual / da qual / à qual (crase!) ├── Antecedente masc. plur. ──> os quais / nos quais / dos quais / aos quais └── Antecedente fem. plur. ──> as quais / nas quais / das quais / às quais │ PASSO 4: Aplicar a Regra de Ouro da Banca. ├── Troca "O QUAL" ──> "QUE": Sempre CERTO. └── Troca "QUE" ──> "O QUAL": Exige checagem do verbo (se o verbo estiver no plural por sujeito composto, exige OS QUAIS).
-```
+1. Analisar o Verbo/Nome após o pronome relativo (Oração Adjetiva). Ele exige preposição? SIM > Identifique a preposição exata (em, a, de, com, por). NÃO > Elimine todas as alternativas preposicionadas (no qual, da qual, aonde).
+2. Identificar o Antecedente Exato (Trace a Seta). Analise o gênero (M/F) e o número (Sing/Plur). Se houver mais de um substantivo antecedente, verifique qual deles pratica/sofre a ação verbal.
+3. Validar a Concordância de "O QUAL" e Flexões. Antecedente masc. sing. > o qual / no qual / do qual / ao qual Antecedente fem. sing. > a qual / na qual / da qual / à qual (crase!) Antecedente masc. plur. > os quais / nos quais / dos quais / aos quais Antecedente fem. plur. > as quais / nas quais / das quais / às quais
+4. Aplicar a Regra de Ouro da Banca. Troca "O QUAL" > "QUE": Sempre CERTO. Troca "QUE" > "O QUAL": Exige checagem do verbo (se o verbo estiver no plural por sujeito composto, exige OS QUAIS).
 
 Objetivo: Julgar itens de Certo/Errado que propõem reescrever expressões como em que, no qual, daí por onde, donde ou cujo.
 
-```text
-PASSO 1: Isole o termo proposto pela banca (ex: "onde", "donde", "cuja"). PASSO 2: Puxe a "SETA" sintática para o termo imediatamente antecedente no texto original. PASSO 3: Avalie a compatibilidade semântica e referencial: ├── A seta aponta para LUGAR FÍSICO/CONCRETO? │ ├── SIM ──> Troca por ONDE/DONDE é válida (Gabarito: CERTO). │ └── NÃO (Aponta para tempo, situação, lei, sentido amplo ou fatos) ──> Proibido ONDE/DONDE (Gabarito: ERRADO). │ └── A troca por CUJO altera o referente anafórico da frase original? ├── SIM (A seta muda de referente e quebra a coesão) ──> Gabarito: ERRADO. └── NÃO (Preserva a posse e o referente exato) ───────> Gabarito: CERTO.
-```
+1. Isole o termo proposto pela banca (ex: "onde", "donde", "cuja").
+2. Puxe a "SETA" sintática para o termo imediatamente antecedente no texto original.
+3. Avalie a compatibilidade semântica e referencial: A seta aponta para LUGAR FÍSICO/CONCRETO? SIM > Troca por ONDE/DONDE é válida (Gabarito: CERTO). NÃO (Aponta para tempo, situação, lei, sentido amplo ou fatos) > Proibido ONDE/DONDE (Gabarito: ERRADO). A troca por CUJO altera o referente anafórico da frase original? SIM (A seta muda de referente e quebra a coesão) > Gabarito: ERRADO. NÃO (Preserva a posse e o referente exato) > Gabarito: CERTO.
 
 Objetivo: Resolver qualquer questão de preenchimento de lacuna, concordância ou regência com o pronome cujo.
 
-```text
-┌────────────────────────────┐ │ TESTE DO PRONOME CUJO │ └──────────────┬─────────────┘ │
-```
+➔ TESTE DO PRONOME CUJO
+- ➔
 
 1. A lacuna está entre DOIS SUBSTANTIVOS?
 
-```text
-├── NÃO ──> ELIMINAR (Não cabe CUJO). └── SIM ──> Prosseguir para o teste 2. │
-```
+➔ NÃO ➔ > ELIMINAR (Não cabe CUJO). ➔ SIM ➔ > Prosseguir para o teste 2.
 
 1. Teste Inverso da Posse: [Substantivo 2] + DE + [Substantivo 1]?
 
-```text
-├── NÃO faz sentido ──> ELIMINAR. └── SIM faz sentido ──> Prosseguir para o teste 3. │
-```
+➔ NÃO faz sentido ➔ > ELIMINAR. ➔ SIM faz sentido ➔ > Prosseguir para o teste 3.
 
 1. Concordância: Flexione conforme o SUBSTANTIVO 2 (Posterior).
 
-```text
-├── Substantivo masc. sing. ──> CUJO ├── Substantivo fem. sing. ──> CUJA ├── Substantivo masc. plur. ──> CUJOS └── Substantivo fem. plur. ──> CUJAS │
-```
+➔ Substantivo masc. sing. ➔ > CUJO ➔ Substantivo fem. sing. ➔ > CUJA ➔ Substantivo masc. plur. ➔ > CUJOS ➔ Substantivo fem. plur. ➔ > CUJAS
 
 1. Elimine IMEDIATAMENTE alternativas com artigo:
 
-```text
-└── Descarte "cujo o", "cuja a", "cujos os", "cujas as". │
-```
+➔ Descarte "cujo o", "cuja a", "cujos os", "cujas as".
 
 1. Analise a REGÊNCIA da oração após a lacuna:
 
-```text
-├── O verbo/nome NÃO pede preposição? ──> Use apenas CUJO / flexões. └── O verbo/nome PEDE preposição? ────> Coloque a preposição ANTES: (gostar de -> DE CUJO / referir-se a -> A CUJO / simpatizar com -> COM CUJO).
-```
+➔ O verbo/nome NÃO pede preposição? ➔ > Use apenas CUJO / flexões. ➔ O verbo/nome PEDE preposição? ➔ > Coloque a preposição ANTES: (gostar de -> DE CUJO / referir-se a -> A CUJO / simpatizar com -> COM CUJO).
 
 Objetivo: Eliminar a confusão entre onde e aonde em qualquer oração adjetiva.
 
@@ -304,51 +312,41 @@ Objetivo: Classificar a palavra quanto em questões de concurso (como a Q34 COPE
 
 Objetivo: Resolver questões que propõem substituição de pronomes relativos (que, o qual, onde, em que) por equivalentes.
 
-```text
-PASSO 1: Analisar o Verbo/Nome após o pronome relativo (Oração Adjetiva). ├── Ele exige preposição? │ ├── SIM ──> Identifique a preposição exata (em, a, de, com, por). │ └── NÃO ──> Elimine todas as alternativas preposicionadas (no qual, da qual, aonde). │ PASSO 2: Identificar o Antecedente Exato (Trace a Seta). ├── Analise o gênero (M/F) e o número (Sing/Plur). └── Se houver mais de um substantivo antecedente, verifique qual deles pratica/sofre a ação verbal. │ PASSO 3: Validar a Concordância de "O QUAL" e Flexões. ├── Antecedente masc. sing. ──> o qual / no qual / do qual / ao qual ├── Antecedente fem. sing. ──> a qual / na qual / da qual / à qual (crase!) ├── Antecedente masc. plur. ──> os quais / nos quais / dos quais / aos quais └── Antecedente fem. plur. ──> as quais / nas quais / das quais / às quais │ PASSO 4: Aplicar a Regra de Ouro da Banca. ├── Troca "O QUAL" ──> "QUE": Sempre CERTO. └── Troca "QUE" ──> "O QUAL": Exige checagem do verbo (se o verbo estiver no plural por sujeito composto, exige OS QUAIS).
-```
+1. Analisar o Verbo/Nome após o pronome relativo (Oração Adjetiva). Ele exige preposição? SIM > Identifique a preposição exata (em, a, de, com, por). NÃO > Elimine todas as alternativas preposicionadas (no qual, da qual, aonde).
+2. Identificar o Antecedente Exato (Trace a Seta). Analise o gênero (M/F) e o número (Sing/Plur). Se houver mais de um substantivo antecedente, verifique qual deles pratica/sofre a ação verbal.
+3. Validar a Concordância de "O QUAL" e Flexões. Antecedente masc. sing. > o qual / no qual / do qual / ao qual Antecedente fem. sing. > a qual / na qual / da qual / à qual (crase!) Antecedente masc. plur. > os quais / nos quais / dos quais / aos quais Antecedente fem. plur. > as quais / nas quais / das quais / às quais
+4. Aplicar a Regra de Ouro da Banca. Troca "O QUAL" > "QUE": Sempre CERTO. Troca "QUE" > "O QUAL": Exige checagem do verbo (se o verbo estiver no plural por sujeito composto, exige OS QUAIS).
 
 Objetivo: Julgar itens de Certo/Errado que propõem reescrever expressões como em que, no qual, daí por onde, donde ou cujo.
 
-```text
-PASSO 1: Isole o termo proposto pela banca (ex: "onde", "donde", "cuja"). PASSO 2: Puxe a "SETA" sintática para o termo imediatamente antecedente no texto original. PASSO 3: Avalie a compatibilidade semântica e referencial: ├── A seta aponta para LUGAR FÍSICO/CONCRETO? │ ├── SIM ──> Troca por ONDE/DONDE é válida (Gabarito: CERTO). │ └── NÃO (Aponta para tempo, situação, lei, sentido amplo ou fatos) ──> Proibido ONDE/DONDE (Gabarito: ERRADO). │ └── A troca por CUJO altera o referente anafórico da frase original? ├── SIM (A seta muda de referente e quebra a coesão) ──> Gabarito: ERRADO. └── NÃO (Preserva a posse e o referente exato) ───────> Gabarito: CERTO.
-```
+1. Isole o termo proposto pela banca (ex: "onde", "donde", "cuja").
+2. Puxe a "SETA" sintática para o termo imediatamente antecedente no texto original.
+3. Avalie a compatibilidade semântica e referencial: A seta aponta para LUGAR FÍSICO/CONCRETO? SIM > Troca por ONDE/DONDE é válida (Gabarito: CERTO). NÃO (Aponta para tempo, situação, lei, sentido amplo ou fatos) > Proibido ONDE/DONDE (Gabarito: ERRADO). A troca por CUJO altera o referente anafórico da frase original? SIM (A seta muda de referente e quebra a coesão) > Gabarito: ERRADO. NÃO (Preserva a posse e o referente exato) > Gabarito: CERTO.
 
 Objetivo: Resolver qualquer questão de preenchimento de lacuna, concordância ou regência com o pronome cujo.
 
-```text
-┌────────────────────────────┐ │ TESTE DO PRONOME CUJO │ └──────────────┬─────────────┘ │
-```
+➔ TESTE DO PRONOME CUJO
+- ➔
 
 1. A lacuna está entre DOIS SUBSTANTIVOS?
 
-```text
-├── NÃO ──> ELIMINAR (Não cabe CUJO). └── SIM ──> Prosseguir para o teste 2. │
-```
+➔ NÃO ➔ > ELIMINAR (Não cabe CUJO). ➔ SIM ➔ > Prosseguir para o teste 2.
 
 1. Teste Inverso da Posse: [Substantivo 2] + DE + [Substantivo 1]?
 
-```text
-├── NÃO faz sentido ──> ELIMINAR. └── SIM faz sentido ──> Prosseguir para o teste 3. │
-```
+➔ NÃO faz sentido ➔ > ELIMINAR. ➔ SIM faz sentido ➔ > Prosseguir para o teste 3.
 
 1. Concordância: Flexione conforme o SUBSTANTIVO 2 (Posterior).
 
-```text
-├── Substantivo masc. sing. ──> CUJO ├── Substantivo fem. sing. ──> CUJA ├── Substantivo masc. plur. ──> CUJOS └── Substantivo fem. plur. ──> CUJAS │
-```
+➔ Substantivo masc. sing. ➔ > CUJO ➔ Substantivo fem. sing. ➔ > CUJA ➔ Substantivo masc. plur. ➔ > CUJOS ➔ Substantivo fem. plur. ➔ > CUJAS
 
 1. Elimine IMEDIATAMENTE alternativas com artigo:
 
-```text
-└── Descarte "cujo o", "cuja a", "cujos os", "cujas as". │
-```
+➔ Descarte "cujo o", "cuja a", "cujos os", "cujas as".
 
 1. Analise a REGÊNCIA da oração após a lacuna:
 
-```text
-├── O verbo/nome NÃO pede preposição? ──> Use apenas CUJO / flexões. └── O verbo/nome PEDE preposição? ────> Coloque a preposição ANTES: (gostar de -> DE CUJO / referir-se a -> A CUJO / simpatizar com -> COM CUJO).
-```
+➔ O verbo/nome NÃO pede preposição? ➔ > Use apenas CUJO / flexões. ➔ O verbo/nome PEDE preposição? ➔ > Coloque a preposição ANTES: (gostar de -> DE CUJO / referir-se a -> A CUJO / simpatizar com -> COM CUJO).
 
 Objetivo: Eliminar a confusão entre onde e aonde em qualquer oração adjetiva.
 

@@ -16,9 +16,25 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 
 - Noções fundamentais de fonética da Língua Portuguesa (som vibrante múltiplo /R/ vs. som brando /r/; som surdo /S/ vs. som sonoro /Z/ intervocálico).
 
-```text
-EMPREGO DO HÍFEN NO NOVO ACORDO │ ┌────────────────────────────────┴────────────────────────────────┐ ▼ ▼ I. FORMAÇÃO POR PREFIXAÇÃO (Casos 1 a 4) II. NOMES COMPOSTOS (Caso 5) │ │ ├─► [1. Regra Geral & Fonética] ├─► Composto Justaposto s/ Ligação │ ├─ Vogais Iguais: HÍFEN ("Iguais se repelem") │ └─ Mantém Hífen (ex.: couve-flor) │ ├─ Diante de H: HÍFEN ("H é um problema") │ │ ├─ Vogais Diferentes: JUNTO ("Diferentes se atraem") ├─► Locuções c/ Elemento de Ligação │ ├─ Vogal + R/S: JUNTO e DOBRA (RR / SS) │ └─ Sem Hífen e Separado (ex.: fim de semana) │ ├─ Hiper/Inter/Super: Hífen só com R e H │ │ └─ Circun/Pan: Hífen com Vogal, M, N, H └─► Perda da Noção de Composição │ └─ Sem Hífen e Junto (ex.: paraquedas) ├─► [2. Prefixos Independentes & MAL] │ ├─ Além, ex, recém, sem, vice, grão: SEMPRE HÍFEN │ ├─ Exceções consagradas: benfazejo, benfeitor (junto) │ └─ Prefixo MAL: Hífen SÓ diante de VOGAL ou H (malcriado x mal-estar) │ ├─► [3. Prosódia dos Prefixos (Pré, Pró, Pós)] │ ├─ Tônicos / Acentuados: HÍFEN ("O forte se separa" -> pré-escola) │ └─ Átonos / Sem acento: JUNTO ("O fraco se une" -> preconceito) │ └─► [4. Prefixos em B e D + Caso CO-] ├─ Sub- / Ad-: Hífen com Iguais (B/D), com R (não dobra!) e com H └─ Co-: Sentido de união -> SEMPRE JUNTO (coautor, cosseno), salvo H
-```
+EMPREGO DO HÍFEN NO NOVO ACORDO
+- ➔ I. FORMAÇÃO POR PREFIXAÇÃO (Casos 1 a 4) II. NOMES COMPOSTOS (Caso 5)
+➔ [1. Regra Geral & Fonética] ➔ Composto Justaposto s/ Ligação
+- Vogais Iguais: HÍFEN ("Iguais se repelem")
+Mantém Hífen (ex.: couve-flor)
+- Diante de H: HÍFEN ("H é um problema")
+Vogais Diferentes: JUNTO ("Diferentes se atraem") ➔ Locuções c/ Elemento de Ligação
+- Vogal + R/S: JUNTO e DOBRA (RR / SS)
+Sem Hífen e Separado (ex.: fim de semana)
+- Hiper/Inter/Super: Hífen só com R e H
+Circun/Pan: Hífen com Vogal, M, N, H ➔ Perda da Noção de Composição
+- Sem Hífen e Junto (ex.: paraquedas) ➔ [2. Prefixos Independentes & MAL]
+Além, ex, recém, sem, vice, grão: SEMPRE HÍFEN
+- Exceções consagradas: benfazejo, benfeitor (junto)
+Prefixo MAL: Hífen SÓ diante de VOGAL ou H (malcriado x mal-estar)
+- ➔ [3. Prosódia dos Prefixos (Pré, Pró, Pós)]
+Tônicos / Acentuados: HÍFEN ("O forte se separa" -> pré-escola)
+- Átonos / Sem acento: JUNTO ("O fraco se une" -> preconceito)
+➔ [4. Prefixos em B e D + Caso CO-] Sub- / Ad-: Hífen com Iguais (B/D), com R (não dobra!) e com H Co-: Sentido de união -> SEMPRE JUNTO (coautor, cosseno), salvo H
 
 ---
 
@@ -183,9 +199,9 @@ A morfologia dos Nomes Compostos diferencia-se estruturalmente da prefixação p
 
 ## Roteiros de resolução
 
-```text
-PASSO 1: O segundo elemento começa com "H"? │ ┌──────────────┴──────────────┐ ▼ ▼ SIM NÃO │ │ ▼ ▼ [ USA HÍFEN (-) ] Vá para o PASSO 2 ("H é um problema") │ ▼ PASSO 2: O prefixo é INDEPENDENTE, TÔNICO ou ESPECIAL? (além, ex, recém, sem, vice, grão, pré-, pró-, pós-) │ ├─► É Independente / Tônico? ──► [ USA HÍFEN (-) ] ("O forte se basta") ├─► É "MAL"? ──────────────────► Vogal/H = HÍFEN | Consoante = JUNTO ├─► É "CO-"? ──────────────────► SEMPRE JUNTO (salvo H; dobra S/R) ├─► É "SUB-" / "AD-"? ─────────► B, D, R = HÍFEN (não dobra R) | Resto = JUNTO └─► Prefixo regular em vogal? ─► Vá para o PASSO 3 │ ▼ PASSO 3: Teste de Colisão / Encontro entre as Letras │ ┌──────────────┼─────────────────────────────┐ ▼ ▼ ▼ LETRAS IGUAIS VOGAIS DIFERENTES VOGAL + R ou S │ │ │ ▼ ▼ ▼ [ USA HÍFEN (-) ] [ GRAFA JUNTO ] [ GRAFA JUNTO E DOBRA ] ("Iguais se repelem") ("Diferentes se atraem") ( RR ou SS )
-```
+1. O segundo elemento começa com "H"? SIM NÃO [ USA HÍFEN (-) ] Vá para o PASSO 2 ("H é um problema")
+2. O prefixo é INDEPENDENTE, TÔNICO ou ESPECIAL? (além, ex, recém, sem, vice, grão, pré-, pró-, pós-) É Independente / Tônico? ➔ [ USA HÍFEN (-) ] ("O forte se basta") É "MAL"? ➔ Vogal/H = HÍFEN Consoante = JUNTO É "CO-"? ➔ SEMPRE JUNTO (salvo H; dobra S/R) É "SUB-" / "AD-"? ➔ B, D, R = HÍFEN (não dobra R) Resto = JUNTO Prefixo regular em vogal? Vá para o PASSO 3
+3. Teste de Colisão / Encontro entre as Letras LETRAS IGUAIS VOGAIS DIFERENTES VOGAL + R ou S [ USA HÍFEN (-) ] [ GRAFA JUNTO ] [ GRAFA JUNTO E DOBRA ] ("Iguais se repelem") ("Diferentes se atraem") ( RR ou SS )
 
 1. Identificar o elemento inicial: É o prefixo BEM ou o prefixo MAL?
 2. Se for o prefixo BEM:
@@ -205,9 +221,9 @@ PASSO 1: O segundo elemento começa com "H"? │ ┌─────────�
 - Se pronunciada de forma fechada, fraca e átona (/prê/, /prô/, /pôs/):
 - Não recebe acento e grafa-se junta sem hífen ("O fraco se une" $\to$ preconceito, preestabelecido, propor).
 
-```text
-PASSO 1: O segundo elemento começa com "H"? │ ┌──────────────┴──────────────┐ ▼ ▼ SIM NÃO │ │ ▼ ▼ [ USA HÍFEN (-) ] Vá para o PASSO 2 ("H é um problema") │ ▼ PASSO 2: O prefixo é INDEPENDENTE, TÔNICO ou ESPECIAL? (além, ex, recém, sem, vice, grão, pré-, pró-, pós-) │ ├─► É Independente / Tônico? ──► [ USA HÍFEN (-) ] ("O forte se basta") ├─► É "MAL"? ──────────────────► Vogal/H = HÍFEN | Consoante = JUNTO ├─► É "CO-"? ──────────────────► SEMPRE JUNTO (salvo H; dobra S/R) ├─► É "SUB-" / "AD-"? ─────────► B, D, R = HÍFEN (não dobra R) | Resto = JUNTO └─► Prefixo regular em vogal? ─► Vá para o PASSO 3 │ ▼ PASSO 3: Teste de Colisão / Encontro entre as Letras │ ┌──────────────┼─────────────────────────────┐ ▼ ▼ ▼ LETRAS IGUAIS VOGAIS DIFERENTES VOGAL + R ou S │ │ │ ▼ ▼ ▼ [ USA HÍFEN (-) ] [ GRAFA JUNTO ] [ GRAFA JUNTO E DOBRA ] ("Iguais se repelem") ("Diferentes se atraem") ( RR ou SS )
-```
+1. O segundo elemento começa com "H"? SIM NÃO [ USA HÍFEN (-) ] Vá para o PASSO 2 ("H é um problema")
+2. O prefixo é INDEPENDENTE, TÔNICO ou ESPECIAL? (além, ex, recém, sem, vice, grão, pré-, pró-, pós-) É Independente / Tônico? ➔ [ USA HÍFEN (-) ] ("O forte se basta") É "MAL"? ➔ Vogal/H = HÍFEN Consoante = JUNTO É "CO-"? ➔ SEMPRE JUNTO (salvo H; dobra S/R) É "SUB-" / "AD-"? ➔ B, D, R = HÍFEN (não dobra R) Resto = JUNTO Prefixo regular em vogal? Vá para o PASSO 3
+3. Teste de Colisão / Encontro entre as Letras LETRAS IGUAIS VOGAIS DIFERENTES VOGAL + R ou S [ USA HÍFEN (-) ] [ GRAFA JUNTO ] [ GRAFA JUNTO E DOBRA ] ("Iguais se repelem") ("Diferentes se atraem") ( RR ou SS )
 
 1. Identificar o elemento inicial: É o prefixo BEM ou o prefixo MAL?
 2. Se for o prefixo BEM:

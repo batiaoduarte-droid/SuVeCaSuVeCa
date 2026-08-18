@@ -19,9 +19,39 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 - Morfossintaxe Aplicada: Noções sobre modo imperativo, modo indicativo, infinitivo, pronomes pessoais e classes de advérbios/adjetivos.
 - Tipologia Textual: Noções de texto dissertativo-argumentativo, dissertativo-expositivo, texto injuntivo/instrucional e texto poético.
 
-```text
-FUNÇÕES DA LINGUAGEM (PRAGMÁTICA E FINALIDADE DISCURSIVA) │ ├── 1. Princípio Metodológico da Intencionalidade │ ├── O "Mantra" Analítico: "Por que o enunciador disse isso? Com que finalidade?" │ ├── Não generalização por suporte: uma imagem/material muda de função conforme o propósito │ └── Critério de Predominância: convivência de funções acessórias sob uma finalidade dominante │ ├── 2. As Seis Funções Canônicas e seus Fatores de Atração │ ├── Foco no Referente / Contexto ──► FUNÇÃO REFERENCIAL OU DENOTATIVA │ │ ├── Objetivo: Informar, expor fatos, dados cronológicos e teorias │ │ ├── Sentido: Denotativo, literal, objetivo, dicionarizado │ │ └── Domínio: Notícias, biografias, artigos científicos, textos legais/normativos │ │ │ ├── Foco no Receptor / Destinatário ──► FUNÇÃO APELATIVA OU CONATIVA │ │ ├── Objetivo: Persuadir, induzir comportamentos, ordenar, orientar, prescrever │ │ ├── Marcas Formais: Modo imperativo, vocativos, pronomes de tratamento │ │ ├── Desvinculação do Imperativo: Presente do indicativo ("fica proibido") e infinitivo │ │ └── Domínio: Publicidade, propaganda, cartazes educativos, manuais, receitas │ │ │ ├── Foco no Canal / Contato ──► FUNÇÃO FÁTICA │ │ ├── Objetivo: Abrir, testar a eficácia, manter/prolongar ou encerrar a comunicação │ │ ├── Definição de Canal: Meio físico/virtual de transmissão (voz, papel, internet) │ │ └── Domínio: Saudações ("Bom dia"), testes ("Alô?"), fechamentos ("Demorou", "Tchau") │ │ │ ├── Foco no Emissor / Destinador ──► FUNÇÃO EMOTIVA OU EXPRESSIVA │ │ ├── Dimensão Afetiva: Sentimentos, emoções, saudades, estados de espírito │ │ ├── Dimensão Crítica/Argumentativa: Opinião, subjetividade, defesa de teses │ │ ├── Marcas Formais: 1ª pessoa (verbos/pronomes), adjetivação valorativa │ │ └── Elemento-Chave: Advérbios e locuções modalizadoras ("Infelizmente", "Obviamente") │ │ │ ├── Foco na Mensagem / Forma ──► FUNÇÃO POÉTICA │ │ ├── Objetivo: Cuidado estético, "burilar" e enfeitar a mensagem │ │ ├── Recursos: Figuras de linguagem, metáforas, antíteses, ritmo, rimas, sonoridade │ │ └── Domínio Amplo: Poemas em verso, prosa estilizada, crônicas, slogans, provérbios │ │ │ └── Foco no Código ──► FUNÇÃO METALINGUÍSTICA │ ├── Objetivo: O próprio código explicando, analisando ou definindo o código │ ├── Formato Tradicional: Verbetes de dicionário, gramáticas, análises semânticas │ └── Formato Contemporâneo Multimodal: Material sobre materiais, aulas sobre dar aulas │ └── 3. Regras Críticas de Predominância em Provas (Bancas Cebraspe e FGV) ├── Poema em versos: Função Poética é PREDOMINANTE (Emotiva é subordinada) ├── Textos de Leis e Decretos: Função Referencial é PREDOMINANTE (Conativa é subordinada) ├── Ensaios e Artigos Pedagógicos: Função Referencial é PREDOMINANTE (Metalinguística presente) ├── Cartazes Institucionais: Função Conativa é PREDOMINANTE (Figuras poéticas secundárias) └── Metáforas e Expressões Idiomáticas: Natureza Conotativa/Poética (Nunca Denotativa)
-```
+FUNÇÕES DA LINGUAGEM (PRAGMÁTICA E FINALIDADE DISCURSIVA)
+- ➔ 1. Princípio Metodológico da Intencionalidade
+➔ O "Mantra" Analítico: "Por que o enunciador disse isso? Com que finalidade?"
+- ➔ Não generalização por suporte: uma imagem/material muda de função conforme o propósito
+➔ Critério de Predominância: convivência de funções acessórias sob uma finalidade dominante
+- ➔ 2. As Seis Funções Canônicas e seus Fatores de Atração
+➔ Foco no Referente / Contexto ➔ FUNÇÃO REFERENCIAL OU DENOTATIVA
+- ➔ Objetivo: Informar, expor fatos, dados cronológicos e teorias
+➔ Sentido: Denotativo, literal, objetivo, dicionarizado
+- ➔ Domínio: Notícias, biografias, artigos científicos, textos legais/normativos
+➔ Foco no Receptor / Destinatário ➔ FUNÇÃO APELATIVA OU CONATIVA
+- ➔ Objetivo: Persuadir, induzir comportamentos, ordenar, orientar, prescrever
+➔ Marcas Formais: Modo imperativo, vocativos, pronomes de tratamento
+- ➔ Desvinculação do Imperativo: Presente do indicativo ("fica proibido") e infinitivo
+➔ Domínio: Publicidade, propaganda, cartazes educativos, manuais, receitas
+- ➔ Foco no Canal / Contato ➔ FUNÇÃO FÁTICA
+➔ Objetivo: Abrir, testar a eficácia, manter/prolongar ou encerrar a comunicação
+- ➔ Definição de Canal: Meio físico/virtual de transmissão (voz, papel, internet)
+➔ Domínio: Saudações ("Bom dia"), testes ("Alô?"), fechamentos ("Demorou", "Tchau")
+- ➔ Foco no Emissor / Destinador ➔ FUNÇÃO EMOTIVA OU EXPRESSIVA
+➔ Dimensão Afetiva: Sentimentos, emoções, saudades, estados de espírito
+- ➔ Dimensão Crítica/Argumentativa: Opinião, subjetividade, defesa de teses
+➔ Marcas Formais: 1ª pessoa (verbos/pronomes), adjetivação valorativa
+- ➔ Elemento-Chave: Advérbios e locuções modalizadoras ("Infelizmente", "Obviamente")
+➔ Foco na Mensagem / Forma ➔ FUNÇÃO POÉTICA
+- ➔ Objetivo: Cuidado estético, "burilar" e enfeitar a mensagem
+➔ Recursos: Figuras de linguagem, metáforas, antíteses, ritmo, rimas, sonoridade
+- ➔ Domínio Amplo: Poemas em verso, prosa estilizada, crônicas, slogans, provérbios
+➔ Foco no Código ➔ FUNÇÃO METALINGUÍSTICA
+- ➔ Objetivo: O próprio código explicando, analisando ou definindo o código
+➔ Formato Tradicional: Verbetes de dicionário, gramáticas, análises semânticas
+- ➔ Formato Contemporâneo Multimodal: Material sobre materiais, aulas sobre dar aulas
+➔ 3. Regras Críticas de Predominância em Provas (Bancas Cebraspe e FGV) ➔ Poema em versos: Função Poética é PREDOMINANTE (Emotiva é subordinada) ➔ Textos de Leis e Decretos: Função Referencial é PREDOMINANTE (Conativa é subordinada) ➔ Ensaios e Artigos Pedagógicos: Função Referencial é PREDOMINANTE (Metalinguística presente) ➔ Cartazes Institucionais: Função Conativa é PREDOMINANTE (Figuras poéticas secundárias) ➔ Metáforas e Expressões Idiomáticas: Natureza Conotativa/Poética (Nunca Denotativa)
 
 ---
 

@@ -40,15 +40,30 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ## Pré-requisitos e modelo mental
 
-```text
-SINTAXE E TRANSITIVIDADE VERBAL CONSOLIDADA │ ┌─────────────────────────────────────────┼─────────────────────────────────────────┐ ▼ ▼ ▼
-```
+SINTAXE E TRANSITIVIDADE VERBAL CONSOLIDADA
+- ➔
 
 1. COMPLEMENTOS VERBAIS 2. TERMOS DE ESTADO / LIGAÇÃO 3. COMPORTAMENTOS ESPECÍFICOS
 
-```text
-│ │ │ ├─► Objeto Direto (O.D.) ├─► Verbo SER (Mantra 11) ├─► HAVER vs. EXISTIR │ ├─ Sem preposição obrigatória │ ├─ Sempre Verbo de Ligação (V.L.) │ ├─ HAVER (=existir): VTD / Sem Sujeito / Rege O.D. │ ├─ Pronomes oblíquos: o, a, os, as │ └─ Exige Predicativo do Sujeito │ └─ EXISTIR: V.I. / Com Sujeito obrigatório │ └─ Artigos (um/uma/a) NÃO são prep. │ │ │ ├─► ESTAR / FICAR ├─► LOCUÇÃO VERBAL (Mantra 7) ├─► Objeto Indireto (O.I.) │ ├─ Com P.Suj. => Verbo de Ligação │ ├─ Auxiliar: flexão de tempo/modo/número │ ├─ Com preposição regida pelo verbo │ └─ Sem P.Suj. (Lugar) => Verbo Intrans. │ └─ Principal: define a transitividade (VTD/VTI) │ ├─ Destinatário / Paciente puro │ │ │ └─ Pronome "lhe" (= a ele/ela) ├─► Predicativo do Objeto (P.O.) └─► VERBO CHAMAR (=denominar) │ │ ├─ Qualifica o Objeto Direto ├─ Objeto Direto (ser denominado) └─► ADJUNTO ADVERBIAL (Mantra 10) │ └─ Pode vir com prep. "de" (não é OI!) └─ Predicativo do Objeto (nome/título atribuído) ├─ "Cheiro de Circunstância" │ └─ Tempo, lugar, modo, causa, etc. └─► Voz Passiva Pronominal └─ VTD + SE => Paciente vira Sujeito
-```
+➔ Objeto Direto (O.D.) ➔ Verbo SER (Mantra 11) ➔ HAVER vs. EXISTIR
+- Sem preposição obrigatória
+Sempre Verbo de Ligação (V.L.)
+- HAVER (=existir): VTD / Sem Sujeito / Rege O.D.
+Pronomes oblíquos: o, a, os, as
+- Exige Predicativo do Sujeito
+EXISTIR: V.I. / Com Sujeito obrigatório
+
+➔ ESTAR / FICAR ➔ LOCUÇÃO VERBAL (Mantra 7) ➔ Objeto Indireto (O.I.)
+- Com P.Suj. => Verbo de Ligação
+Auxiliar: flexão de tempo/modo/número
+- Com preposição regida pelo verbo
+Sem P.Suj. (Lugar) => Verbo Intrans.
+- Principal: define a transitividade (VTD/VTI)
+Destinatário / Paciente puro
+- Pronome "lhe" (= a ele/ela) ➔ Predicativo do Objeto (P.O.) ➔ VERBO CHAMAR (=denominar)
+Qualifica o Objeto Direto Objeto Direto (ser denominado) ➔ ADJUNTO ADVERBIAL (Mantra 10)
+- Pode vir com prep. "de" (não é OI!) Predicativo do Objeto (nome/título atribuído) "Cheiro de Circunstância"
+Tempo, lugar, modo, causa, etc. ➔ Voz Passiva Pronominal VTD + SE => Paciente vira Sujeito
 
 ---
 

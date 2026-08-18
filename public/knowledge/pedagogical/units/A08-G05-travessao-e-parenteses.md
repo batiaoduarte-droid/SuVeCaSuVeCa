@@ -43,9 +43,32 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Compreensão dos termos essenciais da oração (sujeito e predicado) e termos integrantes (objeto direto, indireto, complemento nominal).
 - Noção de termos acessórios (adjunto adnominal, adjunto adverbial, aposto) e orações subordinadas adverbiais antecipadas/deslocadas.
 
-```text
-PONTUAÇÃO: TRAVESSÃO, PARÊNTESES E REESCRITURA │ ├── 1. Regime de Aspas e Citações │ ├── Citação Direta = Transcrição = Discurso Direto (Uso de Aspas / Travessão) │ ├── Citação Indireta = Paráfrase (Sem Aspas / Redação própria) │ └── Posição do Ponto Final │ ├── Citação Integral (Frase inteira) ──> Ponto DENTRO das aspas ["Texto."] │ └── Citação Parcial (Fragmento) ──────> Ponto FORA das aspas [Segundo X, "texto".] │ ├── 2. O Travessão (—) │ ├── Macrofunção 1: Discurso Direto / Mudança de Interlocutor │ ├── Macrofunção 2: Intercalação Enfática / Aposto Explicativo │ ├── Reescritura e Comutação: [— X —] = [, X,] = [( X )] (Mesmo sentido; altera ênfase) │ └── Combinações Gráficas │ ├── [— X,] ──> ERRO SINTÁTICO (Assimetria na abertura/fechamento) │ └── [— X —, ] ──> CORRETO se a vírgula decorrer de oração adverbial deslocada │ ├── 3. Os Parênteses │ ├── Função Sintática: Isolar comentários acessórios / ideias secundárias │ ├── Efeito Discursivo: Atenuação de relevo / Desênfase / Plano de fundo │ └── Validação Operacional: Teste da Retirada (A frase mantém sentido sem o trecho) │ ├── 4. Matriz de Tipologia Discursivo-Textual │ ├── Explicação / Esclarecimento / Aposto (Abstrato / Reformulação / "Diz o mesmo") │ ├── Enumeração (Listagem exaustiva de TODOS os componentes de um conjunto) │ ├── Exemplificação (Amostra concreta ilustrativa não exaustiva / Presença de "etc.") │ ├── Comentário do Autor (Oração intercalada com 1ª pessoa / Julgamento / Ideia nova) │ ├── Função Resumitiva / Recapitulativa (Condensação anafórica em palavra-síntese) │ └── Ampliação Textual (Acréscimo de dado novo / Dimensão temporal / "Diz além") │ └── 5. Semântica Crítica para Bancas Examinadoras ├── Ampliação (= Dizer mais / Somar dados) ├── Retificação (= Corrigir erro prévio) ≠ Ratificação (= Confirmar / Reiterar) ├── Operador "Ainda": Intensificação (Grau: "ainda mais") vs. Tempo (Persistência: "ainda atrai") └── Ironia Estrita (= Dizer o oposto do que se pensa; NÃO é simples crítica ou desabafo)
-```
+PONTUAÇÃO: TRAVESSÃO, PARÊNTESES E REESCRITURA
+- ➔ 1. Regime de Aspas e Citações
+➔ Citação Direta = Transcrição = Discurso Direto (Uso de Aspas / Travessão)
+- ➔ Citação Indireta = Paráfrase (Sem Aspas / Redação própria)
+➔ Posição do Ponto Final
+- ➔ Citação Integral (Frase inteira) ➔ > Ponto DENTRO das aspas ["Texto."]
+➔ Citação Parcial (Fragmento) ➔ > Ponto FORA das aspas [Segundo X, "texto".]
+- ➔ 2. O Travessão (—)
+➔ Macrofunção 1: Discurso Direto / Mudança de Interlocutor
+- ➔ Macrofunção 2: Intercalação Enfática / Aposto Explicativo
+➔ Reescritura e Comutação: [— X —] = [, X,] = [( X )] (Mesmo sentido; altera ênfase)
+- ➔ Combinações Gráficas
+➔ [— X,] ➔ > ERRO SINTÁTICO (Assimetria na abertura/fechamento)
+- ➔ [— X —, ] ➔ > CORRETO se a vírgula decorrer de oração adverbial deslocada
+➔ 3. Os Parênteses
+- ➔ Função Sintática: Isolar comentários acessórios / ideias secundárias
+➔ Efeito Discursivo: Atenuação de relevo / Desênfase / Plano de fundo
+- ➔ Validação Operacional: Teste da Retirada (A frase mantém sentido sem o trecho)
+➔ 4. Matriz de Tipologia Discursivo-Textual
+- ➔ Explicação / Esclarecimento / Aposto (Abstrato / Reformulação / "Diz o mesmo")
+➔ Enumeração (Listagem exaustiva de TODOS os componentes de um conjunto)
+- ➔ Exemplificação (Amostra concreta ilustrativa não exaustiva / Presença de "etc.")
+➔ Comentário do Autor (Oração intercalada com 1ª pessoa / Julgamento / Ideia nova)
+- ➔ Função Resumitiva / Recapitulativa (Condensação anafórica em palavra-síntese)
+➔ Ampliação Textual (Acréscimo de dado novo / Dimensão temporal / "Diz além")
+- ➔ 5. Semântica Crítica para Bancas Examinadoras ➔ Ampliação (= Dizer mais / Somar dados) ➔ Retificação (= Corrigir erro prévio) ≠ Ratificação (= Confirmar / Reiterar) ➔ Operador "Ainda": Intensificação (Grau: "ainda mais") vs. Tempo (Persistência: "ainda atrai") ➔ Ironia Estrita (= Dizer o oposto do que se pensa; NÃO é simples crítica ou desabafo)
 
 ---
 

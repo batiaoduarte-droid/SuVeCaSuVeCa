@@ -42,9 +42,11 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 - Reconhecimento morfológico dos tempos verbais do modo indicativo (especialmente pretérito perfeito do indicativo e presente do indicativo).
 
-```text
-TIPOLOGIA TEXTUAL │ ┌─────────────────────────────┴─────────────────────────────┐ ▼ ▼ (Contar uma História / (Discorrer sobre um TEMA / Relato de Acontecimentos) Conceituar e Esclarecer) │ │ ┌────────┴────────┐ ┌────────┴────────┐ ▼ ▼ ▼ ▼ PROGRESSÃO TEMPOS VERBAIS EXPOSITIVO ARGUMENTATIVO TEMPORAL PREDOMINANTES (Impessoal / (Defesa de tese (Sucessão de • Pretérito Perfeito Sem persuasão) pessoal autoral) ações em antes • Presente Histórico │ e depois) ┌────────┴────────┐ ▼ ▼ EXPOSITIVO EXPOSITIVO- PURO INFORMATIVO (Conceitos (Apresenta gerais) NOVIDADES) │ ▼ HIBRIDISMO TIPOLÓGICO (Macroestrutura expositiva com microestrutura narrativa)
-```
+TIPOLOGIA TEXTUAL
+- ➔ (Contar uma História / (Discorrer sobre um TEMA / Relato de Acontecimentos) Conceituar e Esclarecer)
+➔ ➔ PROGRESSÃO TEMPOS VERBAIS EXPOSITIVO ARGUMENTATIVO TEMPORAL PREDOMINANTES (Impessoal / (Defesa de tese (Sucessão de • Pretérito Perfeito Sem persuasão) pessoal autoral) ações em antes • Presente Histórico
+- e depois) ➔ EXPOSITIVO EXPOSITIVO- PURO INFORMATIVO (Conceitos (Apresenta gerais) NOVIDADES)
+HIBRIDISMO TIPOLÓGICO (Macroestrutura expositiva com microestrutura narrativa)
 
 ---
 

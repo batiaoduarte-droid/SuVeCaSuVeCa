@@ -42,9 +42,13 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 - Reconhecimento das classes gramaticais básicas (substantivo, adjetivo, verbo, pronome, artigo e preposição).
 
-```text
-[Morfologia Básica: Classes de Palavras] │ ▼ [: Frase, Oração e Período] ──> [: Locuções e Contagem de Orações] │ ▼ [: Bipolaridade Oracional (Predicado Obrigatório vs Sujeito Inexistente)] │ ├────────────────────────────────────────┬────────────────────────────────────────┐ ▼ ▼ ▼ [: Algoritmo do Verbo] [: Ordem Direta SVC vs Inversa] [: Sujeito vs Referente] │ ▼ [: Sujeito Posposto e Predicativo Antecipado] │ ▼ [: Teoria Moderna do Núcleo do Sujeito] │ ▼ [: Núcleo vs Adjunto Adnominal vs Aposto Especificativo]
-```
+[Morfologia Básica: Classes de Palavras]
+- [: Frase, Oração e Período] ➔ > [: Locuções e Contagem de Orações]
+[: Bipolaridade Oracional (Predicado Obrigatório vs Sujeito Inexistente)]
+- ➔ [: Algoritmo do Verbo] [: Ordem Direta SVC vs Inversa] [: Sujeito vs Referente]
+[: Sujeito Posposto e Predicativo Antecipado]
+- [: Teoria Moderna do Núcleo do Sujeito]
+[: Núcleo vs Adjunto Adnominal vs Aposto Especificativo]
 
 1. Compreender a hierarquia: Frase $\rightarrow$ Oração $\rightarrow$ Período .
 2. Dominar a assimetria sujeito/predicado e o algoritmo de busca pelo verbo .
@@ -53,9 +57,34 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 5. Superar o critério semântico escolar e dominar os critérios formais de núcleo do sujeito e aposto especificativo (, , ).
 6. Diferenciar rigorosamente função sintática estrita de coesão referencial .
 
-```text
-ANÁLISE SINTÁTICA: CONCEITOS INICIAIS E QUESTÕES CEBRASPE │ ├── 1. UNIDADES DE ENUNCIAÇÃO │ ├── Frase: Enunciado com sentido completo │ │ ├── Frase Nominal: Sem verbo (Ex.: "Puxa!", "A força das mulheres", "kkk") │ │ └── Frase Verbal: Contém verbo (Coincide com a Oração) │ ├── Oração: Enunciado centrado em verbo ou locução verbal │ │ └── Locução: Expressão de 2+ palavras (Verbal, Adjetiva, Prepositiva) │ └── Período: Frase verbal estruturada em orações │ ├── Período Simples: 1 oração (Oração Absoluta) │ └── Período Composto: 2 ou mais orações │ ├── 2. ESTRUTURAÇÃO ORACIONAL (TERMOS ESSENCIAIS) │ ├── Verbo: Ponto de partida obrigatório ("No desespero, vírgula, vá ao verbo") │ ├── Sujeito: Termo sobre o qual se faz declaração (Sintático — Facultativo) │ │ ├── Voz Ativa (executa a ação) vs. Voz Passiva (sofre a ação) │ │ ├── Identificação: Pergunta "Quem/O que é que + Verbo?" │ │ └── Pode ser Inexistente (Verbo impessoal -> Oração sem Sujeito) │ └── Predicado: "Tudo menos o sujeito" (Sintático — Obrigatório) │ └── Se o sujeito for inexistente, o predicado abrange 100% da oração │ ├── 3. TOPOLOGIA DA FRASE (ORDEM DOS TERMOS) │ ├── Ordem Direta (Canônica): Sujeito + Verbo + Complementos + Adj. Adverbial (SVC) │ └── Ordem Inversa / Indireta (Recurso Estilístico Legítimo / Não é Erro) │ ├── Deslocamento por Antecipação: Termo movido para o início da oração │ ├── Deslocamento por Intercalação: Termo inserido no meio da oração │ └── Início com Preposição: Válido (adjuntos adverbiais antecipados) │ ├── 4. DISCRIMINAÇÃO TERMINOLÓGICA E COESIVA │ ├── Sujeito = Função Sintática Estrita (Restrita aos limites da própria oração) │ └── Referente = Conceito Semântico/Discursivo (Termo textual que recebe a "seta") │ └── 5. TEORIA FORMAL DO NÚCLEO DO SUJEITO E APOSTO ├── Desconstrução Escolar: "Ideia principal" / "Mais importante" = Falso / Abolido ├── Critério Sintático Formal: Palavra mais especificada (receptora das setas) ├── Critério Morfossintático: Substantivo / Pronome / Numeral (Adjetivo é satélite) └── Aposto Especificativo: Substantivo que nomeia substantivo genérico sem vírgulas
-```
+ANÁLISE SINTÁTICA: CONCEITOS INICIAIS E QUESTÕES CEBRASPE
+- ➔ 1. UNIDADES DE ENUNCIAÇÃO
+➔ Frase: Enunciado com sentido completo
+- ➔ Frase Nominal: Sem verbo (Ex.: "Puxa!", "A força das mulheres", "kkk")
+➔ Frase Verbal: Contém verbo (Coincide com a Oração)
+- ➔ Oração: Enunciado centrado em verbo ou locução verbal
+➔ Locução: Expressão de 2+ palavras (Verbal, Adjetiva, Prepositiva)
+- ➔ Período: Frase verbal estruturada em orações
+➔ Período Simples: 1 oração (Oração Absoluta)
+- ➔ Período Composto: 2 ou mais orações
+➔ 2. ESTRUTURAÇÃO ORACIONAL (TERMOS ESSENCIAIS)
+- ➔ Verbo: Ponto de partida obrigatório ("No desespero, vírgula, vá ao verbo")
+➔ Sujeito: Termo sobre o qual se faz declaração (Sintático — Facultativo)
+- ➔ Voz Ativa (executa a ação) vs. Voz Passiva (sofre a ação)
+➔ Identificação: Pergunta "Quem/O que é que + Verbo?"
+- ➔ Pode ser Inexistente (Verbo impessoal -> Oração sem Sujeito)
+➔ Predicado: "Tudo menos o sujeito" (Sintático — Obrigatório)
+- ➔ Se o sujeito for inexistente, o predicado abrange 100% da oração
+➔ 3. TOPOLOGIA DA FRASE (ORDEM DOS TERMOS)
+- ➔ Ordem Direta (Canônica): Sujeito + Verbo + Complementos + Adj. Adverbial (SVC)
+➔ Ordem Inversa / Indireta (Recurso Estilístico Legítimo / Não é Erro)
+- ➔ Deslocamento por Antecipação: Termo movido para o início da oração
+➔ Deslocamento por Intercalação: Termo inserido no meio da oração
+- ➔ Início com Preposição: Válido (adjuntos adverbiais antecipados)
+➔ 4. DISCRIMINAÇÃO TERMINOLÓGICA E COESIVA
+- ➔ Sujeito = Função Sintática Estrita (Restrita aos limites da própria oração)
+➔ Referente = Conceito Semântico/Discursivo (Termo textual que recebe a "seta")
+- ➔ 5. TEORIA FORMAL DO NÚCLEO DO SUJEITO E APOSTO ➔ Desconstrução Escolar: "Ideia principal" / "Mais importante" = Falso / Abolido ➔ Critério Sintático Formal: Palavra mais especificada (receptora das setas) ➔ Critério Morfossintático: Substantivo / Pronome / Numeral (Adjetivo é satélite) ➔ Aposto Especificativo: Substantivo que nomeia substantivo genérico sem vírgulas
 
 ---
 
@@ -164,9 +193,7 @@ A definição tradicional escolar de que o núcleo do sujeito é a "ideia princi
 2. Mandamento 2 (Critério Sintático-Relacional — Palavra Mais Especificada): O núcleo é o elemento central sobre o qual convergem e ao qual se referem todos os demais modificadores do sintagma nominal (ele é a palavra receptora das "setas" sintáticas).
 3. Mandamento 3 (Critério Morfossintático Estrito): O núcleo é sempre um substantivo (ou pronome substantivo / numeral substantivo). Modificadores de natureza adjetiva funcionam como satélites (adjuntos adnominais) e nunca integram o núcleo.
 
-```text
-[ Artigo / Adjunto Adnominal: "A" ] ──┐ ▼ [ SUBSTANTIVO NÚCLEO: "expressão" ] ▲ [ Aposto Especificativo: "'inteligência artificial'" ] ──┘
-```
+[ Artigo / Adjunto Adnominal: "A" ] ➔ [ SUBSTANTIVO NÚCLEO: "expressão" ] [ Aposto Especificativo: "'inteligência artificial'" ] ➔
 
 - Na frase "A expressão 'inteligência artificial' é muito popular":
 - O tema principal do texto pode ser "inteligência artificial", mas sintaticamente o núcleo do sujeito é o substantivo comum genérico "expressão".
@@ -196,7 +223,8 @@ O Sujeito é uma função sintática formal intraoracional, estritamente circuns
 
 1. Consequência para a Pontuação: Se o mesmo termo material fosse considerado sujeito sintático direto de dois verbos em orações separadas por ponto ou vírgula, haveria violação direta da regra que proíbe separar sujeito e predicado por pontuação.
 
-Oração 1: [Os meninos] (Sujeito Sintático Explícito) jogam futebol. ▲ │ (Seta Semântica / Referência Coesiva) Oração 2: [Ø] (Sujeito Sintático Oculto / Desinencial) Jogam futebol todos os dias.
+Oração 1: [Os meninos] (Sujeito Sintático Explícito) jogam futebol.
+- (Seta Semântica / Referência Coesiva) Oração 2: [Ø] (Sujeito Sintático Oculto / Desinencial) Jogam futebol todos os dias.
 
 - Período: "Os meninos jogam futebol. Jogam futebol todos os dias."
 - Oração 1: Sujeito = "Os meninos" (Sujeito Simples Expresso).
@@ -297,9 +325,8 @@ O Sujeito é uma função sintática formal, delimitada à estrutura interna de 
 2. Natureza Semântica do Referente: O referente é o alvo coesivo fora da oração que confere identidade semântica ao sujeito oculto.
 3. Fundamento de Pontuação: Tratar o termo da primeira oração como sujeito sintático do segundo verbo violaria a regra de que não se separa sujeito de predicado por pontuação intermediária.
 
-```text
-Análise Sintática vs. Semântica: Oração 1: [Os meninos] (Sujeito Sintático Explícito) jogam futebol. Oração 2: [Ø] (Sujeito Sintático Oculto) Jogam futebol todos os dias. │ └──> Aponta contextualmente para "Os meninos" (REFERENTE SEMÂNTICO)
-```
+Análise Sintática vs. Semântica: Oração 1: [Os meninos] (Sujeito Sintático Explícito) jogam futebol. Oração 2: [Ø] (Sujeito Sintático Oculto) Jogam futebol todos os dias.
+- ➔ > Aponta contextualmente para "Os meninos" (REFERENTE SEMÂNTICO)
 
 A abordagem didática explica: "Sujeito é função sintática. Referente é semântica... Sujeito tem que estar naquela oração... Posso dizer que 'meninos' é sujeito dos dois verbos? Não! Sujeito do primeiro... na segunda oração o sujeito é oculto... 'Meninos' é apenas o referente do sujeito na segunda oração" ( a ).
 
@@ -351,9 +378,7 @@ O núcleo do sujeito é determinado rigorosamente por dois critérios objetivos 
 - Conceito de Palavra Mais Especificada: Dentro do sintagma que compõe o sujeito, os adjuntos, artigos e modificadores subordinam-se ao núcleo. O núcleo não é quem especifica, mas sim o termo que é especificado.
 - Restrição Morfológica: Modificadores adjetivos funcionam como termos satélites (adjuntos adnominais) e jamais integram o núcleo sintático. No sintagma "inteligência artificial", o vocábulo "artificial" é adjetivo e não pode fazer parte de um núcleo indivisível junto com o substantivo.
 
-```text
-Estrutura Sintática Interna do Sujeito: [ Artigo: "A" (Adjunto Adnominal) ] ───┐ ├──> [ "expressão" (NÚCLEO DO SUJEITO / Substantivo) ] [ Aposto: "'inteligência artificial'" ] ─┘
-```
+Estrutura Sintática Interna do Sujeito: [ Artigo: "A" (Adjunto Adnominal) ] ➔ ➔ > [ "expressão" (NÚCLEO DO SUJEITO / Substantivo) ] [ Aposto: "'inteligência artificial'" ]
 
 A abordagem didática esclarece que o núcleo é o elemento que recebe as setas de todos os outros termos do sujeito, que é sempre um substantivo (ou pronome/numeral) e que adjetivos são satélites que atuam como adjuntos adnominais ( a ).
 

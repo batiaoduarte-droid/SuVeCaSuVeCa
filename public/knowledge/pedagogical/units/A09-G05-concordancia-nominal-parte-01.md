@@ -44,9 +44,29 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Funções Sintáticas Básicas: Noção de adjunto adnominal, predicativo e sujeito composto.
 - Morfologia Flexional: Reconhecimento de desinências de gênero (masculino/feminino) e número (singular/plural).
 
-```text
-CONCORDÂNCIA NOMINAL: ADJUNTO ADNOMINAL E MÚLTIPLOS SUBSTANTIVOS │ ├── 1. Princípio Morfossintático Base │ ├── Determinado: Substantivo (núcleo que rege a concordância) │ └── Determinantes: Adjetivo, artigo, pronome adj., numeral adj. (orbitam o núcleo) │ ├── 2. Adjetivo Posposto (Substantivo 1 + Substantivo 2 + Adjetivo) │ ├── Concordância Total / Lógica: │ │ ├── Mesmo gênero (F + F) → Feminino Plural ("faca e navalha afiadas") │ │ ├── Mesmo gênero (M + M) → Masculino Plural ("amor e agradecimento eternos") │ │ └── Gêneros mistos (M + F / F + M) → Masculino Plural ("cabelos e barba brancos") │ ├── Concordância Atrativa / Gramatical: │ │ └── Flexiona em gênero e número estritamente com o mais próximo ("cabelos e barba branca") │ ├── Extensão Semântica: │ │ └── Regra Geral: Ambas as formas qualificam a totalidade dos substantivos │ └── Restrição Lógica / Semântica Exclusiva (Padrão FGV): │ └── Coerência contextual restringe o adjetivo a apenas um substantivo ("preço baixo", "pão torrado") │ ├── 3. Adjetivo Anteposto (Adjetivo + Substantivo 1 + Substantivo 2) │ └── Regra Estrita: APENAS Concordância Atrativa │ ├── Concorda unicamente com o primeiro substantivo ("desconhecido clima e terra") │ └── PROIBIDA a concordância total no plural ("desconhecidos clima e terra" = ERRO) │ ├── 4. Métodos Operacionais de Análise │ ├── "Farejador de Núcleos": Eliminar adjuntos preposicionados intermediários ("de", "da", "dos") │ └── "Técnica das Setas": Mapear a quais núcleos o adjetivo se refere semântica e sintaticamente │ └── 5. Nuances de Prova e Reescrita ├── Inversão de termos mantendo o adjetivo posposto → preserva sentido geral ├── Deslocamento do adjetivo para o meio dos substantivos → restringe sentido ao primeiro núcleo └── "Relação de concordância" (FGV) → exige apontar todos os substantivos modificados no texto
-```
+CONCORDÂNCIA NOMINAL: ADJUNTO ADNOMINAL E MÚLTIPLOS SUBSTANTIVOS
+- ➔ 1. Princípio Morfossintático Base
+➔ Determinado: Substantivo (núcleo que rege a concordância)
+- ➔ Determinantes: Adjetivo, artigo, pronome adj., numeral adj. (orbitam o núcleo)
+➔ 2. Adjetivo Posposto (Substantivo 1 + Substantivo 2 + Adjetivo)
+- ➔ Concordância Total / Lógica:
+➔ Mesmo gênero (F + F) → Feminino Plural ("faca e navalha afiadas")
+- ➔ Mesmo gênero (M + M) → Masculino Plural ("amor e agradecimento eternos")
+➔ Gêneros mistos (M + F / F + M) → Masculino Plural ("cabelos e barba brancos")
+- ➔ Concordância Atrativa / Gramatical:
+➔ Flexiona em gênero e número estritamente com o mais próximo ("cabelos e barba branca")
+- ➔ Extensão Semântica:
+➔ Regra Geral: Ambas as formas qualificam a totalidade dos substantivos
+- ➔ Restrição Lógica / Semântica Exclusiva (Padrão FGV):
+➔ Coerência contextual restringe o adjetivo a apenas um substantivo ("preço baixo", "pão torrado")
+- ➔ 3. Adjetivo Anteposto (Adjetivo + Substantivo 1 + Substantivo 2)
+➔ Regra Estrita: APENAS Concordância Atrativa
+- ➔ Concorda unicamente com o primeiro substantivo ("desconhecido clima e terra")
+➔ PROIBIDA a concordância total no plural ("desconhecidos clima e terra" = ERRO)
+- ➔ 4. Métodos Operacionais de Análise
+➔ "Farejador de Núcleos": Eliminar adjuntos preposicionados intermediários ("de", "da", "dos")
+- ➔ "Técnica das Setas": Mapear a quais núcleos o adjetivo se refere semântica e sintaticamente
+➔ 5. Nuances de Prova e Reescrita ➔ Inversão de termos mantendo o adjetivo posposto → preserva sentido geral ➔ Deslocamento do adjetivo para o meio dos substantivos → restringe sentido ao primeiro núcleo ➔ "Relação de concordância" (FGV) → exige apontar todos os substantivos modificados no texto
 
 ---
 
@@ -144,9 +164,7 @@ A banca Fundação Getulio Vargas (FGV) emprega o termo "relação de concordân
 
 ## Roteiros de resolução
 
-```text
-[Início: Analisar a sentença proposta] │ ├── 1. Identificar a Posição Sintática do Adjetivo: │ │ │ ├── SE ANTEPOSTO: │ │ └── Aplicar OBRIGATORIAMENTE a CONCORDÂNCIA ATRATIVA: │ │ - Identificar o gênero e o número do 1º substantivo (o mais próximo). │ │ - Flexionar o adjetivo em estrita concordância com ele. │ │ - ELIMINAR qualquer alternativa com plural total na anteposição. │ │ │ └── SE POSPOSTO: │ └── Passo 2: Testar a Coerência Semântica Contextual: │ │ │ ├── O adjetivo cabe logicamente a APENAS UM substantivo? │ │ │ │ │ ├── SIM (Restrição Semântica / Ex.: preço baixo, pão torrado): │ │ │ └── Concordar EXCLUSIVAMENTE com o substantivo pertinente. │ │ │ │ │ └── NÃO (Qualificação Geral / Ex.: cabelos e barba, sala e quarto): │ │ └── Aplicar a DUPLA POSSIBILIDADE: │ │ ├── Opção 1 (Concordância Total): │ │ │ - Mesmo gênero → Plural desse gênero. │ │ │ - Gêneros diferentes → Masculino Plural. │ │ └── Opção 2 (Concordância Atrativa): │ │ - Concordar com o substantivo imediatamente adjacente. │ └── [Fim do procedimento]
-```
+2. Testar a Coerência Semântica Contextual: O adjetivo cabe logicamente a APENAS UM substantivo? SIM (Restrição Semântica / Ex.: preço baixo, pão torrado): Concordar EXCLUSIVAMENTE com o substantivo pertinente. NÃO (Qualificação Geral / Ex.: cabelos e barba, sala e quarto): Aplicar a DUPLA POSSIBILIDADE: Opção 1 (Concordância Total): - Mesmo gênero → Plural desse gênero. - Gêneros diferentes → Masculino Plural. Opção 2 (Concordância Atrativa): - Concordar com o substantivo imediatamente adjacente. [Fim do procedimento]
 
 1. Localizar o termo modificador (adjetivo, particípio de voz passiva ou predicativo) na oração.
 2. Isolar os termos preposicionados: Eliminar mentalmente expressões iniciadas por preposição (de, da, do, dos, das, em, sobre).
@@ -164,9 +182,7 @@ A banca Fundação Getulio Vargas (FGV) emprega o termo "relação de concordân
 - Se o adjetivo qualificar dois substantivos e a alternativa citar apenas um, a alternativa é incorreta (relação mutilada/falsa).
 - Se o adjetivo qualificar dois substantivos e a alternativa listar ambos (mesmo com concordância formal atrativa singular), a relação é correta.
 
-```text
-[Início: Analisar a sentença proposta] │ ├── 1. Identificar a Posição Sintática do Adjetivo: │ │ │ ├── SE ANTEPOSTO: │ │ └── Aplicar OBRIGATORIAMENTE a CONCORDÂNCIA ATRATIVA: │ │ - Identificar o gênero e o número do 1º substantivo (o mais próximo). │ │ - Flexionar o adjetivo em estrita concordância com ele. │ │ - ELIMINAR qualquer alternativa com plural total na anteposição. │ │ │ └── SE POSPOSTO: │ └── Passo 2: Testar a Coerência Semântica Contextual: │ │ │ ├── O adjetivo cabe logicamente a APENAS UM substantivo? │ │ │ │ │ ├── SIM (Restrição Semântica / Ex.: preço baixo, pão torrado): │ │ │ └── Concordar EXCLUSIVAMENTE com o substantivo pertinente. │ │ │ │ │ └── NÃO (Qualificação Geral / Ex.: cabelos e barba, sala e quarto): │ │ └── Aplicar a DUPLA POSSIBILIDADE: │ │ ├── Opção 1 (Concordância Total): │ │ │ - Mesmo gênero → Plural desse gênero. │ │ │ - Gêneros diferentes → Masculino Plural. │ │ └── Opção 2 (Concordância Atrativa): │ │ - Concordar com o substantivo imediatamente adjacente. │ └── [Fim do procedimento]
-```
+2. Testar a Coerência Semântica Contextual: O adjetivo cabe logicamente a APENAS UM substantivo? SIM (Restrição Semântica / Ex.: preço baixo, pão torrado): Concordar EXCLUSIVAMENTE com o substantivo pertinente. NÃO (Qualificação Geral / Ex.: cabelos e barba, sala e quarto): Aplicar a DUPLA POSSIBILIDADE: Opção 1 (Concordância Total): - Mesmo gênero → Plural desse gênero. - Gêneros diferentes → Masculino Plural. Opção 2 (Concordância Atrativa): - Concordar com o substantivo imediatamente adjacente. [Fim do procedimento]
 
 ### Sequência Operacional
 

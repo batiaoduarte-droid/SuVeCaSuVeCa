@@ -45,9 +45,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Semântica e Estilística Lexical: Compreensão dos polos da linguagem (denotação/literal vs. conotação/figurado) e figuras de linguagem (metáfora, ironia).
 - Colocação Pronominal Básica: Conhecimento da regra de proibição de pronome oblíquo átono em início de oração ou imediatamente após pausa forte pontuada.
 
-```text
-SINAIS ESPECIAIS DE PONTUAÇÃO (esta unidade) │ ┌──────────────────────────────────┼──────────────────────────────────┐ ▼ ▼ ▼ PONTO E VÍRGULA (;) DOIS-PONTOS (:) ASPAS (" " / ' ') │ │ │ ┌───────┴────────┐ ┌───────┴────────┐ ┌───────┴────────┐ ▼ ▼ ▼ ▼ ▼ ▼ PERMITIDO PROIBIDO FUNÇÃO TEXTUAL SINTAXE ESTRITA HIERARQUIA 4 CASOS DE USO • Enumerações • Subordinação • Citação / • Par terminal: • Duplas: Geral 1. Citação / Fala / • Coordenadas (6Cs + FTP) Discurso Só com ponto • Simples: Mudança de (sindéticas • Orações Direto final (:....) Apenas no Interlocutor ou assindé- reduzidas • Explicação / • Proibido interior de 2. Desvios Lexicais: ticas) causais Esclarecimento intercalação aspas duplas Estrangeirismo • Reescritura • Início com (Diz o mesmo; medial (VOLP), Neologismo, explicativa próclise não é ideia (:..., / Arcaísmo, Gíria (com coord.) (; te deixa) nova; "pois"):... —) 3. Destaque / Ênfase • Enumeração • Reescritura: (Ressalte) (Desdobra em Equivale à 4. Sentido Diverso 2+ elementos) vírgula (Figurado / Rela- terminal tivizado) vs. Ironia (Setas)
-```
+SINAIS ESPECIAIS DE PONTUAÇÃO (esta unidade)
+- ➔ PONTO E VÍRGULA (;) DOIS-PONTOS (:) ASPAS (" " / ' ')
+➔ ➔ ➔ PERMITIDO PROIBIDO FUNÇÃO TEXTUAL SINTAXE ESTRITA HIERARQUIA 4 CASOS DE USO • Enumerações • Subordinação • Citação / • Par terminal: • Duplas: Geral 1. Citação / Fala / • Coordenadas (6Cs + FTP) Discurso Só com ponto • Simples: Mudança de (sindéticas • Orações Direto final (:....) Apenas no Interlocutor ou assindé- reduzidas • Explicação / • Proibido interior de 2. Desvios Lexicais: ticas) causais Esclarecimento intercalação aspas duplas Estrangeirismo • Reescritura • Início com (Diz o mesmo; medial (VOLP), Neologismo, explicativa próclise não é ideia (:..., / Arcaísmo, Gíria (com coord.) (; te deixa) nova; "pois"):... —) 3. Destaque / Ênfase • Enumeração • Reescritura: (Ressalte) (Desdobra em Equivale à 4. Sentido Diverso 2+ elementos) vírgula (Figurado / Rela- terminal tivizado) vs. Ironia (Setas)
 
 ---
 
@@ -226,9 +226,10 @@ $$
 
 ## Roteiros de resolução
 
-```text
-[ Proposta de Ponto e Vírgula ] │ ▼ A oração subsequente é SUBORDINADA adverbial (6Cs + FTP) ou oração reduzida com valor causal/condicional? ├─► SIM ──► [ MARCAR ERRADO / PROIBIDO ] └─► NÃO │ ▼ A estrutura é uma ENUMERAÇÃO ou ORAÇÃO COORDENADA? ├─► NÃO ──► [ MARCAR ERRADO ] └─► SIM │ ▼ [ CHECAGEM DA TRAVA DE COLOCAÇÃO PRONOMINAL ] Ao retirar o conectivo, a oração após ';' inicia-se por pronome oblíquo átono (ex: '; te deixa')? ├─► SIM ──► [ MARCAR ERRADO (Erro de Próclise) ] └─► NÃO ──► [ MARCAR CERTO (Validação Concluída) ]
-```
+[ Proposta de Ponto e Vírgula ]
+- A oração subsequente é SUBORDINADA adverbial (6Cs + FTP) ou oração reduzida com valor causal/condicional? ➔ SIM ➔ [ MARCAR ERRADO / PROIBIDO ] ➔ NÃO
+A estrutura é uma ENUMERAÇÃO ou ORAÇÃO COORDENADA? ➔ NÃO ➔ [ MARCAR ERRADO ] ➔ SIM
+- [ CHECAGEM DA TRAVA DE COLOCAÇÃO PRONOMINAL ] Ao retirar o conectivo, a oração após ';' inicia-se por pronome oblíquo átono (ex: '; te deixa')? ➔ SIM ➔ [ MARCAR ERRADO (Erro de Próclise) ] ➔ NÃO ➔ [ MARCAR CERTO (Validação Concluída) ]
 
 1. Localizar a estrutura suspeita: Segmentos iniciados por particípio, gerúndio ou preposições ("Obcecados por...", "Com a redução de...").
 2. Aplicar a fórmula do nexo causal: Substitua mentalmente a construção pela estrutura:
@@ -263,9 +264,17 @@ $$
 
 1. Substituição Corretiva para Intercalações: Troque a estrutura por pares simétricos: ,..., ou —... — ou (... ).
 
-```text
-[ Palavra Aspeada Identificada ] │ ▼ O trecho é reprodução da fala/texto de outrem? ├─► SIM ──► [ CITAÇÃO DIRETA / DISCURSO DIRETO ] └─► NÃO │ ▼ É estrangeirismo, neologismo, arcaísmo ou gíria? ├─► SIM ──► [ DESVIO LEXICAL / NEOLOGISMO / ESTRANGEIRISMO ] └─► NÃO │ ▼ [ APLICAR O MÉTODO DAS SETAS NO CONTEXTO ] │ ├─► A seta liga a termo que CONTRADIZ o sentido literal? │ (Ex.: "brilhante" ───► "aquela asneira") │ └─► [ IRONIA (Diz o oposto do que se pensa) ] │ ├─► A palavra opera por transposição metafórica / relativizada? │ (Ex.: "traduzem" ───► registro coloquial dos réus) │ └─► [ SENTIDO FIGURADO / CONOTATIVO / RELATIVIZADO ] │ └─► Inexiste figura ou contradição, apenas realce do vocábulo? (Ex.: Diga-me "como" direi isso) └─► [ DESTAQUE / ÊNFASE / RESSALTE ]
-```
+[ Palavra Aspeada Identificada ]
+- O trecho é reprodução da fala/texto de outrem? ➔ SIM ➔ [ CITAÇÃO DIRETA / DISCURSO DIRETO ] ➔ NÃO
+É estrangeirismo, neologismo, arcaísmo ou gíria? ➔ SIM ➔ [ DESVIO LEXICAL / NEOLOGISMO / ESTRANGEIRISMO ] ➔ NÃO
+- [ APLICAR O MÉTODO DAS SETAS NO CONTEXTO ]
+➔ A seta liga a termo que CONTRADIZ o sentido literal?
+- (Ex.: "brilhante" ➔ "aquela asneira")
+➔ [ IRONIA (Diz o oposto do que se pensa) ]
+- ➔ A palavra opera por transposição metafórica / relativizada?
+(Ex.: "traduzem" ➔ registro coloquial dos réus)
+- ➔ [ SENTIDO FIGURADO / CONOTATIVO / RELATIVIZADO ]
+➔ Inexiste figura ou contradição, apenas realce do vocábulo? (Ex.: Diga-me "como" direi isso) ➔ [ DESTAQUE / ÊNFASE / RESSALTE ]
 
 1. Identificar o emissor do texto base: Observe a assinatura/crédito ao final do texto.
 2. Identificar o emissor do trecho entre aspas: Verifique verbos declaratórios (afirmou, salientava, descreveu) ou conectivos de inclusão ("também imaginou").
@@ -275,9 +284,10 @@ $$
 
 1. Eliminação Vertical: Descarte imediatamente alternativas concorrentes que afirmem "ressaltar opinião do próprio autor", "exprimir ironia" (sem sarcasmo) ou "expressão usada fora do contexto habitual".
 
-```text
-[ Proposta de Ponto e Vírgula ] │ ▼ A oração subsequente é SUBORDINADA adverbial (6Cs + FTP) ou oração reduzida com valor causal/condicional? ├─► SIM ──► [ MARCAR ERRADO / PROIBIDO ] └─► NÃO │ ▼ A estrutura é uma ENUMERAÇÃO ou ORAÇÃO COORDENADA? ├─► NÃO ──► [ MARCAR ERRADO ] └─► SIM │ ▼ [ CHECAGEM DA TRAVA DE COLOCAÇÃO PRONOMINAL ] Ao retirar o conectivo, a oração após ';' inicia-se por pronome oblíquo átono (ex: '; te deixa')? ├─► SIM ──► [ MARCAR ERRADO (Erro de Próclise) ] └─► NÃO ──► [ MARCAR CERTO (Validação Concluída) ]
-```
+[ Proposta de Ponto e Vírgula ]
+- A oração subsequente é SUBORDINADA adverbial (6Cs + FTP) ou oração reduzida com valor causal/condicional? ➔ SIM ➔ [ MARCAR ERRADO / PROIBIDO ] ➔ NÃO
+A estrutura é uma ENUMERAÇÃO ou ORAÇÃO COORDENADA? ➔ NÃO ➔ [ MARCAR ERRADO ] ➔ SIM
+- [ CHECAGEM DA TRAVA DE COLOCAÇÃO PRONOMINAL ] Ao retirar o conectivo, a oração após ';' inicia-se por pronome oblíquo átono (ex: '; te deixa')? ➔ SIM ➔ [ MARCAR ERRADO (Erro de Próclise) ] ➔ NÃO ➔ [ MARCAR CERTO (Validação Concluída) ]
 
 1. Localizar a estrutura suspeita: Segmentos iniciados por particípio, gerúndio ou preposições ("Obcecados por...", "Com a redução de...").
 2. Aplicar a fórmula do nexo causal: Substitua mentalmente a construção pela estrutura:
@@ -312,9 +322,17 @@ $$
 
 1. Substituição Corretiva para Intercalações: Troque a estrutura por pares simétricos: ,..., ou —... — ou (... ).
 
-```text
-[ Palavra Aspeada Identificada ] │ ▼ O trecho é reprodução da fala/texto de outrem? ├─► SIM ──► [ CITAÇÃO DIRETA / DISCURSO DIRETO ] └─► NÃO │ ▼ É estrangeirismo, neologismo, arcaísmo ou gíria? ├─► SIM ──► [ DESVIO LEXICAL / NEOLOGISMO / ESTRANGEIRISMO ] └─► NÃO │ ▼ [ APLICAR O MÉTODO DAS SETAS NO CONTEXTO ] │ ├─► A seta liga a termo que CONTRADIZ o sentido literal? │ (Ex.: "brilhante" ───► "aquela asneira") │ └─► [ IRONIA (Diz o oposto do que se pensa) ] │ ├─► A palavra opera por transposição metafórica / relativizada? │ (Ex.: "traduzem" ───► registro coloquial dos réus) │ └─► [ SENTIDO FIGURADO / CONOTATIVO / RELATIVIZADO ] │ └─► Inexiste figura ou contradição, apenas realce do vocábulo? (Ex.: Diga-me "como" direi isso) └─► [ DESTAQUE / ÊNFASE / RESSALTE ]
-```
+[ Palavra Aspeada Identificada ]
+- O trecho é reprodução da fala/texto de outrem? ➔ SIM ➔ [ CITAÇÃO DIRETA / DISCURSO DIRETO ] ➔ NÃO
+É estrangeirismo, neologismo, arcaísmo ou gíria? ➔ SIM ➔ [ DESVIO LEXICAL / NEOLOGISMO / ESTRANGEIRISMO ] ➔ NÃO
+- [ APLICAR O MÉTODO DAS SETAS NO CONTEXTO ]
+➔ A seta liga a termo que CONTRADIZ o sentido literal?
+- (Ex.: "brilhante" ➔ "aquela asneira")
+➔ [ IRONIA (Diz o oposto do que se pensa) ]
+- ➔ A palavra opera por transposição metafórica / relativizada?
+(Ex.: "traduzem" ➔ registro coloquial dos réus)
+- ➔ [ SENTIDO FIGURADO / CONOTATIVO / RELATIVIZADO ]
+➔ Inexiste figura ou contradição, apenas realce do vocábulo? (Ex.: Diga-me "como" direi isso) ➔ [ DESTAQUE / ÊNFASE / RESSALTE ]
 
 1. Identificar o emissor do texto base: Observe a assinatura/crédito ao final do texto.
 2. Identificar o emissor do trecho entre aspas: Verifique verbos declaratórios (afirmou, salientava, descreveu) ou conectivos de inclusão ("também imaginou").

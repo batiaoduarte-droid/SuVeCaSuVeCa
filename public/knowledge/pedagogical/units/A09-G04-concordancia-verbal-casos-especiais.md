@@ -43,9 +43,52 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Reconhecimento de classes morfológicas: substantivo, pronome substantivo, pronome adjetivo, pronome demonstrativo, pronome relativo, adjetivo, numeral e preposição.
 - Distinção fundamental entre termos associados ao nome (adjunto adnominal, complemento nominal) e termos associados ao verbo (sujeito, objeto direto, objeto indireto, adjunto adverbial).
 
-```text
-CONCORDÂNCIA VERBAL INTEGRADA (AULA 09 - esta unidade) │ ├── 1. O NÚCLEO DO SUJEITO (FUNDAMENTO SINTÁTICO) │ ├── Função substantiva obrigatória (substantivo / pronome / numeral substantivo) │ ├── Não pode ser adjetivo nem advérbio │ ├── Termo nunca preposicionado (se houver preposição, é adjunto ou complemento) │ └── Palavra mais especificada sintaticamente (eixo dos modificadores) │ ├── 2. CASOS CANÔNICOS BÁSICOS │ ├── Sujeito Simples: Verbo concorda com o único núcleo em número e pessoa │ ├── Sujeito Composto: │ │ ├── Anteposto ao verbo -> Concordância Total obrigatória (Plural) │ │ └── Posposto ao verbo -> Dupla possibilidade (Total no Plural OU Atrativa com o 1º núcleo) │ └── Pronome Relativo "QUE": │ ├── Sujeito Sintático da oração adjetiva -> Pronome "que" │ └── Sujeito Semântico / Referente -> Antecedente (rege a flexão do verbo) │ ├── 3. MECÂNICA DE LOCUÇÕES VERBAIS │ ├── Verbo Principal (último) -> "Manda": define existência de sujeito, transitividade e sentido │ └── Verbo Auxiliar (primeiro) -> "Obedece": recebe e manifesta flexão número-pessoal e modal-temporal │ ├── 4. CASOS ESPECIAIS QUANTITATIVOS E PARTITIVOS │ ├── Expressões Partitivas ("a maior parte de", "metade de") e Porcentagem Anteposta: │ │ ├── Concordância lógica com o núcleo partitivo/numeral │ │ └── Concordância atrativa com o especificador preposicionado (adjunto adnominal) │ ├── Numerais Decimais em Porcentagem: │ │ ├── De 0 até 1,99 -> Singular (analisa-se a parte inteira antes da vírgula) │ │ └── A partir de 2,00 -> Plural │ ├── Expressões Aproximativas ("mais de", "menos de", "cerca de"): │ │ └── Concordância estrita com o numeral/substantivo que se segue (sem cálculo matemático) │ ├── Padrão FGV para Partitivo/Porcentagem POSPOSTO: │ │ └── Concordância obrigatória apenas com o NÚCLEO (especificador distante não atrai) │ └── Numerais de Grandeza Substantiva ("milhão", "bilhão"): │ └── Substantivo singular; posposto ao verbo exige verbo no singular ("Chegou um milhão") │ ├── 5. SUJEITO ORACIONAL │ ├── Conceito: Sujeito com estrutura de oração ("aquele que tem verbo") │ ├── Teste do "ISSO": Substituição do bloco oracional por pronome demonstrativo neutro │ ├── Regra de Flexão: Verbo subordinante fica obrigatoriamente na 3ª pessoa do singular │ └── Formas: Oração Desenvolvida (com conjunção integrante "que") ou Reduzida (infinitivo) │ ├── 6. ORAÇÕES SEM SUJEITO E VERBOS IMPEsSOAIS │ ├── Verbo "Haver" Existencial/Temporal: VTD impessoal, sem sujeito, objeto direto posposto, 3ª pess. singular │ ├── Verbo "Fazer" Temporal / Clima: Impessoal, fixo na 3ª pessoa do singular ("faz dois anos") │ ├── Transmissão em Locuções: O auxiliar carrega a impessoalidade do principal ("deve haver" vs. "devem existir") │ └── Verbo "Haver" Pessoal: │ ├── Como auxiliar de tempo composto / locução pessoal ("haviam chegado") │ └── No sentido pleno de obter / conseguir ("houveram o perdão") │ ├── 7. SINTAXE DA PARTÍCULA "SE" │ ├── Partícula Apassivadora (PA): Verbo concorda com o sujeito paciente (se oracional -> singular) │ └── Índice de Indeterminação (PIS): Verbo travado compulsoriamente na 3ª pessoa do singular │ └── 8. CONCORDÂNCIA COM O INFINITIVO (TRÍADE FGV/FCC) ├── Infinitivo Impessoal (sentido genérico, "qualquer um") -> Sempre singular ├── Infinitivo com Sujeito Plural ANTEPOSTO -> Flexão facultativa (singular ou plural) ├── Infinitivo com Sujeito Plural POSPOSTO -> Flexão obrigatória no plural └── Infinitivo como Complemento Nominal (Lição de Bechara) -> Invariável no singular
-```
+CONCORDÂNCIA VERBAL INTEGRADA (AULA 09 - esta unidade)
+- ➔ 1. O NÚCLEO DO SUJEITO (FUNDAMENTO SINTÁTICO)
+➔ Função substantiva obrigatória (substantivo / pronome / numeral substantivo)
+- ➔ Não pode ser adjetivo nem advérbio
+➔ Termo nunca preposicionado (se houver preposição, é adjunto ou complemento)
+- ➔ Palavra mais especificada sintaticamente (eixo dos modificadores)
+➔ 2. CASOS CANÔNICOS BÁSICOS
+- ➔ Sujeito Simples: Verbo concorda com o único núcleo em número e pessoa
+➔ Sujeito Composto:
+- ➔ Anteposto ao verbo -> Concordância Total obrigatória (Plural)
+➔ Posposto ao verbo -> Dupla possibilidade (Total no Plural OU Atrativa com o 1º núcleo)
+- ➔ Pronome Relativo "QUE":
+➔ Sujeito Sintático da oração adjetiva -> Pronome "que"
+- ➔ Sujeito Semântico / Referente -> Antecedente (rege a flexão do verbo)
+➔ 3. MECÂNICA DE LOCUÇÕES VERBAIS
+- ➔ Verbo Principal (último) -> "Manda": define existência de sujeito, transitividade e sentido
+➔ Verbo Auxiliar (primeiro) -> "Obedece": recebe e manifesta flexão número-pessoal e modal-temporal
+- ➔ 4. CASOS ESPECIAIS QUANTITATIVOS E PARTITIVOS
+➔ Expressões Partitivas ("a maior parte de", "metade de") e Porcentagem Anteposta:
+- ➔ Concordância lógica com o núcleo partitivo/numeral
+➔ Concordância atrativa com o especificador preposicionado (adjunto adnominal)
+- ➔ Numerais Decimais em Porcentagem:
+➔ De 0 até 1,99 -> Singular (analisa-se a parte inteira antes da vírgula)
+- ➔ A partir de 2,00 -> Plural
+➔ Expressões Aproximativas ("mais de", "menos de", "cerca de"):
+- ➔ Concordância estrita com o numeral/substantivo que se segue (sem cálculo matemático)
+➔ Padrão FGV para Partitivo/Porcentagem POSPOSTO:
+- ➔ Concordância obrigatória apenas com o NÚCLEO (especificador distante não atrai)
+➔ Numerais de Grandeza Substantiva ("milhão", "bilhão"):
+- ➔ Substantivo singular; posposto ao verbo exige verbo no singular ("Chegou um milhão")
+➔ 5. SUJEITO ORACIONAL
+- ➔ Conceito: Sujeito com estrutura de oração ("aquele que tem verbo")
+➔ Teste do "ISSO": Substituição do bloco oracional por pronome demonstrativo neutro
+- ➔ Regra de Flexão: Verbo subordinante fica obrigatoriamente na 3ª pessoa do singular
+➔ Formas: Oração Desenvolvida (com conjunção integrante "que") ou Reduzida (infinitivo)
+- ➔ 6. ORAÇÕES SEM SUJEITO E VERBOS IMPEsSOAIS
+➔ Verbo "Haver" Existencial/Temporal: VTD impessoal, sem sujeito, objeto direto posposto, 3ª pess. singular
+- ➔ Verbo "Fazer" Temporal / Clima: Impessoal, fixo na 3ª pessoa do singular ("faz dois anos")
+➔ Transmissão em Locuções: O auxiliar carrega a impessoalidade do principal ("deve haver" vs. "devem existir")
+- ➔ Verbo "Haver" Pessoal:
+➔ Como auxiliar de tempo composto / locução pessoal ("haviam chegado")
+- ➔ No sentido pleno de obter / conseguir ("houveram o perdão")
+➔ 7. SINTAXE DA PARTÍCULA "SE"
+- ➔ Partícula Apassivadora (PA): Verbo concorda com o sujeito paciente (se oracional -> singular)
+➔ Índice de Indeterminação (PIS): Verbo travado compulsoriamente na 3ª pessoa do singular
+- ➔ 8. CONCORDÂNCIA COM O INFINITIVO (TRÍADE FGV/FCC) ➔ Infinitivo Impessoal (sentido genérico, "qualquer um") -> Sempre singular ➔ Infinitivo com Sujeito Plural ANTEPOSTO -> Flexão facultativa (singular ou plural) ➔ Infinitivo com Sujeito Plural POSPOSTO -> Flexão obrigatória no plural ➔ Infinitivo como Complemento Nominal (Lição de Bechara) -> Invariável no singular
 
 ---
 

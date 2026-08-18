@@ -43,9 +43,27 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Distinção entre classes de palavras variáveis (substantivos, adjetivos, artigos, numerais, pronomes retos/demonstrativos) e invariáveis (advérbios, preposições, conjunções).
 - Noções de sintaxe de oração: coordenação, subordinação desenvolvida e adjuntos adverbiais.
 
-```text
-SISTEMA DE COLOCAÇÃO PRONOMINAL AVANÇADA (CEBRASPE) ├── 1. AS TRÊS PROIBIÇÕES ABSOLUTAS │ ├── 1ª: Iniciar oração por pronome oblíquo átono ("Me disseram" -> ERRADO) │ ├── 2ª: Ênclise a verbo no Futuro do Presente ou do Pretérito ("dará-lhe" -> ERRADO) │ └── 3ª: Ênclise a verbo no Particípio ("tinha falado-me" -> ERRADO) │ ├── 2. A REGRA GERAL DE ATRAÇÃO │ ├── Condição de Posição: Palavra invariável ANTEPOSTA ao verbo (antes do verbo) │ ├── Termo Pós-Verbal: Não atrai pronomes anteriores ("Ele a encontrou em casa" -> facultativo) │ └── Classes Variáveis Excepcionais que Atraem: │ ├── Pronomes Relativos (que, cujo, o qual, onde...) │ └── Pronomes Indefinidos (tudo, nada, alguém, todos, poucos...) │ ├── 3. AS DUAS EXCEÇÕES À REGRA DE ATRAÇÃO │ ├── 1ª: Conjunção Coordenativa (permite próclise ou ênclise) │ └── 2ª: Verbo no Infinitivo ("Todo-Poderoso" -> sempre aceita ênclise) │ ├── 4. DINÂMICA EM LOCUÇÕES VERBAIS COM PALAVRA ATRATIVA │ ├── Próclise ao Auxiliar: "não a estou entendendo" / "não se poderia casar" (CORRETO) │ ├── Próclise ao Principal: "não estou a entendendo" / "não poderia se casar" (CORRETO) │ ├── Ênclise ao Principal (Gerúndio/Infinitivo): "não estou entendendo-a" / "casar-se" (CORRETO) │ ├── Apossínclese: "como se não poderia casar" / "João me não chamou" (CORRETO) │ ├── Mesóclise com Atrativo: "não poder-se-ia" (PROIBIDO - Atração anula Mesóclise) │ └── Ênclise Hifenizada ao Auxiliar: "não estou-a entendendo" (PROIBIDO) │ └── 5. PONTUAÇÃO E INÍCIO DE ORAÇÃO ├── Adjunto Adverbial Antecipado no Início: Oração principal começa após vírgula -> Próclise PROIBIDA └── Intercalação Entre Vírgulas Casadas: Oração iniciou antes -> Próclise PERMITIDA (facultativa)
-```
+SISTEMA DE COLOCAÇÃO PRONOMINAL AVANÇADA (CEBRASPE) ➔ 1. AS TRÊS PROIBIÇÕES ABSOLUTAS
+- ➔ 1ª: Iniciar oração por pronome oblíquo átono ("Me disseram" -> ERRADO)
+➔ 2ª: Ênclise a verbo no Futuro do Presente ou do Pretérito ("dará-lhe" -> ERRADO)
+- ➔ 3ª: Ênclise a verbo no Particípio ("tinha falado-me" -> ERRADO)
+➔ 2. A REGRA GERAL DE ATRAÇÃO
+- ➔ Condição de Posição: Palavra invariável ANTEPOSTA ao verbo (antes do verbo)
+➔ Termo Pós-Verbal: Não atrai pronomes anteriores ("Ele a encontrou em casa" -> facultativo)
+- ➔ Classes Variáveis Excepcionais que Atraem:
+➔ Pronomes Relativos (que, cujo, o qual, onde...)
+- ➔ Pronomes Indefinidos (tudo, nada, alguém, todos, poucos...)
+➔ 3. AS DUAS EXCEÇÕES À REGRA DE ATRAÇÃO
+- ➔ 1ª: Conjunção Coordenativa (permite próclise ou ênclise)
+➔ 2ª: Verbo no Infinitivo ("Todo-Poderoso" -> sempre aceita ênclise)
+- ➔ 4. DINÂMICA EM LOCUÇÕES VERBAIS COM PALAVRA ATRATIVA
+➔ Próclise ao Auxiliar: "não a estou entendendo" / "não se poderia casar" (CORRETO)
+- ➔ Próclise ao Principal: "não estou a entendendo" / "não poderia se casar" (CORRETO)
+➔ Ênclise ao Principal (Gerúndio/Infinitivo): "não estou entendendo-a" / "casar-se" (CORRETO)
+- ➔ Apossínclese: "como se não poderia casar" / "João me não chamou" (CORRETO)
+➔ Mesóclise com Atrativo: "não poder-se-ia" (PROIBIDO - Atração anula Mesóclise)
+- ➔ Ênclise Hifenizada ao Auxiliar: "não estou-a entendendo" (PROIBIDO)
+➔ 5. PONTUAÇÃO E INÍCIO DE ORAÇÃO ➔ Adjunto Adverbial Antecipado no Início: Oração principal começa após vírgula -> Próclise PROIBIDA ➔ Intercalação Entre Vírgulas Casadas: Oração iniciou antes -> Próclise PERMITIDA (facultativa)
 
 ---
 

@@ -40,9 +40,25 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ## Pré-requisitos e modelo mental
 
-```text
-REESCRITURA E TRANSPOSIÇÃO DE VOZES VERBAIS │ ┌───────────────────────────────────────────────┼───────────────────────────────────────────────┐ ▼ ▼ ▼ VOZ ATIVA (V.A.) VOZ PASSIVA ANALÍTICA (V.P.A.) VOZ PASSIVA SINTÉTICA (V.P.S.) ┌───────────────────────────────┐ ┌───────────────────────────────┐ ┌───────────────────────────────┐ │ Sujeito Agente │ │ Sujeito Paciente │ │ Sujeito Paciente │ │ VTD / VTDI │ │ Auxiliar SER + Particípio │ │ VTD / VTDI + Partícula "SE" │ │ Objeto Direto (O.D.) │ │ Agente da Passiva (opcional) │ │ Inexiste Objeto Direto │ └──────────────┬────────────────┘ └───────────────┬───────────────┘ └───────────────┬───────────────┘ │ │ │ │ Ativa -> Sintética │ Analítica -> Sintética │ Modelo Canônico ├─ O.D. vira Sujeito Paciente ├─ Elimina auxiliar SER (-1 verbo) ├─ "Vende-se casa" (Sing.) ├─ Mantém nº de verbos (Aritmética) ├─ Transfere tempo/modo ao particípio └─ "Alugam-se casas" (Plur.) └─ Adiciona pronome "se" └─ Veda Agente da Passiva expresso │ ▼ PILHA CRÍTICA DE JULGAMENTO ┌─────────────────────────────────────────────────────────────┐ │ 1. Tempo e Modo: "Chamar o feito à ordem" (Imperfeito vs Perf)│ │ 2. Concordância: Sujeito Simples, Plural e Oracional (ISSO) │ │ 3. Colocação: Palavra Atrativa (Próclise) vs Início (Ênclise)│ │ 4. Semântica/Coerência: Risco de Ambiguidade Reflexiva ("se")│ │ 5. Natureza do "se": Partícula Apassivadora vs PIV │ └─────────────────────────────────────────────────────────────┘
-```
+REESCRITURA E TRANSPOSIÇÃO DE VOZES VERBAIS
+- ➔ VOZ ATIVA (V.A.) VOZ PASSIVA ANALÍTICA (V.P.A.) VOZ PASSIVA SINTÉTICA (V.P.S.) ➔ ➔ ➔ Sujeito Agente
+Sujeito Paciente
+- Sujeito Paciente
+VTD / VTDI
+- Auxiliar SER + Particípio
+VTD / VTDI + Partícula "SE"
+- Objeto Direto (O.D.)
+Agente da Passiva (opcional)
+- Inexiste Objeto Direto
+➔ ➔ ➔ Ativa -> Sintética
+- Analítica -> Sintética
+Modelo Canônico O.D. vira Sujeito Paciente Elimina auxiliar SER (-1 verbo) "Vende-se casa" (Sing.) Mantém nº de verbos (Aritmética) Transfere tempo/modo ao particípio "Alugam-se casas" (Plur.) Adiciona pronome "se" Veda Agente da Passiva expresso
+- PILHA CRÍTICA DE JULGAMENTO ➔ 1. Tempo e Modo: "Chamar o feito à ordem" (Imperfeito vs Perf)
+2. Concordância: Sujeito Simples, Plural e Oracional (ISSO)
+3. Colocação: Palavra Atrativa (Próclise) vs Início (Ênclise)
+4. Semântica/Coerência: Risco de Ambiguidade Reflexiva ("se")
+5. Natureza do "se": Partícula Apassivadora vs PIV
+- ➔
 
 ---
 
@@ -140,13 +156,15 @@ A colocação do pronome se imediatamente após o sujeito anteposto gera leitura
 
 ## Roteiros de resolução
 
-```text
-[Início: Oração na Voz Ativa] │ ▼ Passo 1: "Chamar o feito à ordem" ├── Localizar o VTD/VTDI primitivo e registrar o Tempo e Modo exatos └── Contar o número de verbos (simples = 1; locução = 2) │ ▼ Passo 2: Conversão do Objeto Direto ├── Identificar o Objeto Direto (OD) da oração ativa └── Promovê-lo à função de Sujeito Paciente na passiva sintética │ ▼ Passo 3: Conjugação e Concordância ├── Manter rigorosamente o mesmo tempo e modo original ├── Ajustar o número: Sujeito Singular ──► Verbo Singular | Sujeito Plural ──► Verbo Plural └── Se houver locução (2 verbos), MANTER os 2 verbos │ ▼ Passo 4: Sintaxe da Partícula "SE" ├── Havendo palavra atrativa (Advérbio, 'Nem', etc.) ──► PRÓCLISE obrigatória └── Se o verbo iniciar o período ──► ÊNCLISE obrigatória (vedada ênclise no futuro) │ ▼ [Fim: Oração Passiva Sintética Validada]
-```
+1. "Chamar o feito à ordem" Localizar o VTD/VTDI primitivo e registrar o Tempo e Modo exatos Contar o número de verbos (simples = 1; locução = 2)
+2. Conversão do Objeto Direto Identificar o Objeto Direto (OD) da oração ativa Promovê-lo à função de Sujeito Paciente na passiva sintética
+3. Conjugação e Concordância Manter rigorosamente o mesmo tempo e modo original Ajustar o número: Sujeito Singular ➔ Verbo Singular Sujeito Plural ➔ Verbo Plural Se houver locução (2 verbos), MANTER os 2 verbos
+4. Sintaxe da Partícula "SE" Havendo palavra atrativa (Advérbio, 'Nem', etc.) ➔ PRÓCLISE obrigatória Se o verbo iniciar o período ➔ ÊNCLISE obrigatória (vedada ênclise no futuro) [Fim: Oração Passiva Sintética Validada]
 
-```text
-[Início: Oração na Voz Passiva Analítica (SER + Particípio)] │ ▼ Passo 1: Diagnóstico Morfológico do Auxiliar SER └── Anotar o tempo e modo precisos em que o verbo SER está flexionado │ ▼ Passo 2: Eliminação do Auxiliar (-1 Verbo) ├── Deletar o verbo auxiliar SER └── Transferir integralmente seu tempo/modo para o verbo principal (ex-particípio) │ ▼ Passo 3: Validação do Sujeito e Concordância ├── O sujeito paciente original permanece como sujeito paciente └── Flexionar o verbo na 3ª sing. ou 3ª plur. conforme o sujeito │ ▼ Passo 4: Verificação de Agente da Passiva e Ambiguidade ├── Se houver Agente da Passiva expresso ──► BLOQUEIO (Voz Sintética veda Agente) └── Checar se a posição pós-sujeito gera sentido reflexivo ──► Reordenar termos │ ▼ [Fim: Oração Passiva Sintética Validada]
-```
+1. Diagnóstico Morfológico do Auxiliar SER Anotar o tempo e modo precisos em que o verbo SER está flexionado
+2. Eliminação do Auxiliar (-1 Verbo) Deletar o verbo auxiliar SER Transferir integralmente seu tempo/modo para o verbo principal (ex-particípio)
+3. Validação do Sujeito e Concordância O sujeito paciente original permanece como sujeito paciente Flexionar o verbo na 3ª sing. ou 3ª plur. conforme o sujeito
+4. Verificação de Agente da Passiva e Ambiguidade Se houver Agente da Passiva expresso ➔ BLOQUEIO (Voz Sintética veda Agente) Checar se a posição pós-sujeito gera sentido reflexivo ➔ Reordenar termos [Fim: Oração Passiva Sintética Validada]
 
 1. Desmascarar o Enunciado: Reconhecer a troca de verbo + se por ser + particípio (ou vice-versa) como uma questão estrita de transposição de vozes.
 2. Localizar o Sujeito: Isolar o termo substantivo ou oracional ("ISSO").
@@ -154,13 +172,15 @@ A colocação do pronome se imediatamente após o sujeito anteposto gera leitura
 4. Validar Concordância: Confirmar a flexão singular/plural e gênero do particípio.
 5. Teste de Coerência e Ambiguidade: Se o comando mencionar "sentido/coerência", ler a frase no texto para descartar leitura reflexiva e presença de agente da passiva.
 
-```text
-[Início: Oração na Voz Ativa] │ ▼ Passo 1: "Chamar o feito à ordem" ├── Localizar o VTD/VTDI primitivo e registrar o Tempo e Modo exatos └── Contar o número de verbos (simples = 1; locução = 2) │ ▼ Passo 2: Conversão do Objeto Direto ├── Identificar o Objeto Direto (OD) da oração ativa └── Promovê-lo à função de Sujeito Paciente na passiva sintética │ ▼ Passo 3: Conjugação e Concordância ├── Manter rigorosamente o mesmo tempo e modo original ├── Ajustar o número: Sujeito Singular ──► Verbo Singular | Sujeito Plural ──► Verbo Plural └── Se houver locução (2 verbos), MANTER os 2 verbos │ ▼ Passo 4: Sintaxe da Partícula "SE" ├── Havendo palavra atrativa (Advérbio, 'Nem', etc.) ──► PRÓCLISE obrigatória └── Se o verbo iniciar o período ──► ÊNCLISE obrigatória (vedada ênclise no futuro) │ ▼ [Fim: Oração Passiva Sintética Validada]
-```
+1. "Chamar o feito à ordem" Localizar o VTD/VTDI primitivo e registrar o Tempo e Modo exatos Contar o número de verbos (simples = 1; locução = 2)
+2. Conversão do Objeto Direto Identificar o Objeto Direto (OD) da oração ativa Promovê-lo à função de Sujeito Paciente na passiva sintética
+3. Conjugação e Concordância Manter rigorosamente o mesmo tempo e modo original Ajustar o número: Sujeito Singular ➔ Verbo Singular Sujeito Plural ➔ Verbo Plural Se houver locução (2 verbos), MANTER os 2 verbos
+4. Sintaxe da Partícula "SE" Havendo palavra atrativa (Advérbio, 'Nem', etc.) ➔ PRÓCLISE obrigatória Se o verbo iniciar o período ➔ ÊNCLISE obrigatória (vedada ênclise no futuro) [Fim: Oração Passiva Sintética Validada]
 
-```text
-[Início: Oração na Voz Passiva Analítica (SER + Particípio)] │ ▼ Passo 1: Diagnóstico Morfológico do Auxiliar SER └── Anotar o tempo e modo precisos em que o verbo SER está flexionado │ ▼ Passo 2: Eliminação do Auxiliar (-1 Verbo) ├── Deletar o verbo auxiliar SER └── Transferir integralmente seu tempo/modo para o verbo principal (ex-particípio) │ ▼ Passo 3: Validação do Sujeito e Concordância ├── O sujeito paciente original permanece como sujeito paciente └── Flexionar o verbo na 3ª sing. ou 3ª plur. conforme o sujeito │ ▼ Passo 4: Verificação de Agente da Passiva e Ambiguidade ├── Se houver Agente da Passiva expresso ──► BLOQUEIO (Voz Sintética veda Agente) └── Checar se a posição pós-sujeito gera sentido reflexivo ──► Reordenar termos │ ▼ [Fim: Oração Passiva Sintética Validada]
-```
+1. Diagnóstico Morfológico do Auxiliar SER Anotar o tempo e modo precisos em que o verbo SER está flexionado
+2. Eliminação do Auxiliar (-1 Verbo) Deletar o verbo auxiliar SER Transferir integralmente seu tempo/modo para o verbo principal (ex-particípio)
+3. Validação do Sujeito e Concordância O sujeito paciente original permanece como sujeito paciente Flexionar o verbo na 3ª sing. ou 3ª plur. conforme o sujeito
+4. Verificação de Agente da Passiva e Ambiguidade Se houver Agente da Passiva expresso ➔ BLOQUEIO (Voz Sintética veda Agente) Checar se a posição pós-sujeito gera sentido reflexivo ➔ Reordenar termos [Fim: Oração Passiva Sintética Validada]
 
 1. Desmascarar o Enunciado: Reconhecer a troca de verbo + se por ser + particípio (ou vice-versa) como uma questão estrita de transposição de vozes.
 2. Localizar o Sujeito: Isolar o termo substantivo ou oracional ("ISSO").

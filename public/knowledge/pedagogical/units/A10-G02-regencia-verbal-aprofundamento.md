@@ -47,9 +47,29 @@ Para a perfeita assimilação deste módulo avançado, é indispensável o domí
 - Valores das Preposições Essenciais: Reconhecimento do papel regencial e semântico de preposições como a, de, em, com, por, sobre.
 - Estruturas Oracionais Reduzidas: Compreensão de orações substantivas objetivas e adjetivas em forma reduzida (infinitivo, gerúndio, particípio).
 
-```text
-MAPA INTEGRADO DE REGÊNCIA AVANÇADA │ ┌───────────────────────────────────────────┼───────────────────────────────────────────┐ ▼ ▼ ▼ [RELAÇÕES DE DIREÇÃO E POSIÇÃO] [POLISSEMIA E TRANSITIVIDADE] [COMPLEXIDADE ESTRUTURAL] ├── Movimento / Destino: ├── VISAR: ├── Bitransitividade (VTDI): │ Ir / Chegar -> Prep. "A" │ Almejar -> VTI (prep. A) │ Exigir algo DE alguém │ AONDE você vai? │ Pôr visto / Mirar -> VTD │ Pedir algo A alguém │ Dar um pulinho AO mercado ├── ASPIRAR: │ Informar: PROIBIDO OI + OI └── Posicionamento Estático: │ Almejar -> VTI (prep. A) ├── Complementos Oracionais: Morar / Residir / Situar -> EM │ Sorver / Inalar -> VTD │ Não pronominal (visar) -> prep. facultativa ONDE você está / mora? ├── ASSISTIR: │ Pronominal (recusar-se a) -> prep. obrigatória Entrega EM domicílio │ Presenciar -> VTI (prep. A) ├── Regência Múltipla SEM mudança: Imóvel sito NA rua │ Morar -> VI (prep. EM) │ Atender -> VTD ou VTI (a) │ Prestar socorro -> VTD (tradicional) │ Lembrar (VTD) / Lembrar-se de (VTI) ├── IMPLICAR: │ Deparar / Deparar com / Deparar-se com │ Acarretar -> VTD estrito └── Reescritura Textual: │ Implicância -> VTI (prep. COM) Gramática estrita vs. Manutenção de Sentido │ Envolver-se -> Pronominal VTI (EM) Objeto Indireto vs. Adjunto de Meio ("com") └── AGRADAR: Fazer carinho -> VTD Ser agradável -> VTI (prep. A)
-```
+MAPA INTEGRADO DE REGÊNCIA AVANÇADA
+- ➔ [RELAÇÕES DE DIREÇÃO E POSIÇÃO] [POLISSEMIA E TRANSITIVIDADE] [COMPLEXIDADE ESTRUTURAL] ➔ Movimento / Destino: ➔ VISAR: ➔ Bitransitividade (VTDI):
+Ir / Chegar -> Prep. "A"
+- Almejar -> VTI (prep. A)
+Exigir algo DE alguém
+- AONDE você vai?
+Pôr visto / Mirar -> VTD
+- Pedir algo A alguém
+Dar um pulinho AO mercado ➔ ASPIRAR:
+- Informar: PROIBIDO OI + OI ➔ Posicionamento Estático:
+Almejar -> VTI (prep. A) ➔ Complementos Oracionais: Morar / Residir / Situar -> EM
+- Sorver / Inalar -> VTD
+Não pronominal (visar) -> prep. facultativa ONDE você está / mora? ➔ ASSISTIR:
+- Pronominal (recusar-se a) -> prep. obrigatória Entrega EM domicílio
+Presenciar -> VTI (prep. A) ➔ Regência Múltipla SEM mudança: Imóvel sito NA rua
+- Morar -> VI (prep. EM)
+Atender -> VTD ou VTI (a)
+- Prestar socorro -> VTD (tradicional)
+Lembrar (VTD) / Lembrar-se de (VTI) ➔ IMPLICAR:
+- Deparar / Deparar com / Deparar-se com
+Acarretar -> VTD estrito ➔ Reescritura Textual:
+- Implicância -> VTI (prep. COM) Gramática estrita vs. Manutenção de Sentido
+Envolver-se -> Pronominal VTI (EM) Objeto Indireto vs. Adjunto de Meio ("com") ➔ AGRADAR: Fazer carinho -> VTD Ser agradável -> VTI (prep. A)
 
 ---
 

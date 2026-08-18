@@ -43,20 +43,25 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Distinção fundamental entre coordenação (independência sintática) e subordinação (dependência sintática funcional entre orações).
 - Noções basilares de flexão e modos verbais: Modo Indicativo (certeza, fato concreto no tempo) e Modo Subjuntivo (hipótese, dúvida, eventualidade, condição ou concessão).
 
-```text
-CONJUNÇÕES SUBORDINATIVAS │ ┌───────────────────────────┴───────────────────────────┐ ▼ ▼
-```
+CONJUNÇÕES SUBORDINATIVAS
+- ➔
 
 1. CONJUNÇÕES INTEGRANTES 2. CONJUNÇÕES ADVERBIAIS
 
 - Conectivos: QUE, SE. - Carregam valor semântico (circunstância).
 - Sem valor semântico próprio (sem causa/tempo). - Mnemônico: 6Cs + FTP (9 classificações).
 - Função: Introduzir Orações Substantivas. - Regra de Ouro: Olhar a ideia que vem DEPOIS.
-- Teste Infalível: Oração = "ISSO" (disso, nisso). │
+- Teste Infalível: Oração = "ISSO" (disso, nisso).
 
-```text
-├─► CONCESSIVAS: Embora, conquanto, ainda que, por mais que │ (Oposição/ressalva sem impedir + SUBJUNTIVO obrigatório) ├─► CONDICIONAIS: Se, caso, contanto que, desde que (+ Subjuntivo) │ (Hipótese necessária / precondição) ├─► CONFORMATIVAS: Conforme, segundo, consoante, como │ (Ideia de acordo / "nos conformes") ├─► FINAIS: Para que, a fim de que, porque (= para que) │ (Alvo / objetivo / finalidade) ├─► PROPORCIONAIS: À medida que, ao passo que, à proporção que │ (Simultaneidade gradual; "à medida que" é unívoco) ├─► TEMPORAIS: Quando, assim que, enquanto, desde que (+ Indicativo) │ (Marco cronológico / momento) ├─► COMPARATIVAS: Como, que / do que (com mais, menos, melhor) │ (Conector é o "que"; "mais/menos" são advérbios) ├─► CAUSAIS: Porque, porquanto, visto que, já que, uma vez que │ (Motivo/fato gerador antecedente) └─► CONSECUTIVAS: De modo que, tão/tanto/tal/tamanho... QUE (Efeito / resultado gerado na subordinada)
-```
+➔ CONCESSIVAS: Embora, conquanto, ainda que, por mais que
+- (Oposição/ressalva sem impedir + SUBJUNTIVO obrigatório) ➔ CONDICIONAIS: Se, caso, contanto que, desde que (+ Subjuntivo)
+(Hipótese necessária / precondição) ➔ CONFORMATIVAS: Conforme, segundo, consoante, como
+- (Ideia de acordo / "nos conformes") ➔ FINAIS: Para que, a fim de que, porque (= para que)
+(Alvo / objetivo / finalidade) ➔ PROPORCIONAIS: À medida que, ao passo que, à proporção que
+- (Simultaneidade gradual; "à medida que" é unívoco) ➔ TEMPORAIS: Quando, assim que, enquanto, desde que (+ Indicativo)
+(Marco cronológico / momento) ➔ COMPARATIVAS: Como, que / do que (com mais, menos, melhor)
+- (Conector é o "que"; "mais/menos" são advérbios) ➔ CAUSAIS: Porque, porquanto, visto que, já que, uma vez que
+(Motivo/fato gerador antecedente) ➔ CONSECUTIVAS: De modo que, tão/tanto/tal/tamanho... QUE (Efeito / resultado gerado na subordinada)
 
 ---
 
@@ -231,9 +236,12 @@ A tabela abaixo sintetiza as formulações canônicas consolidadas no esta unida
 1. Passo 3 — Verificação da Regência do Modo Verbal: Verifique se a troca mantém a compatibilidade modal exigida. Concessivas (embora, ainda que) e condicionais (caso, contanto que) exigem verbo no Subjuntivo.
 2. Passo 4 — Checagem de Conectivos Polissêmicos: Se a substituição envolver conectivos como uma vez que ou desde que, execute o protocolo diagnóstico específico .
 
-```text
-CONECTIVO POLISSÊMICO NO TEXTO │ ┌──────────────────────────┴──────────────────────────┐ ▼ ▼ "DESDE QUE" "UMA VEZ QUE" │ │ ▼ ▼ Inspecionar o MODO VERBAL Analisar a ORAÇÃO POSTERIOR da oração subordinada ao conectivo │ │ ┌────┴────┐ ┌────┴────┐ ▼ ▼ ▼ ▼ SUBJUNTIVO INDICATIVO MOTIVO/ HIPÓTESE/ │ │ EXPLICAÇÃO EXIGÊNCIA ▼ ▼ │ │ CONDIÇÃO TEMPO ▼ ▼ (= caso, (= desde quando, CAUSAL/ CONDICIONAL contanto desde o momento EXPLICATIVO (= se, contanto que) em que) (= porque) que)
-```
+CONECTIVO POLISSÊMICO NO TEXTO
+- ➔ "DESDE QUE" "UMA VEZ QUE"
+Inspecionar o MODO VERBAL Analisar a ORAÇÃO POSTERIOR da oração subordinada ao conectivo
+- ➔ ➔ SUBJUNTIVO INDICATIVO MOTIVO/ HIPÓTESE/
+EXPLICAÇÃO EXIGÊNCIA
+- CONDIÇÃO TEMPO (= caso, (= desde quando, CAUSAL/ CONDICIONAL contanto desde o momento EXPLICATIVO (= se, contanto que) em que) (= porque) que)
 
 1. Passo 1 — Identificação do Conectivo: Localize o conectivo subordinativo destacado na oração.
 2. Passo 2 — Teste da Conjunção Integrante ("ISSO"): Substitua toda a oração introduzida pelo conectivo pelo pronome ISSO (ou disso / nisso).
@@ -253,9 +261,12 @@ CONECTIVO POLISSÊMICO NO TEXTO │ ┌─────────────�
 1. Passo 3 — Verificação da Regência do Modo Verbal: Verifique se a troca mantém a compatibilidade modal exigida. Concessivas (embora, ainda que) e condicionais (caso, contanto que) exigem verbo no Subjuntivo.
 2. Passo 4 — Checagem de Conectivos Polissêmicos: Se a substituição envolver conectivos como uma vez que ou desde que, execute o protocolo diagnóstico específico .
 
-```text
-CONECTIVO POLISSÊMICO NO TEXTO │ ┌──────────────────────────┴──────────────────────────┐ ▼ ▼ "DESDE QUE" "UMA VEZ QUE" │ │ ▼ ▼ Inspecionar o MODO VERBAL Analisar a ORAÇÃO POSTERIOR da oração subordinada ao conectivo │ │ ┌────┴────┐ ┌────┴────┐ ▼ ▼ ▼ ▼ SUBJUNTIVO INDICATIVO MOTIVO/ HIPÓTESE/ │ │ EXPLICAÇÃO EXIGÊNCIA ▼ ▼ │ │ CONDIÇÃO TEMPO ▼ ▼ (= caso, (= desde quando, CAUSAL/ CONDICIONAL contanto desde o momento EXPLICATIVO (= se, contanto que) em que) (= porque) que)
-```
+CONECTIVO POLISSÊMICO NO TEXTO
+- ➔ "DESDE QUE" "UMA VEZ QUE"
+Inspecionar o MODO VERBAL Analisar a ORAÇÃO POSTERIOR da oração subordinada ao conectivo
+- ➔ ➔ SUBJUNTIVO INDICATIVO MOTIVO/ HIPÓTESE/
+EXPLICAÇÃO EXIGÊNCIA
+- CONDIÇÃO TEMPO (= caso, (= desde quando, CAUSAL/ CONDICIONAL contanto desde o momento EXPLICATIVO (= se, contanto que) em que) (= porque) que)
 
 ---
 

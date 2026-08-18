@@ -24,9 +24,11 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 
 1. Noções Sintáticas Elementares: Identificar orações condicionais (se...), temporais (quando...), concessivas (caso...) e orações reduzidas com preposição (depois de...).
 
-```text
-ARQUITETURA DA DERIVAÇÃO VERBAL │ ┌────────────────────────────────┴────────────────────────────────┐ ▼ ▼ VERBOS PRIMITIVOS (LÍDERES) VERBOS DERIVADOS ├─ TER (tiver, tivesse, tiveram...) ├─ manter, conter, reter, deter, abster, entreter, obter ├─ VER (vir, visse, viram, veem...) ├─ prever, antever, rever ├─ VIR (vier, viesse, vieram, vim, veio...) ├─ intervir, convir, advir └─ PÔR (puser, pusesse, puseram, ponham...) └─ propor, repor, sobrepor, compor, dispor │ │ └────────────────────────────────┬────────────────────────────────┘ ▼ O MÉTODO DOS 4 PASSOS [1. Isolar/Infinitivo] ──> [2. Identificar Líder] │ [4. Acoplar Prefixo]  Futuro do Pretérito ├─ VIR no Pretérito Perfeito ("Ontem eu VIM") │ └─ + Futuro Subj. ──> Futuro do Presente ├─ Falso Amigo PROVER (provejo) vs. PROVAR (provo) ├─ Preposição Simples + Sujeito -> Infinitivo Pessoal └─ Confusão SER/VER com verbos de movimento IR/VIR └─ Aspecto Nominal: VINDO = Particípio / Origem
-```
+ARQUITETURA DA DERIVAÇÃO VERBAL
+- ➔ VERBOS PRIMITIVOS (LÍDERES) VERBOS DERIVADOS TER (tiver, tivesse, tiveram...) manter, conter, reter, deter, abster, entreter, obter VER (vir, visse, viram, veem...) prever, antever, rever VIR (vier, viesse, vieram, vim, veio...) intervir, convir, advir PÔR (puser, pusesse, puseram, ponham...) propor, repor, sobrepor, compor, dispor
+➔ O MÉTODO DOS 4 PASSOS [1. Isolar/Infinitivo] ➔ > [2. Identificar Líder]
+- [4. Acoplar Prefixo] Futuro do Pretérito VIR no Pretérito Perfeito ("Ontem eu VIM")
++ Futuro Subj. ➔ > Futuro do Presente Falso Amigo PROVER (provejo) vs. PROVAR (provo) Preposição Simples + Sujeito -> Infinitivo Pessoal Confusão SER/VER com verbos de movimento IR/VIR Aspecto Nominal: VINDO = Particípio / Origem
 
 ---
 
@@ -146,9 +148,12 @@ Afirmações de bancas (como Cespe/Cebraspe) que associam mecanicamente a termin
 
 ## Roteiros de resolução
 
-```text
-ALGORITMO DOS 4 PASSOS DE CONJUGAÇÃO ┌────────────────────────────────────────────────────────────────────────┐ │ PASSO 1: ISOLAMENTO DO INFINITIVO │ │ Identifique o verbo no texto e determine seu infinitivo impessoal. │ │ Exemplo: "interviu" -> verbo INTERVIR. │ └──────────────────────────────────┬─────────────────────────────────────┘ │ ┌──────────────────────────────────▼─────────────────────────────────────┐ │ PASSO 2: IDENTIFICAÇÃO DO VERBO LÍDER PRIMITIVO │ │ Extraia o verbo primitivo gerador do radical: TER, VER, VIR ou PÔR. │ │ Exemplo: INTERVIR -> Verbo líder VIR. │ └──────────────────────────────────┬─────────────────────────────────────┘ │ ┌──────────────────────────────────▼─────────────────────────────────────┐ │ PASSO 3: ACOMODAÇÃO DO LÍDER NO CONTEXTO ORACIONAL │ │ Encaixe APENAS o verbo líder na oração, respeitando sujeito, tempo, │ │ modo e conectivos. (Dica: a desinência do erro da banca revela o tempo)│ │ Exemplo: "O governo [líder no passado]..." -> "O governo VEIO". │ └──────────────────────────────────┬─────────────────────────────────────┘ │ ┌──────────────────────────────────▼─────────────────────────────────────┐ │ PASSO 4: SUBSTITUIÇÃO E ACOPLAMENTO DO PREFIXO │ │ Reanexe o prefixo derivado à forma flexionada do líder obtida. │ │ Exemplo: Prefixo INTER- + VEIO = INTERVEIO. (Forma correta). │ └────────────────────────────────────────────────────────────────────────┘
-```
+**ALGORITMO DOS 4 PASSOS DE CONJUGAÇÃO**
+
+1. ISOLAMENTO DO INFINITIVO Identifique o verbo no texto e determine seu infinitivo impessoal. Exemplo: "interviu" -> verbo INTERVIR.
+2. IDENTIFICAÇÃO DO VERBO LÍDER PRIMITIVO Extraia o verbo primitivo gerador do radical: TER, VER, VIR ou PÔR. Exemplo: INTERVIR -> Verbo líder VIR.
+3. ACOMODAÇÃO DO LÍDER NO CONTEXTO ORACIONAL Encaixe APENAS o verbo líder na oração, respeitando sujeito, tempo, modo e conectivos. (Dica: a desinência do erro da banca revela o tempo) Exemplo: "O governo [líder no passado]..." -> "O governo VEIO".
+4. SUBSTITUIÇÃO E ACOPLAMENTO DO PREFIXO Reanexe o prefixo derivado à forma flexionada do líder obtida. Exemplo: Prefixo INTER- + VEIO = INTERVEIO. (Forma correta).
 
 1. Passo 1: Identifique a terminação do infinitivo do verbo regular sob dúvida (-ar, -er, -ir).
 2. Passo 2: Selecione o líder universal da conjugação:
@@ -167,9 +172,12 @@ ALGORITMO DOS 4 PASSOS DE CONJUGAÇÃO ┌────────────�
 2. Passo 2 (Estabelecimento do Padrão): Defina o par sintático-morfológico alvo: [Infinitivo Impessoal] / [Presente do Indicativo, 1ª p. sing. (Eu)].
 3. Passo 3 (Varredura das Opções): Teste as alternativas eliminando pares com tempos alterados (pretérito perfeito, imperfeito) ou pessoas distintas (3ª pessoa), até encontrar a correspondência exata (fazer / faço).
 
-```text
-ALGORITMO DOS 4 PASSOS DE CONJUGAÇÃO ┌────────────────────────────────────────────────────────────────────────┐ │ PASSO 1: ISOLAMENTO DO INFINITIVO │ │ Identifique o verbo no texto e determine seu infinitivo impessoal. │ │ Exemplo: "interviu" -> verbo INTERVIR. │ └──────────────────────────────────┬─────────────────────────────────────┘ │ ┌──────────────────────────────────▼─────────────────────────────────────┐ │ PASSO 2: IDENTIFICAÇÃO DO VERBO LÍDER PRIMITIVO │ │ Extraia o verbo primitivo gerador do radical: TER, VER, VIR ou PÔR. │ │ Exemplo: INTERVIR -> Verbo líder VIR. │ └──────────────────────────────────┬─────────────────────────────────────┘ │ ┌──────────────────────────────────▼─────────────────────────────────────┐ │ PASSO 3: ACOMODAÇÃO DO LÍDER NO CONTEXTO ORACIONAL │ │ Encaixe APENAS o verbo líder na oração, respeitando sujeito, tempo, │ │ modo e conectivos. (Dica: a desinência do erro da banca revela o tempo)│ │ Exemplo: "O governo [líder no passado]..." -> "O governo VEIO". │ └──────────────────────────────────┬─────────────────────────────────────┘ │ ┌──────────────────────────────────▼─────────────────────────────────────┐ │ PASSO 4: SUBSTITUIÇÃO E ACOPLAMENTO DO PREFIXO │ │ Reanexe o prefixo derivado à forma flexionada do líder obtida. │ │ Exemplo: Prefixo INTER- + VEIO = INTERVEIO. (Forma correta). │ └────────────────────────────────────────────────────────────────────────┘
-```
+**ALGORITMO DOS 4 PASSOS DE CONJUGAÇÃO**
+
+1. ISOLAMENTO DO INFINITIVO Identifique o verbo no texto e determine seu infinitivo impessoal. Exemplo: "interviu" -> verbo INTERVIR.
+2. IDENTIFICAÇÃO DO VERBO LÍDER PRIMITIVO Extraia o verbo primitivo gerador do radical: TER, VER, VIR ou PÔR. Exemplo: INTERVIR -> Verbo líder VIR.
+3. ACOMODAÇÃO DO LÍDER NO CONTEXTO ORACIONAL Encaixe APENAS o verbo líder na oração, respeitando sujeito, tempo, modo e conectivos. (Dica: a desinência do erro da banca revela o tempo) Exemplo: "O governo [líder no passado]..." -> "O governo VEIO".
+4. SUBSTITUIÇÃO E ACOPLAMENTO DO PREFIXO Reanexe o prefixo derivado à forma flexionada do líder obtida. Exemplo: Prefixo INTER- + VEIO = INTERVEIO. (Forma correta).
 
 1. Passo 1: Identifique a terminação do infinitivo do verbo regular sob dúvida (-ar, -er, -ir).
 2. Passo 2: Selecione o líder universal da conjugação:

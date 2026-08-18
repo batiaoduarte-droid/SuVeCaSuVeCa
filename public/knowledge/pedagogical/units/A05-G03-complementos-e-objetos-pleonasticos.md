@@ -40,9 +40,46 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ## Pré-requisitos e modelo mental
 
-```text
-SINTAXE DOS COMPLEMENTOS VERBAIS E PLEONASMO SINTÁTICO │ ├── 1. NATUREZA MORFOSSINTÁTICA DO PRONOME │ ├── Pronome Adjetivo: Acompanha o substantivo determinando-o (ex.: "Meu aluno") │ └── Pronome Substantivo: Substitui o substantivo na oração (ex.: "Ele chegou") │ ├── 2. SISTEMA PRONOMINAL E FUNÇÕES SINTÁTICAS │ ├── Pronomes Pessoais Retos (Eu, Tu, Ele, Nós, Vós, Eles) │ │ └── Função Canônica: EXCLUSIVA DE SUJEITO ("Para substituir sujeito, use PRONOME RETO") │ └── Pronomes Pessoais Oblíquos │ └── Função Canônica: COMPLEMENTOS VERBAIS ("Para substituir complemento, use PRONOME OBLÍQUO") │ ├── Oblíquos Tônicos (Pronúncia forte / Exigem Preposição Obrigatória) │ │ ├── Formas Inerentes: mim, comigo, ti, contigo, si, consigo │ │ └── Formas Especiais: ele, ela, nós, vós, eles, elas (só atuam como objeto com prep.) │ └── Oblíquos Átonos (Pronúncia fraca / 3 Grupos de Aplicação) │ ├── Grupo 1: O, A, OS, AS ────────► Sempre OBJETO DIRETO (Sem preposição) │ ├── Grupo 2: LHE, LHES ───────────► Sempre OBJETO INDIRETO (Com preposição "a") │ └── Grupo 3: ME, TE, SE, NOS, VOS ► CORINGAS (O.D. ou O.I. conforme a regência) │ ├── 3. MÉTODOS DE TESTE DE REGÊNCIA E PRONOMINALIZAÇÃO │ ├── Cenário com Termo Sublinhado ("Eu sou feliz"): │ │ ├── Inicia por Artigo Definido ──────► Substitui por O, A, OS, AS │ │ └── Inicia por Preposição ───────────► Substitui por LHE, LHES (ou "a ele/ela") │ ├── Cenário sem Sublinhado ("Eu tenho um problema"): │ │ └── Investigação via "MACETE DO MENINO" (Substituição por substantivo concreto masculino singular) │ │ ├── Verbo + "O MENINO" ─────────► VTD ──► Exige O, A, OS, AS (ou Coringa como OD) │ │ └── Verbo + "AO MENINO" ────────► VTI ──► Exige LHE, LHES (ou Coringa como OI) │ └── Desmistificação de Armadilhas Fonéticas: │ ├── Trocar por "a mim" / "a ti" ────► ERRO (Tônicos forçam preposição artificial) │ └── Trocar por "a alguém" ──────────► ERRO (Vício fonético coloquial insere "a" indevido) │ ├── 4. TEORIA E ESTRUTURA DOS OBJETOS PLEONÁSTICOS │ ├── Pleonasmo Vicioso (Redundância semântica condenada) vs. Estilístico (Ênfase permitida na literatura) │ ├── Objeto Direto Pleonástico: Reiteração de OD antecipado via pronome átono (o, a, os, as) │ ├── Objeto Indireto Pleonástico: Reiteração de OI antecipado via pronome átono (lhe, lhes, nos, me) │ └── As Sete Regras de Ouro do Pleonasmo (#ANOTAAÍ): │ ├── I. Organizar a frase na Ordem Direta ($SVC$) │ ├── II. "Viver o Verbo" (achar 1º Sujeito e 2º Complementos) │ ├── III. Na ordem direta, o pronome pleonástico "sobra" │ ├── IV. O objeto pleonástico é sempre pronominal │ ├── V. Duplo objeto na mesma oração é permitido APENAS se um for pleonástico │ ├── VI. Diferença: O.D. Preposicionado (prep. facultativa no termo raiz) vs. O.D. Pleonástico (pronome repetido) │ └── VII. Função Referencial: Obrigatoriamente ANAFÓRICA (salvo rara licença poética catafórica) │ └── 5. DIFERENCIAÇÕES CRÍTICAS EM QUESTÕES DE CONCURSO ├── Objeto Direto Preposicionado: VTD com preposição facultativa ("Respeito a Deus") ├── Objeto Deslocado com Vírgula: OD antecipado sem pronome repetidor ("O dinheiro, Alice trazia") ├── Objetos de Verbos Distintos: Dois objetos ligados a verbos diferentes ("Comprei esta casa; vendi-a") ├── Voz Passiva Sintática: Pronome "se" apassivador + Sujeito Paciente ("Fez-se o rio") ├── Hiperônimo "Complemento" (CEBRASPE): Termo genérico que abrange tanto OD quanto OI ├── Princípio Multiverbal (CEBRASPE): "Viva cada verbo ao seu momento" para orações coordenadas └── Dupla Verificação (CEBRASPE): Distinção entre Função Sintática (OI) e Função Coesiva (Anáfora)
-```
+SINTAXE DOS COMPLEMENTOS VERBAIS E PLEONASMO SINTÁTICO
+- ➔ 1. NATUREZA MORFOSSINTÁTICA DO PRONOME
+➔ Pronome Adjetivo: Acompanha o substantivo determinando-o (ex.: "Meu aluno")
+- ➔ Pronome Substantivo: Substitui o substantivo na oração (ex.: "Ele chegou")
+➔ 2. SISTEMA PRONOMINAL E FUNÇÕES SINTÁTICAS
+- ➔ Pronomes Pessoais Retos (Eu, Tu, Ele, Nós, Vós, Eles)
+➔ Função Canônica: EXCLUSIVA DE SUJEITO ("Para substituir sujeito, use PRONOME RETO")
+- ➔ Pronomes Pessoais Oblíquos
+➔ Função Canônica: COMPLEMENTOS VERBAIS ("Para substituir complemento, use PRONOME OBLÍQUO")
+- ➔ Oblíquos Tônicos (Pronúncia forte / Exigem Preposição Obrigatória)
+➔ Formas Inerentes: mim, comigo, ti, contigo, si, consigo
+- ➔ Formas Especiais: ele, ela, nós, vós, eles, elas (só atuam como objeto com prep.)
+➔ Oblíquos Átonos (Pronúncia fraca / 3 Grupos de Aplicação)
+- ➔ Grupo 1: O, A, OS, AS ➔ Sempre OBJETO DIRETO (Sem preposição)
+➔ Grupo 2: LHE, LHES ➔ Sempre OBJETO INDIRETO (Com preposição "a")
+- ➔ Grupo 3: ME, TE, SE, NOS, VOS CORINGAS (O.D. ou O.I. conforme a regência)
+➔ 3. MÉTODOS DE TESTE DE REGÊNCIA E PRONOMINALIZAÇÃO
+- ➔ Cenário com Termo Sublinhado ("Eu sou feliz"):
+➔ Inicia por Artigo Definido ➔ Substitui por O, A, OS, AS
+- ➔ Inicia por Preposição ➔ Substitui por LHE, LHES (ou "a ele/ela")
+➔ Cenário sem Sublinhado ("Eu tenho um problema"):
+- ➔ Investigação via "MACETE DO MENINO" (Substituição por substantivo concreto masculino singular)
+➔ Verbo + "O MENINO" ➔ VTD ➔ Exige O, A, OS, AS (ou Coringa como OD)
+- ➔ Verbo + "AO MENINO" ➔ VTI ➔ Exige LHE, LHES (ou Coringa como OI)
+➔ Desmistificação de Armadilhas Fonéticas:
+- ➔ Trocar por "a mim" / "a ti" ➔ ERRO (Tônicos forçam preposição artificial)
+➔ Trocar por "a alguém" ➔ ERRO (Vício fonético coloquial insere "a" indevido)
+- ➔ 4. TEORIA E ESTRUTURA DOS OBJETOS PLEONÁSTICOS
+➔ Pleonasmo Vicioso (Redundância semântica condenada) vs. Estilístico (Ênfase permitida na literatura)
+- ➔ Objeto Direto Pleonástico: Reiteração de OD antecipado via pronome átono (o, a, os, as)
+➔ Objeto Indireto Pleonástico: Reiteração de OI antecipado via pronome átono (lhe, lhes, nos, me)
+- ➔ As Sete Regras de Ouro do Pleonasmo (#ANOTAAÍ):
+➔ I. Organizar a frase na Ordem Direta ($SVC$)
+- ➔ II. "Viver o Verbo" (achar 1º Sujeito e 2º Complementos)
+➔ III. Na ordem direta, o pronome pleonástico "sobra"
+- ➔ IV. O objeto pleonástico é sempre pronominal
+➔ V. Duplo objeto na mesma oração é permitido APENAS se um for pleonástico
+- ➔ VI. Diferença: O.D. Preposicionado (prep. facultativa no termo raiz) vs. O.D. Pleonástico (pronome repetido)
+➔ VII. Função Referencial: Obrigatoriamente ANAFÓRICA (salvo rara licença poética catafórica)
+- ➔ 5. DIFERENCIAÇÕES CRÍTICAS EM QUESTÕES DE CONCURSO ➔ Objeto Direto Preposicionado: VTD com preposição facultativa ("Respeito a Deus") ➔ Objeto Deslocado com Vírgula: OD antecipado sem pronome repetidor ("O dinheiro, Alice trazia") ➔ Objetos de Verbos Distintos: Dois objetos ligados a verbos diferentes ("Comprei esta casa; vendi-a") ➔ Voz Passiva Sintática: Pronome "se" apassivador + Sujeito Paciente ("Fez-se o rio") ➔ Hiperônimo "Complemento" (CEBRASPE): Termo genérico que abrange tanto OD quanto OI ➔ Princípio Multiverbal (CEBRASPE): "Viva cada verbo ao seu momento" para orações coordenadas ➔ Dupla Verificação (CEBRASPE): Distinção entre Função Sintática (OI) e Função Coesiva (Anáfora)
 
 ---
 
@@ -109,17 +146,11 @@ Os pronomes oblíquos tônicos possuem acento tônico próprio (pronúncia forte
 
 Para fins de pronominalização e sintaxe de regência em concursos, os pronomes pessoais oblíquos átonos dividem-se em três grupos funcionais bem delineados.
 
-```text
-GRUPO 1: O / A / OS / AS ├── Natureza: Complementos SEM PREPOSIÇÃO └── Função Sintática: Exclusivamente OBJETO DIRETO (O.D.)
-```
+GRUPO 1: O / A / OS / AS ➔ Natureza: Complementos SEM PREPOSIÇÃO ➔ Função Sintática: Exclusivamente OBJETO DIRETO (O.D.)
 
-```text
-GRUPO 2: LHE / LHES ├── Natureza: Complementos COM PREPOSIÇÃO ("a ele", "a ela", "a eles", "a elas") └── Função Sintática: Exclusivamente OBJETO INDIRETO (O.I.)
-```
+GRUPO 2: LHE / LHES ➔ Natureza: Complementos COM PREPOSIÇÃO ("a ele", "a ela", "a eles", "a elas") ➔ Função Sintática: Exclusivamente OBJETO INDIRETO (O.I.)
 
-```text
-GRUPO 3: ME / TE / SE / NOS / VOS (CORINGAS) ├── Natureza: Complementos com ou sem preposição └── Função Sintática: OBJETO DIRETO ou OBJETO INDIRETO (depende da regência do verbo)
-```
+GRUPO 3: ME / TE / SE / NOS / VOS (CORINGAS) ➔ Natureza: Complementos com ou sem preposição ➔ Função Sintática: OBJETO DIRETO ou OBJETO INDIRETO (depende da regência do verbo)
 
 - Os pronomes do Grupo 2 jamais podem complementar verbos transitivos diretos ("vou lhe usar" é incorreto).
 - Os pronomes do Grupo 3 (Coringas) estão sempre corretos quanto à concordância/regência se inseridos na frase, mas sua classificação sintática (OD vs. OI) exige teste de regência.
