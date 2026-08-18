@@ -27,6 +27,10 @@ const sourceCandidates = [
 const resolvePortugueseRoot = () => {
   for (const candidate of sourceCandidates) {
     const resolved = path.resolve(candidate);
+    if (fs.existsSync(path.join(resolved, 'Integracao_Pedagogica', 'v2', 'manifest.json'))) return resolved;
+    if (fs.existsSync(path.join(resolved, 'Português', 'Integracao_Pedagogica', 'v2', 'manifest.json'))) {
+      return path.join(resolved, 'Português');
+    }
     if (fs.existsSync(path.join(resolved, 'Integracao_Pedagogica', 'manifest.json'))) return resolved;
     if (fs.existsSync(path.join(resolved, 'Português', 'Integracao_Pedagogica', 'manifest.json'))) {
       return path.join(resolved, 'Português');
@@ -180,6 +184,7 @@ export const cleanLearnerMarkdown = (value) => {
     .replace(/`(?:thematic|corpus|map):[^`]+`/gi, '')
     .replace(/\[(?:PASSAGE|QUESTION|EDITORIAL|CORPUS):[^\]]+\]/gi, '')
     .replace(/==[0-9a-f]{6,}==/gi, '')
+    .replace(/\b(?:proveniência|rastreabilidade):\s[^\n]*\n?/gi, '')
     .replace(/(?<!`)``(?!`)(?:\s*,\s*(?<!`)``(?!`))*/g, '')
     .replace(/\b\d{2}:\d{2}:\d{2}(?:[–—-]\d{2}:\d{2}:\d{2})?\b/g, '')
     .replace(/\bV\d{3}[A-Z]?\b/g, '')
@@ -364,6 +369,51 @@ const demoteEmbeddedHeadings = (markdown) => {
   }).join('\n');
 };
 
+const isV2 = fs.existsSync(path.join(PORTUGUESE_ROOT, 'Integracao_Pedagogica', 'v2', 'manifest.json'));
+const globalManifestPath = isV2
+  ? path.join(PORTUGUESE_ROOT, 'Integracao_Pedagogica', 'v2', 'manifest.json')
+  : path.join(PORTUGUESE_ROOT, 'Integracao_Pedagogica', 'manifest.json');
+const globalManifest = readJson(globalManifestPath);
+
+if (isV2) {
+  assert(globalManifest.structuralStatus === 'valid', 'Integracao_Pedagogica v2 com status estrutural inválido.');
+  assert(globalManifest.publicationStatus === 'publishable', 'Integracao_Pedagogica v2 não está aprovada para publicação.');
+  assert(globalManifest.counts?.units === EXPECTED_INTEGRATED_UNITS, `Esperadas ${EXPECTED_INTEGRATED_UNITS} unidades integradas na v2.`);
+} else {
+  assert(globalManifest.status === 'complete', 'Integracao_Pedagogica global não está completa.');
+  assert(globalManifest.totals?.pending_groups === 0, 'Integracao_Pedagogica ainda possui grupos pendentes.');
+  assert(globalManifest.totals?.integrated_groups === EXPECTED_INTEGRATED_UNITS, `Esperadas ${EXPECTED_INTEGRATED_UNITS} unidades integradas.`);
+}
+
+const aiKnowledgePath = path.join(PORTUGUESE_ROOT, 'Integracao_Pedagogica', 'v2', 'projections', 'ai', 'knowledge.jsonl');
+const aiKnowledgeRecords = isV2 && fs.existsSync(aiKnowledgePath) ? readJsonl(aiKnowledgePath) : [];
+const aiKnowledgeByUnitId = new Map(aiKnowledgeRecords.map((item) => [item.unitId, item]));
+const tablesPath = path.join(PORTUGUESE_ROOT, 'Integracao_Pedagogica', 'v2', 'canonical', 'tables.jsonl');
+const tablesRecords = isV2 && fs.existsSync(tablesPath) ? readJsonl(tablesPath) : [];
+const tablesById = Object.fromEntries(tablesRecords.map((t) => [t.entityId, t]));
+
+const renderBlock = (block, tables = {}) => {
+  if (block.type === 'heading') return `${'#'.repeat(Math.min(6, Math.max(2, block.level || 2)))} ${block.text || ''}`;
+  if (block.type === 'paragraph') return block.text || '';
+  if (block.type === 'list') {
+    return (block.items || []).map((item, i) => block.ordered ? `${i + 1}. ${item}` : `- ${item}`).join('\n');
+  }
+  if (block.type === 'callout') return `> ${block.text || ''}`;
+  if (block.type === 'code') return `\`\`\`${block.language || 'text'}\n${block.text || ''}\n\`\`\``;
+  if (block.type === 'formula') return `$$\n${block.text || ''}\n$$`;
+  if (block.type === 'table_ref' && tables[block.tableId]) {
+    const table = tables[block.tableId];
+    const headers = table.headers || [];
+    return `| ${headers.join(' | ')} |\n| ${headers.map(() => '---').join(' | ')} |\n` +
+      (table.rows || []).map((row) => `| ${row.join(' | ')} |`).join('\n');
+  }
+  return block.text || '';
+};
+
+const renderFragment = (fragment, tables = {}) => {
+  return (fragment.contentBlocks || []).map((b) => renderBlock(b, tables)).filter(Boolean).join('\n\n');
+};
+
 const buildUnitMarkdown = (unit, methodConnection) => {
   const objective = (unit.learning_objectives || []).map((item) => cleanLearnerMarkdown(item).trim()).filter(Boolean);
   const sections = fieldDefinitions.flatMap(([key, heading]) => {
@@ -393,12 +443,6 @@ const lessonDirectory = (number) => {
   return path.join(PORTUGUESE_ROOT, 'Aula Processada', match);
 };
 
-const globalManifestPath = path.join(PORTUGUESE_ROOT, 'Integracao_Pedagogica', 'manifest.json');
-const globalManifest = readJson(globalManifestPath);
-assert(globalManifest.status === 'complete', 'Integracao_Pedagogica global não está completa.');
-assert(globalManifest.totals?.pending_groups === 0, 'Integracao_Pedagogica ainda possui grupos pendentes.');
-assert(globalManifest.totals?.integrated_groups === EXPECTED_INTEGRATED_UNITS, `Esperadas ${EXPECTED_INTEGRATED_UNITS} unidades integradas.`);
-
 const lessonSources = [];
 const units = [];
 const flashcardCandidates = [];
@@ -406,31 +450,72 @@ const decisionCandidates = [];
 
 for (const number of EXPECTED_INTEGRATED_LESSONS) {
   const directory = lessonDirectory(number);
-  const integration = path.join(directory, 'Integracao_Pedagogica');
+  const integrationV2 = path.join(directory, 'Integracao_Pedagogica', 'v2');
+  const integrationV1 = path.join(directory, 'Integracao_Pedagogica');
+  const useV2 = isV2 && fs.existsSync(path.join(integrationV2, 'manifest.json'));
+  const integration = useV2 ? integrationV2 : integrationV1;
   const manifestPath = path.join(integration, 'manifest.json');
-  const coveragePath = path.join(integration, 'coverage.json');
-  const unitsPath = path.join(integration, 'canonical', 'pedagogical_units.jsonl');
-  const flashcardsPath = path.join(integration, 'suveca', 'flashcard_candidates.jsonl');
-  const decisionsPath = path.join(integration, 'suveca', 'decision_tree_candidates.jsonl');
+  const coveragePath = useV2 ? path.join(integration, 'qa', 'migration_retention.json') : path.join(integration, 'coverage.json');
+  const unitsPath = useV2 ? path.join(integration, 'canonical', 'units.jsonl') : path.join(integration, 'canonical', 'pedagogical_units.jsonl');
+  const flashcardsPath = path.join(directory, 'Integracao_Pedagogica', 'suveca', 'flashcard_candidates.jsonl');
+  const decisionsPath = path.join(directory, 'Integracao_Pedagogica', 'suveca', 'decision_tree_candidates.jsonl');
   const questionsPath = path.join(directory, 'corpus_apostila', 'questions.jsonl');
   const answersPath = path.join(directory, 'corpus_apostila', 'answers.jsonl');
   const lessonManifest = readJson(manifestPath);
-  const coverage = readJson(coveragePath);
-  assert(coverage.status === 'complete' && coverage.pending_groups === 0, `A${number}: integração incompleta.`);
-  const lessonUnits = readJsonl(unitsPath);
-  assert(lessonUnits.length === coverage.integrated_groups, `A${number}: unidades divergentes da cobertura.`);
+  
+  let lessonUnits = readJsonl(unitsPath);
+  if (useV2) {
+    assert(lessonManifest.structuralStatus === 'valid' && lessonManifest.publicationStatus === 'publishable', `A${number}: integração v2 incompleta.`);
+    assert(lessonUnits.length === lessonManifest.counts?.units, `A${number}: unidades divergentes da contagem.`);
+    lessonUnits = lessonUnits.map((u) => {
+      const ai = aiKnowledgeByUnitId.get(u.unitId) || {};
+      const pedagogical_sections = {};
+      for (const fragment of ai.coreExplanation || []) {
+        const role = fragment.role || 'knowledge';
+        const text = renderFragment(fragment, tablesById);
+        if (text) {
+          pedagogical_sections[role] = pedagogical_sections[role]
+            ? `${pedagogical_sections[role]}\n\n${text}`
+            : text;
+        }
+      }
+      return {
+        ...u,
+        unit_id: u.unitId,
+        lesson_id: u.lessonId,
+        group_id: u.groupId,
+        canonical_topic_id: u.canonicalTopicId,
+        lesson_identity: `Aula ${number}`,
+        media_independent: true,
+        authority: { normative: 'corpus_apostila', editorial: 'Integracao_Pedagogica_v2' },
+        learning_objectives: (ai.learningObjectives || []).map((o) => o.text || o.title || o),
+        pedagogical_sections,
+        canonical_rules: ai.canonicalRules || [],
+        decision_procedures: ai.decisionProcedures || [],
+        contrasts: ai.contrasts || [],
+        exam_traps: ai.examTraps || [],
+        worked_examples: ai.workedExamples || [],
+        core_explanation: ai.coreExplanation || [],
+        source_refs: { corpus: u.sourceRefs || [] },
+      };
+    });
+  } else {
+    const coverage = readJson(coveragePath);
+    assert(coverage.status === 'complete' && coverage.pending_groups === 0, `A${number}: integração incompleta.`);
+    assert(lessonUnits.length === coverage.integrated_groups, `A${number}: unidades divergentes da cobertura.`);
+  }
+  
   units.push(...lessonUnits);
-  flashcardCandidates.push(...readJsonl(flashcardsPath));
-  decisionCandidates.push(...readJsonl(decisionsPath));
+  if (fs.existsSync(flashcardsPath)) flashcardCandidates.push(...readJsonl(flashcardsPath));
+  if (fs.existsSync(decisionsPath)) decisionCandidates.push(...readJsonl(decisionsPath));
   lessonSources.push({
     lessonId: `A${number}`,
     directory,
     integration,
     manifest: lessonManifest,
-    coverage,
     questionsPath,
     answersPath,
-    files: [manifestPath, coveragePath, unitsPath, flashcardsPath, decisionsPath, questionsPath, answersPath],
+    files: [manifestPath, unitsPath, questionsPath, answersPath].filter((f) => fs.existsSync(f)),
   });
 }
 

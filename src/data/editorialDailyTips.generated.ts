@@ -94,7 +94,7 @@ export const EDITORIAL_DAILY_TIPS = [
     "id": "tip-mod11-coesao-textual-visao-geral",
     "category": "Coesão Textual - Visão Geral",
     "rule": "Qual é o objetivo central de Coesão Textual - Visão Geral?",
-    "explanation": "Ao concluir o estudo deste grupo temático inaugural, o estudante deve ter assimilado e ser capaz de aplicar as seguintes competências: 1. Definição Operacional: Compreender que a coesão textual consiste na conexão ou ligação material explícita que confere amarração aos componentes da frase e do texto . 2. Domínio da Coesão Sequencial: Identificar que a progressão discursiva e os nexos lógicos (causa, adversidade, etc.) são estabelecidos tanto por conjunções quanto por prepos…",
+    "explanation": "Compreender e definir os princípios normativos e conceituais de Coesão Textual - Visão Geral. Aplicar regras canônicas e procedimentos decisórios de Coesão Textual - Visão Geral na resolução de questões. Analisar o papel de Coesão Textual - Visão Geral no eixo Apoio estrutural e reconhecer armadilhas e variações de bancas.",
     "example": "Estratégia de recuperação: Recupere o critério decisivo antes de consultar a resposta.",
     "moduleId": "mod11"
   },
