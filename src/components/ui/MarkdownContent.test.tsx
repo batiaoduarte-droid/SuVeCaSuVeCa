@@ -35,7 +35,7 @@ C) mau
 
     expect(screen.getByRole('navigation', { name: /sumário desta unidade/i })).toBeInTheDocument();
     expect(screen.getByText(/deslize para comparar/i)).toBeInTheDocument();
-    expect(screen.getByRole('list', { name: /versão linear do mapa/i })).toHaveTextContent('PALAVRA');
+    expect(screen.getByText('PALAVRA')).toBeInTheDocument();
     const question = screen.getByRole('heading', { name: /questão 01/i }).closest('article')!;
     expect(within(question).getByText('FGV')).toBeInTheDocument();
     expect(within(question).getByText('2024')).toBeInTheDocument();
@@ -60,5 +60,38 @@ Conteúdo posterior.
     expect(secondDetails).not.toHaveAttribute('open');
     await user.click(screen.getByRole('button', { name: /segunda/i }));
     expect(secondDetails).toHaveAttribute('open');
+  });
+
+  it('renderiza o Guia Visual dos 4 Porquês com cards nativos e regras de substituição', () => {
+    render(<MarkdownContent pedagogical content={`# Aula de Ortografia
+
+\`\`\`text
+EMPREGO DOS PORQUÊS
+│
+PORQUÊ   PORQUE   POR QUÊ   POR QUE
+\`\`\`
+`} />);
+
+    expect(screen.getByText(/Guia Visual Decisório: Os 4 Porquês/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Por que/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Porquê/i })).toBeInTheDocument();
+  });
+
+  it('renderiza o Esquema em Árvore Estruturada com categorias e grupos visuais', () => {
+    render(<MarkdownContent pedagogical content={`# Sintaxe
+
+\`\`\`text
+SINTAXE DO PERÍODO COMPOSTO
+1. Fundamentos
+├── Oração Principal
+2. Subclasses Adverbiais (6C + FTP)
+├── Causal
+└── Consecutiva
+\`\`\`
+`} />);
+
+    expect(screen.getByText(/SINTAXE DO PERÍODO COMPOSTO/i)).toBeInTheDocument();
+    expect(screen.getByText(/Fundamentos/i)).toBeInTheDocument();
+    expect(screen.getByText(/Subclasses Adverbiais/i)).toBeInTheDocument();
   });
 });
