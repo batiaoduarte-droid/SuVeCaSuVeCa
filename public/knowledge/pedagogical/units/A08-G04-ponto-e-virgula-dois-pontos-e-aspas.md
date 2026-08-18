@@ -41,7 +41,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - **Semântica e Estilística Lexical:** Compreensão dos polos da linguagem (denotação/literal vs. conotação/figurado) e figuras de linguagem (metáfora, ironia).
 - **Colocação Pronominal Básica:** Conhecimento da regra de proibição de pronome oblíquo átono em início de oração ou imediatamente após pausa forte pontuada.
 
-### Mapa Conceitual Integrado
+#### Mapa Conceitual Integrado
 
 ```text
  SINAIS ESPECIAIS DE PONTUAÇÃO (esta unidade)
@@ -70,28 +70,26 @@ PERMITIDO PROIBIDO FUNÇÃO TEXTUAL SINTAXE ESTRITA HIERARQUIA 4 CASOS DE USO
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Regra Fundamental e Hipóteses de Emprego do Ponto e Vírgula
+### Regra Fundamental e Hipóteses de Emprego do Ponto e Vírgula
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **ponto e vírgula** (`;`) é um sinal de pontuação com valor de pausa intermediária entre a vírgula e o ponto final. Na norma culta e na jurisprudência das bancas de concurso, suas hipóteses legítimas de uso circunscrevem-se a duas funções: separar itens de uma **enumeração** dispostos em tópicos/alíneas e separar **orações coordenadas** (sindéticas ou assindéticas).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Enumerações Estruturadas:** Emprega-se para separar itens em listas, incisos legislativos ou enumerações complexas.
 2. **Orações Coordenadas:** Emprega-se para separar orações sintaticamente independentes entre si, especialmente quando as orações já contêm vírgulas internas ou estabelecem contraste acentuado (adversativas, conclusivas).
 3. **Equivalência e Reescritura:** O ponto e vírgula pode substituir o ponto final entre orações coordenadas para aproximar períodos com forte liame de sentido, ou substituir a vírgula para conferir maior clareza visual a períodos extensos.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - Identificar se a fronteira sintática ocorre entre elementos enumerados em lista ou entre orações independentes (coordenadas).
 - Se a oração subsequente iniciar por conjunção coordenativa (ex.: *porém, contudo, logo*) ou advérbio com valor coordenativo adversativo (ex.: *agora* = *mas*), o ponto e vírgula é plenamente admitido.
 
-### Exemplos
+#### Exemplos
 
 - *Enumeração:* `Trouxe do mercado: Frutas; Legumes; Pães.`
 - *Oração Coordenada:* `Dedica-se muito à empresa; não é, contudo, reconhecido.`
@@ -99,71 +97,71 @@ O **ponto e vírgula** (`;`) é um sinal de pontuação com valor de pausa inter
 
 ---
 
-## Proibição Categórica de Ponto e Vírgula em Orações Subordinadas e Estruturas Reduzidas
+### Proibição Categórica de Ponto e Vírgula em Orações Subordinadas e Estruturas Reduzidas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 É **terminantemente proibido** pela norma gramatical culta e considerado erro gravíssimo em concursos públicos utilizar o ponto e vírgula para separar uma oração subordinada de sua oração principal.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 O ponto e vírgula assinala uma fronteira sintática relativamente autônoma. Como a oração subordinada exerce função sintática essencial ou circunstancial em relação à principal, a separação por ponto e vírgula quebra indevidamente a subordinação sintática.
 
 - **O Mnemônico `$6C_s + FTP$`:** A vedação atinge categoricamente todas as orações subordinadas adverbiais:
- - **$6C_s$:** Causais, Comparativas, Concessivas, Condicionais, Conformativas, Consecutivas;
- - **F:** Finais;
- - **T:** Temporais;
- - **P:** Proporcionais.
+  - **$6C_s$:** Causais, Comparativas, Concessivas, Condicionais, Conformativas, Consecutivas;
+  - **F:** Finais;
+  - **T:** Temporais;
+  - **P:** Proporcionais.
 - **Estruturas Reduzidas e Preposicionadas:** O erro é frequentemente camuflado em orações reduzidas de particípio ou gerúndio e construções preposicionadas com valor causal implícito (ex.: *Obcecados por...*, *com a redução no nível...*).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - Aplicar a postura do **"farejador de subordinação"**: não olhar apenas a palavra antes do sinal, mas analisar a relação lógico-semântica do segmento seguinte.
 - Se houver relação de causa e efeito (*"O fato de [A] faz com que [B]"*), condição ou concessão, a troca de vírgula por ponto e vírgula está automaticamente incorreta.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Incorreto (Oração Reduzida Causal):* `Obcecados por conveniência; somos presas fáceis...` (Incorreto: o fato de estarmos obcecados é a causa de sermos presas fáceis).
 - *Incorreto (Construção Circunstancial Causal):* `O cenário se repete em 2013; com a redução no nível de água...` (Incorreto: a redução é a causa da repetição).
 
 ---
 
-## Interação Sintática entre Ponto e Vírgula e Colocação Pronominal
+### Interação Sintática entre Ponto e Vírgula e Colocação Pronominal
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A inserção de um ponto e vírgula no lugar de uma conjunção aditiva coordenativa (como "e") cria uma pausa forte que atua como início de período oracional, tornando **proibida a próclise** de pronomes oblíquos átonos imediatamente após a pontuação.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Na língua portuguesa culta, não se inicia oração por pronome oblíquo átono (*me, te, se, nos, vos, o, a, lhe*). Quando a banca propõe trocar a conjunção "e" por ponto e vírgula em frases como *"Acolhe-te quando vens e te deixa ir"*, a substituição gera a estrutura `...; te deixa ir`. Embora a coordenação admitisse o ponto e vírgula, a frase resultante incorre em vício de colocação pronominal (exigindo ênclise: `; deixa-te ir`).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 1. Verificar se as orações são coordenadas.
 2. Checar a primeira palavra após o ponto e vírgula proposto: se for pronome oblíquo átono sem fator de atração anterior, o item é gramaticalmente inválido.
 
 ---
 
-## Permutabilidade de Sinais de Pontuação em Estruturas Explicativas (Reescritura)
+### Permutabilidade de Sinais de Pontuação em Estruturas Explicativas (Reescritura)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Em questões de reescritura de frases, estruturas de natureza **explicativa, apositiva ou de esclarecimento** admitem a substituição mútua entre **vírgulas**, **parênteses**, **travessões**, **dois-pontos** e **ponto e vírgula** (este último desde que entre orações coordenadas), preservando a correção gramatical e a coerência textual.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Matriz de Permutabilidade Explicativa (#ANOTAAÍ):**
- - **Vírgulas** $\longleftrightarrow$ **Parênteses** $\longleftrightarrow$ **Travessões**
- - **Ponto Final / Vírgula** $\longrightarrow$ **Dois-Pontos** (quando introduz explicação)
- - **Ponto e Vírgula** $\longleftrightarrow$ **Travessão / Dois-Pontos** (em coordenação explicativa)
+  - **Vírgulas** $\longleftrightarrow$ **Parênteses** $\longleftrightarrow$ **Travessões**
+  - **Ponto Final / Vírgula** $\longrightarrow$ **Dois-Pontos** (quando introduz explicação)
+  - **Ponto e Vírgula** $\longleftrightarrow$ **Travessão / Dois-Pontos** (em coordenação explicativa)
 - **Nuances Estilísticas vs. Sentido Gramatical:** Embora travessões confiram maior ênfase expressiva e parênteses confiram caráter secundário/isolado, para as bancas de concurso (notadamente Cebraspe) essas variações estilísticas **não configuram alteração do sentido gramatical original nem prejuízo à coerência**.
 
 ---
 
-## Funções Discursivo-Textuais dos Dois-Pontos: Citação, Explicação e Enumeração
+### Funções Discursivo-Textuais dos Dois-Pontos: Citação, Explicação e Enumeração
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Os **dois-pontos** (`:`) cumprem três grandes funções discursivo-textuais em provas contemporâneas de concurso público:
 
@@ -171,7 +169,7 @@ Os **dois-pontos** (`:`) cumprem três grandes funções discursivo-textuais em 
 2. Introduzir **explicação ou esclarecimento**;
 3. Introduzir **enumeração**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **1. Citação / Discurso Direto:** Anuncia a reprodução literal da fala ou escrita de outrem, precedida de verbos de elocução (*afirmou, destacou, disse*) e acompanhada de aspas ou travessão.
 - **2. Explicação / Esclarecimento:** Introduz segmento que justifica, define, comprova ou parafraseia o termo ou oração antecedente (frequentemente funcionando como aposto explicativo).
@@ -179,9 +177,9 @@ Os **dois-pontos** (`:`) cumprem três grandes funções discursivo-textuais em 
 
 ---
 
-## Os Três Axiomas Semânticos dos Dois-Pontos
+### Os Três Axiomas Semânticos dos Dois-Pontos
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A análise textual dos dois-pontos em provas de alto nível (FGV, Cesgranrio, Vunesp, FCC, IBFC) fundamenta-se em três axiomas semânticos indispensáveis:
 
@@ -193,7 +191,7 @@ $$
 \end{aligned}
 $$
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Axioma 1 (Explicação $\neq$ Enumeração):** Toda enumeração cumpre papel explicativo amplo (pois detalhar itens esclarece o todo), mas nem toda explicação é enumeração. A **explicação pura** esclarece de forma unívoca o antecedente. A **enumeração** exige obrigatoriamente o desdobramento formal de um hiperônimo em **dois ou mais elementos** específicos componentes.
 2. **Axioma 2 (Explicação = Esclarecimento):** As bancas utilizam os termos "explicação" e "esclarecimento" como rigorosos sinônimos. Nenhuma questão válida colocará ambos concorrendo em alternativas opostas.
@@ -201,56 +199,56 @@ $$
 
 ---
 
-## Requisito Sintático de Oração: Presença Obrigatória de Verbo
+### Requisito Sintático de Oração: Presença Obrigatória de Verbo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Para que uma estrutura antes ou depois dos dois-pontos seja classificada como oração (ex.: "oração explicativa", "oração adversativa"), é requisito sintático indispensável a presença de um verbo ou locução verbal. Estruturas formadas unicamente por substantivos e adjetivos são frases nominais ou sintagmas nominais/aposto.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Ao analisar alternativas de concurso que afirmem que os dois-pontos estão "separando orações coordenadas adversativas" (como no título *Dia das Mães: pouca reivindicação e muito consumismo*), deve-se checar a existência de formas verbais. Na ausência de verbos, descarta-se de plano a alternativa, pois inexiste oração.
 
 ---
 
-## Regra Estrutural dos Dois-Pontos: Fechamento no Ponto Final e Proibição de Intercalação Medial
+### Regra Estrutural dos Dois-Pontos: Fechamento no Ponto Final e Proibição de Intercalação Medial
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Os dois-pontos possuem uma limitação sintático-estrutural estrita: **eles só podem introduzir segmentos que se encerrem no ponto final (`.`) do período**. É expressamente proibido abrir uma explicação ou citação no meio do período com dois-pontos e fechá-la com vírgula (`:...,`) ou travessão (`:... —`) para prosseguir a oração principal.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Pares de Pontuação:** Quem faz par com os dois-pontos é exclusivamente o ponto final (`:....`).
 - **Tratamento de Intercalações Mediais:** Se a explicação ou elemento acessório estiver intercalado no meio da oração, deve-se empregar obrigatoriamente sinais duplos simétricos:
- - Duas vírgulas: `,...,`
- - Dois travessões: `—... —`
- - Parênteses: `(... )`
+  - Duas vírgulas: `,...,`
+  - Dois travessões: `—... —`
+  - Parênteses: `(... )`
 - **Reescritura Terminal (Dois-Pontos $\longleftrightarrow$ Vírgula):** Quando em posição terminal, os dois-pontos podem ser livremente substituídos por vírgula sem alteração semântica.
 
 ---
 
-## Hierarquia das Aspas: Aspas Duplas versus Aspas Simples
+### Hierarquia das Aspas: Aspas Duplas versus Aspas Simples
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As **aspas duplas** (`" "`) são o padrão tipográfico geral da língua portuguesa para citações, destaques, desvios lexicais e sentido figurado. As **aspas simples** (`' '`) possuem uso estritamente subordinado: **são empregadas unicamente no interior de segmentos já delimitados por aspas duplas**, evitando a repetição de aspas duplas em um segundo nível hierárquico.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Se um período integral constitui uma citação direta (delimitada externamente por aspas duplas) e, dentro dessa fala citada, houver a necessidade de aspear um neologismo, termo coloquial, destaque ou estrangeirismo, esse termo interno recebe compulsoriamente aspas simples.
 
-### Exemplo
+#### Exemplo
 
 - `Fulano disse: "Quero ser 'concursado'!"`
- - `"..."` $\rightarrow$ Aspas duplas externas: isolam a citação direta de Fulano.
- - `'...'` $\rightarrow$ Aspas simples internas: conferem destaque ao termo dentro da citação.
+  - `"..."` $\rightarrow$ Aspas duplas externas: isolam a citação direta de Fulano.
+  - `'...'` $\rightarrow$ Aspas simples internas: conferem destaque ao termo dentro da citação.
 
 ---
 
-## Casos Gramaticais das Aspas: Citação Direta, Fala Oral, Discurso Direto e Mudança de Interlocutor
+### Casos Gramaticais das Aspas: Citação Direta, Fala Oral, Discurso Direto e Mudança de Interlocutor
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O primeiro e mais expressivo caso de uso das aspas é delimitar a voz de terceiros introduzida no texto, gerando a seguinte sinonímia técnica de prova:
 
@@ -258,7 +256,7 @@ $$
 \text{CITAÇÃO DIRETA} = \text{FALA} = \text{DISCURSO DIRETO} = \text{MUDANÇA DE INTERLOCUTOR}
 $$
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Transcrição Literal (Citação Direta):** Cópia *ipsissima verba* de segmento de obra ou texto de outrem, marcada compulsoriamente por aspas. Se o autor reescrever a ideia com suas próprias palavras sem aspas, trata-se de paráfrase/explicação autoral.
 2. **Marcação de Fala Oral / Entrevista:** Transcrição das palavras declaradas por um entrevistado/personagem.
@@ -267,30 +265,30 @@ $$
 
 ---
 
-## Aspas para Desvios Lexicais: Estrangeirismos (Critério VOLP), Neologismos, Arcaísmos e Gírias
+### Aspas para Desvios Lexicais: Estrangeirismos (Critério VOLP), Neologismos, Arcaísmos e Gírias
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As aspas são empregadas para assinalar elementos lexicais que não integram a norma culta vernácula contemporânea estabilizada: **estrangeirismos**, **neologismos**, **arcaísmos** e **expressões populares/gírias**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Estrangeirismos e o Critério do VOLP (ABL):**
- - Se o termo forasteiro já foi incorporado e oficializado no *Vocabulário Ortográfico da Língua Portuguesa* como palavra vernácula (ex.: *czar* = substantivo masculino; *internet*), o uso das aspas é dispensável.
- - Se o termo figurar com a rubrica de língua estrangeira (ex.: *delivery* = inglês/estrangeira), as aspas são obrigatórias na escrita formal.
- - **Regra de Ouro para Redação Discursiva:** Na dúvida se o vocábulo estrangeiro foi oficializado pelo VOLP, o candidato deve **aspeá-lo preventivamente**. O uso preventivo de aspas em termos incorporados não gera penalização, mas a omissão de aspas em estrangeirismo não oficializado acarreta perda direta de pontos.
+  - Se o termo forasteiro já foi incorporado e oficializado no *Vocabulário Ortográfico da Língua Portuguesa* como palavra vernácula (ex.: *czar* = substantivo masculino; *internet*), o uso das aspas é dispensável.
+  - Se o termo figurar com a rubrica de língua estrangeira (ex.: *delivery* = inglês/estrangeira), as aspas são obrigatórias na escrita formal.
+  - **Regra de Ouro para Redação Discursiva:** Na dúvida se o vocábulo estrangeiro foi oficializado pelo VOLP, o candidato deve **aspeá-lo preventivamente**. O uso preventivo de aspas em termos incorporados não gera penalização, mas a omissão de aspas em estrangeirismo não oficializado acarreta perda direta de pontos.
 2. **Neologismos:** Criações vocabulares recentes (ex.: *czaristas*, neologismo derivado por sufixação no português).
 3. **Arcaísmos e Gírias:** Termos em desuso histórico ou pertencentes ao jargão/coloquialismo que necessitam de sinalização metalinguística em textos formais.
 
 ---
 
-## Aspas para Destaque / Ênfase Semântica (Sinonímia de Prova)
+### Aspas para Destaque / Ênfase Semântica (Sinonímia de Prova)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As aspas podem ser empregadas com finalidade puramente metalinguística ou enfática, conferindo relevo tipográfico a uma palavra ou expressão em seu sentido denotativo estrito, sem conotação irônica, figurada ou desvio lexical.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - Em enunciados de concurso, consolida-se a tríade de equivalência operacional:
  $$
@@ -298,16 +296,16 @@ As aspas podem ser empregadas com finalidade puramente metalinguística ou enfá
  $$
 - O candidato não deve buscar distinções teóricas entre esses três verbos nas alternativas; a análise deve recair exclusivamente sobre o complemento que descreve o objeto destacado.
 
-### Exemplo
+#### Exemplo
 
 - *Diga-me "como" direi isso a ela.* (As aspas isolam o advérbio *"como"* unicamente para dar destaque ao núcleo da indagação).
 - Tirinha de Calvin: *O que é "nós"?* (Destaque metalinguístico ao vocábulo focalizado).
 
 ---
 
-## Aspas para Sentido Figurado / Conotativo / Relativização Semântica versus Ironia (Método das Setas)
+### Aspas para Sentido Figurado / Conotativo / Relativização Semântica versus Ironia (Método das Setas)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As bancas utilizam as aspas para indicar o desvio semântico do vocábulo em relação à sua acepção denotativa estrita. É mandatório distinguir **sentido figurado / conotativo (relativização semântica)** de **ironia**.
 
@@ -318,7 +316,7 @@ $$
 \end{aligned}
 $$
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Sentido Diverso do Usual / Relativização Semântica:** A palavra é transposta metaforicamente ou ganha significado atenuado/poético fora do dicionário (ex.: juízes que *"traduzem"* a fala dos réus para os autos $\rightarrow$ transposição de registro sociolinguístico; neto que é *"devolvido"* à avó $\rightarrow$ metáfora afetiva da infância). **Não há ironia**.
 2. **Ironia:** Figura discursiva que consiste em **dizer deliberadamente o contrário do que se pensa**. Não se confunde com brincadeira ou zoação coloquial.
@@ -326,9 +324,9 @@ $$
 
 ---
 
-## Distinção Semântico-Estilística: Sentido Conotativo (Figurado) versus Registro Coloquial (Popular)
+### Distinção Semântico-Estilística: Sentido Conotativo (Figurado) versus Registro Coloquial (Popular)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O uso de aspas para marcar **sentido conotativo (figurado)** e o uso para marcar **linguagem coloquial (popular/informal)** são categorias gramaticais absolutamente independentes e mutuamente excludentes nas provas de concurso:
 
@@ -336,12 +334,10 @@ $$
 \text{SENTIDO FIGURADO (CONOTATIVO)} \neq \text{LINGUAGEM COLOQUIAL (POPULAR)}
 $$
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Registro Coloquial (Popular):** Diz respeito à **adequação de registro**. Sinaliza marca de oralidade, gíria ou termo informal inserido no padrão culto (ex.: *"A 'gente' é feliz"* $\rightarrow$ *"a gente"* é termo coloquial/popular, mas seu sentido é 100% real/literal, referindo-se às pessoas que falam).
 - **Sentido Conotativo (Figurado):** Diz respeito ao **significado semântico**. Representa transposição metafórica (ex.: *"Você é uma 'flor'"* $\rightarrow$ *"flor"* pertence à norma padrão culta formal, mas opera em sentido conotativo/metafórico).
-
----
 
 ---
 
@@ -363,11 +359,9 @@ $$
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Algoritmo de Validação de Ponto e Vírgula e Trava de Próclise
+### Algoritmo de Validação de Ponto e Vírgula e Trava de Próclise
 
 ```text
  [ Proposta de Ponto e Vírgula ]
@@ -393,7 +387,7 @@ $$
 
 ---
 
-## Teste da Causa e Efeito para Identificação de Subordinação Oculta
+### Teste da Causa e Efeito para Identificação de Subordinação Oculta
 
 1. **Localizar a estrutura suspeita:** Segmentos iniciados por particípio, gerúndio ou preposições (*"Obcecados por..."*, *"Com a redução de..."*).
 2. **Aplicar a fórmula do nexo causal:** Substitua mentalmente a construção pela estrutura:
@@ -404,33 +398,33 @@ $$
 
 ---
 
-## Algoritmo dos Colchetes e Referente para Dois-Pontos
+### Algoritmo dos Colchetes e Referente para Dois-Pontos
 
 1. **Rastrear o Termo Antecedente (Referente):** Localize a palavra ou sintagma que precede os dois-pontos.
- - Contém verbo de elocução (*afirmou, destacou, disse*) seguido de aspas? $\rightarrow$ **Citação / Discurso Direto**.
- - É um termo genérico/hiperônimo (*muitos itens, vários fatores, três países*)? $\rightarrow$ Siga para o passo 3.
+  - Contém verbo de elocução (*afirmou, destacou, disse*) seguido de aspas? $\rightarrow$ **Citação / Discurso Direto**.
+  - É um termo genérico/hiperônimo (*muitos itens, vários fatores, três países*)? $\rightarrow$ Siga para o passo 3.
 
 2. **Isolar o Segmento Posterior:** Coloque entre colchetes `[...]` todo o bloco textual após os dois-pontos.
 3. **Teste de Enumeração:** O bloco entre colchetes desdobra o hiperônimo em uma lista coordenada de **dois ou mais elementos**?
- - **SIM:** Classificação = **Enumeração**.
- - **NÃO (apenas 1 elemento ou sem hiperônimo):** Classificação = **Explicação**.
+  - **SIM:** Classificação = **Enumeração**.
+  - **NÃO (apenas 1 elemento ou sem hiperônimo):** Classificação = **Explicação**.
 4. **Teste de Explicação / Esclarecimento:** O bloco `[...]` expressa uma unidade de sentido que justifica o antecedente?
- - Admite a inserção da conjunção **"pois"** ou **"já que"**?
- - **SIM:** Classificação = **Explicação / Esclarecimento**.
+  - Admite a inserção da conjunção **"pois"** ou **"já que"**?
+  - **SIM:** Classificação = **Explicação / Esclarecimento**.
 
 ---
 
-## Validação Sintática de Dois-Pontos: Posição Terminal vs. Intercalada
+### Validação Sintática de Dois-Pontos: Posição Terminal vs. Intercalada
 
 1. **Localizar o segmento explicativo:** Identifique o início e o fim da explicação introduzida por dois-pontos.
 2. **Verificar o encerramento do período:**
- - O segmento fecha diretamente no ponto final (`:....`)? $\rightarrow$ **Válido**.
- - O período continua após a explicação, exigindo fechamento com vírgula ou travessão (`:...,` ou `:... —`)? $\rightarrow$ **Terminantemente Inválido**.
+  - O segmento fecha diretamente no ponto final (`:....`)? $\rightarrow$ **Válido**.
+  - O período continua após a explicação, exigindo fechamento com vírgula ou travessão (`:...,` ou `:... —`)? $\rightarrow$ **Terminantemente Inválido**.
 3. **Substituição Corretiva para Intercalações:** Troque a estrutura por pares simétricos: `,...,` ou `—... —` ou `(... )`.
 
 ---
 
-## Método das Setas Contextuais para Diferenciação das Aspas
+### Método das Setas Contextuais para Diferenciação das Aspas
 
 ```text
  [ Palavra Aspeada Identificada ]
@@ -463,15 +457,13 @@ $$
 
 ---
 
-## Rastreamento de Autoria e Mudança de Interlocutor para Aspas
+### Rastreamento de Autoria e Mudança de Interlocutor para Aspas
 
 1. **Identificar o emissor do texto base:** Observe a assinatura/crédito ao final do texto.
 2. **Identificar o emissor do trecho entre aspas:** Verifique verbos declaratórios (*afirmou, salientava, descreveu*) ou conectivos de inclusão (*"também imaginou"*).
 3. **Confrontar as autorias:**
- - Se o emissor do trecho aspeado for entidade distinta do autor do texto base $\rightarrow$ Trata-se de **citação de outro autor / fala de terceiro / mudança de interlocutor**.
+  - Se o emissor do trecho aspeado for entidade distinta do autor do texto base $\rightarrow$ Trata-se de **citação de outro autor / fala de terceiro / mudança de interlocutor**.
 4. **Eliminação Vertical:** Descarte imediatamente alternativas concorrentes que afirmem "ressaltar opinião do próprio autor", "exprimir ironia" (sem sarcasmo) ou "expressão usada fora do contexto habitual".
-
----
 
 ---
 
@@ -488,7 +480,7 @@ $$
 
 ---
 
-### Tabela 8.2 — Explicação vs. Enumeração vs. Citação vs. Ideia Nova
+#### Tabela 8.2 — Explicação vs. Enumeração vs. Citação vs. Ideia Nova
 
 | Categoria Textual | Estrutura Semântica | Relação com o Antecedente | Marca Tipográfica / Teste |
 |:-------------------------------------- |:------------------------------------------------------------ |:--------------------------------------------------------------- |:--------------------------------------------------------- |
@@ -499,7 +491,7 @@ $$
 
 ---
 
-### Tabela 8.3 — Ironia vs. Sentido Figurado vs. Destaque vs. Coloquialismo
+#### Tabela 8.3 — Ironia vs. Sentido Figurado vs. Destaque vs. Coloquialismo
 
 | Função das Aspas | Natureza do Fenômeno | Requisito Textual Obrigatório | Exemplo Paradigmático |
 |:-------------------------------------- |:------------------------------------------------------- |:--------------------------------------------------------- |:------------------------------------------------- |
@@ -510,60 +502,58 @@ $$
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Cebraspe / Petrobras (2022) — Questão 77
+### Cebraspe / Petrobras (2022) — Questão 77
 
 - **Resolução:** A palavra "Agora" inicia oração coordenada adversativa (= *porém*). O ponto e vírgula pode separar orações coordenadas.
 - **Gabarito:** **CERTO**.
 
 ---
 
-## Cebraspe / TCE-AC (2021) — Questão 78
+### Cebraspe / TCE-AC (2021) — Questão 78
 
 - **Resolução:** "Obcecados por..." é oração reduzida de particípio com valor causal (*O fato de estarmos obcecados é a causa de sermos presas fáceis*). O ponto e vírgula é proibido em orações subordinadas.
 - **Gabarito:** **ERRADO**.
 
 ---
 
-## Cebraspe / DPE-DF (2022) — Questão 79
+### Cebraspe / DPE-DF (2022) — Questão 79
 
 - **Resolução:** A troca gera a estrutura `; te deixa ir`. O ponto e vírgula cria pausa forte, proibindo próclise no início da oração coordenada resultante (exigiria `; deixa-te ir`).
 - **Gabarito:** **ERRADO**.
 
 ---
 
-## Cebraspe / PC-DF (2021) — Questão 80
+### Cebraspe / PC-DF (2021) — Questão 80
 
 - **Resolução:** O período seguinte detalha e elucida o conteúdo do "problema sério". O uso de dois-pontos para introduzir explicação é plenamente correto.
 - **Gabarito:** **CERTO**.
 
 ---
 
-## Cebraspe / Ministério da Economia (2020) — Questão 81
+### Cebraspe / Ministério da Economia (2020) — Questão 81
 
 - **Resolução:** "Vejamos" funciona como anúncio explicativo do raciocínio subsequente. A substituição por dois-pontos (`Vejamos: se um bem...`) é canônica.
 - **Gabarito:** **CERTO**.
 
 ---
 
-## Cebraspe / SEFAZ-SE (2022) — Questão 82
+### Cebraspe / SEFAZ-SE (2022) — Questão 82
 
 - **Resolução:** A oração subsequente explica o significado de "Estado de direito". Ponto e vírgula, dois-pontos e travessão são permutáveis antes de segmentos explicativos.
 - **Gabarito:** **CERTO**.
 
 ---
 
-## Cebraspe / MME (2020) — Questão 83
+### Cebraspe / MME (2020) — Questão 83
 
 - **Resolução:** "com a redução..." atua como estrutura circunstancial adverbial causal. É proibido o uso de ponto e vírgula em subordinação causal.
 - **Gabarito:** **ERRADO**.
 
 ---
 
-## Cesgranrio / Banco do Brasil (2021) — Questão 04
+### Cesgranrio / Banco do Brasil (2021) — Questão 04
 
 - A) *A remuneração faz parte do conjunto...; ou seja: todos os ganhos...* (Explicação).
 - B) *...fazer parte da remuneração: muitos trabalhadores escolhem...* (Explicação/Causa).
@@ -574,28 +564,30 @@ $$
 
 ---
 
-## FCC / SANASA Campinas (2019) — Questão 05
+### FCC / SANASA Campinas (2019) — Questão 05
 
 - **Resolução:** O segmento elucida a motivação do nome "Geada", configurando esclarecimento (= explicação).
 - **Gabarito:** **Letra C**.
 
 ---
 
-## Vunesp / Pref. Guarulhos (2021) — Questão 06
+### Vunesp / Pref. Guarulhos (2021) — Questão 06
 
 - **Resolução:** No penúltimo parágrafo há aspas e verbo *dicendi*, configurando citação direta/transcrição. No último parágrafo, o autor explica o veredito com suas próprias palavras sem aspas, configurando esclarecimento/paráfrase autoral (e não citação direta ou ideia nova).
 - **Gabarito:** **Letra A** (*no penúltimo introduzem citação; no último, um esclarecimento*).
 
 ---
 
-## IBFC / MGS (2022) — Questão 07
+### IBFC / MGS (2022) — Questão 07
 
-- **Resolução:** Não há verbos (elimina B). A conjunção "e" liga substantivos que formam uma explicação global da data, sem hiperônimo desdobrado (elimina D).
+- **Resolução:** Não há verbos (elimina
+B). A conjunção "e" liga substantivos que formam uma explicação global da data, sem hiperônimo desdobrado (elimina
+D).
 - **Gabarito:** **Letra C**.
 
 ---
 
-## Comparativo Estrutural de Dois-Pontos
+### Comparativo Estrutural de Dois-Pontos
 
 - **Estrutura Válida (Terminal):** *“Os jogos deste ano já produziram uma nova modalidade olímpica: apagamento de tocha.”* (Termina no ponto final).
 - **Estrutura Inválida (Intercalada):** *“Os jogos deste ano já produziram uma nova modalidade olímpica: apagamento de tocha, que provocou polêmicas, ontem.”* (Proibido fechar com vírgula).
@@ -603,60 +595,58 @@ $$
 
 ---
 
-## Aspas em Estrangeirismos e Neologismos
+### Aspas em Estrangeirismos e Neologismos
 
 - *"czar":* Vocábulo de origem russa (estrangeirismo).
 - *"czaristas":* Criação morfológica vernácula por derivação sufixal sobre radical estrangeiro (neologismo).
 
 ---
 
-## IBFC / MGS (2021) — Questão 08
+### IBFC / MGS (2021) — Questão 08
 
 - **Resolução:** O texto é de um articulista e a frase aspeada pertence ao governo Médici. As aspas delimitam a citação de outro autor (mudança de interlocutor).
 - **Gabarito:** **Letra D** (*Delimita uma citação de outro autor*).
 
 ---
 
-## Vunesp / Pref. Taubaté (2022) — Questão 09
+### Vunesp / Pref. Taubaté (2022) — Questão 09
 
 - **Resolução:** Trata-se do depoimento oral de um gari concedido em entrevista a uma reportagem. Não é citação de obra escrita, mas sim a marcação da fala de alguém (discurso direto).
 - **Gabarito:** **Letra B** (*Marcar a fala de alguém*).
 
 ---
 
-## Vunesp / PC-SP (2022) — Questão 10
+### Vunesp / PC-SP (2022) — Questão 10
 
 - **Resolução:** No 1º quadrinho, as aspas indicam citação de frase lida de livro; no 2º quadrinho, as aspas conferem destaque metalinguístico à palavra *"nós"*.
 - **Gabarito:** **Letra C**.
 
 ---
 
-## FCC / SABESP — Questão 11
+### FCC / SABESP — Questão 11
 
 - **Resolução:** O advérbio *"também"* mantém a conexão com as criações de Júlio Verne descritas antes. As aspas em *"fonotelefoto"* sinalizam conceito citado da obra de Júlio Verne.
 - **Gabarito:** **Letra C** (*Citada da obra de Júlio Verne*).
 
 ---
 
-## Vunesp / Câmara de Suzano (2022) — Questão 12
+### Vunesp / Câmara de Suzano (2022) — Questão 12
 
 - **Resolução:** A criança não é mercadoria passível de devolução literal. O termo ganha conotação poética e afetiva. As aspas relativizam o significado da palavra (sentido figurado).
 - **Gabarito:** **Letra C** (*Relativiza o significado da palavra*).
 
 ---
 
-## Exemplos Paradigmáticos de Registro vs. Semântica
+### Exemplos Paradigmáticos de Registro vs. Semântica
 
 - **Caso A (Coloquial / Registro Popular):** *“A 'gente' é feliz.”* (As aspas assinalam marca de oralidade informal; o sentido é denotativo/real).
 - **Caso B (Sentido Figurado / Conotativo):** *“Você é uma 'flor'.”* (As aspas assinalam metáfora; o termo *"flor"* pertence à norma padrão culta).
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Mnemônico `$6C_s + FTP$` para Orações Subordinadas Adverbiais
+### O Mnemônico `$6C_s + FTP$` para Orações Subordinadas Adverbiais
 
 - **$6C_s$:** **C**ausais, **C**omparativas, **C**oncessivas, **C**ondicionais, **C**onformativas, **C**onsecutivas.
 - **F:** **F**inais.
@@ -665,37 +655,37 @@ $$
 
 ---
 
-## Teste da Causa e Efeito ("O fato de... faz com que...")
+### Teste da Causa e Efeito ("O fato de... faz com que...")
 
 Para descobrir subordinação causal escondida em orações reduzidas ou preposicionadas, encaixe na fórmula: *"O fato de [Causa] faz com que [Efeito]"*. Se funcionar perfeitamente, rejeita ponto e vírgula.
 
 ---
 
-## O Teste da Conjunção "Pois" para Explicação pós-Dois-Pontos
+### O Teste da Conjunção "Pois" para Explicação pós-Dois-Pontos
 
 Substitua mentalmente os dois-pontos por **"pois"** ou **"já que"**. Se mantiver a fluidez e a coerência imediata, confirma-se o valor explicativo/justificativo.
 
 ---
 
-## Teste do Hiperônimo para Identificar Enumeração
+### Teste do Hiperônimo para Identificar Enumeração
 
 Só marque enumeração se o termo antecedente for um conjunto genérico (*itens, fatores, elementos*) e o segmento seguinte contiver **dois ou mais componentes coordenados**.
 
 ---
 
-## Regra Preventiva de Estrangeirismos na Redação Discursiva
+### Regra Preventiva de Estrangeirismos na Redação Discursiva
 
 Como não há acesso ao VOLP durante a prova discursiva, **na dúvida, aspeie o estrangeirismo**. O uso preventivo de aspas em palavras já incorporadas é interpretado como ênfase facultativa (sem desconto), mas omitir aspas em termo não oficializado acarreta penalização gramatical.
 
 ---
 
-## Mnemônico "As Setas Salvam" para Identificar Ironia
+### Mnemônico "As Setas Salvam" para Identificar Ironia
 
 Ligue a palavra aspeada ao termo textual com o qual ela se relaciona. Só assinale ironia se a palavra conectada desmentir frontalmente o sentido literal da palavra aspeada (ex.: *brilhante* $\longrightarrow$ *asneira*).
 
 ---
 
-## Fórmulas de Sinonímia Recorrentes em Provas
+### Fórmulas de Sinonímia Recorrentes em Provas
 
 - $\text{Destacar} = \text{Enfatizar} = \text{Ressaltar}$
 - $\text{Relativizar o Significado} = \text{Sentido Figurado} = \text{Sentido Conotativo} \neq \text{Sentido Literal}$
@@ -703,64 +693,60 @@ Ligue a palavra aspeada ao termo textual com o qual ela se relaciona. Só assina
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## A Pegadinha da Próclise Proibida pós-Ponto e Vírgula
+### A Pegadinha da Próclise Proibida pós-Ponto e Vírgula
 
 - **Risco:** Concluir precipitadamente que a troca de "e" por ponto e vírgula está certa apenas porque as orações são coordenadas.
 - **Armadilha:** A frase resultante pode deixar um pronome oblíquo átono iniciando a oração (ex.: `; te deixa ir`), incorrendo em erro de colocação pronominal.
 
 ---
 
-## O Falso Mito da Mudança de Sentido por Travessões e Parênteses
+### O Falso Mito da Mudança de Sentido por Travessões e Parênteses
 
 - **Risco:** Julgar que trocar vírgulas por travessões ou parênteses em trechos explicativos invalida o item sob alegação de que "travessão dá mais ênfase". Para as bancas, nuances expressivas não configuram alteração do sentido gramatical.
 
 ---
 
-## A Armadilha da "Ideia Nova" e da "Ampliação Temática"
+### A Armadilha da "Ideia Nova" e da "Ampliação Temática"
 
 - **Risco:** Assinalar que a explicação após dois-pontos introduz "ideia nova". Explicar é *dizer o mesmo*; a explicação situa-se rigorosamente dentro do campo conceitual já delimitado pelo antecedente.
 
 ---
 
-## A Falsa Enumeração Provocada pelo Conectivo "E"
+### A Falsa Enumeração Provocada pelo Conectivo "E"
 
 - **Risco:** Ver dois substantivos ligados por "e" após dois-pontos (ex.: *Dia das Mães: pouca reivindicação e muito consumismo*) e marcar enumeração. Se os termos não desdobrarem um hiperônimo antecedente, trata-se de uma explicação com dois núcleos.
 
 ---
 
-## Assertivas sobre "Orações" sem a Presença de Verbo
+### Assertivas sobre "Orações" sem a Presença de Verbo
 
 - **Risco:** Aceitar alternativas que mencionam "separação de orações coordenadas" em títulos ou frases nominais desprovidas de verbos.
 
 ---
 
-## Erro de Fechamento de Dois-Pontos em Intercalações
+### Erro de Fechamento de Dois-Pontos em Intercalações
 
 - **Risco:** Iniciar explicação no meio do período com dois-pontos e fechá-la com vírgula ou travessão (`:...,`). Dois-pontos só formam par com ponto final.
 
 ---
 
-## Falácia da "Ironia Universal" nas Aspas
+### Falácia da "Ironia Universal" nas Aspas
 
 - **Risco:** Marcar automaticamente "ironia" para qualquer vocábulo aspeado. A grande maioria das ocorrências em prova expressa sentido figurado, destaque ou neologismo.
 
 ---
 
-## Confusão entre Sentido Conotativo e Registro Coloquial
+### Confusão entre Sentido Conotativo e Registro Coloquial
 
 - **Risco:** Tratar informalidade como figura de linguagem. Termos coloquiais (como *"a gente"*) podem operar em sentido perfeitamente literal.
 
 ---
 
-## Distinção entre Citação de Texto Escrito e Fala Oral de Entrevistado
+### Distinção entre Citação de Texto Escrito e Fala Oral de Entrevistado
 
 - **Risco:** Marcar "citação de outro texto" para declarações orais de pessoas entrevistadas em matérias jornalísticas (*"fala de alguém"*).
-
----
 
 ---
 
@@ -780,8 +766,6 @@ Ligue a palavra aspeada ao termo textual com o qual ela se relaciona. Só assina
 - ** — Ironia:** Figura discursiva caracterizada por expressar o oposto daquilo que se pensa, atestada por contradição textual explícita .
 - ** — Registro Coloquial (Linguagem Popular):** Variedade informal espontânea com marcas de oralidade inserida no padrão culto formal .
 - ** — Estrangeirismo e VOLP:** Palavra de idioma estrangeiro cuja obrigatoriedade de aspas depende de sua integração como termo vernáculo no Vocabulário Ortográfico da Língua Portuguesa da ABL .
-
----
 
 ---
 

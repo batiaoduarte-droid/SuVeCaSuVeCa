@@ -46,7 +46,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Noções basilares de flexão e modos verbais: **Modo Indicativo** (certeza, fato concreto no tempo) e **Modo Subjuntivo** (hipótese, dúvida, eventualidade, condição ou concessão).
 - Conceito de termos anafóricos e coesão referencial (pronomes demonstrativos *este*, *aquele*).
 
-### Mapa Integrado de Conhecimento
+#### Mapa Integrado de Conhecimento
 
 ```text
  CONJUNÇÕES SUBORDINATIVAS
@@ -80,17 +80,15 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Fundamentos Sintáticos das Conjunções Subordinativas
+### Fundamentos Sintáticos das Conjunções Subordinativas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As **conjunções subordinativas** são conectivos que ligam orações estabelecendo entre elas uma relação de **dependência sintática**. A oração introduzida pela conjunção exerce uma função sintática essencial (substantiva ou adverbial) em relação à oração principal, opondo-se às conjunções coordenativas (que ligam orações sintaticamente autônomas).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 No contexto de concursos públicos, as bancas concentram a cobrança na classificação semântica e funcional da conjunção. A taxonomia divide-se rigorosamente em dois grandes grupos:
 
@@ -102,18 +100,18 @@ No contexto de concursos públicos, as bancas concentram a cobrança na classifi
 
 ---
 
-## Conjunções Integrantes e o Teste Diagnóstico do "ISSO"
+### Conjunções Integrantes e o Teste Diagnóstico do "ISSO"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As **conjunções integrantes** (`que`, `se`) introduzem orações subordinadas substantivas (sujeito, objeto direto, objeto indireto, complemento nominal, predicativo ou aposto) e **não possuem valor semântico intrínseco**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Mecanismo de Substituição Nominal:** Para comprovar que o conectivo é integrante, substitui-se toda a oração subordinada por ele iniciada pelo pronome demonstrativo neutro **"ISSO"** (ou pelas formas preposicionadas **"DISSO"** / **"NISSO"**). Se a frase permanecer gramaticalmente íntegra, o conectivo é integrante.
 - **Inexistência de Sentido:** Bancas examinadoras frequentemente tentam atribuir falso valor semântico (como "causa", "condição" ou "hipótese") ao `que` ou `se` integrante. Essa assertiva é invariavelmente errada.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *"É possível [que eu me atrase]."* $\rightarrow$ *"É possível [ISSO]."* (`que` = Conjunção Integrante).
 - *"Tenho necessidade [de que você venha]."* $\rightarrow$ *"Tenho necessidade [DISSO]."* (`que` = Conjunção Integrante).
@@ -121,13 +119,13 @@ As **conjunções integrantes** (`que`, `se`) introduzem orações subordinadas 
 
 ---
 
-## Conjunções Adverbiais e o Mnemônico 6Cs + FTP
+### Conjunções Adverbiais e o Mnemônico 6Cs + FTP
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As **conjunções subordinativas adverbiais** introduzem orações que funcionam como adjuntos adverbiais da oração principal, totalizando **9 circunstâncias semânticas** sintetizadas pela fórmula mnemônica **`6Cs + FTP`**.
 
-### As 9 Circunstâncias Adverbiais
+#### As 9 Circunstâncias Adverbiais
 
 1. **C**oncessivas
 2. **C**ondicionais
@@ -139,7 +137,7 @@ As **conjunções subordinativas adverbiais** introduzem orações que funcionam
 8. **T**emporais
 9. **P**roporcionais
 
-### Metodologia Didática: "Entender e Decorar"
+#### Metodologia Didática: "Entender e Decorar"
 
 A metodologia exige entender a lógica circunstancial que conecta as orações e simultaneamente memorizar a lista dos conectivos típicos de cada grupo para agilidade em provas.
 
@@ -148,19 +146,19 @@ A metodologia exige entender a lógica circunstancial que conecta as orações e
 
 ---
 
-## Conjunções Concessivas e a Regência do Modo Subjuntivo
+### Conjunções Concessivas e a Regência do Modo Subjuntivo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As **conjunções concessivas** operam no campo semântico da **oposição, ressalva e quebra de expectativa**, introduzindo um fato ou obstáculo que, embora real ou admitido, **não é suficiente para impedir** a concretização da oração principal.
 
-### Regras e Conectivos Típicos
+#### Regras e Conectivos Típicos
 
 - **Conectivos Fixos e Permutáveis:** *embora*, *conquanto*, *ainda que*, *por mais que*, *posto que*, *apesar de que*, *mesmo que*, *se bem que*.
 - **Exigência Gramatical do Subjuntivo:** As orações subordinadas concessivas exigem obrigatoriamente o verbo no **Modo Subjuntivo** (ex.: *"Embora fosse tarde..."*, *"Por mais que pareça..."*, *"Ainda que tenha passado..."*).
 - **Invariabilidade Semântica:** Conectivos como *por mais que* e *ainda que* são intrinsecamente concessivos e **jamais exprimem condição**.
 
-### Exemplos Analisados
+#### Exemplos Analisados
 
 - *"Embora **fosse** tarde, fomos visitá-lo."* (O adiantado da hora não impediu a visita).
 - *"A resistência fiscal, **por mais que pareça** natural, teve proporções menores..."* (*por mais que* = *embora*).
@@ -168,19 +166,19 @@ As **conjunções concessivas** operam no campo semântico da **oposição, ress
 
 ---
 
-## Conjunções Condicionais e a Semântica da Hipótese
+### Conjunções Condicionais e a Semântica da Hipótese
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As **conjunções condicionais** introduzem uma oração subordinada que expressa uma **hipótese ou precondição indispensável** para que o fato da oração principal ocorra.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Hipótese vs Fato:** A condição não trata de um evento consumado no tempo, mas de uma possibilidade eventual. Por essa razão, as orações condicionais articulam-se frequentemente com verbos no **Modo Subjuntivo**.
 - **Conectivos Típicos:** *se*, *caso*, *contanto que*, *desde que* (+ subjuntivo), *salvo se*, *sem que*.
 - **Contanto que:** É uma locução conjuntiva de valor estritamente condicional (= *se*, *caso*), não admitindo uso causal.
 
-### Exemplos Analisados
+#### Exemplos Analisados
 
 - *"Se precisar de minha ajuda, telefone-me."*
 - *"Caso encontre o documento, entregue ao diretor."*
@@ -188,52 +186,52 @@ As **conjunções condicionais** introduzem uma oração subordinada que express
 
 ---
 
-## Conjunções Conformativas e a Ideia de Acordo
+### Conjunções Conformativas e a Ideia de Acordo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As **conjunções conformativas** expressam a ideia de **conformidade, consonância ou acordo** de um fato com uma regra, modelo, declaração ou planejamento prévio.
 
-### Conectivos e Âncora Prática
+#### Conectivos e Âncora Prática
 
 - **Conectivos Principais:** *conforme*, *como* (com sentido de conforme), *segundo*, *consoante*.
 - **Âncora de Reconhecimento:** A oração conformativa equivale a expressões como *"de acordo com"* ou à fórmula prática e mnemônica **"nos conformes de"**.
 
-### Exemplo Analisado
+#### Exemplo Analisado
 
 - *"O ataque ocorreu **como** tínhamos planejado."* $\rightarrow$ *"O ataque ocorreu **conforme** tínhamos planejado / nos conformes do planejamento."*
 
 ---
 
-## Conjunções Finais e o Mantra do Referente Posterior
+### Conjunções Finais e o Mantra do Referente Posterior
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As **conjunções finais** introduzem uma oração subordinada que expressa o **alvo, o objetivo ou a finalidade** visada pela realização da ação da oração principal.
 
-### O Mantra do Referente Posterior (Regra de Ouro)
+#### O Mantra do Referente Posterior (Regra de Ouro)
 
 > **"A conjunção recebe o nome da ideia que vem DEPOIS dela!"**
 
 Para identificar o valor do conectivo, isola-se a oração que vem imediatamente após a conjunção e define-se a sua relação funcional com a oração principal.
 
-### Conectivos Típicos e Aplicação
+#### Conectivos Típicos e Aplicação
 
 - **Conectivos:** *para que*, *a fim de que*, *porque* (quando substituível por *para que*).
 - **Exemplo:** *"Toque o sinal [para que todos entrem no salão]."*
- - O que vem DEPOIS de `para que` (*"todos entrem no salão"*) é o **objetivo** de tocar o sinal. Conexão = **Final**.
+  - O que vem DEPOIS de `para que` (*"todos entrem no salão"*) é o **objetivo** de tocar o sinal. Conexão = **Final**.
 
 - **Mantra:**
 
 ---
 
-## Conjunções Proporcionais e a Invariabilidade de "À Medida Que"
+### Conjunções Proporcionais e a Invariabilidade de "À Medida Que"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As **conjunções proporcionais** estabelecem uma relação de **simultaneidade e variação gradual concomitante** (direta ou inversa) entre o fato da oração subordinada e o da principal.
 
-### Conectivos e Fixidez Semântica
+#### Conectivos e Fixidez Semântica
 
 - **Conectivos Principais:** *à medida que*, *à proporção que*, *ao passo que*, *quanto mais... mais*, *quanto mais... menos*.
 - **Invariabilidade de "à medida que":** A locução *à medida que* possui valor semântico unívoco e estritamente proporcional em provas de concurso.
@@ -241,42 +239,42 @@ As **conjunções proporcionais** estabelecem uma relação de **simultaneidade 
 
 ---
 
-## Conjunções Temporais e a Marcação do Ponto de Partida
+### Conjunções Temporais e a Marcação do Ponto de Partida
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As **conjunções temporais** indicam o **momento, a época ou o marco cronológico** em que ocorre o fato da oração principal, respondendo à indagação **"Quando?"**.
 
-### Conectivos e Estrutura Verbal
+#### Conectivos e Estrutura Verbal
 
 - **Conectivos Principais:** *quando*, *enquanto*, *assim que*, *logo que*, *todas as vezes que*, *desde que* (+ verbo no indicativo), *desde quando*, *desde o momento em que*.
 - **Marcação Verbal:** Quando indicam fatos reais ou marcos temporais já iniciados, as orações temporais regem verbos no **Modo Indicativo** (ex.: *"Não a vejo desde que me mudei"* / *"Desde que a urna foi adotada..."*).
 
 ---
 
-## Conjunções Comparativas e a Distinção Conector vs Advérbio
+### Conjunções Comparativas e a Distinção Conector vs Advérbio
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As **conjunções comparativas** estabelecem um confronto de igualdade, superioridade ou inferioridade entre elementos ou ações de orações distintas.
 
-### Rigor Gramatical do Conectivo
+#### Rigor Gramatical do Conectivo
 
 Em estruturas comparativas correlatas (como *"mais... que"*, *"menos... do que"*), **a conjunção subordinativa propriamente dita é apenas a palavra "QUE"** (ou *como*). Os termos antecedentes (*mais*, *menos*, *melhor*, *pior*) são **advérbios de intensidade** que funcionam como correlatos sintáticos.
 
-### Exemplo Analisado
+#### Exemplo Analisado
 
 - *"O jogo de hoje será mais difícil que o de ontem."* $\rightarrow$ `mais` = advérbio; `que` = conjunção subordinativa comparativa.
 
 ---
 
-## Conjunções Causais e a Distinção Semântica Causal/Explicativa
+### Conjunções Causais e a Distinção Semântica Causal/Explicativa
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As **conjunções causais** introduzem a oração que expressa a **causa, a razão, o motivo gerador ou a justificativa** que provocou a ocorrência do fato expresso na oração principal.
 
-### Conectivos e Incompatibilidades
+#### Conectivos e Incompatibilidades
 
 - **Conectivos Principais:** *porque*, *porquanto*, *já que*, *visto que*, *como* (anteposto), *uma vez que* (em contexto explicativo).
 - **Porquanto vs Conquanto:** *Porquanto* é estritamente **Causal** (= *porque*). Jamais deve ser confundido com *Conquanto*, que é **Concessivo** (= *embora*).
@@ -284,13 +282,13 @@ As **conjunções causais** introduzem a oração que expressa a **causa, a raz�
 
 ---
 
-## Conjunções Consecutivas e a Estrutura Intensificadora
+### Conjunções Consecutivas e a Estrutura Intensificadora
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As **conjunções consecutivas** introduzem uma oração subordinada que expressa o **efeito, o resultado ou a consequência** gerada pelo fato da oração principal.
 
-### Estrutura Típica em Concursos
+#### Estrutura Típica em Concursos
 
 A oração consecutiva estrutura-se tipicamente pelo conectivo **`QUE`** correlacionado a um termo **intensificador** presente na oração principal (**TÃO**, **TANTO**, **TAL**, **TAMANHO**):
 
@@ -298,27 +296,27 @@ $$
 \text{Intensificador (Tão / Tanto / Tal / Tamanho)} \dots + \text{Conector } \mathbf{QUE} \rightarrow \text{Oração Consecutiva (Resultado)}
 $$
 
-### Exemplos Analisados
+#### Exemplos Analisados
 
 - *"Estudou **tanto** durante a noite [**que** dormiu na hora do exame]."* (Dormir foi a consequência do excesso de estudo).
 - *"**Tal** foi a emoção [**que** desmaiou]."* (O desmaio foi o efeito da intensa emoção).
 
 ---
 
-## Polissemia da Locução "Uma Vez Que"
+### Polissemia da Locução "Uma Vez Que"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A locução conjuntiva **"uma vez que"** é polissêmica, podendo assumir valor **causal/explicativo** (= *porque*, *já que*) ou valor **condicional** (= *se*, *desde que* + subjuntivo).
 
-### Teste do Pós-Conectivo para Resolução
+#### Teste do Pós-Conectivo para Resolução
 
 Para identificar o valor exato no texto, examina-se o fato que se segue à locução:
 
 1. **Fato Gerador / Motivo Passado ou Presente:** Se a oração posterior explicar a razão do fato principal, trata-se de **Causal / Explicativa** (*"Chorou, uma vez que caiu"* $\rightarrow$ Cair é a causa de chorar).
 2. **Exigência Futura / Hipótese:** Se a oração posterior trouxer uma condição para a ocorrência da oração principal com verbo no subjuntivo, trata-se de **Condicional** (*"Passará, uma vez que estude"* $\rightarrow$ Estudar é a condição para passar).
 
-### Incompatibilidade com "Contanto Que"
+#### Incompatibilidade com "Contanto Que"
 
 Como *contanto que* é estritamente condicional, ela **não pode substituir** *uma vez que* quando esta tiver sentido causal/explicativo no texto (caso da questão do SERPRO).
 
@@ -326,26 +324,24 @@ Como *contanto que* é estritamente condicional, ela **não pode substituir** *u
 
 ---
 
-## Polissemia da Locução "Desde Que" e a Regra "O Verbo Salva"
+### Polissemia da Locução "Desde Que" e a Regra "O Verbo Salva"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A locução conjuntiva **"desde que"** possui dupla classificação semântica: pode exprimir **Condição** (hipótese) ou **Tempo** (marco cronológico inicial). O modo verbal da oração subordinada atua como marcador gramatical resolutivo ("O verbo salva").
 
-### Matriz Diagnóstica Resolutiva
+#### Matriz Diagnóstica Resolutiva
 
 | Valor Semântico | Sentido / Equivalência | Modo Verbal Obrigatório | Exemplos Canônicos |
 |:------------------- |:----------------------------------------------- |:------------------------------- |:--------------------------------------------------------------------------------------------------------------------------------- |
 | **Condição** | *se*, *caso*, *contanto que* | **SUBJUNTIVO** (hipótese) | *"Tudo correrá bem, desde que os combinados **sejam** cumpridos."**"Vamos ao parque, desde que não **chova**."* |
 | **Tempo** | *desde quando*, *a partir do momento em que* | **INDICATIVO** (fato real) | *"Não a vejo desde que me **mudei**."**"Fenômenos extremos aumentaram desde que **entramos** no novo milênio."* |
 
-### A Regra de Ouro "O Verbo Salva"
+#### A Regra de Ouro "O Verbo Salva"
 
 Em textos longos ou interpretativamente densos do Cebraspe, a verificação do modo verbal da oração posterior elimina dúvidas subjetivas: a presença de verbo no Modo Indicativo invalida categoricamente qualquer alegação de relação condicional.
 
 - **Dica operacional:**
-
----
 
 ---
 
@@ -370,42 +366,40 @@ A tabela abaixo sintetiza as formulações canônicas consolidadas no grupo `est
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Algoritmo Geral de Classificação de Conjunções Subordinativas
+### Algoritmo Geral de Classificação de Conjunções Subordinativas
 
 1. **Passo 1 — Identificação do Conectivo:** Localize o conectivo subordinativo destacado na oração.
 2. **Passo 2 — Teste da Conjunção Integrante ("ISSO"):** Substitua toda a oração introduzida pelo conectivo pelo pronome **ISSO** (ou *disso* / *nisso*).
- - *Se a troca for perfeita:* Trata-se de **Conjunção Integrante** (`que`, `se`). Conclua que **não possui valor semântico** e rejeite alternativas que atribuam sentido de causa, condição ou tempo.
- - *Se a troca não for possível:* Trata-se de **Conjunção Adverbial**. Avance para o Passo 3.
+  - *Se a troca for perfeita:* Trata-se de **Conjunção Integrante** (`que`, `se`). Conclua que **não possui valor semântico** e rejeite alternativas que atribuam sentido de causa, condição ou tempo.
+  - *Se a troca não for possível:* Trata-se de **Conjunção Adverbial**. Avance para o Passo 3.
 3. **Passo 3 — Aplicação do Mantra do Referente Posterior:** Isole a oração que vem imediatamente **depois** do conectivo e determine o papel que ela exerce em relação à oração principal.
 4. **Passo 4 — Enquadramento no Mnemônico `6Cs + FTP`:**
- - Exceção que não impede a ação principal + Subjuntivo? $\rightarrow$ **Concessiva**.
- - Hipótese / condição indispensável? $\rightarrow$ **Condicional**.
- - Acordo / modelo prévio ("nos conformes")? $\rightarrow$ **Conformativa**.
- - Objetivo / alvo a ser alcançado? $\rightarrow$ **Final**.
- - Variação concomitante e gradual? $\rightarrow$ **Proporcional**.
- - Momento / ponto cronológico inicial? $\rightarrow$ **Temporal**.
- - Confronto entre dois termos? $\rightarrow$ **Comparativa**.
- - Motivo gerador do fato principal? $\rightarrow$ **Causal**.
- - Efeito decorrente de termo intensificador (*tão... que*)? $\rightarrow$ **Consecutiva**.
+  - Exceção que não impede a ação principal + Subjuntivo? $\rightarrow$ **Concessiva**.
+  - Hipótese / condição indispensável? $\rightarrow$ **Condicional**.
+  - Acordo / modelo prévio ("nos conformes")? $\rightarrow$ **Conformativa**.
+  - Objetivo / alvo a ser alcançado? $\rightarrow$ **Final**.
+  - Variação concomitante e gradual? $\rightarrow$ **Proporcional**.
+  - Momento / ponto cronológico inicial? $\rightarrow$ **Temporal**.
+  - Confronto entre dois termos? $\rightarrow$ **Comparativa**.
+  - Motivo gerador do fato principal? $\rightarrow$ **Causal**.
+  - Efeito decorrente de termo intensificador (*tão... que*)? $\rightarrow$ **Consecutiva**.
 
 ---
 
-## Roteiro de Julgamento de Reescritura e Substituição de Conectivos
+### Roteiro de Julgamento de Reescritura e Substituição de Conectivos
 
 1. **Passo 1 — Identificar o Par Conectivo Original $\times$ Conectivo Proposto:** Destaque o termo no texto original e a sugestão de substituição feita pela banca examinadora.
 2. **Passo 2 — Análise da Família Semântica:**
- - Conectivos da mesma família unívoca (ex.: *Embora* $\leftrightarrow$ *Ainda que* $\leftrightarrow$ *Por mais que*): A substituição **mantém a correção e o sentido original**.
- - Conectivos de famílias inconciliáveis (ex.: Causal *porque* $\leftrightarrow$ Concessiva *conquanto*): O item é imediatamente **ERRADO**.
+  - Conectivos da mesma família unívoca (ex.: *Embora* $\leftrightarrow$ *Ainda que* $\leftrightarrow$ *Por mais que*): A substituição **mantém a correção e o sentido original**.
+  - Conectivos de famílias inconciliáveis (ex.: Causal *porque* $\leftrightarrow$ Concessiva *conquanto*): O item é imediatamente **ERRADO**.
 3. **Passo 3 — Verificação da Regência do Modo Verbal:** Verifique se a troca mantém a compatibilidade modal exigida. Concessivas (*embora*, *ainda que*) e condicionais (*caso*, *contanto que*) exigem verbo no **Subjuntivo**.
 4. **Passo 4 — Checagem de Conectivos Polissêmicos:** Se a substituição envolver conectivos como *uma vez que* ou *desde que*, execute o protocolo diagnóstico específico .
 
 ---
 
-## Protocolo Diagnóstico de Polissemia ("O Verbo Salva")
+### Protocolo Diagnóstico de Polissemia ("O Verbo Salva")
 
 ```text
  CONECTIVO POLISSÊMICO NO TEXTO
@@ -431,8 +425,6 @@ contanto desde o momento EXPLICATIVO (= se, contanto
 
 ---
 
----
-
 ## Contrastes que a prova explora
 
 ### Tabela de Contrastes Fundamentais
@@ -447,11 +439,9 @@ contanto desde o momento EXPLICATIVO (= se, contanto
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Subseção 9.1 — Exercícios de Fixação Básica
+### Subseção 9.1 — Exercícios de Fixação Básica
 
 - ** (Item 1 - ):** *"Convém que acredite mais nas pessoas."* $\rightarrow$ *"Convém [ISSO]"*. **Classificação:** Conjunção Integrante.
 - ** (Item 2 - ):** *"Menti porque precisava."* $\rightarrow$ Precisar é o motivo de mentir. **Classificação:** Conjunção Causal.
@@ -467,116 +457,110 @@ contanto desde o momento EXPLICATIVO (= se, contanto
 
 ---
 
-## Subseção 9.2 — Questões de Concurso Cebraspe — Parte 02
+### Subseção 9.2 — Questões de Concurso Cebraspe — Parte 02
 
 - ** (CESPE / MPE-SC 2023):**
- - *Texto:* *"O justo é um saber que se vai constituindo à medida que nossa consciência da história se aguça..."*
- - *Assertiva:* *"A locução conjuntiva 'à medida que' denota proporcionalidade entre duas situações."*
- - *Análise:* A locução é unívoca e fixada como proporcional. Gabarito: **CERTO**.
+  - *Texto:* *"O justo é um saber que se vai constituindo à medida que nossa consciência da história se aguça..."*
+  - *Assertiva:* *"A locução conjuntiva 'à medida que' denota proporcionalidade entre duas situações."*
+  - *Análise:* A locução é unívoca e fixada como proporcional. Gabarito: **CERTO**.
 - ** (CESPE / CGDF 2023):**
- - *Texto:* *"A história mostrou que a resistência fiscal, por mais que pareça natural e inevitável..., teve proporções menores em regimes democráticos..."*
- - *Assertiva:* *"A expressão 'por mais que' introduz oração que expressa circunstância de concessão."*
- - *Análise:* *Por mais que* é estritamente concessiva (= *embora*). Gabarito: **CERTO**.
+  - *Texto:* *"A história mostrou que a resistência fiscal, por mais que pareça natural e inevitável..., teve proporções menores em regimes democráticos..."*
+  - *Assertiva:* *"A expressão 'por mais que' introduz oração que expressa circunstância de concessão."*
+  - *Análise:* *Por mais que* é estritamente concessiva (= *embora*). Gabarito: **CERTO**.
 - ** (CESPE / APEX Brasil 2024):**
- - *Texto:* *"...ainda que tenha passado por alguns retrocessos pontuais..."*
- - *Assertiva:* *"A oração introduzida por 'ainda que' expressa uma condição no passado."*
- - *Análise:* *Ainda que* é concessiva (com verbo no subjuntivo *tenha passado*), jamais condicional. Gabarito: **ERRADO**.
+  - *Texto:* *"...ainda que tenha passado por alguns retrocessos pontuais..."*
+  - *Assertiva:* *"A oração introduzida por 'ainda que' expressa uma condição no passado."*
+  - *Análise:* *Ainda que* é concessiva (com verbo no subjuntivo *tenha passado*), jamais condicional. Gabarito: **ERRADO**.
 - ** (CESPE / ITAIPU 2024):**
- - *Texto:* *"Embora seja uma energia limpa e renovável, a eólica causa impactos..."*
- - *Assertiva:* *"A conjunção 'Embora' poderia ser substituída por 'Ainda que' sem prejuízo dos sentidos e da correção gramatical."*
- - *Análise:* Ambas são concessivas e regem modo subjuntivo (*seja*). Gabarito: **CERTO**.
+  - *Texto:* *"Embora seja uma energia limpa e renovável, a eólica causa impactos..."*
+  - *Assertiva:* *"A conjunção 'Embora' poderia ser substituída por 'Ainda que' sem prejuízo dos sentidos e da correção gramatical."*
+  - *Análise:* Ambas são concessivas e regem modo subjuntivo (*seja*). Gabarito: **CERTO**.
 - ** (CESPE / Câm. Maceió 2024):**
- - *Texto:* *"Diga a meu pai que lhe não escrevo porque nesta carta vai tudo o que é preciso dizer."*
- - *Assertiva:* *"O sentido seria mantido caso 'porque' fosse substituído por 'conquanto'."*
- - *Análise:* *Porque* é causal/explicativa; *conquanto* é concessiva (= *embora*). Incompatibilidade semântica total. Gabarito: **ERRADO**.
+  - *Texto:* *"Diga a meu pai que lhe não escrevo porque nesta carta vai tudo o que é preciso dizer."*
+  - *Assertiva:* *"O sentido seria mantido caso 'porque' fosse substituído por 'conquanto'."*
+  - *Análise:* *Porque* é causal/explicativa; *conquanto* é concessiva (= *embora*). Incompatibilidade semântica total. Gabarito: **ERRADO**.
 - ** (CESPE / SERPRO 2021):**
- - *Texto:* *"A biodiversidade é o correlato da tecnodiversidade, uma vez que sem esta só testemunharemos o desaparecimento de espécies..."*
- - *Assertiva:* *"A substituição de 'uma vez que' por 'contanto que' preservaria os sentidos originais do texto."*
- - *Análise:* No texto, a oração explica o motivo da correlação (*uma vez que* = *porque*). *Contanto que* é puramente condicional, alterando o sentido. Gabarito: **ERRADO**.
+  - *Texto:* *"A biodiversidade é o correlato da tecnodiversidade, uma vez que sem esta só testemunharemos o desaparecimento de espécies..."*
+  - *Assertiva:* *"A substituição de 'uma vez que' por 'contanto que' preservaria os sentidos originais do texto."*
+  - *Análise:* No texto, a oração explica o motivo da correlação (*uma vez que* = *porque*). *Contanto que* é puramente condicional, alterando o sentido. Gabarito: **ERRADO**.
 
 ---
 
-## Subseção 9.3 — Questões de Concurso Cebraspe — Valores de "Desde Que"
+### Subseção 9.3 — Questões de Concurso Cebraspe — Valores de "Desde Que"
 
 - ** (CESPE / TRE-BA):**
- - *Texto:* *"Desde que a urna eletrônica foi adotada em todo o território brasileiro, votar passou a ser..."*
- - *Assertiva:* *"A locução 'Desde que' introduz uma ideia de tempo."*
- - *Análise:* O verbo *foi adotada* está no Pretérito Perfeito do Indicativo; indica marco inicial no tempo (*desde quando*). Gabarito: **CERTO**.
+  - *Texto:* *"Desde que a urna eletrônica foi adotada em todo o território brasileiro, votar passou a ser..."*
+  - *Assertiva:* *"A locução 'Desde que' introduz uma ideia de tempo."*
+  - *Análise:* O verbo *foi adotada* está no Pretérito Perfeito do Indicativo; indica marco inicial no tempo (*desde quando*). Gabarito: **CERTO**.
 - ** (CESPE / SEDUC-AL):**
- - *Texto:* *"Victor Hugo poderia ter sido tão importante... desde que pertencesse a uma cultura equivalente..."*
- - *Assertiva:* *"A oração introduzida por 'desde que' exprime uma condição hipotética."*
- - *Análise:* O verbo *pertencesse* está no Pretérito Imperfeito do Subjuntivo; trata-se de precondição hipotética. Gabarito: **CERTO**.
+  - *Texto:* *"Victor Hugo poderia ter sido tão importante... desde que pertencesse a uma cultura equivalente..."*
+  - *Assertiva:* *"A oração introduzida por 'desde que' exprime uma condição hipotética."*
+  - *Análise:* O verbo *pertencesse* está no Pretérito Imperfeito do Subjuntivo; trata-se de precondição hipotética. Gabarito: **CERTO**.
 - ** (CESPE / ITAIPU 2024):**
- - *Texto:* *"Fenômenos atmosféricos têm se tornado mais frequentes desde que entramos no novo milênio..."*
- - *Assertiva:* *"A oração iniciada pela locução 'desde que' estabelece uma relação de condição."*
- - *Análise:* Aplicação do macete "O verbo salva": *entramos* está no Indicativo. Trata-se de marco temporal (*desde quando*), e não de condição. Gabarito: **ERRADO**.
+  - *Texto:* *"Fenômenos atmosféricos têm se tornado mais frequentes desde que entramos no novo milênio..."*
+  - *Assertiva:* *"A oração iniciada pela locução 'desde que' estabelece uma relação de condição."*
+  - *Análise:* Aplicação do macete "O verbo salva": *entramos* está no Indicativo. Trata-se de marco temporal (*desde quando*), e não de condição. Gabarito: **ERRADO**.
 - ** (CESPE / ANCINE):**
- - *Texto:* *"Podem-se candidatar ao licenciamento obras..., desde que possuam o certificado de produto brasileiro..."*
- - *Assertiva:* *"O termo 'desde que' estabelece relação de condição e pode ser substituído por 'caso' ou 'contanto que'."*
- - *Análise:* O verbo *possuam* está no Presente do Subjuntivo. A substituição por conectivos condicionais mantém correção e sentido. Gabarito: **CERTO**.
-
----
+  - *Texto:* *"Podem-se candidatar ao licenciamento obras..., desde que possuam o certificado de produto brasileiro..."*
+  - *Assertiva:* *"O termo 'desde que' estabelece relação de condição e pode ser substituído por 'caso' ou 'contanto que'."*
+  - *Análise:* O verbo *possuam* está no Presente do Subjuntivo. A substituição por conectivos condicionais mantém correção e sentido. Gabarito: **CERTO**.
 
 ---
 
 ## Memorização inteligente
 
-## O Mnemônico 6Cs + FTP
+### O Mnemônico 6Cs + FTP
 
 Memorize a fórmula **`6Cs + FTP`** para recuperar as 9 circunstâncias adverbiais instantaneamente: **C**oncessivas, **C**ondicionais, **C**onformativas, **C**omparativas, **C**ausais, **C**onsecutivas + **F**inais, **T**emporais, **P**roporcionais.
 
-## O Mantra do Referente Posterior
+### O Mantra do Referente Posterior
 
 Para não trocar Causa por Consequência ou Finalidade por Causa, repita o mantra: *"A conjunção recebe o nome da ideia que vem DEPOIS dela"*. Olhe para o segmento que sucede o conectivo e determine o seu papel.
 
-## O Teste do "ISSO" para Integrantes
+### O Teste do "ISSO" para Integrantes
 
 Diante de conectivos `que` ou `se`, tente substituir a oração inteira por **"ISSO"** (*disso*, *nisso*). Se a frase fizer sentido, o conector é integrante e **não tem valor semântico**.
 
-## A Regra Resolutiva "O Verbo Salva" para "Desde Que"
+### A Regra Resolutiva "O Verbo Salva" para "Desde Que"
 
 Em itens sobre *desde que*, inspecione o verbo da oração:
 
 - Verbo no **Subjuntivo** (*possuam*, *pertencesse*, *sejam*) $\rightarrow$ **Condição** (= *caso*, *contanto que*).
 - Verbo no **Indicativo** (*entramos*, *foi*, *mudei*) $\rightarrow$ **Tempo** (= *desde quando*).
 
-## O Teste do Fato Posterior para "Uma Vez Que"
+### O Teste do Fato Posterior para "Uma Vez Que"
 
 - Se a oração posterior trouxer a **causa/motivo gerador** $\rightarrow$ Causal/Explicativa (= *porque*).
 - Se a oração posterior trouxer uma **exigência/hipótese com verbo no subjuntivo** $\rightarrow$ Condicional (= *se*).
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Pegadinha de Atribuir Sentido Semântico a Conjunções Integrantes
+### Pegadinha de Atribuir Sentido Semântico a Conjunções Integrantes
 
 - **Erro:** Considerar correto o item que afirma que o `se` em *"Não sei se ele vem"* expressa "hipótese", "condição" ou "dúvida".
 - **Correção:** *"Não sei [se ele vem]"* = *"Não sei [ISSO]"*. O conector é Conjunção Integrante e não carrega valor semântico circunstancial.
 
-## Confusão Paronímica Fatal: Porquanto vs Conquanto
+### Confusão Paronímica Fatal: Porquanto vs Conquanto
 
 - **Erro:** Tratar *porquanto* e *conquanto* como termos permutáveis.
 - **Correção:** *Porquanto* é **Causal** (= *porque*). *Conquanto* é **Concessiva** (= *embora*). A troca entre elas inverte a lógica do período.
 
-## Pegadinha Cebraspe: Confundir Concessão com Condição devido ao Subjuntivo
+### Pegadinha Cebraspe: Confundir Concessão com Condição devido ao Subjuntivo
 
 - **Erro:** Julgar que locuções como *ainda que* ou *por mais que* expressam "condição" porque regem verbos no Modo Subjuntivo.
 - **Correção:** O subjuntivo é exigido pela regência sintática da concessão. Conectivos como *ainda que*, *por mais que* e *embora* são **exclusivamente concessivos**.
 
-## Armadilha da Causa Aparente em Textos Longos com "Desde Que" Temporal
+### Armadilha da Causa Aparente em Textos Longos com "Desde Que" Temporal
 
 - **Erro:** Assinalar valor condicional em frases como *"Os problemas aumentaram desde que entramos no milênio"* por associar falsamente a virada do milênio a uma condição.
 - **Correção:** Entrar no milênio é mero marco cronológico (verbo no indicativo: *entramos*). Aplique a regra "O verbo salva".
 
-## Proposta de Substituição de Conectivo Causal por Condicional Falso
+### Proposta de Substituição de Conectivo Causal por Condicional Falso
 
 - **Erro:** Aceitar a troca de *uma vez que* (com sentido de *porque*) por *contanto que* (estritamente condicional).
 - **Correção:** *Contanto que* só substitui *uma vez que* se esta estiver empregada com valor hipotético/condicional.
-
----
 
 ---
 
@@ -597,8 +581,6 @@ Em itens sobre *desde que*, inspecione o verbo da oração:
 
 ---
 
----
-
 ## Síntese para recuperação ativa
 
 Ao concluir o estudo consolidado do grupo `esta unidade`, o estudante adquire as seguintes competências operacionais:
@@ -608,8 +590,8 @@ Ao concluir o estudo consolidado do grupo `esta unidade`, o estudante adquire as
 3. **Aplicar o Mantra do Referente Posterior:** Analisar a oração que vem imediatamente após o conectivo para classificar a circunstância sem confundir causa com consequência ou finalidade.
 4. **Dominar a Regência Modal nas Concessivas:** Compreender que conectivos como *embora*, *ainda que*, *por mais que* e *conquanto* operam na oposição/ressalva sem impedimento e regem obrigatoriamente o verbo no Modo Subjuntivo.
 5. **Resolver Conectivos Polissêmicos com Segurança:**
- - Para *uma vez que*: testar se a oração posterior é fato gerador (causa/explicação = *porque*) ou precondição futura (condição = *se*).
- - Para *desde que*: aplicar a regra **"O verbo salva"** — verbo no Modo Indicativo indica categoricamente relação de **Tempo** (*desde quando*); verbo no Modo Subjuntivo indica **Condição** (*caso*, *contanto que*).
+  - Para *uma vez que*: testar se a oração posterior é fato gerador (causa/explicação = *porque*) ou precondição futura (condição = *se*).
+  - Para *desde que*: aplicar a regra **"O verbo salva"** — verbo no Modo Indicativo indica categoricamente relação de **Tempo** (*desde quando*); verbo no Modo Subjuntivo indica **Condição** (*caso*, *contanto que*).
 6. **Validar Questões de Reescritura Cebraspe:** Identificar rapidamente se propostas de substituição de conectivos preservam a família semântica, a correção gramatical e a regência modal exigida no texto original.
 
 ---

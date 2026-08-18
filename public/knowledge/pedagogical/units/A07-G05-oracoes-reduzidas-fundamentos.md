@@ -40,7 +40,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 * Domínio das 6 funções sintáticas das orações subordinadas substantivas (subjetiva, objetiva direta, objetiva indireta, completiva nominal, predicativa, apositiva).
 * Conhecimento das 9 circunstâncias subordinativas adverbiais sintetizadas na fórmula `6C + FTP` (causa, comparação, concessão, condição, conformidade, consequência, finalidade, tempo, proporção).
 
-### Mapa Estruturado de Dependências e Conceitos
+#### Mapa Estruturado de Dependências e Conceitos
 
 `text
 SINTAXE DO PERÍODO COMPOSTO: ORAÇÕES REDUZIDAS
@@ -78,17 +78,19 @@ SINTAXE DO PERÍODO COMPOSTO: ORAÇÕES REDUZIDAS
 
 ---
 
+```
+
 ---
 
 ## Explicação didática aprofundada
 
-## Conceito e Caracterização Estrutural das Orações Desenvolvidas vs. Reduzidas
+### Conceito e Caracterização Estrutural das Orações Desenvolvidas vs. Reduzidas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Uma oração desenvolvida é aquela estruturada por meio de conectivo explícito (conjunção integrante, conjunção adverbial, conjunção coordenativa ou pronome relativo) e cujo verbo apresenta-se conjugado em tempo e modo finitos. Em contrapartida, uma oração reduzida é aquela que prescinde de conjunção ou pronome relativo, apresentando seu verbo principal ou auxiliar obrigatoriamente sob uma forma nominal (infinitivo, gerúndio ou particípio), podendo ou não ser introduzida por preposição.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A redução oracional opera como um processo de condensação sintática no período composto. Enquanto as orações desenvolvidas explicitam a natureza da articulação por conectivos conjuncionais ou pronominais, as orações reduzidas suprimem esses conectivos diretos, transferindo a articulação sintático-semântica para a forma nominal do verbo e para eventuais preposições introdutórias.
 
@@ -98,17 +100,17 @@ A oposição sistemática assenta-se em três eixos obrigatórios consolidados p
 2. **Morfologia Verbal:** Verbo flexionado em tempos finitos do presente, pretérito ou futuro (desenvolvidas) versus verbo em forma nominal de infinitivo, gerúndio ou particípio (reduzidas).
 3. **Espectro de Subdivisão Sintática:** Amplitude abrangendo orações coordenadas e subordinadas (desenvolvidas) versus restrição estrita às orações subordinadas na prática de provas de concurso público (reduzidas).
 
-### Critérios de reconhecimento
+#### Critérios de reconhecimento
 
 * Para ser **desenvolvida**: Conectivo oracional explícito (`conjunção` ou `pronome relativo`) + Verbo em tempo finito conjugado (`indicativo`, `subjuntivo`, `imperativo`).
 * Para ser **reduzida**: Ausência de conectivo oracional típico (admitindo preposição) + Verbo em forma nominal (`infinitivo`, `gerúndio`, `particípio`).
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 * **Oração Desenvolvida:** *Estudo para que passe no concurso.* (Presença da locução conjuntiva "para que" e verbo conjugado no presente do subjuntivo "passe").
 * **Oração Reduzida:** *Estudo para passar no concurso.* (Presença da preposição "para" e verbo na forma nominal de infinitivo "passar").
 
-### Exceções ou limites
+#### Exceções ou limites
 
 A presença de preposição pura (*a*, *de*, *em*, *para*, *por*, *ao*, *sem*) ou locução prepositiva (*a fim de*, *apesar de*) antes da forma nominal não transforma a oração reduzida em desenvolvida, pois a preposição não atua como conjunção subordinativa oracional.
 
@@ -118,66 +120,66 @@ A presença de preposição pura (*a*, *de*, *em*, *para*, *por*, *ao*, *sem*) o
 
 ---
 
-## Critério de Iniciação e Distinção entre Locuções Conjuntivas e Prepositivas
+### Critério de Iniciação e Distinção entre Locuções Conjuntivas e Prepositivas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O primeiro critério diferenciador reside na classe gramatical do elemento introdutório: orações desenvolvidas iniciam-se com conjunções ou pronomes relativos; orações reduzidas iniciam-se sem conectivo (justapostas assindeticamente) ou mediadas por preposições simples ou locuções prepositivas.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A distinção formal entre orações desenvolvidas e reduzidas exige a análise da terminação das locuções conectivas:
 
 * **Locução Conjuntiva:** Estrutura pluriverbal cujo vocábulo terminal é obrigatoriamente uma conjunção integrante ou adverbial (predominantemente *que*). Introduz oração desenvolvida e rege verbo flexionado em tempo finito (ex.: *para que*, *a fim de que*, *apesar de que*, *desde que*).
 * **Locução Prepositiva:** Estrutura pluriverbal cujo vocábulo terminal é obrigatoriamente uma preposição pura (como *de*, *a*, *para*, *com*). Introduz oração reduzida e associa-se a verbo no infinitivo (ex.: *a fim de*, *apesar de*, *para*, *ao invés de*).
 
-### Critérios de aplicação
+#### Critérios de aplicação
 
 Para identificar o tipo oracional introduzido por locução, inspeciona-se exclusivamente o último vocábulo da locução:
 
 1. Terminou em conjunção (*que*) $\rightarrow$ Locução Conjuntiva $\rightarrow$ Oração Desenvolvida $\rightarrow$ Exige verbo conjugado.
 2. Terminou em preposição (*de*, *a*, *para*) $\rightarrow$ Locução Prepositiva $\rightarrow$ Oração Reduzida $\rightarrow$ Exige verbo em forma nominal (infinitivo).
 
-### Exemplos e pares contrastivos
+#### Exemplos e pares contrastivos
 
 * **Par Concessivo:**
- * *Apesar de que estivesse cansado, estudou.* $\rightarrow$ "Apesar de que" termina em conjunção $\rightarrow$ Oração desenvolvida.
- * *Apesar de estar cansado, estudou.* $\rightarrow$ "Apesar de" termina em preposição $\rightarrow$ Oração reduzida de infinitivo.
+  * *Apesar de que estivesse cansado, estudou.* $\rightarrow$ "Apesar de que" termina em conjunção $\rightarrow$ Oração desenvolvida.
+  * *Apesar de estar cansado, estudou.* $\rightarrow$ "Apesar de" termina em preposição $\rightarrow$ Oração reduzida de infinitivo.
 * **Par Final:**
- * *Estudo a fim de que seja aprovado.* $\rightarrow$ "A fim de que" termina em conjunção $\rightarrow$ Oração desenvolvida.
- * *Estudo a fim de ser aprovado.* $\rightarrow$ "A fim de" termina em preposição $\rightarrow$ Oração reduzida de infinitivo.
+  * *Estudo a fim de que seja aprovado.* $\rightarrow$ "A fim de que" termina em conjunção $\rightarrow$ Oração desenvolvida.
+  * *Estudo a fim de ser aprovado.* $\rightarrow$ "A fim de" termina em preposição $\rightarrow$ Oração reduzida de infinitivo.
 
 * **Dica operacional:**
 * **Alerta associado:**
 
 ---
 
-## Morfologia Verbal nas Orações Reduzidas (Infinitivo, Gerúndio e Particípios Regulares/Irregulares)
+### Morfologia Verbal nas Orações Reduzidas (Infinitivo, Gerúndio e Particípios Regulares/Irregulares)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O segundo critério definidor estabelece que a oração reduzida apresenta obrigatoriamente seu verbo nuclear (principal ou auxiliar) estruturado sob uma das três formas nominais da língua portuguesa: infinitivo (pessoal ou impessoal), gerúndio ou particípio (regular ou irregular).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 As formas nominais distinguem-se das formas finitas pela ausência de marcas modotemporais diretas:
 
 1. **Infinitivo:** Caracterizado pelo morfema sufixal `-r` (terminações `-ar`, `-er`, `-ir`), podendo ocorrer na modalidade impessoal (*amar, beber, seguir*) ou flexionado pessoalmente pelo sujeito (*amarmo-nos, passares*).
 2. **Gerúndio:** Caracterizado pela terminação sufixal `-ndo` (*amando, bebendo, chorando, saindo*), expressando processo em curso, desdobramento circunstancial ou caracterização contínua.
 3. **Particípio:** Manifesta-se em duas variantes mórficas:
- * **Particípio Regular:** Marcado pelas desinências `-ado` (1ª conjugação) e `-ido` (2ª e 3ª conjugações), como *amado*, *bebido*, *chegado*.
- * **Particípio Irregular:** Marcado por terminações reduzidas ou alomórficas, frequentemente em `-to` ou `-so` (*feito*, *dito*, *escrito*, *posto*, *coberto*, *eleito*).
+  * **Particípio Regular:** Marcado pelas desinências `-ado` (1ª conjugação) e `-ido` (2ª e 3ª conjugações), como *amado*, *bebido*, *chegado*.
+  * **Particípio Irregular:** Marcado por terminações reduzidas ou alomórficas, frequentemente em `-to` ou `-so` (*feito*, *dito*, *escrito*, *posto*, *coberto*, *eleito*).
 
 Nas locuções verbais, o estatuto de oração reduzida exige que a forma nominal esteja presente no núcleo verbal ou comande a oração sem verbo auxiliar conjugado em oração com conjunção.
 
-### Exemplos e aplicações
+#### Exemplos e aplicações
 
 * *Infinitivo:* *É preciso seguir em frente.* ("seguir" = infinitivo).
 * *Gerúndio:* *Vi a menina chorando na praça.* ("chorando" = gerúndio).
 * *Particípio Regular:* *Chegada a hora, saiu rapidamente.* ("chegada" = particípio regular feminino).
 * *Particípio Irregular:* *Feito o trabalho, descansamos.* ("feito" = particípio irregular em `-to`).
 
-### Exceções ou limites
+#### Exceções ou limites
 
 A simples ocorrência de verbo em forma nominal não configura oração reduzida se ele figurar como verbo principal de uma locução cujo auxiliar esteja conjugado dentro de uma oração desenvolvida iniciada por conjunção (ex.: *Quero que você possa vir* $\rightarrow$ oração desenvolvida, pois há a conjunção "que" e o auxiliar "possa" está flexionado no presente do subjuntivo).
 
@@ -186,13 +188,13 @@ A simples ocorrência de verbo em forma nominal não configura oração reduzida
 
 ---
 
-## Restrição das Orações Reduzidas ao Universo Subordinado em Concursos
+### Restrição das Orações Reduzidas ao Universo Subordinado em Concursos
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 No critério de subdivisão sintática, enquanto as orações desenvolvidas distribuem-se entre coordenadas e subordinadas, as orações reduzidas — no padrão normativo consolidado e cobrado pelas bancas de concursos públicos — classificam-se exclusivamente como **subordinadas** (substantivas, adjetivas ou adverbiais).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A doutrina gramatical registra discussões teóricas residuais sobre a existência de "orações coordenadas reduzidas" (estruturas coordenadas assindéticas com formas nominais). Contudo, as KBs de origem registram com ênfase que essa divergência é meramente acadêmica e inteiramente rejeitada na prática das bancas examinadoras.
 
@@ -207,13 +209,13 @@ Para fins de resolução de provas de concurso público:
 
 ---
 
-## Orações Subordinadas Substantivas Reduzidas: Teste do "ISSO" e Funções Sintáticas
+### Orações Subordinadas Substantivas Reduzidas: Teste do "ISSO" e Funções Sintáticas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As orações subordinadas substantivas reduzidas desempenham funções sintáticas nucleares ou complementares típicas de substantivos em relação à oração principal, sendo identificadas pelo teste diagnóstico de substituição integral pelo pronome demonstrativo neutro **"ISSO"** (ou formas preposicionadas *disso*, *nisso*, *a isso*).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Nas substantivas desenvolvidas, a introdução dá-se por conjunção integrante (*que*, *se*). Quando reduzidas, a conjunção é eliminada e o verbo surge geralmente no infinitivo.
 
@@ -221,14 +223,14 @@ O protocolo de identificação opera em dois passos:
 
 1. **Teste de Substituição Primitivo:** Substitui-se todo o segmento oracional reduzido por "ISSO". Se o período mantiver coesão sintática plena (*"Oração Principal + ISSO"* ou *"ISSO + Oração Principal"*), comprova-se o valor substantivo da oração.
 2. **Determinação da Função Sintática:** Analisa-se a função sintática exercida pela palavra "ISSO" perante os termos da oração principal:
- * **Subjetiva:** Atua como sujeito sintático da oração principal (típica com estruturas impessoais, passivas sintéticas/analíticas ou predicados nominais como *é preciso*, *é necessário*, *convém*, *cumpre*).
- * **Objetiva Direta:** Atua como objeto direto de verbo transitivo direto.
- * **Objetiva Indireta:** Atua como objeto indireto regido de preposição obrigatória.
- * **Completiva Nominal:** Atua como complemento nominal de um substantivo, adjetivo ou advérbio transitivo da principal.
- * **Predicativa:** Atua como predicativo do sujeito associado por verbo de ligação.
- * **Apositiva:** Atua como aposto explicativo desdobrando um termo antecedente (frequentemente precedida de dois-pontos ou travessão).
+  * **Subjetiva:** Atua como sujeito sintático da oração principal (típica com estruturas impessoais, passivas sintéticas/analíticas ou predicados nominais como *é preciso*, *é necessário*, *convém*, *cumpre*).
+  * **Objetiva Direta:** Atua como objeto direto de verbo transitivo direto.
+  * **Objetiva Indireta:** Atua como objeto indireto regido de preposição obrigatória.
+  * **Completiva Nominal:** Atua como complemento nominal de um substantivo, adjetivo ou advérbio transitivo da principal.
+  * **Predicativa:** Atua como predicativo do sujeito associado por verbo de ligação.
+  * **Apositiva:** Atua como aposto explicativo desdobrando um termo antecedente (frequentemente precedida de dois-pontos ou travessão).
 
-### Exemplo canônico analisado
+#### Exemplo canônico analisado
 
 * Frase: *É preciso seguir em frente.*
 * Aplicação: *É preciso [seguir em frente]* $\rightarrow$ *É preciso [ISSO]* $\rightarrow$ *[ISSO] é preciso.*
@@ -240,13 +242,13 @@ O protocolo de identificação opera em dois passos:
 
 ---
 
-## Orações Subordinadas Adjetivas Reduzidas: Vínculo ao Substantivo Antecedente e Critério de Pontuação
+### Orações Subordinadas Adjetivas Reduzidas: Vínculo ao Substantivo Antecedente e Critério de Pontuação
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As orações subordinadas adjetivas reduzidas exercem a função de caracterizar, restringir ou explicar um substantivo (ou pronome substantivo) antecedente contido na oração principal, operando sem a mediação de pronome relativo e trazendo o verbo em forma nominal (geralmente gerúndio, particípio ou infinitivo preposicionado).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Nas orações adjetivas desenvolvidas, a presença do pronome relativo (*que*, *o qual*, *cujo*, *onde*) serve de marca formal inequívoca. Com a redução oracional e o consequente desaparecimento do pronome relativo, o critério exclusivo de reconhecimento torna-se a modificação semântico-sintática direta de um núcleo substantivo antecedente.
 
@@ -254,17 +256,17 @@ A classificação obedece a dois critérios consecutivos:
 
 1. **Teste da Seta / Vínculo Nominal:** Traça-se uma seta referencial da forma nominal para o substantivo antecedente na oração principal. Se a oração admitir conversão mental para uma desenvolvida com pronome relativo (*forma nominal* $\rightarrow$ *que + verbo conjugado*), confirma-se sua natureza adjetiva.
 2. **Critério de Pontuação (Subdivisão):**
- * **Restritiva:** Vincula-se ao substantivo antecedente sem pontuação (sem vírgulas, travessões ou parênteses), limitando a extensão semântica do núcleo.
- * **Explicativa:** Apresenta-se isolada por pontuação (entre vírgulas, entre travessões ou entre parênteses), agregando uma informação de natureza explicativa à totalidade do termo antecedente.
+  * **Restritiva:** Vincula-se ao substantivo antecedente sem pontuação (sem vírgulas, travessões ou parênteses), limitando a extensão semântica do núcleo.
+  * **Explicativa:** Apresenta-se isolada por pontuação (entre vírgulas, entre travessões ou entre parênteses), agregando uma informação de natureza explicativa à totalidade do termo antecedente.
 
-### Exemplo canônico analisado
+#### Exemplo canônico analisado
 
 * Frase: *Vi a menina chorando na praça.*
 * Análise do vínculo: O verbo no gerúndio "chorando" qualifica diretamente o substantivo "menina", que integra a oração principal como objeto direto (*menina que chorava*).
 * Análise da pontuação: Não há vírgula separando o gerúndio.
 * Nomenclatura oficial: **Oração subordinada adjetiva restritiva reduzida de gerúndio**.
 
-### Exceções ou limites
+#### Exceções ou limites
 
 A relação modificadora direta com o substantivo sem verbo de ligação afasta a classificação como predicativo do objeto e descarta a classificação como oração adverbial locativa (o termo "na praça" é apenas adjunto adverbial interno subordinado ao verbo "chorando").
 
@@ -274,13 +276,13 @@ A relação modificadora direta com o substantivo sem verbo de ligação afasta 
 
 ---
 
-## Orações Subordinadas Adverbiais Reduzidas: Reconhecimento Semântico e Mnemônico "6C + FTP"
+### Orações Subordinadas Adverbiais Reduzidas: Reconhecimento Semântico e Mnemônico "6C + FTP"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As orações subordinadas adverbiais reduzidas exercem o papel de adjunto adverbial em relação ao verbo da oração principal, expressando uma circunstância lógica identificada pela apreensão direta do valor semântico contextual ("cheiro de circunstância"), sem o auxílio de conjunções subordinativas adverbiais.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Nas adverbiais desenvolvidas, a conjunção introdutória orienta a classificação. Nas reduzidas, essa marca formal desaparece, exigindo do candidato o teste de desdobramento semântico (conversão mental em oração desenvolvida introduzida por conjunção subordinativa adverbial típica).
 
@@ -297,7 +299,7 @@ As 9 circunstâncias adverbiais são memorizadas pela fórmula mnemônica **`6C 
 * **T:** *Temporal* (momento, marco cronológico ou simultaneidade).
 * **P:** *Proporcional* (variação concomitante ou gradação proporcional).
 
-### Exemplo canônico analisado
+#### Exemplo canônico analisado
 
 * Frase: *Chegada a hora, saiu rapidamente.*
 * Análise da forma verbal: "Chegada" é particípio regular concordando com "a hora".
@@ -310,13 +312,13 @@ As 9 circunstâncias adverbiais são memorizadas pela fórmula mnemônica **`6C 
 
 ---
 
-## Delimitação da Fronteira Oracional no Período Composto com Reduzidas
+### Delimitação da Fronteira Oracional no Período Composto com Reduzidas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A fronteira oracional entre a oração principal e a oração subordinada reduzida deve ser estabelecida imediatamente antes da forma nominal do verbo (ou da preposição introdutória), mantendo os termos nucleares e complementos da oração principal rigorosamente preservados em seu domínio sintático.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Um dos vícios metodológicos mais frequentes em provas consiste em posicionar a barra divisória oracional logo após o primeiro verbo, englobando indevidamente o complemento da oração principal dentro da oração reduzida.
 
@@ -324,10 +326,10 @@ No exemplo *Vi a menina chorando na praça*:
 
 * **Corte Incorreto:** `[Vi] / [a menina chorando na praça]` $\rightarrow$ Induz o candidato a testar erradamente *Vi [ISSO]*, classificando a oração falsa como subordinada substantiva objetiva direta.
 * **Corte Correto:** `[Vi a menina] / [chorando na praça]`.
- * Oração Principal: *Vi a menina* (o termo "a menina" é objeto direto do verbo transitivo direto "Vi").
- * Oração Subordinada Reduzida: *chorando na praça* (inicia-se no gerúndio "chorando", qualificando o núcleo substantivo antecedente "menina").
+  * Oração Principal: *Vi a menina* (o termo "a menina" é objeto direto do verbo transitivo direto "Vi").
+  * Oração Subordinada Reduzida: *chorando na praça* (inicia-se no gerúndio "chorando", qualificando o núcleo substantivo antecedente "menina").
 
-### Critérios de aplicação
+#### Critérios de aplicação
 
 1. Localizar o verbo principal da oração principal e identificar seus termos complementares imediatos.
 2. Inserir a barra divisória imediatamente antes do verbo na forma nominal (ou da preposição/locução prepositiva que encabeça a oração reduzida).
@@ -337,16 +339,16 @@ No exemplo *Vi a menina chorando na praça*:
 
 ---
 
-## Tipologia de Questões de Concurso: Reconhecimento vs. Desenvolvimento/Reescrita
+### Tipologia de Questões de Concurso: Reconhecimento vs. Desenvolvimento/Reescrita
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As bancas examinadoras de concursos públicos (como Vunesp, Cebraspe/Cespe, FCC, FGV) exploram as orações reduzidas sob duas tipologias operacionais de complexidade crescente:
 
 1. **Tipo 1 (Reconhecimento e Classificação):** Questões que exigem a identificação estrutural da redução e a determinação da classificação sintática da oração subordinada (substantiva, adjetiva ou adverbial com sua respectiva forma nominal).
 2. **Tipo 2 (Desenvolvimento e Reescrita):** Questões avançadas de reescritura que exigem converter a oração reduzida em oração desenvolvida (ou vice-versa), selecionando conectivos correlatos, mantendo o paralelismo de sentido e ajustando o modo e o tempo verbal finito.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A metodologia consolidada preconiza a divisão da aprendizagem em duas etapas:
 
@@ -354,8 +356,6 @@ A metodologia consolidada preconiza a divisão da aprendizagem em duas etapas:
 * **Etapa Avançada (Tipo 2):** Domínio das regras de correlação modotemporal e seleção de conectivos subordinativos para reescrever períodos, assegurando que o desenvolvimento preserve a equivalência semântica e a estrita correção gramatical.
 
 * **Termos associados:**
-
----
 
 ---
 
@@ -368,7 +368,7 @@ A metodologia consolidada preconiza a divisão da aprendizagem em duas etapas:
 * **Locução Conjuntiva:** Estrutura pluriverbal terminada em conjunção (*que*), que introduz oração desenvolvida .
 * **Locução Prepositiva:** Estrutura pluriverbal terminada em preposição (*de*, *a*, *para*), que introduz oração reduzida quando associada a infinitivo .
 
-### Regras Canônicas
+#### Regras Canônicas
 
 1. **Regra da Subordinação Exclusiva em Concursos:** Toda oração reduzida é sintaticamente subordinada (substantiva, adjetiva ou adverbial); não se reconhecem coordenadas reduzidas em provas .
 2. **Regra do Diagnóstico Substantivo:** Toda oração reduzida substituível integralmente pelo pronome neutro "ISSO" é subordinada substantiva .
@@ -376,54 +376,50 @@ A metodologia consolidada preconiza a divisão da aprendizagem em duas etapas:
 4. **Regra do Diagnóstico Adverbial:** Toda oração reduzida que agrega circunstância lógica (`6C + FTP`) ao verbo da oração principal é subordinada adverbial .
 5. **Regra da Fronteira Oracional:** A oração principal retém seus objetos e complementos imediatos; a oração reduzida inicia-se no verbo nominal ou na preposição introdutória .
 
-### Classificações Sintáticas Estruturadas
+#### Classificações Sintáticas Estruturadas
 
 * **Subordinadas Substantivas Reduzidas (6 Funções):**
 
 * **Subordinadas Adjetivas Reduzidas (2 Tipos):**
 
 * **Subordinadas Adverbiais Reduzidas (9 Circunstâncias — `6C + FTP`):**
- * Causal, Comparativa, Concessiva, Condicional, Conformativa, Consecutiva, Final, Temporal, Proporcional.
-
----
+  * Causal, Comparativa, Concessiva, Condicional, Conformativa, Consecutiva, Final, Temporal, Proporcional.
 
 ---
 
 ## Roteiros de resolução
 
-## Protocolo de Análise e Classificação Completa de Orações Reduzidas
+### Protocolo de Análise e Classificação Completa de Orações Reduzidas
 
-### Passo a Passo Operacional
+#### Passo a Passo Operacional
 
 1. **Passo 1 — Inspecionar a Redução Estrutural:**
- * Verificar a ausência de conectivos subordinativos típicos (conjunções integrantes, conjunções adverbiais ou pronomes relativos);
- * Confirmar se o verbo encontra-se em uma das três formas nominais:
- * *Infinitivo* (terminação em `-r`: `-ar`, `-er`, `-ir`);
- * *Gerúndio* (terminação em `-ndo`);
- * *Particípio* (regular em `-ado`, `-ido` ou irregular em `-to`, `-so`).
+  * Verificar a ausência de conectivos subordinativos típicos (conjunções integrantes, conjunções adverbiais ou pronomes relativos);
+  * Confirmar se o verbo encontra-se em uma das três formas nominais:
+  * *Infinitivo* (terminação em `-r`: `-ar`, `-er`, `-ir`);
+  * *Gerúndio* (terminação em `-ndo`);
+  * *Particípio* (regular em `-ado`, `-ido` ou irregular em `-to`, `-so`).
 2. **Passo 2 — Delimitar a Fronteira Oracional:**
 
- * Inserir a barra divisória imediatamente antes do verbo na forma nominal ou da preposição/locução prepositiva que o introduz.
+  * Inserir a barra divisória imediatamente antes do verbo na forma nominal ou da preposição/locução prepositiva que o introduz.
 3. **Passo 3 — Executar a Triagem Diagnóstica Categorial:**
- * **Teste A (Substantiva):** Substituir toda a oração reduzida por **"ISSO"** (ou *disso*, *nisso*, *a isso*). Se o período mantiver coesão sintática plena, classificar como **Subordinada Substantiva** e identificar a função sintática (Subjetiva, O.D., O.I., C.N., Predicativa, Apositiva).
- * **Teste B (Adjetiva):** Se não couber a troca por "ISSO", verificar se o verbo nominal qualifica diretamente um **substantivo antecedente** da oração principal (admitindo conversão mental para *que + verbo conjugado*). Confirmada a relação, classificar como **Subordinada Adjetiva** e aplicar a regra de pontuação (sem vírgula $\rightarrow$ *Restritiva*; isolada por pontuação $\rightarrow$ *Explicativa*).
- * **Teste C (Adverbial):** Se não for substantiva nem adjetiva, identificar a ideia circunstancial veiculada em relação à oração principal. Enquadrar em uma das 9 circunstâncias (`6C + FTP`) e classificar como **Subordinada Adverbial**.
+  * **Teste A (Substantiva):** Substituir toda a oração reduzida por **"ISSO"** (ou *disso*, *nisso*, *a isso*). Se o período mantiver coesão sintática plena, classificar como **Subordinada Substantiva** e identificar a função sintática (Subjetiva, O.D., O.I., C.N., Predicativa, Apositiva).
+  * **Teste B (Adjetiva):** Se não couber a troca por "ISSO", verificar se o verbo nominal qualifica diretamente um **substantivo antecedente** da oração principal (admitindo conversão mental para *que + verbo conjugado*). Confirmada a relação, classificar como **Subordinada Adjetiva** e aplicar a regra de pontuação (sem vírgula $\rightarrow$ *Restritiva*; isolada por pontuação $\rightarrow$ *Explicativa*).
+  * **Teste C (Adverbial):** Se não for substantiva nem adjetiva, identificar a ideia circunstancial veiculada em relação à oração principal. Enquadrar em uma das 9 circunstâncias (`6C + FTP`) e classificar como **Subordinada Adverbial**.
 4. **Passo 4 — Redigir a Nomenclatura Padrão:**
- * Estruturar a classificação no formato canônico:
+  * Estruturar a classificação no formato canônico:
  `Oração Subordinada + [Substantiva / Adjetiva / Adverbial] + [Classificação Específica] + reduzida de [infinitivo / gerúndio / particípio]`.
 
 ---
 
-## Teste Diagnóstico da Palavra Terminal em Locuções Conectivas
+### Teste Diagnóstico da Palavra Terminal em Locuções Conectivas
 
-### Passo a Passo Operacional
+#### Passo a Passo Operacional
 
 1. Isolar a locução introdutória que encabeça a oração dependente.
 2. Inspecionar visualmente o **último elemento mórfico/palavra final** da locução:
- * Se terminar com a conjunção **"que"** (ex.: *a fim de que*, *apesar de que*, *para que*, *desde que*) $\rightarrow$ Trata-se de **Locução Conjuntiva** $\rightarrow$ Introduz **Oração Desenvolvida** com verbo conjugado finito.
- * Se terminar com uma **preposição pura** (ex.: *de*, *a*, *para*, *com*) (ex.: *a fim de*, *apesar de*, *para*, *ao invés de*) $\rightarrow$ Trata-se de **Locução Prepositiva** $\rightarrow$ Introduz **Oração Reduzida** com verbo no infinitivo.
-
----
+  * Se terminar com a conjunção **"que"** (ex.: *a fim de que*, *apesar de que*, *para que*, *desde que*) $\rightarrow$ Trata-se de **Locução Conjuntiva** $\rightarrow$ Introduz **Oração Desenvolvida** com verbo conjugado finito.
+  * Se terminar com uma **preposição pura** (ex.: *de*, *a*, *para*, *com*) (ex.: *a fim de*, *apesar de*, *para*, *ao invés de*) $\rightarrow$ Trata-se de **Locução Prepositiva** $\rightarrow$ Introduz **Oração Reduzida** com verbo no infinitivo.
 
 ---
 
@@ -439,7 +435,7 @@ A metodologia consolidada preconiza a divisão da aprendizagem em duas etapas:
 
 ---
 
-### Tabela 2: Contraste de Conectivos — Locução Conjuntiva vs. Locução Prepositiva
+#### Tabela 2: Contraste de Conectivos — Locução Conjuntiva vs. Locução Prepositiva
 
 | Locução Empregada | Palavra Terminal | Natureza Sintática | Tipo de Oração Resultante | Estrutura Verbal Exigida | Exemplo Modelo |
 |:------------------------------ |:------------------------------: |:-------------------: |:-------------------------: |:---------------------------: |:------------------------------------ |
@@ -450,7 +446,7 @@ A metodologia consolidada preconiza a divisão da aprendizagem em duas etapas:
 
 ---
 
-### Tabela 3: Matriz de Testes Diagnósticos das Três Famílias de Reduzidas
+#### Tabela 3: Matriz de Testes Diagnósticos das Três Famílias de Reduzidas
 
 | Família Subordinada | Teste Diagnóstico Primário | Relação Sintática com a Principal | Variações / Subdivisões Internas | Exemplo Modelo Canônico |
 |:-------------------- |:----------------------------------------------------------- |:-------------------------------------------------------------------- |:--------------------------------------------------------------- |:----------------------------------------------------------------------------------------------- |
@@ -460,31 +456,29 @@ A metodologia consolidada preconiza a divisão da aprendizagem em duas etapas:
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Contraste Estrutural de Locuções em Oração Final
+### Contraste Estrutural de Locuções em Oração Final
 
-### Frases Analisadas
+#### Frases Analisadas
 
 * **Frase A:** *Estudo para passar no concurso.*
 * **Frase B:** *Estudo para que passe no concurso.*
 
-### Análise e Raciocínio Sintático
+#### Análise e Raciocínio Sintático
 
 * Na **Frase A**, o elemento introdutório é a preposição pura *"para"*, que rege o verbo na forma nominal de infinitivo *"passar"*. Não havendo conjunção nem pronome relativo, a oração classifica-se como **oração subordinada adverbial final reduzida de infinitivo**.
 * Na **Frase B**, o conectivo introdutório é a locução conjuntiva final *"para que"* (terminada na conjunção *que*), que introduz o verbo flexionado no presente do subjuntivo *"passe"*. A oração classifica-se como **oração subordinada adverbial final desenvolvida**.
 
 ---
 
-## Aplicação ao Modelo Substantivo Subjetivo de Infinitivo
+### Aplicação ao Modelo Substantivo Subjetivo de Infinitivo
 
-### Frase Analisada
+#### Frase Analisada
 
 *É preciso seguir em frente.*
 
-### Resolução Passo a Passo
+#### Resolução Passo a Passo
 
 1. **Identificação da Redução:** O verbo *"seguir"* está no infinitivo impessoal e a oração prescinde de conectivo conjuncional $\rightarrow$ Oração reduzida de infinitivo.
 2. **Aplicação do Teste do "ISSO":** *É preciso [seguir em frente]* $\rightarrow$ *É preciso [ISSO]* $\rightarrow$ *[ISSO] é preciso.* O período preserva coesão e sentido perfeito $\rightarrow$ Natureza Subordinada Substantiva.
@@ -493,13 +487,13 @@ A metodologia consolidada preconiza a divisão da aprendizagem em duas etapas:
 
 ---
 
-## Aplicação ao Modelo Adjetivo Restritivo de Gerúndio
+### Aplicação ao Modelo Adjetivo Restritivo de Gerúndio
 
-### Frase Analisada
+#### Frase Analisada
 
 *Vi a menina chorando na praça.*
 
-### Resolução Passo a Passo
+#### Resolução Passo a Passo
 
 1. **Identificação da Redução:** O verbo *"chorando"* apresenta-se no gerúndio (`-ndo`), sem pronome relativo introdutório $\rightarrow$ Oração reduzida de gerúndio.
 2. **Delimitação Oracional:** Oração Principal = *Vi a menina* (em que "a menina" é o objeto direto de "Vi"); Oração Subordinada = *chorando na praça*.
@@ -509,13 +503,13 @@ A metodologia consolidada preconiza a divisão da aprendizagem em duas etapas:
 
 ---
 
-## Aplicação ao Modelo Adverbial Temporal de Particípio
+### Aplicação ao Modelo Adverbial Temporal de Particípio
 
-### Frase Analisada
+#### Frase Analisada
 
 *Chegada a hora, saiu rapidamente.*
 
-### Resolução Passo a Passo
+#### Resolução Passo a Passo
 
 1. **Identificação da Redução:** O verbo *"Chegada"* apresenta-se no particípio regular feminino, encabeçando a oração sem qualquer conectivo subordinativo $\rightarrow$ Oração reduzida de particípio.
 2. **Desdobramento e Apreensão Semântica:** A oração estabelece a circunstância de tempo em que a oração principal ocorreu (*Quando a hora chegou / Logo que a hora chegou, saiu rapidamente*).
@@ -523,11 +517,9 @@ A metodologia consolidada preconiza a divisão da aprendizagem em duas etapas:
 
 ---
 
----
-
 ## Memorização inteligente
 
-## Macete da Palavra Terminal para Identificação de Locuções
+### Macete da Palavra Terminal para Identificação de Locuções
 
 Para evitar confusões imediatas em provas sobre classificação ou reescrita, fixe o olhar exclusivamente na **última palavra** da estrutura conectiva:
 
@@ -536,19 +528,19 @@ Para evitar confusões imediatas em provas sobre classificação ou reescrita, f
 
 ---
 
-## Macete Universal do "ISSO" para Substantivas Reduzidas
+### Macete Universal do "ISSO" para Substantivas Reduzidas
 
 Ao analisar uma oração reduzida de infinitivo, substitua todo o bloco oracional por **"ISSO"** (ou contrações preposicionadas *disso*, *nisso*, *a isso*). Se a frase fizer sentido gramatical perfeito (ex.: *Convém estudar* $\rightarrow$ *Convém ISSO* $\rightarrow$ *ISSO convém*), a oração é categoricamente **subordinada substantiva**. Em seguida, identifique a função sintática que a palavra "ISSO" assume na oração principal.
 
 ---
 
-## Reconhecimento de Adjetivas Reduzidas pela Seta no Substantivo
+### Reconhecimento de Adjetivas Reduzidas pela Seta no Substantivo
 
 Diante do desaparecimento do pronome relativo na oração reduzida, trace uma seta do verbo na forma nominal para o substantivo antecedente imediato da oração principal. Se o verbo estiver qualificando ou especificando esse substantivo (admitindo a conversão para *que + verbo conjugado*), a oração é categoricamente **subordinada adjetiva**.
 
 ---
 
-## Mnemônico "6C + FTP" para Apreensão das Circunstâncias Adverbiais
+### Mnemônico "6C + FTP" para Apreensão das Circunstâncias Adverbiais
 
 As 9 circunstâncias subordinativas adverbiais são memorizadas pelo mnemônico estrutural **`6C + FTP`**:
 
@@ -559,11 +551,9 @@ As 9 circunstâncias subordinativas adverbiais são memorizadas pelo mnemônico 
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Confusão entre Circunstância Adverbial Oracional e Adjunto Locativo Interno
+### Confusão entre Circunstância Adverbial Oracional e Adjunto Locativo Interno
 
 * **Erro Comum:** No exemplo *Vi a menina chorando na praça*, classificar a oração inteira como "adverbial de lugar" devido à presença da locução "na praça".
 * **Mecanismo do Erro:** O candidato confunde o adjunto adverbial interno da oração subordinada com a função sintática da própria oração no período composto.
@@ -571,7 +561,7 @@ As 9 circunstâncias subordinativas adverbiais são memorizadas pelo mnemônico 
 
 ---
 
-## Erro de Delimitação Oracional Englobando o Objeto da Principal
+### Erro de Delimitação Oracional Englobando o Objeto da Principal
 
 * **Erro Comum:** Posicionar a barra divisória após o primeiro verbo (*Vi / a menina chorando na praça*) e tentar substituir o bloco restante por "isto" (*Vi isto*), classificando a oração erradamente como substantiva objetiva direta.
 * **Mecanismo do Erro:** Transferência indevida do objeto direto da oração principal para o interior da oração subordinada.
@@ -579,69 +569,65 @@ As 9 circunstâncias subordinativas adverbiais são memorizadas pelo mnemônico 
 
 ---
 
-## Confusão entre Oração Adjetiva de Gerúndio e Predicativo do Objeto
+### Confusão entre Oração Adjetiva de Gerúndio e Predicativo do Objeto
 
 * **Erro Comum:** Tentar classificar a forma nominal "chorando" em *Vi a menina chorando na praça* como predicativo do objeto direto ("a menina").
 * **Regra de Correção:** No âmbito da sintaxe do período composto adotada nas provas de concursos, a estrutura é analisada como **oração subordinada adjetiva restritiva reduzida de gerúndio**, equivalente à desenvolvida *Vi a menina que chorava na praça*.
 
 ---
 
-## Presença de Preposição não Converte Oração Reduzida em Desenvolvida
+### Presença de Preposição não Converte Oração Reduzida em Desenvolvida
 
 * **Erro Comum:** Imaginar que a ocorrência de preposições (como *ao*, *para*, *por*, *sem*, *de*) antes de verbos no infinitivo configuraria oração desenvolvida ou conectivo oracional conjuntivo.
 * **Regra de Correção:** Preposição não é conjunção subordinativa oracional. Se a oração não tiver conjunção/pronome relativo e o verbo estiver no infinitivo, gerúndio ou particípio, trata-se de oração estritamente **reduzida**.
 
 ---
 
-## Atenção aos Particípios Irregulares Terminados em "-to" e "-so"
+### Atenção aos Particípios Irregulares Terminados em "-to" e "-so"
 
 * **Erro Comum:** Não reconhecer orações reduzidas de particípio quando o verbo apresenta forma irregular não terminada em `-ado` ou `-ido`.
 * **Regra de Correção:** Memorizar as formas nominais irregulares terminadas em `-to` ou `-so` (como *feito*, *dito*, *escrito*, *posto*, *eleito*, *coberto*). Frases como *Feito o anúncio, calaram-se* estruturam orações subordinadas adverbiais temporais reduzidas de particípio.
 
 ---
 
----
-
 ## Glossário operacional
 
-## Oração Desenvolvida
+### Oração Desenvolvida
 
 Oração que se estrutura com conectivo subordinativo ou coordenativo explícito (conjunção integrante, conjunção adverbial, conjunção coordenativa ou pronome relativo) e apresenta seu verbo conjugado em tempo e modo finitos (presente, pretérito ou futuro).
 *Relações:* .
 
-## Oração Reduzida
+### Oração Reduzida
 
 Oração que não é introduzida por conjunção subordinativa/coordenativa nem por pronome relativo, apresentando seu verbo sob uma das formas nominais (infinitivo, gerúndio ou particípio), podendo ser antecedida por preposição pura ou locução prepositiva.
 *Relações:* .
 
-## Formas Nominais do Verbo
+### Formas Nominais do Verbo
 
 Formas do paradigma verbal desprovidas de flexão modotemporal finita que assumem comportamento morfossintático análogo ao de nomes (substantivos, adjetivos ou advérbios): Infinitivo (`-r`), Gerúndio (`-ndo`) e Particípio (regular em `-do` ou irregular em `-to`/`-so`).
 *Relações:* .
 
-## Locução Conjuntiva
+### Locução Conjuntiva
 
 Expressão pluriverbal que desempenha função de conjunção, caracterizando-se por terminar obrigatoriamente em conjunção (*que*). Introduz orações desenvolvidas.
 *Exemplos:* *a fim de que*, *para que*, *apesar de que*.
 *Relações:* .
 
-## Locução Prepositiva
+### Locução Prepositiva
 
 Expressão pluriverbal que desempenha função de preposição, caracterizando-se por terminar obrigatoriamente em preposição (*de*, *a*, *para*). Introduz orações reduzidas de infinitivo.
 *Exemplos:* *a fim de*, *apesar de*, *para*.
 *Relações:* .
 
-## Oração Justaposta
+### Oração Justaposta
 
 Estrutura oracional que se liga no período composto sem conjunção subordinativa típica, iniciando-se por pronomes indefinidos, interrogativos ou demonstrativos (como ocorre doutrinariamente nas orações agente da passiva).
 *Relações:* .
 
-## Desenvolvimento de Oração
+### Desenvolvimento de Oração
 
 Processo de reescrita sintática no qual uma oração reduzida é transformada em oração desenvolvida mediante a inserção da conjunção/pronome relativo cabível e a flexão do verbo para o tempo e modo finitos correspondentes.
 *Relações:* .
-
----
 
 ---
 
@@ -653,9 +639,9 @@ Ao concluir o estudo do grupo `esta unidade`, o estudante deve dominar com preci
 2. **A Diferenciação Estrutural de Locuções:** Dominar a regra da palavra terminal — se a locução terminar em conjunção (*que*), é conjuntiva e introduz oração desenvolvida; se terminar em preposição (*de*, *para*), é prepositiva e introduz oração reduzida de infinitivo.
 3. **A Premissa da Subordinação Exclusiva em Concursos:** Saber que para bancas examinadoras não existem coordenadas reduzidas, canalizando a análise unicamente para as três famílias subordinadas.
 4. **Os Três Testes Diagnósticos de Classificação:**
- * Troca integral por **"ISSO"** $\rightarrow$ Oração Subordinada Substantiva (analisando a função de sujeito, objeto direto, objeto indireto, complemento nominal, predicativo ou aposto);
- * Modificação direta de um **substantivo antecedente** $\rightarrow$ Oração Subordinada Adjetiva (restritiva se sem vírgula; explicativa se isolada por pontuação);
- * Apreensão do **"cheiro de circunstância"** ($\text{6C} + \text{FTP}$) $\rightarrow$ Oração Subordinada Adverbial (causa, comparação, concessão, condição, conformidade, consequência, finalidade, tempo, proporção).
+  * Troca integral por **"ISSO"** $\rightarrow$ Oração Subordinada Substantiva (analisando a função de sujeito, objeto direto, objeto indireto, complemento nominal, predicativo ou aposto);
+  * Modificação direta de um **substantivo antecedente** $\rightarrow$ Oração Subordinada Adjetiva (restritiva se sem vírgula; explicativa se isolada por pontuação);
+  * Apreensão do **"cheiro de circunstância"** ($\text{6C} + \text{FTP}$) $\rightarrow$ Oração Subordinada Adverbial (causa, comparação, concessão, condição, conformidade, consequência, finalidade, tempo, proporção).
 5. **A Técnica de Segmentação Oracional:** Identificar corretamente a barra de corte imediatamente antes do verbo na forma nominal ou da preposição, preservando os complementos pertencentes à oração principal.
 6. **A Tipologia de Questões de Prova:** Distinguir a abordagem de reconhecimento e classificação sintática (Tipo 1) da abordagem de desenvolvimento e reescrita de orações (Tipo 2).
 

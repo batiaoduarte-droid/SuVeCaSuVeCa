@@ -179,7 +179,7 @@ export const PedagogicalDeepDive: React.FC<{ section: ModuleSection }> = ({ sect
               Não foi possível carregar esta unidade. Verifique a conexão e tente abri-la novamente.
             </div>
           )}
-          {content && <MarkdownContent content={content} />}
+          {content && <MarkdownContent content={content} pedagogical />}
         </div>
       )}
     </div>

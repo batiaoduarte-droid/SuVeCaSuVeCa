@@ -5,7 +5,7 @@
     "type": "module",
     "scripts": {
         "dev": "tsx server.ts",
-        "prebuild": "npm run kb:pedagogical:audit && npm run kb:shard:audit",
+        "prebuild": "npm run kb:markdown:audit && npm run kb:pedagogical:audit && npm run kb:shard:audit",
         "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
         "start": "node dist/server.cjs",
         "preview": "vite preview",
@@ -15,6 +15,7 @@
         "kb:shard:audit": "node scripts/audit-deployment-shards.mjs",
         "kb:pedagogical:build": "node scripts/build-pedagogical-curriculum.mjs",
         "kb:pedagogical:audit": "node scripts/audit-pedagogical-curriculum.mjs",
+        "kb:markdown:audit": "node scripts/audit-pedagogical-markdown.mjs",
         "kb:modules:consolidate": "npm run kb:pedagogical:build",
         "kb:modules:audit": "npm run kb:pedagogical:audit",
         "test": "vitest run",
@@ -34,13 +35,16 @@
         "express": "^4.21.2",
         "firebase": "^12.17.1",
         "firebase-admin": "^13.10.0",
+        "katex": "^0.18.4",
         "lucide-react": "^0.546.0",
         "motion": "^12.23.24",
         "react": "^19.0.1",
         "react-dom": "^19.0.1",
         "react-markdown": "^10.1.0",
         "recharts": "^3.10.1",
-        "remark-gfm": "^4.0.1"
+        "rehype-katex": "^7.0.1",
+        "remark-gfm": "^4.0.1",
+        "remark-math": "^6.0.0"
     },
     "devDependencies": {
         "@axe-core/playwright": "^4.13.0",

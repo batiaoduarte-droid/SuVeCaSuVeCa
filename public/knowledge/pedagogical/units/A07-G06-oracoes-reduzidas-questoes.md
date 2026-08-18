@@ -40,7 +40,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 * **Sintaxe do Período Simples:** Termos essenciais (sujeito), integrantes (objeto direto, objeto indireto, complemento nominal, predicativo do sujeito) e acessórios (adjunto adverbial, adjunto adnominal); transitividade e regência verbal e nominal; verbos de ligação e verbos impessoais (*haver*).
 * **Sintaxe do Período Composto:** Estrutura de subordinação (oração principal vs. oração subordinada); conhecimento das conjunções integrantes (*que, se*) e das 9 circunstâncias adverbiais.
 
-### Mapa Conceitual Integrado
+#### Mapa Conceitual Integrado
 
 ```text
  ORAÇÕES SUBORDINADAS
@@ -79,45 +79,43 @@ ORAÇÕES SUBSTANTIVAS ORAÇÕES ADJETIVAS ORAÇÕES ADVERBIAIS
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Critérios Estruturais Definidores das Orações Reduzidas
+### Critérios Estruturais Definidores das Orações Reduzidas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Uma oração é classificada como **reduzida** quando deixa de apresentar conectivo subordinativo introdutório (conjunção subordinativa integrante/adverbial ou pronome relativo) e traz cumulativamente seu núcleo verbal estruturado em uma das três formas nominais: **infinitivo** (pessoal ou impessoal), **gerúndio** ou **particípio**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A redução sintática consiste na eliminação dos conectivos gramaticais explícitos. Para que uma oração seja reduzida, ela deve preencher simultaneamente dois critérios obrigatórios:
 
 1. **Critério Conectivo (Ausência de Conjunção / Pronome Relativo):** A oração não pode ser encabeçada por conjunções integrantes (*que, se*), conjunções subordinativas adverbiais (*porque, embora, quando*) nem por pronomes relativos (*que, o qual, cujo*). Todavia, a oração reduzida **pode ser introduzida por preposição simples ou locução prepositiva** (*de, para, a, por, ao, a fim de, apesar de*), o que não anula seu caráter reduzido.
 2. **Critério Morfológico (Forma Nominal do Verbo):** O verbo principal ou auxiliar não pode estar flexionado em tempos e modos finitos (indicativo, subjuntivo ou imperativo), apresentando-se em:
- * **Infinitivo:** formas em *-ar, -er, -ir* (impessoais ou com desinências pessoais *-es, -mos, -des, -em*);
- * **Gerúndio:** formas em *-ndo*;
- * **Particípio:** formas regulares em *-do* ou formas irregulares (*somadas, feito, visto*).
+  * **Infinitivo:** formas em *-ar, -er, -ir* (impessoais ou com desinências pessoais *-es, -mos, -des, -em*);
+  * **Gerúndio:** formas em *-ndo*;
+  * **Particípio:** formas regulares em *-do* ou formas irregulares (*somadas, feito, visto*).
 
 *Distinção entre Locução Prepositiva e Locução Conjuntiva:* A fronteira mecânica entre uma oração reduzida e uma desenvolvida introduzida por locuções depende da palavra terminal da expressão:
 
 * Se terminar em **preposição** (ex.: *a fim de*, *antes de*, *apesar de*) $\rightarrow$ **Locução Prepositiva** $\rightarrow$ introduz **Oração Reduzida** (verbo no infinitivo).
 * Se terminar em **conjunção** (ex.: *a fim de que*, *antes que*, *ainda que*) $\rightarrow$ **Locução Conjuntiva** $\rightarrow$ introduz **Oração Desenvolvida** (verbo conjugado no modo subjuntivo).
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 * *Oração Reduzida:* *"Estudou [a fim de passar no concurso]."* (Locução prepositiva *a fim de* + infinitivo *passar*).
 * *Oração Desenvolvida:* *"Estudou [a fim de que passasse no concurso]."* (Locução conjuntiva *a fim de que* + pretérito imperfeito do subjuntivo *passasse*).
 
 ---
 
-## O Macete do "ISSO" para Orações Subordinadas Substantivas Reduzidas
+### O Macete do "ISSO" para Orações Subordinadas Substantivas Reduzidas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Toda oração subordinada substantiva (desenvolvida ou reduzida de infinitivo) pode ser integralmente substituída pelo pronome demonstrativo neutro **"ISSO"** (ou pelas suas variantes preposicionadas **"DISSO"**, **"A ISSO"**, **"EM ISSO / NISSO"**), simplificando a estrutura oracional complexa em uma oração simples analisável.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Ao isolar o segmento subordinado e substituí-lo por *"ISSO"*, a oração comporta-se sintaticamente como um pronome substantivo unificado. Isso viabiliza fazer perguntas diretas ao verbo da oração principal (OP) para determinar com segurança a função sintática:
 
@@ -127,7 +125,7 @@ Ao isolar o segmento subordinado e substituí-lo por *"ISSO"*, a oração compor
 * Se responder a *"o risco disso / propensas a isso"* (ligado a substantivo ou adjetivo) $\rightarrow$ **Completiva Nominal (Complemento Nominal)**.
 * Se vier após verbo de ligação e sujeito (*"O problema é isso"*) $\rightarrow$ **Predicativa (Predicativo do Sujeito)**.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 * *"Pegar a estrada com os filhos pequenos revelou-se uma delícia."* $\rightarrow$ *"Isso revelou-se uma delícia."* $\rightarrow$ Função: Sujeito.
 * *"Basta estudar para o concurso."* $\rightarrow$ *"Isso basta."* $\rightarrow$ Função: Sujeito.
@@ -135,13 +133,13 @@ Ao isolar o segmento subordinado e substituí-lo por *"ISSO"*, a oração compor
 
 ---
 
-## Sujeito Oracional (Subjetiva Reduzida) e Estruturas Sintáticas Especiais
+### Sujeito Oracional (Subjetiva Reduzida) e Estruturas Sintáticas Especiais
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A oração subordinada substantiva subjetiva desempenha o papel sintático de sujeito do verbo da oração principal. Em concursos públicos, ela surge sistematicamente posposta ao predicado principal, exigindo a reconstrução do período na ordem canônica direta.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 As estruturas que projetam obrigatoriamente a oração subjetiva para a posição pós-verbal são:
 
@@ -155,19 +153,19 @@ As estruturas que projetam obrigatoriamente a oração subjetiva para a posiçã
 2. Inverte-se o período: **Sujeito ("ISSO") + Verbo + Complementos**.
 3. **Regra de Ouro:** O sujeito sintático em língua portuguesa **nunca é introduzido por preposição**. Em questões de múltipla escolha que solicitem a identificação de oração subjetiva, qualquer alternativa iniciada por preposição (*de, para, a, por, com*) deve ser descartada de imediato.
 
-### Alertas de Bancas
+#### Alertas de Bancas
 
 Bancas como Cebraspe e AOCP tentam frequentemente induzir o candidato ao erro afirmando que orações pós-verbais com verbos unipessoais (*"basta apertar"*) ou após predicados nominais (*"é possível usar"*) são "complementos verbais" ou "complementos nominais de adjetivo". Trata-se de erro conceitual: são sujeitos oracionais plenos.
 
 ---
 
-## Técnica das Setas: Diferenciação entre Objetiva Indireta e Completiva Nominal
+### Técnica das Setas: Diferenciação entre Objetiva Indireta e Completiva Nominal
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Tanto a oração subordinada substantiva objetiva indireta quanto a completiva nominal vêm introduzidas por preposição obrigatória. A distinção inequívoca entre elas decorre unicamente da **classe morfológica do termo antecedente regente** ao qual a oração se vincula.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Ao traçar uma seta da oração preposicionada em direção ao termo subordinante:
 
@@ -181,7 +179,7 @@ Ao traçar uma seta da oração preposicionada em direção ao termo subordinant
 
 *Desmistificação do Critério Agente vs. Paciente:* Na sintaxe do período composto, o candidato **não deve** analisar se há "sentido paciente" ou "sentido agente" (distinção válida apenas para o embate entre Adjunto Adnominal e Complemento Nominal no período simples). Em orações, basta seguir o destino regencial da seta (verbo vs. nome).
 
-### Exemplos comparativos
+#### Exemplos comparativos
 
 1. *"Gostaria [de ser recepcionista]."* $\rightarrow$ Seta para *Gostaria* (Verbo) $\rightarrow$ O. S. Subst. Objetiva Indireta.
 2. *"...não consiste senão [em quinhoar desigualmente...]."* $\rightarrow$ Seta para *consiste* (Verbo) $\rightarrow$ O. S. Subst. Objetiva Indireta.
@@ -190,13 +188,13 @@ Ao traçar uma seta da oração preposicionada em direção ao termo subordinant
 
 ---
 
-## Objeto Direto Oracional, Ordem Inversa e Tópico Anteposto
+### Objeto Direto Oracional, Ordem Inversa e Tópico Anteposto
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A oração subordinada substantiva objetiva direta atua como complemento verbal não preposicionado de verbos transitivos diretos ou locuções verbais transitivas diretas. Em provas de alto nível (Cebraspe / Tribunais de Contas), a oração objetiva direta é frequentemente topicalizada no início do período, criando uma falsa impressão de sujeito.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 No período complexo em ordem inversa:
 
@@ -212,13 +210,13 @@ No período complexo em ordem inversa:
 
 ---
 
-## Orações Subordinadas Substantivas Predicativas Reduzidas
+### Orações Subordinadas Substantivas Predicativas Reduzidas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A oração subordinada substantiva predicativa exerce a função sintática de predicativo do sujeito da oração principal, ligando-se a um sujeito substantivo preexistente por meio de um verbo de ligação (especialmente o verbo *ser* ou locuções como *parece ser*).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Para reconhecer a oração predicativa:
 
@@ -229,13 +227,13 @@ Para reconhecer a oração predicativa:
 
 ---
 
-## Orações Subordinadas Adjetivas Reduzidas e Desdobramento por Pronome Relativo
+### Orações Subordinadas Adjetivas Reduzidas e Desdobramento por Pronome Relativo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A oração subordinada adjetiva reduzida liga-se sintaticamente a um substantivo (ou pronome) antecedente para qualificá-lo ou restringi-lo, equivalendo exatamente a uma oração desenvolvida introduzida pelo pronome relativo **"QUE"** (ou *o qual, a qual*) acompanhado do verbo flexionado.
 
-### Explicação consolidada e teste de conversão
+#### Explicação consolidada e teste de conversão
 
 1. **Identificação do Núcleo Substantivo:** A oração reduzida (frequentemente de gerúndio ou particípio, raramente de infinitivo preposicionado) está imediatamente associada a um substantivo antecedente na oração principal.
 2. **Teste de Desdobramento:** Substitui-se a forma nominal pela fórmula:
@@ -243,27 +241,27 @@ A oração subordinada adjetiva reduzida liga-se sintaticamente a um substantivo
  \text{[Substantivo]} + \text{QUE / O QUAL} + \text{[Verbo Flexionado]}.
  $$
 3. **Pontuação e Classificação:**
- * Sem vírgula $\rightarrow$ **Adjetiva Restritiva**.
- * Entre vírgulas $\rightarrow$ **Adjetiva Explicativa**.
+  * Sem vírgula $\rightarrow$ **Adjetiva Restritiva**.
+  * Entre vírgulas $\rightarrow$ **Adjetiva Explicativa**.
 
 *Análise de Duplo Nível ("Vi a menina chorando"):*
 
 * Na oração principal (*"Vi a menina"*), *"a menina"* é objeto direto do verbo *ver*.
 * Na oração subordinada desenvolvida (*"que chorava"*), o pronome relativo *"que"* assume a função de sujeito do verbo *chorar*.
 
-### Exemplos
+#### Exemplos
 
 * *"A Virgin Hyperloop não é a única empresa [desenvolvendo o conceito]..."* $\rightarrow$ *"empresa [que desenvolve / desenvolveu o conceito]"* $\rightarrow$ Oração Subordinada Adjetiva Restritiva Reduzida de Gerúndio (`OSARrG`).
 
 ---
 
-## Infinitivo Impessoal vs. Infinitivo Pessoal (Flexionado) e o Macete do "Para"
+### Infinitivo Impessoal vs. Infinitivo Pessoal (Flexionado) e o Macete do "Para"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O infinitivo em língua portuguesa apresenta-se sob duas modalidades: o **infinitivo impessoal** (forma invariável que dá nome ao verbo e não possui sujeito determinado) e o **infinitivo pessoal ou flexionado** (forma que admite sujeito próprio e recebe desinências número-pessoais).
 
-### Explicação consolidada e tabela de flexão
+#### Explicação consolidada e tabela de flexão
 
 Muitos concursandos supõem erroneamente que verbos com terminações pessoais (*-rem, -mos*) estão no modo subjuntivo ou no indicativo, deixando de reconhecer que se trata de oração reduzida de infinitivo.
 
@@ -280,13 +278,13 @@ Muitos concursandos supõem erroneamente que verbos com terminações pessoais (
 
 ---
 
-## Orações Subordinadas Adverbiais Reduzidas e o Mnemônico $6C_S + FTP$
+### Orações Subordinadas Adverbiais Reduzidas e o Mnemônico $6C_S + FTP$
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As orações reduzidas adverbiais exercem o papel de adjunto adverbial da oração principal, expressando circunstâncias semânticas que se distribuem exatamente nas 9 circunstâncias normativas sintetizadas pela fórmula mnemônica **$6C_S + FTP$**.
 
-### As 9 Circunstâncias Adverbiais
+#### As 9 Circunstâncias Adverbiais
 
 * **6 Circunstâncias com a letra "C":**
  1. **Causal:** Motivo gerador do fato principal (*"por serem mais capazes"*, *"temendo por sua saúde"*).
@@ -302,9 +300,9 @@ As orações reduzidas adverbiais exercem o papel de adjunto adverbial da oraç�
 
 ---
 
-## Padrões Prepositivos de Infinitivo: Finalidade ("Para"), Causa ("Por"), Tempo ("Ao") e Condição ("A")
+### Padrões Prepositivos de Infinitivo: Finalidade ("Para"), Causa ("Por"), Tempo ("Ao") e Condição ("A")
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A correlação entre a preposição introdutória e o verbo no infinitivo estabelece padrões semântico-sintáticos fixos e recorrentes em provas de concursos:
 
@@ -316,37 +314,37 @@ A correlação entre a preposição introdutória e o verbo no infinitivo estabe
 | **`A` + Infinitivo** | **Condição** (Hipótese / Pré-requisito) | *se, caso* | *"[A persistirem os sintomas], consulte..."* |
 | **`Por` + Infinitivo (com adjetivo volitivo)** | **Finalidade** (Ação Posterior) | *para, a fim de* | *"Estamos ansiosos [por ler a peça]."* |
 
-### Desmistificação do Mito da Finalidade
+#### Desmistificação do Mito da Finalidade
 
 É um equívoco presumir que todo infinitivo preposicionado indica finalidade. A preposição `por` + infinitivo indica preponderantemente **causa** (*por ser* = *porque é*). Quando atrelada a termos de desejo/ansiedade (*"ansiosos por ler"*), assume valor de finalidade (meta futura), mas nunca de causa ou consequência preexistente.
 
-### A Distinção Crítica: "Ao + Infinitivo" vs. "A + Infinitivo"
+#### A Distinção Crítica: "Ao + Infinitivo" vs. "A + Infinitivo"
 
 * `Ao persistirem os sintomas` $\rightarrow$ Valor **Temporal** (afirma a certeza de que os sintomas persistirão no tempo).
 * `A persistirem os sintomas` $\rightarrow$ Valor **Condicional** (afirma a hipótese sanitária: *"caso persistam"*). O uso de *ao* em propagandas farmacêuticas constitui erro semântico.
 
 ---
 
-## A Estrutura "Ao + Infinitivo" e a Sobreposição Semântica de Tempo e Causa
+### A Estrutura "Ao + Infinitivo" e a Sobreposição Semântica de Tempo e Causa
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A construção sintática **`ao + infinitivo`** denota originariamente o marco temporal de imediatismo (*quando*), mas em períodos dinâmicos carrega intrinsecamente um valor cumulativo de **causa** (*o fato de agir faz com que recomecemos*).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Bancas sofisticadas (como a FCC) exploram períodos em que o marco temporal deflagra o efeito na oração principal:
 
 * *"Somos livres quando, [ao agir], recomeçamos."*
- * **Leitura Temporal:** *No momento em que agimos*, recomeçamos.
- * **Leitura Causal:** *Pelo fato de agir / porque agimos*, recomeçamos.
+  * **Leitura Temporal:** *No momento em que agimos*, recomeçamos.
+  * **Leitura Causal:** *Pelo fato de agir / porque agimos*, recomeçamos.
 * Analogia clássica da aula: *"Quando a vejo, meu coração dispara."* (Tempo: momento da visão; Causa: a visão provoca a reação fisiológica).
 
 ---
 
-## Semântica do Gerúndio: Causa (Anterioridade), Modo e Consequência (Posterioridade)
+### Semântica do Gerúndio: Causa (Anterioridade), Modo e Consequência (Posterioridade)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O gerúndio é a forma nominal de maior fluidez semântica na língua. Sua classificação depende do pareamento direto com o verbo da oração principal e da análise da linha cronológica dos eventos:
 
@@ -372,38 +370,36 @@ O gerúndio é a forma nominal de maior fluidez semântica na língua. Sua class
 
 ---
 
-## Orações Reduzidas de Particípio: Condição/Hipótese e Causa
+### Orações Reduzidas de Particípio: Condição/Hipótese e Causa
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As orações reduzidas de particípio expressam predominantemente valor de **causa** ou **tempo**, mas assumem valor de **condição / hipótese** quando articuladas com predicados principais marcados por modalizadores de possibilidade (*é possível, pode*).
 
-### Critérios Diagnósticos
+#### Critérios Diagnósticos
 
 * **Particípio Causal:** Expressa fato consumado preexistente (*"[Bombardeado por fótons de alta energia], Calvin é transformado num raio-X vivo"* $\rightarrow$ o fato de ser bombardeado gerou a transformação).
 * **Particípio Condicional / Hipotético:** Não deve ser analisado isoladamente. Ao rastrear o modalizador *"é possível"* na oração principal (*"[Somadas a isso influências do ambiente]... é possível transcender..."*), o particípio converte-se em hipótese condicional (*"Se forem somadas..."* / *"Caso sejam somadas..."*).
 
 ---
 
-## Polissemia, Ambiguidade Contextual e Desaconselhamento de Reduzidas em Redações Discursivas
+### Polissemia, Ambiguidade Contextual e Desaconselhamento de Reduzidas em Redações Discursivas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Pela ausência de conectivo subordinativo explícito, as orações reduzidas (especialmente as de gerúndio e particípio) carregam instabilidade semântica inerente, oscilando contextualmente entre causa, tempo, condição e modo. Por impor sobrecarga interpretativa ao corretor, **devem ser evitadas na produção de redações discursivas de concursos**, priorizando-se o emprego de orações desenvolvidas munidas de conjunções claras (*visto que, a fim de que, caso*).
 
 ---
 
-## Diferenciação Sintática: Oração Absoluta vs. Adjuntos Adverbiais e Verbos Impessoais
+### Diferenciação Sintática: Oração Absoluta vs. Adjuntos Adverbiais e Verbos Impessoais
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A análise sintática rigorosa exige não confundir orações do período composto com estruturas do período simples ou com construções de verbos impessoais:
 
 1. **Oração Absoluta:** É a oração única que constitui integralmente um período simples (ex.: *"quem seríamos?"*).
 2. **Adjunto Adverbial Anteposto:** Expressões circunstanciais sem verbo (ex.: *"[Sem história e sem passado], quem seríamos?"*) atuam como meros adjuntos adverbiais de condição e não como orações subordinadas.
 3. **Verbo Impessoal *Haver*:** O verbo *haver* no sentido existencial é impessoal, não possui sujeito e rege **Objeto Direto** (*"Há consenso..."*). Não possui a mesma função sintática de sujeitos oracionais (*"é preciso radicalizar..."*).
-
----
 
 ---
 
@@ -426,25 +422,23 @@ A análise sintática rigorosa exige não confundir orações do período compos
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Algoritmo Integrado de Classificação de Orações Reduzidas
+### Algoritmo Integrado de Classificação de Orações Reduzidas
 
 1. **Localizar e Isolar:** Isole o verbo na forma nominal (infinitivo, gerúndio ou particípio) e confirme a ausência de conjunção integrante/adverbial e de pronome relativo.
 2. **Teste 1 — Substituição por "ISSO":**
- * Tente substituir a oração inteira por *"ISSO"*, *"DISSO"* ou *"A ISSO"*.
- * Se fizer sentido sintático perfeito $\rightarrow$ É **Subordinada Substantiva**. Avance para o  ou reorganize na ordem direta.
+  * Tente substituir a oração inteira por *"ISSO"*, *"DISSO"* ou *"A ISSO"*.
+  * Se fizer sentido sintático perfeito $\rightarrow$ É **Subordinada Substantiva**. Avance para o  ou reorganize na ordem direta.
 3. **Teste 2 — Vínculo com Substantivo / Pronome Relativo:**
- * Se não couber *"ISSO"*, verifique se a oração qualifica um substantivo antecedente e aceita conversão para *"QUE + verbo flexionado"*.
- * Se sim $\rightarrow$ É **Subordinada Adjetiva** (Restritiva se sem vírgula; Explicativa se entre vírgulas).
+  * Se não couber *"ISSO"*, verifique se a oração qualifica um substantivo antecedente e aceita conversão para *"QUE + verbo flexionado"*.
+  * Se sim $\rightarrow$ É **Subordinada Adjetiva** (Restritiva se sem vírgula; Explicativa se entre vírgulas).
 4. **Teste 3 — Sentido Circunstancial Adverbial:**
- * Se trouxer ideia de circunstância em relação ao verbo principal $\rightarrow$ É **Subordinada Adverbial** (enquadrar em uma das 9 circunstâncias $6C_S + FTP$).
+  * Se trouxer ideia de circunstância em relação ao verbo principal $\rightarrow$ É **Subordinada Adverbial** (enquadrar em uma das 9 circunstâncias $6C_S + FTP$).
 
 ---
 
-## Técnica das Setas para Desempate de Orações Preposicionadas (OI vs. CN)
+### Técnica das Setas para Desempate de Orações Preposicionadas (OI vs. CN)
 
 1. Isole a oração reduzida preposicionada (*"de ser recepcionista"*, *"de ficar fora"*, *"a terem o foco desviado"*).
 2. Localize o termo regente imediato à esquerda que exige a preposição.
@@ -454,7 +448,7 @@ A análise sintática rigorosa exige não confundir orações do período compos
 
 ---
 
-## Protocolo de Análise Sintática em Períodos com Ordem Inversa
+### Protocolo de Análise Sintática em Períodos com Ordem Inversa
 
 1. Não classifique o segmento oracional inicial antes de ler o período até o ponto final.
 2. Localize o núcleo verbal ou a locução verbal do predicado (*"não parece recomendar"*).
@@ -468,16 +462,16 @@ A análise sintática rigorosa exige não confundir orações do período compos
 
 ---
 
-## Método Mnemônico do "Para" para Flexão do Infinitivo Pessoal
+### Método Mnemônico do "Para" para Flexão do Infinitivo Pessoal
 
 1. Tome a forma base do infinitivo impessoal (*amar, ser, fazer*).
 2. Anteponha a preposição funcional *"para"* combinada com os pronomes retos:
- * *para eu amar / para tu amares / para ele amar / para nós amarmos / para vós amardes / para eles amarem*.
+  * *para eu amar / para tu amares / para ele amar / para nós amarmos / para vós amardes / para eles amarem*.
 3. Aplique as desinências número-pessoais sem confundi-las com o futuro do subjuntivo.
 
 ---
 
-## Teste da Cronologia/Anterioridade para Causa vs. Consequência no Gerúndio
+### Teste da Cronologia/Anterioridade para Causa vs. Consequência no Gerúndio
 
 1. Isole os dois polos verbais: a oração de gerúndio e o verbo da oração a que ela se vincula.
 2. Pergunte: *"Qual fato ocorreu primeiro no tempo real?"*.
@@ -486,7 +480,7 @@ A análise sintática rigorosa exige não confundir orações do período compos
 
 ---
 
-## Teste de Associação Verbal para Gerúndio Modal
+### Teste de Associação Verbal para Gerúndio Modal
 
 1. Isole o verbo no gerúndio e localize o verbo regente principal.
 2. Formule a pergunta interrogativa: `[Verbo Principal] + COMO?`.
@@ -494,13 +488,11 @@ A análise sintática rigorosa exige não confundir orações do período compos
 
 ---
 
-## Técnica de Eliminação Reversa e Regra "Vá ao Verbo"
+### Técnica de Eliminação Reversa e Regra "Vá ao Verbo"
 
 1. Em questões de correspondência com múltiplos trechos ou textos longos, inicie a análise pelos trechos que trazem conectivos canônicos (*para* = finalidade; *uma vez que* = causa).
 2. Elimine as opções incompatíveis nas colunas correspondentes.
 3. Se houver dúvida em termo sublinhado, **"vá ao verbo"**: determine a transitividade do verbo regente e aplique as perguntas do sujeito e dos objetos antes de tentar classificar termos periféricos.
-
----
 
 ---
 
@@ -518,64 +510,77 @@ A análise sintática rigorosa exige não confundir orações do período compos
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Bloco I — Questões 07 a 14 (Fontes: conteúdo integrado)
+### Bloco I — Questões 07 a 14 (Fontes: conteúdo integrado)
 
-### Questão 07: AOCP / EBSERH
+#### Questão 07: AOCP / EBSERH
 
 * **Enunciado:** No período *"Pegar a estrada com os filhos pequenos revelou-se uma delícia insuspeitada."*, a oração em destaque tem função de:
-* **Alternativas:** A) complemento nominal / B) objeto direto / C) sujeito / D) objeto indireto / E) aposto.
+* **Alternativas:**
+A) complemento nominal /
+B) objeto direto /
+C) sujeito /
+D) objeto indireto /
+E) aposto.
 * **Resolução:** Substituição: *"Isso revelou-se uma delícia."* Pergunta ao verbo: *O que se revelou uma delícia? Isso.* O pronome *"se"* atua como parte integrante do verbo (PIV).
 * **Gabarito:** **C (sujeito)** — Oração Subordinada Substantiva Subjetiva Reduzida de Infinitivo.
 
-### Questão 08: Quadrix / CRM-MS
+#### Questão 08: Quadrix / CRM-MS
 
 * **Enunciado:** A oração *"discutir a regulamentação da prática"* em *"Agora, cabe aos Conselhos de Medicina discutir a regulamentação da prática"* classifica-se como subordinada:
-* **Alternativas:** A) substantiva subjetiva / B) substantiva objetiva direta / C) substantiva objetiva indireta / D) adjetiva restritiva / E) adverbial temporal.
+* **Alternativas:**
+A) substantiva subjetiva /
+B) substantiva objetiva direta /
+C) substantiva objetiva indireta /
+D) adjetiva restritiva /
+E) adverbial temporal.
 * **Resolução:** Ordem direta: *"Discutir a regulamentação da prática [Isso] cabe aos Conselhos de Medicina."* O verbo *caber* é unipessoal e rege sujeito oracional.
 * **Gabarito:** **A (substantiva subjetiva)**.
 
-### Questão 09: AOCP / Pref. Feira de Santana
+#### Questão 09: AOCP / Pref. Feira de Santana
 
 * **Enunciado:** Assinale a alternativa em que a oração em destaque tenha função de objeto indireto.
 * **Análise das Alternativas:**
- * A) *"[Conciliar os estudos]... não era viável"* $\rightarrow$ *"Isso não era viável"* (Subjetiva).
- * B) *"[Para ter mais oportunidades]... percebeu..."* $\rightarrow$ (Adverbial Final).
- * C) *"...é possível [manter os jovens...]"* $\rightarrow$ *"Isso é possível"* (Subjetiva).
- * D) *"Gostaria [de ser recepcionista]..."* $\rightarrow$ Seta para o verbo *Gostaria* (VTI) $\rightarrow$ **Objeto Indireto**.
- * E) *"...correm o risco [de ficar fora...]"* $\rightarrow$ Seta para o substantivo *risco* $\rightarrow$ (Completiva Nominal).
+  * A) *"[Conciliar os estudos]... não era viável"* $\rightarrow$ *"Isso não era viável"* (Subjetiva).
+  * B) *"[Para ter mais oportunidades]... percebeu..."* $\rightarrow$ (Adverbial Final).
+  * C) *"...é possível [manter os jovens...]"* $\rightarrow$ *"Isso é possível"* (Subjetiva).
+  * D) *"Gostaria [de ser recepcionista]..."* $\rightarrow$ Seta para o verbo *Gostaria* (VTI) $\rightarrow$ **Objeto Indireto**.
+  * E) *"...correm o risco [de ficar fora...]"* $\rightarrow$ Seta para o substantivo *risco* $\rightarrow$ (Completiva Nominal).
 * **Gabarito:** **D**.
 
-### Questão 10: Instituto AOCP / UFSM
+#### Questão 10: Instituto AOCP / UFSM
 
 * **Enunciado:** Em *"Estão mais propensas a terem o foco desviado."*, a oração destacada exerce função de:
-* **Alternativas:** A) complemento nominal / B) sujeito / C) objeto direto / D) objeto indireto / E) predicativo.
+* **Alternativas:**
+A) complemento nominal /
+B) sujeito /
+C) objeto direto /
+D) objeto indireto /
+E) predicativo.
 * **Resolução:** *"Estão"* é verbo de ligação; *"propensas"* é adjetivo predicativo. A oração preposicionada completa o adjetivo *propensas* (nome).
 * **Gabarito:** **A (complemento nominal)**.
 
-### Questão 11: Instituto AOCP / IBC
+#### Questão 11: Instituto AOCP / IBC
 
 * **Enunciado:** Em *"não será possível ultrapassar o número mágico de 35."*, a função sintática da oração destacada é a mesma encontrada em:
 * **Resolução do Trecho-Base:** *"Isso não será possível"* $\rightarrow$ Sujeito (Subjetiva).
 * **Análise das Alternativas:** Todas as opções preposicionadas (A: *de determinar*, B: *para devorar*, D: *a legislar*, E: *de reduzir*) foram eliminadas pelo descarte rápido de sujeito. A alternativa C (*"Infere-se que os casos... são raríssimos"*) traz a forma desenvolvida equivalente (*"Isso é inferido"* $\rightarrow$ Sujeito).
 * **Gabarito:** **C**.
 
-### Questão 12: CONTEMAX / Pref. Alagoa Nova
+#### Questão 12: CONTEMAX / Pref. Alagoa Nova
 
 * **Enunciado:** Assinale a alternativa em que há uma oração subordinada adjetiva destacada:
 * **Análise:** Na alternativa B (*"A Virgin Hyperloop não é a única empresa [desenvolvendo o conceito]"*), o segmento liga-se a *empresa* e equivale a *"empresa que desenvolve o conceito"*.
 * **Gabarito:** **B (Adjetiva Restritiva Reduzida de Gerúndio)**.
 
-### Questão 13: Quadrix / CONTER
+#### Questão 13: Quadrix / CONTER
 
 * **Enunciado:** O trecho *"bombardeado por fótons de alta energia"* no quadrinho do Calvin é:
 * **Resolução:** Apresenta verbo no particípio sem conectivo e expressa a causa da transformação física do personagem (*"o fato de ter sido bombardeado causou sua mutação"*).
 * **Gabarito:** **A (Oração subordinada adverbial, reduzida de particípio)**.
 
-### Questão 14: Instituto AOCP / SES-DF
+#### Questão 14: Instituto AOCP / SES-DF
 
 * **Enunciado:** Em *"[...] Pais órfãos que não se negam a prestar ajuda financeira."*, a oração destacada é subordinada adjetiva restritiva. (Certo / Errado)
 * **Resolução:** Substituição: *"não se negam a isso"*. A oração completa o verbo *negar-se* (VTI) $\rightarrow$ Oração Subordinada Substantiva Objetiva Indireta Reduzida de Infinitivo.
@@ -583,68 +588,68 @@ A análise sintática rigorosa exige não confundir orações do período compos
 
 ---
 
-## Bloco II — Questões 15 a 19 (Fontes: conteúdo integrado)
+### Bloco II — Questões 15 a 19 (Fontes: conteúdo integrado)
 
-### Questão 15: VUNESP / TJ-SP
+#### Questão 15: VUNESP / TJ-SP
 
 * **Enunciado:** Em *"—... fez de tudo para sobreviver... —"*, a oração em destaque é:
 * **Resolução:** Preposição *para* indicando objetivo + verbo no infinitivo *sobreviver*.
 * **Gabarito:** **A (subordinada adverbial final, encerrando ideia de finalidade — OSAFRI)**.
 
-### Questão 16: Instituto AOCP / TRT 5ª Região
+#### Questão 16: Instituto AOCP / TRT 5ª Região
 
 * **Enunciado:** No excerto *"[...] a reciprocidade é essencial para a coisa funcionar [...]"*, classificar o trecho destacado.
 * **Resolução:** *para* + sujeito próprio (*a coisa*) + infinitivo (*funcionar*).
 * **Gabarito:** **A (adverbial final reduzida de infinitivo)**.
 
-### Questão 17: FGV / SEFAZ-RJ
+#### Questão 17: FGV / SEFAZ-RJ
 
 * **Enunciado:** *"Ao analisar o progresso da humanidade, percebe-se que..."* / A oração sublinhada tem valor:
 * **Resolução:** Estrutura *Ao + infinitivo* denota tempo (*"Quando se analisa..."*).
 * **Gabarito:** **D (temporal)**.
 
-### Questão 18: Instituto AOCP / PC-ES
+#### Questão 18: Instituto AOCP / PC-ES
 
 * **Enunciado:** Todas as frases apresentam oração subordinada temporal, EXCETO:
 * **Resolução:** A alternativa D traz *"Caso haja suspeita, não estacione..."*, encabeçada pela conjunção condicional *caso*.
 * **Gabarito:** **D**.
 
-### Questão 19: VUNESP / SPTrans
+#### Questão 19: VUNESP / SPTrans
 
 * **Trechos Analisados:**
- * I. *"...defender seus pontos de vista [falando bem]?"* $\rightarrow$ Defendia como? $\rightarrow$ **Modo**.
- * II. *"...[uma vez que as peças de defesa já haviam sido escritas]..."* $\rightarrow$ **Causa**.
- * III. *"...[para conseguir escrever] suas sentenças..."* $\rightarrow$ **Finalidade**.
+  * I. *"...defender seus pontos de vista [falando bem]?"* $\rightarrow$ Defendia como? $\rightarrow$ **Modo**.
+  * II. *"...[uma vez que as peças de defesa já haviam sido escritas]..."* $\rightarrow$ **Causa**.
+  * III. *"...[para conseguir escrever] suas sentenças..."* $\rightarrow$ **Finalidade**.
 * **Gabarito:** **E (modo, causa e finalidade)**.
 
 ---
 
-## Bloco III — Questões 20 a 23 (Fontes: conteúdo integrado)
+### Bloco III — Questões 20 a 23 (Fontes: conteúdo integrado)
 
-### Questão 20: VUNESP / TJ-SP
+#### Questão 20: VUNESP / TJ-SP
 
 * **Enunciado:** No excerto *"...sociedades com maior número de pessoas altruístas sobreviveram por mais tempo **por serem mais capazes de manter a coesão**."*, a oração destacada expressa o sentido de:
 * **Resolução:** Preposição *por* + infinitivo flexionado *serem*. Equivale a *"porque são / visto que são"*. Atende à fórmula: *"O fato de serem mais capazes fez com que sobrevivessem"*.
 * **Gabarito:** **C (causa)**.
 
-### Questão 21: FCC / TCE-AL
+#### Questão 21: FCC / TCE-AL
 
 * **Enunciado:** O elemento sublinhado tem valor causal em:
 * **Varredura das Opções:**
- * A) *"...nos devolvem [a autoria da vida]"* $\rightarrow$ Objeto Direto.
- * B) *"Liberdade seria [sinônimo de decisão]"* $\rightarrow$ Predicativo do Sujeito.
- * C) *"...torna tão difícil [cumprir propósitos...]"* $\rightarrow$ OSSODRI (*"torna isso difícil"*).
- * D) *"[Sem história e sem passado], quem seríamos?"* $\rightarrow$ Adjunto Adverbial Condicional sem verbo + Oração Absoluta.
- * E) *"Somos livres quando, [ao agir], recomeçamos."* $\rightarrow$ Duplo valor temporal e causal (*"pelo fato de agir / porque agimos"*).
+  * A) *"...nos devolvem [a autoria da vida]"* $\rightarrow$ Objeto Direto.
+  * B) *"Liberdade seria [sinônimo de decisão]"* $\rightarrow$ Predicativo do Sujeito.
+  * C) *"...torna tão difícil [cumprir propósitos...]"* $\rightarrow$ OSSODRI (*"torna isso difícil"*).
+  * D) *"[Sem história e sem passado], quem seríamos?"* $\rightarrow$ Adjunto Adverbial Condicional sem verbo + Oração Absoluta.
+  * E) *"Somos livres quando, [ao agir], recomeçamos."* $\rightarrow$ Duplo valor temporal e causal (*"pelo fato de agir / porque agimos"*).
 * **Gabarito:** **E**.
 
-### Questão 22: FGV / Senado Federal
+#### Questão 22: FGV / Senado Federal
 
 * **Enunciado:** *"Em julho de 1898, **temendo por sua saúde**, escreveu um testamento..."* / A oração destacada tem valor:
 * **Resolução:** Aplicação da anterioridade cronológica: 1º temeu por sua saúde (causa); 2º redigiu o documento (efeito).
 * **Gabarito:** **C (causal — OSACRGer)**.
 
-### Questão 23: FCC / TRT 15ª Região
+#### Questão 23: FCC / TRT 15ª Região
 
 * **Enunciado:** Identificar as ideias das orações sublinhadas:
  1. *"[Somadas a isso influências...], é possível transcender..."* $\rightarrow$ Modalizador *é possível* confere valor de hipótese $\rightarrow$ **Condição**.
@@ -654,72 +659,70 @@ A análise sintática rigorosa exige não confundir orações do período compos
 
 ---
 
-## Bloco IV — Questões 24 a 33 (Fontes: conteúdo integrado — Banca Cebraspe/CESPE)
+### Bloco IV — Questões 24 a 33 (Fontes: conteúdo integrado — Banca Cebraspe/CESPE)
 
-### Questão 24: CESPE / TJ-DFT
+#### Questão 24: CESPE / TJ-DFT
 
 * **Item:** Em *"Importa destacar que a violência..."*, a oração *"destacar"* exerce função de sujeito.
 * **Resolução:** Ordem direta: *"Destacar [Isso] importa."* Oração subjetiva reduzida de infinitivo.
 * **Gabarito:** **CERTO**.
 
-### Questão 25: CESPE / TCU
+#### Questão 25: CESPE / TCU
 
 * **Item:** A oração *"[Realizar mudanças permanentes na lei...]"* exerce a função de complemento da forma verbal *"recomendar"*.
 * **Texto:** *"...Realizar mudanças permanentes na lei por conta de circunstâncias excepcionais e episódicas não parece recomendar o bom senso."*
 * **Resolução:** Período invertido. O sujeito é *"o bom senso"*. Na ordem direta: *"O bom senso não parece recomendar isso"*. A oração é objeto direto (complemento verbal) de *recomendar*.
 * **Gabarito:** **CERTO**.
 
-### Questão 26: CESPE / MPU
+#### Questão 26: CESPE / MPU
 
 * **Item:** A oração *"[quinhoar desigualmente aos desiguais...]"* exerce a função de complemento indireto da forma verbal *"consiste"*.
 * **Texto:** *"A regra da igualdade não consiste senão em quinhoar desigualmente..."*
 * **Resolução:** Substituição: *"não consiste senão nisso"*. O verbo *consistir* é VTI regido por *em*.
 * **Gabarito:** **CERTO**.
 
-### Questão 27: CESPE / TRE-BA
+#### Questão 27: CESPE / TRE-BA
 
 * **Item:** A oração *"[apertar a tecla branca]"* exerce a função de complemento da forma verbal *"basta"*.
 * **Resolução:** Ordem direta: *"Apertar a tecla branca [Isso] basta."* É sujeito oracional e não complemento.
 * **Gabarito:** **ERRADO**.
 
-### Questão 28: CESPE / TJ-DFT
+#### Questão 28: CESPE / TJ-DFT
 
 * **Item:** A oração *"[usar a iluminação natural]"* exerce a função de complemento do adjetivo *"possível"*.
 * **Resolução:** *"Usar a iluminação natural [Isso] é possível."* *"Possível"* é predicativo do sujeito; a oração é o sujeito.
 * **Gabarito:** **ERRADO**.
 
-### Questão 29: CESPE / INSS
+#### Questão 29: CESPE / INSS
 
 * **Item:** A oração introduzida pela preposição *"por"* em *"Estamos ansiosos por ler a peça..."* remete a uma ação anterior ao estado descrito em *"Estamos ansiosos"*.
 * **Resolução:** *"Ansiosos por ler"* equivale a *"ansiosos para ler"* (finalidade). O objetivo visado é uma ação futura (**posterior**), e não anterior.
 * **Gabarito:** **ERRADO**.
 
-### Questão 30: CESPE / TCE-AC
+#### Questão 30: CESPE / TCE-AC
 
 * **Item:** No texto *"O problema não é mudar a consciência das pessoas..."*, a oração *"mudar a consciência..."* exerce a função sintática de sujeito.
 * **Resolução:** *"O problema"* é o sujeito; *"é"* é verbo de ligação; *"mudar..."* é oração predicativa (*"O problema não é isso"*).
 * **Gabarito:** **ERRADO**.
 
-### Questão 31: CESPE / TCE-PE
+#### Questão 31: CESPE / TCE-PE
 
 * **Item:** O trecho *"[ser o desafio das democracias de massa para obter legitimidade]"* exerce a função de sujeito de *"parece"*.
 * **Texto:** *"Responder a esse modelo de forma integrada e aproximar as expectativas do cidadão da realidade social parece ser o desafio..."*
 * **Resolução:** O sujeito composto está no início (*"Responder... e aproximar..."*). O trecho sublinhado integra a locução com predicativo do sujeito.
 * **Gabarito:** **ERRADO**.
 
-### Questão 32: CESPE / TRE-MT
+#### Questão 32: CESPE / TRE-MT
 
 * **Item:** O termo *"a legítima expectativa"* (*"...surge a legítima expectativa"*) e a oração *"aguardar até o dia da votação"* (*"...não seria razoável aguardar..."*) desempenham a mesma função sintática.
 * **Resolução:** Ambos são sujeitos sintáticos dos seus predicados (*"A legítima expectativa surge"*; *"Aguardar... não seria razoável"*).
 * **Gabarito:** **CERTO**.
 
-### Questão 33: CESPE / TJ-DFT
+#### Questão 33: CESPE / TJ-DFT
 
 * **Item:** A oração *"[radicalizar a política...]"* (*"...é preciso radicalizar a política..."*) e o termo *"consenso"* (*"Há consenso de que..."*) exercem a mesma função sintática.
 * **Resolução:** *"Radicalizar..."* é Sujeito Oracional de *é preciso*. *"Consenso"* é Objeto Direto do verbo impessoal *haver*. Funções distintas.
 * **Gabarito:** **ERRADO**.
-
----
 
 ---
 
@@ -736,8 +739,6 @@ A análise sintática rigorosa exige não confundir orações do período compos
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
 * ** — Confusão entre Objetiva Indireta e Completiva Nominal:** O erro comum é marcar Objetiva Indireta apenas pela presença de preposição (*de, a, em*). A distinção depende exclusivamente da palavra anterior: ligada a verbo $\rightarrow$ Objetiva Indireta; ligada a substantivo ou adjetivo $\rightarrow$ Completiva Nominal.
@@ -750,8 +751,6 @@ A análise sintática rigorosa exige não confundir orações do período compos
 * ** — Confundir Oração Absoluta com Oração Assindética ou Adjunto Adverbial:** Oração absoluta é a oração única do período simples. Termos circunstanciais antepostos sem verbo (*"Sem história e sem passado"*) são adjuntos adverbiais e não orações subordinadas.
 * ** — Impessoalidade do Verbo "Haver" vs. Sujeito Oracional:** O verbo *haver* com sentido existencial é impessoal e não admite sujeito; seu termo acompanhante é objeto direto, não podendo ser equiparado a sujeitos oracionais de predicados com verbo de ligação (*é preciso*).
 * ** — Proibição Prática de Reduzidas em Redações Discursivas:** Devido à instabilidade semântica e à frequente ambiguidade contextual de gerúndios e particípios, deve-se evitar orações reduzidas em textos dissertativos de concursos, empregando sempre orações desenvolvidas com conjunções explícitas.
-
----
 
 ---
 
@@ -772,8 +771,6 @@ A análise sintática rigorosa exige não confundir orações do período compos
 * ** — Relação de Anterioridade Causal:** Princípio cronológico pelo qual o fato gerador que ocorre temporalmente antes atua como a causa do evento posterior .
 * ** — Modalizador de Hipótese:** Elemento gramatical ou lexical na oração principal (*é possível, pode*) que orienta semanticamente uma oração de particípio para valor condicional .
 * ** — Sigla OSAFRI:** Oração Subordinada Adverbial Final Reduzida de Infinitivo .
-
----
 
 ---
 

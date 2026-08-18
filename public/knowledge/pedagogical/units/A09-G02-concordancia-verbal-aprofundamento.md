@@ -77,17 +77,15 @@ MAPA CONCEITUAL DO CONHECIMENTO CONSOLIDADO (esta unidade)
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Oração Sem Sujeito e Regra Canônica dos Verbos Impessoais
+### Oração Sem Sujeito e Regra Canônica dos Verbos Impessoais
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A oração sem sujeito estrutura-se compulsoriamente em torno de um verbo impessoal — aquele que não possui sujeito sintático e não se refere a nenhuma pessoa gramatical —, devendo permanecer fixo e invariável na **3ª pessoa do singular**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A gramática moderna adota a denominação "oração sem sujeito" em substituição à nomenclatura tradicional "sujeito inexistente", visto que não se deve classificar ou nomear um elemento ontologicamente inexistente. A impessoalidade verbal anula a possibilidade de flexão numérica: tanto o verbo simples isolado quanto o verbo auxiliar de uma locução verbal regida por verbo impessoal ficam travados na 3ª pessoa do singular.
 
@@ -98,7 +96,7 @@ A matéria organiza-se pedagogicamente em quatro blocos fundamentais:
 3. Verbos indicadores de tempo decorrido (*haver*, *fazer*, *ir*);
 4. Expressões idiomáticas impessoais regidas por preposição (*chega de*, *basta de*, *passa de*).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - O verbo não responde com um agente/substantivo à pergunta *"Quem é que [verbo]?"* ou *"O que é que [verbo]?"*.
 - O verbo expressa evento natural puro, transcurso cronológico temporal, existência ou saturação quantitativa.
@@ -106,33 +104,33 @@ A matéria organiza-se pedagogicamente em quatro blocos fundamentais:
 
 ---
 
-## Verbos Indicadores de Fenômenos Naturais (Sentido Literal vs. Figurado)
+### Verbos Indicadores de Fenômenos Naturais (Sentido Literal vs. Figurado)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Verbos que exprimem processos meteorológicos (*chover, nevar, relampejar, trovejar, anoitecer, amanhecer*) são impessoais e invariáveis no singular quando empregados em sentido literal (denotativo). Contudo, ao serem utilizados em sentido figurado (conotativo/metafórico), adquirem pessoalidade e concordam regularmente com o sujeito explícito.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Sentido Literal (Fenômeno da Natureza):** O evento ocorre espontaneamente no ambiente físico, sem agente. A oração é sem sujeito e o verbo permanece na 3ª pessoa do singular.
- - *Exemplo:* *Choveu bastante em alguns bairros ontem.*
+  - *Exemplo:* *Choveu bastante em alguns bairros ontem.*
 - **Sentido Figurado (Metafórico):** O verbo passa a significar ocorrência ou incidência em abundância de elementos humanos ou materiais. O termo substantivo passa a funcionar como sujeito simples, exigindo flexão do verbo.
- - *Exemplo:* *Choveram reclamações no grupo de mensagens.* ("reclamações" = sujeito simples plural $\rightarrow$ verbo no plural: *choveram*).
+  - *Exemplo:* *Choveram reclamações no grupo de mensagens.* ("reclamações" = sujeito simples plural $\rightarrow$ verbo no plural: *choveram*).
 
 ---
 
-## Verbo HAVER Existencial vs. Verbos Pessoais (EXISTIR, OCORRER, ACONTECER)
+### Verbo HAVER Existencial vs. Verbos Pessoais (EXISTIR, OCORRER, ACONTECER)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O verbo *haver*, quando expressa existência, ocorrência ou acontecimento, é impessoal, transitivo direto e invariável na 3ª pessoa do singular; o substantivo que o acompanha é seu **objeto direto**. Em oposição direta, os verbos *existir*, *ocorrer* e *acontecer* são pessoais, intransitivos e flexionam-se obrigatoriamente para concordar com o seu **sujeito sintático**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Estrutura com HAVER:** `Havia [muitas dúvidas]`.
- - Sintaxe: *Havia* = VTD impessoal (singular fixo); *muitas dúvidas* = Objeto Direto (OD). A oração não possui sujeito. A forma \**"haviam dúvidas"* é erro grave na norma culta.
+  - Sintaxe: *Havia* = VTD impessoal (singular fixo); *muitas dúvidas* = Objeto Direto (OD). A oração não possui sujeito. A forma \**"haviam dúvidas"* é erro grave na norma culta.
 - **Estrutura com EXISTIR:** `Existiam [muitas dúvidas]`.
- - Sintaxe: *Existiam* = Verbo Intransitivo (VI) pessoal; *muitas dúvidas* = Sujeito Simples Plural. O verbo concorda com o sujeito. A forma \**"existe muitas dúvidas"* é erro de concordância.
+  - Sintaxe: *Existiam* = Verbo Intransitivo (VI) pessoal; *muitas dúvidas* = Sujeito Simples Plural. O verbo concorda com o sujeito. A forma \**"existe muitas dúvidas"* é erro de concordância.
 
 ```text
 HAVER (= existir) ────────► IMPESSOAL (3ª sing.) ──► Termo associado = OBJETO DIRETO
@@ -141,13 +139,13 @@ EXISTIR / OCORRER ────────► PESSOAL (Flexiona) ──► Termo
 
 ---
 
-## Verbos HAVER, FAZER e IR Indicando Tempo Decorrido
+### Verbos HAVER, FAZER e IR Indicando Tempo Decorrido
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Os verbos *haver*, *fazer* e *ir*, quando empregados para indicar tempo decorrido/transcorrido (tempo cronológico passado ou aproximado), atuam como verbos impessoais, permanecendo invariáveis na **3ª pessoa do singular**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Verbo FAZER temporal:** Permanece estritamente no singular (*Faz dez meses que não o vejo*, *Faz três anos*). A forma coloquial \**"fazem dez meses"* viola a norma culta, pois a expressão numérica atua como adjunto/extensão temporal, e não como sujeito.
 2. **Verbo HAVER temporal:** Mantém-se invariável no singular (*Havia dias que esperava*). A abordagem didática ressalta que bancas minuciosas (como a FGV) exigem a fundamentação semântica correta: trata-se de tempo decorrido, e não de existência (*"existiam dias"* geraria absurdo semântico).
@@ -155,33 +153,33 @@ Os verbos *haver*, *fazer* e *ir*, quando empregados para indicar tempo decorrid
 
 ---
 
-## Expressões Impessoais Idiomáticas e o Princípio do Sujeito Não Preposicionado
+### Expressões Impessoais Idiomáticas e o Princípio do Sujeito Não Preposicionado
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As expressões verbais *chega de*, *basta de* e *passa de* são estruturas impessoais que formam oração sem sujeito, fixando o verbo na 3ª pessoa do singular. A presença obrigatória da preposição *de* impede formalmente que o substantivo posposto seja classificado como sujeito.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Na língua portuguesa padrão, o sujeito gramatical jamais pode vir introduzido por preposição. Como os substantivos em *Chega de reclamações*, *Basta de problemas* e *Passa de duas horas* estão regidos pela preposição *de*, eles não possuem capacidade sintática de comandar a flexão verbal. Logo, as formas \**"chegam de"*, \**"bastam de"* e \**"passam de"* são incorretas.
 
 ---
 
-## Concordância em Locuções Verbais com Verbos Impessoais vs. Pessoais
+### Concordância em Locuções Verbais com Verbos Impessoais vs. Pessoais
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Em qualquer locução verbal (`verbo auxiliar + verbo principal`), o **verbo principal** (último da cadeia verbal) é a autoridade sintática máxima ("quem manda"), definindo a predicação, a transitividade e a impessoalidade. O **verbo auxiliar** (primeiro da cadeia) atua como executor morfológico ("quem obedece"). Se o verbo principal for impessoal, ele transmite sua impessoalidade ao auxiliar, que se fixa na **3ª pessoa do singular**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Mantra Pedagógico:** *"Quem manda é o principal, quem obedece é o auxiliar."* / *"O auxiliar carrega a impessoalidade do verbo principal."*
 - **Locução com Principal Impessoal (*haver* existencial / *fazer* temporal):**
 
- - *Exemplos:* *Poderá haver novas rebeliões* (e não *poderão haver*); *Deve haver soluções*; *Vai fazer dois anos*.
+  - *Exemplos:* *Poderá haver novas rebeliões* (e não *poderão haver*); *Deve haver soluções*; *Vai fazer dois anos*.
 - **Locução com Principal Pessoal (*existir*, *ocorrer*, *acontecer*):**
- - O verbo principal exige sujeito; logo, o verbo auxiliar flexiona-se obrigatoriamente para concordar com o sujeito sintático.
- - *Exemplos:* *Poderão existir novas rebeliões*; *Devem existir soluções*; *Passaram a existir fortunas enormes*.
+  - O verbo principal exige sujeito; logo, o verbo auxiliar flexiona-se obrigatoriamente para concordar com o sujeito sintático.
+  - *Exemplos:* *Poderão existir novas rebeliões*; *Devem existir soluções*; *Passaram a existir fortunas enormes*.
 
 ```text
 LOCUÇÃO VERBAL ──► Analisar o ÚLTIMO verbo (Principal)
@@ -191,13 +189,13 @@ LOCUÇÃO VERBAL ──► Analisar o ÚLTIMO verbo (Principal)
 
 ---
 
-## Locuções Verbais Modais com HAVER Auxiliar ("Haver de + Infinitivo")
+### Locuções Verbais Modais com HAVER Auxiliar ("Haver de + Infinitivo")
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Na locução verbal modal formada pela perífrase `haver de + infinitivo` (ex.: *haver de pesquisar*, *haver de precipitar-se*), o verbo *haver* atua exclusivamente como **verbo auxiliar pessoal** (com valor modal de *ter de*, *dever* ou futuro), devendo flexionar-se normalmente em número e pessoa para concordar com o sujeito da oração.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 É um erro clássico generalizar a impessoalidade de *haver* para todas as suas aparições. Na locução `haver de + infinitivo`:
 
@@ -207,32 +205,32 @@ Na locução verbal modal formada pela perífrase `haver de + infinitivo` (ex.: 
 
 ---
 
-## Conceito e Regra Geral de Concordância com Sujeito Oracional
+### Conceito e Regra Geral de Concordância com Sujeito Oracional
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Sujeito oracional é a função sintática de sujeito desempenhada por uma oração subordinada substantiva subjetiva. Por se tratar de uma oração inteira (desprovida de flexão morfológica de número plural), **o verbo da oração principal permanece compulsoriamente na 3ª pessoa do singular (invariável)**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Mantra Pedagógico:** *"Sujeito oracional é aquele que tem verbo."*
 
 - **Exemplo de Contraste:**
- - *Bastam amigos.* $\rightarrow$ Sujeito substantivo plural (*amigos*) $\rightarrow$ Verbo no plural (*bastam*).
- - *Basta que você tenha amigos.* $\rightarrow$ Sujeito oracional (*que você tenha amigos*) $\rightarrow$ Verbo no singular (*basta*).
+  - *Bastam amigos.* $\rightarrow$ Sujeito substantivo plural (*amigos*) $\rightarrow$ Verbo no plural (*bastam*).
+  - *Basta que você tenha amigos.* $\rightarrow$ Sujeito oracional (*que você tenha amigos*) $\rightarrow$ Verbo no singular (*basta*).
 
 ---
 
-## Sujeito Oracional em Oração Desenvolvida vs. Oração Reduzida de Infinitivo
+### Sujeito Oracional em Oração Desenvolvida vs. Oração Reduzida de Infinitivo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O sujeito oracional manifesta-se sob duas formas sintáticas equivalentes perante a regra de concordância da oração principal:
 
 1. **Oração Desenvolvida:** introduzida por conjunção integrante (*que*, *se*) e estruturada com verbo flexionado em modo/tempo finito.
 2. **Oração Reduzida:** desprovida de conjunção integrante, estruturada com o verbo em forma nominal (especialmente o infinitivo).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A ausência da conjunção *que* não transforma a estrutura em sujeito simples substantivo. A presença de um verbo no infinitivo basta para configurar oração reduzida subjetiva, impondo o verbo principal no singular:
 
@@ -243,9 +241,9 @@ A ausência da conjunção *que* não transforma a estrutura em sujeito simples 
 
 ---
 
-## Estruturas Sintáticas Típicas de Sujeito Oracional
+### Estruturas Sintáticas Típicas de Sujeito Oracional
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As bancas examinadoras cobram sujeito oracional estruturado em três matrizes sintáticas principais na oração regente:
 
@@ -253,7 +251,7 @@ As bancas examinadoras cobram sujeito oracional estruturado em três matrizes si
 2. **(B) Verbo de Ligação + Predicativo do Sujeito:** Estruturas como *é bom*, *está claro*, *parece possível*, *é preciso*, *é necessário*.
 3. **(C) Expressões na Voz Passiva (Pronominal ou Analítica):** Estruturas como *sabe-se*, *diz-se*, *conta-se*, *acredita-se*, *constata-se*, *é sabido*, *foi anunciado*.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Todas as três matrizes regem orações subjetivas e devem manter suas formas no singular (e no gênero masculino neutro para os adjetivos predicativos):
 
@@ -263,13 +261,13 @@ Todas as três matrizes regem orações subjetivas e devem manter suas formas no
 
 ---
 
-## Sintaxe do Verbo PARECER e a Armadilha do Falso Sujeito Anteposto
+### Sintaxe do Verbo PARECER e a Armadilha do Falso Sujeito Anteposto
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Quando o verbo *parecer* rege uma oração subordinada desenvolvida introduzida por *que*, toda a oração subsequente funciona como seu sujeito oracional, obrigando o verbo *parecer* a ficar na **3ª pessoa do singular**. É incorreto flexionar *parecer* no plural concordando com um termo plural que pertença, na realidade, ao predicado da oração subordinada.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Na frase: *"Os dois parecia que haviam acabado de comer a maçã proibida"*:
 
@@ -280,47 +278,47 @@ Na frase: *"Os dois parecia que haviam acabado de comer a maçã proibida"*:
 
 ---
 
-## Voz Passiva Sintética (Partícula Apassivadora) vs. Falso Tempo Decorrido e PIS
+### Voz Passiva Sintética (Partícula Apassivadora) vs. Falso Tempo Decorrido e PIS
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A presença de uma expressão temporal numérica associada a um Verbo Transitivo Direto (VTD) e ao pronome *SE* configura **Voz Passiva Sintética com Sujeito Paciente**, exigindo flexão do verbo no plural. Essa construção opõe-se diametralmente às orações sem sujeito temporais (*fazer/haver*) e às estruturas com Verbo Transitivo Indireto (VTI) com Índice de Indeterminação do Sujeito (PIS).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Voz Passiva Sintética Temporal (VTD + SE = PA):**
- - *Já se completaram dois anos* $\rightarrow$ Transposição analítica: *Dois anos foram completados*.
- - *Contam-se uns dois anos* $\rightarrow$ Transposição analítica: *Uns dois anos são contados*.
- - O termo *dois anos* é o **sujeito paciente** da oração. Logo, o verbo concorda no plural.
+  - *Já se completaram dois anos* $\rightarrow$ Transposição analítica: *Dois anos foram completados*.
+  - *Contam-se uns dois anos* $\rightarrow$ Transposição analítica: *Uns dois anos são contados*.
+  - O termo *dois anos* é o **sujeito paciente** da oração. Logo, o verbo concorda no plural.
 - **Contraste com Tempo Decorrido Puro (Oração Sem Sujeito):**
- - *Faz dois anos* / *Há dois anos* (sem pronome *se*; verbo impessoal invariável).
+  - *Faz dois anos* / *Há dois anos* (sem pronome *se*; verbo impessoal invariável).
 - **Contraste com Partícula de Indeterminação do Sujeito (VTI + SE = PIS):**
- - *Torce-se para as crianças* (*torcer* é VTI regido pela preposição *para*; não admite voz passiva; verbo fixo na 3ª pessoa do singular).
+  - *Torce-se para as crianças* (*torcer* é VTI regido pela preposição *para*; não admite voz passiva; verbo fixo na 3ª pessoa do singular).
 
 ---
 
-## Invariabilidade da Estrutura "Trata-se de" com Índice de Indeterminação do Sujeito
+### Invariabilidade da Estrutura "Trata-se de" com Índice de Indeterminação do Sujeito
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A construção formada pelo verbo *tratar* pronominal acompanhado da preposição *de* (*tratar-se de*) é uma estrutura sintática com Índice de Indeterminação do Sujeito (IIS), devendo permanecer **sempre e obrigatoriamente na 3ª pessoa do singular**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Mesmo que o complemento preposicionado seguinte esteja no plural (ex.: *Trata-se de novas tentativas*, *Trata-se de problemas graves*), a flexão de plural \**"tratam-se de"* é terminantemente proibida pela norma-padrão.
 
 ---
 
-## Concordância com Sujeito Composto Posposto (Total vs. Atrativa)
+### Concordância com Sujeito Composto Posposto (Total vs. Atrativa)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Quando o sujeito composto se posiciona após o verbo (sujeito posposto), a norma culta admite duas modalidades de concordância:
 
 1. **Concordância Gramatical / Total:** O verbo flexiona-se no plural, concordando com a soma de todos os núcleos.
 2. **Concordância Atrativa:** O verbo flexiona-se concordando exclusivamente com o primeiro núcleo (o mais próximo).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Na frase *"Historicamente, sempre existiram boatos e mentiras..."*:
 
@@ -332,30 +330,30 @@ Na frase *"Historicamente, sempre existiram boatos e mentiras..."*:
 
 ---
 
-## Concordância do Verbo com o Pronome Relativo "Que" e Desambiguação de Antecedente
+### Concordância do Verbo com o Pronome Relativo "Que" e Desambiguação de Antecedente
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Quando o pronome relativo **"que"** funciona como sujeito sintático da oração subordinada adjetiva, o verbo a ele associado deve concordar em número e pessoa com o seu **termo antecedente (referente)**. Em caso de múltiplos antecedentes potenciais, aplica-se a técnica operacional **"o que vem depois salva"**, inspecionando predicativos e complementos subsequentes para desambiguar o referente real.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Regra Geral:** Em *Funcionários que riem*, o pronome *que* retoma *funcionários* (3ª do plural $\rightarrow$ *riem*).
 - **Desambiguação em Estruturas Complexas (`Subst 1 + de + Subst 2 + que + Verbo`):**
- - Na frase: *A validação dos critérios que se apresentam como parâmetros aceitáveis...*
- - Dúvida: O "que" retoma o núcleo singular *validação* ou o adjunto plural *critérios*?
- - Solução: O predicativo subsequente *como parâmetros aceitáveis* (plural) refere-se semanticamente a *critérios*. Logo, o antecedente é *critérios*, impondo o verbo no plural: *se apresentam*.
+  - Na frase: *A validação dos critérios que se apresentam como parâmetros aceitáveis...*
+  - Dúvida: O "que" retoma o núcleo singular *validação* ou o adjunto plural *critérios*?
+  - Solução: O predicativo subsequente *como parâmetros aceitáveis* (plural) refere-se semanticamente a *critérios*. Logo, o antecedente é *critérios*, impondo o verbo no plural: *se apresentam*.
 - **Antecedente Pronominal Neutro ("o que"):** Em *...o que lhes deve ser necessário*, o pronome *que* retoma o pronome demonstrativo *o* (= *aquilo*), exigindo verbo no singular: *deve*.
 
 ---
 
-## Inversão Sintática, Núcleo Não Preposicionado e Função Sintática do Pronome "Lhes"
+### Inversão Sintática, Núcleo Não Preposicionado e Função Sintática do Pronome "Lhes"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O verbo concorda estritamente com o **núcleo não preposicionado do sujeito**, não podendo ser atraído por termos preposicionados intercalados, por adjuntos antepostos ou pelo pronome oblíquo *lhes* (que jamais atua como sujeito).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Núcleo Não Preposicionado:** Em *A taxa de resolução dos testes cresce*, o núcleo é *taxa* (singular); *dos testes* é adjunto adnominal preposicionado. O verbo permanece no singular. Em *A distância entre os países ricos aumentasse*, o núcleo é *distância* (singular).
 2. **Sujeito Posposto Invertido:** Em *Atingem uma proporção inaudita as desavenças*, colocando na ordem direta (*As desavenças atingem...*), comprova-se o sujeito plural.
@@ -363,23 +361,21 @@ O verbo concorda estritamente com o **núcleo não preposicionado do sujeito**, 
 
 ---
 
-## Acentuação Diferencial em Formas Verbais e Concordância de Particípios
+### Acentuação Diferencial em Formas Verbais e Concordância de Particípios
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A correta concordância verbal depende frequentemente da aplicação rigorosa do acento circunflexo diferencial na 3ª pessoa do plural dos verbos *ter*, *vir* e derivados, bem como da concordância em gênero e número dos particípios passivos com o sujeito paciente.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Verbos TER e VIR (e derivados):**
- - *Ele tem / Ele vem* (singular: sem acento).
- - *Eles têm / Eles vêm* (plural: **acento circunflexo** obrigatório).
- - *Ele convém / Ele mantém* (derivados no singular: **acento agudo**).
- - *Eles convêm / Eles mantêm* (derivados no plural: **acento circunflexo**).
- - Com sujeito oracional, usa-se estritamente a forma singular com agudo: *Convém mudar as regras*.
+  - *Ele tem / Ele vem* (singular: sem acento).
+  - *Eles têm / Eles vêm* (plural: **acento circunflexo** obrigatório).
+  - *Ele convém / Ele mantém* (derivados no singular: **acento agudo**).
+  - *Eles convêm / Eles mantêm* (derivados no plural: **acento circunflexo**).
+  - Com sujeito oracional, usa-se estritamente a forma singular com agudo: *Convém mudar as regras*.
 - **Particípios na Voz Passiva Analítica:** O particípio flexiona-se como adjetivo em gênero e número com o sujeito paciente: *Foi posta nas mãos de bilhões a conectividade* (sujeito *conectividade* feminino $\rightarrow$ *posta*, e não *posto*).
-
----
 
 ---
 
@@ -407,17 +403,15 @@ A tabela abaixo sintetiza o inventário canônico de regras consolidadas desta u
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## O Método Operacional "Viva Cada Verbo" para Períodos Complexos
+### O Método Operacional "Viva Cada Verbo" para Períodos Complexos
 
-### Objetivo
+#### Objetivo
 
 Evitar a perda de foco e eliminar erros induzidos por atração de palavras vizinhas, inversões sintáticas ou acúmulo de orações subordinadas.
 
-### Passo a passo
+#### Passo a passo
 
 1. **Varredura e Mapeamento:** Leia o período completo e sublinhe individualmente cada forma verbal simples e cada locução verbal.
 2. **Isolamento Oracional:** Isole a primeira oração e ignore momentaneamente as demais.
@@ -428,85 +422,85 @@ Evitar a perda de foco e eliminar erros induzidos por atração de palavras vizi
 
 ---
 
-## O Método do Pronome "ISSO" para Sujeito Oracional
+### O Método do Pronome "ISSO" para Sujeito Oracional
 
-### Objetivo
+#### Objetivo
 
 Identificar se o sujeito sob análise é oracional e travar com precisão o verbo principal na 3ª pessoa do singular.
 
-### Passo a passo
+#### Passo a passo
 
 1. Localize o verbo principal sob julgamento (ex.: *convém, basta, cabe, está claro, parece, sabe-se*).
 2. Isole entre colchetes todo o segmento posterior que responde à pergunta do sujeito (*que você venha*, *reduzir as despesas*, *mudar as regras*).
 3. Verifique se há verbo (conjugado ou no infinitivo) dentro do segmento isolado.
 4. Substitua o bloco inteiro pelo pronome demonstrativo neutro **ISSO**.
 5. Reorganize mentalmente na ordem direta: `ISSO + [verbo principal]`.
- - *Exemplo:* *[Reduzir as distâncias] convém* $\rightarrow$ `Isso convém`.
- - *Exemplo:* *[Que as coisas mudem] está claro* $\rightarrow$ `Isso está claro`.
+  - *Exemplo:* *[Reduzir as distâncias] convém* $\rightarrow$ `Isso convém`.
+  - *Exemplo:* *[Que as coisas mudem] está claro* $\rightarrow$ `Isso está claro`.
 6. Como o pronome "ISSO" é singular neutro, fixe compulsoriamente o verbo principal na **3ª pessoa do singular**.
 
 ---
 
-## Regra Operacional das Locuções Verbais ("Mantra Principal/Auxiliar")
+### Regra Operacional das Locuções Verbais ("Mantra Principal/Auxiliar")
 
-### Objetivo
+#### Objetivo
 
 Julgar e flexionar corretamente o verbo auxiliar em cadeias verbais.
 
-### Passo a passo
+#### Passo a passo
 
 1. Localize a cadeia verbal `[Verbo Auxiliar] + [Verbo Principal]`.
 2. Ignore a flexão do auxiliar no primeiro momento e olhe exclusivamente para o **último verbo (Principal)**.
 3. Avalie a natureza do Verbo Principal:
- - **Caso A — Principal Impessoal** (*haver* no sentido de existir/tempo; *fazer* temporal): O principal não tem sujeito e transmite sua impessoalidade. O auxiliar **fica travado na 3ª pessoa do singular** (*Deve haver motivos*, *Vai fazer dez anos*).
- - **Caso B — Principal Pessoal** (*existir, ocorrer, acontecer, precipitar-se*): O principal exige sujeito. Localize o sujeito da oração e **flexione o auxiliar no plural ou singular** (*Devem existir motivos*, *Hão de precipitar-se desavenças*).
+  - **Caso A — Principal Impessoal** (*haver* no sentido de existir/tempo; *fazer* temporal): O principal não tem sujeito e transmite sua impessoalidade. O auxiliar **fica travado na 3ª pessoa do singular** (*Deve haver motivos*, *Vai fazer dez anos*).
+  - **Caso B — Principal Pessoal** (*existir, ocorrer, acontecer, precipitar-se*): O principal exige sujeito. Localize o sujeito da oração e **flexione o auxiliar no plural ou singular** (*Devem existir motivos*, *Hão de precipitar-se desavenças*).
 
 ---
 
-## Teste da Voz Passiva Analítica para Diferenciação entre PA e PIS
+### Teste da Voz Passiva Analítica para Diferenciação entre PA e PIS
 
-### Objetivo
+#### Objetivo
 
 Identificar se uma estrutura com `SE` exige flexão com o sujeito paciente ou se permanece travada no singular por indeterminação.
 
-### Passo a passo
+#### Passo a passo
 
 1. Identifique o verbo e examine sua predicação:
 2. **Se o verbo for Transitivo Direto (VTD) sem preposição:**
 
- - *Exemplo:* *Comentam-se assuntos tristes* $\rightarrow$ *Assuntos tristes são comentados* (Possível).
- - *Classificação:* O `SE` é **Partícula Apassivadora (PA)**. O verbo concorda com o sujeito paciente.
+  - *Exemplo:* *Comentam-se assuntos tristes* $\rightarrow$ *Assuntos tristes são comentados* (Possível).
+  - *Classificação:* O `SE` é **Partícula Apassivadora (PA)**. O verbo concorda com o sujeito paciente.
 3. **Se o verbo for Transitivo Indireto (VTI) com preposição regida:**
- - Tente fazer a conversão analítica: *Torce-se para as crianças* $\rightarrow$ *\*"Para as crianças é torcido"* (Impossível).
- - *Classificação:* O `SE` é **Partícula de Indeterminação do Sujeito (PIS)**. O verbo fica fixo na **3ª pessoa do singular** (*Torce-se*).
+  - Tente fazer a conversão analítica: *Torce-se para as crianças* $\rightarrow$ *\*"Para as crianças é torcido"* (Impossível).
+  - *Classificação:* O `SE` é **Partícula de Indeterminação do Sujeito (PIS)**. O verbo fica fixo na **3ª pessoa do singular** (*Torce-se*).
 
 ---
 
-## Desambiguação de Antecedente do Pronome "Que" ("O Que Vem Depois Salva")
+### Desambiguação de Antecedente do Pronome "Que" ("O Que Vem Depois Salva")
 
-### Objetivo
+#### Objetivo
 
 Definir o referente que governa a concordância do pronome relativo *que* em estruturas com duplo antecedente (`Substantivo 1 + de + Substantivo 2`).
 
-### Passo a passo
+#### Passo a passo
 
 1. Isole a estrutura ambígua: *A validação [Subst 1 sing.] dos critérios [Subst 2 plur.] que se (apresentar)...*
 2. Não tente adivinhar o antecedente olhando apenas para os termos que vêm antes.
 3. **Leia o predicativo, adjetivo ou complemento que vem DEPOIS do verbo subordinado.**
 4. Analise a quem o complemento pós-verbal qualifica semanticamente:
- - No texto: *"...que se apresentam **como parâmetros aceitáveis**"*.
- - O termo *parâmetros aceitáveis* (plural) qualifica os *critérios* (e não a *validação*).
+  - No texto: *"...que se apresentam **como parâmetros aceitáveis**"*.
+  - O termo *parâmetros aceitáveis* (plural) qualifica os *critérios* (e não a *validação*).
 5. Conclua com segurança que o antecedente é *critérios*, exigindo a flexão no plural: *se apresentam*.
 
 ---
 
-## Teste de Substituição HAVER vs. EXISTIR
+### Teste de Substituição HAVER vs. EXISTIR
 
-### Objetivo
+#### Objetivo
 
 Realizar a correta transposição entre orações existenciais.
 
-### Passo a passo
+#### Passo a passo
 
 1. Verifique se o verbo expressa existência ou acontecimento.
 2. Ao usar **HAVER**: Empregue estritamente na **3ª pessoa do singular** (*Havia / Houve / Há*). O termo substantivo seguinte é **objeto direto**.
@@ -514,20 +508,18 @@ Realizar a correta transposição entre orações existenciais.
 
 ---
 
-## Teste Semântico para Verbos Meteorológicos (Literal vs. Figurado)
+### Teste Semântico para Verbos Meteorológicos (Literal vs. Figurado)
 
-### Objetivo
+#### Objetivo
 
 Definir a flexão de verbos que indicam processos climáticos.
 
-### Passo a passo
+#### Passo a passo
 
 1. Localize verbos como *chover, nevar, relampejar, amanhecer*.
 2. Avalie o contexto:
- - Se tratar-se de evento climático físico da natureza $\rightarrow$ Oração sem sujeito $\rightarrow$ Verbo no **singular invariável** (*Choveu torrencialmente*).
- - Se tratar-se de uso metafórico/figurado indicando abundância $\rightarrow$ Identifique o sujeito e **flexione o verbo** (*Choveram ofertas de emprego*).
-
----
+  - Se tratar-se de evento climático físico da natureza $\rightarrow$ Oração sem sujeito $\rightarrow$ Verbo no **singular invariável** (*Choveu torrencialmente*).
+  - Se tratar-se de uso metafórico/figurado indicando abundância $\rightarrow$ Identifique o sujeito e **flexione o verbo** (*Choveram ofertas de emprego*).
 
 ---
 
@@ -543,7 +535,7 @@ Definir a flexão de verbos que indicam processos climáticos.
 | **Comportamento em Locuções** | Auxiliar fica no singular (*Deve haver dúvidas*) | Auxiliar flexiona no plural (*Devem existir dúvidas*) |
 | **Exemplo Típico** | *Havia muitos candidatos na sala.* | *Existiam muitos candidatos na sala.* |
 
-### 2. HAVER Impessoal vs. HAVER de Auxiliar Modal
+#### 2. HAVER Impessoal vs. HAVER de Auxiliar Modal
 
 | Parâmetro de Comparação | HAVER Impessoal (Existência / Tempo) | HAVER em "Haver de + Infinitivo" |
 |:------------------------------- |:---------------------------------------------- |:------------------------------------------------ |
@@ -552,7 +544,7 @@ Definir a flexão de verbos que indicam processos climáticos.
 | **Flexão Numérica** | Travado na 3ª pessoa do singular | Flexiona normalmente (*hão de*, *haviam de*) |
 | **Exemplo Típico** | *Poderá haver novas reuniões.* | *Aqueles que hão de pesquisar a matéria.* |
 
-### 3. Partícula Apassivadora (PA) vs. Índice de Indeterminação (PIS)
+#### 3. Partícula Apassivadora (PA) vs. Índice de Indeterminação (PIS)
 
 | Parâmetro de Comparação | Partícula Apassivadora (PA) | Índice de Indeterminação do Sujeito (PIS) |
 |:---------------------------------- |:-------------------------------------- |:------------------------------------------- |
@@ -562,7 +554,7 @@ Definir a flexão de verbos que indicam processos climáticos.
 | **Regra de Flexão** | Verbo concorda com o sujeito paciente | Verbo fixo na 3ª pessoa do singular |
 | **Exemplo Típico** | *Comentam-se assuntos tristes.* | *Torce-se para as crianças.* |
 
-### 4. Sujeito Simples Plural vs. Sujeito Oracional
+#### 4. Sujeito Simples Plural vs. Sujeito Oracional
 
 | Parâmetro de Comparação | Sujeito Simples Substantivo Plural | Sujeito Oracional (Oração Subjetiva) |
 |:------------------------------- |:--------------------------------- |:--------------------------------------------- |
@@ -573,11 +565,9 @@ Definir a flexão de verbos que indicam processos climáticos.
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Exercício de Fixação 27: Choveu vs. Choveram
+### Exercício de Fixação 27: Choveu vs. Choveram
 
 - **Enunciado:** `27) ____________ bastante em alguns bairros. (Choveu/Choveram)`
 - **Gabarito:** `Choveu`
@@ -586,7 +576,7 @@ Definir a flexão de verbos que indicam processos climáticos.
 
 ---
 
-## Exercício de Fixação 28: Havia vs. Haviam
+### Exercício de Fixação 28: Havia vs. Haviam
 
 - **Enunciado:** `28) ____________ dúvidas sobre aquele ponto da matéria. (Havia/Haviam)`
 - **Gabarito:** `Havia`
@@ -595,7 +585,7 @@ Definir a flexão de verbos que indicam processos climáticos.
 
 ---
 
-## Exercício de Fixação 29: Poderá vs. Poderão haver
+### Exercício de Fixação 29: Poderá vs. Poderão haver
 
 - **Enunciado:** `29) ____________ haver novas rebeliões. (Poderá/Poderão)`
 - **Gabarito:** `Poderá`
@@ -604,7 +594,7 @@ Definir a flexão de verbos que indicam processos climáticos.
 
 ---
 
-## Exercício de Fixação 30: HAVER Temporal
+### Exercício de Fixação 30: HAVER Temporal
 
 - **Enunciado:** `30) Falei da angústia que ____________ dias me devorava. (havia/haviam)`
 - **Gabarito:** `havia`
@@ -612,7 +602,7 @@ Definir a flexão de verbos que indicam processos climáticos.
 
 ---
 
-## Exercício de Fixação 31: FAZER Temporal e Verbo IR
+### Exercício de Fixação 31: FAZER Temporal e Verbo IR
 
 - **Enunciado:** `31) ____________ dez meses que não recebo notícias dele. (Faz/Fazem)`
 - **Gabarito:** `Faz`
@@ -621,17 +611,17 @@ Definir a flexão de verbos que indicam processos climáticos.
 
 ---
 
-## Exercícios de Fixação 32 e 33: Expressões CHEGA DE e PASSA DE
+### Exercícios de Fixação 32 e 33: Expressões CHEGA DE e PASSA DE
 
 - **Enunciados:**
- - `32) ____________ reclamações. (Chega de/Chegam de)`
- - `33) ____________ duas horas. (Passa de/ Passam de)`
+  - `32) ____________ reclamações. (Chega de/Chegam de)`
+  - `33) ____________ duas horas. (Passa de/ Passam de)`
 - **Gabaritos:** `32) Chega de` | `33) Passa de`
 - **Justificativa Pedagógica:** As expressões verbais acompanhadas da preposição *de* são impessoais. Por serem preposicionados, os termos *reclamações* e *duas horas* não podem exercer função de sujeito.
 
 ---
 
-## Questão 27 (VUNESP 2020 — Pref. Ilhabela/SP — Técnico em Enfermagem)
+### Questão 27 (VUNESP 2020 — Pref. Ilhabela/SP — Técnico em Enfermagem)
 
 - **Enunciado:** O verbo **há** na frase – *São Paulo revive mesmas enchentes há 91 anos* – está corretamente alterado, de acordo com a norma-padrão da concordância, em:
 
@@ -640,19 +630,24 @@ Definir a flexão de verbos que indicam processos climáticos.
 
 ---
 
-## Questão 28 (VUNESP 2020 — Pref. São Roque/SP — Advogado)
+### Questão 28 (VUNESP 2020 — Pref. São Roque/SP — Advogado)
 
 - **Enunciado:** Substituição de três trechos textuais:
  1. *Historicamente, sempre existiram boatos e mentiras...* $\rightarrow$ trocar por *haver*.
  2. *...numa velocidade que há poucos anos era impensável.* $\rightarrow$ trocar por *fazer*.
  3. *São tentativas de fazer com que...* $\rightarrow$ trocar por *tratar-se de*.
-- **Opções:** (A) houve; fazem; Tratam-se de. | (B) houve; faz; Trata-se de. | (C) houve; fazem; Trata-se de. | (D) houveram; fazem; Tratam-se de. | (E) houveram; faz; Trata-se de.
+- **Opções:** (
+A) houve; fazem; Tratam-se de. | (
+B) houve; faz; Trata-se de. | (
+C) houve; fazem; Trata-se de. | (
+D) houveram; fazem; Tratam-se de. | (
+E) houveram; faz; Trata-se de.
 - **Gabarito Oficial:** **B**
 - **Justificativa Pedagógica:** 1) *Haver* existencial é impessoal $\rightarrow$ *houve*; 2) *Fazer* temporal é impessoal $\rightarrow$ *faz*; 3) *Tratar-se de* com IIS é sempre singular $\rightarrow$ *Trata-se de*.
 
 ---
 
-## Questão 32 (FGV 2020 — Pref. Cuiabá/MT — Contador)
+### Questão 32 (FGV 2020 — Pref. Cuiabá/MT — Contador)
 
 - **Enunciado:** *"Existem relatos e vestígios dessa arte desde o Império Romano"* — Assinale a opção que indica a forma de reescrever-se essa frase que mostra uma inadequação gramatical:
 
@@ -661,7 +656,7 @@ Definir a flexão de verbos que indicam processos climáticos.
 
 ---
 
-## Exercícios de Fixação 34 a 37: Matrizes de Sujeito Oracional
+### Exercícios de Fixação 34 a 37: Matrizes de Sujeito Oracional
 
 - **Item 34:** `________ que estejas aqui na hora marcada. (Convém/Convêm)` $\rightarrow$ **Gabarito: Convém** (Oração desenvolvida; acento agudo no singular).
 - **Item 35:** `________ mudar as regras. (Convém/Convêm)` $\rightarrow$ **Gabarito: Convém** (Oração reduzida de infinitivo; acento agudo no singular).
@@ -670,98 +665,94 @@ Definir a flexão de verbos que indicam processos climáticos.
 
 ---
 
-## Questão 35 (FCC 2019 — TRF 3ª Região — Analista Judiciário)
+### Questão 35 (FCC 2019 — TRF 3ª Região — Analista Judiciário)
 
 - **Enunciado:** O verbo indicado entre parênteses deverá flexionar-se numa forma do **singular** para integrar corretamente a frase:
- - (A) As respostas que se (aguardar) para essa questão... [Gera: *aguardam* - PA com sujeito plural *respostas*]
- - (B) A propósito dessa exata definição... com que se (afligir) os antropólogos... [Gera: *afligem* - Sujeito posposto *os antropólogos*]
- - (C) Não (dever) caber aos sociólogos ou antropólogos definir açodadamente o que seja uma estrutura social.
- - (D) Àqueles que (haver) de pesquisar o funcionamento de uma sociedade... [Gera: *hão / haverão* - Locução modal com sujeito *aqueles*]
- - (E) A validação dos critérios que se (apresentar) como parâmetros aceitáveis... [Gera: *apresentam* - "Que" retoma *critérios*]
+  - (A) As respostas que se (aguardar) para essa questão... [Gera: *aguardam* - PA com sujeito plural *respostas*]
+  - (B) A propósito dessa exata definição... com que se (afligir) os antropólogos... [Gera: *afligem* - Sujeito posposto *os antropólogos*]
+  - (C) Não (dever) caber aos sociólogos ou antropólogos definir açodadamente o que seja uma estrutura social.
+  - (D) Àqueles que (haver) de pesquisar o funcionamento de uma sociedade... [Gera: *hão / haverão* - Locução modal com sujeito *aqueles*]
+  - (E) A validação dos critérios que se (apresentar) como parâmetros aceitáveis... [Gera: *apresentam* - "Que" retoma *critérios*]
 - **Gabarito Oficial:** **C**
 - **Justificativa Pedagógica:** Na locução *não deve caber*, o sujeito é a oração reduzida de infinitivo *definir açodadamente o que seja uma estrutura social* (`Isso não deve caber`). O sujeito oracional impõe a locução no singular (*Não deve caber*).
 
 ---
 
-## Questão 36 (FCC 2019 — TRF 4ª Região — Oficial de Justiça Avaliador)
+### Questão 36 (FCC 2019 — TRF 4ª Região — Oficial de Justiça Avaliador)
 
 - **Enunciado:** O verbo indicado entre parênteses deverá flexionar-se numa forma do **singular** na frase:
 
- - (B) Sempre (haver) de precipitar-se desavenças inúteis... [Gera: *hão de precipitar-se* - Sujeito *desavenças*]
- - (C) Não (constar) em nosso passado de civilizados incongruências fatais... [Gera: *constam* - Sujeito posposto *incongruências*]
- - (D) É comum que mesmo numa relação familiar (atingir) uma proporção inaudita as desavenças... [Gera: *atingem* - Sujeito posposto *as desavenças*]
- - (E) Não deixa de ser uma ironia que a idealistas e realistas (poder) eventualmente contrapor-se os indiferentes... [Gera: *possam / podem* - Sujeito posposto *os indiferentes*]
+  - (B) Sempre (haver) de precipitar-se desavenças inúteis... [Gera: *hão de precipitar-se* - Sujeito *desavenças*]
+  - (C) Não (constar) em nosso passado de civilizados incongruências fatais... [Gera: *constam* - Sujeito posposto *incongruências*]
+  - (D) É comum que mesmo numa relação familiar (atingir) uma proporção inaudita as desavenças... [Gera: *atingem* - Sujeito posposto *as desavenças*]
+  - (E) Não deixa de ser uma ironia que a idealistas e realistas (poder) eventualmente contrapor-se os indiferentes... [Gera: *possam / podem* - Sujeito posposto *os indiferentes*]
 - **Gabarito Oficial:** **A**
 - **Justificativa Pedagógica:** *Nem ao sonho, nem à realidade* são termos preposicionados/craseados (objetos indiretos). O sujeito do verbo *caber* é a oração reduzida *fazer restrições* (`Isso cabe`). O sujeito oracional exige o verbo na 3ª pessoa do singular (*cabe*).
 
 ---
 
-## Questão 34 (VUNESP 2018 — Pref. São Bernardo do Campo/SP — Analista)
+### Questão 34 (VUNESP 2018 — Pref. São Bernardo do Campo/SP — Analista)
 
 - **Enunciado:** Assinale a alternativa em que a concordância está de acordo com a norma-padrão:
- - (A) Muitas pesquisas vem demonstrando... [Incorreta: falta acento circunflexo em *vêm*].
- - (B) A produtividade de funcionários que riem são comprovadamente maiores. [Incorreta: sujeito é *produtividade*, exige *é comprovadamente maior*].
- - (C) São necessárias valorizar a desconcentração... [Incorreta: sujeito oracional *valorizar...*, exige *É necessário valorizar*].
+  - (A) Muitas pesquisas vem demonstrando... [Incorreta: falta acento circunflexo em *vêm*].
+  - (B) A produtividade de funcionários que riem são comprovadamente maiores. [Incorreta: sujeito é *produtividade*, exige *é comprovadamente maior*].
+  - (C) São necessárias valorizar a desconcentração... [Incorreta: sujeito oracional *valorizar...*, exige *É necessário valorizar*].
 
- - (E) A taxa de resolução dos testes crescem... [Incorreta: núcleo é *taxa*, exige *cresce*].
+  - (E) A taxa de resolução dos testes crescem... [Incorreta: núcleo é *taxa*, exige *cresce*].
 - **Gabarito Oficial:** **D**
 - **Justificativa Pedagógica:** A oração *Ter um cérebro relaxado* atua como sujeito oracional de *é importante* (`Isso é importante`), justificando plenamente o singular.
 
 ---
 
-## Questão 37 (VUNESP 2018 — Pref. Buritizal/SP — Agrônomo)
+### Questão 37 (VUNESP 2018 — Pref. Buritizal/SP — Agrônomo)
 
 - **Enunciado:** Assinale a alternativa redigida de acordo com a norma-padrão de concordância:
- - (A) Sabe-se que o adulto deve ter clareza ao falar a crianças que verdadeiramente o ouça. [Erro: *ouça* $\rightarrow$ *ouçam*].
+  - (A) Sabe-se que o adulto deve ter clareza ao falar a crianças que verdadeiramente o ouça. [Erro: *ouça* $\rightarrow$ *ouçam*].
 
- - (C) Quase não se comenta assuntos tristes e torcem-se para as crianças não fazer perguntas. [Três erros: *comentam-se assuntos*; *torce-se para*; *não fazerem*].
- - (D) Quando chega certas datas especiais, fica complicado para algumas crianças a comemoração. [Erros: *chegam*; *complicada*].
- - (E) Constatam-se que algumas crianças que perderam os pais tem dificuldade... [Erros: *Constata-se que*; *têm dificuldade*].
+  - (C) Quase não se comenta assuntos tristes e torcem-se para as crianças não fazer perguntas. [Três erros: *comentam-se assuntos*; *torce-se para*; *não fazerem*].
+  - (D) Quando chega certas datas especiais, fica complicado para algumas crianças a comemoração. [Erros: *chegam*; *complicada*].
+  - (E) Constatam-se que algumas crianças que perderam os pais tem dificuldade... [Erros: *Constata-se que*; *têm dificuldade*].
 - **Gabarito Oficial:** **B**
 - **Justificativa Pedagógica:** *Acredita-se* está no singular por ter sujeito oracional (`Isso é acreditado`). Na oração subordinada, *se deveriam incluir os temas* é voz passiva sintética legítima (*os temas deveriam ser incluídos*), justificando a flexão plural do verbo auxiliar *deveriam*.
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Mantra Supremo das Locuções Verbais
+### O Mantra Supremo das Locuções Verbais
 
 > *"Quem manda é o principal, quem obedece é o auxiliar."*
 > Em qualquer questão envolvendo locução verbal, não olhe primeiro para o verbo auxiliar flexionado. Olhe diretamente para o **último verbo da cadeia** (o verbo principal). Se o principal for impessoal (*haver* existencial ou *fazer* temporal), trave o auxiliar no singular. Se o principal for pessoal (*existir*, *ocorrer*), faça o auxiliar concordar com o sujeito da oração.
 
 ---
 
-## O Macete do "ISSO" como Redutor Sintático
+### O Macete do "ISSO" como Redutor Sintático
 
 > Diante de estruturas com verbos como *convém*, *basta*, *cumpre*, *cabe*, *parece*, *está claro*, *é necessário*, substitua toda a oração iniciada por *que* ou iniciada por verbo no infinitivo pelo pronome **ISSO**. A estrutura resultante (`Isso convém`, `Isso cabe`, `Isso está claro`) evidencia instantaneamente a necessidade inegociável da **3ª pessoa do singular**.
 
 ---
 
-## Preposição Impede a Formação de Sujeito
+### Preposição Impede a Formação de Sujeito
 
 > Em expressões idiomáticas como *chega de*, *basta de*, *passa de*, ou diante de pronomes como *lhes* e termos com crase (*àqueles*), lembre-se: **sujeito preposicionado não existe na língua portuguesa**. A presença da preposição anula qualquer possibilidade de o substantivo comandar a flexão do verbo.
 
 ---
 
-## A Regra de Desambiguação "O Que Vem Depois Salva"
+### A Regra de Desambiguação "O Que Vem Depois Salva"
 
 > Em questões da Fundação Carlos Chagas (FCC) envolvendo o pronome relativo *que* precedido por expressões compostas (`Substantivo 1 + de + Substantivo 2`), nunca decida a concordância olhando apenas para os termos anteriores. **Olhe para o predicativo, complemento ou particípio localizado DEPOIS do verbo**. A terminação plural ou singular desse elemento revela com certeza matemática qual é o verdadeiro antecedente do pronome.
 
 ---
 
-## Atenção aos Artigos nas Questões da FGV
+### Atenção aos Artigos nas Questões da FGV
 
 > Em provas da FGV, questões de concordância que solicitam a passagem de frases com *haver* para o plural costumam embutir armadilhas semânticas. Além de manter o verbo *haver* no singular, atente-se para não trocar artigos indefinidos (*um/uma* $\rightarrow$ *uns/umas*) por artigos definidos (*o/a* $\rightarrow$ *os/as*).
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Confundir Substantivo Plural Interno com Sujeito da Oração Principal
+### Confundir Substantivo Plural Interno com Sujeito da Oração Principal
 
 - **O Erro:** Ler termos no plural posicionados logo após a oração principal e flexionar o verbo principal no plural (ex.: \**"Bastam mudar as regras"*, \**"São necessárias valorizar as ações"*).
 - **Por que ocorre:** O candidato sofre atração mecânica pelo substantivo plural mais próximo (*regras*, *ações*).
@@ -769,7 +760,7 @@ Definir a flexão de verbos que indicam processos climáticos.
 
 ---
 
-## O Erro Popular de Escrever "Haviam" ou "Fazem"
+### O Erro Popular de Escrever "Haviam" ou "Fazem"
 
 - **O Erro:** Escrever ou aceitar formas como \**"Haviam muitas pessoas"*, \**"Fazem dez meses"*, \**"Houveram problemas"*.
 - **Por que ocorre:** No cotidiano informal, o falante transfere a concordância de *existir* para o verbo *haver* e pluraliza *fazer* pelo valor numérico.
@@ -777,7 +768,7 @@ Definir a flexão de verbos que indicam processos climáticos.
 
 ---
 
-## Pluralizar o Auxiliar em Locuções com HAVER Existencial
+### Pluralizar o Auxiliar em Locuções com HAVER Existencial
 
 - **O Erro:** Escrever \**"Devem haver soluções"*, \**"Podem haver dúvidas"*, \**"Vão fazer dois anos"*.
 - **Por que ocorre:** O candidato flexiona o verbo auxiliar concordando com o termo substantivo posposto (*soluções*, *dúvidas*).
@@ -785,7 +776,7 @@ Definir a flexão de verbos que indicam processos climáticos.
 
 ---
 
-## Desconsiderar a Pessoalidade de Verbos Meteorológicos no Sentido Figurado
+### Desconsiderar a Pessoalidade de Verbos Meteorológicos no Sentido Figurado
 
 - **O Erro:** Achar que verbos como *chover* nunca podem ir para o plural em nenhuma hipótese.
 - **Por que ocorre:** Memorização mecânica da regra de fenômenos da natureza sem checagem do contexto semântico.
@@ -793,7 +784,7 @@ Definir a flexão de verbos que indicam processos climáticos.
 
 ---
 
-## A Paranoia do "Tempo Decorrido" na Voz Passiva Sintética
+### A Paranoia do "Tempo Decorrido" na Voz Passiva Sintética
 
 - **O Erro:** Julgar que qualquer frase contendo palavras temporais (*anos, meses, dias*) é oração sem sujeito e deve ficar no singular (ex.: aceitar \**"Já se completou dois anos"*).
 - **Por que ocorre:** Confusão entre a impessoalidade de *haver/fazer* e a voz passiva sintética de verbos transitivos diretos (*completar-se, contar-se*).
@@ -801,7 +792,7 @@ Definir a flexão de verbos que indicam processos climáticos.
 
 ---
 
-## A Inadmissibilidade Gramatical de "Tratam-se de"
+### A Inadmissibilidade Gramatical de "Tratam-se de"
 
 - **O Erro:** Flexionar a expressão no plural diante de complemento plural: \**"Tratam-se de questões complexas"*.
 - **Por que ocorre:** O candidato confunde o pronome apassivador com o índice de indeterminação do sujeito.
@@ -809,7 +800,7 @@ Definir a flexão de verbos que indicam processos climáticos.
 
 ---
 
-## A Pegadinha do Verbo PARECER com Falso Sujeito Anteposto
+### A Pegadinha do Verbo PARECER com Falso Sujeito Anteposto
 
 - **O Erro:** Escrever \**"Os alunos pareciam que sabiam a lição"*.
 - **Por que ocorre:** O candidato julga que *Os alunos* é sujeito de *pareciam*.
@@ -817,13 +808,11 @@ Definir a flexão de verbos que indicam processos climáticos.
 
 ---
 
-## Tratar o Pronome "Lhes" como Sujeito da Oração
+### Tratar o Pronome "Lhes" como Sujeito da Oração
 
 - **O Erro:** Flexionar o verbo no plural para concordar com o pronome *lhes* (ex.: aceitar \**"o que lhes devem ser necessário"*).
 - **Por que ocorre:** O candidato associa o plural morfológico de *lhes* à concordância verbal.
 - **Como evitar:** O pronome *lhes* é oblíquo preposicionado (*a eles*), atuando como objeto indireto ou complemento nominal. O sujeito deve ser buscado no pronome relativo: *o que lhes deve ser necessário*.
-
----
 
 ---
 
@@ -833,51 +822,49 @@ Definir a flexão de verbos que indicam processos climáticos.
 
 Estrutura oracional formada exclusivamente em torno de um verbo impessoal, cujo processo verbal não é atribuído a nenhuma pessoa ou entidade sintática. Exige conjugação na 3ª pessoa do singular.
 
-### Verbo Impessoal
+#### Verbo Impessoal
 
 Verbo desprovido de sujeito gramatical, mantido fixo na 3ª pessoa do singular na norma-padrão (ex.: *haver* existencial/temporal, *fazer* temporal, fenômenos naturais literais e construções como *basta de*).
 
-### Locução Verbal
+#### Locução Verbal
 
 Estrutura constituída por um ou mais verbos auxiliares associados a um verbo principal (no infinitivo, gerúndio ou particípio), atuando como uma unidade sintático-semântica única. A predicação é regida pelo verbo principal.
 
-### Verbo Principal
+#### Verbo Principal
 
 O último verbo de uma locução verbal; detém a carga semântica plena e determina a predicação, a transitividade e a impessoalidade da oração ("o verbo que manda").
 
-### Verbo Auxiliar
+#### Verbo Auxiliar
 
 O primeiro verbo de uma locução verbal; recebe as desinências morfológicas de modo, tempo, número e pessoa, obedecendo às exigências sintáticas governadas pelo verbo principal ("o verbo que obedece").
 
-### Sujeito Oracional
+#### Sujeito Oracional
 
 Oração subordinada substantiva subjetiva que exerce o papel sintático de sujeito do verbo da oração principal, impondo a neutralização deste na 3ª pessoa do singular.
 
-### Oração Subjetiva Desenvolvida
+#### Oração Subjetiva Desenvolvida
 
 Oração subordinada com função de sujeito introduzida expressamente por conjunção integrante (*que*, *se*) e com verbo em tempo finito flexionado.
 
-### Oração Subjetiva Reduzida
+#### Oração Subjetiva Reduzida
 
 Oração subordinada com função de sujeito desprovida de conjunção integrante, estruturada diretamente com o verbo em forma nominal (infinitivo).
 
-### Verbo Unipessoal
+#### Verbo Unipessoal
 
 Verbo que se conjuga exclusivamente nas terceiras pessoas gramaticais (frequentemente apenas na 3ª do singular quando associado a sujeito oracional, como *convir, bastar, caber, urgir, parecer*).
 
-### Partícula Apassivadora (PA)
+#### Partícula Apassivadora (PA)
 
 Pronome *SE* associado a Verbo Transitivo Direto (VTD) ou Transitivo Direto e Indireto (VTDI), transformando o paciente da ação verbal em sujeito paciente da oração (Voz Passiva Sintética). Exige concordância do verbo em número e pessoa com o sujeito paciente.
 
-### Índice de Indeterminação do Sujeito (PIS / IIS)
+#### Índice de Indeterminação do Sujeito (PIS / IIS)
 
 Pronome *SE* associado a Verbo Transitivo Indireto (VTI), Intransitivo (VI) ou de Ligação (VL), indicando agente indeterminado. Mantém o verbo compulsoriamente na 3ª pessoa do singular.
 
-### Locução Verbal Modal ("Haver de")
+#### Locução Verbal Modal ("Haver de")
 
 Estrutura perifrástica em que o verbo *haver* atua como auxiliar pessoal acompanhado de preposição *de* e verbo no infinitivo, expressando dever, necessidade ou futuro, devendo flexionar-se com o sujeito.
-
----
 
 ---
 

@@ -46,7 +46,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 - Compreensão intuitiva da ordem direta da oração em Língua Portuguesa (Sujeito + Verbo + Complementos + Adjuntos).
 
-### Mapa Conceitual Consolidado
+#### Mapa Conceitual Consolidado
 
 ```text
  [ PREDICAÇÃO VERBAL ]
@@ -96,21 +96,19 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Centralidade do Verbo e Quebra do Paradigma Morfossintático
+### Centralidade do Verbo e Quebra do Paradigma Morfossintático
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A análise sintática da oração inicia-se obrigatoriamente pela localização e análise do verbo, rompendo com a abordagem morfológica estanque de classes isoladas de palavras. O verbo opera como o núcleo estruturador e relacional de toda a sintaxe oracional.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Na metodologia desenvolvida nas aulas, a predicação verbal é tratada como a "aula zero" da sintaxe. O verbo não possui função sintática de termo (não é sujeito, objeto ou adjunto), mas é o articulador de todas as funções sintáticas. O candidato deve "viver cada verbo a seu momento", abstendo-se de tentar interpretar a oração globalmente de maneira intuitiva. Toda a investigação sintática (identificação de sujeito, complementos e adjuntos) emana das relações estabelecidas a partir do verbo flexionado.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 1. Localize o verbo flexionado no enunciado antes de classificar qualquer substantivo ou pronome.
 2. Não classifique palavras por intuição semântica abstrata; determine suas funções exclusivamente em relação ao verbo identificado.
@@ -119,20 +117,20 @@ Na metodologia desenvolvida nas aulas, a predicação verbal é tratada como a "
 
 ---
 
-## Divisão Macro: Verbos Nocionais (Ação) vs. Relacionais (Ligação/Estado)
+### Divisão Macro: Verbos Nocionais (Ação) vs. Relacionais (Ligação/Estado)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 No nível macro da predicação verbal, os verbos da Língua Portuguesa dividem-se em dois grandes grupos: **Verbos Nocionais (Significativos / de Ação)** e **Verbos Relacionais (de Ligação / de Estado)**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Verbos Nocionais (de Ação / Significativos):** Possuem conteúdo semântico pleno e autônomo. Expressam processos, ações ou acontecimentos. Subdividem-se sintaticamente em Intransitivos (VI), Transitivos Diretos (VTD), Transitivos Indiretos (VTI) e Transitivos Diretos e Indiretos (VTDI).
- - *Ação com movimento físico:* Ex.: *"Ele corria no parque."*
- - *Ação estática / sem movimento:* Processos fisiológicos ou estados dinâmicos sem deslocamento externo. Ex.: *"Ele dormia profundamente."* (Verbo nocional de ação, pegadinha clássica da FGV).
+  - *Ação com movimento físico:* Ex.: *"Ele corria no parque."*
+  - *Ação estática / sem movimento:* Processos fisiológicos ou estados dinâmicos sem deslocamento externo. Ex.: *"Ele dormia profundamente."* (Verbo nocional de ação, pegadinha clássica da FGV).
 - **Verbos Relacionais (de Ligação / Sem Noção Própria):** Não expressam ação ou processo. Sua única função sintática é intermediar a relação entre o sujeito e uma característica/condição atribuída a ele (o Predicativo do Sujeito), expressando um estado (permanente, passageiro, aparente, continuativo ou mutatório).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - **Mantra 1:** *"Se o verbo não indicar estado, será de ação."*
 - Se o verbo trouxer conteúdo processual próprio, mesmo sem movimento corporal, ele é **Nocional**.
@@ -142,13 +140,13 @@ No nível macro da predicação verbal, os verbos da Língua Portuguesa dividem-
 
 ---
 
-## Verbo Intransitivo (VI), Autonomia Sintática e Natureza dos Adjuntos Adverbiais
+### Verbo Intransitivo (VI), Autonomia Sintática e Natureza dos Adjuntos Adverbiais
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Verbo intransitivo é aquele que **não exige complemento verbal integrante (Objeto Direto ou Indireto)** para satisfazer sua estrutura sintática. Ele encerra em si a predicação verbal, podendo vir acompanhado de termos acessórios circunstanciais (Adjuntos Adverbiais) ou de termos nominais atributivos (Predicativo do Sujeito).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A tradição escolar difundiu o erro conceitual de que o verbo intransitivo "precisa ter sentido completo e ficar bonito sozinho na frase". As KBs desconstroem essa ilusão:
 
@@ -156,7 +154,7 @@ A tradição escolar difundiu o erro conceitual de que o verbo intransitivo "pre
 2. **Acessoriedade do Adjunto Adverbial:** Termos que expressam circunstância são adjuntos adverbiais (acessórios) e podem ser suprimidos sem quebrar a gramaticalidade nuclear da oração.
 3. **Mantra 4:** *"Nem sempre o V.I. fica bonito sozinho."* (Ex.: Em *"Paulo está no hospital"* ou *"Fomos ao clube"*, retirar a expressão de lugar soa incompleto ao ouvido, mas sintaticamente o verbo permanece intransitivo porque o termo posposto é um Adjunto Adverbial de Lugar).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - Identifique os termos pós-verbais: se todos forem Adjuntos Adverbiais circunstanciais, o verbo nocional é **Intransitivo (VI)**.
 
@@ -164,19 +162,19 @@ A tradição escolar difundiu o erro conceitual de que o verbo intransitivo "pre
 
 ---
 
-## Verbos Transitivos: Direto (VTD), Indireto (VTI) e Bitransitivo (VTDI)
+### Verbos Transitivos: Direto (VTD), Indireto (VTI) e Bitransitivo (VTDI)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Verbos transitivos são verbos nocionais que "transitam", exigindo um ou dois complementos integrantes (Objetos) para satisfazer sua regência obrigatória.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Transitivo Direto (VTD):** Exige complemento ligado diretamente ao verbo, **sem preposição obrigatória** (Objeto Direto - OD). Artigos definidos/indefinidos associados ao núcleo do OD não configuram preposição. Ex.: *"Falei a verdade"* (*Falei* = VTD; *a verdade* = OD, onde *a* é artigo).
 2. **Transitivo Indireto (VTI):** Exige complemento mediado por **preposição obrigatória** regida pelo verbo (Objeto Indireto - OI), que não denote mera circunstância adverbial. Ex.: *"Aspiramos ao sucesso"* (*Aspiramos* = VTI; *ao sucesso* = OI).
 3. **Transitivo Direto e Indireto / Bitransitivo (VTDI):** Exige simultaneamente dois complementos: um direto (não preposicionado) e um indireto (preposicionado). Ex.: *"Comunicou o fato às autoridades"* (*o fato* = OD; *às autoridades* = OI); *"Contou-me um amigo uma história exemplar"* (*uma história exemplar* = OD; *me* = OI).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - **Mantra 2:** *"A classificação depende do que vem depois do verbo."*
 - **Mantra 5:** *"Complemento é o que não é adjunto."*
@@ -184,13 +182,13 @@ Verbos transitivos são verbos nocionais que "transitam", exigindo um ou dois co
 
 ---
 
-## Verbo de Ligação (VL) e a Semântica dos Estados
+### Verbo de Ligação (VL) e a Semântica dos Estados
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **Verbo de Ligação (VL)** é um verbo relacional que atua exclusivamente como elo sintático entre o Sujeito e o seu Predicativo, veiculando uma nuance semântica de estado.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 O verbo de ligação é pedagogicamente apelidado de "verbo sem noção" ou "verbo coitado" por não possuir conteúdo nocional próprio de ação. Contudo, em bancas exigentes (notadamente a FGV), explora-se a tipologia do estado veiculado:
 
@@ -200,7 +198,7 @@ O verbo de ligação é pedagogicamente apelidado de "verbo sem noção" ou "ver
 4. **Estado Aparente:** Impressão perceptiva subjetiva. Ex.: *"Ela parece triste"* (verbo *parecer*).
 5. **Mudança de Estado (Mutatório):** Transição de uma condição para outra. Ex.: *"José caiu doente"* (*caiu* = ficou / tornou-se doente).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - A tradicional lista escolar (*ser, estar, ficar, parecer, permanecer, andar, viver, continuar, tornar-se, virar*) deve ser **relativizada**: ela indica verbos com *potencial* para serem de ligação, mas a confirmação depende da presença real de predicativo no contexto.
 - Verbos atípicos como *cair* ou *viver* atuam como VL quando equivalem a *ficar* ou *permanecer*.
@@ -209,13 +207,13 @@ O verbo de ligação é pedagogicamente apelidado de "verbo sem noção" ou "ver
 
 ---
 
-## Predicativo do Sujeito e a Validação do Verbo de Ligação (Mantra 6)
+### Predicativo do Sujeito e a Validação do Verbo de Ligação (Mantra 6)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **Mantra 6** estabelece o critério absoluto de validação do verbo de ligação: **um verbo só é classificado como de estado/ligação se houver obrigatoriamente um Predicativo do Sujeito presente na oração**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A relação entre Verbo de Ligação, Estado e Predicativo do Sujeito é uma equivalência lógica estrita:
 
@@ -225,7 +223,7 @@ $$
 
 Se um verbo constante da lista memorizada surgir sem predicativo (por exemplo, acompanhado apenas de Adjunto Adverbial de Lugar ou Tempo), ele **perde** o caráter relacional e se converte em verbo nocional (de ação/existência), classificando-se como **Verbo Intransitivo (VI)**.
 
-### Desambiguação Canônica
+#### Desambiguação Canônica
 
 - *"Eu estou feliz."* $\rightarrow$ *feliz* = Predicativo do Sujeito $\rightarrow$ *estou* = **Verbo de Ligação (VL)**.
 - *"Eu estou em casa."* $\rightarrow$ *em casa* = Adjunto Adverbial de Lugar $\rightarrow$ *estou* = **Verbo Intransitivo (VI)**.
@@ -235,13 +233,13 @@ Se um verbo constante da lista memorizada surgir sem predicativo (por exemplo, a
 
 ---
 
-## Coexistência de Predicativo do Sujeito com Verbos de Ação e o Predicado Verbo-Nominal (Mantra 7)
+### Coexistência de Predicativo do Sujeito com Verbos de Ação e o Predicado Verbo-Nominal (Mantra 7)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **Mantra 7** corrige o equívoco de associar o Predicativo do Sujeito unicamente aos Verbos de Ligação: **"O Predicativo do Sujeito pode vir acompanhado de QUALQUER verbo (seja de ação ou de ligação)."**
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Quando um Predicativo do Sujeito surge associado a um verbo de ação (nocional), ocorrem simultaneamente dois núcleos informativos no predicado: um núcleo verbal (o processo/ação) e um núcleo nominal (o estado do sujeito durante o processo), constituindo a estrutura de **Predicado Verbo-Nominal**. O verbo mantém integralmente a sua transitividade nocional (VI, VTD, VTI ou VTDI).
 
@@ -249,7 +247,7 @@ Quando um Predicativo do Sujeito surge associado a um verbo de ação (nocional)
 [ VERBO DE AÇÃO (Nocional) ] + [ PREDICATIVO DO SUJEITO ] = [ PREDICADO VERBO-NOMINAL ]
 ```
 
-### Exemplos da Aula
+#### Exemplos da Aula
 
 1. *"Ela **ligou** o ferro **silenciosa**."* $\rightarrow$ *ligou* = VTD (*o ferro* = OD); *silenciosa* = Predicativo do Sujeito.
 2. *"Impecável, **transitava** o marido pelo tempo."* $\rightarrow$ *transitava* = VI (*pelo tempo* = Adj. Adv.); *impecável* = Predicativo do Sujeito.
@@ -260,13 +258,13 @@ Quando um Predicativo do Sujeito surge associado a um verbo de ação (nocional)
 
 ---
 
-## Distinção Semântico-Morfossintática entre Estado e Modo (Mantra 9)
+### Distinção Semântico-Morfossintática entre Estado e Modo (Mantra 9)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A confusão entre **Estado** e **Modo** induz à classificação equivocada de um **Predicativo do Sujeito** como **Adjunto Adverbial de Modo**. A distinção é solucionada morfossintaticamente pelo teste de flexão do **Mantra 9**.
 
-### Quadro Diagnóstico Comparativo
+#### Quadro Diagnóstico Comparativo
 
 | Propriedade | ESTADO (Predicativo do Sujeito) | MODO (Adjunto Adverbial de Modo) |
 |:---------------------------------- |:------------------------------------------------------------------------------ |:--------------------------------------------------------------- |
@@ -276,7 +274,7 @@ A confusão entre **Estado** e **Modo** induz à classificação equivocada de u
 | **Teste de Inserção** | Aceita o encaixe perfeitamente coerente de**"e estava"**. | Não aceita encaixe atributivo; admite sufixo*-mente*. |
 | **Exemplo Típico** | *"Ela ligou o ferro **silenciosa**"* (*Eles ligaram... silenciosos*). | *"Ela ligou o ferro **silenciosamente**"* (invariável). |
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - **Mantra 9:** *"Na dúvida, tente flexionar (feminino/plural): caso se flexione, será ADJETIVO (Predicativo), e não ADVÉRBIO! Não confunda MODO (= jeito) com ESTADO."*
 - Aplique o teste do *"E Estava"*: se mantiver o sentido da oração, trata-se de Predicativo do Sujeito.
@@ -286,13 +284,13 @@ A confusão entre **Estado** e **Modo** induz à classificação equivocada de u
 
 ---
 
-## Predicação e Transitividade em Locuções Verbais (Mantra 8 e Verbo Auxiliar)
+### Predicação e Transitividade em Locuções Verbais (Mantra 8 e Verbo Auxiliar)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Em uma locução verbal, a predicação e a transitividade pertencem **exclusivamente ao Verbo Principal** (o último verbo da locução). O Verbo Auxiliar não possui predicação própria, atuando apenas no suporte flexional gramatical.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Mantra 8:** *"Na locução verbal, quem manda (tem a predicação) é o V. PRINCIPAL (o último). O auxiliar não tem predicação, só obedece (se flexiona)."*
 - **Estrutura da Locução:** Formada por `[Verbo Auxiliar flexionado]` + `[Verbo Principal em forma nominal: infinitivo, gerúndio ou particípio]`.
@@ -304,31 +302,31 @@ Em uma locução verbal, a predicação e a transitividade pertencem **exclusiva
 
 ---
 
-## Distinção entre Adjunto Adverbial (Circunstância) e Objeto Indireto (Complemento)
+### Distinção entre Adjunto Adverbial (Circunstância) e Objeto Indireto (Complemento)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A presença de uma preposição após o verbo não configura automaticamente um Objeto Indireto. Se o sintagma preposicionado exprime **circunstância** (lugar, tempo, modo, instrumento, etc.), ele é um **Adjunto Adverbial** e não afeta a transitividade do verbo como complemento.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Muitos erros em provas decorrem de perguntas automatizadas e descontextualizadas feitas ao verbo (ex.: "quem perfura, perfura algo *com algo*" $\rightarrow$ falso VTDI; "quem mora, mora *em algo*" $\rightarrow$ falso VTI; "quem está, está *em algum lugar*" $\rightarrow$ falso VTI).
 
 - **Regra de Prioridade Analítica:** Ao analisar o termo pós-verbal preposicionado, pergunte **primeiro** se ele possui valor circunstancial (*6C + FTP*, lugar, instrumento, companhia).
- - Se possuir valor circunstancial $\rightarrow$ É **Adjunto Adverbial** (termo acessório, não integrante).
- - Se for complemento integrante abstrato exigido pela regência sem valor circunstancial $\rightarrow$ É **Objeto Indireto** (*"Gosto de música"*, *"Aspiramos ao cargo"*).
+  - Se possuir valor circunstancial $\rightarrow$ É **Adjunto Adverbial** (termo acessório, não integrante).
+  - Se for complemento integrante abstrato exigido pela regência sem valor circunstancial $\rightarrow$ É **Objeto Indireto** (*"Gosto de música"*, *"Aspiramos ao cargo"*).
 
 - **Sintetizado por:**  (6C + FTP),  (Mantra 5)
 
 ---
 
-## Tipologia do Sujeito: Sujeito Oculto (Desinencial vs. Contextual) vs. Sujeito Indeterminado
+### Tipologia do Sujeito: Sujeito Oculto (Desinencial vs. Contextual) vs. Sujeito Indeterminado
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 No sujeito oculto (elíptico/subentendido), o termo executor existe e é perfeitamente identificável (pela terminação verbal ou pelo contexto textual prévio). No sujeito indeterminado, o termo executor existe, mas o enunciador não pode ou não deseja identificá-lo gramaticalmente.
 
-### Quadro Estrutural Canônico de Sujeitos
+#### Quadro Estrutural Canônico de Sujeitos
 
 ```text
 ┌─────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────┐
@@ -341,11 +339,9 @@ No sujeito oculto (elíptico/subentendido), o termo executor existe e é perfeit
 └─────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────┘
 ```
 
-### Armadilha Anafórica das Bancas (FGV e Cebraspe)
+#### Armadilha Anafórica das Bancas (FGV e Cebraspe)
 
 Na sequência *"Os pais viajaram. Chegaram cedo."*, o sujeito do verbo *chegaram* **NÃO** é indeterminado. Trata-se de **Sujeito Oculto Anafórico**, pois o referente nominal (*"Os pais"*) foi explicitado na oração imediatamente anterior.
-
----
 
 ---
 
@@ -364,7 +360,7 @@ Na sequência *"Os pais viajaram. Chegaram cedo."*, o sujeito do verbo *chegaram
 
 ---
 
-### 6.2. O Decálogo dos 9 Mantras da Análise Sintática
+#### 6.2. O Decálogo dos 9 Mantras da Análise Sintática
 
 - **Mantra 1:** *"Se o verbo não indicar estado, será de ação."*
 - **Mantra 2:** *"Ao classificar o verbo, não olhe para ele apenas; a sua classificação depende do que vem depois dele."*
@@ -378,45 +374,43 @@ Na sequência *"Os pais viajaram. Chegaram cedo."*, o sujeito do verbo *chegaram
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## O Passo a Passo Canônico da Análise Sintática em 5 Etapas
+### O Passo a Passo Canônico da Análise Sintática em 5 Etapas
 
-### Objetivo
+#### Objetivo
 
 Analisar qualquer oração de concursos de forma algorítmica e à prova de ambiguidades.
 
-### Sequência Operacional em 5 Passos
+#### Sequência Operacional em 5 Passos
 
 1. **Passo 1 — Localizar o Verbo ("Viver o verbo"):** Identifique a forma verbal e coloque mentalmente a oração na ordem direta (Sujeito + Verbo + Complementos + Adjuntos).
 2. **Passo 2 — Perguntar pelo Sujeito:** Faça a pergunta ao verbo: *"Quem é que [verbo]?"* ou *"O que é que [verbo]?"*. Delimite o sintagma do sujeito e isole seu núcleo (substantivo/pronome/numeral sem preposição).
 3. **Passo 3 — Isolar os Blocos Pós-Verbais:** Isole cada sintagma pós-verbal entre colchetes: `[Bloco 1]`, `[Bloco 2]`.
 4. **Passo 4 — Diagnosticar Circunstâncias (Adjuntos Adverbiais):** Pergunte se o termo pós-verbal tem valor circunstancial (tempo, lugar, modo, causa, etc.). Se tiver, classifique como **Adjunto Adverbial** (não conta como complemento do verbo).
 5. **Passo 5 — Diagnosticar Estado vs. Ação (Predicativo vs. Objeto):**
- - Se o termo qualifica o sujeito (Estado) $\rightarrow$ É **Predicativo do Sujeito**. Se o verbo for sem noção de ação = **VL**; se for de ação = **Verbo Nocional + Predicativo**.
- - Se o termo completa o verbo (não circunstancial) $\rightarrow$ Sem preposição = **OD (VTD)**; Com preposição = **OI (VTI)**; Ambos = **VTDI**.
+  - Se o termo qualifica o sujeito (Estado) $\rightarrow$ É **Predicativo do Sujeito**. Se o verbo for sem noção de ação = **VL**; se for de ação = **Verbo Nocional + Predicativo**.
+  - Se o termo completa o verbo (não circunstancial) $\rightarrow$ Sem preposição = **OD (VTD)**; Com preposição = **OI (VTI)**; Ambos = **VTDI**.
 
 ---
 
-## Técnica de Isolamento por Colchetes e Traçado de Setas Sintáticas
+### Técnica de Isolamento por Colchetes e Traçado de Setas Sintáticas
 
-### Sequência Operacional
+#### Sequência Operacional
 
 1. Coloque o sujeito entre colchetes: `[Sujeito]`.
 2. Delimite cada complemento ou adjunto entre colchetes: `[Termo A]`, `[Termo B]`.
 3. Puxe uma seta do bloco para o seu termo-alvo:
- - Seta apontando para o **Verbo** (sem preposição) $\rightarrow$ **Objeto Direto**.
- - Seta apontando para o **Verbo** (com preposição de regência) $\rightarrow$ **Objeto Indireto**.
- - Seta apontando para o **Verbo** (com valor de circunstância) $\rightarrow$ **Adjunto Adverbial**.
- - Seta apontando para o **Sujeito** $\rightarrow$ **Predicativo do Sujeito**.
+  - Seta apontando para o **Verbo** (sem preposição) $\rightarrow$ **Objeto Direto**.
+  - Seta apontando para o **Verbo** (com preposição de regência) $\rightarrow$ **Objeto Indireto**.
+  - Seta apontando para o **Verbo** (com valor de circunstância) $\rightarrow$ **Adjunto Adverbial**.
+  - Seta apontando para o **Sujeito** $\rightarrow$ **Predicativo do Sujeito**.
 
 ---
 
-## Teste do "E Estava" para Diagnóstico de Predicativo do Sujeito
+### Teste do "E Estava" para Diagnóstico de Predicativo do Sujeito
 
-### Sequência Operacional
+#### Sequência Operacional
 
 1. Identifique o termo sob dúvida no predicado de um verbo de ação.
 2. Insira a expressão **"e estava"** (ou *e estavam*) imediatamente antes do termo.
@@ -424,35 +418,33 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
-## Teste de Flexão de Gênero e Número para Distinguir Estado (Adjetivo) de Modo (Advérbio)
+### Teste de Flexão de Gênero e Número para Distinguir Estado (Adjetivo) de Modo (Advérbio)
 
-### Sequência Operacional
+#### Sequência Operacional
 
 1. Altere o sujeito da oração para o plural (ou modifique o gênero de masculino para feminino).
 2. Observe o comportamento do termo sob análise:
- - **Caso A (Flexionou/Variou):** Se o termo variou para concordar com o sujeito (*congressista preocupado* $\rightarrow$ *congressistas preocupados*; *José caiu doente* $\rightarrow$ *Os meninos caíram doentes*), trata-se de **Adjetivo** $\rightarrow$ Expressa **Estado** $\rightarrow$ **Predicativo do Sujeito**.
- - **Caso B (Permaneceu Invariável):** Se o termo não sofrer flexão (*Eles falaram calmo/firme* com valor de *calmamente*), trata-se de **Advérbio** $\rightarrow$ Expressa **Modo** $\rightarrow$ **Adjunto Adverbial de Modo**.
+  - **Caso A (Flexionou/Variou):** Se o termo variou para concordar com o sujeito (*congressista preocupado* $\rightarrow$ *congressistas preocupados*; *José caiu doente* $\rightarrow$ *Os meninos caíram doentes*), trata-se de **Adjetivo** $\rightarrow$ Expressa **Estado** $\rightarrow$ **Predicativo do Sujeito**.
+  - **Caso B (Permaneceu Invariável):** Se o termo não sofrer flexão (*Eles falaram calmo/firme* com valor de *calmamente*), trata-se de **Advérbio** $\rightarrow$ Expressa **Modo** $\rightarrow$ **Adjunto Adverbial de Modo**.
 
 ---
 
-## Teste de Substituição por "Ficar / Tornar-se" para Verbos de Mudança de Estado
+### Teste de Substituição por "Ficar / Tornar-se" para Verbos de Mudança de Estado
 
-### Sequência Operacional
+#### Sequência Operacional
 
 1. Diante de verbos de movimento ou ação atípicos seguidos de predicativo (ex.: *cair*, *virar*), substitua o verbo por **ficar** ou **tornar-se**.
 2. Se a frase mantiver perfeito sentido de mudança de condição (*"José caiu doente"* $\rightarrow$ *"José ficou doente"*), o verbo opera como **Verbo de Ligação (VL)**.
 
 ---
 
-## Procedimento de Análise de Locuções Verbais e Intercalações
+### Procedimento de Análise de Locuções Verbais e Intercalações
 
-### Sequência Operacional
+#### Sequência Operacional
 
 1. Identifique os verbos agrupados. Una o verbo auxiliar ao verbo principal em forma nominal (infinitivo, gerúndio ou particípio), desconsiderando eventuais adjuntos adverbiais intercalados.
 2. Para classificar a transitividade da oração, analise exclusivamente a regência do **Verbo Principal**.
 3. Se a questão demandar especificamente a classificação do verbo auxiliar isolado, assinale **Verbo Auxiliar de Locução Verbal** (Código 6).
-
----
 
 ---
 
@@ -473,7 +465,7 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
-### Tabela 2: Estado (Predicativo) vs. Modo (Adjunto Adverbial)
+#### Tabela 2: Estado (Predicativo) vs. Modo (Adjunto Adverbial)
 
 | Critério Comparativo | ESTADO (Predicativo do Sujeito) | MODO (Adjunto Adverbial de Modo) |
 |:----------------------------- |:-------------------------------------------- |:--------------------------------------------- |
@@ -484,7 +476,7 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
-### Tabela 3: Objeto Indireto vs. Adjunto Adverbial Preposicionado
+#### Tabela 3: Objeto Indireto vs. Adjunto Adverbial Preposicionado
 
 | Sintagma Preposicionado | Pergunta Diagnóstica | Natureza Semântica | Classificação Sintática | Impacto na Transitividade |
 |:--------------------------- |:----------------------- |:---------------------------- |:----------------------------------------- |:--------------------------- |
@@ -494,7 +486,7 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
-### Tabela 4: Sujeito Oculto vs. Sujeito Indeterminado
+#### Tabela 4: Sujeito Oculto vs. Sujeito Indeterminado
 
 | Estrutura Sintática | Contexto Textual | Classificação do Sujeito | Justificativa Pedagógica |
 |:----------------------------------------------- |:------------------ |:----------------------------------- |:----------------------------------------------------------------- |
@@ -506,7 +498,7 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
-### Tabela 5: Divergência Doutrinária: Padrão Geral vs. Banca FCC
+#### Tabela 5: Divergência Doutrinária: Padrão Geral vs. Banca FCC
 
 | Oração em Análise | Termo Preposicionado | Padrão Geral (Cebraspe, FGV, Vunesp) | Entendimento Específico FCC |
 |:--------------------------- |:------------------- |:------------------------------------------------------- |:-------------------------------------------------------- |
@@ -515,11 +507,9 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Oração com Verbo Intransitivo Típico
+### Oração com Verbo Intransitivo Típico
 
 - **Oração:** *"O ladrão desapareceu entre as árvores."*
 - **Análise Passo a Passo:**
@@ -530,7 +520,7 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
-## Verbo Nocional de Ação sem Movimento (Pegadinha FGV)
+### Verbo Nocional de Ação sem Movimento (Pegadinha FGV)
 
 - **Oração:** *"Ele dormia profundamente."*
 - **Análise Passo a Passo:**
@@ -541,20 +531,20 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
-## Exercício de Fixação — Frase 1
+### Exercício de Fixação — Frase 1
 
 - **Oração:** *1) "Ela ligou o ferro silenciosa."*
 - **Análise Passo a Passo:**
  1. Verbo: *ligou* (ação).
  2. Sujeito: *"Quem ligou?"* $\rightarrow$ `[Ela]` (Sujeito Simples).
  3. Blocos pós-verbais:
- - `[o ferro]`: Complemento direto sem preposição $\rightarrow$ **Objeto Direto**.
- - `[silenciosa]`: Adjetivo variável concordando com o sujeito (*e estava silenciosa*) $\rightarrow$ **Predicativo do Sujeito**.
+  - `[o ferro]`: Complemento direto sem preposição $\rightarrow$ **Objeto Direto**.
+  - `[silenciosa]`: Adjetivo variável concordando com o sujeito (*e estava silenciosa*) $\rightarrow$ **Predicativo do Sujeito**.
 - **Gabarito / Classificação:** *ligou* = **Verbo Transitivo Direto (VTD)** $\rightarrow$ **Código ( 2 )**.
 
 ---
 
-## Exercício de Fixação — Frase 2
+### Exercício de Fixação — Frase 2
 
 - **Oração:** *2) "Impecável, transitava o marido pelo tempo."*
 - **Análise Passo a Passo:**
@@ -565,18 +555,18 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
-## Exercício de Fixação — Frases 3 e 4 (Contraste com "Estar")
+### Exercício de Fixação — Frases 3 e 4 (Contraste com "Estar")
 
 - **Frase 3:** *"Paulo está adoentado."*
- - Análise: `[adoentado]` = Predicativo do Sujeito (Estado).
- - Gabarito: *está* = **Verbo de Ligação (VL)** $\rightarrow$ **Código ( 5 )**.
+  - Análise: `[adoentado]` = Predicativo do Sujeito (Estado).
+  - Gabarito: *está* = **Verbo de Ligação (VL)** $\rightarrow$ **Código ( 5 )**.
 - **Frase 4:** *"Paulo está no hospital."*
- - Análise: `[no hospital]` = Adjunto Adverbial de Lugar. Sem predicativo.
- - Gabarito: *está* = **Verbo Intransitivo (VI)** $\rightarrow$ **Código ( 1 )**.
+  - Análise: `[no hospital]` = Adjunto Adverbial de Lugar. Sem predicativo.
+  - Gabarito: *está* = **Verbo Intransitivo (VI)** $\rightarrow$ **Código ( 1 )**.
 
 ---
 
-## Exercício de Fixação — Frase 5
+### Exercício de Fixação — Frase 5
 
 - **Oração:** *5) "As discussões continuaram pela noite."*
 - **Análise Passo a Passo:**
@@ -587,7 +577,7 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
-## Exercício de Fixação — Frase 6
+### Exercício de Fixação — Frase 6
 
 - **Oração:** *6) "Permaneciam abertas as listas de adesão às emendas."*
 - **Análise Passo a Passo:**
@@ -598,7 +588,7 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
-## Exercício de Fixação — Frase 7
+### Exercício de Fixação — Frase 7
 
 - **Oração:** *7) "Um congressista compareceu à sessão preocupado."*
 - **Análise Passo a Passo:**
@@ -609,18 +599,18 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
-## Exercício de Fixação — Frases 8 e 9
+### Exercício de Fixação — Frases 8 e 9
 
 - **Frase 8:** *"Choverá bastante."*
- - Análise: Oração sem sujeito. `[bastante]` = Adjunto Adverbial de Intensidade.
- - Gabarito: *Choverá* = **Verbo Intransitivo (VI)** $\rightarrow$ **Código ( 1 )**.
+  - Análise: Oração sem sujeito. `[bastante]` = Adjunto Adverbial de Intensidade.
+  - Gabarito: *Choverá* = **Verbo Intransitivo (VI)** $\rightarrow$ **Código ( 1 )**.
 - **Frase 9:** *"Eu sou sempre a estrela matutina."*
- - Análise: Sujeito `[Eu]`; `[sempre]` = Adj. Adv. Tempo; `[a estrela matutina]` = Predicativo do Sujeito (substantivo).
- - Gabarito: *sou* = **Verbo de Ligação (VL)** $\rightarrow$ **Código ( 5 )**.
+  - Análise: Sujeito `[Eu]`; `[sempre]` = Adj. Adv. Tempo; `[a estrela matutina]` = Predicativo do Sujeito (substantivo).
+  - Gabarito: *sou* = **Verbo de Ligação (VL)** $\rightarrow$ **Código ( 5 )**.
 
 ---
 
-## Exercício de Fixação — Frase 10 (Locução Intercalada)
+### Exercício de Fixação — Frase 10 (Locução Intercalada)
 
 - **Oração:** *10) "Surgiu, pela esquina, assobiando."*
 - **Análise Passo a Passo:**
@@ -631,19 +621,19 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
-## Exercício de Fixação — Frase 11 (VTD com Instrumento)
+### Exercício de Fixação — Frase 11 (VTD com Instrumento)
 
 - **Oração:** *11) "Os operários perfuravam a rocha com suas brocas e picaretas."*
 - **Análise Passo a Passo:**
  1. Sujeito: `[Os operários]`.
  2. Blocos pós-verbais:
- - `[a rocha]`: Complemento direto $\rightarrow$ **Objeto Direto**.
- - `[com suas brocas e picaretas]`: Circunstância de meio/ferramenta $\rightarrow$ **Adjunto Adverbial de Instrumento**.
+  - `[a rocha]`: Complemento direto $\rightarrow$ **Objeto Direto**.
+  - `[com suas brocas e picaretas]`: Circunstância de meio/ferramenta $\rightarrow$ **Adjunto Adverbial de Instrumento**.
 - **Gabarito / Classificação:** *perfuravam* = **Verbo Transitivo Direto (VTD)** $\rightarrow$ **Código ( 2 )**.
 
 ---
 
-## Exercício de Fixação — Frase 12
+### Exercício de Fixação — Frase 12
 
 - **Oração:** *12) "Existe em Nova Lima uma importante mina de ouro."*
 - **Análise Passo a Passo:**
@@ -654,7 +644,7 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
-## Exercício de Fixação — Frase 13
+### Exercício de Fixação — Frase 13
 
 - **Oração:** *13) "Contou-me um amigo uma história exemplar."*
 - **Análise Passo a Passo:**
@@ -664,7 +654,7 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
-## Exercício de Fixação — Frase 14
+### Exercício de Fixação — Frase 14
 
 - **Oração:** *14) "Uma das janelas vivia aberta."*
 - **Análise Passo a Passo:**
@@ -675,7 +665,7 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
-## Exercício de Fixação — Frase 15
+### Exercício de Fixação — Frase 15
 
 - **Oração:** *15) "Estava, naquele dia, em Friburgo."*
 - **Análise Passo a Passo:**
@@ -685,7 +675,7 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
-## Exercício de Fixação — Frase 16
+### Exercício de Fixação — Frase 16
 
 - **Oração:** *16) "Ela parece triste."*
 - **Análise Passo a Passo:**
@@ -695,7 +685,7 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
-## Exercício de Fixação — Frase 17
+### Exercício de Fixação — Frase 17
 
 - **Oração:** *17) "Distribuímos as cartas na mesa."*
 - **Análise Passo a Passo:**
@@ -705,7 +695,7 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
-## Exercício de Fixação — Frase 18
+### Exercício de Fixação — Frase 18
 
 - **Oração:** *18) "Chegamos alegres."*
 - **Análise Passo a Passo:**
@@ -716,7 +706,7 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
-## Exercício de Fixação — Frase 19 (Mudança de Estado)
+### Exercício de Fixação — Frase 19 (Mudança de Estado)
 
 - **Oração:** *19) "José caiu doente."*
 - **Análise Passo a Passo:**
@@ -727,7 +717,7 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
-## Exercício de Fixação — Frase 20
+### Exercício de Fixação — Frase 20
 
 - **Oração:** *20) "Aquela estrela no peito é uma predestinação, símbolo ao mesmo tempo de fulgor e solidão."*
 - **Análise Passo a Passo:**
@@ -738,94 +728,90 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
----
-
 ## Memorização inteligente
 
-## Mantra 1: O Filtro Binário Ação vs. Estado
+### Mantra 1: O Filtro Binário Ação vs. Estado
 
 - *Uso:* Elimina a confusão imediata em questões de bancas que cobram verbos nocionais vs. relacionais.
 
-## Mnemônico das Circunstâncias Adverbiais: 6C + FTP
+### Mnemônico das Circunstâncias Adverbiais: 6C + FTP
 
 - **C**ausa, **C**omparação, **C**onformidade, **C**ondição, **C**oncessão, **C**onsequência, **F**inalidade, **T**empo, **P**roporção (+ Lugar, Modo, Companhia, Instrumento).
 - Sentiu "cheiro" de circunstância? É **Adjunto Adverbial**; o verbo não precisa dele para transitividade!
 
-## Mantra 3: Neutralização do Instinto Fofoqueiro
+### Mantra 3: Neutralização do Instinto Fofoqueiro
 
 - *Uso:* Não confunda a curiosidade comunicativa do ouvinte com a exigência sintática de objeto pelo verbo.
 
-## Mantra 4: Desmistificação do Verbo Intransitivo Isolado
+### Mantra 4: Desmistificação do Verbo Intransitivo Isolado
 
 - *Uso:* O VI é sintaticamente completo sem complementos integrantes, mas pode soar incompleto no discurso comum quando desprovido de adjunto adverbial de lugar/tempo (*"Paulo está"* $\rightarrow$ incompleto; *"Paulo está no hospital"* $\rightarrow$ VI + Adjunto Adverbial).
 
-## Mantra 5: Regra Binária da Complementação
+### Mantra 5: Regra Binária da Complementação
 
 - *Uso:* Descarte primeiro as circunstâncias adverbiais; tudo o que sobrar exigido pelo verbo será complemento (OD ou OI).
 
-## Mantra 6: Validação Obrigatória do Verbo de Ligação
+### Mantra 6: Validação Obrigatória do Verbo de Ligação
 
 - *Uso:* Verbo de lista decorada sem predicativo converte-se em Intransitivo.
 
-## Mantra 7: Universalidade do Predicativo do Sujeito
+### Mantra 7: Universalidade do Predicativo do Sujeito
 
 - *Uso:* Ao identificar um predicativo, não marque automaticamente "Verbo de Ligação". Verifique se o verbo indica ação (gerando predicado verbo-nominal).
 
-## Mantra 8: Hierarquia na Locução Verbal
+### Mantra 8: Hierarquia na Locução Verbal
 
 - *Uso:* Analise a predicação pelo último verbo. Se pedirem o auxiliar isolado, classifique-o como *Verbo Auxiliar*.
 
-## Mantra 9: Teste da Flexão Adjetivo vs. Advérbio
+### Mantra 9: Teste da Flexão Adjetivo vs. Advérbio
 
 - *Uso:* Flexionou com o sujeito? É Adjetivo (Predicativo). Permaneceu invariável? É Advérbio de Modo.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Confundir Ação com Movimento Físico (Pegadinha FGV)
+### Confundir Ação com Movimento Físico (Pegadinha FGV)
 
 - **Erro:** Considerar que verbos como *dormir*, *descansar*, *permanecer* (em repouso) são de "estado" porque a pessoa está imóvel.
 - **Correção:** *Dormir* é processo fisiológico e verbo nocional de ação. Verbos de estado (ligação) ligam sujeito ao predicativo (*"Ele estava calmo"*).
 
-## O Erro do Teste de "Tampar o Verbo"
+### O Erro do Teste de "Tampar o Verbo"
 
 - **Erro:** Tampar o pós-verbo em frases como *"Fomos ao clube"* e concluir que o verbo é VTI porque *"Fomos..."* parece incompleto.
 - **Correção:** Nunca tampe o verbo. A classificação decorre da análise do termo que vem **depois**: se o termo for adjunto adverbial, o verbo é intransitivo.
 
-## A Armadilha da Lista Decorada de Verbos de Ligação
+### A Armadilha da Lista Decorada de Verbos de Ligação
 
 - **Erro:** Marcar automaticamente "VL" para *ser, estar, ficar, continuar, viver, permanecer* sem checar o contexto.
 - **Correção:** A lista apenas aponta potenciais VLs. Sem predicativo do sujeito na oração (*"O homem continuou no quarto"*), o verbo é **Intransitivo (VI)**.
 
-## Confundir Adjunto Adverbial de Lugar com Estado/Predicativo
+### Confundir Adjunto Adverbial de Lugar com Estado/Predicativo
 
 - **Erro:** Considerar que expressões como *"em casa"* ou *"no hospital"* indicam o "estado" em que a pessoa se encontra.
 - **Correção:** Na sintaxe normativa, **lugar não é estado**. Expressão locativa é **Adjunto Adverbial de Lugar**; o verbo *estar* associado a ela é **Verbo Intransitivo (VI)**.
 
-## Pegadinha do "Perfurar algo com algo" (Instrumento vs. Objeto Indireto)
+### Pegadinha do "Perfurar algo com algo" (Instrumento vs. Objeto Indireto)
 
 - **Erro:** Classificar *perfurar* em *"Perfuravam a rocha com suas picaretas"* como VTDI.
 - **Correção:** A preposição *com* introduz a ferramenta utilizada $\rightarrow$ **Adjunto Adverbial de Instrumento**. O verbo possui apenas um objeto (*a rocha* - OD), permanecendo estritamente **VTD**.
 
-## Falsa Regra de que Predicativo do Sujeito Exige Verbo de Ligação
+### Falsa Regra de que Predicativo do Sujeito Exige Verbo de Ligação
 
 - **Erro:** Mudar a classificação de verbos de ação como *chegar* ou *ligar* para VL só porque há um adjetivo na oração (*"Chegamos alegres"*).
 - **Correção:** Verbos de ação mantêm sua transitividade nocional (VI, VTD), formando Predicado Verbo-Nominal.
 
-## Pegadinha da Pergunta Decorada ("Quem está, está em...")
+### Pegadinha da Pergunta Decorada ("Quem está, está em...")
 
 - **Erro:** Fazer perguntas fora da frase e concluir que verbos como *estar* ou *morar* são VTI por exigirem a preposição *em*.
 - **Correção:** Termos preposicionados com valor locativo são adjuntos adverbiais; os verbos são **Intransitivos (VI)**.
 
-## Armadilha da 3ª Pessoa do Plural com Referente Textual
+### Armadilha da 3ª Pessoa do Plural com Referente Textual
 
 - **Erro:** Marcar sujeito indeterminado para verbo na 3ª plural quando o referente nominal foi citado na oração anterior.
 - **Correção:** Se há referente identificável no texto (*"Os deputados votaram. Rejeitaram o texto."*), o sujeito de *rejeitaram* é **Sujeito Oculto Anafórico/Elíptico**.
 
-## Divergência Doutrinária Específica da Banca FCC
+### Divergência Doutrinária Específica da Banca FCC
 
 - **Cenário:** Verbos de deslocamento com locativo obrigatório (*ir a*, *comparecer a*, *morar em*).
 - **Regra Geral (Cebraspe, FGV, Vunesp):** Verbo Intransitivo + Adjunto Adverbial de Lugar.
@@ -833,61 +819,57 @@ Analisar qualquer oração de concursos de forma algorítmica e à prova de ambi
 
 ---
 
----
-
 ## Glossário operacional
 
-## Predicação Verbal (Transitividade Verbal)
+### Predicação Verbal (Transitividade Verbal)
 
 Propriedade sintático-semântica pela qual o verbo estrutura seus termos dependentes, dividindo-se entre verbos nocionais (intransitivos e transitivos diretos, indiretos e bitransitivos) e verbos relacionais (de ligação).
 *Relações:* .
 
-## Verbo Nocional (Significativo / de Ação)
+### Verbo Nocional (Significativo / de Ação)
 
 Verbo dotado de significado lexical autônomo pleno que exprime uma ação, acontecimento, processo ou fenômeno (com ou sem deslocamento físico).
 *Relações:* .
 
-## Verbo Relacional (Verbo de Ligação - VL)
+### Verbo Relacional (Verbo de Ligação - VL)
 
 Verbo desprovido de conteúdo nocional de ação cuja função sintática é intermediar a relação entre o sujeito e seu predicativo, veiculando estados permanentes, transitórios, aparentes, continuativos ou mutatórios.
 *Relações:* .
 
-## Predicativo do Sujeito
+### Predicativo do Sujeito
 
 Termo sintático atributivo que qualifica, caracteriza ou classifica o sujeito no predicado. Pode vir acompanhado por verbo de ligação (predicado nominal) ou por verbo nocional de ação (predicado verbo-nominal).
 *Relações:* .
 
-## Adjunto Adverbial
+### Adjunto Adverbial
 
 Termo sintático acessório que modifica o verbo, o adjetivo ou outro advérbio, exprimindo uma circunstância (tempo, lugar, modo, causa, instrumento, etc.). Não constitui complemento verbal integrante.
 *Relações:* .
 
-## Predicado Verbo-Nominal
+### Predicado Verbo-Nominal
 
 Estrutura de predicado que possui simultaneamente dois núcleos informativos: um núcleo verbal (verbo de ação nocional) e um núcleo nominal (predicativo do sujeito ou do objeto).
 *Relações:* .
 
-## Locução Verbal
+### Locução Verbal
 
 Estrutura sintática constituída por um verbo auxiliar flexionado e um verbo principal em forma nominal (infinitivo, gerúndio ou particípio) que atuam em conjunto como uma unidade verbal indivisível.
 *Relações:* .
 
-## Sujeito Desinencial
+### Sujeito Desinencial
 
 Espécie de sujeito oculto identificável diretamente pela desinência número-pessoal da terminação verbal de 1ª pessoa (*eu, nós*) ou 2ª pessoa (*tu, vós*).
 *Relações:* .
 
-## Sujeito Contextual / Anafórico
+### Sujeito Contextual / Anafórico
 
 Espécie de sujeito oculto de 3ª pessoa (*ele, ela, eles, elas*) identificado pela recuperação coesiva de um termo nominal antecedente explícito no texto.
 *Relações:* .
 
-## Pronome Indeterminador do Sujeito (PIS / IIS)
+### Pronome Indeterminador do Sujeito (PIS / IIS)
 
 Partícula 'se' associada a verbos intransitivos, transitivos indiretos ou de ligação flexionados na 3ª pessoa do singular, indicando que o executor da oração não é determinado.
 *Relações:* .
-
----
 
 ---
 

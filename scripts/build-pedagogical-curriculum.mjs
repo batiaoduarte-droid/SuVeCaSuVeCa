@@ -1,10 +1,11 @@
 import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
+import { normalizePedagogicalMarkdown } from './lib/pedagogical-markdown.mjs';
 
 const ROOT = process.cwd();
 const SCHEMA_VERSION = '4.2.0';
-const COMPILER_VERSION = '1.5.0';
+const COMPILER_VERSION = '1.6.0';
 const KNOWLEDGE_SHARD_SIZE = 15;
 const EXPECTED_INTEGRATED_LESSONS = Array.from({ length: 14 }, (_, index) => String(index).padStart(2, '0'));
 const EXPECTED_INTEGRATED_UNITS = 102;
@@ -108,7 +109,7 @@ const clip = (value, length) => {
 
 const normalizeCodeFences = (markdown) => {
   let open = false;
-  return markdown
+  const normalized = markdown
     .split('\n')
     .map((line) => {
       if (line.trim() !== '`') return line;
@@ -116,6 +117,8 @@ const normalizeCodeFences = (markdown) => {
       return open ? '```text' : '```';
     })
     .join('\n');
+  const fenceCount = normalized.split('\n').filter((line) => /^\s*```/.test(line)).length;
+  return fenceCount % 2 === 0 ? normalized : `${normalized}\n\n\`\`\``;
 };
 
 const stripTechnicalSections = (markdown) => markdown
@@ -349,14 +352,26 @@ const buildSuvecaConnectionMarkdown = (connection) => [
     : '',
 ].filter(Boolean).join('\n\n');
 
+const demoteEmbeddedHeadings = (markdown) => {
+  let fenced = false;
+  return markdown.split('\n').map((line) => {
+    if (/^\s*```/.test(line)) {
+      fenced = !fenced;
+      return line;
+    }
+    if (fenced) return line;
+    return line.replace(/^(#{1,6})\s+/, (match, hashes) => `${'#'.repeat(Math.min(6, Math.max(3, hashes.length + 1)))} `);
+  }).join('\n');
+};
+
 const buildUnitMarkdown = (unit, methodConnection) => {
   const objective = (unit.learning_objectives || []).map((item) => cleanLearnerMarkdown(item).trim()).filter(Boolean);
   const sections = fieldDefinitions.flatMap(([key, heading]) => {
-    const content = cleanLearnerMarkdown(unit.pedagogical_sections?.[key]);
+    const content = demoteEmbeddedHeadings(cleanLearnerMarkdown(unit.pedagogical_sections?.[key]));
     return content ? [`## ${heading}\n\n${content.trim()}`] : [];
   });
   const methodBeforeContent = !['indirect', 'outside_core'].includes(methodConnection.level);
-  return [
+  return normalizePedagogicalMarkdown([
     `# ${unit.title}`,
     objective.length
       ? `> **Objetivo de aprendizagem**\n>\n> ${objective.join(' ')}`
@@ -365,7 +380,7 @@ const buildUnitMarkdown = (unit, methodConnection) => {
     methodBeforeContent ? buildSuvecaConnectionMarkdown(methodConnection) : '',
     ...sections,
     methodBeforeContent ? '' : buildSuvecaConnectionMarkdown(methodConnection),
-  ].filter(Boolean).join('\n\n---\n\n').replace(/\n{3,}/g, '\n\n').trim() + '\n';
+  ].filter(Boolean).join('\n\n---\n\n'));
 };
 
 const lessonDirectories = fs.readdirSync(path.join(PORTUGUESE_ROOT, 'Aula Processada'), { withFileTypes: true })
@@ -646,7 +661,7 @@ for (const [index, section] of a14TopSections.entries()) {
     const text = cleanLearnerMarkdown(chunk.text).trim();
     return text ? `### ${cleanLearnerMarkdown(chunk.title).trim() || section.title}\n\n${text}` : '';
   }).filter(Boolean).join('\n\n');
-  const markdown = [
+  const markdown = normalizePedagogicalMarkdown([
     `# Revisão cumulativa · ${section.title}`,
     '> **Objetivo de revisão**\n>\n> Recuperar as decisões centrais do tema, localizar rapidamente lacunas e voltar ao aprofundamento correspondente sempre que a justificativa não puder ser reconstruída de memória.',
     buildSuvecaConnectionMarkdown(suvecaConnectionForLesson('A14')),
@@ -655,7 +670,7 @@ for (const [index, section] of a14TopSections.entries()) {
     chunkMarkdown ? `## Síntese estruturada\n\n${chunkMarkdown}` : '',
     `## Exemplos para recuperação\n\n${examplesMarkdown}`,
     '## Protocolo de revisão ativa\n\n1. Cubra a explicação e formule a regra de memória.\n2. Crie um exemplo positivo e um caso contrastivo.\n3. Explique qual pista decide a classificação.\n4. Se houver hesitação, retorne à unidade aprofundada do tema antes de avançar.',
-  ].filter(Boolean).join('\n\n---\n\n').replace(/\n{3,}/g, '\n\n').trim() + '\n';
+  ].filter(Boolean).join('\n\n---\n\n'));
   const fileName = `A14-S${sequence}-${slug(section.title)}.md`;
   write(path.join(UNIT_OUTPUT_ROOT, fileName), markdown);
   const canonicalTopicId = `pt:a14:revisao:${slug(section.title)}`;

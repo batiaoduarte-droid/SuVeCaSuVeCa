@@ -40,7 +40,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - **Mecanismos de Coesão Textual:** Identificação de anáforas, catáforas e elos coesivos interparágrafos e intraparágrafos.
 - **Noções de Lógica Proposicional:** Compreensão da estrutura condicional básica ($p \rightarrow q$) e relações de inclusão/exclusão em teoria dos conjuntos (quantificadores: *todo*, *algum*, *nenhum*, *maioria*).
 
-### Mapa de conhecimento integrado
+#### Mapa de conhecimento integrado
 
 ```text
 INFERÊNCIA TEXTUAL EM CONCURSOS PÚBLICOS
@@ -78,21 +78,19 @@ INFERÊNCIA TEXTUAL EM CONCURSOS PÚBLICOS
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Matriz Histórica e Epistemológica da Inferência Técnica (NCE/UFRJ e FGV)
+### Matriz Histórica e Epistemológica da Inferência Técnica (NCE/UFRJ e FGV)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A introdução de parâmetros objetivos, formais e linguísticos para a cobrança de inferência em concursos públicos brasileiros teve origem metodológica no Núcleo de Computação Eletrônica da Universidade Federal do Rio de Janeiro (NCE/UFRJ), corpo docente que posteriormente estruturou a matriz de Língua Portuguesa da Fundação Getulio Vargas (FGV).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Historicamente, as avaliações de interpretação de textos em vestibulares e concursos tradicionais operavam sob viés acentuadamente subjetivo e impressionista, baseando-se em especulações extracientíficas sobre o pensamento psicológico do autor (*"o que o autor quis dizer"*). O modelo inaugurado pelo NCE/UFRJ e consolidado pela FGV rompeu com esse subjetivismo ao transformar a interpretação textual em um procedimento dedutivo formal, fundamentado em pistas gramaticais, semântica lexical, pressuposições linguísticas e relações lógicas internas ao texto.
 
-### Critérios de aplicação
+#### Critérios de aplicação
 
 - Tratar o texto como um sistema formal autônomo, cujas conclusões válidas devem ser demonstráveis por operadores linguísticos presentes na superfície textual.
 
@@ -101,9 +99,9 @@ Historicamente, as avaliações de interpretação de textos em vestibulares e c
 
 ---
 
-## Distinção Estrutural entre Compreensão (Recorrência) e Interpretação (Inferência)
+### Distinção Estrutural entre Compreensão (Recorrência) e Interpretação (Inferência)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A análise textual divide-se categoricamente em dois níveis cognitivos e operacionais distintos: a **Compreensão Textual (Recorrência)**, restrita aos dados explícitos e resolvida por paráfrases diretas, e a **Interpretação Textual (Inferência)**, que opera sobre dados implícitos por meio de deduções lógicas e pressuposições autorizadas por pistas textuais.
 
@@ -122,18 +120,18 @@ A análise textual divide-se categoricamente em dois níveis cognitivos e operac
 └──────────────────────────────────────┴──────────────────────────────────────┘
 ```
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Compreensão Textual (Recorrência = Explícito):**
 
- - As assertivas corretas representam reescrituras fiéis, sinônimos contextuais ou equivalências sintático-semânticas.
- - Corresponde a aproximadamente 75% das questões de texto em concursos públicos (média de 3 em cada 4 itens).
+  - As assertivas corretas representam reescrituras fiéis, sinônimos contextuais ou equivalências sintático-semânticas.
+  - Corresponde a aproximadamente 75% das questões de texto em concursos públicos (média de 3 em cada 4 itens).
 2. **Interpretação Textual (Inferência = Implícito):**
- - Lida com proposições que não estão literalmente grafadas, mas que decorrem logicamente das premissas textuais.
- - Exige autorização expressa no enunciado (*"infere-se"*, *"deduz-se"*, *"depreende-se"*, *"conclui-se"*, *"entende-se"*).
- - Se o enunciado não contiver comando de inferência, o candidato deve restringir-se à compreensão/recorrência.
+  - Lida com proposições que não estão literalmente grafadas, mas que decorrem logicamente das premissas textuais.
+  - Exige autorização expressa no enunciado (*"infere-se"*, *"deduz-se"*, *"depreende-se"*, *"conclui-se"*, *"entende-se"*).
+  - Se o enunciado não contiver comando de inferência, o candidato deve restringir-se à compreensão/recorrência.
 
-### Alertas e erros comuns
+#### Alertas e erros comuns
 
 - **O Erro Invertido:** O candidato destreinado tenta deduzir nas 3 questões de compreensão (onde deveria apenas buscar paráfrases) e exige literalidade na única questão de inferência (onde deveria validar o implícito autorizado).
 
@@ -143,41 +141,41 @@ A análise textual divide-se categoricamente em dois níveis cognitivos e operac
 
 ---
 
-## Teoria das Pistas Textuais e Mecanismo da Pressuposição Semântica
+### Teoria das Pistas Textuais e Mecanismo da Pressuposição Semântica
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A inferência válida não constitui suposição livre, intuição ou hipótese subjetiva; ela é uma dedução necessária ou formalmente autorizada, construída a partir de **pressupostos semânticos** gerados por **pistas textuais** (marcas gramaticais e lexicais explícitas).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Afirmar que uma inferência decorre "a partir do texto" significa que sua fundamentação repousa em marcadores linguísticos formais:
 
 - **Pistas Textuais:** classes gramaticais operadoras de sentido, tais como:
- - *Verbos aspectuais ou de mudança de estado* (ex.: *deixar de*, *passar a*, *tornar-se*);
- - *Advérbios temporais, modais e aspectuais* (ex.: *já*, *ainda*, *não mais*, *historicamente*);
+  - *Verbos aspectuais ou de mudança de estado* (ex.: *deixar de*, *passar a*, *tornar-se*);
+  - *Advérbios temporais, modais e aspectuais* (ex.: *já*, *ainda*, *não mais*, *historicamente*);
 
- - *Quantificadores lógicos* (ex.: *maioria*, *alguns*, *parte de*);
+  - *Quantificadores lógicos* (ex.: *maioria*, *alguns*, *parte de*);
 
 - **Mecanismo da Pressuposição:** informação implícita que se torna logicamente incontestável em razão da presença de uma pista textual.
 - **Axioma da Não Literalidade:** A inferência *nunca estará expressa literalmente na superfície do texto*. Rejeitar um item sob a justificativa de que *"isso não está escrito"* revela incompreensão da natureza da inferência textual. Se estivesse escrito, seria recorrência.
 
-### Exemplos comparativos
+#### Exemplos comparativos
 
 - **Exemplo Propedêutico:** *"Ana não quer mais ser professora."*
- - Pista textual: operador adverbial *"mais"* (marca de cessação de estado).
- - Pressuposto incontestável: *"Ana já quis ser professora no passado"*.
+  - Pista textual: operador adverbial *"mais"* (marca de cessação de estado).
+  - Pressuposto incontestável: *"Ana já quis ser professora no passado"*.
 - **Analogia Cotidiana:** Na enunciação *"Eu não bebo mais"*, o interlocutor deduz com certeza absoluta que o falante ingeria bebidas alcoólicas anteriormente, em virtude do operador de cessação *"não... mais"*.
 
 ---
 
-## Tipologia de Comandos de Enunciado nas Bancas Examinadoras
+### Tipologia de Comandos de Enunciado nas Bancas Examinadoras
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Os enunciados de provas de concurso público determinam o regime cognitivo de resolução aplicável à questão (compreensão vs. inferência) por meio de fórmulas canônicas e verbos de comando específicos.
 
-### Classificação detalhada dos comandos
+#### Classificação detalhada dos comandos
 
 ```text
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -199,7 +197,7 @@ Os enunciados de provas de concurso público determinam o regime cognitivo de re
 └───────────────────────────┴─────────────────────────────────────────────────┘
 ```
 
-### Comportamento Operacional do Enunciado Moderno
+#### Comportamento Operacional do Enunciado Moderno
 
 O comando *"Entende-se do texto que..."* (amplamente difundido pela banca FGV e consolidado no Cebraspe) convida o candidato a uma leitura de síntese global, exigindo dedução autorizada a partir do encadeamento das ideias textuais. Em textos dissertativos, a ancoragem desse comando concentra-se predominantemente nos parágrafos finais (conclusão do autor).
 
@@ -207,13 +205,13 @@ O comando *"Entende-se do texto que..."* (amplamente difundido pela banca FGV e 
 
 ---
 
-## Estrutura Lógica Condicional da Inferência e Operadores Quantificadores
+### Estrutura Lógica Condicional da Inferência e Operadores Quantificadores
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A validação de uma inferência opera segundo o modelo condicional do raciocínio lógico formal: **"Se o texto diz $X$, então posso deduzir $Y$"**, em que $X$ representa a premissa textual explícita (pista) e $Y$ representa a conclusão implícita necessária ou probabilisticamente certa.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Mecânica do Teste Condicional:**
 
@@ -223,27 +221,27 @@ A validação de uma inferência opera segundo o modelo condicional do raciocín
  4. Se $X$ for insuficiente para garantir $Y$ (sendo $Y$ mera suposição ou dependente de dados externos) $\rightarrow$ **Extrapolação (Item ERRADO)**.
 - **Lógica dos Operadores Quantificadores (ex.: "Maioria"):**
 
- - O quantificador *"a maioria"* define que uma parcela quantitativamente superior a 50% de um universo partilha de certa característica.
- - Consequência lógica imediata: o termo *"maioria"* **exclui a totalidade** (nem todos partilham daquela condição, existindo uma minoria distinta).
- - Se um fenômeno atinge toda a população de uma localidade e a *"maioria"* dessa localidade é do grupo $A$, infere-se obrigatoriamente que indivíduos que não pertencem ao grupo $A$ também são afetados.
+  - O quantificador *"a maioria"* define que uma parcela quantitativamente superior a 50% de um universo partilha de certa característica.
+  - Consequência lógica imediata: o termo *"maioria"* **exclui a totalidade** (nem todos partilham daquela condição, existindo uma minoria distinta).
+  - Se um fenômeno atinge toda a população de uma localidade e a *"maioria"* dessa localidade é do grupo $A$, infere-se obrigatoriamente que indivíduos que não pertencem ao grupo $A$ também são afetados.
 
 ---
 
-## Extrapolação Textual por Insuficiência de Evidências e Conhecimento de Mundo
+### Extrapolação Textual por Insuficiência de Evidências e Conhecimento de Mundo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A **Extrapolação Textual** é o erro de interpretação consistente em validar uma assertiva que introduz causas, consequências, dados históricos ou julgamentos de valor que ultrapassam os limites informacionais do texto-base, decorrente da insuficiência de pistas linguísticas autorizadoras.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Estrutura da Pegadinha Contemporânea:** As bancas examinadoras raramente constroem itens com erros grosseiros em toda a frase. Em regra, formulam assertivas com 90% a 95% de correspondência fidedigna com o texto, inserindo **uma única palavra ou nexo causal residual** desprovido de suporte textual.
 - **A Armadilha do Conhecimento de Mundo / Repertório Acadêmico:**
- - O examinador introduz fatos verídicos no mundo exterior (notícias, teses sociológicas, dados históricos consolidados).
- - O candidato especialista ou atento à atualidade reconhece a veracidade da afirmação no plano real e valida o item, esquecendo que o universo de validação da prova de Língua Portuguesa é **estritamente autônomo e fechado nos limites do fragmento apresentado**.
- - Informação verdadeira no mundo real, se desprovida de pista no texto, **invalida a assertiva por extrapolação**.
+  - O examinador introduz fatos verídicos no mundo exterior (notícias, teses sociológicas, dados históricos consolidados).
+  - O candidato especialista ou atento à atualidade reconhece a veracidade da afirmação no plano real e valida o item, esquecendo que o universo de validação da prova de Língua Portuguesa é **estritamente autônomo e fechado nos limites do fragmento apresentado**.
+  - Informação verdadeira no mundo real, se desprovida de pista no texto, **invalida a assertiva por extrapolação**.
 
-### Critérios de reconhecimento
+#### Critérios de reconhecimento
 
 1. Identificar se o item afirma relações de causa/efeito (*"a razão de"*, *"decorre do fato de"*).
 2. Identificar se o item atribui autoria ou iniciativa (*"foram as responsáveis por propor"*).
@@ -251,24 +249,22 @@ A **Extrapolação Textual** é o erro de interpretação consistente em validar
 
 ---
 
-## Descompasso Sintático-Relacional em Assertivas com Paráfrases Múltiplas
+### Descompasso Sintático-Relacional em Assertivas com Paráfrases Múltiplas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O descompasso sintático-relacional ocorre quando uma assertiva de prova reúne múltiplos termos e conceitos verídicos, extraídos do texto por paráfrases perfeitas, mas forja entre eles uma conexão predicativa, causal ou teleológica que inverte ou altera as relações lógicas sustentadas pelo autor.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Morfologia da Armadilha:**
- - O candidato decompõe a assertiva e encontra o Bloco 1 no texto (paráfrase válida), encontra o Bloco 2 (paráfrase válida) e encontra o Bloco 4 (paráfrase válida).
- - Em razão do reconhecimento de tantos elementos verdadeiros, o leitor tende a assumir a correção global do item por complacência.
- - No entanto, a banca adultera o **Bloco 3 ("O que sobrou")**: o verbo de ligação, o pronome ou o nexo relacional vincula o sujeito ao predicado incorreto.
+  - O candidato decompõe a assertiva e encontra o Bloco 1 no texto (paráfrase válida), encontra o Bloco 2 (paráfrase válida) e encontra o Bloco 4 (paráfrase válida).
+  - Em razão do reconhecimento de tantos elementos verdadeiros, o leitor tende a assumir a correção global do item por complacência.
+  - No entanto, a banca adultera o **Bloco 3 ("O que sobrou")**: o verbo de ligação, o pronome ou o nexo relacional vincula o sujeito ao predicado incorreto.
 - **Inversão de Vetores (Ponto de Partida vs. Ponto de Chegada):**
- - Em textos dissertativos complexos, determinados conceitos representam o **ponto de partida** (o cenário fático consolidado, o ecossistema existente).
- - Outros conceitos representam o **ponto de chegada** (a ação exigida, o foco a ser redefinido para lidar com a nova realidade).
- - A assertiva falha ao predicar o cenário existente como se fosse o objeto da ação a ser redefinida, gerando contradição relacional.
-
----
+  - Em textos dissertativos complexos, determinados conceitos representam o **ponto de partida** (o cenário fático consolidado, o ecossistema existente).
+  - Outros conceitos representam o **ponto de chegada** (a ação exigida, o foco a ser redefinido para lidar com a nova realidade).
+  - A assertiva falha ao predicar o cenário existente como se fosse o objeto da ação a ser redefinida, gerando contradição relacional.
 
 ---
 
@@ -289,42 +285,40 @@ O descompasso sintático-relacional ocorre quando uma assertiva de prova reúne 
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Protocolo Geral de Quatro Passos para Inferência Textual
+### Protocolo Geral de Quatro Passos para Inferência Textual
 
-### Finalidade
+#### Finalidade
 
 Identificar sistematicamente se uma assertiva proposta pela banca examinadora constitui inferência legítima (Item CERTO) ou extrapolação indevida (Item ERRADO).
 
-### Passo a passo estruturado
+#### Passo a passo estruturado
 
 1. **Passo 1: Leitura Analítica e Mapeamento Vetorial do Texto**
- - Ler o fragmento identificando referentes anafóricos, conectivos e modalizadores discursivos (*"infelizmente"*, *"havia tempos"*, *"durante todo"*).
+  - Ler o fragmento identificando referentes anafóricos, conectivos e modalizadores discursivos (*"infelizmente"*, *"havia tempos"*, *"durante todo"*).
 
 2. **Passo 2: Mapeamento de Equivalências (Assertiva vs. Texto)**
 
 3. **Passo 3: Isolamento dos Termos Residuais ("O Que Sobrou")**
- - Isolar os vocábulos ou nexos relacionais da assertiva que **não possuem correspondente literal** no texto-base.
- - Praticar o "desapego" da literalidade: não rejeitar o item pela ausência de cópia direta.
+  - Isolar os vocábulos ou nexos relacionais da assertiva que **não possuem correspondente literal** no texto-base.
+  - Praticar o "desapego" da literalidade: não rejeitar o item pela ausência de cópia direta.
 4. **Passo 4: Teste da Pista Textual e Ancoragem Condicional**
- - Formular a pergunta de validação: *Existe no texto uma pista lexical/gramatical suficiente para autorizar esse resíduo?*
- - Aplicar a fórmula: *"Se o texto diz [Pista X], então posso deduzir [Resíduo Y]?"*
- - **Julgamento:**
- - Com pista suficiente $\rightarrow$ **Inferência Válida (CERTO)**.
- - Sem pista suficiente / dependente de conhecimento externo $\rightarrow$ **Extrapolação (ERRADO)**.
+  - Formular a pergunta de validação: *Existe no texto uma pista lexical/gramatical suficiente para autorizar esse resíduo?*
+  - Aplicar a fórmula: *"Se o texto diz [Pista X], então posso deduzir [Resíduo Y]?"*
+  - **Julgamento:**
+  - Com pista suficiente $\rightarrow$ **Inferência Válida (CERTO)**.
+  - Sem pista suficiente / dependente de conhecimento externo $\rightarrow$ **Extrapolação (ERRADO)**.
 
 ---
 
-## Estratégia de Leitura Focada para Enunciados Globais ("Entende-se / Conclui-se")
+### Estratégia de Leitura Focada para Enunciados Globais ("Entende-se / Conclui-se")
 
-### Finalidade
+#### Finalidade
 
 Otimizar o tempo de prova e direcionar a checagem de itens formulados com comandos de síntese global (*"Entende-se do texto que"*, *"Conclui-se do texto que"*).
 
-### Passo a passo estruturado
+#### Passo a passo estruturado
 
 1. **Identificação do Comando Global:** Constatar a presença de fórmulas como *"Entende-se do texto que"* ou *"Conclui-se globalmente que"*.
 2. **Localização Prioritária dos Parágrafos Finais:** Em textos dissertativos de concurso, dirigir a atenção inicial para o último e o penúltimo parágrafo do texto, onde se concentram a conclusão e a síntese da tese do autor.
@@ -333,30 +327,30 @@ Otimizar o tempo de prova e direcionar a checagem de itens formulados com comand
 
 ---
 
-## Decomposição Analítica em Blocos e Rastreamento de Paráfrases
+### Decomposição Analítica em Blocos e Rastreamento de Paráfrases
 
-### Finalidade
+#### Finalidade
 
 Fragmentar assertivas longas e sintaticamente densas para neutralizar a ansiedade provocada por reformulações vocabulares complexas.
 
-### Passo a passo estruturado
+#### Passo a passo estruturado
 
 1. **Delimitação da Ancoragem Textual:** Confirmar a linha ou parágrafo indicado no enunciado (ex.: *"3º parágrafo"*).
 2. **Segmentação Numérica da Assertiva:** Numerar os blocos conceituais autônomos da assertiva (Bloco 1, Bloco 2, Bloco 3, Bloco 4).
 3. **Rastreamento de Campos Semânticos no Texto:**
 
- - Associar expressões como *"todos produzem conteúdo"* ao conceito de *"democratização do acesso"*; *"mudaram os meios"* a *"avanço da tecnologia"*.
+  - Associar expressões como *"todos produzem conteúdo"* ao conceito de *"democratização do acesso"*; *"mudaram os meios"* a *"avanço da tecnologia"*.
 4. **Confirmação Preliminar de Presença:** Marcar quais blocos conceituais têm presença atestada no texto de apoio.
 
 ---
 
-## Técnica das "Setas Salvam" e Teste do Resíduo Relacional
+### Técnica das "Setas Salvam" e Teste do Resíduo Relacional
 
-### Finalidade
+#### Finalidade
 
 Evitar o falso positivo em itens cujos termos isolados são todos verdadeiros, mas cuja conexão sintático-semântica foi forjada ou invertida pela banca examinadora.
 
-### Diagrama de fluxo operacional
+#### Diagrama de fluxo operacional
 
 ```text
 [Início: Assertiva Segmentada em Blocos]
@@ -384,8 +378,6 @@ Evitar o falso positivo em itens cujos termos isolados são todos verdadeiros, m
 
 ---
 
----
-
 ## Contrastes que a prova explora
 
 ### 1. Compreensão (Recorrência) vs. Interpretação (Inferência)
@@ -395,19 +387,19 @@ Evitar o falso positivo em itens cujos termos isolados são todos verdadeiros, m
 - **Inferência:** A informação não está escrita expressamente; a resposta decorre de pressuposições autorizadas por pistas formais.
 - **Limite Pedagógico:** Não se deve inferir em questões de recorrência nem buscar cópias literais em questões de inferência.
 
-### 2. Inferência Válida vs. Extrapolação Textual
+#### 2. Inferência Válida vs. Extrapolação Textual
 
 - **Critério Decisivo:** Suficiência de evidências linguísticas internas no texto.
 - **Inferência Válida:** Sustentada por operadores gramaticais que geram pressupostos lógicos incontestáveis ($Se\ X \rightarrow então\ Y$).
 - **Extrapolação:** A conclusão avança além do que o texto autoriza, apoiando-se em juízos prévios, hipóteses não comprovadas ou conhecimento enciclopédico externo.
 
-### 3. Enunciado Clássico vs. Enunciado Moderno
+#### 3. Enunciado Clássico vs. Enunciado Moderno
 
 - **Critério Decisivo:** Amplitude do escopo de análise.
 - **Clássico (*"infere-se"*, *"deduz-se"*, *"depreende-se"*):** Geralmente ancora-se em períodos, orações ou parágrafos delimitados.
 - **Moderno (*"entende-se do texto que"*):** Demanda interpretação global da tese do autor, orientando a checagem primordialmente para os parágrafos de fechamento.
 
-### 4. Ponto de Partida (Cenário Estabelecido) vs. Ponto de Chegada (Ação / Objeto de Redefinição)
+#### 4. Ponto de Partida (Cenário Estabelecido) vs. Ponto de Chegada (Ação / Objeto de Redefinição)
 
 - **Critério Decisivo:** Função discursiva dos conceitos no texto argumentativo.
 - **Ponto de Partida:** O ecossistema ou realidade fática consolidada (ex.: o avanço tecnológico e o acesso em rede).
@@ -415,170 +407,166 @@ Evitar o falso positivo em itens cujos termos isolados são todos verdadeiros, m
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Exemplo Propedêutico: A Mudança de Desejo Profissional de Ana
+### Exemplo Propedêutico: A Mudança de Desejo Profissional de Ana
 
-### Enunciado e dados
+#### Enunciado e dados
 
 - **Texto-base:** *"Ana não quer mais ser professora."*
 - **Assertiva avaliada:** *"Infere-se do texto que Ana já quis ser professora."*
 
-### Desenvolvimento analítico
+#### Desenvolvimento analítico
 
 1. Confronto de termos: *"Ana"* $\leftrightarrow$ *"Ana"*; *"professora"* $\leftrightarrow$ *"professora"*.
 2. Isolamento do resíduo: A assertiva afirma o estado pretérito (*"já quis"*).
 3. Busca de pista textual: O advérbio temporal de cessação *"mais"* presente em *"não quer mais"*.
 4. Raciocínio lógico: O ato de cessar um desejo pressupõe necessariamente a existência prévia desse desejo.
 
-### Conclusão e gabarito
+#### Conclusão e gabarito
 
 - **Classificação:** Inferência Válida (Item CERTO).
 - **Conceito demonstrado:** Pressuposição linguística gerada por operador adverbial temporal de cessação de estado.
 
 ---
 
-## Questão de Concurso: Pesquisas Minerais no Século XVI
+### Questão de Concurso: Pesquisas Minerais no Século XVI
 
-### Enunciado e dados
+#### Enunciado e dados
 
 - **Texto-base:** *"Durante todo o século XVI, os portugueses usaram muitos recursos financeiros para as pesquisas de minas no interior do Brasil. Mas, infelizmente, o que foi encontrado não estava à altura do que foi despendido."*
 - **Assertiva avaliada:** *"INFERÊNCIA: Até o século XVI, ainda não se tinha confirmado a existência de minas abundantes no Brasil."*
 
-### Desenvolvimento analítico
+#### Desenvolvimento analítico
 
 1. **Mapeamento de equivalências:**
- - *"século XVI"* $\leftrightarrow$ *"século XVI"*; *"minas no Brasil"* $\leftrightarrow$ *"minas no interior do Brasil"*.
+  - *"século XVI"* $\leftrightarrow$ *"século XVI"*; *"minas no Brasil"* $\leftrightarrow$ *"minas no interior do Brasil"*.
 2. **Isolamento dos resíduos:**
- - O uso de *"Até o século XVI"* e a proposição de que *"ainda não se tinha confirmado a existência de minas abundantes"*.
+  - O uso de *"Até o século XVI"* e a proposição de que *"ainda não se tinha confirmado a existência de minas abundantes"*.
 3. **Ancoragem nas pistas textuais:**
- - **Pista 1:** O vocábulo *"pesquisas"* (quem realiza pesquisas despende recursos em busca de comprovação de hipóteses ainda não confirmadas).
- - **Pista 2:** *"o que foi encontrado não estava à altura do que foi despendido"* (comprova a frustração da expectativa de abundância durante todo aquele século).
+  - **Pista 1:** O vocábulo *"pesquisas"* (quem realiza pesquisas despende recursos em busca de comprovação de hipóteses ainda não confirmadas).
+  - **Pista 2:** *"o que foi encontrado não estava à altura do que foi despendido"* (comprova a frustração da expectativa de abundância durante todo aquele século).
 4. **Aplicação condicional:** Se os portugueses pesquisaram durante todo o século XVI com volumosos recursos e o resultado foi frustrante, deduz-se logicamente que até aquele período a existência de minas abundantes permanecia não confirmada.
 
-### Conclusão e gabarito
+#### Conclusão e gabarito
 
 - **Classificação:** Inferência Válida (Item CERTO).
 - **Conceito demonstrado:** Dedução lógica sustentada pela semântica do substantivo *"pesquisas"* e pela correlação custo-resultado.
 
 ---
 
-## Questão de Concurso: Criminalização do Stalking e Bancada Feminina
+### Questão de Concurso: Criminalização do Stalking e Bancada Feminina
 
-### Enunciado e dados
+#### Enunciado e dados
 
 - **Texto-base:** *"A criminalização do stalking era, havia tempos, uma das prioridades da bancada feminina da Câmara dos Deputados."*
 - **Assertiva avaliada:** *"INFERÊNCIA: As deputadas federais foram as responsáveis por propor a tipificação do stalking."*
 
-### Desenvolvimento analítico
+#### Desenvolvimento analítico
 
 1. **Mapeamento de equivalências:**
- - *"bancada feminina da Câmara dos Deputados"* $\leftrightarrow$ *"As deputadas federais"*.
- - *"criminalização do stalking"* $\leftrightarrow$ *"tipificação do stalking"*.
+  - *"bancada feminina da Câmara dos Deputados"* $\leftrightarrow$ *"As deputadas federais"*.
+  - *"criminalização do stalking"* $\leftrightarrow$ *"tipificação do stalking"*.
 2. **Isolamento do resíduo extrapolado:**
- - A assertiva afirma que elas *"foram as responsáveis por propor"* (atribuição de autoria/iniciativa do projeto de lei).
+  - A assertiva afirma que elas *"foram as responsáveis por propor"* (atribuição de autoria/iniciativa do projeto de lei).
 3. **Teste de ancoragem textual:**
- - O texto informa apenas que o tema era *"uma das prioridades"* da bancada.
- - Ter prioridade significa defender, apoiar ou priorizar politicamente uma pauta, mas **não autoriza inferir iniciativa legislativa ou autoria de proposição**. A proposta pode ter sido redigida por outro parlamentar, comissão ou poder.
+  - O texto informa apenas que o tema era *"uma das prioridades"* da bancada.
+  - Ter prioridade significa defender, apoiar ou priorizar politicamente uma pauta, mas **não autoriza inferir iniciativa legislativa ou autoria de proposição**. A proposta pode ter sido redigida por outro parlamentar, comissão ou poder.
 
-### Conclusão e gabarito
+#### Conclusão e gabarito
 
 - **Classificação:** Extrapolação Textual (Item ERRADO).
 - **Conceito demonstrado:** Extrapolação por acréscimo de autoria não autorizada por pistas e risco de contaminação por conhecimento de mundo.
 
 ---
 
-## Questão Cebraspe (FNDE 2024): Racismo Ambiental e Quantificadores Lógicos
+### Questão Cebraspe (FNDE 2024): Racismo Ambiental e Quantificadores Lógicos
 
-### Enunciado e dados
+#### Enunciado e dados
 
 - **Concurso / Órgão:** CESPE / CEBRASPE — 2024 — FNDE — Cargo: Arquiteto e Urbanista.
 - **Texto-base (3º Parágrafo):** *"No Brasil, nas cidades e nos centros urbanos, o racismo ambiental tem um impacto significativo na população que vive em favelas e periferias, onde historicamente a maioria da população é negra. A falta de acesso a serviços básicos [...] afeta a saúde e a qualidade de vida dos moradores e agrava ainda mais os impactos das mudanças climáticas..."*
 - **Item avaliado:** *"Entende-se do texto que a população negra não é a única vítima do racismo ambiental."*
 
-### Desenvolvimento analítico
+#### Desenvolvimento analítico
 
 1. O racismo ambiental atinge genericamente a população moradora de favelas e periferias.
 2. Nestas localidades, o texto afirma que *"a maioria da população é negra"*.
 3. O operador quantificador *"maioria"* exclui a totalidade, pressupondo a existência de uma parcela de moradores não negros.
 4. Como todos os moradores sofrem os impactos da falta de saneamento e enchentes, conclui-se formalmente que pessoas não negras também são vitimadas.
 
-### Conclusão e gabarito
+#### Conclusão e gabarito
 
 - **Classificação:** Inferência Válida (Item CERTO).
 - **Conceito demonstrado:** Dedução lógica autorizada pela pressuposição de não totalidade contida no quantificador *"maioria"*.
 
 ---
 
-## Questão Cebraspe (FNDE 2024): Extrapolação de Causalidade Histórica
+### Questão Cebraspe (FNDE 2024): Extrapolação de Causalidade Histórica
 
-### Enunciado e dados
+#### Enunciado e dados
 
 - **Concurso / Órgão:** CESPE / CEBRASPE — 2024 — FNDE — Cargo: Arquiteto e Urbanista.
 - **Texto-base:** Mesmo 3º parágrafo sobre racismo ambiental.
 - **Item avaliado:** *"Conclui-se do texto que a razão de a maioria da população de favelas e periferias ser historicamente negra decorre do fato de esses terem sido os locais ocupados pela população negra após o fim do regime escravocrata."*
 
-### Desenvolvimento analítico
+#### Desenvolvimento analítico
 
 1. **Mapeamento de correspondência:** O texto menciona apenas o fato sociodemográfico: *"historicamente a maioria da população é negra"*.
 2. **Detecção da extrapolação:** O item introduz a **causa/razão** dessa distribuição demográfica (*"decorre do fato de..."*) e insere o evento histórico do *"fim do regime escravocrata"*.
 3. **Ausência de pistas:** O fragmento textual em momento algum aborda o pós-abolição, o regime escravocrata ou a gênese histórica da ocupação territorial.
 4. **Armadilha:** A assertiva reproduz uma explicação historiográfica verdadeira na realidade do Brasil, mas totalmente ausente do texto da prova.
 
-### Conclusão e gabarito
+#### Conclusão e gabarito
 
 - **Classificação:** Extrapolação Textual (Item ERRADO).
 - **Conceito demonstrado:** Erro de validação baseado em conhecimento enciclopédico de mundo sem suporte no texto.
 
 ---
 
-## Questão Cebraspe (ANATEL 2024): Descompasso Relacional em Múltiplas Paráfrases
+### Questão Cebraspe (ANATEL 2024): Descompasso Relacional em Múltiplas Paráfrases
 
-### Enunciado e dados
+#### Enunciado e dados
 
 - **Concurso / Órgão:** CESPE / CEBRASPE — 2024 — ANATEL — Especialista em Regulação.
 - **Texto-base (3º Parágrafo):** *"A comunicação não mudou. Mudaram os meios. Todos têm acesso às redes. Nelas a produção de conteúdo é incessante. O conteúdo é produzido por todos. A estrutura não é mais regida por uma lógica de programação, mas por uma lógica de fluxo. Nesse novo ecossistema [...] Em uma sociedade que se comunica em fluxo, é preciso avaliar diariamente onde estão os impedimentos e o que deve ser priorizado, e redefinir foco e estratégia. A comunicação também passa a lidar com o provisório, com o possível e com o impermanente."*
 - **Item avaliado:** *"Conclui-se da leitura do terceiro parágrafo do texto que o avanço da tecnologia no âmbito da comunicação e a democratização do acesso à informação são, respectivamente, o foco e a estratégia a serem redefinidos na sociedade do século XXI, que se comunica em fluxo permanente."*
 
-### Desenvolvimento analítico
+#### Desenvolvimento analítico
 
 1. **Decomposição em 4 blocos e validação de paráfrases:**
- - Bloco 1 (*"avanço da tecnologia"*): Presente (*"mudaram os meios"*, *"acesso às redes"*).
- - Bloco 2 (*"democratização do acesso à informação"*): Presente (*"conteúdo é produzido por todos"*).
- - Bloco 4 (*"sociedade do século XXI, que se comunica em fluxo permanente"*): Presente (*"sociedade que se comunica em fluxo"*, *"ecossistema em fluxo permanente"*).
+  - Bloco 1 (*"avanço da tecnologia"*): Presente (*"mudaram os meios"*, *"acesso às redes"*).
+  - Bloco 2 (*"democratização do acesso à informação"*): Presente (*"conteúdo é produzido por todos"*).
+  - Bloco 4 (*"sociedade do século XXI, que se comunica em fluxo permanente"*): Presente (*"sociedade que se comunica em fluxo"*, *"ecossistema em fluxo permanente"*).
 2. **Aplicação das "Setas Salvam" no Bloco 3 ("O Que Sobrou"):**
- - A assertiva afirma que o Bloco 1 e o Bloco 2 **SÃO** o foco e a estratégia a serem redefinidos.
- - O texto aponta expressamente que a redefinição de foco e estratégia ocorre **PARA lidar com o provisório, o possível e o impermanente**.
- - O avanço tecnológico e a democratização constituem o **cenário fático dado (ponto de partida)**, e não o objeto da redefinição estratégica (**ponto de chegada**).
+  - A assertiva afirma que o Bloco 1 e o Bloco 2 **SÃO** o foco e a estratégia a serem redefinidos.
+  - O texto aponta expressamente que a redefinição de foco e estratégia ocorre **PARA lidar com o provisório, o possível e o impermanente**.
+  - O avanço tecnológico e a democratização constituem o **cenário fático dado (ponto de partida)**, e não o objeto da redefinição estratégica (**ponto de chegada**).
 
-### Conclusão e gabarito
+#### Conclusão e gabarito
 
 - **Classificação:** Contradição Relacional (Item ERRADO).
 - **Conceito demonstrado:** Falha lógica gerada por vinculação predicativa incorreta entre conceitos verdadeiros e isoladamente comprováveis no texto.
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Mantra Supremo da Interpretação de Texto
+### O Mantra Supremo da Interpretação de Texto
 
-### Regra operacional
+#### Regra operacional
 
 > **"Interpretar a gente só faz se a banca mandar!"**
 
 1. Verifique rigorosamente o verbo de comando no enunciado:
- - Se o comando for de compreensão (*"O texto diz"*, *"Segundo o autor"*), procure paráfrases explícitas e **não faça deduções**.
- - Se o comando for de inferência (*"Infere-se"*, *"Deduz-se"*, *"Entende-se"*), busque conclusões implícitas ancoradas em pistas textuais.
+  - Se o comando for de compreensão (*"O texto diz"*, *"Segundo o autor"*), procure paráfrases explícitas e **não faça deduções**.
+  - Se o comando for de inferência (*"Infere-se"*, *"Deduz-se"*, *"Entende-se"*), busque conclusões implícitas ancoradas em pistas textuais.
 
 ---
 
-## Técnica do Desapego e Anotação de Ponto de Interrogação (`?`)
+### Técnica do Desapego e Anotação de Ponto de Interrogação (`?`)
 
-### Regra operacional
+#### Regra operacional
 
 Ao realizar o batimento termo a termo entre a assertiva e o texto-base:
 
@@ -588,65 +576,61 @@ Ao realizar o batimento termo a termo entre a assertiva e o texto-base:
 
 ---
 
-## Priorização dos Parágrafos Finais em Enunciados Globais
+### Priorização dos Parágrafos Finais em Enunciados Globais
 
-### Regra operacional
+#### Regra operacional
 
 Em questões iniciadas por *"Entende-se do texto que..."* ou *"Conclui-se do texto que..."*, direcione a primeira leitura analítica para o **fechamento do texto** (último e penúltimo parágrafo). A síntese do raciocínio argumentativo e a tese final do autor costumam estar concentradas no desfecho da dissertação.
 
 ---
 
-## Rastreamento Sintático e Vetorização via "Setas Salvam"
+### Rastreamento Sintático e Vetorização via "Setas Salvam"
 
-### Regra operacional
+#### Regra operacional
 
 1. Em períodos subordinados na assertiva, trace setas físicas apontando de pronomes relativos (*"que"*), adjuntos e orações para os substantivos que eles qualificam.
 2. Risque os blocos conceituais validados e concentre o julgamento exclusivamente sobre **o verbo ou nexo relacional** que conecta os blocos. A checagem da direção da seta no texto revelará se a vinculação é verdadeira ou fraudulenta.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## O Erro de Exigir Literalidade em Itens de Inferência
+### O Erro de Exigir Literalidade em Itens de Inferência
 
-### Problema e manifestação
+#### Problema e manifestação
 
 O candidato compreende a dedução lógica apresentada na assertiva, mas julga o item como ERRADO sob o protesto: *"Mas essa frase exata não está escrita no texto!"*.
 
-### Consequência e prevenção
+#### Consequência e prevenção
 
 - **Consequência:** Erro sistemático de itens de inferência válidos e perda desnecessária de pontos em bancas exigentes.
 - **Prevenção:** Compreender que a não literalidade é a própria essência epistemológica da inferência. Se estivesse explicitamente grafada, seria uma questão de compreensão/recorrência.
 
 ---
 
-## A Armadilha da Extrapolação por Conhecimento Enciclopédico de Mundo
+### A Armadilha da Extrapolação por Conhecimento Enciclopédico de Mundo
 
-### Problema e manifestação
+#### Problema e manifestação
 
 Validar itens de prova utilizando informações verídicas de reportagens jornalísticas, teses acadêmicas, leis ou conhecimentos históricos que não constam do fragmento apresentado.
 
-### Consequência e prevenção
+#### Consequência e prevenção
 
 - **Consequência:** Queda direta nas armadilhas de extrapolação planejadas pelos examinadores para capturar candidatos experientes em temas específicos.
 - **Prevenção:** Aplicar o princípio da **Autonomia Textual Estrita**: durante a resolução da prova, a única realidade existente e válida é a contida no texto-base (*"Não vale o que você leu fora; vale apenas o que tem pista no texto"*).
 
 ---
 
-## O Golpe da "Assertiva 90% Verdadeira" com Descompasso Relacional
+### O Golpe da "Assertiva 90% Verdadeira" com Descompasso Relacional
 
-### Problema e manifestação
+#### Problema e manifestação
 
 A banca redige uma assertiva em que 90% dos termos são paráfrases exatas de expressões do texto (ex.: avanço tecnológico, democratização do acesso, ecossistema em fluxo), induzindo o leitor a uma validação complacente. No entanto, o verbo ou conectivo que une esses termos expressa uma relação que contraria a lógica do autor.
 
-### Consequência e prevenção
+#### Consequência e prevenção
 
 - **Consequência:** Marcar como CERTO um item falso em virtude do reconhecimento superficial de palavras familiares.
 - **Prevenção:** Jamais julgar a assertiva pelo mero somatório de suas palavras; rastrear obrigatoriamente se o predicado atribuído coincide com a direção dos vetores do texto de apoio.
-
----
 
 ---
 
@@ -656,35 +640,33 @@ A banca redige uma assertiva em que 90% dos termos são paráfrases exatas de ex
 
 Operação lógico-cognitiva pela qual se extrai uma conclusão implícita a partir de premissas e marcas gramaticais presentes no texto. Exige comando autorizador no enunciado. (*Origem: *).
 
-### Recorrência (Compreensão Textual)
+#### Recorrência (Compreensão Textual)
 
 Operação de localização e reconhecimento de dados explícitos grafados no texto, resolvida por paráfrases, equivalências lexicais e reescrituras fiéis. (*Origem: *).
 
-### Pista Textual
+#### Pista Textual
 
 Operador formal presente na superfície do texto (verbos aspectuais, advérbios, adjetivos, quantificadores, conectivos) que ancora e autoriza a dedução de um implícito. (*Origem: *).
 
-### Pressuposição Semântica
+#### Pressuposição Semântica
 
 Informação implícita que decorre de modo necessário e incontestável do sentido de determinados operadores gramaticais ou lexicais presentes na oração. (*Origem: *).
 
-### Extrapolação Textual
+#### Extrapolação Textual
 
 Erro interpretativo consistente em formular uma conclusão que ultrapassa as evidências do texto, frequentemente motivado pelo uso indevido de repertório ou conhecimento de mundo prévio. (*Origem: *).
 
-### Paráfrase / Equivalência Semântica
+#### Paráfrase / Equivalência Semântica
 
 Reescritura de um trecho textual que preserva rigorosamente o conteúdo semântico original por meio de estruturas sintáticas e vocabulário sinônimo. (*Origem: *).
 
-### Técnica das "Setas Salvam"
+#### Técnica das "Setas Salvam"
 
 Procedimento de verificação analítica consistente em traçar vetores gráficos de referenciação sintática (pronomes relativos) e de conexão predicativa para validar a direcionalidade das relações lógicas. (*Origem: *).
 
-### Ecossistema em Fluxo Permanente
+#### Ecossistema em Fluxo Permanente
 
 Metáfora conceitual presente na questão ANATEL 2024 que descreve a comunicação digital contemporânea, marcada pela produção descentralizada, velocidade instantânea de circulação e necessidade de respostas imediatas à impermanência. (*Origem: *).
-
----
 
 ---
 

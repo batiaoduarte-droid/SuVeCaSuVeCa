@@ -39,7 +39,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - **Morfologia Básica:** Noções de substantivo (classe determinada), adjetivo (modificador) e classes invariáveis (preposição).
 - **Sintaxe Introdutória:** Conceito elementar de regência verbal/nominal (termos regentes que exigem preposição) e concordância nominal (o determinante deve concordar em gênero e número com o núcleo substantivo).
 
-### Mapa de Conceitos do Grupo
+#### Mapa de Conceitos do Grupo
 
 ```text
  CLASSE DOS ARTIGOS (esta unidade)
@@ -69,35 +69,33 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## O Artigo e sua Relação Morfossintática de Dependência com o Substantivo
+### O Artigo e sua Relação Morfossintática de Dependência com o Substantivo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O artigo é a classe gramatical variável em gênero e número que se antepõe a um substantivo para determiná-lo ou indeterminá-lo. Morfossintaticamente, o artigo não possui autonomia referencial: sua existência na oração depende exclusivamente da subordinação a um substantivo (regra mnemônica: *"a seta do artigo aponta sempre para o substantivo"*).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Para identificar um artigo em textos e provas de concurso, deve-se rastrear a palavra à qual ele se subordina formalmente. O artigo concorda obrigatoriamente com o substantivo núcleo em gênero e número. Contudo, as bancas examinadoras exploram duas armadilhas morfossintáticas estruturais:
 
 1. **Artigo Distante do Substantivo (Intercalação Adjetiva):** O artigo não precisa estar justaposto imediatamente ao substantivo. Elementos modificadores (adjetivos ou locuções) podem intercalar-se entre o artigo e o substantivo sem que a relação morfológica seja quebrada.
 2. **Substantivo Oculto / Implícito (Elipse Textual):** O substantivo ao qual o artigo se refere pode estar elíptico (omitido) na oração para evitar repetição vocabular. O vocábulo continua sendo classificado como artigo se o substantivo puder ser resgatado anafórica ou contextualmente.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - **Critério da Flecha Morfossintática:** Trace uma ligação visual a partir da palavra suspeita em busca do substantivo núcleo.
 - **Critério da Concordância:** Verifique se a flexão (masculino/feminino, singular/plural) acompanha as marcas do substantivo de referência.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Exemplo de subordinação direta:* `"Comprou um livro."` (`um` = artigo indefinido masculino singular determinando `livro`).
 - *Exemplo de artigo distante:* `"O lindo menino"` (`O` = artigo definido masculino singular subordinado ao substantivo `menino`, superando a interposição do adjetivo `lindo`).
 - *Exemplo de substantivo elíptico:* `"O homem inteligente e o educado chegaram."` (O primeiro `O` refere-se ao substantivo explícito `homem`; o segundo `o` refere-se ao substantivo elíptico `[homem]`, mantendo-se como artigo).
 
-### Exceções ou limites
+#### Exceções ou limites
 
 A omissão gráfica do substantivo não autoriza classificar a palavra como pronome demonstrativo se o termo elíptico for um substantivo diretamente recuperável na mesma estrutura coordenada.
 
@@ -108,26 +106,26 @@ A omissão gráfica do substantivo não autoriza classificar a palavra como pron
 
 ---
 
-## Valores Semântico-Discursivos dos Artigos Definidos e Indefinidos
+### Valores Semântico-Discursivos dos Artigos Definidos e Indefinidos
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A oposição entre o artigo definido (*o, a, os, as*) e o artigo indefinido (*um, uma, uns, umas*) não é apenas morfológica, mas essencialmente **semântica e pragmático-discursiva**. O artigo definido marca uma **realidade conhecida e determinada**, ao passo que o artigo indefinido introduz uma **realidade vaga, indeterminada ou não exclusiva** (um elemento entre vários possíveis).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Artigo Definido e os Fundamentos do Conhecimento Prévio:**
- - **Anáfora Textual:** O ser já foi explicitamente apresentado ou mencionado em parágrafos/linhas anteriores do texto.
- - **Conhecimento de Mundo (Extratextual / Enciclopédico):** O termo é grafado pela primeira vez no texto, mas o emissor pressupõe que os leitores/interlocutores compartilham o repertório sociocultural, histórico ou situacional necessário para identificá-lo (*"do projeto civilizador oitocentista"*).
+  - **Anáfora Textual:** O ser já foi explicitamente apresentado ou mencionado em parágrafos/linhas anteriores do texto.
+  - **Conhecimento de Mundo (Extratextual / Enciclopédico):** O termo é grafado pela primeira vez no texto, mas o emissor pressupõe que os leitores/interlocutores compartilham o repertório sociocultural, histórico ou situacional necessário para identificá-lo (*"do projeto civilizador oitocentista"*).
 2. **Artigo Indefinido e a Semântica de Não Exclusividade:**
- - O artigo indefinido não serve apenas para denotar "desconhecimento", mas atua no discurso sinalizando que o substantivo introduzido constitui **uma possibilidade dentre várias existentes**, rejeitando a exclusividade ou a unicidade (*"uma visão contemporânea"* = uma entre outras visões pedagógicas possíveis; diferentemente de *"a visão contemporânea"*, que expressaria unicidade).
+  - O artigo indefinido não serve apenas para denotar "desconhecimento", mas atua no discurso sinalizando que o substantivo introduzido constitui **uma possibilidade dentre várias existentes**, rejeitando a exclusividade ou a unicidade (*"uma visão contemporânea"* = uma entre outras visões pedagógicas possíveis; diferentemente de *"a visão contemporânea"*, que expressaria unicidade).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - Se o substantivo for individualizado e tomado como notório pelos interlocutores (por contexto anterior ou por conhecimento histórico/cultural amplo) $\rightarrow$ **Artigo Definido**.
 - Se o substantivo for generalizado, tomado como amostra ou como uma alternativa aberta entre outras $\rightarrow$ **Artigo Indefinido**.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Contraste semântico cotidiano:* `"Comprei o livro."` (livro específico previamente acordado) versus `"Comprei um livro."` (um livro qualquer, indeterminado).
 - *Conhecimento de mundo:* `"A implantação da penitenciária fazia parte do projeto civilizador oitocentista..."` (O artigo definido `o` em `do` pressupõe conhecimento histórico extratextual do leitor).
@@ -137,13 +135,13 @@ A oposição entre o artigo definido (*o, a, os, as*) e o artigo indefinido (*um
 
 ---
 
-## Distinção entre o Vocábulo "A/O" e seus Homônimos Gramaticais
+### Distinção entre o Vocábulo "A/O" e seus Homônimos Gramaticais
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O vocábulo "a" (e sua forma masculina "o") manifesta-se em quatro classes gramaticais concorrentes na Língua Portuguesa: **Artigo**, **Pronome Pessoal Oblíquo Átono**, **Preposição** e **Pronome Demonstrativo**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 | Classe Gramatical | Papel Morfossintático Central | Teste Diagnóstico Prático | Exemplo de Referência |
 |:--------------------------------- |:---------------------------------------------------------------------------------- |:---------------------------------------------------------------------------- |:----------------------------------------------------------------------------- |
@@ -152,14 +150,14 @@ O vocábulo "a" (e sua forma masculina "o") manifesta-se em quatro classes grama
 | **Preposição** | Conectivo sintático invariável exigido por regência verbal ou nominal. | Liga regente a regido; não varia para o plural diante de palavra no plural. | `"Aspirava a dias melhores."` / `"Aberto a alternativas."` |
 | **Pronome Demonstrativo** | Substitui um termo antecedente, surgindo antes de**"que"** ou **"de"**. | Substitui-se por**"aquela"**, **"aquele"** ou **"aquilo"**. | `"Prefiro a do álbum anterior."` $\rightarrow$ *"Prefiro aquela do..."* |
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 1. Se acompanha substantivo concordando com ele $\rightarrow$ **Artigo**.
 2. Se completa verbo transitivo direto substituindo uma pessoa $\rightarrow$ **Pronome Pessoal Oblíquo**.
 3. Se é conectivo invariável introduzido por termo regente (*aberto a*, *aspirar a*) e antecede palavra plural mantendo-se no singular $\rightarrow$ **Preposição**.
 4. Se precede `que` ou `de` equivalendo a *aquele(a)* $\rightarrow$ **Pronome Demonstrativo**.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Artigo:* `"Desejava a felicidade."` (`a` $\rightarrow$ `felicidade`).
 - *Pronome Pessoal:* `"Não a encontrei."` (`a` = `ela`).
@@ -172,13 +170,13 @@ O vocábulo "a" (e sua forma masculina "o") manifesta-se em quatro classes grama
 
 ---
 
-## Reconhecimento e Decomposição de Artigos em Contrações Prepositivas
+### Reconhecimento e Decomposição de Artigos em Contrações Prepositivas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Os artigos definidos frequentemente encontram-se fundidos a preposições essenciais (`de`, `em`, `por`), constituindo **contrações prepositivas**. Para fins de análise sintática e contagem morfológica em questões de concursos, o candidato deve decompor a palavra fundida para registrar a presença individualizada do artigo.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 As bancas de concurso frequentemente formulam itens de contagem de classes de palavras ou afirmam que determinada estrutura contraída contém um artigo definido. A decomposição canônica apresentada nas fontes compreende:
 
@@ -186,19 +184,17 @@ As bancas de concurso frequentemente formulam itens de contagem de classes de pa
 - **`NA` / `NO`:** Preposição `EM` + Artigo Definido `A` / `O` (ou plurais `NAS` / `NOS`).
 - **`PELA` / `PELO`:** Preposição `POR` + Artigo Definido `A` / `O` (ou plurais `PELAS` / `PELOS`).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 Sempre que uma assertiva avaliar a presença de artigo ou exigir a quantificação de determinantes em um trecho, palavras como *do, da, no, na, pelo, pela* devem ser formalmente cindidas em duas unidades morfológicas: **Preposição + Artigo Definido**.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Exemplo de decomposição:* `"fazia parte do projeto civilizador"` $\rightarrow$ `do` = `de` (preposição regida por *fazer parte*) + `o` (artigo definido que determina o substantivo *projeto*).
 - *Contagem:* Na oração `"Gostei do livro e na escola falei pelo professor"`, existem **3 preposições** (`de`, `em`, `por`) e **3 artigos definidos** (`o`, `a`, `o`).
 
 - **Possui dicas:**
 - **Evidenciado por:**
-
----
 
 ---
 
@@ -213,11 +209,9 @@ Sempre que uma assertiva avaliar a presença de artigo ou exigir a quantificaç�
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Procedimento de Diferenciação entre Artigo "A/O" e Pronome Pessoal Oblíquo
+### Procedimento de Diferenciação entre Artigo "A/O" e Pronome Pessoal Oblíquo
 
 1. **Localização da forma "a/o":** Isole o termo em análise no período.
 2. **Teste do Substantivo:** Verifique se o vocábulo antecede um substantivo e concorda com ele em gênero e número. Se sim, confirme a seta morfossintática e classifique como **Artigo**.
@@ -226,7 +220,7 @@ Sempre que uma assertiva avaliar a presença de artigo ou exigir a quantificaç�
 
 ---
 
-## Procedimento de Reconhecimento do Pronome Demonstrativo "A/O"
+### Procedimento de Reconhecimento do Pronome Demonstrativo "A/O"
 
 1. **Verificação de Contexto Sintático:** Observe se a palavra "a" ou "o" antecede imediatamente os conectivos **"que"** ou **"de"** (ou contrações derivadas como *do, da*).
 2. **Teste de Equivalência Demonstrativa:** Aplique a substituição por **"aquela"**, **"aquele"** ou **"aquilo"**.
@@ -234,7 +228,7 @@ Sempre que uma assertiva avaliar a presença de artigo ou exigir a quantificaç�
 
 ---
 
-## Procedimento do Teste de Plural para Identificação de Preposição Pura
+### Procedimento do Teste de Plural para Identificação de Preposição Pura
 
 1. **Identificação da Forma "a":** Isole o vocábulo "a" antecedendo um elemento nominal ou oracional.
 2. **Inspeção do Termo Subsequente:** Verifique o número gramatical do substantivo seguinte.
@@ -243,16 +237,14 @@ Sempre que uma assertiva avaliar a presença de artigo ou exigir a quantificaç�
 
 ---
 
-## Método de Esquartejamento de Assertivas da Banca CEBRASPE
+### Método de Esquartejamento de Assertivas da Banca CEBRASPE
 
 1. **Cisão Estrutural do Item:** Divida a assertiva da banca em duas frações independentes:
- - **Parte I (Premissa Morfossintática / Descritiva):** Avalia a existência e classificação do fato linguístico (ex.: *"Com o uso do artigo definido na contração 'do'..."*).
- - **Parte II (Conclusão Semântica / Interpretativa):** Avalia o efeito de sentido ou o pressuposto discursivo (ex.: *"...pressupõe-se que a autora parte do princípio de que os leitores tenham conhecimento prévio..."*).
+  - **Parte I (Premissa Morfossintática / Descritiva):** Avalia a existência e classificação do fato linguístico (ex.: *"Com o uso do artigo definido na contração 'do'..."*).
+  - **Parte II (Conclusão Semântica / Interpretativa):** Avalia o efeito de sentido ou o pressuposto discursivo (ex.: *"...pressupõe-se que a autora parte do princípio de que os leitores tenham conhecimento prévio..."*).
 2. **Validação da Parte I:** Verifique no texto se a premissa descritiva é rigorosamente verdadeira (`do` = `de + o`).
 3. **Validação da Parte II:** Avalie se o conceito semântico deduzido é linguisticamente válido para aquela classe no contexto (artigo definido pressupõe conhecimento de mundo/prévio).
 4. **Julgamento Global:** Se ambas as partes forem corretas, marque **CERTO**. Se qualquer uma das frações apresentar inconsistência, marque **ERRADO**.
-
----
 
 ---
 
@@ -268,7 +260,7 @@ Sempre que uma assertiva avaliar a presença de artigo ou exigir a quantificaç�
 | **Teste de Troca** | Não aceita troca por pronome | Troca-se por**"ela"** | Troca-se por outra preposição | Troca-se por**"aquela"** |
 | **Exemplo Típico** | *"Desejava a felicidade."* | *"Não a encontrei."* | *"Aspirava a dias melhores."* | *"Prefiro a do álbum anterior."* |
 
-### Tabela 2: Artigo Definido vs. Artigo Indefinido
+#### Tabela 2: Artigo Definido vs. Artigo Indefinido
 
 | Parâmetro Semântico | Artigo Definido (*o, a, os, as*) | Artigo Indefinido (*um, uma, uns, umas*) |
 |:---------------------------------- |:---------------------------------------------------------------------------------------- |:-------------------------------------------------------------------------------------- |
@@ -276,7 +268,7 @@ Sempre que uma assertiva avaliar a presença de artigo ou exigir a quantificaç�
 | **Ancoragem Discursiva** | Menção textual prévia (anáfora) OU repertório sociocultural (conhecimento de mundo). | Apresentação inicial sem individualização prévia. |
 | **Exclusividade / Unicidade** | Expressa unicidade ou foco específico (*"a visão"* = a visão exclusiva). | Expressa**não exclusividade** (*"uma visão"* = uma entre várias possíveis). |
 
-### Tabela 3: Origem da Notoriedade no Artigo Definido
+#### Tabela 3: Origem da Notoriedade no Artigo Definido
 
 |:--------------------------------------------- |:------------------------------------------------------------------------------------- |:-------------------------------------------------------- |
 | **Conhecimento Textual (Anáfora)** | O referente já apareceu grafado explicitamente em linhas anteriores. | *"Comprei um livro... O livro é excelente."* |
@@ -284,62 +276,60 @@ Sempre que uma assertiva avaliar a presença de artigo ou exigir a quantificaç�
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Identificação de Artigo Distante por Adjetivo Intercalado
+### Identificação de Artigo Distante por Adjetivo Intercalado
 
 - **Estrutura sob análise:** `"O lindo menino"`
 - **Análise Morfossintática:**
- - `O`: Artigo definido masculino singular subordinado diretamente a `menino`.
- - `lindo`: Adjetivo intercalado entre o artigo e o substantivo.
- - `menino`: Substantivo masculino singular (núcleo).
+  - `O`: Artigo definido masculino singular subordinado diretamente a `menino`.
+  - `lindo`: Adjetivo intercalado entre o artigo e o substantivo.
+  - `menino`: Substantivo masculino singular (núcleo).
 - **Lição Pedagógica:** A presença do adjetivo `lindo` não desvincula o artigo `O` de seu substantivo núcleo `menino`.
 
 ---
 
-## Identificação de Artigo Subordinado a Substantivo Elíptico
+### Identificação de Artigo Subordinado a Substantivo Elíptico
 
 - **Estrutura sob análise:** `"O homem inteligente e o educado chegaram."`
 - **Análise Morfossintática:**
- - `O [homem]`: Artigo definido referindo-se ao substantivo explícito `homem`.
- - `o [educado]`: Artigo definido que se subordina ao substantivo implícito/elíptico `[homem]` para evitar repetição vocabular.
+  - `O [homem]`: Artigo definido referindo-se ao substantivo explícito `homem`.
+  - `o [educado]`: Artigo definido que se subordina ao substantivo implícito/elíptico `[homem]` para evitar repetição vocabular.
 - **Lição Pedagógica:** O artigo mantém sua classificação morfológica plena mesmo quando seu substantivo se encontra oculto no contexto oracional imediato.
 
 ---
 
-## Contraste entre Pronome Pessoal Oblíquo e Artigo Definido
+### Contraste entre Pronome Pessoal Oblíquo e Artigo Definido
 
 - **Frase A:** `"Não a encontrei."`
- - *Classificação:* Pronome Pessoal Oblíquo Átono.
- - *Justificativa:* Funciona como objeto direto de `encontrei` e admite substituição por `"ela"` (*"Não encontrei ela"*).
+  - *Classificação:* Pronome Pessoal Oblíquo Átono.
+  - *Justificativa:* Funciona como objeto direto de `encontrei` e admite substituição por `"ela"` (*"Não encontrei ela"*).
 - **Frase B:** `"Desejava a felicidade."`
- - *Classificação:* Artigo Definido.
- - *Justificativa:* Determina o substantivo abstrato `felicidade`.
+  - *Classificação:* Artigo Definido.
+  - *Justificativa:* Determina o substantivo abstrato `felicidade`.
 
 ---
 
-## Identificação de Preposição por Regência Verbal
+### Identificação de Preposição por Regência Verbal
 
 - **Estrutura sob análise:** `"Aspirava a dias melhores."`
 - **Análise Morfossintática e Sintática:**
- - `Aspirava`: Verbo Transitivo Indireto (sentido de almejar).
- - `a`: Preposição pura exigida pela regência do verbo.
- - `dias melhores`: Objeto Indireto (cujo núcleo `dias` é substantivo masculino plural, provando a invariabilidade do conector `a`).
+  - `Aspirava`: Verbo Transitivo Indireto (sentido de almejar).
+  - `a`: Preposição pura exigida pela regência do verbo.
+  - `dias melhores`: Objeto Indireto (cujo núcleo `dias` é substantivo masculino plural, provando a invariabilidade do conector `a`).
 
 ---
 
-## Identificação de Pronome Demonstrativo antes de "DE"
+### Identificação de Pronome Demonstrativo antes de "DE"
 
 - **Estrutura sob análise:** `"Esta música é boa, mas prefiro a do álbum anterior."`
 - **Análise Morfossintática:**
- - `a`: Pronome Demonstrativo feminino singular.
- - *Justificativa:* Antecede a contração `do` (`de + o`) e substitui a expressão *"aquela música"*.
+  - `a`: Pronome Demonstrativo feminino singular.
+  - *Justificativa:* Antecede a contração `do` (`de + o`) e substitui a expressão *"aquela música"*.
 
 ---
 
-## Questão CEBRASPE / InoversaSul (2025) — Artigo Indefinido vs. Preposição Regencial
+### Questão CEBRASPE / InoversaSul (2025) — Artigo Indefinido vs. Preposição Regencial
 
 - **Texto de Referência (Luiz Antônio Marcuschi):** *"Em suma, texto é **uma** proposta de sentido e ele se acha aberto **a** várias alternativas de compreensão."*
 - **Enunciado:** *"No último período do texto, os vocábulos “uma” e “a” fazem parte da mesma classe gramatical de palavras."*
@@ -351,7 +341,7 @@ Sempre que uma assertiva avaliar a presença de artigo ou exigir a quantificaç�
 
 ---
 
-## Questão CEBRASPE / DEPEN — Artigo Definido em Contração e Conhecimento de Mundo
+### Questão CEBRASPE / DEPEN — Artigo Definido em Contração e Conhecimento de Mundo
 
 - **Texto de Referência (Cláudia Moraes Trindade):** *"A implantação da penitenciária fazia parte **do** projeto civilizador oitocentista..."*
 - **Enunciado:** *"Com o uso do artigo definido na contração “do” em “do projeto civilizador oitocentista” (no início do segundo parágrafo), pressupõe-se que a autora parte do princípio de que os leitores tenham conhecimento prévio acerca desse projeto."*
@@ -362,7 +352,7 @@ Sempre que uma assertiva avaliar a presença de artigo ou exigir a quantificaç�
 
 ---
 
-## Questão CEBRASPE / UNIPAMPA — Artigo Indefinido e Não Exclusividade
+### Questão CEBRASPE / UNIPAMPA — Artigo Indefinido e Não Exclusividade
 
 - **Texto de Referência (Nilton S. Formiga et al.):** *"Em **uma** visão contemporânea, a educação tem como objetivo a formação cidadã..."*
 - **Enunciado:** *"O emprego do artigo indefinido no trecho “Em uma visão contemporânea” (l.4-5) indica a possibilidade de existirem outras abordagens educacionais."*
@@ -373,87 +363,79 @@ Sempre que uma assertiva avaliar a presença de artigo ou exigir a quantificaç�
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Macete da Seta Morfossintática em Direção ao Substantivo
+### O Macete da Seta Morfossintática em Direção ao Substantivo
 
 Ao analisar qualquer questão de prova sobre a morfologia do artigo, trace mentalmente uma seta a partir da palavra. Se a seta alcançar um substantivo (mesmo que haja adjetivos no meio ou que o substantivo esteja subentendido na frase), a palavra é **obrigatoriamente um artigo**.
 
-## O Macete da Decomposição Rápida de Contrações
+### O Macete da Decomposição Rápida de Contrações
 
 - `DA / DO` = `DE` (prep.) + `A / O` (artigo)
 - `NA / NO` = `EM` (prep.) + `A / O` (artigo)
 - `PELA / PELO` = `POR` (prep.) + `A / O` (artigo)
 
-## O Macete do "A" Singular Diante de Substantivo Plural
+### O Macete do "A" Singular Diante de Substantivo Plural
 
 Se encontrar a letra **"a"** no singular imediatamente antes de uma palavra ou expressão no **plural** (*aberto **a** várias alternativas*, *favorável **a** mudanças*), esse "a" é **100% Preposição Pura**. Artigos femininos diante de substantivos plurais seriam obrigatoriamente grafados como *as* ou fundidos em crase (*às*).
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## A Armadilha da Contiguidade Imediata (Artigo Distante)
+### A Armadilha da Contiguidade Imediata (Artigo Distante)
 
 - **Erro Comum:** Julgar que o artigo deve estar colado ao substantivo e desclassificá-lo quando surge um adjetivo intermediário.
 - **Forma Correta:** O artigo subordina-se ao substantivo núcleo mesmo separado por modificadores intercalados (*"O lindo menino"*).
 
-## A Armadilha do Substantivo Elíptico
+### A Armadilha do Substantivo Elíptico
 
 - **Erro Comum:** Classificar o segundo determinante de uma oração coordenada como pronome demonstrativo simplesmente porque o substantivo não foi repetido.
 - **Forma Correta:** Se o substantivo foi expresso antes e permanece subentendido (*"O homem inteligente e o [homem] educado"*), a palavra que o retoma continua exercendo função morfológica de **artigo**.
 
-## Confusão entre Preposição "A" e Artigo "A" por Presença de Substantivo Feminino
+### Confusão entre Preposição "A" e Artigo "A" por Presença de Substantivo Feminino
 
 - **Erro Comum:** Supor que todo "a" que antecede palavra feminina é artigo.
 - **Forma Correta:** Verifique a regência do termo anterior. Se for conector exigido por verbo/adjetivo sem determinação específica, trata-se de preposição pura.
 
-## Restringir a Semântica do Artigo Definido Apenas à Menção Prévia no Texto
+### Restringir a Semântica do Artigo Definido Apenas à Menção Prévia no Texto
 
 - **Erro Comum:** O candidato busca o termo nas linhas anteriores e, ao não encontrar citação expressa, julga errada a assertiva que afirma que o artigo definido pressupõe conhecimento prévio.
 - **Forma Correta:** O artigo definido fundamenta-se tanto na **anáfora textual** quanto no **conhecimento de mundo** (repertório histórico/cultural compartilhado extratextualmente).
 
 ---
 
----
-
 ## Glossário operacional
 
-## Artigo Definido
+### Artigo Definido
 
 - **Definição:** Classe de palavra variável (*o, a, os, as*) que determina o substantivo de modo preciso, indicando realidade prévia e conhecida, seja por anáfora textual ou por conhecimento de mundo compartilhado.
 - **Relações:** Antecede `SUBSTANTIVO`; opõe-se a .
 
-## Artigo Indefinido
+### Artigo Indefinido
 
 - **Definição:** Classe de palavra variável (*um, uma, uns, umas*) que determina o substantivo de forma imprecisa, genérica ou não exclusiva, apresentando o ser como uma possibilidade aberta entre várias da mesma espécie.
 - **Relações:** Opõe-se a .
 
-## Contração Prepositiva com Artigo
+### Contração Prepositiva com Artigo
 
 - **Definição:** Fusão morfofonética de uma preposição essencial (*de, em, por*) com um artigo definido (*o, a, os, as*), gerando formas como *do, da, no, na, pelo, pela*.
 
-## Pronome Demonstrativo (Homônimo do Artigo)
+### Pronome Demonstrativo (Homônimo do Artigo)
 
 - **Definição:** Vocábulo (*o, a, os, as*) que substitui um termo antecedente e antecede as palavras *que* ou *de*, equivalendo semanticamente a *aquele, aquela, aquilo*.
 
-## Preposição "A" (Homônima do Artigo)
+### Preposição "A" (Homônima do Artigo)
 
 - **Definição:** Conectivo sintático invariável exigido pela regência de verbos transitivos indiretos ou de nomes, cuja função é ligar termos oracionais.
 
-## Pronome Pessoal Oblíquo Átono (Homônimo do Artigo)
+### Pronome Pessoal Oblíquo Átono (Homônimo do Artigo)
 
 - **Definição:** Pronome (*o, a, os, as*) que atua como complemento verbal de terceira pessoa (objeto direto), equivalente ao pronome pessoal reto *ele/ela*.
 
-## Conhecimento de Mundo (Extratextual)
+### Conhecimento de Mundo (Extratextual)
 
 - **Definição:** Repertório enciclopédico, sociocultural e histórico compartilhado entre os interlocutores que permite ao leitor identificar um ser determinado introduzido por artigo definido mesmo sem menção textual prévia.
-
----
 
 ---
 

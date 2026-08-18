@@ -42,7 +42,7 @@ Para o pleno aproveitamento deste grupo consolidado, o estudante deve possuir co
 * **Noções elementares de sintaxe:** conceitos de sujeito, predicado e transitividade verbal (verbos transitivos diretos, indiretos e intransitivos).
 * **Conceito geral de termos da oração:** divisão entre termos essenciais, integrantes e acessórios.
 
-### Mapa estruturado de conhecimento
+#### Mapa estruturado de conhecimento
 
 ```text
 TERMOS ACESSÓRIOS DA ORAÇÃO (esta unidade)
@@ -80,17 +80,15 @@ TERMOS ACESSÓRIOS DA ORAÇÃO (esta unidade)
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Natureza Sintática e Conexões do Adjunto Adverbial
+### Natureza Sintática e Conexões do Adjunto Adverbial
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **adjunto adverbial** é a função sintática acessória cuja finalidade exclusiva é modificar ou intensificar o sentido de três classes gramaticais: **verbo** (conexão predominante), **adjetivo** e **outro advérbio**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Na análise sintática descritiva, o adjunto adverbial atua como um modificador oracional dependente. Embora a tradição escolar muitas vezes restrinja a explicação ao verbo, A abordagem didática demonstra que essa ênfase é meramente estatística (na maioria dos casos práticos de prova, a seta aponta para um verbo, motivo pelo qual a palavra *VERBO* recebe um asterisco `*` no esquema). Contudo, o adjunto adverbial conecta-se legitimamente a:
 
@@ -98,31 +96,31 @@ Na análise sintática descritiva, o adjunto adverbial atua como um modificador 
 2. **Adjetivo:** atuando como intensificador ou qualificador de uma característica (*Homem muito bom*);
 3. **Outro Advérbio:** graduando a intensidade de outra circunstância adverbial já expressa (*Saíram muito cedo*).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 * Verificar se a palavra receptora da subordinação pertence à tríade: Verbo, Adjetivo ou Advérbio.
 * Se a palavra modificada for um substantivo, o termo jamais será adjunto adverbial (será adjunto adnominal ou predicativo).
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 * *Eles falavam muito*: "muito" modifica o verbo *falavam* $\rightarrow$ Adjunto Adverbial de intensidade.
 * *Aquele homem era muito bom*: "muito" modifica o adjetivo *bom* $\rightarrow$ Adjunto Adverbial de intensidade.
 * *Os alunos saíram muito cedo*: "cedo" modifica o verbo *saíram* (Adjunto Adverbial de tempo) e "muito" modifica o advérbio *cedo* $\rightarrow$ Adjunto Adverbial de intensidade.
 * *Contraexemplo:* *Muitos homens falaram*: "muitos" modifica o substantivo *homens* $\rightarrow$ Adjunto Adnominal (Pronome Indefinido), e não adjunto adverbial.
 
-### Exceções ou limites
+#### Exceções ou limites
 
 O adjunto adverbial **nunca** se conecta diretamente a substantivos ou pronomes substantivos.
 
 ---
 
-## Semântica do Adjunto Adverbial: Circunstância, Metáfora da Fofoca e Mnemônico 6C + FTP
+### Semântica do Adjunto Adverbial: Circunstância, Metáfora da Fofoca e Mnemônico 6C + FTP
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O adjunto adverbial é a materialização sintática da **circunstância**. Didaticamente, a circunstância é definida como o **"cheiro de fofoca"** da oração: uma informação contextual acessória que enriquece a mensagem, mas que é estruturalmente dispensável para a completude sintática primária do predicado.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Como termo acessório, o adjunto adverbial não é exigido pela transitividade direta ou indireta do verbo. Ele responde a perguntas periféricas sobre o evento: *Quando? Onde? Como? Por que motivo? Para que fim? Com quem? Sob que condição?*.
 Para sistematizar o vasto rol de circunstâncias adverbiais cobradas em provas e correlacioná-las à morfologia das conjunções e à sintaxe do período composto, consolida-se o mnemônico **`6C + FTP`**:
@@ -140,19 +138,19 @@ Para sistematizar o vasto rol de circunstâncias adverbiais cobradas em provas e
  3. **P**roporção (*à medida que subia, cansava*).
 * **Circunstâncias Básicas Adicionais:** Além do mnemônico `6C + FTP`, somam-se as circunstâncias fundamentais: **Lugar** (*foi ao curso* / *no parque*), **Modo** (*com calma* / *rapidamente*), **Intensidade** (*falava muito*), **Companhia** (*saiu com a amiga*), **Dúvida** (*talvez venha*), **Negação** (*não veio*), **Afirmação** (*certamente virá*) e **Instrumento** (*feriu-se com a faca*).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 * Avaliar a dispensabilidade estrutural: a remoção do termo não deve quebrar a sintaxe básica (embora altere a completude informacional).
 
 ---
 
-## Morfossintaxe Adverbial: Advérbio vs. Locução Adverbial e a Falácia da Invariabilidade
+### Morfossintaxe Adverbial: Advérbio vs. Locução Adverbial e a Falácia da Invariabilidade
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A análise de termos circunstanciais exige a diferenciação nítida entre **Morfologia (Classe Gramatical)** e **Sintaxe (Função Sintática)**. No plano morfológico, distingue-se **Advérbio** (vocábulo único) de **Locução Adverbial** (expressão com duas ou mais palavras). No plano sintático, ambas as estruturas exercem invariavelmente a mesma função: **Adjunto Adverbial**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Os critérios de classe e de função acumulam-se e não se anulam. Um termo pode ser simultaneamente advérbio na morfologia e adjunto adverbial na sintaxe:
 
@@ -161,25 +159,25 @@ Os critérios de classe e de função acumulam-se e não se anulam. Um termo pod
 * **Adjunto Adverbial (Sintaxe):** Rótulo relacional único que abarca tanto advérbios quanto locuções adverbiais.
 * **A Falácia da Invariabilidade:** É incorreto afirmar que "o adjunto adverbial é invariável". O rótulo de adjunto adverbial aplica-se a locuções adverbiais que contêm, em sua composição interna, palavras perfeitamente variáveis (artigos definidos femininos, substantivos no plural, etc., como em *com as amigas*, *às pressas*, *pelas manhãs*). Portanto, a invariabilidade é propriedade mórfica do advérbio, e nunca critério diagnóstico da função sintática de adjunto adverbial.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 * Contar a extensão do termo: 1 palavra circunstancial = Advérbio; 2+ palavras preposicionadas = Locução Adverbial.
 
 ---
 
-## Distinção Sintática entre Termo Acessório (Adjunto Adverbial) e Termo Integrante (Objeto Indireto)
+### Distinção Sintática entre Termo Acessório (Adjunto Adverbial) e Termo Integrante (Objeto Indireto)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A oposição entre **Adjunto Adverbial** e **Objeto Indireto** repousa na hierarquia sintática oracional: o adjunto adverbial é um **termo acessório** (acompanhante circunstancial periférico), enquanto o objeto indireto (ou complemento indireto) é um **termo integrante** (necessário para preencher e completar a predicação de verbos transitivos indiretos).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 * **Adjunto Adverbial (Acessório):** Deriva da raiz *ad-junto* ("o que vem junto"). Acompanha o verbo veiculando uma circunstância (causa, modo, lugar, tempo). Não é exigido pela regência sintática verbal, atuando como elemento facultativo da estrutura oracional.
 * **Objeto Indireto (Integrante / Complemento Indireto):** Denomina-se integrante porque *integra* a predicação incompleta de um verbo transitivo indireto (VTI). É regido obrigatoriamente por preposição imposta pela sintaxe verbal (ex.: *gostar de*, *carecer de*, *obedecer a*, *responder a*).
 * **O Mito da Omissão Mecânica ("Tampar com a mãozinha"):** A abordagem didática desmantela a técnica tradicional de tampar o termo para ver se "faz falta". Muitos adjuntos adverbiais (como circunstâncias de lugar em verbos de movimento ou causas mortais, ex.: *morrer de exaustão*, *ir ao curso*) causam forte quebra informativa quando suprimidos, levando o aluno desavisado a rotulá-los erroneamente como complementos obrigatórios (objetos indiretos). A distinção deve ser técnica e semântica, baseada no valor da preposição e no tipo de relação estabelecida.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 1. Lançar a seta do termo preposicionado para o verbo.
 2. Aplicar o teste do "cheiro de circunstância": a expressão veicula ideia circunstancial evidente (tempo, modo, causa, lugar, etc.)?
@@ -188,32 +186,32 @@ A oposição entre **Adjunto Adverbial** e **Objeto Indireto** repousa na hierar
 
 ---
 
-## Preposição Nocional vs. Preposição Gramatical e Compatibilidade Verbal dos Adjuntos
+### Preposição Nocional vs. Preposição Gramatical e Compatibilidade Verbal dos Adjuntos
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A natureza do vínculo preposicionado é definida pelo caráter **nocional** (carregado de valor semântico autônomo) ou **gramatical** (mero conectivo relacional de regência) da preposição. Além disso, os adjuntos adverbiais são "fofocas" universalmente compatíveis com **qualquer classe de predicação verbal** (VI, VTD, VTI, VTDI e VL).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 * **Preposição Nocional (Semântica):** Possui conteúdo léxico-semântico próprio que expressa a circunstância por si mesma. Em *morrem de exaustão*, a preposição *de* veicula valor de causa (*por motivo de*); em *com calma*, a preposição *com* expressa modo (*calmamente*); em *por essa porta*, *por* indica lugar/passagem. A preposição nocional introduz **adjunto adverbial**.
 * **Preposição Gramatical (Relacional pura):** É exigida mecanicamente pelo verbo transitivo indireto para conectar-se ao seu alvo/paciente, sem indicar circunstância temporal, espacial, causal ou modal. Em *gostou do filme*, *respondi ao chefe*, *carecem de atenção*, as preposições *de* e *a* são meros elos regenciais introdutores de **objeto indireto**.
 * **Universalidade dos Adjuntos Adverbiais:** É um mito crer que adjuntos adverbiais só ocorrem com verbos intransitivos (VI). Como informações circunstanciais adicionais, eles podem acoplar-se a:
- * Verbos Intransitivos: *Viajaremos pela manhã* (VI + Adj. Adv. Tempo);
- * Verbos Transitivos Diretos: *Estudou português no curso* (VTD + OD + Adj. Adv. Lugar);
- * Verbos Transitivos Indiretos: *Gostou do filme ontem* (VTI + OI + Adj. Adv. Tempo);
- * Verbos de Ligação: *Estava calma em casa* (VL + Pred. do Sujeito + Adj. Adv. Lugar).
+  * Verbos Intransitivos: *Viajaremos pela manhã* (VI + Adj. Adv. Tempo);
+  * Verbos Transitivos Diretos: *Estudou português no curso* (VTD + OD + Adj. Adv. Lugar);
+  * Verbos Transitivos Indiretos: *Gostou do filme ontem* (VTI + OI + Adj. Adv. Tempo);
+  * Verbos de Ligação: *Estava calma em casa* (VL + Pred. do Sujeito + Adj. Adv. Lugar).
 * **Desconstrução da Falsa Bitransitividade:** Na frase *Ele estudou português no curso*, o verbo *estudar* é Transitivo Direto (VTD), *português* é Objeto Direto (OD) e *no curso* é Adjunto Adverbial de Lugar. É erro grave classificar essa estrutura como VTDI sob a premissa de que "quem estuda, estuda algo (OD) em algum lugar (OI)". A semântica rege a sintaxe: *no curso* é lugar, logo é adjunto adverbial.
 
 ---
 
-## Posição Sintática do Adjunto Adverbial: Ordem Direta vs. Deslocada
+### Posição Sintática do Adjunto Adverbial: Ordem Direta vs. Deslocada
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A posição canônica do adjunto adverbial na **ordem direta** da língua portuguesa é o **final da oração** (estrutura: Sujeito + Verbo + Complementos + Adjuntos Adverbiais). Quando o adjunto adverbial é posicionado no início ou no meio do período, passa a ser classificado como **adjunto adverbial deslocado**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A compreensão da mobilidade posicional do adjunto adverbial é tratada pela professora como um patrimônio conceitual indispensável para matérias futuras de alta complexidade em concursos públicos:
 
@@ -225,31 +223,31 @@ A compreensão da mobilidade posicional do adjunto adverbial é tratada pela pro
 
 ---
 
-## Conceito, Função e Natureza Sintática do Adjunto Adnominal
+### Conceito, Função e Natureza Sintática do Adjunto Adnominal
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **adjunto adnominal** é o termo acessório da oração cuja função sintática exclusiva é limitar, individuar, determinar, caracterizar ou especificar a significação de um **substantivo**, retirando-o da generalização abstrata.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 * **Etimologia e Âncora Sintática:** *Adnominal* provém de *junto ao nome*. No rigor da sintaxe descritiva adotada pela professora, "nome" equivale estritamente a **substantivo**. O adjunto adnominal sempre, incondicionalmente, liga-se a um substantivo.
 * **Metáfora dos Satélites:** O adjunto adnominal atua como um **satélite**, um **enfeite** ou um **acessório do nome**. Ele orbita o substantivo sem constituir o núcleo do sintagma nominal.
 * **Mecanismo Semântico de Delimitação:** Limitar significa individualizar. O substantivo *aluno* abarca a totalidade genérica dos estudantes. Ao associar adjuntos adnominais (*o aluno*, *dois alunos*, *aluno inteligente*, *aluno de inteligência*), o falante restringe a referência a indivíduos específicos, quantificados ou qualificados.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 * Se a palavra receptora for adjetivo, verbo ou advérbio, fica categoricamente proibida a classificação como adjunto adnominal.
 
 ---
 
-## Morfossintaxe do Adjunto Adnominal: As 5 Classes Satélites
+### Morfossintaxe do Adjunto Adnominal: As 5 Classes Satélites
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O adjunto adnominal é uma **função sintática** desempenhada exclusivamente por **cinco classes/estruturas morfológicas** quando subordinadas a um substantivo: **Artigo**, **Numeral**, **Adjetivo**, **Locução Adjetiva** e **Pronome Adjetivo**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A abordagem didática sistematiza a correspondência exaustiva entre Morfologia e Sintaxe para o adjunto adnominal no quadro "#ANOTA AÍ":
 
@@ -258,23 +256,23 @@ A abordagem didática sistematiza a correspondência exaustiva entre Morfologia 
 3. **Adjetivo (Morfologia):** Palavra única que qualifica ou caracteriza diretamente o substantivo (*Aluno inteligente*, *Velho ranzinza*, *Campo minado*).
 4. **Locução Adjetiva (Morfologia):** Expressão preposicionada composta por duas ou mais palavras (preposição + substantivo/adjetivo) que desempenha papel equivalente a um adjetivo (*Aluno de inteligência*, *Coração sem amor*, *Invasão dos mosquitos*).
 5. **Pronome Adjetivo (Morfologia):** Qualquer pronome que acompanhe um substantivo modificando-o:
- * *Possessivo:* *meu aluno*, *minhas sugestões*, *suas mãos*;
- * *Demonstrativo:* *aquele aluno*, *esta casa*;
- * *Indefinido:* *algum aluno*, *muitas pessoas*, *certos dias*.
+  * *Possessivo:* *meu aluno*, *minhas sugestões*, *suas mãos*;
+  * *Demonstrativo:* *aquele aluno*, *esta casa*;
+  * *Indefinido:* *algum aluno*, *muitas pessoas*, *certos dias*.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 * Atenção: Preposições isoladas, conjunções, advérbios e pronomes substantivos (que substituem o nome) não atuam como adjunto adnominal.
 
 ---
 
-## Distribuição Sintática Irrestrita do Adjunto Adnominal
+### Distribuição Sintática Irrestrita do Adjunto Adnominal
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O adjunto adnominal não possui fixação posicional nem restrição sintática a uma função específica: ele pode ocorrer no interior de **qualquer termo da oração** (Sujeito, Objeto Direto, Objeto Indireto, Predicativo, Complemento Nominal, Agente da Passiva ou Adjunto Adverbial), bastando que esse termo seja encabeçado por um substantivo núcleo que receba satélites.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 * O adjunto adnominal é um termo interno de sintagmas nominais maiores. Quando se isola um sujeito como *As minhas sugestões*, o sujeito engloba todo o sintagma, mas na microanálise interna, *sugestões* é o substantivo núcleo, enquanto *As* (artigo) e *minhas* (pronome) são adjuntos adnominais internos a esse sujeito.
 * No predicativo do sujeito *um campo minado*, o núcleo é *campo*, e os vocábulos *um* (artigo) e *minado* (adjetivo) são adjuntos adnominais internos ao predicativo.
@@ -283,29 +281,27 @@ O adjunto adnominal não possui fixação posicional nem restrição sintática 
 
 ---
 
-## Distinção Crítica entre Adjunto Adnominal e Predicativo (Acessoriedade vs. Essencialidade)
+### Distinção Crítica entre Adjunto Adnominal e Predicativo (Acessoriedade vs. Essencialidade)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A linha divisória entre o **Adjunto Adnominal** e o **Predicativo** (do Sujeito ou do Objeto) fundamenta-se no caráter **acessório e dispensável** do primeiro versus a **essencialidade semântico-predicativa** do segundo para sustentar a regência e o sentido original do verbo.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 * **Adjunto Adnominal como Acessório:** Por ser mero satélite restritivo do substantivo, sua supressão não quebra a predicação verbal nem transforma o sentido do verbo.
 * **Predicativo como Termo de Significação Necessária:** O predicativo atribui uma qualidade ou estado circunstancial e participa ativamente da predicação (formando predicado nominal ou verbo-nominal).
 * **Caso Paradigmático (*Chamou o amigo de ingrato*):**
- * Na oração *Chamou o amigo de ingrato*, a expressão preposicionada *de ingrato* qualifica o substantivo *amigo*. Contudo, ela **não é adjunto adnominal**, mas sim **Predicativo do Objeto (P.O.)**.
- * **Teste da Supressão Semântica do Verbo:** Ao retirar *de ingrato*, a oração converte-se em *Chamou o amigo*. Essa eliminação altera drasticamente a semântica e a transitividade do verbo *chamar*:
+  * Na oração *Chamou o amigo de ingrato*, a expressão preposicionada *de ingrato* qualifica o substantivo *amigo*. Contudo, ela **não é adjunto adnominal**, mas sim **Predicativo do Objeto (P.O.)**.
+  * **Teste da Supressão Semântica do Verbo:** Ao retirar *de ingrato*, a oração converte-se em *Chamou o amigo*. Essa eliminação altera drasticamente a semântica e a transitividade do verbo *chamar*:
  1. *Sentido 1 (Com Predicativo):* Significa qualificar, tachar, apelidar (*Chamou o amigo de ingrato* = qualificou o amigo como ingrato; exige predicativo do objeto regido ou não por preposição facultativa);
  2. *Sentido 2 (Sem Predicativo):* Significa convocar, dirigir a palavra (*Chamou o amigo* = disse "amigo, venha cá"; verbo transitivo direto puro).
- * Conclusão: como *de ingrato* não pode ser retirado sem mutilar o sentido pretendido e a própria estrutura predicativa do verbo, ele é termo integrante/necessário da predicação (Predicativo do Objeto), e não termo acessório (Adjunto Adnominal).
+  * Conclusão: como *de ingrato* não pode ser retirado sem mutilar o sentido pretendido e a própria estrutura predicativa do verbo, ele é termo integrante/necessário da predicação (Predicativo do Objeto), e não termo acessório (Adjunto Adnominal).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 * Se a retirada do termo alterar o significado lexical do verbo e o tipo de predicado $\rightarrow$ **Predicativo**.
 * Se a retirada mantiver a mesma predicação verbal, apenas retirando uma delimitação do nome $\rightarrow$ **Adjunto Adnominal**.
-
----
 
 ---
 
@@ -322,17 +318,15 @@ A linha divisória entre o **Adjunto Adnominal** e o **Predicativo** (do Sujeito
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## O Método dos Dois Passos da Análise Sintática (Método da Seta)
+### O Método dos Dois Passos da Análise Sintática (Método da Seta)
 
-### Objetivo
+#### Objetivo
 
 Identificar e classificar com exatidão a função de termos modificadores dependentes, garantindo a correspondência entre a relação sintática e a morfologia receptora.
 
-### Sequência operacional
+#### Sequência operacional
 
 ```text
 Início da Análise do Termo
@@ -358,13 +352,13 @@ Fim do Procedimento
 
 ---
 
-## Algoritmo de 4 Etapas para Diferenciar Adjunto Adverbial de Objeto Indireto
+### Algoritmo de 4 Etapas para Diferenciar Adjunto Adverbial de Objeto Indireto
 
-### Objetivo
+#### Objetivo
 
 Classificar termos preposicionados associados a verbos, evitando a armadilha de rotular qualquer estrutura preposicionada como objeto indireto.
 
-### Sequência operacional
+#### Sequência operacional
 
 ```text
 Termo Preposicionado Ligado a Verbo
@@ -391,13 +385,13 @@ Termo Preposicionado Ligado a Verbo
 
 ---
 
-## Método do Farejador de Adjuntos Adnominais (Substantivo Núcleo e Satélites)
+### Método do Farejador de Adjuntos Adnominais (Substantivo Núcleo e Satélites)
 
-### Objetivo
+#### Objetivo
 
 Localizar todos os adjuntos adnominais em qualquer segmento do período com 100% de segurança.
 
-### Sequência operacional
+#### Sequência operacional
 
 ```text
 Varredura do Período
@@ -426,8 +420,6 @@ Classificação Concluída: ADJUNTO ADNOMINAL
 
 ---
 
----
-
 ## Contrastes que a prova explora
 
 ### Tabela 1: Adjunto Adverbial vs. Objeto Indireto
@@ -440,7 +432,7 @@ Classificação Concluída: ADJUNTO ADNOMINAL
 | **Predicações Compatíveis** | Coexiste com qualquer verbo (**VI, VTD, VTI, VTDI, VL**). | Ocorre exclusivamente com verbos**VTI** e **VTDI**. |
 | **Exemplos Paradigmáticos** | *Morrem de exaustão* (causa) / *Estudou no curso* (lugar). | *Gostou do filme* (OI) / *Respondi ao chefe* (OI). |
 
-### Tabela 2: Adjunto Adnominal vs. Adjunto Adverbial
+#### Tabela 2: Adjunto Adnominal vs. Adjunto Adverbial
 
 | Critério de Comparação | Adjunto Adnominal | Adjunto Adverbial |
 |:----------------------------------- |:--------------------------------------------------------------- |:---------------------------------------------------------------- |
@@ -450,7 +442,7 @@ Classificação Concluída: ADJUNTO ADNOMINAL
 | **Metáfora Didática** | **"Satélite / Enfeite do Nome"**. | **"Fofoca da Oração"**. |
 | **Exemplos Paradigmáticos** | *As minhas sugestões* / *Coração sem amor*. | *Falavam muito* / *Sairemos muito tarde*. |
 
-### Tabela 3: Adjunto Adnominal vs. Predicativo do Objeto
+#### Tabela 3: Adjunto Adnominal vs. Predicativo do Objeto
 
 | Critério de Comparação | Adjunto Adnominal | Predicativo do Objeto |
 |:--------------------------------- |:--------------------------------------------------------- |:------------------------------------------------------------------------------------------------- |
@@ -461,11 +453,9 @@ Classificação Concluída: ADJUNTO ADNOMINAL
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Demonstração: Modificador de Verbo (*Falavam muito*)
+### Demonstração: Modificador de Verbo (*Falavam muito*)
 
 * **Estrutura analisada:** `Falavam muito.`
 * **Aplicação do Método da Seta:** *muito* $\rightarrow$ aponta para *falavam* (Verbo).
@@ -473,7 +463,7 @@ Classificação Concluída: ADJUNTO ADNOMINAL
 
 ---
 
-## Demonstração: Modificador de Adjetivo (*Homem muito bom*)
+### Demonstração: Modificador de Adjetivo (*Homem muito bom*)
 
 * **Estrutura analisada:** `Homem muito bom.`
 * **Aplicação do Método da Seta:** Pergunta-se: "É homem muito ou muito bom?". A seta de *muito* aponta para *bom* (Adjetivo).
@@ -481,16 +471,16 @@ Classificação Concluída: ADJUNTO ADNOMINAL
 
 ---
 
-## Demonstração: Modificador de Advérbio (*Saíram muito cedo*)
+### Demonstração: Modificador de Advérbio (*Saíram muito cedo*)
 
 * **Estrutura analisada:** `Saíram muito cedo.`
 * **Análise dos Modificadores:**
- * *cedo* $\rightarrow$ aponta para *saíram* (Verbo) $\rightarrow$ Adjunto Adverbial de tempo (Advérbio).
- * *muito* $\rightarrow$ aponta para *cedo* (Advérbio) $\rightarrow$ Adjunto Adverbial de intensidade (Advérbio).
+  * *cedo* $\rightarrow$ aponta para *saíram* (Verbo) $\rightarrow$ Adjunto Adverbial de tempo (Advérbio).
+  * *muito* $\rightarrow$ aponta para *cedo* (Advérbio) $\rightarrow$ Adjunto Adverbial de intensidade (Advérbio).
 
 ---
 
-## Demonstração: Multiplicidade de Locuções Adverbiais (*Foi para o parque com a amiga pela manhã*)
+### Demonstração: Multiplicidade de Locuções Adverbiais (*Foi para o parque com a amiga pela manhã*)
 
 * **Estrutura analisada:** `Foi para o parque com a amiga pela manhã.`
 * **Análise das 3 Locuções:**
@@ -500,7 +490,7 @@ Classificação Concluída: ADJUNTO ADNOMINAL
 
 ---
 
-## Exercício de Fixação:  (Itens a, b, c, d)
+### Exercício de Fixação:  (Itens a, b, c, d)
 
 * **a) *Aquela aluna estuda muito.*** $\rightarrow$ *muito* aponta para *estuda* (V.) $\rightarrow$ Adjunto Adverbial de intensidade (Advérbio).
 * **b) *Decidimos comprar a casa amanhã.*** $\rightarrow$ *amanhã* aponta para *comprar* (V.) $\rightarrow$ Adjunto Adverbial de tempo (Advérbio).
@@ -509,7 +499,7 @@ Classificação Concluída: ADJUNTO ADNOMINAL
 
 ---
 
-## Demonstração: Causa vs. Verbo Intransitivo (*Algumas palavras morrem de exaustão*)
+### Demonstração: Causa vs. Verbo Intransitivo (*Algumas palavras morrem de exaustão*)
 
 * **Estrutura:** `Algumas palavras morrem [de exaustão].`
 * **Análise:** *de exaustão* indica o motivo/causa (*"por causa da exaustão"*). A preposição *de* é nocional causal.
@@ -517,7 +507,7 @@ Classificação Concluída: ADJUNTO ADNOMINAL
 
 ---
 
-## Demonstração: Modo com Preposição Nocional (*Vamos resolver o problema com calma*)
+### Demonstração: Modo com Preposição Nocional (*Vamos resolver o problema com calma*)
 
 * **Estrutura:** `Vamos resolver [o problema] [com calma].`
 * **Análise:** *com calma* expressa o modo/jeito (*calmamente*).
@@ -525,14 +515,14 @@ Classificação Concluída: ADJUNTO ADNOMINAL
 
 ---
 
-## Demonstração: Objeto Indireto com Preposição Gramatical (*Respondi ao chefe* / *Suspeitamos da sua atitude*)
+### Demonstração: Objeto Indireto com Preposição Gramatical (*Respondi ao chefe* / *Suspeitamos da sua atitude*)
 
 * **Estrutura 1:** `Respondi [ao chefe].` $\rightarrow$ Não há circunstância. *ao chefe* completa o verbo VTI *responder* $\rightarrow$ **Objeto Indireto**.
 * **Estrutura 2:** `Suspeitamos [da sua atitude].` $\rightarrow$ Sem circunstância. *da sua atitude* completa o verbo VTI *suspeitar* $\rightarrow$ **Objeto Indireto**.
 
 ---
 
-## Exercício de Fixação:  (Itens a até e)
+### Exercício de Fixação:  (Itens a até e)
 
 * **a) *Viajaremos pela manhã.*** $\rightarrow$ *pela manhã* (tempo) $\rightarrow$ **Adjunto Adverbial de tempo**.
 * **b) *Ela gostou do filme.*** $\rightarrow$ *do filme* (completa VTI *gostar*) $\rightarrow$ **Objeto Indireto**.
@@ -542,17 +532,17 @@ Classificação Concluída: ADJUNTO ADNOMINAL
 
 ---
 
-## Estudo de Caso #ANOTAAÍ: *Foi ao curso* vs. *Estudou português no curso*
+### Estudo de Caso #ANOTAAÍ: *Foi ao curso* vs. *Estudou português no curso*
 
 * **Oração 1:** *Ele foi [ao curso].* $\rightarrow$ *ao curso* = **Adjunto Adverbial de lugar** (*foi* = VI).
 * **Oração 2:** *Ele estudou [português] [no curso].*
- * *no curso* = **Adjunto Adverbial de lugar**;
- * *português* = **Objeto Direto** (OD);
- * Transitividade de *estudou* = **Verbo Transitivo Direto (VTD)** (e NUNCA VTDI).
+  * *no curso* = **Adjunto Adverbial de lugar**;
+  * *português* = **Objeto Direto** (OD);
+  * Transitividade de *estudou* = **Verbo Transitivo Direto (VTD)** (e NUNCA VTDI).
 
 ---
 
-## Demonstração Teórica: Modificadores Nominais Básicos
+### Demonstração Teórica: Modificadores Nominais Básicos
 
 * *Dois alunos*: *Dois* (Numeral) $\rightarrow$ Adjunto Adnominal.
 * *O aluno* / *Um aluno*: *O* / *Um* (Artigo) $\rightarrow$ Adjunto Adnominal.
@@ -563,104 +553,100 @@ Classificação Concluída: ADJUNTO ADNOMINAL
 
 ---
 
-## Análise: Artigos e Pronomes no Sujeito (*As minhas sugestões eram simples*)
+### Análise: Artigos e Pronomes no Sujeito (*As minhas sugestões eram simples*)
 
 * **Sujeito:** `As minhas sugestões` $\rightarrow$ Núcleo: *sugestões* (Substantivo).
- * Satélite 1: *As* (Artigo definido) $\rightarrow$ **Adjunto Adnominal**.
- * Satélite 2: *minhas* (Pronome possessivo) $\rightarrow$ **Adjunto Adnominal**.
+  * Satélite 1: *As* (Artigo definido) $\rightarrow$ **Adjunto Adnominal**.
+  * Satélite 2: *minhas* (Pronome possessivo) $\rightarrow$ **Adjunto Adnominal**.
 * **Predicado Nominal:** *eram simples* $\rightarrow$ *simples* (Adjetivo) = **Predicativo do Sujeito**. Não admite adjunto adnominal subordinado a si.
 
 ---
 
-## Análise: Locução Adjetiva e Adjuntos no Predicativo (*Coração sem amor é um campo minado*)
+### Análise: Locução Adjetiva e Adjuntos no Predicativo (*Coração sem amor é um campo minado*)
 
 * **Sujeito:** `Coração sem amor` $\rightarrow$ Núcleo: *Coração* (Substantivo).
- * Satélite: *sem amor* (Locução adjetiva) $\rightarrow$ **Adjunto Adnominal**.
+  * Satélite: *sem amor* (Locução adjetiva) $\rightarrow$ **Adjunto Adnominal**.
 * **Predicativo do Sujeito:** `um campo minado` $\rightarrow$ Núcleo: *campo* (Substantivo).
- * Satélite 1: *um* (Artigo indefinido) $\rightarrow$ **Adjunto Adnominal**.
- * Satélite 2: *minado* (Adjetivo) $\rightarrow$ **Adjunto Adnominal**.
+  * Satélite 1: *um* (Artigo indefinido) $\rightarrow$ **Adjunto Adnominal**.
+  * Satélite 2: *minado* (Adjetivo) $\rightarrow$ **Adjunto Adnominal**.
 
 ---
 
-## Análise: Substantivação vs. Predicativo (*O velho ranzinza arquejava cansado*)
+### Análise: Substantivação vs. Predicativo (*O velho ranzinza arquejava cansado*)
 
 * **Sujeito:** `O velho ranzinza` $\rightarrow$ Núcleo: *velho* (Substantivo).
- * Satélite 1: *O* (Artigo) $\rightarrow$ **Adjunto Adnominal**.
- * Satélite 2: *ranzinza* (Adjetivo) $\rightarrow$ **Adjunto Adnominal**.
+  * Satélite 1: *O* (Artigo) $\rightarrow$ **Adjunto Adnominal**.
+  * Satélite 2: *ranzinza* (Adjetivo) $\rightarrow$ **Adjunto Adnominal**.
 * **Predicado:** *arquejava cansado* $\rightarrow$ *cansado* = **Predicativo do Sujeito** (estado momentâneo; não é adjunto adnominal).
 
 ---
 
-## Análise Paradigmática: Adjunto Adnominal vs. Predicativo do Objeto (*Chamou o amigo de ingrato*)
+### Análise Paradigmática: Adjunto Adnominal vs. Predicativo do Objeto (*Chamou o amigo de ingrato*)
 
 * **Objeto Direto:** `o amigo` $\rightarrow$ Núcleo: *amigo* (Substantivo); Satélite: *o* (Artigo) $\rightarrow$ **Adjunto Adnominal**.
 * **Termo Qualificador:** `de ingrato` $\rightarrow$ **Predicativo do Objeto (P.O.)**. Sua retirada transforma o sentido de *chamar* de "qualificar" para "convocar", demonstrando ser elemento integrante da predicação, e não acessório.
 
 ---
 
-## Análise: Preposição Pura em Adjunto Adverbial (*As suas mãos tremiam de medo*)
+### Análise: Preposição Pura em Adjunto Adverbial (*As suas mãos tremiam de medo*)
 
 * **Sujeito:** `As suas mãos` $\rightarrow$ Núcleo: *mãos* (Substantivo); Satélites: *As* (Artigo) e *suas* (Pronome) $\rightarrow$ **Adjuntos Adnominais**.
 * **Predicado:** *tremiam de medo* $\rightarrow$ *de medo* = Adjunto Adverbial de causa. A palavra *de* é preposição pura e não exerce função de adjunto adnominal de *medo*.
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Teste do "Cheiro de Circunstância / Fofoca" para Termos Acessórios
+### O Teste do "Cheiro de Circunstância / Fofoca" para Termos Acessórios
 
 * Diante de qualquer termo preposicionado ligado a verbo, pause a leitura e aplique a pergunta-guia: *"Tem cheiro de circunstância / fofoca?"*.
 * Se veicular tempo, lugar, modo, causa, finalidade, companhia ou dúvida, marque imediatamente **Adjunto Adverbial**, ignorando a presença da preposição e rejeitando a classificação precipitada de objeto indireto.
 
 ---
 
-## Treino Duplo Morfossintático Sistemático (Classe vs. Função)
+### Treino Duplo Morfossintático Sistemático (Classe vs. Função)
 
 * No estudo para concursos, declare sempre a análise em camada dupla: primeiro a **Função Sintática** (ex.: Adjunto Adnominal / Adjunto Adverbial) e em seguida a **Classe Gramatical** (ex.: Artigo, Numeral, Pronome, Adjetivo, Locução). Esse hábito anula as pegadinhas de bancas que trocam termos morfológicos por sintáticos nas alternativas.
 
 ---
 
-## A Metáfora dos "Satélites do Planeta Substantivo"
+### A Metáfora dos "Satélites do Planeta Substantivo"
 
 * Visualize o substantivo como o "Planeta Central" e os adjuntos adnominais como seus "Satélites Naturais". Em qualquer função sintática (sujeito, objeto, predicativo), localize o substantivo núcleo e faça a varredura orbital dos termos satélites acoplados a ele.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## A Falácia do Macete da Invariabilidade do Adjunto Adverbial
+### A Falácia do Macete da Invariabilidade do Adjunto Adverbial
 
 * **Erro comum:** Achar que "o adjunto adverbial é sempre invariável" e descartar termos circunstanciais que contenham palavras flexionadas.
 * **Correção:** O **advérbio** (palavra única) é invariável. O **adjunto adverbial** (função sintática), quando exercido por **locução adverbial**, pode conter termos plenamente variáveis em sua estrutura interna (*às pressas*, *pelas manhãs*, *com os amigos*). Invariabilidade não é teste para função sintática.
 
 ---
 
-## O Erro do Teste Mecânico da Omissão ("Tampar com a Mãozinha")
+### O Erro do Teste Mecânico da Omissão ("Tampar com a Mãozinha")
 
 * **Erro comum:** Cobrir a expressão preposicionada com a mão para verificar se a frase "continua com sentido".
 * **Correção:** Em frases como *Morrem de exaustão* ou *Foi ao curso*, suprimir o termo gera empobrecimento comunicativo, mas não quebra a sintaxe da predicação verbal. O critério seguro é semântico: se o termo veicula causa ou lugar, trata-se de adjunto adverbial com verbo intransitivo, e não de objeto indireto.
 
 ---
 
-## O Mito de que "Tudo Preposicionado Ligado ao Verbo é Objeto Indireto"
+### O Mito de que "Tudo Preposicionado Ligado ao Verbo é Objeto Indireto"
 
 * **Erro comum:** Classificar como objeto indireto qualquer expressão introduzida por preposição conectada a um verbo.
 * **Correção:** A preposição introduz objeto indireto somente quando for meramente gramatical/relacional imposta por regência de VTI. Se for nocional (com valor modal, causal, espacial, temporal), introduz adjunto adverbial.
 
 ---
 
-## A Falsa Bitransitividade em Estruturas com Adjunto de Lugar (*Estudar algo em algum lugar ≠ VTDI*)
+### A Falsa Bitransitividade em Estruturas com Adjunto de Lugar (*Estudar algo em algum lugar ≠ VTDI*)
 
 * **Erro comum:** Decorar a fórmula errônea *"quem estuda, estuda algo (OD) em algum lugar (OI)"*, rotulando o verbo como VTDI.
 * **Correção:** *Em algum lugar* (*no curso*) é Adjunto Adverbial de Lugar. O verbo *estudar* é Transitivo Direto (VTD) e possui apenas um complemento verbal (*português* = OD).
 
 ---
 
-## Falsa Conexão Sintática por Mera Adjacência Física
+### Falsa Conexão Sintática por Mera Adjacência Física
 
 * **Erro comum:** Ligar o termo circunstancial à palavra imediatamente vizinha por mera proximidade física.
 * **Exemplo do erro:** Em *Foi para o parque com a amiga*, ligar *com a amiga* a *parque*.
@@ -668,81 +654,77 @@ Classificação Concluída: ADJUNTO ADNOMINAL
 
 ---
 
-## Erro de Vincular Adjunto Adnominal a Adjetivos, Verbos ou Advérbios
+### Erro de Vincular Adjunto Adnominal a Adjetivos, Verbos ou Advérbios
 
 * **Erro comum:** Tentar buscar adjuntos adnominais subordinados a adjetivos que funcionam como predicativo (ex.: *simples* em *As sugestões eram simples*).
 * **Correção:** O adjunto adnominal liga-se **única e exclusivamente a substantivos**. Adjetivos não admitem adjuntos adnominais dependentes.
 
 ---
 
-## A Pegadinha do Predicativo do Objeto com Preposição Facultativa
+### A Pegadinha do Predicativo do Objeto com Preposição Facultativa
 
 * **Erro comum:** Tratar a expressão preposicionada *de ingrato* em *Chamou o amigo de ingrato* como locução adjetiva e classificá-la como adjunto adnominal.
 * **Correção:** Como a remoção de *de ingrato* mutila o sentido lexical de *chamar* (transformando "qualificar" em "convocar"), o termo é **Predicativo do Objeto**, de presença necessária para a predicação.
 
 ---
 
----
-
 ## Glossário operacional
 
-## Adjunto Adverbial
+### Adjunto Adverbial
 
 * **Definição:** Função sintática acessória que expressa circunstância modificando verbo, adjetivo ou outro advérbio.
 
-## Adjunto Adnominal
+### Adjunto Adnominal
 
 * **Definição:** Função sintática acessória que acompanha exclusivamente um substantivo núcleo para delimitá-lo, determiná-lo, quantificá-lo ou qualificá-lo ("satélite do nome").
 
-## Termo Acessório
+### Termo Acessório
 
 * **Definição:** Termo sintático secundário (como adjuntos adverbiais, adjuntos adnominais e apostos) que agrega informações contextuais dispensáveis para a integridade primária da regência verbal.
 
-## Termo Integrante
+### Termo Integrante
 
 * **Definição:** Termo oracional (como objetos direto e indireto, complemento nominal e agente da passiva) indispensável para completar a predicação e a regência de verbos ou nomes.
 
-## Advérbio
+### Advérbio
 
 * **Definição:** Classe gramatical invariável constituída por uma única palavra que denota circunstância.
 
-## Locução Adverbial
+### Locução Adverbial
 
 * **Definição:** Expressão formada por duas ou mais palavras (tipicamente preposição + substantivo/adjetivo) com valor circunstancial equivalente ao de um advérbio.
 
-## Locução Adjetiva
+### Locução Adjetiva
 
 * **Definição:** Expressão formada por preposição + substantivo/adjetivo que qualifica um substantivo, exercendo função sintática de adjunto adnominal.
 
-## Preposição Nocional
+### Preposição Nocional
 
 * **Definição:** Preposição dotada de valor semântico autônomo pleno (veicula ideia de modo, causa, tempo, lugar, instrumento).
 
-## Preposição Gramatical
+### Preposição Gramatical
 
 * **Definição:** Preposição puramente relacional exigida pela regência sintática de um verbo transitivo indireto para conectá-lo ao seu complemento (objeto indireto).
 
-## Substantivo Núcleo
+### Substantivo Núcleo
 
 * **Definição:** O substantivo principal que encabeça qualquer sintagma ou função oracional, servindo de ponto de ancoragem para os adjuntos adnominais satélites.
 
-## Satélite Nominal
+### Satélite Nominal
 
 * **Definição:** Metáfora pedagógica que designa os modificadores subordinados diretos que orbitam o substantivo núcleo (artigos, numerais, pronomes, adjetivos, locuções adjetivas).
 
-## Predicativo do Objeto (P.O.)
+### Predicativo do Objeto (P.O.)
 
 * **Definição:** Termo que atribui um estado/qualidade transitória ao objeto por intermédio do verbo, integrando a predicação de modo indispensável ao sentido verbal.
 
-## Mnemônico 6C + FTP
+### Mnemônico 6C + FTP
 
 * **Definição:** Dispositivo mnemônico que sintetiza 9 circunstâncias clássicas: Causa, Condição, Concessão, Comparação, Consequência, Conformidade (6C) + Finalidade, Tempo, Proporção (FTP).
 
-## Morfossintaxe
+### Morfossintaxe
 
 * **Definição:** Análise gramatical integrada que estuda concomitantemente a classe morfológica da palavra isolada e o seu papel relacional na estrutura da oração.
-
----
 
 ---
 
@@ -752,21 +734,21 @@ Ao concluir o estudo desta unidade**, o estudante de concursos públicos deve do
 
 1. **Adjunto Adverbial:**
 
- * Reconhecer que sua âncora sintática vincula-se a **verbo** (predominante), **adjetivo** ou **outro advérbio**, jamais a substantivo.
- * Dominar o **Método da Seta** em dois passos (conversar com a frase $\rightarrow$ checar classe receptora).
- * Identificar o **cheiro de circunstância ("fofoca")**, dominando o mnemônico `6C + FTP` somado a modo, lugar, intensidade, dúvida e companhia.
- * Compreender a morfossintaxe adverbial: 1 palavra = advérbio (invariável); 2+ palavras preposicionadas = locução adverbial (que pode conter termos variáveis).
- * Saber que adjuntos adverbiais são compatíveis com qualquer transitividade verbal (VI, VTD, VTI, VTDI, VL).
+  * Reconhecer que sua âncora sintática vincula-se a **verbo** (predominante), **adjetivo** ou **outro advérbio**, jamais a substantivo.
+  * Dominar o **Método da Seta** em dois passos (conversar com a frase $\rightarrow$ checar classe receptora).
+  * Identificar o **cheiro de circunstância ("fofoca")**, dominando o mnemônico `6C + FTP` somado a modo, lugar, intensidade, dúvida e companhia.
+  * Compreender a morfossintaxe adverbial: 1 palavra = advérbio (invariável); 2+ palavras preposicionadas = locução adverbial (que pode conter termos variáveis).
+  * Saber que adjuntos adverbiais são compatíveis com qualquer transitividade verbal (VI, VTD, VTI, VTDI, VL).
 2. **Diferenciação entre Adjunto Adverbial e Objeto Indireto:**
 
- * Reconhecer a preposição nocional (carregada de circunstância) contra a preposição gramatical (pura exigência de regência de VTI).
+  * Reconhecer a preposição nocional (carregada de circunstância) contra a preposição gramatical (pura exigência de regência de VTI).
 
- * Rejeitar a bitransitividade ilusória (*Estudou português no curso* é VTD + OD + Adj. Adv. Lugar).
+  * Rejeitar a bitransitividade ilusória (*Estudou português no curso* é VTD + OD + Adj. Adv. Lugar).
 3. **Adjunto Adnominal:**
 
- * Reconhecer sua âncora exclusiva no **substantivo** ("satélite/enfeite do nome") para limitar e restringir a generalização.
- * Dominar as **5 classes morfológicas satélites**: Artigo, Numeral, Adjetivo, Locução Adjetiva e Pronome Adjetivo.
- * Aplicar o **Método do Farejador**: localizar o substantivo núcleo em qualquer função sintática (sujeito, objetos, predicativos) e rastrear seus satélites.
- * Diferenciar categoricamente o adjunto adnominal acessório do **predicativo** indispensável (cuja remoção altera a acepção lexical do verbo, como em *Chamou o amigo de ingrato*).
+  * Reconhecer sua âncora exclusiva no **substantivo** ("satélite/enfeite do nome") para limitar e restringir a generalização.
+  * Dominar as **5 classes morfológicas satélites**: Artigo, Numeral, Adjetivo, Locução Adjetiva e Pronome Adjetivo.
+  * Aplicar o **Método do Farejador**: localizar o substantivo núcleo em qualquer função sintática (sujeito, objetos, predicativos) e rastrear seus satélites.
+  * Diferenciar categoricamente o adjunto adnominal acessório do **predicativo** indispensável (cuja remoção altera a acepção lexical do verbo, como em *Chamou o amigo de ingrato*).
 
 ---

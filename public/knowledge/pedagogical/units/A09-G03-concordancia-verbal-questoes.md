@@ -47,7 +47,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - **Vozes Verbais:** Compreensão estrutural da Voz Ativa, Voz Passiva Analítica (`Ser + Particípio`) e Voz Passiva Sintética (`Verbo + SE`).
 - **Sintaxe do Período Composto:** Identificação de Orações Subordinadas Substantivas (Subjetivas e Objetivas Diretas) desenvolvidas (com conjunção integrante *que/se*) e reduzidas de infinitivo.
 
-### Matriz do Mapa de Conhecimento
+#### Matriz do Mapa de Conhecimento
 
 ```text
 CONCORDÂNCIA VERBAL: A RELAÇÃO DO VERBO COM OS 5 TIPOS DE SUJEITO
@@ -89,17 +89,15 @@ CONCORDÂNCIA VERBAL: A RELAÇÃO DO VERBO COM OS 5 TIPOS DE SUJEITO
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## O Princípio Metodológico Fundamental: "Viva Cada Verbo a Seu Momento"
+### O Princípio Metodológico Fundamental: "Viva Cada Verbo a Seu Momento"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Diretriz analítica segundo a qual, em qualquer período (simples ou composto por subordinação/coordenação), a concordância verbal deve ser avaliada isolando-se estritamente cada forma verbal ou locução verbal para localizar o seu sujeito correspondente, eliminando contaminações cognitivas causadas por termos plurais pertencentes a orações vizinhas.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A causa primária de erros em questões de concordância verbal é a "perda de coordenação motora analítica": o estudante lê o período como um bloco indiscriminado e flexiona o verbo principal atraído por substantivos plurais que atuam como objetos, adjuntos ou sujeitos de orações subordinadas. O método exige:
 
@@ -114,28 +112,28 @@ A causa primária de erros em questões de concordância verbal é a "perda de c
 
 ---
 
-## Sujeito Simples e a Regra de Exclusão de Preposição no Núcleo
+### Sujeito Simples e a Regra de Exclusão de Preposição no Núcleo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O sujeito simples é caracterizado pela presença de um único núcleo sintático (substantivo, pronome substantivo ou numeral substantivo). O verbo concorda obrigatoriamente em número e pessoa com esse núcleo. **Regra de Exclusão Absoluta:** Na língua portuguesa padrão, o sujeito **nunca é regido por preposição obrigatória**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Qualquer termo introduzido por preposição (*de*, *em*, *a*, *com*, *por*, etc.) está gramaticalmente impedido de funcionar como núcleo de sujeito, exercendo funções de adjunto adnominal, complemento nominal ou objeto indireto. Em frases como *Basta a verdade* (singular) e *Bastam verdades* (plural), o verbo submete-se exclusivamente ao substantivo sem preposição.
 
 ---
 
-## Sujeito Composto: Anteposição vs. Posposição
+### Sujeito Composto: Anteposição vs. Posposição
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O sujeito composto possui dois ou mais núcleos. Seu regime de concordância é determinado estritamente pela sua posição sintática em relação ao verbo:
 
 1. **Sujeito Composto Anteposto:** Exige **concordância total** (verbo obrigatoriamente no plural). A concordância atrativa é terminantemente proibida.
 2. **Sujeito Composto Posposto:** Faculta duas construções legítimas: a **concordância total** (verbo no plural somando todos os núcleos) ou a **concordância atrativa** (verbo concordando em número e pessoa apenas com o primeiro núcleo, mais próximo).
 
-### Exemplos canônicos
+#### Exemplos canônicos
 
 - *Pai e mãe chegaram.* (Anteposto $\rightarrow$ exclusivamente plural).
 - *Chegaram pai e mãe.* (Posposto $\rightarrow$ concordância total no plural).
@@ -144,13 +142,13 @@ O sujeito composto possui dois ou mais núcleos. Seu regime de concordância é 
 
 ---
 
-## A Armadilha do Conectivo "E" e o Falso Sujeito Composto
+### A Armadilha do Conectivo "E" e o Falso Sujeito Composto
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A presença da conjunção aditiva *e* em um sintagma nominal extenso não cria automaticamente um sujeito composto. Quando o conectivo *e* atua dentro de adjuntos adnominais preposicionados, complementos nominais ou orações adjetivas/reduzidas que apenas expandem um núcleo principal, o sujeito permanece **simples**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Bancas de alto nível (notadamente CESPE/CEBRASPE) intercalam estruturas coordenadas extensas após o núcleo do sujeito simples para induzir o candidato ao erro:
 
@@ -159,32 +157,32 @@ Bancas de alto nível (notadamente CESPE/CEBRASPE) intercalam estruturas coorden
 
 ---
 
-## Sujeito Composto Resumido por Aposto Recapitulativo
+### Sujeito Composto Resumido por Aposto Recapitulativo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Quando uma sequência de núcleos que formam um sujeito composto anteposto é encerrada e sintetizada por um **aposto resumitivo/recapitulativo** (pronomes indefinidos como *tudo*, *nada*, *ninguém* ou a locução *tudo isso*), o verbo perde a flexão de plural e deve concordar **obrigatoriamente na 3ª pessoa do singular** com o aposto.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A força sintática de atração do pronome resumidor anula a soma dos núcleos anteriores. Na estrutura *"A invenção..., o início..., a organização..., as descobertas..., o advento..., **tudo isso representa** saltos..."*, a flexão plural *representam* constitui erro gramatical estrito.
 
 ---
 
-## Concordância com o Pronome Relativo "Que" e Acentuação Diferencial
+### Concordância com o Pronome Relativo "Que" e Acentuação Diferencial
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 1. **Pronome Relativo "Que":** Quando o pronome relativo *que* funciona como sujeito da oração subordinada adjetiva, o verbo concorda obrigatoriamente em número e pessoa com o **termo antecedente** retomado pelo pronome.
 2. **Acentuação Diferencial de Número:** A flexão de 3ª pessoa do plural dos verbos *ter*, *vir* e seus derivados exige marcação gráfica distintiva:
- - Formas primitivas: Singular *ele tem / vem* (sem acento) vs. Plural *eles têm / vêm* (com acento circunflexo).
- - Formas derivadas (*manter*, *reter*, *conter*, *intervir*): Singular *ele mantém / intervém* (acento agudo) vs. Plural *eles mantêm / intervêm* (acento circunflexo).
+  - Formas primitivas: Singular *ele tem / vem* (sem acento) vs. Plural *eles têm / vêm* (com acento circunflexo).
+  - Formas derivadas (*manter*, *reter*, *conter*, *intervir*): Singular *ele mantém / intervém* (acento agudo) vs. Plural *eles mantêm / intervêm* (acento circunflexo).
 
 ---
 
-## Funções da Partícula SE na Concordância: PA vs. PIS
+### Funções da Partícula SE na Concordância: PA vs. PIS
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A verificação da transitividade do verbo acoplado à partícula *SE* é o critério decisório para a concordância:
 
@@ -195,29 +193,29 @@ A verificação da transitividade do verbo acoplado à partícula *SE* é o crit
 
 ---
 
-## Sujeito Oracional e o Método de Substituição pelo Pronome "ISSO"
+### Sujeito Oracional e o Método de Substituição pelo Pronome "ISSO"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Toda vez que a função sintática de sujeito de uma oração principal for desempenhada por uma oração inteira (Oração Subordinada Substantiva Subjetiva, seja desenvolvida com conjunção integrante *que/se*, seja reduzida de infinitivo), o **verbo da oração principal fica obrigatoriamente flexionado na 3ª pessoa do singular**.
 
-### O Mantra e o Teste Diagnóstico
+#### O Mantra e o Teste Diagnóstico
 
 - **Mantra:** *"Sujeito oracional é aquele que tem verbo!"*
 - **Procedimento:** Substitui-se todo o bloco oracional pelo pronome demonstrativo neutro **"ISSO"**. Ao confirmar a relação `ISSO + Verbo Principal` (ou `Verbo + ISSO`), a concordância fixa-se no singular:
- - *Basta [que vocês estudem]* $\rightarrow$ *[ISSO] basta*.
- - *Não se pode [entender estes problemas]* $\rightarrow$ *[ISSO] não se pode / Não é possível*.
- - *Sabe-se [que o processo depende...]* $\rightarrow$ *Sabe-se [ISSO] / [ISSO] é sabido*.
- - *Ao que nele penetrou espanta [encontrar fórmulas]* $\rightarrow$ *[ISSO] espanta*.
+  - *Basta [que vocês estudem]* $\rightarrow$ *[ISSO] basta*.
+  - *Não se pode [entender estes problemas]* $\rightarrow$ *[ISSO] não se pode / Não é possível*.
+  - *Sabe-se [que o processo depende...]* $\rightarrow$ *Sabe-se [ISSO] / [ISSO] é sabido*.
+  - *Ao que nele penetrou espanta [encontrar fórmulas]* $\rightarrow$ *[ISSO] espanta*.
 
 - **Gera procedimento:**
 - **Dica associada:**
 
 ---
 
-## Impessoalidade dos Verbos Haver, Fazer e Fenômenos Naturais
+### Impessoalidade dos Verbos Haver, Fazer e Fenômenos Naturais
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Os verbos impessoais não admitem sujeito sintático, configurando **oração sem sujeito**. Por não possuírem núcleo gramatical com o qual concordar, permanecem **invariavelmente flexionados na 3ª pessoa do singular**:
 
@@ -227,15 +225,15 @@ Os verbos impessoais não admitem sujeito sintático, configurando **oração se
 
 ---
 
-## Transmissão de Impessoalidade e Pessoalidade em Locuções Verbais
+### Transmissão de Impessoalidade e Pessoalidade em Locuções Verbais
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Nas locuções verbais (`Verbo Auxiliar + Verbo Principal`), a flexão morfológica recai exclusivamente sobre o verbo auxiliar. O comportamento do auxiliar submete-se estritamente à natureza sintática do verbo principal:
 
 - **Mantra:** *"O verbo auxiliar carrega a impessoalidade ou a pessoalidade do verbo principal."*
 
-### Aplicação estrutural
+#### Aplicação estrutural
 
 1. **Principal Impessoal (Haver):** O verbo principal *haver* transmite sua impessoalidade ao auxiliar, que fica **invariável na 3ª pessoa do singular** (*Deve haver motivos*, *Vai haver problemas*, *Pode não mais haver impressões*).
 2. **Principal Pessoal (Existir):** O verbo principal *existir* possui sujeito; logo, o verbo auxiliar **concorda obrigatoriamente com o sujeito** (*Devem existir motivos*, *Vão existir problemas*, *Podem existir impressões*).
@@ -245,9 +243,9 @@ Nas locuções verbais (`Verbo Auxiliar + Verbo Principal`), a flexão morfológ
 
 ---
 
-## Dinâmica Sintática de Transposição: Haver vs. Existir vs. Ter Existencial
+### Dinâmica Sintática de Transposição: Haver vs. Existir vs. Ter Existencial
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A substituição mútua entre os verbos existenciais acarreta alterações profundas nas funções sintáticas da oração, embora o sentido global possa ser mantido:
 
@@ -258,14 +256,12 @@ A substituição mútua entre os verbos existenciais acarreta alterações profu
 
 ---
 
-## Concordância com Expressões Partitivas e Numerais de Horas
+### Concordância com Expressões Partitivas e Numerais de Horas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 1. **Expressões Partitivas:** Estruturas formadas por coletivo/núcleo partitivo no singular (*um grupo de*, *a maioria de*, *grande parte de*) seguido de especificador no plural (*de alunos*) admitem dupla concordância: a **concordância lógica/gramatical** com o núcleo singular (*Um grupo... fez*) ou a **concordância atrativa** com o especificador plural (*...de alunos fizeram*).
 2. **Verbos de Horas e Soada:** Verbos como *bater*, *dar* e *soar*, na ausência de sujeito explícito (*o sino*, *o relógio*), concordam obrigatoriamente com o numeral que indica as horas (*Batiam nove horas no relógio da igreja*).
-
----
 
 ---
 
@@ -282,11 +278,9 @@ A substituição mútua entre os verbos existenciais acarreta alterações profu
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Protocolo Universal de Análise Sintática: "Viva Cada Verbo a Seu Momento"
+### Protocolo Universal de Análise Sintática: "Viva Cada Verbo a Seu Momento"
 
 1. **Localizar e Sublinhar:** Isole visualmente o verbo ou a locução verbal sob análise no período.
 2. **Interrogar o Verbo:** Formule a pergunta de reconhecimento: *"O que é que [verbo]?"* ou *"Quem é que [verbo]?"*.
@@ -295,11 +289,11 @@ A substituição mútua entre os verbos existenciais acarreta alterações profu
 5. **Ajustar a Ordem Sintática:** Se a frase estiver em ordem inversa (`Complemento + Verbo + Sujeito`), reorganize-a na ordem direta.
 6. **Harmonizar a Flexão:**
 
- - Sujeito composto posposto $\rightarrow$ Verbo no plural (total) ou concorda com o mais próximo (atrativa).
+  - Sujeito composto posposto $\rightarrow$ Verbo no plural (total) ou concorda com o mais próximo (atrativa).
 
 ---
 
-## Algoritmo Decisório para a Partícula SE (PA vs. PIS)
+### Algoritmo Decisório para a Partícula SE (PA vs. PIS)
 
 ```text
  ┌────────────────────────────────────────┐
@@ -334,7 +328,7 @@ A substituição mútua entre os verbos existenciais acarreta alterações profu
 
 ---
 
-## Método Diagnóstico do Sujeito Oracional (O Teste do "ISSO")
+### Método Diagnóstico do Sujeito Oracional (O Teste do "ISSO")
 
 1. Localize o verbo principal e faça a pergunta: *"O que é que [verbo principal]?"*.
 2. Verifique se a resposta constitui uma oração (possui verbo conjugado ou no infinitivo).
@@ -344,14 +338,12 @@ A substituição mútua entre os verbos existenciais acarreta alterações profu
 
 ---
 
-## Transposição Sintática: Haver $\leftrightarrow$ Existir
+### Transposição Sintática: Haver $\leftrightarrow$ Existir
 
 1. **Identificar o verbo HAVER:** Localize o complemento direto não preposicionado (*Havia [muitos problemas]*).
 2. **Substituir por EXISTIR:** No mesmo tempo e modo verbal (*Havia* $\rightarrow$ *Existiam*).
 3. **Converter a Função Sintática:** O antigo Objeto Direto passa a ser o **Sujeito Sintático** de *existir*.
 4. **Harmonizar a Concordância:** Como o sujeito é plural (*muitos problemas*), o verbo *existir* flexiona-se obrigatoriamente no plural (*Existiam muitos problemas*).
-
----
 
 ---
 
@@ -368,7 +360,7 @@ A substituição mútua entre os verbos existenciais acarreta alterações profu
 | **Conversão Analítica** | Admite conversão (*Casas são vendidas*). | Não admite conversão analítica. |
 | **Exemplo Típico** | *Vendem-se casas.* / *Doam-se animais.* | *Precisa-se de operários.* / *Trata-se de fatos.* |
 
-### Tabela 2: Verbo Haver (Existencial) vs. Verbo Existir
+#### Tabela 2: Verbo Haver (Existencial) vs. Verbo Existir
 
 | Critério Comparativo | Verbo HAVER (Existencial / Temporal) | Verbo EXISTIR (Existência) |
 |:-------------------------------- |:------------------------------------------------------------ |:----------------------------------------------------- |
@@ -380,11 +372,9 @@ A substituição mútua entre os verbos existenciais acarreta alterações profu
 
 ---
 
----
-
 ## Exemplos comentados
 
-## 9.1. Bateria de Fixação Multirregra (conteúdo integrado — Adriana Figueiredo)
+### 9.1. Bateria de Fixação Multirregra (conteúdo integrado — Adriana Figueiredo)
 
 - ** (Item 1):** `________ nove horas no relógio da igreja local. (Batiam/ Batia)`*Gabarito:* **Batiam** | *Justificativa:* Sujeito é o numeral substantivado plural `nove horas`. O termo preposicionado `no relógio...` é adjunto adverbial de lugar. .
 - ** (Item 2):** `Não ________ uma relação direta entre crescimento e emprego. (existem/ existe)`*Gabarito:* **existe** | *Justificativa:* *Existir* é verbo pessoal e concorda com o sujeito simples `uma relação direta` (núcleo singular `relação`). .
@@ -405,12 +395,32 @@ A substituição mútua entre os verbos existenciais acarreta alterações profu
 
 ---
 
-## 9.2. Questões de Concurso de Múltipla Escolha (conteúdo integrado — VUNESP, CESGRANRIO, FCC)
+### 9.2. Questões de Concurso de Múltipla Escolha (conteúdo integrado — VUNESP, CESGRANRIO, FCC)
 
-- ** (Q38 - VUNESP 2020 - Pref. Cananéia):** Assinale a alternativa correta quanto à concordância.*A)* Fazem muitos anos... *(Incorreto: Faz temporal).**B) [CORRETA]* **Nas famílias modernas, o número de filhos vem sendo reduzido, além de as mulheres tornarem-se mães com mais idade.** *(Auxiliar 'vem' concorda com 'o número'; 'tornarem-se' concorda com 'mulheres').**C)* Os conflitos... nem sempre significa... *(Incorreto: significam).**D)* Muita afeição e muita compreensão é necessário... *(Incorreto: são necessárias - sujeito composto anteposto).**E)* A família... refletem... *(Incorreto: reflete).**Gabarito:* **B** .
-- ** (Q39 - CESGRANRIO 2021 - Banco do Brasil):** Concordância verbal correta na forma destacada:*A)*...analisaram-se... o comportamento... *(Incorreto: analisou-se - sujeito singular).**B) [CORRETA]* **Em grupos de jovens..., constataram-se inúmeras situações de dependência crônica...** *(VTD+SE = PA; 'inúmeras situações foram constatadas').**C)*...atendem-se a reclamações... *(Incorreto: atende-se - VTI+SE).**D)*...atribuem-se... a maior responsabilidade... *(Incorreto: atribui-se - sujeito singular).**E)*...estimam-se que os jovens sejam... *(Incorreto: estima-se - sujeito oracional = ISSO).**Gabarito:* **B** .
-- ** (Q40 - CESGRANRIO 2021 - Banco do Brasil TI):** Concordância correta na forma destacada:*A)* Aspiram-se a bons cargos... *(Incorreto: Aspira-se - VTI+SE).**B)*...fazem dois anos... *(Incorreto: faz dois anos).**C) [CORRETA]* **Nos últimos anos, combatem-se batalhas comerciais cotidianamente...** *(VTD+SE = PA; 'batalhas comerciais são combatidas').**D)*...existe problemas... *(Incorreto: existem problemas).**E)*...precisam-se de equipamentos... *(Incorreto: precisa-se - VTI+SE).**Gabarito:* **C** .
-- ** (Q41 - FCC 2019 - DPE-AM):** Normas de concordância plenamente observadas:*A)* Não se esperem que os enigmas sejam resolvidos. *(Incorreto: Não se espere - sujeito oracional).**B)* Sempre haverão teses insólitas... *(Incorreto: Sempre haverá).**C) [CORRETA]* **Não merece crédito dos físicos modernos a postulação desses cientistas.** *(Ordem direta: 'A postulação... não merece').**D)* Mesmo que se dessem resolução... *(Incorreto: se desse resolução).**E)* Caso se proponham... essa dúvida final... *(Incorreto: se proponha essa dúvida).**Gabarito:* **C** .
+- ** (Q38 - VUNESP 2020 - Pref. Cananéia):** Assinale a alternativa correta quanto à concordância.*
+A)* Fazem muitos anos... *(Incorreto: Faz temporal).**
+B) [CORRETA]* **Nas famílias modernas, o número de filhos vem sendo reduzido, além de as mulheres tornarem-se mães com mais idade.** *(Auxiliar 'vem' concorda com 'o número'; 'tornarem-se' concorda com 'mulheres').**
+C)* Os conflitos... nem sempre significa... *(Incorreto: significam).**
+D)* Muita afeição e muita compreensão é necessário... *(Incorreto: são necessárias - sujeito composto anteposto).**
+E)* A família... refletem... *(Incorreto: reflete).**Gabarito:* **B** .
+- ** (Q39 - CESGRANRIO 2021 - Banco do Brasil):** Concordância verbal correta na forma destacada:*
+A)*...analisaram-se... o comportamento... *(Incorreto: analisou-se - sujeito singular).**
+B) [CORRETA]* **Em grupos de jovens..., constataram-se inúmeras situações de dependência crônica...** *(VTD+SE = PA; 'inúmeras situações foram constatadas').**
+C)*...atendem-se a reclamações... *(Incorreto: atende-se - VTI+SE).**
+D)*...atribuem-se... a maior responsabilidade... *(Incorreto: atribui-se - sujeito singular).**
+E)*...estimam-se que os jovens sejam... *(Incorreto: estima-se - sujeito oracional = ISSO).**Gabarito:* **B** .
+- ** (Q40 - CESGRANRIO 2021 - Banco do Brasil TI):** Concordância correta na forma destacada:*
+A)* Aspiram-se a bons cargos... *(Incorreto: Aspira-se - VTI+SE).**
+B)*...fazem dois anos... *(Incorreto: faz dois anos).**
+C) [CORRETA]* **Nos últimos anos, combatem-se batalhas comerciais cotidianamente...** *(VTD+SE = PA; 'batalhas comerciais são combatidas').**
+D)*...existe problemas... *(Incorreto: existem problemas).**
+E)*...precisam-se de equipamentos... *(Incorreto: precisa-se - VTI+SE).**Gabarito:* **C** .
+- ** (Q41 - FCC 2019 - DPE-AM):** Normas de concordância plenamente observadas:*
+A)* Não se esperem que os enigmas sejam resolvidos. *(Incorreto: Não se espere - sujeito oracional).**
+B)* Sempre haverão teses insólitas... *(Incorreto: Sempre haverá).**
+C) [CORRETA]* **Não merece crédito dos físicos modernos a postulação desses cientistas.** *(Ordem direta: 'A postulação... não merece').**
+D)* Mesmo que se dessem resolução... *(Incorreto: se desse resolução).**
+E)* Caso se proponham... essa dúvida final... *(Incorreto: se proponha essa dúvida).**Gabarito:* **C** .
 - ** (Q42 - FCC 2019 - Pref. Manaus):** O verbo entre parênteses deverá flexionar-se no **PLURAL**:
  *A)* Nunca lhes (ter) ocorrido que devem se empenhar... *(Singular: tinha ocorrido - sujeito oracional).*
  *B)* A muitos competidores não (interessar) permanecer... *(Singular: interessa - sujeito oracional).*
@@ -421,7 +431,7 @@ A substituição mútua entre os verbos existenciais acarreta alterações profu
 
 ---
 
-## 9.3. Bateria Avançada CESPE/CEBRASPE — Certo / Errado
+### 9.3. Bateria Avançada CESPE/CEBRASPE — Certo / Errado
 
 - ** (Q43 - TJ-AM 2019):** "A forma verbal 'têm' (l.20) concorda com o termo 'muitos segurados do INSS' (l.19)."*Gabarito:* **Certo** | *Justificativa:* O pronome relativo *que* atua como sujeito e retoma o antecedente plural (*segurados*), exigindo *têm* com acento circunflexo. .
 - ** (Q44 - SEED-PR 2021):** "A forma verbal 'obrigam' estabelece concordância com os termos 'olhar', 'contraste' e 'luta'."*Gabarito:* **Certo** | *Justificativa:* Sujeito composto anteposto formado por 3 núcleos singulares exige plural. .
@@ -445,11 +455,9 @@ A substituição mútua entre os verbos existenciais acarreta alterações profu
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Teste do "ISSO" para Sujeito Oracional
+### O Teste do "ISSO" para Sujeito Oracional
 
 Ao analisar qualquer oração que aparente exercer função de sujeito (iniciada por conjunção integrante *que/se* ou verbo no infinitivo), substitua mentalmente todo o bloco pela palavra **"ISSO"**.
 
@@ -457,7 +465,7 @@ Ao analisar qualquer oração que aparente exercer função de sujeito (iniciada
 
 ---
 
-## Conversão para a Voz Passiva Analítica com o SE
+### Conversão para a Voz Passiva Analítica com o SE
 
 Para saber se o verbo deve flexionar no plural acompanhado de *SE*, faça o teste da voz passiva analítica:
 
@@ -465,24 +473,22 @@ Para saber se o verbo deve flexionar no plural acompanhado de *SE*, faça o test
 
 ---
 
-## O Teste do "Salto" em Locuções Verbais com Intercalação
+### O Teste do "Salto" em Locuções Verbais com Intercalação
 
 Quando houver advérbios ou palavras denotativas intercaladas no meio da locução verbal (*podem não mais haver*), risque mentalmente os termos do meio e leia apenas os verbos colados: `podem haver`. Como *haver* é impessoal, corrija imediatamente o auxiliar: `pode haver`.
 
 ---
 
-## Macete Visual da Preposição com o Pronome SE
+### Macete Visual da Preposição com o Pronome SE
 
 - **Verbo + SE + Termo COM preposição** (*de*, *a*, *em*): O *SE* é PIS $\rightarrow$ Verbo **NUNCA varia** (fica cravado no singular: *Trata-se de*, *Precisa-se de*, *Aspira-se a*).
 - **Verbo + SE + Termo SEM preposição**: O *SE* é PA $\rightarrow$ Verbo **CONCORDA** com o termo (singular ou plural: *Constatou-se o fato*, *Constataram-se os fatos*).
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## A Armadilha do Sujeito Preposicionado Inexistente
+### A Armadilha do Sujeito Preposicionado Inexistente
 
 - **O Erro:** Tentar flexionar o verbo concordando com termos plurais introduzidos por preposição (ex.: *"A muitos competidores não interessam..."*, *"Aos interessados cumprem..."*, *"O número de filhos vêm..."*).
 - **Fundamento Gramatical:** Na língua portuguesa, **o sujeito nunca é preposicionado**. Termos preposicionados exercem função de objeto indireto, adjunto adnominal ou complemento nominal.
@@ -490,75 +496,71 @@ Quando houver advérbios ou palavras denotativas intercaladas no meio da locuç�
 
 ---
 
-## Proibição de Concordância Atrativa em Sujeito Composto Anteposto
+### Proibição de Concordância Atrativa em Sujeito Composto Anteposto
 
 - **O Erro:** Achar que a concordância atrativa (com o núcleo mais próximo) é sempre facultativa.
 - **Regra Rígida:** Se o sujeito composto estiver **anteposto** ao verbo, a concordância é **exclusivamente total no plural** (*O olhar, o contraste e a luta obrigam*). A concordância atrativa só é admitida se o sujeito composto estiver **posposto** (*Chegou/chegaram o pai e a mãe*).
 
 ---
 
-## A Falsa Coordenação do "E" em Termos Modificadores
+### A Falsa Coordenação do "E" em Termos Modificadores
 
 - **O Erro:** Assumir que qualquer frase longa com a conjunção *e* possui sujeito composto.
 - **Forma Correta:** O "e" dentro de adjuntos ou complementos apenas expande o núcleo do sujeito simples (*Os gastos com a lei e a ordem crescem* $\rightarrow$ núcleo *gastos*; *O privilégio de fazer X e Y indica* $\rightarrow$ núcleo *privilégio*).
 
 ---
 
-## Pluralização Incorreta da Expressão "Tratar-se de"
+### Pluralização Incorreta da Expressão "Tratar-se de"
 
 - **O Erro:** Escrever ou aceitar em prova a forma `tratam-se de` quando o complemento for plural (*"Tratam-se de problemas graves"*).
 - **Forma Correta:** O verbo *tratar-se de* com *SE* indeterminador é absolutamente **invariável no singular**: `Trata-se de problemas graves`.
 
 ---
 
-## Pluralização Indevida do Verbo Fazer Temporal
+### Pluralização Indevida do Verbo Fazer Temporal
 
 - **O Erro:** Utilizar `fazem dez anos` ou `fazem dois semestres`.
 - **Forma Correta:** O verbo *fazer*, indicando transcurso de tempo, é impessoal. O correto é sempre no singular: `Faz dez anos`, `Faz dois semestres`.
 
 ---
 
-## Contaminação de Plural em Locuções com Haver Impessoal
+### Contaminação de Plural em Locuções com Haver Impessoal
 
 - **O Erro:** Flexionar o verbo auxiliar diante de substantivo plural em locuções com *haver* existencial (*"Devem haver motivos"*, *"Podem haver problemas"*).
 - **Forma Correta:** O verbo auxiliar herda a impessoalidade: `Deve haver motivos`, `Pode haver problemas`. (Diferente de *existir*: `Devem existir motivos`).
 
 ---
 
-## Pluralização Diante de Aposto Resumitivo
+### Pluralização Diante de Aposto Resumitivo
 
 - **O Erro:** Tentar somar os núcleos antecedentes ao aposto resumitivo (*"O dinheiro, as posses, a saúde, tudo se perderam"*).
 - **Forma Correta:** Diante de *tudo*, *nada*, *ninguém* ou *tudo isso*, o verbo **obrigatoriamente fica no singular**: `tudo se perdeu`, `tudo isso representa`.
 
 ---
 
----
-
 ## Glossário operacional
 
-## Partícula Apassivadora (PA)
+### Partícula Apassivadora (PA)
 
 Pronome apassivador (*se*) associado a verbos transitivos diretos (VTD) ou transitivos diretos e indiretos (VTDI), transformando o paciente da ação no sujeito sintático da voz passiva sintética. Exige concordância verbal obrigatória com o sujeito paciente .
 
-## Pronome / Índice de Indeterminação do Sujeito (PIS/IIS)
+### Pronome / Índice de Indeterminação do Sujeito (PIS/IIS)
 
 Partícula (*se*) associada a verbos transitivos indiretos (VTI), intransitivos (VI) ou de ligação (VL), indicando que o sujeito da oração é indeterminado. Fixa o verbo compulsoriamente na 3ª pessoa do singular .
 
-## Sujeito Oracional
+### Sujeito Oracional
 
 Oração subordinada substantiva subjetiva (desenvolvida ou reduzida de infinitivo) que desempenha a função sintática de sujeito em relação a um verbo regente na oração principal. Equivale ao pronome neutro *ISSO* e impõe flexão de 3ª pessoa do singular ao verbo principal .
 
-## Verbo Impessoal
+### Verbo Impessoal
 
 Verbo que não possui sujeito gramatical associado, configurando oração sem sujeito e mantendo-se conjugado exclusivamente na 3ª pessoa do singular (*haver* existencial/temporal, *fazer* temporal, fenômenos climáticos) .
 
-## Concordância Atrativa
+### Concordância Atrativa
 
-## Aposto Resumitivo / Recapitulativo
+### Aposto Resumitivo / Recapitulativo
 
 Termo sintático representado por pronome indefinido (*tudo*, *nada*, *ninguém*, *tudo isso*) que sintetiza uma enumeração anterior de múltiplos núcleos, atraindo a concordância do verbo obrigatoriamente para a 3ª pessoa do singular .
-
----
 
 ---
 

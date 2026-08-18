@@ -20,7 +20,7 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 - Reconhecimento das três conjugações verbais da Língua Portuguesa (1ª em `-AR`, 2ª em `-ER`, 3ª em `-IR`).
 - Noção básica de pessoas gramaticais (*eu, tu, ele, nós, vós, eles*).
 
-### Mapa Conceitual Integrado
+#### Mapa Conceitual Integrado
 
 ```text
  ESTRUTURA GLOBAL DA CONJUGAÇÃO VERBAL
@@ -58,17 +58,15 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Sistematização Global da Conjugação Verbal para Concursos
+### Sistematização Global da Conjugação Verbal para Concursos
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A aprendizagem e a revisão sistemática da flexão verbal para concursos públicos organizam-se em **quatro blocos estruturais**, ordenados por relevância estatística, padrões de irregularidade e complexidade morfológica.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 Para evitar a memorização aleatória de tabelas de dicionário, o estudo estrutura-se em:
 
@@ -81,13 +79,13 @@ Para evitar a memorização aleatória de tabelas de dicionário, o estudo estru
 
 ---
 
-## Paradigma de Formação dos Tempos Verbais (Mecânica Primitivos $\rightarrow$ Derivados)
+### Paradigma de Formação dos Tempos Verbais (Mecânica Primitivos $\rightarrow$ Derivados)
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Mecânica morfogenética que estabelece que os tempos verbais derivados da língua portuguesa são obrigatoriamente gerados a partir de dois tempos primitivos fundamentais, aplicando-se a aproximadamente 95% dos verbos.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 O domínio deste paradigma substitui a memorização cega de dezenas de tabelas pelo controle de apenas dois pontos de partida:
 
@@ -107,157 +105,155 @@ OBTÉM-SE: Todo o Presente do Subjuntivo OBTÉM-SE: Tema Matriz do Pretérito
  └─> Futuro do Subjuntivo (Tema + "-r")
 ```
 
-### Exemplos Aplicados
+#### Exemplos Aplicados
 
 - *Verbo CABER:*
- - Primitivo 1: `Eu caib-o` $\rightarrow$ extrai `-o` + `-a` $\rightarrow$ *que eu caiba, que tu caibas, que ele caiba...*
- - Primitivo 2: `Eles coube-ram` $\rightarrow$ tema `coube-` $\rightarrow$ *coubera* (Mais-que-perf.), *coubesse* (Imp. Subj.), *couber* (Fut. Subj.).
+  - Primitivo 1: `Eu caib-o` $\rightarrow$ extrai `-o` + `-a` $\rightarrow$ *que eu caiba, que tu caibas, que ele caiba...*
+  - Primitivo 2: `Eles coube-ram` $\rightarrow$ tema `coube-` $\rightarrow$ *coubera* (Mais-que-perf.), *coubesse* (Imp. Subj.), *couber* (Fut. Subj.).
 - *Verbo ADERIR:*
- - Primitivo 1: `Eu adir-o` $\rightarrow$ extrai `-o` + `-a` $\rightarrow$ *que eu adira, que tu adiras, que ele adira...*
+  - Primitivo 1: `Eu adir-o` $\rightarrow$ extrai `-o` + `-a` $\rightarrow$ *que eu adira, que tu adiras, que ele adira...*
 - *Verbo HAVER / APRAZER:*
- - Primitivo 2: `Eles houve-ram` $\rightarrow$ tema `houve-` $\rightarrow$ *houvera, houvesse, houver*.
- - Primitivo 2: `Eles aprouve-ram` $\rightarrow$ tema `aprouve-` $\rightarrow$ *aprouvera, aprouvesse, aprouver*.
+  - Primitivo 2: `Eles houve-ram` $\rightarrow$ tema `houve-` $\rightarrow$ *houvera, houvesse, houver*.
+  - Primitivo 2: `Eles aprouve-ram` $\rightarrow$ tema `aprouve-` $\rightarrow$ *aprouvera, aprouvesse, aprouver*.
 
 - **Operacionalizado por:**
 
 ---
 
-## Paradigma do Verbo PROVER e Contraste com PROVIR
+### Paradigma do Verbo PROVER e Contraste com PROVIR
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 O verbo **PROVER** (providenciar, abastecer, sustentar) é um falso amigo de *VER*. Possui **dois verbos líderes distintos**: equivale ao verbo **VER** unicamente nos tempos do Presente e equivale ao verbo regular **BEBER** (2ª conjugação) em todos os demais tempos (Pretéritos e Futuros). Contrasta frontalmente com **PROVIR** (originar-se), que é derivado autêntico de *VIR*.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 - **PROVER nos Tempos do Presente (`PROVER = VER`):**
- - *Presente do Indicativo:* eu provejo, tu provês, ele provê, nós provemos, vós provedes, eles proveem.
- - *Presente do Subjuntivo:* que eu proveja, tu provejas, ele proveja, nós provejamos, vós provejais, eles provejam.
+  - *Presente do Indicativo:* eu provejo, tu provês, ele provê, nós provemos, vós provedes, eles proveem.
+  - *Presente do Subjuntivo:* que eu proveja, tu provejas, ele proveja, nós provejamos, vós provejais, eles provejam.
 - **PROVER nos Demais Tempos (`PROVER = BEBER`):**
- - *Pretérito Imperfeito do Indicativo:* provia, provias, provia, províamos, províeis, proviam (= *bebia*).
- - *Pretérito Perfeito do Indicativo:* provei, proveste, proveu, provemos, provestes, proveram (= *bebeu/beberam* — jamais "proviu").
- - *Pretérito Mais-Que-Perfeito do Indicativo:* provera, proveras, provera... (= *bebera*).
- - *Pretérito Imperfeito do Subjuntivo:* se eu provesse, provesses, provesse... (= *bebesse* — jamais "provisse").
- - *Futuro do Subjuntivo:* quando eu prover, proveres, prover... (= *beber* — jamais "provir").
- - *Particípio:* provido (= *bebido*).
+  - *Pretérito Imperfeito do Indicativo:* provia, provias, provia, províamos, províeis, proviam (= *bebia*).
+  - *Pretérito Perfeito do Indicativo:* provei, proveste, proveu, provemos, provestes, proveram (= *bebeu/beberam* — jamais "proviu").
+  - *Pretérito Mais-Que-Perfeito do Indicativo:* provera, proveras, provera... (= *bebera*).
+  - *Pretérito Imperfeito do Subjuntivo:* se eu provesse, provesses, provesse... (= *bebesse* — jamais "provisse").
+  - *Futuro do Subjuntivo:* quando eu prover, proveres, prover... (= *beber* — jamais "provir").
+  - *Particípio:* provido (= *bebido*).
 - **Contraste com PROVIR (Bom Amigo de VIR):**
- - *Presente do Indicativo:* ele provém, eles provêm (= *vem / vêm*).
- - *Pretérito Perfeito do Indicativo:* ele proveio, eles provieram (= *veio / vieram*).
- - *Pretérito Imperfeito do Subjuntivo:* se ele proviesse (= *viesse*).
- - *Futuro do Subjuntivo:* quando ele provier (= *vier*).
+  - *Presente do Indicativo:* ele provém, eles provêm (= *vem / vêm*).
+  - *Pretérito Perfeito do Indicativo:* ele proveio, eles provieram (= *veio / vieram*).
+  - *Pretérito Imperfeito do Subjuntivo:* se ele proviesse (= *viesse*).
+  - *Futuro do Subjuntivo:* quando ele provier (= *vier*).
 
 ---
 
-## Paradigma do Verbo REQUERER e a Ditongação em "EI"
+### Paradigma do Verbo REQUERER e a Ditongação em "EI"
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 O verbo **REQUERER** é um falso amigo do verbo *QUERER*. Ele **não** se conjuga como *querer* (formas como *"requiz"*, *"requizeram"*, *"requisesse"* são absolutamente inexistentes na norma culta). Seu paradigma geral é o verbo regular **BEBER**, com apenas uma irregularidade: a **ditongação em "EI"** na 1ª pessoa do singular do Presente do Indicativo e em todo o Presente do Subjuntivo.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 1. **Líder Geral (`REQUERER = BEBER`):**
- - *Pretérito Perfeito:* requeri, requereste, requereu, requeremos, requerestes, requereram (= *bebi, bebeu, beberam*).
- - *Pretérito Imperfeito do Subjuntivo:* se eu requeresse, requeresses, requeresse... (= *bebesse*).
- - *Futuro do Subjuntivo:* quando eu requerer, requereres, requerer... (= *beber*).
- - *Pretérito Mais-Que-Perfeito:* requerera (= *bebera*).
- - *Presente do Indicativo (3ª p. sing.):* ele requer (= *ele bebe* / terminação regular).
+  - *Pretérito Perfeito:* requeri, requereste, requereu, requeremos, requerestes, requereram (= *bebi, bebeu, beberam*).
+  - *Pretérito Imperfeito do Subjuntivo:* se eu requeresse, requeresses, requeresse... (= *bebesse*).
+  - *Futuro do Subjuntivo:* quando eu requerer, requereres, requerer... (= *beber*).
+  - *Pretérito Mais-Que-Perfeito:* requerera (= *bebera*).
+  - *Presente do Indicativo (3ª p. sing.):* ele requer (= *ele bebe* / terminação regular).
 2. **A Única Irregularidade (Ditongação em "EI"):**
- - *1ª pessoa do singular do Presente do Indicativo:* **eu requeiro** (em vez de "requebo").
- - *Presente do Subjuntivo (todas as pessoas):* **que eu requeira, que tu requeiras, que ele requeira, que nós requeiramos, que vós requeirais, que eles requeiram**.
+  - *1ª pessoa do singular do Presente do Indicativo:* **eu requeiro** (em vez de "requebo").
+  - *Presente do Subjuntivo (todas as pessoas):* **que eu requeira, que tu requeiras, que ele requeira, que nós requeiramos, que vós requeirais, que eles requeiram**.
 
 ---
 
-## Conjugação dos Verbos CABER e CRER (Macete de Substituição por BEBER)
+### Conjugação dos Verbos CABER e CRER (Macete de Substituição por BEBER)
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Sistematização morfológica dos verbos **CABER** e **CRER**, superando inseguranças sonoras por meio do paradigma de primitivos e da substituição pelo verbo líder regular **BEBER**.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 1. **Verbo CABER:**
- - *Primitivo 1 (Pres. Ind.):* **eu caibo** $\rightarrow$ gera *que eu caiba, caibas, caiba, caibamos, caibais, caibam*.
- - *Primitivo 2 (Pret. Perf. Ind.):* coube, coubeste, coube, coubemos, coubestes, **couberam** (jamais "caberam").
- - *Derivados do tema coube-:* *coubera* (Mais-que-perf.), *coubesse* (Imp. Subj.), *couber* (Fut. Subj.).
- - *Formas Nominais:* Infinitivo: *caber*; Gerúndio: *cabendo*; Particípio: *cabido*.
+  - *Primitivo 1 (Pres. Ind.):* **eu caibo** $\rightarrow$ gera *que eu caiba, caibas, caiba, caibamos, caibais, caibam*.
+  - *Primitivo 2 (Pret. Perf. Ind.):* coube, coubeste, coube, coubemos, coubestes, **couberam** (jamais "caberam").
+  - *Derivados do tema coube-:* *coubera* (Mais-que-perf.), *coubesse* (Imp. Subj.), *couber* (Fut. Subj.).
+  - *Formas Nominais:* Infinitivo: *caber*; Gerúndio: *cabendo*; Particípio: *cabido*.
 2. **Verbo CRER:**
- - *Presente do Indicativo:* **creio**, crês, crê, cremos, credes, creem $\rightarrow$ gera Pres. Subj.: *creia, creias, creia, creiamos, creiais, creiam*.
- - *Pretérito Perfeito do Indicativo:* **eu cri**, tu creste, ele creu, nós cremos, vós crestes, **eles creram**.
- - *Pretérito Imperfeito do Indicativo:* cria, crias, cria, críamos, críeis, criam.
- - *Particípio Passado:* **`crido`** (Forma muito exigida pela FGV; não confundir com a interjeição "credo").
+  - *Presente do Indicativo:* **creio**, crês, crê, cremos, credes, creem $\rightarrow$ gera Pres. Subj.: *creia, creias, creia, creiamos, creiais, creiam*.
+  - *Pretérito Perfeito do Indicativo:* **eu cri**, tu creste, ele creu, nós cremos, vós crestes, **eles creram**.
+  - *Pretérito Imperfeito do Indicativo:* cria, crias, cria, críamos, críeis, criam.
+  - *Particípio Passado:* **`crido`** (Forma muito exigida pela FGV; não confundir com a interjeição "credo").
 3. **O Macete "Se Perder a Fé, Use BEBER":**
  Para validar formas aparentemente estranhas de *CRER*, testa-se a flexão no verbo regular de 2ª conjugação *BEBER*:
- - *Antigamente eu bebia* $\rightarrow$ *Antigamente eu cria* (Pretérito Imperfeito correto).
- - *Ele tinha bebido* $\rightarrow$ *Ele tinha crido* (Particípio Passado correto).
+  - *Antigamente eu bebia* $\rightarrow$ *Antigamente eu cria* (Pretérito Imperfeito correto).
+  - *Ele tinha bebido* $\rightarrow$ *Ele tinha crido* (Particípio Passado correto).
 
 ---
 
-## Verbo Anômalo HAVER e Verbo Defectivo APRAZER
+### Verbo Anômalo HAVER e Verbo Defectivo APRAZER
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Classificação e flexão do verbo anômalo **HAVER** e sua utilização como "verbo líder" para conjugar o verbo defectivo **APRAZER** (que se restringe às 3ªs pessoas).
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 1. **Verbo HAVER (Anômalo com Abundância):**
- - *Presente do Indicativo:* **hei, hás, há, havemos (ou hemos), haveis (ou heis), hão**. As variantes *hemos* e *heis* configuram o fenômeno da abundância verbal.
- - *Pretérito Perfeito do Indicativo:* **houve, houveste, houve, houvemos, houvestes, houveram**.
- - *Derivação a partir de houveram (tema houver-):* *houvera* (Mais-que-perf.), *houvesse* (Imp. Subj.), *houver* (Fut. Subj.).
+  - *Presente do Indicativo:* **hei, hás, há, havemos (ou hemos), haveis (ou heis), hão**. As variantes *hemos* e *heis* configuram o fenômeno da abundância verbal.
+  - *Pretérito Perfeito do Indicativo:* **houve, houveste, houve, houvemos, houvestes, houveram**.
+  - *Derivação a partir de houveram (tema houver-):* *houvera* (Mais-que-perf.), *houvesse* (Imp. Subj.), *houver* (Fut. Subj.).
 2. **Verbo APRAZER (Defectivo de 3ª Pessoa):**
- - Significa "causar prazer, comprazer, agradar". É defectivo e carece de 1ª pessoa do singular (construções como *"eu aprazo"* ou *"eu me aprazo"* são nulas na norma culta).
- - *Presente do Indicativo:* **ele apraz / eles aprazem**.
- - *Líder no Pretérito Perfeito (`APRAZER = HAVER`):*
- - HAVER: *houve / houveram* $\rightarrow$ APRAZER: **aprouve / aprouveram**.
- - *Derivados do tema aprouver-:*
- - Pretérito Mais-Que-Perfeito: *aprouvera / aprouveram*.
- - Pretérito Imperfeito do Subjuntivo: *aprouvesse / aprouvessem*.
- - Futuro do Subjuntivo: *aprouver / aprouverem*.
- - *Formas Nominais:* Infinitivo: *aprazer*; Particípio: *aprazido*; Gerúndio: *aprazendo*.
+  - Significa "causar prazer, comprazer, agradar". É defectivo e carece de 1ª pessoa do singular (construções como *"eu aprazo"* ou *"eu me aprazo"* são nulas na norma culta).
+  - *Presente do Indicativo:* **ele apraz / eles aprazem**.
+  - *Líder no Pretérito Perfeito (`APRAZER = HAVER`):*
+  - HAVER: *houve / houveram* $\rightarrow$ APRAZER: **aprouve / aprouveram**.
+  - *Derivados do tema aprouver-:*
+  - Pretérito Mais-Que-Perfeito: *aprouvera / aprouveram*.
+  - Pretérito Imperfeito do Subjuntivo: *aprouvesse / aprouvessem*.
+  - Futuro do Subjuntivo: *aprouver / aprouverem*.
+  - *Formas Nominais:* Infinitivo: *aprazer*; Particípio: *aprazido*; Gerúndio: *aprazendo*.
 
 ---
 
-## Verbo Anômalo IR e Verbo ADERIR (Alternância Vocálica)
+### Verbo Anômalo IR e Verbo ADERIR (Alternância Vocálica)
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Resolução dos nós críticos de flexão do verbo anômalo **IR** (confronto de presentes) e do verbo irregular **ADERIR** (alternância vocálica orientada pelo líder *FERIR*).
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 1. **Verbo IR (Confronto Crítico Indicativo vs. Subjuntivo):**
- - *Presente do Indicativo (ideia de "Hoje"):* vou, vais, vai, **vamos**, **ides**, vão.
- - *Presente do Subjuntivo (gatilho "Que"):* que eu vá, tu vás, ele vá, **que nós vamos**, **que vós vades**, que eles vão.
- - *Pontos Decisivos em Provas:*
- - A 1ª pessoa do plural é **idêntica** nos dois modos: *nós vamos* (Ind.) = *que nós vamos* (Subj.).
- - A 2ª pessoa do plural distingue-se estritamente: **vós ides** (Indicativo com *i-*) vs. **vós vades** (Subjuntivo com *v-*).
- - *Futuro do Subjuntivo:* quando eu **for**, fores, for, formos, fordes, forem (corresponde a *puder* do verbo poder).
- - *Formas Nominais:* Infinitivo: *ir*; Gerúndio: *indo*; Particípio: *ido*.
+  - *Presente do Indicativo (ideia de "Hoje"):* vou, vais, vai, **vamos**, **ides**, vão.
+  - *Presente do Subjuntivo (gatilho "Que"):* que eu vá, tu vás, ele vá, **que nós vamos**, **que vós vades**, que eles vão.
+  - *Pontos Decisivos em Provas:*
+  - A 1ª pessoa do plural é **idêntica** nos dois modos: *nós vamos* (Ind.) = *que nós vamos* (Subj.).
+  - A 2ª pessoa do plural distingue-se estritamente: **vós ides** (Indicativo com *i-*) vs. **vós vades** (Subjuntivo com *v-*).
+  - *Futuro do Subjuntivo:* quando eu **for**, fores, for, formos, fordes, forem (corresponde a *puder* do verbo poder).
+  - *Formas Nominais:* Infinitivo: *ir*; Gerúndio: *indo*; Particípio: *ido*.
 2. **Verbo ADERIR (Líder FERIR):**
- - Por analogia direta com o verbo líder *FERIR* (*eu firo* $\rightarrow$ *eu adiro*), a 1ª pessoa do singular do Presente do Indicativo sofre alternância vocálica de *e* para *i*: **eu adiro** (as demais pessoas mantêm o *e*: *tu aderes, ele adere, nós aderimos, vós aderis, eles aderem*).
- - *Derivação do Presente do Subjuntivo:* *adiro* minus `-o` + `-a` $\rightarrow$ **que eu adira, tu adiras, ele adira, nós adiramos, vós adirais, eles adiram**.
- - *Formas Nominais:* Infinitivo: *aderir*; Gerúndio: *aderindo*; Particípio: *aderido*.
+  - Por analogia direta com o verbo líder *FERIR* (*eu firo* $\rightarrow$ *eu adiro*), a 1ª pessoa do singular do Presente do Indicativo sofre alternância vocálica de *e* para *i*: **eu adiro** (as demais pessoas mantêm o *e*: *tu aderes, ele adere, nós aderimos, vós aderis, eles aderem*).
+  - *Derivação do Presente do Subjuntivo:* *adiro* minus `-o` + `-a` $\rightarrow$ **que eu adira, tu adiras, ele adira, nós adiramos, vós adirais, eles adiram**.
+  - *Formas Nominais:* Infinitivo: *aderir*; Gerúndio: *aderindo*; Particípio: *aderido*.
 
 ---
 
-## Formas Nominais e Particípios Regulares (*Podido* e *Crido*)
+### Formas Nominais e Particípios Regulares (*Podido* e *Crido*)
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 As formas nominais do verbo (Infinitivo, Gerúndio e Particípio) recebem essa designação porque, além de exprimirem processos verbais, podem exercer funções sintático-semânticas próprias dos nomes (substantivos, adjetivos e advérbios).
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 - **Funções Nominais:**
- - *Infinitivo:* pode funcionar como substantivo (*O viver é desafiador*).
- - *Gerúndio:* pode atuar como advérbio circunstancial (*Chegou correndo*).
- - *Particípio:* atua frequentemente como adjetivo qualificando substantivos (*"Provérbio crido"* = provérbio em que se crê / acreditado).
+  - *Infinitivo:* pode funcionar como substantivo (*O viver é desafiador*).
+  - *Gerúndio:* pode atuar como advérbio circunstancial (*Chegou correndo*).
+  - *Particípio:* atua frequentemente como adjetivo qualificando substantivos (*"Provérbio crido"* = provérbio em que se crê / acreditado).
 - **Validação de Particípios Inusitados:**
- - **PODIDO:** É o particípio regular legítimo do verbo *PODER* (*Poder = Beber* $\rightarrow$ *bebido* $\rightarrow$ *podido*). Exemplo em concurso: *"Os intelectuais não teriam podido exercer..."*.
- - **CRIDO:** É o particípio regular legítimo do verbo *CRER* (*Crer = Beber* $\rightarrow$ *bebido* $\rightarrow$ *crido*). Exemplo em concurso: *"Se ele tivesse crido..."*.
-
----
+  - **PODIDO:** É o particípio regular legítimo do verbo *PODER* (*Poder = Beber* $\rightarrow$ *bebido* $\rightarrow$ *podido*). Exemplo em concurso: *"Os intelectuais não teriam podido exercer..."*.
+  - **CRIDO:** É o particípio regular legítimo do verbo *CRER* (*Crer = Beber* $\rightarrow$ *bebido* $\rightarrow$ *crido*). Exemplo em concurso: *"Se ele tivesse crido..."*.
 
 ---
 
@@ -279,22 +275,20 @@ As formas nominais do verbo (Infinitivo, Gerúndio e Particípio) recebem essa d
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## O Método dos 4 Passos para Verbos Falsos Amigos
+### O Método dos 4 Passos para Verbos Falsos Amigos
 
 - **Passo 1 — Identificar o Infinitivo:** Isole o verbo solicitado na questão (*prover* ou *requerer*).
 - **Passo 2 — Determinar o Verbo Líder Conforme o Tempo:**
- - Se for *PROVER*: tempo do Presente $\rightarrow$ líder **VER**; demais tempos (Pretérito/Futuro) $\rightarrow$ líder **BEBER**.
- - Se for *REQUERER*: 1ª p. Pres. Ind. ou Pres. Subj. $\rightarrow$ aplica a ditongação **EI**; todos os demais tempos $\rightarrow$ líder **BEBER**.
+  - Se for *PROVER*: tempo do Presente $\rightarrow$ líder **VER**; demais tempos (Pretérito/Futuro) $\rightarrow$ líder **BEBER**.
+  - Se for *REQUERER*: 1ª p. Pres. Ind. ou Pres. Subj. $\rightarrow$ aplica a ditongação **EI**; todos os demais tempos $\rightarrow$ líder **BEBER**.
 - **Passo 3 — Acomodar o Verbo Líder com Gatilhos:** Encaixe a forma do líder na frase usando advérbios temporais (*Antigamente* p/ imperfeito; *Ontem* p/ perfeito; *Que* p/ pres. subj.; *Se/Quando* p/ fut. subj.).
 - **Passo 4 — Substituição Direta:** Aplique a terminação do líder ao radical do verbo alvo.
 
 ---
 
-## Procedimento Universal de Derivação Temporal
+### Procedimento Universal de Derivação Temporal
 
 - **Derivação 1 (Acesso ao Presente do Subjuntivo):**
  1. Conjugue a 1ª pessoa do singular (`EU`) do Presente do Indicativo (*caibo*, *creio*, *adiro*).
@@ -305,13 +299,13 @@ As formas nominais do verbo (Infinitivo, Gerúndio e Particípio) recebem essa d
  1. Conjugue a 3ª pessoa do plural (`ELES`) do Pretérito Perfeito do Indicativo (*couberam*, *creram*, *houveram*, *aprouveram*).
  2. Remova estritamente a terminação `-ram`, obtendo o tema matriz (*coube-*, *cre-*, *houve-*, *aprouve-*).
  3. Forme os três tempos derivados adicionando os sufixos característicos:
- - Adicione `-ra` $\rightarrow$ Pretérito Mais-Que-Perfeito do Indicativo (*coubera*, *houvera*).
- - Adicione `-sse` $\rightarrow$ Pretérito Imperfeito do Subjuntivo (*coubesse*, *houvesse*).
- - Adicione `-r` $\rightarrow$ Futuro do Subjuntivo (*couber*, *houver*).
+  - Adicione `-ra` $\rightarrow$ Pretérito Mais-Que-Perfeito do Indicativo (*coubera*, *houvera*).
+  - Adicione `-sse` $\rightarrow$ Pretérito Imperfeito do Subjuntivo (*coubesse*, *houvesse*).
+  - Adicione `-r` $\rightarrow$ Futuro do Subjuntivo (*couber*, *houver*).
 
 ---
 
-## Técnica da "Colinha Temporal" e Infinitivo Anotado (FGV)
+### Técnica da "Colinha Temporal" e Infinitivo Anotado (FGV)
 
 - **Passo 1 — Mapear o Modelo:** Identifique pessoa e tempos da frase-guia (ex.: *fui [ontem] / sou [hoje] / serei [amanhã]* $\rightarrow$ 1ª p. sing. EU).
 - **Passo 2 — Montar o Cabeçalho Temporal:** Escreva no rascunho: `[EU] -> ONTEM (Pret. Perf.) | HOJE (Pres. Ind.) | AMANHÃ (Fut. Pres.)`.
@@ -320,13 +314,11 @@ As formas nominais do verbo (Infinitivo, Gerúndio e Particípio) recebem essa d
 
 ---
 
-## Formação do Infinitivo Pessoal
+### Formação do Infinitivo Pessoal
 
 1. Anteponha a preposição **"para"** aos pronomes retos (*para eu, para tu, para ele, para nós, para vós, para eles*).
 2. Tome o infinitivo impessoal do verbo (*ir, aprazer, aderir*).
 3. Aplique as desinências número-pessoais: $\emptyset$ (1ª/3ª sing.), `-es` (2ª sing.), `-mos` (1ª pl.), `-des` (2ª pl.), `-em` (3ª pl.) $\rightarrow$ *para eu ir, para tu ires, para nós irmos, para vós irdes, para eles irem*.
-
----
 
 ---
 
@@ -342,7 +334,7 @@ As formas nominais do verbo (Infinitivo, Gerúndio e Particípio) recebem essa d
 | **Imperfeito Subjuntivo** | *Se ele provesse* | *Se ele proviesse* |
 | **Futuro Subjuntivo** | *Quando ele prover* | *Quando ele provier* |
 
-### 2. REQUERER vs. QUERER
+#### 2. REQUERER vs. QUERER
 
 | Critério Decisivo | Verbo REQUERER | Verbo QUERER |
 |:------------------------------ |:---------------------------------------------------------------- |:-------------------------------------- |
@@ -352,7 +344,7 @@ As formas nominais do verbo (Infinitivo, Gerúndio e Particípio) recebem essa d
 | **Futuro Subjuntivo** | *Quando ele requerer* | *Quando ele quiser* |
 | **Formas Inexistentes** | *"requiz", "requizeram", "requisesse"* (ERRADAS) | *quis, quiseram, quisesse* (CORRETAS) |
 
-### 3. IR (Indicativo) vs. IR (Subjuntivo)
+#### 3. IR (Indicativo) vs. IR (Subjuntivo)
 
 | Pessoa Gramatical | Presente do Indicativo (Gatilho: "Hoje") | Presente do Subjuntivo (Gatilho: "Que") | Ponto Crítico em Provas |
 |:------------------------ |:--------------------------------------- |:-------------------------------------- |:-------------------------------------------------------------------- |
@@ -360,7 +352,7 @@ As formas nominais do verbo (Infinitivo, Gerúndio e Particípio) recebem essa d
 | **1ª p. plural** | Nós**vamos** | Que nós**vamos** | **FORMAS IDÊNTICAS** (Atenção ao contexto!) |
 | **2ª p. plural** | Vós**ides** | Que vós**vades** | **DISTINÇÃO MÁXIMA** (*ides* no Ind. / *vades* no Subj.) |
 
-### 4. VER vs. VIR no Futuro do Presente (1ª p. sing.)
+#### 4. VER vs. VIR no Futuro do Presente (1ª p. sing.)
 
 | Verbo no Infinitivo | Forma no Futuro do Presente | Exemplo de Aplicação |
 |:------------------ |:-------------------------- |:----------------------------------------------- |
@@ -369,112 +361,147 @@ As formas nominais do verbo (Infinitivo, Gerúndio e Particípio) recebem essa d
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Exercício de Fixação 01: Prover no Imperfeito
+### Exercício de Fixação 01: Prover no Imperfeito
 
 - **Enunciado:** *Os pais ________ as necessidades dos filhos. (PROVER - pretérito imperfeito do indicativo)*
 - **Resolução:** Como não é presente, o líder é **BEBER** (*Antigamente eles bebiam* $\rightarrow$ *Os pais **proviam***).
 - **Resposta:** **proviam** (`021` - ).
 
-## Exercício de Fixação 02: Prover no Presente
+### Exercício de Fixação 02: Prover no Presente
 
 - **Enunciado:** *O policiamento ________ a segurança da população. (PROVER - presente do indicativo)*
 - **Resolução:** Tempo do presente $\rightarrow$ líder **VER** (*O policiamento vê* $\rightarrow$ *O policiamento **provê***).
 - **Resposta:** **provê** (`021` - ).
 
-## Exercício de Fixação 03: Prover no Presente do Subjuntivo
+### Exercício de Fixação 03: Prover no Presente do Subjuntivo
 
 - **Enunciado:** *O juiz deliberou que eu ________ assistência às vítimas. (PROVER - presente do subjuntivo)*
 - **Resolução:** Tempo do presente $\rightarrow$ líder **VER** (*Que eu veja* $\rightarrow$ *Que eu **proveja***).
 - **Resposta:** **proveja** (`021` - ).
 
-## Exercício de Fixação 04: Requerer no Presente do Indicativo
+### Exercício de Fixação 04: Requerer no Presente do Indicativo
 
 - **Enunciado:** *Um filho ________ atenção integral. (REQUERER - presente do indicativo)*
 - **Resolução:** 3ª pessoa do singular não recebe a ditongação *EI* (que é exclusiva da 1ª p.). Forma regular: *requer*.
 - **Resposta:** **requer** (`021` - ).
 
-## Exercício de Fixação 05: Requerer no Futuro do Subjuntivo
+### Exercício de Fixação 05: Requerer no Futuro do Subjuntivo
 
 - **Enunciado:** *Os candidatos só poderão se inscrever no concurso se o ________. (REQUERER - futuro do subjuntivo)*
 - **Resolução:** Fora do presente $\rightarrow$ líder **BEBER** (*Se eles beberem* $\rightarrow$ *Se eles **requererem***).
 - **Resposta:** **requererem** (`021` - ).
 
-## Exercício de Fixação 06: Requerer no Presente do Subjuntivo
+### Exercício de Fixação 06: Requerer no Presente do Subjuntivo
 
 - **Enunciado:** *Espero que ele ________ residência no exterior. (REQUERER - presente do subjuntivo)*
 - **Resolução:** Presente do Subjuntivo exige obrigatoriamente o ditongo **EI** em todas as pessoas $\rightarrow$ *requeira*.
 - **Resposta:** **requeira** (`021` - ).
 
-## Questão 01 (VUNESP - Câmara de Guaratinguetá)
+### Questão 01 (VUNESP - Câmara de Guaratinguetá)
 
-- **Enunciado:** *Assinale a alternativa que dá sequência ao enunciado, expressando ideia de possibilidade:**É provável que aprender habilidades novas...**A) requeria / pôde | B) requeira / possa | C) requeresse / pôde | D) requereu / podia | E) requereu / pode*
+- **Enunciado:** *Assinale a alternativa que dá sequência ao enunciado, expressando ideia de possibilidade:**É provável que aprender habilidades novas...**
+A) requeria / pôde |
+B) requeira / possa |
+C) requeresse / pôde |
+D) requereu / podia |
+E) requereu / pode*
 - **Resolução:** A expressão "É provável que..." exige Presente do Subjuntivo. *Requerer* com ditongo *EI* $\rightarrow$ *requeira*; *Poder* no Pres. Subj. $\rightarrow$ *possa*.
 - **Gabarito:** **B** (`021` - ).
 
-## Questão 02 (AOCP - TCE-PA)
+### Questão 02 (AOCP - TCE-PA)
 
-- **Enunciado:** *A forma verbal requerer, se conjugada no pretérito mais que perfeito, apresentará a seguinte forma: A) requerera | B) requisera | C) requereu | D) requis | E) requeriu.*
+- **Enunciado:** *A forma verbal requerer, se conjugada no pretérito mais que perfeito, apresentará a seguinte forma:
+A) requerera |
+B) requisera |
+C) requereu |
+D) requis |
+E) requeriu.*
 - **Resolução:** Líder **BEBER** no Mais-Que-Perfeito (*bebera*) $\rightarrow$ *requerera*.
 - **Gabarito:** **A** (`021` - ).
 
-## Questão 03 (FCC - TCE-AM)
+### Questão 03 (FCC - TCE-AM)
 
-- **Enunciado:** *Quanto à flexão verbal, há uma irregularidade na frase:**A) Todos os benefícios que advirem de atos ilícitos... | B) Nem sempre convirá... | C)...caso nos propusessem... | D) Se eles requeressem... | E)...nunca lhes aprouve...*
+- **Enunciado:** *Quanto à flexão verbal, há uma irregularidade na frase:**
+A) Todos os benefícios que advirem de atos ilícitos... |
+B) Nem sempre convirá... |
+C)...caso nos propusessem... |
+D) Se eles requeressem... |
+E)...nunca lhes aprouve...*
 - **Resolução:** Na opção A, o verbo *ADVIR* deriva de *VIR* (Futuro Subj: *vierem*). A forma correta é **advierem** (e não "advirem"). Opção D está correta (*requeressem* = *bebessem*). Opção E está correta (*aprouve* = *houve*).
 - **Gabarito:** **A** (`021` - ).
 
-## Questão 10 (CESGRANRIO - Petrobrás)
+### Questão 10 (CESGRANRIO - Petrobrás)
 
-- **Enunciado:** *A(s) sentença(s) em que os verbos ter, caber e pôr estão flexionados de acordo com a norma-padrão é(são):**I - Os linguistas tiveram participação na polêmica.**II - Caberam todos no carro.**III - Quando o sol se pôr, vamos embora.**A) I | B) II | C) III | D) I e II | E) II e III*
+- **Enunciado:** *A(s) sentença(s) em que os verbos ter, caber e pôr estão flexionados de acordo com a norma-padrão é(são):**I - Os linguistas tiveram participação na polêmica.**II - Caberam todos no carro.**III - Quando o sol se pôr, vamos embora.**
+A) I |
+B) II |
+C) III |
+D) I e II |
+E) II e III*
 - **Resolução:**
- - I: *tiveram* (Pret. Perf. de ter) $\rightarrow$ Correto.
- - II: *Caberam* $\rightarrow$ Errado (O correto é **couberam**).
- - III: *se pôr* $\rightarrow$ Errado (Futuro do Subjuntivo exige **se puser**).
+  - I: *tiveram* (Pret. Perf. de ter) $\rightarrow$ Correto.
+  - II: *Caberam* $\rightarrow$ Errado (O correto é **couberam**).
+  - III: *se pôr* $\rightarrow$ Errado (Futuro do Subjuntivo exige **se puser**).
 - **Gabarito:** **A** (`024` - ).
 
-## Questão 11 (Prime Concursos - Pref. Santo Expedito)
+### Questão 11 (Prime Concursos - Pref. Santo Expedito)
 
-- **Enunciado:** *Assinale a alternativa em que o verbo Crer está conjugado adequadamente no pretérito perfeito do indicativo: A) Eu cri | B) Eu creei | C) Eu creu | D) Eu credo.*
+- **Enunciado:** *Assinale a alternativa em que o verbo Crer está conjugado adequadamente no pretérito perfeito do indicativo:
+A) Eu cri |
+B) Eu creei |
+C) Eu creu |
+D) Eu credo.*
 - **Resolução:** A 1ª pessoa do singular do Pretérito Perfeito de *CRER* é **Eu cri** (*creu* é 3ª p.; *crido* é particípio).
 - **Gabarito:** **A** (`024` - ).
 
-## Questão 12 (VUNESP - Pref. Arujá)
+### Questão 12 (VUNESP - Pref. Arujá)
 
-- **Enunciado:** *Ao substituir-se a forma verbal destacada na frase "Tudo o que não **puder** contar como faz, não faça!" pela forma do verbo **ir** flexionada no modo e no tempo correspondentes, tem-se: A) vai | B) for | C) irá | D) vá | E) fosse.*
+- **Enunciado:** *Ao substituir-se a forma verbal destacada na frase "Tudo o que não **puder** contar como faz, não faça!" pela forma do verbo **ir** flexionada no modo e no tempo correspondentes, tem-se:
+A) vai |
+B) for |
+C) irá |
+D) vá |
+E) fosse.*
 - **Resolução:** *puder* está no Futuro do Subjuntivo de *poder*. O verbo *ir* no Futuro do Subjuntivo (3ª p. sing.) é **for** (*quando ele for*).
 - **Gabarito:** **B** (`024` - ).
 
-## Questão 13 (VUNESP - Pref. Arujá)
+### Questão 13 (VUNESP - Pref. Arujá)
 
-- **Enunciado:** *Reescrita correta segundo a norma culta:**As pessoas sabem que pratico futebol... / O futebol tem mais importância que as artes. /... algo que me dá prazer.**A) adiro o futebol / sobrepõem-se às artes / me apraz**B) adero ao futebol / sobrepõe-se as artes / apraza-me**C) adiro ao futebol / sobrepõe-se as artes / me apraz**D) vou aderir ao futebol / sobrepõe-se as artes / me aprazerá**E) adiro ao futebol / sobrepõe-se às artes / me apraz*
+- **Enunciado:** *Reescrita correta segundo a norma culta:**As pessoas sabem que pratico futebol... / O futebol tem mais importância que as artes. /... algo que me dá prazer.**
+A) adiro o futebol / sobrepõem-se às artes / me apraz**
+B) adero ao futebol / sobrepõe-se as artes / apraza-me**
+C) adiro ao futebol / sobrepõe-se as artes / me apraz**
+D) vou aderir ao futebol / sobrepõe-se as artes / me aprazerá**
+E) adiro ao futebol / sobrepõe-se às artes / me apraz*
 - **Resolução:**
  1. *pratico* $\rightarrow$ *aderir* (1ª p. Pres. Ind: *adiro*) + regência da prep. *a* $\rightarrow$ **adiro ao futebol**.
  2. *sobrepor-se* no singular (*sobrepõe-se*) + prep. *a* + art. *as artes* $\rightarrow$ **sobrepõe-se às artes** (com crase obrigatória).
  3. *me dá prazer* $\rightarrow$ *aprazer* no Pres. Ind. $\rightarrow$ **me apraz**.
 - **Gabarito:** **E** (`024` - ).
 
-## Questão 14 (FGV - Pref. Angra dos Reis)
+### Questão 14 (FGV - Pref. Angra dos Reis)
 
-- **Enunciado:** *"Sou tudo o que fui, o que sou, o que serei." Assinale a opção em que todas as formas correspondem, respectivamente, às sublinhadas:**A) teve / tenho / terei (TER)**B) fiz / faço / fazerei (FAZER)**C) vi / vejo / virei (VER)**D) houve / hei / haverei (HAVER)**E) venho / vim / verei (VIR)*
+- **Enunciado:** *"Sou tudo o que fui, o que sou, o que serei." Assinale a opção em que todas as formas correspondem, respectivamente, às sublinhadas:**
+A) teve / tenho / terei (TER)**
+B) fiz / faço / fazerei (FAZER)**
+C) vi / vejo / virei (VER)**
+D) houve / hei / haverei (HAVER)**
+E) venho / vim / verei (VIR)*
 - **Resolução:** Modelo: 1ª p. sing. (EU) $\rightarrow$ *fui* (Pret. Perf. / Ontem), *sou* (Pres. Ind. / Hoje), *serei* (Fut. Pres. / Amanhã).
- - A) Erro em *teve* (3ª p.; correto: *tive*).
- - B) Erro em *fazerei* (forma inexistente; correto: *farei*).
- - C) Erro em *virei* (é do verbo *vir*; o futuro de *ver* é *verei*).
- - D) **CORRETA:** *Ontem eu houve* (Pret. Perf.), *Hoje eu hei* (Pres. Ind.), *Amanhã eu haverei* (Fut. Pres.).
+  - A) Erro em *teve* (3ª p.; correto: *tive*).
+  - B) Erro em *fazerei* (forma inexistente; correto: *farei*).
+  - C) Erro em *virei* (é do verbo *vir*; o futuro de *ver* é *verei*).
+  - D) **CORRETA:** *Ontem eu houve* (Pret. Perf.), *Hoje eu hei* (Pres. Ind.), *Amanhã eu haverei* (Fut. Pres.).
 
 - **Gabarito:** **D** (`024` - ).
 
 ---
 
----
-
 ## Memorização inteligente
 
-## As "Rodinhas de Bicicleta" para Teste de Modos Verbais
+### As "Rodinhas de Bicicleta" para Teste de Modos Verbais
 
 Gatilhos mentais imediatos para testar e acomodar o verbo líder sem titubear durante a resolução da prova:
 
@@ -484,7 +511,7 @@ Gatilhos mentais imediatos para testar e acomodar o verbo líder sem titubear du
 - **Pretérito Imperfeito do Subjuntivo:** Adicione a conjunção *"Se..."* (*Se ele bebesse $\rightarrow$ provesse / requeresse*).
 - **Futuro do Subjuntivo:** Adicione a conjunção *"Quando..."* ou *"Se..."* (*Quando eles beberem $\rightarrow$ requererem; Quando eu for $\rightarrow$ couber*).
 
-## Macete "Se Perder a Fé, Use BEBER" para o Verbo CRER
+### Macete "Se Perder a Fé, Use BEBER" para o Verbo CRER
 
 Diante de qualquer estranhamento com formas de *CRER* (como *cri*, *cria*, *cresse*, *crido*), substitua instantaneamente pelo verbo regular de 2ª conjugação **BEBER**:
 
@@ -493,101 +520,95 @@ Diante de qualquer estranhamento com formas de *CRER* (como *cri*, *cria*, *cres
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## O Risco de Confundir Falsos Amigos com Derivados Autênticos
+### O Risco de Confundir Falsos Amigos com Derivados Autênticos
 
 - **Problema:** Tratar verbos como *prover* e *requerer* como se fossem derivados diretos de *ver* e *querer*.
 - **Como Evitar:** Memorize que *antever, prever e rever* são "bons amigos" de *ver*, mas *prover* é falso amigo fora do presente. Da mesma forma, *requerer* NUNCA segue *querer*.
 
-## As Formas Fantasmas "Proviu" e "Provisse"
+### As Formas Fantasmas "Proviu" e "Provisse"
 
 - **Erro:** Dizer que no passado o verbo *prover* faz "proviu" ou "provisse".
 - **Correção:** No passado *prover* segue *beber*: **proveu**, **provesse**, **proveram**.
 
-## As Formas Inexistentes "Requiz" e "Requisesse"
+### As Formas Inexistentes "Requiz" e "Requisesse"
 
 - **Erro:** Conjugar *requerer* com base no pretérito perfeito de *querer* (*quis*).
 - **Correção:** As formas "requiz", "requizeram", "requisesse", "requiser" NÃO existem na língua portuguesa. Use o radical regular de *beber*: **requeri**, **requereu**, **requereram**, **requeresse**.
 
-## A Armadilha do Pretérito de Caber ("Caberam" vs. "Couberam")
+### A Armadilha do Pretérito de Caber ("Caberam" vs. "Couberam")
 
 - **Erro:** Aplicar terminação regular ao verbo *caber* no passado (*"caberam"*).
 - **Correção:** O radical sofre alteração obrigatória para `coub-`: **coube / couberam**.
 
-## Rejeição Intuitiva do Particípio CRIDO (Pegadinha FGV)
+### Rejeição Intuitiva do Particípio CRIDO (Pegadinha FGV)
 
 - **Erro:** O candidato achar que o particípio de *crer* é "creito", "credo" ou que a forma *crido* é incorreta.
 - **Correção:** O particípio de *crer* é estritamente **crido** (*"Provérbio crido"*).
 
-## Construção Agramatical com 1ª Pessoa de Aprazer
+### Construção Agramatical com 1ª Pessoa de Aprazer
 
 - **Erro:** Aceitar alternativas de provas com *"eu aprazo"* ou *"eu me aprazo"*.
 - **Correção:** *APRAZER* é defectivo e só possui 3ª pessoa (*apraz / aprazem; aprouve / aprouveram*).
 
-## Variantes Abundantes de Haver no Presente do Plural
+### Variantes Abundantes de Haver no Presente do Plural
 
 - **Ponto de Atenção:** As formas arcaicas/abundantes *hemos* (para *havemos*) e *heis* (para *haveis*) são gramaticalmente válidas perante a norma culta.
 
-## Confusão de 2ª Pessoa do Plural no Verbo IR (*Ides* vs. *Vades*)
+### Confusão de 2ª Pessoa do Plural no Verbo IR (*Ides* vs. *Vades*)
 
 - **Erro:** Inverter as formas de 2ª pessoa do plural entre o Indicativo e o Subjuntivo.
 - **Correção:** Modo Indicativo = **vós ides**; Modo Subjuntivo = **que vós vades**.
 
-## Confusão FGV no Futuro do Presente de Ver (*Verei*) e Vir (*Virei*)
+### Confusão FGV no Futuro do Presente de Ver (*Verei*) e Vir (*Virei*)
 
 - **Erro:** Marcar *virei* achando que pertence ao verbo *ver*.
 - **Correção:** *Eu verei* (verbo *ver*) vs. *Eu virei* (verbo *vir*).
 
 ---
 
----
-
 ## Glossário operacional
 
-## Falsos Amigos (Verbos)
+### Falsos Amigos (Verbos)
 
 Verbos cuja grafia ou sonoridade lembra um verbo simples comum, mas cuja flexão diverge dele na maioria dos tempos verbais (ex.: *prover* $\neq$ *ver*; *requerer* $\neq$ *querer*).
 *Relações:* .
 
-## Verbo Líder (Paradigma)
+### Verbo Líder (Paradigma)
 
 Verbo de conjugação regular ou amplamente dominada utilizado como matriz de substituição direta para guiar a flexão de verbos irregulares ou raros (ex.: *BEBER* para *requerer*; *HAVER* para *aprazer*; *FERIR* para *aderir*).
 *Relações:* .
 
-## Tempos Primitivos
+### Tempos Primitivos
 
 Tempos verbais que servem de matriz morfológica para a geração de outros tempos (1ª p. sing. do Presente do Indicativo e 3ª p. pl. do Pretérito Perfeito do Indicativo).
 *Relações:* .
 
-## Tempos Derivados
+### Tempos Derivados
 
 Tempos verbais estruturados a partir da extração de desinências dos tempos primitivos (Presente do Subjuntivo; Pretérito Mais-Que-Perfeito; Pretérito Imperfeito do Subjuntivo; Futuro do Subjuntivo).
 *Relações:* .
 
-## Verbo Anômalo
+### Verbo Anômalo
 
 Verbo que apresenta alterações profundas e heterogêneas no próprio radical ao longo da flexão, alterando sua estrutura fônica básica (ex.: *HAVER*, *IR*, *SER*).
 *Relações:* .
 
-## Verbo Defectivo
+### Verbo Defectivo
 
 Verbo que não possui conjugação completa em todas as pessoas, tempos ou modos gramaticais (ex.: *APRAZER*, restrito às 3ªs pessoas).
 *Relações:* .
 
-## Verbo Abundante
+### Verbo Abundante
 
 Verbo que admite duas ou mais formas legítimas equivalentes para a mesma flexão (ex.: *havemos / hemos*; *haveis / heis*).
 *Relações:* .
 
-## Formas Nominais
+### Formas Nominais
 
 Formas do verbo (Infinitivo, Gerúndio e Particípio) que, desprovidas de flexão de modo-tempo, desempenham papéis sintático-semânticos de nomes (substantivo, adjetivo ou advérbio).
 *Relações:* .
-
----
 
 ---
 
@@ -602,8 +623,6 @@ Ao concluir este grupo temático, o estudante deve compreender que a irregularid
 
 ---
 
----
-
 ## Conexão com o método SuVeCA
 
 **SuVeCA = Sujeito + Verbo + Complemento + Adjunto + Predicativo.**
@@ -615,8 +634,8 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 ### Como aplicar neste tema
 
 1. Localizar a forma verbal ou a lacuna a ser preenchida na oração para identificar o verbo base e seu papel sintático como núcleo do predicado.
-2. 1. Superação de falsas analogias cotidianas através do estudo dos Falsos Amigos (PROVER vs. PROVIR; REQUERER vs. QUERER) e aplicação do Método dos 4 Passos.
-3. 2. Domínio do Paradigma de Formação dos Tempos Verbais (Derivação 1 do Presente do Indicativo para o Subjuntivo; Derivação 2 do Pretérito Perfeito para Mais-Que-Perfeito, Imperfeito e Futuro do Subjuntivo).
+2. Superação de falsas analogias cotidianas através do estudo dos Falsos Amigos (PROVER vs. PROVIR; REQUERER vs. QUERER) e aplicação do Método dos 4 Passos.
+3. Domínio do Paradigma de Formação dos Tempos Verbais (Derivação 1 do Presente do Indicativo para o Subjuntivo; Derivação 2 do Pretérito Perfeito para Mais-Que-Perfeito, Imperfeito e Futuro do Subjuntivo).
 
 ### Testes decisivos
 

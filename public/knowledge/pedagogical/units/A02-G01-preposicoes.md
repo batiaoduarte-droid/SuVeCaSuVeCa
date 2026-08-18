@@ -40,7 +40,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - **Noções de Sintaxe Oracional:** Distinção elementar entre termos integrantes (Objeto Indireto, Complemento Nominal) e termos acessórios (Adjunto Adverbial, Adjunto Adnominal, Agente da Passiva).
 - **Período Composto:** Compreensão introdutória da diferença entre orações reduzidas (infinitivo) e orações desenvolvidas (verbo conjugado).
 
-### Mapa de Relações Conceituais
+#### Mapa de Relações Conceituais
 
 ```text
 PREPOSIÇÃO (Palavra invariável conectiva)
@@ -82,17 +82,15 @@ PREPOSIÇÃO (Palavra invariável conectiva)
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Conceito de Preposição como Conector e Paralelismo com as Conjunções
+### Conceito de Preposição como Conector e Paralelismo com as Conjunções
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A preposição é uma classe gramatical de palavras invariáveis cuja função primordial é atuar como **conectivo** ou **conector**, estabelecendo vínculo sintático e semântico entre dois termos no interior de uma mesma oração ou entre duas orações em um período composto.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 Sintaticamente, o conector une um elemento determinado (termo principal) a um elemento determinante (termo dependente):
 
@@ -104,7 +102,7 @@ A faculdade de ligar tanto palavras isoladas quanto orações inteiras **não é
 - **Conjunção ligando termos:** *"João **e** José"* (conjunção aditiva ligando dois núcleos nominais).
 - **Conjunção ligando orações:** *"Acordou **e** saiu"* (conjunção aditiva ligando duas orações coordenadas).
 
-### Exemplos e Contraexemplos
+#### Exemplos e Contraexemplos
 
 - **Preposição ligando termos:** `Mesa de madeira`, `Café com leite`.
 - **Preposição ligando orações:** `Estudou para passar`, `Saiu sem falar nada`.
@@ -116,13 +114,13 @@ A faculdade de ligar tanto palavras isoladas quanto orações inteiras **não é
 
 ---
 
-## Preposições Essenciais e Distinção Morfológica em Concursos
+### Preposições Essenciais e Distinção Morfológica em Concursos
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 As **preposições essenciais** constituem o rol fechado de 18 vocábulos da Língua Portuguesa que desempenham nativa e precipuamente a função de preposição. A memorização estrita dessa lista constitui um mecanismo operacional indispensável para não incorrer em erros de classificação morfológica nas bancas examinadoras.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 O rol normativo das 18 preposições essenciais é composto por:
 
@@ -133,27 +131,27 @@ $$
 A memorização da lista resolve dois conflitos morfológicos frequentes em provas:
 
 1. **Preposição isolada vs. Advérbio / Locução Adverbial (Caso Cesgranrio):**
- - Na frase *"Sairei após o jantar"*, a banca frequentemente sublinha apenas o vocábulo `após` e induz o candidato a assinalar "advérbio de tempo" em virtude da carga semântica temporal.
- - *Critério decifrador:* Se a palavra sublinhada constar na lista das essenciais, sua classe morfológica isolada é **preposição** (com valor semântico de tempo). Para ser classificada como **locução adverbial de tempo**, a banca deve obrigatoriamente sublinhar o conjunto sintático inteiro (`após o jantar`).
+  - Na frase *"Sairei após o jantar"*, a banca frequentemente sublinha apenas o vocábulo `após` e induz o candidato a assinalar "advérbio de tempo" em virtude da carga semântica temporal.
+  - *Critério decifrador:* Se a palavra sublinhada constar na lista das essenciais, sua classe morfológica isolada é **preposição** (com valor semântico de tempo). Para ser classificada como **locução adverbial de tempo**, a banca deve obrigatoriamente sublinhar o conjunto sintático inteiro (`após o jantar`).
 2. **Preposição vs. Conjunção Coordenativa (Caso FGV):**
- - Na comparação entre *"Comerei pipoca **e** guaraná"* e *"Comerei pipoca **com** guaraná"*:
- - O vocábulo `e` figura na lista das **conjunções** (conjunção coordenativa aditiva).
- - O vocábulo `com` figura na lista das **preposições essenciais** (preposição que introduz adjunto adnominal com valor semântico de companhia).
+  - Na comparação entre *"Comerei pipoca **e** guaraná"* e *"Comerei pipoca **com** guaraná"*:
+  - O vocábulo `e` figura na lista das **conjunções** (conjunção coordenativa aditiva).
+  - O vocábulo `com` figura na lista das **preposições essenciais** (preposição que introduz adjunto adnominal com valor semântico de companhia).
 
-### Critérios de Reconhecimento
+#### Critérios de Reconhecimento
 
 - Sublinhado restrito ao conector essencial $\rightarrow$ Classificação morfológica: **Preposição**.
 - Sublinhado abrangendo conector + substantivo circunstancial $\rightarrow$ Classificação sintática/locucional: **Locução Adverbial**.
 
 ---
 
-## Vedação de Crase Após Preposições Essenciais e Exceção do "Até"
+### Vedação de Crase Após Preposições Essenciais e Exceção do "Até"
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 É gramaticalmente vedado o emprego do acento grave indicativo de crase imediatamente após qualquer preposição essencial. A única preposição essencial que configura exceção à regra geral, admitindo crase facultativa, é a preposição **"até"**.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 O fenômeno da crase na norma culta requer a fusão de duas preposições idênticas ($a + a = \grave{a}$), em que a primeira é a preposição $a$ regida por um termo regente anterior e a segunda é o artigo definido feminino $a(s)$ ou pronome demonstrativo/relativo iniciado por $a$.
 
@@ -164,7 +162,7 @@ Se uma preposição essencial (como *desde, ante, para, contra, sob, perante*) j
 - *Construção Incorreta:* Estou no escritório desde às 9 horas.
 - *Construção Correta:* Estou no escritório **desde as** 9 horas. (*desde* = preposição; *as* = artigo definido plural).
 
-### A Exceção da Preposição "Até"
+#### A Exceção da Preposição "Até"
 
 A preposição *até* é o único caso do rol essencial que admite facultativamente a presença da preposição *a* após si. Assim, diante de substantivo feminino acompanhado de artigo, a ocorrência de crase é facultativa:
 
@@ -175,13 +173,13 @@ A preposição *até* é o único caso do rol essencial que admite facultativame
 
 ---
 
-## Locuções Prepositivas vs. Locuções Conjuntivas e Regra de Ouro da Reescrita
+### Locuções Prepositivas vs. Locuções Conjuntivas e Regra de Ouro da Reescrita
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Uma locução é um agrupamento de duas ou mais palavras que desempenha a função de uma classe gramatical única. A **locução prepositiva** termina obrigatoriamente em preposição e rege oração reduzida no infinitivo. A **locução conjuntiva** termina pelo vocábulo conetivo *"que"* e rege oração desenvolvida com verbo conjugado.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 A correlação morfológica entre as locuções acarreta repercussões sintáticas automáticas no predicado subordinado:
 
@@ -189,7 +187,7 @@ A correlação morfológica entre as locuções acarreta repercussões sintátic
 | **Locução Prepositiva** | Preposição essencial (*de, a...*) | **Verbo no Infinitivo** | Oração Reduzida de Infinitivo | *Chegou cedo **a fim de conversar** com a irmã.* |
 | **Locução Conjuntiva** | Conjunção integrante*"que"* | **Verbo Conjugado** (Subjuntivo) | Oração Desenvolvida | *Chegou cedo **a fim de que conversasse** com a irmã.* |
 
-### Regra de Ouro da Reescrita em Concursos
+#### Regra de Ouro da Reescrita em Concursos
 
 A substituição de uma locução prepositiva por uma locução conjuntiva equivalente (ou de uma preposição isolada por uma locução conjuntiva de mesmo sentido):
 
@@ -206,16 +204,16 @@ Se a reescrita mantiver a locução conjuntiva preservando o verbo no infinitivo
 
 ---
 
-## Dicotomia Estrutural: Preposição Relacional (Gramatical) vs. Preposição Nocional (Semântica)
+### Dicotomia Estrutural: Preposição Relacional (Gramatical) vs. Preposição Nocional (Semântica)
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A preposição desempenha dois papéis estruturais e funcionais mutuamente excludentes na oração:
 
 1. **Valor Relacional (Gramatical / Obrigatório):** Presença imposta pelas regras de regência verbal ou nominal; atua como mero ligame sintático destituído de valor semântico próprio.
 2. **Valor Nocional (Semântico / Não Obrigatório):** Presença não exigida pela regência; introduz circunstâncias conceituais, sentidos e noções interpretativas na oração.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 ```text
  DICOTOMIA DA PREPOSIÇÃO
@@ -231,7 +229,7 @@ A preposição desempenha dois papéis estruturais e funcionais mutuamente exclu
  - Agente da Passiva (agente)
 ```
 
-#### 1. Preposição Relacional (Gramatical)
+##### 1. Preposição Relacional (Gramatical)
 
 Aparece na frase estritamente para satisfazer a transitividade de um verbo transitivo indireto (VTI) ou a complementação de um substantivo/adjetivo/advérbio transitivo:
 
@@ -240,7 +238,7 @@ Aparece na frase estritamente para satisfazer a transitividade de um verbo trans
 - *Regência Nominal:* *"Tinha medo **de** escuro."* (O substantivo *medo* rege a preposição *de*; "de escuro" é Complemento Nominal).
 - *Propriedade Crítica:* Se a questão de concurso indagar qual é o valor semântico de *de* em *"precisava de apoio"*, a resposta é **nenhum**, pois seu papel é puramente gramatical/relacional.
 
-#### 2. Preposição Nocional (Semântica)
+##### 2. Preposição Nocional (Semântica)
 
 Ocorre quando o conector é inserido para atribuir um traço semântico contextual independente da exigência sintática de termos anteriores:
 
@@ -253,30 +251,30 @@ Ocorre quando o conector é inserido para atribuir um traço semântico contextu
 
 ---
 
-## Mapeamento Sintático das Preposições Nocionais
+### Mapeamento Sintático das Preposições Nocionais
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 As preposições dotadas de valor nocional correlacionam-se rigidamente na sintaxe a funções que não representam complementos oracionais obrigatórios, introduzindo termos com as funções sintáticas de **Adjunto Adverbial**, **Adjunto Adnominal** e **Agente da Passiva**.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 A abordagem didática esquematizou o mapeamento da relação entre valor semântico e função sintática:
 
 1. **Adjunto Adverbial (Preposição Nocional):**
- - *Frase:* *"Estuda **pela** [por + a] manhã."*
- - *Análise Sintática:* "pela manhã" exerce função de **Adjunto Adverbial de Tempo**.
- - *Análise Semântica:* A preposição *por* carrega a **noção de tempo**.
+  - *Frase:* *"Estuda **pela** [por + a] manhã."*
+  - *Análise Sintática:* "pela manhã" exerce função de **Adjunto Adverbial de Tempo**.
+  - *Análise Semântica:* A preposição *por* carrega a **noção de tempo**.
 2. **Adjunto Adnominal (Preposição Nocional):**
- - *Frase:* *"Comi pipoca **com** guaraná."*
- - *Análise Sintática:* "com guaraná" é **Adjunto Adnominal** (modificador caracterizador do substantivo "pipoca").
- - *Análise Semântica:* A preposição *com* veicula a **noção de companhia** (a pipoca acompanhada de guaraná).
+  - *Frase:* *"Comi pipoca **com** guaraná."*
+  - *Análise Sintática:* "com guaraná" é **Adjunto Adnominal** (modificador caracterizador do substantivo "pipoca").
+  - *Análise Semântica:* A preposição *com* veicula a **noção de companhia** (a pipoca acompanhada de guaraná).
 3. **Agente da Passiva (Preposição Nocional):**
- - *Frase:* *"Foi elogiado **pelo** [por + o] professor."*
- - *Análise Sintática:* "pelo professor" atua como **Agente da Passiva**.
- - *Análise Semântica:* A preposição *por* expressa a **noção de agente** (o executor da ação na voz passiva analítica).
+  - *Frase:* *"Foi elogiado **pelo** [por + o] professor."*
+  - *Análise Sintática:* "pelo professor" atua como **Agente da Passiva**.
+  - *Análise Semântica:* A preposição *por* expressa a **noção de agente** (o executor da ação na voz passiva analítica).
 
-### Síntese de Valência Sintática
+#### Síntese de Valência Sintática
 
 $$
 \begin{cases}
@@ -289,39 +287,39 @@ $$
 
 ---
 
-## Polissemia da Preposição "PARA"
+### Polissemia da Preposição "PARA"
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A preposição **"PARA"** é uma das mais cobradas em concursos públicos por possuir expressiva polissemia nocional, assumindo cinco valores semânticos principais a depender da natureza semântica do termo regido que a sucede.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 Os cinco valores semânticos fundamentais assumidos pela preposição "PARA" compreendem:
 
 1. **FINALIDADE:** Expressa objetivo, propósito, meta ou intuito. Equivale a *"a fim de"*, *"com o objetivo de"*.
- - *Exemplo:* *"Estudava **para** passar no concurso."*
+  - *Exemplo:* *"Estudava **para** passar no concurso."*
 2. **DIREÇÃO / LUGAR:** Indica orientação espacial, vetor de deslocamento ou ponto de destino físico.
- - *Exemplo:* *"Não olhe **para** cima."* / *"Saíram cedo **para** o trabalho."*
+  - *Exemplo:* *"Não olhe **para** cima."* / *"Saíram cedo **para** o trabalho."*
 3. **DESTINATÁRIO:** Indica o ser recipiente, o beneficiário ou recebedor de um objeto/ação.
- - *Exemplo:* *"Trouxe flores **para** a namorada."* / *"Enviarei um presente **para** minha amiga."*
+  - *Exemplo:* *"Trouxe flores **para** a namorada."* / *"Enviarei um presente **para** minha amiga."*
 4. **CONFORMIDADE:** Expressa concordância com uma opinião, ponto de vista ou consonância de pensamento. Equivale a *"conforme"*, *"segundo"*, *"de acordo com"*.
- - *Exemplo:* *"**Para** o político, a nova lei será boa."* / *"**Para** os colaboradores, as normas são sólidas."*
+  - *Exemplo:* *"**Para** o político, a nova lei será boa."* / *"**Para** os colaboradores, as normas são sólidas."*
 5. **TEMPO:** Indica limite temporal, prazo final ou momento determinado no tempo.
- - *Exemplo:* *"Deixamos a decisão **para** o final do ano."* / *"A reunião foi adiada **para** a próxima segunda."* / *"Prazo de adequação **para** só depois de 2025."*
+  - *Exemplo:* *"Deixamos a decisão **para** o final do ano."* / *"A reunião foi adiada **para** a próxima segunda."* / *"Prazo de adequação **para** só depois de 2025."*
 
 - **Possui dica:**
 - **Evidenciado visualmente por:**
 
 ---
 
-## Abordagem Semântica vs. Análise Sintática nas Bancas de Concurso
+### Abordagem Semântica vs. Análise Sintática nas Bancas de Concurso
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Ao formular itens que solicitam a "noção", o "valor semântico", o "sentido" ou a "circunstância" de uma preposição destacada, bancas como Cebraspe, Instituto AOCP, FGV e Cesgranrio exigem **interpretação semântico-contextual**, tornando ineficiente a tentativa do candidato de despender tempo com classificações sintáticas exaustivas.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 A abordagem didática orienta uma postura mental pragmática:
 
@@ -332,13 +330,13 @@ A abordagem didática orienta uma postura mental pragmática:
 
 ---
 
-## Paralelismo Sintático-Semântico em Estruturas Correlativas Aditivas
+### Paralelismo Sintático-Semântico em Estruturas Correlativas Aditivas
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Estruturas oracionais encadeadas por conectores correlativos aditivos (tais como *"não apenas..., mas também..., e sobretudo..."*) exigem **paralelismo sintático e semântico**. Consequentemente, múltiplos segmentos introduzidos pela preposição "para" sob coordenação aditiva compartilham compulsoriamente a mesma natureza semântica.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 Em períodos complexos com múltiplos conectores:
 
@@ -351,8 +349,6 @@ $$
 
 - **Aplica procedimento:**
 - **Evidenciado visualmente por:**
-
----
 
 ---
 
@@ -371,58 +367,56 @@ $$
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Procedimento de Validação Sintático-Semântica em Reescrita de Locuções
+### Procedimento de Validação Sintático-Semântica em Reescrita de Locuções
 
-### Finalidade
+#### Finalidade
 
 Validar a correção gramatical e a preservação semântica em questões que propõem substituir locuções prepositivas por locuções conjuntivas (ou vice-versa).
 
-### Passo a Passo Operacional
+#### Passo a Passo Operacional
 
 1. **Identificar o Conectivo Original:** Determine se a frase original emprega preposição isolada/locução prepositiva (*a fim de*, *apesar de*, *para*) ou locução conjuntiva (*a fim de que*, *apesar de que*, *para que*).
 2. **Verificar a Equivalência Semântica:** Certifique-se de que o conector substituto carrega a mesma noção circunstancial do original (ex.: finalidade com finalidade, concessão com concessão).
 3. **Inspecionar a Flexão Verbal (Passo Decisivo):**
- - Se a proposta de reescrita usar **locução prepositiva** (terminada em preposição): o verbo subordinado deve estar obrigatoriamente na forma nominal de **infinitivo** (oração reduzida).
- - Se a proposta de reescrita usar **locução conjuntiva** (terminada em *"que"*): o verbo subordinado deve estar obrigatoriamente **flexionado/conjugado no modo subjuntivo** (oração desenvolvida).
+  - Se a proposta de reescrita usar **locução prepositiva** (terminada em preposição): o verbo subordinado deve estar obrigatoriamente na forma nominal de **infinitivo** (oração reduzida).
+  - Se a proposta de reescrita usar **locução conjuntiva** (terminada em *"que"*): o verbo subordinado deve estar obrigatoriamente **flexionado/conjugado no modo subjuntivo** (oração desenvolvida).
 4. **Julgamento:** Se a correlação temporal e modal do verbo foi devidamente adaptada, considere a reescrita correta e com sentido preservado.
 
 ---
 
-## Algoritmo do "Termo Posterior Salva" para Identificação do Valor Nocional
+### Algoritmo do "Termo Posterior Salva" para Identificação do Valor Nocional
 
-### Finalidade
+#### Finalidade
 
 Determinar com exatidão a circunstância semântica veiculada por uma preposição nocional em questões de múltipla escolha ou certo/errado.
 
-### Passo a Passo Operacional
+#### Passo a Passo Operacional
 
 1. **Isolar os Termos Conectados:** Delimite o termo anterior regente e o termo posterior regido (ex.: `[porta] de [madeira]`, `[saíram cedo] para [o trabalho]`).
 2. **Descartar a Preposição Relacional:** Verifique se o termo não é objeto indireto exigido por VTI ou complemento nominal. Se não for exigido por regência, trata-se de valor nocional.
 3. **Analisar a Carga do Termo Posterior ("O que vem depois salva"):**
- - Termo posterior indica material constitutivo $\rightarrow$ **Matéria** (*mesa de vidro*).
- - Termo posterior indica possuidor $\rightarrow$ **Posse** (*casa da Maria*).
- - Termo posterior indica conteúdo preenchedor $\rightarrow$ **Conteúdo** (*lata de óleo*).
- - Termo posterior indica ponto de destino/espaço físico $\rightarrow$ **Direção / Lugar** (*olhe para cima*, *foi para casa*).
- - Termo posterior indica pessoa recebedora $\rightarrow$ **Destinatário** (*flores para a mãe*).
- - Termo posterior indica parecer/opinião $\rightarrow$ **Conformidade** (*para os cientistas...*).
- - Termo posterior indica marco temporal/prazo $\rightarrow$ **Tempo** (*para o mês que vem*).
- - Termo posterior indica ação/meta a atingir $\rightarrow$ **Finalidade** (*para conseguir vaga*).
- - Termo posterior indica companhia associada $\rightarrow$ **Companhia** (*pipoca com refrigerante*).
- - Termo posterior indica sujeito agente da passiva $\rightarrow$ **Agente** (*derrotado pelo rival*).
+  - Termo posterior indica material constitutivo $\rightarrow$ **Matéria** (*mesa de vidro*).
+  - Termo posterior indica possuidor $\rightarrow$ **Posse** (*casa da Maria*).
+  - Termo posterior indica conteúdo preenchedor $\rightarrow$ **Conteúdo** (*lata de óleo*).
+  - Termo posterior indica ponto de destino/espaço físico $\rightarrow$ **Direção / Lugar** (*olhe para cima*, *foi para casa*).
+  - Termo posterior indica pessoa recebedora $\rightarrow$ **Destinatário** (*flores para a mãe*).
+  - Termo posterior indica parecer/opinião $\rightarrow$ **Conformidade** (*para os cientistas...*).
+  - Termo posterior indica marco temporal/prazo $\rightarrow$ **Tempo** (*para o mês que vem*).
+  - Termo posterior indica ação/meta a atingir $\rightarrow$ **Finalidade** (*para conseguir vaga*).
+  - Termo posterior indica companhia associada $\rightarrow$ **Companhia** (*pipoca com refrigerante*).
+  - Termo posterior indica sujeito agente da passiva $\rightarrow$ **Agente** (*derrotado pelo rival*).
 
 ---
 
-## Teste Canônico de Substituição para Circunstância de Finalidade
+### Teste Canônico de Substituição para Circunstância de Finalidade
 
-### Finalidade
+#### Finalidade
 
 Validar com rapidez e segurança se a preposição "para" introduz circunstância de finalidade em itens do Cebraspe ou Instituto AOCP.
 
-### Passo a Passo Operacional
+#### Passo a Passo Operacional
 
 1. **Localizar a preposição "para"** e identificar a oração subordinada por ela introduzida.
 2. **Substituir mentalmente "para" por "a fim de" ou "com o objetivo de".**
@@ -430,20 +424,18 @@ Validar com rapidez e segurança se a preposição "para" introduz circunstânci
 
 ---
 
-## Teste de Paralelismo em Estruturas Correlativas com Múltiplas Preposições
+### Teste de Paralelismo em Estruturas Correlativas com Múltiplas Preposições
 
-### Finalidade
+#### Finalidade
 
 Julgar itens que afirmam que múltiplas ocorrências da preposição "para" em um período longo veiculam a mesma ideia de finalidade.
 
-### Passo a Passo Operacional
+#### Passo a Passo Operacional
 
 1. **Destacar as ocorrências de "para"** e identificar os conectores correlativos que as unem (*não apenas... mas também... e sobretudo...*).
 2. **Testar o valor de finalidade na primeira ocorrência** (*para sempre permitirem* = *a fim de sempre permitirem*).
 3. **Aplicar a propriedade de simetria do paralelismo aditivo:** Elementos sob adição correlativa possuem compulsoriamente a mesma natureza semântica.
 4. **Validar o item como Certo** sem necessidade de decomposição exaustiva das ocorrências intermediárias.
-
----
 
 ---
 
@@ -457,7 +449,7 @@ Julgar itens que afirmam que múltiplas ocorrências da preposição "para" em u
 | **Funções Sintáticas Típicas** | Objeto Indireto (OI) e Complemento Nominal (CN). | Adjunto Adverbial (AA), Adjunto Adnominal (ADN), Agente da Passiva. |
 | **Exemplo Típico** | *"Gosto **de** você"* / *"Tinha medo **de** chuva"*. | *"Casa **de** tijolo"* / *"Saiu **de** manhã"*. |
 
-### 8.2. Locução Prepositiva vs. Locução Conjuntiva
+#### 8.2. Locução Prepositiva vs. Locução Conjuntiva
 
 | Critério | Locução Prepositiva | Locução Conjuntiva |
 |:---------------------------------- |:--------------------------------------------------- |:-------------------------------------------------------------- |
@@ -466,7 +458,7 @@ Julgar itens que afirmam que múltiplas ocorrências da preposição "para" em u
 | **Estrutura Verbal Regida** | Verbo no**Infinitivo** (Oração Reduzida). | Verbo**Conjugado no Subjuntivo** (Oração Desenvolvida). |
 | **Sentido em Reescrita** | Idêntico ao da locução conjuntiva correspondente. | Idêntico ao da locução prepositiva correspondente. |
 
-### 8.3. Distinções Semânticas Contextuais da Preposição "PARA"
+#### 8.3. Distinções Semânticas Contextuais da Preposição "PARA"
 
 | Construção Contrastada 1 | Construção Contrastada 2 | Critério Distintivo |
 |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:----------------------------------------------------------------------------------------------------------------------------------------------- |:------------------- |
@@ -477,11 +469,9 @@ Julgar itens que afirmam que múltiplas ocorrências da preposição "para" em u
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Estudo de Caso Cesgranrio: "Sairei após o jantar"
+### Estudo de Caso Cesgranrio: "Sairei após o jantar"
 
 - **Contexto / Frase:** `Sairei após o jantar.`
 - **Problema Proposto:** A banca sublinhou o vocábulo `após` e perguntou sua classificação morfológica, colocando "advérbio de tempo" entre as opções.
@@ -489,7 +479,7 @@ Julgar itens que afirmam que múltiplas ocorrências da preposição "para" em u
 
 ---
 
-## Estudo de Caso FGV: "Pipoca e guaraná" vs. "Pipoca com guaraná"
+### Estudo de Caso FGV: "Pipoca e guaraná" vs. "Pipoca com guaraná"
 
 - **Construções Analisadas:**
  1. `Comerei pipoca e guaraná.` $\rightarrow$ `e` = **Conjunção coordenativa aditiva** (liga dois núcleos de objeto direto).
@@ -497,7 +487,7 @@ Julgar itens que afirmam que múltiplas ocorrências da preposição "para" em u
 
 ---
 
-## Bloco de Fixação: Valores Semânticos da Preposição "PARA"
+### Bloco de Fixação: Valores Semânticos da Preposição "PARA"
 
 1. *"Estudou com afinco **para** conseguir boas notas."* $\rightarrow$ **Finalidade** (*a fim de conseguir*).
 2. *"Saíram cedo **para** o trabalho."* $\rightarrow$ **Direção / Lugar** (substantivo espacial de destino).
@@ -508,29 +498,34 @@ Julgar itens que afirmam que múltiplas ocorrências da preposição "para" em u
 
 ---
 
-## Questão de Concurso: Instituto AOCP (EBSERH - Pedagogo)
+### Questão de Concurso: Instituto AOCP (EBSERH - Pedagogo)
 
 - **Trecho da Prova:** *"**Para** evitar que as consequências do aquecimento global 'saiam de controle'..."*
-- **Comando:** O termo destacado expressa: (A) finalidade; (B) condição; (C) concessão; (D) conformidade; (E) proporção.
+- **Comando:** O termo destacado expressa: (
+A) finalidade; (
+B) condição; (
+C) concessão; (
+D) conformidade; (
+E) proporção.
 - **Resolução:** O conector *Para* introduz oração reduzida que equivale a *"A fim de evitar que..."*, indicando o objetivo de conter os danos climáticos.
 - **Gabarito Oficial:** **A (Finalidade)**.
 
 ---
 
-## Questão de Concurso: Instituto AOCP (EBSERH - Enfermeiro)
+### Questão de Concurso: Instituto AOCP (EBSERH - Enfermeiro)
 
 - **Comando:** Assinale a alternativa cujo "para" em destaque **NÃO** tem função de introduzir uma ideia de finalidade.
 - **Análise das Alternativas:**
- - *A)* "...gasta um grande valor **para** obter informações..." $\rightarrow$ Finalidade (*a fim de obter*).
- - *B)* "...obter informações **para** poder definir estratégias..." $\rightarrow$ Finalidade (*a fim de poder definir*).
- - *C)* "...cada membro tenha seu banco (...) **para** que o governo federal construa..." $\rightarrow$ Finalidade (*locução conjuntiva final*).
- - *D)* *"Porém, há uma disputa em jogo que pode levar o prazo de adequação **para** só depois de 2025."* $\rightarrow$ O termo regido *"só depois de 2025"* indica marco cronológico (prazo/quando). Expressa **TEMPO**.
- - *E)* "...construa seu próprio banco **para** armazenar e consultar..." $\rightarrow$ Finalidade (*a fim de armazenar*).
+  - *A)* "...gasta um grande valor **para** obter informações..." $\rightarrow$ Finalidade (*a fim de obter*).
+  - *B)* "...obter informações **para** poder definir estratégias..." $\rightarrow$ Finalidade (*a fim de poder definir*).
+  - *C)* "...cada membro tenha seu banco (...) **para** que o governo federal construa..." $\rightarrow$ Finalidade (*locução conjuntiva final*).
+  - *D)* *"Porém, há uma disputa em jogo que pode levar o prazo de adequação **para** só depois de 2025."* $\rightarrow$ O termo regido *"só depois de 2025"* indica marco cronológico (prazo/quando). Expressa **TEMPO**.
+  - *E)* "...construa seu próprio banco **para** armazenar e consultar..." $\rightarrow$ Finalidade (*a fim de armazenar*).
 - **Gabarito Oficial:** **D**.
 
 ---
 
-## Questão Cebraspe: CODEVASF 2024 (Analista)
+### Questão Cebraspe: CODEVASF 2024 (Analista)
 
 - **Trecho da Prova:** `[...] reconhecer e abordar as maneiras como se manifesta o racismo institucional é fundamental para promover a igualdade racial nos espaços de trabalho.`
 - **Item Julgado:** *No último período do texto, a preposição “para” introduz uma oração que expressa finalidade.*
@@ -539,7 +534,7 @@ Julgar itens que afirmam que múltiplas ocorrências da preposição "para" em u
 
 ---
 
-## Questão Cebraspe: SME Recife (Professor II)
+### Questão Cebraspe: SME Recife (Professor II)
 
 - **Trecho da Prova:** `[...] faltam docentes para lecionar disciplinas específicas em áreas de ciências exatas e da natureza.`
 - **Item Julgado:** *No segundo período do terceiro parágrafo, a oração introduzida pela preposição “para” expressa circunstância de finalidade.*
@@ -548,7 +543,7 @@ Julgar itens que afirmam que múltiplas ocorrências da preposição "para" em u
 
 ---
 
-## Questão Cebraspe: DPE-RS (Defensor Público)
+### Questão Cebraspe: DPE-RS (Defensor Público)
 
 - **Trecho da Prova:** `[...] todas as inovações eletrônicas e virtuais devem sempre ser implementadas com parcimônia e vistas com muito cuidado, não apenas para sempre permitirem o exercício de direitos e garantias, mas também para não restringirem — e, sim, ampliarem — o acesso à justiça e, sobretudo, para manterem a insubstituível humanidade da justiça.`
 - **Item Julgado:** *No último período do texto, a preposição “para”, em suas três ocorrências, veicula uma ideia de finalidade.*
@@ -559,49 +554,45 @@ Julgar itens que afirmam que múltiplas ocorrências da preposição "para" em u
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Macete do "Termo Posterior Salva"
+### O Macete do "Termo Posterior Salva"
 
 Ao resolver questões sobre o valor nocional de uma preposição, **nunca analise o conector isoladamente**. A preposição é um elemento neutro que herda o traço semântico do **termo regido (o que vem imediatamente depois dela)**. É o vocábulo posterior que define se o sentido é tempo (*manhã*), lugar (*trabalho*), matéria (*madeira*), destinatário (*namorada*) ou conformidade (*político*).
 
 ---
 
-## Reconhecimento Rápido de Locuções Conjuntivas pelo "Que"
+### Reconhecimento Rápido de Locuções Conjuntivas pelo "Que"
 
 Se uma expressão conetiva composta por duas ou mais palavras terminar pelo vocábulo **"que"** (*a fim de que, apesar de que, visto que, posto que*), classifique-a imediatamente como **Locução Conjuntiva** (exigindo verbo conjugado). Se terminar em preposição essencial (*a fim de, apesar de, devido a*), trata-se de **Locução Prepositiva** (exigindo verbo no infinitivo).
 
 ---
 
-## Substituição Pragmática por "A Fim De" para Identificar Finalidade
+### Substituição Pragmática por "A Fim De" para Identificar Finalidade
 
 Diante de orações com a preposição "para" seguida de verbo no infinitivo (*para promover, para lecionar, para evitar*), faça mentalmente a troca direta por **"a fim de"**. Se o sentido de propósito ou meta for mantido com total fluidez, assinale **finalidade** sem hesitação.
 
 ---
 
-## Postura Objetiva em Questões de Sentido
+### Postura Objetiva em Questões de Sentido
 
 Quando a banca perguntar expressamente o "valor semântico", a "noção" ou a "circunstância" de uma preposição, abandone discussões sintáticas abstratas de regência. Assuma que a questão avalia interpretação semântica e concentre-se na relação lógica veiculada pelo conector no contexto.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Pegadinha do Sublinhado Parcial vs. Total ("Após" vs. "Após o jantar")
+### Pegadinha do Sublinhado Parcial vs. Total ("Após" vs. "Após o jantar")
 
 - **O Erro:** Candidatos classificam a palavra `após` como "advérbio de tempo" devido ao sentido temporal que a expressão carrega.
 - **Por que ocorre:** Confusão entre a classe da palavra isolada e a função da locução como um todo.
 - **Como evitar:**
- - Se a banca sublinhar apenas `após` $\rightarrow$ **Preposição essencial** (com valor semântico de tempo).
- - Se a banca sublinhar `após o jantar` $\rightarrow$ **Locução adverbial de tempo**.
+  - Se a banca sublinhar apenas `após` $\rightarrow$ **Preposição essencial** (com valor semântico de tempo).
+  - Se a banca sublinhar `após o jantar` $\rightarrow$ **Locução adverbial de tempo**.
 
 ---
 
-## Uso Incorreto de Crase Após Preposições Essenciais
+### Uso Incorreto de Crase Após Preposições Essenciais
 
 - **O Erro:** Inserir acento grave em expressões como *ante à situação* ou *desde às 8h* em redações discursivas e peças jurídicas.
 - **Por que ocorre:** Tentativa de hipercorreção formal ("falar bonito").
@@ -609,60 +600,56 @@ Quando a banca perguntar expressamente o "valor semântico", a "noção" ou a "c
 
 ---
 
-## Leitura Automatizada da Preposição "PARA" (Lugar vs. Finalidade)
+### Leitura Automatizada da Preposição "PARA" (Lugar vs. Finalidade)
 
 - **O Erro:** Decorar que "para" sempre exprime finalidade e errar questões em que expressa lugar (*"saíram para o trabalho"*).
 - **Como detectar e evitar:** Examine se o termo após *para* é um verbo no infinitivo (*trabalhar* = finalidade) ou um substantivo que designa ponto espacial de destino (*o trabalho* = lugar/direção).
 
 ---
 
-## Falso Valor Temporal por Advérbio Adjacente ("Para Sempre Permitirem")
+### Falso Valor Temporal por Advérbio Adjacente ("Para Sempre Permitirem")
 
 - **O Erro:** Considerar que a preposição "para" indica tempo no trecho *"não apenas para sempre permitirem..."* pela atração visual da palavra *sempre*.
 - **Como desarmar:** Leia a oração inteira subordinada pelo conector. O vocábulo *sempre* é apenas um advérbio que modifica *permitirem*. A preposição "para" liga a oração com sentido de finalidade (*"a fim de permitirem perpetuamente"*).
 
 ---
 
-## Perda de Tempo com Classificação Sintática Exaustiva
+### Perda de Tempo com Classificação Sintática Exaustiva
 
 - **O Erro:** Ficar desmembrando períodos compostos e classificando orações em questões do Cebraspe que pedem apenas a "circunstância de finalidade".
 - **Como evitar:** Realize diretamente o teste de substituição do conector (*para* $\rightarrow$ *a fim de*) e confirme a relação lógica contextual.
 
 ---
 
----
-
 ## Glossário operacional
 
-## Preposição Essencial
+### Preposição Essencial
 
 Vocábulo invariável pertencente à lista fixa e fechada da gramática normativa (*a, ante, até, após, com, contra, de, desde, em, entre, para, per, perante, por, sem, sob, sobre, trás*) cuja função primordial é atuar como ligame conector de palavras ou orações.
 
-## Locução Prepositiva
+### Locução Prepositiva
 
 Conjunto de duas ou mais palavras com valor funcional de preposição única, terminando compulsoriamente em uma preposição essencial (*a fim de, apesar de, devido a, em vez de*) e regendo orações reduzidas com verbos no infinitivo.
 
-## Locução Conjuntiva
+### Locução Conjuntiva
 
 Conjunto de duas ou mais palavras com valor funcional de conjunção, terminando compulsoriamente pela conjunção integrante *"que"* (*a fim de que, apesar de que, visto que*) e regendo orações desenvolvidas com verbos flexionados.
 
-## Preposição Relacional (Gramatical)
+### Preposição Relacional (Gramatical)
 
 Preposição cuja presença na frase é obrigatória e imposta por mecanismos formais de regência verbal ou nominal, funcionando como conectivo mecânico desprovido de valor semântico próprio e introduzindo Objeto Indireto ou Complemento Nominal.
 
-## Preposição Nocional (Semântica)
+### Preposição Nocional (Semântica)
 
 Preposição cuja presença não decorre de imposição obrigatória de regência, sendo inserida contextualmente para veicular noções de tempo, lugar, causa, matéria, posse, finalidade, destinatário, conformidade, instrumento, meio, companhia ou agente.
 
-## Circunstância de Finalidade
+### Circunstância de Finalidade
 
 Valor semântico/nocional veiculado por conectores que expressam o objetivo, o propósito, a meta ou o intuito da ocorrência do fato principal, sendo validado pelo teste de substituição por *"a fim de"*.
 
-## Paralelismo Sintático-Semântico
+### Paralelismo Sintático-Semântico
 
 Princípio linguístico segundo o qual elementos oracionais encadeados por conectores correlativos aditivos devem manter estrita equivalência gramatical e idêntica natureza semântico-circunstancial.
-
----
 
 ---
 

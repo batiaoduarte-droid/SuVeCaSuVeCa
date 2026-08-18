@@ -46,7 +46,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Noções de sintaxe do período simples: identificação de sujeito, predicado, verbo transitivo direto/indireto, objetos (direto e indireto), adjunto adverbial e aposto.
 - Noções de sintaxe do período composto: diferenciação entre orações coordenadas e orações subordinadas (substantivas, adjetivas e adverbiais).
 
-### Estrutura Relacional de Conceitos
+#### Estrutura Relacional de Conceitos
 
 ```text
 A08-esta unidade: USO DA VÍRGULA — APROFUNDAMENTO
@@ -98,35 +98,33 @@ A08-esta unidade: USO DA VÍRGULA — APROFUNDAMENTO
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Identificação e Estruturas Sintáticas da Oração Subordinada Adjetiva
+### Identificação e Estruturas Sintáticas da Oração Subordinada Adjetiva
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A Oração Subordinada Adjetiva é aquela que desempenha função sintática equivalente à de um adjetivo, referindo-se diretamente a um **substantivo (ou termo substantivado) antecedente** situado na oração principal.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Para comprovar que uma oração é adjetiva, aplica-se o "teste da seta": verifica-se se toda a estrutura oracional qualifica, restringe ou explica um substantivo que a precede. As orações adjetivas manifestam-se sob três configurações sintáticas:
 
 1. **Desenvolvida Explícita:** Apresenta conectivo relativo explícito (`que`, `o qual`, `a qual`, `cujo`, `onde`). O pronome relativo substitui o antecedente e estabelece a conexão sintática.
 2. **Desenvolvida Implícita:** O pronome relativo ou o verbo de ligação encontra-se elidido/subentendido no contexto comunicativo (ex.: *"João, [que está] feliz com a sua prova, comemorou"*).
 3. **Reduzida:** Não apresenta pronome relativo e traz o verbo principal flexionado em uma forma nominal:
- - *Gerúndio* (`-ndo`);
- - *Infinitivo* (`-ar`, `-er`, `-ir`);
- - *Particípio* (`-do`, `-to`).
+  - *Gerúndio* (`-ndo`);
+  - *Infinitivo* (`-ar`, `-er`, `-ir`);
+  - *Particípio* (`-do`, `-to`).
 
 A validação de uma oração reduzida adjetiva é realizada pela "prova real": descompacta-se a estrutura substituindo a forma nominal por `Pronome Relativo + Verbo Flexionado` (ex.: *"aluno dedicando-se"* = *"aluno que se dedica"*).
 
-### Critérios de reconhecimento
+#### Critérios de reconhecimento
 
 - A oração precisa apontar para um substantivo antecedente (diferenciando-se das orações substantivas, que se acoplam a verbos transitivos ou nomes exigindo complementação e admitem substituição por "isso").
 - A forma reduzida deve preservar carga e regência verbais (admitindo complementos verbais ou adjuntos adverbiais).
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Desenvolvida Explícita:* `O aluno [que é dedicado] atinge seu objetivo.`
 - *Desenvolvida com Pronome Implícito:* `O aluno [dedicado] atinge seu objetivo.` / `João, [feliz com o resultado], sorriu.`
@@ -134,7 +132,7 @@ A validação de uma oração reduzida adjetiva é realizada pela "prova real": 
 - *Reduzida de Particípio:* `A iniciativa, [inserida no programa], reflete avanços.` (= *que está inserida*)
 - *Contraexemplo (Oração Substantiva):* `Quero [que você estude].` (*Quero isso* -> Oração Subordinada Substantiva Objetiva Direta; não se refere a substantivo antecedente qualificando-o).
 
-### Exceções ou limites
+#### Exceções ou limites
 
 Não confundir adjetivo simples ou sintagma adjetival com oração reduzida de particípio. A oração reduzida retém transitividade e dinâmica oracional verbal.
 
@@ -143,29 +141,29 @@ Não confundir adjetivo simples ou sintagma adjetival com oração reduzida de p
 
 ---
 
-## Semântica da Pontuação em Orações Adjetivas: "Somente" vs. "Só Há Um"
+### Semântica da Pontuação em Orações Adjetivas: "Somente" vs. "Só Há Um"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A presença ou ausência de vírgulas nas orações subordinadas adjetivas é **consequência gráfica de uma escolha semântica preexistente**, e não sua causa formal. A distinção entre restritiva e explicativa assenta-se na pressuposição sobre o número de referentes no universo do discurso.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Oração Subordinada Adjetiva Restritiva (SEM VÍRGULAS):**
- - *Chave Semântica:* **"SOMENTE"**.
- - *Pressuposto Contextual:* O conjunto de referência possui **MAIS DE UM** elemento. A oração é empregada para circunscrever/restringir a declaração a um subconjunto específico, excluindo os demais elementos do mesmo grupo.
+  - *Chave Semântica:* **"SOMENTE"**.
+  - *Pressuposto Contextual:* O conjunto de referência possui **MAIS DE UM** elemento. A oração é empregada para circunscrever/restringir a declaração a um subconjunto específico, excluindo os demais elementos do mesmo grupo.
 - **Oração Subordinada Adjetiva Explicativa (COM VÍRGULAS / ISOLADA):**
- - *Chave Semântica:* **"SÓ HÁ UM"** (no contexto) ou **TOTALIDADE DA ESPÉCIE**.
- - *Pressuposto Contextual:* O antecedente abrange um elemento único ou a universalidade da categoria referida. A oração não restringe; apenas acrescenta uma informação explicativa, esclarecedora ou acessória aplicável a todos os elementos.
+  - *Chave Semântica:* **"SÓ HÁ UM"** (no contexto) ou **TOTALIDADE DA ESPÉCIE**.
+  - *Pressuposto Contextual:* O antecedente abrange um elemento único ou a universalidade da categoria referida. A oração não restringe; apenas acrescenta uma informação explicativa, esclarecedora ou acessória aplicável a todos os elementos.
 
-### Critérios de reconhecimento
+#### Critérios de reconhecimento
 
 O candidato deve avaliar o referente aplicando o teste:
 
 1. *No contexto comunicativo, existem outros elementos daquele grupo aos quais a oração não se aplica?* Se SIM -> Oração Restritiva (sem vírgulas).
 2. *O elemento é único no contexto ou a propriedade é universal para todos os indivíduos?* Se SIM -> Oração Explicativa (entre vírgulas).
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Restritiva:* `O aluno que terminou a prova pode sair.` (Significado: existem múltiplos alunos; *somente* aqueles que terminaram a prova têm permissão para sair).
 - *Explicativa:* `O aluno, que terminou a prova, pode sair.` (Significado: há apenas um aluno naquele contexto comunicativo; explica-se que ele concluiu a avaliação e declara-se que ele pode sair).
@@ -176,43 +174,43 @@ O candidato deve avaliar o referente aplicando o teste:
 
 ---
 
-## Tipologia de Questões em Orações Adjetivas: Dupla Leitura (80%) vs. Leitura Única (20%)
+### Tipologia de Questões em Orações Adjetivas: Dupla Leitura (80%) vs. Leitura Única (20%)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As questões de concurso sobre a pontuação das orações adjetivas dividem-se em dois modelos: o modelo padrão de **Dupla Leitura** (cerca de 80% das provas), em que as vírgulas são facultativas e sua alteração preserva a correção gramatical, e o modelo avançado de **Leitura Única Obrigatória** (cerca de 20% das provas de alto nível, como Cebraspe e FGV), em que o contexto ou a lógica de mundo impõem uma única pontuação possível.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Cenário 1 — Frases de Dupla Leitura (Vírgulas Facultativas / Opcionais — ~80% dos casos):**
 
- - O substantivo antecedente admite perfeitamente a existência de subgrupos ou a consideração do grupo como um todo.
- - *Efeito da Inserção/Supressão de Vírgulas:* **MANTÉM a correção gramatical** e a coerência global, mas **ALTERA o sentido / relações sintáticas**.
- - *Exemplo:* *"Os meninos que estão fantasiados receberão prêmios"* (sem vírgulas = restritiva / somente os fantasiados) vs. *"Os meninos, que estão fantasiados, receberão prêmios"* (com vírgulas = explicativa / todos os meninos estão fantasiados).
+  - O substantivo antecedente admite perfeitamente a existência de subgrupos ou a consideração do grupo como um todo.
+  - *Efeito da Inserção/Supressão de Vírgulas:* **MANTÉM a correção gramatical** e a coerência global, mas **ALTERA o sentido / relações sintáticas**.
+  - *Exemplo:* *"Os meninos que estão fantasiados receberão prêmios"* (sem vírgulas = restritiva / somente os fantasiados) vs. *"Os meninos, que estão fantasiados, receberão prêmios"* (com vírgulas = explicativa / todos os meninos estão fantasiados).
 2. **Cenário 2 — Frases de Leitura Única Obrigatória (~20% dos casos — Alto Nível):**
 
- - A relação contextual ou o conhecimento enciclopédico não admitem multiplicidade ou restrição. A pontuação é fixa.
- - **Caso 2A: Só Pode Ser Explicativa (Exige Vírgulas):**
- - Ocorre quando o antecedente é um ser único no universo, nome próprio, ou quando a propriedade adjetiva é universal para toda a espécie biológica/categoria.
- - *Efeito de retirar as vírgulas:* Cria uma restrição absurda/impossível no mundo real -> **GERA ERRO GRAMATICAL / INCOERÊNCIA**.
- - *Exemplos:* *"O homem, que é mortal, tem alma imortal"* (não existem homens imortais); *"O Tejo, que é rio famoso, passa em Lisboa"* (só há um rio Tejo); *"A galinha, que põe ovos, merece respeito"* (pôr ovos é inerente à espécie); *"Sua mãe, que lhe pede não mentir nunca..."* (cada indivíduo tem apenas uma mãe no contexto).
- - **Caso 2B: Só Pode Ser Restritiva (Proíbe Vírgulas):**
- - Ocorre quando o texto prévio já estabeleceu categoricamente a existência de múltiplos elementos e a necessidade de distingui-los.
- - *Efeito de inserir vírgulas:* Afirma falsamente que há apenas um elemento, contradizendo o contexto fático imediato -> **GERA ERRO GRAMATICAL / INCOERÊNCIA**.
- - *Exemplos:* *"Tenho dois irmãos. O irmão que é primogênito chegou"* (o texto declarou ter 2 irmãos; pontuar entre vírgulas diria que só existe 1 irmão); *"Tenho três processos. O processo que é contra a União será julgado"*.
+  - A relação contextual ou o conhecimento enciclopédico não admitem multiplicidade ou restrição. A pontuação é fixa.
+  - **Caso 2A: Só Pode Ser Explicativa (Exige Vírgulas):**
+  - Ocorre quando o antecedente é um ser único no universo, nome próprio, ou quando a propriedade adjetiva é universal para toda a espécie biológica/categoria.
+  - *Efeito de retirar as vírgulas:* Cria uma restrição absurda/impossível no mundo real -> **GERA ERRO GRAMATICAL / INCOERÊNCIA**.
+  - *Exemplos:* *"O homem, que é mortal, tem alma imortal"* (não existem homens imortais); *"O Tejo, que é rio famoso, passa em Lisboa"* (só há um rio Tejo); *"A galinha, que põe ovos, merece respeito"* (pôr ovos é inerente à espécie); *"Sua mãe, que lhe pede não mentir nunca..."* (cada indivíduo tem apenas uma mãe no contexto).
+  - **Caso 2B: Só Pode Ser Restritiva (Proíbe Vírgulas):**
+  - Ocorre quando o texto prévio já estabeleceu categoricamente a existência de múltiplos elementos e a necessidade de distingui-los.
+  - *Efeito de inserir vírgulas:* Afirma falsamente que há apenas um elemento, contradizendo o contexto fático imediato -> **GERA ERRO GRAMATICAL / INCOERÊNCIA**.
+  - *Exemplos:* *"Tenho dois irmãos. O irmão que é primogênito chegou"* (o texto declarou ter 2 irmãos; pontuar entre vírgulas diria que só existe 1 irmão); *"Tenho três processos. O processo que é contra a União será julgado"*.
 
 - **Aplicações práticas:**
 - **Alertas críticos:**
 
 ---
 
-## Pontuação de Expressões Explicativas e Retificativas
+### Pontuação de Expressões Explicativas e Retificativas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Expressões de caráter explicativo, retificativo, conclusivo ou exemplificativo — tais como *"ou seja"*, *"isto é"*, *"ou melhor"*, *"por exemplo"*, *"a saber"* — devem vir **obrigatoriamente isoladas por vírgulas** (ou outro sinal de pontuação equivalente). Sua supressão constitui infração gramatical.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Há uma distinção semântica intrínseca entre os dois tipos de expressão:
 
@@ -221,7 +219,7 @@ Há uma distinção semântica intrínseca entre os dois tipos de expressão:
 
 Independentemente de a expressão atuar como explicação ou retificação, a norma culta impõe seu isolamento por pontuação. Portanto, itens de concurso que sugerem a supressão dessas vírgulas sob a alegação de "manter a correção gramatical" estão incorretos.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Correto:* `A corrupção gerava desordem, ou seja, provocava instabilidade social.`
 - *Incorreto:* `A corrupção gerava desordem ou seja provocava instabilidade social.` (Supressão das vírgulas gera erro gramatical).
@@ -230,24 +228,24 @@ Independentemente de a expressão atuar como explicação ou retificação, a no
 
 ---
 
-## Vírgula Vicária (Elipse Verbal) vs. Aposto Explicativo
+### Vírgula Vicária (Elipse Verbal) vs. Aposto Explicativo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A **vírgula vicária** (ou vírgula de elipse) é aquela obrigatoriamente empregada para marcar a omissão de uma forma verbal já expressa anteriormente no período (zeugma/elipse verbal). Ela possui função anafórica ("aponta" de volta para o verbo elidido) e **não se confunde com o aposto explicativo**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Mecanismo da Vírgula Vicária:**
- - A palavra "vicária" vincula-se etimologicamente à ideia de substituição (aquele que ocupa o lugar de outrem).
- - A vírgula substitui a forma verbal omitida para evitar repetições estilisticamente deselegantes e assegurar a articulação sintática.
- - *Exemplo 1:* *"O preconceito é uma opinião; a discriminação, [é] um comportamento..."* (A vírgula substitui a forma verbal *"é"*).
- - *Exemplo 2:* *"...na proporção em que seus temas forem captados e suas tarefas, [forem] resolvidas."* (A vírgula substitui *"forem"*).
+  - A palavra "vicária" vincula-se etimologicamente à ideia de substituição (aquele que ocupa o lugar de outrem).
+  - A vírgula substitui a forma verbal omitida para evitar repetições estilisticamente deselegantes e assegurar a articulação sintática.
+  - *Exemplo 1:* *"O preconceito é uma opinião; a discriminação, [é] um comportamento..."* (A vírgula substitui a forma verbal *"é"*).
+  - *Exemplo 2:* *"...na proporção em que seus temas forem captados e suas tarefas, [forem] resolvidas."* (A vírgula substitui *"forem"*).
 - **Distinção Crítica: Vírgula Vicária versus Aposto Explicativo:**
- - O **Aposto Explicativo** é uma função sintática desempenhada exclusivamente por um **substantivo** (ou pronome/termo substantivado) que se junta a outro substantivo para explicá-lo (*"Machado de Assis, grande escritor brasileiro, fundou a Academia"* -> *escritor* é substantivo).
- - Na **Vírgula Vicária**, o termo posposto à vírgula atua como adjetivo, particípio ou predicativo vinculado ao verbo elidido (*"tarefas, resolvidas"* -> *resolvidas* é particípio/adjetivo concordando com tarefas). Por não ser substantivo, é gramaticalmente impossível classificar esse segmento como aposto.
+  - O **Aposto Explicativo** é uma função sintática desempenhada exclusivamente por um **substantivo** (ou pronome/termo substantivado) que se junta a outro substantivo para explicá-lo (*"Machado de Assis, grande escritor brasileiro, fundou a Academia"* -> *escritor* é substantivo).
+  - Na **Vírgula Vicária**, o termo posposto à vírgula atua como adjetivo, particípio ou predicativo vinculado ao verbo elidido (*"tarefas, resolvidas"* -> *resolvidas* é particípio/adjetivo concordando com tarefas). Por não ser substantivo, é gramaticalmente impossível classificar esse segmento como aposto.
 
-### Critérios de reconhecimento
+#### Critérios de reconhecimento
 
 Mantra de identificação: *"Aposto é caso de substantivo!"*. Se o termo delimitado pela vírgula for particípio ou adjetivo atrelado a uma ação implícita, trata-se de vírgula vicária por elipse verbal.
 
@@ -257,13 +255,13 @@ Mantra de identificação: *"Aposto é caso de substantivo!"*. Se o termo delimi
 
 ---
 
-## Proibição de Quebra da Ordem Canônica SVC (Sujeito-Verbo-Complemento)
+### Proibição de Quebra da Ordem Canônica SVC (Sujeito-Verbo-Complemento)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 É terminantemente proibido o emprego de vírgula que interrompa os nexos sintáticos essenciais do esquema canônico **Sujeito — Verbo — Complemento (SVC)**. Não se separa por vírgula o sujeito de seu predicado verbal, nem o verbo transitivo de seus complementos diretos ou indiretos.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A vedação manifesta-se em três cenários frequentes de armadilhas de concurso:
 
@@ -271,14 +269,14 @@ A vedação manifesta-se em três cenários frequentes de armadilhas de concurso
 2. **Sujeito Complexo / Extenso / Oracional:** A extensão física ou a presença de orações adjetivas internas não autoriza o uso de vírgula entre o fim do bloco do sujeito e o verbo (*"[O precursor do que viria a ser um jornal] foi o romano..."* -> vedada vírgula após *jornal*).
 3. **Verbo Transitivo e Complemento Oracional:** É proibido inserir vírgula entre o verbo transitivo e sua Oração Subordinada Substantiva Objetiva Direta introduzida por *que* (*"...saibam [que essa é a única emergência]..."* -> *saibam isso*; vedada vírgula após *saibam*).
 
-### Critérios de reconhecimento
+#### Critérios de reconhecimento
 
 Executa-se o teste de integridade sintática:
 
 - Acha-se o verbo principal e pergunta-se *Quem?* para isolar o bloco total do sujeito. Não pode haver vírgula solta entre o sujeito e o verbo.
 - Pergunta-se *O quê?* ao verbo. Se a oração seguinte puder ser substituída por *"isso"*, trata-se de objeto direto oracional, sendo vedada a vírgula separadora.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Incorreto (Enumeração):* `Os alunos, os professores, os coordenadores, participaram.` (Vírgula proibida após coordenadores).
 - *Incorreto (Sujeito Extenso):* `A necessidade de reformas estruturais urgentes no país, foi debatida.` (Vírgula proibida após país).
@@ -290,25 +288,25 @@ Executa-se o teste de integridade sintática:
 
 ---
 
-## Pontuação das Orações Subordinadas Adverbiais e Mnemônico 6C + FTP
+### Pontuação das Orações Subordinadas Adverbiais e Mnemônico 6C + FTP
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A pontuação das orações subordinadas adverbiais depende exclusivamente de sua **posição no período composto**: na **ordem direta** (ao final), a vírgula é **facultativa**; na **ordem deslocada** (antecipada ou intercalada), a vírgula é **obrigatória** (independentemente da extensão da oração).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Ordem Direta (`[Oração Principal] + [Oração Adverbial]`):**
 
- - *Exemplo:* *"...potencial para ajudar alunos e professores, caso seja integrada à prática"* (Oração adverbial condicional no final -> vírgula facultativa).
+  - *Exemplo:* *"...potencial para ajudar alunos e professores, caso seja integrada à prática"* (Oração adverbial condicional no final -> vírgula facultativa).
 - **Ordem Deslocada / Inversa (`[Oração Adverbial Antecipada], [Oração Principal]` ou intercalada):**
 
- - Por possuir estrutura oracional completa (com verbo próprio), a vírgula de isolamento é estritamente obrigatória.
- - *Exemplo:* *"[Embora alguém possa imaginar cérebros artificiais], hoje toda a ação..."* (Oração concessiva antecipada -> vírgula obrigatória).
+  - Por possuir estrutura oracional completa (com verbo próprio), a vírgula de isolamento é estritamente obrigatória.
+  - *Exemplo:* *"[Embora alguém possa imaginar cérebros artificiais], hoje toda a ação..."* (Oração concessiva antecipada -> vírgula obrigatória).
 - **Mnemônico Circunstancial "6C + FTP":**
  Agrupa as 9 circunstâncias e conjunções adverbiais:
- - **6 C's:** Causal (*porque, visto que*), Condicional (*se, caso*), Comparativa (*como, tal qual*), Conformativa (*conforme, segundo*), Concessiva (*embora, ainda que*), Consecutiva (*tanto que, de modo que*).
- - **F-T-P:** Final (*a fim de que, para que*), Temporal (*quando, enquanto, logo que*), Proporcional (*à proporção que, à medida que*).
+  - **6 C's:** Causal (*porque, visto que*), Condicional (*se, caso*), Comparativa (*como, tal qual*), Conformativa (*conforme, segundo*), Concessiva (*embora, ainda que*), Consecutiva (*tanto que, de modo que*).
+  - **F-T-P:** Final (*a fim de que, para que*), Temporal (*quando, enquanto, logo que*), Proporcional (*à proporção que, à medida que*).
 
 - **Mnemônico:**
 - **Exemplos práticos:**
@@ -316,24 +314,24 @@ A pontuação das orações subordinadas adverbiais depende exclusivamente de su
 
 ---
 
-## Pontuação do Aposto Explicativo, Vírgula de Dupla Função e Alternância de Sinais
+### Pontuação do Aposto Explicativo, Vírgula de Dupla Função e Alternância de Sinais
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O aposto explicativo admite isolamento indiferente por **vírgulas**, **travessões** ou **parênteses**. Quando o fechamento de um aposto coincide com o término de outra estrutura que também requer pontuação (como uma oração adverbial antecipada), emprega-se **uma única vírgula**, a qual acumula as duas funções sintáticas (fenômeno da **vírgula de dupla função / sobrecarregada**).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Mecânica da Vírgula de Dupla Função:**
- - No período: *"Quando o suporte vai para o papel — suportes que criam possibilidade —, a própria elaboração..."*
- - O trecho entre travessões é aposto explicativo (núcleo substantivo *suportes*).
- - O período abre com oração adverbial temporal antecipada (*Quando...*), que exige vírgula após seu término.
- - Ao substituir os travessões por vírgulas, não se duplicam símbolos (`,,`); a vírgula posposta cumpre simultaneamente o papel de fechar o aposto e fechar a oração adverbial antecipada.
+  - No período: *"Quando o suporte vai para o papel — suportes que criam possibilidade —, a própria elaboração..."*
+  - O trecho entre travessões é aposto explicativo (núcleo substantivo *suportes*).
+  - O período abre com oração adverbial temporal antecipada (*Quando...*), que exige vírgula após seu término.
+  - Ao substituir os travessões por vírgulas, não se duplicam símbolos (`,,`); a vírgula posposta cumpre simultaneamente o papel de fechar o aposto e fechar a oração adverbial antecipada.
 - **Alternância de Sinais e Nuances Estilísticas no Cebraspe:**
- - *Travessões:* conferem destaque visual / ênfase expressiva.
- - *Parênteses:* conferem atenuação / rebaixamento de ênfase.
- - *Vírgulas:* possuem neutralidade estilística.
- - *Jurisprudência de Prova:* O Cebraspe julga que variações no grau de ênfase **não alteram a coerência nem prejudicam o sentido essencial**. Propostas de troca entre esses sinais mantêm a correção gramatical e a coerência textual.
+  - *Travessões:* conferem destaque visual / ênfase expressiva.
+  - *Parênteses:* conferem atenuação / rebaixamento de ênfase.
+  - *Vírgulas:* possuem neutralidade estilística.
+  - *Jurisprudência de Prova:* O Cebraspe julga que variações no grau de ênfase **não alteram a coerência nem prejudicam o sentido essencial**. Propostas de troca entre esses sinais mantêm a correção gramatical e a coerência textual.
 
 - **Alerta associado:**
 - **Dica de prova:**
@@ -342,34 +340,34 @@ O aposto explicativo admite isolamento indiferente por **vírgulas**, **travess�
 
 ---
 
-## Pontuação do Adjunto Adverbial Deslocado: Critério Numérico de Extensão
+### Pontuação do Adjunto Adverbial Deslocado: Critério Numérico de Extensão
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O adjunto adverbial antecipado ou intercalado (deslocado) submete-se ao critério de extensão textual: se for de **curta extensão**, a vírgula é **facultativa**; se for de **longa extensão**, a vírgula é **obrigatória**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A jurisprudência pacificada em concursos públicos (notadamente pelo Cebraspe) adota o critério quantitativo objetivo de contagem de palavras:
 
 - **Curta Extensão (até 2 palavras):** Vírgula **FACULTATIVA**.
- - Exemplo: *"Em Alagoas, os crimes caíram..."* (`Em` + `Alagoas` = 2 palavras -> vírgula facultativa; suprimi-la não causa prejuízo gramatical).
- - Exemplo: *"Ontem à noite, ele chegou"* / *"Ontem à noite ele chegou"*.
+  - Exemplo: *"Em Alagoas, os crimes caíram..."* (`Em` + `Alagoas` = 2 palavras -> vírgula facultativa; suprimi-la não causa prejuízo gramatical).
+  - Exemplo: *"Ontem à noite, ele chegou"* / *"Ontem à noite ele chegou"*.
 - **Longa Extensão (3 ou mais palavras):** Vírgula **OBRIGATÓRIA**.
- - Exemplo: *"No primeiro dia do mês, realizou-se a prova"* (6 palavras -> vírgula obrigatória).
+  - Exemplo: *"No primeiro dia do mês, realizou-se a prova"* (6 palavras -> vírgula obrigatória).
 
 - **Alerta de prova:**
 - **Exemplo aplicado:**
 
 ---
 
-## Casuística Completa do Uso da Vírgula Antes da Conjunção Aditiva "E"
+### Casuística Completa do Uso da Vírgula Antes da Conjunção Aditiva "E"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O emprego da vírgula antes da conjunção aditiva "e" organiza-se em **cinco situações sintáticas rigorosas**: duas proibições, duas facultatividades e apenas um caso de obrigatoriedade.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Caso 1 — Enumeração simples de termos:** **PROIBIDA**.*Exemplo:* *Comprou arroz, feijão e carne.* (Vedada vírgula antes do último "e").
 2. **Caso 2 — Orações coordenadas aditivas com o MESMO sujeito:** **PROIBIDA**.*Exemplo:* *O candidato estudou muito e foi aprovado.* (Sujeito único: *o candidato*; vírgula proibida).
@@ -386,13 +384,13 @@ O emprego da vírgula antes da conjunção aditiva "e" organiza-se em **cinco si
 
 ---
 
-## Matriz Consolidada de Vírgula Facultativa e Resolução de Questões de Supressão
+### Matriz Consolidada de Vírgula Facultativa e Resolução de Questões de Supressão
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A resolução de itens do Cebraspe que indagam se a **supressão de uma vírgula** preexistente manteria a correção gramatical exige o enquadramento imediato da estrutura em um dos quatro casos canônicos de **Vírgula Facultativa**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Quando a questão pergunta se a vírgula "pode ser suprimida sem prejuízo", ela está perguntando se aquela vírgula é facultativa. Os quatro casos consolidados são:
 
@@ -404,8 +402,6 @@ Quando a questão pergunta se a vírgula "pode ser suprimida sem prejuízo", ela
 
 - **Consolida:**
 - **Protocolo operacional:**
-
----
 
 ---
 
@@ -431,23 +427,21 @@ Quando a questão pergunta se a vírgula "pode ser suprimida sem prejuízo", ela
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Passo a Passo para Identificar e Estruturar a Oração Adjetiva
+### Passo a Passo para Identificar e Estruturar a Oração Adjetiva
 
 1. **Localizar o elemento conector ou verbo na forma nominal:** Identificar a presença de `que`, `o qual`, `cujo`, `onde` ou verbo no gerúndio (`-ndo`), infinitivo (`-ar/-er/-ir`) ou particípio (`-do/-to`).
 2. **Executar o Teste da Seta:** Traçar mentalmente uma seta da oração em direção ao termo antecedente. Se apontar para um **substantivo** qualificando-o, confirma-se o caráter **Adjetivo**.
 3. **Classificar a Estrutura:**
- - Pronome relativo expresso -> *Desenvolvida Explícita*.
- - Pronome relativo/verbo oculto -> *Desenvolvida Implícita*.
- - Sem pronome relativo + forma nominal -> *Reduzida*.
+  - Pronome relativo expresso -> *Desenvolvida Explícita*.
+  - Pronome relativo/verbo oculto -> *Desenvolvida Implícita*.
+  - Sem pronome relativo + forma nominal -> *Reduzida*.
 4. **Executar a Prova Real na Reduzida:** Descompactar a oração inserindo `[que + verbo flexionado]`. Se a frase mantiver sentido e correção, confirma-se a oração adjetiva reduzida.
 
 ---
 
-## Algoritmo de Decisão de Prova para Impacto da Pontuação em Orações Adjetivas
+### Algoritmo de Decisão de Prova para Impacto da Pontuação em Orações Adjetivas
 
 ```text
  [Identificação da Oração Adjetiva]
@@ -477,32 +471,32 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-## Diagnóstico e Validação da Vírgula Vicária vs. Falso Aposto
+### Diagnóstico e Validação da Vírgula Vicária vs. Falso Aposto
 
 1. **Localizar a vírgula suspeita:** Identificar uma vírgula isolando termo intercalado ou separando sujeito e predicativo.
 2. **Checar a Oração Anterior:** Verificar se há forma verbal na oração imediatamente precedente.
 3. **Teste da Seta Anafórica:** Inserir mentalmente o verbo anterior no lugar da vírgula. Se a oração fizer sentido pleno, valida-se a **elipse verbal (vírgula vicária)**.
 4. **Analisar a Classe Gramatical do Termo Posposto:**
- - Se o termo for um **substantivo** explicando outro substantivo -> **Aposto Explicativo**.
- - Se o termo for um **adjetivo** ou **particípio** -> **Predicativo em Elipse Verbal (Vírgula Vicária)**. Nunca aposto.
+  - Se o termo for um **substantivo** explicando outro substantivo -> **Aposto Explicativo**.
+  - Se o termo for um **adjetivo** ou **particípio** -> **Predicativo em Elipse Verbal (Vírgula Vicária)**. Nunca aposto.
 
 ---
 
-## Algoritmo de Análise Sintática para Julgamento de Vírgula (Proibição SVC)
+### Algoritmo de Análise Sintática para Julgamento de Vírgula (Proibição SVC)
 
 1. **Localizar o Verbo Principal:** Constitui o ponto de ancoragem sintática.
 2. **Identificar o Sujeito:** Formular a pergunta *Quem + verbo?*. Delimitar todo o bloco do sujeito.
- - Proposta de vírgula entre o fim do bloco do sujeito e o verbo -> **PROIBIDA (Item prejudica a correção)**.
+  - Proposta de vírgula entre o fim do bloco do sujeito e o verbo -> **PROIBIDA (Item prejudica a correção)**.
 3. **Identificar os Complementos:** Formular a pergunta *Verbo + quê/quem?*.
- - Se o complemento for uma oração introduzida por *que* substituível por *isso* (objeto direto oracional) -> **PROIBIDA vírgula entre verbo e conjunção integrante**.
+  - Se o complemento for uma oração introduzida por *que* substituível por *isso* (objeto direto oracional) -> **PROIBIDA vírgula entre verbo e conjunção integrante**.
 4. **Classificar Termos Adverbiais:**
- - Posicionados ao final -> **FACULTATIVA**.
- - Deslocados com verbo (orações) -> **OBRIGATÓRIA**.
- - Deslocados sem verbo: até 2 palavras (**FACULTATIVA**) | 3 ou mais palavras (**OBRIGATÓRIA**).
+  - Posicionados ao final -> **FACULTATIVA**.
+  - Deslocados com verbo (orações) -> **OBRIGATÓRIA**.
+  - Deslocados sem verbo: até 2 palavras (**FACULTATIVA**) | 3 ou mais palavras (**OBRIGATÓRIA**).
 
 ---
 
-## Protocolo Master para Questões de "Supressão de Vírgula" no Cebraspe
+### Protocolo Master para Questões de "Supressão de Vírgula" no Cebraspe
 
 ```text
  [Questão de Supressão de Vírgula]
@@ -526,8 +520,6 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
----
-
 ## Contrastes que a prova explora
 
 ### Tabela 1: Oração Adjetiva Restritiva vs. Oração Adjetiva Explicativa
@@ -543,7 +535,7 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-### Tabela 2: Explicar vs. Retificar
+#### Tabela 2: Explicar vs. Retificar
 
 | Critério | Expressão Explicativa (*ou seja*, *isto é*) | Expressão Retificativa (*ou melhor*) |
 |:-------------------------------- |:------------------------------------------------ |:---------------------------------------------- |
@@ -554,7 +546,7 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-### Tabela 3: Vírgula Vicária (Elipse Verbal) vs. Aposto Explicativo
+#### Tabela 3: Vírgula Vicária (Elipse Verbal) vs. Aposto Explicativo
 
 | Critério Sintático | Vírgula Vicária (Elipse / Zeugma) | Aposto Explicativo |
 |:----------------------------------- |:--------------------------------------------------------- |:---------------------------------------------- |
@@ -566,7 +558,7 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-### Tabela 4: Alternância de Sinais de Intercalação no Cebraspe
+#### Tabela 4: Alternância de Sinais de Intercalação no Cebraspe
 
 | Sinal Gráfico | Efeito Estilístico / Expressivo | Tratamento no Cebraspe |
 |:--------------------------------------- |:--------------------------------------------------- |:----------------------------------------------------------- |
@@ -576,7 +568,7 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-### Tabela 5: Casuística da Conjunção Aditiva "E"
+#### Tabela 5: Casuística da Conjunção Aditiva "E"
 
 | Estrutura Conectada | Regra de Pontuação | Justificativa Sintática |
 |:------------------------------------------------- |:--------------------- |:---------------------------------------------------- |
@@ -588,11 +580,9 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Demonstração Didática das Três Estruturas Adjetivas
+### Demonstração Didática das Três Estruturas Adjetivas
 
 - **Frase 1 (Desenvolvida Explícita):** `O aluno [que é dedicado] atinge seu objetivo.` -> Pronome relativo `que` visível substituindo `aluno`.
 - **Frase 2 (Desenvolvida Implícita):** `O aluno [dedicado] atinge seu objetivo.` / `João, [feliz com a sua prova], comemorou.` -> Pronome relativo e verbo ocultos (`[que está] feliz`).
@@ -600,7 +590,7 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-## Cenário de Dupla Leitura: "Os Meninos Fantasiados"
+### Cenário de Dupla Leitura: "Os Meninos Fantasiados"
 
 - **Opção A (Sem vírgulas):** `Os meninos que estão fantasiados receberão prêmios.`*Análise:* Oração Adjetiva Restritiva. Pressupõe que há meninos não fantasiados; *somente* os fantasiados ganham prêmios.
 - **Opção B (Com vírgulas):** `Os meninos, que estão fantasiados, receberão prêmios.`*Análise:* Oração Adjetiva Explicativa. Pressupõe que todos os meninos do contexto estão fantasiados e todos receberão prêmios.
@@ -608,7 +598,7 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-## Leitura Única Explicativa: "A Galinha que Põe Ovos" (FGV / Cebraspe)
+### Leitura Única Explicativa: "A Galinha que Põe Ovos" (FGV / Cebraspe)
 
 - **Frase:** `A galinha, que põe ovos, merece respeito.`
 - **Item de Prova Hipotético:** *A supressão das vírgulas no trecho manteria a correção gramatical do texto, gerando apenas alteração semântica.*
@@ -617,7 +607,7 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-## Leitura Única Restritiva: Contexto com Quantidade Prévia Fixada
+### Leitura Única Restritiva: Contexto com Quantidade Prévia Fixada
 
 - **Frase 1:** `Tenho dois irmãos. O irmão que é primogênito chegou.`
 - **Frase 2:** `Tenho três processos tramitando. O processo que é contra a União será logo julgado.`
@@ -626,7 +616,7 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-## Questão Cebraspe: ANTT (2024) — Adjetiva Reduzida em Referente Múltiplo
+### Questão Cebraspe: ANTT (2024) — Adjetiva Reduzida em Referente Múltiplo
 
 - **Texto:** *"A iniciativa Mãe Servidora, inserida no contexto do programa Pró-Equidade de Gênero, reflete um esforço significativo da ANTT..."*
 - **Item:** *Não haveria prejuízo da correção gramatical do texto caso se suprimissem as vírgulas que delimitam o trecho “inserida no contexto do programa Pró-Equidade de Gênero”, embora tal supressão alterasse as relações sintáticas no período.*
@@ -635,7 +625,7 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-## Questão Cebraspe: SERPRO (2023) — Adjetiva em Referente Único ("Mãe")
+### Questão Cebraspe: SERPRO (2023) — Adjetiva em Referente Único ("Mãe")
 
 - **Texto:** *"Os adultos mentem muito, sabia. Até mesmo sua mãe, que lhe pede não mentir nunca, inventava histórias..."*
 - **Item:** *A correção gramatical e a coerência do texto seriam preservadas caso se suprimisse a vírgula empregada logo após o vocábulo “mãe”.*
@@ -644,7 +634,7 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-## Questão Cebraspe: TCE-RJ — Expressão Explicativa "Ou Seja"
+### Questão Cebraspe: TCE-RJ — Expressão Explicativa "Ou Seja"
 
 - **Texto:** *"...A corrupção, por sua vez, era identificada com vícios..., ou seja, tudo aquilo que causa caos social..."*
 - **Item:** *As vírgulas que isolam a expressão “ou seja” poderiam ser suprimidas, sem prejuízo da correção gramatical do texto.*
@@ -653,7 +643,7 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-## Questão Cebraspe: Pref. Mossoró (2024) — Vírgula Vicária de Elipse
+### Questão Cebraspe: Pref. Mossoró (2024) — Vírgula Vicária de Elipse
 
 - **Texto:** *"O preconceito é uma opinião; a discriminação, um comportamento real e efetivo."*
 - **Item:** *No último período do primeiro parágrafo, o emprego da vírgula logo após “discriminação” é obrigatório.*
@@ -662,7 +652,7 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-## Questão Cebraspe: MEC (2023) — Vírgula Vicária vs. Falso Aposto
+### Questão Cebraspe: MEC (2023) — Vírgula Vicária vs. Falso Aposto
 
 - **Texto:** *"...realiza-se na proporção em que seus temas forem captados e suas tarefas, resolvidas."*
 - **Item:** *A vírgula imediatamente após “tarefas” foi empregada para isolar um aposto explicativo.*
@@ -671,7 +661,7 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-## Questão Cebraspe: Pref. Cachoeiro (2024 / Professor) — Adverbial Condicional Final
+### Questão Cebraspe: Pref. Cachoeiro (2024 / Professor) — Adverbial Condicional Final
 
 - **Texto:** *"...e sobre o seu potencial para ajudar alunos e professores, caso seja integrada à prática pedagógica."*
 - **Item:** *No trecho citado, o emprego da vírgula é facultativo.*
@@ -680,7 +670,7 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-## Questão Cebraspe: Pref. Cachoeiro (2024 / Professor) — Sujeito Composto e SVC
+### Questão Cebraspe: Pref. Cachoeiro (2024 / Professor) — Sujeito Composto e SVC
 
 - **Texto:** *"...as discussões, os relatórios, as publicações apontaram que o problema..."*
 - **Item:** *É facultativo o emprego de vírgula após a expressão "as publicações".*
@@ -689,7 +679,7 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-## Questão Cebraspe: Pref. Cachoeiro (2024 / Enfermeiro) — Concessiva Deslocada
+### Questão Cebraspe: Pref. Cachoeiro (2024 / Enfermeiro) — Concessiva Deslocada
 
 - **Texto:** *"...Embora alguém possa imaginar cérebros biológicos artificiais, hoje toda a ação em inteligência artificial está centrada..."*
 - **Item:** *O emprego da vírgula logo após a palavra "artificiais" é obrigatório.*
@@ -698,7 +688,7 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-## Questão Cebraspe: MPE-GO (2024 / Analista) — Aposto e Vírgula de Dupla Função
+### Questão Cebraspe: MPE-GO (2024 / Analista) — Aposto e Vírgula de Dupla Função
 
 - **Texto:** *"...e o papel — suportes que criam a possibilidade de a pessoa retomar a leitura para relembrar ou refletir sobre um acontecimento —, a própria elaboração do pensamento..."*
 - **Item:** *Seriam preservadas a correção gramatical e a coerência das ideias do texto caso o trecho "suportes que criam [...] acontecimento" fosse isolado por vírgulas em vez dos travessões.*
@@ -707,7 +697,7 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-## Questão Cebraspe: Pref. Cachoeiro (2024 / Guarda) — Adjunto Curto Deslocado
+### Questão Cebraspe: Pref. Cachoeiro (2024 / Guarda) — Adjunto Curto Deslocado
 
 - **Texto:** *"...Em Alagoas, os indicadores do mesmo crime caíram 14,8%..."*
 - **Item:** *A supressão da vírgula empregada logo após "Alagoas" prejudicaria a correção gramatical do texto.*
@@ -716,7 +706,7 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-## Questão Cebraspe: Pref. Cachoeiro (2024 / Procurador) — Verbo e Objeto Oracional
+### Questão Cebraspe: Pref. Cachoeiro (2024 / Procurador) — Verbo e Objeto Oracional
 
 - **Texto:** *"...saibam que essa é a única emergência global real."*
 - **Item:** *A inserção de uma vírgula imediatamente depois da forma verbal "saibam" comprometeria a correção gramatical do texto.*
@@ -725,7 +715,7 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-## Questão Cebraspe: Pref. Cachoeiro (2024 / Aux. Adm.) — Sujeito Extenso e Verbo
+### Questão Cebraspe: Pref. Cachoeiro (2024 / Aux. Adm.) — Sujeito Extenso e Verbo
 
 - **Texto:** *"O precursor do que viria a ser um jornal foi o romano Acta Diurna..."*
 - **Item:** *A inserção de vírgula imediatamente depois da palavra "jornal" prejudicaria a correção gramatical do texto.*
@@ -734,14 +724,12 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
-## Questão Cebraspe: CAU-BR (2024 / Assistente TI) — Conjunção "E" com Sujeitos Distintos
+### Questão Cebraspe: CAU-BR (2024 / Assistente TI) — Conjunção "E" com Sujeitos Distintos
 
 - **Texto:** *"...escritório de arquitetura boutique, e a grande maioria sendo feita no local com papel e lápis..."*
 - **Item:** *No penúltimo período do primeiro parágrafo, a supressão da vírgula entre "boutique" e "e a grande" prejudicaria a correção gramatical do texto.*
 - **Resolução:** O conector `e` une orações com sujeitos diferentes (*a desigualdade social* vs. *a grande maioria*). A vírgula antes do "e" com sujeitos diferentes é facultativa; sua supressão não prejudica a correção.
 - **Gabarito:** **ERRADO**.
-
----
 
 ---
 
@@ -754,13 +742,11 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 - **O Teste do "Isso" contra Quebra de SVC:**Após um verbo transitivo, substitua a oração iniciada por `que` pela palavra **"isso"** (*saibam que...* -> *saibam isso*). Sendo objeto direto, fica evidente a proibição de vírgula (*saibam, isso* é agramatical).
 - **Tratamento de Nuances de Ênfase no Cebraspe:**Se o item indagar se a troca de travessões por vírgulas preserva a "correção gramatical e a coerência" (ou o sentido global), marque **CERTO**. Variações de ênfase estilística não configuram erro semântico para a banca.
 - **O Mnemônico dos 5 Dedos da Vírgula do "E":**
- - *Proibida (2 casos):* Enumeração \| Sujeitos Iguais.
- - *Facultativa (2 casos):* Sujeitos Diferentes \| Valor Adversativo/Conclusivo.
- - *Obrigatória (1 caso):* Polissíndeto.
+  - *Proibida (2 casos):* Enumeração \| Sujeitos Iguais.
+  - *Facultativa (2 casos):* Sujeitos Diferentes \| Valor Adversativo/Conclusivo.
+  - *Obrigatória (1 caso):* Polissíndeto.
 - **Regra de Ouro para a Prova Discursiva (Redação):**
  **Nunca empregue vírgula antes da conjunção "e" na redação discursiva**. Como a vírgula é facultativa com sujeitos diferentes e proibida com sujeitos iguais, a omissão zera o risco de penalização pela banca examinadora.
-
----
 
 ---
 
@@ -779,8 +765,6 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 
 ---
 
----
-
 ## Glossário operacional
 
 - **Oração Subordinada Adjetiva Restritiva:** Oração que delimita a extensão semântica do substantivo antecedente a um subconjunto. Grafada **sem vírgulas** (sentido de "somente", pressupondo multiplicidade de elementos).
@@ -791,8 +775,6 @@ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo
 - **Vírgula Sobrecarregada (Dupla Função):** Fenômeno sintático em que um único sinal de vírgula atende simultaneamente a duas obrigações de pontuação (ex.: fechar um aposto explicativo e fechar uma oração adverbial antecipada concorrente).
 - **Polissíndeto:** Figura de sintaxe caracterizada pela repetição enfática e reiterada de uma mesma conjunção coordenativa (especialmente "e"), exigindo vírgula obrigatória antes de cada conector.
 - **Ordem Canônica SVC:** Princípio que veda a quebra pontual entre Sujeito (S), Verbo (V) e Complementos (C).
-
----
 
 ---
 

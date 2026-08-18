@@ -39,7 +39,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Noções básicas de sintaxe do período (sujeito explícito, sujeito elíptico/oculto, orações subordinadas adjetivas).
 - Reconhecimento dos valores semânticos fundamentais dos conectivos coordenativos (especialmente a adversidade).
 
-### Mapa Conceitual Integrado
+#### Mapa Conceitual Integrado
 
 ```text
 COMPREENSÃO TEXTUAL EM CONCURSOS (RECORRÊNCIA)
@@ -72,40 +72,38 @@ COMPREENSÃO TEXTUAL EM CONCURSOS (RECORRÊNCIA)
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Natureza Técnica da Compreensão de Textos em Concursos
+### Natureza Técnica da Compreensão de Textos em Concursos
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A resolução de questões de compreensão textual em certames públicos é uma disciplina analítica estritamente técnica, baseada em critérios científicos de equivalência e rastreabilidade linguística, desvinculada de impressões afetivas, simpatias ideológicas ou do mero hábito de leitura subjetiva.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 O candidato que aborda o texto da prova de forma puramente intuitiva ou emocional corre o risco de projetar opiniões e repertório de mundo sobre as linhas do autor ("viajar no texto").
 
 Bancas organizadoras de alto rigor técnico — destacando-se o Cebraspe, cuja precisão microscópica supera até a de instituições como a FGV — estruturam itens com base em sistemas fechados de relações lógicas. Exige-se neutralidade afetiva: autores citados (mesmo figuras consagradas como Platão, Tomás de Aquino ou Descartes) são objetos linguísticos cujas proposições devem ser avaliadas exclusivamente pela sintaxe e semântica dispostas no fragmento.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - Qualquer juízo de valor ético, político ou empírico que não esteja textualmente ancorado deve ser desconsiderado na avaliação do item.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Exemplo pedagógico (ENEM/Caetano Veloso):* Polêmica pública em que o autor declarou discordar da interpretação atribuída à sua canção, evidenciando o perigo de leituras subjetivas desprovidas de âncora textual estrita.
 - *Exemplo pedagógico (Texto da autora em concurso):* Questão de concurso que utilizou trecho da gramática da professora Adriana Figueiredo; enquanto candidatos recorreram alegando interpretação indevida da banca, a autora atestou a exatidão técnica da banca ao avaliar o dado estritamente expresso.
 
 ---
 
-## O Conceito de Recorrência e Foco no Plano Explícito
+### O Conceito de Recorrência e Foco no Plano Explícito
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A **recorrência** é a modalidade de compreensão textual que demanda a recuperação e validação de informações que estão **expressamente declaradas (explícitas)** no texto-base, exigindo o reconhecimento de paráfrases e reescrituras fidedignas, sem recurso a deduções ou inferências não literais.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A compreensão por recorrência opera sob uma identidade formal sistematizada pela professora Adriana Figueiredo:
 
@@ -118,20 +116,20 @@ Diferencia-se categoricamente da **interpretação textual por inferência**:
 - Na *inferência/dedução*, a informação não está expressa com todas as letras, sendo autorizada por pressupostos lógicos e pistas contextuais.
 - Na *recorrência*, o dado precisa estar diretamente comprovável na superfície textual por meio de sinonímia, reestruturação sintática ou correspondência categorial.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - **Fórmulas canônicas de comando no Cebraspe e outras bancas:** *"De acordo com as ideias do texto..."*, *"Conforme o texto..."*, *"Segundo o texto..."*, *"O texto esclarece que..."*.
 - Ao identificar essas fórmulas, o candidato deve inibir o raciocínio dedutivo abdutivo e ativar a varredura microscópica por equivalência direta.
 
 ---
 
-## Mecanismos de Paráfrase Legítima: Equivalência Semântica, Singular Genérico e Simultaneidade Temporal
+### Mecanismos de Paráfrase Legítima: Equivalência Semântica, Singular Genérico e Simultaneidade Temporal
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A **paráfrase legítima** é a reescritura de um trecho textual que preserva rigorosamente seu conteúdo proposicional, utilizando recursos lexicais e gramaticais distintos. Não se confunde com cópia literal nem com extrapolação, admitindo variações formais canônicas reconhecidas pelas bancas examinadoras.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A paráfrase legítima manifesta-se por meio de três mecanismos principais:
 
@@ -139,16 +137,16 @@ A paráfrase legítima manifesta-se por meio de três mecanismos principais:
 2. **Singular Genérico (ou Categórico) $\leftrightarrow$ Plural:** O emprego de um substantivo no singular com artigo definido para representar toda a espécie ou categoria (ex.: *"O uso do rito"*, *"O rito consiste"*) equivale semanticamente ao substantivo no plural (ex.: *"Os ritos"*). O candidato não deve classificar a assertiva como errada por simples divergência numérica gramatical quando o sentido for genérico.
 3. **Equivalência Temporal de Simultaneidade:** Construções que denotam marcos históricos paralelos (ex.: *"O uso do rito é paralelo ao aparecimento da humanidade"*) expressam simultaneidade cronológica originária, sendo perfeitamente equivalentes à locução comparativo-temporal *"tão antigos quanto a humanidade"*.
 
-### Exemplos
+#### Exemplos
 
 - *Caso 1 (Educação):* Texto: *"relação que, apesar de fundamental, não é tão expressiva na atualidade"* $\rightarrow$ Paráfrase: *"apesar de crucial, o papel transformador da educação não tem sido aproveitado"* (Validado em ).
 - *Caso 2 (Ritos/Sebrae 2024):* Texto: *"O uso do rito é paralelo ao aparecimento da humanidade"* $\rightarrow$ Paráfrase: *"os ritos são tão antigos quanto a humanidade"* (Validado em ).
 
 ---
 
-## Tipologia dos Vícios em Paráfrase I: Erro por Contradição e Polarização Semântica
+### Tipologia dos Vícios em Paráfrase I: Erro por Contradição e Polarização Semântica
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **erro por contradição** ocorre quando a assertiva proposta pela banca inverte ou nega o sentido expresso no texto original, alterando a polaridade axiológica ou lógica da mensagem mediante a inserção de um termo destoante em meio a vocábulos sinônimos.
 
@@ -158,16 +156,16 @@ Texto Original: [Elemento A (+)] ──► [Resultado Positivo (+)]
 Assertiva Proposta: [Elemento A (+)] ──► [Resultado Negativo (-)] <── INVERSÃO DE POLARIDADE
 ```
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - Em assertivas capciosas, as bancas constroem períodos em que a grande maioria dos termos constitui paráfrase fiel do texto-base, inserindo pontualmente um advérbio, adjetivo ou verbo de sentido oposto (ex.: *"negativamente"* em vez de favoravelmente).
 - **Técnica da Polarização Semântica:** Consiste em mapear o texto atribuindo cargas positivas `[+]` (crescimento, benefício, sucesso) e cargas negativas `[-]` (crise, queda, obstáculo). Se o texto indica que a venda de um produto caminhou *"na contramão"* de uma economia que *"não anda bem"* (oposição ao negativo `[-]`), a venda obteve desempenho positivo `[+]`. A assertiva que afirma que os preços impactaram "negativamente" a comercialização comete vício categórico de contradição.
 
 ---
 
-## Tipologia dos Vícios em Paráfrase II: Erro por Extrapolação, Falso "Se... Então" e "Verdade do Texto" vs. "Verdade da Vida"
+### Tipologia dos Vícios em Paráfrase II: Erro por Extrapolação, Falso "Se... Então" e "Verdade do Texto" vs. "Verdade da Vida"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A **extrapolação textual** ocorre quando a assertiva introduz dados quantitativos, qualificadores, relações de causalidade, juízos de prioridade ou noções de mundo real que não possuem âncora textual explícita no fragmento de apoio.
 
@@ -179,7 +177,7 @@ MANIFESTAÇÕES DA EXTRAPOLAÇÃO:
 └── 4. "Verdade da Vida" vs. "Verdade do Texto": Validar assertiva com base em fatos empíricos externos não expressos.
 ```
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A extrapolação manifesta-se pedagogicamente sob quatro vertentes críticas:
 
@@ -190,13 +188,13 @@ A extrapolação manifesta-se pedagogicamente sob quatro vertentes críticas:
 
 ---
 
-## Rastreamento Sintático-Coesivo e a Técnica das Setas
+### Rastreamento Sintático-Coesivo e a Técnica das Setas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A **Técnica das Setas** ("Setas Salvam") é um método de leitura analítica ativa que consiste no traçado gráfico e sistemático de vetores direcionais ligando pronomes relativos, demonstrativos, possessivos, elipses (sujeitos ocultos) e orações adjetivas aos seus exatos núcleos substantivos antecedentes.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - Em períodos sintaticamente densos, a banca comumente afasta o sujeito de seu predicado ou insere orações intercaladas para mascarar o verdadeiro agente da oração.
 - Ao identificar uma elipse verbal (ex.: *"[Ele] É caracterizado por..."*) ou um pronome relativo/possessivo (ex.: *"cujo sentido"*, *"sua comercialização"*), o candidato deve desenhar a seta até a palavra nuclear de referência.
@@ -204,19 +202,17 @@ A **Técnica das Setas** ("Setas Salvam") é um método de leitura analítica at
 
 ---
 
-## O Papel Argumentativo das Conjunções Adversativas em Textos Dissertativos/Filosóficos
+### O Papel Argumentativo das Conjunções Adversativas em Textos Dissertativos/Filosóficos
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A conjunção adversativa (*Mas, Porém, Contudo, Todavia, No entanto*) atua como um **divisor de águas argumentativo** e inversor de foco: ela introduz a tese principal que o autor pretende enfatizar no presente discursivo, delimitando historicamente o que veio antes sem que as características de um polo sejam transferidas para o outro.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Mecânica Argumentativa:** A oração que antecede o *Mas* estabelece o panorama histórico, contextual ou concessivo; a oração subsequente introduz a proposição nuclear valorizada pelo enunciador.
 - **A Metáfora do Término:** Semelhante à frase de rompimento amoroso (*"Você é maravilhosa, MAS não podemos continuar"*), a informação anterior é verdadeira, mas o peso decisivo recai sobre o segmento posterior.
 - **Armadilha em Concursos (Embaralhamento de Referentes):** A banca redige assertivas unindo elementos de antes e de depois do conectivo adversativo (ex.: atribuir ao filósofo moderno a teorização antiga descrita antes do conector adversativo).
-
----
 
 ---
 
@@ -232,7 +228,7 @@ $$
 
 ---
 
-### Tabela Sintética das Modalidades de Paráfrase
+#### Tabela Sintética das Modalidades de Paráfrase
 
 |:------------------------------------- |:-------------------------------------------------------------------------------- |:----------------------------------------------------------------------------------------------------------------------------- |:----------------------------: |
 | **Paráfrase Correta** | Correspondência semântica e sintática integral em todos os blocos frasais. | Preservação perfeita do sentido por sinonímia, singular genérico ou equivalência temporal.$\rightarrow$ **CERTO** |  |
@@ -241,17 +237,15 @@ $$
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Protocolo de Resolução de Recorrência e Fatiamento de Assertivas
+### Protocolo de Resolução de Recorrência e Fatiamento de Assertivas
 
-### Objetivo
+#### Objetivo
 
 Validar itens de compreensão textual em provas de concurso (especialmente itens Certo/Errado do Cebraspe), neutralizando erros de impulsividade, falsos paralelismos, contradições e extrapolações.
 
-### Fluxograma Operacional
+#### Fluxograma Operacional
 
 ```text
 [Passo 1: Identificar o Comando de Prova]
@@ -284,7 +278,7 @@ Validar itens de compreensão textual em provas de concurso (especialmente itens
 
 ---
 
-## Procedimento de Leitura Ativa "Um Olho no Peixe, Outro no Gato"
+### Procedimento de Leitura Ativa "Um Olho no Peixe, Outro no Gato"
 
 1. **Leitura Silenciosa Contínua:** Realizar a leitura estritamente interna (evitar sussurros ou leitura labial que consomem atenção e energia cognitiva).
 2. **Escaneamento Retrospectivo:** Ao atingir o final de cada oração subordinada ou sintagma complexo, a visão e a mente devem retornar instantaneamente ao sujeito ou termo nuclear antecedente.
@@ -292,14 +286,12 @@ Validar itens de compreensão textual em provas de concurso (especialmente itens
 
 ---
 
-## Protocolo para Manejo de Enumerações Extensas
+### Protocolo para Manejo de Enumerações Extensas
 
 1. Ao se deparar com listas longas de substantivos em textos legais ou descritivos (ex.: lista de nove equipamentos escolares), interromper a leitura detalhada de item por item.
 2. Traçar um enlace curvo envolvendo todo o bloco da enumeração.
 3. Conectar o bloco diretamente por uma seta ao **verbo regente principal** (ex.: *"equipar"*) e ao **hiperônimo funcional** correspondente (ex.: *"critérios mínimos de qualidade"*).
 4. Proceder à leitura da assertiva verificando se a banca cobrou a totalidade, um elemento específico ou se formulou uma generalização indevida.
-
----
 
 ---
 
@@ -316,7 +308,7 @@ Validar itens de compreensão textual em provas de concurso (especialmente itens
 
 ---
 
-### Tabela 2: "Verdade do Texto" vs. "Verdade da Vida"
+#### Tabela 2: "Verdade do Texto" vs. "Verdade da Vida"
 
 | Critério | Verdade do Texto (Âncora Canônica) | Verdade da Vida (Conhecimento Empírico) |
 |:----------------------------- |:------------------------------------------------------------------------------ |:---------------------------------------------------------------------------------------- |
@@ -327,7 +319,7 @@ Validar itens de compreensão textual em provas de concurso (especialmente itens
 
 ---
 
-### Tabela 3: Marcadores Temporais vs. Operadores de Hierarquia/Importância
+#### Tabela 3: Marcadores Temporais vs. Operadores de Hierarquia/Importância
 
 | Dimensão Categorial | Marcadores Textuais Típicos | Significado Preciso | Não Autoriza Concluir Que: |
 |:-------------------------------------- |:------------------------------------------------------------------------------- |:------------------------------------------------------------------- |:--------------------------------------------------------------------- |
@@ -336,99 +328,95 @@ Validar itens de compreensão textual em provas de concurso (especialmente itens
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Análise de Paráfrase Correta (Educação e Transformações)
+### Análise de Paráfrase Correta (Educação e Transformações)
 
 - **Texto de apoio:** *"Tal destaque dado pela campanha evidencia a necessidade de integrar a educação nessas transformações, relação que, apesar de fundamental, não é tão expressiva na atualidade."*
 - **Assertiva:** *"O texto esclarece que, apesar de crucial, o papel transformador da educação não tem sido aproveitado."*
 - **Desenvolvimento da resolução:**
- - `Bloco 1`: *"apesar de crucial"* $\leftrightarrow$ *"apesar de fundamental"* (equivalência de concessão e sinonímia perfeita).
- - `Bloco 2`: *"o papel transformador da educação"* $\leftrightarrow$ *"a necessidade de integrar a educação nessas transformações"* (equivalência semântica de conteúdo).
- - `Bloco 3`: *"não tem sido aproveitado"* $\leftrightarrow$ *"relação que (...) não é tão expressiva na atualidade"* (a oração adjetiva retoma "relação", indicando que a integração da educação não é expressiva/aproveitada).
+  - `Bloco 1`: *"apesar de crucial"* $\leftrightarrow$ *"apesar de fundamental"* (equivalência de concessão e sinonímia perfeita).
+  - `Bloco 2`: *"o papel transformador da educação"* $\leftrightarrow$ *"a necessidade de integrar a educação nessas transformações"* (equivalência semântica de conteúdo).
+  - `Bloco 3`: *"não tem sido aproveitado"* $\leftrightarrow$ *"relação que (...) não é tão expressiva na atualidade"* (a oração adjetiva retoma "relação", indicando que a integração da educação não é expressiva/aproveitada).
 - **Julgamento:** **CORRETO**.
 
 ---
 
-## Análise de Paráfrase Incorreta por Contradição (Venda de Alimentos)
+### Análise de Paráfrase Incorreta por Contradição (Venda de Alimentos)
 
 - **Texto de apoio:** *"Impulsionada pela alta geral dos preços, a venda de produtos alimentícios industrializados tem caminhado na contramão da economia, que não anda bem das pernas."*
 - **Assertiva:** *"A alta nos preços dos alimentos industrializados tem impactado negativamente sua comercialização."*
 - **Desenvolvimento da resolução:**
- - Mapeamento: A economia vai mal `[-]`. A venda de alimentos caminha na *contramão* da economia, logo tem desempenho positivo `[+]`.
- - Confronto: A assertiva afirma que os preços impactaram *negativamente* `[-]` a comercialização.
- - O vocábulo *"negativamente"* inverte a polaridade do resultado econômico descrito.
+  - Mapeamento: A economia vai mal `[-]`. A venda de alimentos caminha na *contramão* da economia, logo tem desempenho positivo `[+]`.
+  - Confronto: A assertiva afirma que os preços impactaram *negativamente* `[-]` a comercialização.
+  - O vocábulo *"negativamente"* inverte a polaridade do resultado econômico descrito.
 - **Julgamento:** **INCORRETO (POR CONTRADIÇÃO)**.
 
 ---
 
-## Análise de Paráfrase Incorreta por Extrapolação (Pilares da Segurança)
+### Análise de Paráfrase Incorreta por Extrapolação (Pilares da Segurança)
 
 - **Texto de apoio:** *"O sistema de segurança deve englobar três pilares: de início, a prevenção, passando pela contenção e terminando na recuperação."*
 - **Assertiva:** *"De acordo com o texto, as forças de segurança devem priorizar a prevenção."*
 - **Desenvolvimento da resolução:**
- - O texto estabelece uma sequência estritamente cronológica (*de início $\rightarrow$ passando por $\rightarrow$ terminando em*).
- - A assertiva introduz a noção axiológica de prioridade hierárquica (*priorizar*).
+  - O texto estabelece uma sequência estritamente cronológica (*de início $\rightarrow$ passando por $\rightarrow$ terminando em*).
+  - A assertiva introduz a noção axiológica de prioridade hierárquica (*priorizar*).
 
 - **Julgamento:** **INCORRETO (POR EXTRAPOLAÇÃO)**.
 
 ---
 
-## Questão Cebraspe 1: Sebrae Nacional 2024 (Ritos e Humanidade)
+### Questão Cebraspe 1: Sebrae Nacional 2024 (Ritos e Humanidade)
 
 - **Banca / Órgão / Ano / Cargo:** CESPE / CEBRASPE — SEBRAE-NACIONAL (2024) — Analista Técnico II (Adaptada).
 - **Texto de apoio:** *"O rito consiste em um conjunto de atos formalizados, expressivos e portadores de uma dimensão simbólica. É caracterizado por uma configuração espaço-temporal específica, por sistemas de linguagem e comportamentos específicos e por signos emblemáticos cujo sentido codificado constitui um dos bens comuns do grupo. O uso do rito é paralelo ao aparecimento da humanidade."*
 - **Assertiva avaliada:** *"De acordo com as ideias do texto 1A9, os ritos são tão antigos quanto a humanidade."*
 - **Desenvolvimento da resolução:**
- - `Comando`: *"De acordo com as ideias do texto"* $\rightarrow$ Recorrência estrita.
- - `Fragmento 1`: *"Os ritos"* $\leftrightarrow$ *"O uso do rito"* / *"O rito consiste"*. O singular com valor genérico equivale semanticamente ao plural da espécie. Correspondência válida.
- - `Fragmento 2`: *"são tão antigos quanto"* $\leftrightarrow$ *"é paralelo ao aparecimento"*. A simultaneidade de surgimento no tempo histórico implica identidade de antiguidade cronológica.
- - `Fragmento 3`: *"a humanidade"* $\leftrightarrow$ *"da humanidade"*. Correspondência literal.
+  - `Comando`: *"De acordo com as ideias do texto"* $\rightarrow$ Recorrência estrita.
+  - `Fragmento 1`: *"Os ritos"* $\leftrightarrow$ *"O uso do rito"* / *"O rito consiste"*. O singular com valor genérico equivale semanticamente ao plural da espécie. Correspondência válida.
+  - `Fragmento 2`: *"são tão antigos quanto"* $\leftrightarrow$ *"é paralelo ao aparecimento"*. A simultaneidade de surgimento no tempo histórico implica identidade de antiguidade cronológica.
+  - `Fragmento 3`: *"a humanidade"* $\leftrightarrow$ *"da humanidade"*. Correspondência literal.
 - **Gabarito:** **CERTO**.
 
 ---
 
-## Questão Cebraspe 2: TCE-AC 2024 (Dualismo Cartesiano e Conjunção Adversativa)
+### Questão Cebraspe 2: TCE-AC 2024 (Dualismo Cartesiano e Conjunção Adversativa)
 
 - **Banca / Órgão / Ano / Cargo:** CESPE / CEBRASPE — TCE-AC (2024) — Auditor de Controle Externo.
 - **Texto de apoio:** *"A ideia de que a mente pertence a um domínio separado, distinto do corpo, foi teorizada bem cedo, em grandes textos como o Fédon, de Platão (IV a.C.) e a Suma teológica, de Tomás de Aquino (1265-1274), um texto fundador da concepção cristã da alma. Mas foi o filósofo francês René Descartes (1596-1650) quem estabeleceu aquilo que é hoje conhecido como dualismo: a tese de que a mente dotada de consciência é feita de uma substância imaterial que não está sujeita às leis da física."*
 - **Assertiva avaliada:** *"Conforme as ideias do texto, a distinção entre mente e corpo como objetos de estudo já era conhecida desde a Antiguidade, mas apenas com René Descartes essa distinção foi teorizada e difundida."*
 - **Desenvolvimento da resolução:**
- - `Blocos 1 a 4`: A distinção entre mente e corpo era conhecida desde a Antiguidade $\rightarrow$ Correspondência válida com Platão e Tomás de Aquino ("foi teorizada bem cedo").
- - `Blocos 5 e 6`: Afirmar que *"apenas com René Descartes essa distinção foi teorizada e difundida"*.
- - **Erro de Referente:** A distinção foi teorizada na Antiguidade; Descartes estabeleceu a tese específica do *dualismo*.
- - **Erro de Extrapolação:** O texto não menciona em ponto algum que a distinção foi *"difundida"* por Descartes.
+  - `Blocos 1 a 4`: A distinção entre mente e corpo era conhecida desde a Antiguidade $\rightarrow$ Correspondência válida com Platão e Tomás de Aquino ("foi teorizada bem cedo").
+  - `Blocos 5 e 6`: Afirmar que *"apenas com René Descartes essa distinção foi teorizada e difundida"*.
+  - **Erro de Referente:** A distinção foi teorizada na Antiguidade; Descartes estabeleceu a tese específica do *dualismo*.
+  - **Erro de Extrapolação:** O texto não menciona em ponto algum que a distinção foi *"difundida"* por Descartes.
 - **Gabarito:** **ERRADO**.
 
 ---
 
-## Questão Cebraspe 3: FNDE 2024 (Projeto de Lei e Infraestrutura Escolar)
+### Questão Cebraspe 3: FNDE 2024 (Projeto de Lei e Infraestrutura Escolar)
 
 - **Banca / Órgão / Ano / Cargo:** CESPE / CEBRASPE — FNDE (2024) — Arquiteto e Urbanista.
 - **Texto de apoio:** *"Um projeto de lei que determina critérios mínimos de qualidade para escolas públicas de educação básica foi aprovado na Comissão de Constituição e Justiça (CCJ) do Senado Federal, em abril deste ano. Conforme estabelece o projeto de lei, o poder público deverá equipar todas as unidades do ensino básico com bibliotecas, laboratórios de ciências e informática, acesso à Internet, quadras poliesportivas cobertas, instalações com condições adequadas de acessibilidade, energia elétrica, abastecimento de água potável, esgoto sanitário e manejo de resíduos sólidos."*
 - **Assertiva avaliada:** *"De acordo com o texto, a maior parte das instituições brasileiras de ensino não apresenta a infraestrutura básica para o adequado funcionamento."*
 - **Desenvolvimento da resolução:**
- - `Comando`: *"De acordo com o texto"* $\rightarrow$ Recorrência estrita.
- - `Confronto`: O texto relata exclusivamente a aprovação de um projeto de lei que impõe a obrigação de equipar escolas públicas.
- - Não constam no texto dados quantitativos ou estatísticos como *"a maior parte"*.
- - A assertiva apela para a experiência cotidiana do candidato ("verdade da vida"), constituindo extrapolação integral.
+  - `Comando`: *"De acordo com o texto"* $\rightarrow$ Recorrência estrita.
+  - `Confronto`: O texto relata exclusivamente a aprovação de um projeto de lei que impõe a obrigação de equipar escolas públicas.
+  - Não constam no texto dados quantitativos ou estatísticos como *"a maior parte"*.
+  - A assertiva apela para a experiência cotidiana do candidato ("verdade da vida"), constituindo extrapolação integral.
 - **Gabarito:** **ERRADO**.
-
----
 
 ---
 
 ## Memorização inteligente
 
-## O Macete "Setas Salvam"
+### O Macete "Setas Salvam"
 
 Ao ler textos complexos de prova, nunca deixe pronomes (*cujo*, *seu*, *que*, *ele*) e elipses verbais desvinculados no espaço visual. Trace fisicamente uma seta no caderno de questões apontando para o substantivo antecedente a que pertencem. Isso blinda o candidato contra a troca de predicados entre sujeitos distintos.
 
 ---
 
-## Técnica da Polarização Semântica `[+]` e `[-]`
+### Técnica da Polarização Semântica `[+]` e `[-]`
 
 Em temas econômicos, científicos ou políticos com orações em contramão ou concessão, anote nas margens sinais matemáticos:
 
@@ -436,7 +424,7 @@ Em temas econômicos, científicos ou políticos com orações em contramão ou 
 
 ---
 
-## Regra da Interrogação e Desapego Provisório
+### Regra da Interrogação e Desapego Provisório
 
 Ao confrontar um pedaço da assertiva com o texto e não encontrar correspondente imediato, **não entre em pânico nem trave**:
 
@@ -444,23 +432,21 @@ Ao confrontar um pedaço da assertiva com o texto e não encontrar correspondent
 
 ---
 
-## Manejo Rápido de Enumerações Extensas
+### Manejo Rápido de Enumerações Extensas
 
 Ao encontrar listas longas de elementos descritivos (como lista de 8 a 10 itens de infraestrutura predial), não perca tempo decorando termo por termo. Trace um enlace sobre todo o bloco e puxe uma seta ligando-o ao **verbo de ação principal** (*equipar*) e ao **conceito genérico regente** (*critérios mínimos*).
 
 ---
 
-## Metáfora do Término para Conjunções Adversativas
+### Metáfora do Término para Conjunções Adversativas
 
 Lembre-se da estrutura do término de namoro (*"Você é linda, MAS não dá mais"*). O conectivo *Mas* não nega que a pessoa seja linda (fato anterior verdadeiro), mas define que a **decisão real e o foco argumentativo estão exclusivamente no que vem depois**.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## O Risco da Leitura Afetiva e Ideológica
+### O Risco da Leitura Afetiva e Ideológica
 
 - **Problema:** Candidatos que se emocionam com temas sociais ou ativam preconceitos ideológicos/filosóficos contra autores citados (Platão, Tomás de Aquino, etc.).
 - **Consequência:** Julgar assertivas com base em concordância ideológica moral ou discordância pessoal, ignorando a literalidade do texto.
@@ -468,7 +454,7 @@ Lembre-se da estrutura do término de namoro (*"Você é linda, MAS não dá mai
 
 ---
 
-## Falsa Incorreção por Singular Genérico vs. Plural
+### Falsa Incorreção por Singular Genérico vs. Plural
 
 - **Problema:** Marcar um item como ERRADO apenas porque no texto original a expressão está no singular (*"o rito"*) e na assertiva foi vertida para o plural (*"os ritos"*).
 - **Consequência:** Perda de item legítimo de paráfrase no Cebraspe.
@@ -476,7 +462,7 @@ Lembre-se da estrutura do término de namoro (*"Você é linda, MAS não dá mai
 
 ---
 
-## Armadilha da Paráfrase com Sinônimos Parciais
+### Armadilha da Paráfrase com Sinônimos Parciais
 
 - **Problema:** Assertivas em que 95% das palavras são sinônimos perfeitos do texto, mas contendo um único vocábulo que inverte a polaridade (ex.: *"negativamente"*).
 - **Consequência:** O candidato lê com pressa, reconhece a familiaridade e erra a questão.
@@ -484,7 +470,7 @@ Lembre-se da estrutura do término de namoro (*"Você é linda, MAS não dá mai
 
 ---
 
-## Confundir Marcador Temporal com Hierarquia de Importância
+### Confundir Marcador Temporal com Hierarquia de Importância
 
 - **Problema:** Converter expressões de ordem temporal (*"de início"*, *"primeiramente"*) em expressões de prioridade ou relevância axiológica (*"priorizar"*, *"mais importante"*).
 - **Consequência:** Erro grave por extrapolação semântica.
@@ -492,7 +478,7 @@ Lembre-se da estrutura do término de namoro (*"Você é linda, MAS não dá mai
 
 ---
 
-## Embaralhamento de Referentes após Conjunção Adversativa
+### Embaralhamento de Referentes após Conjunção Adversativa
 
 - **Problema:** A banca cria assertiva com período composto por adversativa e transfere a predicação do autor antigo (antes do *mas*) para o autor moderno (depois do *mas*).
 - **Consequência:** O candidato lembra que ambos os nomes estavam no texto e valida a assertiva errada.
@@ -500,7 +486,7 @@ Lembre-se da estrutura do término de namoro (*"Você é linda, MAS não dá mai
 
 ---
 
-## A Armadilha Fatal da "Verdade da Vida"
+### A Armadilha Fatal da "Verdade da Vida"
 
 - **Problema:** Julgar uma assertiva como CERTA porque seu conteúdo coincide com a realidade empírica evidente do cotidiano (ex.: *"a maioria das escolas brasileiras é precária"*).
 - **Consequência:** Cometer extrapolação extratextual.
@@ -508,39 +494,35 @@ Lembre-se da estrutura do término de namoro (*"Você é linda, MAS não dá mai
 
 ---
 
----
-
 ## Glossário operacional
 
-## Recorrência
+### Recorrência
 
 - **Definição:** Modalidade de compreensão textual que visa à recuperação direta de informações explícitas no texto de apoio, validando paráfrases sem recurso a inferências livres.
 
-## Paráfrase
+### Paráfrase
 
 - **Definição:** Reescritura fiel de um enunciado utilizando outro arranjo vocabular e sintático, mantendo estrita identidade com o sentido original.
 
-## Contradição Textual
+### Contradição Textual
 
 - **Definição:** Vício de compreensão em que a assertiva altera a polaridade semântica ou afirma o oposto do que foi exposto no texto original.
 
-## Extrapolação Textual
+### Extrapolação Textual
 
 - **Definição:** Erro interpretativo consistente em acrescentar à análise dados empíricos, juízos de prioridade, quantificadores ou deduções lógicas que não se encontram expressos no texto.
 
-## Singular Genérico (ou Categórico)
+### Singular Genérico (ou Categórico)
 
 - **Definição:** Uso de substantivo singular com artigo definido para representar toda a espécie ou categoria abstrata, equivalendo semanticamente ao plural.
 
-## Polarização Semântica
+### Polarização Semântica
 
 - **Definição:** Técnica de mapeamento de proposições textuais em cargas positivas `[+]` e negativas `[-]` para verificação de coerência em relações de oposição.
 
-## Dualismo Cartesiano (no contexto da aula)
+### Dualismo Cartesiano (no contexto da aula)
 
 - **Definição:** Tese de René Descartes estabelecendo que a mente consciente (substância imaterial) e o corpo físico pertencem a domínios ontológicos distintos; no contexto da aula, contrapõe-se à teorização inicial genérica da distinção na Antiguidade.
-
----
 
 ---
 

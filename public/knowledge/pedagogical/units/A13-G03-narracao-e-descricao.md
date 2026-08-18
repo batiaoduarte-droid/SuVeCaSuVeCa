@@ -46,7 +46,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - **Morfossintaxe Verbal Básica:** Noção elementar dos tempos do Modo Indicativo (Presente, Pretérito Perfeito, Pretérito Imperfeito e Pretérito Mais-que-perfeito).
 - **Classes de Palavras de Caracterização:** Reconhecimento de substantivos e adjetivos como núcleos de qualificação.
 
-### Mapa Integrado de Conhecimento
+#### Mapa Integrado de Conhecimento
 
 `text
 DISTINÇÃO TIPOLÓGICA: NARRAÇÃO vs. DESCRIÇÃO
@@ -90,17 +90,19 @@ DISTINÇÃO TIPOLÓGICA: NARRAÇÃO vs. DESCRIÇÃO
 
 ---
 
+```
+
 ---
 
 ## Explicação didática aprofundada
 
-## O Tipo Textual Descrição: Princípio da Simultaneidade, Congelamento de Cena e Caracterização
+### O Tipo Textual Descrição: Princípio da Simultaneidade, Congelamento de Cena e Caracterização
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A **descrição** é a tipologia textual orientada para a representação de seres, objetos, paisagens, ambientes, estados de coisas, rotinas ou conceitos capturados em um **recorte temporal estático** (um único momento no tempo). Sua estrutura discursiva é regida pelo princípio da **simultaneidade**, operando de modo análogo a uma fotografia ou congelamento de cena.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 No texto puramente descritivo, não ocorre avanço do tempo cronológico; não há transformação de estados nem relações de anterioridade e posterioridade ("antes e depois") entre as orações.
 
@@ -108,56 +110,56 @@ No texto puramente descritivo, não ocorre avanço do tempo cronológico; não h
 - **Intenção Comunicativa do Autor:** Identificar, qualificar, localizar, caracterizar e detalhar atributos físicos, psicológicos, espaciais ou funcionais de uma entidade.
 - **Base Léxica Prototípica:** Predomínio de substantivos, adjetivos qualificadores, locuções adjetivas e verbos de estado ou de ação durativa.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 1. **Teste da Fotografia:** Verifique se todos os fatos, ações e elementos retratados caberiam simultaneamente dentro de uma única fotografia estática.
 2. **Ausência de Vetor Temporal:** Observe se a inversão da ordem das frases altera a cronologia dos fatos. Se a reordenação mantiver o sentido do quadro sem quebrar uma cadeia de eventos, trata-se de descrição.
 3. **Foco Qualificador:** Identifique se o objetivo discursivo primordial do trecho é responder à pergunta: *"Como é / como era este ser, objeto, cena ou objetivo?"*.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - **Exemplo Descritivo Prototípico:** *"A menina passeava pela calçada da avenida elegante do bairro e olhava as vitrines que exibiam uma imensa variedade de roupas finas e caras."* (As ações de passear, olhar e a exibição das vitrines ocorrem simultaneamente no mesmo quadro temporal).
 - **Contraexemplo (Narrativo):** *"A menina entrou na loja, escolheu um vestido e pagou a conta."* (As ações são consecutivas; a saída da calçada e a escolha do vestido exigem o avanço do tempo).
 
-### Exceções ou limites
+#### Exceções ou limites
 
 A descrição não se restringe a retratos visuais literários. Ela pode se manifestar em textos técnicos/institucionais na caracterização de objetivos abstratos ou em relatos epistolares descrevendo a rotina de um vilarejo.
 
 ---
 
-## O Tipo Textual Narração: Princípio da Sucessividade, Vetor Temporal e Transformação
+### O Tipo Textual Narração: Princípio da Sucessividade, Vetor Temporal e Transformação
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A **narração** é a tipologia textual caracterizada pelo relato de uma sequência de acontecimentos desenvolvidos em **momentos sucessivos no tempo**, protagonizados por personagens e articulados por relações de causa, efeito e transformação de estado. Sua estrutura discursiva é regida pelo princípio da **sucessividade** (relação explícita de "antes e depois").
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A narrativa pressupõe a passagem ativa do tempo cronológico. Os fatos não coexistem estaticamente; eles se encadeiam em uma linha vetorial unidirecional:
 
 - **Intenção Comunicativa do Autor:** Relatar uma história, expor um enredo, encadear acontecimentos dinâmicos dotados de introdução, complicação, clímax e/ou desfecho.
 - **Marcadores Dinâmicos:** Verbos de ação pontual, marcadores temporais adverbiais (*depois, em seguida, logo que, anos atrás*) e alternância de falas em diálogos (discurso direto e indireto).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 1. **Teste do Vetor Cronológico ("Antes e Depois"):** Verifique se os acontecimentos exigem uma ordem temporal irreversível, na qual uma ação depende da conclusão da ação precedente.
 2. **Inserção de Conectivos Ordinais:** Teste a viabilidade de intercalar mentalmente marcadores como `1º... então... e depois...`. Se o texto fluir com perfeita naturalidade lógica, a base é narrativa.
 3. **Presença de Diálogos:** A troca de turnos verbais entre interlocutores é indício estrutural imediato de ação sucessiva e enredo.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - **Exemplo Narrativo Prototípico:** *"O funcionário acabou de anotar um pedido, repousou a caneta e voltou-se para atender o cliente."* (1º finalizou a anotação $\rightarrow$ 2º pousou a caneta $\rightarrow$ 3º virou o corpo para atender; ações impossíveis de ocorrer no mesmo instante físico).
 - **Contraexemplo (Descritivo):** *"O funcionário era alto, vestia um uniforme azul e segurava uma caneta prateada."* (Atributos simultâneos do personagem; tempo estático).
 
 ---
 
-## Comportamento dos Tempos Verbais Prototípicos no Pretérito: Imperfeito vs. Perfeito e Mais-que-perfeito
+### Comportamento dos Tempos Verbais Prototípicos no Pretérito: Imperfeito vs. Perfeito e Mais-que-perfeito
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 No registro formal padrão situado no passado, a tipologia descritiva associa-se comumente ao **Pretérito Imperfeito do Indicativo** (para registrar processos durativos, contínuos ou habituais), ao passo que a tipologia narrativa associa-se ao **Pretérito Perfeito** e ao **Pretérito Mais-que-perfeito do Indicativo** (para registrar ações pontuais, concluídas e sucessivas).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Pretérito Imperfeito na Descrição ("O tempo que dura"):**
  A descrição sensorial de um cenário ou comportamento exige que a ação permaneça aberta e contínua no tempo psicológico do observador. Se a ação fosse estritamente instantânea, não haveria tempo para a contemplação e o detalhamento. Por isso, verbos no pretérito imperfeito (*passeava, olhava, exibia, ensinava, anotavam*) criam o "pano de fundo" estático da cena.
@@ -166,103 +168,101 @@ No registro formal padrão situado no passado, a tipologia descritiva associa-se
 - **Pretérito Mais-que-perfeito na Narração:**
  Situa uma ação pontual ocorrida em momento anterior a outro fato já pretérito (*sucedera, recorrera, acabara, metera, despedira-se*), organizando os estratos temporais de anterioridade da narrativa.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - Ao deparar-se com pretéritos imperfeitos, verifique se expressam a continuidade de um estado de fundo.
 - Ao deparar-se com pretéritos perfeitos e mais-que-perfeitos em série, reconheça a cadeia cronológica de impulsão dos eventos.
 
 ---
 
-## O Presente Histórico e a Neutralidade Tipológica do Tempo Verbal
+### O Presente Histórico e a Neutralidade Tipológica do Tempo Verbal
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **Presente Histórico** (ou Presente Narrativo) é um recurso estilístico-discursivo que consiste no emprego de formas verbais flexionadas no **Presente do Indicativo** para reportar fatos cronologicamente pretéritos, visando aproximar os eventos relatados do momento da enunciação, conferindo dinamismo, vivacidade e suspense.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Neutralidade Tipológica do Tempo Presente:**
  O tempo Presente do Indicativo é polivalente e pode sustentar tanto a narração quanto a descrição:
- - *Na Narração:* Mantém a sucessividade cronológica intacta (*acaba $\rightarrow$ repousa $\rightarrow$ volta-se* / *acorda $\rightarrow$ toma banho $\rightarrow$ toma café*).
- - *Na Descrição:* Mantém a simultaneidade do quadro intacta (*passeia, olha e exibe* / *acorda-se às cinco, leva-se o dia lendo*).
+  - *Na Narração:* Mantém a sucessividade cronológica intacta (*acaba $\rightarrow$ repousa $\rightarrow$ volta-se* / *acorda $\rightarrow$ toma banho $\rightarrow$ toma café*).
+  - *Na Descrição:* Mantém a simultaneidade do quadro intacta (*passeia, olha e exibe* / *acorda-se às cinco, leva-se o dia lendo*).
 2. **Universalidade de Aplicação:**
  O presente histórico **não** é restrito a grandes acontecimentos ou personagens da historiografia universal (*"Em 1492, Colombo descobre a América"* $\rightarrow$ *descobriu*). Ele aplica-se indistintamente a fatos cotidianos triviais e cartas pessoais (*"Em 16/04/2004, Adriana acorda..."* $\rightarrow$ *acordou*).
 3. **Equivalência Semântico-Funcional:**
  A flexão no presente atua com valor semântico de pretérito perfeito ou imperfeito, mantendo a estrutura temporal original inalterada.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - Identifique se o texto apresenta marcadores de passado (datas antigas, contexto pretérito) com verbos no presente.
 - Teste a substituição dos verbos no presente pelos seus equivalentes no pretérito perfeito/imperfeito. Se o sentido cronológico permanecer preservado, trata-se de presente histórico.
 
 ---
 
-## Temporalidade e Intenção Comunicativa como Critérios Supremos de Julgamento
+### Temporalidade e Intenção Comunicativa como Critérios Supremos de Julgamento
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A determinação da tipologia textual em provas de concursos públicos baseia-se exclusivamente em dois critérios hierarquicamente soberanos: a **análise da temporalidade interna** (se o tempo avança ou se está congelado) e a **identificação da intenção comunicativa do autor** (se o objetivo é contar uma história ou qualificar um elemento).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Como a forma verbal isolada é ambígua e falha em discriminar tipos textuais (pois o presente pode ser narrativo ou descritivo, e a descrição pode ocorrer sem pretérito imperfeito), o candidato deve aplicar a regra de ouro:
 
 1. **Pergunta da Intenção Autoral:** *"Qual é a finalidade principal do emissor neste trecho?"*
- - Contar um fato com evolução de eventos? $\rightarrow$ **Narração**.
- - Pormenorizar características, qualidades, rotinas ou finalidades? $\rightarrow$ **Descrição**.
+  - Contar um fato com evolução de eventos? $\rightarrow$ **Narração**.
+  - Pormenorizar características, qualidades, rotinas ou finalidades? $\rightarrow$ **Descrição**.
 2. **Pergunta da Temporalidade:** *"As ações acontecem em momentos sucessivos (antes e depois) ou coexistem em um único instante (simultaneidade)?"*
- - Momentos sucessivos / Tempo em movimento $\rightarrow$ **Narração**.
- - Momento único / Tempo estático $\rightarrow$ **Descrição**.
+  - Momentos sucessivos / Tempo em movimento $\rightarrow$ **Narração**.
+  - Momento único / Tempo estático $\rightarrow$ **Descrição**.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - Desconsidere desinências verbais isoladas caso entrem em conflito com a intenção pragmática e a dinâmica temporal do texto.
 
 ---
 
-## Predominância Tipológica em Textos Híbridos e Padrão de Julgamento no Cebraspe
+### Predominância Tipológica em Textos Híbridos e Padrão de Julgamento no Cebraspe
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Em textos literários complexos (romances, contos, crônicas) e cartas em que coabitam sequências narrativas e descritivas, a banca examinadora Cebraspe adota o critério da **predominância tipológica**, reconhecendo que o texto é **predominantemente narrativo com aspectos descritivos**, uma vez que a espinha dorsal estrutural é o relato da sucessão de acontecimentos.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Natureza dos Textos Híbridos:**
  Dificilmente uma narrativa longa existirá sem passagens descritivas. O autor necessita caracterizar a fisionomia dos personagens, a textura dos objetos (*"chapéu de couro", "pedaços de carne", "espinhaço curvo"*) e o ambiente para dar verossimilhança à história. Essas descrições atuam como adereços ou suporte cênico; não cancelam o eixo narrativo central.
 2. **Método de Checagem Estrutural:**
- - Inspecione a **abertura**: o texto engata em ações e tempo cronológico?
- - Inspecione o **meio**: há diálogos (discurso direto/indireto) e encadeamento de eventos?
- - Inspecione o **desfecho**: as ações chegam a uma resolução cronológica?
- - Se o enredo avança no início e no fim, o texto é globalmente **narrativo**.
+  - Inspecione a **abertura**: o texto engata em ações e tempo cronológico?
+  - Inspecione o **meio**: há diálogos (discurso direto/indireto) e encadeamento de eventos?
+  - Inspecione o **desfecho**: as ações chegam a uma resolução cronológica?
+  - Se o enredo avança no início e no fim, o texto é globalmente **narrativo**.
 3. **Tipologias de Enunciado no Cebraspe:**
- - *Itens Excludentes:* Quando a questão força escolher se o texto é "predominantemente narrativo" ou "predominantemente descritivo", a narrativa vence.
- - *Itens Cumulativos:* Quando a questão afirma que o texto se desenvolve em "sequências predominantemente descritivas e narrativas", a banca valida a coabitação das duas tipologias sem exigir hierarquização estrita.
+  - *Itens Excludentes:* Quando a questão força escolher se o texto é "predominantemente narrativo" ou "predominantemente descritivo", a narrativa vence.
+  - *Itens Cumulativos:* Quando a questão afirma que o texto se desenvolve em "sequências predominantemente descritivas e narrativas", a banca valida a coabitação das duas tipologias sem exigir hierarquização estrita.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - Não se deixe impressionar pela presença de adjetivos ou parágrafos descritivos pontuais no meio ou no fim do excerto. Avalie se há uma história sendo conduzida.
 
 ---
 
-## Descrição Institucional e Caracterização de Rotinas no Presente do Indicativo
+### Descrição Institucional e Caracterização de Rotinas no Presente do Indicativo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A tipologia descritiva não se manifesta exclusivamente no pretérito literário; ela estrutura frequentemente **textos institucionais** (detalhamento analítico de metas e competências no presente) e **relatos de costumes** (caracterização de rotinas habituais).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Descrição de Metas Institucionais:**
  Quando um texto institucional enumera atribuições ou detalha metas (*"Os objetivos perseguidos [...] são o aperfeiçoamento dos serviços, a harmonização de procedimentos, buscando uma regulação uniforme..."*), o uso do verbo *ser* no presente do indicativo desempenha função puramente descritivo-qualificadora de uma entidade abstrata através de núcleos substantivos e adjetivos.
 2. **Descrição de Rotina Habitual:**
  Quando verbos no presente expressam ações cíclicas/rotineiras (*"acorda-se às cinco da manhã, leva-se o dia lendo..."*), inexiste um acontecimento pontual sucessivo com transformação de estado. O texto descreve o modo de vida e a atmosfera do local, mantendo valor tipológico descritivo.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - Se o trecho contiver verbos no presente, mas seu escopo for esmiuçar atributos, componentes ou hábitos contínuos sem encadear eventos em linha de antes e depois, classifique-o como **passagem descritiva**.
-
----
 
 ---
 
@@ -282,17 +282,15 @@ A tipologia descritiva não se manifesta exclusivamente no pretérito literário
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Protocolo Universal de Discriminação entre Narração e Descrição
+### Protocolo Universal de Discriminação entre Narração e Descrição
 
-### Finalidade
+#### Finalidade
 
 Determinar com exatidão matemática a tipologia de qualquer excerto de prova de concurso público, eliminando falsas deduções baseadas apenas na terminação verbal.
 
-### Fluxograma Operacional
+#### Fluxograma Operacional
 
 `text
  [FRAGMENTO TEXTUAL DE PROVA]
@@ -347,6 +345,8 @@ Resolver itens de julgamento (Certo/Errado ou Múltipla Escolha) que abordam pre
 
 ---
 
+```
+
 ---
 
 ## Contrastes que a prova explora
@@ -356,59 +356,57 @@ Resolver itens de julgamento (Certo/Errado ou Múltipla Escolha) que abordam pre
 - **Na Descrição:** O imperfeito marca a duração contínua de elementos que compõem o cenário estático (*"A menina passeava e olhava as vitrines"*).
 - **Na Narração:** Pode atuar excepcionalmente como marcador de ação habitual pretérita de suporte (*"Antigamente ele visitava a praça todos os dias..."*), mas o avanço da trama exigirá verbos no pretérito perfeito (*"...até que um dia encontrou o envelope"*).
 
-### 2. Presente Histórico Literário vs. Presente Descritivo Institucional
+#### 2. Presente Histórico Literário vs. Presente Descritivo Institucional
 
 - **Presente Histórico:** Substitui o pretérito para relatar uma história dinâmica com ações em cadeia (*"Em 1911, chego, monto a cavalo e desço no lajedo"*).
 - **Presente Descritivo Institucional:** Não substitui o pretérito; expressa o estado permanente, estrutural e analítico de metas e atribuições (*"Os objetivos do órgão são a modernização e a capacitação"*).
 
-### 3. Itens Excludentes vs. Itens Cumulativos no Cebraspe
+#### 3. Itens Excludentes vs. Itens Cumulativos no Cebraspe
 
 - **Item Excludente (Disputa):** *"O texto é predominantemente descritivo."* $\rightarrow$ Em textos literários com história, a banca exige assinalar **Errado**, pois a narração prevalece.
 - **Item Cumulativo (Convivência):** *"O texto desenvolve-se em sequências predominantemente descritivas e narrativas."* $\rightarrow$ A banca valida a presença substancial de ambos os tipos, devendo o candidato assinalar **Certo**.
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Exemplo Prototípico de Descrição (A Menina e as Vitrines)
+### Exemplo Prototípico de Descrição (A Menina e as Vitrines)
 
 - **Texto Base:** *"A menina passeava pela calçada da avenida elegante do bairro e olhava as vitrines que exibiam uma imensa variedade de roupas finas e caras."*
 - **Análise Gramatical e Semântica:**
- - Verbos: `passeava`, `olhava`, `exibiam` (todos no Pretérito Imperfeito do Indicativo).
- - Relação Temporal: Simultaneidade. Enquanto caminha, ela olha a vitrine, que está exibindo os produtos no mesmo recorte de tempo.
+  - Verbos: `passeava`, `olhava`, `exibiam` (todos no Pretérito Imperfeito do Indicativo).
+  - Relação Temporal: Simultaneidade. Enquanto caminha, ela olha a vitrine, que está exibindo os produtos no mesmo recorte de tempo.
 - **Classificação:** Texto Descritivo puro (Simultaneidade / Fotografia).
 
 ---
 
-## Exemplo Prototípico de Narração (O Funcionário e o Pedido)
+### Exemplo Prototípico de Narração (O Funcionário e o Pedido)
 
 - **Texto Base:** *"O funcionário acabou de anotar um pedido, repousou a caneta e voltou-se para atender o cliente."*
 - **Análise Gramatical e Semântica:**
- - Verbos: `acabou de anotar` (locução no Pretérito Perfeito), `repousou` (Pretérito Perfeito), `voltou-se` (Pretérito Perfeito).
- - Relação Temporal: Sucessividade. Ação 1 (termina anotação) $\rightarrow$ Ação 2 (pousa a caneta) $\rightarrow$ Ação 3 (vira o corpo).
+  - Verbos: `acabou de anotar` (locução no Pretérito Perfeito), `repousou` (Pretérito Perfeito), `voltou-se` (Pretérito Perfeito).
+  - Relação Temporal: Sucessividade. Ação 1 (termina anotação) $\rightarrow$ Ação 2 (pousa a caneta) $\rightarrow$ Ação 3 (vira o corpo).
 - **Classificação:** Texto Narrativo puro (Sucessividade / Antes e Depois).
 
 ---
 
-## Demonstração de Presente Histórico em Contexto Descritivo e Narrativo
+### Demonstração de Presente Histórico em Contexto Descritivo e Narrativo
 
 - **Variação Descritiva no Presente:** *"A menina passeia pela calçada da avenida elegante do bairro e olha as vitrines que exibem uma imensa variedade de roupas finas e caras."*
- - *Diagnóstico:* Continua **descritivo**, pois a simultaneidade entre passear, olhar e exibir permanece estática.
+  - *Diagnóstico:* Continua **descritivo**, pois a simultaneidade entre passear, olhar e exibir permanece estática.
 - **Variação Narrativa no Presente:** *"O funcionário acaba de anotar um pedido, repousa a caneta e volta-se para atender o cliente."*
- - *Diagnóstico:* Continua **narrativo**, pois a cadeia sucessiva de ações (1º acaba $\rightarrow$ 2º repousa $\rightarrow$ 3º volta-se) permanece sequencial no tempo.
+  - *Diagnóstico:* Continua **narrativo**, pois a cadeia sucessiva de ações (1º acaba $\rightarrow$ 2º repousa $\rightarrow$ 3º volta-se) permanece sequencial no tempo.
 
 ---
 
-## Presente Histórico Clássico vs. Cotidiano (Sacada 2)
+### Presente Histórico Clássico vs. Cotidiano (Sacada 2)
 
 - **Exemplo 1 (Fato Histórico):** *"Em 1492, Colombo descobre a América."* $\rightarrow$ *descobre* (presente) equivale a *descobriu* (pretérito perfeito).
 - **Exemplo 2 (Fato Cotidiano):** *"Às 12 horas do dia 16/04 de 2004, Adriana acorda, toma banho, toma café..."* $\rightarrow$ *acorda, toma* (presente) equivalem a *acordou, tomou* (pretérito perfeito). Ambos configuram narração em presente histórico.
 
 ---
 
-## Questão Cebraspe: TJ-SE (Passagem Descritiva Institucional)
+### Questão Cebraspe: TJ-SE (Passagem Descritiva Institucional)
 
 - **Órgão / Banca:** CEBRASPE – TJ-SE – Titular de Serviços de Notas e de Registros.
 - **Excerto Avaliado:** *"Os objetivos perseguidos pelas entidades representativas de notários e registradores bandeirantes são o aperfeiçoamento dos serviços, a harmonização de procedimentos, buscando uma regulação uniforme nas atividades notariais e registrais."*
@@ -418,7 +416,7 @@ Resolver itens de julgamento (Certo/Errado ou Múltipla Escolha) que abordam pre
 
 ---
 
-## Questão Cebraspe: InoversaSul 2025 (Predominância Narrativa em Vidas Secas)
+### Questão Cebraspe: InoversaSul 2025 (Predominância Narrativa em Vidas Secas)
 
 - **Órgão / Banca:** CESPE / CEBRASPE – 2025 – InoversaSul – Analista Administrativo.
 - **Excerto Avaliado:** Trecho de *Vidas Secas* (Graciliano Ramos) relatando o episódio em que Fabiano recorda a venda de um porco e o embate com o fiscal da prefeitura.
@@ -428,7 +426,7 @@ Resolver itens de julgamento (Certo/Errado ou Múltipla Escolha) que abordam pre
 
 ---
 
-## Questão Cebraspe: PG-DF (Clarice Lispector e a Falsa Predominância Descritiva)
+### Questão Cebraspe: PG-DF (Clarice Lispector e a Falsa Predominância Descritiva)
 
 - **Órgão / Banca:** CEBRASPE – PG-DF – Técnico Jurídico.
 - **Excerto Avaliado:** Excerto de *A Paixão segundo G. H.* (Clarice Lispector) descrevendo o processo de rememoração da protagonista em relação à empregada Janair.
@@ -438,7 +436,7 @@ Resolver itens de julgamento (Certo/Errado ou Múltipla Escolha) que abordam pre
 
 ---
 
-## Questão Cebraspe: Câmara de Maceió 2024 (Sequências Mistas em Carta de Graciliano)
+### Questão Cebraspe: Câmara de Maceió 2024 (Sequências Mistas em Carta de Graciliano)
 
 - **Órgão / Banca:** CEBRASPE – 2024 – Câmara de Maceió - AL – Analista Administrativo.
 - **Excerto Avaliado:** Carta de Graciliano Ramos datada de 1911 em Maniçoba (*"Aqui cheguei... acorda-se às cinco... leva-se o dia lendo... Fui visitar o tal Lajedo... Diga a meu pai..."*).
@@ -448,43 +446,39 @@ Resolver itens de julgamento (Certo/Errado ou Múltipla Escolha) que abordam pre
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Macete do "Congelamento de Imagem" vs. "Filme"
+### O Macete do "Congelamento de Imagem" vs. "Filme"
 
 - **Regra Prática:** Ao ler o fragmento da prova, visualize mentalmente a cena:
- - Se todos os elementos, ações e personagens couberem estaticamente em **uma única fotografia**, o trecho é **descritivo**.
- - Se for necessário um **filme (material)** com sucessão de quadros para mostrar o desenrolar das ações e transformações de estado, o trecho é **narrativo**.
+  - Se todos os elementos, ações e personagens couberem estaticamente em **uma única fotografia**, o trecho é **descritivo**.
+  - Se for necessário um **filme (material)** com sucessão de quadros para mostrar o desenrolar das ações e transformações de estado, o trecho é **narrativo**.
 
 ---
 
-## Teste dos Conectivos Ordinais de Sequenciação
+### Teste dos Conectivos Ordinais de Sequenciação
 
 - **Regra Prática:** Tente inserir mentalmente os conectores `Primeiro... depois... e em seguida...` entre as orações do texto. Se o excerto aceitar essa seriação ordinal sem prejuízo semântico, o texto é indubitavelmente **narrativo**.
 
 ---
 
-## O Diálogo como Marcador Imediato de Narração
+### O Diálogo como Marcador Imediato de Narração
 
 - **Regra Prática:** A presença de travessões de diálogo, aspas de falas diretas ou verbos de elocução (*disse, respondeu, perguntou*) sinaliza ações verbais sucessivas no tempo, constituindo evidência cabal de pertencimento à macroestrutura **narrativa**.
 
 ---
 
-## Diagnóstico de Formulações no Cebraspe (Excludente vs. Cumulativa)
+### Diagnóstico de Formulações no Cebraspe (Excludente vs. Cumulativa)
 
 - **Regra Prática:** Observe a redação do item Cebraspe:
- - *Excludente:* "O texto é predominantemente descritivo." $\rightarrow$ Questione se há história. Havendo história, marque **Errado**.
- - *Cumulativa:* "O texto desenvolve-se em sequências predominantemente descritivas e narrativas." $\rightarrow$ A banca valida a presença mista; marque **Certo**.
-
----
+  - *Excludente:* "O texto é predominantemente descritivo." $\rightarrow$ Questione se há história. Havendo história, marque **Errado**.
+  - *Cumulativa:* "O texto desenvolve-se em sequências predominantemente descritivas e narrativas." $\rightarrow$ A banca valida a presença mista; marque **Certo**.
 
 ---
 
 ## Erros comuns e pegadinhas
 
-## A Armadilha da Fixação Cega em Tempos Verbais
+### A Armadilha da Fixação Cega em Tempos Verbais
 
 - **O Erro:** Decorar a fórmula rasa de que "Pretérito Imperfeito = Descrição" e "Pretérito Perfeito = Narração", assumindo erroneamente que qualquer texto no Presente é dissertativo ou expositivo.
 - **A Pegadinha das Bancas:** Examinadores formulam narrativas inteiras no Presente Histórico para induzir o candidato a descartar a narração por falta de pretérito perfeito.
@@ -492,7 +486,7 @@ Resolver itens de julgamento (Certo/Errado ou Múltipla Escolha) que abordam pre
 
 ---
 
-## O Mito da Exclusividade do Pretérito Imperfeito na Descrição
+### O Mito da Exclusividade do Pretérito Imperfeito na Descrição
 
 - **O Erro:** Achar que descrições só ocorrem em romances bucólicos antigos do tipo *"A casa era grande e tinha janelas azuis"*.
 - **A Pegadinha das Bancas:** Apresentar trechos de textos institucionais ou jurídicos que caracterizam objetivos e competências no Presente do Indicativo.
@@ -500,57 +494,53 @@ Resolver itens de julgamento (Certo/Errado ou Múltipla Escolha) que abordam pre
 
 ---
 
-## A Armadilha da "Última Linha" em Textos Literários
+### A Armadilha da "Última Linha" em Textos Literários
 
 - **O Erro:** Ler apenas as duas últimas frases do fragmento de prova e encontrar um adjetivo ou detalhe visual (ex.: *"traços finos e delicados"*), concluindo precipitadamente que o texto inteiro é descritivo.
 - **A Conduta Correta:** Inspecionar o parágrafo como um todo. A última pincelada descritiva frequentemente encerra um longo processo de ações narrativas.
 
 ---
 
-## Confundir Presente Histórico Estilístico com Fenômeno Sintático
+### Confundir Presente Histórico Estilístico com Fenômeno Sintático
 
 - **O Erro:** Associar o encadeamento de verbos no presente histórico a questões sintáticas de elipse, sujeito indeterminado ou oculto.
 - **A Conduta Correta:** Tratar o presente histórico estritamente como um recurso **estilístico-discursivo** de dinamização e aproximação temporal.
 
 ---
 
----
-
 ## Glossário operacional
 
-## Tipo Textual Descritivo
+### Tipo Textual Descritivo
 
 Estrutura discursiva voltada para a caracterização, localização e qualificação estática de seres, cenários, objetos, rotinas ou objetivos abstratos em um único recorte temporal invariável (Simultaneidade / "Fotografia").
 
-## Tipo Textual Narrativo
+### Tipo Textual Narrativo
 
 Estrutura discursiva voltada para o relato de acontecimentos e ações sucessivas protagonizadas por personagens ao longo de uma linha temporal vetorial dinâmica (Sucessividade / "Antes e Depois").
 
-## Temporalidade
+### Temporalidade
 
 Categoria discursiva que avalia a relação interna dos enunciados com o avanço cronológico do tempo (dinâmico/sucessivo) ou com a sua estagnação (estático/simultâneo). Constitui o critério determinante supremo de discriminação tipológica.
 
-## Simultaneidade
+### Simultaneidade
 
 Propriedade temporal na qual dois ou mais estados, ações ou atributos coexistem em um mesmo ponto da linha do tempo, configurando a base da tipologia descritiva.
 
-## Sucessividade
+### Sucessividade
 
 Propriedade temporal na qual os acontecimentos ocorrem encadeados cronologicamente em relações de anterioridade e posterioridade ("antes e depois"), configurando a base da tipologia narrativa.
 
-## Presente Histórico (Presente Narrativo)
+### Presente Histórico (Presente Narrativo)
 
 Emprego de formas verbais no Presente do Modo Indicativo para designar acontecimentos situados cronologicamente no passado. Atua como recurso de vivacidade e suspense sem alterar a tipologia do texto.
 
-## Intenção Comunicativa Autoral
+### Intenção Comunicativa Autoral
 
 Finalidade pragmática primária do emissor do texto (ex.: relatar uma história vs. caracterizar propriedades/metas). Critério analítico definitivo para interpretar passagens descritivas formuladas no presente.
 
-## Predominância Tipológica
+### Predominância Tipológica
 
 Conceito que reconhece a coexistência de múltiplas sequências tipológicas em um mesmo texto (hibridismo), identificando qual tipo comanda a macroestrutura discursiva e atende ao propósito comunicativo central.
-
----
 
 ---
 

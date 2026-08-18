@@ -23,7 +23,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 ### Como aplicar neste tema
 
 1. Localizar os verbos de cada oração do período e identificar os limites oracionais e as conexões entre blocos.
-2. Passo 1: Para cada segmento sob análise, localize a forma verbal e desmonte a estrutura oracional em termos essenciais (Su-Ve), integrantes (C) e acessórios (A).
+2. Passo 1: Para cada segmento sob análise, localize a forma verbal e desmonte a estrutura oracional em termos essenciais (Su-Ve), integrantes (
+C) e acessórios (
+A).
 3. Passo 2: Verifique se há termo intercalado quebrando a sequência dos termos nucleares; em caso afirmativo, exija o par completo de vírgulas ou travessões (teste de supressão ).
 4. Passo 3: Verifique se há oração adjetiva e determine se o sentido contextualmente restringe ('somente') ou generaliza/explica; se restringe, elimine toda pontuação .
 
@@ -48,7 +50,7 @@ Para a plena compreensão deste módulo consolidado, o estudante deve dominar pr
 2. **Classificação das Orações:** Orações subordinadas substantivas (especialmente objetivas diretas com conjunção integrante), adjetivas (explicativas vs. restritivas) e adverbiais (causais, temporais, etc.).
 3. **Morfossintaxe e Conectivos:** Conjunções coordenativas (aditivas, adversativas, conclusivas) e conjunções subordinativas; identificação de pronomes oblíquos átonos e regras básicas de colocação pronominal (próclise e ênclise).
 
-### Mapa Conceitual Integrado
+#### Mapa Conceitual Integrado
 
 ```text
 PONTUAÇÃO APLICADA: REVISÃO, CRITÉRIOS DE BANCAS E REESCRITA
@@ -97,28 +99,26 @@ PONTUAÇÃO APLICADA: REVISÃO, CRITÉRIOS DE BANCAS E REESCRITA
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Conjunção "E" Polissêmica: Valor Conclusivo/Adversativo e Pontuação Facultativa
+### Conjunção "E" Polissêmica: Valor Conclusivo/Adversativo e Pontuação Facultativa
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A conjunção coordenativa "e", quando conecta orações de mesmo sujeito com valor puramente aditivo, não admite vírgula segundo a norma culta estrita. No entanto, quando adquire valor semântico polissêmico — seja de conclusão (equivalente a *portanto, por isso, logo*) ou de adversidade (equivalente a *mas, porém*) —, o emprego da vírgula imediatamente anterior passa a ser plenamente legítimo e facultativo.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 No período examinado pela VUNESP (*"Chegou muito atrasado à reunião [,] e não conseguiu se inteirar..."*), o sujeito de ambas as orações é rigorosamente idêntico (*ele*). Em se tratando de simples adição de fatos, a pontuação seria proscrita. Contudo, o fato de o sujeito não conseguir se inteirar dos acontecimentos constitui uma consequência ou conclusão lógica de haver chegado atrasado. O conector "e" atua, portanto, com carga semântica conclusiva. Nessas circunstâncias, a inclusão ou a omissão da vírgula antes de "e" não fere a norma-padrão.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 1. Identifique se as orações coordenadas compartilham o mesmo sujeito gramatical.
 2. Teste a substituição mental da conjunção "e" por *portanto* ou *mas*:
- - Se a substituição mantiver o sentido lógico do período com valor consecutivo/conclusivo ou contrastivo, a vírgula é **facultativa**.
- - Se o conector expressar soma pura e linear de eventos sem mudança de sujeito, a vírgula permanece **proibida**.
+  - Se a substituição mantiver o sentido lógico do período com valor consecutivo/conclusivo ou contrastivo, a vírgula é **facultativa**.
+  - Se o conector expressar soma pura e linear de eventos sem mudança de sujeito, a vírgula permanece **proibida**.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Com vírgula (Correto - valor conclusivo):* "Chegou muito atrasado à reunião, e não conseguiu se inteirar das novas medidas..."
 - *Sem vírgula (Correto - valor conclusivo):* "Chegou muito atrasado à reunião e não conseguiu se inteirar das novas medidas..."
@@ -126,33 +126,33 @@ No período examinado pela VUNESP (*"Chegou muito atrasado à reunião [,] e nã
 
 ---
 
-## Adjunto Adverbial no Final do Período em Ordem Direta
+### Adjunto Adverbial no Final do Período em Ordem Direta
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O adjunto adverbial posicionado ao término da oração ou do período sintático ocupa sua posição canônica na ordem direta da língua portuguesa (Sujeito + Verbo + Complementos + Adjunto Adverbial). Nessa posição, o emprego da vírgula é puramente **facultativo**, independentemente de o adjunto ser de curta ou longa extensão.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Na análise da Questão 22 (IBFC) sobre os versos poéticos (*"Foi há muitos e muitos anos já,/ Num reino de ao pé do mar."*), a locução `Num reino de ao pé do mar` atua como adjunto adverbial de lugar posicionado no encerramento da frase. Estando na ordem direta ao final, a vírgula antes da locução é opcional, de modo que a assertiva da banca que justificava o sinal pela presença de adjunto adverbial mostrou-se inteiramente procedente.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - Verifique sua posição sintática: se estiver ao final da oração principal, após os termos essenciais e integrantes, a vírgula que o precede é opcional (facultativa).
 
 ---
 
-## Segmentos Intercalados e a Simetria das Vírgulas Casadas
+### Segmentos Intercalados e a Simetria das Vírgulas Casadas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Orações subordinadas adverbiais, adjuntos adverbiais ou expressões explicativas que se encontrem deslocados e inseridos no interior da oração principal (intercalados) exigem isolamento por pontuação simétrica bilateral obrigatória ("vírgulas casadas" ou travessões duplos), delimitando com exatidão onde o segmento circunstancial se inicia e onde se encerra.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 No período *"...portanto, como pegou o bonde andando, optou por permanecer calado..."*, a oração `como pegou o bonde andando` expressa circunstância de causa (*já que pegou o bonde andando*). Estando intercalada entre a conjunção conclusiva `portanto` e o verbo principal `optou`, o uso de duas vírgulas é compulsório. A omissão de qualquer uma das vírgulas quebra a simetria sintática e anula a correção do texto. Da mesma forma, em estruturas oracionais longas (como na Questão 38 da Cebraspe), a retirada de travessões que isolam uma oração intercalada causal exige a inserção correspondente de vírgulas de fechamento e abertura.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 1. Identifique o conector circunstancial (*como, quando, embora, caso, devido a*) no meio da oração principal.
 2. Delimite o início e o término exato da oração intercalada.
@@ -161,35 +161,35 @@ No período *"...portanto, como pegou o bonde andando, optou por permanecer cala
 
 ---
 
-## Oração Adjetiva Reduzida de Particípio: Restritiva vs. Explicativa
+### Oração Adjetiva Reduzida de Particípio: Restritiva vs. Explicativa
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A oração subordinada adjetiva (desenvolvida ou reduzida de particípio) que restringe o substantivo antecedente a um subconjunto específico é **restritiva** e deve ser grafada **sem vírgulas nem travessões**. Caso seja isolada por pontuação, converte-se em **explicativa**, passando a atribuir a característica à totalidade dos elementos do conjunto.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 No fragmento *"...novas medidas tomadas pela diretoria da empresa..."*, a oração reduzida de particípio `tomadas pela diretoria da empresa` (equivalente a *que foram tomadas pela diretoria*) delimita o universo de medidas: o contexto discursivo não trata de todas as medidas possíveis da empresa, mas unicamente daquelas providenciadas pela diretoria. Portanto, a semântica exige pontuação restritiva (sem vírgulas). Se fossem inseridos travessões ou vírgulas (*"— tomadas pela diretoria da empresa —"*), a oração se tornaria explicativa, afirmando erroneamente que a totalidade das medidas da empresa fora determinada pela diretoria.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - **Mantra da Restrição:** Aplique o advérbio delimitador **"SOMENTE"**.
- - Se a ideia for: *somente aquelas medidas* $\rightarrow$ **Restritiva $\rightarrow$ SEM VÍRGULA**.
- - Se a ideia for uma explicação aplicável a todos os elementos $\rightarrow$ **Explicativa $\rightarrow$ COM VÍRGULA / TRAVESSÃO**.
+  - Se a ideia for: *somente aquelas medidas* $\rightarrow$ **Restritiva $\rightarrow$ SEM VÍRGULA**.
+  - Se a ideia for uma explicação aplicável a todos os elementos $\rightarrow$ **Explicativa $\rightarrow$ COM VÍRGULA / TRAVESSÃO**.
 
 ---
 
-## Proibição Absoluta de Pontuação entre Verbo e Oração Subordinada Substantiva
+### Proibição Absoluta de Pontuação entre Verbo e Oração Subordinada Substantiva
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 É terminantemente proibido pela norma culta o emprego de qualquer sinal de pontuação (dois-pontos, vírgula, travessão ou ponto e vírgula) separando o verbo transitivo direto de seu complemento direto oracional (oração subordinada substantiva objetiva direta encabeçada por conjunção integrante).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Na proposição analisada na Questão 39 da Cebraspe (*"O código definia que o interessado..."*), a forma verbal `definia` é transitiva direta (VTD). A oração que se inicia pelo conectivo `que` funciona como objeto direto oracional. A aplicação do teste do pronome substantivo comprova a integração sintática: *"O código definia **isso**"*. A inserção de dois-pontos (*"O código definia: que..."*) rompe o nexo sintático essencial entre o predicador verbal e seu complemento obrigatório, configurando erro gramatical grosseiro.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 1. Identifique o verbo e verifique se ele é transitivo direto.
 2. Substitua a oração iniciada por "que" pela palavra **"isso"**.
@@ -198,13 +198,13 @@ Na proposição analisada na Questão 39 da Cebraspe (*"O código definia que o 
 
 ---
 
-## Vírgula Vicária na Elipse Verbal (Zeugma) e Coordenação Assindética
+### Vírgula Vicária na Elipse Verbal (Zeugma) e Coordenação Assindética
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A vírgula vicária é o sinal de pontuação utilizado especificamente para assinalar no texto a elipse ou zeugma de um verbo anteriormente expresso no período, atestando a existência de uma oração coordenada subsequente cujo predicado verbal foi omitido para evitar repetição lexical.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 No período examinado pela FGV (*"Diz-se da melhor companhia: sua conversa é instrutiva, seu silêncio, formativo."*):
 
@@ -212,69 +212,69 @@ No período examinado pela FGV (*"Diz-se da melhor companhia: sua conversa é in
 2. A **segunda vírgula** funciona como vírgula vicária, marcando formalmente a omissão do verbo de ligação `é` na segunda oração coordenativa (`seu silêncio [é] formativo`).
  A presença da vírgula vicária comprova que a estrutura é um período composto por coordenação, e não uma frase simples com termos justapostos.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - Caso afirmativo, classifique a pontuação funcionalmente como **vírgula vicária**.
 
 ---
 
-## Parênteses como Isoladores de Informações Acessórias e Limites de Uso
+### Parênteses como Isoladores de Informações Acessórias e Limites de Uso
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Os parênteses têm por destinação exclusiva delimitar esclarecimentos, comentários, fontes ou elementos estritamente acessórios. O segmento contido entre parênteses deve poder ser suprimido integralmente do texto sem provocar truncamento sintático ou quebra na regência da oração principal.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Jamais se pode colocar entre parênteses um termo que exerça função nuclear ou obrigatória na oração (como o verbo principal de uma locução ou o complemento exigido pela regência). Na alternativa A da Questão 21 da VUNESP, o período foi grafado como `*...e não conseguiu (se inteirar) das novas medidas...`. Aplicando-se o teste de remoção, a oração resultante torna-se agramatical (`*...e não conseguiu das novas medidas...`), invalidando o emprego do sinal parentético.
 
 ---
 
-## Funções Discursivas do Travessão: Diálogo vs. Intercalação Explicativa
+### Funções Discursivas do Travessão: Diálogo vs. Intercalação Explicativa
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O travessão cumpre duas macrofunções na escrita padrão:
 
 1. **Discurso Direto / Diálogo:** Travessão simples posicionado no início de linha/parágrafo para assinalar a mudança de turnos de fala entre interlocutores.
 2. **Intercalação Sintática:** Travessões duplos (ou travessão e ponto final) isolando segmentos explicativos, apostos, orações intercaladas ou acréscimos conceituais para conferir destaque enfático.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Bancas como a IBFC e a Cebraspe tentam induzir o candidato a erro confundindo essas funções. No verso *"...Mas o nosso amor era mais que amor/ - O meu e o dela a amar;"*, o travessão simples não introduz fala de personagem, mas explica o conteúdo de "nosso amor". Da mesma forma, na Questão 30 da Cebraspe, os travessões duplos em *"...Em situações de estresse — quando nosso organismo acha que estamos sob ameaça... —, 'alguns circuitos...'..."* servem para isolar a explicação do termo antecedente, enquanto a citação direta da pesquisadora está devidamente assinalada por aspas.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - Se o travessão abre linha e alterna réplicas $\rightarrow$ **Mudança de interlocutor / Diálogo**.
 - Se o travessão ocorre aos pares no corpo do período ou fecha em ponto final $\rightarrow$ **Intercalação explicativa / Ênfase**.
 
 ---
 
-## Travessões Duplos: Inserção de Informação (Fato) vs. Comentário (Opinião)
+### Travessões Duplos: Inserção de Informação (Fato) vs. Comentário (Opinião)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 No plano semântico-discursivo (particularmente em provas de nível superior da VUNESP), o segmento intercalado por travessões duplos deve ser rigorosamente classificado quanto à sua natureza:
 
 - **Informação:** Apresentação de um **fato objetivo**, dado concreto da realidade verificável, desprovido de juízos de valor.
 - **Comentário:** Emissão de uma **opinião subjetiva**, ponto de vista, apreciação crítica ou julgamento valorativo do autor.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Na passagem da UNICAMP (*"...mecanismo infeccioso que opera dentro dos — e entre os — idiomas..."*), a expressão intercalada pelos travessões (`— e entre os —`) limita-se a acrescentar um dado objetivo sobre como opera o fenômeno linguístico (dentro e entre idiomas). Não há termos apreciativos, adjetivos valorativos ou posicionamento pessoal. Portanto, trata-se formalmente de uma **inserção de informação (fato)**, e não de um comentário (opinião).
 
 ---
 
-## Emprego dos Dois-Pontos: Introdução de Fala vs. Explicação e Citação
+### Emprego dos Dois-Pontos: Introdução de Fala vs. Explicação e Citação
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Os dois-pontos operam sob duas dinâmicas sintáticas principais:
 
 1. **Introdução de Fala / Discurso Direto:** Ocorrem imediatamente após um verbo de elocução (*verbum dicendi* como *dizer, falar, responder, indagar*), anunciando a reprodução textual das palavras de um emissor.
 2. **Esclarecimento / Explicação:** Ocorrem após uma asserção para introduzir o desdobramento, aposto explicativo, especificação ou enumeração do que foi sumariamente enunciado.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Para determinar a função dos dois-pontos, adota-se o método da **"banca de seta"** : rastreia-se o termo que antecede a pontuação.
 
@@ -283,9 +283,9 @@ Para determinar a função dos dois-pontos, adota-se o método da **"banca de se
 
 ---
 
-## Tríplice Distinção Semântica: Exemplificação vs. Enumeração vs. Explicação
+### Tríplice Distinção Semântica: Exemplificação vs. Enumeração vs. Explicação
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Nas questões da banca Cebraspe, os segmentos introduzidos por dois-pontos ou travessões dividem-se em três categorias semânticas inconfundíveis:
 
@@ -293,11 +293,11 @@ Nas questões da banca Cebraspe, os segmentos introduzidos por dois-pontos ou tr
 2. **Enumeração:** Apresentação exaustiva de todos os componentes de um grupo; trata-se de um **rol fechado**, obrigatoriamente delimitado pela conjunção aditiva **"e"** antes do último elemento.
 3. **Explicação:** Esclarecimento de natureza teórica/abstrata, no qual se parafraseia ou elucida o significado do conceito anterior.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 No item da SEDUC-AL (*"...do que devemos fazer: correção educacional de pensamentos distorcidos e medicação exata."*), a banca alegou que os dois-pontos introduziam "exemplos". Contudo, ao empregar a conjunção `e` antes do último elemento, o autor fechou o conjunto de providências devidas, configurando uma enumeração completa das duas medidas necessárias, e não uma amostragem aberta de meros exemplos.
 
-### Quadro Comparativo Decisivo
+#### Quadro Comparativo Decisivo
 
 | Categoria | Natureza | Estrutura Sintática | Exemplo Típico |
 |:------------------------- |:--------------------- |:--------------------------------------------------------- |:------------------------------------------ |
@@ -307,13 +307,13 @@ No item da SEDUC-AL (*"...do que devemos fazer: correção educacional de pensam
 
 ---
 
-## Substituição de Dois-Pontos por Travessão Simples em Final de Período
+### Substituição de Dois-Pontos por Travessão Simples em Final de Período
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Quando os dois-pontos são empregados para introduzir um segmento explicativo ou apositivo que encerra o período sintático, é plenamente legítimo substituí-los por um **travessão simples**, preservando a correção gramatical e o sentido original, com ganho de realce enfático.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A estrutura padrão com dois-pontos em fim de período organiza-se como `[Oração Principal]: [Explicação].`. Ao realizar a substituição por travessão, utiliza-se apenas **um travessão** (e não dois), uma vez que o fechamento da oração é executado pelo ponto final já existente: `[Oração Principal] — [Explicação].`.
 
@@ -321,9 +321,9 @@ A estrutura padrão com dois-pontos em fim de período organiza-se como `[Oraç�
 
 ---
 
-## Ponto e Vírgula: Casos Canônicos e Inadmissibilidade em Intercalações
+### Ponto e Vírgula: Casos Canônicos e Inadmissibilidade em Intercalações
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O ponto e vírgula é um sinal organizador facultativo do discurso cuja admissibilidade gramatical restringe-se estritamente a duas situações canônicas:
 
@@ -332,19 +332,19 @@ O ponto e vírgula é um sinal organizador facultativo do discurso cuja admissib
 
 **Regra Negativa Absoluta:** O ponto e vírgula **nunca é empregado para isolar orações ou termos intercalados**, função privativa de vírgulas, travessões ou parênteses.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 No julgamento de itens do Cebraspe, a banca frequentemente alega que o ponto e vírgula foi utilizado "em decorrência da intercalação da oração X". Essa justificativa é sempre incorreta: a intercalação interna é demarcada por suas próprias vírgulas; o ponto e vírgula atua no nível hierárquico superior, coordenando os blocos da enumeração ou as orações independentes.
 
 ---
 
-## Valor Conectivo Adversativo de "Agora" e Legitimação do Ponto e Vírgula
+### Valor Conectivo Adversativo de "Agora" e Legitimação do Ponto e Vírgula
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A palavra "agora", no plano discursivo da língua padrão, pode deixar de funcionar como mero advérbio de tempo e assumir função de **conjunção coordenativa adversativa**, equivalente semântico estrito de *mas, porém, contudo, todavia*. Nessa condição, encabeça uma oração coordenada adversativa, autorizando plenamente a pontuação antecedente por ponto e vírgula.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 No texto da Petrobras (*"...dizer 'compartilhei fake news' não carrega sentimento de culpa, ou se carrega, ela é mínima. Agora, dizer 'cometi um crime...' já traz outras implicações..."*), constata-se um contraste manifesto entre as duas proposições:
 
@@ -354,33 +354,33 @@ No texto da Petrobras (*"...dizer 'compartilhei fake news' não carrega sentimen
 
 ---
 
-## Critério de Segmentação de Período por Ponto Final
+### Critério de Segmentação de Período por Ponto Final
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A substituição de um sinal de pontuação intermediário (travessão, vírgula ou ponto e vírgula) por **ponto final** é permitida se, e somente se, o segmento posterior possuir **autonomia sintática e semântica completa**, configurando um período com verbo e sentido próprio, sem deixar orações subordinadas truncadas.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Ao analisar a divisão de períodos extensos na Questão 36 da Cebraspe (*"...sabe-se que a mulher é o principal alvo nessa espécie delitiva — não é à toa que a criminalização da referida conduta era..."* $\rightarrow$ *"...nessa espécie delitiva. Não é à toa que..."*), constata-se que a segunda oração contém verbo próprio (`era`), sujeito e complementos, fazendo sentido perfeito isoladamente. Além da correção gramatical, a quebra de períodos com quatro ou mais verbos em períodos de duas a três orações atende às melhores recomendações de clareza em redações dissertativas.
 
 ---
 
-## Interação entre Pontuação e Colocação Pronominal em Reescrita
+### Interação entre Pontuação e Colocação Pronominal em Reescrita
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A substituição da conjunção aditiva "e" por sinais de pontuação de pausa forte (ponto e vírgula ou vírgula) isola a oração subsequente em uma nova fronteira sintática. Pela norma culta padrão prescritiva, **é proibido iniciar oração por pronome oblíquo átono** (vedação de próclise inicial), tornando indispensável a adaptação enclítica.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 No texto da Defensoria Pública (*"Acolhe-te quando vens e te deixa ir quando partes"*), o pronome átono `te` na segunda oração apoiava-se na presença da conjunção coordenativa `e`. Ao propor a troca de `e` por ponto e vírgula sem outros ajustes, a oração reescrita torna-se `*...; te deixa ir...`. Como o ponto e vírgula demarca o início formal de uma nova oração, a próclise passa a violar a norma culta, que exige ênclise: `...; deixa-te ir...`. A ausência de menção ao ajuste pronominal torna o item da banca incorreto.
 
 ---
 
-## Funções Textuais e Estilísticas das Aspas: Ênfase, Conotação e Ironia
+### Funções Textuais e Estilísticas das Aspas: Ênfase, Conotação e Ironia
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As aspas (duplas ou simples) exercem múltiplas funções semântico-discursivas no texto, que não podem ser generalizadas:
 
@@ -393,9 +393,9 @@ As aspas (duplas ou simples) exercem múltiplas funções semântico-discursivas
 
 ---
 
-## Hierarquia Gráfica: Aspas Simples no Interior de Aspas Duplas
+### Hierarquia Gráfica: Aspas Simples no Interior de Aspas Duplas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As aspas simples (`' '`) desempenham exatamente as mesmas funções discursivas das aspas duplas (`" "`), diferindo exclusivamente por subordinação tipográfica: são empregadas quando há necessidade de abrir aspas dentro de um trecho que já se encontra delimitado por aspas duplas, evitando fechamento prematuro ou ambiguidade gráfica.
 
@@ -403,21 +403,19 @@ As aspas simples (`' '`) desempenham exatamente as mesmas funções discursivas 
 
 ---
 
-## Aspas em Transcrição de Texto Alheio e Prevenção de Plágio
+### Aspas em Transcrição de Texto Alheio e Prevenção de Plágio
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Na linguagem técnica das bancas examinadoras (com destaque para a FGV), a indicação de que as aspas assinalam **"transcrição de texto alheio"** significa meramente que o fragmento pertence a um autor externo e não à própria banca elaboradora da prova. O uso das aspas é mandatório para atestar a autoria externa e prevenir plágio intelectual.
 
 ---
 
-## Função Estrutural do Ponto Final vs. Falsa Tese de Interrupção
+### Função Estrutural do Ponto Final vs. Falsa Tese de Interrupção
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O ponto final tem por função sintática e textual estrita **encerrar e finalizar um período gramatical completo**. Ele não sinaliza "interrupção de pensamentos" (função típica das reticências ou traços de suspensão). Afirmações de bancas que atribuem ao ponto final o papel de interrupção de raciocínio são incorretas.
-
----
 
 ---
 
@@ -427,12 +425,12 @@ Para consulta rápida e precisa, consolidam-se abaixo as regras canônicas do gr
 
 1. **Vírgula antes do "E":**
 
- - Sujeitos iguais + Valor Conclusivo (*logo/portanto*) ou Adversativo (*mas*) $\rightarrow$ **Facultativa** .
+  - Sujeitos iguais + Valor Conclusivo (*logo/portanto*) ou Adversativo (*mas*) $\rightarrow$ **Facultativa** .
 2. **Adjunto Adverbial Final:** Posicionado no fim da oração na ordem direta $\rightarrow$ **Vírgula facultativa** .
 3. **Intercalações Adverbiais/Explicativas:** Exigem isolamento **bilateral obrigatório** por vírgulas casadas ou travessões duplos .
 4. **Oração Adjetiva (Particípio):**
- - Restritiva (delimita a *somente aqueles*) $\rightarrow$ **Sem pontuação**.
- - Explicativa (generaliza para a *totalidade*) $\rightarrow$ **Entre vírgulas/travessões** .
+  - Restritiva (delimita a *somente aqueles*) $\rightarrow$ **Sem pontuação**.
+  - Explicativa (generaliza para a *totalidade*) $\rightarrow$ **Entre vírgulas/travessões** .
 5. **Verbo Transitivo Direto + Oração Substantiva:** Proibição absoluta de pontuação entre VTD e "que" integrante .
 6. **Vírgula Vicária:** Sinaliza a elipse/zeugma de verbo antecedente em oração coordenada .
 7. **Parênteses:** Uso restrito a informações acessórias cuja supressão não quebra a estrutura sintática .
@@ -448,41 +446,39 @@ Para consulta rápida e precisa, consolidam-se abaixo as regras canônicas do gr
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Teste de Supressão para Vírgulas Casadas e Parênteses
+### Teste de Supressão para Vírgulas Casadas e Parênteses
 
 1. Isole visualmente o termo ou oração contido entre as duas vírgulas, travessões ou parênteses.
 2. Faça a leitura do período eliminando mentalmente o trecho isolado e ligando o bloco anterior ao posterior.
 3. Avalie a coesão:
 
- - Se a frase ficar truncada (ex.: faltando o verbo principal ou complemento obrigatório), o termo é nuclear e a pontuação parentética é **incorreta**.
+  - Se a frase ficar truncada (ex.: faltando o verbo principal ou complemento obrigatório), o termo é nuclear e a pontuação parentética é **incorreta**.
 
 ---
 
-## Diferenciação de Enumeração vs. Exemplificação no Cebraspe
+### Diferenciação de Enumeração vs. Exemplificação no Cebraspe
 
 1. Localize os dois-pontos ou travessão e leia o termo regente antecedente.
 2. Inspecione a listagem de elementos:
- - Se os itens forem conectados estritamente por vírgulas (*A, B, C...*), o rol é aberto $\rightarrow$ **Exemplo**.
- - Se o último item for precedido pela conjunção aditiva **"e"** (*A, B e C*), o rol foi fechado $\rightarrow$ **Enumeração**.
+  - Se os itens forem conectados estritamente por vírgulas (*A, B, C...*), o rol é aberto $\rightarrow$ **Exemplo**.
+  - Se o último item for precedido pela conjunção aditiva **"e"** (*A, B e C*), o rol foi fechado $\rightarrow$ **Enumeração**.
 3. Se a banca afirmar que são "exemplos", mas a lista é fechada com "e", marque o item como **ERRADO**.
 
 ---
 
-## Validação de Ponto e Vírgula no Cebraspe
+### Validação de Ponto e Vírgula no Cebraspe
 
 1. Localize o ponto e vírgula e identifique os blocos coordenados por ele separados.
 2. Verifique se a assertiva afirma que o ponto e vírgula "decorre da intercalação":
- - Se a banca alegar causa em intercalação, marque **ERRADO** imediatamente.
+  - Se a banca alegar causa em intercalação, marque **ERRADO** imediatamente.
 3. Verifique se os blocos constituem enumeração de itens com vírgulas internas ou orações coordenadas independentes:
- - Se sim, marque **CERTO**.
+  - Se sim, marque **CERTO**.
 
 ---
 
-## Substituição de Dois-Pontos por Travessão em Reescrita
+### Substituição de Dois-Pontos por Travessão em Reescrita
 
 1. Identifique se os dois-pontos introduzem aposto ou oração explicativa.
 2. Verifique se a explicação se estende até o ponto final do período.
@@ -491,7 +487,7 @@ Para consulta rápida e precisa, consolidam-se abaixo as regras canônicas do gr
 
 ---
 
-## Validação de Troca de Pontuação por Ponto Final
+### Validação de Troca de Pontuação por Ponto Final
 
 1. Isole o segmento textual que se inicia após a pontuação proposta para virar ponto final.
 2. Verifique a existência de forma verbal própria e autonomia semântica.
@@ -499,7 +495,7 @@ Para consulta rápida e precisa, consolidam-se abaixo as regras canônicas do gr
 
 ---
 
-## Diagnóstico de Efeitos Colaterais em Colocação Pronominal
+### Diagnóstico de Efeitos Colaterais em Colocação Pronominal
 
 1. Ao avaliar a troca de conjunções (como "e") por ponto e vírgula ou vírgula, observe o início da oração seguinte.
 2. Inspecione se há pronome oblíquo átono (*me, te, se, nos, vos, lhe, o, a*) encabeçando o novo bloco oracional.
@@ -507,13 +503,11 @@ Para consulta rápida e precisa, consolidam-se abaixo as regras canônicas do gr
 
 ---
 
-## Teste de Sentido Denotativo vs. Conotativo em Aspas
+### Teste de Sentido Denotativo vs. Conotativo em Aspas
 
 1. Identifique a palavra aspeada e recupere seu sentido dicionarizado estrito (denotativo).
 2. Analise o contexto textual: o termo está sendo aplicado ao seu objeto literal ou a uma analogia/metáfora?
 3. Se for analogia conceitual (ex.: *visão "bancária" da educação*), conclua que o vocábulo está **deslocado de seu sentido denotativo (sentido conotativo/figurado)**.
-
----
 
 ---
 
@@ -533,121 +527,119 @@ Para consulta rápida e precisa, consolidam-se abaixo as regras canônicas do gr
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Questão 21 (VUNESP - Pref. Jundiaí - SP / Agente de Trânsito)
+### Questão 21 (VUNESP - Pref. Jundiaí - SP / Agente de Trânsito)
 
 - **Foco:** Análise global de período composto envolvendo conjunção "e" conclusiva, parênteses em termo essencial, vírgulas casadas em oração causal e oração adjetiva restritiva reduzida de particípio.
 - **Análise das Alternativas:**
- - *A (Incorreta):* Isolou o verbo nuclear entre parênteses `(se inteirar)` e omitiu a vírgula antes de `como`.
- - *B (Incorreta):* Omitiu vírgula antes de `portanto` e antes de `como`; inseriu vírgula indevida após `optou`.
- - *C (Incorreta):* Empregou travessões em oração restritiva `— tomadas pela diretoria —` e omitiu vírgulas casadas.
- - *D (Incorreta):* Isolou `(muito atrasado)` e omitiu a vírgula de abertura da intercalação causal.
- - *E (Correta / Gabarito):* Pontuação irrepreensível com vírgula facultativa antes do "e" conclusivo, vírgula antes de `portanto`, vírgulas casadas em `, como pegou o bonde andando,` e adjetiva restritiva sem pontuação.
+  - *A (Incorreta):* Isolou o verbo nuclear entre parênteses `(se inteirar)` e omitiu a vírgula antes de `como`.
+  - *B (Incorreta):* Omitiu vírgula antes de `portanto` e antes de `como`; inseriu vírgula indevida após `optou`.
+  - *C (Incorreta):* Empregou travessões em oração restritiva `— tomadas pela diretoria —` e omitiu vírgulas casadas.
+  - *D (Incorreta):* Isolou `(muito atrasado)` e omitiu a vírgula de abertura da intercalação causal.
+  - *E (Correta / Gabarito):* Pontuação irrepreensível com vírgula facultativa antes do "e" conclusivo, vírgula antes de `portanto`, vírgulas casadas em `, como pegou o bonde andando,` e adjetiva restritiva sem pontuação.
 - **Gabarito:** **Alternativa E**.
 
-## Questão 22 (IBFC - Pref. São Gonçalo do Amarante - RN / Agente Administrativo)
+### Questão 22 (IBFC - Pref. São Gonçalo do Amarante - RN / Agente Administrativo)
 
 - **Foco:** Julgamento de adjunto adverbial final em ordem direta, travessão explicativo e tratamento de aposto pela banca.
 - **Análise dos Itens:**
- - *Item I (Correto):* Vírgula facultativa separando adjunto adverbial de lugar no término do período.
- - *Item II (Incorreto):* O travessão introduz explicação sobre "nosso amor", e não fala de personagem.
- - *Item III (Correto segundo a banca):* Expressão adjetiva explicativa tratada genericamente como aposto.
+  - *Item I (Correto):* Vírgula facultativa separando adjunto adverbial de lugar no término do período.
+  - *Item II (Incorreto):* O travessão introduz explicação sobre "nosso amor", e não fala de personagem.
+  - *Item III (Correto segundo a banca):* Expressão adjetiva explicativa tratada genericamente como aposto.
 - **Gabarito:** **Alternativa A (Apenas I e III estão corretas)**.
 
-## Questão 23 (VUNESP - UNICAMP / Engenheiro Civil)
+### Questão 23 (VUNESP - UNICAMP / Engenheiro Civil)
 
 - **Foco:** Efeitos de sentido do travessão duplo e dos dois-pontos.
 - **Resolução:** Os travessões em `— e entre os —` realizam a **inclusão de informação** (dado factual objetivo sobre o mecanismo), e os dois-pontos introduzem a **explicação de passagem anterior** (especificam o sentido positivo e invejável).
 - **Gabarito:** **Alternativa C**.
 
-## Questão 24 (VUNESP - Câmara de São José dos Campos - SP / Técnico Legislativo)
+### Questão 24 (VUNESP - Câmara de São José dos Campos - SP / Técnico Legislativo)
 
 - **Foco:** Funções das aspas em títulos literários e realce semântico.
 - **Resolução:** As primeiras aspas indicam **título de obra literária** (*Itinerário de Pasárgada*); as segundas aspas em `Não "essenciais"` servem para **acentuar o valor significativo de uma palavra** no debate político-cultural (e não para ironizar).
 - **Gabarito:** **Alternativa C**.
 
-## Questão 25 (FCC - Câmara de Fortaleza - CE / Redator)
+### Questão 25 (FCC - Câmara de Fortaleza - CE / Redator)
 
 - **Foco:** Aspas duplas e simples no texto *Pedagogia do Oprimido*.
 - **Resolução:** As aspas simples em `'bancária'` têm a finalidade de **realçar um termo deslocado de seu sentido denotativo** (sentido conotativo/figurado).
 - **Gabarito:** **Alternativa E**.
 
-## Questão 26 (FGV - Câmara de Aracaju - SE / Assistente Administrativo)
+### Questão 26 (FGV - Câmara de Aracaju - SE / Assistente Administrativo)
 
 - **Foco:** Identificação de assertiva inadequada sobre sinais em frase com vírgula vicária e dois-pontos.
 - **Resolução:** A alternativa E é incorreta ao afirmar que o ponto final mostra "a interrupção de um pensamento", quando na verdade ele opera a **finalização de um período gramatical**.
 - **Gabarito:** **Alternativa E (Inadequada)**.
 
-## Questão 27 (Cebraspe - TJ-RJ / Técnico Judiciário)
+### Questão 27 (Cebraspe - TJ-RJ / Técnico Judiciário)
 
 - **Enunciado:** Em *"disse mais uma vez: sou vigorosa, dezesseis"*, os dois-pontos introduzem uma fala.
 - **Resolução:** Antecedidos pelo *verbum dicendi* "disse", os dois-pontos introduzem a fala direta do personagem.
 - **Gabarito:** **CERTO**.
 
-## Questão 28 (Cebraspe - SEDUC-AL / Professor)
+### Questão 28 (Cebraspe - SEDUC-AL / Professor)
 
 - **Enunciado:** Em *"...do que devemos fazer: correção educacional de pensamentos distorcidos e medicação exata"*, os dois-pontos introduzem exemplos.
 - **Resolução:** A presença da conjunção aditiva "e" fecha a relação de procedimentos, configurando **enumeração exaustiva**, e não listagem aberta de exemplos.
 - **Gabarito:** **ERRADO**.
 
-## Questão 29 (Cebraspe - SEDUC-AL / Professor)
+### Questão 29 (Cebraspe - SEDUC-AL / Professor)
 
 - **Enunciado:** Em texto dialogado, os travessões indicam a mudança dos interlocutores.
 - **Resolução:** Emprego clássico de travessão simples no início de linhas para marcar a troca de turnos no diálogo.
 - **Gabarito:** **CERTO**.
 
-## Questão 30 (Cebraspe - SEED-PR / Professor)
+### Questão 30 (Cebraspe - SEED-PR / Professor)
 
 - **Enunciado:** Os travessões em *"...Em situações de estresse — quando nosso organismo acha que estamos sob ameaça... —..."* indicam citação.
 - **Resolução:** Os travessões isolam oração intercalada explicativa; a citação de autoridade é demarcada pelas aspas subsequentes.
 - **Gabarito:** **ERRADO**.
 
-## Questão 31 (Cebraspe - TRE-RJ / Técnico Judiciário)
+### Questão 31 (Cebraspe - TRE-RJ / Técnico Judiciário)
 
 - **Enunciado:** O ponto e vírgula justifica-se para isolar segmentos de enumeração que contêm vírgulas.
 - **Resolução:** Uso canônico do ponto e vírgula para coordenar itens complexos de uma listagem legal contendo vírgulas internas.
 - **Gabarito:** **CERTO**.
 
-## Questão 32 (Cebraspe - MJSP / Técnico)
+### Questão 32 (Cebraspe - MJSP / Técnico)
 
 - **Enunciado:** O ponto e vírgula decorre da intercalação da oração *"onde se mói a cana"*.
 - **Resolução:** O ponto e vírgula decorre da enumeração dos núcleos locativos da fazenda ("embaixo" e "na colina"). Intercalações são isoladas por vírgulas.
 - **Gabarito:** **ERRADO**.
 
-## Questão 35 (Cebraspe - MPE-SC / Promotor de Justiça)
+### Questão 35 (Cebraspe - MPE-SC / Promotor de Justiça)
 
 - **Enunciado:** Substituição de dois-pontos por travessão simples em *"...ações afirmativas: medidas políticas que visam acabar com a exclusão social..."*.
 - **Resolução:** Como a explicação encerra o período, a troca de `:....` por `—....` é perfeitamente válida.
 - **Gabarito:** **CERTO**.
 
-## Questão 36 (Cebraspe - PC-SE / Agente de Polícia)
+### Questão 36 (Cebraspe - PC-SE / Agente de Polícia)
 
 - **Enunciado:** Substituição de travessão por ponto final em período sobre criminalização de conduta contra a mulher.
 - **Resolução:** O segmento seguinte possui verbo próprio e autonomia semântica plena, legitimando a formação de novo período autônomo.
 - **Gabarito:** **CERTO**.
 
-## Questão 37 (Cebraspe - Petrobras / Administração)
+### Questão 37 (Cebraspe - Petrobras / Administração)
 
 - **Enunciado:** Troca de ponto final por ponto e vírgula antes de *"Agora, dizer 'cometi um crime...'"*.
 - **Resolução:** O termo "agora" atua como conjunção coordenativa adversativa (= *mas/porém*), admitindo ponto e vírgula antes de si.
 - **Gabarito:** **CERTO**.
 
-## Questão 38 (Cebraspe - DPE-RO / Oficial de Diligência)
+### Questão 38 (Cebraspe - DPE-RO / Oficial de Diligência)
 
 - **Enunciado:** Preservação da correção gramatical com a supressão pura dos travessões em oração causal intercalada longa.
 - **Resolução:** A supressão dos travessões sem a inserção de vírgulas de isolamento deixa a oração intercalada sem demarcação sintática.
 - **Gabarito:** **ERRADO**.
 
-## Questão 39 (Cebraspe - DPE-RO / Oficial de Diligência)
+### Questão 39 (Cebraspe - DPE-RO / Oficial de Diligência)
 
 - **Enunciado:** Inserção de dois-pontos após a forma verbal *"definia"* em *"O código definia que o interessado..."*.
 - **Resolução:** É expressamente proibido separar o verbo transitivo direto de sua oração substantiva objetiva direta ("definia isso").
 - **Gabarito:** **ERRADO**.
 
-## Questão 40 (Cebraspe - DPE-DF / Analista)
+### Questão 40 (Cebraspe - DPE-DF / Analista)
 
 - **Enunciado:** Substituição da conjunção "e" por ponto e vírgula em *"Acolhe-te quando vens e te deixa ir quando partes"*.
 - **Resolução:** A remoção do "e" cria uma nova oração que se inicia com o pronome oblíquo átono `te`, violando a regra culta de colocação pronominal (exige ênclise: `; deixa-te ir`).
@@ -655,117 +647,109 @@ Para consulta rápida e precisa, consolidam-se abaixo as regras canônicas do gr
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Mantra do "Somente" para Orações Adjetivas
+### O Mantra do "Somente" para Orações Adjetivas
 
 Para saber se uma oração subordinada adjetiva (reduzida ou desenvolvida) deve levar pontuação:
 
 - Aplique mentalmente a palavra **"SOMENTE"**: se o sentido contextual delimitar um subconjunto (*somente aquelas medidas da diretoria*), a oração é **restritiva $\rightarrow$ SEM VÍRGULA**. Se a informação aplicar-se a todos os elementos, é **explicativa $\rightarrow$ COM VÍRGULA**.
 
-## Estratégia de Redação para Não Fechar Rol de Exemplos
+### Estratégia de Redação para Não Fechar Rol de Exemplos
 
 Em provas discursivas, ao listar competências ou atribuições e não recordar todas, **evite usar a conjunção "e"** antes do último elemento (ex.: evite *"As funções são A, B e C"*). Empregue vírgula antes do último item e ponto final (*"As funções são A, B, C."*), caracterizando formalmente um rol aberto de exemplos sem penalização de conteúdo.
 
-## O Macete do "Isso" para Identificar Objeto Direto Oracional
+### O Macete do "Isso" para Identificar Objeto Direto Oracional
 
 Ao encontrar um verbo seguido de "que", substitua a oração por **"isso"** (*"O código definia [que...] "* $\rightarrow$ *"O código definia **isso**"*). Se a frase fizer sentido, o "que" é conjunção integrante e é proibido colocar vírgula ou dois-pontos entre o verbo e a oração.
 
-## Sentir o "Cheiro de Circunstância" para Localizar Intercalações
+### Sentir o "Cheiro de Circunstância" para Localizar Intercalações
 
 Ao identificar conectivos como *como, embora, caso, quando* no meio do período, reconheça imediatamente a presença de oração adverbial intercalada e exija o par simétrico de vírgulas casadas (abertura e fechamento).
 
-## Regra Negativa para Ponto e Vírgula: "Não Subordinada"
+### Regra Negativa para Ponto e Vírgula: "Não Subordinada"
 
 Em vez de memorizar todas as orações coordenadas, verifique se a oração seguinte é subordinada adverbial (*mnemônico 6C + FTP*). Se **não for subordinada**, ela tem estatuto coordenativo e aceita separação por ponto e vírgula.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Omissão Unilateral em Vírgulas Casadas
+### Omissão Unilateral em Vírgulas Casadas
 
 Bancas examinadoras costumam inserir a vírgula de fechamento de uma oração adverbial intercalada, mas omitir a vírgula de abertura (ex.: `...portanto como pegou o bonde andando, optou...`), gerando incorreção sintática.
 
-## Alteração Indevida de Sentido ao Pontuar Adjetiva Restritiva
+### Alteração Indevida de Sentido ao Pontuar Adjetiva Restritiva
 
 Inserir vírgulas ou travessões em uma oração adjetiva que contextualmente é restritiva altera o sentido original do texto, transformando uma delimitação de subconjunto em uma generalização totalizadora.
 
-## Supressão Indevida de Termos Nucleares entre Parênteses
+### Supressão Indevida de Termos Nucleares entre Parênteses
 
 Parênteses jamais podem envolver verbos principais ou complementos verbais obrigatórios. Se a supressão do termo entre parênteses deixar a frase truncada, o uso é incorreto.
 
-## Pegadinha da "Supressão Pura" de Sinais de Intercalação
+### Pegadinha da "Supressão Pura" de Sinais de Intercalação
 
 Candidatos frequentemente confundem a possibilidade de substituir travessões por vírgulas com a proposta da banca de **suprimir puramente** os travessões. A retirada dos sinais sem inserção de vírgulas destrói a correção sintática.
 
-## Dois-Pontos após Verbo Transitivo Direto
+### Dois-Pontos após Verbo Transitivo Direto
 
 A presença de conjunção integrante ("que") não autoriza o uso de dois-pontos. Separar verbo transitivo direto de seu objeto oracional por dois-pontos é erro grave.
 
-## A Armadilha da Conjunção "e" Fechando Listagens
+### A Armadilha da Conjunção "e" Fechando Listagens
 
 A presença da conjunção aditiva "e" antes do último item de uma listagem após dois-pontos encerra o conjunto como enumeração exaustiva, anulando assertivas que classifiquem o rol como "exemplos".
 
-## Ponto e Vírgula NÃO Decorre de Intercalação
+### Ponto e Vírgula NÃO Decorre de Intercalação
 
 O ponto e vírgula organiza enumerações complexas ou separa orações coordenadas. A intercalação interna a um segmento é isolada por vírgulas. A tese de que o ponto e vírgula "decorre de intercalação" é invariavelmente falsa.
 
-## Efeito Colateral do Ponto e Vírgula na Colocação Pronominal
+### Efeito Colateral do Ponto e Vírgula na Colocação Pronominal
 
 Ao trocar "e" por ponto e vírgula, cria-se o início formal de uma nova oração. Se essa oração iniciar com pronome oblíquo átono em próclise, o período torna-se incorreto na norma padrão.
 
-## O Mito de que Todo Destaque Entre Aspas É Ironia
+### O Mito de que Todo Destaque Entre Aspas É Ironia
 
 Classificar automaticamente qualquer termo aspeado como "ironia" é um erro recorrente. Só há ironia se o autor expressar o oposto do que pensa. Se o autor concordar com o termo e quiser valorizá-lo no debate, a função é de **ênfase no valor significativo**.
 
-## Ponto Final Não É Sinal de Interrupção
+### Ponto Final Não É Sinal de Interrupção
 
 O ponto final encerra períodos sintáticos estruturados. O sinal gráfico que indica interrupção ou suspensão de pensamentos inacabados são as **reticências**.
 
 ---
 
----
-
 ## Glossário operacional
 
-## Vírgula Vicária
+### Vírgula Vicária
 
 Emprego da vírgula para marcar formalmente no texto a supressão (elipse ou zeugma) de um verbo anteriormente expresso no período (*ex.: sua conversa é instrutiva; seu silêncio, formativo*).
 
-## Ponto e Vírgula
+### Ponto e Vírgula
 
 Sinal de pontuação que indica pausa intermediária entre a vírgula e o ponto final, empregado estritamente para coordenar itens de enumerações complexas ou orações coordenadas independentes.
 
-## Verbo de Elocução (Verbum Dicendi)
+### Verbo de Elocução (Verbum Dicendi)
 
 Verbo que introduz ou anuncia a reprodução da fala de um personagem ou interlocutor (*ex.: dizer, falar, declarar, indagar, responder*).
 
-## Texto Alheio
+### Texto Alheio
 
 Expressão técnica empregada por bancas examinadoras (especialmente a FGV) para designar qualquer excerto textual de autoria externa incorporado à prova, exigindo aspas para prevenir plágio.
 
-## "Agora" Conectivo Adversativo
+### "Agora" Conectivo Adversativo
 
 Emprego discursivo da palavra "agora" como conjunção coordenativa adversativa, equivalente a *mas, porém, contudo*, estabelecendo contraste entre duas asserções.
 
-## Vírgulas Casadas
+### Vírgulas Casadas
 
 Par simétrico de vírgulas utilizado compulsoriamente para abrir e fechar termos ou orações intercaladas no meio do período sintático.
 
-## Sentido Conotativo (Linguagem Figurada)
+### Sentido Conotativo (Linguagem Figurada)
 
 Uso de termo fora de sua significação dicionarizada literal (sentido denotativo), assumindo valor metafórico, translato ou expressivo.
 
-## Oração Intercalada (Interferente)
+### Oração Intercalada (Interferente)
 
 Oração inserida no interior de outra oração para trazer esclarecimento, causa, condição ou justificativa, exigindo isolamento por sinais gráficos bilaterais.
-
----
 
 ---
 

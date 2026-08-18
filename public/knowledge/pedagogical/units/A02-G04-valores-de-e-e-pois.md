@@ -23,9 +23,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 ### Como aplicar neste tema
 
 1. Localizar o verbo ou a locução verbal de cada oração envolvida no período e delimitar as fronteiras oracionais.
-2. 1. Identificar o conector sob análise ('E' ou 'POIS') e delimitar as orações do período.
-3. 2. Para o conector 'E': examinar se há determinante anteposto (substantivação). Se não houver, analisar o segmento posterior: se soma fatos compatíveis -> Aditivo; se quebra expectativa (= porém) -> Adversativo; se expressa efeito decorrente (= por isso) -> Conclusivo/Consecutivo.
-4. 3. Para reescrita de 'E' por ';': verificar se o termo seguinte é pronome oblíquo átono; se for próclise, rejeitar o item por violação gramatical (exige-se ênclise).
+2. Identificar o conector sob análise ('E' ou 'POIS') e delimitar as orações do período.
+3. Para o conector 'E': examinar se há determinante anteposto (substantivação). Se não houver, analisar o segmento posterior: se soma fatos compatíveis -> Aditivo; se quebra expectativa (= porém) -> Adversativo; se expressa efeito decorrente (= por isso) -> Conclusivo/Consecutivo.
+4. Para reescrita de 'E' por ';': verificar se o termo seguinte é pronome oblíquo átono; se for próclise, rejeitar o item por violação gramatical (exige-se ênclise).
 
 ### Testes decisivos
 
@@ -45,7 +45,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Conhecimento preliminar dos pronomes oblíquos átonos (*me, te, se, nos, vos, o, a, os, as, lhe, lhes*) e noções básicas de próclise e ênclise.
 - Diferenciação morfossintática básica entre classes de palavras invariáveis (conjunções) e variáveis (substantivos).
 
-### Mapa Conceitual Integrado
+#### Mapa Conceitual Integrado
 
 ```text
  SISTEMA SEMÂNTICO-SINTÁTICO DE "E" E "POIS"
@@ -74,37 +74,35 @@ VALORES SEMÂNTICOS FENÔMENOS CONEXOS POSIÇÃO 1: NO INÍCIO POSIÇÃO 2: DESL
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Polissemia e Valores Semânticos Principais da Conjunção "E"
+### Polissemia e Valores Semânticos Principais da Conjunção "E"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A palavra "E" é canonicamente classificada como conjunção coordenativa aditiva; contudo, na dinâmica textual e nas questões de concursos públicos, ela opera como um conectivo polissêmico que assume três valores semânticos fundamentais: **Adição**, **Oposição (Adversidade)** e **Conclusão (Consequência)**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Adição (Valor Canônico):** Estabelece a soma simples, neutra ou acumulativa de ações, estados ou atributos que compartilham a mesma orientação discursiva e não geram conflito lógico.
- - *Estrutura:* $\text{Fato A} + \text{Fato B}$ (sem quebra de expectativa).
+  - *Estrutura:* $\text{Fato A} + \text{Fato B}$ (sem quebra de expectativa).
 2. **Oposição / Adversidade:** Surge quando o segmento introduzido pelo "E" expressa uma ideia contrária, um contraste ou uma frustração de expectativa relativamente ao que foi afirmado no primeiro segmento.
- - *Critério de Teste:* O conector pode ser perfeitamente substituído por conjunções adversativas canônicas (*mas, porém, contudo, todavia, no entanto*).
+  - *Critério de Teste:* O conector pode ser perfeitamente substituído por conjunções adversativas canônicas (*mas, porém, contudo, todavia, no entanto*).
 3. **Conclusão / Consequência:** Manifesta-se quando a oração introduzida pelo "E" expressa o desfecho lógico, efeito ou resultado fático decorrente da ação enunciada na oração anterior.
- - *Critério de Teste:* O conector pode ser substituído por conjunções ou locuções conclusivas/consecutivas (*logo, portanto, por isso, por conseguinte*).
+  - *Critério de Teste:* O conector pode ser substituído por conjunções ou locuções conclusivas/consecutivas (*logo, portanto, por isso, por conseguinte*).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 Para identificar o valor real, aplica-se o isolamento do segmento posterior e o teste de substituição funcional pelos conectivos-padrão (*e* $\rightarrow$ *além disso*; *e* $\rightarrow$ *porém*; *e* $\rightarrow$ *por isso*).
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Exemplo de Adição:* "Na viagem visitou o parque **e** conheceu o museu." (Ações acumuladas).
 - *Exemplo de Oposição:* "Bebeu a garrafa de água **e** ainda tinha sede." (Beber água deveria saciar a sede; a persistência da sede frustra a expectativa $\rightarrow$ *porém*).
 - *Exemplo de Consequência/Conclusão:* "Saiu tarde **e** chegou atrasado." (Chegar atrasado é o efeito natural de ter saído tarde $\rightarrow$ *por isso / logo*).
 - *Contraexemplo Crítico:* "Ele é inteligente **e** preguiçoso." (Não há oposição lógica automática entre ser inteligente e ter preguiça; são duas características que coexistem na mesma pessoa $\rightarrow$ valor estritamente **Aditivo**).
 
-### Exceções ou limites
+#### Exceções ou limites
 
 Em determinados contextos narrativos, as noções de adição sintática e de consequência semântica sobrepõem-se, sendo a segunda oração simultaneamente uma continuação do relato e o resultado do evento prévio.
 
@@ -112,13 +110,13 @@ Em determinados contextos narrativos, as noções de adição sintática e de co
 
 ---
 
-## Método Prático de Identificação Semântica do "E" (Análise do Elemento Posterior)
+### Método Prático de Identificação Semântica do "E" (Análise do Elemento Posterior)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A determinação inequívoca do valor semântico da conjunção "E" exige que o candidato direcione sua atenção interpretativa exclusivamente para o **segmento que sucede o conectivo** (elemento posterior), aferindo qual relação lógica e pragmática esse termo estabelece com a informação antecedente.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Conjunções operam como conectores relacionais. A classificação tradicional focada no nome da conjunção falha diante da polissemia textual. O método estruturado de análise consiste em:
 
@@ -126,7 +124,7 @@ Conjunções operam como conectores relacionais. A classificação tradicional f
 2. Formular a pergunta relacional: *O segmento posterior adiciona um elemento harmônico, contraria a expectativa gerada pelo anterior ou expressa o resultado/desfecho do anterior?*
 3. Concluir a classificação com base na resposta lógica, independentemente da forma superficial da conjunção.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - Se o elemento posterior **soma/acumula** $\rightarrow$ **Aditivo**.
 - Se o elemento posterior **quebra expectativa/opõe-se** $\rightarrow$ **Adversativo**.
@@ -136,13 +134,13 @@ Conjunções operam como conectores relacionais. A classificação tradicional f
 
 ---
 
-## Padrão de Cobrança das Bancas para "E com Valor Diferente" (#ANOTAAÍ)
+### Padrão de Cobrança das Bancas para "E com Valor Diferente" (#ANOTAAÍ)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Quando o enunciado de uma questão de concurso público solicitar a identificação da conjunção "E" empregada com **"valor diferente"**, **"sentido atípico"** ou **"valor não canônico"**, a banca examinadora estará obrigatoriamente exigindo a localização de uma ocorrência com valor **Adversativo (Oposição)** ou **Conclusivo/Consecutivo (Resultado)**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Como o valor padrão e amplamente majoritário da conjunção "E" é o aditivo, a construção de questões de múltipla escolha ou de itens certo/errado que mencionam "valor diferente" apoia-se no contraste entre a adição canônica e os desvios semânticos contextuais (adversidade e conclusão).
 
@@ -158,19 +156,19 @@ COM "VALOR DIFERENTE" ─────────┤
 
 ---
 
-## Substantivação da Conjunção "E" por Derivação Imprópria
+### Substantivação da Conjunção "E" por Derivação Imprópria
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A palavra "E", morfologicamente categorizada como conjunção coordenativa invariável, sofre **derivação imprópria (substantivação)** quando passa a funcionar como substantivo devido à anteposição de um termo determinante (artigo, pronome demonstrativo, pronome possessivo ou adjetivo).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Ao ser substantivada, a palavra "E" perde sua função relacional sintática de ligar orações ou termos equivalentes e passa a designar uma entidade, conceito ou objeto no discurso (assumindo sentidos como *elo, suporte, apoio, estímulo, conjunção, união*).
 
 - *Estrutura:* $\text{Determinante (ex.: aquele, o, este, seu)} + \mathbf{E} \longrightarrow \text{Substantivo}$.
 
-### Exemplos
+#### Exemplos
 
 - *Caso Substantivado:* "...precisavam **daquele E** que os conjugava com outras camadas sociais..." (A contração `daquele` [$de + aquele$] atua como pronome demonstrativo determinante; "E" é substantivo sinônimo de *apoio/elo*).
 - *Caso Conjunção:* "...os operários **E** todos que queriam proteção..." ("E" atua como conector aditivo entre dois núcleos do sujeito).
@@ -180,38 +178,38 @@ Ao ser substantivada, a palavra "E" perde sua função relacional sintática de 
 
 ---
 
-## Substituição de Conjunção por Ponto e Vírgula e a Restrição de Próclise
+### Substituição de Conjunção por Ponto e Vírgula e a Restrição de Próclise
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A substituição de uma conjunção coordenativa aditiva ("e") por ponto e vírgula (`;`) é sintática e semanticamente viável para separar orações coordenadas assindéticas; no entanto, a remoção da conjunção altera a fronteira da oração subsequente, tornando **gramaticalmente proibida a próclise** de pronomes oblíquos átonos imediatamente após a pontuação forte.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Em questões de reescrita do Cebraspe, a proposta de substituir o "e" por ";" frequentemente esconde uma armadilha de colocação pronominal:
 
 1. **Frase Original:** *"Acolhe-te quando vens **e te deixa** ir quando partes"*
 
 2. **Reescrita Proposta pela Banca:** *"Acolhe-te quando vens**; te deixa** ir quando partes"*
- - Semântica: Preservada (relação de coordenação mantida).
- - Pontuação: O ponto e vírgula é lícito entre coordenadas.
- - **Erro Gramatical Insuperável:** Na norma-padrão, é rigorosamente vedado iniciar período ou oração após pontuação forte (ponto e vírgula, ponto final) com pronome oblíquo átono.
+  - Semântica: Preservada (relação de coordenação mantida).
+  - Pontuação: O ponto e vírgula é lícito entre coordenadas.
+  - **Erro Gramatical Insuperável:** Na norma-padrão, é rigorosamente vedado iniciar período ou oração após pontuação forte (ponto e vírgula, ponto final) com pronome oblíquo átono.
 3. **Forma Correta:** Exige-se obrigatoriamente a mudança para **ênclise**: *"Acolhe-te quando vens**; deixa-te** ir quando partes"*. Se a questão não explicitar os devidos ajustes, o item estará **ERRADO**.
 
 - **Evidenciado por:**
 
 ---
 
-## Arquitetura Posicional e Valores Semânticos da Conjunção "Pois"
+### Arquitetura Posicional e Valores Semânticos da Conjunção "Pois"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O valor sintático-semântico da conjunção **pois** é determinado primariamente pela sua **posição em relação ao verbo da oração que ela integra/introduz**:
 
 1. **No Início da Oração (Pré-verbal):** Posicionada antes do verbo, equivale a **porque**, podendo assumir valor **Explicativo** ou **Causal**. **Nunca é conclusiva.**
 2. **Deslocada (Pós-verbal / Intercalada / Final):** Posicionada após o verbo da sua oração e isolada por vírgulas, equivale a **portanto**, assumindo valor estritamente **Conclusivo**.
 
-### Critérios de aplicação sintetizados
+#### Critérios de aplicação sintetizados
 
 | Posição do "Pois" | Posição Relativa ao Verbo | Equivalente Semântico Canônico | Valores Possíveis | É Conclusivo? |
 |:---------------------------------- |:--------------------------------------------------------------------------------------------------------- |:------------------------------- |:-------------------- |:-------------: |
@@ -222,34 +220,34 @@ O valor sintático-semântico da conjunção **pois** é determinado primariamen
 
 ---
 
-## "Pois" no Início de Oração: Distinção Estrutural entre Causa e Explicação
+### "Pois" no Início de Oração: Distinção Estrutural entre Causa e Explicação
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Estando a conjunção "pois" no início da oração (equivalente a *porque*), a diferenciação entre **Causa** e **Explicação** obedece à hierarquia do **Mantra da Causa**: a busca pela causalidade antecede a explicativa, exigindo que a oração expresse um fato gerador real do qual decorre uma consequência física/factual consumada na outra oração.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Oração Causal:** Introduz a causa material, objetiva e cronologicamente anterior que gerou uma consequência fática na oração principal.
- - *Axioma Fundante:* **"Causa só existe se houver consequência fática consumada."**
- - *Teste Operacional:* *"O fato de [Oração do Pois] fez com que [Oração Principal]?"* Se a resposta for positiva e a oração principal relatar um evento fático ocorrido no mundo real (modo indicativo), trata-se de **Causa**.
- - *Exemplo:* "O rapaz jogou fora o bilhete, **pois** não tinha acertado os números." (Não acertar os números é o fato gerador anterior que produziu o descarte do bilhete).
+  - *Axioma Fundante:* **"Causa só existe se houver consequência fática consumada."**
+  - *Teste Operacional:* *"O fato de [Oração do Pois] fez com que [Oração Principal]?"* Se a resposta for positiva e a oração principal relatar um evento fático ocorrido no mundo real (modo indicativo), trata-se de **Causa**.
+  - *Exemplo:* "O rapaz jogou fora o bilhete, **pois** não tinha acertado os números." (Não acertar os números é o fato gerador anterior que produziu o descarte do bilhete).
 2. **Oração Explicativa:** Introduz uma justificativa, motivo do enunciado, argumento discursivo ou fundamento de um pedido, convite, ordem ou conselho.
- - *Ausência de Consequência Mecânica:* A oração explicativa não "causa" fisicamente a oração principal; ela apenas explica por que o falante emitiu uma ordem ou juízo.
- - *Sinais Típicos:* Presença de verbos no **imperativo** (*venha, olhe, façam, vamos*), expressões modais de **conselho** (*não se deve, é preciso*) ou enunciados avaliativos.
- - *Exemplo:* "Venha logo, **pois** o jantar já está pronto." (O jantar estar pronto não força fisicamente a vinda; é apenas a justificativa para o comando "venha").
+  - *Ausência de Consequência Mecânica:* A oração explicativa não "causa" fisicamente a oração principal; ela apenas explica por que o falante emitiu uma ordem ou juízo.
+  - *Sinais Típicos:* Presença de verbos no **imperativo** (*venha, olhe, façam, vamos*), expressões modais de **conselho** (*não se deve, é preciso*) ou enunciados avaliativos.
+  - *Exemplo:* "Venha logo, **pois** o jantar já está pronto." (O jantar estar pronto não força fisicamente a vinda; é apenas a justificativa para o comando "venha").
 
 - **Exemplificado em:**
 
 ---
 
-## "Pois" Deslocado (Pós-verbal / Intercalado) com Valor Conclusivo
+### "Pois" Deslocado (Pós-verbal / Intercalado) com Valor Conclusivo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A conjunção "pois" adquire valor exclusivamente **Conclusivo** quando é empregada de forma **pós-positiva (deslocada)**, ou seja, posicionada após o verbo da oração que ela integra (intercalada ou no final do período), devendo ser isolada obrigatoriamente por vírgulas. Nessa estrutura, equivale perfeitamente a **portanto**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Na sintaxe da coordenação, as conjunções conclusivas tradicionais (*portanto, logo*) podem iniciar a oração, mas o "pois" conclusivo é rigidamente pós-verbal:
 
@@ -257,7 +255,7 @@ Na sintaxe da coordenação, as conjunções conclusivas tradicionais (*portanto
 - *Sinônimos Perfeitos:* *portanto, logo, por conseguinte, assim, desse modo*.
 - *Equivalência Semântica no Cebraspe:* A doutrina do Cebraspe trata **Conclusão** e **Consequência Lógica** como noções operacionais equivalentes.
 
-### Exemplos
+#### Exemplos
 
 - "Ganharam a partida; podem, **pois**, comemorar." (= podem, *portanto*, comemorar).
 - "É, **pois**, nesse momento, verdadeiro assessor..." (Verbo *É* antecede o *pois* $\rightarrow$ conclusivo).
@@ -267,13 +265,13 @@ Na sintaxe da coordenação, as conjunções conclusivas tradicionais (*portanto
 
 ---
 
-## Desmistificação do "Mito do Pois Entre Vírgulas" e Adjuntos Intercalados
+### Desmistificação do "Mito do Pois Entre Vírgulas" e Adjuntos Intercalados
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A presença visual de vírgulas antes e depois do vocábulo "pois" **não comprova** que ele esteja deslocado nem que possua valor conclusivo. A posição sintática em relação ao **verbo da oração** é o único critério determinante.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 O erro decorre de uma falsa generalização lógica:
 
@@ -293,7 +291,7 @@ O erro decorre de uma falsa generalização lógica:
 2. A segunda vírgula é a marca de abertura de um **adjunto adverbial intercalado** (ex.: *, desde 2010,*, *, daqui a pouco,*).
 3. Como o **verbo** da oração encontra-se **depois** da intercalação, o "pois" continua no **início da sua oração** (pré-verbal) e preserva o valor de **porque** (Causal/Explicativo), **jamais conclusivo**.
 
-### Exemplos
+#### Exemplos
 
 - *Exemplo Explicativo com Intercalação:* "Entre logo, **pois**, daqui a pouco, **começa** a festa." (O *pois* precede o verbo *começa*; as vírgulas isolam *daqui a pouco* $\rightarrow$ explicativo).
 - *Exemplo Cebraspe TJ-CE:* "...uma nova tendência ou processo, **pois**, desde 2010, **cresce** o peso..." (O *pois* precede o verbo *cresce* $\rightarrow$ explicativo/causal).
@@ -302,13 +300,13 @@ O erro decorre de uma falsa generalização lógica:
 
 ---
 
-## Equivalência Paradigmática e Intercambiabilidade de Conectores Iniciais
+### Equivalência Paradigmática e Intercambiabilidade de Conectores Iniciais
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 No início de orações (posição pré-verbal), as conjunções e locuções conjuntivas **pois, porque, já que, visto que, uma vez que e porquanto** integram o mesmo paradigma semântico e são mutuamente substituíveis em questões de reescrita sem prejuízo da correção gramatical e do sentido amplo de fundamentação/motivo.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Sobreposição de Listas Gramaticais:** A tradição gramatical inclui quase todos os conectores causais na lista das explicativas. Por isso, a substituição entre eles é tratada pela jurisprudência das bancas (como o Cebraspe) como uma troca neutra ("seis por meia dúzia").
 2. **A Única Exceção Estrita — A Conjunção "Como":** A palavra **como**, empregada no início absoluto do período com valor causal (*"Como estava chovendo, não fui"*), é a **única conjunção estritamente causal**, não podendo assumir valor explicativo.
@@ -318,34 +316,30 @@ No início de orações (posição pré-verbal), as conjunções e locuções co
 
 ---
 
----
-
 ## Regras decisivas
 
 Esta seção consolida as formulações canônicas definitivas estabelecidas pelo percurso pedagógico desta unidade:
 
 1. **Regra de Reconhecimento Semântico do "E":** O valor semântico do "E" depende da relação do elemento posterior com o anterior:
- - Adição: soma de termos ou orações compatíveis $\rightarrow$ .
- - Oposição: quebra de expectativa ($=$ *porém*) $\rightarrow$ .
- - Conclusão/Consequência: efeito lógico ou fático ($=$ *por isso, logo*) $\rightarrow$ .
+  - Adição: soma de termos ou orações compatíveis $\rightarrow$ .
+  - Oposição: quebra de expectativa ($=$ *porém*) $\rightarrow$ .
+  - Conclusão/Consequência: efeito lógico ou fático ($=$ *por isso, logo*) $\rightarrow$ .
 2. **Regra da Substantivação de Conectores:** A anteposição de artigo ou pronome demonstrativo/possessivo a uma conjunção converte-a em substantivo por derivação imprópria $\rightarrow$ .
 3. **Regra da Pontuação Forte e Próclise:** É vedada a próclise pronominal no início de oração após ponto e vírgula ou ponto final; a substituição de conjunção por ponto e vírgula exige conversão para ênclise $\rightarrow$ .
 4. **Regra Divisória Posicional do "Pois":**
- - $\text{Pois} + \text{Verbo}$ (Início) $=$ **Porque** (Causal ou Explicativo) $\rightarrow$ .
- - $\text{Verbo} +,\text{pois},$ (Deslocado) $=$ **Portanto** (Conclusivo) $\rightarrow$ .
+  - $\text{Pois} + \text{Verbo}$ (Início) $=$ **Porque** (Causal ou Explicativo) $\rightarrow$ .
+  - $\text{Verbo} +,\text{pois},$ (Deslocado) $=$ **Portanto** (Conclusivo) $\rightarrow$ .
 5. **O Mantra da Causa:** Diante de *pois* no início de oração, testa-se a causa primeiro:
- - Fato gerador anterior com consequência física consumada $=$ **Causal** $\rightarrow$ .
- - Justificativa de ordem, pedido, imperativo ou conselho modal $=$ **Explicativo** $\rightarrow$ .
+  - Fato gerador anterior com consequência física consumada $=$ **Causal** $\rightarrow$ .
+  - Justificativa de ordem, pedido, imperativo ou conselho modal $=$ **Explicativo** $\rightarrow$ .
 6. **Regra do Falso "Pois Deslocado":** Conjunção *pois* acompanhada de adjunto intercalado entre vírgulas antes do verbo continua no início da oração e não é conclusiva $\rightarrow$ .
 7. **Regra da Intercambiabilidade Causal/Explicativa:** No início da oração, *pois, porque, já que, visto que, uma vez que, porquanto* são intercambiáveis sem prejuízo da correção gramatical $\rightarrow$ .
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Roteiro de Identificação Semântica da Conjunção "E"
+### Roteiro de Identificação Semântica da Conjunção "E"
 
 ```text
 [PASSO 1: Localizar a conjunção "E" na oração]
@@ -365,18 +359,18 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ---
 
-## Protocolo de Validação de Substituição por Ponto e Vírgula (Teste de Colocação)
+### Protocolo de Validação de Substituição por Ponto e Vírgula (Teste de Colocação)
 
 1. **Validação Estrutural:** Verifique se as orações são coordenadas. O ponto e vírgula é legítimo para ligar orações coordenadas assindéticas.
 2. **Inspeção do Primeiro Termo Subsequente ao Ponto e Vírgula:**
 
- - Se for um **pronome oblíquo átono** (*me, te, se, nos, vos, o, a, os, as, lhe, lhes*), há **erro de próclise**.
+  - Se for um **pronome oblíquo átono** (*me, te, se, nos, vos, o, a, os, as, lhe, lhes*), há **erro de próclise**.
 3. **Julgamento do Item de Concurso:**
- - Se o enunciado propuser a troca pura da conjunção por `;` sem ajustar o verbo para **ênclise** (ex.: propor *; te deixa* em vez de *; deixa-te*), marque **ERRADO**.
+  - Se o enunciado propuser a troca pura da conjunção por `;` sem ajustar o verbo para **ênclise** (ex.: propor *; te deixa* em vez de *; deixa-te*), marque **ERRADO**.
 
 ---
 
-## Algoritmo em 2 Passos para Análise do "Pois" no Cebraspe
+### Algoritmo em 2 Passos para Análise do "Pois" no Cebraspe
 
 ```text
 [PASSO 1: RASTREAR A POSIÇÃO DO "POIS" EM RELAÇÃO AO VERBO DA ORAÇÃO]
@@ -401,16 +395,14 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ---
 
-## O "Mantra da Causa": Protocolo Decisório Causa vs. Explicação
+### O "Mantra da Causa": Protocolo Decisório Causa vs. Explicação
 
 1. **Pergunte sempre primeiro se é CAUSA.** Nunca comece perguntando se é explicação, pois a mente tende a interpretar qualquer justificativa como explicação genérica.
 2. **Aplique o Teste do Fato Gerador e Consequência Fática:**
- - Monte a fórmula: *"O fato de [Oração do Pois] fez com que [Oração Principal]?"*
- - Verifique a natureza da oração principal:
- - Relata um fato histórico/fático consumado no modo indicativo? $\rightarrow$ **SIM $\rightarrow$ CAUSAL**.
- - É um comando imperativo (*venha, façam*), convite (*vamos*) ou conselho modal (*não se deve*)? $\rightarrow$ **NÃO $\rightarrow$ EXPLICATIVO**.
-
----
+  - Monte a fórmula: *"O fato de [Oração do Pois] fez com que [Oração Principal]?"*
+  - Verifique a natureza da oração principal:
+  - Relata um fato histórico/fático consumado no modo indicativo? $\rightarrow$ **SIM $\rightarrow$ CAUSAL**.
+  - É um comando imperativo (*venha, façam*), convite (*vamos*) ou conselho modal (*não se deve*)? $\rightarrow$ **NÃO $\rightarrow$ EXPLICATIVO**.
 
 ---
 
@@ -427,7 +419,7 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ---
 
-### Tabela Comparativa 8.2 — Conjunção "Pois": Início de Oração vs. Deslocado
+#### Tabela Comparativa 8.2 — Conjunção "Pois": Início de Oração vs. Deslocado
 
 | Critério de Análise | "Pois" no Início de Oração (Pré-verbal) | "Pois" Deslocado (Pós-verbal / Intercalado) |
 |:------------------------------- |:------------------------------------------------------------------------------------------------------------------------------------------- |:---------------------------------------------------------------------- |
@@ -440,7 +432,7 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ---
 
-### Tabela Comparativa 8.3 — Diferenciação Crítica: Causa vs. Explicação
+#### Tabela Comparativa 8.3 — Diferenciação Crítica: Causa vs. Explicação
 
 | Critério | Oração Causal | Oração Explicativa |
 |:------------------------------------ |:------------------------------------------------------------------------ |:--------------------------------------------------------- |
@@ -452,11 +444,9 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Exercício de Fixação: Frase a (Valores do E)
+### Exercício de Fixação: Frase a (Valores do E)
 
 - **Frase:** *"Ela estudou muito e passou no concurso."*
 - **Análise Pedagógica:** O fato de passar no concurso soma-se a ter estudado muito, constituindo também a consequência direta e o resultado do esforço.
@@ -464,7 +454,7 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ---
 
-## Exercício de Fixação: Frase b (Valores do E)
+### Exercício de Fixação: Frase b (Valores do E)
 
 - **Frase:** *"Tentei falar com ele e ele não me atendeu."*
 - **Análise Pedagógica:** O ato de "não atender" frustra a expectativa natural de quem tentou estabelecer contato. Relação adversativa clara.
@@ -472,7 +462,7 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ---
 
-## Exercício de Fixação: Frase c (Valores do E)
+### Exercício de Fixação: Frase c (Valores do E)
 
 - **Frase:** *"Façam silêncio e poderão ouvir o pássaro cantar."*
 - **Análise Pedagógica:** Poder ouvir o pássaro cantar é o efeito / resultado decorrente do ato prévio de fazer silêncio.
@@ -480,7 +470,7 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ---
 
-## Exercício de Fixação: Frase d (Valores do E)
+### Exercício de Fixação: Frase d (Valores do E)
 
 - **Frase:** *"Ele é inteligente e preguiçoso."*
 - **Análise Pedagógica:** Trata-se da atribuição acumulada de duas características coexistentes a um mesmo sujeito. Inteligência e preguiça não se anulam logicamente.
@@ -488,7 +478,7 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ---
 
-## Exercício de Fixação: Frase e (Valores do E)
+### Exercício de Fixação: Frase e (Valores do E)
 
 - **Frase:** *"Ele se esforça muito e não consegue bons resultados."*
 - **Análise Pedagógica:** O esforço gera a expectativa de bons resultados; a ausência deles quebra diretamente essa premissa.
@@ -496,7 +486,7 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ---
 
-## Exercício de Fixação: Frase f (Valores do E)
+### Exercício de Fixação: Frase f (Valores do E)
 
 - **Frase:** *"Ande logo e não se atrase para a reunião."*
 - **Análise Pedagógica:** Ação solicitada associada ao resultado/efeito pretendido de não se atrasar.
@@ -504,7 +494,7 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ---
 
-## Questão de Concurso: Substantivação do "E" (CEBRASPE 2024 - Pref. Cachoeiro de Itapemirim)
+### Questão de Concurso: Substantivação do "E" (CEBRASPE 2024 - Pref. Cachoeiro de Itapemirim)
 
 - **Órgão / Cargo:** CEBRASPE - 2024 - Pref. Cachoeiro de Itapemirim / ES - Agente Administrativo
 - **Texto Suporte:** Rubem Braga (*Em Cachoeiro*, 2003).
@@ -516,7 +506,7 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ---
 
-## Questão de Concurso: Troca por Ponto e Vírgula e Próclise (CEBRASPE 2022 - DPE-DF)
+### Questão de Concurso: Troca por Ponto e Vírgula e Próclise (CEBRASPE 2022 - DPE-DF)
 
 - **Órgão / Cargo:** CEBRASPE - 2022 - DPE-DF - Analista de Apoio à Assistência Judiciária
 - **Texto Suporte:** George Steiner (sobre Kafka).
@@ -526,7 +516,7 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ---
 
-## Exercício de Fixação: Item a (Valores do Pois)
+### Exercício de Fixação: Item a (Valores do Pois)
 
 - **Frase:** *"Vamos embora, pois o filme está muito chato."*
 - **Resolução Detalhada:** O *pois* está no início da oração. A oração principal *"Vamos embora"* é um convite / comando exortativo. Não há relação fática de causalidade mecânica, mas uma justificativa discursiva para o convite.
@@ -534,7 +524,7 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ---
 
-## Exercício de Fixação: Item b (Valores do Pois)
+### Exercício de Fixação: Item b (Valores do Pois)
 
 - **Frase:** *"Você leu as cláusulas do contrato; não reclame, pois, das dificuldades que surgirem."*
 - **Resolução Detalhada:** A conjunção *pois* encontra-se deslocada, posicionada após o verbo *"reclame"* e isolada entre vírgulas. Equivale perfeitamente a *portanto*.
@@ -542,7 +532,7 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ---
 
-## Exercício de Fixação: Item c (Valores do Pois)
+### Exercício de Fixação: Item c (Valores do Pois)
 
 - **Frase:** *"Não se deve ler o que é ruim, pois a vida é curta."*
 - **Resolução Detalhada:** O *pois* está no início da oração. A oração principal *"Não se deve ler..."* expressa uma orientação modal/conselho. A brevidade da vida fundamenta o conselho.
@@ -550,7 +540,7 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ---
 
-## Exercício de Fixação: Item d (Valores do Pois)
+### Exercício de Fixação: Item d (Valores do Pois)
 
 - **Frase:** *"Os banqueiros comemoraram, pois o índice de risco do Brasil caiu."*
 - **Resolução Detalhada:** A queda do risco Brasil é o fato gerador anterior que provocou, no mundo real, a comemoração consumada dos banqueiros. Relação incontestável de Causa $\rightarrow$ Consequência.
@@ -558,7 +548,7 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ---
 
-## Questão de Concurso: "Pois" Pós-verbal Conclusivo (CESPE - SEE-AL)
+### Questão de Concurso: "Pois" Pós-verbal Conclusivo (CESPE - SEE-AL)
 
 - **Órgão / Cargo:** CESPE - SEE-AL - Secretário Escolar
 - **Texto:** *"...muitas vezes, porém, ele toma decisões e executa tarefas relevantes e decisivas. **É, pois, nesse momento**, verdadeiro assessor..."* (l. 13)
@@ -568,7 +558,7 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ---
 
-## Questão de Concurso: "Pois" Pré-verbal Não Conclusivo (CESPE / CEBRASPE 2024 - ANA)
+### Questão de Concurso: "Pois" Pré-verbal Não Conclusivo (CESPE / CEBRASPE 2024 - ANA)
 
 - **Órgão / Cargo:** CESPE / CEBRASPE - 2024 - ANA - Especialista em Regulação
 - **Texto:** *"...do CDESC convergem entre si, **pois** este último **se refere** à preocupação com o respeito à cultura..."*
@@ -578,7 +568,7 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ---
 
-## Questão de Concurso: Reescrita com Adjunto Intercalado (CESPE / TJ-CE Adaptada)
+### Questão de Concurso: Reescrita com Adjunto Intercalado (CESPE / TJ-CE Adaptada)
 
 - **Órgão / Cargo:** (ADAPTADA) CESPE / CEBRASPE - TJ-CE - Conhecimentos Básicos
 - **Texto:** *"...uma nova tendência ou processo, **pois**, desde 2010, **cresce** o peso do interior na contratação..."*
@@ -588,39 +578,35 @@ Esta seção consolida as formulações canônicas definitivas estabelecidas pel
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Atalho do esquemas #ANOTAAÍ para a Conjunção "E"
+### O Atalho do esquemas #ANOTAAÍ para a Conjunção "E"
 
 Se a questão de concurso pedir a opção em que a conjunção "E" tem **sentido diferente dos demais**, não perca tempo relendo todas as opções aditivas com calma excessiva: procure direto a alternativa que contenha um "E" com sentido de **PORÉM** (adversativo) ou de **POR ISSO / LOGO** (conclusivo/consecutivo).
 
 ---
 
-## Teste do Determinante para Identificar Substantivação
+### Teste do Determinante para Identificar Substantivação
 
 Para certificar-se de que qualquer palavra invariável (como "E", "não", "porquê") virou substantivo, verifique se imediatamente antes dela existe um **determinante** (artigo, pronome demonstrativo *este/daquele*, possessivo *meu*). Havendo determinante, ocorreu derivação imprópria!
 
 ---
 
-## O Macete Infalível do "Pois Deslocado"
+### O Macete Infalível do "Pois Deslocado"
 
 Apareceu a conjunção *pois* **intercalada entre vírgulas após o verbo**? Não perca tempo analisando o sentido global do texto: ela é **SEMPRE CONCLUSIVA** e equivale rigidamente a **portanto**.
 
 ---
 
-## A Regra da Troca "Seis por Meia Dúzia"
+### A Regra da Troca "Seis por Meia Dúzia"
 
 Em questões de reescrita que proponham trocar **pois** (no início da oração) por **porquanto, já que, porque, visto que, uma vez que**, lembre-se de que a banca está apenas trocando *"seis por meia dúzia"*. Todos pertencem à mesma família de conectores causais/explicativos; a substituição é sempre válida e mantém a correção gramatical.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## A Armadilha da Colocação Pronomial na Troca de Conjunção por Ponto e Vírgula
+### A Armadilha da Colocação Pronomial na Troca de Conjunção por Ponto e Vírgula
 
 - **O Erro Comum:** O candidato valida apenas a equivalência semântica e a licitude do ponto e vírgula entre orações coordenadas e marca o item como "CERTO".
 - **A Pegadinha:** A eliminação da conjunção "e" faz com que o verbo subsequente inicie a oração após pontuação forte. Se houver pronome átono em próclise (ex.: `; te deixa`), a frase estará **gramaticalmente errada** segundo a norma-padrão (exige-se ênclise: `; deixa-te`).
@@ -628,7 +614,7 @@ Em questões de reescrita que proponham trocar **pois** (no início da oração)
 
 ---
 
-## A Pegadinha Visual do "Pois Entre Vírgulas" Induzida por Adjunto Intercalado
+### A Pegadinha Visual do "Pois Entre Vírgulas" Induzida por Adjunto Intercalado
 
 - **O Erro Comum:** O candidato decora que "pois entre vírgulas é conclusivo", vê a estrutura `..., pois, [adjunto], [verbo]...` e marca que a oração é conclusiva.
 - **A Pegadinha:** O *pois* continua antes do verbo; a segunda vírgula serve apenas para abrir a intercalação adverbial. O *pois* é explicativo ou causal ($=$ *porque*).
@@ -636,79 +622,75 @@ Em questões de reescrita que proponham trocar **pois** (no início da oração)
 
 ---
 
-## Julgar Oposição por Simples Contraste de Adjetivos Positivos/Negativos
+### Julgar Oposição por Simples Contraste de Adjetivos Positivos/Negativos
 
 - **O Erro Comum:** Julgar que a presença de um termo com conotação positiva e outro com conotação negativa (ex.: *inteligente* e *preguiçoso*) torna a conjunção "E" automaticamente adversativa.
 - **Como Evitar:** Adversidade exige **incompatibilidade lógica ou quebra de expectativa**. Atributos humanos coexistentes somam-se no sujeito, configurando **ADIÇÃO**.
 
 ---
 
-## Perda de Tempo com Discussões Desnecessárias de Causa vs. Explicação
+### Perda de Tempo com Discussões Desnecessárias de Causa vs. Explicação
 
 - **O Risco:** Perder minutos analisando se um *pois* inicial é causa ou explicação quando o item do Cebraspe afirmou categoricamente que ele era "conclusivo".
 - **Como Evitar:** Se o *pois* está antes do verbo, ele jamais será conclusivo. Marque **ERRADO** imediatamente sem se preocupar em classificar entre causa e explicação.
 
 ---
 
----
-
 ## Glossário operacional
 
-## Conjunção Aditiva
+### Conjunção Aditiva
 
 Conectivo coordenativo cuja função canônica é somar orações ou termos que desempenham idêntica função sintática no período.
 *Referência:* .
 
 ---
 
-## Conjunção Adversativa (Valor de Oposição)
+### Conjunção Adversativa (Valor de Oposição)
 
 Conectivo coordenativo que introduz um segmento frasal expressando quebra de expectativa, contraste ou ressalva em relação à proposição anterior.
 *Referência:* .
 
 ---
 
-## Conjunção Conclusiva
+### Conjunção Conclusiva
 
 Conectivo coordenativo que introduz a conclusão lógica ou consequência dedutiva extraída dos fatos ou premissas declaradas anteriormente.
 *Referência:* .
 
 ---
 
-## Conjunção Causal
+### Conjunção Causal
 
 Conectivo subordinativo adverbial que introduz a causa material ou fato gerador determinante da consequência consumada na oração principal.
 *Referência:* .
 
 ---
 
-## Conjunção Explicativa
+### Conjunção Explicativa
 
 Conectivo coordenativo que introduz uma justificativa, esclarecimento ou razão discursiva que fundamenta uma ordem, conselho ou afirmação prévia.
 *Referência:* .
 
 ---
 
-## Pois Deslocado (Pós-positivo)
+### Pois Deslocado (Pós-positivo)
 
 Posicionamento sintático em que o conector "pois" situa-se após o verbo da oração coordenada a que pertence, exigindo isolamento por vírgulas e assumindo valor de *portanto*.
 *Referência:* .
 
 ---
 
-## Derivação Imprópria (Substantivação)
+### Derivação Imprópria (Substantivação)
 
 Processo morfossintático pelo qual uma palavra pertencente a uma classe invariável (como uma conjunção) passa a funcionar no texto como substantivo mediante a presença de determinante.
 *Referência:* .
 
 ---
 
-## Adjunto Adverbial Intercalado
+### Adjunto Adverbial Intercalado
 
 Segmento circunstancial móvel inserido entre o conectivo inicial e o verbo da oração, cujo isolamento por vírgulas gera a ilusão de que a conjunção antecedente estaria deslocada.
 *Referência:* .
-
----
 
 ---
 

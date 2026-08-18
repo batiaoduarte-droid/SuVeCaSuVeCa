@@ -16,7 +16,7 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 
 ### Pré-requisitos Pedagógicos
 
-### Mapa Integrado de Relações Conceituais
+#### Mapa Integrado de Relações Conceituais
 
 ```text
  ESTUDO DA SÍLABA E FONÉTICA
@@ -41,46 +41,44 @@ ESTRUTURA DA SÍLABA ENCONTROS FONÉTICOS REPRESENTAÇÃO GRÁFICA
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## O Conceito de Vogal e a Regra Estrutural da Sílaba
+### O Conceito de Vogal e a Regra Estrutural da Sílaba
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A vogal é o fonema de máxima intensidade acústica que atua como o centro, ápice e núcleo indispensável de qualquer sílaba na Língua Portuguesa. Sintetizada pelo **Mantra da Vogal Única**: *"Em cada sílaba, há ao menos e somente UMA vogal"*.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Na fonologia do português:
 
 1. **Não existe sílaba sem vogal:** Consoantes isoladas não possuem capacidade de sustentação fonatória autônoma. Portanto, qualquer consoante desprovida de vogal no corpo da palavra deve ser obrigatoriamente vinculada à sílaba anterior.
 2. **Não existem duas vogais na mesma sílaba:** Se duas ou três letras vocálicas compartilham a mesma partição silábica (ditongo ou tritongo), apenas uma delas ocupa o posto de **Vogal** (pico de intensidade); as demais reduzem-se à condição de **Semivogais**.
 
-### Critérios de reconhecimento e aplicação
+#### Critérios de reconhecimento e aplicação
 
 - **Soberania da Letra "A":** A letra *A* é ontologicamente uma vogal absoluta. Em qualquer hipótese na língua portuguesa, se houver a letra *A* em um encontro vocálico, ela será a vogal.
 - **Letras "E, I, O, U":** Atuam como vogais quando formam sozinhas o núcleo da sílaba (ex.: *ru-a*, *ju-iz*), mas transformam-se em semivogais quando acompanham uma vogal dominante na mesma sílaba.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Dignidade:* Separação incorreta: `di-g-ni-da-de`. Como o `g` é consoante desprovida de vogal, recua para a sílaba antecedente: **`dig-ni-da-de`**.
 - *Afta:* Separação incorreta: `a-f-ta`. Forma correta: **`af-ta`**.
 
-### Exceções ou limites
+#### Exceções ou limites
 
 Não existem exceções no sistema ortográfico-fonético do português: toda sílaba possui exatamente 1 vogal.
 
 ---
 
-## Diferenciação Fonética entre Vogal e Semivogal
+### Diferenciação Fonética entre Vogal e Semivogal
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A **Vogal** é o fonema pronunciado com pleno escape de ar e intensidade dominante (som forte). A **Semivogal** é um fonema átono de apoio que possui valor acústico brando e reduzido, correspondendo foneticamente aos timbres de **/i/** ou **/u/**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A classificação de um segmento vocálico não decorre da letra escrita no papel, mas sim de sua dinâmica na pronúncia:
 
@@ -88,7 +86,7 @@ A classificação de um segmento vocálico não decorre da letra escrita no pape
 - A letra *O* vira semivogal quando assume som brando de `/u/` (ex.: *irmão* $\rightarrow$ som de "irmãu"; *pão* $\rightarrow$ som de "pãu").
 - A letra *I* e a letra *U* podem ser tanto semivogais quanto vogais plenas, a depender de estarem acompanhadas ou isoladas na sílaba.
 
-### Critérios de reconhecimento
+#### Critérios de reconhecimento
 
 1. Se a letra vocálica estiver **sozinha na sílaba** $\rightarrow$ é **Vogal** (ex.: *u* em `ru-a`, *i* em `ju-iz`).
 2. Se estiver **acompanhada da letra "A" na mesma sílaba** $\rightarrow$ o *A* é a **Vogal** e a outra letra é a **Semivogal** (ex.: *pai*, *pau*).
@@ -96,34 +94,34 @@ A classificação de um segmento vocálico não decorre da letra escrita no pape
 
 ---
 
-## Ditongos: Classificação, Tonicidade e a Regra de Ouro da Proparoxítona Eventual ($DC = H$)
+### Ditongos: Classificação, Tonicidade e a Regra de Ouro da Proparoxítona Eventual ($DC = H$)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Ditongo é a união de uma **Vogal** e uma **Semivogal** (ou vice-versa) na **mesma sílaba**. Classifica-se em **Decrescente** (Vogal + Semivogal) e **Crescente** (Semivogal + Vogal).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Ditongo Decrescente ($DD = V + SV$):** A curva de intensidade sonora parte do som forte (vogal) e decai para o brando (semivogal).
- - Exemplos: *pai*, *he-roi-co*, *noi-te*, *céu*, *pão*, *ór-fão*, *fui*.
- - **Regra de Inseparabilidade ($DD \neq H$):** O ditongo decrescente **nunca** se separa na divisão silábica. A hipótese de transformar um ditongo decrescente em hiato é estritamente incorreta (*ór-fão* jamais pode ser *ór-fá-o*).
+  - Exemplos: *pai*, *he-roi-co*, *noi-te*, *céu*, *pão*, *ór-fão*, *fui*.
+  - **Regra de Inseparabilidade ($DD \neq H$):** O ditongo decrescente **nunca** se separa na divisão silábica. A hipótese de transformar um ditongo decrescente em hiato é estritamente incorreta (*ór-fão* jamais pode ser *ór-fá-o*).
 2. **Ditongo Crescente ($DC = SV + V$):** A curva de intensidade ascende do som brando (semivogal) para o ápice (vogal).
- - Exemplos: *lí-rio*, *quan-do*, *sé-rie*, *gê-nio*, *his-tó-ria*, *á-rea*.
+  - Exemplos: *lí-rio*, *quan-do*, *sé-rie*, *gê-nio*, *his-tó-ria*, *á-rea*.
 3. **A Teoria do Divórcio e as Proparoxítonas Eventuais ($DC = H$):**
- - No Ditongo Crescente, como a semivogal inicial antecede a vogal, ela pode sofrer vocalização na emissão de voz, adquirindo força tônica suficiente para se desligar da sílaba e constituir um **Hiato** autônomo.
- - Consequência para provas (especialmente Cebraspe): Palavras paroxítonas terminadas em ditongo crescente admitem dupla classificação e separação:
- - *Classificação Padrão / Tradicional:* Paroxítona terminada em ditongo crescente (`sé-rie`, `his-tó-ria`).
- - *Classificação Eventual / Relativa:* **Proparoxítona eventual/aparente** por abertura em hiato (`sé-ri-e`, `his-tó-ri-a`).
+  - No Ditongo Crescente, como a semivogal inicial antecede a vogal, ela pode sofrer vocalização na emissão de voz, adquirindo força tônica suficiente para se desligar da sílaba e constituir um **Hiato** autônomo.
+  - Consequência para provas (especialmente Cebraspe): Palavras paroxítonas terminadas em ditongo crescente admitem dupla classificação e separação:
+  - *Classificação Padrão / Tradicional:* Paroxítona terminada em ditongo crescente (`sé-rie`, `his-tó-ria`).
+  - *Classificação Eventual / Relativa:* **Proparoxítona eventual/aparente** por abertura em hiato (`sé-ri-e`, `his-tó-ri-a`).
 
 ---
 
-## Tritongos: Estrutura Fonomorfológica Simétrica
+### Tritongos: Estrutura Fonomorfológica Simétrica
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Tritongo é o encontro fonético indissociável de três sons vocálicos articulados na **mesma sílaba**, dispostos obrigatoriamente na estrutura: **Semivogal + Vogal + Semivogal ($SV + V + SV$)**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - Em observância ao Mantra da Vogal Única, o tritongo **não é a união de "três vogais"**, mas sim de **uma única Vogal central (ápice)** ladeada por **duas Semivogais de apoio**.
 - Afirmar em itens de concurso que o tritongo é composto por "três vogais" constitui erro teórico clássico explorado por bancas.
@@ -131,29 +129,29 @@ Tritongo é o encontro fonético indissociável de três sons vocálicos articul
 
 ---
 
-## Hiatos: Separação Silábica e Ausência de Semivogais
+### Hiatos: Separação Silábica e Ausência de Semivogais
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Hiato é a sequência gráfica de **duas Vogais plenas** que, por possuírem intensidade sonora própria e autônoma, pertencem obrigatoriamente a **sílabas separadas ($V + V$)**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Inexistência de Semivogal no Hiato:** Como cada elemento vocálico sustenta uma sílaba própria, **não existe semivogal em um hiato**. Ambos os elementos são classificados categoricamente como Vogais.
 - **Vogais Idênticas Contíguas:** Letras vocálicas dobradas (como *oo* em *ál-co-ol* ou *ee* em *vê-em*) constituem sempre hiato e devem ser separadas.
 - **Contraste Canônico:**
- - *PAI* $\rightarrow$ Ditongo Decrescente ($A = V, I = SV$ na mesma sílaba `pai`).
- - *JUIZ* $\rightarrow$ Hiato ($U = V$ na sílaba `ju`, $I = V$ na sílaba `iz`).
+  - *PAI* $\rightarrow$ Ditongo Decrescente ($A = V, I = SV$ na mesma sílaba `pai`).
+  - *JUIZ* $\rightarrow$ Hiato ($U = V$ na sílaba `ju`, $I = V$ na sílaba `iz`).
 
 ---
 
-## Encontro Consonantal vs. Dígrafo Consonantal
+### Encontro Consonantal vs. Dígrafo Consonantal
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **Encontro Consonantal (EC)** é o agrupamento de duas ou mais consoantes em que **todas são articuladas e ouvidas foneticamente**. O **Dígrafo Consonantal** ocorre quando duas letras representam **um único fonema** consonantal.
 
-### Regra de Exclusão Mútua
+#### Regra de Exclusão Mútua
 
 *"Se há dígrafo, NÃO há encontro consonantal no mesmo grupo de letras."*
 
@@ -163,43 +161,43 @@ O **Encontro Consonantal (EC)** é o agrupamento de duas ou mais consoantes em q
 
 ---
 
-## Dígrafos Vocálicos e a Nasalação por M/N
+### Dígrafos Vocálicos e a Nasalação por M/N
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **Dígrafo Vocálico** ocorre quando uma vogal é seguida das letras **M** ou **N** no fechamento da mesma sílaba (*AM, AN, EM, EN, IM, IN, OM, ON, UM, UN*), indicando unicamente que a vogal é emitida por via nasalizada ($/\tilde{a}/, /\tilde{e}/, /\tilde{i}/, /\tilde{o}/, /\tilde{u}/$).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - As letras *M* e *N* em posição pós-vocálica intra-silábica não funcionam como consoantes fonéticas; atuam como diacríticos gráficos de nasalidade (equivalentes a um til).
 - **Armadilha de Concurso:** O grupo `NT` em *quebranto* (`que-bran-to`) ou `MP` em *tampa* (`tam-pa`) **NÃO** forma encontro consonantal. O *N* e o *M* já estão absorvidos no dígrafo vocálico anterior (`AN`, `AM`) e não possuem fonema consonantal próprio para encontrar-se com o *T* ou *P*.
 
 ---
 
-## Comportamento Fonético de Grupos Especiais: QU/GU, H Inicial e L Pós-Vocálico
+### Comportamento Fonético de Grupos Especiais: QU/GU, H Inicial e L Pós-Vocálico
 
-### Regras Consolidadas para Grupos Especiais
+#### Regras Consolidadas para Grupos Especiais
 
 1. **Grupos QU e GU (Teste da Pronúncia do "U"):**
- - **U pronunciado:** O *U* atua como semivogal e forma fonema independente $\rightarrow$ Gera **Ditongo Crescente** (ex.: *quan-ti-da-de*, *a-guen-tar*).
- - **U mudo (áfono):** O grupo *QU/GU* forma **Dígrafo Consonantal** $\rightarrow$ **Anula qualquer encontro vocálico ou tritongo** (ex.: *qui-lo* $\rightarrow$ sem ditongo; *quei-jo* $\rightarrow$ `QU` é dígrafo e `EI` é ditongo; inexiste tritongo).
+  - **U pronunciado:** O *U* atua como semivogal e forma fonema independente $\rightarrow$ Gera **Ditongo Crescente** (ex.: *quan-ti-da-de*, *a-guen-tar*).
+  - **U mudo (áfono):** O grupo *QU/GU* forma **Dígrafo Consonantal** $\rightarrow$ **Anula qualquer encontro vocálico ou tritongo** (ex.: *qui-lo* $\rightarrow$ sem ditongo; *quei-jo* $\rightarrow$ `QU` é dígrafo e `EI` é ditongo; inexiste tritongo).
 2. **Letra H em Início de Palavra:**
- - O *H* inicial (*ho-ra*, *ho-je*) é um grafema puramente etimológico desprovido de som $\rightarrow$ **Não é fonema** (subtrai 1 no cômputo fonêmico: *hora* = 4 letras, 3 fonemas).
+  - O *H* inicial (*ho-ra*, *ho-je*) é um grafema puramente etimológico desprovido de som $\rightarrow$ **Não é fonema** (subtrai 1 no cômputo fonêmico: *hora* = 4 letras, 3 fonemas).
 3. **Letra L em Final de Palavra/Sílaba:**
- - Em vocábulos como *bar-ril*, *pa-pel*, *Bra-sil*, o *L* preserva sua identidade de grafema consonantal pleno $\rightarrow$ **Conta como 1 fonema consonantal** (não é dígrafo nem forma ditongo para fins de concurso).
+  - Em vocábulos como *bar-ril*, *pa-pel*, *Bra-sil*, o *L* preserva sua identidade de grafema consonantal pleno $\rightarrow$ **Conta como 1 fonema consonantal** (não é dígrafo nem forma ditongo para fins de concurso).
 4. **Grupo SC Diante de E/I:**
- - Em palavras cultas como *des-cer*, *cres-cer*, *des-cen-dên-cia*, o grupo *SC* representa o som único $/s/$ $\rightarrow$ **Dígrafo Consonantal** (subtrai 1 fonema). Diante de *A, O, U* (*es-ca-da*), atua como encontro consonantal imperfeito.
+  - Em palavras cultas como *des-cer*, *cres-cer*, *des-cen-dên-cia*, o grupo *SC* representa o som único $/s/$ $\rightarrow$ **Dígrafo Consonantal** (subtrai 1 fonema). Diante de *A, O, U* (*es-ca-da*), atua como encontro consonantal imperfeito.
 
 ---
 
-## Cômputo de Grafemas vs. Fonemas e o Dífono do Grafema X
+### Cômputo de Grafemas vs. Fonemas e o Dífono do Grafema X
 
-### Definição da Relação Grafema–Fonema
+#### Definição da Relação Grafema–Fonema
 
 - **Grafema ($L$):** Letra física escrita no papel.
 - **Fonema ($F$):** Menor unidade sonora distintiva da língua.
 
-### As 5 Representações Fonéticas do Grafema X
+#### As 5 Representações Fonéticas do Grafema X
 
 1. Som de $/s/$: *texto*, *contexto* ($1L = 1F$).
 2. Som de $/ch/$ ou $/x/$: *xarope*, *enxofre*, *peixe*, *enxurrada* ($1L = 1F$).
@@ -207,7 +205,7 @@ O **Dígrafo Vocálico** ocorre quando uma vogal é seguida das letras **M** ou 
 4. Som de $/z/$: *exagero*, *exame*, *exército* ($1L = 1F$).
 5. Som de $/ks/$ ou $/cs/$ (**Dífono**): *sexo*, *tóxico*, *táxi*, *fixo*, *nexo*. Ocorre quando **1 letra emite 2 fonemas**, gerando $F > L$ ($+1$ fonema por dífono).
 
-### Mantra da Recaída #2 (Equação Fundamental)
+#### Mantra da Recaída #2 (Equação Fundamental)
 
 O número de fonemas **SÓ É DIFERENTE** do número de letras se houver dígrafos ou se o *X* for dífono:
 
@@ -217,17 +215,15 @@ $$
 
 ---
 
-## Regras Rígidas de Separação Silábica
+### Regras Rígidas de Separação Silábica
 
-### Síntese das Regras de Partição Silábica
+#### Síntese das Regras de Partição Silábica
 
 1. **Consoante Desacompanhada (Muta):** Nunca forma sílaba isolada; recua para a sílaba anterior (ex.: `dig-ni-da-de`, `af-ta`, `sub-li-nhar`, `ap-to`).
 2. **Dígrafos Separáveis:** Ficam em sílabas distintas $\rightarrow$ **RR, SS, SC, SÇ, XC, XS** (ex.: `car-ro`, `pas-so`, `des-cer`, `nas-ça`, `ex-ce-ção`).
 3. **Dígrafos Inseparáveis:** Permanecem unidos na mesma sílaba $\rightarrow$ **CH, LH, NH, GU, QU** (ex.: `cha-ve`, `fi-lho`, `ni-nho`, `guer-ra`, `qui-lo`).
 4. **Hiatos:** Separam-se sempre (ex.: `sa-ú-de`, `ál-co-ol`, `ra-iz`).
 5. **Ditongos e Tritongos:** Não se separam na partição padrão (ex.: `pai`, `U-ru-guai`).
-
----
 
 ---
 
@@ -246,11 +242,9 @@ $$
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Protocolo Mestre de Análise Fonética e Silábica
+### Protocolo Mestre de Análise Fonética e Silábica
 
 ```text
  ALGORITMO DE ANÁLISE FONÉTICA
@@ -278,8 +272,6 @@ $$
 
 ---
 
----
-
 ## Contrastes que a prova explora
 
 ### Tabela Comparativa de Fenômenos Fonéticos
@@ -294,68 +286,66 @@ $$
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Resolução Completa: "Queijo"
+### Resolução Completa: "Queijo"
 
 - **Palavra:** *Queijo* | **Separação:** `quei-jo`
 - **Análise dos Fenômenos:**
- - `QU`: O *U* é mudo $\rightarrow$ **Dígrafo Consonantal** (elimina a hipótese de tritongo).
- - `EI`: $E$ (Vogal) + $I$ (Semivogal) na mesma sílaba $\rightarrow$ **Ditongo Decrescente**.
+  - `QU`: O *U* é mudo $\rightarrow$ **Dígrafo Consonantal** (elimina a hipótese de tritongo).
+  - `EI`: $E$ (Vogal) + $I$ (Semivogal) na mesma sílaba $\rightarrow$ **Ditongo Decrescente**.
 - **Cômputo:** 6 Letras, 5 Fonemas ($6 - 1 = 5$).
 
 ---
 
-## Resolução Completa: "Quebranto"
+### Resolução Completa: "Quebranto"
 
 - **Palavra:** *Quebranto* | **Separação:** `que-bran-to`
 - **Análise dos Fenômenos:**
- - `QU`: O *U* é mudo $\rightarrow$ **Dígrafo Consonantal**.
- - `BR`: $B$ e $R$ são ouvidos $\rightarrow$ **Encontro Consonantal Perfeito**.
- - `AN`: $N$ nasaliza o $A$ $\rightarrow$ **Dígrafo Vocálico**.
- - `NT`: **Não** forma encontro consonantal ($N$ faz parte do dígrafo anterior).
+  - `QU`: O *U* é mudo $\rightarrow$ **Dígrafo Consonantal**.
+  - `BR`: $B$ e $R$ são ouvidos $\rightarrow$ **Encontro Consonantal Perfeito**.
+  - `AN`: $N$ nasaliza o $A$ $\rightarrow$ **Dígrafo Vocálico**.
+  - `NT`: **Não** forma encontro consonantal ($N$ faz parte do dígrafo anterior).
 - **Cômputo:** 9 Letras, 7 Fonemas ($9 - 2 = 7$).
 
 ---
 
-## Resolução Completa: "Uruguai" e "Quais"
+### Resolução Completa: "Uruguai" e "Quais"
 
 - **Uruguai:** `u-ru-guai` $\rightarrow$ Na sílaba `guai`, temos $U (SV) + A (V) + I (SV) \rightarrow$ **Tritongo Oral**.
 - **Quais:** `quais` (Monossílabo) $\rightarrow U (SV) + A (V) + I (SV) \rightarrow$ **Tritongo Oral**.
 
 ---
 
-## Resolução Completa: "Enxurrada"
+### Resolução Completa: "Enxurrada"
 
 - **Palavra:** *Enxurrada* | **Separação:** `en-xur-ra-da`
 - **Análise dos Fenômenos:**
- - `EN`: **Dígrafo Vocálico**.
- - `X`: Fonema $/x/$.
- - `RR`: **Dígrafo Consonantal Separável**.
+  - `EN`: **Dígrafo Vocálico**.
+  - `X`: Fonema $/x/$.
+  - `RR`: **Dígrafo Consonantal Separável**.
 - **Cômputo:** 9 Letras, 7 Fonemas ($9 - 2 = 7$).
 
 ---
 
-## Resolução Completa: "Aguento"
+### Resolução Completa: "Aguento"
 
 - **Palavra:** *Aguento* | **Separação:** `a-guen-to`
 - **Análise dos Fenômenos:**
- - `gue`: O *U* é pronunciado como semivogal $\rightarrow$ **Ditongo Crescente** (`ue`).
- - `en`: O *N* nasaliza a vogal $E \rightarrow$ **Dígrafo Vocálico**.
+  - `gue`: O *U* é pronunciado como semivogal $\rightarrow$ **Ditongo Crescente** (`ue`).
+  - `en`: O *N* nasaliza a vogal $E \rightarrow$ **Dígrafo Vocálico**.
 - **Cômputo:** 7 Letras, 6 Fonemas ($7 - 1 = 6$).
 
 ---
 
-## Resolução Completa: "Sexo" e "Tóxico" (Dífono)
+### Resolução Completa: "Sexo" e "Tóxico" (Dífono)
 
 - **Sexo:** `se-xo` $\rightarrow$ O grafema *X* tem som de $/ks/ \rightarrow$ **Dífono**. Contagem: **4 Letras, 5 Fonemas** ($4 + 1 = 5$).
 - **Tóxico:** `tó-xi-co` $\rightarrow$ O grafema *X* tem som de $/ks/ \rightarrow$ **Dífono**. Contagem: **6 Letras, 7 Fonemas** ($6 + 1 = 7$).
 
 ---
 
-## Bateria Sintética de Fixação
+### Bateria Sintética de Fixação
 
 | Nº | Palavra | Divisão Silábica | Classificação Vocálica / Consonantal | Letras ($L$) | Fonemas ($F$) | |
 |:-: |:------------ |:----------------- |:------------------------------------------------------------------- |:------------------------------: |:-: |
@@ -380,16 +370,12 @@ $$
 
 ---
 
----
-
 ## Memorização inteligente
 
 - **Macete da Vogal "A" Soberana:** Se houver a letra *A* em qualquer encontro vocálico, não perca tempo avaliando tonicidade: ela é invariavelmente a **VOGAL**.
 - **Método da Articulação Natural (Abertura da Boca):** Abandone a contagem por palmas. Pronuncie a palavra pausadamente e conte os impulsos de abertura mandibular para identificar a divisão silábica real.
 - **Notação Reduzida para Provas:** Use as siglas `DD` (Ditongo Decrescente), `DC` (Ditongo Crescente), `T` (Tritongo) e `H` (Hiato) no rascunho da prova para ganhar agilidade.
 - **Teste Fonético de QU e GU:** Se os lábios se projetarem arredondados para emitir som de *U* (*qu-an-do*), o *U* é fonema e forma ditongo. Se saltar direto para a vogal seguinte (*ki-lo*), é dígrafo.
-
----
 
 ---
 
@@ -400,8 +386,6 @@ $$
 - **Pegadinha do Grupo QUEI/GUI (Dígrafo vs. Tritongo):** Em *queijo*, o *U* não soa. Logo, *QUEI* não é tritongo; é dígrafo consonantal (`QU`) seguido de ditongo decrescente (`EI`).
 - **Falsa Consoante em Grupos NT, MP, ND:** O *M* e o *N* pós-vocálicos pertencem ao dígrafo vocálico; não formam encontro consonantal com a consoante seguinte (*que-bran-to* tem dígrafo `AN`, e não encontro `NT`).
 - **Letra L Final não é Dígrafo:** O *L* pós-vocálico em *barril*, *Brasil* conta integralmente como fonema consonantal.
-
----
 
 ---
 
@@ -422,8 +406,6 @@ $$
 
 ---
 
----
-
 ## Síntese para recuperação ativa
 
 Ao concluir esta unidade (Estudo da Sílaba - Teoria)**, o estudante domina com total segurança:
@@ -439,8 +421,6 @@ Ao concluir esta unidade (Estudo da Sílaba - Teoria)**, o estudante domina com 
 
 ---
 
----
-
 ## Conexão com o método SuVeCA
 
 **SuVeCA = Sujeito + Verbo + Complemento + Adjunto + Predicativo.**
@@ -452,8 +432,8 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 ### Como aplicar neste tema
 
 1. Identificar a palavra e aplicar a análise fonético-silábica no estrato ortográfico/fonológico antes de qualquer integração oracional.
-2. 1. Compreender o conceito de vogal como ápice e núcleo indispensável da sílaba e o Mantra da Vogal Única.
-3. 2. Diferenciar vogal de semivogal a partir da intensidade sonora e do timbre (/i/, /u/), aplicando a soberania da letra 'A'.
+2. Compreender o conceito de vogal como ápice e núcleo indispensável da sílaba e o Mantra da Vogal Única.
+3. Diferenciar vogal de semivogal a partir da intensidade sonora e do timbre (/i/, /u/), aplicando a soberania da letra 'A'.
 
 ### Testes decisivos
 

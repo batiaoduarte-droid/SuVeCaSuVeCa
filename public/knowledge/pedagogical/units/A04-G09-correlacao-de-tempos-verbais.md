@@ -23,9 +23,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 ### Como aplicar neste tema
 
 1. Identificar e sublinhar todos os verbos e locuções verbais do período composto, delimitando as fronteiras de cada oração.
-2. 1. Localize todos os verbos e locuções verbais presentes no período, dividindo a sentença em suas orações constituintes.
-3. 2. Se houver locução verbal, identifique o tempo e o modo expressos pelo verbo auxiliar, desconsiderando a forma nominal do verbo principal.
-4. 3. Determine o tempo do primeiro verbo (ou do verbo da oração principal) para definir o eixo cronológico de referência: Eixo do Presente ou Eixo do Pretérito.
+2. Localize todos os verbos e locuções verbais presentes no período, dividindo a sentença em suas orações constituintes.
+3. Se houver locução verbal, identifique o tempo e o modo expressos pelo verbo auxiliar, desconsiderando a forma nominal do verbo principal.
+4. Determine o tempo do primeiro verbo (ou do verbo da oração principal) para definir o eixo cronológico de referência: Eixo do Presente ou Eixo do Pretérito.
 
 ### Testes decisivos
 
@@ -46,7 +46,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - **Valores Semânticos dos Modos:** Noção básica da distinção entre certeza/fato (Modo Indicativo) e dúvida/hipótese/desejo (Modo Subjuntivo).
 - **Estrutura Sintática Básica:** Noções de período composto por coordenação e subordinação (oração principal e subordinada).
 
-### Mapa de Conhecimento Consolidado
+#### Mapa de Conhecimento Consolidado
 
 ```text
 CORRELAÇÃO DE TEMPOS VERBAIS (Articulação / Paralelismo Semântico)
@@ -81,17 +81,15 @@ CORRELAÇÃO DE TEMPOS VERBAIS (Articulação / Paralelismo Semântico)
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Conceito, Nomenclaturas e Origem da Correlação Verbal
+### Conceito, Nomenclaturas e Origem da Correlação Verbal
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A **Correlação de Tempos Verbais** (ou **Articulação Verbal** / **Paralelismo Semântico**) é o princípio sintático e semântico pelo qual as formas verbais coordenadas ou subordinadas em um período harmonizam-se mutuamente, garantindo a sequenciação temporal lógica, a clareza cronológica e a coerência discursiva do enunciado.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 O tema consolidou-se nas provas de concursos públicos a partir de uma iniciativa diagnóstica da banca **FCC (Fundação Carlos Chagas)**, sendo posteriormente assimilado por **VUNESP**, **FGV** e **CEBRASPE / CESPE**. As bancas perceberam que candidatos com alto domínio da norma-padrão cometiam com frequência quebras graves de linha temporal ao redigir parágrafos de conclusão em redações dissertativas — iniciando argumentos no Presente e derivando bruscamente para o Pretérito Imperfeito do Subjuntivo ou Futuro do Pretérito sem justificativa semântica.
 
@@ -101,12 +99,12 @@ Em editais e enunciados de provas, o assunto apresenta três nomenclaturas sinô
 2. **Articulação de Tempos Verbais** (adotada frequentemente pela VUNESP);
 3. **Paralelismo Semântico Verbal** (terminologia frequentemente utilizada pela FGV).
 
-### Critérios de Reconhecimento ou Aplicação
+#### Critérios de Reconhecimento ou Aplicação
 
 - Identificar se os verbos associados em um período pertencem ao mesmo eixo cronológico de referência (Presente/Futuro ou Pretérito/Hipótese).
 - Reconhecer que termos sinônimos exigem a mesma verificação da harmonia entre o tempo do verbo principal e os tempos dos verbos dependentes.
 
-### Exemplos e Contraexemplos
+#### Exemplos e Contraexemplos
 
 - **Inadequação típica de redação:** *"É necessário que o Brasil invista [Presente] em educação. Seria importante também que se buscassem [Futuro do Pretérito + Pretérito] novos investimentos..."* (Quebra de correlação no mesmo parágrafo).
 - **Adequação padronizada:** *"É necessário que o Brasil invista em educação. É importante também que se busquem novos investimentos..."* (Harmonia no eixo do Presente).
@@ -117,20 +115,20 @@ Em editais e enunciados de provas, o assunto apresenta três nomenclaturas sinô
 
 ---
 
-## Regra Fundamental do Primeiro Verbo como Bússola Temporal
+### Regra Fundamental do Primeiro Verbo como Bússola Temporal
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A regra diretora da correlação verbal estabelece que **o primeiro verbo da estrutura oracional funciona como a bússola temporal de referência**. Os demais verbos correlatos devem alinhar sua flexão ao eixo cronológico (Presente ou Pretérito) delimitado por esse verbo inicial.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 Ao analisar qualquer período composto para julgar sua correspondência verbal:
 
 1. Localiza-se o **primeiro verbo** da oração (ou a oração principal que rege a estrutura).
 2. Determina-se a qual **eixo temporal** esse verbo pertence:
- - Se pertencer ao **Eixo do Presente**, os verbos dependentes devem alinhar-se ao Presente ou ao Futuro do Presente.
- - Se pertencer ao **Eixo do Pretérito / Condicional**, os verbos dependentes devem alinhar-se ao Pretérito ou ao Futuro do Pretérito.
+  - Se pertencer ao **Eixo do Presente**, os verbos dependentes devem alinhar-se ao Presente ou ao Futuro do Presente.
+  - Se pertencer ao **Eixo do Pretérito / Condicional**, os verbos dependentes devem alinhar-se ao Pretérito ou ao Futuro do Pretérito.
 3. Os verbos subordinados ou subsequentes orbitam ao redor do eixo fixado pela bússola temporal do primeiro verbo.
 
 ```text
@@ -140,7 +138,7 @@ Ao analisar qualquer período composto para julgar sua correspondência verbal:
  └──► Eixo do PRETÉRITO ──► Exige PRETÉRITO ou FUTURO DO PRETÉRITO
 ```
 
-### Critérios de Reconhecimento ou Aplicação
+#### Critérios de Reconhecimento ou Aplicação
 
 - Não iniciar a análise pelo meio do período; sempre fixar o tempo de partida da oração principal ou da primeira oração subordinada integrante/adverbial.
 - Havendo inversão sintática (ex.: oração condicional antecipada iniciada por *Se* ou *Caso*), o verbo da oração antecipada dita o tempo da oração principal subsequente.
@@ -150,13 +148,13 @@ Ao analisar qualquer período composto para julgar sua correspondência verbal:
 
 ---
 
-## Matriz Canônica do Eixo do Presente e Futuro do Presente
+### Matriz Canônica do Eixo do Presente e Futuro do Presente
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Quando a oração de partida situa-se no **Eixo do Presente**, os verbos correlatos devem ser flexionados no **Presente** (do Indicativo ou Subjuntivo) ou no **Futuro do Presente** (do Indicativo).
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 A matriz canônica do Presente obedece à fórmula estrutural:
 
@@ -168,7 +166,7 @@ Da mesma forma, quando a oração subordinada abre o período no **Futuro do Sub
 
 - $\text{Presente do Subjuntivo / Futuro do Subjuntivo} \longrightarrow \text{Futuro do Presente do Indicativo}$
 
-### Exemplos e Contraexemplos
+#### Exemplos e Contraexemplos
 
 - **Presente + Presente:** *Acredito [Pres. Ind.] que esteja [Pres. Subj.] doente.* (Correto).
 - **Presente + Presente:** *É [Pres. Ind.] legítimo que as pessoas lutem [Pres. Subj.] por melhores condições.* (Correto).
@@ -178,13 +176,13 @@ Da mesma forma, quando a oração subordinada abre o período no **Futuro do Sub
 
 ---
 
-## Matriz Canônica do Eixo do Pretérito e Futuro do Pretérito
+### Matriz Canônica do Eixo do Pretérito e Futuro do Pretérito
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Quando a oração de partida pertence ao **Eixo do Pretérito (Passado)** ou ao **Futuro do Pretérito**, os verbos correlatos devem alinhar-se obrigatoriamente a tempos do **Pretérito** ou ao **Futuro do Pretérito**.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 A matriz canônica do Pretérito rege as estruturas condicionais e hipotéticas segundo as fórmulas:
 
@@ -205,7 +203,7 @@ Nas **estruturas compostas**, o paralelismo mantém-se rigorosamente no pretéri
 - $\text{Pretérito Imperfeito do Subjuntivo Composto} \longrightarrow \text{Futuro do Pretérito Composto}$
 - Fórmula: *Se [tivesse + particípio], [teria + particípio]*.
 
-### Exemplos e Contraexemplos
+#### Exemplos e Contraexemplos
 
 - **Pretérito + Futuro do Pretérito:** *Se eu fosse [Pret. Imp. Subj.] rico, estaria [Fut. Pret.] viajando.* (Correto).
 - **Futuro do Pretérito + Pretérito:** *Seria [Fut. Pret.] necessário que estudasse [Pret. Imp. Subj.] mais.* (Correto).
@@ -217,13 +215,13 @@ Nas **estruturas compostas**, o paralelismo mantém-se rigorosamente no pretéri
 
 ---
 
-## Princípio da Independência de Modo Verbal (Indicativo vs. Subjuntivo)
+### Princípio da Independência de Modo Verbal (Indicativo vs. Subjuntivo)
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A exigência de simetria na correlação verbal recai **exclusivamente sobre o TEMPO cronológico (linha do Presente vs. linha do Pretérito), e NÃO sobre o MODO verbal**. É perfeitamente legítimo e padrão correlacionar um verbo no Modo Indicativo com outro no Modo Subjuntivo.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 Um dos erros conceituais mais danosos em provas de concursos é supor que períodos correlacionados devam possuir verbos pertencentes ao mesmo modo gramatical (ex.: crer que verbo no Indicativo exige outro no Indicativo).
 
@@ -232,7 +230,7 @@ A regência sintática e o emprego de conjunções subordinativas frequentemente
 - **Presente do Indicativo** harmoniza-se com **Presente do Subjuntivo**;
 - **Futuro do Pretérito do Indicativo** harmoniza-se com **Pretérito Imperfeito do Subjuntivo**.
 
-### Tabela de Coexistência Modal
+#### Tabela de Coexistência Modal
 
 | Ordem Oracional | Verbo da Oração Principal | Verbo da Oração Subordinada | Eixo Temporal Comum | Avaliação |
 |:----------------------------------- |:------------------------------------------ |:----------------------------------- |:------------------------------- |:---------------- |
@@ -246,13 +244,13 @@ A regência sintática e o emprego de conjunções subordinativas frequentemente
 
 ---
 
-## A Dinâmica dos Futuros: Flexibilidade do Futuro do Presente vs. Exclusividade do Futuro do Pretérito
+### A Dinâmica dos Futuros: Flexibilidade do Futuro do Presente vs. Exclusividade do Futuro do Pretérito
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A didática dos "Amigos do Futuro" estabelece uma distinção comportamental nítida: o **Futuro do Presente** (e o Futuro do Subjuntivo) possui ampla flexibilidade de combinação sintática, enquanto o **Futuro do Pretérito** é um tempo rígido, associando-se com exclusividade ao Pretérito.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 ```text
  ┌──► Amigo do PRESENTE (Indicativo ou Subjuntivo)
@@ -264,50 +262,50 @@ FUTURO DO PRETÉRITO ────► Amigo EXCLUSIVO do PRETÉRITO (especialment
 ```
 
 1. **Flexibilidade do Futuro do Presente:**
- - A presença do Futuro do Presente na oração principal **não impede** nem proíbe que orações coordenadas ou subordinadas tragam verbos no Presente do Indicativo.
- - Aplicação em prova: Em um texto narrando eventos vindouros, a oração *"O encontro terá [Fut. Pres.]... onde estão [Pres. Ind.] programados temas..."* é perfeitamente legítima e não quebra a correlação.
+  - A presença do Futuro do Presente na oração principal **não impede** nem proíbe que orações coordenadas ou subordinadas tragam verbos no Presente do Indicativo.
+  - Aplicação em prova: Em um texto narrando eventos vindouros, a oração *"O encontro terá [Fut. Pres.]... onde estão [Pres. Ind.] programados temas..."* é perfeitamente legítima e não quebra a correlação.
 2. **Exclusividade do Futuro do Pretérito:**
- - O Futuro do Pretérito traz o termo "pretérito" em sua estrutura conceitual. Ele expressa uma hipótese condicionada a um fato passado irrealizado.
- - Jamais admite correlação com o Presente do Indicativo ou com o Futuro do Presente. Se uma oração traz *passará* (Futuro do Presente), não se pode substituir seu verbo correlato *exigirá* por *exigiria*.
+  - O Futuro do Pretérito traz o termo "pretérito" em sua estrutura conceitual. Ele expressa uma hipótese condicionada a um fato passado irrealizado.
+  - Jamais admite correlação com o Presente do Indicativo ou com o Futuro do Presente. Se uma oração traz *passará* (Futuro do Presente), não se pode substituir seu verbo correlato *exigirá* por *exigiria*.
 
 - **Mnemônico:**
 - **Citado em:**
 
 ---
 
-## Gatilhos Sintáticos de Atração Obrigatória do Modo Subjuntivo
+### Gatilhos Sintáticos de Atração Obrigatória do Modo Subjuntivo
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Certas estruturas sintáticas operam como **gatilhos atratores compulsórios do Modo Subjuntivo**, descartando de imediato quaisquer formas flexionadas no Modo Indicativo nas orações por elas introduzidas.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 Os dois principais gatilhos atratores cobrados em provas são:
 
 1. **Conjunções e Locuções Concessivas (*mesmo que*, *embora*, *ainda que*, *se bem que*):**
- - A relação concessiva pressupõe a admissão de um fato hipotético em oposição à oração principal. Por isso, **toda concessiva exige verbo no Subjuntivo**.
- - Diante de *mesmo que*, formas como *serei*, *sou*, *era* e *foi* são sumariamente eliminadas, aceitando-se unicamente *seja* (Presente do Subjuntivo) ou *fosse* (Pretérito Imperfeito do Subjuntivo).
+  - A relação concessiva pressupõe a admissão de um fato hipotético em oposição à oração principal. Por isso, **toda concessiva exige verbo no Subjuntivo**.
+  - Diante de *mesmo que*, formas como *serei*, *sou*, *era* e *foi* são sumariamente eliminadas, aceitando-se unicamente *seja* (Presente do Subjuntivo) ou *fosse* (Pretérito Imperfeito do Subjuntivo).
 2. **Verbos e Expressões de Desejo, Vontade ou Expectativa (*desejava que*, *esperava que*, *queria que*):**
- - O verbo volitivo no pretérito projeta uma expectativa não factual no passado (equivalente a hipótese).
- - A oração completiva subordinada deve conter obrigatoriamente o **Pretérito Imperfeito do Subjuntivo** (marcado pela desinência `-sse-`).
- - Exemplo: *"Antigamente, eu desejava que todo mundo conhecesse [e não conhecia/conheceu] meu nome..."*.
+  - O verbo volitivo no pretérito projeta uma expectativa não factual no passado (equivalente a hipótese).
+  - A oração completiva subordinada deve conter obrigatoriamente o **Pretérito Imperfeito do Subjuntivo** (marcado pela desinência `-sse-`).
+  - Exemplo: *"Antigamente, eu desejava que todo mundo conhecesse [e não conhecia/conheceu] meu nome..."*.
 
 - **Mnemônico:**
 
 ---
 
-## Correlação Verbal em Locuções Verbais (O Papel do Verbo Auxiliar)
+### Correlação Verbal em Locuções Verbais (O Papel do Verbo Auxiliar)
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Nas locuções verbais, **a carga flexional gramatical (tempo, modo, número e pessoa) reside integralmente no VERBO AUXILIAR**. Para fins de análise de correlação verbal, examina-se única e exclusivamente a flexão do verbo auxiliar, ignorando a terminação invariável do verbo principal.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 O verbo principal em uma locução permanece em forma nominal (infinitivo, gerúndio ou particípio) e carrega apenas a semântica da ação. Toda a informação temporal e modal que participa do paralelismo sintático é determinada pelo verbo auxiliar.
 
-### Demonstração Prática
+#### Demonstração Prática
 
 Na oração: *"Quem **vier a se empenhar** na prática da dúvida... **estará** mais perto... do que os fatos **costumam ocultar**"*:
 
@@ -321,23 +319,23 @@ Na oração: *"Quem **vier a se empenhar** na prática da dúvida... **estará**
 
 ---
 
-## Exceções Semânticas Legítimas na Correlação entre Presente e Pretérito
+### Exceções Semânticas Legítimas na Correlação entre Presente e Pretérito
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Embora a regra geral condene a alternância injustificada de tempos, **existem exceções semânticas plenamente legítimas** em que a articulação entre um verbo no Presente e outro no Pretérito é gramaticalmente correta e semanticamente necessária para expressar que a situação atual do sujeito é efeito/consequência de ações pretéritas.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 A língua portuguesa não deve ser interpretada de modo puramente mecânico ("robótico"). Bancas refinadas (como FCC e FGV) constroem itens explorando a correlação de causa e efeito temporal.
 
 Se o propósito comunicativo do texto for contrapor a situação atual a eventos antecedentes acumulados, a estrutura **Presente + Pretérito Perfeito** é perfeitamente válida. Marcadores temporais como o advérbio *"Hoje"* reforçam a intencionalidade do contraste.
 
-### Exemplo Modelo de Exceção
+#### Exemplo Modelo de Exceção
 
 - *"Hoje eu **sou** [Presente] o que sou por tudo que já **conquistei** [Pretérito Perfeito] no passado."*
- - **Julgamento:** Frase **CORRETA**.
- - **Justificativa Semântica:** A identidade atual do falante (*sou*) resulta da totalidade de ações concretizadas em sua trajetória pregressa (*conquistei*).
+  - **Julgamento:** Frase **CORRETA**.
+  - **Justificativa Semântica:** A identidade atual do falante (*sou*) resulta da totalidade de ações concretizadas em sua trajetória pregressa (*conquistei*).
 
 - **Previne o erro de:**
 
@@ -345,13 +343,13 @@ Se o propósito comunicativo do texto for contrapor a situação atual a eventos
 
 ---
 
-## Distinção Crítica no CEBRASPE: Correlação Temporal vs. Alteração de Sentido
+### Distinção Crítica no CEBRASPE: Correlação Temporal vs. Alteração de Sentido
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Nas provas do CEBRASPE / CESPE, o candidato deve distinguir com precisão itens que questionam a **manutenção da correlação e correção gramatical** daqueles que questionam a **preservação do sentido original**.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 A substituição de uma forma no **Presente do Subjuntivo** (*relatem*) por uma no **Presente do Indicativo** (*relatam*):
 
@@ -361,8 +359,6 @@ A substituição de uma forma no **Presente do Subjuntivo** (*relatem*) por uma 
 Se o comando da banca indagar se a troca pode ser feita *"sem prejuízo para a correlação de tempos e modos verbais"*, o item deve ser julgado como **CERTO**.
 
 - **Previne a pegadinha:**
-
----
 
 ---
 
@@ -382,17 +378,15 @@ Se o comando da banca indagar se a troca pode ser feita *"sem prejuízo para a c
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Método Operacional de Eliminação em Bloco para Questões de Múltipla Escolha
+### Método Operacional de Eliminação em Bloco para Questões de Múltipla Escolha
 
-### Objetivo
+#### Objetivo
 
 Resolver questões de correlação verbal de múltipla escolha (VUNESP, FCC, FGV) com rapidez e segurança, descartando alternativas inviáveis em segundos.
 
-### Fluxograma Operacional
+#### Fluxograma Operacional
 
 ```text
  [ Passo 1: Leitura Vertical e Localização do 1º Verbo ]
@@ -421,15 +415,13 @@ Resolver questões de correlação verbal de múltipla escolha (VUNESP, FCC, FGV
 
 ---
 
-## Procedimento de Avaliação de Locuções Verbais
+### Procedimento de Avaliação de Locuções Verbais
 
-### Passo a Passo Operacional
+#### Passo a Passo Operacional
 
 1. Diante de uma locução verbal (ex.: *vier a se empenhar*, *haverá de granjear*, *costumam ocultar*), sublinhar imediatamente o **primeiro verbo (verbo auxiliar)**.
 2. Isolar o tempo e modo do verbo auxiliar, ignorando a terminação do verbo principal no particípio/infinitivo.
 3. Projetar a regra do 1º verbo a partir do tempo identificado no verbo auxiliar.
-
----
 
 ---
 
@@ -444,7 +436,7 @@ Resolver questões de correlação verbal de múltipla escolha (VUNESP, FCC, FGV
 | **Harmoniza-se com:** | Presente do Indicativo, Presente do Subjuntivo, Futuro do Subjuntivo | Pretérito Imperfeito do Subjuntivo, Pretérito Mais-que-Perfeito |
 | **Exemplo Típico** | *Se você vier, eu participarei.* / *O evento terá... onde estão programados...* | *Se você viesse, eu participaria.* / *Seria bom que viesse.* |
 
-### Tabela 2: Correlação Verbal vs. Identidade Modal
+#### Tabela 2: Correlação Verbal vs. Identidade Modal
 
 | Conceito | O que exige? | O que NÃO exige? | Erro Típico de Prova |
 |:-------------------------------- |:------------------------------------------------------------------------------------------ |:------------------------------------------------------------------------------------------- |:------------------------------------------------------------------------------------------------ |
@@ -453,50 +445,48 @@ Resolver questões de correlação verbal de múltipla escolha (VUNESP, FCC, FGV
 
 ---
 
----
-
 ## Exemplos comentados
 
-## 9.1. Exercícios de Fixação Guiados
+### 9.1. Exercícios de Fixação Guiados
 
-### Treino de Fixação Inicial (Frases 1 a 4 do Quadro `#ANOTAAÍ`)
+#### Treino de Fixação Inicial (Frases 1 a 4 do Quadro `#ANOTAAÍ`)
 
 1. *Caso eu **estude** para esse concurso, o resultado _____ (ser) satisfatório.*
- - **Preenchimento:** `será` (Futuro do Presente).
- - **Justificativa:** A oração subordinada abre com *estude* (Presente do Subjuntivo), exigindo Futuro do Presente na oração principal.
+  - **Preenchimento:** `será` (Futuro do Presente).
+  - **Justificativa:** A oração subordinada abre com *estude* (Presente do Subjuntivo), exigindo Futuro do Presente na oração principal.
 2. *Se eu **estudasse** para esse concurso, o resultado _____ (ser) satisfatório.*
- - **Preenchimento:** `seria` (Futuro do Pretérito).
- - **Justificativa:** A oração subordinada abre com *estudasse* (Pretérito Imperfeito do Subjuntivo), atraindo o Futuro do Pretérito na principal.
+  - **Preenchimento:** `seria` (Futuro do Pretérito).
+  - **Justificativa:** A oração subordinada abre com *estudasse* (Pretérito Imperfeito do Subjuntivo), atraindo o Futuro do Pretérito na principal.
 3. *Seria legítimo que as pessoas _____ (lutar) por melhores condições de vida.*
- - **Preenchimento:** `lutassem` (Pretérito Imperfeito do Subjuntivo).
- - **Justificativa:** O primeiro verbo é *seria* (Futuro do Pretérito), exigindo Pretérito Imperfeito do Subjuntivo na subordinada.
+  - **Preenchimento:** `lutassem` (Pretérito Imperfeito do Subjuntivo).
+  - **Justificativa:** O primeiro verbo é *seria* (Futuro do Pretérito), exigindo Pretérito Imperfeito do Subjuntivo na subordinada.
 4. *É legítimo que as pessoas _____ (lutar) por melhores condições de vida.*
- - **Preenchimento:** `lutem` (Presente do Subjuntivo).
- - **Justificativa:** O primeiro verbo é *é* (Presente do Indicativo), exigindo Presente do Subjuntivo na subordinada.
+  - **Preenchimento:** `lutem` (Presente do Subjuntivo).
+  - **Justificativa:** O primeiro verbo é *é* (Presente do Indicativo), exigindo Presente do Subjuntivo na subordinada.
 
 ---
 
-## 9.2. Exemplos Modelo Canônicos da Teoria
+### 9.2. Exemplos Modelo Canônicos da Teoria
 
-### Modelo Presente + Presente
+#### Modelo Presente + Presente
 
 - **Frase:** *"Acredito que esteja doente."*
 - **Análise:** `Acredito` (Presente do Indicativo) + `esteja` (Presente do Subjuntivo).
 - **Julgamento:** Correta. Contraexemplo incorreto: *Acredito que estivesse doente*.
 
-### Modelo Pretérito + Futuro do Pretérito
+#### Modelo Pretérito + Futuro do Pretérito
 
 - **Frase:** *"Se fosse rico, estaria viajando."*
 - **Análise:** `fosse` (Pretérito Imperfeito do Subjuntivo) + `estaria` (Futuro do Pretérito do Indicativo).
 - **Julgamento:** Correta.
 
-### Modelo Futuro do Pretérito + Pretérito
+#### Modelo Futuro do Pretérito + Pretérito
 
 - **Frase:** *"Seria necessário que estudasse mais."*
 - **Análise:** `Seria` (Futuro do Pretérito) + `estudasse` (Pretérito Imperfeito do Subjuntivo).
 - **Julgamento:** Correta.
 
-### Exemplo Canônico de Exceção Semântica
+#### Exemplo Canônico de Exceção Semântica
 
 - **Frase:** *"Hoje eu sou o que sou por tudo que já conquistei."*
 - **Análise:** `sou` (Presente) + `conquistei` (Pretérito Perfeito).
@@ -504,97 +494,97 @@ Resolver questões de correlação verbal de múltipla escolha (VUNESP, FCC, FGV
 
 ---
 
-## 9.3. Bateria de Questões de Múltipla Escolha (VUNESP, FCC, FGV)
+### 9.3. Bateria de Questões de Múltipla Escolha (VUNESP, FCC, FGV)
 
-### Questão 10 (VUNESP 2022 - Prefeitura de Jundiaí)
+#### Questão 10 (VUNESP 2022 - Prefeitura de Jundiaí)
 
 - **Enunciado:** Assinale a alternativa em que a frase apresenta corretamente a correlação verbal.
 
- - **E) Se Dolores tivesse tornado seus dias úteis, ela teria recebido seu livro.**
+  - **E) Se Dolores tivesse tornado seus dias úteis, ela teria recebido seu livro.**
 - **Gabarito:** **E**
 - **Justificativa:** A alternativa E constrói o par perfeito no pretérito composto: Pretérito Imperfeito do Subjuntivo Composto (*tivesse tornado*) + Futuro do Pretérito Composto (*teria recebido*). Nas demais opções, há choques temporais (Futuro com Passado em A; Mais-que-perfeito com Futuro do Pretérito em B; Pretérito com Futuro do Presente em C; Pretérito Perfeito com Futuro do Pretérito em D).
 
-### Questão 11 (VUNESP 2021 - Semae de Piracicaba)
+#### Questão 11 (VUNESP 2021 - Semae de Piracicaba)
 
 - **Enunciado:** *... e mesmo que _____, quase certamente não _____ ir.*
- - A) serei... poderei
- - B) sou... poderia
- - **C) seja... poderei**
- - D) era... pudesse
- - E) for... pude ir
+  - A) serei... poderei
+  - B) sou... poderia
+  - **C) seja... poderei**
+  - D) era... pudesse
+  - E) for... pude ir
 - **Gabarito:** **C**
 - **Justificativa:** A locução concessiva *mesmo que* atrai compulsoriamente o Modo Subjuntivo, eliminando A, B e D. Entre C (*seja... poderei*) e E (*for... pude*), a alternativa E falha porque *pude* (Pretérito Perfeito) quebra a linha do futuro. A opção C alinha perfeitamente o Presente do Subjuntivo ao Futuro do Presente.
 
-### Questão 12 (VUNESP 2020 - Prefeitura de Cananéia)
+#### Questão 12 (VUNESP 2020 - Prefeitura de Cananéia)
 
 - **Enunciado:** *Antigamente, eu desejava que todo mundo _____ meu nome e quem eu _____.*
- - A) conhecia... sabia... fora
- - B) conhecera... soubera... serei
- - C) conheceu... soube... seria
- - D) conhece... sabe... sou
- - **E) conhecesse... soubesse... era**
+  - A) conhecia... sabia... fora
+  - B) conhecera... soubera... serei
+  - C) conheceu... soube... seria
+  - D) conhece... sabe... sou
+  - **E) conhecesse... soubesse... era**
 - **Gabarito:** **E**
 - **Justificativa:** A expressão volitiva no passado *desejava que* atua como gatilho do Pretérito Imperfeito do Subjuntivo (*conhecesse... soubesse*). A alternativa E é a única que traz a terminação `-sse` requerida.
 
-### Questão 13 (FCC 2018 - Prefeitura de Macapá)
+#### Questão 13 (FCC 2018 - Prefeitura de Macapá)
 
 - **Enunciado:** Está plenamente adequada a correlação entre os tempos verbais na frase:
- - A) Não fosse Saramago um escritor tão atento... sua prosa não haverá de granjear... *(Incorreto: "fosse" exige "haveria")*
- - B) A frase de Ricardo Reis houvesse de ter soado mal para um outro escritor que preferisse... *(Incorreto: falta de nexo semântico)*
- - **C) Quem vier a se empenhar na prática da dúvida sistemática estará mais perto de reconhecer o que os fatos costumam ocultar.**
- - D) O relato dos fatos históricos passados evidencia que os vitoriosos determinassem... *(Incorreto: "evidencia" não casa com "determinassem")*
- - E) Sempre que alguém ultrapasse as limitações... teria verificado... *(Incorreto: "ultrapasse" não casa com "teria verificado")*
+  - A) Não fosse Saramago um escritor tão atento... sua prosa não haverá de granjear... *(Incorreto: "fosse" exige "haveria")*
+  - B) A frase de Ricardo Reis houvesse de ter soado mal para um outro escritor que preferisse... *(Incorreto: falta de nexo semântico)*
+  - **C) Quem vier a se empenhar na prática da dúvida sistemática estará mais perto de reconhecer o que os fatos costumam ocultar.**
+  - D) O relato dos fatos históricos passados evidencia que os vitoriosos determinassem... *(Incorreto: "evidencia" não casa com "determinassem")*
+  - E) Sempre que alguém ultrapasse as limitações... teria verificado... *(Incorreto: "ultrapasse" não casa com "teria verificado")*
 - **Gabarito:** **C**
 - **Justificativa:** Correlação impecável no Eixo Presente/Futuro analisada a partir dos verbos auxiliares: *vier a se empenhar* (Futuro do Subjuntivo) $\rightarrow$ *estará* (Futuro do Presente) $\rightarrow$ *costumam ocultar* (Presente do Indicativo).
 
-### Questão 14 (FCC - TRT 9ª Região)
+#### Questão 14 (FCC - TRT 9ª Região)
 
 - **Enunciado:** *Estará plenamente adequada a correlação entre tempos e modos verbais na completude da seguinte frase: Não houvessem os alemães bombardeado Londres, provavelmente...*
 
- - **C) não ocorreria o bombardeio que arrasou Dresden.**
+  - **C) não ocorreria o bombardeio que arrasou Dresden.**
 
 - **Gabarito:** **C**
 - **Justificativa:** A estrutura hipotética irreal no passado introduzida por *Não houvessem bombardeado* (Pret. Imp. Subj. Comp.) combinada ao advérbio de probabilidade exige oração principal no Futuro do Pretérito (*ocorreria*), que por sua vez se articula com o fato histórico consumado *arrasou* (Pretérito Perfeito).
 
-### Questão 15 (FGV 2018 - AL-RO)
+#### Questão 15 (FGV 2018 - AL-RO)
 
 - **Enunciado:** Assinale a frase cujas formas verbais mostram correspondência adequada de tempos.
- - A)... pode fundar-se... fosse... *(pode [Pres.] / fosse [Pret.])*
- - B)... deixam... podes estar... estivessem... *(deixam [Pres.] / estivessem [Pret.])*
- - C)... é... eliminássemos... *(é [Pres.] / eliminássemos [Pret.])*
- - D)... Foi... permitiu... conheça... *(permitiu [Pret.] / conheça [Pres.])*
- - **E) "Tenho a impressão de que a exclamação 'A pátria corre perigo' não seja tão terrível quanto 'A cultura corre perigo!'"**
+  - A)... pode fundar-se... fosse... *(pode [Pres.] / fosse [Pret.])*
+  - B)... deixam... podes estar... estivessem... *(deixam [Pres.] / estivessem [Pret.])*
+  - C)... é... eliminássemos... *(é [Pres.] / eliminássemos [Pret.])*
+  - D)... Foi... permitiu... conheça... *(permitiu [Pret.] / conheça [Pres.])*
+  - **E) "Tenho a impressão de que a exclamação 'A pátria corre perigo' não seja tão terrível quanto 'A cultura corre perigo!'"**
 - **Gabarito:** **E**
 - **Justificativa:** *Tenho* (Presente do Indicativo) alinha-se ao verbo dependente *seja* (Presente do Subjuntivo). Ambas as formas pertencem com simetria ao Eixo do Presente.
 
-### Questão 16 (FGV - CODESP-SP)
+#### Questão 16 (FGV - CODESP-SP)
 
 - **Enunciado:** Assinale a alternativa em que, ao se fazer uma transformação da primeira fala do quadrinho (*"Como está o seu filho que engoliu várias moedas de 1 real?"*), manteve-se exata correlação de tempos e modos verbais.
- - A) estaria... engolia
- - B) estivera... engolira
- - C) estará... engolisse
- - D) está... engolir
- - **E) Como teria estado o seu filho se houvesse engolido várias moedas de um real?**
+  - A) estaria... engolia
+  - B) estivera... engolira
+  - C) estará... engolisse
+  - D) está... engolir
+  - **E) Como teria estado o seu filho se houvesse engolido várias moedas de um real?**
 - **Gabarito:** **E**
 - **Justificativa:** Estrutura condicional hipotética no passado construída com formas compostas: Futuro do Pretérito Composto (*teria estado*) + Pretérito Imperfeito do Subjuntivo Composto (*se houvesse engolido*).
 
 ---
 
-## 9.4. Bateria de Questões de Certo/Errado (CEBRASPE)
+### 9.4. Bateria de Questões de Certo/Errado (CEBRASPE)
 
-### Questão 17 (CEBRASPE - CNPq)
+#### Questão 17 (CEBRASPE - CNPq)
 
 - **Enunciado:** *A forma verbal "relatem" (L.3), no presente do subjuntivo, poderia ser corretamente substituída por "relatam", forma no presente do indicativo, sem prejuízo para a correlação de tempos e modos verbais.*
 - **Gabarito:** **CERTO**
 - **Justificativa:** A oração principal possui o verbo *parece* (Presente do Indicativo). Tanto *relatem* quanto *relatam* mantêm a correlação temporal no Eixo do Presente. O item aborda estritamente a correlação gramatical e não a conservação do sentido primitivo.
 
-### Questão 18 (CEBRASPE - TRT 10ª Região)
+#### Questão 18 (CEBRASPE - TRT 10ª Região)
 
 - **Enunciado:** *Como o texto trata de um evento que ocorrerá no futuro, o emprego do presente do indicativo em "estão" (L.13) está em desacordo com as exigências gramaticais de correlação entre os tempos e modos verbais.*
 - **Gabarito:** **ERRADO**
 - **Justificativa:** O Futuro do Presente (*terá*) harmoniza-se perfeitamente com o Presente do Indicativo (*estão*). Não há qualquer desacordo com as normas de correlação.
 
-### Questão 19 (CEBRASPE - TCE-RS)
+#### Questão 19 (CEBRASPE - TCE-RS)
 
 - **Enunciado:** *A substituição de "exigirá" (L.8) por "exigiria" manteria a correta correlação entre os tempos e modos verbais empregados no período.*
 - **Gabarito:** **ERRADO**
@@ -602,11 +592,9 @@ Resolver questões de correlação verbal de múltipla escolha (VUNESP, FCC, FGV
 
 ---
 
----
-
 ## Memorização inteligente
 
-## Análise Semântica Rápida de Dois Eixos
+### Análise Semântica Rápida de Dois Eixos
 
 Em vez de gastar tempo tentando recitar a classificação morfológica completa (ex.: *"pretérito mais-que-perfeito composto do subjuntivo"*), reduza a análise a dois eixos semânticos:
 
@@ -614,75 +602,69 @@ Em vez de gastar tempo tentando recitar a classificação morfológica completa 
 2. Se expressa **PRESENTE**, risque opções com verbos no PASSADO.
 3. Se expressa **PASSADO**, risque opções com verbos no PRESENTE.
 
-## Mnemônico da Amizade Exclusiva do Futuro do Pretérito
+### Mnemônico da Amizade Exclusiva do Futuro do Pretérito
 
 Guarde esta relação de lealdade: **O Futuro do Pretérito só tem um amigo: o Pretérito!**
 Encontrou terminação `-ria` (*seria*, *estaria*, *faria*)? O verbo associado na oração dependente deve trazer a desinência `-sse` (*estudasse*, *fosse*, *tivesse*). Se houver verbo no Presente ou Futuro do Presente ao lado dele em construções condicionais diretas, descarte a alternativa.
 
-## Tatuagem do Concessivo
+### Tatuagem do Concessivo
 
 Memorize: **Conjunção Concessiva (*mesmo que*, *embora*, *ainda que*) = Verbo OBRIGATORIAMENTE no Subjuntivo!** Em questões de preenchimento de lacunas, qualquer forma do Indicativo (*sou*, *serei*, *era*) após *mesmo que* deve ser descartada de imediato.
 
-## A Regra do "Não Seja Corretor de Banca"
+### A Regra do "Não Seja Corretor de Banca"
 
 Não perca tempo tentando "reescrever" ou descobrir como as alternativas eliminadas ficariam certas. O examinador elaborou apenas uma opção correta. Identificou o descompasso temporal? Risque e avance.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Confundir Equivalência de Modo com Equivalência de Tempo
+### Confundir Equivalência de Modo com Equivalência de Tempo
 
 - **O Erro:** Achar que se o primeiro verbo está no Indicativo, o segundo também deve estar no Indicativo.
 - **Como Detectar:** Frases legítimas que unem Presente do Indicativo a Presente do Subjuntivo (ex.: *Acredito que ele venha*).
 - **Como Evitar:** Lembre-se de que a simetria exigida é temporal (Presente com Presente; Pretérito com Pretérito); os modos podem variar livremente.
 
-## Perigo do "Raciocínio Robótico" em Exceções Semânticas
+### Perigo do "Raciocínio Robótico" em Exceções Semânticas
 
 - **O Erro:** Eliminar automaticamente qualquer frase que combine Presente com Pretérito sem ler o contexto discursivo.
 - **Como Detectar:** Frases em que o verbo no Presente expressa o estado atual como resultado/efeito de fatos acumulados no Passado (ex.: *Hoje sou o que sou por tudo que conquistei*).
 - **Como Evitar:** Faça o teste semântico: *"A frase quer evidenciar o presente como consequência do passado?"*. Se sim, a construção é válida.
 
-## A Armadilha Semântica da FCC (Mesmo Tempo/Modo sem Nexo Lógico)
+### A Armadilha Semântica da FCC (Mesmo Tempo/Modo sem Nexo Lógico)
 
 - **O Erro:** Achar que basta dois verbos estarem no mesmo tempo/modo para a frase estar correta.
 - **Como a Banca Arma:** A FCC elabora alternativas contendo dois verbos no Pretérito Imperfeito do Subjuntivo (ex.: *houvesse de ter soado... que preferisse*), mas articulados de maneira desconexa e sem sentido condicional/causal.
 - **Como Evitar:** Além de verificar os tempos verbais, valide sempre se a oração possui coerência lógica e semântica de causa, hipótese ou concessão.
 
-## A Pegadinha de Comando no CEBRASPE: "Correlação" vs. "Sentido"
+### A Pegadinha de Comando no CEBRASPE: "Correlação" vs. "Sentido"
 
 - **O Erro:** Julgar um item como ERRADO porque a troca de Subjuntivo por Indicativo alterou o valor semântico (hipótese para fato).
 - **Como Evitar:** Leia com extrema atenção o comando. Se a questão perguntar se a alteração mantém a **correlação dos tempos verbais** (harmonia sintática), o item é CERTO caso ambos permaneçam no mesmo eixo temporal (ex.: Presente com Presente).
 
 ---
 
----
-
 ## Glossário operacional
 
-## Correlação de Tempos Verbais / Articulação Verbal
+### Correlação de Tempos Verbais / Articulação Verbal
 
 Princípio sintático-semântico segundo o qual as flexões verbais de um período articulam-se de maneira coerente e harmônica, mantendo a simetria da linha temporal adotada (Eixo do Presente ou Eixo do Pretérito).
 
-## Paralelismo Semântico Verbal
+### Paralelismo Semântico Verbal
 
 Denominação técnica frequentemente atribuída pela banca FGV para a exigência de coerência e simetria de sentido na coordenação e subordinação de tempos e modos verbais no discurso.
 
-## Futuro do Pretérito do Indicativo
+### Futuro do Pretérito do Indicativo
 
 Tempo verbal que expressa um fato futuro em relação a outro já passado, ou uma ação hipotética/condicional. Na correlação verbal padrão, vincula-se com exclusividade ao Pretérito Imperfeito do Subjuntivo.
 
-## Pretérito Imperfeito do Subjuntivo
+### Pretérito Imperfeito do Subjuntivo
 
 Tempo verbal caracterizado pela desinência temporal `-sse-` (*estudasse*, *tivesse*, *lutassem*), empregado para indicar condição irreal, hipótese ou desejo subordinado a tempos pretéritos ou condicionais.
 
-## Locução Verbal
+### Locução Verbal
 
 Estrutura composta por um ou mais verbos auxiliares e um verbo principal em forma nominal (infinitivo, gerúndio ou particípio), na qual o verbo auxiliar concentra toda a flexão de tempo e modo relevante para a correlação.
-
----
 
 ---
 

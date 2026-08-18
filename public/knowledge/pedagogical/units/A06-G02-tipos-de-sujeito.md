@@ -17,9 +17,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 ### Como aplicar neste tema
 
 1. Localizar a forma verbal ou locução verbal da oração e isolar a sentença em análise.
-2. 1. Localizar o verbo principal ou locução verbal da oração.
-3. 2. Verificar se o verbo é impessoal (haver existencial/temporal, fazer temporal, clima literal). Se SIM, classificar como Oração Sem Sujeito (Sujeito Inexistente).
-4. 3. Formular a pergunta-teste: 'Quem é que + V?' ou 'O que é que + V?'.
+2. Localizar o verbo principal ou locução verbal da oração.
+3. Verificar se o verbo é impessoal (haver existencial/temporal, fazer temporal, clima literal). Se SIM, classificar como Oração Sem Sujeito (Sujeito Inexistente).
+4. Formular a pergunta-teste: 'Quem é que + V?' ou 'O que é que + V?'.
 
 ### Testes decisivos
 
@@ -40,7 +40,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 * **Estrutura Verbal:** Noção de radical, desinências número-pessoais de 1ª, 2ª e 3ª pessoas, formas nominais do verbo (infinitivo) e transitividade verbal (VTD, VTI, VI, VL).
 * **Noção de Oração:** Reconhecimento de limites oracionais marcados pela presença de formas verbais.
 
-### Mapa Conceitual Integrado do Sujeito
+#### Mapa Conceitual Integrado do Sujeito
 
 ```text
  SINTAXE DO SUJEITO (AULA 06)
@@ -71,25 +71,23 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## O Algoritmo Tripartite de Análise Sintática do Sujeito
+### O Algoritmo Tripartite de Análise Sintática do Sujeito
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A identificação do sujeito não deve ser realizada por intuição semântica nem pela ordem linear dos termos na frase, mas por meio da execução compulsória de um algoritmo procedural sequencial em três passos estruturados.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A localização do sujeito constitui o fundamento operacional de toda a sintaxe da oração, comandando as regras de concordância verbal, determinando a regência e estabelecendo as vedações de pontuação (proibição absoluta de separar sujeito e predicado por vírgula).
 O algoritmo opera nas seguintes fases:
 
 1. **Passo 1 (Interrogação ao Verbo):** Parar diante da forma verbal e antepor as perguntas canônicas de teste:
- * Para seres animados ou pessoas: *"Quem é que + [verbo flexionado]?"*
- * Para seres inanimados, fatos ou abstrações: *"O que é que + [verbo flexionado]?"*
- * O bloco textual retornado como resposta integral à pergunta é delimitado entre colchetes como o sintagma do sujeito.
+  * Para seres animados ou pessoas: *"Quem é que + [verbo flexionado]?"*
+  * Para seres inanimados, fatos ou abstrações: *"O que é que + [verbo flexionado]?"*
+  * O bloco textual retornado como resposta integral à pergunta é delimitado entre colchetes como o sintagma do sujeito.
 2. **Passo 2 (Extração e Filtragem do Núcleo):** Inspecionar o interior do bloco do sujeito e isolar a palavra substantiva de valor semântico central (substantivo, pronome substantivo ou numeral substantivo). Aplica-se a regra inegociável da não preposição.
 3. **Passo 3 (Classificação Estrutural):** Contar os núcleos válidos e analisar a morfossintaxe do termo para enquadrá-lo em uma das tipologias canônicas.
 
@@ -104,17 +102,17 @@ O algoritmo opera nas seguintes fases:
  Classificar o Sujeito
 ```
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 * Jamais assumir como sujeito a palavra que inicia a frase, pois a língua portuguesa admite livremente ordem inversa (sujeito posposto).
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 * *Exemplo canônico em ordem inversa:* *"Atrás dos meus olhos dorme uma lagoa profunda."*
- * Verbo: *dorme*.
- * Pergunta: *O que é que dorme?* $\rightarrow$ Resposta integral: `[uma lagoa profunda]`.
- * Núcleo: `lagoa` (substantivo sem preposição). Modificadores satélites: *uma* (artigo) e *profunda* (adjetivo).
- * Classificação: Sujeito Simples.
+  * Verbo: *dorme*.
+  * Pergunta: *O que é que dorme?* $\rightarrow$ Resposta integral: `[uma lagoa profunda]`.
+  * Núcleo: `lagoa` (substantivo sem preposição). Modificadores satélites: *uma* (artigo) e *profunda* (adjetivo).
+  * Classificação: Sujeito Simples.
 
 * **Operacionalizado em:**
 
@@ -122,44 +120,44 @@ O algoritmo opera nas seguintes fases:
 
 ---
 
-## Natureza Categorial e a Barreira Preposicional do Núcleo do Sujeito
+### Natureza Categorial e a Barreira Preposicional do Núcleo do Sujeito
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O núcleo do sujeito é a palavra de base substantiva que comanda a flexão do verbo e possui a propriedade sintática restritiva absoluta de **jamais ser antecedido por preposição**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A formulação comum "o sujeito não pode ser preposicionado" deve ser tecnicamente refinada: **o núcleo do sujeito não vem antecedido de preposição**.
 
 * **Mecanismo morfossintático:** A inserção de uma preposição (*de, em, por, com, a*) imediatamente antes de um substantivo altera seu estatuto funcional, transformando o termo em uma locução adjetiva modificadora, complemento nominal, objeto indireto ou adjunto adverbial.
 * **Critério de exclusão em provas:** Diante de períodos com termos intervenientes ou invertidos, qualquer elemento substantivo introduzido por preposição deve ser categoricamente descartado da condição de núcleo do sujeito.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 * *Exemplo com barreira preposicional:* *"Conta-se que naquela torre habita uma bruxa."*
- * Ao analisar o verbo *habita*, o candidato desatento poderia supor que *torre* é o sujeito.
- * Análise: *naquela torre* = contração da preposição *em* + *aquela* + *torre*. Por estar preposicionado, *torre* funciona estritamente como **Adjunto Adverbial de Lugar**.
- * Pergunta ao verbo: *Quem habita na torre?* $\rightarrow$ Resposta: `[uma bruxa]`.
- * Núcleo puro e sem preposição: `bruxa` $\rightarrow$ Sujeito Simples.
+  * Ao analisar o verbo *habita*, o candidato desatento poderia supor que *torre* é o sujeito.
+  * Análise: *naquela torre* = contração da preposição *em* + *aquela* + *torre*. Por estar preposicionado, *torre* funciona estritamente como **Adjunto Adverbial de Lugar**.
+  * Pergunta ao verbo: *Quem habita na torre?* $\rightarrow$ Resposta: `[uma bruxa]`.
+  * Núcleo puro e sem preposição: `bruxa` $\rightarrow$ Sujeito Simples.
 
 * **Glossário:**
 
 ---
 
-## Sujeito Simples e a Distinção Categorial do Pronome Indefinido
+### Sujeito Simples e a Distinção Categorial do Pronome Indefinido
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Configura-se Sujeito Simples quando o verbo principal faz referência a um sujeito determinado constituído por **um único núcleo** substantivo explícito. A presença de um pronome indefinido substantivo na posição de núcleo mantém a classificação de sujeito simples.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 * **Estrutura básica:** O sujeito simples possui apenas um núcleo que rege a concordância verbal (*"Os meninos estão brincando no quintal"* $\rightarrow$ núcleo único plural: *meninos* $\rightarrow$ Sujeito Simples).
 * **Contraste Crítico (Morfologia versus Sintaxe):** Há uma clássica armadilha de concurso que confunde a classe morfológica da palavra (*pronome indefinido*) com a função sintática do termo (*sujeito simples*).
- * Na oração *"Alguém acordou cedo"*, no plano semântico/ontológico o falante desconhece a identidade exata da pessoa. Porém, no plano sintático, o vocábulo *Alguém* está grafado na oração como núcleo único expresso.
- * Portanto, o sujeito é **Simples** (cujo núcleo é um pronome indefinido).
- * *Analogia pedagógica da professora:* Em *"O mascarado chegou"*, a pessoa sob a máscara é desconhecida, mas o termo *mascarado* é o núcleo expresso do sujeito simples.
+  * Na oração *"Alguém acordou cedo"*, no plano semântico/ontológico o falante desconhece a identidade exata da pessoa. Porém, no plano sintático, o vocábulo *Alguém* está grafado na oração como núcleo único expresso.
+  * Portanto, o sujeito é **Simples** (cujo núcleo é um pronome indefinido).
+  * *Analogia pedagógica da professora:* Em *"O mascarado chegou"*, a pessoa sob a máscara é desconhecida, mas o termo *mascarado* é o núcleo expresso do sujeito simples.
 
 ```text
 Análise Morfológica: "Alguém" = Pronome Indefinido Substantivo
@@ -168,20 +166,20 @@ Análise Sintática: "Alguém" = Núcleo Único do Sujeito ──> SUJEITO SIMPL
 
 ---
 
-## Sujeito Oculto (Elíptico/Desinencial): Vertente Desinencial vs. Não-Desinencial Anafórica
+### Sujeito Oculto (Elíptico/Desinencial): Vertente Desinencial vs. Não-Desinencial Anafórica
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O Sujeito Oculto (sinônimo de elíptico, implícito ou subentendido) é aquele que existe e é determinado, mas não se encontra graficamente expresso imediatamente antes do verbo, dividindo-se em: **Desinencial** (1ª pessoa) e **Não-Desinencial / Anafórico** (3ª pessoa com referente contextual).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Tipo I — Sujeito Oculto Desinencial:** Ocorre quando a terminação/desinência número-pessoal do verbo flexionado em 1ª pessoa do singular (*eu*) ou do plural (*nós*) identifica a pessoa gramatical de forma autoevidente (*"Estamos muito orgulhosos de você"* $\rightarrow$ desinência *-mos* indica *Nós*).
 2. **Tipo II — Sujeito Oculto Não-Desinencial (Anafórico no Contexto):** Ocorre quando o verbo está na 3ª pessoa do singular e não traz o pronome expresso ao seu lado, mas seu sujeito é perfeitamente determinado por anáfora a um substantivo citado no contexto textual imediato.
- * Exemplo: *"João chegou. Estava feliz."*
- * Na 2ª oração (*Estava feliz*), o sujeito não é a palavra *João* (que pertence à 1ª oração).
- * O sujeito de *estava* é **Oculto / Elíptico**.
- * O substantivo *João* é o **referente textual** do sujeito elíptico.
+  * Exemplo: *"João chegou. Estava feliz."*
+  * Na 2ª oração (*Estava feliz*), o sujeito não é a palavra *João* (que pertence à 1ª oração).
+  * O sujeito de *estava* é **Oculto / Elíptico**.
+  * O substantivo *João* é o **referente textual** do sujeito elíptico.
 
 ```text
 SUJEITO OCULTO / ELÍPTICO
@@ -191,13 +189,13 @@ SUJEITO OCULTO / ELÍPTICO
 
 ---
 
-## As Três Vias Estruturais de Indeterminação do Sujeito
+### As Três Vias Estruturais de Indeterminação do Sujeito
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Ocorre Sujeito Indeterminado quando existe faticamente um agente na semântica da ação verbal ("alguém"), mas a estrutura sintática impede intencionalmente ou dispensa a revelação de sua identidade.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A sintaxe da Língua Portuguesa sistematiza a indeterminação por meio de **três vias estruturais**:
 
@@ -214,13 +212,13 @@ SUJEITO INDETERMINADO (Semântica: "Alguém pratica a ação, não se sabe ou n�
 
 ---
 
-## Oração Sem Sujeito (Sujeito Inexistente) e a Exceção do Sentido Figurado
+### Oração Sem Sujeito (Sujeito Inexistente) e a Exceção do Sentido Figurado
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A Oração Sem Sujeito (Sujeito Inexistente) é aquela estruturada em torno de **verbos impessoais**, os quais não possuem sujeito gramatical nem agente no mundo dos fatos, permanecendo compulsoriamente na 3ª pessoa do singular.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A gramática unifica três formulações sinônimas: *Sujeito Inexistente = Oração Sem Sujeito = Verbo Impessoal*.
 Os três casos clássicos de impessoalidade são:
@@ -230,9 +228,9 @@ Os três casos clássicos de impessoalidade são:
 3. **Verbos de Fenômenos da Natureza em sentido literal:** (*chover, nevar, ventar, trovejar*). Ninguém pratica a ação (*"Nevou o dia todo"* / *"Chove muito"*).
 
 * **A Exceção do Sentido Figurado (Conotação):**
- * Quando um verbo meteorológico é empregado metaforicamente, ele deixa de ser impessoal e passa a admitir **Sujeito Simples**, flexionando normalmente no plural.
- * Em *"Choveram elogios para A abordagem didática"*, o verbo *chover* significa *ocorrer em grande quantidade*. A pergunta *O que é que choveu?* resulta em *Elogios* (núcleo do Sujeito Simples).
- * Em *"Choveu boleto para pagar"*, o termo *boleto* é núcleo do Sujeito Simples.
+  * Quando um verbo meteorológico é empregado metaforicamente, ele deixa de ser impessoal e passa a admitir **Sujeito Simples**, flexionando normalmente no plural.
+  * Em *"Choveram elogios para A abordagem didática"*, o verbo *chover* significa *ocorrer em grande quantidade*. A pergunta *O que é que choveu?* resulta em *Elogios* (núcleo do Sujeito Simples).
+  * Em *"Choveu boleto para pagar"*, o termo *boleto* é núcleo do Sujeito Simples.
 
 ```text
 VERBOS IMPESSOAIS (Oração Sem Sujeito / Sujeito Inexistente)
@@ -246,23 +244,23 @@ VERBOS IMPESSOAIS (Oração Sem Sujeito / Sujeito Inexistente)
 
 ---
 
-## Sujeito Oracional, Teste de Validação por "ISSO" e Concordância
+### Sujeito Oracional, Teste de Validação por "ISSO" e Concordância
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Ocorre Sujeito Oracional (Oração Subordinada Substantiva Subjetiva) quando o termo que exerce o papel sintático de sujeito do verbo principal é constituído por uma oração inteira, caracterizada obrigatoriamente por **conter um verbo em seu interior**, exigindo que o verbo principal permaneça na 3ª pessoa do singular.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 * **O Mantra do Sujeito Oracional:** *"Sujeito oracional é aquele que tem verbo"*.
 * **Formatos Estruturais:**
  1. **Oração Desenvolvida:** Introduzida por conjunção integrante (*que* ou *se*) com verbo conjugado (*"Seria importante [que você começasse a me escutar]"* / *"Parece [que ele chega hoje]"* / *"É provável [que ele retorne ao país]"*).
  2. **Oração Reduzida de Infinitivo:** Não possui conjunção integrante e apresenta verbo em forma nominal (*"Praticar exercícios frequentemente [é bom]"* / *"Basta [estudar muito]"* / *"É imprescindível [analisar os impactos...]"*).
 * **O Teste Infalível de Substituição por "ISSO":**
- * Isole a oração subordinada inteira e substitua-a pelo pronome substantivo demonstrativo neutro **"ISSO"**.
- * Reorganize a frase de teste na ordem direta: `[ISSO] + [verbo principal] + [predicativo]`.
- * Formule a pergunta de teste ao verbo: *"O que é imprescindível/provável/bom?"* $\rightarrow$ Resposta: *"ISSO"*.
- * Constatando que o bloco representado por *ISSO* contém verbo, confirma-se o Sujeito Oracional.
+  * Isole a oração subordinada inteira e substitua-a pelo pronome substantivo demonstrativo neutro **"ISSO"**.
+  * Reorganize a frase de teste na ordem direta: `[ISSO] + [verbo principal] + [predicativo]`.
+  * Formule a pergunta de teste ao verbo: *"O que é imprescindível/provável/bom?"* $\rightarrow$ Resposta: *"ISSO"*.
+  * Constatando que o bloco representado por *ISSO* contém verbo, confirma-se o Sujeito Oracional.
 * **Regra de Concordância Verbal:** Todo sujeito oracional impõe ao verbo regente da oração principal a concordância estrita na **3ª pessoa do singular**.
 
 ```text
@@ -277,20 +275,20 @@ Passo 4: Confirmar verbo no interior do bloco ("analisar") ──> SUJEITO ORACI
 
 ---
 
-## Distinção Morfossintática e Sociolinguística do Pronome "SE": PA vs. IIS
+### Distinção Morfossintática e Sociolinguística do Pronome "SE": PA vs. IIS
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A partícula *se* desempenha funções sintáticas distintas a depender da transitividade verbal: acoplada a verbos transitivos diretos, atua como Pronome Apassivador (gerando Sujeito Paciente); acoplada a verbos transitivos indiretos, intransitivos ou de ligação, atua como Índice de Indeterminação do Sujeito. Em ambas as funções, constitui recurso expressivo da norma culta formal escrita.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 * **Diferenciação Sintática:**
- * **SE Partícula Apassivadora (PA):** Ocorre com VTD ou VTDI. O termo não preposicionado que parece objeto direto é, na realidade, o **Sujeito Paciente** da voz passiva sintética. Admite conversão para a voz passiva analítica (*"Alugam-se casas"* $\rightarrow$ *"Casas são alugadas"* / *casas* = sujeito paciente determinado).
- * **SE Índice de Indeterminação do Sujeito (IIS):** Ocorre com VTI, VI ou VL acompanhados de preposição. O termo preposicionado não pode ser sujeito paciente (*"Acredita-se na existência de discos voadores"* / *"Não se trata de negar..."*). Não admite conversão para passiva analítica. O sujeito é **Indeterminado**.
+  * **SE Partícula Apassivadora (PA):** Ocorre com VTD ou VTDI. O termo não preposicionado que parece objeto direto é, na realidade, o **Sujeito Paciente** da voz passiva sintética. Admite conversão para a voz passiva analítica (*"Alugam-se casas"* $\rightarrow$ *"Casas são alugadas"* / *casas* = sujeito paciente determinado).
+  * **SE Índice de Indeterminação do Sujeito (IIS):** Ocorre com VTI, VI ou VL acompanhados de preposição. O termo preposicionado não pode ser sujeito paciente (*"Acredita-se na existência de discos voadores"* / *"Não se trata de negar..."*). Não admite conversão para passiva analítica. O sujeito é **Indeterminado**.
 * **Dimensão Sociolinguística / Estilística (Abordagem Cebraspe):**
- * Na oralidade cotidiana e informal, falantes nativos evitam construções com *se* apassivador ou indeterminador (recorrendo a pronomes indefinidos como *alguém* ou à 3ª pessoa do plural sem pronome).
- * Portanto, o emprego do pronome *se* (seja como PA, seja como IIS) é reconhecido em concursos públicos como marca inequívoca de **formalidade da linguagem e da modalidade escrita culta**.
+  * Na oralidade cotidiana e informal, falantes nativos evitam construções com *se* apassivador ou indeterminador (recorrendo a pronomes indefinidos como *alguém* ou à 3ª pessoa do plural sem pronome).
+  * Portanto, o emprego do pronome *se* (seja como PA, seja como IIS) é reconhecido em concursos públicos como marca inequívoca de **formalidade da linguagem e da modalidade escrita culta**.
 
 ```text
  EMPREGO DA PARTÍCULA "SE" NA SINTAXE DO SUJEITO
@@ -314,25 +312,23 @@ SE = PRONOME APASSIVADOR (PA) SE = ÍNDICE DE INDETERMINAÇÃO (IIS)
 
 ---
 
-## Contraste Sintático entre Verbos Impessoais (*Haver*) e Pessoais (*Ocorrer/Existir*)
+### Contraste Sintático entre Verbos Impessoais (*Haver*) e Pessoais (*Ocorrer/Existir*)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Embora semanticamente equivalentes na indicação de existência ou acontecimento, o verbo *haver* é sintaticamente impessoal (rege objeto direto e não tem sujeito), enquanto os verbos *existir*, *ocorrer* e *suceder* são verbos pessoais plenos (possuem sujeito determinado e flexionam compulsoriamente em número).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 * **Par Contrasting Canônico:**
- * Frase A: *"Houve algumas rebeliões no passado."*
- * Verbo *haver* no sentido de ocorrer $\rightarrow$ Impessoal.
- * Classificação: **Oração Sem Sujeito** (Sujeito Inexistente).
- * O sintagma *algumas rebeliões* exerce função de **Objeto Direto**. Verbo permanece fixo no singular.
- * Frase B: *"Ocorreram algumas rebeliões no passado."*
- * Verbo *ocorrer* $\rightarrow$ Pessoal intransitivo.
- * Pergunta: *O que é que ocorreu?* $\rightarrow$ Resposta: *Algumas rebeliões* (núcleo: *rebeliões*).
- * Classificação: **Sujeito Simples** posposto. Verbo flexiona obrigatoriamente no plural para concordar com o sujeito.
-
----
+  * Frase A: *"Houve algumas rebeliões no passado."*
+  * Verbo *haver* no sentido de ocorrer $\rightarrow$ Impessoal.
+  * Classificação: **Oração Sem Sujeito** (Sujeito Inexistente).
+  * O sintagma *algumas rebeliões* exerce função de **Objeto Direto**. Verbo permanece fixo no singular.
+  * Frase B: *"Ocorreram algumas rebeliões no passado."*
+  * Verbo *ocorrer* $\rightarrow$ Pessoal intransitivo.
+  * Pergunta: *O que é que ocorreu?* $\rightarrow$ Resposta: *Algumas rebeliões* (núcleo: *rebeliões*).
+  * Classificação: **Sujeito Simples** posposto. Verbo flexiona obrigatoriamente no plural para concordar com o sujeito.
 
 ---
 
@@ -351,26 +347,24 @@ Esta seção sumariza as formulações canônicas definitivas estabelecidas na m
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Protocolo Geral em Três Passos para Análise Sintática do Sujeito
+### Protocolo Geral em Três Passos para Análise Sintática do Sujeito
 
 * **Objetivo:** Isolar e classificar o sujeito com 100% de precisão, eliminando erros provocados por ordem inversa ou intercalações.
 * **Passo 1 (Interrogação ao Verbo):** Localizar o verbo principal da oração. Formular a pergunta de teste imediatamente antes do verbo: *"Quem é que + [verbo]?"* ou *"O que é que + [verbo]?"*.
 * **Passo 2 (Extração e Filtragem do Núcleo):** Reunir o bloco da resposta entre colchetes. Dentro dos colchetes, identificar a palavra substantiva de maior carga semântica que **não venha precedida de preposição**.
 * **Passo 3 (Classificação Estrutural):**
- * Se houver 1 núcleo substantivo explícito $\rightarrow$ **Sujeito Simples**.
- * Se houver 2 ou mais núcleos coordenados $\rightarrow$ **Sujeito Composto**.
- * Se não houver termo grafado, mas a desinência for de 1ª pessoa (*eu/nós*) ou 3ª com referente contextual $\rightarrow$ **Sujeito Oculto / Elíptico**.
- * Se o verbo for impessoal (*haver* existencial, *fazer* temporal ou meteorológico literal) $\rightarrow$ **Sujeito Inexistente (Oração Sem Sujeito)**.
- * Se o verbo estiver na 3ª do plural sem referente, na 3ª singular + *se* preposicionado ou no infinitivo impessoal $\rightarrow$ **Sujeito Indeterminado**.
- * Se o termo de resposta for uma oração contendo outro verbo $\rightarrow$ **Sujeito Oracional**.
+  * Se houver 1 núcleo substantivo explícito $\rightarrow$ **Sujeito Simples**.
+  * Se houver 2 ou mais núcleos coordenados $\rightarrow$ **Sujeito Composto**.
+  * Se não houver termo grafado, mas a desinência for de 1ª pessoa (*eu/nós*) ou 3ª com referente contextual $\rightarrow$ **Sujeito Oculto / Elíptico**.
+  * Se o verbo for impessoal (*haver* existencial, *fazer* temporal ou meteorológico literal) $\rightarrow$ **Sujeito Inexistente (Oração Sem Sujeito)**.
+  * Se o verbo estiver na 3ª do plural sem referente, na 3ª singular + *se* preposicionado ou no infinitivo impessoal $\rightarrow$ **Sujeito Indeterminado**.
+  * Se o termo de resposta for uma oração contendo outro verbo $\rightarrow$ **Sujeito Oracional**.
 
 ---
 
-## Teste da Substituição por "ISSO" para Sujeito Oracional
+### Teste da Substituição por "ISSO" para Sujeito Oracional
 
 * **Objetivo:** Confirmar a existência de Sujeito Oracional (Oração Subordinada Substantiva Subjetiva) em períodos compostos desenvolvidos ou reduzidos.
 * **Passo 1:** Identificar o verbo da oração principal (que estará na 3ª pessoa do singular, ex.: *seria, parece, convém, é bom, é imprescindível, conta-se*).
@@ -381,7 +375,7 @@ Esta seção sumariza as formulações canônicas definitivas estabelecidas na m
 
 ---
 
-## Método "Viva Cada Verbo a Seu Momento" em Períodos Compostos
+### Método "Viva Cada Verbo a Seu Momento" em Períodos Compostos
 
 * **Objetivo:** Prevenir sobrecarga cognitiva e misturas indevidas de funções sintáticas em frases longas ou períodos com múltiplos verbos.
 * **Passo 1 (Mapeamento):** Percorrer o período e numerar sequencialmente todas as formas verbais presentes (`Verbo 1`, `Verbo 2`, `Verbo 3`).
@@ -391,25 +385,23 @@ Esta seção sumariza as formulações canônicas definitivas estabelecidas na m
 
 ---
 
-## Teste de Conversão para Distinguir Partícula Apassivadora (PA) de Índice de Indeterminação (IIS)
+### Teste de Conversão para Distinguir Partícula Apassivadora (PA) de Índice de Indeterminação (IIS)
 
 * **Objetivo:** Discernir se o pronome *se* está indeterminando a oração ou estruturando uma voz passiva sintética com sujeito paciente.
 * **Passo 1 (Inspeção de Preposição):** Observar o termo associado ao verbo com a partícula *se*.
- * Se o termo for obrigatoriamente introduzido por preposição (*"Acredita-se [na existência]"* / *"Trata-se [de problemas]"*), o verbo é VTI/VI/VL. O termo preposicionado não pode ser sujeito. Conclusão: o *se* é **Índice de Indeterminação do Sujeito (IIS)** e o sujeito é **Indeterminado**.
+  * Se o termo for obrigatoriamente introduzido por preposição (*"Acredita-se [na existência]"* / *"Trata-se [de problemas]"*), o verbo é VTI/VI/VL. O termo preposicionado não pode ser sujeito. Conclusão: o *se* é **Índice de Indeterminação do Sujeito (IIS)** e o sujeito é **Indeterminado**.
 * **Passo 2 (Teste de Conversão Analítica):** Se o termo associado **não** for regido por preposição (*"Alugam-se [casas]"* / *"Vende-se [carro]"*), tentar a conversão para a voz passiva analítica correspondente: `[Termo] + verbo ser + particípio` (*"Casas são alugadas"* / *"Carro é vendido"*).
- * Se a conversão for gramaticalmente perfeita, o pronome *se* é **Partícula Apassivadora (PA)** e o termo não preposicionado é o **Sujeito Paciente Determinado**.
+  * Se a conversão for gramaticalmente perfeita, o pronome *se* é **Partícula Apassivadora (PA)** e o termo não preposicionado é o **Sujeito Paciente Determinado**.
 
 ---
 
-## Metodologia de Fragmentação de Assertivas no Padrão Cebraspe
+### Metodologia de Fragmentação de Assertivas no Padrão Cebraspe
 
 * **Objetivo:** Garantir a pontuação em itens do Cebraspe que reúnem múltiplas asserções em uma única assertiva de julgamento Certo/Errado.
 * **Passo 1:** Isolar graficamente com colchetes cada tese declarada no enunciado (ex.: `[Tese 1: O emprego do pronome 'se' marca a formalidade da linguagem]` e `[Tese 2: e indica que o sujeito da oração é indeterminado]`).
 * **Passo 2:** Julgar a validade sintática da `Tese 1` independentemente.
 * **Passo 3:** Julgar a validade estilística ou sintática da `Tese 2` independentemente.
 * **Passo 4:** Marcar `CERTO` somente se ambas as partes forem estritamente verdadeiras. Havendo uma fração inverídica, marcar `ERRADO`.
-
----
 
 ---
 
@@ -432,85 +424,83 @@ Esta seção sumariza as formulações canônicas definitivas estabelecidas na m
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Sujeito Simples em Ordem Direta
+### Sujeito Simples em Ordem Direta
 
 * **Frase:** *"Os meninos estão brincando no quintal."*
 * **Resolução sintática:**
- * Locução verbal: *estão brincando*.
- * Pergunta: *Quem é que está brincando no quintal?* $\rightarrow$ Resposta: *Os meninos*.
- * Análise: *Os* é adjunto adnominal; *meninos* é o núcleo único substantivo sem preposição.
+  * Locução verbal: *estão brincando*.
+  * Pergunta: *Quem é que está brincando no quintal?* $\rightarrow$ Resposta: *Os meninos*.
+  * Análise: *Os* é adjunto adnominal; *meninos* é o núcleo único substantivo sem preposição.
 * **Classificação:** **Sujeito Simples**.
 
 ---
 
-## Sujeito Oculto Desinencial de 1ª Pessoa
+### Sujeito Oculto Desinencial de 1ª Pessoa
 
 * **Frases:** *"Estamos muito orgulhosos de você."* / *"Viajamos para a Itália."*
 * **Resolução sintática:**
- * Verbos: *Estamos* / *Viajamos*.
- * Pergunta: *Quem está orgulhoso?* / *Quem viajou?*
- * Diagnóstico: A terminação flexional de 1ª pessoa do plural (`-mos`) determina inequivocamente o pronome *Nós*.
+  * Verbos: *Estamos* / *Viajamos*.
+  * Pergunta: *Quem está orgulhoso?* / *Quem viajou?*
+  * Diagnóstico: A terminação flexional de 1ª pessoa do plural (`-mos`) determina inequivocamente o pronome *Nós*.
 * **Classificação:** **Sujeito Oculto / Elíptico / Desinencial**.
 
 ---
 
-## Sujeito Composto com Elementos Pospostos
+### Sujeito Composto com Elementos Pospostos
 
 * **Frases:** *"A abordagem didática e os alunos ensaiaram..."* / *"Andavam misturados bois, vacas e bezerros."*
 * **Resolução sintática:**
- * Na segunda frase: Verbo *Andavam* (3ª pessoa do plural).
- * Pergunta: *Quem é que andava misturado?* $\rightarrow$ Resposta: *bois, vacas e bezerros*.
- * Núcleos identificados: `bois` (1), `vacas` (2) e `bezerros` (3).
+  * Na segunda frase: Verbo *Andavam* (3ª pessoa do plural).
+  * Pergunta: *Quem é que andava misturado?* $\rightarrow$ Resposta: *bois, vacas e bezerros*.
+  * Núcleos identificados: `bois` (1), `vacas` (2) e `bezerros` (3).
 * **Classificação:** **Sujeito Composto** (3 núcleos coordenados pospostos).
 
 ---
 
-## O Caso Crítico do Pronome Indefinido
+### O Caso Crítico do Pronome Indefinido
 
 * **Frase:** *"Alguém acordou cedo."*
 * **Resolução sintática:**
- * Verbo: *acordou*.
- * Pergunta: *Quem é que acordou cedo?* $\rightarrow$ Resposta: *Alguém*.
- * Análise: A palavra *Alguém* é um pronome indefinido que atua materialmente como núcleo substantivo único da oração.
+  * Verbo: *acordou*.
+  * Pergunta: *Quem é que acordou cedo?* $\rightarrow$ Resposta: *Alguém*.
+  * Análise: A palavra *Alguém* é um pronome indefinido que atua materialmente como núcleo substantivo único da oração.
 * **Classificação:** **Sujeito Simples**.
 
 ---
 
-## Sujeito Indeterminado na 3ª Pessoa do Plural
+### Sujeito Indeterminado na 3ª Pessoa do Plural
 
 * **Frases:** *"Esqueceram de trancar a porta."* / *"Prenderam os suspeitos de fraudar o INSS."* (análise de *prenderam*)
 * **Resolução sintática:**
- * Verbo: *Esqueceram* / *Prenderam*.
- * Diagnóstico: Forma verbal na 3ª pessoa do plural sem sujeito explícito e desprovida de referência no discurso anterior. O termo *os suspeitos* funciona como objeto direto do verbo prender.
+  * Verbo: *Esqueceram* / *Prenderam*.
+  * Diagnóstico: Forma verbal na 3ª pessoa do plural sem sujeito explícito e desprovida de referência no discurso anterior. O termo *os suspeitos* funciona como objeto direto do verbo prender.
 * **Classificação:** **Sujeito Indeterminado**.
 
 ---
 
-## Oração Sem Sujeito com Verbo "Haver" Existencial
+### Oração Sem Sujeito com Verbo "Haver" Existencial
 
 * **Frases:** *"Há muita gente na praia."* / *"Houve algumas rebeliões no passado."*
 * **Resolução sintática:**
- * Verbo: *Há* / *Houve*.
- * Diagnóstico: Emprego no sentido de existir/ocorrer. Verbo impessoal; os termos *muita gente* e *algumas rebeliões* atuam sintaticamente como objetos diretos.
+  * Verbo: *Há* / *Houve*.
+  * Diagnóstico: Emprego no sentido de existir/ocorrer. Verbo impessoal; os termos *muita gente* e *algumas rebeliões* atuam sintaticamente como objetos diretos.
 * **Classificação:** **Sujeito Inexistente (Oração Sem Sujeito)**.
 
 ---
 
-## Sujeito Oracional Desenvolvido e Reduzido
+### Sujeito Oracional Desenvolvido e Reduzido
 
 * **Frases:**
- * Desenvolvida: *"Seria importante que você começasse a me escutar."* $\rightarrow$ *[ISSO] seria importante*.
- * Reduzida de infinitivo: *"Praticar exercícios frequentemente é bom para a saúde."* $\rightarrow$ *[ISSO] é bom*.
+  * Desenvolvida: *"Seria importante que você começasse a me escutar."* $\rightarrow$ *[ISSO] seria importante*.
+  * Reduzida de infinitivo: *"Praticar exercícios frequentemente é bom para a saúde."* $\rightarrow$ *[ISSO] é bom*.
 * **Resolução sintática:** O bloco que responde à pergunta do sujeito contém verbo próprio (*começasse* / *praticar*).
 * **Classificação:** **Sujeito Oracional** (Oração Subordinada Substantiva Subjetiva).
 
 ---
 
-## Sujeito Indeterminado por Infinitivo Impessoal
+### Sujeito Indeterminado por Infinitivo Impessoal
 
 * **Frases:** *"É bom estudar para concurso."* (verbo *estudar*) / *"É necessário fazer a revisão do carro."* (verbo *fazer*)
 * **Resolução sintática:** Os verbos *estudar* e *fazer* apresentam-se no infinitivo impessoal não flexionado, exprimindo ações genéricas sem vinculação a agente explícito.
@@ -518,7 +508,7 @@ Esta seção sumariza as formulações canônicas definitivas estabelecidas na m
 
 ---
 
-## Oração Sem Sujeito com Verbo "Fazer" Temporal
+### Oração Sem Sujeito com Verbo "Fazer" Temporal
 
 * **Frase:** *"Faz três anos que estudo nesta escola."* / *"Faz dois anos hoje de sua partida."*
 * **Resolução sintática:** O verbo *fazer* denota tempo cronológico transcorrido. Verbo impessoal sem sujeito; forma verbal invariável na 3ª do singular.
@@ -526,18 +516,18 @@ Esta seção sumariza as formulações canônicas definitivas estabelecidas na m
 
 ---
 
-## Sujeito Simples com Verbo "Ocorrer"
+### Sujeito Simples com Verbo "Ocorrer"
 
 * **Frase:** *"Ocorreram algumas rebeliões no passado."*
 * **Resolução sintática:**
- * Verbo: *Ocorreram*.
- * Pergunta: *O que é que ocorreu?* $\rightarrow$ Resposta: *Algumas rebeliões*.
- * Núcleo: `rebeliões` (substantivo no plural). O verbo *ocorrer* é pessoal e flexiona compulsoriamente no plural.
+  * Verbo: *Ocorreram*.
+  * Pergunta: *O que é que ocorreu?* $\rightarrow$ Resposta: *Algumas rebeliões*.
+  * Núcleo: `rebeliões` (substantivo no plural). O verbo *ocorrer* é pessoal e flexiona compulsoriamente no plural.
 * **Classificação:** **Sujeito Simples** posposto.
 
 ---
 
-## Sujeito Simples com Adjunto Adverbial Interveniente
+### Sujeito Simples com Adjunto Adverbial Interveniente
 
 * **Frase:** *"Conta-se que naquela torre habita uma bruxa."* (análise de *habita*)
 * **Resolução sintática:** O termo *naquela torre* é preposicionado (adjunto adverbial de lugar). Pergunta: *Quem habita?* $\rightarrow$ *Uma bruxa* (núcleo: *bruxa*).
@@ -545,7 +535,7 @@ Esta seção sumariza as formulações canônicas definitivas estabelecidas na m
 
 ---
 
-## Verbo Meteorológico em Sentido Figurado
+### Verbo Meteorológico em Sentido Figurado
 
 * **Frase:** *"Choveram elogios para A abordagem didática."*
 * **Resolução sintática:** O verbo *chover* atua em acepção metafórica. Pergunta: *O que é que choveu?* $\rightarrow$ *Elogios* (núcleo substantivo).
@@ -553,18 +543,18 @@ Esta seção sumariza as formulações canônicas definitivas estabelecidas na m
 
 ---
 
-## Questão Cebraspe: Polícia Federal (Administrador)
+### Questão Cebraspe: Polícia Federal (Administrador)
 
 * **Texto-base:** *“Não se trata de negar que o advento dos regimes liberais em 1989-90...criou uma ilusão de modernidade.”*
 * **Item avaliado:** *O emprego do pronome “se” marca a formalidade da linguagem utilizada e indica que o sujeito da oração é indeterminado.*
 * **Julgamento e Justificativa:**
- * Tese 1 (Sintática): O verbo *tratar* rege preposição *de* (VTI). O pronome *se* associado a VTI é Índice de Indeterminação do Sujeito (IIS), tornando o sujeito formalmente indeterminado.
- * Tese 2 (Sociolinguística): O uso de *se* (PA ou IIS) é recurso próprio da norma padrão culta escrita, marcando formalidade textual.
+  * Tese 1 (Sintática): O verbo *tratar* rege preposição *de* (VTI). O pronome *se* associado a VTI é Índice de Indeterminação do Sujeito (IIS), tornando o sujeito formalmente indeterminado.
+  * Tese 2 (Sociolinguística): O uso de *se* (PA ou IIS) é recurso próprio da norma padrão culta escrita, marcando formalidade textual.
 * **Gabarito:** **CERTO**.
 
 ---
 
-## Questão Cebraspe: SME do Recife (Professor)
+### Questão Cebraspe: SME do Recife (Professor)
 
 * **Texto-base:** *(...) porque há muita concorrência e maior seleção. (...)*
 * **Item avaliado:** *Classifica-se como oração sem sujeito o segmento “há muita concorrência e maior seleção”.*
@@ -573,7 +563,7 @@ Esta seção sumariza as formulações canônicas definitivas estabelecidas na m
 
 ---
 
-## Questão Cebraspe: TC-DF (Auditor de Controle Externo)
+### Questão Cebraspe: TC-DF (Auditor de Controle Externo)
 
 * **Texto-base:** *(...) Por isso, é imprescindível analisar os impactos da carga tributária na estrutura produtiva.*
 * **Item avaliado:** *No segmento “Por isso, é imprescindível”, a flexão da forma verbal “é” na terceira pessoa do singular justifica-se pela concordância do verbo com o sujeito da oração, que é expresso pela oração subsequente.*
@@ -582,17 +572,15 @@ Esta seção sumariza as formulações canônicas definitivas estabelecidas na m
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Macete Universal da Troca por "ISSO"
+### O Macete Universal da Troca por "ISSO"
 
 * **Descrição do atalho:** Diante de construções com verbos como *seria importante, percebe-se, convém, é necessário, basta, parece, cumpre, urge*, substitua toda a oração subordinada subsequente pelo pronome **ISSO**. Se a estrutura se reorganizar com perfeição lógica (*"ISSO basta"*, *"ISSO é necessário"*), o sujeito é instantaneamente reconhecido como **Oracional**.
 
 ---
 
-## O Mantra do Sujeito Oracional
+### O Mantra do Sujeito Oracional
 
 * **Descrição do atalho:** Memorize o mantra operacional da disciplina:
  > **"Sujeito oracional é aquele que tem verbo."**
@@ -601,63 +589,59 @@ Esta seção sumariza as formulações canônicas definitivas estabelecidas na m
 
 ---
 
-## O Mantra "Viva Cada Verbo a Seu Momento"
+### O Mantra "Viva Cada Verbo a Seu Momento"
 
 * **Descrição do atalho:** Em frases extensas ou períodos compostos por subordinação/coordenação, numere os verbos e analise uma oração de cada vez. Nunca misture os termos subordinados de um verbo com os termos da oração principal.
 
 ---
 
-## Reconhecimento Rápido da Estrutura "Trata-se de"
+### Reconhecimento Rápido da Estrutura "Trata-se de"
 
 * **Descrição do atalho:** O verbo *tratar* na construção fixa *"tratar-se de"* virá invariavelmente regido pela preposição *de* (VTI). Por conseguinte, a partícula *se* será sempre **Índice de Indeterminação do Sujeito (IIS)**, jamais pronome apassivador.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Falso Núcleo do Sujeito Regido por Preposição
+### Falso Núcleo do Sujeito Regido por Preposição
 
 * **Erro comum:** Selecionar substantivos precedidos por preposição como núcleo do sujeito em frases na ordem indireta (ex.: achar que *torre* é o sujeito em *"naquela torre habita uma bruxa"*).
 * **Fundamento corretivo:** O núcleo do sujeito é puro e não preposicionado. Termos preposicionados exercem papéis de adjunto adverbial, objeto indireto ou complemento nominal.
 
 ---
 
-## Confusão entre Pronome Indefinido e Sujeito Indeterminado
+### Confusão entre Pronome Indefinido e Sujeito Indeterminado
 
 * **Erro comum:** Classificar orações com *Alguém, Ninguém, Tudo, Nada* como sujeito indeterminado sob a alegação de desconhecimento da pessoa real.
 * **Fundamento corretivo:** O sujeito é **Simples** com núcleo explícito. A indefinição é uma propriedade morfológica da classe do pronome, não uma classificação sintática do termo.
 
 ---
 
-## Generalização Apressada do Verbo na 3ª Pessoa do Plural
+### Generalização Apressada do Verbo na 3ª Pessoa do Plural
 
 * **Erro comum:** Assumir cegamente que todo verbo na 3ª pessoa do plural é sujeito indeterminado.
 * **Fundamento corretivo:** Se houver sujeito expresso posposto (*"Andavam bois, vacas e bezerros"* $\rightarrow$ Composto) ou referente anafórico no contexto (*"Eles saíram e voltaram"* $\rightarrow$ Oculto), o sujeito é determinado. A indeterminação só ocorre na ausência total de sujeito e contexto.
 
 ---
 
-## Pluralização Viciosa dos Verbos "Fazer" e "Haver" Impessoais
+### Pluralização Viciosa dos Verbos "Fazer" e "Haver" Impessoais
 
 * **Erro comum:** Flexionar os verbos impessoais no plural pelo contágio com o adjunto temporal ou complemento (*"Fazem duas horas"*, *"Houveram problemas"*).
 * **Fundamento corretivo:** Verbos impessoais não possuem sujeito que determine sua flexão. Devem permanecer compulsoriamente na **3ª pessoa do singular** (*"Faz duas horas"*, *"Houve problemas"*).
 
 ---
 
-## Falsa Exigência de Conjunção Integrante no Sujeito Oracional
+### Falsa Exigência de Conjunção Integrante no Sujeito Oracional
 
 * **Erro comum:** Procurar unicamente a conjunção *que/se* para diagnosticar sujeito oracional, errando itens com orações reduzidas de infinitivo.
 * **Fundamento corretivo:** O sujeito oracional reduzido (*"Estudar para concursos exige foco"*) prescinde de conectivo; o critério determinante é a presença do verbo no bloco do sujeito.
 
 ---
 
-## Atribuição de Sujeito Paciente a Termos Preposicionados
+### Atribuição de Sujeito Paciente a Termos Preposicionados
 
 * **Erro comum:** Tentar classificar o pronome *se* como apassivador em estruturas com verbos transitivos indiretos.
 * **Fundamento corretivo:** O sujeito paciente não pode ser preposicionado. Havendo preposição obrigatória (*trata-se de*, *precisa-se de*), o *se* opera compulsoriamente como Índice de Indeterminação do Sujeito.
-
----
 
 ---
 
@@ -667,35 +651,33 @@ Esta seção sumariza as formulações canônicas definitivas estabelecidas na m
 
 Palavra substantiva (substantivo, pronome substantivo ou numeral substantivo) de valor central em torno da qual a concordância verbal é erigida, caracterizada pela **proibição estrita de vir antecedida de preposição**.
 
-### Sujeito Oculto Desinencial
+#### Sujeito Oculto Desinencial
 
 Classificação do sujeito elíptico cuja determinação é assegurada exclusivamente pelas desinências flexionais de 1ª pessoa do singular (*eu*) ou plural (*nós*) embutidas na forma verbal.
 
-### Referente Textual Anafórico
+#### Referente Textual Anafórico
 
 Substantivo expresso previamente no contexto discursivo que ancora semântica e sintaticamente um sujeito elíptico de 3ª pessoa do singular em oração subsequente.
 
-### Verbo Impessoal
+#### Verbo Impessoal
 
 Verbo que não admite sujeito gramatical por expressar fenômenos climáticos literais, tempo decorrido (*fazer, haver*) ou existência/ocorrência (*haver*), conjugando-se obrigatoriamente na 3ª pessoa do singular.
 
-### Sujeito Oracional (Oração Subjetiva)
+#### Sujeito Oracional (Oração Subjetiva)
 
 Oração subordinada substantiva que desempenha a função sintática de sujeito do verbo da oração principal, caracterizada por conter verbo próprio e exigir verbo principal na 3ª pessoa do singular.
 
-### Índice de Indeterminação do Sujeito (IIS)
+#### Índice de Indeterminação do Sujeito (IIS)
 
 Partícula *SE* associada a verbos intransitivos, transitivos indiretos ou de ligação na 3ª pessoa do singular, cuja função sintática é ocultar deliberadamente o agente da ação verbal.
 
-### Partícula Apassivadora (PA)
+#### Partícula Apassivadora (PA)
 
 Pronome *SE* associado a verbos transitivos diretos ou transitivos diretos e indiretos, responsável por transpor o paciente para a função de sujeito paciente na voz passiva sintética.
 
-### Infinitivo Impessoal
+#### Infinitivo Impessoal
 
 Forma nominal do verbo não flexionada (`-ar`, `-er`, `-ir`) empregada em enunciados genéricos sem vinculação a pessoa gramatical definida, configurando a terceira via de indeterminação do sujeito.
-
----
 
 ---
 
@@ -706,10 +688,10 @@ Ao concluir o estudo deste grupo temático consolidado, o estudante adquire as s
 1. **Domínio Metodológico:** Capacidade de parar diante de qualquer verbo e aplicar o algoritmo de 3 passos, isolando o bloco do sujeito e extraindo seu núcleo substantivo livre de preposições.
 2. **Segurança Taxonômica:** Discernimento imediato entre as 6 classificações canônicas de sujeito (Simples, Oculto, Composto, Indeterminado, Inexistente e Oracional).
 3. **Imunização contra Pegadinhas:**
- * Distinguir morfologia de sintaxe, reconhecendo pronomes indefinidos (*Alguém, Ninguém*) como núcleos de Sujeito Simples.
+  * Distinguir morfologia de sintaxe, reconhecendo pronomes indefinidos (*Alguém, Ninguém*) como núcleos de Sujeito Simples.
 
- * Identificar a transmutação de verbos meteorológicos conotativos para Sujeito Simples (*Choveram elogios*).
- * Diferenciar a impessoalidade estrita de *haver* e *fazer* (invariáveis no singular) da pessoalidade plena de *ocorrer* e *existir*.
+  * Identificar a transmutação de verbos meteorológicos conotativos para Sujeito Simples (*Choveram elogios*).
+  * Diferenciar a impessoalidade estrita de *haver* e *fazer* (invariáveis no singular) da pessoalidade plena de *ocorrer* e *existir*.
 4. **Resolução de Períodos Compostos:** Aplicação do mantra *"Viva cada verbo a seu momento"*, delimitando orações e validando sujeitos oracionais por meio do teste da troca por *ISSO*.
 5. **Diferenciação Funcional e Sociolinguística do SE:** Discernir com exatidão construções de voz passiva sintética (com *se* PA e sujeito paciente determinado) de orações de sujeito indeterminado (com *se* IIS preposicionado), compreendendo a tese recorrente da banca Cebraspe que consagra o pronome *se* como marca de formalidade da norma culta escrita.
 

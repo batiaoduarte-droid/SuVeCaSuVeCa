@@ -46,7 +46,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Noção elementar da distinção entre relatar fatos cronológicos (narração), qualificar cenários/seres (descrição) e discutir ideias (dissertação).
 - Leitura crítica desprovida de juízos de valor pessoais (princípio da alteridade na interpretação textual).
 
-### Mapa de Conhecimento Integrado
+#### Mapa de Conhecimento Integrado
 
 ```text
  MODOS DE ORGANIZAÇÃO DISCURSIVA
@@ -69,23 +69,21 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Macro-Tipologias Textuais Canônicas (Narração, Descrição e Dissertação)
+### Macro-Tipologias Textuais Canônicas (Narração, Descrição e Dissertação)
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A organização textual em língua portuguesa estrutura-se fundamentalmente em três macro-tipologias discursivas: **narração**, **descrição** e **dissertação**.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 1. **Narração:** Modalidade caracterizada por relatar acontecimentos encadeados em uma linha temporal, envolvendo personagens, tempo, espaço e narrador.
 2. **Descrição:** Modalidade voltada a caracterizar, qualificar e retratar seres, objetos, cenários ou estados de coisas em um determinado instante (corte temporal sincrônico).
 3. **Dissertação:** Modalidade que se ocupa do exame, discussão, desenvolvimento, interpretação ou análise crítica de um assunto, tema, conceito ou problema.
 
-### Critérios de Reconhecimento
+#### Critérios de Reconhecimento
 
 - Presença de progressão cronológica e ações de personagens -> **Narração**.
 - Predomínio de adjetivos, qualificadores e ausência de progressão temporal -> **Descrição**.
@@ -96,58 +94,58 @@ A organização textual em língua portuguesa estrutura-se fundamentalmente em t
 
 ---
 
-## Dissertação Expositiva e Informativa: Conceituação e Função
+### Dissertação Expositiva e Informativa: Conceituação e Função
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A **dissertação expositiva** (ou **informativa**) é a modalidade discursiva em que o autor discute um determinado assunto com o objetivo primordial de expor, explicar e transmitir conhecimentos, conceitos, teorias ou fatos objetivos, sem a intenção de convencer o leitor ou defender uma tomada de posição controversa.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 - **Expositiva:** Concentra-se em expor saberes consolidados que o autor domina sobre o tema.
 - **Informativa:** Vertente da exposição na qual o conteúdo é estruturado primordialmente como novidade factual ou explicativa para o público-alvo.
 - **Postura Enunciativa:** O autor atua como mediador de conhecimento (professor, cientista, doutrinador ou relator). O texto busca clareza, neutralidade explicativa e instrução do interlocutor.
 
-### Critérios de Reconhecimento
+#### Critérios de Reconhecimento
 
 - Ausência de juízos de valor determinantes que busquem direcionar uma tomada de decisão ou adesão ideológica do leitor.
 - Conclusão que sintetiza as informações sem convocar o leitor para uma ação ou aceitação de ponto de vista opinativo.
 
-### Exemplos e Contraexemplos
+#### Exemplos e Contraexemplos
 
 - *Exemplo:* Texto histórico que explica a interiorização da capital em Brasília em comparação com cidades fundadas em rotas comerciais .
 - *Exemplo:* Texto acadêmico de Linguística explicando a dimensão argumentativa e o dialogismo da linguagem .
 
 ---
 
-## Dissertação Argumentativa, Tese e Mecanismos de Persuasão
+### Dissertação Argumentativa, Tese e Mecanismos de Persuasão
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A **dissertação argumentativa** é a modalidade discursiva na qual o autor desenvolve um tema assumindo um posicionamento explícito — formulando uma **tese** — e estruturando uma cadeia de justificativas, dados e razões lógicas com o objetivo expresso de **persuadir e convencer o leitor**.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 - **Tese:** Proposição central, opinião ou julgamento crítico assumido pelo enunciador diante de um problema ou debate.
 - **Corpo Argumentativo:** Conjunto de estratégias retóricas, refutações de contra-argumentos, relações de causa/efeito e evidências empíricas mobilizadas para respaldar a tese.
 - **Finalidade Persuasiva:** O texto é estruturado para conduzir o leitor a concordar com o posicionamento do autor. Essa postura é frequentemente sinalizada por modalizadores deônticos (expressões de dever/necessidade como *"devem tomar"*, *"é imperativo"*) e por refutações do senso comum.
 
-### Critérios de Reconhecimento
+#### Critérios de Reconhecimento
 
-### Exemplos e Contraexemplos
+#### Exemplos e Contraexemplos
 
 - *Exemplo:* Texto que prescreve a necessidade categórica de a população tomar a terceira dose da vacina contra a Covid-19 .
 - *Exemplo:* Artigo opinativo de jornal que combate a proposta de extinção do foro privilegiado no Brasil .
 
 ---
 
-## O Princípio Soberano da Intencionalidade Autoral
+### O Princípio Soberano da Intencionalidade Autoral
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 O vetor determinante e absoluto para a classificação de um texto dissertativo em concursos públicos é a **intenção comunicativa do autor** (o seu projeto discursivo de dizer), e jamais a opinião pessoal, crença ou concordância do leitor/candidato.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 Para classificar o texto com rigor, o estudante deve aplicar o princípio da alteridade e formular a pergunta-guia:
 
@@ -160,13 +158,13 @@ A análise deve identificar se os recursos linguísticos (exemplos, dados, cita�
 
 ---
 
-## Função dos Dados Empíricos e Estatísticos na Dissertação
+### Função dos Dados Empíricos e Estatísticos na Dissertação
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A presença de dados estatísticos, porcentagens, relatórios empíricos ou menções a pesquisas científicas **não categoriza automaticamente um texto como expositivo**. O papel dos dados depende integralmente da função que desempenham na macroestrutura discursiva.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 1. **Dados na Dissertação Expositiva:** Constituem o próprio conteúdo informativo e conceitual veiculado para instruir o leitor sobre a realidade de um tema.
 2. **Dados na Dissertação Argumentativa:** Atuam como **argumento de autoridade / comprovação factual**, funcionando como instrumento de sustentação para validar uma tese opinativa e persuadir o leitor.
@@ -178,13 +176,13 @@ A presença de dados estatísticos, porcentagens, relatórios empíricos ou men�
 
 ---
 
-## Modalizadores Discursivos e a Falácia da Opinião Isolada
+### Modalizadores Discursivos e a Falácia da Opinião Isolada
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A presença de **modalizadores discursivos** (adjetivos avaliativos, advérbios ou expressões que assinalam a avaliação do enunciador sobre o que diz) em um texto **não é condição suficiente** para classificá-lo como dissertativo-argumentativo.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 - **Modalizador:** Elemento linguístico que expressa a atitude ou avaliação do falante em relação ao conteúdo veiculado (ex.: *"aprendizado extremamente importante"*).
 - **A Pegadinha das Bancas (Cebraspe):** A banca apresenta um texto acadêmico/teórico contendo uma adjetivação valorativa pontual. O candidato aplica a dedução mecânica incorreta: *"tem adjetivo/modalizador -> tem opinião -> logo é texto argumentativo"*.
@@ -194,21 +192,19 @@ A presença de **modalizadores discursivos** (adjetivos avaliativos, advérbios 
 
 ---
 
-## Exposição Doutrinária, Valores Constitucionais e Fatos Jurídicos vs. Argumentação Subjetiva
+### Exposição Doutrinária, Valores Constitucionais e Fatos Jurídicos vs. Argumentação Subjetiva
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A menção a princípios jurídicos, ideais humanistas e preceitos constitucionais (como *"sociedade justa, livre e fraterna"*, *"transformação social"* e *"missão dos operadores do direito"*) constitui **exposição de conceitos doutrinários e fatos da ordem jurídica**, e não argumentação subjetiva do autor.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 - Em textos de manuais de Direito, pareceres e obras acadêmicas, termos de forte apelo valorativo expressam o conteúdo formal das leis e da teoria jurídica.
 - Ao discorrer sobre os fins da justiça ou a missão do magistrado, o autor atua como teórico que **expõe o conhecimento do Direito posto**. Ele não está formulando uma tese particular para disputar convicções políticas contra um adversário.
 - Classifica-se, portanto, como texto **dissertativo-expositivo**.
 
 - **Evidenciado por:**
-
----
 
 ---
 
@@ -226,19 +222,17 @@ A menção a princípios jurídicos, ideais humanistas e preceitos constituciona
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Procedimento Integrado de Diagnóstico Tipológico Cebraspe ("O Final Matador")
+### Procedimento Integrado de Diagnóstico Tipológico Cebraspe ("O Final Matador")
 
-### Finalidade
+#### Finalidade
 
 Identificar com 100% de segurança se um texto dissertativo proposto em itens de concurso é predominantemente **expositivo** ou **argumentativo**, neutralizando pegadinhas de dados, modalizadores e adjetivos axiológicos.
 
-### Pré-requisitos
+#### Pré-requisitos
 
-### Sequência Operacional de Passos
+#### Sequência Operacional de Passos
 
 ```text
 [Início: Texto Dissertativo em Prova]
@@ -263,11 +257,9 @@ Identificar com 100% de segurança se um texto dissertativo proposto em itens de
  └─ Fecho encerra a exposição de conceitos sem exigir adesão do leitor? -> DISSERTATIVO-EXPOSITIVO.
 ```
 
-### Resultado Esperado
+#### Resultado Esperado
 
 Julgamento correto e fundamentado da assertiva da banca, sem indução a erro por elementos superficiais isolados.
-
----
 
 ---
 
@@ -287,17 +279,15 @@ Julgamento correto e fundamentado da assertiva da banca, sem indução a erro po
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Análise Didática: Exemplo de Dissertação Expositiva (Construção de Brasília)
+### Análise Didática: Exemplo de Dissertação Expositiva (Construção de Brasília)
 
-### Texto Analisado
+#### Texto Analisado
 
 > *"Brasília foi construída no meio do nada, longe de tudo. No entanto, o mais comum na história é a construção de cidades próximas a outros centros urbanos, no trajeto de antigas rotas comerciais."*
 
-### Diagnóstico Pedagógico
+#### Diagnóstico Pedagógico
 
 - **Tema:** Singularidade geográfica e histórica da fundação de Brasília.
 - **Intenção do Autor:** Expor e contrastar informações históricas e urbanísticas que domina sobre o surgimento de capitais.
@@ -306,13 +296,13 @@ Julgamento correto e fundamentado da assertiva da banca, sem indução a erro po
 
 ---
 
-## Análise Didática: Exemplo de Dissertação Argumentativa com Dados (Vacina)
+### Análise Didática: Exemplo de Dissertação Argumentativa com Dados (Vacina)
 
-### Texto Analisado
+#### Texto Analisado
 
 > *"Todos devem tomar a terceira dose da vacina, pois estudos americanos mostram que essa dose suplementar eleva para 90% a eliminação de riscos."*
 
-### Diagnóstico Pedagógico
+#### Diagnóstico Pedagógico
 
 - **Tese:** A necessidade incontornável de a população tomar a dose suplementar (marcada pelo verbo modal deôntico *"devem tomar"*).
 - **Intenção do Autor:** Persuadir o leitor a praticar um ato sanitário conforme a opinião defendida.
@@ -321,18 +311,18 @@ Julgamento correto e fundamentado da assertiva da banca, sem indução a erro po
 
 ---
 
-## Questão de Concurso: CEBRASPE / CAPES 2024 (Analista em C&T)
+### Questão de Concurso: CEBRASPE / CAPES 2024 (Analista em C&T)
 
-### Contexto do Texto-Base
+#### Contexto do Texto-Base
 
 Fragmento extraído da obra acadêmica *Argumentação* de José Luiz Fiorin, abordando a persuasão na sociedade democrática, o dialogismo constitutivo da linguagem e as dimensões discursivas entre enunciador e enunciatário. Contém o segmento: *"esse é um aprendizado extremamente importante"*.
 
-### Item da Prova
+#### Item da Prova
 
 > *"Considerando as ideias e os aspectos linguísticos do texto precedente, julgue o item a seguir.*
 > *O texto se caracteriza como predominantemente dissertativo-expositivo."*
 
-### Resolução e Fundamentação
+#### Resolução e Fundamentação
 
 1. **Intenção Autoral:** O linguista expõe uma teoria científica sobre como os discursos humanos operam.
 2. **Neutralização do Modalizador:** A locução *"extremamente importante"* reflete apenas a avaliação didática do autor sobre o alcance da teoria, sem transformá-la em bandeira política polêmica.
@@ -342,18 +332,18 @@ Fragmento extraído da obra acadêmica *Argumentação* de José Luiz Fiorin, ab
 
 ---
 
-## Questão de Concurso: CEBRASPE / TCE-RS (Oficial de Controle Externo)
+### Questão de Concurso: CEBRASPE / TCE-RS (Oficial de Controle Externo)
 
-### Contexto do Texto-Base
+#### Contexto do Texto-Base
 
 Artigo opinativo publicado na *Folha de S. Paulo* (2018) debatendo o foro privilegiado. Inicia afirmando: *"A impunidade de políticos não decorre de foro privilegiado, mas de justiça ineficiente. Abolir o referido mecanismo produzirá efeitos desfavoráveis."*
 
-### Item da Prova
+#### Item da Prova
 
 > *"Em relação ao texto acima, julgue os itens que se seguem.*
 > *A estrutura organizacional do texto é indicadora do tipo textual dissertativo-argumentativo."*
 
-### Resolução e Fundamentação
+#### Resolução e Fundamentação
 
 1. **Identificação da Tese:** Posicionamento explícito e polêmico contrário à extinção do foro na introdução.
 2. **Corpo Argumentativo:** Desenvolvimento de refutações apontando *"dois equívocos"* no raciocínio do senso comum.
@@ -363,17 +353,17 @@ Artigo opinativo publicado na *Folha de S. Paulo* (2018) debatendo o foro privil
 
 ---
 
-## Questão de Concurso: (ADAPTADA) CEBRASPE / PC-RO 2022 (Escrivão de Polícia)
+### Questão de Concurso: (ADAPTADA) CEBRASPE / PC-RO 2022 (Escrivão de Polícia)
 
-### Contexto do Texto-Base
+#### Contexto do Texto-Base
 
 Texto doutrinário do magistrado e jurista Sergio Cavalieri Filho (*Direito, justiça e sociedade*), definindo o Direito como técnica de pacificação e a Justiça como valor transcendental, citando a busca por uma *"sociedade justa, livre, solidária e fraterna"*.
 
-### Item da Prova
+#### Item da Prova
 
 > *"No que se refere à tipologia, o texto CG2A1-I é predominantemente dissertativo-argumentativo."*
 
-### Resolução e Fundamentação
+#### Resolução e Fundamentação
 
 1. **Intenção Autoral:** Transmissão de lição doutrinária sobre a filosofia do Direito.
 2. **Valores Constitucionais como Fatos:** As referências a ideais nobres de justiça reproduzem os objetivos normativos do Estado de Direito positivados na ordem jurídica, caracterizando fatos conceituais e não militância opinativa individual.
@@ -383,33 +373,29 @@ Texto doutrinário do magistrado e jurista Sergio Cavalieri Filho (*Direito, jus
 
 ---
 
----
-
 ## Memorização inteligente
 
-## A Pergunta-Guia de Ouro da Intenção Autoral
+### A Pergunta-Guia de Ouro da Intenção Autoral
 
 - **Descrição:** Diante de qualquer texto dissertativo em prova, nunca se pergunte *"o que eu acho sobre isso?"*, mas sim: **"O que o autor veio fazer aqui? Ele veio me explicar o que sabe ou veio me convencer da opinião dele?"** Esta pergunta dissipa dúvidas de classificação em segundos.
 
 ---
 
-## O Macete do "Final Matador"
+### O Macete do "Final Matador"
 
 - **Descrição:** Em textos longos ou complexos do Cebraspe em que o meio do texto parece mesclar conceitos e dados, **leia imediatamente o último parágrafo**. O fecho conclusivo em textos argumentativos funciona invariavelmente como arremate persuasivo para cravar a tese. Se o fecho apenas encerrar a explicação conceitual, o texto é **expositivo**.
 
 ---
 
-## A Analogia com a Redação Discursiva para Avaliação de Dados
+### A Analogia com a Redação Discursiva para Avaliação de Dados
 
 - **Descrição:** Lembre-se da sua própria prática ao redigir uma dissertação argumentativa para concurso: quando você introduz um dado do IBGE ou do IPEA, você não está transformando sua redação em expositiva, mas sim **fundamentando sua tese** para convencer a banca examinadora.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Pegadinha da Associação Mecânica entre Dados Estatísticos e Exposição
+### Pegadinha da Associação Mecânica entre Dados Estatísticos e Exposição
 
 - **Problema:** Julgar que qualquer excerto que contenha números, porcentagens, estatísticas ou tabelas é obrigatoriamente expositivo.
 - **Por que ocorre:** Memorização mecânica de regras superficiais (o comportamento do candidato apelidado de *"o outro lá"*).
@@ -417,7 +403,7 @@ Texto doutrinário do magistrado e jurista Sergio Cavalieri Filho (*Direito, jus
 
 ---
 
-## Pegadinha da Associação entre Modalizador Isolado e Texto Argumentativo
+### Pegadinha da Associação entre Modalizador Isolado e Texto Argumentativo
 
 - **Problema:** Classificar um texto teórico como argumentativo apenas por localizar um adjetivo valorativo ou advérbio modalizador (ex.: *"extremamente importante"*, *"notável"*).
 - **Por que ocorre:** Confundir a avaliação didática pontual do expositor sobre a relevância de uma matéria com a defesa de uma tese controversa.
@@ -425,7 +411,7 @@ Texto doutrinário do magistrado e jurista Sergio Cavalieri Filho (*Direito, jus
 
 ---
 
-## Confundir Ideário Constitucional e Doutrina com Argumentação Subjetiva
+### Confundir Ideário Constitucional e Doutrina com Argumentação Subjetiva
 
 - **Problema:** Interpretar vocábulos humanistas (como *"justiça social"*, *"fraternidade"*, *"combate às desigualdades"*) em textos jurídicos como militância ideológica ou tese opinativa do autor.
 - **Por que ocorre:** Impacto emocional das palavras axiológicas sobre o candidato.
@@ -433,12 +419,10 @@ Texto doutrinário do magistrado e jurista Sergio Cavalieri Filho (*Direito, jus
 
 ---
 
-## Confundir a Opinião do Leitor com a Intenção do Autor
+### Confundir a Opinião do Leitor com a Intenção do Autor
 
 - **Problema:** Julgar o gênero textual com base no fato de o candidato concordar ou discordar pessoalmente das afirmações contidas no texto.
 - **Como evitar:** Praticar a alteridade crítica absoluta: investigar unicamente as marcas linguísticas e o projeto discursivo deixado pelo autor no papel.
-
----
 
 ---
 
@@ -448,31 +432,29 @@ Texto doutrinário do magistrado e jurista Sergio Cavalieri Filho (*Direito, jus
 
 Estrutura linguística intrínseca determinada pela finalidade comunicativa e pelos recursos gramaticais predominantes (narração, descrição, dissertação).
 
-### Dissertação Expositiva
+#### Dissertação Expositiva
 
-### Dissertação Informativa
+#### Dissertação Informativa
 
 Vertente da dissertação expositiva na qual o conteúdo transmitido possui status de novidade factual para o interlocutor.
 
-### Dissertação Argumentativa
+#### Dissertação Argumentativa
 
-### Tese
+#### Tese
 
 Posicionamento crítico, juízo de valor ou opinião central que o autor assume sobre matéria controversa e busca validar perante o leitor.
 
-### Modalizador Discursivo
+#### Modalizador Discursivo
 
 Elemento léxico ou gramatical (adjetivo, advérbio, verbo modal) pelo qual o enunciador expressa seu julgamento, avaliação, certeza ou sentimento a respeito do conteúdo enunciado.
 
-### Dado Empírico de Fundamentação
+#### Dado Empírico de Fundamentação
 
 Dado estatístico, percentual ou menção a estudo científico empregado na dissertação argumentativa como argumento de autoridade probatório para respaldar a tese.
 
-### Fato Doutrinário / Legal
+#### Fato Doutrinário / Legal
 
 Conceito ou princípio normativo positivado na ordem jurídica (leis, constituição, doutrina) que, em textos de concurso, é veiculado como matéria explicativa objetiva da ciência do Direito, e não como tese pessoal do autor.
-
----
 
 ---
 
@@ -484,7 +466,7 @@ Ao concluir este grupo temático, o estudante deve ter internalizado as seguinte
 2. **Superação de Vícios Mnemônicos:** Compreender que dados numéricos, estatísticas e pesquisas científicas não tornam o texto expositivo por si sós; em textos argumentativos, os dados atuam como sustentação de tese.
 3. **Imunidade a Distratores de Alto Nível (Cebraspe):**
 
- - Não confundir preceitos constitucionais e humanistas com militância subjetiva do autor, sabendo reconhecê-los como fatos e definições da ciência do Direito.
+  - Não confundir preceitos constitucionais e humanistas com militância subjetiva do autor, sabendo reconhecê-los como fatos e definições da ciência do Direito.
 4. **Execução Operacional Rápida:** Saber aplicar o método do "final matador", combinando a identificação da tese inicial com o exame do parágrafo conclusivo para cravar com precisão o gabarito em qualquer questão de tipologia textual.
 
 ---

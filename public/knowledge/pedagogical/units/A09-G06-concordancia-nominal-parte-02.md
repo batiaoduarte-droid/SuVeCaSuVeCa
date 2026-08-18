@@ -17,9 +17,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 ### Como aplicar neste tema
 
 1. Localizar o verbo ou a locução verbal e verificar se a predicação envolve verbo de ligação, verbo transitivo com predicativo ou locução passiva/tempo composto.
-2. 1. Localizar o termo flexionado sob análise (adjetivo, particípio ou pronome adjetivo).
-3. 2. Formular a pergunta de referenciação ('Quem ou o que é [termo]?') e identificar os substantivos candidatos.
-4. 3. Aplicar o bloqueio preposicional: eliminar segmentos introduzidos por preposição (de, em, com, por) para isolar o núcleo autêntico.
+2. Localizar o termo flexionado sob análise (adjetivo, particípio ou pronome adjetivo).
+3. Formular a pergunta de referenciação ('Quem ou o que é [termo]?') e identificar os substantivos candidatos.
+4. Aplicar o bloqueio preposicional: eliminar segmentos introduzidos por preposição (de, em, com, por) para isolar o núcleo autêntico.
 
 ### Testes decisivos
 
@@ -40,7 +40,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Noções de transitividade verbal, voz passiva analítica (*ser/estar* + particípio) e tempos compostos da voz ativa (*ter/haver* + particípio).
 - Domínio prévio da concordância do **adjunto adnominal** (estudada no Bloco esta unidade / Parte 01): posposto admite Concordância Total ou Atrativa; anteposto admite estritamente Concordância Atrativa.
 
-### Mapa de dependências e contrastes conceituais
+#### Mapa de dependências e contrastes conceituais
 
 ```text
  CONCORDÂNCIA NOMINAL POR FUNÇÃO SINTÁTICA
@@ -94,17 +94,15 @@ C.T. ou C.A. Apenas C.A. Apenas C.T. SEGUE O C.T. ou C.A. C.T. ou C.A.
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Estrutura Metodológica da Concordância Nominal: Parte 1 (Sintática) vs. Parte 2 (Casos Especiais)
+### Estrutura Metodológica da Concordância Nominal: Parte 1 (Sintática) vs. Parte 2 (Casos Especiais)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A concordância nominal é estruturada pedagogicamente pela professora em dois grandes blocos: a **Parte 1**, orientada pela função sintática exercida pelo adjetivo (adjunto adnominal, predicativo do sujeito e predicativo do objeto), e a **Parte 2**, que reúne vocábulos isolados e regras particulares da norma culta (*anexo*, *quite*, *mesmo*, *próprio*, *menos*, *bastante*, *leso*, *só*, *meio*).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A divisão reflete diretamente a tipologia de cobrança das bancas examinadoras:
 
@@ -113,28 +111,28 @@ A divisão reflete diretamente a tipologia de cobrança das bancas examinadoras:
 
 ---
 
-## Concordância do Adjetivo como Predicativo do Sujeito Composto
+### Concordância do Adjetivo como Predicativo do Sujeito Composto
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A flexão do adjetivo na função de predicativo do sujeito composto varia de acordo com a sua **posição sintática** em relação aos núcleos do sujeito:
 
 1. **Posposto ao sujeito composto (Ordem Direta):** Concorda obrigatoriamente com a totalidade dos núcleos no plural (**Concordância Total**).
 2. **Anteposto ao sujeito composto (Ordem Inversa):** O adjetivo **"segue o verbo"** de ligação.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Posição Posposta:** $[Sujeito\ Composto] + [Verbo\ de\ Ligação] + [Predicativo]$.
- - Exige compulsoriamente a soma dos gêneros no plural:
- - Feminino + Feminino $\rightarrow$ Feminino Plural (*A fotografia e a montagem são assinadas*).
- - Masculino + Feminino / Masculino + Masculino $\rightarrow$ Masculino Plural (*A neve e o jardim eram brancos*).
- - A concordância atrativa com o núcleo vizinho é **proibida** nessa configuração direta.
+  - Exige compulsoriamente a soma dos gêneros no plural:
+  - Feminino + Feminino $\rightarrow$ Feminino Plural (*A fotografia e a montagem são assinadas*).
+  - Masculino + Feminino / Masculino + Masculino $\rightarrow$ Masculino Plural (*A neve e o jardim eram brancos*).
+  - A concordância atrativa com o núcleo vizinho é **proibida** nessa configuração direta.
 - **Posição Anteposta:** $[Verbo\ de\ Ligação] + [Predicativo] + [Sujeito\ Composto]$.
- - O predicativo subordina-se à flexão escolhida para o verbo:
- - Se o verbo concordar no **plural** com todos os núcleos $\rightarrow$ O predicativo flexiona no **plural** (Concordância Total): *Eram brancos a neve e o jardim*.
- - Se o verbo concordar no **singular** por atração com o primeiro núcleo $\rightarrow$ O predicativo flexiona em gênero e número estritamente com o **primeiro núcleo** (Concordância Atrativa): *Era branca a neve e o jardim*.
+  - O predicativo subordina-se à flexão escolhida para o verbo:
+  - Se o verbo concordar no **plural** com todos os núcleos $\rightarrow$ O predicativo flexiona no **plural** (Concordância Total): *Eram brancos a neve e o jardim*.
+  - Se o verbo concordar no **singular** por atração com o primeiro núcleo $\rightarrow$ O predicativo flexiona em gênero e número estritamente com o **primeiro núcleo** (Concordância Atrativa): *Era branca a neve e o jardim*.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *A neve (F) e o jardim (M) eram **brancos** (M.Pl.).* (Correto - C.T. posposto)
 - *A neve e o jardim eram **branco**.* (Incorreto - atração proibida na posição posposta)
@@ -144,13 +142,13 @@ A flexão do adjetivo na função de predicativo do sujeito composto varia de ac
 
 ---
 
-## Concordância do Adjetivo como Predicativo do Objeto Composto e Equivalência Semântica
+### Concordância do Adjetivo como Predicativo do Objeto Composto e Equivalência Semântica
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Quando o adjetivo desempenha a função de **predicativo do objeto composto**, a concordância é livremente facultativa entre **Total** (com todos os núcleos no plural) e **Atrativa** (com o núcleo mais próximo), tanto na posição **posposta** quanto na posição **anteposta** ao objeto, mantendo-se rigorosamente a mesma extensão semântica.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 O predicativo do objeto define-se por dois critérios fundamentais:
 
@@ -167,13 +165,13 @@ Regras de flexão:
 
 ---
 
-## Matriz Sinótica das Três Funções Sintáticas do Adjetivo (#ANOTAAÍ)
+### Matriz Sinótica das Três Funções Sintáticas do Adjetivo (#ANOTAAÍ)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O adjetivo na língua portuguesa só pode exercer três funções sintáticas na oração: **Adjunto Adnominal**, **Predicativo do Sujeito** ou **Predicativo do Objeto**. A flexão associada a múltiplos substantivos depende estritamente do cruzamento da função sintática com a posição do adjetivo.
 
-### Quadro Comparativo Canônico
+#### Quadro Comparativo Canônico
 
 | Função Sintática do Adjetivo | Adjetivo Posposto aos Substantivos | Adjetivo Anteposto aos Substantivos |
 |:---------------------------------- |:------------------------------------------------------------------------------ |:------------------------------------------------------------------------------ |
@@ -181,7 +179,7 @@ O adjetivo na língua portuguesa só pode exercer três funções sintáticas na
 | **2. Predicativo do Sujeito** | **Apenas C.T.** (Concordância Total no Plural) | **Segue o Verbo** (C.T. se verbo no plural; C.A. se verbo no singular) |
 | **3. Predicativo do Objeto** | **C.T.** (Concordância Total) ou **C.A.** (Concordância Atrativa) | **C.T.** (Concordância Total) ou **C.A.** (Concordância Atrativa) |
 
-### Regras Operacionais Síntese
+#### Regras Operacionais Síntese
 
 1. **Adjunto Adnominal anteposto** é a única estrutura estritamente restrita à concordância atrativa.
 2. **Predicativo do Sujeito posposto** é a única estrutura estritamente restrita à concordância total.
@@ -189,9 +187,9 @@ O adjetivo na língua portuguesa só pode exercer três funções sintáticas na
 
 ---
 
-## Concordância do Particípio em Locuções Verbais (Tempo Composto vs. Voz Passiva Analítica)
+### Concordância do Particípio em Locuções Verbais (Tempo Composto vs. Voz Passiva Analítica)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A flexão do particípio em locuções verbais subordina-se à estrutura da voz verbal e aos verbos auxiliares empregados:
 
@@ -203,7 +201,7 @@ Tempo Composto Ativo: [Sujeito] + [Auxiliar Ter/Haver flexionado] + [PARTICÍPIO
 Voz Passiva Analítica: [Sujeito Paciente] + [Auxiliar Ser/Estar flexionado] + [PARTICÍPIO CONCORDANDO em Gên/Núm]
 ```
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *A mulher **tinha pintado** a parede.* / *As mulheres **tinham pintado** as paredes.* (Correto - invariável)
 - *A mulher tinha **pintada** a parede.* (Incorreto - tentativa indevida de concordância com o objeto)
@@ -214,29 +212,29 @@ Voz Passiva Analítica: [Sujeito Paciente] + [Auxiliar Ser/Estar flexionado] + [
 
 ---
 
-## Particípios Abundantes / Duplos: Formas Regulares (-do) vs. Irregulares (Incluso, Ganho, Pago)
+### Particípios Abundantes / Duplos: Formas Regulares (-do) vs. Irregulares (Incluso, Ganho, Pago)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Verbos abundantes possuem duas formas legítimas de particípio com empregos sintáticos complementares:
 
 1. **Forma Regular (Terminada em *-do* — ex.: *incluído, ganhado, pagado, gastado*):** Empregada exclusivamente com os verbos auxiliares **TER** e **HAVER** na voz ativa (invariável).
 2. **Forma Irregular / Curta (ex.: *incluso, ganho, pago, gasto*):** Empregada com os verbos auxiliares **SER** e **ESTAR** (na voz passiva analítica), com verbos de movimento/estado (*seguir, ir*) ou em **função adjetiva autônoma** (adjunto adnominal ou predicativo), exigindo concordância nominal plena em gênero e número com o substantivo modificado.
 
-### Esquema Operacional
+#### Esquema Operacional
 
 - Auxiliares **TER / HAVER** $\rightarrow$ Particípio Regular em **-DO** (*O diretor tinha incluído o documento*).
 - Auxiliares **SER / ESTAR / OUTROS / SEM AUXILIAR** $\rightarrow$ Particípio Irregular Curto (*Segue incluso o documento* / *Seguem inclusas as cartas*).
 
 ---
 
-## Metodologia das Setas Sintáticas e Bloqueio Preposicional do Núcleo
+### Metodologia das Setas Sintáticas e Bloqueio Preposicional do Núcleo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A resolução prática de concordância nominal opera pelo rastreamento mecânico do referente ("método das setas") associado ao isolamento rigoroso dos substantivos-núcleo ("farejador de núcleos"), fundamentado no princípio de que **núcleos sintáticos não admitem preposição**.
 
-### Critérios de Aplicação
+#### Critérios de Aplicação
 
 1. **Localizar o qualificador:** Isolar o adjetivo, particípio ou pronome adjetivo.
 2. **Eliminar termos preposicionados subordinados:** Termos iniciados por preposição (*de, com, em, por*) são adjuntos adnominais ou complementos, jamais núcleos.
@@ -245,22 +243,22 @@ A resolução prática de concordância nominal opera pelo rastreamento mecânic
 
 ---
 
-## Unidirecionalidade da Concordância Nominal (Substantivo vs. Adjetivo)
+### Unidirecionalidade da Concordância Nominal (Substantivo vs. Adjetivo)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A concordância nominal é uma relação estritamente **unidirecional**: os adjetivos (e palavras determinantes satélites) adaptam suas terminações para espelhar os traços de gênero e número do substantivo regente. **Substantivos não concordam com outros substantivos nem com adjetivos; adjetivos não concordam com adjetivos.**
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Desconstrução de pegadinhas conceituais de bancas (ex.: Instituto AOCP):** Assertivas que afirmam que *"os substantivos X e Y concordam com o sujeito Z"* ou que *"o substantivo X concorda com o adjetivo Y"* são formalmente nulas e falsas perante a teoria gramatical. Substantivos têm gênero intrínseco e número determinado pelo discurso; são centros reitores.
 - **Proibição de atração entre adjetivos (ex.: Cespe / TCU):** Em *"crescimento populacional e econômico, aliado..."*, o adjetivo *aliado* não pode ir para o plural (*aliados*) sob a alegação de concordar com os adjetivos adjacentes *populacional* e *econômico*.
 
 ---
 
-## Ambiguidade Estrutural em Sintagmas Preposicionados: "Deveria" vs. "Poderia" na FGV
+### Ambiguidade Estrutural em Sintagmas Preposicionados: "Deveria" vs. "Poderia" na FGV
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Em sintagmas nominais complexos do tipo $[Substantivo\ 1] + de + [Substantivo\ 2] + [Adjetivo]$, o adjetivo pode qualificar o primeiro ou o segundo substantivo, configurando construções legítimas com sentidos distintos. Afirmar que o adjetivo **deveria** estar em outra flexão é incorreto, pois o termo **poderia** flexionar-se de outra forma acarretando **mudança de referente e alteração de sentido**.
 
@@ -269,16 +267,16 @@ Em sintagmas nominais complexos do tipo $[Substantivo\ 1] + de + [Substantivo\ 2
 [empresas] de [conteúdo] [independente] --> Seta em "conteúdo" (Singular) = Sentido B (Correto)
 ```
 
-### Critério Decisivo da FGV e Cebraspe
+#### Critério Decisivo da FGV e Cebraspe
 
 - **Deveria:** Implica correção de erro gramatical obrigatório. Se a frase original já é gramaticalmente perfeita, a proposição com *deveria* é **FALSA**.
 - **Poderia:** Denota facultatividade / possibilidade estrutural. Se ambas as concordâncias forem gramaticais, a assertiva com *poderia* é **VERDADEIRA**, desde que ressalve a alteração do sentido original.
 
 ---
 
-## A Tríade de Comandos no CEBRASPE: Correção Gramatical vs. Sentido Original vs. Coerência Textual
+### A Tríade de Comandos no CEBRASPE: Correção Gramatical vs. Sentido Original vs. Coerência Textual
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Nos itens de reescrita e concordância da banca CEBRASPE/CESPE, os comandos operam sob três compartimentos conceituais rigorosamente autônomos:
 
@@ -286,7 +284,7 @@ Nos itens de reescrita e concordância da banca CEBRASPE/CESPE, os comandos oper
 2. **Sentido Original:** Preservação integral das ideias, mensagens, relações semânticas e dados informativos originais do texto.
 3. **Coerência Textual:** Preservação da lógica interna, ausência de contradições e inteligibilidade textual no contexto.
 
-### Axioma Pedagógico (#ANOTAAÍ)
+#### Axioma Pedagógico (#ANOTAAÍ)
 
 > *"Pode mudar o sentido e não gerar erro gramatical ou perda de coerência."*
 
@@ -294,13 +292,13 @@ Se uma reescrita altera o substantivo qualificado pelo adjetivo, gerando uma nov
 
 ---
 
-## O Princípio da Mudança de Referente e a Exceção Canônica dos Coletivos Partitivos
+### O Princípio da Mudança de Referente e a Exceção Canônica dos Coletivos Partitivos
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 - **Regra Geral:** Em concordância nominal e verbal, **Mudança de Referente (Seta Sintática) = Mudança de Sentido**. Alterar o termo determinado altera o significado original da oração.
 - **Exceção Canônica:** Em estruturas formadas por **Coletivo Partitivo** (*a maioria de, grande parte de, metade de*) ou **Quantificadores Numéricos** (*milhões de, bilhões de*) seguidos de especificador no plural:
- - Alternar a concordância entre o núcleo partitivo e o substantivo especificador muda a seta sintática, mas **NÃO altera o sentido original**, pois ambos apontam para o mesmo universo factual.
+  - Alternar a concordância entre o núcleo partitivo e o substantivo especificador muda a seta sintática, mas **NÃO altera o sentido original**, pois ambos apontam para o mesmo universo factual.
 
 ```text
 Regra Geral (Muda sentido):
@@ -311,8 +309,6 @@ Exceção Partitiva (Mantém sentido):
 ```
 
 - **Exceção aplicada em:**  (Cebraspe / DPE-DF).
-
----
 
 ---
 
@@ -332,11 +328,9 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Protocolo de Resolução por Setas Sintáticas e Isolamento de Núcleos
+### Protocolo de Resolução por Setas Sintáticas e Isolamento de Núcleos
 
 **Finalidade:** Mapear a flexão correta de adjetivos, particípios e pronomes em qualquer estrutura oracional complexa.
 
@@ -346,59 +340,57 @@ Exceção Partitiva (Mantém sentido):
 4. **Isolar os núcleos substantivos sem preposição:** Identificar o substantivo central ("farejador de núcleos").
 5. **Classificar gênero e número dos núcleos:** Anotar $M$ (masculino) ou $F$ (feminino) e se está no singular ou plural.
 6. **Identificar a função sintática e a posição relativa:**
- - *Adjunto Adnominal Posposto:* Aplicar C.T. ($M.Pl.$) ou C.A. (mais próximo).
- - *Adjunto Adnominal Anteposto:* Aplicar estritamente C.A. com o primeiro núcleo.
- - *Predicativo do Sujeito Posposto:* Aplicar estritamente C.T. ($M.Pl.$ ou $F.Pl.$).
- - *Predicativo do Sujeito Anteposto:* Seguir a flexão do verbo de ligação.
- - *Predicativo do Objeto:* Aplicar C.T. ou C.A. indiferentemente.
- - *Particípio Passivo:* Concordar integralmente com o sujeito paciente.
+  - *Adjunto Adnominal Posposto:* Aplicar C.T. ($M.Pl.$) ou C.A. (mais próximo).
+  - *Adjunto Adnominal Anteposto:* Aplicar estritamente C.A. com o primeiro núcleo.
+  - *Predicativo do Sujeito Posposto:* Aplicar estritamente C.T. ($M.Pl.$ ou $F.Pl.$).
+  - *Predicativo do Sujeito Anteposto:* Seguir a flexão do verbo de ligação.
+  - *Predicativo do Objeto:* Aplicar C.T. ou C.A. indiferentemente.
+  - *Particípio Passivo:* Concordar integralmente com o sujeito paciente.
 
 ---
 
-## Teste de Retirada para Identificação do Predicativo do Objeto
+### Teste de Retirada para Identificação do Predicativo do Objeto
 
 **Finalidade:** Diferenciar com segurança um Predicativo do Objeto de um Adjunto Adnominal em itens de prova.
 
 1. **Localizar o adjetivo adjacente ao objeto:** Ex.: *Encontrei a janela e o portão abertos.*
 2. **Suprimir o adjetivo da oração:** Ex.: *Encontrei a janela e o portão.*
 3. **Avaliar a alteração semântica do verbo transitivo:**
- - Se a oração mantiver o mesmo significado da ação $\rightarrow$ O adjetivo era mero **Adjunto Adnominal** (dispensável).
- - Se a oração desfigurar o sentido contextual (o verbo *encontrar* deixar de expressar constatação de estado e passar a significar localização física de algo perdido) $\rightarrow$ O adjetivo é **Predicativo do Objeto** (termo integrante indispensável).
+  - Se a oração mantiver o mesmo significado da ação $\rightarrow$ O adjetivo era mero **Adjunto Adnominal** (dispensável).
+  - Se a oração desfigurar o sentido contextual (o verbo *encontrar* deixar de expressar constatação de estado e passar a significar localização física de algo perdido) $\rightarrow$ O adjetivo é **Predicativo do Objeto** (termo integrante indispensável).
 
 ---
 
-## Protocolo de Julgamento de Itens "Deveria" vs. "Poderia" (Padrão FGV / Cebraspe)
+### Protocolo de Julgamento de Itens "Deveria" vs. "Poderia" (Padrão FGV / Cebraspe)
 
 **Finalidade:** Analisar assertivas que propõem alteração de flexão de modificadores em sintagmas preposicionados complexos.
 
 1. **Avaliar a oração original:** Identificar com qual substantivo o adjetivo concorda e verificar se a redação original é gramaticalmente correta.
 2. **Avaliar a nova concordância proposta:** Ligar o adjetivo ao outro substantivo do sintagma preposicionado e testar se a nova frase é gramatical e logicamente coerente.
 3. **Inspecionar o verbo modal do comando da banca:**
- - **Se o comando diz "DEVERIA estar no singular/plural":** Marcar **ERRADO / INCORRETO**, pois imputa erro inexistente à frase original.
- - **Se o comando diz "PODERIA estar no singular/plural":** Marcar **CERTO / CORRETO**, desde que a assertiva reconheça a mudança de referente e a alteração do sentido original.
+  - **Se o comando diz "DEVERIA estar no singular/plural":** Marcar **ERRADO / INCORRETO**, pois imputa erro inexistente à frase original.
+  - **Se o comando diz "PODERIA estar no singular/plural":** Marcar **CERTO / CORRETO**, desde que a assertiva reconheça a mudança de referente e a alteração do sentido original.
 
 ---
 
-## Teste do "Ler o que vem Depois" no Modelo CEBRASPE
+### Teste do "Ler o que vem Depois" no Modelo CEBRASPE
 
 **Finalidade:** Desmascarar falsas propostas de mudança de referente em itens do Cebraspe.
 
 1. **Mapear a nova seta sugerida pela banca:** Ligar o adjetivo flexionado no singular/plural ao substantivo candidato.
 2. **Ler obrigatoriamente o segmento textual subsequente ao adjetivo:** Nunca julgar o item olhando apenas para o par substantivo-adjetivo isolado.
 3. **Verificar a plausibilidade semântica no mundo real:**
- - Em *a transmissão dos saberes formulados ao longo da história*, testar *transmissão formulada ao longo da história*: o complemento *ao longo da história* denuncia que quem é construído historicamente são os *saberes*, e não o ato de transmissão $\rightarrow$ Item **ERRADO**.
+  - Em *a transmissão dos saberes formulados ao longo da história*, testar *transmissão formulada ao longo da história*: o complemento *ao longo da história* denuncia que quem é construído historicamente são os *saberes*, e não o ato de transmissão $\rightarrow$ Item **ERRADO**.
 
 ---
 
-## Estratégia de Resolução de Lacunas "De Trás para Frente" (Padrão VUNESP)
+### Estratégia de Resolução de Lacunas "De Trás para Frente" (Padrão VUNESP)
 
 **Finalidade:** Otimizar tempo e evitar armadilhas de dupla concordância em questões da Vunesp com três ou mais lacunas.
 
 1. Identificar que a **1ª lacuna** geralmente explora casos de dupla concordância permissiva (ex.: adjunto adnominal posposto que admite total ou atrativa).
 2. **Inverter a ordem:** Analisar primeiro a **3ª lacuna** e a **2ª lacuna**, que contêm regras rígidas unívocas (sujeito simples ou predicativos fixos).
 3. Eliminar as alternativas descartadas pelas lacunas finais unívocas, tornando a escolha da 1ª lacuna direta e imediata.
-
----
 
 ---
 
@@ -412,7 +404,7 @@ Exceção Partitiva (Mantém sentido):
 | **Predicativo do Sujeito** | Mediada por Verbo de Ligação/Estado; termo integrante | **Apenas C.T.** | **Segue o Verbo** (C.T. se V.Pl.; C.A. se V.Sg.) | Na C.A. anteposta, mantém qualificação de todos os núcleos pelo contexto. |
 | **Predicativo do Objeto** | Mediada por Verbo Transitivo; termo integrante indispensável | **C.T. ou C.A.** | **C.T. ou C.A.** | Identidade semântica total entre C.T. e C.A. (ambos permanecem qualificados). |
 
-### Distinção entre Tempos Compostos e Voz Passiva Analítica
+#### Distinção entre Tempos Compostos e Voz Passiva Analítica
 
 | Critério | Tempos Compostos (Voz Ativa) | Voz Passiva Analítica |
 |:------------------------------------------- |:------------------------------------------------------- |:------------------------------------------------------------------------- |
@@ -422,7 +414,7 @@ Exceção Partitiva (Mantém sentido):
 | **Regra de Flexão** | **Absolutamente Invariável** (termina em *-o*) | **Variável** (concorda em gênero e número com o sujeito paciente) |
 | **Exemplo Típico** | *A diretoria tinha **incluído** as cláusulas.* | *As cláusulas foram **incluídas** pela diretoria.* |
 
-### Distinção de Comandos em Questões de Reescrita (Banca CEBRASPE)
+#### Distinção de Comandos em Questões de Reescrita (Banca CEBRASPE)
 
 | Comando da Banca | Requisito Avaliado | Permite Mudança de Seta? | Exceção do Partitivo? |
 |:------------------------------------------ |:-------------------------------------------------- |:------------------------------------------------------: |:---------------------------------------------: |
@@ -432,11 +424,9 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Frase 12: Predicativo do Sujeito Posposto (Teoria)
+### Frase 12: Predicativo do Sujeito Posposto (Teoria)
 
 - **Estrutura analisada:** *A neve (F) e o jardim (M) eram ______________. (branco)*
 - **Análise sintática:** Sujeito composto anteposto ($F + M$) + Verbo de ligação *eram* + Predicativo posposto.
@@ -445,7 +435,7 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Frase 13: Predicativo do Sujeito Anteposto com Verbo no Plural (Teoria)
+### Frase 13: Predicativo do Sujeito Anteposto com Verbo no Plural (Teoria)
 
 - **Estrutura analisada:** *Eram ______________ a neve e o jardim. (branco)*
 - **Análise sintática:** Verbo de ligação no plural (*Eram*) + Predicativo anteposto + Sujeito composto ($F + M$).
@@ -454,7 +444,7 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Frase 14: Predicativo do Sujeito Anteposto com Verbo no Singular (Teoria)
+### Frase 14: Predicativo do Sujeito Anteposto com Verbo no Singular (Teoria)
 
 - **Estrutura analisada:** *Era ______________ a neve e o jardim. (branco)*
 - **Análise sintática:** Verbo de ligação no singular (*Era*) + Predicativo anteposto + Sujeito composto ($F + M$).
@@ -463,7 +453,7 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Frase 15: Predicativo do Objeto Posposto (Teoria)
+### Frase 15: Predicativo do Objeto Posposto (Teoria)
 
 - **Estrutura analisada:** *Encontrei a janela (F) e o portão (M) ______________ / ______________. (aberto)*
 - **Análise sintática:** Verbo transitivo direto (*Encontrei*) + Objeto direto composto + Predicativo do objeto posposto.
@@ -472,7 +462,7 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Frase 16: Predicativo do Objeto Anteposto (Teoria)
+### Frase 16: Predicativo do Objeto Anteposto (Teoria)
 
 - **Estrutura analisada:** *Encontrei (aberto) ______________ / ______________ a janela (F) e o portão (M).*
 - **Análise sintática:** Verbo transitivo direto + Predicativo do objeto anteposto + Objeto direto composto.
@@ -481,7 +471,7 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Demonstração da Flexão de Particípios em Locuções (Teoria)
+### Demonstração da Flexão de Particípios em Locuções (Teoria)
 
 - **Par contrastivo analisado:**
  1. *As paredes deviam ser **pintadas**.* (Voz passiva analítica: particípio concorda com o sujeito paciente feminino plural *paredes*).
@@ -489,7 +479,7 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Questão 06: VUNESP - Pref. Guarulhos (2019)
+### Questão 06: VUNESP - Pref. Guarulhos (2019)
 
 - **Enunciado:** Reescrita na voz passiva da frase *"O cineasta assina a fotografia e a montagem do filme."*
 - **Análise:** Sujeito composto paciente posposto: *a fotografia* (F.Sg.) e *a montagem* (F.Sg.). Predicativo/particípio posposto exige Concordância Total no feminino plural: *são assinadas*.
@@ -497,74 +487,74 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Questão 07: CESGRANRIO - Liquigás (2018)
+### Questão 07: CESGRANRIO - Liquigás (2018)
 
 - **Análise das alternativas:**
- - A) Incorreta (*Alimentos [M] e prática [F]... são necessárias* $\rightarrow$ Exige *necessários*).
- - B) Incorreta/Descartada (*Inexistência [F] e falta [F]... são causadores* $\rightarrow$ Desarmonia de gênero em predicativo substantivado biforme; exige *causadoras*).
- - C) Incorreta (*Notícias [F] e boatos [M]... reproduzidas* $\rightarrow$ Exige *reproduzidos*).
- - D) Correta (*Plantas [F] e frutos [M] foram elogiados* $\rightarrow$ Voz passiva perfeita no masculino plural).
- - E) Incorreta (*Profissionais [M] e pesquisas [F]... estimuladas* $\rightarrow$ Exige *estimulados*).
+  - A) Incorreta (*Alimentos [M] e prática [F]... são necessárias* $\rightarrow$ Exige *necessários*).
+  - B) Incorreta/Descartada (*Inexistência [F] e falta [F]... são causadores* $\rightarrow$ Desarmonia de gênero em predicativo substantivado biforme; exige *causadoras*).
+  - C) Incorreta (*Notícias [F] e boatos [M]... reproduzidas* $\rightarrow$ Exige *reproduzidos*).
+  - D) Correta (*Plantas [F] e frutos [M] foram elogiados* $\rightarrow$ Voz passiva perfeita no masculino plural).
+  - E) Incorreta (*Profissionais [M] e pesquisas [F]... estimuladas* $\rightarrow$ Exige *estimulados*).
 - **Gabarito Oficial:** Alternativa **D**.
 
 ---
 
-## Questão 08: CESGRANRIO - Banco do Brasil (2021)
+### Questão 08: CESGRANRIO - Banco do Brasil (2021)
 
 - **Análise das alternativas:**
- - A) Correta (*A capacitação dos técnicos [F] e o atendimento aos trabalhadores [M]... precisam ser desenvolvidos* $\rightarrow$ Sujeito composto misto na voz passiva exige masculino plural).
- - B a E) Incorretas (Tentativas de concordância no feminino plural com sujeitos compostos que continham núcleos masculinos).
+  - A) Correta (*A capacitação dos técnicos [F] e o atendimento aos trabalhadores [M]... precisam ser desenvolvidos* $\rightarrow$ Sujeito composto misto na voz passiva exige masculino plural).
+  - B a E) Incorretas (Tentativas de concordância no feminino plural com sujeitos compostos que continham núcleos masculinos).
 - **Gabarito Oficial:** Alternativa **A**.
 
 ---
 
-## Questão 09: VUNESP - TJ-SP Escrevente (2021)
+### Questão 09: VUNESP - TJ-SP Escrevente (2021)
 
 - **Resolução por lacunas:**
- - 1ª Lacuna: *...a meta (F) e até o limite (M) de tolerância [...] pelo Conselho...* $\rightarrow$ Adjunto posposto admite *fixados* (total) ou *fixado* (atrativa).
- - 2ª Lacuna: *...a alta (F.Sg.) de preços [...] no mercado...* $\rightarrow$ Núcleo *alta* exige estritamente *estimada*.
- - 3ª Lacuna: *...Se as previsões (F.Pl.) estiverem [...]...* $\rightarrow$ Predicativo referente a *previsões* exige estritamente *certas*.
+  - 1ª Lacuna: *...a meta (F) e até o limite (M) de tolerância [...] pelo Conselho...* $\rightarrow$ Adjunto posposto admite *fixados* (total) ou *fixado* (atrativa).
+  - 2ª Lacuna: *...a alta (F.Sg.) de preços [...] no mercado...* $\rightarrow$ Núcleo *alta* exige estritamente *estimada*.
+  - 3ª Lacuna: *...Se as previsões (F.Pl.) estiverem [...]...* $\rightarrow$ Predicativo referente a *previsões* exige estritamente *certas*.
 - **Gabarito Oficial:** Alternativa **C** (*fixados... estimada... certas*).
 
 ---
 
-## Questão 10: VUNESP - Pref. Taubaté (2022)
+### Questão 10: VUNESP - Pref. Taubaté (2022)
 
 - **Análise das alternativas:**
- - A) Incorreta (*A retirada do lixo das casas e praias eram feitas...* $\rightarrow$ Núcleo é o singular *retirada*; correto: *era feita*).
- - B) Incorreta (*Animais de carga era usados...* $\rightarrow$ Correto: *eram usados*).
- - C) Incorreta (*Casas e praias produzia...* $\rightarrow$ Correto: *produziam*).
- - D) Incorreta (*Era ruins os serviços...* $\rightarrow$ Correto: *Eram ruins*).
- - E) Correta (*As 560 toneladas de lixo eram retiradas por animais de carga.* $\rightarrow$ Núcleo *toneladas* governa *eram retiradas*).
+  - A) Incorreta (*A retirada do lixo das casas e praias eram feitas...* $\rightarrow$ Núcleo é o singular *retirada*; correto: *era feita*).
+  - B) Incorreta (*Animais de carga era usados...* $\rightarrow$ Correto: *eram usados*).
+  - C) Incorreta (*Casas e praias produzia...* $\rightarrow$ Correto: *produziam*).
+  - D) Incorreta (*Era ruins os serviços...* $\rightarrow$ Correto: *Eram ruins*).
+  - E) Correta (*As 560 toneladas de lixo eram retiradas por animais de carga.* $\rightarrow$ Núcleo *toneladas* governa *eram retiradas*).
 - **Gabarito Oficial:** Alternativa **E**.
 
 ---
 
-## Questão 11: VUNESP - Pref. Guarulhos (2021)
+### Questão 11: VUNESP - Pref. Guarulhos (2021)
 
 - **Análise das alternativas:**
- - A) Incorreta (*crianças serem diferente...* $\rightarrow$ Exige *diferentes*).
- - B) Incorreta (*muita dúvida e problemas sérias* $\rightarrow$ Adjunto posposto a $F+M$ exige masculino plural *sérios*).
- - C) Correta (*Segue incluso naquela carta mais um documento a ser apreciado.* $\rightarrow$ Particípio irregular *incluso* concorda com *documento*).
- - D) Incorreta (*doenças tanto física quanto mental* $\rightarrow$ Exige *físicas quanto mentais*).
- - E) Incorreta (*comentários eram o mais corretos* $\rightarrow$ Exige *os mais corretos*).
+  - A) Incorreta (*crianças serem diferente...* $\rightarrow$ Exige *diferentes*).
+  - B) Incorreta (*muita dúvida e problemas sérias* $\rightarrow$ Adjunto posposto a $F+M$ exige masculino plural *sérios*).
+  - C) Correta (*Segue incluso naquela carta mais um documento a ser apreciado.* $\rightarrow$ Particípio irregular *incluso* concorda com *documento*).
+  - D) Incorreta (*doenças tanto física quanto mental* $\rightarrow$ Exige *físicas quanto mentais*).
+  - E) Incorreta (*comentários eram o mais corretos* $\rightarrow$ Exige *os mais corretos*).
 - **Gabarito Oficial:** Alternativa **C**.
 
 ---
 
-## Questão 12: FCC - SABESP
+### Questão 12: FCC - SABESP
 
 - **Análise das alternativas:**
- - A) Incorreta (*Saudosos do tempo de menino, o pai...* $\rightarrow$ Quem sente saudade é *o pai*; exige *Saudoso*).
- - B) Incorreta (*A atenção... estava voltado* $\rightarrow$ Exige *voltada*).
- - C) Incorreta (*As bolas de couro são caro* $\rightarrow$ Exige *caras*).
- - D) Correta (*O pai viu frustrada sua tentativa de jogar bola com o filho.* $\rightarrow$ *Frustrada* concorda com *sua tentativa*).
- - E) Incorreta (*as bolas... são diferente* $\rightarrow$ Exige *diferentes*).
+  - A) Incorreta (*Saudosos do tempo de menino, o pai...* $\rightarrow$ Quem sente saudade é *o pai*; exige *Saudoso*).
+  - B) Incorreta (*A atenção... estava voltado* $\rightarrow$ Exige *voltada*).
+  - C) Incorreta (*As bolas de couro são caro* $\rightarrow$ Exige *caras*).
+  - D) Correta (*O pai viu frustrada sua tentativa de jogar bola com o filho.* $\rightarrow$ *Frustrada* concorda com *sua tentativa*).
+  - E) Incorreta (*as bolas... são diferente* $\rightarrow$ Exige *diferentes*).
 - **Gabarito Oficial:** Alternativa **D**.
 
 ---
 
-## Questão 13: Instituto AOCP - Pref. João Pessoa (2021)
+### Questão 13: Instituto AOCP - Pref. João Pessoa (2021)
 
 - **Trecho:** *"...além de tornarem os ambientes mais bonitos e os pratos mais aromáticos, as plantas possuem características químicas que podem fazer com que sejam tóxicas..."*
 - **Análise:** Eliminação imediata das assertivas A, D e E por afirmarem falsamente que substantivos concordam com substantivos/adjetivos. Validação da assertiva C: os adjetivos *bonitos* e *aromáticos* concordam em gênero e número com os substantivos a que se referem (*ambientes* e *pratos*).
@@ -572,7 +562,7 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Questão 14: FGV - IBGE
+### Questão 14: FGV - IBGE
 
 - **Frase 3:** *Mas o pontapé inicial é sempre das empresas de conteúdo independentes.*
 - **Análise:** O adjetivo *independentes* está no plural por concordar com *empresas* (correto - Alternativa D). A assertiva E alegava que o termo **deveria** estar no singular por referir-se a *conteúdo*; a concordância no singular seria uma possibilidade (*poderia*), mas alteraria o referente e o sentido original.
@@ -580,7 +570,7 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Questão 15: CESPE - ANS
+### Questão 15: CESPE - ANS
 
 - **Texto:** *"...reunindo várias queixas, organizadas e agrupadas por temas e por operadora."*
 - **Item:** Os vocábulos "organizadas" e "agrupadas" estão no feminino plural porque concordam com "queixas".
@@ -589,7 +579,7 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Questão 16: CESPE - SEDUC-AL (2021)
+### Questão 16: CESPE - SEDUC-AL (2021)
 
 - **Texto:** *"...a ciência e a arte são também produtos da riqueza e da estabilidade..."*
 - **Item:** O vocábulo "produtos" está flexionado no plural porque concorda com o sujeito composto "a ciência e a arte".
@@ -598,7 +588,7 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Questão 17: CESPE - FUB
+### Questão 17: CESPE - FUB
 
 - **Texto:** *"...respeitadas a ética e a valorização de identidades e culturas com responsabilidade social."*
 - **Item:** O adjetivo "respeitadas" encontra-se no plural porque concorda com "ética", "valorização", "identidades" e "culturas".
@@ -607,7 +597,7 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Questão 18: CEBRASPE - Pref. Barra dos Coqueiros (2020)
+### Questão 18: CEBRASPE - Pref. Barra dos Coqueiros (2020)
 
 - **Texto:** *"Assim como podemos treinar os bíceps na academia, e ficar mais fortes..."*
 - **Item:** O termo "fortes" está flexionado no plural porque concorda com a palavra "bíceps".
@@ -616,7 +606,7 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Questão 19: CESPE - DPU
+### Questão 19: CESPE - DPU
 
 - **Texto:** *"...inúmeras formas de relação jurídica então existentes..."*
 - **Item:** Sem prejuízo para a correção gramatical e para o sentido original, "existentes" poderia ser flexionado no singular, concordando com "relação jurídica".
@@ -625,7 +615,7 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Questão 20: CESPE - TCU
+### Questão 20: CESPE - TCU
 
 - **Texto:** *"O crescimento populacional e econômico, aliado à evolução dos mercados..."*
 - **Item:** O emprego de "aliado" no plural não prejudicaria a correção gramatical, concordando com "populacional e econômico".
@@ -634,7 +624,7 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Questão 21: CESPE - UNIPAMPA
+### Questão 21: CESPE - UNIPAMPA
 
 - **Texto:** *"...a transmissão dos saberes formulados ao longo da história..."*
 - **Item:** Caso "formulados" estivesse no feminino singular ("formulada"), para concordar com "transmissão", não haveria prejuízo da correção nem dos sentidos originais.
@@ -643,7 +633,7 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Questão 22: CESPE - STF
+### Questão 22: CESPE - STF
 
 - **Texto:** *"...navegação pelo ciberespaço, desprovida de fricção."*
 - **Item:** Seriam mantidas as relações sintáticas e semânticas caso "desprovida" fosse substituído por "desprovido", passando a concordar com "ciberespaço".
@@ -652,7 +642,7 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Questão 23: CESPE - TCU
+### Questão 23: CESPE - TCU
 
 - **Texto:** *"O costume aparece como expressão da legalidade... instrumentalizada pela repetição de atos..."*
 - **Item:** Seriam mantidos o sentido e a correção do texto caso "instrumentalizada" fosse empregado no masculino: "instrumentalizado".
@@ -661,7 +651,7 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Questão 24: CESPE - Petrobras (2022)
+### Questão 24: CESPE - Petrobras (2022)
 
 - **Texto:** *"...usava ferramentas de pedra primitivas..."*
 - **Item:** A correção gramatical seria mantida caso "primitivas" fosse flexionado no singular ("primitiva"), embora o sentido original e as relações sintáticas fossem alterados: no original qualifica "ferramentas"; no singular qualificaria "pedra".
@@ -670,7 +660,7 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Questão 25: CEBRASPE - ICMBio (2022)
+### Questão 25: CEBRASPE - ICMBio (2022)
 
 - **Texto:** *"As castanholas... são uma espécie extremamente abundante... mas demonizadas em outras regiões..."*
 - **Item:** Sem prejuízo da correção gramatical e da coerência do texto, a palavra "demonizadas" poderia ser substituída por "demonizada", concordando com "uma espécie".
@@ -679,7 +669,7 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Questão 26: CEBRASPE - DPE-DF (2022)
+### Questão 26: CEBRASPE - DPE-DF (2022)
 
 - **Texto:** *"Vivem 4,5 bilhões de pessoas... desprovidas das condições mínimas de higiene."*
 - **Item:** Caso "desprovidas" fosse empregada no masculino — "desprovidos" —, em concordância com "4,5 bilhões", a correção gramatical e o sentido do texto seriam mantidos.
@@ -688,7 +678,7 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
-## Questão 27: CESPE - SEGESP-AL
+### Questão 27: CESPE - SEGESP-AL
 
 - **Texto:** *"...Galton inventou o primeiro sistema moderno de impressão digital. Adotado pelos departamentos de polícia... a impressão digital era a forma mais confiável..."*
 - **Item:** "Adotado" concorda com "sistema". Caso fosse flexionado no feminino ("Adotada"), concordando com "impressão", a correção e a coerência seriam mantidas.
@@ -697,92 +687,86 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Mnemônico "Segue o Verbo" no Predicativo Anteposto
+### O Mnemônico "Segue o Verbo" no Predicativo Anteposto
 
 - **Comando:** Não tente memorizar tabelas longas para o predicativo do sujeito anteposto:
- - Verbo no **plural** $\rightarrow$ Predicativo no **plural** (*Eram brancos a neve e o jardim*).
- - Verbo no **singular** $\rightarrow$ Predicativo no **singular** atrativo (*Era branca a neve e o jardim*).
+  - Verbo no **plural** $\rightarrow$ Predicativo no **plural** (*Eram brancos a neve e o jardim*).
+  - Verbo no **singular** $\rightarrow$ Predicativo no **singular** atrativo (*Era branca a neve e o jardim*).
 
 ---
 
-## O Método do "Farejador de Núcleos"
+### O Método do "Farejador de Núcleos"
 
 - **Comando:** Risque visualmente qualquer termo precedido de preposição (*de, com, por, em*). Apenas os substantivos "limpos" sem preposição podem governar a concordância.
 
 ---
 
-## Mnemônico de Particípios Duplos: TER/HAVER = -DO
+### Mnemônico de Particípios Duplos: TER/HAVER = -DO
 
 - **Comando:**
- - **T**ER / **H**AVER $\rightarrow$ Exigem terminação **-DO** (*tinha incluído, havia pago*).
- - **S**ER / **E**STAR / Sem Auxiliar $\rightarrow$ Exigem forma **curta/irregular** com flexão (*foi incluso, segue anexa*).
+  - **T**ER / **H**AVER $\rightarrow$ Exigem terminação **-DO** (*tinha incluído, havia pago*).
+  - **S**ER / **E**STAR / Sem Auxiliar $\rightarrow$ Exigem forma **curta/irregular** com flexão (*foi incluso, segue anexa*).
 
 ---
 
-## Filtro Semântico FGV/Cebraspe: Deveria vs. Poderia
+### Filtro Semântico FGV/Cebraspe: Deveria vs. Poderia
 
 - **Comando:**
- - *Deveria* = Pressupõe erro gramatical obrigatório na frase de origem.
- - *Poderia* = Dupla possibilidade estrutural que acarreta mudança de referente e sentido.
+  - *Deveria* = Pressupõe erro gramatical obrigatório na frase de origem.
+  - *Poderia* = Dupla possibilidade estrutural que acarreta mudança de referente e sentido.
 
 ---
 
-## Teste de Rastreamento de Referente em Adjetivos de Sentimento
+### Teste de Rastreamento de Referente em Adjetivos de Sentimento
 
 - **Comando:** Adjetivos que denotam emoções ou estados psicológicos (*saudoso, alegre, triste*) só podem referir-se a seres animados. Em *Saudoso do tempo de menino, o pai...*, quem sente saudade é *o pai*, sendo *do tempo* mero complemento nominal inanimado.
 
 ---
 
-## Mapeamento Rápido dos Três Compartimentos do CEBRASPE
+### Mapeamento Rápido dos Três Compartimentos do CEBRASPE
 
 - **Comando:** Sublinhe no comando do item as palavras-chave:
- - Contém *"mantém o sentido"*? $\rightarrow$ Se mudou a seta sintática e não for partitivo, marque **ERRADO**.
- - Contém apenas *"mantém a correção e a coerência"*? $\rightarrow$ A mudança de seta é permitida se a frase for lógica e gramaticalmente válida (**CERTO**).
-
----
+  - Contém *"mantém o sentido"*? $\rightarrow$ Se mudou a seta sintática e não for partitivo, marque **ERRADO**.
+  - Contém apenas *"mantém a correção e a coerência"*? $\rightarrow$ A mudança de seta é permitida se a frase for lógica e gramaticalmente válida (**CERTO**).
 
 ---
 
 ## Erros comuns e pegadinhas
 
-## O Gênero Masculino NÃO Prevalece na Concordância Atrativa
+### O Gênero Masculino NÃO Prevalece na Concordância Atrativa
 
 - **Erro comum:** Supor que, havendo um substantivo masculino na frase, o adjetivo em concordância atrativa deva ficar obrigatoriamente no masculino.
 - **Correção:** O masculino só prevalece na **Concordância Total**. Na **Concordância Atrativa**, o adjetivo assume estritamente o gênero do substantivo mais próximo (*Era branca a neve e o jardim* / *Encontrei aberta a janela e o portão*).
 
 ---
 
-## Falsa Alegação de Mudança de Sentido no Predicativo do Objeto
+### Falsa Alegação de Mudança de Sentido no Predicativo do Objeto
 
 - **Armadilha:** Bancas que afirmam que trocar *encontrei abertos a janela e o portão* por *encontrei aberta a janela e o portão* restringiria o estado de abertura apenas à janela.
 - **Fato normativo:** A concordância atrativa no predicativo do objeto é puramente formal; ambos os elementos continuam qualificados no plano semântico.
 
 ---
 
-## Tentativa Indevida de Flexão do Particípio em Tempos Compostos
+### Tentativa Indevida de Flexão do Particípio em Tempos Compostos
 
 - **Erro comum:** Flexionar o particípio com o objeto direto em tempos compostos (*A mulher tinha pintada a parede* / *Eles tinham pintadas as paredes*).
 - **Correção:** Em tempos compostos com *ter/haver*, o particípio é absolutamente invariável (*tinha pintado* / *tinham pintado*).
 
 ---
 
-## A Conjunção "E" Dentro de Termos Preposicionados
+### A Conjunção "E" Dentro de Termos Preposicionados
 
 - **Armadilha:** Achar que toda ocorrência do conectivo "e" gera sujeito composto.
 - **Correção:** Em *A retirada do lixo [das casas e praias] era feita*, o "e" une palavras dentro do adjunto preposicionado; o sujeito continua simples (*A retirada* $\rightarrow$ singular).
 
 ---
 
-## Confundir Sentido Original com Coerência Textual (Cebraspe)
+### Confundir Sentido Original com Coerência Textual (Cebraspe)
 
 - **Armadilha:** Julgar um item do Cebraspe como ERRADO porque a reescrita mudou o sentido, quando a banca perguntou apenas se *mantinha a correção gramatical e a coerência*.
 - **Correção:** Coerência é lógica interna. Uma frase pode mudar de sentido em relação ao original e continuar perfeitamente lógica e correta.
-
----
 
 ---
 
@@ -800,8 +784,6 @@ Exceção Partitiva (Mantém sentido):
 
 ---
 
----
-
 ## Síntese para recuperação ativa
 
 Ao concluir o estudo desta unidade**, o estudante domina com segurança:
@@ -810,7 +792,7 @@ Ao concluir o estudo desta unidade**, o estudante domina com segurança:
 2. **O Comportamento dos Particípios:** Domina a regra de invariabilidade do particípio em tempos compostos (*ter/haver*) e a concordância obrigatória na voz passiva analítica (*ser/estar*), além de empregar corretamente particípios duplos (*incluso* vs. *incluído*).
 3. **O Rastreamento Analítico por Setas:** Isola os substantivos-núcleo desconsiderando barreiras preposicionadas, identificando que conjunções aditivas em adjuntos não formam sujeito composto e que substantivos nunca concordam com outros substantivos.
 4. **O Modelo Discursivo das Bancas de Alto Nível:**
- - Na **FGV**, distingue assertivas de erro gramatical (*deveria*) de assertivas de variação semântica legítima (*poderia*).
- - No **CEBRASPE**, domina a tríade *Correção Gramatical* $\neq$ *Sentido* $\neq$ *Coerência*, reconhecendo que mudança de seta altera o sentido, salvo na exceção canônica dos coletivos partitivos e quantificadores.
+  - Na **FGV**, distingue assertivas de erro gramatical (*deveria*) de assertivas de variação semântica legítima (*poderia*).
+  - No **CEBRASPE**, domina a tríade *Correção Gramatical* $\neq$ *Sentido* $\neq$ *Coerência*, reconhecendo que mudança de seta altera o sentido, salvo na exceção canônica dos coletivos partitivos e quantificadores.
 
 ---

@@ -23,9 +23,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 ### Como aplicar neste tema
 
 1. Localizar o verbo ou os verbos do período e delimitar a fronteira entre a oração principal e a oração subordinada.
-2. 1. Ao analisar pronome demonstrativo: execute a Pergunta Tripla. Se for Espaço, verifique a proximidade do falante (1ª P. = este), ouvinte (2ª P. = esse) ou terceiro (3ª P. = aquele). Se for Tempo, identifique se é presente/futuro próximo (este), passado recente (esse) ou tempo remoto (aquele). Se for Texto, use 'esse' para anáfora e 'este' para catáfora.
-3. 2. Diante de múltiplos antecedentes no texto: use 'este' para o termo mais próximo (último citado) e 'aquele' para o mais distante (primeiro citado). Se houver 3 ou mais referentes, use obrigatoriamente numerais ordinais ('o segundo') para os elementos intermediários, banindo o 'esse' singular.
-4. 3. Ao analisar a palavra 'QUE': inspecione o termo imediatamente anterior. Se for verbo, teste a troca da oração inteira por 'ISSO' (conjunção integrante). Se for elemento substantivo, teste a troca do 'que' por 'o qual / a qual' (pronome relativo).
+2. Ao analisar pronome demonstrativo: execute a Pergunta Tripla. Se for Espaço, verifique a proximidade do falante (1ª P. = este), ouvinte (2ª P. = esse) ou terceiro (3ª P. = aquele). Se for Tempo, identifique se é presente/futuro próximo (este), passado recente (esse) ou tempo remoto (aquele). Se for Texto, use 'esse' para anáfora e 'este' para catáfora.
+3. Diante de múltiplos antecedentes no texto: use 'este' para o termo mais próximo (último citado) e 'aquele' para o mais distante (primeiro citado). Se houver 3 ou mais referentes, use obrigatoriamente numerais ordinais ('o segundo') para os elementos intermediários, banindo o 'esse' singular.
+4. Ao analisar a palavra 'QUE': inspecione o termo imediatamente anterior. Se for verbo, teste a troca da oração inteira por 'ISSO' (conjunção integrante). Se for elemento substantivo, teste a troca do 'que' por 'o qual / a qual' (pronome relativo).
 
 ### Testes decisivos
 
@@ -46,7 +46,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - **Pessoas do Discurso:** Distinção entre 1ª pessoa (quem fala/emissor), 2ª pessoa (com quem se fala/receptor) e 3ª pessoa (de quem se fala/assunto).
 - **Noção de Período Composto:** Compreensão da articulação entre oração principal e oração subordinada.
 
-### Mapa Conceitual Integrado
+#### Mapa Conceitual Integrado
 
 ```text
  SISTEMA PRONOMINAL: DEMONSTRATIVOS E RELATIVOS
@@ -73,17 +73,15 @@ ESPAÇO TEMPO TEXTO RECONHECIMENTO ANTECEDENTE DISTINÇÕES DE
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## A Regra de Ouro dos Demonstrativos: O Algoritmo da Pergunta Tripla
+### A Regra de Ouro dos Demonstrativos: O Algoritmo da Pergunta Tripla
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Antes de selecionar a forma morfológica correta do pronome demonstrativo (*este/isto*, *esse/isso* ou *aquele/aquilo*), o estudante deve obrigatoriamente identificar a **situação de uso da referência**: a palavra aponta para o **Espaço**, para o **Tempo** ou para o **Texto**?
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 O pronome demonstrativo altera sua regra de aplicação gramatical de acordo com o plano referencial em que está inserido. Tentar aplicar critérios físicos de proximidade a frases estruturadas em planos cronológicos ou textuais é a principal causa de erros em concursos. Os três planos referenciais operam da seguinte forma:
 
@@ -91,7 +89,7 @@ O pronome demonstrativo altera sua regra de aplicação gramatical de acordo com
 2. **No Tempo:** Regula a localização cronológica do fato em relação ao momento da enunciação (presente, futuro próximo, passado recente ou tempo remoto).
 3. **No Texto:** Regula a articulação coesiva endofórica entre termos e proposições dentro do discurso escrito/falado (retomada anafórica, antecipação catafórica ou distribuição entre múltiplos antecedentes).
 
-### Exemplos e Contraexemplos
+#### Exemplos e Contraexemplos
 
 - *Exemplo no Espaço:* *"Você mora neste coração"* (aponta fisicamente para o coração do emissor = Espaço / 1ª pessoa).
 - *Exemplo no Texto:* *"Dezembro. Esse mês é o meu preferido"* (o pronome aponta para a palavra escrita "Dezembro" já expressa no texto = Texto / Anáfora).
@@ -101,26 +99,26 @@ O pronome demonstrativo altera sua regra de aplicação gramatical de acordo com
 
 ---
 
-## Funções Discursivas dos Demonstrativos: Dêixis Exofórica vs Coesão Endofórica
+### Funções Discursivas dos Demonstrativos: Dêixis Exofórica vs Coesão Endofórica
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Classificação funcional que divide o emprego dos pronomes demonstrativos conforme o seu referente esteja situado no mundo extralinguístico (**Função Exofórica ou Déitica**) ou no interior do próprio texto (**Função Endofórica**).
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 - **Função Exofórica (ou Déitica):** O pronome aponta para o contexto externo à linguagem.
- - *No Espaço:* Depende da posição física de quem fala (emissor) e de quem ouve (receptor).
- - *No Tempo:* Depende do momento cronológico em que ocorre o ato de fala.
+  - *No Espaço:* Depende da posição física de quem fala (emissor) e de quem ouve (receptor).
+  - *No Tempo:* Depende do momento cronológico em que ocorre o ato de fala.
 - **Função Endofórica:** O pronome atua estritamente como conectivo textual intraoracional.
- - *Anáfora:* Aponta para trás, resgatando um termo ou oração já enunciado.
- - *Catáfora:* Aponta para a frente, antecipando uma informação que será apresentada a seguir.
+  - *Anáfora:* Aponta para trás, resgatando um termo ou oração já enunciado.
+  - *Catáfora:* Aponta para a frente, antecipando uma informação que será apresentada a seguir.
 
 ---
 
-## Emprego dos Demonstrativos no Espaço e a Perspectiva Oficial
+### Emprego dos Demonstrativos no Espaço e a Perspectiva Oficial
 
-### Definição ou Regra Canônica
+#### Definição ou Regra Canônica
 
 No espaço tridimensional, a seleção morfológica é determinada pela proximidade física em relação aos três polos do discurso:
 
@@ -128,7 +126,7 @@ No espaço tridimensional, a seleção morfológica é determinada pela proximid
 2. **ISSO / ESSE(S) / ESSA(S):** Próximo do **ouvinte/destinatário** (2ª pessoa). Correlaciona-se com o advérbio *aí*.
 3. **AQUILO / AQUELE(S) / AQUELA(S):** Distante de **ambos os interlocutores** (3ª pessoa). Correlaciona-se com os advérbios *ali* e *lá*.
 
-### Aplicação em Redação Oficial e Correspondências Formais
+#### Aplicação em Redação Oficial e Correspondências Formais
 
 Na confecção de e-mails, memorandos e ofícios, a referência absoluta de 1ª pessoa é sempre quem redige o documento:
 
@@ -139,52 +137,52 @@ Na confecção de e-mails, memorandos e ofícios, a referência absoluta de 1ª 
 
 ---
 
-## Emprego dos Demonstrativos no Tempo e Distinções Idiomáticas
+### Emprego dos Demonstrativos no Tempo e Distinções Idiomáticas
 
-### Definição ou Regra Canônica
+#### Definição ou Regra Canônica
 
 No plano temporal cronológico, o demonstrativo quantifica a distância do acontecimento em relação ao presente da enunciação:
 
 1. **ESTE(S) / ESTA(S) / ISTO:**
- - **Momento presente:** (*"Neste ano estamos focados na aprovação"*).
- - **Futuro próximo:** (*"Nestas próximas férias viajarei"*).
- - **Locução obrigatória de futuro:** *"Um dia **destes** visitarei você"* (com "T" = futuro vindouro).
+  - **Momento presente:** (*"Neste ano estamos focados na aprovação"*).
+  - **Futuro próximo:** (*"Nestas próximas férias viajarei"*).
+  - **Locução obrigatória de futuro:** *"Um dia **destes** visitarei você"* (com "T" = futuro vindouro).
 2. **ESSE(S) / ESSA(S) / ISSO:**
- - **Passado não distante (recente):** (*"Nesse domingo passado fui ao estádio"*).
- - **Locução obrigatória de passado:** *"Um dia **desses** encontrei seu irmão"* (com "S" = passado recente).
+  - **Passado não distante (recente):** (*"Nesse domingo passado fui ao estádio"*).
+  - **Locução obrigatória de passado:** *"Um dia **desses** encontrei seu irmão"* (com "S" = passado recente).
 3. **AQUELE(S) / AQUELA(S) / AQUILO:**
- - **Passado remoto (distante):** (*"Naquelas férias de 2000 éramos felizes"*).
- - **Futuro remoto (distante):** (*"Naquelas férias de 2030 estaremos aposentados"*).
- - **Expressão idiomática:** *"Ela está naqueles dias"* (sinaliza distanciamento afetivo/temporal).
+  - **Passado remoto (distante):** (*"Naquelas férias de 2000 éramos felizes"*).
+  - **Futuro remoto (distante):** (*"Naquelas férias de 2030 estaremos aposentados"*).
+  - **Expressão idiomática:** *"Ela está naqueles dias"* (sinaliza distanciamento afetivo/temporal).
 
 - **Possui macete em:**  (Macete do "T" para futuro e "S" para passado).
 
 ---
 
-## Emprego no Texto: Anáfora, Catáfora, Múltiplos Referentes e o Cisma Cebraspe
+### Emprego no Texto: Anáfora, Catáfora, Múltiplos Referentes e o Cisma Cebraspe
 
-### Regras de Coesão Textual
+#### Regras de Coesão Textual
 
 1. **Um único referente:**
- - **ESSE / ISSO (Anáfora):** Resgata ideia/termo já citado. Em conectivos conclusivos de redação: *diante disso*, *isso posto*, *por causa disso*.
- - **ESTE / ISTO (Catáfora):** Anuncia ideia/termo que virá transcrito adiante (comumente antes de dois-pontos ou travessão). Ex.: *"A regra é esta: foco total"*.
+  - **ESSE / ISSO (Anáfora):** Resgata ideia/termo já citado. Em conectivos conclusivos de redação: *diante disso*, *isso posto*, *por causa disso*.
+  - **ESTE / ISTO (Catáfora):** Anuncia ideia/termo que virá transcrito adiante (comumente antes de dois-pontos ou travessão). Ex.: *"A regra é esta: foco total"*.
 2. **Dois antecedentes explícitos no texto:**
- - **ESTE(S) / ESTA(S):** Retoma o antecedente **mais próximo** (citado por último).
- - **AQUELE(S) / AQUELA(S):** Retoma o antecedente **mais distante** (citado em primeiro lugar).
+  - **ESTE(S) / ESTA(S):** Retoma o antecedente **mais próximo** (citado por último).
+  - **AQUELE(S) / AQUELA(S):** Retoma o antecedente **mais distante** (citado em primeiro lugar).
 3. **Três ou mais antecedentes explícitos (Proibição do "Esse" intermediário):**
- - Para o primeiro (mais distante): usar **Aquele**.
- - Para o último (mais próximo): usar **Este**.
- - Para os elementos do meio: é **estritamente proibido** usar *esse* (gera ambiguidade insolúvel). Deve-se obrigatoriamente empregar **numerais ordinais** (*o segundo*, *o terceiro*).
- - *Exceção do Plural Totalizador:* O plural **esses/essas** pode ser empregado licitamente se o objetivo for resumir todos os elementos da lista em conjunto (*"João, Pedro e Paulo estudaram. Esses foram aprovados"*).
+  - Para o primeiro (mais distante): usar **Aquele**.
+  - Para o último (mais próximo): usar **Este**.
+  - Para os elementos do meio: é **estritamente proibido** usar *esse* (gera ambiguidade insolúvel). Deve-se obrigatoriamente empregar **numerais ordinais** (*o segundo*, *o terceiro*).
+  - *Exceção do Plural Totalizador:* O plural **esses/essas** pode ser empregado licitamente se o objetivo for resumir todos os elementos da lista em conjunto (*"João, Pedro e Paulo estudaram. Esses foram aprovados"*).
 4. **O Cisma Gramatical: Prova Objetiva vs Redação Discursiva:**
- - *Em Provas Objetivas de Gramática:* Bancas como o Cebraspe aceitam o emprego de *este* retomando termo único antecedente, amparadas na vertente de gramáticos modernos.
- - *Em Provas Discursivas / Redações:* A banca examinadora **penaliza severamente** o candidato que usar *este* no lugar de *esse* para retomar um único antecedente. Na redação discursiva formal, o uso de *esse/isso* é mandatório.
+  - *Em Provas Objetivas de Gramática:* Bancas como o Cebraspe aceitam o emprego de *este* retomando termo único antecedente, amparadas na vertente de gramáticos modernos.
+  - *Em Provas Discursivas / Redações:* A banca examinadora **penaliza severamente** o candidato que usar *este* no lugar de *esse* para retomar um único antecedente. Na redação discursiva formal, o uso de *esse/isso* é mandatório.
 
 ---
 
-## Arquitetura dos Pronomes Relativos: Os 4 Desafios de Concurso
+### Arquitetura dos Pronomes Relativos: Os 4 Desafios de Concurso
 
-### Definição e Estrutura Didática
+#### Definição e Estrutura Didática
 
 O pronome relativo é a classe gramatical morfológica com maior índice de cobrança em concursos. Seu estudo estruturado organiza-se em 4 blocos operacionais de desafios:
 
@@ -195,16 +193,16 @@ O pronome relativo é a classe gramatical morfológica com maior índice de cobr
 
 ---
 
-## Reconhecimento do Pronome Relativo em 2 Passos
+### Reconhecimento do Pronome Relativo em 2 Passos
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 O pronome relativo projeta anaforicamente um antecedente substantivo para dentro de uma oração subordinada adjetiva. O reconhecimento categórico do relativo dá-se pela aplicação simultânea de dois critérios:
 
 1. **Passo 1 (Retomada Semântica):** O termo retoma diretamente um elemento antecedente de natureza substantiva.
 2. **Passo 2 (Teste da Substituição Equivalente):** O termo pode ser substituído por *o qual*, *a qual*, *os quais* ou *as quais*, mantendo-se a correção gramatical e o sentido original.
 
-### Exemplos do Poema de Ferreira Gullar
+#### Exemplos do Poema de Ferreira Gullar
 
 - *"...há no meu corpo um incêndio **que** queima sem esperança..."* $\rightarrow$ *que* retoma *incêndio* (= *o qual queima*).
 - *"...a própria terra **que** piso..."* $\rightarrow$ *que* retoma *terra* (= *a qual piso*).
@@ -212,9 +210,9 @@ O pronome relativo projeta anaforicamente um antecedente substantivo para dentro
 
 ---
 
-## Diferenciação da Palavra "QUE": Relativo vs Conjunção Integrante, Realce, Preposição e Consecutiva
+### Diferenciação da Palavra "QUE": Relativo vs Conjunção Integrante, Realce, Preposição e Consecutiva
 
-### Distinções Sintáticas Canônicas
+#### Distinções Sintáticas Canônicas
 
 1. **Pronome Relativo:** Retoma substantivo/pronome antecedente, introduz oração adjetiva e **troca-se por "o qual / a qual"**.
 2. **Conjunção Integrante:** Não retoma nenhum termo anterior; introduz oração subordinada substantiva e **a oração inteira troca-se por "ISSO"** (*"Eu vi **que** você chegou"* $\rightarrow$ *"Eu vi **ISSO**"*).
@@ -226,9 +224,9 @@ O pronome relativo projeta anaforicamente um antecedente substantivo para dentro
 
 ---
 
-## Elementos de Natureza Substantiva: Substantivos, Pronomes Substantivos e Numerais Substantivos
+### Elementos de Natureza Substantiva: Substantivos, Pronomes Substantivos e Numerais Substantivos
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 O antecedente de um pronome relativo não precisa ser exclusivamente um substantivo comum morfológico. O requisito gramatical é que seja um **elemento de natureza substantiva**, o que engloba três categorias funcionais:
 
@@ -238,9 +236,9 @@ O antecedente de um pronome relativo não precisa ser exclusivamente um substant
 
 ---
 
-## O Pronome Demonstrativo "o/os" (e Contrações "do/dos") como Antecedente do Relativo
+### O Pronome Demonstrativo "o/os" (e Contrações "do/dos") como Antecedente do Relativo
 
-### Gradação Estrutural da Referência
+#### Gradação Estrutural da Referência
 
 Em estruturas onde o vocábulo *que* vem precedido imediatamente por *o, a, os, as* (ou contrações *do, da, dos, das, ao, aos*):
 
@@ -259,33 +257,33 @@ Em estruturas onde o vocábulo *que* vem precedido imediatamente por *o, a, os, 
 
 ---
 
-## Sintagma Nominal Completo vs Núcleo Substantivo/Numeral e a Jurisprudência FGV
+### Sintagma Nominal Completo vs Núcleo Substantivo/Numeral e a Jurisprudência FGV
 
-### Definição e Divergência de Delimitação
+#### Definição e Divergência de Delimitação
 
 Quando o antecedente do relativo é uma expressão nominal composta (sintagma nominal determinado), a doutrina gramatical e as bancas adotam duas posturas:
 
 1. **Sintagma Nominal Amplo:** Considera como antecedente toda a expressão (*"panorama nacional"*, *"120 milhões de reais"*).
 2. **Núcleo Gramatical Substantivo/Numeral:** Considera estritamente a palavra que funciona como núcleo sintático do sintagma (*"panorama"*, *"milhões"*).
 
-### O Caso Paradigmático da Banca FGV
+#### O Caso Paradigmático da Banca FGV
 
 Na frase *"consumiu boa parte dos 120 milhões de reais **que** o governo gastou"*, o que o governo gastou foram os *120 milhões de reais*. A banca FGV, no entanto, não ofereceu a expressão inteira nas alternativas e considerou como gabarito unicamente o vocábulo **milhões** (numeral substantivo que é núcleo do sintagma nominal).
 
 ---
 
-## Distanciamento do Antecedente e Paralelismo Sintático Coordenado
+### Distanciamento do Antecedente e Paralelismo Sintático Coordenado
 
-### Regras Avançadas de Sintaxe Anafórica
+#### Regras Avançadas de Sintaxe Anafórica
 
 1. **Distanciamento do Antecedente:** O pronome relativo não precisa ficar colado ao substantivo que retoma. Ele pode estar separado por adjuntos adnominais, orações reduzidas ou termos explicativos. O referente real é descoberto pela análise semântica da oração adjetiva subordinada.
 2. **Paralelismo Sintático com Conjunção "E":** Quando dois pronomes relativos vêm coordenados pela conjunção aditiva *e* (`"...daqueles que foram catalogados... e que devolvem e endossam..."`), **ambos os pronomes relativos compartilham rigorosamente o mesmo termo antecedente**.
 
 ---
 
-## O Pronome "Cujo/Cuja": A Dupla Polaridade (Concordância Posposta vs Referência Antecedente)
+### O Pronome "Cujo/Cuja": A Dupla Polaridade (Concordância Posposta vs Referência Antecedente)
 
-### Mecanismo de Funcionamento do Pronome Cujo/Cuja
+#### Mecanismo de Funcionamento do Pronome Cujo/Cuja
 
 O pronome relativo possessivo opera em duas direções gramaticais distintas:
 
@@ -297,23 +295,21 @@ O pronome relativo possessivo opera em duas direções gramaticais distintas:
  Ex.: "Programa" "cuja" "base"
 ```
 
-### A Pegadinha Topológica do Cebraspe
+#### A Pegadinha Topológica do Cebraspe
 
 Afirmar que o "antecedente" de *cuja* é o substantivo posposto *base* constitui um erro conceitual e topológico primário. Por definição etimológica e funcional, o antecedente é sempre a palavra que antecede (vem antes) no texto.
 
 ---
 
-## Alteração de Referente e o Princípio Semântico: "Mudança de Seta = Mudança de Sentido"
+### Alteração de Referente e o Princípio Semântico: "Mudança de Seta = Mudança de Sentido"
 
-### O Princípio da Invariância Semântica
+#### O Princípio da Invariância Semântica
 
 Quando uma questão propõe a alteração flexional de um pronome relativo (ex.: de *as quais* para *o qual*) e tal mudança faz com que o pronome passe a se referir a outro substantivo gramaticalmente viável da oração anterior:
 
 1. A nova redação pode até manter a correção gramatical da frase;
 2. No entanto, ao mudar o alvo da referência anafórica (mudar a "seta"), **o sentido original do texto é irremediavelmente alterado**.
 3. Itens que afirmam que essa substituição ocorreria *"sem prejuízo para a correção gramatical e para os sentidos originais do texto"* são incorretos.
-
----
 
 ---
 
@@ -337,22 +333,20 @@ Quando uma questão propõe a alteração flexional de um pronome relativo (ex.:
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Algoritmo de Escolha do Pronome Demonstrativo
+### Algoritmo de Escolha do Pronome Demonstrativo
 
 1. **Passo 1 — A Pergunta Tripla:** Identifique se a frase/lacuna aponta para o **Espaço**, **Tempo** ou **Texto**.
 2. **Passo 2 — Identificação de Pistas Contextuais:**
- - *Se for Espaço:* Busque advérbios de lugar (*aqui/cá*, *aí*, *ali/lá*) e a pessoa gramatical dos verbos (*estou lendo* = falante; *estás lendo* = ouvinte).
- - *Se for Tempo:* Busque os tempos verbais (*passou* = pretérito recente $\rightarrow$ *esse*; *viajarei* = futuro próximo $\rightarrow$ *este*) e advérbios temporais.
- - *Se for Texto:* Verifique se a informação está antes da lacuna (anáfora $\rightarrow$ *esse*), depois (catáfora $\rightarrow$ *este*) ou se há 2 antecedentes (*este* para o mais próximo, *aquele* para o mais distante).
+  - *Se for Espaço:* Busque advérbios de lugar (*aqui/cá*, *aí*, *ali/lá*) e a pessoa gramatical dos verbos (*estou lendo* = falante; *estás lendo* = ouvinte).
+  - *Se for Tempo:* Busque os tempos verbais (*passou* = pretérito recente $\rightarrow$ *esse*; *viajarei* = futuro próximo $\rightarrow$ *este*) e advérbios temporais.
+  - *Se for Texto:* Verifique se a informação está antes da lacuna (anáfora $\rightarrow$ *esse*), depois (catáfora $\rightarrow$ *este*) ou se há 2 antecedentes (*este* para o mais próximo, *aquele* para o mais distante).
 3. **Passo 3 — Validação de Flexão e Contração:** Ajuste gênero/número e realize contrações prepositivas (*de + este = deste*; *em + esse = nesse*; *de + aquele = daquele*).
 
 ---
 
-## Roteiro Unificado para Reconhecer Pronomes Relativos e Descartar Homônimos
+### Roteiro Unificado para Reconhecer Pronomes Relativos e Descartar Homônimos
 
 1. **Varredura Eliminatória Prévia:** Inspecione o vocábulo imediatamente anterior ao *que*. Se for um verbo, advérbio ou preposição simples sem termo substantivo implícito, **descarte imediatamente** a hipótese de relativo (tratar-se-á de conjunção integrante, preposição ou realce).
 2. **Verificação de Retomada Semântica:** Havendo substantivo, confirme se o *que* está substituindo e inserindo esse termo na oração adjetiva.
@@ -360,7 +354,7 @@ Quando uma questão propõe a alteração flexional de um pronome relativo (ex.:
 
 ---
 
-## Método da Leitura Posterior do Predicado para Resolver Múltiplos Antecedentes
+### Método da Leitura Posterior do Predicado para Resolver Múltiplos Antecedentes
 
 1. **Mapeamento de Candidatos:** Isole todos os substantivos anteriores que poderiam, em tese, ser o referente do pronome relativo.
 2. **Passo Crítico (Leitura Posterior):** Não tente adivinhar olhando apenas para trás. **Leia a oração subordinada adjetiva que vem DEPOIS do pronome relativo**.
@@ -370,15 +364,13 @@ Quando uma questão propõe a alteração flexional de um pronome relativo (ex.:
 
 ---
 
-## Teste de Validação para a Estrutura "o que" / "do que" / "dos que"
+### Teste de Validação para a Estrutura "o que" / "do que" / "dos que"
 
 1. Identifique a ocorrência das sequências `o que`, `a que`, `do que`, `dos que`, `ao que`.
 2. Substitua o termo inicial: `o` por `aquilo`, `os` por `aqueles`, `do` por `daquilo`, `dos` por `daqueles`.
 3. Se a frase resultante mantiver plenitude semântica:
- - O vocábulo *o/os* é categorizado como **Pronome Demonstrativo Substantivo** (atuando como antecedente).
- - O vocábulo *que* é categorizado como **Pronome Relativo**.
-
----
+  - O vocábulo *o/os* é categorizado como **Pronome Demonstrativo Substantivo** (atuando como antecedente).
+  - O vocábulo *que* é categorizado como **Pronome Relativo**.
 
 ---
 
@@ -392,7 +384,7 @@ Quando uma questão propõe a alteração flexional de um pronome relativo (ex.:
 | **Isso / Esse(s) / Essa(s)** | Perto do receptor/ouvinte (2ª P. /*aí*). | Passado não distante / recente (*um dia desses*). | Anáfora (já dito / termo único / redação formal). |
 | **Aquilo / Aquele(s) / Aquela(s)** | Distante de ambos (3ª P. /*ali, lá*). | Passado remoto ou futuro distante. | Antecedente mais distante (em listas de 2) / Primeiro da lista (em listas de 3+). |
 
-### 8.2. Matriz Diferencial das Funções da Palavra "QUE"
+#### 8.2. Matriz Diferencial das Funções da Palavra "QUE"
 
 | Função Gramatical | Mecanismo Sintático | Teste Prático Infalível | Exemplo Típico da Aula |
 |:-------------------------------- |:---------------------------------------------------------- |:-------------------------------------------- |:---------------------------------------------------------------------- |
@@ -402,7 +394,7 @@ Quando uma questão propõe a alteração flexional de um pronome relativo (ex.:
 | **Preposição Acidental** | Liga verbos em locuções modais/aspectuais. | Substituir pela preposição**de**. | *"Tivemos **que** reduzir custos."* |
 | **Conjunção Consecutiva** | Introduz consequência ligada a intensificador. | Par correlativo com**tanto/tão/tal**. | *"Insistiu **tanto** com Teresa **que** ela se afastou."* |
 
-### 8.3. Distinção de Classes: Função Adjetiva vs Função Substantiva
+#### 8.3. Distinção de Classes: Função Adjetiva vs Função Substantiva
 
 | Classe Gramatical | Modalidade Adjetiva (Acompanha o Nome) | Modalidade Substantiva (Substitui o Nome / Núcleo) |
 |:----------------- |:----------------------------------------------------------------------------------------------- |:--------------------------------------------------------------------------------------------------------------------------- |
@@ -411,11 +403,9 @@ Quando uma questão propõe a alteração flexional de um pronome relativo (ex.:
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Fixação de Demonstrativos no Espaço, Tempo e Texto (15 Casos do Bloco III)
+### Fixação de Demonstrativos no Espaço, Tempo e Texto (15 Casos do Bloco III)
 
 1. *`____ livro que estás lendo é infantil?`* $\rightarrow$ **Esse** (Espaço: nas mãos do ouvinte / 2ª pessoa).
 2. *`Não. ____ livro que estou lendo é sobre política.`* $\rightarrow$ **Este** (Espaço: nas mãos do falante / 1ª pessoa).
@@ -435,52 +425,52 @@ Quando uma questão propõe a alteração flexional de um pronome relativo (ex.:
 
 ---
 
-## Reconhecimento e Distinção de Homônimos de "QUE" em Concursos
+### Reconhecimento e Distinção de Homônimos de "QUE" em Concursos
 
-### Questão 1 (VUNESP - 2019 - Câmara de Piracicaba - SP)
+#### Questão 1 (VUNESP - 2019 - Câmara de Piracicaba - SP)
 
 - **Enunciado:** Identificar alternativa em que o termo destacado é pronome relativo retomando substantivo (como em *"coisa **que** não pode cancelar"*).
- - *Opção Correta:* *"Ela tem uma sapucaia, **que** produz um ouriço..."* $\rightarrow$ Retoma o substantivo *sapucaia* (= *a qual produz*). **Gabarito: A**.
- - *Análise dos Distratores:* *"vi **que**"* (Conjunção Integrante: *vi isso*); *"é **que**"* (Expressão de Realce); *"escreveu **que**"* (Conjunção Integrante); *"tivemos **que** reduzir"* (Preposição Acidental: *tivemos de*).
+  - *Opção Correta:* *"Ela tem uma sapucaia, **que** produz um ouriço..."* $\rightarrow$ Retoma o substantivo *sapucaia* (= *a qual produz*). **Gabarito: A**.
+  - *Análise dos Distratores:* *"vi **que**"* (Conjunção Integrante: *vi isso*); *"é **que**"* (Expressão de Realce); *"escreveu **que**"* (Conjunção Integrante); *"tivemos **que** reduzir"* (Preposição Acidental: *tivemos de*).
 
-### Questão 2 (FCC - 2019 - Pref. São José do Rio Preto - SP)
+#### Questão 2 (FCC - 2019 - Pref. São José do Rio Preto - SP)
 
 - **Enunciado:** Identificar função pronominal relativa.
- - *Opção Correta:* *"Os adolescentes **que** namoram..."* $\rightarrow$ Retoma *adolescentes* (= *os quais namoram*). **Gabarito: A**.
- - *Pegadinha Notável:* *"...insistiu **tanto** com Teresa **que** ela se afastou"* $\rightarrow$ O *que* vem após o substantivo *Teresa*, mas forma par correlativo com *tanto* (Conjunção Consecutiva).
+  - *Opção Correta:* *"Os adolescentes **que** namoram..."* $\rightarrow$ Retoma *adolescentes* (= *os quais namoram*). **Gabarito: A**.
+  - *Pegadinha Notável:* *"...insistiu **tanto** com Teresa **que** ela se afastou"* $\rightarrow$ O *que* vem após o substantivo *Teresa*, mas forma par correlativo com *tanto* (Conjunção Consecutiva).
 
-### Questão 3 (FCC - 2018 - SEC-BA)
+#### Questão 3 (FCC - 2018 - SEC-BA)
 
 - **Enunciado:** Identificar par ordenado de (1º = Conjunção Integrante | 2º = Pronome Relativo).
- - *Opção Correta:* *"[...] é preciso **que** [1] o **que** [2] foi dito por um sujeito específico [...] se apague..."* $\rightarrow$ 1º *que*: *"é preciso **ISSO**"* (Conjunção Integrante); 2º *que*: retoma o pronome demonstrativo *o* (= *aquilo o qual foi dito*) (Pronome Relativo). **Gabarito: C**.
+  - *Opção Correta:* *"[...] é preciso **que** [1] o **que** [2] foi dito por um sujeito específico [...] se apague..."* $\rightarrow$ 1º *que*: *"é preciso **ISSO**"* (Conjunção Integrante); 2º *que*: retoma o pronome demonstrativo *o* (= *aquilo o qual foi dito*) (Pronome Relativo). **Gabarito: C**.
 
 ---
 
-## Análise de Antecedentes Complexos e Questões FCC / FGV
+### Análise de Antecedentes Complexos e Questões FCC / FGV
 
-### Questão 4 (FCC - 2018 - FCRIA-AP)
+#### Questão 4 (FCC - 2018 - FCRIA-AP)
 
 - **Texto:** *"...alguns autores de grande qualidade literária **que** também chegaram..."* / *"...bons cronistas, como o Rubem Braga, **que** conquistaram o público."* / *"...o século **em que** as melhores ideias..."*
 - **Análise:** O verbo plural *chegaram* aponta para *alguns autores*; o verbo plural *conquistaram* aponta para *bons cronistas* (e não para Rubem Braga); *em que* aponta para *século*. **Gabarito: D**.
 
-### Questão 5 (FCC - 2018 - SABESP)
+#### Questão 5 (FCC - 2018 - SABESP)
 
 - **Texto:** *"...humanidade **que** se presume..."* / *"...do discurso daqueles que foram catalogados... e **que** devolvem e endossam..."* / *"...basta eliminar o vocábulo que **o** define."*
 - **Análise:** 1º *que* $\rightarrow$ *humanidade*; 2º *que* $\rightarrow$ *daqueles* (pelo paralelismo com a conjunção *e*); pronome oblíquo *o* $\rightarrow$ *problema*. **Gabarito: D**.
 
-### Questão 6 (FGV - AL-MA)
+#### Questão 6 (FGV - AL-MA)
 
 - **Texto:** *"Abre uma dinâmica de transformação da sociedade **que** ainda não está visível [...] e **cujos** desdobramentos vão muito além..."*
 - **Análise:** O que não está visível é a *transformação*; os desdobramentos são da *transformação*. Ambos os pronomes relativos (*que* e *cujos*) retomam o antecedente distanciado **transformação**. **Gabarito: A**.
 
-### Questão 7 (FGV - 2019 - IBGE)
+#### Questão 7 (FGV - 2019 - IBGE)
 
 - **Texto:** *"...chegamos a uma aldeia onde achamos os gentios [...], porque **aqui** tem uma maneira de vinho..."*
 - **Análise da Inadequação:** A alternativa que associou o advérbio `aqui` a `nesta aldeia` como relação anafórica é **INADEQUADA** (Gabarito: B), pois *aqui* é advérbio deítico espacial e a expressão "nesta aldeia" nem sequer constava no texto prévio.
 
 ---
 
-## Análise de Antecedentes em Padrão Cebraspe e Quadrix
+### Análise de Antecedentes em Padrão Cebraspe e Quadrix
 
 - **Questão 8 (CESPE - DPU):** *"custos que uma lide judicial impõe"* $\rightarrow$ *que* é pronome relativo (= *os quais*) e retoma *custos*. **Gabarito: CERTO**.
 - **Questão 9 (CESPE - CGM João Pessoa):** *"sua conta que vence naquele dia"* $\rightarrow$ *que* retoma *conta* e relaciona duas orações. **Gabarito: CERTO**.
@@ -492,16 +482,14 @@ Quando uma questão propõe a alteração flexional de um pronome relativo (ex.:
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Macete do "T" para o Futuro e do "S" para o Passado
+### O Macete do "T" para o Futuro e do "S" para o Passado
 
 - **ESTE (com T):** Associe ao **Presente** e ao **Futuro próximo** (*"Neste fim de semana"*, *"Um dia destes"*).
 - **ESSE (com S):** Associe ao **Passado recente** (*"Nesse domingo que passou"*, *"Um dia desses"*).
 
-## Macete dos Advérbios de Lugar Correlatos
+### Macete dos Advérbios de Lugar Correlatos
 
 Associe o pronome ao advérbio equivalente da frase:
 
@@ -509,12 +497,12 @@ Associe o pronome ao advérbio equivalente da frase:
 - `ESSE / ISSO` $\longleftrightarrow$ `AÍ` (2ª pessoa)
 - `AQUELE / AQUILO` $\longleftrightarrow$ `ALI / LÁ` (3ª pessoa)
 
-## O Macete do "ISSO" x "O QUAL"
+### O Macete do "ISSO" x "O QUAL"
 
 - Trocou por **"O QUAL / A QUAL"** $\rightarrow$ **Pronome Relativo** (retoma substantivo e inicia oração adjetiva).
 - Trocou a oração inteira por **"ISSO"** $\rightarrow$ **Conjunção Integrante** (inicia oração subordinada substantiva).
 
-## Macete do "Aquilo/Aqueles" para Demonstrativos Mínimos
+### Macete do "Aquilo/Aqueles" para Demonstrativos Mínimos
 
 Ao encontrar `o que` ou `dos que`, substitua:
 
@@ -522,102 +510,96 @@ Ao encontrar `o que` ou `dos que`, substitua:
 - `dos que` $\rightarrow$ `daqueles que`
  Confirmada a substituição, `o/os` é pronome demonstrativo antecedente e `que` é pronome relativo.
 
-## Regra da Leitura Posterior do Verbo Adjetivo
+### Regra da Leitura Posterior do Verbo Adjetivo
 
 Diante de múltiplos substantivos antes do pronome relativo, **não olhe para trás**. Leia a oração adjetiva posterior e pergunte ao verbo quem é o agente/paciente daquela ação.
 
-## Regra da Seta de Referência: "Mudança de Seta = Mudança de Sentido"
+### Regra da Seta de Referência: "Mudança de Seta = Mudança de Sentido"
 
 Se a alteração do pronome relativo mudar o substantivo para o qual ele aponta, **o sentido textual foi modificado**, mesmo que a gramática continue impecável. Se a banca afirmar que "preserva os sentidos originais", marque **ERRADO**.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Erro de Ponto de Vista em Documentos Oficiais
+### Erro de Ponto de Vista em Documentos Oficiais
 
 - **Risco:** Redigir ofício ou e-mail adotando a perspectiva do destinatário (ex.: escrever *"solicito informações deste processo que tramita no seu tribunal"*).
 - **Forma Correta:** O redator é o polo de 1ª pessoa (*este documento*); o que está com o destinatário é 2ª pessoa (*esse processo*).
 
-## A Pegadinha do "Um Dia Destes" vs "Um Dia Desses"
+### A Pegadinha do "Um Dia Destes" vs "Um Dia Desses"
 
 - **Risco:** Usar *"um dia desses"* para o futuro na norma culta.
 - **Forma Correta:** Para o futuro, empregar exclusivamente *"Um dia **destes** eu viajo"*; para o passado, *"Um dia **desses** eu estive lá"*.
 
-## Ambiguidade de "Esse" com 3 Antecedentes e Proibição do Demonstrativo para o Meio
+### Ambiguidade de "Esse" com 3 Antecedentes e Proibição do Demonstrativo para o Meio
 
 - **Erro Grave:** Achar que em lista tríplice (*João, Pedro e Paulo*), *este* retoma Paulo, *aquele* retoma João e *esse* retoma Pedro.
 - **Regra:** *Esse* isolado no singular é terminantemente proibido para o meio. Deve-se usar numerais ordinais (*"o segundo"*).
 
-## O Cisma entre Bancas: Prova Objetiva vs Redação Discursiva
+### O Cisma entre Bancas: Prova Objetiva vs Redação Discursiva
 
 - **Divergência:** Em prova objetiva, o Cebraspe aceita *este* anafórico de termo único. Na redação discursiva/redação, a mesma banca penaliza o uso de *este* anafórico, exigindo estritamente *esse/isso* (*diante disso*, *isso posto*).
 
-## A Pegadinha do Substantivo Próximo sem Retomada (Falso Relativo Consecutivo)
+### A Pegadinha do Substantivo Próximo sem Retomada (Falso Relativo Consecutivo)
 
 - **Risco:** Julgar que toda palavra *que* após substantivo é pronome relativo.
 - **Caso Crítico:** Em *"...insistiu tanto com Teresa **que**..."*, a palavra *que* é conjunção adverbial consecutiva ligada a *tanto*, e não pronome relativo.
 
-## A Pegadinha do Antecedente do Pronome "Cujo/Cuja"
+### A Pegadinha do Antecedente do Pronome "Cujo/Cuja"
 
 - **Risco:** Dizer que em *"cuja base"* o antecedente é *base*.
 - **Correção:** *Base* é o termo posposto com o qual concorda. O antecedente é o termo anterior (*Programa*).
 
-## Armadilha da Proximidade Imediata e Falsos Antecedentes Intercalados
+### Armadilha da Proximidade Imediata e Falsos Antecedentes Intercalados
 
 - **Risco:** Eleger o substantivo imediatamente colado ao relativo em orações intercaladas.
 - **Exemplo:** Em *"Programa [...], criado como alternativa ao vestibular, em que candidatos..."*, o relativo salta *vestibular* e retoma o substantivo matriz *Programa*.
 
 ---
 
----
-
 ## Glossário operacional
 
-## Pronome Demonstrativo
+### Pronome Demonstrativo
 
 Classe gramatical que situa pessoas, coisas e proposições no espaço físico, no tempo cronológico ou no interior do texto em relação às três pessoas do discurso. Possui formas variáveis (*este, esse, aquele*) e invariáveis (*isto, isso, aquilo*).
 
-## Função Exofórica (ou Déitica)
+### Função Exofórica (ou Déitica)
 
 Mecanismo de referenciação linguística em que o pronome aponta diretamente para elementos do contexto situacional extralinguístico (localização no espaço real ou momento temporal da enunciação).
 
-## Função Endofórica (Anáfora e Catáfora)
+### Função Endofórica (Anáfora e Catáfora)
 
 Mecanismo de coesão textual em que o pronome aponta para elementos internos ao próprio texto. Divide-se em **Anáfora** (retomada de informação prévia por *esse/isso*) e **Catáfora** (anúncio de informação posterior por *este/isto*).
 
-## Pronome Relativo
+### Pronome Relativo
 
 Classe pronominal anafórica que substitui um termo antecedente de natureza substantiva e introduz uma oração subordinada adjetiva, funcionando como elo coesivo e sintático entre dois períodos.
 
-## Antecedente do Relativo
+### Antecedente do Relativo
 
 Termo de natureza substantiva (substantivo, pronome substantivo ou numeral substantivo) situado anteriormente na frase que é representado e substituído pelo pronome relativo na oração subordinada adjetiva.
 
-## Elemento de Natureza Substantiva
+### Elemento de Natureza Substantiva
 
 Expressão conceitual que engloba qualquer termo que atue como núcleo de um sintagma nominal: o substantivo propriamente dito, o pronome substantivo (ex.: *aquilo*, *eles*, *o/os*) e o numeral substantivo (ex.: *milhões*, *os dois*).
 
-## Pronome Substantivo vs Pronome Adjetivo
+### Pronome Substantivo vs Pronome Adjetivo
 
 - *Pronome Substantivo:* Substitui o substantivo e atua sozinho como núcleo da oração.
 - *Pronome Adjetivo:* Modifica e acompanha um substantivo explícito.
 
-## Conjunção Integrante
+### Conjunção Integrante
 
 Conectivo oracional (*que* ou *se*) que introduz orações subordinadas substantivas. Não possui antecedente nem função anafórica; a oração inteira por ela introduzida pode ser substituída pelo pronome *ISSO*.
 
-## Expressão de Realce (Expletiva)
+### Expressão de Realce (Expletiva)
 
 Elemento estilístico de ênfase (como a locução *é que*) cuja supressão não provoca incorreção sintática nem perda do sentido denotativo essencial da frase.
 
-## Pronome Relativo Possessivo ("Cujo/Cuja")
+### Pronome Relativo Possessivo ("Cujo/Cuja")
 
 Pronome relativo que expressa relação de posse. Concorda em gênero e número com o substantivo posposto (possuído), mas retoma o antecedente (possuidor).
-
----
 
 ---
 

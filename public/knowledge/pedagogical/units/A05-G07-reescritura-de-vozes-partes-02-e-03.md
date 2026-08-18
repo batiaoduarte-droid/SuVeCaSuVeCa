@@ -66,13 +66,11 @@ Estrutura Simples (2 Verbos) Locução com 3 Verbos Estrutura Simples (2 Verbos)
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## O Mecanismo Fundamental de Transposição da Passiva Analítica para a Ativa
+### O Mecanismo Fundamental de Transposição da Passiva Analítica para a Ativa
 
-### Definição e Conceito Central
+#### Definição e Conceito Central
 
 A transposição da voz passiva analítica para a voz ativa é a transformação sintática em que se desfaz a estrutura perifrástica passiva. Essa operação fundamenta-se em três pilares:
 
@@ -80,7 +78,7 @@ A transposição da voz passiva analítica para a voz ativa é a transformação
 2. O **sujeito paciente** é rebaixado à função de **objeto direto** da voz ativa;
 3. O **verbo auxiliar *ser*** é compulsoriamente eliminado, descarregando toda a sua carga morfossintática (tempo, modo ou forma nominal) sobre o verbo imediatamente posterior ("o verbo *ser* vingativo").
 
-### A Metáfora do "Verbo Ser Vingativo"
+#### A Metáfora do "Verbo Ser Vingativo"
 
 Ao contrário da voz ativa para a passiva analítica (em que se introduz o auxiliar *ser*), na passagem da passiva analítica para a ativa o verbo *ser* sai de cena. Ele é metaforicamente definido pela professora como "escorpiano e vingativo": ao ser expulso da oração, transfere compulsoriamente seu tempo e modo para o particípio principal, que é conjugado na forma verbal correspondente.
 
@@ -97,9 +95,9 @@ Voz Ativa: [Agente da Passiva] + [Verbo Principal Conjugado no Tempo T] + [Sujei
 
 ---
 
-## O Método das Cinco Instruções Operacionais
+### O Método das Cinco Instruções Operacionais
 
-### As Cinco Instruções Passo a Passo
+#### As Cinco Instruções Passo a Passo
 
 ```text
  MÉTODO DAS 5 INSTRUÇÕES
@@ -128,9 +126,9 @@ Sujeito Paciente ➔ Objeto Direto Agente Indeterminado ➔ Sujeito Indeterminad
 
 ---
 
-## Transposição com Agente da Passiva Indeterminado
+### Transposição com Agente da Passiva Indeterminado
 
-### Definição e Implicações Sintáticas
+#### Definição e Implicações Sintáticas
 
 Na língua portuguesa, o agente da passiva é um termo sintático acessório; por isso, orações passivas analíticas frequentemente omitem quem praticou a ação verbal.
 Ao converter uma oração passiva analítica sem agente expresso para a voz ativa:
@@ -152,9 +150,9 @@ Voz Ativa com Sujeito Indet.: "[Eles] Precisavam interpretar as palavras."
 
 ---
 
-## A Regra Aritmética de Contagem de Verbos ($N \rightarrow N-1$)
+### A Regra Aritmética de Contagem de Verbos ($N \rightarrow N-1$)
 
-### A Equação da Transposição Verbal
+#### A Equação da Transposição Verbal
 
 A transposição da voz passiva analítica para a voz ativa obedece a uma constante matemática estrita quanto à quantidade de formas verbais:
 
@@ -170,7 +168,7 @@ $$
 | *havia sido remodelada* | 3 | Elimina-se*sido* $\rightarrow$ carga vai para *remodelado* | *havia remodelado* | 2 |
 | *continua sendo debatida* | 3 | Elimina-se*sendo* $\rightarrow$ carga vai para *debatendo* | *continuam debatendo* | 2 |
 
-### Aplicação Estratégica em Provas
+#### Aplicação Estratégica em Provas
 
 Se a oração passiva contém 3 verbos (auxiliar temporal/modal + auxiliar *ser* + particípio principal), a opção correta na voz ativa terá **obrigatoriamente 2 verbos**. Alternativas que reduzem a estrutura para 1 verbo único (ex.: *remodelou* em vez de *havia remodelado*) cometem erro grave de tempo/aspecto verbal e devem ser sumariamente descartadas.
 
@@ -178,9 +176,9 @@ Se a oração passiva contém 3 verbos (auxiliar temporal/modal + auxiliar *ser*
 
 ---
 
-## Locuções de Três Verbos: Dinâmica entre Auxiliar e Principal
+### Locuções de Três Verbos: Dinâmica entre Auxiliar e Principal
 
-### Repartição de Funções Gramaticais na Locução Ativa
+#### Repartição de Funções Gramaticais na Locução Ativa
 
 Ao transpor uma locução passiva de 3 verbos com agente indeterminado para a voz ativa:
 
@@ -200,19 +198,19 @@ Ativa: "[Eles] deverão [ X ] concluir as negociações."
 
 ---
 
-## Sujeito Paciente Oculto/Elíptico, Pronomes Oblíquos e Próclise
+### Sujeito Paciente Oculto/Elíptico, Pronomes Oblíquos e Próclise
 
-### Mecânica de Conversão Primitiva $\rightarrow$ Pronome Oblíquo
+#### Mecânica de Conversão Primitiva $\rightarrow$ Pronome Oblíquo
 
 Em estruturas passivas sem sujeito expresso evidente:
 
 1. **Dedução do Sujeito Elíptico:** Recupera-se o referente a partir do contexto morfossintático:
- - Pelo gênero/número do particípio: *"Para não ser olhado..."* $\rightarrow$ particípio masculino singular revela sujeito *ele*.
- - Por pronomes possessivos ou oração principal: *"Se não for atendido em minha reivindicação..."* $\rightarrow$ *minha* revela sujeito *eu*; *"Não me lembro de ter sido assustado..."* $\rightarrow$ *me* revela sujeito *eu*.
+  - Pelo gênero/número do particípio: *"Para não ser olhado..."* $\rightarrow$ particípio masculino singular revela sujeito *ele*.
+  - Por pronomes possessivos ou oração principal: *"Se não for atendido em minha reivindicação..."* $\rightarrow$ *minha* revela sujeito *eu*; *"Não me lembro de ter sido assustado..."* $\rightarrow$ *me* revela sujeito *eu*.
 2. **Conversão em Complemento Verbal:** O pronome reto sujeito (*eu*, *ele*) converte-se no pronome oblíquo átono correspondente como objeto direto (*me*, *o*).
 3. **Colocação Pronominal Mandatória:**
- - Diante de palavras atrativas (palavras negativas *não*, conjunções subordinativas *se*, *para que*), a **próclise é obrigatória**: *para não o olharem*, *se não me atenderem*.
- - Em locuções verbais ativas, o pronome pode acoplar-se ao auxiliar (*me ter assustado* / *ter-me assustado*), mas é **terminantemente proibida a ênclise ao particípio** (*\*ter assustado-me*).
+  - Diante de palavras atrativas (palavras negativas *não*, conjunções subordinativas *se*, *para que*), a **próclise é obrigatória**: *para não o olharem*, *se não me atenderem*.
+  - Em locuções verbais ativas, o pronome pode acoplar-se ao auxiliar (*me ter assustado* / *ter-me assustado*), mas é **terminantemente proibida a ênclise ao particípio** (*\*ter assustado-me*).
 
 ```text
 Passiva: "Se [eu] não for atendido em minha reivindicação..."
@@ -227,9 +225,9 @@ Ativa: "Se não + me atenderem em minha reivindicação..."
 
 ---
 
-## Infinitivo Pessoal Flexionado na Voz Ativa
+### Infinitivo Pessoal Flexionado na Voz Ativa
 
-### A Flexão do Infinitivo com Sujeito Indeterminado
+#### A Flexão do Infinitivo com Sujeito Indeterminado
 
 Na oração reduzida passiva *"Para não ser olhado com medo..."*, o verbo *ser* encontra-se na forma nominal de infinitivo impessoal (*ser*).
 Ao transpor para a ativa:
@@ -244,9 +242,9 @@ Ao transpor para a ativa:
 
 ---
 
-## A Armadilha da "Fuga da Realidade com o Pronome SE"
+### A Armadilha da "Fuga da Realidade com o Pronome SE"
 
-### Desconstrução do Vício Psicológico em Provas
+#### Desconstrução do Vício Psicológico em Provas
 
 As bancas examinadoras (especialmente FGV, FCC e VUNESP) exploram a inclinação estilística natural do candidato, que tende a considerar elegantes e fluídas as construções sintéticas com o pronome *se*.
 
@@ -266,9 +264,9 @@ Frase Passiva: "A França foi ocupada pelos alemães."
 
 ---
 
-## Preservação do Referente e Escopo de Modificadores Adverbiais
+### Preservação do Referente e Escopo de Modificadores Adverbiais
 
-### O Escopo Sintático de Palavras Denotativas e Advérbios
+#### O Escopo Sintático de Palavras Denotativas e Advérbios
 
 Durante a reescritura de vozes verbais, a movimentação de advérbios ou palavras denotativas de inclusão/exclusão (como *também*, *somente*, *apenas*) exige vigilância estrita sobre seu escopo modificador:
 
@@ -280,9 +278,9 @@ Durante a reescritura de vozes verbais, a movimentação de advérbios ou palavr
 
 ---
 
-## O Verbo "Haver" como Auxiliar de Tempo Composto
+### O Verbo "Haver" como Auxiliar de Tempo Composto
 
-### Distinção entre Haver Impessoal e Haver Auxiliar
+#### Distinção entre Haver Impessoal e Haver Auxiliar
 
 A regra gramatical de que o verbo *haver* não admite transposição de vozes aplica-se unicamente quando ele atua como **verbo principal impessoal** (com sentido de existir, acontecer ou tempo decorrido).
 Quando *haver* funciona como **verbo auxiliar de tempo composto** (ex.: *havia sido remodelada* $\rightarrow$ *havia remodelado*):
@@ -295,11 +293,9 @@ Quando *haver* funciona como **verbo auxiliar de tempo composto** (ex.: *havia s
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Protocolo Mestre de Transposição da Passiva Analítica para a Ativa
+### Protocolo Mestre de Transposição da Passiva Analítica para a Ativa
 
 ```text
  PROTOCOLO MESTRE DE TRANSPOSIÇÃO
@@ -330,69 +326,67 @@ Quando *haver* funciona como **verbo auxiliar de tempo composto** (ex.: *havia s
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Bloco I — Exercícios de Fixação
+### Bloco I — Exercícios de Fixação
 
-### Exercício de Fixação 1: Passiva Simples com Agente Expresso
+#### Exercício de Fixação 1: Passiva Simples com Agente Expresso
 
 - **Frase original:** *"O aluno foi elogiado pelo professor."*
 - **Análise:** Sujeito paciente: *O aluno*; Auxiliar: *foi* (pretérito perfeito indicativo); Agente: *pelo professor*.
 - **Transposição:** *A abordagem didática* (sujeito) + *elogiou* (pretérito perfeito) + *o aluno* (objeto direto).
 - **Resultado:** **A abordagem didática elogiou o aluno.**
 
-### Exercício de Fixação 2: Passiva Simples com Artigo Indefinido
+#### Exercício de Fixação 2: Passiva Simples com Artigo Indefinido
 
 - **Frase original:** *"Uma senhora foi assaltada por um adolescente."*
 - **Análise:** Sujeito paciente: *Uma senhora*; Auxiliar: *foi* (pretérito perfeito); Agente: *por um adolescente*.
 - **Transposição:** *Um adolescente* (sujeito) + *assaltou* (pretérito perfeito) + *uma senhora* (objeto direto).
 - **Resultado:** **Um adolescente assaltou uma senhora.**
 
-### Exercício de Fixação 3: Passiva com Adjunto Adverbial Intercalado
+#### Exercício de Fixação 3: Passiva com Adjunto Adverbial Intercalado
 
 - **Frase original:** *"Um gato foi resgatado da árvore pelo bombeiro."*
 - **Análise:** Sujeito paciente: *Um gato*; Auxiliar: *foi* (pretérito perfeito); Adjunto: *da árvore*; Agente: *pelo bombeiro*.
 - **Transposição:** *O bombeiro* (sujeito) + *resgatou* (pretérito perfeito) + *um gato* (objeto direto) + *da árvore*.
 - **Resultado:** **O bombeiro resgatou um gato da árvore.**
 
-### Exercício de Fixação 4: Locução Tripla com Gerúndio e Agente Indeterminado
+#### Exercício de Fixação 4: Locução Tripla com Gerúndio e Agente Indeterminado
 
 - **Frase original:** *"Com verba do Estado, dezoito composições já estão sendo reformadas."*
 - **Análise:** Sujeito paciente: *dezoito composições*; Locução: *estão* (presente) + *sendo* (gerúndio de *ser*) + *reformadas*; Agente: indeterminado.
 - **Transposição:** $3 \rightarrow 2$ verbos. O auxiliar *estão* fica na 3ª do plural para marcar sujeito indeterminado; *sendo* transfere o gerúndio para *reformando*; *dezoito composições* vira objeto direto.
 - **Resultado:** **[Com verba do Estado,] já estão reformando dezoito composições.**
 
-### Exercício de Fixação 5: Locução com Infinitivo e Agente Indeterminado
+#### Exercício de Fixação 5: Locução com Infinitivo e Agente Indeterminado
 
 - **Frase original:** *"As palavras precisavam ser interpretadas."*
 - **Análise:** Sujeito paciente: *As palavras*; Locução: *precisavam* (pretérito imperfeito 3ª pl.) + *ser* (infinitivo) + *interpretadas*; Agente: indeterminado.
 - **Transposição:** Auxiliar *precisavam* permanece na 3ª pl. por sujeito indeterminado; *ser* transfere o infinitivo para *interpretar*; *as palavras* vira objeto direto.
 - **Resultado:** **Precisavam interpretar as palavras.**
 
-### Exercício de Fixação 6: Sujeito Oculto, Infinitivo Flexionado e Próclise (/)
+#### Exercício de Fixação 6: Sujeito Oculto, Infinitivo Flexionado e Próclise (/)
 
 - **Frase original:** *"Para não ser olhado com medo, resolveu ceder."*
 - **Análise:** Sujeito paciente elíptico: *ele* (deduzido de *olhado* / *resolveu*); Verbo: *ser* (infinitivo); Agente: indeterminado.
 - **Transposição:** Agente indeterminado exige 3ª do plural. O verbo *olhar* assume infinitivo pessoal flexionado (*olharem*); o sujeito *ele* vira objeto direto pronome *o*; o advérbio *não* atrai o pronome (próclise obrigatória).
 - **Resultado:** **Para não o olharem com medo, resolveu ceder.**
 
-### Exercício de Fixação 7: Locução Tripla com Sujeito Posposto
+#### Exercício de Fixação 7: Locução Tripla com Sujeito Posposto
 
 - **Frase original:** *"No nosso país, deveriam ser instituídas leis mais rigorosas."*
 - **Análise:** Sujeito paciente posposto: *leis mais rigorosas*; Locução: *deveriam* + *ser* + *instituídas* (3 verbos); Agente: indeterminado.
 - **Transposição:** $3 \rightarrow 2$ verbos (*deveriam instituir*). O auxiliar *deveriam* fica na 3ª do plural como marca de sujeito indeterminado; *leis mais rigorosas* vira objeto direto posposto.
 - **Resultado:** **No nosso país, deveriam instituir leis mais rigorosas.**
 
-### Exercício de Fixação 8: Locução Tripla no Futuro
+#### Exercício de Fixação 8: Locução Tripla no Futuro
 
 - **Frase original:** *"As negociações deverão ser concluídas até outubro."*
 - **Análise:** Sujeito paciente: *As negociações*; Locução: *deverão ser concluídas*; Agente: indeterminado.
 - **Transposição:** Auxiliar *deverão* na 3ª do plural (sujeito indeterminado); particípio vira infinitivo invariável *concluir*; sujeito vira objeto direto.
 - **Resultado:** **Deverão concluir as negociações até outubro.**
 
-### Exercício de Fixação 9: Locução Tripla com Ajuste Singular $\rightarrow$ Plural
+#### Exercício de Fixação 9: Locução Tripla com Ajuste Singular $\rightarrow$ Plural
 
 - **Frase original:** *"A história do Brasil pode ser contada de vários modos e sob vários ângulos."*
 - **Análise:** Sujeito paciente: *A história do Brasil* (singular); Locução: *pode* (singular) + *ser* + *contada*; Agente: indeterminado.
@@ -401,7 +395,7 @@ Quando *haver* funciona como **verbo auxiliar de tempo composto** (ex.: *havia s
 
 ---
 
-## Bloco II — Questões de Concurso
+### Bloco II — Questões de Concurso
 
 | ID do Exercício | Banca / Órgão / Ano | Frase Passiva Original | Transposição Ativa Correta | Gabarito | Justificativa Sintática Resumida |
 |:----------------------- |:------------------------------- |:----------------------------------------------------------------- |:--------------------------------------------------- |:--------------: |:--------------------------------------------------------------------------------------------------------------------- |
@@ -423,73 +417,67 @@ Quando *haver* funciona como **verbo auxiliar de tempo composto** (ex.: *havia s
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Método do Rascunho Prévio (Técnica "Fria e Calculista")
+### O Método do Rascunho Prévio (Técnica "Fria e Calculista")
 
 - **Aplicação Prática:** Jamais inicie a resolução de questões de transposição lendo as alternativas de múltipla escolha ou a proposta de reescrita do CEBRASPE. Cubra as opções com a mão, faça o esquema no rascunho (identificando sujeito paciente, tempo de *ser* e agente), redija a oração ativa resultante e, somente então, busque a opção correspondente. Isso bloqueia a sedução auditiva por alternativas incorretas.
 
-## O Atalho da Contagem Aritmética de Verbos
+### O Atalho da Contagem Aritmética de Verbos
 
 - **Aplicação Prática:** Em qualquer questão de transposição para a voz ativa, conte os verbos da frase original. Subtraia 1 ($\text{Passiva} - 1 = \text{Ativa}$). Se a oração passiva tem 3 verbos, risque imediatamente qualquer opção que apresente 1 único verbo ou que mantenha 3 verbos. A resposta terá exatamente 2 verbos.
 
-## A Seta de Transferência Temporal como Patrimônio
+### A Seta de Transferência Temporal como Patrimônio
 
 - **Aplicação Prática:** Ao riscar o verbo *ser*, escreva o nome do seu tempo verbal por extenso acima dele (ex.: *PRET. PERF.*, *FUT. SUBJ.*, *GERÚNDIO*) e desenhe uma seta apontando para o particípio. Isso condiciona a coordenação motora a conjugar o verbo principal exatamente no mesmo tempo, impedindo trocas indevidas entre pretérito perfeito (*fizeram*) e imperfeito (*faziam*).
 
-## Anotação Obrigatória de Termos Elípticos
+### Anotação Obrigatória de Termos Elípticos
 
 - **Aplicação Prática:** Se o sujeito paciente for oculto ou o agente for indeterminado, **escreva explicitamente a palavra no papel** (`ele`, `eu`, `agente indeterminado`). A visualização gráfica do termo impede o esquecimento de convertê-lo no pronome oblíquo correspondente na voz ativa.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Confundir a Causa da Concordância na 3ª Pessoa do Plural
+### Confundir a Causa da Concordância na 3ª Pessoa do Plural
 
 - **Problema:** Na frase passiva *"As palavras precisavam ser interpretadas"*, o verbo *precisavam* estava no plural concordando com *as palavras*. Na voz ativa (*"Precisavam interpretar as palavras"*), *as palavras* virou objeto direto.
 - **Forma Correta:** Compreender que, na ativa, *precisavam* permanece na 3ª do plural **exclusivamente como marca sintática de sujeito indeterminado**. Confundir essa justificativa acarreta erro em questões teóricas de sintaxe.
 
-## Hiperflexão do Verbo Principal em Locuções Verbais
+### Hiperflexão do Verbo Principal em Locuções Verbais
 
 - **Problema:** Flexionar indevidamente o verbo principal junto com o auxiliar (ex.: redigir *\*deverão concluírem* ou *\*podem contarem*).
 - **Forma Correta:** Em qualquer locução verbal ativa, apenas o verbo auxiliar flexiona; o verbo principal permanece na sua forma nominal invariável (*deverão concluir*, *podem contar*).
 
-## Confundir Sujeito Paciente Posposto com Objeto Direto
+### Confundir Sujeito Paciente Posposto com Objeto Direto
 
 - **Problema:** Em estruturas passivas em ordem indireta (*"Foi sancionada a Lei..."*, *"Foi observada a criação..."*), achar que o substantivo posposto é objeto direto da passiva.
 - **Forma Correta:** O substantivo posposto comanda a concordância do verbo *ser* (*Foi sancionada a lei* / *Foram sancionadas as leis*) e é o sujeito paciente, que se tornará objeto direto somente na voz ativa (*Sancionaram a lei*).
 
-## Manutenção Incorreta de Pronome Reto como Objeto Direto
+### Manutenção Incorreta de Pronome Reto como Objeto Direto
 
 - **Problema:** Manter pronomes retos na função de complemento (ex.: redigir *\*para não olharem ele* em vez de *para não o olharem*).
 - **Forma Correta:** Pronomes pessoais do caso reto não exercem função de objeto direto na norma-padrão; devem ser obrigatoriamente convertidos nos pronomes oblíquos átonos correspondentes (*o, a, os, as, me, te*).
 
-## Proibição Terminante de Ênclise ao Particípio
+### Proibição Terminante de Ênclise ao Particípio
 
 - **Problema:** Empregar pronome oblíquo enclítico a verbo no particípio (ex.: *\*ter assustado-me*, *\*havia remodelado-o*).
 - **Forma Correta:** A norma culta veda categoricamente a ênclise ao particípio. Emprega-se a próclise ou ênclise ao auxiliar (*me ter assustado* / *ter-me assustado*) ou próclise ao principal sem hífen (*ter me assustado*).
 
-## Assinalar Passiva Sintética (com "SE") quando se Pede Voz Ativa
+### Assinalar Passiva Sintética (com "SE") quando se Pede Voz Ativa
 
 - **Problema:** Marcar opções atraentes com o pronome apassivador *se* (*sancionou-se a lei*, *ocupou-se a França*) quando o enunciado exige voz ativa.
 - **Forma Correta:** A partícula *se* com VTD caracteriza voz passiva sintética. A voz ativa exige sujeito agente expresso ou sujeito indeterminado na 3ª do plural sem *se*.
 
-## Deslocamento Indevido de Advérbio com Alteração de Referente
+### Deslocamento Indevido de Advérbio com Alteração de Referente
 
 - **Problema:** Deslocar palavras como *também* para junto de substantivos na ativa, alterando o escopo original que incidia sobre o verbo.
 - **Forma Correta:** Garantir que o advérbio mantenha a mesma seta de incidência semântica da oração primitiva (*Também foram feitas...* $\rightarrow$ *Também fizeram...*).
 
-## Confundir Verbo "Haver" Impessoal com Auxiliar de Tempo Composto
+### Confundir Verbo "Haver" Impessoal com Auxiliar de Tempo Composto
 
 - **Problema:** Achar que locuções com o verbo *haver* não admitem passivação ou transposição.
 - **Forma Correta:** O verbo *haver* auxiliar (em tempos compostos) admite passivação normalmente, pois a transitividade é determinada pelo verbo principal (se for VTD).
-
----
 
 ---
 
@@ -499,27 +487,25 @@ Quando *haver* funciona como **verbo auxiliar de tempo composto** (ex.: *havia s
 
 Procedimento metodológico de dissecação sintática prévia que consiste em isolar e classificar os três pilares da oração passiva analítica (agente da passiva, tempo/modo do auxiliar *ser* e sujeito paciente) antes de redigir a transposição ativa.
 
-### Fuga da Realidade (Gíria Pedagógica)
+#### Fuga da Realidade (Gíria Pedagógica)
 
 Expressão criada pela professora para denunciar o erro em que o candidato assinala uma alternativa na voz passiva sintética (com partícula apassivadora *se*) quando o comando da questão exige expressamente a voz ativa.
 
-### Verbo Ser Vingativo
+#### Verbo Ser Vingativo
 
 Metáfora didática que expressa a regra de que o verbo auxiliar *ser*, ao ser suprimido na transposição para a ativa, transfere compulsoriamente sua carga morfológica de tempo, modo ou forma nominal para o verbo principal subsequente.
 
-### Agente da Passiva Indeterminado
+#### Agente da Passiva Indeterminado
 
 Ocorrência em que a voz passiva analítica omite o praticante da ação verbal. Na transposição para a ativa, impõe a indeterminação do sujeito (flexão verbal na 3ª pessoa do plural sem pronome sujeito expresso).
 
-### Infinitivo Pessoal Flexionado
+#### Infinitivo Pessoal Flexionado
 
 Forma nominal do verbo que recebe desinências número-pessoais (*-es, -mos, -des, -em*). Na transposição de passivas sem auxiliar e com agente indeterminado, flexiona-se na 3ª pessoa do plural (*-em*) para marcar o sujeito indeterminado (*olharem*).
 
-### Lhufas (Gíria Pedagógica)
+#### Lhufas (Gíria Pedagógica)
 
 Termo informal utilizado para designar termos acessórios secundários e adjuntos adverbiais intercalados na oração que não alteram a dinâmica nuclear das vozes verbais.
-
----
 
 ---
 

@@ -46,7 +46,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Noção elementar de tempo (presente, pretérito, futuro) e modo (indicativo: certeza/fato; subjuntivo: incerteza/hipótese).
 - Reconhecimento de desinências modo-temporais clássicas (`-va`/`-ia` para imperfeito do indicativo; `-ra` para mais-que-perfeito simples; `-ria` para futuro do pretérito; `-sse` para imperfeito do subjuntivo).
 
-### Mapa hierárquico consolidado
+#### Mapa hierárquico consolidado
 
 ```text
 SEMÂNTICA DOS TEMPOS E MODOS VERBAIS (A04-esta unidade)
@@ -92,17 +92,15 @@ SEMÂNTICA DOS TEMPOS E MODOS VERBAIS (A04-esta unidade)
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Os 5 Pilares do Estudo dos Verbos para Concursos e o Perfil das Bancas
+### Os 5 Pilares do Estudo dos Verbos para Concursos e o Perfil das Bancas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O estudo sistemático da morfossintaxe e semântica verbal para concursos organiza-se em **cinco eixos pedagógicos estruturantes**. A banca Cebraspe concentra sua cobrança na identificação, na semântica contextual, nos tempos compostos e, fundamentalmente, na reescritura de frases, dispensando a memorização mecânica de paradigmas irregulares puros (foco característico de bancas como a Vunesp).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Conjugação Verbal (Flexão Pura):** Memorização de paradigmas e anomalias de verbos irregulares/defectivos (*reaver, requerer, provir, advir*). Possui baixíssima incidência no Cebraspe, mas alta na Vunesp.
 2. **Identificação de Tempos e Modos Verbais:** Reconhecimento da forma verbal no texto sem necessidade de conjugação ativa, valendo-se de desinências e palavras-chave (*hoje, ontem, antigamente*).
@@ -115,13 +113,13 @@ O estudo sistemático da morfossintaxe e semântica verbal para concursos organi
 
 ---
 
-## Semântica e Polivalência do Presente do Indicativo
+### Semântica e Polivalência do Presente do Indicativo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O Presente do Indicativo não se limita à expressão de ações simultâneas ao ato da fala, manifestando **5 valores semânticos essenciais** regidos por marcadores discursivos e contextuais.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Presente Pontual / Atual:** Ação rigorosamente simultânea ao momento da enunciação (*"Guilherme está cansado"*).
 2. **Presente Histórico / Narrativo:** Empregado para relatar fatos cronologicamente pretéritos, conferindo vivacidade e atualidade à narrativa (*"Em 1500 Cabral chega ao Brasil"* / *"No Brasil, a figura do promotor só surge em 1609"*). Admite substituição pelo Pretérito Perfeito (*chegou*, *surgiu*) preservando correção e coerência.
@@ -129,7 +127,7 @@ O Presente do Indicativo não se limita à expressão de ações simultâneas ao
 4. **Presente Habitual / Atemporal / Frequente:** Expressa rotina, hábitos reiterados, verdades científicas ou leis gerais atemporais (*"Maria estuda todos os dias"* / *"Na febre alta, as toxinas cravam as garras nos músculos"*).
 5. **Presente Durativo (Iniciado no passado e contínuo no presente):** Fato iniciado em momento anterior que perdura ativo no presente, obrigatoriamente ancorado por adjuntos temporais durativos (*"Moro em Berlim desde 2014"*).
 
-### Critérios de reconhecimento e alertas
+#### Critérios de reconhecimento e alertas
 
 - Não atribuir o valor de "ação iniciada no passado que dura até hoje" a verbos no presente genérico em textos dissertativos se não houver marcadores contextuais explícitos como *desde* ou *há X anos* (verificado em ).
 
@@ -137,41 +135,41 @@ O Presente do Indicativo não se limita à expressão de ações simultâneas ao
 
 ---
 
-## Semântica e Aspecto dos Pretéritos do Indicativo
+### Semântica e Aspecto dos Pretéritos do Indicativo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Os pretéritos do Modo Indicativo diferenciam-se pelo **aspecto verbal**: o **Pretérito Perfeito** denota ação pontual acabada; o **Pretérito Imperfeito** expressa continuidade, repetição ou desejo frustrado; e o **Pretérito Mais-que-Perfeito** expressa anterioridade cronológica em relação a outro pretérito.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Pretérito Perfeito:**
 
- - *Semântica e Aspecto:* Ação concluída e perfeita no passado (próximo ou remoto). É um evento de **aspecto pontual** ("começa e acaba"). Palavra-chave: *ontem*.
- - *Exemplos:* "Conversei com ela hoje cedo." / "Conversei com ela em 1999."
+  - *Semântica e Aspecto:* Ação concluída e perfeita no passado (próximo ou remoto). É um evento de **aspecto pontual** ("começa e acaba"). Palavra-chave: *ontem*.
+  - *Exemplos:* "Conversei com ela hoje cedo." / "Conversei com ela em 1999."
 - **Pretérito Imperfeito:**
 
- - *Semântica e Aspecto:* Processo passado não pontual, inacabado, duradouro, habitual ou repetitivo. Desinências: `-va` (*cantava*) e `-ia` (*vendia, vinha*). Palavra-chave: *antigamente*.
- - *Dois valores nucleares:*
+  - *Semântica e Aspecto:* Processo passado não pontual, inacabado, duradouro, habitual ou repetitivo. Desinências: `-va` (*cantava*) e `-ia` (*vendia, vinha*). Palavra-chave: *antigamente*.
+  - *Dois valores nucleares:*
  1. *Ação habitual / contínua no passado:* Prática rotineira em época pretérita (*"Brincava de boneca na infância"*).
  2. *Desejo não realizado / Ação frustrada:* Intenção interrompida (*"Esperava passar no concurso, mas não conseguiu"*).
- - *Pegadinha Fundamental do Cebraspe:* O Pretérito Imperfeito **NUNCA expressa o início de uma ação** (aspecto inchoativo/inceptivo). Ele foca na duração e repetição contínua.
+  - *Pegadinha Fundamental do Cebraspe:* O Pretérito Imperfeito **NUNCA expressa o início de uma ação** (aspecto inchoativo/inceptivo). Ele foca na duração e repetição contínua.
 - **Pretérito Mais-que-Perfeito:**
 
- - *Semântica:* Expressa uma ação passada ocorrida em momento **anterior** a outra ação também pretérita (o "passado do passado"). Desinência simples: `-ra` atempada (*estudara, aprendera*); forma composta: *tinha/havia + particípio* (*tinha estudado*).
- - *Pegadinha Fundamental do Cebraspe:* A anterioridade do Mais-que-Perfeito é **cronológica na vida real dos fatos narrados**, sendo irrelevante a ordem de aparição espacial/gráfica das palavras no parágrafo. Não projeta fatos para o futuro.
+  - *Semântica:* Expressa uma ação passada ocorrida em momento **anterior** a outra ação também pretérita (o "passado do passado"). Desinência simples: `-ra` atempada (*estudara, aprendera*); forma composta: *tinha/havia + particípio* (*tinha estudado*).
+  - *Pegadinha Fundamental do Cebraspe:* A anterioridade do Mais-que-Perfeito é **cronológica na vida real dos fatos narrados**, sendo irrelevante a ordem de aparição espacial/gráfica das palavras no parágrafo. Não projeta fatos para o futuro.
 
 - **Exemplificado em:**
 
 ---
 
-## Semântica dos Futuros do Indicativo
+### Semântica dos Futuros do Indicativo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Os tempos futuros do Indicativo assumem funções modais complexas: o **Futuro do Presente** alterna entre fato posterior e dúvida presente; o **Futuro do Pretérito** (desinência `-ria`) apresenta **4 valores semânticos fundamentais**, destacando-se como veículo de hipótese e polidez.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Futuro do Presente:**
 
@@ -190,25 +188,25 @@ Os tempos futuros do Indicativo assumem funções modais complexas: o **Futuro d
 
 ---
 
-## Semântica do Modo Subjuntivo e a Equivalência com o Futuro do Pretérito
+### Semântica do Modo Subjuntivo e a Equivalência com o Futuro do Pretérito
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O Modo Subjuntivo é a matriz gramatical da **hipótese, possibilidade, eventualidade e desejo**. Em concursos modernos, desconstrói-se o dogma tradicional de que a hipótese é monopólio do Subjuntivo: **tanto o Subjuntivo quanto o Futuro do Pretérito (do Indicativo) expressam hipótese e possibilidade**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Tempos do Subjuntivo e seus Empregos:**
 
- - *Presente do Subjuntivo (conjunção QUE):* Fato incerto ou desejável no presente/futuro (*"Esperamos que ele vença"* / *"sentimento que as aproxime"*). Expressa possibilidade factível, e **não fato improvável**.
- - *Pretérito Imperfeito do Subjuntivo (conjunção SE / desinência `-sse`):* Condição irreal ou hipótese dependente (*"Se os alunos estudassem..."* / *"Talvez se devesse ao fato..."*). O advérbio *talvez* reforça o valor hipotético.
- - *Futuro do Subjuntivo (conjunção QUANDO/SE):* Eventualidade em tempo vindouro (*"Quando eu chegar na praia..."*).
+  - *Presente do Subjuntivo (conjunção QUE):* Fato incerto ou desejável no presente/futuro (*"Esperamos que ele vença"* / *"sentimento que as aproxime"*). Expressa possibilidade factível, e **não fato improvável**.
+  - *Pretérito Imperfeito do Subjuntivo (conjunção SE / desinência `-sse`):* Condição irreal ou hipótese dependente (*"Se os alunos estudassem..."* / *"Talvez se devesse ao fato..."*). O advérbio *talvez* reforça o valor hipotético.
+  - *Futuro do Subjuntivo (conjunção QUANDO/SE):* Eventualidade em tempo vindouro (*"Quando eu chegar na praia..."*).
 - **A Desconstrução da Gramática Escolar:**
 
- - A escola tradicional difundiu que o Indicativo expressa apenas certeza absoluta e o Subjuntivo apenas dúvida/hipótese.
- - Em provas de concurso, **Hipótese = Possibilidade**.
- - Se a questão indagar qual forma expressa hipótese/possibilidade, a busca deve contemplar formas do **Subjuntivo** OU do **Futuro do Pretérito do Indicativo**.
- - **Equação Decisiva:** $\text{Hipótese} = \text{Possibilidade} \neq \text{Impossibilidade}$.
+  - A escola tradicional difundiu que o Indicativo expressa apenas certeza absoluta e o Subjuntivo apenas dúvida/hipótese.
+  - Em provas de concurso, **Hipótese = Possibilidade**.
+  - Se a questão indagar qual forma expressa hipótese/possibilidade, a busca deve contemplar formas do **Subjuntivo** OU do **Futuro do Pretérito do Indicativo**.
+  - **Equação Decisiva:** $\text{Hipótese} = \text{Possibilidade} \neq \text{Impossibilidade}$.
 
 - **Operacionalizado por:**
 
@@ -216,9 +214,9 @@ O Modo Subjuntivo é a matriz gramatical da **hipótese, possibilidade, eventual
 
 ---
 
-## A Matriz Semântica Cebraspe: Hipótese vs. Dúvida vs. Impossibilidade
+### A Matriz Semântica Cebraspe: Hipótese vs. Dúvida vs. Impossibilidade
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Nas questões do Cebraspe/CESPE, as formas do Futuro do Pretérito e do Subjuntivo transitam entre **três matrizes semânticas**, cuja confusão deliberada constitui a principal fonte de pegadinhas da banca: **(1) Hipótese/Possibilidade**, **(2) Dúvida/Incerteza** e **(3) Impossibilidade**.
 
@@ -235,28 +233,28 @@ Ex: "a célula seria..." Ex: "descenderiam... Ex: "Jantaria amanhã,
  A verdade é outra" mas tenho de estudar"
 ```
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Hipótese = Possibilidade (Mais comum em prova):**
- - Denota fato factível, projeto transformador ou suposição teórica formulada por especialistas (*"a empatia seria..."* / *"tudo se sanearia desde casas abertas"*).
- - *Pegadinha da banca:* Tentar classificar a hipótese como "certeza da impossibilidade", "fato improvável" ou "algo impossível de se realizar" (itens que resultam em **ERRADO**).
+  - Denota fato factível, projeto transformador ou suposição teórica formulada por especialistas (*"a empatia seria..."* / *"tudo se sanearia desde casas abertas"*).
+  - *Pegadinha da banca:* Tentar classificar a hipótese como "certeza da impossibilidade", "fato improvável" ou "algo impossível de se realizar" (itens que resultam em **ERRADO**).
 2. **Dúvida = Incerteza (Menos comum):**
- - Ocorre quando o enunciador relata uma tese alheia relativizando-a, demonstrando expressamente distanciamento ou hesitação (*"descenderiam..."*).
- - *Validação contextual:* Confirma-se quando o autor contrapõe o verbo a uma defesa categórica no período seguinte (*"A verdade, bem outra, é que..."*). O item que afirma que o autor considera a percepção "duvidosa" resulta em **CERTO**.
+  - Ocorre quando o enunciador relata uma tese alheia relativizando-a, demonstrando expressamente distanciamento ou hesitação (*"descenderiam..."*).
+  - *Validação contextual:* Confirma-se quando o autor contrapõe o verbo a uma defesa categórica no período seguinte (*"A verdade, bem outra, é que..."*). O item que afirma que o autor considera a percepção "duvidosa" resulta em **CERTO**.
 3. **Impossibilidade / Fato Contrafactual (Raro em textos de prova):**
- - Ocorre unicamente quando o contexto textual estabelece um impedimento irremovível ou uma oração adversativa/condicional que anula a concretização do fato (*"Jantaria com você amanhã, mas tenho que estudar"*).
+  - Ocorre unicamente quando o contexto textual estabelece um impedimento irremovível ou uma oração adversativa/condicional que anula a concretização do fato (*"Jantaria com você amanhã, mas tenho que estudar"*).
 
 - **Exemplificado em:**
 
 ---
 
-## Reescritura Verbal e a Tríade Correção, Semântica e Coerência
+### Reescritura Verbal e a Tríade Correção, Semântica e Coerência
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A reescritura de formas verbais constitui a modalidade mais refinada de questão do Cebraspe, exigindo a dissociação analítica entre a preservação da **norma culta (correção)**, a manutenção do **sentido original (semântica)** e a sustentação da **lógica textual (coerência)**.
 
-### Critérios de aplicação da tríade
+#### Critérios de aplicação da tríade
 
 1. **Correção Gramatical:** Conformidade com a morfologia e a sintaxe padrão (regras de flexão, concordância e regência).
 2. **Semântica (Sentido Original):** Fidelidade aos valores aspectuais e temporais originários. A substituição de um pretérito perfeito por imperfeito altera o sentido (de pontual para habitual), embora possa manter a correção e a coerência.
@@ -264,8 +262,6 @@ A reescritura de formas verbais constitui a modalidade mais refinada de questão
 
 - **Operacionalizado por:**
 - **Exemplificado em:**  (Troca de Presente Histórico por Pretérito Perfeito)
-
----
 
 ---
 
@@ -282,64 +278,60 @@ A reescritura de formas verbais constitui a modalidade mais refinada de questão
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Método das Palavras Mágicas para Identificação Verbal
+### Método das Palavras Mágicas para Identificação Verbal
 
-### Passo a passo operacional
+#### Passo a passo operacional
 
 1. **Redução ao Infinitivo:** Isole a forma verbal flexionada e converta-a mentalmente ao infinitivo para identificar a raiz do verbo (ex.: *vinha* $\rightarrow$ *vir*; *aprendera* $\rightarrow$ *aprender*).
 2. **Aplicação da Palavra-Chave Temporal de Teste:**
- - Encaixe **HOJE** $\rightarrow$ Presente do Indicativo (*Hoje ele estuda / Hoje elas cravam*).
- - Encaixe **ONTEM** $\rightarrow$ Pretérito Perfeito do Indicativo (*Ontem ele estudou / Ontem ele abriu*).
- - Encaixe **ANTIGAMENTE** $\rightarrow$ Pretérito Imperfeito do Indicativo (*Antigamente ele estudava / Antigamente ele vinha*).
- - Substitua por **TINHA + Particípio** $\rightarrow$ Pretérito Mais-que-Perfeito do Indicativo (*aprendera = tinha aprendido*).
+  - Encaixe **HOJE** $\rightarrow$ Presente do Indicativo (*Hoje ele estuda / Hoje elas cravam*).
+  - Encaixe **ONTEM** $\rightarrow$ Pretérito Perfeito do Indicativo (*Ontem ele estudou / Ontem ele abriu*).
+  - Encaixe **ANTIGAMENTE** $\rightarrow$ Pretérito Imperfeito do Indicativo (*Antigamente ele estudava / Antigamente ele vinha*).
+  - Substitua por **TINHA + Particípio** $\rightarrow$ Pretérito Mais-que-Perfeito do Indicativo (*aprendera = tinha aprendido*).
 3. **Teste de Conjunções para o Subjuntivo:**
- - Encaixe **QUE** $\rightarrow$ Presente do Subjuntivo (*Que eu aproxime*).
- - Encaixe **SE** $\rightarrow$ Pretérito Imperfeito do Subjuntivo (*Se eu devesse / Se estudassem*).
- - Encaixe **QUANDO** $\rightarrow$ Futuro do Subjuntivo (*Quando eu chegar*).
+  - Encaixe **QUE** $\rightarrow$ Presente do Subjuntivo (*Que eu aproxime*).
+  - Encaixe **SE** $\rightarrow$ Pretérito Imperfeito do Subjuntivo (*Se eu devesse / Se estudassem*).
+  - Encaixe **QUANDO** $\rightarrow$ Futuro do Subjuntivo (*Quando eu chegar*).
 
 ---
 
-## Método do Fatiamento e Análise de Sujeito/Referenciação no Cebraspe
+### Método do Fatiamento e Análise de Sujeito/Referenciação no Cebraspe
 
-### Passo a passo operacional
+#### Passo a passo operacional
 
 1. **Fatiar a Assertiva em Duas Partes Autônomas:**
- - *Parte 1 (Morfossintaxe):* Verifique se o verbo citado está de fato no tempo e modo indicados no comando. Se a classificação morfológica estiver errada, o item morre como **ERRADO** imediatamente.
- - *Parte 2 (Semântica/Interpretação):* Analise o valor semântico alegado pela banca.
+  - *Parte 1 (Morfossintaxe):* Verifique se o verbo citado está de fato no tempo e modo indicados no comando. Se a classificação morfológica estiver errada, o item morre como **ERRADO** imediatamente.
+  - *Parte 2 (Semântica/Interpretação):* Analise o valor semântico alegado pela banca.
 2. **Checagem de Sujeito e Referenciação Anafórica:**
- - Volte ao texto e trace setas ligando a forma verbal ao seu sujeito real. Verifique se a ação atribuída na assertiva foi de fato praticada pelo referente citado (ex.: diferenciar ações da 1ª pessoa/narrador das ações da 3ª pessoa/"homem modesto").
+  - Volte ao texto e trace setas ligando a forma verbal ao seu sujeito real. Verifique se a ação atribuída na assertiva foi de fato praticada pelo referente citado (ex.: diferenciar ações da 1ª pessoa/narrador das ações da 3ª pessoa/"homem modesto").
 3. **Confronto Semântico:** Valide se o sentido pretendido condiz com a aspectualidade real do texto, eliminando interpretações meramente intuitivas.
 
 ---
 
-## Diagnóstico das Nuances de Hipótese, Dúvida e Impossibilidade ("O que vem depois salva")
+### Diagnóstico das Nuances de Hipótese, Dúvida e Impossibilidade ("O que vem depois salva")
 
-### Passo a passo operacional
+#### Passo a passo operacional
 
 1. **Localize o Verbo no Futuro do Pretérito ou Subjuntivo:** Identifique a forma em `-ria` ou no modo subjuntivo.
 2. **Inspecione o Entorno Textual:**
- - Se o texto contiver verbos modais de potencialidade (*podem, permite*) ou tratar de projetos arquitetônicos/teorias $\rightarrow$ Classifique como **Hipótese / Possibilidade**. Se a banca alegar "impossibilidade" ou "fato improvável", marque **ERRADO**.
+  - Se o texto contiver verbos modais de potencialidade (*podem, permite*) ou tratar de projetos arquitetônicos/teorias $\rightarrow$ Classifique como **Hipótese / Possibilidade**. Se a banca alegar "impossibilidade" ou "fato improvável", marque **ERRADO**.
 3. **Aplique a Regra "O Que Vem Depois Salva":**
- - Ao analisar citações de terceiros (*"segundo doutrinadores, as instituições descenderiam..."*), leia obrigatoriamente o período subsequente.
- - Se o período seguinte trouxer uma afirmação categórica em sentido oposto (*"A verdade, bem outra, é que pertencem a ordens diferentes..."*), confirma-se que o autor utilizou o verbo para marcar a tese como **duvidosa/incerta**. O item da banca é **CERTO**.
+  - Ao analisar citações de terceiros (*"segundo doutrinadores, as instituições descenderiam..."*), leia obrigatoriamente o período subsequente.
+  - Se o período seguinte trouxer uma afirmação categórica em sentido oposto (*"A verdade, bem outra, é que pertencem a ordens diferentes..."*), confirma-se que o autor utilizou o verbo para marcar a tese como **duvidosa/incerta**. O item da banca é **CERTO**.
 4. **Verifique Existência de Impedimento Real:**
- - Somente considere o valor de **Impossibilidade** se o texto registrar uma condição adversativa categórica que inviabilizou o fato.
+  - Somente considere o valor de **Impossibilidade** se o texto registrar uma condição adversativa categórica que inviabilizou o fato.
 
 ---
 
-## Análise da Tríade em Questões de Reescritura
+### Análise da Tríade em Questões de Reescritura
 
-### Passo a passo operacional
+#### Passo a passo operacional
 
 1. **Teste da Correção Gramatical:** A substituição proposta gera erro de concordância, regência ou flexão irregular? Se sim $\rightarrow$ Item **Incorreto**.
 2. **Teste Semântico (Sentido Original):** O comando da questão pergunta se o *sentido original* foi preservado? Verifique se houve alteração aspectual (ex.: pontual para habitual) ou modal (ex.: certeza para hipótese). Se o sentido mudou e a questão dizia que ele se mantinha $\rightarrow$ Item **Errado**.
 3. **Teste de Coerência (Lógica do Texto):** O comando da questão pergunta apenas se o texto permanece *coerente*? Se a frase continuar fazendo sentido lógico dentro da narrativa/argumentação, a coerência está preservada, mesmo que o sentido original tenha sofrido modificação estilística $\rightarrow$ Item **Certo**.
-
----
 
 ---
 
@@ -353,7 +345,7 @@ A reescritura de formas verbais constitui a modalidade mais refinada de questão
 | **Pretérito Imperfeito** | `-va` (1ª conj.) / `-ia` (2ª e 3ª conj.) | **Durativo / Habitual** | *Antigamente* | Ação contínua, hábito ou desejo frustrado | Afirmar que indica o**início da ação** (aspecto inchoativo). |
 | **Pretérito Mais-que-Perfeito** | `-ra` (simples) / *tinha + part.* (comp.) | **Anterioridade relativa** | *Tinha + part.* | Passado anterior a outro passado | Afirmar que depende da ordem física na folha ou que projeta ao futuro. |
 
-### Tabela 2: Matriz Semântica Cebraspe para Formas Hipotéticas (Futuro do Pretérito e Subjuntivo)
+#### Tabela 2: Matriz Semântica Cebraspe para Formas Hipotéticas (Futuro do Pretérito e Subjuntivo)
 
 | Nuance Semântica | Conceito Operacional | Frequência em Prova | Exemplo Textual Real | Julgamento Cebraspe Típico |
 |:---------------------------------- |:------------------------------------------------------- |:------------------- |:--------------------------------------------------- |:------------------------------------------------------------------------------------- |
@@ -363,11 +355,9 @@ A reescritura de formas verbais constitui a modalidade mais refinada de questão
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Exemplos dos 5 Valores do Presente do Indicativo
+### Exemplos dos 5 Valores do Presente do Indicativo
 
 - **Presente Atual:** *"Guilherme está cansado."* (Ação concomitante ao ato de fala).
 - **Presente Histórico:** *"Em 1500 Cabral chega ao Brasil."* (Fato passado narrado no presente para vivacidade).
@@ -377,7 +367,7 @@ A reescritura de formas verbais constitui a modalidade mais refinada de questão
 
 ---
 
-## Questão 01 / : Pretérito Imperfeito e Ação Repetida no Passado
+### Questão 01 / : Pretérito Imperfeito e Ação Repetida no Passado
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE - 2024 - Pref. de Cachoeiro de Itapemirim - ES - Auditor Fiscal
 - **Texto:** *"Está bem. Tomo o meu café com pão dormido... E, enquanto tomo café, vou me lembrando de **um homem modesto** que conheci antigamente. Quando **vinha** deixar o pão à porta do apartamento, ele **apertava** a campainha, mas, para não incomodar os moradores, **avisava** gritando:"*
@@ -387,7 +377,7 @@ A reescritura de formas verbais constitui a modalidade mais refinada de questão
 
 ---
 
-## Questão 02 / : Pretérito Imperfeito vs. Pegadinha do "Início de Ações"
+### Questão 02 / : Pretérito Imperfeito vs. Pegadinha do "Início de Ações"
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE - Instituto Rio Branco - Diplomata
 - **Texto:** *"Dei em passear de bonde... crescera. **Jantava** uns dias; em outros, **almoçava** unicamente... **Vivia** pobremente..."*
@@ -397,7 +387,7 @@ A reescritura de formas verbais constitui a modalidade mais refinada de questão
 
 ---
 
-## Questão 03 / : Pretérito Mais-que-Perfeito e Anterioridade Cronológica Real
+### Questão 03 / : Pretérito Mais-que-Perfeito e Anterioridade Cronológica Real
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE - 2024 - Pref. de Cachoeiro de Itapemirim - ES - Auditor Fiscal
 - **Texto:** *"Ele **abriu** um sorriso largo. **Explicou** que **aprendera** aquilo de ouvido. Muitas vezes lhe **acontecera** bater a campainha... e ouvir a pessoa que o **atendera** dizer para dentro..."*
@@ -407,7 +397,7 @@ A reescritura de formas verbais constitui a modalidade mais refinada de questão
 
 ---
 
-## Questão 04 / : Pretérito Mais-que-Perfeito não Projeta para o Futuro
+### Questão 04 / : Pretérito Mais-que-Perfeito não Projeta para o Futuro
 
 - **Banca / Órgão / Ano:** (ADAPTADO) CESPE / CEBRASPE - 2024 - PC-PE - Escrivão
 - **Texto:** *"Espanto, e enorme, senti ao enxergar meu pai abatido na sala, o gesto lento. **Habituara**-me a vê-lo grave..."*
@@ -417,14 +407,14 @@ A reescritura de formas verbais constitui a modalidade mais refinada de questão
 
 ---
 
-## Questões 05 e 06 / : Presente Habitual e Substituição do Presente Histórico
+### Questões 05 e 06 / : Presente Habitual e Substituição do Presente Histórico
 
 - **Caso 1 (Cachoeiro de Itapemirim - Cuidador):** *"Na febre alta, as toxinas **cravam** as garras nos músculos..."* $\rightarrow$ Assertiva: a ação designada por *cravam* é habitual. **Gabarito: CERTO** (Presente habitual/atemporal em verdade médica).
 - **Caso 2 (MPE-SC - Promotor):** *"No Brasil, a figura do promotor só **surge** em 1609, quando **é** regulamentado..."* $\rightarrow$ Assertiva: o tempo é presente histórico e admite substituição adequada pelo pretérito perfeito (*surgiu, foi*). **Gabarito: CERTO**.
 
 ---
 
-## Questão 07 / : Presente Dissertativo não É Ação Contínua Vinda do Passado
+### Questão 07 / : Presente Dissertativo não É Ação Contínua Vinda do Passado
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE - 2024 - CAPES - Analista
 - **Texto:** *"Todo discurso **tem** uma dimensão argumentativa. Alguns se **apresentam** como explicitamente argumentativos..."*
@@ -434,7 +424,7 @@ A reescritura de formas verbais constitui a modalidade mais refinada de questão
 
 ---
 
-## Questão 08 / : Futuro do Pretérito como Possibilidade Vista do Passado
+### Questão 08 / : Futuro do Pretérito como Possibilidade Vista do Passado
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE - 2024 - Pref. de Mossoró - RN - Analista
 - **Texto:** *"Os acordos de 1810 foram firmados contra a garantia da Inglaterra de que nenhum governo imposto por Napoleão em Portugal **seria** reconhecido..."*
@@ -444,7 +434,7 @@ A reescritura de formas verbais constitui a modalidade mais refinada de questão
 
 ---
 
-## Questão 09 / : Futuro do Pretérito como Dúvida vs. Pegadinha de Fato Consumado
+### Questão 09 / : Futuro do Pretérito como Dúvida vs. Pegadinha de Fato Consumado
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE - 2023 - MPE-SC - Promotor
 - **Texto:** *"...torna difícil indicar quem **seria** o responsável pelo dano, uma vez que o processo decisório decorreu de um aprendizado automático..."*
@@ -454,7 +444,7 @@ A reescritura de formas verbais constitui a modalidade mais refinada de questão
 
 ---
 
-## Questão 10 / : Futuro do Pretérito Teórico vs. Pegadinha de Ação Iminente
+### Questão 10 / : Futuro do Pretérito Teórico vs. Pegadinha de Ação Iminente
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE - 2022 - TCE-RJ - Analista
 - **Texto:** *"Dessa forma, podemos delegar cada vez mais tarefas a algoritmos que, avaliando os resultados... se **reajustariam** e **revisariam** suas regras de funcionamento..."*
@@ -464,7 +454,7 @@ A reescritura de formas verbais constitui a modalidade mais refinada de questão
 
 ---
 
-## Questão 01 / : Pretérito Imperfeito do Subjuntivo com "Talvez" (Hipótese)
+### Questão 01 / : Pretérito Imperfeito do Subjuntivo com "Talvez" (Hipótese)
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE - CBM-CE - Aspirante
 - **Texto:** *"Talvez o grande número de escravos no Sítio do Tatu se **devesse** ao fato de Federalina possuir..."*
@@ -474,7 +464,7 @@ A reescritura de formas verbais constitui a modalidade mais refinada de questão
 
 ---
 
-## Questão 02 / : Futuro do Pretérito Marcando Tese Duvidosa Confirmada no Texto
+### Questão 02 / : Futuro do Pretérito Marcando Tese Duvidosa Confirmada no Texto
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE - 2024 - CNJ - Técnico Judiciário
 - **Texto:** *"De acordo com esses doutrinadores, o Estado e as suas instituições **descenderiam** em linha reta, e por simples evolução, da família. A verdade, bem outra, é que pertencem a ordens diferentes em essência..."*
@@ -484,7 +474,7 @@ A reescritura de formas verbais constitui a modalidade mais refinada de questão
 
 ---
 
-## Questão 03 / : Futuro do Pretérito em Poesia vs. Pegadinha de "Impossibilidade"
+### Questão 03 / : Futuro do Pretérito em Poesia vs. Pegadinha de "Impossibilidade"
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE - 2024 - CAU-BR - Analista
 - **Texto:** *"O arquiteto: o que abre para o homem / (**tudo se sanearia desde casas abertas**) / portas por-onde, jamais portas-contra..."*
@@ -494,7 +484,7 @@ A reescritura de formas verbais constitui a modalidade mais refinada de questão
 
 ---
 
-## Questão 04 / : Presente do Subjuntivo com "Podem Construir" vs. "Fato Improvável"
+### Questão 04 / : Presente do Subjuntivo com "Podem Construir" vs. "Fato Improvável"
 
 - **Banca / Órgão / Ano:** (ADAPTADO) CESPE / CEBRASPE - 2022 - Pref. de Joinville - SC - Auxiliar de Educador
 - **Texto:** *"Assim, as crianças podem construir para a leitura um sentimento que as **aproxime** desse instrumento cultural..."*
@@ -504,7 +494,7 @@ A reescritura de formas verbais constitui a modalidade mais refinada de questão
 
 ---
 
-## Questão 05 / : Definição Teórica com Futuro do Pretérito vs. "Impossível de Realizar"
+### Questão 05 / : Definição Teórica com Futuro do Pretérito vs. "Impossível de Realizar"
 
 - **Banca / Órgão / Ano:** (ADAPTADO) CESPE / CEBRASPE - Pref. de Barra dos Coqueiros - SE - Arquiteto
 - **Texto:** *"Para o psicólogo..., a empatia **seria** 'uma forma de restabelecer um contato com um objeto de amor perdido...'."*
@@ -514,20 +504,18 @@ A reescritura de formas verbais constitui a modalidade mais refinada de questão
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Teste das Palavras Mágicas para Pretérito Perfeito vs. Imperfeito
+### O Teste das Palavras Mágicas para Pretérito Perfeito vs. Imperfeito
 
 - **Macete:** Ao hesitar entre Pretérito Perfeito e Imperfeito na prova:
 
- - Encaixe **"Ontem"** $\rightarrow$ Soa natural com **Pretérito Perfeito** (*Ontem ele abriu / Ontem ele explicou*).
- - Encaixe **"Antigamente"** $\rightarrow$ Soa natural com **Pretérito Imperfeito** (*Antigamente ele vinha / Antigamente ele apertava*).
+  - Encaixe **"Ontem"** $\rightarrow$ Soa natural com **Pretérito Perfeito** (*Ontem ele abriu / Ontem ele explicou*).
+  - Encaixe **"Antigamente"** $\rightarrow$ Soa natural com **Pretérito Imperfeito** (*Antigamente ele vinha / Antigamente ele apertava*).
 
 ---
 
-## O Radar de Hipótese para Concursos
+### O Radar de Hipótese para Concursos
 
 - **Dica de Ouro:** O comando da questão falou em **hipótese ou possibilidade**? Acione o radar duplo imediatamente:
 
@@ -536,100 +524,94 @@ A reescritura de formas verbais constitui a modalidade mais refinada de questão
 
 ---
 
-## A Regra do "O Que Vem Depois Salva"
+### A Regra do "O Que Vem Depois Salva"
 
 - **Boas Práticas:** Quando a assertiva afirmar que uma citação em Futuro do Pretérito carrega valor "duvidoso", não julgue a frase isolada: leia o período seguinte! É nele que o autor explicita sua posição (ex.: *"A verdade é outra"*), chancelando o julgamento de dúvida.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## A Armadilha do Presente Restrito ao Momento da Fala
+### A Armadilha do Presente Restrito ao Momento da Fala
 
 - **O erro:** Supor que toda forma no Presente do Indicativo expressa fato rigorosamente simultâneo à fala ou ação contínua iniciada no passado.
 - **Como neutralizar:** Exija marcas contextuais explícitas (*desde*, *há anos*) para classificar como durativo vindo do passado, e verifique se o verbo não expressa apenas verdade geral atemporal ou passado histórico narrativo.
 
 ---
 
-## A Pegadinha Clássica do "Início da Ação" para o Pretérito Imperfeito
+### A Pegadinha Clássica do "Início da Ação" para o Pretérito Imperfeito
 
 - **O erro:** Em textos memorialistas que relatam o início da juventude, marcar como correta a assertiva que diz que verbos no Pretérito Imperfeito (*jantava, almoçava, vivia*) denotam o "início de determinadas ações".
 - **A regra:** O Pretérito Imperfeito **NUNCA** expressa início de ação (aspecto inchoativo); expressa continuidade, repetição e hábito. O item é invariavelmente **ERRADO**.
 
 ---
 
-## Confundir Anterioridade Cronológica com Ordem Gráfica no Texto
+### Confundir Anterioridade Cronológica com Ordem Gráfica no Texto
 
 - **O erro:** Julgar que o Pretérito Mais-que-Perfeito precisa aparecer fisicamente impresso antes do Pretérito Perfeito no parágrafo para indicar anterioridade.
 - **A regra:** A anterioridade do Mais-que-Perfeito é da **vida/história real dos fatos** (cronologia fática), totalmente independente da ordem sintática visual na folha de prova.
 
 ---
 
-## Confundir Futuro do Pretérito com Fato Consumado ou Ação Iminente
+### Confundir Futuro do Pretérito com Fato Consumado ou Ação Iminente
 
 - **O erro:** Assinalar que formas em `-ria` (*seria*, *reajustariam*) denotam fatos que "se deram/consumaram no passado" ou ações que "estavam prestes a acontecer no passado".
 - **A regra:** O Futuro do Pretérito expressa hipótese, projeção ou incerteza teórica, afastando tanto a certeza do fato consumado quanto o aspecto iminente/prestes a ocorrer.
 
 ---
 
-## Confundir Polidez com Dúvida no Futuro do Pretérito
+### Confundir Polidez com Dúvida no Futuro do Pretérito
 
 - **O erro:** Interpretar perguntas de cortesia social (*"Aceitaria um café?"*) como expressão de dúvida ou incerteza real do falante.
 - **A regra:** O Futuro do Pretérito atua aqui puramente como atenuador pragmático de polidez, sem expressar hesitação epistemológica.
 
 ---
 
-## A Pegadinha Tripla da "Impossibilidade"
+### A Pegadinha Tripla da "Impossibilidade"
 
 - **O erro:** O Cebraspe pega um verbo no Subjuntivo ou no Futuro do Pretérito que expressa **possibilidade factível** e afirma na assertiva que ele denota "certeza da impossibilidade", "fato improvável" ou "algo impossível de se realizar".
 - **A regra:** Hipótese é sinônimo de possibilidade ($\text{Hipótese} = \text{Possibilidade} \neq \text{Impossibilidade}$). Se o contexto indicar potencialidade de ocorrência, a asserção da banca que alega "impossibilidade" está **ERRADA**.
 
 ---
 
----
-
 ## Glossário operacional
 
-## Semântica Verbal
+### Semântica Verbal
 
 - **Definição:** Ramo da gramática descritivo-funcional que analisa os valores temporais, aspectuais, modais e expressivos que as formas verbais adquirem em função do contexto textual e discursivo [].
 
 ---
 
-## Aspecto Pontual vs. Aspecto Durativo
+### Aspecto Pontual vs. Aspecto Durativo
 
 - **Definição:**
- - *Aspecto Pontual:* Ação delimitada no tempo, compreendida como um bloco único com início e conclusão finalizados (traço típico do Pretérito Perfeito).
- - *Aspecto Durativo / Cursivo:* Ação visualizada em seu desenvolvimento prolongado, habitual, rotineiro ou repetitivo (traço típico do Pretérito Imperfeito) [].
+  - *Aspecto Pontual:* Ação delimitada no tempo, compreendida como um bloco único com início e conclusão finalizados (traço típico do Pretérito Perfeito).
+  - *Aspecto Durativo / Cursivo:* Ação visualizada em seu desenvolvimento prolongado, habitual, rotineiro ou repetitivo (traço típico do Pretérito Imperfeito) [].
 
 ---
 
-## Aspecto Inchoativo (ou Inceptivo)
+### Aspecto Inchoativo (ou Inceptivo)
 
 - **Definição:** Traço aspectual que indica o momento exato de início de uma ação verbal.
 - **Relevância em concursos:** O Cebraspe tenta falsamente associar o aspecto inchoativo ("início da ação") ao Pretérito Imperfeito, o que constitui erro conceitual grave [].
 
 ---
 
-## Presente Histórico (ou Narrativo)
+### Presente Histórico (ou Narrativo)
 
 - **Definição:** Emprego estilístico de formas flexionadas no Presente do Indicativo para relatar acontecimentos ocorridos no passado, conferindo imediatismo dramático à narrativa histórica [].
 
 ---
 
-## Fato Contrafactual
+### Fato Contrafactual
 
 - **Definição:** Enunciado condicional hipotético cuja realização é impedida ou negada por uma condição factual contrária no mundo real (ex.: *"Jantaria com você, mas tenho que estudar"*) [].
 
 ---
 
-## Reescritura Verbal
+### Reescritura Verbal
 
 - **Definição:** Questão de prova que propõe a modificação estrutural de uma locução ou forma verbal, avaliando seu impacto tridimensional sobre a correção gramatical, o sentido pretendido e a coerência lógica do texto [].
-
----
 
 ---
 

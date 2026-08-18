@@ -23,9 +23,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 ### Como aplicar neste tema
 
 1. Localizar o verbo ou a locução verbal na oração em análise para estabelecer a predicação central.
-2. 1. Delimite a oração e localize o verbo principal (ou locução verbal).
-3. 2. Determine o sujeito para confirmar a integridade da concordância e a delimitação do predicado.
-4. 3. Aplique o Teste Diagnóstico do Substantivo Masculino ('o menino' vs. 'ao menino') ao verbo:
+2. Delimite a oração e localize o verbo principal (ou locução verbal).
+3. Determine o sujeito para confirmar a integridade da concordância e a delimitação do predicado.
+4. Aplique o Teste Diagnóstico do Substantivo Masculino ('o menino' vs. 'ao menino') ao verbo:
 
 ### Testes decisivos
 
@@ -46,7 +46,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Conceito fundamental de transitividade verbal (intransitivo, transitivo direto, transitivo indireto, transitivo direto e indireto).
 - Noções gerais de colocação pronominal (próclise, mesóclise e ênclise) e fatores de atração gramatical.
 
-### Mapa hierárquico consolidado
+#### Mapa hierárquico consolidado
 
 ```text
 Regência e Sintaxe dos Pronomes (esta unidade)
@@ -86,17 +86,15 @@ Regência e Sintaxe dos Pronomes (esta unidade)
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Seleção Fundamental de Pronomes Oblíquos de 3ª Pessoa (O/A vs. LHE/LHES)
+### Seleção Fundamental de Pronomes Oblíquos de 3ª Pessoa (O/A vs. LHE/LHES)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A escolha entre os pronomes oblíquos átonos de terceira pessoa (`o, a, os, as` versus `lhe, lhes`) é rigidamente determinada pela transitividade sintática do termo regente, configurando uma regra de exclusão mútua: complementos verbais não preposicionados exigem `o/a`, enquanto complementos preposicionados exigem `lhe/lhes`.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Na norma-padrão da Língua Portuguesa:
 
@@ -104,7 +102,7 @@ Na norma-padrão da Língua Portuguesa:
 2. **Série LHE, LHES:** Atuam exclusivamente como complementos de **natureza preposicionada**, preenchendo a função de **Objeto Indireto (O.I.)** com verbos transitivos indiretos (VTI/VTDI) que regem tipicamente a preposição *a*.
 3. **Inadmissibilidade do LHE com VTD:** O uso de `lhe` com verbos transitivos diretos (como *amar*, *estimar*, *respeitar*, *ver*, *ajudar*, *incomodar*) constitui erro de regência, a despeito de sua frequência na modalidade coloquial e de sua aparente polidez auditiva.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Vi o menino no cinema* $\rightarrow$ *Vi-**o** no cinema* (Correto — *ver* é VTD).
 - *\*Vi-lhe no cinema* (Incorreto — emprego indevido de *lhe* em VTD).
@@ -113,13 +111,13 @@ Na norma-padrão da Língua Portuguesa:
 
 ---
 
-## As Três Funções Sintáticas Preposicionadas do Pronome LHE / LHES
+### As Três Funções Sintáticas Preposicionadas do Pronome LHE / LHES
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O pronome `lhe / lhes` não se restringe à função de objeto indireto verbal; ele é uma forma preposicionada polivalente capaz de exercer três funções sintáticas na oração: **Objeto Indireto (O.I.)**, **Complemento Nominal (C.N.)** ou **Adjunto Adnominal (Adj.Adn.)**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A classificação sintática do pronome `lhe` depende estritamente do termo ao qual ele se subordina morfossintática e semanticamente:
 
@@ -127,7 +125,7 @@ A classificação sintática do pronome `lhe` depende estritamente do termo ao q
 2. **Como Complemento Nominal (C.N.):** Subordina-se a um nome (substantivo abstrato, adjetivo ou advérbio) que rege preposição, mesmo que o pronome esteja colocado por ênclise junto a um verbo transitivo direto (*Tenho-lhe respeito* = tenho respeito ao menino; *respeito* é substantivo, logo `lhe` é C.N.).
 3. **Como Adjunto Adnominal (Adj.Adn.):** Subordina-se a um substantivo exercendo valor semântico de posse (*dele/dela, seu/sua*), qualificando ou determinando o elemento nominal (*Beijou-lhe a mão* = beijou a sua mão).
 
-### Critérios de reconhecimento
+#### Critérios de reconhecimento
 
 - Se o termo regente for **verbo** $\rightarrow$ `lhe` é **Objeto Indireto**.
 - Se o termo regente for **substantivo abstrato/adjetivo** sem relação de posse $\rightarrow$ `lhe` é **Complemento Nominal**.
@@ -135,13 +133,13 @@ A classificação sintática do pronome `lhe` depende estritamente do termo ao q
 
 ---
 
-## Pronomes Oblíquos com Valor Possessivo (Adjunto Adnominal)
+### Pronomes Oblíquos com Valor Possessivo (Adjunto Adnominal)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Toda vez que um pronome oblíquo átono (`lhe, me, te, se, nos, vos`) estabelecer uma relação semântica de posse sobre um substantivo da oração (equivalendo a *dele, dela, seu, sua, meu, teu, nosso*), sua classificação sintática será invariavelmente de **Adjunto Adnominal**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Mesmo estando fonética e morfologicamente acoplado ao verbo por ênclise ou próclise, o pronome não integra a regência do predicado verbal quando delimita a posse de um objeto ou ser (geralmente partes do corpo, pertences ou vestimentas):
 
@@ -150,35 +148,35 @@ Mesmo estando fonética e morfologicamente acoplado ao verbo por ênclise ou pr�
 
 ---
 
-## Pronomes Pessoais Coringas (ME, TE, SE, NOS, VOS) e sua Dependência Contextual
+### Pronomes Pessoais Coringas (ME, TE, SE, NOS, VOS) e sua Dependência Contextual
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Os pronomes oblíquos átonos de 1ª e 2ª pessoas do singular e plural, juntamente com o reflexivo de 3ª pessoa (`me, te, se, nos, vos`), são denominados didaticamente **pronomes coringas**, pois não possuem função sintática prefixada por sua morfologia, podendo atuar tanto como complementos não preposicionados (O.D.) quanto como complementos preposicionados (O.I., C.N. ou Adj.Adn.).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Diferentemente de `o` (100% direto) e `lhe` (100% preposicionado), os pronomes coringas operam em qualquer direção sintática:
 
 - A classificação sintática de um pronome coringa decorre integralmente da transitividade do termo regente com o qual interage na oração:
- - Regente VTD $\implies$ Pronome Coringa é **Objeto Direto (O.D.)**.
- - Regente VTI $\implies$ Pronome Coringa é **Objeto Indireto (O.I.)**.
- - Regente Nome $\implies$ Pronome Coringa é **Complemento Nominal (C.N.)**.
+  - Regente VTD $\implies$ Pronome Coringa é **Objeto Direto (O.D.)**.
+  - Regente VTI $\implies$ Pronome Coringa é **Objeto Indireto (O.I.)**.
+  - Regente Nome $\implies$ Pronome Coringa é **Complemento Nominal (C.N.)**.
 
-### Exemplos comparativos
+#### Exemplos comparativos
 
 - *"Viu-me no cinema."* $\rightarrow$ Quem vê, vê alguém (*o menino* $\rightarrow$ VTD) $\implies$ `me` = **Objeto Direto**.
 - *"Obedeceu-me prontamente."* $\rightarrow$ Quem obedece, obedece a alguém (*ao menino* $\rightarrow$ VTI) $\implies$ `me` = **Objeto Indireto**.
 
 ---
 
-## Princípio da Bitransitividade e Regra da Não Duplicidade de Complementos da Mesma Natureza
+### Princípio da Bitransitividade e Regra da Não Duplicidade de Complementos da Mesma Natureza
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Na norma culta da Língua Portuguesa, um verbo transitivo direto e indireto (VTDI ou bitransitivo) exige obrigatoriamente um **Objeto Direto** (sem preposição) e um **Objeto Indireto** (com preposição). É estritamente proibido atribuir a um mesmo verbo bitransitivo dois objetos diretos ou dois objetos indiretos autônomos.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A distribuição dos complementos em verbos bitransitivos opera sob um princípio de complementaridade obrigatória:
 
@@ -189,7 +187,7 @@ $$
 1. **Regra Operacional de Substituição:** Se um dos complementos da oração já se encontra preenchido por um termo preposicionado (O.I.), o pronome associado deve ser necessariamente de caso direto (`o, a, os, as`). Inversamente, se o complemento substantivo expresso for direto (O.D.), o pronome inserido deve ser de caso indireto (`lhe, lhes` ou forma tônica `a ele/ela`).
 2. **Exceção Estilística:** A única circunstância admitida pela gramática normativa que aparenta duplicar um objeto é a figura do **Objeto Pleonástico** (direto ou indireto), que consiste na reiteração enfática de um termo já introduzido (*"Aos amigos, não lhes disse nada"*), não se tratando de um segundo complemento lógico.
 
-### Exemplos comparativos
+#### Exemplos comparativos
 
 - *Comprei o romance e dei-**o** [O.D.] **ao Hermes** [O.I.].* (Correto).
 - *\*Presenteei-**lhe** [O.I.] **ao Hermes** [O.I.].* (Incorreto — duplicidade de O.I.).
@@ -198,21 +196,21 @@ $$
 
 ---
 
-## Compartilhamento de Complemento em Verbos Coordenados (Regra "Cada Um na Sua")
+### Compartilhamento de Complemento em Verbos Coordenados (Regra "Cada Um na Sua")
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Dois ou mais verbos coordenados só podem compartilhar legitimamente um único complemento se possuírem exatamente a mesma regência verbal. Se os verbos apresentarem transitividades distintas (um VTD e outro VTI), o compartilhamento de um único termo constitui erro sintático de paralelismo, exigindo a distribuição individualizada dos complementos ("cada um na sua").
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Caso Válido (Mesma Regência):**
- - *Eu conheço e respeito aquele professor.* $\rightarrow$ *Conhecer* é VTD e *respeitar* é VTD. Ambos regem complemento direto sem preposição. O sintagma *"aquele professor"* satisfaz plenamente ambos os verbos.
- - *Não conheço e não quero conhecer o candidato.* $\rightarrow$ VTD + VTD (Válido).
+  - *Eu conheço e respeito aquele professor.* $\rightarrow$ *Conhecer* é VTD e *respeitar* é VTD. Ambos regem complemento direto sem preposição. O sintagma *"aquele professor"* satisfaz plenamente ambos os verbos.
+  - *Não conheço e não quero conhecer o candidato.* $\rightarrow$ VTD + VTD (Válido).
 2. **Caso Inválido (Regências Distintas):**
- - *\*Eu vi e gostei do filme.* $\rightarrow$ *Ver* é VTD (exige O.D. sem preposição); *gostar* é VTI (exige O.I. com preposição *de*). O termo *"do filme"* atende apenas a *gostar*, deixando *ver* sintaticamente mutilado ou impondo-lhe preposição indevida.
+  - *\*Eu vi e gostei do filme.* $\rightarrow$ *Ver* é VTD (exige O.D. sem preposição); *gostar* é VTI (exige O.I. com preposição *de*). O termo *"do filme"* atende apenas a *gostar*, deixando *ver* sintaticamente mutilado ou impondo-lhe preposição indevida.
 3. **Procedimento de Correção ("Cada Um na Sua"):**
- - Deve-se desmembrar a coordenação fornecendo o complemento pleno ao primeiro verbo e retomando-o no segundo mediante pronome ou forma preposicionada apropriada:
+  - Deve-se desmembrar a coordenação fornecendo o complemento pleno ao primeiro verbo e retomando-o no segundo mediante pronome ou forma preposicionada apropriada:
 
  $$
  \text{Forma Corrigida: } \text{\textit{Eu vi o filme [O.D.] e gostei dele [O.I.].}}
@@ -220,13 +218,13 @@ Dois ou mais verbos coordenados só podem compartilhar legitimamente um único c
 
 ---
 
-## Regência de Verbos Notáveis em Concursos (Acarretar, Desobedecer, Ajudar, Incomodar, Satisfazer, Presentear, Namorar)
+### Regência de Verbos Notáveis em Concursos (Acarretar, Desobedecer, Ajudar, Incomodar, Satisfazer, Presentear, Namorar)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Sistematização da transitividade e do regime de pronominalização de verbos recorrentes em provas de concursos que frequentemente induzem a erros de eufonia ou desvios da linguagem cotidiana:
 
-### Quadro sistemático de regência
+#### Quadro sistemático de regência
 
 | Verbo | Transitividade Culta | Exigência Preposicional | Pronome de 3ª Pessoa | Exemplo Padrão |
 |:-------------------- |:------------------- |:---------------------------------------- |:------------------------------ |:------------------------------------------------------ |
@@ -238,37 +236,37 @@ Sistematização da transitividade e do regime de pronominalização de verbos r
 | **Presentear** | VTD / VTDI | Presentear alguém (O.D.) com algo (Adj.) | Exige`o / a` (a pessoa) | *Presenteou-**o** com o carro.* |
 | **Namorar** | VTD | Sem preposição (rejeita*com*) | Exige`o / a` | *Eu **a** namorei.* (não: *namorei com ela*) |
 
-### Explicação detalhada dos casos críticos
+#### Explicação detalhada dos casos críticos
 
 1. **Ajudar e Incomodar:** Sofrem forte atração eufônica pelo pronome `lhe` na linguagem coloquial (*"eu lhe ajudo"*, *"incomodou-lhes"*). Em provas, deve-se aplicar friamente a transitividade direta: `o`, `a`, `os`, `as`.
 2. **Namorar:** Na norma culta estrita cobrada em concursos, *namorar* é VTD. A construção *Namorei, noivei e casei com ela* viola o paralelismo sintático, devendo ser corrigida para *Eu a namorei [O.D.], noivei e casei com ela [O.I. com "com"]*.
 
 ---
 
-## Regência dos Verbos Implicar, Ansiar, Aspirar e Assistir
+### Regência dos Verbos Implicar, Ansiar, Aspirar e Assistir
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Quatro verbos notáveis da língua portuguesa sofrem alteração semântica ou exigem preposições específicas conforme a acepção:
 
 1. **IMPLICAR:**
- - No sentido de *acarretar, produzir como efeito, resultar:* é **Transitivo Direto (VTD)**, rejeitando categoricamente a preposição *em* (*"A decisão implicou demissões"*, e nunca *\*"implicou em demissões"*).
- - Na forma pronominal *implicar-se:* assume o sentido de *envolver-se, comprometer-se* e passa a ser **Transitivo Indireto (VTI)** regido pela preposição **em** (*"Ele se implicou em confusão"*).
- - No sentido coloquial de *ter implicância, importunar:* é **Transitivo Indireto (VTI)** com preposição **com** (*"Implicava com os vizinhos"*).
+  - No sentido de *acarretar, produzir como efeito, resultar:* é **Transitivo Direto (VTD)**, rejeitando categoricamente a preposição *em* (*"A decisão implicou demissões"*, e nunca *\*"implicou em demissões"*).
+  - Na forma pronominal *implicar-se:* assume o sentido de *envolver-se, comprometer-se* e passa a ser **Transitivo Indireto (VTI)** regido pela preposição **em** (*"Ele se implicou em confusão"*).
+  - No sentido coloquial de *ter implicância, importunar:* é **Transitivo Indireto (VTI)** com preposição **com** (*"Implicava com os vizinhos"*).
 2. **ANSIAR:**
- - No sentido de *desejar ardentemente:* é **Transitivo Indireto (VTI) de dupla regência preposicional**, aceitando legitimamente a preposição **por** (mais comum) ou a preposição **de** (abonada por Celso Pedro Luft). Rejeita categoricamente a preposição *com* (*"Anseia pelo momento"* ou *"Anseia do momento"*).
+  - No sentido de *desejar ardentemente:* é **Transitivo Indireto (VTI) de dupla regência preposicional**, aceitando legitimamente a preposição **por** (mais comum) ou a preposição **de** (abonada por Celso Pedro Luft). Rejeita categoricamente a preposição *com* (*"Anseia pelo momento"* ou *"Anseia do momento"*).
 3. **ASPIRAR:**
- - No sentido de *almejar, pretender:* é **Transitivo Indireto (VTI)** regido pela preposição **a** (*"Aspira ao cargo"*). Rejeita o pronome `lhe` para coisas (exige *a ele / a ela*).
- - No sentido de *inalar, sorver:* é **Transitivo Direto (VTD)** (*"Aspirou o aroma"*).
+  - No sentido de *almejar, pretender:* é **Transitivo Indireto (VTI)** regido pela preposição **a** (*"Aspira ao cargo"*). Rejeita o pronome `lhe` para coisas (exige *a ele / a ela*).
+  - No sentido de *inalar, sorver:* é **Transitivo Direto (VTD)** (*"Aspirou o aroma"*).
 4. **ASSISTIR:**
- - No sentido de *ver, presenciar:* é **Transitivo Indireto (VTI)** regido pela preposição **a** (*"Assistir ao desmatamento / ao jogo"*). Rejeita o pronome `lhe` em provas tradicionais.
- - No sentido de *prestar socorro, amparar:* é **Transitivo Direto (VTD)** ou **Transitivo Indireto (VTI)** (*"Assistir o paciente"* ou *"Assistir ao paciente"*).
+  - No sentido de *ver, presenciar:* é **Transitivo Indireto (VTI)** regido pela preposição **a** (*"Assistir ao desmatamento / ao jogo"*). Rejeita o pronome `lhe` em provas tradicionais.
+  - No sentido de *prestar socorro, amparar:* é **Transitivo Direto (VTD)** ou **Transitivo Indireto (VTI)** (*"Assistir o paciente"* ou *"Assistir ao paciente"*).
 
 ---
 
-## Regência do Verbo Informar e Construções Bitransitivas Simétricas
+### Regência do Verbo Informar e Construções Bitransitivas Simétricas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O verbo *informar* (bem como *avisar*, *certificar*, *notificar*, *cientificar*) é **Transitivo Direto e Indireto (VTDI)** e admite duas construções simétricas e intercambiáveis na norma culta, desde que respeitado o princípio da não duplicidade de preposições:
 
@@ -287,13 +285,13 @@ O verbo *informar* (bem como *avisar*, *certificar*, *notificar*, *cientificar*)
 
 ---
 
-## Invariância de Gênero do Pronome LHE/LHES e Retomada de Termos Femininos
+### Invariância de Gênero do Pronome LHE/LHES e Retomada de Termos Femininos
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O pronome pessoal oblíquo átono `lhe / lhes` é **completamente invariável em gênero**, flexionando-se estritamente em número (singular/plural). Consequentemente, a forma `lhes` substitui com idêntica correção sintática e gramatical complementos preposicionados plurais masculinos (*aos pais*) ou femininos (*às ordens*).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Bancas organizadoras (com destaque para a FGV) exploram a falsa intuição do candidato de que o substantivo feminino plural (*as ordens*) exigiria o pronome `as` junto a verbos transitivos indiretos como *obedecer*:
 
@@ -306,28 +304,28 @@ Bancas organizadoras (com destaque para a FGV) exploram a falsa intuição do ca
 
 ---
 
-## Regência Verbal em Orações com Pronomes Relativos (Regência Posposta)
+### Regência Verbal em Orações com Pronomes Relativos (Regência Posposta)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Nas orações subordinadas adjetivas encabeçadas por pronome relativo (*que, o qual, quem, cujo*), a preposição que antecede o pronome é exigida pela regência sintática de um termo regente (verbo ou nome) localizado **depois** do pronome relativo (dentro da oração adjetiva), operando uma regência da direita para a esquerda.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 O termo antecedente atua exclusivamente como referente semântico/sintático do pronome relativo, não tendo qualquer poder regencial sobre a preposição que encabeça a oração adjetiva:
 
 - No trecho *"...estado **de que** meu coração precisava..."*:
- - O pronome *que* retoma o antecedente *estado*.
- - O verbo posposto *precisava* rege a preposição *de* (*meu coração precisava **do estado***).
- - A preposição *de* desloca-se obrigatoriamente para antes do relativo (*de + que*).
+  - O pronome *que* retoma o antecedente *estado*.
+  - O verbo posposto *precisava* rege a preposição *de* (*meu coração precisava **do estado***).
+  - A preposição *de* desloca-se obrigatoriamente para antes do relativo (*de + que*).
 - No trecho *"...das quais **surge** o adulto..."*:
- - A preposição *de* (em *das quais*) é regida pelo verbo posposto *surge* (*quem surge, surge de*), e não pelo substantivo antecedente *origem*.
+  - A preposição *de* (em *das quais*) é regida pelo verbo posposto *surge* (*quem surge, surge de*), e não pelo substantivo antecedente *origem*.
 
 ---
 
-## Equivalência entre Pronomes Relativos e Restrições do Relativo "Aonde"
+### Equivalência entre Pronomes Relativos e Restrições do Relativo "Aonde"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O pronome relativo *que* atua como forma neutra universal e pode substituir as formas compostas *o qual / a qual / os quais / as quais*, desde que mantidas as preposições regenciais exigidas:
 
@@ -339,65 +337,65 @@ $$
 \text{de} + \text{o qual} = \mathbf{do\ qual} \iff \text{de} + \text{que} = \mathbf{de\ que}
 $$
 
-### Restrição de uso de "Aonde"
+#### Restrição de uso de "Aonde"
 
 O pronome relativo *aonde* é composto pela contração da preposição $a + onde$, sendo estritamente restrito a referências de lugar físico combinadas com verbos que regem a preposição *a* (verbos de movimento/direção como *ir, chegar, levar*). Não se pode utilizar *aonde* com verbos que regem a preposição *em* (como *investir* em *empresas nas quais investem*).
 
 ---
 
-## Distinção Estrutural entre Dupla Regência e Bitransitividade Verbal
+### Distinção Estrutural entre Dupla Regência e Bitransitividade Verbal
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A **dupla regência** e a **bitransitividade** são estruturas sintáticas mutuamente exclusivas e inconfundíveis:
 
 1. **Dupla Regência:** Ocorre quando o verbo admite **duas molduras sintáticas alternativas** e excludentes em orações distintas (ex.: atuar como VTD puro em um contexto ou como VTI puro em outro, como em *entender* ou *aspirar*).
 2. **Bitransitividade (VTDI):** Ocorre quando o verbo possui **uma única moldura sintática** que exige simultaneamente dois complementos complementares (um O.D. e um O.I., como em *oferecer*, *reduzir*, *dar*).
 
-### A armadilha de bancas (Cebraspe)
+#### A armadilha de bancas (Cebraspe)
 
 Bancas examinadoras frequentemente tentam justificar a troca errônea de `lhe` por `os` em verbos bitransitivos afirmando ser possível "dada a dupla regência do verbo". Em *oferecendo-lhes algo*, o verbo *oferecer* é VTDI fixo; trocar *lhes* por *os* geraria dois objetos diretos (*oferecendo-os algo*), o que é inadmissível.
 
 ---
 
-## Dupla Regência e Variação Semântica no Verbo "Entender"
+### Dupla Regência e Variação Semântica no Verbo "Entender"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O verbo *entender* é um caso canônico de dupla regência associada à variação semântica:
 
 1. **Como Transitivo Direto (VTD — entender algo):** Sentido de **compreender**, decodificar intelectualmente (*"Não entendi o texto"*).
 2. **Como Transitivo Indireto (VTI com preposição "de" — entender de algo):** Sentido de **ter conhecimento prático, experiência, domínio ou competência** (*"Não entende de música clássica"*).
 
-### Impacto em provas
+#### Impacto em provas
 
 A substituição de *coisas das quais não entende* (VTI) por *coisas que não entende* (VTD) mantém a correção sintática, mas **altera o sentido original**, tornando falsas as afirmações de itens que alegam preservação simultânea de correção e sentido.
 
 ---
 
-## Alomorfia Pronominal (-lo/-no) e Interação com Próclise Obrigatória
+### Alomorfia Pronominal (-lo/-no) e Interação com Próclise Obrigatória
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As variantes alomórficas dos pronomes diretos `o, a, os, as` são recursos fonéticos **estritamente enclíticos** (pospostos ao verbo com hífen). A presença de fator atrativo impõe a **próclise obrigatória**, cancelando as acomodações fonéticas alomórficas e restaurando a forma pronominal padrão.
 
-### Regras de alomorfia e atração
+#### Regras de alomorfia e atração
 
 1. **Terminação em -R, -S, -Z + Ênclise:** Elimina-se a consoante e acrescenta-se `-lo, -la, -los, -las` (*revender + o $\rightarrow$ revendê-lo*; *ler + os $\rightarrow$ lê-los*).
 2. **Terminação em Som Nasal (-am, -em, -ão, -õe) + Ênclise:** Acrescenta-se `-no, -na, -nos, -nas` (*viram + o $\rightarrow$ viram-no*).
 3. **Prevalência da Próclise:** Havendo palavra negativa (*não*) ou conjunção subordinativa (*quando*), a ênclise é proibida:
- - *não + viram + o* $\rightarrow$ **não o viram** (e nunca *\*não no viram*).
- - *não + encontrei + as* $\rightarrow$ **não as encontrei** (e nunca *\*não encontrei-las*).
+  - *não + viram + o* $\rightarrow$ **não o viram** (e nunca *\*não no viram*).
+  - *não + encontrei + as* $\rightarrow$ **não as encontrei** (e nunca *\*não encontrei-las*).
 
 ---
 
-## Colocação Pronominal em Estruturas com Intercalação Oracional
+### Colocação Pronominal em Estruturas com Intercalação Oracional
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A presença de vírgula imediatamente antes de um pronome oblíquo não proíbe a próclise caso essa vírgula represente apenas o fechamento de uma oração subordinada adjetiva ou termo adverbial intercalado entre o sujeito e o predicado da oração principal.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A regra que veda iniciar oração com pronome oblíquo átono aplica-se ao início absoluto do período. Na sentença:
 
@@ -406,8 +404,6 @@ $$
 $$
 
 O verbo *presenteou* pertence à oração principal já iniciada por *"Seu pai"*. A vírgula encerra a intercalação e não delimita fronteira de nova oração absoluta, tornando a próclise (*o presenteou*) plenamente válida e culta.
-
----
 
 ---
 
@@ -429,33 +425,31 @@ O verbo *presenteou* pertence à oração principal já iniciada por *"Seu pai"*
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Teste Operacional do Substantivo Masculino ("O Menino" vs. "Ao Menino")
+### Teste Operacional do Substantivo Masculino ("O Menino" vs. "Ao Menino")
 
-### Finalidade
+#### Finalidade
 
 Determinar instantaneamente se um verbo exige complemento direto sem preposição ou indireto com preposição, anulando dúvidas decorrentes de eufonia coloquial.
 
-### Passo a passo operacional
+#### Passo a passo operacional
 
 1. Isole a forma verbal e monte mentalmente uma frase simples inserindo o sintagma masculino **"o menino"** após o verbo.
 2. Observe a junção sintática:
- - Se a ligação ocorrer sem preposição (**"o menino"**), o verbo é **VTD** $\implies$ selecione a família **O, A, OS, AS** (ou alomorfes `-lo, -no`).
- - Se a regência exigir a preposição *a* (**"ao menino"**), o verbo é **VTI** $\implies$ selecione a família **LHE, LHES** (ou pronome coringa em função de O.I.).
+  - Se a ligação ocorrer sem preposição (**"o menino"**), o verbo é **VTD** $\implies$ selecione a família **O, A, OS, AS** (ou alomorfes `-lo, -no`).
+  - Se a regência exigir a preposição *a* (**"ao menino"**), o verbo é **VTI** $\implies$ selecione a família **LHE, LHES** (ou pronome coringa em função de O.I.).
 3. Em verbos bitransitivos (VTDI), verifique o outro complemento expresso na frase para garantir a alternância obrigatória entre O.D. e O.I.
 
 ---
 
-## Teste de Reescrita Possessiva para Adjunto Adnominal
+### Teste de Reescrita Possessiva para Adjunto Adnominal
 
-### Finalidade
+#### Finalidade
 
 Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua como adjunto adnominal de posse.
 
-### Passo a passo operacional
+#### Passo a passo operacional
 
 1. Localize o pronome oblíquo na oração associado a um verbo transitivo que já possua substantivo como objeto direto.
 2. Substitua o pronome oblíquo por um pronome possessivo (*seu, sua, meu*) ou pela locução *dele / dela* junto ao substantivo.
@@ -464,35 +458,35 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 
 ---
 
-## Determinação da Função Sintática de Pronomes Coringas
+### Determinação da Função Sintática de Pronomes Coringas
 
-### Passo a passo operacional
+#### Passo a passo operacional
 
 1. Isole o pronome coringa na oração (`me, te, se, nos, vos`).
 2. Identifique o termo regente imediato (o verbo da oração).
 3. Aplique o teste do substantivo masculino ("o menino") no regente:
- - Verbo rege sem preposição (VTD) $\implies$ Pronome coringa é **Objeto Direto (O.D.)**.
- - Verbo rege preposição *a* (VTI) $\implies$ Pronome coringa é **Objeto Indireto (O.I.)**.
- - Regente é um nome que exige preposição $\implies$ Pronome coringa é **Complemento Nominal (C.N.)**.
+  - Verbo rege sem preposição (VTD) $\implies$ Pronome coringa é **Objeto Direto (O.D.)**.
+  - Verbo rege preposição *a* (VTI) $\implies$ Pronome coringa é **Objeto Indireto (O.I.)**.
+  - Regente é um nome que exige preposição $\implies$ Pronome coringa é **Complemento Nominal (C.N.)**.
 
 ---
 
-## Reestruturação Sintática de Verbos Coordenados ("Cada Um na Sua")
+### Reestruturação Sintática de Verbos Coordenados ("Cada Um na Sua")
 
-### Passo a passo operacional
+#### Passo a passo operacional
 
 1. Identifique dois ou mais verbos ligados por conjunção coordenativa compartilhando um único sintagma nominal como objeto.
 2. Analise a transitividade individual de cada verbo ($V_1$ e $V_2$).
 3. Compare as regências:
- - Se $\text{Regência}(V_1) = \text{Regência}(V_2)$, o compartilhamento é válido (*"Conheço e respeito aquele professor"*).
- - Se $\text{Regência}(V_1) \neq \text{Regência}(V_2)$, condene a frase como vício sintático (*"Vi e gostei do filme"*).
+  - Se $\text{Regência}(V_1) = \text{Regência}(V_2)$, o compartilhamento é válido (*"Conheço e respeito aquele professor"*).
+  - Se $\text{Regência}(V_1) \neq \text{Regência}(V_2)$, condene a frase como vício sintático (*"Vi e gostei do filme"*).
 4. Aplique a técnica "cada um na sua": mantenha o substantivo pleno no primeiro verbo e insira no segundo verbo o pronome ou forma preposicionada correspondente (*"Vi o filme e gostei dele"*).
 
 ---
 
-## Método de Resolução Vertical para Questões de Pronomes e Regência
+### Método de Resolução Vertical para Questões de Pronomes e Regência
 
-### Passo a passo operacional
+#### Passo a passo operacional
 
 1. **Coluna 1 (Transitividade / Família Pronominal):** Identifique se a lacuna exige O.D. (`o/a`) ou O.I. (`lhe`). Risque verticalmente em bloco todas as alternativas com família pronominal incorreta.
 2. **Coluna 2 (Colocação Pronominal):** Inspecione a presença de palavras atrativas (negação, conjunção subordinativa, pronomes relativos/indefinidos). Se houver fator de próclise, risque todas as alternativas que utilizarem ênclise.
@@ -500,9 +494,9 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 
 ---
 
-## Teste de Validação de Preposição com Pronome Relativo
+### Teste de Validação de Preposição com Pronome Relativo
 
-### Passo a passo operacional
+#### Passo a passo operacional
 
 1. Localize o pronome relativo (*que, o qual, cujo, onde*) e a preposição imediatamente anteposta.
 2. Ignore os termos que antecedem o relativo e localize o verbo ou nome regente situado no predicado da oração subordinada adjetiva (termo posposto).
@@ -511,7 +505,7 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 
 ---
 
-## Algoritmo de Bloqueio de Duplo Complemento em Verbos Bitransitivos (VTDI)
+### Algoritmo de Bloqueio de Duplo Complemento em Verbos Bitransitivos (VTDI)
 
 ```text
  ┌──────────────────────────────────────────────┐
@@ -542,8 +536,6 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 
 ---
 
----
-
 ## Contrastes que a prova explora
 
 ### 1. O/A/OS/AS vs. LHE/LHES vs. Pronomes Coringas
@@ -555,7 +547,7 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 | **Flexão de Gênero** | Varia (masculino/feminino) | Invariável (apenas singular/plural) | Invariável em gênero |
 | **Exemplo Típico** | *Vi-**o*** (VTD) | *Obedeci-**lhe*** (VTI) / *Beijou-**lhe** a mão* | *Viu-**me*** (OD) / *Obedeceu-**me*** (OI) |
 
-### 2. As Três Caselas Sintáticas do Pronome LHE
+#### 2. As Três Caselas Sintáticas do Pronome LHE
 
 | Função Sintática | Termo Regente | Relação Semântica / Sintática | Teste Diagnóstico | Exemplo Canônico |
 |:------------------------------------- |:------------------------------ |:------------------------------------------------ |:-------------------------------- |:--------------------------- |
@@ -563,7 +555,7 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 | **Complemento Nominal (C.N.)** | Substantivo abstrato / Adjetivo | Completa o sentido de um nome preposicionado | *Tenho respeito ao menino* | *Tenho-lhe respeito.* |
 | **Adjunto Adnominal (Adj.Adn.)** | Substantivo (concreto/abstrato) | Expressa posse sobre o substantivo | *Beijou a mão dele / sua mão* | *Beijou-lhe a mão.* |
 
-### 3. Dupla Regência vs. Bitransitividade (VTDI)
+#### 3. Dupla Regência vs. Bitransitividade (VTDI)
 
 | Critério | Dupla Regência | Bitransitividade (VTDI) |
 |:---------------------------------- |:------------------------------------------------------------------- |:--------------------------------------------------------------------------------- |
@@ -572,7 +564,7 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 | **Substituição Pronominal** | O pronome segue a opção escolhida em cada oração. | Se a oração já tem O.D., o pronome DEVE ser O.I. (vedado trocar O.I. por O.D.). |
 | **Verbos Canônicos** | *Entender*, *aspirar*, *ansiar*, *assistir*. | *Oferecer*, *reduzir*, *dar*, *informar*, *presentear*, *acarretar*. |
 
-### 4. Verbos com Variação Semântica por Regência
+#### 4. Verbos com Variação Semântica por Regência
 
 | Verbo | Regência A | Significado A | Regência B | Significado B |
 |:----------------- |:------------------------------------- |:------------------------------------------------------------- |:-------------------------------------- |:---------------------------------------------------- |
@@ -583,11 +575,9 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Demonstração de Objeto Direto de 3ª Pessoa (Verbo Ver)
+### Demonstração de Objeto Direto de 3ª Pessoa (Verbo Ver)
 
 - **Estrutura:** *"Vi-o no cinema."*
 - **Análise Sintática:** *Ver* é VTD (quem vê, vê alguém $\rightarrow$ *o menino*). Não há preposição regente.
@@ -595,7 +585,7 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 
 ---
 
-## Demonstração de Objeto Indireto de 3ª Pessoa (Verbo Obedecer)
+### Demonstração de Objeto Indireto de 3ª Pessoa (Verbo Obedecer)
 
 - **Estrutura:** *"Obedeci-lhe prontamente."*
 - **Análise Sintática:** *Obedecer* é VTI e rege preposição *a* (quem obedece, obedece *ao menino*).
@@ -603,7 +593,7 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 
 ---
 
-## Demonstração de LHE como Complemento Nominal
+### Demonstração de LHE como Complemento Nominal
 
 - **Estrutura:** *"Tenho-lhe respeito."*
 - **Análise Sintática:** O verbo *ter* é VTD e tem como objeto direto a palavra *respeito*. O termo *respeito* é substantivo abstrato que exige complemento preposicionado (*respeito ao menino*).
@@ -611,7 +601,7 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 
 ---
 
-## Demonstração de LHE como Adjunto Adnominal Possessivo
+### Demonstração de LHE como Adjunto Adnominal Possessivo
 
 - **Estrutura:** *"Beijou-lhe a mão."*
 - **Análise Sintática:** *Beijar* é VTD e tem como O.D. *"a mão"*. O pronome `lhe` equivale a *"a mão dele / sua mão"*, expressando posse sobre o substantivo.
@@ -619,7 +609,7 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 
 ---
 
-## Demonstração de Pronome Coringa como Objeto Indireto
+### Demonstração de Pronome Coringa como Objeto Indireto
 
 - **Estrutura:** *"Obedeceu-me."*
 - **Análise Sintática:** *Obedecer* é VTI (*obedeceu ao menino*).
@@ -627,7 +617,7 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 
 ---
 
-## Demonstração de Pronome Coringa como Objeto Direto
+### Demonstração de Pronome Coringa como Objeto Direto
 
 - **Estrutura:** *"Viu-me."*
 - **Análise Sintática:** *Ver* é VTD (*viu o menino*).
@@ -635,7 +625,7 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 
 ---
 
-## Bateria de Exercícios de Fixação 1 a 6 (Verbos Notáveis)
+### Bateria de Exercícios de Fixação 1 a 6 (Verbos Notáveis)
 
 1. *A reincidência poderá acarretar-**lhe** penalidades severas.* (*Acarretar* é VTDI; como "penalidades severas" é O.D., o pronome deve ser O.I. $\rightarrow$ `lhe`).
 2. *Não **lhe** desobedecerei jamais.* (*Desobedecer* é VTI com preposição *a* $\rightarrow$ `lhe`).
@@ -646,7 +636,7 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 
 ---
 
-## Compartilhamento Válido (Mesma Regência) vs. Inválido (Regências Distintas)
+### Compartilhamento Válido (Mesma Regência) vs. Inválido (Regências Distintas)
 
 - **Sentença Válida:** *Eu conheço [VTD] e respeito [VTD] aquele professor [O.D.].* (Correta).
 - **Sentença Inválida:** *\*Eu vi [VTD] e gostei [VTI] do filme [O.I.].* (Incorreta).
@@ -654,37 +644,37 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 
 ---
 
-## Caso Especial de Regência Coordenada (*Namorar, Noivar e Casar*)
+### Caso Especial de Regência Coordenada (*Namorar, Noivar e Casar*)
 
 - **Formulação Coloquial Incorreta:** *\*Namorei, noivei e casei com ela.*
 - **Formulação Culta Padrão:** *Eu **a** namorei [O.D.], noivei e casei **com ela** [O.I.].*
 
 ---
 
-## Questão 36 (VUNESP — Pref. São Bernardo do Campo) & Dúvida 36B
+### Questão 36 (VUNESP — Pref. São Bernardo do Campo) & Dúvida 36B
 
 - **Trecho Base:** *"o que **lhe** permitiu se livrar da conta de luz"* (*Permitir* é VTDI $\rightarrow$ `lhe` = O.I.; oração reduzida = O.D.).
 - **Análise das Alternativas:**
- - A) *\*lhe transformou em um lago* $\rightarrow$ Erro: *transformar* é VTDI; com "em um lago" (preposicionado), exige O.D. (*o transformou*).
- - B) *\*usando-lhe para iluminar* $\rightarrow$ Erro: *usar* é VTD $\rightarrow$ correto: *usando-a* (retomando energia).
- - **C) CORRETA (Gabarito):** *"...o que **lhe dará** independência..."* (*Dar* é VTDI: independência = O.D.; `lhe` = O.I.).
- - D) *\*não lhe conhecem* $\rightarrow$ Erro: *conhecer* é VTD $\rightarrow$ *não a conhecem*.
- - E) *\*lhe aproveita* $\rightarrow$ Erro: *aproveitar* é VTD $\rightarrow$ *a aproveita*.
+  - A) *\*lhe transformou em um lago* $\rightarrow$ Erro: *transformar* é VTDI; com "em um lago" (preposicionado), exige O.D. (*o transformou*).
+  - B) *\*usando-lhe para iluminar* $\rightarrow$ Erro: *usar* é VTD $\rightarrow$ correto: *usando-a* (retomando energia).
+  - **C) CORRETA (Gabarito):** *"...o que **lhe dará** independência..."* (*Dar* é VTDI: independência = O.D.; `lhe` = O.I.).
+  - D) *\*não lhe conhecem* $\rightarrow$ Erro: *conhecer* é VTD $\rightarrow$ *não a conhecem*.
+  - E) *\*lhe aproveita* $\rightarrow$ Erro: *aproveitar* é VTD $\rightarrow$ *a aproveita*.
 
 ---
 
-## Questão 37 e Questão 38 (VUNESP — Pref. Ribeirão Preto)
+### Questão 37 e Questão 38 (VUNESP — Pref. Ribeirão Preto)
 
 - **Questão 37 — Gabarito D:** *"Comprei um belo romance... e **o dei ao Hermes**."* (Distribuição perfeita: *o* = O.D.; *ao Hermes* = O.I.). Elimina-se A por duplo O.I. (*presenteei-lhe ao Hermes*) e C por pronome reto (*ler eles*).
 - **Questão 38 — Gabarito D:** *"O sertanejo **informou Rosinha [O.D.] de sua partida [O.I.]**, **deixando-lhe [O.I.] seu coração [O.D.]**."*
- - Elimina-se A: *\*implicaram na partida* (correto: *implicaram a partida*).
- - Elimina-se B: *\*aspira o momento* (correto: *aspira ao momento*).
- - Elimina-se C: *\*anseia com o momento* (correto: *anseia pelo / do momento*).
- - Elimina-se E: *\*assistir o desmatamento* (correto: *assistir ao desmatamento*).
+  - Elimina-se A: *\*implicaram na partida* (correto: *implicaram a partida*).
+  - Elimina-se B: *\*aspira o momento* (correto: *aspira ao momento*).
+  - Elimina-se C: *\*anseia com o momento* (correto: *anseia pelo / do momento*).
+  - Elimina-se E: *\*assistir o desmatamento* (correto: *assistir ao desmatamento*).
 
 ---
 
-## Questão 39 (VUNESP — Pref. Campinas — Auditor Fiscal)
+### Questão 39 (VUNESP — Pref. Campinas — Auditor Fiscal)
 
 - **Enunciado:** Substituir *"mesmo quando o incomoda"* por construção com o verbo *causar* e o substantivo *incômodo*.
 - **Resolução:** *Causar* é VTDI (*causa incômodo [O.D.] a alguém [O.I. $\rightarrow$ lhe]*). A conjunção *quando* exige próclise.
@@ -692,18 +682,18 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 
 ---
 
-## Questão 40 (FGV — TJ-RS — Oficial de Justiça)
+### Questão 40 (FGV — TJ-RS — Oficial de Justiça)
 
 - **Gabarito B:** *"Comprei o livro ontem, mas vou **revendê-lo**;"* (*revender + o $\rightarrow$ revendê-lo*).
 - **Análise dos Erros:**
- - A) *\*lhes condenaram* $\rightarrow$ Erro: *condenar* é VTD $\rightarrow$ *os condenaram*.
- - C) *\*as ordens, por isso os obedeci* $\rightarrow$ Erro: *obedecer* é VTI $\rightarrow$ *lhes obedecia* ou *obedeci a elas*.
- - D) *\*não no viram sair* $\rightarrow$ Erro: negação atrai próclise $\rightarrow$ *não o viram*.
- - E) *\*não encontrei-las* $\rightarrow$ Erro: negação atrai próclise $\rightarrow$ *não as encontrei*.
+  - A) *\*lhes condenaram* $\rightarrow$ Erro: *condenar* é VTD $\rightarrow$ *os condenaram*.
+  - C) *\*as ordens, por isso os obedeci* $\rightarrow$ Erro: *obedecer* é VTI $\rightarrow$ *lhes obedecia* ou *obedeci a elas*.
+  - D) *\*não no viram sair* $\rightarrow$ Erro: negação atrai próclise $\rightarrow$ *não o viram*.
+  - E) *\*não encontrei-las* $\rightarrow$ Erro: negação atrai próclise $\rightarrow$ *não as encontrei*.
 
 ---
 
-## Questão 41 (CESPE — STM — Analista Judiciário)
+### Questão 41 (CESPE — STM — Analista Judiciário)
 
 - **Trecho:** *"estado de que meu coração precisava"*.
 - **Item:** A preposição *de* é regida pela forma verbal *precisava*, não pela palavra *estado*.
@@ -711,7 +701,7 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 
 ---
 
-## Questão 42 (CESPE — ANS — Técnico em Regulação)
+### Questão 42 (CESPE — ANS — Técnico em Regulação)
 
 - **Trecho:** *"...dão origem às pupas, das quais surge o adulto."*
 - **Item:** O emprego de preposição em "das quais" é exigido pela regência de "origem".
@@ -719,14 +709,14 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 
 ---
 
-## Questão 43 (CESPE — TCE-MG) & Questão 44 (CESPE — FUB)
+### Questão 43 (CESPE — TCE-MG) & Questão 44 (CESPE — FUB)
 
 - **Q43 — Gabarito CERTO:** Substituição de *de que* por *do qual* em *"...o meio ambiente de que dependem"*. Preserva correção e sentido.
 - **Q44 — Gabarito ERRADO:** O item afirmava que substituir *no qual* por *em que* em *"contexto no qual está inserida"* prejudicaria o texto. A troca é perfeitamente válida.
 
 ---
 
-## Questão 45 (CESPE — SEFAZ-AL — Auditor Fiscal)
+### Questão 45 (CESPE — SEFAZ-AL — Auditor Fiscal)
 
 - **Trecho:** *"...coisas das quais não entende."*
 - **Item:** A substituição de "das quais" por "que" preservaria tanto o sentido quanto a correção gramatical.
@@ -734,7 +724,7 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 
 ---
 
-## Questão 46 (CESPE — SEFAZ-DF — Auditor Fiscal)
+### Questão 46 (CESPE — SEFAZ-DF — Auditor Fiscal)
 
 - **Trecho:** *"das empresas nas quais investem"*.
 - **Item:** A substituição de "nas quais" por "aonde" prejudicaria a correção gramatical do texto.
@@ -742,141 +732,133 @@ Identificar se o pronome oblíquo (`lhe, me, te, etc.`) acoplado a um verbo atua
 
 ---
 
-## Questão 47 e Questão 48 (CESPE)
+### Questão 47 e Questão 48 (CESPE)
 
 - **Q47 (FUNPRESP) — Gabarito ERRADO:** Proposta de trocar `-o` por `lhe` em *"reduziu-o a artigos"*. Como "a artigos" é O.I., `lhe` geraria duplicidade de O.I.
 - **Q48 (SUFRAMA) — Gabarito ERRADO:** Proposta de trocar `os` por `lhes` em *"os levou consigo"*. *Levar* é VTD e repele `lhes`.
 
 ---
 
-## Questão 49 (CESPE — FUB) & Questão 50 (CESPE — TCE-RJ)
+### Questão 49 (CESPE — FUB) & Questão 50 (CESPE — TCE-RJ)
 
 - **Q49 — Gabarito ERRADO:** Afirmação de que `lhes` poderia ser trocado por `os` em *"oferecendo-lhes algo"* por "dupla regência de oferecer". *Oferecer* é VTDI fixo; trocar geraria dois objetos diretos.
 - **Q50 — Gabarito ERRADO:** Reescrita de *dar ordens* para *dá-lo ordens*. Acumula dois objetos diretos (*-lo* e *ordens*); a forma correta é *dar-lhe ordens*.
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Macete do "Menino" contra a Armadilha da Transitividade
+### O Macete do "Menino" contra a Armadilha da Transitividade
 
 - Em caso de hesitação, teste o verbo com *"o menino"*:
- - Resultou **"o menino"** (sem preposição) $\implies$ marque **O, A, OS, AS**.
- - Resultou **"ao menino"** (com preposição) $\implies$ marque **LHE, LHES**.
+  - Resultou **"o menino"** (sem preposição) $\implies$ marque **O, A, OS, AS**.
+  - Resultou **"ao menino"** (com preposição) $\implies$ marque **LHE, LHES**.
 
-## Seja "Frio e Calculista" contra a Eufonia do LHE
+### Seja "Frio e Calculista" contra a Eufonia do LHE
 
 - O pronome *lhe* soa falsamente culto e polido em verbos como *ajudar*, *amar*, *respeitar*, *incomodar*. Nunca decida uma questão pelo "ouvido" ou beleza sonora; decida pela análise sintática estrita da transitividade.
 
-## Técnica do "Cada Um na Sua" para Redação e Discursivas
+### Técnica do "Cada Um na Sua" para Redação e Discursivas
 
 - Ao redigir períodos com verbos coordenados, verifique se um pede preposição e o outro não (*ver* e *gostar*). Se forem de regências distintas, forneça um complemento substantivo ao primeiro e retome-o com pronome/preposição no segundo (*"Assisti ao filme e gostei dele"*).
 
-## Flecha da Direita para a Esquerda em Pronomes Relativos
+### Flecha da Direita para a Esquerda em Pronomes Relativos
 
 - Em questões com pronome relativo antecedido de preposição (*de que, em que, do qual*), olhe imediatamente para o verbo que vem **depois** do relativo. A flecha da regência sempre corre da direita para a esquerda.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## O Erro de Empregar "LHE" com Verbos Transitivos Diretos
+### O Erro de Empregar "LHE" com Verbos Transitivos Diretos
 
 - **Problema:** Frases como *\*"Eu lhe amo"*, *\*"Eu lhe ajudei"*, *\*"Isso não lhe incomoda"*.
 - **Correção:** *Amar*, *ajudar* e *incomodar* são VTDs $\implies$ *Eu o amo*, *eu o ajudei*, *isso não o incomoda*.
 
-## Armadilha do Pronome Enclítico Parecer Complemento Verbal sem Sê-lo
+### Armadilha do Pronome Enclítico Parecer Complemento Verbal sem Sê-lo
 
 - **Problema:** Julgar que todo pronome com hífen completa o verbo antecedente.
 - **Pegadinha:** Em *"Tenho-lhe respeito"*, o pronome `lhe` completa o substantivo *respeito* (**Complemento Nominal**), e não o verbo *ter*. Em *"Beijou-lhe a mão"*, `lhe` qualifica *mão* (**Adjunto Adnominal**).
 
-## Erro de Paralelismo por Compartilhamento Híbrido de Complemento
+### Erro de Paralelismo por Compartilhamento Híbrido de Complemento
 
 - **Problema:** Unir um VTD e um VTI associados a um único complemento preposicionado (*"Vi e gostei do filme"*).
 - **Correção:** Desmembrar a estrutura: *"Vi o filme e gostei dele"*.
 
-## Regência Culta Tradicional do Verbo Namorar
+### Regência Culta Tradicional do Verbo Namorar
 
 - **Problema:** Empregar *namorar com alguém*.
 - **Correção:** Na norma tradicional de concursos, *namorar* é VTD $\implies$ *João namora Maria* (e não *com Maria*).
 
-## O Erro Clássico de "Implicar em" no Sentido de Acarretar
+### O Erro Clássico de "Implicar em" no Sentido de Acarretar
 
 - **Problema:** Redigir *\*"A medida implicará em demissões"*.
 - **Correção:** No sentido de acarretar, *implicar* é VTD $\implies$ *A medida implicará demissões*. A preposição *em* só é legítima na forma pronominal reflexiva (*implicar-se em* = envolver-se).
 
-## Preconceito de Gênero com o Pronome LHE / LHES
+### Preconceito de Gênero com o Pronome LHE / LHES
 
 - **Problema:** Achar que, por "ordens" ser feminino plural, o pronome substitutivo com *obedecer* deva ser *as* (*"as obedeci"*).
 - **Correção:** *Obedecer* é VTI. O pronome `lhes` não tem feminino e atua perfeitamente no feminino plural: *lhes obedeci* (ou *obedeci a elas*).
 
-## Alomorfia Indevida em Estruturas Proclíticas
+### Alomorfia Indevida em Estruturas Proclíticas
 
 - **Problema:** Aplicar acomodações enclíticas em contexto de próclise (*"não no viram"*, *"não encontrei-las"*).
 - **Correção:** Com palavra atrativa (*não*), o pronome retorna à forma base: *não o viram*, *não as encontrei*.
 
-## Pronome Reto como Complemento Verbal ("ler eles", "ver eles")
+### Pronome Reto como Complemento Verbal ("ler eles", "ver eles")
 
 - **Problema:** O uso coloquial consagrou pronomes retos como objetos (*"não gosta de ler eles"*).
 - **Correção:** Na norma culta, pronomes retos exercem função de sujeito. Use oblíquos: *não gosta de os ler* ou *de lê-los*.
 
-## Pegadinha de "Preservação de Sentido" em Verbos de Dupla Regência
+### Pegadinha de "Preservação de Sentido" em Verbos de Dupla Regência
 
 - **Problema:** Assinalar como correta a troca de regência em verbos como *entender*.
 - **Correção:** Trocar *coisas das quais não entende* por *coisas que não entende* mantém a correção sintática, mas altera o sentido semântico original.
 
-## A Falácia da "Dupla Regência" em Verbos Bitransitivos (Cebraspe)
+### A Falácia da "Dupla Regência" em Verbos Bitransitivos (Cebraspe)
 
 - **Problema:** Aceitar a troca de `lhes` por `os` em verbos como *oferecer* ou *dar* sob a alegação de "dupla regência".
 - **Correção:** VTDI exige concomitância de O.D. e O.I. Não se pode substituir o O.I. por pronome de O.D. se a frase já possui O.D. (*oferecendo-os algo* e *dá-lo ordens* são erros graves).
 
 ---
 
----
-
 ## Glossário operacional
 
-## Regência Verbal
+### Regência Verbal
 
 Relação sintática e semântica de subordinação que se estabelece entre um verbo (termo regente) e seus complementos (termos regidos), mediada ou não por preposições obrigatórias.
 
-## Pronomes Oblíquos Átonos
+### Pronomes Oblíquos Átonos
 
 Pronomes pessoais (`me, te, se, o, a, lhe, nos, vos, os, as, lhes`) que desempenham funções sintáticas de complementos verbais ou nominais sem serem introduzidos por preposição própria na sua forma morfológica básica.
 
-## Pronomes Coringas
+### Pronomes Coringas
 
 Conceito didático criado pela professora Adriana Figueiredo para designar o conjunto `me, te, se, nos, vos`, caracterizados pela ausência de função sintática fixa, atuando como O.D., O.I. ou C.N. conforme a regência do termo associado.
 
-## Verbo Bitransitivo (VTDI)
+### Verbo Bitransitivo (VTDI)
 
 Verbo que exige simultaneamente dois complementos de naturezas distintas: um Objeto Direto (sem preposição) e um Objeto Indireto (com preposição). Não admite dois objetos diretos nem dois indiretos.
 
-## Dupla Regência Verbal
+### Dupla Regência Verbal
 
 Propriedade de determinados verbos que admitem duas molduras sintáticas alternativas e independentes em orações distintas, podendo manter o mesmo sentido ou alterar o significado lexical (como em *entender*).
 
-## Compartilhamento de Complemento
+### Compartilhamento de Complemento
 
 Construção de coordenação sintática em que dois ou mais verbos associam-se a um único sintagma nominal como objeto. Só é admitido pela norma padrão se todos os verbos possuírem idêntica regência.
 
-## Alomorfia Pronominal
+### Alomorfia Pronominal
 
 Modificação na forma gráfica e fonética dos pronomes `o, a, os, as`, convertendo-se em `-lo, -la, -los, -las` (após R, S, Z) ou `-no, -na, -nos, -nas` (após som nasal) exclusivamente em posição enclítica.
 
-## Pronome Invariável em Gênero (Lhe / Lhes)
+### Pronome Invariável em Gênero (Lhe / Lhes)
 
 Propriedade morfológica do pronome `lhe / lhes`, que varia unicamente em número (singular/plural), sendo apto a substituir complementos preposicionados masculinos ou femininos.
 
-## Pronome Relativo
+### Pronome Relativo
 
 Classe de pronomes (*que, quem, onde, cujo, o qual*) que substitui um termo antecedente na oração subordinada adjetiva, projetando para antes de si as preposições exigidas pelo termo regente posposto.
-
----
 
 ---
 

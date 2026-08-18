@@ -46,7 +46,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - **Distinção entre Termo da Oração e Oração:** Capacidade de distinguir adjuntos adnominais/adverbiais de estruturas oracionais plenas.
 - **Morfologia das Conjunções Coordenativas:** Conhecimento prévio das famílias de conectivos (*e, mas, ou, logo, porque*).
 
-### Mapa Integrado de Conhecimento
+#### Mapa Integrado de Conhecimento
 
 ```text
 SINTAXE DO PERÍODO COMPOSTO POR COORDENAÇÃO
@@ -149,17 +149,15 @@ SINTAXE DO PERÍODO COMPOSTO POR COORDENAÇÃO
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Divisão Geral das Orações Coordenadas: Assindéticas e Sindéticas
+### Divisão Geral das Orações Coordenadas: Assindéticas e Sindéticas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 No período composto por coordenação, as orações guardam independência sintática entre si (não exercem função de termo sintático de outra oração) e dividem-se em **assindéticas** (desprovidas de conjunção, unidas por pontuação) e **sindéticas** (encabeçadas por conjunção coordenativa).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Orações Coordenadas Assindéticas (O.C.A.):** Justapõem-se no período por meio de vírgula, ponto e vírgula ou dois-pontos, sem a presença de síndeto (conectivo).
 - **Orações Coordenadas Sindéticas (O.C.S.):** São introduzidas por conjunções coordenativas que estabelecem o nexo lógico-semântico entre as proposições. Dividem-se em 5 espécies funcionais:
@@ -170,35 +168,35 @@ No período composto por coordenação, as orações guardam independência sint
  5. *Explicativas* (ideia de justificativa/motivação).
 - **Procedimento de Delimitação:** A fronteira oracional é delimitada inserindo-se uma barra divisória imediatamente antes da conjunção. A oração anterior sem conectivo classifica-se como assindética; a oração introduzida pela conjunção classifica-se de acordo com o valor semântico do conectivo ("classificação de trás para frente").
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 1. Identificar o número de verbos ou locuções verbais para quantificar as orações.
 2. Localizar o conectivo coordenativo.
 3. Se não houver conectivo $\rightarrow$ Oração Coordenada Assindética.
 4. Se houver conectivo $\rightarrow$ Oração Coordenada Sindética [Nome da Conjunção].
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Exemplo Assindético:* *"Não desejo nada, não temo nada, sou livre."* (Três orações coordenadas assindéticas justapostas).
 - *Exemplo Sindético:* *"O Lula foi a Cuba / e eu também fui."* (1ª: O.C. Assindética; 2ª: O.C. Sindética Aditiva).
 
 ---
 
-## Requisito de Verbo e Sintaxe da Pontuação: Termo Nominal vs. Oração
+### Requisito de Verbo e Sintaxe da Pontuação: Termo Nominal vs. Oração
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Para que uma estrutura seja categorizada como oração, é obrigatória a existência explícita ou elíptica de verbo ou locução verbal. Uma pontuação que isola um termo nominal preposicionado (como um adjunto adverbial antecipado) não separa orações coordenadas. Da mesma forma, uma conjunção coordenativa pode ligar termos nominais sem constituir oração sindética.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Isolamento de Termo Nominal:** No período *"Quanto ao gênero deles, não sei que diga..."*, o segmento antes da vírgula não contém forma verbal; trata-se de adjunto adverbial antecipado de assunto. A vírgula isola termo acessório, sendo falso afirmar que separa orações coordenadas.
 - **Conexão Intertermos vs. Interoracional:** No período *"Não há como a escola negar a existência do computador e da Internet e ensinar à moda antiga"*:
- - O primeiro *e* liga dois adjuntos adnominais nominais (*do computador* e *da Internet*) $\rightarrow$ Conexão de termos.
- - O segundo *e* liga as orações reduzidas de infinitivo (*negar...* e *ensinar...*) $\rightarrow$ Conexão de orações.
- - Assertivas de bancas que generalizam dizendo que "todas as ocorrências do *e* introduzem oração" são incorretas quando há ligação de termos nominais.
+  - O primeiro *e* liga dois adjuntos adnominais nominais (*do computador* e *da Internet*) $\rightarrow$ Conexão de termos.
+  - O segundo *e* liga as orações reduzidas de infinitivo (*negar...* e *ensinar...*) $\rightarrow$ Conexão de orações.
+  - Assertivas de bancas que generalizam dizendo que "todas as ocorrências do *e* introduzem oração" são incorretas quando há ligação de termos nominais.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 1. Antes de analisar a semântica da vírgula ou do conectivo, inspecionar a presença de verbo em cada segmento.
 2. Segmento sem verbo $\rightarrow$ Termo sintático nominal (adjunto, complemento, etc.).
@@ -206,66 +204,66 @@ Para que uma estrutura seja categorizada como oração, é obrigatória a exist�
 
 ---
 
-## Sintaxe da Conjunção "NEM" e Assimetria da Correlação "Nem... Nem..."
+### Sintaxe da Conjunção "NEM" e Assimetria da Correlação "Nem... Nem..."
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A palavra *nem* tem natureza morfossintática intrínseca equivalente a *e não*. Empregado isoladamente, atua como conjunção coordenativa aditiva de polaridade negativa. Na estrutura correlata *nem... nem...*, ocorre uma assimetria morfossintática: o primeiro *nem* funciona como advérbio de negação (tornando a 1ª oração assindética) e apenas o segundo elemento opera como conjunção aditiva (tornando a 2ª oração sindética aditiva).
 
-### Explicação detalhada
+#### Explicação detalhada
 
 - **Equivalência Morfogenética:** *nem* $=$ *e* (conjunção aditiva) $+$ *não* (advérbio de negação). Exemplo: *"Não bebe, nem fuma"* $\rightarrow$ *"Não bebe e não fuma"*.
 - **Condenação do Pleonasmo na Norma Culta:** A expressão *"e nem"* (*"não bebe e nem fuma"*) é considerada viciosa e redundante no padrão formal, visto que o conectivo *e* já está contido na palavra *nem*.
 - **Estrutura "Nem... Nem...":** No período *"Nem estuda, nem trabalha"*:
- - 1º *Nem* $=$ *não* $\rightarrow$ **Advérbio de Negação**. A oração *"Nem estuda"* não possui conjunção coordenativa, sendo classificada como **Oração Coordenada Assindética**.
- - 2º *Nem* $=$ *e não* $\rightarrow$ **Conjunção Coordenativa Aditiva**. A oração *"nem trabalha"* classifica-se como **Oração Coordenada Sindética Aditiva**.
+  - 1º *Nem* $=$ *não* $\rightarrow$ **Advérbio de Negação**. A oração *"Nem estuda"* não possui conjunção coordenativa, sendo classificada como **Oração Coordenada Assindética**.
+  - 2º *Nem* $=$ *e não* $\rightarrow$ **Conjunção Coordenativa Aditiva**. A oração *"nem trabalha"* classifica-se como **Oração Coordenada Sindética Aditiva**.
 - **Pegadinha de Prova:** Não existem duas orações sindéticas nessa construção, mas sim uma oração assindética seguida de uma sindética aditiva.
 
 - **Evidenciado visualmente por:**
 
 ---
 
-## Valores Semânticos e Polissemia da Conjunção "E"
+### Valores Semânticos e Polissemia da Conjunção "E"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A conjunção coordenativa *e* é polissêmica e assume quatro valores semânticos distintos conforme o contexto lógico-discursivo: adição pura, adição com tempo (sequência cronológica), oposição/adversidade e conclusão/consequência.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Adição Pura:** Soma neutra de elementos ou orações de mesma orientação (*"João e Guilherme chegaram cedo"*).
 2. **Adição e Tempo (Sequência Cronológica):** Além de somar as ações, impõe uma ordenação temporal estrita em que a primeira ação precede cronologicamente a segunda (*"Chegou em casa e dormiu"*). Muito explorado por FGV e CEBRASPE.
 3. **Valor Adversativo (Oposição / Contraste):** Conecta orações de polaridades contrárias (positivo vs. negativo / afirmação vs. negação / muito vs. pouco), equivalendo a *mas*, *porém*, *contudo* (*"Trabalhou com afinco e não obteve reconhecimento"*; *"Pensamos em demasia e sentimos bem pouco"*; *"faça o que eu mando, e não o que eu faço"*).
- - *Pontuação:* A vírgula antes do *e* adversativo é **facultativa**.
+  - *Pontuação:* A vírgula antes do *e* adversativo é **facultativa**.
 4. **Valor Conclusivo / Consecutivo (Consequência):** A segunda oração expressa a decorrência lógica ou efeito da primeira, equivalendo a *portanto*, *por isso* (*"Carla passou mal na festa e foi embora mais cedo"*).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - Aplicar o **Teste de Polaridade Semântica (+/-)**:
- - `(+)` com `(+)` ou `(-)` com `(-)` $\rightarrow$ **Adição**.
- - `(+)` com `(-)` $\rightarrow$ **Adversidade / Oposição**.
- - Relação de Causa $\rightarrow$ Efeito $\rightarrow$ **Conclusão**.
- - Relação de 1º fato $\rightarrow$ 2º fato $\rightarrow$ **Adição com Tempo**.
+  - `(+)` com `(+)` ou `(-)` com `(-)` $\rightarrow$ **Adição**.
+  - `(+)` com `(-)` $\rightarrow$ **Adversidade / Oposição**.
+  - Relação de Causa $\rightarrow$ Efeito $\rightarrow$ **Conclusão**.
+  - Relação de 1º fato $\rightarrow$ 2º fato $\rightarrow$ **Adição com Tempo**.
 
 ---
 
-## Sintaxe da Conjunção "NEM" e a Estrutura Correlata "Nem... Nem..."
+### Sintaxe da Conjunção "NEM" e a Estrutura Correlata "Nem... Nem..."
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A conjunção *nem* equivale morfossintaticamente a *e não*, possuindo natureza estritamente aditiva de polaridade negativa. Na estrutura correlata *nem... nem...*, ocorre uma assimetria funcional: o primeiro *nem* opera como advérbio de negação e apenas o segundo funciona como conjunção coordenativa aditiva.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Valor Semântico Básico:** Soma de negações (*nem* $=$ *e não*). Exemplo simples: *"Não bebe, nem fuma"* $\rightarrow$ *"Não bebe e não fuma"*. A oração introduzida por *nem* é Coordenada Sindética Aditiva.
 - **Condenação do Pleonasmo Culto:** A construção *"e nem"* (*"não bebe e nem fuma"*) é considerada redundante e viciosa no registro padrão formal, pois o conectivo *e* já está contido na etimologia e semântica do vocábulo *nem*.
 - **Estrutura Correlata (*Nem... nem...*):**
  No período *"Nem estuda, nem trabalha"*:
- - 1º *Nem* $=$ *não* $\rightarrow$ **Advérbio de Negação**. A oração *"Nem estuda"* não possui conectivo interoracional, sendo classificada como **Oração Coordenada Assindética**.
- - 2º *Nem* $=$ *e não* $\rightarrow$ **Conjunção Coordenativa Aditiva**. A oração *"nem trabalha"* classifica-se como **Oração Coordenada Sindética Aditiva**.
- - *Pegadinha de Prova:* Não existem duas orações sindéticas nessa construção bimembre; há uma assindética seguida de uma sindética aditiva.
+  - 1º *Nem* $=$ *não* $\rightarrow$ **Advérbio de Negação**. A oração *"Nem estuda"* não possui conectivo interoracional, sendo classificada como **Oração Coordenada Assindética**.
+  - 2º *Nem* $=$ *e não* $\rightarrow$ **Conjunção Coordenativa Aditiva**. A oração *"nem trabalha"* classifica-se como **Oração Coordenada Sindética Aditiva**.
+  - *Pegadinha de Prova:* Não existem duas orações sindéticas nessa construção bimembre; há uma assindética seguida de uma sindética aditiva.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 1. Identificar o *nem* simples: substituir por *e não*. Confirmar a classificação como aditiva.
 2. Identificar o *nem... nem...*: isolar o 1º membro como assindético e o 2º membro como sindético aditivo.
@@ -273,20 +271,20 @@ A conjunção *nem* equivale morfossintaticamente a *e não*, possuindo natureza
 
 ---
 
-## Expressões Correlativas Aditivas e Fenômeno da Elipse
+### Expressões Correlativas Aditivas e Fenômeno da Elipse
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Locuções correlativas aditivas (*não só... mas também*, *não apenas... como também*, *não só... mas principalmente*) estruturam períodos aditivos bimembres em que o segundo segmento complementa e reforça a linha argumentativa do primeiro. A elipse do primeiro elemento não descaracteriza a natureza aditiva da oração.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Estrutura Completa:** *"Não só leu o livro [O.C. Assindética], mas também escreveu a resenha [O.C. Sindética Aditiva]"*.
 - **Estrutura com Elipse:** *"A mudança trouxe melhorias para os professores [O.C. Assindética], mas também beneficiou os alunos [O.C. Sindética Aditiva]"*. Reconstitui-se mentalmente o *"não só"* para confirmar a relação aditiva.
 - **Efeito Argumentativo (Padrão CEBRASPE):** Na frase *"Não se trata apenas de X, mas também de Y"*, a expressão introduz ideia que **complementa** (acrescenta escopo) e **reforça** (atua no mesmo campo argumentativo favorável, sem contradição).
 - **Variações de Ênfase:** A substituição de *também* por advérbios de realce como *principalmente* (*não só... mas principalmente*) mantém a estrutura estritamente aditiva.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 1. Ao encontrar *mas também* ou *como também* isolado, testar a inserção de *não só* antes do primeiro verbo.
 2. Confirmada a soma de ideias, classificar a oração introduzida pela locução como Coordenada Sindética Aditiva.
@@ -294,38 +292,38 @@ Locuções correlativas aditivas (*não só... mas também*, *não apenas... com
 
 ---
 
-## Emprego Aditivo da Conjunção "MAS"
+### Emprego Aditivo da Conjunção "MAS"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A conjunção *mas*, tipicamente adversativa, adquire valor semântico aditivo quando é empregada para conectar predicativos, atributos ou informações convergentes a respeito de um mesmo referente, sem que se estabeleça relação de contraste, quebra de expectativa ou exclusão.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Mecanismo de Análise (Método dos Núcleos Conectados):** Quando todas as opções de uma prova apresentarem a conjunção *mas* (padrão FGV), deve-se ignorar o conectivo e analisar os núcleos semânticos interligados:
- - Se os núcleos forem antagônicos, excludentes ou contrastantes $\rightarrow$ **Adversativo (Oposição)**.
- - Se os núcleos forem atributos cumulativos, qualificadores compatíveis ou informações complementares $\rightarrow$ **Aditivo (Soma)**.
+  - Se os núcleos forem antagônicos, excludentes ou contrastantes $\rightarrow$ **Adversativo (Oposição)**.
+  - Se os núcleos forem atributos cumulativos, qualificadores compatíveis ou informações complementares $\rightarrow$ **Aditivo (Soma)**.
 - **Caso Canônico da FGV:** *"A vontade de acreditar é talvez o mais poderoso, mas certamente é o mais perigoso atributo humano"*. O conectivo *mas* une dois atributos convergentes da vontade de acreditar (*poderoso* $+$ *perigoso*). Trata-se de soma de traços conceituais.
 - **Alerta contra Modalizadores:** Não confundir a oposição aparente entre advérbios modalizadores (*talvez* [dúvida] vs. *certamente* [certeza]) com a relação semântica dos atributos principais que a conjunção efetivamente liga.
 
 ---
 
-## Orações Coordenadas Sindéticas Alternativas: Alternância vs. Exclusão e Permutabilidade
+### Orações Coordenadas Sindéticas Alternativas: Alternância vs. Exclusão e Permutabilidade
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As orações coordenadas alternativas exprimem relação de disjunção, dividindo-se rigorosamente em dois valores semânticos: **Alternância** (ações distributivas ou cíclicas que se revezam no tempo) e **Escolha / Exclusão / Valor Alternativo Puro** (opções mutuamente excludentes em que a ocorrência de uma inviabiliza a outra).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Conectivos Simples e Correlativos:** *ou*, *ou...ou*, *ora...ora*, *seja...seja*, *quer...quer*, *já...já*.
 - **Duplicidade Sindética:** Quando o conectivo encabeça ambos os membros do período (*"Ora estuda, ora trabalha"*), ambas as orações são coordenadas sindéticas alternativas.
 - **Distinção Semântica Decisiva (CEBRASPE e FGV):**
- - **Alternância:** Revezamento temporal. As ações coexistem em momentos distintos (*"Ora ia à frente com ousadia, ora recuava amedrontado"*).
- - **Exclusão / Valor Alternativo Puro:** Polos incompatíveis. Se uma opção for escolhida, a outra é eliminada (*"Ou João ou José casará com Maria"*; *"não é preciso trabalhar com esses temas, ou sequer saber que existem"* — quem trabalha com o tema não desconhece sua existência).
+  - **Alternância:** Revezamento temporal. As ações coexistem em momentos distintos (*"Ora ia à frente com ousadia, ora recuava amedrontado"*).
+  - **Exclusão / Valor Alternativo Puro:** Polos incompatíveis. Se uma opção for escolhida, a outra é eliminada (*"Ou João ou José casará com Maria"*; *"não é preciso trabalhar com esses temas, ou sequer saber que existem"* — quem trabalha com o tema não desconhece sua existência).
 - **Permutabilidade de Pares Correlativos:** Os pares *seja... seja*, *quer... quer* e *ora... ora* são intercambiáveis em contextos distributivos sem prejuízo gramatical (*"seja pela técnica..., seja pelo método"* $\leftrightarrow$ *"quer pela técnica..., quer pelo método"*).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 1. Identificar o conectivo alternativo.
 2. Testar coexistência no tempo $\rightarrow$ Se as ações se revezam $\rightarrow$ **Alternância**.
@@ -333,81 +331,79 @@ As orações coordenadas alternativas exprimem relação de disjunção, dividin
 
 ---
 
-## Orações Coordenadas Sindéticas Adversativas: Oposição vs. Ressalva
+### Orações Coordenadas Sindéticas Adversativas: Oposição vs. Ressalva
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As orações coordenadas sindéticas adversativas expressam relação de quebra de expectativa ou contraste em relação à oração precedente, desdobrando-se em **Oposição / Contraste** e **Ressalva / Compensação**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Conectivos Adversativos Canônicos:** *mas*, *porém*, *contudo*, *todavia*, *entretanto*, *no entanto*, *não obstante*, *senão*.
 - **Oposição / Contraste:** Confronto direto entre polos contraditórios ou antagônicos (*"Dispensa teorias [-], mas é a base da ordem social [+]"*; *"Os oceanos ocupam 70% da Terra, mas sabe-se muito pouco sobre eles"*).
 - **Ressalva / Compensação:** Não há confronto antagônico excludente; introduz-se uma contrapartida atenuante ou ponderação restritiva equivalente a *em compensação* ou *pelo menos* (*"Não li o livro, mas assisti ao filme"*; *"Não tive aula com fulano, mas já ouvi falar"*).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 1. Identificar o conectivo adversativo canônico.
 2. Inspecionar o confronto de ideias:
- - Se houver ideias contrárias que se chocam $\rightarrow$ **Contraste / Oposição**.
- - Se houver atenuação compensatória $\rightarrow$ **Ressalva / Compensação**.
+  - Se houver ideias contrárias que se chocam $\rightarrow$ **Contraste / Oposição**.
+  - Se houver atenuação compensatória $\rightarrow$ **Ressalva / Compensação**.
 
 ---
 
-## Orações Coordenadas Sindéticas Conclusivas e o Conectivo "POIS"
+### Orações Coordenadas Sindéticas Conclusivas e o Conectivo "POIS"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As orações coordenadas sindéticas conclusivas exprimem dedução lógica, consequência ou desfecho derivado do fato expresso na oração antecedente. A classificação do conectivo *pois* depende rigorosamente de sua posição sintática em relação ao verbo da oração.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Conectivos Conclusivos Principais:** *logo*, *portanto*, *então*, *assim*, *por conseguinte*, *por isso*, *pois* (posposto).
 - **Regra do Conectivo "POIS":**
- - **Pois Conclusivo:** Deve obrigatoriamente aparecer **posposto ao verbo (deslocado no interior da oração)** e isolado entre vírgulas. Equivale funcionalmente a *portanto* (*"A semana acabou; podemos, pois, descansar"*; *"dependem, pois, de seu método"*).
- - **Pois Explicativo:** Posiciona-se **anteposto ao verbo (no início da oração coordenada)**. Equivale a *porque* (*"Ele está doente, pois tossiu muito"*).
+  - **Pois Conclusivo:** Deve obrigatoriamente aparecer **posposto ao verbo (deslocado no interior da oração)** e isolado entre vírgulas. Equivale funcionalmente a *portanto* (*"A semana acabou; podemos, pois, descansar"*; *"dependem, pois, de seu método"*).
+  - **Pois Explicativo:** Posiciona-se **anteposto ao verbo (no início da oração coordenada)**. Equivale a *porque* (*"Ele está doente, pois tossiu muito"*).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 1. Identificar o vocábulo *pois*.
 2. Verificar a posição do verbo:
- - *Pois* antes do verbo $\rightarrow$ **Explicativo**.
- - *Pois* depois do verbo (entre vírgulas) $\rightarrow$ **Conclusivo**.
+  - *Pois* antes do verbo $\rightarrow$ **Explicativo**.
+  - *Pois* depois do verbo (entre vírgulas) $\rightarrow$ **Conclusivo**.
 
 ---
 
-## Orações Coordenadas Sindéticas Explicativas e a Distinção com a Causa
+### Orações Coordenadas Sindéticas Explicativas e a Distinção com a Causa
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A oração coordenada sindética explicativa apresenta a justificativa, o motivo discursivo ou a fundamentação de uma ordem ou afirmação precedente. Diferencia-se da oração subordinada causal porque não expressa a causa física/geradora do fato no mundo real, mas sim o indício discursivo que fundamenta o julgamento do enunciador.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Conectivos Explicativos Principais:** *porque*, *que* (= *pois*), *porquanto* (= *porque*), *pois* (anteposto ao verbo).
 - **Duas Estruturas Estratégicas:**
  1. **Modo Imperativo + Explicação:** Oração anterior com verbo no imperativo (ordem, pedido, súplica) seguida de conectivo explicativo (*"Sente aqui, que precisamos conversar"*; *"Venha logo, pois quero te ver"*). O imperativo atua como gatilho inequívoco de oração explicativa.
  2. **Oração Declarativa + Justificativa do Falante:** Oração afirmativa seguida da evidência discursiva (*"Luiza era feliz, porque vivia sorrindo"*).
 - **Distinção Fundamental entre Explicação e Causa:**
- - *Regra da Direcionalidade:* A conjunção classifica a oração que vem **depois** dela.
- - *Causa Real:* Há relação ontológica de causa e efeito no mundo dos fatos (*"A rua está molhada porque choveu"* $\rightarrow$ A chuva causou o molhamento $\rightarrow$ Causal).
- - *Explicação / Justificativa:* O fato posterior é a evidência que autoriza o falante a fazer a declaração anterior (*"Luiza era feliz, porque vivia sorrindo"* $\rightarrow$ Viver sorrindo não é a causa fisiológica geradora da felicidade, mas o indício que justifica a afirmação do falante $\rightarrow$ Explicativa).
+  - *Regra da Direcionalidade:* A conjunção classifica a oração que vem **depois** dela.
+  - *Causa Real:* Há relação ontológica de causa e efeito no mundo dos fatos (*"A rua está molhada porque choveu"* $\rightarrow$ A chuva causou o molhamento $\rightarrow$ Causal).
+  - *Explicação / Justificativa:* O fato posterior é a evidência que autoriza o falante a fazer a declaração anterior (*"Luiza era feliz, porque vivia sorrindo"* $\rightarrow$ Viver sorrindo não é a causa fisiológica geradora da felicidade, mas o indício que justifica a afirmação do falante $\rightarrow$ Explicativa).
 - **Substituição de Pontuação:** O sinal de dois-pontos (`:`) com função de justificativa pode ser substituído por vírgula seguida de conectivo explicativo (*"...recusa: não vê motivos..."* $\rightarrow$ *"...recusa, pois não vê motivos..."*).
 
 ---
 
-## Incompatibilidade entre Coordenação e Concessão e a Locução "Assim que"
+### Incompatibilidade entre Coordenação e Concessão e a Locução "Assim que"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A coordenação e a subordinação possuem naturezas sintáticas inconfundíveis: conjunções coordenativas adversativas (*mas*, *porém*) jamais introduzem orações concessivas (que pertencem ao domínio da subordinação adverbial). Além disso, locuções temporais integradas como *assim que* não devem ser truncadas pela banca para induzir classificações explicativas ou conclusivas.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Incompatibilidade Categorial:** Assertivas de bancas que afirmam que o conectivo *mas* introduz "oração coordenada que exprime ideia de concessão" contêm erro terminológico insuperável. Concessão é valor privativo das orações subordinadas adverbiais concessivas (*embora*, *conquanto*).
 - **Locução Temporal "Assim que":** No período *"Ele iniciou o discurso inflamado, assim que eu cheguei"*, a expressão integral *assim que* equivale a *logo que* / *quando*, introduzindo oração subordinada adverbial temporal e refutando classificações como explicativa.
-
----
 
 ---
 
@@ -426,78 +422,74 @@ A coordenação e a subordinação possuem naturezas sintáticas inconfundíveis
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Método Geral de Análise "De Trás para Frente"
+### Método Geral de Análise "De Trás para Frente"
 
 1. **Contar os verbos:** Delimitar as orações presentes no período.
 2. **Localizar a conjunção coordenativa:** Marcar a fronteira oracional imediatamente antes do conectivo.
 3. **Classificar a oração anterior:** Se não houver conectivo nela, rotular como *Oração Coordenada Assindética*.
 4. **Classificar a oração posterior:** Identificar o valor semântico do conectivo (soma $\rightarrow$ aditiva; oposição $\rightarrow$ adversativa; alternância/exclusão $\rightarrow$ alternativa; dedução $\rightarrow$ conclusiva; justificativa $\rightarrow$ explicativa) e nomeá-la como *Oração Coordenada Sindética [Espécie]*.
 
-## Teste de Polaridade Semântica (+ e -) para o "E" e "MAS" Adversativos
+### Teste de Polaridade Semântica (+ e -) para o "E" e "MAS" Adversativos
 
 1. **Isolar as duas proposições conectadas pela conjunção.**
 2. **Atribuir cargas axiológicas contextuais a cada proposição:**
 
 3. **Cruzar os sinais:**
- - `(+)` com `(+)` ou `(-)` com `(-)` $\rightarrow$ Orientação homogênea $\rightarrow$ **Valor Aditivo (Soma)**.
- - `(+)` com `(-)` ou `(-)` com `(+)` $\rightarrow$ Choque de expectativas $\rightarrow$ **Valor Adversativo (Oposição)**.
+  - `(+)` com `(+)` ou `(-)` com `(-)` $\rightarrow$ Orientação homogênea $\rightarrow$ **Valor Aditivo (Soma)**.
+  - `(+)` com `(-)` ou `(-)` com `(+)` $\rightarrow$ Choque de expectativas $\rightarrow$ **Valor Adversativo (Oposição)**.
 
-## Teste dos Núcleos Conectados para o "MAS" Aditivo (Método FGV)
+### Teste dos Núcleos Conectados para o "MAS" Aditivo (Método FGV)
 
 1. **Ignorar a conjunção *mas* física:** Quando todas as alternativas apresentarem a conjunção *mas*, isolar os dois núcleos (termos, adjetivos ou orações) que ela une.
 2. **Avaliar a compatibilidade semântica dos núcleos:**
- - Se expressarem noções antagônicas, contraditórias ou excludentes (*ver* vs. *sentir*; *creia* vs. *não duvide*) $\rightarrow$ **Adversativo**.
- - Se expressarem atributos acumulativos convergentes atribuídos ao mesmo referente (*mais poderoso* $+$ *mais perigoso*) $\rightarrow$ **Aditivo**.
+  - Se expressarem noções antagônicas, contraditórias ou excludentes (*ver* vs. *sentir*; *creia* vs. *não duvide*) $\rightarrow$ **Adversativo**.
+  - Se expressarem atributos acumulativos convergentes atribuídos ao mesmo referente (*mais poderoso* $+$ *mais perigoso*) $\rightarrow$ **Aditivo**.
 3. **Desconsiderar modalizadores:** Não confundir advérbios de dúvida/certeza com a oposição real dos adjetivos principais.
 
-## Teste de Polaridade Semântica (+/-) para Conectivos Opositivos ("E" e "MAS")
+### Teste de Polaridade Semântica (+/-) para Conectivos Opositivos ("E" e "MAS")
 
 1. **Isolar os dois polos conectados.**
 2. **Atribuir cargas axiológicas/discursivas contextuais:**
 
 3. **Calcular a resultante semântica:**
- - `(+)` com `(+)` ou `(-)` com `(-)` $\rightarrow$ Mesma orientação $\rightarrow$ **Adição** (*"ingênuo e sem fé"*; *"amargo e duro"*).
- - `(+)` com `(-)` ou `(-)` com `(+)` $\rightarrow$ Choque de orientação $\rightarrow$ **Adversidade / Oposição** (*"casamento é bom [+] e tem inconvenientes [-]"*; *"trabalhou com afinco [+] e não obteve reconhecimento [-]"*; *"pensamos em demasia [+] e sentimos pouco [-]"*).
+  - `(+)` com `(+)` ou `(-)` com `(-)` $\rightarrow$ Mesma orientação $\rightarrow$ **Adição** (*"ingênuo e sem fé"*; *"amargo e duro"*).
+  - `(+)` com `(-)` ou `(-)` com `(+)` $\rightarrow$ Choque de orientação $\rightarrow$ **Adversidade / Oposição** (*"casamento é bom [+] e tem inconvenientes [-]"*; *"trabalhou com afinco [+] e não obteve reconhecimento [-]"*; *"pensamos em demasia [+] e sentimos pouco [-]"*).
 
-## Teste da Coexistência vs. Anulação Mútua (Alternância vs. Exclusão)
+### Teste da Coexistência vs. Anulação Mútua (Alternância vs. Exclusão)
 
 1. **Isolar as proposições conectadas por *ou* / *ora...ora*.**
 2. **Testar coexistência temporal (Alternância):** As ações acontecem de forma revezada ou sucessiva no tempo? (*"Ora estuda, ora trabalha"*). Se sim $\rightarrow$ **Alternância**.
 3. **Testar incompatibilidade lógica (Exclusão / Valor Alternativo Puro):** A realização de uma alternativa anula ou torna impossível a outra? (*"Ou João ou José casará com Maria"*; *"trabalhar com os temas ou sequer saber que existem"*). Se sim $\rightarrow$ **Exclusão**.
 
-## Teste de Posição do Conectivo "POIS"
+### Teste de Posição do Conectivo "POIS"
 
 1. **Localizar o verbo da oração coordenada.**
 2. **Verificar a posição do conectivo *pois*:**
- - Se estiver antes do verbo (início da oração) $\rightarrow$ Substituir por *porque* $\rightarrow$ **Explicativo**.
- - Se estiver depois do verbo (deslocado entre vírgulas) $\rightarrow$ Substituir por *portanto* $\rightarrow$ **Conclusivo**.
+  - Se estiver antes do verbo (início da oração) $\rightarrow$ Substituir por *porque* $\rightarrow$ **Explicativo**.
+  - Se estiver depois do verbo (deslocado entre vírgulas) $\rightarrow$ Substituir por *portanto* $\rightarrow$ **Conclusivo**.
 
-## Teste de Causa Real vs. Justificativa Discursiva (Explicativa vs. Causal)
+### Teste de Causa Real vs. Justificativa Discursiva (Explicativa vs. Causal)
 
 1. **Verificar o modo verbal da oração principal:** Verbo no imperativo (ordem/pedido) $\rightarrow$ Oração seguinte é compulsoriamente **Explicativa**.
 2. **Em orações declarativas, aplicar o teste ontológico do mundo real:**
- - Perguntar: "O fato da 2ª oração gerou concretamente o fato da 1ª no mundo físico?"
- - Se **SIM** (*"A rua está molhada porque choveu"*) $\rightarrow$ **Subordinada Adverbial Causal**.
- - Se **NÃO** (*"Luiza era feliz, porque vivia sorrindo"*) $\rightarrow$ O ato de sorrir é a evidência discursiva que fundamenta a afirmação do falante $\rightarrow$ **Coordenada Sindética Explicativa**.
+  - Perguntar: "O fato da 2ª oração gerou concretamente o fato da 1ª no mundo físico?"
+  - Se **SIM** (*"A rua está molhada porque choveu"*) $\rightarrow$ **Subordinada Adverbial Causal**.
+  - Se **NÃO** (*"Luiza era feliz, porque vivia sorrindo"*) $\rightarrow$ O ato de sorrir é a evidência discursiva que fundamenta a afirmação do falante $\rightarrow$ **Coordenada Sindética Explicativa**.
 
-## Técnica de Resolução Vertical por Conectivos
+### Técnica de Resolução Vertical por Conectivos
 
 1. **Identificar a exigência semântica no comando** (ex.: conclusão, oposição, causa).
 2. **Converter a exigência na família de conjunções correspondente.**
 3. **Escanear as alternativas verticalmente, localizando apenas o conectivo de abertura:**
 
- - Validar a alternativa que contém o conectivo puro correspondente (ex.: *portanto* para conclusão).
+  - Validar a alternativa que contém o conectivo puro correspondente (ex.: *portanto* para conclusão).
 
-## Procedimento de Substituição de Dois-Pontos Explicativos
+### Procedimento de Substituição de Dois-Pontos Explicativos
 
 1. **Verificar se a oração que sucede os dois-pontos (`:`) fundamenta a afirmação precedente.**
 2. **Reconhecida a relação de justificativa discursiva, substituir os dois-pontos por vírgula acompanhada de conectivo explicativo anteposto (*pois*, *porque*, *que*).**
-
----
 
 ---
 
@@ -517,11 +509,9 @@ A coordenação e a subordinação possuem naturezas sintáticas inconfundíveis
 
 ---
 
----
-
 ## Exemplos comentados
 
-##  a 011 — Bateria de Exercícios de Fixação I (Material Próprio)
+### a 011 — Bateria de Exercícios de Fixação I (Material Próprio)
 
 | Nº / ID | Frase Analisada | Conectivo / Estrutura | Classificação Sintática | Fundamentação Teórica |
 |:----------: |:-------------------------------------------------------------- |:--------------------- |:-------------------------------------------- |:--------------------------------------------------------------------- |
@@ -539,7 +529,7 @@ A coordenação e a subordinação possuem naturezas sintáticas inconfundíveis
 
 ---
 
-## As 4 Faces Semânticas do Conectivo "E"
+### As 4 Faces Semânticas do Conectivo "E"
 
 - **Exemplos e Análises:**
  1. *"João e Guilherme chegaram cedo."* $\rightarrow$ **Adição pura**.
@@ -547,7 +537,7 @@ A coordenação e a subordinação possuem naturezas sintáticas inconfundíveis
  3. *"Os pássaros voam todo o dia e não se cansam."* $\rightarrow$ **Adversativo (Oposição, = mas)**.
  4. *"Carla passou mal na festa e foi embora mais cedo."* $\rightarrow$ **Conclusivo / Consequência (= portanto)**.
 
-##  a  — Questões de Concurso da Parte 01 (Q10 a Q14)
+### a  — Questões de Concurso da Parte 01 (Q10 a Q14)
 
 - **Q10 (AOCP / FUNDASUS — Médico):** *"A postura errada atrapalha a respiração, enfraquece os músculos e derruba seu nível de energia"* $\rightarrow$ Período composto por coordenação com orações coordenadas aditivas. **Gabarito: A**.
 - **Q11 (VUNESP / PC-SP — Investigador):** *"não apenas... como"* $\rightarrow$ Locução correlativa aditiva de acréscimo. **Gabarito: D**.
@@ -555,7 +545,7 @@ A coordenação e a subordinação possuem naturezas sintáticas inconfundíveis
 - **Q13 (FGV / SEE-PE — Prof. Língua Portuguesa):** *"A vontade de acreditar é talvez o mais poderoso, mas certamente é o mais perigoso atributo humano"* $\rightarrow$ Conectivo *mas* unindo atributos cumulativos convergentes (*poderoso* $+$ *perigoso*), com valor aditivo. **Gabarito: B**.
 - **Q14 (AMAUC / Pref. Itá-SC — Fiscal):** *"Nem Pedro estuda nem Maria trabalha"* $\rightarrow$ 1º *Nem* advérbio; 2º *nem* conjunção aditiva. **Gabarito: C**.
 
-##  a  — Questões de Concurso da Parte 02 (Q15 a Q26)
+### a  — Questões de Concurso da Parte 02 (Q15 a Q26)
 
 - **Q15 (IBADE / Pref. Rio Branco — Cuidador):** *"...ou ser uma carga para os filhos"* $\rightarrow$ Oração coordenada sindética alternativa. **Gabarito: D**.
 - **Q16 (FUNDEP / TJ-MG — Oficial):** *"[...] ou o homem se entende..., ou se aniquila [...]"* $\rightarrow$ Relação de alternância. **Gabarito: A**.
@@ -570,7 +560,7 @@ A coordenação e a subordinação possuem naturezas sintáticas inconfundíveis
 - **Q25 (CEBRASPE / SEED-PR — Professor):** *"Socorro, alguém me dê um coração, / que esse já não bate..."* $\rightarrow$ Imperativo *dê* seguido de *que* explicativo. **Gabarito: B**.
 - **Q26 (FGV / SEFAZ-RJ — Fiscal de Rendas):** *"...seria desumano, pois ela nada mais é..."* $\rightarrow$ Conjunção coordenativa explicativa anteposta ao verbo. **Gabarito: E**.
 
-##  a  — Bloco de Fixação Estrutural (Frases 1 a 11)
+### a  — Bloco de Fixação Estrutural (Frases 1 a 11)
 
 - **Frase 1:** *"Não desejo nada, não temo nada, sou livre."* $\rightarrow$ Orações Coordenadas Assindéticas.
 - **Frase 2:** *"Sente aqui, que precisamos conversar."* $\rightarrow$ Imperativo + *que* explicativo $\rightarrow$ O.C. Sindética Explicativa.
@@ -584,7 +574,7 @@ A coordenação e a subordinação possuem naturezas sintáticas inconfundíveis
 - **Frase 10:** *"Eles se admiravam, contudo não se falavam."* $\rightarrow$ O.C. Sindética Adversativa.
 - **Frase 11:** *"...dependem, pois, de seu método..."* $\rightarrow$ *Pois* posposto/deslocado $\rightarrow$ O.C. Sindética Conclusiva.
 
-##  a  — Miscelânea de Bancas (Q27 a Q33)
+### a  — Miscelânea de Bancas (Q27 a Q33)
 
 - **Q27 (Quadrix / CRN-8):** *"mas gorduras são ricas em calorias"* $\rightarrow$ Sentido adversativo. **Gabarito: B**.
 - **Q28 (Inst. AOCP / EBSERH):** *"mas não sem uma mudança..."* $\rightarrow$ Expressa contraste. **Gabarito: C**.
@@ -594,7 +584,7 @@ A coordenação e a subordinação possuem naturezas sintáticas inconfundíveis
 - **Q32 (FGV / PROCEMPA):** *"Pensamos em demasia [+] e sentimos bem pouco [-]"* $\rightarrow$ *E* com valor adversativo. **Gabarito: E**.
 - **Q33 (VUNESP / Semae Piracicaba):** *"...recusa: não vê motivos..."* $\rightarrow$ Substituição por *pois não vê motivos* (explicativa). **Gabarito: A**.
 
-##  a  — Bateria CEBRASPE (Q34 a Q44)
+### a  — Bateria CEBRASPE (Q34 a Q44)
 
 - **Q34 (CEBRASPE / TC-DF):** *"Quanto ao gênero deles, não sei..."* $\rightarrow$ Vírgula isola adjunto adverbial antecipado e não orações. **Gabarito: Errado**.
 - **Q35 (CEBRASPE / SEDU-ES):** *"computador e da Internet e ensinar..."* $\rightarrow$ 1º *e* liga termos nominais; 2º *e* liga orações. Falso afirmar que ambas introduzem oração. **Gabarito: Errado**.
@@ -609,7 +599,7 @@ A coordenação e a subordinação possuem naturezas sintáticas inconfundíveis
 - **Q44 (CEBRASPE / SEDU-ES):** *"assim que eu cheguei"* $\rightarrow$ Locução temporal subordinativa e não explicativa. **Gabarito: Errado**.
 
 ---
-##  a 025 — Bateria de Questões de Concursos Públicos
+### a 025 — Bateria de Questões de Concursos Públicos
 
 - **Questão 10 (AOCP - FUNDASUS - Médico):** *"A postura errada atrapalha a respiração, enfraquece os músculos e derruba seu nível de energia"*. Período composto por coordenação em que as orações expressam valor aditivo. **Gabarito: A**.
 - **Questão 11 (VUNESP - PC-SP - Investigador):** *"não apenas... como"*. Locução correlativa com sentido inequívoco de adição. **Gabarito: D**.
@@ -649,81 +639,75 @@ A coordenação e a subordinação possuem naturezas sintáticas inconfundíveis
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Teste da Reconstituição Mental do "Não Só"
+### O Teste da Reconstituição Mental do "Não Só"
 
 Ao identificar a locução *"mas também"* no início da segunda oração sem a presença expressa de *"não só"* na primeira (ex.: *"Ele comprou a casa, mas também reformou o escritório"*), insira mentalmente *"não só"* antes do primeiro verbo. Se a frase mantiver sentido harmônico de acúmulo, confirme categoricamente que a 1ª oração é **assindética** e a 2ª é **sindética aditiva**.
 
-## Reconstituição Mental do "Não Só"
+### Reconstituição Mental do "Não Só"
 
 Ao deparar-se com a locução *mas também* no início de uma oração sem o par correlato visível na oração anterior, insira mentalmente a expressão *não só* antes do primeiro verbo. Se a frase mantiver sentido fluído de acréscimo, confirme imediatamente que se trata de período composto aditivo com elipse ( no ).
 
-## O Mnemônico "Com o Conectivo Eu Sou Feliz"
+### O Mnemônico "Com o Conectivo Eu Sou Feliz"
 
 A classificação sintática das orações coordenadas é refém da conjunção. Memorizar as listas de conectivos puros (*portanto, contudo, todavia, no entanto, porquanto*) permite resolver itens instantaneamente sem se desgastar na leitura exaustiva de textos extensos ( no ).
 
-## Recomposição Integral de Locuções Conjuntivas
+### Recomposição Integral de Locuções Conjuntivas
 
 Bancas como o Cebraspe costumam destacar propositalmente apenas a primeira palavra de uma locução (*assim* em vez de *assim que*, ou *não apenas* em vez de *não apenas... mas também*). Recomponha sempre o bloco conectivo integral com o termo subsequente para não classificar uma locução subordinativa temporal como conectivo conclusivo ou explicativo.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## O Pleonasmo Vicioso "E NEM" no Registro Culto
+### O Pleonasmo Vicioso "E NEM" no Registro Culto
 
 - **Problema:** Emprego de *"e nem"* em redações discursivas ou validação da estrutura em itens de correção gramatical (*"Não comeu e nem bebeu"*).
 - **Regra Culta:** *Nem* já contém a conjunção *e* (*nem = e não*). O uso concomitante configura pleonasmo redundante condenado pela norma-padrão.
 - **Forma Correta:** *"Não comeu nem bebeu"* ou *"Não comeu e não bebeu"*.
 
-## A Falsa Dupla Sindética em "Nem... Nem..."
+### A Falsa Dupla Sindética em "Nem... Nem..."
 
 - **Problema:** Supor que a repetição do vocábulo *nem* (*"Nem trabalha, nem estuda"*) gera duas orações coordenadas sindéticas.
 - **Análise Correta:** O primeiro *nem* opera como advérbio de negação modificador (a 1ª oração é **assindética**). Apenas o segundo *nem* opera como conjunção coordenativa aditiva (a 2ª oração é **sindética aditiva**).
 
-## A Ilusão de Oposição por Contraste Modalizador
+### A Ilusão de Oposição por Contraste Modalizador
 
 - **Problema:** Considerar uma frase adversativa devido ao contraste de advérbios modalizadores de dúvida e certeza (*talvez* vs. *certamente*), como na Questão 13 da FGV.
 - **Análise Correta:** A função do conectivo deve ser buscada nos núcleos conceituais substantivos/adjetivos que ele efetivamente articula (*mais poderoso* $+$ *mais perigoso*). Se os qualificadores acumularem-se sobre o mesmo referente, o conectivo é **aditivo**.
 
-## Confusão entre Alternância e Exclusão Mútua
+### Confusão entre Alternância e Exclusão Mútua
 
 - **Problema:** Rotular indistintamente qualquer oração iniciada por *ou* como portadora de valor semântico de "alternância".
 - **Análise Correta:** *Alternância* exige revezamento distributivo no tempo (*ora chove, ora faz sol*). Se os polos forem incompatíveis e excludentes (*ou você é médico diplomado, ou nem sabe o que é bisturi*), o valor semântico é estritamente de **exclusão (valor alternativo puro)**.
 
-## Incompatibilidade Terminológica: Coordenada Concessiva
+### Incompatibilidade Terminológica: Coordenada Concessiva
 
 - **Problema:** Assertivas de bancas que misturam categorias da coordenação com a subordinação (ex.: *"o vocábulo 'mas' introduz oração coordenada concessiva"*).
 - **Análise Correta:** O conectivo *mas* é estritamente coordenativo adversativo. Concessão (*embora*) pertence ao domínio exclusivo da subordinação adverbial. O item é nulo/falso em sua própria redação conceitual.
 
-## Posição do "POIS" e a Inversão Conclusiva/Explicativa
+### Posição do "POIS" e a Inversão Conclusiva/Explicativa
 
 - **Problema:** Classificar o conectivo *pois* como explicativo quando ele estiver intercalado no meio da oração.
 - **Análise Correta:** Se o *pois* estiver posposto ao verbo e isolado entre vírgulas (*podemos, pois, comemorar*), ele equivale a *portanto* e é **conclusivo**. Se estiver anteposto ao verbo no início da oração (*pois comemorou muito*), equivale a *porque* e é **explicativo**.
 
-## Conectivo "E" Ligando Termos Nominais vs. Orações
+### Conectivo "E" Ligando Termos Nominais vs. Orações
 
 - **Problema:** Assumir que todo "e" presente no texto introduz oração coordenada.
 - **Análise Correta:** Inspecionar a presença de verbo. Se o "e" ligar elementos sem verbo (*a existência do computador e da Internet*), trata-se de coordenação de termos da oração (adjuntos adnominais), e não de orações coordenadas.
 
 ---
 
-## Inversão Posicional do "POIS"
+### Inversão Posicional do "POIS"
 
 - **Problema:** Classificar o *pois* posposto ao verbo como explicativo.
 - **Como evitar:** Se o *pois* estiver deslocado após o verbo, entre vírgulas, é estritamente **conclusivo** ( no ).
 
-## Contradição Terminológica: Coordenada Concessiva
+### Contradição Terminológica: Coordenada Concessiva
 
 - **Problema:** Aceitar que a conjunção coordenativa *mas* introduz oração concessiva.
 - **Como evitar:** Concessão é privativa da subordinação adverbial. Assertivas que misturam coordenação com concessão são conceituamente falsas ( no ).
-
----
 
 ---
 
@@ -741,53 +725,51 @@ Bancas como o Cebraspe costumam destacar propositalmente apenas a primeira palav
 -  — **Conexão Intertermos vs. Interoracional:** Distinção entre o conectivo que une termos nominais de mesma função na mesma oração e o conectivo que articula orações autônomas.
 
 ---
-## Oração Coordenada Assindética (O.C.A.)
+### Oração Coordenada Assindética (O.C.A.)
 
 Oração sintaticamente independente que integra o período composto por coordenação sem a mediação de conjunção coordenativa (síndeto), unindo-se às demais por mera justaposição e pontuação.
 
 - *Exemplo da aula:* *"Dario abre a boca, move os lábios, não se ouve resposta."*
 
-## Oração Coordenada Sindética (O.C.S.)
+### Oração Coordenada Sindética (O.C.S.)
 
 Oração sintaticamente independente encabeçada obrigatoriamente por uma conjunção coordenativa, cuja carga semântica contextual dita a classificação da oração. Subdivide-se em aditiva, adversativa, alternativa, conclusiva e explicativa.
 
-## Sequência Cronológica (Valor Aditivo-Temporal)
+### Sequência Cronológica (Valor Aditivo-Temporal)
 
 Matiz semântico assumido pela conjunção *e* quando articula eventos que ocorrem em momentos temporais sucessivos no mundo real, impondo uma ordenação linear irreversível.
 
 - *Exemplo da aula:* *"Chegou em casa e dormiu."*
 
-## Exclusão (Valor Alternativo Puro)
+### Exclusão (Valor Alternativo Puro)
 
 Relação semântica do conectivo *ou* caracterizada pela incompatibilidade total entre as alternativas propostas, em que a escolha de um polo anula a ocorrência do outro. Contrasta com a alternância temporal.
 
 - *Exemplo da aula:* *"Ou João ou José se casará com Maria."*
 
-## Alternância Distributiva
+### Alternância Distributiva
 
 Relação semântica da coordenação alternativa em que as ações ou estados ocorrem de maneira intercalada ou sucessiva no tempo, coexistindo sem anulação mútua.
 
 - *Exemplo da aula:* *"Ora estava alegre, ora ficava calado."*
 
-## Ressalva / Compensação
+### Ressalva / Compensação
 
 Matiz semântico das orações adversativas em que não há antagonismo antitético direto, mas a apresentação de uma contrapartida atenuante (*em compensação*).
 
 - *Exemplo da aula:* *"Não li o livro, mas vi o filme."*
 
-## Pois Posposto / Deslocado
+### Pois Posposto / Deslocado
 
 Estrutura sintática em que a conjunção *pois* situa-se após o verbo da oração coordenada, obrigatoriamente intercalada entre vírgulas, assumindo valor conclusivo equivalente a *portanto*.
 
 - *Exemplo da aula:* *"A semana acabou, podemos, pois, descansar."*
 
-## Justificativa Discursiva (Explicação)
+### Justificativa Discursiva (Explicação)
 
 Relação semântica em que a oração conectada não é a causa física ontológica do fato anterior, mas o indício empírico ou argumento utilizado pelo enunciador para fundamentar sua declaração.
 
 - *Exemplo da aula:* *"Luiza era feliz, porque vivia sorrindo."*
-
----
 
 ---
 
@@ -798,13 +780,13 @@ Ao concluir o estudo deste grupo temático, o estudante deve ter consolidado as 
 1. **Domínio Estrutural:** Compreender que o período composto por coordenação articula orações sintaticamente independentes, classificadas a partir do conectivo ("de trás para frente").
 2. **Rigor Morfossintático:** Saber que sem verbo não existe oração, identificando termos nominais deslocados (adjuntos adverbiais antecipados) e distinguindo conexão intertermos de conexão interoracional.
 3. **Polissemia Conectiva:**
- - Reconhecer os 4 valores do conectivo *e* (soma, sequência cronológica, oposição e conclusão).
- - Identificar o valor aditivo atípico do conectivo *mas* por meio da convergência dos núcleos conectados.
- - Dominar o comportamento do *pois* (anteposto $=$ explicativo; posposto/deslocado $=$ conclusivo).
+  - Reconhecer os 4 valores do conectivo *e* (soma, sequência cronológica, oposição e conclusão).
+  - Identificar o valor aditivo atípico do conectivo *mas* por meio da convergência dos núcleos conectados.
+  - Dominar o comportamento do *pois* (anteposto $=$ explicativo; posposto/deslocado $=$ conclusivo).
 4. **Precisão Semântica Fina:**
- - Distinguir *Alternância* (revezamento distributivo no tempo) de *Exclusão / Valor Alternativo Puro* (polos excludentes).
- - Distinguir *Oposição/Contraste* direto de *Ressalva/Compensação* atenuante.
- - Distinguir *Explicação* (justificativa discursiva / imperativo) de *Causa* (relação física de causa e efeito).
+  - Distinguir *Alternância* (revezamento distributivo no tempo) de *Exclusão / Valor Alternativo Puro* (polos excludentes).
+  - Distinguir *Oposição/Contraste* direto de *Ressalva/Compensação* atenuante.
+  - Distinguir *Explicação* (justificativa discursiva / imperativo) de *Causa* (relação física de causa e efeito).
 5. **Agilidade em Concursos:** Aplicar o teste de polaridades semânticas (`+` vs. `-`), a técnica de resolução vertical de conectivos e a substituição de dois-pontos explicativos por *pois*/*porque*.
 
 ---

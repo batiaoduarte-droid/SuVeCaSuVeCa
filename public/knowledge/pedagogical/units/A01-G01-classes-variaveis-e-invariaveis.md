@@ -42,7 +42,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ### Pré-requisitos Pedagógicos
 
-### Mapa Conceitual Integrado
+#### Mapa Conceitual Integrado
 
 ```text
 SISTEMA MORFOLÓGICO DA LÍNGUA PORTUGUESA (10 CLASSES)
@@ -73,24 +73,22 @@ SISTEMA MORFOLÓGICO DA LÍNGUA PORTUGUESA (10 CLASSES)
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Conceito Fundamental de Variação Morfológica e Flexão
+### Conceito Fundamental de Variação Morfológica e Flexão
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Uma classe gramatical é considerada **variável** quando suas palavras admitem **flexão**, sofrendo alterações morfológicas para expressar **gênero** (masculino e feminino) e **número** (singular e plural). As classes **invariáveis** possuem forma fixa e cristalizada, não admitindo flexão sob nenhuma circunstância de concordância básica.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A morfologia da Língua Portuguesa organiza suas dez classes de palavras em dois conjuntos fundamentais:
 
 1. **Classes Variáveis (6):** Substantivo, Artigo, Adjetivo, Pronome, Numeral e Verbo. (O verbo apresenta ainda flexões próprias de tempo, modo, número, pessoa e voz).
 2. **Classes Invariáveis (4):** Advérbio, Conjunção, Preposição e Interjeição.
 
-### Critérios de reconhecimento
+#### Critérios de reconhecimento
 
 - Se o vocábulo aceita alteração mórfica de singular/plural ($S \rightarrow Pl$) ou masculino/feminino ($Masc \rightarrow Fem$) ao alterar-se o contexto frasal $\rightarrow$ **Palavra de Classe Variável**.
 - Se o vocábulo mantém rigorosamente a mesma forma gráfica e fonética, independentemente de os termos vizinhos estarem no plural ou feminino $\rightarrow$ **Palavra de Classe Invariável**.
@@ -99,33 +97,33 @@ A morfologia da Língua Portuguesa organiza suas dez classes de palavras em dois
 
 ---
 
-## O Substantivo e o Teste Diagnóstico do Artigo Antecedente
+### O Substantivo e o Teste Diagnóstico do Artigo Antecedente
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **substantivo** é a classe variável que funciona como **nome**, responsável por nomear seres concretos, abstrações, ações, estados e qualidades. No contexto de provas de concurso, sua marca diagnóstica distintiva é a capacidade gramatical de aceitar a **anteposição de um artigo**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Para determinar se uma palavra em análise atua como substantivo:
 
 1. Avalia-se se ela desempenha o papel semântico de nomear algo.
 2. Aplica-se o teste prático de antecipar um artigo (*o, a, os, as, um, uma*). Mesmo que a frase original não traga o artigo expresso, a admissibilidade natural do determinante comprova a natureza substantiva do vocábulo.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Aplicação:* Na oração *"Ele tem competência"*, a palavra *competência* é substantivo porque admite o determinante: *"Ele tem **a** competência"*.
 - *Aplicação contextual:* Na oração *"Vive na zona rural"*, a palavra isolada *zona* é substantivo antecedido da contração *na* (*em* + artigo *a*).
 
 ---
 
-## Adjetivo versus Locução Adjetiva e o Princípio de Invariabilidade
+### Adjetivo versus Locução Adjetiva e o Princípio de Invariabilidade
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **adjetivo** é uma palavra simples variável que se refere diretamente ao substantivo, concordando com ele em gênero e número. A **locução adjetiva** é uma expressão (formada por duas ou mais palavras, usualmente preposição + substantivo) que exerce papel adjetivo, mas que, por ser uma unidade sintagmática fixa, **não varia** no plural nem no feminino.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Adjetivo Simples:** Flexiona-se harmoniosamente com o substantivo. Exemplo: *"homem inteligente"* $\rightarrow$ *"homens inteligente**s**"*.
 - **Particípio com Valor Adjetivo:** Particípios verbais aplicados diretamente à qualificação de substantivos operam funcionalmente como adjetivos variáveis. Exemplo: *"pagamentos realizados"*.
@@ -134,13 +132,13 @@ O **adjetivo** é uma palavra simples variável que se refere diretamente ao sub
 
 ---
 
-## Pronome: Distinção entre Funções Substantivas e Adjetivas
+### Pronome: Distinção entre Funções Substantivas e Adjetivas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **pronome** é a classe que se relaciona diretamente com o substantivo, dividindo-se funcionalmente em **pronome substantivo** (quando substitui o nome e assume sozinho a função sintática) e **pronome adjetivo** (quando acompanha o substantivo, determinando-o ou modificando-o).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Do ponto de vista textual e sintático, independentemente da subclasse formal (pessoal, possessivo, demonstrativo, indefinido, etc.), todo pronome assume um dos dois papéis:
 
@@ -151,130 +149,128 @@ Do ponto de vista textual e sintático, independentemente da subclasse formal (p
 
 ---
 
-## Numeral: Funções Substantivas e Adjetivas
+### Numeral: Funções Substantivas e Adjetivas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **numeral** é a classe variável que quantifica seres, indica ordenação, multiplicação ou divisão. À semelhança do pronome, pode atuar no discurso como **numeral substantivo** (quando substitui o nome) ou **numeral adjetivo** (quando acompanha o substantivo).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Numeral Substantivo:** Desempenha o papel de núcleo do sintagma nominal isoladamente. Exemplo: *"Os **dois** chegaram"* (o numeral cardinal *dois* atua como sujeito substantivado). O vocábulo *milhão* (*"R$ 1,25 milhão"*) quantifica atuando com feição substantiva e varia em número (*milhões*).
 - **Numeral Adjetivo:** Acompanha e quantifica diretamente um substantivo textual expresso. Exemplo: *"Os **dois** meninos chegaram"* (*dois* aponta para *meninos*).
 
 ---
 
-## O Verbo como Classe de Maior Flexibilidade Morfológica
+### O Verbo como Classe de Maior Flexibilidade Morfológica
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **verbo** é a classe gramatical variável responsável por exprimir ação, estado, mudança de estado ou fenômenos naturais. Destaca-se como a classe morfológica mais flexível e complexa da Língua Portuguesa, admitindo variações de número, pessoa, tempo, modo e voz.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 No estudo inicial das classes variáveis, o verbo constitui o elemento indispensável da oração. Nas questões de identificação de flexibilidade, as formas verbais (ex.: *"fez"*, *"estudou"*) são classificadas invariavelmente como **variáveis**.
 
 ---
 
-## Advérbio, Locução Adverbial e a Exceção do Advérbio "Todo/Toda"
+### Advérbio, Locução Adverbial e a Exceção do Advérbio "Todo/Toda"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **advérbio** é uma classe **invariável** cuja função sintático-semântica é modificar um **verbo**, um **adjetivo** ou **outro advérbio**, expressando uma circunstância (modo, tempo, lugar, intensidade, afirmação, negação, exclusão). A **locução adverbial** é a expressão pluriverbal correspondente. Como exceção expressiva, o advérbio de intensidade **"todo"** aceita concordância de gênero com adjetivo feminino.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Alvo de Modificação:** O advérbio jamais modifica substantivos.
- - Advérbio simples: *"Ele estudou rapidamente."* / *"Eles não se davam bem."* (modo).
- - Locução adverbial: *"Ele estudou à toa."* / *"Vive na zona rural."* (lugar).
+  - Advérbio simples: *"Ele estudou rapidamente."* / *"Eles não se davam bem."* (modo).
+  - Locução adverbial: *"Ele estudou à toa."* / *"Vive na zona rural."* (lugar).
 2. **Advérbio "Mais" Antecedido de Negação:** Em construções como *"não mais"* ou *"nunca mais"* (*"A gente não deseja mais viver"*), o vocábulo *mais* modifica o verbo e expressa circunstância de **tempo** (cessação temporal: "de agora em diante"), sendo invariável.
 3. **Advérbio "Menos":** Ao modificar adjetivos (*"menos condenável"*), expressa intensidade e permanece estritamente invariável (a forma *"menas"* é inexistente no padrão culto).
 4. **A Exceção de "Todo/Toda":** Ao intensificar adjetivo, o advérbio *todo* admite duas construções cultas equivalentes:
- - *"Ela chegou **toda** feliz."* (advérbio variável por atração estilística).
- - *"Ela chegou **todo** feliz."* (advérbio mantido rigorosamente invariável).
+  - *"Ela chegou **toda** feliz."* (advérbio variável por atração estilística).
+  - *"Ela chegou **todo** feliz."* (advérbio mantido rigorosamente invariável).
 
 ---
 
-## Conectores Conformativos e Estruturais: Conjunções e Preposições
+### Conectores Conformativos e Estruturais: Conjunções e Preposições
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 **Conjunções** e **Preposições** são classes **invariáveis** que atuam como conectores discursivos. Ambas possuem a capacidade de ligar orações ou termos; a distinção entre suas respectivas locuções assenta-se no **vocábulo final da expressão**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Capacidades Conectivas:**
- - **Conjunção:** Liga orações (*"Ele chegou **e** dormiu"*) ou termos de mesma função na oração (*"**José e João** chegaram"*).
- - **Preposição:** Liga termos nominais (*"Blusa **de** Maria"*) ou orações (*"Estudo **para** ter uma vida melhor"*).
+  - **Conjunção:** Liga orações (*"Ele chegou **e** dormiu"*) ou termos de mesma função na oração (*"**José e João** chegaram"*).
+  - **Preposição:** Liga termos nominais (*"Blusa **de** Maria"*) ou orações (*"Estudo **para** ter uma vida melhor"*).
 2. **Diferenciação Estrutural de Locuções:**
- - **Locução Conjuntiva:** Expressão que **termina obrigatoriamente por conjunção** (geralmente *que*). Ex.: *a fim de **que***, *assim **que***, *já **que***, *à medida **que***.
- - **Locução Prepositiva:** Expressão que **termina obrigatoriamente por preposição**. Ex.: *a fim **de***, *graças **a***, *por causa **de***, *em vez **de***.
+  - **Locução Conjuntiva:** Expressão que **termina obrigatoriamente por conjunção** (geralmente *que*). Ex.: *a fim de **que***, *assim **que***, *já **que***, *à medida **que***.
+  - **Locução Prepositiva:** Expressão que **termina obrigatoriamente por preposição**. Ex.: *a fim **de***, *graças **a***, *por causa **de***, *em vez **de***.
 
 ---
 
-## Interjeições e o Encerramento das Classes Invariáveis
+### Interjeições e o Encerramento das Classes Invariáveis
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A **interjeição** é a classe gramatical **invariável** composta por palavras ou expressões que exteriorizam de forma direta e instantânea estados emocionais, reações psíquicas, sensações e sentimentos do emissor (como dor, espanto, alívio, medo).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Completando as dez classes morfológicas, as interjeições não sofrem flexão de gênero nem de número. Exemplos herdados: *"Ai!"* / *"Ui!"* (dor), *"Meu Deus!"* / *"Nossa!"* (espanto/medo).
 
 ---
 
-## O Método das Setas para Análise Contextual Morfossintática
+### O Método das Setas para Análise Contextual Morfossintática
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **Método das Setas** é o protocolo analítico que determina a classe e a flexibilidade de uma palavra exclusivamente pelas relações de dependência sintática estabelecidas no interior da frase, substituindo a memorização ineficaz de listas isoladas.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Para classificar qualquer vocábulo:
 
 1. Traça-se uma seta da palavra analisada para o termo ao qual ela se refere.
 2. Aplica-se a regra de interconexão morfológica:
- - Aponta para **Substantivo** $\rightarrow$ Adjetivo, Artigo, Pronome ou Numeral (Natureza Nominal / Geralmente **Variável**).
- - Aponta para **Verbo, Adjetivo ou outro Advérbio** $\rightarrow$ **Advérbio** (Classe estritamente **Invariável**).
- - Atua ligando dois termos ou duas orações $\rightarrow$ **Preposição** ou **Conjunção** (Conectivo / **Invariável**).
+  - Aponta para **Substantivo** $\rightarrow$ Adjetivo, Artigo, Pronome ou Numeral (Natureza Nominal / Geralmente **Variável**).
+  - Aponta para **Verbo, Adjetivo ou outro Advérbio** $\rightarrow$ **Advérbio** (Classe estritamente **Invariável**).
+  - Atua ligando dois termos ou duas orações $\rightarrow$ **Preposição** ou **Conjunção** (Conectivo / **Invariável**).
 
 ---
 
-## Diferenciação Morfossintática entre "Demais" e "De mais"
+### Diferenciação Morfossintática entre "Demais" e "De mais"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A sequência grafada em uma única palavra **"demais"** funciona como advérbio de intensidade (invariável). Já a estrutura separada **"de mais"** é formada pela preposição *de* seguida do pronome indefinido *mais*, o qual modifica substantivo.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **"Demais" (junto):** Liga-se ao verbo para intensificá-lo.
- - Exemplo: *"Ele gosta demais de você."* (seta de *demais* para o verbo *gosta* $\rightarrow$ **Advérbio de intensidade / Invariável**).
+  - Exemplo: *"Ele gosta demais de você."* (seta de *demais* para o verbo *gosta* $\rightarrow$ **Advérbio de intensidade / Invariável**).
 2. **"De mais" (separado):** Ocorre quando a regência exige a preposição *de* e o vocábulo *mais* quantifica um substantivo.
- - Exemplo: *"Eu preciso [de] [mais] café."* (*de* = preposição; *mais* manda seta para o substantivo *café* $\rightarrow$ **Pronome indefinido**).
+  - Exemplo: *"Eu preciso [de] [mais] café."* (*de* = preposição; *mais* manda seta para o substantivo *café* $\rightarrow$ **Pronome indefinido**).
 
 ---
 
-## Polissemia e Emprego Contextual de "Claro", "Só" e "A sós"
+### Polissemia e Emprego Contextual de "Claro", "Só" e "A sós"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Palavras como *claro* e *só* alternam sua classe e variabilidade conforme o termo a que se referem na oração, enquanto a locução *a sós* permanece estritamente invariável.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **A palavra "Claro":**
- - *"Dia claro"* $\rightarrow$ refere-se ao substantivo *dia* $\rightarrow$ **Adjetivo (Variável)**.
- - *"Claro que sairemos hoje"* / *"— Claro que estou indo"* $\rightarrow$ refere-se à locução verbal/oração com sentido de *"com certeza / de fato"* $\rightarrow$ **Advérbio de afirmação/obviedade (Invariável)**.
+  - *"Dia claro"* $\rightarrow$ refere-se ao substantivo *dia* $\rightarrow$ **Adjetivo (Variável)**.
+  - *"Claro que sairemos hoje"* / *"— Claro que estou indo"* $\rightarrow$ refere-se à locução verbal/oração com sentido de *"com certeza / de fato"* $\rightarrow$ **Advérbio de afirmação/obviedade (Invariável)**.
 2. **A palavra "Só":**
- - Equivalente a *"sozinho(a)"* (*"Ângela fez o trabalho só"*) $\rightarrow$ refere-se ao substantivo $\rightarrow$ **Adjetivo (Variável: *elas fizeram sós*)**.
- - Equivalente a *"somente / apenas"* (*"Maria só arrumou a horta"*) $\rightarrow$ refere-se ao verbo $\rightarrow$ **Advérbio de exclusão (Invariável)**.
+  - Equivalente a *"sozinho(a)"* (*"Ângela fez o trabalho só"*) $\rightarrow$ refere-se ao substantivo $\rightarrow$ **Adjetivo (Variável: *elas fizeram sós*)**.
+  - Equivalente a *"somente / apenas"* (*"Maria só arrumou a horta"*) $\rightarrow$ refere-se ao verbo $\rightarrow$ **Advérbio de exclusão (Invariável)**.
 3. **A locução "A sós":**
- - Modifica pronome ou numeral (*"As duas estão a sós"*) $\rightarrow$ **Locução Adjetiva Invariável**.
-
----
+  - Modifica pronome ou numeral (*"As duas estão a sós"*) $\rightarrow$ **Locução Adjetiva Invariável**.
 
 ---
 
@@ -297,7 +293,7 @@ Palavras como *claro* e *só* alternam sua classe e variabilidade conforme o ter
 
 *\*Exceções registradas:* Pronomes invariáveis (*alguém, ninguém, tudo*); Advérbio de intensidade *todo* (*"toda feliz"*).
 
-### Regra Canônica das Locuções
+#### Regra Canônica das Locuções
 
 - **Locução Adjetiva:** Expressão preposicionada que qualifica substantivo $\rightarrow$ **Em regra Invariável** (`KB-...-003`).
 - **Locução Conjuntiva:** Expressão conectiva que **termina em conjunção** (`KB-...-008`).
@@ -305,11 +301,9 @@ Palavras como *claro* e *só* alternam sua classe e variabilidade conforme o ter
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Teste do Artigo para Identificação de Substantivos
+### Teste do Artigo para Identificação de Substantivos
 
 1. Isole o vocábulo sob análise na frase.
 2. Tente inserir imediatamente antes dele um artigo definido (*o, a, os, as*) ou indefinido (*um, uma*).
@@ -317,43 +311,41 @@ Palavras como *claro* e *só* alternam sua classe e variabilidade conforme o ter
 
 ---
 
-## Teste da "Seta" para Diferenciação de Funções Substantivas e Adjetivas
+### Teste da "Seta" para Diferenciação de Funções Substantivas e Adjetivas
 
 1. Localize o pronome ou numeral na estrutura oracional.
 2. Verifique a existência de substantivo adjacente:
- - Se a palavra **manda uma seta** para um substantivo ao lado $\rightarrow$ Classifica-se como **Pronome Adjetivo** ou **Numeral Adjetivo** (*"**Meu** aluno"*, *"**Dois** homens"*).
- - Se a palavra **estiver isolada**, sem substantivo ao lado, desempenhando ela própria o papel nuclear $\rightarrow$ Classifica-se como **Pronome Substantivo** ou **Numeral Substantivo** (*"**Alguém** chegou"*, *"Os **dois** chegaram"*).
+  - Se a palavra **manda uma seta** para um substantivo ao lado $\rightarrow$ Classifica-se como **Pronome Adjetivo** ou **Numeral Adjetivo** (*"**Meu** aluno"*, *"**Dois** homens"*).
+  - Se a palavra **estiver isolada**, sem substantivo ao lado, desempenhando ela própria o papel nuclear $\rightarrow$ Classifica-se como **Pronome Substantivo** ou **Numeral Substantivo** (*"**Alguém** chegou"*, *"Os **dois** chegaram"*).
 
 ---
 
-## Regra do Vocábulo Final para Locuções Conectivas
+### Regra do Vocábulo Final para Locuções Conectivas
 
 1. Isole a expressão conectiva pluriverbal.
 2. Examine a **última palavra** que encerra a locução:
- - Se a última palavra for uma **preposição** (*de, a, em, com, por*) $\rightarrow$ A estrutura é uma **Locução Prepositiva** (*a fim **de***, *por causa **de***).
- - Se a última palavra for uma **conjunção** (*que, se, como*) $\rightarrow$ A estrutura é uma **Locução Conjuntiva** (*a fim de **que***, *visto **que***).
+  - Se a última palavra for uma **preposição** (*de, a, em, com, por*) $\rightarrow$ A estrutura é uma **Locução Prepositiva** (*a fim **de***, *por causa **de***).
+  - Se a última palavra for uma **conjunção** (*que, se, como*) $\rightarrow$ A estrutura é uma **Locução Conjuntiva** (*a fim de **que***, *visto **que***).
 
 ---
 
-## Protocolo do Método das Setas para Classificação Morfossintática
+### Protocolo do Método das Setas para Classificação Morfossintática
 
 1. **Delimitação:** Verifique o escopo exato do sublinhado da banca (evitando analisar a locução inteira quando apenas o núcleo está marcado).
 2. **Pergunta de Relação:** Formule a pergunta de dependência: *"Este vocábulo está no texto para modificar, caracterizar ou ligar quem?"*
 3. **Mapeamento:**
- - Referência a **Substantivo** $\rightarrow$ Natureza Adjetiva/Nominal (**Variável**).
- - Referência a **Verbo, Adjetivo ou Advérbio** $\rightarrow$ **Advérbio** (**Invariável**).
- - Ligação pura $\rightarrow$ **Preposição / Conjunção** (**Invariável**).
+  - Referência a **Substantivo** $\rightarrow$ Natureza Adjetiva/Nominal (**Variável**).
+  - Referência a **Verbo, Adjetivo ou Advérbio** $\rightarrow$ **Advérbio** (**Invariável**).
+  - Ligação pura $\rightarrow$ **Preposição / Conjunção** (**Invariável**).
 4. **Confirmação:** Teste a flexão passando a oração para o plural/feminino.
 
 ---
 
-## Teste de Substituição Contextual para "Só" e "A sós"
+### Teste de Substituição Contextual para "Só" e "A sós"
 
 1. Substitua *"só"* por **"sozinho(a)"**: se mantiver a coerência, refere-se a substantivo $\rightarrow$ **Adjetivo (Variável)**.
 2. Substitua *"só"* por **"somente / apenas"**: se mantiver a coerência, refere-se a verbo $\rightarrow$ **Advérbio (Invariável)**.
 3. Diante da expressão preposicionada **"a sós"**: identifique-a como **Locução Adjetiva Invariável**.
-
----
 
 ---
 
@@ -368,7 +360,7 @@ Palavras como *claro* e *só* alternam sua classe e variabilidade conforme o ter
 | **Advérbio** | Palavra simples | **Invariável** | Estudou rapidamente | Estudaram rapidamente |
 | **Locução Adverbial** | Expressão fixa | **Invariável** | Estudou à toa | Estudaram à toa |
 
-### 2. Distinção entre Conectores e suas Locuções
+#### 2. Distinção entre Conectores e suas Locuções
 
 | Conector / Locução | Termo que Liga | Marca Formal de Reconhecimento | Exemplo Canônico |
 |:------------------------------ |:------------------------------------ |:---------------------------------------------------- |:----------------------------------------------------- |
@@ -377,7 +369,7 @@ Palavras como *claro* e *só* alternam sua classe e variabilidade conforme o ter
 | **Conjunção** | Orações ou Termos da mesma oração | Palavra invariável coordenativa/subordinativa | Chegou**e** dormiu / José **e** João |
 | **Locução Conjuntiva** | Orações | **Termina em Conjunção** (geralmente *que*) | Estudo**a fim de que** passe |
 
-### 3. Vocábulos Polissêmicos em Análise Contrastiva
+#### 3. Vocábulos Polissêmicos em Análise Contrastiva
 
 | Vocábulo | Contexto Sintático | Classe Gramatical | Flexibilidade |
 |:---------------- |:------------------------------------------------------------ |:------------------------- |:-------------------: |
@@ -392,18 +384,16 @@ Palavras como *claro* e *só* alternam sua classe e variabilidade conforme o ter
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Contraste de Flexão no Plural: Adjetivo vs. Locução Adjetiva
+### Contraste de Flexão no Plural: Adjetivo vs. Locução Adjetiva
 
 - **Construção A:** *"Ele é homem inteligente."* $\rightarrow$ Plural: *"Eles são homens inteligente**s**."* (O adjetivo simples flexiona no plural).
 - **Construção B:** *"Ele é homem de inteligência."* $\rightarrow$ Plural: *"Eles são homens **de inteligência**."* (A locução adjetiva permanece invariável; a forma *"de inteligências"* é gramaticalmente rejeitada).
 
 ---
 
-## Diferenciação de Funções Substantivas e Adjetivas
+### Diferenciação de Funções Substantivas e Adjetivas
 
 | Frase Analisada | Termo | Classe Morfológica | Função Contextual | Justificativa Sintática |
 |:------------------------------ |:---------: |:-----------------: |:---------------------------: |:------------------------------------------------------- |
@@ -414,14 +404,14 @@ Palavras como *claro* e *só* alternam sua classe e variabilidade conforme o ter
 
 ---
 
-## Aplicação da Exceção do Advérbio "Todo"
+### Aplicação da Exceção do Advérbio "Todo"
 
 - **Frase:** *"Ela chegou **toda** feliz."*
 - **Análise:** O adjetivo *feliz* refere-se a *ela*. A palavra *toda* intensifica o adjetivo (equivale a "completamente"). Pela regra geral, modificador de adjetivo é advérbio. Trata-se de uma exceção em que o advérbio sofreu flexão facultativa/estilística de gênero. A forma invariável *"Ela chegou todo feliz"* também é culta e correta.
 
 ---
 
-## Bateria Consolidada de Exercícios de Fixação (8 Itens)
+### Bateria Consolidada de Exercícios de Fixação (8 Itens)
 
 | Item / Frase | Termo Destacado | Classe Gramatical | Código de Flexão | Justificativa do Gabarito |
 |:------------------------------------------------------------- |:-------------: |:----------------: |:-----------------------: |:------------------------------------------------------------------------ |
@@ -436,7 +426,7 @@ Palavras como *claro* e *só* alternam sua classe e variabilidade conforme o ter
 
 ---
 
-## Questão de Concurso 01 — INSTITUTO AOCP / Câmara de Maringá-PR
+### Questão de Concurso 01 — INSTITUTO AOCP / Câmara de Maringá-PR
 
 - **Texto 1:** *"— Claro que estou indo à festa. — respondi."*
 - **Texto 2:** *"... e, claro, eu estava dormindo."*
@@ -447,7 +437,7 @@ Palavras como *claro* e *só* alternam sua classe e variabilidade conforme o ter
 
 ---
 
-## Questão de Concurso 02 — AOCP / Prefeitura de Marilena-PR
+### Questão de Concurso 02 — AOCP / Prefeitura de Marilena-PR
 
 - **Enunciado:** Em *"... o sujeito passa a se achar **menos** condenável que os outros por ser poderoso [...]"*, a palavra "menos":
 
@@ -456,7 +446,7 @@ Palavras como *claro* e *só* alternam sua classe e variabilidade conforme o ter
 
 ---
 
-## Questão de Concurso 03 — IESES / Prefeitura de São José-SC
+### Questão de Concurso 03 — IESES / Prefeitura de São José-SC
 
 - **Enunciado:** Assinale a alternativa correta quanto aos termos: *"Ângela fez todo o trabalho do escritório **só (1)**, e Maria **só (2)** arrumou os canteiros da horta. As duas, quando estão **a sós (3)**, gostam de ler e cozinhar."*
 
@@ -468,11 +458,9 @@ Palavras como *claro* e *só* alternam sua classe e variabilidade conforme o ter
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Macete do "Fim da Locução Conectiva"
+### O Macete do "Fim da Locução Conectiva"
 
 Para classificar expressões conectivas sem decorar listas exaustivas:
 
@@ -481,7 +469,7 @@ Para classificar expressões conectivas sem decorar listas exaustivas:
 
 ---
 
-## Macete da "Palavra Isolada" versus "Acompanhada"
+### Macete da "Palavra Isolada" versus "Acompanhada"
 
 Para pronomes e numerais:
 
@@ -490,57 +478,53 @@ Para pronomes e numerais:
 
 ---
 
-## Teste Prático do "Só" (Sozinha vs. Somente)
+### Teste Prático do "Só" (Sozinha vs. Somente)
 
 - Coube **"sozinho(a)"** na frase $\rightarrow$ É **Adjetivo** e varia no plural (*"Eles ficaram sós"*).
 - Coube **"somente"** ou **"apenas"** $\rightarrow$ É **Advérbio** e é 100% invariável (*"Eles só estudaram"*).
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Pegadinha do Escopo do Sublinhado (Núcleo vs. Locução)
+### Pegadinha do Escopo do Sublinhado (Núcleo vs. Locução)
 
 - **Erro:** Classificar o substantivo isolado *"zona"* como invariável ou advérbio por notar que a expressão completa *"na zona rural"* indica lugar.
 - **Correção:** Analise estritamente o termo sublinhado. Se o sublinhado for apenas *zona*, trata-se de um **substantivo (variável)**. Apenas se a banca destacar a expressão inteira *na zona rural* teremos uma **locução adverbial (invariável)**.
 
 ---
 
-## Erro de Pluralizar o Substantivo Interno da Locução Adjetiva
+### Erro de Pluralizar o Substantivo Interno da Locução Adjetiva
 
 - **Erro:** Flexionar a locução ao passar a oração para o plural (*"Homens de inteligências"*).
 - **Correção:** Locuções são sintagmas fixos. A forma correta é *"Homens de inteligência"*.
 
 ---
 
-## Pegadinha da Invariabilidade Culta do Advérbio "Todo"
+### Pegadinha da Invariabilidade Culta do Advérbio "Todo"
 
 - **Erro:** Considerar a frase *"Ela chegou todo feliz"* incorreta por erro de concordância.
 - **Correção:** Por ser originariamente um advérbio modificador de adjetivo, a forma invariável *"todo feliz"* é perfeitamente legítima perante a norma culta.
 
 ---
 
-## Invariabilidade Absoluta da Locução "A sós"
+### Invariabilidade Absoluta da Locução "A sós"
 
 - **Erro:** Tentar variar a locução *"a sós"* em função do gênero dos referentes.
 - **Correção:** Diz-se *"Ele está a sós"*, *"Ela está a sós"*, *"Eles estão a sós"*, *"Elas estão a sós"*. Trata-se de locução adjetiva invariável.
 
 ---
 
-## Erro de Supor que Conjunção Exige Duas Orações
+### Erro de Supor que Conjunção Exige Duas Orações
 
 - **Erro:** Contar duas orações na frase *"José e João chegaram"* pela presença do conectivo *e*.
 - **Correção:** Conjunções coordenativas podem ligar termos de mesma função dentro de uma única oração (sujeito composto).
 
 ---
 
----
-
 ## Glossário operacional
 
-## Classe Variável
+### Classe Variável
 
 - **Definição:** Categoria morfológica de palavras que sofrem flexão para marcar variações de gênero (masculino/feminino) e número (singular/plural).
 - **Classes Integrantes:** Substantivo, Adjetivo, Artigo, Pronome, Numeral e Verbo.
@@ -548,7 +532,7 @@ Para pronomes e numerais:
 
 ---
 
-## Classe Invariável
+### Classe Invariável
 
 - **Definição:** Categoria morfológica de palavras com estrutura fixa, que não admitem flexão de gênero nem de número em nenhum ambiente sintático.
 - **Classes Integrantes:** Advérbio, Conjunção, Preposição e Interjeição.
@@ -556,7 +540,7 @@ Para pronomes e numerais:
 
 ---
 
-## Locução
+### Locução
 
 - **Definição:** Unidade sintagmática composta por duas ou mais palavras que desempenha em conjunto o valor sintático-semântico de uma única classe gramatical.
 - **Comportamento Geral:** É tratada como bloco cristalizado e invariável.
@@ -564,7 +548,7 @@ Para pronomes e numerais:
 
 ---
 
-## Conector / Conectivo
+### Conector / Conectivo
 
 - **Definição:** Elemento relacional gramatical sem conteúdo nocional pleno, destinado a estabelecer coesão e vínculo entre palavras (termos) ou orações.
 - **Classes Abrangidas:** Preposições e Conjunções.
@@ -572,12 +556,10 @@ Para pronomes e numerais:
 
 ---
 
-## Método das Setas
+### Método das Setas
 
 - **Definição:** Procedimento operacional de análise morfossintática contextual que traça graficamente o direcionamento da dependência entre modificador e núcleo modificado para identificar a classe gramatical correspondente.
 - **Relações:** Aponta para .
-
----
 
 ---
 

@@ -41,7 +41,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - **Sintaxe de Relações:** Noções de termo regente e termo modificado (adjuntos adnominais e adverbiais).
 - **Coesão Textual:** Conceitos introdutórios de anáfora (retomada) e catáfora (antecipação).
 
-### Mapa de Relações Conceituais do Grupo
+#### Mapa de Relações Conceituais do Grupo
 
 ```text
 NÚCLEO TEMÁTICO esta unidade: POSSESSIVOS, INDEFINIDOS E INTERROGATIVOS
@@ -83,27 +83,25 @@ NÚCLEO TEMÁTICO esta unidade: POSSESSIVOS, INDEFINIDOS E INTERROGATIVOS
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Pronomes Possessivos: Conceito, Pessoas do Discurso e Valores Semânticos
+### Pronomes Possessivos: Conceito, Pessoas do Discurso e Valores Semânticos
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Os pronomes possessivos indicam a relação de posse, pertencimento ou vínculo existencial de um objeto/elemento relativamente às três pessoas gramaticais do discurso. Além da ideia estrita de posse material ou aquisição, o pronome possessivo desempenha funções semânticas expressivas, como a manifestação de afeto, estima ou sentimento.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Quadro Canônico das Pessoas do Discurso:**
- - **1ª Pessoa (quem fala):** Singular (*Eu*) $\rightarrow$ `meu(s)`, `minha(s)`; Plural (*Nós*) $\rightarrow$ `nosso(s)`, `nossa(s)`.
- - **2ª Pessoa (com quem se fala):** Singular (*Tu*) $\rightarrow$ `teu(s)`, `tua(s)`; Plural (*Vós*) $\rightarrow$ `vosso(s)`, `vossa(s)`.
- - **3ª Pessoa (de quem se fala):** Singular/Plural (*Ele/Ela/Eles/Elas*) $\rightarrow$ `seu(s)`, `sua(s)`.
+  - **1ª Pessoa (quem fala):** Singular (*Eu*) $\rightarrow$ `meu(s)`, `minha(s)`; Plural (*Nós*) $\rightarrow$ `nosso(s)`, `nossa(s)`.
+  - **2ª Pessoa (com quem se fala):** Singular (*Tu*) $\rightarrow$ `teu(s)`, `tua(s)`; Plural (*Vós*) $\rightarrow$ `vosso(s)`, `vossa(s)`.
+  - **3ª Pessoa (de quem se fala):** Singular/Plural (*Ele/Ela/Eles/Elas*) $\rightarrow$ `seu(s)`, `sua(s)`.
 2. **Polissemia Semântica:**
- - **Posse Estrita / Pertencimento Cívico:** O pronome delimita propriedade ou inclusão (ex.: *"Seu país tem 13,5 milhões de miseráveis?"* $\rightarrow$ o país do interlocutor).
- - **Afeto / Estima / Vínculo Sentimental:** Empregado frequentemente na literatura e no jornalismo sem implicar compra ou posse física (ex.: *"meu Pará"* $\rightarrow$ o Estado estimado pelo autor).
+  - **Posse Estrita / Pertencimento Cívico:** O pronome delimita propriedade ou inclusão (ex.: *"Seu país tem 13,5 milhões de miseráveis?"* $\rightarrow$ o país do interlocutor).
+  - **Afeto / Estima / Vínculo Sentimental:** Empregado frequentemente na literatura e no jornalismo sem implicar compra ou posse física (ex.: *"meu Pará"* $\rightarrow$ o Estado estimado pelo autor).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - Para identificar valor afetivo em provas (VUNESP), confronte o substantivo possuído com a possibilidade material de posse: elementos geográficos, públicos ou abstratos (*meu Brasil*, *minha cidade*, *meu estimado amigo*) assumem invariavelmente valor de estima e apreço.
 
@@ -111,18 +109,18 @@ Os pronomes possessivos indicam a relação de posse, pertencimento ou vínculo 
 
 ---
 
-## A Mecânica de Concordância e Referenciação dos Pronomes Possessivos
+### A Mecânica de Concordância e Referenciação dos Pronomes Possessivos
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Existe uma assimetria funcional absoluta entre o **pronome pessoal** e o **pronome possessivo**: enquanto o pronome pessoal concorda em gênero e número diretamente com o termo que ele substitui (seu referente), o **pronome possessivo concorda obrigatoriamente em gênero e número com o substantivo determinado que vem DEPOIS dele (a coisa possuída)**, mas **aponta semanticamente para o seu referente (o possuidor)**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Pronome Pessoal:** Ex.: *"João chegou. **Ele** estava feliz."* $\rightarrow$ `Ele` (Masc. Sing.) concorda e retoma `João` (Masc. Sing.).
 - **Pronome Possessivo:** Ex.: *"João chegou com **sua** mãe."*
- - **Concordância Gramatical:** Faz-se com `mãe` (Feminino Singular) $\rightarrow$ o pronome flexiona-se em `sua`.
- - **Referência Semântica:** Aponta para `João` (Masculino Singular) $\rightarrow$ trata-se da mãe do João.
+  - **Concordância Gramatical:** Faz-se com `mãe` (Feminino Singular) $\rightarrow$ o pronome flexiona-se em `sua`.
+  - **Referência Semântica:** Aponta para `João` (Masculino Singular) $\rightarrow$ trata-se da mãe do João.
 - **Por que a regra é chamada de "cruel"?** Porque as bancas exploram a dissonância morfológica: um pronome possessivo no plural feminino (`suas`) pode ter perfeitamente como referente um substantivo singular feminino (`democracia`), pois concordou com o substantivo posposto no plural (`relações`).
 
 ```text
@@ -135,51 +133,51 @@ Existe uma assimetria funcional absoluta entre o **pronome pessoal** e o **prono
 
 ---
 
-## Posições do Referente do Possessivo e Mapeamento de Cadeias Coesivas
+### Posições do Referente do Possessivo e Mapeamento de Cadeias Coesivas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O referente (possuidor) ao qual o pronome possessivo remete pode ocupar três posições distintas na arquitetura oracional: antecedente (**anáfora**), consequente (**catáfora**) ou implícito na desinência verbal (**elipse**).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Referente Anafórico (Anteposto):** O possuidor já foi explicitado no texto anterior.
- - Ex.: *"Guto, adorei **seu** carro novo!"* (`seu` aponta para `Guto`).
+  - Ex.: *"Guto, adorei **seu** carro novo!"* (`seu` aponta para `Guto`).
 2. **Referente Catafórico (Posposto):** O pronome antecipa um referente que só aparece posteriormente no período.
- - Ex.: *"Não compactuo com a **sua** reprovação, **amigo**."* (`sua` concorda com `reprovação` e aponta para o vocativo posposto `amigo`).
+  - Ex.: *"Não compactuo com a **sua** reprovação, **amigo**."* (`sua` concorda com `reprovação` e aponta para o vocativo posposto `amigo`).
 3. **Referente Elíptico / Sujeito Oculto:** O possuidor não está materializado como substantivo, mas é recuperado pela flexão da forma verbal.
- - Ex.: *"[Eu] Trouxe **minha** bagagem e **meu** passaporte."* (`minha` e `meu` remetem ao sujeito elíptico `[Eu]`).
+  - Ex.: *"[Eu] Trouxe **minha** bagagem e **meu** passaporte."* (`minha` e `meu` remetem ao sujeito elíptico `[Eu]`).
 4. **Cadeias Coesivas em Textos Densos (Diplomata / FCC):** Em períodos com múltiplos sujeitos concorrentes, cada possessivo deve ser submetido ao rastreamento coesivo linha a linha para discernir a alternância de posse (ex.: *"seu preconceito"* referindo-se à *classe lucrativa* vs. *"seu sarcasmo"* referindo-se a *Machado de Assis*).
 
 ---
 
-## Pronomes Indefinidos: Conceito, Classificação e Locuções Pronominais
+### Pronomes Indefinidos: Conceito, Classificação e Locuções Pronominais
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Os pronomes indefinidos são vocábulos que se referem à 3ª pessoa do discurso conferindo-lhe sentido vago, indeterminado ou expressando uma quantidade imprecisa. Podem apresentar-se como vocábulos simples ou sob a forma de **locuções pronominais indefinidas**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Quadro de Pronomes Indefinidos:**
- - **Variáveis (em gênero e/ou número):** *algum*, *nenhum*, *todo*, *outro*, *muito*, *pouco*, *certo*, *vários*, *tanto*, *quanto*, *qualquer* (plural: *quaisquer*), *mais*, *menos* (invariáveis em forma, mas funcionais como pronomes adjetivos).
- - **Invariáveis:** *alguém*, *ninguém*, *tudo*, *outrem*, *nada*, *cada*, *algo*, *que*, *quem*.
+  - **Variáveis (em gênero e/ou número):** *algum*, *nenhum*, *todo*, *outro*, *muito*, *pouco*, *certo*, *vários*, *tanto*, *quanto*, *qualquer* (plural: *quaisquer*), *mais*, *menos* (invariáveis em forma, mas funcionais como pronomes adjetivos).
+  - **Invariáveis:** *alguém*, *ninguém*, *tudo*, *outrem*, *nada*, *cada*, *algo*, *que*, *quem*.
 - **Locução Pronominal Indefinida:** Grupo de dois ou mais vocábulos indivisíveis com valor equivalente a um pronome indefinido: *cada um*, *cada qual*, *qualquer um*, *quem quer que seja*.
 
 - **Expande:**
 
 ---
 
-## Dicotomia Estrutural Universal: Pronome Adjetivo vs. Pronome Substantivo
+### Dicotomia Estrutural Universal: Pronome Adjetivo vs. Pronome Substantivo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Todo e qualquer pronome na Língua Portuguesa, independentemente de sua classe semântica (indefinido, possessivo, demonstrativo, relativo), desempenha uma de duas funções sintático-estruturais primárias:
 
 1. **Pronome Adjetivo:** **Acompanha** um substantivo explícito, delimitando ou qualificando sua extensão.
 2. **Pronome Substantivo:** **Substitui** o substantivo, assumindo de modo autônomo o papel de núcleo de uma função sintática (sujeito, objeto, etc.).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Na frase clássica de Chico Buarque:
 
@@ -195,13 +193,13 @@ Outros exemplos estruturais:
 
 ---
 
-## Matriz Diferencial Multiclasse: Adjetivo vs. Advérbio vs. Pronome Indefinido
+### Matriz Diferencial Multiclasse: Adjetivo vs. Advérbio vs. Pronome Indefinido
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Vocábulos dotados de carga quantificadora ou intensificadora (*bastante*, *mais*, *menos*, *muito*, *pouco*, *todo*) transitam funcionalmente entre três classes gramaticais distintas. A determinação da classe decorre da natureza gramatical do termo ao qual a palavra se conecta sintaticamente.
 
-### Matriz Comparativa Canônica (`#ANOTAAÍ`)
+#### Matriz Comparativa Canônica (`#ANOTAAÍ`)
 
 | Classe Gramatical | Termo ao qual se refere | Flexão / Variabilidade | Função Semântica | Exemplo Paradigma com*bastante* |
 |:--------------------------- |:------------------------------------- |:--------------------------------: |:-------------------------------------------------------- |:------------------------------------------------------ |
@@ -209,24 +207,24 @@ Vocábulos dotados de carga quantificadora ou intensificadora (*bastante*, *mais
 | **ADVÉRBIO** | **Verbo, Adjetivo ou Advérbio** | **INVARIÁVEL** | Intensifica / Modifica (equivale a*muito/demais*) | *"Falaram **bastante** de você."* (= muito) |
 | **PRONOME INDEFINIDO** | **Substantivo** | **Variável ou Invariável** | Quantidade vaga / Indeterminação (equivale a*muitos*) | *"Tinha **bastantes** amigos."* (= muitos) |
 
-### Regra Decisória do Advérbio
+#### Regra Decisória do Advérbio
 
 **Advérbio NUNCA se refere a substantivo.** Se o vocábulo sob análise apontar para um substantivo, ele está automaticamente excluído da classe dos advérbios, devendo ser classificado como adjetivo (se qualificar) ou pronome indefinido adjetivo (se quantificar de modo vago).
 
 ---
 
-## Pronomes Interrogativos e a Relação de Inclusão com os Pronomes Indefinidos
+### Pronomes Interrogativos e a Relação de Inclusão com os Pronomes Indefinidos
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Os pronomes interrogativos são vocábulos empregados na formulação de perguntas diretas ou indiretas, compreendendo as formas fundamentais **que**, **quem**, **qual** e **quanto**. Sob a ótica categórica estrita da Língua Portuguesa, **todo pronome interrogativo é um pronome indefinido**, pois veicula intrinsecamente a ideia vaga, ignorada ou indeterminada de um referente da 3ª pessoa.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Por que todo interrogativo é indefinido?** O ato pragmático de interrogar decorre da ignorância ou indeterminação do falante acerca da identidade ou quantidade do ser. Logo, a vagueza semântica é intrínseca à pergunta.
 - **Relação de Inclusão Lógica:**
- - *Todo pronome interrogativo é pronome indefinido.*
- - *Nem todo pronome indefinido é interrogativo* (só assumirá natureza interrogativa quando inserido em contexto oracional de pergunta).
+  - *Todo pronome interrogativo é pronome indefinido.*
+  - *Nem todo pronome indefinido é interrogativo* (só assumirá natureza interrogativa quando inserido em contexto oracional de pergunta).
 
 ```text
  ┌────────────────────────────────────────────────────────┐
@@ -243,30 +241,30 @@ Os pronomes interrogativos são vocábulos empregados na formulação de pergunt
 
 ---
 
-## Interrogação Direta vs. Interrogação Indireta e Marcadores de Conjectura
+### Interrogação Direta vs. Interrogação Indireta e Marcadores de Conjectura
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 As estruturas interrogativas organizam-se em duas modalidades sintáticas:
 
 1. **Interrogação Direta:** Pergunta expressa com pontuação interrogativa explícita (`?`).
- - Ex.: *"Quem precisa de um novo Fidel?"*
+  - Ex.: *"Quem precisa de um novo Fidel?"*
 2. **Interrogação Indireta:** Pergunta incorporada sob forma declarativa, encerrada com ponto final (`.`), construída mediante verbos de conjectura, dúvida ou desconhecimento (*desconheço*, *não sei*, *quero saber*, *pergunto-me*).
- - Ex.: *"Desconheço quem organizou a festa."* / *"Quanta inútil retórica se tem desperdiçado..."*
+  - Ex.: *"Desconheço quem organizou a festa."* / *"Quanta inútil retórica se tem desperdiçado..."*
 
-### A Pegadinha da Pontuação
+#### A Pegadinha da Pontuação
 
 A ausência do sinal gráfico de interrogação (`?`) **não descaracteriza a natureza de pronome interrogativo** dos vocábulos *que*, *quem*, *qual* e *quanto* nas orações indiretas.
 
 ---
 
-## Comportamento Morfossintático e Semântico Posicional (Certo, Bastante, Vários e Algum)
+### Comportamento Morfossintático e Semântico Posicional (Certo, Bastante, Vários e Algum)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A colocação de determinados vocábulos em relação ao substantivo que determinam provoca alteração na classe morfológica ou inversão completa do valor semântico.
 
-### Esquema Posicional das Duplas Clássicas (AOCP / VUNESP)
+#### Esquema Posicional das Duplas Clássicas (AOCP / VUNESP)
 
 ```text
 [ANTES DO SUBSTANTIVO] [DEPOIS DO SUBSTANTIVO]
@@ -277,16 +275,16 @@ Pronome Indefinido (Ideia Vaga) ≠ Adjetivo (Qualificador / Especificador)
 • vários deputados (muitos deputados) • deputados vários (deputados diversos/variados)
 ```
 
-### O Comportamento Semântico Polar do Pronome "ALGUM"
+#### O Comportamento Semântico Polar do Pronome "ALGUM"
 
 - **"Algum" Anteposto:** *"alguma parte"* $\rightarrow$ Expressa valor indefinido/positivo (**parte indeterminada / qualquer**).
 - **"Algum" Posposto:** *"parte alguma"* $\rightarrow$ Adquire valor de negação absoluta, equivalendo estritamente a **nenhuma parte** (*parte alguma = parte nenhuma*).
 
 ---
 
-## Morfossintaxe e Semântica do Vocábulo "Mais" (FGV)
+### Morfossintaxe e Semântica do Vocábulo "Mais" (FGV)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A banca Fundação Getulio Vargas (FGV) explora de forma recorrente a correspondência biunívoca entre a classe morfossintática e o valor semântico do vocábulo **mais**:
 
@@ -301,7 +299,7 @@ MORFOLOGIA: ADVÉRBIO ◄─────────────► PRONOME INDE
  (Seta para Verbo/Adj/Adv) (Seta para Substantivo)
 ```
 
-### O Bloqueio Estrutural do Artigo Definido
+#### O Bloqueio Estrutural do Artigo Definido
 
 Na oração *"usam muito **mais** a emoção do que a razão"*, a presença do artigo definido "a" antes de "emoção" bloqueia a ligação direta de *mais* com o substantivo. Sintaticamente, a frase expressa *"usam mais"*, fazendo com que *mais* aponte para o verbo *usam*, classificando-se como **Advérbio de Intensidade**.
 
@@ -309,42 +307,40 @@ Na oração *"usam muito **mais** a emoção do que a razão"*, a presença do a
 
 ---
 
-## Morfossintaxe, Semântica e Flexão Excepcional do Vocábulo "Todo"
+### Morfossintaxe, Semântica e Flexão Excepcional do Vocábulo "Todo"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O vocábulo "todo" opera como **pronome indefinido** (quando ligado a substantivo) ou como **advérbio** (quando ligado a verbo/adjetivo/advérbio). Como advérbio, apresenta uma **exceção única na Língua Portuguesa ao admitir flexão facultativa**. Na interpretação da banca CESPE, sua semântica pode transcender a regra purista pela análise do referente no mundo real.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **"TODO" como Pronome Indefinido (Liga-se a Substantivo):**
- - **Sem Artigo (*todo / toda*):** Sentido genérico, equivalendo a **"qualquer"** (ex.: *"Toda festa é boa"* = qualquer festa).
- - **Com Artigo (*todo o / toda a*):** Sentido de totalidade delimitada ou integridade, equivalendo a **"inteiro / inteira"** (ex.: *"Toda a festa é de amigos"* = a festa inteira).
+  - **Sem Artigo (*todo / toda*):** Sentido genérico, equivalendo a **"qualquer"** (ex.: *"Toda festa é boa"* = qualquer festa).
+  - **Com Artigo (*todo o / toda a*):** Sentido de totalidade delimitada ou integridade, equivalendo a **"inteiro / inteira"** (ex.: *"Toda a festa é de amigos"* = a festa inteira).
 2. **"TODO" como Advérbio Variável (Exceção Gramatical Única):**
- - Quando modifica um adjetivo com sentido de "completamente/totalmente", a norma culta aceita a forma invariável padrão (*"Ela é todo poderosa"*) e a **forma flexionada por atração fônica** (*"Ela é toda poderosa"*). Apesar de flexionar, continua classificado como **advérbio de intensidade**.
+  - Quando modifica um adjetivo com sentido de "completamente/totalmente", a norma culta aceita a forma invariável padrão (*"Ela é todo poderosa"*) e a **forma flexionada por atração fônica** (*"Ela é toda poderosa"*). Apesar de flexionar, continua classificado como **advérbio de intensidade**.
 3. **Quebra de Paradigma Contextual pelo CESPE (Questão TRE-BA):**
- - Em *"Quase **todo mundo** conhece os riscos..."*, a expressão "todo mundo" não significa "qualquer mundo" (pois não existem mundos plurais contextualmente), mas sim a totalidade de pessoas / o mundo inteiro. Logo, o CESPE julgou correto que "todo mundo" (sem artigo) e "todo o país" (com artigo) **expressam ambos a ideia de totalidade**.
+  - Em *"Quase **todo mundo** conhece os riscos..."*, a expressão "todo mundo" não significa "qualquer mundo" (pois não existem mundos plurais contextualmente), mas sim a totalidade de pessoas / o mundo inteiro. Logo, o CESPE julgou correto que "todo mundo" (sem artigo) e "todo o país" (com artigo) **expressam ambos a ideia de totalidade**.
 
 ---
 
-## Alteração Morfossemântica por Supressão de Artigo em Locuções Preposicionadas
+### Alteração Morfossemântica por Supressão de Artigo em Locuções Preposicionadas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A presença ou a supressão de um artigo definido dentro de uma locução preposicionada altera o termo regente (redireciona a seta sintática), gerando simultaneamente **mudança semântica** (alteração do sentido original) e **mudança morfológica** (transmutação da classe da locução).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Com Artigo (*da manhã* = preposição $de$ + artigo $a$):**
- - *"Sempre leio os jornais <u>da manhã</u>."*
+  - *"Sempre leio os jornais <u>da manhã</u>."*
 
- - **Classificação:** **Locução Adjetiva**.
+  - **Classificação:** **Locução Adjetiva**.
 - **Sem Artigo (*de manhã* = preposição $de$ isolada):**
- - *"Sempre leio os jornais <u>de manhã</u>."*
+  - *"Sempre leio os jornais <u>de manhã</u>."*
 
- - **Classificação:** **Locução Adverbial de Tempo**.
-
----
+  - **Classificação:** **Locução Adverbial de Tempo**.
 
 ---
 
@@ -358,32 +354,30 @@ Esta seção condensa as regras mestras consolidadas para consulta rápida e rec
 4. **Regra de Inclusão dos Interrogativos:** Todo pronome interrogativo (*que, quem, qual, quanto*) é morfologicamente um pronome indefinido em contexto de pergunta .
 5. **Regra das Interrogações Indiretas:** Orações interrogativas introduzidas por verbos de conjectura/dúvida encerram-se por ponto final (`.`), mantendo a classificação de pronomes interrogativos .
 6. **Regra Posicional das Duplas (*Certo, Bastante, Vários*):**
- - Anteposto ao substantivo = **Pronome Indefinido** .
- - Posposto ao substantivo = **Adjetivo** .
+  - Anteposto ao substantivo = **Pronome Indefinido** .
+  - Posposto ao substantivo = **Adjetivo** .
 7. **Regra Posicional de "Algum":**
- - *Algum* + Substantivo = Indeterminação positiva / qualquer .
- - Substantivo + *Algum* = Negação absoluta / nenhum .
+  - *Algum* + Substantivo = Indeterminação positiva / qualquer .
+  - Substantivo + *Algum* = Negação absoluta / nenhum .
 8. **Equivalência Morfossemântica do "Mais" (FGV):**
- - Seta para Verbo / Adjetivo = Morfologia: **Advérbio** | Semântica: **Intensidade** .
- - Seta para Substantivo = Morfologia: **Pronome Indefinido** | Semântica: **Quantidade** .
+  - Seta para Verbo / Adjetivo = Morfologia: **Advérbio** | Semântica: **Intensidade** .
+  - Seta para Substantivo = Morfologia: **Pronome Indefinido** | Semântica: **Quantidade** .
 9. **Regra de Flexão do Advérbio "Todo":** É o único advérbio que admite concordância facultativa com o adjetivo modificado (*ela é todo / toda poderosa*) .
 10. **Regra de "Todo" com vs. sem Artigo:**
- - *Todo* sem artigo = Sentido genérico / "qualquer" .
- - *Todo o* com artigo = Totalidade / "inteiro" .
-
----
+  - *Todo* sem artigo = Sentido genérico / "qualquer" .
+  - *Todo o* com artigo = Totalidade / "inteiro" .
 
 ---
 
 ## Roteiros de resolução
 
-## Método das Setas para Rastreamento de Cadeias Coesivas do Possessivo
+### Método das Setas para Rastreamento de Cadeias Coesivas do Possessivo
 
-### Objetivo
+#### Objetivo
 
 Identificar com precisão matemática o possuidor real de um pronome possessivo em textos complexos de concursos (FCC / CESPE), blindando o candidato contra armadilhas de concordância morfológica.
 
-### Passos Operacionais
+#### Passos Operacionais
 
 1. **Localizar o Pronome Possessivo:** Destaque *seu, sua, seus, suas, nosso*, etc.
 2. **Identificar o Substantivo Posposto:** Trace a seta de concordância gramatical para o substantivo que vem imediatamente depois do pronome (a coisa possuída).
@@ -394,9 +388,9 @@ Identificar com precisão matemática o possuidor real de um pronome possessivo 
 
 ---
 
-## Método das Setas de Referência para Discriminação Multiclasse
+### Método das Setas de Referência para Discriminação Multiclasse
 
-### Objetivo
+#### Objetivo
 
 Classificar termos mutáveis (*mais, menos, bastante, muito, pouco, todo*) entre Adjetivo, Advérbio e Pronome Indefinido.
 
@@ -414,73 +408,71 @@ Classificar termos mutáveis (*mais, menos, bastante, muito, pouco, todo*) entre
  (Qualifica / Suficiente) (Indetermina / Quantidade)
 ```
 
-### Passos Operacionais
+#### Passos Operacionais
 
 1. **Traçar a Seta de Modificação:** Pergunte à frase a qual termo a palavra sob análise se refere diretamente.
 2. **Classificar o Termo-Alvo:**
- - Se o termo-alvo for **Verbo, Adjetivo ou Advérbio** $\rightarrow$ A palavra é **ADVÉRBIO**.
- - Se o termo-alvo for **Substantivo** $\rightarrow$ A palavra **NÃO é advérbio**; prossiga para o desempate.
+  - Se o termo-alvo for **Verbo, Adjetivo ou Advérbio** $\rightarrow$ A palavra é **ADVÉRBIO**.
+  - Se o termo-alvo for **Substantivo** $\rightarrow$ A palavra **NÃO é advérbio**; prossiga para o desempate.
 3. **Desempate entre Adjetivo e Pronome Indefinido:**
- - Tente substituir por **"suficiente(s)"**: Se couber e qualificar o substantivo (geralmente posposto), é **Adjetivo**.
- - Tente substituir por **"muito(s) / muita(s)"**: Se couber e quantificar vagamente o substantivo (geralmente anteposto), é **Pronome Indefinido Adjetivo**.
+  - Tente substituir por **"suficiente(s)"**: Se couber e qualificar o substantivo (geralmente posposto), é **Adjetivo**.
+  - Tente substituir por **"muito(s) / muita(s)"**: Se couber e quantificar vagamente o substantivo (geralmente anteposto), é **Pronome Indefinido Adjetivo**.
 
 ---
 
-## Teste de Validação para Interrogação Indireta
+### Teste de Validação para Interrogação Indireta
 
-### Objetivo
+#### Objetivo
 
 Confirmar se um pronome em período finalizado por ponto final (`.`) classifica-se como pronome interrogativo.
 
-### Passos Operacionais
+#### Passos Operacionais
 
 1. **Identificar a Matriz de Dúvida:** Localize na oração principal verbos/expressões de cognição, desconhecimento ou elocução (*desconheço*, *não sei*, *quero saber*, *pergunto*, *é indagado*).
 2. **Isolar a Oração Subordinada:** Destaque o segmento introduzido por *que, quem, qual* ou *quanto*.
 3. **Inversão para Pergunta Direta:** Reorganize o segmento destacado sob a forma de questionamento direto finalizado com ponto de interrogação (`?`).
- - *Original:* "Desconheço quem organizou a festa."
- - *Inversão:* "Quem organizou a festa? Desconheço."
+  - *Original:* "Desconheço quem organizou a festa."
+  - *Inversão:* "Quem organizou a festa? Desconheço."
 4. **Validação:** Se a conversão mantiver a coerência e a intenção interrogativa, o vocábulo é **Pronome Interrogativo**.
 
 ---
 
-## Teste Semântico-Posicional para "Certo", "Bastante", "Vários" e "Algum"
+### Teste Semântico-Posicional para "Certo", "Bastante", "Vários" e "Algum"
 
-### Objetivo
+#### Objetivo
 
 Julgar rapidamente o sentido e a classe morfossintática em questões de múltipla escolha.
 
-### Passos Operacionais
+#### Passos Operacionais
 
 1. Localize a palavra e verifique se está antes ou depois do substantivo.
 2. **Para *Certo*:**
- - *Certo* + Substantivo = Pronome Indefinido (= "um qualquer").
- - Substantivo + *Certo* = Adjetivo (= "correto / exato").
+  - *Certo* + Substantivo = Pronome Indefinido (= "um qualquer").
+  - Substantivo + *Certo* = Adjetivo (= "correto / exato").
 3. **Para *Bastante*:**
- - *Bastante* + Substantivo = Pronome Indefinido (= "muito").
- - Substantivo + *Bastante* = Adjetivo (= "suficiente").
+  - *Bastante* + Substantivo = Pronome Indefinido (= "muito").
+  - Substantivo + *Bastante* = Adjetivo (= "suficiente").
 4. **Para *Vários*:**
- - *Vários* + Substantivo = Pronome Indefinido (= "muitos").
- - Substantivo + *Vários* = Adjetivo (= "diversificados / variados").
+  - *Vários* + Substantivo = Pronome Indefinido (= "muitos").
+  - Substantivo + *Vários* = Adjetivo (= "diversificados / variados").
 5. **Para *Algum*:**
- - *Algum* + Substantivo = Sentido Afirmativo/Indeterminado (= "uma parte qualquer").
- - Substantivo + *Algum* = Sentido Negativo Absoluto (= "nenhuma parte").
+  - *Algum* + Substantivo = Sentido Afirmativo/Indeterminado (= "uma parte qualquer").
+  - Substantivo + *Algum* = Sentido Negativo Absoluto (= "nenhuma parte").
 
 ---
 
-## Teste de Substituição Contextual para o Vocábulo "Todo/Toda"
+### Teste de Substituição Contextual para o Vocábulo "Todo/Toda"
 
-### Objetivo
+#### Objetivo
 
 Discernir entre sentido de generalização ("qualquer") e sentido de integridade/totalidade ("inteiro"), prevenindo erros na banca CESPE.
 
-### Passos Operacionais
+#### Passos Operacionais
 
 1. Verifique se o termo está acompanhado de artigo definido (*todo* vs. *todo o*).
 2. Tente substituir por **"qualquer"**: Se o contexto admitir generalização entre múltiplos indivíduos, confirma-se o sentido genérico (*Toda operação* = *Qualquer operação*).
 3. Tente substituir por **"inteiro / inteira"**: Se houver artigo, confirma-se totalidade (*Toda a cidade* = *A cidade inteira*).
 4. **Checagem de Pluralidade Contextual (Filtro CESPE):** Se não houver artigo, mas o substantivo for unitário/indivisível na realidade textual (ex.: "todo mundo"), a expressão veicula valor semântico de **totalidade**.
-
----
 
 ---
 
@@ -494,7 +486,7 @@ Discernir entre sentido de generalização ("qualquer") e sentido de integridade
 | **Identificação do Referente** | Possui o mesmo gênero/número do pronome. | Pode possuir gênero e número**completamente distintos** do pronome. |
 | **Exemplo Comparativo** | *"A lei é clara. **Ela** protege o cidadão."* (`Ela` concorda com `lei`). | *"A lei é clara em **seus** artigos."* (`seus` concorda com `artigos`, mas retoma `lei`). |
 
-### 2. Matriz Diferencial de Vocábulos Mutáveis
+#### 2. Matriz Diferencial de Vocábulos Mutáveis
 
 | Vocábulo | Quando é Adjetivo (Liga-se a Subst.) | Quando é Advérbio (Liga-se a Verbo/Adj/Adv) | Quando é Pronome Indefinido (Liga-se a Subst.) |
 |:----------------- |:--------------------------------------- |:--------------------------------------------------- |:--------------------------------------------------------- |
@@ -504,7 +496,7 @@ Discernir entre sentido de generalização ("qualquer") e sentido de integridade
 | **Todo** | — (Classificado como pronome) | *"toda poderosa"* (= completamente / variável) | *"todo cidadão"* / *"todo o país"* (Quantificação) |
 | **Certo** | *"momento certo"* (= momento adequado) | — (Não atua como advérbio) | *"certas pessoas"* (= algumas pessoas) |
 
-### 3. O Impacto da Supressão do Artigo: "Da Manhã" vs. "De Manhã"
+#### 3. O Impacto da Supressão do Artigo: "Da Manhã" vs. "De Manhã"
 
 | Expressão Analisada | Estrutura Preposicional | Termo Regente (Para onde aponta a seta) | Classe da Locução | Efeito Semântico |
 |:---------------------------- |:------------------------------- |:-------------------------------------- |:---------------------------- |:------------------------------------ |
@@ -513,13 +505,11 @@ Discernir entre sentido de generalização ("qualquer") e sentido de integridade
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Questão 01: VUNESP - Pref. Morro Agudo / Posse em Tirinha
+### Questão 01: VUNESP - Pref. Morro Agudo / Posse em Tirinha
 
-### Enunciado
+#### Enunciado
 
 *(VUNESP - Prefeitura de Morro Agudo - SP)*Leia os quadrinhos que compõem a tira de André Dahmer para responder à questão:
 
@@ -533,16 +523,16 @@ Discernir entre sentido de generalização ("qualquer") e sentido de integridade
  D) Quando
  E) é
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 - **Análise:** A palavra `Seu` no primeiro quadrinho é um pronome possessivo de 3ª pessoa determinando o substantivo `país` (*"Seu país"*), indicando a relação de posse/pertencimento em relação ao interlocutor. A preposição `de` na opção A (*"de cortar o coração"*) estabelece relação sintática verbal, desprovida de valor possessivo.
 - **Gabarito:** **C**
 
 ---
 
-## Questão 02: VUNESP - TJ-PA / Valor Afetivo do Possessivo
+### Questão 02: VUNESP - TJ-PA / Valor Afetivo do Possessivo
 
-### Enunciado
+#### Enunciado
 
 *(VUNESP - TJ-PA - Analista Judiciário)*
 Trecho: *"Meu amigo lusitano, Diniz, está traduzindo... por conta de palavras e gírias comuns no meu Pará..."*
@@ -553,16 +543,16 @@ C) desdenhado pelo autor.
 D) adquirido pelo autor.
 E) subjugado pelo autor.
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 - **Análise:** Um Estado da federação (*Pará*) não constitui bem de domínio material passível de compra ou aquisição privada (eliminando a alternativa D). O emprego do pronome de 1ª pessoa `meu` carrega carga semântica afetiva, indicando apreço, estima e vínculo afetivo do autor com sua terra natal.
 - **Gabarito:** **A**
 
 ---
 
-## Questão 03: FCC - TRF 3ª Região / Rastreamento de Três Possessivos
+### Questão 03: FCC - TRF 3ª Região / Rastreamento de Três Possessivos
 
-### Enunciado
+#### Enunciado
 
 *(FCC - TRF 3ª Região - Analista Judiciário)*Trechos extraídos do texto:
 
@@ -576,7 +566,7 @@ E) subjugado pelo autor.
  D) potências dominantes – manifestações – trabalho de abstração
  E) potências dominantes – obras modernas – museu
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 1. `suas financiadoras` $\rightarrow$ No contexto (*"presta homenagem às potências dominantes, suas financiadoras"*), o pronome remete a **potências dominantes**.
 2. `Suas diferenças funcionais` $\rightarrow$ No contexto (*"O museu reúne todas essas manifestações de sentido oposto... Suas diferenças funcionais..."*), o pronome refere-se a **manifestações**.
@@ -586,9 +576,9 @@ E) subjugado pelo autor.
 
 ---
 
-## Questão 04: CESPE - MPE-CE / Concordância Plural com Referente Singular
+### Questão 04: CESPE - MPE-CE / Concordância Plural com Referente Singular
 
-### Enunciado
+#### Enunciado
 
 *(CESPE - MPE-CE - Analista Ministerial)*
 Texto: *"Desde os alvores da democracia ateniense, são sobejamente conhecidas as suas relações com a argumentação e a retórica..."*
@@ -596,16 +586,16 @@ Item: *A expressão “suas relações” (l.22) refere-se às relações da “
  Certo
  Errado
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 - **Análise:** O pronome `suas` está flexionado no feminino plural para concordar estritamente com o substantivo posposto `relações` (a coisa possuída). No entanto, o referente semântico (o possuidor) é o substantivo singular `democracia ateniense` (*as relações da democracia ateniense*). A divergência de número entre pronome e referente é perfeitamente regular nos pronomes possessivos.
 - **Gabarito:** **CERTO**
 
 ---
 
-## Questão 05: CESPE - Diplomata / Dois Possessivos com Referentes Distintos
+### Questão 05: CESPE - Diplomata / Dois Possessivos com Referentes Distintos
 
-### Enunciado
+#### Enunciado
 
 *(CESPE - Instituto Rio Branco - Diplomata)*
 Texto: *"Foi neste momento que a surpreendeu Machado de Assis, mal inclinado a ela por força de seu preconceito, nutrido de tradição. No seu sarcasmo, ferindo-a de zombarias e risos, ele vê um mundo que cresce à sua frente..."*
@@ -613,19 +603,19 @@ Item: *Nas expressões “seu preconceito” (l.45) e “seu sarcasmo” (l. 45 
  Certo
  Errado
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 - **Rastreamento Coesivo:**
- - `seu preconceito`: Machado de Assis era mal inclinado a ela (*a classe lucrativa*) por força do preconceito **dela** (*classe lucrativa*). Logo, o referente é `classe lucrativa`.
- - `seu sarcasmo`: O sarcasmo que fere a classe pertence a ele (*Machado de Assis*). Logo, o referente é `Machado de Assis`.
+  - `seu preconceito`: Machado de Assis era mal inclinado a ela (*a classe lucrativa*) por força do preconceito **dela** (*classe lucrativa*). Logo, o referente é `classe lucrativa`.
+  - `seu sarcasmo`: O sarcasmo que fere a classe pertence a ele (*Machado de Assis*). Logo, o referente é `Machado de Assis`.
 
 - **Gabarito:** **CERTO**
 
 ---
 
-## Questão 06: CESPE - Diplomata / Falsa Autorreferência em Cadeia Coesiva
+### Questão 06: CESPE - Diplomata / Falsa Autorreferência em Cadeia Coesiva
 
-### Enunciado
+#### Enunciado
 
 *(CESPE - Instituto Rio Branco - Diplomata)*
 Texto: *"Esquematizando, pode-se dizer que a colonização produziu... três classes de população: o latifundiário, o escravo e o 'homem livre'... Entre os primeiros dois a relação é clara, é a multidão dos terceiros que nos interessa. Nem proprietários nem proletários, seu acesso à vida e a seus bens depende... O agregado é a sua caricatura."*
@@ -633,20 +623,20 @@ Item: *Do período “O agregado é a sua caricatura” (l. 23 e 24), é correto
  Certo
  Errado
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 - **Rastreamento Coesivo:** Na divisão tripartite (*1. latifundiário, 2. escravo, 3. homem livre*), a cadeia coesiva desdobra-se em: `terceiros` $\rightarrow$ `homem livre` $\rightarrow$ `seu acesso` $\rightarrow$ `seus bens` $\rightarrow$ `sua caricatura`. O agregado constitui a caricatura **do homem livre**, e não de si mesmo.
 - **Gabarito:** **ERRADO**
 
 ---
 
-## Exercício de Fixação II: Bateria Multiclasse Completa (Itens a a m)
+### Exercício de Fixação II: Bateria Multiclasse Completa (Itens a a m)
 
-### Código de Classificação
+#### Código de Classificação
 
 `(1) Adjetivo ou locução adjetiva` | `(2) Advérbio ou locução adverbial` | `(3) Pronome indefinido`
 
-### Itens e Análise Sintático-Semântica Consolidada
+#### Itens e Análise Sintático-Semântica Consolidada
 
 - **a)** `( 2 ) Maria é muito calma.` $\rightarrow$ *Muito* modifica o adjetivo *calma* (Advérbio de intensidade).
 - **b)** `( 3 ) Precisou de muita calma para resolver o impasse.` $\rightarrow$ *Muita* modifica o substantivo *calma* (Pronome indefinido adjetivo).
@@ -664,9 +654,9 @@ Item: *Do período “O agregado é a sua caricatura” (l. 23 e 24), é correto
 
 ---
 
-## Questão 07: AOCP - Pref. Juiz de Fora / Posição do Vocábulo "Certo"
+### Questão 07: AOCP - Pref. Juiz de Fora / Posição do Vocábulo "Certo"
 
-### Enunciado
+#### Enunciado
 
 *(AOCP - Prefeitura de Juiz de Fora - MG - Assistente de Administração)*
 Em “[...] Com as infinitas informações veiculadas pela Internet, um **certo** senhor virtual armou-se de estetoscópio [...]”, o termo em destaque é classificado morfologicamente como:
@@ -676,16 +666,16 @@ C) pronome.
 D) conjunção.
 E) preposição.
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 - **Análise:** O vocábulo `certo` precede imediatamente o substantivo `senhor` (*"um certo senhor"*). Pela regra posicional, quando anteposto ao substantivo, *certo* funciona como **pronome indefinido** (equivalente a *um senhor qualquer*). Se viesse posposto (*"senhor certo"*), funcionaria como adjetivo.
 - **Gabarito:** **C**
 
 ---
 
-## Questão 08: VUNESP - Campinas / Catáfora e Sentido Genérico
+### Questão 08: VUNESP - Campinas / Catáfora e Sentido Genérico
 
-### Enunciado
+#### Enunciado
 
 *(VUNESP - Prefeitura de Campinas - SP - Agente Administrativo)*
 Assinale a alternativa em que o primeiro pronome destacado tem um referente **posposto** a ele, e o segundo expressa **sentido genérico**.
@@ -695,7 +685,7 @@ C)... e **ela** também procura seu lugar. /... que fizesse bem a **quem** delas
 D) **Ele** é cada vez mais evidente. /... **aquilo** que ficava oculto nas microrrelações...
 E)... e é também **ele** que pode nos curar. /... relação com o que somos em relação a **outros**.
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 - **Análise da Alternativa A:**
  1. *Primeiro Pronome ("Ela"):* No trecho *"Ela encontra nas redes sociais o seu lugar, pois toda neurose é um distúrbio..."*, o pronome `Ela` antecipa o substantivo `neurose` (referente posposto / catáfora).
@@ -704,9 +694,9 @@ E)... e é também **ele** que pode nos curar. /... relação com o que somos em
 
 ---
 
-## Questão 09: VUNESP - PC-SP / Posição e Semântica de "Algum"
+### Questão 09: VUNESP - PC-SP / Posição e Semântica de "Algum"
 
-### Enunciado
+#### Enunciado
 
 *(VUNESP - PC-SP - Escrivão de Polícia Civil)*
 Na passagem — *Problema de lixo não tinham; podia ser atirado em **qualquer** parte, embora não conviesse atirá-lo em parte **alguma**...* — os pronomes destacados expressam, correta e respectivamente, as ideias de:
@@ -716,16 +706,16 @@ C) parte indeterminada; parte nenhuma.
 D) parte inadequada; parte adequada.
 E) parte incerta; parte certa.
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 - **Análise:** O pronome *qualquer* em *"qualquer parte"* atribui a ideia de **parte indeterminada**. O pronome *alguma* posposto ao substantivo em *"parte alguma"* adquire valor semântico de negação total, correspondendo estritamente a **parte nenhuma**.
 - **Gabarito:** **C**
 
 ---
 
-## Questão 10: FGV - AL-BA / Três Ocorrências de "Mais" (Advérbios)
+### Questão 10: FGV - AL-BA / Três Ocorrências de "Mais" (Advérbios)
 
-### Enunciado
+#### Enunciado
 
 *(FGV - AL-BA - Técnico de Nível Superior)*
 *“Já desde Platão sabemos que ela é sensível à ação dos demagogos. E, quanto **mais** avançamos no conhecimento do cérebro e da psicologia humana, descobrimos novas e **mais** sutis maneiras de influenciar os eleitores, que usam muito **mais** a emoção do que a razão na hora de fazer suas escolhas”.*
@@ -736,7 +726,7 @@ C) O único caso de adjetivo é a terceira ocorrência.
 D) A primeira e a segunda ocorrências não pertencem à mesma classe.
 E) As três ocorrências pertencem a classes gramaticais diferentes.
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 - **1º "mais" (*"quanto mais avançamos"*):** Liga-se ao verbo *avançamos* $\rightarrow$ **Advérbio**.
 - **2º "mais" (*"mais sutis maneiras"*):** Liga-se ao adjetivo *sutis* $\rightarrow$ **Advérbio**.
@@ -746,9 +736,9 @@ E) As três ocorrências pertencem a classes gramaticais diferentes.
 
 ---
 
-## Questão 12: FGV - IBGE / Binômio Morfologia vs. Semântica do "Mais"
+### Questão 12: FGV - IBGE / Binômio Morfologia vs. Semântica do "Mais"
 
-### Enunciado
+#### Enunciado
 
 *(FGV - IBGE - Recenseador)*
 No texto, há três ocorrências do vocábulo “mais”: (1) *“...joga **mais** luz sobre a origem da vida”*; (2) *“...uma das **mais** importantes publicações científicas”* e (3) *“...será o **mais** antigo registro de vida na Terra”*.
@@ -759,7 +749,7 @@ C) (2) e (3) “mais” tem valor de intensidade;
 D) (2) “mais” tem valor de quantidade indeterminada;
 E) (3) “mais” tem valor de quantidade determinada.
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 - **Ocorrência (1) (*"mais luz"*):** Liga-se a *luz* (substantivo) $\rightarrow$ Pronome Indefinido $\rightarrow$ Valor de **Quantidade**.
 - **Ocorrência (2) (*"mais importantes"*):** Liga-se a *importantes* (adjetivo) $\rightarrow$ Advérbio $\rightarrow$ Valor de **Intensidade**.
@@ -768,9 +758,9 @@ E) (3) “mais” tem valor de quantidade determinada.
 
 ---
 
-## Questão 15: CESPE - SEDF / Interrogativa Indireta com Ponto Final
+### Questão 15: CESPE - SEDF / Interrogativa Indireta com Ponto Final
 
-### Enunciado
+#### Enunciado
 
 *(CESPE - SEDF)*
 Texto: *"Quanta inútil retórica se tem desperdiçado para provar que todos os nossos males ficariam resolvidos..."*
@@ -778,16 +768,16 @@ Item: *O vocábulo “Quanta” (l.6) classifica-se, na oração em que ocorre, 
  Certo
  Errado
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 - **Análise:** O vocábulo `Quanta` introduz uma oração interrogativa indireta (uma conjectura acerca da quantidade de retórica desperdiçada) encerrada por ponto final. A ausência de ponto de interrogação não invalida sua classificação morfológica como **pronome interrogativo**.
 - **Gabarito:** **CERTO**
 
 ---
 
-## Questão 13: CESPE - TRE-BA / "Todo Mundo" e Totalidade Contextual
+### Questão 13: CESPE - TRE-BA / "Todo Mundo" e Totalidade Contextual
 
-### Enunciado
+#### Enunciado
 
 *(CESPE - TRE-BA - Técnico Judiciário)*
 Texto: *"Quase todo mundo conhece os riscos de se ter os documentos usados de forma indevida... Mas um sistema que começou a ser implantado na Bahia pode resolver o problema em todo o país."*
@@ -795,122 +785,114 @@ Item: *No texto, tanto o termo “todo” (l.1) quanto “todo o” (l.5) expres
  Certo
  Errado
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 - **Análise Contextual:** Embora a regra teórica aponte que *todo* sem artigo equivale a "qualquer", na expressão "todo mundo" (l.1) o referente é a totalidade das pessoas (o mundo inteiro), assim como "todo o país" (l.5) denota o país inteiro. Ambos os termos expressam semanticamente a ideia de **totalidade**.
 - **Gabarito:** **CERTO**
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Teste do "Dele(a) / Deles(as)" para Isolar o Possuidor Real
+### O Teste do "Dele(a) / Deles(as)" para Isolar o Possuidor Real
 
 Substitua o pronome possessivo *seu(s)/sua(s)* por *dele(s)/dela(s)*. Ao transformar *"a democracia ateniense e as **suas** relações"* em *"as relações **dela**"*, você enxerga imediatamente que o referente é `democracia ateniense` (singular feminino), ignorando o fato de o pronome original estar no plural (`suas`).
 
-## O Mapeador Semântico da FGV para a Palavra "Mais"
+### O Mapeador Semântico da FGV para a Palavra "Mais"
 
 Nas provas da FGV, faça a conversão direta entre vocabulário semântico e morfológico:
 
 - Leu **"Intensidade"** $\rightarrow$ Pense **"Advérbio"** (seta para verbo/adjetivo).
 - Leu **"Quantidade"** $\rightarrow$ Pense **"Pronome Indefinido"** (seta para substantivo).
 
-## Mnemônico de Posição: "Bastante" e "Certo"
+### Mnemônico de Posição: "Bastante" e "Certo"
 
 - **Antes do Substantivo:** Pronome Indefinido (*bastante esforço* = muito esforço; *certas horas* = algumas horas).
 - **Depois do Substantivo:** Adjetivo (*esforço bastante* = esforço suficiente; *hora certa* = hora exata).
 
-## A Flexão do Advérbio "Todo"
+### A Flexão do Advérbio "Todo"
 
 Ao encontrar *"Ela é toda elegante"*, não considere a frase errada nem classifique *toda* como pronome: trata-se da única exceção na Língua Portuguesa em que um **advérbio de intensidade** flexiona facultativamente por atração fônica.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## A Armadilha de Concordância do Pronome Possessivo
+### A Armadilha de Concordância do Pronome Possessivo
 
 - **Erro do Candidato:** Buscar um referente que tenha obrigatoriamente o mesmo gênero e número do pronome possessivo.
 - **Por que ocorre:** O candidato transfere incorretamente para os possessivos a regra dos pronomes pessoais.
 - **Forma Correta:** O pronome possessivo concorda com o substantivo posposto. Ele pode ser feminino plural (`suas`) e referir-se a um substantivo singular masculino (`o governo`).
 
-## O Invariável "Menos" como Pronome Indefinido Adjetivo
+### O Invariável "Menos" como Pronome Indefinido Adjetivo
 
 - **Erro do Candidato:** Achar que, por ser invariável, *menos* é sempre advérbio.
 - **Forma Correta:** Em *"Tenho menos disposição"*, a palavra *menos* aponta para o substantivo *disposição*. Logo, é **Pronome Indefinido Adjetivo**.
 
-## Confusão entre "Paciência" (Substantivo) e "Paciente" (Adjetivo)
+### Confusão entre "Paciência" (Substantivo) e "Paciente" (Adjetivo)
 
 - **Pegadinha:** Comparar *"Tenha mais paciência"* com *"Seja mais paciente"*.
 - **Desarme:** Em *"mais paciência"*, *mais* liga-se a substantivo $\rightarrow$ **Pronome Indefinido**. Em *"mais paciente"*, *mais* liga-se a adjetivo $\rightarrow$ **Advérbio de Intensidade**.
 
-## Interrogação Indireta sem Sinal Gráfico
+### Interrogação Indireta sem Sinal Gráfico
 
 - **Erro do Candidato:** Julgar item errado porque a frase classificada como interrogativa termina em ponto final (`.`).
 - **Forma Correta:** Interrogações indiretas constroem-se com verbos de dúvida e encerram-se com ponto final, mantendo os vocábulos *que, quem, qual, quanto* como pronomes interrogativos.
 
-## Inversão Semântica do Pronome "Algum"
+### Inversão Semântica do Pronome "Algum"
 
 - **Erro do Candidato:** Tratar *algum* posposto como sentido afirmativo.
 - **Forma Correta:** *"Em tempo algum"* e *"Em parte alguma"* equivalem a **"nunca"** e **"em parte nenhuma"** (valor estritamente negativo).
 
-## Aplicação Mecânica da Regra de "Todo" sem Artigo no CESPE
+### Aplicação Mecânica da Regra de "Todo" sem Artigo no CESPE
 
 - **Erro do Candidato:** Julgar errado o valor de totalidade em *"todo mundo"* por falta de artigo.
 - **Forma Correta:** No mundo real e no contexto do texto, "todo mundo" representa o conjunto total das pessoas (totalidade).
 
-## Supressão de Artigo em Locuções Preposicionadas
+### Supressão de Artigo em Locuções Preposicionadas
 
 - **Erro do Candidato:** Considerar que a retirada do artigo em *da manhã* $\rightarrow$ *de manhã* é mera variação estilística.
 - **Forma Correta:** A supressão redireciona a ligação sintática do substantivo (*jornais*) para o verbo (*leio*), transformando locução adjetiva em locução adverbial.
 
 ---
 
----
-
 ## Glossário operacional
 
-## Referente (ou Termo Referenciado)
+### Referente (ou Termo Referenciado)
 
 Entidade, conceito ou termo textual ao qual um pronome remete ou substitui. Nos pronomes possessivos, corresponde à pessoa do possuidor .
 
-## Cadeia Coesiva
+### Cadeia Coesiva
 
 Sequência de mecanismos gramaticais (pronomes, elipses, numerais, sinônimos) articulados ao longo do texto para manter a referência contínua a um mesmo elemento semântico .
 
-## Pronome Indefinido
+### Pronome Indefinido
 
 Classe de palavras que faz referência à 3ª pessoa gramatical conferindo-lhe valor vago, indeterminado ou expressando quantidade imprecisa .
 
-## Locução Pronominal Indefinida
+### Locução Pronominal Indefinida
 
 Expressão indivisível constituída por duas ou mais palavras que desempenha em bloco o papel de pronome indefinido (ex.: *cada um, qualquer um*) .
 
-## Pronome Adjetivo
+### Pronome Adjetivo
 
 Pronome que atua adjacente a um substantivo expresso na frase, acompanhando-o e delimitando sua extensão .
 
-## Pronome Substantivo
+### Pronome Substantivo
 
 Pronome que substitui integralmente um substantivo, assumindo de forma independente a posição de núcleo sintático na oração .
 
-## Pronome Interrogativo
+### Pronome Interrogativo
 
 Subclasse dos pronomes indefinidos constituída pelas formas *que, quem, qual* e *quanto*, utilizada na elaboração de questionamentos diretos ou indiretos .
 
-## Interrogação Indireta
+### Interrogação Indireta
 
 Oração subordinada substantiva que expressa questionamento ou conjectura sem o emprego do ponto de interrogação (`?`), sendo regida por verbos de desconhecimento ou elocução .
 
-## Alteração Morfossemântica
+### Alteração Morfossemântica
 
 Fenômeno linguístico no qual uma modificação formal na estrutura da oração (como a supressão de artigo ou troca de posição de vocábulo) altera simultaneamente o sentido semântico e a classe gramatical/função sintática dos termos .
-
----
 
 ---
 

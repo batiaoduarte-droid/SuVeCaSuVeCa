@@ -23,9 +23,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 ### Como aplicar neste tema
 
 1. Localizar o verbo ou nome da oração e determinar sua valência para verificar se há exigência da preposição 'a'.
-2. 1. Inspecionar a oração e localizar o termo regente (verbo ou nome) e os blocos circunstanciais.
-3. 2. Testar a ocorrência de Fenômeno Fonético: o termo regente exige a preposição 'a'? Se SIM, verificar se o termo seguinte aceita artigo definido 'a(s)' ou inicia por pronome 'aquele(a)(s)/aquilo/a qual'. Havendo as duas vogais, a crase é OBRIGATÓRIA.
-4. 3. Se NÃO houver regência exigindo 'a', verificar se o bloco é uma expressão pluriverbal (locução adverbial, prepositiva, conjuntiva ou adjetiva).
+2. Inspecionar a oração e localizar o termo regente (verbo ou nome) e os blocos circunstanciais.
+3. Testar a ocorrência de Fenômeno Fonético: o termo regente exige a preposição 'a'? Se SIM, verificar se o termo seguinte aceita artigo definido 'a(s)' ou inicia por pronome 'aquele(a)(s)/aquilo/a qual'. Havendo as duas vogais, a crase é OBRIGATÓRIA.
+4. Se NÃO houver regência exigindo 'a', verificar se o bloco é uma expressão pluriverbal (locução adverbial, prepositiva, conjuntiva ou adjetiva).
 
 ### Testes decisivos
 
@@ -161,18 +161,16 @@ CRASE FACULTATIVA
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## A Regra do "A" Singular vs. "Às" Plural diante de Palavras Femininas no Plural
+### A Regra do "A" Singular vs. "Às" Plural diante de Palavras Femininas no Plural
 
-### Definição ou ideia central
+#### Definição ou ideia central
 Quando um termo regente exige a preposição `a` e o termo regido é um substantivo feminino no plural, existem apenas duas construções gramaticalmente válidas na norma culta:
 1. **`às` + substantivo plural:** fusão da preposição `a` com o artigo definido feminino plural `as` (crase obrigatória; referente determinado/específico).
 2. **`a` + substantivo plural:** emprego exclusivo da preposição `a` no singular, sem artigo definido (sem crase; referente em sentido genérico).
 
-### Explicação detalhada
+#### Explicação detalhada
 A banca Cebraspe explora sistematicamente duas armadilhas conceituais sobre esse ponto:
 - **Armadilha 1 — Perguntar se o acento em `às` é obrigatório:** O candidato desavisado pensa que, como é possível dizer `a regras`, a crase seria facultativa. No entanto, se o texto original traz a forma plural `às`, a simples remoção do acento grave resultaria em `as` (somente artigo). Deixar apenas o artigo em uma estrutura cuja regência exige preposição configura erro gramatical de regência. Portanto, no vocábulo `às`, o acento é **obrigatório** (ou se usa `às` com crase, ou se troca por `a` no singular sem crase; nunca `as` sem acento).
 - **Armadilha 2 — Sugerir a colocação de crase no `a` singular diante de plural (`à regras`, `à novas`, `à exposições`):** Essa construção é um erro gramatical grave. O "a" no singular antes de palavra no plural é puramente preposição; não havendo artigo feminino singular que se funda com a preposição, o acento grave é terminantemente proibido ("nem a pau", como enfatiza A abordagem didática).
@@ -184,17 +182,17 @@ A banca Cebraspe explora sistematicamente duas armadilhas conceituais sobre esse
 
 ---
 
-## Substituição de "A" por "Às" diante de Plural: Correção Gramatical vs. Alteração Semântica
+### Substituição de "A" por "Às" diante de Plural: Correção Gramatical vs. Alteração Semântica
 
-### Definição ou ideia central
+#### Definição ou ideia central
 A troca do vocábulo `a` (preposição singular) por `às` (preposição + artigo plural) diante de substantivo feminino plural preserva integralmente a **correção gramatical**, mas acarreta **alteração de sentido** (passagem do sentido genérico/indeterminado para o sentido determinado/específico).
 
-### Explicação detalhada
+#### Explicação detalhada
 Ao avaliar enunciados que propõem a substituição de `a [substantivo plural]` por `às [substantivo plural]`:
 1. O termo regente já solicita a preposição `a` (ex.: *com relação a*).
 2. Diante de substantivos plurais (ex.: *centenas*), a presença do artigo definido feminino plural é facultativa sintaticamente:
- - Sem artigo: usa-se apenas a preposição `a` -> `com relação a centenas`.
- - Com artigo: usa-se preposição + artigo `às` -> `com relação às centenas`.
+  - Sem artigo: usa-se apenas a preposição `a` -> `com relação a centenas`.
+  - Com artigo: usa-se preposição + artigo `às` -> `com relação às centenas`.
 3. Se o comando da questão indaga unicamente se a substituição **"manteria a correção gramatical do texto"**, o item é **CERTO**, pois ambas as estruturas respeitam a norma culta.
 4. Caso a questão afirmasse que o *sentido original seria preservado*, o item seria **ERRADO**, pois o artigo restringe e especifica o conjunto.
 
@@ -208,12 +206,12 @@ No esquemas da Questão 5, A abordagem didática esquematiza:
 
 ---
 
-## Supressão de Termos Intervenientes e Fusão de Regência Nominal em "Às"
+### Supressão de Termos Intervenientes e Fusão de Regência Nominal em "Às"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 A supressão de uma expressão intermediária (como um pronome indefinido com preposição, ex.: `a todas`) faz com que o termo regente estabeleça sua relação de regência diretamente com o termo subsequente, exigindo a fusão obrigatória com o artigo definido que já o acompanha.
 
-### Explicação detalhada
+#### Explicação detalhada
 No trecho original analisado:
 $$\text{"Esse comando é subjacente [a todas] [as relações da República]"}$$
 - O adjetivo `subjacente` rege complemento nominal introduzido pela preposição `a` (*subjacente a*).
@@ -229,12 +227,12 @@ No esquemas da Questão 6, A abordagem didática risca a expressão `a todas` no
 - **Evidenciado visualmente por:**
 
 ---
-## O Sistema Dual de Regras da Crase na Língua Portuguesa
+### O Sistema Dual de Regras da Crase na Língua Portuguesa
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 Todo o emprego do acento indicativo de crase na norma-padrão da Língua Portuguesa reduz-se a exatamente **duas regras fundamentais**: a regra do **Fenômeno Fonético (FF)** e a regra das **Locuções Femininas (LF)**.
 
-### Explicação Detalhada
+#### Explicação Detalhada
 O ensino tradicional fragmentou a crase em dezenas de casos particulares, listas de proibições e "macetes" mnemônicos que geram insegurança. A estruturação moderna e simplificada divide o conteúdo em:
 1. **Regra 1 (Fenômeno Fonético - FF):** fusão fonológica de duas vogais idênticas ($a + a = à$), ocorrendo quando um termo antecedente exige a preposição `A` e o termo consequente aceita o artigo feminino `A(s)` ou inicia-se pelos pronomes `Aquele(s)`, `Aquela(s)`, `Aquilo`, `A qual / As quais`, ou pelo pronome demonstrativo `A`.
 2. **Regra 2 (Locução Feminina - LF):** aposição do acento grave fixo em locuções adverbiais, prepositivas, conjuntivas e adjetivas formadas por núcleo substantivo feminino, independentemente de regência verbal ou nominal anterior.
@@ -251,12 +249,12 @@ Abertura da aula com esquemas intitulado "LOCUÇÃO FEMININA"  e anotação esqu
 
 ---
 
-## Diferenciação Estrutural: Fenômeno Fonético versus Locução Feminina
+### Diferenciação Estrutural: Fenômeno Fonético versus Locução Feminina
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 A crase por **Locução Feminina** não decorre da exigência de preposição por um termo regente antecedente, mas sim da natureza pluriverbal e do gênero feminino do substantivo-núcleo da própria expressão.
 
-### Explicação Detalhada
+#### Explicação Detalhada
 Para não confundir as regras:
 - **No Fenômeno Fonético:** Testa-se a transitividade/regência do termo anterior (se pede preposição `A`) e a admissão de artigo pelo termo posterior.
 - **Nas Locuções Femininas:** O verbo ou nome anterior pode ser intransitivo, transitivo direto ou inexistente no início da oração. Não se busca preposição no termo anterior. O acento grave é colocado porque o bloco sintático inteiro atua como uma unidade funcional feminina.
@@ -285,24 +283,24 @@ No esquemas , A abordagem didática puxa setas sobre os exemplos:
 
 ---
 
-## Conceito e Tipologia das Locuções Femininas
+### Conceito e Tipologia das Locuções Femininas
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 Uma **locução** é um conjunto de duas ou mais palavras que desempenham papel sintático e semântico de uma única classe gramatical. A **locução feminina** é aquela cujo núcleo semântico/estrutural é uma palavra feminina (substantivo feminino).
 
-### Classificação das Locuções Femininas que Recebem Crase
+#### Classificação das Locuções Femininas que Recebem Crase
 Existem 4 categorias morfossintáticas de locuções femininas no português:
 
 1. **Locuções Adverbiais Femininas:** expressam circunstâncias (tempo, modo, lugar).
- - *Tempo:* `à noite`, `à tarde`, `às dez horas`, `às vezes`, `àquela noite`.
- - *Modo:* `às pressas`, `às escondidas`, `à vontade`, `à francesa`, `à milanesa`.
- - *Lugar:* `à direita`, `à esquerda`.
+  - *Tempo:* `à noite`, `à tarde`, `às dez horas`, `às vezes`, `àquela noite`.
+  - *Modo:* `às pressas`, `às escondidas`, `à vontade`, `à francesa`, `à milanesa`.
+  - *Lugar:* `à direita`, `à esquerda`.
 2. **Locuções Adjetivas Femininas:** qualificam um substantivo antecedente.
- - *Exemplo:* `encontro às avessas` (*às avessas* qualifica o substantivo *encontro*).
+  - *Exemplo:* `encontro às avessas` (*às avessas* qualifica o substantivo *encontro*).
 3. **Locuções Conjuntivas Femininas:** conectam orações e terminam com a conjunção `que`.
- - *Exemplos:* `à medida que`, `à proporção que`.
+  - *Exemplos:* `à medida que`, `à proporção que`.
 4. **Locuções Prepositivas Femininas:** desempenham papel de preposição composta e terminam com a preposição `de` (ou `a`/`com`).
- - *Exemplos:* `às custas de`, `à força de`, `à beira de`, `à semelhança de`, `à procura de`, `à espera de`.
+  - *Exemplos:* `às custas de`, `à força de`, `à beira de`, `à semelhança de`, `à procura de`, `à espera de`.
 
 Na tela em branco , A abordagem didática constrói o quadro com `#ANOTAAÍ`:
 - `LOC. ADVERBIAIS` $\rightarrow$ *Viajo à tarde*
@@ -314,12 +312,12 @@ Na tela em branco , A abordagem didática constrói o quadro com `#ANOTAAÍ`:
 
 ---
 
-## O Acento Grave como Acento Diferencial e Desfazedor de Ambiguidade
+### O Acento Grave como Acento Diferencial e Desfazedor de Ambiguidade
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 Nas locuções femininas, o acento grave atua como um **acento diferencial**, cuja função primária é distinguir a estrutura adverbial/locutiva de uma função sintática substantiva comum (como objeto direto ou sujeito), eliminando **ambiguidades** semânticas e sintáticas na língua escrita.
 
-### Demonstração dos Contrastes Semânticos
+#### Demonstração dos Contrastes Semânticos
 
 | Estrutura com Acento Grave (Locução Feminina) | Estrutura sem Acento Grave (Objeto Direto / Substantivo) | Efeito Semântico / Distinção |
 |:--- |:--- |:--- |
@@ -335,19 +333,19 @@ Anotação manuscrita na tela :
 
 ---
 
-## Controvérsias Gramaticais e Posição das Bancas de Concursos
+### Controvérsias Gramaticais e Posição das Bancas de Concursos
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 Determinadas expressões locutivas femininas apresentam divergência teórica na doutrina gramatical ("jurisprudência gramatical"), exigindo que o concurseiro conheça o posicionamento predominante das bancas examinadoras.
 
-### Casos Controvertidos e Orientação de Prova
+#### Casos Controvertidos e Orientação de Prova
 
-#### 1. Expressão "Ensino a distância"
+##### 1. Expressão "Ensino a distância"
 - **Divergência Teórica:** Embora *distância* seja substantivo feminino, parte dos gramáticos sustenta que a expressão ocorre em sentido genérico/indeterminado (sem artigo `a`), devendo grafar-se sem crase (*ensino a distância*). Outros admitem o acento grave por considerá-la locução adverbial feminina (*ensino à distância*).
 - **Posição de Concurso (Regra Prática):** As bancas examinadoras adotam majoritariamente a forma **SEM CRASE** (*ensino a distância*) quando a palavra *distância* não vem especificada/determinada.
 - **Exceção de Determinação:** Se a distância for determinada numericamente, o acento torna-se obrigatório: *Ficou à distância de 100 metros*.
 
-#### 2. Locuções Femininas de Instrumento (*Escreveu a mão / à mão*, *feita a máquina*)
+##### 2. Locuções Femininas de Instrumento (*Escreveu a mão / à mão*, *feita a máquina*)
 - **Divergência Teórica:** A tradição normativa aplica crase em locuções femininas em geral (*escreveu à mão*). Entretanto, gramáticos contemporâneos e certas bancas (como IDECAN) entendem que não há preposição genuína nem ambiguidade em adjuntos de instrumento, prescrevendo a grafia sem crase (*escreveu a mão*).
 - **Posição de Concurso (Regra Tática):** A abordagem didática orienta que o candidato, diante de uma locução de instrumento sem crase, avalie as demais alternativas da questão: se houver outro erro gramatical flagrante e indiscutível, a locução de instrumento sem crase não será considerada o gabarito.
 
@@ -360,18 +358,18 @@ Anotação no esquemas :
 
 ---
 
-## Crase em Nomes de Pratos e Preparações Culinárias
+### Crase em Nomes de Pratos e Preparações Culinárias
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 O emprego da crase em nomes de comidas e pratos segue estritamente o gênero gramatical do núcleo da expressão de modo, dispensando a teoria fantasiosa de que sempre existe a elipse de "à moda de" para palavras femininas.
 
-### Regras de Aplicação Culinária
+#### Regras de Aplicação Culinária
 
 1. **Prato com Núcleo Feminino:** Ocorre crase obrigatória pela **Regra 2 (Locução Feminina)**. A palavra-núcleo é feminina por natureza, não dependendo de nenhuma elipse.
- - *Exemplos:* `Bife à parmegiana` (núcleo: *parmegiana*, palavra feminina); `Frango à milanesa` (núcleo: *milanesa*, palavra feminina).
+  - *Exemplos:* `Bife à parmegiana` (núcleo: *parmegiana*, palavra feminina); `Frango à milanesa` (núcleo: *milanesa*, palavra feminina).
 2. **Prato com Núcleo Masculino:** Por regra geral, **NÃO OCORRE CRASE** diante de palavras masculinas. A crase somente será admitida se a expressão `à moda de` estiver comprovadamente implícita (homenagem ou estilo específico criado por uma figura histórica/personalidade).
- - *Com "à moda de" implícito (COM crase):* `Bife à Osvaldo Aranha` (à moda do diplomata Osvaldo Aranha).
- - *Sem "à moda de" implícito (SEM crase):* `Bife a cavalo` (o cavalo não inventou estilo culinário; prato com ovo montado); `Frango a passarinho` (*passarinho* é substantivo masculino e não lançou moda).
+  - *Com "à moda de" implícito (COM crase):* `Bife à Osvaldo Aranha` (à moda do diplomata Osvaldo Aranha).
+  - *Sem "à moda de" implícito (SEM crase):* `Bife a cavalo` (o cavalo não inventou estilo culinário; prato com ovo montado); `Frango a passarinho` (*passarinho* é substantivo masculino e não lançou moda).
 
 A abordagem didática desmistifica: *"Ah, não é 'à moda de'? Não, claro que não! Não tem nada de 'moda de' aqui... Quando o núcleo é feminino, você usa crase porque é locução feminina... Em expressões masculinas de comida, só use se houver 'moda de' implícito!"*
 
@@ -381,12 +379,12 @@ Anotação no esquemas :
 - `Em expressões masculinas: só use se houver "MODA DE" implícito: bife à Osvaldo Aranha vs. bife a cavalo`
 
 ---
-## Estrutura Mestra do Estudo de Crase (Os 5 Eixos)
+### Estrutura Mestra do Estudo de Crase (Os 5 Eixos)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 O domínio completo do emprego do acento indicativo de crase para concursos públicos é organizado em uma estrutura lógica e finita composta por 5 tópicos nucleares: duas regras gerais, três casos facultativos, as regras para termos no plural, os casos proibitivos e o paralelismo sintático.
 
-### Explicação detalhada
+#### Explicação detalhada
 A abordagem didática compara o aprendizado de crase a uma "matemática simples", demonstrando que o conteúdo pode ser totalmente mapeado nos seguintes tópicos:
 1. **2 Regras Gerais:** Compreendem o Fenômeno Fonético (FF) e as Locuções Femininas (LF).
 2. **3 Casos de Crase Facultativa:** Três situações consagradas em que a presença da crase depende da inserção opcional de artigo ou preposição.
@@ -402,12 +400,12 @@ Construção manuscrita progressiva em tinta vermelha no quadro digital branco ,
 
 ---
 
-## Desdobramento Estrutural do Fenômeno Fonético
+### Desdobramento Estrutural do Fenômeno Fonético
 
-### Definição ou ideia central
+#### Definição ou ideia central
 O Fenômeno Fonético (FF) da crase consiste na fusão da preposição obrigatória `A` (exigida por um termo regente verbal ou nominal) com quatro classes possíveis de termos regidos iniciados pela vogal `A`.
 
-### Explicação detalhada
+#### Explicação detalhada
 No quadro esquemático, o Fenômeno Fonético é decomposto na fórmula `A + [... ]`, desdobrando-se nas seguintes possibilidades de união:
 1. **Preposição `A` + Artigo definido feminino `A`:** Caso prototípico diante de substantivos femininos determinados.
 2. **Preposição `A` + Pronomes Relativos `A QUAL / AS QUAIS`:** Crase condicionada à regência do verbo da oração adjetiva que exige a preposição `a`.
@@ -424,12 +422,12 @@ No quadro digital, ao lado de `FF`, A abordagem didática abre uma chave e escre
 
 ---
 
-## Papel Metodológico da Teoria na Resolução de Provas
+### Papel Metodológico da Teoria na Resolução de Provas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 A resolução de questões e o estudo da teoria desempenham funções complementares e não excludentes: a prática desenvolve a habilidade de resolver provas, mas é a teoria estruturada mentalmente que fornece a segurança conceitual para evitar erros sistemáticos e eliminar a dependência da sorte.
 
-### Explicação detalhada
+#### Explicação detalhada
 A abordagem didática enfatiza a relação pedagógica entre teoria e questões:
 - **A prática pela prática é insuficiente:** Resolver questões sem uma teoria organizada na mente gera um conhecimento "nebuloso", fazendo com que o candidato "bata na trave" ou dependa de acertos casuais.
 - **A teoria como alicerce organizador:** A teoria não ensina o mecanismo operacional da prova por si só, mas fornece os critérios decisórios rápidos necessários para o candidato analisar cada alternativa com clareza conceitual e convicção.
@@ -439,14 +437,14 @@ A abordagem didática enfatiza a relação pedagógica entre teoria e questões:
 - **Citação associada:**
 
 ---
-## Dualidade das Justificativas de Crase: Fenômeno Fonético vs. Locução Feminina
+### Dualidade das Justificativas de Crase: Fenômeno Fonético vs. Locução Feminina
 
-### Definição ou ideia central
+#### Definição ou ideia central
 O acento grave indicativo de crase na Língua Portuguesa fundamenta-se estritamente em duas regras mestras:
 1. **Fenômeno Fonético (FF):** Fusão de duas vogais idênticas (preposição `a` exigida por termo regente + artigo `a(s)` ou pronome demonstrativo/relativo iniciado por `a`).
 2. **Locução Feminina (LF):** Uso convencional fixo e obrigatório em locuções adverbiais, prepositivas ou conjuntivas cujo núcleo seja um substantivo feminino.
 
-### Explicação detalhada
+#### Explicação detalhada
 Quando bancas como o CEBRASPE indagam se o emprego do sinal indicativo de crase é "obrigatório" ou pedem a sua justificativa gramatical, o candidato deve identificar imediatamente a qual das duas famílias o caso pertence:
 - Se houver termo regente (verbo ou nome) exigindo a preposição `a`, trata-se de **Fenômeno Fonético**.
 - Se a expressão for um bloco adverbial, prepositivo ou conjuntivo com núcleo feminino sem que haja preposição sendo regida por verbo externo, trata-se de **Locução Feminina**.
@@ -461,21 +459,21 @@ Anotação esquemática manuscrita no esquemas:
 
 ---
 
-## Crase por Fenômeno Fonético Contextual: Regência de "Deixar" e Distinção de "Em" vs. "A"
+### Crase por Fenômeno Fonético Contextual: Regência de "Deixar" e Distinção de "Em" vs. "A"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 A regência verbal é contextual. No enunciado "deixar o pão à porta do apartamento", o verbo *deixar* funciona como transitivo direto e indireto circunstancial (deixar algo a algum lugar), exigindo a preposição `a` para marcar proximidade, fundindo-se com o artigo feminino de "a porta".
 
-### Explicação detalhada
+#### Explicação detalhada
 - **Análise Sintática e Semântica:**
- - No uso coloquial, é frequente o emprego de "deixar na porta" (*em + a*).
- - Gramáticos e autores normativos apontam que a preposição `em` expressa rigorosamente a ideia de "dentro de" (interioridade): *deixar o pão na caixa, na bolsa*.
- - Como não se coloca o pão "dentro da porta", a regência culta emprega a preposição `a` para indicar **proximidade / junto a**: *deixar o pão a + a porta = deixar o pão à porta*.
+  - No uso coloquial, é frequente o emprego de "deixar na porta" (*em + a*).
+  - Gramáticos e autores normativos apontam que a preposição `em` expressa rigorosamente a ideia de "dentro de" (interioridade): *deixar o pão na caixa, na bolsa*.
+  - Como não se coloca o pão "dentro da porta", a regência culta emprega a preposição `a` para indicar **proximidade / junto a**: *deixar o pão a + a porta = deixar o pão à porta*.
 - **Estrutura da Crase:**
- - Termo regente: verbo *deixar* (exige preposição `a` indicando adjacência/proximidade).
- - Termo regido: substantivo feminino *porta* (antecedido pelo artigo definido feminino `a`).
- - Fusão: `a (prep) + a (art) = à`.
- - Ocorrência: Fenômeno Fonético, de emprego obrigatório.
+  - Termo regente: verbo *deixar* (exige preposição `a` indicando adjacência/proximidade).
+  - Termo regido: substantivo feminino *porta* (antecedido pelo artigo definido feminino `a`).
+  - Fusão: `a (prep) + a (art) = à`.
+  - Ocorrência: Fenômeno Fonético, de emprego obrigatório.
 
 > "Regência é contexto, meus senhores... O 'em' traria uma ideia de lugar dentro de... e quando você deixa à porta, é porque você está próximo à porta, você não está dentro da porta... Por isso ele usou a preposição 'a' aí.".
 
@@ -484,39 +482,39 @@ A regência verbal é contextual. No enunciado "deixar o pão à porta do aparta
 
 ---
 
-## Crase Obrigatória em Locuções de Núcleo Feminino (Lugar, Tempo e Modo)
+### Crase Obrigatória em Locuções de Núcleo Feminino (Lugar, Tempo e Modo)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 O acento indicativo de crase é obrigatório em locuções adverbiais, prepositivas e conjuntivas constituídas por palavra de gênero feminino, independentemente de haver verbo regendo preposição.
 
-### Explicação detalhada
+#### Explicação detalhada
 Classificação das locuções femininas abordadas:
 1. **Locuções Adverbiais de Lugar/Direção:**
- - *à direita*, *à esquerda*, *à porta* (quando usada como adjunto adverbial de lugar puro).
- - Exemplo da aula: "Vire à direita" (locução feminina com crase fixa obrigatória).
+  - *à direita*, *à esquerda*, *à porta* (quando usada como adjunto adverbial de lugar puro).
+  - Exemplo da aula: "Vire à direita" (locução feminina com crase fixa obrigatória).
 2. **Locuções Adverbiais de Tempo:**
- - *à hora da passagem do ano*, *às duas horas*, *à tarde*, *à noite*.
- - Possuem acento obrigatório. A banca tenta induzir que seriam facultativas, o que torna a assertiva falsa.
+  - *à hora da passagem do ano*, *às duas horas*, *à tarde*, *à noite*.
+  - Possuem acento obrigatório. A banca tenta induzir que seriam facultativas, o que torna a assertiva falsa.
 3. **Locuções / Expressões Cristalizadas de Modo ou Estado:**
- - *à tona* (em evidência, à superfície), *à toa*, *às pressas*, *à medida que*, *à proporção que*.
+  - *à tona* (em evidência, à superfície), *à toa*, *às pressas*, *à medida que*, *à proporção que*.
 
 > "À direita... isso aqui é uma locução feminina. De núcleo feminino. É obrigatório? É, porque é uma locução. O acento das locuções é obrigatório.".
 > "A hora da passagem do ano... é uma locução feminina de tempo... Se é uma locução feminina, então o acento é obrigatório... Então o item está errado.".
 
 ---
 
-## Distinção entre Regência Verbal e Locução Adverbial em Questões de Justificativa
+### Distinção entre Regência Verbal e Locução Adverbial em Questões de Justificativa
 
-### Definição ou ideia central
+#### Definição ou ideia central
 A presença de um acento grave após um verbo não significa automaticamente que a crase decorre da regência desse verbo. O verbo pode ser transitivo direto e o termo com crase constituir um adjunto adverbial em forma de locução feminina.
 
-### Explicação detalhada
+#### Explicação detalhada
 - **Caso Emblemático (INSS 2022):** "Tem quem deteste ver à porta a cara do mascate".
- - Verbo: *ver* é Transitivo Direto (VTD) — quem vê, vê algo.
- - Objeto Direto: *a cara do mascate*.
- - Termo intercalado com crase: *à porta* (adjunto adverbial de lugar).
- - Justificativa do acento: Trata-se de uma **locução adverbial feminina** (locução feminina).
- - Erro da banca: O CEBRASPE afirmou que a crase se justificava pela regência do verbo *ver* combinada com o gênero feminino de *porta*. Como o verbo *ver* não rege preposição `a`, a justificativa é incorreta e o item é **ERRADO**.
+  - Verbo: *ver* é Transitivo Direto (VTD) — quem vê, vê algo.
+  - Objeto Direto: *a cara do mascate*.
+  - Termo intercalado com crase: *à porta* (adjunto adverbial de lugar).
+  - Justificativa do acento: Trata-se de uma **locução adverbial feminina** (locução feminina).
+  - Erro da banca: O CEBRASPE afirmou que a crase se justificava pela regência do verbo *ver* combinada com o gênero feminino de *porta*. Como o verbo *ver* não rege preposição `a`, a justificativa é incorreta e o item é **ERRADO**.
 
 > "Aqui não é o fenômeno fonético, porque não é quem vê, vê a. O verbo ver aí não está pedindo esse complemento... quem vê, vê a cara do mascate... Só que quando eu olho 'à porta', 'à porta' é locução feminina... O que a banca fez aqui é perguntar se a crase ocorria pelo fenômeno fonético... Só que a crase não ocorre pelo fenômeno. Ocorre pela locução.".
 
@@ -526,21 +524,21 @@ A presença de um acento grave após um verbo não significa automaticamente que
 
 ---
 
-## Proibição de Crase em Locuções com Núcleo Masculino: O Caso de "A Granel"
+### Proibição de Crase em Locuções com Núcleo Masculino: O Caso de "A Granel"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 A regra que impõe crase fixa em locuções adverbiais/modais exige obrigatoriamente que o núcleo substantivo seja **feminino**. Se o substantivo for masculino, a locução é grafada apenas com a preposição simples `a`, sendo proibido o uso do acento grave.
 
-### Explicação detalhada
+#### Explicação detalhada
 - Comparativo:
- - *à toa* -> núcleo feminino (*a toa*) -> tem crase obrigatória.
- - *à tona* -> núcleo feminino (*a tona*) -> tem crase obrigatória.
- - *a granel* -> núcleo masculino (*o granel*) -> **NÃO** tem crase.
- - Outros exemplos masculinos: *a pé*, *a prazo*, *a cavalo*, *a bordo*.
+  - *à toa* -> núcleo feminino (*a toa*) -> tem crase obrigatória.
+  - *à tona* -> núcleo feminino (*a tona*) -> tem crase obrigatória.
+  - *a granel* -> núcleo masculino (*o granel*) -> **NÃO** tem crase.
+  - Outros exemplos masculinos: *a pé*, *a prazo*, *a cavalo*, *a bordo*.
 - **Impacto no julgamento do item (PG-DF 2021):**
- - O comando afirmava que a correção gramatical do texto seria prejudicada caso se inserisse acento indicativo de crase em "a granel".
- - Como a inserção da crase violaria a norma culta (crase diante de palavra masculina em locução), haveria de fato prejuízo gramatical.
- - Portanto, a afirmativa da banca é **CERTA**.
+  - O comando afirmava que a correção gramatical do texto seria prejudicada caso se inserisse acento indicativo de crase em "a granel".
+  - Como a inserção da crase violaria a norma culta (crase diante de palavra masculina em locução), haveria de fato prejuízo gramatical.
+  - Portanto, a afirmativa da banca é **CERTA**.
 
 > "Para vir com crase, tem que ser feminina... Se ele tivesse dito 'sonha-se à toa', teria crase. Mas 'a granel' tem?... 'À toa' tem crase? Tem, porque o núcleo é feminino. 'Granel' é feminino? Não, é masculino. Só tem acento se for feminino. A banca quer saber se a correção seria prejudicada; se eu colocar o acento vai ficar prejudicado mesmo, o item está certo.".
 
@@ -549,18 +547,18 @@ A regra que impõe crase fixa em locuções adverbiais/modais exige obrigatoriam
 - **Dica associada:**
 
 ---
-## Crase Facultativa diante de Nome Próprio Feminino
+### Crase Facultativa diante de Nome Próprio Feminino
 
-### Definição ou ideia central
+#### Definição ou ideia central
 O uso do acento indicativo de crase é facultativo diante de nomes próprios femininos de pessoas familiares/comuns porque o artigo definido feminino (*a*) diante de antropônimos é de uso opcional na norma culta da Língua Portuguesa, enquanto a preposição *a* decorre da regência do termo regente.
 
-### Explicação detalhada
+#### Explicação detalhada
 Para que ocorra a crase, é necessária a fusão de duas vogais idênticas: a preposição *a* (exigida por um verbo transitivo indireto ou nome que rege preposição) e o artigo definido *a* (aceito pelo termo regido feminino).
 1. **Termo regente:** Exige a preposição *a* obrigatoriamente (ex.: *referir-se a*, *obedecer a*, *pedir a*).
 2. **Termo regido (nome próprio feminino comum):** Aceita facultativamente o artigo definido *a*. Pode-se dizer *"Ana chegou"* (sem artigo) ou *"A Ana chegou"* (com artigo).
 3. **Resultado:**
- - Com artigo: Preposição *a* + Artigo *a* = **à** (com crase).
- - Sem artigo: Preposição *a* + Zero artigo = **a** (sem crase).
+  - Com artigo: Preposição *a* + Artigo *a* = **à** (com crase).
+  - Sem artigo: Preposição *a* + Zero artigo = **a** (sem crase).
 
 A abordagem didática reforça: *"A crase é facultativa porque o artigo é facultativo antes de nome próprio feminino."*
 
@@ -569,12 +567,12 @@ No esquemas anotado:
 - `Por quê? -> O artigo é facultativo`
 - `Exemplo: Obedeceu a/à Joana.`
 
-### Exemplos
+#### Exemplos
 - *Referi-me a Ana.* / *Referi-me à Ana.*
 - *Obedeceu a Joana.* / *Obedeceu à Joana.*
 - *Pedi um favor a Juliana.* / *Pedi um favor à Juliana.*
 
-### Exceções ou limites
+#### Exceções ou limites
 **Nomes Próprios de Personagens Históricos ou Figuras Ilustres:** Não admitem artigo definido na norma culta (ninguém diz *"A Joana d'Arc lutou"* ou *"O Pedro Álvares Cabral descobriu"*). Por não haver artigo, há apenas a preposição exigida pela regência, tornando o acento grave **proibido**:
 - *Referiu-se a Joana D'Arc.* (Crase proibida).
 
@@ -582,19 +580,19 @@ No esquemas anotado:
 
 ---
 
-## Crase Facultativa diante de Pronome Possessivo Feminino Singular Adjetivo
+### Crase Facultativa diante de Pronome Possessivo Feminino Singular Adjetivo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 A crase é facultativa antes de pronome possessivo feminino singular (*minha*, *tua*, *sua*, *nossa*, *vossa*), desde que ele funcione como **pronome adjetivo** (isto é, acompanhando um substantivo expresso), pois o artigo definido que o antecede é facultativo.
 
-### Explicação detalhada
+#### Explicação detalhada
 1. Diante de pronomes possessivos no singular que modificam diretamente um substantivo feminino, a presença do artigo definido é opcional: pode-se dizer *"Minha tia chegou"* ou *"A minha tia chegou"*.
 2. Havendo um termo regente que exija a preposição *a*, a junção da preposição obrigatória com o artigo facultativo torna o acento grave opcional:
- - *Preposição 'a' + Artigo 'a' + minha tia* = **à minha tia**
- - *Preposição 'a' + [sem artigo] + minha tia* = **a minha tia**
+  - *Preposição 'a' + Artigo 'a' + minha tia* = **à minha tia**
+  - *Preposição 'a' + [sem artigo] + minha tia* = **a minha tia**
 3. **Condições estritas para a facultatividade:**
- - O pronome possessivo deve estar no **singular**.
- - O pronome possessivo deve ser **adjetivo** (substantivo feminino explícito logo após).
+  - O pronome possessivo deve estar no **singular**.
+  - O pronome possessivo deve ser **adjetivo** (substantivo feminino explícito logo após).
 
 *"A crase é facultativa não porque a preposição é facultativa [...] é que o artigo é facultativo nessa situação de pronome possessivo feminino singular seguido de substantivo."*
 
@@ -603,35 +601,35 @@ No esquemas anotado:
 - `Por quê? -> O artigo é facultativo`
 - `Exemplo: Obedeceu a/à sua irmã.`
 
-### Exemplos
+#### Exemplos
 - *Referi-me a/à minha tia.*
 - *Obedeceu a/à sua irmã.*
 - *O que ele dizia era agradável a/à nossa fantasia.*
 
-### Exceções ou limites
+#### Exceções ou limites
 1. **Pronome Possessivo Substantivo (Elipse do Substantivo):** Se o substantivo for omitido (elipse) e o pronome possessivo assumir função substantiva, a presença do artigo passa a ser **obrigatória** para marcar a elipse. Logo, a crase torna-se **obrigatória**:
- - *Referiu-se à minha tia [facultativa], não à sua [obrigatória, pois substitui 'sua tia'].*
+  - *Referiu-se à minha tia [facultativa], não à sua [obrigatória, pois substitui 'sua tia'].*
 2. **Pronome Possessivo no Plural:** Se o pronome estiver no plural (*minhas*, *suas*) e o termo regente exigir preposição *a*:
- - Se for mantido apenas o *a* no singular diante do plural (*a suas tias*), ele é apenas preposição pura: **Crase Proibida**.
- - Se for utilizado o *as* no plural (*às suas tias*), haverá fusão obrigatória de preposição *a* + artigo plural *as*: **Crase Obrigatória**.
+  - Se for mantido apenas o *a* no singular diante do plural (*a suas tias*), ele é apenas preposição pura: **Crase Proibida**.
+  - Se for utilizado o *as* no plural (*às suas tias*), haverá fusão obrigatória de preposição *a* + artigo plural *as*: **Crase Obrigatória**.
 
 - **Evidenciado visualmente por:**
 
 ---
 
-## Crase Facultativa após a Preposição "Até"
+### Crase Facultativa após a Preposição "Até"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 A crase é facultativa após a preposição *até* diante de palavras femininas que admitam artigo definido, porque a própria **preposição 'a'** é facultativa após *até*, e não o artigo.
 
-### Explicação detalhada
+#### Explicação detalhada
 1. **Mecanismo sintático:** A preposição *até* é a única preposição na Língua Portuguesa que admite o acoplamento de outra preposição (*a*) imediatamente após ela para indicar direção.
 2. Diante de uma palavra feminina determinada que receba artigo *a* (ex.: *a porta*, *a praça*, *a divisa*):
- - **Opção 1 (Sem preposição 'a'):** *Até* (preposição) + *a* (artigo da palavra feminina) = **até a porta** (sem crase, pois há apenas 1 'a', que é artigo).
- - **Opção 2 (Com preposição 'a'):** *Até* (preposição) + *a* (preposição facultativa) + *a* (artigo da palavra feminina) = **até à porta** (com crase, decorrente da fusão preposição *a* + artigo *a*).
+  - **Opção 1 (Sem preposição 'a'):** *Até* (preposição) + *a* (artigo da palavra feminina) = **até a porta** (sem crase, pois há apenas 1 'a', que é artigo).
+  - **Opção 2 (Com preposição 'a'):** *Até* (preposição) + *a* (preposição facultativa) + *a* (artigo da palavra feminina) = **até à porta** (com crase, decorrente da fusão preposição *a* + artigo *a*).
 3. **Diferença Semântica:**
- - *Até* puro indica noção estrita de **limite** (marco final).
- - *Até a / até à* adiciona uma sutil ênfase de **direção/movimento em direção a**, sem alterar substancialmente o sentido geral da oração.
+  - *Até* puro indica noção estrita de **limite** (marco final).
+  - *Até a / até à* adiciona uma sutil ênfase de **direção/movimento em direção a**, sem alterar substancialmente o sentido geral da oração.
 
 *"A preposição até tem crase facultativa. Por quê? Por causa da preposição 'a', que é facultativa [...] A preposição 'até' é a única que aceita outra preposição depois dela."*
 
@@ -640,12 +638,12 @@ No esquemas anotado:
 - `Por quê? -> A preposição 'A' é facultativa.`
 - Esquema no quadro: `Foi até a porta` (prep. até + artigo 'a') vs `Foi até à porta` (prep. até + prep. 'a' + artigo 'a').
 
-### Exemplos
+#### Exemplos
 - *Caminhou até a praça.* / *Caminhou até à praça.*
 - *A área ocupada vai até a divisa do estado.* / *A área ocupada vai até à divisa do estado.*
 - *Foi até a porta.* / *Foi até à porta.*
 
-### Exceções ou limites
+#### Exceções ou limites
 **Outras Preposições Repelem a Preposição 'a':** Nenhuma outra preposição (*desde*, *após*, *ante*, *com*, *contra*, *de*, *para*, *sob*, *sobre*) aceita a preposição *a* após si. Diante de artigo feminino plural ou singular após essas preposições, a crase é **terminantemente proibida**:
 - *Desde as duas horas.* (Correto, sem crase).
 - *Após as duas horas.* (Correto, sem crase).
@@ -655,32 +653,30 @@ No esquemas anotado:
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Protocolo de Análise para Crase Diante de Palavras Femininas no Plural
+### Protocolo de Análise para Crase Diante de Palavras Femininas no Plural
 
-### Pré-requisitos
+#### Pré-requisitos
 Identificar que o termo regente exige a preposição `a` e que o termo regido é um substantivo feminino flexionado no plural.
 
-### Passo a passo
+#### Passo a passo
 1. **Verificar a forma do "A":**
- - Se estiver grafado **`A` (singular):** trata-se apenas de preposição.
+  - Se estiver grafado **`A` (singular):** trata-se apenas de preposição.
 
- - Se estiver grafado **`ÀS` (plural craseado):** trata-se de preposição `a` + artigo `as`.
+  - Se estiver grafado **`ÀS` (plural craseado):** trata-se de preposição `a` + artigo `as`.
 
 2. **Avaliar a tentativa de retirada do acento em `às`:**
- - Trocar `às` por `as` (sem acento) = **ERRO** (falta de preposição).
+  - Trocar `às` por `as` (sem acento) = **ERRO** (falta de preposição).
 3. **Avaliar a tentativa de substituição mútua (`a` por `às` ou `às` por `a`):**
- - Mantém a correção gramatical: **SIM**.
- - Mantém o sentido original: **NÃO**.
+  - Mantém a correção gramatical: **SIM**.
+  - Mantém o sentido original: **NÃO**.
 
 ---
 
-## Protocolo para Supressão de Termos Intervenientes
+### Protocolo para Supressão de Termos Intervenientes
 
-### Passo a passo
+#### Passo a passo
 1. Localize o termo regente e determine sua regência (se exige ou não preposição).
 2. Isole mentalmente o segmento a ser suprimido (ex.: `a todas`).
 3. Conecte o regente diretamente ao termo remanescente (ex.: `subjacente` + `as relações`).
@@ -688,12 +684,12 @@ Identificar que o termo regente exige a preposição `a` e que o termo regido é
 5. Valide a assertiva: se a banca afirmar que a crase se torna obrigatória nesse caso, o item é **CERTO**.
 
 ---
-## Algoritmo de Resolução de Crase em Expressões e Locuções
+### Algoritmo de Resolução de Crase em Expressões e Locuções
 
-### Objetivo
+#### Objetivo
 Determinar com segurança analítica e rapidez se uma ocorrência de `a` / `as` em uma frase deve ou não receber o acento grave indicativo de crase.
 
-### Sequência Metódica Obrigatória (Passo a Passo)
+#### Sequência Metódica Obrigatória (Passo a Passo)
 
 ```text
 [INÍCIO DA ANÁLISE]
@@ -734,40 +730,42 @@ Determinar com segurança analítica e rapidez se uma ocorrência de `a` / `as` 
  +---> [NÚCLEO FEMININO] -----------> CRASE OBRIGATÓRIA (Regra 2)
 ```
 
-### Validação de Erros Comuns
+#### Validação de Erros Comuns
 - Se o candidato tentar aplicar a substituição por palavra masculina (*trocar por 'ao'*) em uma locução feminina pura (como *às pressas* ou *à noite*), o teste falhará ou gerará confusão, pois o teste do *ao* pertence à Regra 1 (FF).
 - Na Regra 2, a única verificação exigida é confirmar se a estrutura é locutiva e se seu núcleo é feminino.
 
 ---
-## Roteiro de Inspeção Mental para Análise de Crase
+### Roteiro de Inspeção Mental para Análise de Crase
 
-### Objetivo
+#### Objetivo
 Sistemática para enquadrar qualquer caso de crase encontrado em provas de concurso.
 
-### Etapas do Procedimento
+#### Etapas do Procedimento
 1. **Passo 1 — Identificar a Natureza da Estrutura:**
- - Verificar se o termo é uma **Locução Feminina** (adverbial, prepositiva ou conjuntiva); caso positivo, aplica-se o acento grave fixo (Regra de LF).
- - Se não for locução, analisar a ocorrência do **Fenômeno Fonético (FF)**: verificar se o termo regente exige a preposição `A`.
+  - Verificar se o termo é uma **Locução Feminina** (adverbial, prepositiva ou conjuntiva); caso positivo, aplica-se o acento grave fixo (Regra de LF).
+  - Se não for locução, analisar a ocorrência do **Fenômeno Fonético (FF)**: verificar se o termo regente exige a preposição `A`.
 2. **Passo 2 — Identificar o Termo Regido (no caso de FF):**
- - Verificar se o termo regido aceita artigo feminino `A`, se é o pronome `a qual/as quais`, se é pronome demonstrativo (`aquele/aquela/aquilo`) ou o pronome demonstrativo `a` antes de `que`/`de`.
+  - Verificar se o termo regido aceita artigo feminino `A`, se é o pronome `a qual/as quais`, se é pronome demonstrativo (`aquele/aquela/aquilo`) ou o pronome demonstrativo `a` antes de `que`/`de`.
 3. **Passo 3 — Checar as Restrições Específicas:**
- - Conferir se não se trata de caso de **Crase Proibida** (ex.: palavra masculina, verbo, pronome indefinido, etc.).
- - Conferir se o termo está no singular diante de plural (**Crase no Plural**).
- - Verificar se há simetria em enumerações ou correlações (**Paralelismo**).
- - Verificar se a ocorrência se enquadra em um dos **3 Casos Facultativos**.
+  - Conferir se não se trata de caso de **Crase Proibida** (ex.: palavra masculina, verbo, pronome indefinido, etc.).
+  - Conferir se o termo está no singular diante de plural (**Crase no Plural**).
+  - Verificar se há simetria em enumerações ou correlações (**Paralelismo**).
+  - Verificar se a ocorrência se enquadra em um dos **3 Casos Facultativos**.
 
 ---
-## Método do "Farejador de Regência" para Validação de Fenômeno Fonético
+### Método do "Farejador de Regência" para Validação de Fenômeno Fonético
 
 - **Objetivo:** Determinar se a crase ocorre por fusão de preposição + artigo (Fenômeno Fonético).
 - **Passo a passo:**
  1. **Localizar o termo com acento grave:** Isolar o vocábulo `à(s)` no texto.
  2. **Buscar o termo regente:** Ler o período oracional e identificar se há algum verbo ou nome anterior que exija a preposição `a`.
  3. **Identificar o termo regido:** Verificar se a palavra seguinte é um substantivo feminino que admite artigo `a`.
- 4. **Testar a fusão:** Confirmar se `Regência (Prep. A) + Substantivo Feminino (Artigo A) = Crase Obrigatória`.
+ 4. **Testar a fusão:** Confirmar se `Regência (Prep.
+A) + Substantivo Feminino (Artigo
+A) = Crase Obrigatória`.
  5. **Desfecho:** Se houver preposição regida + artigo, a justificativa é **Fenômeno Fonético**.
 
-## Método de Reconhecimento de Locuções Femininas
+### Método de Reconhecimento de Locuções Femininas
 
 - **Objetivo:** Identificar se o acento grave decorre de locução feminina e julgar assertivas sobre sua obrigatoriedade/facultatividade.
 - **Passo a passo:**
@@ -777,45 +775,43 @@ Sistemática para enquadrar qualquer caso de crase encontrado em provas de concu
  4. **Julgar a obrigatoriedade:** Locuções femininas possuem acento grave **obrigatório**. Se a banca afirmar que é "facultativo", classifique o item como **ERRADO**.
 
 ---
-## Algoritmo de Verificação de Crase em Pronomes Possessivos
+### Algoritmo de Verificação de Crase em Pronomes Possessivos
 
-### Objetivo
+#### Objetivo
 Determinar com precisão se a crase diante de um pronome possessivo feminino é facultativa, obrigatória ou proibida.
 
-### Pré-requisitos
+#### Pré-requisitos
 - Identificar que o termo regente exige a preposição *a*.
 
-### Passos de execução
+#### Passos de execução
 1. **Passo 1:** Analisar o número gramatical do pronome possessivo.
- - Se estiver no **singular** (*minha*, *tua*, *sua*, *nossa*, *vossa*), avançar para o Passo 2.
- - Se estiver no **plural** (*minhas*, *tuas*, *suas*, *nossas*, *vossas*), avançar para o Passo 3.
+  - Se estiver no **singular** (*minha*, *tua*, *sua*, *nossa*, *vossa*), avançar para o Passo 2.
+  - Se estiver no **plural** (*minhas*, *tuas*, *suas*, *nossas*, *vossas*), avançar para o Passo 3.
 2. **Passo 2 (Possessivo no Singular):** Verificar se o substantivo feminino está explícito ao lado (função adjetiva) ou omitido (função substantiva).
- - Se o substantivo estiver expresso: o artigo é facultativo -> **CRASE FACULTATIVA** (*Obedeceu a/à sua mãe*).
- - Se o substantivo estiver elidido/subentendido: o artigo é obrigatório para sustentar a elipse -> **CRASE OBRIGATÓRIA** (*Referiu-se à sua mãe, não à minha*).
+  - Se o substantivo estiver expresso: o artigo é facultativo -> **CRASE FACULTATIVA** (*Obedeceu a/à sua mãe*).
+  - Se o substantivo estiver elidido/subentendido: o artigo é obrigatório para sustentar a elipse -> **CRASE OBRIGATÓRIA** (*Referiu-se à sua mãe, não à minha*).
 3. **Passo 3 (Possessivo no Plural):** Verificar a forma da letra "a" que o antecede.
- - Se for apenas **"a" (singular)** diante de possessivo plural: é preposição pura -> **CRASE PROIBIDA** (*Obedeceu a suas ordens*).
- - Se for **"às" (plural)**: é a fusão de preposição *a* + artigo *as* -> **CRASE OBRIGATÓRIA** (*Obedeceu às suas ordens*).
+  - Se for apenas **"a" (singular)** diante de possessivo plural: é preposição pura -> **CRASE PROIBIDA** (*Obedeceu a suas ordens*).
+  - Se for **"às" (plural)**: é a fusão de preposição *a* + artigo *as* -> **CRASE OBRIGATÓRIA** (*Obedeceu às suas ordens*).
 
 ---
 
-## Teste de Validação de Crase após Preposições
+### Teste de Validação de Crase após Preposições
 
-### Objetivo
+#### Objetivo
 Identificar se é lícito o emprego do acento grave após uma preposição expressa na oração.
 
-### Passos de execução
+#### Passos de execução
 1. **Passo 1:** Identificar qual preposição antecede o "a".
 2. **Passo 2:** A preposição é **"até"**?
- - **SIM:** A preposição *a* subsequente é facultativa. Diante de substantivo feminino que aceite artigo, a crase é **FACULTATIVA** (*Foi até a/à praia*).
- - **NÃO (é *desde*, *após*, *ante*, *com*, *contra*, *de*, *para*, *sob*, *sobre*, etc.):** Nenhuma outra preposição aceita a preposição *a* após si. O "a" seguinte será exclusivamente artigo definido -> **CRASE PROIBIDA** (*Desde as oito horas*, *Após as duas horas*, *Ante a decisão*).
-
----
+  - **SIM:** A preposição *a* subsequente é facultativa. Diante de substantivo feminino que aceite artigo, a crase é **FACULTATIVA** (*Foi até a/à praia*).
+  - **NÃO (é *desde*, *após*, *ante*, *com*, *contra*, *de*, *para*, *sob*, *sobre*, etc.):** Nenhuma outra preposição aceita a preposição *a* após si. O "a" seguinte será exclusivamente artigo definido -> **CRASE PROIBIDA** (*Desde as oito horas*, *Após as duas horas*, *Ante a decisão*).
 
 ---
 
 ## Exemplos comentados
 
-## Questão 1: Petrobras 2024 (Obrigatoriedade de Crase em "Às")
+### Questão 1: Petrobras 2024 (Obrigatoriedade de Crase em "Às")
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE — Petrobras — 2024 (Técnico Júnior)
 - **Trecho de análise:** *"...submete-se às regras gerais da administração pública..."*
@@ -825,7 +821,7 @@ Identificar se é lícito o emprego do acento grave após uma preposição expre
 
 ---
 
-## Questão 2: MPE-TO 2024 (Crase Obrigatória com Complemento Nominal)
+### Questão 2: MPE-TO 2024 (Crase Obrigatória com Complemento Nominal)
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE — MPE-TO — 2024 (Analista Ministerial Especializado - Pedagogia)
 - **Trecho de análise:** *"...ainda existe uma enorme dificuldade de acesso às coisas do direito."*
@@ -835,7 +831,7 @@ Identificar se é lícito o emprego do acento grave após uma preposição expre
 
 ---
 
-## Questão 3: MEC 2023 (Proibição de Crase em "A" Singular antes de Plural)
+### Questão 3: MEC 2023 (Proibição de Crase em "A" Singular antes de Plural)
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE — MEC — 2023 (Técnico em Assuntos Educacionais)
 - **Trecho de análise:** *"...correspondem a novas ansiedades emergentes..."*
@@ -845,7 +841,7 @@ Identificar se é lícito o emprego do acento grave após uma preposição expre
 
 ---
 
-## Questão 4: Pref. Joinville 2024 (Falsa Facultatividade de Crase)
+### Questão 4: Pref. Joinville 2024 (Falsa Facultatividade de Crase)
 
 - **Banca / Órgão / Ano:** (Adaptado) CESPE / CEBRASPE — Pref. de Joinville - SC — 2024 (Prof. Bilíngue)
 - **Trecho de análise:** *"...ir a exposições..."*
@@ -855,7 +851,7 @@ Identificar se é lícito o emprego do acento grave após uma preposição expre
 
 ---
 
-## Questão 5: Min. Economia 2020 (Substituição de "A" por "Às")
+### Questão 5: Min. Economia 2020 (Substituição de "A" por "Às")
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE — Ministério da Economia — 2020 (Tecnologia da Informação)
 - **Trecho de análise:** *"...com relação a centenas de anos de pensamento científico..."*
@@ -865,7 +861,7 @@ Identificar se é lícito o emprego do acento grave após uma preposição expre
 
 ---
 
-## Questão 6: PC-AL 2023 (Supressão de Termo e Crase Obrigatória)
+### Questão 6: PC-AL 2023 (Supressão de Termo e Crase Obrigatória)
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE — PC-AL — 2023 (Delegado de Polícia Civil)
 - **Trecho de análise:** *"...Esse comando é subjacente a todas as relações da República..."*
@@ -874,7 +870,7 @@ Identificar se é lícito o emprego do acento grave após uma preposição expre
 - **Gabarito oficial:** **Certo**.
 
 ---
-## Análise de Locução Adverbial Temporal
+### Análise de Locução Adverbial Temporal
 
 - **Frase:** *Chego à noite.*
 - **Desenvolvimento da Resolução:**
@@ -885,7 +881,7 @@ Identificar se é lícito o emprego do acento grave após uma preposição expre
 
 ---
 
-## Análise de Locução Conjuntiva Proporcional
+### Análise de Locução Conjuntiva Proporcional
 
 - **Frase:** *À medida que a vida passa, ficamos mais maduros.*
 - **Desenvolvimento da Resolução:**
@@ -896,7 +892,7 @@ Identificar se é lícito o emprego do acento grave após uma preposição expre
 
 ---
 
-## Análise de Locução Prepositiva Feminina
+### Análise de Locução Prepositiva Feminina
 
 - **Frase:** *Vive às custas dos amigos.*
 - **Desenvolvimento da Resolução:**
@@ -907,35 +903,35 @@ Identificar se é lícito o emprego do acento grave após uma preposição expre
 
 ---
 
-## Análise de Locução Adverbial Temporal: À tarde
+### Análise de Locução Adverbial Temporal: À tarde
 
 - **Frase:** *Viajo à tarde.*
 - **Resolução:** *Viajar* é intransitivo; *à tarde* é locução adverbial de tempo com núcleo feminino (*a tarde*). Crase obrigatória.
 
 ---
 
-## Análise de Locução Adjetiva Feminina: Às avessas
+### Análise de Locução Adjetiva Feminina: Às avessas
 
 - **Frase:** *Encontro às avessas.*
 - **Resolução:** A expressão *às avessas* qualifica o substantivo *encontro*, atuando como locução adjetiva de base feminina (*as avessas*). Crase obrigatória.
 
 ---
 
-## Análise de Locução Prepositiva Feminina: À força de
+### Análise de Locução Prepositiva Feminina: À força de
 
 - **Frase:** *À força do ódio, escreveu a carta.*
 - **Resolução:** *À força de* é locução prepositiva cujo núcleo é *força* (substantivo feminino). Recebe acento grave obrigatório.
 
 ---
 
-## Questão Recente de Prova: Pronome Demonstrativo em Locução Temporal
+### Questão Recente de Prova: Pronome Demonstrativo em Locução Temporal
 
 - **Frase:** *Àquela noite nós nos vimos.*
 - **Desenvolvimento da Resolução:** Muitos candidatos estranharam o acento grave no pronome *Àquela*. A abordagem didática demonstra que *Àquela noite* é uma locução adverbial de tempo feminina. O núcleo é *noite* (feminino). Se fosse masculino (*Aquele dia nos vimos*), não haveria crase. Logo, *Àquela noite* recebe crase obrigatoriamente.
 
 ---
 
-## Desambiguação Sintático-Semântica: Francesa e Noite
+### Desambiguação Sintático-Semântica: Francesa e Noite
 
 - **Pares Contrastivos:**
  1. *Comeu à francesa* (modo como comeu = locução adverbial) vs. *Comeu a francesa* (objeto direto = consumiu a mulher).
@@ -944,14 +940,14 @@ Identificar se é lícito o emprego do acento grave após uma preposição expre
 
 ---
 
-## Culinária com Núcleo Feminino
+### Culinária com Núcleo Feminino
 
 - **Expressões:** *Bife à parmegiana*, *Frango à milanesa*.
 - **Desenvolvimento da Resolução:** *Parmegiana* e *milanesa* são palavras femininas (*a parmegiana*, *a milanesa*). Formam locuções femininas de modo. Crase obrigatória.
 
 ---
 
-## Culinária com Núcleo Masculino: Osvaldo Aranha versus Cavalo
+### Culinária com Núcleo Masculino: Osvaldo Aranha versus Cavalo
 
 - **Comparações:**
  1. *Bife à Osvaldo Aranha:* *Osvaldo Aranha* é masculino, mas há a elipse explícita da expressão *à moda de* (homenagem à moda do diplomata). Crase obrigatória.
@@ -959,9 +955,9 @@ Identificar se é lícito o emprego do acento grave após uma preposição expre
 
 ---
 
-##  até  — Resolução dos 10 Exercícios de Fixação
+### até  — Resolução dos 10 Exercícios de Fixação
 
-### Quadro Geral Consolidado dos Exercícios de Fixação
+#### Quadro Geral Consolidado dos Exercícios de Fixação
 
 | Item | Frase Analisada | Gabarito Correto | Justificativa Sintática e Aplicação do Método |
 |:---: |:--- |:---: |:--- |
@@ -980,181 +976,179 @@ Identificar se é lícito o emprego do acento grave após uma preposição expre
 *Neste material específico de sistematização teórica não foram apresentadas questões com alternativas nem exercícios de aplicação prática; o conteúdo é estritamente conceitual e esquemático, preparando para a resolução que ocorre nesta unidadeseguinte.*
 
 ---
-## Questão 1: Crase por Regência Contextual (*à porta do apartamento*)
+### Questão 1: Crase por Regência Contextual (*à porta do apartamento*)
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE – Prefeitura de Cachoeiro de Itapemirim - ES – Auditor Fiscal de Tributos Municipais (2024)
 - **Texto-base:** *"Está bem. Tomo o meu café com pão dormido... Quando vinha deixar o pão à porta do apartamento, ele apertava a campainha..."*
 - **Enunciado / Assertiva:** "O emprego do sinal indicativo de crase no vocábulo 'à', em 'à porta do apartamento' (quarto período), é obrigatório."
 - **Resolução / Justificativa:**
- - O verbo *deixar* rege preposição `a` para indicar proximidade/lugar ao qual o pão é destinado.
- - O substantivo *porta* é feminino e vem determinado pelo artigo definido `a`.
+  - O verbo *deixar* rege preposição `a` para indicar proximidade/lugar ao qual o pão é destinado.
+  - O substantivo *porta* é feminino e vem determinado pelo artigo definido `a`.
 
 - **Gabarito Oficial:** **CERTO**.
 
 ---
 
-## Questão 2: Locução Adverbial Feminina de Lugar (*à direita*)
+### Questão 2: Locução Adverbial Feminina de Lugar (*à direita*)
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE – Prefeitura de Cachoeiro de Itapemirim - ES – Agente Administrativo (2024)
 - **Texto-base:** *"...onde o último da esquerda era o preto Bernardino, e à direita, o rosto lindo de Lélia, com seus cabelos doces..."*
 - **Enunciado / Assertiva:** "Em 'à direita, o rosto lindo de Lélia', o emprego do sinal indicativo de crase é obrigatório."
 - **Resolução / Justificativa:**
 
- - A expressão *à direita* é uma locução adverbial de lugar com núcleo feminino (*direita*).
+  - A expressão *à direita* é uma locução adverbial de lugar com núcleo feminino (*direita*).
 
 - **Gabarito Oficial:** **CERTO**.
 
 ---
 
-## Questão 3: Pegadinha de Justificativa — VTD vs. Locução (*ver à porta*)
+### Questão 3: Pegadinha de Justificativa — VTD vs. Locução (*ver à porta*)
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE – INSS – Técnico do Seguro Social (2022)
 - **Texto-base:** *"Tem quem deteste ver à porta a cara do mascate em cada primeiro do mês..."*
 - **Enunciado / Assertiva:** "No quinto período do primeiro parágrafo, o emprego do sinal indicativo de crase no vocábulo 'à', em 'à porta', justifica-se pela combinação de dois fatores: a regência do verbo 'ver' e o gênero feminino da palavra 'porta'."
 - **Resolução / Justificativa:**
- - O verbo *ver* é Transitivo Direto (VTD); seu objeto direto é *a cara do mascate*.
- - O verbo *ver* não rege preposição `a`.
- - A crase em *à porta* ocorre unicamente por se tratar de uma locução adverbial feminina de lugar (locução feminina), e não pela regência de *ver*.
+  - O verbo *ver* é Transitivo Direto (VTD); seu objeto direto é *a cara do mascate*.
+  - O verbo *ver* não rege preposição `a`.
+  - A crase em *à porta* ocorre unicamente por se tratar de uma locução adverbial feminina de lugar (locução feminina), e não pela regência de *ver*.
 - **Gabarito Oficial:** **ERRADO**.
 
 ---
 
-## Questão 4: Locução Temporal Feminina vs. Facultatividade (*à hora de*)
+### Questão 4: Locução Temporal Feminina vs. Facultatividade (*à hora de*)
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE – SERPRO – Analista: Tecnologia (2023)
 - **Texto-base:** *"Os pais pediram que o menino fosse dormir cedo para que pudesse acordar à hora da passagem do ano."*
 - **Enunciado / Assertiva:** "O emprego do sinal indicativo de crase em 'à hora da passagem do ano' (primeiro período do primeiro parágrafo) é facultativo, ou seja, a sua retirada não prejudicaria a correção gramatical nem o sentido original do texto."
 - **Resolução / Justificativa:**
- - *À hora da passagem do ano* é uma locução adverbial temporal de núcleo feminino (*hora*).
+  - *À hora da passagem do ano* é uma locução adverbial temporal de núcleo feminino (*hora*).
 
 - **Gabarito Oficial:** **ERRADO**.
 
 ---
 
-## Questão 5: Expressão Feminina Cristalizada (*à tona*)
+### Questão 5: Expressão Feminina Cristalizada (*à tona*)
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE – DATAPREV – Auxiliar de Enfermagem do Trabalho (2023)
 - **Texto-base:** *"...confirmam a necessidade de se trazer o debate ainda mais à tona."*
 - **Enunciado / Assertiva:** "De acordo com as normas gramaticais, é facultativo o emprego do sinal indicativo de crase na expressão 'à tona' (segundo período do primeiro parágrafo)."
 - **Resolução / Justificativa:**
- - *À tona* é uma locução adverbial/expressão cristalizada feminina (sentido de "à superfície", "em evidência").
+  - *À tona* é uma locução adverbial/expressão cristalizada feminina (sentido de "à superfície", "em evidência").
 
 - **Gabarito Oficial:** **ERRADO**.
 
 ---
 
-## Questão 6: Locução com Núcleo Masculino (*a granel*)
+### Questão 6: Locução com Núcleo Masculino (*a granel*)
 
 - **Banca / Órgão / Ano:** CESPE / CEBRASPE – PG-DF – Analista Jurídico: Administração (2021)
 - **Texto-base:** *"E, no entanto, sonha-se. Sonha-se muito e a granel, sonha-se sofregamente..."*
 - **Enunciado / Assertiva:** "A correção gramatical do texto seria prejudicada caso se inserisse acento indicativo de crase na expressão 'a granel' (l.43)."
 - **Resolução / Justificativa:**
- - *Granel* é uma palavra masculina (*o granel*).
+  - *Granel* é uma palavra masculina (*o granel*).
 
 - **Gabarito Oficial:** **CERTO**.
 
 ---
-## Análise das Ocorrências dos Exercícios de Fixação
+### Análise das Ocorrências dos Exercícios de Fixação
 
-### Itens Analisados no esquemas de Fixação
+#### Itens Analisados no esquemas de Fixação
 
-#### Item 1: *"Ninguém escapa à sua origem."*
+##### Item 1: *"Ninguém escapa à sua origem."*
 - **Classificação:** **Facultativa (Item correto para marcação)**.
 - **Justificativa:** O verbo *escapar* rege a preposição *a* (*escapa a algo*), e o termo regido é encabeçado pelo pronome possessivo feminino singular adjetivo *sua*, acompanhado do substantivo *origem*. O artigo é facultativo.
 
-#### Item 2: *"A área ocupada vai até à divisa do estado."*
+##### Item 2: *"A área ocupada vai até à divisa do estado."*
 - **Classificação:** **Facultativa (Item correto para marcação)**.
 - **Justificativa:** Presença da preposição *até*. O emprego da preposição *a* após *até* é opcional diante da palavra feminina *divisa* (que recebe artigo *a*).
 
-#### Item 3: *"As palavras dele me soaram à brincadeira."*
+##### Item 3: *"As palavras dele me soaram à brincadeira."*
 - **Classificação:** **Obrigatória (Não marcar)**.
 - **Justificativa:** O verbo *soar* rege a preposição *a* (*soar a algo*), e *brincadeira* é um substantivo feminino determinado que exige artigo *a*. Ocorre fenômeno fonético regular (preposição + artigo obrigatório).
 
-#### Item 4: *"Encaminharei o discurso a Eduardo."*
+##### Item 4: *"Encaminharei o discurso a Eduardo."*
 - **Classificação:** **Proibida (Não marcar)**.
 - **Justificativa:** *Eduardo* é nome próprio masculino. Não admite artigo feminino *a*; há apenas a preposição *a* exigida por *encaminhar algo a alguém*.
 
-#### Item 5: *"Pedi um favor à Juliana."*
+##### Item 5: *"Pedi um favor à Juliana."*
 - **Classificação:** **Facultativa (Item correto para marcação)**.
 - **Justificativa:** O verbo *pedir* rege a preposição *a* (*pedir algo a alguém*), e *Juliana* é um nome próprio feminino comum, diante do qual o artigo definido é facultativo.
 
-#### Item 6: *"O que ele dizia era agradável à nossa fantasia."*
+##### Item 6: *"O que ele dizia era agradável à nossa fantasia."*
 - **Classificação:** **Facultativa (Item correto para marcação)**.
 - **Justificativa:** O adjetivo *agradável* rege a preposição *a* (*agradável a algo*), e *nossa* é pronome possessivo feminino singular adjetivo modificando *fantasia*. Artigo facultativo.
 
-#### Item 7: *"O navio ficou à deriva."*
+##### Item 7: *"O navio ficou à deriva."*
 - **Classificação:** **Obrigatória (Não marcar)**.
 - **Justificativa:** *À deriva* é uma locução adverbial feminina. O acento grave em locuções femininas prepositivas, conjuntivas ou adverbiais é de uso fixo e obrigatório.
 
-#### Item 8: *"Recebeu críticas a seu trabalho."*
+##### Item 8: *"Recebeu críticas a seu trabalho."*
 - **Classificação:** **Proibida (Não marcar)**.
 - **Justificativa:** *Seu trabalho* possui núcleo substantivo masculino (*trabalho*). Não admite artigo feminino.
 
-#### Item 9: *"Sua roupa tem o tamanho adequado a suas medidas."*
+##### Item 9: *"Sua roupa tem o tamanho adequado a suas medidas."*
 - **Classificação:** **Proibida (Não marcar)**.
 - **Justificativa:** O "a" está no singular diante de palavra/pronome no plural (*suas medidas*). Trata-se de preposição pura desacompanhada de artigo. Diante de plural, a crase só seria possível com a forma *às* (*adequado às suas medidas*).
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Macete do "A no Singular Diante de Plural"
+### O Macete do "A no Singular Diante de Plural"
 
 > **Regra prática:** *"A no singular diante de palavra no plural: crase nem a pau!"*
 > Se o vocábulo for apenas a letra `a` (no singular) e a palavra seguinte estiver no plural (`a novas`, `a exposições`, `a pessoas`, `a regras`), nunca haverá acento grave. Para haver crase diante de plural, o vocábulo obrigatoriamente tem de estar no plural: `às`.
 
 ---
 
-## Diferenciação de Comandos: Correção Gramatical vs. Sentido
+### Diferenciação de Comandos: Correção Gramatical vs. Sentido
 
 - Se o Cebraspe propuser trocar `a [plural]` por `às [plural]` e perguntar sobre **correção gramatical**: **CERTO** (ambas são lícitas).
 - Se perguntar se **preserva o sentido original**: **ERRADO** (há mudança de sentido genérico para determinado).
 
 ---
-## O Teste do Artigo para Sanar Dúvidas de Gênero do Núcleo
+### O Teste do Artigo para Sanar Dúvidas de Gênero do Núcleo
 
-### Descrição da Prática
+#### Descrição da Prática
 Se durante a prova o candidato sofrer uma hesitação ("recaída") e duvidar se o substantivo-núcleo de uma locução é masculino ou feminino:
 1. Isole a palavra-núcleo.
 2. Antaponha mentalmente o artigo definido `o` ou `a`.
- - *Exemplo 1:* Núcleo *hora* $\rightarrow$ diz-se *a hora* (feminino) $\rightarrow$ com crase (*à uma hora*).
- - *Exemplo 2:* Núcleo *óleo* $\rightarrow$ diz-se *o óleo* (masculino) $\rightarrow$ sem crase (*a óleo*).
- - *Exemplo 3:* Núcleo *fim* $\rightarrow$ diz-se *o fim* (masculino) $\rightarrow$ sem crase (*a fim de*).
+  - *Exemplo 1:* Núcleo *hora* $\rightarrow$ diz-se *a hora* (feminino) $\rightarrow$ com crase (*à uma hora*).
+  - *Exemplo 2:* Núcleo *óleo* $\rightarrow$ diz-se *o óleo* (masculino) $\rightarrow$ sem crase (*a óleo*).
+  - *Exemplo 3:* Núcleo *fim* $\rightarrow$ diz-se *o fim* (masculino) $\rightarrow$ sem crase (*a fim de*).
 
 ---
 
-## Diferenciação Rápida entre "À medida que" e "Na medida em que"
+### Diferenciação Rápida entre "À medida que" e "Na medida em que"
 
-### Descrição da Prática
+#### Descrição da Prática
 - `À medida que:` Locução conjuntiva proporcional feminina $\rightarrow$ inicia com `À` (com crase) e termina com `que`.
 - `Na medida em que:` Locução conjuntiva causal $\rightarrow$ inicia com `Na` (em + a) e possui `em que`.
 - *Atenção:* Construções híbridas como *"à medida em que"* ou *"na medida que"* são consideradas vícios de linguagem e erros gramaticais em provas.
 
 ---
-## Memorização e Registro do Mapa Mental (#ANOTAAÍ)
+### Memorização e Registro do Mapa Mental (#ANOTAAÍ)
 
-### Descrição Operacional
+#### Descrição Operacional
 A abordagem didática recomenda explicitamente que o aluno capture uma imagem da tela (print) ou anote no caderno o esquema dos 5 eixos temáticos. Ter essa taxonomia visualmente consolidada serve como "tabela de conferência mental" durante a resolução de qualquer bateria de exercícios de crase.
 
 ---
-## O Teste Mental das Horas para Locuções Temporais
+### O Teste Mental das Horas para Locuções Temporais
 
 - **Aplicação:** Ao analisar locuções temporais como *à hora de* ou *à hora da passagem*, substitua mentalmente por uma indicação de hora exata determinada: *acordar às duas horas*. Como *às duas horas* exige crase obrigatoriamente, a locução singular *à hora de* também terá crase obrigatória.
 
-## Como a Banca Pergunta sobre a "Regra"
+### Como a Banca Pergunta sobre a "Regra"
 
 - **Aplicação:** Quando o CEBRASPE questiona se o emprego da crase é "obrigatório", ele está indiretamente perguntando se a estrutura se enquadra em uma das regras fundamentais (Fenômeno Fonético ou Locução Feminina). Se for qualquer uma das duas, o uso é obrigatório e a assertiva é verdadeira.
 
-## O Paralelo *À Toa* (Feminino) vs. *A Granel* (Masculino)
+### O Paralelo *À Toa* (Feminino) vs. *A Granel* (Masculino)
 
 - **Aplicação:** Para memorizar a regra de locuções: compare *sonha-se à toa* (crase obrigatória, pois *toa* é feminino) com *sonha-se a granel* (crase proibida, pois *granel* é masculino). Só há crase em locução se o substantivo for feminino.
 
 ---
-## O Mnemônico dos Três Casos de Crase Facultativa
+### O Mnemônico dos Três Casos de Crase Facultativa
 
-### Descrição
+#### Descrição
 Para memorização rápida em provas de concurso, os três casos em que a crase é facultativa são:
 1. **Mulher:** Nomes próprios femininos familiares (*a/à Maria*).
 2. **Minha:** Pronomes possessivos femininos singulares adjetivos (*a/à minha*).
@@ -1162,20 +1156,18 @@ Para memorização rápida em provas de concurso, os três casos em que a crase 
 
 ---
 
-## Diferenciação da Causa da Facultatividade
+### Diferenciação da Causa da Facultatividade
 
-### Descrição
+#### Descrição
 Bancas examinadoras costumam questionar a justificativa gramatical da facultatividade do acento:
 - Nos casos de **Nome Próprio Feminino** e **Pronome Possessivo Feminino Singular Adjetivo**, o que é facultativo é o **ARTIGO DEFINIDO**.
 - No caso da preposição **ATÉ**, o que é facultativa é a **PREPOSIÇÃO 'A'**.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Confundir Existência de Duas Formas Corretas com Crase Facultativa no "Às"
+### Confundir Existência de Duas Formas Corretas com Crase Facultativa no "Às"
 
 - **Erro comum:** O aluno pensa: *"Posso escrever 'submete-se a regras' ou 'submete-se às regras', logo a crase é facultativa e eu posso tirar o acento de 'às' mantendo 'as'."*
 - **Consequência:** Marcar como "Errado" quando a banca diz que o acento em `às` é obrigatório.
@@ -1183,12 +1175,12 @@ Bancas examinadoras costumam questionar a justificativa gramatical da facultativ
 
 ---
 
-## Omissão de Preposição em Supressão de Termos
+### Omissão de Preposição em Supressão de Termos
 
 - Ao suprimir expressões como `a todas`, `a quaisquer`, `a certas`, a preposição que estava atrelada ao pronome volta a incidir diretamente sobre o substantivo posterior. Se o substantivo tiver artigo `as`, a crase é **obrigatória**. Esquecer o acento grave gera erro de regência nominal/verbal.
 
 ---
-## Tentar Aplicar Regência em Locuções Femininas
+### Tentar Aplicar Regência em Locuções Femininas
 
 - **Erro Comum:** O candidato busca uma preposição regida pelo verbo antes de locuções como *à noite*, *às pressas* ou *à míngua*. Ao perceber que o verbo é intransitivo (ex.: *Chegou...*, *Saiu...*, *Vivera...*), conclui erroneamente que não há crase por falta de preposição.
 - **Consequência:** Erro grave na resolução de questões de concursos.
@@ -1196,7 +1188,7 @@ Bancas examinadoras costumam questionar a justificativa gramatical da facultativ
 
 ---
 
-## O Falso Mito de que "Uma" Nunca Aceita Crase
+### O Falso Mito de que "Uma" Nunca Aceita Crase
 
 - **Pegadinha de Prova:** O item apresenta *Chegou à uma hora em ponto*. O candidato lembra do macete tradicional *"antes de 'uma' não há crase porque é artigo indefinido"* e julga o item como incorreto.
 - **Correção da Professora:**
@@ -1205,7 +1197,7 @@ Bancas examinadoras costumam questionar a justificativa gramatical da facultativ
 
 ---
 
-## Preposição Prévia Impedindo Crase em Horas
+### Preposição Prévia Impedindo Crase em Horas
 
 - **Pegadinha de Prova:** Na frase *Saiu de casa após as dez horas*, o candidato vê a indicação de horas e coloca crase (*após às dez horas*).
 - **Fundamento Gramatical:** A língua portuguesa proíbe a sobreposição de duas preposições idênticas ou distintas (*após + a*). Como a preposição `após`, `para`, `desde`, `contra` ou `entre` já está presente, a letra `as` funciona estritamente como artigo definido. Logo, **não ocorre crase** (*após as dez horas*).
@@ -1213,89 +1205,89 @@ Bancas examinadoras costumam questionar a justificativa gramatical da facultativ
 
 ---
 
-## Generalização Indevida de "À Moda De" em Pratos Masculinos
+### Generalização Indevida de "À Moda De" em Pratos Masculinos
 
 - **Erro Comum:** Supor que todo nome de prato com palavra masculina admite crase alegando elipse de "à moda de" (*bife à cavalo*, *frango à passarinho*).
 - **Correção:** A elipse de "à moda de" só existe para estilos de personalidades/lugares reconhecidos (*bife à Osvaldo Aranha*). Animais ou ingredientes masculinos comuns não formam "à moda de", mantendo-se sem crase (*bife a cavalo*, *frango a passarinho*).
 
 ---
-## A Ilusão do Aprendizado Exclusivo por Questões
+### A Ilusão do Aprendizado Exclusivo por Questões
 
-### Problema
+#### Problema
 Acreditar que é possível dominar crase apenas resolvendo questões sem estudar ou sistematizar a teoria.
 
-### Consequência
+#### Consequência
 O estudante desenvolve uma falsa sensação de segurança quando acerta itens fáceis por intuição, mas comete erros em questões de nível intermediário/difícil por não dominar os fundamentos (ficando sempre no "quase acerto" ou dependendo da sorte).
 
-### Conduta Correta
+#### Conduta Correta
 Alinhar a teoria organizada (mapa mental) à prática exaustiva de questões de bancas examinadoras.
 
 ---
-## Pegadinha de Justificativa Sintática: Misturar VTD com Locução
+### Pegadinha de Justificativa Sintática: Misturar VTD com Locução
 
 - **Descrição do Erro:** O candidato vê um verbo antes de uma palavra com crase e assume precipitadamente que a crase decorre da regência desse verbo.
 - **Consequência:** Marcar como certa a questão do INSS (*ver à porta*), errando a justificativa.
 - **Prevenção:** Sempre verifique a predicação do verbo. Se o verbo for VTD, o objeto direto não terá preposição; o termo com crase será um adjunto adverbial (locução feminina), e a justificativa será a regra da locução, não a regência do verbo.
 
-## A Falsa Facultatividade em Locuções Adverbiais Femininas
+### A Falsa Facultatividade em Locuções Adverbiais Femininas
 
 - **Descrição do Erro:** Achar que locuções adverbiais de tempo (*à hora de*) ou expressões idiomáticas (*à tona*) possuem acento facultativo.
 - **Consequência:** Assinalar como "Certo" assertivas que afirmam que a retirada do acento manteria a correção gramatical.
 - **Prevenção:** Lembre-se de que crase facultativa ocorre apenas em 3 casos clássicos (nomes próprios femininos, pronomes possessivos femininos singulares e após a preposição *até*). Locuções femininas têm acento **obrigatório**.
 
 ---
-## Nomes Próprios Femininos de Figuras Históricas ou Notáveis
+### Nomes Próprios Femininos de Figuras Históricas ou Notáveis
 
-### Problema
+#### Problema
 O candidato assume que qualquer nome próprio feminino aceita crase facultativa e erra quando a questão traz personalidades célebres ou históricas.
 
-### Consequência
+#### Consequência
 Classificar como facultativa a crase diante de figuras como Joana d'Arc, Anita Garibaldi, Madre Teresa, Cecília Meireles.
 
-### Forma correta
+#### Forma correta
 Figuras históricas, santas e personalidades célebres consagradas não admitem artigo na norma padrão. Havendo regência com preposição *a*, a crase é **PROIBIDA**:
 - *Fez alusão a Joana d'Arc.* (Sem crase).
 - *Prestou homenagem a Cecília Meireles.* (Sem crase).
 
 ---
 
-## Pronome Possessivo Substantivo (Elipse)
+### Pronome Possessivo Substantivo (Elipse)
 
-### Problema
+#### Problema
 Achar que toda ocorrência de pronome possessivo feminino singular gera crase facultativa, mesmo quando o substantivo não estiver presente.
 
-### Consequência
+#### Consequência
 Errar questões em que o pronome possessivo exerce função de pronome substantivo (substituindo um substantivo já mencionado para evitar repetição).
 
-### Forma correta
+#### Forma correta
 Quando o substantivo está elidido, o artigo é **obrigatório** para marcar a elipse. Havendo preposição exigida anteriormente, a crase passa a ser **OBRIGATÓRIA**:
 - *Dirigi-me a/à minha professora, não **à** sua [professora].* (1ª ocorrência: facultativa; 2ª ocorrência: obrigatória).
 
 ---
 
-## "A" no Singular Diante de Pronome Possessivo no Plural
+### "A" no Singular Diante de Pronome Possessivo no Plural
 
-### Problema
+#### Problema
 Julgar que a presença de pronome possessivo feminino autoriza crase facultativa mesmo no plural.
 
-### Consequência
+#### Consequência
 Usar acento grave na estrutura `"a + possessivo plural"` (*a suas*).
 
-### Forma correta
+#### Forma correta
 - Diante de palavra/possessivo no plural, a letra "a" isolada no singular é **apenas preposição**, sendo a crase **proibida** (*referiu-se a suas tias*).
 - Se houver crase, o "as" deve obrigatoriamente ir para o plural (*referiu-se às suas tias*), configurando crase **obrigatória** (preposição + artigo plural). Não existe crase facultativa no plural.
 
 ---
 
-## Crase após Preposições Diferentes de "Até"
+### Crase após Preposições Diferentes de "Até"
 
-### Problema
+#### Problema
 Generalizar a regra da preposição *até* para outras preposições (*desde*, *após*, *ante*, *perante*, *com*).
 
-### Consequência
+#### Consequência
 Empregar crase em locuções temporais antecedidas de preposição (*desde às 14h*, *após às 15h*).
 
-### Forma correta
+#### Forma correta
 Apenas *até* aceita a preposição *a*. Com as demais preposições, a crase é **PROIBIDA**:
 - *O evento ocorrerá das 14h **às** 18h.* (Crase obrigatória: de + as = das / a + as = às).
 - *O evento ocorrerá desde **as** 14h.* (Crase proibida: preposição *desde* + artigo *as*).
@@ -1303,111 +1295,107 @@ Apenas *até* aceita a preposição *a*. Com as demais preposições, a crase é
 
 ---
 
----
-
 ## Glossário operacional
 
-## Acento Indicativo de Crase
+### Acento Indicativo de Crase
 
 Acento grave (`) empregado para assinalar a contração (crase) da preposição `a` com o artigo definido feminino (`a`, `as`) ou com pronomes demonstrativos iniciados por `a` (`aquele`, `aquela`, `aquilo`).
 
-## Sentido Genérico vs. Sentido Determinado
+### Sentido Genérico vs. Sentido Determinado
 
 - **Sentido Genérico:** Obtido pela presença exclusiva da preposição `a` diante de substantivo plural sem artigo (ex.: *referir-se a pessoas*).
 - **Sentido Determinado:** Obtido pela presença de preposição + artigo definido plural `às` (ex.: *referir-se às pessoas*), especificando o grupo ao qual se refere.
 
-## Regência Nominal
+### Regência Nominal
 
 Relação de dependência sintática estabelecida entre um nome (substantivo, adjetivo ou advérbio) e seu respectivo complemento nominal, mediada obrigatoriamente por preposição (ex.: *subjacente a algo*, *acesso a algo*).
 
 ---
-## Fenômeno Fonético da Crase (FF)
+### Fenômeno Fonético da Crase (FF)
 
 Fusão da preposição `A` com a vogal `A` inicial de artigos definidos ou pronomes, resultante da regência de um termo antecedente. Constitui a Regra 1 da crase.
 
-## Locução Feminina (LF)
+### Locução Feminina (LF)
 
 Expressão pluriverbal constituída por duas ou mais palavras cujo núcleo sintático-semântico é um substantivo feminino. Constitui a Regra 2 da crase, recebendo acento grave fixo.
 
-## Locução Adverbial Feminina
+### Locução Adverbial Feminina
 
 Conjunto de palavras de base feminina que modifica um verbo, adjetivo ou outro advérbio, expressando circunstância de tempo (*à noite*), modo (*às pressas*) ou lugar (*à direita*).
 
-## Locução Adjetiva Feminina
+### Locução Adjetiva Feminina
 
 Expressão de núcleo feminino que se acopla a um substantivo para caracterizá-lo (ex.: *encontro às avessas*).
 
-## Locução Conjuntiva Feminina
+### Locução Conjuntiva Feminina
 
 Expressão conectiva oracional de base substantiva feminina que termina pela conjunção integrante/subordinativa `que` (ex.: *à medida que*, *à proporção que*).
 
-## Locução Prepositiva Feminina
+### Locução Prepositiva Feminina
 
 Estrutura pluriverbal de base feminina que desempenha papel de preposição composta, terminando com preposição simples (ex.: *às custas de*, *à força de*, *à beira de*, *à semelhança de*).
 
-## Acento Diferencial de Locução
+### Acento Diferencial de Locução
 
 Emprego do acento grave com função diacrítica para diferenciar formalmente uma locução adverbial/prepositiva de um termo com função substantiva direta (evitando ambiguidade textual).
 
-## Locução Feminina de Instrumento
+### Locução Feminina de Instrumento
 
 Expressão formada por substantivo feminino que indica o meio físico ou ferramenta com que se realiza uma ação (ex.: *escrever a mão / à mão*, *feita a máquina*). Objeto de controvérsia teórica em bancas.
 
 ---
-## Fenômeno Fonético (FF)
+### Fenômeno Fonético (FF)
 
 - **Definição:** Processo morfossintático e fonético de fusão da preposição `a` com a vogal `a` de um artigo feminino, pronome relativo, pronome demonstrativo ou pronome demonstrativo `a` antecedente de `que`/`de`.
 - **Contexto na Aula:** Identificado pela sigla `FF` na lousa digital como a primeira regra geral de crase.
 
-## Locução Feminina (LF)
+### Locução Feminina (LF)
 
 - **Definição:** Conjunto de palavras com núcleo substantivo feminino que desempenha função adverbial, prepositiva ou conjuntiva, recebendo acento indicativo de crase por convenção gramatical (e não necessariamente por fusão regencial estrita).
 - **Contexto na Aula:** Identificada pela sigla `LF` na lousa digital como a segunda regra geral de crase.
 
-## Pronome Demonstrativo "A"
+### Pronome Demonstrativo "A"
 
 - **Definição:** O pronome demonstrativo átono equivalente a "aquela" ou "aquilo", empregado antes das palavras "que" ou "de" (ex.: *"Essa proposta é semelhante à que discutimos ontem"* = *a [preposição] + a [aquela]*).
 - **Contexto na Aula:** Quarta ramificação escrita pela professora no detalhamento do Fenômeno Fonético.
 
 ---
-## Fenômeno Fonético (Crase)
+### Fenômeno Fonético (Crase)
 
 - **Definição:** Fusão da preposição `a` (exigida pela regência de um verbo ou nome) com o artigo definido feminino `a(s)` ou a vogal inicial `a` de pronomes (*aquele, aquela, aquilo, a qual*).
 - **Contexto da Aula:** Caso de *deixar o pão à porta* (`deixar a + a porta`).
 
-## Locução Feminina (Crase Fixa)
+### Locução Feminina (Crase Fixa)
 
 - **Definição:** Expressão adverbial, prepositiva ou conjuntiva formada por duas ou mais palavras cujo núcleo principal é um substantivo feminino, recebendo acento grave por convenção gramatical obrigatória.
 - **Contexto da Aula:** Casos de *à direita, à hora de, à tona, à toa*.
 
-## Locução com Núcleo Masculino
+### Locução com Núcleo Masculino
 
 - **Definição:** Conjunto de palavras que desempenha papel adverbial ou modal cujo substantivo principal é masculino; rejeita terminantemente o acento indicativo de crase.
 - **Contexto da Aula:** Caso de *a granel* (*o granel*).
 
-## "Banca de Setas"
+### "Banca de Setas"
 
 - **Definição:** Metáfora pedagógica criada pela professora para caracterizar o estilo do CEBRASPE, no qual termos sintaticamente vinculados aparecem separados por orações intercaladas ou complementos longos, exigindo que o aluno trace setas para reconstituir a regência.
 - **Contexto da Aula:** Análise da distância entre o verbo *deixar* e a expressão *à porta do apartamento*.
 
 ---
-## Crase Facultativa
+### Crase Facultativa
 
 Situação sintático-morfológica em que a presença do acento grave indicativo de crase é indiferente para a correção gramatical da frase, decorrendo ora da opcionalidade do artigo definido feminino diante do termo regido, ora da opcionalidade da preposição *a* após o termo regente.
 
-## Pronome Possessivo Adjetivo
+### Pronome Possessivo Adjetivo
 
 Pronome possessivo que acompanha e modifica diretamente um substantivo explícito na oração (ex.: *minha casa*, *sua ideia*). No feminino singular, admite artigo facultativo, ensejando crase facultativa se houver preposição regencial.
 
-## Pronome Possessivo Substantivo
+### Pronome Possessivo Substantivo
 
 Pronome possessivo que substitui um substantivo antecedente que foi omitido por elipse (ex.: *Gosto da minha cidade, não da sua*). Exige obrigatoriamente a presença de artigo definido, tornando a crase obrigatória se houver exigência de preposição *a*.
 
-## Antropônimo Ilustre / Histórico
+### Antropônimo Ilustre / Histórico
 
 Nomes de personalidades históricas, personagens célebres ou santificados que, na norma padrão da língua, não admitem a anteposição de artigo definido, inviabilizando a ocorrência de crase.
-
----
 
 ---
 
@@ -1464,15 +1452,15 @@ Na célebre questão do INSS 2022 (*ver à porta a cara do mascate*), desmascaro
 O material aborda de forma completa as regras e minúcias da **Crase Facultativa** em Língua Portuguesa:
 
 1. **Os Três Casos Clássicos:**
- - **Antes de nome próprio feminino comum:** A preposição é exigida pelo regente, mas o artigo é opcional (*Obedeceu a/à Ana*).
- - **Antes de pronome possessivo feminino singular adjetivo:** Modificando substantivo expresso, o artigo diante do possessivo é opcional (*Referiu-se a/à minha tia*).
- - **Depois da preposição "até":** O substantivo feminino exige artigo, mas a preposição *a* após *até* é opcional (*Caminhou até a/à praça*).
+  - **Antes de nome próprio feminino comum:** A preposição é exigida pelo regente, mas o artigo é opcional (*Obedeceu a/à Ana*).
+  - **Antes de pronome possessivo feminino singular adjetivo:** Modificando substantivo expresso, o artigo diante do possessivo é opcional (*Referiu-se a/à minha tia*).
+  - **Depois da preposição "até":** O substantivo feminino exige artigo, mas a preposição *a* após *até* é opcional (*Caminhou até a/à praça*).
 
 2. **As Quatro Armadilhas Críticas (Exceções):**
- - **Nomes Próprios Ilustres / Históricos:** Repelem o artigo na norma culta, tornando a crase **proibida** (*Referiu-se a Joana D'Arc*).
- - **Elipse do Substantivo (Possessivo Substantivo):** Exige artigo para marcar a omissão do nome, tornando a crase **obrigatória** (*Referiu-se à minha tia, não à sua*).
- - **Possessivos no Plural:** Se a preposição estiver no singular (*a suas*), a crase é **proibida**; se for pluralizada (*às suas*), a crase é **obrigatória**. Não há forma facultativa no plural.
- - **Outras Preposições:** Preposições como *desde*, *após*, *ante*, *para*, *com* não admitem a preposição *a*, tornando a crase **proibida** (*desde as 14h*, *após as 18h*).
+  - **Nomes Próprios Ilustres / Históricos:** Repelem o artigo na norma culta, tornando a crase **proibida** (*Referiu-se a Joana D'Arc*).
+  - **Elipse do Substantivo (Possessivo Substantivo):** Exige artigo para marcar a omissão do nome, tornando a crase **obrigatória** (*Referiu-se à minha tia, não à sua*).
+  - **Possessivos no Plural:** Se a preposição estiver no singular (*a suas*), a crase é **proibida**; se for pluralizada (*às suas*), a crase é **obrigatória**. Não há forma facultativa no plural.
+  - **Outras Preposições:** Preposições como *desde*, *após*, *ante*, *para*, *com* não admitem a preposição *a*, tornando a crase **proibida** (*desde as 14h*, *após as 18h*).
 
 3. **Prática:** Aplicação em lista de 9 itens, consolidando a capacidade de distinguir casos facultativos de casos obrigatórios (locuções femininas, regências plenas) e proibidos (palavras masculinas, preposição singular diante de plural).
 

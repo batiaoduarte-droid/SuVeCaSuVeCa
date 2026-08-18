@@ -17,9 +17,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 ### Como aplicar neste tema
 
 1. Identificar os núcleos nominais (substantivos abstratos, adjetivos e advérbios relacionais) alojados nos termos da oração SuVeCA e delimitar seus complementos preposicionados.
-2. 1. Localizar na oração os termos subordinantes nominais (substantivos, adjetivos e advérbios) e verificar se demandam complemento para integralizar seu sentido .
-3. 2. Aplicar o teste diagnóstico do artigo caso haja dúvida sobre a classe morfológica do termo regente: se aceitar artigo anteposto, é substantivo .
-4. 3. Confrontar a preposição empregada com o padrão culto dicionarizado, avaliando se o nome admite dupla regência legítima sem alteração semântica .
+2. Localizar na oração os termos subordinantes nominais (substantivos, adjetivos e advérbios) e verificar se demandam complemento para integralizar seu sentido .
+3. Aplicar o teste diagnóstico do artigo caso haja dúvida sobre a classe morfológica do termo regente: se aceitar artigo anteposto, é substantivo .
+4. Confrontar a preposição empregada com o padrão culto dicionarizado, avaliando se o nome admite dupla regência legítima sem alteração semântica .
 
 ### Testes decisivos
 
@@ -40,7 +40,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - **Sintaxe Geral:** Noções de transitividade verbal, subordinação sintática e diferenciação entre complemento nominal e adjunto.
 - **Fonossintaxe:** Princípio básico da ocorrência de crase (fusão da preposição `a` com o artigo definido feminino `a`).
 
-### Mapa Conceitual Integrado
+#### Mapa Conceitual Integrado
 
 ```text
 SINTAXE DE REGÊNCIA
@@ -77,36 +77,34 @@ SINTAXE DE REGÊNCIA
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Conceito, Natureza e Estrutura da Regência Nominal
+### Conceito, Natureza e Estrutura da Regência Nominal
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A regência nominal é a relação sintática de subordinação estabelecida entre um nome regente (substantivo, adjetivo ou advérbio) e o seu respectivo termo regido (complemento nominal), caracterizada pela presença **obrigatoriamente intermediada por uma preposição** fixada pelo uso culto da língua.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Ao contrário da regência verbal — que admite complementação direta não preposicionada (objeto direto) ou indireta preposicionada (objeto indireto) —, a regência nominal não admite ligação direta sem preposição na norma-padrão. Sempre que um termo completa o sentido de um substantivo abstrato, de um adjetivo ou de um advérbio de base relacional, essa ligação é feita por uma preposição simples ou contraída com artigo.
 Trata-se de um fato linguístico eminentemente convencional ("é porque é"), decorrente da evolução histórica e da consagração do uso pelos autores cultos, não se submetendo a regras de dedução lógica de causa e efeito.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 1. Identificar o termo nuclear subordinador na oração.
 2. Confirmar se o núcleo é um nome (não verbo).
 3. Verificar se o termo subsequente completa a significação desse nome.
 4. Exigir a presença da preposição correspondente estabelecida pela norma culta.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Correto:* *Tem certeza **da** vitória.* (O substantivo "certeza" exige a preposição "de").
 - *Correto:* *Ele é apto **a** estudar.* (O adjetivo "apto" exige a preposição "a").
 - *Correto:* *Mora longe **da** família.* (O advérbio "longe" exige a preposição "de").
 - *Incorreto:* *Tem certeza a vitória.* (Ausência agramatical de preposição).
 
-### Exceções ou limites
+#### Exceções ou limites
 
 Não há regência nominal direta sem preposição na norma-padrão. Casos de aparente ausência decorrem de elipses coloquiais condenadas formalmente em provas de concurso.
 
@@ -115,18 +113,18 @@ Não há regência nominal direta sem preposição na norma-padrão. Casos de ap
 
 ---
 
-## Classes Morfológicas dos Nomes Regentes e Teste Diagnóstico do Artigo
+### Classes Morfológicas dos Nomes Regentes e Teste Diagnóstico do Artigo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 No âmbito da regência, a categoria gramatical "nome" é definida operacionalmente por oposição aos verbos ("nome é o que não é verbo"), compreendendo estritamente três classes morfológicas: **substantivos**, **adjetivos** e **advérbios**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Cada uma das três classes desempenha o papel de termo regente projetando exigências prepositivas específicas:
 
 1. **Substantivo:** Nomeia seres, ações, sentimentos ou conceitos abstratos (*certeza de*, *necessidade de*, *ampliação de*, *dúvida de*, *aversão a/por*, *desejo de/por*, *orgulho de/por*, *combate a*, *intenção de/em*).
- - *Teste Diagnóstico do Artigo:* Para certificar com rapidez se uma palavra atua como substantivo, verifica-se a possibilidade de antepor-lhe mentalmente um artigo definido ou indefinido (*a certeza*, *a necessidade*, *a ampliação*, *a dúvida*). Se admitir o artigo, o termo é um substantivo.
+  - *Teste Diagnóstico do Artigo:* Para certificar com rapidez se uma palavra atua como substantivo, verifica-se a possibilidade de antepor-lhe mentalmente um artigo definido ou indefinido (*a certeza*, *a necessidade*, *a ampliação*, *a dúvida*). Se admitir o artigo, o termo é um substantivo.
 2. **Adjetivo:** Expressa característica, qualidade ou estado atribuído a um substantivo (*apto a*, *responsável por*, *furioso com*, *propenso a/para*, *imune a/de*, *contrário a*, *capaz de*, *ávido por/de*, *sensível a*, *inútil para/a*, *desejoso de*, *curioso por/para/de*, *avesso a/em*, *receoso de/em*, *passível de*, *suscetível a*, *sujeito a*, *eficaz em*, *restrito a*, *inconsciente de*, *necessário a*, *relacionado com/a*).
 3. **Advérbio:** Modifica verbo, adjetivo ou outro advérbio, exprimindo circunstância; quando possui base nominal ou temporal/espacial relacional, comanda complemento preposicionado (*longe de*, *perto de*, *depois de*).
 
@@ -135,17 +133,17 @@ Cada uma das três classes desempenha o papel de termo regente projetando exigê
 
 ---
 
-## Omissão Indevida de Preposição em Orações Completivas Nominais
+### Omissão Indevida de Preposição em Orações Completivas Nominais
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Quando o complemento de um substantivo ou adjetivo se estrutura sob a forma de oração subordinada substantiva completiva nominal introduzida pela conjunção integrante *que*, a preposição regida pelo nome **não pode ser omitida** na norma-padrão.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Na modalidade oral coloquial, os falantes frequentemente suprimem a preposição *de* antes de orações iniciadas por *que* (ex.: *"tenho certeza que..."*, *"não há dúvida que..."*, *"a sensação que estamos..."*). Em provas de concurso público (como explorado por Instituto AOCP, FCC e CEBRASPE), a supressão dessa preposição é classificada rigorosamente como **erro de regência nominal**. Nomes como *dúvida*, *certeza*, *necessidade* e *sensação* exigem a construção com a preposição expressa: *de que*.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Incorreto (vício coloquial):* *Não há dúvida que o progresso trará benefícios.*
 - *Correto (norma culta):* *Não há dúvida **de que** o progresso trará benefícios.*
@@ -159,17 +157,17 @@ Na modalidade oral coloquial, os falantes frequentemente suprimem a preposição
 
 ---
 
-## Pluralidade e Dupla Regência Nominal sem Alteração de Sentido
+### Pluralidade e Dupla Regência Nominal sem Alteração de Sentido
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A dupla ou múltipla regência nominal ocorre quando um mesmo nome admite ser complementado por duas ou mais preposições distintas consagradas pela norma culta, mantendo a plena correção gramatical e, em regra geral, **sem acarretar modificação de sentido**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Diferentemente da regência verbal — na qual a alteração de preposição frequentemente altera a transitividade e muda o significado do verbo (ex.: *assistir o filme* vs. *assistir ao filme*) —, na regência nominal a variação prepositiva é tratada pelos gramáticos de modo uniforme e flexível. As bancas examinadoras cobram o conhecimento das preposições alternativas para verificar se o candidato reconhece construções cultas legítimas além daquela consagrada na linguagem informal.
 
-### Inventário de Regências Múltiplas Consolidadas no Grupo
+#### Inventário de Regências Múltiplas Consolidadas no Grupo
 
 | Nome Regente | Classe Morfológica | Preposições Autorizadas | Exemplos Validados |
 |:------------------------- |:-----------------: |:----------------------------------- |:----------------------------------------------------------------------------- |
@@ -194,72 +192,70 @@ Diferentemente da regência verbal — na qual a alteração de preposição fre
 
 ---
 
-## Intersecção entre Regência Nominal, Determinação Semântica e Crase
+### Intersecção entre Regência Nominal, Determinação Semântica e Crase
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A presença ou ausência de artigo definido acoplado à preposição exigida pelo nome não altera a regência sintática, mas determina se o termo regido possui sentido genérico (sem artigo) ou sentido específico/determinado (com artigo). Quando a preposição exigida for `a` e o termo regido for feminino determinado pelo artigo `a`, a fusão resulta obrigatoriamente no acento grave indicativo de crase (`a` + `a` = `à`).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Preposição Diante de Substantivos no Plural (Generalização vs. Determinação):**
- - *Preposição Simples no Singular (`a` + substantivo plural):* Expressa sentido genérico. Ex.: *ter aversão a pessoas superficiais* (refere-se a quaisquer pessoas; não há artigo, logo não há crase).
- - *Preposição Aglutinada com Artigo Plural (`às` + substantivo plural):* Expressa sentido determinado/específico. Ex.: *ter aversão às pessoas superficiais* (`a` prep. + `as` art. = crase obrigatória, especificando o grupo de indivíduos).
+  - *Preposição Simples no Singular (`a` + substantivo plural):* Expressa sentido genérico. Ex.: *ter aversão a pessoas superficiais* (refere-se a quaisquer pessoas; não há artigo, logo não há crase).
+  - *Preposição Aglutinada com Artigo Plural (`às` + substantivo plural):* Expressa sentido determinado/específico. Ex.: *ter aversão às pessoas superficiais* (`a` prep. + `as` art. = crase obrigatória, especificando o grupo de indivíduos).
 2. **Preposição Diante de Pronomes Possessivos Femininos:**
- - O artigo antes de pronome possessivo adjetivo é facultativo. Logo, diante de *nossas reservas*, é correto empregar a preposição simples (*ampliação de nossas reservas*) ou a preposição contraída com artigo (*ampliação das nossas reservas*, em que *das* = *de* + *as*).
+  - O artigo antes de pronome possessivo adjetivo é facultativo. Logo, diante de *nossas reservas*, é correto empregar a preposição simples (*ampliação de nossas reservas*) ou a preposição contraída com artigo (*ampliação das nossas reservas*, em que *das* = *de* + *as*).
 3. **Formação de Crase por Regência Nominal em Substituições:**
- - Ao trocar uma locução como *"para a pobreza"* pela regência do adjetivo *sensível* (que exige `a`), deve-se preservar o artigo existente na frase original: `sensível a` + `a pobreza` = *sensível à pobreza*.
- - Ao estruturar *combate a* + *a pobreza*, tem-se obrigatoriamente *combate à pobreza*.
+  - Ao trocar uma locução como *"para a pobreza"* pela regência do adjetivo *sensível* (que exige `a`), deve-se preservar o artigo existente na frase original: `sensível a` + `a pobreza` = *sensível à pobreza*.
+  - Ao estruturar *combate a* + *a pobreza*, tem-se obrigatoriamente *combate à pobreza*.
 4. **Combinação Prepositiva Masculina:**
- - Adjetivo que exige `a` diante de substantivo masculino determinado: *necessários a* + *o bom andamento* = *necessários ao bom andamento*.
+  - Adjetivo que exige `a` diante de substantivo masculino determinado: *necessários a* + *o bom andamento* = *necessários ao bom andamento*.
 
 ---
 
-## Regência Nominal em Períodos Complexos, Pronomes Relativos e Contexto
+### Regência Nominal em Períodos Complexos, Pronomes Relativos e Contexto
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A validação de regência em períodos longos exige postura analítica ativa ("farejador de preposições"), subordinando a seleção preposicional ao contexto conceitual do enunciado e aplicando testes sintáticos de reordenação direta quando houver pronomes relativos.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Dependência do Contexto Semântico-Conceitual:** A regência não ocorre no vácuo. O termo *comum*, por exemplo, admite a preposição `em` em sentido geral circunstancial (*isso é comum em festas*), mas no contexto técnico de flexão gramatical de substantivos rege estritamente as preposições `a` ou `de` (*substantivo comum a/de dois gêneros*), sendo agramatical usar *comum em* nesse domínio.
 2. **Pronomes Relativos Preposicionados:** Quando o período traz orações subordinadas adjetivas com pronomes relativos (*do qual*, *ao qual*, *em que*), deve-se transpor a oração para a ordem direta, substituindo o pronome pelo seu antecedente. Se o verbo ou nome subordinador não pedir preposição, o pronome relativo deve ser puro.
- - *Exemplo analisado:* *"...no grupo [...] do qual não pediu para integrar."*
- - *Ordem direta:* *Não pediu para integrar [o grupo].*
- - *Diagnóstico:* O verbo *integrar* é VTD (não rege preposição). Logo, a forma correta é *o qual não pediu para integrar* (sem *de*).
+  - *Exemplo analisado:* *"...no grupo [...] do qual não pediu para integrar."*
+  - *Ordem direta:* *Não pediu para integrar [o grupo].*
+  - *Diagnóstico:* O verbo *integrar* é VTD (não rege preposição). Logo, a forma correta é *o qual não pediu para integrar* (sem *de*).
 3. **Precisão Semântica das Preposições:** Distinguir pares parônimos:
- - **Sobre:** Repercussão, incidência ou tema (*impacto sobre o público*).
- - **Sob:** Posição inferior física, tutela ou subordinação (*sob a ponte*, *sob vigilância*).
+  - **Sobre:** Repercussão, incidência ou tema (*impacto sobre o público*).
+  - **Sob:** Posição inferior física, tutela ou subordinação (*sob a ponte*, *sob vigilância*).
 
 - **Gera procedimento:**
 
 ---
 
-## Paralelismo Sintático nas Bancas: Escolha de Estilo vs. Erro Gramatical
+### Paralelismo Sintático nas Bancas: Escolha de Estilo vs. Erro Gramatical
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O paralelismo sintático consiste na simetria estrutural na coordenação de termos. Na tradição gramatical e em bancas como a FGV, a quebra de simetria para conferir ênfase é um recurso estilístico plenamente legítimo; já no CEBRASPE/CESPE, a quebra costuma ser tratada como vício formal de redação. O único caso em que a quebra de paralelismo configura **erro gramatical absoluto** em qualquer banca é nas correlações prepositivas fixas (*de... a...* vs. *da... à...*).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Regência do Verbo Preferir (VTDI) e Inversão de Complementos:**
- - Estrutura padrão: *preferir [Objeto Direto sem prep.] a [Objeto Indireto com prep. `a`]*.
- - A FGV e os gramáticos aceitam a inversão da ordem dos complementos no último membro coordenado para criar destaque expressivo, isolando o termo antecipado por vírgula: *"...preferir o lazer ao descanso, o amor ao interesse e [à aventura] (OI antecipado), [a tranquilidade] (OD)."*
+  - Estrutura padrão: *preferir [Objeto Direto sem prep.] a [Objeto Indireto com prep. `a`]*.
+  - A FGV e os gramáticos aceitam a inversão da ordem dos complementos no último membro coordenado para criar destaque expressivo, isolando o termo antecipado por vírgula: *"...preferir o lazer ao descanso, o amor ao interesse e [à aventura] (OI antecipado), [a tranquilidade] (OD)."*
 2. **Confronto de Bancas:**
- - **FGV:** Prioriza a correção estrita da regência e da pontuação, tolerando assimetrias de ordem como escolhas estilísticas do autor.
- - **CEBRASPE:** Exige paralelismo rígido em itens de reescrita, penalizando assimetrias como desvios sintáticos.
+  - **FGV:** Prioriza a correção estrita da regência e da pontuação, tolerando assimetrias de ordem como escolhas estilísticas do autor.
+  - **CEBRASPE:** Exige paralelismo rígido em itens de reescrita, penalizando assimetrias como desvios sintáticos.
 3. **O Erro Normativo Inconteste nas Correlações:**
- - *Incorreto (quebra de paralelismo gramatical):* *Ele estuda de terça à quinta-feira.* (Mistura indevida de preposição pura `de` com preposição + artigo `à`).
- - *Correto (simetria pura):* *Ele estuda de terça a quinta-feira.* (Apenas preposições, sem crase).
- - *Correto (simetria com artigo):* *Ele estuda da terça à quinta-feira.* (Preposições + artigos, com crase).
+  - *Incorreto (quebra de paralelismo gramatical):* *Ele estuda de terça à quinta-feira.* (Mistura indevida de preposição pura `de` com preposição + artigo `à`).
+  - *Correto (simetria pura):* *Ele estuda de terça a quinta-feira.* (Apenas preposições, sem crase).
+  - *Correto (simetria com artigo):* *Ele estuda da terça à quinta-feira.* (Preposições + artigos, com crase).
 
 - **Contrasta:** Postura FGV versus Postura CEBRASPE
 
 - **Termos associados:**
-
----
 
 ---
 
@@ -277,17 +273,15 @@ O paralelismo sintático consiste na simetria estrutural na coordenação de ter
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Roteiro Geral do "Farejador de Regência"
+### Roteiro Geral do "Farejador de Regência"
 
-### Objetivo
+#### Objetivo
 
 Identificar desvios de regência nominal e verbal em períodos extensos e complexos de bancas de concurso.
 
-### Sequência Operacional
+#### Sequência Operacional
 
 1. **Localizar e Sublinhar os Termos Regentes:** Percorrer a frase inspecionando cada substantivo, adjetivo, advérbio ou verbo subordinador.
 2. **Isolar o Sintagma Preposicionado:** Delimitar o complemento introduzido por preposição e verificar para qual palavra ele aponta.
@@ -298,13 +292,13 @@ Identificar desvios de regência nominal e verbal em períodos extensos e comple
 
 ---
 
-## Teste Diagnóstico do Artigo para Reconhecimento de Substantivo
+### Teste Diagnóstico do Artigo para Reconhecimento de Substantivo
 
-### Objetivo
+#### Objetivo
 
 Diferenciar rapidamente um substantivo de um adjetivo ou verbo para aplicar a regra de complementação nominal.
 
-### Sequência Operacional
+#### Sequência Operacional
 
 1. Isolar a palavra regente sob dúvida (*certeza*, *necessidade*, *ampliação*, *aversão*).
 2. Antepor mentalmente ou por escrito um artigo definido (`o`, `a`) ou indefinido (`um`, `uma`).
@@ -312,37 +306,35 @@ Diferenciar rapidamente um substantivo de um adjetivo ou verbo para aplicar a re
 
 ---
 
-## Validação de Regência com Pronomes Relativos (Método da Ordem Direta)
+### Validação de Regência com Pronomes Relativos (Método da Ordem Direta)
 
-### Objetivo
+#### Objetivo
 
 Eliminar preposições indevidas inseridas antes de pronomes relativos em orações adjetivas subordinadas.
 
-### Sequência Operacional
+#### Sequência Operacional
 
 1. Identificar o pronome relativo precedido de preposição (*do qual*, *ao qual*, *em que*).
 2. Localizar o substantivo antecedente que o pronome substitui.
 3. Reorganizar a oração subordinada na **ordem direta** (`Sujeito + Verbo + Complemento`), substituindo o pronome pelo substantivo antecedente.
 4. Analisar a exigência sintática do verbo ou nome:
 
- - Se o termo não exigir preposição (ex.: VTD) $\rightarrow$ a preposição deve ser eliminada.
+  - Se o termo não exigir preposição (ex.: VTD) $\rightarrow$ a preposição deve ser eliminada.
 
 ---
 
-## Protocolo de Avaliação de Dupla Regência e Crase
+### Protocolo de Avaliação de Dupla Regência e Crase
 
-### Objetivo
+#### Objetivo
 
 Julgar assertivas de bancas que afirmam que a substituição de preposições causaria "prejuízo à correção gramatical" ou "alteração de sentido".
 
-### Sequência Operacional
+#### Sequência Operacional
 
 1. Identificar o par de preposições em análise (*relacionada com* vs. *relacionada a*; *intenção de* vs. *intenção em*).
 2. Confirmar se o termo integra a lista canônica de dupla regência.
 3. Verificar a fusão gráfica: se a nova preposição for `a` e o termo regido for feminino determinado, confirmar a aposição do acento grave (*relacionada à disciplina*).
 4. Julgar falsas as assertivas que declarem prejuízo gramatical ou semântico na troca autorizada.
-
----
 
 ---
 
@@ -358,11 +350,9 @@ Julgar assertivas de bancas que afirmam que a substituição de preposições ca
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Bateria de Fixação Teórico-Prática (Itens A a I)
+### Bateria de Fixação Teórico-Prática (Itens A a I)
 
 - **Item A:** *"A entidade responsável _____ fazer o estudo..."* $\rightarrow$ **por** (*responsável* = Adjetivo).
 - **Item B:** *"Depois _____ um longo período..."* $\rightarrow$ **de** (*depois* = Advérbio).
@@ -376,29 +366,29 @@ Julgar assertivas de bancas que afirmam que a substituição de preposições ca
 
 ---
 
-## Questão 01: Objetiva Concursos (2021) — Pref. de Horizontina/RS
+### Questão 01: Objetiva Concursos (2021) — Pref. de Horizontina/RS
 
 - **Itens Analisados:**
- - I. *Ele foi contrário ao pedido.* (Correto: *contrário* rege `a` + artigo `o` = `ao`).
- - II. *Foi capaz de ações terríveis.* (Correto: *capaz* rege `de`).
- - III. *Era um substantivo comum em dois gêneros.* (Incorreto: no contexto gramatical, *comum* rege `a` ou `de`, refutando `em`).
+  - I. *Ele foi contrário ao pedido.* (Correto: *contrário* rege `a` + artigo `o` = `ao`).
+  - II. *Foi capaz de ações terríveis.* (Correto: *capaz* rege `de`).
+  - III. *Era um substantivo comum em dois gêneros.* (Incorreto: no contexto gramatical, *comum* rege `a` ou `de`, refutando `em`).
 - **Gabarito Consolidado:** **Letra D (Somente os itens I e II).**
 
 ---
 
-## Questão 02: Cesgranrio (2021) — IBGE — Supervisor de Pesquisas
+### Questão 02: Cesgranrio (2021) — IBGE — Supervisor de Pesquisas
 
 - **Análise das Alternativas:**
- - **A (Correta):** *Os pobres são ávidos por melhores condições de vida.* (*Ávido* aceita dupla regência: `por` ou `de`).
- - **B (Incorreta):** *desejo com* $\rightarrow$ o correto é *desejo de / por*.
- - **C (Incorreta):** *orgulho em* $\rightarrow$ o correto é *orgulho de / por*.
- - **D (Incorreta):** *sensível para a pobreza* $\rightarrow$ *sensível* rege `a`, exigindo crase: *sensível à pobreza*.
- - **E (Incorreta):** *inúteis para com* $\rightarrow$ o correto é *inúteis para / a*.
+  - **A (Correta):** *Os pobres são ávidos por melhores condições de vida.* (*Ávido* aceita dupla regência: `por` ou `de`).
+  - **B (Incorreta):** *desejo com* $\rightarrow$ o correto é *desejo de / por*.
+  - **C (Incorreta):** *orgulho em* $\rightarrow$ o correto é *orgulho de / por*.
+  - **D (Incorreta):** *sensível para a pobreza* $\rightarrow$ *sensível* rege `a`, exigindo crase: *sensível à pobreza*.
+  - **E (Incorreta):** *inúteis para com* $\rightarrow$ o correto é *inúteis para / a*.
 - **Gabarito Consolidado:** **Letra A.**
 
 ---
 
-## Questão 03: Vunesp (2021) — SES-PB — Auxiliar Administrativo
+### Questão 03: Vunesp (2021) — SES-PB — Auxiliar Administrativo
 
 - **Proposta:** Substituir *"enxeridos loucos pela intimidade das pessoas"*.
 - **Análise:** *Desejosos* rege `de` (A incorreta); *curiosos* rege `por/para/de`, nunca `com` (B incorreta); *avessos* rege `a/em` (C incorreta); *receosos* rege `de/em` (D incorreta); *ávidos por* rege legitimamente `por` ou `de`.
@@ -406,7 +396,7 @@ Julgar assertivas de bancas que afirmam que a substituição de preposições ca
 
 ---
 
-## Questão 04: Vunesp (2019) — Pref. de Marília/SP — Arquiteto
+### Questão 04: Vunesp (2019) — Pref. de Marília/SP — Arquiteto
 
 - **Proposta:** Substituir *"apresentam risco de rompimento"*.
 - **Análise:** Adjetivos *propensas*, *sensíveis*, *suscetíveis* e *sujeitas* regem todos a preposição `a`. O único adjetivo que mantém a regência com `de` e preserva o sentido é *passíveis de*.
@@ -414,7 +404,7 @@ Julgar assertivas de bancas que afirmam que a substituição de preposições ca
 
 ---
 
-## Questão 05: Vunesp (2020) — FITO — Auxiliar de Administração
+### Questão 05: Vunesp (2020) — FITO — Auxiliar de Administração
 
 - **Proposta:** Substituir *"maneiras eficazes de combater a pobreza"*.
 - **Análise Composta:** *Eficazes* rege `em` (*eficazes no combate*); *combate* rege `a`, exigindo crase com o artigo de *pobreza* (*combate à pobreza*).
@@ -422,7 +412,7 @@ Julgar assertivas de bancas que afirmam que a substituição de preposições ca
 
 ---
 
-## Questão 06: Instituto AOCP — UFS — Fisioterapeuta
+### Questão 06: Instituto AOCP — UFS — Fisioterapeuta
 
 - **Enunciado:** Em *"E não há dúvida que o progresso..."*, NÃO há atendimento à norma quanto a:
 - **Resolução:** O substantivo *dúvida* exige a preposição *de* antes de oração subordinada (*dúvida de que*). Sua falta constitui desvio de regência nominal.
@@ -430,19 +420,19 @@ Julgar assertivas de bancas que afirmam que a substituição de preposições ca
 
 ---
 
-## Questão 07: FCC — DPE-RR — Auxiliar Administrativo
+### Questão 07: FCC — DPE-RR — Auxiliar Administrativo
 
 - **Análise das Alternativas:**
- - **A (Correta):** *faz alusão a um programa* (*alusão* rege `a`).
- - **B (Incorreta):** *impacto sob o público* $\rightarrow$ o correto é *impacto sobre*.
- - **C (Incorreta):** *restrita de poucos* $\rightarrow$ o correto é *restrita a*.
- - **D (Incorreta):** *aprovação sobre o programa* $\rightarrow$ o correto é *aprovação do / ao*.
- - **E (Incorreta):** *viabilidade por levar* $\rightarrow$ o correto é *viabilidade de / em*.
+  - **A (Correta):** *faz alusão a um programa* (*alusão* rege `a`).
+  - **B (Incorreta):** *impacto sob o público* $\rightarrow$ o correto é *impacto sobre*.
+  - **C (Incorreta):** *restrita de poucos* $\rightarrow$ o correto é *restrita a*.
+  - **D (Incorreta):** *aprovação sobre o programa* $\rightarrow$ o correto é *aprovação do / ao*.
+  - **E (Incorreta):** *viabilidade por levar* $\rightarrow$ o correto é *viabilidade de / em*.
 - **Gabarito Consolidado:** **Letra A.**
 
 ---
 
-## Questão 08: FCC — Pref. de Manaus — Assistente de TI
+### Questão 08: FCC — Pref. de Manaus — Assistente de TI
 
 - **Enunciado:** *"É difícil ignorar a sensação........ estamos sendo vigiados..."*
 - **Resolução:** O termo regente é o substantivo *sensação*, que exige a preposição *de* introduzindo a completiva nominal (*sensação de que*).
@@ -450,19 +440,19 @@ Julgar assertivas de bancas que afirmam que a substituição de preposições ca
 
 ---
 
-## Questão 09: FGV — TJ-SC — Odontólogo
+### Questão 09: FGV — TJ-SC — Odontólogo
 
 - **Análise das Alternativas:**
- - **A (Incorreta):** *com o que discordava* $\rightarrow$ *discordar* rege `de` (*de que discordava*).
- - **B (Incorreta):** *do qual não pediu para integrar* $\rightarrow$ *integrar* é VTD (*o qual*).
- - **C (Incorreta):** *aonde trabalhar* $\rightarrow$ *trabalhar* exige *onde*; *prioridade à locais* tem crase indevida antes de palavra masculina plural.
- - **D (Incorreta):** *inconsciente com* $\rightarrow$ *inconsciente* rege `de` (*inconsciente da limpeza*).
- - **E (Correta):** *"O regulamento possibilita conseguir-se um dia preferir o lazer ao descanso, o amor ao interesse e à aventura, a tranquilidade."* (Verbo *preferir* VTDI estruturado com inversão sintática no último par e vírgula isolando o OI antecipado).
+  - **A (Incorreta):** *com o que discordava* $\rightarrow$ *discordar* rege `de` (*de que discordava*).
+  - **B (Incorreta):** *do qual não pediu para integrar* $\rightarrow$ *integrar* é VTD (*o qual*).
+  - **C (Incorreta):** *aonde trabalhar* $\rightarrow$ *trabalhar* exige *onde*; *prioridade à locais* tem crase indevida antes de palavra masculina plural.
+  - **D (Incorreta):** *inconsciente com* $\rightarrow$ *inconsciente* rege `de` (*inconsciente da limpeza*).
+  - **E (Correta):** *"O regulamento possibilita conseguir-se um dia preferir o lazer ao descanso, o amor ao interesse e à aventura, a tranquilidade."* (Verbo *preferir* VTDI estruturado com inversão sintática no último par e vírgula isolando o OI antecipado).
 - **Gabarito Consolidado:** **Letra E.**
 
 ---
 
-## Bateria CEBRASPE (Questões 10 a 14)
+### Bateria CEBRASPE (Questões 10 a 14)
 
 - **Q10 (TJ-ES):** O emprego de "de" em "de que estão dominando" justifica-se por "sensação". $\rightarrow$ **Certo.**
 - **Q11 (DETRAN-ES):** A preposição "a" em "ao uso" e "ao transporte" é obrigatória por regência de "alternativas". $\rightarrow$ **Certo** *(com ressalva crítica da professora quanto ao termo na L. 11 atuar como adjetivo)*.
@@ -472,103 +462,95 @@ Julgar assertivas de bancas que afirmam que a substituição de preposições ca
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Macete do Caderno de Regência Nominal
+### O Macete do Caderno de Regência Nominal
 
 - Como a regência nominal decorre de convenção lexical e compreende centenas de vocábulos, a melhor estratégia de estudo é manter um caderno dedicado de anotações. Ao errar ou hesitar em um vocábulo em questões de concurso, registre imediatamente o nome acompanhado de suas preposições regidas e revise periodicamente.
 
 ---
 
-## Postura Antivício: Não Confiar Cegamente na Eufonia
+### Postura Antivício: Não Confiar Cegamente na Eufonia
 
 - Jamais escolha a preposição com base apenas no "que soa melhor ao ouvido". A linguagem falada informal consagra preposições únicas ou incorretas (como *acostumado com* ou *inconsciente com*). Sublinhe o termo e aplique o padrão da norma culta dicionarizada.
 
 ---
 
-## Agrupamento Mnemônico de Adjetivos Regentes de "A"
+### Agrupamento Mnemônico de Adjetivos Regentes de "A"
 
 - Memorize em bloco a convergência de adjetivos relacionais que regem a preposição `a`: *contrário a*, *sensível a*, *propenso a*, *suscetível a*, *sujeito a*, *avesso a*, *restrito a*, *necessário a*. Isso permite descartar rapidamente alternativas erradas em provas de múltipla escolha.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## O Erro de Reprovar a Preposição Culta por Desconhecimento
+### O Erro de Reprovar a Preposição Culta por Desconhecimento
 
 - **Erro:** O candidato habituado a *acostumado com* julga errada a frase que traz *acostumado a*.
 - **Como Evitar:** Lembrar que a norma-padrão consagra múltiplas regências para adjetivos e substantivos comuns.
 
 ---
 
-## Omissão de Preposição diante de Orações Subordinadas
+### Omissão de Preposição diante de Orações Subordinadas
 
 - **Erro:** Considerar correto *"tenho certeza que..."* ou *"não há dúvida que..."*.
 - **Como Evitar:** Exigir a presença da preposição *de* (*certeza de que*, *dúvida de que*, *sensação de que*).
 
 ---
 
-## Pegadinha de Falsa Concessão do CEBRASPE
+### Pegadinha de Falsa Concessão do CEBRASPE
 
 - **Armadilha:** A banca afirma: *"A substituição de X por Y, embora mantivesse o sentido, prejudicaria a correção gramatical"*.
 - **Como Evitar:** Em casos de dupla regência legítima (*relacionada com / a*, *intenção de / em*), a correção **não** é prejudicada. A assertiva deve ser julgada como **Errada**.
 
 ---
 
-## Confusão entre Preposição Pura e Crase Diante de Plural
+### Confusão entre Preposição Pura e Crase Diante de Plural
 
 - **Erro:** Exigir crase na preposição `a` singular diante de palavra plural (*aversão a pessoas*).
 - **Regra:** Se a letra `a` estiver no singular antes de plural, trata-se de preposição simples com sentido genérico (sem crase). A crase só ocorre se houver fusão com o artigo plural `as` (*às pessoas*), especificando o substantivo.
 
 ---
 
-## Confusão Semântica entre "Sob" e "Sobre"
+### Confusão Semântica entre "Sob" e "Sobre"
 
 - **Erro:** Empregar *impacto sob a sociedade*.
 - **Regra:** O impacto incide *sobre* (por cima/ação direta). *Sob* indica subordinação ou posição física inferior (*sob a mesa*).
 
 ---
 
-## Quebra de Paralelismo em Correlações Fixas
+### Quebra de Paralelismo em Correlações Fixas
 
 - **Erro:** *Ele atende de segunda à sexta.*
 - **Regra:** A correlação exige simetria absoluta: ou usa apenas preposição (*de segunda a sexta* - sem crase) ou usa preposição + artigo (*da segunda à sexta* - com crase).
 
 ---
 
----
-
 ## Glossário operacional
 
-## Regência Nominal
+### Regência Nominal
 
 Relação sintática de subordinação em que um nome regente (substantivo, adjetivo ou advérbio) comanda um complemento preposicionado obrigatório para integrar seu sentido.
 
-## Termo Regente Nominal
+### Termo Regente Nominal
 
 Vocábulo nuclear de natureza nominal que projeta a exigência preposicional na oração.
 
-## Oração Completiva Nominal
+### Oração Completiva Nominal
 
 Oração subordinada substantiva que exerce a função de complemento nominal de um substantivo ou adjetivo da oração principal, introduzida por preposição obrigatória + conjunção integrante *que* (*de que*).
 
-## Dupla / Múltipla Regência Nominal
+### Dupla / Múltipla Regência Nominal
 
 Propriedade de certos nomes de admitirem facultativamente duas ou mais preposições consagradas pelo padrão culto, preservando a correção e a equivalência semântica.
 
-## Paralelismo Sintático
+### Paralelismo Sintático
 
 Harmonia estrutural e simetria na coordenação de termos ou orações de idêntica função. Constitui recurso de estilo, exceto em correlações prepositivas fixas (*de... a...* vs. *da... à...*), nas quais a quebra é erro normativo.
 
-## Determinante Semântico
+### Determinante Semântico
 
 Função exercida pelo artigo definido ao restringir e particularizar o substantivo no discurso, diferenciando o sentido específico (com artigo/crase) do sentido genérico (preposição simples).
-
----
 
 ---
 

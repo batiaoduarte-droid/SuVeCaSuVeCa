@@ -23,9 +23,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 ### Como aplicar neste tema
 
 1. Localizar o verbo principal ou a locução verbal passiva ('ser + particípio') para determinar a voz da oração e a natureza da predicação.
-2. 1. Isole o sintagma preposicionado sob exame e analise seu contexto relacional na oração.
-3. 2. Verifique se a oração apresenta locução passiva analítica ('ser + particípio') ou oração reduzida de particípio.
-4. 3. Se houver estrutura passiva com preposição 'por' ou 'de', aplique o Teste de Transposição Ativa: se o termo se converter perfeitamente no sujeito agente da ativa, classifique como Agente da Passiva (AP); se indicar motivo/causa sem capacidade de agentividade, classifique como Adjunto Adverbial de Causa.
+2. Isole o sintagma preposicionado sob exame e analise seu contexto relacional na oração.
+3. Verifique se a oração apresenta locução passiva analítica ('ser + particípio') ou oração reduzida de particípio.
+4. Se houver estrutura passiva com preposição 'por' ou 'de', aplique o Teste de Transposição Ativa: se o termo se converter perfeitamente no sujeito agente da ativa, classifique como Agente da Passiva (AP); se indicar motivo/causa sem capacidade de agentividade, classifique como Adjunto Adverbial de Causa.
 
 ### Testes decisivos
 
@@ -47,7 +47,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - **Vozes Verbais:** Reconhecimento da voz ativa e da voz passiva analítica (formada pela locução `verbo auxiliar ser + verbo principal no particípio`).
 - **Complementos Verbais:** Conceitos prévios de Objeto Direto (OD) e Objeto Indireto (OI).
 
-### Mapa Conceitual Integrado
+#### Mapa Conceitual Integrado
 
 ```text
 TERMOS INTEGRANTES DA ORAÇÃO
@@ -78,17 +78,15 @@ TERMOS INTEGRANTES DA ORAÇÃO
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Termos Integrantes da Oração e a Sintaxe de Complementação
+### Termos Integrantes da Oração e a Sintaxe de Complementação
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Os termos integrantes da oração são estruturas sintáticas obrigatórias destinadas a integrar e preencher lacunas de sentido de verbos e nomes transitivos, ou a indicar o praticante da ação verbal na voz passiva analítica.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Na organização sintática da oração, os termos dividem-se em essenciais (sujeito e predicado), integrantes e acessórios. Os termos integrantes compreendem:
 
@@ -100,48 +98,48 @@ A função nuclear dos termos integrantes é satisfazer exigências sintático-s
 
 ---
 
-## Complemento Nominal: Conceito, Tríade de Nomes e Exigência Preposicional
+### Complemento Nominal: Conceito, Tríade de Nomes e Exigência Preposicional
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O Complemento Nominal (CN) é o termo sintático obrigatoriamente preposicionado que completa o sentido de um nome contido na oração, abrangendo sob o rótulo de "nome" a tríade: **substantivo**, **adjetivo** ou **advérbio**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Definição Operacional de Nome:** Para a sintaxe de complementação, "nome" define-se operacionalmente por exclusão: é tudo aquilo que não é verbo (substantivos, adjetivos e advérbios).
 - **Obrigatoriedade da Preposição:** Não existe Complemento Nominal desprovido de preposição. O conectivo pode ser puro (*de*, *a*, *em*, *com*, *contra*) ou contraído com artigos (*da*, *à*, *ao*, *no*, etc.).
 - **Natureza do Núcleo do CN:** Na morfologia, o núcleo do Complemento Nominal é sempre um substantivo ou uma palavra/pronome com valor substantivo.
 - **Tríade de Classes Regentes (Destino da Seta):**
  1. **Substantivo (Geralmente Abstrato com Valor Passivo/Alvo):**
- * Exemplo: *O povo tinha necessidade **de alimentos**.* (*de alimentos* completa o substantivo *necessidade*).
- * Exemplo: *Tinha grande amor **à humanidade**.* (*à humanidade* completa o substantivo *amor*).
- * Exemplo: *A leitura **de livros** amplia conhecimentos.* (*de livros* completa o substantivo *leitura*).
+  * Exemplo: *O povo tinha necessidade **de alimentos**.* (*de alimentos* completa o substantivo *necessidade*).
+  * Exemplo: *Tinha grande amor **à humanidade**.* (*à humanidade* completa o substantivo *amor*).
+  * Exemplo: *A leitura **de livros** amplia conhecimentos.* (*de livros* completa o substantivo *leitura*).
  2. **Adjetivo:**
- * Exemplo: *Este remédio é prejudicial **à saúde**.* (*à saúde* completa o adjetivo *prejudicial*).
- * Exemplo: *Estava agradecido **a eles**.* (*a eles* completa o adjetivo *agradecido*).
- * Exemplo: *Ele é rico **em virtudes**.* (*em virtudes* completa o adjetivo *rico*).
+  * Exemplo: *Este remédio é prejudicial **à saúde**.* (*à saúde* completa o adjetivo *prejudicial*).
+  * Exemplo: *Estava agradecido **a eles**.* (*a eles* completa o adjetivo *agradecido*).
+  * Exemplo: *Ele é rico **em virtudes**.* (*em virtudes* completa o adjetivo *rico*).
  3. **Advérbio:**
- * Exemplo: *Agiu contrariamente **ao esperado**.* (*ao esperado* completa o advérbio *contrariamente*).
+  * Exemplo: *Agiu contrariamente **ao esperado**.* (*ao esperado* completa o advérbio *contrariamente*).
 
-### Critérios de reconhecimento
+#### Critérios de reconhecimento
 
 1. Localizar o sintagma preposicionado.
 2. Traçar a seta para o elemento antecedente imediato que exige a complementação.
 3. Comprovar que o elemento regente é substantivo, adjetivo ou advérbio.
 
-### Limites e restrições
+#### Limites e restrições
 
 O Complemento Nominal jamais completa verbos. Se o termo preposicionado completar um verbo, tratar-se-á de Objeto Indireto ou Adjunto Adverbial.
 
 ---
 
-## Agente da Passiva: Conceito, Voz Passiva Analítica e Regência
+### Agente da Passiva: Conceito, Voz Passiva Analítica e Regência
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O Agente da Passiva (AP) é o termo integrante da oração que indica quem ou o que pratica a ação verbal expressa por uma locução verbal na **voz passiva analítica** (`verbo auxiliar ser + particípio`).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Ambiente Sintático Estrito:** O Agente da Passiva ocorre tipicamente na voz passiva analítica. A fórmula composicional básica exige a presença do verbo auxiliar *ser* (ou análogo) conjugado seguido do particípio do verbo principal (ex.: *foi cercado*, *foi comemorada*, *foram lavadas*).
 - **Preposições Introdutórias:**
@@ -150,7 +148,7 @@ O Agente da Passiva (AP) é o termo integrante da oração que indica quem ou o 
 - **Comportamento Sintático no Método das Setas (Autonomia Sintática):** O Agente da Passiva **não aponta seta para ninguém** (representado na matriz sintática por um traço `—`). Ele não subordina nem completa um núcleo nominal ou verbal; atua como o sujeito semântico/agente que pratica a ação sofrida pelo sujeito paciente.
 - **Núcleo Morfológico:** É constituído por substantivo ou pronome substantivo.
 
-### Critérios de reconhecimento
+#### Critérios de reconhecimento
 
 1. Constatar a locução passiva (`ser + particípio`).
 2. Identificar a preposição introdutória (`por`/`de`).
@@ -160,13 +158,13 @@ O Agente da Passiva (AP) é o termo integrante da oração que indica quem ou o 
 
 ---
 
-## Matriz Morfossintática Comparativa: OD, OI, CN e Agente da Passiva
+### Matriz Morfossintática Comparativa: OD, OI, CN e Agente da Passiva
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A análise sintática rigorosa exige a dissociação metodológica entre a **função sintática** (o papel relacional exercido pelo termo na oração) e a **classe morfológica** (a natureza intrínseca da palavra que funciona como núcleo).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A matriz morfossintática "#ANOTAAÍ" integra os quatro termos integrantes preposicionados e não preposicionados, parametrizando-os por conceito, referente (direção da seta), obrigatoriedade de preposição e classe morfológica do núcleo:
 
@@ -177,27 +175,27 @@ A matriz morfossintática "#ANOTAAÍ" integra os quatro termos integrantes prepo
 | **Complemento Nominal (CN)** | Completa o nome | **Nome** *(Subst., Adj., Adv.)* | **Obrigatória** | Substantivo (ou pronome) | *João tem saudade da família.* |
 | **Agente da Passiva (AP)** | Pratica a ação na voz passiva | **Ninguém** *(`—` / $\emptyset$)* | **Obrigatória** *(`por` / `de`)* | Substantivo (ou pronome) | *João foi elogiado pela professora.* |
 
-### Insight morfossintático fundamental
+#### Insight morfossintático fundamental
 
 Todos os quatro termos (OD, OI, CN e AP) possuem núcleos morfológicos idênticos: **substantivos** ou **pronomes substantivos**. Portanto, a morfologia interna do termo não determina sua função sintática; a função é definida exclusivamente pela relação de dependência com o termo regente exterior (ou pela presença de voz passiva analítica).
 
 ---
 
-## Distinção Morfossintática: Complemento Nominal vs. Objeto Indireto
+### Distinção Morfossintática: Complemento Nominal vs. Objeto Indireto
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Embora o Objeto Indireto e o Complemento Nominal sejam ambos termos integrantes preposicionados com núcleos substantivos, distinguem-se categoricamente pela classe morfológica do termo regente para o qual apontam a seta sintática.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Ponto de Convergência (Semelhanças):**
 
 - **Ponto de Divergência (Diferença Decisiva):**
- - **Objeto Indireto (OI):** Aponta seta para um **verbo** (VTI ou VTDI). Exemplo: *O aluno **necessita** [verbo VTI] **de ajuda** [OI].*
- - **Complemento Nominal (CN):** Aponta seta para um **nome** (substantivo, adjetivo ou advérbio). Exemplo: *O aluno tem **necessidade** [substantivo] **de ajuda** [CN].*
+  - **Objeto Indireto (OI):** Aponta seta para um **verbo** (VTI ou VTDI). Exemplo: *O aluno **necessita** [verbo VTI] **de ajuda** [OI].*
+  - **Complemento Nominal (CN):** Aponta seta para um **nome** (substantivo, adjetivo ou advérbio). Exemplo: *O aluno tem **necessidade** [substantivo] **de ajuda** [CN].*
 
-### O Teste do Artigo para Validação do Regente
+#### O Teste do Artigo para Validação do Regente
 
 Quando houver dúvida se a palavra regente é um verbo conjugado ou um substantivo abstrato cognato, aplica-se a anteposição do artigo definido:
 
@@ -206,67 +204,65 @@ Quando houver dúvida se a palavra regente é um verbo conjugado ou um substanti
 
 ---
 
-## Distinção Crítica: Agente da Passiva vs. Adjunto Adverbial de Causa
+### Distinção Crítica: Agente da Passiva vs. Adjunto Adverbial de Causa
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A ocorrência da preposição *por* (ou contrações *pelo/pela*) acoplada a uma locução passiva com particípio não é garantia suficiente de Agente da Passiva; se o termo expressar o motivo/causa e falhar no teste de transposição ativa, tratar-se-á de um **Adjunto Adverbial de Causa**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 As bancas organizadoras exploram a homonímia estrutural para induzir o candidato ao erro. A diferenciação é dirimida pelo teste semântico de transposição:
 
 1. **Caso Autêntico de Agente da Passiva:**
- - Oração Passiva: *O trem foi filmado [pela TV].*
- - Teste da Voz Ativa: *A TV filmou o trem.*
- - Diagnóstico: A expressão *a TV* atua plenamente como sujeito agente animado/institucional da oração ativa $\rightarrow$ **Agente da Passiva**.
+  - Oração Passiva: *O trem foi filmado [pela TV].*
+  - Teste da Voz Ativa: *A TV filmou o trem.*
+  - Diagnóstico: A expressão *a TV* atua plenamente como sujeito agente animado/institucional da oração ativa $\rightarrow$ **Agente da Passiva**.
 2. **Caso de Falso Agente da Passiva (Adjunto Adverbial de Causa):**
- - Oração Passiva: *O menino foi elogiado [pela inteligência].*
- - Teste da Voz Ativa: *A inteligência elogiou o menino?* (Inadmissível semântica e logicamente; a inteligência não é o ser que elogia, mas sim o motivo pelo qual ele foi elogiado por alguém).
- - Diagnóstico: A expressão indica a causa da ação passiva $\rightarrow$ **Adjunto Adverbial de Causa**.
+  - Oração Passiva: *O menino foi elogiado [pela inteligência].*
+  - Teste da Voz Ativa: *A inteligência elogiou o menino?* (Inadmissível semântica e logicamente; a inteligência não é o ser que elogia, mas sim o motivo pelo qual ele foi elogiado por alguém).
+  - Diagnóstico: A expressão indica a causa da ação passiva $\rightarrow$ **Adjunto Adverbial de Causa**.
 
 ---
 
-## Agente da Passiva com Preposição "De" e Particípio Reduzido (Armadilha FGV/Cebraspe)
+### Agente da Passiva com Preposição "De" e Particípio Reduzido (Armadilha FGV/Cebraspe)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O Agente da Passiva pode ocorrer introduzido pela preposição *de* em orações com particípios reduzidos (com verbo auxiliar elíptico/implícito), sendo validado exclusivamente pelo critério de transformar-se no sujeito agente da ação verbal na voz ativa.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Estrutura com Auxiliar Implícito (Padrão FGV):**
- * Frase analisada: *O menino cercado [de curiosos] estava vivo.*
- * Decomposição sintática: *cercado* é uma oração reduzida de particípio (= *que estava cercado / que fora cercado*).
- * Teste da ativa: *Curiosos cercaram o menino.*
- * Validação: *de curiosos* é o praticante direto da ação de cercar $\rightarrow$ **Agente da Passiva** regido pela preposição *de*.
+  * Frase analisada: *O menino cercado [de curiosos] estava vivo.*
+  * Decomposição sintática: *cercado* é uma oração reduzida de particípio (= *que estava cercado / que fora cercado*).
+  * Teste da ativa: *Curiosos cercaram o menino.*
+  * Validação: *de curiosos* é o praticante direto da ação de cercar $\rightarrow$ **Agente da Passiva** regido pela preposição *de*.
 - **Contraste Crítico com Particípio Adjetivado:**
- * Frase analisada: *Passou aos filhos a herança recebida [dos pais].*
- * Dúvida recorrente: *dos pais* seria agente da passiva de *recebida*?
- * Teste da ativa: *Os pais receberam a herança?*
- * Validação: Não! Os pais não receberam a herança; eles a deixaram/transmitiram. Quem recebeu foram os filhos. A palavra *recebida* funciona meramente como adjetivo qualificador de *herança*, e *dos pais* indica o ponto de referência/origem que completa o adjetivo $\rightarrow$ **Complemento Nominal**.
+  * Frase analisada: *Passou aos filhos a herança recebida [dos pais].*
+  * Dúvida recorrente: *dos pais* seria agente da passiva de *recebida*?
+  * Teste da ativa: *Os pais receberam a herança?*
+  * Validação: Não! Os pais não receberam a herança; eles a deixaram/transmitiram. Quem recebeu foram os filhos. A palavra *recebida* funciona meramente como adjetivo qualificador de *herança*, e *dos pais* indica o ponto de referência/origem que completa o adjetivo $\rightarrow$ **Complemento Nominal**.
 
 ---
 
-## O Método Operacional dos Três Passos da Análise Sintática
+### O Método Operacional dos Três Passos da Análise Sintática
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Metodologia analítica estruturada em três passos lógicos e sequenciais fundamentados na referenciação por setas, projetada para eliminar o erro de classificação sintática em questões de concursos.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 O algoritmo dos 3 passos sistematiza o raciocínio sintático:
 
 1. **Passo 1 (Referenciação / Traçado da Seta):** Ler o enunciado, "conversar com a oração" e identificar a qual termo a expressão analisada se conecta semanticamente, desenhando a seta em direção ao referente.
 2. **Passo 2 (Morfologia do Referente):** Identificar a classe gramatical da palavra que recebeu a seta (verbo ou nome: substantivo, adjetivo, advérbio). Se a expressão não apontar seta para ninguém e indicar o executor em voz passiva analítica, constata-se a estrutura autônoma do agente.
 3. **Passo 3 (Consulta à Tabela Sintática):** Enquadrar a função a partir da combinação `Destino da Seta` + `Obrigatoriedade de Preposição`:
- * Seta para *Verbo* sem preposição obrigatória $\rightarrow$ **OD**.
- * Seta para *Verbo* com preposição obrigatória $\rightarrow$ **OI**.
- * Seta para *Nome* com preposição obrigatória $\rightarrow$ **CN**.
- * Sem seta + *Voz Passiva Analítica* + preposição (*por*/*de*) $\rightarrow$ **Agente da Passiva**.
-
----
+  * Seta para *Verbo* sem preposição obrigatória $\rightarrow$ **OD**.
+  * Seta para *Verbo* com preposição obrigatória $\rightarrow$ **OI**.
+  * Seta para *Nome* com preposição obrigatória $\rightarrow$ **CN**.
+  * Sem seta + *Voz Passiva Analítica* + preposição (*por*/*de*) $\rightarrow$ **Agente da Passiva**.
 
 ---
 
@@ -280,53 +276,49 @@ O algoritmo dos 3 passos sistematiza o raciocínio sintático:
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## O Algoritmo Operacional dos 3 Passos da Análise Sintática por Setas
+### O Algoritmo Operacional dos 3 Passos da Análise Sintática por Setas
 
-### Finalidade
+#### Finalidade
 
 Identificar de forma mecânica e sem margem de dúvida se um termo preposicionado atua como Objeto Indireto, Complemento Nominal ou Agente da Passiva.
 
-### Sequência Operacional Passo a Passo
+#### Sequência Operacional Passo a Passo
 
 1. **Passo 1 — Achar o Referente (Lançar a Seta):**
- * Dialogue com a frase para identificar a que palavra a expressão sublinhada se subordina semanticamente.
+  * Dialogue com a frase para identificar a que palavra a expressão sublinhada se subordina semanticamente.
 
- * *Atenção:* Se o termo estiver em uma locução passiva e expressar quem pratica a ação, observe que ele **não manda seta** para palavra alguma.
+  * *Atenção:* Se o termo estiver em uma locução passiva e expressar quem pratica a ação, observe que ele **não manda seta** para palavra alguma.
 2. **Passo 2 — Classificar Morfologicamente o Termo Regente (Destino da Seta):**
- * *Teste do Verbo:* Conjugável no tempo/modo $\rightarrow$ Verbo.
- * *Teste do Substantivo:* Admite anteposição de artigo (*a necessidade*, *o amor*, *a leitura*) $\rightarrow$ Substantivo.
- * *Teste do Adjetivo:* Aceita o encaixe de "que é / que está" (*remédio [que é] prejudicial*) $\rightarrow$ Adjetivo.
- * *Teste do Advérbio:* Modifica verbo indicando circunstância de modo (*agiu contrariamente*) $\rightarrow$ Advérbio.
+  * *Teste do Verbo:* Conjugável no tempo/modo $\rightarrow$ Verbo.
+  * *Teste do Substantivo:* Admite anteposição de artigo (*a necessidade*, *o amor*, *a leitura*) $\rightarrow$ Substantivo.
+  * *Teste do Adjetivo:* Aceita o encaixe de "que é / que está" (*remédio [que é] prejudicial*) $\rightarrow$ Adjetivo.
+  * *Teste do Advérbio:* Modifica verbo indicando circunstância de modo (*agiu contrariamente*) $\rightarrow$ Advérbio.
 3. **Passo 3 — Enquadrar na Matriz Sintática:**
- * Se a seta apontou para **Verbo** com preposição $\rightarrow$ Classifique como **Objeto Indireto (OI)**.
- * Se a seta apontou para **Nome** (substantivo, adjetivo, advérbio) com preposição $\rightarrow$ Classifique como **Complemento Nominal (CN)**.
- * Se **não mandou seta**, houver locução passiva (`ser + particípio`) e passar no teste de transposição ativa $\rightarrow$ Classifique como **Agente da Passiva (AP)**.
+  * Se a seta apontou para **Verbo** com preposição $\rightarrow$ Classifique como **Objeto Indireto (OI)**.
+  * Se a seta apontou para **Nome** (substantivo, adjetivo, advérbio) com preposição $\rightarrow$ Classifique como **Complemento Nominal (CN)**.
+  * Se **não mandou seta**, houver locução passiva (`ser + particípio`) e passar no teste de transposição ativa $\rightarrow$ Classifique como **Agente da Passiva (AP)**.
 
 ---
 
-## Teste de Transposição para Voz Ativa (Validação do Agente da Passiva)
+### Teste de Transposição para Voz Ativa (Validação do Agente da Passiva)
 
-### Finalidade
+#### Finalidade
 
 Diferenciar com 100% de precisão o autêntico Agente da Passiva de termos concorrentes (Adjunto Adverbial de Causa e Complemento Nominal de Particípio).
 
-### Sequência Operacional Passo a Passo
+#### Sequência Operacional Passo a Passo
 
 1. Isole o termo preposicionado introduzido por *por* (*pelo/pela*) ou *de*.
 2. Identifique o particípio da oração passiva (expresso em locução analítica ou em oração reduzida).
 3. Transponha a oração para a voz ativa, transformando o termo candidato a Agente da Passiva no **sujeito da oração ativa**:
- * *O trem foi filmado pela TV* $\rightarrow$ *A TV filmou o trem.* (Válido $\rightarrow$ **Agente da Passiva**).
- * *O castelo foi cercado pelos inimigos* $\rightarrow$ *Os inimigos cercaram o castelo.* (Válido $\rightarrow$ **Agente da Passiva**).
- * *O menino cercado de curiosos* $\rightarrow$ *Curiosos cercaram o menino.* (Válido $\rightarrow$ **Agente da Passiva**).
+  * *O trem foi filmado pela TV* $\rightarrow$ *A TV filmou o trem.* (Válido $\rightarrow$ **Agente da Passiva**).
+  * *O castelo foi cercado pelos inimigos* $\rightarrow$ *Os inimigos cercaram o castelo.* (Válido $\rightarrow$ **Agente da Passiva**).
+  * *O menino cercado de curiosos* $\rightarrow$ *Curiosos cercaram o menino.* (Válido $\rightarrow$ **Agente da Passiva**).
 4. Avalie o resultado semântico:
- * Se a conversão for anômala ou indicar a causa (*A inteligência elogiou o menino?* $\rightarrow$ Impossível) $\rightarrow$ Trata-se de **Adjunto Adverbial de Causa**.
- * Se o termo não realizou o ato (*Os pais receberam a herança?* $\rightarrow$ Incompatível) $\rightarrow$ Trata-se de **Complemento Nominal**.
-
----
+  * Se a conversão for anômala ou indicar a causa (*A inteligência elogiou o menino?* $\rightarrow$ Impossível) $\rightarrow$ Trata-se de **Adjunto Adverbial de Causa**.
+  * Se o termo não realizou o ato (*Os pais receberam a herança?* $\rightarrow$ Incompatível) $\rightarrow$ Trata-se de **Complemento Nominal**.
 
 ---
 
@@ -343,146 +335,147 @@ Diferenciar com 100% de precisão o autêntico Agente da Passiva de termos conco
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Tríade Canônica de Exemplos de Complemento Nominal
+### Tríade Canônica de Exemplos de Complemento Nominal
 
 1. **CN completando Substantivo:**
- * Frase: *O povo tinha necessidade **de alimentos**.*
- * Análise: *de alimentos* $\rightarrow$ aponta para *necessidade* (substantivo: *a necessidade*) $\rightarrow$ **Complemento Nominal** (núcleo morfológico: substantivo *alimentos*).
+  * Frase: *O povo tinha necessidade **de alimentos**.*
+  * Análise: *de alimentos* $\rightarrow$ aponta para *necessidade* (substantivo: *a necessidade*) $\rightarrow$ **Complemento Nominal** (núcleo morfológico: substantivo *alimentos*).
 2. **CN completando Adjetivo:**
- * Frase: *Este remédio é prejudicial **à saúde**.*
- * Análise: *à saúde* $\rightarrow$ aponta para *prejudicial* (adjetivo: *remédio que é prejudicial*) $\rightarrow$ **Complemento Nominal** (núcleo morfológico: substantivo *saúde*).
+  * Frase: *Este remédio é prejudicial **à saúde**.*
+  * Análise: *à saúde* $\rightarrow$ aponta para *prejudicial* (adjetivo: *remédio que é prejudicial*) $\rightarrow$ **Complemento Nominal** (núcleo morfológico: substantivo *saúde*).
 3. **CN completando Advérbio:**
- * Frase: *Agiu contrariamente **ao esperado**.*
- * Análise: *ao esperado* $\rightarrow$ aponta para *contrariamente* (advérbio de modo modificando *agiu*) $\rightarrow$ **Complemento Nominal**.
+  * Frase: *Agiu contrariamente **ao esperado**.*
+  * Análise: *ao esperado* $\rightarrow$ aponta para *contrariamente* (advérbio de modo modificando *agiu*) $\rightarrow$ **Complemento Nominal**.
 
 ---
 
-## Exemplos Canônicos de Agente da Passiva com Preposições "Por" e "De"
+### Exemplos Canônicos de Agente da Passiva com Preposições "Por" e "De"
 
 1. **Forma Padrão (Preposição *por* / contração *pelos*):**
- * Frase: *O castelo foi cercado **pelos inimigos**.*
- * Análise: Locução passiva analítica *foi cercado* (`ser + particípio`); conversão ativa: *Os inimigos cercaram o castelo* $\rightarrow$ **Agente da Passiva**.
+  * Frase: *O castelo foi cercado **pelos inimigos**.*
+  * Análise: Locução passiva analítica *foi cercado* (`ser + particípio`); conversão ativa: *Os inimigos cercaram o castelo* $\rightarrow$ **Agente da Passiva**.
 2. **Forma Variante (Preposição *de*):**
- * Frase: *O castelo foi cercado **de inimigos**.*
- * Análise: Oração equivalente à padrão; preposição *de* introduzindo o agente executor $\rightarrow$ **Agente da Passiva**.
+  * Frase: *O castelo foi cercado **de inimigos**.*
+  * Análise: Oração equivalente à padrão; preposição *de* introduzindo o agente executor $\rightarrow$ **Agente da Passiva**.
 
 ---
 
-## Pares Mínimos de Contraste Lexical: OI vs. CN
+### Pares Mínimos de Contraste Lexical: OI vs. CN
 
 - **Oração A:** *O aluno **necessita** [VTI] **de ajuda** [OI].*
- - O termo *de ajuda* liga-se diretamente ao verbo *necessita* $\rightarrow$ **Objeto Indireto**.
+  - O termo *de ajuda* liga-se diretamente ao verbo *necessita* $\rightarrow$ **Objeto Indireto**.
 - **Oração B:** *O aluno tem **necessidade** [Subst.] **de ajuda** [CN].*
- - O termo *de ajuda* liga-se ao substantivo *necessidade* (*a necessidade*) $\rightarrow$ **Complemento Nominal**.
+  - O termo *de ajuda* liga-se ao substantivo *necessidade* (*a necessidade*) $\rightarrow$ **Complemento Nominal**.
 - **Lição:** A estrutura do termo regido é idêntica (*de ajuda*); sua função sintática muda em decorrência exclusiva da morfologia do termo regente.
 
 ---
 
-## Bloco de Exercícios 1: Diferenciação entre CN (A) e OI (B)
+### Bloco de Exercícios 1: Diferenciação entre CN (
+A) e OI (
+B)
 
-*Enunciado:* Diferencie o complemento nominal (A) do objeto indireto (B).
+*Enunciado:* Diferencie o complemento nominal (
+A) do objeto indireto (
+B).
 
 1. *Ele agradeceu **aos companheiros**.*
- - Passo 1 e 2: Seta de *aos companheiros* $\rightarrow$ *agradeceu* (Verbo).
- - Classificação: **( B ) Objeto Indireto** | Morfologia do núcleo: Substantivo (*companheiros*).
+  - Passo 1 e 2: Seta de *aos companheiros* $\rightarrow$ *agradeceu* (Verbo).
+  - Classificação: **( B ) Objeto Indireto** | Morfologia do núcleo: Substantivo (*companheiros*).
 2. *Estava realmente agradecido **a eles**.*
- - Passo 1 e 2: Seta de *a eles* $\rightarrow$ *agradecido* (Adjetivo: *ele que estava agradecido*).
- - Classificação: **( A ) Complemento Nominal** | Morfologia do núcleo: Pronome pessoal (*eles*).
+  - Passo 1 e 2: Seta de *a eles* $\rightarrow$ *agradecido* (Adjetivo: *ele que estava agradecido*).
+  - Classificação: **( A ) Complemento Nominal** | Morfologia do núcleo: Pronome pessoal (*eles*).
 3. *Tinha grande amor **à humanidade**.*
- - Passo 1 e 2: Seta de *à humanidade* $\rightarrow$ *amor* (Substantivo: *o amor*).
- - Classificação: **( A ) Complemento Nominal** | Morfologia do núcleo: Substantivo (*humanidade*).
+  - Passo 1 e 2: Seta de *à humanidade* $\rightarrow$ *amor* (Substantivo: *o amor*).
+  - Classificação: **( A ) Complemento Nominal** | Morfologia do núcleo: Substantivo (*humanidade*).
 4. *Comer demais é prejudicial **à saúde**.*
- - Passo 1 e 2: Seta de *à saúde* $\rightarrow$ *prejudicial* (Adjetivo: *que é prejudicial*).
- - Classificação: **( A ) Complemento Nominal** | Morfologia do núcleo: Substantivo (*saúde*).
+  - Passo 1 e 2: Seta de *à saúde* $\rightarrow$ *prejudicial* (Adjetivo: *que é prejudicial*).
+  - Classificação: **( A ) Complemento Nominal** | Morfologia do núcleo: Substantivo (*saúde*).
 5. *Não duvides **das verdades divinas**.*
- - Passo 1 e 2: Seta de *das verdades divinas* $\rightarrow$ *duvides* (Verbo).
- - Classificação: **( B ) Objeto Indireto** | Morfologia do núcleo: Substantivo (*verdades*).
+  - Passo 1 e 2: Seta de *das verdades divinas* $\rightarrow$ *duvides* (Verbo).
+  - Classificação: **( B ) Objeto Indireto** | Morfologia do núcleo: Substantivo (*verdades*).
 6. *Ele não concorda **com você**.*
- - Passo 1 e 2: Seta de *com você* $\rightarrow$ *concorda* (Verbo).
- - Classificação: **( B ) Objeto Indireto** | Morfologia do núcleo: Pronome de tratamento (*você*).
+  - Passo 1 e 2: Seta de *com você* $\rightarrow$ *concorda* (Verbo).
+  - Classificação: **( B ) Objeto Indireto** | Morfologia do núcleo: Pronome de tratamento (*você*).
 
 ---
 
-## Bloco de Exercícios 2: Identificação Mista (CN, AP e OI)
+### Bloco de Exercícios 2: Identificação Mista (CN, AP e OI)
 
-*Enunciado:* Identifique as funções sintáticas dos termos destacados: (A) complemento nominal, (B) agente da passiva, (C) objeto indireto.
+*Enunciado:* Identifique as funções sintáticas dos termos destacados: (
+A) complemento nominal, (
+B) agente da passiva, (
+C) objeto indireto.
 
 1. *Sua classificação foi comemorada **pelos amigos**.*
- - Análise: Locução passiva *foi comemorada*; ativa: *Os amigos comemoraram*; não manda seta.
- - Classificação: **( B ) Agente da Passiva** | Morfologia: Substantivo.
+  - Análise: Locução passiva *foi comemorada*; ativa: *Os amigos comemoraram*; não manda seta.
+  - Classificação: **( B ) Agente da Passiva** | Morfologia: Substantivo.
 2. *A crença **em dias melhores** animava-os.*
- - Análise: Seta de *em dias melhores* $\rightarrow$ *crença* (Substantivo: *a crença*).
- - Classificação: **( A ) Complemento Nominal** | Morfologia: Substantivo (*dias*).
+  - Análise: Seta de *em dias melhores* $\rightarrow$ *crença* (Substantivo: *a crença*).
+  - Classificação: **( A ) Complemento Nominal** | Morfologia: Substantivo (*dias*).
 3. *Passou **aos filhos** a herança recebida **dos pais**.*
- - Termo 1: *aos filhos* $\rightarrow$ aponta para *passou* (Verbo VTDI) $\rightarrow$ **( C ) Objeto Indireto**.
- - Termo 2: *dos pais* $\rightarrow$ aponta para *recebida* (Particípio adjetivado de herança) $\rightarrow$ **( A ) Complemento Nominal**.
+  - Termo 1: *aos filhos* $\rightarrow$ aponta para *passou* (Verbo VTDI) $\rightarrow$ **( C ) Objeto Indireto**.
+  - Termo 2: *dos pais* $\rightarrow$ aponta para *recebida* (Particípio adjetivado de herança) $\rightarrow$ **( A ) Complemento Nominal**.
 4. *Ele é rico **em virtudes**.*
- - Análise: Seta de *em virtudes* $\rightarrow$ *rico* (Adjetivo).
- - Classificação: **( A ) Complemento Nominal** | Morfologia: Substantivo (*virtudes*).
+  - Análise: Seta de *em virtudes* $\rightarrow$ *rico* (Adjetivo).
+  - Classificação: **( A ) Complemento Nominal** | Morfologia: Substantivo (*virtudes*).
 5. *As ruas foram lavadas **pela chuva**.*
- - Análise: Locução passiva *foram lavadas*; ativa: *A chuva lavou as ruas*; não manda seta.
- - Classificação: **( B ) Agente da Passiva** | Morfologia: Substantivo (*chuva*).
+  - Análise: Locução passiva *foram lavadas*; ativa: *A chuva lavou as ruas*; não manda seta.
+  - Classificação: **( B ) Agente da Passiva** | Morfologia: Substantivo (*chuva*).
 6. *Aquelas pessoas necessitam **de ajuda**.*
- - Análise: Seta de *de ajuda* $\rightarrow$ *necessitam* (Verbo VTI).
- - Classificação: **( C ) Objeto Indireto** | Morfologia: Substantivo (*ajuda*).
+  - Análise: Seta de *de ajuda* $\rightarrow$ *necessitam* (Verbo VTI).
+  - Classificação: **( C ) Objeto Indireto** | Morfologia: Substantivo (*ajuda*).
 7. *A leitura **de livros** amplia nossos conhecimentos.*
- - Análise: Seta de *de livros* $\rightarrow$ *leitura* (Substantivo: *a leitura*).
- - Classificação: **( A ) Complemento Nominal** | Morfologia: Substantivo (*livros*).
+  - Análise: Seta de *de livros* $\rightarrow$ *leitura* (Substantivo: *a leitura*).
+  - Classificação: **( A ) Complemento Nominal** | Morfologia: Substantivo (*livros*).
 8. *O coração não resistiu **à prova**.*
- - Análise: Seta de *à prova* $\rightarrow$ *resistiu* (Verbo VTI; substituição: *resistiu ao teste*).
- - Classificação: **( C ) Objeto Indireto** | Morfologia: Substantivo (*prova*).
+  - Análise: Seta de *à prova* $\rightarrow$ *resistiu* (Verbo VTI; substituição: *resistiu ao teste*).
+  - Classificação: **( C ) Objeto Indireto** | Morfologia: Substantivo (*prova*).
 
 ---
 
-## Estudo de Caso Avançado FGV: Particípio com Auxiliar Implícito
+### Estudo de Caso Avançado FGV: Particípio com Auxiliar Implícito
 
 - **Oração da Questão:** *O menino cercado **de curiosos** estava vivo.*
 - **Resolução Comentada:**
- - Há uma oração reduzida de particípio (*cercado* = que fora cercado).
- - O verbo auxiliar *estar/ser* encontra-se elíptico.
- - Aplicando a transposição ativa: *Curiosos cercaram o menino*.
- - O termo *de curiosos* realiza o papel de agente da ação passiva $\rightarrow$ **Agente da Passiva**.
-
----
+  - Há uma oração reduzida de particípio (*cercado* = que fora cercado).
+  - O verbo auxiliar *estar/ser* encontra-se elíptico.
+  - Aplicando a transposição ativa: *Curiosos cercaram o menino*.
+  - O termo *de curiosos* realiza o papel de agente da ação passiva $\rightarrow$ **Agente da Passiva**.
 
 ---
 
 ## Memorização inteligente
 
-## O Teste do Artigo para Substantivo e do "Que é" para Adjetivo
+### O Teste do Artigo para Substantivo e do "Que é" para Adjetivo
 
 - **Para Substantivo:** Substantivo é aquilo que se *tem* ou que admite artigo definidor anteposto (*o amor*, *a necessidade*, *a crença*, *a leitura*). Se o regente aceita artigo, ele é substantivo e seu complemento será Complemento Nominal.
 - **Para Adjetivo:** Adjetivo é aquilo que se *é* ou que qualifica. Admite o encaixe imediato da expressão "que é / que está" (*remédio [que é] prejudicial*, *homem [que é] rico*, *aluno [que está] agradecido*). O termo que o completa é Complemento Nominal.
 
 ---
 
-## O Macete de "Conversar com a Frase"
+### O Macete de "Conversar com a Frase"
 
 Para não errar a direção da seta, faça a pergunta gramatical diretamente à oração: *"Quem precisa de quê?", "De quem é o sentimento de amor?", "Quem lavou as ruas?"*. A resposta revela exatamente qual é a palavra regente de ancoragem.
 
 ---
 
-## Teste da Substituição Masculina ("ao") para Validar Crase e Regência
+### Teste da Substituição Masculina ("ao") para Validar Crase e Regência
 
 Em construções preposicionadas com crase (ex.: *não resistiu à prova*), substitua o substantivo feminino por um correspondente masculino (ex.: *ao teste* ou *ao exame*). O aparecimento da combinação **ao** comprova a presença da preposição regida pelo verbo ou nome anterior.
 
 ---
 
-## Uso de Folha de Suporte / Tabela Visível em Segunda Tela
+### Uso de Folha de Suporte / Tabela Visível em Segunda Tela
 
 Mantenha a matriz de referenciação sintática `#ANOTAAÍ` desenhada em folha física ou aberta em segunda tela durante o treino de questões. A repetição do algoritmo nos exercícios condiciona o raciocínio e elimina a hesitação na hora da prova.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## A Pegadinha do "Pelo/Pela" sem Agente da Passiva
+### A Pegadinha do "Pelo/Pela" sem Agente da Passiva
 
 - **O Erro Comum:** O candidato visualiza a preposição *pelo/pela* após um particípio e marca "Agente da Passiva" por reflexo mecânico.
 - **A Armadilha:** Em frases como *O menino foi elogiado pela inteligência*, a expressão indica a causa do elogio, e não o agente. A inteligência não possui agência para elogiar.
@@ -490,64 +483,60 @@ Mantenha a matriz de referenciação sintática `#ANOTAAÍ` desenhada em folha f
 
 ---
 
-## Falso Agente da Passiva em Particípios Adjetivados
+### Falso Agente da Passiva em Particípios Adjetivados
 
 - **O Erro Comum:** Em *Passou aos filhos a herança recebida dos pais*, supor que *dos pais* seja agente da passiva introduzido pela preposição *de*.
 - **A Realidade Sintática:** Ao passar para a ativa, constata-se que os pais não receberam a herança (eles a deixaram). O particípio *recebida* funciona como adjetivo de *herança*, e *dos pais* é **Complemento Nominal** que completa o sentido desse particípio adjetivado.
 
 ---
 
-## O Erro de Classificar o Termo Isolado sem Olhar o Regente
+### O Erro de Classificar o Termo Isolado sem Olhar o Regente
 
 - **O Problema:** Analisar o sintagma preposicionado (ex.: *de ajuda*) isoladamente. Sintaticamente, expressões morfologicamente idênticas desempenham funções opostas dependendo do antecedente (*necessita [verbo] de ajuda* = OI vs. *necessidade [nome] de ajuda* = CN).
 - **Como Evitar:** Jamais classifique um termo sem antes traçar a seta e definir a classe gramatical do seu referente.
 
 ---
 
-## O Erro de Lançar Seta a Partir do Agente da Passiva
+### O Erro de Lançar Seta a Partir do Agente da Passiva
 
 - **O Problema:** Tentar ligar o Agente da Passiva ao particípio ou ao sujeito paciente por meio de setas de subordinação.
 - **A Realidade Sintática:** O Agente da Passiva não é um complemento nem um adjunto de outro termo; ele atua diretamente como praticante da ação verbal na oração passiva. Na matriz de setas, ele recebe um traço `—`.
 
 ---
 
----
-
 ## Glossário operacional
 
-## Complemento Nominal (CN)
+### Complemento Nominal (CN)
 
 Termo integrante da oração, de núcleo substantivo e introduzido por preposição obrigatória, que completa o sentido de um substantivo abstrato (com valor passivo), adjetivo ou advérbio. Ex.: *necessidade de ajuda*, *prejudicial à saúde*.
 
-## Agente da Passiva (AP)
+### Agente da Passiva (AP)
 
 Termo integrante preposicionado (*por* / *de*) que indica o ser que executa o processo verbal em orações construídas na voz passiva analítica (*ser* + particípio). Ex.: *O castelo foi cercado pelos inimigos*.
 
-## Voz Passiva Analítica
+### Voz Passiva Analítica
 
 Estrutura verbal passiva constituída por um verbo auxiliar passivo (notadamente o verbo *ser*) conjugado, seguido do particípio do verbo principal. Ex.: *foi filmado*, *foram lavadas*.
 
-## Morfossintaxe
+### Morfossintaxe
 
 Abordagem analítica integrada que examina concomitantemente a classe morfológica isolada da palavra e o papel sintático que ela desempenha na teia de relações da oração.
 
-## Referente / Termo Setado
+### Referente / Termo Setado
 
 A palavra nuclear de destino que recebe a seta na análise sintática, definindo a natureza da complementação ou modificação exigida.
 
-## Objeto Indireto (OI)
+### Objeto Indireto (OI)
 
 Termo integrante preposicionado obrigatório que completa o sentido de um verbo transitivo indireto (VTI) ou transitivo direto e indireto (VTDI). Ex.: *necessita de ajuda*.
 
-## Objeto Direto (OD)
+### Objeto Direto (OD)
 
 Termo integrante que completa o sentido de um verbo transitivo direto (VTD), caracterizando-se por não possuir preposição obrigatória. Ex.: *leu o livro*.
 
-## Referenciação Sintática (Método das Setas)
+### Referenciação Sintática (Método das Setas)
 
 Método operacional que representa visualmente as relações de dependência sintática por meio de vetores direcionais (setas) que partem do termo regido para o termo regente.
-
----
 
 ---
 

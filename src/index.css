@@ -347,20 +347,21 @@
   border: 1px solid var(--border);
 }
 
-/* Never allow a Markdown code sample to widen a small mobile viewport. */
+/* Preserve spatial meaning in diagrams; their containers expose horizontal scrolling. */
 .reading-content pre {
   max-width: 100%;
   overflow-x: auto;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  word-break: break-word;
+  white-space: pre;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .reading-content pre code {
   display: block;
-  white-space: inherit;
-  overflow-wrap: inherit;
-  word-break: inherit;
+  min-width: max-content;
+  white-space: pre;
+  overflow-wrap: normal;
+  word-break: normal;
   background-color: transparent;
   border: 0;
   border-radius: 0;
@@ -385,13 +386,14 @@
 }
 
 .reading-content table {
-  width: 100%;
   border-collapse: collapse;
-  margin-bottom: 1rem;
   font-size: 0.875rem;
 }
 
 .reading-content th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   background-color: var(--surface-muted);
   color: var(--text-strong);
   font-weight: 700;
@@ -408,6 +410,37 @@
 
 .reading-content tr:nth-child(even) {
   background-color: #fafbfc;
+}
+
+.responsive-table:focus-within,
+.connection-map [role='region']:focus,
+.code-scroll:focus {
+  outline: 3px solid color-mix(in srgb, var(--primary) 35%, transparent);
+  outline-offset: 2px;
+}
+
+.question-block .reading-content,
+.question-block p:last-child,
+.question-block li:last-child {
+  margin-bottom: 0;
+}
+
+.ascii-map {
+  width: max-content;
+  min-width: 100%;
+  white-space: pre !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+.ascii-map code {
+  min-width: max-content;
+  white-space: pre !important;
+}
+
+.pedagogical-document summary::-webkit-details-marker,
+.connection-map summary::-webkit-details-marker {
+  display: none;
 }
 
 /* Formatting produced by the rich study-note editor. */

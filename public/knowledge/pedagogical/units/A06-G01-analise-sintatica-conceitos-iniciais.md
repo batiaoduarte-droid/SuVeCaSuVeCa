@@ -38,7 +38,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 * Reconhecimento das classes gramaticais básicas (substantivo, adjetivo, verbo, pronome, artigo e preposição).
 
-### Mapa de dependências conceituais
+#### Mapa de dependências conceituais
 
 ```text
 [Morfologia Básica: Classes de Palavras]
@@ -63,7 +63,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
  [: Núcleo vs Adjunto Adnominal vs Aposto Especificativo]
 ```
 
-### Sequência recomendada de aprendizagem
+#### Sequência recomendada de aprendizagem
 
 1. Compreender a hierarquia: Frase $\rightarrow$ Oração $\rightarrow$ Período .
 2. Dominar a assimetria sujeito/predicado e o algoritmo de busca pelo verbo .
@@ -115,67 +115,65 @@ ANÁLISE SINTÁTICA: CONCEITOS INICIAIS E QUESTÕES CEBRASPE
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Hierarquia da Enunciação: Frase, Oração e Período
+### Hierarquia da Enunciação: Frase, Oração e Período
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A análise sintática organiza os enunciados discursivos em três níveis hierárquicos: a **Frase** (todo enunciado linguístico que possui sentido completo em dado contexto comunicativo), a **Oração** (a frase verbal, obrigatoriamente estruturada em torno de um verbo finito ou locução verbal) e o **Período** (a frase verbal graficamente delimitada de letra maiúscula até ponto final, subdividida em simples ou composto).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Frase:** É qualquer enunciado capaz de transmitir comunicação e sentido completos. Divide-se em:
- * *Frase Nominal:* Não contém forma verbal expressa. Exemplos: interjeições (*Puxa!*), títulos e temas de redação (*A força das mulheres*), e onomatopeias/símbolos digitais (*kkk*, *[RS]*).
- * *Frase Verbal:* Contém verbo ou locução verbal expressa. Coincide com a definição de oração.
+  * *Frase Nominal:* Não contém forma verbal expressa. Exemplos: interjeições (*Puxa!*), títulos e temas de redação (*A força das mulheres*), e onomatopeias/símbolos digitais (*kkk*, *[RS]*).
+  * *Frase Verbal:* Contém verbo ou locução verbal expressa. Coincide com a definição de oração.
 2. **Oração:** Unidade sintática que expressa um estado, ação ou fenômeno centrada indispensavelmente em uma forma verbal. Toda oração é uma frase (verbal), mas nem toda frase é uma oração. Um único verbo é suficiente para constituir uma oração completa (*Cheguei!*, *Fui!*, *Bora!*).
 3. **Período:** É a oração ou conjunto de orações organizada formalmente no texto:
- * *Período Simples:* Composto por apenas uma oração, denominada gramaticalmente **oração absoluta** (contém exatamente 1 verbo finito ou 1 locução verbal).
- * *Período Composto:* Composto por duas ou mais orações (contém 2 ou mais verbos ou locuções verbais). Nas provas de concurso, a expressão "o período da linha X" equivale funcionalmente a "a frase verbal da linha X".
+  * *Período Simples:* Composto por apenas uma oração, denominada gramaticalmente **oração absoluta** (contém exatamente 1 verbo finito ou 1 locução verbal).
+  * *Período Composto:* Composto por duas ou mais orações (contém 2 ou mais verbos ou locuções verbais). Nas provas de concurso, a expressão "o período da linha X" equivale funcionalmente a "a frase verbal da linha X".
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 * **Frase Nominal (Não Oração):** *"Puxa!"*, *"A força das mulheres"*, *"kkk"*, *"(RS)"*.
 * **Frase Verbal e Oração:** *"João chegou."*, *"Cheguei!"*, *"Fui!"*, *"Demorou."*, *"Bora!"*.
 * **Período Simples (Oração Absoluta):** *"Os alunos estudaram matemática ontem à tarde."* (1 forma verbal = 1 oração).
 * **Período Composto:** *"Os meninos jogam futebol e estudam matemática todos os dias."* (2 verbos = 2 orações).
 
-### Exceções ou limites
+#### Exceções ou limites
 
 Em contextos de alta elipse ou fragmentação discursiva, expressões reduzidas mantêm valor comunicativo de frase, mas só alcançam status sintático de oração se houver elipse verbal estritamente recuperável pelo contexto imediato.
 
 ---
 
-## Teoria Geral da Locução e Contagem de Orações
+### Teoria Geral da Locução e Contagem de Orações
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Uma **locução** é qualquer estrutura sintagmática composta por **duas ou mais palavras** que atuam conjuntamente desempenhando a função gramatical de uma única classe de palavras. A **locução verbal** é a união de dois ou mais verbos (verbo auxiliar + verbo principal) que equivalem sintática e semanticamente a um único verbo.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Unidade Funcional da Locução:**
- * *Locução Adjetiva:* Expressão com valor de adjetivo (ex.: *de mulher* = feminino; *da casa* = caseiro).
- * *Locução Prepositiva:* Expressão terminada em preposição simples (ex.: *a partir de*, *de acordo com*).
- * *Locução Verbal:* Encadeamento de verbos que funcionam como um núcleo verbal coeso (ex.: *podem parecer*, *vamos estudar*, *foi realizado*).
+  * *Locução Adjetiva:* Expressão com valor de adjetivo (ex.: *de mulher* = feminino; *da casa* = caseiro).
+  * *Locução Prepositiva:* Expressão terminada em preposição simples (ex.: *a partir de*, *de acordo com*).
+  * *Locução Verbal:* Encadeamento de verbos que funcionam como um núcleo verbal coeso (ex.: *podem parecer*, *vamos estudar*, *foi realizado*).
 2. **Impacto Rigoroso na Contagem de Orações:** Para a contagem do número de orações em um período, **cada locução verbal inteira conta como um único verbo**. Portanto, uma oração estruturada em torno de uma locução verbal constitui uma oração simples (período simples / oração absoluta).
 
-### Exemplos
+#### Exemplos
 
 * Locução Verbal em Período Simples: *"Esses doces **podem parecer** gostosos."* (Dois verbos gráficos, mas uma única locução verbal $\rightarrow$ 1 oração).
 * Locução Prepositiva: *"Ele agiu **de acordo com** o regulamento."*
 
 ---
 
-## Bipolaridade Oracional: Obrigatoriedade Universal do Predicado e Facultatividade do Sujeito
+### Bipolaridade Oracional: Obrigatoriedade Universal do Predicado e Facultatividade do Sujeito
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A oração é tradicionalmente analisada pela oposição entre dois termos essenciais: **sujeito** e **predicado**. Contudo, existe uma assimetria fundamental: **o predicado é o único termo indispensável em 100% das orações**, ao passo que o sujeito é facultativo, havendo orações estruturadas sem sujeito (sujeito inexistente).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Definição de Sujeito:** É o termo sintático sobre o qual se declara algo, atuando como o elemento que executa o processo verbal (na voz ativa) ou que o sofre (na voz passiva).
 2. **Definição Operacional de Predicado:** O predicado é definido pela regra de exclusão: **"Predicado é tudo menos o sujeito"**. Como toda oração exige verbo e o verbo pertence obrigatoriamente ao predicado, não existe oração sem predicado.
@@ -188,20 +186,20 @@ $$
 \end{aligned}
 $$
 
-### Exemplos
+#### Exemplos
 
 * **Oração com Sujeito:** *"[Esses doces] (Sujeito) [parecem muito gostosos] (Predicado)."*
 * **Oração sem Sujeito:** *"[Há dúvidas sobre esse assunto] (Predicado integral — oração inteira)."*
 
 ---
 
-## Topologia Oracional: Ordem Direta (SVC) versus Ordem Inversa (Deslocamentos)
+### Topologia Oracional: Ordem Direta (SVC) versus Ordem Inversa (Deslocamentos)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A **ordem direta** (canônica) da Língua Portuguesa organiza os termos oracionais na sequência: **Sujeito + Verbo + Complementos + Adjuntos Adverbiais** ($\text{SVC} + \text{Adv}$). A **ordem inversa** (ou indireta) é qualquer configuração sintática que rompa esse padrão por meio do **deslocamento** de termos (antecipação para o início ou intercalação no meio).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Esquema Canônico da Ordem Direta:**
 
@@ -211,11 +209,11 @@ $$
 
 2. **Mecânica dos Deslocamentos:**
 
- * *Deslocamento por Antecipação:* O termo (frequentemente o adjunto adverbial) é movido para o início da oração, antes do sujeito ou do verbo.
- * *Deslocamento por Intercalação:* O termo é inserido entre elementos contíguos da ordem direta (entre sujeito e verbo, ou entre verbo e complemento).
+  * *Deslocamento por Antecipação:* O termo (frequentemente o adjunto adverbial) é movido para o início da oração, antes do sujeito ou do verbo.
+  * *Deslocamento por Intercalação:* O termo é inserido entre elementos contíguos da ordem direta (entre sujeito e verbo, ou entre verbo e complemento).
 3. **Estatuto Linguístico e Desmistificação da Preposição:** A ordem inversa **não é erro gramatical**, mas sim um recurso expressivo, estilístico e de ênfase discursiva amplamente utilizado na norma culta e em textos literários/jornalísticos. É plenamente legítimo iniciar frases com preposição que encabeça adjuntos adverbiais antecipados (*No Brasil,...* / *À tarde,...*).
 
-### Exemplos
+#### Exemplos
 
 * **Ordem Direta:** *"Os alunos (S) estudaram (V) matemática (C) ontem à tarde (Adv)."*
 * **Ordem Inversa por Antecipação:** *"[Ontem à tarde], os alunos estudaram matemática."*
@@ -223,13 +221,13 @@ $$
 
 ---
 
-## Ordem Inversa Complexa: Predicativo Antecipado, Verbo de Ligação e Sujeito Posposto
+### Ordem Inversa Complexa: Predicativo Antecipado, Verbo de Ligação e Sujeito Posposto
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Bancas examinadoras de alto nível (especialmente o CEBRASPE) exploram orações estruturadas na ordem inversa em que um adjetivo atuando como **predicativo do sujeito é antecipado** para a posição inicial, seguido de **verbo de ligação** e de **sujeito posposto**. A identificação correta exige a conversão para a ordem direta a fim de restabelecer a hierarquia de concordância: o sujeito posposto é o elemento regente da flexão verbal e nominal.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Estrutura da Armadilha Sintática:**
 
@@ -242,24 +240,24 @@ $$
 $$
 
 2. **Direção da Concordância Sintática:**
- * O substantivo *"benefícios"* é o **núcleo do sujeito** e comanda a flexão de toda a oração.
- * O verbo *"são"* flexiona-se na 3ª pessoa do plural para concordar com o sujeito *"benefícios"*.
- * O adjetivo *"inúmeros"* flexiona-se no masculino plural por concordância nominal com o sujeito *"benefícios"*.
- * Constitui erro grave de análise afirmar que o verbo ou o substantivo concordam com o predicativo *"inúmeros"*.
+  * O substantivo *"benefícios"* é o **núcleo do sujeito** e comanda a flexão de toda a oração.
+  * O verbo *"são"* flexiona-se na 3ª pessoa do plural para concordar com o sujeito *"benefícios"*.
+  * O adjetivo *"inúmeros"* flexiona-se no masculino plural por concordância nominal com o sujeito *"benefícios"*.
+  * Constitui erro grave de análise afirmar que o verbo ou o substantivo concordam com o predicativo *"inúmeros"*.
 
-### Exemplos
+#### Exemplos
 
 * Trecho analisado: *"Inúmeros são os benefícios do oferecimento de produtos e da prestação de serviços no ambiente digital."* (Gabarito CEBRASPE: ERRADO ao afirmar que *"inúmeros"* funciona como sujeito).
 
 ---
 
-## Teoria Moderna do Núcleo do Sujeito e Desconstrução da Falácia da "Ideia Principal"
+### Teoria Moderna do Núcleo do Sujeito e Desconstrução da Falácia da "Ideia Principal"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A definição tradicional escolar de que o núcleo do sujeito é a "ideia principal" ou a "parte mais importante" do sujeito é uma simplificação semântica subjetiva e errônea, abolida pela linguística descritiva e pela gramática moderna. Para concursos públicos, o núcleo do sujeito rege-se por critérios estruturais objetivos: é a **palavra mais especificada do sujeito** e pertence obrigatoriamente à classe dos **substantivos** (ou palavras substantivadas).
 
-### Explicação consolidada (Os Três Mandamentos do Núcleo do Sujeito)
+#### Explicação consolidada (Os Três Mandamentos do Núcleo do Sujeito)
 
 1. **Mandamento 1 (Negação Semântica):** O núcleo **NÃO É** a ideia principal nem o termo mais importante do sujeito. Importância temática é critério discursivo, não sintático.
 2. **Mandamento 2 (Critério Sintático-Relacional — Palavra Mais Especificada):** O núcleo é o elemento central sobre o qual convergem e ao qual se referem todos os demais modificadores do sintagma nominal (ele é a palavra receptora das "setas" sintáticas).
@@ -273,21 +271,21 @@ A definição tradicional escolar de que o núcleo do sujeito é a "ideia princi
 [ Aposto Especificativo: "'inteligência artificial'" ] ──┘
 ```
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 * Na frase *"A expressão 'inteligência artificial' é muito popular"*:
- * O tema principal do texto pode ser "inteligência artificial", mas sintaticamente o núcleo do sujeito é o substantivo comum genérico **"expressão"**.
- * A expressão *"inteligência artificial"* contém um adjetivo (*"artificial"*) e funciona apenas como especificador satélite.
+  * O tema principal do texto pode ser "inteligência artificial", mas sintaticamente o núcleo do sujeito é o substantivo comum genérico **"expressão"**.
+  * A expressão *"inteligência artificial"* contém um adjetivo (*"artificial"*) e funciona apenas como especificador satélite.
 
 ---
 
-## Estrutura Interna do Sujeito: Núcleo, Adjuntos Adnominais e Aposto Especificativo
+### Estrutura Interna do Sujeito: Núcleo, Adjuntos Adnominais e Aposto Especificativo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Dentro de um sintagma nominal complexo que ocupa a função de sujeito, os termos distribuem-se hierarquicamente entre o **núcleo** (substantivo genérico determinado), os **adjuntos adnominais** (determinantes e adjetivos satélites) e o **aposto especificativo** (substantivo específico que dá nome ao substantivo genérico anterior, sem separação por vírgulas).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 * **Núcleo do Sujeito:** O substantivo comum de valor genérico que recebe as determinações (ex.: *expressão*, *cidade*, *rua*, *presidente*).
 * **Adjunto Adnominal:** Artigos, pronomes adjetivos, numerais adjetivos e adjetivos modificadores subordinados diretamente ao núcleo (ex.: o artigo *"A"*).
@@ -299,25 +297,25 @@ Dentro de um sintagma nominal complexo que ocupa a função de sujeito, os termo
 | **expressão** | Substantivo comum | **Núcleo do Sujeito** | Palavra mais especificada (receptora das setas) |
 | **'inteligência artificial'** | Substantivo + Adjetivo | **Aposto Especificativo** | Dá o nome específico à expressão genérica |
 
-### Exemplos
+#### Exemplos
 
 * *"A [AA] expressão [Núcleo] 'inteligência artificial' [Aposto Espec.] é [VL] muito popular [Predicativo]."*
 * Paralelo: *"A [AA] cidade [Núcleo] de São Paulo [Adjunto/Aposto Espec.] cresce rapidamente."*
 
 ---
 
-## Distinção Categórica entre Sujeito (Sintático) e Referente (Semântico)
+### Distinção Categórica entre Sujeito (Sintático) e Referente (Semântico)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **Sujeito** é uma **função sintática formal intraoracional**, estritamente circunscrita aos limites da oração em que se localiza a forma verbal. O **Referente** é um **conceito semântico-discursivo interoracional**, representando o elemento textual extrínseco que recebe a conexão de sentido (a "seta" coesiva) indicada por um pronome ou verbo elíptico.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Fronteira Sintática Intraoracional:** Para ser sujeito de uma forma verbal, o termo precisa pertencer à mesma oração do verbo. Um termo expresso em uma oração anterior separada por pontuação (ponto ou vírgula) **não pode** ser sujeito do verbo da oração seguinte.
 2. **Sujeito Oculto vs Referente Textual:**
- * Na oração seguinte, a ausência gráfica do termo configura **sujeito oculto / elíptico / desinencial**.
- * O termo presente na primeira oração funciona exclusivamente como **referente semântico** do sujeito oculto da segunda.
+  * Na oração seguinte, a ausência gráfica do termo configura **sujeito oculto / elíptico / desinencial**.
+  * O termo presente na primeira oração funciona exclusivamente como **referente semântico** do sujeito oculto da segunda.
 3. **Consequência para a Pontuação:** Se o mesmo termo material fosse considerado sujeito sintático direto de dois verbos em orações separadas por ponto ou vírgula, haveria violação direta da regra que proíbe separar sujeito e predicado por pontuação.
 
 ```text
@@ -327,29 +325,29 @@ Oração 1: [Os meninos] (Sujeito Sintático Explícito) jogam futebol.
 Oração 2: [Ø] (Sujeito Sintático Oculto / Desinencial) Jogam futebol todos os dias.
 ```
 
-### Exemplos
+#### Exemplos
 
 * Período: *"Os meninos jogam futebol. Jogam futebol todos os dias."*
- * Oração 1: Sujeito = *"Os meninos"* (Sujeito Simples Expresso).
- * Oração 2: Sujeito = *Oculto/Desinencial* (eles).
- * Referente Semântico de *Jogam* na Oração 2 = *"Os meninos"*.
+  * Oração 1: Sujeito = *"Os meninos"* (Sujeito Simples Expresso).
+  * Oração 2: Sujeito = *Oculto/Desinencial* (eles).
+  * Referente Semântico de *Jogam* na Oração 2 = *"Os meninos"*.
 
 ---
-## Distinção entre Frase, Oração e Período
+### Distinção entre Frase, Oração e Período
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A estruturação da linguagem divide-se em três níveis funcionais: a **Frase** (enunciado de sentido completo em contexto), a **Oração** (a frase verbal, estruturada indispensavelmente em torno de verbo ou locução verbal) e o **Período** (a frase verbal organizada graficamente de letra maiúscula até pontuação final, subdividida em simples ou composto).
 
-### Explicação detalhada
+#### Explicação detalhada
 
 1. **Frase:** Todo enunciado com sentido completo e capacidade comunicativa.
- * *Frase Nominal:* Não possui verbo expressando o processo. Exemplos: interjeições (*"Puxa!"*), títulos e roteiros dissertativos (*"A força das mulheres"*), risos digitais (*"kkk"*, *"(RS)"*).
- * *Frase Verbal:* Estruturada sobre verbo finito ou locução verbal. Coincide plenamente com a oração.
+  * *Frase Nominal:* Não possui verbo expressando o processo. Exemplos: interjeições (*"Puxa!"*), títulos e roteiros dissertativos (*"A força das mulheres"*), risos digitais (*"kkk"*, *"(RS)"*).
+  * *Frase Verbal:* Estruturada sobre verbo finito ou locução verbal. Coincide plenamente com a oração.
 2. **Oração:** Unidade sintática expressiva cujo núcleo obrigatório é uma forma verbal. Toda oração é uma frase (verbal), mas nem toda frase é uma oração.
 3. **Período:** Organização gráfica e sintática da frase verbal.
- * *Período Simples:* Contém apenas uma oração (denominada oração absoluta), estruturada sobre um único verbo ou uma locução verbal.
- * *Período Composto:* Contém duas ou mais orações, estruturado sobre dois ou mais verbos ou locuções verbais.
+  * *Período Simples:* Contém apenas uma oração (denominada oração absoluta), estruturada sobre um único verbo ou uma locução verbal.
+  * *Período Composto:* Contém duas ou mais orações, estruturado sobre dois ou mais verbos ou locuções verbais.
 
 A abordagem didática enfatiza que a oração é a frase verbal e que o verbo é o elemento indispensável: *"Basta um verbo para fazer uma oração"* e *"Por isso que quando as bancas falam: 'O período da linha tal', é o mesmo que dizer 'a frase da linha tal'"*.
 
@@ -358,50 +356,50 @@ Anotações manuscritas na lousa digital:
 * `ORAÇÃO = FRASE VERBAL (TEM QUE TER VERBO!)`
 * `FRASE = ENUNCIADO COM SENTIDO` $\rightarrow$ `FRASE NOMINAL` / `FRASE VERBAL`
 
-### Exemplos
+#### Exemplos
 
 * Frase Nominal: *"Puxa!"*, *"A força das mulheres"*, *"kkk"*, *"RS"*.
 * Frase Verbal / Oração: *"João chegou."*, *"Cheguei!"*, *"Fui!"*, *"Demorou."*, *"Bora!"*.
 * Período Simples: *"Os alunos estudaram matemática ontem à tarde."* (1 verbo = 1 oração).
 
-### Exceções ou limites
+#### Exceções ou limites
 
 Enunciados fragmentados mantêm valor comunicativo contextual de frase, mas só alcançam estatuto oracional se contiverem forma verbal expressa ou elidida recuperável.
 
 ---
 
-## Conceito Geral de Locução e Locução Verbal
+### Conceito Geral de Locução e Locução Verbal
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Uma **locução** é qualquer expressão formada por **duas ou mais palavras** que desempenham, em conjunto, o papel sintático e morfológico de uma única classe de palavras. A **locução verbal** une verbo auxiliar e verbo principal, equivalendo a um único verbo para efeito de sentido e contagem oracional.
 
-### Explicação detalhada
+#### Explicação detalhada
 
 1. **Conceito Gramatical Geral:** Locução é sinônimo de expressão pluriverbal:
- * *Locução Adjetiva:* Expressão com valor de adjetivo (*de mulher* = feminino).
- * *Locução Prepositiva:* Expressão terminada em preposição simples (*a partir de*, *de acordo com*).
- * *Locução Verbal:* Bloco verbal que atua como único núcleo do predicado.
+  * *Locução Adjetiva:* Expressão com valor de adjetivo (*de mulher* = feminino).
+  * *Locução Prepositiva:* Expressão terminada em preposição simples (*a partir de*, *de acordo com*).
+  * *Locução Verbal:* Bloco verbal que atua como único núcleo do predicado.
 2. **Impacto na Contagem Sintática:** Uma locução verbal conta como **um único verbo** na determinação do número de orações de um período. Uma frase estruturada exclusivamente em torno de uma locução verbal constitui período simples.
 
 A abordagem didática pontua: *"Locução é o mesmo que expressão... toda locução tem duas ou mais palavras... locução verbal é chamada de locução verbal porque tem dois ou mais verbos funcionando juntos"* ( e ).
 
 Escrita manuscrita no esquemas: `LOCUÇÃO = EXPRESSÃO (duas ou + palavras)` e grifo na definição impressa: *"uma locução verbal (dois ou mais verbos que equivalem a um só)"*.
 
-### Exemplos
+#### Exemplos
 
 * Locução Verbal: *"Os doces podem parecer gostosos."* (conta como 1 oração).
 * Locuções Prepositivas: *"a partir de"*, *"de acordo com"*.
 
 ---
 
-## Bipolaridade Oracional e Assimetria entre Sujeito e Predicado
+### Bipolaridade Oracional e Assimetria entre Sujeito e Predicado
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A oração é delimitada pela correlação entre **sujeito** e **predicado**, marcada por uma assimetria funcional: **o predicado é o termo indispensável e obrigatório em 100% das orações**, enquanto o sujeito é facultativo, visto que existem orações sem sujeito (sujeito inexistente).
 
-### Explicação detalhada
+#### Explicação detalhada
 
 1. **Definição de Sujeito:** Termo sintático sobre o qual se faz uma declaração, caracterizado por executar (voz ativa) ou sofrer (voz passiva) o processo verbal.
 2. **Definição Operacional de Predicado:** O predicado abrange todo o conteúdo oracional com exceção do sujeito (*"Predicado é tudo menos o sujeito"*). Como toda oração tem verbo e o verbo integra o predicado, a existência de predicado é necessária e universal.
@@ -419,35 +417,35 @@ A abordagem didática formula o princípio: *"Predicado é obrigatório que haja
 
 No esquemas com *"Há dúvidas sobre esse assunto"*, anota `SUJEITO INEXISTENTE`, traça chave horizontal sob toda a extensão da frase anotando `PREDICADO É TODA A ORAÇÃO` e escreve em caixa alta: `"Toda oração tem de ter predicado"`.
 
-### Exemplos
+#### Exemplos
 
 * Oração com Sujeito: *"[Esses doces] (sujeito) [parecem muito gostosos] (predicado)."*
 * Oração sem Sujeito: *"[Há dúvidas sobre esse assunto] (a oração inteira é predicado)."*
 
 ---
 
-## Ordem Direta (SVC) e Ordem Inversa (Deslocamentos)
+### Ordem Direta (SVC) e Ordem Inversa (Deslocamentos)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A **ordem direta** (canônica) da Língua Portuguesa segue o encadeamento **SVC + Adjunto Adverbial** ($\text{Sujeito} + \text{Verbo} + \text{Complementos} + \text{Adjuntos Adverbiais}$). A **ordem inversa** (ou indireta) configura qualquer quebra desse padrão mediante o **deslocamento** de termos (por *antecipação* para o início ou por *intercalação* no meio).
 
-### Explicação detalhada
+#### Explicação detalhada
 
 1. **Esquema da Ordem Direta:**
  $$
  \text{Sujeito} \longrightarrow \text{Verbo} \longrightarrow \text{Complementos (Objetos)} \longrightarrow \text{Adjuntos Adverbiais (Circunstâncias)}
  $$
 2. **Tipologia dos Deslocamentos:**
- * *Deslocamento por Antecipação:* O termo (frequentemente o adjunto adverbial) é posicionado no início absoluto da oração.
- * *Deslocamento por Intercalação:* O termo é inserido entre elementos contíguos da ordem direta (entre sujeito e verbo, ou entre verbo e complemento).
+  * *Deslocamento por Antecipação:* O termo (frequentemente o adjunto adverbial) é posicionado no início absoluto da oração.
+  * *Deslocamento por Intercalação:* O termo é inserido entre elementos contíguos da ordem direta (entre sujeito e verbo, ou entre verbo e complemento).
 3. **Estatuto Linguístico:** A ordem inversa **não é erro gramatical**, mas sim uma escolha estilística que confere ênfase discursiva, expressividade e ritmo, constituindo o padrão dominante em textos cultos e questões de concurso.
 
 A abordagem didática ensina: *"Ordem direta é SVC: sujeito, verbo, complemento... e adjuntos adverbiais ao final da frase... Deslocar é retirar da ordem direta... Existem dois tipos de deslocamento: por antecipação e por intercalação... Ordem inversa não é erro"* (,, ).
 
 No esquemas de ordem direta e inversa: esquematização de `SVC` no topo; decomposição linear de *"Os alunos estudaram matemática ontem à tarde"* ($S - V - C - Adv$); esquematização de `DESLOCAMENTO: POR ANTECIPAÇÃO (INÍCIO) / POR INTERCALAÇÃO (MEIO)` e análise de *"Ontem à tarde, os alunos estudaram matemática"*.
 
-### Exemplos
+#### Exemplos
 
 * Ordem Direta: *"Os alunos (S) estudaram (V) matemática (C) ontem à tarde (Adv)."*
 * Ordem Inversa por Antecipação: *"[Ontem à tarde], os alunos estudaram matemática."*
@@ -455,13 +453,13 @@ No esquemas de ordem direta e inversa: esquematização de `SVC` no topo; decomp
 
 ---
 
-## Distinção Categórica entre Sujeito (Sintático) e Referente (Semântico)
+### Distinção Categórica entre Sujeito (Sintático) e Referente (Semântico)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **Sujeito** é uma **função sintática formal**, delimitada à estrutura interna de uma oração específica (exigindo presença material ou elipse identificável dentro daquela oração). O **Referente** é um **conceito semântico e discursivo**, designando o termo textual precedente ao qual a forma verbal ou sujeito se reporta contextualmente ("quem recebe a seta de referência").
 
-### Explicação detalhada
+#### Explicação detalhada
 
 1. **Natureza Sintática do Sujeito:** O sujeito só existe dentro da própria oração. Um termo substantivo expresso na primeira oração **não pode** ser considerado sujeito sintático do verbo de uma segunda oração se houver separação por fronteira oracional (ponto, ponto e vírgula ou vírgula). O sujeito do segundo verbo é **oculto/desinencial**.
 2. **Natureza Semântica do Referente:** O referente é o alvo coesivo fora da oração que confere identidade semântica ao sujeito oculto.
@@ -479,20 +477,20 @@ A abordagem didática explica: *"Sujeito é função sintática. Referente é se
 
 No esquemas: separação das orações por traço duplo `//` em *"Os meninos jogam futebol. // Jogam futebol todos os dias."*; marcação de `SUJEITO` sobre *Os meninos*; marcação de `SUJEITO OCULTO` na elipse antes de *Jogam*; seta curva vermelha partindo de *Jogam* até *Os meninos* com a anotação `REFERENTE = TERMO QUE RECEBE SETA`.
 
-### Exemplos
+#### Exemplos
 
 * Oração 1: *"Os meninos jogam futebol."* $\rightarrow$ Sujeito simples explícito: *Os meninos*.
 * Oração 2: *"Jogam futebol todos os dias."* $\rightarrow$ Sujeito: Oculto/Desinencial (*eles*); Referente Semântico: *Os meninos*.
 
 ---
 
-## Identificação de Sujeito em Frases na Ordem Inversa e Concordância com Sujeito Posposto
+### Identificação de Sujeito em Frases na Ordem Inversa e Concordância com Sujeito Posposto
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A identificação do sujeito em orações invertidas exige localizar o verbo e aplicar a pergunta de reconhecimento (*"O que é que...?"* ou *"Quem é que...?"*), reorganizando a estrutura na ordem direta para não confundir o **predicativo do sujeito antecipado** com o **sujeito posposto** que governa a concordância.
 
-### Explicação detalhada
+#### Explicação detalhada
 
 Em itens da banca CEBRASPE, frases iniciadas por adjetivos (como *"Inúmeros são os benefícios do oferecimento de produtos..."*) induzem o candidato a crer que o adjetivo inicial é o sujeito da frase.
 Ao reordenar a oração na ordem direta:
@@ -510,20 +508,20 @@ A abordagem didática alerta que o CEBRASPE explora frases na ordem inversa para
 
 No esquemas da Questão 1 (CNJ 2024): delimitação por colchetes de `[os benefícios do oferecimento de produtos e da prestação de serviços no ambiente digital]`, anotação de `sujeito posposto`, seta indicando `núcleo` sobre *"benefícios"*, rótulo `VL` sobre *"são"* e anotação de `ADJETIVO / PRED. DO SUJEITO` sobre *"Inúmeros"*.
 
-### Exemplos
+#### Exemplos
 
 * Ordem Inversa: *"Inúmeros [predicativo] são [VL] os benefícios [sujeito]..."*
 * Ordem Direta: *"Os benefícios [sujeito] [...] são [VL] inúmeros [predicativo]."*
 
 ---
 
-## Desconstrução da Noção Semântica Escolar de Núcleo do Sujeito
+### Desconstrução da Noção Semântica Escolar de Núcleo do Sujeito
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A definição do ensino básico tradicional de que o núcleo do sujeito é a "ideia principal" ou a "parte mais importante" do sujeito é **conceitualmente falsa**, puramente subjetiva e foi abolida pela gramática moderna e pela linguística descritiva, sendo utilizada conscientemente por bancas de concurso como armadilha conceitual.
 
-### Explicação detalhada
+#### Explicação detalhada
 
 No ambiente discursivo de *"A expressão 'inteligência artificial' é muito popular"*, a expressão semanticamente mais relevante para o contexto informativo pode parecer ser *"inteligência artificial"*. No entanto, relevância enciclopédica ou temática é critério discursivo, não sintático. A análise sintática opera sobre a hierarquia formal das palavras. O núcleo sintático sobre o qual recaem os determinantes é o substantivo comum *"expressão"*. As bancas usam o conceito escolar de "ideia principal" justamente porque sabem que os candidatos decoraram essa definição simplista.
 
@@ -531,23 +529,23 @@ A abordagem didática afirma enfaticamente: *"Núcleo do sujeito não é a ideia
 
 No esquemas da Questão 2, sublinha com laser *"que transmite a ideia principal"*; na lousa `#ANOTAAÍ`, registra no item 1: `① Não é a ideia principal / ideia mais importante do sujeito`.
 
-### Exemplos
+#### Exemplos
 
 * Visão errônea tradicional: considerar que em *"A expressão 'inteligência artificial'"*, o núcleo é *"inteligência artificial"* por ser o tópico de maior interesse textual.
 * Visão formal científica: o núcleo é o substantivo *"expressão"*, e *"inteligência artificial"* é aposto especificativo.
 
 ---
 
-## Critérios Formais e Morfossintáticos para Identificação do Núcleo do Sujeito
+### Critérios Formais e Morfossintáticos para Identificação do Núcleo do Sujeito
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O núcleo do sujeito é determinado rigorosamente por dois critérios objetivos da gramática moderna:
 
 1. **Critério Sintático:** é a palavra **mais especificada** do sujeito (o termo nuclear determinado que recebe as relações/setas sintáticas de todos os modificadores);
 2. **Critério Morfossintático:** é necessariamente um **substantivo** (ou vocábulo com valor substantivo, como pronome ou numeral substantivo), nunca contendo adjetivos modificadores.
 
-### Explicação detalhada
+#### Explicação detalhada
 
 * **Conceito de Palavra Mais Especificada:** Dentro do sintagma que compõe o sujeito, os adjuntos, artigos e modificadores subordinam-se ao núcleo. O núcleo não é quem especifica, mas sim o termo **que é especificado**.
 * **Restrição Morfológica:** Modificadores adjetivos funcionam como termos satélites (adjuntos adnominais) e jamais integram o núcleo sintático. No sintagma *"inteligência artificial"*, o vocábulo *"artificial"* é adjetivo e não pode fazer parte de um núcleo indivisível junto com o substantivo.
@@ -567,7 +565,7 @@ Na lousa `#ANOTAAÍ`:
 * `③ É um substantivo (pronome ou numeral)`
  No esquemas, desenha setas de *"A"* e *"'inteligência artificial'"* convergindo para *"expressão"*, anotando *"subst."* sobre *"inteligência"* e *"adj."* sobre *"artificial"*.
 
-### Exemplos
+#### Exemplos
 
 No sujeito *"A expressão 'inteligência artificial'"*:
 
@@ -577,13 +575,13 @@ No sujeito *"A expressão 'inteligência artificial'"*:
 
 ---
 
-## Distinção entre Núcleo do Sujeito e Aposto Especificativo
+### Distinção entre Núcleo do Sujeito e Aposto Especificativo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O termo substantivo de natureza individualizadora que confere nome específico a um substantivo de sentido genérico antecedente (*"expressão"*, *"cidade"*, *"rua"*, *"romance"*) atua como **aposto especificativo**, permanecendo subordinado ao substantivo determinado que funciona como núcleo do sujeito.
 
-### Explicação detalhada
+#### Explicação detalhada
 
 Em *"A expressão 'inteligência artificial' é muito popular"*:
 
@@ -600,12 +598,10 @@ A abordagem didática demonstra: o *"A"* é adjunto adnominal, *"expressão"* é
 
 No esquemas da Questão 2, anotações completas: `AA` sobre *"A"*, `núcleo` sobre *"expressão"*, `APOSTO ESPECIFICATIVO (NOMEIA)` sobre *"'inteligência artificial'"* e `P. SUJ.` sobre *"muito popular"*.
 
-### Exemplos
+#### Exemplos
 
 * *"A expressão 'inteligência artificial'..."* $\rightarrow$ *expressão* = núcleo; *inteligência artificial* = aposto especificativo.
 * *"A cidade de Florianópolis..."* $\rightarrow$ *cidade* = núcleo; *de Florianópolis* = adjunto/aposto especificativo.
-
----
 
 ---
 
@@ -630,17 +626,15 @@ No esquemas da Questão 2, anotações completas: `AA` sobre *"A"*, `núcleo` so
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Algoritmo Canônico de Análise Sintática da Oração
+### Algoritmo Canônico de Análise Sintática da Oração
 
-### Finalidade
+#### Finalidade
 
 Identificar com precisão matemática o sujeito, o predicado e seus termos internos em qualquer oração da língua portuguesa.
 
-### Passo a passo operacional
+#### Passo a passo operacional
 
 1. **Ancorar no Verbo:** Aplique o mantra: *"No desespero, vírgula, vá ao verbo"*. Toda análise sintática inicia-se obrigatoriamente pela localização do verbo finito ou locução verbal.
 2. **Formular a Pergunta Canônica Pré-Verbal:** Antes do verbo, formule rigorosamente:
@@ -648,40 +642,40 @@ Identificar com precisão matemática o sujeito, o predicado e seus termos inter
  \text{"QUEM É QUE" ou "O QUE É QUE"} + \text{[VERBO]}?
  $$
 3. **Classificar a Resposta do Sujeito:**
- * Se houver resposta substantiva expressa na oração $\rightarrow$ É o **Sujeito** (Simples ou Composto).
- * Se o verbo for impessoal (ex.: *haver* com sentido de existir/tempo) $\rightarrow$ O sujeito é **Inexistente** (Oração Sem Sujeito).
- * Se a desinência verbal indicar a pessoa gramatical sem pronome grafado $\rightarrow$ O sujeito é **Oculto / Desinencial**.
+  * Se houver resposta substantiva expressa na oração $\rightarrow$ É o **Sujeito** (Simples ou Composto).
+  * Se o verbo for impessoal (ex.: *haver* com sentido de existir/tempo) $\rightarrow$ O sujeito é **Inexistente** (Oração Sem Sujeito).
+  * Se a desinência verbal indicar a pessoa gramatical sem pronome grafado $\rightarrow$ O sujeito é **Oculto / Desinencial**.
 4. **Extrair o Predicado por Exclusão:**
- * Aplique a fórmula: $\text{Predicado} = \text{Oração Inteira} - \text{Sujeito}$.
+  * Aplique a fórmula: $\text{Predicado} = \text{Oração Inteira} - \text{Sujeito}$.
 
 5. **Validar por Concordância:** Certifique-se de que o verbo flexiona-se em número e pessoa em estrita harmonia com o sujeito identificado.
 
 ---
 
-## Teste de Reconhecimento Topológico de Termos Deslocados
+### Teste de Reconhecimento Topológico de Termos Deslocados
 
-### Finalidade
+#### Finalidade
 
 Classificar orações em ordem direta ou indireta para fundamentar regras de pontuação (vírgulas de adjuntos adverbiais deslocados) e identificar ênfase discursiva.
 
-### Passo a passo operacional
+#### Passo a passo operacional
 
 1. Isole o Sujeito ($S$), o Verbo ($V$), os Complementos ($C$) e os Adjuntos Adverbiais ($Adv$).
 2. Compare a ordem dos termos encontrados com o gabarito canônico: $S - V - C - Adv$.
 3. Diagnóstico de Posição:
- * Adjunto Adverbial no início absoluto (antes do sujeito ou do verbo) $\rightarrow$ **Deslocamento por Antecipação**.
- * Termo inserido entre $S$ e $V$ ou entre $V$ e $C$ $\rightarrow$ **Deslocamento por Intercalação**.
- * Sequência rigorosa $S - V - C - Adv$ $\rightarrow$ **Ordem Direta**.
+  * Adjunto Adverbial no início absoluto (antes do sujeito ou do verbo) $\rightarrow$ **Deslocamento por Antecipação**.
+  * Termo inserido entre $S$ e $V$ ou entre $V$ e $C$ $\rightarrow$ **Deslocamento por Intercalação**.
+  * Sequência rigorosa $S - V - C - Adv$ $\rightarrow$ **Ordem Direta**.
 
 ---
 
-## Resolução de Estruturas com Predicativo Antecipado e Sujeito Posposto
+### Resolução de Estruturas com Predicativo Antecipado e Sujeito Posposto
 
-### Finalidade
+#### Finalidade
 
 Resolver itens de concurso (padrão CEBRASPE) em que adjetivos iniciais são falsamente classificados como sujeitos da oração.
 
-### Passo a passo operacional
+#### Passo a passo operacional
 
 1. **Localizar o Verbo de Ligação:** Identifique formas como *são*, *eram*, *foram*, *parecem*.
 2. **Formular a Pergunta do Sujeito:** Pergunte: *"O que é que [verbo de ligação] [adjetivo inicial]?"* (ex.: *"O que é que são inúmeros?"* $\rightarrow$ Resposta: *"Os benefícios..."*).
@@ -694,30 +688,30 @@ Resolver itens de concurso (padrão CEBRASPE) em que adjetivos iniciais são fal
 
 ---
 
-## Validação Formal do Núcleo do Sujeito (Filtro Morfocategorial e Teste das Setas)
+### Validação Formal do Núcleo do Sujeito (Filtro Morfocategorial e Teste das Setas)
 
-### Finalidade
+#### Finalidade
 
 Identificar o verdadeiro núcleo do sujeito em sintagmas complexos e desarmar pegadinhas baseadas no critério semântico de "ideia principal".
 
-### Passo a passo operacional
+#### Passo a passo operacional
 
 1. **Delimitar o Sujeito Integral:** Isole todo o sintagma nominal sujeito.
 2. **Aplicar o Teste das Setas (Palavra Mais Especificada):** Desenhe as conexões de dependência interna. Identifique a palavra que **recebe** as setas de determinação dos demais termos.
 3. **Aplicar o Filtro Morfocategorial:**
- * O núcleo deve ser obrigatoriamente um **substantivo** (ou pronome/numeral substantivo).
+  * O núcleo deve ser obrigatoriamente um **substantivo** (ou pronome/numeral substantivo).
 
 4. **Verificar Termo Especificativo (Aposto):** Se houver substantivo específico que dá nome ao substantivo genérico anterior (sem vírgulas), classifique o termo específico como **aposto especificativo** e mantenha o termo genérico como núcleo.
 5. **Gatilho de Rejeição Imediata:** Se a assertiva justificar o núcleo por "transmitir a ideia principal" ou "ser a parte mais importante", julgue o item como **ERRADO**.
 
 ---
-## Algoritmo Geral de Análise Sintática da Oração
+### Algoritmo Geral de Análise Sintática da Oração
 
-### Finalidade
+#### Finalidade
 
 Identificar o sujeito e delimitar o predicado em qualquer oração da Língua Portuguesa.
 
-### Passo a passo
+#### Passo a passo
 
 1. **Localizar o Verbo ou Locução:** Bordão: *"No desespero, vírgula, vá ao verbo"*. Toda análise sintática inicia-se pelo verbo.
 2. **Formular a Pergunta Interrogativa:** Antes do verbo, formule:
@@ -727,9 +721,9 @@ Identificar o sujeito e delimitar o predicado em qualquer oração da Língua Po
  $$
 3. **Classificar a Resposta Sintática:**
 
- * Resposta substantiva interna à oração $\rightarrow$ **Sujeito** (Simples/Composto).
- * Verbo impessoal (*haver* no sentido de existir/tempo) $\rightarrow$ **Sujeito Inexistente**.
- * Desinência identificável sem pronome expresso $\rightarrow$ **Sujeito Oculto/Desinencial**.
+  * Resposta substantiva interna à oração $\rightarrow$ **Sujeito** (Simples/Composto).
+  * Verbo impessoal (*haver* no sentido de existir/tempo) $\rightarrow$ **Sujeito Inexistente**.
+  * Desinência identificável sem pronome expresso $\rightarrow$ **Sujeito Oculto/Desinencial**.
 4. **Extrair o Predicado:**
 
  $$
@@ -740,29 +734,29 @@ Identificar o sujeito e delimitar o predicado em qualquer oração da Língua Po
 
 ---
 
-## Teste de Reconhecimento de Termo Deslocado
+### Teste de Reconhecimento de Termo Deslocado
 
-### Finalidade
+#### Finalidade
 
 Determinar se uma oração está na ordem direta ou inversa para justificar regras de pontuação (vírgulas em adjuntos adverbiais).
 
-### Passo a passo
+#### Passo a passo
 
 1. Identifique o Sujeito ($S$), o Verbo ($V$), os Complementos ($C$) e os Adjuntos Adverbiais ($Adv$).
 2. Compare a posição com o padrão $S - V - C - Adv$:
- * Adjunto no início da oração $\rightarrow$ **Deslocamento por Antecipação**.
- * Adjunto entre Sujeito e Verbo ou Verbo e Complemento $\rightarrow$ **Deslocamento por Intercalação**.
- * Adjunto ao término $\rightarrow$ **Ordem Direta**.
+  * Adjunto no início da oração $\rightarrow$ **Deslocamento por Antecipação**.
+  * Adjunto entre Sujeito e Verbo ou Verbo e Complemento $\rightarrow$ **Deslocamento por Intercalação**.
+  * Adjunto ao término $\rightarrow$ **Ordem Direta**.
 
 ---
 
-## Procedimento para Análise de Oração Invertida no CEBRASPE
+### Procedimento para Análise de Oração Invertida no CEBRASPE
 
-### Finalidade
+#### Finalidade
 
 Evitar a inversão de papéis sintáticos entre predicativo antecipado e sujeito posposto.
 
-### Passo a passo
+#### Passo a passo
 
 1. Localize o verbo finito (frequentemente verbo de ligação: *ser*, *estar*, *parecer*).
 2. Pergunte: *"O que é que [verbo] [termo inicial]?"*
@@ -772,20 +766,18 @@ Evitar a inversão de papéis sintáticos entre predicativo antecipado e sujeito
 
 ---
 
-## Procedimento de Validação Formal do Núcleo do Sujeito
+### Procedimento de Validação Formal do Núcleo do Sujeito
 
-### Finalidade
+#### Finalidade
 
 Identificar o verdadeiro núcleo estrutural do sujeito, rejeitando justificativas semânticas de concurso.
 
-### Passo a passo
+#### Passo a passo
 
 1. Delimite o sujeito completo da oração.
 2. **Teste das Setas (Especificação):** Localize a palavra sobre a qual recaem os determinantes e modificadores (a palavra mais especificada).
 3. **Filtro Morfológico:** Verifique a classe gramatical do núcleo. O núcleo DEVE ser substantivo, pronome substantivo ou numeral substantivo. Exclua qualquer adjetivo da composição do núcleo.
 4. **Descarte de "Ideia Principal":** Se a assertiva justificar o núcleo por "transmitir a ideia principal", julgue o item imediatamente como **ERRADO**.
-
----
 
 ---
 
@@ -800,7 +792,7 @@ Identificar o verdadeiro núcleo estrutural do sujeito, rejeitando justificativa
 | **Período Simples** | **SIM (Exatamente 1)** | **SIM** | Letra maiúscula até ponto final | *"Os alunos estudaram matemática."* |
 | **Período Composto** | **SIM (2 ou mais)** | **SIM** | Letra maiúscula até ponto final | *"Os alunos estudaram e foram aprovados."* |
 
-### Tabela 2: Sujeito (Sintático) vs Referente (Semântico)
+#### Tabela 2: Sujeito (Sintático) vs Referente (Semântico)
 
 | Critério Comparativo | Sujeito Sintático | Referente Semântico |
 |:--------------------------------------------------- |:-------------------------------------------------------- |:------------------------------------------------------- |
@@ -810,7 +802,7 @@ Identificar o verdadeiro núcleo estrutural do sujeito, rejeitando justificativa
 | **Impacto na Pontuação** | Não pode ser separado do predicado por vírgula/ponto | Pode ser retomado após vírgula, ponto ou parágrafo |
 | **Exemplo (*Os meninos jogam... Jogam...*)** | Sujeito explícito na 1ª oração; sujeito oculto na 2ª | *"Os meninos"* é o referente do verbo da 2ª oração |
 
-### Tabela 3: Abordagem Escolar Tradicional vs Gramática Moderna (Núcleo do Sujeito)
+#### Tabela 3: Abordagem Escolar Tradicional vs Gramática Moderna (Núcleo do Sujeito)
 
 | Dimensão | Gramática Escolar Tradicional (Ultrapassada) | Gramática Moderna / Bancas de Concurso |
 |:---------------------------------------- |:--------------------------------------------------------------- |:--------------------------------------------------------------- |
@@ -821,20 +813,18 @@ Identificar o verdadeiro núcleo estrutural do sujeito, rejeitando justificativa
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Discriminação de Frase Nominal e Frase Verbal
+### Discriminação de Frase Nominal e Frase Verbal
 
-### Enunciados sob análise
+#### Enunciados sob análise
 
 1. *"João chegou."*
 2. *"Puxa!"*
 3. *"A força das mulheres."*
 4. *"Cheguei!"*
 
-### Análise e Resolução
+#### Análise e Resolução
 
 * *"João chegou."*: Enunciado com sentido completo estruturado em torno da forma verbal *chegou* $\rightarrow$ **Frase Verbal** e **Oração**.
 * *"Puxa!"*: Interjeição emotiva de sentido pleno sem verbo $\rightarrow$ **Frase Nominal** (não é oração).
@@ -843,41 +833,41 @@ Identificar o verdadeiro núcleo estrutural do sujeito, rejeitando justificativa
 
 ---
 
-## Oração com Sujeito Explícito vs Oração com Sujeito Inexistente
+### Oração com Sujeito Explícito vs Oração com Sujeito Inexistente
 
-### Enunciados sob análise
+#### Enunciados sob análise
 
 1. *"Esses doces parecem muito gostosos."*
 2. *"Há dúvidas sobre esse assunto."*
 
-### Desenvolvimento e Justificativa
+#### Desenvolvimento e Justificativa
 
 1. **Oração 1:** Verbo *parecem*. Pergunta: *O que é que parece muito gostoso?* Resposta: *Esses doces* (**Sujeito**). O que resta (*parecem muito gostosos*) é o **Predicado**.
 2. **Oração 2:** Verbo *Há* (impessoal, sentido de existir). Pergunta: *Quem é que há?* Sem resposta (**Sujeito Inexistente**). Como o predicado é tudo menos o sujeito e este inexiste, a oração inteira (*Há dúvidas sobre esse assunto*) é o **Predicado Integral**.
 
 ---
 
-## Ordem Direta vs Ordem Inversa com Adjunto Deslocado
+### Ordem Direta vs Ordem Inversa com Adjunto Deslocado
 
-### Enunciados sob análise
+#### Enunciados sob análise
 
 1. *"Os alunos estudaram matemática ontem à tarde."*
 2. *"Ontem à tarde, os alunos estudaram matemática."*
 
-### Análise e Resolução
+#### Análise e Resolução
 
 * **Estrutura 1:** *Os alunos* ($S$) + *estudaram* ($V$) + *matemática* ($C/OD$) + *ontem à tarde* ($Adv$). Sequência canônica $S-V-C-Adv$ $\rightarrow$ **Ordem Direta (SVC)**.
 * **Estrutura 2:** *Ontem à tarde* ($Adv$) antecipado para o início, seguido por $S-V-C$ $\rightarrow$ **Ordem Inversa (Deslocamento por Antecipação)**.
 
 ---
 
-## Separação entre Sujeito Sintático e Referente Semântico
+### Separação entre Sujeito Sintático e Referente Semântico
 
-### Enunciado sob análise
+#### Enunciado sob análise
 
 *"Os meninos jogam futebol. Jogam futebol todos os dias."*
 
-### Análise e Resolução
+#### Análise e Resolução
 
 * **1ª Oração (*"Os meninos jogam futebol."*):** Verbo *jogam*; sujeito sintático explícito = *"Os meninos"*.
 * **2ª Oração (*"Jogam futebol todos os dias."*):** Verbo *Jogam*; sujeito sintático = **Oculto / Desinencial** (eles).
@@ -885,15 +875,15 @@ Identificar o verdadeiro núcleo estrutural do sujeito, rejeitando justificativa
 
 ---
 
-## Questão CEBRASPE (CNJ 2024) — Sujeito Posposto e Predicativo Antecipado
+### Questão CEBRASPE (CNJ 2024) — Sujeito Posposto e Predicativo Antecipado
 
-### Dados da Questão
+#### Dados da Questão
 
 * **Banca / Órgão / Ano:** CESPE / CEBRASPE – CNJ – Analista Judiciário (2024)
 * **Texto de Apoio:** *"Inúmeros são os benefícios do oferecimento de produtos e da prestação de serviços no ambiente digital."*
 * **Assertiva:** *"No segundo período do primeiro parágrafo, a flexão dos termos “são” e “benefícios” no plural deve-se à concordância que estabelecem com “inúmeros”, que funciona como sujeito da oração."*
 
-### Resolução Comentada
+#### Resolução Comentada
 
 1. Reorganização na ordem direta: *"Os benefícios do oferecimento de produtos e da prestação de serviços no ambiente digital são inúmeros."*
 2. O sujeito da oração é *"os benefícios [...]"*, cujo núcleo é o substantivo *"benefícios"*.
@@ -901,38 +891,38 @@ Identificar o verdadeiro núcleo estrutural do sujeito, rejeitando justificativa
 4. A palavra *"inúmeros"* é adjetivo que atua como **predicativo do sujeito antecipado**, flexionando-se no plural por concordância nominal com o sujeito *"benefícios"*.
 5. A banca inverteu a relação: quem dita a concordância é *"benefícios"*, e não *"inúmeros"*.
 
-### Gabarito
+#### Gabarito
 
 **ERRADO**
 
 ---
 
-## Questão CEBRASPE (Pref. Cachoeiro 2024) — Núcleo do Sujeito e Aposto Especificativo
+### Questão CEBRASPE (Pref. Cachoeiro 2024) — Núcleo do Sujeito e Aposto Especificativo
 
-### Dados da Questão
+#### Dados da Questão
 
 * **Banca / Órgão / Ano:** CESPE / CEBRASPE – Pref. de Cachoeiro de Itapemirim-ES (2024)
 * **Texto de Apoio:** *"A expressão 'inteligência artificial' é muito popular, tanto na literatura técnica quanto no imaginário popular."*
 * **Assertiva:** *"Na oração que inicia o texto — “A expressão ‘inteligência artificial’ é muito popular” —, o núcleo do sujeito é ‘inteligência artificial’, que transmite a ideia principal da citada afirmação."*
 
-### Resolução Comentada
+#### Resolução Comentada
 
 1. **Delimitação do Sujeito:** Verbo *"é"*. O que é muito popular? Sujeito completo: *"[A expressão 'inteligência artificial']"*.
 2. **Aplicação dos Critérios Formais de Núcleo:**
- * O artigo *"A"* determina *"expressão"*;
- * O sintagma *"'inteligência artificial'"* dá o nome específico à expressão genérica (atua como **aposto especificativo**);
- * A palavra mais especificada receptora das determinações é o substantivo comum **"expressão"**, que constitui o único núcleo sintático do sujeito.
+  * O artigo *"A"* determina *"expressão"*;
+  * O sintagma *"'inteligência artificial'"* dá o nome específico à expressão genérica (atua como **aposto especificativo**);
+  * A palavra mais especificada receptora das determinações é o substantivo comum **"expressão"**, que constitui o único núcleo sintático do sujeito.
 3. **Análise dos Erros da Assertiva:**
- * **Erro 1:** O núcleo não é *"inteligência artificial"*, mas sim *"expressão"*.
- * **Erro 2:** *"Inteligência artificial"* contém o adjetivo *"artificial"*, e adjetivos nunca integram núcleos nominais.
- * **Erro 3:** A assertiva apoia-se na justificativa semântica de "ideia principal", critério refutado pela sintaxe formal.
+  * **Erro 1:** O núcleo não é *"inteligência artificial"*, mas sim *"expressão"*.
+  * **Erro 2:** *"Inteligência artificial"* contém o adjetivo *"artificial"*, e adjetivos nunca integram núcleos nominais.
+  * **Erro 3:** A assertiva apoia-se na justificativa semântica de "ideia principal", critério refutado pela sintaxe formal.
 
-### Gabarito
+#### Gabarito
 
 **ERRADO**
 
 ---
-## Demonstração de Frase Nominal e Frase Verbal
+### Demonstração de Frase Nominal e Frase Verbal
 
 * *"João chegou."*: Sentido completo + verbo expresso $\rightarrow$ **Frase Verbal** e **Oração**.
 * *"Puxa!"*: Interjeição com sentido contextual completo, sem verbo $\rightarrow$ **Frase Nominal** (não é oração).
@@ -941,25 +931,25 @@ Identificar o verdadeiro núcleo estrutural do sujeito, rejeitando justificativa
 
 ---
 
-## Oração com Sujeito Explícito vs. Oração com Sujeito Inexistente
+### Oração com Sujeito Explícito vs. Oração com Sujeito Inexistente
 
 1. *"Esses doces parecem muito gostosos."*
- * Verbo: *parecem*. Pergunta: *O que é que parece gostoso?* $\rightarrow$ *Esses doces* (**Sujeito**).
- * Predicado: *parecem muito gostosos*.
+  * Verbo: *parecem*. Pergunta: *O que é que parece gostoso?* $\rightarrow$ *Esses doces* (**Sujeito**).
+  * Predicado: *parecem muito gostosos*.
 2. *"Há dúvidas sobre esse assunto."*
- * Verbo: *Há* (impessoal). Pergunta: *Quem é que há?* $\rightarrow$ Sem resposta (**Sujeito Inexistente**).
- * Predicado: a oração inteira (*Há dúvidas sobre esse assunto*).
+  * Verbo: *Há* (impessoal). Pergunta: *Quem é que há?* $\rightarrow$ Sem resposta (**Sujeito Inexistente**).
+  * Predicado: a oração inteira (*Há dúvidas sobre esse assunto*).
 
 ---
 
-## Ordem Direta vs. Ordem Indireta com Adjunto Deslocado
+### Ordem Direta vs. Ordem Indireta com Adjunto Deslocado
 
 1. *"Os alunos estudaram matemática ontem à tarde."* $\rightarrow$ $S (\text{Os alunos}) + V (\text{estudaram}) + C (\text{matemática}) + Adv (\text{ontem à tarde})$ $\rightarrow$ **Ordem Direta (SVC)**.
 2. *"Ontem à tarde, os alunos estudaram matemática."* $\rightarrow$ $Adv (\text{Ontem à tarde}) + S + V + C$ $\rightarrow$ **Ordem Inversa (Deslocamento por Antecipação)**.
 
 ---
 
-## Separação entre Sujeito Sintático e Referente Semântico
+### Separação entre Sujeito Sintático e Referente Semântico
 
 * **Enunciado:** *"Os meninos jogam futebol. Jogam futebol todos os dias."*
 * **Oração 1:** Sujeito simples expresso = *Os meninos*.
@@ -967,7 +957,7 @@ Identificar o verdadeiro núcleo estrutural do sujeito, rejeitando justificativa
 
 ---
 
-## Questão CNJ 2024 (Sujeito Posposto e Predicativo Antecipado)
+### Questão CNJ 2024 (Sujeito Posposto e Predicativo Antecipado)
 
 * **Banca/Órgão:** CESPE / CEBRASPE – CNJ – Analista Judiciário (2024).
 * **Trecho:** *"Inúmeros são os benefícios do oferecimento de produtos e da prestação de serviços no ambiente digital."*
@@ -977,7 +967,7 @@ Identificar o verdadeiro núcleo estrutural do sujeito, rejeitando justificativa
 
 ---
 
-## Questão Prefeitura de Cachoeiro de Itapemirim 2024 (Núcleo do Sujeito e Aposto)
+### Questão Prefeitura de Cachoeiro de Itapemirim 2024 (Núcleo do Sujeito e Aposto)
 
 * **Banca/Órgão:** CESPE / CEBRASPE – Prefeitura de Cachoeiro de Itapemirim-ES (2024).
 * **Trecho:** *"A expressão 'inteligência artificial' é muito popular, tanto na literatura técnica quanto no imaginário popular."*
@@ -987,265 +977,257 @@ Identificar o verdadeiro núcleo estrutural do sujeito, rejeitando justificativa
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Mantra Supremo: "No desespero, vírgula, vá ao verbo"
+### O Mantra Supremo: "No desespero, vírgula, vá ao verbo"
 
 * **Regra prática:** Diante de qualquer questão de análise sintática, concordância ou pontuação em prova, nunca tente interpretar o sentido global antes de ancorar no verbo. Localize o verbo finito ou locução verbal imediatamente; ele é a âncora que distribui todas as funções da oração.
 
 ---
 
-## Fórmula da Interrogação Pré-Verbal para Achar o Sujeito
+### Fórmula da Interrogação Pré-Verbal para Achar o Sujeito
 
 * **Regra prática:** Nunca pergunte "o verbo fez o quê?". A formulação correta posiciona os pronomes interrogativos **antes** do verbo:
- * Ser animado: *"Quem é que + [verbo]?"*
- * Coisa / Inanimado: *"O que é que + [verbo]?"*
+  * Ser animado: *"Quem é que + [verbo]?"*
+  * Coisa / Inanimado: *"O que é que + [verbo]?"*
  A resposta que preencher a pergunta de forma coerente e sem preposição será o sujeito sintático.
 
 ---
 
-## Regra Prática da "Seta" para Referente Semântico
+### Regra Prática da "Seta" para Referente Semântico
 
 * **Regra prática:** Quando a banca examinadora empregar a palavra **"referente"**, ela não está avaliando função sintática interna, mas sim **coesão referencial**. Basta desenhar uma seta a partir do verbo ou pronome para identificar a qual substantivo do texto ele se reporta contextualmente.
 
 ---
 
-## Gatilho de Alerta para Assertivas com "Ideia Principal"
+### Gatilho de Alerta para Assertivas com "Ideia Principal"
 
 * **Regra prática:** Se uma assertiva de concurso (especialmente CEBRASPE) afirmar que uma palavra é núcleo do sujeito porque *"transmite a ideia principal"* ou *"é a parte mais importante do sujeito"*, o item está utilizando um conceito escolar incorreto contra o candidato. O item é invariavelmente **ERRADO**.
 
 ---
 
-## Reconhecimento Rápido de Aposto Especificativo
+### Reconhecimento Rápido de Aposto Especificativo
 
 * **Mnemônico:** *"Tudo o que dá nome específico a um substantivo genérico precedente sem vírgulas é aposto especificativo."* (Ex.: *A expressão [genérico] 'inteligência artificial' [especificativo]*).
 
 ---
-## O Mantra Supremo: "No desespero, vírgula, vá ao verbo"
+### O Mantra Supremo: "No desespero, vírgula, vá ao verbo"
 
 Diante de qualquer oração complexa, não tente interpretar o sentido global antes da ancoragem sintática. Vá direto ao verbo finito ou locução: ele comanda todas as relações de sujeito, complementos e adjuntos.
 
 ---
 
-## Fórmula da Pergunta Anteposta ao Verbo
+### Fórmula da Pergunta Anteposta ao Verbo
 
 Para achar o sujeito sem errar, posicione os pronomes interrogativos **antes** do verbo: *"Quem é que + [verbo]?"* (pessoas) ou *"O que é que + [verbo]?"* (coisas). A resposta sem preposição é o sujeito sintático.
 
 ---
 
-## Regra Prática da "Seta" para Referente
+### Regra Prática da "Seta" para Referente
 
 Quando a banca utilizar o vocábulo **"referente"**, ela cobra coesão e semântica, não função sintática. Puxe mentalmente a "seta" a partir do verbo ou pronome para identificar a qual substantivo do texto ele se reporta.
 
 ---
 
-## Reorganização Obrigatória no CEBRASPE
+### Reorganização Obrigatória no CEBRASPE
 
 Diante de frases invertidas no CEBRASPE, nunca analise na ordem do texto. Reescreva mentalmente na ordem canônica ($S - V - C$) para isolar o sujeito posposto do predicativo antecipado.
 
 ---
 
-## Gatilho de Assertivas com "Ideia Principal"
+### Gatilho de Assertivas com "Ideia Principal"
 
 Se uma assertiva do CEBRASPE afirmar que uma palavra é núcleo do sujeito porque *"transmite a ideia principal"* ou *"é a parte mais importante"*, marque o item como **ERRADO** imediatamente.
 
 ---
 
-## Mnemônico do Aposto Especificativo
+### Mnemônico do Aposto Especificativo
 
 *"Tudo o que dá nome específico a um substantivo genérico anterior sem vírgulas é aposto especificativo."* (Ex.: *A expressão 'inteligência artificial'*).
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## O Erro de Tratar Frase e Oração como Sinônimos na Contagem de Períodos
+### O Erro de Tratar Frase e Oração como Sinônimos na Contagem de Períodos
 
 * **Problema:** Candidatos contam frases nominais (títulos, interjeições, onomatopeias) como orações em provas que exigem contagem de períodos.
 * **Forma Correta:** Frase é qualquer enunciado com sentido; oração **exige verbo ou locução verbal**. Sem verbo, não há oração.
 
 ---
 
-## O Mito Escolar de que "Não se Pode Iniciar Frase com Preposição"
+### O Mito Escolar de que "Não se Pode Iniciar Frase com Preposição"
 
 * **Problema:** Julgar frases iniciadas por preposição (*"No Brasil...", "À tarde..."*) como gramaticalmente incorretas.
 * **Forma Correta:** Iniciar frases com preposição que encabeça adjunto adverbial antecipado é padrão culto de ordem inversa, legítimo e expressivo.
 
 ---
 
-## Confundir Sujeito Sintático com Referente Semântico em Orações Consecutivas
+### Confundir Sujeito Sintático com Referente Semântico em Orações Consecutivas
 
 * **Problema:** Afirmar que o sujeito expresso na primeira oração é sintaticamente o sujeito do verbo da segunda oração separada por ponto/vírgula.
 * **Forma Correta:** Sintaticamente, o sujeito da segunda oração é **oculto**. O termo da primeira oração é apenas o seu **referente semântico**.
 
 ---
 
-## Inversão de Papéis Sintáticos: Atribuir Regência de Concordância ao Predicativo
+### Inversão de Papéis Sintáticos: Atribuir Regência de Concordância ao Predicativo
 
 * **Problema:** A banca apresenta orações na ordem inversa (*"Inúmeros são os benefícios..."*) e afirma que o verbo concorda com o predicativo inicial.
 * **Forma Correta:** O sujeito posposto (*"benefícios"*) é o termo regente que dita a flexão do verbo de ligação e do predicativo antecipado.
 
 ---
 
-## Confundir Relevância Temática Global com Núcleo Sintático Estrutural
+### Confundir Relevância Temática Global com Núcleo Sintático Estrutural
 
 * **Problema:** Concluir intuitivamente que o tema central do texto (ex.: "inteligência artificial") deve ser o núcleo do sujeito sintático.
 * **Forma Correta:** O núcleo sintático é a palavra estrutural determinada regente (*"expressão"*), enquanto o tema é apenas o conteúdo do aposto modificador.
 
 ---
-## O Erro de Tratar Frase e Oração como Sinônimos
+### O Erro de Tratar Frase e Oração como Sinônimos
 
 * **Problema:** Contar frases nominais (títulos, interjeições) como orações em contagens de período.
 * **Forma correta:** Oração exige verbo. Frases sem verbo são nominais e não integram a contagem oracional.
 
 ---
 
-## O Mito Escolar da Proibição de Preposição Inicial
+### O Mito Escolar da Proibição de Preposição Inicial
 
 * **Problema:** Julgar incorreta uma frase iniciada por preposição (*"No Brasil, todos vivem..."*).
 * **Forma correta:** Frases podem iniciar com preposição que encabece adjunto adverbial antecipado. Ordem inversa é padrão de estilo legítimo.
 
 ---
 
-## Confundir Sujeito Sintático com Referente em Orações Distintas
+### Confundir Sujeito Sintático com Referente em Orações Distintas
 
 * **Problema:** Afirmar que o substantivo de uma oração é sujeito sintático do verbo da oração subsequente.
 * **Forma correta:** O sujeito da segunda oração é oculto/desinencial; o substantivo antecedente é apenas seu referente semântico.
 
 ---
 
-## Inversão de Papéis Sintáticos no CEBRASPE
+### Inversão de Papéis Sintáticos no CEBRASPE
 
 * **Problema:** A banca afirma que o verbo e o sujeito posposto concordam com o predicativo antecipado.
 * **Forma correta:** O sujeito posposto é o regente soberano; verbo e predicativo adaptam-se a ele.
 
 ---
 
-## Confundir Relevância Temática com Núcleo Sintático
+### Confundir Relevância Temática com Núcleo Sintático
 
 * **Problema:** Indicar o tema do texto (*"inteligência artificial"*) como núcleo do sujeito em detrimento do substantivo regente (*"expressão"*).
 * **Forma correta:** O tema é conteúdo discursivo do modificador/aposto; o núcleo sintático é a palavra determinada regente.
 
 ---
 
----
-
 ## Glossário operacional
 
-## Frase (Nominal e Verbal)
+### Frase (Nominal e Verbal)
 
 Enunciado linguístico de extensão variável dotado de sentido completo em dado contexto comunicativo. Classifica-se em *Nominal* (sem verbo) e *Verbal* (com verbo, coincidente com a oração).
 
-## Oração
+### Oração
 
 Unidade sintática estruturada indispensavelmente em torno de um verbo finito ou de uma locução verbal.
 
-## Período (Simples e Composto)
+### Período (Simples e Composto)
 
 Frase verbal delimitada graficamente por pontuação terminal. Divide-se em *Simples* (uma oração / oração absoluta) e *Composto* (duas ou mais orações).
 
-## Locução
+### Locução
 
 Expressão pluriverbal (duas ou mais palavras) com valor gramatical e sintático de uma única palavra (ex.: locução verbal, adjetiva, prepositiva).
 
-## Sujeito
+### Sujeito
 
 Termo sintático da oração sobre o qual se faz uma declaração e que estabelece concordância com o verbo. Termo facultativo na oração.
 
-## Predicado
+### Predicado
 
 Termo sintático universalmente obrigatório da oração que contém o verbo e a declaração. Definido operacionalmente como "tudo menos o sujeito".
 
-## Ordem Direta (SVC)
+### Ordem Direta (SVC)
 
 Sequência canônica padrão dos termos na língua portuguesa: $\text{Sujeito} + \text{Verbo} + \text{Complementos} + \text{Adjuntos Adverbiais}$.
 
-## Deslocamento por Antecipação
+### Deslocamento por Antecipação
 
 Movimentação de um termo oracional (comumente adjunto adverbial) da sua posição final na ordem direta para o início absoluto da oração.
 
-## Deslocamento por Intercalação
+### Deslocamento por Intercalação
 
 Inserção de um termo oracional entre elementos contíguos da ordem direta (como entre sujeito e verbo, ou verbo e complemento).
 
-## Referente Semântico
+### Referente Semântico
 
 Conceito discursivo e semântico que designa o termo textual ao qual um pronome, palavra ou forma verbal remete ("recebe a seta"), distinto da função sintática intraoracional.
 
-## Sujeito Posposto
+### Sujeito Posposto
 
 Sujeito localizado após o verbo na oração devido à inversão sintática da ordem canônica.
 
-## Predicativo do Sujeito Antecipado
+### Predicativo do Sujeito Antecipado
 
 Adjetivo que qualifica o sujeito e se posiciona no início da oração, antes do verbo de ligação e do sujeito posposto.
 
-## Núcleo do Sujeito (Palavra Mais Especificada)
+### Núcleo do Sujeito (Palavra Mais Especificada)
 
 Termo substantivo central do sintagma sujeito sobre o qual convergem todas as determinações e modificadores satélites.
 
-## Aposto Especificativo
+### Aposto Especificativo
 
 Termo substantivo que individualiza ou dá nome a um substantivo comum de sentido genérico anterior, ligado diretamente sem vírgulas.
 
 ---
-## Frase
+### Frase
 
 Enunciado linguístico que possui sentido completo em contexto de comunicação. Subdivide-se em nominal (sem verbo) e verbal (com verbo).
 
-## Oração
+### Oração
 
 Unidade sintática estruturada indispensavelmente em torno de um verbo finito ou de uma locução verbal. Coincide com a frase verbal.
 
-## Período
+### Período
 
 Frase verbal delimitada por pontuação final forte. Classifica-se em Simples (1 oração / oração absoluta) e Composto (2 ou mais orações).
 
-## Locução
+### Locução
 
 Expressão pluriverbal (duas ou mais palavras) que desempenha conjuntamente o papel sintático de uma única classe gramatical.
 
-## Sujeito
+### Sujeito
 
 Termo sintático sobre o qual o predicado expressa uma declaração, caracterizado por executar/sofrer a ação e reger a concordância com o verbo.
 
-## Predicado
+### Predicado
 
 Termo sintático obrigatório da oração que contém o verbo e a declaração feita sobre o sujeito (ou o processo verbal puro nas orações sem sujeito).
 
-## Ordem Direta (SVC)
+### Ordem Direta (SVC)
 
 Disposição canônica dos termos na oração: $\text{Sujeito} + \text{Verbo} + \text{Complementos} + \text{Adjuntos Adverbiais}$.
 
-## Deslocamento por Antecipação
+### Deslocamento por Antecipação
 
 Movimentação de um termo oracional (geralmente adjunto adverbial) da sua posição final canônica para o início absoluto da oração.
 
-## Referente Semântico
+### Referente Semântico
 
 Conceito discursivo que designa o elemento textual ao qual um termo, pronome ou forma verbal remete contextualmente ("recebe a seta de sentido").
 
-## Sujeito Posposto
+### Sujeito Posposto
 
 Sujeito sintático que se posiciona após o verbo na oração devido à inversão da ordem direta.
 
-## Predicativo do Sujeito Antecipado
+### Predicativo do Sujeito Antecipado
 
 Termo adjetivo qualificador do sujeito posicionado no início da oração, antes do verbo de ligação e do sujeito.
 
-## Palavra Mais Especificada (Núcleo do Sujeito)
+### Palavra Mais Especificada (Núcleo do Sujeito)
 
 Critério formal da sintaxe moderna: o substantivo nuclear determinado que recebe as relações e setas de dependência de todos os modificadores do sujeito.
 
-## Aposto Especificativo
+### Aposto Especificativo
 
 Termo substantivo que individualiza ou dá nome a um substantivo genérico precedente, sem pontuação intermediária (sem vírgulas).
-
----
 
 ---
 

@@ -46,7 +46,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Distinção entre classes de palavras variáveis (substantivos, adjetivos, artigos, numerais, pronomes retos/demonstrativos) e invariáveis (advérbios, preposições, conjunções).
 - Noções de sintaxe de oração: coordenação, subordinação desenvolvida e adjuntos adverbiais.
 
-### Mapa Conceitual Integrado
+#### Mapa Conceitual Integrado
 
 ```text
 SISTEMA DE COLOCAÇÃO PRONOMINAL AVANÇADA (CEBRASPE)
@@ -81,31 +81,29 @@ SISTEMA DE COLOCAÇÃO PRONOMINAL AVANÇADA (CEBRASPE)
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Regra Geral da Palavra Invariável Atrativa Anteposta
+### Regra Geral da Palavra Invariável Atrativa Anteposta
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A força de atração sintática exercida por palavras invariáveis (advérbios, palavras de sentido negativo, conjunções subordinativas e preposições) sobre os pronomes oblíquos átonos exige obrigatoriamente que a palavra invariável esteja **anteposta ao verbo** (posicionada antes da forma verbal).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A regra de atração não atua retroativamente. Termos invariáveis posicionados após o verbo não exercem força magnética sobre pronomes situados anteriormente.
 
 - Na frase `Ele a encontrou em casa`, a preposição `em` é palavra invariável, mas está situada **após** o verbo `encontrou`. Como não há elemento atrativo antes do verbo e a oração é iniciada pelo pronome reto `Ele` (não atrativo), a próclise e a ênclise são igualmente corretas (`Ele a encontrou` / `Ele encontrou-a`).
 - Se a palavra invariável estiver antes do verbo (`Não a encontrou em casa`), a próclise torna-se estritamente obrigatória, e a ênclise passa a ser proibida.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 1. Localize o verbo e o pronome oblíquo átono na oração.
 2. Identifique se a palavra invariável está antes ou depois do verbo.
 3. Se estiver **antes** (sem pontuação que anule a atração), a próclise é obrigatória.
 4. Se estiver **depois**, desconsidere sua influência atrativa sobre o verbo anterior.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - **Próclise e Ênclise Válidas (Sem atração prévia):**
 
@@ -113,56 +111,56 @@ A regra de atração não atua retroativamente. Termos invariáveis posicionados
 
 ---
 
-## Variabilidade Sintática e Força Atrativa no Padrão Cebraspe
+### Variabilidade Sintática e Força Atrativa no Padrão Cebraspe
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 No padrão doutrinário adotado pelo Cebraspe/CESPE, palavras variáveis (que flexionam em gênero, número ou pessoa) **não exercem força atrativa sobre pronomes oblíquos**, existindo apenas duas exceções estritas: **Pronomes Relativos** e **Pronomes Indefinidos**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Para fins de colocação pronominal no Cebraspe, divide-se o léxico em:
 
 1. **Classes Invariáveis (Atraem sempre que antepostas):** Advérbios, conjunções subordinativas, palavras negativas e preposições em certas estruturas.
 2. **Classes Variáveis que Atraem (Exceções que atraem mesmo flexionando):**
- - **Pronomes Relativos:** *que, quem, onde, cujo(a/s), o(a/s) qual(is)*.
- - **Pronomes Indefinidos:** *todos(as), poucos(as), muitos(as), alguém, ninguém, tudo, nada*.
+  - **Pronomes Relativos:** *que, quem, onde, cujo(a/s), o(a/s) qual(is)*.
+  - **Pronomes Indefinidos:** *todos(as), poucos(as), muitos(as), alguém, ninguém, tudo, nada*.
 3. **Classes Variáveis que NÃO Atraem no Cebraspe:**
- - **Pronomes Pessoais do Caso Reto (*eu, tu, ele, nós, vós, eles*):** Flexionam em número e pessoa. A presença de pronome reto como sujeito torna a colocação pronominal **facultativa** (`Nós nos tornamos` = `Nós tornamo-nos`).
- - **Pronomes Demonstrativos (*este, esse, aquele, estes...*):** São palavras variáveis. Para o Cebraspe, quando atuam como sujeito ou vêm acompanhados de pontuação/intercalação, não impõem próclise obrigatória (divergindo da jurisprudência da FGV).
+  - **Pronomes Pessoais do Caso Reto (*eu, tu, ele, nós, vós, eles*):** Flexionam em número e pessoa. A presença de pronome reto como sujeito torna a colocação pronominal **facultativa** (`Nós nos tornamos` = `Nós tornamo-nos`).
+  - **Pronomes Demonstrativos (*este, esse, aquele, estes...*):** São palavras variáveis. Para o Cebraspe, quando atuam como sujeito ou vêm acompanhados de pontuação/intercalação, não impõem próclise obrigatória (divergindo da jurisprudência da FGV).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 Aplique o teste da variabilidade: a palavra anteposta flexiona no plural/feminino?
 
 - Se **não varia** $\rightarrow$ É invariável $\rightarrow$ **Atrai**.
 - Se **varia** $\rightarrow$ Verifique se é Pronome Relativo ou Pronome Indefinido:
- - Se for Relativo ou Indefinido $\rightarrow$ **Atrai**.
- - Se for Pronome Reto, Demonstrativo, Substantivo ou Adjetivo $\rightarrow$ **Não atrai** (colocação facultativa).
+  - Se for Relativo ou Indefinido $\rightarrow$ **Atrai**.
+  - Se for Pronome Reto, Demonstrativo, Substantivo ou Adjetivo $\rightarrow$ **Não atrai** (colocação facultativa).
 
 - **Expande:**
 
 ---
 
-## Colocação Pronominal em Locuções Verbais com Palavra Atrativa
+### Colocação Pronominal em Locuções Verbais com Palavra Atrativa
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Dada uma locução verbal (`verbo auxiliar + verbo principal no gerúndio ou infinitivo`) antecedida de palavra atrativa invariável, são gramaticalmente corretas **três posições pronominais**, existindo apenas **uma posição terminantemente proibida** (a ênclise hifenizada ao verbo auxiliar).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Estrutura: `[Palavra Atrativa] + [Verbo Auxiliar] + [Verbo Principal no Gerúndio ou Infinitivo]`
 
 1. **Próclise ao Verbo Auxiliar:** **CORRETO.** O termo atrativo atrai o pronome para antes do auxiliar (`não a estou entendendo` / `não se poderia casar`).
 2. **Próclise ao Verbo Principal (sem hífen):** **CORRETO.** O pronome fica solto no meio da locução, atuando como próclise ao verbo principal (`não estou a entendendo` / `não poderia se casar`).
 3. **Ênclise ao Verbo Principal (com hífen):** **CORRETO.**
- - No **Gerúndio**: Válida devido ao distanciamento sintático do verbo principal em relação ao elemento atrativo (`não estou entendendo-a`).
- - No **Infinitivo**: Válida porque o infinitivo é forma verbal soberana ("todo-poderosa"), aceitando ênclise mesmo na presença de atrator prévio (`não poderia casar-se`).
+  - No **Gerúndio**: Válida devido ao distanciamento sintático do verbo principal em relação ao elemento atrativo (`não estou entendendo-a`).
+  - No **Infinitivo**: Válida porque o infinitivo é forma verbal soberana ("todo-poderosa"), aceitando ênclise mesmo na presença de atrator prévio (`não poderia casar-se`).
 4. **Ênclise Hifenizada ao Verbo Auxiliar:** **ERRADO / PROIBIDO.** A presença de palavra atrativa proíbe a ênclise ao auxiliar (`não estou-a entendendo` / `não poderia-se casar` = Erro grave).
 5. **Mesóclise no Auxiliar com Atrativo:** **PROIBIDO.** A presença da palavra atrativa anula a mesóclise (`não poder-se-ia casar` = Erro grave).
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - `Eu não a estou entendendo.` $\rightarrow$ **CORRETO** (Próclise ao auxiliar).
 - `Eu não estou a entendendo.` $\rightarrow$ **CORRETO** (Próclise ao gerúndio sem hífen).
@@ -178,13 +176,13 @@ Estrutura: `[Palavra Atrativa] + [Verbo Auxiliar] + [Verbo Principal no Gerúndi
 
 ---
 
-## Distinção Diagnóstica entre Futuro do Subjuntivo e Infinitivo Pessoal (A Pegadinha do "-R")
+### Distinção Diagnóstica entre Futuro do Subjuntivo e Infinitivo Pessoal (A Pegadinha do "-R")
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Nem toda forma verbal terminada na letra `-r` é infinitivo. Nos verbos regulares, o **Futuro do Subjuntivo** e o **Infinitivo Pessoal** possuem grafia e flexão idênticas (*amar, amares, amar...*), mas comportamentos de colocação pronominal radicalmente opostos diante de palavras atrativas.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Infinitivo Pessoal ("Todo-Poderoso"):** É a única forma verbal que ignora a atração antecedente. Mesmo havendo palavra atrativa antes da estrutura, o infinitivo **sempre admite ênclise** (`para não o encontrar` OU `para não encontrá-lo`).
 - **Futuro do Subjuntivo:** Não é infinitivo e não possui prerrogativa de ênclise soberana. Diante de palavra atrativa, o futuro do subjuntivo **exige próclise obrigatória** (`Assim que o encontrar` = Certo; `Assim que encontrá-lo` = Errado).
@@ -195,25 +193,25 @@ Para diagnosticar se a forma verbal terminada em `-r` é Infinitivo ou Futuro do
 - Se a substituição exigir **fazer / dizer** $\rightarrow$ Trata-se de **Infinitivo Pessoal** $\rightarrow$ **Aceita Ênclise Sempre**.
 - Se a substituição exigir **fizer / disser** $\rightarrow$ Trata-se de **Futuro do Subjuntivo** $\rightarrow$ **Próclise Obrigatória com Atrativo**.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 1. Identifique o verbo terminado em `-r` precedido por palavra atrativa.
 2. Troque o verbo por *fazer* ou *dizer*.
 3. Teste o encaixe morfossintático:
- - *Assim que eu [encontrar]...* $\rightarrow$ *Assim que eu [fizer/disser]...* = Futuro do Subjuntivo $\rightarrow$ `Assim que eu o encontrar` (Próclise obrigatória).
- - *Estou disposta a [encontrar]...* $\rightarrow$ *Estou disposta a [fazer/dizer]...* = Infinitivo $\rightarrow$ `Estou disposta a encontrá-lo` (Ênclise permitida).
+  - *Assim que eu [encontrar]...* $\rightarrow$ *Assim que eu [fizer/disser]...* = Futuro do Subjuntivo $\rightarrow$ `Assim que eu o encontrar` (Próclise obrigatória).
+  - *Estou disposta a [encontrar]...* $\rightarrow$ *Estou disposta a [fazer/dizer]...* = Infinitivo $\rightarrow$ `Estou disposta a encontrá-lo` (Ênclise permitida).
 
 - **Possui procedimento:**
 
 ---
 
-## Apossínclese na Doutrina e nas Provas do Cebraspe
+### Apossínclese na Doutrina e nas Provas do Cebraspe
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A **Apossínclese** é a colocação do pronome oblíquo átono **imediatamente antes de uma palavra invariável de sentido negativo** (`não`, `nunca`, `jamais`). Trata-se de uma construção legítima da norma culta tradicional (frequente no português europeu) que o Cebraspe considera **gramaticalmente correta** em itens de prova.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 No português coloquial do Brasil, a próclise padrão posiciona o pronome entre o advérbio negativo e o verbo:
 
@@ -235,7 +233,7 @@ $$
 
 Embora cause estranheza auditiva ao falante brasileiro contemporâneo, a apossínclese preserva a correção gramatical segundo o Cebraspe.
 
-### Limites da Regra
+#### Limites da Regra
 
 A apossínclese permite a anteposição ao `não`, mas **nunca valida a ênclise ao verbo** após palavra negativa (*"João não chamou-me"* continua sendo estritamente proibido).
 
@@ -243,60 +241,60 @@ A apossínclese permite a anteposição ao `não`, mas **nunca valida a ênclise
 
 ---
 
-## Atração Pronominal Distante em Orações Subordinadas Desenvolvidas
+### Atração Pronominal Distante em Orações Subordinadas Desenvolvidas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Nas **orações subordinadas desenvolvidas** (introduzidas por conjunções subordinativas integrantes/adverbiais ou pronomes relativos), a **próclise é gramaticalmente obrigatória**. A força atrativa do conector subordinativo sobrevive e permanece ativa **mesmo que haja distância física ou elementos intercalados** (como sujeitos nominais ou adjuntos) entre o atrator e o verbo.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Com base na doutrina gramatical de Evanildo Bechara e nas justificativas oficiais do Cebraspe (provas ANTT 2024 e TST 2024):
 
 1. O conector subordinativo confere à oração o estatuto de oração desenvolvida.
 2. Em orações desenvolvidas, a atração pronominal é um fenômeno de subordinação oracional que não se dissipa pela intercalação sintática de sujeitos ou expressões adverbiais.
 3. Exemplos em prova:
- - *"...quando Otaviano [se] valeu de frases curtas..."* (TST 2024) $\rightarrow$ A próclise `se valeu` é obrigatória pela conjunção subordinativa `quando`.
- - *"...que o homem pré-histórico [se] deslocava..."* (ANTT 2024) $\rightarrow$ A próclise `se deslocava` justifica-se formalmente pelo caráter desenvolvido da oração subordinada.
+  - *"...quando Otaviano [se] valeu de frases curtas..."* (TST 2024) $\rightarrow$ A próclise `se valeu` é obrigatória pela conjunção subordinativa `quando`.
+  - *"...que o homem pré-histórico [se] deslocava..."* (ANTT 2024) $\rightarrow$ A próclise `se deslocava` justifica-se formalmente pelo caráter desenvolvido da oração subordinada.
 
 - **Possui incerteza herdada:**
 
 ---
 
-## Colocação Pronominal com Verbos no Futuro (Presente e Pretérito)
+### Colocação Pronominal com Verbos no Futuro (Presente e Pretérito)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O verbo flexionado no **Futuro do Presente** ou no **Futuro do Pretérito** não impõe o uso compulsório de mesóclise. A colocação pronominal com verbos no futuro submete-se estritamente à presença ou ausência de fatores de atração:
 
 1. **Sem palavra atrativa:** Próclise ou Mesóclise são permitidas; **Ênclise é terminantemente proibida**.
 2. **Com palavra atrativa:** Próclise é **obrigatória**; **Mesóclise e Ênclise são proibidas**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Cenário 1 (Sem Atrator Antecedente):**
- - `João lhe dará um presente.` $\rightarrow$ **CORRETO** (Próclise aceita no padrão culto brasileiro com sujeito expresso).
- - `João dar-lhe-á um presente.` $\rightarrow$ **CORRETO** (Mesóclise culta tradicional).
- - `João dará-lhe um presente.` $\rightarrow$ **INCORRETO / PROIBIDO** (A ênclise ao futuro constitui proibição absoluta da gramática normativa).
+  - `João lhe dará um presente.` $\rightarrow$ **CORRETO** (Próclise aceita no padrão culto brasileiro com sujeito expresso).
+  - `João dar-lhe-á um presente.` $\rightarrow$ **CORRETO** (Mesóclise culta tradicional).
+  - `João dará-lhe um presente.` $\rightarrow$ **INCORRETO / PROIBIDO** (A ênclise ao futuro constitui proibição absoluta da gramática normativa).
 - **Cenário 2 (Com Palavra Atrativa Antecedente — `não`, `amanhã`, `ontem`):**
- - `João não lhe dará um presente.` $\rightarrow$ **CORRETO** (Próclise obrigatória pela regra de atração).
- - `João não dar-lhe-á um presente.` $\rightarrow$ **INCORRETO / PROIBIDO** (A palavra atrativa anula e proíbe a mesóclise).
- - `João não dará-lhe um presente.` $\rightarrow$ **INCORRETO / PROIBIDO** (Ênclise proibida duplamente).
+  - `João não lhe dará um presente.` $\rightarrow$ **CORRETO** (Próclise obrigatória pela regra de atração).
+  - `João não dar-lhe-á um presente.` $\rightarrow$ **INCORRETO / PROIBIDO** (A palavra atrativa anula e proíbe a mesóclise).
+  - `João não dará-lhe um presente.` $\rightarrow$ **INCORRETO / PROIBIDO** (Ênclise proibida duplamente).
 
 - **Possui procedimento:**
 
 ---
 
-## Próclise e Pontuação: Início de Oração, Adjunto Antecipado e Intercalação
+### Próclise e Pontuação: Início de Oração, Adjunto Antecipado e Intercalação
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Não existe uma "regra autônoma de proibição por vírgula". O que a gramática proíbe é **iniciar oração por pronome oblíquo átono**. A interferência da pontuação na próclise depende da função sintática do segmento isolado:
 
 1. **Vírgula/Travessão que fecha Adjunto Adverbial Antecipado no início do período:** A oração principal só começa após a pontuação. Logo, o verbo está no **início da oração**, sendo a **próclise estritamente proibida** (exige-se ênclise).
 2. **Vírgulas casadas que isolam Intercalação no meio da oração:** A oração já se iniciou antes da primeira vírgula (ex.: pelo sujeito). Ao desconsiderar mentalmente a intercalação, o verbo não está em início de oração, sendo a **próclise plenamente permitida** (e facultativa).
 
-### Quadro Comparativo Estrutural
+#### Quadro Comparativo Estrutural
 
 | Estrutura Sintática | Posição Real do Verbo | Julgamento da Próclise | Exemplo de Prova |
 |:------------------------------------------ |:------------------------------------------- |:----------------------------------------: |:---------------------------------------------------------------------------------------------------- |
@@ -308,13 +306,13 @@ Não existe uma "regra autônoma de proibição por vírgula". O que a gramátic
 
 ---
 
-## O Princípio da Não Proibição e a Facultatividade com Sujeito Explícito
+### O Princípio da Não Proibição e a Facultatividade com Sujeito Explícito
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O princípio fundamental da colocação pronominal para concursos estabelece que **"o que não é proibido está correto"**. Na ausência de fatores de atração obrigatória e não incidindo em nenhuma das 3 proibições clássicas, a colocação pronominal com sujeito explícito não atrativo é **facultativa** (admitindo próclise ou ênclise).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Diante da frase da prova do MPE-SC 2023: *"O justo se desvela no decorrer das lutas de libertação..."*, a banca indagou se a forma *"O justo desvela-se..."* seria gramaticalmente correta.
 
@@ -324,8 +322,6 @@ Diante da frase da prova do MPE-SC 2023: *"O justo se desvela no decorrer das lu
  Logo, como a ênclise não viola proibição nem desrespeita atração, a forma enclítica é 100% correta. O candidato não deve aceitar mitos de que sujeito explícito impõe próclise exclusiva.
 
 - **Possui dica:**
-
----
 
 ---
 
@@ -347,29 +343,27 @@ Diante da frase da prova do MPE-SC 2023: *"O justo se desvela no decorrer das lu
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## O Algoritmo Geral de Julgamento Rápido (Método 3-1-2)
+### O Algoritmo Geral de Julgamento Rápido (Método 3-1-2)
 
 1. **Passo 1 — Teste das 3 Proibições Absolutas:**
- - O pronome ficaria no **início absoluto da oração**?
- - O pronome ficaria em **ênclise a verbo no futuro** (do presente ou pretérito)?
- - O pronome ficaria em **ênclise a verbo no particípio**?
- - *Se SIM para qualquer uma $\rightarrow$ Elimine a opção (INCORRETO).*
+  - O pronome ficaria no **início absoluto da oração**?
+  - O pronome ficaria em **ênclise a verbo no futuro** (do presente ou pretérito)?
+  - O pronome ficaria em **ênclise a verbo no particípio**?
+  - *Se SIM para qualquer uma $\rightarrow$ Elimine a opção (INCORRETO).*
 2. **Passo 2 — Teste da Regra Geral (Palavra Invariável Anteposta):**
- - Há palavra invariável (advérbio sem vírgula, conjunção subordinativa, palavra negativa) ou pronome relativo/indefinido antes do verbo?
- - *Se SIM $\rightarrow$ Próclise é OBRIGATÓRIA (salvo exceções do Passo 3).*
+  - Há palavra invariável (advérbio sem vírgula, conjunção subordinativa, palavra negativa) ou pronome relativo/indefinido antes do verbo?
+  - *Se SIM $\rightarrow$ Próclise é OBRIGATÓRIA (salvo exceções do Passo 3).*
 3. **Passo 3 — Teste das 2 Exceções Soberanas:**
- - O verbo é um **Infinitivo**? (Aceita ênclise sempre).
- - O elemento anterior é uma **Conjunção Coordenativa**? (Aceita próclise ou ênclise).
+  - O verbo é um **Infinitivo**? (Aceita ênclise sempre).
+  - O elemento anterior é uma **Conjunção Coordenativa**? (Aceita próclise ou ênclise).
 4. **Passo 4 — Decisão pelo Princípio do "Não Proibido":**
- - Sem proibições e sem atração obrigatória $\rightarrow$ **Ambas as posições são corretas**.
+  - Sem proibições e sem atração obrigatória $\rightarrow$ **Ambas as posições são corretas**.
 
 ---
 
-## Validação de Posições Pronominais em Locuções Verbais com Atrativo
+### Validação de Posições Pronominais em Locuções Verbais com Atrativo
 
 1. **Identifique o bloco:** `[Palavra Atrativa] + [Auxiliar] + [Principal no Gerúndio ou Infinitivo]`.
 2. **Próclise ao Auxiliar (`não me pode ver`):** Sempre CORRETO.
@@ -381,32 +375,30 @@ Diante da frase da prova do MPE-SC 2023: *"O justo se desvela no decorrer das lu
 
 ---
 
-## Teste do Verbo Irregular (*Fazer/Dizer*) para Desmascarar o "-R" Final
+### Teste do Verbo Irregular (*Fazer/Dizer*) para Desmascarar o "-R" Final
 
 1. **Localize a dúvida:** Verbo regular terminado em `-r` com palavra atrativa antes.
 2. **Substitua mentalmente:** Troque o verbo por *fazer* ou *dizer*.
 3. **Avalie o resultado:**
- - Encaixou **fizer / disser** $\rightarrow$ É **Futuro do Subjuntivo** $\rightarrow$ Próclise Obrigatória (Ênclise = Erro).
- - Encaixou **fazer / dizer** $\rightarrow$ É **Infinitivo Pessoal** $\rightarrow$ Ênclise Permitida (Infinitivo "todo-poderoso").
+  - Encaixou **fizer / disser** $\rightarrow$ É **Futuro do Subjuntivo** $\rightarrow$ Próclise Obrigatória (Ênclise = Erro).
+  - Encaixou **fazer / dizer** $\rightarrow$ É **Infinitivo Pessoal** $\rightarrow$ Ênclise Permitida (Infinitivo "todo-poderoso").
 
 ---
 
-## Diagnóstico de Pontuação: Adjunto Antecipado vs. Intercalação
+### Diagnóstico de Pontuação: Adjunto Antecipado vs. Intercalação
 
 1. **Observe o segmento antes da vírgula:**
- - É um adjunto adverbial no início absoluto do período? $\rightarrow$ O verbo após a vírgula **inicia a oração principal** $\rightarrow$ **Próclise PROIBIDA** (Gabarito: Ênclise obrigatória).
- - Há um sujeito explícito antes da primeira vírgula (`Sujeito, [adjunto], Verbo`)? $\rightarrow$ A oração já se iniciou $\rightarrow$ **Próclise PERMITIDA** (Gabarito: Facultativa).
+  - É um adjunto adverbial no início absoluto do período? $\rightarrow$ O verbo após a vírgula **inicia a oração principal** $\rightarrow$ **Próclise PROIBIDA** (Gabarito: Ênclise obrigatória).
+  - Há um sujeito explícito antes da primeira vírgula (`Sujeito, [adjunto], Verbo`)? $\rightarrow$ A oração já se iniciou $\rightarrow$ **Próclise PERMITIDA** (Gabarito: Facultativa).
 
 ---
 
-## Algoritmo Decisório para Verbos no Futuro
+### Algoritmo Decisório para Verbos no Futuro
 
 1. Verifique se o verbo está no **Futuro do Presente** (*dará*) ou **Futuro do Pretérito** (*daria*).
 2. **Há palavra atrativa antes do verbo?**
- - **NÃO:** Próclise = CORRETO; Mesóclise = CORRETO; Ênclise = **PROIBIDO**.
- - **SIM:** Próclise = **OBRIGATÓRIO**; Mesóclise = **PROIBIDO**; Ênclise = **PROIBIDO**.
-
----
+  - **NÃO:** Próclise = CORRETO; Mesóclise = CORRETO; Ênclise = **PROIBIDO**.
+  - **SIM:** Próclise = **OBRIGATÓRIO**; Mesóclise = **PROIBIDO**; Ênclise = **PROIBIDO**.
 
 ---
 
@@ -421,7 +413,7 @@ Diante da frase da prova do MPE-SC 2023: *"O justo se desvela no decorrer das lu
 | **Comportamento com Atrator** | **Soberano ("Todo-Poderoso"):** Aceita ênclise sempre | **Submisso à Regra Geral:** Exige próclise obrigatória |
 | **Exemplo com `não`** | *...para não o encontrar* / *para não encontrá-lo* (Ambos certos) | *Assim que eu o encontrar* (Certo) / *Assim que encontrá-lo* (ERRADO) |
 
-### Tabela 2: Adjunto Adverbial Antecipado versus Intercalação Sintática
+#### Tabela 2: Adjunto Adverbial Antecipado versus Intercalação Sintática
 
 | Critério Diagnóstico | Adjunto Adverbial Antecipado | Intercalação entre Vírgulas Casadas |
 |:-------------------------------------- |:---------------------------------------------------------------------------------- |:---------------------------------------------------------------- |
@@ -431,7 +423,7 @@ Diante da frase da prova do MPE-SC 2023: *"O justo se desvela no decorrer das lu
 | **Força de Atração** | Não atrai para trás | Não exerce atração obrigatória por estar isolada |
 | **Questão Referência Cebraspe** | **BACEN 2024** (*"verifica-se"* $\rightarrow$ *"se verifica"* = ERRADO) | **Petrobras 2024** (*"Estes... se situam"* = Facultativa) |
 
-### Tabela 3: Posição Cebraspe versus Posição FGV sobre Pronomes Demonstrativos
+#### Tabela 3: Posição Cebraspe versus Posição FGV sobre Pronomes Demonstrativos
 
 | Banca Examinadora | Classificação do Demonstrativo | Efeito na Colocação Pronominal | Postura em Prova |
 |:------------------------- |:---------------------------------------------- |:--------------------------------------------------------------- |:--------------------------------------- |
@@ -440,11 +432,9 @@ Diante da frase da prova do MPE-SC 2023: *"O justo se desvela no decorrer das lu
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Questão CEBRASPE 2023: Atração por Pronome Relativo
+### Questão CEBRASPE 2023: Atração por Pronome Relativo
 
 - **Órgão / Cargo / Ano:** CESPE / CEBRASPE — TBG — Técnico de Segurança Júnior — 2023
 - **Texto:** *"Obviamente, internautas que estão a par do que se trata e já experimentaram ao menos uma pergunta..."*
@@ -454,7 +444,7 @@ Diante da frase da prova do MPE-SC 2023: *"O justo se desvela no decorrer das lu
 
 ---
 
-## Questão CEBRASPE 2024: Locução Verbal com Infinitivo e Atrativo
+### Questão CEBRASPE 2024: Locução Verbal com Infinitivo e Atrativo
 
 - **Órgão / Cargo / Ano:** CESPE / CEBRASPE — Prefeitura de Cachoeiro de Itapemirim-ES — Enfermeiro — 2024
 - **Texto:** *"...poderiam até se valer de um salvo-conduto..."*
@@ -464,7 +454,7 @@ Diante da frase da prova do MPE-SC 2023: *"O justo se desvela no decorrer das lu
 
 ---
 
-## Questão CEBRASPE 2023: Ênclise com Sujeito Explícito Não Atrativo
+### Questão CEBRASPE 2023: Ênclise com Sujeito Explícito Não Atrativo
 
 - **Órgão / Cargo / Ano:** CESPE / CEBRASPE — MPE-SC — Promotor de Justiça Substituto — 2023
 - **Texto:** *"O justo se desvela no decorrer das lutas de libertação na história..."*
@@ -474,20 +464,20 @@ Diante da frase da prova do MPE-SC 2023: *"O justo se desvela no decorrer das lu
 
 ---
 
-## Questão CEBRASPE: Deslocamento Tríplice para Ênclise
+### Questão CEBRASPE: Deslocamento Tríplice para Ênclise
 
 - **Órgão / Cargo / Ano:** CESPE / CEBRASPE — ANCINE — Analista Administrativo
 - **Texto:**
- - `(l.7)` *"Pouco lhe importam as condições técnicas..."*
- - `(l.8)` *"...das indústrias que, em primeira instância, lhe possibilitam assistir..."*
- - `(l.10)` *"...esse tipo de preocupação nem lhe passa pela cabeça."*
+  - `(l.7)` *"Pouco lhe importam as condições técnicas..."*
+  - `(l.8)` *"...das indústrias que, em primeira instância, lhe possibilitam assistir..."*
+  - `(l.10)` *"...esse tipo de preocupação nem lhe passa pela cabeça."*
 - **Item:** *Mantendo-se a correção gramatical do texto, o pronome “lhe” poderia ser deslocado para logo depois das formas verbais “importam”, “possibilitam” e “passa”, escrevendo-se importam-lhe, possibilitam-lhe e passa-lhe, respectivamente.*
 - **Gabarito:** **ERRADO**
 - **Justificativa Consolidada:** Todas as três substituições são proibidas por palavras atrativas: `Pouco` (advérbio), `que` (pronome relativo em oração desenvolvida) e `nem` (palavra negativa).
 
 ---
 
-## Questão CEBRASPE 2024: Adjunto Antecipado e Início de Oração
+### Questão CEBRASPE 2024: Adjunto Antecipado e Início de Oração
 
 - **Órgão / Cargo / Ano:** CESPE / CEBRASPE — BACEN — Analista — 2024
 - **Texto:** *"Em um contexto de crescente instabilidade macroeconômica... -, verifica-se a emergência de novas formas..."*
@@ -497,7 +487,7 @@ Diante da frase da prova do MPE-SC 2023: *"O justo se desvela no decorrer das lu
 
 ---
 
-## Questão CEBRASPE 2024: Intercalação Adverbial e Demonstrativo
+### Questão CEBRASPE 2024: Intercalação Adverbial e Demonstrativo
 
 - **Órgão / Cargo / Ano:** CESPE / CEBRASPE — Petrobras — Técnico Júnior — 2024
 - **Texto:** *"Estes, muitas vezes, se situam em regiões remotas"*
@@ -507,7 +497,7 @@ Diante da frase da prova do MPE-SC 2023: *"O justo se desvela no decorrer das lu
 
 ---
 
-## Questão CEBRASPE 2024: Locução Verbal e Gerúndio Distante
+### Questão CEBRASPE 2024: Locução Verbal e Gerúndio Distante
 
 - **Órgão / Cargo / Ano:** CESPE / CEBRASPE — INPI — Analista — 2024
 - **Texto:** *"...é o impulso das trocas linguísticas que as está levando a essa situação..."*
@@ -517,7 +507,7 @@ Diante da frase da prova do MPE-SC 2023: *"O justo se desvela no decorrer das lu
 
 ---
 
-## Questão CEBRASPE 2024: Atração Distante em Oração Subordinada
+### Questão CEBRASPE 2024: Atração Distante em Oração Subordinada
 
 - **Órgão / Cargo / Ano:** CESPE / CEBRASPE — TST — Analista Judiciário — 2024
 - **Texto:** *"...quando Otaviano valeu-se de frases curtas cunhadas em moedas..."*
@@ -527,7 +517,7 @@ Diante da frase da prova do MPE-SC 2023: *"O justo se desvela no decorrer das lu
 
 ---
 
-## Questão CEBRASPE 2024: Caráter Desenvolvido da Oração
+### Questão CEBRASPE 2024: Caráter Desenvolvido da Oração
 
 - **Órgão / Cargo / Ano:** CESPE / CEBRASPE — ANTT — Especialista — 2024
 - **Texto:** *"Sabemos que o homem pré-histórico se deslocava..."*
@@ -537,7 +527,7 @@ Diante da frase da prova do MPE-SC 2023: *"O justo se desvela no decorrer das lu
 
 ---
 
-## Questões CEBRASPE: Pronomes Pessoais do Caso Reto
+### Questões CEBRASPE: Pronomes Pessoais do Caso Reto
 
 - **Proposição IHBDF:** *"Nós nos tornamos"* substituído por *"Nós tornamo-nos"* $\rightarrow$ **CERTO**.
 - **Proposição IPAM 2024:** *"pois elas se encontram"* substituído por *"pois elas encontram-se"* $\rightarrow$ **CERTO**.
@@ -545,29 +535,27 @@ Diante da frase da prova do MPE-SC 2023: *"O justo se desvela no decorrer das lu
 
 ---
 
-## Desconstrução Exaustiva da Frase Modelo em Lousa Digital
+### Desconstrução Exaustiva da Frase Modelo em Lousa Digital
 
 - **Estrutura Base:** `como [se] não [se] poderia [se] casar [-se]`
- - `como se não poderia casar` $\rightarrow$ **CORRETO** (Apossínclese).
- - `como não se poderia casar` $\rightarrow$ **CORRETO** (Próclise ao auxiliar).
- - `como não poder-se-ia casar` $\rightarrow$ **INCORRETO / PROIBIDO** (Mesóclise com palavra atrativa).
- - `como não poderia-se casar` $\rightarrow$ **INCORRETO / PROIBIDO** (Ênclise no futuro do pretérito).
- - `como não poderia se casar` $\rightarrow$ **CORRETO** (Próclise ao infinitivo sem hífen).
- - `como não poderia casar-se` $\rightarrow$ **CORRETO** (Ênclise ao infinitivo "todo-poderoso").
-
----
+  - `como se não poderia casar` $\rightarrow$ **CORRETO** (Apossínclese).
+  - `como não se poderia casar` $\rightarrow$ **CORRETO** (Próclise ao auxiliar).
+  - `como não poder-se-ia casar` $\rightarrow$ **INCORRETO / PROIBIDO** (Mesóclise com palavra atrativa).
+  - `como não poderia-se casar` $\rightarrow$ **INCORRETO / PROIBIDO** (Ênclise no futuro do pretérito).
+  - `como não poderia se casar` $\rightarrow$ **CORRETO** (Próclise ao infinitivo sem hífen).
+  - `como não poderia casar-se` $\rightarrow$ **CORRETO** (Ênclise ao infinitivo "todo-poderoso").
 
 ---
 
 ## Memorização inteligente
 
-## O Macete da Apossínclese: "Pronome Antes do Não Está Certo"
+### O Macete da Apossínclese: "Pronome Antes do Não Está Certo"
 
 Se encontrar em prova do Cebraspe estruturas como *"Ele me não disse"* ou *"como se não poderia"*, não julgue pelo ouvido coloquial. O Cebraspe aceita a apossínclese como padrão culto rigorosamente correto.
 
 ---
 
-## O Mantra do Concurseiro: "O Que Não É Proibido Está Correto"
+### O Mantra do Concurseiro: "O Que Não É Proibido Está Correto"
 
 1. Não inicia oração?
 2. Não está no futuro nem particípio?
@@ -576,33 +564,31 @@ Se encontrar em prova do Cebraspe estruturas como *"Ele me não disse"* ou *"com
 
 ---
 
-## Macete do Infinitivo Soberano ("Todo-Poderoso")
+### Macete do Infinitivo Soberano ("Todo-Poderoso")
 
 O infinitivo é a única forma verbal que "burla" a atração antecedente. Em qualquer locução cujo verbo principal seja infinitivo, a ênclise ao infinitivo é sempre válida (`não posso dizer-lhe`, `poderiam até valer-se`).
 
 ---
 
-## Teste do Plural para Saber se o Termo Atrai
+### Teste do Plural para Saber se o Termo Atrai
 
 ---
 
-## Regra do "Hífen Proibido no Meio da Locução"
+### Regra do "Hífen Proibido no Meio da Locução"
 
 Em locuções verbais com palavra atrativa, o pronome pode ir antes do auxiliar, solto no meio ou ênclito ao principal. A única forma proibida é o **hífen preso ao auxiliar** (`não estou-a entendendo` = ERRADO).
 
 ---
 
-## Regra do "Atração Manda Mais do que o Futuro"
+### Regra do "Atração Manda Mais do que o Futuro"
 
 Se houver palavra atrativa antes de verbo no futuro, a mesóclise fica **proibida** e a próclise torna-se **obrigatória**. A regra de atração prevalece hierarquicamente sobre o futuro.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Pegadinha da Mesóclise com Palavra Atrativa Próxima
+### Pegadinha da Mesóclise com Palavra Atrativa Próxima
 
 - **Erro Comum:** Achar que, por ser verbo no futuro, a mesóclise é sempre permitida.
 - **Forma Incorreta:** `Como não poder-se-ia casar` / `Não dar-lhe-ei o livro`.
@@ -611,7 +597,7 @@ Se houver palavra atrativa antes de verbo no futuro, a mesóclise fica **proibid
 
 ---
 
-## O Erro Absoluto da Ênclise no Futuro
+### O Erro Absoluto da Ênclise no Futuro
 
 - **Erro Comum:** Usar ênclise em verbos no futuro do presente ou pretérito.
 - **Forma Incorreta:** `João dará-lhe` / `Daria-te meu apoio` / `não poderia-se`.
@@ -619,14 +605,14 @@ Se houver palavra atrativa antes de verbo no futuro, a mesóclise fica **proibid
 
 ---
 
-## Pegadinha da Palavra Invariável Pós-Verbal
+### Pegadinha da Palavra Invariável Pós-Verbal
 
 - **Erro Comum:** Achar que qualquer termo invariável na frase atrai o pronome, mesmo estando depois do verbo.
 - **Explicação:** A palavra invariável só exerce atração se estiver **anteposta** ao verbo. Em `Ele a encontrou em casa`, o `em` pós-verbal não atrai.
 
 ---
 
-## Erro de Confundir Futuro do Subjuntivo com Infinitivo
+### Erro de Confundir Futuro do Subjuntivo com Infinitivo
 
 - **Erro Comum:** Ver a terminação `-r` em verbo regular e achar que a ênclise é permitida.
 - **Forma Incorreta:** `Assim que eu encontrar-la`.
@@ -634,59 +620,55 @@ Se houver palavra atrativa antes de verbo no futuro, a mesóclise fica **proibid
 
 ---
 
-## Pegadinha da Apossínclese como "Incorreta"
+### Pegadinha da Apossínclese como "Incorreta"
 
 - **Erro Comum:** Julgar como erro a frase `João me não chamou` por soar estranha.
 - **Explicação:** Para o Cebraspe, a apossínclese é padrão culto válido.
 
 ---
 
-## Pegadinha das Vírgulas: Adjunto Antecipado vs. Intercalação
+### Pegadinha das Vírgulas: Adjunto Antecipado vs. Intercalação
 
 - **Erro Comum:** Não verificar onde a oração começa ao ver uma vírgula antes do verbo.
 - **Explicação:**
- - Após **adjunto antecipado no início**, o verbo abre a oração principal $\rightarrow$ Próclise PROIBIDA (*"verifica-se"*).
- - Após **intercalação**, a oração já começou antes no sujeito $\rightarrow$ Próclise PERMITIDA (*"Estes, muitas vezes, se situam"*).
-
----
+  - Após **adjunto antecipado no início**, o verbo abre a oração principal $\rightarrow$ Próclise PROIBIDA (*"verifica-se"*).
+  - Após **intercalação**, a oração já começou antes no sujeito $\rightarrow$ Próclise PERMITIDA (*"Estes, muitas vezes, se situam"*).
 
 ---
 
 ## Glossário operacional
 
-## Palavra Atrativa Invariável
+### Palavra Atrativa Invariável
 
 Termo sintático sem flexão (advérbio, conjunção subordinativa, palavra negativa, preposição) que, anteposto ao verbo, exige próclise obrigatória.
 
-## Infinitivo Pessoal ("Todo-Poderoso")
+### Infinitivo Pessoal ("Todo-Poderoso")
 
 Forma nominal do verbo que possui a prerrogativa soberana de aceitar a ênclise em qualquer situação, mesmo diante de elementos atrativos antecedentes.
 
-## Futuro do Subjuntivo
+### Futuro do Subjuntivo
 
 Tempo verbal que expressa eventualidade. Em verbos regulares é homógrafo ao infinitivo, mas submete-se estritamente à próclise obrigatória na presença de atrator.
 
-## Apossínclese
+### Apossínclese
 
 Construção sintática culta em que o pronome oblíquo átono situa-se imediatamente antes de uma palavra invariável negativa (`João me não chamou`).
 
-## Oração Subordinada Desenvolvida
+### Oração Subordinada Desenvolvida
 
 Oração introduzida por conjunção subordinativa ou pronome relativo com verbo flexionado, na qual a próclise é obrigatória mesmo com intercalação.
 
-## Intercalação Adverbial (Vírgulas Casadas)
+### Intercalação Adverbial (Vírgulas Casadas)
 
 Inserção de termo ou adjunto no meio de uma oração já iniciada, isolado por duas vírgulas, que não anula a validade da próclise ao verbo seguinte.
 
-## Adjunto Adverbial Antecipado
+### Adjunto Adverbial Antecipado
 
 Estrutura adverbial deslocada para o início do período, cujo encerramento por pontuação marca o ponto de partida da oração principal, proibindo a próclise.
 
-## Algoritmo 3-1-2
+### Algoritmo 3-1-2
 
 Método sintético de validação de colocação pronominal: 3 Proibições Absolutas, 1 Regra Geral de Atração e 2 Exceções Soberanas.
-
----
 
 ---
 

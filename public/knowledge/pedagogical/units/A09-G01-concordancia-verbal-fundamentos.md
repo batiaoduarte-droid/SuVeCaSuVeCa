@@ -23,9 +23,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 ### Como aplicar neste tema
 
 1. Identificar a forma verbal simples ou locução verbal na oração para delimitar a estrutura sintática.
-2. 1. Localizar o verbo ou a locução verbal no enunciado da oração.
-3. 2. Formular a pergunta sintática direcionada ('Quem é que...?' ou 'O que é que...?').
-4. 3. Isolar o sintagma nominal de resposta e eliminar mentalmente todos os termos iniciados por preposição.
+2. Localizar o verbo ou a locução verbal no enunciado da oração.
+3. Formular a pergunta sintática direcionada ('Quem é que...?' ou 'O que é que...?').
+4. Isolar o sintagma nominal de resposta e eliminar mentalmente todos os termos iniciados por preposição.
 
 ### Testes decisivos
 
@@ -47,7 +47,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - Noções de transitividade verbal (Verbo Intransitivo — VI, Verbo Transitivo Direto — VTD, Verbo Transitivo Indireto — VTI, Verbo Transitivo Direto e Indireto — VTDI e Verbo de Ligação — VL).
 - Distinção elementar entre termos essenciais (sujeito e predicado), termos integrantes (objetos direto e indireto) e termos acessórios (adjuntos adnominais e adverbiais).
 
-### Mapa conceitual integrado
+#### Mapa conceitual integrado
 
 ```text
 CONCORDÂNCIA VERBAL — CADERNO 1: TIPOS DE SUJEITO
@@ -95,27 +95,25 @@ CONCORDÂNCIA VERBAL — CADERNO 1: TIPOS DE SUJEITO
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Estrutura Metodológica da Concordância Verbal e Regra Geral do Sujeito Simples
+### Estrutura Metodológica da Concordância Verbal e Regra Geral do Sujeito Simples
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A concordância verbal estrutura-se em dois macroblocos: a concordância orientada pelos **Tipos de Sujeito** (Caderno 1) e os **Casos Especiais** (Caderno 2). A regra geral do sujeito simples determina que o verbo flexiona-se obrigatoriamente em número (singular/plural) e pessoa (1ª, 2ª ou 3ª) para concordar com o seu **núcleo substantivo não preposicionado**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Para determinar a flexão correta, isola-se o sujeito formulando a pergunta objetiva ao verbo: *"Quem é que + [verbo]?"* ou *"O que é que + [verbo]?"*. Identificado o bloco sintático, localiza-se o substantivo ou pronome substantivo nuclear, descartando modificadores, artigos e adjuntos adnominais preposicionados (pois termos preposicionados nunca exercem a função de núcleo do sujeito).
 
-### Critérios de reconhecimento e aplicação
+#### Critérios de reconhecimento e aplicação
 
 - **Núcleo singular:** Verbo na 3ª pessoa do singular (ex.: *"A segurança da Paulista atrai os moradores"*).
 - **Núcleo plural:** Verbo na 3ª pessoa do plural (ex.: *"Existem muitas câmeras instaladas"*).
 - **Distanciamento sintático:** Elementos intercalados extensos entre o sujeito e o verbo não alteram a regência do núcleo primitivo.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Exemplo correto:* *"Altamente irreais, suas palavras só contêm valores supérfluos."* (Núcleo: *palavras* [plural] $\rightarrow$ verbo *contêm* com acento circunflexo).
 - *Contraexemplo (erro comum):* *"A discussão sobre os direitos humanos têm evidenciado..."* (Incorreto: o núcleo é o singular *discussão*; a forma correta é *tem*).
@@ -124,17 +122,17 @@ Para determinar a flexão correta, isola-se o sujeito formulando a pergunta obje
 
 ---
 
-## Comportamento Sintático em Locuções Verbais
+### Comportamento Sintático em Locuções Verbais
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Nas **locuções verbais** (`verbo auxiliar + verbo principal no infinitivo, gerúndio ou particípio`), a responsabilidade semântica e regencial pertence ao verbo principal, mas a **flexão gramatical de tempo, modo, número e pessoa recai exclusivamente sobre o verbo auxiliar**, permanecendo o verbo principal invariável em sua forma nominal.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Aplica-se o princípio mnemônico: *"O principal manda, o auxiliar obedece e carrega tudo nas costas"*. O verbo principal dita se a estrutura possui sujeito, se é impessoal ou se admite voz passiva. O verbo auxiliar absorve a concordância com o sujeito da oração.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Exemplo correto:* *"Devem existir dúvidas sobre aquele ponto da matéria."* (O verbo *existir* é pessoal e admite sujeito [*dúvidas*]; o auxiliar *devem* flexiona no plural).
 - *Exemplo correto:* *"Poderão ocorrer novas rebeliões."* (Sujeito: *rebeliões* $\rightarrow$ auxiliar *poderão* no plural).
@@ -142,82 +140,82 @@ Aplica-se o princípio mnemônico: *"O principal manda, o auxiliar obedece e car
 
 ---
 
-## Concordância com os Verbos Temporais DAR, BATER e SOAR
+### Concordância com os Verbos Temporais DAR, BATER e SOAR
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Os verbos **dar**, **bater** e **soar**, quando empregados na indicação de horas, concordam obrigatoriamente com o respectivo sujeito sintático, o qual pode ser a **expressão numérica de horas** ou o **instrumento medidor (*o relógio*, *os sinos*)**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Instrumento não preposicionado (*o relógio*, *os sinos*):** Atua como sujeito gramatical da oração. O verbo concorda com ele:
- - *"O relógio da igreja bateu seis horas."* (Sujeito: *O relógio* $\rightarrow$ verbo no singular).
- - *"Os sinos bateram seis horas."* (Sujeito: *Os sinos* $\rightarrow$ verbo no plural).
+  - *"O relógio da igreja bateu seis horas."* (Sujeito: *O relógio* $\rightarrow$ verbo no singular).
+  - *"Os sinos bateram seis horas."* (Sujeito: *Os sinos* $\rightarrow$ verbo no plural).
 2. **Instrumento preposicionado (*no relógio*, *nos sinos*) ou omitido:** A preposição (*em + o = no*) rebaixa o instrumento a **adjunto adverbial de lugar**. Como o núcleo do sujeito não pode ser preposicionado, o sujeito passa a ser o numeral de horas:
- - *"Deram cinco horas no relógio da sala."* (Sujeito: *cinco horas* [plural] $\rightarrow$ verbo *deram*).
- - *"Soou uma hora."* (Sujeito: *uma hora* [singular] $\rightarrow$ verbo *soou*).
+  - *"Deram cinco horas no relógio da sala."* (Sujeito: *cinco horas* [plural] $\rightarrow$ verbo *deram*).
+  - *"Soou uma hora."* (Sujeito: *uma hora* [singular] $\rightarrow$ verbo *soou*).
 
 ---
 
-## Concordância com Sujeito Composto: Posição do Verbo e Pessoas Gramaticais
+### Concordância com Sujeito Composto: Posição do Verbo e Pessoas Gramaticais
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A concordância do verbo com sujeito composto (dois ou mais núcleos nominais) é regida primordialmente pelo posicionamento sintático relativo entre o sujeito e o verbo e pela hierarquia de pessoas gramaticais dos pronomes retos.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Verbo Posposto ao Sujeito Composto (`Sujeito Composto + Verbo`):** O verbo deve flexionar-se **obrigatoriamente no plural** (concordância total / lógica / gramatical). Não se admite concordância atrativa nessa posição padrão.
- - *"Fernanda e Guilherme estavam aqui."*
+  - *"Fernanda e Guilherme estavam aqui."*
 2. **Verbo Anteposto ao Sujeito Composto (`Verbo + Sujeito Composto`):** Admite **dupla possibilidade** de concordância:
- - *Concordância Atrativa / Parcial:* o verbo concorda em número e pessoa apenas com o núcleo mais próximo.
- - *Concordância Total / Lógica:* o verbo vai para o plural concordando com a soma de todos os núcleos.
- - *"Estava aqui Fernando e Guilherme."* (Atrativa com *Fernando*) OU *"Estavam aqui Fernando e Guilherme."* (Total).
+  - *Concordância Atrativa / Parcial:* o verbo concorda em número e pessoa apenas com o núcleo mais próximo.
+  - *Concordância Total / Lógica:* o verbo vai para o plural concordando com a soma de todos os núcleos.
+  - *"Estava aqui Fernando e Guilherme."* (Atrativa com *Fernando*) OU *"Estavam aqui Fernando e Guilherme."* (Total).
 3. **Hierarquia de Pessoas Gramaticais (Pronomes Pessoais Retos):**
- - A **1ª pessoa prevalece** sobre a 2ª e a 3ª ($1ª + 3ª = \text{1ª do plural [nós]}$).
- - Se o verbo estiver posposto: *"Ela e eu saímos para jantar."*
- - Se o verbo estiver anteposto: *"Saímos ela e eu"* (total) OU *"Saiu ela e eu"* (atrativa com *ela*).
+  - A **1ª pessoa prevalece** sobre a 2ª e a 3ª ($1ª + 3ª = \text{1ª do plural [nós]}$).
+  - Se o verbo estiver posposto: *"Ela e eu saímos para jantar."*
+  - Se o verbo estiver anteposto: *"Saímos ela e eu"* (total) OU *"Saiu ela e eu"* (atrativa com *ela*).
 
 ---
 
-## Distinção entre Sujeito Composto e Adjuntos Coordenados por "E" (Falso Sujeito Composto)
+### Distinção entre Sujeito Composto e Adjuntos Coordenados por "E" (Falso Sujeito Composto)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A ocorrência da conjunção aditiva *e* no interior do sujeito não caracteriza necessariamente sujeito composto. Quando o conectivo coordena apenas modificadores (adjetivos ou adjuntos adnominais preposicionados) subordinados a um único substantivo, o sujeito permanece **simples**, exigindo verbo no singular.
 
-### Critérios de reconhecimento e distinção estrutural
+#### Critérios de reconhecimento e distinção estrutural
 
 - **Padrão 1: Adjetivos coordenados qualificando um único substantivo:**
- - *"A ordem social e humana nem sempre se alcança sem o grotesco."* (Núcleo único: *ordem* $\rightarrow$ sujeito simples singular).
- - *Diferenciação:* Para configurar sujeito composto, seria necessária a reiteração do artigo determinante: *"A ordem social e a humana alcançam..."*.
+  - *"A ordem social e humana nem sempre se alcança sem o grotesco."* (Núcleo único: *ordem* $\rightarrow$ sujeito simples singular).
+  - *Diferenciação:* Para configurar sujeito composto, seria necessária a reiteração do artigo determinante: *"A ordem social e a humana alcançam..."*.
 - **Padrão 2: Adjuntos adnominais preposicionados coordenados:**
- - *"A falta de investimentos na construção civil e de criação de novos canteiros reforça a crise."* (Núcleo único: *falta* $\rightarrow$ sujeito simples singular).
- - *Diferenciação:* Para configurar sujeito composto com elipse, o artigo determinante deve ser repetido: *"A falta de investimentos e a [falta] de criação reforçam..."*.
+  - *"A falta de investimentos na construção civil e de criação de novos canteiros reforça a crise."* (Núcleo único: *falta* $\rightarrow$ sujeito simples singular).
+  - *Diferenciação:* Para configurar sujeito composto com elipse, o artigo determinante deve ser repetido: *"A falta de investimentos e a [falta] de criação reforçam..."*.
 
 ---
 
-## Sujeito Composto com os Conectivos Especiais COM e OU
+### Sujeito Composto com os Conectivos Especiais COM e OU
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A concordância com elementos conectados pela preposição `COM` é modulada pela pontuação sintática, enquanto a concordância com elementos ligados pela conjunção `OU` é determinada pelo valor semântico contextual do predicado (exclusão vs. adição).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Núcleos conectados por `COM`:**
- - *Sem vírgulas (`A com B + Verbo`):* Permite **dupla concordância**. O verbo vai para o plural se "com" for interpretado com valor aditivo equivalente a "e" (*"O rei com a rainha chegaram"*), ou permanece no singular se o emissor desejar dar destaque e primazia ao primeiro núcleo (*"O rei com a rainha chegou"*).
- - *Com vírgulas (`A, com B, + Verbo`):* A expressão entre vírgulas atua estritamente como **Adjunto Adverbial de Companhia**. O sujeito é simples (*A*), obrigando o verbo a concordar no **singular** (*"O rei, com a rainha, chegou"*).
+  - *Sem vírgulas (`A com B + Verbo`):* Permite **dupla concordância**. O verbo vai para o plural se "com" for interpretado com valor aditivo equivalente a "e" (*"O rei com a rainha chegaram"*), ou permanece no singular se o emissor desejar dar destaque e primazia ao primeiro núcleo (*"O rei com a rainha chegou"*).
+  - *Com vírgulas (`A, com B, + Verbo`):* A expressão entre vírgulas atua estritamente como **Adjunto Adverbial de Companhia**. O sujeito é simples (*A*), obrigando o verbo a concordar no **singular** (*"O rei, com a rainha, chegou"*).
 2. **Núcleos conectados por `OU`:**
- - *Valor de Exclusão ou Retificação:* Quando o fato verbal só puder ser atribuído a um dos núcleos (cargo único, eleição, evento excludente), o verbo fica no **singular** (*"Wilson ou Ricardo será o novo presidente"*).
- - *Valor de Inclusão ou Adição:* Quando o predicado se aplicar simultaneamente a ambos os núcleos (`ou` = `e`), o verbo flexiona-se obrigatoriamente no **plural** (*"O riso ou a lágrima fazem parte da vida"*; *"Cigarro ou charuto prejudicam a saúde"*).
- - *Critério Operacional:* *"O que vem depois salva"* — a análise do complemento/predicativo posposto revela se a condição é exclusiva ou cumulativa.
+  - *Valor de Exclusão ou Retificação:* Quando o fato verbal só puder ser atribuído a um dos núcleos (cargo único, eleição, evento excludente), o verbo fica no **singular** (*"Wilson ou Ricardo será o novo presidente"*).
+  - *Valor de Inclusão ou Adição:* Quando o predicado se aplicar simultaneamente a ambos os núcleos (`ou` = `e`), o verbo flexiona-se obrigatoriamente no **plural** (*"O riso ou a lágrima fazem parte da vida"*; *"Cigarro ou charuto prejudicam a saúde"*).
+  - *Critério Operacional:* *"O que vem depois salva"* — a análise do complemento/predicativo posposto revela se a condição é exclusiva ou cumulativa.
 
 ---
 
-## Dualidade da Partícula SE: Pronome Apassivador (PA) vs. Índice de Indeterminação (PIS)
+### Dualidade da Partícula SE: Pronome Apassivador (PA) vs. Índice de Indeterminação (PIS)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A função da partícula `SE` na concordância depende estritamente da transitividade verbal da oração: associada a verbos com transitividade direta (`VTD/VTDI`), opera como **Pronome Apassivador (PA)** com concordância variável; associada a verbos sem transitividade direta (`VI/VTI/VL`), opera como **Índice de Indeterminação do Sujeito (PIS)**, fixando o verbo na 3ª pessoa do singular.
 
@@ -235,7 +233,7 @@ A função da partícula `SE` na concordância depende estritamente da transitiv
 └──────────────────────────────────────────────┴──────────────────────────────────────────────┘
 ```
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Voz Passiva Sintética (PA):** O termo que seria objeto direto na voz ativa atua como sujeito paciente na voz sintética. O verbo concorda obrigatoriamente com o seu núcleo: *"Aluga-se sala"* (singular) / *"Alugam-se salas"* (plural); *"Deu-se às poesias o nome..."* (núcleo singular *nome* $\rightarrow$ verbo *deu-se*).
 - **Sujeito Indeterminado (PIS):** O sujeito existe no plano semântico (*alguém*, *qualquer um*, *todo mundo*), mas não pode ser determinado. O verbo permanece travado na 3ª pessoa do singular: *"Trabalha-se bastante"* (`VI`), *"Obedeceu-se às ordens"* (`VTI`), *"Aqui se é feliz"* (`VL`).
@@ -243,30 +241,30 @@ A função da partícula `SE` na concordância depende estritamente da transitiv
 
 ---
 
-## Partícula de Realce / Expletiva com Verbos de Ação Espontânea
+### Partícula de Realce / Expletiva com Verbos de Ação Espontânea
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Quando associado a verbos intransitivos que exprimem ações espontâneas, processos naturais ou passagem do tempo, o pronome `SE` pode atuar como **partícula de realce (ou expletiva)**. Nessa condição, o pronome é sintaticamente dispensável e o verbo concorda normalmente com o sujeito expresso na oração.
 
-### Critérios de reconhecimento e teste da ordem direta
+#### Critérios de reconhecimento e teste da ordem direta
 
 Ao deparar-se com estruturas como *"Passa-se muitos dias"*, o teste de passiva analítica falha (*"dias são passados"* não faz sentido no contexto de fluxo temporal). Ao transpor a oração para a ordem direta, tem-se: *"Muitos dias passam (se)"*. Como o sujeito expresso é plural (*muitos dias*), o verbo deve flexionar no plural: ***Passam-se muitos dias***.
 
-### Exemplos
+#### Exemplos
 
 - *"Passaram-se os anos."* = *"Os anos passaram."* (Sujeito plural: *os anos* $\rightarrow$ verbo *passaram*).
 - *"Foi-se a última oportunidade."* = *"A última oportunidade foi."* (Sujeito singular: *oportunidade* $\rightarrow$ verbo *foi*).
 
 ---
 
-## Concordância com Sujeito Oracional e o Teste do "ISSO"
+### Concordância com Sujeito Oracional e o Teste do "ISSO"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **sujeito oracional** ocorre quando a função sintática de sujeito é exercida por uma oração subordinada substantiva subjetiva (frequentemente reduzida de infinitivo). Nesses casos, o verbo da oração principal que rege a estrutura fica **obrigatoriamente fixo na 3ª pessoa do singular**, e o predicativo associado permanece no masculino singular.
 
-### Critério de aplicação: Teste do "ISSO"
+#### Critério de aplicação: Teste do "ISSO"
 
 Substitui-se todo o bloco oracional subjetivo pelo pronome demonstrativo neutro **"ISSO"**. Se a estrutura passar a significar *"Isso + verbo"*, comprova-se o sujeito oracional:
 
@@ -275,17 +273,15 @@ Substitui-se todo o bloco oracional subjetivo pelo pronome demonstrativo neutro 
 
 ---
 
-## Regras Especiais Complementares: Nomes Geográficos, Pronome QUE e Infinitivo
+### Regras Especiais Complementares: Nomes Geográficos, Pronome QUE e Infinitivo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Três fenômenos sintáticos complementam o julgamento de concordância em provas de alto nível:
 
 1. **Nomes próprios de lugar no plural:** Sem artigo determinante, o verbo permanece no **singular** (*"Minas Gerais fica ao norte"*); com artigo determinante no plural, o verbo flexiona no **plural** (*"Os Estados Unidos ficam na América"*).
 2. **Pronome Relativo "QUE" como Sujeito:** O verbo da oração adjetiva concorda em número e pessoa com o **termo antecedente** que o pronome relativo recupera (*"São atitudes que movem o mundo"*; *"o amor ou o ódio... que arrancaram as primeiras vozes"*).
 3. **Flexão Facultativa do Infinitivo com Sujeito Plural Expresso:** Quando o sujeito no plural já foi expressamente enunciado na oração principal, o infinitivo subsequente pode permanecer impessoal (sem flexão) ou flexionar-se (*"pessoas têm o hábito de frequentar [ou frequentarem] as redes sociais sem travar [ou travarem] diálogos"*).
-
----
 
 ---
 
@@ -315,22 +311,20 @@ A tabela abaixo consolida as regras fundamentais do grupo `esta unidade` para co
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Protocolo do "Farejador de Núcleo" para Localização do Sujeito
+### Protocolo do "Farejador de Núcleo" para Localização do Sujeito
 
-### Objetivo
+#### Objetivo
 
 Localizar com exatidão matemática o núcleo sintático do sujeito em qualquer período, blindando o candidato contra a ordem inversa e modificadores intercalados.
 
-### Passo a passo operacional
+#### Passo a passo operacional
 
 1. **Localizar o verbo ou a locução verbal:** Sublinhe a forma verbal na oração.
 2. **Formular a pergunta sintática direcionada:**
- - Para seres humanos/animados: `Quem é que + [verbo]?`
- - Para conceitos/coisas/inanimados: `O que é que + [verbo]?`
+  - Para seres humanos/animados: `Quem é que + [verbo]?`
+  - Para conceitos/coisas/inanimados: `O que é que + [verbo]?`
 3. **Isolar o sintagma nominal que responde integralmente à pergunta.**
 4. **Descarte sistemático de termos preposicionados:** Risque ou elimine mentalmente todos os sintagmas introduzidos por preposição (`de`, `em`, `a`, `com`, `por`, `para`, crase `às`), pois **termo preposicionado nunca é sujeito**.
 5. **Isolar o núcleo substantivo:** Identifique a palavra-base sem preposição e circule-a.
@@ -338,9 +332,9 @@ Localizar com exatidão matemática o núcleo sintático do sujeito em qualquer 
 
 ---
 
-## Algoritmo Decisório para Funções do Pronome SE (PA vs. PIS vs. Realce)
+### Algoritmo Decisório para Funções do Pronome SE (PA vs. PIS vs. Realce)
 
-### Objetivo
+#### Objetivo
 
 Discriminar a função exata da partícula `SE` e aplicar a concordância cabível.
 
@@ -381,13 +375,13 @@ Discriminar a função exata da partícula `SE` e aplicar a concordância cabív
 
 ---
 
-## Protocolo de Decisão com Conjunção "OU" ("O Que Vem Depois Salva")
+### Protocolo de Decisão com Conjunção "OU" ("O Que Vem Depois Salva")
 
-### Objetivo
+#### Objetivo
 
 Definir se o sujeito composto ligado por "ou" exige verbo no singular ou plural.
 
-### Passo a passo
+#### Passo a passo
 
 1. Localize os substantivos ligados pela conjunção `ou`.
 2. Examine o predicado posposto ao verbo (o complemento, predicativo ou circunstância).
@@ -396,16 +390,14 @@ Definir se o sujeito composto ligado por "ou" exige verbo no singular ou plural.
 
 ---
 
-## Teste do "ISSO" para Identificação de Sujeito Oracional
+### Teste do "ISSO" para Identificação de Sujeito Oracional
 
-### Passo a passo
+#### Passo a passo
 
 1. Ao encontrar uma oração subordinada ou infinitivo desempenhando função substantiva junto a um verbo principal, delimite todo o bloco oracional.
 2. Substitua o bloco integralmente pelo pronome **"ISSO"**.
 3. Formule a frase reduzida: `Isso + verbo principal`.
 4. Constatada a equivalência, trave o verbo principal obrigatoriamente na **3ª pessoa do singular** e o predicativo no **masculino singular**.
-
----
 
 ---
 
@@ -421,7 +413,7 @@ Definir se o sujeito composto ligado por "ou" exige verbo no singular ou plural.
 
 ---
 
-### 8.2. Conectivo COM: Com Vírgulas vs. Sem Vírgulas
+#### 8.2. Conectivo COM: Com Vírgulas vs. Sem Vírgulas
 
 | Estrutura | Função Sintática do Termo com "COM" | Flexão Verbal Autorizada | Exemplo |
 |:----------------------------------------- |:--------------------------------------- |:------------------------------------------------------------- |:------------------------------------------ |
@@ -430,7 +422,7 @@ Definir se o sujeito composto ligado por "ou" exige verbo no singular ou plural.
 
 ---
 
-### 8.3. Sujeito Indeterminado vs. Oração Sem Sujeito
+#### 8.3. Sujeito Indeterminado vs. Oração Sem Sujeito
 
 | Aspecto | Sujeito Indeterminado | Oração Sem Sujeito (Sujeito Inexistente) |
 |:------------------------------- |:------------------------------------------------------------------- |:------------------------------------------------------------------- |
@@ -441,15 +433,13 @@ Definir se o sujeito composto ligado por "ou" exige verbo no singular ou plural.
 
 ---
 
----
-
 ## Exemplos comentados
 
 Nesta seção, agrupam-se as 26 questões e exercícios resolvidos ao longo das 4 KBs de origem, categorizados por habilidade e fenômeno gramatical.
 
 ### 9.1. Sujeito Simples, Locuções Verbais e Verbos Temporais
 
-## Fixação de Sujeito Simples e Locuções (Frases 1 a 6)
+### Fixação de Sujeito Simples e Locuções (Frases 1 a 6)
 
 - **Itens e Resoluções:**
  1. *"Altamente irreais, suas palavras só **contêm** valores supérfluos."* (Núcleo: *palavras* [plural]).
@@ -459,228 +449,220 @@ Nesta seção, agrupam-se as 26 questões e exercícios resolvidos ao longo das 
  5. *"**Poderão** ocorrer novas rebeliões."* (Locução: *rebeliões* é sujeito $\rightarrow$ *poderão ocorrer*).
  6. *"A ordem social e humana nem sempre se **alcança** sem o grotesco."* (Núcleo: *ordem* [singular]).
 
-## Questão 01 — VUNESP (2019) — Pref. de Osasco - SP
+### Questão 01 — VUNESP (2019) — Pref. de Osasco - SP
 
 - **Análise sucinta:** Avalia concordância com sujeitos antepostos e pospostos. Alternativa correta: *"Existem muitas câmeras instaladas ao longo da Avenida Paulista"* (O verbo pessoal *existir* concorda com o sujeito plural *muitas câmeras*).
 - **Gabarito:** **E**
 
-## Questão 05 — VUNESP (2018) — Pref. de Serrana - SP
+### Questão 05 — VUNESP (2018) — Pref. de Serrana - SP
 
 - **Análise sucinta:** Locução verbal com sujeito plural: *"As mulheres **vêm assinando** metade dos artigos científicos..."* (Auxiliar *vir* flexionado na 3ª pessoa do plural com acento circunflexo diferencial).
 - **Gabarito:** **A**
 
-## Questão 06 — CESGRANRIO (2018) — Petrobras
+### Questão 06 — CESGRANRIO (2018) — Petrobras
 
 - **Análise sucinta:** Distanciamento entre sujeito e locução verbal: *"Os avanços [obtidos pelo mundo na construção de uma agenda global] **devem** ser valorizados."* (Núcleo plural *avanços* rege o auxiliar *devem*).
 - **Gabarito:** **E**
 
-## Questão 08 — INSTITUTO AOCP (2019) — Cabo de Santo Agostinho - PE
+### Questão 08 — INSTITUTO AOCP (2019) — Cabo de Santo Agostinho - PE
 
 - **Análise sucinta:** Justificativa morfossintática em *"surgiu nas empresas a necessidade..."*. O verbo *surgiu* está no singular para concordar com o núcleo do sujeito posposto simples **necessidade**.
 - **Gabarito:** **D**
 
-## Questão 10 — FCC (2019) — TRF 4ª Região
+### Questão 10 — FCC (2019) — TRF 4ª Região
 
 - **Análise sucinta:** Identificação de opção que exige plural: *"**Constituem** patrimônio histórico importante... as belas ruínas das igrejas..."* (Sujeito posposto plural: *as belas ruínas*).
 - **Gabarito:** **E**
 
 ---
 
-### 9.2. Sujeito Composto, Conectivos "E", "COM" e "OU"
+#### 9.2. Sujeito Composto, Conectivos "E", "COM" e "OU"
 
-## Questão 13 — VUNESP (2021) — CODEN - SP
+### Questão 13 — VUNESP (2021) — CODEN - SP
 
 - **Análise sucinta:** Avaliação geral de concordância: *"Para a humanidade não **existem** soluções a curto prazo."* (Verbo *existir* concorda com o sujeito plural posposto *soluções*).
 - **Gabarito:** **E**
 
-## Questão 15 — VUNESP (2018) — PC-SP
+### Questão 15 — VUNESP (2018) — PC-SP
 
 - **Análise sucinta:** Armadilha do conectivo *e* ligando adjuntos preposicionados: *"A **falta** [de investimentos na construção civil e de criação de novos canteiros] **reforça** a inquietude..."* (Núcleo único singular *falta* rege o verbo singular *reforça*).
 - **Gabarito:** **C**
 
-## Questão 16 — FCC (2018) — CLDF
+### Questão 16 — FCC (2018) — CLDF
 
 - **Análise sucinta:** Sujeito composto anteposto exigindo plural: *"A arquitetura límpida e a perfeição melódica... **evocam** a ideia de um mundo harmônico."* (Dois núcleos coordenados determinam flexão plural obrigatória).
 - **Gabarito:** **C**
 
-## Questão 18 — FGV — IBGE
+### Questão 18 — FGV — IBGE
 
 - **Análise sucinta:** Identificação de estrutura idêntica a *"Água e luz avançam"*: *"**Norte e Nordeste registraram** o menor tempo médio..."* (Sujeito composto anteposto com 2 núcleos + verbo no plural).
 - **Gabarito:** **C**
 
-## Questão 20 — FGV — Magistério
+### Questão 20 — FGV — Magistério
 
 - **Análise sucinta:** Conjunção `OU` com valor de exclusão mandatória: *"Portugal ou México **será** a sede do Congresso..."* (Apenas um país será a sede física; o emprego de *"serão"* na alternativa E é incorreto).
 - **Gabarito:** **E**
 
-## Questão 21 — Instituto Excelência (2019) — Pref. Catanduvas - PR
+### Questão 21 — Instituto Excelência (2019) — Pref. Catanduvas - PR
 
 - **Análise sucinta:** Identificação de erro: *"Durante muitos anos, a construção das estradas pavimentadas **eram feitas**..."* (Núcleo singular *construção* exige *era feita*).
 - **Gabarito:** **A**
 
-## Questão 22 — INSTITUTO AOCP (2019) — TJ-MG
+### Questão 22 — INSTITUTO AOCP (2019) — TJ-MG
 
 - **Análise sucinta:** Trecho: *"...mas o amor ou o ódio, a piedade, a cólera, que aos primeiros homens lhes **arrancaram** as primeiras vozes"*. O verbo está no plural para concordar com o antecedente composto enumerativo resgatado pelo pronome relativo `que`.
 - **Gabarito:** **C**
 
 ---
 
-### 9.3. Partícula SE (PA vs. PIS), Sujeito Indeterminado e Sujeito Oracional
+#### 9.3. Partícula SE (PA vs. PIS), Sujeito Indeterminado e Sujeito Oracional
 
-## Questão 02 — VUNESP (2021) — Pref. de Guarulhos - SP
+### Questão 02 — VUNESP (2021) — Pref. de Guarulhos - SP
 
 - **Análise sucinta:** Voz passiva sintética: *"Por iniciativa de algumas entidades, **empreendeu-se uma pesquisa** na cidade de São Paulo."* (Passiva analítica: *uma pesquisa foi empreendida* $\rightarrow$ singular correto).
 - **Gabarito:** **B**
 
-## Questão 03 — OBJETIVA (2019) — Pref. São João da Urtiga - RS
+### Questão 03 — OBJETIVA (2019) — Pref. São João da Urtiga - RS
 
 - **Análise sucinta:** Preenchimento de lacunas: 1) *Alugam-se salas* (PA, plural); 2) *O relógio bateu seis horas* (sujeito singular *relógio*); 3) *não se veem as crianças* (PA, plural).
 - **Gabarito:** **B**
 
-## Questão 07 — VUNESP (2019) — Câmara de São Roque - SP
+### Questão 07 — VUNESP (2019) — Câmara de São Roque - SP
 
 - **Análise sucinta:** Substituição ativa por passiva sintética: *"...não **se podem fazer** verificações desse tipo... pois **se encontram** à nossa disposição apenas os testemunhos..."*.
 - **Gabarito:** **B**
 
-## Questão 11 — FCC (2018) — SABESP
+### Questão 11 — FCC (2018) — SABESP
 
 - **Análise sucinta:** Correção de sujeito oracional: *"Demonstrar seus sentimentos e emoções **não é fácil**"* (Macete do "ISSO"). Alternativa A correta: *"Algumas pessoas têm o hábito de frequentar as redes sociais sem travar diálogos"*.
 - **Gabarito:** **A**
 
-## Questão 12 — INSTITUTO AOCP (2019) — IBGE
+### Questão 12 — INSTITUTO AOCP (2019) — IBGE
 
 - **Análise sucinta:** Identificação da incorreta: *"**Dá-se pistas** para nós..."* (Deveria ser *"Dão-se pistas"*, pois *pistas* é sujeito paciente plural).
 - **Gabarito:** **E**
 
-## Questão 14 — CESGRANRIO (2018) — Banco do Brasil
+### Questão 14 — CESGRANRIO (2018) — Banco do Brasil
 
 - **Análise sucinta:** Voz passiva sintética com sujeito composto posposto: *"...**atribuem-se** às cidades a responsabilidade... e a condição..."* (Concordância total no plural com os dois núcleos pacientes).
 - **Gabarito:** **C**
 
-## Questão 17 — INSTITUTO AOCP (2019) — PC-ES
+### Questão 17 — INSTITUTO AOCP (2019) — PC-ES
 
 - **Análise sucinta:** Passiva analítica com sujeito composto posposto: *"**São trabalhadas** palavras e atividades lúdicas."* (Concordância no feminino plural).
 - **Gabarito:** **B**
 
-## Questão 19 — FGV (2021) — IMBEL
+### Questão 19 — FGV (2021) — IMBEL
 
 - **Análise sucinta:** Trecho: *"Onde **intervém** o favor e as doações, **abate-se** os obstáculos e **desfaz-se** as dificuldades"*. Apenas a 1ª forma está correta (concordância atrativa com *o favor*); as demais trazem erros em voz passiva sintética (*abatem-se*, *desfazem-se*).
 - **Gabarito:** **E**
 
-## Questão 23 — VUNESP (2018) — Pref. de Barretos - SP
+### Questão 23 — VUNESP (2018) — Pref. de Barretos - SP
 
 - **Análise sucinta:** Alternativa correta: *"**Trata-se de** obras densas, que **enfocam** a natureza humana..."* (`VTI + PIS` invariável no singular + pronome `que` retomando *obras* no plural).
 - **Gabarito:** **D**
 
-## Questão 24 — VUNESP (2019) — Pref. de Arujá - SP
+### Questão 24 — VUNESP (2019) — Pref. de Arujá - SP
 
 - **Análise sucinta:** Reescrita de *"E há inaceitáveis 10% e 9%..."*. Alternativa correta: *"E **se trata de** inaceitáveis 10% e 9%..."* (`VTI + PIS` invariável).
 - **Gabarito:** **C**
 
-## Questão 25 — VUNESP (2019) — ESEF - SP
+### Questão 25 — VUNESP (2019) — ESEF - SP
 
 - **Análise sucinta:** Alternativa correta: *"Buscando apartamento para alugar, **vivem-se agruras**."* (`VTD + PA` = *agruras são vividas*). Destaca o erro em *"Passa-se muitos dias"* (deveria ser *Passam-se*, realce) e *"Tratam-se de"* (deveria ser *Trata-se*).
 - **Gabarito:** **A**
 
-## Questão 26 — CESGRANRIO — ANP
+### Questão 26 — CESGRANRIO — ANP
 
 - **Análise sucinta:** Alternativa correta: *"Nos filmes de ficção científica... **previam-se** inúmeras sociedades..."* (`VTD + PA` = *inúmeras sociedades eram previstas*). As demais trazem erros de flexão plural indevida em `VTI + PIS` (*assistem-se a*, *necessitam-se de*, *obedecem-se a*).
 - **Gabarito:** **C**
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Mantra da Locução Verbal
+### O Mantra da Locução Verbal
 
 - **Regra prática:** Memorize: **O principal manda, o auxiliar obedece e carrega tudo nas costas**. O verbo principal dita o sentido; o auxiliar absorve todas as flexões gramaticais.
 
-## Descarte Visual Sistemático de Termos Preposicionados
+### Descarte Visual Sistemático de Termos Preposicionados
 
 - **Regra prática:** Diante de períodos extensos ou invertidos, risque imediatamente a lápis todos os sintagmas iniciados por preposição (`de`, `em`, `a`, `com`, `por`, `às`). O que sobrar sem preposição revelará o verdadeiro núcleo substantivo do sujeito.
 
-## O Macete Contextual do Conectivo "OU" ("O Que Vem Depois Salva")
+### O Macete Contextual do Conectivo "OU" ("O Que Vem Depois Salva")
 
 - **Regra prática:** Não olhe apenas para os substantivos ligados por "ou". Leia o complemento/predicativo que sucede o verbo: se indicar condição única/individual (ex.: *o presidente*, *a sede*), o verbo vai para o **singular**; se indicar efeito compartilhado, vai para o **plural**.
 
-## Invariabilidade Absoluta da Locução "Trata-se de"
+### Invariabilidade Absoluta da Locução "Trata-se de"
 
 - **Regra prática:** Se encontrar a grafia *"tratam-se de"* em qualquer prova de concurso público, **elimine a alternativa sumariamente**. A estrutura é regida por `VTI + PIS` e é 100% invariável na 3ª pessoa do singular.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Distanciamento Sintático e Termos Atrativos Plurais Intercalados
+### Distanciamento Sintático e Termos Atrativos Plurais Intercalados
 
 - **Problema:** Bancas intercalam longas orações adjetivas ou adjuntos adverbiais plurais entre o sujeito singular e o verbo.
 - **Exemplo clássico:** *"O acordo [sobre mudanças climáticas aprovado pelos países] **pode** subsidiar..."* (O candidato lê o plural vizinho *países* e flexiona erroneamente *podem*).
 - **Prevenção:** Isole os termos intercalados e conecte o verbo diretamente ao substantivo nuclear (*acordo pode*).
 
-## Preposição Impedindo o Vocábulo "Relógio" de ser Sujeito
+### Preposição Impedindo o Vocábulo "Relógio" de ser Sujeito
 
 - **Problema:** Julgar que *"no relógio"* é sujeito do verbo dar/bater/soar.
 - **Erro comum:** Grafar *"Deu cinco horas no relógio"*.
 - **Correção:** A contração *em + o = no* transforma o vocábulo em adjunto adverbial de lugar. O sujeito passa a ser *cinco horas*, exigindo: ***Deram cinco horas no relógio***.
 
-## O Falso Sujeito Composto com Conectivo "E" sem Repetição de Artigo
+### O Falso Sujeito Composto com Conectivo "E" sem Repetição de Artigo
 
 - **Problema:** Assumir que toda presença do conectivo *e* gera sujeito composto.
 - **Erro comum:** Na frase *"A falta de investimentos e de criação de obras **reforça**"*, flexionar no plural.
 - **Correção:** Há apenas um núcleo substantivo (*falta*). Os elementos com *e* são apenas adjuntos adnominais coordenados. O verbo deve ficar no singular (*reforça*).
 
-## Termo Preposicionado ou Craseado Tratado como Sujeito Paciente
+### Termo Preposicionado ou Craseado Tratado como Sujeito Paciente
 
 - **Problema:** Tentar concordar o verbo na voz passiva sintética com termo preposicionado.
 - **Exemplo:** *"Deu-se às poesias o nome de Primeiros Cantos"*.
 - **Correção:** O termo *"às poesias"* é objeto indireto preposicionado. O sujeito paciente é *"o nome..."* (singular), exigindo verbo no singular: ***Deu-se***.
 
-## Pluralização Indevida de Verbos com PIS Diante de Objeto Indireto Plural
+### Pluralização Indevida de Verbos com PIS Diante de Objeto Indireto Plural
 
 - **Problema:** Concordar verbos `VTI + SE` com o substantivo plural do objeto indireto.
 - **Erros comuns de prova:** *"Obedeceram-se às ordens"*, *"Necessitam-se de leis"*, *"Assistem-se a filmes"*.
 - **Correção:** Com `SE = PIS`, o verbo é **obrigatoriamente singular**: ***Obedeceu-se às ordens***, ***Necessita-se de leis***, ***Assiste-se a filmes***.
 
-## Atração Indevida de Plural em Sujeito Oracional Intercalado
+### Atração Indevida de Plural em Sujeito Oracional Intercalado
 
 - **Problema:** Na frase *"As inquietações que **coube** a ela registrar..."*, flexionar o verbo *caber* no plural (*couberam*).
 - **Correção:** O sujeito de *caber* é a oração infinitiva *registrar as inquietações* (*"Isso coube a ela"*). Sujeito oracional impõe verbo no singular.
 
 ---
 
----
-
 ## Glossário operacional
 
-## Núcleo do Sujeito
+### Núcleo do Sujeito
 
 Palavra de base substantiva (ou pronome substantivo) que constitui o centro semântico do sujeito sintático, desprovida de preposição regente, sobre a qual recai a concordância verbal obrigatória .
 
-## Concordância Total (ou Lógica / Gramatical)
+### Concordância Total (ou Lógica / Gramatical)
 
-## Concordância Atrativa (ou Parcial)
+### Concordância Atrativa (ou Parcial)
 
-## Partícula Apassivadora (Pronome Apassivador - PA / CPA)
+### Partícula Apassivadora (Pronome Apassivador - PA / CPA)
 
 Função do pronome `SE` acoplado a verbo transitivo direto (ou transitivo direto e indireto) que converte o paciente da oração em sujeito sintático (Voz Passiva Sintética), exigindo flexão do verbo em concordância com esse sujeito .
 
-## Índice de Indeterminação do Sujeito (PIS / IIS)
+### Índice de Indeterminação do Sujeito (PIS / IIS)
 
 Morfema pronominal `SE` associado a verbos intransitivos, transitivos indiretos ou de ligação que indetermina o agente da oração, mantendo o verbo fixo na 3ª pessoa do singular .
 
-## Sujeito Oracional
+### Sujeito Oracional
 
 Oração subordinada substantiva subjetiva que desempenha o papel sintático de sujeito do verbo regente, impondo a este a fixidez na 3ª pessoa do singular .
 
-## Partícula de Realce / Expletiva
+### Partícula de Realce / Expletiva
 
 Partícula pronominal desprovida de função sintática estrita que acompanha verbos de ação espontânea ou fluxo temporal, cuja elisão não acarreta prejuízo gramatical ou semântico à oração .
-
----
 
 ---
 

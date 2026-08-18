@@ -17,9 +17,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 ### Como aplicar neste tema
 
 1. Identificar todas as formas verbais (finitas e nominais) do período composto para delimitar as fronteiras oracionais com barras divisórias.
-2. 1. Contar verbos e locuções verbais do período composto para quantificar as orações existentes .
-3. 2. Inserir barra delimitadora imediatamente antes da forma nominal (infinitivo, gerúndio, particípio) ou da preposição regente introdutória.
-4. 3. Diagnosticar a função sintática da oração: aplicar o teste do 'ISSO' (substantiva), teste da seta no antecedente (adjetiva) ou teste circunstancial (adverbial).
+2. Contar verbos e locuções verbais do período composto para quantificar as orações existentes .
+3. Inserir barra delimitadora imediatamente antes da forma nominal (infinitivo, gerúndio, particípio) ou da preposição regente introdutória.
+4. Diagnosticar a função sintática da oração: aplicar o teste do 'ISSO' (substantiva), teste da seta no antecedente (adjetiva) ou teste circunstancial (adverbial).
 
 ### Testes decisivos
 
@@ -40,7 +40,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 * **Sintaxe do Período Composto:** Compreensão prévia das orações subordinadas substantivas (e do conectivo integrante *que/se*), subordinadas adjetivas (e do pronome relativo *que/o qual*) e subordinadas adverbiais (causais, temporais, concessivas, condicionais, finais, consecutivas, etc.).
 * **Vozes Verbais e Sintaxe Pronominal:** Reconhecimento da voz ativa, voz passiva analítica (*ser + particípio*), voz passiva sintética (*VTD + se apassivador*) e diferenciação entre Partícula Apassivadora (PA) e Parte Integrante do Verbo (PIV).
 
-### Mapa integrado de dependências e ramificações
+#### Mapa integrado de dependências e ramificações
 
 ```text
 DESENVOLVIMENTO DAS ORAÇÕES REDUZIDAS
@@ -82,33 +82,31 @@ DESENVOLVIMENTO DAS ORAÇÕES REDUZIDAS
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Oposição Estrutural: Oração Reduzida vs. Oração Desenvolvida
+### Oposição Estrutural: Oração Reduzida vs. Oração Desenvolvida
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Uma oração subordinada reduzida articula-se em torno de um verbo em forma nominal (infinitivo, gerúndio ou particípio) sem o intermédio de conectivos gramaticais explícitos (conjunções subordinativas ou pronomes relativos). Uma oração subordinada desenvolvida caracteriza-se pela presença mandatória de um conectivo formal e por um verbo plenamente flexionado em tempo, modo, número e pessoa.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 No português padrão, o período composto subordinado expressa relações sintáticas sob dois arranjos fundamentais:
 
 1. **Estrutura Reduzida:** Apresenta economia morfossintática pela ausência de conjunção ou pronome relativo. O predicado é estruturado por:
- * *Infinitivo:* pessoal ou impessoal (terminações *-ar, -er, -ir*);
- * *Gerúndio:* terminação *-ndo*;
- * *Particípio:* terminações regulares *-do, -da* ou formas irregulares.
- * *Nota:* A presença de preposição funcional introdutória (*a, de, por, para, ao, sem, apesar de*) não descaracteriza a oração reduzida, pois preposição não atua como conjunção integrante nem pronome relativo.
+  * *Infinitivo:* pessoal ou impessoal (terminações *-ar, -er, -ir*);
+  * *Gerúndio:* terminação *-ndo*;
+  * *Particípio:* terminações regulares *-do, -da* ou formas irregulares.
+  * *Nota:* A presença de preposição funcional introdutória (*a, de, por, para, ao, sem, apesar de*) não descaracteriza a oração reduzida, pois preposição não atua como conjunção integrante nem pronome relativo.
 2. **Estrutura Desenvolvida:** Apresenta obrigatoriamente um conector gramatical subordinativo e desdobra o verbo nominal em uma forma verbal finita conjugada.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 * Verbo no infinitivo/gerúndio/particípio sem conjunção subordinativa ou pronome relativo $\rightarrow$ **Oração Reduzida**.
 * Conectivo explícito presente (*que, se, quando, embora, visto que, etc.*) + verbo conjugado $\rightarrow$ **Oração Desenvolvida**.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 * *Reduzida:* *"É urgente **reconhecer** a necessidade..."* (sem conectivo, infinitivo).
 * *Desenvolvida:* *"É urgente **que se reconheça** a necessidade..."* (com conjunção integrante "que" e presente do subjuntivo).
@@ -118,25 +116,25 @@ No português padrão, o período composto subordinado expressa relações sint�
 
 ---
 
-## Algoritmo Analítico dos Seis Passos para Desenvolvimento
+### Algoritmo Analítico dos Seis Passos para Desenvolvimento
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O método analítico dos seis passos constitui um procedimento estruturado para guiar alunos na transposição segura de uma oração subordinada reduzida para a sua forma desenvolvida, garantindo precisão de limites frasais, seleção exata de conectivos e respeito às regras de concordância e correlação.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Os seis passos operacionais estruturam-se na seguinte sequência:
 
 1. **Passo 1 — Contar os verbos:** Identificar cada verbo individual e locução verbal. O total de unidades verbais equivale ao número exato de orações do período.
 2. **Passo 2 — Inserir a barra delimitadora:** Isolar visualmente a oração reduzida inserindo um traço vertical imediatamente antes da forma nominal ou da preposição funcional que a rege.
 3. **Passo 3 — Diagnosticar a natureza sintática:**
- * *Substantiva:* se a oração puder ser integralmente substituída pelo pronome demonstrativo "ISSO" (*disso, nisso, a isso*).
- * *Adjetiva:* se a oração exercer função modificadora ligada a um substantivo ou pronome/numeral substantivo antecedente ("manda a seta").
- * *Adverbial:* se a oração manifestar valor circunstancial (tempo, causa, concessão, condição, finalidade, etc.).
+  * *Substantiva:* se a oração puder ser integralmente substituída pelo pronome demonstrativo "ISSO" (*disso, nisso, a isso*).
+  * *Adjetiva:* se a oração exercer função modificadora ligada a um substantivo ou pronome/numeral substantivo antecedente ("manda a seta").
+  * *Adverbial:* se a oração manifestar valor circunstancial (tempo, causa, concessão, condição, finalidade, etc.).
 4. **Passo 4 — Inserir o conectivo adequado:**
- * Substantiva $\rightarrow$ Conjunção Integrante (C.I.): **que** (ou **se**).
- * Adjetiva $\rightarrow$ Pronome Relativo (P.R.): **que** (*o qual, a qual*).
+  * Substantiva $\rightarrow$ Conjunção Integrante (C.I.): **que** (ou **se**).
+  * Adjetiva $\rightarrow$ Pronome Relativo (P.R.): **que** (*o qual, a qual*).
 
 5. **Passo 5 — Desnominalizar e conjugar o verbo:** Flexionar o verbo considerando obrigatoriamente a correlação com o "verbo amigo" e a manutenção estrita do sujeito.
 6. **Passo 6 — Classificar a oração reduzida:** Atribuir a nomenclatura sintática oficial completa da oração original.
@@ -146,13 +144,13 @@ Os seis passos operacionais estruturam-se na seguinte sequência:
 
 ---
 
-## Algoritmo Simplificado de Três Passos para Resolução Rápida
+### Algoritmo Simplificado de Três Passos para Resolução Rápida
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Versão condensada do método de desenvolvimento projetada para conferir agilidade ao estudante autônomo ("sem rodinhas") na resolução de provas de concursos, sintetizando o processo em três decisões nucleares.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Passo 1 — Diagnóstico Categorial:** Indagar se a oração é substantiva (troca por "isso"), adjetiva (seta no substantivo) ou adverbial (circunstância lógica).
 2. **Passo 2 — Acoplamento do Conector:** Inserir C.I. (*que*), P.R. (*que*) ou conjunção subordinativa adverbial adequada (*quando, embora, visto que, etc.*).
@@ -160,22 +158,22 @@ Versão condensada do método de desenvolvimento projetada para conferir agilida
 
 ---
 
-## Princípios de Flexão Verbal: Correlação Temporal e Preservação do Sujeito
+### Princípios de Flexão Verbal: Correlação Temporal e Preservação do Sujeito
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A desnominalização verbal no desenvolvimento de orações subordinadas é governada obrigatoriamente por dois eixos simultâneos: o eixo semântico-temporal (correlação com o "verbo amigo") e o eixo morfossintático-pessoal (preservação inalterada do sujeito).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Eixo Temporal (O "Verbo Amigo"):**
- * Se o verbo regente estiver no **Presente do Indicativo**, a oração desenvolvida flexiona-se no **Presente** (Presente do Subjuntivo ou do Indicativo). Ex.: *"É urgente que se reconheça"*; *"implica que possamos"*.
- * Se o verbo regente estiver no **Pretérito**, a oração desenvolvida alinha-se ao plano pretérito (**Pretérito Imperfeito do Subjuntivo** ou **Pretérito Perfeito/Imperfeito do Indicativo**). Ex.: *"teria vetado... visto que não se parecia"*; *"respondeu... enquanto farejava"*.
- * *Harmonia de Pretéritos:* A correlação no passado não exige tempos rigorosamente idênticos, mas sim pertinência à mesma esfera histórica pretérita (ex.: Pretérito Perfeito coexiste com Pretérito Imperfeito expressando simultaneidade durativa).
- * *Atemporalidade/Verdades Permanentes:* O presente do indicativo pode coexistir com verbo pretérito quando a oração subordinada expressa acervo duradouro, verdade permanente ou fato factual contínuo (ex.: *"tinha em seu acervo... no qual se incluem vários trabalhos"*).
+  * Se o verbo regente estiver no **Presente do Indicativo**, a oração desenvolvida flexiona-se no **Presente** (Presente do Subjuntivo ou do Indicativo). Ex.: *"É urgente que se reconheça"*; *"implica que possamos"*.
+  * Se o verbo regente estiver no **Pretérito**, a oração desenvolvida alinha-se ao plano pretérito (**Pretérito Imperfeito do Subjuntivo** ou **Pretérito Perfeito/Imperfeito do Indicativo**). Ex.: *"teria vetado... visto que não se parecia"*; *"respondeu... enquanto farejava"*.
+  * *Harmonia de Pretéritos:* A correlação no passado não exige tempos rigorosamente idênticos, mas sim pertinência à mesma esfera histórica pretérita (ex.: Pretérito Perfeito coexiste com Pretérito Imperfeito expressando simultaneidade durativa).
+  * *Atemporalidade/Verdades Permanentes:* O presente do indicativo pode coexistir com verbo pretérito quando a oração subordinada expressa acervo duradouro, verdade permanente ou fato factual contínuo (ex.: *"tinha em seu acervo... no qual se incluem vários trabalhos"*).
 2. **Eixo Pessoal (Preservação do Sujeito):**
- * *Sujeito Determinado:* Identificado no contexto (expresso, desinencial ou elíptico), deve ser mantido rigorosamente na mesma pessoa gramatical. É proibido inventar sujeitos como *"nós"* ou *"eles"*.
- * *Sujeito Indeterminado (Infinitivo Impessoal):* Quando o infinitivo não possui sujeito determinado contextualmente, o desenvolvimento formal admite:
+  * *Sujeito Determinado:* Identificado no contexto (expresso, desinencial ou elíptico), deve ser mantido rigorosamente na mesma pessoa gramatical. É proibido inventar sujeitos como *"nós"* ou *"eles"*.
+  * *Sujeito Indeterminado (Infinitivo Impessoal):* Quando o infinitivo não possui sujeito determinado contextualmente, o desenvolvimento formal admite:
  a) *Voz Ativa com Sujeito Indeterminado:* verbo na 3ª pessoa do plural (ex.: *"que reconheçam a necessidade"*; *"que cruzem fronteiras"*).
  b) *Voz Passiva Sintética (Pronominal):* VTD acompanhado da partícula apassivadora "se", exigindo concordância obrigatória com o sujeito paciente (ex.: *"que se reconheça a necessidade"*; *"que se critiquem as viagens"*).
  c) *Voz Passiva Analítica:* verbo auxiliar flexionado + particípio (ex.: *"que seja reconhecida"*; *"que sejam criticadas"*).
@@ -184,62 +182,62 @@ A desnominalização verbal no desenvolvimento de orações subordinadas é gove
 
 ---
 
-## Conectivos Concessivos: Transposição de Locuções e o Conector Coringa "Não Obstante"
+### Conectivos Concessivos: Transposição de Locuções e o Conector Coringa "Não Obstante"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 No desenvolvimento de orações concessivas reduzidas, é mandatório substituir locuções prepositivas por conjunções ou locuções conjuntivas. O conectivo *não obstante* atua como vocábulo multifuncional coringa, operando como preposição acidental na forma reduzida e como conjunção subordinativa na forma desenvolvida.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 * **Transposição Conectiva Obrigatória:** A locução prepositiva *apesar de* rege verbo no infinitivo em orações reduzidas. Para desenvolvê-las, é obrigatório substituí-la por uma conjunção concessiva (*embora, conquanto*) ou locução conjuntiva (*apesar de que*), com verbo no subjuntivo. Manter *apesar de* com verbo flexionado (*"Apesar de é torcedor..."*) constitui erro sintático; manter com infinitivo mantém a oração reduzida.
 * **Morfossintaxe de "Não Obstante":**
- * Na reduzida: atua como preposição acidental (*"não obstante apresentar-se..."*).
- * Na desenvolvida: atua diretamente como conjunção subordinativa concessiva (*"não obstante se apresente..."*), sendo equivalente a *embora se apresente* ou *conquanto se apresente*.
+  * Na reduzida: atua como preposição acidental (*"não obstante apresentar-se..."*).
+  * Na desenvolvida: atua diretamente como conjunção subordinativa concessiva (*"não obstante se apresente..."*), sendo equivalente a *embora se apresente* ou *conquanto se apresente*.
 
 ---
 
-## Sintaxe Pronominal: Próclise Subordinativa e Distinção entre PIV e PA
+### Sintaxe Pronominal: Próclise Subordinativa e Distinção entre PIV e PA
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Ao desenvolver orações reduzidas que contêm pronomes oblíquos, a inserção da conjunção subordinativa impõe próclise pronominal mandatória. Além disso, pronomes que integram a estrutura de verbos pronominais (Parte Integrante do Verbo — PIV) bloqueiam a conversão para a voz passiva analítica.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Atração Proclítica:** Toda conjunção subordinativa (integrante, causal, concessiva, temporal, etc.) é palavra atrativa. Ao desenvolver *"não obstante apresentar-se"*, o pronome "se" é atraído para antes do verbo flexionado: *"embora **se** apresente"* (sendo incorreta a ênclise *"embora apresente-se"*).
 2. **Distinção PIV vs. PA:**
- * Em verbos pronominais como *apresentar-se* (com sentido de mostrar-se/manifestar-se), o pronome *se* é **PIV**.
- * Não se trata de Partícula Apassivadora (PA). Logo, é incorreto desenvolver a oração convertendo-a para passiva analítica (*"embora seja apresentado"*), pois isso altera a predicação e atribui um agente externo inexistente.
+  * Em verbos pronominais como *apresentar-se* (com sentido de mostrar-se/manifestar-se), o pronome *se* é **PIV**.
+  * Não se trata de Partícula Apassivadora (PA). Logo, é incorreto desenvolver a oração convertendo-a para passiva analítica (*"embora seja apresentado"*), pois isso altera a predicação e atribui um agente externo inexistente.
 
 ---
 
-## Semântica do Gerúndio: Causa, Concomitância, Valor Adjetivo e Consequência
+### Semântica do Gerúndio: Causa, Concomitância, Valor Adjetivo e Consequência
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A oração reduzida de gerúndio assume múltiplos valores semânticos e sintáticos que devem ser distinguidos com base na cronologia dos fatos, na regência sintática e na presença de vocábulos acompanhantes:
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Gerúndio Causal:** Expressa a causa/motivo antecedente que fundamenta a oração principal. Identifica-se pelo critério cronológico (o que acontece em 1º lugar é a causa). Desenvolve-se por *porque, visto que, já que, como*.
- * *Atenção ao vocábulo "assim":* Em construções como *"promovendo assim..."*, a palavra "assim" é advérbio de modo ("deste modo") e não conjunção conclusiva; a oração preserva valor causal.
+  * *Atenção ao vocábulo "assim":* Em construções como *"promovendo assim..."*, a palavra "assim" é advérbio de modo ("deste modo") e não conjunção conclusiva; a oração preserva valor causal.
 2. **Gerúndio Temporal Concomitante:** Expressa simultaneidade temporal durativa com a oração principal. Desenvolve-se por *enquanto* associado ao pretérito imperfeito (*"respondeu... enquanto farejava"*).
 3. **Gerúndio com Valor Adjetivo:** Ocorre quando o gerúndio modifica diretamente um substantivo antecedente ("manda a seta"), equivalendo a oração adjetiva introduzida por *que*.
- * *Critério Modal (Fato vs. Hipótese):* Se a oração qualifica um fato consumado da narrativa, emprega-se o modo Indicativo (*"paulista trabalhando" $\rightarrow$ "que trabalha"*); se expressar hipótese/finalidade incerta, adota-se o Subjuntivo (*"que trabalhe"*).
+  * *Critério Modal (Fato vs. Hipótese):* Se a oração qualifica um fato consumado da narrativa, emprega-se o modo Indicativo (*"paulista trabalhando" $\rightarrow$ "que trabalha"*); se expressar hipótese/finalidade incerta, adota-se o Subjuntivo (*"que trabalhe"*).
 4. **Gerúndio Consecutivo e Aposto Resumitivo:** Ocorre com verbos que trazem carga inerente de resultado (*gerar, acarretar, implicar*). Pode ser desenvolvido pela estrutura *"o que deve + infinitivo"*, em que o pronome demonstrativo "o" opera como aposto oracional resumitivo que retoma o fato anterior.
 
 * **Contém alertas em:**  e .
 
 ---
 
-## Semântica do Particípio: Concessão por Contraste, Causa Histórica e Tempo Imediato
+### Semântica do Particípio: Concessão por Contraste, Causa Histórica e Tempo Imediato
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A oração reduzida de particípio articula valores adverbiais identificáveis pelo contexto léxico e temporal do período:
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Particípio Concessivo por Contraste:** Configura-se quando o particípio estabelece uma oposição ou quebra de expectativa em relação à oração principal (ex.: antítese entre *"nascidas do povo humilde"* e *"vocação para a grandeza"*). Desenvolve-se por *ainda que tenham nascido* ou *embora tenham nascido*.
 2. **Particípio Causal Histórico:** Expressa uma causa pretérita que fundamenta um efeito contínuo no presente (*"Desenvolvida para uma chave... nossa mente tende a rotular" $\rightarrow$ "Como se desenvolveu..."*).
@@ -247,32 +245,30 @@ A oração reduzida de particípio articula valores adverbiais identificáveis p
 
 ---
 
-## A Fórmula Temporal Canônica "Ao + Infinitivo"
+### A Fórmula Temporal Canônica "Ao + Infinitivo"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A combinação prepositiva `ao + verbo no infinitivo` constitui uma estrutura gramatical com valor semântico fixo, invariável e exclusivo de **tempo** (oração subordinada adverbial temporal reduzida de infinitivo), equivalente canônica da conjunção *quando*.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 * **Regra de Equivalência:** `ao + infinitivo` desenvolve-se obrigatoriamente como `quando + verbo conjugado` (*"ao estabelecer"* = *"quando estabeleceu"*; *"ao delegar"* = *"quando delega"*; *"ao anoitecer"* = *"quando anoitecia"*).
 * **Bloqueio Causal:** É terminantemente incorreto substituir estruturas de `ao + infinitivo` por locuções causais (*"por estabelecer"*, *"porque estabeleceu"*), pois tal substituição desfigura a semântica temporal original.
 
 ---
 
-## Critérios de Reescritura Avançada: Paralelismo, Crase e Deslocamento Adverbial
+### Critérios de Reescritura Avançada: Paralelismo, Crase e Deslocamento Adverbial
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A correção de um item de reescritura que envolve orações desenvolvidas depende não apenas da conversão oracional em si, mas da preservação integral da regência, do paralelismo sintático, da concordância verbal e da estabilidade referencial de adjuntos adverbiais deslocados.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Concordância na Voz Passiva Sintética:** Ao desenvolver orações reduzidas gerando construções com o pronome apassivador *se*, o verbo transitivo direto deve concordar estritamente com o sujeito paciente posposto (*"no qual se **incluem** vários trabalhos"*, e nunca *"se inclui"*).
 2. **Paralelismo e Regência com Crase:** Se um verbo rege preposição pura sem artigo antes de substantivos coordenados (*"cheirando a cebola e alho"*), a inserção indevida do acento grave em um dos núcleos (*"cheirando à cebola e alho"*) viola a regência e quebra o paralelismo sintático (*preposição + artigo* em um termo e *preposição pura* no outro).
 3. **Deslocamento Adverbial e Mudança de Referente:** O deslocamento de um adjunto adverbial dentro do período altera o verbo modificado. Se a locução *"ao mesmo tempo"* modificava *"começava"* (início simultâneo da ação) e na reescrita passa a modificar *"ficava cheirando"* (simultaneidade do cheiro), ocorre alteração semântica substancial, invalidando a reescrita ("mudança de referente é mudança de sentido").
-
----
 
 ---
 
@@ -297,30 +293,28 @@ A correção de um item de reescritura que envolve orações desenvolvidas depen
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Protocolo Operacional de Desenvolvimento em Seis Passos ("Com Rodinhas")
+### Protocolo Operacional de Desenvolvimento em Seis Passos ("Com Rodinhas")
 
 1. **Quantificar Orações:** Conte todos os verbos e locuções verbais do período. Cada locução atua como uma unidade.
 2. **Inserir a Barra Delimitadora:** Posicione um traço vertical (`/`) imediatamente antes da forma nominal ou da preposição regente (*a, de, por, para, ao, sem, apesar de*).
 3. **Diagnosticar a Natureza Sintática:**
- * Substitua a oração por **ISSO** $\rightarrow$ se houver encaixe gramatical perfeito, a oração é **Substantiva**.
- * Verifique se a oração qualifica um termo nominal antecedente $\rightarrow$ se qualificar, a oração é **Adjetiva**.
- * Verifique se expressa circunstância (tempo, causa, etc.) $\rightarrow$ se expressar, a oração é **Adverbial**.
+  * Substitua a oração por **ISSO** $\rightarrow$ se houver encaixe gramatical perfeito, a oração é **Substantiva**.
+  * Verifique se a oração qualifica um termo nominal antecedente $\rightarrow$ se qualificar, a oração é **Adjetiva**.
+  * Verifique se expressa circunstância (tempo, causa, etc.) $\rightarrow$ se expressar, a oração é **Adverbial**.
 4. **Acrescentar o Conectivo Canônico:**
- * Substantiva $\rightarrow$ Conjunção Integrante (**que** / **se**).
- * Adjetiva $\rightarrow$ Pronome Relativo (**que** / *o qual*).
- * Adverbial $\rightarrow$ Conjunção adverbial equivalente (*quando, embora, visto que, para que, etc.*).
+  * Substantiva $\rightarrow$ Conjunção Integrante (**que** / **se**).
+  * Adjetiva $\rightarrow$ Pronome Relativo (**que** / *o qual*).
+  * Adverbial $\rightarrow$ Conjunção adverbial equivalente (*quando, embora, visto que, para que, etc.*).
 5. **Conjugar o Verbo (Atenção Crítica):**
- * Verifique o tempo do "verbo amigo" na oração regente (presente pede presente; pretérito pede pretérito).
- * Identifique o sujeito da oração reduzida. Se for sujeito determinado, mantenha-o. Se for infinitivo impessoal (sujeito indeterminado), adote a 3ª pessoa do plural ativa ou a voz passiva sintética com concordância no sujeito paciente.
+  * Verifique o tempo do "verbo amigo" na oração regente (presente pede presente; pretérito pede pretérito).
+  * Identifique o sujeito da oração reduzida. Se for sujeito determinado, mantenha-o. Se for infinitivo impessoal (sujeito indeterminado), adote a 3ª pessoa do plural ativa ou a voz passiva sintética com concordância no sujeito paciente.
 6. **Classificar Sintaticamente:** Formule a nomenclatura gramatical completa da oração reduzida original.
 
 ---
 
-## Protocolo Rápido de Resolução de Provas em Três Etapas ("Sem Rodinhas")
+### Protocolo Rápido de Resolução de Provas em Três Etapas ("Sem Rodinhas")
 
 1. **Interrogação Categorial Imediata:** Substantiva (ISSO), Adjetiva (seta no antecedente) ou Adverbial (circunstância lógica)?
 2. **Inserção do Conector:** Inserir C.I. (*que*), P.R. (*que*) ou conjunção subordinativa adverbial adequada.
@@ -328,7 +322,7 @@ A correção de um item de reescritura que envolve orações desenvolvidas depen
 
 ---
 
-## Teste Cronológico-Lógico do "O Fato De... Faz Com Que..." para Causa e Efeito
+### Teste Cronológico-Lógico do "O Fato De... Faz Com Que..." para Causa e Efeito
 
 1. Isole os dois núcleos oracionais sob análise.
 2. Pergunte qual evento ocorre em **primeiro lugar no mundo dos fatos** e qual decorre como efeito.
@@ -337,15 +331,13 @@ A correção de um item de reescritura que envolve orações desenvolvidas depen
 
 ---
 
-## Método de Eliminação Rápida em Questões de Múltipla Escolha (Padrão FGV/CESGRANRIO)
+### Método de Eliminação Rápida em Questões de Múltipla Escolha (Padrão FGV/CESGRANRIO)
 
 1. Identifique no comando a exigência de substituição por "oração na forma desenvolvida".
 2. **Filtro de Falsas Desenvolvidas (Nominalizações):** Elimine imediatamente opções que transformam a oração em sintagmas nominais com substantivos abstratos (ex.: *"o cruzamento de"*, *"a possibilidade de"*).
 3. **Filtro de Formas Reduzidas:** Elimine opções que mantêm o verbo no infinitivo ou gerúndio com preposição (ex.: *"ao farejar"*, *"após farejar"*, *"para evitar-se"*).
 4. **Filtro de Correlação Temporal:** Elimine alternativas com tempos pretéritos inadequados quando a oração regente estiver no presente.
 5. Concentre a decisão na alternativa que apresente conectivo explícito + verbo conjugado no tempo e modo corretos.
-
----
 
 ---
 
@@ -369,11 +361,9 @@ A correção de um item de reescritura que envolve orações desenvolvidas depen
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Exercício 1: Oração Substantiva Subjetiva com Sujeito Indeterminado
+### Exercício 1: Oração Substantiva Subjetiva com Sujeito Indeterminado
 
 * **Frase original:** *"É urgente **reconhecer** a necessidade de um trabalho mais efetivo com a palavra."*
 * **Aplicação do Método:**
@@ -382,14 +372,14 @@ A correção de um item de reescritura que envolve orações desenvolvidas depen
  3. *Natureza:* "É urgente **ISSO**" $\rightarrow$ Oração Subordinada Substantiva Subjetiva.
  4. *Conectivo:* Conjunção Integrante (**que**).
  5. *Conjugação:* "É" (presente do indicativo). "Reconhecer" está em infinitivo impessoal (sujeito indeterminado).
- * *Voz Ativa (3ª plural):* *"É urgente que **reconheçam** a necessidade..."*
- * *Voz Passiva Sintética:* *"É urgente que **se reconheça** a necessidade..."*
- * *Voz Passiva Analítica:* *"É urgente que **seja reconhecida** a necessidade..."*
+  * *Voz Ativa (3ª plural):* *"É urgente que **reconheçam** a necessidade..."*
+  * *Voz Passiva Sintética:* *"É urgente que **se reconheça** a necessidade..."*
+  * *Voz Passiva Analítica:* *"É urgente que **seja reconhecida** a necessidade..."*
 * **Classificação da reduzida:** Oração subordinada substantiva subjetiva reduzida de infinitivo.
 
 ---
 
-## Exercício 2: Oração Adjetiva com Referente Numeral Substantivo
+### Exercício 2: Oração Adjetiva com Referente Numeral Substantivo
 
 * **Frase original:** *"Sua palavra foi a primeira **a perder o significado**."*
 * **Aplicação do Método:**
@@ -401,7 +391,7 @@ A correção de um item de reescritura que envolve orações desenvolvidas depen
 
 ---
 
-## Exercício 3: Oração Adverbial Causal Reduzida de Gerúndio
+### Exercício 3: Oração Adverbial Causal Reduzida de Gerúndio
 
 * **Frase original:** *"**Nada conseguindo**, a mais nova fugiu."*
 * **Aplicação do Método:**
@@ -412,7 +402,7 @@ A correção de um item de reescritura que envolve orações desenvolvidas depen
 
 ---
 
-## Exercício 4: Oração Adverbial Causal com Preposição "Por"
+### Exercício 4: Oração Adverbial Causal com Preposição "Por"
 
 * **Frase original:** *"Se dependesse de mim, teria vetado a roda **por não se parecer nada com o pé**."*
 * **Aplicação do Método:**
@@ -423,7 +413,7 @@ A correção de um item de reescritura que envolve orações desenvolvidas depen
 
 ---
 
-## Exercício 5: Orações Adverbiais Temporais Coordenadas ("Ao + Infinitivo")
+### Exercício 5: Orações Adverbiais Temporais Coordenadas ("Ao + Infinitivo")
 
 * **Frase original:** *"O liberalismo pensa estar defendendo o indivíduo **ao negar a primazia do social** ou **ao dizer que uma sociedade é apenas um conjunto de ambições autônomas**"*
 * **Aplicação do Método:**
@@ -434,20 +424,20 @@ A correção de um item de reescritura que envolve orações desenvolvidas depen
 
 ---
 
-## Exercício 6: Oração Substantiva Subjetiva Anteposta e Voz Passiva
+### Exercício 6: Oração Substantiva Subjetiva Anteposta e Voz Passiva
 
 * **Frase original:** *"**Criticar as viagens internacionais do Presidente da República ou de outros dirigentes** parece despropositado."*
 * **Aplicação do Método:**
  1. *Natureza:* "[**ISSO**] parece despropositado" $\rightarrow$ Oração Substantiva Subjetiva.
  2. *Conectivo:* Conjunção Integrante **que**.
  3. *Conjugação:* Infinitivo impessoal e correlação com "parece" (presente).
- * *Voz Passiva Sintética (Plural obrigatório):* *"**Que se critiquem** as viagens internacionais..."*
- * *Voz Passiva Analítica:* *"**Que sejam criticadas** as viagens internacionais..."*
+  * *Voz Passiva Sintética (Plural obrigatório):* *"**Que se critiquem** as viagens internacionais..."*
+  * *Voz Passiva Analítica:* *"**Que sejam criticadas** as viagens internacionais..."*
 * **Classificação da reduzida:** Oração subordinada substantiva subjetiva reduzida de infinitivo.
 
 ---
 
-## Exercício 7: Oração Substantiva Objetiva Direta com Pronome Oblíquo
+### Exercício 7: Oração Substantiva Objetiva Direta com Pronome Oblíquo
 
 * **Frase original:** *"Peço-te saíres da minha vida!"*
 * **Aplicação do Método:**
@@ -458,7 +448,7 @@ A correção de um item de reescritura que envolve orações desenvolvidas depen
 
 ---
 
-## Exercício 8: Oração Adverbial Reduzida de Particípio
+### Exercício 8: Oração Adverbial Reduzida de Particípio
 
 * **Frase original:** *"Terminada a aula, todos se retiraram."*
 * **Aplicação do Método:**
@@ -468,7 +458,7 @@ A correção de um item de reescritura que envolve orações desenvolvidas depen
 
 ---
 
-## Exercício 9: Oração Adjetiva Reduzida de Gerúndio
+### Exercício 9: Oração Adjetiva Reduzida de Gerúndio
 
 * **Frase original:** *"Há muitos alunos estudando com afinco."*
 * **Aplicação do Método:**
@@ -478,7 +468,7 @@ A correção de um item de reescritura que envolve orações desenvolvidas depen
 
 ---
 
-## Exercício 10: Oração Adverbial Concessiva e Transposição de Locução
+### Exercício 10: Oração Adverbial Concessiva e Transposição de Locução
 
 * **Frase original:** *"Apesar de ser torcedor fanático, não vai aos estádios."*
 * **Aplicação do Método:**
@@ -488,7 +478,7 @@ A correção de um item de reescritura que envolve orações desenvolvidas depen
 
 ---
 
-## Exercício 11: Concessiva com "Não Obstante", Próclise e PIV
+### Exercício 11: Concessiva com "Não Obstante", Próclise e PIV
 
 * **Frase original:** *"O Estado moderno, não obstante apresentar-se como um Estado minimalista, é potencialmente um Estado maximalista."*
 * **Aplicação do Método:**
@@ -498,77 +488,75 @@ A correção de um item de reescritura que envolve orações desenvolvidas depen
 
 ---
 
-## Bateria de Concursos: Questões 51 a 55 (FGV e CESGRANRIO)
+### Bateria de Concursos: Questões 51 a 55 (FGV e CESGRANRIO)
 
 1. **Questão 51 (FGV — COMPESA 2018):** Trecho *"...cuja sina é cruzar fronteiras..."*.
- * *Resolução:* "sina é ISSO" (substantiva). Infinitivo impessoal exige 3ª pessoa do plural do presente do subjuntivo para marcar indeterminação $\rightarrow$ *"que cruzem fronteiras"*.
- * **Gabarito Oficial:** **Letra E**.
+  * *Resolução:* "sina é ISSO" (substantiva). Infinitivo impessoal exige 3ª pessoa do plural do presente do subjuntivo para marcar indeterminação $\rightarrow$ *"que cruzem fronteiras"*.
+  * **Gabarito Oficial:** **Letra E**.
 2. **Questão 52 (FGV — ALERJ):** Trecho *"...implica poder decifrar..."*.
- * *Resolução:* Descartam-se nominalizações ("a possibilidade de"). Verbo "implica" no presente exige presente do subjuntivo $\rightarrow$ *"que possamos decifrar"*.
- * **Gabarito Oficial:** **Letra D**.
+  * *Resolução:* Descartam-se nominalizações ("a possibilidade de"). Verbo "implica" no presente exige presente do subjuntivo $\rightarrow$ *"que possamos decifrar"*.
+  * **Gabarito Oficial:** **Letra D**.
 3. **Questão 53 (FGV — IBGE):** Frase *"O que pode ser feito para evitar um novo racionamento?"*.
- * *Resolução:* Oração final desenvolvida com "pode" (presente) exige presente do subjuntivo $\rightarrow$ *"Para que se evite um novo racionamento?"*.
- * **Gabarito Oficial:** **Letra D**.
+  * *Resolução:* Oração final desenvolvida com "pode" (presente) exige presente do subjuntivo $\rightarrow$ *"Para que se evite um novo racionamento?"*.
+  * **Gabarito Oficial:** **Letra D**.
 4. **Questão 54 (FGV — Pref. Salvador):** Trecho *"Um paulista, trabalhando pesado... vê..."*.
- * *Resolução:* Oração adjetiva referente a "paulista". Expressa fato real da narrativa $\rightarrow$ modo indicativo (*"que trabalha pesado"*), descartando o subjuntivo hipotético (*"que trabalhe"*).
- * **Gabarito Oficial:** **Letra C**.
+  * *Resolução:* Oração adjetiva referente a "paulista". Expressa fato real da narrativa $\rightarrow$ modo indicativo (*"que trabalha pesado"*), descartando o subjuntivo hipotético (*"que trabalhe"*).
+  * **Gabarito Oficial:** **Letra C**.
 5. **Questão 55 (CESGRANRIO — Banco do Brasil):** Trecho *"...coincidências envolvendo o número..."*.
- * *Resolução:* Oração adjetiva ligada a "coincidências". Texto no passado (*foi, ia*) exige pretérito imperfeito do indicativo $\rightarrow$ *"que envolviam o número"*.
- * **Gabarito Oficial:** **Letra B**.
+  * *Resolução:* Oração adjetiva ligada a "coincidências". Texto no passado (*foi, ia*) exige pretérito imperfeito do indicativo $\rightarrow$ *"que envolviam o número"*.
+  * **Gabarito Oficial:** **Letra B**.
 
 ---
 
-## Bateria de Concursos: Questões 56 a 59 (Instituto AOCP, FGV, FCC, VUNESP)
+### Bateria de Concursos: Questões 56 a 59 (Instituto AOCP, FGV, FCC, VUNESP)
 
 1. **Questão 56 (Instituto AOCP 2020):** Trecho *"...encoraja os outros a continuarem sendo generosos, promovendo assim um ciclo virtuoso..."*.
- * *Resolução:* "Promovendo" é causa do encorajamento; "assim" é advérbio de modo ("deste modo"). Fato afirmativo exige indicativo $\rightarrow$ *"[...] porque promove, assim, um ciclo virtuoso..."*.
- * **Gabarito Oficial:** **Letra A**.
+  * *Resolução:* "Promovendo" é causa do encorajamento; "assim" é advérbio de modo ("deste modo"). Fato afirmativo exige indicativo $\rightarrow$ *"[...] porque promove, assim, um ciclo virtuoso..."*.
+  * **Gabarito Oficial:** **Letra A**.
 2. **Questão 57 (FGV 2019):** Trecho *"— Esterco — respondeu Oscar, farejando aborrecimento..."*.
- * *Resolução:* Eliminação de formas reduzidas de infinitivo. Gerúndio expressa tempo concomitante no passado $\rightarrow$ *"enquanto farejava aborrecimento"*.
- * **Gabarito Oficial:** **Letra A**.
+  * *Resolução:* Eliminação de formas reduzidas de infinitivo. Gerúndio expressa tempo concomitante no passado $\rightarrow$ *"enquanto farejava aborrecimento"*.
+  * **Gabarito Oficial:** **Letra A**.
 3. **Questão 58 (FCC — TJ-RJ):** Trecho *"Nascidas do povo mais humilde do Brasil, as Escolas afirmam a vocação [...] para a grandeza"*.
- * *Resolução:* Antítese entre "povo humilde" e "afirmam grandeza" estabelece concessão $\rightarrow$ *"Ainda que tenham nascido"*.
- * **Gabarito Oficial:** **Letra C**.
+  * *Resolução:* Antítese entre "povo humilde" e "afirmam grandeza" estabelece concessão $\rightarrow$ *"Ainda que tenham nascido"*.
+  * **Gabarito Oficial:** **Letra C**.
 4. **Questão 59 (VUNESP 2020):** Trecho *"Desenvolvida para uma chave amigo-inimigo, nossa mente tende a rotular..."*.
- * *Resolução:* Causa pretérita que fundamenta a tendência presente $\rightarrow$ *"causa e equivale a — Como se desenvolveu para uma chave amigo-inimigo..."*.
- * **Gabarito Oficial:** **Letra E**.
+  * *Resolução:* Causa pretérita que fundamenta a tendência presente $\rightarrow$ *"causa e equivale a — Como se desenvolveu para uma chave amigo-inimigo..."*.
+  * **Gabarito Oficial:** **Letra E**.
 
 ---
 
-## Bateria de Concursos: Questões 60 a 67 (CESPE / Cebraspe — Miscelânea)
+### Bateria de Concursos: Questões 60 a 67 (CESPE / Cebraspe — Miscelânea)
 
 1. **Questão 60 (CESPE — Diplomata):** Troca de "incluindo" por *"no qual se inclui vários trabalhos sobre os índios"*.
- * *Julgamento:* **Errado**.
- * *Justificativa:* "Vários trabalhos" é sujeito paciente no plural; a concordância na voz passiva sintética exige *"no qual se **incluem** vários trabalhos"*.
+  * *Julgamento:* **Errado**.
+  * *Justificativa:* "Vários trabalhos" é sujeito paciente no plural; a concordância na voz passiva sintética exige *"no qual se **incluem** vários trabalhos"*.
 2. **Questão 61 (CESPE — TRT 10ª):** Permuta de "ao estabelecer" indistintamente por *"quando estabeleceu, por estabelecer, porque estabeleceu, estabelecendo"*.
- * *Julgamento:* **Errado**.
- * *Justificativa:* "Ao + infinitivo" expressa exclusivamente tempo, não admitindo permuta por construções causais.
+  * *Julgamento:* **Errado**.
+  * *Justificativa:* "Ao + infinitivo" expressa exclusivamente tempo, não admitindo permuta por construções causais.
 3. **Questão 62 (CESPE — TCE-RO):** Substituição de "Baixados os arquivos" por *"Assim que são baixados os arquivos"*.
- * *Julgamento:* **Certo**.
- * *Justificativa:* Particípio expressa tempo imediato, desenvolvido perfeitamente por "Assim que".
+  * *Julgamento:* **Certo**.
+  * *Justificativa:* Particípio expressa tempo imediato, desenvolvido perfeitamente por "Assim que".
 4. **Questão 63 (CESPE — TST):** Substituição de "podendo optar" por *"que pode optar"*.
- * *Julgamento:* **Certo**.
- * *Justificativa:* Gerúndio qualifica o substantivo "capital" (adjetiva) e expressa fato permanente no presente do indicativo.
+  * *Julgamento:* **Certo**.
+  * *Justificativa:* Gerúndio qualifica o substantivo "capital" (adjetiva) e expressa fato permanente no presente do indicativo.
 5. **Questão 64 (CESPE 2021 — IBGE):** Substituição de "gerando" por *"o que deve gerar"*.
- * *Julgamento:* **Certo**.
- * *Justificativa:* Gerúndio consecutivo; o pronome "o" atua como aposto oracional resumitivo do fato anterior.
+  * *Julgamento:* **Certo**.
+  * *Justificativa:* Gerúndio consecutivo; o pronome "o" atua como aposto oracional resumitivo do fato anterior.
 6. **Questão 65 (CESPE — MC):** Substituição de "satisfazendo" por *"visto que satisfazem"*.
- * *Julgamento:* **Certo**.
- * *Justificativa:* Pela ordem cronológica, a satisfação das necessidades é a causa/precondição da atuação complementar.
+  * *Julgamento:* **Certo**.
+  * *Justificativa:* Pela ordem cronológica, a satisfação das necessidades é a causa/precondição da atuação complementar.
 7. **Questão 66 (CESPE — SEAD-PA):** Substituição de "Ao delegar" por *"Quando delega"*.
- * *Julgamento:* **Certo**.
- * *Justificativa:* Equivalência temporal estrita de "ao + infinitivo".
+  * *Julgamento:* **Certo**.
+  * *Justificativa:* Equivalência temporal estrita de "ao + infinitivo".
 8. **Questão 67 (CESPE 2021 — PF / Escrivão):** Reescrita de *"Quando anoitecia, toda aquela vizinhança começava, ao mesmo tempo, a fazer bife, e o ar ficava cheirando a cebola e alho"* por *"Ao anoitecer, toda aquela vizinhança começava a fazer bife e o ar ficava cheirando à cebola e alho ao mesmo tempo."*.
- * *Julgamento:* **Errado**.
- * *Justificativa:* A reescrita apresenta crase indevida com quebra de paralelismo (*"à cebola e alho"*) e desloca *"ao mesmo tempo"*, alterando o referente do verbo *começava* para *ficava cheirando*.
-
----
+  * *Julgamento:* **Errado**.
+  * *Justificativa:* A reescrita apresenta crase indevida com quebra de paralelismo (*"à cebola e alho"*) e desloca *"ao mesmo tempo"*, alterando o referente do verbo *começava* para *ficava cheirando*.
 
 ---
 
 ## Memorização inteligente
 
-## Mnemônicos Fundamentais de Diagnóstico e Equivalência
+### Mnemônicos Fundamentais de Diagnóstico e Equivalência
 
 1. **Macete do "ISSO":** Coube o pronome **ISSO** (ou *disso, nisso, a isso*) substituindo a oração inteira $\rightarrow$ a oração é **Substantiva** e exige Conjunção Integrante (**que**).
 2. **Macete da Seta:** O gerúndio ou infinitivo aponta diretamente para um substantivo antecedente $\rightarrow$ a oração é **Adjetiva** e exige Pronome Relativo (**que**).
@@ -577,11 +565,9 @@ A correção de um item de reescritura que envolve orações desenvolvidas depen
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Confundir Sujeito da Oração Principal com Sujeito da Oração Reduzida
+### Confundir Sujeito da Oração Principal com Sujeito da Oração Reduzida
 
 * **Erro Comum:** Em *"É urgente reconhecer a necessidade..."*, afirmar que o sujeito é oracional e conjugar o verbo *reconhecer* de forma arbitrária (*"reconheçamos"*).
 * **Por que ocorre:** O estudante confunde a função da oração inteira (que é sujeito oracional de *"é urgente"*) com a estrutura interna da subordinada.
@@ -589,92 +575,88 @@ A correção de um item de reescritura que envolve orações desenvolvidas depen
 
 ---
 
-## Vício de Aplicação Indevida do Macete do "ISSO" em Orações Adjetivas
+### Vício de Aplicação Indevida do Macete do "ISSO" em Orações Adjetivas
 
 * **Erro Comum:** Tentar forçar o pronome "isso" em frases como *"Sua palavra foi a primeira a perder..."* ou *"Há muitos alunos estudando..."* (*"muitos alunos isso"*).
 * **Como evitar:** O teste do "ISSO" só é válido quando substitui toda a oração com perfeita coerência gramatical. Se a oração qualificar termo substantivo antecedente, é adjetiva.
 
 ---
 
-## Erro de Concordância na Voz Passiva Sintética com Sujeito no Plural
+### Erro de Concordância na Voz Passiva Sintética com Sujeito no Plural
 
 * **Erro Comum:** Manter o verbo no singular ao desenvolver para passiva pronominal (*"que se critique as viagens"*; *"no qual se inclui vários trabalhos"*).
 * **Como evitar:** Na voz passiva sintética com *se* apassivador, o termo paciente posposto é o sujeito gramatical. Se estiver no plural, o verbo flexiona-se obrigatoriamente no plural (*"que se critiquem as viagens"*; *"no qual se incluem vários trabalhos"*).
 
 ---
 
-## Confundir Causa com Condição ou Finalidade em Orações com "Por"
+### Confundir Causa com Condição ou Finalidade em Orações com "Por"
 
 * **Erro Comum:** Classificar orações iniciadas por *por + infinitivo* (*"por não se parecer"*) como condicionais ou finais.
 * **Como evitar:** Analisar a relação lógica interoracional. A preposição *por* combinada a forma nominal introduz tipicamente o motivo/causa geradora do fato.
 
 ---
 
-## Manutenção Indevida de Locuções Prepositivas no Desenvolvimento
+### Manutenção Indevida de Locuções Prepositivas no Desenvolvimento
 
 * **Erro Comum:** Tentar desenvolver uma oração concessiva mantendo a locução prepositiva *apesar de* (*"apesar de se apresente"*).
 * **Como evitar:** Locução prepositiva rege infinitivo (reduzida). Para desenvolver, substitua-a obrigatoriamente por conjunção subordinativa (*embora*) ou locução conjuntiva (*apesar de que*).
 
 ---
 
-## Erros de Colocação Pronominal e Passivação com PIV
+### Erros de Colocação Pronominal e Passivação com PIV
 
 * **Erro Comum:** Aplicar ênclise após conjunção subordinativa (*"embora apresente-se"*) ou converter verbo com PIV para passiva analítica (*"embora seja apresentado"*).
 * **Como evitar:** Conjunções subordinativas atraem o pronome por próclise obrigatória (*"embora se apresente"*), e verbos pronominais com PIV não admitem passiva analítica.
 
 ---
 
-## Falso Conectivo Conclusivo em "Assim" com Gerúndio
+### Falso Conectivo Conclusivo em "Assim" com Gerúndio
 
 * **Erro Comum:** Julgar que a presença de "assim" torna a oração de gerúndio conclusiva/consecutiva (*"promovendo assim"*).
 * **Como evitar:** Reconhecer que "assim" atua frequentemente como advérbio de modo ("deste modo"), preservando a natureza causal da oração.
 
 ---
 
-## Deslocamento Adverbial com Quebra de Paralelismo em Reescritas
+### Deslocamento Adverbial com Quebra de Paralelismo em Reescritas
 
 * **Erro Comum:** Validar uma reescrita focando apenas na transposição do verbo e ignorando deslocamentos de adjuntos adverbiais e crases indevidas.
 * **Como evitar:** Em itens do CESPE, audite o período termo a termo: confira regência, paralelismo sintático e confirme se o adjunto adverbial deslocado continuou modificando o mesmo verbo.
 
 ---
 
----
-
 ## Glossário operacional
 
-## Oração Reduzida
+### Oração Reduzida
 
 Oração subordinada articulada diretamente em torno de uma das formas nominais do verbo (infinitivo, gerúndio ou particípio) sem o auxílio de conjunção subordinativa ou pronome relativo.
 
-## Oração Desenvolvida
+### Oração Desenvolvida
 
 Oração subordinada introduzida formalmente por um conectivo subordinador (conjunção integrante, conjunção subordinativa adverbial ou pronome relativo) e que possui verbo flexionado em tempo e modo finitos.
 
-## Verbo Amigo (Metáfora Pedagógica)
+### Verbo Amigo (Metáfora Pedagógica)
 
 Expressão utilizada para designar o verbo da oração principal (regente) que dita a linha temporal e o modo em que o verbo da oração subordinada reduzida deve ser flexionado para preservar a harmonia semântica do período.
 
-## Infinitivo Impessoal
+### Infinitivo Impessoal
 
 Forma nominal do verbo terminada em *-ar, -er, -ir* empregada sem referência a um sujeito agente específico no contexto imediato. Ao ser desenvolvida, exige flexão na 3ª pessoa do plural (ativa) ou conversão para voz passiva sintética/analítica.
 
-## Conectivo Coringa
+### Conectivo Coringa
 
 Vocábulo que apresenta plasticidade morfossintática operando em mais de uma classe gramatical. Destaca-se *não obstante*, que atua como preposição acidental (com infinitivo) ou conjunção concessiva/adversativa (com verbo conjugado).
 
-## Parte Integrante do Verbo (PIV)
+### Parte Integrante do Verbo (PIV)
 
 Pronome oblíquo que integra a estrutura de verbos pronominais (ex.: *apresentar-se*), diferenciando-se da Partícula Apassivadora (PA) por bloquear a conversão para a voz passiva analítica.
 
-## Aposto Oracional Resumitivo
+### Aposto Oracional Resumitivo
 
 Pronome demonstrativo neutro ("o", "isso") que sintetiza o conteúdo semântico de toda uma oração antecedente, funcionando simultaneamente como antecedente de uma oração adjetiva subsequente (ex.: *"[...] gerando [...]" $\rightarrow$ "[...], o que deve gerar"*).
 
-## Tempo Imediato
+### Tempo Imediato
 
 Nuance semântica adverbial temporal que expressa que a ação subordinada ocorre no instante exato anterior à ação principal, introduzida canonicamente por *assim que* ou *logo que*.
-
----
 
 ---
 

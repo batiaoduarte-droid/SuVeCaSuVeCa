@@ -41,7 +41,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 3. **Morfologia Verbal:** Domínio dos tempos e modos do Indicativo (Presente, Pretérito Perfeito, Pretérito Imperfeito, Futuro do Pretérito) e das formas nominais (Infinitivo, Gerúndio e Particípio).
 4. **Sintaxe de Colocação Pronominal:** Reconhecimento de fatores de próclise (palavras negativas, advérbios, pronomes relativos, conjunções subordinativas).
 
-### Mapa Conceitual Integrado
+#### Mapa Conceitual Integrado
 
 ```text
  SISTEMA DE VOZES VERBAIS
@@ -67,17 +67,15 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Os Cinco Modelos de Questões de Voz Passiva Sintética em Concursos
+### Os Cinco Modelos de Questões de Voz Passiva Sintética em Concursos
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A cobrança de Voz Passiva Sintética (Pronominal) em provas de concursos públicos estrutura-se em cinco modelos padronizados, exigindo competências que progridem da identificação e classificação morfossintática até a transposição estrutural bidirecional.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Para assegurar o domínio integral do tema independentemente da banca examinadora (FGV, Cebraspe, FCC, VUNESP, etc.), o estudo divide-se em 5 etapas:
 
@@ -91,25 +89,25 @@ Para assegurar o domínio integral do tema independentemente da banca examinador
 
 ---
 
-## Natureza Econômica da Voz Passiva Sintética
+### Natureza Econômica da Voz Passiva Sintética
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A voz passiva sintética (ou pronominal) é qualificada como "sintética" por sua natureza estritamente econômica, caracterizando-se pela redução de elementos linguísticos em relação à forma analítica.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A economia estrutural da passiva sintética opera em duas frentes:
 
 1. **Economia de Verbo Auxiliar:** Dispensa a locução com verbo auxiliar (*ser*), utilizando unicamente o verbo principal conjugado acoplado ao pronome apassivador *se*.
 2. **Economia de Agente da Passiva:** Não menciona expressamente o executor da ação verbal, suprimindo o termo preposicionado. Seu objetivo comunicativo é justamente conferir destaque ao paciente da ação, ocultando ou despersonalizando o agente.
 
-### Exemplos
+#### Exemplos
 
 - *Vende-se casa.* (Passiva Sintética: 1 verbo + *se*; sem auxiliar e sem menção ao agente).
 - *Casa é vendida por alguém.* (Passiva Analítica correspondente: locução verbal de 2 verbos com agente explícito ou implícito).
 
-### Exceções ou limites
+#### Exceções ou limites
 
 Embora alguns gramáticos registrem construções com agente expresso na passiva sintética (ex.: *Vende-se casa por esta imobiliária*), tal estrutura é atípica, desaconselhável no padrão culto e contraria o princípio funcional da estrutura.
 
@@ -117,13 +115,13 @@ Embora alguns gramáticos registrem construções com agente expresso na passiva
 
 ---
 
-## Agente da Passiva Indeterminado vs. Agente Inexistente (Armadilha Cebraspe)
+### Agente da Passiva Indeterminado vs. Agente Inexistente (Armadilha Cebraspe)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Na voz passiva sintética, o agente da passiva é **indeterminado**, e **nunca inexistente**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Há uma distinção semântico-sintática categórica frequentemente explorada por bancas como o Cebraspe:
 
@@ -134,25 +132,25 @@ Em frases como *Consertou-se o computador* ou *Vendem-se terrenos*, a ação exi
 
 ---
 
-## Sujeito Determinado Paciente vs. Sujeito Indeterminado na Voz Passiva Sintética
+### Sujeito Determinado Paciente vs. Sujeito Indeterminado na Voz Passiva Sintética
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Na voz passiva sintética, o **sujeito sintático é DETERMINADO** (sujeito paciente sobre o qual recai a concordância verbal); o que é **INDETERMINADO é o AGENTE DA PASSIVA**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A confusão entre a função sintática de *sujeito* e a função semântica de *agente* gera um dos erros mais recorrentes em concursos:
 
 1. **Na Passiva Sintética (*Aluga-se apartamento* / *Alugam-se apartamentos*):**
- - O termo *apartamento / apartamentos* é o **Sujeito Determinado Paciente** (simples), responsável por governar a flexão em número do verbo.
- - O executor da ação de alugar é o **Agente da Passiva Indeterminado**.
+  - O termo *apartamento / apartamentos* é o **Sujeito Determinado Paciente** (simples), responsável por governar a flexão em número do verbo.
+  - O executor da ação de alugar é o **Agente da Passiva Indeterminado**.
 
 2. **Na Voz Ativa com Sujeito Indeterminado (*Alugam apartamento*):**
- - O verbo é flexionado na 3ª pessoa do plural sem sujeito expresso, tornando o **Sujeito Indeterminado**.
- - O termo *apartamento* passa a ser o **Objeto Direto**.
+  - O verbo é flexionado na 3ª pessoa do plural sem sujeito expresso, tornando o **Sujeito Indeterminado**.
+  - O termo *apartamento* passa a ser o **Objeto Direto**.
 
-### Quadro Sinóptico de Diferenciação
+#### Quadro Sinóptico de Diferenciação
 
 | Estrutura | Classificação da Voz | Classificação do Sujeito | Classificação do Agente | Função do Termo Nominal |
 |:----------------------- |:--------------------- |:------------------------------- |:----------------------------------- |:------------------------ |
@@ -163,13 +161,13 @@ A confusão entre a função sintática de *sujeito* e a função semântica de 
 
 ---
 
-## Metodologia de Dupla Verificação da Passiva Sintética
+### Metodologia de Dupla Verificação da Passiva Sintética
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A comprovação de que uma oração está na voz passiva sintética requer a aplicação cumulativa de dois critérios: análise de transitividade verbal direta e teste de equivalência por transposição analítica.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Não basta constatar a presença de um verbo acompanhado do pronome *se*. O método infalível exige:
 
@@ -178,23 +176,23 @@ Não basta constatar a presença de um verbo acompanhado do pronome *se*. O mét
 
 ---
 
-## Classificação das Funções Concorrentes da Partícula "SE"
+### Classificação das Funções Concorrentes da Partícula "SE"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O pronome *se* assume múltiplas funções morfossintáticas na língua portuguesa. Nas questões de vozes verbais, cinco classes concorrem diretamente e devem ser discriminadas por critérios sintáticos e semânticos.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Conjunção Subordinativa:**
- - *Condicional:* introduz oração subordinada adverbial condicional; substituível por "caso" (*Se quiseres, voltarei*).
- - *Integrante:* introduz oração subordinada substantiva; toda a oração iniciada por *se* é substituível pelo pronome "isso" (*Querem saber se serão pagos* $\rightarrow$ *Querem saber isso*).
+  - *Condicional:* introduz oração subordinada adverbial condicional; substituível por "caso" (*Se quiseres, voltarei*).
+  - *Integrante:* introduz oração subordinada substantiva; toda a oração iniciada por *se* é substituível pelo pronome "isso" (*Querem saber se serão pagos* $\rightarrow$ *Querem saber isso*).
 2. **Pronome Reflexivo / Recíproco:** O sujeito pratica e sofre a ação verbal simultaneamente sobre si mesmo; substituível por "a si mesmo(a)", "a si próprio(a)" ou "uns aos outros" (*Pedi que se afastasse* $\rightarrow$ *a si mesma*).
 3. **Parte Integrante do Verbo (PIV):** Pronome incorporado à conjugação de verbos pronominais essenciais (*queixar-se, suicidar-se, avantajar-se*) ou acidentais (*lembrar-se, sentir-se, situar-se, tornar-se, certificar-se*). A oração permanece na voz ativa.
 4. **Índice de Indeterminação do Sujeito (IIS / PIS):** Acoplado a Verbos Intransitivos ($\text{VI}$), Transitivos Indiretos com preposição ($\text{VTI}$) ou de Ligação ($\text{VL}$), fixando o verbo compulsoriamente na 3ª pessoa do singular para indicar que o sujeito é indeterminado (*Trabalha-se muito*, *Precisa-se de medidas*, *Passa-se de euforia à retração*).
 5. **Pronome Apassivador / Partícula Apassivadora (PA):** Vinculado a $\text{VTD}$ ou $\text{VTDI}$, transformando o complemento direto em sujeito paciente da voz passiva sintética (*Criam-se condições*, *Multiplicam-se postagens*).
 
-### Matriz Sintática Comparativa: PA vs. IIS/PIS
+#### Matriz Sintática Comparativa: PA vs. IIS/PIS
 
 $$
 \begin{cases}
@@ -209,13 +207,13 @@ $$
 
 ---
 
-## Prevalência Semântica Reflexiva sobre a Transitividade Direta
+### Prevalência Semântica Reflexiva sobre a Transitividade Direta
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A presença de um Verbo Transitivo Direto ($\text{VTD}$) com a partícula *se* não configura automaticamente voz passiva sintética. Se a oração expressar sentido reflexivo ou recíproco, o valor semântico prevalece, classificando a oração na voz reflexiva (ou ativa de sentido reflexivo) e o pronome como reflexivo.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - Em *"Os homens não se deixam escravizar"* (VUNESP) ou *"Pedi a ela que se afastasse da cadeira"*, os verbos *deixar* e *afastar* são transitivos diretos no léxico.
 - Contudo, a intenção discursiva indica que os agentes praticam a ação sobre si próprios (*não deixam escravizar a si mesmos*; *afastou a si mesma*).
@@ -225,13 +223,13 @@ A presença de um Verbo Transitivo Direto ($\text{VTD}$) com a partícula *se* n
 
 ---
 
-## Distinção entre Partícula Apassivadora e PIV em Verbos VTD (O Caso IBGE / Cebraspe)
+### Distinção entre Partícula Apassivadora e PIV em Verbos VTD (O Caso IBGE / Cebraspe)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Verbos transitivos diretos no dicionário podem funcionar no texto como verbos pronominais acidentais quando expressam processos contínuos, orgânicos ou dinâmicos autônomos, atuando o pronome *se* como **Parte Integrante do Verbo (PIV)** e não como partícula apassivadora.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - Na prova do IBGE aplicada pelo Cebraspe, analisou-se o trecho: *"existia toda uma vida cultural que se desenvolvia em torno da vida portuária carioca"*.
 - Embora o verbo *desenvolver* admita uso como $\text{VTD}$ (*O governo desenvolve o país*), no contexto a "vida cultural" não sofria uma ação externa passiva executada por um agente indeterminado (*não havia alguém desenvolvendo a vida cultural como quem desenvolve um projeto*).
@@ -243,13 +241,13 @@ Verbos transitivos diretos no dicionário podem funcionar no texto como verbos p
 
 ---
 
-## Análise Sintática na Voz Passiva: Inexistência de Objeto Direto e Sujeito Paciente
+### Análise Sintática na Voz Passiva: Inexistência de Objeto Direto e Sujeito Paciente
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Na voz passiva (sintética ou analítica), **não existe objeto direto**; o termo que completaria o $\text{VTD}$ na voz ativa converte-se compulsoriamente em **sujeito paciente**. Em verbos bitransitivos ($\text{VTDI}$), o objeto indireto permanece inalterado como objeto indireto.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 O princípio fundamental da análise sintática de vozes verbais estabelece:
 
@@ -257,8 +255,8 @@ O princípio fundamental da análise sintática de vozes verbais estabelece:
 - Voz Passiva Sintética: $[\text{VTD} + \text{SE}] + [\text{Sujeito Paciente}]$.
 
 - Em construções com $\text{VTDI} + \text{SE}$ (*Deu-se o presente ao amigo*):
- - *o presente* = Sujeito Paciente (antigo objeto direto).
- - *ao amigo* = Objeto Indireto ($\text{OI}$ preposicionado que não sofre alteração funcional).
+  - *o presente* = Sujeito Paciente (antigo objeto direto).
+  - *ao amigo* = Objeto Indireto ($\text{OI}$ preposicionado que não sofre alteração funcional).
 
 - **Dica associada:**
 
@@ -266,13 +264,13 @@ O princípio fundamental da análise sintática de vozes verbais estabelece:
 
 ---
 
-## Regras de Concordância Verbal na Voz Passiva Sintética
+### Regras de Concordância Verbal na Voz Passiva Sintética
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Como o elemento não preposicionado que acompanha a estrutura $\text{VTD/VTDI} + \text{SE}$ é o sujeito paciente da oração, o verbo principal deve concordar compulsoriamente em número (singular ou plural) e pessoa com esse sujeito.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Sujeito Paciente no Singular $\rightarrow$ Verbo no Singular:** *Vende-se casa* ($=\text{casa é vendida}$).
 - **Sujeito Paciente no Plural $\rightarrow$ Verbo no Plural:** *Vendem-se casas* ($=\text{casas são vendidas}$).
@@ -280,13 +278,13 @@ Como o elemento não preposicionado que acompanha a estrutura $\text{VTD/VTDI} +
 
 ---
 
-## Variação de Colocação Pronominal na Voz Passiva Sintética
+### Variação de Colocação Pronominal na Voz Passiva Sintética
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A voz passiva sintética não se restringe à ênclise (*Vende-se*); ela aceita legitimamente próclise, ênclise ou mesóclise, subordinando-se às regras gerais de colocação pronominal da língua padrão.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Bancas organizadoras (com destaque para a FGV e a FCC) exploram o preconceito de candidatos que associam passiva sintética apenas a placas de rua. Estruturas com palavras atrativas impõem a próclise:
 
@@ -298,13 +296,13 @@ Bancas organizadoras (com destaque para a FGV e a FCC) exploram o preconceito de
 
 ---
 
-## Posição Sintática do Sujeito Paciente na Voz Passiva Sintética
+### Posição Sintática do Sujeito Paciente na Voz Passiva Sintética
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Embora a posição mais frequente do sujeito paciente na voz passiva sintética seja posposta ao verbo, sua anteposição é perfeitamente legítima e não descaracteriza a estrutura passiva sintética.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Ordem Posposta Típica:** *Dividiam-se as terras* ($\text{Verbo} + \text{SE} + \text{Sujeito}$).
 - **Ordem Anteposta Legítima:** *As sociedades indígenas dividiam-se de forma igualitária* ($\text{Sujeito} + \text{Verbo} + \text{SE}$).
@@ -314,13 +312,13 @@ Embora a posição mais frequente do sujeito paciente na voz passiva sintética 
 
 ---
 
-## Distinção entre Passiva Analítica e Verbo de Ligação com Predicativo (Particípio Adjetivado)
+### Distinção entre Passiva Analítica e Verbo de Ligação com Predicativo (Particípio Adjetivado)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A combinação do verbo *ser* com uma forma de particípio não configura obrigatoriamente voz passiva analítica; deve-se verificar se o particípio expressa um processo dinâmico sofrido pelo sujeito (ação passiva) ou se funciona como mero adjetivo qualificador com função de predicativo do sujeito em voz ativa.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - Em *"As tipologias urbanísticas são muito diversificadas"*: o verbo *são* atua como verbo de ligação puro e *diversificadas* é adjetivo na função de predicativo do sujeito, caracterizando um estado/qualidade permanente (Voz Ativa).
 - Em *"Essas áreas sejam tomadas por invasores"*: *tomadas* opera como particípio verbal pleno dentro de uma locução passiva analítica com verbo auxiliar *sejam*, denotando processo verbal passivo executado por agente.
@@ -329,22 +327,22 @@ A combinação do verbo *ser* com uma forma de particípio não configura obriga
 
 ---
 
-## Transposição de Passiva Sintética para Analítica: Princípio da Adição Verbal (+SER) e Método das 4 Instruções
+### Transposição de Passiva Sintética para Analítica: Princípio da Adição Verbal (+SER) e Método das 4 Instruções
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A transposição de Voz Passiva Sintética (VPS) para Voz Passiva Analítica (VPA) opera sob o princípio da **adição de um verbo auxiliar** ($+SER$), estruturando-se pelo **Método das 4 Instruções**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Princípio Aritmético da Adição Verbal:**
- - Se a VPS tem **1 verbo simples** $\rightarrow$ a VPA terá **2 verbos** ($\text{SER} + \text{Particípio}$).
- - Se a VPS tem **2 verbos (locução)** $\rightarrow$ a VPA terá **3 verbos** ($\text{Auxiliar} + \text{SER} + \text{Particípio}$).
+  - Se a VPS tem **1 verbo simples** $\rightarrow$ a VPA terá **2 verbos** ($\text{SER} + \text{Particípio}$).
+  - Se a VPS tem **2 verbos (locução)** $\rightarrow$ a VPA terá **3 verbos** ($\text{Auxiliar} + \text{SER} + \text{Particípio}$).
 2. **O Método das 4 Instruções:**
- - *Instrução 1 — "Chame o feito à ordem":* Delimitar o sujeito paciente, identificar com precisão o tempo e modo do verbo primitivo e destacar o pronome apassivador *se*.
- - *Instrução 2 — Manutenção do Sujeito Paciente:* O sujeito paciente da sintética permanece exatamente como sujeito paciente na analítica, deslocando-se usualmente para o início da oração.
- - *Instrução 3 — Eliminação do Pronome "SE":* Suprime-se a partícula apassivadora.
- - *Instrução 4 — Inserção de SER + Particípio:* Insere-se o verbo auxiliar *SER* conjugado no mesmo tempo, modo, número e pessoa do verbo primitivo, seguido do particípio do verbo principal (concordando em gênero e número com o sujeito).
+  - *Instrução 1 — "Chame o feito à ordem":* Delimitar o sujeito paciente, identificar com precisão o tempo e modo do verbo primitivo e destacar o pronome apassivador *se*.
+  - *Instrução 2 — Manutenção do Sujeito Paciente:* O sujeito paciente da sintética permanece exatamente como sujeito paciente na analítica, deslocando-se usualmente para o início da oração.
+  - *Instrução 3 — Eliminação do Pronome "SE":* Suprime-se a partícula apassivadora.
+  - *Instrução 4 — Inserção de SER + Particípio:* Insere-se o verbo auxiliar *SER* conjugado no mesmo tempo, modo, número e pessoa do verbo primitivo, seguido do particípio do verbo principal (concordando em gênero e número com o sujeito).
 
 - **Procedimento associado:**
 - **Dica associada:**
@@ -353,13 +351,13 @@ A transposição de Voz Passiva Sintética (VPS) para Voz Passiva Analítica (VP
 
 ---
 
-## Transposição de Locuções Verbais na Passiva Sintética para Analítica (2 $\rightarrow$ 3 Verbos)
+### Transposição de Locuções Verbais na Passiva Sintética para Analítica (2 $\rightarrow$ 3 Verbos)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Quando a Voz Passiva Sintética é composta por locução verbal (2 verbos), sua conversão para a Voz Passiva Analítica produz uma locução de **3 verbos**, na qual o verbo auxiliar *SER* assume a forma nominal do verbo principal primitivo, enquanto este é transposto para o particípio.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Vigora a regra de hierarquia em perífrases verbais: *"Quem manda é o principal e quem obedece é o auxiliar"*.
 
@@ -375,24 +373,24 @@ Vigora a regra de hierarquia em perífrases verbais: *"Quem manda é o principal
 
 ---
 
-## Transposição de Voz Passiva Sintética para Voz Ativa
+### Transposição de Voz Passiva Sintética para Voz Ativa
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Como o agente da passiva na voz passiva sintética é indeterminado, sua transposição para a voz ativa produz compulsoriamente uma oração com **sujeito indeterminado**, exigindo o verbo conjugado na **3ª pessoa do plural** no mesmo tempo primitivo, convertendo-se o antigo sujeito paciente em **objeto direto**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Procedimento Canônico:**
 
- - Retirar a partícula apassivadora *se*.
- - Converter o agente indeterminado em sujeito indeterminado: flexionar o verbo na 3ª pessoa do plural, preservando o tempo verbal primitivo.
+  - Retirar a partícula apassivadora *se*.
+  - Converter o agente indeterminado em sujeito indeterminado: flexionar o verbo na 3ª pessoa do plural, preservando o tempo verbal primitivo.
 
 2. **O Atalho Operacional ("No Cantinho"):**
- - Retirar o pronome *se*.
+  - Retirar o pronome *se*.
 
 3. **Comportamento de Locuções Verbais:**
- - Na transposição da Sintética para a Ativa, **o número de verbos NÃO se altera** (2 verbos continuam 2 verbos). Exemplo: *deveriam instituir-se leis* (2 verbos) $\rightarrow$ *deveriam instituir leis* (2 verbos).
+  - Na transposição da Sintética para a Ativa, **o número de verbos NÃO se altera** (2 verbos continuam 2 verbos). Exemplo: *deveriam instituir-se leis* (2 verbos) $\rightarrow$ *deveriam instituir leis* (2 verbos).
 
 - **Procedimento associado:**
 - **Dica associada:**
@@ -400,13 +398,13 @@ Como o agente da passiva na voz passiva sintética é indeterminado, sua transpo
 
 ---
 
-## Transposição de Orações Reduzidas Passivas para a Voz Ativa (Padrão VUNESP)
+### Transposição de Orações Reduzidas Passivas para a Voz Ativa (Padrão VUNESP)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A transposição de orações reduzidas passivas para a voz ativa requer: (1) recompor a elipse do verbo auxiliar no particípio passivo para recuperar o tempo de origem e (2) conjugar formas em gerúndio passivo em formas finitas na 3ª pessoa do plural, visto que formas nominais puras não comportam desinências número-pessoais.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Em questões complexas de períodos compostos (padrão VUNESP):
 
@@ -419,8 +417,6 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 
 ---
 
----
-
 ## Regras decisivas
 
 ### Definições Compactas
@@ -430,7 +426,7 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 - **Índice de Indeterminação do Sujeito (IIS / PIS):** Partícula *se* acoplada a $\text{VI}$, $\text{VTI}$ ou $\text{VL}$, mantendo o verbo na 3ª pessoa do singular com sujeito indeterminado .
 - **Parte Integrante do Verbo (PIV):** Pronome que integra a estrutura lexical de verbos pronominais, sem função de apassivação ou indeterminação .
 
-### Regras Operacionais Canônicas
+#### Regras Operacionais Canônicas
 
 1. **Regra da Transitividade Direta Obrigatória:** Apenas verbos com trânsito direto ($\text{VTD}$ ou $\text{VTDI}$) admitem voz passiva sintética .
 2. **Mantra da Voz Passiva:** Na voz passiva, o termo que seria objeto direto na voz ativa passa a ser obrigatoriamente **sujeito paciente** .
@@ -441,11 +437,9 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Protocolo de Dupla Validação da Voz Passiva Sintética
+### Protocolo de Dupla Validação da Voz Passiva Sintética
 
 - **Objetivo:** Confirmar se uma oração com o pronome *se* está na voz passiva sintética.
 - **Passo 1:** Isolar o verbo e verificar a sua transitividade. O verbo deve ser Transitivo Direto ($\text{VTD}$) ou Transitivo Direto e Indireto ($\text{VTDI}$). Se for $\text{VTI}$ (com preposição regida), $\text{VI}$ ou $\text{VL}$, **descarte** a passiva sintética.
@@ -457,7 +451,7 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 
 ---
 
-## Protocolo de Triagem e Descarte das Funções do "SE"
+### Protocolo de Triagem e Descarte das Funções do "SE"
 
 - **Objetivo:** Classificar o vocábulo *se* em questões de múltipla escolha.
 - **Fluxo de Decisão:**
@@ -469,7 +463,7 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 
 ---
 
-## Algoritmo das 4 Instruções (VPS $\rightarrow$ VPA: Frases Simples)
+### Algoritmo das 4 Instruções (VPS $\rightarrow$ VPA: Frases Simples)
 
 - **Objetivo:** Transpor oração com verbo simples da voz passiva sintética para a voz passiva analítica.
 - **Passo 1 ("Chame o feito à ordem"):** Identificar o sujeito paciente, o tempo e modo do verbo e destacar o pronome apassivador *se*.
@@ -479,7 +473,7 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 
 ---
 
-## Transposição de Locuções Verbais na Passiva (VPS $\rightarrow$ VPA: 2 $\rightarrow$ 3 Verbos)
+### Transposição de Locuções Verbais na Passiva (VPS $\rightarrow$ VPA: 2 $\rightarrow$ 3 Verbos)
 
 - **Objetivo:** Converter locuções verbais passivas sintéticas em analíticas.
 - **Passo 1:** Identificar a locução na VPS (ex.: *começou a se definir* — 2 verbos).
@@ -490,7 +484,7 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 
 ---
 
-## Procedimento Canônico de Transposição (VPS $\rightarrow$ Voz Ativa)
+### Procedimento Canônico de Transposição (VPS $\rightarrow$ Voz Ativa)
 
 - **Objetivo:** Converter com rigor analítico orações da passiva sintética para a voz ativa.
 - **Passo 1:** Identificar o tempo verbal primitivo e o sujeito paciente.
@@ -500,7 +494,7 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 
 ---
 
-## O Atalho Operacional ("No Cantinho") para VPS $\rightarrow$ Ativa
+### O Atalho Operacional ("No Cantinho") para VPS $\rightarrow$ Ativa
 
 - **Objetivo:** Resolver questões de reescritura para voz ativa em segundos.
 - **Passo 1:** No canto da prova, corte mentalmente ou a lápis o pronome *se*.
@@ -510,15 +504,13 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 
 ---
 
-## Método Integrado para Orações Reduzidas Passivas em Períodos Compostos
+### Método Integrado para Orações Reduzidas Passivas em Períodos Compostos
 
 - **Objetivo:** Transpor orações reduzidas passivas para a ativa em períodos compostos extensos.
 - **Passo 1 (Particípio Passivo):** Reconstituir o auxiliar elíptico (*estudo realizado por X* $\rightarrow$ *[que foi] realizado por X*). O agente vira sujeito na ativa (*X realizou um estudo*).
 - **Passo 2 (Gerúndio Passivo):** Identificar a correlação temporal com o verbo principal da oração (ex.: *indicam* = presente).
 - **Passo 3:** Desenvolver o gerúndio em oração finita coordenada na 3ª pessoa do plural do presente (*e registram*), eliminando a partícula *se*.
 - **Passo 4:** Confrontar com as alternativas e assinalar a opção com correspondência temporal estrita.
-
----
 
 ---
 
@@ -534,7 +526,7 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 | **Pronome Reflexivo** | $\text{VTD}$ ou $\text{VTDI}$ | **Determinado** (Ag./Pac.) | O próprio sujeito | Varia com o sujeito | *Ela cortou-se.* |
 | **Conjunção Integrante / Condic.** | Conectivo oracional | Depende da oração | Depende da oração | Flexão normal | *Não sei se virão.* |
 
-### Tabela Comparativa de Cardinalidade Verbal nas Transposições
+#### Tabela Comparativa de Cardinalidade Verbal nas Transposições
 
 | Transposição de Vozes | Quantidade na Origem | Quantidade no Destino | Regra de Cardinalidade | Exemplo |
 |:---------------------------------------------------------- |:------------------: |:-------------------: |:---------------------------- |:---------------------------------------------------------------------------- |
@@ -545,11 +537,9 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Questão 1 (Identificação de Voz): Adriana Figueiredo
+### Questão 1 (Identificação de Voz): Adriana Figueiredo
 
 - **Frase:** *Consertou-se o computador do laboratório.*
 - **Análise:** Verbo *consertar* ($\text{VTD}$) $+$ pronome *se*. Conversão analítica mental: *O computador do laboratório foi consertado*.
@@ -558,19 +548,19 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 
 ---
 
-## Questão 2 (FGV — Reconhecimento Duplo de Voz Passiva): Adriana Figueiredo
+### Questão 2 (FGV — Reconhecimento Duplo de Voz Passiva): Adriana Figueiredo
 
 - **Enunciado:** Identificar a opção em que ambos os fragmentos constituem exemplos de voz passiva.
 - **Análise dos fragmentos:**
- - *São muito diversificadas:* $\text{VL} + \text{Predicativo}$ $\rightarrow$ Voz Ativa.
- - *...essas áreas sejam tomadas:* $\text{SER} + \text{Particípio}$ $\rightarrow$ Voz Passiva Analítica.
- - *Criam-se condições:* $\text{VTD} + \text{SE}$ $\rightarrow$ *Condições são criadas* $\rightarrow$ Voz Passiva Sintética.
- - *impõe:* $\text{VTD}$ simples sem estrutura passiva $\rightarrow$ Voz Ativa.
+  - *São muito diversificadas:* $\text{VL} + \text{Predicativo}$ $\rightarrow$ Voz Ativa.
+  - *...essas áreas sejam tomadas:* $\text{SER} + \text{Particípio}$ $\rightarrow$ Voz Passiva Analítica.
+  - *Criam-se condições:* $\text{VTD} + \text{SE}$ $\rightarrow$ *Condições são criadas* $\rightarrow$ Voz Passiva Sintética.
+  - *impõe:* $\text{VTD}$ simples sem estrutura passiva $\rightarrow$ Voz Ativa.
 - **Gabarito:** Letra D (reúne uma passiva analítica e uma passiva sintética).
 
 ---
 
-## Questão 3 (FGV — Próclise na Voz Passiva Sintética): Adriana Figueiredo
+### Questão 3 (FGV — Próclise na Voz Passiva Sintética): Adriana Figueiredo
 
 - **Trecho correto:** *...cada vez mais se desfazem os limites...*
 - **Análise:** Locução adverbial atrativa impõe a próclise do pronome apassivador *se* junto ao $\text{VTD}$ *desfazer*. Conversão analítica: *os limites são desfeitos*.
@@ -578,7 +568,7 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 
 ---
 
-## Questão 4 (FGV — Identificação de Voz Discrepante): Adriana Figueiredo
+### Questão 4 (FGV — Identificação de Voz Discrepante): Adriana Figueiredo
 
 - **Trecho correto:** *Atualmente, quando se mencionam...*
 - **Análise:** Conjunção subordinativa temporal *quando* atrai o pronome *se* em próclise ao $\text{VTD}$ *mencionar*. Conversão analítica: *quando são mencionadas*. Todas as outras opções apresentavam verbos na voz ativa.
@@ -586,31 +576,31 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 
 ---
 
-## Questão 05 (VUNESP 2018 — PC-SP — Agente de Telecomunicações)
+### Questão 05 (VUNESP 2018 — PC-SP — Agente de Telecomunicações)
 
 - **Enunciado:** Em *“... fica faltando dizer que se encerrou a escravidão negra...”*, o pronome “se” indica que o sujeito é paciente, como ocorre em:
 - **Análise das opções:**
- - A) *Querem saber se serão pagos...* $\rightarrow$ Conjunção Integrante (*"Querem saber isso"*).
- - B) *Os homens não se deixam escravizar...* $\rightarrow$ Pronome Reflexivo (*a si mesmos*).
- - C) *Ali se trabalha como escravo...* $\rightarrow$ $\text{VI} + \text{SE}$ $\rightarrow$ IIS/PIS.
- - D) *Lamentavelmente, ainda hoje se escravizam pessoas.* $\rightarrow$ $\text{VTD} + \text{SE}$ ($=\text{pessoas são escravizadas}$) $\rightarrow$ Pronome Apassivador.
- - E) *Todos se sentem submetidos...* $\rightarrow$ Verbo pronominal *sentir-se* $\rightarrow$ PIV.
+  - A) *Querem saber se serão pagos...* $\rightarrow$ Conjunção Integrante (*"Querem saber isso"*).
+  - B) *Os homens não se deixam escravizar...* $\rightarrow$ Pronome Reflexivo (*a si mesmos*).
+  - C) *Ali se trabalha como escravo...* $\rightarrow$ $\text{VI} + \text{SE}$ $\rightarrow$ IIS/PIS.
+  - D) *Lamentavelmente, ainda hoje se escravizam pessoas.* $\rightarrow$ $\text{VTD} + \text{SE}$ ($=\text{pessoas são escravizadas}$) $\rightarrow$ Pronome Apassivador.
+  - E) *Todos se sentem submetidos...* $\rightarrow$ Verbo pronominal *sentir-se* $\rightarrow$ PIV.
 - **Gabarito:** Letra D.
 
 ---
 
-## Questão 06 (Instituto Consulplan 2020 — Câmara de Arcos-MG — Contador)
+### Questão 06 (Instituto Consulplan 2020 — Câmara de Arcos-MG — Contador)
 
 - **Análise das opções:**
- - A) *“Algoritmos fixos... tornam-se dinâmicos”* $\rightarrow$ Verbo pronominal *tornar-se* $\rightarrow$ PIV (Ativa).
- - B) *“...ainda situam-se no campo...”* $\rightarrow$ Verbo pronominal *situar-se* $\rightarrow$ PIV (Ativa).
- - C) *“...levantam-se dúvidas sobre...”* $\rightarrow$ $\text{VTD} + \text{SE}$ ($=\text{dúvidas são levantadas}$) $\rightarrow$ Voz Passiva Sintética.
- - D) *“...passa-se de momentos de euforia...”* $\rightarrow$ $\text{VTI}$ com preposição *de* $\rightarrow$ IIS/PIS.
+  - A) *“Algoritmos fixos... tornam-se dinâmicos”* $\rightarrow$ Verbo pronominal *tornar-se* $\rightarrow$ PIV (Ativa).
+  - B) *“...ainda situam-se no campo...”* $\rightarrow$ Verbo pronominal *situar-se* $\rightarrow$ PIV (Ativa).
+  - C) *“...levantam-se dúvidas sobre...”* $\rightarrow$ $\text{VTD} + \text{SE}$ ($=\text{dúvidas são levantadas}$) $\rightarrow$ Voz Passiva Sintética.
+  - D) *“...passa-se de momentos de euforia...”* $\rightarrow$ $\text{VTI}$ com preposição *de* $\rightarrow$ IIS/PIS.
 - **Gabarito:** Letra C.
 
 ---
 
-## Questão 07 (CESGRANRIO 2022 — Petrobras — Geofísico Júnior)
+### Questão 07 (CESGRANRIO 2022 — Petrobras — Geofísico Júnior)
 
 - **Enunciado:** A construção de voz passiva sintética pode ser encontrada nas frases, EXCETO em:
 - **Análise:** Nas opções A, B, D e E ocorrem $\text{VTD} + \text{SE}$ (*gerou-se desgaste*, *combate-se o desemprego*, *perde-se uma batalha*, *provoca-se uma crise*). Na opção C (*precisa-se de uma série de medidas*), o verbo *precisar* rege preposição *de* ($\text{VTI}$), atuando o *se* como IIS/PIS.
@@ -618,20 +608,20 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 
 ---
 
-## Questão 08 (FUNDATEC 2021 — CRA-RS — Fiscal)
+### Questão 08 (FUNDATEC 2021 — CRA-RS — Fiscal)
 
 - **Enunciado:** Assinale a alternativa na qual NÃO haja o emprego de voz passiva.
 - **Análise:**
- - A) *multiplicam-se... as postagens* $\rightarrow$ Passiva Sintética.
- - B) *O home office... cristalizou-se* $\rightarrow$ Passiva Sintética ($=\text{foi cristalizado}$).
- - C) *decisão a ser tomada* $\rightarrow$ Passiva Analítica ($\text{SER} + \text{Particípio}$).
- - D) *assuntos a serem discutidos* $\rightarrow$ Passiva Analítica.
- - E) *Certifique-se de que todos...* $\rightarrow$ Verbo pronominal *certificar-se* $\rightarrow$ PIV (Voz Ativa).
+  - A) *multiplicam-se... as postagens* $\rightarrow$ Passiva Sintética.
+  - B) *O home office... cristalizou-se* $\rightarrow$ Passiva Sintética ($=\text{foi cristalizado}$).
+  - C) *decisão a ser tomada* $\rightarrow$ Passiva Analítica ($\text{SER} + \text{Particípio}$).
+  - D) *assuntos a serem discutidos* $\rightarrow$ Passiva Analítica.
+  - E) *Certifique-se de que todos...* $\rightarrow$ Verbo pronominal *certificar-se* $\rightarrow$ PIV (Voz Ativa).
 - **Gabarito:** Letra E.
 
 ---
 
-## Estudo de Caso Cebraspe (Concurso IBGE): PIV vs. PA
+### Estudo de Caso Cebraspe (Concurso IBGE): PIV vs. PA
 
 - **Trecho:** *"existia toda uma vida cultural que se desenvolvia em torno da vida portuária carioca."*
 - **Análise:** O verbo *desenvolver* é $\text{VTD}$ no léxico, mas expressa processo autônomo e espontâneo no texto. A conversão analítica (*a vida cultural era desenvolvida*) é incompatível com o sentido.
@@ -639,7 +629,7 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 
 ---
 
-## Bateria de Fixação I (VPS $\rightarrow$ VPA): Adriana Figueiredo
+### Bateria de Fixação I (VPS $\rightarrow$ VPA): Adriana Figueiredo
 
 1. *Na cidade de Atenas, considerava-se cidadão qualquer ateniense maior de 18 anos.*$\rightarrow$ **VPA:** *Qualquer ateniense maior de 18 anos era considerado cidadão na cidade de Atenas.*
 2. *Abriam-se as flores naquela primavera.*$\rightarrow$ **VPA:** *As flores eram abertas naquela primavera.*
@@ -650,7 +640,7 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 
 ---
 
-## Bateria de Questões FCC e FGV (VPS $\rightarrow$ VPA)
+### Bateria de Questões FCC e FGV (VPS $\rightarrow$ VPA)
 
 1. **Questão 09 (FCC 2019 — SABESP):** *Quando se discutiam suas ideias com entusiasmo.*$\rightarrow$ Verbo no Pretérito Imperfeito plural $\rightarrow$ **Gabarito C:** *Quando suas ideias eram discutidas com entusiasmo.*
 2. **Questão 10 (FCC — TRT 23ª Região):** *...a grandeza das manhãs se media pela quantidade de mulungus...*$\rightarrow$ Verbo no Pretérito Imperfeito singular $\rightarrow$ **Gabarito A:** *era medida*.
@@ -659,7 +649,7 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 
 ---
 
-## Bateria de Fixação II (VPS $\rightarrow$ Voz Ativa): Adriana Figueiredo
+### Bateria de Fixação II (VPS $\rightarrow$ Voz Ativa): Adriana Figueiredo
 
 1. *Recebeu-se o projeto com ceticismo.* (Pretérito Perfeito) $\rightarrow$ **Ativa:** *Receberam o projeto com ceticismo.*
 2. *Esperavam-se resultados mais animadores.* (Pretérito Imperfeito) $\rightarrow$ **Ativa:** *Esperavam resultados mais animadores.*
@@ -669,7 +659,7 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 
 ---
 
-## Questão 12 (IBADE 2020 — Prefeitura de Linhares-ES — Professor)
+### Questão 12 (IBADE 2020 — Prefeitura de Linhares-ES — Professor)
 
 - **Frase:** *“E males de amor curam-se com o próprio amor”* (Passiva Pronominal no Presente).
 - **Aplicação do atalho:** Retira-se o *se*, coloca-se o verbo na 3ª pl. do presente (*curam*) e *males de amor* vira objeto direto.
@@ -677,7 +667,7 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 
 ---
 
-## Questão 13 (VUNESP 2019 — TJ-SP — Enfermeiro Judiciário)
+### Questão 13 (VUNESP 2019 — TJ-SP — Enfermeiro Judiciário)
 
 - **Enunciado:** Transpor para a voz ativa os trechos: (1) *"Um estudo realizado por pesquisadores do Porto concluiu..."* e (2) *"...registrando-se uma clara diminuição dos níveis de ansiedade..."*.
 - **Resolução:**
@@ -687,139 +677,131 @@ Em questões complexas de períodos compostos (padrão VUNESP):
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Teste da Conversão Analítica como Juiz Absoluto
+### O Teste da Conversão Analítica como Juiz Absoluto
 
 - **Categoria:** Macete operacional de validação.
 - **Descrição:** Em qualquer dúvida sobre a classificação do *se*, aplique mentalmente a conversão analítica: $[\text{Substantivo} + \text{Verbo SER} + \text{Particípio}]$. Se soar natural e fizer perfeito sentido, trata-se de Pronome Apassivador. Se gerar frase absurda ou exigir preposição, descarte a passiva sintética (`026`:, `027`: ).
 
-## O Filtro Visual da Preposição Imediata
+### O Filtro Visual da Preposição Imediata
 
 - **Categoria:** Atalho de varredura visual.
 - **Descrição:** Se houver preposição regida pelo verbo imediatamente após a partícula *se* (*precisa-se de*, *trata-se de*, *gosta-se de*, *passa-se de*), elimine instantaneamente a hipótese de Voz Passiva Sintética. A preposição denuncia $\text{VTI}$, classificando o *se* como Índice de Indeterminação do Sujeito (`027`:, ).
 
-## O Mantra da Inexistência de Objeto Direto na Voz Passiva
+### O Mantra da Inexistência de Objeto Direto na Voz Passiva
 
 - **Categoria:** Mnemônico de análise sintática.
 - **Descrição:** Repita mentalmente durante a análise: *"Na voz passiva NÃO EXISTE objeto direto, e sim sujeito paciente"*. Risque qualquer alternativa que aponte objeto direto em oração passiva sintética ou analítica (`028`: ).
 
-## A Regra da Adição Verbal (+SER) e Contagem de Verbos
+### A Regra da Adição Verbal (+SER) e Contagem de Verbos
 
 - **Categoria:** Técnica de eliminação por contagem.
 - **Descrição:** Ao transpor de Sintética para Analítica, some compulsoriamente 1 verbo auxiliar:
- - $1 \text{ verbo simples (VPS)} \longrightarrow 2 \text{ verbos (VPA)}$
- - $2 \text{ verbos em locução (VPS)} \longrightarrow 3 \text{ verbos (VPA)}$
+  - $1 \text{ verbo simples (VPS)} \longrightarrow 2 \text{ verbos (VPA)}$
+  - $2 \text{ verbos em locução (VPS)} \longrightarrow 3 \text{ verbos (VPA)}$
  Elimine de imediato alternativas que mantenham a mesma quantidade de verbos (`029`:, `030`: ).
 
-## Hierarquia na Locução Verbal: "Quem Manda é o Principal"
+### Hierarquia na Locução Verbal: "Quem Manda é o Principal"
 
 - **Categoria:** Princípio de sintaxe de regência.
 - **Descrição:** Em qualquer locução verbal, o verbo principal (último) é soberano: ele dita a transitividade da perífrase e impõe a sua forma nominal ao verbo auxiliar *SER* na transposição analítica (`029`: ).
 
-## O Atalho da Transposição Sintética $\rightarrow$ Ativa (Corta SE + 3ª Plural)
+### O Atalho da Transposição Sintética $\rightarrow$ Ativa (Corta SE + 3ª Plural)
 
 - **Categoria:** Macete de reescritura rápida.
 - **Descrição:** Para converter da passiva sintética para a ativa: (1) corte a partícula *se* e (2) flexione o verbo na 3ª pessoa do plural mantendo estritamente o tempo verbal original (`030`: ).
 
-## A Técnica do Rascunho "No Cantinho" e o Princípio "O Resto é Lhufas"
+### A Técnica do Rascunho "No Cantinho" e o Princípio "O Resto é Lhufas"
 
 - **Categoria:** Estratégia de resolução de prova.
 - **Descrição:** Monte a transposição no rascunho antes de ler os distratores das alternativas. Ignore adjuntos adverbiais periféricos (*"o resto é lhufas"*), pois eles não alteram a estrutura verbal e podem vir deslocados na frase (`029`:, `030`: ).
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Pegadinha do Agente Inexistente vs. Agente Indeterminado (Cebraspe)
+### Pegadinha do Agente Inexistente vs. Agente Indeterminado (Cebraspe)
 
 - **Erro comum:** Marcar como "certo" item que afirma que o agente da passiva na oração sintética (*Vende-se casa*) é "inexistente".
 - **Forma correta:** O agente existe factualmente, mas é **sintaticamente indeterminado** (`026`:, `028`: ).
 
-## Confundir Sujeito Determinado Paciente com Sujeito Indeterminado (Cebraspe)
+### Confundir Sujeito Determinado Paciente com Sujeito Indeterminado (Cebraspe)
 
 - **Erro comum:** Classificar orações passivas sintéticas (*Alugam-se salas*) como tendo "sujeito indeterminado".
 - **Forma correta:** O sujeito é **determinado paciente** (*salas*); quem é indeterminado é o agente da passiva (`030`: ).
 
-## A Armadilha do "Robô": VTD + SE não é Automaticamente Passiva
+### A Armadilha do "Robô": VTD + SE não é Automaticamente Passiva
 
 - **Erro comum:** Decorar mecanicamente $\text{VTD} + \text{SE} = \text{PA}$ e errar frases com sentido reflexivo (*Ele cortou-se*) ou verbos pronominais acidentais (*A vida cultural desenvolvia-se*) (`027`:, `028`: ).
 
-## Mito da Exclusividade da Ênclise na Passiva Sintética
+### Mito da Exclusividade da Ênclise na Passiva Sintética
 
 - **Erro comum:** Julgar que a passiva sintética só existe com ênclise (*Vende-se*), desconsiderando casos legítimos em próclise (*quando se mencionam*, *se desfazem*) (`026`: ).
 
-## Mito de que o Sujeito da VPS Deve Vir Sempre Posposto
+### Mito de que o Sujeito da VPS Deve Vir Sempre Posposto
 
 - **Erro comum:** Considerar atípica ou errada a oração passiva sintética com sujeito anteposto (*As sociedades indígenas dividiam-se*) (`029`: ).
 
-## Confundir Particípio Adjetivado com Passiva Analítica
+### Confundir Particípio Adjetivado com Passiva Analítica
 
 - **Erro comum:** Classificar verbo de ligação $+$ adjetivo predicativo derivado de particípio (*São muito diversificadas*) como locução passiva analítica (`026`: ).
 
-## Erro de Concordância por Tratar o Sujeito como Objeto Direto
+### Erro de Concordância por Tratar o Sujeito como Objeto Direto
 
 - **Erro comum:** Deixar o verbo no singular diante de sujeito paciente plural (*"Vende-se casas"*, *"Aluga-se salas"*) (`028`: ).
 
-## Erro na Transposição do Tempo Verbal do Verbo *SER*
+### Erro na Transposição do Tempo Verbal do Verbo *SER*
 
 - **Erro comum:** Alterar o tempo verbal na analítica (ex.: transpor o pretérito imperfeito *considerava-se* para o presente *é considerado* ou pretérito perfeito *foi considerado*) (`029`:, `030`: ).
 
-## Omissão do Verbo Auxiliar em Orações Reduzidas de Particípio
+### Omissão do Verbo Auxiliar em Orações Reduzidas de Particípio
 
 - **Erro comum:** Não identificar a voz passiva analítica em orações reduzidas com auxiliar elíptico (*estudo realizado por pesquisadores* $= \text{estudo que foi realizado}$) (`030`: ).
 
-## O Mito dos "80% de Interpretação" e a Negligência da Gramática (Caso Edenildo)
+### O Mito dos "80% de Interpretação" e a Negligência da Gramática (Caso Edenildo)
 
 - **Erro comum:** Abandonar o estudo da sintaxe formal sob o falso pretexto de que concursos cobram quase que exclusivamente interpretação de textos (`030`: ).
 
 ---
 
----
-
 ## Glossário operacional
 
-## Voz Passiva Sintética (Pronominal)
+### Voz Passiva Sintética (Pronominal)
 
 - **Definição:** Estrutura sintática passiva formada por um verbo transitivo direto ou bitransitivo na 3ª pessoa acompanhado do pronome apassivador *se*, com sujeito paciente expresso e agente da passiva indeterminado (`026`:, `028`: ).
 
-## Pronome Apassivador / Partícula Apassivadora (PA)
+### Pronome Apassivador / Partícula Apassivadora (PA)
 
 - **Definição:** Classificação morfossintática do pronome *se* quando acoplado a verbos de transitividade direta, atuando como o operador que converte o complemento direto em sujeito paciente (`026`:, `027`: ).
 
-## Voz Passiva Analítica
+### Voz Passiva Analítica
 
 - **Definição:** Estrutura passiva desenvolvida por locução verbal, formada obrigatoriamente por verbo auxiliar (tipicamente *ser*) conjugado $+$ particípio do verbo principal concordado com o sujeito (`026`:, `029`: ).
 
-## Índice de Indeterminação do Sujeito (IIS / PIS)
+### Índice de Indeterminação do Sujeito (IIS / PIS)
 
 - **Definição:** Partícula *se* que acompanha verbos intransitivos, transitivos indiretos com preposição ou de ligação, fixando o verbo na 3ª pessoa do singular para sinalizar sujeito indeterminado (`027`:, ).
 
-## Parte Integrante do Verbo (PIV)
+### Parte Integrante do Verbo (PIV)
 
 - **Definição:** Pronome reflexivo átono que se incorpora indelevelmente à conjugação de verbos pronominais essenciais ou acidentais, não desempenhando função sintática autônoma e mantendo a oração na voz ativa (`027`:, `028`: ).
 
-## Sujeito Paciente
+### Sujeito Paciente
 
 - **Definição:** Termo sintático sobre o qual recai a ação verbal na voz passiva e com o qual o verbo principal/auxiliar concorda obrigatoriamente em gênero, número e pessoa (`028`:, `030`: ).
 
-## Agente da Passiva Indeterminado
+### Agente da Passiva Indeterminado
 
 - **Definição:** Condição semântico-sintática intrínseca à voz passiva sintética, na qual o realizador da ação verbal existe factualmente, mas não é delimitado ou expresso na oração (`026`:, `030`: ).
 
-## Locução Verbal Passiva
+### Locução Verbal Passiva
 
 - **Definição:** Perífrase verbal na qual o último verbo (principal) encontra-se no particípio e o penúltimo é o verbo auxiliar *SER*, indicando voz passiva analítica (`029`: ).
 
-## Oração Reduzida de Particípio Passiva
+### Oração Reduzida de Particípio Passiva
 
 - **Definição:** Oração subordinada adjetiva sem conectivo estruturada em torno de particípio passivo, contendo verbo auxiliar *ser* em estado de elipse (`030`: ).
-
----
 
 ---
 

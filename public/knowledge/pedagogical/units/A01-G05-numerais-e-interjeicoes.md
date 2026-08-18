@@ -20,7 +20,7 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 - Noções de sintaxe oracional básica (termos essenciais, integrantes e acessórios) para compreender por que a interjeição é classificada como termo à parte (sem função sintática).
 - Mecanismos de contração prepositiva (*em + um = num*).
 
-### Mapa de Relações Conceituais
+#### Mapa de Relações Conceituais
 
 ```text
 [ AULA 01 — MORFOLOGIA: NUMERAIS E INTERJEIÇÕES ]
@@ -82,17 +82,15 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Conceito Gramatical e Categorias Tradicionais de Numerais
+### Conceito Gramatical e Categorias Tradicionais de Numerais
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 O numeral é a classe de palavras que quantifica seres de forma exata, indica sua ordenação em uma série, ou expressa múltiplos e frações matemáticas.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 A gramática divide os numerais em quatro categorias funcionais:
 
@@ -101,19 +99,19 @@ A gramática divide os numerais em quatro categorias funcionais:
 3. **Fracionários:** Indicam a divisão proporcional de uma quantidade, referindo-se a frações ou partes do todo (ex.: *meio*, *um terço*, *três quartos*, *um quinto*). Exemplo em frase: *"Já percorremos um terço do caminho."*
 4. **Multiplicativos:** Indicam o aumento proporcional da quantidade por multiplicação (ex.: *dobro*, *triplo*, *quádruplo*). Exemplo em frase: *"Ele tem o triplo da experiência que eu tenho."*
 
-### Critérios de Reconhecimento
+#### Critérios de Reconhecimento
 
 - Pergunte à palavra no texto: ela conta (*cardinal*), posiciona (*ordinal*), divide (*fracionário*) ou multiplica (*multiplicativo*)?
 
 ---
 
-## Diferenciação entre Artigo Indefinido e Numeral Cardinal (*Um/Uma* e a Contração *Num*)
+### Diferenciação entre Artigo Indefinido e Numeral Cardinal (*Um/Uma* e a Contração *Num*)
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Os vocábulos *um* e *uma* (isolados ou em contrações prepositivas como *num*, *numa*, *dum*, *duma*) só atuam como **numerais cardinais** se houver no contexto uma evidência expressa de contabilização/quantificação. Na ausência de pistas explícitas, a classificação canônica é **artigo indefinido**.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 Bancas examinadoras (como o CEBRASPE) exploram a tendência do candidato de inferir possibilidades extratextuais (ex.: *"faria uma viagem, mas poderia fazer duas"*). No rigor da morfologia de concurso:
 
@@ -121,45 +119,45 @@ Bancas examinadoras (como o CEBRASPE) exploram a tendência do candidato de infe
 2. **Requisito para Numeral Cardinal:** O termo só mudará de classe para numeral se o contexto trouxer palavras de restrição numérica ou ênfase de contagem (ex.: *somente*, *apenas*, *unicamente*, *exclusivamente*, *não dois*, *não três*).
 3. **Casos com Contração Prepositiva:** Em estruturas como *"...se encontrassem num almoço..."* (*em + um*), o vocábulo *um* não expressa contagem numérica (não se opõe a dois almoços), mas introduz um evento indeterminado. Logo, *num* é a contração de preposição *em* com **artigo indefinido** *um*.
 
-### Exemplos e Contraexemplos
+#### Exemplos e Contraexemplos
 
 - **Artigo Indefinido (Sem pista de contagem):**
- - *"Faria uma viagem."* (indefinido)
- - *"Um médico chegou."* (indefinido)
- - *"Assisti a um filme interessante ontem."* (indefinido)
- - *"Precisamos de uma solução para isso."* (indefinido)
- - *"...se encontrassem num almoço..."* (indefinido)
+  - *"Faria uma viagem."* (indefinido)
+  - *"Um médico chegou."* (indefinido)
+  - *"Assisti a um filme interessante ontem."* (indefinido)
+  - *"Precisamos de uma solução para isso."* (indefinido)
+  - *"...se encontrassem num almoço..."* (indefinido)
 - **Numeral Cardinal (Com pista explícita de quantificação):**
- - *"Tinha somente um vestido."* (*somente* = pista)
- - *"Trouxe apenas uma moeda."* (*apenas* = pista)
- - *"Havia apenas uma pessoa na fila de espera."* (*apenas* = pista)
- - *"A reunião ocorreu num só dia."* (*só* = pista)
+  - *"Tinha somente um vestido."* (*somente* = pista)
+  - *"Trouxe apenas uma moeda."* (*apenas* = pista)
+  - *"Havia apenas uma pessoa na fila de espera."* (*apenas* = pista)
+  - *"A reunião ocorreu num só dia."* (*só* = pista)
 
 ---
 
-## Funções e Classificações da Palavra "Segundo"
+### Funções e Classificações da Palavra "Segundo"
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A palavra *segundo* pode atuar como **numeral ordinal** (indicando ordem sequencial) ou como **conector conformativo** (introduzindo referência/conformidade, equivalente a *de acordo com* ou *conforme*).
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 1. **Emprego como Numeral Ordinal:** Ocorre quando situa um elemento na posição número dois de uma série (ex.: *"Este é o segundo livro da coleção"*).
 2. **Emprego como Conector Conformativo:** Ocorre quando introduz uma fonte, dado ou conformidade (ex.: *"Segundo o chefe da Divisão..."* / *"Segundo a previsão do tempo..."*).
- - **Gramática Tradicional ("Raiz"):** Classifica o termo como **preposição acidental**, visto que desempenha o papel da locução prepositiva *de acordo com*.
- - **Manuais Didáticos e Algumas Bancas:** Denominam o termo como **conjunção conformativa**.
- - **Postura em Provas:** O ponto decisivo para o candidato é identificar o valor semântico de conformidade. Sob nenhuma hipótese o conector conformativo pode ser rotulado como numeral ordinal.
+  - **Gramática Tradicional ("Raiz"):** Classifica o termo como **preposição acidental**, visto que desempenha o papel da locução prepositiva *de acordo com*.
+  - **Manuais Didáticos e Algumas Bancas:** Denominam o termo como **conjunção conformativa**.
+  - **Postura em Provas:** O ponto decisivo para o candidato é identificar o valor semântico de conformidade. Sob nenhuma hipótese o conector conformativo pode ser rotulado como numeral ordinal.
 
 ---
 
-## Numerais Coletivos e a Fronteira com Numerais Cardinais
+### Numerais Coletivos e a Fronteira com Numerais Cardinais
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Palavras no singular que designam um conjunto ou agrupamento com número exato de unidades constituem a categoria dos **numerais coletivos**, não se confundindo morfologicamente com os numerais cardinais.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 Exemplos canônicos cobrados em concursos:
 
@@ -170,50 +168,50 @@ Exemplos canônicos cobrados em concursos:
 - **Dezena:** grupo de 10 unidades.
 - **Centena:** grupo de 100 unidades.
 
-### Alerta de Prova
+#### Alerta de Prova
 
 As bancas tentam induzir o candidato ao erro afirmando que *dúzia* ou *década* são numerais cardinais por corresponderem numericamente a 12 ou 10. A norma gramatical prescreve que são **numerais coletivos**, pois dão nome ao agrupamento de seres.
 
 ---
 
-## O Numeral Cardinal e o Papel do Contexto (Quantidade Exata vs. Aproximada)
+### O Numeral Cardinal e o Papel do Contexto (Quantidade Exata vs. Aproximada)
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Em tese, a definição formal do numeral cardinal é indicar uma quantidade exata. Todavia, a presença de modificadores contextuais de aproximação faz com que o numeral passe a expressar uma **quantidade aproximada** no plano textual, sem perder sua classificação morfológica de **numeral cardinal**.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 - **Estrutura sem modificador:** *"Dez alunos chegaram."* → O vocábulo *dez* é um numeral cardinal e expressa quantidade exata (rigorosamente 10).
 - **Estrutura com modificador aproximativo:** *"Cerca de dez alunos chegaram."* → A palavra *dez* continua sendo morfologicamente um **numeral cardinal**, mas no contexto semântico transmite uma **quantidade aproximada**.
 
 ---
 
-## Empregos e Regras de Flexão de "Metade" e "Meio"
+### Empregos e Regras de Flexão de "Metade" e "Meio"
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 O vocábulo *metade* é sempre um numeral fracionário. A palavra *meio* admite três categorizações morfossintáticas distintas (numeral fracionário, substantivo e advérbio), as quais ditam se o termo pode ou não flexionar em gênero e número.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 1. **A Palavra "Metade":** É invariavelmente um **numeral fracionário** e varia em número (*a metade*, *as metades*).
 2. **A Palavra "Meio":**
- - **A) Numeral Fracionário:** Ocorre quando equivale a "metade de uma fração". É **variável** em gênero e número (concorda com o substantivo). Exemplo: *"Tomou meio copo de leite"* / *"Tomou meia caneca de leite"*.
- - **B) Substantivo:** Ocorre quando designa um ambiente, lugar, recurso ou elemento central. É **variável** em número. Exemplo: *"O meio ambiente"* / *"Os meios de comunicação"*.
- - **C) Advérbio:** Ocorre quando atua como modificador de um adjetivo ou outro advérbio, equivalendo semanticamente a **"um pouco"**. É **INVARIÁVEL** (nunca flexiona para o feminino *meia* nem para o plural). Exemplo: *"Ela está meio cansada"* (e nunca *"meia cansada"*).
+  - **A) Numeral Fracionário:** Ocorre quando equivale a "metade de uma fração". É **variável** em gênero e número (concorda com o substantivo). Exemplo: *"Tomou meio copo de leite"* / *"Tomou meia caneca de leite"*.
+  - **B) Substantivo:** Ocorre quando designa um ambiente, lugar, recurso ou elemento central. É **variável** em número. Exemplo: *"O meio ambiente"* / *"Os meios de comunicação"*.
+  - **C) Advérbio:** Ocorre quando atua como modificador de um adjetivo ou outro advérbio, equivalendo semanticamente a **"um pouco"**. É **INVARIÁVEL** (nunca flexiona para o feminino *meia* nem para o plural). Exemplo: *"Ela está meio cansada"* (e nunca *"meia cansada"*).
 
 - **Possui dica:**  (Substituição por "um pouco").
 
 ---
 
-## Conceito, Invariabilidade e Ausência de Função Sintática das Interjeições
+### Conceito, Invariabilidade e Ausência de Função Sintática das Interjeições
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A interjeição é a classe morfológica de palavras ou expressões que expressa estados emocionais, sentimentos, sensações, apelos e reações espontâneas do falante. Ela pode se apresentar como vocábulo isolado (*interjeição simples*) ou como grupo de palavras (*locução interjetiva*).
 
-### Propriedades Gramaticais Críticas
+#### Propriedades Gramaticais Críticas
 
 1. **Invariabilidade Morfológica:** Pertence ao bloco das palavras invariáveis (ao lado de preposições, conjunções, advérbios e palavras denotativas), não sofrendo flexão de gênero, número ou pessoa.
 2. **Ausência de Função Sintática:** A interjeição **não exerce nenhuma função sintática na oração** (não pode ser sujeito, predicado, objeto direto, objeto indireto, adjunto adnominal, adjunto adverbial ou complemento nominal). Ela atua como um bloco expressivo autônomo.
@@ -224,19 +222,19 @@ A interjeição é a classe morfológica de palavras ou expressões que expressa
 
 ---
 
-## Metodologia de Concursos para Interjeição: Identificação e Derivação Imprópria
+### Metodologia de Concursos para Interjeição: Identificação e Derivação Imprópria
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 No **Modelo I de Questões (Identificação Morfológica)**, as bancas exigem o reconhecimento da interjeição no texto ou avaliam a **derivação imprópria**, processo em que uma palavra pertencente originariamente a outra classe (como um substantivo) passa a atuar como interjeição ao ser empregada com entonação exclamativa isolada.
 
-### O Caso Emblemático da FGV (Senado Federal)
+#### O Caso Emblemático da FGV (Senado Federal)
 
 - Trecho examinado: *"E, **surpresa!**, quem a esta altura clama pelo surgimento..."*
 - Análise morfológica: O termo *surpresa* é originariamente um **substantivo** (*"Ganhei uma surpresa"*). No entanto, colocado entre vírgula e exclamação como brado exclamativo de impacto, ele **assume o papel de interjeição**.
 - Pista no enunciado da FGV: O comando da questão advertiu que o termo *"assume um papel gramatical distinto de sua classificação original"*, fornecendo a pista direta da mudança de classe.
 
-### Distinção Crucial entre Usos de "Surpresa"
+#### Distinção Crucial entre Usos de "Surpresa"
 
 - *Como Substantivo:* *"A festa surpresa foi adiada"* / *"Recebi uma surpresa"*.
 - *Como Adjetivo / Predicativo:* *"A abordagem didática ficou surpresa"* (qualifica o sujeito).
@@ -244,13 +242,13 @@ No **Modelo I de Questões (Identificação Morfológica)**, as bancas exigem o 
 
 ---
 
-## Metodologia de Concursos para Interjeição: Análise do Valor Semântico Contextual
+### Metodologia de Concursos para Interjeição: Análise do Valor Semântico Contextual
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 No **Modelo II de Questões (Valor Semântico)**, a banca cobra a interpretação do sentimento ou efeito expressivo veiculado pela interjeição. O sentido de uma interjeição **nunca é fixo de forma isolada**; ele depende obrigatoriamente da **leitura da sequência textual subsequente**.
 
-### Principais Matizes Semânticos em Concursos
+#### Principais Matizes Semânticos em Concursos
 
 1. **Realce / Enfatização Expressiva:** A interjeição sublinha a emoção ou lirismo da oração seguinte (ex.: *"Ah, que minha história fosse como um raio de sol..."* — CESGRANRIO).
 2. **Chamamento (Função Apelativa):** A interjeição serve para atrair a atenção do ouvinte, diferindo da ação expressa na oração posterior (ex.: *"Ei! Vamos embora!"* → *"Ei!"* expressa **chamamento**, enquanto *"vamos embora"* é a despedida — CONSESP).
@@ -258,8 +256,6 @@ No **Modelo II de Questões (Valor Semântico)**, a banca cobra a interpretaçã
 4. **Surpresa / Espanto:** Expressa a quebra de expectativa diante do inesperado (ex.: *"Puxa! Não esperava te ver aqui!"* — ITAME).
 5. **Apelo / Súplica:** Expressa pedido urgente de ajuda (ex.: *"Socorro! Alguém me dê um coração"* — CESPE / Titãs).
 6. **Alerta / Advertência:** Expressa aviso de perigo iminente (ex.: *"Cuidado com o carro!"*).
-
----
 
 ---
 
@@ -285,30 +281,28 @@ No **Modelo II de Questões (Valor Semântico)**, a banca cobra a interpretaçã
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Procedimento para Classificar *Um / Uma* (Artigo Indefinido vs. Numeral Cardinal)
+### Procedimento para Classificar *Um / Uma* (Artigo Indefinido vs. Numeral Cardinal)
 
 **Objetivo:** Determinar com exatidão a classe gramatical de *um*, *uma* ou formas contraídas (*num*, *dum*) em itens de prova.
 
-### Passos Operacionais:
+#### Passos Operacionais:
 
 1. **Passo 1 (Assumir Hipótese Padrão):** Ao visualizar a palavra *um* ou *uma*, estabeleça mentalmente que o termo é **Artigo Indefinido**. Não procure validar a tese de numeral de imediato.
 2. **Passo 2 (Varredura de Pistas Contextuais):** Inspecione o período e as orações vizinhas em busca de termos que restrinjam ou explicitem a contagem numérica:
- - Pistas: *apenas*, *somente*, *unicamente*, *exclusivamente*, *não dois*, *não três*.
+  - Pistas: *apenas*, *somente*, *unicamente*, *exclusivamente*, *não dois*, *não três*.
 3. **Passo 3 (Tomada de Decisão):**
- - **Se houver pista expressa:** Classifique como **Numeral Cardinal**.
- - **Se não houver pista expressa:** Mantenha a classificação de **Artigo Indefinido**.
+  - **Se houver pista expressa:** Classifique como **Numeral Cardinal**.
+  - **Se não houver pista expressa:** Mantenha a classificação de **Artigo Indefinido**.
 
 ---
 
-## Teste de Substituição para a Palavra "Segundo"
+### Teste de Substituição para a Palavra "Segundo"
 
 **Objetivo:** Discriminar se *segundo* é numeral ordinal ou conector conformativo.
 
-### Passos Operacionais:
+#### Passos Operacionais:
 
 1. **Passo 1 (Verificação de Ordem):** Cheque se a palavra expressa a posição 2º em uma fila, série ou enumeração. Se sim, trata-se de **Numeral Ordinal**.
 2. **Passo 2 (Substituição por Locução Prepositiva / Conjunção):** Caso não indique ordem, troque mentalmente a palavra por **"de acordo com"** ou **"conforme"**.
@@ -316,11 +310,11 @@ No **Modelo II de Questões (Valor Semântico)**, a banca cobra a interpretaçã
 
 ---
 
-## Teste de Invariabilidade do Advérbio "Meio"
+### Teste de Invariabilidade do Advérbio "Meio"
 
 **Objetivo:** Evitar erros de concordância nominal e classificar acertadamente o vocábulo *meio*.
 
-### Passos Operacionais:
+#### Passos Operacionais:
 
 1. **Passo 1 (Substituição por "Um Pouco"):** Substitua o vocábulo *meio* pela locução adverbial **"um pouco"**.
 2. **Passo 2 (Avaliação do Termo Modificado):** Se a substituição fizer sentido e a palavra estiver modificando um adjetivo (ex.: *cansada*, *aberta*, *tonta*), trata-se de um **Advérbio**.
@@ -328,19 +322,17 @@ No **Modelo II de Questões (Valor Semântico)**, a banca cobra a interpretaçã
 
 ---
 
-## Método de Análise Semântica Contextual de Interjeições
+### Método de Análise Semântica Contextual de Interjeições
 
 **Objetivo:** Identificar o valor semântico exato da interjeição sem confundir a intenção do vocábulo com a ação descrita na frase seguinte.
 
-### Passos Operacionais:
+#### Passos Operacionais:
 
 1. **Passo 1 (Isolar a Interjeição):** Delimite a interjeição ou locução interjetiva no texto (ex.: *"Ei!"*).
 2. **Passo 2 (Examinar a Sequência Textual):** Leia a frase ou oração subsequente à interjeição (ex.: *"Vamos embora!"*).
 3. **Passo 3 (Separar a Função da Interjeição da Ação da Frase):**
 
 4. **Passo 4 (Conclusão):** O valor da interjeição *"Ei!"* é **chamamento** (função apelativa).
-
----
 
 ---
 
@@ -361,141 +353,147 @@ No **Modelo II de Questões (Valor Semântico)**, a banca cobra a interpretaçã
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Exercício de Fixação II (Item a): Classificação de "um" em "Assisti a um filme..."
+### Exercício de Fixação II (Item a): Classificação de "um" em "Assisti a um filme..."
 
-### Enunciado
+#### Enunciado
 
 > Classifique a palavra sublinhada com a convenção: (1) numeral (2) artigo (3) conjunção.
 > *"Assisti a <u>um</u> filme interessante ontem."*
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 A oração não traz modificadores de restrição numérica (*somente*, *apenas*). O falante apenas apresenta um filme de forma indeterminada. Trata-se de artigo indefinido.
 **Gabarito:** **( 2 ) Artigo** [Artigo Indefinido].
 
 ---
 
-## Exercício de Fixação II (Item b): Classificação de "uma" com Pista Contextual
+### Exercício de Fixação II (Item b): Classificação de "uma" com Pista Contextual
 
-### Enunciado
+#### Enunciado
 
 > *"Havia apenas <u>uma</u> pessoa na fila de espera."*
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 O vocábulo *uma* é antecedido diretamente pelo modificador restritivo **apenas**, configurando pista explícita de contagem. Trata-se de numeral cardinal.
 **Gabarito:** **( 1 ) Numeral** [Numeral Cardinal].
 
 ---
 
-## Exercício de Fixação II (Item c): Classificação de "segundo" em Sequência
+### Exercício de Fixação II (Item c): Classificação de "segundo" em Sequência
 
-### Enunciado
+#### Enunciado
 
 > *"Este é o <u>segundo</u> livro da coleção."*
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 A palavra *segundo* indica a posição do livro na série/coleção (primeiro, segundo, terceiro). Trata-se de numeral ordinal.
 **Gabarito:** **( 1 ) Numeral** [Numeral Ordinal].
 
 ---
 
-## Exercício de Fixação II (Item d): Indeterminação sem Pista
+### Exercício de Fixação II (Item d): Indeterminação sem Pista
 
-### Enunciado
+#### Enunciado
 
 > *"Precisamos de <u>uma</u> solução para isso."*
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 O falante busca uma solução qualquer. Não há palavra de quantificação explícita. Trata-se de artigo indefinido.
 **Gabarito:** **( 2 ) Artigo** [Artigo Indefinido].
 
 ---
 
-## Exercício de Fixação II (Item e): Duplo Reconhecimento ("Segundo" e "um quinto")
+### Exercício de Fixação II (Item e): Duplo Reconhecimento ("Segundo" e "um quinto")
 
-### Enunciado
+#### Enunciado
 
 > *"<u>Segundo</u> <u>um quinto</u> dos entrevistados, as mudanças são inevitáveis."*
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 - *Segundo:* Equivale a *"de acordo com"* / *"conforme"*. Classifica-se como **conjunção conformativa / preposição acidental**. Código: **( 3 )**.
 - *um quinto:* Expressa fração matemática da totalidade dos entrevistados. Trata-se de **numeral fracionário**. Código: **( 1 )**.
 
 ---
 
-## Questão CEBRASPE (Pref. São Cristóvão - SE): Contração "Num"
+### Questão CEBRASPE (Pref. São Cristóvão - SE): Contração "Num"
 
-### Enunciado
+#### Enunciado
 
 > **CESPE/CEBRASPE – Prefeitura de São Cristóvão – SE – Professor de Educação Básica**
 > *Texto 9A2-I (l. 8–10):* "...se os ministros da Fazenda de Israel e do Irã se encontrassem **num** almoço, eles teriam uma linguagem econômica comum e poderiam facilmente compartilhar agruras."
 > **Item:** O vocábulo “num” (l.9) é formado pela contração da preposição **em** com o numeral **um**.
 > Certo Errado
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 O vocábulo *num* resulta da fusão de *em + um*. No entanto, *"num almoço"* refere-se a uma refeição genérica e não a uma contagem (não se opõe a dois ou três almoços). Logo, *um* é artigo indefinido. A assertiva erra ao classificá-lo como numeral.
 **Gabarito:** **ERRADO**.
 
 ---
 
-## Questão CEBRASPE (INMETRO): "Segundo" como Conector
+### Questão CEBRASPE (INMETRO): "Segundo" como Conector
 
-### Enunciado
+#### Enunciado
 
 > **CESPE/CEBRASPE (ADAPTADA) – INMETRO – Todos os Cargos**
 > *Texto [3º Parágrafo] (l. 15–17):* "**Segundo** o chefe da Divisão de Programa de Avaliação da Conformidade do INMETRO, Gustavo Kuster, hoje o Brasil tem mais de doze tipos diferentes de plugues..."
 > **Item:** Como empregado no texto, o vocábulo “Segundo” (l.15) classifica-se como numeral ordinal.
 > Certo Errado
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 A palavra *"Segundo"* equivale a *"De acordo com o chefe..."* ou *"Conforme o chefe..."*. Possui valor de conformidade, atuando como preposição acidental / conjunção conformativa, e não como numeral ordinal.
 **Gabarito:** **ERRADO**.
 
 ---
 
-## Questão OMINI (Pref. Miguelópolis - SP): Identificação de "Ah"
+### Questão OMINI (Pref. Miguelópolis - SP): Identificação de "Ah"
 
-### Enunciado
+#### Enunciado
 
 > **OMINI - Prefeitura de Miguelópolis - SP - Professor de Geografia**
 > *"Assinale a alternativa que CORRESPONDE à classe de palavras do elemento em destaque: 'Para não dar parte de fraco, **ah**, Senhora, fui beber com os amigos...'"*
-> A) Artigo. B) Preposição. C) Conjunção. D) Interjeição.
+>
+A) Artigo.
+B) Preposição.
+C) Conjunção.
+D) Interjeição.
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 O vocábulo *ah* traduz desabafo e estado de espírito do emissor, classificando-se como interjeição.
 **Gabarito:** **D) Interjeição**.
 
 ---
 
-## Questão Instituto UniFil (Pref. Sertaneja - PR): Identificação de "Pimba!"
+### Questão Instituto UniFil (Pref. Sertaneja - PR): Identificação de "Pimba!"
 
-### Enunciado
+#### Enunciado
 
 > **Instituto UniFil - Prefeitura de Sertaneja - PR - Técnico em Enfermagem**
 > *"Analise: 'Você está lá, saudável, assistindo o futebol na sua sala quando, sem mais nem menos, **pimba!**' O termo sublinhado é:"*
-> A) substantivo. B) interjeição. C) numeral. D) adjetivo.
+>
+A) substantivo.
+B) interjeição.
+C) numeral.
+D) adjetivo.
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 O vocábulo *pimba!* expressa uma reação súbita e enfática, constituindo uma interjeição.
 **Gabarito:** **B) interjeição**.
 
 ---
 
-## Questão Instituto Excelência (Pref. Cruzeiro - SP): Interjeição vs. Verbo Imperativo
+### Questão Instituto Excelência (Pref. Cruzeiro - SP): Interjeição vs. Verbo Imperativo
 
-### Enunciado
+#### Enunciado
 
 > **Instituto Excelência - Prefeitura de Cruzeiro - SP**
 > *"Indique a alternativa em que aparece uma interjeição:"*
@@ -504,62 +502,76 @@ O vocábulo *pimba!* expressa uma reação súbita e enfática, constituindo uma
 > C) Corra, pois precisamos chegar o quanto antes.
 > D) Nenhuma das alternativas.
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 A palavra *Bravo!* na letra A é uma interjeição de aclamação/entusiasmo. Na letra C, *Corra* é flexão do verbo *correr* no modo imperativo, não devendo ser confundido com interjeição.
 **Gabarito:** **A) Bravo! Vou indicar esse espetáculo aos meus amigos.**
 
 ---
 
-## Questão FGV (Senado Federal): Derivação Imprópria de "Surpresa!"
+### Questão FGV (Senado Federal): Derivação Imprópria de "Surpresa!"
 
-### Enunciado
+#### Enunciado
 
 > **FGV - Senado Federal - Analista Legislativo**
 > *"E, **surpresa!**, quem a esta altura clama pelo surgimento de um lúcido pensamento de esquerda, a contrabalançar os populismos de direita, é o famoso Francis Fukuyama."*
 > *No período acima, o termo sublinhado assume um papel gramatical distinto de sua classificação original. Esse papel assumido no período é de:*
-> A) conjunção. B) advérbio. C) interjeição. D) substantivo. E) adjetivo.
+>
+A) conjunção.
+B) advérbio.
+C) interjeição.
+D) substantivo.
+E) adjetivo.
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 O vocábulo *surpresa* é originalmente um substantivo (*"fazer uma surpresa"*). Isolado no período entre vírgula e ponto de exclamação para produzir efeito expressivo, atua por derivação imprópria como **interjeição**.
 **Gabarito:** **C) interjeição.**
 
 ---
 
-## Questão CESGRANRIO (Petrobras): Valor Semântico de "Ah"
+### Questão CESGRANRIO (Petrobras): Valor Semântico de "Ah"
 
-### Enunciado
+#### Enunciado
 
 > **CESGRANRIO - Petrobras - Profissional Júnior**
 > *"No período '**Ah**, que minha história fosse como um raio de sol, irresistivelmente louro, quente, vivo, em sua vida de moça reclusa, enlutada, doente.' (L. 9-12), a interjeição em destaque apresenta o efeito expressivo de:"*
-> A) retificação B) espanto C) realce D) adversidade E) descontinuidade
+>
+A) retificação
+B) espanto
+C) realce
+D) adversidade
+E) descontinuidade
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 A interjeição *Ah* introduz a oração conferindo realce, ênfase e intensificação emotiva ao anseio do narrador.
 **Gabarito:** **C) realce.**
 
 ---
 
-## Questão CONSESP (Pref. Extrema - MG): Valor Semântico de "Ei!"
+### Questão CONSESP (Pref. Extrema - MG): Valor Semântico de "Ei!"
 
-### Enunciado
+#### Enunciado
 
 > **CONSESP - Prefeitura de Extrema - MG - Analista de Finanças**
 > *Em: '**Ei!** Vamos embora!', a palavra destacada é uma interjeição que exprime sentido de:*
-> A) concordância. B) despedida. C) desculpa. D) chamamento.
+>
+A) concordância.
+B) despedida.
+C) desculpa.
+D) chamamento.
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 O vocábulo *Ei!* atua na função apelativa de chamar o interlocutor. A ideia de despedida pertence à oração *"Vamos embora!"*, mas a interjeição isolada expressa chamamento.
 **Gabarito:** **D) chamamento.**
 
 ---
 
-## Questão ITAME (Câmara de Inhumas - GO): Associação Semântica Correta
+### Questão ITAME (Câmara de Inhumas - GO): Associação Semântica Correta
 
-### Enunciado
+#### Enunciado
 
 > **ITAME - Câmara Municipal de Inhumas - GO**
 > *"Aponte qual das interjeições ou locuções interjetivas está corretamente associada ao seu valor semântico:"*
@@ -568,7 +580,7 @@ O vocábulo *Ei!* atua na função apelativa de chamar o interlocutor. A ideia d
 > C) Credo! Que nojo! (dor)
 > D) Puxa! Não esperava te ver aqui! (surpresa)
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 - Letra A: *Cuidado* expressa **alerta** (e não aversão).
 - Letra B: *Se Deus quiser* expressa **desejo/esperança** (e não apelo).
@@ -578,162 +590,159 @@ O vocábulo *Ei!* atua na função apelativa de chamar o interlocutor. A ideia d
 
 ---
 
-## Questão CESPE (SEED-PR): "Socorro!" no Poema dos Titãs
+### Questão CESPE (SEED-PR): "Socorro!" no Poema dos Titãs
 
-### Enunciado
+#### Enunciado
 
 > **CESPE / CEBRASPE – SEED-PR – Professor de Língua Portuguesa**
 > *Poema "Socorro" (Titãs):* "Socorro, eu não estou sentindo nada... Socorro, alguém me dê um coração..."
 > *Item:* No primeiro verso de cada estrofe do texto, o termo "Socorro", isolado por vírgula:
-> A) tem função de aposto. B) tem função de vocativo. C) consiste em um advérbio deslocado. D) consiste em uma interjeição. E) consiste em uma forma verbal no modo imperativo.
+>
+A) tem função de aposto.
+B) tem função de vocativo.
+C) consiste em um advérbio deslocado.
+D) consiste em uma interjeição.
+E) consiste em uma forma verbal no modo imperativo.
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 O vocábulo *Socorro* constitui um brado/apelo emotivo isolado por vírgula, desprovido de função sintática oracional, caracterizando a classe das interjeições.
 **Gabarito:** **D) consiste em uma interjeição.**
 
 ---
 
-## Questão CESPE (SEDUC-PA): "Tenho dito!" vs. "Ah!"
+### Questão CESPE (SEDUC-PA): "Tenho dito!" vs. "Ah!"
 
-### Enunciado
+#### Enunciado
 
 > **CESPE – SEDUC-PA – Professor de História**
 > *Tirinha "O pato":* "...TENHO DITO!" (Quadro 2) / "AH! Quase me esqueço..." (Quadro 3).
 > *Item:* 'Tenho dito' (segundo quadro), assim como 'Ah' (terceiro quadro), são exemplos de interjeições que expressam o estado emocional do falante.
 > Certo Errado
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 O termo *Ah* é interjeição. No entanto, *Tenho dito* é uma **locução verbal em tempo composto** (Pretérito Perfeito Composto do Indicativo: verbo *ter* + particípio *dito*). A presença da exclamação não transforma uma estrutura verbal em interjeição.
 **Gabarito:** **ERRADO**.
 
 ---
 
-## Questão CESPE (TRE-BA): Equivalência de "Oxalá" por "Tomara que"
+### Questão CESPE (TRE-BA): Equivalência de "Oxalá" por "Tomara que"
 
-### Enunciado
+#### Enunciado
 
 > **CESPE – TRE-BA – Nível Superior**
 > *Texto (Machado de Assis):* "...e oxalá concluas a viagem sem as contrariedades a que aludes..."
 > *Item:* Em "oxalá concluas a viagem" (L. 8-9), o vocábulo "oxalá" pode ser substituído por **tomara que**, mantendo-se o sentido do trecho.
 > Certo Errado
 
-### Resolução Consolidada
+#### Resolução Consolidada
 
 Tanto *oxalá* (interjeição) quanto *tomara que* (locução interjetiva) expressam o valor semântico de desejo/esperança, operando substituição perfeita no texto.
 **Gabarito:** **CERTO**.
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Mantra do Numeral Cardinal (*Um / Uma*)
+### O Mantra do Numeral Cardinal (*Um / Uma*)
 
 - **Macete:** Decore o mantra: **"Só será numeral se houver palavra expressa no texto indicando quantificação"** (*somente*, *apenas*, *não dois*). Se a frase for neutra (*"comprei um livro"*), classifique como **Artigo Indefinido** sem hesitar.
 
-## Teste da Troca por "De acordo com" para a Palavra "Segundo"
+### Teste da Troca por "De acordo com" para a Palavra "Segundo"
 
 - **Macete:** Ao encontrar *Segundo*, troque mentalmente por **"de acordo com"** ou **"conforme"**. Se mantiver o sentido, trata-se de conector de conformidade (preposição acidental / conjunção) e **nunca** de numeral ordinal.
 
-## Teste do Advérbio "Meio" por "Um Pouco"
+### Teste do Advérbio "Meio" por "Um Pouco"
 
 - **Macete:** Substitua *meio* por **"um pouco"**. Se o encaixe for perfeito, a palavra é um **advérbio** e, portanto, **INVARIÁVEL**. Use sempre *"meio cansada"*, *"meio aberta"*, *"meio assustada"*, jamais flexionando para o feminino.
 
-## A Pista de Derivação Imprópria em Enunciados da FGV
+### A Pista de Derivação Imprópria em Enunciados da FGV
 
 - **Macete:** Em provas da **FGV**, quando o enunciado mencionar que a palavra sublinhada *"assume papel gramatical distinto de sua classificação original"*, procure uma palavra originalmente substantiva que está sendo usada como **interjeição** no contexto exclamativo (*"E, surpresa!..."*).
 
-## Regra de Ouro para o Sentido da Interjeição (Leitura Sequencial)
+### Regra de Ouro para o Sentido da Interjeição (Leitura Sequencial)
 
 - **Macete:** Nunca tente adivinhar o valor semântico de uma interjeição olhando para ela de forma isolada. Leia a oração inteira subsequente. A interjeição reflete a reação do emissor em relação ao que vem escrito depois.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Pegadinha de Inferência Extratextual em *Um/Uma*
+### Pegadinha de Inferência Extratextual em *Um/Uma*
 
 - **Erro do Candidato:** Argumentar que *"Faria uma viagem"* é numeral porque *"poderiam ser duas viagens"*.
 - **Como Evitar:** A gramática de concurso não trabalha com suposições fora do texto. Sem palavra de restrição (*somente*, *apenas*), o termo é estritamente **Artigo Indefinido**.
 
-## Julgar a Palavra "Segundo" Apenas pela Forma Isolada
+### Julgar a Palavra "Segundo" Apenas pela Forma Isolada
 
 - **Erro do Candidato:** Olhar a palavra *Segundo* e marcá-la imediatamente como numeral ordinal por lembrar de 1º, 2º, 3º.
 - **Como Evitar:** Sempre verificar se o termo introduz citação ou fonte de informação (*"Segundo o diretor..."* = conector conformativo).
 
-## Confundir Numerais Coletivos com Cardinais
+### Confundir Numerais Coletivos com Cardinais
 
 - **Erro do Candidato:** Considerar *dúzia*, *década*, *bimestre* ou *novena* como numerais cardinais pelo fato de conterem valores matemáticos fixos (12, 10, 2, 9).
 - **Como Evitar:** Lembrar que a norma prescreve esses termos como **numerais coletivos** por designarem grupos/conjuntos de seres.
 
-## Ignorar Modificadores Aproximativos em Numerais Cardinais
+### Ignorar Modificadores Aproximativos em Numerais Cardinais
 
 - **Erro do Candidato:** Achar que todo numeral cardinal expressa obrigatoriamente quantidade exata no texto.
 - **Como Evitar:** Em frases com *cerca de* (*"cerca de dez alunos"*), o termo permanece classificado como **numeral cardinal**, mas passa a transmitir semanticamente uma **quantidade aproximada**.
 
-## Flexão Indevida do Advérbio "Meio" no Feminino (*"Meia Cansada"*)
+### Flexão Indevida do Advérbio "Meio" no Feminino (*"Meia Cansada"*)
 
 - **Erro do Candidato:** Flexionar *meio* para *meia* diante de adjetivo feminino.
 - **Como Evitar:** Quando significa "um pouco", *meio* é **advérbio**, classe invariável. O correto é sempre *"ela está meio cansada"*.
 
-## Confundir Verbo no Modo Imperativo com Interjeição
+### Confundir Verbo no Modo Imperativo com Interjeição
 
 - **Erro do Candidato:** Classificar qualquer palavra inicial exclamativa (*"Corra!"*) como interjeição.
 - **Como Evitar:** *Corra* é verbo conjugado no modo imperativo. Interjeições não possuem conjugação verbal de pessoa.
 
-## Confundir Locuções Verbais Exclamativas com Interjeições
+### Confundir Locuções Verbais Exclamativas com Interjeições
 
 - **Erro do Candidato:** Achar que expressões verbais compostas como *"Tenho dito!"* viram interjeições devido ao ponto de exclamação.
 - **Como Evitar:** Trata-se de uma **locução verbal** (Pretérito Perfeito Composto: *ter + dito*), mantendo natureza puramente verbal.
 
 ---
 
----
-
 ## Glossário operacional
 
-## Numeral Cardinal
+### Numeral Cardinal
 
 Classe de palavras que expressa a contagem básica ou quantidade absoluta de seres (ex.: *um*, *dois*, *treze*, *cem*).
 
-## Numeral Ordinal
+### Numeral Ordinal
 
 Classe de palavras que expressa a posição, ordem ou lugar de um ser dentro de uma série sequencial (ex.: *primeiro*, *segundo*, *milésimo*).
 
-## Numeral Fracionário
+### Numeral Fracionário
 
 Classe de palavras que indica frações, divisões ou partes proporcionais de um todo (ex.: *meio*, *metade*, *um terço*, *um quinto*).
 
-## Numeral Multiplicativo
+### Numeral Multiplicativo
 
 Classe de palavras que indica o aumento proporcional da quantidade por multiplicação (ex.: *dobro*, *triplo*, *quíntuplo*).
 
-## Numeral Coletivo
+### Numeral Coletivo
 
 Vocábulo que, no singular, dá nome a um conjunto exato de unidades ou seres (ex.: *dúzia* = 12, *década* = 10 anos, *bimestre* = 2 meses, *novena* = 9 dias, *centena* = 100).
 
-## Preposição Acidental
+### Preposição Acidental
 
 Palavra de outra classe gramatical originária que, em determinado contexto frasal, atua como preposição (ex.: o vocábulo *segundo* na acepção de *de acordo com*).
 
-## Interjeição
+### Interjeição
 
 Classe morfológica de palavras invariáveis e desprovidas de função sintática oracional, cuja finalidade primária é exprimir emoções, sentimentos, sensações e apelos do enunciador.
 
-## Locução Interjetiva
+### Locução Interjetiva
 
 Conjunto de duas ou mais palavras que desempenha em bloco o papel e o valor emotivo de uma interjeição (ex.: *pelo amor de Deus!*, *cruz credo!*, *se Deus quiser!*).
 
-## Derivação Imprópria
+### Derivação Imprópria
 
 Processo de formação de palavras no qual um vocábulo muda de classe gramatical sem sofrer alteração em sua forma física gráfica ou fonética (ex.: o substantivo *surpresa* atuando como interjeição em *"E, surpresa!..."*).
-
----
 
 ---
 
@@ -743,19 +752,17 @@ Ao concluir o grupo temático `esta unidade`, o estudante deve dominar as seguin
 
 1. **Domínio dos Numerais:**
 
- - Reconhecer com precisão as quatro categorias fundamentais (cardinais, ordinais, fracionários e multiplicativos).
- - Aplicar a **Regra do Mantra** para diferenciar *um/uma* (artigo indefinido) de *um/uma* (numeral cardinal), exigindo a presença de pistas contextuais explícitas de quantificação (*apenas*, *somente*, *não dois*) antes de assinalar a opção numeral, especialmente em contrações (*num*).
- - Identificar quando a palavra *segundo* atua como numeral ordinal (posição sequencial) e quando atua como conector conformativo (preposição acidental / conjunção conformativa equivalente a *de acordo com* ou *conforme*).
- - Distinguir **numerais coletivos** (*dúzia*, *década*, *bimestre*, *novena*) de numerais cardinais.
- - Compreender que modificadores contextuais (*cerca de*) atribuem valor aproximativo aos numerais cardinais sem alterar sua classe morfológica.
- - Aplicar corretamente a concordância de *metade* (sempre fracionário) e das três funções de *meio* (fracionário e substantivo variáveis; advérbio invariável = "um pouco").
+  - Reconhecer com precisão as quatro categorias fundamentais (cardinais, ordinais, fracionários e multiplicativos).
+  - Aplicar a **Regra do Mantra** para diferenciar *um/uma* (artigo indefinido) de *um/uma* (numeral cardinal), exigindo a presença de pistas contextuais explícitas de quantificação (*apenas*, *somente*, *não dois*) antes de assinalar a opção numeral, especialmente em contrações (*num*).
+  - Identificar quando a palavra *segundo* atua como numeral ordinal (posição sequencial) e quando atua como conector conformativo (preposição acidental / conjunção conformativa equivalente a *de acordo com* ou *conforme*).
+  - Distinguir **numerais coletivos** (*dúzia*, *década*, *bimestre*, *novena*) de numerais cardinais.
+  - Compreender que modificadores contextuais (*cerca de*) atribuem valor aproximativo aos numerais cardinais sem alterar sua classe morfológica.
+  - Aplicar corretamente a concordância de *metade* (sempre fracionário) e das três funções de *meio* (fracionário e substantivo variáveis; advérbio invariável = "um pouco").
 2. **Domínio das Interjeições:**
 
- - Definir a interjeição e a locução interjetiva como expressões de estados emotivos/apelos caracterizadas pela **invariabilidade morfológica** e por possuírem **zero função sintática**.
- - Resolver questões do **Modelo I (Identificação Morfológica)** reconhecendo processos de **derivação imprópria** (como o substantivo *surpresa* virando interjeição na FGV) e evitando armadilhas com verbos no imperativo (*"Corra!"*) ou locuções verbais exclamativas (*"Tenho dito!"*).
- - Resolver questões do **Modelo II (Valor Semântico)** através da análise da oração subsequente, identificando nuances de realce, chamamento, desejo/esperança (*oxalá* = *tomara que*), surpresa, apelo e alerta.
-
----
+  - Definir a interjeição e a locução interjetiva como expressões de estados emotivos/apelos caracterizadas pela **invariabilidade morfológica** e por possuírem **zero função sintática**.
+  - Resolver questões do **Modelo I (Identificação Morfológica)** reconhecendo processos de **derivação imprópria** (como o substantivo *surpresa* virando interjeição na FGV) e evitando armadilhas com verbos no imperativo (*"Corra!"*) ou locuções verbais exclamativas (*"Tenho dito!"*).
+  - Resolver questões do **Modelo II (Valor Semântico)** através da análise da oração subsequente, identificando nuances de realce, chamamento, desejo/esperança (*oxalá* = *tomara que*), surpresa, apelo e alerta.
 
 ---
 

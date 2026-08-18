@@ -41,7 +41,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 * Noções de transitividade verbal, verbos de ligação e estrutura de voz passiva analítica ($\text{verbo auxiliar } \textit{ser} + \text{particípio}$).
 * Regra geral de concordância nominal (o adjetivo concorda em gênero e número com o substantivo a que se refere).
 
-### Mapa Conceitual Integrado
+#### Mapa Conceitual Integrado
 
 `text
 CONCORDÂNCIA NOMINAL: EXPRESSÕES E CASOS ESPECIAIS
@@ -88,34 +88,36 @@ CONCORDÂNCIA NOMINAL: EXPRESSÕES E CASOS ESPECIAIS
 
 ---
 
+```
+
 ---
 
 ## Explicação didática aprofundada
 
-## Concordância de Expressões Avaliativas (Verbo de Ligação + Predicativo) e o Papel dos Determinantes
+### Concordância de Expressões Avaliativas (Verbo de Ligação + Predicativo) e o Papel dos Determinantes
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Expressões avaliativas, impessoais ou deontológicas constituídas por verbo de ligação acompanhado de adjetivo predicativo (tais como *é bom*, *é proibido*, *é necessário*, *é permitido*, *é obrigatório*) apresentam comportamento flexional condicionado estritamente à presença ou ausência de elemento determinante associado ao substantivo que atua como sujeito.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Substantivo Desprovido de Determinante (Sentido Genérico/Abstrato):** Quando o substantivo sujeito é empregado em sentido amplo, geral e indeterminado, o adjetivo predicativo permanece **invariável no masculino singular**.
  $$
  \text{Verbo de Ligação} + \text{Adjetivo Masculino Singular (Invariável)} + \text{Substantivo sem determinante}
  $$
 
- * *Exemplos:* "Fé é **necessário**." / "Cerveja é **bom**." / "É **obrigatório** apresentação de documento." / "É **necessário** perseverança."
+  * *Exemplos:* "Fé é **necessário**." / "Cerveja é **bom**." / "É **obrigatório** apresentação de documento." / "É **necessário** perseverança."
 2. **Substantivo Acompanhado de Determinante (Sentido Específico/Delimitado):** Quando o substantivo sujeito vem introduzido ou modificado por um determinante (artigo definido/indefinido, pronome demonstrativo/possessivo/indefinido, numeral, adjetivo ou locução adjetiva restritiva), a oração reporta-se a uma entidade delimitada. O adjetivo predicativo **obrigatoriamente flexiona-se em gênero e número** para concordar com o substantivo.
  $$
  \text{Verbo de Ligação} + \text{Adjetivo Flexionado} + \text{Determinante} + \text{Substantivo}
  $$
 
- * *Exemplos:* "A fé é **necessária**." / "Esta cerveja é **boa**." / "É **proibida** a entrada." / "São **necessárias** outras medidas."
+  * *Exemplos:* "A fé é **necessária**." / "Esta cerveja é **boa**." / "É **proibida** a entrada." / "São **necessárias** outras medidas."
 3. **Locução Adjetiva como Determinante:** O conceito de determinante não se restringe a artigos e pronomes antepostos. Uma locução adjetiva restritiva posposta atua com força determinante sobre o substantivo, forçando a flexão do adjetivo predicativo mesmo sem artigo explícito.
- * *Exemplo:* "É **proibida** entrada [de pessoas estranhas] ao serviço."
+  * *Exemplo:* "É **proibida** entrada [de pessoas estranhas] ao serviço."
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 * *Correto (sem determinante):* "Paciência é necessário." / "É proibido entrada."
 * *Incorreto (com determinante):* "É proibido a entrada no recinto." ($\to$ Correto: *É proibida a entrada*).
@@ -124,13 +126,13 @@ Expressões avaliativas, impessoais ou deontológicas constituídas por verbo de
 
 ---
 
-## Invariabilidade do Predicativo com Sujeito Oracional
+### Invariabilidade do Predicativo com Sujeito Oracional
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Quando o sujeito da oração for oracional (uma Oração Subordinada Substantiva Subjetiva, geralmente encabeçada por verbo no infinitivo ou pela conjunção integrante *que*), o verbo de ligação fixa-se na 3ª pessoa do singular e o adjetivo predicativo permanece **obrigatoriamente invariável no masculino singular**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **O Mecanismo da Substituição por "Isso":** A oração subjetiva inteira funciona como um bloco conceitual neutro equivalente ao pronome demonstrativo invariável **"isso"**:
  $$
@@ -243,25 +245,25 @@ Na locução comparativa *tal qual*, os dois termos constituintes possuem víncu
 
 ---
 
-## Concordância de Adjetivos com Substantivos Coordenados e a Doutrina de Evanildo Bechara
+### Concordância de Adjetivos com Substantivos Coordenados e a Doutrina de Evanildo Bechara
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A repetição do artigo definido antes de substantivos coordenados delimita a existência de dois núcleos substantivos individualizados (por meio de elipse gramatical), exigindo obrigatoriamente a concordância do adjetivo posposto no plural. A ausência de artigo repetido mantém a estrutura no singular.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Apresentam-se três cenários sintáticos respaldados na doutrina do gramático Evanildo Bechara:
 
 1. **Cenário 1 — Artigo e Preposição Únicos (1 Núcleo Expandido):**
- * *"o período de seca e inundação [alterado]"*
- * Há um único artigo que introduz um substantivo único (*período*). O adjetivo concorda no singular: **alterado**.
+  * *"o período de seca e inundação [alterado]"*
+  * Há um único artigo que introduz um substantivo único (*período*). O adjetivo concorda no singular: **alterado**.
 2. **Cenário 2 — Preposição Repetida sem Artigo (Preferência Normativa por Singular):**
- * *"o período de seca e de inundação [alterado]"*
- * Segundo Evanildo Bechara, a repetição exclusiva da preposição não tem força para substantivar o segundo termo. O padrão preferencial normativo em concursos é considerar um único período: **alterado**.
+  * *"o período de seca e de inundação [alterado]"*
+  * Segundo Evanildo Bechara, a repetição exclusiva da preposição não tem força para substantivar o segundo termo. O padrão preferencial normativo em concursos é considerar um único período: **alterado**.
 3. **Cenário 3 — Artigo Repetido (Elipse Substantiva $\to$ 2 Núcleos $\to$ Plural Obrigatório):**
- * *"o período de seca e **o** [período] de inundação [alterados]"*
- * O segundo artigo (*o*) substantiva uma elipse (*o período de seca e o período de inundação*). Como passam a existir formalmente dois núcleos coordenados ($1 + 1 = 2$), o adjetivo qualificador vai **obrigatoriamente para o plural**: **alterados**.
+  * *"o período de seca e **o** [período] de inundação [alterados]"*
+  * O segundo artigo (*o*) substantiva uma elipse (*o período de seca e o período de inundação*). Como passam a existir formalmente dois núcleos coordenados ($1 + 1 = 2$), o adjetivo qualificador vai **obrigatoriamente para o plural**: **alterados**.
 
 `text
 "o período de seca e inundação" ──► 1 núcleo ──► alterado (singular)
@@ -309,6 +311,8 @@ Na locução verbal formadora da Voz Passiva Analítica ($\text{verbo auxiliar }
 
 ---
 
+```
+
 ---
 
 ## Regras decisivas
@@ -331,65 +335,63 @@ Na locução verbal formadora da Voz Passiva Analítica ($\text{verbo auxiliar }
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Protocolo de Análise para Expressões Avaliativas e Sujeito Oracional
+### Protocolo de Análise para Expressões Avaliativas e Sujeito Oracional
 
 1. **Identificar a Estrutura:** Localizar o verbo de ligação e o predicativo avaliativo (*é bom*, *é proibido*, *é necessário*, *é permitido*, *é obrigatório*).
 2. **Avaliar a Natureza do Sujeito:**
- * **Se o sujeito contiver um verbo (Sujeito Oracional):** Substituir o segmento por **"isso"**. Se resultar em *"Isso é [adjetivo]"*, fixar o predicativo no **masculino singular invariável** (*É necessário solidarizar-se*).
- * **Se o sujeito for um substantivo:** Seguir para o passo 3.
+  * **Se o sujeito contiver um verbo (Sujeito Oracional):** Substituir o segmento por **"isso"**. Se resultar em *"Isso é [adjetivo]"*, fixar o predicativo no **masculino singular invariável** (*É necessário solidarizar-se*).
+  * **Se o sujeito for um substantivo:** Seguir para o passo 3.
 3. **Fazer a Varredura de Determinantes:**
 
- * Verificar se após o substantivo há adjetivo ou **locução adjetiva restritiva**.
+  * Verificar se após o substantivo há adjetivo ou **locução adjetiva restritiva**.
 4. **Decisão Flexional:**
- * *Sem determinante:* Manter o predicativo no **masculino singular invariável** (*Fé é necessário*).
- * *Com determinante:* Flexionar o predicativo em gênero e número com o substantivo (*A fé é necessária* / *É proibida entrada de estranhos*).
+  * *Sem determinante:* Manter o predicativo no **masculino singular invariável** (*Fé é necessário*).
+  * *Com determinante:* Flexionar o predicativo em gênero e número com o substantivo (*A fé é necessária* / *É proibida entrada de estranhos*).
 
 ---
 
-## Protocolo de Concordância do Superlativo com "Possível"
+### Protocolo de Concordância do Superlativo com "Possível"
 
 1. **Separar os Elementos da Oração:** Estabelecer a concordância normal entre o substantivo e seus adjetivos qualificadores comuns (*as verdades descobertas / variadas*).
 2. **Localizar o Artigo Superlativo:** Isolar o artigo que abre a expressão intensificadora (*o mais...*, *a mais...*, *os mais...*, *as mais...*).
 3. **Traçar a Seta de Possível:**
- * Se o artigo for singular (`O` / `A`) $\to$ escrever **possível**.
- * Se o artigo for plural (`OS` / `AS`) $\to$ escrever **possíveis**.
+  * Se o artigo for singular (`O` / `A`) $\to$ escrever **possível**.
+  * Se o artigo for plural (`OS` / `AS`) $\to$ escrever **possíveis**.
 4. **Blindagem contra Estranheza Auditiva:** Não alterar a forma de *possível* para o plural se o artigo superlativo estiver no singular (*Casos o mais variados possível*).
 
 ---
 
-## Protocolo de Validação para "Haja Vista" e "Olhos Vistos"
+### Protocolo de Validação para "Haja Vista" e "Olhos Vistos"
 
-### Para "Haja Vista":
+#### Para "Haja Vista":
 
 1. Se a frase trouxer a locução fixa `haja vista`, validar imediatamente como **correta** (diante de singular ou plural).
 2. Se a frase trouxer `hajam vista`:
- * Verificar o termo subsequente: se for substantivo plural, validar como **correta**.
- * Se o termo subsequente for singular, marcar como **incorreta**.
+  * Verificar o termo subsequente: se for substantivo plural, validar como **correta**.
+  * Se o termo subsequente for singular, marcar como **incorreta**.
 3. Se a frase trouxer `hajas vistas` ou `hajam vistas`, marcar como **erro gramatical absoluto**.
 
-### Para "Olhos Vistos":
+#### Para "Olhos Vistos":
 
 1. Validar a forma invariável `a olhos vistos` como correta para qualquer contexto.
 2. Se houver variação em *visto* (`a olhos vista/vistas/visto`), localizar o sujeito e verificar se a terminação concorda estritamente com ele em gênero e número.
 
 ---
 
-## Método das Setas Bivalentes para "Tal Qual" e Anáfora de "Como Tal"
+### Método das Setas Bivalentes para "Tal Qual" e Anáfora de "Como Tal"
 
 1. **Para "Tal Qual":**
- * *Seta para a esquerda (Antecedente):* Ligar o termo **TAL** ao núcleo que vem antes. Se o antecedente for plural $\to$ **tais**; se singular $\to$ **tal**.
- * *Seta para a direita (Consequente):* Ligar o termo **QUAL** ao núcleo que vem depois. Se o consequente for plural $\to$ **quais**; se singular $\to$ **qual**.
+  * *Seta para a esquerda (Antecedente):* Ligar o termo **TAL** ao núcleo que vem antes. Se o antecedente for plural $\to$ **tais**; se singular $\to$ **tal**.
+  * *Seta para a direita (Consequente):* Ligar o termo **QUAL** ao núcleo que vem depois. Se o consequente for plural $\to$ **quais**; se singular $\to$ **qual**.
 2. **Para "Como Tal":**
 
- * Se o termo antecedente for plural, obrigar a flexão em **como tais** (*bagunceiros $\to$ punidos como tais*).
+  * Se o termo antecedente for plural, obrigar a flexão em **como tais** (*bagunceiros $\to$ punidos como tais*).
 
 ---
 
-## Método do "Farejador de Núcleos" e Técnica das Setas Gerais
+### Método do "Farejador de Núcleos" e Técnica das Setas Gerais
 
 1. **Descartar Termos Preposicionados:** Ignorar complementos ou adjuntos encabeçados por preposição (ex.: em *o cerceamento da liberdade*, descartar *da liberdade*).
 2. **Localizar o Substantivo Núcleo:** Identificar o termo substantivo base não preposicionado (*o cerceamento*).
@@ -398,13 +400,11 @@ Na locução verbal formadora da Voz Passiva Analítica ($\text{verbo auxiliar }
 
 ---
 
-## Protocolo da Contagem de Artigos em Substantivos Coordenados (Bechara)
+### Protocolo da Contagem de Artigos em Substantivos Coordenados (Bechara)
 
 1. **Contar os Artigos Definidos:**
- * Se houver apenas **1 artigo** (*o período de seca e inundação* ou *o período de seca e de inundação*) $\to$ manter o adjetivo no **singular** (*alterado*).
- * Se houver **2 artigos** (*o período de seca e **o** de inundação*) $\to$ o segundo artigo substantiva uma elipse, configurando dois núcleos $\to$ flexionar o adjetivo no **plural** (*alterados*).
-
----
+  * Se houver apenas **1 artigo** (*o período de seca e inundação* ou *o período de seca e de inundação*) $\to$ manter o adjetivo no **singular** (*alterado*).
+  * Se houver **2 artigos** (*o período de seca e **o** de inundação*) $\to$ o segundo artigo substantiva uma elipse, configurando dois núcleos $\to$ flexionar o adjetivo no **plural** (*alterados*).
 
 ---
 
@@ -419,14 +419,14 @@ Na locução verbal formadora da Voz Passiva Analítica ($\text{verbo auxiliar }
 | **Substantivo com locução adjetiva** | *É proibida entrada de estranhos.* | Flexão de gênero e número | Locução adjetiva atua como determinante restritivo. |
 | **Sujeito Oracional** | *É necessário ter paciência.* | Masculino singular invariável | Oração subjetiva equivale ao pronome neutro*isso*. |
 
-### Tabela 2: Superlativo com "Possível" — Singular vs. Plural
+#### Tabela 2: Superlativo com "Possível" — Singular vs. Plural
 
 | Estrutura | Artigo Superlativo | Substantivo Base | Forma de "Possível" | Exemplo Consagrado |
 |:-------------- |:------------------: |:-----------------------------: |:------------------: |:--------------------------------------------------------- |
 | Artigo Singular | Singular (*o / a*) | Plural (*histórias / casos*) | **possível** | *Histórias o mais interessantes **possível**.* |
 | Artigo Plural | Plural (*os / as*) | Plural (*histórias / casos*) | **possíveis** | *Histórias as mais interessantes **possíveis**.* |
 
-### Tabela 3: Variações da Locução Comparativa "Tal Qual"
+#### Tabela 3: Variações da Locução Comparativa "Tal Qual"
 
 | Antecedente | Consequente | Forma da Locução | Exemplo |
 |:---------: |:---------: |:----------------: |:----------------------------------------------- |
@@ -435,7 +435,7 @@ Na locução verbal formadora da Voz Passiva Analítica ($\text{verbo auxiliar }
 | Singular | Plural | `tal quais` | *O filho é **tal quais** os pais.* |
 | Plural | Plural | `tais quais` | *Os filhos são **tais quais** os pais.* |
 
-### Tabela 4: O Vocábulo "Junto" — Advérbio vs. Adjetivo
+#### Tabela 4: O Vocábulo "Junto" — Advérbio vs. Adjetivo
 
 | Classificação Morfossintática | Vínculo Sintático | Flexão | Exemplo Culto |
 |:------------------------------- |:----------------------------- |:---------: |:------------------------------------------ |
@@ -444,59 +444,57 @@ Na locução verbal formadora da Voz Passiva Analítica ($\text{verbo auxiliar }
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Exercício de Fixação: Substantivo sem Determinante (*Fé*)
+### Exercício de Fixação: Substantivo sem Determinante (*Fé*)
 
 * **Enunciado:** Preencher a lacuna com a forma correta do adjetivo *necessário*: `Fé é _____________.`
 * **Resolução:** O substantivo feminino *fé* não traz artigo, pronome ou delimitador. Empregado em sentido geral.
 * **Resposta:** `necessário` (*Fé é necessário.*).
 
-## Exercício de Fixação: Locução Adjetiva como Determinante
+### Exercício de Fixação: Locução Adjetiva como Determinante
 
 * **Enunciado:** Preencher a lacuna com a flexão de *proibido*: `É _____________ entrada de pessoas estranhas ao serviço.`
 * **Resolução:** O substantivo *entrada* é determinado pela locução restritiva *de pessoas estranhas*, o que obriga a flexão de gênero.
 * **Resposta:** `proibida` (*É proibida entrada de pessoas estranhas ao serviço.*).
 
-## Exercício de Fixação: Substantivo com Artigo Definido
+### Exercício de Fixação: Substantivo com Artigo Definido
 
 * **Enunciado:** Preencher a lacuna com a flexão de *necessário*: `A fé é _____________.`
 * **Resolução:** O artigo definido *A* atua como determinante direto do substantivo feminino *fé*.
 * **Resposta:** `necessária` (*A fé é necessária.*).
 
-## Exercício de Fixação: Duplo Determinante
+### Exercício de Fixação: Duplo Determinante
 
 * **Enunciado:** Preencher a lacuna com a flexão de *proibido*: `É _____________ a entrada de pessoas estranhas ao serviço.`
 * **Resolução:** Presença concomitante de artigo definido (*a*) e locução adjetiva (*de pessoas estranhas*).
 * **Resposta:** `proibida` (*É proibida a entrada de pessoas estranhas ao serviço.*).
 
-## Exercício de Fixação: Superlativo com Artigo Plural
+### Exercício de Fixação: Superlativo com Artigo Plural
 
 * **Enunciado:** Preencher a lacuna com *possível*: `As verdades descobertas são as mais variadas _____________.`
 * **Resolução:** A locução superlativa é introduzida pelo artigo plural `as`. Logo, *possível* flexiona-se no plural.
 * **Resposta:** `possíveis` (*As verdades descobertas são as mais variadas possíveis.*).
 
-## Exercício de Fixação: Superlativo com Artigo Singular
+### Exercício de Fixação: Superlativo com Artigo Singular
 
 * **Enunciado:** Preencher a lacuna com *possível*: `As verdades descobertas são o mais variadas _____________.`
 * **Resolução:** A locução superlativa é encabeçada pelo artigo singular `o`. O adjetivo *possível* permanece no singular.
 * **Resposta:** `possível` (*As verdades descobertas são o mais variadas possível.*).
 
-## Exercício de Fixação: Expressão "Haja Vista" com Substantivo Plural
+### Exercício de Fixação: Expressão "Haja Vista" com Substantivo Plural
 
 * **Enunciado:** Preencher a lacuna com *haja vista*: `Deve ser um bom livro, _____________ as suas edições sucessivas.`
 * **Resolução:** Seguido por termo plural (*edições*), admitem-se duas formas normativas legítimas: a locução invariável (*haja vista*) ou a flexão do verbo auxiliar (*hajam vista*).
 * **Respostas:** `haja vista` ou `hajam vista`.
 
-## Exercício de Fixação: Expressão "Olhos Vistos"
+### Exercício de Fixação: Expressão "Olhos Vistos"
 
 * **Enunciado:** Preencher a lacuna com a flexão de *visto*: `Suas forças definhavam a olhos _____________.`
 * **Resolução:** Admite-se a forma fixa invariável *vistos* (concordância com *olhos*) ou a forma concordante *vistas* (concordando com o sujeito *forças*).
 * **Respostas:** `vistos` ou `vistas`.
 
-## Exercício de Fixação: Expressão Comparativa "Tal Qual"
+### Exercício de Fixação: Expressão Comparativa "Tal Qual"
 
 * **Enunciado:** Preencher a lacuna com *tal qual*: `Os filhos são _____________ a mãe.`
 * **Resolução:** Antecedente plural (*Os filhos* $\to$ *tais*); Consequente singular (*a mãe* $\to$ *qual*).
@@ -504,153 +502,151 @@ Na locução verbal formadora da Voz Passiva Analítica ($\text{verbo auxiliar }
 
 ---
 
-## Questão de Concurso: OMNI / 2021 (Questão 28)
+### Questão de Concurso: OMNI / 2021 (Questão 28)
 
 * **Banca / Órgão:** OMNI - 2021 - Prefeitura de Lençóis Paulista/SP - Médico do Trabalho.
 * **Enunciado:** De acordo com a norma-padrão da língua portuguesa, assinale a alternativa INCORRETA com relação à concordância:
 
 * **Análise das Alternativas:**
- * *A) Correta:* *defesa* está determinada pelo artigo *a*, exigindo *necessária*.
- * *B) Correta:* *medidas* está determinada pelo pronome *outras*, exigindo *necessárias*.
- * *C) Incorreta (Gabarito):* *entrada* possui artigo (*a*), tornando obrigatória a flexão: *É proibida a entrada*.
- * *D) Correta:* *apresentação* está sem determinante (sentido genérico), mantendo *obrigatório* no masculino singular.
+  * *A) Correta:* *defesa* está determinada pelo artigo *a*, exigindo *necessária*.
+  * *B) Correta:* *medidas* está determinada pelo pronome *outras*, exigindo *necessárias*.
+  * *C) Incorreta (Gabarito):* *entrada* possui artigo (*a*), tornando obrigatória a flexão: *É proibida a entrada*.
+  * *D) Correta:* *apresentação* está sem determinante (sentido genérico), mantendo *obrigatório* no masculino singular.
 * **Gabarito Oficial:** **C**.
 
 ---
 
-## Questão de Concurso: VUNESP / SAAE de Barretos (Questão 29)
+### Questão de Concurso: VUNESP / SAAE de Barretos (Questão 29)
 
 * **Banca / Órgão:** VUNESP - SAAE de Barretos/SP - Advogado.
 * **Enunciado:** Assinale a alternativa em que a redação atende à norma-padrão de concordância nominal:
- * A) A luta pelo direito de ser esquecido e de ter informações pessoais retificadas é um fenômeno de proporções mundial.
- * B) Só recentemente direitos como o de ter informações pessoais apagadas na internet foram reconhecidas pelos tribunais.
- * C) É necessário solidarizar-se com o indivíduo que não aceita ter sua identidade relacionada a eventos traumáticos.
- * D) O cerceamento da liberdade de expressão no ambiente virtual pode ser bastante danosa sob certas condições.
- * E) O cuidado e a vigilância com a pretensão de alguns países de impor suas leis ao resto do mundo devem ser permanente.
+  * A) A luta pelo direito de ser esquecido e de ter informações pessoais retificadas é um fenômeno de proporções mundial.
+  * B) Só recentemente direitos como o de ter informações pessoais apagadas na internet foram reconhecidas pelos tribunais.
+  * C) É necessário solidarizar-se com o indivíduo que não aceita ter sua identidade relacionada a eventos traumáticos.
+  * D) O cerceamento da liberdade de expressão no ambiente virtual pode ser bastante danosa sob certas condições.
+  * E) O cuidado e a vigilância com a pretensão de alguns países de impor suas leis ao resto do mundo devem ser permanente.
 * **Análise das Alternativas:**
- * *A) Incorreta:* *mundial* qualifica o substantivo plural *proporções* ($\to$ *mundiais*).
- * *B) Incorreta:* Voz passiva analítica com sujeito *direitos* exige particípio masculino plural ($\to$ *foram reconhecidos*).
- * *C) Correta (Gabarito):* Sujeito oracional (*solidarizar-se...* = *isso*) mantém *é necessário* no masculino singular invariável.
- * *D) Incorreta:* Núcleo do sujeito é *cerceamento* (masculino), exigindo *danoso*.
- * *E) Incorreta:* Sujeito composto (*cuidado e vigilância*) exige predicativo no plural: *permanentes*.
+  * *A) Incorreta:* *mundial* qualifica o substantivo plural *proporções* ($\to$ *mundiais*).
+  * *B) Incorreta:* Voz passiva analítica com sujeito *direitos* exige particípio masculino plural ($\to$ *foram reconhecidos*).
+  * *C) Correta (Gabarito):* Sujeito oracional (*solidarizar-se...* = *isso*) mantém *é necessário* no masculino singular invariável.
+  * *D) Incorreta:* Núcleo do sujeito é *cerceamento* (masculino), exigindo *danoso*.
+  * *E) Incorreta:* Sujeito composto (*cuidado e vigilância*) exige predicativo no plural: *permanentes*.
 * **Gabarito Oficial:** **C**.
 
 ---
 
-## Questão de Concurso: MOURA MELO / ARSEP (Questão 30)
+### Questão de Concurso: MOURA MELO / ARSEP (Questão 30)
 
 * **Banca / Órgão:** MOURA MELO - ARSEP - Analista Técnico - Administrativo.
 * **Enunciado:** Acerca da concordância nominal, analise as afirmativas abaixo:
 
- * A) Apenas I está correta. | B) Apenas I e II estão corretas. | C) Apenas III está correta. | D) I, II e III estão corretas.
+ *
+A) Apenas I está correta. |
+B) Apenas I e II estão corretas. |
+C) Apenas III está correta. |
+D) I, II e III estão corretas.
 * **Análise dos Itens:**
- * *Item I (Correto):* A palavra *menos* é estritamente invariável.
- * *Item II (Correto):* A locução *a olhos vistos* é cristalizada e correta.
- * *Item III (Correto):* *Possível* acompanha o artigo singular *o* de *o maior número*.
+  * *Item I (Correto):* A palavra *menos* é estritamente invariável.
+  * *Item II (Correto):* A locução *a olhos vistos* é cristalizada e correta.
+  * *Item III (Correto):* *Possível* acompanha o artigo singular *o* de *o maior número*.
 * **Gabarito Oficial:** **D**.
 
 ---
 
-## Questão de Concurso: CETREDE / 2019 (Questão 31)
+### Questão de Concurso: CETREDE / 2019 (Questão 31)
 
 * **Banca / Órgão:** CETREDE - 2019 - Prefeitura de Pacujá/CE - Fiscal de Tributos.
 * **Enunciado:** Assinale a opção em que a afirmativa apresenta um erro de concordância nominal:
 
 * **Análise das Alternativas:**
- * *A) Correta:* *Tais* concorda com *filhos*; *quais* concorda com *pais*.
- * *B) Incorreta (Gabarito):* O pronome *tal* retoma *bagunceiros* (plural), exigindo *como tais*.
- * *C) Correta:* Adjetivos *derrotado* e *orgulhoso* concordam com *vaidoso*.
- * *D) Correta:* *Só* com sentido de *apenas/somente* é advérbio invariável.
- * *E) Correta:* *Junto* funciona legitimamente como advérbio de modo invariável.
+  * *A) Correta:* *Tais* concorda com *filhos*; *quais* concorda com *pais*.
+  * *B) Incorreta (Gabarito):* O pronome *tal* retoma *bagunceiros* (plural), exigindo *como tais*.
+  * *C) Correta:* Adjetivos *derrotado* e *orgulhoso* concordam com *vaidoso*.
+  * *D) Correta:* *Só* com sentido de *apenas/somente* é advérbio invariável.
+  * *E) Correta:* *Junto* funciona legitimamente como advérbio de modo invariável.
 * **Gabarito Oficial:** **B**.
 
 ---
 
-## Questão de Concurso: VUNESP / 2021 (Questão 32)
+### Questão de Concurso: VUNESP / 2021 (Questão 32)
 
 * **Banca / Órgão:** VUNESP - 2021 - Prefeitura de Ribeirão Preto/SP - Agente de Administração.
 * **Enunciado:** Preencha as lacunas conforme a norma-padrão de concordância nominal:
- * *Estava [1] alguma elevação da temperatura da Terra, porém o período de seca e o de inundação, cada vez mais [2] em diversas regiões, levam à conclusão de que os efeitos desse aumento estão chegando antes do esperado.*
- * *É [3] perseverança para reverter as consequências de cunho [4] causadas pelo aquecimento global.*
+  * *Estava [1] alguma elevação da temperatura da Terra, porém o período de seca e o de inundação, cada vez mais [2] em diversas regiões, levam à conclusão de que os efeitos desse aumento estão chegando antes do esperado.*
+  * *É [3] perseverança para reverter as consequências de cunho [4] causadas pelo aquecimento global.*
 * **Análise das Lacunas:**
- * *Lacuna 1:* Sujeito determinado posposto *alguma elevação* (feminino singular) $\to$ **prevista**.
- * *Lacuna 2:* Dois núcleos com artigo repetido (*o período de seca e o [período] de inundação*) $\to$ **alterados**.
- * *Lacuna 3:* Substantivo *perseverança* sem determinante (sentido geral) $\to$ **necessário**.
- * *Lacuna 4:* Modificador do substantivo *cunho* (masculino singular) $\to$ **ambiental**.
+  * *Lacuna 1:* Sujeito determinado posposto *alguma elevação* (feminino singular) $\to$ **prevista**.
+  * *Lacuna 2:* Dois núcleos com artigo repetido (*o período de seca e o [período] de inundação*) $\to$ **alterados**.
+  * *Lacuna 3:* Substantivo *perseverança* sem determinante (sentido geral) $\to$ **necessário**.
+  * *Lacuna 4:* Modificador do substantivo *cunho* (masculino singular) $\to$ **ambiental**.
 * **Gabarito Oficial:** **prevista... alterados... necessário... ambiental** (Alternativa A).
-
----
 
 ---
 
 ## Memorização inteligente
 
-## O Teste do "Isso" para Sujeito Oracional
+### O Teste do "Isso" para Sujeito Oracional
 
 * **Descrição:** Diante de $\text{verbo de ligação} + \text{adjetivo}$ seguido de oração iniciada por verbo no infinitivo ou conjunção integrante *que*, substitua a oração por **"isso"**. Se a frase resultante for *"Isso é [adjetivo]"*, o predicativo fica obrigatoriamente no masculino singular invariável (*É necessário solidarizar-se*).
 
-## Regra Mnemônica: "Possível Segue o Artigo"
+### Regra Mnemônica: "Possível Segue o Artigo"
 
 * **Descrição:** Isole a palavra *possível* e trace uma seta direta para o artigo da locução superlativa:
- * Artigo no singular (`O` / `A`) $\to$ escreva **possível**.
- * Artigo no plural (`OS` / `AS`) $\to$ escreva **possíveis**.
- * Ignore o substantivo para a flexão de *possível*.
+  * Artigo no singular (`O` / `A`) $\to$ escreva **possível**.
+  * Artigo no plural (`OS` / `AS`) $\to$ escreva **possíveis**.
+  * Ignore o substantivo para a flexão de *possível*.
 
-## Regra da Balança para "Tal Qual"
+### Regra da Balança para "Tal Qual"
 
 * **Descrição:** Visualize duas setas divergentes:
- * *Tal/Tais* olha para trás e concorda com o termo da esquerda (antecedente).
- * *Qual/Quais* olha para a frente e concorda com o termo da direita (consequente).
+  * *Tal/Tais* olha para trás e concorda com o termo da esquerda (antecedente).
+  * *Qual/Quais* olha para a frente e concorda com o termo da direita (consequente).
 
-## Contagem Prática de Artigos para Núcleos Coordenados
+### Contagem Prática de Artigos para Núcleos Coordenados
 
 * **Descrição:** Para definir a flexão do adjetivo que qualifica termos coordenados:
- * **1 artigo** (*o período de seca e inundação*) $\to$ adjetivo no **singular** (*alterado*).
- * **2 artigos** (*o período de seca e **o** de inundação*) $\to$ adjetivo no **plural** (*alterados*).
+  * **1 artigo** (*o período de seca e inundação*) $\to$ adjetivo no **singular** (*alterado*).
+  * **2 artigos** (*o período de seca e **o** de inundação*) $\to$ adjetivo no **plural** (*alterados*).
 
-## Teste do Sentido Geral ("Qualquer")
+### Teste do Sentido Geral ("Qualquer")
 
 * **Descrição:** Em expressões como *é bom*, *é proibido*, *é necessário*, tente inserir a palavra "qualquer":
 
- * Se houver artigo ou demonstrativo impedindo a generalização (*Esta cerveja é boa*), a flexão é obrigatória.
-
----
+  * Se houver artigo ou demonstrativo impedindo a generalização (*Esta cerveja é boa*), a flexão é obrigatória.
 
 ---
 
 ## Erros comuns e pegadinhas
 
-## Pegadinha da Locução Adjetiva como Determinante
+### Pegadinha da Locução Adjetiva como Determinante
 
 * **Erro:** Achar que determinante é apenas artigo e concluir que *É proibido entrada de pessoas estranhas* está correto.
 * **Correção:** A locução adjetiva restritiva *de pessoas estranhas* determina o substantivo *entrada*, tornando obrigatória a flexão: *É **proibida** entrada de pessoas estranhas*.
 
-## Estranhamento Auditivo de "Casos o mais variados possível"
+### Estranhamento Auditivo de "Casos o mais variados possível"
 
 * **Erro:** O candidato acha "feia" a alternância entre plural e singular e altera a frase para *o mais variados possíveis*.
 * **Correção:** O artigo e o adjetivo *possível* são estritamente solidários: ou ambos vão ao plural (*os mais variados possíveis*), ou ambos ficam no singular (*o mais variados possível*). Misturar artigo singular com *possíveis* no plural é erro grave.
 
-## Proibição de Pluralizar o Vocábulo "Vista" em "Haja Vista"
+### Proibição de Pluralizar o Vocábulo "Vista" em "Haja Vista"
 
 * **Erro:** Pluralizar a palavra *vista*, gerando construções como *haja vistas* ou *hajam vistas*.
 * **Correção:** A palavra *vista* é absolutamente invariável. Admitem-se apenas **haja vista** e **hajam vista**.
 
-## O Erro de Congelar a Locução "Tal Qual"
+### O Erro de Congelar a Locução "Tal Qual"
 
 * **Erro:** Supor que sujeito plural exige *tais quais* automaticamente (*Os filhos são tais quais a mãe*).
 * **Correção:** *Os filhos são **tais qual** a mãe*, pois *qual* responde unicamente ao singular de *a mãe*.
 
-## Descuido com a Retomada Anafórica de "Como Tal"
+### Descuido com a Retomada Anafórica de "Como Tal"
 
 * **Erro:** Usar a expressão *como tal* no singular quando o termo antecedente for plural (*Eles eram bagunceiros e foram punidos como tal*).
 * **Correção:** A concordância anafórica exige a forma plural: *punidos como **tais***.
 
-## Confusão de Particípio Passivo com Particípio em Tempos Compostos Ativos
+### Confusão de Particípio Passivo com Particípio em Tempos Compostos Ativos
 
 * **Erro:** Achar que o particípio nunca flexiona em locuções verbais.
 * **Distinção:** Em tempos compostos ativos com *ter/haver*, o particípio é **invariável** (*Tinham reconhecido os direitos*). Na voz passiva analítica com *ser*, o particípio é **variável** (*Direitos foram reconhecidos*).
-
----
 
 ---
 
@@ -667,8 +663,6 @@ Na locução verbal formadora da Voz Passiva Analítica ($\text{verbo auxiliar }
 
 ---
 
----
-
 ## Síntese para recuperação ativa
 
 Ao concluir esta unidade, o estudante deve ter internalizado que a concordância nominal de expressões não depende de intuição auditiva, mas de critérios sintáticos objetivos:
@@ -677,11 +671,11 @@ Ao concluir esta unidade, o estudante deve ter internalizado que a concordância
 2. **Sujeito Oracional:** Oração atuando como sujeito equivale a "isso" $\to$ verbo na 3ª pessoa do singular e predicativo no masculino singular invariável (*É necessário solidarizar-se*).
 3. **Adjetivo *Possível*:** Concorda unicamente com o artigo que abre a locução superlativa (*o mais... possível* vs. *os mais... possíveis*). O substantivo rege os outros adjetivos, mas não afeta *possível*.
 4. **Locuções com Dupla Possibilidade:**
- * *Haja vista:* Invariável padrão (*haja vista*) ou flexão verbal (*hajam vista*) se o termo seguinte for plural. *Vista* nunca flexiona.
- * *A olhos vistos:* Invariável padrão (*a olhos vistos*) ou flexão com o sujeito (*a olhos vista/vistas/visto*).
+  * *Haja vista:* Invariável padrão (*haja vista*) ou flexão verbal (*hajam vista*) se o termo seguinte for plural. *Vista* nunca flexiona.
+  * *A olhos vistos:* Invariável padrão (*a olhos vistos*) ou flexão com o sujeito (*a olhos vista/vistas/visto*).
 5. **Comparações e Anáforas:**
- * *Tal qual:* *Tal* concorda com o antecedente; *Qual* concorda com o consequente (*filhos tais qual a mãe*).
- * *Como tal:* Flexiona-se no plural se o termo retomado for plural (*bagunceiros $\to$ punidos como tais*).
+  * *Tal qual:* *Tal* concorda com o antecedente; *Qual* concorda com o consequente (*filhos tais qual a mãe*).
+  * *Como tal:* Flexiona-se no plural se o termo retomado for plural (*bagunceiros $\to$ punidos como tais*).
 6. **Núcleos Coordenados (Doutrina de Bechara):** A repetição de artigo (*o período de seca e o de inundação*) cria formalmente dois núcleos por elipse, impondo o adjetivo posposto no plural (*alterados*).
 7. **Particípio Passivo e Vocábulos Especiais:** Particípio na voz passiva analítica concorda com o sujeito paciente (*direitos foram reconhecidos*). *Menos* é sempre invariável. *Só* (= somente) é invariável. *Junto* pode ser advérbio invariável ou adjetivo concordante.
 

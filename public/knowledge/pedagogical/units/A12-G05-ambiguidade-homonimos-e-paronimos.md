@@ -23,9 +23,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 ### Como aplicar neste tema
 
 1. Localizar o predicador verbal principal ou a forma nominal (gerúndio/particípio) e delimitar as fronteiras oracionais do período.
-2. 1. Diante de frase sob análise, execute o Método das 3 Vias: verifique primeiro se há termo polissêmico isolado sem restrição contextual (Via 1: Ambiguidade Lexical).
-3. 2. Inspecione conectivos específicos: analise se a preposição 'de' introduz termo ambivalente entre agente (Adjunto Adnominal) e paciente (Complemento Nominal), ou se a conjunção 'e' gera oscilação entre adição simples e reciprocidade (Via 2: Conectivos).
-4. 3. Trace as setas sintáticas (Via 3): verifique se forma de gerúndio (-ndo), particípio (-do), pronome relativo ('que'), possessivo ('seu' com 2 referentes textuais explícitos) ou modificador flutuante possuem duplo acoplamento sintático.
+2. Diante de frase sob análise, execute o Método das 3 Vias: verifique primeiro se há termo polissêmico isolado sem restrição contextual (Via 1: Ambiguidade Lexical).
+3. Inspecione conectivos específicos: analise se a preposição 'de' introduz termo ambivalente entre agente (Adjunto Adnominal) e paciente (Complemento Nominal), ou se a conjunção 'e' gera oscilação entre adição simples e reciprocidade (Via 2: Conectivos).
+4. Trace as setas sintáticas (Via 3): verifique se forma de gerúndio (-ndo), particípio (-do), pronome relativo ('que'), possessivo ('seu' com 2 referentes textuais explícitos) ou modificador flutuante possuem duplo acoplamento sintático.
 
 ### Testes decisivos
 
@@ -47,7 +47,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - **Classes gramaticais:** Compreensão do papel de pronomes relativos (*que*), pronomes possessivos de 3ª pessoa (*seu/sua*), advérbios modificadores e conjunções.
 - **Morfologia e Fonética elementar:** Noções de significante (grafia e som/fonia) e significado (conteúdo semântico).
 
-### Mapa integrado de relações conceituais
+#### Mapa integrado de relações conceituais
 
 ```text
 RELAÇÕES SEMÂNTICO-ESTRUTURAIS
@@ -81,25 +81,23 @@ RELAÇÕES SEMÂNTICO-ESTRUTURAIS
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Conceito, Natureza e Psicologia da Ambiguidade
+### Conceito, Natureza e Psicologia da Ambiguidade
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Ambiguidade (ou anfibologia) é a duplicidade de sentidos que uma palavra, locução ou estrutura sintática manifesta, gerando indeterminação interpretativa sobre a real intenção comunicativa do emissor.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Mecanismo cognitivo e assimetria perceptiva:** Diante de um enunciado ambíguo, os sentidos concorrentes não se apresentam com igual força. Há invariavelmente um **primeiro sentido** (mais evidente, imediato e convencional) e um **segundo sentido** (subjacente, gramaticalmente autorizado pela estrutura, porém menos óbvio).
 - **A postura interpretativa em provas:** O erro em questões de concurso não decorre de incapacidade intelectual, mas da "ingenuidade leitora", na qual o candidato se satisfaz com o sentido imediato sem inspecionar os vínculos sintáticos paralelos.
 - **Intencionalidade:**
- - *Acidental (Vício de linguagem):* Falha de redação que compromete a clareza textual em peças dissertativas e documentos oficiais.
- - *Intencional (Recurso expressivo):* Emprego deliberado em trocadilhos, humor, charges e publicidade (ex.: "Na vida tudo é passageiro").
+  - *Acidental (Vício de linguagem):* Falha de redação que compromete a clareza textual em peças dissertativas e documentos oficiais.
+  - *Intencional (Recurso expressivo):* Emprego deliberado em trocadilhos, humor, charges e publicidade (ex.: "Na vida tudo é passageiro").
 
-### Exemplos
+#### Exemplos
 
 - *A mãe bateu na filha porque estava bêbada:* O estado de embriaguez vincula-se sintaticamente tanto ao sujeito da oração principal (*mãe*) quanto ao objeto (*filha*).
 - *João foi atrás do táxi correndo:* A ação expressa pelo gerúndio pode ser de João (a pé) ou do táxi (em trânsito veloz).
@@ -108,60 +106,60 @@ Ambiguidade (ou anfibologia) é a duplicidade de sentidos que uma palavra, locu�
 
 ---
 
-## Ambiguidade Lexical vs. Polissemia e o Papel do Contexto
+### Ambiguidade Lexical vs. Polissemia e o Papel do Contexto
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A ambiguidade lexical decorre da duplicidade de significados inerente a uma palavra polissêmica ou homônima quando inserida em um contexto que não fornece restrições semânticas suficientes para fixar uma acepção única.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A polissemia é uma propriedade dicionarizada do léxico (a palavra possui múltiplos significados em potencial), enquanto a ambiguidade é um defeito de estruturação contextual. A ocorrência de polissemia divide-se operacionalmente em dois cenários:
 
 1. **Polissemia que CAUSA ambiguidade:** Quando o cotexto permanece aberto e ambivalente.
- - *Exemplo:* "O cachorro do meu vizinho causa problemas sempre." (*Cachorro* pode ser o animal doméstico ou uma ofensa moral dirigida ao vizinho).
- - *Exemplo:* "A mala foi encontrada perto do banco." (*Banco* pode ser a agência financeira ou o assento de praça).
+  - *Exemplo:* "O cachorro do meu vizinho causa problemas sempre." (*Cachorro* pode ser o animal doméstico ou uma ofensa moral dirigida ao vizinho).
+  - *Exemplo:* "A mala foi encontrada perto do banco." (*Banco* pode ser a agência financeira ou o assento de praça).
 2. **Polissemia que NÃO causa ambiguidade:** Quando os vocábulos circundantes restringem estritamente a interpretação a um único sentido.
- - *Exemplo:* "O cachorro latiu a noite inteira." (O predicador verbal *latir* seleciona exclusivamente o traço semântico animal, desfazendo a ambiguidade).
- - *Exemplo:* "Fui ao banco sacar dinheiro." (*Sacar dinheiro* delimita a instituição bancária).
+  - *Exemplo:* "O cachorro latiu a noite inteira." (O predicador verbal *latir* seleciona exclusivamente o traço semântico animal, desfazendo a ambiguidade).
+  - *Exemplo:* "Fui ao banco sacar dinheiro." (*Sacar dinheiro* delimita a instituição bancária).
 
 ---
 
-## Ambiguidade Estrutural: Os Cinco Padrões Sintáticos em Concursos
+### Ambiguidade Estrutural: Os Cinco Padrões Sintáticos em Concursos
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A ambiguidade estrutural (ou sintática) ocorre quando a posição, a ordenação dos termos ou a indefinição de vínculos sintático-funcionais permite mais de uma estrutura arbórea de análise na oração.
 
-### Os Cinco Mecanismos Sintáticos Detalhados
+#### Os Cinco Mecanismos Sintáticos Detalhados
 
-#### 1. Mau uso da coordenação (Conectivo "e")
+##### 1. Mau uso da coordenação (Conectivo "e")
 
 Ocorre quando a conjunção aditiva "e" liga sujeitos que podem estar associados em soma independente contra terceiros ou em ação recíproca/conflituosa entre si.
 
 - *Exemplo:* "Botafogo e Vasco jogam neste domingo." (Podem jogar um contra o outro ou cada clube disputar partida distinta contra outros adversários).
 - *Exemplo:* "João e Maria se casaram." (Casaram-se entre si ou cada qual casou-se com seu respectivo parceiro).
 
-#### 2. Mau uso das formas nominais (Gerúndio e Particípio)
+##### 2. Mau uso das formas nominais (Gerúndio e Particípio)
 
 Ocorre quando uma oração reduzida de gerúndio ou particípio pode ter seu sujeito implícito vinculado a mais de um termo nominal antecedente.
 
 - *Gerúndio:* "A garota viu o vizinho correndo." (*Correndo* pode vincular-se a *garota* ou a *vizinho*).
 - *Particípio:* "Júlio conversou com Paulo sentado no muro." (A forma *sentado* concorda em gênero e número masculinos singulares com ambos os sujeitos).
 
-#### 3. Mau uso / má colocação de pronomes (Relativo "que" e Possessivo "seu")
+##### 3. Mau uso / má colocação de pronomes (Relativo "que" e Possessivo "seu")
 
 - *Pronome Relativo ("que"):* Gera duplo antecedente ("Peguei emprestada a roupa da minha amiga que é muito bonita") ou oscilação funcional entre pronome relativo e conjunção integrante ("Falei com a chefe que estava com vertigem" -> *a qual estava* vs. *falei isso*).
 - *Pronome Possessivo ("seu/sua"):* Gera ambiguidade quando existem **dois referentes de 3ª pessoa explícitos no próprio texto** ("A abordagem didática de Maria terminou a aula fazendo apontamentos no seu caderno" -> caderno de Maria ou do professor?).
 
-#### 4. Má colocação dos termos (Adjetivo vs. Advérbio / Escopo Modificador)
+##### 4. Má colocação dos termos (Adjetivo vs. Advérbio / Escopo Modificador)
 
 Ocorre quando um modificador pode acoplar-se a classes gramaticais distintas ou a núcleos verbais diferentes.
 
 - *Duplo papel categorial:* "Comprou o carro rápido." (*Rápido* como adjetivo qualifica *carro*; como advérbio de modo modifica *comprou*).
 - *Advérbio entre verbos:* "Chamar os bombeiros já ficou na moda." (*Já* pode modificar *chamar* ou *ficou na moda*).
 
-#### 5. Indefinição entre Agente e Paciente (Preposição "de")
+##### 5. Indefinição entre Agente e Paciente (Preposição "de")
 
 Ocorre quando um sintagma preposicionado por "de" liga-se a um substantivo abstrato derivado de verbo de ação:
 
@@ -172,13 +170,13 @@ Ocorre quando um sintagma preposicionado por "de" liga-se a um substantivo abstr
 
 ---
 
-## O Método das 3 Vias para Desambiguação em Provas
+### O Método das 3 Vias para Desambiguação em Provas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Esquema mnemônico-operacional criado para guiar a análise imediata de qualquer enunciado ambíguo em provas de concursos, reduzindo a tipologia a três vias lógicas de inspeção.
 
-### Estrutura Operacional das Três Vias
+#### Estrutura Operacional das Três Vias
 
 ```text
  ┌── 1. VIA DA PALAVRA (Ambiguidade Lexical)
@@ -198,25 +196,25 @@ MÉTODO DAS TRÊS VIAS ───┼── 2. VIA DOS CONECTIVOS ESPECÍFICOS
 
 ---
 
-## Princípio da Distinção Semântica Obrigatória em Homônimos e Parônimos
+### Princípio da Distinção Semântica Obrigatória em Homônimos e Parônimos
 
-### Regra canônica
+#### Regra canônica
 
 Diferentemente da sinonímia (em que os vocábulos compartilham campo semântico idêntico ou muito próximo), os homônimos e os parônimos caracterizam-se pela **obrigatoriedade de significados completamente distintos**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A coincidência ou proximidade entre homônimos e parônimos restringe-se com exclusividade aos planos fonético (fonia/som) e ortográfico (grafia/escrita). No plano semântico, nunca há interseção. A confusão em provas decorre exclusivamente do fato de as palavras soarem iguais ou parecidas, mas remeterem a realidades conceituais independentes.
 
 ---
 
-## Homonímia: Homônimos Perfeitos, Homófonos e Homógrafos
+### Homonímia: Homônimos Perfeitos, Homófonos e Homógrafos
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A homonímia (`homo` = igual) ocorre quando dois ou mais vocábulos distintos possuem **identidade absoluta** em pelo menos um de seus aspectos formais materiais (som ou grafia), com significados totalmente diferentes.
 
-### Taxonomia Completa
+#### Taxonomia Completa
 
 | Categoria | Critério Formal | Relação de Som / Grafia | Exemplos Canônicos das Fontes |
 |:--------------------------------------------- |:----------------------------- |:------------------------------------ |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -226,17 +224,17 @@ A homonímia (`homo` = igual) ocorre quando dois ou mais vocábulos distintos po
 
 ---
 
-## Paronímia: O Critério da Semelhança Formal e Fonética
+### Paronímia: O Critério da Semelhança Formal e Fonética
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A paronímia (`paro` = parecido) é a relação entre palavras que apresentam **apenas semelhança** quanto à grafia e à pronúncia, sem que haja identidade total em nenhum desses planos, associada a significados inteiramente distintos.
 
-### Critério de delimitação rigorosa
+#### Critério de delimitação rigorosa
 
 Rejeita-se conceitualmente qualquer definição imprecisa que atribua "mesma escrita" aos parônimos. Se a escrita fosse idêntica, seriam homógrafos. Em parônimos, **nada é 100% igual**: ocorrem alternâncias vocálicas (/e/ vs. /i/, /o/ vs. /u/), consonantais (/c/ vs. /t/, /r/ vs. /l/) ou acréscimos estruturais de sílabas.
 
-### Repertório de Pares Parônimos Essenciais
+#### Repertório de Pares Parônimos Essenciais
 
 ```text
 • eminente (ilustre, elevado, notável) vs. iminente (prestes a ocorrer, pendente)
@@ -255,54 +253,52 @@ Rejeita-se conceitualmente qualquer definição imprecisa que atribua "mesma esc
 
 ---
 
-## Sinonímia, Antonímia e a Relatividade do Sentido Contextual
+### Sinonímia, Antonímia e a Relatividade do Sentido Contextual
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 - **Sinonímia:** Relação entre palavras distintas que compartilham significados semelhantes ou equivalentes em determinado contexto (ex.: *belo* / *bonito*).
 - **Antonímia:** Relação entre vocábulos que expressam ideias e significados contrários ou opostos em um mesmo eixo nocional (ex.: *belo* / *feio*).
 
-### A regra da sinonímia relativa em concursos
+#### A regra da sinonímia relativa em concursos
 
 A identidade semântica absoluta entre palavras é fenômeno raríssimo na língua. Nas provas, o candidato deve operar com o conceito de **equivalência contextual funcional**: não se deve exigir 100% de coincidência semântica abstrata, mas sim verificar se a substituição vocabular preserva o sentido nuclear do período sem violar o registro ou a coerência.
 
 ---
 
-## Hiperonímia e Hiponímia na Coesão Textual e Reescrita
+### Hiperonímia e Hiponímia na Coesão Textual e Reescrita
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Relação semântica hierárquica e assimétrica de inclusão lógica baseada no princípio categorial de *"tipo de..."*:
 
 - **Hiperônimo (`hiper` = grande/geral):** Vocábulo de sentido amplo e genérico que engloba outros termos específicos (ex.: *animal*, *fruta*, *veículo*).
 - **Hipônimo (`hipo` = menor/específico):** Vocábulo de sentido restrito e particular subordinado à categoria maior (ex.: *boi*, *cavalo*, *maçã*, *carro*).
 
-### Dinâmica da Coesão Textual Anafórica
+#### Dinâmica da Coesão Textual Anafórica
 
 1. **Retomada por Hiperônimo (Específico $\rightarrow$ Geral):** Emprega-se para retomar anadiplodicamente um termo específico já apresentado, evitando repetição vocabular.
- - *Estrutura:* Apresenta *o boi* $\rightarrow$ retoma com *o animal*.
+  - *Estrutura:* Apresenta *o boi* $\rightarrow$ retoma com *o animal*.
 2. **Retomada por Hipônimo (Geral $\rightarrow$ Específico):** Emprega-se quando o texto estabelece uma classe geral e, na sequência, especifica um membro daquela classe.
- - *Estrutura:* Apresenta *os animais* $\rightarrow$ especifica *o cavalo*.
+  - *Estrutura:* Apresenta *os animais* $\rightarrow$ especifica *o cavalo*.
 
 ---
 
-## Homonímia Perfeita sob Derivação Imprópria e Mudança de Gênero Gramatical
+### Homonímia Perfeita sob Derivação Imprópria e Mudança de Gênero Gramatical
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A homonímia perfeita pode manifestar-se por processos de derivação imprópria (conversão de classe gramatical) ou por alternância de gênero com mudança de significado sem qualquer modificação morfológica ou fonética.
 
-### Manifestações Canônicas
+#### Manifestações Canônicas
 
 1. **Derivação Imprópria:** A forma lexical e fonética permanece inalterada, mas a função gramatical oscila:
- - *Os feridos no confronto:* Substantivo determinado por artigo.
- - *Eles ficaram feridos:* Adjetivo na função de predicativo do sujeito.
- - *Diagnóstico:* Mantêm relação de **homônimos perfeitos**.
+  - *Os feridos no confronto:* Substantivo determinado por artigo.
+  - *Eles ficaram feridos:* Adjetivo na função de predicativo do sujeito.
+  - *Diagnóstico:* Mantêm relação de **homônimos perfeitos**.
 2. **Alternância de Gênero Gramatical (*O Moral* vs. *A Moral*):**
- - *O moral (masculino):* Ânimo, estado de espírito, disposição psicológica ("O time entrou com o moral alto").
- - *A moral (feminino):* Conjunto de princípios éticos de conduta ou a lição conclusiva de uma narrativa ("A moral da história", "conduta contrária à moral").
-
----
+  - *O moral (masculino):* Ânimo, estado de espírito, disposição psicológica ("O time entrou com o moral alto").
+  - *A moral (feminino):* Conjunto de princípios éticos de conduta ou a lição conclusiva de uma narrativa ("A moral da história", "conduta contrária à moral").
 
 ---
 
@@ -321,7 +317,7 @@ A homonímia perfeita pode manifestar-se por processos de derivação imprópria
 | **Hiperonímia** | *hiper-* (maior) | - | - | **Geral** | *animal* (em relação a boi) |
 | **Hiponímia** | *hipo-* (menor) | - | - | **Específico** | *boi* (em relação a animal) |
 
-### Regras Canônicas Invariáveis
+#### Regras Canônicas Invariáveis
 
 1. **Regra da Distinção:** Homônimos e parônimos possuem **obrigatoriamente significados diferentes** .
 2. **Regra de Ouro do Pronome Possessivo:** O pronome *seu/sua* só gera ambiguidade se houver **dois ou mais referentes de 3ª pessoa explícitos no próprio texto**. O leitor/interlocutor nunca conta como referente textual .
@@ -330,11 +326,9 @@ A homonímia perfeita pode manifestar-se por processos de derivação imprópria
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias
+### Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias
 
 ```text
 [Início da Análise da Sentença]
@@ -369,35 +363,35 @@ Passo 3: Testar a Via 3 (Setas de Referenciação Estrutural)
 
 ---
 
-## Algoritmo de Identificação e Diferenciação entre Homônimos e Parônimos
+### Algoritmo de Identificação e Diferenciação entre Homônimos e Parônimos
 
 1. **Teste Fonético (Pronúncia Mental):** Pronuncie os vocábulos confrontados:
- - *O som é 100% idêntico?* Se sim, e as grafias diferirem, trata-se de **Homônimos Homófonos** (ex.: *conserto/concerto*, *sessão/seção/cessão*).
+  - *O som é 100% idêntico?* Se sim, e as grafias diferirem, trata-se de **Homônimos Homófonos** (ex.: *conserto/concerto*, *sessão/seção/cessão*).
 2. **Teste Gráfico (Ortografia Visual):** Examine a escrita dos vocábulos:
- - *A grafia é 100% idêntica e o som muda (timbre)?* Trata-se de **Homônimos Homógrafos** (ex.: *sede /ê/* vs. *sede /é/*).
- - *A grafia e o som são ambos 100% idênticos?* Trata-se de **Homônimos Perfeitos** (ex.: *manga/manga*).
+  - *A grafia é 100% idêntica e o som muda (timbre)?* Trata-se de **Homônimos Homógrafos** (ex.: *sede /ê/* vs. *sede /é/*).
+  - *A grafia e o som são ambos 100% idênticos?* Trata-se de **Homônimos Perfeitos** (ex.: *manga/manga*).
 3. **Teste da Semelhança (Sem Igualdade):**
- - *O som varia (troca de vogal/consoante) E a grafia também varia?* Como **nada é idêntico**, trata-se de **Parônimos** (ex.: *eminente/iminente*, *aferir/auferir*, *despercebido/desapercebido*).
+  - *O som varia (troca de vogal/consoante) E a grafia também varia?* Como **nada é idêntico**, trata-se de **Parônimos** (ex.: *eminente/iminente*, *aferir/auferir*, *despercebido/desapercebido*).
 4. **Inspeção Radical e Cognata:** Recorra à família morfológica da palavra para resgatar o sentido:
- - *Diferir* $\rightarrow$ *diferença / divergir*.
- - *Deferir* $\rightarrow$ *deferimento / aprovar*.
- - *Cessão* $\rightarrow$ *ceder*.
- - *Cerrou* $\rightarrow$ *cerrado / fechar*.
- - *Serrou* $\rightarrow$ *serra / cortar*.
+  - *Diferir* $\rightarrow$ *diferença / divergir*.
+  - *Deferir* $\rightarrow$ *deferimento / aprovar*.
+  - *Cessão* $\rightarrow$ *ceder*.
+  - *Cerrou* $\rightarrow$ *cerrado / fechar*.
+  - *Serrou* $\rightarrow$ *serra / cortar*.
 
 ---
 
-## Identificação do Sentido Coesivo de Hiperônimos e Hipônimos
+### Identificação do Sentido Coesivo de Hiperônimos e Hipônimos
 
 1. Identifique o termo antecedente (Termo 1) e o termo subsequente que o retoma (Termo 2).
 2. Formule a pergunta de inclusão: `[Termo A] é uma espécie/tipo de [Termo B]?`
 3. Mapeie a direção do fluxo textual:
- - Se o texto partiu do específico para o geral (ex.: *o boi* $\rightarrow$ *o animal*): **Retomada por Hiperônimo**.
- - Se o texto partiu do geral para o específico (ex.: *os animais* $\rightarrow$ *o cavalo*): **Especificação por Hipônimo**.
+  - Se o texto partiu do específico para o geral (ex.: *o boi* $\rightarrow$ *o animal*): **Retomada por Hiperônimo**.
+  - Se o texto partiu do geral para o específico (ex.: *os animais* $\rightarrow$ *o cavalo*): **Especificação por Hipônimo**.
 
 ---
 
-## Protocolo de Resolução de Questões Sem Destaque Gráfico ("Sentir o Cheiro")
+### Protocolo de Resolução de Questões Sem Destaque Gráfico ("Sentir o Cheiro")
 
 Diante de questões de bancas como FGV e Consulplan, nas quais as palavras sob teste não estão grifadas:
 
@@ -405,8 +399,6 @@ Diante de questões de bancas como FGV e Consulplan, nas quais as palavras sob t
 2. **Varredura Léxica ("Sentir o Cheiro"):** Escaneie cada opção em busca de vocábulos notórios do repertório de confusão semântica (*eminente, ascender, expirar, emigrar, seção, despercebido*).
 3. **Ancoragem Contextual:** Isole as palavras circundantes que impõem restrição de sentido (ex.: *tribuna*, *vida*, *em Paris*, *entusiasmo*, *perfumes*).
 4. **Validação do Par:** Confronte a palavra grafada com seu par correspondente. Se o significado exigido pelo contexto conflitar com a grafia presente, marque a opção.
-
----
 
 ---
 
@@ -421,7 +413,7 @@ Diante de questões de bancas como FGV e Consulplan, nas quais as palavras sob t
 | **Exemplo das fontes** | *A mala foi encontrada perto do banco.* | *A mãe viu o filho chegando em casa bem tarde.* |
 | **Método de resolução** | Substituir o vocábulo por sinônimo unívoco. | Reorganizar a estrutura frasal ou desenvolver orações reduzidas. |
 
-### Tabela 2 — Homônimos Homófonos vs. Parônimos de Alta Recorrência
+#### Tabela 2 — Homônimos Homófonos vs. Parônimos de Alta Recorrência
 
 | Par Vocabular | Relação Formal | Significado do Vocábulo 1 | Significado do Vocábulo 2 |
 |:------------------------------------- |:--------------: |:-------------------------------------------- |:-------------------------------------------------------- |
@@ -445,11 +437,9 @@ Diante de questões de bancas como FGV e Consulplan, nas quais as palavras sob t
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Exemplos de Ambiguidade Estrutural nas Demonstrações Orais
+### Exemplos de Ambiguidade Estrutural nas Demonstrações Orais
 
 1. **Gerúndio:** *João foi atrás do táxi correndo.* (João corria a pé ou o táxi corria em alta velocidade?).
 2. **Adjunto de Companhia:** *Maria encontrou o gerente da loja com seu irmão.* (O irmão pertencia a Maria ou ao gerente?).
@@ -459,15 +449,15 @@ Diante de questões de bancas como FGV e Consulplan, nas quais as palavras sob t
 
 ---
 
-## Bateria de Fixação de Ambiguidade (8 Frases Codificadas)
+### Bateria de Fixação de Ambiguidade (8 Frases Codificadas)
 
 - **Tabela de Códigos do Exercício:**
- - `(1)` Mau uso da coordenação
- - `(2)` Mau uso das formas nominais
- - `(3)` Má colocação dos termos
- - `(4)` Má colocação dos pronomes
- - `(5)` Indefinição entre agente e paciente
- - `(6)` Imprecisão do vocábulo (ambiguidade lexical)
+  - `(1)` Mau uso da coordenação
+  - `(2)` Mau uso das formas nominais
+  - `(3)` Má colocação dos termos
+  - `(4)` Má colocação dos pronomes
+  - `(5)` Indefinição entre agente e paciente
+  - `(6)` Imprecisão do vocábulo (ambiguidade lexical)
 
 | Nº | Frase Analisada | Justificativa Sintático-Semântica |
 | :---------: | :---------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------- |
@@ -482,7 +472,7 @@ Diante de questões de bancas como FGV e Consulplan, nas quais as palavras sob t
 
 ---
 
-## Bateria de Fixação Guiada de Homônimos e Parônimos (10 Sentenças)
+### Bateria de Fixação Guiada de Homônimos e Parônimos (10 Sentenças)
 
 1. *As nuvens fizeram o temporal parecer **iminente**.* (Parônimo de *eminente*; temporal prestes a ocorrer).
 2. *Os assaltantes passaram **despercebidos** pelos vigias.* (Parônimo de *desapercebidos*; não foram notados).
@@ -497,7 +487,7 @@ Diante de questões de bancas como FGV e Consulplan, nas quais as palavras sob t
 
 ---
 
-## Questão 21 (IBADE - 2022 - SES-MG - D01 - Área de Direito)
+### Questão 21 (IBADE - 2022 - SES-MG - D01 - Área de Direito)
 
 **Enunciado:** A alternativa que contém INADEQUAÇÃO quanto ao emprego de homônimos ou de parônimos é:
 
@@ -509,7 +499,7 @@ Diante de questões de bancas como FGV e Consulplan, nas quais as palavras sob t
 
 ---
 
-## Questão 22 (Instituto Consulplan - 2021 - TJM-MG - Analista Judiciário)
+### Questão 22 (Instituto Consulplan - 2021 - TJM-MG - Analista Judiciário)
 
 **Enunciado:** Avaliar a correção linguística em livre comentário temático:
 
@@ -526,7 +516,7 @@ Diante de questões de bancas como FGV e Consulplan, nas quais as palavras sob t
 
 ---
 
-## Questão 23 (IBADE - SEE-AC - Assistente Educacional)
+### Questão 23 (IBADE - SEE-AC - Assistente Educacional)
 
 **Enunciado:** No trecho "...presença de cães nas sessões...", a palavra destacada é comumente confundida com *seção* e *cessão*. Essas formas exemplificadas são empregos de:
 
@@ -537,7 +527,7 @@ Diante de questões de bancas como FGV e Consulplan, nas quais as palavras sob t
 
 ---
 
-## Questão 24 (IBADE - Pref. São Felipe D'Oeste - RO)
+### Questão 24 (IBADE - Pref. São Felipe D'Oeste - RO)
 
 **Enunciado:** Considerando que *passarão* (verbo) e *passarão* (pássaro grande) são homônimos perfeitos, assinalar a alternativa que NÃO apresenta um par de homônimos (ou seja, apresenta parônimos):
 
@@ -548,7 +538,7 @@ Diante de questões de bancas como FGV e Consulplan, nas quais as palavras sob t
 
 ---
 
-## Questão 25 (FCC - TRE-PE - Técnico Judiciário)
+### Questão 25 (FCC - TRE-PE - Técnico Judiciário)
 
 **Enunciado:** Assinalar o par grifado que constitui exemplo de parônimos:
 
@@ -566,7 +556,7 @@ Diante de questões de bancas como FGV e Consulplan, nas quais as palavras sob t
 
 ---
 
-## Questão 26 (FCC - TJ-SE - Programador de Computador)
+### Questão 26 (FCC - TJ-SE - Programador de Computador)
 
 **Enunciado:** Constituem parônimos os vocábulos grifados em:
 
@@ -585,7 +575,7 @@ Diante de questões de bancas como FGV e Consulplan, nas quais as palavras sob t
 
 ---
 
-## Questão 27 (FGV - 2023 - Pref. São José dos Campos - SP)
+### Questão 27 (FGV - 2023 - Pref. São José dos Campos - SP)
 
 **Enunciado:** Assinale a frase em que houve troca indevida entre parônimos:
 
@@ -599,7 +589,7 @@ Diante de questões de bancas como FGV e Consulplan, nas quais as palavras sob t
 
 ---
 
-## Questão 28 (FGV - 2023 - SMF-RJ - Fiscal de Rendas)
+### Questão 28 (FGV - 2023 - SMF-RJ - Fiscal de Rendas)
 
 **Enunciado:** A frase em que a palavra sublinhada mostra emprego indevido em função de um parônimo é:
 
@@ -613,7 +603,7 @@ Diante de questões de bancas como FGV e Consulplan, nas quais as palavras sob t
 
 ---
 
-## Questão 29 (FGV - 2022 - IBGE - Agente Censitário)
+### Questão 29 (FGV - 2022 - IBGE - Agente Censitário)
 
 **Enunciado:** Assinale a frase em que a forma sublinhada mostra uma forma de parônimo/homônimo mal empregada:
 
@@ -625,7 +615,7 @@ Diante de questões de bancas como FGV e Consulplan, nas quais as palavras sob t
 
 ---
 
-## Questão 30 (CESPE / CEBRASPE - PC-RR - Auxiliar de Necropsia)
+### Questão 30 (CESPE / CEBRASPE - PC-RR - Auxiliar de Necropsia)
 
 **Enunciado:** Julgar o item: "Gramaticalmente, são consideradas homógrafas palavras que têm a mesma grafia, mas sentidos diferentes. São exemplo disso as palavras 'sessão' e 'cessão'."
 
@@ -639,11 +629,9 @@ O item define corretamente palavras homógrafas (mesma grafia), mas traz um exem
 
 ---
 
----
-
 ## Memorização inteligente
 
-## Mnemônico Fundamental: "Homo = Igual" vs. "Paro = Parecido"
+### Mnemônico Fundamental: "Homo = Igual" vs. "Paro = Parecido"
 
 Para eliminar a dúvida na classificação formal:
 
@@ -652,7 +640,7 @@ Para eliminar a dúvida na classificação formal:
 
 ---
 
-## Mnemônico Operacional para Sessão, Seção e Cessão
+### Mnemônico Operacional para Sessão, Seção e Cessão
 
 - **Sessão (Inicia com S, contém SS):** Lembrar de **S**entados para a **S**essão (cinema, assembleia, reunião plenária) $\rightarrow$ *tempo/duração*.
 - **Seção / Secção (com Ç):** Lembrar de **S**eccionar (cortar, fatiar) $\rightarrow$ *divisão, departamento, setor da loja*.
@@ -660,14 +648,14 @@ Para eliminar a dúvida na classificação formal:
 
 ---
 
-## Mnemônico das Letras Iniciais em Emigrar e Imigrar
+### Mnemônico das Letras Iniciais em Emigrar e Imigrar
 
 - **E**migrar = **E**xterior / **E**xportar $\rightarrow$ *Sair da sua terra natal*.
 - **I**migrar = **I**nterior / **I**mportar $\rightarrow$ *Entrar em terra estrangeira*.
 
 ---
 
-## Desambiguação de Modificadores (Adjetivo vs. Advérbio) por Anteposição
+### Desambiguação de Modificadores (Adjetivo vs. Advérbio) por Anteposição
 
 Em frases ambíguas como *"Comprou o carro rápido"*:
 
@@ -676,7 +664,7 @@ Em frases ambíguas como *"Comprou o carro rápido"*:
 
 ---
 
-## Teste do Plural no Particípio em Estruturas Ambíguas
+### Teste do Plural no Particípio em Estruturas Ambíguas
 
 - Em *"Júlio conversou com Paulo sentado no muro"*, há ambiguidade porque *sentado* está no singular masculino, concordando com qualquer dos sujeitos.
 - Se ambos estivessem no muro, a concordância seria obrigatoriamente no plural (*sentados no muro*), eliminando a ambiguidade.
@@ -684,24 +672,22 @@ Em frases ambíguas como *"Comprou o carro rápido"*:
 
 ---
 
-## Mnemônico de Dimensão: "Hiper = Geral" vs. "Hipo = Específico"
+### Mnemônico de Dimensão: "Hiper = Geral" vs. "Hipo = Específico"
 
 - **HIPER** (como *hipermercado* = grande): Categoria **maior / genérica** (*veículo*, *fruta*, *animal*).
 - **HIPO** (como *hipotermia* = baixo): Membro **menor / específico** (*carro*, *maçã*, *boi*).
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## A Falsa Ambiguidade do Pronome Possessivo "Seu" e a Proibição de Extrapolação
+### A Falsa Ambiguidade do Pronome Possessivo "Seu" e a Proibição de Extrapolação
 
-### O Erro
+#### O Erro
 
 O candidato lê a frase *"João gosta do seu pai"* e afirma haver ambiguidade, alegando que "seu pai" pode ser o pai do próprio leitor da prova ("o seu pai / meu pai").
 
-### A Correção e o Limite Canônico
+#### A Correção e o Limite Canônico
 
 - **Não há ambiguidade na frase.** Na interpretação textual para concursos, é **terminantemente vedado extrapolar o texto** para incluir a figura do leitor/interlocutor.
 - Para que o possessivo de 3ª pessoa (*seu/sua*) gere ambiguidade, é **obrigatória a presença de dois ou mais antecedentes de 3ª pessoa explícitos no próprio texto** (como em *"João e José gostam do seu pai"*).
@@ -709,55 +695,53 @@ O candidato lê a frase *"João gosta do seu pai"* e afirma haver ambiguidade, a
 
 ---
 
-## A Falsa Premissa de que Toda Polissemia Gera Ambiguidade
+### A Falsa Premissa de que Toda Polissemia Gera Ambiguidade
 
 A simples presença de uma palavra polissêmica não torna a frase ambígua. A ambiguidade só se concretiza se os demais termos da oração falharem em restringir o sentido pretendido.
 
 ---
 
-## A Inexistência Ortográfica do Vocábulo "Beneficiente"
+### A Inexistência Ortográfica do Vocábulo "Beneficiente"
 
 A forma *"beneficiente"* (com 'i' medial) constitui erro de hipercorreção popular por analogia a *benefício*. A forma padrão única registrada no VOLP é **beneficente**.
 
 ---
 
-## Confusão entre Despercebido e Desapercebido
+### Confusão entre Despercebido e Desapercebido
 
 - *Passar despercebido:* passar sem ser notado / invisível.
 - *Estar desapercebido:* estar desprevenido / desprovido de recursos.
 
 ---
 
-## Confusão entre Homófonos e Parônimos por Proximidade Fonética
+### Confusão entre Homófonos e Parônimos por Proximidade Fonética
 
 Pares como *acerca de* e *cerca de*, ou *eminente* e *iminente*, não possuem som rigorosamente igual. Apresentam fonética e morfologia apenas semelhantes, devendo ser categorizados estritamente como **parônimos**.
 
 ---
 
-## A Inexistência de Sinonímia Universal e Absoluta
+### A Inexistência de Sinonímia Universal e Absoluta
 
 Não rejeite alternativas de substituição vocabular por pequenas nuances de estilo; a sinonímia avaliada em bancas de concurso opera por equivalência contextual e manutenção do sentido global.
 
 ---
 
-## Confusão Fonética e Hipercorreção em Acender vs. Ascender
+### Confusão Fonética e Hipercorreção em Acender vs. Ascender
 
 O dígrafo *sc* antes de *e* ou *i* soa como /s/. *Acender* e *ascender* são rigorosamente **homófonos**. A distinção é puramente gráfica e semântica (atear fogo vs. elevar-se).
 
 ---
 
-## Distinção Crítica entre Acidente e Incidente na FGV
+### Distinção Crítica entre Acidente e Incidente na FGV
 
 - **Acidente:** Evento imprevisto danoso, destrutivo, de consequências graves ou irreversíveis (*acidente de trânsito*, *acidentes da natureza*).
 - **Incidente:** Evento imprevisto de natureza leve, episódica e passageira, sem danos materiais ou físicos consideráveis (*incidente diplomático menor*).
 
 ---
 
-## Troca Indevida de Gênero Gramatical em "O Moral" vs. "A Moral"
+### Troca Indevida de Gênero Gramatical em "O Moral" vs. "A Moral"
 
 Em contextos de disposição psicológica, ânimo ou astral esportivo, o substantivo exige obrigatoriamente o gênero **masculino** (*o moral alto*). O feminino (*a moral*) designa a conduta ética ou a lição de uma fábula.
-
----
 
 ---
 
@@ -767,43 +751,41 @@ Em contextos de disposição psicológica, ânimo ou astral esportivo, o substan
 
 Duplicidade de interpretações possíveis em um mesmo enunciado, decorrente de seleção vocabular imprópria ou de ordenação sintática defeituosa.
 
-### Ambiguidade Lexical
+#### Ambiguidade Lexical
 
 Duplo sentido provocado pela presença de palavra polissêmica ou homônima cujo significado pretendido não é restringido pelo cotexto.
 
-### Ambiguidade Estrutural
+#### Ambiguidade Estrutural
 
 Duplo sentido provocado pela organização sintática, ordem dos termos ou indeterminação referencial de pronomes, formas nominais e modificadores.
 
-### Homônimos Perfeitos
+#### Homônimos Perfeitos
 
 Vocábulos morfologicamente idênticos na grafia (homografia) e no som (homofonia), com significados totalmente distintos.
 
-### Homônimos Homófonos
+#### Homônimos Homófonos
 
 Vocábulos que possuem idêntica realização fonética (som igual), porém grafias e significados diferentes.
 
-### Homônimos Homógrafos
+#### Homônimos Homógrafos
 
 Vocábulos que compartilham a mesma representação gráfica (grafia igual), porém diferem na pronúncia (timbre/fonia) e no significado.
 
-### Parônimos
+#### Parônimos
 
 Palavras que apresentam semelhança morfo-fonética parcial (som e grafia apenas parecidos, sem igualdade total) e significados totalmente distintos.
 
-### Hiperônimo
+#### Hiperônimo
 
 Vocábulo de significado abrangente e genérico que nomeia uma classe ou categoria maior que engloba termos subordinados.
 
-### Hipônimo
+#### Hipônimo
 
 Vocábulo de significado restrito e específico que designa um membro integrante de uma categoria hiperonímica maior.
 
-### Derivação Imprópria
+#### Derivação Imprópria
 
 Processo mórfico no qual uma palavra muda de classe gramatical sem alteração de sua forma fonética ou gráfica, gerando homônimos perfeitos entre classes distintas.
-
----
 
 ---
 

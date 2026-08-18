@@ -36,45 +36,45 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 * **Palavra “se”**
 
- * **Passo inicial:** decidir entre dois grandes caminhos
+  * **Passo inicial:** decidir entre dois grandes caminhos
 
- * **Conjunção**
+  * **Conjunção**
 
- * função apresentada: une/relaciona orações
- * **Conjunção integrante**
+  * função apresentada: une/relaciona orações
+  * **Conjunção integrante**
 
- * inicia/integra oração substantiva
- * teste: `isso / disso / nisso`
- * exemplo: “Não sei se devemos partir.”
- * **Conjunção adverbial**
+  * inicia/integra oração substantiva
+  * teste: `isso / disso / nisso`
+  * exemplo: “Não sei se devemos partir.”
+  * **Conjunção adverbial**
 
- * possui valor circunstancial
- * **Condicional**
+  * possui valor circunstancial
+  * **Condicional**
 
- * hipótese
- * `se ≈ caso`
- * verbo no subjuntivo no exemplo trabalhado
- * exemplo: “Se todos concordarem, podemos partir.”
- * **Concessiva**
+  * hipótese
+  * `se ≈ caso`
+  * verbo no subjuntivo no exemplo trabalhado
+  * exemplo: “Se todos concordarem, podemos partir.”
+  * **Concessiva**
 
- * contraste/oposição
- * `se ≈ embora`
- * exemplo: “Se o acesso à escola melhorou, a qualidade do ensino tem se mostrado aquém do esperado.”
- * **Causal**
+  * contraste/oposição
+  * `se ≈ embora`
+  * exemplo: “Se o acesso à escola melhorou, a qualidade do ensino tem se mostrado aquém do esperado.”
+  * **Causal**
 
- * fato
- * `se ≈ já que`
- * relação: “o fato de... faz com que...”
- * verbo no indicativo no exemplo trabalhado
- * exemplo: “Se você depende desse emprego, não arrume confusão.”
- * **Pronome — ramo apenas anunciado neste material**
+  * fato
+  * `se ≈ já que`
+  * relação: “o fato de... faz com que...”
+  * verbo no indicativo no exemplo trabalhado
+  * exemplo: “Se você depende desse emprego, não arrume confusão.”
+  * **Pronome — ramo apenas anunciado neste material**
 
- * apassivador
- * reflexivo
- * recíproco
- * parte integrante do verbo
- * indeterminador do sujeito
- * realce
+  * apassivador
+  * reflexivo
+  * recíproco
+  * parte integrante do verbo
+  * indeterminador do sujeito
+  * realce
 
 **Relação decisiva enfatizada:**
 `condicional → hipótese → subjuntivo`
@@ -84,13 +84,13 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ## Explicação didática aprofundada
 
-## A análise começa por dois grandes caminhos
+### A análise começa por dois grandes caminhos
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O primeiro passo proposto para classificar a palavra “se” é perguntar se ela pertence a um de dois grandes caminhos: **conjunção ou pronome**.
 
-### Explicação detalhada
+#### Explicação detalhada
 
 A abordagem didática apresenta esse corte como mecanismo de redução da complexidade. Em vez de recuperar imediatamente todas as classificações possíveis, o aluno deve começar por uma oposição mais ampla e só depois subdividir o ramo pertinente.
 
@@ -107,13 +107,13 @@ O esquemas `#ANOTAAÍ` recebe o título manuscrito “PASSO A PASSO”, um quadr
 
 ---
 
-## Conjunção é identificada pela relação entre orações
+### Conjunção é identificada pela relação entre orações
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Na explicação da professora, o “se” é conjunção quando funciona como conectivo que **une ou relaciona orações**.
 
-### Explicação detalhada
+#### Explicação detalhada
 
 A função relacional é utilizada como critério para distinguir o caminho “conjunção” do outro ramo da análise. Visualmente, A abordagem didática escreve abaixo do bloco `CONJUNÇÃO` as expressões “Une orações” e “Relaciona”.
 
@@ -126,13 +126,13 @@ No fluxograma “PALAVRA ‘SE’”, o bloco `A PALAVRA “SE”` leva a `CONJU
 
 ---
 
-## O ramo das conjunções divide-se em integrante e adverbial
+### O ramo das conjunções divide-se em integrante e adverbial
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Depois de reconhecer “se” como conjunção, a análise proposta pela professora cria duas novas possibilidades: **integrante** ou **adverbial**.
 
-### Explicação detalhada
+#### Explicação detalhada
 
 A integrante é vinculada às orações substantivas. A adverbial é vinculada a valor semântico circunstancial.
 
@@ -143,13 +143,13 @@ No quadro anotado, A abordagem didática circunda os dois grupos como etapas `I`
 
 ---
 
-## Conjunção integrante: oração substantiva e teste de substituição
+### Conjunção integrante: oração substantiva e teste de substituição
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O “se” integrante é apresentado como a conjunção que **integra/inicia uma oração substantiva**.
 
-### Explicação detalhada
+#### Explicação detalhada
 
 A abordagem didática fornece um teste operacional: a oração introduzida pode ser tratada como algo equivalente a **isso, disso ou nisso**, conforme a estrutura sintática.
 
@@ -165,13 +165,13 @@ Sobre `INTEGRANTE`, são acrescentadas as anotações:
 
 ---
 
-## Conjunção adverbial: identificação por circunstância
+### Conjunção adverbial: identificação por circunstância
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O ramo adverbial é identificado pelo **valor circunstancial**.
 
-### Explicação detalhada
+#### Explicação detalhada
 
 A abordagem didática usa a expressão didática “cheiro de circunstância”. Uma vez reconhecido esse valor, o aluno deve verificar qual relação semântica está presente.
 
@@ -183,13 +183,13 @@ Nesta aula, são trabalhadas três circunstâncias associadas ao “se”:
 
 ---
 
-## “Se” condicional: hipótese, “caso” e subjuntivo
+### “Se” condicional: hipótese, “caso” e subjuntivo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O “se” condicional expressa **hipótese**.
 
-### Explicação detalhada
+#### Explicação detalhada
 
 Dois indícios são fornecidos:
 
@@ -198,7 +198,7 @@ Dois indícios são fornecidos:
 
 A abordagem didática explica que hipótese é algo que pode ou não acontecer e contrapõe esse valor a um fato já apresentado como existente.
 
-### Exemplo
+#### Exemplo
 
 `Se todos concordarem, podemos partir.`
 
@@ -218,13 +218,13 @@ O “Se” e o verbo `concordarem` são destacados.
 
 ---
 
-## “Se” concessivo: “embora” e contraste
+### “Se” concessivo: “embora” e contraste
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O “se” concessivo é associado a **ideias contrastantes ou opostas** e pode ser testado pela substituição por **“embora”**.
 
-### Exemplo
+#### Exemplo
 
 `Se o acesso à escola melhorou, a qualidade do ensino tem se mostrado aquém do esperado.`
 
@@ -246,13 +246,13 @@ Trechos das duas ideias em contraste são realçados no esquemas.
 
 ---
 
-## “Se” causal: “já que”, fato e relação de causa e consequência
+### “Se” causal: “já que”, fato e relação de causa e consequência
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O “se” causal é apresentado como equivalente a **“já que”**, associado a um **fato** e à relação lógica de causa e consequência.
 
-### Explicação detalhada
+#### Explicação detalhada
 
 O exemplo central é:
 
@@ -268,7 +268,7 @@ Outro modelo utilizado é:
 
 `O fato de você depender desse emprego faz com que você não arrume confusão.`
 
-### Modo verbal
+#### Modo verbal
 
 No exemplo, `depende` é identificado como presente do indicativo. A abordagem didática usa esse dado para sustentar a leitura de fato, contrastando-o com formas hipotéticas.
 
@@ -282,16 +282,16 @@ As anotações finais incluem:
 
 ---
 
-## Condicional versus causal: hipótese e fato
+### Condicional versus causal: hipótese e fato
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A abordagem didática constrói um contraste direto entre condição e causa:
 
 * **condição:** hipótese, algo que pode acontecer ou não;
 * **causa:** fato tomado como existente no enunciado trabalhado.
 
-### Comparação
+#### Comparação
 
 **Condicional:**
 `Se todos concordarem...`
@@ -308,17 +308,17 @@ A abordagem didática acrescenta que construções como `se você dependesse` ou
 
 ---
 
-## O ramo denominado “pronome” é apenas anunciado nesta parte
+### O ramo denominado “pronome” é apenas anunciado nesta parte
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Depois de concluir o bloco das conjunções, A abordagem didática anuncia que seguirá para “o outro lado” da classificação.
 
-### Classificações enumeradas
+#### Classificações enumeradas
 
 No enquadramento verbal da aula, quando “se” estiver no ramo denominado “pronome”, são listadas as seguintes possibilidades:
 
-### Limite
+#### Limite
 
 O material termina imediatamente após a enumeração. Não são fornecidas, nesta fonte, definições, testes ou exemplos para esses seis casos.
 
@@ -328,13 +328,13 @@ O material termina imediatamente após a enumeração. Não são fornecidas, nes
 
 ## Roteiros de resolução
 
-## Procedimento geral para iniciar a classificação de “se”
+### Procedimento geral para iniciar a classificação de “se”
 
-### Pré-requisito
+#### Pré-requisito
 
 Localizar a ocorrência de “se” cuja classificação é solicitada.
 
-### Passos
+#### Passos
 
 1. Perguntar se “se” está no caminho **conjunção** ou no caminho denominado **pronome**.
 2. Se for conjunção, decidir entre:
@@ -345,36 +345,36 @@ Localizar a ocorrência de “se” cuja classificação é solicitada.
 5. Aplicar os testes semânticos e verbais específicos.
 6. Se não for conjunção, seguir para o outro bloco, apenas anunciado nesta parte da aula.
 
-### Resultado esperado
+#### Resultado esperado
 
 Reduzir a busca por classificação a decisões sucessivas, evitando comparar simultaneamente todos os rótulos possíveis.
 
 ---
 
-## Teste da conjunção integrante
+### Teste da conjunção integrante
 
-### Passos
+#### Passos
 
 1. Verificar se “se” inicia/integra oração substantiva.
 2. Tentar representar essa oração por `isso`, `disso` ou `nisso`.
 3. Se a equivalência estrutural funcionar no raciocínio apresentado, classificar como conjunção integrante.
 
-### Exemplo
+#### Exemplo
 
 `Não sei se devemos partir.` → associação da oração a `isso`.
 
 ---
 
-## Teste da conjunção condicional
+### Teste da conjunção condicional
 
-### Passos
+#### Passos
 
 1. Testar `se → caso`.
 2. Verificar se a oração apresenta uma hipótese.
 3. Observar o modo verbal.
 4. No exemplo trabalhado, confirmar o subjuntivo.
 
-### Validação
+#### Validação
 
 `Se todos concordarem...`
 → `Caso todos concordem...`
@@ -382,9 +382,9 @@ Reduzir a busca por classificação a decisões sucessivas, evitando comparar si
 
 ---
 
-## Teste da conjunção concessiva
+### Teste da conjunção concessiva
 
-### Passos
+#### Passos
 
 1. Procurar duas ideias que se contrastem.
 2. Testar a substituição de “se” por `embora`.
@@ -392,9 +392,9 @@ Reduzir a busca por classificação a decisões sucessivas, evitando comparar si
 
 ---
 
-## Teste da conjunção causal
+### Teste da conjunção causal
 
-### Passos
+#### Passos
 
 1. Testar `se → já que`.
 2. Também podem ser testadas, segundo a fala, conjunções como `visto que` e `uma vez que`.
@@ -405,16 +405,16 @@ Reduzir a busca por classificação a decisões sucessivas, evitando comparar si
 
 ---
 
-## Desempate entre condição e causa pelo contraste hipótese × fato
+### Desempate entre condição e causa pelo contraste hipótese × fato
 
-### Procedimento
+#### Procedimento
 
 Compare:
 
 **Hipótese + “caso” + subjuntivo no exemplo** → condicional.
 **Fato + “já que” + indicativo no exemplo** → causal.
 
-### Erro evitado
+#### Erro evitado
 
 Classificar automaticamente todo “se” introdutor de uma oração como condicional.
 
@@ -422,7 +422,7 @@ Classificar automaticamente todo “se” introdutor de uma oração como condic
 
 ## Exemplos comentados
 
-## “Não sei se devemos partir”
+### “Não sei se devemos partir”
 
 **Enunciado:** `Não sei se devemos partir.`
 **Classificação:** integrante.
@@ -432,7 +432,7 @@ Classificar automaticamente todo “se” introdutor de uma oração como condic
 
 ---
 
-## “Se todos concordarem, podemos partir”
+### “Se todos concordarem, podemos partir”
 
 **Enunciado:** `Se todos concordarem, podemos partir.`
 **Classificação:** condicional.
@@ -441,7 +441,7 @@ Classificar automaticamente todo “se” introdutor de uma oração como condic
 
 ---
 
-## Contraste entre melhora do acesso e qualidade do ensino
+### Contraste entre melhora do acesso e qualidade do ensino
 
 **Enunciado:** `Se o acesso à escola melhorou, a qualidade do ensino tem se mostrado aquém do esperado.`
 **Classificação:** concessiva.
@@ -450,7 +450,7 @@ Classificar automaticamente todo “se” introdutor de uma oração como condic
 
 ---
 
-## “Se você depende desse emprego, não arrume confusão”
+### “Se você depende desse emprego, não arrume confusão”
 
 **Enunciado:** `Se você depende desse emprego, não arrume confusão.`
 **Classificação:** causal.
@@ -461,7 +461,7 @@ Classificar automaticamente todo “se” introdutor de uma oração como condic
 
 ---
 
-## “Se você dependesse” e “se você depender” como contraste hipotético
+### “Se você dependesse” e “se você depender” como contraste hipotético
 
 A abordagem didática contrapõe o factual `se você depende` às formulações:
 
@@ -471,43 +471,43 @@ No raciocínio apresentado, essas formas deslocariam a construção para o valor
 
 ## Memorização inteligente
 
-## Mantenha o passo a passo em folha separada
+### Mantenha o passo a passo em folha separada
 
 A abordagem didática recomenda uma folha independente para permitir consulta simultânea durante a resolução de exercícios e questões.
 
 ---
 
-## Comece por duas possibilidades, não pela lista inteira
+### Comece por duas possibilidades, não pela lista inteira
 
 Macete estrutural: antes de recuperar classificações específicas, pergunte `conjunção ou pronome?`.
 
 ---
 
-## Teste “isso / disso / nisso”
+### Teste “isso / disso / nisso”
 
 Use a equivalência `isso/disso/nisso` como lembrete operacional para reconhecer a oração substantiva introduzida pela conjunção integrante.
 
 ---
 
-## Condicional: “caso” e verbo no subjuntivo
+### Condicional: “caso” e verbo no subjuntivo
 
 Dois atalhos ensinados:
 
 ---
 
-## Concessiva: tente “embora”
+### Concessiva: tente “embora”
 
 Se “se” puder assumir o sentido de `embora` e houver ideias contrastantes, a classificação trabalhada é concessiva.
 
 ---
 
-## Causal: “já que” como teste rápido
+### Causal: “já que” como teste rápido
 
 A abordagem didática enfatiza `já que` como substituição especialmente útil para reconhecer a causal.
 
 ---
 
-## Use “o fato de... faz com que...” para enxergar a causa
+### Use “o fato de... faz com que...” para enxergar a causa
 
 A estrutura:
 
@@ -519,36 +519,36 @@ A estrutura:
 
 ## Erros comuns e pegadinhas
 
-## Não tente recuperar todas as classificações de uma vez
+### Não tente recuperar todas as classificações de uma vez
 
-### Problema
+#### Problema
 
 Partir diretamente para todas as classificações possíveis aumenta o tempo de resolução.
 
-### Forma recomendada
+#### Forma recomendada
 
 Começar pela pergunta binária `conjunção ou pronome?`.
 
 ---
 
-## Condicional e causal não devem ser distinguidas apenas pela presença de “se”
+### Condicional e causal não devem ser distinguidas apenas pela presença de “se”
 
-### Problema
+#### Problema
 
 As duas construções usam “se”, mas exprimem relações diferentes.
 
-### Critérios ensinados
+#### Critérios ensinados
 
 * condicional: hipótese, `caso`, subjuntivo no exemplo;
 * causal: fato, `já que`, indicativo no exemplo.
 
-### Consequência
+#### Consequência
 
 Ignorar o valor semântico e o verbo pode levar à classificação errada.
 
 ---
 
-## Os subtipos do ramo “pronome” não são explicados nesta fonte
+### Os subtipos do ramo “pronome” não são explicados nesta fonte
 
 A aula apenas enumera apassivador, reflexivo, recíproco, parte integrante do verbo, indeterminador do sujeito e realce. Não é sustentado por esta fonte atribuir a cada um definições ou testes adicionais.
 
@@ -556,7 +556,7 @@ A aula apenas enumera apassivador, reflexivo, recíproco, parte integrante do ve
 
 ## Glossário operacional
 
-## Conjunção
+### Conjunção
 
 **Definição baseada na aula:** conectivo que une ou relaciona orações.
 **Contexto:** primeiro ramo detalhado da classificação de “se”.
@@ -564,7 +564,7 @@ A aula apenas enumera apassivador, reflexivo, recíproco, parte integrante do ve
 
 ---
 
-## Conjunção integrante
+### Conjunção integrante
 
 **Definição baseada na aula:** conjunção que integra/inicia uma oração substantiva.
 **Teste associado:** `isso/disso/nisso`.
@@ -572,14 +572,14 @@ A aula apenas enumera apassivador, reflexivo, recíproco, parte integrante do ve
 
 ---
 
-## Conjunção adverbial
+### Conjunção adverbial
 
 **Definição baseada na aula:** conjunção cujo reconhecimento depende do valor circunstancial.
 **Valores trabalhados:** condição, concessão e causa.
 
 ---
 
-## Condicional
+### Condicional
 
 **Definição baseada na aula:** relação de hipótese.
 **Teste:** `se ≈ caso`.
@@ -587,14 +587,14 @@ A aula apenas enumera apassivador, reflexivo, recíproco, parte integrante do ve
 
 ---
 
-## Concessiva
+### Concessiva
 
 **Definição baseada na aula:** relação entre ideias contrastantes.
 **Teste:** `se ≈ embora`.
 
 ---
 
-## Causal
+### Causal
 
 **Definição baseada na aula:** relação em que a oração apresenta uma causa tomada como fato no exemplo.
 **Teste:** `se ≈ já que`.
@@ -602,21 +602,21 @@ A aula apenas enumera apassivador, reflexivo, recíproco, parte integrante do ve
 
 ---
 
-## Subjuntivo
+### Subjuntivo
 
 **Definição contextual da aula:** modo verbal utilizado pela professora como sinal de hipótese.
 **Exemplo:** `concordarem`, identificado como futuro do subjuntivo.
 
 ---
 
-## Indicativo
+### Indicativo
 
 **Definição contextual da aula:** modo verbal associado ao fato no contraste com a hipótese.
 **Exemplo:** `depende`, presente do indicativo.
 
 ---
 
-## Pronome, como ramo do esquema da aula
+### Pronome, como ramo do esquema da aula
 
 **Definição disponível nesta fonte:** segundo grande caminho do procedimento de classificação, contraposto ao ramo “conjunção”.
 **Limite:** a aula não fornece neste material uma definição teórica geral desse ramo; apenas enumera as possibilidades que serão analisadas posteriormente.

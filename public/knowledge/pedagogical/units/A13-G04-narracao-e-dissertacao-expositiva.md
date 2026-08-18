@@ -38,7 +38,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 - Reconhecimento morfológico dos tempos verbais do modo indicativo (especialmente pretérito perfeito do indicativo e presente do indicativo).
 
-### Mapa conceitual integrado
+#### Mapa conceitual integrado
 
 ```text
  TIPOLOGIA TEXTUAL
@@ -69,17 +69,15 @@ e depois) ┌────────┴────────┐
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Semelhanças Formais entre Narração e Dissertação Expositiva
+### Semelhanças Formais entre Narração e Dissertação Expositiva
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Textos narrativos e textos dissertativos expositivos (especialmente aqueles que tratam de registros históricos, marcos legais ou divulgação de dados científicos) compartilham traços morfossintáticos e temporais idênticos em sua superfície linguística.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 A confusão tipológica em concursos decorre do fato de que ambos os tipos textuais podem exibir simultaneamente:
 
@@ -89,19 +87,19 @@ A confusão tipológica em concursos decorre do fato de que ambos os tipos textu
 
 A análise meramente gramatical ou de superfície morfológica é estritamente insuficiente para definir a tipologia textual. A presença de verbos no passado e de datas não converte automaticamente um texto informativo em narrativa.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - Ao identificar verbos no pretérito perfeito e datas, o analista deve suspender o julgamento automático e proceder à investigação do propósito comunicativo macro do texto.
 
 ---
 
-## O Critério da Intenção do Autor e a Presença de Tema
+### O Critério da Intenção do Autor e a Presença de Tema
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O critério determinante e absoluto para desautorizar a ambiguidade formal entre narração e dissertação expositiva reside na **intenção comunicativa do autor** e na identificação de um **tema** central orientador.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Para determinar a tipologia predominante diante de textos com traços morfológicos ambíguos:
 
@@ -109,20 +107,20 @@ Para determinar a tipologia predominante diante de textos com traços morfológi
 2. **Intenção Dissertativa Expositiva (Expor Tema):** O autor tem o objetivo primordial de expor, conceituar, explicar, contextualizar ou esclarecer dados e conhecimentos acerca de um tema central (ex.: a criação de um marco comemorativo pela ONU, o funcionamento de contratos inteligentes ou descobertas científicas sobre o sono).
 3. **O Princípio da Vinculação ao Tema:** *"Texto que tem tema é dissertativo."* O tema atua como um núcleo semântico reiterado ao longo do texto (funcionando didaticamente como um "mantra"). A presença de eventos pretéritos em textos expositivos serve apenas como suporte contextual para informar o leitor a respeito do tema, e não para desenvolver personagens.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - Indagar: *O autor veio relatar uma história de personagens ou veio transmitir informações sobre um assunto/tema?*
 - Aplicar o teste mental do "era uma vez": se o texto não aceita a lógica de uma fábula/crônica pessoal, mas sim a de um informe temático, trata-se de dissertação.
 
 ---
 
-## Estrutura e Propriedades do Texto Narrativo
+### Estrutura e Propriedades do Texto Narrativo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A narração é a tipologia discursiva estruturada sobre uma sucessão cronológica de transformações de estado, envolvendo ações praticadas por personagens ou agentes concretos no tempo e no espaço.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Propriedades essenciais do texto narrativo:
 
@@ -133,13 +131,13 @@ Propriedades essenciais do texto narrativo:
 
 ---
 
-## Modalidades da Dissertação Expositiva: Exposição Pura vs. Expositivo-Informativo
+### Modalidades da Dissertação Expositiva: Exposição Pura vs. Expositivo-Informativo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A dissertação expositiva tem por finalidade apresentar, discutir, conceituar e esclarecer dados e conhecimentos sobre um determinado assunto, de forma impessoal e sem intenção persuasiva autoral, subdividindo-se em puramente expositiva e expositivo-informativa.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Dissertação Expositiva Pura:** Apresenta conceitos, teorias, noções gerais ou definições estruturadas sobre um assunto, sem juízos de valor subjetivos do autor.
 2. **Dissertação Expositivo-Informativa (ou Texto Informativo):** Além de expor fatos sem persuasão autoral, caracteriza-se pela apresentação de dados recentes, novidades, pesquisas científicas e informações inéditas que provocam no leitor a sensação de aquisição de conhecimento novo (*"não sabia disso"*).
@@ -147,13 +145,13 @@ A dissertação expositiva tem por finalidade apresentar, discutir, conceituar e
 
 ---
 
-## O Estatuto Discursivo da Opinião de Terceiros no Texto Expositivo
+### O Estatuto Discursivo da Opinião de Terceiros no Texto Expositivo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A citação ou relato de opiniões, teses e declarações de terceiros (pesquisadores, especialistas ou fontes) no interior de um texto constitui, para o autor do texto, a apresentação de um **fato**, preservando a natureza expositiva/informativa e impedindo sua classificação como dissertação argumentativa.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Texto Dissertativo Argumentativo:** O próprio autor formula juízos de valor, assume uma tese subjetiva e constrói argumentos para persuadir o interlocutor a aderir ao seu ponto de vista.
 - **Texto Dissertativo Expositivo com Citação de Terceiros:** Quando o autor afirma *"segundo a pesquisadora X, o fenômeno ocorre por tal razão"* ou *"disse a cientista"*, ele não está assumindo a tese como seu juízo de valor subjetivo; ele está expondo o fato histórico/jornalístico de que a referida autoridade emitiu aquela declaração.
@@ -161,19 +159,17 @@ A citação ou relato de opiniões, teses e declarações de terceiros (pesquisa
 
 ---
 
-## Hibridismo e Heterogeneidade Tipológica
+### Hibridismo e Heterogeneidade Tipológica
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Os tipos textuais não ocorrem necessariamente em estado de pureza isolada; textos concretos exibem **hibridismo tipológico**, no qual uma **macroestrutura** dissertativa predominante articula-se com **microestruturas** narrativas subordinadas com função exemplificativa ou ilustrativa.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Macroestrutura (Predomínio Global):** O texto como unidade comunicativa global é estruturado para explicar um tema técnico ou conceitual (ex.: definição, histórico e infraestrutura de *smart contracts*), caracterizando-se como dissertativo expositivo.
 - **Microestrutura (Parágrafo/Sequência Específica):** Para tornar palpável a explicação teórica, o autor introduz uma narrativa hipotética ou factual de personagens (ex.: a história de Alice comprando um automóvel por contrato inteligente, com sucessão de ações: *introduz chave, porta bloqueia, funcionário recolhe*). Esse parágrafo específico é **essencialmente narrativo**.
 - **Regra de Julgamento em Provas:** O candidato deve atentar rigorosamente para o escopo delimitado pelo comando da questão — distinguindo se a banca avalia o texto em sua totalidade (predomínio dissertativo) ou um segmento isolado (sequência narrativa).
-
----
 
 ---
 
@@ -187,31 +183,27 @@ Os tipos textuais não ocorrem necessariamente em estado de pureza isolada; text
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Método Unificado para Diagnóstico Tipológico em Concursos
+### Método Unificado para Diagnóstico Tipológico em Concursos
 
-### Finalidade
+#### Finalidade
 
 Identificar com exatidão a tipologia de textos em provas de concurso público (especialmente Cebraspe), neutralizando armadilhas de verbos no pretérito perfeito e distinções entre texto informativo e narrativo.
 
-### Passo a passo operacional
+#### Passo a passo operacional
 
 1. **Delimitar o Escopo da Assertiva:** Verificar se a questão indaga sobre a totalidade do texto (*"Predomina no texto o tipo..."*) ou sobre um parágrafo/trecho específico (*"Seu terceiro parágrafo é essencialmente..."*).
 2. **Inspeção Estrutural Rápida:** Ler atentamente o início (primeiro e segundo parágrafos) e o encerramento do texto para capturar a espinha dorsal discursiva.
 3. **Interrogar a Intenção do Autor:**
- - *O autor veio relatar uma história de personagens (enredo/trama)?* $\rightarrow$ Hipótese: **Narração**.
- - *O autor veio expor, explicar ou noticiar dados sobre um assunto?* $\rightarrow$ Hipótese: **Dissertação Expositiva / Informativa**.
- - *O autor veio defender tese própria e persuadir o leitor com juízos de valor?* $\rightarrow$ Hipótese: **Dissertação Argumentativa**.
+  - *O autor veio relatar uma história de personagens (enredo/trama)?* $\rightarrow$ Hipótese: **Narração**.
+  - *O autor veio expor, explicar ou noticiar dados sobre um assunto?* $\rightarrow$ Hipótese: **Dissertação Expositiva / Informativa**.
+  - *O autor veio defender tese própria e persuadir o leitor com juízos de valor?* $\rightarrow$ Hipótese: **Dissertação Argumentativa**.
 4. **Verificar a Presença do Tema ("Mantra"):** Identificar o núcleo conceitual reiterado no texto. Havendo tema condutor (leis, tecnologias, eventos científicos), trata-se de dissertação.
 5. **Validar as Marcas Linguísticas sem Mecanicismo:**
- - Se for narração: checar a cadeia de ações no tempo (*antes e depois*), em pretérito perfeito ou presente histórico.
- - Se for dissertação com verbos no passado: verificar se os verbos apenas relatam acontecimentos institucionais ou métodos de pesquisa passados para fundamentar a exposição do tema.
+  - Se for narração: checar a cadeia de ações no tempo (*antes e depois*), em pretérito perfeito ou presente histórico.
+  - Se for dissertação com verbos no passado: verificar se os verbos apenas relatam acontecimentos institucionais ou métodos de pesquisa passados para fundamentar a exposição do tema.
 6. **Avaliar Eventual Hibridismo:** Se o texto global for dissertativo, mas um parágrafo narrar um caso particular/hipotético de uma personagem, reconhecer a convivência de microestrutura narrativa em macroestrutura dissertativa.
-
----
 
 ---
 
@@ -227,17 +219,15 @@ Identificar com exatidão a tipologia de textos em provas de concurso público (
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Análise de Microtexto Narrativo (Histórico Familiar na Guerra)
+### Análise de Microtexto Narrativo (Histórico Familiar na Guerra)
 
-### Trecho analisado
+#### Trecho analisado
 
 *"Em nossa família, meu avô morreu no front; de seus três filhos, dois serviram no Exército e desapareceram nos primeiros meses da guerra."*
 
-### Análise pedagógica
+#### Análise pedagógica
 
 - **Verbos:** *morreu*, *serviram*, *desapareceram* (Pretérito Perfeito do Indicativo).
 - **Sequência cronológica:** Morte do avô $\rightarrow$ alistamento/serviço dos filhos $\rightarrow$ desaparecimento no conflito.
@@ -246,13 +236,13 @@ Identificar com exatidão a tipologia de textos em provas de concurso público (
 
 ---
 
-## Análise de Microtexto Dissertativo com Aparência Narrativa (Criação de Data pela ONU)
+### Análise de Microtexto Dissertativo com Aparência Narrativa (Criação de Data pela ONU)
 
-### Trecho analisado
+#### Trecho analisado
 
 *"Em 2016, a ONU criou o Dia Internacional das Mulheres e Meninas na Ciência, celebrado em 11 de fevereiro. A criação da data representou um importante marco."*
 
-### Análise pedagógica
+#### Análise pedagógica
 
 - **Verbos:** *criou*, *representou* (Pretérito Perfeito do Indicativo).
 - **Marcadores temporais:** *em 2016*, *em 11 de fevereiro*.
@@ -262,15 +252,15 @@ Identificar com exatidão a tipologia de textos em provas de concurso público (
 
 ---
 
-## Questão Cebraspe 2025: Encadeamento de Pretéritos Perfeitos
+### Questão Cebraspe 2025: Encadeamento de Pretéritos Perfeitos
 
-### Dados da questão
+#### Dados da questão
 
 - **Banca / Ano / Órgão / Cargo:** CESPE / CEBRASPE – 2025 – Inoversa认Sul – Professor de Língua Portuguesa.
 - **Enunciado / Item:** *"O encadeamento de acontecimentos expressos por verbos no pretérito perfeito, como ocorre no primeiro parágrafo, é um dos elementos que caracterizam o texto como narrativo."*
 - **Texto de apoio (fragmento):** Fragmento da Revista Piauí relatando a rotina matinal de Cleber de Souza e a visita de Francis Ford Coppola (*acordou, cumpriu rotina, se vestiu e partiu, pagou por uma única foto, foi tietado, criou uma pizza*).
 
-### Resolução e fundamentação
+#### Resolução e fundamentação
 
 A assertiva correlaciona corretamente a presença de uma sucessão temporal de eventos amparada em verbos no pretérito perfeito (*acordou, cumpriu, vestiu, partiu, pagou, criou*) à caracterização da tipologia narrativa.
 
@@ -278,15 +268,15 @@ A assertiva correlaciona corretamente a presença de uma sucessão temporal de e
 
 ---
 
-## Questão Cebraspe 2024: O Texto Essencialmente Informativo
+### Questão Cebraspe 2024: O Texto Essencialmente Informativo
 
-### Dados da questão
+#### Dados da questão
 
 - **Banca / Ano / Órgão / Cargo:** CESPE / CEBRASPE – 2024 – TCE-AC – Técnico de Controle Externo – TI.
 - **Enunciado / Item:** *"O texto é, essencialmente, informativo."*
 - **Texto de apoio (fragmento):** Texto sobre a introdução e os impactos da inteligência artificial na educação (*Inteligência Liberada*), citando relatórios internacionais e ferramentas.
 
-### Resolução e fundamentação
+#### Resolução e fundamentação
 
 O texto apresenta novidades, conceitos e dados factuais sobre a tecnologia na educação, sem defender julgamentos morais ou teses subjetivas do autor. Para a banca Cebraspe, a denominação "texto informativo" equivale rigorosamente à dissertação expositivo-informativa.
 
@@ -294,15 +284,15 @@ O texto apresenta novidades, conceitos e dados factuais sobre a tecnologia na ed
 
 ---
 
-## Questão Cebraspe 2024: Desarmando a Pegadinha do Pretérito Perfeito em Estudo Científico
+### Questão Cebraspe 2024: Desarmando a Pegadinha do Pretérito Perfeito em Estudo Científico
 
-### Dados da questão
+#### Dados da questão
 
 - **Banca / Ano / Órgão / Cargo:** CEBRASPE – 2024 – Prefeitura de Cachoeiro de Itapemirim – ES – Auxiliar Administrativo – Texto CB3A1-I.
 - **Enunciado / Item:** *"Predomina no texto o tipo textual narrativo."*
 - **Texto de apoio (fragmento):** Divulgação científica sobre o impacto de cochilos diurnos na preservação do volume cerebral (*"A soneca habitual foi relacionada...", "disse a pesquisadora"*).
 
-### Resolução e fundamentação
+#### Resolução e fundamentação
 
 O texto é dissertativo expositivo-informativo, pois gravita em torno do tema "tirar cochilos durante o dia". As formas verbais no pretérito perfeito (*foi relacionada, mostraram, disse*) apenas relatam as etapas da pesquisa e a autoria das declarações científicas, não constituindo enredo de personagens.
 
@@ -310,15 +300,15 @@ O texto é dissertativo expositivo-informativo, pois gravita em torno do tema "t
 
 ---
 
-## Questão Cebraspe TJ-AM: Hibridismo Dissertativo-Narrativo e Presente Histórico
+### Questão Cebraspe TJ-AM: Hibridismo Dissertativo-Narrativo e Presente Histórico
 
-### Dados da questão
+#### Dados da questão
 
 - **Banca / Órgão / Cargo:** CEBRASPE – TJ-AM – Analista Judiciário – Analista de Sistemas – Texto CB1A1-I.
 - **Enunciado / Item:** *"Embora o texto seja predominantemente dissertativo, seu terceiro parágrafo é essencialmente narrativo."*
 - **Texto de apoio (fragmento):** Texto sobre contratos inteligentes (*smart contracts*). O 3º parágrafo ilustra a tecnologia com o caso hipotético de Alice (*"compre um automóvel... introduz sua chave... a porta não abre... chega o funcionário... liga o motor... o banco recupera"*).
 
-### Resolução e fundamentação
+#### Resolução e fundamentação
 
 A assertiva está correta em suas duas partes: (1) o macrotexto é dissertativo expositivo (discute o tema dos *smart contracts* no início e fim); (2) o terceiro parágrafo relata uma cadeia sucessiva de acontecimentos vivenciados por Alice em presente histórico, configurando uma narrativa interna.
 
@@ -326,46 +316,40 @@ A assertiva está correta em suas duas partes: (1) o macrotexto é dissertativo 
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Termômetro do "Texto com Tema"
+### O Termômetro do "Texto com Tema"
 
 - **Regra mnemônica:** *"Texto que tem tema é dissertativo."*
 - **Aplicação prática:** Se o parágrafo puder ser sintetizado por um título temático institucional, científico ou legal (ex.: *A regulamentação dos contratos digitais* ou *Os efeitos do sono na cognição*), a tipologia é dissertativa, mesmo repleta de datas e fatos passados (`conteúdo integrado, ).
 
-## O Teste Mental do "Era uma vez..."
+### O Teste Mental do "Era uma vez..."
 
 - **Aplicação prática:** Diante de um texto com verbos no pretérito, pergunte-se se o texto poderia começar naturalmente com *"Era uma vez..."*. Se a estrutura comportar personagens e peripécias particulares, trata-se de narração. Se a inserção de *"era uma vez"* for incoerente diante da exposição temática, trata-se de dissertação (`conteúdo integrado, ).
 
-## Diagnóstico do Presente Histórico
+### Diagnóstico do Presente Histórico
 
 - **Aplicação prática:** Não elimine a hipótese de texto narrativo ao encontrar verbos flexionados no presente do indicativo (*chega, abre, liga, bloqueia*). Se houver progressão sucessiva de fatos (*antes e depois*), trata-se de presente histórico/narrativo conferindo dinamismo ao relato (`conteúdo integrado, ).
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## A Pegadinha do Pretérito Perfeito em Textos Científicos e Históricos
+### A Pegadinha do Pretérito Perfeito em Textos Científicos e Históricos
 
 - **O Erro:** Decorar mecanicamente que "verbo no pretérito perfeito = narração".
 - **O Mecanismo da Banca:** O examinador seleciona trechos de artigos de divulgação científica ou notícias contendo verbos no passado (*a pesquisa revelou*, *o comitê aprovou*, *em 2016 instituiu-se*) e afirma que o texto é narrativo.
 - **Como Evitar:** Lembrar que a narração exige enredo e personagens particulares; o pretérito em textos expositivos serve apenas para situar fatos e pesquisas que esclarecem o tema (`conteúdo integrado,; `conteúdo integrado, ).
 
-## Confundir Citação de Especialistas com Dissertação Argumentativa
+### Confundir Citação de Especialistas com Dissertação Argumentativa
 
 - **O Erro:** Julgar que a presença de opiniões e declarações entre aspas (*"disse a pesquisadora"*) transforma o texto em dissertativo argumentativo.
 - **Como Evitar:** Aplicar o princípio de que *a opinião de terceiros citada é FATO para o autor*. O texto só é argumentativo se o próprio autor do texto expressar e defender sua tese subjetiva (`conteúdo integrado, ).
 
-## Desconsiderar o Hibridismo Tipológico
+### Desconsiderar o Hibridismo Tipológico
 
 - **O Erro:** Classificar o texto inteiro como narrativo porque encontrou um parágrafo que narra um exemplo, ou classificar um parágrafo narrativo como dissertativo porque o texto global é um artigo científico.
 - **Como Evitar:** Verificar se a banca avalia a macroestrutura global ou uma sequência discursiva delimitada (`conteúdo integrado, ).
-
----
 
 ---
 
@@ -373,29 +357,27 @@ A assertiva está correta em suas duas partes: (1) o macrotexto é dissertativo 
 
 ### Texto Narrativo
 
-### Dissertação Expositiva
+#### Dissertação Expositiva
 
-### Dissertação Expositivo-Informativa (Texto Informativo)
+#### Dissertação Expositivo-Informativa (Texto Informativo)
 
 Subtipo da dissertação expositiva que se caracteriza por veicular dados novos, pesquisas recentes, acontecimentos e informações que constituem novidades para o leitor. Em concursos, frequentemente denominada apenas como "texto informativo".
 
-### Presente Histórico (ou Narrativo)
+#### Presente Histórico (ou Narrativo)
 
 Emprego estilístico e gramatical do tempo presente do modo indicativo para relatar fatos passados ou sequências cronológicas hipotéticas, aproximando o leitor dos acontecimentos e imprimindo dinamicidade à narrativa.
 
-### Intenção Comunicativa (Intenção do Autor)
+#### Intenção Comunicativa (Intenção do Autor)
 
 Propósito discursivo macro que rege a produção do texto (e.g., contar uma história vs. expor informações sobre um tema), constituindo o critério decisório primário na determinação da tipologia predominante.
 
-### Hibridismo Tipológico (Heterogeneidade Tipológica)
+#### Hibridismo Tipológico (Heterogeneidade Tipológica)
 
 Fenômeno discursivo em que um texto estruturado sob uma tipologia predominante (macroestrutura, como a dissertação expositiva) incorpora segmentos ou parágrafos pertencentes a outra tipologia (microestrutura, como uma sequência narrativa ilustrativa).
 
-### Opinião de Terceiros como Fato
+#### Opinião de Terceiros como Fato
 
 Princípio discursivo segundo o qual o relato de pontos de vista, declarações e conclusões de especialistas pelo autor funciona como exposição de dados factuais, mantendo o texto na tipologia expositiva e diferenciando-o da dissertação argumentativa.
-
----
 
 ---
 

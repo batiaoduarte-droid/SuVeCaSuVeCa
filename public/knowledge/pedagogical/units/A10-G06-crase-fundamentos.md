@@ -146,16 +146,14 @@ CRASE DIANTE DE PALAVRAS NO PLURAL
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Natureza Fonética da Crase e Nomenclatura do Acento Grave
+### Natureza Fonética da Crase e Nomenclatura do Acento Grave
 
-### Definição ou ideia central
+#### Definição ou ideia central
 A *crase* não é o nome de um acento gráfico, mas sim a denominação do **fenômeno fonético** consistente na fusão ou contração de duas vogais idênticas em uma só ($a + a = a$). O sinal gráfico diacrítico inclinado para a esquerda que indica visualmente a ocorrência desse fenômeno chama-se **acento grave**.
 
-### Explicação detalhada
+#### Explicação detalhada
 - É gramaticalmente impreciso dizer "o A craseado", "crasear" ou "colocar uma crase no A", embora tais expressões sejam comuns no linguajar coloquial e prático. A forma tecnicamente exata é "A com acento grave indicativo de crase".
 - Nos editais de concursos públicos e bancas examinadoras, o conteúdo programático frequentemente não traz a palavra "Crase", mas sim "Emprego do acento grave" ou "Emprego do acento indicativo de crase". O candidato deve reconhecer que ambos tratam exatamente da mesma matéria.
 - Na história da língua e nas gramáticas normativas clássicas (como Celso Cunha e Evanildo Bechara), não há capítulo isolado intitulado "Crase"; a matéria é tratada sob o capítulo de "Sintaxe do Artigo" e "Regência", pois a crase decorre do encontro da preposição exigida pela regência com o artigo definido ou pronome.
@@ -166,12 +164,12 @@ esquemas de abertura com o título **FENÔMENO FONÉTICO** e anotações manuscr
 
 ---
 
-## Situação 1 do Fenômeno Fonético: Preposição "A" + Artigo Feminino "A(s)"
+### Situação 1 do Fenômeno Fonético: Preposição "A" + Artigo Feminino "A(s)"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 A Situação 1 (Código 1) da Regra Geral do Fenômeno Fonético ocorre quando há o encontro e a fusão de uma **preposição `a`** (exigida por um termo regente verbal ou nominal) com o **artigo definido feminino `a` ou `as`** (admitido pelo substantivo regido subsequente).
 
-### Explicação detalhada
+#### Explicação detalhada
 
 - Sua ocorrência depende rigorosamente de dois requisitos simultâneos e complementares:
  1. **Exigência de preposição `a`:** Decorrente da regência verbal (VTI / VTDI) ou da regência nominal (substantivos, adjetivos ou advérbios que pedem complemento preposicionado por `a`).
@@ -182,24 +180,24 @@ A abordagem didática explica: "O primeiro caso de fenômeno fonético é o mais
 
 esquemas esquemático apresentando a caixa `PREPOSIÇÃO + ARTIGO` conectada ao exemplo `Obedeceu à vontade dos pais`, onde A abordagem didática anota `1º Passo a Passo (FF)` e cataloga como caso número `1`.
 
-### Exemplos
+#### Exemplos
 - *Obedeceu à vontade dos pais*:
- - *Obedeceu* (VTI) exige preposição `a` (quem obedece, obedece *a* alguém/algo).
- - *Vontade* é substantivo feminino que aceita o artigo `a` (*A vontade dos pais é soberana*).
- - Fusão: $a + a = à$.
+  - *Obedeceu* (VTI) exige preposição `a` (quem obedece, obedece *a* alguém/algo).
+  - *Vontade* é substantivo feminino que aceita o artigo `a` (*A vontade dos pais é soberana*).
+  - Fusão: $a + a = à$.
 
 ---
 
-## Validação de Artigo para Topônimos (Regra do Verbo "Voltar")
+### Validação de Artigo para Topônimos (Regra do Verbo "Voltar")
 
-### Definição ou ideia central
+#### Definição ou ideia central
 Para nomes de lugares (topônimos), além de palavras como *casa* e *terra*, a verificação da presença de artigo feminino `a` é realizada de forma simplificada por meio do teste de regência do verbo **voltar**.
 
-### Explicação detalhada
+#### Explicação detalhada
 - Diante de nomes geográficos de cidades, estados ou países, o artigo definido pode ou não ser aceito pela tradição do idioma.
 - Aplica-se a regra mnemônica clássica:
- - **"Se volto DA, crase no A"** $\rightarrow$ A preposição `de` funde-se com o artigo `a` formando a contração `da` ($de + a = da$). Isso prova que o lugar aceita artigo feminino; logo, ao se deslocar para esse lugar (*ir a*), haverá preposição `a` + artigo `a` = `à`.
- - **"Se volto DE, crase para quê?"** $\rightarrow$ A preposição `de` aparece pura, sem artigo ($de + \emptyset = de$). Isso prova que o lugar rejeita artigo; logo, ao se deslocar para esse lugar (*ir a*), haverá apenas preposição `a` pura, sem crase.
+  - **"Se volto DA, crase no A"** $\rightarrow$ A preposição `de` funde-se com o artigo `a` formando a contração `da` ($de + a = da$). Isso prova que o lugar aceita artigo feminino; logo, ao se deslocar para esse lugar (*ir a*), haverá preposição `a` + artigo `a` = `à`.
+  - **"Se volto DE, crase para quê?"** $\rightarrow$ A preposição `de` aparece pura, sem artigo ($de + \emptyset = de$). Isso prova que o lugar rejeita artigo; logo, ao se deslocar para esse lugar (*ir a*), haverá apenas preposição `a` pura, sem crase.
 - A abordagem didática demonstra que regras escolares sobre "casa própria", "terra firme" e topônimos não são regras isoladas, mas meras aplicações do princípio geral de verificação da presença do artigo definido feminino.
 
 "Com nome de lugar, use voltar [...] Volta da, crase no A; volta de, crase para quê? [...] Por que crase no A? Porque você está voltando com o artigo da. Volta de, crase para quê? Porque está sem artigo, sem crase."
@@ -209,12 +207,12 @@ Exemplos escritos:
 
 ---
 
-## Situação 2a do Fenômeno Fonético: Preposição "A" + Pronomes Demonstrativos *Aquele(s)*, *Aquela(s)*, *Aquilo*
+### Situação 2a do Fenômeno Fonético: Preposição "A" + Pronomes Demonstrativos *Aquele(s)*, *Aquela(s)*, *Aquilo*
 
-### Definição ou ideia central
+#### Definição ou ideia central
 A Situação 2a (Código 2a) ocorre quando a preposição `a`, exigida por um termo regente, funde-se com a **vogal inicial `a`** dos pronomes demonstrativos **aquele(s)**, **aquela(s)** ou **aquilo**, gerando as formas craseadas **àquele(s)**, **àquela(s)** e **àquilo**.
 
-### Explicação detalhada
+#### Explicação detalhada
 
 - Como os pronomes *aquele*, *aquela* e *aquilo* iniciam-se pela vogal `a`, se o termo anterior exigir a preposição `a`, haverá a fusão fonética de duas vogais `a`, justificando o acento grave.
 - **Quebra de paradigma:** O acento grave pode recair sobre palavras de gênero gramatical masculino (*àquele*) ou neutro (*àquilo*). Isso quebra a regra simplista de que "nunca há crase antes de palavra masculina", pois a crase aqui não ocorre antes do pronome, mas **na própria letra inicial do pronome demonstrativo**.
@@ -225,19 +223,19 @@ esquemas com esquema da caixa `PREPOSIÇÃO + PRONOMES DEMONSTRATIVOS` conectada
 Anotação manuscrita: `2.a) A + aquele, aquela, aquilo -> àquele, àquela, àquilo`.
 Exemplo complementar escrito: `Chegou àquele encontro no horário certo (a + aquele)`.
 
-### Exemplos
+#### Exemplos
 - *Dirigiu-se àquelas pessoas:* quem se dirige, dirige-se *a* (prep.) + *a*quelas (pron.) = *àquelas*.
 - *Chegou àquele encontro:* quem chega, chega *a* (prep.) + *a*quele (pron.) = *àquele*.
 - *Não queria ser associado àquilo:* associado *a* (prep.) + *a*quilo (pron.) = *àquilo*.
 
 ---
 
-## Situação 2b do Fenômeno Fonético: Preposição "A" + Pronome Demonstrativo "A(s)" antes de "Que" ou "De"
+### Situação 2b do Fenômeno Fonético: Preposição "A" + Pronome Demonstrativo "A(s)" antes de "Que" ou "De"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 A Situação 2b (Código 2b) ocorre quando a preposição `a` funde-se com o **pronome demonstrativo `a` ou `as`** (equivalente a *aquela/aquelas*), o qual se encontra implícito (elíptico) antes dos conectivos **que** ou **de**.
 
-### Explicação detalhada
+#### Explicação detalhada
 - Os vocábulos `o`, `a`, `os`, `as` funcionam como pronomes demonstrativos quando equivalem a *aquele(s)*, *aquela(s)*, *aquilo* ou *isso*.
 - Em estruturas comparativas ou relativas, o pronome demonstrativo `a` costuma vir posicionado imediatamente antes de `de` ou `que`, evitando a repetição de um substantivo já mencionado.
 - Se o termo regente anterior exigir a preposição `a`, haverá fusão: $\text{Preposição } a + \text{Pronome Demonstrativo } a \text{ (= aquela)} = \text{à}$.
@@ -253,16 +251,16 @@ Exemplos analisados no quadro:
 
 ---
 
-## Situação 3 do Fenômeno Fonético: Preposição "A" + Pronome Relativo "A qual / As quais"
+### Situação 3 do Fenômeno Fonético: Preposição "A" + Pronome Relativo "A qual / As quais"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 A Situação 3 (Código 3) ocorre quando a preposição `a` (exigida por um termo da oração subordinada adjetiva) funde-se com a vogal `a` integrante do pronome relativo composto **a qual** ou **as quais**, resultando em **à qual** ou **às quais**.
 
-### Explicação detalhada
+#### Explicação detalhada
 - Entre todos os pronomes relativos da língua portuguesa (*que*, *quem*, *cujo*, *onde*, *quanto*, *a qual*), **somente "a qual" e "as quais" possuem artigo definido feminino em sua estrutura morfológica de formação**.
 - Pronomes como *que*, *quem* e *cujo(s)/cuja(s)* não aceitam e não incorporam artigo definido:
- - Antes de *quem*, se houver regência pedindo `a`, tem-se apenas preposição pura: `a quem` (crase proibida).
- - Antes de *cujo(a)*, nunca há artigo nem crase: `a cuja` (crase proibida).
+  - Antes de *quem*, se houver regência pedindo `a`, tem-se apenas preposição pura: `a quem` (crase proibida).
+  - Antes de *cujo(a)*, nunca há artigo nem crase: `a cuja` (crase proibida).
 - Portanto, se o verbo ou nome da oração adjetiva reger a preposição `a`, e o antecedente feminino for retomado por *a qual / as quais*, haverá a junção da preposição com o artigo do pronome: $a \text{ (preposição)} + a \text{ qual (artigo do relativo)} = \text{à qual}$.
 
 "Os únicos pronomes relativos que aceitam crase são aqueles que já nasceram com o asinho deles. Quais são? O 'a qual' ou o seu plural 'as quais', porque eles já nasceram com A [...] O 'a quem' não [...] O nome do pronome é 'quem', então esse A antes do quem é só preposição [...] No cuja, nunca use, vai estar sempre errado."
@@ -271,12 +269,12 @@ esquemas com a caixa `PREPOSIÇÃO + PRONOME RELATIVO A QUAL / AS QUAIS` e o exe
 Anotação no esquemas:
 
 ---
-## O Princípio Fundamental da Crase Proibida e a Unicidade do "A"
+### O Princípio Fundamental da Crase Proibida e a Unicidade do "A"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 A crase constitui a fusão fonética de dois elementos vocálicos idênticos: a preposição `a` exigida por um termo regente e o artigo definido feminino `a` (ou `as`) admitido por um termo regido feminino, ou a vogal inicial dos pronomes `aquele(s)`, `aquela(s)`, `aquilo`, `a qual`/`as quais`. Quando existe apenas um elemento isolado (somente preposição ou somente artigo), não há fusão, tornando o acento grave terminantemente proibido.
 
-### Explicação detalhada
+#### Explicação detalhada
 A gramática tradicional lista diversas regras estanques de proibição da crase. Contudo, a lógica unificada por trás de quase todas essas regras é a ausência de duplicidade:
 1. Se o termo regido for masculino, verbo, pronome indefinido, pronome demonstrativo (*este/esse*), artigo indefinido ou topônimo sem artigo, ele **não aceita artigo feminino**. Logo, o `a` presente na frase é **apenas preposição**.
 2. Havendo apenas a preposição, o `a` está "sozinho", o que inviabiliza o fenômeno fonético da crase.
@@ -289,12 +287,12 @@ E classifica no topo: `* só preposição / artigo`.
 
 ---
 
-## Casos de Crase Proibida por Ausência de Artigo Definido Feminino
+### Casos de Crase Proibida por Ausência de Artigo Definido Feminino
 
-### Definição ou ideia central
+#### Definição ou ideia central
 Não ocorre crase antes de vocábulos que rejeitam estruturalmente o artigo definido feminino `a`, fazendo com que o `a` precedente atue estritamente como preposição simples.
 
-### Explicação detalhada
+#### Explicação detalhada
 Os casos clássicos da gramática normativa enquadrados nesta categoria são:
 1. **Antes de palavras masculinas:** Termos masculinos admitem apenas artigos masculinos (`o/os`) ou nenhum artigo (ex.: *andar a pé*, *igual a Camões*). O `a` é preposição pura.
 2. **Antes de verbos:** Formas verbais (como infinitivos) não possuem gênero gramatical substantivo e rejeitam artigo (ex.: *disposto a lutar*).
@@ -309,21 +307,21 @@ esquemas com a lista de proibições anotado com a explicação em tinta vermelh
 
 ---
 
-## Paralelismo Sintático e Semântico no Uso do Artigo (Palavras Repetidas e Expressões Simétricas)
+### Paralelismo Sintático e Semântico no Uso do Artigo (Palavras Repetidas e Expressões Simétricas)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 Expressões binárias, simétricas ou coordenadas exigem rigoroso paralelismo sintático no emprego de determinantes: se o primeiro elemento não vier acompanhado de artigo definido, o segundo elemento também não receberá artigo; se o primeiro vier acompanhado de artigo, o segundo obrigatoriamente o receberá.
 
-### Explicação detalhada
+#### Explicação detalhada
 1. **Palavras Repetidas (Locuções do tipo *cara a cara*, *frente a frente*, *gota a gota*):**
- - O primeiro termo (*frente*, *cara*) é empregado de forma genérica, sem artigo inicial.
+  - O primeiro termo (*frente*, *cara*) é empregado de forma genérica, sem artigo inicial.
 
- - O `a` intermediário é **apenas preposição**, inviabilizando a crase.
+  - O `a` intermediário é **apenas preposição**, inviabilizando a crase.
 
 2. **Expressões Temporais e Estruturas Correlativas (*de... a...* vs. *da... à...*):**
- - **Estrutura sem artigo:** `de` (preposição simples) $+$ substantivo $\rightarrow$ `a` (preposição simples) $+$ substantivo. Exemplo: *A aula será de segunda a sexta.* (Não há crase no `a` porque não há artigo em *de segunda*).
- - **Estrutura com artigo:** `da` (`de` $+$ artigo `a`) $+$ substantivo $\rightarrow$ `à` (`a` $+$ artigo `a`) $+$ substantivo. Exemplo: *A aula será da terça à sexta.* (Ocorre crase porque *da* determinou o início, exigindo que o `a` final se contraia com o artigo `a`).
- - Aplicação horária correlata: *das 19h às 22h* (com crase) versus *de 19h a 22h* (sem crase).
+  - **Estrutura sem artigo:** `de` (preposição simples) $+$ substantivo $\rightarrow$ `a` (preposição simples) $+$ substantivo. Exemplo: *A aula será de segunda a sexta.* (Não há crase no `a` porque não há artigo em *de segunda*).
+  - **Estrutura com artigo:** `da` (`de` $+$ artigo `a`) $+$ substantivo $\rightarrow$ `à` (`a` $+$ artigo `a`) $+$ substantivo. Exemplo: *A aula será da terça à sexta.* (Ocorre crase porque *da* determinou o início, exigindo que o `a` final se contraia com o artigo `a`).
+  - Aplicação horária correlata: *das 19h às 22h* (com crase) versus *de 19h a 22h* (sem crase).
 
 No esquemas de anotações `#ANOTAAÍ`, A abordagem didática esquematiza:
 ```text
@@ -335,21 +333,21 @@ Paralelismo do Uso do Artigo:
 
 ---
 
-## Crase Proibida Após Preposições Essenciais e a Exceção do "Até"
+### Crase Proibida Após Preposições Essenciais e a Exceção do "Até"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 No português padrão, é proibido acumular ou justapor duas preposições essenciais com a mesma função conectiva. Portanto, se uma palavra já estiver regida por uma preposição (como *desde*, *ante*, *para*, *após*, *com*, *contra*, *de*, *perante*), a preposição `a` não pode ser inserida, tornando o `a` subsequente **apenas artigo definido** (crase proibida). A única preposição que admite preposição `a` facultativa após si é **até**.
 
-### Explicação detalhada
+#### Explicação detalhada
 1. **Regra Geral de Preposições Acumuladas:**
- - Em construções como *Estou aqui desde as oito horas*, *desde* já cumpre o papel preposicional. O termo *as* é meramente o artigo feminino plural que determina *oito horas*. Não havendo preposição `a`, não há fusão fonética.
- - Em *Ante a ausência do réu*, *ante* é a preposição; *a* é artigo feminino definindo *ausência*.
- - Em *Para a festa comprei salgados*, *para* é a preposição; *a* é artigo definindo *festa*.
- - Em *Após a aula nos veremos*, *após* é a preposição; *a* é artigo definindo *aula*.
+  - Em construções como *Estou aqui desde as oito horas*, *desde* já cumpre o papel preposicional. O termo *as* é meramente o artigo feminino plural que determina *oito horas*. Não havendo preposição `a`, não há fusão fonética.
+  - Em *Ante a ausência do réu*, *ante* é a preposição; *a* é artigo feminino definindo *ausência*.
+  - Em *Para a festa comprei salgados*, *para* é a preposição; *a* é artigo definindo *festa*.
+  - Em *Após a aula nos veremos*, *após* é a preposição; *a* é artigo definindo *aula*.
 
 2. **A Exceção Canônica da Preposição "Até":**
- - A preposição *até* possui comportamento sintático híbrido, aceitando facultativamente a presença da preposição `a` posposta (*Caminhou até a praia* / *Caminhou até à praia*).
- - Diante de substantivo feminino que admita artigo, o uso da crase após *até* torna-se **facultativo** (*até a* = preposição *até* + artigo *a*; *até à* = preposição *até* + preposição *a* + artigo *a*).
+  - A preposição *até* possui comportamento sintático híbrido, aceitando facultativamente a presença da preposição `a` posposta (*Caminhou até a praia* / *Caminhou até à praia*).
+  - Diante de substantivo feminino que admita artigo, o uso da crase após *até* torna-se **facultativo** (*até a* = preposição *até* + artigo *a*; *até à* = preposição *até* + preposição *a* + artigo *a*).
 
 > *"Mantra: A única preposição que aceita outra depois dela é a preposição ATÉ. Todas as outras preposições não aceitam a preposição A... Aqui o acento é proibido porque a PREPOSIÇÃO é proibida."*
 
@@ -361,18 +359,18 @@ Com listagem das preposições essenciais (`a, ante, até, após, com, contra, d
 
 ---
 
-## Regência de Nomes de Lugar e o Efeito do Determinante Semântico
+### Regência de Nomes de Lugar e o Efeito do Determinante Semântico
 
-### Definição ou ideia central
+#### Definição ou ideia central
 Topônimos (nomes de cidades, estados ou países) podem ou não aceitar artigo definido na língua. Para verificar a presença do artigo, aplica-se o teste do verbo *voltar*: se ao retornar do local usa-se *voltar DE*, o topônimo não admite artigo (sem crase no destino); se usa-se *voltar DA*, o topônimo admite artigo (com crase no destino). Entretanto, se qualquer nome de lugar vier acompanhado de um **determinante modificador/especificador**, a presença do artigo torna-se obrigatória, ensejando crase.
 
-### Explicação detalhada
+#### Explicação detalhada
 1. **Topônimo sem artigo:**
- - *Vou a São Paulo* $\rightarrow$ *Voltei de São Paulo* (rejeita artigo $\rightarrow$ `a` é só preposição $\rightarrow$ sem crase).
- - *Os cientistas foram a Londres* $\rightarrow$ *Voltei de Londres* (rejeita artigo $\rightarrow$ `a` é só preposição $\rightarrow$ sem crase).
+  - *Vou a São Paulo* $\rightarrow$ *Voltei de São Paulo* (rejeita artigo $\rightarrow$ `a` é só preposição $\rightarrow$ sem crase).
+  - *Os cientistas foram a Londres* $\rightarrow$ *Voltei de Londres* (rejeita artigo $\rightarrow$ `a` é só preposição $\rightarrow$ sem crase).
 2. **Topônimo especificado por determinante:**
- - Ao adicionar uma restrição/especificação semântica ao local, individualiza-se o substantivo próprio, forçando a presença do artigo definido.
- - *Os cientistas foram à Londres dos meus sonhos* $\rightarrow$ *Voltei da Londres dos meus sonhos* (`de + a`). Havendo preposição `a` regida por *foram* e artigo `a` exigido pelo determinante, a crase é obrigatória.
+  - Ao adicionar uma restrição/especificação semântica ao local, individualiza-se o substantivo próprio, forçando a presença do artigo definido.
+  - *Os cientistas foram à Londres dos meus sonhos* $\rightarrow$ *Voltei da Londres dos meus sonhos* (`de + a`). Havendo preposição `a` regida por *foram* e artigo `a` exigido pelo determinante, a crase é obrigatória.
 
 > *"Se vier com determinante, vem com artigo... Porque quando você determina, não é qualquer Londres. Londres dos meus sonhos, você determinou... O artigo é um determinante semântico, ou seja, ele é definido... Com determinante, com artigo."*
 
@@ -382,12 +380,12 @@ $$\text{* foram à Londres dos meus sonhos} \rightarrow \text{Voltei DA Londres 
 - **Procedimento associado:**
 
 ---
-## Estrutura Dual das Regras de Crase na Língua Portuguesa
+### Estrutura Dual das Regras de Crase na Língua Portuguesa
 
-### Definição ou ideia central
+#### Definição ou ideia central
 A ocorrência do acento indicativo de crase na língua portuguesa é regida integralmente por apenas duas regras fundamentais: a regra do **Fenômeno Fonético** (fusão de dois sons vocálicos idênticos `a + a`) e a regra da **Locução Feminina** (estruturas adverbiais, prepositivas e conjuntivas).
 
-### Explicação detalhada
+#### Explicação detalhada
 A abordagem didática enfatiza que a complexidade aparente da crase decorre da falta de organização esquemática do estudante. Toda e qualquer situação de crase recai necessariamente em uma das duas categorias:
 1. **Regra I — Fenômeno Fonético:** Exige a presença de um termo regente que solicite a preposição `a` e de um termo regido que traga ou inicie por uma forma vocálica `a` (artigo definido feminino, pronome demonstrativo iniciado por `a`, pronome relativo ou pronome demonstrativo `a`).
 2. **Regra II — Locução Feminina:** Abrange locuções adverbiais femininas (*à noite, às pressas*), prepositivas (*à espera de, à procura de*) e conjuntivas (*à proporção que, à medida que*), cujo acento grave decorre da própria natureza da locução feminina fixa, independentemente de termo regente pedir preposição por transitividade.
@@ -401,12 +399,12 @@ Escrita manuscrita no topo do esquemas `#ANOTAAÍ`:
 
 ---
 
-## A Situação Primária do Fenômeno Fonético: Preposição A + Artigo A
+### A Situação Primária do Fenômeno Fonético: Preposição A + Artigo A
 
-### Definição ou ideia central
+#### Definição ou ideia central
 A primeira e mais frequente manifestação do Fenômeno Fonético ocorre no encontro da preposição `a` (exigida por regência verbal ou nominal de um termo antecedente) com o artigo definido feminino `a` ou `as` (admitido pelo substantivo determinado subsequente).
 
-### Explicação detalhada
+#### Explicação detalhada
 Esta situação isolada responde por cerca de **80% de todas as questões de concurso público** sobre crase. O mecanismo exige satisfazer simultaneamente duas condições:
 1. **Condição 1 (Sintática - Regência):** O termo anterior (verbo ou substantivo/adjetivo/advérbio) rege a preposição `a`.
 2. **Condição 2 (Morfológica - Artigo):** O termo seguinte é uma palavra feminina que admite a anteposição do artigo definido `a`/`as`.
@@ -421,12 +419,12 @@ Inscrição manuscrita no canto superior direito e no ramo (1) do esquema:
 
 ---
 
-## Teste de Aceitação de Artigo em Substantivos Comuns
+### Teste de Aceitação de Artigo em Substantivos Comuns
 
-### Definição ou ideia central
+#### Definição ou ideia central
 Para comprovar que um substantivo comum admite artigo definido feminino `a`, a norma gramatical orienta construir uma oração isolada em que essa palavra funcione como sujeito sintático, observando se a anteposição do artigo `a` é natural e gramaticalmente correta.
 
-### Explicação detalhada
+#### Explicação detalhada
 Muitas vezes o estudante tem dúvida se determinado substantivo feminino aceita ou repele artigo. A técnica consiste em isolar a palavra e empregá-la como sujeito no início de uma oração simples atributiva (por exemplo, associada a um predicativo como *é boa*, *é importante*, etc.).
 - Se a frase exigir ou aceitar naturalmente o artigo (*"A terra é fértil"*, *"A terra é boa"*), fica provado que a palavra aceita artigo definido.
 - Combinando este artigo `a` com a preposição `a` identificada no termo regente, a crase torna-se obrigatória.
@@ -440,17 +438,17 @@ Anotação no esquema:
 
 ---
 
-## Teste de Aceitação de Artigo em Nomes de Lugar (Topônimos)
+### Teste de Aceitação de Artigo em Nomes de Lugar (Topônimos)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 Para nomes de lugares (cidades, estados, países), a aceitação de artigo definido feminino é verificada mediante a regência do verbo *voltar*: se a volta ocorrer com a contração *da* (`de + a`), o topônimo admite artigo (havendo crase na ida); se a volta ocorrer apenas com a preposição *de*, o topônimo não admite artigo (não havendo crase na ida).
 
-### Explicação detalhada
+#### Explicação detalhada
 O célebre macete escolar *"Volta da, crase no A; volta de, crase pra quê?"* não é uma regra autônoma de crase, mas sim um procedimento mnemônico expedito para atestar se o nome geográfico aceita artigo definido:
 - **Volta DA:** Revela a contração da preposição `de` com o artigo `a`. Logo, o lugar aceita artigo feminino. Se o verbo de deslocamento exigir a preposição `a` (*ir a, retornar a, chegar a*), haverá fusão `a + a = à`.
- - Exemplo: *Volto DA Itália* -> *Itália* aceita artigo `a`. Frase: *O juiz retornou à Itália* (com crase).
+  - Exemplo: *Volto DA Itália* -> *Itália* aceita artigo `a`. Frase: *O juiz retornou à Itália* (com crase).
 - **Volta DE:** Revela apenas a preposição pura `de` (ausência de artigo). Logo, o lugar repele artigo. Na ida, existirá apenas a preposição `a`.
- - Exemplo: *Volto DE Brasília* -> *Brasília* não aceita artigo. Frase: *O juiz retornou a Brasília* (sem crase).
+  - Exemplo: *Volto DE Brasília* -> *Brasília* não aceita artigo. Frase: *O juiz retornou a Brasília* (sem crase).
 
 *"Se você volta da com nome de lugar, lá na escola parecia que isso aqui era uma nova regra de crase, mas não é. Isso aqui é para ver se a palavra aceita artigo. Volta da: artigo. Volta de: sem artigo."*.
 
@@ -461,12 +459,12 @@ Anotações no esquemas:
 
 ---
 
-## As Quatro Ocorrências do Fenômeno Fonético da Crase
+### As Quatro Ocorrências do Fenômeno Fonético da Crase
 
-### Definição ou ideia central
+#### Definição ou ideia central
 O Fenômeno Fonético da crase abrange exatamente quatro situações estruturais em que a preposição `a` se funde a uma vogal `a` inicial do elemento seguinte.
 
-### Explicação detalhada
+#### Explicação detalhada
 As quatro situações possíveis sob a Regra I são:
 1. **Preposição `A` + Artigo definido `A(S)`:** Encontro com artigo feminino determinante de substantivo (~80% das questões).
 2. **Preposição `A` + Pronomes Demonstrativos `AQUELE(S)`, `AQUELA(S)`, `AQUILO`:** Fusão da preposição com a letra `A` inicial desses pronomes, resultando em *àquele(s)*, *àquela(s)*, *àquilo*. Ocorre mesmo sendo *aquilo* ou *aquele* pronomes neutros/masculinos, pois o que se funde é a vogal inicial.
@@ -482,12 +480,12 @@ Ramos preenchidos no esquema da lousa digital:
 - `(4) PREP. A + A (pron. demonst.) antes de QUE e DE`
 
 ---
-## O Mecanismo da Crase Diante de Palavras no Plural
+### O Mecanismo da Crase Diante de Palavras no Plural
 
-### Definição ou ideia central
+#### Definição ou ideia central
 A ocorrência do acento indicativo de crase antes de substantivos no plural depende da combinação entre a exigência de preposição `a` pelo termo regente e a decisão estilístico-semântica de empregar ou omitir o artigo definido feminino plural `as` diante do termo regido.
 
-### Explicação detalhada
+#### Explicação detalhada
 Diante de substantivos plurais, o artigo definido feminino `as` é facultativo no discurso:
 1. **Com artigo definido (`as`):** Ocorre quando o emissor deseja restringir, determinar ou especificar os seres referidos (`sentido específico`). Havendo termo regente que exija a preposição `a`, dá-se a fusão `a (preposição) + as (artigo) = às` (com acento grave no plural).
 2. **Sem artigo definido (artigo suprimido):** Ocorre quando o emissor deseja tomar a palavra em sua totalidade ou generalidade (`sentido geral/indeterminado`). Havendo regente que exija preposição, mantém-se unicamente a preposição simples `a`, ficando a expressão no singular e sem acento grave diante do substantivo plural (`a + Ø = a`).
@@ -499,21 +497,21 @@ O esquemas estruturado exibe sob o título "OPÇÕES CORRETAS":
 - `Obedecia às ordens.` $\rightarrow$ com decomposição manuscrita: `A (prep) + AS (art)` $\rightarrow$ `(ORDENS ESPECÍFICAS)`.
 - `Obedecia a ordens.` $\rightarrow$ com decomposição manuscrita: `A (só preposição)` $\rightarrow$ `(QUAISQUER ORDENS)`.
 
-### Exemplos
+#### Exemplos
 - `Obedecia às ordens.` (Crase no plural: preposição `a` exigida por `obedecer` + artigo definido `as` determinando ordens específicas).
 - `Obedecia a ordens.` (Sem crase, singular: apenas preposição `a` exigida por `obedecer` + ausência de artigo, generalizando para quaisquer ordens).
 
-### Exceções ou limites
+#### Exceções ou limites
 Se a palavra plural subsequente for um pronome que repele terminantemente o artigo (como pronomes indefinidos: *várias*, *muitas*, *algumas*), a opção com crase (`às`) torna-se proibida, restando apenas a preposição simples `a`.
 
 ---
 
-## Impactos da Alternância de Formas em Propostas de Reescritura Textual
+### Impactos da Alternância de Formas em Propostas de Reescritura Textual
 
-### Definição ou ideia central
+#### Definição ou ideia central
 A substituição da estrutura com crase no plural (`às + substantivo`) pela estrutura com preposição isolada no singular (`a + substantivo plural`) — e vice-versa — possui três consequências avaliadas distintamente pelas bancas: preservação da correção gramatical, alteração do sentido semântico e manutenção da coerência textual.
 
-### Explicação detalhada
+#### Explicação detalhada
 Em itens de prova que indagam sobre a troca entre `às [palavras]` e `a [palavras]`:
 1. **Correção Gramatical:** **Mantém-se**. Ambas as construções são plenamente aceitas pela norma culta da língua portuguesa.
 2. **Sentido / Semântica:** **Altera-se**. A troca de `às` por `a` modifica o valor semântico de *específico/determinado* para *geral/indeterminado* (quaisquer).
@@ -574,164 +572,166 @@ Resolução manuscrita no esquemas do item 4:
 
 ---
 
+```
+
 ---
 
 ## Roteiros de resolução
 
-## Método Operacional do Termo Masculino ("Teste do Menino")
+### Método Operacional do Termo Masculino ("Teste do Menino")
 
-### Finalidade
+#### Finalidade
 Verificar se o termo regente (verbo ou nome) exige a preposição `a` no contexto específico da oração sob análise (Passo 1 do método).
 
-### Passo a passo
+#### Passo a passo
 1. Localize a palavra feminina que se encontra após a lacuna ou sob suspeita de receber crase.
 2. Troque mentalmente essa palavra feminina por um substantivo masculino singular equivalente ou pelo termo padrão **"menino"** (ou "curso", "encontro", etc.).
 3. Observe como a regência se comporta diante do masculino:
- - Se surgir a combinação **"ao"** (*a* preposição + *o* artigo), fica provado que o regente **exige a preposição `a`**.
- - Se surgir apenas o artigo **"o"** (ou se não houver preposição `a`), fica provado que o regente **não exige preposição `a`** (ex.: verbo transitivo direto).
+  - Se surgir a combinação **"ao"** (*a* preposição + *o* artigo), fica provado que o regente **exige a preposição `a`**.
+  - Se surgir apenas o artigo **"o"** (ou se não houver preposição `a`), fica provado que o regente **não exige preposição `a`** (ex.: verbo transitivo direto).
 
-### Exemplo de aplicação
+#### Exemplo de aplicação
 - *Obedeceu ___ vontade:* substitui-se por *menino* $\rightarrow$ "Obedeceu **ao** menino". Houve "ao", logo o verbo pede a preposição `a`.
 - *Viu ___ menina:* substitui-se por *menino* $\rightarrow$ "Viu **o** menino" (e não "viu ao menino"). Houve apenas "o", logo o verbo não pede preposição (VTD); portanto, a frase fica "Viu a menina" (sem crase).
 
 ---
 
-## Método de Validação de Aceitação de Artigo Feminino ("Teste do Sujeito")
+### Método de Validação de Aceitação de Artigo Feminino ("Teste do Sujeito")
 
-### Finalidade
+#### Finalidade
 Verificar se o substantivo feminino seguinte aceita a anteposição de artigo definido feminino (Passo 2 do método).
 
-### Passo a passo
+#### Passo a passo
 1. Isole o substantivo feminino que sucede a preposição.
 2. Crie uma frase declarativa simples na qual esse substantivo funcione como **núcleo do sujeito** no início da oração.
 3. Observe a necessidade natural do artigo:
- - Se a frase exigir o artigo `A` para soar gramatical e natural (*A [palavra] é boa/importante*), o termo aceita artigo definido.
+  - Se a frase exigir o artigo `A` para soar gramatical e natural (*A [palavra] é boa/importante*), o termo aceita artigo definido.
 
-### Exemplo de aplicação
+#### Exemplo de aplicação
 - Para avaliar a palavra *vontade* em *Obedeceu à vontade:*
  Formulação: "**A** vontade dos pais é importante." $\rightarrow$ O artigo `A` foi admitido naturalmente.
  Conclusão: Havendo preposição (Passo 1) e havendo artigo (Passo 2), o acento grave é obrigatório.
 
 ---
 
-## Procedimento de Resolução e Justificativa de Crase em Questões
+### Procedimento de Resolução e Justificativa de Crase em Questões
 
-### Finalidade
+#### Finalidade
 Identificar e classificar a regra exata de crase para itens de múltipla escolha ou discursivos.
 
-### Passo a passo
+#### Passo a passo
 1. **Passo 1 (Sublinhar o Regente):** Localize e sublinhe o verbo ou nome anterior que rege a estrutura. Aplique o *Teste do Menino* para comprovar a preposição `a`.
 2. **Passo 2 (Analisar o Termo Consequente):**
- - Se for um **substantivo feminino comum/próprio:** aplique o *Teste do Sujeito* ou o *Teste do Voltar*. Confirmando-se o artigo `a(s)`, classifique como **Código 1 (Preposição + Artigo)**.
- - Se for o pronome **aquele(s), aquela(s), aquilo:** confirme a fusão na vogal inicial do pronome e classifique como **Código 2a (Preposição + Demonstrativo Aquele/a/o)**.
- - Se for um **`a` antes de `que` ou `de`:** faça o teste de substituição por `aquela`. Confirmando-se a equivalência demonstrativa, classifique como **Código 2b (Preposição + Pronome Demonstrativo `a`)**.
- - Se for o pronome relativo **a qual / as quais:** confirme a regência da oração subordinada e classifique como **Código 3 (Preposição + Pronome Relativo `a qual`)**.
+  - Se for um **substantivo feminino comum/próprio:** aplique o *Teste do Sujeito* ou o *Teste do Voltar*. Confirmando-se o artigo `a(s)`, classifique como **Código 1 (Preposição + Artigo)**.
+  - Se for o pronome **aquele(s), aquela(s), aquilo:** confirme a fusão na vogal inicial do pronome e classifique como **Código 2a (Preposição + Demonstrativo Aquele/a/o)**.
+  - Se for um **`a` antes de `que` ou `de`:** faça o teste de substituição por `aquela`. Confirmando-se a equivalência demonstrativa, classifique como **Código 2b (Preposição + Pronome Demonstrativo `a`)**.
+  - Se for o pronome relativo **a qual / as quais:** confirme a regência da oração subordinada e classifique como **Código 3 (Preposição + Pronome Relativo `a qual`)**.
 
 ---
-## Procedimento Analítico em Dois Passos para Verificação de Crase
+### Procedimento Analítico em Dois Passos para Verificação de Crase
 
-### Objetivo
+#### Objetivo
 Determinar com certeza absoluta se o `a` que antecede um termo deve receber acento indicativo de crase em qualquer frase de concurso.
 
-### Sequência passo a passo
+#### Sequência passo a passo
 1. **Passo 1 (Olhar para a esquerda / Termo Regente):**
 
- - Analisar a regência: esse termo exige a preposição `a`?
- - *Teste de apoio:* Substituir o complemento por um termo masculino genérico (ex.: *ao menino*). Se der *ao*, a preposição `a` está confirmada.
+  - Analisar a regência: esse termo exige a preposição `a`?
+  - *Teste de apoio:* Substituir o complemento por um termo masculino genérico (ex.: *ao menino*). Se der *ao*, a preposição `a` está confirmada.
 2. **Passo 2 (Olhar para a direita / Termo Regido):**
- - Analisar o termo posterior: trata-se de palavra feminina que admite o artigo definido feminino `a/as`?
- - Verificar se há fatores de proibição de artigo (palavra masculina, verbo, pronome indefinido, pronome demonstrativo *este/esse*, artigo indefinido *um/uma*, nome de lugar que rejeita artigo).
- - *Teste de apoio para termos duvidosos:* Criar uma frase iniciando pelo termo para ver se aceita o artigo `A` (ex.: *"A qualquer realidade é boa"* $\rightarrow$ agramatical $\rightarrow$ não aceita artigo).
+  - Analisar o termo posterior: trata-se de palavra feminina que admite o artigo definido feminino `a/as`?
+  - Verificar se há fatores de proibição de artigo (palavra masculina, verbo, pronome indefinido, pronome demonstrativo *este/esse*, artigo indefinido *um/uma*, nome de lugar que rejeita artigo).
+  - *Teste de apoio para termos duvidosos:* Criar uma frase iniciando pelo termo para ver se aceita o artigo `A` (ex.: *"A qualquer realidade é boa"* $\rightarrow$ agramatical $\rightarrow$ não aceita artigo).
 3. **Decisão / Conclusão:**
- - Preposição `A` $+$ Artigo `A` $=$ **Crase obrigatória (`À`)**.
- - Preposição `A` $+$ Ausência de Artigo $=$ **Apenas preposição (`A` sem acento)**.
- - Ausência de Preposição $+$ Artigo `A` $=$ **Apenas artigo (`A` sem acento)**.
+  - Preposição `A` $+$ Artigo `A` $=$ **Crase obrigatória (`À`)**.
+  - Preposição `A` $+$ Ausência de Artigo $=$ **Apenas preposição (`A` sem acento)**.
+  - Ausência de Preposição $+$ Artigo `A` $=$ **Apenas artigo (`A` sem acento)**.
 
 ---
 
-## Verificação de Paralelismo em Estruturas Correlativas
+### Verificação de Paralelismo em Estruturas Correlativas
 
-### Objetivo
+#### Objetivo
 Identificar se expressões correlativas temporais ou estruturais devem ou não receber crase no segundo termo.
 
-### Sequência passo a passo
+#### Sequência passo a passo
 1. Observar a formação do primeiro termo correlato:
- - Se estiver com preposição simples `de` (sem artigo): o segundo termo obrigatoriamente terá preposição simples `a` $\rightarrow$ **Sem crase** (*de segunda a sexta*, *de 8h a 18h*).
- - Se estiver com preposição combinada `da` (`de + a`): o segundo termo obrigatoriamente terá preposição contraída com artigo `à` (`a + a`) $\rightarrow$ **Com crase** (*da terça à sexta*, *das 8h às 18h*).
+  - Se estiver com preposição simples `de` (sem artigo): o segundo termo obrigatoriamente terá preposição simples `a` $\rightarrow$ **Sem crase** (*de segunda a sexta*, *de 8h a 18h*).
+  - Se estiver com preposição combinada `da` (`de + a`): o segundo termo obrigatoriamente terá preposição contraída com artigo `à` (`a + a`) $\rightarrow$ **Com crase** (*da terça à sexta*, *das 8h às 18h*).
 
 ---
 
-## Teste de Nomes de Lugar (Topônimos) com Verbo Voltar
+### Teste de Nomes de Lugar (Topônimos) com Verbo Voltar
 
-### Objetivo
+#### Objetivo
 Verificar se um nome de cidade, estado ou país admite artigo definido feminino.
 
-### Sequência passo a passo
+#### Sequência passo a passo
 1. Formular uma oração com o verbo *voltar* associado ao topônimo em análise:
- - Se a construção resultante for **"Voltei de [Lugar]"**: o topônimo rejeita artigo $\rightarrow$ a ida será **"Fui a [Lugar]"** (sem crase).
- - Se a construção resultante for **"Voltei da [Lugar]"**: o topônimo admite artigo $\rightarrow$ a ida será **"Fui à [Lugar]"** (com crase).
+  - Se a construção resultante for **"Voltei de [Lugar]"**: o topônimo rejeita artigo $\rightarrow$ a ida será **"Fui a [Lugar]"** (sem crase).
+  - Se a construção resultante for **"Voltei da [Lugar]"**: o topônimo admite artigo $\rightarrow$ a ida será **"Fui à [Lugar]"** (com crase).
 2. **Checagem de Determinante:**
- - O topônimo possui termo adjetivo/especificador restritivo associado (ex.: *Londres dos meus sonhos*, *São Paulo da garoa*)?
- - Se sim, o artigo torna-se obrigatório (*Voltei da Londres dos meus sonhos*) $\rightarrow$ **Crase obrigatória** (*Fui à Londres dos meus sonhos*).
+  - O topônimo possui termo adjetivo/especificador restritivo associado (ex.: *Londres dos meus sonhos*, *São Paulo da garoa*)?
+  - Se sim, o artigo torna-se obrigatório (*Voltei da Londres dos meus sonhos*) $\rightarrow$ **Crase obrigatória** (*Fui à Londres dos meus sonhos*).
 
 ---
-## Passo 1: Teste de Regência pelo Substantivo Masculino ("Menino" / "Clube")
+### Passo 1: Teste de Regência pelo Substantivo Masculino ("Menino" / "Clube")
 
-### Objetivo
+#### Objetivo
 Identificar de forma inequívoca se o termo regente (verbo ou nome) exige a preposição `a`.
 
-### Pré-requisitos
+#### Pré-requisitos
 Identificar o verbo ou nome que se conecta ao termo feminino sob análise.
 
-### Sequência passo a passo
+#### Sequência passo a passo
 1. Localize o termo regente na frase (ex.: *direito*, *obedecer*, *referir-se*, *retornar*).
 2. Substitua o termo feminino regido por um substantivo masculino genérico no singular, preferencialmente `menino`. Caso o contexto semântico fique estranho com `menino`, utilize outro termo masculino como `clube` ou `trabalho`.
 3. Observe a preposição/combinação resultante:
- - Se surgir **`ao`** (`ao menino` / `ao clube`), fica ratificada a exigência da preposição **`a`**.
- - Se surgir apenas **`o`** (`o menino` / `o clube`), o termo rege objeto direto/não pede preposição `a` (crase descartada).
+  - Se surgir **`ao`** (`ao menino` / `ao clube`), fica ratificada a exigência da preposição **`a`**.
+  - Se surgir apenas **`o`** (`o menino` / `o clube`), o termo rege objeto direto/não pede preposição `a` (crase descartada).
 4. Se o candidato já tiver pleno domínio da regência daquele termo, a substituição por `menino` torna-se dispensável.
 
-### Validação do resultado
+#### Validação do resultado
 - *O juiz reconheceu o direito [ao menino]* -> Surgiu `ao` -> Termo *direito* rege preposição `a`.
 - *O juiz retornou [ao clube]* -> Surgiu `ao` -> Verbo *retornar* rege preposição `a`.
 
 ---
 
-## Passo 2A: Teste de Aceitação de Artigo para Substantivos Comuns
+### Passo 2A: Teste de Aceitação de Artigo para Substantivos Comuns
 
-### Objetivo
+#### Objetivo
 Verificar se o termo regido feminino admite artigo definido `a`.
 
-### Sequência passo a passo
+#### Sequência passo a passo
 1. Isole a palavra feminina que vem após a preposição (ex.: *terra*, *escola*, *empresa*).
 2. Elabore mentalmente ou no rascunho uma oração independente iniciando por essa palavra na função sintática de **sujeito**.
 3. Verifique se a anteposição do artigo `a` é gramatical:
- - Exemplo: *A terra é boa.* / *A escola é conceituada.*
+  - Exemplo: *A terra é boa.* / *A escola é conceituada.*
 4. Se a sentença com o artigo `A` inicial for natural e correta, conclui-se que o termo admite artigo.
 5. Combine o resultado com o Passo 1: `Preposição A + Artigo A = À` (com acento grave).
 
 ---
 
-## Passo 2B: Teste de Aceitação de Artigo para Topônimos (Regra do Voltar)
+### Passo 2B: Teste de Aceitação de Artigo para Topônimos (Regra do Voltar)
 
-### Objetivo
+#### Objetivo
 Determinar a presença ou ausência de artigo definido antes de nomes próprios de lugar.
 
-### Sequência passo a passo
+#### Sequência passo a passo
 1. Isole o topônimo (ex.: *Brasília*, *Itália*, *França*, *Curitiba*).
 2. Construa uma oração com o verbo **voltar**:
- - Se a construção resultar em **`Volto DA`** ou **`Voltei DA`**: o lugar admite artigo feminino (`de + a = da`).
- - Conclusão: Havendo preposição `a` no termo regente, **ocorre crase** (`à`).
- - Se a construção resultar em **`Volto DE`** ou **`Voltei DE`**: o lugar repele artigo (apenas preposição `de`).
- - Conclusão: Havendo preposição `a` no termo regente, **não ocorre crase** (apenas `a` simples).
+  - Se a construção resultar em **`Volto DA`** ou **`Voltei DA`**: o lugar admite artigo feminino (`de + a = da`).
+  - Conclusão: Havendo preposição `a` no termo regente, **ocorre crase** (`à`).
+  - Se a construção resultar em **`Volto DE`** ou **`Voltei DE`**: o lugar repele artigo (apenas preposição `de`).
+  - Conclusão: Havendo preposição `a` no termo regente, **não ocorre crase** (apenas `a` simples).
 
 ---
-## Algoritmo de Validação de Crase Antes de Palavras no Plural
+### Algoritmo de Validação de Crase Antes de Palavras no Plural
 
-### Objetivo
+#### Objetivo
 Julgar com precisão se a ocorrência de crase ou preposição antes de um substantivo no plural é correta ou incorreta, e justificar seu valor semântico.
 
-### Passo a passo
+#### Passo a passo
 
 ```text
 [Início: Frase com termo regente + 'a'/'à'/'às'/'as' + substantivo plural]
@@ -762,185 +762,183 @@ Espec.) Geral) antes de plural) faltou prep.)
 
 1. **Passo 1 — Teste de Regência:** Examine o termo anterior (verbo ou nome). Troque o complemento por um masculino singular (ex: `ao menino`). Se exigir `ao`, o regente pede a preposição `a`.
 2. **Passo 2 — Teste de Artigo e Grafia:** Observe a estrutura diante do substantivo plural:
- - Se estiver grafado **`às`**: Representa `preposição A + artigo AS`. É **correto** e tem sentido **específico**.
- - Se estiver grafado **`a`** (singular, sem acento): Representa **apenas a preposição `A`** (sem artigo). É **correto** e tem sentido **geral/indeterminado** (quaisquer).
- - Se estiver grafado **`à`** (singular, com acento grave): É **terminantemente incorreto** (crase no singular antes de plural).
- - Se estiver grafado **`as`** (plural, sem acento): É **terminantemente incorreto** (falta a preposição obrigatória de regência).
-
----
+  - Se estiver grafado **`às`**: Representa `preposição A + artigo AS`. É **correto** e tem sentido **específico**.
+  - Se estiver grafado **`a`** (singular, sem acento): Representa **apenas a preposição `A`** (sem artigo). É **correto** e tem sentido **geral/indeterminado** (quaisquer).
+  - Se estiver grafado **`à`** (singular, com acento grave): É **terminantemente incorreto** (crase no singular antes de plural).
+  - Se estiver grafado **`as`** (plural, sem acento): É **terminantemente incorreto** (falta a preposição obrigatória de regência).
 
 ---
 
 ## Exemplos comentados
 
-## Exercício 1: Concorrer à presidência
+### Exercício 1: Concorrer à presidência
 
 - **Texto sob análise:** "O senador manifestou o desejo de concorrer à presidência."
 - **Análise passo a passo:**
- - *Passo 1 (Regência):* Quem concorre, concorre *a* algum cargo (concorre *ao* cargo / *ao* menino) $\rightarrow$ exige preposição `a`.
- - *Passo 2 (Artigo):* "*A* presidência é um cargo importante" $\rightarrow$ aceita artigo feminino `a`.
+  - *Passo 1 (Regência):* Quem concorre, concorre *a* algum cargo (concorre *ao* cargo / *ao* menino) $\rightarrow$ exige preposição `a`.
+  - *Passo 2 (Artigo):* "*A* presidência é um cargo importante" $\rightarrow$ aceita artigo feminino `a`.
 - **Justificativa e Classificação:** Ocorre a fusão da preposição `a` exigida pelo verbo *concorrer* com o artigo definido feminino `a` admitido pelo substantivo *presidência*.
 - **Código atribuído:** **Código 1** (Preposição + Artigo).
 
 ---
 
-## Exercício 2: Favorável às tarefas manuais
+### Exercício 2: Favorável às tarefas manuais
 
 - **Texto sob análise:** "Era favorável às tarefas manuais."
 - **Análise passo a passo:**
- - *Passo 1 (Regência):* O adjetivo *favorável* possui regência nominal e exige preposição `a` (quem é favorável, é favorável *a* algo / *ao* projeto / *ao* menino).
- - *Passo 2 (Artigo):* "*As* tarefas manuais são boas" $\rightarrow$ aceita artigo definido feminino plural `as`.
+  - *Passo 1 (Regência):* O adjetivo *favorável* possui regência nominal e exige preposição `a` (quem é favorável, é favorável *a* algo / *ao* projeto / *ao* menino).
+  - *Passo 2 (Artigo):* "*As* tarefas manuais são boas" $\rightarrow$ aceita artigo definido feminino plural `as`.
 - **Justificativa e Classificação:** Fusão da preposição `a` exigida pelo adjetivo *favorável* com o artigo feminino plural `as` admitido por *tarefas*.
 - **Código atribuído:** **Código 1** (Preposição + Artigo).
 
 ---
 
-## Exercício 3: Discursou favoravelmente à proposta
+### Exercício 3: Discursou favoravelmente à proposta
 
 - **Texto sob análise:** "Discursou favoravelmente à proposta."
 - **Análise passo a passo:**
- - *Passo 1 (Regência):* O advérbio *favoravelmente* exige preposição `a` (discursou favoravelmente *ao* projeto / *ao* menino).
- - *Passo 2 (Artigo):* "*A* proposta foi boa" $\rightarrow$ aceita artigo definido feminino `a`.
+  - *Passo 1 (Regência):* O advérbio *favoravelmente* exige preposição `a` (discursou favoravelmente *ao* projeto / *ao* menino).
+  - *Passo 2 (Artigo):* "*A* proposta foi boa" $\rightarrow$ aceita artigo definido feminino `a`.
 - **Justificativa e Classificação:** Fusão da preposição `a` exigida pelo advérbio *favoravelmente* com o artigo feminino `a` que acompanha o substantivo *proposta*.
 - **Código atribuído:** **Código 1** (Preposição + Artigo).
 
 ---
 
-## Exercício 4: Aludiu àquele escritor
+### Exercício 4: Aludiu àquele escritor
 
 - **Texto sob análise:** "A abordagem didática aludiu àquele escritor."
 - **Análise passo a passo:**
- - *Passo 1 (Regência):* O verbo transitivo indireto *aludir* exige preposição `a` (quem alude, alude *a* algo / *ao* menino).
- - *Passo 2 (Demonstrativo):* O pronome demonstrativo *aquele* inicia-se com a vogal `a`.
+  - *Passo 1 (Regência):* O verbo transitivo indireto *aludir* exige preposição `a` (quem alude, alude *a* algo / *ao* menino).
+  - *Passo 2 (Demonstrativo):* O pronome demonstrativo *aquele* inicia-se com a vogal `a`.
 - **Justificativa e Classificação:** Fusão da preposição `a` exigida por *aludiu* com a vogal inicial `a` do pronome demonstrativo *aquele* ($a + aquele = àquele$).
 - **Código atribuído:** **Código 2a** (Preposição + Pronome Demonstrativo Aquele).
 
 ---
 
-## Exercício 5: Pedisse desculpas à irmã
+### Exercício 5: Pedisse desculpas à irmã
 
 - **Texto sob análise:** "O pai fez com que pedisse desculpas à irmã."
 - **Análise passo a passo:**
- - *Passo 1 (Regência):* Quem pede desculpas, pede desculpas *a* alguém (*ao* irmão / *ao* menino) $\rightarrow$ exige preposição `a`.
- - *Passo 2 (Artigo):* "*A* irmã é legal" $\rightarrow$ aceita artigo definido feminino `a`.
+  - *Passo 1 (Regência):* Quem pede desculpas, pede desculpas *a* alguém (*ao* irmão / *ao* menino) $\rightarrow$ exige preposição `a`.
+  - *Passo 2 (Artigo):* "*A* irmã é legal" $\rightarrow$ aceita artigo definido feminino `a`.
 - **Justificativa e Classificação:** Fusão da preposição `a` com o artigo definido feminino `a`.
 - **Código atribuído:** **Código 1** (Preposição + Artigo).
 
 ---
 
-## Exercício 6: Cheguei à conclusão
+### Exercício 6: Cheguei à conclusão
 
 - **Texto sob análise:** "Cheguei à conclusão de que a única doença que eu não tinha era diabetes."
 - **Análise passo a passo:**
- - *Passo 1 (Regência):* O verbo *chegar* exige preposição `a` indicando termo regido de destino/conclusão (cheguei *ao* resultado / *ao* curso / *ao* menino).
- - *Passo 2 (Artigo):* "*A* conclusão foi boa" $\rightarrow$ aceita artigo feminino `a`.
+  - *Passo 1 (Regência):* O verbo *chegar* exige preposição `a` indicando termo regido de destino/conclusão (cheguei *ao* resultado / *ao* curso / *ao* menino).
+  - *Passo 2 (Artigo):* "*A* conclusão foi boa" $\rightarrow$ aceita artigo feminino `a`.
 - **Justificativa e Classificação:** Fusão da preposição `a` exigida pelo verbo *chegar* com o artigo `a` de *conclusão*.
 - **Código atribuído:** **Código 1** (Preposição + Artigo).
 
 ---
 
-## Exercício 7: Dão verdadeira consistência à vida
+### Exercício 7: Dão verdadeira consistência à vida
 
 - **Texto sob análise:** "As datas dão verdadeira consistência à vida."
 - **Análise passo a passo:**
- - *Passo 1 (Regência):* Quem dá consistência, dá consistência *a* algo / *ao* projeto / *ao* menino $\rightarrow$ exige preposição `a`.
- - *Passo 2 (Artigo):* "*A* vida é boa" $\rightarrow$ aceita artigo feminino `a`.
+  - *Passo 1 (Regência):* Quem dá consistência, dá consistência *a* algo / *ao* projeto / *ao* menino $\rightarrow$ exige preposição `a`.
+  - *Passo 2 (Artigo):* "*A* vida é boa" $\rightarrow$ aceita artigo feminino `a`.
 - **Justificativa e Classificação:** Fusão da preposição `a` com o artigo feminino `a` do substantivo *vida*.
 - **Código atribuído:** **Código 1** (Preposição + Artigo).
 
 ---
 
-## Exercício 8: Dedicar-se à religião
+### Exercício 8: Dedicar-se à religião
 
 - **Texto sob análise:** "Muitas pessoas conseguem se dedicar à religião."
 - **Análise passo a passo:**
- - *Passo 1 (Regência):* O verbo pronominal *dedicar-se* exige preposição `a` (quem se dedica, dedica-se *a* algo / *ao* trabalho / *ao* menino).
- - *Passo 2 (Artigo):* "*A* religião é importante" $\rightarrow$ aceita artigo feminino `a`.
+  - *Passo 1 (Regência):* O verbo pronominal *dedicar-se* exige preposição `a` (quem se dedica, dedica-se *a* algo / *ao* trabalho / *ao* menino).
+  - *Passo 2 (Artigo):* "*A* religião é importante" $\rightarrow$ aceita artigo feminino `a`.
 - **Justificativa e Classificação:** Fusão da preposição `a` com o artigo feminino `a`.
 - **Código atribuído:** **Código 1** (Preposição + Artigo).
 
 ---
 
-## Exemplo Topônimo: Vou a Brasília vs. Vou à Bahia
+### Exemplo Topônimo: Vou a Brasília vs. Vou à Bahia
 
 - **Contexto:** Comparação do comportamento do acento grave diante de topônimos pelo teste do *Voltar*.
 - **Desenvolvimento:**
- - *Vou a Brasília:* Volto **de** Brasília $\rightarrow$ preposição *de* pura, sem artigo $\rightarrow$ sem crase.
- - *Vou à Bahia:* Volto **da** Bahia $\rightarrow$ preposição *de* + artigo *a* ($da$) $\rightarrow$ com crase ($a \text{ [prep.]} + a \text{ [artigo]} = \text{à}$).
+  - *Vou a Brasília:* Volto **de** Brasília $\rightarrow$ preposição *de* pura, sem artigo $\rightarrow$ sem crase.
+  - *Vou à Bahia:* Volto **da** Bahia $\rightarrow$ preposição *de* + artigo *a* ($da$) $\rightarrow$ com crase ($a \text{ [prep.]} + a \text{ [artigo]} = \text{à}$).
 
 ---
 
-## Exercício 9: Associado àquilo
+### Exercício 9: Associado àquilo
 
 - **Texto sob análise:** "Não mais queria ser associado àquilo."
 - **Análise passo a passo:**
- - *Passo 1 (Regência):* O adjetivo/particípio *associado* possui regência nominal e exige preposição `a` (quem está associado, está associado *a* algo / *ao* projeto / *ao* menino).
- - *Passo 2 (Demonstrativo):* O pronome demonstrativo neutro *aquilo* começa com a letra `a`.
+  - *Passo 1 (Regência):* O adjetivo/particípio *associado* possui regência nominal e exige preposição `a` (quem está associado, está associado *a* algo / *ao* projeto / *ao* menino).
+  - *Passo 2 (Demonstrativo):* O pronome demonstrativo neutro *aquilo* começa com a letra `a`.
 - **Justificativa e Classificação:** Fusão da preposição `a` exigida por *associado* com o `a` inicial do pronome demonstrativo *aquilo*.
 - **Código atribuído:** **Código 2a** (Preposição + Pronome Demonstrativo Aquilo).
 
 ---
 
-## Exemplo Demonstrativo: Chegou àquele encontro
+### Exemplo Demonstrativo: Chegou àquele encontro
 
 - **Texto sob análise:** "Chegou àquele encontro no horário certo."
 - **Desenvolvimento:** O verbo *chegar* exige preposição `a` (chegou *ao* local). O pronome *aquele* inicia-se com `a`. Fusão: $a + aquele = àquele$.
 
 ---
 
-## Exemplo Demonstrativo: Dirigiu-se àquelas pessoas
+### Exemplo Demonstrativo: Dirigiu-se àquelas pessoas
 
 - **Texto sob análise:** "Dirigiu-se àquelas pessoas em tom emocionado."
 - **Desenvolvimento:** O verbo *dirigir-se* exige preposição `a` (dirigiu-se *ao* menino). O pronome demonstrativo *aquelas* inicia-se com `a`. Fusão: $a + aquelas = àquelas$.
 
 ---
 
-## Exercício 10: Refiro-me à que chegou de branco
+### Exercício 10: Refiro-me à que chegou de branco
 
 - **Texto sob análise:** "Refiro-me à que chegou de branco."
 - **Análise passo a passo:**
- - *Passo 1 (Regência):* O verbo pronominal *referir-se* exige preposição `a` (quem se refere, refere-se *a* alguém / *ao* menino).
- - *Passo 2 (Demonstrativo Elíptico):* O termo `a` antes do conectivo `que` equivale ao pronome demonstrativo *aquela* ("Refiro-me *àquela* que chegou de branco").
+  - *Passo 1 (Regência):* O verbo pronominal *referir-se* exige preposição `a` (quem se refere, refere-se *a* alguém / *ao* menino).
+  - *Passo 2 (Demonstrativo Elíptico):* O termo `a` antes do conectivo `que` equivale ao pronome demonstrativo *aquela* ("Refiro-me *àquela* que chegou de branco").
 - **Justificativa e Classificação:** Fusão da preposição `a` exigida pelo verbo com o pronome demonstrativo `a` (= aquela) antecedendo o pronome relativo `que`.
 - **Código atribuído:** **Código 2b** (Preposição + Pronome Demonstrativo `a` antes de *que/de*).
 
 ---
 
-## Exemplo Demonstrativo: Vestia uma camisa igual à do irmão
+### Exemplo Demonstrativo: Vestia uma camisa igual à do irmão
 
 - **Texto sob análise:** "Vestia uma camisa igual à do irmão."
 - **Desenvolvimento:** O adjetivo *igual* exige preposição `a` (igual *ao* casaco / *ao* modelo). O vocábulo `a` antes de `do irmão` funciona como pronome demonstrativo elíptico substituindo a palavra *camisa* (vestia uma camisa igual *àquela* do irmão). Fusão: $a \text{ (prep.)} + a \text{ (pron. dem.)} = à$.
 
 ---
 
-## Exemplo Demonstrativo: Obedeceu à que estava de blusa azul
+### Exemplo Demonstrativo: Obedeceu à que estava de blusa azul
 
 - **Texto sob análise:** "Obedeceu à que estava de blusa azul."
 - **Desenvolvimento:** *Obedeceu* exige preposição `a` (obedeceu *ao* menino). O `a` antes de *que* equivale a *aquela* ("Obedeceu *àquela* que estava de blusa azul"). Ocorre crase pela regra 2b.
 
 ---
 
-## Exemplo Relativo: Essa é uma questão à qual o governo deveria dar mais atenção
+### Exemplo Relativo: Essa é uma questão à qual o governo deveria dar mais atenção
 
 - **Texto sob análise:** "Essa é uma questão à qual o governo deveria dar mais atenção."
 - **Desenvolvimento:** Na oração subordinada, a locução "dar atenção" exige preposição `a` (dar atenção *a* algo / *ao* assunto). O pronome relativo antecedente é feminino singular (*a qual*). Fusão: $a \text{ (preposição de 'dar atenção')} + a \text{ qual (relativo)} = \text{à qual}$.
 
 ---
 
-## Contraexemplo Relativo: A mulher a quem obedeço vs. A mulher à qual obedeço
+### Contraexemplo Relativo: A mulher a quem obedeço vs. A mulher à qual obedeço
 
 - **Comparação:**
- - *A mulher a quem obedeço chegou:* o verbo *obedecer* pede preposição `a`. Porém, o pronome relativo *quem* não aceita artigo. Há apenas uma vogal `a` (preposição); logo, **crase proibida** (`a quem`).
- - *A mulher à qual obedeço chegou:* o verbo *obedecer* pede preposição `a`. O pronome *a qual* já traz embutido o artigo `a`. Ocorrem duas vogais `a`; logo, **crase obrigatória** (`à qual`).
+  - *A mulher a quem obedeço chegou:* o verbo *obedecer* pede preposição `a`. Porém, o pronome relativo *quem* não aceita artigo. Há apenas uma vogal `a` (preposição); logo, **crase proibida** (`a quem`).
+  - *A mulher à qual obedeço chegou:* o verbo *obedecer* pede preposição `a`. O pronome *a qual* já traz embutido o artigo `a`. Ocorrem duas vogais `a`; logo, **crase obrigatória** (`à qual`).
 
 ---
-## Exercício de Fixação 01 (Medicina útil a alguns homens)
+### Exercício de Fixação 01 (Medicina útil a alguns homens)
 
-### Enunciado e dados
+#### Enunciado e dados
 Completar a lacuna com *a, à, as* ou *às*:
 *"Não contesto que a medicina seja útil _____ alguns homens."*
 
-### Resolução comentada
+#### Resolução comentada
 - **Passo 1 (Termo regente):** O adjetivo *útil* rege a preposição `a` (*quem é útil é útil a alguém / útil ao menino*).
 - **Passo 2 (Termo regido):** O pronome/substantivo seguinte é *alguns homens*, vocábulo masculino plural. Palavras masculinas não aceitam artigo definido feminino.
 - **Resultado:** O `a` presente é apenas preposição simples.
@@ -948,13 +946,13 @@ Completar a lacuna com *a, à, as* ou *às*:
 
 ---
 
-## Exercício de Fixação 02 (Genes associados à inflamação)
+### Exercício de Fixação 02 (Genes associados à inflamação)
 
-### Enunciado e dados
+#### Enunciado e dados
 Completar a lacuna com *a, à, as* ou *às*:
 *"A pesquisa mostrou os genes ativos associados _____ inflamação."*
 
-### Resolução comentada
+#### Resolução comentada
 - **Passo 1 (Termo regente):** O particípio/adjetivo *associados* rege a preposição `a` (*associados ao menino*).
 - **Passo 2 (Termo regido):** *Inflamação* é substantivo feminino singular que admite artigo definido (*A inflamação é grave*).
 - **Resultado:** Ocorre o Fenômeno Fonético (Preposição `a` $+$ Artigo `a`).
@@ -962,13 +960,13 @@ Completar a lacuna com *a, à, as* ou *às*:
 
 ---
 
-## Exercício de Fixação 03 (Submetidas à prepotente teoria)
+### Exercício de Fixação 03 (Submetidas à prepotente teoria)
 
-### Enunciado e dados
+#### Enunciado e dados
 Completar a lacuna com *a, à, as* ou *às*:
 *"Todas as áreas do conhecimento estão submetidas _____ prepotente teoria do achismo."*
 
-### Resolução comentada
+#### Resolução comentada
 - **Passo 1 (Termo regente):** *Submetidas* rege preposição `a` (*submetidas ao menino*).
 - **Passo 2 (Termo regido):** A expressão nominal tem como núcleo o substantivo feminino *teoria* acompanhado do adjetivo *prepotente*, aceitando artigo definido (*A prepotente teoria do achismo*).
 - **Resultado:** Fenômeno Fonético confirmado.
@@ -976,13 +974,13 @@ Completar a lacuna com *a, à, as* ou *às*:
 
 ---
 
-## Exercício de Fixação 04 (Disposta a fazer)
+### Exercício de Fixação 04 (Disposta a fazer)
 
-### Enunciado e dados
+#### Enunciado e dados
 Completar a lacuna com *a, à, as* ou *às*:
 *"Ela está disposta _____ fazer a decoração da festa em casa."*
 
-### Resolução comentada
+#### Resolução comentada
 - **Passo 1 (Termo regente):** *Disposta* rege preposição `a` (*disposta a algo*).
 - **Passo 2 (Termo regido):** *Fazer* é verbo no infinitivo. Verbos não aceitam artigo definido.
 - **Resultado:** O `a` é preposição isolada.
@@ -990,25 +988,25 @@ Completar a lacuna com *a, à, as* ou *às*:
 
 ---
 
-## Exercício de Fixação 05 (Dia a dia)
+### Exercício de Fixação 05 (Dia a dia)
 
-### Enunciado e dados
+#### Enunciado e dados
 Completar a lacuna com *a, à, as* ou *às*:
 *"Não cozinho no meu dia _____ dia."*
 
-### Resolução comentada
+#### Resolução comentada
 - **Análise:** Trata-se de expressão formada por palavras repetidas (*dia a dia*) e substantivos masculinos. Pelo princípio do paralelismo sintático, a ausência de artigo antes do primeiro vocábulo determina a ausência de artigo antes do segundo. O `a` é preposição simples.
 - **Resposta final:** `a` (sem acento indicativo de crase). Justificativa visual: circular `dia a dia` (palavras repetidas).
 
 ---
 
-## Exercício de Fixação 06 (Assistiram à cena)
+### Exercício de Fixação 06 (Assistiram à cena)
 
-### Enunciado e dados
+#### Enunciado e dados
 Completar a lacuna com *a, à, as* ou *às*:
 *"Assistiram _____ cena em silêncio."*
 
-### Resolução comentada
+#### Resolução comentada
 - **Passo 1 (Termo regente):** O verbo *assistir* no sentido de presenciar/ver é transitivo indireto e rege preposição `a` (*assistiram ao filme / ao menino*).
 - **Passo 2 (Termo regido):** *Cena* é substantivo feminino singular que admite artigo (*A cena foi emocionante*).
 - **Resultado:** Fusão de preposição `a` $+$ artigo `a` (Fenômeno Fonético).
@@ -1016,13 +1014,13 @@ Completar a lacuna com *a, à, as* ou *às*:
 
 ---
 
-## Exercício de Fixação 07 (Daqui a uma semana)
+### Exercício de Fixação 07 (Daqui a uma semana)
 
-### Enunciado e dados
+#### Enunciado e dados
 Completar a lacuna com *a, à, as* ou *às*:
 *"Espera-se que a greve termine daqui _____ uma semana."*
 
-### Resolução comentada
+#### Resolução comentada
 - **Passo 1 (Termo regente):** A locução temporal *daqui a* rege a preposição `a` indicando tempo futuro.
 - **Passo 2 (Termo regido):** O vocábulo *uma* atua como artigo indefinido / numeral. O artigo indefinido repele o artigo definido `a`.
 - **Resultado:** Apenas preposição `a`.
@@ -1030,13 +1028,13 @@ Completar a lacuna com *a, à, as* ou *às*:
 
 ---
 
-## Exercício de Fixação 08 (Foram a Londres)
+### Exercício de Fixação 08 (Foram a Londres)
 
-### Enunciado e dados
+#### Enunciado e dados
 Completar a lacuna com *a, à, as* ou *às*:
 *"Os cientistas foram _____ Londres conhecer a Universidade de Oxford."*
 
-### Resolução comentada
+#### Resolução comentada
 - **Passo 1 (Termo regente):** O verbo *ir* (*foram*) rege a preposição `a` para destinos (*foram a algum lugar*).
 - **Passo 2 (Termo regido):** *Londres* é topônimo que não admite artigo definido (*Voltei de Londres*, e não *Voltei da Londres*).
 - **Resultado:** O `a` é preposição isolada $\rightarrow$ sem crase.
@@ -1045,13 +1043,13 @@ Completar a lacuna com *a, à, as* ou *às*:
 
 ---
 
-## Exercício de Fixação 09 (Pedir apoio à escola)
+### Exercício de Fixação 09 (Pedir apoio à escola)
 
-### Enunciado e dados
+#### Enunciado e dados
 Completar a lacuna com *a, à, as* ou *às*:
 *"Os pais podem pedir apoio _____ escola."*
 
-### Resolução comentada
+#### Resolução comentada
 - **Passo 1 (Termo regente):** O verbo bitransitivo *pedir* rege objeto direto de coisa (*apoio*) e preposição `a` para o destinatário (*pedir apoio a alguém / ao menino*).
 - **Passo 2 (Termo regido):** *Escola* é substantivo feminino singular que admite artigo (*A escola é acolhedora*).
 - **Resultado:** Preposição `a` $+$ artigo `a` $=$ Fenômeno Fonético.
@@ -1059,70 +1057,70 @@ Completar a lacuna com *a, à, as* ou *às*:
 
 ---
 
-## Exercício de Fixação 10 (Visava a essa uniformização)
+### Exercício de Fixação 10 (Visava a essa uniformização)
 
-### Enunciado e dados
+#### Enunciado e dados
 Completar a lacuna com *a, à, as* ou *às*:
 *"A comissão visava _____ essa uniformização."*
 
-### Resolução comentada
+#### Resolução comentada
 - **Passo 1 (Termo regente):** O verbo *visar* no sentido de ter por objetivo/almejar é transitivo indireto e rege preposição `a` (*visava a algo / ao cargo*).
 - **Passo 2 (Termo regido):** O pronome demonstrativo *essa* não aceita artigo definido anteposto no padrão culto.
 - **Resultado:** O `a` é apenas preposição.
 - **Resposta final:** `a` (sem acento indicativo de crase). Justificativa visual: circular `essa` (pronome demonstrativo).
 
 ---
-## Aplicação Completa em Substantivo Comum (*Direito à Terra*)
+### Aplicação Completa em Substantivo Comum (*Direito à Terra*)
 
-### Contexto / Enunciado
+#### Contexto / Enunciado
 Análise da ocorrência de crase na oração: *"O juiz reconheceu o direito à terra."*
 
-### Desenvolvimento e aplicação dos passos
+#### Desenvolvimento e aplicação dos passos
 1. **Identificação do termo regente:** Substantivo `direito`.
- - *Teste do Passo 1:* *"O juiz reconheceu o direito ao menino."*
- - *Resultado 1:* Deu `ao` -> exige preposição `a`.
+  - *Teste do Passo 1:* *"O juiz reconheceu o direito ao menino."*
+  - *Resultado 1:* Deu `ao` -> exige preposição `a`.
 2. **Identificação do termo regido:** Substantivo comum `terra`.
- - *Teste do Passo 2:* *"A terra é boa."*
- - *Resultado 2:* Admite artigo definido feminino `a`.
+  - *Teste do Passo 2:* *"A terra é boa."*
+  - *Resultado 2:* Admite artigo definido feminino `a`.
 3. **Síntese:** `Preposição a + Artigo a = à`.
- - Grafia correta: *"O juiz reconheceu o direito à terra."*
+  - Grafia correta: *"O juiz reconheceu o direito à terra."*
 
 ---
 
-## Comparação de Topônimos: Brasília vs. Itália
+### Comparação de Topônimos: Brasília vs. Itália
 
-### Contexto / Enunciado
+#### Contexto / Enunciado
 Análise comparativa da ocorrência de crase nas sentenças:
 - Sentença A: *"O juiz retornou a/à Brasília."*
 - Sentença B: *"O juiz retornou a/à Itália."*
 
-### Desenvolvimento e resolução
+#### Desenvolvimento e resolução
 1. **Regência do verbo regente:** Quem retorna, retorna `a` (verificado via *"retornou ao clube"*). Preposição `a` confirmada para ambas as frases.
 2. **Análise de Brasília (Sentença A):**
- - Teste do voltar: *"Voltei DE Brasília."* (Usa-se `de`, logo não tem artigo).
- - Junção: `Preposição a + sem artigo = a`.
- - Forma correta: *"O juiz retornou a Brasília."* (sem crase).
+  - Teste do voltar: *"Voltei DE Brasília."* (Usa-se `de`, logo não tem artigo).
+  - Junção: `Preposição a + sem artigo = a`.
+  - Forma correta: *"O juiz retornou a Brasília."* (sem crase).
 3. **Análise de Itália (Sentença B):**
- - Teste do voltar: *"Voltei DA Itália."* (Usa-se `da`, logo tem artigo `a`).
- - Junção: `Preposição a + Artigo a = à`.
- - Forma correta: *"O juiz retornou à Itália."* (com crase).
+  - Teste do voltar: *"Voltei DA Itália."* (Usa-se `da`, logo tem artigo `a`).
+  - Junção: `Preposição a + Artigo a = à`.
+  - Forma correta: *"O juiz retornou à Itália."* (com crase).
 
 ---
-## Análise do Exemplo Introdutório: 'Dedicou-se a/às atividades lucrativas'
+### Análise do Exemplo Introdutório: 'Dedicou-se a/às atividades lucrativas'
 
 - **Construções analisadas:**
  1. `Ele dedicou-se a atividades lucrativas.`
  2. `Ele dedicou-se às atividades lucrativas.`
 - **Desenvolvimento e Justificativa:**
 
- - O substantivo `atividades` aceita o artigo `as` (`As atividades são lucrativas`) ou dispensa o artigo (`Atividades são lucrativas`).
- - Na construção 1 (`a atividades`), há apenas preposição `a`, conferindo sentido amplo/genérico (quaisquer atividades).
- - Na construção 2 (`às atividades`), há fusão de preposição `a` + artigo `as`, conferindo sentido restrito/determinado (aquelas atividades específicas).
+  - O substantivo `atividades` aceita o artigo `as` (`As atividades são lucrativas`) ou dispensa o artigo (`Atividades são lucrativas`).
+  - Na construção 1 (`a atividades`), há apenas preposição `a`, conferindo sentido amplo/genérico (quaisquer atividades).
+  - Na construção 2 (`às atividades`), há fusão de preposição `a` + artigo `as`, conferindo sentido restrito/determinado (aquelas atividades específicas).
 - **Conclusão:** Ambas as frases estão gramaticalmente corretas. A troca de uma pela outra altera o sentido, mas mantém a correção e a coerência.
 
 ---
 
-## Exercício 1: 'Dedicou sua vida a crianças abandonadas'
+### Exercício 1: 'Dedicou sua vida a crianças abandonadas'
 
 - **Frase:** `1. Dedicou sua vida a crianças abandonadas.`
 - **Gabarito / Julgamento:** **CERTO**
@@ -1135,7 +1133,7 @@ Análise comparativa da ocorrência de crase nas sentenças:
 
 ---
 
-## Exercício 2: 'Era favorável às propostas do diretor'
+### Exercício 2: 'Era favorável às propostas do diretor'
 
 - **Frase:** `2. Era favorável às propostas do diretor.`
 - **Gabarito / Julgamento:** **CERTO**
@@ -1148,7 +1146,7 @@ Análise comparativa da ocorrência de crase nas sentenças:
 
 ---
 
-## Exercício 3: 'A pesquisa se refere as obras medievais'
+### Exercício 3: 'A pesquisa se refere as obras medievais'
 
 - **Frase:** `3. A pesquisa se refere as obras medievais.`
 - **Gabarito / Julgamento:** **ERRADO**
@@ -1162,7 +1160,7 @@ Análise comparativa da ocorrência de crase nas sentenças:
 
 ---
 
-## Exercício 4: 'O relatório alude à várias barragens que estão vulneráveis'
+### Exercício 4: 'O relatório alude à várias barragens que estão vulneráveis'
 
 - **Frase:** `4. O relatório alude à várias barragens que estão vulneráveis.`
 - **Gabarito / Julgamento:** **ERRADO**
@@ -1176,7 +1174,7 @@ Análise comparativa da ocorrência de crase nas sentenças:
 
 ---
 
-## Exercício 5: 'A Constituição reconhece aos povos indígenas o direito às terras que habitam'
+### Exercício 5: 'A Constituição reconhece aos povos indígenas o direito às terras que habitam'
 
 - **Frase:** `5. A Constituição reconhece aos povos indígenas o direito às terras que habitam.`
 - **Gabarito / Julgamento:** **CERTO**
@@ -1189,7 +1187,7 @@ Análise comparativa da ocorrência de crase nas sentenças:
 
 ---
 
-## Exercício 6: 'Não costumava ir à festas de aniversário'
+### Exercício 6: 'Não costumava ir à festas de aniversário'
 
 - **Frase:** `6. Não costumava ir à festas de aniversário.`
 - **Gabarito / Julgamento:** **ERRADO**
@@ -1203,7 +1201,7 @@ Análise comparativa da ocorrência de crase nas sentenças:
 
 ---
 
-## Exercício 7: 'Não me submeto a ordens desse tipo;'
+### Exercício 7: 'Não me submeto a ordens desse tipo;'
 
 - **Frase:** `7. Não me submeto a ordens desse tipo;`
 - **Gabarito / Julgamento:** **CERTO**
@@ -1216,7 +1214,7 @@ Análise comparativa da ocorrência de crase nas sentenças:
 
 ---
 
-## Exercício 8: 'Muitos consumidores não se mostram atentos as necessidades do meio ambiente'
+### Exercício 8: 'Muitos consumidores não se mostram atentos as necessidades do meio ambiente'
 
 - **Frase:** `8. Muitos consumidores não se mostram atentos as necessidades do meio ambiente.`
 - **Gabarito / Julgamento:** **ERRADO**
@@ -1225,23 +1223,21 @@ Análise comparativa da ocorrência de crase nas sentenças:
  2. *Estrutura grafada:* Grafou-se `as` sem acento indicativo de crase.
  3. *Identificação do erro:* Omissão da preposição `a`. O termo `as` funciona como mero artigo, violando a regência nominal do adjetivo `atentos`.
  4. *Correções possíveis:*
- - `...atentos às necessidades do meio ambiente.` (com crase no plural: `a + as`).
- - `...atentos a necessidades do meio ambiente.` (apenas preposição simples: `a`).
+  - `...atentos às necessidades do meio ambiente.` (com crase no plural: `a + as`).
+  - `...atentos a necessidades do meio ambiente.` (apenas preposição simples: `a`).
 - **Conceito demonstrado:** Erro de regência nominal pela utilização de artigo plural desprovido de preposição.
-
----
 
 ---
 
 ## Memorização inteligente
 
-## O Teste Universal do Substantivo Masculino ("Menino")
+### O Teste Universal do Substantivo Masculino ("Menino")
 
 Para não hesitar na análise de regência durante a prova, coloque a palavra "menino" ao lado do verbo ou nome regente. Se a construção exigir naturalmente **"ao menino"**, a preposição `a` existe com certeza absoluta. Se a construção exigir apenas **"o menino"**, não há preposição, eliminando qualquer possibilidade de crase.
 
 ---
 
-## Cantiga Mnemônica dos Nomes de Lugares
+### Cantiga Mnemônica dos Nomes de Lugares
 
 Para verificar crase diante de topônimos, decore o dístico:
 > *"Volta da, crase no A; volta de, crase pra quê?"*
@@ -1250,12 +1246,12 @@ Para verificar crase diante de topônimos, decore o dístico:
 
 ---
 
-## Teste da Substituição por "Aquela" antes de "Que" e "De"
+### Teste da Substituição por "Aquela" antes de "Que" e "De"
 
 Diante de estruturas com `a que` ou `a de`, substitua mentalmente a letra `a` por `aquela`. Se a frase soar perfeitamente como "a aquela" (ex.: "obedeceu àquela que..."), trata-se do pronome demonstrativo `a`, devendo receber acento grave indicativo de crase ($a \text{ [prep.]} + a \text{ [dem.]} = \text{à}$).
 
 ---
-## O Teste de Início de Frase para Identificação de Artigo
+### O Teste de Início de Frase para Identificação de Artigo
 
 Quando houver dúvida sobre se uma palavra ou pronome aceita artigo definido feminino, construa mentalmente uma oração iniciando com esse termo e tente colocar a palavra `A` antes dele como artigo:
 - Diante de pronome indefinido: *"A qualquer realidade é boa"* $\rightarrow$ Frase agramatical. Logo, *qualquer* rejeita artigo.
@@ -1263,7 +1259,7 @@ Quando houver dúvida sobre se uma palavra ou pronome aceita artigo definido fem
 
 ---
 
-## Mantras de Memorização Estrutural da Crase
+### Mantras de Memorização Estrutural da Crase
 
 Fixe os três axiomas lógicos para resolução rápida:
 1. **Axioma da Ausência de Artigo:** *"Um 'A' sozinho não faz fenômeno"* (Se faltar preposição ou artigo, nunca haverá crase).
@@ -1271,34 +1267,34 @@ Fixe os três axiomas lógicos para resolução rápida:
 3. **Axioma dos Topônimos:** *"Com determinante, com artigo; sem determinante, sem artigo"* (Qualquer cidade ganha artigo se for adjetivada/determinada).
 
 ---
-## Adaptação Semântica do Teste do Masculino
+### Adaptação Semântica do Teste do Masculino
 
-### Descrição
+#### Descrição
 Embora a palavra `menino` seja o termo padrão para testar regência ("troca por masculino"), em certos contextos semânticos ela pode soar estranha (ex.: *"retornou ao menino"*). A abordagem didática orienta que o estudante pode usar qualquer substantivo masculino singular que faça sentido no contexto, como `ao clube`, `ao trabalho` ou `ao colégio`. O essencial é verificar se a preposição `a` se aglutina ao artigo masculino gerando `ao`.
 
 ---
 
-## Desmistificação da "Regrinha do Voltar" para Nomes de Lugar
+### Desmistificação da "Regrinha do Voltar" para Nomes de Lugar
 
-### Descrição
+#### Descrição
 O macete *"Volta da, crase no A; volta de, crase pra quê?"* não é uma regra à parte nem uma exceção gramatical: é exclusivamente uma ferramenta mnemônica rápida para cumprir o **Passo 2** (identificar se o topônimo admite artigo). Saber disso evita a sobrecarga mental de decorar listas isoladas de regras.
 
 ---
 
-## Os Dois Pilares Inegociáveis da Crase
+### Os Dois Pilares Inegociáveis da Crase
 
-### Descrição
+#### Descrição
 Dominar crase resume-se a dominar **Regência** (sintaxe) e **Artigo** (morfologia). Ao resolver qualquer exercício, divida o problema em duas metades: "O termo anterior exige `a`?" e "O termo posterior aceita `a`?". Se ambas as respostas forem afirmativas, a crase é inevitável.
 
 ---
-## Mnemônico Canônico: 'Crase no Singular Antes de Plural, Nem a Pau!'
+### Mnemônico Canônico: 'Crase no Singular Antes de Plural, Nem a Pau!'
 
 - **Descrição do macete:** Ao se deparar em prova com a letra `a` portando acento grave no singular (`à`) imediatamente antes de uma palavra que esteja no plural, o candidato deve marcar o item como **incorreto imediatamente**, sem necessidade de analisar o restante da frase.
 - **Fundamento gramatical:** O acento grave singular pressupõe a fusão com o artigo singular `a`. Como um artigo singular não pode concordar com substantivo plural, a forma `à` diante de plural é uma impossibilidade na norma culta.
 
 ---
 
-## Matriz Decisória para Questões de Reescritura Envolvendo Crase no Plural
+### Matriz Decisória para Questões de Reescritura Envolvendo Crase no Plural
 
 - **Tabela de decisão para itens de prova:**
 
@@ -1312,11 +1308,9 @@ Dominar crase resume-se a dominar **Regência** (sintaxe) e **Artigo** (morfolog
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Confundir Crase com Acento Gráfico em Editais e Questões
+### Confundir Crase com Acento Gráfico em Editais e Questões
 
 - **Erro Comum:** Dizer que a crase "é um acento" ou procurar a palavra "Crase" no edital e achar que o tema não será cobrado porque consta "Acento Grave".
 - **Consequência:** Perda de questões teóricas ou confusão na identificação do conteúdo programático.
@@ -1324,7 +1318,7 @@ Dominar crase resume-se a dominar **Regência** (sintaxe) e **Artigo** (morfolog
 
 ---
 
-## O Mito de que Palavras Masculinas Nunca Admitem Crase
+### O Mito de que Palavras Masculinas Nunca Admitem Crase
 
 - **Erro Comum:** Julgar errada a crase em *àquele* ou *àquilo* sob o pretexto de que são palavras masculinas ou neutras.
 - **Consequência:** Erro grave em questões de nível médio e avançado.
@@ -1332,14 +1326,14 @@ Dominar crase resume-se a dominar **Regência** (sintaxe) e **Artigo** (morfolog
 
 ---
 
-## Tentativa Indevida de Usar Crase antes de "Quem" e "Cujo"
+### Tentativa Indevida de Usar Crase antes de "Quem" e "Cujo"
 
 - **Erro Comum:** Colocar acento grave em `a quem` ou `a cuja` porque o verbo da oração exige preposição `a` (ex.: *A autora à quem me referi*).
 - **Consequência:** Erro imediato de sintaxe em provas objetivas e redações.
 - **Correção:** Os pronomes relativos *quem* e *cujo(a)* não aceitam artigo em hipótese alguma. O `a` que os antecede é estritamente preposição pura ($1 \text{ só 'A'}$); logo, a crase é terminantemente proibida.
 
 ---
-## Falso Macete da Troca de Preposições por "Para"
+### Falso Macete da Troca de Preposições por "Para"
 
 - **Erro comum:** Alunos tentam aplicar o macete "troca por para" de forma indiscriminada e erram ao tentar colocar crase após preposições essenciais (ex.: escrever *Para à festa comprei salgados* ou *Ante à ausência do réu*).
 - **Consequência:** Erro grave em provas, pois *para*, *ante*, *após* já são preposições. A colocação de crase introduziria uma segunda preposição `a`, o que é agramatical.
@@ -1347,36 +1341,36 @@ Dominar crase resume-se a dominar **Regência** (sintaxe) e **Artigo** (morfolog
 
 ---
 
-## Quebra de Paralelismo em Dias da Semana e Horários
+### Quebra de Paralelismo em Dias da Semana e Horários
 
 - **Erro comum:** Misturar estruturas simétricas, escrevendo *de segunda à sexta* ou *das 8h a 18h*.
 - **Correção normativa:**
- - Se iniciou com preposição pura `de`: termine com preposição pura `a` (*de segunda a sexta* / *de 8h a 18h*).
- - Se iniciou com contração `da/das` (`de + a/as`): termine com contração `à/às` (`a + a/as`) (*da segunda à sexta* / *das 8h às 18h*).
+  - Se iniciou com preposição pura `de`: termine com preposição pura `a` (*de segunda a sexta* / *de 8h a 18h*).
+  - Se iniciou com contração `da/das` (`de + a/as`): termine com contração `à/às` (`a + a/as`) (*da segunda à sexta* / *das 8h às 18h*).
 
 ---
 
-## Crase no Singular Diante de Palavras no Plural
+### Crase no Singular Diante de Palavras no Plural
 
 - **Regra:** `A` (singular) diante de palavra no plural é **apenas preposição simples** (ex.: *Refiro-me a pessoas honestas*).
 - **Alerta da professora:** *"Crase no singular antes de plural, nem a pau!"*. Se a palavra está no plural e o `a` está no singular, não existe artigo `as`, logo é impossível ocorrer crase.
 
 ---
-## Crase diante dos Demonstrativos "Aquele", "Aquela" e "Aquilo"
+### Crase diante dos Demonstrativos "Aquele", "Aquela" e "Aquilo"
 
-### Alerta e pegadinha clássica
+#### Alerta e pegadinha clássica
 Muitos estudantes acreditam erroneamente que a crase só pode ocorrer antes de palavras femininas. No caso dos pronomes demonstrativos *aquele(s)*, *aquela(s)* e *aquilo*, a crase ocorre pela fusão da preposição `a` com a letra `A` inicial do próprio pronome (`a + aquele = àquele`; `a + aquilo = àquilo`).
 - **Consequência:** Pode haver acento grave antes de termos masculinos (*àquele homem*) ou neutros (*àquilo que foi dito*), desde que o regente exija a preposição `a`.
 
 ---
 
-## O Risco de Pular a Checagem da Regência
+### O Risco de Pular a Checagem da Regência
 
-### Problema
+#### Problema
 O candidato observa que a palavra seguinte é feminina e aceita artigo (ex.: *a terra*, *a empresa*) e imediatamente coloca crase, esquecendo-se de verificar se o verbo ou nome anterior é transitivo direto (não pede preposição). Se a regência pedir preposição nula, haverá apenas artigo simples, sem crase (ex.: *O juiz comprou a terra* -> *comprou o menino* -> sem preposição -> sem crase).
 
 ---
-## Confundir Sentido com Coerência Textual
+### Confundir Sentido com Coerência Textual
 
 - **Problema:** O candidato julga que, por ter havido mudança de sentido (de específico para geral), a coerência textual também foi quebrada.
 - **Consequência:** Erro em questões de reescritura de bancas exigentes (como Cebraspe).
@@ -1384,7 +1378,7 @@ O candidato observa que a palavra seguinte é feminina e aceita artigo (ex.: *a 
 
 ---
 
-## O Erro Silencioso do 'AS' sem Acento (Omissão da Preposição)
+### O Erro Silencioso do 'AS' sem Acento (Omissão da Preposição)
 
 - **Problema:** Frases como `A pesquisa se refere as obras medievais` ou `Atentos as necessidades` soam naturais na leitura rápida.
 - **Causa da armadilha:** O candidato visualiza o plural `as` e assume que está correto, esquecendo-se de que a ausência do acento grave indica que a preposição exigida pelo regente foi omitida.
@@ -1392,100 +1386,96 @@ O candidato observa que a palavra seguinte é feminina e aceita artigo (ex.: *a 
 
 ---
 
-## Estranhamento Sonoro com 'A' Singular Antes de Plural ('Recaída')
+### Estranhamento Sonoro com 'A' Singular Antes de Plural ('Recaída')
 
 - **Problema:** Rejeitar construções como `Não me submeto a ordens` ou `Dedicou sua vida a crianças` por puro preconceito acústico contra o singular antes do plural.
 - **Correção:** Lembrar que a preposição é invariável. Se não houver artigo feminino `as`, a preposição `a` permanece no singular independentemente do número do substantivo seguinte.
 
 ---
 
-## Pronomes Indefinidos Plurais Não Admitem 'À' Nem 'ÀS'
+### Pronomes Indefinidos Plurais Não Admitem 'À' Nem 'ÀS'
 
 - **Problema:** Achar que, por ser termo plural feminino, `várias barragens` admitiria a forma `às várias barragens`.
 - **Regra:** O pronome indefinido repele o artigo definido. Diante de pronomes indefinidos plurais (ex: *várias*, *muitas*, *poucas*, *outras*), a crase é proibida; usa-se exclusivamente a preposição simples `a` (`alude a várias barragens`).
 
 ---
 
----
-
 ## Glossário operacional
 
-## Crase
+### Crase
 
 Fenômeno fonético morfossintático caracterizado pela contração ou fusão de duas vogais orais abertas idênticas ($a + a$) em uma única emissão vocálica, representada graficamente na escrita pelo acento grave.
 
-## Acento Grave
+### Acento Grave
 
 Sinal diacrítico inclinado para a esquerda utilizado na ortografia da Língua Portuguesa exclusivamente para sinalizar a ocorrência da crase (fusão da preposição `a` com artigos femininos, pronomes demonstrativos ou relativos).
 
-## Fenômeno Fonético (FF)
+### Fenômeno Fonético (FF)
 
 Conceito linguístico que engloba os processos de alteração, fusão ou assimilação de sons na cadeia da fala. No contexto do ensino de crase, refere-se à Regra 1, que exige a presença real de dois elementos vocálicos `a` independentes que se fundem.
 
-## Pronome Demonstrativo "A / As"
+### Pronome Demonstrativo "A / As"
 
 Forma reduzida dos pronomes demonstrativos que equivale a *aquela(s)* ou *isso*, posicionada tipicamente antes de orações adjetivas iniciadas por *que* ou de locuções prepositivas com *de*.
 
 ---
-## Fenômeno Fonético (Crase)
+### Fenômeno Fonético (Crase)
 
 - **Definição:** Contração/fusão da vogal prepositiva `a` com a vogal idêntica de um artigo definido feminino (`a/as`) ou com a vogal inicial dos pronomes demonstrativos *aquele(s), aquela(s), aquilo* e do pronome relativo *a qual / as quais*.
 - **Contexto da aula:** Fundamento teórico que explica por que a ausência de um dos dois elementos impede o uso do acento grave.
 
-## Paralelismo Sintático
+### Paralelismo Sintático
 
 - **Definição:** Princípio gramatical que estabelece simetria estrutural obrigatória entre elementos coordenados ou correlacionados em uma oração.
 - **Contexto da aula:** Regra que rege locuções de palavras repetidas (*frente a frente*) e intervalos temporais (*de segunda a sexta* vs. *da terça à sexta*).
 
-## Preposição Essencial
+### Preposição Essencial
 
 - **Definição:** Palavra invariável cuja função primária e exclusiva na língua é subordinar um termo a outro (*a, ante, até, após, com, contra, de, desde, em, para, perante, por, sem, sob, sobre, trás*).
 - **Contexto da aula:** Causa da proibição de crase no Caso 6, uma vez que preposições essenciais (com exceção de *até*) não admitem outra preposição após si.
 
-## Determinante Semântico
+### Determinante Semântico
 
 - **Definição:** Modificador nominal (adjetivo, locução adjetiva ou oração adjetiva) que individualiza, especifica ou restringe o sentido de um substantivo.
 - **Contexto da aula:** Fator que torna obrigatório o artigo definido diante de nomes próprios de lugar (*Londres dos meus sonhos*), ensejando crase.
 
 ---
-## Fenômeno Fonético (em Crase)
+### Fenômeno Fonético (em Crase)
 
 Fusão ou contração de dois sons vocálicos idênticos em um só. Na sintaxe da língua portuguesa, refere-se à superposição da preposição `a` com a vogal `a` inicial do artigo definido feminino (`a/as`), de pronomes demonstrativos (*aquele, aquela, aquilo, a*) ou do pronome relativo (*a qual, as quais*).
 
-## Termo Regente
+### Termo Regente
 
 Elemento sintático antecedente (verbo ou nome) que, por força de sua regência gramatical, subordina outro termo exigindo ou não uma preposição intermediária.
 
-## Termo Regido
+### Termo Regido
 
 Elemento sintático subsequente (substantivo, pronome, oração) que complementa o sentido do termo regente, podendo ou não admitir artigo definido antes de si.
 
-## Topônimo
+### Topônimo
 
 Nome próprio atribuído a um lugar geográfico (país, estado, cidade, região). Em matéria de crase, submete-se ao teste do verbo *voltar* para verificar se admite ou repele artigo definido.
 
 ---
-## Crase no Plural
+### Crase no Plural
 
 - **Definição:** Fenômeno morfossintático da fusão da preposição `a` (exigida por termo regente) com o artigo definido feminino plural `as` (que determina termo regido feminino no plural), resultando na forma acentuada `às`.
 - **Exemplo:** `Obedeceu às leis de trânsito.`
 
-## Preposição Pura / Simples Diante de Plural
+### Preposição Pura / Simples Diante de Plural
 
 - **Definição:** Emprego exclusivo da preposição invariável `a` antes de um substantivo plural feminino, ocorrendo quando o falante opta por suprimir o artigo definido para conferir ao substantivo uma acepção genérica ou indeterminada.
 - **Exemplo:** `Não me submeto a ordens injustas.`
 
-## Sentido Específico vs. Sentido Geral
+### Sentido Específico vs. Sentido Geral
 
 - **Definição:** Distinção semântica produzida pela presença ou ausência do artigo definido. Com artigo (`às`), o referente é delimitado e particularizado no universo discursivo; sem artigo (`a`), o referente é universalizado (abrangendo quaisquer elementos daquela classe).
 - **Exemplo:** `Referiu-se às propostas` (aquelas conhecidas) vs. `Referiu-se a propostas` (quaisquer propostas).
 
-## Coerência Textual (Lógica)
+### Coerência Textual (Lógica)
 
 - **Definição:** Propriedade textual que assegura a continuidade de sentido, a ausência de contradições e a compatibilidade lógica das ideias em um texto.
 - **Contexto de prova:** A alteração de sentido decorrente da supressão ou inserção do artigo não quebra a coerência se o texto resultante mantiver logicidade.
-
----
 
 ---
 
@@ -1496,8 +1486,8 @@ Neste material inicial sobre o emprego do acento indicativo de crase, A abordage
 A abordagem didática divide a Regra 1 em três situações estruturais bem definidas:
 1. **Preposição + Artigo Feminino (Código 1):** Configura a imensa maioria dos casos de prova. É regida pelo método de dois passos: o 1º Passo avalia a regência do termo anterior substituindo o complemento pelo substantivo masculino "menino" (se resultar em "ao menino", há preposição `a`); o 2º Passo avalia se o substantivo feminino aceita artigo formulando-se uma frase em que a palavra atue como sujeito no início da oração ou, no caso de nomes de lugares, utilizando o teste "Volta da, crase no A / Volta de, crase pra quê".
 2. **Preposição + Pronomes Demonstrativos (Código 2):** Subdividida em:
- - *2a:* Fusão da preposição `a` com a letra inicial dos pronomes *aquele(s)*, *aquela(s)*, *aquilo* (formando *àquele*, *àquela*, *àquilo*), desmistificando o mito de que palavras masculinas nunca recebem acento grave.
- - *2b:* Fusão da preposição `a` com o pronome demonstrativo `a(s)` (= aquela/as) elíptico antes das palavras *que* ou *de* (formando *à que*, *à de*), testado pela substituição mental por "aquela".
+  - *2a:* Fusão da preposição `a` com a letra inicial dos pronomes *aquele(s)*, *aquela(s)*, *aquilo* (formando *àquele*, *àquela*, *àquilo*), desmistificando o mito de que palavras masculinas nunca recebem acento grave.
+  - *2b:* Fusão da preposição `a` com o pronome demonstrativo `a(s)` (= aquela/as) elíptico antes das palavras *que* ou *de* (formando *à que*, *à de*), testado pela substituição mental por "aquela".
 3. **Preposição + Pronome Relativo (Código 3):** Fusão da preposição `a` exigida na oração subordinada com o artigo presente exclusivamente nos pronomes *a qual* / *as quais* (formando *à qual* / *às quais*), destacando-se que pronomes relativos que não possuem artigo (*que*, *quem*, *cujo*) jamais admitem crase.
 
 Por fim, a aula aplica essa matriz conceitual na resolução rigorosa de 10 exercícios práticos, codificando cada ocorrência e preparando a transição lógica para o estudo dos casos de crase proibida, fundamentados no axioma de que "um A sozinho não faz fenômeno".
@@ -1517,8 +1507,8 @@ nesta unidade, A abordagem didática apresenta uma revisão estrutural definitiv
 A aula estabelece que toda a matéria de crase assenta-se em apenas duas grandes regras: o **Fenômeno Fonético** e a **Locução Feminina**. No Fenômeno Fonético, a ocorrência do acento grave exige a resolução de dois passos lógicos:
 1. **Verificação da Preposição (Regência):** O termo anterior (verbo ou nome) deve exigir a preposição `a`. A técnica recomendada consiste em substituir o termo feminino subsequente pela palavra masculina `menino` (ou outro masculino contextual, como `clube`). Se surgir a forma `ao`, a preposição `a` está presente.
 2. **Verificação do Artigo (Morfologia):**
- - *Para substantivos comuns:* Cria-se uma frase com a palavra em função de sujeito para testar se ela aceita o artigo `a` antes de si (ex.: *A terra é boa*).
- - *Para topônimos:* Aplica-se o teste do verbo voltar (*"Volta da, crase no A; volta de, crase pra quê?"*).
+  - *Para substantivos comuns:* Cria-se uma frase com a palavra em função de sujeito para testar se ela aceita o artigo `a` antes de si (ex.: *A terra é boa*).
+  - *Para topônimos:* Aplica-se o teste do verbo voltar (*"Volta da, crase no A; volta de, crase pra quê?"*).
 
 Por fim, A abordagem didática mapeia as **quatro situações estruturais** em que o Fenômeno Fonético ocorre na língua portuguesa: (1) `Prep. A + Artigo A(s)`; (2) `Prep. A + Aquele(s)/Aquela(s)/Aquilo`; (3) `Prep. A + A qual/As quais`; e (4) `Prep. A + Pronome demonstrativo A` (antes de *que* e *de*). O domínio desses mecanismos elimina as dúvidas na resolução de questões e simplifica o estudo da crase.
 

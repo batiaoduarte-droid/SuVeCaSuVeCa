@@ -19,7 +19,7 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 - Noções de análise sintática dos termos da oração (sujeito, verbo, complementos verbais direto e indireto, ordem direta S-V-C).
 - Compreensão básica de classes gramaticais conectivas (conjunções subordinativas comparativas, consecutivas e concessivas).
 
-### Mapa Conceitual Integrado
+#### Mapa Conceitual Integrado
 
 `mermaid
 graph TD
@@ -73,41 +73,43 @@ graph TD
 
 ---
 
+```
+
 ---
 
 ## Explicação didática aprofundada
 
-## Metáfora vs. Comparação Explícita e a Regra dos Dois Elementos
+### Metáfora vs. Comparação Explícita e a Regra dos Dois Elementos
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A comparação (símile) e a metáfora são figuras de base analógica fundadas na semelhança entre dois seres ou conceitos. Ambas exigem mandatoriamente a identificação de **dois elementos na estrutura frasal** (o termo real comparado e o termo figurado que serve de parâmetro). A distinção estrutural reside na presença formal de conectivos comparativos na comparação explícita, enquanto a metáfora constitui uma comparação implícita e direta.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Comparação Explícita:** Apresenta conectivos gramaticais manifestos. Engloba conjunções subordinativas comparativas clássicas (*como*, *tal qual*, *assim como*), locuções conectivas (*como sendo*), vocábulos de valor comparativo informal (*tipo*, *feito*, *que nem*) e verbos relacionais de similitude (*parecer*, *assemelhar-se*, *lembrar*).
 - **Metáfora (Comparação Implícita):** Afirma uma correspondência ou identidade categórica direta (*A é B*) sem conectivo comparativo. A transferência de traços semânticos ocorre mentalmente no plano do receptor.
 - **Relação Hierárquica:** *"Toda metáfora é uma comparação, mas nem toda comparação é uma metáfora."* A metáfora compartilha a natureza conceitual da comparação, mas a comparação formal não se reduz à metáfora estrita.
 
-### Critérios de reconhecimento
+#### Critérios de reconhecimento
 
 1. Localizar dois termos postos em correspondência analógica. Se houver apenas um termo substituindo outro por proximidade lógica, trata-se de metonímia .
 2. Verificar a existência de conector ou verbo de similitude. Presente = Comparação Explícita; Ausente = Metáfora.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Comparação Explícita:* "Leis são como salsichas." / "É linda como uma flor." / "Ela é feito o irmão." / "Ela parece o irmão." / "O cheiro foi tomado como sendo de camarão."
 - *Metáfora:* "A Amazônia é o pulmão do mundo." / "Catarina é uma flor." / "Teus olhos são meus livros." / "Uma parte de mim é multidão." / "Sua sogra é uma cobra."
 
 ---
 
-## Abordagem Hiperonímica da Banca FGV sobre a Metáfora
+### Abordagem Hiperonímica da Banca FGV sobre a Metáfora
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A Fundação Getulio Vargas (FGV) adota uma perspectiva funcional ampla na qual a metáfora é tratada como termo hiperônimo representativo de toda linguagem figurada de base comparativa fundada na semelhança entre termos, aceitando estruturas contendo a conjunção *como* sob o rótulo genérico de metáfora.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - Em enunciados teóricos da FGV, a metáfora é expressamente definida como: *"um exemplo de linguagem figurada de base comparativa, fundamentada em uma semelhança entre os termos."*
 - **Comportamento em Questões Negativas:** Quando a FGV solicita assinalar a opção que *"NÃO apresenta comparação"*, a banca frequentemente insere três ou quatro alternativas com comparações explícitas e uma com metáfora pura (considerando todas como espécies comparativas), deixando a opção correta inteiramente desprovida de base analógica.
@@ -116,13 +118,13 @@ A Fundação Getulio Vargas (FGV) adota uma perspectiva funcional ampla na qual 
 
 ---
 
-## Metonímia, Relações de Contiguidade e a Sinédoque
+### Metonímia, Relações de Contiguidade e a Sinédoque
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A metonímia é a substituição semântica de uma palavra por outra motivada por uma relação real, lógica e objetiva de proximidade ou contiguidade (*"tem a ver"*), operando de modo que apenas o termo substituto comparece na superfície do texto.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Modalidades estruturadas da Metonímia:
 
@@ -134,19 +136,19 @@ Modalidades estruturadas da Metonímia:
 6. **Marca pelo Produto:** O nome comercial substitui o objeto genérico (*"Comprei Bombril"* = palha de aço; *"Bebi uma Pepsi"* = refrigerante).
 7. **Lugar pelo Governo / Instituição:** O edifício ou cidade representa o poder dirigente (*"A Casa Branca influencia outros países"* = o governo norte-americano).
 
-### Limite Semântico ("Pratos de Sopa")
+#### Limite Semântico ("Pratos de Sopa")
 
 A presença de locução especificadora desfaz a metonímia de continente pelo conteúdo: em *"Comi três pratos de sopa"*, o termo "prato" funciona meramente como unidade de medida/porção. A metonímia exigiria a elisão do conteúdo: *"Comi três pratos"*.
 
 ---
 
-## Catacrese versus Metonímia: O Critério da Opcionalidade Lexical
+### Catacrese versus Metonímia: O Critério da Opcionalidade Lexical
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A catacrese é uma metáfora fóssil desgastada e dicionarizada pelo uso, consistente no empréstimo compulsório de um termo existente para nomear um referente devido à carência de palavra própria no léxico. Distingue-se da metonímia pelo **critério da opcionalidade**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Metonímia (Escolha Estilística Opcional):** O emissor dispõe de termo próprio no idioma e opta livremente pela figura por motivo de estilo (*Comprei Bombril* vs. *Comprei palha de aço*; *Li Machado* vs. *Li o livro de Machado*).
 - **Catacrese (Imposição Lexical por Ausência de Termo Próprio):** O idioma não fornece vocábulo técnico usual para designar o referente específico. A tentativa de evitar a catacrese geraria descrições perifrásticas artificiais (ex.: chamar o "braço da cadeira" de "extremidade lateral de apoio").
@@ -154,13 +156,13 @@ A catacrese é uma metáfora fóssil desgastada e dicionarizada pelo uso, consis
 
 ---
 
-## Antítese versus Paradoxo (Oxímoro) e o Teste de Insuperabilidade Lógica
+### Antítese versus Paradoxo (Oxímoro) e o Teste de Insuperabilidade Lógica
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A antítese é a aproximação de palavras ou expressões antônimas no plano lexical (*termo = palavra*), preservando a coerência e a possibilidade lógica factual. O paradoxo (ou oxímoro) é a fusão de ideias e conceitos mutuamente excludentes que geram uma contradição lógica insuperável na realidade concreta.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Antítese (Oposição Lexical Coerente):** Os vocábulos antagônicos coexistem sem colisão ilógica (*"O calor e o frio vivem em meu peito"*, *"Distinguíamos o bem e o mal"*, *"Sua alma subiu, seu corpo desceu"*).
 - **Paradoxo / Oxímoro (Contradição Conceitual Insuperável):** Os conceitos opostos incidem sobre o mesmo referente simultaneamente, rompendo o princípio da não-contradição lógica (*"O amor é ferida que dói e não se sente"*, *"Uma inocência maliciosa"*, *"Feliz por nada, por tudo"*, *"Se quiser me prender, vai ter que me soltar"*).
@@ -168,54 +170,54 @@ A antítese é a aproximação de palavras ou expressões antônimas no plano le
 
 ---
 
-## O Espectro da Ironia, Sarcasmo, Humor e a Falsa Ironia
+### O Espectro da Ironia, Sarcasmo, Humor e a Falsa Ironia
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A ironia consiste em expressar formalmente o inverso semântico daquilo que se pensa ou pretende comunicar, dependendo de marcadores contextuais evidentes ou sinais gráficos (aspas) para sua decodificação.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Ramificação Funcional:**
- - *Ironia Sarcástica (Sarcasmo):* Tom pejorativo, corrosivo, de deboche e agressividade crítica (*"Que motorista brilhante!"* para quem bate o carro).
- - *Ironia Humorística (Humor):* Tom leve, lúdico e descontraído, voltado ao riso e à descontração, sem intuito ofensivo.
+  - *Ironia Sarcástica (Sarcasmo):* Tom pejorativo, corrosivo, de deboche e agressividade crítica (*"Que motorista brilhante!"* para quem bate o carro).
+  - *Ironia Humorística (Humor):* Tom leve, lúdico e descontraído, voltado ao riso e à descontração, sem intuito ofensivo.
 - **Distinção de Declarações Sinceras (Falsa Ironia):** Comentários jocosos, desabafos políticos sinceros ou críticas francas **não são ironia**. Na frase *"Quem dera os políticos dessem mais atenção aos eleitores"*, o falante expressa seu desejo real e literal; inexiste inversão de sentido.
 
 ---
 
-## Eufemismo: Atenuação Semântica e Condicionamento Histórico-Cultural
+### Eufemismo: Atenuação Semântica e Condicionamento Histórico-Cultural
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O eufemismo é a figura de pensamento que atenua ou suaviza o impacto de uma ideia desagradável, dolorosa, chocante, ofensiva ou tabu.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Modernização da Cobrança:** Vai além das metáforas fúnebres escolares (*"Foi dessa para melhor"* / *"Não está mais entre nós"*). Em bancas contemporâneas (como a FGV), surge em textos técnico-burocráticos (*"O governo procederá ao reajuste de taxas"* para suavizar *aumento de tributos*).
 - **Condicionamento Cultural:** Certos eufemismos dependem do contexto de época. O excerto literário *"E tomo café com gosto, toda sozinha no mundo"* foi considerado eufemismo pela banca Consulplan por atenuar a condição de abandono e desamparo social da mulher em épocas passadas.
 
 ---
 
-## Prosopopeia (Personificação / Animismo)
+### Prosopopeia (Personificação / Animismo)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A prosopopeia (personificação ou animismo) consiste em atribuir características, sentimentos, atitudes, ações biológicas ou comportamentos tipicamente humanos a seres inanimados, elementos da natureza, animais ou conceitos abstratos.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - Não se restringe a animais fabulares; aplica-se plenamente a elementos inanimados da natureza, edificações e objetos.
 - **Exemplos em Provas:** "O sol sorriu para mim." / "A natureza chorou sua ausência." / "Vendo as pedras que choram sozinhas..." / "A casa vai acordando..." / "Seu estilo de roupas não diz muita coisa."
 
 ---
 
-## Pleonasmo (Estilístico, Sintático e Vicioso) versus Anacoluto
+### Pleonasmo (Estilístico, Sintático e Vicioso) versus Anacoluto
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O pleonasmo é a reiteração intencional ou redundante de um termo ou ideia. O anacoluto é a quebra/truncamento estrutural da frase, na qual um termo inicial é introduzido no fluxo do pensamento, mas é abandonado na construção subsequente, restando desprovido de função sintática.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Modalidades de Pleonasmo:**
  1. *Pleonasmo Estilístico / Literário (+):* Reforço semântico admissível na literatura (*"Vi com estes olhos"*, *"Chorou lágrimas verdadeiras"*, *"Não deveria crescer nunca"*).
@@ -225,13 +227,13 @@ O pleonasmo é a reiteração intencional ou redundante de um termo ou ideia. O 
 
 ---
 
-## Elipse, Zeugma e a Obrigatoriedade da Vírgula Vicária
+### Elipse, Zeugma e a Obrigatoriedade da Vírgula Vicária
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A elipse é a omissão de um termo depreensível pelo contexto gramatical. O zeugma é uma espécie particular de elipse na qual o termo omitido já foi explicitamente enunciado na oração anterior. A vírgula vicária é o sinal de pontuação obrigatório encarregado de marcar a supressão do verbo em orações coordenadas.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Elipse Pura:** Supressão de termo não formulado antes no texto (*"[Nós] Somos brasileiros"* / *"Chove muito e [nós] não podemos sair"*).
 - **Zeugma:** Supressão de termo previamente expresso (*"Os homens trazem comida; as mulheres, [trazem] bebida"*). Todo zeugma é uma elipse.
@@ -239,28 +241,28 @@ A elipse é a omissão de um termo depreensível pelo contexto gramatical. O zeu
 
 ---
 
-## Silepse (Concordância Ideológica): Gênero, Número e Pessoa
+### Silepse (Concordância Ideológica): Gênero, Número e Pessoa
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A silepse (ou concordância ideológica) é a figura sintática na qual a flexão gramatical concorda com o conceito mental subentendido pelo emissor, e não com a forma literal das palavras expressas.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Silepse de Gênero:** O adjetivo concorda com a ideia implícita (ex.: *cidade*) e não com o gênero formal do topônimo (*"A bonita [cidade de] Porto Velho sofreu com o calor"* / *"Sua amada Belo Horizonte"*).
 2. **Silepse de Número (Regra Estrita de Distanciamento):** O verbo flexiona no plural para concordar com os indivíduos que compõem o sujeito coletivo no singular.
- - *Condição de Validade:* O primeiro verbo obrigatoriamente segue a concordância rígida no singular; apenas o verbo subsequente distanciado pode realizar a silepse (*"O grupo não gostou [rígida], reagiram [silepse distanciada] imediatamente"*). Fazer silepse no primeiro verbo adjacente (*"O grupo saíram"*) constitui **erro gramatical grosseiro**.
+  - *Condição de Validade:* O primeiro verbo obrigatoriamente segue a concordância rígida no singular; apenas o verbo subsequente distanciado pode realizar a silepse (*"O grupo não gostou [rígida], reagiram [silepse distanciada] imediatamente"*). Fazer silepse no primeiro verbo adjacente (*"O grupo saíram"*) constitui **erro gramatical grosseiro**.
 3. **Silepse de Pessoa:** O emissor substitui a 3ª pessoa do plural pela 1ª pessoa do plural (*nós*), incluindo-se psicologicamente no grupo (*"Os brasileiros [eles] somos [nós] lutadores"*).
 
 ---
 
-## Hipérbole, Sinestesia e Figuras Sonoras
+### Hipérbole, Sinestesia e Figuras Sonoras
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Agrupamento de recursos expressivos, sensoriais e sonoros baseados na intensificação discursiva, fusão perceptiva e harmonia fonética.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Hipérbole:** Exagero intencional desmedido com o objetivo de conferir expressividade e ênfase (*"Estou morrendo de fome"*, *"Nasci há 10 mil anos"*, *"Repetido mil vezes"*).
 - **Sinestesia:** Fusão e cruzamento de sensações captadas por diferentes órgãos do sistema sensorial biológico (*"Comentário duro [tato] e amargo [paladar]"*, *"Doce [paladar] abraço [tato]"*, *"Pálido [visão] ruído [audição]"*).
@@ -270,32 +272,30 @@ Agrupamento de recursos expressivos, sensoriais e sonoros baseados na intensific
 
 ---
 
-## Hipérbato e a Quebra da Ordem Direta
+### Hipérbato e a Quebra da Ordem Direta
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O hipérbato é a figura de construção caracterizada pelo deslocamento ou inversão expressiva da ordem direta canônica dos termos da oração (Sujeito + Verbo + Complemento + Adjunto).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - Ocorre com alta frequência em construções com sujeito posposto ao verbo ou orações coordenadas invertidas para fins de realce enfático.
 - *Exemplos:* "Chegaram os homens." (Verbo *Chegaram* + Sujeito posposto *os homens*) / "Amo você que está assistindo essa aula gravada."
 
 ---
 
-## Proibição Normativa Estrita de Figuras e Silepse em Redação Discursiva
+### Proibição Normativa Estrita de Figuras e Silepse em Redação Discursiva
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Recursos figurados (metáforas, hipérboles), pleonasmos e silepses são instrumentos de expressividade poético-literária estritamente proibidos em redações discursivas de concursos públicos e textos técnicos oficiais, sob pena de penalização severa na avaliação gramatical.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - A redação discursiva exige exclusivamente **linguagem denotativa**, objetiva, técnica e impessoal.
 - O texto dissertativo deve ser mantido na **3ª pessoa do singular ou do plural**.
 - O uso da 1ª pessoa do plural (*"nós" / "somos"*), silepses de gênero/número ou metáforas acarreta perda imediata de pontos por desvio da norma culta ou inadequação ao registro formal.
-
----
 
 ---
 
@@ -327,44 +327,42 @@ Recursos figurados (metáforas, hipérboles), pleonasmos e silepses são instrum
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Método do "Farejador de Elementos" (Metáfora vs. Comparação vs. Metonímia)
+### Método do "Farejador de Elementos" (Metáfora vs. Comparação vs. Metonímia)
 
 1. **Passo 1 (Contagem de Elementos):**
- - Se houver **apenas 1 elemento visível** no texto substituindo outro por proximidade lógica (*"Li Machado"*, *"Bebi duas latas"*), classifique como **Metonímia**.
- - Se houver **2 elementos distintos** postos em relação analógica de semelhança, avance para o Passo 2.
+  - Se houver **apenas 1 elemento visível** no texto substituindo outro por proximidade lógica (*"Li Machado"*, *"Bebi duas latas"*), classifique como **Metonímia**.
+  - Se houver **2 elementos distintos** postos em relação analógica de semelhança, avance para o Passo 2.
 2. **Passo 2 (Verificação Conectiva):**
- - Se houver conector explícito (*como, tal qual, tipo, feito, como sendo*) ou verbo de similitude (*parecer, assemelhar-se*), classifique como **Comparação Explícita**.
- - Se a atribuição figurada for direta sem conector (*"Teus olhos são livros"*), classifique como **Metáfora**.
+  - Se houver conector explícito (*como, tal qual, tipo, feito, como sendo*) ou verbo de similitude (*parecer, assemelhar-se*), classifique como **Comparação Explícita**.
+  - Se a atribuição figurada for direta sem conector (*"Teus olhos são livros"*), classifique como **Metáfora**.
 3. **Passo 3 (Calibração por Banca):** Em provas da FGV, se a questão pedir "metáfora/base comparativa" e a única opção analógica trouxer *como*, marque-a .
 
 ---
 
-## Algoritmo de Decisão: Paradoxo vs. Antítese vs. Concessão Adverbial
+### Algoritmo de Decisão: Paradoxo vs. Antítese vs. Concessão Adverbial
 
 1. **Localizar as palavras ou proposições opostas** no enunciado.
 2. **Teste de Compatibilidade Lógica Real:**
- - *Pergunta:* É fisicamente possível que as duas realidades coexistam sem que uma anule a verdade da outra?
- - *Resposta SIM:* Trata-se de **Antítese** (*"Sua alma subiu ao céu, seu corpo desceu à terra"*).
- - *Resposta NÃO (Contradição Insuperável):* Trata-se de **Paradoxo / Oxímoro** (*"Inocência maliciosa"*, *"Ferida que dói e não se sente"*).
+  - *Pergunta:* É fisicamente possível que as duas realidades coexistam sem que uma anule a verdade da outra?
+  - *Resposta SIM:* Trata-se de **Antítese** (*"Sua alma subiu ao céu, seu corpo desceu à terra"*).
+  - *Resposta NÃO (Contradição Insuperável):* Trata-se de **Paradoxo / Oxímoro** (*"Inocência maliciosa"*, *"Ferida que dói e não se sente"*).
 3. **Filtro de Concessão Sintática:** Se a oposição for estruturada por *embora/apesar de* relatando um fato empírico real que frustrou uma expectativa (*"Ninguém ouviu os gritos, embora a noite estivesse calma"*), classifique como **concessão sintática**, e não como paradoxo.
 
 ---
 
-## Teste de Isolamento Sintático: Anacoluto vs. Pleonasmo Sintático
+### Teste de Isolamento Sintático: Anacoluto vs. Pleonasmo Sintático
 
 1. Localize o verbo principal e determine seu sujeito formal.
 2. Identifique os complementos verbais diretos e indiretos preenchidos na oração.
 3. Isole o termo inicial que antecede a vírgula:
- - Se o termo inicial for preposicionado e coincidir funcionalmente com pronome oblíquo que reitera o objeto (*"A ela [OI], não lhe [OI pleonástico] dei o livro"*), trata-se de **Pleonasmo Sintático**.
- - Se todos os papéis sintáticos do verbo já estiverem preenchidos e a palavra inicial estiver completamente solta, sem exercer função de sujeito, objeto ou adjunto (*"Joana, eu não sei o que dizer a ela"*), trata-se de **Anacoluto**.
+  - Se o termo inicial for preposicionado e coincidir funcionalmente com pronome oblíquo que reitera o objeto (*"A ela [OI], não lhe [OI pleonástico] dei o livro"*), trata-se de **Pleonasmo Sintático**.
+  - Se todos os papéis sintáticos do verbo já estiverem preenchidos e a palavra inicial estiver completamente solta, sem exercer função de sujeito, objeto ou adjunto (*"Joana, eu não sei o que dizer a ela"*), trata-se de **Anacoluto**.
 
 ---
 
-## Decodificação de Fórmulas em Questões de Metonímia
+### Decodificação de Fórmulas em Questões de Metonímia
 
 Ao analisar enunciados do tipo *"Emprego do [Elemento X] pelo [Elemento Y]"*:
 
@@ -374,26 +372,24 @@ Ao analisar enunciados do tipo *"Emprego do [Elemento X] pelo [Elemento Y]"*:
 
 ---
 
-## Mapeamento Sensorial para Identificação de Sinestesia
+### Mapeamento Sensorial para Identificação de Sinestesia
 
 1. Isole os dois núcleos qualificadores da expressão (ex.: substantivo + adjetivo).
 2. Decomponha o órgão sensorial biológico receptor de cada núcleo:
- - *Visão:* cores, formas, brilho, pálido.
- - *Audição:* ruídos, sons, estridente, sussurro.
- - *Tato:* duro, macio, frio, quente, abraço.
- - *Paladar:* doce, amargo, azedo, salgado.
- - *Olfato:* cheiro, fétido, aromático.
+  - *Visão:* cores, formas, brilho, pálido.
+  - *Audição:* ruídos, sons, estridente, sussurro.
+  - *Tato:* duro, macio, frio, quente, abraço.
+  - *Paladar:* doce, amargo, azedo, salgado.
+  - *Olfato:* cheiro, fétido, aromático.
 3. Se a expressão fundir dois canais sensoriais fisiológicos distintos (*"pálido [visão] ruído [audição]"* / *"doce [paladar] abraço [tato]"*), a **sinestesia** está demonstrada.
 
 ---
 
-## Reconhecimento e Aplicação da Vírgula Vicária
+### Reconhecimento e Aplicação da Vírgula Vicária
 
 1. Observe períodos compostos coordenados com paralelismo sintático.
 2. Verifique se na segunda oração o verbo idêntico ao da primeira foi suprimido (zeugma verbal).
 3. Inserir ou validar a vírgula vicária exatamente no ponto em que o verbo omitido deveria figurar (*"Eu estudo Português; meu irmão, [estuda] Direito"*). A vírgula é de uso mandatório.
-
----
 
 ---
 
@@ -412,11 +408,9 @@ Ao analisar enunciados do tipo *"Emprego do [Elemento X] pelo [Elemento Y]"*:
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Bloco Integrado de Fixação de Figuras de Linguagem
+### Bloco Integrado de Fixação de Figuras de Linguagem
 
 1. *"A natureza chorou sua ausência."* -> **Prosopopeia (Personificação)** (ação humana atribuída à natureza).
 2. *"Distinguíamos o bem e o mal."* -> **Antítese** (oposição lexical de vocábulos antônimos).
@@ -439,7 +433,7 @@ Ao analisar enunciados do tipo *"Emprego do [Elemento X] pelo [Elemento Y]"*:
 
 ---
 
-## Questão de Concurso: FEPESE 2023 — Cia. Águas de Joinville
+### Questão de Concurso: FEPESE 2023 — Cia. Águas de Joinville
 
 - **Comando:** Assinale a frase na qual ocorre uma metáfora.
 - **A)** *"Quando voltei para casa, a fome era tão grande que comi três pratos de sopa."* (Incorreta: oração subordinada consecutiva *tão... que*).
@@ -451,7 +445,7 @@ Ao analisar enunciados do tipo *"Emprego do [Elemento X] pelo [Elemento Y]"*:
 
 ---
 
-## Questão de Concurso: IF-MT 2023 — Professor EBTT
+### Questão de Concurso: IF-MT 2023 — Professor EBTT
 
 - **Comando:** Identificar a alternativa em que a metáfora **NÃO** se faz presente em excertos literário-musicais.
 - **A)** *"Sou teu ego, tua alma, sou teu céu, o teu inferno, a tua calma."* (Metáfora: predicativos figurados diretos).
@@ -463,7 +457,7 @@ Ao analisar enunciados do tipo *"Emprego do [Elemento X] pelo [Elemento Y]"*:
 
 ---
 
-## Questão de Concurso: Instituto Consulplan 2023 — CORE-PB
+### Questão de Concurso: Instituto Consulplan 2023 — CORE-PB
 
 - **Excerto:** *"Primeiro houve um erro de interpretação: o quase imperceptível cheiro foi tomado como sendo de camarão."*
 - **Análise:** Confronto de dois termos (*cheiro imperceptível* e *cheiro de camarão*) mediado pela locução conectiva formal **como sendo**.
@@ -471,7 +465,7 @@ Ao analisar enunciados do tipo *"Emprego do [Elemento X] pelo [Elemento Y]"*:
 
 ---
 
-## Questão de Concurso: Instituto Consulplan 2023 — CORE-RS
+### Questão de Concurso: Instituto Consulplan 2023 — CORE-RS
 
 - **Associação de Colunas:**
  1. *"As nuvens se clareando sob um sol às vezes pálido como uma lua..."* -> **( 1 ) Comparação** (conectivo *como*).
@@ -483,7 +477,7 @@ Ao analisar enunciados do tipo *"Emprego do [Elemento X] pelo [Elemento Y]"*:
 
 ---
 
-## Questão de Concurso: FGV 2023 — Pref. São José dos Campos
+### Questão de Concurso: FGV 2023 — Pref. São José dos Campos
 
 - **Texto do Enunciado:** *"Uma metáfora é um exemplo de linguagem figurada de base comparativa, fundamentada em uma semelhança entre os termos."*
 - **Comando:** Assinale a frase que se estrutura a partir de uma metáfora.
@@ -496,7 +490,7 @@ Ao analisar enunciados do tipo *"Emprego do [Elemento X] pelo [Elemento Y]"*:
 
 ---
 
-## Questão de Concurso: FGV 2023 — Câmara dos Deputados
+### Questão de Concurso: FGV 2023 — Câmara dos Deputados
 
 - **Comando:** Assinale a frase em que o exemplo está correto em relação à figura indicada no início.
 - **A) CORRETA: Sinestesia —** *"De longe podia-se ouvir o pálido ruído das manifestações."* (Fusão sensorial de *pálido* [visão] com *ruído* [audição]).
@@ -508,59 +502,53 @@ Ao analisar enunciados do tipo *"Emprego do [Elemento X] pelo [Elemento Y]"*:
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Macete do "Lugar de" para Identificar Metonímia
+### O Macete do "Lugar de" para Identificar Metonímia
 
 Para confirmar se uma figura é metonímia, aplique mentalmente a fórmula: **"Palavra X no lugar de Y"** (*Bombril* no lugar de *palha de aço*; *Machado* no lugar de *livros de Machado*; *o teto* no lugar de *a casa*). Na metonímia, apenas o termo X aparece no texto; na metáfora, os dois polos (A e B) estão presentes mentalmente ou grafados.
 
-## Como Decodificar Metáfora na Banca FGV
+### Como Decodificar Metáfora na Banca FGV
 
 A FGV costuma conceituar metáfora como gênero comparativo. Em questões de múltipla escolha da FGV, se as outras quatro alternativas forem orações com conectivos de causa, consequência, proporção ou tempo, marque sem receio a alternativa que contiver relação de semelhança entre dois seres, mesmo que traga a conjunção *como*.
 
-## Mnemônico da "Vírgula Vizinha" (Vírgula Vicária)
+### Mnemônico da "Vírgula Vizinha" (Vírgula Vicária)
 
 Associe a palavra **Vicária** a **Vizinha**: a vírgula vicária é a *vírgula vizinha* que ocupa exatamente o lugar sintático deixado pelo verbo omitido em uma oração coordenada paralela.
 
-## Rastreamento de Marcadores na Ironia de Prova
+### Rastreamento de Marcadores na Ironia de Prova
 
 Em provas de concurso, a ironia não pode ser inventada pelo candidato; ela é sempre sustentada por marcadores objetivos: aspas irônicas ou um segmento oracional imediatamente posterior que quebra e desautoriza o sentido literal da asserção inicial.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## A Pegadinha dos Verbos de Comparação
+### A Pegadinha dos Verbos de Comparação
 
 Não procure apenas conjunções como *como* ou *tal qual*. Verbos de similitude como *parecer*, *assemelhar-se* ou *lembrar* (*"Ela parece o irmão"*) estruturam **comparações explícitas formais**, e não metáforas.
 
-## Distinção entre Estrutura Consecutiva ("Tão... Que") e Comparativa
+### Distinção entre Estrutura Consecutiva ("Tão... Que") e Comparativa
 
 - `Tão + Adjetivo + QUE` = **Causa e Consequência** (Oração Adverbial Consecutiva).
 - `Tão + Adjetivo + QUANTO / COMO` = **Comparação de Igualdade**.
 - *Erro Comum:* Candidatos leem *"a fome era tão grande que comi três pratos"* e julgam apressadamente ser comparação ou hipérbole.
 
-## Conjunção Concessiva ("Embora") NÃO Instala Paradoxo
+### Conjunção Concessiva ("Embora") NÃO Instala Paradoxo
 
 A presença de conectivos concessivos (*embora, apesar de, conquanto*) marca uma quebra de expectativa entre fatos do mundo real, mas **não gera contradição lógica insuperável**. O paradoxo exige a colisão conceitual excludente (*"ferida que dói sem ser sentida"*).
 
-## Ironia NÃO é Crítica Sincera nem Humor Cotidiano
+### Ironia NÃO é Crítica Sincera nem Humor Cotidiano
 
 Para haver a figura de linguagem ironia, o falante precisa emitir formalmente o inverso semântico do que pensa. Desabafos sinceros, críticas políticas diretas ou anedotas humorísticas constituem discurso literal, e não figura de ironia.
 
-## Silepse de Número no Primeiro Verbo é Erro Gramatical Grave
+### Silepse de Número no Primeiro Verbo é Erro Gramatical Grave
 
 A concordância ideológica no plural com sujeito coletivo no singular (*"O grupo saíram"*) é **erro gramatical grosseiro**. A silepse de número só é legitimada se o verbo estiver afastado/distanciado do sujeito na sequência do período (*"O grupo não gostou [rígida], reagiram [silepse] imediatamente"*).
 
-## Proibição de Recursos Figurados em Redações Discursivas Técnicas
+### Proibição de Recursos Figurados em Redações Discursivas Técnicas
 
 O uso de metáforas, hipérboles, pleonasmos estilísticos e silepses de pessoa (*"nós/somos"*) em provas discursivas de concursos públicos acarreta perda severa de nota. A dissertação técnica exige rigorosamente linguagem denotativa, objetiva e impessoalidade em 3ª pessoa.
-
----
 
 ---
 
@@ -570,79 +558,77 @@ O uso de metáforas, hipérboles, pleonasmos estilísticos e silepses de pessoa 
 
 Figura de palavras que estabelece uma analogia implícita e direta entre dois elementos sem a presença de conectivo comparativo formal .
 
-### Comparação (Símile)
+#### Comparação (Símile)
 
 Figura de palavras que confronta explicitamente dois termos unidos por conectivos comparativos (*como, tal qual, tipo*) ou verbos de similitude (*parecer, assemelhar-se*) .
 
-### Metonímia
+#### Metonímia
 
 Figura de palavras que consiste na substituição de um termo por outro fundamentada em uma relação real e objetiva de contiguidade semântica .
 
-### Sinédoque
+#### Sinédoque
 
-### Catacrese
+#### Catacrese
 
 Metáfora cristalizada e incorporada ao uso corrente da língua, consistente no empréstimo de um termo existente para suprir uma lacuna lexical .
 
-### Antítese
+#### Antítese
 
 Figura de pensamento consistente na aproximação de palavras com significados opostos no plano lexical, mantendo a coerência lógica .
 
-### Paradoxo (Oxímoro)
+#### Paradoxo (Oxímoro)
 
 Figura de pensamento que reúne ideias ou conceitos mutuamente excludentes, instaurando uma contradição lógica insuperável no plano factual .
 
-### Ironia
+#### Ironia
 
 Figura de pensamento que consiste em expressar formalmente o oposto daquilo que se pensa, dependendo de marcadores contextuais para decodificação .
 
-### Eufemismo
+#### Eufemismo
 
 Figura de pensamento que suaviza ou atenua o impacto de notícias, termos ou conceitos considerados rudes, ofensivos ou dolorosos .
 
-### Prosopopeia (Personificação)
+#### Prosopopeia (Personificação)
 
 Figura de pensamento que atribui sentimentos, ações e comportamentos humanos a seres inanimados, animais ou conceitos abstratos .
 
-### Anacoluto
+#### Anacoluto
 
 Figura de sintaxe caracterizada pela quebra da estrutura da frase, na qual o termo inicial é abandonado e resta sem função sintática em relação ao verbo .
 
-### Pleonasmo Sintático
+#### Pleonasmo Sintático
 
 Construção gramatical legítima em que um objeto (direto ou indireto) anteposto é reiterado por um pronome oblíquo correspondente .
 
-### Pleonasmo Vicioso
+#### Pleonasmo Vicioso
 
 Redundância vocabular inútil e condenável que fere a norma culta padrão .
 
-### Elipse
+#### Elipse
 
 Figura de sintaxe consistente na omissão de um termo depreensível pelo contexto que não figurou previamente no texto .
 
-### Zeugma
+#### Zeugma
 
-### Vírgula Vicária
+#### Vírgula Vicária
 
 Sinal de pontuação coesivo de uso obrigatório que marca formalmente a supressão do verbo em orações coordenadas paralelas .
 
-### Silepse (Concordância Ideológica)
+#### Silepse (Concordância Ideológica)
 
 Figura de construção na qual a flexão gramatical é orientada pela ideia mental subentendida, dividindo-se em gênero, número e pessoa .
 
-### Hipérbato
+#### Hipérbato
 
 Figura de sintaxe caracterizada pela inversão da ordem direta canônica dos termos na oração (S-V-C) .
 
-### Sinestesia
+#### Sinestesia
 
 Figura de linguagem fundamentada na fusão e cruzamento de sensações originárias de órgãos sensoriais biológicos distintos .
 
-### Aliteração e Assonância
+#### Aliteração e Assonância
 
 Figuras sonoras baseadas na repetição rítmica e intencional de fonemas consonantais (aliteração) ou vocálicos (assonância) .
-
----
 
 ---
 
@@ -660,8 +646,6 @@ Ao concluir o estudo do grupo `esta unidade`, o estudante deve ser capaz de:
 
 ---
 
----
-
 ## Conexão com o método SuVeCA
 
 **SuVeCA = Sujeito + Verbo + Complemento + Adjunto + Predicativo.**
@@ -673,8 +657,8 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 ### Como aplicar neste tema
 
 1. Localizar o verbo principal da oração e identificar se a relação predicativa é literal ou figurada, mapeando os argumentos nominais (sujeito e complementos) envolvidos.
-2. 1. Revisão e ancoragem inicial: diferenciar denotação (sentido literal) de conotação (sentido figurado) e estabelecer o mapa dos 4 eixos (palavras, pensamento, sintaxe e som).
-3. 2. Domínio do eixo de palavras: aplicar a regra dos dois elementos para distinguir Metáfora de Comparação explícita e confrontá-las com a Metonímia (1 termo expresso por contiguidade) e a Catacrese (lacuna lexical).
+2. Revisão e ancoragem inicial: diferenciar denotação (sentido literal) de conotação (sentido figurado) e estabelecer o mapa dos 4 eixos (palavras, pensamento, sintaxe e som).
+3. Domínio do eixo de palavras: aplicar a regra dos dois elementos para distinguir Metáfora de Comparação explícita e confrontá-las com a Metonímia (1 termo expresso por contiguidade) e a Catacrese (lacuna lexical).
 
 ### Testes decisivos
 

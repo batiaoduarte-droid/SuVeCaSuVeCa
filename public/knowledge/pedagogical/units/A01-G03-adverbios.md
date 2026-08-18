@@ -38,7 +38,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 - Reconhecimento das classes gramaticais básicas: **Substantivo**, **Adjetivo**, **Verbo** e **Advérbio**.
 
-### Conceitos Centrais
+#### Conceitos Centrais
 
 - **Valor Circunstancial:** O sentido projetado pelo advérbio na oração (tempo, lugar, modo, intensidade, negação, afirmação).
 - **Intensificador:** Advérbio cuja função exclusiva é graduar o sentido de um adjetivo ou de outro advérbio.
@@ -46,7 +46,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - **Adjunto Adverbial:** Função sintática exercida pelo advérbio na análise oracional.
 - **Mobilidade Sintática:** Capacidade do advérbio de se deslocar na oração sem alterar sua relação sintático-semântica com o termo regente.
 
-### Mapa Conceitual Consolidado
+#### Mapa Conceitual Consolidado
 
 ```text
  CLASSES MODIFICADORAS
@@ -70,17 +70,15 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Conceito de Semântica Adverbial e Perguntas Diagnósticas
+### Conceito de Semântica Adverbial e Perguntas Diagnósticas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A semântica dos advérbios estuda o **sentido**, o **contexto** e o **valor circunstancial** que palavras ou locuções adverbiais projetam sobre as ações, estados ou características que modificam na oração.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Ao analisar uma questão que cobra o "valor semântico", o candidato deve formular perguntas-chave ao termo modificado para identificar a circunstância correspondente:
 
@@ -95,22 +93,22 @@ Ao analisar uma questão que cobra o "valor semântico", o candidato deve formul
 
 ---
 
-## Regra Fundamental do Termo Modificado (O Papel de Intensificador)
+### Regra Fundamental do Termo Modificado (O Papel de Intensificador)
 
-### Definição ou regra consolidada
+#### Definição ou regra consolidada
 
 A classe morfológica do termo a que o advérbio se refere determina rigorosamente o leque de suas possibilidades semânticas:
 
 1. **Advérbio modificando ADJETIVO ou outro ADVÉRBIO:** Assume categoricamente valor de **INTENSIDADE** (desempenha a função de *intensificador*). Não pode assumir circunstância de modo, tempo ou lugar.
 2. **Advérbio modificando VERBO (ou Locução Verbal):** Pode expressar **QUALQUER CIRCUNSTÂNCIA** (Modo, Tempo, Lugar, Intensidade, Afirmação, Negação, Causa, etc.).
 
-### Esquema Estrutural de Modificação
+#### Esquema Estrutural de Modificação
 
 $$
 \text{Advérbio} \longrightarrow \begin{cases} \text{Adjetivo} & \implies \mathbf{INTENSIDADE} \text{ (Intensificador)} \\ \text{Outro Advérbio} & \implies \mathbf{INTENSIDADE} \text{ (Intensificador)} \\ \text{Verbo / Locução} & \implies \mathbf{MODO, TEMPO, LUGAR, INTENSIDADE\dots} \end{cases}
 $$
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - "Ela canta **bem**." $\rightarrow$ *bem* modifica o verbo *canta* $\implies$ Advérbio de **Modo** (canta de que jeito?).
 - "Ela acordou **bem cedo**." $\rightarrow$ *cedo* modifica o verbo *acordou* (tempo); *bem* modifica o advérbio *cedo* $\implies$ Advérbio de **Intensidade** (intensifica o tempo).
@@ -121,13 +119,13 @@ $$
 
 ---
 
-## Ambivalência Semântica dos Advérbios 'Nunca' e 'Jamais'
+### Ambivalência Semântica dos Advérbios 'Nunca' e 'Jamais'
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Os vocábulos *nunca* e *jamais* possuem natureza semântica híbrida/ambivalente na Língua Portuguesa, acumulando simultaneamente valor circunstancial de **negação** e de **tempo**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Na frase "Eu *nunca* quis uma festa":
 
@@ -137,31 +135,31 @@ Na frase "Eu *nunca* quis uma festa":
 
 ---
 
-## Desmistificação do Sufixo '-mente' (Modo vs Tempo/Frequência)
+### Desmistificação do Sufixo '-mente' (Modo vs Tempo/Frequência)
 
-### Definição ou distinção crítica
+#### Definição ou distinção crítica
 
 A presença do sufixo sufixador adverbial *-mente* **não** garante que o advérbio expresse circunstância de modo. O valor semântico deriva da base adjetiva e da relação lógica com o verbo.
 
-### Critérios de reconhecimento
+#### Critérios de reconhecimento
 
 - **Modo (Jeito):** *Apressadamente* (de pressa), *rapidamente* (de rápido), *silenciosamente* (de silencioso).
 - **Tempo / Frequência:** *Raramente* (de raro = poucas vezes no tempo), *diariamente*, *anualmente*, *frequentemente*.
 - **Afirmação:** *Certamente* (de certo), *realmente*.
 
-### Aplicação em Frase de Fixação
+#### Aplicação em Frase de Fixação
 
 No excerto "...raramente soltavam palavras curtas", a palavra *raramente* não expressa o modo como soltavam palavras, mas sim a frequência temporal com que o evento ocorria. Trata-se de advérbio de **TEMPO**.
 
 ---
 
-## Morfossintaxe e Invariabilidade: A Estrutura de 'Ela está bem'
+### Morfossintaxe e Invariabilidade: A Estrutura de 'Ela está bem'
 
-### Definição ou regra consolidada
+#### Definição ou regra consolidada
 
 O advérbio é uma classe morfológica **invariável** e, na sintaxe oracional, desempenha **exclusivamente** o papel de **adjunto adverbial** (nunca predicativo do sujeito).
 
-### Análise Comparativa Estrutural
+#### Análise Comparativa Estrutural
 
 | Dimensão de Análise | Estrutura A: "Ela está bem." | Estrutura B: "Ela está feliz." |
 |:------------------------------------- |:---------------------------------------------- |:---------------------------------------------------------- |
@@ -170,7 +168,7 @@ O advérbio é uma classe morfológica **invariável** e, na sintaxe oracional, 
 | **Predicação Verbal** | **Verbo Intransitivo (V.I.)** | **Verbo de Ligação (V.L.)** |
 | **Função Sintática do Termo** | **Adjunto Adverbial de Modo** | **Predicativo do Sujeito** |
 
-### Fundamentação Teórica
+#### Fundamentação Teórica
 
 Um verbo de estado como *estar* só é classificado como Verbo de Ligação se houver na oração um termo que expresse atributo do sujeito (**Predicativo**). Como a palavra *bem* é advérbio invariável, funciona como adjunto adverbial; consequentemente, o verbo *estar* opera como **verbo intransitivo**.
 
@@ -178,13 +176,13 @@ Um verbo de estado como *estar* só é classificado como Verbo de Ligação se h
 
 ---
 
-## Omissão do Sufixo '-mente' em Advérbios Coordenados
+### Omissão do Sufixo '-mente' em Advérbios Coordenados
 
-### Definição ou regra consolidada
+#### Definição ou regra consolidada
 
 Na norma culta da Língua Portuguesa, ao coordenar dois ou mais advérbios derivados em *-mente*, é padrão eufônico expressar o sufixo **apenas no último elemento**, deixando-o **subentendido/implícito nos elementos anteriores**.
 
-### Aplicação e Análise Prática
+#### Aplicação e Análise Prática
 
 - **Texto analisado:** "...a questão do paraíso terrestre explica-se **clara e singelamente** pelo vegetarismo."
 - **Forma desdobrada:** "...explica-se **claramente e singelamente**..."
@@ -195,13 +193,13 @@ Na norma culta da Língua Portuguesa, ao coordenar dois ou mais advérbios deriv
 
 ---
 
-## Mobilidade Sintática e o Adjunto Adverbial Deslocado
+### Mobilidade Sintática e o Adjunto Adverbial Deslocado
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O advérbio possui ampla mobilidade posicional na frase. A distância física entre o advérbio deslocado e o seu verbo referente não anula nem enfraquece a relação sintático-semântica existente entre eles.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 No período *"Hoje, em boa parte das sociedades modernas, o conceito de povo abrange todos os adultos..."*:
 
@@ -211,14 +209,14 @@ No período *"Hoje, em boa parte das sociedades modernas, o conceito de povo abr
 
 ---
 
-## Distinção Categórica entre Adjetivo e Advérbio (O Teste do Referente)
+### Distinção Categórica entre Adjetivo e Advérbio (O Teste do Referente)
 
-### Definição ou distinção crítica
+#### Definição ou distinção crítica
 
 - **Adjetivo:** Termo que se liga exclusivamente a **Substantivo** para caracterizá-lo. Adjetivo **nunca** expressa circunstâncias de modo, tempo ou lugar.
 - **Advérbio:** Termo que se liga a **Verbo**, **Adjetivo** ou **outro Advérbio** para expressar circunstâncias ou intensidade.
 
-### Aplicação Prática no Item Cebraspe (TC-DF)
+#### Aplicação Prática no Item Cebraspe (TC-DF)
 
 Na oração *"Tributos desempenham um papel vital..."*:
 
@@ -229,13 +227,13 @@ Na oração *"Tributos desempenham um papel vital..."*:
 
 ---
 
-## Padrão Terminológico da Banca Cebraspe para Intensificação
+### Padrão Terminológico da Banca Cebraspe para Intensificação
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A banca Cebraspe utiliza de modo recorrente a locução verbal *"intensifica o sentido de..."* como fórmula técnica padrão para afirmar que determinado vocábulo é um **advérbio de intensidade** associado a um adjetivo ou advérbio.
 
-### Critério de Validação
+#### Critério de Validação
 
 Ao deparar-se com a assertiva *"o vocábulo X intensifica o sentido de Y"*, a validação requer dois passos:
 
@@ -244,8 +242,6 @@ Ao deparar-se com a assertiva *"o vocábulo X intensifica o sentido de Y"*, a va
 
 - **Possui procedimento:**
 - **Possui dica:**
-
----
 
 ---
 
@@ -267,77 +263,73 @@ Esta tabela sintetiza as formulações canônicas desenvolvidas no grupo, aponta
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Técnica da Seta de Referência Sintática
+### Técnica da Seta de Referência Sintática
 
-### Finalidade
+#### Finalidade
 
 Identificar sem erro a classe morfológica e a função sintática de um termo destacado em prova.
 
-### Passo a Passo
+#### Passo a Passo
 
 1. Localize a palavra sublinhada/examinada no texto.
 2. Pergunte logicamente: *Esta palavra refere-se a quem?*.
 3. Desenhe fisicamente uma **seta** em direção à palavra de destino.
 4. Classifique a palavra apontada pela seta:
- - Seta aponta para **Substantivo** $\implies$ O termo sob análise é **ADJETIVO** (ou determinante).
- - Seta aponta para **Verbo**, **Adjetivo** ou **Advérbio** $\implies$ O termo sob análise é **ADVÉRBIO**.
+  - Seta aponta para **Substantivo** $\implies$ O termo sob análise é **ADJETIVO** (ou determinante).
+  - Seta aponta para **Verbo**, **Adjetivo** ou **Advérbio** $\implies$ O termo sob análise é **ADVÉRBIO**.
 5. Se o advérbio apontar para adjetivo/advérbio, classifique-o imediatamente como **Intensidade**.
 
 ---
 
-## Teste do Plural para Distinção Morfossintática (Invariabilidade)
+### Teste do Plural para Distinção Morfossintática (Invariabilidade)
 
-### Finalidade
+#### Finalidade
 
 Diferenciar se uma palavra que qualifica ou modifica é adjetivo ou advérbio em estruturas predicativas.
 
-### Passo a Passo
+#### Passo a Passo
 
 1. Tome a oração sob dúvida no singular (ex.: "Ela está bem" / "Ela está calma").
 2. Flexione o sujeito e a forma verbal para o **plural** (ex.: "Elas estão...").
 3. Observe o comportamento morfológico do vocábulo examinado:
- - **Permanece Inalterado ("Elas estão bem"):** A palavra é **invariável** $\rightarrow$ **Advérbio de modo** $\rightarrow$ Função: **Adjunto Adverbial** $\rightarrow$ O verbo é **Intransitivo (V.I.)**.
- - **Sofre Flexão ("Elas estão calmas"):** A palavra é **variável** $\rightarrow$ **Adjetivo** $\rightarrow$ Função: **Predicativo do Sujeito** $\rightarrow$ O verbo é de **Ligação (V.L.)**.
+  - **Permanece Inalterado ("Elas estão bem"):** A palavra é **invariável** $\rightarrow$ **Advérbio de modo** $\rightarrow$ Função: **Adjunto Adverbial** $\rightarrow$ O verbo é **Intransitivo (V.I.)**.
+  - **Sofre Flexão ("Elas estão calmas"):** A palavra é **variável** $\rightarrow$ **Adjetivo** $\rightarrow$ Função: **Predicativo do Sujeito** $\rightarrow$ O verbo é de **Ligação (V.L.)**.
 
 ---
 
-## Método de Fatiamento de Assertivas do Cebraspe
+### Método de Fatiamento de Assertivas do Cebraspe
 
-### Finalidade
+#### Finalidade
 
 Evitar ser induzido ao erro por itens complexos de Certo/Errado que combinam afirmações morfológicas falsas com conclusões textuais verdadeiras.
 
-### Passo a Passo
+#### Passo a Passo
 
 1. Insira colchetes `[ ]` ou barras divisórias separando a assertiva em blocos lógicos autônomos:
- - *Bloco 1:* Classificação morfológica da palavra.
- - *Bloco 2:* Identificação do termo regente / relação sintática.
- - *Bloco 3:* Sentido circunstancial ou paráfrase semântica do texto.
+  - *Bloco 1:* Classificação morfológica da palavra.
+  - *Bloco 2:* Identificação do termo regente / relação sintática.
+  - *Bloco 3:* Sentido circunstancial ou paráfrase semântica do texto.
 2. Julgue o Bloco 1 isoladamente no texto de apoio.
 3. Se o Bloco 1 contiver erro morfológico (ex.: chamar adjetivo de advérbio), **invalide o item imediatamente (marque ERRADO)**, sem se deixar influenciar pela beleza ou veracidade do Bloco 3.
 4. O item só será **CERTO** se todos os blocos fracionados forem rigorosamente verdadeiros.
 
 ---
 
-## Decodificação do Comando "Intensifica" e Teste de Troca por "Muito"
+### Decodificação do Comando "Intensifica" e Teste de Troca por "Muito"
 
-### Finalidade
+#### Finalidade
 
 Validar com rapidez assertivas do Cebraspe que empregam verbos de gradação.
 
-### Passo a Passo
+#### Passo a Passo
 
 1. Ao ler que *"o termo A intensifica o sentido do termo B"*, traduza mentalmente: *"A é um advérbio de intensidade modificador de B"*.
 2. Cheque se $B$ é adjetivo ou advérbio.
 3. Substitua $A$ pela palavra *muito*:
 
 4. Se o teste validar o papel modificador de adjetivo/advérbio, marque **CERTO**.
-
----
 
 ---
 
@@ -355,39 +347,37 @@ Validar com rapidez assertivas do Cebraspe que empregam verbos de gradação.
 
 ---
 
----
-
 ## Exemplos comentados
 
-## 9.1. Frases de Fixação Temática
+### 9.1. Frases de Fixação Temática
 
-### Locução Adverbial de Tempo
+#### Locução Adverbial de Tempo
 
 - **Frase:** *"À noite começa o telejornal."*
 - **Análise:** O termo "À noite" refere-se ao verbo *começa* (*começa quando?* $\rightarrow$ à noite).
 - **Classificação:** Locução Adverbial de **Tempo**.
 
-### Advérbio Intensificador de Advérbio
+#### Advérbio Intensificador de Advérbio
 
 - **Frase:** *"Ela acorda bem cedo para correr."*
 - **Análise Encadeada:**
- - *cedo* refere-se ao verbo *acorda* (*acorda quando?*) $\rightarrow$ Advérbio de **Tempo**.
- - *bem* refere-se ao advérbio *cedo* (*quão cedo?* $\rightarrow$ muito cedo) $\rightarrow$ Advérbio de **Intensidade** (Intensificador).
+  - *cedo* refere-se ao verbo *acorda* (*acorda quando?*) $\rightarrow$ Advérbio de **Tempo**.
+  - *bem* refere-se ao advérbio *cedo* (*quão cedo?* $\rightarrow$ muito cedo) $\rightarrow$ Advérbio de **Intensidade** (Intensificador).
 - **Conclusão Pedagógica:** A palavra *bem* **não** é modo nesta estrutura; atua como intensificador.
 
-### Advérbio de Modo Típico
+#### Advérbio de Modo Típico
 
 - **Frase:** *"A ambulância entrou rapidamente pelo portão das emergências."*
 - **Análise:** *rapidamente* liga-se ao verbo *entrou* (*entrou de que jeito?* $\rightarrow$ rapidamente).
 - **Classificação:** Advérbio de **Modo**.
 
-### Advérbio de Lugar
+#### Advérbio de Lugar
 
 - **Frase:** *"Os jogadores se hospedaram aqui."*
 - **Análise:** *aqui* liga-se ao verbo *se hospedaram* (*hospedaram-se onde?* $\rightarrow$ aqui).
 - **Classificação:** Advérbio de **Lugar**.
 
-### Advérbio em '-mente' com Sentido Temporal/Frequência
+#### Advérbio em '-mente' com Sentido Temporal/Frequência
 
 - **Frase:** *"E depois daquele desastre viviam todos calados, raramente soltavam palavras curtas."*
 - **Análise:** *raramente* liga-se ao verbo *soltavam* indicando com que frequência temporal o fato se dava (e não o modo).
@@ -395,9 +385,9 @@ Validar com rapidez assertivas do Cebraspe que empregam verbos de gradação.
 
 ---
 
-## 9.2. Questões de Concurso Cebraspe
+### 9.2. Questões de Concurso Cebraspe
 
-### Cebraspe 2024 / Pref. Cachoeiro de Itapemirim — Advérbio Deslocado "Hoje"
+#### Cebraspe 2024 / Pref. Cachoeiro de Itapemirim — Advérbio Deslocado "Hoje"
 
 - **Confiança:** alta
 - **Texto:** *"Hoje, em boa parte das sociedades modernas, o conceito de povo abrange todos os adultos integrados na sociedade..."*
@@ -405,35 +395,35 @@ Validar com rapidez assertivas do Cebraspe que empregam verbos de gradação.
 - **Gabarito:** **CERTO**
 - **Justificativa Pedagógica:** O vocábulo "Hoje" localiza temporalmente a ação verbal expressa por "abrange", situada linhas depois. A distância sintática provocada pelo adjunto intercalado entre vírgulas não desnatura a função de advérbio de tempo.
 
-### Cebraspe 2023 / Dataprev — O Vocábulo 'Bem' Intensificador
+#### Cebraspe 2023 / Dataprev — O Vocábulo 'Bem' Intensificador
 
 - **Texto:** *"É bem provável que em 2023 a gente tenha uma Tábua preliminar..."*
 - **Item:** `No primeiro período do último parágrafo, o vocábulo ‘bem’ intensifica o sentido do termo ‘provável’.`
 - **Gabarito:** **CERTO**
 - **Justificativa Pedagógica:** O termo "provável" é um adjetivo. De acordo com a Regra Fundamental , o advérbio que modifica adjetivo opera como intensificador. O comando "intensifica o sentido" é a terminologia padrão do Cebraspe para advérbio de intensidade.
 
-### Cebraspe 2024 / Instituto Rio Branco — Coordenação 'Clara e Singelamente'
+#### Cebraspe 2024 / Instituto Rio Branco — Coordenação 'Clara e Singelamente'
 
 - **Texto:** *"Para mim, a questão do paraíso terrestre explica-se clara e singelamente pelo vegetarismo."*
 - **Item:** `No segundo período do terceiro parágrafo, estão coordenados um adjetivo, “clara”, que qualifica o termo “questão”, e um advérbio, “singelamente”, que exprime o modo como se dá a ação de explicar no contexto em questão.`
 - **Gabarito:** **ERRADO**
 - **Justificativa Pedagógica:** Não há adjetivo qualificando "questão". O vocábulo "clara" é a forma abreviada do advérbio "claramente", que se encontra coordenado a "singelamente", ambos modificando o verbo "explica-se" na função de advérbios de modo .
 
-### Cebraspe 2022 / SERES-PE — Advérbio 'Sempre' Modificando Locução Verbal
+#### Cebraspe 2022 / SERES-PE — Advérbio 'Sempre' Modificando Locução Verbal
 
 - **Texto:** *"...uma pessoa deve sempre ter em conta o presente..."*
 - **Item:** `A palavra destacada do segundo parágrafo do texto CG1A1-I está empregada como advérbio que expressa circunstância de tempo: “sempre” (último período).`
 - **Gabarito:** **CERTO**
 - **Justificativa Pedagógica:** "Sempre" modifica a locução verbal "deve ter" (*deve ter quando?* $\rightarrow$ sempre). Por se referir a verbo expressando habitualidade temporal, classifica-se como advérbio de tempo.
 
-### Cebraspe 2023 / TC-DF — Distinção Adjetivo vs Advérbio e Sedução Semântica
+#### Cebraspe 2023 / TC-DF — Distinção Adjetivo vs Advérbio e Sedução Semântica
 
 - **Texto:** *"Tributos desempenham um papel vital no financiamento de governos..."*
 - **Item:** `No primeiro período do segundo parágrafo, o vocábulo “vital” classifica-se como advérbio e expressa, em relação ao termo “papel”, circunstância de modo, denotando a primordial importância desempenhada pelos tributos.`
 - **Gabarito:** **ERRADO**
 - **Justificativa Pedagógica:** "Vital" qualifica o substantivo "papel", sendo, portanto, um **adjetivo** (e não advérbio). Adjetivos não expressam circunstância de modo. Embora a oração final seja uma interpretação semântica correta ("denotando primordial importância"), o erro morfológico inicial invalida categoricamente o item.
 
-### Cebraspe 2021 / SEDUC-AL — 'Bem' Modificando Adjetivo ('Bem Diferentes')
+#### Cebraspe 2021 / SEDUC-AL — 'Bem' Modificando Adjetivo ('Bem Diferentes')
 
 - **Texto:** *"...embora lançando mão de recursos bem diferentes."*
 - **Item:** `No primeiro período do primeiro parágrafo, o termo “bem” intensifica o sentido do termo “diferentes”.`
@@ -442,96 +432,88 @@ Validar com rapidez assertivas do Cebraspe que empregam verbos de gradação.
 
 ---
 
----
-
 ## Memorização inteligente
 
-## A Fórmula 'Modo = Jeito'
+### A Fórmula 'Modo = Jeito'
 
 Para validar se um advérbio ligado a verbo expressa circunstância de **modo**, reformule mentalmente a frase perguntando: *qual foi o jeito de executar a ação?*. Se a resposta fizer sentido pleno, trata-se de modo.
 
-## Mantra Cebraspe: "O Que Vem Depois, Salva!"
+### Mantra Cebraspe: "O Que Vem Depois, Salva!"
 
 Em coordenações sintáticas de palavras aparentemente adjetivas seguidas por advérbios em *-mente* ("clara e singelamente", "direta e formalmente"), **nunca** julgue a primeira palavra isolada. Olhe a palavra seguinte: a presença do sufixo *-mente* no segundo termo revela que o primeiro termo é também um advérbio com terminação suprimida por estilo.
 
-## Desenho da Seta de Referência no Papel da Prova
+### Desenho da Seta de Referência no Papel da Prova
 
 Durante a resolução da prova, trace fisicamente uma seta da palavra destacada para o núcleo a que ela se liga. Se a seta terminar em substantivo, classifique na hora como adjetivo; se terminar em verbo, adjetivo ou advérbio, classifique como advérbio.
 
-## Decodificação de Vocabulário de Banca: "Intensifica"
+### Decodificação de Vocabulário de Banca: "Intensifica"
 
 Sempre que a banca Cebraspe afirmar que uma palavra "intensifica o sentido de outra", interprete a questão como uma cobrança direta da classe **advérbio de intensidade**.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## A Pegadinha da "Decoreba Sem-Vergonha": Achar que 'Bem' é Sempre Modo
+### A Pegadinha da "Decoreba Sem-Vergonha": Achar que 'Bem' é Sempre Modo
 
 - **O Erro do Aluno:** Decorar que *bem* é antônimo de *mal* e, por isso, seria eternamente advérbio de modo.
 - **A Pegadinha da Banca:** As bancas colocam o vocábulo *bem* antes de adjetivos (*bem provável*, *bem alto*) ou de outros advérbios (*bem cedo*, *bem longe*).
 - **A Regra:** Ao se ligar a adjetivo ou advérbio, *bem* perde o valor de modo e torna-se categoricamente **advérbio de intensidade**.
 
-## O Mito de que a Terminação '-mente' Garante Advérbio de Modo
+### O Mito de que a Terminação '-mente' Garante Advérbio de Modo
 
 - **O Erro do Aluno:** Julgar apressadamente que qualquer termo com sufixo *-mente* indica o "modo".
 - **A Correção:** *Raramente*, *diariamente* e *anualmente* expressam **tempo/frequência**; *certamente* expressa **afirmação**.
 
-## Erro de Predicação: Classificar o Verbo 'Estar' como Verbo de Ligação em "Ela está bem"
+### Erro de Predicação: Classificar o Verbo 'Estar' como Verbo de Ligação em "Ela está bem"
 
 - **O Erro do Aluno:** Supor que o verbo *estar* é intrinsecamente e sempre verbo de ligação.
 - **A Correção:** Verbo de ligação exige predicativo (adjetivo). Como *bem* é advérbio invariável (adjunto adverbial), o verbo *estar* torna-se **verbo intransitivo (V.I.)**.
 
-## A Armadilha da "Sedução Semântica" no Final das Assertivas do Cebraspe
+### A Armadilha da "Sedução Semântica" no Final das Assertivas do Cebraspe
 
 - **O Erro do Aluno:** Ler a assertiva de forma contínua e assinalar CERTO porque a explicação textual no final do período é coerente e verídica.
 - **A Estratégia da Banca:** O Cebraspe insere um erro técnico inicial (ex.: chamar adjetivo de advérbio) e finaliza com uma paráfrase textual perfeita para seduzir o candidato desatento.
 - **Como Evitar:** Fatie a assertiva  e descarte o item imediatamente se houver falha de classificação morfológica no início.
 
-## Falsa Exigência de Adjacência Física do Advérbio
+### Falsa Exigência de Adjacência Física do Advérbio
 
 - **O Erro do Aluno:** Julgar que um advérbio no início da frase não pode se referir a um verbo situado linhas depois.
 - **A Correção:** Adjuntos adverbiais possuem mobilidade sintática natural e continuam modificando o verbo mesmo quando separados por orações ou termos intercalados longos.
 
 ---
 
----
-
 ## Glossário operacional
 
-## Advérbio
+### Advérbio
 
 Classe gramatical de palavra invariável que se relaciona com um verbo, um adjetivo ou outro advérbio, projetando sobre ele uma circunstância (tempo, modo, lugar, afirmação, negação) ou intensidade.
 *Unidades relacionadas:* .
 
-## Intensificador
+### Intensificador
 
 Denominação técnica utilizada pelas bancas de concurso (notadamente o Cebraspe) para o advérbio de intensidade quando este atua modificando a gradação semântica de um adjetivo ou de outro advérbio.
 *Unidades relacionadas:* .
 
-## Invariabilidade Adverbial
+### Invariabilidade Adverbial
 
 Propriedade morfológica intrínseca do advérbio, caracterizada pela ausência de flexão de gênero (masculino/feminino) e de número (singular/plural), diferentemente de adjetivos, substantivos e pronomes.
 *Unidades relacionadas:* .
 
-## Adjunto Adverbial
+### Adjunto Adverbial
 
 Função sintática desempenhada pelo advérbio ou pela locução adverbial no interior da oração, qualificando o verbo, adjetivo ou advérbio.
 *Unidades relacionadas:* .
 
-## Fatiamento de Assertiva
+### Fatiamento de Assertiva
 
 Técnica operacional de resolução de itens de Certo/Errado que divide uma proposição complexa em subafirmações morfológicas, sintáticas e semânticas independentes.
 *Unidades relacionadas:* .
 
-## Sedução Semântica
+### Sedução Semântica
 
 Estratégia redacional das bancas examinadoras consistente em formular uma conclusão textual correta e envolvente no desfecho de um item para mascarar uma incorreção técnica de morfossintaxe apresentada no início.
 *Unidades relacionadas:* .
-
----
 
 ---
 

@@ -41,7 +41,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - **Sintaxe de Complementos e Termos da Oração:** Distinção nítida entre Objeto Direto (sem preposição obrigatória), Objeto Indireto (preposicionado), Adjunto Adverbial (circunstância), Predicativo do Sujeito e Sujeito Sintático (termo com o qual o verbo concorda).
 - **Pronomes:** Reconhecimento dos valores anafóricos do pronome relativo *que* e das funções do pronome oblíquo *se*.
 
-### Mapa Conceitual Integrado
+#### Mapa Conceitual Integrado
 
 ```text
 SISTEMA DAS VOZES VERBAIS EM CONCURSOS PÚBLICOS
@@ -80,17 +80,15 @@ SISTEMA DAS VOZES VERBAIS EM CONCURSOS PÚBLICOS
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Fundamentos, Razão Semântica e Efeitos Discursivos da Voz Passiva
+### Fundamentos, Razão Semântica e Efeitos Discursivos da Voz Passiva
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A voz passiva é a conformação morfossintática em que o paciente do processo verbal é promovido à posição nuclear de sujeito gramatical (**Sujeito Paciente**). Sua adoção não decorre de mera alternância estilística neutra, mas cumpre funções discursivas e pragmáticas fundamentadas: focar o resultado ou o alvo da ação, impessoalizar o relato, ocultar a autoria ou atenuar a responsabilidade direta de indivíduos específicos.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 As bancas examinadoras contemporâneas cobram a teoria funcional das vozes verbais sob três dimensões:
 
@@ -98,25 +96,25 @@ As bancas examinadoras contemporâneas cobram a teoria funcional das vozes verba
 2. **Atenuação e Ocultação de Responsabilidade (Padrão FCC e CESPE):** Enunciados que utilizam formulações como *"minorar o destaque dado ao sujeito responsável por determinado ato"* ou *"evitar a atribuição da responsabilidade a indivíduos específicos"* referem-se à **omissão ou indeterminação intencional do Agente da Passiva**. Ao empregar estruturas como *"a peça foi censurada"* ou *"as histórias tinham sido contadas"*, o enunciador transfere o foco temático para o fato em si, preservando o anonimato ou generalizando o executor.
 3. **Efeito Estilístico de Inércia e Fragilidade (Padrão CESPE):** No texto literário/narrativo, a convergência da voz passiva analítica (em que a entidade apenas sofre o processo) com a escassez de verbos de movimento (predomínio de nomes e descrições estáticas) atua deliberadamente para projetar a imobilidade, inércia, passividade e vulnerabilidade do referente.
 
-### Critérios de Reconhecimento
+#### Critérios de Reconhecimento
 
 - Verificar se o elemento que sofre a ação ocupa a posição de sujeito sintático com o qual o verbo concorda.
 - Avaliar se a ausência de agente preposicionado expressa apagamento voluntário do executor para fins de impessoalidade argumentativa.
 
-### Exemplos e Distratores
+#### Exemplos e Distratores
 
 - **Exemplo Discursivo:** *"O Brasil real começou a ser construído..."* $\rightarrow$ Voz passiva analítica com foco no sujeito paciente (*O Brasil real*), deixando o agente indeterminado.
 - **Exemplo Literário:** *"Tarde de verão, é levado ao jardim na cadeira de braços..."* $\rightarrow$ A passiva analítica (*é levado*) retrata o estado de completa submissão física do personagem.
 
 ---
 
-## A Distinção Crítica entre Sujeito Sintático (Paciente) e Agente da Passiva
+### A Distinção Crítica entre Sujeito Sintático (Paciente) e Agente da Passiva
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A regra de ouro da sintaxe de vozes verbais estabelece a equação inviolável: **SUJEITO SINTÁTICO $\neq$ AGENTE DA PASSIVA**. Uma oração passiva analítica ou sintética possui obrigatoriamente um sujeito sintático determinado (o termo paciente com o qual o verbo concorda). A ausência do executor da ação caracteriza **Agente da Passiva Indeterminado/Omitido**, e jamais "oração sem sujeito" ou "sujeito inexistente".
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 Uma das armadilhas mais letais elaboradas pelo CESPE/CEBRASPE e pela FCC consiste em afirmar que uma construção passiva que não possui agente expresso é *"destituída de sujeito sintático que possa ser identificado"*.
 
@@ -140,7 +138,7 @@ Uma das armadilhas mais letais elaboradas pelo CESPE/CEBRASPE e pela FCC consist
  * AGENTE DA PASSIVA = Omitido / Indeterminado
 ```
 
-### Critérios de Reconhecimento e Desarme
+#### Critérios de Reconhecimento e Desarme
 
 1. Identificada a forma passiva (`SER + particípio` ou `VTD + SE`), localize o verbo e formule a pergunta: *O que é [particípio]?* ou *Quem é [particípio]?*.
 2. O substantivo que responder à pergunta é o **Sujeito Sintático**. Se a oração estiver em ordem invertida, reorganize-a para a ordem direta (`Sujeito + Verbo + Complementos`).
@@ -148,13 +146,13 @@ Uma das armadilhas mais letais elaboradas pelo CESPE/CEBRASPE e pela FCC consist
 
 ---
 
-## Voz Passiva Analítica Canônica vs. Verbo de Ligação com Predicativo
+### Voz Passiva Analítica Canônica vs. Verbo de Ligação com Predicativo
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A **Voz Passiva Analítica canônica** exigida rigorosamente em concursos públicos estrutura-se exclusivamente pela fórmula **VERBO AUXILIAR SER + PARTICÍPIO DO VERBO PRINCIPAL TRANSITIVO**. Construções formadas pelo verbo **SER isolado** acompanhado de substantivo/adjetivo, por verbos de mudança de estado (*virar*, *tornar-se*) ou pelo verbo **ESTAR/FICAR + particípio/adjetivo** configuram **Verbo de Ligação (VL) + Predicativo do Sujeito (PS)**, pertencendo à **Voz Ativa**.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 As bancas organizadoras utilizam sistematicamente o verbo auxiliar para criar falsas passivas analíticas:
 
@@ -163,7 +161,7 @@ As bancas organizadoras utilizam sistematicamente o verbo auxiliar para criar fa
 3. **A Armadilha do Verbo "Estar + Particípio" (Padrão FGV):** Na frase *"Apenas os mais inteligentes estão destinados a obter sucesso"*, o verbo *estar* funciona como VL e a forma *destinados* atua com valor puramente adjetivo/estativo (Predicativo do Sujeito). A FGV considera essa estrutura estativa como **Voz Ativa**, reservando a classificação de voz passiva analítica estritamente às perífrases dinâmicas com o auxiliar **SER**.
 4. **Intercalação de Adjuntos Adverbiais:** A presença de termos adverbiais intercalados entre o auxiliar e o particípio (*"O prêmio foi duas vezes concedido"*) não anula a locução passiva analítica.
 
-### Tabela de Diferenciação Estrutural
+#### Tabela de Diferenciação Estrutural
 
 | Estrutura Sintática | Verbo / Auxiliar | Complemento / Forma Principal | Classificação Gramatical | Voz Verbal |
 |:--------------------------- |:----------------------------- |:---------------------------------------- |:------------------------------- |:--------------------------: |
@@ -176,37 +174,37 @@ As bancas organizadoras utilizam sistematicamente o verbo auxiliar para criar fa
 
 ---
 
-## Voz Passiva Sintética (Pronominal) e Protocolo de Validação
+### Voz Passiva Sintética (Pronominal) e Protocolo de Validação
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A **Voz Passiva Sintética** (ou passiva pronominal) é uma estrutura compacta formada por um **Verbo Transitivo Direto (VTD)** ou **Transitivo Direto e Indireto (VTDI)** flexionado na 3ª pessoa (singular ou plural), acoplado ao pronome **SE** operando como **Partícula Apassivadora (PA)**, concordando com um **Sujeito Paciente**. Sua validação categórica dá-se pela conversão harmônica para a voz passiva analítica correspondente.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 A passiva sintética atende a um princípio de economia linguística: elimina a locução com o verbo auxiliar *ser* e habitualmente omite o agente da passiva.
 Para certificar a legitimidade da estrutura e afastar confusões com sujeito indeterminado ou verbos pronominais:
 
 1. **Exigência de Transitividade Direta:** O verbo deve selecionar complemento direto sem preposição originária. Verbos intransitivos (VI), transitivos indiretos (VTI) ou de ligação (VL) não formam passiva sintética.
 2. **Teste da Transposição Analítica com Equivalência Temporal Idêntica:** Converte-se a estrutura `Verbo Ativo + SE + Termo Paciente` para `Termo Paciente + SER (no mesmo tempo/modo) + Particípio`:
- - Presente do Indicativo: *"Não se faz arte"* $\rightarrow$ *"Arte não **é** feita"*.
- - Presente do Subjuntivo: *"Generalize-se a opinião"* $\rightarrow$ *"A opinião **seja** generalizada"*.
- - Pretérito Perfeito Singular: *"Sepultou-se o passado"* $\rightarrow$ *"O passado **foi** sepultado"*.
- - Pretérito Perfeito Plural: *"Aliviaram-se tensões"* $\rightarrow$ *"Tensões **foram** aliviadas"*.
- - Presente do Indicativo Plural: *"Escravizam-se pessoas"* $\rightarrow$ *"Pessoas **são** escravizadas"*.
+  - Presente do Indicativo: *"Não se faz arte"* $\rightarrow$ *"Arte não **é** feita"*.
+  - Presente do Subjuntivo: *"Generalize-se a opinião"* $\rightarrow$ *"A opinião **seja** generalizada"*.
+  - Pretérito Perfeito Singular: *"Sepultou-se o passado"* $\rightarrow$ *"O passado **foi** sepultado"*.
+  - Pretérito Perfeito Plural: *"Aliviaram-se tensões"* $\rightarrow$ *"Tensões **foram** aliviadas"*.
+  - Presente do Indicativo Plural: *"Escravizam-se pessoas"* $\rightarrow$ *"Pessoas **são** escravizadas"*.
 3. **Concordância Obrigatória:** O verbo na passiva sintética concorda obrigatoriamente em número e pessoa com o sujeito paciente (*"Vendem-se limões"* = *Limões são vendidos*; *"Mencionam-se espécies"* = *Espécies são mencionadas*).
 
 - **Equivale semanticamente a:**  (Voz Passiva Analítica).
 
 ---
 
-## Desambiguação das Quatro Funções Críticas do Pronome "SE"
+### Desambiguação das Quatro Funções Críticas do Pronome "SE"
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A classificação sintática da oração e a determinação da voz verbal associada à partícula **SE** dependem estritamente da transitividade do verbo e da relação semântica estabelecida com o sujeito, dividindo-se em: **Partícula Apassivadora (PA)**, **Parte Integrante do Verbo (PIV)**, **Índice de Indeterminação do Sujeito (IIS)** e **Pronome Reflexivo/Recíproco**.
 
-### Quadro Sinótico de Desambiguação do "SE"
+#### Quadro Sinótico de Desambiguação do "SE"
 
 ```text
  ┌──────────────────────────────────┐
@@ -224,30 +222,30 @@ A classificação sintática da oração e a determinação da voz verbal associ
  (ex.: "Vendem-se casas") (ex.: "Trabalha-se muito") (ex.: "Queixou-se da dor") (ex.: "O homem feriu-se")
 ```
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 1. **Pronome Apassivador (PA) $\rightarrow$ Voz Passiva Sintética:**
 
- - Teste: conversão perfeita para `SER + particípio` (*"encerrou-se a escravidão"* = *a escravidão foi encerrada*).
+  - Teste: conversão perfeita para `SER + particípio` (*"encerrou-se a escravidão"* = *a escravidão foi encerrada*).
 2. **Parte Integrante do Verbo (PIV) $\rightarrow$ Voz Ativa:**
- - Integra verbos essencialmente pronominais (*arrepender-se*, *queixar-se*) ou acidentalmente pronominais que alteram regência e sentido para expressar atos espontâneos, sentimentos ou atitudes (*dar-se* = acontecer; *acomodar-se a* = conformar-se; *sair-se* = obter resultado; *sentir-se*, *lembrar-se*).
+  - Integra verbos essencialmente pronominais (*arrepender-se*, *queixar-se*) ou acidentalmente pronominais que alteram regência e sentido para expressar atos espontâneos, sentimentos ou atitudes (*dar-se* = acontecer; *acomodar-se a* = conformar-se; *sair-se* = obter resultado; *sentir-se*, *lembrar-se*).
 
- - Teste de Rejeição: A transposição passiva analítica é manifestamente agramatical ou altera o sentido lexical (*"cientistas não se saem melhor"* $\neq$ *"cientistas não são saídos"*; *"a resistência não se dá por acaso"* $\neq$ *"a resistência não é dada"*).
+  - Teste de Rejeição: A transposição passiva analítica é manifestamente agramatical ou altera o sentido lexical (*"cientistas não se saem melhor"* $\neq$ *"cientistas não são saídos"*; *"a resistência não se dá por acaso"* $\neq$ *"a resistência não é dada"*).
 3. **Índice de Indeterminação do Sujeito (IIS) $\rightarrow$ Voz Ativa:**
 
- - Exemplo: *"Ali se trabalha como escravo"* (*trabalhar* é VI; *se* é IIS; voz ativa com sujeito indeterminado).
+  - Exemplo: *"Ali se trabalha como escravo"* (*trabalhar* é VI; *se* é IIS; voz ativa com sujeito indeterminado).
 4. **Pronome Reflexivo / Recíproco $\rightarrow$ Voz Reflexiva / Recíproca:**
- - O pronome atua como objeto direto ou indireto, refletindo a ação sobre o próprio sujeito (*"O cozinheiro feriu-se"* = feriu a si mesmo) ou expressando troca mútua (*"correspondem-se"* = uns aos outros).
+  - O pronome atua como objeto direto ou indireto, refletindo a ação sobre o próprio sujeito (*"O cozinheiro feriu-se"* = feriu a si mesmo) ou expressando troca mútua (*"correspondem-se"* = uns aos outros).
 
 ---
 
-## Voz Reflexiva e Voz Recíproca: Critérios Pragmáticos de Julgamento
+### Voz Reflexiva e Voz Recíproca: Critérios Pragmáticos de Julgamento
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A **Voz Reflexiva** caracteriza-se pela coincidência referencial absoluta entre o sujeito agente e o paciente da ação verbal, operando o pronome oblíquo reflexivo como receptor da ação. A **Voz Recíproca** é o desdobramento plural da reflexividade, em que múltiplos agentes realizam e sofrem a ação uns sobre os outros de forma mútua e simultânea.
 
-### Explicação Consolidada e Pragmatismo das Bancas
+#### Explicação Consolidada e Pragmatismo das Bancas
 
 1. **O Teste Operacional da Reflexividade:** Para confirmar se o verbo está na voz reflexiva, substitui-se mentalmente o pronome oblíquo por **"a si mesmo(s)"** ou **"a si próprio(s)"**. Se a substituição preservar o sentido de autodirecionamento da ação, consolida-se a voz reflexiva (*"O cozinheiro feriu-se"* $\rightarrow$ feriu a si mesmo; *"Os mais pobres se exercitam"* $\rightarrow$ exercitam a si mesmos).
 2. **O Critério Pragmático do CESPE/CEBRASPE:** Na doutrina gramatical teórica, há controvérsias sobre se verbos como *dedicar-se* ou *afastar-se* seriam puramente pronominais ou reflexivos. No entanto, em provas do CESPE/CEBRASPE, a banca adota uma postura estritamente funcional: se a leitura do texto aceitar a equivalência *"Erasmo dedicou a si mesmo"* ou *"afastar a si mesmo da filosofia"*, a assertiva que classifica a forma verbal como **Voz Reflexiva é julgada como CERTA**.
@@ -255,13 +253,13 @@ A **Voz Reflexiva** caracteriza-se pela coincidência referencial absoluta entre
 
 ---
 
-## Condições Sintáticas para Admissão de Transposição (VTD / VTDI)
+### Condições Sintáticas para Admissão de Transposição (VTD / VTDI)
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A transposição de uma oração da voz ativa para a voz passiva analítica depende de uma condição sintática prévia indispensável: **a oração original na voz ativa deve possuir OBJETO DIRETO**. Por decorrência, **apenas verbos Transitivos Diretos (VTD) ou Transitivos Diretos e Indiretos (VTDI) admitem conversão passiva**. Verbos Intransitivos (VI), de Ligação (VL) e Transitivos Indiretos (VTI) são estruturalmente incompatíveis com a transposição.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 O mecanismo sintático de transposição baseia-se na troca de funções: o Objeto Direto da ativa converte-se em Sujeito Paciente da passiva, e o Sujeito Agente da ativa converte-se em Agente da Passiva:
 
@@ -276,12 +274,12 @@ O mecanismo sintático de transposição baseia-se na troca de funções: o Obje
 ```
 
 - **O Atalho da Transitividade:** Ao enfrentar questões do tipo *"Assinale a frase que admite transposição para a voz passiva"*, o candidato **não deve tentar reescrever mentalmente todas as opções**, pois isso consome tempo e induz a erros auditivos. O procedimento rigoroso consiste em inspecionar a predicação do verbo principal:
- - Se o verbo for seguido de preposição obrigatória regimental (`de`, `em`, `com`, `a`) $\rightarrow$ É `VTI` ou `VI` $\rightarrow$ **Não admite transposição**.
- - Se o verbo for de Ligação (*ser*, *estar*, *tornar-se*) ou Intransitivo (*morrer*, *sair*, *falecer*) $\rightarrow$ **Não admite transposição**.
- - Se for locução verbal (*"deixou de ser"*), a transitividade é determinada exclusivamente pelo **verbo principal** (o último verbo da locução). Se o último for VL (*ser*), a locução não admite passiva.
- - Havendo VTD/VTDI com complemento não preposicionado (Objeto Direto), a transposição é **100% admitida**.
+  - Se o verbo for seguido de preposição obrigatória regimental (`de`, `em`, `com`, `a`) $\rightarrow$ É `VTI` ou `VI` $\rightarrow$ **Não admite transposição**.
+  - Se o verbo for de Ligação (*ser*, *estar*, *tornar-se*) ou Intransitivo (*morrer*, *sair*, *falecer*) $\rightarrow$ **Não admite transposição**.
+  - Se for locução verbal (*"deixou de ser"*), a transitividade é determinada exclusivamente pelo **verbo principal** (o último verbo da locução). Se o último for VL (*ser*), a locução não admite passiva.
+  - Havendo VTD/VTDI com complemento não preposicionado (Objeto Direto), a transposição é **100% admitida**.
 
-### Critérios de Exclusão por Transitividade
+#### Critérios de Exclusão por Transitividade
 
 |:------------------- |:------------------------: |:------------------------: |:---------------------------------------------------------------------------------------- |
 | **VTD** | SIM | **SIM** | *"Publico fotos"* $\rightarrow$ *"Fotos são publicadas por mim"* |
@@ -292,35 +290,35 @@ O mecanismo sintático de transposição baseia-se na troca de funções: o Obje
 
 ---
 
-## Estruturas Sintáticas Complexas na Transposição: Pronome Relativo como OD e Desarme de Sujeito Posposto
+### Estruturas Sintáticas Complexas na Transposição: Pronome Relativo como OD e Desarme de Sujeito Posposto
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Em provas avançadas (especialmente da FCC), as bancas camuflam a transitividade direta e a presença do objeto direto por meio de dois artifícios morfossintáticos: o emprego do **Pronome Relativo "QUE" como Objeto Direto** na oração subordinada adjetiva e a **Inversão Sintática com Sujeito Posposto** em verbos intransitivos ou transitivos indiretos.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 1. **Pronome Relativo na Função de Objeto Direto:**
- - Na frase *"Essa é a única pergunta que o médico fará"*, a oração sob análise de transposição é a subordinada adjetiva *"que o médico fará"*.
- - O sujeito de *fará* é *"o médico"*; o verbo *fazer* é VTD.
- - O pronome relativo *que* retoma o antecedente substantivo *"pergunta"* e exerce a função sintática de **Objeto Direto**.
- - Conclusão: Havendo VTD e Objeto Direto (*que*), a oração admite transposição passiva perfeitamente (*"a pergunta que será feita pelo médico"*).
+  - Na frase *"Essa é a única pergunta que o médico fará"*, a oração sob análise de transposição é a subordinada adjetiva *"que o médico fará"*.
+  - O sujeito de *fará* é *"o médico"*; o verbo *fazer* é VTD.
+  - O pronome relativo *que* retoma o antecedente substantivo *"pergunta"* e exerce a função sintática de **Objeto Direto**.
+  - Conclusão: Havendo VTD e Objeto Direto (*que*), a oração admite transposição passiva perfeitamente (*"a pergunta que será feita pelo médico"*).
 2. **Desarme do Sujeito Posposto em Orações Invertidas:**
- - Orações que se iniciam diretamente pelo verbo induzem o candidato desatento a fazer a pergunta passiva *"o quê?"* e rotular erroneamente o termo subsequente como objeto direto.
- - Exemplo 1: *"Resulta disso tudo uma espécie de código..."* $\rightarrow$ Pergunta correta do sujeito: *O que é que resulta?* Resposta: *"Uma espécie de código comportamental"* (**Sujeito Posposto**). Ordem direta: *Uma espécie de código resulta disso tudo* (*resulta* = VTI/VI; *disso tudo* = O.I.). Não há O.D. $\rightarrow$ **Não admite transposição**.
- - Exemplo 2: *"Cresce a olhos vistos a oferta de produtos..."* $\rightarrow$ Ordem direta: *A oferta de produtos cresce [VI] a olhos vistos [Adjunto de Modo]*. O termo posposto é Sujeito. Não há O.D. $\rightarrow$ **Não admite transposição**.
+  - Orações que se iniciam diretamente pelo verbo induzem o candidato desatento a fazer a pergunta passiva *"o quê?"* e rotular erroneamente o termo subsequente como objeto direto.
+  - Exemplo 1: *"Resulta disso tudo uma espécie de código..."* $\rightarrow$ Pergunta correta do sujeito: *O que é que resulta?* Resposta: *"Uma espécie de código comportamental"* (**Sujeito Posposto**). Ordem direta: *Uma espécie de código resulta disso tudo* (*resulta* = VTI/VI; *disso tudo* = O.I.). Não há O.D. $\rightarrow$ **Não admite transposição**.
+  - Exemplo 2: *"Cresce a olhos vistos a oferta de produtos..."* $\rightarrow$ Ordem direta: *A oferta de produtos cresce [VI] a olhos vistos [Adjunto de Modo]*. O termo posposto é Sujeito. Não há O.D. $\rightarrow$ **Não admite transposição**.
 3. **Particularidade do Verbo "Chegar" na FCC:**
- - Para a banca FCC, o verbo *chegar* é classificado como Intransitivo (VI) em sentido denotativo de lugar físico (*"Cheguei ao teatro"* = adjunto adverbial), mas é interpretado como **Transitivo Indireto (VTI)** quando rege complementos abstratos ou humanos (*"a foto chega aos amigos"* = rege preposição *a* como objeto indireto). Em ambos os casos, a ausência de objeto direto veta a voz passiva.
+  - Para a banca FCC, o verbo *chegar* é classificado como Intransitivo (VI) em sentido denotativo de lugar físico (*"Cheguei ao teatro"* = adjunto adverbial), mas é interpretado como **Transitivo Indireto (VTI)** quando rege complementos abstratos ou humanos (*"a foto chega aos amigos"* = rege preposição *a* como objeto indireto). Em ambos os casos, a ausência de objeto direto veta a voz passiva.
 
 ---
 
-## A Exceção Semântico-Sintática do Verbo Impessoal "Haver"
+### A Exceção Semântico-Sintática do Verbo Impessoal "Haver"
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 O verbo **HAVER**, quando conjugado com sentido de *existir*, *ocorrer* ou *acontecer*, é um **verbo impessoal**, configurando oração sem sujeito e classificando-se formalmente na sintaxe como **Transitivo Direto (VTD)** cujo termo associado atua como **Objeto Direto**. Não obstante essa configuração, o verbo *haver* existencial constitui uma **exceção semântica absoluta: NUNCA ADMITE TRANSPOSIÇÃO PARA A VOZ PASSIVA ANALÍTICA**.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 Na oração *"Havia uma razão óbvia para isso"*:
 
@@ -333,13 +331,13 @@ Na oração *"Havia uma razão óbvia para isso"*:
 
 ---
 
-## Transposição Passiva e Coerência Argumentativa Textual em Bancas de Alto Nível (CESPE)
+### Transposição Passiva e Coerência Argumentativa Textual em Bancas de Alto Nível (CESPE)
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Nas provas do CESPE/CEBRASPE, as propostas de reescrita envolvendo transposição da voz ativa para a passiva analítica não podem ser avaliadas apenas pela conformidade gramatical isolada da locução verbal. É obrigatório analisar o impacto da conversão no parágrafo do texto original, pois a alteração do sujeito sintático pode desvincular o referente lógico de **orações reduzidas ou intercaladas**, provocando quebra fatal de **Coerência Argumentativa**.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 Considere o período original:
 
@@ -368,8 +366,6 @@ Considere o período original:
 
 ---
 
----
-
 ## Regras decisivas
 
 ### Tabela de Formulações Canônicas do Módulo
@@ -387,47 +383,45 @@ Considere o período original:
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Algoritmo de Validação da Voz Passiva Sintética
+### Algoritmo de Validação da Voz Passiva Sintética
 
-### Finalidade
+#### Finalidade
 
 Identificar se uma estrutura que contém o pronome *se* está na voz passiva sintética, descartando falsas passivas com verbos pronominais (PIV), índice de indeterminação do sujeito (IIS) ou voz reflexiva.
 
-### Etapas Operacionais
+#### Etapas Operacionais
 
 1. **Passo 1 — Exame da Transitividade:** Inspecione o verbo ao qual o *se* está acoplado. Se o verbo for Transitivo Indireto (rege preposição), Intransitivo ou de Ligação, **elimine a passiva sintética** (o *se* será IIS ou PIV).
 2. **Passo 2 — Identificação do Elemento Paciente:** Localize o termo substantivo sem preposição associado ao verbo.
 3. **Passo 3 — Execução da Transposição Analítica Estrita:** Converta a oração para o modelo `Elemento Paciente + Verbo SER (no mesmo tempo/modo da oração) + Particípio`:
- - *se encerrou a escravidão* $\rightarrow$ *a escravidão foi encerrada* (Válido).
- - *se mencionam espécies* $\rightarrow$ *espécies são mencionadas* (Válido).
+  - *se encerrou a escravidão* $\rightarrow$ *a escravidão foi encerrada* (Válido).
+  - *se mencionam espécies* $\rightarrow$ *espécies são mencionadas* (Válido).
 4. **Passo 4 — Checagem Semântica Lexical:** Verifique se o verbo não é acidentalmente pronominal (*dar-se* = acontecer; *acomodar-se* = conformar-se). Se a versão analítica corromper o sentido original, o *se* é PIV na voz ativa. Se a transposição for fluida e expressar processo sofrido, confirma-se **Voz Passiva Sintética**.
 
 ---
 
-## Desarmamento da Pegadinha de Sujeito do CESPE/CEBRASPE
+### Desarmamento da Pegadinha de Sujeito do CESPE/CEBRASPE
 
-### Finalidade
+#### Finalidade
 
 Avaliar assertivas do CESPE que afirmam que construções passivas são "destituídas de sujeito sintático".
 
-### Etapas Operacionais
+#### Etapas Operacionais
 
 1. **Passo 1 — Localização da Estrutura Passiva:** Identifique a perífrase `SER + particípio` ou `VTD + SE`.
 2. **Passo 2 — Formulação da Pergunta do Sujeito:** Pergunte ao verbo: *O que é [particípio]?* ou *Quem é [particípio]?*.
 3. **Passo 3 — Reconhecimento da Ordem Inversa:** Observe que na voz passiva o sujeito frequentemente encontra-se posposto ao verbo (ex.: *"São excluídos do cálculo os desligamentos"* $\rightarrow$ *os desligamentos* é o sujeito).
 4. **Passo 4 — Julgamento da Assertiva:**
- - Se a assertiva afirmar que a oração "não possui sujeito sintático identificado" $\rightarrow$ **Julgar ERRADO**.
- - Se a assertiva afirmar que "o agente da passiva está indeterminado/omitido" $\rightarrow$ **Julgar CERTO**.
+  - Se a assertiva afirmar que a oração "não possui sujeito sintático identificado" $\rightarrow$ **Julgar ERRADO**.
+  - Se a assertiva afirmar que "o agente da passiva está indeterminado/omitido" $\rightarrow$ **Julgar CERTO**.
 
 ---
 
-## Protocolo Rápido de Admissibilidade de Transposição de Voz
+### Protocolo Rápido de Admissibilidade de Transposição de Voz
 
-### Finalidade
+#### Finalidade
 
 Determinar em poucos segundos, sem reescrever frases por extenso, qual alternativa admite ou não transposição para a passiva analítica.
 
@@ -455,21 +449,19 @@ Determinar em poucos segundos, sem reescrever frases por extenso, qual alternati
 
 ---
 
-## Técnica de Desarme de Orações com Sujeito Posposto
+### Técnica de Desarme de Orações com Sujeito Posposto
 
-### Finalidade
+#### Finalidade
 
 Impedir que o candidato confunda sujeito posposto ao verbo com objeto direto em orações invertidas.
 
-### Etapas Operacionais
+#### Etapas Operacionais
 
 1. **Passo 1 — Detecção da Inversão:** Constatar que a oração inicia-se diretamente pela forma verbal (ex.: *"Resulta disso tudo..."*, *"Cresce a olhos vistos..."*).
 2. **Passo 2 — Aplicação da Pergunta Canônica do Sujeito:** Formule rigorosamente a pergunta: *"O que é que [verbo]?"*.
 3. **Passo 3 — Montagem da Ordem Direta:** Reordene mentalmente a oração no padrão `[Sujeito] + [Verbo] + [Complementos/Adjuntos]`:
 
 4. **Passo 4 — Conclusão de Transitividade:** Constatado que o substantivo pós-verbal é sujeito, conclui-se que o verbo não possui objeto direto e não pode ir para a voz passiva.
-
----
 
 ---
 
@@ -487,7 +479,7 @@ Impedir que o candidato confunda sujeito posposto ao verbo com objeto direto em 
 
 ---
 
-### 2. Voz Passiva Analítica vs. Voz Passiva Sintética
+#### 2. Voz Passiva Analítica vs. Voz Passiva Sintética
 
 | Parâmetro Estrutural | Voz Passiva Analítica | Voz Passiva Sintética (Pronominal) |
 |:------------------------------- |:-------------------------------------------------------- |:--------------------------------------------------------- |
@@ -499,7 +491,7 @@ Impedir que o candidato confunda sujeito posposto ao verbo com objeto direto em 
 
 ---
 
-### 3. Locução Passiva Analítica vs. Verbo de Ligação com Predicativo
+#### 3. Locução Passiva Analítica vs. Verbo de Ligação com Predicativo
 
 | Parâmetro de Distinção | Locução Passiva Analítica (`SER + Particípio`) | Verbo de Ligação + Predicativo (`ESTAR/VL + Part./Adj.`) |
 |:------------------------------- |:-------------------------------------------------------- |:------------------------------------------------------------------------------ |
@@ -511,47 +503,45 @@ Impedir que o candidato confunda sujeito posposto ao verbo com objeto direto em 
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Questão 01 (FCC / DPE-AM / Assistente Técnico)
+### Questão 01 (FCC / DPE-AM / Assistente Técnico)
 
 - **Enunciado:** Indeterminar o agente é um dos efeitos de sentido produzido pela voz passiva analítica, a qual pode ser observada em:
 
 - **Análise Técnica das Alternativas:**
- - **A) CORRETA:** *"somos feitos"* estrutura-se com o verbo auxiliar *ser* no presente (*somos*) + particípio de fazer (*feitos*). O agente da passiva (*feitos por quem?*) não está declarado, configurando agente indeterminado.
- - **B) Incorreta:** *"era cientista"* é Verbo de Ligação + Predicativo na voz ativa.
- - **C) Incorreta:** *"parecem ter"* e *"faz"* são locuções e formas ativas.
- - **D) Incorreta:** *"É diversão"* é Verbo de Ligação sem particípio.
- - **E) Incorreta:** *"se saem"* contém o *se* como PIV no verbo pronominal *sair-se*; voz ativa.
+  - **A) CORRETA:** *"somos feitos"* estrutura-se com o verbo auxiliar *ser* no presente (*somos*) + particípio de fazer (*feitos*). O agente da passiva (*feitos por quem?*) não está declarado, configurando agente indeterminado.
+  - **B) Incorreta:** *"era cientista"* é Verbo de Ligação + Predicativo na voz ativa.
+  - **C) Incorreta:** *"parecem ter"* e *"faz"* são locuções e formas ativas.
+  - **D) Incorreta:** *"É diversão"* é Verbo de Ligação sem particípio.
+  - **E) Incorreta:** *"se saem"* contém o *se* como PIV no verbo pronominal *sair-se*; voz ativa.
 - **Gabarito Oficial:** **A**
 
 ---
 
-## Questão 02 (FCC / DPE-RS / Defensor Público)
+### Questão 02 (FCC / DPE-RS / Defensor Público)
 
 - **Enunciado:** Caso se queira minorar o destaque dado ao sujeito responsável por determinado ato, deve-se adotar a estruturação sintática exemplificada por:
 
- - B) [...]
- - D) A pesquisa corrobora o fato de que a sociedade se volta para o passado e tudo é posto em perspectiva.
- - E) As histórias tinham sido contadas com riqueza de detalhes, de modo que todos foram transportados para dentro da ação.
+  - B) [...]
+  - D) A pesquisa corrobora o fato de que a sociedade se volta para o passado e tudo é posto em perspectiva.
+  - E) As histórias tinham sido contadas com riqueza de detalhes, de modo que todos foram transportados para dentro da ação.
 - **Análise Técnica:** O enunciado utiliza *"minorar o destaque dado ao sujeito responsável"* para definir o **Agente da Passiva Indeterminado**. Na opção E, todas as orações do período estão na voz passiva analítica com agentes omitidos: *"tinham sido contadas"* (`SER + particípio`) e *"foram transportados"* (`SER + particípio`). A opção D traz verbos na voz ativa no início do período (*corrobora*, *se volta*).
 - **Gabarito Oficial:** **E**
 
 ---
 
-## Questão 03 (FGV / MRE / Oficial de Chancelaria)
+### Questão 03 (FGV / MRE / Oficial de Chancelaria)
 
 - **Enunciado:** “O Brasil real começou a ser construído...”; a adoção da voz passiva, nesse caso:
 
- - D) [...]
+  - D) [...]
 - **Análise Técnica:** A razão gramatical para a voz passiva é alçar o paciente a sujeito sintático da oração (*O Brasil real* = Sujeito Paciente). A opção A incorre em extrapolação interpretativa sobre a mente do autor.
 - **Gabarito Oficial:** **B**
 
 ---
 
-## Questão 04 (FGV / DPE-RJ / Técnico Superior)
+### Questão 04 (FGV / DPE-RJ / Técnico Superior)
 
 - **Enunciado:** Identificar o segmento em voz passiva que apresente expressamente a indicação do agente.
 
@@ -560,7 +550,7 @@ Impedir que o candidato confunda sujeito posposto ao verbo com objeto direto em 
 
 ---
 
-## Questão 05 (CESPE / FUB / Técnico)
+### Questão 05 (CESPE / FUB / Técnico)
 
 - **Trechos:** *"é falado o talian"* e *"onde se fala ucraniano"*.
 - **Assertiva:** Ambas as orações apresentam construções gramaticais distintas que cumprem a função de omitir o agente da ação verbal.
@@ -568,7 +558,7 @@ Impedir que o candidato confunda sujeito posposto ao verbo com objeto direto em 
 
 ---
 
-## Questão 09 (CESPE / STM)
+### Questão 09 (CESPE / STM)
 
 - **Texto:** *"São excluídos do cálculo os desligamentos por transferências, aposentadorias, falecimentos..."*
 - **Assertiva:** A oração "São excluídos do cálculo (...) por iniciativa do empregado" é uma construção passiva e, portanto, destituída de sujeito sintático que possa ser identificado.
@@ -576,69 +566,69 @@ Impedir que o candidato confunda sujeito posposto ao verbo com objeto direto em 
 
 ---
 
-## Questão 10 (COPEVE-UFAL / Pref. Inhapi-AL)
+### Questão 10 (COPEVE-UFAL / Pref. Inhapi-AL)
 
 - **Enunciado:** Relacione a numeração correspondente: `1. Ativa | 2. Passiva analítica | 3. Passiva sintética | 4. Reflexiva`
- - ( 4 ) *O cozinheiro feriu-se.* (feriu a si mesmo $\rightarrow$ Reflexiva)
- - ( 2 ) *Os clientes do banco serão atendidos pelo gerente.* (`serão atendidos` $\rightarrow$ Passiva analítica)
- - ( 1 ) *Os gregos inventaram a política.* (sujeito agente $\rightarrow$ Ativa)
- - ( 3 ) *Vendem-se limões.* (*limões são vendidos* $\rightarrow$ Passiva sintética)
+  - ( 4 ) *O cozinheiro feriu-se.* (feriu a si mesmo $\rightarrow$ Reflexiva)
+  - ( 2 ) *Os clientes do banco serão atendidos pelo gerente.* (`serão atendidos` $\rightarrow$ Passiva analítica)
+  - ( 1 ) *Os gregos inventaram a política.* (sujeito agente $\rightarrow$ Ativa)
+  - ( 3 ) *Vendem-se limões.* (*limões são vendidos* $\rightarrow$ Passiva sintética)
 - **Gabarito Oficial:** **Letra D (4 – 2 – 1 – 3)**
 
 ---
 
-## Questão 11 (CESGRANRIO / ANP)
+### Questão 11 (CESGRANRIO / ANP)
 
 - **Enunciado:** Identificar estrutura idêntica a "Eu olhava tudo" (Voz ativa + VTD):
- - A) *O apelido [...] era Flor-de-Lis.* (*era* = VL)
- - B) *Clarice virou cidadã...* (*virou* = VL de mudança de estado)
- - C) *Clarice é uma das escritoras...* (*é* = VL)
- - D) *O prêmio [...] foi duas vezes concedido...* (*foi concedido* = Passiva analítica com adjunto intercalado)
- - E) *Os editores da época recusaram os textos muito reflexivos de Clarice.* (Sujeito agente + VTD *recusaram* + O.D. *os textos...* $\rightarrow$ Voz Ativa com VTD)
+  - A) *O apelido [...] era Flor-de-Lis.* (*era* = VL)
+  - B) *Clarice virou cidadã...* (*virou* = VL de mudança de estado)
+  - C) *Clarice é uma das escritoras...* (*é* = VL)
+  - D) *O prêmio [...] foi duas vezes concedido...* (*foi concedido* = Passiva analítica com adjunto intercalado)
+  - E) *Os editores da época recusaram os textos muito reflexivos de Clarice.* (Sujeito agente + VTD *recusaram* + O.D. *os textos...* $\rightarrow$ Voz Ativa com VTD)
 - **Gabarito Oficial:** **E**
 
 ---
 
-## Questão 13 (FCC / Pref. São José do Rio Preto-SP)
+### Questão 13 (FCC / Pref. São José do Rio Preto-SP)
 
 - **Alternativa B (Gabarito):** *"Todos podem ser amados por uma boa pessoa."* $\rightarrow$ Locução passiva analítica (*podem ser amados* = modal + auxiliar *ser* + particípio); sujeito paciente *Todos*. As demais opções apresentam VL (*são perfeitos*, *tornam-se*) ou verbo impessoal ativo (*Há muitas decepções*).
 - **Gabarito Oficial:** **B**
 
 ---
 
-## Questão 14 (VUNESP / PC-SP / Agente de Telecomunicações)
+### Questão 14 (VUNESP / PC-SP / Agente de Telecomunicações)
 
 - **Modelo do Enunciado:** *"...se encerrou a escravidão negra..."* (Passiva sintética: *a escravidão foi encerrada*).
 - **Análise das Alternativas:**
- - A) *...se serão pagos...* $\rightarrow$ Passiva analítica (*se* é conjunção integrante).
- - B) *Os homens não se deixam escravizar...* $\rightarrow$ Voz reflexiva (*a si mesmos*).
- - C) *Ali se trabalha como escravo...* $\rightarrow$ *trabalhar* é VI; *se* é IIS (Voz ativa).
- - D) *Lamentavelmente, ainda hoje se escravizam pessoas.* $\rightarrow$ *escravizar* é VTD; *se* é PA; *pessoas* é sujeito paciente (*pessoas são escravizadas* $\rightarrow$ **Voz Passiva Sintética**).
- - E) *Todos se sentem submetidos...* $\rightarrow$ *sentir-se* é PIV (Voz ativa).
+  - A) *...se serão pagos...* $\rightarrow$ Passiva analítica (*se* é conjunção integrante).
+  - B) *Os homens não se deixam escravizar...* $\rightarrow$ Voz reflexiva (*a si mesmos*).
+  - C) *Ali se trabalha como escravo...* $\rightarrow$ *trabalhar* é VI; *se* é IIS (Voz ativa).
+  - D) *Lamentavelmente, ainda hoje se escravizam pessoas.* $\rightarrow$ *escravizar* é VTD; *se* é PA; *pessoas* é sujeito paciente (*pessoas são escravizadas* $\rightarrow$ **Voz Passiva Sintética**).
+  - E) *Todos se sentem submetidos...* $\rightarrow$ *sentir-se* é PIV (Voz ativa).
 - **Gabarito Oficial:** **D**
 
 ---
 
-## Questão 16 (FGV / TJ-SC / Analista Administrativo)
+### Questão 16 (FGV / TJ-SC / Analista Administrativo)
 
 - **Enunciado:** Assinalar a frase que **NÃO** exemplifica voz passiva:
- - A) *...os resultados são valorizados* (Passiva analítica: `SER + particípio`)
- - B) *Aparentemente, apenas os mais inteligentes estão destinados a obter sucesso* (**Voz Ativa**: *estão* é VL e *destinados* é Predicativo do Sujeito)
- - C) *Eles devem ser observados...* (Passiva analítica)
- - D) *Eles são guiados...* (Passiva analítica)
- - E) *...será encontrada uma definição* (Passiva analítica)
+  - A) *...os resultados são valorizados* (Passiva analítica: `SER + particípio`)
+  - B) *Aparentemente, apenas os mais inteligentes estão destinados a obter sucesso* (**Voz Ativa**: *estão* é VL e *destinados* é Predicativo do Sujeito)
+  - C) *Eles devem ser observados...* (Passiva analítica)
+  - D) *Eles são guiados...* (Passiva analítica)
+  - E) *...será encontrada uma definição* (Passiva analítica)
 - **Gabarito Oficial:** **B**
 
 ---
 
-## Questão 18 (FGV / Pref. Angra dos Reis-RJ)
+### Questão 18 (FGV / Pref. Angra dos Reis-RJ)
 
 - **Alternativa A (Gabarito):** *"Não se faz arte com fórmula."* $\rightarrow$ *faz* (VTD) + *se* (PA) + *arte* (Sujeito Paciente). Conversão analítica: *Arte não é feita com fórmula* (**Voz Passiva Sintética**). As demais alternativas trazem verbos na voz ativa e predicativos (*estar emocionado*, *vive*, *continua sendo*).
 - **Gabarito Oficial:** **A**
 
 ---
 
-## Questão 19 (FGV / Câmara de Salvador-BA)
+### Questão 19 (FGV / Câmara de Salvador-BA)
 
 - **Alternativa A (Distrator):** *"não se dá por acaso"* $\rightarrow$ *dar-se* significa acontecer (o *se* é PIV na voz ativa).
 - **Alternativa C (Gabarito):** *"...generalize-se a opinião..."* $\rightarrow$ *generalize* (VTD) + *se* (PA) + *a opinião* (Sujeito Paciente). Conversão analítica: *a opinião seja generalizada* (**Voz Passiva Sintética**).
@@ -646,19 +636,19 @@ Impedir que o candidato confunda sujeito posposto ao verbo com objeto direto em 
 
 ---
 
-## Questão 21 (FGV / Pref. Cuiabá-MT)
+### Questão 21 (FGV / Pref. Cuiabá-MT)
 
 - **Análise das Alternativas:**
- - A) *Aliviaram-se tensões...* (Passiva sintética: *tensões foram aliviadas*)
- - B) *...sepultou-se o passado...* (Passiva sintética: *o passado foi sepultado*)
- - C) *O Brasil acomodou-se à versão oficial...* (**Voz Ativa**: *acomodar-se a* é VTI pronominal no sentido de conformar-se; *se* é PIV)
- - D) *...foram escondidas as rupturas* (Passiva analítica)
- - E) *...Tiradentes foi esquartejado* (Passiva analítica)
+  - A) *Aliviaram-se tensões...* (Passiva sintética: *tensões foram aliviadas*)
+  - B) *...sepultou-se o passado...* (Passiva sintética: *o passado foi sepultado*)
+  - C) *O Brasil acomodou-se à versão oficial...* (**Voz Ativa**: *acomodar-se a* é VTI pronominal no sentido de conformar-se; *se* é PIV)
+  - D) *...foram escondidas as rupturas* (Passiva analítica)
+  - E) *...Tiradentes foi esquartejado* (Passiva analítica)
 - **Gabarito Oficial:** **C**
 
 ---
 
-## Questão 17 (FGV / Pref. Angra dos Reis-RJ)
+### Questão 17 (FGV / Pref. Angra dos Reis-RJ)
 
 - **Alternativa B (Gabarito):** *"A natureza só é comandada se é obedecida."* $\rightarrow$ Duas formas na passiva analítica (`é comandada`, `é obedecida`).
 - **Alternativa D (Distrator):** *"Os perfumes, as cores e os sons correspondem-se."* $\rightarrow$ O pronome *se* expressa reciprocidade mútua (*uns aos outros*), tratando-se de **Voz Recíproca**.
@@ -666,33 +656,33 @@ Impedir que o candidato confunda sujeito posposto ao verbo com objeto direto em 
 
 ---
 
-## Questão 24 (CESPE / Correios / Analista)
+### Questão 24 (CESPE / Correios / Analista)
 
 - **Assertiva:** As formas verbais *"dedicou-se"* (L.2) e *"se afastar"* (L.17) estão na voz reflexiva.
 - **Julgamento:** **CERTO**. Em ambas as ocorrências o pronome equivale contextualmente a "a si mesmo" (*dedicou a si mesmo*, *afastar a si mesmo*), atendendo ao critério da banca para classificação em Voz Reflexiva.
 
 ---
 
-## Questão 25 (AOCP / Pref. Juiz de Fora-MG)
+### Questão 25 (AOCP / Pref. Juiz de Fora-MG)
 
 - **Alternativa A (Gabarito):** *"... acompanhei de perto, juntamente com Mário Pedrosa, o seu trabalho no Centro Psiquiátrico Nacional."* $\rightarrow$ O verbo *acompanhei* é VTD e rege o Objeto Direto *o seu trabalho*. Admite passiva (*"o seu trabalho foi acompanhado por mim..."*). As demais opções apresentam VL (*era*, *se tornaram*) ou VI (*jogando-se*, *morreu*).
 - **Gabarito Oficial:** **A**
 
 ---
 
-## Questão 26 (FCC / MPE-RS / Assessor)
+### Questão 26 (FCC / MPE-RS / Assessor)
 
 - **Enunciado:** **NÃO** admite transposição para a voz passiva a frase:
- - A) *Os adeptos da ética de princípios não se queixam da distância das estrelas.* (**Gabarito**: *queixar-se* é VTI regendo preposição *de*; sem O.D., não admite passiva)
- - B) *...diminuir a propagação da Aids.* (*diminuir* = VTD; *a propagação* = O.D.)
- - C) *Essa é a única pergunta que o médico fará.* (*fará* = VTD; *que* = O.D. retomando *pergunta*)
- - D) *Ele não desviará os seus dos olhos...* (*desviará* = VTDI; *os seus* = O.D.)
- - E) *Vou aplicar a metáfora a uma situação...* (*aplicar* = VTDI; *a metáfora* = O.D.)
+  - A) *Os adeptos da ética de princípios não se queixam da distância das estrelas.* (**Gabarito**: *queixar-se* é VTI regendo preposição *de*; sem O.D., não admite passiva)
+  - B) *...diminuir a propagação da Aids.* (*diminuir* = VTD; *a propagação* = O.D.)
+  - C) *Essa é a única pergunta que o médico fará.* (*fará* = VTD; *que* = O.D. retomando *pergunta*)
+  - D) *Ele não desviará os seus dos olhos...* (*desviará* = VTDI; *os seus* = O.D.)
+  - E) *Vou aplicar a metáfora a uma situação...* (*aplicar* = VTDI; *a metáfora* = O.D.)
 - **Gabarito Oficial:** **A**
 
 ---
 
-## Questão 27 (FCC / TRT-24ª / Analista)
+### Questão 27 (FCC / TRT-24ª / Analista)
 
 - **Alternativa D (Gabarito):** *"... publico ativamente fotos de minhas fornadas..."* $\rightarrow$ *publico* é VTD e *fotos de minhas fornadas* é Objeto Direto.
 - **Distratores Analisados:** *chega aos amigos* (VTI na FCC / VI geral com preposição *a*); *saía da cozinha* (VI com preposição *de*); *interajo com muita gente* (VTI com preposição *com*); *está na rede* (VI de lugar).
@@ -700,26 +690,26 @@ Impedir que o candidato confunda sujeito posposto ao verbo com objeto direto em 
 
 ---
 
-## Questão 28 (FCC / TRF-2ª / Técnico)
+### Questão 28 (FCC / TRF-2ª / Técnico)
 
 - **Alternativa B (Gabarito):** *"As leis do mercado favorecem esse culto da juventude."* $\rightarrow$ *favorecem* é VTD e *esse culto da juventude* é Objeto Direto.
 - **Distratores Analisados:**
- - A) *São inúmeras as consequências...* (*São* = VL; *inúmeras* = Predicativo)
- - C) *A juventude deixou de ser uma fase da vida.* (Locução com verbo principal *ser* = VL)
- - D) *Resulta disso tudo uma espécie de código...* (*uma espécie de código* é **Sujeito Posposto** de *Resulta* [VTI]; não há O.D.)
- - E) *Cresce a olhos vistos a oferta de produtos...* (*a oferta de produtos* é **Sujeito Posposto** de *Cresce* [VI]; não há O.D.)
+  - A) *São inúmeras as consequências...* (*São* = VL; *inúmeras* = Predicativo)
+  - C) *A juventude deixou de ser uma fase da vida.* (Locução com verbo principal *ser* = VL)
+  - D) *Resulta disso tudo uma espécie de código...* (*uma espécie de código* é **Sujeito Posposto** de *Resulta* [VTI]; não há O.D.)
+  - E) *Cresce a olhos vistos a oferta de produtos...* (*a oferta de produtos* é **Sujeito Posposto** de *Cresce* [VI]; não há O.D.)
 - **Gabarito Oficial:** **B**
 
 ---
 
-## Questão 29 (FCC / TJ-SE / Analista)
+### Questão 29 (FCC / TJ-SE / Analista)
 
 - **Alternativa A (Gabarito):** *"Florença, com seu ciclo artístico, serve como exemplo."* $\rightarrow$ *serve* funciona como Verbo Intransitivo (VI) e *como exemplo* é adjunto adverbial de conformidade/comparação. Sem O.D., **NÃO admite transposição**. As opções B, C, D e E trazem VTDs com objetos diretos (*a lei da gravidade*, *os horizontes*, *a prensa de vinho*, *uma reciclagem*).
 - **Gabarito Oficial:** **A**
 
 ---
 
-## Questão 30 (FCC / METRÔ-SP / Enfermeiro do Trabalho)
+### Questão 30 (FCC / METRÔ-SP / Enfermeiro do Trabalho)
 
 - **Alternativa A (Gabarito):** *"ele encontrou um envelope na carta do correio"* $\rightarrow$ *encontrou* é VTD pleno e *um envelope* é Objeto Direto. Admite passiva analítica (*"um envelope foi encontrado por ele..."*).
 - **Alternativa D (Exceção Analisada):** *"No seu caso havia uma razão óbvia para isso"* $\rightarrow$ *havia* é VTD e *uma razão óbvia* é O.D., mas por ser verbo impessoal no sentido de existir, **constitui exceção absoluta e não aceita voz passiva**.
@@ -727,7 +717,7 @@ Impedir que o candidato confunda sujeito posposto ao verbo com objeto direto em 
 
 ---
 
-## Questão 23 (CESPE / INCA)
+### Questão 23 (CESPE / INCA)
 
 - **Texto:** *"O regime trabalhista, ao adotar estratégias de proteção à saúde do trabalhador, institui mecanismos de monitoração..."*
 - **Assertiva:** Para se realçar "mecanismos de monitoração", em vez de "regime trabalhista", poderia ser usada a voz passiva, escrevendo-se *são instituídos* em vez de "institui", sem que a coerência entre os argumentos e a correção gramatical do texto fossem prejudicadas.
@@ -735,11 +725,9 @@ Impedir que o candidato confunda sujeito posposto ao verbo com objeto direto em 
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Macete do Verbo SER sem Particípio
+### O Macete do Verbo SER sem Particípio
 
 Para haver voz passiva analítica, o verbo **SER** deve estar imediatamente acompanhado de um **PARTICÍPIO** verbal (*terminações em -ado, -ido, ou formas irregulares como feito, posto, escrito*).
 
@@ -748,35 +736,33 @@ Para haver voz passiva analítica, o verbo **SER** deve estar imediatamente acom
 
 ---
 
-## O Filtro Visual das Preposições na Transposição
+### O Filtro Visual das Preposições na Transposição
 
 Ao avaliar se uma frase pode ir da ativa para a passiva, olhe o termo que vem imediatamente após o verbo. Se houver preposição regimental visível (`de`, `da`, `do`, `em`, `na`, `no`, `a`, `ao`, `com`), **elimine a opção na hora**. O termo é Objeto Indireto ou Adjunto Adverbial, provando que o verbo não é Transitivo Direto.
 
 ---
 
-## Teste Prático da Voz Reflexiva: "A Si Mesmo"
+### Teste Prático da Voz Reflexiva: "A Si Mesmo"
 
 Para confirmar a voz reflexiva sem entrar em disputas acadêmicas, substitua o pronome *se* por **"a si mesmo(s)"** ou **"a si próprio(s)"**. Se a frase mantiver sentido lógico de ação praticada e sofrida pelo sujeito, classifique o item como **Voz Reflexiva** com total segurança.
 
 ---
 
-## O Gatilho Mnemônico da Letra "D"
+### O Gatilho Mnemônico da Letra "D"
 
 Memorize a letra **D** (de *Direto*): somente verbos que possuem a letra **D** em sua sigla de predicação (**VTD** e **VTDI**) possuem Objeto Direto e admitem transposição passiva. Siglas desprovidas da letra D (**VI**, **VTI**, **VL**) são 100% incompatíveis com a passiva analítica.
 
 ---
 
-## Regra Pragmática das Três Vozes para Orações sem Sujeito
+### Regra Pragmática das Três Vozes para Orações sem Sujeito
 
 No sistema da língua para provas de concurso, existem apenas três vozes: **ativa**, **passiva** e **reflexiva**. Se a oração não possui marcas passivas (`SER + particípio` ou `VTD + SE apassivador`) e não é reflexiva, ela **obrigatoriamente pertence à Voz Ativa**, mesmo nos casos de oração sem sujeito com verbos impessoais (*Havia problemas*) ou sujeito indeterminado com IIS (*Trabalha-se muito*).
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Confundir Agente Indeterminado com Sujeito Indeterminado
+### Confundir Agente Indeterminado com Sujeito Indeterminado
 
 **Problema:** O candidato analisa uma oração passiva analítica ou sintética sem agente explícito (ex.: *"São excluídos os registros"*, *"fala-se ucraniano"*) e julga que se trata de "sujeito indeterminado" ou "oração sem sujeito".
 **Consequência:** Erro grave em itens de julgamento do CESPE/CEBRASPE.
@@ -784,7 +770,7 @@ No sistema da língua para provas de concurso, existem apenas três vozes: **ati
 
 ---
 
-## A Pegadinha do Verbo "Estar + Particípio" na FGV
+### A Pegadinha do Verbo "Estar + Particípio" na FGV
 
 **Problema:** Classificar perífrases estativas formadas por `estar/ficar + particípio` (ex.: *"estão destinados"*, *"ficaram preocupados"*) como voz passiva analítica.
 **Consequência:** Erro fatal no padrão da FGV, que restringe a passiva analítica estritamente à locução `SER + particípio`.
@@ -792,7 +778,7 @@ No sistema da língua para provas de concurso, existem apenas três vozes: **ati
 
 ---
 
-## Intercalação Adverbial na Passiva Analítica
+### Intercalação Adverbial na Passiva Analítica
 
 **Problema:** Deixar de reconhecer a locução passiva analítica quando a banca insere adjuntos adverbiais longos entre o auxiliar e o particípio (ex.: *"O prêmio foi **duas vezes** concedido"*).
 **Consequência:** Analisar apenas o verbo *foi* isolado e confundi-lo com verbo de ligação.
@@ -800,7 +786,7 @@ No sistema da língua para provas de concurso, existem apenas três vozes: **ati
 
 ---
 
-## Falsa Passiva Sintética com Verbos Pronominais (PIV)
+### Falsa Passiva Sintética com Verbos Pronominais (PIV)
 
 **Problema:** Forçar a conversão passiva em verbos pronominais ou acidentalmente pronominais que indicam sentimentos, atitudes ou acontecimentos espontâneos (*dar-se*, *acomodar-se*, *sair-se*, *sentir-se*).
 **Consequência:** Tratar uma estrutura da voz ativa com PIV como se fosse passiva sintética.
@@ -808,7 +794,7 @@ No sistema da língua para provas de concurso, existem apenas três vozes: **ati
 
 ---
 
-## A Exceção Absoluta do Verbo "Haver" Existencial
+### A Exceção Absoluta do Verbo "Haver" Existencial
 
 **Problema:** Localizar o verbo *haver* em orações como *"Havia motivos suficientes"*, classificá-lo corretamente como VTD com O.D. (*motivos suficientes*) e concluir que ele admite transposição passiva.
 **Consequência:** Erro certo em questões da FCC e de bancas congêneres.
@@ -816,7 +802,7 @@ No sistema da língua para provas de concurso, existem apenas três vozes: **ati
 
 ---
 
-## Confundir Sujeito Posposto com Objeto Direto em Orações Invertidas
+### Confundir Sujeito Posposto com Objeto Direto em Orações Invertidas
 
 **Problema:** Em orações que se iniciam por verbo (ex.: *"Resulta disso tudo uma espécie de código"*), fazer a pergunta genérica *"o quê?"* e classificar o substantivo pós-verbal como objeto direto.
 **Consequência:** Tratar verbos intransitivos ou transitivos indiretos como se fossem VTDs e achar erroneamente que admitem passiva.
@@ -824,7 +810,7 @@ No sistema da língua para provas de concurso, existem apenas três vozes: **ati
 
 ---
 
-## Transposição Passiva Isolada sem Análise do Parágrafo (CESPE)
+### Transposição Passiva Isolada sem Análise do Parágrafo (CESPE)
 
 **Problema:** Validar a conversão da voz ativa para a passiva analítica apenas analisando a oração principal isoladamente, sem verificar os termos periféricos do parágrafo no texto original.
 **Consequência:** Não perceber que a troca de sujeito transfere indevidamente a referência lógica de orações reduzidas intercaladas, destruindo a **coerência argumentativa** do texto.
@@ -832,41 +818,37 @@ No sistema da língua para provas de concurso, existem apenas três vozes: **ati
 
 ---
 
----
-
 ## Glossário operacional
 
 ### Voz Ativa
 
-### Voz Passiva Analítica
+#### Voz Passiva Analítica
 
 Construção perifrástica constituída obrigatoriamente por um verbo auxiliar (*ser*, ou modal auxiliar correlato) conjugado, seguido do particípio de um verbo principal transitivo direto ou direto e indireto, na qual o sujeito sintático sofre o processo verbal.
 
-### Voz Passiva Sintética (ou Pronominal)
+#### Voz Passiva Sintética (ou Pronominal)
 
 Construção verbal concisa formada por verbo transitivo direto (ou direto e indireto) na 3ª pessoa, associado à partícula apassivadora *se*, concordando obrigatoriamente com o sujeito paciente explícito e dispensando verbo auxiliar.
 
-### Sujeito Paciente
+#### Sujeito Paciente
 
 Termo essencial da oração com o qual o verbo passivo estabelece concordância gramatical obrigatória de número e pessoa, atuando semanticamente como o alvo ou receptor sobre o qual recai a ação verbal.
 
-### Agente da Passiva
+#### Agente da Passiva
 
 Termo da oração preposicionado (regido primordialmente por *por* e suas contrações *pelo/pela*) que designa o ser que efetivamente executa a ação expressa pelo verbo na voz passiva. Pode vir expresso ou indeterminado/omitido.
 
-### Parte Integrante do Verbo (PIV)
+#### Parte Integrante do Verbo (PIV)
 
 Pronome oblíquo átono que integra a própria matriz morfológica e lexical de verbos pronominais (*queixar-se, sentir-se, arrepender-se*) ou acidentalmente pronominais (*dar-se* no sentido de acontecer, *acomodar-se* no sentido de conformar-se), mantendo a oração na voz ativa.
 
-### Índice de Indeterminação do Sujeito (IIS)
+#### Índice de Indeterminação do Sujeito (IIS)
 
 Partícula *se* acoplada a verbos intransitivos, transitivos indiretos ou de ligação flexionados na 3ª pessoa do singular, cuja função é sinalizar a impossibilidade ou a opção discursiva de não identificar o sujeito agente na voz ativa.
 
-### Transposição de Vozes
+#### Transposição de Vozes
 
 Processo sintático de conversão oracional em que uma estrutura ativa é reescrita no padrão passivo analítico (ou vice-versa), no qual o Objeto Direto da ativa converte-se em Sujeito Paciente da passiva, preservando a correlação temporal e o sentido nuclear.
-
----
 
 ---
 

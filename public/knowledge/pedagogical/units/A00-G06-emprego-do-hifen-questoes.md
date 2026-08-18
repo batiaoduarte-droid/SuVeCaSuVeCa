@@ -20,7 +20,7 @@ Esta unidade foi preparada para estudo autônomo: avance do modelo mental para a
 - Noção de **tonicidade e prosódia** (diferença entre formas átonas e tônicas acentuadas).
 - Compreensão do conceito de **unidade lexical** e **composição semântica**.
 
-### Mapa Conceitual Integrado
+#### Mapa Conceitual Integrado
 
 ```text
 SISTEMA DE EMPREGO DO HÍFEN (ORTOGRAFIA OFICIAL)
@@ -72,93 +72,91 @@ SISTEMA DE EMPREGO DO HÍFEN (ORTOGRAFIA OFICIAL)
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Aglutinação Sistemática do Prefixo "co-" e Prefixos Especiais de União Irrestrita
+### Aglutinação Sistemática do Prefixo "co-" e Prefixos Especiais de União Irrestrita
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 O prefixo `co-` rege-se pelo princípio da união permanente e aglutinação irrestrita: ele se une diretamente ao segundo elemento sem hífen em quase todas as situações da língua portuguesa, mesmo quando o elemento subsequente se inicia pela mesma vogal "o" ou por outras vogais e consoantes. A mesma lógica de aglutinação incondicional aplica-se ao prefixo `re-`.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 1. **Aglutinação Diante de "O":** Ao contrário da Regra Geral dos Prefixos (onde vogais iguais se repelem com hífen), o prefixo `co-` aglutina-se sem hífen, dobrando a vogal "o": *coobrigação*, *coordenação*, *coordenar*, *cooperação*, *cooperar*.
 2. **Aglutinação Diante de Outras Vogais e Consoantes:** Une-se diretamente: *coautor*, *coeducação*, *coexistir*, *cofundador*, *coprodutor*.
 3. **Paralelismo com o Prefixo `re-`:** O prefixo `re-` opera exatamente sob a mesma lógica de união incondicional, unindo-se sem hífen mesmo diante da vogal "e": *reeditar*, *reeducar*, *reavaliar*.
 4. **Comportamento Diante da Letra "H":** Historicamente e conforme registrado no Vocabulário Ortográfico da Língua Portuguesa (VOLP), as palavras iniciadas por "h" associadas a `co-` consagraram-se com a supressão do "h" e aglutinação direta (*coabitar*, *cohabitação*) ou admitem grafia hifenizada mantendo o "h" (*co-habitar*).
 
-### Critérios de Reconhecimento e Aplicação
+#### Critérios de Reconhecimento e Aplicação
 
 - Identificou o prefixo `co-`? Escreva **junto e sem hífen** (*coautor*, *coobrigação*, *coexistir*). Propostas de bancas para grafar *co-autor*, *co-obrigação* ou *Co-existem* são ortograficamente incorretas.
 
-### Exemplos e Contraexemplos
+#### Exemplos e Contraexemplos
 
 - *Corretos:* `coautor`, `coobrigação`, `coordenação`, `cooperação`, `coexistir`, `reeditar`, `reeducar`.
 - *Incorretos:* `co-autor`, `co-obrigação`, `co-ordenação`, `Co-existem`, `re-editar`.
 
-### Exceções ou Limites
+#### Exceções ou Limites
 
 Dupla grafia aceita no VOLP para casos com "h": *coabitar* / *co-habitar*.
 
 ---
 
-## Ruptura Estrutural: Prefixo vs. Nome Composto
+### Ruptura Estrutural: Prefixo vs. Nome Composto
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A resolução de questões sobre o emprego do hífen exige a separação categórica entre duas realidades morfológicas distintas: **Derivação Prefixal** (morfema sem autonomia + radical) e **Composição Lexical / Nomes Compostos** (dois ou mais vocábulos gramaticais autônomos que unem forças semânticas).
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 1. **Regras de Prefixos:** Operam na interface fonético-morfológica (*"iguais se repelem, diferentes se atraem"*, aglutinação com dobra de R/S após vogal). Tratam de prefixos como `micro-`, `anti-`, `super-`, `hiper-`, `sub-`, `auto-`.
 2. **Regras de Nomes Compostos:** Tratam da fusão de substantivos, adjetivos, verbos ou numerais que criam uma nova realidade semântica (*pronto-socorro*, *navio-escola*, *decreto-lei*, *alto-mar*, *porta-retrato*).
 3. **Inaplicabilidade Cruzada:** É um erro conceitual tentar aplicar princípios de atração/repulsão de vogais ou dobramento de consoantes em nomes compostos.
- - Em *alto-mar*, *alto* não é prefixo; é adjetivo. Logo, não aglutina (*altomar* é incorreto).
- - Em *porta-retrato*, *porta* é verbo (*portar*), não prefixo. Logo, não dobra o R (*portarretrato* é incorreto; mantém-se hífen e R simples: *porta-retrato*).
- - Em *micro-organismo*, *micro-* é prefixo; logo, aplica-se a regra prefixal de vogais iguais que se repelem (*micro-organismo*).
+  - Em *alto-mar*, *alto* não é prefixo; é adjetivo. Logo, não aglutina (*altomar* é incorreto).
+  - Em *porta-retrato*, *porta* é verbo (*portar*), não prefixo. Logo, não dobra o R (*portarretrato* é incorreto; mantém-se hífen e R simples: *porta-retrato*).
+  - Em *micro-organismo*, *micro-* é prefixo; logo, aplica-se a regra prefixal de vogais iguais que se repelem (*micro-organismo*).
 
-### Critérios de Reconhecimento e Aplicação
+#### Critérios de Reconhecimento e Aplicação
 
 - Analise o primeiro elemento:
- - Se for prefixo (`micro-`, `contra-`, `anti-`, `super-`), aplique as **Regras Prefixais (5 Casos)**.
- - Se for vocábulo autônomo (verbo, substantivo, adjetivo, numeral), aplique o **Método das 3 Categorias de Nomes Compostos**.
+  - Se for prefixo (`micro-`, `contra-`, `anti-`, `super-`), aplique as **Regras Prefixais (5 Casos)**.
+  - Se for vocábulo autônomo (verbo, substantivo, adjetivo, numeral), aplique o **Método das 3 Categorias de Nomes Compostos**.
 
 ---
 
-## Sistema Geral dos Prefixos Vocálicos e Consonantais (Casos 1 e 2)
+### Sistema Geral dos Prefixos Vocálicos e Consonantais (Casos 1 e 2)
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A hifenização na derivação prefixal divide-se primariamente entre **Prefixos Vocálicos (Caso 1)** e **Prefixos Consonantais em 'R' (Caso 2)**, governados por regras fonotáticas estritas do Acordo Ortográfico.
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 1. **Caso 1 — Prefixos Terminados em Vogal (`auto-`, `semi-`, `anti-`, `contra-`, `infra-`, `micro-`):**
- - *Vogais Diferentes ("Diferentes se atraem"):* Aglutinam-se diretamente sem hífen (*autoanálise*, *semicrueza*, *infraestrutura*, *antieconômico*).
- - *Vogais Iguais ("Iguais se repelem"):* Exigem hífen obrigatório (*semi-inteiro*, *micro-organismo*, *auto-organização*, *anti-inflacionário*).
- - *Diante de "H":* Exigem hífen obrigatório (*anti-higiênico*, *semi-hospitalar*).
- - *Diante de R ou S:* Aglutinam-se e **dobram a consoante** (`rr` ou `ss`) (*contrarregra*, *antidireito*, *antissocial*, *minissaia*, *microssistema*).
+  - *Vogais Diferentes ("Diferentes se atraem"):* Aglutinam-se diretamente sem hífen (*autoanálise*, *semicrueza*, *infraestrutura*, *antieconômico*).
+  - *Vogais Iguais ("Iguais se repelem"):* Exigem hífen obrigatório (*semi-inteiro*, *micro-organismo*, *auto-organização*, *anti-inflacionário*).
+  - *Diante de "H":* Exigem hífen obrigatório (*anti-higiênico*, *semi-hospitalar*).
+  - *Diante de R ou S:* Aglutinam-se e **dobram a consoante** (`rr` ou `ss`) (*contrarregra*, *antidireito*, *antissocial*, *minissaia*, *microssistema*).
 2. **Caso 2 — Prefixos Consonantais Terminados em 'R' (`hiper-`, `inter-`, `super-`):**
- - *Hífen Restrito (Regra H-R):* Usa-se hífen **exclusivamente** quando o segundo elemento iniciar por **H** ou **R** (*super-ricos*, *super-homem*, *hiper-resistente*, *inter-regional*).
- - *Diante de S ou Outras Letras:* Aglutina-se sem hífen e **sem dobrar consoantes** (*hipersensibilidade*, *supersensível*, *intermunicipal*). Formas como `hiperssensibilidade` são erros graves.
+  - *Hífen Restrito (Regra H-R):* Usa-se hífen **exclusivamente** quando o segundo elemento iniciar por **H** ou **R** (*super-ricos*, *super-homem*, *hiper-resistente*, *inter-regional*).
+  - *Diante de S ou Outras Letras:* Aglutina-se sem hífen e **sem dobrar consoantes** (*hipersensibilidade*, *supersensível*, *intermunicipal*). Formas como `hiperssensibilidade` são erros graves.
 
-### Critérios de Reconhecimento e Aplicação
+#### Critérios de Reconhecimento e Aplicação
 
 - Terminou em vogal? Verifique a letra seguinte: vogal igual/H = hífen; vogal diferente = junta; R/S = junta e dobra.
 - Terminou em R (`super/hiper/inter`)? Verifique a letra seguinte: H ou R = hífen; qualquer outra (incluindo S) = junta direto sem dobrar.
 
-### Exemplos
+#### Exemplos
 
 - *Caso 1:* `autoanálise` (junto), `semi-inteiro` (hífen), `contrarregra` (dobra R), `antidireito` (junto sem hífen).
 - *Caso 2:* `super-ricos` (hífen), `super-homem` (hífen), `hipersensibilidade` (junto, um S).
 
 ---
 
-## Sistema Lógico das 3 Categorias de Nomes Compostos
+### Sistema Lógico das 3 Categorias de Nomes Compostos
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 Para simplificar a multiplicidade de regras gramaticais, o emprego do hífen em nomes compostos (substantivos e adjetivos) estrutura-se pedagogicamente em **3 Categorias**:
 
@@ -171,36 +169,36 @@ NOMES COMPOSTOS
  └── III-B: Locuções Consagradas com Conector ──────────> MANTÊM HÍFEN
 ```
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 1. **Categoria I — Regra Geral (Com Hífen):** Todo composto formado por vocábulos autônomos sem conector intermediário que preserva a noção de composição deve levar hífen.
- - *Abrangência:* Substantivo + substantivo (*decreto-lei*), adjetivo + substantivo (*alto-mar*, *alto-relevo*), numeral + substantivo (*primeiro-ministro*), verbo + substantivo (*porta-retrato*, *porta-aviões*), gentílicos compostos (*norte-americano*, *afro-brasileiro*), repetições/onomatopeias (*tico-tico*) e espécies zoológicas/botânicas (*erva-doce*, *couve-flor*, *bem-te-vi*).
+  - *Abrangência:* Substantivo + substantivo (*decreto-lei*), adjetivo + substantivo (*alto-mar*, *alto-relevo*), numeral + substantivo (*primeiro-ministro*), verbo + substantivo (*porta-retrato*, *porta-aviões*), gentílicos compostos (*norte-americano*, *afro-brasileiro*), repetições/onomatopeias (*tico-tico*) e espécies zoológicas/botânicas (*erva-doce*, *couve-flor*, *bem-te-vi*).
 2. **Categoria II — Elemento de Ligação / Locuções (Sem Hífen):** Compostos e locuções de qualquer natureza (substantivas, adjetivas, adverbiais) que possuem elemento de ligação (preposição, conjunção) não usam hífen, pois o conector já desempenha o papel de separador lexical (*dia a dia*, *mão de obra*, *café com leite*, *sala de jantar*, *ponto e vírgula*, *pronto atendimento*).
 3. **Categoria III — Casos Especiais Consagrados pelo Uso (Memorização):**
- - *Categoria III-A (Exceção à Regra I):* Compostos que perderam a noção de composição fonético-semântica na consciência dos falantes e se fundiram em palavra única aglutinada (*girassol*, *madresilva*, *pontapé*, *paraquedas*, *paraquedista*, *mandachuva*, *afrodescendente*).
- - *Categoria III-B (Exceção à Regra II):* Locuções com conector que mantiveram o hífen por consagração secular de uso expressa no Acordo (*água-de-colônia*, *cor-de-rosa*, *à queima-roupa*, *pé-de-meia*, *dois-pontos*, *mais-que-perfeito*, *cana-de-açúcar*).
+  - *Categoria III-A (Exceção à Regra I):* Compostos que perderam a noção de composição fonético-semântica na consciência dos falantes e se fundiram em palavra única aglutinada (*girassol*, *madresilva*, *pontapé*, *paraquedas*, *paraquedista*, *mandachuva*, *afrodescendente*).
+  - *Categoria III-B (Exceção à Regra II):* Locuções com conector que mantiveram o hífen por consagração secular de uso expressa no Acordo (*água-de-colônia*, *cor-de-rosa*, *à queima-roupa*, *pé-de-meia*, *dois-pontos*, *mais-que-perfeito*, *cana-de-açúcar*).
 
 ---
 
-## Elementos Independentes e o Contraste BEM vs. MAL (Caso 3)
+### Elementos Independentes e o Contraste BEM vs. MAL (Caso 3)
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 O Caso 3 reúne elementos independentes e prefixos fixos (`além`, `ex`, `sem`, `recém`, `bem`, `grão`, `grã`) que exigem hífen obrigatoriamente. No entanto, existe uma assimetria decisiva entre o elemento **BEM** (regra incondicional) e o elemento **MAL** (regra condicional).
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 1. **Regra Incondicional do BEM e Prefixos Fixos:**
- - Palavras formadas por `bem-`, `sem-`, `ex-`, `além-`, `recém-`, `grão-`, `grã-` levam hífen **sempre**, quer o segundo elemento comece por vogal, "h" ou consoante (*bem-estar*, *bem-vindo*, *bem-humorado*, *sem-teto*, *ex-aluno*, *recém-nascido*, *grão-mestre*).
- - Inadmissibilidade de grafia solta: *bem-estar* não pode ser grafado *bem estar*.
+  - Palavras formadas por `bem-`, `sem-`, `ex-`, `além-`, `recém-`, `grão-`, `grã-` levam hífen **sempre**, quer o segundo elemento comece por vogal, "h" ou consoante (*bem-estar*, *bem-vindo*, *bem-humorado*, *sem-teto*, *ex-aluno*, *recém-nascido*, *grão-mestre*).
+  - Inadmissibilidade de grafia solta: *bem-estar* não pode ser grafado *bem estar*.
 2. **Regra Condicional do MAL (BEM != MAL):**
- - O elemento `mal` **não segue a mesma regra do BEM**.
- - `mal` exige hífen **apenas** quando o termo seguinte se inicia por **vogal** ou **H** (*mal-humorado*, *mal-amado*, *mal-afortunado*).
- - Diante de consoante, `mal` aglutina-se sem hífen (*malcriado*, *malquerido*, *malfeito*, *malpassado*).
+  - O elemento `mal` **não segue a mesma regra do BEM**.
+  - `mal` exige hífen **apenas** quando o termo seguinte se inicia por **vogal** ou **H** (*mal-humorado*, *mal-amado*, *mal-afortunado*).
+  - Diante de consoante, `mal` aglutina-se sem hífen (*malcriado*, *malquerido*, *malfeito*, *malpassado*).
 3. **Impacto em Concursos:**
- - Em itens do Cebraspe que cobram a "mesma regra" de *bem-estar*, a resposta correta é *sem-teto* (ambas do Caso 3 incondicional). A opção *mal-humorado*, embora ortograficamente correta, é justificada por regra diferente.
+  - Em itens do Cebraspe que cobram a "mesma regra" de *bem-estar*, a resposta correta é *sem-teto* (ambas do Caso 3 incondicional). A opção *mal-humorado*, embora ortograficamente correta, é justificada por regra diferente.
 
-### Critérios de Reconhecimento e Aplicação
+#### Critérios de Reconhecimento e Aplicação
 
 - `BEM` + qualquer termo = **COM HÍFEN** (*bem-estar*, *bem-vindo*).
 - `MAL` + Vogal / H = **COM HÍFEN** (*mal-humorado*).
@@ -208,29 +206,27 @@ O Caso 3 reúne elementos independentes e prefixos fixos (`além`, `ex`, `sem`, 
 
 ---
 
-## Prefixos Átonos vs. Tônicos e Adjetivos Compostos (Casos 4 e 5)
+### Prefixos Átonos vs. Tônicos e Adjetivos Compostos (Casos 4 e 5)
 
-### Definição ou Ideia Central
+#### Definição ou Ideia Central
 
 A hifenização é modulada pela autonomia prosódica do prefixo no **Caso 4** (`pre-`/`pré-`, `re-`/`ré-`, `pro-`/`pró-`) e pela relação léxica sintagmática no **Caso 5** (adjetivos compostos).
 
-### Explicação Consolidada
+#### Explicação Consolidada
 
 1. **Caso 4 — Prefixos Tônicos vs. Átonos:**
- - *Formas Átonas (`pre-`, `re-`, `pro-`):* Pronunciadas de forma fraca e sem acento gráfico. Aglutinam-se diretamente ao radical sem hífen, dobrando o R se a palavra seguinte iniciar por essa consoante (*prerrogativa*, *preencher*, *refazer*, *propor*).
- - *Formas Tônicas (`pré-`, `ré-`, `pró-`):* Dotadas de autonomia prosódica e acento gráfico explícito. Exigem hífen obrigatoriamente (*pré-natal*, *pré-requisito*, *pró-reitoria*, *ré-exame*).
- - Propor grafar *prerrogativa* como *pré-rogativa* desfigura a natureza átona do vocábulo e constitui erro ortográfico.
+  - *Formas Átonas (`pre-`, `re-`, `pro-`):* Pronunciadas de forma fraca e sem acento gráfico. Aglutinam-se diretamente ao radical sem hífen, dobrando o R se a palavra seguinte iniciar por essa consoante (*prerrogativa*, *preencher*, *refazer*, *propor*).
+  - *Formas Tônicas (`pré-`, `ré-`, `pró-`):* Dotadas de autonomia prosódica e acento gráfico explícito. Exigem hífen obrigatoriamente (*pré-natal*, *pré-requisito*, *pró-reitoria*, *ré-exame*).
+  - Propor grafar *prerrogativa* como *pré-rogativa* desfigura a natureza átona do vocábulo e constitui erro ortográfico.
 2. **Caso 5 — Adjetivos Compostos e Rigidez do Hífen:**
- - Adjetivos compostos que expressam relações conceituais, culturais, técnicas ou políticas combinadas (*ético-jurídicos*, *médico-cirúrgico*, *político-social*, *econômico-financeiro*) possuem hifenização **estritamente obrigatória**.
- - Não existe facultatividade no emprego do hífen nesses sintagmas; a forma aglutinada *eticojurídicos* é incorreta.
+  - Adjetivos compostos que expressam relações conceituais, culturais, técnicas ou políticas combinadas (*ético-jurídicos*, *médico-cirúrgico*, *político-social*, *econômico-financeiro*) possuem hifenização **estritamente obrigatória**.
+  - Não existe facultatividade no emprego do hífen nesses sintagmas; a forma aglutinada *eticojurídicos* é incorreta.
 
-### Critérios de Reconhecimento e Aplicação
+#### Critérios de Reconhecimento e Aplicação
 
 - Prefixo tem acento? É tônico -> usa hífen (*pré-requisito*).
 - Prefixo não tem acento? É átono -> junta sem hífen (*prerrogativa*).
 - Adjetivo composto conceitual? Hífen obrigatório (*ético-jurídicos*).
-
----
 
 ---
 
@@ -248,17 +244,15 @@ A hifenização é modulada pela autonomia prosódica do prefixo no **Caso 4** (
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Algoritmo Integrado de Decisão para Questões de Hífen
+### Algoritmo Integrado de Decisão para Questões de Hífen
 
-### Objetivo
+#### Objetivo
 
 Analisar com rapidez e precisão matemática qualquer vocábulo apresentado em provas de concurso.
 
-### Fluxo Operacional
+#### Fluxo Operacional
 
 ```text
  [ PALAVRA ANALISADA ]
@@ -278,36 +272,34 @@ Analisar com rapidez e precisão matemática qualquer vocábulo apresentado em p
 ```
 
 1. **Passo 1 — Identificação Estrutural:** Pergunte: o primeiro elemento possui autonomia morfológica e lexical independente ou é um prefixo?
- - Se for prefixo, siga para os **5 Casos de Prefixação**.
- - Se for vocábulo autônomo (substantivo, adjetivo, verbo, numeral), siga para as **3 Categorias de Compostos**.
+  - Se for prefixo, siga para os **5 Casos de Prefixação**.
+  - Se for vocábulo autônomo (substantivo, adjetivo, verbo, numeral), siga para as **3 Categorias de Compostos**.
 2. **Passo 2 — Aplicação das Regras Prefixais:**
- - Termina em vogal? Vogais iguais = hífen (*micro-organismo*); vogais diferentes = junta (*autoanálise*); R/S = junta e dobra (*contrarregra*).
- - Termina em R (`hiper/inter/super`)? Seguido de H/R = hífen (*super-ricos*); seguido de S = junta sem dobrar (*hipersensibilidade*).
- - É `co-` ou `re-`? Aglutina incondicionalmente (*coobrigação*, *reeditar*).
- - É `bem` ou `mal`? `bem` sempre com hífen (*bem-estar*); `mal` só com vogal/H (*mal-humorado*).
- - É prefixo átono? Junta sem hífen (*prerrogativa*).
+  - Termina em vogal? Vogais iguais = hífen (*micro-organismo*); vogais diferentes = junta (*autoanálise*); R/S = junta e dobra (*contrarregra*).
+  - Termina em R (`hiper/inter/super`)? Seguido de H/R = hífen (*super-ricos*); seguido de S = junta sem dobrar (*hipersensibilidade*).
+  - É `co-` ou `re-`? Aglutina incondicionalmente (*coobrigação*, *reeditar*).
+  - É `bem` ou `mal`? `bem` sempre com hífen (*bem-estar*); `mal` só com vogal/H (*mal-humorado*).
+  - É prefixo átono? Junta sem hífen (*prerrogativa*).
 3. **Passo 3 — Aplicação das Regras de Compostos:**
- - Possui elemento de ligação (preposição/conjunção)? Categoria II -> sem hífen (*dia a dia*, *mão de obra*). Verifique se não é Categoria III-B (*cor-de-rosa*, *cana-de-açúcar*).
- - Não possui elemento de ligação? Categoria I -> com hífen (*decreto-lei*, *norte-americano*, *porta-retrato*). Verifique se não é Categoria III-A (*girassol*, *mandachuva*, *paraquedas*).
- - Verbo + substantivo? Não é prefixo! Mantém hífen e R simples (*porta-retrato*).
+  - Possui elemento de ligação (preposição/conjunção)? Categoria II -> sem hífen (*dia a dia*, *mão de obra*). Verifique se não é Categoria III-B (*cor-de-rosa*, *cana-de-açúcar*).
+  - Não possui elemento de ligação? Categoria I -> com hífen (*decreto-lei*, *norte-americano*, *porta-retrato*). Verifique se não é Categoria III-A (*girassol*, *mandachuva*, *paraquedas*).
+  - Verbo + substantivo? Não é prefixo! Mantém hífen e R simples (*porta-retrato*).
 
 ---
 
-## Protocolo Cebraspe para Itens de Certo/Errado e "Mesma Regra"
+### Protocolo Cebraspe para Itens de Certo/Errado e "Mesma Regra"
 
-### Passos de Resolução
+#### Passos de Resolução
 
 1. **Comando "Justifica-se pela mesma regra":**
- - **Premissa:** As alternativas não contêm erros ortográficos grosseiros; a banca quer testar a classificação teórica.
- - **Ação:** Enquadre o modelo do enunciado no seu Caso exato (ex.: *bem-estar* -> Caso 3 incondicional) e busque a alternativa com o mesmo enquadramento (*sem-teto* -> Caso 3 incondicional). Descarte opções de outros Casos (*mal-humorado*, *super-ricos*), mesmo que estejam com a grafia correta.
+  - **Premissa:** As alternativas não contêm erros ortográficos grosseiros; a banca quer testar a classificação teórica.
+  - **Ação:** Enquadre o modelo do enunciado no seu Caso exato (ex.: *bem-estar* -> Caso 3 incondicional) e busque a alternativa com o mesmo enquadramento (*sem-teto* -> Caso 3 incondicional). Descarte opções de outros Casos (*mal-humorado*, *super-ricos*), mesmo que estejam com a grafia correta.
 2. **Proposta de "Grafia Alternativa" para palavra do Texto de Apoio:**
- - **Premissa:** O Cebraspe extrai seus textos de obras publicadas e não contradiz a ortografia padrão adotada pelo autor original.
- - **Ação:** Se a palavra consta no texto sem hífen (*coexistem*, *prerrogativa*), o item que afirmar que "poderia ser grafada alternativamente com hífen" (*Co-existem*, *pré-rogativa*) é **ERRADO**.
+  - **Premissa:** O Cebraspe extrai seus textos de obras publicadas e não contradiz a ortografia padrão adotada pelo autor original.
+  - **Ação:** Se a palavra consta no texto sem hífen (*coexistem*, *prerrogativa*), o item que afirmar que "poderia ser grafada alternativamente com hífen" (*Co-existem*, *pré-rogativa*) é **ERRADO**.
 3. **Afirmação de "Hífen Facultativo":**
- - **Premissa:** As regras do Acordo Ortográfico são prescritivas e rígidas.
- - **Ação:** Se o item afirmar que o hífen em adjetivos compostos (*ético-jurídicos*) é de uso facultativo, marque **ERRADO**.
-
----
+  - **Premissa:** As regras do Acordo Ortográfico são prescritivas e rígidas.
+  - **Ação:** Se o item afirmar que o hífen em adjetivos compostos (*ético-jurídicos*) é de uso facultativo, marque **ERRADO**.
 
 ---
 
@@ -323,7 +315,7 @@ Analisar com rapidez e precisão matemática qualquer vocábulo apresentado em p
 | **Grafia Correta** | *minissaia*, *contrarregra*, *microssistema* | *porta-retrato*, *porta-estandarte*, *guarda-roupa* |
 | **Erro Comum de Prova** | `contra-regra` (separar com hífen) | `portarretrato` (dobrar o R indevidamente) |
 
-### 2. Elemento BEM vs. Elemento MAL
+#### 2. Elemento BEM vs. Elemento MAL
 
 | Critério | Elemento BEM | Elemento MAL |
 |:------------------------------- |:--------------------------------------------- |:----------------------------------------------------------------- |
@@ -332,7 +324,7 @@ Analisar com rapidez e precisão matemática qualquer vocábulo apresentado em p
 | **Diante de Consoante** | COM hífen (*bem-vindo*, *bem-criado*) | **SEM HÍFEN / AGGLUTINADO** (*malcriado*, *malquerido*) |
 | **Enquadramento em Prova** | Caso 3 Incondicional (equivale a*sem-teto*) | Regra específica condicional |
 
-### 3. Prefixos Especiais (`co-`, `re-`) vs. Regra Geral de Prefixos (`semi-`, `anti-`)
+#### 3. Prefixos Especiais (`co-`, `re-`) vs. Regra Geral de Prefixos (`semi-`, `anti-`)
 
 | Prefixo | Diante de Vogal Diferente | Diante de Vogal Idêntica | Diante de H |
 |:-------------------------------------------- |:------------------------------------------------- |:---------------------------------------------------------------- |:------------------------------------------- |
@@ -342,11 +334,9 @@ Analisar com rapidez e precisão matemática qualquer vocábulo apresentado em p
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Questão 1 (EMBRAPA 2025 - Prefixo co-)
+### Questão 1 (EMBRAPA 2025 - Prefixo co-)
 
 - **Enunciado (CESPE/CEBRASPE - 2025 - EMBRAPA - Técnico):**
  > *"De acordo com a ortografia oficial, o prefixo co-, presente em "coautor", une-se, sem a intermediação de hífen, ao segundo elemento mesmo quando este se inicia por "o", a exemplo de "coobrigação"."*
@@ -357,7 +347,7 @@ Analisar com rapidez e precisão matemática qualquer vocábulo apresentado em p
 
 ---
 
-## Questão 2 (EMBRAPA 2025 - Nomes Compostos: alto-mar)
+### Questão 2 (EMBRAPA 2025 - Nomes Compostos: alto-mar)
 
 - **Enunciado (CESPE/CEBRASPE - 2025 - EMBRAPA - Analista):**
  > *"Conforme a ortografia oficial atual, o termo "alto-mar" (quarto período do terceiro parágrafo) deveria ser grafado sem hífen — altomar."*
@@ -368,7 +358,7 @@ Analisar com rapidez e precisão matemática qualquer vocábulo apresentado em p
 
 ---
 
-## Questão 3 (Instituto Rio Branco 2024 - Prefixos semi- vs. co- e re-)
+### Questão 3 (Instituto Rio Branco 2024 - Prefixos semi- vs. co- e re-)
 
 - **Enunciado (CESPE/CEBRASPE - 2024 - Instituto Rio Branco - Terceiro Secretário):**
  > *"A grafia das palavras formadas pelo prefixo semi-, como "semicrueza" e "semi-inteiro", por exemplo, obedece à mesma regra ortográfica que define a grafia das palavras formadas pelos prefixos co- e re-, no que se refere ao emprego ou não de hífen."*
@@ -379,7 +369,7 @@ Analisar com rapidez e precisão matemática qualquer vocábulo apresentado em p
 
 ---
 
-## Questão 4 (MPE-SC Promotor - Prefixo anti-: antidireito)
+### Questão 4 (MPE-SC Promotor - Prefixo anti-: antidireito)
 
 - **Enunciado (CESPE/CEBRASPE - MPE-SC - Promotor de Justiça Substituto):**
  > *"No último período do primeiro parágrafo, a substituição de "antidireito" por anti-direito faria o texto ficar em desacordo com a ortografia oficial vigente no Brasil."*
@@ -390,7 +380,7 @@ Analisar com rapidez e precisão matemática qualquer vocábulo apresentado em p
 
 ---
 
-## Questão 5 (INSS Técnico - Substantivo Composto bem-estar)
+### Questão 5 (INSS Técnico - Substantivo Composto bem-estar)
 
 - **Enunciado (CESPE/CEBRASPE - INSS - Técnico do Seguro Social):**
  > *"Por constituir um substantivo, o termo 'bem-estar', empregado no segundo parágrafo, poderia ser grafado, em conformidade com a ortografia oficial, sem o hífen: bem estar."*
@@ -401,7 +391,7 @@ Analisar com rapidez e precisão matemática qualquer vocábulo apresentado em p
 
 ---
 
-## Questão 6: Bateria de Fixação de Nomes Compostos (10 Itens)
+### Questão 6: Bateria de Fixação de Nomes Compostos (10 Itens)
 
 | Item | Opções de Prova | Forma Correta | Justificativa e Enquadramento |
 |:---: |:------------------------------------------------------------- |:---------------------------: |:--------------------------------------------------------------------------------- |
@@ -418,40 +408,50 @@ Analisar com rapidez e precisão matemática qualquer vocábulo apresentado em p
 
 ---
 
-## Questão 7 (SEED-PR - Mapeamento nos 5 Casos)
+### Questão 7 (SEED-PR - Mapeamento nos 5 Casos)
 
 - **Enunciado (CESPE/CEBRASPE - SEED-PR - Professor - Língua Portuguesa):**
  > *Assinale a opção em que a palavra apresentada está de acordo com a atual ortografia oficial da língua portuguesa.*
- > `A) seminternato` | `B) hiperssensibilidade` | `C) contra-regra` | `D) mão-de-obra` | `E) autoanálise`
+ > `
+A) seminternato` | `
+B) hiperssensibilidade` | `
+C) contra-regra` | `
+D) mão-de-obra` | `
+E) autoanálise`
  >
 - **Gabarito:** **E (`autoanálise`)**
 - **Análise das Opções:**
- - `A) seminternato` (Incorreta): `semi-` + `internato` (vogais iguais "i"+"i" se repelem -> Caso 1: `semi-internato`).
- - `B) hiperssensibilidade` (Incorreta): `hiper-` termina em R; diante de S, junta direto sem dobrar (Caso 2: `hipersensibilidade`).
- - `C) contra-regra` (Incorreta): `contra-` termina em vogal + R -> junta e dobra (Caso 1: `contrarregra`).
- - `D) mão-de-obra` (Incorreta): Locução com preposição perdeu hífen (Caso 5 / Categoria II: `mão de obra`).
- - `E) autoanálise` (**CORRETA**): `auto-` termina em 'o' + 'a' (vogais diferentes se atraem -> Caso 1: `autoanálise`).
+  - `A) seminternato` (Incorreta): `semi-` + `internato` (vogais iguais "i"+"i" se repelem -> Caso 1: `semi-internato`).
+  - `B) hiperssensibilidade` (Incorreta): `hiper-` termina em R; diante de S, junta direto sem dobrar (Caso 2: `hipersensibilidade`).
+  - `C) contra-regra` (Incorreta): `contra-` termina em vogal + R -> junta e dobra (Caso 1: `contrarregra`).
+  - `D) mão-de-obra` (Incorreta): Locução com preposição perdeu hífen (Caso 5 / Categoria II: `mão de obra`).
+  - `E) autoanálise` (**CORRETA**): `auto-` termina em 'o' + 'a' (vogais diferentes se atraem -> Caso 1: `autoanálise`).
 
 ---
 
-## Questão 8 (Pref. Camaçari 2024 - Mesma Regra de bem-estar)
+### Questão 8 (Pref. Camaçari 2024 - Mesma Regra de bem-estar)
 
 - **Enunciado (CESPE/CEBRASPE - 2024 - Prefeitura de Camaçari-BA - ACS):**
  > *O emprego do hífen na palavra “bem-estar”, no final do texto CG1A1, justifica-se pela mesma regra que determina o emprego do hífen em:*
- > `A) mal-humorado.` | `B) super-ricos.` | `C) sem-teto.` | `D) auto-organização.` | `E) cana-de-açúcar.`
+ > `
+A) mal-humorado.` | `
+B) super-ricos.` | `
+C) sem-teto.` | `
+D) auto-organização.` | `
+E) cana-de-açúcar.`
  >
 - **Gabarito:** **C (`sem-teto`)**
 - **Análise das Opções:**
- - *Modelo (`bem-estar`):* Caso 3 (elementos independentes / prefixos fixos incondicionais).
- - `A) mal-humorado`: Caso do MAL (hífen condicionado à presença de H; regra diferente de BEM).
- - `B) super-ricos`: Caso 2 (prefixo em R seguido de R).
- - `C) sem-teto`: **CORRETA**. `sem-` pertence ao mesmo grupo incondicional do Caso 3 (`além`, `ex`, `sem`, `recém`, `bem`).
- - `D) auto-organização`: Caso 1 (prefixo vocálico com vogais iguais 'o'+'o').
- - `E) cana-de-açúcar`: Caso 5 / Categoria III-B (exceção consagrada com preposição).
+  - *Modelo (`bem-estar`):* Caso 3 (elementos independentes / prefixos fixos incondicionais).
+  - `A) mal-humorado`: Caso do MAL (hífen condicionado à presença de H; regra diferente de BEM).
+  - `B) super-ricos`: Caso 2 (prefixo em R seguido de R).
+  - `C) sem-teto`: **CORRETA**. `sem-` pertence ao mesmo grupo incondicional do Caso 3 (`além`, `ex`, `sem`, `recém`, `bem`).
+  - `D) auto-organização`: Caso 1 (prefixo vocálico com vogais iguais 'o'+'o').
+  - `E) cana-de-açúcar`: Caso 5 / Categoria III-B (exceção consagrada com preposição).
 
 ---
 
-## Questão 9 (DPE-DF e MPE-SC - Prefixos co- e pre-)
+### Questão 9 (DPE-DF e MPE-SC - Prefixos co- e pre-)
 
 - **Item A (DPE-DF):** *"Conforme as regras oficiais de grafia, “Coexistem” poderia ser grafado alternativamente como Co-existem."*-> **Gabarito:** **ERRADO**. `co-` aglutina-se sempre sem hífen.
 - **Item B (MPE-SC Promotor):** *"O termo “prerrogativa” (primeiro parágrafo) também pode ser corretamente grafado como pré-rogativa."*
@@ -459,7 +459,7 @@ Analisar com rapidez e precisão matemática qualquer vocábulo apresentado em p
 
 ---
 
-## Questão 10 (MPE-SC Promotor - ético-jurídicos)
+### Questão 10 (MPE-SC Promotor - ético-jurídicos)
 
 - **Enunciado (CESPE/CEBRASPE - MPE-SC - Promotor de Justiça Substituto):**
  > *"No último período do primeiro parágrafo, o emprego do hífen em “ético-jurídicos” é facultativo, razão por que estaria igualmente correta a grafia eticojurídicos."*
@@ -470,85 +470,77 @@ Analisar com rapidez e precisão matemática qualquer vocábulo apresentado em p
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Mantra Mnemônico dos Opostos (Caso 1)
+### O Mantra Mnemônico dos Opostos (Caso 1)
 
 - **Diferentes se atraem:** Vogais diferentes unem-se **sem hífen** (*autoanálise*, *infraestrutura*).
 - **Iguais se repelem:** Vogais idênticas separam-se **com hífen** (*semi-inteiro*, *micro-ondas*, *auto-organização*).
 
-## Regra do "H-R" para Prefixos Consonantais (Caso 2)
+### Regra do "H-R" para Prefixos Consonantais (Caso 2)
 
 - Com `hiper-`, `inter-` e `super-`, o hífen só é ativado se a palavra seguinte começar por **H** ou **R** (*H-R*: *super-homem*, *super-ricos*). Diante de qualquer outra letra (inclusive S), junta direto e **nunca se dobra o S** (*hipersensibilidade*).
 
-## Teste da Preposição em Locuções (Categoria II)
+### Teste da Preposição em Locuções (Categoria II)
 
 - Encontrou preposição ou conjunção curta no meio da expressão (*de*, *com*, *a*, *e*)? A preposição já faz o papel de ligação. **Retire o hífen** (*dia a dia*, *mão de obra*, *ponto e vírgula*), salvo na curta lista de consagradas (*cor-de-rosa*, *pé-de-meia*, *cana-de-açúcar*).
 
-## Lógica de Preservação Textual do Cebraspe
+### Lógica de Preservação Textual do Cebraspe
 
 - A banca nunca contraria a ortografia do autor no texto-suporte. Se a palavra está sem hífen no texto (*coexistem*, *antidireito*), itens que propõem inserir hífen (*Co-existem*, *anti-direito*) são invariavelmente **ERRADOS** (ou **CERTOS** se a banca afirmar que a troca causará erro ortográfico).
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Pegadinha do Duplo "O" no Prefixo "co-"
+### Pegadinha do Duplo "O" no Prefixo "co-"
 
 - **O Erro:** Tentar aplicar a regra prefixal de "iguais se repelem" ao prefixo `co-`, julgando que *co-obrigação* ou *co-ordenação* deveriam ter hífen.
 - **Forma Correta:** `coobrigação`, `coordenação`, `cooperação`. `co-` é exceção à repulsão de iguais e aglutina sempre.
 
-## A Falsa Dobra de Consoantes em Verbo + Substantivo
+### A Falsa Dobra de Consoantes em Verbo + Substantivo
 
 - **O Erro:** Achar que *porta-retrato* dobra o R (*portarretrato*) porque *porta* termina em vogal 'a'.
 - **Forma Correta:** `porta-retrato` (com hífen e R simples). Dobramento de R e S só existe em derivação prefixal (ex.: *minissaia*). Em compostos verbais sem preposição, aplica-se a Regra Geral I com hífen.
 
-## Dobramento Indevido em Prefixo Consonantal
+### Dobramento Indevido em Prefixo Consonantal
 
 - **O Erro:** Grafar *hipersensibilidade* com dois 's' (`hiperssensibilidade`).
 - **Forma Correta:** `hipersensibilidade`. Prefixos terminados em consoante não autorizam dobra de letras.
 
-## Incoerência nos Adjetivos Étnicos
+### Incoerência nos Adjetivos Étnicos
 
 - **O Erro:** Deduzir que se *afro-brasileiro* usa hífen, *afrodescendente* também deveria usar.
 - **Forma Correta:** `afro-brasileiro` (Regra Geral I - hífen) vs. `afrodescendente` (Categoria III-A - aglutinada sem hífen pelo VOLP).
 
-## Falsa Equivalência de Regra entre BEM e MAL
+### Falsa Equivalência de Regra entre BEM e MAL
 
 - **O Erro:** Achar que `mal-humorado` segue a mesma regra ortográfica que `bem-estar`.
 - **Explicação:** Ambas estão certas, mas `bem-estar` decorre da regra incondicional do BEM (sempre com hífen), enquanto `mal-humorado` decorre da regra condicional do MAL (hífen apenas com vogal ou H).
 
 ---
 
----
-
 ## Glossário operacional
 
-## Nome Composto
+### Nome Composto
 
 - **Definição:** Vocábulo formado pela fusão de dois ou mais termos gramaticais autônomos que perdem sua individualidade para constituir uma nova unidade semântica indissociável (*decreto-lei*, *alto-mar*, *porta-retrato*).
 
-## Elemento de Ligação
+### Elemento de Ligação
 
 - **Definição:** Conector gramatical explícito (preposição ou conjunção) posicionado entre os termos de uma locução ou composto que, por atuar como separador lexical natural, elimina o hífen no Acordo Ortográfico (*dia a dia*, *mão de obra*, *café com leite*).
 
-## Perda da Noção de Composição
+### Perda da Noção de Composição
 
 - **Definição:** Fenômeno histórico e linguístico em que a consciência dos falantes deixa de perceber a divisão dos elementos formadores, levando à fusão gráfica em uma palavra única aglutinada sem hífen (*girassol*, *paraquedas*, *mandachuva*, *afrodescendente*).
 
-## Prefixo Átono vs. Prefixo Tônico
+### Prefixo Átono vs. Prefixo Tônico
 
 - **Definição:** Prefixo átono é desprovido de acento e independência prosódica, aglutinando-se diretamente ao radical (*prerrogativa*, *preencher*). Prefixo tônico possui acento gráfico e autonomia fonética, exigindo hífen (*pré-requisito*, *pró-reitoria*).
 
-## Adjetivo Composto Hifenizado
+### Adjetivo Composto Hifenizado
 
 - **Definição:** Estrutura formada por dois ou mais adjetivos que modificam conjuntamente um substantivo, expressando relação conceitual combinada com hifenização obrigatória (*questões ético-jurídicas*).
-
----
 
 ---
 
@@ -557,20 +549,18 @@ Analisar com rapidez e precisão matemática qualquer vocábulo apresentado em p
 Ao concluir o estudo desta unidade, o estudante deve ter internalizado que o domínio do hífen no Acordo Ortográfico não depende de memorização caótica, mas sim da aplicação de dois sistemas lógicos complementares:
 
 1. **Para Derivações com Prefixos (5 Casos):**
- - *Caso 1 (Vocálicos):* Diferentes juntam sem hífen (*autoanálise*); iguais separam com hífen (*semi-inteiro*); R/S dobram (*contrarregra*).
- - *Caso 2 (Consonantais em R):* Hífen restrito a H e R (*super-ricos*); diante de S junta direto sem dobrar (*hipersensibilidade*).
- - *Caso 3 (Elementos Independentes):* `bem`, `sem`, `ex` exigem hífen sempre (*bem-estar*, *sem-teto*); `mal` só usa hífen antes de vogal ou H (*mal-humorado*).
- - *Caso 4 (Tonicidade):* Átono aglutina e dobra R (*prerrogativa*); tônico acentuado exige hífen (*pré-requisito*).
- - *Prefixos Especiais:* `co-` e `re-` aglutinam incondicionalmente (*coautor*, *coobrigação*, *reeditar*).
+  - *Caso 1 (Vocálicos):* Diferentes juntam sem hífen (*autoanálise*); iguais separam com hífen (*semi-inteiro*); R/S dobram (*contrarregra*).
+  - *Caso 2 (Consonantais em R):* Hífen restrito a H e R (*super-ricos*); diante de S junta direto sem dobrar (*hipersensibilidade*).
+  - *Caso 3 (Elementos Independentes):* `bem`, `sem`, `ex` exigem hífen sempre (*bem-estar*, *sem-teto*); `mal` só usa hífen antes de vogal ou H (*mal-humorado*).
+  - *Caso 4 (Tonicidade):* Átono aglutina e dobra R (*prerrogativa*); tônico acentuado exige hífen (*pré-requisito*).
+  - *Prefixos Especiais:* `co-` e `re-` aglutinam incondicionalmente (*coautor*, *coobrigação*, *reeditar*).
 2. **Para Nomes Compostos (3 Categorias):**
- - *Categoria I (Regra Geral):* Sem elemento de ligação = **COM HÍFEN** (*decreto-lei*, *norte-americano*, *alto-mar*, *porta-retrato*). Verbo + substantivo jamais dobra consoante.
- - *Categoria II (Locuções):* Com elemento de ligação = **SEM HÍFEN** (*dia a dia*, *mão de obra*, *café com leite*, *pronto atendimento*).
- - *Categoria III (Casos Especiais):* Perdeu noção de composição = **JUNTO** (*girassol*, *mandachuva*, *paraquedas*, *afrodescendente*); locução consagrada = **COM HÍFEN** (*cor-de-rosa*, *água-de-colônia*, *cana-de-açúcar*).
+  - *Categoria I (Regra Geral):* Sem elemento de ligação = **COM HÍFEN** (*decreto-lei*, *norte-americano*, *alto-mar*, *porta-retrato*). Verbo + substantivo jamais dobra consoante.
+  - *Categoria II (Locuções):* Com elemento de ligação = **SEM HÍFEN** (*dia a dia*, *mão de obra*, *café com leite*, *pronto atendimento*).
+  - *Categoria III (Casos Especiais):* Perdeu noção de composição = **JUNTO** (*girassol*, *mandachuva*, *paraquedas*, *afrodescendente*); locução consagrada = **COM HÍFEN** (*cor-de-rosa*, *água-de-colônia*, *cana-de-açúcar*).
 3. **Para Provas do Cebraspe:**
 
- - Tratar o hífen em adjetivos compostos (*ético-jurídicos*) como estritamente obrigatório.
-
----
+  - Tratar o hífen em adjetivos compostos (*ético-jurídicos*) como estritamente obrigatório.
 
 ---
 
@@ -585,8 +575,8 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 ### Como aplicar neste tema
 
 1. Identificar que a questão aborda grafia de vocábulos e derivacionais/compostos, delimitando que a análise é estritamente ortográfica e morfológica.
-2. 1. Compreender a ruptura fundamental entre derivação prefixal (morfema preso) e composição lexical (vocábulos autônomos).
-3. 2. Dominar as regras de prefixação estruturadas em 5 Casos (prefixos vocálicos, consonantais em R, elementos fixos/independentes, tonicidade e prefixos especiais de aglutinação contínua).
+2. Compreender a ruptura fundamental entre derivação prefixal (morfema preso) e composição lexical (vocábulos autônomos).
+3. Dominar as regras de prefixação estruturadas em 5 Casos (prefixos vocálicos, consonantais em R, elementos fixos/independentes, tonicidade e prefixos especiais de aglutinação contínua).
 
 ### Testes decisivos
 

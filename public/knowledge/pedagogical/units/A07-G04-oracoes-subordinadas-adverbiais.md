@@ -17,9 +17,9 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 ### Como aplicar neste tema
 
 1. Localizar e delimitar todas as formas verbais ou locuções verbais do período composto para isolar a oração principal e a oração dependente.
-2. 1. Localizar os verbos e locuções verbais do período composto, demarcando a fronteira entre a oração principal e a oração dependente.
-3. 2. Reconstituir mentalmente o verbo subentendido caso haja comparação correlativa com elipse verbal ('Ele é inteligente como o pai [é]').
-4. 3. Identificar o conectivo ou locução introdutória da oração subordinada adverbial.
+2. Localizar os verbos e locuções verbais do período composto, demarcando a fronteira entre a oração principal e a oração dependente.
+3. Reconstituir mentalmente o verbo subentendido caso haja comparação correlativa com elipse verbal ('Ele é inteligente como o pai [é]').
+4. Identificar o conectivo ou locução introdutória da oração subordinada adverbial.
 
 ### Testes decisivos
 
@@ -40,7 +40,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 * **Morfossintaxe Verbal:** Diferenciação básica entre modo indicativo (certeza/fato) e modo subjuntivo (hipótese/dúvida/concessão), bem como formas nominais (infinitivo).
 * **Estrutura Básica do Período Composto:** Diferença entre oração principal e oração dependente/subordinada.
 
-### Mapa de Conceitos Integrado
+#### Mapa de Conceitos Integrado
 
 ```text
 SINTAXE DO PERÍODO COMPOSTO: ORAÇÕES SUBORDINADAS ADVERBIAIS
@@ -77,41 +77,39 @@ SINTAXE DO PERÍODO COMPOSTO: ORAÇÕES SUBORDINADAS ADVERBIAIS
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## Natureza Sintático-Semântica das Orações Subordinadas Adverbiais
+### Natureza Sintático-Semântica das Orações Subordinadas Adverbiais
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A oração subordinada adverbial é a unidade oracional dependente que exerce a função sintática equivalente à de um **adjunto adverbial**, modificando o verbo da oração principal ao atribuir-lhe uma circunstância lógica e contextual específica.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 No período composto por subordinação, as orações adverbiais conectam-se à oração principal expressando matizes semânticos como motivo, consequência, tempo, hipótese ou finalidade. Estruturalmente, dividem-se em:
 
 1. **Orações Desenvolvidas:** Introduzidas expressamente por conjunções ou locuções conjuntivas subordinativas adverbiais e grafadas com verbo flexionado (nos modos indicativo ou subjuntivo);
 2. **Orações Reduzidas:** Construídas sem conectivo introdutório explícito e estruturadas com verbo em uma das formas nominais (infinitivo, gerúndio ou particípio).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 * Realize o teste de mobilidade sintática: a oração adverbial pode figurar anteposta, intercalada ou posposta à oração principal.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 * *Exemplo Desenvolvido:* *"Como chovia muito, não fui à escola."* (Oração adverbial causal introduzida pela conjunção *como*).
 * *Exemplo Reduzido:* *"Terminada a aula, os alunos saíram."* (Oração adverbial temporal reduzida de particípio).
 
 ---
 
-## O Mnemônico Estruturador das 9 Subclasses Adverbiais (6C + FTP)
+### O Mnemônico Estruturador das 9 Subclasses Adverbiais (6C + FTP)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A taxonomia completa das 9 circunstâncias expressas pelas orações subordinadas adverbiais desenvolvidas é organizada pela regra mnemônica **6C + FTP**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 As nove subclasses distribuem-se em dois agrupamentos estruturais:
 
@@ -129,19 +127,19 @@ As nove subclasses distribuem-se em dois agrupamentos estruturais:
 
 ---
 
-## Relações de Causa e Consequência e a Estrutura Intensificadora Correlativa
+### Relações de Causa e Consequência e a Estrutura Intensificadora Correlativa
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Causa e consequência configuram faces indissociáveis da mesma relação de causalidade: a **causa** é o fato gerador, cronológica e logicamente anterior; a **consequência** é o efeito ou desfecho factual gerado.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Oração Subordinada Adverbial Causal:** Expressa a causa originária. Principais conectivos: *porque, já que, visto que, uma vez que, como* (quando anteposto à oração principal).
 2. **Oração Subordinada Adverbial Consecutiva:** Expressa o resultado da intensidade enunciada na oração principal. Estrutura-se obrigatoriamente pelo par correlativo formado pelo **mecanismo dos 4 T's** na oração principal (*tão, tanto, tamanho/tamanha, tal*) seguido da conjunção subordinativa *que* na oração consecutiva, além de locuções conjuntivas como *de modo que, de sorte que, de forma que*.
 3. **Causalidade em Estruturas Justapostas:** Em períodos coordenados ou justapostos sem conjunção subordinativa explícita, a causalidade é comprovada pelo teste semântico mental: `"O fato de [Causa] faz com que / fez com que [Consequência]"`.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 * *Causal com "já que":* *"As vendas subirão, uma vez que os juros baixaram."* (Baixar os juros = Causa).
 * *Causal com "como" anteposto:* *"Como não o convenceu, trouxe uma porca..."* (Não convencer = Causa).
@@ -150,19 +148,19 @@ Causa e consequência configuram faces indissociáveis da mesma relação de cau
 
 ---
 
-## Relações Condicionais e a Condição como "Possível Causa" (Causa Futura)
+### Relações Condicionais e a Condição como "Possível Causa" (Causa Futura)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A oração subordinada adverbial condicional formula uma hipótese ou pré-requisito indispensável para que o fato da oração principal se concretize. No plano lógico cobrado em concursos públicos, **a condição opera como uma causa potencial (causa futura hipotética)**, e a oração principal atua como sua **possível ação consequente**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Dinâmica Lógica Causa × Condição:** Enquanto o evento reside no campo hipotético/irreal, ele constitui uma *condição*. No momento em que se concretiza no plano factual, converte-se automaticamente na *causa* que gera o efeito previsto na oração principal.
 2. **Conectivos Usuais:** *se, caso, contanto que, desde que* (este obrigatoriamente associado a verbo no modo subjuntivo).
 3. **Estrutura Interoracional:**
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 * *"Se você não me ajudar com a lição de casa [condição / possível causa], eu vou processar você [possível consequência]."*
 * *"Se reforma for adiada [condição], direitos serão perdidos [consequência]."*
@@ -173,19 +171,19 @@ A oração subordinada adverbial condicional formula uma hipótese ou pré-requi
 
 ---
 
-## Relações Concessivas: Subordinação, Modo Subjuntivo e Dimensão Argumentativa Discursiva
+### Relações Concessivas: Subordinação, Modo Subjuntivo e Dimensão Argumentativa Discursiva
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A oração subordinada adverbial concessiva introduz uma ressalva, obstáculo real/suposto ou quebra de expectativa que, embora contrária à ideia central, é **incapaz de anular ou impedir a realização do fato enunciado na oração principal**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Morfossintaxe da Concessão:** Ao contrário das coordenadas adversativas, a concessiva subordinada rege tipicamente o verbo no **modo subjuntivo**. Conectivos clássicos: *embora, conquanto, ainda que, mesmo que, posto que, apesar de que*.
 2. **Estratégia Discursivo-Argumentativa (Perfil FGV):** No texto dissertativo, expressões assertivas como *"É certo que..."* operam como abertura de concessão: o autor admite uma verdade ou argumento contrário para, em seguida, neutralizá-lo e sobrepor sua tese principal por meio de uma oração coordenada adversativa (*"É certo que [concessão]..., mas [adversativa principal]..."*).
 3. **Conectivo Concessivo com Carga Negativa ("Sem que"):** A locução *"sem que"* pode atuar no campo concessivo, porém traz carga intrínseca de **negação, privação ou ausência**, invertendo a polaridade afirmativa da proposição subordinada (*"sem que eu discorde"* = *não discordo / concordo*).
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 * *Padrão Prototípico:* *"Embora seja cedo para qualquer conclusão definitiva, as evidências colhidas sugerem..."*
 * *Concessivo com "conquanto":* *"Conquanto estivesse descontente, não desistia do plano."*
@@ -193,20 +191,20 @@ A oração subordinada adverbial concessiva introduz uma ressalva, obstáculo re
 
 ---
 
-## Orações Comparativas e o Fenômeno da Elipse Verbal
+### Orações Comparativas e o Fenômeno da Elipse Verbal
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A oração subordinada adverbial comparativa estabelece um confronto de igualdade, superioridade ou inferioridade entre dois elementos, caracterizando-se pela **frequente elipse (omissão subentendida) do verbo na oração subordinada** para evitar repetição discursiva.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Em questões de contagem de orações e análise sintática do período composto:
 
 * Toda estrutura comparativa que confronta dois termos pressupõe a existência de duas orações completas.
 * Conectivos usuais: *como, assim como, quanto, que / do que* (antecedidos por *mais, menos, melhor, pior*).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 Para validar a oração comparativa com verbo elíptico, reconstitua o verbo suprimido na segunda oração:
 
@@ -214,50 +212,48 @@ $$
 \text{"Ele é alto como o pai [é alto]"}
 $$
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 * *"É inteligente como o pai [é]."* $\rightarrow$ Oração 1: *"É inteligente"*; Oração 2: *"como o pai [é]"* (Período composto por 2 orações).
 * *"As mulheres sempre são mais maldosas que os homens [são]."* $\rightarrow$ Oração comparativa de superioridade com elipse do verbo *ser*.
 
 ---
 
-## Sistematização das Orações Conformativas, Finais, Proporcionais e Temporais
+### Sistematização das Orações Conformativas, Finais, Proporcionais e Temporais
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Consolidação das quatro circunstâncias adverbiais restantes do modelo 6C + FTP:
 
 1. **Conformativas:** Expressam conformidade, norma, parecer ou modelo com base no qual algo se desenvolve (*conforme, segundo, consoante, como*).
- * *Exemplo:* *"Segundo previu o economista, o mercado se estabilizou."*
+  * *Exemplo:* *"Segundo previu o economista, o mercado se estabilizou."*
 2. **Finais:** Indicam a meta, propósito ou objetivo visado (*para que, a fim de que, que, para* + verbo no infinitivo).
- * *Exemplo:* *"Faremos esforço, para que não haja conflitos."* / *"...faz fila para ganhar o alimento."*
+  * *Exemplo:* *"Faremos esforço, para que não haja conflitos."* / *"...faz fila para ganhar o alimento."*
 3. **Proporcionais:** Traduzem variação gradual e concomitância direta ou inversa (*à medida que, à proporção que, ao passo que, quanto mais... mais*).
- * *Exemplo:* *"...quanto mais longe enxergamos, mais ao passado voltamos."*
+  * *Exemplo:* *"...quanto mais longe enxergamos, mais ao passado voltamos."*
 4. **Temporais:** Localizam no tempo o processo verbal da oração principal (*quando, enquanto, logo que, assim que, antes que, mal*).
- * *Nuance de "Mal":* O conectivo temporal *mal* veicula expressamente a circunstância de **tempo imediato** (*"Mal se sentou na cadeira..., passou a ver conspirações"* = *assim que / logo que se sentou*).
+  * *Nuance de "Mal":* O conectivo temporal *mal* veicula expressamente a circunstância de **tempo imediato** (*"Mal se sentou na cadeira..., passou a ver conspirações"* = *assim que / logo que se sentou*).
 
 ---
 
-## Polissemia de Conectivos e Critérios Diagnósticos de Desambiguação
+### Polissemia de Conectivos e Critérios Diagnósticos de Desambiguação
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Determinados conectivos da língua portuguesa transitam por múltiplas categorias sintático-semânticas, exigindo procedimentos formais e contextuais de desambiguação:
 
 1. **"Assim como":**
- * *Aditivo:* Quando conecta **termos** de mesma função sintática (*"João, assim como José, chegaram"*);
- * *Comparativo:* Quando conecta **orações**, confrontando ações (*"João estuda muito, assim como o irmão [estuda]"*).
+  * *Aditivo:* Quando conecta **termos** de mesma função sintática (*"João, assim como José, chegaram"*);
+  * *Comparativo:* Quando conecta **orações**, confrontando ações (*"João estuda muito, assim como o irmão [estuda]"*).
 2. **"Como":**
- * *Causal:* Em **início de período** (anteposto à oração principal), equivalendo a *já que / visto que* (*"Como não o convenceu, trouxe uma porca"*);
- * *Comparativo:* Quando estabelece analogia (*"Dormiu como um anjo"*);
- * *Conformativo:* Quando indica modelo/norma (*"Fez o trabalho como o mestre mandou"*).
+  * *Causal:* Em **início de período** (anteposto à oração principal), equivalendo a *já que / visto que* (*"Como não o convenceu, trouxe uma porca"*);
+  * *Comparativo:* Quando estabelece analogia (*"Dormiu como um anjo"*);
+  * *Conformativo:* Quando indica modelo/norma (*"Fez o trabalho como o mestre mandou"*).
 3. **"Desde que":**
- * *Condicional:* Quando seguido de verbo no **modo subjuntivo** (*"desde que a razão não trabalhe"*);
- * *Temporal:* Quando associado a verbo no **modo indicativo** marcando início cronológico (*"Desde que cheguei, trabalho sem parar"*).
+  * *Condicional:* Quando seguido de verbo no **modo subjuntivo** (*"desde que a razão não trabalhe"*);
+  * *Temporal:* Quando associado a verbo no **modo indicativo** marcando início cronológico (*"Desde que cheguei, trabalho sem parar"*).
 4. **"Sem que":**
- * *Condicional ou Concessivo:* Transita nas duas listas, mas possui como traço intrínseco o **valor semântico de negação/privação/ausência**.
-
----
+  * *Condicional ou Concessivo:* Transita nas duas listas, mas possui como traço intrínseco o **valor semântico de negação/privação/ausência**.
 
 ---
 
@@ -279,19 +275,17 @@ Determinados conectivos da língua portuguesa transitam por múltiplas categoria
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## O Teste Semântico Operacional de Causa e Consequência
+### O Teste Semântico Operacional de Causa e Consequência
 
 **Arquivo de origem:** `011 -....md` , `012 -....md` , `013 -....md` , `014 -....md`
 
-### Objetivo
+#### Objetivo
 
 Identificar com precisão qual oração do período atua como Causa e qual atua como Consequência, evitando a inversão posicional de gabarito.
 
-### Passo a passo estruturado
+#### Passo a passo estruturado
 
 1. **Isolamento dos Fatos:** Identifique os dois acontecimentos interconectados no período (Fato A e Fato B).
 2. **Aplicação do Molde Universal:** Monte mentalmente a estrutura:
@@ -299,67 +293,65 @@ Identificar com precisão qual oração do período atua como Causa e qual atua 
  \text{"O fato de [Fato A] fez com que acontecesse [Fato B]"}
  $$
 3. **Determinação dos Papéis:**
- * O fato que preenche a lacuna de *"O fato de..."* é a **CAUSA** (motivo originador);
- * O fato que preenche a lacuna de *"...fez com que"* é a **CONSEQUÊNCIA / EFEITO** (desfecho derivado).
+  * O fato que preenche a lacuna de *"O fato de..."* é a **CAUSA** (motivo originador);
+  * O fato que preenche a lacuna de *"...fez com que"* é a **CONSEQUÊNCIA / EFEITO** (desfecho derivado).
 4. **Conferência da Pergunta da Banca:**
- * Se o enunciado sublinhou o trecho que preenche "O fato de...", assinale **CAUSAL**;
- * Se o enunciado sublinhou o trecho que preenche "fez com que...", assinale **CONSECUTIVA**.
+  * Se o enunciado sublinhou o trecho que preenche "O fato de...", assinale **CAUSAL**;
+  * Se o enunciado sublinhou o trecho que preenche "fez com que...", assinale **CONSECUTIVA**.
 
 ---
 
-## Técnica de Resolução Vertical por Inspeção de Conectivos
+### Técnica de Resolução Vertical por Inspeção de Conectivos
 
 **Arquivo de origem:** `012 -....md`
 
-### Objetivo
+#### Objetivo
 
 Resolver questões longas de correspondência e correlação semântica com agilidade em provas de concurso.
 
-### Passo a passo estruturado
+#### Passo a passo estruturado
 
 1. **Comando da Questão:** Identifique a relação semântica exigida pela banca (ex.: "a segunda parte expressa consequência").
 2. **Localização dos Marcadores de Divisão:** Observe a barra `/` ou vírgula que separa as orações nas alternativas A, B, C, D, E.
 3. **Inspeção Vertical dos Conectivos:**
- * Conjunção alternativa (*ou*) $\rightarrow$ Elimine;
- * Locução causal (*já que, visto que*) $\rightarrow$ Elimine;
- * Conjunção adversativa (*mas, porém*) $\rightarrow$ Elimine;
- * Pronome relativo (*que*) com valor adjetivo restritivo $\rightarrow$ Elimine;
- * Intensificador correlato (*tão, tanto, tamanho*) na 1ª oração seguido de *que* na 2ª $\rightarrow$ **Marque o gabarito**.
+  * Conjunção alternativa (*ou*) $\rightarrow$ Elimine;
+  * Locução causal (*já que, visto que*) $\rightarrow$ Elimine;
+  * Conjunção adversativa (*mas, porém*) $\rightarrow$ Elimine;
+  * Pronome relativo (*que*) com valor adjetivo restritivo $\rightarrow$ Elimine;
+  * Intensificador correlato (*tão, tanto, tamanho*) na 1ª oração seguido de *que* na 2ª $\rightarrow$ **Marque o gabarito**.
 
 ---
 
-## Desambiguação Funcional da Locução "Assim Como"
+### Desambiguação Funcional da Locução "Assim Como"
 
 **Arquivo de origem:** `011 -....md`
 
-### Objetivo
+#### Objetivo
 
 Classificar a locução *"assim como"* como aditiva ou comparativa.
 
-### Passo a passo estruturado
+#### Passo a passo estruturado
 
 1. Identifique os elementos articulados pela locução:
- * Se conecta **termos nominais**, somando sujeitos para o mesmo predicado $\rightarrow$ **Valor Aditivo** (*"A abordagem didática, assim como os alunos, compareceu"*);
- * Se conecta **duas orações completas** (com verbos expressos ou elípticos), confrontando condutas ou estados $\rightarrow$ **Valor Comparativo** (*"Ele agiu com firmeza, assim como o pai agira"*).
+  * Se conecta **termos nominais**, somando sujeitos para o mesmo predicado $\rightarrow$ **Valor Aditivo** (*"A abordagem didática, assim como os alunos, compareceu"*);
+  * Se conecta **duas orações completas** (com verbos expressos ou elípticos), confrontando condutas ou estados $\rightarrow$ **Valor Comparativo** (*"Ele agiu com firmeza, assim como o pai agira"*).
 
 ---
 
-## Teste do Modo Verbal para a Locução "Desde que"
+### Teste do Modo Verbal para a Locução "Desde que"
 
 **Arquivo de origem:** `013 -....md`
 
-### Objetivo
+#### Objetivo
 
 Diferenciar se a locução *"desde que"* possui valor condicional ou temporal.
 
-### Passo a passo estruturado
+#### Passo a passo estruturado
 
 1. Localize a oração subordinada encabeçada por *"desde que"*;
 2. Inspecione a forma verbal associada:
- * **Verbo no Modo Subjuntivo** (*trabalhe, fizesse, venha*) $\rightarrow$ Equivale a *contanto que* $\rightarrow$ **Condição**;
- * **Verbo no Modo Indicativo** (*chegou, começou, mora*) $\rightarrow$ Marca cronológica de início $\rightarrow$ **Tempo**.
-
----
+  * **Verbo no Modo Subjuntivo** (*trabalhe, fizesse, venha*) $\rightarrow$ Equivale a *contanto que* $\rightarrow$ **Condição**;
+  * **Verbo no Modo Indicativo** (*chegou, começou, mora*) $\rightarrow$ Marca cronológica de início $\rightarrow$ **Tempo**.
 
 ---
 
@@ -373,7 +365,7 @@ Diferenciar se a locução *"desde que"* possui valor condicional ou temporal.
 | **Condição** | Hipótese, fato futuro ou incerto | Causa em potencial para possível consequência | Substituível por*"caso"* ou *"contanto que"* |
 | **Consequência** | Efeito ou resultado derivado da causa | Desfecho decorrente da intensidade/ação | Encaixa-se em*"...fez com que [Y]"* |
 
-### 2. Oposição Adversativa vs. Oposição Concessiva
+#### 2. Oposição Adversativa vs. Oposição Concessiva
 
 | Critério | Oração Coordenada Adversativa | Oração Subordinada Adverbial Concessiva |
 |:--------------------------------- |:---------------------------------------------------- |:--------------------------------------------------------- |
@@ -382,7 +374,7 @@ Diferenciar se a locução *"desde que"* possui valor condicional ou temporal.
 | **Hierarquia Argumentativa** | O argumento mais forte reside na oração adversativa | A oração principal prevalece; a concessão cede |
 | **Conectivos Prototípicos** | *mas, porém, contudo, todavia, no entanto* | *embora, conquanto, ainda que, mesmo que, posto que* |
 
-### 3. Perfil de Cobrança por Bancas Examinadoras
+#### 3. Perfil de Cobrança por Bancas Examinadoras
 
 | Banca | Padrão Estrutural de Cobrança | Foco da Pegadinha |
 |:----------------------------- |:---------------------------------------------------------------------------------------------------------------- |:------------------------------------------------------------------------------------------------------------------- |
@@ -392,11 +384,9 @@ Diferenciar se a locução *"desde que"* possui valor condicional ou temporal.
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Bateria 1: Exercícios de Fixação com Código Numérico
+### Bateria 1: Exercícios de Fixação com Código Numérico
 
 **Sistema de Códigos:** `(1) Causal | (2) Consecutiva | (3) Concessiva | (4) Condicional | (5) Comparativa | (6) Conformativa | (7) Final | (8) Proporcional | (9) Temporal`
 
@@ -414,7 +404,7 @@ Diferenciar se a locução *"desde que"* possui valor condicional ou temporal.
 
 ---
 
-## Bateria 2: Questões da Banca VUNESP
+### Bateria 2: Questões da Banca VUNESP
 
 * **** ( / / PC-SP 2018): *"Se eu resolver isso aqui, vou acabar com o conflito..."* $\rightarrow$ *Se* encabeça hipótese $\rightarrow$ **Gabarito: B (condição)**.
 * **** ( / / TJ-SP Escrevente): *"– (I) Se você não me ajudar com a lição de casa, (II) eu vou processar você –"* $\rightarrow$ (I) Condição (possível causa) e (II) Possível ação consequente $\rightarrow$ **Gabarito: B**.
@@ -426,7 +416,7 @@ Diferenciar se a locução *"desde que"* possui valor condicional ou temporal.
 
 ---
 
-## Bateria 3: Questões das Bancas Instituto AOCP e FCC
+### Bateria 3: Questões das Bancas Instituto AOCP e FCC
 
 * **** ( / / Inst. AOCP - EBSERH): *"[...] embora acredite na necessidade de uma política penal eficiente [...], é preciso vencer o estupor social."* $\rightarrow$ Concessão expressa por *embora* $\rightarrow$ **Gabarito: D (concessão)**.
 * **** ( / / Inst. AOCP - Betim): *"...quanto mais longe enxergamos, mais ao passado voltamos"* $\rightarrow$ Correlação proporcional $\rightarrow$ **Gabarito: A (Oração subordinada adverbial proporcional)**.
@@ -438,7 +428,7 @@ Diferenciar se a locução *"desde que"* possui valor condicional ou temporal.
 
 ---
 
-## Bateria 4: Questões da Banca FGV
+### Bateria 4: Questões da Banca FGV
 
 * **** ( / / FGV - FBN): *"'É certo que o mundo mudou [...]. Mas a vocação de encontro e de lazer desses espaços públicos jamais deve ser perdida'."* $\rightarrow$ O período iniciado por *É certo que* possui função de concessão no arranjo dissertativo $\rightarrow$ **Gabarito: A (concessivo)**.
 * **** ( / / FGV - Pref. João Pessoa): Reescrita de *"Embora em alguns pontos eu discorde do escritor"*. A alternativa A (*"Sem que em alguns pontos eu discorde..."*) altera o sentido original porque *sem que* traz carga de negação (*não discordo / concordo*) $\rightarrow$ **Gabarito: A**.
@@ -447,70 +437,64 @@ Diferenciar se a locução *"desde que"* possui valor condicional ou temporal.
 
 ---
 
----
-
 ## Memorização inteligente
 
-## O Mnemônico "6C + FTP" para Memorização Exaustiva
+### O Mnemônico "6C + FTP" para Memorização Exaustiva
 
 **Arquivo de origem:** `011 -....md`
 Para não esquecer nenhuma das 9 subclasses: lembre-se de que são **6 que começam com a letra C** (*Causal, Consecutiva, Concessiva, Condicional, Comparativa, Conformativa*) mais as letras **FTP** (*Final, Temporal, Proporcional*).
 
-## O Mantra da Condição como "Possível Causa"
+### O Mantra da Condição como "Possível Causa"
 
 **Arquivo de origem:** `012 -....md` , `014 -....md`
 Fixe mentalmente: *"Condição é a causa futura / Condição é a causa em potencial"*. Em períodos condicionais com *se*, a subordinada é a condição (causa potencial) e a principal é a possível ação consequente.
 
-## O Mecanismo dos "4 T's" nas Consecutivas
+### O Mecanismo dos "4 T's" nas Consecutivas
 
 **Arquivo de origem:** `012 -....md` , `013 -....md`
 Para reconhecer orações consecutivas em segundos: procure na oração anterior um intensificador iniciado por T (**TÃO, TANTO, TAMANHO, TAL**). Havendo esse termo antes da conjunção *que*, a oração é infalivelmente consecutiva.
 
-## "Como" em Início de Período = Causal
+### "Como" em Início de Período = Causal
 
 **Arquivo de origem:** `013 -....md`
 Se a conjunção *como* encabeçar o período composto (anteposta à oração principal), substitua por *já que* ou *visto que*. O valor é quase invariavelmente causal em provas de concurso.
 
-## Conjunção "Embora" = Concessão Pura
+### Conjunção "Embora" = Concessão Pura
 
 **Arquivo de origem:** `013 -....md`
 A conjunção *embora* é unívoca na norma padrão: avistou *embora*, marque imediatamente a opção de valor concessivo.
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## A Armadilha de Inverter Causa e Consequência
+### A Armadilha de Inverter Causa e Consequência
 
 **Arquivo de origem:** `013 -....md` , `014 -....md`
 
 * **Problema:** O candidato compreende a relação global de causalidade do texto, mas assinala a opção inversa: marca "consequência" quando o enunciado destacou a causa, ou vice-versa.
 * **Como Evitar:** A classificação sintática pertence **exclusivamente à oração destacada/sublinhada**. Use o molde *"O fato de [A] fez com que [B]"*: se o grifo estiver no elemento [A], marque Causa; se estiver no elemento [B], marque Consequência.
 
-## Confundir a Concessão "É certo que..." com a Adversativa Subsequente "Mas..."
+### Confundir a Concessão "É certo que..." com a Adversativa Subsequente "Mas..."
 
 **Arquivo de origem:** `014 -....md`
 
 * **Problema:** Diante da estrutura *"É certo que [A], mas [B]"*, a banca FGV indaga o valor do período que contém *"É certo que [A]"*. O candidato visualiza o *mas* logo após e assinala apressadamente "adversativo".
 * **Como Evitar:** Lembre-se de que a adversativa é a oração iniciada por *Mas [B]*. A oração *"É certo que [A]"* atua como a **concessão prévia** que prepara o terreno argumentativo.
 
-## Pegadinha de Contagem de Orações em Comparativas com Elipse
+### Pegadinha de Contagem de Orações em Comparativas com Elipse
 
 **Arquivo de origem:** `011 -....md`
 
 * **Problema:** O candidato conta apenas os verbos explícitos e erra o número de orações em períodos com comparativas.
 * **Como Evitar:** Em *"Ele é inteligente como o pai"*, existem **duas orações**, pois a oração comparativa possui o verbo elíptico (*"como o pai [é]"*).
 
-## A Carga de Negação no Conectivo Concessivo "Sem que"
+### A Carga de Negação no Conectivo Concessivo "Sem que"
 
 **Arquivo de origem:** `014 -....md`
 
 * **Problema:** O candidato considera que trocar *embora* por *sem que* preserva integralmente o sentido por pertencerem ao campo concessivo.
 * **Como Evitar:** Lembre-se de que *sem que* embute negação/privação. *"Embora eu discorde"* (eu discordo) $\neq$ *"Sem que eu discorde"* (eu não discordo).
-
----
 
 ---
 
@@ -526,8 +510,6 @@ A conjunção *embora* é unívoca na norma padrão: avistou *embora*, marque im
 
 ---
 
----
-
 ## Síntese para recuperação ativa
 
 Ao concluir o estudo consolidado desta unidade, o estudante deve dominar as seguintes competências conceituais e operacionais:
@@ -537,12 +519,12 @@ Ao concluir o estudo consolidado desta unidade, o estudante deve dominar as segu
 3. **Compreensão da Condição como Causa Futura:** Reconhecer que, para bancas como VUNESP e FGV, a oração condicional é a causa potencial sob regime de hipótese, cuja oração principal é a possível ação consequente.
 4. **Precisão na Contagem de Orações:** Não ser induzido a erro pela elipse do verbo em orações comparativas (*"Ele é alto como o pai [é]"* = 2 orações).
 5. **Desambiguação Rápida de Conectivos:**
- * *"Assim como"* ligando termos = adição; ligando orações = comparação;
- * *"Como"* em início de período = causal (*já que*);
- * *"Desde que"* com verbo no subjuntivo = condição;
- * *"Sem que"* = conectivo com polaridade negativa inerente.
+  * *"Assim como"* ligando termos = adição; ligando orações = comparação;
+  * *"Como"* em início de período = causal (*já que*);
+  * *"Desde que"* com verbo no subjuntivo = condição;
+  * *"Sem que"* = conectivo com polaridade negativa inerente.
 6. **Adaptação aos Perfis de Bancas:**
- * Resolver questões literais de identificação direta com agilidade (VUNESP, AOCP, FCC) por meio da técnica de resolução vertical e do mecanismo dos 4 T's (*tão, tanto, tamanho, tal*);
- * Dominar a sutileza argumentativa da FGV, identificando concessões em fórmulas discursivas (*"É certo que... mas..."*) e variações de polaridade de sentido em reescritas.
+  * Resolver questões literais de identificação direta com agilidade (VUNESP, AOCP, FCC) por meio da técnica de resolução vertical e do mecanismo dos 4 T's (*tão, tanto, tamanho, tal*);
+  * Dominar a sutileza argumentativa da FGV, identificando concessões em fórmulas discursivas (*"É certo que... mas..."*) e variações de polaridade de sentido em reescritas.
 
 ---

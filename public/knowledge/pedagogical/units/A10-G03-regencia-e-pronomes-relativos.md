@@ -46,7 +46,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 - **Noções Fundamentais de Transitividade Verbal:** Diferenciar verbos que exigem complemento sem preposição (Transitvo Direto — VTD), com preposição (Transitivo Indireto — VTI), diretos e indiretos (VTDI) e intransitivos/ligação.
 - **Classes Gramaticais de Conectivos:** Identificar as preposições essenciais (*a*, *de*, *em*, *com*, *por*, *para*, *contra*, *sobre*).
 
-### Mapa conceitual consolidado
+#### Mapa conceitual consolidado
 
 `text
 REGÊNCIA COM PRONOMES RELATIVOS
@@ -90,17 +90,19 @@ REGÊNCIA COM PRONOMES RELATIVOS
 
 ---
 
+```
+
 ---
 
 ## Explicação didática aprofundada
 
-## Princípio da Inversão Sintática em Orações Subordinadas Adjetivas
+### Princípio da Inversão Sintática em Orações Subordinadas Adjetivas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A regência sintática associada a pronomes relativos inverte a ordem linear tradicional da língua portuguesa: a preposição exigida pelo termo regente (verbo ou nome) é anteposta ao pronome relativo, situando-se à esquerda dele, embora seja governada por um regente posicionado à direita, no interior da oração adjetiva.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Na sintaxe oracional canônica (ordem direta), a dependência caminha da esquerda para a direita: o termo regente antecede a preposição e esta introduz o termo regido (ex.: *deparamos [regente] com [preposição] uma realidade [regido]*).
 
@@ -111,31 +113,31 @@ Assim, a leitura sintática ocorre de modo retrógrado:
 - *O vestido [**a** que] me **refiro**.* -> O verbo *referir-se* (posicionado no final) exige a preposição *a*, que é projetada para antes do pronome relativo *que*.
 - *A amiga [**com** quem] **conversei**.* -> O verbo *conversar* (posicionado após o pronome) exige a preposição *com*, projetada para antes do relativo *quem*.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 1. Identificar o pronome relativo que inicia a oração adjetiva.
 2. Reconhecer que o substantivo antecedente (ex.: *vestido*, *amiga*) **não** rege a preposição.
 3. Buscar o verbo ou nome situado após o pronome relativo e verificar sua exigência de complemento preposicionado.
 
-### Exemplos e contraexemplos
+#### Exemplos e contraexemplos
 
 - *Correto:* "Estes são os princípios **a que** me **atenho**." (*Quem se atém, atém-se a*).
 - *Incorreto (omissão de preposição):* "Estes são os princípios que me atenho."
 - *Incorreto (preposição errada por intuição):* "Estes são os princípios em que me atenho."
 
-### Exceções ou limites
+#### Exceções ou limites
 
 A preposição nunca é regida pelo antecedente. Quando o verbo posposto for transitivo direto (VTD), nenhum conectivo preposicional pode anteceder o pronome relativo.
 
 ---
 
-## Algoritmo Universal dos Três Passos
+### Algoritmo Universal dos Três Passos
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O Método dos Três Passos é um procedimento analítico padronizado que substitui a intuição auditiva pela reconstrução sintática da oração adjetiva, permitindo determinar com exatidão matemática a necessidade e a escolha da preposição diante do pronome relativo.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Para neutralizar o vício de "adivinhar" preposições isoladas, o método desmembra a análise em três etapas sucessivas:
 
@@ -143,7 +145,7 @@ Para neutralizar o vício de "adivinhar" preposições isoladas, o método desme
 2. **Passo 2 (Transposição para a Ordem Direta):** Isolar a oração adjetiva e estruturá-la no formato canônico: `Sujeito + Verbo/Locução + Complemento`.
 3. **Passo 3 (Recomposição com o Antecedente e Encaixe do Conectivo — Etapa Chave):** Localizar o termo antecedente (o substantivo ou pronome que o relativo substitui) e inseri-lo na posição de complemento da oração adjetiva. A preposição exigida para conectar o verbo/nome ao antecedente é exatamente aquela que deve ser transportada para a frente do pronome relativo.
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 `text
 [Oração Principal: Antecedente] + [Prep? + Pronome Relativo] + [Sujeito] + [Verbo Regente]
@@ -352,6 +354,8 @@ A escolha correta dos pronomes oblíquos em períodos compostos complexos depend
 
 ---
 
+```
+
 ---
 
 ## Regras decisivas
@@ -367,50 +371,46 @@ A escolha correta dos pronomes oblíquos em períodos compostos complexos depend
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Algoritmo Operacional dos Três Passos para Orações Adjetivas
+### Algoritmo Operacional dos Três Passos para Orações Adjetivas
 
-### Objetivo
+#### Objetivo
 
 Identificar se uma oração subordinada adjetiva requer preposição antes do pronome relativo e determinar com precisão a preposição adequada.
 
-### Passos de execução
+#### Passos de execução
 
 1. **Isolamento da Oração Adjetiva:** Delimitar a oração adjetiva a partir do pronome relativo (*que*, *quem*, *o qual*, *cujo*, *onde*).
 2. **Localização do Regente Posterior (Passo 1):** Sublinhar o verbo ou nome situado após o pronome relativo. Em caso de locução verbal, focar no último verbo (verbo principal).
 3. **Estruturação na Ordem Direta (Passo 2):** Transpor mentalmente ou por escrito a oração adjetiva na ordem canônica: `Sujeito + Verbo Regente / Locução + [Lacuna do Complemento]`.
 4. **Recomposição com o Antecedente (Passo 3):** Preencher a lacuna do complemento com o substantivo antecedente que o pronome substitui.
 5. **Verificação do Conectivo:**
- - Se a junção do regente com o antecedente não exigir preposição (VTD), emprega-se o pronome relativo puro (`que`, `o qual`, `cujo`).
- - Se exigir preposição (*a*, *de*, *em*, *com*, *por*, *contra*), essa preposição deve ser obrigatoriamente anteposta ao pronome relativo (`a que`, `de que`, `no qual`, `a cuja`, `com quem`).
+  - Se a junção do regente com o antecedente não exigir preposição (VTD), emprega-se o pronome relativo puro (`que`, `o qual`, `cujo`).
+  - Se exigir preposição (*a*, *de*, *em*, *com*, *por*, *contra*), essa preposição deve ser obrigatoriamente anteposta ao pronome relativo (`a que`, `de que`, `no qual`, `a cuja`, `com quem`).
 6. **Validação de Filtros Especiais:**
- - Se houver *cujo*, certificar-se da ausência de artigos posteriores e da presença de relação de posse.
- - Se houver *onde*, garantir que o antecedente seja estritamente um local físico.
- - Se houver *a quem*, confirmar a ausência de crase.
+  - Se houver *cujo*, certificar-se da ausência de artigos posteriores e da presença de relação de posse.
+  - Se houver *onde*, garantir que o antecedente seja estritamente um local físico.
+  - Se houver *a quem*, confirmar a ausência de crase.
 
 ---
 
-## Técnica de Resolução Reversa para Provas Longas da FCC
+### Técnica de Resolução Reversa para Provas Longas da FCC
 
-### Objetivo
+#### Objetivo
 
 Economizar energia cognitiva e tempo de prova em questões exaustivas da Fundação Carlos Chagas (FCC) que apresentam períodos extensos e múltiplos termos sublinhados.
 
-### Passos de execução
+#### Passos de execução
 
 1. **Inversão da Ordem de Análise:** Começar a resolução pela alternativa **E**, subindo sequencialmente para **D**, **C**, **B** e **A**.
 2. **Eliminação por Erro Rápido:** Ao analisar uma alternativa, verificar o primeiro termo sublinhado com base nos gatilhos clássicos de eliminação:
- - Presença de crase antes de *quem* (`à quem` -> incorreto);
- - Uso de *onde/aonde* para termos abstratos (`violência aonde`, `verdade onde` -> incorreto);
- - Uso de *cujo* antes de verbo ou pronome (`em cujo se`, `de cuja ninguém` -> incorreto);
- - Uso de *de que* com VTD (`promessas de que não cumprimos` -> incorreto).
+  - Presença de crase antes de *quem* (`à quem` -> incorreto);
+  - Uso de *onde/aonde* para termos abstratos (`violência aonde`, `verdade onde` -> incorreto);
+  - Uso de *cujo* antes de verbo ou pronome (`em cujo se`, `de cuja ninguém` -> incorreto);
+  - Uso de *de que* com VTD (`promessas de que não cumprimos` -> incorreto).
 3. **Descarte Imediato:** Identificado um erro gramatical no item, descarte a alternativa imediatamente sem ler o restante da frase. Não perca tempo corrigindo ou reescrevendo mentalmente o período.
 4. **Validação do Gabarito:** Ao atingir a alternativa correta (que estatisticamente costuma se posicionar entre as opções finais em questões cansativas da banca), confirme a exatidão de ambos os termos e assinale.
-
----
 
 ---
 
@@ -430,11 +430,9 @@ Economizar energia cognitiva e tempo de prova em questões exaustivas da Fundaç
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Exercício de Fixação: Verbo Esquecer (VTD)
+### Exercício de Fixação: Verbo Esquecer (VTD)
 
 - **Enunciado:** `Há fatos _________ nunca esquecemos. (que/de que)`
 - **Aplicação dos 3 Passos:**
@@ -446,7 +444,7 @@ Economizar energia cognitiva e tempo de prova em questões exaustivas da Fundaç
 
 ---
 
-## Exercício de Fixação: Verbo Lembrar-se (VTI)
+### Exercício de Fixação: Verbo Lembrar-se (VTI)
 
 - **Enunciado:** `Aludiram a incidentes _________ já ninguém se lembrava. (que/de que)`
 - **Aplicação dos 3 Passos:**
@@ -458,7 +456,7 @@ Economizar energia cognitiva e tempo de prova em questões exaustivas da Fundaç
 
 ---
 
-## Exercício de Fixação: Verbo Simpatizar
+### Exercício de Fixação: Verbo Simpatizar
 
 - **Enunciado:** `Este autor tem ideias _________ todos simpatizamos. (de que/com que)`
 - **Aplicação dos 3 Passos:**
@@ -470,7 +468,7 @@ Economizar energia cognitiva e tempo de prova em questões exaustivas da Fundaç
 
 ---
 
-## Exercício de Fixação: Verbo Aspirar (Almejar)
+### Exercício de Fixação: Verbo Aspirar (Almejar)
 
 - **Enunciado:** `Qual o cargo _________ aspiras? (que/a que)`
 - **Aplicação dos 3 Passos:**
@@ -482,7 +480,7 @@ Economizar energia cognitiva e tempo de prova em questões exaustivas da Fundaç
 
 ---
 
-## Exercício de Fixação: Sentença FCC (Pensar em)
+### Exercício de Fixação: Sentença FCC (Pensar em)
 
 - **Enunciado:** `O homem possui um inimigo que o aterroriza e _________ prefere nem pensar: a dor. (do qual/no qual)`
 - **Aplicação dos 3 Passos:**
@@ -494,7 +492,7 @@ Economizar energia cognitiva e tempo de prova em questões exaustivas da Fundaç
 
 ---
 
-## Exercício de Fixação: FCC com Sujeito Posposto (Vincular-se a)
+### Exercício de Fixação: FCC com Sujeito Posposto (Vincular-se a)
 
 - **Enunciado:** `O projeto, _________ também se vincularão mulheres e crianças, tem o apoio da OMS. (que/ a que/ ao qual/ em que)`
 - **Aplicação dos 3 Passos:**
@@ -506,7 +504,7 @@ Economizar energia cognitiva e tempo de prova em questões exaustivas da Fundaç
 
 ---
 
-## Exercício de Fixação: Cujo com Referir-se a
+### Exercício de Fixação: Cujo com Referir-se a
 
 - **Enunciado:** `Surgiu uma mulher _________ figura já nos referimos. (cuja/a cuja)`
 - **Aplicação dos 3 Passos:**
@@ -518,7 +516,7 @@ Economizar energia cognitiva e tempo de prova em questões exaustivas da Fundaç
 
 ---
 
-## Exercício de Fixação: Cujo com Haver Existencial / Locativo
+### Exercício de Fixação: Cujo com Haver Existencial / Locativo
 
 - **Enunciado:** `Surgiu uma mulher _________ figura havia um ar de grande dama decadente. (cuja/em cuja)`
 - **Aplicação dos 3 Passos:**
@@ -530,21 +528,21 @@ Economizar energia cognitiva e tempo de prova em questões exaustivas da Fundaç
 
 ---
 
-## Questão 29: CESGRANRIO — Banco da Amazônia
+### Questão 29: CESGRANRIO — Banco da Amazônia
 
 - **Enunciado:** *Assinale o período que atende às exigências da norma-padrão quanto à regência:*
 
 - **Análise item a item:**
- - *A (Incorreta):* *Lidamos com os problemas* -> exige `com os quais`.
- - *B (Correta):* *Estudei os capítulos do livro* -> *estudar* é VTD (sem preposição antes de `cujos`).
- - *C (Incorreta):* *Falou do tratamento* -> exige `de que falou`.
- - *D (Incorreta):* *Simpatia pelas ideias* -> exige `por cujas ideias`.
- - *E (Incorreta):* *Conto com a amiga* -> exige `com que conto`.
+  - *A (Incorreta):* *Lidamos com os problemas* -> exige `com os quais`.
+  - *B (Correta):* *Estudei os capítulos do livro* -> *estudar* é VTD (sem preposição antes de `cujos`).
+  - *C (Incorreta):* *Falou do tratamento* -> exige `de que falou`.
+  - *D (Incorreta):* *Simpatia pelas ideias* -> exige `por cujas ideias`.
+  - *E (Incorreta):* *Conto com a amiga* -> exige `com que conto`.
 - **Gabarito Oficial:** **B**
 
 ---
 
-## Questão 30: CESGRANRIO — Petrobras
+### Questão 30: CESGRANRIO — Petrobras
 
 - **Enunciado:** *Identifique a opção em que também é obrigatório o uso de uma preposição antecedendo o pronome que:*
 
@@ -553,124 +551,130 @@ Economizar energia cognitiva e tempo de prova em questões exaustivas da Fundaç
 
 ---
 
-## Questão 31: VUNESP — Assistente Administrativo
+### Questão 31: VUNESP — Assistente Administrativo
 
 - **Enunciado:** *No trecho "...havia momentos de vida ou morte para os quais os nossos cães nos podiam alertar...", se "alertar" for substituído por "avisar", a expressão destacada deverá ser substituída por:*
- - A) nos quais | B) dos quais | C) em que | D) de quem | E) cujos
+ -
+A) nos quais |
+B) dos quais |
+C) em que |
+D) de quem |
+E) cujos
 - **Análise:** O verbo *avisar* na acepção de advertir sobre fatos constrói-se com a preposição `de` (*avisar dos momentos*). A fusão de `de` + `os quais` gera `dos quais`.
 - **Gabarito Oficial:** **B**
 
 ---
 
-## Questão 32: CESGRANRIO — TCE-RO
+### Questão 32: CESGRANRIO — TCE-RO
 
 - **Enunciado:** *Preencha a lacuna: "A situação _________ se deparou o surpreendeu."*
- - A) a que | B) com que | C) de que | D) para que | E) sobre a qual
+ -
+A) a que |
+B) com que |
+C) de que |
+D) para que |
+E) sobre a qual
 - **Análise:** O verbo *deparar-se* é pronominal e rege a preposição `com` (*ele se deparou com a situação* -> `com que se deparou`).
 - **Gabarito Oficial:** **B**
 
 ---
 
-## Questão 33: FCC — DETRAN-SP
+### Questão 33: FCC — DETRAN-SP
 
 - **Enunciado:** *É adequado o emprego de ambos os elementos sublinhados na frase:*
 
 - **Análise dos erros e acertos:**
- - *A:* *Cumprir* é VTD (sem *de*); proibida crase antes de *quem*.
- - *B:* *Com cuja* sem relação de posse (*com que*); *nada do que ele diga*.
- - *C:* *Referir-se* pede `à qual`; *verdade* é termo abstrato e rejeita *onde* (`de que / da qual ninguém duvida`).
- - *D:* Posse exige `cuja tradução`; *denúncia* rege `dos excessos`.
- - *E (Correta):* *Caber em* (`em que não cabe exagero`) e *conspirar contra* (`contra sua força`).
+  - *A:* *Cumprir* é VTD (sem *de*); proibida crase antes de *quem*.
+  - *B:* *Com cuja* sem relação de posse (*com que*); *nada do que ele diga*.
+  - *C:* *Referir-se* pede `à qual`; *verdade* é termo abstrato e rejeita *onde* (`de que / da qual ninguém duvida`).
+  - *D:* Posse exige `cuja tradução`; *denúncia* rege `dos excessos`.
+  - *E (Correta):* *Caber em* (`em que não cabe exagero`) e *conspirar contra* (`contra sua força`).
 - **Gabarito Oficial:** **E**
 
 ---
 
-## Questão 34: FCC — Prefeitura de Manaus
+### Questão 34: FCC — Prefeitura de Manaus
 
 - **Enunciado:** *Está correto o emprego dos elementos sublinhados na seguinte frase:*
- - A) A violência dos nossos instintos, `de cuja` ninguém escapa, ignora os ideais da civilização, quando não `lhes` perverte de modo radical.
- - B) Às pessoas `de quem` compete zelar pelos bons princípios não devem se render à violência, `aonde` estes se sacrificam.
- - C) Aquele espelho grande e anônimo, `em cujo` se reproduz nossa imagem, dá bem a medida da pessoa `em que` cada um aspira a ser.
- - D) São fortes os impulsos para a violência, mas devemos `resisti-los`, pois representam graves riscos `dos quais` podemos incorrer.
- - E) O poder hegemônico `a que` muitos aspiram não se tornará uma obsessão para quem `o` considera dentro de parâmetros críticos.
+  - A) A violência dos nossos instintos, `de cuja` ninguém escapa, ignora os ideais da civilização, quando não `lhes` perverte de modo radical.
+  - B) Às pessoas `de quem` compete zelar pelos bons princípios não devem se render à violência, `aonde` estes se sacrificam.
+  - C) Aquele espelho grande e anônimo, `em cujo` se reproduz nossa imagem, dá bem a medida da pessoa `em que` cada um aspira a ser.
+  - D) São fortes os impulsos para a violência, mas devemos `resisti-los`, pois representam graves riscos `dos quais` podemos incorrer.
+  - E) O poder hegemônico `a que` muitos aspiram não se tornará uma obsessão para quem `o` considera dentro de parâmetros críticos.
 - **Análise dos erros e acertos:**
- - *A:* *De cuja* antes de pronome indefinido é erro; *perverter* é VTD (`quando não os perverte`).
- - *B:* *Competir a* (`a quem compete`); *violência* rejeita *aonde* (`a que / pela qual`).
- - *C:* *Em cujo* diante de verbo é erro (`em que / no qual`); locução *aspira a ser* termina no verbo de ligação *ser* (sem preposição: `que cada um aspira a ser`).
- - *D:* *Resistir a* exige forma tônica (`resistir a eles`); *podemos incorrer em* exige `nos quais`.
- - *E (Correta):* *Aspirar a* VTI (`a que muitos aspiram`); *considerar* VTD com pronome oblíquo direto (`quem o considera`).
+  - *A:* *De cuja* antes de pronome indefinido é erro; *perverter* é VTD (`quando não os perverte`).
+  - *B:* *Competir a* (`a quem compete`); *violência* rejeita *aonde* (`a que / pela qual`).
+  - *C:* *Em cujo* diante de verbo é erro (`em que / no qual`); locução *aspira a ser* termina no verbo de ligação *ser* (sem preposição: `que cada um aspira a ser`).
+  - *D:* *Resistir a* exige forma tônica (`resistir a eles`); *podemos incorrer em* exige `nos quais`.
+  - *E (Correta):* *Aspirar a* VTI (`a que muitos aspiram`); *considerar* VTD com pronome oblíquo direto (`quem o considera`).
 - **Gabarito Oficial:** **E**
 
 ---
 
-## Questão 35: FGV — IMBEL
+### Questão 35: FGV — IMBEL
 
 - **Enunciado:** *Assinale a opção em que o termo sublinhado está empregado corretamente:*
- - A) A cultura histórica tem o objetivo de manter viva a consciência `de que` a sociedade humana tem do próprio passado.
+  - A) A cultura histórica tem o objetivo de manter viva a consciência `de que` a sociedade humana tem do próprio passado.
 
 - **Análise dos erros e acertos:**
- - *A:* *Ter* é VTD (`a consciência que a sociedade tem`).
- - *B:* *Quadros* não é lugar físico concreto, rejeitando *onde* (`dos quais há poucos originais`).
- - *C:* *O que* é sujeito de *falta*, rejeitando preposição (*o que te falta*).
- - *D:* *Dizer* e *fazer* são VTDs (`coisas que dizemos e fazemos`).
- - *E (Correta):* Locução verbal *devemos falar* é regida pelo verbo principal *falar de* (`problemas de que devemos falar`).
+  - *A:* *Ter* é VTD (`a consciência que a sociedade tem`).
+  - *B:* *Quadros* não é lugar físico concreto, rejeitando *onde* (`dos quais há poucos originais`).
+  - *C:* *O que* é sujeito de *falta*, rejeitando preposição (*o que te falta*).
+  - *D:* *Dizer* e *fazer* são VTDs (`coisas que dizemos e fazemos`).
+  - *E (Correta):* Locução verbal *devemos falar* é regida pelo verbo principal *falar de* (`problemas de que devemos falar`).
 - **Gabarito Oficial:** **E**
-
----
 
 ---
 
 ## Memorização inteligente
 
-## O Teste do "Menino" para Transitividade Verbal Imediata
+### O Teste do "Menino" para Transitividade Verbal Imediata
 
 - **Classificação:** Macete operacional de prova.
 - **Aplicação prática:** Em caso de dúvida sobre a transitividade de um verbo simples em prova, substitua o complemento pela expressão *"o menino"*:
- - Se soar *"o menino"* -> verbo é VTD (não leva preposição antes do relativo). Ex.: *considerar -> considera o menino*.
- - Se soar *"ao menino"* -> verbo rege preposição `a`. Ex.: *obedecer -> obedece ao menino*.
- - Se soar *"do menino"* -> verbo rege preposição `de`. Ex.: *gostar -> gosta do menino*.
+  - Se soar *"o menino"* -> verbo é VTD (não leva preposição antes do relativo). Ex.: *considerar -> considera o menino*.
+  - Se soar *"ao menino"* -> verbo rege preposição `a`. Ex.: *obedecer -> obedece ao menino*.
+  - Se soar *"do menino"* -> verbo rege preposição `de`. Ex.: *gostar -> gosta do menino*.
 
-## O Teste do "Nele / Nela" para Construções com Cujo
+### O Teste do "Nele / Nela" para Construções com Cujo
 
 - **Classificação:** Atalho diagnóstico para regência em construções possessivas.
 - **Aplicação prática:** Ao encontrar períodos com *cujo/cuja* associados a verbos que denotam estado ou presença (*haver*, *existir*, *notar*), substitua mentalmente a coisa possuída por *nele/nela*. Se o sentido natural exigir *nele/nela* (ex.: *havia um ar de dama na figura / nela*), a presença de `em` confirma de imediato a forma `em cujo / em cuja`.
 
-## Regra do Último Verbo para Locuções Verbais
+### Regra do Último Verbo para Locuções Verbais
 
 - **Classificação:** Regra prática de sintaxe.
 - **Aplicação prática:** Em orações adjetivas que contenham locução verbal (ex.: *podemos incorrer*, *devemos falar*, *aspira a ser*), ignore os verbos auxiliares e oriente a escolha da preposição exclusivamente pela regência do **verbo principal** (o último verbo da locução).
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## Confusão entre Esquecer (VTD) e Esquecer-se de (VTI)
+### Confusão entre Esquecer (VTD) e Esquecer-se de (VTI)
 
 - **O Erro:** Inserir a preposição `de` antes do pronome relativo quando o verbo de memória não for pronominal (ex.: *Há fatos de que nunca esquecemos*).
 - **Mecanismo da Falha:** Hábito da linguagem coloquial de usar preposição sem o pronome reflexivo.
 - **Detecção e Correção:** Sem pronome = VTD (`fatos que nunca esquecemos`); com pronome = VTI (`fatos de que nunca nos esquecemos`).
 
-## Violação Estrutural do Pronome Relativo "Cujo"
+### Violação Estrutural do Pronome Relativo "Cujo"
 
 - **O Erro:** Inserir artigo após *cujo* (*cuja a*), usar *cujo* antes de verbos (*em cujo se reproduz*) ou antes de pronomes (*de cuja ninguém*).
 - **Mecanismo da Falha:** Tratar *cujo* como pronome relativo comum equivalente a *que* ou *o qual*.
 - **Detecção e Correção:** *Cujo* exige conexão exclusiva entre substantivo possuidor e substantivo possuído.
 
-## Emprego Indevido de "Onde" para Referentes Abstratos
+### Emprego Indevido de "Onde" para Referentes Abstratos
 
 - **O Erro:** Utilizar *onde* ou *aonde* para retomar palavras conceituais como *violência*, *verdade*, *situação*, *sociedade*, *quadros*.
 - **Mecanismo da Falha:** Vício de oralidade que converte *onde* em hiperconectivo universal.
 - **Detecção e Correção:** Se o termo antecedente não for um espaço físico cartografável/arquitetônico, use *em que*, *no qual*, *de que*.
 
-## Falsa Equivalência entre Regência Verbal e Nominal de Cognatos
+### Falsa Equivalência entre Regência Verbal e Nominal de Cognatos
 
 - **O Erro:** Supor que *ter simpatia* rege `com` porque o verbo *simpatizar* rege `com` (produzindo *com cujas ideias temos simpatia*).
 - **Mecanismo da Falha:** Generalização indevida da transitividade verbal para o substantivo cognato.
 - **Detecção e Correção:** *Simpatizar COM* (verbo) vs. *Simpatia POR* (substantivo) -> forma correta: *por cujas ideias temos simpatia*.
 
-## Crase Proibida Diante do Pronome "Quem"
+### Crase Proibida Diante do Pronome "Quem"
 
 - **O Erro:** Grafar acento grave na sequência *à quem* em orações adjetivas preposicionadas (ex.: *pessoas à quem emprestamos*).
 - **Mecanismo da Falha:** Confundir a preposição `a` exigida pelo verbo transitivo indireto com a ocorrência de crase.
@@ -678,43 +682,39 @@ Economizar energia cognitiva e tempo de prova em questões exaustivas da Fundaç
 
 ---
 
----
-
 ## Glossário operacional
 
-## Pronome Relativo
+### Pronome Relativo
 
 Classe de pronomes que representa um substantivo antecedente no interior de uma oração subordinada adjetiva, projetando esse termo para exercer funções sintáticas no predicado dependente. Formas principais: *que*, *quem*, *o qual / a qual*, *cujo / cuja*, *onde*, *aonde*, *donde*.
 
-## Termo Regente
+### Termo Regente
 
 Elemento da oração (verbo, substantivo, adjetivo ou advérbio) que exige um complemento para integrar sua significação, determinando a presença e a espécie de conectivo preposicional.
 
-## Termo Regido
+### Termo Regido
 
 Elemento da oração que atua como complemento subordinado (objeto direto, objeto indireto, complemento nominal) satisfazendo a exigência do termo regente.
 
-## Antecedente do Pronome Relativo
+### Antecedente do Pronome Relativo
 
 Substantivo, pronome substantivo ou oração substantivada que precede o pronome relativo na oração principal e cujo sentido é por ele retomado.
 
-## Pronome Relativo "Cujo"
+### Pronome Relativo "Cujo"
 
 Pronome relativo especializado em estabelecer relação genitiva de posse entre o substantivo antecedente (possuidor) e o substantivo consequente (coisa possuída), concordando com a coisa possuída e rejeitando artigo subsequente.
 
-## Pronome Relativo Locativo
+### Pronome Relativo Locativo
 
 Pronome relativo especializado na retomada estrita de antecedentes espaciais físicos (*onde*, *aonde*, *donde*), cuja seleção decorre da regência do verbo subordinado (*em*, *a*, *de*).
 
-## Regência Nominal
+### Regência Nominal
 
 Relação sintática de subordinação estabelecida entre um substantivo, adjetivo ou advérbio e seu complemento nominal mediado obrigatoriamente por preposição (*simpatia por*, *denúncia de*).
 
-## Locução Verbal Subordinada
+### Locução Verbal Subordinada
 
 Estrutura formada por verbo auxiliar e verbo principal, na qual a regência sintática e a exigência de preposição antes do pronome relativo são governadas exclusivamente pelo verbo principal (último verbo).
-
----
 
 ---
 

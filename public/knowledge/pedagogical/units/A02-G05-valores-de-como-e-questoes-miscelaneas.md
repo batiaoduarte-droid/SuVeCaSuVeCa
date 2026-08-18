@@ -23,8 +23,8 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 ### Como aplicar neste tema
 
 1. Localizar o conector no período e delimitar os núcleos verbais das orações conectadas.
-2. 1. Identifique o conector destacado no período e sublinhe as formas verbais das orações conectadas.
-3. 2. Se o conector for a palavra 'COMO':
+2. Identifique o conector destacado no período e sublinhe as formas verbais das orações conectadas.
+3. Se o conector for a palavra 'COMO':
 4. a. Examine o termo ou oração imediatamente posterior ('o que vem depois salva').
 
 ### Testes decisivos
@@ -44,7 +44,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 - Habilidade de identificar sujeito, verbo e complementos diretos para permitir a poda de elementos intercalados.
 
-### Mapa hierárquico de conceitos
+#### Mapa hierárquico de conceitos
 
 ```text
 SEMÂNTICA E SINTAXE DE CONECTORES EM CONCURSOS
@@ -76,35 +76,33 @@ SEMÂNTICA E SINTAXE DE CONECTORES EM CONCURSOS
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## O Princípio da Semântica Contextual dos Conectores (Valor = Sentido)
+### O Princípio da Semântica Contextual dos Conectores (Valor = Sentido)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Em questões de Língua Portuguesa para concursos públicos, o termo **"valor"** é rigorosamente sinônimo de **"sentido"** ou **"semântica"**. A identificação do nexo lógico contextual prevalece sobre discussões teóricas de taxonomia gramatical rígida.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 As bancas examinadoras (com destaque para o CEBRASPE) avaliam primordialmente a relação lógica que o conectivo estabelece entre orações, períodos ou parágrafos. Rótulos morfológicos complexos (se um termo é conjunção, palavra denotativa ou locução prepositiva) tornam-se secundários em questões de reescrita e interpretação. O candidato deve focar na circunstância semântica veiculada (causa, conformidade, oposição, concessão, adição, etc.).
 
 ---
 
-## Valor Semântico de Comparação do Conectivo "Como"
+### Valor Semântico de Comparação do Conectivo "Como"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O vocábulo "como" expressa **Comparação** quando correlaciona dois seres, entidades, ações ou estados autônomos por meio de uma relação de analogia, igualdade, semelhança ou confronto de qualidades.
 
-### Critérios de reconhecimento
+#### Critérios de reconhecimento
 
 1. Isola-se o elemento posterior ao "como".
 2. Verifica-se se esse elemento posterior funciona como termo comparante de um referente expresso na oração principal.
 3. Não há relação de subconjunto/espécie (o que configuraria exemplificação), mas sim confronto entre duas realidades distintas postas em paralelo.
 
-### Exemplos e aplicações
+#### Exemplos e aplicações
 
 - *Teoria:* "Seus olhos brilhavam **como** estrelas no céu." (Compara o brilho dos olhos ao brilho das estrelas).
 - *Fixação:* "Os soldados agiam **como** seus inimigos." (Compara o modo de agir dos soldados ao dos inimigos).
@@ -114,38 +112,38 @@ O vocábulo "como" expressa **Comparação** quando correlaciona dois seres, ent
 
 ---
 
-## Valor Semântico de Conformidade e Sinonímia Conformativa
+### Valor Semântico de Conformidade e Sinonímia Conformativa
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O conectivo "como" possui valor **Conformativo** quando expressa a ideia de "nos conformes", indicando que um fato ou declaração se harmoniza com um plano, modelo, regra, citação ou opinião de outrem.
 
-### Família paradigmática de substituição
+#### Família paradigmática de substituição
 
 $$
 \mathbf{COMO\ (conformativo)} \equiv \mathbf{CONFORME} \equiv \mathbf{CONSOANTE} \equiv \mathbf{DE\ ACORDO\ COM} \equiv \mathbf{SEGUNDO}
 $$
 
-### Exemplos e aplicações
+#### Exemplos e aplicações
 
 - *Teoria:* "Tudo saiu **como** fora planejado." (= conforme o planejamento).
 - *Fixação:* "**Como** consta dos livros, deve-se a Euclides da Cunha..." (= de acordo com o que consta nos livros).
 - *Concurso (CESPE):* "essas ondas longas da história, **como** as chamava Braudel..." (= conforme as chamava Braudel).
 - *Concurso (CESPE):* Substituição de "De acordo com" por "Consoante" perfeitamente válida.
 
-### Limite crítico
+#### Limite crítico
 
 A substituição mecânica de "como" por "conforme" sem validação do sentido contextual conduz a erros graves, pois a conformidade exige a presença de uma regra/padrão/pensamento regulador.
 
 ---
 
-## Valor Semântico Causal do "Como" e a Proibição do Sentido Explicativo
+### Valor Semântico Causal do "Como" e a Proibição do Sentido Explicativo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O "como" possui valor **Causal** quando encabeça a oração subordinada que expressa o motivo, a razão ou o fato gerador que determinou a consequência expressa na oração principal. Aparece tipicamente anteposto à oração principal.
 
-### Regra de Ouro da Assimetria Causal vs. Explicativa
+#### Regra de Ouro da Assimetria Causal vs. Explicativa
 
 Enquanto as conjunções *porque*, *porquanto* e *pois* podem transitar entre os campos causal e explicativo a depender do contexto, **o conectivo "COMO" JAMAIS pode ter valor explicativo**. Se desempenhar papel oracional motivador, será categoricamente **causal**.
 
@@ -154,13 +152,13 @@ CONJUNÇÕES CAUSAIS: já que | visto que | uma vez que | porque | porquanto | C
 CONJUNÇÕES EXPLICATIVAS: pois | que | porque | porquanto (O "COMO" NUNCA ENTRA AQUI!)
 ```
 
-### Teste de validação causal
+#### Teste de validação causal
 
 $$
 \text{"O fato de [Oração do Como] fez com que [Oração Principal]."}
 $$
 
-### Exemplos e aplicações
+#### Exemplos e aplicações
 
 - *Teoria:* "**Como** chovia, não foram à praia." (O fato de chover fez com que não fossem à praia).
 - *Fixação:* "**Como** adotou atitudes de um político qualquer, o republicano ficou desmoralizado."
@@ -169,24 +167,24 @@ $$
 
 ---
 
-## Valor Semântico de Adição e Expressões Correlativas
+### Valor Semântico de Adição e Expressões Correlativas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O vocábulo "como" expressa **Adição** quando integra pares correlativos descontínuos (*não só... como [também]*, *não apenas... como [também]*), operando com a função sintático-semântica de somar informações de mesmo peso, equivalendo à conjunção aditiva pura **"E"**.
 
-### Comportamento das expressões correlativas
+#### Comportamento das expressões correlativas
 
 - **Presença do "também":** O advérbio "também" pode vir expresso ou elíptico/implícito (*"Não só trabalha como estuda"*), mantendo-se a relação de soma.
 - **Divisão das duplas correlativas:**
- - **Correlativas de Adição:** Fatos que coexistem ou se somam (*"Tanto João quanto José virão"* $\rightarrow$ João virá **+** José virá = os dois virão).
- - **Correlativas de Alternância:** Ações que se alternam no tempo ou se excluem (*"Ora trabalha, ora estuda"*).
+  - **Correlativas de Adição:** Fatos que coexistem ou se somam (*"Tanto João quanto José virão"* $\rightarrow$ João virá **+** José virá = os dois virão).
+  - **Correlativas de Alternância:** Ações que se alternam no tempo ou se excluem (*"Ora trabalha, ora estuda"*).
 
-### Adição em encadeamento de parágrafos
+#### Adição em encadeamento de parágrafos
 
 Expressões compostas como *"Mas não fica apenas nisso"* desempenham papel de aditividade argumentativa (adição de dados/citações), não devendo ser confundidas com relações de causa e consequência.
 
-### Exemplos e aplicações
+#### Exemplos e aplicações
 
 - *Teoria:* "Não só trabalha, **como também** estuda." (= Trabalha **e** estuda).
 - *Fixação:* "Ele leu não só o livro **como também** a revista."
@@ -195,17 +193,17 @@ Expressões compostas como *"Mas não fica apenas nisso"* desempenham papel de a
 
 ---
 
-## Valor Semântico de Exemplificação e Regras de Pontuação
+### Valor Semântico de Exemplificação e Regras de Pontuação
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O conectivo "como" tem valor **Exemplificativo** quando introduz elementos concretos/hipônimos que ilustram uma categoria geral/hiperônimo previamente citada.
 
-### O debate gramatical e a postura das bancas
+#### O debate gramatical e a postura das bancas
 
 Há divergência doutrinária sobre a classificação formal: parte dos gramáticos classifica o "como" exemplificativo como *palavra denotativa de exemplificação*; outra corrente o classifica como *conjunção subordinativa comparativa com valor de exemplificação*. Devido a essa polêmica, bancas de concurso evitam exigir a gaveta morfológica e cobram diretamente o **valor semântico** (exemplificação).
 
-### Regra de pontuação para substitutos exemplificativos
+#### Regra de pontuação para substitutos exemplificativos
 
 - O conector "como" exemplificativo liga-se ao termo geral apenas com a vírgula anterior: `[termo geral], como [exemplo]`.
 - Se for substituído pela locução **"por exemplo"** ou outras expressões retificativas/explicativas (*isto é*, *ou seja*), **é obrigatório o isolamento por duas vírgulas (antes e depois)**: `[termo geral], por exemplo, [exemplo]`.
@@ -215,7 +213,7 @@ Construção com "como": descrição de ações, como "subindo as escadas"...
 Construção com "por exemplo": descrição de ações, por exemplo, "subindo as escadas"...
 ```
 
-### Exemplos e aplicações
+#### Exemplos e aplicações
 
 - *Teoria:* "Queria adotar um animal, **como** um gato ou um cachorro." (Gato e cachorro são espécimes de animal).
 - *Fixação:* "Alguns animais, **como** o leão e o tigre, são carnívoros."
@@ -224,13 +222,13 @@ Construção com "por exemplo": descrição de ações, por exemplo, "subindo as
 
 ---
 
-## Coesão Sequencial e Progressão Textual no Padrão CEBRASPE
+### Coesão Sequencial e Progressão Textual no Padrão CEBRASPE
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A banca CEBRASPE emprega a terminologia "mecanismos de coesão sequencial" e "progressão textual" para definir a capacidade dos conectores (conjunções, locuções prepositivas, pronomes anafóricos) de encadear partes do texto, articulando argumentos e permitindo o avanço contínuo do raciocínio.
 
-### Decodificação da metalinguagem do CEBRASPE
+#### Decodificação da metalinguagem do CEBRASPE
 
 - **Coesão:** Significa **ligação / conexão** textual.
 - **Sequencial:** Significa dar **sequência / continuidade** ao texto, amarrando o antecedente ao consequente.
@@ -239,43 +237,43 @@ A banca CEBRASPE emprega a terminologia "mecanismos de coesão sequencial" e "pr
 
 ---
 
-## Substituição Paradigmática de Conjunções Adversativas
+### Substituição Paradigmática de Conjunções Adversativas
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Conjunções que pertencem à mesma família semântica fixa podem ser intercambiadas preservando-se rigorosamente a correção gramatical e o sentido original do texto.
 
-### Lista paradigmática das adversativas puras
+#### Lista paradigmática das adversativas puras
 
 $$
 \mathbf{MAS} \equiv \mathbf{PORÉM} \equiv \mathbf{CONTUDO} \equiv \mathbf{TODAVIA} \equiv \mathbf{NO\ ENTANTO} \equiv \mathbf{ENTRETANTO}
 $$
 
-### Aplicação prática
+#### Aplicação prática
 
 Em questões de reescrita do CEBRASPE que propõem a troca de "no entanto" por "todavia", o julgamento é direto: como ambos os termos são estritamente adversativos, a assertiva estará **correta**, dispensando releitura exaustiva de todo o texto.
 
 ---
 
-## Invariabilidade Semântica do Conector Concessivo "Embora"
+### Invariabilidade Semântica do Conector Concessivo "Embora"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A conjunção subordinativa "embora" possui valor semântico fixo, estrito e invariável de **Concessão** (introdução de um obstáculo/oposição incapaz de impedir a concretização do fato principal).
 
-### Regra de resolução rápida
+#### Regra de resolução rápida
 
 O conector "embora" **NUNCA** expressa sentido explicativo, causal ou conclusivo. Qualquer assertiva de prova que atribua a "embora" valor diferente de concessivo é categoricamente **errada**.
 
 ---
 
-## Distinção Crítica: Porquanto (Causa/Explicação) vs. Conquanto (Concessão)
+### Distinção Crítica: Porquanto (Causa/Explicação) vs. Conquanto (Concessão)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A semelhança fônica entre "porquanto" e "conquanto" mascara uma oposição semântica radical explorada intensamente em pegadinhas de bancas examinadoras.
 
-### Mapa de oposição semântica
+#### Mapa de oposição semântica
 
 $$
 \mathbf{PORQUANTO} \neq \mathbf{CONQUANTO}
@@ -289,19 +287,19 @@ $$
 \mathbf{CONQUANTO} = \mathbf{EMBORA} \quad (\text{Concessivo})
 $$
 
-### Incompatibilidade com conclusivas
+#### Incompatibilidade com conclusivas
 
 Como *porquanto* introduz justificativa/causa (= *porque*), é totalmente incompatível com conectores conclusivos como *logo* (= *portanto*).
 
 ---
 
-## O Conector "Pois" e a Sintaxe das Intercalações
+### O Conector "Pois" e a Sintaxe das Intercalações
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O conector "pois" só assume valor **Conclusivo** (= *portanto*) quando se encontra verdadeiramente **deslocado** (posposto ao verbo da sua oração). A presença de vírgulas decorrentes de um termo intercalado não altera a natureza **explicativa/causal** (= *porque*) do "pois" situado no início da oração.
 
-### Desconstrução da falsa regra do "pois entre vírgulas"
+#### Desconstrução da falsa regra do "pois entre vírgulas"
 
 - *Falso Macete:* "Pois entre vírgulas é sempre conclusivo."
 - *Realidade Sintática:*
@@ -313,21 +311,19 @@ O conector "pois" só assume valor **Conclusivo** (= *portanto*) quando se encon
 
 ---
 
-## Distinção Crítica: Posto que (Concessão) vs. Visto que (Causa)
+### Distinção Crítica: Posto que (Concessão) vs. Visto que (Causa)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A locução conjuntiva "posto que" é estritamente **concessiva** (= *embora*), enquanto "visto que" é **causal** (= *porque*).
 
-### Desmistificação do vício na linguagem jurídica
+#### Desmistificação do vício na linguagem jurídica
 
 No meio jurídico e na linguagem coloquial, é frequente o emprego errôneo de "posto que" com sentido causal. Em concursos públicos, esse uso é considerado **erro gramatical grave**:
 
 - *Construção Incorreta:* *"O réu foi condenado, **posto que** culpado."* (A culpa é a causa da condenação, não uma oposição; logo, o uso concessivo é agramatical).
 - *Construção Correta Causal:* *"O réu foi condenado, **visto que / já que / uma vez que** culpado."*
 - *Construção Correta Concessiva com Posto que:* *"O réu foi absolvido, **posto que** culpado."* (= embora fosse culpado).
-
----
 
 ---
 
@@ -341,36 +337,36 @@ No meio jurídico e na linguagem coloquial, é frequente o emprego errôneo de "
 - **Aditivo :** Soma ideias em estruturas correlativas (*não só... como também*). Equivalente: conjunção aditiva *E*.
 - **Exemplificativo :** Introduz casos concretos de uma categoria genérica. Equivalente: *por exemplo* (exige vírgula dupla).
 
-### Mapeamento canônico de substituições diretas
-
----
+#### Mapeamento canônico de substituições diretas
 
 ---
 
 ## Roteiros de resolução
 
-## Método de Identificação do Valor do Conectivo ("O que vem depois salva")
+### Método de Identificação do Valor do Conectivo ("O que vem depois salva")
 
 1. **Leitura Global:** Leia o período completo até a pontuação final para captar o sentido macro.
 2. **Foco no Segmento Posterior:** Isole a palavra "como" e examine atentamente a oração ou termo que vem **imediatamente após** ela.
 3. **Aplicação do Filtro Lógico:**
- - *O elemento posterior é uma comparação/analogia com o termo anterior?* $\rightarrow$ **COMPARAÇÃO**.
- - *O elemento posterior expressa adequação a um plano, norma ou citação?* $\rightarrow$ **CONFORMIDADE**.
- - *A oração expressa o fato gerador/motivo do evento seguinte?* $\rightarrow$ **CAUSA**.
- - *O segmento posterior agrega informação somada com base em par correlativo?* $\rightarrow$ **ADIÇÃO**.
- - *O segmento posterior cita integrantes específicos de um grupo maior citado antes?* $\rightarrow$ **EXEMPLIFICAÇÃO**.
+  - *O elemento posterior é uma comparação/analogia com o termo anterior?* $\rightarrow$ **COMPARAÇÃO**.
+  - *O elemento posterior expressa adequação a um plano, norma ou citação?* $\rightarrow$ **CONFORMIDADE**.
+  - *A oração expressa o fato gerador/motivo do evento seguinte?* $\rightarrow$ **CAUSA**.
+  - *O segmento posterior agrega informação somada com base em par correlativo?* $\rightarrow$ **ADIÇÃO**.
+  - *O segmento posterior cita integrantes específicos de um grupo maior citado antes?* $\rightarrow$ **EXEMPLIFICAÇÃO**.
 
 ---
 
-## Teste Causal da Oração Subordinada
+### Teste Causal da Oração Subordinada
 
-1. Isole a oração encabeçada pelo conector (Oração A) e a oração principal (Oração B).
+1. Isole a oração encabeçada pelo conector (Oração
+A) e a oração principal (Oração
+B).
 2. Monte a estrutura mental: **"O fato de [Oração A] fez com que [Oração B]"**.
 3. Se a relação causal se mantiver lógica e perfeita no texto, o conector possui valor **CAUSAL** e aceita substituição por *visto que*, *já que*, *uma vez que*, *porque*.
 
 ---
 
-## Técnica de Poda de Intercalações em Períodos Longos do CEBRASPE
+### Técnica de Poda de Intercalações em Períodos Longos do CEBRASPE
 
 1. **Leitura Contínua:** Leia o período extenso até o ponto final sem interromper o raciocínio na primeira vírgula.
 2. **Poda Visual:** Risque ou ignore mentalmente segmentos explicativos, adjetivos ou adverbiais intercalados entre vírgulas ou travessões.
@@ -379,14 +375,12 @@ No meio jurídico e na linguagem coloquial, é frequente o emprego errôneo de "
 
 ---
 
-## Método da Substituição Paradigmática de Conectores
+### Método da Substituição Paradigmática de Conectores
 
 1. Identifique o conector original do texto e o conector sugerido pela banca.
 2. Verifique se ambos pertencem à mesma família semântica fixa (ex.: adversativas puras, conformativas puras, concessivas puras).
 3. Se pertencerem à mesma lista fixa, valide a assertiva como **CORRETA**.
 4. Se o conector original for polissêmico (*como*, *pois*, *porquanto*), examine a sintaxe da frase antes de concluir.
-
----
 
 ---
 
@@ -404,43 +398,41 @@ No meio jurídico e na linguagem coloquial, é frequente o emprego errôneo de "
 
 ---
 
----
-
 ## Exemplos comentados
 
 ### Bloco A — Exercícios de Fixação dos Valores do "Como"
 
-## Exercício de Fixação: Item (a)
+### Exercício de Fixação: Item (a)
 
 - **Enunciado:** Identifique o valor semântico da palavra sublinhada: *"Os soldados agiam <u>como seus inimigos</u>"*.
 - **Desenvolvimento:** O termo posterior "seus inimigos" estabelece uma analogia com a forma de agir dos soldados.
 - **Gabarito oficial:** **COMPARAÇÃO**.
 
-## Exercício de Fixação: Item (b)
+### Exercício de Fixação: Item (b)
 
 - **Enunciado:** Identifique o valor semântico da oração sublinhada: *"<u>Como consta dos livros</u>, deve-se a Euclides da Cunha a mais completa descrição do sertão brasileiro."*
 - **Desenvolvimento:** Indica conformidade com o que está registrado nas obras de referência ("de acordo com o que consta nos livros").
 - **Gabarito oficial:** **CONFORMIDADE**.
 
-## Exercício de Fixação: Item (c)
+### Exercício de Fixação: Item (c)
 
 - **Enunciado:** Identifique o valor semântico da palavra sublinhada: *"<u>Como</u> adotou atitudes de um político qualquer, o republicano ficou desmoralizado."*
 - **Desenvolvimento:** Teste: "O fato de adotar atitudes de um político qualquer fez com que o republicano ficasse desmoralizado."
 - **Gabarito oficial:** **CAUSA (Causal)**.
 
-## Exercício de Fixação: Item (d)
+### Exercício de Fixação: Item (d)
 
 - **Enunciado:** Identifique o valor semântico da expressão sublinhada: *"Alguns animais, <u>como o leão e o tigre</u>, são carnívoros."*
 - **Desenvolvimento:** "Leão" e "tigre" são exemplos de animais carnívoros, e não termos comparados a eles.
 - **Gabarito oficial:** **EXEMPLIFICAÇÃO**.
 
-## Exercício de Fixação: Item (e)
+### Exercício de Fixação: Item (e)
 
 - **Enunciado:** Identifique o valor semântico da palavra sublinhada: *"Ele leu não só o livro <u>como também</u> a revista."*
 - **Desenvolvimento:** Estrutura correlativa aditiva (*não só... como também*) que soma dois objetos lidos (= leu o livro **e** a revista).
 - **Gabarito oficial:** **ADIÇÃO**.
 
-## Exercício de Fixação: Item (f)
+### Exercício de Fixação: Item (f)
 
 - **Enunciado:** Identifique o valor semântico da palavra sublinhada: *"<u>Como</u> não viu o poste, colidiu com ele."*
 - **Desenvolvimento:** O fato de não ter visto o poste foi o motivo/causa da colisão.
@@ -448,37 +440,37 @@ No meio jurídico e na linguagem coloquial, é frequente o emprego errôneo de "
 
 ---
 
-### Bloco B — Questões de Concurso CEBRASPE sobre o "Como"
+#### Bloco B — Questões de Concurso CEBRASPE sobre o "Como"
 
-## Questão CEBRASPE: Prefeitura de São Luís - MA
+### Questão CEBRASPE: Prefeitura de São Luís - MA
 
 - **Texto:** *"Tinha chegado o tempo da colheita, era uma manhã risonha, e bela, **como o rosto de um infante**, entretanto eu tinha um peso enorme no coração..."*
 - **Assertiva:** No texto, o trecho "como o rosto de um infante" introduz uma ideia de comparação.
 - **Resolução:** O conector correlaciona a beleza da manhã com o rosto de uma criança (infante). Há analogia direta.
 - **Gabarito:** **CERTO**.
 
-## Questão CEBRASPE: PGE-PE (Analista Judiciário)
+### Questão CEBRASPE: PGE-PE (Analista Judiciário)
 
 - **Texto:** *"Se observarmos bem, essas ondas longas da história, **como** as chamava Braudel, tornaram-se cada vez mais curtas."*
 - **Assertiva:** O sentido original e a correção gramatical do texto seriam mantidos se a palavra "como" fosse substituída por conforme.
 - **Resolução:** O termo introduz a denominação formulada pelo historiador Braudel (= conforme as chamava Braudel). Sentido conformativo perfeito.
 - **Gabarito:** **CERTO**.
 
-## Questão CEBRASPE: PC-PB (Escrivão de Polícia 2022)
+### Questão CEBRASPE: PC-PB (Escrivão de Polícia 2022)
 
 - **Texto:** *"**Como** aprendemos a falar na mais tenra infância e sem maior esforço, além de usarmos a linguagem no dia a dia da forma mais corriqueira, não nos damos conta do grande prodígio que é falar."*
 - **Assertiva:** Estariam preservadas as ideias e a correção gramatical do texto caso se substituísse a conjunção "Como" por Visto que.
 - **Resolução:** Aplicando a técnica de poda de intercalações e o teste causal: "O fato de aprendermos a falar na infância fez com que não nos demos conta do prodígio". O "como" é causal e admite "visto que".
 - **Gabarito:** **CERTO**.
 
-## Questão CEBRASPE: Prefeitura de Camaçari - BA (2024)
+### Questão CEBRASPE: Prefeitura de Camaçari - BA (2024)
 
 - **Texto:** *"quando as pessoas leem a descrição de ações, **como** 'subindo as escadas'..."*
 - **Assertiva:** Sem alteração das relações coesivas, o vocábulo "como" poderia ser corretamente substituído pela expressão conforme, seguida de vírgula.
 - **Resolução:** "Subindo as escadas" é um exemplo de ação (exemplificação), tornando errada a troca por "conforme". Ademais, substitutos explicativos como "por exemplo" exigiriam duas vírgulas (antes e depois).
 - **Gabarito:** **ERRADO**.
 
-## Questão CEBRASPE: MPE-SC (Promotor de Justiça 2023)
+### Questão CEBRASPE: MPE-SC (Promotor de Justiça 2023)
 
 - **Texto:**
  1. *"...não apenas [...] **como também** se observa a existência de robôs..."*
@@ -489,53 +481,51 @@ No meio jurídico e na linguagem coloquial, é frequente o emprego errôneo de "
 
 ---
 
-### Bloco C — Questões CEBRASPE de Miscelânea e Coesão Textual
+#### Bloco C — Questões CEBRASPE de Miscelânea e Coesão Textual
 
-## Questão CEBRASPE: Prefeitura de Joinville - SC (2024)
+### Questão CEBRASPE: Prefeitura de Joinville - SC (2024)
 
 - **Assertiva:** As expressões “Além disso” e “No entanto” funcionam como mecanismos de coesão sequencial, estabelecendo relação entre partes do texto e permitindo a progressão textual.
 - **Resolução:** Ambos os termos operam como conectores interoracionais que garantem o avanço coerente das ideias.
 - **Gabarito:** **CERTO**.
 
-## Questão CEBRASPE: PC-PE (Agente de Polícia 2024)
+### Questão CEBRASPE: PC-PE (Agente de Polícia 2024)
 
 - **Assertiva:** Sem prejuízo da correção gramatical e do sentido original, a expressão “no entanto” poderia ser substituída por todavia.
 - **Resolução:** Conjunções adversativas pertencentes à mesma lista fixa paradigmática.
 - **Gabarito:** **CERTO**.
 
-## Questão CEBRASPE: SEE-PE (Professor Braillista 2023)
+### Questão CEBRASPE: SEE-PE (Professor Braillista 2023)
 
 - **Assertiva:** No quarto parágrafo, a expressão “Mas não fica apenas nisso” estabelece uma relação de causa e consequência entre duas citações.
 - **Resolução:** A expressão adiciona um novo argumento (comprovado pela presença do advérbio "também" no trecho seguinte), configurando adição, e não causa/consequência.
 - **Gabarito:** **ERRADO**.
 
-## Questão CEBRASPE: ITAIPU BINACIONAL (2024)
+### Questão CEBRASPE: ITAIPU BINACIONAL (2024)
 
 - **Assertiva:** Estariam mantidas a coesão textual e a coerência do texto caso se substituísse “De acordo com” por Consoante.
 - **Resolução:** "De acordo com" e "Consoante" são expressões conformativas perfeitamente sinônimas.
 - **Gabarito:** **CERTO**.
 
-## Questão CEBRASPE: Prefeitura de Mossoró - RN (2024)
+### Questão CEBRASPE: Prefeitura de Mossoró - RN (2024)
 
 - **Assertiva:** O termo “embora” introduz uma oração que expressa, em relação à oração anterior, sentido explicativo.
 - **Resolução:** O conector "embora" é estritamente concessivo, jamais explicativo.
 - **Gabarito:** **ERRADO**.
 
-## Questão CEBRASPE: CNMP (Analista 2023)
+### Questão CEBRASPE: CNMP (Analista 2023)
 
 - **Texto:** *"A previsão de autodefinição é de suma relevância **porquanto** parte do pressuposto de que..."*
 - **Assertiva:** Estariam mantidos os sentidos e a coerência do texto caso se substituísse “porquanto” por logo.
 - **Resolução:** "Porquanto" é explicativo/causal (= *porque*), enquanto "logo" é conclusivo (= *portanto*).
 - **Gabarito:** **ERRADO**.
 
-## Questão CEBRASPE: Prefeitura de Joinville - SC (Auxiliar de Educador 2024)
+### Questão CEBRASPE: Prefeitura de Joinville - SC (Auxiliar de Educador 2024)
 
 - **Texto:** *"...Ensiná-la não faz sentido, **pois**, nessa idade narcisista, **ela responde a cada interferência...*** e *"...**conforme** nos ensina a pedagogia..."*
 - **Assertiva:** Seriam mantidas a correção e a coerência caso “pois” e “conforme” fossem substituídos, respectivamente, por porque e de acordo com.
 - **Resolução:** O "pois" introduz a oração causal/explicativa (o trecho entre vírgulas é adjunto intercalado). Ambas as substituições são válidas.
 - **Gabarito:** **CERTO**.
-
----
 
 ---
 
@@ -545,13 +535,11 @@ No meio jurídico e na linguagem coloquial, é frequente o emprego errôneo de "
 - **Identificação Rápida de Adição:** Ao deparar com estruturas iniciadas por *não só*, *não apenas*, *não somente*, seguidas de *como* ou *mas*, confirme de imediato o valor aditivo equivalente a **"E"**. (`012`, )
 - **Pista da Vírgula Dupla para "Por Exemplo":** Se a questão sugerir substituir o "como" exemplificativo pela locução *por exemplo*, confira se há vírgula antes e depois da expressão: `, por exemplo,`. A ausência da vírgula posterior invalida a substituição sob o aspecto gramatical. (`013`, )
 - **Macete Mnemônico do Porquanto vs. Conquanto:**
- - **PORQUANTO** tem som de **PORQUE** $\rightarrow$ Causal / Explicativa.
- - **CONQUANTO** tem som de **EMBORA** $\rightarrow$ Concessiva. (`014`, )
+  - **PORQUANTO** tem som de **PORQUE** $\rightarrow$ Causal / Explicativa.
+  - **CONQUANTO** tem som de **EMBORA** $\rightarrow$ Concessiva. (`014`, )
 - **Macete Mnemônico do Posto que vs. Visto que:**
- - **POSTO QUE** = **EMBORA** (Concessivo).
- - **VISTO QUE** = **PORQUE** (Causal). (`014`, )
-
----
+  - **POSTO QUE** = **EMBORA** (Concessivo).
+  - **VISTO QUE** = **PORQUE** (Causal). (`014`, )
 
 ---
 
@@ -564,8 +552,6 @@ No meio jurídico e na linguagem coloquial, é frequente o emprego errôneo de "
 - **Invariabilidade Absoluta do "Embora":** A conjunção "embora" não aceita outro valor que não seja concessão. Itens que sugerem sentido causal ou explicativo estão sumariamente errados. (`014`, )
 - **A Pegadinha do "Pois Entre Vírgulas":** Não conclua que todo "pois" entre vírgulas é conclusivo. Verifique se a segunda vírgula não é o fechamento de um adjunto intercalado. Estando no início da oração, o "pois" é explicativo/causal. (`014`, )
 - **O Vício da Linguagem Jurídica no "Posto Que":** Nunca transporte o hábito forense de utilizar "posto que" como causal. Em provas de concurso, "posto que" só pode ser utilizado como concessivo (= *embora*). (`014`, )
-
----
 
 ---
 
@@ -584,25 +570,23 @@ No meio jurídico e na linguagem coloquial, é frequente o emprego errôneo de "
 
 ---
 
----
-
 ## Síntese para recuperação ativa
 
 Ao concluir o estudo integrado desta unidade **, o candidato deve ser capaz de:
 
 1. **Interpretar a Semântica de Conectores:** Reconhecer de pronto que "valor" equivale ao sentido lógico no contexto, superando bloqueios conceituais e nomenclaturas rígidas.
 2. **Dominar os 5 Sentidos do "Como":**
- - Distinguir *Comparação* (analogia entre seres) de *Exemplificação* (amostra de um hiperônimo).
- - Reconhecer *Conformidade* ("nos conformes") e substituí-lo com segurança por *conforme*, *consoante*, *de acordo com*.
- - Identificar o *Como Causal* via teste "O fato de X fez com que Y" e ter absoluta certeza de que **o "como" jamais pode ser classificado como explicativo**.
- - Reconhecer o *Como Aditivo* em pares correlativos (*não só... como também*).
+  - Distinguir *Comparação* (analogia entre seres) de *Exemplificação* (amostra de um hiperônimo).
+  - Reconhecer *Conformidade* ("nos conformes") e substituí-lo com segurança por *conforme*, *consoante*, *de acordo com*.
+  - Identificar o *Como Causal* via teste "O fato de X fez com que Y" e ter absoluta certeza de que **o "como" jamais pode ser classificado como explicativo**.
+  - Reconhecer o *Como Aditivo* em pares correlativos (*não só... como também*).
 3. **Aplicar Técnicas de Prova para Bancas Exigentes (CEBRASPE):**
- - Desmistificar termos como "coesão sequencial" e "progressão textual", enxergando neles a função básica dos conectores.
- - Podar mentalmente orações intercaladas entre vírgulas em períodos longos para isolar a relação direta de causa e consequência.
- - Atentar para exigências de pontuação: o "como" exemplificativo dispensa vírgula posterior, mas a locução substituta *por exemplo* exige isolamento por duas vírgulas.
+  - Desmistificar termos como "coesão sequencial" e "progressão textual", enxergando neles a função básica dos conectores.
+  - Podar mentalmente orações intercaladas entre vírgulas em períodos longos para isolar a relação direta de causa e consequência.
+  - Atentar para exigências de pontuação: o "como" exemplificativo dispensa vírgula posterior, mas a locução substituta *por exemplo* exige isolamento por duas vírgulas.
 4. **Evitar as Armadilhas Clássicas:**
- - Não confundir *Porquanto* (= *porque*) com *Conquanto* (= *embora*).
- - Não confundir *Posto que* (= *embora*) com *Visto que* (= *porque*), banindo o vício forense do uso causal de "posto que".
- - Identificar a função real do conector *pois*, compreendendo que a presença de vírgulas decorrentes de adjuntos intercalados não o torna conclusivo.
+  - Não confundir *Porquanto* (= *porque*) com *Conquanto* (= *embora*).
+  - Não confundir *Posto que* (= *embora*) com *Visto que* (= *porque*), banindo o vício forense do uso causal de "posto que".
+  - Identificar a função real do conector *pois*, compreendendo que a presença de vírgulas decorrentes de adjuntos intercalados não o torna conclusivo.
 
 ---

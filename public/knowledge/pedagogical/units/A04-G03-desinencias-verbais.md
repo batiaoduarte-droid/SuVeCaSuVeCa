@@ -38,7 +38,7 @@ A SuVeCA é um mapa de análise para reconstruir as relações sintáticas, e n�
 
 - Noção preliminar dos três modos verbais: Indicativo (certeza), Subjuntivo (hipótese/dúvida) e Imperativo (ordem/pedido).
 
-### Estrutura e Relações Conceituais
+#### Estrutura e Relações Conceituais
 
 ```text
  ESTRUTURA MORFOLÓGICA DO VERBO
@@ -62,7 +62,7 @@ RADICAL VOGAL TEMÁTICA (VT) DMT DNP
  └─ Pres. Ind: Ø └─ 3ª Plural: -m / -ão
 ```
 
-### Sequência Recomendada de Aprendizagem
+#### Sequência Recomendada de Aprendizagem
 
 1. Reconhecer as três conjugações e o caso etimológico do verbo *pôr*.
 2. Dominar o teste do Infinitivo Impessoal para extrair Radical, VT e Tema.
@@ -72,24 +72,22 @@ RADICAL VOGAL TEMÁTICA (VT) DMT DNP
 
 ---
 
----
-
 ## Explicação didática aprofundada
 
-## As Três Conjugações Verbais e a Filiação Etimológica do Verbo Pôr
+### As Três Conjugações Verbais e a Filiação Etimológica do Verbo Pôr
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Os verbos na Língua Portuguesa distribuem-se estritamente em **três conjugações**, definidas pela vogal temática presente no infinitivo impessoal. Não existe uma 4ª conjugação no idioma.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **1ª Conjugação:** Verbos com Vogal Temática **A** (*amar*, *cantar*, *falar*).
 2. **2ª Conjugação:** Verbos com Vogal Temática **E** (*beber*, *vender*).
 3. **3ª Conjugação:** Verbos com Vogal Temática **I** (*partir*, *digerir*).
 4. **Situação do Verbo Pôr:** O verbo *pôr* (e seus derivados: *repor*, *compor*, *dispor*, *propor*) pertence à **2ª conjugação**. Historicamente, sua forma no latim (*ponere*) evoluiu para *poer* no português arcaico. Com a supressão fonética do `e` intervocálico na evolução para o português moderno (*pôr*), o verbo manteve seu enquadramento morfológico na 2ª conjugação, preservando o vocalismo temático `e` em formas flexionadas (ex.: *pões*, *põe*, *púsesse*, *pusera*).
 
-### Critérios de reconhecimento ou aplicação
+#### Critérios de reconhecimento ou aplicação
 
 - Encontrando formas terminadas em `-or`, reconduza-as ao infinitivo *pôr* e classifique-as obrigatoriamente na 2ª conjugação.
 
@@ -99,9 +97,9 @@ Os verbos na Língua Portuguesa distribuem-se estritamente em **três conjugaç�
 
 ---
 
-## Radical, Vogal Temática (VT) e Formação do Tema Verbal
+### Radical, Vogal Temática (VT) e Formação do Tema Verbal
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A estrutura básica da palavra verbal apoia-se em três elementos fundamentais:
 
@@ -113,7 +111,7 @@ $$
 \text{Tema} = \text{Radical} + \text{Vogal Temática}
 $$
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Para determinar o radical e a vogal temática com segurança, a forma flexionada deve ser remetida ao seu **Infinitivo Impessoal**:
 
@@ -123,13 +121,13 @@ Para determinar o radical e a vogal temática com segurança, a forma flexionada
 
 ---
 
-## Desinência Modo-Temporal (DMT) e o Conceito de "Muleta do Tempo"
+### Desinência Modo-Temporal (DMT) e o Conceito de "Muleta do Tempo"
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A **Desinência Modo-Temporal (DMT)** é o morfema flexional responsável por indicar simultaneamente o **modo** (indicativo, subjuntivo, imperativo) e o **tempo** (presente, pretérito, futuro) da forma verbal. Didaticamente, é conceituada como a **"muleta do tempo"**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Propriedade Identificadora:** A DMT caracteriza-se por ser a marca mórfica **comum** que se repete ao longo das diversas pessoas gramaticais daquele tempo verbal específico.
 - Enquanto a DNP se altera a cada mudança de sujeito, a DMT permanece fixa, "impregnando" todo o paradigma conjugacional.
@@ -139,13 +137,13 @@ A **Desinência Modo-Temporal (DMT)** é o morfema flexional responsável por in
 
 ---
 
-## Desinência Número-Pessoal (DNP) e Paradigmas Flexionais
+### Desinência Número-Pessoal (DNP) e Paradigmas Flexionais
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A **Desinência Número-Pessoal (DNP)** é o morfema flexional sufixal posicionado no final da estrutura verbal responsável por individualizar a **pessoa gramatical** (1ª, 2ª ou 3ª) e o **número** (singular ou plural).
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Diferente da DMT, a DNP é o morfema **particular** que varia de pessoa para pessoa:
 
@@ -160,13 +158,13 @@ Diferente da DMT, a DNP é o morfema **particular** que varia de pessoa para pes
 
 ---
 
-## Fenômeno da Alomorfia Morfológica em Verbos
+### Fenômeno da Alomorfia Morfológica em Verbos
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 **Alomorfia** é a ocorrência de variantes formais de um mesmo morfema condicionadas pelo ambiente fonético ou estrutural da conjugação, sem que haja alteração na sua função gramatical primária.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 As fontes registram dois casos canônicos de alomorfia analisados no quadro:
 
@@ -177,13 +175,13 @@ As fontes registram dois casos canônicos de alomorfia analisados no quadro:
 
 ---
 
-## O Método dos 3 Passos para Decomposição Mórfica Verbal
+### O Método dos 3 Passos para Decomposição Mórfica Verbal
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O Método dos 3 Passos é um procedimento analítico estruturado para segmentar e classificar os constituintes morfológicos de qualquer verbo flexionado, substituindo a memorização aleatória pelo raciocínio lógico.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 ```text
  ALGORITMO DOS 3 PASSOS
@@ -206,13 +204,13 @@ O Método dos 3 Passos é um procedimento analítico estruturado para segmentar 
 
 ---
 
-## Comportamento Mórfico do Presente do Indicativo (Ausência de DMT)
+### Comportamento Mórfico do Presente do Indicativo (Ausência de DMT)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **Presente do Indicativo** é estruturalmente marcado pela **inexistência de Desinência Modo-Temporal (DMT = $\emptyset$)** em todas as pessoas gramaticais e conjugações.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - No Presente do Indicativo, a noção de tempo presente e modo indicativo decorre diretamente da junção do Radical/Tema com as DNPs, sem a intermediação de um sufixo temporal comum.
 - Na 1ª pessoa do singular (*falo*, *vendo*, *parto*, *entrego*), a Vogal Temática é absorvida pela DNP `-o`, resultando em $\text{VT} = \emptyset$ e $\text{DMT} = \emptyset$.
@@ -220,13 +218,13 @@ O **Presente do Indicativo** é estruturalmente marcado pela **inexistência de 
 
 ---
 
-## Comportamento Mórfico do Presente do Subjuntivo (Troca Vocálica e VT Zero)
+### Comportamento Mórfico do Presente do Subjuntivo (Troca Vocálica e VT Zero)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 No **Presente do Subjuntivo**, ocorre uma inversão sistemática do vocalismo: as vogais temáticas originais são suprimidas ($\text{VT} = \emptyset$) e substituídas pelas vogais características do modo subjuntivo, que atuam morfologicamente como **Desinência Modo-Temporal (DMT)**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **Verbos de 1ª Conjugação (VT de origem `A`):** Assumem a DMT **`-e-`** (*amem* = `AM` + $\emptyset$ + `E` + `m`; *reciclemos* = `RECICL` + $\emptyset$ + `E` + `MOS`).
 - **Verbos de 2ª e 3ª Conjugações (VT de origem `E`/`I`):** Assumem a DMT **`-a-`** (*vendam* = `VEND` + $\emptyset$ + `A` + `m`; *possam* = `POSS` + $\emptyset$ + `A` + `m`, verbo *poder*).
@@ -234,65 +232,65 @@ No **Presente do Subjuntivo**, ocorre uma inversão sistemática do vocalismo: a
 
 ---
 
-## Pretérito Imperfeito do Indicativo e a Doutrina de Evanildo Bechara
+### Pretérito Imperfeito do Indicativo e a Doutrina de Evanildo Bechara
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 No Pretérito Imperfeito do Indicativo das 2ª e 3ª conjugações (*vender*, *partir*, *dormir*, *rir*), a corrente doutrinária predominante em concursos públicos (liderada por **Evanildo Bechara**) estabelece que o bloco **`-ia-` / `-ie-`** constitui integralmente a **Desinência Modo-Temporal**, ficando a vogal temática ausente/absorvida.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - **1ª Conjugação:** DMT = **`-va-`** (com alomorfe **`-ve-`** em *vós*). Ex.: *chorava* (`CHOR` + `A` + `VA` + $\emptyset$).
 - **2ª e 3ª Conjugações (Padrão Bechara):** DMT = **`-ia-`** (com alomorfe **`-ie-`** em *vós*).
- - *dormíeis* $\rightarrow$ Radical `DORM-` + VT $\emptyset$ + DMT `-ÍE-` + DNP `-IS`.
- - *riam* $\rightarrow$ Radical `R-` + VT $\emptyset$ + DMT `-IA-` + DNP `-M`.
+  - *dormíeis* $\rightarrow$ Radical `DORM-` + VT $\emptyset$ + DMT `-ÍE-` + DNP `-IS`.
+  - *riam* $\rightarrow$ Radical `R-` + VT $\emptyset$ + DMT `-IA-` + DNP `-M`.
 - A abordagem didática ressalta que essa abordagem é a convenção cobrada por bancas de alto nível (FGV, Cebraspe, FCC, Vunesp, FUNRIO).
 
 - **Incerteza associada:**
 
 ---
 
-## Pretérito Imperfeito do Subjuntivo e Futuro do Presente do Indicativo
+### Pretérito Imperfeito do Subjuntivo e Futuro do Presente do Indicativo
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O Pretérito Imperfeito do Subjuntivo e o Futuro do Presente do Indicativo preservam com clareza a estrutura clássica de 4 elementos, mantendo a Vogal Temática primitiva da conjugação.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 1. **Pretérito Imperfeito do Subjuntivo:** DMT universal **`-sse-`** em todas as conjugações.
- - *corrêssemos* $\rightarrow$ `CORR` (Radical) + `E` (VT) + `SSE` (DMT) + `MOS` (DNP).
- - *formulásseis* $\rightarrow$ `FORMUL` (Radical) + `A` (VT) + `SSE` (DMT) + `IS` (DNP).
+  - *corrêssemos* $\rightarrow$ `CORR` (Radical) + `E` (VT) + `SSE` (DMT) + `MOS` (DNP).
+  - *formulásseis* $\rightarrow$ `FORMUL` (Radical) + `A` (VT) + `SSE` (DMT) + `IS` (DNP).
 2. **Futuro do Presente do Indicativo:** DMT **`-re-` / `-ra-`** (ou `-rá-`).
- - *correrás* $\rightarrow$ `CORR` (Radical) + `E` (VT) + `RA` (DMT) + `S` (DNP).
- - *ajudará* $\rightarrow$ `AJUD` (Radical) + `A` (VT) + `RÁ` (DMT) + $\emptyset$ (DNP).
+  - *correrás* $\rightarrow$ `CORR` (Radical) + `E` (VT) + `RA` (DMT) + `S` (DNP).
+  - *ajudará* $\rightarrow$ `AJUD` (Radical) + `A` (VT) + `RÁ` (DMT) + $\emptyset$ (DNP).
 
 ---
 
-## Estrutura Mórfica do Infinitivo Pessoal e a Abordagem Tradicional da FUNDATEC
+### Estrutura Mórfica do Infinitivo Pessoal e a Abordagem Tradicional da FUNDATEC
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 O **Infinitivo Pessoal** é a forma nominal flexionada que indica a pessoa gramatical do agente da oração reduzida. Estruturalmente, compõe-se de Radical + Vogal Temática + DMT de Infinitivo (`-r-`) + DNPs (`-Ø, -es, -Ø, -mos, -des, -rem`). A banca FUNDATEC aceita historicamente a rotulação escolar de que a terminação `-ar` em bloco é uma "desinência de infinitivo".
 
-### Explicação consolidada
+#### Explicação consolidada
 
 - Na forma *dedicarmos* (*"para nós dedicarmos"*):
- - **Análise Rigorosa (Padrão Acadêmico/CESPE/FGV):** `dedic-` (Radical), `-a-` (Vogal Temática de 1ª conj.), `-r-` (DMT de Infinitivo) e `-mos` (DNP de 1ª pessoa do plural).
- - **Análise da Banca FUNDATEC:** Aceita `dedic` (Radical), `ar` (desinência de infinitivo) e `mos` (DNP de 1ª pessoa do plural).
+  - **Análise Rigorosa (Padrão Acadêmico/CESPE/FGV):** `dedic-` (Radical), `-a-` (Vogal Temática de 1ª conj.), `-r-` (DMT de Infinitivo) e `-mos` (DNP de 1ª pessoa do plural).
+  - **Análise da Banca FUNDATEC:** Aceita `dedic` (Radical), `ar` (desinência de infinitivo) e `mos` (DNP de 1ª pessoa do plural).
 - A abordagem didática orienta o estudante a reconhecer essa peculiaridade da FUNDATEC para não anular mentalmente itens corretos sob a ótica dessa organizadora.
 
 - **Procedimento associado:**  (Macete do "PARA")
 
 ---
 
-## Homonímia Temporal Descontextualizada na Terminação *-aram*
+### Homonímia Temporal Descontextualizada na Terminação *-aram*
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 A terminação verbal **`-aram`** na 3ª pessoa do plural dos verbos de 1ª conjugação é **morfologicamente homônima** entre dois tempos do Modo Indicativo quando analisada isoladamente de uma frase contextualizadora.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Na análise da forma *puxaram* (Questão Quadrix):
 
@@ -303,13 +301,13 @@ Na análise da forma *puxaram* (Questão Quadrix):
 
 ---
 
-## Tema Verbal em Formas Irregulares do Perfeito (*pusera*)
+### Tema Verbal em Formas Irregulares do Perfeito (*pusera*)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 Em formas derivadas do tema do perfeito de verbos anômalos ou irregulares (como o verbo *pôr*), a fusão do radical variante com a vogal temática constitui o **Tema Verbal**.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Na questão da FGV sobre a forma *pusera* (Pretérito Mais-Que-Perfeito do Indicativo):
 
@@ -321,19 +319,17 @@ Na questão da FGV sobre a forma *pusera* (Pretérito Mais-Que-Perfeito do Indic
 
 ---
 
-## Distinção Rigorosa entre DMT e DNP no Pretérito Imperfeito (*zombavam*)
+### Distinção Rigorosa entre DMT e DNP no Pretérito Imperfeito (*zombavam*)
 
-### Definição ou ideia central
+#### Definição ou ideia central
 
 No Pretérito Imperfeito do Indicativo dos verbos de 1ª conjugação, a Desinência Modo-Temporal é exclusivamente o morfema **`-va-`**. O fonema nasal final **`-m`** atua de forma autônoma como Desinência Número-Pessoal de 3ª pessoa do plural.
 
-### Explicação consolidada
+#### Explicação consolidada
 
 Na análise do item do CESPE/CEBRASPE sobre *zombavam*:
 
 - O CESPE afirmou que *-vam* seria o "morfema modo-temporal". Como a banca fundiu a DMT (`-va-`) com a DNP (`-m`), o item é taxativamente **ERRADO**.
-
----
 
 ---
 
@@ -352,18 +348,16 @@ Na análise do item do CESPE/CEBRASPE sobre *zombavam*:
 
 ---
 
----
-
 ## Roteiros de resolução
 
-## Algoritmo dos 3 Passos para Decomposição Mórfica Verbal
+### Algoritmo dos 3 Passos para Decomposição Mórfica Verbal
 
 - **Objetivo:** Isolar e classificar sem erros Radical, VT, DMT e DNP de qualquer forma verbal.
 - **Passo 1 (Vogal Temática e Radical):** Projete a forma verbal no Infinitivo Impessoal. Remova a terminação `-r`. A vogal final restante é a VT; o segmento anterior é o Radical. Juntos formam o Tema.
 - **Passo 2 (Desinência Modo-Temporal):** Ative o tempo verbal pelo gatilho temporal (ex.: "antigamente", "amanhã", "que", "se") e conjugue mentalmente as pessoas. O elemento constante que impregna o paradigma é a DMT. Se for Presente do Indicativo, anote $\text{DMT} = \emptyset$.
 - **Passo 3 (Desinência Número-Pessoal):** Isole o elemento final particular que varia de pessoa para pessoa (`-o`, `-s`, $\emptyset$, `-mos`, `-is`, `-m`/`-ão`).
 
-## Método do Infinitivo Impessoal para Identificação da Vogal Temática
+### Método do Infinitivo Impessoal para Identificação da Vogal Temática
 
 - **Objetivo:** Evitar a armadilha de classificar vogais alteradas no meio do verbo flexionado como vogais temáticas.
 - **Aplicação:**
@@ -372,35 +366,33 @@ Na análise do item do CESPE/CEBRASPE sobre *zombavam*:
  3. Verifique a terminação: `-ar` $\rightarrow$ VT = `A`; `-er` ou *pôr* $\rightarrow$ VT = `E`; `-ir` $\rightarrow$ VT = `I`.
  4. Em *possam*, o infinitivo é *poder* (VT = `e`). Logo, o `a` em *possam* é a DMT do Presente do Subjuntivo.
 
-## Método dos Gatilhos Psicológicos / Marcadores Temporais
+### Método dos Gatilhos Psicológicos / Marcadores Temporais
 
 - **Objetivo:** Descobrir o tempo e modo exato sem hesitação no rascunho de prova.
 - **Gatilhos Operacionais:**
- - Encaixa com **"HOJE"** $\rightarrow$ Presente do Indicativo (*Hoje eu conto*).
- - Encaixa com **"ONTEM"** $\rightarrow$ Pretérito Perfeito do Indicativo (*Ontem ele escreveu*).
- - Encaixa com **"ANTIGAMENTE"** $\rightarrow$ Pretérito Imperfeito do Indicativo (*Antigamente eu chorava/dormia*).
- - Encaixa com **"AMANHÃ"** $\rightarrow$ Futuro do Presente do Indicativo (*Amanhã tu correrás*).
- - Encaixa com **"QUE"** $\rightarrow$ Presente do Subjuntivo (*Que eles amem/possam*).
- - Encaixa com **"SE"** $\rightarrow$ Pretérito Imperfeito do Subjuntivo (*Se nós corrêssemos*).
- - Encaixa com **"QUANDO"** $\rightarrow$ Futuro do Subjuntivo (*Quando vós insistirdes*).
+  - Encaixa com **"HOJE"** $\rightarrow$ Presente do Indicativo (*Hoje eu conto*).
+  - Encaixa com **"ONTEM"** $\rightarrow$ Pretérito Perfeito do Indicativo (*Ontem ele escreveu*).
+  - Encaixa com **"ANTIGAMENTE"** $\rightarrow$ Pretérito Imperfeito do Indicativo (*Antigamente eu chorava/dormia*).
+  - Encaixa com **"AMANHÃ"** $\rightarrow$ Futuro do Presente do Indicativo (*Amanhã tu correrás*).
+  - Encaixa com **"QUE"** $\rightarrow$ Presente do Subjuntivo (*Que eles amem/possam*).
+  - Encaixa com **"SE"** $\rightarrow$ Pretérito Imperfeito do Subjuntivo (*Se nós corrêssemos*).
+  - Encaixa com **"QUANDO"** $\rightarrow$ Futuro do Subjuntivo (*Quando vós insistirdes*).
 
-## Macete da Preposição "PARA" para o Infinitivo Pessoal
+### Macete da Preposição "PARA" para o Infinitivo Pessoal
 
 - **Objetivo:** Conjugar rapidamente o Infinitivo Pessoal e isolar suas DNPs.
 - **Procedimento:** Anteponha a estrutura `(PARA) + Pronome Reto + Infinitivo`:
- - (Para) eu dedicar-`Ø`
- - (Para) tu dedicar-`es`
- - (Para) ele dedicar-`Ø`
- - (Para) nós dedicar-`mos`
- - (Para) vós dedicar-`des`
- - (Para) eles dedicar-`rem`
+  - (Para) eu dedicar-`Ø`
+  - (Para) tu dedicar-`es`
+  - (Para) ele dedicar-`Ø`
+  - (Para) nós dedicar-`mos`
+  - (Para) vós dedicar-`des`
+  - (Para) eles dedicar-`rem`
 
-## Procedimento de "Esquartejamento" Estrutural em Questões de Prova
+### Procedimento de "Esquartejamento" Estrutural em Questões de Prova
 
 - **Objetivo:** Resolver questões que pedem estruturas morfológicas completas (ex.: $\text{Radical} + \text{VT} + \text{DMT} + \text{DNP}$).
 - **Procedimento:** Monte quatro colunas no rascunho (`RAD | VT | DMT | DNP`) e preencha cada alternativa. Descarte alternativas que apresentem $\emptyset$ em qualquer uma das colunas exigidas.
-
----
 
 ---
 
@@ -417,27 +409,25 @@ Na análise do item do CESPE/CEBRASPE sobre *zombavam*:
 
 ---
 
----
-
 ## Exemplos comentados
 
-## Demonstração da Decomposição de *Falava*
+### Demonstração da Decomposição de *Falava*
 
 - **Forma Verbal:** *falava* (Pretérito Imperfeito do Indicativo / 1ª conjugação).
 - **Decomposição:**
- - `fal-` $\rightarrow$ Radical
- - `-a-` $\rightarrow$ Vogal Temática (1ª conjugação)
- - `fala-` $\rightarrow$ Tema Verbal
- - `-va-` $\rightarrow$ Desinência Modo-Temporal (DMT)
- - `Ø` $\rightarrow$ Desinência Número-Pessoal (DNP Zero)
+  - `fal-` $\rightarrow$ Radical
+  - `-a-` $\rightarrow$ Vogal Temática (1ª conjugação)
+  - `fala-` $\rightarrow$ Tema Verbal
+  - `-va-` $\rightarrow$ Desinência Modo-Temporal (DMT)
+  - `Ø` $\rightarrow$ Desinência Número-Pessoal (DNP Zero)
 
-## Decomposição de *Falávamos* e *Partes*
+### Decomposição de *Falávamos* e *Partes*
 
 - **Formas Verbais:** *falávamos* e *partes* (Alomorfia de VT).
 - **Decomposição de *falávamos*:** `fal-` (Radical) + `-a-` (VT) + `-va-` (DMT) + `-mos` (DNP).
 - **Decomposição de *partes*:** `part-` (Radical) + `-e-` (VT Alomorfe da VT `i`) + $\emptyset$ (DMT) + `-s` (DNP).
 
-## Oficina de Fixação: Decomposição das Seis Formas Verbais
+### Oficina de Fixação: Decomposição das Seis Formas Verbais
 
 | Item | Forma Verbal | Infinitivo | Tempo / Modo Verbal | Radical | V.T. | D.M.T. | D.N.P. |
 |:---------: |:--------------- |:----------- |:-------------------------------------------- |:--------: |:-----------: |:-----------: |:-----------: |
@@ -448,55 +438,55 @@ Na análise do item do CESPE/CEBRASPE sobre *zombavam*:
 | **e** | `corrêssemos` | *correr* | Pretérito Imperfeito do Subjuntivo | `CORR` | `E` | `SSE` | `MOS` |
 | **f** | `chorava` | *chorar* | Pretérito Imperfeito do Indicativo | `CHOR` | `A` | `VA` | $\emptyset$ |
 
-## Questão 01: FCM - IF Sudeste - MG (*vamos*)
+### Questão 01: FCM - IF Sudeste - MG (*vamos*)
 
 - **Enunciado:** Classificação desinencial do verbo *vamos* em *"e aí vamos entrar em outra área..."*.
 - **Resolução:** Infinitivo *ir*. Marcador "Hoje nós vamos". Classificação: 1ª pessoa do plural do Presente do Indicativo.
 - **Gabarito:** **Letra A**.
 
-## Questão 02: COMVEST UFAM (*formulásseis*)
+### Questão 02: COMVEST UFAM (*formulásseis*)
 
 - **Enunciado:** Assinale a forma que corresponde à estrutura: $\text{Radical} + \text{VT} + \text{DMT} + \text{DNP}$.
 - **Análise das Alternativas:**
- - A) *escreveu:* `ESCREV` + `E` + $\emptyset$ (falta DMT) + `U`.
- - B) *vendesse:* `VEND` + `E` + `SSE` + $\emptyset$ (falta DNP).
- - C) *esfregava:* `ESFREG` + `A` + `VA` + $\emptyset$ (falta DNP).
- - D) *reciclemos:* `RECICL` + $\emptyset$ (falta VT) + `E` + `MOS`.
- - E) *formulásseis:* `FORMUL` (Radical) + `A` (VT) + `SSE` (DMT) + `IS` (DNP) $\rightarrow$ Estrutura completa!
+  - A) *escreveu:* `ESCREV` + `E` + $\emptyset$ (falta DMT) + `U`.
+  - B) *vendesse:* `VEND` + `E` + `SSE` + $\emptyset$ (falta DNP).
+  - C) *esfregava:* `ESFREG` + `A` + `VA` + $\emptyset$ (falta DNP).
+  - D) *reciclemos:* `RECICL` + $\emptyset$ (falta VT) + `E` + `MOS`.
+  - E) *formulásseis:* `FORMUL` (Radical) + `A` (VT) + `SSE` (DMT) + `IS` (DNP) $\rightarrow$ Estrutura completa!
 - **Gabarito:** **Letra E**.
 
-## Questão 03: FUNRIO - IF-PA (*contamos*)
+### Questão 03: FUNRIO - IF-PA (*contamos*)
 
 - **Enunciado:** Assinale a única forma verbal que **não possui** desinência modo-temporal.
 - **Análise das Alternativas:**
- - A) *riam:* Pret. Imperfeito (`DMT = IA`).
- - B) *cantavam:* Pret. Imperfeito (`DMT = VA`).
- - C) *contamos:* Presente do Indicativo (`Radical CONT` + `VT A` + `DMT Ø` + `DNP MOS`).
- - D) *insistirdes:* Futuro do Subjuntivo (`DMT = R`).
- - E) *enrolássemos:* Pret. Imperfeito do Subjuntivo (`DMT = SSE`).
+  - A) *riam:* Pret. Imperfeito (`DMT = IA`).
+  - B) *cantavam:* Pret. Imperfeito (`DMT = VA`).
+  - C) *contamos:* Presente do Indicativo (`Radical CONT` + `VT A` + `DMT Ø` + `DNP MOS`).
+  - D) *insistirdes:* Futuro do Subjuntivo (`DMT = R`).
+  - E) *enrolássemos:* Pret. Imperfeito do Subjuntivo (`DMT = SSE`).
 - **Gabarito:** **Letra C**.
 
-## Questão 01: FUNDATEC - Pref. Vacaria/RS (*dedicarmos, ajudará, possam*)
+### Questão 01: FUNDATEC - Pref. Vacaria/RS (*dedicarmos, ajudará, possam*)
 
 - **Análise dos Itens:**
- - Item I (*dedicarmos*): `dedic` (radical), `ar` (desinência de infinitivo), `mos` (DNP de 1ª pessoa plural). Aceito pela FUNDATEC como CORRETO.
- - Item II (*ajudará*): `ajud` (radical), `a` (VT de 1ª conj.), `rá` (DMT). CORRETO.
- - Item III (*possam*): afirmava que `a` era vogal temática. INCORRETO (infinitivo *poder* $\rightarrow$ VT é `e`; o `a` é DMT do Subjuntivo).
+  - Item I (*dedicarmos*): `dedic` (radical), `ar` (desinência de infinitivo), `mos` (DNP de 1ª pessoa plural). Aceito pela FUNDATEC como CORRETO.
+  - Item II (*ajudará*): `ajud` (radical), `a` (VT de 1ª conj.), `rá` (DMT). CORRETO.
+  - Item III (*possam*): afirmava que `a` era vogal temática. INCORRETO (infinitivo *poder* $\rightarrow$ VT é `e`; o `a` é DMT do Subjuntivo).
 - **Gabarito:** **Letra D** (Apenas I e II).
 
-## Questão 02: Quadrix - DATAPREV (*puxaram*)
+### Questão 02: Quadrix - DATAPREV (*puxaram*)
 
 - **Enunciado:** Análise da forma verbal *puxaram*.
 - **Resolução:** Descontextualizada, a forma *puxaram* pode pertencer tanto ao Pretérito Perfeito (*ontem eles puxaram*) quanto ao Pretérito Mais-Que-Perfeito (*outrora eles puxaram*).
 - **Gabarito:** **Letra C**.
 
-## Questão 03: FGV - SEDUC-AM (*pusera*)
+### Questão 03: FGV - SEDUC-AM (*pusera*)
 
 - **Enunciado:** Classificação do elemento mórfico *puse-* em *pusera*.
 - **Resolução:** Radical `pus-` + VT `e` = **Tema Verbal** (`puse-`).
 - **Gabarito:** **Letra C** (tema).
 
-## Questão 04: CESPE/CEBRASPE - SEDUC-AM (*zombavam*)
+### Questão 04: CESPE/CEBRASPE - SEDUC-AM (*zombavam*)
 
 - **Enunciado:** Julgamento da afirmação de que em *zombavam* identifica-se o morfema modo-temporal *-vam*.
 - **Resolução:** O morfema modo-temporal é apenas `-va-`. O `-m` é morfema número-pessoal. A fusão em *-vam* torna a assertiva falsa.
@@ -504,113 +494,105 @@ Na análise do item do CESPE/CEBRASPE sobre *zombavam*:
 
 ---
 
----
-
 ## Memorização inteligente
 
-## Macete do Infinitivo para Isolar a Vogal Temática
+### Macete do Infinitivo para Isolar a Vogal Temática
 
 - **Regra:** Nunca tente adivinhar a vogal temática diretamente na forma flexionada. Transporte o verbo imediatamente para o Infinitivo Impessoal e observe a vogal que precede o `-r` (`006`, `007`, `009` ).
 
-## Marcadores Mnemônicos Temporais
+### Marcadores Mnemônicos Temporais
 
 - **Regra:** Utilize as palavras de apoio para identificar o tempo verbal em segundos: "Hoje" (Pres. Ind.), "Ontem" (Pret. Perf. Ind.), "Antigamente" (Pret. Imperf. Ind.), "Amanhã" (Fut. Pres. Ind.), "Que" (Pres. Subj.), "Se" (Pret. Imperf. Subj.), "Quando" (Fut. Subj.) (`007`, `008`, `009` ).
 
-## Regra da Desinência Comum vs. Desinência Particular
+### Regra da Desinência Comum vs. Desinência Particular
 
 - **Regra:** A DMT é a desinência **comum** que se repete ao longo das pessoas do mesmo tempo ("muleta do tempo"). A DNP é a desinência **particular** que varia conforme a pessoa muda (`006`, `007`, `009` ).
 
-## A DNP `-is` como Âncora de Salvação do "Vós"
+### A DNP `-is` como Âncora de Salvação do "Vós"
 
 - **Regra:** Diante de formas complexas da 2ª pessoa do plural, isole o sufixo `-is` (ou `-des`). Ele é a marca inequívoca de *vós* (`007` ).
 
-## Macete do "PARA" no Infinitivo Pessoal
+### Macete do "PARA" no Infinitivo Pessoal
 
 - **Regra:** Para flexionar o Infinitivo Pessoal sem confundir com o Futuro do Subjuntivo, anteceda o pronome com a preposição "PARA" (*para nós dedicarmos*) (`010` ).
 
 ---
 
----
-
 ## Erros comuns e pegadinhas
 
-## O Mito da "4ª Conjugação" no Verbo Pôr
+### O Mito da "4ª Conjugação" no Verbo Pôr
 
 - **Erro Comum:** Classificar o verbo *pôr* em uma pretensa "4ª conjugação" por terminar em `-or`.
 - **Realidade:** A Língua Portuguesa só possui 3 conjugações. O verbo *pôr* descende do latim *ponere* / arcaico *poer*, integrando legitimamente a **2ª conjugação** (`006` ).
 
-## Ausência de DMT no Presente do Indicativo
+### Ausência de DMT no Presente do Indicativo
 
 - **Pegadinha:** Afirmar que a vogal de formas como *falas* ou *contamos* seria uma DMT.
 - **Realidade:** No Presente do Indicativo **não existe DMT** ($\text{DMT} = \emptyset$). A vogal visível é a Vogal Temática (`006`, `009` ).
 
-## A Armadilha da Troca Vocálica no Presente do Subjuntivo
+### A Armadilha da Troca Vocálica no Presente do Subjuntivo
 
 - **Pegadinha:** Tratar a vogal `e` em *amem* ou a vogal `a` em *possam* como vogais temáticas.
 - **Realidade:** No Presente do Subjuntivo, as vogais temáticas de origem desaparecem ($\text{VT} = \emptyset$) e a vogal que surge é a **DMT** do modo subjuntivo (`007`, `008`, `010` ).
 
-## Divergência Gramatical no Pretérito Imperfeito (2ª/3ª Conjugações)
+### Divergência Gramatical no Pretérito Imperfeito (2ª/3ª Conjugações)
 
 - **Tensão Doutrinária:** Gramáticos tradicionais separam `i` (VT) e `a` (DMT). Evanildo Bechara trata `-ia-`/`-ie-` como DMT integral.
 - **Orientação:** Para concursos (FGV, Cebraspe, FCC, FUNRIO), adote o padrão Bechara: $\text{VT} = \emptyset$ e $\text{DMT} = \text{-ia- / -ie-}$ (`007`, `008` ).
 
-## Imprecisão Tradicional da Banca FUNDATEC
+### Imprecisão Tradicional da Banca FUNDATEC
 
 - **Alerta:** A banca FUNDATEC aceita a formulação escolar tradicional de que a terminação `-ar` em bloco é uma "desinência de infinitivo". Não anule mentalmente a opção da banca por rigor científico modernista (`010` ).
 
-## Fusão Indevida de DMT e DNP em Provas do CESPE
+### Fusão Indevida de DMT e DNP em Provas do CESPE
 
 - **Pegadinha:** O CESPE costuma pegar desinências contíguas (como `-vam` em *zombavam*) e rotular todo o bloco como "morfema modo-temporal".
 - **Realidade:** Separe rigorosamente a DMT (`-va-`) da DNP final (`-m`) (`010` ).
 
-## Homonímia da Terminação *-aram* Descontextualizada
+### Homonímia da Terminação *-aram* Descontextualizada
 
 - **Pegadinha:** Afirmar categoricamente que uma forma isolada em *-aram* (como *puxaram*) pertence com exclusividade ao Pretérito Perfeito.
 - **Realidade:** Sem contexto, ela pode pertencer tanto ao Pretérito Perfeito quanto ao Pretérito Mais-Que-Perfeito (`010` ).
 
 ---
 
----
-
 ## Glossário operacional
 
-## Radical Verbal
+### Radical Verbal
 
 Morfema lexical invariável que serve de base semântica ao verbo, contendo o núcleo irredutível de significado da família vocabular. Obtido pela remoção da VT e da terminação `-r` no infinitivo (*fal-*, *vend-*, *part-*).
 
-## Vogal Temática Verbal (VT)
+### Vogal Temática Verbal (VT)
 
 Morfema gramatical que se agrega ao radical para constituir o tema e indicar a qual das três conjugações o verbo pertence (`A` para 1ª, `E` para 2ª, `I` para 3ª).
 
-## Tema Verbal
+### Tema Verbal
 
 Unidade morfológica constituída pela união do Radical com a Vogal Temática ($\text{Tema} = \text{Radical} + \text{VT}$), que constitui a base preparada para receber os afixos flexionais.
 
-## Desinência Modo-Temporal (DMT)
+### Desinência Modo-Temporal (DMT)
 
 Sufixo flexional encarregado de situar a ação verbal no tempo (presente, pretérito, futuro) e no modo (indicativo, subjuntivo, imperativo). É a marca mórfica comum que se repete ao longo das pessoas no mesmo tempo.
 
-## Desinência Número-Pessoal (DNP)
+### Desinência Número-Pessoal (DNP)
 
 Sufixo flexional localizado na terminação da forma verbal que indica a pessoa gramatical (1ª, 2ª ou 3ª) e o número (singular ou plural) do sujeito.
 
-## Alomorfe (Alomorfia Verbal)
+### Alomorfe (Alomorfia Verbal)
 
 Variante mórfica ou fonética de um morfema que ocorre em determinados contextos de flexão sem provocar alteração na sua função gramatical primária (ex.: `ve` como alomorfe da DMT `va`; `e` como alomorfe da VT `i`).
 
-## Morfema Zero ($\emptyset$)
+### Morfema Zero ($\emptyset$)
 
 Ausência estrutural de um sufixo flexional em uma posição paradigmática onde outros membros da mesma série exibem marca explícita (ex.: ausência de DMT no Presente do Indicativo; ausência de DNP na 3ª pessoa do singular).
 
-## Infinitivo Pessoal
+### Infinitivo Pessoal
 
 Forma nominal do verbo dotada de flexão de número e pessoa (composta por Radical + VT + DMT de infinitivo `-r-` + DNPs), empregada habitualmente em orações reduzidas regidas por preposição.
 
-## Homonímia Temporal Descontextualizada
+### Homonímia Temporal Descontextualizada
 
 Fenômeno morfológico pelo qual duas formas verbais pertencentes a tempos ou modos distintos apresentam exatamente a mesma grafia e estrutura fonética quando analisadas isoladamente de um contexto textual (*puxaram* no Pretérito Perfeito vs. Pretérito Mais-Que-Perfeito).
-
----
 
 ---
 
@@ -620,16 +602,16 @@ Ao concluir o estudo desta unidade (Desinências Verbais)**, o estudante consoli
 
 1. **Domínio da Estrutura Mórfica:** Capacidade de decompor instantaneamente qualquer forma verbal nos quatro constituintes fundamentais ($\text{Radical} + \text{VT} + \text{DMT} + \text{DNP}$), reconhecendo que a fórmula do tema verbal é estritamente $\text{Tema} = \text{Radical} + \text{VT}$.
 2. **Aplicação do Método dos 3 Passos:**
- - Extrair a VT e o Radical via **Infinitivo Impessoal**.
- - Reconhecer a DMT identificando o elemento **comum** que impregna o tempo verbal com auxílio de gatilhos psicológicos ("hoje", "antigamente", "amanhã", "que", "se").
- - Isolar a DNP como o elemento **particular** que individualiza a pessoa gramatical.
+  - Extrair a VT e o Radical via **Infinitivo Impessoal**.
+  - Reconhecer a DMT identificando o elemento **comum** que impregna o tempo verbal com auxílio de gatilhos psicológicos ("hoje", "antigamente", "amanhã", "que", "se").
+  - Isolar a DNP como o elemento **particular** que individualiza a pessoa gramatical.
 3. **Mapeamento de Nulidades e Trocas Vocálicas:**
- - Reconhecer que o **Presente do Indicativo não possui DMT** ($\text{DMT} = \emptyset$).
- - Reconhecer que no **Presente do Subjuntivo a VT desaparece** ($\text{VT} = \emptyset$) e dá lugar à DMT (`-e-` na 1ª conj.; `-a-` na 2ª e 3ª conj.).
- - Mapear a ocorrência de DNP Zero ($\emptyset$) na 1ª e 3ª pessoas do singular dos pretéritos e do subjuntivo.
+  - Reconhecer que o **Presente do Indicativo não possui DMT** ($\text{DMT} = \emptyset$).
+  - Reconhecer que no **Presente do Subjuntivo a VT desaparece** ($\text{VT} = \emptyset$) e dá lugar à DMT (`-e-` na 1ª conj.; `-a-` na 2ª e 3ª conj.).
+  - Mapear a ocorrência de DNP Zero ($\emptyset$) na 1ª e 3ª pessoas do singular dos pretéritos e do subjuntivo.
 4. **Alinhamento com Doutrinas de Prova:**
- - Adotar o padrão de **Evanildo Bechara** para o Pretérito Imperfeito das 2ª e 3ª conjugações ($\text{DMT} = \text{-ia- / -ie-}$).
- - Distinguir o Infinitivo Pessoal (*para dedicarmos*) do Futuro do Subjuntivo (*se dedicarmos*).
- - Navegar com segurança entre as idiossincrasias das bancas: a tolerância da FUNDATEC no bloco `ar`, a homonímia explorada pela Quadrix em `-aram`, o rigor do Tema na FGV (*pusera*) e a proibição absoluta de aglutinar DMT e DNP no CESPE (*zombavam*).
+  - Adotar o padrão de **Evanildo Bechara** para o Pretérito Imperfeito das 2ª e 3ª conjugações ($\text{DMT} = \text{-ia- / -ie-}$).
+  - Distinguir o Infinitivo Pessoal (*para dedicarmos*) do Futuro do Subjuntivo (*se dedicarmos*).
+  - Navegar com segurança entre as idiossincrasias das bancas: a tolerância da FUNDATEC no bloco `ar`, a homonímia explorada pela Quadrix em `-aram`, o rigor do Tema na FGV (*pusera*) e a proibição absoluta de aglutinar DMT e DNP no CESPE (*zombavam*).
 
 ---
