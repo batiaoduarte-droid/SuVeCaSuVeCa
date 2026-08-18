@@ -11,6 +11,9 @@ import { QuestionBlock, type QuestionBlockModel } from './QuestionBlock';
 import { PedagogicalCallout } from './PedagogicalCallout';
 import { ActiveRecallChecklist } from './ActiveRecallChecklist';
 import { GlossaryGrid, type GlossaryItem } from './GlossaryGrid';
+import { SuvecaConnectionViewer } from './SuvecaConnectionViewer';
+import { CanonicalRulesViewer } from './CanonicalRulesViewer';
+import { ExamTrapsViewer } from './ExamTrapsViewer';
 
 interface MarkdownContentProps {
   content: string;
@@ -218,7 +221,7 @@ const MarkdownRenderer: React.FC<{ content: string }> = ({ content }) => {
           if (text.includes('Objetivo de aprendizagem') || text.includes('Objetivo:')) {
             return <PedagogicalCallout type="objective">{children}</PedagogicalCallout>;
           }
-          if (text.includes('SuVeCA') || text.includes('Limite do Método')) {
+          if (text.includes('SuVeCA') || text.includes('Limite do Método') || text.includes('Limite do método')) {
             return <PedagogicalCallout type="method_limit">{children}</PedagogicalCallout>;
           }
           if (text.includes('Insight') || text.includes('Dica')) {
@@ -246,7 +249,22 @@ const MarkdownRenderer: React.FC<{ content: string }> = ({ content }) => {
 const renderSectionBody = (section: DocumentSection) => {
   const titleLower = section.title.toLowerCase();
 
-  // 1. Síntese para recuperação ativa / Checklist
+  // 1. Conexão com o método SuVeCA
+  if (titleLower.includes('suveca') || titleLower.includes('conexão com o método')) {
+    return <SuvecaConnectionViewer content={section.body} />;
+  }
+
+  // 2. Regras decisivas
+  if (titleLower.includes('regras decisivas')) {
+    return <CanonicalRulesViewer content={section.body} />;
+  }
+
+  // 3. Erros comuns e pegadinhas
+  if (titleLower.includes('erros comuns') || titleLower.includes('pegadinhas')) {
+    return <ExamTrapsViewer content={section.body} />;
+  }
+
+  // 4. Síntese para recuperação ativa / Checklist
   if (titleLower.includes('recuperação ativa') || titleLower.includes('síntese')) {
     const lines = section.body.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
     const checklistItems = lines
@@ -257,15 +275,19 @@ const renderSectionBody = (section: DocumentSection) => {
     }
   }
 
-  // 2. Glossário Operacional / Conceitos
-  if (titleLower.includes('glossário') || (titleLower.includes('conceitos') && !section.body.includes('```'))) {
+  // 5. Glossário Operacional / Conceitos
+  if (titleLower.includes('glossário') || titleLower.includes('conceitos')) {
     const lines = section.body.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
     const glossaryItems: GlossaryItem[] = [];
     for (const line of lines) {
-      const match = line.match(/^[-*]\s+\*\*([^*:]+):\*\*\s*(.+)/);
+      const matchBold = line.match(/^[-*]\s+\*\*([^*:]+):\*\*\s*(.+)/);
+      const matchDash = line.match(/^[-*]\s*(?:—|–|-)\s*([^:]+):\s*(.+)/);
+      const matchSimple = line.match(/^[-*]\s*([A-ZÀ-Ú][^:]{2,50}):\s*(.+)/);
+      
+      const match = matchBold || matchDash || matchSimple;
       if (match) {
         glossaryItems.push({
-          term: match[1].trim(),
+          term: match[1].replace(/^[—–-]\s*/, '').trim(),
           definition: match[2].trim(),
         });
       }
@@ -275,6 +297,7 @@ const renderSectionBody = (section: DocumentSection) => {
     }
   }
 
+  // 6. Demais seções (Explicação, Roteiros, Pré-requisitos, Contrastes, etc.)
   return <MarkdownRenderer content={section.body} />;
 };
 
