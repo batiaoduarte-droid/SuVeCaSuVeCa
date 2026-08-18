@@ -67,6 +67,7 @@ const readJsonl = (file) => {
 const sha256 = (value) => createHash('sha256').update(value).digest('hex');
 const sha256File = (file) => sha256(fs.readFileSync(file));
 const stableJson = (value) => `${JSON.stringify(value, null, 2)}\n`;
+const compactJson = (value) => `${JSON.stringify(value)}\n`;
 const write = (file, content) => {
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, content, 'utf8');
@@ -1423,7 +1424,9 @@ const generatedFiles = [
   [path.join(ROOT, 'functions', 'src', 'officialQuestions.ts'), simuladoFunctionsSource],
   [path.join(ROOT, 'public', 'knowledge', 'official-questions.raw.json'), stableJson(editorialQuestionRaw)],
   [path.join(ROOT, 'public', 'knowledge', 'official-questions.normalized.json'), stableJson(editorialQuestionNormalized)],
-  [path.join(ROOT, 'public', 'knowledge', 'official-question-index.json'), stableJson(editorialQuestionIndex)],
+  // Keep the query index below the AI Studio per-file import ceiling. Raw and
+  // normalized projections are deployed as verified shards.
+  [path.join(ROOT, 'public', 'knowledge', 'official-question-index.json'), compactJson(editorialQuestionIndex)],
   [path.join(ROOT, 'public', 'knowledge', 'official-question-summary.json'), stableJson(editorialQuestionSummary)],
   [path.join(ROOT, 'public', 'knowledge', 'editorial-question-quality.json'), stableJson(editorialQuestionQuality)],
   [path.join(PUBLIC_ROOT, 'suveca-method.json'), stableJson({ ...publishedSuvecaMethod, buildId })],
