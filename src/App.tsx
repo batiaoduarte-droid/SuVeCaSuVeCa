@@ -36,6 +36,9 @@ const ModuleViewer = lazy(() =>
 const SuvecaAnalyzer = lazy(() =>
   import('./components/SuvecaAnalyzer').then((module) => ({ default: module.SuvecaAnalyzer }))
 );
+const PBLDashboard = lazy(() =>
+  import('./components/pbl/PBLDashboard').then((module) => ({ default: module.PBLDashboard }))
+);
 const SimuladoEngine = lazy(() =>
   import('./components/SimuladoEngine').then((module) => ({ default: module.SimuladoEngine }))
 );
@@ -467,6 +470,15 @@ export default function App() {
                   onToggleFocusMode={() => setIsImmersiveFocus((current) => !current)}
                 />
               </div>
+            )}
+
+            {activeTab === 'pbl' && (
+              <PBLDashboard
+                userId={user?.uid || 'guest'}
+                onAddErrorToNotebook={handleAddErrorDirect}
+                onRecordAttempt={recordAnswer}
+                onCompleteSession={() => recordStudyActivity()}
+              />
             )}
 
             {activeTab === 'analyzer' && (

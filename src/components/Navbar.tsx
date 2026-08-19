@@ -39,7 +39,8 @@ export type TabType =
   | 'profile'
   | 'duel'
   | 'questions'
-  | 'tutor';
+  | 'tutor'
+  | 'pbl';
 
 interface NavbarProps {
   activeTab: TabType;
@@ -85,6 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const primaryTabs: NavItem[] = [
     { id: 'modules', label: 'Apostila', icon: BookOpen },
     { id: 'analyzer', label: 'Analisador', icon: Cpu, isIa: true },
+    { id: 'pbl', label: 'Aprender por Problemas (PBL)', icon: Sparkles, isIa: true },
     { id: 'simulado', label: 'Simulado', icon: GraduationCap },
   ];
 
@@ -109,7 +111,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   ];
 
   const allTabs: NavItem[] = [...primaryTabs, ...secondaryTabs];
-  const desktopPrimaryIds = new Set<TabType>(['modules', 'analyzer', 'simulado', 'errors', 'flashcards', 'agenda']);
+  const desktopPrimaryIds = new Set<TabType>(['modules', 'pbl', 'analyzer', 'simulado', 'errors', 'flashcards', 'agenda']);
   const desktopPrimaryTabs = allTabs.filter((item) => desktopPrimaryIds.has(item.id));
   const desktopMoreTabs = allTabs.filter((item) => !desktopPrimaryIds.has(item.id));
   const isDesktopMoreActive = desktopMoreTabs.some((item) => item.id === activeTab);
