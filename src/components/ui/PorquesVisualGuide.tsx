@@ -75,10 +75,10 @@ export const PorquesVisualGuide: React.FC = () => {
             <HelpCircle className="h-5 w-5" />
           </span>
           <div>
-            <h3 className="m-0 text-base font-bold tracking-tight text-white">
+            <h3 className="m-0 text-base sm:text-lg font-black tracking-tight text-white !text-white">
               Guia Visual Decisório: Os 4 Porquês
             </h3>
-            <p className="m-0 text-xs text-teal-100/80">
+            <p className="m-0 text-xs text-teal-100 font-medium !text-teal-100">
               Critérios morfológicos, testes de substituição e macetes de fixação rápida
             </p>
           </div>

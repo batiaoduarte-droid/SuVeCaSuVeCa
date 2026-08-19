@@ -10,10 +10,10 @@ export const CraseVisualGuide: React.FC = () => {
             <Compass className="h-5 w-5" />
           </span>
           <div>
-            <h3 className="m-0 text-base font-bold tracking-tight text-white">
+            <h3 className="m-0 text-base sm:text-lg font-black tracking-tight text-white !text-white">
               Guia Decisório da Crase no Método SuVeCA
             </h3>
-            <p className="m-0 text-xs text-teal-100/80">
+            <p className="m-0 text-xs text-teal-100 font-medium !text-teal-100">
               Mapeamento de Regência do Verbo ($Ve$) para o Complemento ($C$) com fusão $A + A$
             </p>
           </div>

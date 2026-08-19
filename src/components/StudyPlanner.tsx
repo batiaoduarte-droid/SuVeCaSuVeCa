@@ -15,6 +15,7 @@ import {
 import { ProgressBar } from './ui/ProgressBar';
 import { MODULES_DATA } from '../data/modulesData';
 import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
+import { StudyBadge, StudySurface } from './study-visuals';
 
 const CHECKLIST_STORAGE_KEY = `suveca_checklist_editorial_${PEDAGOGICAL_KNOWLEDGE_BUILD.buildId}`;
 const INITIAL_CHECKLIST: ChecklistItem[] = MODULES_DATA

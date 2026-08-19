@@ -14,6 +14,7 @@ import { db } from '../lib/firebase';
 import { ProgressBar } from './ui/ProgressBar';
 import { EDITORIAL_FLASHCARDS } from '../data/editorialFlashcards.generated';
 import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
+import { StudyBadge, StudySurface } from './study-visuals';
 
 const FLASHCARDS_STORAGE_PREFIX = 'suveca_flashcards';
 const AGENDA_STORAGE_PREFIX = 'suveca_daily_review_agenda';
@@ -496,11 +497,15 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
           {dueCards.length === 0 ? (
             <p className="text-sm text-slate-500 py-7 text-center">Nenhum card vencido agora. Continue registrando seus erros para alimentar a revisão.</p>
           ) : (
-            <ul className="mt-3 space-y-2">
+            <ul className="mt-3 space-y-2.5">
               {dueCards.slice(0, 4).map((card) => (
-                <li key={card.id} className="rounded-xl bg-violet-50/60 border border-violet-100 p-3">
-                  <p className="text-xs font-bold text-violet-950 truncate">{card.topic}</p>
-                  <p className="text-xs text-slate-600 mt-1 line-clamp-2">{card.front}</p>
+                <li key={card.id} className="rounded-xl bg-slate-50 border border-slate-200 p-3.5 space-y-1">
+                  <div className="flex items-center justify-between">
+                    <StudyBadge tone="concept">
+                      {card.topic}
+                    </StudyBadge>
+                  </div>
+                  <p className="text-xs text-slate-700 font-medium line-clamp-2">{card.front}</p>
                 </li>
               ))}
             </ul>
@@ -520,12 +525,12 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
           {pendingErrors.length === 0 ? (
             <p className="text-sm text-slate-500 py-7 text-center">Seu Caderno está em dia. Registre novas regras decisivas quando errar.</p>
           ) : (
-            <ul className="mt-3 space-y-2">
+            <ul className="mt-3 space-y-2.5">
               {pendingErrors.slice(0, 4).map((error) => (
-                <li key={error.id} className="rounded-xl bg-amber-50/60 border border-amber-100 p-3 flex gap-3">
-                  <span className="shrink-0 text-[10px] font-black text-amber-800 bg-white border border-amber-200 rounded-md px-2 py-1 h-fit">
+                <li key={error.id} className="rounded-xl bg-slate-50 border border-slate-200 p-3.5 flex gap-3 items-start">
+                  <StudyBadge tone="trap">
                     {statusLabel(error.status)}
-                  </span>
+                  </StudyBadge>
                   <div className="min-w-0">
                     <p className="text-xs font-bold text-slate-900 truncate">{error.conteudo}</p>
                     <p className="text-xs text-slate-600 mt-1 line-clamp-2">{error.regraDecisiva}</p>

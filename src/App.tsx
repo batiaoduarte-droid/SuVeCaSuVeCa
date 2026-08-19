@@ -8,6 +8,8 @@ import { DailyMotivationCard } from './components/DailyMotivationCard';
 import { DailyReviewReminder } from './components/DailyReviewReminder';
 import { ContinueLearningCard } from './components/ContinueLearningCard';
 import { fetchOfficialQuestionSample, officialDetailToQuizQuestion } from './lib/officialQuestions';
+import { MobileFAB } from './components/ui/MobileFAB';
+import { OnboardingTour, hasCompletedOnboarding } from './components/OnboardingTour';
 import { useLearningMetrics } from './hooks/useLearningMetrics';
 import { useAchievements } from './hooks/useAchievements';
 import {
@@ -111,6 +113,7 @@ export default function App() {
   const [tutorContext, setTutorContext] = useState<string>('');
   const [isImmersiveFocus, setIsImmersiveFocus] = useState(false);
   const [officialSimuladoQuestions, setOfficialSimuladoQuestions] = useState<QuizQuestion[] | null>(null);
+  const [isOnboardingOpen, setIsOnboardingOpen] = useState<boolean>(() => !hasCompletedOnboarding());
 
   // Firebase Auth State
   const [user, setUser] = useState<User | null>(null);
@@ -558,6 +561,10 @@ export default function App() {
                 practiceCorrect={corePractice.correct}
                 userName={user?.displayName}
                 onOpenSimulado={() => setActiveTab('simulado')}
+                onOpenModule={(modId) => {
+                  setSelectedModuleId(modId);
+                  setActiveTab('modules');
+                }}
               />
             )}
 
@@ -574,12 +581,26 @@ export default function App() {
                 visitedModulesCount={metrics.visitedModuleIds.length}
                 practiceCorrectCount={corePractice.correct}
                 onNavigateToTab={(tab) => setActiveTab(tab as TabType)}
+                onOpenTour={() => setIsOnboardingOpen(true)}
               />
             )}
             </Suspense>
           </ErrorBoundary>
         </div>
       </main>
+
+      {/* Floating Action Button (FAB) - Mobile Only */}
+      {!isImmersiveFocus && (
+        <MobileFAB
+          onOpenAnalisador={() => setActiveTab('analyzer')}
+          onOpenTutor={() => {
+            setTutorContext('');
+            setIsTutorOpen(true);
+          }}
+          onOpenCadernoErros={() => setActiveTab('errors')}
+          errorCount={cadernoErrors.filter((e) => e.status !== 'dominado').length}
+        />
+      )}
 
       {/* Clean Editorial Footer */}
       {!isImmersiveFocus && <footer className="border-t border-[var(--border)] bg-[var(--surface)] py-6 pb-[calc(5.5rem+env(safe-area-inset-bottom,0px))] lg:pb-6 px-4 sm:px-8 text-xs text-[var(--text-muted)] text-center sm:flex sm:items-center sm:justify-between gap-4 mt-12">
@@ -590,6 +611,19 @@ export default function App() {
           Plataforma de estudos com desmembração sintática, apostilas e repetição espaçada.
         </div>
       </footer>}
+
+      {/* Onboarding Guided Tour Modal */}
+      <OnboardingTour
+        isOpen={isOnboardingOpen}
+        onClose={() => setIsOnboardingOpen(false)}
+        onNavigateToTab={(tab) => {
+          if (tab === 'tutor') {
+            setIsTutorOpen(true);
+          } else {
+            setActiveTab(tab as TabType);
+          }
+        }}
+      />
 
       {/* Modals & Drawers */}
       {isSearchOpen && (

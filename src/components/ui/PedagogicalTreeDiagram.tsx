@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Network, Copy, Check, Maximize2, LayoutGrid, ListTree, Code2 } from 'lucide-react';
+import { Network, Copy, Check, Maximize2, LayoutGrid, ListTree, Code2, Table } from 'lucide-react';
 import { ModalShell } from './ModalShell';
+import { InlineRichText } from '../pedagogical/blocks/InlineRichText';
 
 interface TreeNodeItem {
   label: string;
@@ -13,18 +14,68 @@ interface TreeCategory {
   items: TreeNodeItem[];
 }
 
+interface ParsedTable {
+  headers: string[];
+  rows: string[][];
+}
+
 interface PedagogicalTreeDiagramProps {
   source: string;
 }
 
 const cleanDiagramText = (str: string): string => {
   return str
-    .replace(/[│┌┐└┘─▼▲►◄═├└┬┴┼|]/g, ' ')
+    .replace(/[│┌┐└┘─▼▲►◄═├└┬┴┼]/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
 };
 
-const parseTreeDiagram = (raw: string): { title: string; categories: TreeCategory[] } => {
+const parseMarkdownTable = (raw: string): ParsedTable | null => {
+  const lines = raw
+    .split(/\r?\n/)
+    .map((l) => l.trim())
+    .filter((l) => l.startsWith('|') && l.endsWith('|'));
+
+  if (lines.length < 2) return null;
+
+  // Header line
+  const headerCells = lines[0]
+    .split('|')
+    .slice(1, -1)
+    .map((c) => c.trim());
+
+  // Check if second line is separator
+  const isSeparator = /^\|(?:\s*[-:]+\s*\|)+$/.test(lines[1]);
+  const dataStart = isSeparator ? 2 : 1;
+
+  const rows: string[][] = [];
+  for (let i = dataStart; i < lines.length; i++) {
+    const cells = lines[i]
+      .split('|')
+      .slice(1, -1)
+      .map((c) => c.trim());
+    if (cells.some(Boolean)) {
+      rows.push(cells);
+    }
+  }
+
+  if (headerCells.length > 0 && rows.length > 0) {
+    return { headers: headerCells, rows };
+  }
+  return null;
+};
+
+const parseTreeDiagram = (raw: string): { title: string; categories: TreeCategory[]; table: ParsedTable | null } => {
+  // Check if it is a markdown table first
+  const parsedTable = parseMarkdownTable(raw);
+  if (parsedTable) {
+    return {
+      title: 'Quadro Estruturado da Unidade',
+      categories: [],
+      table: parsedTable,
+    };
+  }
+
   // Se contiver delimitadores de ramificação ou quebras
   const rawNormalized = raw.replace(/([┌└├]\s*──?|[│|]\s*|\s*──[┤├]\s*)/g, '\n$1');
   const rawLines = rawNormalized
@@ -65,7 +116,6 @@ const parseTreeDiagram = (raw: string): { title: string; categories: TreeCategor
       };
 
       if (rest) {
-        // Divide itens separados por vírgula ou ponto-e-vírgula
         const subItems = rest.split(/[,;/]\s+/).filter(Boolean);
         if (subItems.length > 0) {
           for (const itemStr of subItems) {
@@ -130,20 +180,22 @@ const parseTreeDiagram = (raw: string): { title: string; categories: TreeCategor
     });
   }
 
-  // Sanitiza o título final para nunca ser um parágrafo enorme
   if (title.length > 60) {
     title = 'Esquema Conceitual Estruturado';
   }
 
-  return { title, categories };
+  return { title, categories, table: null };
 };
 
 export const PedagogicalTreeDiagram: React.FC<PedagogicalTreeDiagramProps> = ({ source }) => {
-  const [viewMode, setViewMode] = useState<'cards' | 'tree' | 'raw'>('cards');
+  const [viewMode, setViewMode] = useState<'cards' | 'tree' | 'table' | 'raw'>('cards');
   const [copied, setCopied] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
-  const { title, categories } = parseTreeDiagram(source);
+  const { title, categories, table } = parseTreeDiagram(source);
+
+  // If parsed data is a table, default to table mode
+  const activeMode = table && viewMode === 'cards' ? 'table' : viewMode;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(source);
@@ -152,7 +204,7 @@ export const PedagogicalTreeDiagram: React.FC<PedagogicalTreeDiagramProps> = ({ 
   };
 
   const renderContent = () => {
-    if (viewMode === 'raw') {
+    if (activeMode === 'raw') {
       return (
         <pre className="m-0 overflow-x-auto rounded-xl bg-slate-900 p-4 text-xs font-mono text-emerald-300 leading-relaxed whitespace-pre-wrap">
           {source}
@@ -160,20 +212,58 @@ export const PedagogicalTreeDiagram: React.FC<PedagogicalTreeDiagramProps> = ({ 
       );
     }
 
-    if (viewMode === 'tree') {
+    if (activeMode === 'table') {
+      if (table) {
+        return (
+          <div className="overflow-x-auto rounded-xl border border-teal-100 bg-white shadow-2xs">
+            <table className="w-full text-left text-xs border-collapse">
+              <thead>
+                <tr className="border-b border-teal-200 bg-teal-50/80 text-teal-950 font-black">
+                  {table.headers.map((h, hIdx) => (
+                    <th key={hIdx} className="px-4 py-3 font-black text-teal-950 text-xs sm:text-sm tracking-tight whitespace-nowrap">
+                      <InlineRichText>{h}</InlineRichText>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                {table.rows.map((row, rIdx) => (
+                  <tr
+                    key={rIdx}
+                    className={`transition hover:bg-teal-50/30 ${
+                      rIdx % 2 === 1 ? 'bg-slate-50/60' : 'bg-white'
+                    }`}
+                  >
+                    {row.map((cell, cIdx) => (
+                      <td key={cIdx} className="px-4 py-3 font-medium text-slate-800 leading-relaxed">
+                        <InlineRichText>{cell}</InlineRichText>
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+    }
+
+    if (activeMode === 'tree') {
       return (
         <div className="space-y-4">
           {categories.map((cat, i) => (
-            <div key={i} className="border-l-2 border-teal-500 pl-4">
-              <h4 className="m-0 text-sm font-bold text-teal-950">{cat.title}</h4>
-              <ul className="mt-2 space-y-1.5 pl-2 text-xs text-slate-700">
+            <div key={i} className="border-l-3 border-teal-600 pl-4">
+              <h4 className="m-0 text-sm font-black text-slate-900">{cat.title}</h4>
+              <ul className="mt-2 space-y-2 pl-2 text-xs text-slate-800">
                 {cat.items.map((item, idx) => (
                   <li key={idx} className="flex flex-wrap items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-teal-600 shrink-0" />
-                    <span className="font-medium text-slate-900">{item.label}</span>
+                    <span className="h-2 w-2 rounded-full bg-teal-600 shrink-0" />
+                    <span className="font-bold text-slate-900">
+                      <InlineRichText>{item.label}</InlineRichText>
+                    </span>
                     {item.badge && (
-                      <span className="rounded bg-teal-100 px-1.5 py-0.5 text-[10px] font-semibold text-teal-800">
-                        {item.badge}
+                      <span className="rounded-md bg-teal-100 px-2 py-0.5 text-[11px] font-black text-teal-900 border border-teal-200">
+                        <InlineRichText>{item.badge}</InlineRichText>
                       </span>
                     )}
                   </li>
@@ -190,28 +280,30 @@ export const PedagogicalTreeDiagram: React.FC<PedagogicalTreeDiagramProps> = ({ 
         {categories.map((cat, i) => (
           <div
             key={i}
-            className="overflow-hidden rounded-xl border border-slate-200/80 bg-slate-50/50 transition hover:border-teal-200"
+            className="overflow-hidden rounded-2xl border border-teal-200/90 bg-white shadow-xs transition hover:border-teal-300"
           >
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200/70 bg-white px-4 py-3">
-              <div className="flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-md bg-teal-100 text-xs font-bold text-teal-800">
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-teal-100 bg-teal-50/60 px-4 py-3">
+              <div className="flex items-center gap-2.5">
+                <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-teal-800 text-xs font-black text-white shadow-2xs">
                   {i + 1}
                 </span>
-                <h4 className="m-0 text-sm font-bold text-slate-900">{cat.title}</h4>
+                <h4 className="m-0 text-xs sm:text-sm font-black text-slate-900">{cat.title}</h4>
               </div>
             </div>
 
-            <div className="grid gap-2.5 p-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-3 p-4 sm:grid-cols-2 lg:grid-cols-3">
               {cat.items.map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex flex-col justify-between rounded-lg border border-slate-200/80 bg-white p-3 shadow-2xs hover:border-teal-300 transition"
+                  className="flex flex-col justify-between rounded-xl border border-slate-200/90 bg-slate-50/50 p-3.5 shadow-2xs hover:bg-white hover:border-teal-300 transition"
                 >
-                  <div className="flex items-start justify-between gap-1.5">
-                    <h5 className="m-0 text-xs font-bold text-teal-950 leading-snug">{item.label}</h5>
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
+                      <InlineRichText>{item.label}</InlineRichText>
+                    </div>
                     {item.badge && (
-                      <span className="rounded bg-teal-50 px-1.5 py-0.5 text-[10px] font-semibold text-teal-700 border border-teal-200 shrink-0">
-                        {item.badge}
+                      <span className="rounded-md bg-teal-100 px-2 py-0.5 text-[10px] font-black text-teal-900 border border-teal-300 shrink-0">
+                        <InlineRichText>{item.badge}</InlineRichText>
                       </span>
                     )}
                   </div>
@@ -226,51 +318,68 @@ export const PedagogicalTreeDiagram: React.FC<PedagogicalTreeDiagramProps> = ({ 
 
   return (
     <>
-      <div className="my-6 overflow-hidden rounded-2xl border border-teal-200/80 bg-white shadow-sm transition">
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-teal-100 bg-gradient-to-r from-teal-900 via-teal-800 to-emerald-900 px-5 py-4 text-white">
-          <div className="flex items-center gap-2.5">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-teal-700/60 text-emerald-300 ring-1 ring-white/20">
+      <div className="my-6 overflow-hidden rounded-3xl border border-teal-200/90 bg-white shadow-sm transition">
+        {/* Cabeçalho com contraste blindado contra CSS cascade */}
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-teal-800 bg-gradient-to-r from-teal-950 via-teal-900 to-slate-950 px-5 py-4 text-white">
+          <div className="flex items-center gap-3">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-800/90 text-amber-300 ring-1 ring-white/20 shadow-2xs">
               <Network className="h-5 w-5" />
             </span>
             <div>
-              <h3 className="m-0 text-base font-bold tracking-tight text-white">{title}</h3>
-              <p className="m-0 text-xs text-teal-100/80">
+              <h3 className="m-0 text-base font-black tracking-tight !text-white">{title}</h3>
+              <p className="m-0 text-xs !text-teal-200 font-medium">
                 Esquema sintático, taxonômico e relações estruturadas
               </p>
             </div>
           </div>
 
           <div className="flex items-center gap-2">
-            <div className="flex rounded-lg bg-teal-950/50 p-0.5">
-              <button
-                type="button"
-                onClick={() => setViewMode('cards')}
-                className={`flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium transition cursor-pointer ${
-                  viewMode === 'cards' ? 'bg-teal-700 text-white shadow-xs' : 'text-teal-200 hover:text-white'
-                }`}
-                title="Visualização em Cards"
-              >
-                <LayoutGrid className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Cards</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => setViewMode('tree')}
-                className={`flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium transition cursor-pointer ${
-                  viewMode === 'tree' ? 'bg-teal-700 text-white shadow-xs' : 'text-teal-200 hover:text-white'
-                }`}
-                title="Visualização em Árvore"
-              >
-                <ListTree className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Árvore</span>
-              </button>
+            <div className="flex rounded-xl bg-teal-950/80 p-0.5 border border-teal-800/60">
+              {table ? (
+                <button
+                  type="button"
+                  onClick={() => setViewMode('table')}
+                  className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-bold transition cursor-pointer ${
+                    activeMode === 'table' ? 'bg-teal-700 text-white shadow-xs' : 'text-teal-200 hover:text-white'
+                  }`}
+                  title="Visualização em Tabela"
+                >
+                  <Table className="h-3.5 w-3.5" />
+                  <span className="hidden sm:inline">Tabela</span>
+                </button>
+              ) : (
+                <>
+                  <button
+                    type="button"
+                    onClick={() => setViewMode('cards')}
+                    className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-bold transition cursor-pointer ${
+                      activeMode === 'cards' ? 'bg-teal-700 text-white shadow-xs' : 'text-teal-200 hover:text-white'
+                    }`}
+                    title="Visualização em Cards"
+                  >
+                    <LayoutGrid className="h-3.5 w-3.5" />
+                    <span className="hidden sm:inline">Cards</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setViewMode('tree')}
+                    className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-bold transition cursor-pointer ${
+                      activeMode === 'tree' ? 'bg-teal-700 text-white shadow-xs' : 'text-teal-200 hover:text-white'
+                    }`}
+                    title="Visualização em Árvore"
+                  >
+                    <ListTree className="h-3.5 w-3.5" />
+                    <span className="hidden sm:inline">Árvore</span>
+                  </button>
+                </>
+              )}
               <button
                 type="button"
                 onClick={() => setViewMode('raw')}
-                className={`flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium transition cursor-pointer ${
-                  viewMode === 'raw' ? 'bg-teal-700 text-white shadow-xs' : 'text-teal-200 hover:text-white'
+                className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-bold transition cursor-pointer ${
+                  activeMode === 'raw' ? 'bg-teal-700 text-white shadow-xs' : 'text-teal-200 hover:text-white'
                 }`}
-                title="Visualização em Código"
+                title="Visualização em Texto"
               >
                 <Code2 className="h-3.5 w-3.5" />
                 <span className="hidden sm:inline">Texto</span>
@@ -280,7 +389,7 @@ export const PedagogicalTreeDiagram: React.FC<PedagogicalTreeDiagramProps> = ({ 
             <button
               type="button"
               onClick={handleCopy}
-              className="flex items-center gap-1 rounded-lg border border-teal-400/30 bg-teal-800/40 px-2 py-1.5 text-xs font-medium text-teal-100 transition hover:bg-teal-700/50 hover:text-white cursor-pointer"
+              className="flex items-center gap-1.5 rounded-xl border border-teal-500/30 bg-teal-800/60 px-3 py-1.5 text-xs font-bold text-teal-100 transition hover:bg-teal-700 hover:text-white cursor-pointer shadow-2xs"
               title="Copiar esquema"
             >
               {copied ? <Check className="h-3.5 w-3.5 text-emerald-400" /> : <Copy className="h-3.5 w-3.5" />}
@@ -290,7 +399,7 @@ export const PedagogicalTreeDiagram: React.FC<PedagogicalTreeDiagramProps> = ({ 
             <button
               type="button"
               onClick={() => setIsFullscreen(true)}
-              className="flex items-center gap-1 rounded-lg border border-teal-400/30 bg-teal-800/40 px-2 py-1.5 text-xs font-medium text-teal-100 transition hover:bg-teal-700/50 hover:text-white cursor-pointer"
+              className="flex items-center gap-1 rounded-xl border border-teal-500/30 bg-teal-800/60 p-2 text-xs font-bold text-teal-100 transition hover:bg-teal-700 hover:text-white cursor-pointer shadow-2xs"
               title="Expandir em tela cheia"
             >
               <Maximize2 className="h-3.5 w-3.5" />

@@ -12,10 +12,10 @@ export const QueSeFunctionsVisualGuide: React.FC = () => {
             <Layers className="h-5 w-5" />
           </span>
           <div>
-            <h3 className="m-0 text-base font-bold tracking-tight text-white">
+            <h3 className="m-0 text-base sm:text-lg font-black tracking-tight text-white !text-white">
               Quadro Decisório: Funções do "QUE" e do "SE"
             </h3>
-            <p className="m-0 text-xs text-teal-100/80">
+            <p className="m-0 text-xs text-teal-100 font-medium !text-teal-100">
               Testes diagnósticos rápidos para identificação morfológica e sintática em provas
             </p>
           </div>

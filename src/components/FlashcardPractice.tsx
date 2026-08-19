@@ -19,6 +19,12 @@ import { deriveErrorReviewStatus, scheduleFlashcard } from '../lib/spacedRepetit
 import { authenticatedFetch } from '../lib/authenticatedFetch';
 import { EDITORIAL_FLASHCARDS } from '../data/editorialFlashcards.generated';
 import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
+import {
+  GoldenRuleCard,
+  StudyBadge,
+  StudyCallout,
+  StudySurface,
+} from './study-visuals';
 
 const FLASHCARDS_STORAGE_PREFIX = 'suveca_flashcards';
 const CURRICULUM_BUILD_ID = PEDAGOGICAL_KNOWLEDGE_BUILD.buildId;
@@ -639,18 +645,18 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
           </p>
         </div>
       ) : (
-        <section className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-5 tab-content-enter">
+        <section className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-5 tab-content-enter select-text">
           <div className="flex items-center justify-between gap-3 border-b border-slate-100 pb-3">
-            <span className="text-xs font-bold text-violet-800 bg-violet-50 border border-violet-200 rounded-full px-3 py-1">
+            <StudyBadge tone="concept">
               {activeCard.topic}
-            </span>
-            <span className="text-[11px] text-slate-500">
-              {activeCard.correctCount} domínio(s) · {activeCard.incorrectCount} revisão(ões)
+            </StudyBadge>
+            <span className="text-xs text-slate-500 font-medium">
+              {activeCard.correctCount} acerto(s) · {activeCard.incorrectCount} revisão(ões)
             </span>
           </div>
 
           <div className="min-h-40 flex flex-col justify-center rounded-2xl bg-slate-50 border border-slate-200 p-5 sm:p-7">
-            <span className="text-xs font-bold uppercase tracking-wide text-slate-500 mb-3">Pergunta</span>
+            <span className="text-[10px] font-black uppercase tracking-wider text-slate-500 mb-3">Pergunta / Desafio Sintático</span>
             <p className="text-base sm:text-lg font-bold text-slate-900 leading-relaxed">{toLearnerFacingContent(activeCard.front)}</p>
             {activeCard.hint && !isAnswerVisible && (
               <div className="mt-4">
@@ -659,18 +665,16 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
                     type="button"
                     onClick={() => setIsHintVisible(true)}
                     aria-expanded="false"
-                    className="inline-flex min-h-[44px] items-center gap-2 rounded-xl border border-violet-200 bg-white px-3 py-2 text-xs font-bold text-violet-800 transition hover:bg-violet-50"
+                    className="inline-flex min-h-[44px] items-center gap-2 rounded-xl border border-teal-200 bg-white px-3.5 py-2 text-xs font-bold text-teal-800 transition hover:bg-teal-50"
                   >
-                    <Lightbulb className="h-4 w-4" aria-hidden="true" />
+                    <Lightbulb className="h-4 w-4 text-amber-500" aria-hidden="true" />
                     Ver dica
                   </button>
                 ) : (
-                  <div className="rounded-xl border border-violet-200 bg-violet-50 px-4 py-3 text-xs text-violet-950" role="note">
-                    <strong className="mb-1 flex items-center gap-2 text-violet-900">
-                      <Lightbulb className="h-4 w-4" aria-hidden="true" /> Dica
-                    </strong>
-                    <p>{toLearnerFacingContent(activeCard.hint)}</p>
-                  </div>
+                  <StudyCallout tone="example">
+                    <strong className="block mb-1 font-bold">Dica da Regra:</strong>
+                    {toLearnerFacingContent(activeCard.hint)}
+                  </StudyCallout>
                 )}
               </div>
             )}
@@ -682,10 +686,14 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
             </button>
           ) : (
             <>
-              <div className="rounded-2xl bg-emerald-50 border border-emerald-200 p-5 tab-content-enter">
-                <span className="text-xs font-bold uppercase tracking-wide text-emerald-800 block mb-2">Resposta</span>
-                <p className="text-sm text-emerald-950 leading-relaxed font-medium">{toLearnerFacingContent(activeCard.back)}</p>
-              </div>
+              <GoldenRuleCard
+                rule={{
+                  entityId: `card-${activeCard.id}`,
+                  title: 'Resposta / Regra Gramatical',
+                  statement: toLearnerFacingContent(activeCard.back),
+                  blocks: [],
+                }}
+              />
 
               {activeCard.explanation && (
                 <div className="space-y-3">
@@ -701,13 +709,10 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
                     {isExplanationVisible ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                   </button>
                   {isExplanationVisible && (
-                    <div
-                      id={`flashcard-explanation-${activeCard.id}`}
-                      className="rounded-2xl border border-teal-200 bg-teal-50/60 p-5 text-sm leading-relaxed text-slate-800 tab-content-enter"
-                    >
-                      <strong className="mb-2 block text-teal-950">Por que isso acontece?</strong>
+                    <StudyCallout tone="rule">
+                      <strong className="mb-1 block font-bold text-teal-950">Por que isso acontece?</strong>
                       <p className="whitespace-pre-wrap">{toLearnerFacingContent(activeCard.explanation)}</p>
-                    </div>
+                    </StudyCallout>
                   )}
                 </div>
               )}

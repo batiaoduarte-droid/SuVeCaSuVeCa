@@ -10,10 +10,10 @@ export const DigrafosVisualGuide: React.FC = () => {
             <Layers className="h-5 w-5" />
           </span>
           <div>
-            <h3 className="m-0 text-base font-bold tracking-tight text-white">
+            <h3 className="m-0 text-base sm:text-lg font-black tracking-tight text-white !text-white">
               Quadro Canônico de Dígrafos
             </h3>
-            <p className="m-0 text-xs text-teal-100/80">
+            <p className="m-0 text-xs text-teal-100 font-medium !text-teal-100">
               Classificação estrita: 2 Letras = 1 Único Fonema (Impacto: -1 na contagem fonética)
             </p>
           </div>

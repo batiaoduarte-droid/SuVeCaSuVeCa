@@ -14,7 +14,12 @@ interface PedagogicalFlowchartProps {
 }
 
 const parseFlowchart = (raw: string): { title: string; steps: FlowchartStep[]; formula?: string } => {
-  const lines = raw.split('\n').map((l) => l.trim()).filter(Boolean);
+  const normalized = raw
+    .replace(/\s*\|\s*/g, '\n')
+    .replace(/(?:[├──└──]\s*──*►|\s*──*►)\s*/g, '\n')
+    .replace(/(?=▼\s*Passo|\bPasso\s*\d+:)/gi, '\n');
+
+  const lines = normalized.split('\n').map((l) => l.trim()).filter(Boolean);
   let title = 'Algoritmo Decisório Operacional';
   const steps: FlowchartStep[] = [];
   let formula: string | undefined;
@@ -33,7 +38,7 @@ const parseFlowchart = (raw: string): { title: string; steps: FlowchartStep[]; f
       continue;
     }
 
-    const stepMatch = line.match(/^(?:PASSO\s+(\d+)|\d+\.\s*(?:Passo\s+(\d+))?):\s*(.+)/i);
+    const stepMatch = line.match(/^(?:▼\s*)?(?:PASSO\s+(\d+)|\d+\.\s*(?:Passo\s+(\d+))?):\s*(.+)/i);
     if (stepMatch) {
       if (currentStep && currentStep.num) {
         steps.push(currentStep as FlowchartStep);
@@ -41,17 +46,17 @@ const parseFlowchart = (raw: string): { title: string; steps: FlowchartStep[]; f
       const num = parseInt(stepMatch[1] || stepMatch[2] || `${steps.length + 1}`, 10);
       currentStep = {
         num,
-        title: stepMatch[3].replace(/[│┌┐└┘─▼▲►◄═├└┬┴┼|]/g, '').trim()
+        title: stepMatch[3].replace(/[│┌┐└┘─▼▲►◄═├└┬┴┼|]/g, '').trim(),
       };
       continue;
     }
 
     if (currentStep) {
-      if (line.includes('SIM:') || line.includes('SE SIM:')) {
+      if (/SIM:|^SE SIM:/i.test(line) || line.includes('SIM:')) {
         currentStep.yesAction = line.replace(/.*(?:SIM:|SE SIM:)\s*/i, '').replace(/[│┌┐└┘─▼▲►◄═├└┬┴┼|]/g, '').trim();
-      } else if (line.includes('NÃO:') || line.includes('SE NÃO:')) {
+      } else if (/NÃO:|^SE NÃO:/i.test(line) || line.includes('NÃO:')) {
         currentStep.noAction = line.replace(/.*(?:NÃO:|SE NÃO:)\s*/i, '').replace(/[│┌┐└┘─▼▲►◄═├└┬┴┼|]/g, '').trim();
-      } else if (line.includes('?')) {
+      } else if (line.includes('?') && !currentStep.condition) {
         currentStep.condition = line.replace(/[│┌┐└┘─▼▲►◄═├└┬┴┼|]/g, '').trim();
       }
     }
@@ -75,10 +80,10 @@ export const PedagogicalFlowchart: React.FC<PedagogicalFlowchartProps> = ({ sour
             <GitFork className="h-5 w-5" />
           </span>
           <div>
-            <h3 className="m-0 text-base font-bold tracking-tight text-white">
+            <h3 className="m-0 text-base sm:text-lg font-black tracking-tight text-white !text-white">
               {title}
             </h3>
-            <p className="m-0 text-xs text-teal-100/80">
+            <p className="m-0 text-xs text-teal-100 font-medium !text-teal-100">
               Roteiro estruturado de resolução lógica passo a passo
             </p>
           </div>

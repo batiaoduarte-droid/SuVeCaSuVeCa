@@ -22,6 +22,9 @@ import {
 } from 'lucide-react';
 import type { CadernoErroItem } from '../types/suveca';
 import { ProgressBar } from './ui/ProgressBar';
+import { MODULES_DATA } from '../data/modulesData';
+import { getPriorityModuleRecommendation } from '../lib/priorityModuleRecommender';
+import { PriorityReviewCard } from './ui/PriorityReviewCard';
 
 export interface LearningAttempt {
   id: string;
@@ -49,6 +52,7 @@ interface StatisticsDashboardProps {
   practiceCorrect?: number;
   userName?: string | null;
   onOpenSimulado?: () => void;
+  onOpenModule?: (moduleId: string) => void;
 }
 
 type TopicSummary = {
@@ -122,6 +126,7 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
   practiceCorrect = 0,
   userName,
   onOpenSimulado,
+  onOpenModule,
 }) => {
   const topicData = useMemo<TopicSummary[]>(() => {
     const totals = new Map<string, { correct: number; total: number }>();
@@ -206,6 +211,11 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
   const needsPractice = attempts.length === 0;
   const greetingName = userName?.split(' ')[0] || 'você';
 
+  const priorityRecommendation = useMemo(
+    () => getPriorityModuleRecommendation(errors, MODULES_DATA),
+    [errors]
+  );
+
   return (
     <div className="space-y-6 pb-16 motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 duration-300">
       <header className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs sm:p-8">
@@ -228,6 +238,13 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
           )}
         </div>
       </header>
+
+      {onOpenModule && priorityRecommendation && (
+        <PriorityReviewCard
+          recommendation={priorityRecommendation}
+          onOpenModule={onOpenModule}
+        />
+      )}
 
       <section className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
         <MetricCard

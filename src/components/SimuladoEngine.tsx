@@ -22,7 +22,15 @@ import {
   Play,
   TimerOff,
   Save,
+  BookOpen,
 } from 'lucide-react';
+import {
+  GoldenRuleCard,
+  BankTrapCard,
+  StudyBadge,
+  StudySurface,
+  StudyCallout,
+} from './study-visuals';
 
 const DEFAULT_EXAM_DURATION_SECONDS = 40 * 60;
 const PAUSED_SIMULADO_STORAGE_PREFIX = 'suveca_simulado_pausado';
@@ -830,13 +838,17 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
 
               {/* Display Explanation if Submitted */}
               {isSubmitted && (
-                <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 text-xs sm:text-sm">
-                  <div className="flex items-center justify-between border-b border-slate-200 pb-2">
-                    <span className="font-bold text-slate-900">
-                      {isOfficialQuestion ? 'Comentário editorial preservado:' : 'Gabarito comentado autoral:'}
-                    </span>
+                <div className="space-y-4 pt-2">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <BookOpen className="h-4 w-4 text-teal-800" />
+                      <span className="font-bold text-sm text-slate-900">
+                        {isOfficialQuestion ? 'Comentário Pedagógico da Banca' : 'Resolução Comentada'}
+                      </span>
+                    </div>
                     {userAnswers[currentQ.id] !== currentQ.correctAnswer && (
                       <button
+                        type="button"
                         onClick={() =>
                           onAddErrorToNotebook(
                             currentQ.topic || 'Simulado Final',
@@ -856,15 +868,22 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
                             }
                           )
                         }
-                        className="bg-white hover:bg-rose-50 text-rose-800 font-bold px-3 py-1 rounded-md border border-rose-300 text-xs transition cursor-pointer"
+                        className="bg-rose-50 hover:bg-rose-100 text-rose-900 font-bold px-3 py-1.5 rounded-lg border border-rose-300 text-xs transition cursor-pointer flex items-center gap-1.5"
                       >
-                        + Caderno de Erros
+                        <PlusCircle className="h-3.5 w-3.5 text-rose-700" />
+                        <span>Adicionar ao Caderno de Erros</span>
                       </button>
                     )}
                   </div>
-                  <p className="text-slate-700 leading-relaxed pt-1">
-                    {currentQ.commentary}
-                  </p>
+
+                  <GoldenRuleCard
+                    rule={{
+                      entityId: `sim-rule-${currentQ.id}`,
+                      title: `Gabarito Oficial: Letra ${currentQ.correctAnswer}`,
+                      statement: currentQ.commentary,
+                      blocks: [],
+                    }}
+                  />
                 </div>
               )}
 

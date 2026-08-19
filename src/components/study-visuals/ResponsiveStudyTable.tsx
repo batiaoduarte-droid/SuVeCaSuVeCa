@@ -1,0 +1,176 @@
+import React, { useState } from 'react';
+import { LayoutGrid, Table as TableIcon } from 'lucide-react';
+import type { CanonicalTableView } from '../../types/pedagogicalView';
+import { InlineRichText } from '../pedagogical/blocks/InlineRichText';
+
+interface ResponsiveStudyTableProps {
+  table: CanonicalTableView;
+  className?: string;
+  defaultMode?: 'auto' | 'table' | 'cards';
+}
+
+const isValidHeader = (header: string): boolean => {
+  if (!header || typeof header !== 'string') return false;
+  const normalized = header.toLowerCase().trim();
+  if (!normalized) return false;
+  return !(
+    normalized.includes('id detalhado') ||
+    normalized.includes('id de referência') ||
+    normalized.includes('referência técnica') ||
+    normalized === 'id' ||
+    normalized === 'ref' ||
+    normalized.includes('identificador')
+  );
+};
+
+export const ResponsiveStudyTable: React.FC<ResponsiveStudyTableProps> = ({
+  table,
+  className = '',
+  defaultMode = 'auto',
+}) => {
+  const [mobileView, setMobileView] = useState<'table' | 'cards'>('cards');
+
+  if (!table || !table.headers || table.headers.length === 0) {
+    return null;
+  }
+
+  // Identifica colunas válidas (oculta colunas puramente técnicas e vazias)
+  const validColumnIndices = table.headers
+    .map((header, idx) => ({ header, idx }))
+    .filter(({ header }) => isValidHeader(header))
+    .map(({ idx }) => idx);
+
+  if (validColumnIndices.length === 0) return null;
+
+  const visibleHeaders = validColumnIndices.map((idx) => table.headers[idx]);
+  const visibleRows = table.rows.map((row) =>
+    validColumnIndices.map((idx) => row[idx] || '')
+  );
+
+  return (
+    <div className={`my-4 space-y-2 select-text ${className}`}>
+      {table.caption && (
+        <div className="flex items-center justify-between gap-2 px-1">
+          <span className="text-xs font-black uppercase tracking-wider text-teal-900">
+            <InlineRichText>{table.caption}</InlineRichText>
+          </span>
+
+          {/* Toggle para mobile */}
+          <div className="sm:hidden flex items-center gap-1 bg-slate-100 p-0.5 rounded-lg border border-slate-200 select-none">
+            <button
+              type="button"
+              onClick={() => setMobileView('cards')}
+              className={`p-1 rounded text-xs transition ${
+                mobileView === 'cards'
+                  ? 'bg-white text-teal-900 shadow-2xs font-bold'
+                  : 'text-slate-500 hover:text-slate-800'
+              }`}
+              title="Visualizar em cards"
+            >
+              <LayoutGrid className="h-3.5 w-3.5" />
+            </button>
+            <button
+              type="button"
+              onClick={() => setMobileView('table')}
+              className={`p-1 rounded text-xs transition ${
+                mobileView === 'table'
+                  ? 'bg-white text-teal-900 shadow-2xs font-bold'
+                  : 'text-slate-500 hover:text-slate-800'
+              }`}
+              title="Visualizar em tabela"
+            >
+              <TableIcon className="h-3.5 w-3.5" />
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Desktop / Tablet Table View */}
+      <div
+        className={`overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-2xs ${
+          mobileView === 'cards' && defaultMode === 'auto' ? 'hidden sm:block' : 'block'
+        }`}
+      >
+        <table className="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr className="border-b border-teal-200 bg-teal-50/80 text-teal-950">
+              {visibleHeaders.map((header, idx) => (
+                <th
+                  key={idx}
+                  className="px-4 py-3 font-black text-teal-950 text-xs sm:text-sm tracking-tight whitespace-nowrap"
+                >
+                  <InlineRichText>{header}</InlineRichText>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-100">
+            {visibleRows.map((row, rIdx) => (
+              <tr
+                key={rIdx}
+                className={`transition-colors hover:bg-teal-50/30 ${
+                  rIdx % 2 === 1 ? 'bg-slate-50/60' : 'bg-white'
+                }`}
+              >
+                {row.map((cell, cIdx) => (
+                  <td
+                    key={cIdx}
+                    className="px-4 py-3 font-medium text-slate-800 leading-relaxed"
+                  >
+                    <InlineRichText>{cell}</InlineRichText>
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Mobile Stacked Cards View */}
+      <div
+        className={`sm:hidden space-y-3 ${
+          mobileView === 'table' && defaultMode === 'auto' ? 'hidden' : 'block'
+        }`}
+      >
+        {visibleRows.map((row, rIdx) => (
+          <div
+            key={rIdx}
+            className="rounded-xl border border-teal-200 bg-white p-3.5 shadow-2xs space-y-2"
+          >
+            {row.map((cell, cIdx) => {
+              const header = visibleHeaders[cIdx] || `Campo ${cIdx + 1}`;
+              const isFirst = cIdx === 0;
+              return (
+                <div
+                  key={cIdx}
+                  className={`${
+                    isFirst
+                      ? 'border-b border-teal-100 pb-2 mb-1.5'
+                      : 'flex flex-col gap-0.5'
+                  }`}
+                >
+                  <span
+                    className={`text-[10px] font-black uppercase tracking-wider ${
+                      isFirst ? 'text-teal-900' : 'text-slate-500'
+                    }`}
+                  >
+                    {header}
+                  </span>
+                  <div
+                    className={`text-xs leading-relaxed ${
+                      isFirst
+                        ? 'font-black text-slate-900 text-sm'
+                        : 'font-medium text-slate-800'
+                    }`}
+                  >
+                    <InlineRichText>{cell}</InlineRichText>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};

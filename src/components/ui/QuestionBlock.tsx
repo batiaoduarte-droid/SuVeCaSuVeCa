@@ -31,7 +31,7 @@ export const QuestionBlock: React.FC<QuestionBlockProps> = ({
 }) => {
   const statementId = useId();
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const [showAnswer, setShowAnswer] = useState<boolean>(false);
+  const [showAnswer, setShowAnswer] = useState<boolean>(true);
 
   // Normaliza a letra do gabarito (ex: 'A', 'B', 'C', 'Certo', 'Errado')
   const cleanAnswer = (answer || '').trim();

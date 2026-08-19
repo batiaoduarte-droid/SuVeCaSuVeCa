@@ -10,10 +10,10 @@ export const WordStructureVisualGuide: React.FC = () => {
             <Binary className="h-5 w-5" />
           </span>
           <div>
-            <h3 className="m-0 text-base font-bold tracking-tight text-white">
+            <h3 className="m-0 text-base sm:text-lg font-black tracking-tight text-white !text-white">
               Estrutura da Palavra: Plano Gráfico vs Plano Fonético
             </h3>
-            <p className="m-0 text-xs text-teal-100/80">
+            <p className="m-0 text-xs text-teal-100 font-medium !text-teal-100">
               Relação Matemática Fundamental entre Letras (Grafemas) e Fonemas (Sons)
             </p>
           </div>

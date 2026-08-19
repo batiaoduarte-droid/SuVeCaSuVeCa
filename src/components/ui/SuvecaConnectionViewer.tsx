@@ -26,10 +26,10 @@ export const SuvecaConnectionViewer: React.FC<SuvecaConnectionViewerProps> = ({ 
               <Compass className="h-5 w-5" />
             </span>
             <div>
-              <span className="text-[10px] font-extrabold uppercase tracking-widest text-teal-400">
+              <span className="text-[10px] font-extrabold uppercase tracking-widest text-teal-300">
                 Arquitetura Metodológica
               </span>
-              <h3 className="m-0 text-base sm:text-lg font-black tracking-tight text-white">
+              <h3 className="m-0 text-base sm:text-lg font-black tracking-tight text-white !text-white">
                 Equação & Conexão SuVeCA
               </h3>
             </div>

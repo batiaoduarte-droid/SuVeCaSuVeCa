@@ -5,11 +5,13 @@ import {
   Check,
   BookOpen,
   CheckCircle2,
+  GitBranch,
 } from 'lucide-react';
 import type { ContentBlock, ConnectionMapView } from '../../../types/pedagogicalView';
 import { ContentBlockRenderer } from '../blocks/ContentBlockRenderer';
 import { ConnectionMap } from '../../ui/ConnectionMap';
 import { InlineRichText } from '../blocks/InlineRichText';
+import { ConceptTree } from '../../study-visuals/ConceptTree';
 
 interface PrerequisitesSectionProps {
   blocks?: ContentBlock[];
@@ -24,7 +26,7 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
 
   if (blocks.length === 0 && maps.length === 0) return null;
 
-  // Extrai itens de lista dos blocos para renderizar como cards de fundamentos se aplicável
+  // Extrai itens de lista dos blocos para renderizar como cards de fundamentos
   const listItems: Array<{ term: string; desc: string }> = [];
   const otherBlocks: ContentBlock[] = [];
 
@@ -52,20 +54,19 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
   };
 
   return (
-    <div className="space-y-5">
-      {/* Cabeçalho Padronizado da Seção */}
-      <div className="overflow-hidden rounded-2xl border border-teal-200/80 bg-white p-5 shadow-xs sm:p-6">
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4 mb-5">
+    <div className="space-y-5 select-text">
+      <div className="rounded-2xl border border-teal-200 bg-white p-5 sm:p-6 shadow-xs space-y-5">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4">
           <div className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-100 text-teal-800 shadow-2xs">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-100 text-teal-800 shadow-2xs select-none">
               <Brain className="h-5 w-5" />
-            </span>
+            </div>
             <div>
-              <h3 className="m-0 text-base font-black tracking-tight text-slate-900">
-                Pré-requisitos e modelo mental
+              <h3 className="text-base font-black tracking-tight text-slate-900">
+                Pré-requisitos e Modelo Mental
               </h3>
-              <p className="m-0 text-xs text-slate-600 font-medium">
-                Fundamentação conceitual, mapa relacional e pré-requisitos essenciais
+              <p className="text-xs text-slate-600 font-medium">
+                Fundamentação conceitual, mapa relacional e conexões indispensáveis
               </p>
             </div>
           </div>
@@ -73,7 +74,7 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
           <button
             type="button"
             onClick={handleCopy}
-            className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-bold text-slate-700 transition hover:bg-slate-50 cursor-pointer shadow-2xs"
+            className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-bold text-slate-700 transition hover:bg-slate-50 cursor-pointer shadow-2xs select-none"
             title="Copiar fundamentos"
           >
             {copied ? (
@@ -90,27 +91,27 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
           </button>
         </div>
 
-        {/* Grade de Fundamentos Necessários se existirem itens de lista */}
+        {/* Grade de Fundamentos Necessários */}
         {listItems.length > 0 && (
           <div className="space-y-3">
-            <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-teal-950">
+            <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-teal-950 select-none">
               <BookOpen className="h-4 w-4 text-teal-700" />
-              <span>Pré-requisitos e Fundamentos Necessários</span>
+              <span>Fundamentos e Conceitos de Base</span>
             </div>
 
             <div className="grid gap-3 sm:grid-cols-2">
               {listItems.map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start gap-2.5 rounded-xl border border-slate-200/80 bg-white p-3.5 shadow-2xs hover:border-teal-300 transition"
+                  className="flex items-start gap-2.5 rounded-xl border border-slate-200 bg-slate-50/60 p-3.5 shadow-2xs hover:border-teal-300 transition"
                 >
-                  <CheckCircle2 className="h-4 w-4 text-teal-600 mt-0.5 shrink-0" />
-                  <div className="min-w-0 flex-1">
-                    <h5 className="m-0 text-xs sm:text-sm font-black text-slate-900">
+                  <CheckCircle2 className="h-4 w-4 text-teal-600 mt-0.5 shrink-0 select-none" />
+                  <div className="min-w-0 flex-1 space-y-0.5">
+                    <h5 className="text-xs sm:text-sm font-black text-slate-900 leading-snug">
                       <InlineRichText>{item.term}</InlineRichText>
                     </h5>
                     {item.desc && (
-                      <p className="mt-1 m-0 text-xs leading-relaxed text-slate-600 font-medium">
+                      <p className="text-xs leading-relaxed text-slate-700 font-medium">
                         <InlineRichText>{item.desc}</InlineRichText>
                       </p>
                     )}
@@ -121,9 +122,9 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
           </div>
         )}
 
-        {/* Outros blocos (parágrafos, chamadas, etc.) */}
+        {/* Outros blocos (parágrafos, tabelas, etc.) */}
         {otherBlocks.length > 0 && (
-          <div className="mt-4 space-y-2">
+          <div className="mt-4 space-y-2 pt-2 border-t border-slate-100">
             {otherBlocks.map((block, idx) => (
               <ContentBlockRenderer key={idx} block={block} />
             ))}
@@ -131,30 +132,23 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
         )}
       </div>
 
-      {/* Mapas de Conexões e Esquemas Visuais */}
-      {maps.map((map, idx) => (
-        <div key={map.mapId || idx} className="my-2">
-          {map.rawAscii ? (
-            <ConnectionMap source={map.rawAscii} />
-          ) : (
-            <div className="rounded-2xl border border-teal-200 bg-white p-5 shadow-xs">
-              <h5 className="m-0 mb-3 text-xs sm:text-sm font-bold text-teal-950">
-                {map.title || 'Mapa de Conexões'}
-              </h5>
-              <div className="flex flex-wrap gap-2">
-                {map.nodes.map((n) => (
-                  <span
-                    key={n.nodeId}
-                    className="rounded-lg bg-teal-50 px-2.5 py-1 text-xs font-semibold text-teal-900 border border-teal-200 shadow-2xs"
-                  >
-                    {n.label}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      ))}
+      {/* Mapas de Conexões Visuais */}
+      {maps.map((map, idx) => {
+        if (map.nodes && map.nodes.length > 0) {
+          return (
+            <ConceptTree
+              key={map.mapId || idx}
+              title={map.title || 'Mapa Estrutural de Dependências'}
+              nodes={map.nodes}
+              edges={map.edges || []}
+            />
+          );
+        }
+        if (map.rawAscii) {
+          return <ConnectionMap key={map.mapId || idx} source={map.rawAscii} />;
+        }
+        return null;
+      })}
     </div>
   );
 };

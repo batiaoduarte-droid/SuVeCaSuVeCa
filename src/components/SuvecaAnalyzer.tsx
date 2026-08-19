@@ -15,13 +15,44 @@ import {
   Maximize2,
   Minimize2,
   Database,
+  ShieldCheck,
 } from 'lucide-react';
+import {
+  SuvecaSentenceMap,
+  SentenceBlock,
+  GoldenRuleCard,
+  BankTrapCard,
+  StudyBadge,
+  StudyCallout,
+  StudySurface,
+} from './study-visuals';
 
 const PRESET_SENTENCES = [
   'Ontem, os novos servidores entregaram cuidadosamente os relatórios ao diretor.',
   'Precisa-se de novos fiscais para o departamento de tributos.',
   'Embora o prazo fosse curto, os candidatos concluíram a prova tranquilos.',
 ] as const;
+
+const mapCategoryToType = (category: string): SentenceBlock['type'] => {
+  switch (category) {
+    case 'SUJEITO':
+      return 'su';
+    case 'VERBO':
+      return 've';
+    case 'COMPLEMENTO':
+      return 'c';
+    case 'ADJUNTO_ADVERBIAL':
+    case 'ADJUNTO_ADNOMINAL':
+    case 'CONECTOR':
+    case 'VOCATIVO':
+    case 'APOSTO':
+      return 'a';
+    case 'PREDICATIVO':
+      return 'pred';
+    default:
+      return 'c';
+  }
+};
 
 const CATEGORY_STYLES: Record<string, { bg: string; text: string; border: string; badge: string }> = {
   SUJEITO: { bg: 'bg-blue-50/90', text: 'text-blue-950', border: 'border-blue-200', badge: 'bg-blue-100 text-blue-900 border-blue-300' },
@@ -90,6 +121,13 @@ export const SuvecaAnalyzer: React.FC<SuvecaAnalyzerProps> = ({
     }
   };
 
+  const sentenceBlocks: SentenceBlock[] = currentAnalysis?.blocks?.map((block) => ({
+    type: mapCategoryToType(block.category),
+    label: block.shortLabel || block.category,
+    text: block.text,
+    explanation: block.explanation,
+  })) || [];
+
   return (
     <div
       className={`space-y-8 pb-16 mx-auto transition-[max-width] duration-300 ${
@@ -134,7 +172,7 @@ export const SuvecaAnalyzer: React.FC<SuvecaAnalyzerProps> = ({
         </header>
       )}
 
-      <section className="rounded-2xl border border-teal-200 bg-teal-50/70 p-5 sm:p-6" aria-labelledby="suveca-map-title">
+      <section className="rounded-2xl border border-teal-200 bg-teal-50/70 p-5 sm:p-6 select-text" aria-labelledby="suveca-map-title">
         <div className="flex items-start gap-3">
           <Layers className="mt-0.5 h-5 w-5 shrink-0 text-teal-800" aria-hidden="true" />
           <div className="min-w-0 space-y-2">
@@ -265,196 +303,143 @@ export const SuvecaAnalyzer: React.FC<SuvecaAnalyzerProps> = ({
 
       {/* Main Analysis Display */}
       {currentAnalysis && (
-        <section className="space-y-6 animate-in fade-in duration-300">
-          {/* Sentence Structural Summary Box */}
-          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-6">
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4">
-              <div>
-                <span className="text-xs font-bold text-teal-800 bg-teal-50 border border-teal-200 px-2.5 py-0.5 rounded-full">
-                  Frase Analisada
-                </span>
-                <h2 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight mt-1">
-                  "{currentAnalysis.sentence}"
-                </h2>
-              </div>
-              <div className="flex flex-wrap gap-2 text-xs">
-                <span className="bg-slate-100 text-slate-800 px-3 py-1 rounded-full font-medium border border-slate-200">
-                  Ordem: <strong>{currentAnalysis.order}</strong>
-                </span>
-                <span className="bg-slate-100 text-slate-800 px-3 py-1 rounded-full font-medium border border-slate-200">
-                  Voz: <strong>{currentAnalysis.verbalVoice}</strong>
-                </span>
-              </div>
-            </div>
+        <section className="space-y-6 animate-in fade-in duration-300 select-text">
+          {/* SuVeCA Sentence Map Integration */}
+          {sentenceBlocks.length > 0 && (
+            <SuvecaSentenceMap
+              sentence={currentAnalysis.sentence}
+              blocks={sentenceBlocks}
+              ruleSummary={currentAnalysis.summaryExplanation}
+            />
+          )}
 
-            {(currentAnalysis.surfacePattern || currentAnalysis.relationalMap || currentAnalysis.implicitElements?.length) && (
-              <div className="grid gap-3 rounded-2xl border border-teal-200 bg-teal-50/60 p-4 md:grid-cols-2">
-                {currentAnalysis.surfacePattern && (
-                  <div className="rounded-xl border border-teal-200 bg-white p-3">
-                    <span className="text-[10px] font-extrabold uppercase tracking-wide text-teal-700">Ordem encontrada</span>
-                    <p className="mt-1 font-mono text-sm font-bold text-teal-950">{currentAnalysis.surfacePattern}</p>
-                  </div>
-                )}
-                {currentAnalysis.relationalMap && (
-                  <div className="rounded-xl border border-teal-200 bg-white p-3">
-                    <span className="text-[10px] font-extrabold uppercase tracking-wide text-teal-700">Mapa relacional</span>
-                    <p className="mt-1 text-sm leading-relaxed text-slate-700">{currentAnalysis.relationalMap}</p>
-                  </div>
-                )}
-                {currentAnalysis.implicitElements?.length ? (
-                  <div className="rounded-xl border border-amber-200 bg-amber-50 p-3 md:col-span-2">
-                    <span className="text-[10px] font-extrabold uppercase tracking-wide text-amber-800">Elementos implícitos ou ausentes</span>
-                    <ul className="mt-1 list-disc space-y-1 pl-5 text-sm text-amber-950">
-                      {currentAnalysis.implicitElements.map((item) => <li key={item}>{item}</li>)}
-                    </ul>
-                  </div>
-                ) : null}
-              </div>
-            )}
-
-            {/* Visual Color-Coded SuVeCA Blocks */}
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <p className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                  <Layers className="w-4 h-4 text-teal-700" />
-                  <span>Blocos Sintáticos (Clique para inspecionar):</span>
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-3 p-4 bg-slate-50/80 rounded-2xl border border-slate-200">
-                {currentAnalysis.blocks.map((block, idx) => {
-                  const isSelected = selectedBlock?.text === block.text;
-                  const style = CATEGORY_STYLES[block.category] || CATEGORY_STYLES.COMPLEMENTO;
-
-                  return (
-                    <button
-                      key={idx}
-                      onClick={() => setSelectedBlock(block)}
-                      className={`p-3.5 sm:p-4 rounded-xl border transition cursor-pointer text-left ${style.bg} ${style.border} ${
-                        isSelected
-                          ? 'ring-2 ring-teal-700 ring-offset-2 shadow-sm font-bold'
-                          : 'hover:border-slate-400 opacity-90 hover:opacity-100'
-                      }`}
-                    >
-                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md ${style.badge} block w-max mb-1.5`}>
-                        {block.shortLabel}
-                      </span>
-                      <span className={`text-sm sm:text-base font-bold ${style.text}`}>
-                        {block.text}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* SuVeCA Legend Bar */}
-            <div className="flex flex-wrap items-center gap-3 text-xs text-slate-600 pt-2 border-t border-slate-100">
-              <span className="font-bold text-slate-900">Legenda:</span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-blue-500" /> Sujeito
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" /> Verbo
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-amber-500" /> Complemento
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-purple-500" /> Adjunto
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-pink-500" /> Predicativo
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-teal-500" /> Conector
-              </span>
-            </div>
-          </div>
-
-          {/* Selected Block Inspection Details */}
-          {selectedBlock ? (
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-4">
-              <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                <div className="flex items-center space-x-2">
-                  <Info className="w-5 h-5 text-teal-700" />
-                  <h3 className="text-base font-bold text-slate-900">
-                    Inspeção do Termo: "{selectedBlock.text}"
-                  </h3>
+          {/* Structural Meta & Relational Map */}
+          {(currentAnalysis.surfacePattern || currentAnalysis.relationalMap || currentAnalysis.implicitElements?.length) && (
+            <div className="grid gap-3 rounded-2xl border border-teal-200 bg-teal-50/60 p-4 md:grid-cols-2">
+              {currentAnalysis.surfacePattern && (
+                <div className="rounded-xl border border-teal-200 bg-white p-3.5 shadow-2xs">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-teal-800">Ordem Sintática Identificada</span>
+                  <p className="mt-1 font-mono text-sm font-bold text-teal-950">{currentAnalysis.surfacePattern}</p>
                 </div>
-                <span className="text-xs font-bold bg-teal-50 text-teal-800 border border-teal-200 px-3 py-1 rounded-full">
-                  {selectedBlock.shortLabel}
-                </span>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-1">
-                  <span className="text-xs font-bold text-teal-800 block">
-                    Morfologia (Classes)
-                  </span>
-                  <p className="text-xs sm:text-sm text-slate-700 font-medium">
-                    {selectedBlock.morphology || 'Classes gramaticais constitutivas do segmento.'}
-                  </p>
+              )}
+              {currentAnalysis.relationalMap && (
+                <div className="rounded-xl border border-teal-200 bg-white p-3.5 shadow-2xs">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-teal-800">Mapa de Regência e Vínculos</span>
+                  <p className="mt-1 text-xs sm:text-sm leading-relaxed text-slate-700 font-medium">{currentAnalysis.relationalMap}</p>
                 </div>
-
-                <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-1">
-                  <span className="text-xs font-bold text-teal-800 block">
-                    Função Sintática na Oração
-                  </span>
-                  <p className="text-xs sm:text-sm text-slate-700 font-medium">
-                    {selectedBlock.explanation}
-                  </p>
+              )}
+              {currentAnalysis.implicitElements?.length ? (
+                <div className="rounded-xl border border-amber-200 bg-amber-50 p-3.5 md:col-span-2 shadow-2xs">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-amber-900">Elementos Implícitos ou Ausentes</span>
+                  <ul className="mt-1 list-disc space-y-1 pl-5 text-xs sm:text-sm text-amber-950 font-medium">
+                    {currentAnalysis.implicitElements.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
                 </div>
-              </div>
-            </div>
-          ) : (
-            <div className="bg-white rounded-2xl p-4 border border-slate-200 text-center text-xs text-slate-500 flex items-center justify-center space-x-2">
-              <HelpCircle className="w-4 h-4 text-teal-700" />
-              <span>Clique em qualquer bloco colorido para examinar morfológica e sintaticamente.</span>
+              ) : null}
             </div>
           )}
 
-          {/* Pedagogical Commentary & Contest Pitfalls */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs space-y-3">
-              <div className="flex items-center space-x-2 text-teal-900 font-bold text-sm border-b border-slate-100 pb-2">
-                <BookOpen className="w-4 h-4 text-teal-700" />
-                <h3>Explicação Pedagógica Geral</h3>
-              </div>
-              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-                {currentAnalysis.summaryExplanation}
+          {/* Interactive Block Inspector */}
+          <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs space-y-4">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+              <p className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                <Layers className="w-4 h-4 text-teal-700" />
+                <span>Constituintes da Oração:</span>
               </p>
+              <div className="flex gap-2 text-xs">
+                <span className="bg-slate-100 text-slate-800 px-3 py-1 rounded-full font-bold border border-slate-200">
+                  Ordem: {currentAnalysis.order}
+                </span>
+                <span className="bg-slate-100 text-slate-800 px-3 py-1 rounded-full font-bold border border-slate-200">
+                  Voz: {currentAnalysis.verbalVoice}
+                </span>
+              </div>
             </div>
 
-            {currentAnalysis.contestTips && currentAnalysis.contestTips.length > 0 && (
-              <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs space-y-3">
-                <div className="flex items-center space-x-2 text-amber-900 font-bold text-sm border-b border-slate-100 pb-2">
-                  <AlertTriangle className="w-4 h-4 text-amber-700" />
-                  <h3>Pegadinhas de Concurso (Cebraspe, FGV, FCC)</h3>
+            <div className="flex flex-wrap gap-2.5">
+              {currentAnalysis.blocks.map((block, idx) => {
+                const isSelected = selectedBlock?.text === block.text;
+                const style = CATEGORY_STYLES[block.category] || CATEGORY_STYLES.COMPLEMENTO;
+
+                return (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setSelectedBlock(block)}
+                    className={`p-3 rounded-xl border transition cursor-pointer text-left ${style.bg} ${style.border} ${
+                      isSelected
+                        ? 'ring-2 ring-teal-700 ring-offset-2 shadow-sm font-bold scale-[1.02]'
+                        : 'hover:border-slate-400 opacity-90 hover:opacity-100'
+                    }`}
+                  >
+                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md ${style.badge} block w-max mb-1`}>
+                      {block.shortLabel}
+                    </span>
+                    <span className={`text-xs sm:text-sm font-bold ${style.text}`}>
+                      {block.text}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {selectedBlock && (
+              <div className="mt-4 rounded-xl border border-teal-200 bg-teal-50/40 p-4 space-y-3">
+                <div className="flex items-center justify-between border-b border-teal-100 pb-2">
+                  <div className="flex items-center gap-2">
+                    <Info className="h-4 w-4 text-teal-700" />
+                    <h3 className="text-sm font-black text-slate-900">
+                      Inspeção do Termo: "{selectedBlock.text}"
+                    </h3>
+                  </div>
+                  <StudyBadge tone="concept">
+                    {selectedBlock.shortLabel}
+                  </StudyBadge>
                 </div>
-                <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
-                  {currentAnalysis.contestTips.map((tip, idx) => (
-                    <li key={idx} className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-teal-700 shrink-0 mt-0.5" />
-                      <span>{tip}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                  <div className="bg-white rounded-lg p-3 border border-slate-200">
+                    <strong className="text-teal-900 block uppercase text-[10px] tracking-wider mb-0.5">Morfologia</strong>
+                    <span className="text-slate-700 font-medium">{selectedBlock.morphology || 'Classe gramatical constituinte'}</span>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 border border-slate-200">
+                    <strong className="text-teal-900 block uppercase text-[10px] tracking-wider mb-0.5">Função Sintática</strong>
+                    <span className="text-slate-700 font-medium">{selectedBlock.explanation}</span>
+                  </div>
+                </div>
               </div>
+            )}
+          </div>
+
+          {/* Decisive Rule & Pitfalls */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <GoldenRuleCard
+              rule={{
+                entityId: 'suveca-rule',
+                title: 'Regra Sintática Aplicável',
+                statement: currentAnalysis.summaryExplanation,
+                blocks: [],
+              }}
+            />
+
+            {currentAnalysis.contestTips && currentAnalysis.contestTips.length > 0 && (
+              <BankTrapCard
+                trap={{
+                  trapId: 'suveca-trap',
+                  title: 'Pegadinhas Típicas de Concurso',
+                  misleadingReasoning: currentAnalysis.contestTips.join(' · '),
+                  studentCaveat: 'Bancas como CEBRASPE e FGV costumam inverter termos e deslocar adjuntos para induzir erro de concordância ou pontuação.',
+                  blocks: [],
+                }}
+              />
             )}
           </div>
 
           {currentAnalysis.knowledgeSources && currentAnalysis.knowledgeSources.length > 0 && (
-            <div className="rounded-2xl border border-violet-200 bg-violet-50/70 p-4 text-xs text-violet-950">
+            <div className="rounded-2xl border border-teal-200 bg-teal-50/50 p-4 text-xs text-teal-950">
               <div className="flex items-center gap-2 font-bold">
-                <Database className="h-4 w-4 text-violet-700" />
-                Fontes recuperadas da Base Editorial
+                <ShieldCheck className="h-4 w-4 text-teal-700" />
+                <span>Base Pedagógica Validada ({currentAnalysis.knowledgeSources.length} referências editoriais aplicadas)</span>
               </div>
-              <p className="mt-2 text-violet-900">
-                A análise foi conferida com {currentAnalysis.knowledgeSources.length}{' '}
-                {currentAnalysis.knowledgeSources.length === 1 ? 'fonte editorial' : 'fontes editoriais'} da base.
-                As referências técnicas permanecem registradas internamente.
-              </p>
             </div>
           )}
         </section>

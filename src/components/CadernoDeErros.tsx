@@ -14,7 +14,14 @@ import {
   AlertCircle,
   X,
   Printer,
+  RotateCcw,
 } from 'lucide-react';
+import {
+  GoldenRuleCard,
+  BankTrapCard,
+  StudyBadge,
+  StudySurface,
+} from './study-visuals';
 
 interface CadernoDeErrosProps {
   errors: CadernoErroItem[];
@@ -268,31 +275,33 @@ export const CadernoDeErros: React.FC<CadernoDeErrosProps> = ({
             return (
               <div
                 key={item.id}
-                className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs space-y-4 relative"
+                className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-xs space-y-4 relative select-text"
               >
                 <div className="flex items-center justify-between flex-wrap gap-2 border-b border-slate-100 pb-3">
-                  <div className="flex items-center space-x-2">
-                    <span className="text-xs font-bold text-teal-800 bg-teal-50 px-2.5 py-1 rounded-lg border border-teal-200">
+                  <div className="flex items-center flex-wrap gap-2">
+                    <span className="text-xs font-black text-teal-900 bg-teal-50 px-2.5 py-1 rounded-lg border border-teal-200">
                       {item.conteudo}
                     </span>
-                    <span className="text-xs text-slate-600">{item.date}</span>
+                    <span className="text-xs text-slate-500 font-medium">{item.date}</span>
                     {item.origin && item.origin !== 'manual' && (
-                      <span className="rounded-md border border-violet-200 bg-violet-50 px-2 py-1 text-[11px] font-bold text-violet-800">
-                        {item.origin === 'official_question' ? 'Questão editorial' : item.origin === 'module_question' ? 'Questão da aula' : item.origin === 'ai_generated' ? 'Questão gerada por IA' : 'Simulado'}
+                      <span className="rounded-md border border-violet-200 bg-violet-50 px-2 py-0.5 text-[10px] font-bold text-violet-800 uppercase tracking-wider">
+                        {item.origin === 'official_question' ? 'Questão Oficial' : item.origin === 'module_question' ? 'Questão da Aula' : item.origin === 'ai_generated' ? 'Tutor IA' : 'Simulado'}
                       </span>
                     )}
                   </div>
 
-                  <div className="flex items-center space-x-2">
+                  <div className="flex items-center gap-2 select-none">
                     <span
-                      className={`text-xs font-bold px-2.5 py-1 rounded-full border ${badge.color}`}
+                      className={`text-xs font-bold px-2.5 py-0.5 rounded-full border ${badge.color}`}
                     >
                       {badge.label}
                     </span>
                     <button
+                      type="button"
                       onClick={() => onDeleteError(item.id)}
-                      className="text-slate-400 hover:text-rose-600 p-1 rounded-md transition cursor-pointer"
+                      className="text-slate-400 hover:text-rose-600 p-1.5 rounded-md transition cursor-pointer"
                       title="Excluir do Caderno"
+                      aria-label="Excluir item do caderno"
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>
@@ -300,47 +309,80 @@ export const CadernoDeErros: React.FC<CadernoDeErrosProps> = ({
                 </div>
 
                 {item.questionId && (
-                  <div className="rounded-xl border border-violet-200 bg-violet-50/60 p-3 text-xs leading-relaxed text-violet-950">
+                  <div className="rounded-xl border border-violet-200 bg-violet-50/50 p-3 text-xs leading-relaxed text-violet-950 font-medium">
                     <strong>Origem:</strong> {item.bank || 'Banco de questões'} · ID {item.questionId}
                     {item.year ? ` · ${item.year}` : ''}
-                    {item.questionText && <p className="mt-1 line-clamp-3">{item.questionText}</p>}
-                    {item.conceptIds?.length ? <p className="mt-1 font-mono text-[11px]">Conceitos: {item.conceptIds.join(', ')}</p> : null}
+                    {item.questionText && <p className="mt-1 font-serif text-slate-900 line-clamp-3">“{item.questionText}”</p>}
+                    {item.conceptIds?.length ? <p className="mt-1 font-mono text-[11px] text-violet-800">Conceitos: {item.conceptIds.join(', ')}</p> : null}
                   </div>
                 )}
 
-                {/* 3 Columns Grid for Detail */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-1">
-                    <span className="text-xs font-bold text-rose-800 block">
-                      Erro Cometido
-                    </span>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium">
-                      {item.erroCometido}
-                    </p>
-                  </div>
+                {/* Visual Contrast: O Erro (Antes) vs Regra Decisiva (Depois) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <BankTrapCard
+                    trap={{
+                      trapId: `trap-${item.id}`,
+                      title: 'Erro Cometido / Raciocínio Incorreto',
+                      misleadingReasoning: item.erroCometido,
+                      studentCaveat: 'Indução ao erro por interpretação incorreta do termo ou distrator da banca.',
+                      blocks: [],
+                    }}
+                  />
 
-                  <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-1">
-                    <span className="text-xs font-bold text-emerald-800 block">
-                      Regra Decisiva Gramatical
-                    </span>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
-                      {item.regraDecisiva}
-                    </p>
-                  </div>
-
-                  <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-1">
-                    <span className="text-xs font-bold text-teal-800 block">
-                      Exemplo de Fixação
-                    </span>
-                    <p className="text-xs sm:text-sm text-slate-700 italic font-medium">
-                      "{item.novoExemplo}"
-                    </p>
-                  </div>
+                  <GoldenRuleCard
+                    rule={{
+                      entityId: `rule-${item.id}`,
+                      title: 'Regra Decisiva / Vacina Gramatical',
+                      statement: item.regraDecisiva,
+                      blocks: [],
+                    }}
+                  />
                 </div>
 
-                <p className="border-t border-slate-100 pt-3 text-xs text-slate-600">
-                  O ciclo é atualizado pelas revisões dos flashcards; cada cartão mantém seu próprio intervalo.
-                </p>
+                {item.novoExemplo && (
+                  <div className="rounded-xl border border-teal-200 bg-teal-50/40 p-4 text-xs text-teal-950">
+                    <span className="text-[10px] font-black uppercase tracking-wider text-teal-800 block mb-1 select-none">
+                      Exemplo de Fixação Prática:
+                    </span>
+                    <p className="font-serif text-sm font-semibold italic leading-relaxed text-teal-950">
+                      “{item.novoExemplo}”
+                    </p>
+                  </div>
+                )}
+
+                {/* Spaced Repetition Timeline */}
+                <div className="border-t border-slate-100 pt-3 flex flex-wrap items-center justify-between gap-2 text-xs select-none">
+                  <div className="flex items-center gap-1">
+                    <span className="text-[10px] font-black uppercase tracking-wider text-slate-400 mr-1">
+                      Ciclo:
+                    </span>
+                    {(['dia0', 'dia1', 'dia7', 'dia30', 'dominado'] as const).map((st) => {
+                      const isActive = item.status === st;
+                      const labels: Record<string, string> = {
+                        dia0: 'D0',
+                        dia1: 'D1',
+                        dia7: 'D7',
+                        dia30: 'D30',
+                        dominado: '✓ Dominado',
+                      };
+                      return (
+                        <span
+                          key={st}
+                          className={`text-[10px] font-bold px-2 py-0.5 rounded-md border ${
+                            isActive
+                              ? 'bg-teal-900 text-white border-teal-950'
+                              : 'bg-slate-50 text-slate-400 border-slate-200'
+                          }`}
+                        >
+                          {labels[st]}
+                        </span>
+                      );
+                    })}
+                  </div>
+                  <span className="text-[11px] text-slate-500 font-medium">
+                    Próxima revisão ajustada pelo algoritmo de repetição espaçada
+                  </span>
+                </div>
               </div>
             );
           })}

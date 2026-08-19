@@ -25,6 +25,11 @@ import type { QuizQuestion } from '../types/suveca';
 import { MODULES_DATA } from '../data/modulesData';
 import { formatOfficialContent } from '../lib/officialContent';
 import { useModalFocus } from '../hooks/useModalFocus';
+import {
+  GoldenRuleCard,
+  StudyBadge,
+  StudySurface,
+} from './study-visuals';
 
 const PAGE_SIZE = 12;
 
@@ -219,25 +224,37 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
       ) : items.length ? (
         <div className="grid gap-3 md:grid-cols-2">
           {items.map((item) => (
-            <article key={item.questionId} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs">
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <p className="text-xs font-bold text-teal-800">Questão editorial</p>
-                  <h2 className="mt-1 font-bold text-slate-900">{item.editorialProjection.topicNames[0] || 'Língua Portuguesa'}</h2>
+            <article key={item.questionId} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-xs flex flex-col justify-between">
+              <div>
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-teal-800">
+                      {item.editorialProjection.banks[0] || 'Concurso Público'}
+                    </span>
+                    <h2 className="mt-1 font-bold text-slate-900 line-clamp-1">{item.editorialProjection.topicNames[0] || 'Língua Portuguesa'}</h2>
+                  </div>
+                  <StudyBadge tone={item.editorialProjection.answerType === 'CERTO_ERRADO' ? 'contrast' : 'concept'}>
+                    {item.editorialProjection.answerType === 'CERTO_ERRADO' ? 'CERTO/ERRADO' : 'MÚLTIPLA ESCOLHA'}
+                  </StudyBadge>
                 </div>
-                <span className="rounded-full bg-slate-100 px-2 py-1 text-[10px] font-bold text-slate-600">
-                  {item.editorialProjection.answerType === 'CERTO_ERRADO' ? 'CERTO/ERRADO' : 'MÚLTIPLA ESCOLHA'}
-                </span>
+                <p className="mt-2 text-xs text-slate-600 font-medium">
+                  {item.editorialProjection.banks.join(', ') || 'Fonte da apostila'}
+                  {item.editorialProjection.years.length ? ` · ${item.editorialProjection.years.join(', ')}` : ''}
+                </p>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {item.suvecaDerived.moduleIds.map((moduleId) => (
+                    <StudyBadge key={moduleId} tone="concept">
+                      {moduleId.replace('mod', 'Aula ')}
+                    </StudyBadge>
+                  ))}
+                  {item.editorialProjection.hasCommentary && (
+                    <StudyBadge tone="rule">
+                      Comentada
+                    </StudyBadge>
+                  )}
+                </div>
               </div>
-              <p className="mt-3 line-clamp-2 text-sm text-slate-600">
-                {item.editorialProjection.banks.join(', ') || 'Fonte da apostila'}
-                {item.editorialProjection.years.length ? ` · ${item.editorialProjection.years.join(', ')}` : ''}
-              </p>
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {item.suvecaDerived.moduleIds.map((moduleId) => <span key={moduleId} className="rounded-md bg-violet-50 px-2 py-1 text-[10px] font-bold text-violet-800">{moduleId.replace('mod', 'Aula ')}</span>)}
-                {item.editorialProjection.hasCommentary && <span className="rounded-md bg-emerald-50 px-2 py-1 text-[10px] font-bold text-emerald-800">Comentada</span>}
-              </div>
-              <button type="button" onClick={() => void openQuestion(item.questionId)} className="mt-4 flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl border border-teal-200 bg-teal-50 px-3 text-sm font-bold text-teal-800 hover:bg-teal-100"><ExternalLink className="h-4 w-4" /> Estudar questão</button>
+              <button type="button" onClick={() => void openQuestion(item.questionId)} className="mt-4 flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl border border-teal-200 bg-teal-50 px-3 text-xs font-bold text-teal-900 hover:bg-teal-100 transition"><ExternalLink className="h-3.5 w-3.5" /> Estudar questão</button>
             </article>
           ))}
         </div>
@@ -254,7 +271,7 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
 
       {isDetailOpen && (
         <div className="fixed inset-0 z-[80] flex items-end justify-center bg-slate-950/55 p-0 sm:items-center sm:p-4">
-          <div ref={detailDialogRef} tabIndex={-1} className="max-h-[92dvh] w-full max-w-4xl overflow-y-auto rounded-t-2xl bg-white p-5 shadow-2xl outline-none sm:rounded-2xl sm:p-7" role="dialog" aria-modal="true" aria-label="Questão editorial completa">
+          <div ref={detailDialogRef} tabIndex={-1} className="max-h-[92dvh] w-full max-w-4xl overflow-y-auto rounded-t-2xl bg-white p-5 shadow-2xl outline-none sm:rounded-2xl sm:p-7 space-y-5" role="dialog" aria-modal="true" aria-label="Questão editorial completa">
             {isLoadingDetail || !detail ? (
               <div role="status" className="flex min-h-48 items-center justify-center"><Loader2 className="h-6 w-6 animate-spin text-teal-700" /></div>
             ) : (() => {
@@ -264,40 +281,52 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
               const source = normalized.bank || normalized.sourceLabel || 'Fonte editorial da apostila';
               return (
                 <>
-                  <div className="flex items-start justify-between gap-3">
+                  <div className="flex items-start justify-between gap-3 border-b border-slate-100 pb-3">
                     <div>
-                      <p className="text-xs font-bold text-teal-800">Questão editorial</p>
-                      <p className="mt-1 flex items-center gap-1 text-xs text-slate-700"><ShieldCheck className="h-3.5 w-3.5" /> Conteúdo da fonte preservado</p>
+                      <div className="flex items-center gap-2">
+                        <StudyBadge tone="contrast">Questão Oficial</StudyBadge>
+                        <span className="flex items-center gap-1 text-xs text-slate-600 font-medium"><ShieldCheck className="h-3.5 w-3.5 text-teal-700" /> Conteúdo preservado</span>
+                      </div>
+                      <h3 className="text-base font-extrabold text-slate-900 mt-1">{detail.editorialProjection.topicNames[0] || 'Língua Portuguesa'}</h3>
                     </div>
-                    <button ref={closeButtonRef} type="button" onClick={closeDetail} className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl hover:bg-slate-100" aria-label="Fechar questão"><X className="h-5 w-5" /></button>
+                    <button ref={closeButtonRef} type="button" onClick={closeDetail} className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl hover:bg-slate-100 transition" aria-label="Fechar questão"><X className="h-5 w-5" /></button>
                   </div>
-                  <div className="mt-4 flex flex-wrap gap-2 text-xs text-slate-600">
-                    <span className="rounded-lg bg-slate-100 px-2.5 py-1 font-semibold"><Database className="mr-1 inline h-3.5 w-3.5" />{formatOfficialContent(source)}</span>
-                    {normalized.year && <span className="rounded-lg bg-slate-100 px-2.5 py-1 font-semibold">{normalized.year}</span>}
-                    <span className="rounded-lg bg-violet-50 px-2.5 py-1 font-semibold text-violet-800">{normalized.primaryLessonId || detail.editorialProjection.primaryLessonId}</span>
+                  <div className="flex flex-wrap gap-2 text-xs text-slate-600">
+                    <span className="rounded-lg bg-slate-100 px-2.5 py-1 font-semibold text-slate-800"><Database className="mr-1 inline h-3.5 w-3.5 text-teal-700" />{formatOfficialContent(source)}</span>
+                    {normalized.year && <span className="rounded-lg bg-slate-100 px-2.5 py-1 font-semibold text-slate-800">{normalized.year}</span>}
+                    <span className="rounded-lg bg-teal-50 border border-teal-200 px-2.5 py-1 font-semibold text-teal-900">{normalized.primaryLessonId || detail.editorialProjection.primaryLessonId}</span>
                   </div>
-                  {normalized.supportText && <div className="mt-5 rounded-xl border border-slate-200 bg-slate-50 p-4 whitespace-pre-wrap text-sm leading-7 text-slate-700">{formatOfficialContent(normalized.supportText)}</div>}
-                  <p className="mt-5 whitespace-pre-wrap text-sm leading-7 text-slate-900">{formatOfficialContent(normalized.prompt)}</p>
+                  {normalized.supportText && <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 whitespace-pre-wrap text-sm leading-relaxed text-slate-700 italic border-l-4 border-l-teal-700">"{formatOfficialContent(normalized.supportText)}"</div>}
+                  <p className="whitespace-pre-wrap text-sm sm:text-base leading-relaxed text-slate-900 font-medium">{formatOfficialContent(normalized.prompt)}</p>
                   {isTrueFalse ? (
-                    <div className="mt-5 grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-2 gap-3">
                       {['C', 'E'].map((answer) => (
-                        <div key={answer} className={`rounded-xl border p-3 text-center text-sm font-bold ${correctAnswer === answer ? 'border-emerald-300 bg-emerald-50 text-emerald-900' : 'border-slate-200 text-slate-600'}`}>
-                          {correctAnswer === answer && <CheckCircle2 className="mr-1 inline h-4 w-4" />}{answer === 'C' ? 'Certo' : 'Errado'}
+                        <div key={answer} className={`rounded-xl border p-3.5 text-center text-sm font-bold ${correctAnswer === answer ? 'border-emerald-300 bg-emerald-50 text-emerald-950 ring-2 ring-emerald-500' : 'border-slate-200 text-slate-600'}`}>
+                          {correctAnswer === answer && <CheckCircle2 className="mr-1.5 inline h-4 w-4 text-emerald-700" />}{answer === 'C' ? 'Certo (Gabarito)' : 'Errado (Gabarito)'}
                         </div>
                       ))}
                     </div>
                   ) : (
-                    <ol className="mt-5 space-y-2">
+                    <ol className="space-y-2">
                       {(normalized.options || []).map((option, index) => {
                         const letter = String(option.letter || option.label || String.fromCharCode(65 + index)).toUpperCase();
-                        return <li key={`${letter}-${index}`} className={`rounded-xl border p-3 text-sm leading-6 ${correctAnswer === letter ? 'border-emerald-300 bg-emerald-50' : 'border-slate-200'}`}><strong>{letter}.</strong> {formatOfficialContent(option.text)}</li>;
+                        const isCorrect = correctAnswer === letter;
+                        return (
+                          <li key={`${letter}-${index}`} className={`rounded-xl border p-3.5 text-sm leading-relaxed ${isCorrect ? 'border-emerald-300 bg-emerald-50 text-emerald-950 font-bold ring-2 ring-emerald-500' : 'border-slate-200 text-slate-700'}`}>
+                            <strong>{letter}.</strong> {formatOfficialContent(option.text)}
+                          </li>
+                        );
                       })}
                     </ol>
                   )}
-                  <div className="mt-5 rounded-xl border border-amber-200 bg-amber-50 p-4">
-                    <h3 className="font-bold text-amber-950">Comentário pedagógico · gabarito {answerLabel(correctAnswer)}</h3>
-                    <p className="mt-2 whitespace-pre-wrap text-sm leading-7 text-amber-950">{formatOfficialContent(normalized.commentary) || 'Comentário não disponível na fonte editorial.'}</p>
-                  </div>
+                  <GoldenRuleCard
+                    rule={{
+                      entityId: `off-q-${normalized.primaryLessonId || '1'}`,
+                      title: `Comentário Pedagógico · Gabarito ${answerLabel(correctAnswer)}`,
+                      statement: formatOfficialContent(normalized.commentary) || 'Comentário não disponível na fonte editorial.',
+                      blocks: [],
+                    }}
+                  />
                 </>
               );
             })()}

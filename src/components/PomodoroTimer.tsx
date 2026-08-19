@@ -27,6 +27,7 @@ import type { PomodoroSession } from '../types/suveca';
 import type { User } from '../lib/firebase';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { db } from '../lib/firebase';
+import { StudyBadge, StudySurface } from './study-visuals';
 
 export type PomodoroMode = 'foco' | 'pausa_curta' | 'pausa_longa';
 

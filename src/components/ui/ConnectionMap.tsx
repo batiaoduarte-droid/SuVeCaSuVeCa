@@ -10,13 +10,20 @@ import { PunctuationCommaVisualGuide } from './PunctuationCommaVisualGuide';
 import { QueSeFunctionsVisualGuide } from './QueSeFunctionsVisualGuide';
 import { PedagogicalFlowchart } from './PedagogicalFlowchart';
 import { PedagogicalTreeDiagram } from './PedagogicalTreeDiagram';
+import { MarkdownContent } from './MarkdownContent';
 
 interface ConnectionMapProps {
   source: string;
 }
 
-export const looksLikeConnectionMap = (source: string) => {
+export const looksLikeConnectionMap = (source: string): boolean => {
   if (!source || typeof source !== 'string') return false;
+
+  // Se for estritamente uma tabela Markdown (linhas iniciando com | e tendo divisores |--), não é ConnectionMap
+  if (/^\s*\|.*\|\s*$/m.test(source) && /\|(?:\s*[-:]+\s*\|)+/.test(source) && !source.includes('├──') && !source.includes('└──')) {
+    return false;
+  }
+
   if (source.includes('EMPREGO DOS PORQUÊS') || (source.includes('PORQUÊ') && source.includes('POR QUÊ'))) {
     return true;
   }
@@ -47,12 +54,23 @@ export const looksLikeConnectionMap = (source: string) => {
   if (source.includes('[INÍCIO') || source.includes('[Início') || (source.includes('PASSO 1:') && source.includes('PASSO 2:'))) {
     return true;
   }
-  const connectorMatches = source.match(/[─-╿←-⇿▼▲◆|┌┐└┘├┤┬┴┼═]/gu)?.length || 0;
-  return connectorMatches >= 3;
+
+  // Caracteres reais de ramificação de árvore ou fluxograma (sem pipe isolado de tabela)
+  const treeBranchMatches = source.match(/[─-╿←-⇿▼▲◆┌┐└┘├┤┬┴┼═]|(?:\|──)|(?:├──)|(?:└──)/gu)?.length || 0;
+  return treeBranchMatches >= 2;
 };
 
 export const ConnectionMap: React.FC<ConnectionMapProps> = ({ source }) => {
   if (!source) return null;
+
+  // Se for detectado como tabela markdown pura, renderiza via MarkdownContent
+  if (/^\s*\|.*\|\s*$/m.test(source) && /\|(?:\s*[-:]+\s*\|)+/.test(source) && !source.includes('├──') && !source.includes('└──')) {
+    return (
+      <div className="my-4 overflow-x-auto rounded-2xl border border-slate-200 bg-white p-4 shadow-xs">
+        <MarkdownContent content={source} />
+      </div>
+    );
+  }
 
   // 1. Specialized Guide: Os 4 Porquês
   if (source.includes('EMPREGO DOS PORQUÊS') || (source.includes('PORQUÊ') && source.includes('PORQUE') && source.includes('POR QUÊ'))) {

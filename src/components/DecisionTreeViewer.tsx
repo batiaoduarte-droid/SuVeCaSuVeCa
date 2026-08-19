@@ -10,6 +10,7 @@ import {
   Search,
 } from 'lucide-react';
 import { MarkdownContent } from './ui/MarkdownContent';
+import { StudyBadge, StudySurface } from './study-visuals';
 
 interface DecisionProcedure {
   id: string;
@@ -398,12 +399,12 @@ export const DecisionTreeViewer: React.FC = () => {
                 <article aria-labelledby="selected-procedure-title">
                   <header className="border-b border-slate-200 bg-slate-50/70 p-5 sm:p-6">
                     <div className="mb-3 flex flex-wrap items-center gap-2 text-xs font-bold">
-                      <span className="rounded-full border border-teal-200 bg-teal-50 px-2.5 py-1 text-teal-800">
+                      <StudyBadge tone="concept">
                         {lessonLabel(selectedProcedure.lessonId)}
-                      </span>
-                      <span className="rounded-full border border-slate-200 bg-white px-2.5 py-1 text-slate-600">
+                      </StudyBadge>
+                      <StudyBadge tone="rule">
                         {selectedProcedure.topic}
-                      </span>
+                      </StudyBadge>
                     </div>
                     <div className="flex items-start gap-3">
                       <BookOpen className="mt-1 h-5 w-5 shrink-0 text-teal-700" aria-hidden="true" />

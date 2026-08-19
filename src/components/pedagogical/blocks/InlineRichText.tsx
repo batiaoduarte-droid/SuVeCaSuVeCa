@@ -27,6 +27,11 @@ export const sanitizePedagogicalText = (text: string): string => {
     .replace(/Aplicado em:\s*\.?/gmi, '')
     .replace(/Depende de:\s*\.?/gmi, '')
     .replace(/Relacionado a:\s*\.?/gmi, '')
+    // Correções de concatenação de palavras em tabelas e títulos
+    .replace(/Preposiçãopor/g, 'Preposição "por"')
+    .replace(/Preposiçãoque/g, 'Preposição + Conjunção "que"')
+    .replace(/DesignaçãoEis/g, 'Designação "Eis"')
+    .replace(/(Preposição|Conjunção|Substantivo|Pronome|Adjetivo|Advérbio)([A-ZÁÉÍÓÚÀÂÊÔÃÕa-záéíóúàâêôãõ])/g, '$1 $2')
     // Substitui caracteres especiais dentro de fórmulas matemáticas para evitar warnings no KaTeX
     .replace(/\$([^$]+)\$/g, (_match, mathContent) => {
       const sanitizedMath = mathContent

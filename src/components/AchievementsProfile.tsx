@@ -9,6 +9,7 @@ import {
   Sliders,
   Trophy,
   Crown,
+  Sparkles,
 } from 'lucide-react';
 import type { User } from '../lib/firebase';
 import {
@@ -22,6 +23,7 @@ import { MasteryLevelCard } from './MasteryLevelCard';
 import { MonthlyLeaderboard } from './MonthlyLeaderboard';
 import { StudyPreferences } from './StudyPreferences';
 import type { LeaderboardAttempt } from '../hooks/useMonthlyLeaderboard';
+import { StudyBadge, StudySurface } from './study-visuals';
 
 interface AchievementsProfileProps {
   user?: User | null;
@@ -36,6 +38,7 @@ interface AchievementsProfileProps {
   practiceCorrectCount?: number;
   notesCount?: number;
   onNavigateToTab?: (tab: string) => void;
+  onOpenTour?: () => void;
 }
 
 type ProfileSubTab = 'achievements' | 'preferences';
@@ -62,6 +65,7 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
   practiceCorrectCount = 0,
   notesCount = 0,
   onNavigateToTab,
+  onOpenTour,
 }) => {
   const [activeSubTab, setActiveSubTab] = useState<ProfileSubTab>('achievements');
 
@@ -137,6 +141,17 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
               Badges
             </div>
           </div>
+          {onOpenTour && (
+            <button
+              type="button"
+              onClick={onOpenTour}
+              className="flex items-center gap-1.5 rounded-xl border border-teal-200 bg-teal-50 px-3.5 py-3 text-xs font-black text-teal-900 hover:bg-teal-100 transition cursor-pointer"
+              title="Rever o tour guiado da plataforma"
+            >
+              <Sparkles className="w-4 h-4 text-amber-600" />
+              <span className="hidden sm:inline">Tour Guiado</span>
+            </button>
+          )}
         </div>
       </header>
 
