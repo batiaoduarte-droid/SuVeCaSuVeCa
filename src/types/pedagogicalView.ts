@@ -1,18 +1,217 @@
 /**
- * Contrato Canônico de Apresentação (View Model V1 / V2.1)
- * Boundary estrito entre a base canônica v2.1 e o frontend React do SuVeCa.
+ * Contrato Canônico de Apresentação e Visualização Semântica (View Model V1 / V2.1 / V4.2)
+ * Tipagem estrita com discriminated unions para AST Semântico e Renderers nativos.
  */
 
-export type ContentBlockType =
-  | 'paragraph'
-  | 'heading'
-  | 'list'
-  | 'formula'
-  | 'table_ref'
-  | 'callout'
-  | 'code'
-  | 'diagram';
+// ============================================================
+// SEMANTIC AST BLOCKS (v4.2 Discriminated Unions)
+// ============================================================
 
+export interface ConceptDefinitionBlock {
+  type: 'concept_definition';
+  term?: string;
+  definition?: string;
+  text?: string;
+}
+
+export interface ConceptExplanationBlock {
+  type: 'concept_explanation';
+  text: string;
+}
+
+export interface ClassificationCategory {
+  name: string;
+  description?: string;
+  examples?: string[];
+  subcategories?: ClassificationCategory[];
+}
+
+export interface ClassificationBlock {
+  type: 'classification';
+  title?: string;
+  categories: ClassificationCategory[];
+  text?: string;
+}
+
+export interface TaxonomyBlock {
+  type: 'taxonomy';
+  title?: string;
+  categories?: ClassificationCategory[];
+  nodes?: ConnectionMapNode[];
+  edges?: ConnectionMapEdge[];
+  text?: string;
+}
+
+export interface ComparisonMatrixBlock {
+  type: 'comparison_matrix';
+  title?: string;
+  columns: string[];
+  rows: Array<Record<string, string> | string[]>;
+  text?: string;
+}
+
+export interface RuleBoundaryBlock {
+  type: 'rule_boundary';
+  title?: string;
+  ruleId?: string;
+  scope?: string;
+  conditions?: string[];
+  exceptions?: string[];
+  text?: string;
+}
+
+export interface FormulaVariable {
+  name: string;
+  description: string;
+}
+
+export interface FormulaBlock {
+  type: 'formula';
+  title?: string;
+  expression?: string;
+  variables?: FormulaVariable[];
+  explanation?: string;
+  text?: string;
+}
+
+export interface ProcedureStep {
+  order: number;
+  action: string;
+  explanation?: string;
+  test?: string;
+}
+
+export interface ProcedureBlock {
+  type: 'procedure';
+  title?: string;
+  objective?: string;
+  steps: ProcedureStep[] | string[];
+  text?: string;
+}
+
+export interface ContrastSide {
+  label: string;
+  criteria: string[];
+}
+
+export interface ContrastBlock {
+  type: 'contrast';
+  title?: string;
+  conceptA?: string;
+  conceptB?: string;
+  sideA?: ContrastSide;
+  sideB?: ContrastSide;
+  decisionCriterion?: string;
+  decisiveDifference?: string;
+  minimalPair?: {
+    left: string;
+    right: string;
+    decisiveDifference: string;
+  };
+  text?: string;
+}
+
+export interface MinimalPairBlock {
+  type: 'minimal_pair';
+  title?: string;
+  left?: string;
+  right?: string;
+  sentenceA?: string;
+  sentenceB?: string;
+  decisiveDifference?: string;
+  explanation?: string;
+  text?: string;
+}
+
+export interface AnnotatedSegment {
+  text: string;
+  role: string;
+  explanation?: string;
+}
+
+export interface AnnotatedSentenceBlock {
+  type: 'annotated_sentence';
+  title?: string;
+  sentence: string;
+  segments: AnnotatedSegment[];
+  analysis?: string;
+  text?: string;
+}
+
+export interface TableBlock {
+  type: 'table';
+  title?: string;
+  caption?: string;
+  columns: string[];
+  rows: string[][] | Array<Record<string, string>>;
+  text?: string;
+}
+
+export interface BulletListBlock {
+  type: 'bullet_list';
+  ordered?: boolean;
+  items: string[];
+  title?: string;
+  text?: string;
+}
+
+export interface RuleBlock {
+  type: 'rule';
+  title?: string;
+  statement?: string;
+  scope?: string;
+  modality?: string;
+  conditions?: string[];
+  exceptions?: string[];
+  text?: string;
+}
+
+export interface WorkedExampleBlock {
+  type: 'worked_example';
+  title?: string;
+  prompt?: string;
+  analysisSteps?: string[];
+  result?: string;
+  decisivePoint?: string;
+  commonMistake?: string;
+  examTip?: string;
+  text?: string;
+}
+
+export interface MnemonicBlock {
+  type: 'mnemonic';
+  title?: string;
+  content?: string;
+  classification?: string;
+  appliesTo?: string;
+  limitations?: string;
+  text?: string;
+}
+
+export interface ExamTrapBlock {
+  type: 'exam_trap';
+  trapId?: string;
+  title?: string;
+  trigger?: string;
+  misleadingReasoning?: string;
+  expectedWrongConclusion?: string;
+  correctReasoning?: string;
+  decisiveTest?: string;
+  correctiveRule?: string;
+  text?: string;
+}
+
+export interface RecallPromptBlock {
+  type: 'recall_prompt';
+  promptId?: string;
+  question?: string;
+  keyPoints?: string[];
+  targetConcept?: string;
+  targetLO?: string;
+  text?: string;
+}
+
+// Legacy / Core Content Blocks
 export interface ParagraphBlock {
   type: 'paragraph';
   text: string;
@@ -30,15 +229,9 @@ export interface ListBlock {
   items: string[];
 }
 
-export interface FormulaBlock {
-  type: 'formula';
-  text: string;
-}
-
 export interface TableRefBlock {
   type: 'table_ref';
   tableId: string;
-  /** Tabela resolvida diretamente em tempo de build para evitar buscas adicionais */
   table?: CanonicalTableView;
 }
 
@@ -62,15 +255,46 @@ export interface DiagramBlock {
   edges?: ConnectionMapEdge[];
 }
 
-export type ContentBlock =
+/**
+ * Union discriminada exaustiva para todos os tipos de blocos semânticos v4.2 e legados.
+ */
+export type SemanticBlock =
+  | ConceptDefinitionBlock
+  | ConceptExplanationBlock
+  | ClassificationBlock
+  | TaxonomyBlock
+  | ComparisonMatrixBlock
+  | RuleBoundaryBlock
+  | FormulaBlock
+  | ProcedureBlock
+  | ContrastBlock
+  | MinimalPairBlock
+  | AnnotatedSentenceBlock
+  | TableBlock
+  | BulletListBlock
+  | RuleBlock
+  | WorkedExampleBlock
+  | MnemonicBlock
+  | ExamTrapBlock
+  | RecallPromptBlock
   | ParagraphBlock
   | HeadingBlock
   | ListBlock
-  | FormulaBlock
   | TableRefBlock
   | CalloutBlock
   | CodeBlock
   | DiagramBlock;
+
+/**
+ * Alias de compatibilidade com código existente
+ */
+export type ContentBlock = SemanticBlock;
+
+export type ContentBlockType = SemanticBlock['type'];
+
+// ============================================================
+// DATA MODELS & STRUCTURAL CONTRACTS
+// ============================================================
 
 export interface CanonicalTableView {
   tableId: string;
@@ -114,32 +338,48 @@ export interface SuvecaConnectionView {
   contrasts?: string[];
   examTraps?: string[];
   syntacticMapExtensions?: string[];
+  macroContext?: string;
+  cognitiveAnchor?: string;
+  strategicSignificance?: string;
+  coreTension?: string;
+  visualBlueprint?: string;
 }
 
 export interface CanonicalEntityView {
-  entityId: string;
+  entityId?: string;
+  ruleId?: string;
   title: string;
   statement?: string;
   scope?: string;
   modality?: string;
   conditions?: string[];
+  formalCondition?: string;
   exceptions?: string[];
-  blocks: ContentBlock[];
+  boundaries?: string[];
+  examples?: string[];
+  normativity?: string;
+  blocks?: SemanticBlock[];
 }
 
+export type CanonicalRuleView = CanonicalEntityView;
+
 export interface ProcedureView {
-  procedureId: string;
+  procedureId?: string;
   title: string;
   objective?: string;
+  triggerCondition?: string;
+  stoppingCondition?: string;
+  typicalFailureModes?: string[];
+  verificationCriteria?: string[];
   inputs?: { name: string; description: string }[];
-  steps?: { order: number; action: string; explanation?: string; test?: string }[];
+  steps?: { order: number; action: string; explanation?: string; test?: string }[] | string[];
   outputs?: { name: string; description: string }[];
   formulas?: string[];
-  blocks: ContentBlock[];
+  blocks?: SemanticBlock[];
 }
 
 export interface ContrastView {
-  contrastId: string;
+  contrastId?: string;
   title: string;
   contrastType?: string;
   conceptA?: string;
@@ -147,23 +387,35 @@ export interface ContrastView {
   sideA?: { label: string; criteria: string[] };
   sideB?: { label: string; criteria: string[] };
   decisionCriterion?: string;
-  blocks: ContentBlock[];
+  decisiveDifference?: string;
+  minimalPair?: {
+    left: string;
+    right: string;
+    decisiveDifference: string;
+  };
+  practicalHeuristic?: string;
+  pitfall?: string;
+  blocks?: SemanticBlock[];
 }
 
 export interface WorkedExampleView {
-  exampleId: string;
+  exampleId?: string;
   title: string;
   prompt?: string;
+  sentence?: string;
+  targetLO?: string;
   analysisSteps?: { order: number; action: string; rationale?: string }[];
+  analysis?: string;
   result?: string;
   decisivePoint?: string;
   commonMistake?: string;
   examTip?: string;
-  blocks: ContentBlock[];
+  pedagogicalTakeaway?: string;
+  blocks?: SemanticBlock[];
 }
 
 export interface ExamTrapView {
-  trapId: string;
+  trapId?: string;
   title: string;
   trigger?: string;
   misleadingReasoning?: string;
@@ -173,7 +425,27 @@ export interface ExamTrapView {
   studentCaveat?: string;
   errorPattern?: string;
   correctiveRule?: string;
-  blocks: ContentBlock[];
+  whyItFails?: string;
+  correctApproach?: string;
+  counterRule?: string;
+  bankTechnique?: string;
+  blocks?: SemanticBlock[];
+}
+
+export interface GlossaryItemView {
+  term: string;
+  domain?: string;
+  shortDefinition?: string;
+  fullDefinition?: string;
+  commonMisconception?: string;
+}
+
+export interface RecallPromptView {
+  promptId: string;
+  targetLO?: string;
+  targetConcept?: string;
+  question: string;
+  keyPoints?: string[];
 }
 
 export interface OfficialQuestionOptionView {
@@ -209,24 +481,36 @@ export interface OfficialQuestionView {
   explanation?: string;
   questionSha256?: string;
   answerSha256?: string;
-  // Question Intelligence v2.1
   cognitiveDemand?: string;
   solutionStrategy?: string;
   pedagogicalEvaluation?: QuestionPedagogicalEvaluation;
   distractorAnalysis?: DistractorAnalysisView[];
 }
 
+export interface ExplanationGroup {
+  groupId?: string;
+  title?: string;
+  blocks: SemanticBlock[];
+}
+
+export interface RecallSectionView {
+  prompts?: RecallPromptView[];
+  blocks?: SemanticBlock[];
+}
+
 export interface PedagogicalUnitSections {
   suveca: SuvecaConnectionView;
   prerequisites?: {
-    blocks: ContentBlock[];
+    items?: string[];
+    blocks?: SemanticBlock[];
     maps?: ConnectionMapView[];
   };
   explanation?: {
-    blocks: ContentBlock[];
+    groups?: ExplanationGroup[];
+    blocks?: SemanticBlock[];
   };
   rules?: {
-    items: CanonicalEntityView[];
+    items: CanonicalRuleView[];
   };
   resolution?: {
     procedures: ProcedureView[];
@@ -238,27 +522,29 @@ export interface PedagogicalUnitSections {
     items: WorkedExampleView[];
   };
   mnemonics?: {
-    blocks: ContentBlock[];
+    blocks: SemanticBlock[];
   };
   traps?: {
     items: ExamTrapView[];
-    supplementaryBlocks?: ContentBlock[];
+    supplementaryBlocks?: SemanticBlock[];
   };
   glossary?: {
-    blocks: ContentBlock[];
+    items?: GlossaryItemView[];
+    blocks?: SemanticBlock[];
   };
-  recall?: {
-    blocks: ContentBlock[];
-  };
+  recall?: RecallSectionView;
 }
 
 export interface PedagogicalUnitView {
-  viewSchemaVersion: '1.0.0';
+  viewSchemaVersion: string;
   source: {
     unitId: string;
-    canonicalSchemaVersion: string;
+    canonicalSchemaVersion?: string;
     buildId: string;
     generatedAt: string;
+    sourceSemanticVersion?: string;
+    semanticHardened?: boolean;
+    agentAuthored?: boolean;
   };
   unit: {
     unitId: string;
@@ -274,12 +560,14 @@ export interface PedagogicalUnitView {
 }
 
 export interface CumulativeReviewView {
-  viewSchemaVersion: '1.0.0';
+  viewSchemaVersion: '1.0.0' | '4.2.0';
   unitType: 'cumulative_review';
   source: {
     unitId: string;
     lessonId: 'A14';
     generatedAt: string;
+    sourceSemanticVersion?: string;
+    buildId?: string;
   };
   unit: {
     unitId: string;
@@ -292,26 +580,33 @@ export interface CumulativeReviewView {
     suveca: SuvecaConnectionView;
     conceptMap: { items: string[] };
     prioritizedRules: { items: string[] };
-    structuredSynthesis: { blocks: ContentBlock[] };
-    recoveryExamples: { blocks: ContentBlock[] };
+    structuredSynthesis: { blocks: SemanticBlock[] };
+    recoveryExamples: { blocks: SemanticBlock[] };
     activeReviewProtocol: { items: string[] };
   };
 }
 
 export interface PedagogicalViewsManifest {
-  viewSchemaVersion: '1.0.0';
-  sourceBuildId: string;
-  unitsCount: number;
+  schemaVersion: string;
+  buildId?: string;
+  sourceSemanticVersion?: string;
+  homologationStatus?: string;
+  totalViews?: number;
+  regularViews?: number;
+  cumulativeViews?: number;
+  viewSchemaVersion?: '1.0.0' | '4.2.0';
+  sourceBuildId?: string;
+  unitsCount?: number;
   standardUnitsCount?: number;
   cumulativeUnitsCount?: number;
-  tablesCorpusCount: number;
-  tablesEmbeddedCount: number;
-  questionBlocksCount: number;
-  linkedOfficialQuestionOccurrences: number;
-  linkedOfficialQuestionsUnique: number;
-  officialQuestionsCorpusCount: number;
-  unresolvedRefs: 0;
-  unknownBlockTypes: 0;
-  generatedAt: string;
-  generatedUnits: string[];
+  tablesCorpusCount?: number;
+  tablesEmbeddedCount?: number;
+  questionBlocksCount?: number;
+  linkedOfficialQuestionOccurrences?: number;
+  linkedOfficialQuestionsUnique?: number;
+  officialQuestionsCorpusCount?: number;
+  unresolvedRefs?: number;
+  unknownBlockTypes?: number;
+  generatedAt?: string;
+  generatedUnits?: string[];
 }

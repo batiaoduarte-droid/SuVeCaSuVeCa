@@ -47,17 +47,24 @@ export const ResolutionSection: React.FC<ResolutionSectionProps> = ({ procedures
 
         {/* Lista de Steppers de Procedimentos */}
         <div className="space-y-5">
-          {procedures.map((proc, pIdx) => (
-            <div key={proc.procedureId || pIdx} className="space-y-3">
-              <ProcedureStepper
-                procedure={proc}
-                title={proc.title}
-                objective={proc.objective}
-                steps={proc.steps}
-                inputs={proc.inputs}
-                outputs={proc.outputs}
-                formulas={proc.formulas}
-              />
+          {procedures.map((proc, pIdx) => {
+            const normalizedSteps = proc.steps?.map((s, sIdx) => {
+              if (typeof s === 'string') {
+                return { order: sIdx + 1, action: s };
+              }
+              return s;
+            });
+            return (
+              <div key={proc.procedureId || pIdx} className="space-y-3">
+                <ProcedureStepper
+                  procedure={proc}
+                  title={proc.title}
+                  objective={proc.objective}
+                  steps={normalizedSteps}
+                  inputs={proc.inputs}
+                  outputs={proc.outputs}
+                  formulas={proc.formulas}
+                />
 
               {/* Blocos secundários se houver */}
               {proc.blocks && proc.blocks.length > 0 && (
@@ -68,7 +75,8 @@ export const ResolutionSection: React.FC<ResolutionSectionProps> = ({ procedures
                 </div>
               )}
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

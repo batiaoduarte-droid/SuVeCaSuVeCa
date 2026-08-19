@@ -8,11 +8,13 @@ import { fetchNormalizedQuestionsForLesson } from '../../../lib/officialQuestion
 interface OfficialQuestionsSectionProps {
   questions?: OfficialQuestionView[];
   lessonId?: string;
+  onPracticeMore?: () => void;
 }
 
 export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> = ({
   questions = [],
   lessonId = 'A00',
+  onPracticeMore,
 }) => {
   const [enrichedMap, setEnrichedMap] = useState<Record<string, any>>({});
 

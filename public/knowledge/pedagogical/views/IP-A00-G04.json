@@ -1,378 +1,92 @@
 {
-  "viewSchemaVersion": "1.0.0",
+  "viewSchemaVersion": "4.2.0-semantic-authoring",
   "source": {
     "unitId": "IP-A00-G04",
-    "canonicalSchemaVersion": "2.0.0",
-    "buildId": "v2.1-semantic-hardening",
-    "generatedAt": "2026-08-18T23:33:08.073Z"
+    "lessonId": "A00",
+    "title": "Acentuação Gráfica - Regras Gerais",
+    "canonicalSource": "canonical-v2.1-consolidated",
+    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
   },
   "unit": {
     "unitId": "IP-A00-G04",
     "lessonId": "A00",
-    "groupId": "G04",
-    "title": "Acentuação Gráfica",
-    "variant": "development",
-    "canonicalTopicId": "pt:a00:acentuacao-grafica",
+    "title": "Acentuação Gráfica - Regras Gerais",
     "learningObjectives": [
-      "Objetivo 1"
+      "Mapear, sistematizar e aplicar as 7 justificativas gramaticais de acentuação gráfica exigidas pelas bancas de concursos públicos (com ênfase especial no modelo de julgamento de assertivas do CEBRASPE/CESPE), desarmando pegadinhas recorrentes de classificação silábica, encontros vocálicos e pronomes enclíticos."
+    ],
+    "conceptCount": 1,
+    "ruleCount": 1,
+    "canonicalLearningObjectiveRefs": [
+      "OBJ-IP-A00-G04-01"
+    ],
+    "learningThreadRefs": [
+      "TH-A00-G04-01",
+      "TH-A00-G04-02"
     ]
   },
   "sections": {
     "suveca": {
-      "level": "indirect",
-      "label": "Apoio indireto",
-      "summary": "A acentuação é regida por tonicidade e estrutura silábica. A SuVeCA auxilia apenas em casos contextuais, como formas verbais ligadas a pronomes enclíticos.",
-      "steps": [
-        "Resolva o fenômeno pela regra própria da matéria.",
-        "Se houver uma oração relevante, use a SuVeCA apenas para localizar a forma ou o efeito no contexto.",
-        "Mantenha separadas a justificativa principal e a observação sintática auxiliar."
-      ],
-      "limits": [
-        "Aplicar o mapa a todos os casos deste grupo criaria uma relação artificial com a sintaxe."
-      ],
-      "decisiveTests": [],
-      "contrasts": [],
-      "examTraps": []
+      "macroContext": "A acentuação gráfica assinala a sílaba tônica e a abertura vocálica, operando por economia: acentuam-se os padrões menos frequentes na língua (proparoxítonas todas, oxítonas e paroxítonas em certas terminações).",
+      "visualBlueprint": "Proparoxítonas: 100% acentuadas. Oxítonas: terminadas em A(S), E(S), O(S), EM/ENS. Paroxítonas: terminadas em R, X, N, L, I(S), U(S), UM/UNS, PS, Ã(S), ÃO(S), Ditongos. Monossílabos Tônicos: terminados em A(S), E(S), O(S).",
+      "cognitiveAnchor": "O que acentua a oxítona NÃO acentua a paroxítona (são regras complementares e opostas).",
+      "strategicSignificance": "Tema com presença garantida em 100% dos concursos públicos civis e militares.",
+      "coreTension": "Confundir a justificativa de acentuação: marcar palavras acentuadas por regras distintas como se fossem a mesma regra."
     },
     "prerequisites": {
-      "blocks": [
+      "items": [
         {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Conceito de Sílaba e Tonicidade: Compreensão de última sílaba (oxítona), penúltima sílaba (paroxítona) e antepenúltima sílaba (proparoxítona).",
-            "Distinção entre Ditongo e Hiato: Noção básica de encontro vocálico dentro da mesma sílaba (ditongo) versus encontro de vogais em sílabas distintas (hiato).",
-            "Noção de Ênclise Pronominal: Reconhecimento da junção de pronomes oblíquos átonos a formas verbais por meio de hífen (-lo, -la, -nos, -se)."
-          ]
-        },
-        {
-          "type": "diagram",
-          "diagramType": "tree",
-          "text": "ARQUITETURA DA ACENTUAÇÃO GRÁFICA │ ┌────────────────────────────────────┴────────────────────────────────────┐ ▼ ▼ REGRAS GERAIS DE BASE CASOS ESPECIAIS E EXCEÇÕES ├── [KB-002] OXÍTONAS ├── [KB-006] PAROXÍTONAS EM DITONGO │ ├── Terminações: -A(s), -E(s), -O(s), -EM(ens) │ ├── Ditongo Crescente: SV + V (Ex: história) │ └── [KB-010] Formas Verbais com Ênclise (Ex: encontrá-lo) │ └── Ditongo Decrescente: V + SV (Ex: móveis) ├── [KB-003] PAROXÍTONAS (REGRA GERAL/INVERSA) ├── [KB-007] PROPAROXÍTONAS EVENTUAIS │ ├── Terminações: NÃO terminadas em A, E, O, EM(ens) │ └── Válidas APENAS para Ditongo Crescente │ └── Ex: cáqui, ônix, ímã, Méier ├── [KB-008] HIATO TÔNICO EM \"I\" OU \"U\" ├── [KB-004] PROPAROXÍTONAS (REGRA UNIVERSAL) │ ├── 2ª Vogal do Hiato, Tônica, Sozinha ou com S │ ├── Todas são acentuadas graficamente │ ├── Restrição 1: Com Z não acentua (ju-iz) │ └── [KB-008] 1ª Vogal do Hiato = Proparoxítona (va-rí-o-la) │ └── Restrição 2: Seguido de NH não acentua (ra-i-nha) └── [KB-005] MONOSSÍLABOS TÔNICOS └── [KB-009] ACENTOS DIFERENCIAIS CIRCUNFLEXOS ├── Terminações: -A(s), -E(s), -O(s) ├── I. têm / vêm (e derivados plurais) └── [WARN-001] Não inclui terminação -EM/-ENS ├── II. pôr (verbo) vs. por (preposição) └── III. pôde (passado) vs. pode (presente)"
-        }
-      ],
-      "maps": [
-        {
-          "mapId": "MAP-IP-A00-G04-001",
-          "title": "Mapa de conexão — Acentuação Gráfica",
-          "mapType": "pedagogical_connection",
-          "nodes": [
-            {
-              "nodeId": "pt:a00:acentuacao-grafica",
-              "label": "Acentuação Gráfica",
-              "nodeType": "topic"
-            },
-            {
-              "nodeId": "method:suveca",
-              "label": "SuVeCA",
-              "nodeType": "method"
-            }
-          ],
-          "edges": [
-            {
-              "from": "method:suveca",
-              "to": "pt:a00:acentuacao-grafica",
-              "relation": "indirect"
-            }
-          ]
+          "prerequisiteId": "PR-A00-03",
+          "name": "Identificação da Sílaba Tônica",
+          "reason": "Classificar a palavra em oxítona, paroxítona ou proparoxítona antes de aplicar a regra de acentuação.",
+          "activationPrompt": "Qual é a sílaba mais forte em 'caráter' e em 'cajá'?",
+          "isCritical": true
         }
       ]
     },
     "explanation": {
-      "blocks": [
+      "groups": [
         {
-          "type": "paragraph",
-          "text": "A resolução de itens de concurso público sobre acentuação gráfica não se restringe a identificar se um vocábulo recebe graficamente o acento, mas exige a determinação e o cotejo da justificativa gramatical oficial que prescreve a acentuação. O sistema completo estrutura-se em 7 justificativas canônicas."
-        },
-        {
-          "type": "paragraph",
-          "text": "As bancas examinadoras organizam suas questões confrontando dois ou mais vocábulos e indagando se eles compartilham a \"mesma regra\" ou a \"mesma justificativa\". O arcabouço normativo é dividido em dois grandes blocos:"
-        },
-        {
-          "type": "list",
-          "ordered": true,
-          "items": [
-            "Regras Gerais (1 a 4):"
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Regra 1: Oxítonas",
-            "Regra 2: Paroxítonas (Regra Geral/Inversa)",
-            "Regra 3: Proparoxítonas",
-            "Regra 4: Monossílabos Tônicos"
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": true,
-          "items": [
-            "Casos Especiais (5 a 7):"
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Regra 5: Paroxítonas terminadas em ditongo",
-            "Regra 6: Hiatos com \"I\" ou \"U\" tônicos (2ª vogal do hiato)",
-            "Regra 7: Acentos diferenciais"
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Aplica-se em: PROC-A00-G04-001, PROC-A00-G04-002",
-            "Subordina: KB-A00-G04-002 a KB-A00-G04-009"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Acentuam-se graficamente as palavras oxítonas (vocábulos de duas ou mais sílabas cuja sílaba tônica é a última) que terminam nas vogais -A(s), -E(s), -O(s) e nas terminações nasais -EM ou -ENS."
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Critério Diagnóstico: Para ser oxítona acentuada pela Regra 1, a palavra deve ter 2 ou mais sílabas, tonicidade na última sílaba e terminar rigorosamente em -a(s), -e(s), -o(s), -em, -ens.",
-            "Formas Verbais com Ênclise: Formas verbais como encontrá-lo, nomeá-la e ordená-la pertencem a esta regra porque o pronome enclítico não integra a estrutura fonética do verbo (en-con-trá = oxítona terminada em \"a\").",
-            "Exemplos Canônicos: sofá(s), café(s), alguém, contém (singular), conténs (flexão), até."
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Contrasta com: KB-A00-G04-005 (Monossílabos Tônicos, que não admitem -EM/-ENS).",
-            "Contrasta como regra inversa: KB-A00-G04-003 (Paroxítonas)."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A regra geral das palavras paroxítonas (cuja sílaba tônica é a penúltima) opera de forma inversa e excludente em relação à regra das oxítonas: acentuam-se todas as paroxítonas, EXCETO aquelas que terminam em -A(s), -E(s), -O(s), -EM e -ENS."
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Mecanismo Operacional: Em vez de decorar listas extensas de terminações (-r, -l, -n, -x, -ps, -um, -us, -i, -is, -ã, -ãs), basta verificar se a paroxítona termina em terminação diferente das oxítonas.",
-            "Análise de Terminações:",
-            "Cáqui: paroxítona terminada em -i $\\rightarrow$ Acentuada.",
-            "Ônix: paroxítona terminada em -x $\\rightarrow$ Acentuada.",
-            "Ímã: paroxítona terminada em -ã (vogal nasal) $\\rightarrow$ Acentuada (não confundir com o -a oral puro).",
-            "Méier, Interminável, Renovável: paroxítonas terminadas em -r e -l $\\rightarrow$ Acentuadas."
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Contrasta com: KB-A00-G04-002 (Oxítonas).",
-            "Distinção Crítica: Paroxítonas terminadas em ditongo possuem justificativa própria autônoma (KB-A00-G04-006)."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Todas as palavras proparoxítonas (cuja antepenúltima sílaba é a tônica) são obrigatoriamente acentuadas graficamente, inexistindo qualquer restrição de terminação."
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Não há condicionamento quanto à letra final. Identificada a tonicidade na antepenúltima sílaba, o acento é imperativo.",
-            "Exemplos Tradicionais: lâm-pa-da, á-li-bi, ín-te-rim, lo-gís-ti-ca, e-ti-mo-ló-gi-co, fe-nô-me-no, e-ó-li-ca, e-lé-tri-cos, pá-li-das.",
-            "Atenção ao Hiato de 1ª Vogal: Quando uma palavra possui hiato interno cuja tônica recai na 1ª vogal na antepenúltima posição (como va-rí-o-la), a justificativa oficial de acentuação é exclusivamente a Regra Proparoxítona, e não a regra dos hiatos."
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Contrasta com: KB-A00-G04-008 (Hiato tônico em I/U).",
-            "Expande-se em: KB-A00-G04-007 (Proparoxítonas eventuais/ocasionais)."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Acentuam-se os vocábulos monossílabos tônicos (palavras de uma única sílaba dotadas de autonomia fonética e intensidade forte) terminados nas vogais -A(s), -E(s) e -O(s)."
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Exemplos Canônicos: pá, gás, fé, mês, pé, dó, pós, pô-lo.",
-            "Contraste Decisivo com Oxítonas: A regra dos monossílabos tônicos NÃO abrange a terminação -EM / -ENS. Monossílabos terminados em -em (ex.: bem, trem, sem) são átonos ou não acentuados graficamente. A palavra café (oxítona) e a palavra fé (monossílabo tônico) não seguem a mesma regra."
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Contrasta com: KB-A00-G04-002 (Oxítonas).",
-            "Alerta associado: WARN-A00-G04-001."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Acentuam-se as palavras paroxítonas cuja terminação é um ditongo (encontro de vogal e semivogal na mesma sílaba, oral ou nasal, crescente ou decrescente). Quando a terminação for um ditongo decrescente, o vocábulo é rigidamente uma paroxítona, sem possibilidade de reclassificação."
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Exemplos Gerais: ór-fão (ditongo nasal decrescente), his-tó-ria (ditongo oral crescente), pre-vi-sí-veis, fá-ceis, pos-sí-veis, mó-veis, no-tá-veis (ditongos decrescentes).",
-            "Ditongos Decrescentes (Vogal + Semivogal): Em terminações como -eis (fá-ceis, mó-veis), o som parte da vogal plena (forte) e decresce para a semivogal (fraca). A semivogal fica fixada à vogal anterior, sendo foneticamente impossível separá-la em hiato.",
-            "Blindagem em Concursos: Palavras com ditongo decrescente NUNCA podem ser chamadas de proparoxítonas eventuais/ocasionais."
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Contrasta com: KB-A00-G04-007 (Ditongos crescentes).",
-            "Alerta associado: WARN-A00-G04-003."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Vocábulos paroxítonos terminados em ditongo crescente (semivogal + vogal) admitem foneticamente duas divisões silábicas e, consequentemente, duas justificativas oficiais válidas em provas de concurso."
-        },
-        {
-          "type": "list",
-          "ordered": true,
-          "items": [
-            "Classificação Canônica / Primária: A emissão mantém a semivogal e a vogal juntas na última sílaba: se-cre-tá-ria, me-mó-ria, ho-mi-cí-dios. Justificativa: Paroxítona terminada em ditongo crescente (Regra 5).",
-            "Classificação Secundária / Fonética: Na pronúncia mais lenta ou escandida, a boca se abre na vogal final (som mais forte), vocalizando a semivogal e gerando um hiato: se-cre-tá-ri-a, me-mó-ri-a, ho-mi-cí-di-os. A tônica passa a ser a antepenúltima sílaba (tá, mó, cí). Justificativa: Proparoxítona Eventual, Ocasional ou Aparente.",
-            "Padrão de Julgamento CEBRASPE:"
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Se o item afirmar que memória é paroxítona em ditongo $\\rightarrow$ CERTO.",
-            "Se o item afirmar que memória pode ser justificada por duas regras distintas ou pela regra das proparoxítonas $\\rightarrow$ CERTO."
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Expande: KB-A00-G04-006 (Ditongos).",
-            "Contrasta com: Ditongos decrescentes, que rejeitam a forma eventual."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Acentua-se com acento agudo a segunda vogal do hiato quando esta for a letra \"I\" ou a letra \"U\" tônica, desde que esteja sozinha na sílaba ou acompanhada somente da letra \"S\", sem ser seguida pelo dígrafo NH e sem estar acompanhada de outra consoante na mesma sílaba."
-        },
-        {
-          "type": "list",
-          "ordered": true,
-          "items": [
-            "Posição Obrigatória: O \"I\" ou \"U\" deve ser a 2ª vogal do encontro (ex.: em sa-í-da, ca-fe-í-na, ba-ú, o \"I/U\" é o 2º elemento). Se for a 1ª vogal (como em va-rí-o-la), a regra é de proparoxítona.",
-            "Isolamento Silábico: O I/U deve estar sozinho (sa-ú-de, ju-í-za) ou com S (sa-ís-te).",
-            "Bloqueio por Consoante Diferente de S: Em juiz (ju-iz), o \"I\" está com \"Z\" na sílaba $\\rightarrow$ Não leva acento. Em juíza (ju-í-za), o \"I\" fica isolado $\\rightarrow$ Leva acento.",
-            "Bloqueio por Nasalização (Dígrafo NH): Em rainha (ra-i-nha), a nasalidade exercida pelo NH anula o acento gráfico."
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Contrasta com: KB-A00-G04-004 (Proparoxítonas).",
-            "Demonstração: EX-A00-G04-001 (Juiz vs. Juíza)."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Os acentos diferenciais distinguem formas homógrafas (mesma grafia) com classes gramaticais ou tempos verbais distintos. Após o Acordo Ortográfico, restam apenas 3 casos obrigatórios, sendo todos marcados exclusivamente com acento circunflexo (^)."
-        },
-        {
-          "type": "list",
-          "ordered": true,
-          "items": [
-            "Terceira pessoa do plural dos verbos ter, vir e derivados no Presente do Indicativo:"
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Ele tem / Eles têm",
-            "Ele vem / Eles vêm",
-            "Ele contém / mantém (acento agudo por ser oxítona) $\\rightarrow$ Eles contêm / mantêm (acento circunflexo por ser plural diferencial)."
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": true,
-          "items": [
-            "Verbo pôr (infinitivo) vs. Preposição por:"
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Vou pôr o casaco (verbo, com acento circunflexo) vs. Andei por aí (preposição, sem acento)."
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": true,
-          "items": [
-            "Pretérito Perfeito pôde vs. Presente do Indicativo pode:"
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Ontem ele não pôde comparecer (passado, fechado) vs. Hoje ele pode comparecer (presente, aberto)."
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Dica associada: TIP-A00-G04-001."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Na acentuação de formas verbais unidas por hífen a pronomes oblíquos átonos em posição enclítica (-lo, -la, -los, -las, -me, -te, -se), o pronome não pertence à estrutura silábica do vocábulo e deve ser integralmente desconsiderado."
-        },
-        {
-          "type": "list",
-          "ordered": true,
-          "items": [
-            "Identifique o hífen e risque/isole mentalmente o pronome: nomeá-la $\\rightarrow$ nomeá.",
-            "Divida apenas a base verbal: no-me-á.",
-            "Determine a tônica: última sílaba (á).",
-            "Aplicação da Regra: Oxítona terminada na vogal A."
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Aplica-se a: EX-A00-G04-003 (Questão MPE-SC)."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Na fonologia da língua portuguesa, a vogal é o núcleo obrigatório de toda sílaba. É absolutamente impossível a existência de sílaba constituída apenas por consoantes."
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Consoante sem vogal no meio da palavra: Aglutina-se obrigatoriamente à sílaba anterior (ex.: afta $\\rightarrow$ af-ta; etnia $\\rightarrow$ et-ni-a).",
-            "Consoante sem vogal no início da palavra: Permanece unida à vogal da primeira sílaba subsequente (ex.: pneu $\\rightarrow$ vocábulo monossilábico indivisível)."
+          "groupId": "GRP-01",
+          "title": "Regras Gerais de Tonicidade",
+          "pedagogicalGoal": "Classificar a posição da sílaba tônica e aplicar as regras gerais com precisão cirúrgica.",
+          "blocks": [
+            {
+              "type": "table",
+              "title": "Quadro Resumo das Regras Gerais",
+              "columns": [
+                "Posição Tônica",
+                "Regra de Acentuação",
+                "Terminações",
+                "Exemplos"
+              ],
+              "rows": [
+                [
+                  "Proparoxítonas (antepenúltima)",
+                  "Todas são acentuadas",
+                  "Todas as terminações",
+                  "médico, lâmpada, álibi, ínterim"
+                ],
+                [
+                  "Oxítonas (última)",
+                  "Acentuam-se as terminadas em:",
+                  "-a(s), -e(s), -o(s), -em/-ens",
+                  "café, sofá, cipó, armazém, parabéns"
+                ],
+                [
+                  "Monossílabos Tônicos",
+                  "Acentuam-se os terminados em:",
+                  "-a(s), -e(s), -o(s)",
+                  "pá, pé, pó, más, três, sós"
+                ],
+                [
+                  "Paroxítonas (penúltima)",
+                  "Acentuam-se as que NÃO terminam em A, E, O, EM/ENS",
+                  "-r, -x, -n, -l, -i(s), -us, -um/uns, -ps, -ã(s), -ão(s), ditongos",
+                  "caráter, tórax, pólen, fácil, júri, vírus, álbum, bíceps, ímã, órgão, história"
+                ]
+              ],
+              "text": "As regras gerais baseiam-se na posição da sílaba tônica e na terminação gráfica da palavra."
+            }
           ]
         }
       ]
@@ -380,81 +94,18 @@
     "rules": {
       "items": [
         {
-          "entityId": "RULE-IP-A00-G04-001",
-          "title": "Regras canônicas",
-          "statement": "Regras canônicas",
-          "scope": "phonetics_phonology",
-          "modality": "mandatory",
-          "conditions": [
-            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
-            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
-          ],
+          "ruleId": "R-AC-01",
+          "title": "Regra das Proparoxítonas",
+          "statement": "Todas as palavras proparoxítonas da língua portuguesa são graficamente acentuadas.",
+          "formalCondition": "Se Tonica(Palavra) == Antepenultima -> Acento(VogalTonica) == True.",
+          "scope": "Universal absoluta.",
+          "normativity": "MANDATORY",
           "exceptions": [],
-          "blocks": [
-            {
-              "type": "table_ref",
-              "tableId": "TABLE-IP-A00-G04-001",
-              "table": {
-                "tableId": "TABLE-IP-A00-G04-001",
-                "caption": "Regras canônicas",
-                "headers": [
-                  "Justificativa / Regra",
-                  "Terminações Exigidas / Critério",
-                  "Exemplos Canônicos",
-                  "ID Detalhado"
-                ],
-                "rows": [
-                  [
-                    "(1) Oxítonas",
-                    "Terminadas em-A(s), -E(s), -O(s), -EM(ens) (2+ sílabas)",
-                    "sofá, café, alguém, contém, até, nomeá-la",
-                    "KB-A00-G04-002"
-                  ],
-                  [
-                    "(2) Paroxítonas (Geral)",
-                    "Terminadas em qualquer terminaçãoEXCETO -A, -E, -O, -EM(ens)",
-                    "cáqui, ônix, ímã, Méier, interminável",
-                    "KB-A00-G04-003"
-                  ],
-                  [
-                    "(3) Proparoxítonas",
-                    "Todas são acentuadas (sílaba tônica na antepenúltima)",
-                    "lâmpada, álibi, ínterim, logística, varíola",
-                    "KB-A00-G04-004"
-                  ],
-                  [
-                    "(4) Monossílabos Tônicos",
-                    "Terminados em-A(s), -E(s), -O(s) (1 única sílaba)",
-                    "pá, gás, fé, mês, pé, dó, pós",
-                    "KB-A00-G04-005"
-                  ],
-                  [
-                    "(5) Paroxítonas em Ditongo",
-                    "Terminadas em encontro vocálico (vogal + semivogal na mesma sílaba)",
-                    "órfão, história, fáceis, móveis, previsíveis",
-                    "KB-A00-G04-006"
-                  ],
-                  [
-                    "(5/3) Proparoxítona Eventual",
-                    "Paroxítonas terminadas emditongo crescente (dupla divisão)",
-                    "secretária / se-cre-tá-ri-a, memória",
-                    "KB-A00-G04-007"
-                  ],
-                  [
-                    "(6) Hiato em I / U Tônico",
-                    "2ª vogal do hiato sendo I/U tônico, sozinho ou com S, sem NH/Z",
-                    "sa-í-da, ba-ú, ju-í-za, ca-fe-í-na",
-                    "KB-A00-G04-008"
-                  ],
-                  [
-                    "(7) Acento Diferencial",
-                    "3 casos fixos:têm/vêm (plurais), pôr (verbo), pôde (passado)",
-                    "eles têm, pôr (vs por), pôde (vs pode)",
-                    "KB-A00-G04-009"
-                  ]
-                ]
-              }
-            }
+          "examples": [
+            "árvore",
+            "espécime",
+            "pétala",
+            "metafísica"
           ]
         }
       ]
@@ -462,67 +113,17 @@
     "resolution": {
       "procedures": [
         {
-          "procedureId": "PROC-A00-G04-001",
-          "title": "Método dos 3 Passos para Julgamento de Acentuação",
-          "objective": "Executar o algoritmo decisório para Método dos 3 Passos para Julgamento de Acentuação",
-          "inputs": [
-            {
-              "name": "segmento_analisado",
-              "description": "Estrutura textual submetida ao roteiro de Método dos 3 Passos para Julgamento de Acentuação."
-            }
-          ],
+          "procedureId": "PROC-AC-01",
+          "title": "Procedimento em 3 Etapas para Questões de Acentuação",
+          "triggerCondition": "Julgar se duas palavras são acentuadas pela mesma regra gráfica.",
           "steps": [
-            {
-              "order": 1,
-              "action": "Analisar com 100% de precisão qualquer palavra submetida a julgamento de regra em provas de concursos, evitando armadilhas fonéticas e visuais",
-              "explanation": "Procedimento operacional para Método dos 3 Passos para Julgamento de Acentuação.",
-              "test": null
-            },
-            {
-              "order": 2,
-              "action": "[Início do Processo] [Passo 1: Separação Silábica na Margem da Prova] Se houver hífen/pronome enclítico (-lo, -la), corte o pronome e separe apenas o verbo",
-              "explanation": "Procedimento operacional para Método dos 3 Passos para Julgamento de Acentuação.",
-              "test": null
-            },
-            {
-              "order": 3,
-              "action": "Lembre-se: Toda sílaba tem uma vogal; consoante muda gruda na anterior (af-ta)",
-              "explanation": "Procedimento operacional para Método dos 3 Passos para Julgamento de Acentuação.",
-              "test": null
-            },
-            {
-              "order": 4,
-              "action": "[Passo 2: Determinação da Sílaba Tônica] Sílaba única forte > Monossílabo Tônico Antepenúltima sílaba > Proparoxítona Última sílaba > Oxítona Penúltima sílaba > Paroxítona / Hiato / Ditongo [Passo 3: Enquadramento Normativo nas 7 Justificativas] É I ou U tônico isolado na 2ª posição de hiato? > Regra 6 (Hiato) É paroxítona terminada em ditongo? > Regra 5 (Ditongo / Eventual se crescente) É paroxítona sem A, E, O, EM? > Regra 2 (Paroxítona Geral) É oxítona terminada em A, E, O, EM(ens)? > Regra 1 (Oxítona) É circunflexo para diferenciar homógrafos? > Regra 7 (Acento Diferencial) [Julgamento da Assertiva] Se palavra A e palavra B possuem o mesmo enquadramento final no Passo 3 > [CERTO] Se possuem enquadramentos distintos > [ERRADO]",
-              "explanation": "Procedimento operacional para Método dos 3 Passos para Julgamento de Acentuação.",
-              "test": null
-            }
+            "1. Localize a sílaba tônica de cada palavra (última = oxítona, penúltima = paroxítona, antepenúltima = proparoxítona).",
+            "2. Identifique se é regra geral (terminação) ou regra especial (hiato / ditongo aberto).",
+            "3. Compare a justificativa normativa formal: oxítona NÃO é a mesma regra de monossílabo tônico; paroxítona em ditongo é regra de paroxítona."
           ],
-          "outputs": [
-            {
-              "name": "classificacao_normativa",
-              "description": "Diagnóstico definitivo conforme os preceitos de Método dos 3 Passos para Julgamento de Acentuação."
-            }
-          ],
-          "blocks": [
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Objetivo"
-            },
-            {
-              "type": "paragraph",
-              "text": "Analisar com 100% de precisão qualquer palavra submetida a julgamento de regra em provas de concursos, evitando armadilhas fonéticas e visuais."
-            },
-            {
-              "type": "heading",
-              "level": 3,
-              "text": "Passos do Procedimento"
-            },
-            {
-              "type": "diagram",
-              "diagramType": "tree",
-              "text": "[Início do Processo] │ ▼ [Passo 1: Separação Silábica na Margem da Prova] ├── Se houver hífen/pronome enclítico (-lo, -la), corte o pronome e separe apenas o verbo. └── Lembre-se: Toda sílaba tem uma vogal; consoante muda gruda na anterior (af-ta). │ ▼ [Passo 2: Determinação da Sílaba Tônica] ├── Sílaba única forte ──> Monossílabo Tônico ├── Antepenúltima sílaba ──> Proparoxítona ├── Última sílaba ──> Oxítona └── Penúltima sílaba ──> Paroxítona / Hiato / Ditongo │ ▼ [Passo 3: Enquadramento Normativo nas 7 Justificativas] ├── É I ou U tônico isolado na 2ª posição de hiato? ──> Regra 6 (Hiato) ├── É paroxítona terminada em ditongo? ──────────────> Regra 5 (Ditongo / Eventual se crescente) ├── É paroxítona sem A, E, O, EM? ───────────────────> Regra 2 (Paroxítona Geral) ├── É oxítona terminada em A, E, O, EM(ens)? ────────> Regra 1 (Oxítona) └── É circunflexo para diferenciar homógrafos? ───────> Regra 7 (Acento Diferencial) │ ▼ [Julgamento da Assertiva] Se palavra A e palavra B possuem o mesmo enquadramento final no Passo 3 ──> [CERTO] Se possuem enquadramentos distintos ────────────────────────────────────> [ERRADO]"
-            }
+          "verificationCriteria": "Verificar se as palavras pertencem exatamente à mesma categoria posicional e de regra.",
+          "typicalFailureModes": [
+            "Achar que 'pá' e 'sofá' seguem a mesma regra (uma é monossílabo, a outra oxítona)."
           ]
         }
       ]
@@ -530,844 +131,818 @@
     "contrasts": {
       "items": [
         {
-          "contrastId": "CONTRAST-IP-A00-G04-001",
-          "title": "Tabela 1: Oxítona vs. Monossílabo Tônico",
-          "contrastType": "mixed",
-          "conceptA": "Tabela 1: Oxítona vs. Monossílabo Tônico",
-          "conceptB": "Forma concorrente",
-          "sideA": {
-            "label": "Elemento A",
-            "criteria": [
-              "Critérios de identificação do primeiro elemento."
-            ]
+          "contrastId": "C-AC-01",
+          "conceptA": "Monossílabo Tônico",
+          "conceptB": "Oxítona",
+          "decisiveDifference": "Monossílabo tônico tem apenas uma sílaba; oxítona possui duas ou mais sílabas com acento na última.",
+          "minimalPair": {
+            "sentenceA": "Ele bebeu o chá da tarde. ('chá' = monossílabo tônico)",
+            "sentenceB": "Ele visitou o crachá do evento. ('crachá' = oxítona terminada em -a)",
+            "difference": "Chá e crachá NÃO são acentuados pela mesma regra gramatical."
           },
-          "sideB": {
-            "label": "Elemento B",
-            "criteria": [
-              "Critérios de identificação do segundo elemento."
-            ]
-          },
-          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
-          "blocks": [
-            {
-              "type": "table_ref",
-              "tableId": "TABLE-IP-A00-G04-002",
-              "table": {
-                "tableId": "TABLE-IP-A00-G04-002",
-                "caption": "Contrastes decisivos",
-                "headers": [
-                  "Critério",
-                  "Oxítona (KB-A00-G04-002)",
-                  "Monossílabo Tônico (KB-A00-G04-005)"
-                ],
-                "rows": [
-                  [
-                    "Quantidade de Sílabas",
-                    "2 ou mais sílabas",
-                    "Exatamente 1 sílaba"
-                  ],
-                  [
-                    "Terminações Válidas",
-                    "-A(s), -E(s), -O(s), -EM, -ENS",
-                    "-A(s), -E(s), -O(s)"
-                  ],
-                  [
-                    "Terminação -EM / -ENS",
-                    "Acentuada (al-guém, con-tém)",
-                    "NÃO acentuada (trem, bem, sem)"
-                  ],
-                  [
-                    "Pares de Comparação",
-                    "café (oxítona) $\\neq$ fé (monossílabo); até (oxítona) $\\neq$ pé (monossílabo)",
-                    ""
-                  ]
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "contrastId": "CONTRAST-IP-A00-G04-002",
-          "title": "Tabela 2: Hiato de 1ª Vogal vs. Hiato de 2ª Vogal (Proparoxítona vs. Hiato Tônico)",
-          "contrastType": "phonological",
-          "conceptA": "Tabela 2: Hiato de 1ª Vogal vs. Hiato de 2ª Vogal (Proparoxítona vs. Hiato Tônico)",
-          "conceptB": "Forma concorrente",
-          "sideA": {
-            "label": "Elemento A",
-            "criteria": [
-              "Critérios de identificação do primeiro elemento."
-            ]
-          },
-          "sideB": {
-            "label": "Elemento B",
-            "criteria": [
-              "Critérios de identificação do segundo elemento."
-            ]
-          },
-          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
-          "blocks": [
-            {
-              "type": "table_ref",
-              "tableId": "TABLE-IP-A00-G04-003",
-              "table": {
-                "tableId": "TABLE-IP-A00-G04-003",
-                "caption": "Contrastes decisivos",
-                "headers": [
-                  "Vocábulo",
-                  "Divisão Silábica",
-                  "Posição do \"I\" no Encontro",
-                  "Justificativa Oficial"
-                ],
-                "rows": [
-                  [
-                    "Varíola",
-                    "va - rí - o - la",
-                    "1ª Vogal do Hiato (antepenúltima sílaba)",
-                    "Regra 3: Proparoxítona"
-                  ],
-                  [
-                    "Saída",
-                    "sa - í - da",
-                    "2ª Vogal do Hiato (penúltima sílaba)",
-                    "Regra 6: Hiato Tônico em I"
-                  ],
-                  [
-                    "Cafeína",
-                    "ca - fe - í - na",
-                    "2ª Vogal do Hiato (penúltima sílaba)",
-                    "Regra 6: Hiato Tônico em I"
-                  ]
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "contrastId": "CONTRAST-IP-A00-G04-003",
-          "title": "Tabela 3: Ditongo Crescente vs. Ditongo Decrescente",
-          "contrastType": "phonological",
-          "conceptA": "Tabela 3: Ditongo Crescente vs. Ditongo Decrescente",
-          "conceptB": "Forma concorrente",
-          "sideA": {
-            "label": "Elemento A",
-            "criteria": [
-              "Critérios de identificação do primeiro elemento."
-            ]
-          },
-          "sideB": {
-            "label": "Elemento B",
-            "criteria": [
-              "Critérios de identificação do segundo elemento."
-            ]
-          },
-          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
-          "blocks": [
-            {
-              "type": "paragraph",
-              "text": "|:---------------------------- |:--------------------------------------------- |:--------------------------------------------------------------------------------- |:-------------------------------------------------------------------------------------------------------------------------------------- |"
-            },
-            {
-              "type": "paragraph",
-              "text": "| Ditongo Crescente | Semivogal + Vogal (Fraco$\\rightarrow$ Forte) | se-cre-tá-ria, his-tó-ria, me-mó-ria, ho-mi-cí-dios | Dupla Justificativa: Paroxítona em ditongo OU Proparoxítona Eventual/Ocasional (KB-A00-G04-007). |"
-            },
-            {
-              "type": "paragraph",
-              "text": "| Ditongo Decrescente | Vogal + Semivogal (Forte$\\rightarrow$ Fraco) | no-tá-veis, mó-veis, fá-ceis, pos-sí-veis, pre-vi-sí-veis | Justificativa Única: Estritamente Paroxítona em ditongo. NUNCA vira proparoxítona eventual (KB-A00-G04-006). |"
-            }
-          ]
+          "practicalHeuristic": "Conte as sílabas: 1 sílaba = regra dos monossílabos; 2+ sílabas = regra das oxítonas.",
+          "pitfall": "Marcar como correta a assertiva que afirma que 'já' e 'maracujá' são acentuadas pela mesma regra."
         }
       ]
     },
     "examples": {
       "items": [
         {
-          "exampleId": "WORKED_EXAMPLE-IP-A00-G04-001",
-          "title": "EX-A00-G04-001 — Demonstração Contrastiva: \"Juiz\" vs. \"Juíza\"",
-          "prompt": "Análise de JUIZ: Divisão silábica: JU - IZ. A letra \"I\" é a 2ª vogal do hiato, mas fica acompanhada da consoante \"Z\" na mesma sílaba. Conclusão: NÃO recebe acento gráfico.",
-          "analysisSteps": [
-            {
-              "order": 1,
-              "action": "Análise de JUIZ",
-              "rationale": "Divisão silábica: JU - IZ. A letra \"I\" é a 2ª vogal do hiato, mas fica acompanhada da consoante \"Z\" na mesma sílaba. Conclusão: NÃO recebe acento gráfico."
-            },
-            {
-              "order": 2,
-              "action": "Análise de JUÍZA",
-              "rationale": "Divisão silábica: JU - Í - ZA. A letra \"I\" é a 2ª vogal do hiato e fica completamente sozinha em sua sílaba. Conclusão: RECEBE acento agudo pela Regra 6 (Hiato)."
-            }
-          ],
-          "result": "Análise de JUÍZA: Divisão silábica: JU - Í - ZA. A letra \"I\" é a 2ª vogal do hiato e fica completamente sozinha em sua sílaba. Conclusão: RECEBE acento agudo pela Regra 6 (Hiato).",
-          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G04-001 — Demonstração Contrastiva: \"Juiz\" vs. \"Juíza\" sobre o segmento analisado.",
-          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G04-001 — Demonstração Contrastiva: \"Juiz\" vs. \"Juíza\".",
-          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G04-001 — Demonstração Contrastiva: \"Juiz\" vs. \"Juíza\".",
-          "blocks": [
-            {
-              "type": "list",
-              "ordered": false,
-              "items": [
-                "Análise de JUIZ: Divisão silábica: JU - IZ. A letra \"I\" é a 2ª vogal do hiato, mas fica acompanhada da consoante \"Z\" na mesma sílaba. Conclusão: NÃO recebe acento gráfico.",
-                "Análise de JUÍZA: Divisão silábica: JU - Í - ZA. A letra \"I\" é a 2ª vogal do hiato e fica completamente sozinha em sua sílaba. Conclusão: RECEBE acento agudo pela Regra 6 (Hiato)."
-              ]
-            }
-          ]
-        },
-        {
-          "exampleId": "WORKED_EXAMPLE-IP-A00-G04-002",
-          "title": "EX-A00-G04-002 — Bateria de Fixação Manual (Treino dos 3 Passos)",
-          "prompt": "Logística: lo-gís-ti-ca $\\rightarrow$ Tônica na antepenúltima (gís) $\\rightarrow$ Proparoxítona (Regra 3).",
-          "analysisSteps": [
-            {
-              "order": 1,
-              "action": "Logística",
-              "rationale": "lo-gís-ti-ca $\\rightarrow$ Tônica na antepenúltima (gís) $\\rightarrow$ Proparoxítona (Regra 3)."
-            },
-            {
-              "order": 2,
-              "action": "Até",
-              "rationale": "a-té $\\rightarrow$ Tônica na última (té) $\\rightarrow$ Oxítona terminada em E (Regra 1)."
-            },
-            {
-              "order": 3,
-              "action": "Pé",
-              "rationale": "pé $\\rightarrow$ Vocábulo de sílaba única $\\rightarrow$ Monossílabo Tônico terminado em E (Regra 4)."
-            },
-            {
-              "order": 4,
-              "action": "Interminável",
-              "rationale": "in-ter-mi-ná-vel $\\rightarrow$ Tônica na penúltima (ná), terminada em L $\\rightarrow$ Paroxítona não terminada em A, E, O, EM (Regra 2)."
-            },
-            {
-              "order": 5,
-              "action": "Cafeína",
-              "rationale": "ca-fe-í-na $\\rightarrow$ Tônica no I (2ª vogal do hiato, isolado) $\\rightarrow$ Regra do Hiato Tônico (Regra 6)."
-            }
-          ],
-          "result": "Previsíveis: pre-vi-sí-veis $\\rightarrow$ Tônica na penúltima (sí), terminada em ditongo decrescente -eis $\\rightarrow$ Paroxítona terminada em ditongo (Regra 5).",
-          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G04-002 — Bateria de Fixação Manual (Treino dos 3 Passos) sobre o segmento analisado.",
-          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G04-002 — Bateria de Fixação Manual (Treino dos 3 Passos).",
-          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G04-002 — Bateria de Fixação Manual (Treino dos 3 Passos).",
-          "blocks": [
-            {
-              "type": "list",
-              "ordered": true,
-              "items": [
-                "Logística: lo-gís-ti-ca $\\rightarrow$ Tônica na antepenúltima (gís) $\\rightarrow$ Proparoxítona (Regra 3).",
-                "Até: a-té $\\rightarrow$ Tônica na última (té) $\\rightarrow$ Oxítona terminada em E (Regra 1).",
-                "Pé: pé $\\rightarrow$ Vocábulo de sílaba única $\\rightarrow$ Monossílabo Tônico terminado em E (Regra 4).",
-                "Interminável: in-ter-mi-ná-vel $\\rightarrow$ Tônica na penúltima (ná), terminada em L $\\rightarrow$ Paroxítona não terminada em A, E, O, EM (Regra 2).",
-                "Cafeína: ca-fe-í-na $\\rightarrow$ Tônica no I (2ª vogal do hiato, isolado) $\\rightarrow$ Regra do Hiato Tônico (Regra 6).",
-                "Previsíveis: pre-vi-sí-veis $\\rightarrow$ Tônica na penúltima (sí), terminada em ditongo decrescente -eis $\\rightarrow$ Paroxítona terminada em ditongo (Regra 5)."
-              ]
-            }
-          ]
-        },
-        {
-          "exampleId": "WORKED_EXAMPLE-IP-A00-G04-003",
-          "title": "EX-A00-G04-003 — Questão CEBRASPE — MPE-SC 2021 (Promotor de Justiça)",
-          "prompt": "Enunciado: O emprego do acento agudo em \"nomeá-la\" e \"ordená-la\", no primeiro parágrafo, justifica-se pela mesma regra de acentuação gráfica.",
-          "analysisSteps": [
-            {
-              "order": 1,
-              "action": "Enunciado",
-              "rationale": "O emprego do acento agudo em \"nomeá-la\" e \"ordená-la\", no primeiro parágrafo, justifica-se pela mesma regra de acentuação gráfica."
-            },
-            {
-              "order": 2,
-              "action": "Resolução",
-              "rationale": "Isolam-se os pronomes enclíticos -la. Analisam-se as bases verbais: nomeá (no-me-á) e ordená (or-de-ná). Ambas são oxítonas terminadas na vogal \"A\" (Regra 1)."
-            },
-            {
-              "order": 3,
-              "action": "Gabarito",
-              "rationale": "CERTO"
-            }
-          ],
-          "result": "Gabarito: CERTO",
-          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G04-003 — Questão CEBRASPE — MPE-SC 2021 (Promotor de Justiça) sobre o segmento analisado.",
-          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G04-003 — Questão CEBRASPE — MPE-SC 2021 (Promotor de Justiça).",
-          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G04-003 — Questão CEBRASPE — MPE-SC 2021 (Promotor de Justiça).",
-          "blocks": [
-            {
-              "type": "list",
-              "ordered": false,
-              "items": [
-                "Enunciado: O emprego do acento agudo em \"nomeá-la\" e \"ordená-la\", no primeiro parágrafo, justifica-se pela mesma regra de acentuação gráfica.",
-                "Resolução: Isolam-se os pronomes enclíticos -la. Analisam-se as bases verbais: nomeá (no-me-á) e ordená (or-de-ná). Ambas são oxítonas terminadas na vogal \"A\" (Regra 1).",
-                "Gabarito: CERTO"
-              ]
-            }
-          ]
-        },
-        {
-          "exampleId": "WORKED_EXAMPLE-IP-A00-G04-004",
-          "title": "EX-A00-G04-004 — Questão CEBRASPE — TRT-8ª Região 2022 (Técnico Judiciário)",
-          "prompt": "Enunciado: O emprego do acento nos vocábulos \"etimológico\" e \"fenômeno\" (primeiro período do segundo parágrafo) justifica-se pela mesma regra de acentuação gráfica.",
-          "analysisSteps": [
-            {
-              "order": 1,
-              "action": "Enunciado",
-              "rationale": "O emprego do acento nos vocábulos \"etimológico\" e \"fenômeno\" (primeiro período do segundo parágrafo) justifica-se pela mesma regra de acentuação gráfica."
-            },
-            {
-              "order": 2,
-              "action": "Resolução",
-              "rationale": "Separação silábica: e-ti-mo-ló-gi-co e fe-nô-me-no. Em ambas as palavras, a sílaba tônica recai na antepenúltima posição. Ambas são proparoxítonas (Regra 3)."
-            },
-            {
-              "order": 3,
-              "action": "Gabarito",
-              "rationale": "CERTO"
-            }
-          ],
-          "result": "Gabarito: CERTO",
-          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G04-004 — Questão CEBRASPE — TRT-8ª Região 2022 (Técnico Judiciário) sobre o segmento analisado.",
-          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G04-004 — Questão CEBRASPE — TRT-8ª Região 2022 (Técnico Judiciário).",
-          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G04-004 — Questão CEBRASPE — TRT-8ª Região 2022 (Técnico Judiciário).",
-          "blocks": [
-            {
-              "type": "list",
-              "ordered": false,
-              "items": [
-                "Enunciado: O emprego do acento nos vocábulos \"etimológico\" e \"fenômeno\" (primeiro período do segundo parágrafo) justifica-se pela mesma regra de acentuação gráfica.",
-                "Resolução: Separação silábica: e-ti-mo-ló-gi-co e fe-nô-me-no. Em ambas as palavras, a sílaba tônica recai na antepenúltima posição. Ambas são proparoxítonas (Regra 3).",
-                "Gabarito: CERTO"
-              ]
-            }
-          ]
-        },
-        {
-          "exampleId": "WORKED_EXAMPLE-IP-A00-G04-005",
-          "title": "EX-A00-G04-005 — Questão CEBRASPE — ITAIPU Binacional 2024",
-          "prompt": "Enunciado: Empregado no texto CB2A1, o vocábulo \"eólica\" acentua-se devido à mesma regra de acentuação que determina o emprego do acento na palavra renovável.",
-          "analysisSteps": [
-            {
-              "order": 1,
-              "action": "Enunciado",
-              "rationale": "Empregado no texto CB2A1, o vocábulo \"eólica\" acentua-se devido à mesma regra de acentuação que determina o emprego do acento na palavra renovável."
-            },
-            {
-              "order": 2,
-              "action": "Resolução",
-              "rationale": "Eólica (e-ó-li-ca) é proparoxítona (Regra 3). Renovável (re-no-vá-vel) é paroxítona terminada na consoante L (Regra 2). Trata-se de regras distintas."
-            },
-            {
-              "order": 3,
-              "action": "Gabarito",
-              "rationale": "ERRADO"
-            }
-          ],
-          "result": "Gabarito: ERRADO",
-          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G04-005 — Questão CEBRASPE — ITAIPU Binacional 2024 sobre o segmento analisado.",
-          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G04-005 — Questão CEBRASPE — ITAIPU Binacional 2024.",
-          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G04-005 — Questão CEBRASPE — ITAIPU Binacional 2024.",
-          "blocks": [
-            {
-              "type": "list",
-              "ordered": false,
-              "items": [
-                "Enunciado: Empregado no texto CB2A1, o vocábulo \"eólica\" acentua-se devido à mesma regra de acentuação que determina o emprego do acento na palavra renovável.",
-                "Resolução: Eólica (e-ó-li-ca) é proparoxítona (Regra 3). Renovável (re-no-vá-vel) é paroxítona terminada na consoante L (Regra 2). Trata-se de regras distintas.",
-                "Gabarito: ERRADO"
-              ]
-            }
-          ]
-        },
-        {
-          "exampleId": "WORKED_EXAMPLE-IP-A00-G04-006",
-          "title": "EX-A00-G04-006 — Questão CEBRASPE — Pref. Cachoeiro de Itapemirim 2024",
-          "prompt": "Enunciado: Os vocábulos \"homicídios\" e \"caíram\" são acentuados graficamente de acordo com a mesma regra de acentuação gráfica.",
-          "analysisSteps": [
-            {
-              "order": 1,
-              "action": "Enunciado",
-              "rationale": "Os vocábulos \"homicídios\" e \"caíram\" são acentuados graficamente de acordo com a mesma regra de acentuação gráfica."
-            },
-            {
-              "order": 2,
-              "action": "Resolução",
-              "rationale": "Homicídios (ho-mi-cí-dios) é paroxítona terminada em ditongo crescente / proparoxítona eventual (Regra 5). Caíram (ca-í-ram) é acentuada pela regra do hiato tônico (Regra 6, \"I\" é 2ª vogal do hiato). Regras distintas."
-            },
-            {
-              "order": 3,
-              "action": "Gabarito",
-              "rationale": "ERRADO"
-            }
-          ],
-          "result": "Gabarito: ERRADO",
-          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G04-006 — Questão CEBRASPE — Pref. Cachoeiro de Itapemirim 2024 sobre o segmento analisado.",
-          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G04-006 — Questão CEBRASPE — Pref. Cachoeiro de Itapemirim 2024.",
-          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G04-006 — Questão CEBRASPE — Pref. Cachoeiro de Itapemirim 2024.",
-          "blocks": [
-            {
-              "type": "list",
-              "ordered": false,
-              "items": [
-                "Enunciado: Os vocábulos \"homicídios\" e \"caíram\" são acentuados graficamente de acordo com a mesma regra de acentuação gráfica.",
-                "Resolução: Homicídios (ho-mi-cí-dios) é paroxítona terminada em ditongo crescente / proparoxítona eventual (Regra 5). Caíram (ca-í-ram) é acentuada pela regra do hiato tônico (Regra 6, \"I\" é 2ª vogal do hiato). Regras distintas.",
-                "Gabarito: ERRADO"
-              ]
-            }
-          ]
-        },
-        {
-          "exampleId": "WORKED_EXAMPLE-IP-A00-G04-007",
-          "title": "EX-A00-G04-007 — Questão CEBRASPE — SME Recife 2023 (Professor)",
-          "prompt": "Enunciado: Os vocábulos \"fáceis\" e \"possíveis\" recebem acento por serem paroxítonas terminadas em ditongo oral.",
-          "analysisSteps": [
-            {
-              "order": 1,
-              "action": "Enunciado",
-              "rationale": "Os vocábulos \"fáceis\" e \"possíveis\" recebem acento por serem paroxítonas terminadas em ditongo oral."
-            },
-            {
-              "order": 2,
-              "action": "Resolução",
-              "rationale": "fá-ceis e pos-sí-veis são paroxítonas terminadas no ditongo decrescente oral -eis. O enquadramento anunciado no item é perfeito."
-            },
-            {
-              "order": 3,
-              "action": "Gabarito",
-              "rationale": "CERTO"
-            }
-          ],
-          "result": "Gabarito: CERTO",
-          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G04-007 — Questão CEBRASPE — SME Recife 2023 (Professor) sobre o segmento analisado.",
-          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G04-007 — Questão CEBRASPE — SME Recife 2023 (Professor).",
-          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G04-007 — Questão CEBRASPE — SME Recife 2023 (Professor).",
-          "blocks": [
-            {
-              "type": "list",
-              "ordered": false,
-              "items": [
-                "Enunciado: Os vocábulos \"fáceis\" e \"possíveis\" recebem acento por serem paroxítonas terminadas em ditongo oral.",
-                "Resolução: fá-ceis e pos-sí-veis são paroxítonas terminadas no ditongo decrescente oral -eis. O enquadramento anunciado no item é perfeito.",
-                "Gabarito: CERTO"
-              ]
-            }
-          ]
-        },
-        {
-          "exampleId": "WORKED_EXAMPLE-IP-A00-G04-008",
-          "title": "EX-A00-G04-008 — Questão CEBRASPE — TCE-RJ (Analista de Controle Externo)",
-          "prompt": "Enunciado: O emprego de acento agudo nas palavras \"elétricos\" (l.7), \"pálidas\" (l.7) e \"móveis\" (l.8) justifica-se pela mesma regra de acentuação gráfica.",
-          "analysisSteps": [
-            {
-              "order": 1,
-              "action": "Enunciado",
-              "rationale": "O emprego de acento agudo nas palavras \"elétricos\" (l.7), \"pálidas\" (l.7) e \"móveis\" (l.8) justifica-se pela mesma regra de acentuação gráfica."
-            },
-            {
-              "order": 2,
-              "action": "Resolução",
-              "rationale": "Elétricos (e-lé-tri-cos) e pálidas (pá-li-das) são proparoxítonas (Regra 3). A palavra móveis (mó-veis) é paroxítona terminada em ditongo decrescente. Por ser decrescente, não pode ser reclassificada como proparoxítona eventual. Logo, a regra de móveis não é a mesma das outras duas."
-            },
-            {
-              "order": 3,
-              "action": "Gabarito",
-              "rationale": "ERRADO"
-            }
-          ],
-          "result": "Gabarito: ERRADO",
-          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G04-008 — Questão CEBRASPE — TCE-RJ (Analista de Controle Externo) sobre o segmento analisado.",
-          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G04-008 — Questão CEBRASPE — TCE-RJ (Analista de Controle Externo).",
-          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G04-008 — Questão CEBRASPE — TCE-RJ (Analista de Controle Externo).",
-          "blocks": [
-            {
-              "type": "list",
-              "ordered": false,
-              "items": [
-                "Enunciado: O emprego de acento agudo nas palavras \"elétricos\" (l.7), \"pálidas\" (l.7) e \"móveis\" (l.8) justifica-se pela mesma regra de acentuação gráfica.",
-                "Resolução: Elétricos (e-lé-tri-cos) e pálidas (pá-li-das) são proparoxítonas (Regra 3). A palavra móveis (mó-veis) é paroxítona terminada em ditongo decrescente. Por ser decrescente, não pode ser reclassificada como proparoxítona eventual. Logo, a regra de móveis não é a mesma das outras duas.",
-                "Gabarito: ERRADO"
-              ]
-            }
-          ]
-        },
-        {
-          "exampleId": "WORKED_EXAMPLE-IP-A00-G04-009",
-          "title": "EX-A00-G04-009 — Questão CEBRASPE — TRF-1ª Região (Analista Judiciário)",
-          "prompt": "Enunciado: O emprego de acento na palavra \"memória\" (l.19) pode ser justificado por duas regras de acentuação distintas.",
-          "analysisSteps": [
-            {
-              "order": 1,
-              "action": "Enunciado",
-              "rationale": "O emprego de acento na palavra \"memória\" (l.19) pode ser justificado por duas regras de acentuação distintas."
-            },
-            {
-              "order": 2,
-              "action": "Resolução",
-              "rationale": "Por terminar em ditongo crescente, memória admite a separação padrão me-mó-ria (Paroxítona em Ditongo) e a separação secundária me-mó-ri-a (Proparoxítona Eventual/Ocasional). Logo, pode ser justificada por duas regras distintas."
-            },
-            {
-              "order": 3,
-              "action": "Gabarito",
-              "rationale": "CERTO"
-            }
-          ],
-          "result": "Gabarito: CERTO",
-          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G04-009 — Questão CEBRASPE — TRF-1ª Região (Analista Judiciário) sobre o segmento analisado.",
-          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G04-009 — Questão CEBRASPE — TRF-1ª Região (Analista Judiciário).",
-          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G04-009 — Questão CEBRASPE — TRF-1ª Região (Analista Judiciário).",
-          "blocks": [
-            {
-              "type": "list",
-              "ordered": false,
-              "items": [
-                "Enunciado: O emprego de acento na palavra \"memória\" (l.19) pode ser justificado por duas regras de acentuação distintas.",
-                "Resolução: Por terminar em ditongo crescente, memória admite a separação padrão me-mó-ria (Paroxítona em Ditongo) e a separação secundária me-mó-ri-a (Proparoxítona Eventual/Ocasional). Logo, pode ser justificada por duas regras distintas.",
-                "Gabarito: CERTO"
-              ]
-            }
-          ]
+          "exampleId": "EX-AC-01",
+          "title": "Análise de 'Pólen' vs 'Polens'",
+          "sentence": "O pólen fecunda a flor, mas os polens causam alergia.",
+          "analysis": "Pólen é paroxítona terminada em -n (acentuada). Polens é paroxítona terminada em -ens (não acentuada, pois segue a regra de não acentuar paroxítonas com terminação de oxítona).",
+          "pedagogicalTakeaway": "Paroxítonas em -n têm acento no singular, mas perdem no plural em -ens (hífen/hifens, pólen/polens).",
+          "targetLO": "LO-A00-G04-01"
         }
       ]
     },
     "mnemonics": {
       "blocks": [
         {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Aplicação Prática: Guarde que todos os 3 acentos diferenciais remanescentes no português utilizam unicamente o acento circunflexo (^):"
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": true,
-          "items": [
-            "Eles têm / vêm (e derivados oxítonos no plural: mantêm, contêm).",
-            "Pôr (verbo, para diferenciar de por).",
-            "Pôde (passado, para diferenciar de pode)."
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Se qualquer assertiva de prova propuser acento agudo como acento diferencial, o item estará incorreto."
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Mantra: \"A base da sílaba é a vogal. Sem vogal, não há sílaba.\"",
-            "Consoantes soltas no meio do vocábulo (afta, etnia) são empurradas para a sílaba anterior (af-ta, et-ni-a). Palavras iniciadas por consoantes mudas (pneu, psicologia) mantêm a consoante colada na vogal seguinte."
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Viu verbo com pronome preso por hífen (encontrá-lo, amá-la, dizê-lo)? Passe um traço sobre o pronome enclítico e classifique exclusivamente o verbo que restou."
-          ]
+          "type": "mnemonic",
+          "mnemonicId": "MNEM-AC-01",
+          "title": "ROUXINOL e as Paroxítonas",
+          "content": "R-X-N-L (ROUXINOL) + I, U, UM, PS, Ã, ÃO, DITONGO = Paroxítonas acentuadas!",
+          "classification": "EXAM_HEURISTIC",
+          "appliesTo": "Memorização rápida das terminações de paroxítonas.",
+          "limitations": "Lembrar que -ens desacentua no plural (hifens, polens).",
+          "text": "R, X, N, L, I(s), U(s), Um/Uns, Ps, Ã(s), Ão(s), Ditongos recebem acento nas paroxítonas."
         }
       ]
     },
     "traps": {
       "items": [
         {
-          "trapId": "WARN-A00-G04-001",
-          "title": "Confusão entre Oxítona e Monossílabo Tônico",
-          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão entre Oxítona e Monossílabo Tônico no enunciado da questão.",
-          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão entre Oxítona e Monossílabo Tônico.",
-          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão entre Oxítona e Monossílabo Tônico.",
-          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão entre Oxítona e Monossílabo Tônico para desarmar a armadilha.",
-          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão entre Oxítona e Monossílabo Tônico.",
-          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão entre Oxítona e Monossílabo Tônico.",
-          "blocks": [
-            {
-              "type": "list",
-              "ordered": false,
-              "items": [
-                "Erro Comum: Julgar que café e fé, ou até e pé, seguem a mesma regra porque terminam na letra \"E\".",
-                "Esclarecimento: Oxítonas têm 2 ou mais sílabas (Regra 1); monossílabos têm apenas 1 sílaba (Regra 4). Além disso, monossílabos tônicos não se acentuam com a terminação -EM (trem, sem)."
-              ]
-            }
-          ]
-        },
-        {
-          "trapId": "WARN-A00-G04-002",
-          "title": "A Falsa Regra do Hiato em \"Varíola\" (1ª Vogal do Hiato)",
-          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Falsa Regra do Hiato em \"Varíola\" (1ª Vogal do Hiato) no enunciado da questão.",
-          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Falsa Regra do Hiato em \"Varíola\" (1ª Vogal do Hiato).",
-          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Falsa Regra do Hiato em \"Varíola\" (1ª Vogal do Hiato).",
-          "correctReasoning": "Aplicar os critérios canônicos normativos de A Falsa Regra do Hiato em \"Varíola\" (1ª Vogal do Hiato) para desarmar a armadilha.",
-          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Falsa Regra do Hiato em \"Varíola\" (1ª Vogal do Hiato).",
-          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Falsa Regra do Hiato em \"Varíola\" (1ª Vogal do Hiato).",
-          "blocks": [
-            {
-              "type": "list",
-              "ordered": false,
-              "items": [
-                "Pegadinha da Banca: A banca afirma que varíola e saída acentuam-se pela mesma regra por conterem a letra \"I\" em hiato.",
-                "Correção: A regra do hiato exige que o \"I\" seja a 2ª vogal. Em varíola (va-rí-o-la), o \"I\" é a 1ª vogal e o acento decorre de ser proparoxítona."
-              ]
-            }
-          ]
-        },
-        {
-          "trapId": "WARN-A00-G04-003",
-          "title": "Tentativa de Converter Ditongo Decrescente em Proparoxítona Eventual",
-          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Tentativa de Converter Ditongo Decrescente em Proparoxítona Eventual no enunciado da questão.",
-          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Tentativa de Converter Ditongo Decrescente em Proparoxítona Eventual.",
-          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Tentativa de Converter Ditongo Decrescente em Proparoxítona Eventual.",
-          "correctReasoning": "Aplicar os critérios canônicos normativos de Tentativa de Converter Ditongo Decrescente em Proparoxítona Eventual para desarmar a armadilha.",
-          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Tentativa de Converter Ditongo Decrescente em Proparoxítona Eventual.",
-          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Tentativa de Converter Ditongo Decrescente em Proparoxítona Eventual.",
-          "blocks": [
-            {
-              "type": "list",
-              "ordered": false,
-              "items": [
-                "Pegadinha da Banca: A banca tenta equiparar móveis ou notáveis a elétricos, alegando que móveis seria \"proparoxítona eventual\".",
-                "Correção: Apenas ditongos crescentes (história, secretária) admitem conversão em proparoxítona eventual. Ditongos decrescentes (-eis, -ais) são indivisíveis."
-              ]
-            }
-          ]
-        },
-        {
-          "trapId": "WARN-A00-G04-004",
-          "title": "Impedimentos à Acentuação do Hiato (Consoante Z e Dígrafo NH)",
-          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Impedimentos à Acentuação do Hiato (Consoante Z e Dígrafo NH) no enunciado da questão.",
-          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Impedimentos à Acentuação do Hiato (Consoante Z e Dígrafo NH).",
-          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Impedimentos à Acentuação do Hiato (Consoante Z e Dígrafo NH).",
-          "correctReasoning": "Aplicar os critérios canônicos normativos de Impedimentos à Acentuação do Hiato (Consoante Z e Dígrafo NH) para desarmar a armadilha.",
-          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Impedimentos à Acentuação do Hiato (Consoante Z e Dígrafo NH).",
-          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Impedimentos à Acentuação do Hiato (Consoante Z e Dígrafo NH).",
-          "blocks": [
-            {
-              "type": "list",
-              "ordered": false,
-              "items": [
-                "O \"I\" ou \"U\" tônico não recebe acento se vier acompanhado de qualquer consoante que não seja \"S\" na mesma sílaba (ju-iz, ru-im) ou se for seguido imediatamente pelo dígrafo nasal NH (ra-i-nha, ba-i-nha)."
-              ]
-            }
-          ]
-        }
-      ],
-      "supplementaryBlocks": [
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Erro Comum: Julgar que café e fé, ou até e pé, seguem a mesma regra porque terminam na letra \"E\".",
-            "Esclarecimento: Oxítonas têm 2 ou mais sílabas (Regra 1); monossílabos têm apenas 1 sílaba (Regra 4). Além disso, monossílabos tônicos não se acentuam com a terminação -EM (trem, sem)."
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Pegadinha da Banca: A banca afirma que varíola e saída acentuam-se pela mesma regra por conterem a letra \"I\" em hiato.",
-            "Correção: A regra do hiato exige que o \"I\" seja a 2ª vogal. Em varíola (va-rí-o-la), o \"I\" é a 1ª vogal e o acento decorre de ser proparoxítona."
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Pegadinha da Banca: A banca tenta equiparar móveis ou notáveis a elétricos, alegando que móveis seria \"proparoxítona eventual\".",
-            "Correção: Apenas ditongos crescentes (história, secretária) admitem conversão em proparoxítona eventual. Ditongos decrescentes (-eis, -ais) são indivisíveis."
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "O \"I\" ou \"U\" tônico não recebe acento se vier acompanhado de qualquer consoante que não seja \"S\" na mesma sílaba (ju-iz, ru-im) ou se for seguido imediatamente pelo dígrafo nasal NH (ra-i-nha, ba-i-nha)."
-          ]
+          "trapId": "TRAP-AC-01",
+          "title": "O Falso Acento em 'Ítem' e 'Hifens'",
+          "trigger": "Palavras paroxítonas terminadas em -em e -ens.",
+          "whyItFails": "O candidato projeta o acento de 'hífen' em 'hifens' ou de 'armazém' em 'item'.",
+          "correctApproach": "Item, itens, hifens, polens, jovens NÃO levam acento (são paroxítonas terminadas em -em/-ens).",
+          "bankTechnique": "Inserir 'ítem' com acento gráfico em listas de correção ortográfica.",
+          "counterRule": "Paroxítonas terminadas em -em e -ens nunca recebem acento gráfico."
         }
       ]
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "paragraph",
-          "text": "Vocábulo de duas ou mais sílabas cuja tonicidade recai na última sílaba. Acentua-se quando terminada em -a(s), -e(s), -o(s), -em, -ens, inclusive em formas verbais enclíticas (encontrá-lo)."
-        },
-        {
-          "type": "paragraph",
-          "text": "Vocábulo cuja tonicidade recai na penúltima sílaba. Acentua-se quando não termina em -a(s), -e(s), -o(s), -em(ens) (regra geral inversa) ou quando termina em ditongo (órfão, móveis)."
-        },
-        {
-          "type": "paragraph",
-          "text": "Vocábulo cuja tonicidade recai na antepenúltima sílaba. Todas são obrigatoriamente acentuadas graficamente na língua portuguesa (lâmpada, varíola)."
-        },
-        {
-          "type": "paragraph",
-          "text": "Vocábulo composto por apenas uma sílaba dotado de força fonética. Acentua-se quando terminado em -a(s), -e(s), -o(s) (pá, fé, pó), não englobando a terminação -em."
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Ditongo Crescente: Encontro de semivogal + vogal na mesma sílaba (-ria, -io, -ua). Admite vocalização e separação em hiato (gerando proparoxítona eventual).",
-            "Ditongo Decrescente: Encontro de vogal + semivogal na mesma sílaba (-eis, -ais, -ou). É indivisível e rejeita a classificação de proparoxítona eventual."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Classificação dada a palavras paroxítonas terminadas em ditongo crescente (secretária, memória) que, em dicção pausada, têm o ditongo transformado em hiato (se-cre-tá-ri-a), deslocando a tônica para a antepenúltima posição."
-        },
-        {
-          "type": "paragraph",
-          "text": "Encontro de duas vogais em sílabas contíguas separadas na divisão silábica. Acentua-se quando a segunda vogal for I ou U tônico isolado ou com \"S\" na sílaba (sa-í-da, ba-ú)."
-        },
-        {
-          "type": "paragraph",
-          "text": "Sinal diacrítico circunflexo utilizado unicamente para distinguir pares de palavras homógrafas com valor morfossintático ou temporal distinto (têm/vêm, pôr, pôde)."
+          "term": "Proparoxítona Eventual (Aparente)",
+          "shortDefinition": "Paroxítona terminada em ditongo crescente que pode ser pronunciada como proparoxítona.",
+          "fullDefinition": "Vocábulo com terminação em semivogal + vogal (ex: his-tó-ria / his-tó-ri-a) que a NGB classifica primordialmente como paroxítona em ditongo crescente, mas que a tradição fonética admite como proparoxítona relativa.",
+          "domain": "Acentuação Gráfica",
+          "commonMisconception": "Achar que a existência dessa dupla interpretação anula a regra geral de paroxítona em ditongo."
         }
       ]
     },
     "recall": {
-      "blocks": [
+      "prompts": [
         {
-          "type": "paragraph",
-          "text": "Ao concluir este grupo temático, o estudante possui o domínio integral das seguintes competências:"
-        },
-        {
-          "type": "list",
-          "ordered": true,
-          "items": [
-            "Domínio das 7 Justificativas: Reconhecer e fundamentar que toda palavra acentuada no português enquadra-se rigorosamente em uma das 7 justificativas oficiais (Oxítona, Paroxítona Geral, Proparoxítona, Monossílabo Tônico, Paroxítona em Ditongo, Hiato I/U ou Acento Diferencial).",
-            "Discriminação de Falsas Equivalências:"
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Não confundir Oxítona (café) com Monossílabo Tônico (fé).",
-            "Não confundir Proparoxítona com Hiato interno de 1ª vogal (varíola) com a Regra do Hiato Tônico (saída).",
-            "Não tentar converter Ditongos Decrescentes (móveis, fáceis) em proparoxítonas eventuais."
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": true,
-          "items": [
-            "Manejo de Casos Especiais:"
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Reconhecer a dupla justificativa legítima para paroxítonas em ditongo crescente (memória = paroxítona em ditongo ou proparoxítona eventual).",
-            "Aplicar a restrição das consoantes impeditivas no hiato (juiz sem acento vs. juíza com acento).",
-            "Identificar com rapidez os 3 acentos diferenciais permanentes com acento circunflexo (têm/vêm, pôr, pôde)."
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": true,
-          "items": [
-            "Execução Operacional Rápida: Aplicar o Método dos 3 Passos (separar sílabas $\\rightarrow$ achar a tônica $\\rightarrow$ aplicar a regra) para julgar assertivas de concursos de bancas exigentes (como CEBRASPE) sem hesitação."
-          ]
+          "promptId": "REC-AC-01",
+          "question": "Por que 'álbum' é acentuada e 'jovem' não?",
+          "keyPoints": [
+            "Álbum: paroxítona terminada em -um (regra de acentuação).",
+            "Jovem: paroxítona terminada em -em (não se acentuam paroxítonas em -em)."
+          ],
+          "targetConcept": "Regra das Paroxítonas",
+          "targetLO": "LO-A00-G04-01"
         }
       ]
     }
   },
   "officialQuestions": [
     {
-      "questionId": "aula00.q0114",
-      "questionType": "true_false",
-      "examBoard": "CEBRASPE",
-      "organization": "PGE-PE",
-      "year": 2019,
-      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0114.",
-      "options": [],
-      "officialAnswer": "ERRADO",
-      "explanation": "Observe a separação das sílabas e a classificação de cada palavra: JU - Í - ZO - penúltima sílaba tônica acentuada por ser HIATO. EX - TRA - Í - DOS - penúltima sílaba tônica acentuada por ser HIATO. “PE - RÍ - O - DO” é acentuada por ser uma proparoxítona. Cuidado, não há como pensar que “período” pudesse ser acentuada pela regra do hiato, pois o I não está sozinho, nem seguido de S, nem forma hiato com sílaba anterior. Questão incorreta.",
-      "questionSha256": "8a2979f2b251d714bbb91ee8525dad4037b976bb447517ff59d457424bba34b5",
-      "answerSha256": "2d7a9e0ffebc89ab6159a63287b396a62098dc9f003f741598244b0ed668574f",
-      "extractionQuality": "partial",
-      "cognitiveDemand": "analise_estrutural",
-      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Acentuação Gráfica; 3. Eliminar os distratores inconsistentes com o padrão culto.",
-      "distractorAnalysis": []
+      "schemaVersion": "2.0.0",
+      "officialQuestionId": "OQ-A00-aula00.q0013",
+      "lessonId": "A00",
+      "sourceQuestionId": "aula00.q0013",
+      "questionPayload": {
+        "question_id": "aula00.q0013",
+        "question_type": "multiple_choice",
+        "exam_board": "DPE-SC",
+        "organization": "2018",
+        "position": null,
+        "year": 2018,
+        "support_text": null,
+        "prompt": "Entre as alternativas a seguir, assinale aquela em que as duas palavras, retiradas do texto, são acentuadas graficamente por causa de regras diferentes.",
+        "options": [
+          {
+            "label": "a",
+            "text": "única – política."
+          },
+          {
+            "label": "c",
+            "text": "três – até."
+          },
+          {
+            "label": "b",
+            "text": "atlântico – doméstico."
+          },
+          {
+            "label": "d",
+            "text": "além – também."
+          },
+          {
+            "label": "e",
+            "text": "saúde – país."
+          }
+        ],
+        "tests_concept_ids": [
+          "pt.orthography.acento_grafico"
+        ],
+        "tests_rule_ids": [
+          "rule.pt.orthography.0005",
+          "rule.pt.orthography.0009"
+        ],
+        "source": {
+          "document_id": "aula00_complete",
+          "page_ids": [
+            "aula00_complete.p0018",
+            "aula00_complete.p0019"
+          ]
+        },
+        "annotation_state": "observed_highlight",
+        "extraction_confidence": 0.96,
+        "section_id": "aula00.sec05",
+        "occurrence_kind": "theory",
+        "local_number": null,
+        "duplicate_of": null
+      },
+      "questionSha256": "8e240f464f6634fd889e9fab7df569e6ad3c8891cdd484ccb97c609ad3de68e8",
+      "answerPayload": {
+        "answer_id": "aula00.q0013.answer",
+        "question_id": "aula00.q0013",
+        "answer": "C",
+        "commentary": "Vejamos as justificativas para a acentuação de cada par: a) Ú-NI-CA / PO-LÍ-TI-CA. (todas as proparoxítonas são acentuadas) b) A-TLÂN-TI-CO / DO-MÉS-TI-CO. (todas as proparoxítonas são acentuadas) c) TRÊS / A-TÉ. (Três recebe acento por ser monossílabo tônico terminado e E; por outro lado, até recebe acento por ser oxítona terminada em E. São regras diferentes.) d) A-LÉM / TAM-BÉM. (Acentuam as oxítonas terminadas em A(s), E(s), O(s), Em, Ens e) SA-Ú-DE/ PA-ÍS. (Regra do Hiato: Acentua-se I ou U tônico, sozinho ou seguido de S, formando hiato com sílaba anterior. Veremos o detalhamento dessa regra adiante). Gabarito letra C. Proparoxítonas “Aparentes ou Eventuais” POLÊMICA: Algumas paroxítonas terminadas em ditongo crescente podem ser consideradas como proparoxítonas eventuais ou aparentes. Por exemplo, a palavra história, paroxítona terminada em ditongo crescente: his-tó-riA, poderia, alternativamente, ser considerada também uma proparoxítona, caso se considerasse sua divisão como: his-tó-ri-a. O acordo ortográfico fala sobre isso: [...serão acentuadas] As chamadas proparoxítonas aparentes, isto é, que apresentam na sílaba tónica/tônica as vogais abertas grafadas a, e, o e ainda i, u ou ditongo oral começado por vogal aberta, e que terminam por sequências vocálicas pós-tónicas/pós-tônicas praticamente consideradas como ditongos crescentes (-ea, -eo, -ia, -ie, -io, -oa, -ua, -uo, etc.): álea, náusea; etéreo, níveo; enciclopédia, glória; barbárie, série; lírio, prélio; mágoa, nódoa; exígua, língua; exíguo, vácuo. Registro também a opinião do gramático Cegalla: \"Os encontros ia, ie, io, ua, ue, uo finais átonos, seguidos ou não de s, classificam-se quer como ditongos, quer como hiatos, uma vez que ambas as emissões existem no domínio da Língua Portuguesa: his-tó-ri-a e his-tó-ria; sé-ri-e e sé-rie; pá-ti-o e pá-tio; ár-du-a; tê-nue; vá·cu·o e vá-cuo\" (NGB). Todavia, é preferível considerar tais grupos ditongos crescentes e, consequentemente, paroxítonos os vocábulos em que ocorrem. Na escrita, em final de linha, esses encontros vocálicos não devem ser partidos. QUAL É ENTÃO A REGRA QUE DEVO LEVAR PARA A PROVA?? Essas questões são raras, destaco. Pois bem, embora exista essa teoria (MINORITÁRIA), as bancas continuam cobrando essas palavras como PAROXÍTONAS TERMINADAS EM DITONGO CRESCENTE, não como proparoxítona! Essa regra cai demais e cai dessa forma! No máximo, elas apenas pegam 3 palavras como essa e perguntam: “são acentuadas pela mesma razão”?? Aí você marca que SIM, pois, ainda que remotamente estivessem pensando na regra da proparoxítona aparente, ainda assim seria correto pensar que as 3 são do mesmo tipo, por uma divisão ou por outra!! Algumas provas de altíssimo nível podem exigir que você reconheça a “possibilidade”, alternativa, de uma segunda forma de separação. É bom saber as duas teorias, mas as questões mostram a tendência pela tradicional regra da paroxítona terminada em ditongo crescente. Quando a banca quer a outra análise, ela vai sinalizar. Quanto às terminadas em ditongo decrescente (Ex.: amáveis, fáceis), não há essa dúvida, são paroxítonas e ponto! Ok? Moral da história: a regra dominante é a da paroxítona terminada em ditongo. Somente em último caso, se não houver resposta melhor, aí você deve pensar na “possibilidade” de uma proparoxítona eventual. Várias questões corroboram esse fato. Vejamos como isso é cobrado:",
+        "justification_unit_ids": [],
+        "source": {
+          "document_id": "aula00_complete",
+          "page_ids": [
+            "aula00_complete.p0018",
+            "aula00_complete.p0019"
+          ]
+        },
+        "confidence": 0.98
+      },
+      "answerSha256": "7199f9cf8845bb996ebf28c7897d8ca5d0c99e59aa11b0607572a41d678c309b",
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
     },
     {
-      "questionId": "aula00.q0205",
-      "questionType": "true_false",
-      "examBoard": "CEBRASPE",
-      "organization": "PGE-PE",
-      "year": 2019,
-      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0205.",
-      "options": [],
-      "officialAnswer": "ERRADO",
-      "questionSha256": "ef8284c0a2d927288c55cbfb1f11450c269f7849aa18b6e23630c7ae590b9c7d",
-      "answerSha256": "c3ad1e1effac24cfc118b3485646e1e0c913a8bd9472a344b1b3c2aa1756e426",
-      "extractionQuality": "partial",
-      "cognitiveDemand": "analise_estrutural",
-      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Acentuação Gráfica; 3. Eliminar os distratores inconsistentes com o padrão culto.",
-      "distractorAnalysis": []
+      "schemaVersion": "2.0.0",
+      "officialQuestionId": "OQ-A00-aula00.q0025",
+      "lessonId": "A00",
+      "sourceQuestionId": "aula00.q0025",
+      "questionPayload": {
+        "question_id": "aula00.q0025",
+        "question_type": "multiple_choice",
+        "exam_board": "ITAIPU BINACIONAL",
+        "organization": "2019",
+        "position": null,
+        "year": 2019,
+        "support_text": null,
+        "prompt": "Assinale a alternativa em que as formas verbais estão grafadas corretamente:",
+        "options": [
+          {
+            "label": "a",
+            "text": "Nem todos os armários contém livros; alguns só armazenam papéis avulsos."
+          },
+          {
+            "label": "b",
+            "text": "Diversas iniciativas de edições colaborativas compõe um cenário novo no mercado editorial."
+          },
+          {
+            "label": "c",
+            "text": "Não são muitos os estudantes que retém as informações apenas ouvidas e não visualizadas."
+          },
+          {
+            "label": "d",
+            "text": "O aparelho mantem o usuário conectado por horas, de forma prejudicial à saúde."
+          },
+          {
+            "label": "e",
+            "text": "Os especialistas veem com bons olhos a iniciativa de jogos terapêuticos."
+          }
+        ],
+        "tests_concept_ids": [
+          "pt.orthography.acento_diferencial"
+        ],
+        "tests_rule_ids": [],
+        "source": {
+          "document_id": "aula00_complete",
+          "page_ids": [
+            "aula00_complete.p0027"
+          ]
+        },
+        "annotation_state": "within_annotated_scope_unmarked",
+        "extraction_confidence": 0.96,
+        "section_id": "aula00.sec07",
+        "occurrence_kind": "theory",
+        "local_number": null,
+        "duplicate_of": null
+      },
+      "questionSha256": "2479e92e4c0f76f955a9a78cce832e7d03b56a434014ac1c4c421338ff4e4a43",
+      "answerPayload": {
+        "answer_id": "aula00.q0025.answer",
+        "question_id": "aula00.q0025",
+        "answer": "E",
+        "commentary": "Apenas “veem” está correta. A nova ortografia retirou o acento dos hiatos como leem, deem, veem, voo, zoo, enjoo. Nos demais, há ausência da marca de plural ou da acentuação correta: a) Nem todos os armários conTÊm livros; alguns só armazenam papéis avulsos. b) Diversas iniciativas de edições colaborativas compõeM um cenário novo no mercado editorial. c) Não são muitos os estudantes que retÊm as informações apenas ouvidas e não visualizadas. d) O aparelho mantÉm o usuário conectado por horas, de forma prejudicial à saúde. Gabarito letra E.",
+        "justification_unit_ids": [],
+        "source": {
+          "document_id": "aula00_complete",
+          "page_ids": [
+            "aula00_complete.p0027"
+          ]
+        },
+        "confidence": 0.98
+      },
+      "answerSha256": "29b40446fa3bcd09b7b5b7cd4b7cab4e85e305effcc2faf273574ff226435dcc",
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
     },
     {
-      "questionId": "aula00.q0115",
-      "questionType": "true_false",
-      "examBoard": "CEBRASPE",
-      "organization": "CBM-DF",
-      "year": 2016,
-      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0115.",
-      "options": [],
-      "officialAnswer": "CERTO",
-      "explanation": "Observe a separação das sílabas e a classificação de cada palavra: PRE - JU - Í - ZO - penúltima sílaba tônica acentuada por ser HIATO. PA - Í - SES - penúltima sílaba tônica acentuada por ser HIATO. Questão correta.",
-      "questionSha256": "9c22ecb5e5ae1446f3c900c24000e063c0eab5e58beb58f9f39d3c38846356b8",
-      "answerSha256": "ec63de2d71dee46f385d3e5ce164c496a115a67b09ddb40872f4f647665d3a6d",
-      "extractionQuality": "partial",
-      "cognitiveDemand": "analise_estrutural",
-      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Acentuação Gráfica; 3. Eliminar os distratores inconsistentes com o padrão culto.",
-      "distractorAnalysis": []
+      "schemaVersion": "2.0.0",
+      "officialQuestionId": "OQ-A00-aula00.q0026",
+      "lessonId": "A00",
+      "sourceQuestionId": "aula00.q0026",
+      "questionPayload": {
+        "question_id": "aula00.q0026",
+        "question_type": "multiple_choice",
+        "exam_board": "SJC-SC",
+        "organization": "2017",
+        "position": null,
+        "year": 2017,
+        "support_text": null,
+        "prompt": "Releia esse período do texto: “Anos depois, em 1986, os sete países de língua portuguesa (Timor-Leste não pôde ser incluído na lista, pois se tornaria independente apenas em 2002) consolidaram as Bases Analíticas da Ortografia Simplificada da Língua Portuguesa de 1945”. Analise as proposições a seguir sobre a acentuação gráfica nesse período. Em seguida assinale a alternativa que contenha a análise correta sobre as mesmas. I. A palavra “países” é acentuada pelo fato de duas vogais se encontrarem em sílabas diferentes, formando um hiato. II. A palavra “pôde” está conjugada no pretérito perfeito e recebeu acento para diferenciá-la da forma “pode”, no tempo presente. III. Assim como “analíticas”, a palavra “língua” é acentuada por ser proparoxítona. IV. O termo “incluído” recebe acento por ser uma oxítona terminada em “o”.",
+        "options": [
+          {
+            "label": "a",
+            "text": "Estão corretas apenas as proposições I e II."
+          },
+          {
+            "label": "b",
+            "text": "Estão corretas apenas as proposições III e IV."
+          },
+          {
+            "label": "c",
+            "text": "Estão corretas apenas as proposições I e III."
+          },
+          {
+            "label": "d",
+            "text": "Estão corretas apenas as proposições II e IV."
+          }
+        ],
+        "tests_concept_ids": [
+          "pt.orthography.acento_diferencial"
+        ],
+        "tests_rule_ids": [],
+        "source": {
+          "document_id": "aula00_complete",
+          "page_ids": [
+            "aula00_complete.p0027",
+            "aula00_complete.p0028"
+          ]
+        },
+        "annotation_state": "within_annotated_scope_unmarked",
+        "extraction_confidence": 0.96,
+        "section_id": "aula00.sec07",
+        "occurrence_kind": "theory",
+        "local_number": null,
+        "duplicate_of": null
+      },
+      "questionSha256": "6e4b76a2ce10ef8ae87314b6e06a3ea029148e130a42f58beed8673b8de7f203",
+      "answerPayload": {
+        "answer_id": "aula00.q0026.answer",
+        "question_id": "aula00.q0026",
+        "answer": "A",
+        "commentary": "I- Pa-í-ses. Regra do hiato, “i” tônico sozinho ou seguido de “S”. CORRETA. II- Pôde recebe acento diferencial de timbre, que indica o tempo do verbo: “Pôde – timbre fechado (passado) x pode – timbre aberto (presente). CORRETA. III- Analítica é acentuada por ser proparoxítona. Língua é acentuada por ser paroxítona terminada em ditongo crescente! A banca não considera a hipótese de separar o ditongo crescente como uma sílaba a mais e ver a palavra como proparoxítona eventual!!! IV. O termo “in-clu-í-do” recebe acento pela regra do hiato. Além disso, é paroxítona, não é oxítona. Gabarito letra A.",
+        "justification_unit_ids": [],
+        "source": {
+          "document_id": "aula00_complete",
+          "page_ids": [
+            "aula00_complete.p0027",
+            "aula00_complete.p0028"
+          ]
+        },
+        "confidence": 0.98
+      },
+      "answerSha256": "6c9d103c34a31a0ebdf63b77e203fce2dbfba60a273490e7c61b2f55e0f8a3e6",
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
     },
     {
-      "questionId": "aula00.q0076",
-      "questionType": "true_false",
-      "examBoard": "CEBRASPE",
-      "organization": "PC-PE",
-      "year": 2024,
-      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0076.",
-      "options": [],
-      "officialAnswer": "ERRADO",
-      "explanation": "“pos.sí.veis” é acentuada por ser paroxítona terminada em ditongo. “pa.no.râ.mi.ca” é acentuada por ser proparoxítona. Questão incorreta.",
-      "questionSha256": "5c77d5946cef2d96edc56f0db1b09767c2d1f26cb1ce07987e02419b6c48cf80",
-      "answerSha256": "6230678d51f2412886159d11799c5c6382ac17df4982076bc10e451a8d1be06f",
-      "extractionQuality": "partial",
-      "cognitiveDemand": "analise_estrutural",
-      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Acentuação Gráfica; 3. Eliminar os distratores inconsistentes com o padrão culto.",
-      "distractorAnalysis": []
+      "schemaVersion": "2.0.0",
+      "officialQuestionId": "OQ-A00-aula00.q0028",
+      "lessonId": "A00",
+      "sourceQuestionId": "aula00.q0028",
+      "questionPayload": {
+        "question_id": "aula00.q0028",
+        "question_type": "multiple_choice",
+        "exam_board": "PREF. JAGUARIÚNA",
+        "organization": "2018",
+        "position": null,
+        "year": 2018,
+        "support_text": null,
+        "prompt": "Analise as afirmativas a seguir: I - Sem motivo algum, ele para o carro no meio da rua. II – Eles têm uma grande amizade, desde a infância. III – A estudante foi visitar sua mãe na cidade de Bocaiúva. IV – Viajar lhe causa enjôo. V – Eles lêem jornal diariamente. Assinale a alternativa CORRETA:",
+        "options": [
+          {
+            "label": "a",
+            "text": "Apenas as afirmativas I, IV e V não estão escritas de acordo com a norma culta da língua portuguesa."
+          },
+          {
+            "label": "b",
+            "text": "Apenas as afirmativas I e IV estão escritas de acordo com a norma culta da língua portuguesa."
+          },
+          {
+            "label": "c",
+            "text": "Apenas as afirmativas II e III estão escritas de acordo com a norma culta da língua portuguesa."
+          },
+          {
+            "label": "d",
+            "text": "Apenas as afirmativas III, IV e V não estão escritas de acordo com a norma culta da língua portuguesa."
+          }
+        ],
+        "tests_concept_ids": [
+          "pt.orthography.acento_diferencial"
+        ],
+        "tests_rule_ids": [],
+        "source": {
+          "document_id": "aula00_complete",
+          "page_ids": [
+            "aula00_complete.p0029",
+            "aula00_complete.p0030"
+          ]
+        },
+        "annotation_state": "within_annotated_scope_unmarked",
+        "extraction_confidence": 0.96,
+        "section_id": "aula00.sec07",
+        "occurrence_kind": "theory",
+        "local_number": null,
+        "duplicate_of": null
+      },
+      "questionSha256": "c52a790cbb5bb7abbe09a290292793f4a27826e12beb27c13068e0fda24d963c",
+      "answerPayload": {
+        "answer_id": "aula00.q0028.answer",
+        "question_id": "aula00.q0028",
+        "answer": "D",
+        "commentary": "Apenas as afirmativas III, IV e V não estão escritas de acordo com a norma culta da língua portuguesa, pois Enjoo, Leem e Bocaiuva não são mais acentuados. O verbo “para” não recebe mais acento diferencial. Porém, foram mantidos os acentos diferenciais em Têm, Pôr e Pôde. Gabarito letra D. ORTOEPIA E PROSÓDIA (pronúncia e acentuação correta de palavras “duvidosas”). Só conseguiremos aplicar as regras de acentuação se de fato conhecermos a pronúncia e a divisão silábica das palavras. Então, segue uma lista importante de palavras incomuns que podem surpreender na prova: São oxítonas: aloés, cateter, harém, Gibraltar, mister (=necessário), Nobel, novel, recém, refém, ruim, sutil, ureter. São paroxítonas: acórdão, âmbar, ambrosia, avaro, aziago, barbaria, cânon, caracteres, cartomancia, ciclope, edito (lei, decreto), epifania, exegese, filantropo, fluido (ui ditongo), fortuito (ui ditongo), gratuito (ui ditongo), ibero, inaudito, látex, maquinaria, misantropo, necropsia, Normandia, oximoro (tb. oximóron), pudico, quiromancia, simulacro. São proparoxítonas: aeródromo, aerólito, álcali, álcool, alcoólatra, álibi (lat.), alvíssaras, âmago, amálgama, ambrósia, anátema, andrógino, antídoto, arquétipo, autóctone, brâmane, cáfila, condômino, crisântemo, década, díptero, écloga, édito (ordem judicial), Éfeso, êmbolo, epíteto, épsilon, escâncaras (às), êxodo, fac-símile, fíbula, idólatra, ímprobo, ínclito, ínterim, máxime ou maxime (lat.), ômega, plêiade (-a), protótipo, Tâmisa, trânsfuga, vândalo. Palavras que admitem dupla prosódia (duas pronúncias e grafias corretas) acróbata ou acrobata; alópata ou alopata; ambrósia ou ambrosia; crisântemo ou crisantemo; hieróglifo ou hieroglifo; nefelíbata ou nefelibata; Oceânia ou Oceania; ortoépia ou ortoepia; projétil ou projetil; réptil ou reptil; reseda (ê) ou resedá; sóror ou soror; homília ou homilia; geodésia ou geodesia; zângão ou zangão.",
+        "justification_unit_ids": [],
+        "source": {
+          "document_id": "aula00_complete",
+          "page_ids": [
+            "aula00_complete.p0029",
+            "aula00_complete.p0030"
+          ]
+        },
+        "confidence": 0.98
+      },
+      "answerSha256": "611a0b5c07957d2a110ae4e5e84613e1c310b11770f95631653ec57bb752a293",
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
     },
     {
-      "questionId": "aula00.q0206",
-      "questionType": "true_false",
-      "examBoard": "CEBRASPE",
-      "organization": "CBM-DF",
-      "year": 2016,
-      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0206.",
-      "options": [],
-      "officialAnswer": "CERTO",
-      "questionSha256": "66e458cd25899619a36460d66b210ff5cb4e92583ec3d32cc9697e6534f232ac",
-      "answerSha256": "f1870335b7f48ab366fbbaccff59f7408bd1c1eed4e9c65e4531e95e87801f94",
-      "extractionQuality": "partial",
-      "cognitiveDemand": "analise_estrutural",
-      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Acentuação Gráfica; 3. Eliminar os distratores inconsistentes com o padrão culto.",
-      "distractorAnalysis": []
+      "schemaVersion": "2.0.0",
+      "officialQuestionId": "OQ-A00-aula00.q0029",
+      "lessonId": "A00",
+      "sourceQuestionId": "aula00.q0029",
+      "questionPayload": {
+        "question_id": "aula00.q0029",
+        "question_type": "multiple_choice",
+        "exam_board": "MPE-GO",
+        "organization": "APARECIDA DE GOIÂNIA",
+        "position": null,
+        "year": 2019,
+        "support_text": null,
+        "prompt": "Nas palavras pudico, interim, aerolito, a acentuação foi propositadamente eliminada. Quanto à tonicidade, as palavras acima devem ser classificadas, respectivamente, como:",
+        "options": [
+          {
+            "label": "a",
+            "text": "paroxítona – paroxítona - paroxítona."
+          },
+          {
+            "label": "b",
+            "text": "paroxítona – proparoxítona – proparoxítona"
+          },
+          {
+            "label": "c",
+            "text": "proparoxítona – proparoxítona – proparoxítona."
+          },
+          {
+            "label": "d",
+            "text": "paroxítona – oxítona – proparoxítona."
+          },
+          {
+            "label": "e",
+            "text": "paroxítona – oxítona – paroxítona."
+          }
+        ],
+        "tests_concept_ids": [
+          "pt.orthography.acento_diferencial"
+        ],
+        "tests_rule_ids": [],
+        "source": {
+          "document_id": "aula00_complete",
+          "page_ids": [
+            "aula00_complete.p0030"
+          ]
+        },
+        "annotation_state": "observed_highlight",
+        "extraction_confidence": 0.96,
+        "section_id": "aula00.sec07",
+        "occurrence_kind": "theory",
+        "local_number": null,
+        "duplicate_of": null
+      },
+      "questionSha256": "1efb2791abae17442f5b50b694347c47b40e56255a36b68704bd50a6687aa408",
+      "answerPayload": {
+        "answer_id": "aula00.q0029.answer",
+        "question_id": "aula00.q0029",
+        "answer": "B",
+        "commentary": "Muita gente não sabe a tônica dessas palavras, ou seja, a correta prosódia, vamos marcá-la: puDIco (paroxítona – tônica na penúltima), ÍNterim (proparoxítona – tônica na antepenúltima), aeRÓlito (proparoxítona – tônica na antepenúltima). Gabarito letra B.",
+        "justification_unit_ids": [],
+        "source": {
+          "document_id": "aula00_complete",
+          "page_ids": [
+            "aula00_complete.p0030"
+          ]
+        },
+        "confidence": 0.98
+      },
+      "answerSha256": "108542b2fd40380f91972c085c06160d85776daff714514a49c309bfc8098094",
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
     },
     {
-      "questionId": "aula00.q0167",
-      "questionType": "true_false",
-      "examBoard": "CEBRASPE",
-      "organization": "PC-PE",
-      "year": 2024,
-      "prompt": "Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-A00-aula00.q0167.",
-      "options": [],
-      "officialAnswer": "ERRADO",
-      "questionSha256": "c4b75cd302c7c1c9b5b5371a538188b3ab19cef21e4cef08e045f6be149a39d8",
-      "answerSha256": "78394a44bf97ca22ff587a2883c520e43dd5d1d2422a56360487138b9da4afe4",
-      "extractionQuality": "partial",
-      "cognitiveDemand": "analise_estrutural",
-      "solutionStrategy": "1. Ler atentamente o enunciado de CEBRASPE; 2. Identificar a regra central de Acentuação Gráfica; 3. Eliminar os distratores inconsistentes com o padrão culto.",
-      "distractorAnalysis": []
+      "schemaVersion": "2.0.0",
+      "officialQuestionId": "OQ-A00-aula00.q0086",
+      "lessonId": "A00",
+      "sourceQuestionId": "aula00.q0086",
+      "questionPayload": {
+        "question_id": "aula00.q0086",
+        "question_type": "multiple_choice",
+        "exam_board": "CEBRASPE",
+        "organization": "Prefeitura de Joinville-SC",
+        "position": null,
+        "year": 2022,
+        "support_text": null,
+        "prompt": "São acentuadas graficamente de acordo com a mesma regra de acentuação gráfica as palavras",
+        "options": [
+          {
+            "label": "a",
+            "text": "“gênero”, “infância” e “lê”."
+          },
+          {
+            "label": "b",
+            "text": "“é”, “só” e “será”."
+          },
+          {
+            "label": "c",
+            "text": "“próprios”, “indivíduo” e “sequência”."
+          },
+          {
+            "label": "d",
+            "text": "“décadas”, “acadêmicas” e “permitirá”."
+          },
+          {
+            "label": "e",
+            "text": "“experiências”, “literários” e “também”."
+          }
+        ],
+        "tests_concept_ids": [
+          "pt.orthography.acento_grafico"
+        ],
+        "tests_rule_ids": [
+          "rule.pt.orthography.0005",
+          "rule.pt.orthography.0009"
+        ],
+        "source": {
+          "document_id": "aula00_complete",
+          "page_ids": [
+            "aula00_complete.p0074",
+            "aula00_complete.p0075"
+          ]
+        },
+        "annotation_state": "outside_annotated_scope",
+        "extraction_confidence": 0.96,
+        "section_id": "aula00.sec16",
+        "occurrence_kind": "commented_questions",
+        "local_number": 16,
+        "duplicate_of": null
+      },
+      "questionSha256": "e02ba3310557d284ea206eb0e7c25cdb88ad096783616fa60d64ec382bcdb131",
+      "answerPayload": {
+        "answer_id": "aula00.q0086.answer",
+        "question_id": "aula00.q0086",
+        "answer": "C",
+        "commentary": "“próprios”, “indivíduo” e “sequência” são acentuados por serem paroxítonas terminadas em ditongo. Vejamos as demais. “infância”, \"literários\" e \"experiências\" são acentuadas por serem paroxítonas terminadas em ditongo. \"gênero\", \"acadêmicas\" e \"décadas\" são acentuadas por serem proparoxítonas. \"é\", \"lê\" e \"só\" são acentuadas por serem monossílabos tônicos terminados em A(s), E(s), O(s). \"será\", \"permitirá\" e \"também\" são acentuados por serem oxítonas terminadas em A(s), E(s), O(s), Em, Ens. Gabarito letra C.",
+        "justification_unit_ids": [],
+        "source": {
+          "document_id": "aula00_complete",
+          "page_ids": [
+            "aula00_complete.p0074",
+            "aula00_complete.p0075"
+          ]
+        },
+        "confidence": 0.98
+      },
+      "answerSha256": "aa4341f0338ed928e8f9bea8a44c85f4833e1e20560e983665e07a9aad6eb6b8",
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+    },
+    {
+      "schemaVersion": "2.0.0",
+      "officialQuestionId": "OQ-A00-aula00.q0111",
+      "lessonId": "A00",
+      "sourceQuestionId": "aula00.q0111",
+      "questionPayload": {
+        "question_id": "aula00.q0111",
+        "question_type": "multiple_choice",
+        "exam_board": "CEBRASPE",
+        "organization": "ITAIPU",
+        "position": null,
+        "year": 2024,
+        "support_text": null,
+        "prompt": "Empregado no texto CB2A1, o vocábulo “eólica” acentua-se devido à mesma regra de acentuação que determina o emprego do acento na palavra",
+        "options": [
+          {
+            "label": "a",
+            "text": "renovável."
+          },
+          {
+            "label": "b",
+            "text": "elevará."
+          },
+          {
+            "label": "c",
+            "text": "pássaros."
+          },
+          {
+            "label": "d",
+            "text": "carvão."
+          },
+          {
+            "label": "e",
+            "text": "ruído."
+          }
+        ],
+        "tests_concept_ids": [
+          "pt.orthography.acentuacao_hiato"
+        ],
+        "tests_rule_ids": [
+          "rule.pt.orthography.0011",
+          "rule.pt.orthography.0012",
+          "rule.pt.orthography.0013",
+          "rule.pt.orthography.0014"
+        ],
+        "source": {
+          "document_id": "aula00_complete",
+          "page_ids": [
+            "aula00_complete.p0083"
+          ]
+        },
+        "annotation_state": "outside_annotated_scope",
+        "extraction_confidence": 0.96,
+        "section_id": "aula00.sec17",
+        "occurrence_kind": "commented_questions",
+        "local_number": 1,
+        "duplicate_of": "aula00.q0077"
+      },
+      "questionSha256": "b6ddb94bfd93ff61f75873d3bf3d4e7b44386162aa3077ae11d25338b9d0ccfb",
+      "answerPayload": {
+        "answer_id": "aula00.q0111.answer",
+        "question_id": "aula00.q0111",
+        "answer": "C",
+        "commentary": "\"e-Ó-li-ca\" tem a tônica na antepenúltima sílaba, portanto é uma proparoxítona. Todas as proparoxítonas são acentuadas. O mesmo vale para \"PÁS.sa.ros\". \"re-no-vá-vel\" é paroxítona terminada em L, segue a regra geral das paroxítonas: todas são acentuadas, exceto as terminadas em A(s), E(s), O(s), Em, Ens. \"e-le-va-rá\" é acentuada por ser oxítona terminada em \"a\". Segue a regra geral das oxítonas: acentuam-se oxítonas as terminadas em A(s), E(s), O(s), Em, Ens. \"ru-í-do\" é acentuada pela regra do hiato: acentuam-se I ou U tônico, formando hiato com sílaba anterior, sozinho ou seguido de S. \"car-vão\" não é acentuada, pois é oxítona terminada em \"ão\". O til não é acento tônico, é apenas marca de nasalização. Gabarito letra C.",
+        "justification_unit_ids": [],
+        "source": {
+          "document_id": "aula00_complete",
+          "page_ids": [
+            "aula00_complete.p0083"
+          ]
+        },
+        "confidence": 0.98
+      },
+      "answerSha256": "64fb23dacf9daadc0ea4559185fe4dd32c422687d8bd86300de179d9d9b82a75",
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+    },
+    {
+      "schemaVersion": "2.0.0",
+      "officialQuestionId": "OQ-A00-aula00.q0168",
+      "lessonId": "A00",
+      "sourceQuestionId": "aula00.q0168",
+      "questionPayload": {
+        "question_id": "aula00.q0168",
+        "question_type": "multiple_choice",
+        "exam_board": "CEBRASPE",
+        "organization": "ITAIPU",
+        "position": null,
+        "year": 2024,
+        "support_text": null,
+        "prompt": "Empregado no texto CB2A1, o vocábulo “eólica” acentua-se devido à mesma regra de acentuação que determina o emprego do acento na palavra",
+        "options": [
+          {
+            "label": "a",
+            "text": "renovável."
+          },
+          {
+            "label": "b",
+            "text": "elevará."
+          },
+          {
+            "label": "c",
+            "text": "pássaros."
+          },
+          {
+            "label": "d",
+            "text": "carvão."
+          },
+          {
+            "label": "e",
+            "text": "ruído."
+          }
+        ],
+        "tests_concept_ids": [
+          "pt.orthography.acento_grafico"
+        ],
+        "tests_rule_ids": [
+          "rule.pt.orthography.0005",
+          "rule.pt.orthography.0009"
+        ],
+        "source": {
+          "document_id": "aula00_complete",
+          "page_ids": [
+            "aula00_complete.p0107"
+          ]
+        },
+        "annotation_state": "outside_annotated_scope",
+        "extraction_confidence": 0.96,
+        "section_id": "aula00.sec26",
+        "occurrence_kind": "question_list",
+        "local_number": 7,
+        "duplicate_of": "aula00.q0077"
+      },
+      "questionSha256": "a3b9d04e76ef8a0da3db222efcd09a054cbef1916d3cfcfa989952785420db55",
+      "answerPayload": {
+        "answer_id": "aula00.q0168.answer",
+        "question_id": "aula00.q0168",
+        "answer": "C",
+        "commentary": null,
+        "justification_unit_ids": [],
+        "source": {
+          "document_id": "aula00_complete",
+          "page_ids": [
+            "aula00_complete.p0113"
+          ]
+        },
+        "confidence": 0.99
+      },
+      "answerSha256": "1c8bb69979073650db4de412e31f361987a2ef2c17f2b7af7b81d29b32e4f59e",
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+    },
+    {
+      "schemaVersion": "2.0.0",
+      "officialQuestionId": "OQ-A00-aula00.q0177",
+      "lessonId": "A00",
+      "sourceQuestionId": "aula00.q0177",
+      "questionPayload": {
+        "question_id": "aula00.q0177",
+        "question_type": "multiple_choice",
+        "exam_board": "CEBRASPE",
+        "organization": "Prefeitura de Joinville-SC",
+        "position": null,
+        "year": 2022,
+        "support_text": null,
+        "prompt": "São acentuadas graficamente de acordo com a mesma regra de acentuação gráfica as palavras",
+        "options": [
+          {
+            "label": "a",
+            "text": "“gênero”, “infância” e “lê”."
+          },
+          {
+            "label": "b",
+            "text": "“é”, “só” e “será”."
+          },
+          {
+            "label": "c",
+            "text": "“próprios”, “indivíduo” e “sequência”."
+          },
+          {
+            "label": "d",
+            "text": "“décadas”, “acadêmicas” e “permitirá”."
+          },
+          {
+            "label": "e",
+            "text": "“experiências”, “literários” e “também”."
+          }
+        ],
+        "tests_concept_ids": [
+          "pt.orthography.acento_grafico"
+        ],
+        "tests_rule_ids": [
+          "rule.pt.orthography.0005",
+          "rule.pt.orthography.0009"
+        ],
+        "source": {
+          "document_id": "aula00_complete",
+          "page_ids": [
+            "aula00_complete.p0108",
+            "aula00_complete.p0109"
+          ]
+        },
+        "annotation_state": "outside_annotated_scope",
+        "extraction_confidence": 0.96,
+        "section_id": "aula00.sec26",
+        "occurrence_kind": "question_list",
+        "local_number": 16,
+        "duplicate_of": "aula00.q0086"
+      },
+      "questionSha256": "4fb293ddafd2b624aaba48a3bf9530b66384329602457d3be592b35ae21d0cda",
+      "answerPayload": {
+        "answer_id": "aula00.q0177.answer",
+        "question_id": "aula00.q0177",
+        "answer": "C",
+        "commentary": null,
+        "justification_unit_ids": [],
+        "source": {
+          "document_id": "aula00_complete",
+          "page_ids": [
+            "aula00_complete.p0113"
+          ]
+        },
+        "confidence": 0.99
+      },
+      "answerSha256": "46684ee9762cf4cf88addd0399fee21550a2f5c514d51cd8daa6ec17a3f8cff1",
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+    },
+    {
+      "schemaVersion": "2.0.0",
+      "officialQuestionId": "OQ-A00-aula00.q0202",
+      "lessonId": "A00",
+      "sourceQuestionId": "aula00.q0202",
+      "questionPayload": {
+        "question_id": "aula00.q0202",
+        "question_type": "multiple_choice",
+        "exam_board": "CEBRASPE",
+        "organization": "ITAIPU",
+        "position": null,
+        "year": 2024,
+        "support_text": null,
+        "prompt": "Empregado no texto CB2A1, o vocábulo “eólica” acentua-se devido à mesma regra de acentuação que determina o emprego do acento na palavra",
+        "options": [
+          {
+            "label": "a",
+            "text": "renovável."
+          },
+          {
+            "label": "b",
+            "text": "elevará."
+          },
+          {
+            "label": "c",
+            "text": "pássaros."
+          },
+          {
+            "label": "d",
+            "text": "carvão."
+          },
+          {
+            "label": "e",
+            "text": "ruído."
+          }
+        ],
+        "tests_concept_ids": [
+          "pt.orthography.acentuacao_hiato"
+        ],
+        "tests_rule_ids": [
+          "rule.pt.orthography.0011",
+          "rule.pt.orthography.0012",
+          "rule.pt.orthography.0013",
+          "rule.pt.orthography.0014"
+        ],
+        "source": {
+          "document_id": "aula00_complete",
+          "page_ids": [
+            "aula00_complete.p0114"
+          ]
+        },
+        "annotation_state": "outside_annotated_scope",
+        "extraction_confidence": 0.96,
+        "section_id": "aula00.sec27",
+        "occurrence_kind": "question_list",
+        "local_number": 1,
+        "duplicate_of": "aula00.q0077"
+      },
+      "questionSha256": "4d12bdc6e892338187144d3005749b3e085a718ebcf4a10228033d130a041c14",
+      "answerPayload": {
+        "answer_id": "aula00.q0202.answer",
+        "question_id": "aula00.q0202",
+        "answer": "C",
+        "commentary": null,
+        "justification_unit_ids": [],
+        "source": {
+          "document_id": "aula00_complete",
+          "page_ids": [
+            "aula00_complete.p0115"
+          ]
+        },
+        "confidence": 0.99
+      },
+      "answerSha256": "7fbec85a88dba770857f5535bda4504f37078bf217f31ee632280c07cc31de72",
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
     }
   ]
 }

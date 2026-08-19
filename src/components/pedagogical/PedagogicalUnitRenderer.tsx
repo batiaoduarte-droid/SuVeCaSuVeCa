@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
-  ChevronDown,
-  ListTree,
-  Workflow,
   Brain,
   BookOpen,
   Scale,
@@ -13,6 +10,10 @@ import {
   ShieldAlert,
   Tag,
   CheckSquare,
+  Sparkles,
+  ChevronDown,
+  Workflow,
+  ListTree,
   HelpCircle,
   Bot,
 } from 'lucide-react';
@@ -29,11 +30,11 @@ import { TrapsSection } from './sections/TrapsSection';
 import { GlossarySection } from './sections/GlossarySection';
 import { RecallSection } from './sections/RecallSection';
 import { OfficialQuestionsSection } from './sections/OfficialQuestionsSection';
-import { PedagogicalCallout } from '../ui/PedagogicalCallout';
+import { InlineRichText } from './blocks/InlineRichText';
 
 interface PedagogicalUnitRendererProps {
   view: PedagogicalUnitView;
-  onAskTutor?: (topic: string) => void;
+  onAskTutor?: (contextText: string) => void;
   onPracticeExercises?: (topic?: string) => void;
 }
 
@@ -53,110 +54,130 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
 
   const { unit, sections, officialQuestions } = view;
 
-  // Monta lista dinâmica das 11 seções com ícones contextuais dedicados
-  const presentSections: SectionDescriptor[] = [];
+  const presentSections: SectionDescriptor[] = useMemo(() => {
+    const list: SectionDescriptor[] = [];
 
-  if (sections.suveca) {
-    presentSections.push({
-      id: 'suveca',
-      title: 'Conexão com o método SuVeCA',
-      icon: Workflow,
-      render: () => <SuvecaSection view={sections.suveca} />,
-    });
-  }
+    if (sections.suveca) {
+      list.push({
+        id: 'suveca',
+        title: 'Conexão com o método SuVeCA',
+        icon: Workflow,
+        render: () => <SuvecaSection view={sections.suveca} />,
+      });
+    }
 
-  if (sections.prerequisites && (sections.prerequisites.blocks?.length || sections.prerequisites.maps?.length)) {
-    presentSections.push({
-      id: 'prerequisites',
-      title: 'Pré-requisitos e modelo mental',
-      icon: Brain,
-      render: () => <PrerequisitesSection {...sections.prerequisites} />,
-    });
-  }
+    if (
+      sections.prerequisites &&
+      (sections.prerequisites.items?.length ||
+        sections.prerequisites.blocks?.length ||
+        sections.prerequisites.maps?.length)
+    ) {
+      list.push({
+        id: 'prerequisites',
+        title: 'Pré-requisitos e modelo mental',
+        icon: Brain,
+        render: () => <PrerequisitesSection {...sections.prerequisites} />,
+      });
+    }
 
-  if (sections.explanation && sections.explanation.blocks?.length) {
-    presentSections.push({
-      id: 'explanation',
-      title: 'Explicação didática aprofundada',
-      icon: BookOpen,
-      render: () => <ExplanationSection {...sections.explanation} />,
-    });
-  }
+    if (
+      sections.explanation &&
+      (sections.explanation.groups?.length || sections.explanation.blocks?.length)
+    ) {
+      list.push({
+        id: 'explanation',
+        title: 'Explicação didática aprofundada',
+        icon: BookOpen,
+        render: () => <ExplanationSection {...sections.explanation} />,
+      });
+    }
 
-  if (sections.rules && sections.rules.items?.length) {
-    presentSections.push({
-      id: 'rules',
-      title: 'Regras decisivas',
-      icon: Scale,
-      render: () => <RulesSection {...sections.rules} />,
-    });
-  }
+    if (sections.rules && sections.rules.items?.length) {
+      list.push({
+        id: 'rules',
+        title: 'Regras decisivas',
+        icon: Scale,
+        render: () => <RulesSection {...sections.rules} />,
+      });
+    }
 
-  if (sections.resolution && sections.resolution.procedures?.length) {
-    presentSections.push({
-      id: 'resolution',
-      title: 'Roteiros de resolução',
-      icon: PenTool,
-      render: () => <ResolutionSection {...sections.resolution} />,
-    });
-  }
+    if (sections.resolution && sections.resolution.procedures?.length) {
+      list.push({
+        id: 'resolution',
+        title: 'Roteiros de resolução',
+        icon: PenTool,
+        render: () => <ResolutionSection {...sections.resolution} />,
+      });
+    }
 
-  if (sections.contrasts && sections.contrasts.items?.length) {
-    presentSections.push({
-      id: 'contrasts',
-      title: 'Contrastes que a prova explora',
-      icon: ArrowLeftRight,
-      render: () => <ContrastsSection {...sections.contrasts} />,
-    });
-  }
+    if (sections.contrasts && sections.contrasts.items?.length) {
+      list.push({
+        id: 'contrasts',
+        title: 'Contrastes que a prova explora',
+        icon: ArrowLeftRight,
+        render: () => <ContrastsSection {...sections.contrasts} />,
+      });
+    }
 
-  if (sections.examples && sections.examples.items?.length) {
-    presentSections.push({
-      id: 'examples',
-      title: 'Exemplos comentados',
-      icon: FileText,
-      render: () => <ExamplesSection {...sections.examples} />,
-    });
-  }
+    if (sections.examples && sections.examples.items?.length) {
+      list.push({
+        id: 'examples',
+        title: 'Exemplos comentados',
+        icon: FileText,
+        render: () => <ExamplesSection {...sections.examples} />,
+      });
+    }
 
-  if (sections.mnemonics && sections.mnemonics.blocks?.length) {
-    presentSections.push({
-      id: 'mnemonics',
-      title: 'Memorização inteligente',
-      icon: Lightbulb,
-      render: () => <MnemonicsSection {...sections.mnemonics} />,
-    });
-  }
+    if (sections.mnemonics && sections.mnemonics.blocks?.length) {
+      list.push({
+        id: 'mnemonics',
+        title: 'Memorização inteligente',
+        icon: Lightbulb,
+        render: () => <MnemonicsSection {...sections.mnemonics} />,
+      });
+    }
 
-  if (sections.traps && (sections.traps.items?.length || sections.traps.supplementaryBlocks?.length)) {
-    presentSections.push({
-      id: 'traps',
-      title: 'Erros comuns e pegadinhas',
-      icon: ShieldAlert,
-      render: () => <TrapsSection {...sections.traps} />,
-    });
-  }
+    if (
+      sections.traps &&
+      (sections.traps.items?.length || sections.traps.supplementaryBlocks?.length)
+    ) {
+      list.push({
+        id: 'traps',
+        title: 'Erros comuns e pegadinhas',
+        icon: ShieldAlert,
+        render: () => <TrapsSection {...sections.traps} />,
+      });
+    }
 
-  if (sections.glossary && sections.glossary.blocks?.length) {
-    presentSections.push({
-      id: 'glossary',
-      title: 'Glossário operacional',
-      icon: Tag,
-      render: () => <GlossarySection {...sections.glossary} />,
-    });
-  }
+    if (
+      sections.glossary &&
+      (sections.glossary.items?.length || sections.glossary.blocks?.length)
+    ) {
+      list.push({
+        id: 'glossary',
+        title: 'Glossário operacional',
+        icon: Tag,
+        render: () => <GlossarySection {...sections.glossary} />,
+      });
+    }
 
-  if (sections.recall && sections.recall.blocks?.length) {
-    presentSections.push({
-      id: 'recall',
-      title: 'Síntese para recuperação ativa',
-      icon: CheckSquare,
-      render: () => <RecallSection {...sections.recall} />,
-    });
-  }
+    if (
+      sections.recall &&
+      (sections.recall.prompts?.length || sections.recall.blocks?.length)
+    ) {
+      list.push({
+        id: 'recall',
+        title: 'Síntese para recuperação ativa',
+        icon: CheckSquare,
+        render: () => <RecallSection {...sections.recall} />,
+      });
+    }
+
+    return list;
+  }, [sections]);
 
   const [openSections, setOpenSections] = useState<Set<string>>(
-    () => new Set(presentSections.slice(0, 1).map((s) => s.id)),
+    () => new Set(presentSections.slice(0, 2).map((s) => s.id))
   );
 
   const toggleSection = (id: string, isOpen: boolean) => {
@@ -168,48 +189,72 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
     });
   };
 
-  const openFromToc = (id: string) => {
-    toggleSection(id, true);
-    requestAnimationFrame(() => {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
+  const expandAll = () => {
+    setOpenSections(new Set(presentSections.map((s) => s.id)));
   };
+
+  const collapseAll = () => {
+    setOpenSections(new Set());
+  };
+
+  const openFromToc = (id: string) => {
+    setOpenSections((prev) => new Set(prev).add(id));
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const allOpen = presentSections.every((s) => openSections.has(s.id));
 
   const handleScrollToQuestions = (sectionTitle: string) => {
     if (onPracticeExercises) {
       onPracticeExercises(sectionTitle);
       return;
     }
-    const questionsEl = document.getElementById('unit-official-questions');
-    if (questionsEl) {
-      questionsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const el = document.getElementById('unit-official-questions');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
   const handleOpenInTutor = (sectionTitle: string) => {
     if (onAskTutor) {
-      onAskTutor(`Dúvida sobre a seção "${sectionTitle}" da unidade "${unit.title}"`);
+      onAskTutor(`Olá, estou estudando o tópico "${unit.title}", na seção "${sectionTitle}". Pode me ajudar a aprofundar este conteúdo com exemplos adicionais?`);
     }
   };
 
-  const allOpen = openSections.size === presentSections.length;
-
   return (
-    <div className="pedagogical-unit-view space-y-6 surface p-4 sm:p-8">
+    <div className="pedagogical-unit-view space-y-6">
       {/* Cabeçalho da Unidade */}
-      <div>
+      <div className="space-y-3">
+        <div className="flex flex-wrap items-center gap-2 text-xs font-black uppercase tracking-wider text-teal-800">
+          <span className="rounded-md bg-teal-100 px-2 py-0.5 text-teal-900 font-extrabold">
+            {unit.groupId || unit.lessonId}
+          </span>
+          <span>•</span>
+          <span className="text-slate-600">{unit.variant}</span>
+        </div>
         <h1 className="m-0 text-2xl sm:text-3xl font-black tracking-tight text-teal-950">
-          {unit.title}
+          <InlineRichText>{unit.title}</InlineRichText>
         </h1>
       </div>
 
       {/* Objetivos de Aprendizagem */}
       {unit.learningObjectives && unit.learningObjectives.length > 0 && (
-        <PedagogicalCallout type="objective">
-          <p className="m-0 leading-relaxed font-medium">
-            {unit.learningObjectives.join(' ')}
-          </p>
-        </PedagogicalCallout>
+        <div className="rounded-2xl border border-teal-200 bg-teal-50/50 p-4 sm:p-5 space-y-2.5">
+          <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-teal-950 select-none">
+            <Sparkles className="h-4 w-4 text-teal-700" />
+            <span>Objetivos desta Unidade Pedagógica</span>
+          </div>
+          <ul className="space-y-1 text-xs sm:text-sm text-slate-800 list-disc list-inside font-medium pl-1">
+            {unit.learningObjectives.map((lo, idx) => (
+              <li key={idx} className="leading-relaxed">
+                <InlineRichText>{lo}</InlineRichText>
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
 
       {/* Sumário Dinâmico */}
@@ -249,40 +294,41 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
         </ol>
       </nav>
 
-      {/* Lista de Seções em Accordion */}
+      {/* Acordeão das 11 Seções Pedagógicas */}
       <div className="space-y-4">
-        {presentSections.map((section, index) => {
-          const Icon = section.icon;
+        {presentSections.map((sec, idx) => {
+          const Icon = sec.icon;
+          const isOpen = openSections.has(sec.id);
           return (
             <details
-              key={section.id}
-              id={section.id}
-              open={openSections.has(section.id)}
-              onToggle={(e) => toggleSection(section.id, e.currentTarget.open)}
-              className="group scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs"
+              key={sec.id}
+              id={sec.id}
+              open={isOpen}
+              onToggle={(e) => toggleSection(sec.id, e.currentTarget.open)}
+              className="group scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs transition"
             >
-              <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 bg-slate-50/90 px-4 py-3.5 text-left text-sm sm:text-base font-bold text-slate-950 hover:bg-slate-100 sm:px-5 transition">
-                <span className="flex items-center gap-2.5 min-w-0">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-teal-100 text-teal-800">
-                    <Icon className="h-4 w-4" />
+              <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 bg-slate-50/80 px-4 py-3.5 text-sm sm:text-base font-bold text-slate-950 hover:bg-slate-100 sm:px-5 transition select-none">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-teal-800 text-xs font-black text-white shadow-2xs">
+                    {idx + 1}
                   </span>
-                  <span className="text-teal-700 font-black">{index + 1}.</span>
-                  <span className="truncate">{section.title}</span>
-                </span>
+                  <Icon className="h-4 w-4 text-teal-700" />
+                  <span>{sec.title}</span>
+                </div>
                 <ChevronDown className="h-5 w-5 shrink-0 text-teal-700 transition-transform group-open:rotate-180" />
               </summary>
               <div className="border-t border-slate-200 p-4 sm:p-6 reading-content">
-                {section.render()}
+                {sec.render()}
 
-                {/* Botões de Ação Rápida no final de cada uma das 11 seções */}
-                <div className="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+                {/* Botões de Ação Rápida no final de cada seção */}
+                <div className="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 select-none">
                   <span className="text-[11px] font-semibold text-slate-500">
-                    Seção {index + 1} de {presentSections.length} · {section.title}
+                    Seção {idx + 1} de {presentSections.length} · {sec.title}
                   </span>
                   <div className="flex flex-wrap items-center gap-2">
                     <button
                       type="button"
-                      onClick={() => handleScrollToQuestions(section.title)}
+                      onClick={() => handleScrollToQuestions(sec.title)}
                       className="flex items-center gap-1.5 rounded-lg border border-teal-200 bg-teal-50/70 px-3 py-1.5 text-xs font-bold text-teal-900 transition hover:bg-teal-100 hover:border-teal-300 cursor-pointer shadow-2xs"
                     >
                       <HelpCircle className="h-3.5 w-3.5 text-teal-700" />
@@ -290,7 +336,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
                     </button>
                     <button
                       type="button"
-                      onClick={() => handleOpenInTutor(section.title)}
+                      onClick={() => handleOpenInTutor(sec.title)}
                       className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-bold text-slate-700 transition hover:bg-slate-50 hover:border-slate-300 cursor-pointer shadow-2xs"
                     >
                       <Bot className="h-3.5 w-3.5 text-teal-700" />
@@ -304,12 +350,13 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
         })}
       </div>
 
-      {/* Questões Oficiais da Unidade */}
+      {/* Questões Oficiais de Banca */}
       {officialQuestions && officialQuestions.length > 0 && (
         <div id="unit-official-questions" className="mt-8 pt-6 border-t border-slate-200">
           <OfficialQuestionsSection
             questions={officialQuestions}
             lessonId={unit.unitId ? unit.unitId.split('-')[1] : 'A00'}
+            onPracticeMore={onPracticeExercises}
           />
         </div>
       )}
