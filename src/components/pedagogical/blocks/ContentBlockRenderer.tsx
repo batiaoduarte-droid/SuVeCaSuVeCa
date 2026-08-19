@@ -1,10 +1,10 @@
 import React from 'react';
 import type { ContentBlock } from '../../../types/pedagogicalView';
-import { InlineRichText } from './InlineRichText';
+import { InlineRichText, sanitizePedagogicalText } from './InlineRichText';
 import { FormulaBlock } from './FormulaBlock';
 import { CanonicalTable } from './CanonicalTable';
 import { CalloutBlock } from './CalloutBlock';
-import { ConnectionMap } from '../../ui/ConnectionMap';
+import { ConnectionMap, looksLikeConnectionMap } from '../../ui/ConnectionMap';
 
 interface ContentBlockRendererProps {
   block: ContentBlock;
@@ -15,16 +15,23 @@ export const ContentBlockRenderer: React.FC<ContentBlockRendererProps> = ({ bloc
 
   switch (block.type) {
     case 'paragraph': {
+      if (!block.text) return null;
+
+      // Detecta diagramas ou esquemas ASCII embutidos no parágrafo
       if (
-        block.text &&
-        (block.text.includes('|——') ||
-          block.text.includes('├──') ||
-          block.text.includes('└──') ||
-          (block.text.includes(' | ') && block.text.includes('CLASSES')))
+        looksLikeConnectionMap(block.text) ||
+        block.text.includes('|——') ||
+        block.text.includes('├──') ||
+        block.text.includes('└──') ||
+        block.text.includes('QUADRO DA POLIFONIA') ||
+        (block.text.includes('▼') && block.text.includes('SOM DE')) ||
+        (block.text.includes('ESTRUTURA DA PALAVRA') && block.text.includes('PLANO'))
       ) {
-        const formattedTree = block.text.replace(/\s*\|\s*/g, '\n');
-        return <ConnectionMap source={formattedTree} />;
+        return <ConnectionMap source={block.text} />;
       }
+
+      const sanitized = sanitizePedagogicalText(block.text);
+      if (!sanitized) return null;
 
       return (
         <p className="my-2.5 text-xs sm:text-sm font-medium leading-relaxed text-slate-800">
@@ -45,10 +52,41 @@ export const ContentBlockRenderer: React.FC<ContentBlockRendererProps> = ({ bloc
 
     case 'list': {
       if (!block.items || block.items.length === 0) return null;
+
+      // Filtra itens técnicos ou vazios
+      const validItems = block.items
+        .map((item) => item.trim())
+        .filter((item) => {
+          if (!item) return false;
+          if (/^Depende de:\s*\.?$/i.test(item)) return false;
+          if (/^Possui alerta:\s*(WARN-[A-Z0-9_-]+)?\.?$/i.test(item)) return false;
+          if (/^Aplicado em:\s*(PROC-[A-Z0-9_-]+(,\s*)?|EX-[A-Z0-9_-]+(,\s*)?)*\.?$/i.test(item)) return false;
+          if (/^Relacionado a:\s*(KB-[A-Z0-9_-]+(,\s*)?)*\.?$/i.test(item)) return false;
+          // Se o texto sanitizado ficar vazio, descarta
+          return sanitizePedagogicalText(item).length > 0;
+        });
+
+      if (validItems.length === 0) return null;
+
+      // Tratamento para item único ordenado que atua como título/rótulo (ex: "CHAVE:", "GUERRA:")
+      if (block.ordered && validItems.length === 1 && (validItems[0].endsWith(':') || validItems[0].length < 40)) {
+        const titleText = validItems[0].replace(/:$/, '').trim();
+        return (
+          <div className="mt-4 mb-2 flex items-center gap-2">
+            <span className="flex h-5 w-5 items-center justify-center rounded-md bg-teal-800 text-[11px] font-black text-white shadow-2xs">
+              ▸
+            </span>
+            <span className="text-xs sm:text-sm font-black text-teal-950 tracking-tight uppercase">
+              <InlineRichText>{titleText}</InlineRichText>
+            </span>
+          </div>
+        );
+      }
+
       if (block.ordered) {
         return (
           <ol className="my-3 space-y-1.5 pl-5 text-xs sm:text-sm text-slate-800 list-decimal marker:font-bold marker:text-teal-700">
-            {block.items.map((item, idx) => (
+            {validItems.map((item, idx) => (
               <li key={idx} className="leading-relaxed">
                 <InlineRichText>{item}</InlineRichText>
               </li>
@@ -56,9 +94,10 @@ export const ContentBlockRenderer: React.FC<ContentBlockRendererProps> = ({ bloc
           </ol>
         );
       }
+
       return (
         <ul className="my-3 space-y-1.5 pl-5 text-xs sm:text-sm text-slate-800 list-disc marker:text-teal-600">
-          {block.items.map((item, idx) => (
+          {validItems.map((item, idx) => (
             <li key={idx} className="leading-relaxed">
               <InlineRichText>{item}</InlineRichText>
             </li>

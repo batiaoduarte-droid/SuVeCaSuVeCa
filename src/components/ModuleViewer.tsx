@@ -115,7 +115,11 @@ const saveLocalNotes = (moduleId: string, notes: ModuleNotes, userId?: string) =
 const deepDiveMarkdownCache = new Map<string, string>();
 const deepDiveViewCache = new Map<string, PedagogicalUnitView>();
 
-export const PedagogicalDeepDive: React.FC<{ section: ModuleSection }> = ({ section }) => {
+export const PedagogicalDeepDive: React.FC<{
+  section: ModuleSection;
+  onAskTutor?: (contextText: string) => void;
+  onPracticeExercises?: (topic?: string) => void;
+}> = ({ section, onAskTutor, onPracticeExercises }) => {
   const panelId = useId();
   const [isOpen, setIsOpen] = useState(false);
   const a14Match = section.contentUrl?.match(/A14-(S\d+)/);
@@ -224,7 +228,11 @@ export const PedagogicalDeepDive: React.FC<{ section: ModuleSection }> = ({ sect
           {viewModel && ((viewModel as any).unitType === 'cumulative_review' ? (
             <CumulativeReviewRenderer view={viewModel as any} />
           ) : (
-            <PedagogicalUnitRenderer view={viewModel} />
+            <PedagogicalUnitRenderer
+              view={viewModel}
+              onAskTutor={onAskTutor}
+              onPracticeExercises={onPracticeExercises}
+            />
           ))}
           {!viewModel && content && <MarkdownContent content={content} pedagogical />}
         </div>
@@ -755,13 +763,21 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
           {moduleData.sections.map((section, idx) => (
             <section
               key={`${section.lessonId || moduleData.id}:${section.groupId || idx}:${section.contentUrl || section.title}`}
-              className="min-w-0 overflow-hidden bg-white rounded-2xl p-4 sm:p-8 border border-slate-200 shadow-xs space-y-5"
+              className="min-w-0 overflow-hidden surface p-4 sm:p-8 space-y-5"
             >
               <div className="border-b border-slate-100 pb-3 flex items-start justify-between gap-3">
                 <div className="min-w-0 space-y-2">
-                  <h2 className="break-words text-lg sm:text-xl font-bold text-slate-900 tracking-tight">
-                    {section.title}
-                  </h2>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h2 className="break-words text-lg sm:text-xl font-bold text-slate-900 tracking-tight">
+                      {section.title}
+                    </h2>
+                    {!isRichNoteEmpty(sectionNotes[`section-${idx}`]) && (
+                      <span className="inline-flex items-center gap-1 rounded-full bg-teal-100 border border-teal-300 px-2.5 py-0.5 text-[11px] font-extrabold text-teal-900 shadow-2xs">
+                        <FileText className="w-3 h-3 text-teal-700" />
+                        Anotação registrada
+                      </span>
+                    )}
+                  </div>
                   {section.suvecaMethod && (
                     <span
                       className={`inline-flex max-w-full rounded-full border px-2.5 py-1 text-[11px] font-bold leading-tight ${SUVECA_LEVEL_STYLES[section.suvecaMethod.level]}`}
@@ -777,11 +793,21 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
               </div>
 
               {/* Editorial Markdown Body */}
-              <div className="text-slate-800 text-base leading-relaxed">
+              <div className="text-slate-800 text-base leading-relaxed reading-content">
                 <MarkdownContent content={section.contentMarkdown} />
               </div>
 
-              <PedagogicalDeepDive section={section} />
+              <PedagogicalDeepDive
+                section={section}
+                onAskTutor={onAskTutor}
+                onPracticeExercises={(topic) =>
+                  onAskTutor(
+                    topic
+                      ? `Gostaria de resolver exercícios sobre: ${topic}`
+                      : `Gostaria de resolver exercícios sobre ${section.title}`
+                  )
+                }
+              />
 
               {(section.limitsAndExceptions?.length || section.contrasts?.length || section.examTraps?.length) ? (
                 <div className="grid min-w-0 gap-3 lg:grid-cols-3">
@@ -896,14 +922,14 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                     }`}
                   >
                     {notesSyncState === 'loading'
-                      ? 'Carregando...'
+                      ? 'Carregando do Firestore...'
                       : notesSyncState === 'saving'
-                      ? 'Salvando...'
+                      ? 'Salvando no Firestore...'
                       : notesSyncState === 'saved'
-                      ? 'Salvo na nuvem'
+                      ? '✓ Sincronizado no Firestore'
                       : notesSyncState === 'error'
                       ? 'Falha ao sincronizar'
-                      : 'Salvo neste dispositivo'}
+                      : 'Salvo localmente'}
                   </span>
                 </div>
 

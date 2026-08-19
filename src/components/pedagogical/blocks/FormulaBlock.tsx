@@ -12,7 +12,13 @@ interface FormulaBlockProps {
 export const FormulaBlock: React.FC<FormulaBlockProps> = ({ text, className = '' }) => {
   if (!text) return null;
 
-  const rawMath = text.trim().startsWith('$$') ? text : `$$\n${text}\n$$`;
+  const sanitized = text
+    .replace(/º/g, '^{\\circ}')
+    .replace(/ª/g, '^{a}')
+    .replace(/§/g, '\\S ')
+    .replace(/°/g, '^{\\circ}');
+
+  const rawMath = sanitized.trim().startsWith('$$') ? sanitized : `$$\n${sanitized}\n$$`;
 
   return (
     <div className={`my-4 overflow-x-auto rounded-xl border border-teal-200/80 bg-teal-50/50 p-4 text-center text-teal-950 shadow-2xs ${className}`}>

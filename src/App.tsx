@@ -569,6 +569,11 @@ export default function App() {
                 onOpenModules={() => setActiveTab('modules')}
                 attempts={metrics.attempts}
                 pendingErrorCount={cadernoErrors.filter((error) => error.status !== 'dominado').length}
+                masteredErrorCount={cadernoErrors.filter((error) => error.status === 'dominado').length}
+                readSectionsCount={metrics.readSectionIds.length}
+                visitedModulesCount={metrics.visitedModuleIds.length}
+                practiceCorrectCount={corePractice.correct}
+                onNavigateToTab={(tab) => setActiveTab(tab as TabType)}
               />
             )}
             </Suspense>

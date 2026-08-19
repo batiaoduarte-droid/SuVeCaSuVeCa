@@ -8,6 +8,7 @@ import {
   LockKeyhole,
   Sliders,
   Trophy,
+  Crown,
 } from 'lucide-react';
 import type { User } from '../lib/firebase';
 import {
@@ -16,6 +17,8 @@ import {
   type AchievementDefinition,
   type AchievementProgress,
 } from '../lib/achievements';
+import { calculateMasteryProgress } from '../lib/masteryLevel';
+import { MasteryLevelCard } from './MasteryLevelCard';
 import { MonthlyLeaderboard } from './MonthlyLeaderboard';
 import { StudyPreferences } from './StudyPreferences';
 import type { LeaderboardAttempt } from '../hooks/useMonthlyLeaderboard';
@@ -27,6 +30,12 @@ interface AchievementsProfileProps {
   onOpenModules?: () => void;
   attempts?: readonly LeaderboardAttempt[];
   pendingErrorCount?: number;
+  masteredErrorCount?: number;
+  readSectionsCount?: number;
+  visitedModulesCount?: number;
+  practiceCorrectCount?: number;
+  notesCount?: number;
+  onNavigateToTab?: (tab: string) => void;
 }
 
 type ProfileSubTab = 'achievements' | 'preferences';
@@ -47,6 +56,12 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
   onOpenModules,
   attempts = [],
   pendingErrorCount = 0,
+  masteredErrorCount = 0,
+  readSectionsCount = 0,
+  visitedModulesCount = 0,
+  practiceCorrectCount = 0,
+  notesCount = 0,
+  onNavigateToTab,
 }) => {
   const [activeSubTab, setActiveSubTab] = useState<ProfileSubTab>('achievements');
 
@@ -54,6 +69,26 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
     (achievement) => progress.unlocked[achievement.id]
   ).length;
   const activeStudyStreak = getActiveStudyStreak(progress);
+
+  // Somatório de acertos de simulados
+  const simuladoCorrectCount = attempts.reduce(
+    (acc, a) => acc + (a.correctCount ?? a.correct ?? 0),
+    0
+  );
+
+  // Cálculo de XP de Nível de Mestre
+  const mastery = calculateMasteryProgress({
+    practiceCorrectCount,
+    simuladoCorrectCount,
+    readSectionsCount,
+    visitedModulesCount,
+    notesCount: progress.unlocked.first_note ? Math.max(1, notesCount) : notesCount,
+    masteredErrorsCount: masteredErrorCount,
+    reviewingErrorsCount: pendingErrorCount,
+    unlockedBadgesCount: unlockedCount,
+    activeStudyStreak,
+    bestStreak: progress.bestStreak,
+  });
 
   return (
     <div className="max-w-5xl mx-auto space-y-8 pb-16">
@@ -73,25 +108,33 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
           )}
           <div className="min-w-0">
             <div className="inline-flex items-center gap-1.5 text-xs font-bold text-teal-800 bg-teal-50 border border-teal-200 px-2.5 py-1 rounded-full">
-              <Trophy className="w-3.5 h-3.5" />
-              Perfil do Estudante SuVeCA
+              <Crown className="w-3.5 h-3.5 text-amber-600" />
+              Nível {mastery.currentLevel.level} · {mastery.currentLevel.badge}
             </div>
             <h1 className="mt-2 text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight truncate">
               {user?.displayName || 'Seu perfil de estudos'}
             </h1>
             <p className="text-sm text-slate-600 mt-1">
-              Gerencie suas conquistas, histórico e preferências de lembretes diários FCM.
+              Acompanhe seu Nível de Mestre, conquistas e equilíbrio de domínio sintático.
             </p>
           </div>
         </div>
 
-        <div className="flex items-center gap-2 shrink-0">
-          <div className="rounded-xl bg-teal-50 border border-teal-200 px-5 py-3 text-center">
-            <div className="text-2xl font-black text-teal-800">
+        <div className="flex items-center gap-3 shrink-0">
+          <div className="rounded-xl bg-teal-50 border border-teal-200 px-4 py-2.5 text-center">
+            <div className="text-xl font-black text-teal-900">
+              {mastery.totalXp.toLocaleString('pt-BR')} XP
+            </div>
+            <div className="text-[10px] uppercase tracking-wider font-extrabold text-teal-700">
+              XP Total
+            </div>
+          </div>
+          <div className="rounded-xl bg-amber-50 border border-amber-200 px-4 py-2.5 text-center">
+            <div className="text-xl font-black text-amber-900">
               {unlockedCount}/{ACHIEVEMENTS.length}
             </div>
-            <div className="text-[11px] uppercase tracking-wide font-bold text-teal-700">
-              badges obtidos
+            <div className="text-[10px] uppercase tracking-wider font-extrabold text-amber-700">
+              Badges
             </div>
           </div>
         </div>
@@ -102,20 +145,20 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
         <button
           type="button"
           onClick={() => setActiveSubTab('achievements')}
-          className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg font-bold text-xs sm:text-sm transition-all ${
+          className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg font-bold text-xs sm:text-sm transition-all cursor-pointer ${
             activeSubTab === 'achievements'
               ? 'bg-white text-slate-900 shadow-xs border border-slate-200'
               : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
           }`}
         >
-          <Trophy className="w-4 h-4 text-amber-700" />
-          Conquistas & Ranking
+          <Trophy className="w-4 h-4 text-amber-600" />
+          Nível de Mestre & Conquistas
         </button>
 
         <button
           type="button"
           onClick={() => setActiveSubTab('preferences')}
-          className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg font-bold text-xs sm:text-sm transition-all ${
+          className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg font-bold text-xs sm:text-sm transition-all cursor-pointer ${
             activeSubTab === 'preferences'
               ? 'bg-white text-slate-900 shadow-xs border border-slate-200'
               : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
@@ -129,6 +172,10 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
       {/* Sub-Tab 1: Achievements & Ranking */}
       {activeSubTab === 'achievements' && (
         <div className="space-y-8">
+          {/* Card Central de Nível de Mestre com Recharts e Missões */}
+          <MasteryLevelCard mastery={mastery} onNavigateToTab={onNavigateToTab} />
+
+          {/* Sequências & Estatísticas Rápidas */}
           <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" aria-label="Progresso de conquistas">
             <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs flex items-center gap-4">
               <div className="w-11 h-11 rounded-xl bg-orange-50 text-orange-700 flex items-center justify-center border border-orange-200">
@@ -184,12 +231,13 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
             <button
               type="button"
               onClick={() => setActiveSubTab('preferences')}
-              className="button-primary text-xs px-4 py-2 shrink-0"
+              className="button-primary text-xs px-4 py-2 shrink-0 cursor-pointer"
             >
               Abrir Preferências de Estudo
             </button>
           </div>
 
+          {/* Meus Badges */}
           <section className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-5">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4">
               <div>
@@ -199,7 +247,7 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
                 </p>
               </div>
               {onOpenModules && !progress.unlocked.first_note && (
-                <button type="button" onClick={onOpenModules} className="button-secondary text-xs">
+                <button type="button" onClick={onOpenModules} className="button-secondary text-xs cursor-pointer">
                   <FilePenLine className="w-4 h-4 text-teal-700" />
                   Fazer uma anotação
                 </button>
@@ -256,4 +304,3 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
     </div>
   );
 };
-

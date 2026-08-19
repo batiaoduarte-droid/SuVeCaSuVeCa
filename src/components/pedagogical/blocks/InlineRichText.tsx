@@ -9,19 +9,40 @@ interface InlineRichTextProps {
   className?: string;
 }
 
-const sanitizePedagogicalText = (text: string): string => {
+export const sanitizePedagogicalText = (text: string): string => {
   if (!text || typeof text !== 'string') return '';
+
   return text
-    // Remove referências brutas a IDs técnicos: "Contrasta com: KB-... (Título)" -> "Contrasta com: Título"
+    // Remove referências brutas a IDs técnicos e scaffolding
     .replace(/Contrasta com:\s*KB-[A-Z0-9_-]+\s*\(([^)]+)\)/gi, 'Contrasta com: **$1**')
     .replace(/Expandido em:\s*KB-[A-Z0-9_-]+\s*a\s*KB-[A-Z0-9_-]+/gi, 'Detalhamento disponível nos tópicos do módulo')
     .replace(/\s*\(KB-[^)]+\)/gi, '')
-    .replace(/\s*\bKB-[A-Z0-9_-]{8,}\b/gi, '');
+    .replace(/\s*\bKB-[A-Z0-9_-]{6,}\b/gi, '')
+    .replace(/\s*\bWARN-[A-Z0-9_-]{6,}\b/gi, '')
+    .replace(/\s*\bPROC-[A-Z0-9_-]{6,}\b/gi, '')
+    .replace(/\s*\bEX-[A-Z0-9_-]{6,}\b/gi, '')
+    .replace(/\s*\bOQ-[A-Z0-9_.-]{6,}\b/gi, '')
+    .replace(/\s*\brule\.pt\.[a-z0-9_.-]+\b/gi, '')
+    .replace(/Possui alerta:\s*\.?/gmi, '')
+    .replace(/Aplicado em:\s*\.?/gmi, '')
+    .replace(/Depende de:\s*\.?/gmi, '')
+    .replace(/Relacionado a:\s*\.?/gmi, '')
+    // Substitui caracteres especiais dentro de fórmulas matemáticas para evitar warnings no KaTeX
+    .replace(/\$([^$]+)\$/g, (_match, mathContent) => {
+      const sanitizedMath = mathContent
+        .replace(/º/g, '^{\\circ}')
+        .replace(/ª/g, '^{a}')
+        .replace(/§/g, '\\S ')
+        .replace(/°/g, '^{\\circ}');
+      return `$${sanitizedMath}$`;
+    })
+    .trim();
 };
 
 export const InlineRichText: React.FC<InlineRichTextProps> = ({ children, className = '' }) => {
   if (!children) return null;
   const processedText = sanitizePedagogicalText(children);
+  if (!processedText) return null;
 
   return (
     <span className={`inline-rich-text ${className}`}>

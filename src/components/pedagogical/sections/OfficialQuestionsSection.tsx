@@ -1,14 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { HelpCircle } from 'lucide-react';
 import type { OfficialQuestionView } from '../../../types/pedagogicalView';
 import { QuestionBlock } from '../../ui/QuestionBlock';
 import { InlineRichText } from '../blocks/InlineRichText';
+import { fetchNormalizedQuestionsForLesson } from '../../../lib/officialQuestionsLoader';
 
 interface OfficialQuestionsSectionProps {
   questions?: OfficialQuestionView[];
+  lessonId?: string;
 }
 
-export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> = ({ questions = [] }) => {
+export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> = ({
+  questions = [],
+  lessonId = 'A00',
+}) => {
+  const [enrichedMap, setEnrichedMap] = useState<Record<string, any>>({});
+
+  useEffect(() => {
+    let active = true;
+    const loadRealQuestions = async () => {
+      const map = await fetchNormalizedQuestionsForLesson(lessonId);
+      if (active && Object.keys(map).length > 0) {
+        setEnrichedMap(map);
+      }
+    };
+    loadRealQuestions();
+    return () => {
+      active = false;
+    };
+  }, [lessonId]);
+
   if (!questions || questions.length === 0) return null;
 
   return (
@@ -21,19 +42,49 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
       </div>
 
       <div className="space-y-6">
-        {questions.map((q, idx) => (
-          <QuestionBlock
-            key={q.questionId || idx}
-            title={`Questão ${idx + 1}: ${q.organization || q.examBoard || 'Concurso Público'}`}
-            board={q.examBoard}
-            year={q.year ? String(q.year) : undefined}
-            prompt={q.prompt}
-            options={q.options.map((opt) => ({ letter: opt.label.toUpperCase(), text: opt.text }))}
-            solution={q.explanation}
-            answer={q.officialAnswer}
-            renderMarkdown={(text) => <InlineRichText>{text}</InlineRichText>}
-          />
-        ))}
+        {questions.map((q, idx) => {
+          const qId = q.questionId || '';
+          const normalized = enrichedMap[qId] || enrichedMap[`${lessonId}:${qId}`];
+
+          let prompt = normalized?.prompt || q.prompt || '';
+          if (prompt.includes('Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-')) {
+            if (q.options && q.options.length > 0) {
+              prompt = 'Assinale a alternativa correta referente aos conceitos gramaticais e fonéticos estudados:';
+            } else {
+              prompt = 'Julgue o item a seguir quanto à correção das regras gramaticais e fonéticas:';
+            }
+          }
+
+          const rawOptions =
+            normalized?.options && normalized.options.length > 0
+              ? normalized.options.map((opt: any) => ({
+                  letter: (opt.letter || opt.label || '').toUpperCase(),
+                  text: opt.text || '',
+                }))
+              : q.options.map((opt) => ({
+                  letter: opt.label.toUpperCase(),
+                  text: opt.text,
+                }));
+
+          const solution = normalized?.commentary || q.explanation;
+          const answer = normalized?.correctAnswer || q.officialAnswer;
+          const board = normalized?.bank || q.examBoard;
+          const year = normalized?.year ? String(normalized.year) : q.year ? String(q.year) : undefined;
+
+          return (
+            <QuestionBlock
+              key={q.questionId || idx}
+              title={`Questão ${idx + 1}: ${q.organization || board || 'Concurso Público'}`}
+              board={board}
+              year={year}
+              prompt={prompt}
+              options={rawOptions}
+              solution={solution}
+              answer={answer}
+              renderMarkdown={(text) => <InlineRichText>{text}</InlineRichText>}
+            />
+          );
+        })}
       </div>
     </div>
   );
