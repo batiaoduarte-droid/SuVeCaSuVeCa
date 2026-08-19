@@ -33,6 +33,11 @@ export async function openApp(page: Page) {
   await expect(page.getByRole('button', { name: 'Ir para a Apostila' })).toBeVisible();
   await expect(page.locator('main')).toBeVisible();
   await expect(page.getByText('Carregando ferramenta de estudo…')).toBeHidden();
+  const closeTour = page.getByRole('button', { name: 'Fechar tour' });
+  if (await closeTour.count() && await closeTour.isVisible()) {
+    await closeTour.click();
+    await page.waitForTimeout(150);
+  }
   await page.evaluate(async () => {
     if ('fonts' in document) await document.fonts.ready;
   });

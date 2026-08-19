@@ -421,7 +421,7 @@ export const RichNoteEditor: React.FC<RichNoteEditorProps> = ({
 
       {/* Tags Rápidas de Estudo (One-Click) */}
       <div className="flex flex-wrap items-center gap-1.5 px-3 py-2 bg-white border-b border-slate-100">
-        <span className="text-[10px] font-black uppercase tracking-wider text-slate-400 mr-1">
+        <span className="text-[10px] font-black uppercase tracking-wider text-slate-600 mr-1">
           Marcadores:
         </span>
         {studyTags.map(({ tag, label, icon: Icon, badgeClass, colorClass }) => (
