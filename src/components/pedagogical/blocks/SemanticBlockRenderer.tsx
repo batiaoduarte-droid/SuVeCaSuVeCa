@@ -114,7 +114,7 @@ export const ResponsiveComparisonMatrix: React.FC<{ block: ComparisonMatrixBlock
                   scope="col"
                   className="px-3.5 py-2.5 font-black text-slate-800 uppercase tracking-wider text-[11px]"
                 >
-                  <InlineRichText>{col}</InlineRichText>
+                  <InlineRichText>{col.trim() || `Coluna ${idx + 1}`}</InlineRichText>
                 </th>
               ))}
             </tr>
@@ -146,7 +146,7 @@ export const ResponsiveComparisonMatrix: React.FC<{ block: ComparisonMatrixBlock
               return (
                 <div key={cIdx} className="text-xs leading-relaxed">
                   <span className="font-bold text-slate-900 block text-[11px] uppercase tracking-wider">
-                    <InlineRichText>{col}</InlineRichText>:
+                    <InlineRichText>{col.trim() || `Coluna ${cIdx + 1}`}</InlineRichText>:
                   </span>
                   <span className="text-slate-700 font-medium pl-1">
                     <InlineRichText>{val}</InlineRichText>
@@ -210,7 +210,7 @@ export const ResponsiveAstTable: React.FC<{ block: TableBlock }> = ({ block }) =
                   scope="col"
                   className="px-3.5 py-2.5 font-black text-slate-800 uppercase tracking-wider text-[11px]"
                 >
-                  <InlineRichText>{col}</InlineRichText>
+                  <InlineRichText>{col.trim() || `Coluna ${idx + 1}`}</InlineRichText>
                 </th>
               ))}
             </tr>
@@ -242,7 +242,7 @@ export const ResponsiveAstTable: React.FC<{ block: TableBlock }> = ({ block }) =
               return (
                 <div key={cIdx} className="text-xs leading-relaxed">
                   <span className="font-bold text-slate-900 block text-[11px] uppercase tracking-wider">
-                    <InlineRichText>{col}</InlineRichText>:
+                    <InlineRichText>{col.trim() || `Coluna ${cIdx + 1}`}</InlineRichText>:
                   </span>
                   <span className="text-slate-700 font-medium pl-1">
                     <InlineRichText>{val}</InlineRichText>
@@ -285,7 +285,7 @@ export const ClassificationRenderer: React.FC<{ block: ClassificationBlock }> = 
                 {idx + 1}
               </span>
               <span className="text-xs font-black text-teal-950 tracking-tight">
-                <InlineRichText>{cat.name || (cat as any).category || ''}</InlineRichText>
+                <InlineRichText>{cat.name || cat.category || `Categoria ${idx + 1}`}</InlineRichText>
               </span>
             </div>
 
@@ -295,13 +295,13 @@ export const ClassificationRenderer: React.FC<{ block: ClassificationBlock }> = 
               </p>
             )}
 
-            {(cat.examples || (cat as any).items) && (
+            {(cat.examples || cat.items || []).length > 0 && (
               <div className="pt-1 space-y-1">
                 <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">
                   Exemplos / Casos:
                 </span>
                 <ul className="list-disc list-inside text-xs text-slate-700 pl-1 space-y-0.5">
-                  {(cat.examples || (cat as any).items || []).map((ex: string, eIdx: number) => (
+                  {(cat.examples || cat.items || []).map((ex, eIdx) => (
                     <li key={eIdx} className="font-medium">
                       <InlineRichText>{ex}</InlineRichText>
                     </li>

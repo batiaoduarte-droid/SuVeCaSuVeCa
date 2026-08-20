@@ -1,4 +1,4 @@
-import React, { useState, useId } from 'react';
+import React, { useState } from 'react';
 import { BadgeCheck, Building2, CalendarDays, CircleHelp, Check, X, Eye, EyeOff, Sparkles } from 'lucide-react';
 
 export interface QuestionBlockModel {
@@ -29,17 +29,19 @@ export const QuestionBlock: React.FC<QuestionBlockProps> = ({
   renderMarkdown,
   onAskTutor,
 }) => {
-  const statementId = useId();
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const [showAnswer, setShowAnswer] = useState<boolean>(true);
+  const [showAnswer, setShowAnswer] = useState<boolean>(false);
 
   // Normaliza a letra do gabarito (ex: 'A', 'B', 'C', 'Certo', 'Errado')
   const cleanAnswer = (answer || '').trim();
   const answerLetter = cleanAnswer.replace(/^.*(?:letra|alternativa|item)\s*([A-Ea-e]|certo|errado).*$/i, '$1').toUpperCase();
 
   const handleSelectOption = (letter: string) => {
+    if (showAnswer) return;
     setSelectedOption(letter);
   };
+
+  const canRevealAnswer = options.length === 0 || selectedOption !== null;
 
   return (
     <article className="question-block my-5 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xs transition">
@@ -72,8 +74,9 @@ export const QuestionBlock: React.FC<QuestionBlockProps> = ({
 
           <button
             type="button"
+            disabled={!showAnswer && !canRevealAnswer}
             onClick={() => setShowAnswer((prev) => !prev)}
-            className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-bold transition cursor-pointer shadow-2xs ${
+            className={`flex min-h-11 items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-bold transition shadow-2xs disabled:cursor-not-allowed disabled:opacity-55 ${
               showAnswer
                 ? 'border border-amber-300 bg-amber-50 text-amber-900 hover:bg-amber-100'
                 : 'border border-teal-300 bg-teal-50 text-teal-900 hover:bg-teal-100'
@@ -87,7 +90,7 @@ export const QuestionBlock: React.FC<QuestionBlockProps> = ({
             ) : (
               <>
                 <Eye className="h-3.5 w-3.5 text-teal-700" />
-                <span>Ver Gabarito Comentado</span>
+                <span>{canRevealAnswer ? 'Confirmar tentativa e corrigir' : 'Selecione uma resposta'}</span>
               </>
             )}
           </button>
@@ -97,8 +100,8 @@ export const QuestionBlock: React.FC<QuestionBlockProps> = ({
       <div className="space-y-4 px-4 py-5 sm:px-5">
         {/* Enunciado da questão */}
         {prompt && (
-          <section aria-labelledby={statementId}>
-            <h4 id={statementId} className="mb-2 text-[11px] font-black uppercase tracking-wider text-teal-900">
+          <section aria-label={`Enunciado de ${title}`}>
+            <h4 className="mb-2 text-[11px] font-black uppercase tracking-wider text-teal-900">
               Enunciado
             </h4>
             <div className="text-xs sm:text-sm leading-relaxed text-slate-800 font-medium">
@@ -109,9 +112,9 @@ export const QuestionBlock: React.FC<QuestionBlockProps> = ({
 
         {/* Alternativas Interativas */}
         {options.length > 0 && (
-          <section aria-label="Alternativas">
+          <section aria-label={`Alternativas de ${title}`}>
             <ol className="m-0 grid list-none gap-2.5 p-0">
-              {options.map((option) => {
+              {options.map((option, optionIndex) => {
                 const optLetter = option.letter.toUpperCase();
                 const isSelected = selectedOption === optLetter;
                 const isCorrect = showAnswer && (answerLetter === optLetter || cleanAnswer.toUpperCase().includes(`(${optLetter})`) || cleanAnswer.toUpperCase().startsWith(optLetter));
@@ -134,10 +137,12 @@ export const QuestionBlock: React.FC<QuestionBlockProps> = ({
                 }
 
                 return (
-                  <li key={option.letter}>
+                  <li key={`${option.letter}-${optionIndex}`}>
                     <button
                       type="button"
                       onClick={() => handleSelectOption(optLetter)}
+                      aria-pressed={isSelected}
+                      disabled={showAnswer}
                       className={`grid w-full grid-cols-[2rem_1fr] items-start gap-3 rounded-xl border p-3 text-left text-xs sm:text-sm transition cursor-pointer shadow-2xs ${borderClasses}`}
                     >
                       <span
@@ -164,7 +169,7 @@ export const QuestionBlock: React.FC<QuestionBlockProps> = ({
 
         {/* Gabarito e Solução Comentada (Revelada apenas quando showAnswer é true) */}
         {showAnswer && (
-          <div className="space-y-3 pt-2">
+          <div className="space-y-3 pt-2" aria-live="polite">
             {answer && (
               <div className="flex items-start gap-2.5 rounded-xl border border-emerald-300 bg-emerald-50/90 p-3.5 text-xs sm:text-sm text-emerald-950 shadow-2xs">
                 <BadgeCheck className="h-5 w-5 shrink-0 text-emerald-700 mt-0.5" />

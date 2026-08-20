@@ -22,9 +22,12 @@ export const SuvecaSection: React.FC<SuvecaSectionProps> = ({ view }) => {
   const [copied, setCopied] = useState(false);
 
   if (!view) return null;
+  const summary = view.summary || view.macroContext || '';
+  const steps = view.steps || [];
+  const limits = view.limits || [];
 
   const handleCopy = () => {
-    const textToCopy = `Método SuVeCA: [Sujeito + Verbo + Complemento + Adjunto + Predicativo]\n\n${view.summary || ''}\n\nPassos:\n${(view.steps || []).map((s, i) => `${i + 1}. ${s}`).join('\n')}`;
+    const textToCopy = `Método SuVeCA: [Sujeito + Verbo + Complemento + Adjunto + Predicativo]\n\n${summary}\n\nPassos:\n${steps.map((s, i) => `${i + 1}. ${s}`).join('\n')}`;
     navigator.clipboard.writeText(textToCopy);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -53,7 +56,7 @@ export const SuvecaSection: React.FC<SuvecaSectionProps> = ({ view }) => {
           <button
             type="button"
             onClick={handleCopy}
-            className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-bold text-slate-700 transition hover:bg-slate-50 cursor-pointer shadow-2xs select-none"
+            className="flex min-h-11 items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-700 transition hover:bg-slate-50 cursor-pointer shadow-2xs select-none"
             title="Copiar síntese do método"
           >
             {copied ? (
@@ -72,12 +75,29 @@ export const SuvecaSection: React.FC<SuvecaSectionProps> = ({ view }) => {
 
         {/* Mapa Interativo de Análise */}
         <SuvecaSentenceMap
-          ruleSummary={view.summary}
+          ruleSummary={summary}
           decisiveTest={view.decisiveTests && view.decisiveTests.length > 0 ? view.decisiveTests[0] : undefined}
         />
 
+        {(view.macroContext || view.cognitiveAnchor || view.strategicSignificance || view.coreTension || view.visualBlueprint) && (
+          <div className="grid gap-3 md:grid-cols-2">
+            {[
+              ['Contexto do tema', view.macroContext],
+              ['Âncora cognitiva', view.cognitiveAnchor],
+              ['Por que isso decide a prova', view.strategicSignificance],
+              ['Tensão que exige atenção', view.coreTension],
+              ['Mapa visual', view.visualBlueprint],
+            ].filter((entry): entry is [string, string] => Boolean(entry[1])).map(([title, text]) => (
+              <article key={title} className="rounded-xl border border-teal-200 bg-teal-50/40 p-3.5">
+                <h4 className="m-0 text-[11px] font-black uppercase tracking-wider text-teal-900">{title}</h4>
+                <p className="mt-1 text-xs font-medium leading-relaxed text-slate-800"><InlineRichText>{text}</InlineRichText></p>
+              </article>
+            ))}
+          </div>
+        )}
+
         {/* Como Aplicar neste Tema (Passo a Passo) */}
-        {view.steps && view.steps.length > 0 && (
+        {steps.length > 0 && (
           <div className="space-y-3 pt-2">
             <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-teal-950 select-none">
               <Zap className="h-4 w-4 text-amber-500 fill-amber-500" />
@@ -85,7 +105,7 @@ export const SuvecaSection: React.FC<SuvecaSectionProps> = ({ view }) => {
             </div>
 
             <div className="space-y-2">
-              {view.steps.map((step, idx) => (
+              {steps.map((step, idx) => (
                 <div
                   key={idx}
                   className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50/50 p-3 sm:p-3.5 shadow-2xs hover:border-teal-300 transition"
@@ -135,13 +155,13 @@ export const SuvecaSection: React.FC<SuvecaSectionProps> = ({ view }) => {
         )}
 
         {/* Limites do Método SuVeCA */}
-        {view.limits && view.limits.length > 0 && (
+        {limits.length > 0 && (
           <StudyCallout
             tone="exception"
             title="Fronteira & Limite do Método SuVeCA"
           >
             <div className="space-y-1.5 text-xs leading-relaxed text-purple-950 font-medium">
-              {view.limits.map((limit, idx) => (
+              {limits.map((limit, idx) => (
                 <p key={idx}>
                   <InlineRichText>{limit}</InlineRichText>
                 </p>

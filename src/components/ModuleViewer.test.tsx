@@ -45,4 +45,74 @@ describe('aprofundamento pedagógico', () => {
     expect(await screen.findByRole('heading', { name: 'Conteúdo aprofundado carregado' })).toBeVisible();
     expect(screen.queryByRole('status')).not.toBeInTheDocument();
   });
+
+  it('carrega uma View Model v4.2 pelo renderer nativo', async () => {
+    const view = {
+      viewSchemaVersion: '4.2.0-semantic-authoring',
+      source: { unitId: 'IP-A02-G01' },
+      unit: {
+        unitId: 'IP-A02-G01',
+        lessonId: 'A02',
+        title: 'Classes de Palavras',
+        learningObjectives: ['Distinguir classes por critérios formais.'],
+      },
+      sections: {
+        explanation: { groups: [{ title: 'Modelo mental', blocks: [{ type: 'paragraph', text: 'Conteúdo semântico nativo.' }] }] },
+      },
+    };
+    vi.stubGlobal('fetch', vi.fn(async () => ({ ok: true, json: async () => view })));
+
+    render(
+      <PedagogicalDeepDive
+        section={{
+          title: 'Classes antigas',
+          contentMarkdown: 'Resumo legado',
+          contentUrl: '/knowledge/pedagogical/units/a02-g01.md',
+          editorial: {
+            integrationUnitId: 'IP-A02-G01',
+            reviewVersion: 'test',
+            changeType: 'expand',
+            evidenceRefs: [],
+          },
+        }}
+      />,
+    );
+    await userEvent.click(screen.getByRole('button', { name: /abrir unidade pedagógica completa/i }));
+
+    expect(await screen.findByRole('heading', { level: 1, name: 'Classes de Palavras' })).toBeVisible();
+    expect(screen.getByText('Conteúdo semântico nativo.')).toBeVisible();
+    expect(screen.queryByText('Resumo legado')).not.toBeInTheDocument();
+  });
+
+  it('falha fechado quando a identidade da View Model integrada diverge', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => ({
+      ok: true,
+      json: async () => ({
+        viewSchemaVersion: '4.2.0-hardened',
+        unit: { unitId: 'IP-A03-G02', lessonId: 'A03', title: 'Unidade indevida' },
+        sections: { explanation: {} },
+      }),
+    })));
+
+    render(
+      <PedagogicalDeepDive
+        section={{
+          title: 'Unidade esperada',
+          contentMarkdown: 'Não deve aparecer',
+          contentUrl: '/knowledge/pedagogical/units/a03-g01.md',
+          editorial: {
+            integrationUnitId: 'IP-A03-G01',
+            reviewVersion: 'test',
+            changeType: 'expand',
+            evidenceRefs: [],
+          },
+        }}
+      />,
+    );
+    await userEvent.click(screen.getByRole('button', { name: /abrir unidade pedagógica completa/i }));
+
+    expect(await screen.findByRole('alert')).toHaveTextContent(/não foi possível carregar/i);
+    expect(screen.queryByText('Não deve aparecer')).not.toBeInTheDocument();
+    expect(fetch).toHaveBeenCalledTimes(1);
+  });
 });

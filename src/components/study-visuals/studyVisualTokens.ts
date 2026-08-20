@@ -172,7 +172,7 @@ export const SUVECA_BLOCK_COLORS = {
     border: 'border-blue-500',
     bg: 'bg-blue-50/70',
     text: 'text-blue-950',
-    pill: 'bg-blue-600 text-white',
+    pill: 'bg-blue-800 text-white',
   },
   ve: {
     tag: 'VE',
@@ -181,7 +181,7 @@ export const SUVECA_BLOCK_COLORS = {
     border: 'border-emerald-500',
     bg: 'bg-emerald-50/70',
     text: 'text-emerald-950',
-    pill: 'bg-emerald-600 text-white',
+    pill: 'bg-emerald-800 text-white',
   },
   c: {
     tag: 'C',
@@ -190,7 +190,7 @@ export const SUVECA_BLOCK_COLORS = {
     border: 'border-amber-500',
     bg: 'bg-amber-50/70',
     text: 'text-amber-950',
-    pill: 'bg-amber-600 text-white',
+    pill: 'bg-amber-800 text-white',
   },
   a: {
     tag: 'A',
@@ -199,7 +199,7 @@ export const SUVECA_BLOCK_COLORS = {
     border: 'border-purple-500',
     bg: 'bg-purple-50/70',
     text: 'text-purple-950',
-    pill: 'bg-purple-600 text-white',
+    pill: 'bg-purple-800 text-white',
   },
   pred: {
     tag: 'PRED',
@@ -208,6 +208,6 @@ export const SUVECA_BLOCK_COLORS = {
     border: 'border-rose-500',
     bg: 'bg-rose-50/70',
     text: 'text-rose-950',
-    pill: 'bg-rose-600 text-white',
+    pill: 'bg-rose-800 text-white',
   },
 };

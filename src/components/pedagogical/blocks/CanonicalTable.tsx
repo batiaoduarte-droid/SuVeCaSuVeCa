@@ -55,7 +55,7 @@ export const CanonicalTable: React.FC<CanonicalTableProps> = ({ table }) => {
                   key={idx}
                   className="px-4 py-3 text-xs font-black uppercase tracking-wider text-slate-700"
                 >
-                  <InlineRichText>{header}</InlineRichText>
+                  <InlineRichText>{header.trim() || `Coluna ${idx + 1}`}</InlineRichText>
                 </th>
               ))}
             </tr>

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import {
   Brain,
   BookOpen,
@@ -36,6 +36,8 @@ interface PedagogicalUnitRendererProps {
   view: PedagogicalUnitView;
   onAskTutor?: (contextText: string) => void;
   onPracticeExercises?: (topic?: string) => void;
+  activeSectionId?: string | null;
+  onActiveSectionChange?: (sectionId: string | null) => void;
 }
 
 interface SectionDescriptor {
@@ -49,6 +51,8 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
   view,
   onAskTutor,
   onPracticeExercises,
+  activeSectionId,
+  onActiveSectionChange,
 }) => {
   if (!view || !view.unit) return null;
 
@@ -169,16 +173,27 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
         id: 'recall',
         title: 'Síntese para recuperação ativa',
         icon: CheckSquare,
-        render: () => <RecallSection {...sections.recall} />,
+        render: () => <RecallSection {...sections.recall} unitId={unit.unitId} />,
       });
     }
 
     return list;
-  }, [sections]);
+  }, [sections, unit.unitId]);
 
   const [openSections, setOpenSections] = useState<Set<string>>(
-    () => new Set(presentSections.slice(0, 2).map((s) => s.id))
+    () => new Set([
+      ...presentSections.slice(0, 2).map((s) => s.id),
+      ...(activeSectionId ? [activeSectionId] : []),
+    ])
   );
+
+  useEffect(() => {
+    if (!activeSectionId || !presentSections.some((section) => section.id === activeSectionId)) return;
+    setOpenSections((current) => new Set(current).add(activeSectionId));
+    window.requestAnimationFrame(() => {
+      document.getElementById(`${unit.unitId}-${activeSectionId}`)?.scrollIntoView({ block: 'start' });
+    });
+  }, [activeSectionId, presentSections, unit.unitId]);
 
   const toggleSection = (id: string, isOpen: boolean) => {
     setOpenSections((prev) => {
@@ -187,6 +202,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
       else next.delete(id);
       return next;
     });
+    if (isOpen) onActiveSectionChange?.(id);
   };
 
   const expandAll = () => {
@@ -199,7 +215,8 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
 
   const openFromToc = (id: string) => {
     setOpenSections((prev) => new Set(prev).add(id));
-    const el = document.getElementById(id);
+    onActiveSectionChange?.(id);
+    const el = document.getElementById(`${unit.unitId}-${id}`);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -212,7 +229,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
       onPracticeExercises(sectionTitle);
       return;
     }
-    const el = document.getElementById('unit-official-questions');
+    const el = document.getElementById(`${unit.unitId}-official-questions`);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -258,7 +275,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
       )}
 
       {/* Sumário Dinâmico */}
-      <nav className="rounded-2xl border border-teal-200 bg-teal-50/50 p-4 sm:p-5 shadow-2xs" aria-label="Sumário desta unidade">
+      <nav className="rounded-2xl border border-teal-200 bg-teal-50/50 p-4 sm:p-5 shadow-2xs" aria-label={`Sumário da unidade ${unit.title}`}>
         <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
           <h2 className="m-0 flex items-center gap-2 text-base font-bold text-teal-950">
             <ListTree className="h-5 w-5 text-teal-700" /> Nesta unidade ({presentSections.length} seções)
@@ -302,7 +319,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
           return (
             <details
               key={sec.id}
-              id={sec.id}
+              id={`${unit.unitId}-${sec.id}`}
               open={isOpen}
               onToggle={(e) => toggleSection(sec.id, e.currentTarget.open)}
               className="group scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs transition"
@@ -329,7 +346,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
                     <button
                       type="button"
                       onClick={() => handleScrollToQuestions(sec.title)}
-                      className="flex items-center gap-1.5 rounded-lg border border-teal-200 bg-teal-50/70 px-3 py-1.5 text-xs font-bold text-teal-900 transition hover:bg-teal-100 hover:border-teal-300 cursor-pointer shadow-2xs"
+                      className="flex min-h-11 items-center gap-1.5 rounded-lg border border-teal-200 bg-teal-50/70 px-3 py-2 text-xs font-bold text-teal-900 transition hover:bg-teal-100 hover:border-teal-300 cursor-pointer shadow-2xs"
                     >
                       <HelpCircle className="h-3.5 w-3.5 text-teal-700" />
                       <span>Exercícios Relacionados</span>
@@ -337,7 +354,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
                     <button
                       type="button"
                       onClick={() => handleOpenInTutor(sec.title)}
-                      className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-bold text-slate-700 transition hover:bg-slate-50 hover:border-slate-300 cursor-pointer shadow-2xs"
+                      className="flex min-h-11 items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-700 transition hover:bg-slate-50 hover:border-slate-300 cursor-pointer shadow-2xs"
                     >
                       <Bot className="h-3.5 w-3.5 text-teal-700" />
                       <span>Abrir no Tutor IA</span>
@@ -352,7 +369,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
 
       {/* Questões Oficiais de Banca */}
       {officialQuestions && officialQuestions.length > 0 && (
-        <div id="unit-official-questions" className="mt-8 pt-6 border-t border-slate-200">
+        <div id={`${unit.unitId}-official-questions`} className="mt-8 pt-6 border-t border-slate-200">
           <OfficialQuestionsSection
             questions={officialQuestions}
             lessonId={unit.unitId ? unit.unitId.split('-')[1] : 'A00'}
@@ -360,6 +377,21 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
           />
         </div>
       )}
+
+      <section className="mt-8 rounded-2xl border border-teal-200 bg-teal-50/70 p-4 sm:p-5" aria-label="Próximo passo da unidade">
+        <h2 className="m-0 text-base font-black text-teal-950">Feche o ciclo com aplicação</h2>
+        <p className="mt-1 text-sm leading-relaxed text-slate-700">
+          Resolva questões sem consulta e use os erros para decidir o que revisar nesta unidade.
+        </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <button type="button" onClick={() => onPracticeExercises?.(unit.title)} className="min-h-11 rounded-xl bg-teal-800 px-4 py-2 text-sm font-bold text-white hover:bg-teal-900">
+            Praticar esta unidade
+          </button>
+          <button type="button" onClick={() => document.getElementById(`module-unit-${unit.unitId}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })} className="min-h-11 rounded-xl border border-teal-300 bg-white px-4 py-2 text-sm font-bold text-teal-900 hover:bg-teal-50">
+            Voltar ao início
+          </button>
+        </div>
+      </section>
     </div>
   );
 };

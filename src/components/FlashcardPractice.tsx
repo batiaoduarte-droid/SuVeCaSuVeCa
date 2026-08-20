@@ -629,7 +629,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
       {!activeCard ? (
         <div className="bg-white rounded-2xl border border-slate-200 p-10 text-center space-y-3 shadow-xs">
           <BookOpen className="w-10 h-10 text-slate-400 mx-auto" />
-          <h3 className="text-sm font-bold text-slate-800">
+          <h2 className="text-sm font-bold text-slate-800">
             {mode === 'caderno' && cadernoCards.length
               ? 'Nenhum card do Caderno está devido agora'
               : mode === 'suveca' && suvecaCards.length
@@ -637,7 +637,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
               : mode === 'suveca' && editorialModuleId
               ? 'Esta aula ainda não possui cards editoriais'
               : 'Ainda não há cards para esta revisão'}
-          </h3>
+          </h2>
           <p className="text-xs text-slate-500 max-w-md mx-auto">
             {mode === 'caderno' && cadernoCards.length
               ? 'O intervalo de repetição espaçada está ativo. Volte no horário programado ou revise a base editorial.'

@@ -1,5 +1,5 @@
 import React from 'react';
-import { describe, it, expect } from 'vitest';
+import { beforeEach, describe, it, expect } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { CumulativeReviewRenderer } from './CumulativeReviewRenderer';
 import type { CumulativeReviewView } from '../../types/pedagogicalView';
@@ -58,6 +58,8 @@ const mockCumulativeReview: CumulativeReviewView = {
 };
 
 describe('CumulativeReviewRenderer', () => {
+  beforeEach(() => localStorage.clear());
+
   it('renderiza o cabeçalho e objetivo da unidade de revisão', () => {
     render(<CumulativeReviewRenderer view={mockCumulativeReview} />);
     expect(screen.getByText(/Revisão Geral Cumulativa • Aula 14 \(S01\)/i)).toBeInTheDocument();

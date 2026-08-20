@@ -1,48 +1,94 @@
 import AxeBuilder from '@axe-core/playwright';
+import { PEDAGOGICAL_VIEW_INDEX } from '../../src/data/pedagogicalViewIndex.generated';
 import { expect, expectNoDocumentOverflow, openApp, test } from './fixtures';
 
-const REPRESENTATIVE_UNITS = [
-  { id: 'IP-A00-G01', title: 'Fonética e Fonologia' },
-  { id: 'IP-A00-G06', title: 'Ortografia' },
-  { id: 'IP-A02-G01', title: 'Classes de Palavras' },
-  { id: 'IP-A06-G02', title: 'Crase' },
-  { id: 'IP-A08-G02', title: 'Regência' },
-  { id: 'IP-A09-G01', title: 'Concordância' },
-  { id: 'IP-A10-G06', title: 'Pontuação' },
-  { id: 'IP-A11-G01', title: 'Semântica' },
-  { id: 'IP-A13-G07', title: 'Interpretação de Texto' },
-  { id: 'IP-A14-S13', title: 'Revisão Cumulativa' },
-];
+const REGULAR_UNIT = 'IP-A00-G01';
+const CUMULATIVE_UNIT = 'IP-A14-S13';
 
-test.describe('SuVeCa v4.2 Semantic Views & Responsive AST QA', () => {
-  test('Apostila carrega a visualização pedagógica nativa v4.2 sem overflow', async ({ page }) => {
-    await openApp(page);
-    await expectNoDocumentOverflow(page);
+test.describe('SuVeCa v4.2 — contrato publicado e experiência nativa', () => {
+  test('os 115 artefatos publicados respondem e satisfazem o contrato de identidade', async ({ request }) => {
+    const results = await Promise.all(PEDAGOGICAL_VIEW_INDEX.map(async (entry) => {
+      const response = await request.get(`/knowledge/pedagogical/views/${entry.unitId}.json`);
+      if (!response.ok()) return { id: entry.unitId, status: response.status() };
+      const view = await response.json();
+      return {
+        id: entry.unitId,
+        status: response.status(),
+        sourceId: view.unit?.unitId || view.source?.unitId,
+        lessonId: view.unit?.lessonId || view.source?.lessonId || entry.lessonId,
+        version: view.viewSchemaVersion,
+        title: view.unit?.title,
+        hasSections: Boolean(view.sections && typeof view.sections === 'object'),
+      };
+    }));
 
-    // Verifica que a árvore curricular e o renderizador pedagógico estão presentes
-    const pedagogicalView = page.locator('.pedagogical-unit-view');
-    if (await pedagogicalView.isVisible()) {
-      await expect(pedagogicalView).toBeVisible();
-    }
+    expect(results).toHaveLength(115);
+    expect(results.filter((result) =>
+      result.status !== 200
+      || result.sourceId !== result.id
+      || result.lessonId !== result.id.slice(3, 6)
+      || !result.title
+      || !result.hasSections
+      || !(result.version === '1.0.0' || String(result.version).startsWith('4.2.'))
+    )).toEqual([]);
   });
 
-  test('inspeção de acessibilidade Axe (0 serious, 0 critical) na visão pedagógica', async ({ page }, testInfo) => {
-    test.skip(testInfo.project.name !== 'desktop-1440', 'Amostra Axe audit executada no desktop');
-    await openApp(page);
+  test('deep link abre unidade regular, seção correta e preserva a rota no refresh', async ({ page }) => {
+    await openApp(page, `/?unit=${REGULAR_UNIT}&section=rules`);
 
-    const accessibilityScanResults = await new AxeBuilder({ page })
-      .exclude('.katex') // Ignora MathML interno do KaTeX já acessível
-      .analyze();
+    await expect(page).toHaveURL(new RegExp(`unit=${REGULAR_UNIT}.*section=rules`));
+    await expect(page.locator('.pedagogical-unit-view')).toBeVisible();
+    await expect(page.getByRole('heading', { level: 1, name: 'Fonética e Fonologia' })).toBeVisible();
+    await expect(page.locator(`#${REGULAR_UNIT}-rules`)).toHaveAttribute('open', '');
+    await expect(page).toHaveURL(new RegExp(`unit=${REGULAR_UNIT}.*section=rules`));
+    await expectNoDocumentOverflow(page);
 
-    const criticalOrSerious = accessibilityScanResults.violations.filter(
-      (v) => v.impact === 'critical' || v.impact === 'serious'
-    );
+    await page.reload({ waitUntil: 'domcontentloaded' });
+    await expect(page.locator('.pedagogical-unit-view')).toBeVisible();
+    await expect(page.locator(`#${REGULAR_UNIT}-rules`)).toHaveAttribute('open', '');
+    await expect(page).toHaveURL(new RegExp(`unit=${REGULAR_UNIT}.*section=rules`));
+    const reopenedTour = page.getByRole('button', { name: 'Fechar tour' });
+    if (await reopenedTour.count() && await reopenedTour.isVisible()) await reopenedTour.click();
 
-    expect(criticalOrSerious).toEqual([]);
+    const unitIndex = page.getByRole('navigation', { name: /unidades pedagógicas de/i });
+    await unitIndex.getByRole('button').nth(1).click();
+    await expect(page).toHaveURL(/unit=IP-A00-G02/);
+    await expect(page.getByRole('heading', { level: 1, name: 'Encontros Vocálicos e Consonantais' })).toBeVisible();
+    await page.goBack();
+    await expect(page).toHaveURL(new RegExp(`unit=${REGULAR_UNIT}`));
+    await expect(page.getByRole('heading', { level: 1, name: 'Fonética e Fonologia' })).toBeVisible();
   });
 
-  test('matrizes e tabelas adaptativas comportam-se corretamente em mobile', async ({ page }) => {
-    await openApp(page);
+  test('A14 usa seu renderer cumulativo e permanece estudável sem overflow', async ({ page }) => {
+    await openApp(page, `/?unit=${CUMULATIVE_UNIT}&section=protocol`);
+
+    await expect(page.locator('.cumulative-review-view')).toBeVisible();
+    await expect(page.locator(`#${CUMULATIVE_UNIT}-protocol`)).toHaveAttribute('open', '');
+    await expect(page.getByRole('button', { name: /praticar esta revisão/i })).toBeVisible();
     await expectNoDocumentOverflow(page);
+  });
+
+  test('resposta oficial fica oculta até uma tentativa explícita', async ({ page }) => {
+    await openApp(page, `/?unit=${REGULAR_UNIT}&section=official-questions`);
+    const question = page.locator('.question-block').first();
+    await expect(question).toBeVisible();
+    await expect(question.getByText(/gabarito oficial/i)).toBeHidden();
+
+    const alternatives = question.locator('section[aria-label^="Alternativas de"] button');
+    if (await alternatives.count()) await alternatives.first().click();
+    await question.getByRole('button', { name: /confirmar tentativa/i }).click();
+    await expect(question.getByText(/gabarito oficial/i)).toBeVisible();
+  });
+
+  test('Axe não encontra violações nas experiências regular e A14', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop-1440', 'Gate Axe completo executado no desktop');
+    await openApp(page, `/?unit=${REGULAR_UNIT}&section=rules`);
+
+    const scan = await new AxeBuilder({ page }).exclude('.katex').analyze();
+    expect(scan.violations).toEqual([]);
+
+    await openApp(page, `/?unit=${CUMULATIVE_UNIT}&section=protocol`);
+    const cumulativeScan = await new AxeBuilder({ page }).exclude('.katex').analyze();
+    expect(cumulativeScan.violations).toEqual([]);
   });
 });

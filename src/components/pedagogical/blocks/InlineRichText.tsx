@@ -67,6 +67,15 @@ export const InlineRichText: React.FC<InlineRichTextProps> = ({ children, classN
               {cChildren}
             </code>
           ),
+          ul: ({ children: listChildren }) => <span className="inline"> {listChildren}</span>,
+          ol: ({ children: listChildren }) => <span className="inline"> {listChildren}</span>,
+          li: ({ children: itemChildren }) => <span className="inline"> • {itemChildren}</span>,
+          hr: () => <span aria-hidden="true"> — </span>,
+          blockquote: ({ children: quoteChildren }) => <span className="italic"> {quoteChildren}</span>,
+          h1: ({ children: headingChildren }) => <strong>{headingChildren}</strong>,
+          h2: ({ children: headingChildren }) => <strong>{headingChildren}</strong>,
+          h3: ({ children: headingChildren }) => <strong>{headingChildren}</strong>,
+          h4: ({ children: headingChildren }) => <strong>{headingChildren}</strong>,
         }}
       >
         {processedText}

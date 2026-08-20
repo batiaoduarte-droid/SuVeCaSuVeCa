@@ -45,38 +45,53 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
 
       <div className="space-y-6">
         {questions.map((q, idx) => {
-          const qId = q.questionId || '';
-          const normalized = enrichedMap[qId] || enrichedMap[`${lessonId}:${qId}`];
+          const payload = q.questionPayload || {};
+          const answerPayload = q.answerPayload || {};
+          const sourceQuestionId = q.sourceQuestionId || payload.question_id || q.questionId || '';
+          const qId = q.officialQuestionId || q.questionId || sourceQuestionId;
+          const normalized = enrichedMap[qId]
+            || enrichedMap[sourceQuestionId]
+            || enrichedMap[`${lessonId}:${sourceQuestionId}`];
 
-          let prompt = normalized?.prompt || q.prompt || '';
+          let prompt = normalized?.prompt || payload.prompt || q.prompt || '';
           if (prompt.includes('Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-')) {
-            if (q.options && q.options.length > 0) {
+            if ((q.options || payload.options || []).length > 0) {
               prompt = 'Assinale a alternativa correta referente aos conceitos gramaticais e fonéticos estudados:';
             } else {
               prompt = 'Julgue o item a seguir quanto à correção das regras gramaticais e fonéticas:';
             }
           }
 
-          const rawOptions =
+          const publishedOptions = q.options || payload.options || [];
+          let rawOptions =
             normalized?.options && normalized.options.length > 0
               ? normalized.options.map((opt: any) => ({
                   letter: (opt.letter || opt.label || '').toUpperCase(),
                   text: opt.text || '',
                 }))
-              : q.options.map((opt) => ({
-                  letter: opt.label.toUpperCase(),
-                  text: opt.text,
+              : publishedOptions.map((opt) => ({
+                  letter: (opt.label || opt.letter || '').toUpperCase(),
+                  text: opt.text || '',
                 }));
+          const questionType = q.questionType || payload.question_type;
+          if (rawOptions.length === 0 && (questionType === 'true_false' || questionType === 'certo_errado')) {
+            rawOptions = [
+              { letter: 'C', text: 'Certo' },
+              { letter: 'E', text: 'Errado' },
+            ];
+          }
 
-          const solution = normalized?.commentary || q.explanation;
-          const answer = normalized?.correctAnswer || q.officialAnswer;
-          const board = normalized?.bank || q.examBoard;
-          const year = normalized?.year ? String(normalized.year) : q.year ? String(q.year) : undefined;
+          const solution = normalized?.commentary || answerPayload.commentary || q.explanation;
+          const answer = normalized?.correctAnswer || answerPayload.answer || q.officialAnswer;
+          const board = normalized?.bank || payload.exam_board || q.examBoard;
+          const publishedYear = payload.year || q.year;
+          const year = normalized?.year ? String(normalized.year) : publishedYear ? String(publishedYear) : undefined;
+          const organization = payload.organization || q.organization;
 
           return (
             <QuestionBlock
-              key={q.questionId || idx}
-              title={`Questão ${idx + 1}: ${q.organization || board || 'Concurso Público'}`}
+              key={qId || idx}
+              title={`Questão ${idx + 1}: ${organization || board || 'Concurso Público'}`}
               board={board}
               year={year}
               prompt={prompt}
@@ -88,6 +103,11 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
           );
         })}
       </div>
+      {onPracticeMore && (
+        <button type="button" onClick={onPracticeMore} className="min-h-11 rounded-xl border border-teal-300 bg-teal-50 px-4 py-2 text-sm font-bold text-teal-900 hover:bg-teal-100">
+          Continuar praticando este tema
+        </button>
+      )}
     </div>
   );
 };

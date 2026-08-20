@@ -5,7 +5,12 @@ import { db, type User } from '../lib/firebase';
 import { MarkdownContent } from './ui/MarkdownContent';
 import { PedagogicalUnitRenderer } from './pedagogical/PedagogicalUnitRenderer';
 import { CumulativeReviewRenderer } from './pedagogical/CumulativeReviewRenderer';
-import type { PedagogicalUnitView } from '../types/pedagogicalView';
+import type { CumulativeReviewView, PedagogicalUnitView } from '../types/pedagogicalView';
+import {
+  isCumulativeReviewView,
+  parsePublishedPedagogicalView,
+  type PublishedPedagogicalView,
+} from '../lib/pedagogicalViewContract';
 import {
   isRichNoteEmpty,
   RichNoteEditor,
@@ -66,6 +71,9 @@ interface ModuleViewerProps {
   ) => void;
   isFocusMode?: boolean;
   onToggleFocusMode?: () => void;
+  openUnitId?: string | null;
+  openUnitSectionId?: string | null;
+  onOpenUnitChange?: (unitId: string | null, sectionId?: string | null) => void;
 }
 
 type ModuleNotes = Record<string, string>;
@@ -113,24 +121,33 @@ const saveLocalNotes = (moduleId: string, notes: ModuleNotes, userId?: string) =
 };
 
 const deepDiveMarkdownCache = new Map<string, string>();
-const deepDiveViewCache = new Map<string, PedagogicalUnitView>();
+const deepDiveViewCache = new Map<string, PublishedPedagogicalView>();
+
+const integrationUnitIdForSection = (section: ModuleSection) => {
+  const a14Match = section.contentUrl?.match(/A14-(S\d+)/);
+  return section.editorial?.integrationUnitId || (a14Match ? `IP-A14-${a14Match[1]}` : null);
+};
 
 export const PedagogicalDeepDive: React.FC<{
   section: ModuleSection;
   onAskTutor?: (contextText: string) => void;
   onPracticeExercises?: (topic?: string) => void;
-}> = ({ section, onAskTutor, onPracticeExercises }) => {
+  isOpen?: boolean;
+  activeSectionId?: string | null;
+  onOpenChange?: (open: boolean) => void;
+  onActiveSectionChange?: (sectionId: string | null) => void;
+}> = ({ section, onAskTutor, onPracticeExercises, isOpen: controlledOpen, activeSectionId, onOpenChange, onActiveSectionChange }) => {
   const panelId = useId();
-  const [isOpen, setIsOpen] = useState(false);
-  const a14Match = section.contentUrl?.match(/A14-(S\d+)/);
-  const integrationUnitId = section.editorial?.integrationUnitId || (a14Match ? `IP-A14-${a14Match[1]}` : null);
+  const [internalOpen, setInternalOpen] = useState(false);
+  const isOpen = controlledOpen ?? internalOpen;
+  const integrationUnitId = integrationUnitIdForSection(section);
   const viewUrl = integrationUnitId ? `/knowledge/pedagogical/views/${integrationUnitId}.json` : null;
 
-  const [viewModel, setViewModel] = useState<PedagogicalUnitView | null>(() =>
+  const [viewModel, setViewModel] = useState<PublishedPedagogicalView | null>(() =>
     viewUrl ? deepDiveViewCache.get(viewUrl) || null : null
   );
   const [content, setContent] = useState<string | null>(() =>
-    section.contentUrl ? deepDiveMarkdownCache.get(section.contentUrl) || null : null
+    !viewUrl && section.contentUrl ? deepDiveMarkdownCache.get(section.contentUrl) || null : null
   );
   const [state, setState] = useState<'idle' | 'loading' | 'loaded' | 'error'>(
     viewModel || content ? 'loaded' : 'idle'
@@ -150,17 +167,17 @@ export const PedagogicalDeepDive: React.FC<{
             signal: controller.signal,
             headers: { Accept: 'application/json' },
           });
-          if (res.ok) {
-            const data: PedagogicalUnitView = await res.json();
-            if (active && data.viewSchemaVersion === '1.0.0') {
-              deepDiveViewCache.set(viewUrl, data);
-              setViewModel(data);
-              setState('loaded');
-              return;
-            }
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const data = parsePublishedPedagogicalView(await res.json(), integrationUnitId);
+          if (active) {
+            deepDiveViewCache.set(viewUrl, data);
+            setViewModel(data);
+            setState('loaded');
+            return;
           }
         } catch {
-          // Fallback para markdown se o fetch JSON falhar
+          if (active) setState('error');
+          return;
         }
       }
 
@@ -199,7 +216,11 @@ export const PedagogicalDeepDive: React.FC<{
     <div className="overflow-hidden rounded-2xl border border-teal-200 bg-teal-50/40">
       <button
         type="button"
-        onClick={() => setIsOpen((current) => !current)}
+        onClick={() => {
+          const next = !isOpen;
+          if (controlledOpen === undefined) setInternalOpen(next);
+          onOpenChange?.(next);
+        }}
         aria-expanded={isOpen}
         aria-controls={panelId}
         className="flex min-h-[52px] w-full items-center justify-between gap-3 px-4 py-3 text-left text-sm font-bold text-teal-950 transition hover:bg-teal-50 cursor-pointer"
@@ -225,13 +246,20 @@ export const PedagogicalDeepDive: React.FC<{
               Não foi possível carregar esta unidade. Verifique a conexão e tente abri-la novamente.
             </div>
           )}
-          {viewModel && ((viewModel as any).unitType === 'cumulative_review' ? (
-            <CumulativeReviewRenderer view={viewModel as any} />
+          {viewModel && (isCumulativeReviewView(viewModel) ? (
+            <CumulativeReviewRenderer
+              view={viewModel as CumulativeReviewView}
+              activeSectionId={activeSectionId}
+              onActiveSectionChange={onActiveSectionChange}
+              onPracticeExercises={onPracticeExercises}
+            />
           ) : (
             <PedagogicalUnitRenderer
-              view={viewModel}
+              view={viewModel as PedagogicalUnitView}
               onAskTutor={onAskTutor}
               onPracticeExercises={onPracticeExercises}
+              activeSectionId={activeSectionId}
+              onActiveSectionChange={onActiveSectionChange}
             />
           ))}
           {!viewModel && content && <MarkdownContent content={content} pedagogical />}
@@ -283,6 +311,9 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   onUpdateErrorStatus,
   isFocusMode = false,
   onToggleFocusMode,
+  openUnitId = null,
+  openUnitSectionId = null,
+  onOpenUnitChange,
 }) => {
   const moduleData =
     modules.find((m) => m.id === selectedModuleId) || modules[0];
@@ -304,6 +335,13 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
     mobileDrawerCloseRef
   );
   const currentNotesOwnerId = user?.uid || 'guest';
+
+  useEffect(() => {
+    if (!openUnitId) return;
+    const target = document.getElementById(`module-unit-${openUnitId}`);
+    if (!target) return;
+    window.requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
+  }, [moduleData.id, openUnitId]);
 
   // Notes are namespaced by the editorial build so content from a previous
   // curriculum cannot appear under reused module/section identifiers.
@@ -758,10 +796,51 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
           </div>
         </header>
 
+        <nav
+          className="rounded-2xl border border-teal-200 bg-teal-50/60 p-4 sm:p-5"
+          aria-label={`Unidades pedagógicas de ${moduleData.title}`}
+        >
+          <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+            <h2 className="m-0 text-base font-black text-teal-950">Escolha uma unidade para aprofundar</h2>
+            <span className="text-xs font-semibold text-teal-800">{moduleData.sections.length} unidades</span>
+          </div>
+          <ol className="m-0 grid list-none gap-2 p-0 md:grid-cols-2 xl:grid-cols-3">
+            {moduleData.sections.map((section, index) => {
+              const unitId = integrationUnitIdForSection(section);
+              const isCurrent = Boolean(unitId && unitId === openUnitId);
+              return (
+                <li key={unitId || `${moduleData.id}-${index}`} className="m-0">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (unitId) onOpenUnitChange?.(unitId, null);
+                      window.requestAnimationFrame(() => {
+                        if (unitId) document.getElementById(`module-unit-${unitId}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      });
+                    }}
+                    aria-current={isCurrent ? 'location' : undefined}
+                    className={`flex min-h-12 w-full items-start gap-3 rounded-xl border px-3 py-3 text-left text-sm transition ${
+                      isCurrent
+                        ? 'border-teal-600 bg-white text-teal-950 ring-2 ring-teal-200'
+                        : 'border-teal-200 bg-white/80 text-slate-800 hover:border-teal-400 hover:bg-white'
+                    }`}
+                  >
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-teal-800 text-xs font-black text-white">
+                      {index + 1}
+                    </span>
+                    <span className="font-bold leading-snug">{section.title}</span>
+                  </button>
+                </li>
+              );
+            })}
+          </ol>
+        </nav>
+
         {/* Sections Content with Markdown */}
         <div className="space-y-8">
           {moduleData.sections.map((section, idx) => (
             <section
+              id={integrationUnitIdForSection(section) ? `module-unit-${integrationUnitIdForSection(section)}` : undefined}
               key={`${section.lessonId || moduleData.id}:${section.groupId || idx}:${section.contentUrl || section.title}`}
               className="min-w-0 overflow-hidden surface p-4 sm:p-8 space-y-5"
             >
@@ -800,13 +879,24 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
               <PedagogicalDeepDive
                 section={section}
                 onAskTutor={onAskTutor}
-                onPracticeExercises={(topic) =>
-                  onAskTutor(
-                    topic
-                      ? `Gostaria de resolver exercícios sobre: ${topic}`
-                      : `Gostaria de resolver exercícios sobre ${section.title}`
-                  )
-                }
+                isOpen={integrationUnitIdForSection(section) === openUnitId}
+                activeSectionId={integrationUnitIdForSection(section) === openUnitId ? openUnitSectionId : null}
+                onOpenChange={(open) => onOpenUnitChange?.(
+                  open ? integrationUnitIdForSection(section) : null,
+                  null,
+                )}
+                onActiveSectionChange={(sectionId) => onOpenUnitChange?.(
+                  integrationUnitIdForSection(section),
+                  sectionId,
+                )}
+                onPracticeExercises={() => onPracticeConcept?.(
+                  section.sourceConceptIds?.length
+                    ? section.sourceConceptIds
+                    : section.canonicalTopicId
+                      ? [section.canonicalTopicId]
+                      : [],
+                  moduleData.id,
+                )}
               />
 
               {(section.limitsAndExceptions?.length || section.contrasts?.length || section.examTraps?.length) ? (
@@ -878,7 +968,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                       <tr>
                         {section.keyTable.headers.map((h, i) => (
                           <th key={i} className="p-3.5">
-                            {h}
+                            {h.trim() || `Coluna ${i + 1}`}
                           </th>
                         ))}
                       </tr>

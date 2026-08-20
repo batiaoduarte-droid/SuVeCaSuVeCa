@@ -4,7 +4,8 @@ import { describe, expect, it } from 'vitest';
 import { MarkdownContent } from './MarkdownContent';
 
 describe('MarkdownContent pedagógico', () => {
-  it('estrutura tabelas, mapas, matemática e questões sem perder o texto', () => {
+  it('estrutura tabelas, mapas, matemática e questões sem perder o texto', async () => {
+    const user = userEvent.setup();
     render(<MarkdownContent pedagogical content={`# Unidade
 
 ## Quadro comparativo
@@ -40,6 +41,9 @@ C) mau
     expect(within(question).getByText('FGV')).toBeInTheDocument();
     expect(within(question).getByText('2024')).toBeInTheDocument();
     expect(within(question).getAllByText('saúde').length).toBeGreaterThan(0);
+    expect(document.querySelector('.katex')).not.toBeInTheDocument();
+    await user.click(within(question).getByText(/^saúde$/i));
+    await user.click(within(question).getByRole('button', { name: /confirmar tentativa/i }));
     expect(document.querySelector('.katex')).toBeInTheDocument();
   });
 

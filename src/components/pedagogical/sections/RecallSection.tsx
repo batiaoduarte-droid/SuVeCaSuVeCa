@@ -15,18 +15,35 @@ import type {
 import { InlineRichText } from '../blocks/InlineRichText';
 import { SemanticBlockRenderer } from '../blocks/SemanticBlockRenderer';
 
-interface RecallSectionProps extends RecallSectionView {}
+interface RecallSectionProps extends RecallSectionView {
+  unitId: string;
+}
 
 type ConfidenceLevel = 'none' | 'partial' | 'mastered';
 
 export const RecallSection: React.FC<RecallSectionProps> = ({
   prompts = [],
   blocks = [],
+  unitId,
 }) => {
-  const [revealedMap, setRevealedMap] = useState<Record<number, boolean>>({});
-  const [confidenceState, setConfidenceState] = useState<Record<number, ConfidenceLevel>>({});
+  const storageKey = `suveca_recall_v2_${unitId}`;
+  const storedState = React.useMemo(() => {
+    try {
+      return JSON.parse(localStorage.getItem(storageKey) || '{}');
+    } catch {
+      return {};
+    }
+  }, [storageKey]);
+  const [revealedMap, setRevealedMap] = useState<Record<number, boolean>>(() => storedState.revealedMap || {});
+  const [attemptedMap, setAttemptedMap] = useState<Record<number, boolean>>(() => storedState.attemptedMap || {});
+  const [confidenceState, setConfidenceState] = useState<Record<number, ConfidenceLevel>>(() => storedState.confidenceState || {});
+
+  React.useEffect(() => {
+    localStorage.setItem(storageKey, JSON.stringify({ revealedMap, attemptedMap, confidenceState }));
+  }, [attemptedMap, confidenceState, revealedMap, storageKey]);
 
   const toggleReveal = (idx: number) => {
+    setAttemptedMap((prev) => ({ ...prev, [idx]: true }));
     setRevealedMap((prev) => ({
       ...prev,
       [idx]: !prev[idx],
@@ -94,7 +111,7 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
                 <div className="text-xs font-black text-teal-950">
                   {masteredCount} de {totalPrompts} dominados {progressPercent > 0 ? `(${progressPercent}%)` : ''}
                 </div>
-                <div className="w-24 bg-slate-100 rounded-full h-1.5 mt-1 overflow-hidden">
+                <div className="w-24 bg-slate-100 rounded-full h-1.5 mt-1 overflow-hidden" role="progressbar" aria-label="Domínio na recuperação ativa" aria-valuemin={0} aria-valuemax={totalPrompts} aria-valuenow={masteredCount}>
                   <div
                     className="bg-emerald-600 h-full rounded-full transition-all duration-300"
                     style={{ width: `${progressPercent}%` }}
@@ -112,6 +129,7 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
           {prompts.map((p, idx) => {
             const isRevealed = !!revealedMap[idx];
             const conf = confidenceState[idx] || 'none';
+            const canEvaluate = !p.keyPoints?.length || isRevealed || !!attemptedMap[idx];
 
             return (
               <div
@@ -145,7 +163,7 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
                     <button
                       type="button"
                       onClick={() => toggleReveal(idx)}
-                      className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-bold text-teal-800 bg-teal-50 border border-teal-200 rounded-lg hover:bg-teal-100 transition cursor-pointer select-none shrink-0"
+                      className="flex min-h-11 items-center gap-1.5 px-2.5 py-2 text-xs font-bold text-teal-800 bg-teal-50 border border-teal-200 rounded-lg hover:bg-teal-100 transition cursor-pointer select-none shrink-0"
                     >
                       {isRevealed ? (
                         <>
@@ -153,7 +171,7 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
                         </>
                       ) : (
                         <>
-                          <Eye className="h-3.5 w-3.5" /> Pontos-chave
+                          <Eye className="h-3.5 w-3.5" /> Já respondi — conferir
                         </>
                       )}
                     </button>
@@ -180,8 +198,9 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
                   <div className="flex items-center gap-1.5">
                     <button
                       type="button"
+                      disabled={!canEvaluate}
                       onClick={() => setConfidence(idx, 'partial')}
-                      className={`px-2.5 py-1 rounded-md text-[11px] font-bold transition cursor-pointer ${
+                      className={`min-h-11 px-3 py-2 rounded-md text-[11px] font-bold transition disabled:cursor-not-allowed disabled:opacity-45 ${
                         conf === 'partial'
                           ? 'bg-amber-100 text-amber-900 border border-amber-300'
                           : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
@@ -191,8 +210,9 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
                     </button>
                     <button
                       type="button"
+                      disabled={!canEvaluate}
                       onClick={() => setConfidence(idx, 'mastered')}
-                      className={`px-2.5 py-1 rounded-md text-[11px] font-bold transition cursor-pointer ${
+                      className={`min-h-11 px-3 py-2 rounded-md text-[11px] font-bold transition disabled:cursor-not-allowed disabled:opacity-45 ${
                         conf === 'mastered'
                           ? 'bg-emerald-100 text-emerald-900 border border-emerald-300'
                           : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
@@ -210,6 +230,7 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
         <div className="space-y-2.5">
           {checklistItems.map((item, idx) => {
             const currentLevel = confidenceState[idx] || 'none';
+            const hasAttempted = !!attemptedMap[idx];
             return (
               <div
                 key={idx}
@@ -223,8 +244,9 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
               >
                 <button
                   type="button"
-                  onClick={() => setConfidence(idx, currentLevel === 'mastered' ? 'none' : 'mastered')}
-                  className="flex items-start gap-2.5 min-w-0 flex-1 text-left cursor-pointer group"
+                  onClick={() => setAttemptedMap((current) => ({ ...current, [idx]: true }))}
+                  aria-pressed={hasAttempted}
+                  className="flex min-h-11 items-start gap-2.5 min-w-0 flex-1 text-left cursor-pointer group"
                 >
                   <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md text-[10px] font-black mt-0.5 select-none ${
                     currentLevel === 'mastered'
@@ -236,15 +258,18 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
                     {idx + 1}
                   </span>
                   <p className="text-xs sm:text-sm font-semibold text-slate-900 leading-relaxed group-hover:text-teal-900 m-0">
+                    <span className="block text-[10px] font-black uppercase tracking-wider text-teal-800">Explique sem consultar</span>
                     <InlineRichText>{item}</InlineRichText>
+                    {!hasAttempted && <span className="mt-1 block text-[11px] font-medium text-slate-500">Ative depois de formular sua resposta.</span>}
                   </p>
                 </button>
 
                 <div className="flex items-center gap-1.5 self-end sm:self-center shrink-0 select-none">
                   <button
                     type="button"
+                    disabled={!hasAttempted}
                     onClick={() => setConfidence(idx, 'none')}
-                    className={`px-2.5 py-1 rounded-lg text-[11px] font-bold transition cursor-pointer border ${
+                    className={`min-h-11 px-3 py-2 rounded-lg text-[11px] font-bold transition cursor-pointer border disabled:cursor-not-allowed disabled:opacity-45 ${
                       currentLevel === 'none'
                         ? 'bg-slate-200 text-slate-800 border-slate-300'
                         : 'bg-white text-slate-500 border-slate-200 hover:bg-slate-50'
@@ -254,8 +279,9 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
                   </button>
                   <button
                     type="button"
+                    disabled={!hasAttempted}
                     onClick={() => setConfidence(idx, 'partial')}
-                    className={`px-2.5 py-1 rounded-lg text-[11px] font-bold transition cursor-pointer border ${
+                    className={`min-h-11 px-3 py-2 rounded-lg text-[11px] font-bold transition cursor-pointer border disabled:cursor-not-allowed disabled:opacity-45 ${
                       currentLevel === 'partial'
                         ? 'bg-amber-100 text-amber-900 border-amber-300 shadow-2xs'
                         : 'bg-white text-slate-500 border-slate-200 hover:bg-amber-50'
@@ -265,8 +291,9 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
                   </button>
                   <button
                     type="button"
+                    disabled={!hasAttempted}
                     onClick={() => setConfidence(idx, 'mastered')}
-                    className={`px-2.5 py-1 rounded-lg text-[11px] font-bold transition cursor-pointer border ${
+                    className={`min-h-11 px-3 py-2 rounded-lg text-[11px] font-bold transition cursor-pointer border disabled:cursor-not-allowed disabled:opacity-45 ${
                       currentLevel === 'mastered'
                         ? 'bg-emerald-600 text-white border-emerald-700 shadow-2xs'
                         : 'bg-white text-slate-500 border-slate-200 hover:bg-emerald-50'

@@ -28,8 +28,8 @@ export const test = base.extend({
 
 export { expect };
 
-export async function openApp(page: Page) {
-  await page.goto('/', { waitUntil: 'domcontentloaded' });
+export async function openApp(page: Page, path = '/') {
+  await page.goto(path, { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('button', { name: 'Ir para a Apostila' })).toBeVisible();
   await expect(page.locator('main')).toBeVisible();
   await expect(page.getByText('Carregando ferramenta de estudo…')).toBeHidden();

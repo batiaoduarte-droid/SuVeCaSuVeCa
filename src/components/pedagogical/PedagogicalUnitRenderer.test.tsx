@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { PedagogicalUnitRenderer } from './PedagogicalUnitRenderer';
 import type { PedagogicalUnitView } from '../../types/pedagogicalView';
 
@@ -108,12 +108,14 @@ const sampleUnitView: PedagogicalUnitView = {
 };
 
 describe('PedagogicalUnitRenderer (View Model V1)', () => {
+  beforeEach(() => localStorage.clear());
+
   it('renderiza título, objetivos, sumário dinâmico e seções tipadas', () => {
     render(<PedagogicalUnitRenderer view={sampleUnitView} />);
 
     expect(screen.getByRole('heading', { level: 1, name: /fonética e fonologia estrutural/i })).toBeInTheDocument();
     expect(screen.getByText(/distinguir fonemas e grafemas/i)).toBeInTheDocument();
-    expect(screen.getByRole('navigation', { name: /sumário desta unidade/i })).toBeInTheDocument();
+    expect(screen.getByRole('navigation', { name: /sumário da unidade/i })).toBeInTheDocument();
 
     // Seção SuVeCA
     expect(screen.getByText(/camada fonética própria/i)).toBeInTheDocument();
@@ -132,6 +134,7 @@ describe('PedagogicalUnitRenderer (View Model V1)', () => {
 
     const check1 = screen.getByRole('button', { name: /sei calcular f = l - d/i });
     await user.click(check1);
+    await user.click(screen.getAllByRole('button', { name: /domino/i })[0]);
     expect(screen.getByText(/1 de 2 dominados \(50%\)/i)).toBeInTheDocument();
   });
 

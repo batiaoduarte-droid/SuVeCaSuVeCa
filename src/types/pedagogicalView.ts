@@ -20,9 +20,11 @@ export interface ConceptExplanationBlock {
 }
 
 export interface ClassificationCategory {
-  name: string;
+  name?: string;
+  category?: string;
   description?: string;
   examples?: string[];
+  items?: string[];
   subcategories?: ClassificationCategory[];
 }
 
@@ -327,11 +329,11 @@ export interface ConnectionMapView {
 }
 
 export interface SuvecaConnectionView {
-  level: 'central' | 'strong' | 'support' | 'indirect' | 'outside_core' | 'review';
-  label: string;
-  summary: string;
-  steps: string[];
-  limits: string[];
+  level?: 'central' | 'strong' | 'support' | 'indirect' | 'outside_core' | 'review';
+  label?: string;
+  summary?: string;
+  steps?: string[];
+  limits?: string[];
   primaryLinguisticLayer?: string;
   entryPoint?: string;
   decisiveTests?: string[];
@@ -343,6 +345,14 @@ export interface SuvecaConnectionView {
   strategicSignificance?: string;
   coreTension?: string;
   visualBlueprint?: string;
+}
+
+export interface PrerequisiteView {
+  prerequisiteId?: string;
+  name: string;
+  reason?: string;
+  activationPrompt?: string;
+  isCritical?: boolean;
 }
 
 export interface CanonicalEntityView {
@@ -469,14 +479,18 @@ export interface DistractorAnalysisView {
 }
 
 export interface OfficialQuestionView {
-  questionId: string;
-  questionType: 'multiple_choice' | 'true_false' | 'certo_errado';
+  questionId?: string;
+  officialQuestionId?: string;
+  sourceQuestionId?: string;
+  lessonId?: string;
+  schemaVersion?: string;
+  questionType?: 'multiple_choice' | 'true_false' | 'certo_errado';
   examBoard?: string;
   organization?: string;
   year?: number;
   role?: string;
-  prompt: string;
-  options: OfficialQuestionOptionView[];
+  prompt?: string;
+  options?: OfficialQuestionOptionView[];
   officialAnswer?: string;
   explanation?: string;
   questionSha256?: string;
@@ -485,11 +499,27 @@ export interface OfficialQuestionView {
   solutionStrategy?: string;
   pedagogicalEvaluation?: QuestionPedagogicalEvaluation;
   distractorAnalysis?: DistractorAnalysisView[];
+  questionPayload?: {
+    question_id?: string;
+    question_type?: 'multiple_choice' | 'true_false' | 'certo_errado';
+    exam_board?: string;
+    organization?: string;
+    year?: number;
+    prompt?: string;
+    options?: Array<{ label?: string; letter?: string; text?: string }>;
+  };
+  answerPayload?: {
+    answer?: string;
+    commentary?: string;
+  };
 }
 
 export interface ExplanationGroup {
   groupId?: string;
   title?: string;
+  pedagogicalGoal?: string;
+  semanticKind?: string;
+  conceptRefs?: string[];
   blocks: SemanticBlock[];
 }
 
@@ -501,7 +531,7 @@ export interface RecallSectionView {
 export interface PedagogicalUnitSections {
   suveca: SuvecaConnectionView;
   prerequisites?: {
-    items?: string[];
+    items?: PrerequisiteView[];
     blocks?: SemanticBlock[];
     maps?: ConnectionMapView[];
   };
@@ -540,8 +570,8 @@ export interface PedagogicalUnitView {
   source: {
     unitId: string;
     canonicalSchemaVersion?: string;
-    buildId: string;
-    generatedAt: string;
+    buildId?: string;
+    generatedAt?: string;
     sourceSemanticVersion?: string;
     semanticHardened?: boolean;
     agentAuthored?: boolean;
@@ -549,10 +579,10 @@ export interface PedagogicalUnitView {
   unit: {
     unitId: string;
     lessonId: string;
-    groupId: string;
+    groupId?: string;
     title: string;
-    variant: string;
-    canonicalTopicId: string;
+    variant?: string;
+    canonicalTopicId?: string;
     learningObjectives: string[];
   };
   sections: PedagogicalUnitSections;

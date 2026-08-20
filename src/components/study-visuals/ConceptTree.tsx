@@ -85,7 +85,7 @@ const TreeNodeItem: React.FC<{
           <button
             type="button"
             onClick={() => setIsExpanded(!isExpanded)}
-            className="flex h-5 w-5 items-center justify-center rounded bg-teal-100 text-teal-800 hover:bg-teal-200 transition cursor-pointer select-none"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-teal-100 text-teal-800 hover:bg-teal-200 transition cursor-pointer select-none"
             aria-label={isExpanded ? 'Recolher galho' : 'Expandir galho'}
           >
             {isExpanded ? (
@@ -132,8 +132,8 @@ const TreeNodeItem: React.FC<{
 
       {hasChildren && isExpanded && (
         <div className="space-y-2 pt-1">
-          {node.children!.map((child) => (
-            <TreeNodeItem key={child.id} node={child} depth={depth + 1} />
+          {node.children!.map((child, index) => (
+            <TreeNodeItem key={`${child.id}-${index}`} node={child} depth={depth + 1} />
           ))}
         </div>
       )}
@@ -172,8 +172,8 @@ export const ConceptTree: React.FC<ConceptTreeProps> = ({
       </div>
 
       <div className="space-y-3 pt-1">
-        {tree.map((node) => (
-          <TreeNodeItem key={node.id} node={node} depth={0} />
+        {tree.map((node, index) => (
+          <TreeNodeItem key={`${node.id}-${index}`} node={node} depth={0} />
         ))}
       </div>
     </div>

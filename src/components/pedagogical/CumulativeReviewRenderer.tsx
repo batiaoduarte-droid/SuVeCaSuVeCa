@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ChevronDown, ListTree, RotateCcw, CheckSquare, Square, Scale, BookOpen, Layers } from 'lucide-react';
 import type { CumulativeReviewView } from '../../types/pedagogicalView';
 import { SuvecaSection } from './sections/SuvecaSection';
@@ -8,14 +8,33 @@ import { PedagogicalCallout } from '../ui/PedagogicalCallout';
 
 interface CumulativeReviewRendererProps {
   view: CumulativeReviewView;
+  activeSectionId?: string | null;
+  onActiveSectionChange?: (sectionId: string | null) => void;
+  onPracticeExercises?: (topic?: string) => void;
 }
 
-export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> = ({ view }) => {
+const protocolStorageKey = (unitId: string) => `suveca_cumulative_protocol_v1_${unitId}`;
+
+export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> = ({
+  view,
+  activeSectionId,
+  onActiveSectionChange,
+  onPracticeExercises,
+}) => {
   if (!view || !view.unit) return null;
 
   const { unit, sections } = view;
 
-  const [checkedProtocol, setCheckedProtocol] = useState<Record<number, boolean>>({});
+  const [checkedProtocol, setCheckedProtocol] = useState<Record<number, boolean>>(() => {
+    try {
+      const stored = localStorage.getItem(protocolStorageKey(view.unit.unitId));
+      return stored ? JSON.parse(stored) : {};
+    } catch {
+      return {};
+    }
+  });
+  const [showAllConcepts, setShowAllConcepts] = useState(false);
+  const [showAllRules, setShowAllRules] = useState(false);
   const [openSections, setOpenSections] = useState<Set<string>>(
     () => new Set(['suveca', 'rules', 'synthesis'])
   );
@@ -26,6 +45,27 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
       if (isOpen) next.add(id);
       else next.delete(id);
       return next;
+    });
+    if (isOpen) onActiveSectionChange?.(id);
+  };
+
+  useEffect(() => {
+    localStorage.setItem(protocolStorageKey(view.unit.unitId), JSON.stringify(checkedProtocol));
+  }, [checkedProtocol, view.unit.unitId]);
+
+  useEffect(() => {
+    if (!activeSectionId) return;
+    setOpenSections((current) => new Set(current).add(activeSectionId));
+    window.requestAnimationFrame(() => {
+      document.getElementById(`${view.unit.unitId}-${activeSectionId}`)?.scrollIntoView({ block: 'start' });
+    });
+  }, [activeSectionId, view.unit.unitId]);
+
+  const openFromToc = (id: string) => {
+    setOpenSections((current) => new Set(current).add(id));
+    onActiveSectionChange?.(id);
+    window.requestAnimationFrame(() => {
+      document.getElementById(`${view.unit.unitId}-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   };
 
@@ -60,23 +100,31 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
       )}
 
       {/* Sumário das 6 Seções */}
-      <nav className="rounded-2xl border border-teal-200 bg-teal-50/50 p-4 sm:p-5" aria-label="Sumário da revisão">
+      <nav className="rounded-2xl border border-teal-200 bg-teal-50/50 p-4 sm:p-5" aria-label={`Sumário da revisão ${unit.title}`}>
         <h2 className="m-0 mb-3 flex items-center gap-2 text-base font-bold text-teal-950">
           <ListTree className="h-5 w-5 text-teal-700" /> Roteiro de Revisão (6 Dimensões)
         </h2>
-        <div className="grid gap-2 sm:grid-cols-2 text-xs sm:text-sm font-semibold text-teal-950">
-          <div>1. Conexão com o método SuVeCA</div>
-          <div>2. Mapa de conceitos prioritários</div>
-          <div>3. Regras priorizadas de prova</div>
-          <div>4. Síntese estruturada</div>
-          <div>5. Exemplos para recuperação</div>
-          <div>6. Protocolo de revisão ativa</div>
-        </div>
+        <ol className="m-0 grid list-none gap-2 p-0 text-xs font-semibold text-teal-950 sm:grid-cols-2 sm:text-sm">
+          {[
+            ['suveca', 'Conexão com o método SuVeCA'],
+            ['concepts', 'Mapa de conceitos prioritários'],
+            ['rules', 'Regras priorizadas de prova'],
+            ['synthesis', 'Síntese estruturada'],
+            ['recovery', 'Exemplos para recuperação'],
+            ['protocol', 'Protocolo de revisão ativa'],
+          ].map(([id, label], index) => (
+            <li key={id} className="m-0">
+              <button type="button" onClick={() => openFromToc(id)} className="min-h-11 w-full rounded-xl border border-transparent bg-white/70 px-3 py-2 text-left hover:border-teal-200 hover:bg-white">
+                <span className="mr-2 font-black text-teal-700">{index + 1}.</span>{label}
+              </button>
+            </li>
+          ))}
+        </ol>
       </nav>
 
       {/* Seção 1: Conexão SuVeCA */}
       <details
-        id="suveca"
+        id={`${unit.unitId}-suveca`}
         open={openSections.has('suveca')}
         onToggle={(e) => toggleSection('suveca', e.currentTarget.open)}
         className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs"
@@ -93,7 +141,7 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
       {/* Seção 2: Mapa de Conceitos */}
       {sections.conceptMap?.items?.length > 0 && (
         <details
-          id="concepts"
+          id={`${unit.unitId}-concepts`}
           open={openSections.has('concepts')}
           onToggle={(e) => toggleSection('concepts', e.currentTarget.open)}
           className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs"
@@ -104,7 +152,7 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
           </summary>
           <div className="border-t border-slate-200 p-4 sm:p-6">
             <div className="flex flex-wrap gap-2">
-              {sections.conceptMap.items.map((item, idx) => (
+              {(showAllConcepts ? sections.conceptMap.items : sections.conceptMap.items.slice(0, 24)).map((item, idx) => (
                 <span
                   key={idx}
                   className="rounded-xl border border-teal-200/90 bg-teal-50/70 px-3 py-1.5 text-xs font-bold text-teal-950 shadow-2xs"
@@ -113,6 +161,11 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
                 </span>
               ))}
             </div>
+            {sections.conceptMap.items.length > 24 && (
+              <button type="button" onClick={() => setShowAllConcepts((current) => !current)} className="mt-4 min-h-11 rounded-xl border border-teal-300 bg-white px-4 py-2 text-sm font-bold text-teal-900 hover:bg-teal-50">
+                {showAllConcepts ? 'Mostrar apenas os prioritários' : `Mostrar todos os ${sections.conceptMap.items.length} conceitos`}
+              </button>
+            )}
           </div>
         </details>
       )}
@@ -120,7 +173,7 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
       {/* Seção 3: Regras Priorizadas */}
       {sections.prioritizedRules?.items?.length > 0 && (
         <details
-          id="rules"
+          id={`${unit.unitId}-rules`}
           open={openSections.has('rules')}
           onToggle={(e) => toggleSection('rules', e.currentTarget.open)}
           className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs"
@@ -131,7 +184,7 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
           </summary>
           <div className="border-t border-slate-200 p-4 sm:p-6">
             <div className="space-y-2.5">
-              {sections.prioritizedRules.items.map((rule, idx) => (
+              {(showAllRules ? sections.prioritizedRules.items : sections.prioritizedRules.items.slice(0, 12)).map((rule, idx) => (
                 <div
                   key={idx}
                   className="flex items-start gap-3 rounded-xl border border-slate-200/90 bg-slate-50/60 p-3.5 text-xs sm:text-sm text-slate-900"
@@ -143,6 +196,11 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
                 </div>
               ))}
             </div>
+            {sections.prioritizedRules.items.length > 12 && (
+              <button type="button" onClick={() => setShowAllRules((current) => !current)} className="mt-4 min-h-11 rounded-xl border border-teal-300 bg-white px-4 py-2 text-sm font-bold text-teal-900 hover:bg-teal-50">
+                {showAllRules ? 'Mostrar apenas as prioritárias' : `Mostrar todas as ${sections.prioritizedRules.items.length} regras`}
+              </button>
+            )}
           </div>
         </details>
       )}
@@ -150,7 +208,7 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
       {/* Seção 4: Síntese Estruturada */}
       {sections.structuredSynthesis?.blocks?.length > 0 && (
         <details
-          id="synthesis"
+          id={`${unit.unitId}-synthesis`}
           open={openSections.has('synthesis')}
           onToggle={(e) => toggleSection('synthesis', e.currentTarget.open)}
           className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs"
@@ -170,7 +228,7 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
       {/* Seção 5: Exemplos para Recuperação */}
       {sections.recoveryExamples?.blocks?.length > 0 && (
         <details
-          id="recovery"
+          id={`${unit.unitId}-recovery`}
           open={openSections.has('recovery')}
           onToggle={(e) => toggleSection('recovery', e.currentTarget.open)}
           className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs"
@@ -190,7 +248,7 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
       {/* Seção 6: Protocolo de Revisão Ativa */}
       {protocolItems.length > 0 && (
         <details
-          id="protocol"
+          id={`${unit.unitId}-protocol`}
           open={openSections.has('protocol')}
           onToggle={(e) => toggleSection('protocol', e.currentTarget.open)}
           className="group overflow-hidden rounded-2xl border border-teal-200 bg-white shadow-2xs"
@@ -200,7 +258,14 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
             <ChevronDown className="h-5 w-5 shrink-0 text-teal-700 transition-transform group-open:rotate-180" />
           </summary>
           <div className="border-t border-teal-200 p-4 sm:p-6 space-y-4">
-            <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100">
+            <div
+              className="h-2 w-full overflow-hidden rounded-full bg-slate-100"
+              role="progressbar"
+              aria-label="Progresso do protocolo de revisão"
+              aria-valuemin={0}
+              aria-valuemax={protocolItems.length}
+              aria-valuenow={completedProtocol}
+            >
               <div
                 className="h-full bg-gradient-to-r from-teal-500 to-emerald-500 transition-all duration-300"
                 style={{ width: `${protocolPercent}%` }}
@@ -226,7 +291,7 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
                       <Square className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
                     )}
                     <span className={`text-xs sm:text-sm font-medium leading-relaxed ${isChecked ? 'line-through text-slate-500' : ''}`}>
-                      <InlineRichText>{item}</InlineRichText>
+                      <InlineRichText>{item.replace(/^\.\s*/, '')}</InlineRichText>
                     </span>
                   </button>
                 );
@@ -235,6 +300,16 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
           </div>
         </details>
       )}
+
+      <section className="rounded-2xl border border-teal-200 bg-teal-50/70 p-4 sm:p-5" aria-label="Próximo passo da revisão">
+        <h2 className="m-0 text-base font-black text-teal-950">Transforme a revisão em desempenho</h2>
+        <p className="mt-1 text-sm leading-relaxed text-slate-700">
+          Depois de reconstruir as regras sem consulta, resolva questões misturadas e registre as lacunas encontradas.
+        </p>
+        <button type="button" onClick={() => onPracticeExercises?.(unit.title)} className="mt-4 min-h-11 rounded-xl bg-teal-800 px-4 py-2 text-sm font-bold text-white hover:bg-teal-900">
+          Praticar esta revisão
+        </button>
+      </section>
     </div>
   );
 };

@@ -11,8 +11,9 @@ const steps = [
   { name: 'Pedagogical Curriculum Integrity Audit', cmd: 'node scripts/audit-pedagogical-curriculum.mjs' },
   { name: 'Deployment Shards Integrity Audit', cmd: 'node scripts/audit-deployment-shards.mjs' },
   { name: 'Pedagogical Views Integrity Audit', cmd: 'node scripts/audit-pedagogical-views.mjs' },
+  { name: 'Pedagogical View Routing Contract', cmd: 'node scripts/build-pedagogical-view-index.mjs --check' },
   { name: 'PBL Runtime Integrity Audit', cmd: 'node scripts/audit-pbl-runtime.mjs' },
-  { name: 'Playwright E2E & Accessibility Suite', cmd: 'npx playwright test tests/e2e/pbl-flow-accessibility.spec.ts' },
+  { name: 'Playwright E2E & Accessibility Suite', cmd: 'npx playwright test tests/e2e/pbl-flow-accessibility.spec.ts tests/e2e/semantic-views-v42.spec.ts' },
   { name: 'Vite Production Build', cmd: 'vite build' }
 ];
 

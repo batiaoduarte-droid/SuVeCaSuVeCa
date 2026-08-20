@@ -19,9 +19,9 @@ export const PedagogicalCallout: React.FC<PedagogicalCalloutProps> = ({
           <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-100 ring-1 ring-emerald-300">
             <Target className="h-4 w-4 text-emerald-700" />
           </span>
-          <h4 className="m-0 text-xs font-black uppercase tracking-wider text-emerald-900">
+          <div className="m-0 text-xs font-black uppercase tracking-wider text-emerald-900">
             {title || 'Objetivo de Aprendizagem'}
-          </h4>
+          </div>
         </div>
         <div className="mt-2.5 text-xs sm:text-sm font-medium text-emerald-950 leading-relaxed">
           {children}
@@ -37,9 +37,9 @@ export const PedagogicalCallout: React.FC<PedagogicalCalloutProps> = ({
           <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-100 ring-1 ring-blue-300">
             <Compass className="h-4 w-4 text-blue-700" />
           </span>
-          <h4 className="m-0 text-xs font-black uppercase tracking-wider text-blue-900">
+          <div className="m-0 text-xs font-black uppercase tracking-wider text-blue-900">
             {title || 'Limite do Método SuVeCA'}
-          </h4>
+          </div>
         </div>
         <div className="mt-2.5 text-xs sm:text-sm font-medium text-blue-950 leading-relaxed">
           {children}
@@ -55,9 +55,9 @@ export const PedagogicalCallout: React.FC<PedagogicalCalloutProps> = ({
           <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-purple-100 ring-1 ring-purple-300">
             <Sparkles className="h-4 w-4 text-purple-700" />
           </span>
-          <h4 className="m-0 text-xs font-black uppercase tracking-wider text-purple-900">
+          <div className="m-0 text-xs font-black uppercase tracking-wider text-purple-900">
             {title || 'Insight Metodológico'}
-          </h4>
+          </div>
         </div>
         <div className="mt-2.5 text-xs sm:text-sm font-medium text-purple-950 leading-relaxed">
           {children}

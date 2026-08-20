@@ -60,7 +60,7 @@ export const ResponsiveStudyTable: React.FC<ResponsiveStudyTableProps> = ({
             <button
               type="button"
               onClick={() => setMobileView('cards')}
-              className={`p-1 rounded text-xs transition ${
+              className={`min-h-11 min-w-11 p-2 rounded-lg text-xs transition ${
                 mobileView === 'cards'
                   ? 'bg-white text-teal-900 shadow-2xs font-bold'
                   : 'text-slate-500 hover:text-slate-800'
@@ -72,7 +72,7 @@ export const ResponsiveStudyTable: React.FC<ResponsiveStudyTableProps> = ({
             <button
               type="button"
               onClick={() => setMobileView('table')}
-              className={`p-1 rounded text-xs transition ${
+              className={`min-h-11 min-w-11 p-2 rounded-lg text-xs transition ${
                 mobileView === 'table'
                   ? 'bg-white text-teal-900 shadow-2xs font-bold'
                   : 'text-slate-500 hover:text-slate-800'
@@ -99,7 +99,7 @@ export const ResponsiveStudyTable: React.FC<ResponsiveStudyTableProps> = ({
                   key={idx}
                   className="px-4 py-3 font-black text-teal-950 text-xs sm:text-sm tracking-tight whitespace-nowrap"
                 >
-                  <InlineRichText>{header}</InlineRichText>
+                  <InlineRichText>{header.trim() || `Coluna ${idx + 1}`}</InlineRichText>
                 </th>
               ))}
             </tr>

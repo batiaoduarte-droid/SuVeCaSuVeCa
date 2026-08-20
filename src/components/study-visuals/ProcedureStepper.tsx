@@ -117,7 +117,7 @@ export const ProcedureStepper: React.FC<ProcedureStepperProps> = ({
               <button
                 type="button"
                 onClick={() => toggleStep(step.order)}
-                className={`relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl font-black text-xs transition-all cursor-pointer select-none ${
+                className={`relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl font-black text-xs transition-all cursor-pointer select-none ${
                   isDone
                     ? 'bg-emerald-600 text-white shadow-xs'
                     : 'bg-sky-100 text-sky-900 border border-sky-300 hover:bg-sky-200'

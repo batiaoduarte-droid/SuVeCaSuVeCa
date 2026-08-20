@@ -7,7 +7,7 @@ import {
   CheckCircle2,
   GitBranch,
 } from 'lucide-react';
-import type { ContentBlock, ConnectionMapView } from '../../../types/pedagogicalView';
+import type { ContentBlock, ConnectionMapView, PrerequisiteView } from '../../../types/pedagogicalView';
 import { ContentBlockRenderer } from '../blocks/ContentBlockRenderer';
 import { ConnectionMap } from '../../ui/ConnectionMap';
 import { InlineRichText } from '../blocks/InlineRichText';
@@ -16,15 +16,17 @@ import { ConceptTree } from '../../study-visuals/ConceptTree';
 interface PrerequisitesSectionProps {
   blocks?: ContentBlock[];
   maps?: ConnectionMapView[];
+  items?: PrerequisiteView[];
 }
 
 export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
   blocks = [],
   maps = [],
+  items = [],
 }) => {
   const [copied, setCopied] = useState(false);
 
-  if (blocks.length === 0 && maps.length === 0) return null;
+  if (blocks.length === 0 && maps.length === 0 && items.length === 0) return null;
 
   // Extrai itens de lista dos blocos para renderizar como cards de fundamentos
   const listItems: Array<{ term: string; desc: string }> = [];
@@ -74,7 +76,7 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
           <button
             type="button"
             onClick={handleCopy}
-            className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-bold text-slate-700 transition hover:bg-slate-50 cursor-pointer shadow-2xs select-none"
+            className="flex min-h-11 items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-700 transition hover:bg-slate-50 cursor-pointer shadow-2xs select-none"
             title="Copiar fundamentos"
           >
             {copied ? (
@@ -92,6 +94,29 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
         </div>
 
         {/* Grade de Fundamentos Necessários */}
+        {items.length > 0 && (
+          <div className="space-y-3">
+            <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-teal-950 select-none">
+              <BookOpen className="h-4 w-4 text-teal-700" />
+              <span>Ative estes conhecimentos antes de avançar</span>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {items.map((item, idx) => (
+                <article key={item.prerequisiteId || idx} className={`rounded-xl border p-3.5 ${item.isCritical ? 'border-amber-300 bg-amber-50/60' : 'border-slate-200 bg-slate-50/60'}`}>
+                  <h4 className="m-0 text-sm font-black text-slate-900"><InlineRichText>{item.name}</InlineRichText></h4>
+                  {item.reason && <p className="mt-1 text-xs leading-relaxed text-slate-700"><InlineRichText>{item.reason}</InlineRichText></p>}
+                  {item.activationPrompt && (
+                    <p className="mt-3 rounded-lg border border-teal-200 bg-white p-2.5 text-xs font-semibold text-teal-950">
+                      <span className="mb-1 block text-[10px] font-black uppercase tracking-wider text-teal-700">Cheque sem consultar</span>
+                      <InlineRichText>{item.activationPrompt}</InlineRichText>
+                    </p>
+                  )}
+                </article>
+              ))}
+            </div>
+          </div>
+        )}
+
         {listItems.length > 0 && (
           <div className="space-y-3">
             <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-teal-950 select-none">

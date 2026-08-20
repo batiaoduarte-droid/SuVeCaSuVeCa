@@ -108,9 +108,54 @@ const readStoredErrors = (userId?: string | null): CadernoErroItem[] | null => {
 const lastModuleStorageKey = (userId?: string | null) =>
   `suveca_last_module_${userId || 'guest'}`;
 
+const unitIdForSection = (section: (typeof MODULES_DATA)[number]['sections'][number]) => {
+  const cumulativeMatch = section.contentUrl?.match(/A14-(S\d+)/);
+  return section.editorial?.integrationUnitId || (cumulativeMatch ? `IP-A14-${cumulativeMatch[1]}` : null);
+};
+
+interface StudyLocation {
+  moduleId: string | null;
+  unitId: string | null;
+  sectionId: string | null;
+}
+
+const moduleIdForUnit = (unitId: string | null) => {
+  if (!unitId) return null;
+  return MODULES_DATA.find((module) => module.sections.some(
+    (section) => unitIdForSection(section) === unitId,
+  ))?.id || null;
+};
+
+const readStudyLocation = (): StudyLocation => {
+  const params = new URLSearchParams(window.location.search);
+  const unitId = params.get('unit');
+  const requestedModule = params.get('module');
+  const moduleId = moduleIdForUnit(unitId)
+    || (requestedModule && MODULES_DATA.some((module) => module.id === requestedModule) ? requestedModule : null);
+  return {
+    moduleId,
+    unitId: moduleIdForUnit(unitId) ? unitId : null,
+    sectionId: /^[a-z][a-z0-9-]*$/.test(params.get('section') || '') ? params.get('section') : null,
+  };
+};
+
+const writeStudyLocation = (location: StudyLocation, mode: 'push' | 'replace') => {
+  const url = new URL(window.location.href);
+  const setOrDelete = (key: string, value: string | null) => value
+    ? url.searchParams.set(key, value)
+    : url.searchParams.delete(key);
+  setOrDelete('module', location.moduleId);
+  setOrDelete('unit', location.unitId);
+  setOrDelete('section', location.sectionId);
+  window.history[mode === 'push' ? 'pushState' : 'replaceState']({}, '', `${url.pathname}${url.search}${url.hash}`);
+};
+
 export default function App() {
+  const initialStudyLocation = useRef(readStudyLocation()).current;
   const [activeTab, setActiveTab] = useState<TabType>('modules');
-  const [selectedModuleId, setSelectedModuleId] = useState<string>('mod0');
+  const [selectedModuleId, setSelectedModuleId] = useState<string>(initialStudyLocation.moduleId || 'mod0');
+  const [openUnitId, setOpenUnitId] = useState<string | null>(initialStudyLocation.unitId);
+  const [openUnitSectionId, setOpenUnitSectionId] = useState<string | null>(initialStudyLocation.sectionId);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
   const [isTutorOpen, setIsTutorOpen] = useState<boolean>(false);
   const [tutorContext, setTutorContext] = useState<string>('');
@@ -137,6 +182,18 @@ export default function App() {
     () => readStoredErrors() || []
   );
 
+  useEffect(() => {
+    const handlePopState = () => {
+      const location = readStudyLocation();
+      setSelectedModuleId(location.moduleId || 'mod0');
+      setOpenUnitId(location.unitId);
+      setOpenUnitSectionId(location.sectionId);
+      setActiveTab('modules');
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
   // Track auth changes and load Firestore data
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
@@ -148,7 +205,7 @@ export default function App() {
       setCadernoReadyFor(null);
       setUser(currentUser);
       const savedModule = localStorage.getItem(lastModuleStorageKey(currentUserId));
-      if (savedModule && MODULES_DATA.some((module) => module.id === savedModule)) {
+      if (!readStudyLocation().moduleId && savedModule && MODULES_DATA.some((module) => module.id === savedModule)) {
         setSelectedModuleId(savedModule);
       }
 
@@ -352,8 +409,20 @@ export default function App() {
 
   const handleSelectModule = (id: string) => {
     setSelectedModuleId(id);
+    setOpenUnitId(null);
+    setOpenUnitSectionId(null);
+    writeStudyLocation({ moduleId: id, unitId: null, sectionId: null }, 'push');
     localStorage.setItem(lastModuleStorageKey(user?.uid), id);
     markModuleVisited(id);
+  };
+
+  const handleOpenUnitChange = (unitId: string | null, sectionId: string | null = null) => {
+    const moduleId = moduleIdForUnit(unitId) || selectedModuleId;
+    const isNewUnit = unitId !== openUnitId;
+    setSelectedModuleId(moduleId);
+    setOpenUnitId(unitId);
+    setOpenUnitSectionId(sectionId);
+    writeStudyLocation({ moduleId, unitId, sectionId }, isNewUnit ? 'push' : 'replace');
   };
 
   // Find simulado questions
@@ -475,6 +544,9 @@ export default function App() {
                   onUpdateErrorStatus={handleUpdateErrorStatus}
                   isFocusMode={isImmersiveFocus}
                   onToggleFocusMode={() => setIsImmersiveFocus((current) => !current)}
+                  openUnitId={openUnitId}
+                  openUnitSectionId={openUnitSectionId}
+                  onOpenUnitChange={handleOpenUnitChange}
                 />
               </div>
             )}

@@ -57,7 +57,7 @@ export default defineConfig({
     },
     {
       name: 'mobile-320',
-      use: { browserName: 'chromium', viewport: { width: 320, height: 800 }, deviceScaleFactor: 1, isMobile: true, hasTouch: true },
+      use: { browserName: 'chromium', viewport: { width: 320, height: 568 }, deviceScaleFactor: 1, isMobile: true, hasTouch: true },
     },
   ],
 });
