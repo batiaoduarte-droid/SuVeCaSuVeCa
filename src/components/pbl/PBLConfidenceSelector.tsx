@@ -3,12 +3,13 @@ import type { PBLConfidenceLevel } from '../../types/pbl';
 import { HelpCircle, AlertCircle, CheckCircle2, Flame } from 'lucide-react';
 
 interface PBLConfidenceSelectorProps {
-  confidence: PBLConfidenceLevel;
+  confidence: PBLConfidenceLevel | null;
   onSelectConfidence: (level: PBLConfidenceLevel) => void;
   reasoning: string;
   onChangeReasoning: (text: string) => void;
   onSubmit: () => void;
   disabled?: boolean;
+  submitLabel?: string;
 }
 
 export const PBLConfidenceSelector: React.FC<PBLConfidenceSelectorProps> = ({
@@ -18,6 +19,7 @@ export const PBLConfidenceSelector: React.FC<PBLConfidenceSelectorProps> = ({
   onChangeReasoning,
   onSubmit,
   disabled = false,
+  submitLabel = 'Confirmar hipótese e analisar',
 }) => {
   const levels: Array<{ id: PBLConfidenceLevel; label: string; icon: React.ElementType; color: string; desc: string }> = [
     {
@@ -69,6 +71,8 @@ export const PBLConfidenceSelector: React.FC<PBLConfidenceSelectorProps> = ({
             <button
               key={lvl.id}
               type="button"
+              disabled={disabled}
+              aria-pressed={isSelected}
               onClick={() => onSelectConfidence(lvl.id)}
               className={`flex flex-col items-center justify-center rounded-xl border p-3 text-center transition-all ${
                 isSelected
@@ -103,10 +107,10 @@ export const PBLConfidenceSelector: React.FC<PBLConfidenceSelectorProps> = ({
         <button
           type="button"
           onClick={onSubmit}
-          disabled={disabled}
+          disabled={disabled || !confidence}
           className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-6 py-2.5 text-xs font-bold text-white shadow-md transition-all hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
         >
-          Confirmar Hipótese & Analisar
+          {submitLabel}
         </button>
       </div>
     </div>

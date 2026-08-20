@@ -39,7 +39,7 @@ export class DiagnosticResolver {
     }
 
     // 2. Check diagnostic path node
-    const firstNode = diagPath?.nodes[0];
+    const firstNode = diagPath?.nodes.find((node) => node.nodeId === diagPath.entryNodeId) || diagPath?.nodes[0];
     const microLesson =
       firstNode?.onIncorrect?.correctiveMicroLesson ||
       `Revise os critérios normativos e teste decisivo para ${comp?.title || 'a competência'}.`;
@@ -56,8 +56,17 @@ export class DiagnosticResolver {
       diagnosticConfidence = 0.42; // Low confidence, may need probe question
     }
 
-    const needsProbe = !isCorrect && diagnosticConfidence < 0.60;
-    const probeQuestionRef = needsProbe ? diagPath?.nodes[1]?.questionRef : undefined;
+    const targetProbeNode = firstNode?.onIncorrect.targetNodeId
+      ? diagPath?.nodes.find((node) => node.nodeId === firstNode.onIncorrect.targetNodeId)
+      : diagPath?.nodes.find((node) => node.questionRef !== questionRef);
+    const candidateProbeRef = !isCorrect && diagnosticConfidence < 0.60
+      ? targetProbeNode?.questionRef
+      : undefined;
+    const probePresentation = candidateProbeRef
+      ? await this.repo.getQuestionPresentation(candidateProbeRef)
+      : null;
+    const needsProbe = Boolean(candidateProbeRef && probePresentation);
+    const probeQuestionRef = needsProbe ? candidateProbeRef : undefined;
 
     return {
       competencyRef,
@@ -69,6 +78,10 @@ export class DiagnosticResolver {
       diagnosticConfidence,
       needsProbe,
       probeQuestionRef,
+      diagnosticSummary:
+        matchedDistractor?.errorPattern ||
+        (!isCorrect ? comp?.description : 'O procedimento foi aplicado com segurança.'),
+      trapSummary: matchedDistractor?.refutation,
       intervention: {
         microLesson,
         ruleRefs: qp?.decisiveRuleRefs || comp?.ruleRefs || [],

@@ -19,7 +19,9 @@ export class NextActionPolicy {
   ): Promise<NextActionDecision> {
     const { competencyRef, evaluation, stage, isCorrect } = lastAttempt;
     const currentMastery = session.masterySnapshot[competencyRef];
-    const masteryScore = currentMastery?.score ?? 0;
+    const attemptedQuestionRefs = session.attempts
+      .filter((attempt) => attempt.competencyRef === competencyRef)
+      .map((attempt) => attempt.questionRef);
 
     // Stage 1: Initial Attempt on Problem Case
     if (stage === 'initial') {
@@ -29,7 +31,9 @@ export class NextActionPolicy {
           competencyRef,
           evaluation,
           0,
-          currentMastery
+          currentMastery,
+          attemptedQuestionRefs,
+          true
         );
 
         if (xferItem) {
@@ -42,7 +46,7 @@ export class NextActionPolicy {
             feedbackMessage: 'Excelente raciocínio! Vamos testar a regra em um novo contexto de prova.',
           };
         } else {
-          return this.advanceOrComplete(session);
+          return this.advanceOrComplete(session, 'needs_review');
         }
       } else {
         // Error or Fragile Correct -> Show Diagnostic and Trigger Intervention
@@ -60,6 +64,16 @@ export class NextActionPolicy {
       }
     }
 
+    if (stage === 'probe') {
+      return {
+        type: 'trigger_intervention',
+        targetCompetencyRef: competencyRef,
+        targetQuestionRef: lastAttempt.questionRef,
+        reason: 'A sondagem refinou o diagnóstico antes da intervenção.',
+        feedbackMessage: 'Diagnóstico refinado. Agora vamos aplicar o procedimento decisivo.',
+      };
+    }
+
     // Stage 2: Reattempt after Intervention
     if (stage === 'reattempt') {
       if (isCorrect) {
@@ -68,7 +82,9 @@ export class NextActionPolicy {
           competencyRef,
           evaluation,
           0,
-          currentMastery
+          currentMastery,
+          attemptedQuestionRefs,
+          true
         );
 
         if (xferItem) {
@@ -81,43 +97,46 @@ export class NextActionPolicy {
             feedbackMessage: 'Muito bem! Agora aplique a regra neste novo desafio.',
           };
         } else {
-          return this.advanceOrComplete(session);
+          return this.advanceOrComplete(session, 'needs_review');
         }
       } else {
-        // Repeated error -> Check prerequisite or show contrast again
-        const comp = await this.repo.getCompetency(competencyRef);
-        const prereq = comp?.prerequisiteCompetencyRefs[0];
-
-        if (prereq) {
-          return {
-            type: 'branch_to_prerequisite',
-            targetCompetencyRef: prereq,
-            reason: 'Dificuldade persistente. Redirecionando para competência de pré-requisito.',
-            feedbackMessage: 'Vamos revisar o conceito fundamental antes de retornar a este tópico.',
-          };
-        } else {
-          return {
-            type: 'request_reattempt',
-            targetCompetencyRef: competencyRef,
-            reason: 'Nova tentativa com scaffold reforçado.',
-          };
-        }
+        return this.advanceOrComplete(session, 'needs_review');
       }
     }
 
     // Stage 3: Transfer Attempt
     if (stage === 'transfer') {
-      const nextIdx = session.currentTransferItemIndex + 1;
+      const transferAttempts = session.attempts.filter(
+        (attempt) => attempt.competencyRef === competencyRef && attempt.stage === 'transfer'
+      );
+      const transferSet = await this.repo.getTransferSetForCompetency(competencyRef);
+      const minPassingScore = transferSet?.masteryCriteria.minPassingScore ?? 0.75;
+      const consecutiveRequired = transferSet?.masteryCriteria.consecutiveCorrectRequired ?? 2;
+      const transferAccuracy = transferAttempts.length
+        ? transferAttempts.filter((attempt) => attempt.isCorrect).length / transferAttempts.length
+        : 0;
+      let consecutiveCorrect = 0;
+      for (let index = transferAttempts.length - 1; index >= 0 && transferAttempts[index].isCorrect; index -= 1) {
+        consecutiveCorrect += 1;
+      }
+      const masteryDemonstrated =
+        transferAccuracy >= minPassingScore && consecutiveCorrect >= consecutiveRequired;
+
+      if (masteryDemonstrated) {
+        return this.advanceOrComplete(session, 'mastered');
+      }
+
       const xferItem = await this.transferSelector.selectNextTransferItem(
         competencyRef,
         evaluation,
-        nextIdx,
-        currentMastery
+        0,
+        currentMastery,
+        attemptedQuestionRefs,
+        true
       );
 
-      // If learner achieved mastery or finished transfer items -> Advance
-      if (masteryScore >= 0.80 || !xferItem || nextIdx >= 3) {
-        return this.advanceOrComplete(session);
+      if (!xferItem || transferAttempts.length >= 3) {
+        return this.advanceOrComplete(session, 'needs_review');
       } else {
         return {
           type: 'request_transfer',
@@ -130,10 +149,13 @@ export class NextActionPolicy {
       }
     }
 
-    return this.advanceOrComplete(session);
+    return this.advanceOrComplete(session, 'needs_review');
   }
 
-  private async advanceOrComplete(session: PBLSession): Promise<NextActionDecision> {
+  private async advanceOrComplete(
+    session: PBLSession,
+    outcome: 'mastered' | 'needs_review'
+  ): Promise<NextActionDecision> {
     const nextCompIdx = session.currentCompetencyIndex + 1;
 
     if (nextCompIdx < session.targetCompetencyRefs.length) {
@@ -145,14 +167,24 @@ export class NextActionPolicy {
         targetCompetencyRef: nextCompId,
         targetCaseRef: nextCase?.caseId,
         targetQuestionRef: nextCase?.anchorQuestionRef,
-        reason: 'Competência concluída com sucesso. Avançando para o próximo tópico da sessão.',
-        feedbackMessage: 'Competência dominada! Avançando para a próxima meta.',
+        outcome,
+        reason: outcome === 'mastered'
+          ? 'A transferência confirmou o domínio desta competência.'
+          : 'A competência precisa de revisão programada; a sessão seguirá sem repetir indefinidamente.',
+        feedbackMessage: outcome === 'mastered'
+          ? 'Domínio demonstrado em novo contexto.'
+          : 'Ponto de revisão registrado. Vamos consolidá-lo na próxima revisão.',
       };
     } else {
       return {
         type: 'complete_session',
-        reason: 'Todas as competências da sessão foram dominadas com sucesso!',
-        feedbackMessage: 'Parabéns! Sessão de Aprendizagem Baseada em Problemas concluída com êxito.',
+        outcome,
+        reason: outcome === 'mastered'
+          ? 'A prática foi concluída com evidência de transferência.'
+          : 'A prática foi concluída e o ponto de dificuldade foi encaminhado para revisão.',
+        feedbackMessage: outcome === 'mastered'
+          ? 'Sessão concluída com domínio demonstrado.'
+          : 'Sessão concluída. O objetivo agora é revisar e tentar novamente em outro momento.',
       };
     }
   }

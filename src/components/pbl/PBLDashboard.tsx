@@ -1,247 +1,206 @@
-import React, { useState, useEffect } from 'react';
-import type { PBLCompetency, PBLSession, PBLCumulativeSession } from '../../types/pbl';
+import React, { useEffect, useMemo, useState } from 'react';
+import type { CadernoErroItem } from '../../types/suveca';
+import type { PBLCompetency, PBLCumulativeSession, PBLSession, PBLSessionMode } from '../../types/pbl';
 import { pblRepository } from '../../lib/pbl/data/PBLRepository';
 import { pblEngine } from '../../lib/pbl/engine/PBLEngine';
 import { PBLSessionRepository } from '../../lib/pbl/persistence/PBLSessionRepository';
 import { PBLSessionView } from './PBLSessionView';
-import {
-  Sparkles,
-  Brain,
-  Target,
-  Layers,
-  CheckCircle2,
-  ArrowRight,
-  TrendingUp,
-  Play,
-  RotateCw,
-} from 'lucide-react';
+import { ArrowRight, Brain, ChevronLeft, ChevronRight, Clock3, Play, RotateCw, Search, Sparkles } from 'lucide-react';
 
 interface PBLDashboardProps {
   userId?: string;
-  onAddErrorToNotebook?: (conteudo: string, erroCometido: string, regraDecisiva: string, metadata?: any) => void;
-  onRecordAttempt?: (attempt: any) => void;
+  onAddErrorToNotebook?: (conteudo: string, erroCometido: string, regraDecisiva: string, metadata?: Partial<CadernoErroItem>) => void;
+  onRecordAttempt?: (attempt: unknown) => void;
   onCompleteSession?: () => void;
+  onOpenNotebook?: () => void;
+  onOpenReview?: () => void;
 }
+
+const PAGE_SIZE = 12;
 
 export const PBLDashboard: React.FC<PBLDashboardProps> = ({
   userId = 'guest',
   onAddErrorToNotebook,
   onRecordAttempt,
   onCompleteSession,
+  onOpenNotebook,
+  onOpenReview,
 }) => {
   const [competencies, setCompetencies] = useState<PBLCompetency[]>([]);
   const [cumulativeSessions, setCumulativeSessions] = useState<PBLCumulativeSession[]>([]);
   const [userMastery, setUserMastery] = useState<Record<string, any>>({});
   const [activeSession, setActiveSession] = useState<PBLSession | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [selectedLesson, setSelectedLesson] = useState<string>('ALL');
-
-  useEffect(() => {
-    loadDashboardData();
-  }, [userId]);
+  const [resumableSession, setResumableSession] = useState<PBLSession | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [selectedLesson, setSelectedLesson] = useState('ALL');
+  const [query, setQuery] = useState('');
+  const [page, setPage] = useState(1);
+  const [showAllCumulative, setShowAllCumulative] = useState(false);
+  const [unavailableCompetencyIds, setUnavailableCompetencyIds] = useState<Set<string>>(new Set());
 
   const loadDashboardData = async () => {
     setLoading(true);
+    setErrorMessage('');
     try {
-      if (!pblRepository.isReady()) {
-        await pblRepository.init();
-      }
-
-      const comps = await pblRepository.getAllCompetencies();
-      const cumSess = await pblRepository.getCumulativeSessions();
-      const mastery = await PBLSessionRepository.getUserMastery(userId);
-
+      if (!pblRepository.isReady()) await pblRepository.init();
+      const [comps, cumulative, mastery, active] = await Promise.all([
+        pblRepository.getAllCompetencies(),
+        pblRepository.getCumulativeSessions(),
+        PBLSessionRepository.getUserMastery(userId),
+        PBLSessionRepository.getLatestActiveSession(userId),
+      ]);
       setCompetencies(comps);
-      setCumulativeSessions(cumSess);
+      const cases = await Promise.all(comps.map((competency) => pblRepository.getCaseForCompetency(competency.competencyId)));
+      setUnavailableCompetencyIds(new Set(
+        comps.filter((_, index) => !cases[index]?.officialAnswer).map((competency) => competency.competencyId)
+      ));
+      setCumulativeSessions(cumulative);
       setUserMastery(mastery);
-    } catch (err) {
-      console.error('[PBLDashboard] Error loading data:', err);
+      setResumableSession(active);
+    } catch (error) {
+      console.error('[PBLDashboard] Error loading data:', error);
+      setErrorMessage('Não foi possível carregar o Painel PBL. Tente novamente.');
     } finally {
       setLoading(false);
     }
   };
 
-  const handleStartSession = async (mode: 'guided' | 'diagnostic' | 'cumulative', targetLesson?: string, cumSessId?: string) => {
+  useEffect(() => { void loadDashboardData(); }, [userId]);
+  useEffect(() => { setPage(1); }, [selectedLesson, query]);
+
+  const handleStartSession = async ({
+    mode,
+    targetLessonId,
+    targetCompetencyId,
+    cumulativeSessionId,
+  }: {
+    mode: PBLSessionMode;
+    targetLessonId?: string;
+    targetCompetencyId?: string;
+    cumulativeSessionId?: string;
+  }) => {
     setLoading(true);
+    setErrorMessage('');
     try {
       const session = await pblEngine.startSession({
         userId,
         mode,
-        targetLessonId: targetLesson,
-        cumulativeSessionId: cumSessId,
+        targetLessonId,
+        targetCompetencyId,
+        cumulativeSessionId,
         currentMasteryMap: userMastery,
-        maxCompetencies: 3,
+        maxCompetencies: mode === 'cumulative' ? 2 : 1,
       });
-
       await PBLSessionRepository.saveSession(session);
       setActiveSession(session);
-    } catch (err) {
-      console.error('[PBLDashboard] Error starting session:', err);
+    } catch (error) {
+      console.error('[PBLDashboard] Error starting session:', error);
+      setErrorMessage('Não foi possível iniciar a sessão. Nenhum progresso foi perdido.');
     } finally {
       setLoading(false);
     }
   };
+
+  const filteredCompetencies = useMemo(() => {
+    const normalizedQuery = query.trim().toLocaleLowerCase('pt-BR');
+    return competencies.filter((competency) =>
+      (selectedLesson === 'ALL' || competency.lessonId === selectedLesson) &&
+      (!normalizedQuery || `${competency.title} ${competency.description}`.toLocaleLowerCase('pt-BR').includes(normalizedQuery))
+    );
+  }, [competencies, query, selectedLesson]);
+  const totalPages = Math.max(1, Math.ceil(filteredCompetencies.length / PAGE_SIZE));
+  const visibleCompetencies = filteredCompetencies.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
   if (activeSession) {
     return (
       <PBLSessionView
         initialSession={activeSession}
-        onExit={() => {
-          setActiveSession(null);
-          loadDashboardData();
-        }}
+        onExit={() => { setActiveSession(null); void loadDashboardData(); }}
         onAddErrorToNotebook={onAddErrorToNotebook}
         onRecordAttempt={onRecordAttempt}
         onCompleteSession={onCompleteSession}
+        onOpenNotebook={onOpenNotebook}
+        onOpenReview={onOpenReview}
       />
     );
   }
 
-  const filteredCompetencies =
-    selectedLesson === 'ALL'
-      ? competencies
-      : competencies.filter((c) => c.lessonId === selectedLesson);
+  if (loading && !competencies.length) {
+    return <div role="status" className="mx-auto max-w-6xl p-8 text-center text-sm font-semibold text-slate-700">Carregando trilhas PBL…</div>;
+  }
 
   return (
     <div className="mx-auto max-w-6xl space-y-8 p-4 sm:p-6">
-      {/* 1. Header Banner */}
-      <div className="relative overflow-hidden rounded-3xl border border-indigo-100 bg-linear-to-r from-indigo-900 via-indigo-800 to-indigo-950 p-8 text-white shadow-xl">
-        <div className="relative z-10 max-w-2xl">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-indigo-500/30 px-3 py-1 text-xs font-bold text-indigo-100 backdrop-blur-md">
-            <Sparkles className="h-3.5 w-3.5 text-amber-300" /> Aprendizagem Baseada em Problemas (PBL)
-          </span>
-          <h1 className="mt-3 text-2xl font-black tracking-tight sm:text-3xl">
-            Aprenda Português Resolvendo Problemas Reais
-          </h1>
-          <p className="mt-2 text-xs leading-relaxed text-indigo-100 sm:text-sm">
-            Metodologia ativa SuVeCa: enfrente o caso-âncora, declare sua hipótese e confiança, descubra armadilhas cognitivas e consolide o domínio via transferência adaptativa.
-          </p>
+      {errorMessage && <div role="alert" className="rounded-xl border border-rose-200 bg-rose-50 p-4 text-sm font-semibold text-rose-900">{errorMessage}</div>}
 
+      {resumableSession && (
+        <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-amber-200 bg-amber-50 p-5">
+          <div><h2 className="text-sm font-bold text-amber-950">Você tem uma sessão pausada</h2><p className="mt-1 text-xs text-amber-900">Retome da etapa {resumableSession.phase === 'problem' ? 'caso inicial' : 'em que parou'}, sem perder tentativas.</p></div>
+          <button type="button" onClick={() => setActiveSession(resumableSession)} className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-amber-400 px-5 text-xs font-extrabold text-amber-950"><RotateCw className="h-4 w-4" /> Continuar sessão</button>
+        </div>
+      )}
+
+      <div className="relative overflow-hidden rounded-3xl border border-indigo-100 bg-linear-to-r from-indigo-900 via-indigo-800 to-indigo-950 p-8 text-white shadow-xl">
+        <div className="relative z-10 max-w-3xl">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-indigo-500/30 px-3 py-1 text-xs font-bold text-indigo-100"><Sparkles className="h-3.5 w-3.5 text-amber-300" /> Aprendizagem Baseada em Problemas</span>
+          <h1 className="mt-3 text-2xl font-black tracking-tight sm:text-3xl">Aprenda Português resolvendo problemas reais</h1>
+          <p className="mt-2 text-sm leading-relaxed text-indigo-100">Sessões curtas com uma competência, diagnóstico, intervenção e transferência. Duração estimada: 3–5 minutos.</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <button
-              type="button"
-              onClick={() => handleStartSession('guided')}
-              className="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-6 py-3 text-xs font-extrabold text-indigo-950 shadow-md transition-all hover:bg-amber-300 hover:scale-105"
-            >
-              <Play className="h-4 w-4 fill-indigo-950" /> Iniciar Sessão Recomendada
-            </button>
-            <button
-              type="button"
-              onClick={() => handleStartSession('diagnostic')}
-              className="inline-flex items-center gap-2 rounded-xl bg-white/10 px-5 py-3 text-xs font-bold text-white backdrop-blur-md transition-all hover:bg-white/20"
-            >
-              <Brain className="h-4 w-4" /> Diagnóstico Adaptativo Rápido
-            </button>
+            <button type="button" disabled={loading} onClick={() => handleStartSession({ mode: 'guided' })} className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-amber-400 px-6 text-xs font-extrabold text-indigo-950 shadow-md hover:bg-amber-300 disabled:opacity-50"><Play className="h-4 w-4 fill-indigo-950" /> Iniciar sessão recomendada</button>
+            <button type="button" disabled={loading} onClick={() => handleStartSession({ mode: 'diagnostic' })} className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-white/10 px-5 text-xs font-bold text-white hover:bg-white/20 disabled:opacity-50"><Brain className="h-4 w-4" /> Diagnóstico de competência ainda não praticada</button>
           </div>
         </div>
       </div>
 
-      {/* 2. Cumulative Spiral Review Sessions (A14) */}
-      <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <div className="flex items-center justify-between">
-          <div>
-            <h2 className="text-sm font-bold uppercase tracking-wider text-slate-800">
-              Sessões Espirais Cumulativas (Camada A14)
-            </h2>
-            <p className="text-xs text-slate-600">
-              Revisão progressiva integrada que consolida temas antecedentes em espiral contínuo.
-            </p>
-          </div>
-          <span className="rounded-full bg-indigo-50 px-2.5 py-1 text-xs font-bold text-indigo-700">
-            13 Sessões Espirais
-          </span>
+      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" aria-labelledby="cumulative-title">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div><h2 id="cumulative-title" className="text-sm font-bold uppercase tracking-wider text-slate-800">Revisões espirais cumulativas</h2><p className="text-xs text-slate-600">Duas competências por sessão · cerca de 6–10 minutos.</p></div>
+          <span className="rounded-full bg-indigo-50 px-2.5 py-1 text-xs font-bold text-indigo-700">{cumulativeSessions.length} sessões</span>
         </div>
-
         <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {cumulativeSessions.slice(0, 6).map((sess) => (
-            <div
-              key={sess.sessionId}
-              className="flex flex-col justify-between rounded-xl border border-slate-200 bg-slate-50/50 p-4 transition-all hover:border-indigo-300 hover:bg-indigo-50/30"
-            >
-              <div>
-                <div className="flex items-center justify-between text-xs font-bold text-indigo-900">
-                  <span>{sess.unitId}</span>
-                  <span className="text-[10px] text-slate-600">Nível {sess.spiralProgressionLevel}</span>
-                </div>
-                <div className="mt-1 text-xs font-semibold text-slate-800">{sess.title}</div>
-                <p className="mt-1 text-[11px] text-slate-600 line-clamp-2">{sess.sessionGoal}</p>
-              </div>
-
-              <button
-                type="button"
-                onClick={() => handleStartSession('cumulative', undefined, sess.sessionId)}
-                className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-indigo-600 py-1.5 text-xs font-bold text-white shadow-xs hover:bg-indigo-700"
-              >
-                Praticar Espiral <ArrowRight className="h-3 w-3" />
-              </button>
-            </div>
+          {(showAllCumulative ? cumulativeSessions : cumulativeSessions.slice(0, 6)).map((item) => (
+            <article key={item.sessionId} className="flex flex-col justify-between rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div><div className="text-xs font-bold text-indigo-900">{item.title}</div><p className="mt-1 line-clamp-2 text-[11px] text-slate-600">{item.sessionGoal}</p></div>
+              <button type="button" disabled={loading} onClick={() => handleStartSession({ mode: 'cumulative', cumulativeSessionId: item.sessionId })} className="mt-3 inline-flex min-h-10 w-full items-center justify-center gap-1.5 rounded-lg bg-indigo-600 px-3 text-xs font-bold text-white hover:bg-indigo-700 disabled:opacity-50">Praticar revisão <ArrowRight className="h-3 w-3" /></button>
+            </article>
           ))}
         </div>
-      </div>
+        {cumulativeSessions.length > 6 && <button type="button" onClick={() => setShowAllCumulative((value) => !value)} className="mt-4 min-h-11 text-xs font-bold text-indigo-700">{showAllCumulative ? 'Mostrar menos' : `Ver as ${cumulativeSessions.length} revisões`}</button>}
+      </section>
 
-      {/* 3. Competency Map Explorer */}
-      <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <div>
-            <h2 className="text-sm font-bold uppercase tracking-wider text-slate-800">
-              Mapa de Microcompetências Instrucionais
-            </h2>
-            <p className="text-xs text-slate-600">
-              190 competências ativas articuladas a 2.588 questões oficiais e trilhas diagnósticas.
-            </p>
+      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" aria-labelledby="competency-title">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div><h2 id="competency-title" className="text-sm font-bold uppercase tracking-wider text-slate-800">Escolher uma competência</h2><p className="text-xs text-slate-600">Mostrando {visibleCompetencies.length} de {filteredCompetencies.length}; o mapa completo permanece disponível por filtro.</p></div>
+          <div className="flex flex-wrap gap-2">
+            <label className="relative"><span className="sr-only">Buscar competência</span><Search className="pointer-events-none absolute left-3 top-2.5 h-4 w-4 text-slate-400" /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Buscar tema" className="rounded-xl border border-slate-200 py-2 pl-9 pr-3 text-xs text-slate-800" /></label>
+            <select value={selectedLesson} aria-label="Filtrar competências por aula" onChange={(event) => setSelectedLesson(event.target.value)} className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-800">
+              <option value="ALL">Todas as aulas</option>
+              {Array.from(new Set(competencies.map((item) => item.lessonId))).sort().map((lesson) => <option key={lesson} value={lesson}>Aula {lesson}</option>)}
+            </select>
           </div>
-
-          {/* Lesson Filter */}
-          <select
-            value={selectedLesson}
-            aria-label="Filtrar competências por aula"
-            onChange={(e) => setSelectedLesson(e.target.value)}
-            className="rounded-xl border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-800 focus:border-indigo-500 focus:outline-none"
-          >
-            <option value="ALL">Todas as Aulas (A00 a A13)</option>
-            {Array.from(new Set(competencies.map((c) => c.lessonId))).sort().map((l) => (
-              <option key={l} value={l}>Aula {l}</option>
-            ))}
-          </select>
         </div>
 
         <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredCompetencies.map((comp) => {
-            const mastery = userMastery[comp.competencyId];
-            const scorePct = mastery ? Math.round(mastery.score * 100) : 0;
+          {visibleCompetencies.map((competency) => {
+            const mastery = userMastery[competency.competencyId];
+            const score = mastery ? Math.round(mastery.score * 100) : 0;
+            const unavailable = unavailableCompetencyIds.has(competency.competencyId);
             return (
-              <div
-                key={comp.competencyId}
-                className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-4 shadow-xs transition-all hover:border-indigo-400 hover:shadow-sm"
-              >
-                <div>
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="font-mono text-[10px] font-bold text-slate-600">{comp.competencyId}</span>
-                    <span className="rounded-md bg-slate-100 px-1.5 py-0.5 text-[10px] font-bold text-slate-700">
-                      {comp.lessonId}
-                    </span>
-                  </div>
-                  <h3 className="mt-1 text-xs font-bold text-slate-900 line-clamp-2">{comp.title}</h3>
-                  <p className="mt-1 text-[11px] text-slate-600 line-clamp-2">{comp.description}</p>
-                </div>
-
-                <div className="mt-4 border-t border-slate-100 pt-3">
-                  <div className="flex items-center justify-between text-[11px]">
-                    <span className="text-slate-600">Domínio Atual:</span>
-                    <span className="font-bold text-indigo-600">{scorePct}%</span>
-                  </div>
-                  <div className="mt-1 h-1.5 w-full rounded-full bg-slate-100">
-                    <div
-                      className="h-full rounded-full bg-indigo-600"
-                      style={{ width: `${scorePct}%` }}
-                    />
-                  </div>
-                </div>
-              </div>
+              <article key={competency.competencyId} className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-4 shadow-xs">
+                <div><span className="rounded-md bg-slate-100 px-2 py-1 text-[10px] font-bold text-slate-700">Aula {competency.lessonId}</span><h3 className="mt-2 line-clamp-2 text-xs font-bold text-slate-900">{competency.title}</h3><p className="mt-1 line-clamp-2 text-[11px] text-slate-600">{competency.description}</p></div>
+                <div className="mt-4 border-t border-slate-100 pt-3"><div className="flex justify-between text-[11px] text-slate-600"><span>Domínio atual</span><strong className="text-indigo-700">{score}%</strong></div><div className="mt-1 h-1.5 rounded-full bg-slate-100"><div className="h-full rounded-full bg-indigo-600" style={{ width: `${score}%` }} /></div><button type="button" disabled={loading || unavailable} onClick={() => handleStartSession({ mode: 'guided', targetCompetencyId: competency.competencyId })} className="mt-3 inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-3 text-xs font-bold text-indigo-800 hover:bg-indigo-100 disabled:cursor-not-allowed disabled:opacity-50"><Clock3 className="h-3.5 w-3.5" /> {unavailable ? 'Aguardando gabarito oficial' : 'Praticar por 3–5 min'}</button></div>
+              </article>
             );
           })}
         </div>
-      </div>
+
+        <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4">
+          <button type="button" disabled={page === 1} onClick={() => setPage((value) => value - 1)} className="inline-flex min-h-11 items-center gap-1 rounded-xl px-3 text-xs font-bold text-slate-700 disabled:opacity-40"><ChevronLeft className="h-4 w-4" /> Anterior</button>
+          <span className="text-xs text-slate-600">Página {page} de {totalPages}</span>
+          <button type="button" disabled={page >= totalPages} onClick={() => setPage((value) => value + 1)} className="inline-flex min-h-11 items-center gap-1 rounded-xl px-3 text-xs font-bold text-slate-700 disabled:opacity-40">Próxima <ChevronRight className="h-4 w-4" /></button>
+        </div>
+      </section>
     </div>
   );
 };

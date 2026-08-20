@@ -1,6 +1,6 @@
 import React from 'react';
 import type { InterventionPayload } from '../../types/pbl';
-import { BookOpen, CheckSquare, Layers, ArrowRight, Sparkles, Scale } from 'lucide-react';
+import { CheckSquare, ArrowRight, Sparkles, Scale } from 'lucide-react';
 
 interface PBLInterventionViewProps {
   intervention: InterventionPayload;
@@ -25,6 +25,11 @@ export const PBLInterventionView: React.FC<PBLInterventionViewProps> = ({
         <p className="mt-2 text-xs leading-relaxed text-slate-700">
           {intervention.microLessonText}
         </p>
+        {intervention.ruleStatement && (
+          <p className="mt-3 rounded-xl border border-violet-200 bg-violet-50 p-3 text-xs leading-relaxed text-violet-950">
+            <strong>Por que o critério decide:</strong> {intervention.ruleStatement}
+          </p>
+        )}
       </div>
 
       {/* 2. Decisive Procedure Steps */}
@@ -65,6 +70,16 @@ export const PBLInterventionView: React.FC<PBLInterventionViewProps> = ({
         </div>
       )}
 
+      {intervention.workedExample && (
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 className="text-xs font-bold uppercase tracking-wider text-slate-700">Reconstrua o procedimento</h3>
+          <p className="mt-3 text-xs leading-relaxed text-slate-800">{intervention.workedExample.stem}</p>
+          <ol className="mt-3 space-y-2 text-xs text-slate-700">
+            {intervention.workedExample.stepByStep.map((step, index) => <li key={index}>{index + 1}. {step}</li>)}
+          </ol>
+        </div>
+      )}
+
       {/* 4. Action Button */}
       <div className="flex justify-end pt-2">
         <button
@@ -72,7 +87,7 @@ export const PBLInterventionView: React.FC<PBLInterventionViewProps> = ({
           onClick={onReattempt}
           className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-8 py-3 text-sm font-bold text-white shadow-md transition-all hover:bg-indigo-700"
         >
-          Aplicar o Procedimento e Tentar Novamente <ArrowRight className="h-4 w-4" />
+          Aplicar em uma nova questão <ArrowRight className="h-4 w-4" />
         </button>
       </div>
     </div>

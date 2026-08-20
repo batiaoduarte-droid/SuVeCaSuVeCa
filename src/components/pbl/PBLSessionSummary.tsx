@@ -1,96 +1,79 @@
 import React from 'react';
 import type { PBLSession } from '../../types/pbl';
-import { Award, CheckCircle2, TrendingUp, RefreshCw, ArrowRight, Brain, Calendar } from 'lucide-react';
+import { ArrowRight, BookOpenCheck, Calendar, NotebookPen } from 'lucide-react';
 
 interface PBLSessionSummaryProps {
   session: PBLSession;
+  competencyTitles?: Record<string, string>;
   onFinishSession: () => void;
+  onOpenNotebook?: () => void;
+  onOpenReview?: () => void;
 }
+
+const formatReviewDate = (value?: string) => {
+  if (!value) return 'a definir';
+  const date = new Date(value);
+  return Number.isNaN(date.getTime())
+    ? 'a definir'
+    : new Intl.DateTimeFormat('pt-BR', { dateStyle: 'medium' }).format(date);
+};
 
 export const PBLSessionSummary: React.FC<PBLSessionSummaryProps> = ({
   session,
+  competencyTitles = {},
   onFinishSession,
+  onOpenNotebook,
+  onOpenReview,
 }) => {
   const stats = session.sessionStats;
-  const masteries = Object.values(session.masterySnapshot);
+  const masteries = session.targetCompetencyRefs
+    .map((id) => session.masterySnapshot[id])
+    .filter(Boolean);
+  const outcomes = session.competencyOutcomes || {};
+  const masteredCount = Object.values(outcomes).filter((outcome) => outcome === 'mastered').length;
+  const needsReviewCount = Object.values(outcomes).filter((outcome) => outcome === 'needs_review').length;
+  const reattemptCount = session.attempts.filter((attempt) => attempt.stage === 'reattempt').length;
+  const transferCount = session.attempts.filter((attempt) => attempt.stage === 'transfer').length;
+  const allMastered = masteredCount === session.targetCompetencyRefs.length && needsReviewCount === 0;
 
   return (
     <div className="space-y-6">
-      {/* Header Card */}
-      <div className="rounded-2xl border border-indigo-100 bg-linear-to-br from-indigo-600 to-indigo-800 p-8 text-white shadow-lg">
-        <div className="flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md">
-            <Award className="h-7 w-7 text-amber-300" />
-          </div>
-          <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-indigo-100">
-              Sessão Concluída com Êxito
-            </span>
-            <h1 className="text-xl font-bold">Relatório de Aprendizagem por Problemas</h1>
-          </div>
-        </div>
+      <div className="rounded-2xl border border-indigo-100 bg-linear-to-br from-indigo-700 to-indigo-900 p-8 text-white shadow-lg">
+        <p className="text-xs font-bold uppercase tracking-wider text-indigo-100">Sessão finalizada</p>
+        <h1 className="mt-1 text-xl font-bold">{allMastered ? 'Domínio demonstrado em transferência' : 'Prática concluída com próximos passos definidos'}</h1>
+        <p className="mt-2 text-xs text-indigo-100">{masteredCount} dominada(s) · {needsReviewCount} encaminhada(s) para revisão · {session.savedErrorQuestionRefs?.length || 0} registro(s) no Caderno</p>
 
-        {/* Main Metric Cards */}
-        <div className="mt-6 grid grid-cols-3 gap-4 border-t border-indigo-500/40 pt-6">
-          <div className="rounded-xl bg-white/10 p-3 text-center backdrop-blur-sm">
-            <span className="text-[10px] font-semibold uppercase text-indigo-100">Acerto Inicial</span>
-            <div className="text-2xl font-black">{stats.initialAccuracy}%</div>
-          </div>
-          <div className="rounded-xl bg-white/10 p-3 text-center backdrop-blur-sm">
-            <span className="text-[10px] font-semibold uppercase text-indigo-100">Pós-Intervenção</span>
-            <div className="text-2xl font-black text-emerald-300">{stats.postInterventionAccuracy || 100}%</div>
-          </div>
-          <div className="rounded-xl bg-white/10 p-3 text-center backdrop-blur-sm">
-            <span className="text-[10px] font-semibold uppercase text-indigo-100">Transferência</span>
-            <div className="text-2xl font-black text-amber-300">{stats.transferRate}%</div>
-          </div>
+        <div className="mt-6 grid grid-cols-1 gap-3 border-t border-indigo-500/40 pt-6 sm:grid-cols-3">
+          <div className="rounded-xl bg-white/10 p-3 text-center"><span className="text-[10px] font-semibold uppercase text-indigo-100">Acerto inicial</span><div className="text-2xl font-black">{stats.initialAccuracy}%</div></div>
+          <div className="rounded-xl bg-white/10 p-3 text-center"><span className="text-[10px] font-semibold uppercase text-indigo-100">Pós-intervenção</span><div className="text-2xl font-black text-emerald-300">{reattemptCount ? `${stats.postInterventionAccuracy}%` : '—'}</div></div>
+          <div className="rounded-xl bg-white/10 p-3 text-center"><span className="text-[10px] font-semibold uppercase text-indigo-100">Transferência</span><div className="text-2xl font-black text-amber-300">{transferCount ? `${stats.transferRate}%` : '—'}</div></div>
         </div>
       </div>
 
-      {/* Competency Mastery Progression */}
       <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h3 className="text-xs font-bold uppercase tracking-wider text-slate-800">
-          Evolução de Domínio por Competência
-        </h3>
-
+        <h2 className="text-xs font-bold uppercase tracking-wider text-slate-800">Resultado por competência</h2>
         <div className="mt-4 space-y-4">
-          {masteries.map((m) => {
-            const pct = Math.round(m.score * 100);
+          {masteries.map((mastery) => {
+            const outcome = outcomes[mastery.competencyId] || 'needs_review';
+            const reflection = session.reflectionNotes?.[mastery.competencyId];
             return (
-              <div key={m.competencyId} className="rounded-xl border border-slate-100 bg-slate-50 p-4">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="font-bold text-slate-900">{m.competencyId}</span>
-                  <span className="font-bold text-indigo-600">{pct}% ({m.level.toUpperCase()})</span>
+              <div key={mastery.competencyId} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
+                  <strong className="text-slate-900">{competencyTitles[mastery.competencyId] || 'Competência praticada'}</strong>
+                  <span className={`rounded-full px-2.5 py-1 font-bold ${outcome === 'mastered' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-900'}`}>{outcome === 'mastered' ? 'Domínio demonstrado' : 'Revisão recomendada'}</span>
                 </div>
-
-                <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-slate-200">
-                  <div
-                    className="h-full rounded-full bg-linear-to-r from-indigo-500 to-emerald-500 transition-all duration-500"
-                    style={{ width: `${pct}%` }}
-                  />
-                </div>
-
-                <div className="mt-2 flex items-center justify-between text-[10px] text-slate-600">
-                  <span>Tentativas: {m.totalAttempts} (Corretas: {m.correctAttempts})</span>
-                  <span className="inline-flex items-center gap-1">
-                    <Calendar className="h-3 w-3" /> Próxima revisão recomendada em breve
-                  </span>
-                </div>
+                {reflection && <p className="mt-3 text-xs text-slate-700"><strong>Sua regra de decisão:</strong> {reflection}</p>}
+                <p className="mt-3 inline-flex items-center gap-1 text-[11px] text-slate-600"><Calendar className="h-3.5 w-3.5" /> Próxima revisão: {formatReviewDate(mastery.nextReviewRecommendedAt)}</p>
               </div>
             );
           })}
         </div>
       </div>
 
-      {/* Action Button */}
-      <div className="flex justify-end">
-        <button
-          type="button"
-          onClick={onFinishSession}
-          className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-8 py-3 text-xs font-bold text-white shadow-md hover:bg-indigo-700"
-        >
-          Voltar ao Painel PBL <ArrowRight className="h-4 w-4" />
-        </button>
+      <div className="flex flex-wrap justify-end gap-2">
+        {onOpenNotebook && <button type="button" onClick={onOpenNotebook} className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 text-xs font-bold text-slate-800"><NotebookPen className="h-4 w-4" /> Abrir Caderno de Erros</button>}
+        {onOpenReview && <button type="button" onClick={onOpenReview} className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-indigo-300 bg-indigo-50 px-5 text-xs font-bold text-indigo-800"><BookOpenCheck className="h-4 w-4" /> Ir para revisão</button>}
+        <button type="button" onClick={onFinishSession} className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-indigo-600 px-6 text-xs font-bold text-white shadow-md hover:bg-indigo-700">Voltar ao Painel PBL <ArrowRight className="h-4 w-4" /></button>
       </div>
     </div>
   );

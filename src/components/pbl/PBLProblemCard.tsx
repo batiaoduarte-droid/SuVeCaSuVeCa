@@ -1,6 +1,6 @@
 import React from 'react';
 import type { PBLCase } from '../../types/pbl';
-import { HelpCircle, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 interface PBLProblemCardProps {
   pblCase: PBLCase;
@@ -15,7 +15,7 @@ export const PBLProblemCard: React.FC<PBLProblemCardProps> = ({
   onSelectAnswer,
   disabled = false,
 }) => {
-  const isMultipleChoice = pblCase.options && pblCase.options.length > 1;
+  const isMultipleChoice = Boolean(pblCase.options?.length);
 
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -23,9 +23,6 @@ export const PBLProblemCard: React.FC<PBLProblemCardProps> = ({
         <div className="flex items-center gap-2">
           <span className="inline-flex items-center gap-1 rounded-full bg-indigo-50 px-2.5 py-1 text-xs font-bold text-indigo-700">
             <Sparkles className="h-3 w-3" /> Caso-Âncora PBL
-          </span>
-          <span className="text-xs font-semibold text-slate-600">
-            Ref: {pblCase.anchorQuestionRef}
           </span>
         </div>
         <div className="text-xs font-medium text-slate-600">
@@ -39,7 +36,7 @@ export const PBLProblemCard: React.FC<PBLProblemCardProps> = ({
       </div>
 
       {/* Answer Choices / Judgment */}
-      <div className="mt-6">
+      <div className="mt-6" role="group" aria-label="Alternativas da questão">
         {isMultipleChoice ? (
           <div className="space-y-3">
             {pblCase.options.map((opt) => {
@@ -49,6 +46,7 @@ export const PBLProblemCard: React.FC<PBLProblemCardProps> = ({
                   key={opt.label}
                   type="button"
                   disabled={disabled}
+                  aria-pressed={isSelected}
                   onClick={() => onSelectAnswer(opt.label)}
                   className={`flex w-full items-start gap-3 rounded-xl border p-3.5 text-left text-xs transition-all ${
                     isSelected
@@ -80,6 +78,7 @@ export const PBLProblemCard: React.FC<PBLProblemCardProps> = ({
                   key={val}
                   type="button"
                   disabled={disabled}
+                  aria-pressed={isSelected}
                   onClick={() => onSelectAnswer(val)}
                   className={`flex flex-1 items-center justify-center gap-2 rounded-xl border py-4 text-sm font-bold transition-all ${
                     isSelected

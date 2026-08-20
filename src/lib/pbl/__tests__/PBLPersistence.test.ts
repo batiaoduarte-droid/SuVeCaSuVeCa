@@ -79,4 +79,19 @@ describe('PBLSessionRepository Persistence', () => {
     expect(localSaved).toBeDefined();
     expect(JSON.parse(localSaved!).userId).toBe('user_real_999');
   });
+
+  it('should retrieve the latest active session and ignore completed sessions', async () => {
+    await PBLSessionRepository.saveSession({ ...mockSession, sessionId: 'older', updatedAt: '2026-01-01T00:00:00.000Z' });
+    await PBLSessionRepository.saveSession({ ...mockSession, sessionId: 'newer', updatedAt: '2026-02-01T00:00:00.000Z' });
+    await PBLSessionRepository.saveSession({ ...mockSession, sessionId: 'completed', status: 'completed', updatedAt: '2026-03-01T00:00:00.000Z' });
+
+    const active = await PBLSessionRepository.getLatestActiveSession('guest');
+    expect(active?.sessionId).toBe('newer');
+  });
+
+  it('should mark an abandoned session so it is not offered for resume', async () => {
+    const abandoned = { ...mockSession, sessionId: 'to_abandon' };
+    await PBLSessionRepository.abandonSession(abandoned);
+    expect((await PBLSessionRepository.getSession('to_abandon'))?.status).toBe('abandoned');
+  });
 });

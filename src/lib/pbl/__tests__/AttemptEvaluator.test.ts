@@ -67,4 +67,40 @@ describe('AttemptEvaluator', () => {
     expect(res.isCorrect).toBe(false);
     expect(res.evaluation).toBe('error');
   });
+
+  it.each([
+    ['Certo', 'correct'],
+    ['Errado', 'incorrect'],
+    ['Certo', 'true'],
+    ['Errado', 'false'],
+  ])('should normalize true/false answer %s against %s', (userAnswer, correctAnswer) => {
+    const result = evaluator.evaluate({
+      sessionId: 'sess_123', questionRef: 'OQ-01', competencyRef: 'COMP-01',
+      userAnswer, correctAnswer, answerMode: 'true_false', confidence: 'medium',
+      stage: 'initial', responseTimeMs: 1000,
+    });
+    expect(result.isCorrect).toBe(true);
+  });
+
+  it.each([
+    ['A', 'option_A'],
+    ['B', 'letter_B'],
+    ['E', 'option_E'],
+  ])('should normalize multiple-choice answer %s against %s', (userAnswer, correctAnswer) => {
+    const result = evaluator.evaluate({
+      sessionId: 'sess_123', questionRef: 'OQ-01', competencyRef: 'COMP-01',
+      userAnswer, correctAnswer, answerMode: 'multiple_choice', confidence: 'medium',
+      stage: 'initial', responseTimeMs: 1000,
+    });
+    expect(result.isCorrect).toBe(true);
+  });
+
+  it('must not confuse option C with a Certo answer', () => {
+    const result = evaluator.evaluate({
+      sessionId: 'sess_123', questionRef: 'OQ-01', competencyRef: 'COMP-01',
+      userAnswer: 'Certo', correctAnswer: 'option_C', answerMode: 'multiple_choice',
+      confidence: 'high', stage: 'initial', responseTimeMs: 1000,
+    });
+    expect(result.isCorrect).toBe(false);
+  });
 });

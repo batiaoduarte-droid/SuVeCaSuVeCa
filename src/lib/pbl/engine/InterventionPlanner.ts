@@ -4,6 +4,7 @@ import type {
   PBLCase,
 } from '../../../types/pbl';
 import type { IPBLRepository } from '../data/PBLRepository';
+import { formatPBLAnswer, formatPBLPedagogicalText } from '../answerAdapter';
 
 export class InterventionPlanner {
   constructor(private repo: IPBLRepository) {}
@@ -15,7 +16,6 @@ export class InterventionPlanner {
     const comp = await this.repo.getCompetency(diagResult.competencyRef);
     const qp = await this.repo.getQuestionPedagogy(diagResult.questionRef);
 
-    const primaryRule = qp?.primaryDecisiveRuleRef || comp?.ruleRefs[0] || 'Regra Canônica SuVeCa';
     const procSteps = qp?.solutionStrategy.map((s) => s.action) || [
       '1. Identificar o termo nuclear da oração.',
       '2. Aplicar o teste canônico de verificação.',
@@ -29,20 +29,21 @@ export class InterventionPlanner {
       competencyRef: diagResult.competencyRef,
       misconceptionRef: diagResult.misconceptionRefs[0] || null,
       trapRef: diagResult.trapRefs[0] || null,
-      microLessonText:
+      microLessonText: formatPBLPedagogicalText(
         diagResult.intervention.microLesson ||
-        `Domínio de ${comp?.title || 'Tópico'}: aplique o procedimento sistemático e evite atratores sintáticos.`,
-      ruleTitle: `Regra Decisiva: ${primaryRule}`,
+        `Domínio de ${comp?.title || 'Tópico'}: aplique o procedimento sistemático e evite atratores sintáticos.`
+      ),
+      ruleTitle: `Critério decisivo — ${comp?.title || 'aplicação da regra'}`,
       ruleStatement:
-        diagResult.intervention.refutationText ||
+        formatPBLPedagogicalText(diagResult.intervention.refutationText || '') ||
         'Aplicação direta da regra canônica conforme o padrão dos concursos públicos.',
-      procedureSteps: procSteps,
+      procedureSteps: procSteps.map(formatPBLPedagogicalText),
       contrastingPoleA: contrast?.poleA || 'Construção correta conforme a norma culta',
       contrastingPoleB: contrast?.poleB || 'Atrator de banca indutor de erro',
       workedExample: {
         stem: pblCase.questionStem,
-        stepByStep: pblCase.solutionStrategy.stepByStepAlgorithm,
-        resolution: `Gabarito oficial: ${pblCase.officialAnswer}. Justificativa: aplicação estrita dos critérios gramaticais.`,
+        stepByStep: pblCase.solutionStrategy.stepByStepAlgorithm.map(formatPBLPedagogicalText),
+        resolution: `Gabarito oficial: ${formatPBLAnswer(pblCase.officialAnswer, pblCase.options.length > 0)}. Justificativa: aplicação estrita dos critérios gramaticais.`,
       },
     };
   }

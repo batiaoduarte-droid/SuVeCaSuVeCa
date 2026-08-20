@@ -293,7 +293,14 @@ export default function App() {
       origin: 'manual',
       ...metadata,
     };
-    setCadernoErrors((prev) => [newItem, ...prev]);
+    setCadernoErrors((prev) => {
+      const duplicateIndex = metadata.questionId
+        ? prev.findIndex((item) => item.questionId === metadata.questionId && item.origin === newItem.origin)
+        : -1;
+      if (duplicateIndex < 0) return [newItem, ...prev];
+      const existing = prev[duplicateIndex];
+      return [{ ...existing, ...newItem, id: existing.id }, ...prev.filter((_, index) => index !== duplicateIndex)];
+    });
   };
 
   const handleUpdateErrorStatus = (
@@ -478,6 +485,8 @@ export default function App() {
                 onAddErrorToNotebook={handleAddErrorDirect}
                 onRecordAttempt={recordAnswer}
                 onCompleteSession={() => recordStudyActivity()}
+                onOpenNotebook={() => setActiveTab('errors')}
+                onOpenReview={() => setActiveTab('agenda')}
               />
             )}
 

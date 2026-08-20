@@ -1,100 +1,110 @@
 import React from 'react';
-import type { PBLTransferItem } from '../../types/pbl';
-import { Layers, ShieldCheck, ArrowRight, Sparkles } from 'lucide-react';
+import type { PBLQuestionPresentation, PBLTransferItem } from '../../types/pbl';
+import { Layers, SearchCheck } from 'lucide-react';
 
 interface PBLTransferViewProps {
-  transferItem: PBLTransferItem;
-  itemIndex: number;
-  totalItems: number;
+  transferItem?: PBLTransferItem;
+  question: PBLQuestionPresentation;
+  kind?: 'transfer' | 'reattempt' | 'probe';
+  itemIndex?: number;
+  totalItems?: number;
   selectedAnswer: string;
-  onSelectAnswer: (ans: string) => void;
-  onSubmitTransfer: () => void;
+  onSelectAnswer: (answer: string) => void;
   disabled?: boolean;
+  feedbackMessage?: string;
 }
 
 export const PBLTransferView: React.FC<PBLTransferViewProps> = ({
   transferItem,
-  itemIndex,
-  totalItems,
+  question,
+  kind = 'transfer',
+  itemIndex = 0,
+  totalItems = 3,
   selectedAnswer,
   onSelectAnswer,
-  onSubmitTransfer,
   disabled = false,
+  feedbackMessage,
 }) => {
-  const typeLabels: Record<string, { label: string; color: string }> = {
-    isomorphic: { label: 'Transferência Isomórfica (Mesma Regra)', color: 'bg-blue-100 text-blue-800' },
-    near_transfer: { label: 'Transferência Próxima (Novo Contexto)', color: 'bg-emerald-100 text-emerald-800' },
-    boundary_case: { label: 'Caso-Limite / Exceção', color: 'bg-amber-100 text-amber-800' },
-    far_transfer: { label: 'Transferência Distante (Nova Banca)', color: 'bg-purple-100 text-purple-800' },
-    inverted_transfer: { label: 'Transferência Invertida (Pela Negativa)', color: 'bg-rose-100 text-rose-800' },
+  const typeLabels: Record<string, string> = {
+    isomorphic: 'Mesma regra em novo contexto',
+    near_transfer: 'Transferência próxima',
+    boundary_case: 'Caso-limite ou exceção',
+    far_transfer: 'Transferência distante',
+    inverted_transfer: 'Transferência invertida',
   };
-
-  const currentType = typeLabels[transferItem.transferType] || {
-    label: transferItem.transferType,
-    color: 'bg-slate-100 text-slate-800',
-  };
+  const heading = kind === 'probe'
+    ? 'Sondagem diagnóstica'
+    : kind === 'reattempt'
+      ? 'Nova aplicação após a intervenção'
+      : typeLabels[transferItem?.transferType || ''] || 'Transferência cognitiva';
+  const options = question.options.length
+    ? question.options
+    : [
+        { label: 'Certo', text: 'A assertiva está correta.' },
+        { label: 'Errado', text: 'A assertiva está incorreta.' },
+      ];
 
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-      {/* Transfer Header */}
       <div className="mb-4 flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
-        <div className="flex items-center gap-2">
-          <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-bold ${currentType.color}`}>
-            <Layers className="h-3 w-3" /> {currentType.label}
-          </span>
-          <span className="text-xs text-slate-600">
-            Item {itemIndex + 1} de {totalItems}
-          </span>
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-indigo-50 px-3 py-1 text-xs font-bold text-indigo-800">
+          {kind === 'probe' ? <SearchCheck className="h-3.5 w-3.5" /> : <Layers className="h-3.5 w-3.5" />}
+          {heading}
+        </span>
+        {kind === 'transfer' && (
+          <span className="text-xs font-semibold text-slate-600">Item {itemIndex + 1} de até {totalItems}</span>
+        )}
+      </div>
+
+      {feedbackMessage && (
+        <div role="status" className="mb-4 rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-xs font-semibold text-emerald-900">
+          {feedbackMessage}
         </div>
-        <div className="text-xs font-semibold text-slate-600">
-          Banca: {transferItem.examBoard} ({transferItem.year || 2022})
+      )}
+
+      {transferItem?.cognitiveDelta && kind === 'transfer' && (
+        <div className="mb-4 rounded-xl border border-indigo-100 bg-indigo-50/50 p-3 text-xs text-indigo-950">
+          <strong>O que mudou:</strong> {transferItem.cognitiveDelta}
         </div>
+      )}
+
+      <div className="space-y-4">
+        {question.supportText && (
+          <div className="whitespace-pre-line rounded-xl border border-slate-200 bg-slate-50 p-4 text-xs leading-relaxed text-slate-700">
+            {question.supportText}
+          </div>
+        )}
+        <p className="whitespace-pre-line text-sm font-medium leading-relaxed text-slate-900">{question.prompt}</p>
       </div>
 
-      {/* Delta description */}
-      <div className="mb-4 rounded-xl border border-indigo-50 bg-indigo-50/40 p-3 text-xs text-indigo-950">
-        <span className="font-bold">Desafio Cognitivo:</span> {transferItem.cognitiveDelta}
-      </div>
-
-      {/* Target Question */}
-      <div className="mt-4 rounded-xl border border-slate-100 bg-slate-50/50 p-4 text-xs font-medium text-slate-800">
-        Julgue a assertiva sob a regra em estudo na questão <strong>{transferItem.officialQuestionRef}</strong>.
-      </div>
-
-      {/* Judgment Buttons */}
-      <div className="mt-6 flex gap-4">
-        {['Certo', 'Errado'].map((val) => {
-          const isSelected = selectedAnswer.toUpperCase() === val.toUpperCase();
-          const isCerto = val === 'Certo';
+      <div className="mt-6 space-y-3" role="group" aria-label="Alternativas da questão">
+        {options.map((option) => {
+          const isSelected = selectedAnswer.toUpperCase() === option.label.toUpperCase();
           return (
             <button
-              key={val}
+              key={option.label}
               type="button"
               disabled={disabled}
-              onClick={() => onSelectAnswer(val)}
-              className={`flex flex-1 items-center justify-center gap-2 rounded-xl border py-3.5 text-xs font-bold transition-all ${
+              aria-pressed={isSelected}
+              onClick={() => onSelectAnswer(option.label)}
+              className={`flex w-full items-start gap-3 rounded-xl border p-3.5 text-left text-xs transition-all ${
                 isSelected
-                  ? isCerto
-                    ? 'border-emerald-600 bg-emerald-600 text-white shadow-md'
-                    : 'border-rose-600 bg-rose-600 text-white shadow-md'
+                  ? 'border-indigo-600 bg-indigo-50 text-indigo-950 shadow-xs ring-2 ring-indigo-200'
                   : 'border-slate-200 bg-white text-slate-800 hover:border-slate-300 hover:bg-slate-50'
               }`}
             >
-              {val.toUpperCase()}
+              <span className={`flex h-6 min-w-6 items-center justify-center rounded-lg px-1 text-xs font-bold ${isSelected ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-700'}`}>
+                {option.label.toUpperCase()}
+              </span>
+              <span className="mt-0.5 leading-relaxed">{option.text}</span>
             </button>
           );
         })}
       </div>
 
-      <div className="mt-6 flex justify-end">
-        <button
-          type="button"
-          disabled={!selectedAnswer || disabled}
-          onClick={onSubmitTransfer}
-          className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-6 py-2.5 text-xs font-bold text-white shadow-md hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
-        >
-          Validar Transferência <ArrowRight className="h-4 w-4" />
-        </button>
+      <div className="mt-4 text-[11px] text-slate-600">
+        {question.examBoard || transferItem?.examBoard || 'Questão oficial'}
+        {question.year || transferItem?.year ? ` · ${question.year || transferItem?.year}` : ''}
       </div>
     </div>
   );

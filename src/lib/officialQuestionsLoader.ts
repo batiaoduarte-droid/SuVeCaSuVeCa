@@ -1,4 +1,4 @@
-interface NormalizedQuestion {
+export interface NormalizedQuestion {
   id: string;
   originalQuestionId: string;
   prompt: string;
@@ -55,4 +55,24 @@ export const fetchNormalizedQuestionsForLesson = async (
   }
 
   return {};
+};
+
+export const parsePBLQuestionRef = (questionRef: string): { lessonId: string; sourceId: string } | null => {
+  const match = /^OQ-(A\d{2})-(.+)$/i.exec(questionRef);
+  if (!match) return null;
+  return { lessonId: match[1].toUpperCase(), sourceId: match[2] };
+};
+
+export const fetchNormalizedQuestion = async (
+  questionRef: string
+): Promise<NormalizedQuestion | null> => {
+  const parsed = parsePBLQuestionRef(questionRef);
+  if (!parsed) return null;
+  const map = await fetchNormalizedQuestionsForLesson(parsed.lessonId);
+  return (
+    map[questionRef] ||
+    map[`${parsed.lessonId}:${parsed.sourceId}`] ||
+    map[parsed.sourceId] ||
+    null
+  );
 };

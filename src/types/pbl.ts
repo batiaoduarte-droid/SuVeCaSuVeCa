@@ -185,6 +185,19 @@ export interface PBLTransferItem {
   expectedObstacle: string;
 }
 
+export interface PBLQuestionPresentation {
+  questionRef: string;
+  questionType: 'multiple_choice' | 'true_false';
+  supportText?: string;
+  prompt: string;
+  options: Array<{ label: string; text: string }>;
+  correctAnswer: string;
+  commentary?: string;
+  examBoard?: string;
+  organization?: string;
+  year?: number;
+}
+
 export interface PBLTransferSet {
   schemaVersion: string;
   transferSetId: string;
@@ -355,6 +368,8 @@ export interface DiagnosticResult {
   diagnosticConfidence: number; // 0.0 to 1.0
   needsProbe: boolean;
   probeQuestionRef?: string;
+  diagnosticSummary?: string;
+  trapSummary?: string;
   intervention: {
     microLesson?: string;
     ruleRefs: string[];
@@ -387,6 +402,7 @@ export type PBLNextActionType =
   | 'show_diagnostic'
   | 'trigger_intervention'
   | 'request_reattempt'
+  | 'request_probe'
   | 'request_transfer'
   | 'branch_to_prerequisite'
   | 'advance_competency'
@@ -398,9 +414,12 @@ export interface NextActionDecision {
   targetCaseRef?: string;
   targetQuestionRef?: string;
   transferItem?: PBLTransferItem;
+  outcome?: PBLCompetencyOutcome;
   reason: string;
   feedbackMessage?: string;
 }
+
+export type PBLCompetencyOutcome = 'mastered' | 'needs_review';
 
 export interface PBLSession {
   sessionId: string;
@@ -417,8 +436,14 @@ export interface PBLSession {
   currentQuestionRef: string;
   phase: PBLSessionPhase;
   currentTransferItemIndex: number;
+  currentTransferItem?: PBLTransferItem;
+  pendingNextAction?: NextActionDecision;
   attempts: PBLAttempt[];
   masterySnapshot: Record<string, CompetencyMastery>;
+  competencyOutcomes?: Record<string, PBLCompetencyOutcome>;
+  reflectionNotes?: Record<string, string>;
+  savedErrorQuestionRefs?: string[];
+  lastFeedbackMessage?: string;
   lastDiagnosticResult?: DiagnosticResult;
   lastInterventionPayload?: InterventionPayload;
   sessionStats: {

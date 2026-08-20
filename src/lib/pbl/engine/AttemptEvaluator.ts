@@ -4,6 +4,8 @@ import type {
   PBLAttemptStage,
   PBLAttempt,
 } from '../../../types/pbl';
+import { isPBLAnswerCorrect } from '../answerAdapter';
+import type { PBLAnswerMode } from '../answerAdapter';
 
 export interface EvaluateAttemptParams {
   sessionId: string;
@@ -18,6 +20,7 @@ export interface EvaluateAttemptParams {
   detectedTrapRefs?: string[];
   detectedMisconceptionRefs?: string[];
   transferType?: import('../../../types/pbl').TransferType;
+  answerMode?: PBLAnswerMode;
 }
 
 export class AttemptEvaluator {
@@ -39,7 +42,7 @@ export class AttemptEvaluator {
   }
 
   public evaluate(params: EvaluateAttemptParams): PBLAttempt {
-    const isCorrect = this.isAnswerCorrect(params.userAnswer, params.correctAnswer);
+    const isCorrect = isPBLAnswerCorrect(params.userAnswer, params.correctAnswer, params.answerMode);
     const evaluation = AttemptEvaluator.evaluateConfidence(isCorrect, params.confidence);
 
     return {
@@ -63,26 +66,4 @@ export class AttemptEvaluator {
     };
   }
 
-  private isAnswerCorrect(userAns: string, correctAns: string): boolean {
-    const cleanUser = userAns.trim().toUpperCase();
-    const cleanCorr = correctAns.trim().toUpperCase();
-
-    if (cleanUser === cleanCorr) return true;
-
-    // Handle Certo / Errados
-    if (
-      (cleanUser === 'C' || cleanUser === 'CERTO' || cleanUser === 'CORRETO') &&
-      (cleanCorr === 'C' || cleanCorr === 'CERTO' || cleanCorr === 'CORRETO')
-    ) {
-      return true;
-    }
-    if (
-      (cleanUser === 'E' || cleanUser === 'ERRADO' || cleanUser === 'INCORRETO') &&
-      (cleanCorr === 'E' || cleanCorr === 'ERRADO' || cleanCorr === 'INCORRETO')
-    ) {
-      return true;
-    }
-
-    return false;
-  }
 }

@@ -10,6 +10,7 @@ export interface SessionPlanRequest {
   mode: PBLSessionMode;
   targetLessonId?: string;
   targetUnitId?: string;
+  targetCompetencyId?: string;
   cumulativeSessionId?: string;
   currentMasteryMap?: Record<string, CompetencyMastery>;
   maxCompetencies?: number;
@@ -24,6 +25,7 @@ export class SessionPlanner {
       mode,
       targetLessonId,
       targetUnitId,
+      targetCompetencyId,
       cumulativeSessionId,
       currentMasteryMap = {},
       maxCompetencies = 3,
@@ -31,7 +33,10 @@ export class SessionPlanner {
 
     let targetCompetencyRefs: string[] = [];
 
-    if (mode === 'cumulative' && cumulativeSessionId) {
+    if (targetCompetencyId) {
+      const competency = await this.repo.getCompetency(targetCompetencyId);
+      if (competency) targetCompetencyRefs = [competency.competencyId];
+    } else if (mode === 'cumulative' && cumulativeSessionId) {
       const cumSess = await this.repo.getCumulativeSession(cumulativeSessionId);
       if (cumSess) {
         targetCompetencyRefs = cumSess.integratedCompetencyRefs.slice(0, maxCompetencies);
@@ -53,19 +58,44 @@ export class SessionPlanner {
     } else {
       // Diagnostic / Recommendation mode: select lowest mastered overall
       const allComps = await this.repo.getAllCompetencies();
-      targetCompetencyRefs = allComps
+      const ranked = allComps
         .sort((a, b) => {
           const scoreA = currentMasteryMap[a.competencyId]?.score ?? 0;
           const scoreB = currentMasteryMap[b.competencyId]?.score ?? 0;
+          if (mode === 'diagnostic') {
+            const attemptsA = currentMasteryMap[a.competencyId]?.totalAttempts ?? 0;
+            const attemptsB = currentMasteryMap[b.competencyId]?.totalAttempts ?? 0;
+            return attemptsA - attemptsB || scoreA - scoreB;
+          }
           return scoreA - scoreB;
-        })
+        });
+      targetCompetencyRefs = ranked
         .map((c) => c.competencyId)
         .slice(0, maxCompetencies);
     }
 
+    const answerableTargets: string[] = [];
+    for (const competencyId of targetCompetencyRefs) {
+      const pblCase = await this.repo.getCaseForCompetency(competencyId);
+      if (typeof pblCase?.officialAnswer === 'string' && pblCase.officialAnswer.trim()) {
+        answerableTargets.push(competencyId);
+      }
+    }
+    targetCompetencyRefs = answerableTargets;
+
+    if (targetCompetencyId && targetCompetencyRefs.length === 0) {
+      throw new Error('Esta competência ainda não possui gabarito oficial publicável para uma sessão PBL.');
+    }
+
     if (targetCompetencyRefs.length === 0) {
-      const firstComp = (await this.repo.getAllCompetencies())[0];
-      if (firstComp) targetCompetencyRefs.push(firstComp.competencyId);
+      const allCompetencies = await this.repo.getAllCompetencies();
+      for (const competency of allCompetencies) {
+        const pblCase = await this.repo.getCaseForCompetency(competency.competencyId);
+        if (typeof pblCase?.officialAnswer === 'string' && pblCase.officialAnswer.trim()) {
+          targetCompetencyRefs.push(competency.competencyId);
+          break;
+        }
+      }
     }
 
     const firstCompId = targetCompetencyRefs[0];
@@ -92,6 +122,9 @@ export class SessionPlanner {
       currentTransferItemIndex: 0,
       attempts: [],
       masterySnapshot: { ...currentMasteryMap },
+      competencyOutcomes: {},
+      reflectionNotes: {},
+      savedErrorQuestionRefs: [],
       sessionStats: {
         initialAccuracy: 0,
         postInterventionAccuracy: 0,

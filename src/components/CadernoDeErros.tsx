@@ -285,7 +285,7 @@ export const CadernoDeErros: React.FC<CadernoDeErrosProps> = ({
                     <span className="text-xs text-slate-500 font-medium">{item.date}</span>
                     {item.origin && item.origin !== 'manual' && (
                       <span className="rounded-md border border-violet-200 bg-violet-50 px-2 py-0.5 text-[10px] font-bold text-violet-800 uppercase tracking-wider">
-                        {item.origin === 'official_question' ? 'Questão Oficial' : item.origin === 'module_question' ? 'Questão da Aula' : item.origin === 'ai_generated' ? 'Tutor IA' : 'Simulado'}
+                        {item.origin === 'official_question' ? 'Questão Oficial' : item.origin === 'module_question' ? 'Questão da Aula' : item.origin === 'ai_generated' ? 'Tutor IA' : item.origin === 'pbl' ? 'Sessão PBL' : 'Simulado'}
                       </span>
                     )}
                   </div>

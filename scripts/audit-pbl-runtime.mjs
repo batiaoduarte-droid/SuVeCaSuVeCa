@@ -3,6 +3,7 @@ import path from 'node:path';
 
 const ROOT = process.cwd();
 const PBL_DIR = path.join(ROOT, 'public', 'knowledge', 'pbl');
+const KNOWLEDGE_DIR = path.join(ROOT, 'public', 'knowledge');
 
 const requiredFiles = [
   'pbl_manifest.json',
@@ -52,6 +53,57 @@ if (!errors.length) {
   check(xfers.every((x) => compIds.has(x.competencyRef)), 'Transfer set references non-existent competency');
   check(diags.every((d) => compIds.has(d.competencyRef)), 'Diagnostic path references non-existent competency');
   check(Object.values(qcl).every((link) => compIds.has(link.competencyId)), 'Question link references non-existent competency');
+
+  const cleanAnswer = (answer) => String(answer || '').trim().toUpperCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/^(OPTION|LETTER|ALTERNATIVA|OPCAO)[_\s-]*/, '');
+  const normalizeAnswer = (answer, multipleChoice) => {
+    const cleaned = cleanAnswer(answer);
+    if (multipleChoice) return cleaned.replace(/[^A-Z0-9]/g, '');
+    if (['C', 'CERTO', 'CORRETO', 'CORRECT', 'TRUE'].includes(cleaned)) return 'C';
+    if (['E', 'ERRADO', 'INCORRETO', 'INCORRECT', 'FALSE'].includes(cleaned)) return 'E';
+    return cleaned.replace(/[^A-Z0-9]/g, '');
+  };
+  const gradedCases = cases.filter((pblCase) => typeof pblCase.officialAnswer === 'string' && pblCase.officialAnswer.trim());
+  const ungradedCases = cases.filter((pblCase) => !gradedCases.includes(pblCase));
+  check(ungradedCases.length === 1, `Expected one protected source without official answer, found ${ungradedCases.length}`);
+  for (const pblCase of gradedCases) {
+    const multipleChoice = Boolean(pblCase.options?.length);
+    const normalizedCorrect = normalizeAnswer(pblCase.officialAnswer, multipleChoice);
+    if (multipleChoice) {
+      const availableLabels = (pblCase.options || []).map((option) => normalizeAnswer(option.label, true));
+      check(availableLabels.includes(normalizedCorrect), `Anchor answer is not renderable: ${pblCase.caseId}`);
+    } else {
+      check(['C', 'E'].includes(normalizedCorrect), `True/false anchor has unsupported answer: ${pblCase.caseId}`);
+    }
+  }
+
+  const publishedQuestionRefs = new Set();
+  const officialIndex = JSON.parse(fs.readFileSync(path.join(KNOWLEDGE_DIR, 'official-question-index.json'), 'utf8'));
+  officialIndex.items.forEach((item) => publishedQuestionRefs.add(`OQ-${item.questionId.replace(':', '-')}`));
+  const viewsDir = path.join(KNOWLEDGE_DIR, 'pedagogical', 'views');
+  for (const file of fs.readdirSync(viewsDir).filter((name) => name.endsWith('.json') && name !== 'manifest.json')) {
+    const view = JSON.parse(fs.readFileSync(path.join(viewsDir, file), 'utf8'));
+    for (const question of view.officialQuestions || []) {
+      const questionRef = question.officialQuestionId || question.questionId;
+      const answer = question.answerPayload?.answer || question.officialAnswer;
+      const prompt = question.questionPayload?.prompt || question.prompt;
+      if (questionRef && answer && prompt) publishedQuestionRefs.add(questionRef);
+    }
+  }
+  const transferSetsWithPresentation = xfers.filter((set) =>
+    set.items.some((item) => publishedQuestionRefs.has(item.officialQuestionRef))
+  );
+  check(
+    transferSetsWithPresentation.length === xfers.length,
+    `Transfer sets without a published question presentation: ${xfers.length - transferSetsWithPresentation.length}`
+  );
+
+  globalThis.pblAuditMetrics = {
+    gradedCases: gradedCases.length,
+    blockedUngradedCases: ungradedCases.length,
+    transferSetsWithPresentation: transferSetsWithPresentation.length,
+  };
 }
 
 if (errors.length > 0) {
@@ -68,6 +120,7 @@ if (errors.length > 0) {
     cumulativeSessions: 13,
     questionLinks: 2588,
     questionPedagogy: 2588,
-    referentialIntegrity: '100% PERFECT'
+    referentialIntegrity: '100% PERFECT',
+    answerContract: globalThis.pblAuditMetrics,
   }, null, 2));
 }

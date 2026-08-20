@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { PBLEngine } from '../engine/PBLEngine';
 import { PBLRepository } from '../data/PBLRepository';
-import type { PBLCompetency, PBLCase, PBLTransferSet, PBLDiagnosticPath, QuestionPedagogy } from '../../../types/pbl';
+import type { PBLCompetency, PBLCase, PBLTransferSet, PBLDiagnosticPath, QuestionPedagogy, PBLQuestionPresentation } from '../../../types/pbl';
 
 describe('PBLEngine Full Flow Integration', () => {
   let engine: PBLEngine;
@@ -141,6 +141,15 @@ describe('PBLEngine Full Flow Integration', () => {
     }
   };
 
+  const mockTransferQuestion: PBLQuestionPresentation = {
+    questionRef: 'OQ-A10-aula10.q0012',
+    questionType: 'true_false',
+    prompt: 'O nome de lugar determinado admite crase no contexto apresentado.',
+    options: [],
+    correctAnswer: 'correct',
+    examBoard: 'FGV',
+  };
+
   const mockDiag: PBLDiagnosticPath = {
     schemaVersion: '1.0.0',
     pathId: 'PBL-DIAG-A10-G05-01',
@@ -177,6 +186,7 @@ describe('PBLEngine Full Flow Integration', () => {
       transferSets: [mockXfer],
       diagnosticPaths: [mockDiag],
       questionPedagogyMap: { 'OQ-A10-aula10.q0010': mockQP },
+      questionPresentations: { [mockTransferQuestion.questionRef]: mockTransferQuestion },
     });
     engine = new PBLEngine(repo);
   });
@@ -216,6 +226,8 @@ describe('PBLEngine Full Flow Integration', () => {
     expect(result.attempt.evaluation).toBe('strong_correct');
     expect(result.nextAction.type).toBe('request_transfer');
     expect(result.session.phase).toBe('diagnostic');
+    expect(result.session.currentTransferItem?.officialQuestionRef).toBe(mockTransferQuestion.questionRef);
+    expect(engine.continueAfterDiagnostic(result.session).phase).toBe('transfer');
     expect(result.session.masterySnapshot['COMP-A10-G05-01'].score).toBeGreaterThan(0.1);
   });
 
@@ -244,5 +256,7 @@ describe('PBLEngine Full Flow Integration', () => {
     expect(result.intervention).toBeDefined();
     expect(result.intervention?.procedureSteps.length).toBeGreaterThan(0);
     expect(result.session.phase).toBe('diagnostic');
+    expect(result.attempt.detectedMisconceptionRefs).toContain('MISC-CRASE-01');
+    expect(result.session.sessionStats.misconceptionsCaught).toBe(1);
   });
 });

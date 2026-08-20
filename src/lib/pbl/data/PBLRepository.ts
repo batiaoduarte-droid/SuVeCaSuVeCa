@@ -7,7 +7,10 @@ import type {
   PBLTransferSet,
   PBLCumulativeSession,
   PBLManifest,
+  PBLQuestionPresentation,
 } from '../../../types/pbl';
+import { fetchNormalizedQuestion } from '../../officialQuestionsLoader';
+import { formatOfficialContent } from '../../officialContent';
 
 export interface IPBLRepository {
   init(): Promise<void>;
@@ -24,6 +27,7 @@ export interface IPBLRepository {
 
   getQuestionPedagogy(questionId: string): Promise<QuestionPedagogy | null>;
   getQuestionCompetencyLink(questionId: string): Promise<QuestionCompetencyLink | null>;
+  getQuestionPresentation(questionId: string): Promise<PBLQuestionPresentation | null>;
 
   getDiagnosticPath(id: string): Promise<PBLDiagnosticPath | null>;
   getDiagnosticPathForCompetency(competencyId: string): Promise<PBLDiagnosticPath | null>;
@@ -48,6 +52,8 @@ export class PBLRepository implements IPBLRepository {
   private cumulativeSessions: Map<string, PBLCumulativeSession> = new Map();
   private questionPedagogyMap: Map<string, QuestionPedagogy> = new Map();
   private questionLinksMap: Map<string, QuestionCompetencyLink> = new Map();
+  private questionPresentations: Map<string, PBLQuestionPresentation> = new Map();
+  private unitViewCache: Map<string, unknown> = new Map();
   private manifest: PBLManifest | null = null;
   private initialized = false;
 
@@ -141,6 +147,7 @@ export class PBLRepository implements IPBLRepository {
     cumulativeSessions?: PBLCumulativeSession[];
     questionPedagogyMap?: Record<string, QuestionPedagogy>;
     questionLinksMap?: Record<string, QuestionCompetencyLink>;
+    questionPresentations?: Record<string, PBLQuestionPresentation>;
     manifest?: PBLManifest;
   }): void {
     if (data.competencies) data.competencies.forEach((c) => this.competencies.set(c.competencyId, c));
@@ -173,6 +180,11 @@ export class PBLRepository implements IPBLRepository {
     if (data.questionLinksMap) {
       Object.entries(data.questionLinksMap).forEach(([qid, link]) =>
         this.questionLinksMap.set(qid, link)
+      );
+    }
+    if (data.questionPresentations) {
+      Object.entries(data.questionPresentations).forEach(([qid, presentation]) =>
+        this.questionPresentations.set(qid, presentation)
       );
     }
     if (data.manifest) this.manifest = data.manifest;
@@ -213,6 +225,84 @@ export class PBLRepository implements IPBLRepository {
 
   public async getQuestionCompetencyLink(questionId: string): Promise<QuestionCompetencyLink | null> {
     return this.questionLinksMap.get(questionId) || null;
+  }
+
+  public async getQuestionPresentation(questionId: string): Promise<PBLQuestionPresentation | null> {
+    const cached = this.questionPresentations.get(questionId);
+    if (cached) return cached;
+
+    let normalized = null;
+    try {
+      normalized = await fetchNormalizedQuestion(questionId);
+    } catch {
+      normalized = null;
+    }
+    if (normalized?.prompt && normalized.correctAnswer) {
+      const presentation: PBLQuestionPresentation = {
+        questionRef: questionId,
+        questionType: normalized.options?.length ? 'multiple_choice' : 'true_false',
+        supportText: formatOfficialContent(normalized.supportText) || undefined,
+        prompt: formatOfficialContent(normalized.prompt),
+        options: (normalized.options || []).map((option) => ({
+          label: option.letter.toUpperCase(),
+          text: formatOfficialContent(option.text),
+        })),
+        correctAnswer: normalized.correctAnswer,
+        commentary: formatOfficialContent(normalized.commentary) || undefined,
+        examBoard: normalized.bank,
+        year: normalized.year,
+      };
+      this.questionPresentations.set(questionId, presentation);
+      return presentation;
+    }
+
+    const link = this.questionLinksMap.get(questionId);
+    if (!link?.unitId) return null;
+    let view = this.unitViewCache.get(link.unitId) as {
+      officialQuestions?: Array<Record<string, unknown>>;
+    } | undefined;
+    if (!view) {
+      try {
+        const response = await fetch(`/knowledge/pedagogical/views/${link.unitId}.json`);
+        if (!response.ok) return null;
+        view = await response.json();
+      } catch {
+        return null;
+      }
+      this.unitViewCache.set(link.unitId, view);
+    }
+
+    const question = view.officialQuestions?.find((candidate) =>
+      candidate.officialQuestionId === questionId || candidate.questionId === questionId
+    );
+    if (!question) return null;
+
+    const payload = (question.questionPayload || question) as Record<string, unknown>;
+    const answerPayload = (question.answerPayload || {}) as Record<string, unknown>;
+    const prompt = formatOfficialContent(payload.prompt);
+    const correctAnswer = String(answerPayload.answer || question.officialAnswer || '');
+    if (!prompt || !correctAnswer) return null;
+    const rawOptions = Array.isArray(payload.options) ? payload.options : [];
+    const presentation: PBLQuestionPresentation = {
+      questionRef: questionId,
+      questionType: rawOptions.length ? 'multiple_choice' : 'true_false',
+      supportText: formatOfficialContent(payload.support_text || payload.supportText) || undefined,
+      prompt,
+      options: rawOptions.map((option, index) => {
+        const item = option as Record<string, unknown>;
+        return {
+          label: String(item.label || item.letter || String.fromCharCode(65 + index)).toUpperCase(),
+          text: formatOfficialContent(item.text),
+        };
+      }),
+      correctAnswer,
+      commentary: formatOfficialContent(answerPayload.commentary || question.explanation) || undefined,
+      examBoard: String(payload.exam_board || question.examBoard || '') || undefined,
+      organization: String(payload.organization || question.organization || '') || undefined,
+      year: typeof payload.year === 'number' ? payload.year : typeof question.year === 'number' ? question.year : undefined,
+    };
+    this.questionPresentations.set(questionId, presentation);
+    return presentation;
   }
 
   public async getDiagnosticPath(id: string): Promise<PBLDiagnosticPath | null> {

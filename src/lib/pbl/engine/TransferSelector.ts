@@ -13,12 +13,22 @@ export class TransferSelector {
     competencyId: string,
     lastEvaluation: ConfidenceEvaluation,
     currentTransferIndex: number,
-    mastery?: CompetencyMastery
+    mastery?: CompetencyMastery,
+    excludedQuestionRefs: string[] = [],
+    requirePresentation = false
   ): Promise<PBLTransferItem | null> {
     const xferSet = await this.repo.getTransferSetForCompetency(competencyId);
     if (!xferSet || xferSet.items.length === 0) return null;
 
-    const items = xferSet.items;
+    const excluded = new Set(excludedQuestionRefs);
+    let items = xferSet.items.filter((item) => !excluded.has(item.officialQuestionRef));
+    if (requirePresentation) {
+      const available = await Promise.all(
+        items.map(async (item) => ({ item, presentation: await this.repo.getQuestionPresentation(item.officialQuestionRef) }))
+      );
+      items = available.filter(({ presentation }) => Boolean(presentation)).map(({ item }) => item);
+    }
+    if (!items.length) return null;
     const masteryScore = mastery?.score ?? 0;
 
     // Adaptive Selection Policy
@@ -43,10 +53,6 @@ export class TransferSelector {
     }
 
     // Default sequential progression
-    if (currentTransferIndex < items.length) {
-      return items[currentTransferIndex];
-    }
-
-    return null;
+    return items[Math.min(currentTransferIndex, items.length - 1)] || items[0] || null;
   }
 }
